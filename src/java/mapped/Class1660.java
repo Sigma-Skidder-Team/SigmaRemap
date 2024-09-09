@@ -40,7 +40,7 @@ public interface Class1660 extends Class1678, Class1661 {
 
    void method6742(PlayerEntity var1, BlockPos var2, SoundEvent var3, Class2266 var4, float var5, float var6);
 
-   void method6746(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12);
+   void addParticle(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12);
 
    void method6869(PlayerEntity var1, int var2, BlockPos var3, int var4);
 

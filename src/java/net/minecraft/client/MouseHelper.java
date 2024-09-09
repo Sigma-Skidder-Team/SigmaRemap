@@ -6,9 +6,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.event.impl.Class4426;
-import com.mentalfrostbyte.jello.event.impl.Class4430;
-import com.mentalfrostbyte.jello.event.impl.Class4431;
+import com.mentalfrostbyte.jello.event.impl.MouseHoverEvent;
+import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
+import com.mentalfrostbyte.jello.event.impl.EventMouse;
 import mapped.*;
 import net.minecraft.client.gui.screen.Screen;
 import org.lwjgl.glfw.GLFWDropCallback;
@@ -44,7 +44,7 @@ public class MouseHelper {
          if (this.field44285.currentScreen == null) {
             if (var4 != 1 && var4 != 2) {
                if (var4 == 0) {
-                  Class4426 var15 = new Class4426(var3);
+                  MouseHoverEvent var15 = new MouseHoverEvent(var3);
                   Client.getInstance().getEventManager().call(var15);
                   if (var15.isCancelled()) {
                      return;
@@ -55,7 +55,7 @@ public class MouseHelper {
                   Class8319.method29126(var3);
                }
 
-               Class4430 var8 = new Class4430(var3, var4 == 2, null);
+               EventKeyPress var8 = new EventKeyPress(var3, var4 == 2, null);
                Client.getInstance().getEventManager().call(var8);
                if (var8.isCancelled()) {
                   return;
@@ -146,7 +146,7 @@ public class MouseHelper {
 
    private void method36731(long var1, double var3, double var5) {
       if (Client.getInstance().getGuiManager().method33480() == null) {
-         Class4431 var9 = new Class4431(var5);
+         EventMouse var9 = new EventMouse(var5);
          Client.getInstance().getEventManager().call(var9);
          if (!var9.isCancelled()) {
             if (var1 == Minecraft.getInstance().getMainWindow().getHandle()) {
@@ -276,7 +276,7 @@ public class MouseHelper {
 
          this.field44285.getTutorial().method37024(var11, var13);
          if (this.field44285.player != null) {
-            this.field44285.player.method3217(var11, var13 * (double)var19);
+            this.field44285.player.rotateTowards(var11, var13 * (double)var19);
          }
       } else {
          this.field44298 = 0.0;

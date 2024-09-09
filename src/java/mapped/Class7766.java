@@ -3,7 +3,7 @@ package mapped;
 public class Class7766 {
    private static String[] field33340;
 
-   public static void method25743(Class6355 var0) {
+   public static void method25743(ViaVersion7 var0) {
       var0.method19360(Class1933.field12321, new Class3973());
       var0.method19360(Class1933.field12310, new Class3967());
       var0.method19360(Class1933.field12311, new Class4041());

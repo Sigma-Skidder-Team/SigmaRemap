@@ -112,7 +112,7 @@ public class Class2725 extends Class2595 {
       if (Math.abs((double)var1 - this.field17221.getPosX()) < 2.0 && Math.abs((double)var3 - this.field17221.getPosZ()) < 2.0) {
          return false;
       } else if (this.method10936(new BlockPos(var1, var2, var3))) {
-         this.field17220.method3273((double)var1 + 0.5, (double)var2, (double)var3 + 0.5, this.field17220.rotationYaw, this.field17220.rotationPitch);
+         this.field17220.setLocationAndAngles((double)var1 + 0.5, (double)var2, (double)var3 + 0.5, this.field17220.rotationYaw, this.field17220.rotationPitch);
          this.field17224.method21666();
          return true;
       } else {
@@ -128,7 +128,7 @@ public class Class2725 extends Class2595 {
             return false;
          } else {
             BlockPos var6 = var1.method8338(this.field17220.getPosition());
-            return this.field17222.method7053(this.field17220, this.field17220.getBoundingBox().method19668(var6));
+            return this.field17222.hasNoCollisions(this.field17220, this.field17220.getBoundingBox().method19668(var6));
          }
       } else {
          return false;
@@ -136,6 +136,6 @@ public class Class2725 extends Class2595 {
    }
 
    private int method10937(int var1, int var2) {
-      return this.field17220.method3013().nextInt(var2 - var1 + 1) + var1;
+      return this.field17220.getRNG().nextInt(var2 - var1 + 1) + var1;
    }
 }

@@ -25,7 +25,7 @@ public class Class3292 extends Item {
    }
 
    @Override
-   public ActionResultType method11707(Class5911 var1) {
+   public ActionResultType method11707(ItemUseContext var1) {
       ActionResultType var4 = this.method11834(new Class5909(var1));
       return !var4.isSuccessOrConsume() && this.method11744() ? this.method11700(var1.method18360(), var1.method18358(), var1.method18359()).method20694() : var4;
    }
@@ -55,8 +55,8 @@ public class Class3292 extends Item {
                   }
                }
 
-               Class8447 var12 = var10.method23452();
-               var7.method6742(var8, var6, this.method11835(var10), Class2266.field14732, (var12.method29710() + 1.0F) / 2.0F, var12.method29711() * 0.8F);
+               SoundType var12 = var10.getSoundType();
+               var7.method6742(var8, var6, this.method11835(var10), Class2266.field14732, (var12.getVolume() + 1.0F) / 2.0F, var12.method29711() * 0.8F);
                if (var8 == null || !var8.abilities.isCreativeMode) {
                   var9.method32182(1);
                }
@@ -72,7 +72,7 @@ public class Class3292 extends Item {
    }
 
    public SoundEvent method11835(BlockState var1) {
-      return var1.method23452().method29714();
+      return var1.getSoundType().method29714();
    }
 
    @Nullable
@@ -120,7 +120,7 @@ public class Class3292 extends Item {
    public boolean method11841(Class5909 var1, BlockState var2) {
       PlayerEntity var5 = var1.method18358();
       ISelectionContext var6 = var5 != null ? ISelectionContext.forEntity(var5) : ISelectionContext.method14947();
-      return (!this.method11842() || var2.method23443(var1.method18360(), var1.method18345())) && var1.method18360().method7049(var2, var1.method18345(), var6);
+      return (!this.method11842() || var2.method23443(var1.method18360(), var1.method18345())) && var1.method18360().placedBlockCollides(var2, var1.method18345(), var6);
    }
 
    public boolean method11842() {
@@ -140,19 +140,19 @@ public class Class3292 extends Item {
          if (var7 != null) {
             TileEntity var8 = var0.getTileEntity(var2);
             if (var8 != null) {
-               if (!var0.isRemote && var8.method3783() && (var1 == null || !var1.method2979())) {
+               if (!var0.isRemote && var8.method3783() && (var1 == null || !var1.canUseCommandBlock())) {
                   return false;
                }
 
                CompoundNBT var9 = var8.write(new CompoundNBT());
                CompoundNBT var10 = var9.method79();
                var9.method140(var7);
-               var9.method102("x", var2.getX());
-               var9.method102("y", var2.getY());
-               var9.method102("z", var2.getZ());
+               var9.putInt("x", var2.getX());
+               var9.putInt("y", var2.getY());
+               var9.putInt("z", var2.getZ());
                if (!var9.equals(var10)) {
                   var8.method3645(var0.getBlockState(var2), var9);
-                  var8.method3622();
+                  var8.markDirty();
                   return true;
                }
             }

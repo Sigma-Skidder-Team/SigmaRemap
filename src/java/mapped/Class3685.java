@@ -47,20 +47,20 @@ public class Class3685<E extends Class1006> extends Class3676<E> {
    }
 
    private LivingEntity method12527(E var1) {
-      return var1.method2992().<LivingEntity>method21410(Class8830.field39826).get();
+      return var1.getBrain().<LivingEntity>method21410(Class8830.field39826).get();
    }
 
    private static <E extends LivingEntity> boolean method12528(E var0) {
-      Optional var3 = var0.method2992().<Long>method21410(Class8830.field39841);
-      return var3.isPresent() && var0.world.method6783() - (Long)var3.get() > 200L;
+      Optional var3 = var0.getBrain().<Long>method21410(Class8830.field39841);
+      return var3.isPresent() && var0.world.getGameTime() - (Long)var3.get() > 200L;
    }
 
    private boolean method12529(E var1) {
-      Optional var4 = var1.method2992().<LivingEntity>method21410(Class8830.field39826);
+      Optional var4 = var1.getBrain().<LivingEntity>method21410(Class8830.field39826);
       return var4.isPresent() && !((LivingEntity)var4.get()).isAlive();
    }
 
    private void method12530(E var1) {
-      var1.method2992().method21405(Class8830.field39826);
+      var1.getBrain().method21405(Class8830.field39826);
    }
 }

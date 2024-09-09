@@ -11,7 +11,7 @@ public class Class3070 implements Class2982 {
    public void method11398(Class8563 var1) throws Exception {
       Class9738 var4 = var1.<Class9738>method30561(Class4750.field22569);
       Class8770.method31636(var4);
-      if (Class8042.method27612().method21931()) {
+      if (ViaVersion3.method27612().method21931()) {
          if (var4 == null) {
             return;
          }

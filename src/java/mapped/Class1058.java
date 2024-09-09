@@ -65,22 +65,22 @@ public class Class1058 extends Class1056 implements IAngerable {
    }
 
    @Override
-   public int method3011(int var1) {
+   public int decreaseAirSupply(int var1) {
       return var1;
    }
 
    @Override
-   public void method3128(Entity var1) {
-      if (var1 instanceof Class1008 && !(var1 instanceof Class1081) && this.method3013().nextInt(20) == 0) {
+   public void collideWithEntity(Entity var1) {
+      if (var1 instanceof Class1008 && !(var1 instanceof Class1081) && this.getRNG().nextInt(20) == 0) {
          this.method4233((LivingEntity)var1);
       }
 
-      super.method3128(var1);
+      super.collideWithEntity(var1);
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
+   public void livingEntity() {
+      super.livingEntity();
       if (this.field5850 > 0) {
          this.field5850--;
       }
@@ -89,18 +89,18 @@ public class Class1058 extends Class1056 implements IAngerable {
          this.field5851--;
       }
 
-      if (method3234(this.getVec()) > 2.5000003E-7F && this.rand.nextInt(5) == 0) {
+      if (horizontalMag(this.getMotion()) > 2.5000003E-7F && this.rand.nextInt(5) == 0) {
          int var3 = MathHelper.floor(this.getPosX());
          int var4 = MathHelper.floor(this.getPosY() - 0.2F);
          int var5 = MathHelper.floor(this.getPosZ());
          BlockState var6 = this.world.getBlockState(new BlockPos(var3, var4, var5));
          if (!var6.isAir()) {
             this.world
-               .method6746(
-                  new Class7439(ParticleTypes.field34051, var6),
-                  this.getPosX() + ((double)this.rand.nextFloat() - 0.5) * (double)this.method3429(),
+               .addParticle(
+                  new BlockParticleData(ParticleTypes.field34051, var6),
+                  this.getPosX() + ((double)this.rand.nextFloat() - 0.5) * (double)this.getWidth(),
                   this.getPosY() + 0.1,
-                  this.getPosZ() + ((double)this.rand.nextFloat() - 0.5) * (double)this.method3429(),
+                  this.getPosZ() + ((double)this.rand.nextFloat() - 0.5) * (double)this.getWidth(),
                   4.0 * ((double)this.rand.nextFloat() - 0.5),
                   0.5,
                   ((double)this.rand.nextFloat() - 0.5) * 4.0
@@ -114,24 +114,24 @@ public class Class1058 extends Class1056 implements IAngerable {
    }
 
    @Override
-   public boolean method2996(EntityType<?> var1) {
+   public boolean canAttack(EntityType<?> var1) {
       if (this.method4869() && var1 == EntityType.PLAYER) {
          return false;
       } else {
-         return var1 != EntityType.field41017 ? super.method2996(var1) : false;
+         return var1 != EntityType.field41017 ? super.canAttack(var1) : false;
       }
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("PlayerCreated", this.method4869());
       this.method4364(var1);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method4870(var1.getBoolean("PlayerCreated"));
       this.method4365((ServerWorld)this.world, var1);
    }
@@ -162,31 +162,31 @@ public class Class1058 extends Class1056 implements IAngerable {
    }
 
    private float method4864() {
-      return (float)this.method3086(Attributes.field42110);
+      return (float)this.getAttributeValue(Attributes.field42110);
    }
 
    @Override
-   public boolean method3114(Entity var1) {
+   public boolean attackEntityAsMob(Entity var1) {
       this.field5850 = 10;
-      this.world.method6786(this, (byte)4);
+      this.world.setEntityState(this, (byte)4);
       float var4 = this.method4864();
       float var5 = (int)var4 <= 0 ? var4 : var4 / 2.0F + (float)this.rand.nextInt((int)var4);
-      boolean var6 = var1.method2741(DamageSource.method31115(this), var5);
+      boolean var6 = var1.attackEntityFrom(DamageSource.method31115(this), var5);
       if (var6) {
-         var1.method3434(var1.getVec().method11339(0.0, 0.4F, 0.0));
-         this.method3399(this, var1);
+         var1.setMotion(var1.getMotion().add(0.0, 0.4F, 0.0));
+         this.applyEnchantments(this, var1);
       }
 
-      this.method2863(SoundEvents.field26700, 1.0F, 1.0F);
+      this.playSound(SoundEvents.field26700, 1.0F, 1.0F);
       return var6;
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       Class2286 var5 = this.method4865();
-      boolean var6 = super.method2741(var1, var2);
+      boolean var6 = super.attackEntityFrom(var1, var2);
       if (var6 && this.method4865() != var5) {
-         this.method2863(SoundEvents.field26701, 1.0F, 1.0F);
+         this.playSound(SoundEvents.field26701, 1.0F, 1.0F);
       }
 
       return var6;
@@ -197,11 +197,11 @@ public class Class1058 extends Class1056 implements IAngerable {
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 4) {
          if (var1 != 11) {
             if (var1 != 34) {
-               super.method2866(var1);
+               super.handleStatusUpdate(var1);
             } else {
                this.field5851 = 0;
             }
@@ -210,7 +210,7 @@ public class Class1058 extends Class1056 implements IAngerable {
          }
       } else {
          this.field5850 = 10;
-         this.method2863(SoundEvents.field26700, 1.0F, 1.0F);
+         this.playSound(SoundEvents.field26700, 1.0F, 1.0F);
       }
    }
 
@@ -221,10 +221,10 @@ public class Class1058 extends Class1056 implements IAngerable {
    public void method4867(boolean var1) {
       if (!var1) {
          this.field5851 = 0;
-         this.world.method6786(this, (byte)34);
+         this.world.setEntityState(this, (byte)34);
       } else {
          this.field5851 = 400;
-         this.world.method6786(this, (byte)11);
+         this.world.setEntityState(this, (byte)11);
       }
    }
 
@@ -244,10 +244,10 @@ public class Class1058 extends Class1056 implements IAngerable {
       Item var6 = var5.getItem();
       if (var6 == Items.field37801) {
          float var7 = this.getHealth();
-         this.method3041(25.0F);
+         this.heal(25.0F);
          if (this.getHealth() != var7) {
             float var8 = 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F;
-            this.method2863(SoundEvents.field26704, 1.0F, var8);
+            this.playSound(SoundEvents.field26704, 1.0F, var8);
             if (!var1.abilities.isCreativeMode) {
                var5.method32182(1);
             }
@@ -262,8 +262,8 @@ public class Class1058 extends Class1056 implements IAngerable {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(SoundEvents.field26705, 1.0F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(SoundEvents.field26705, 1.0F, 1.0F);
    }
 
    public int method4868() {
@@ -284,8 +284,8 @@ public class Class1058 extends Class1056 implements IAngerable {
    }
 
    @Override
-   public void method2737(DamageSource var1) {
-      super.method2737(var1);
+   public void onDeath(DamageSource var1) {
+      super.onDeath(var1);
    }
 
    @Override
@@ -304,12 +304,12 @@ public class Class1058 extends Class1056 implements IAngerable {
             }
          }
 
-         return Class8170.method28428(var1, var4, var1.getBlockState(var4), Class9479.field44064.method25049(), EntityType.field41041) && var1.method7050(this);
+         return Class8170.method28428(var1, var4, var1.getBlockState(var4), Class9479.field44064.method25049(), EntityType.field41041) && var1.checkNoEntityCollision(this);
       }
    }
 
    @Override
-   public Vector3d method3394() {
-      return new Vector3d(0.0, (double)(0.875F * this.method3393()), (double)(this.method3429() * 0.4F));
+   public Vector3d func_241205_ce_() {
+      return new Vector3d(0.0, (double)(0.875F * this.getEyeHeight()), (double)(this.getWidth() * 0.4F));
    }
 }

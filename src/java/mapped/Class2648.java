@@ -11,6 +11,6 @@ public class Class2648 extends Class2647 {
 
    @Override
    public double method10859(LivingEntity var1) {
-      return (double)(4.0F + var1.method3429());
+      return (double)(4.0F + var1.getWidth());
    }
 }

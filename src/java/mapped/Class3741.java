@@ -33,6 +33,6 @@ public class Class3741<E extends LivingEntity> extends Class3676<E> {
    }
 
    private Entity method12700(E var1) {
-      return var1.method2992().<Entity>method21410(Class8830.field39830).get();
+      return var1.getBrain().<Entity>method21410(Class8830.field39830).get();
    }
 }

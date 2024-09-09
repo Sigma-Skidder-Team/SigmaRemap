@@ -36,7 +36,7 @@ public class Class130 extends Class128 {
    public ItemStack method371(ItemStack var1, LootContext var2) {
       Entity var5 = var2.<Entity>method26081(Class9525.field44333);
       if (var5 instanceof LivingEntity) {
-         int var6 = Class7858.method26330((LivingEntity)var5);
+         int var6 = EnchantmentHelper.method26330((LivingEntity)var5);
          if (var6 == 0) {
             return var1;
          }

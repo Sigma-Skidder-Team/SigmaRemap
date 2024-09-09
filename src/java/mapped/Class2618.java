@@ -46,7 +46,7 @@ public class Class2618 extends Class2595 {
    @Override
    public void method10804() {
       this.field16894.method4385(true);
-      this.field16898 = 40 + this.field16894.method3013().nextInt(40);
+      this.field16898 = 40 + this.field16894.getRNG().nextInt(40);
    }
 
    @Override
@@ -59,7 +59,7 @@ public class Class2618 extends Class2595 {
    public void method10805() {
       this.field16894
          .method4227()
-         .method28042(this.field16895.getPosX(), this.field16895.method3442(), this.field16895.getPosZ(), 10.0F, (float)this.field16894.method4259());
+         .method28042(this.field16895.getPosX(), this.field16895.getPosYEye(), this.field16895.getPosZ(), 10.0F, (float)this.field16894.method4259());
       this.field16898--;
    }
 

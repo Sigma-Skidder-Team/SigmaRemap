@@ -17,7 +17,7 @@ public class Class4767 extends Class4750<JsonElement> {
       try {
          return Class9610.method37359().parse(var4);
       } catch (JsonSyntaxException var6) {
-         Class8042.method27613().method27366().severe("Error when trying to parse json: " + var4);
+         ViaVersion3.method27613().method27366().severe("Error when trying to parse json: " + var4);
          throw var6;
       }
    }

@@ -43,7 +43,7 @@ public class Class3243 extends Class3241 {
                var20 = (double)(var4.nextFloat() * 2.0F * (float)var22);
             }
 
-            var2.method6746(ParticleTypes.field34090, var10, var12, var14, var16, var18, var20);
+            var2.addParticle(ParticleTypes.field34090, var10, var12, var14, var16, var18, var20);
          }
       }
    }

@@ -27,7 +27,7 @@ public class Class5132 implements Class5119 {
 
    @Override
    public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
-      long var11 = this.field23327.world.method6783();
+      long var11 = this.field23327.world.getGameTime();
       short var13 = 200;
       double var14 = 0.0025;
       Set var16 = Sets.newHashSet();
@@ -47,9 +47,9 @@ public class Class5132 implements Class5119 {
                if (var16.add(var27)) {
                   AxisAlignedBB var29 = new AxisAlignedBB(BlockPos.ZERO)
                      .method19664(0.002)
-                     .method19679(0.0025 * (double)var23)
-                     .method19667((double)var27.getX(), (double)var27.getY(), (double)var27.getZ())
-                     .method19667(-var3, -var5, -var7);
+                     .shrink(0.0025 * (double)var23)
+                     .offset((double)var27.getX(), (double)var27.getY(), (double)var27.getZ())
+                     .offset(-var3, -var5, -var7);
                   WorldRenderer.method898(
                      var1,
                      var18,

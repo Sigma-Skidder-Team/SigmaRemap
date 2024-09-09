@@ -19,11 +19,11 @@ public class Class3340 extends Item {
    }
 
    @Override
-   public ActionResultType method11707(Class5911 var1) {
+   public ActionResultType method11707(ItemUseContext var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       BlockState var6 = var4.getBlockState(var5);
-      if (!var6.method23448(Blocks.field36527) && !var6.method23448(Blocks.BEDROCK)) {
+      if (!var6.isIn(Blocks.field36527) && !var6.isIn(Blocks.BEDROCK)) {
          return ActionResultType.FAIL;
       } else {
          BlockPos var7 = var5.up();
@@ -36,7 +36,7 @@ public class Class3340 extends Item {
                if (var4 instanceof ServerWorld) {
                   EnderCrystalEntity var15 = new EnderCrystalEntity(var4, var8 + 0.5, var10, var12 + 0.5);
                   var15.method4144(false);
-                  var4.method6916(var15);
+                  var4.addEntity(var15);
                   Class7819 var16 = ((ServerWorld)var4).method6968();
                   if (var16 != null) {
                      var16.method26128();

@@ -22,7 +22,7 @@ import java.util.function.Predicate;
 
 public class Class1027 extends Class1026 implements Class1022 {
    private static final UUID field5718 = UUID.fromString("5CD17E52-A79A-43D3-A529-90FDE04B181E");
-   private static final Class9689 field5719 = new Class9689(field5718, "Drinking speed penalty", -0.25, AttributeModifierOperation.ADDITION);
+   private static final AttributeModifier field5719 = new AttributeModifier(field5718, "Drinking speed penalty", -0.25, AttributeModifierOperation.ADDITION);
    private static final DataParameter<Boolean> field5720 = EntityDataManager.<Boolean>createKey(Class1027.class, DataSerializers.field33398);
    private int field5721;
    private Class2712<Class1026> field5722;
@@ -52,7 +52,7 @@ public class Class1027 extends Class1026 implements Class1022 {
    @Override
    public void registerData() {
       super.registerData();
-      this.method3210().register(field5720, false);
+      this.getDataManager().register(field5720, false);
    }
 
    @Override
@@ -71,11 +71,11 @@ public class Class1027 extends Class1026 implements Class1022 {
    }
 
    public void method4567(boolean var1) {
-      this.method3210().method35446(field5720, var1);
+      this.getDataManager().method35446(field5720, var1);
    }
 
    public boolean method4568() {
-      return this.method3210().<Boolean>method35445(field5720);
+      return this.getDataManager().<Boolean>method35445(field5720);
    }
 
    public static Class7037 method4569() {
@@ -83,7 +83,7 @@ public class Class1027 extends Class1026 implements Class1022 {
    }
 
    @Override
-   public void method2871() {
+   public void livingEntity() {
       if (!this.world.isRemote && this.isAlive()) {
          this.field5722.method10927();
          if (this.field5722.method10926() > 0) {
@@ -94,26 +94,26 @@ public class Class1027 extends Class1026 implements Class1022 {
 
          if (!this.method4568()) {
             Class8812 var7 = null;
-            if (this.rand.nextFloat() < 0.15F && this.method3263(Class8953.field40469) && !this.method3033(Effects.WATER_BREATHING)) {
+            if (this.rand.nextFloat() < 0.15F && this.areEyesInFluid(FluidTags.field40469) && !this.isPotionActive(Effects.WATER_BREATHING)) {
                var7 = Class8137.field34999;
             } else if (this.rand.nextFloat() < 0.15F
-               && (this.method3327() || this.method3047() != null && this.method3047().method31141())
-               && !this.method3033(Effects.FIRE_RESISTANCE)) {
+               && (this.isBurning() || this.getLastDamageSource() != null && this.getLastDamageSource().method31141())
+               && !this.isPotionActive(Effects.FIRE_RESISTANCE)) {
                var7 = Class8137.field34988;
             } else if (this.rand.nextFloat() < 0.05F && this.getHealth() < this.method3075()) {
                var7 = Class8137.field35001;
             } else if (this.rand.nextFloat() < 0.5F
                && this.method4232() != null
-               && !this.method3033(Effects.SPEED)
+               && !this.isPotionActive(Effects.SPEED)
                && this.method4232().getDistanceSq(this) > 121.0) {
                var7 = Class8137.field34990;
             }
 
             if (var7 != null) {
-               this.method2944(Class2106.field13731, Class9741.method38187(new ItemStack(Items.field37971), var7));
+               this.setItemStackToSlot(EquipmentSlotType.field13731, Class9741.method38187(new ItemStack(Items.field37971), var7));
                this.field5721 = this.getHeldItemMainhand().method32137();
                this.method4567(true);
-               if (!this.method3245()) {
+               if (!this.isSilent()) {
                   this.world
                      .method6743(
                         (PlayerEntity)null,
@@ -127,32 +127,32 @@ public class Class1027 extends Class1026 implements Class1022 {
                      );
                }
 
-               Class9805 var8 = this.method3085(Attributes.MOVEMENT_SPEED);
+               ModifiableAttributeInstance var8 = this.getAttribute(Attributes.MOVEMENT_SPEED);
                var8.method38670(field5719);
                var8.method38667(field5719);
             }
          } else if (this.field5721-- <= 0) {
             this.method4567(false);
             ItemStack var3 = this.getHeldItemMainhand();
-            this.method2944(Class2106.field13731, ItemStack.EMPTY);
+            this.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
             if (var3.getItem() == Items.field37971) {
-               List<Class2023> var4 = Class9741.method38176(var3);
+               List<EffectInstance> var4 = Class9741.method38176(var3);
                if (var4 != null) {
-                  for (Class2023 var6 : var4) {
-                     this.method3035(new Class2023(var6));
+                  for (EffectInstance var6 : var4) {
+                     this.addPotionEffect(new EffectInstance(var6));
                   }
                }
             }
 
-            this.method3085(Attributes.MOVEMENT_SPEED).method38670(field5719);
+            this.getAttribute(Attributes.MOVEMENT_SPEED).method38670(field5719);
          }
 
          if (this.rand.nextFloat() < 7.5E-4F) {
-            this.world.method6786(this, (byte)15);
+            this.world.setEntityState(this, (byte)15);
          }
       }
 
-      super.method2871();
+      super.livingEntity();
    }
 
    @Override
@@ -161,13 +161,13 @@ public class Class1027 extends Class1026 implements Class1022 {
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 15) {
-         super.method2866(var1);
+         super.handleStatusUpdate(var1);
       } else {
          for (int var4 = 0; var4 < this.rand.nextInt(35) + 10; var4++) {
             this.world
-               .method6746(
+               .addParticle(
                   ParticleTypes.field34100,
                   this.getPosX() + this.rand.nextGaussian() * 0.13F,
                   this.getBoundingBox().maxY + 0.5 + this.rand.nextGaussian() * 0.13F,
@@ -181,9 +181,9 @@ public class Class1027 extends Class1026 implements Class1022 {
    }
 
    @Override
-   public float method3072(DamageSource var1, float var2) {
-      var2 = super.method3072(var1, var2);
-      if (var1.method31109() == this) {
+   public float applyPotionDamageCalculations(DamageSource var1, float var2) {
+      var2 = super.applyPotionDamageCalculations(var1, var2);
+      if (var1.getTrueSource() == this) {
          var2 = 0.0F;
       }
 
@@ -197,18 +197,18 @@ public class Class1027 extends Class1026 implements Class1022 {
    @Override
    public void method4530(LivingEntity var1, float var2) {
       if (!this.method4568()) {
-         Vector3d var5 = var1.getVec();
+         Vector3d var5 = var1.getMotion();
          double var6 = var1.getPosX() + var5.x - this.getPosX();
-         double var8 = var1.method3442() - 1.1F - this.getPosY();
+         double var8 = var1.getPosYEye() - 1.1F - this.getPosY();
          double var10 = var1.getPosZ() + var5.z - this.getPosZ();
-         float var12 = MathHelper.method37766(var6 * var6 + var10 * var10);
+         float var12 = MathHelper.sqrt(var6 * var6 + var10 * var10);
          Class8812 var13 = Class8137.field35003;
          if (!(var1 instanceof Class1026)) {
-            if (var12 >= 8.0F && !var1.method3033(Effects.SLOWNESS)) {
+            if (var12 >= 8.0F && !var1.isPotionActive(Effects.SLOWNESS)) {
                var13 = Class8137.field34993;
-            } else if (var1.getHealth() >= 8.0F && !var1.method3033(Effects.POISON)) {
+            } else if (var1.getHealth() >= 8.0F && !var1.isPotionActive(Effects.POISON)) {
                var13 = Class8137.field35005;
-            } else if (var12 <= 3.0F && !var1.method3033(Effects.WEAKNESS) && this.rand.nextFloat() < 0.25F) {
+            } else if (var12 <= 3.0F && !var1.isPotionActive(Effects.WEAKNESS) && this.rand.nextFloat() < 0.25F) {
                var13 = Class8137.field35014;
             }
          } else {
@@ -225,7 +225,7 @@ public class Class1027 extends Class1026 implements Class1022 {
          var14.method3511(Class9741.method38187(new ItemStack(Items.field38115), var13));
          var14.rotationPitch -= -20.0F;
          var14.shoot(var6, var8 + (double)(var12 * 0.2F), var10, 0.75F, 8.0F);
-         if (!this.method3245()) {
+         if (!this.isSilent()) {
             this.world
                .method6743(
                   (PlayerEntity)null,
@@ -239,12 +239,12 @@ public class Class1027 extends Class1026 implements Class1022 {
                );
          }
 
-         this.world.method6916(var14);
+         this.world.addEntity(var14);
       }
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return 1.62F;
    }
 

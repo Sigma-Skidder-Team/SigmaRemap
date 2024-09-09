@@ -6,7 +6,7 @@ import it.unimi.dsi.fastutil.ints.IntListIterator;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 
-public class Class1261<C extends Class920> extends Class1260<C> {
+public class Class1261<C extends IInventory> extends Class1260<C> {
    private static String[] field6662;
    private boolean field6663;
 
@@ -19,7 +19,7 @@ public class Class1261<C extends Class920> extends Class1260<C> {
       this.field6663 = this.field6661.method18222(var1);
       int var5 = this.field6659.method19125(var1, (IntList)null);
       if (this.field6663) {
-         ItemStack var6 = this.field6661.method18131(0).method18265();
+         ItemStack var6 = this.field6661.getSlot(0).getStack();
          if (var6.isEmpty() || var5 <= var6.getCount()) {
             return;
          }
@@ -45,12 +45,12 @@ public class Class1261<C extends Class920> extends Class1260<C> {
 
    public void method5876(int var1, IntList var2) {
       IntListIterator var5 = var2.iterator();
-      Class5839 var6 = this.field6661.method18131(0);
+      Slot var6 = this.field6661.getSlot(0);
       ItemStack var7 = Class6207.method19127((Integer)var5.next());
       if (!var7.isEmpty()) {
          int var8 = Math.min(var7.method32113(), var1);
          if (this.field6663) {
-            var8 -= var6.method18265().getCount();
+            var8 -= var6.getStack().getCount();
          }
 
          for (int var9 = 0; var9 < var8; var9++) {

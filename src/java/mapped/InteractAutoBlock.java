@@ -50,8 +50,8 @@ public class InteractAutoBlock {
          if (var6 != null) {
             this.field44347
                .getConnection()
-               .sendPacket(new CUseEntityPacket(var6.getEntity(), Hand.MAIN_HAND, var6.method31419(), this.field44347.player.method3331()));
-            this.field44347.getConnection().sendPacket(new CUseEntityPacket(var6.getEntity(), Hand.MAIN_HAND, this.field44347.player.method3331()));
+               .sendPacket(new CUseEntityPacket(var6.getEntity(), Hand.MAIN_HAND, var6.method31419(), this.field44347.player.isSneaking()));
+            this.field44347.getConnection().sendPacket(new CUseEntityPacket(var6.getEntity(), Hand.MAIN_HAND, this.field44347.player.isSneaking()));
          }
       }
 
@@ -99,7 +99,7 @@ public class InteractAutoBlock {
 
       if (this.field44347.player.method2973() > 1.26F && this.parent.getBooleanValueFromSetttingName("Cooldown")) {
          int var11 = !var5 ? 1 : 2;
-         float var12 = this.field44347.player.method2973() - (float)this.field44347.player.field4958 - (float)var11;
+         float var12 = this.field44347.player.method2973() - (float)this.field44347.player.ticksSinceLastSwing - (float)var11;
          return var12 <= 0.0F && var12 > -1.0F;
       } else if (var4 != 2) {
          if (var4 < 2) {
@@ -170,7 +170,7 @@ public class InteractAutoBlock {
             var24.remove();
          } else if (((LivingEntity)var9).getHealth() == 0.0F) {
             var24.remove();
-         } else if (!this.field44347.player.method3026((LivingEntity)var9)) {
+         } else if (!this.field44347.player.canAttack((LivingEntity)var9)) {
             var24.remove();
          } else if (var9 instanceof ArmorStandEntity) {
             var24.remove();
@@ -178,7 +178,7 @@ public class InteractAutoBlock {
             var24.remove();
          } else if (var9 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var9)) {
             var24.remove();
-         } else if (!this.parent.getBooleanValueFromSetttingName("Invisible") && var9.method3342()) {
+         } else if (!this.parent.getBooleanValueFromSetttingName("Invisible") && var9.isInvisible()) {
             var24.remove();
          } else if (!this.parent.getBooleanValueFromSetttingName("Animals") && (var9 instanceof Class1018 || var9 instanceof Class1042)) {
             var24.remove();
@@ -192,7 +192,7 @@ public class InteractAutoBlock {
             || !Class8781.method31662((PlayerEntity)var9)
             || !Client.getInstance().getModuleManager().getModuleByClass(Teams.class).isEnabled()) {
             Vector3d var10 = ColorUtils.method17751(var9);
-            if (!(this.field44347.player.method3275(var9) < 40.0F)) {
+            if (!(this.field44347.player.getDistance(var9) < 40.0F)) {
                if (this.field44349.containsKey(var9)) {
                   this.field44349.remove(var9);
                }
@@ -243,7 +243,7 @@ public class InteractAutoBlock {
                if (var26 && ColorUtils.method17754(var10) > (double)var1) {
                   var24.remove();
                } else if (!this.parent.getBooleanValueFromSetttingName("Through walls")) {
-                  Class7461 var28 = Class9142.method34150(var9, true);
+                  Class7461 var28 = RotationHelper.method34150(var9, true);
                   if (var28 == null) {
                      var24.remove();
                   }

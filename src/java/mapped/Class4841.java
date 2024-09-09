@@ -15,8 +15,8 @@ public class Class4841 extends Class4837 {
       ItemStack var5 = ItemStack.EMPTY;
       ItemStack var6 = ItemStack.EMPTY;
 
-      for (int var7 = 0; var7 < var1.method3629(); var7++) {
-         ItemStack var8 = var1.method3618(var7);
+      for (int var7 = 0; var7 < var1.getSizeInventory(); var7++) {
+         ItemStack var8 = var1.getStackInSlot(var7);
          if (!var8.isEmpty()) {
             if (!(var8.getItem() instanceof Class3301)) {
                if (var8.getItem() != Items.field38119) {
@@ -49,8 +49,8 @@ public class Class4841 extends Class4837 {
       ItemStack var4 = ItemStack.EMPTY;
       ItemStack var5 = ItemStack.EMPTY;
 
-      for (int var6 = 0; var6 < var1.method3629(); var6++) {
-         ItemStack var7 = var1.method3618(var6);
+      for (int var6 = 0; var6 < var1.getSizeInventory(); var6++) {
+         ItemStack var7 = var1.getStackInSlot(var6);
          if (!var7.isEmpty()) {
             if (!(var7.getItem() instanceof Class3301)) {
                if (var7.getItem() == Items.field38119) {
@@ -65,7 +65,7 @@ public class Class4841 extends Class4837 {
       if (!var5.isEmpty()) {
          CompoundNBT var8 = var4.method32145("BlockEntityTag");
          CompoundNBT var9 = var8 != null ? var8.method79() : new CompoundNBT();
-         var9.method102("Base", ((Class3301)var4.getItem()).method11849().method309());
+         var9.putInt("Base", ((Class3301)var4.getItem()).method11849().method309());
          var5.setTagInfo("BlockEntityTag", var9);
          return var5;
       } else {

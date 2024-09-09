@@ -118,7 +118,7 @@ public class Class3206 extends Class3198 implements Class3207 {
       BlockState var4 = this.method11579();
       FluidState var5 = var1.method18360().getFluidState(var1.method18345());
       Direction var6 = var1.method18354();
-      if (!var1.method18347() && var6.method544().method324()) {
+      if (!var1.method18347() && var6.getAxis().method324()) {
          var4 = var4.method23465(field18484, var6)
             .method23465(field18595, !(var1.method18355().y - (double)var1.method18345().getY() > 0.5) ? Class99.field271 : Class99.field270);
       } else {

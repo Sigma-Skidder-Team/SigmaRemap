@@ -25,7 +25,7 @@ public class Class3470 extends Class3468 {
          return 0;
       } else {
          float var6 = (float)Math.min(this.field19321, var5) / (float)this.field19321;
-         return MathHelper.method37773(var6 * 15.0F);
+         return MathHelper.ceil(var6 * 15.0F);
       }
    }
 

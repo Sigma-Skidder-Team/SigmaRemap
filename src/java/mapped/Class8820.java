@@ -1,7 +1,5 @@
 package mapped;
 
-import net.minecraft.util.Direction;
-
 public class Class8820 {
    public static final Class8551 field39682 = Class8551.method30480("attached");
    public static final Class8551 field39683 = Class8551.method30480("bottom");
@@ -33,8 +31,8 @@ public class Class8820 {
    public static final Class8551 field39709 = Class8551.method30480("unstable");
    public static final Class8551 field39710 = Class8551.method30480("waterlogged");
    public static final Class8551 field39711 = Class8551.method30480("vine_end");
-   public static final Class8552<Class113> field39712 = Class8552.<Class113>method30483("axis", Class113.class, Class113.field413, Class113.field415);
-   public static final Class8552<Class113> field39713 = Class8552.<Class113>method30481("axis", Class113.class);
+   public static final Class8552<Direction> field39712 = Class8552.<Direction>method30483("axis", Direction.class, Direction.field413, Direction.field415);
+   public static final Class8552<Direction> field39713 = Class8552.<Direction>method30481("axis", Direction.class);
    public static final Class8551 field39714 = Class8551.method30480("up");
    public static final Class8551 field39715 = Class8551.method30480("down");
    public static final Class8551 field39716 = Class8551.method30480("north");
@@ -42,9 +40,9 @@ public class Class8820 {
    public static final Class8551 field39718 = Class8551.method30480("south");
    public static final Class8551 field39719 = Class8551.method30480("west");
    public static final Class8553 field39720 = Class8553.method30486(
-      "facing", Direction.NORTH, Direction.EAST, Direction.SOUTH, Direction.WEST, Direction.field673, Direction.DOWN
+      "facing", net.minecraft.util.Direction.NORTH, net.minecraft.util.Direction.EAST, net.minecraft.util.Direction.SOUTH, net.minecraft.util.Direction.WEST, net.minecraft.util.Direction.field673, net.minecraft.util.Direction.DOWN
    );
-   public static final Class8553 field39721 = Class8553.method30485("facing", var0 -> var0 != Direction.field673);
+   public static final Class8553 field39721 = Class8553.method30485("facing", var0 -> var0 != net.minecraft.util.Direction.field673);
    public static final Class8553 field39722 = Class8553.method30485("facing", Class76.field161);
    public static final Class8552<Class182> field39723 = Class8552.<Class182>method30481("orientation", Class182.class);
    public static final Class8552<Class103> field39724 = Class8552.<Class103>method30481("face", Class103.class);

@@ -46,7 +46,7 @@ public class MathHelper {
       return (float)Math.sqrt((double)var0);
    }
 
-   public static float method37766(double var0) {
+   public static float sqrt(double var0) {
       return (float)Math.sqrt(var0);
    }
 
@@ -77,7 +77,7 @@ public class MathHelper {
       return Math.abs(var0);
    }
 
-   public static int method37773(float var0) {
+   public static int ceil(float var0) {
       int var3 = (int)var0;
       return !(var0 > (float)var3) ? var3 : var3 + 1;
    }
@@ -111,7 +111,7 @@ public class MathHelper {
       }
    }
 
-   public static double method37778(double var0, double var2, double var4) {
+   public static double clamp(double var0, double var2, double var4) {
       if (!(var0 < var2)) {
          return !(var0 > var4) ? var0 : var4;
       } else {
@@ -127,7 +127,7 @@ public class MathHelper {
       }
    }
 
-   public static double method37780(double var0, double var2) {
+   public static double absMax(double var0, double var2) {
       if (var0 < 0.0) {
          var0 = -var0;
       }
@@ -211,7 +211,7 @@ public class MathHelper {
       return var3;
    }
 
-   public static double method37793(double var0) {
+   public static double wrapDegrees(double var0) {
       double var4 = var0 % 360.0;
       if (var4 >= 180.0) {
          var4 -= 360.0;

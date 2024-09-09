@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
-import mapped.Class2106;
+import mapped.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
@@ -14,13 +14,13 @@ import java.util.List;
 public class SEntityEquipmentPacket implements Packet<IClientPlayNetHandler> {
    private static String[] field24793;
    private int field24794;
-   private final List<Pair<Class2106, ItemStack>> field24795;
+   private final List<Pair<EquipmentSlotType, ItemStack>> field24795;
 
    public SEntityEquipmentPacket() {
       this.field24795 = Lists.newArrayList();
    }
 
-   public SEntityEquipmentPacket(int var1, List<Pair<Class2106, ItemStack>> var2) {
+   public SEntityEquipmentPacket(int var1, List<Pair<EquipmentSlotType, ItemStack>> var2) {
       this.field24794 = var1;
       this.field24795 = var2;
    }
@@ -28,9 +28,9 @@ public class SEntityEquipmentPacket implements Packet<IClientPlayNetHandler> {
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24794 = var1.readVarInt();
-      Class2106[] var4 = Class2106.values();
+      EquipmentSlotType[] var4 = EquipmentSlotType.values();
       byte var5 = var1.readByte();
-      Class2106 var6 = var4[var5 & 127];
+      EquipmentSlotType var6 = var4[var5 & 127];
       ItemStack var7 = var1.readItemStack();
       this.field24795.add(Pair.of(var6, var7));
    }
@@ -42,7 +42,7 @@ public class SEntityEquipmentPacket implements Packet<IClientPlayNetHandler> {
 
       for (int var5 = 0; var5 < var4; var5++) {
          Pair var6 = this.field24795.get(var5);
-         Class2106 var7 = (Class2106)var6.getFirst();
+         EquipmentSlotType var7 = (EquipmentSlotType)var6.getFirst();
          boolean var8 = var5 != var4 - 1;
          int var9 = var7.ordinal();
          var1.writeByte(!var8 ? var9 : var9 | -128);
@@ -58,7 +58,7 @@ public class SEntityEquipmentPacket implements Packet<IClientPlayNetHandler> {
       return this.field24794;
    }
 
-   public List<Pair<Class2106, ItemStack>> method17562() {
+   public List<Pair<EquipmentSlotType, ItemStack>> method17562() {
       return this.field24795;
    }
 }

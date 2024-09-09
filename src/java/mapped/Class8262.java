@@ -40,13 +40,13 @@ public class Class8262 {
    }
 
    public void method28803() {
-      this.field35516 = this.field35511.method6783() + 1L + this.field35509.method15039();
+      this.field35516 = this.field35511.getGameTime() + 1L + this.field35509.method15039();
       this.field35519.start();
    }
 
    public void method28804() {
       if (!this.method28812()) {
-         this.field35517 = this.field35511.method6783() - this.field35516;
+         this.field35517 = this.field35511.getGameTime() - this.field35516;
          if (this.field35517 >= 0L) {
             if (this.field35517 == 0L) {
                this.method28805();

@@ -9,14 +9,14 @@ import java.util.function.Predicate;
 public class Class6806<T> implements Class6802<T> {
    private static String[] field29627;
    public final Predicate<T> field29628;
-   private final Class7481 field29629;
+   private final ChunkPos field29629;
    private final ShortList[] field29630 = new ShortList[16];
 
-   public Class6806(Predicate<T> var1, Class7481 var2) {
+   public Class6806(Predicate<T> var1, ChunkPos var2) {
       this(var1, var2, new ListNBT());
    }
 
-   public Class6806(Predicate<T> var1, Class7481 var2, ListNBT var3) {
+   public Class6806(Predicate<T> var1, ChunkPos var2, ListNBT var3) {
       this.field29628 = var1;
       this.field29629 = var2;
 

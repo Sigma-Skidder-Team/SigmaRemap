@@ -12,8 +12,8 @@ public class Class4825 extends Class4747<Class8173, Class6047> {
    }
 
    public Class8173 method14893(ByteBuf var1, Class6047 var2) throws Exception {
-      boolean var5 = var2.method18672().method22465().method18683().method19390(Class6362.class) && Class8042.method27612().method21911();
-      int var6 = Class8042.method27612().method21912();
+      boolean var5 = var2.method18672().method22465().method18683().method19390(Class6362.class) && ViaVersion3.method27612().method21911();
+      int var6 = ViaVersion3.method27612().method21912();
       int var7 = var1.readInt();
       int var8 = var1.readInt();
       boolean var9 = var1.readBoolean();

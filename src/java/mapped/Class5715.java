@@ -31,15 +31,15 @@ public abstract class Class5715<T extends Entity> {
    }
 
    public int method17858(T var1, BlockPos var2) {
-      return !var1.method3327() ? var1.world.method7020(Class1977.field12882, var2) : 15;
+      return !var1.isBurning() ? var1.world.method7020(Class1977.field12882, var2) : 15;
    }
 
    public boolean method17854(T var1, Class7647 var2, double var3, double var5, double var7) {
-      if (var1.method3290(var3, var5, var7)) {
+      if (var1.isInRangeToRender3d(var3, var5, var7)) {
          if (var1.ignoreFrustumCheck) {
             return true;
          } else {
-            AxisAlignedBB var11 = var1.method3186().method19664(0.5);
+            AxisAlignedBB var11 = var1.getRenderBoundingBox().method19664(0.5);
             if (var11.method19684() || var11.getAverageEdgeLength() == 0.0) {
                var11 = new AxisAlignedBB(
                   var1.getPosX() - 2.0,
@@ -77,7 +77,7 @@ public abstract class Class5715<T extends Entity> {
    }
 
    public boolean method17852(T var1) {
-      return var1.method2939() && var1.method3381();
+      return var1.getAlwaysRenderNameTagForRender() && var1.method3381();
    }
 
    public abstract ResourceLocation method17843(T var1);
@@ -94,8 +94,8 @@ public abstract class Class5715<T extends Entity> {
       }
 
       if (var10) {
-         boolean var11 = !var1.method3334();
-         float var12 = var1.method3430() + 0.5F;
+         boolean var11 = !var1.isDiscrete();
+         float var12 = var1.getHeight() + 0.5F;
          int var13 = !"deadmau5".equals(var2.getString()) ? 0 : -10;
          var3.push();
          var3.translate(0.0, (double)var12, 0.0);

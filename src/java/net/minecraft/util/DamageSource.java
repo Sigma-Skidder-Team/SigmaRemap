@@ -45,11 +45,11 @@ public class DamageSource {
    public final String field39022;
 
    public static DamageSource method31114(LivingEntity var0) {
-      return new Class8652("sting", var0);
+      return new EntityDamageSource("sting", var0);
    }
 
    public static DamageSource method31115(LivingEntity var0) {
-      return new Class8652("mob", var0);
+      return new EntityDamageSource("mob", var0);
    }
 
    public static DamageSource method31116(Entity var0, LivingEntity var1) {
@@ -57,7 +57,7 @@ public class DamageSource {
    }
 
    public static DamageSource method31117(PlayerEntity var0) {
-      return new Class8652("player", var0);
+      return new EntityDamageSource("player", var0);
    }
 
    public static DamageSource method31118(AbstractArrowEntity var0, Entity var1) {
@@ -89,15 +89,15 @@ public class DamageSource {
    }
 
    public static DamageSource method31125(Entity var0) {
-      return new Class8652("thorns", var0).method31107().method31145();
+      return new EntityDamageSource("thorns", var0).method31107().method31145();
    }
 
-   public static DamageSource method31126(Class7782 var0) {
+   public static DamageSource method31126(Explosion var0) {
       return method31127(var0 == null ? null : var0.method25789());
    }
 
    public static DamageSource method31127(LivingEntity var0) {
-      return var0 == null ? new DamageSource("explosion").method31143().method31132() : new Class8652("explosion.player", var0).method31143().method31132();
+      return var0 == null ? new DamageSource("explosion").method31143().method31132() : new EntityDamageSource("explosion.player", var0).method31143().method31132();
    }
 
    public static DamageSource method31128() {
@@ -127,7 +127,7 @@ public class DamageSource {
       return this;
    }
 
-   public boolean method31133() {
+   public boolean isUnblockable() {
       return this.field39013;
    }
 
@@ -148,12 +148,12 @@ public class DamageSource {
    }
 
    @Nullable
-   public Entity method31113() {
-      return this.method31109();
+   public Entity getImmediateSource() {
+      return this.getTrueSource();
    }
 
    @Nullable
-   public Entity method31109() {
+   public Entity getTrueSource() {
       return null;
    }
 
@@ -180,7 +180,7 @@ public class DamageSource {
    }
 
    public ITextComponent method31110(LivingEntity var1) {
-      LivingEntity var4 = var1.method3074();
+      LivingEntity var4 = var1.getAttackingEntity();
       String var5 = "death.attack." + this.field39022;
       String var6 = var5 + ".player";
       return var4 == null ? new TranslationTextComponent(var5, var1.getDisplayName()) : new TranslationTextComponent(var6, var1.getDisplayName(), var4.getDisplayName());
@@ -213,7 +213,7 @@ public class DamageSource {
    }
 
    public boolean method31146() {
-      Entity var3 = this.method31109();
+      Entity var3 = this.getTrueSource();
       return var3 instanceof PlayerEntity && ((PlayerEntity)var3).abilities.isCreativeMode;
    }
 

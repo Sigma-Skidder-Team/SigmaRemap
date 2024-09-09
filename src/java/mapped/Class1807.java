@@ -54,7 +54,7 @@ public class Class1807 implements AutoCloseable {
             if (var8 != null) {
                var7.add(var7x);
                if (var8 != Class2054.field13380) {
-                  this.field9740.computeIfAbsent(MathHelper.method37773(((Class2052)var8).method8699(false)), var0 -> new IntArrayList()).add(var3);
+                  this.field9740.computeIfAbsent(MathHelper.ceil(((Class2052)var8).method8699(false)), var0 -> new IntArrayList()).add(var3);
                }
                break;
             }
@@ -142,7 +142,7 @@ public class Class1807 implements AutoCloseable {
    }
 
    public Class8978 method7926(Class2052 var1) {
-      IntList var4 = (IntList)this.field9740.get(MathHelper.method37773(var1.method8699(false)));
+      IntList var4 = (IntList)this.field9740.get(MathHelper.ceil(var1.method8699(false)));
       return var4 != null && !var4.isEmpty() ? this.method7924(var4.getInt(field9732.nextInt(var4.size()))) : this.field9735;
    }
 

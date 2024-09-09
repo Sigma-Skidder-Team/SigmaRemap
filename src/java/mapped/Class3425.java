@@ -62,32 +62,32 @@ public class Class3425 extends Block {
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      return !var2.method544().method324()
+      return !var2.getAxis().method324()
          ? super.method11491(var1, var2, var3, var4, var5, var6)
          : var1.method23465(field19170.get(var2), Boolean.valueOf(this.method12082(var3, var2)));
    }
 
    @Override
    public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var4.method23448(var1.getBlock())) {
+      if (!var4.isIn(var1.getBlock())) {
          this.method12080(var2, var3, var1);
       }
    }
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var5 && !var1.method23448(var4.getBlock())) {
+      if (!var5 && !var1.isIn(var4.getBlock())) {
          this.method12080(var2, var3, var1.method23465(field19163, Boolean.valueOf(true)));
       }
    }
 
    @Override
-   public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
+   public void onBlockHarvested(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
       if (!var1.isRemote && !var4.getHeldItemMainhand().isEmpty() && var4.getHeldItemMainhand().getItem() == Items.field37956) {
          var1.setBlockState(var2, var3.method23465(field19165, Boolean.valueOf(true)), 4);
       }
 
-      super.method11574(var1, var2, var3, var4);
+      super.onBlockHarvested(var1, var2, var3, var4);
    }
 
    private void method12080(World var1, BlockPos var2, BlockState var3) {
@@ -95,14 +95,14 @@ public class Class3425 extends Block {
          for (int var10 = 1; var10 < 42; var10++) {
             BlockPos var11 = var2.method8350(var9, var10);
             BlockState var12 = var1.getBlockState(var11);
-            if (var12.method23448(this.field19173)) {
+            if (var12.isIn(this.field19173)) {
                if (var12.<Direction>method23463(Class3459.field19281) == var9.method536()) {
                   this.field19173.method12134(var1, var11, var12, false, true, var10, var3);
                }
                break;
             }
 
-            if (!var12.method23448(this)) {
+            if (!var12.isIn(this)) {
                break;
             }
          }

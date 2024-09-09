@@ -14,7 +14,7 @@ import net.minecraft.util.text.TextFormatting;
 import javax.annotation.Nullable;
 import java.util.Set;
 
-public abstract class Class851<T extends Class5812> extends Screen implements Class867<T> {
+public abstract class Class851<T extends Container> extends Screen implements Class867<T> {
    public static final ResourceLocation field4720 = new ResourceLocation("textures/gui/container/inventory.png");
    public int field4721 = 176;
    public int field4722 = 166;
@@ -24,11 +24,11 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    public int field4726;
    public final T field4727;
    public final PlayerInventory field4728;
-   public Class5839 field4729;
-   private Class5839 field4730;
-   private Class5839 field4731;
-   private Class5839 field4732;
-   private Class5839 field4733;
+   public Slot field4729;
+   private Slot field4730;
+   private Slot field4731;
+   private Slot field4732;
+   private Slot field4733;
    public int field4734;
    public int field4735;
    private boolean field4736;
@@ -38,7 +38,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    private long field4740;
    private ItemStack field4741 = ItemStack.EMPTY;
    private long field4742;
-   public final Set<Class5839> field4743 = Sets.newHashSet();
+   public final Set<Slot> field4743 = Sets.newHashSet();
    public boolean field4744;
    private int field4745;
    private int field4746;
@@ -86,12 +86,12 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 
       for (int var11 = 0; var11 < this.field4727.field25468.size(); var11++) {
-         Class5839 var12 = this.field4727.field25468.get(var11);
-         if (var12.method18274()) {
+         Slot var12 = this.field4727.field25468.get(var11);
+         if (var12.isEnabled()) {
             this.method2619(var1, var12);
          }
 
-         if (this.method2624(var12, (double)var2, (double)var3) && var12.method18274()) {
+         if (this.method2624(var12, (double)var2, (double)var3) && var12.isEnabled()) {
             this.field4729 = var12;
             RenderSystem.disableDepthTest();
             int var13 = var12.field25580;
@@ -112,7 +112,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          String var15 = null;
          if (!this.field4737.isEmpty() && this.field4736) {
             var19 = var19.copy();
-            var19.method32180(MathHelper.method37773((float)var19.getCount() / 2.0F));
+            var19.method32180(MathHelper.ceil((float)var19.getCount() / 2.0F));
          } else if (this.field4744 && this.field4743.size() > 1) {
             var19 = var19.copy();
             var19.method32180(this.field4748);
@@ -143,8 +143,8 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    public void method2615(MatrixStack var1, int var2, int var3) {
-      if (this.mc.player.inventory.method4057().isEmpty() && this.field4729 != null && this.field4729.method18266()) {
-         this.method2457(var1, this.field4729.method18265(), var2, var3);
+      if (this.mc.player.inventory.method4057().isEmpty() && this.field4729 != null && this.field4729.getHasStack()) {
+         this.method2457(var1, this.field4729.getStack(), var2, var3);
       }
    }
 
@@ -165,10 +165,10 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
 
    public abstract void method2618(MatrixStack var1, float var2, int var3, int var4);
 
-   private void method2619(MatrixStack var1, Class5839 var2) {
+   private void method2619(MatrixStack var1, Slot var2) {
       int var5 = var2.field25580;
       int var6 = var2.field25581;
-      ItemStack var7 = var2.method18265();
+      ItemStack var7 = var2.getStack();
       boolean var8 = false;
       boolean var9 = var2 == this.field4730 && !this.field4737.isEmpty() && !this.field4736;
       ItemStack var10 = this.mc.player.inventory.method4057();
@@ -181,11 +181,11 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
             return;
          }
 
-         if (Class5812.method18148(var2, var10, true) && this.field4727.method18150(var2)) {
+         if (Container.canAddItemToSlot(var2, var10, true) && this.field4727.canDragIntoSlot(var2)) {
             var7 = var10.copy();
             var8 = true;
-            Class5812.method18149(this.field4743, this.field4745, var7, !var2.method18265().isEmpty() ? var2.method18265().getCount() : 0);
-            int var12 = Math.min(var7.method32113(), var2.method18270(var7));
+            Container.computeStackSize(this.field4743, this.field4745, var7, !var2.getStack().isEmpty() ? var2.getStack().getCount() : 0);
+            int var12 = Math.min(var7.method32113(), var2.getItemStackLimit(var7));
             if (var7.getCount() > var12) {
                var11 = TextFormatting.YELLOW.toString() + var12;
                var7.method32180(var12);
@@ -198,7 +198,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
 
       this.method5703(100);
       this.field4563.field847 = 100.0F;
-      if (var7.isEmpty() && var2.method18274()) {
+      if (var7.isEmpty() && var2.isEnabled()) {
          Pair var14 = var2.method18271();
          if (var14 != null) {
             TextureAtlasSprite var13 = this.mc.getAtlasSpriteGetter((ResourceLocation)var14.getFirst()).apply((ResourceLocation)var14.getSecond());
@@ -228,12 +228,12 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          if (this.field4745 != 2) {
             this.field4748 = var3.getCount();
 
-            for (Class5839 var5 : this.field4743) {
+            for (Slot var5 : this.field4743) {
                ItemStack var6 = var3.copy();
-               ItemStack var7 = var5.method18265();
+               ItemStack var7 = var5.getStack();
                int var8 = !var7.isEmpty() ? var7.getCount() : 0;
-               Class5812.method18149(this.field4743, this.field4745, var6, var8);
-               int var9 = Math.min(var6.method32113(), var5.method18270(var6));
+               Container.computeStackSize(this.field4743, this.field4745, var6, var8);
+               int var9 = Math.min(var6.method32113(), var5.getItemStackLimit(var6));
                if (var6.getCount() > var9) {
                   var6.method32180(var9);
                }
@@ -247,10 +247,10 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    }
 
    @Nullable
-   private Class5839 method2621(double var1, double var3) {
+   private Slot method2621(double var1, double var3) {
       for (int var7 = 0; var7 < this.field4727.field25468.size(); var7++) {
-         Class5839 var8 = this.field4727.field25468.get(var7);
-         if (this.method2624(var8, var1, var3) && var8.method18274()) {
+         Slot var8 = this.field4727.field25468.get(var7);
+         if (this.method2624(var8, var1, var3) && var8.isEnabled()) {
             return var8;
          }
       }
@@ -264,7 +264,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          return true;
       } else {
          boolean var8 = this.mc.gameSettings.keyBindPickBlock.matchesMouseKey(var5);
-         Class5839 var9 = this.method2621(var1, var3);
+         Slot var9 = this.method2621(var1, var3);
          long var10 = Util.milliTime();
          this.field4751 = this.field4733 == var9 && var10 - this.field4749 < 250L && this.field4750 == var5;
          this.field4747 = false;
@@ -321,7 +321,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                                  var17 = ClickType.field14698;
                               }
                            } else {
-                              this.field4752 = var9 != null && var9.method18266() ? var9.method18265().copy() : ItemStack.EMPTY;
+                              this.field4752 = var9 != null && var9.getHasStack() ? var9.getStack().copy() : ItemStack.EMPTY;
                               var17 = ClickType.field14695;
                            }
 
@@ -331,7 +331,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                         this.field4747 = true;
                      }
                   }
-               } else if (var9 != null && var9.method18266()) {
+               } else if (var9 != null && var9.getHasStack()) {
                   this.field4730 = var9;
                   this.field4737 = ItemStack.EMPTY;
                   this.field4736 = var5 == 1;
@@ -369,12 +369,12 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
 
    @Override
    public boolean mouseDragged(double var1, double var3, int var5, double var6, double var8) {
-      Class5839 var12 = this.method2621(var1, var3);
+      Slot var12 = this.method2621(var1, var3);
       ItemStack var13 = this.mc.player.inventory.method4057();
       if (this.field4730 != null && this.mc.gameSettings.touchscreen) {
          if (var5 == 0 || var5 == 1) {
             if (!this.field4737.isEmpty()) {
-               if (this.field4737.getCount() > 1 && var12 != null && Class5812.method18148(var12, this.field4737, false)) {
+               if (this.field4737.getCount() > 1 && var12 != null && Container.canAddItemToSlot(var12, this.field4737, false)) {
                   long var14 = Util.milliTime();
                   if (this.field4732 != var12) {
                      this.field4732 = var12;
@@ -387,17 +387,17 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                      this.field4737.method32182(1);
                   }
                }
-            } else if (var12 != this.field4730 && !this.field4730.method18265().isEmpty()) {
-               this.field4737 = this.field4730.method18265().copy();
+            } else if (var12 != this.field4730 && !this.field4730.getStack().isEmpty()) {
+               this.field4737 = this.field4730.getStack().copy();
             }
          }
       } else if (this.field4744
          && var12 != null
          && !var13.isEmpty()
          && (var13.getCount() > this.field4743.size() || this.field4745 == 2)
-         && Class5812.method18148(var12, var13, true)
-         && var12.method18259(var13)
-         && this.field4727.method18150(var12)) {
+         && Container.canAddItemToSlot(var12, var13, true)
+         && var12.isItemValid(var13)
+         && this.field4727.canDragIntoSlot(var12)) {
          this.field4743.add(var12);
          this.method2620();
       }
@@ -407,7 +407,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
 
    @Override
    public boolean mouseReleased(double var1, double var3, int var5) {
-      Class5839 var8 = this.method2621(var1, var3);
+      Slot var8 = this.method2621(var1, var3);
       int var9 = this.field4734;
       int var10 = this.field4735;
       boolean var11 = this.method2623(var1, var3, var9, var10, var5);
@@ -420,16 +420,16 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          var12 = -999;
       }
 
-      if (this.field4751 && var8 != null && var5 == 0 && this.field4727.method18111(ItemStack.EMPTY, var8)) {
+      if (this.field4751 && var8 != null && var5 == 0 && this.field4727.canMergeSlot(ItemStack.EMPTY, var8)) {
          if (!method2476()) {
             this.method2626(var8, var12, var5, ClickType.field14700);
          } else if (!this.field4752.isEmpty()) {
-            for (Class5839 var18 : this.field4727.field25468) {
+            for (Slot var18 : this.field4727.field25468) {
                if (var18 != null
-                  && var18.method18273(this.mc.player)
-                  && var18.method18266()
+                  && var18.canTakeStack(this.mc.player)
+                  && var18.getHasStack()
                   && var18.field25578 == var8.field25578
-                  && Class5812.method18148(var18, this.field4752, true)) {
+                  && Container.canAddItemToSlot(var18, this.field4752, true)) {
                   this.method2626(var18, var18.field25579, var5, ClickType.field14695);
                }
             }
@@ -453,10 +453,10 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
          if (this.field4730 != null && this.mc.gameSettings.touchscreen) {
             if (var5 == 0 || var5 == 1) {
                if (this.field4737.isEmpty() && var8 != this.field4730) {
-                  this.field4737 = this.field4730.method18265();
+                  this.field4737 = this.field4730.getStack();
                }
 
-               boolean var16 = Class5812.method18148(var8, this.field4737, false);
+               boolean var16 = Container.canAddItemToSlot(var8, this.field4737, false);
                if (var12 != -1 && !this.field4737.isEmpty() && var16) {
                   this.method2626(this.field4730, this.field4730.field25579, var5, ClickType.field14694);
                   this.method2626(var8, var12, 0, ClickType.field14694);
@@ -482,13 +482,13 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                this.field4730 = null;
             }
          } else if (this.field4744 && !this.field4743.isEmpty()) {
-            this.method2626((Class5839)null, -999, Class5812.method18145(0, this.field4745), ClickType.field14699);
+            this.method2626((Slot)null, -999, Container.getQuickcraftMask(0, this.field4745), ClickType.field14699);
 
-            for (Class5839 var14 : this.field4743) {
-               this.method2626(var14, var14.field25579, Class5812.method18145(1, this.field4745), ClickType.field14699);
+            for (Slot var14 : this.field4743) {
+               this.method2626(var14, var14.field25579, Container.getQuickcraftMask(1, this.field4745), ClickType.field14699);
             }
 
-            this.method2626((Class5839)null, -999, Class5812.method18145(2, this.field4745), ClickType.field14699);
+            this.method2626((Slot)null, -999, Container.getQuickcraftMask(2, this.field4745), ClickType.field14699);
          } else if (!this.mc.player.inventory.method4057().isEmpty()) {
             if (!this.mc.gameSettings.keyBindPickBlock.matchesMouseKey(var5)) {
                boolean var13 = var12 != -999
@@ -497,7 +497,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
                         || InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 344)
                   );
                if (var13) {
-                  this.field4752 = var8 != null && var8.method18266() ? var8.method18265().copy() : ItemStack.EMPTY;
+                  this.field4752 = var8 != null && var8.getHasStack() ? var8.getStack().copy() : ItemStack.EMPTY;
                }
 
                this.method2626(var8, var12, var5, !var13 ? ClickType.field14694 : ClickType.field14695);
@@ -515,7 +515,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       return true;
    }
 
-   private boolean method2624(Class5839 var1, double var2, double var4) {
+   private boolean method2624(Slot var1, double var2, double var4) {
       return this.method2625(var1.field25580, var1.field25581, 16, 16, var2, var4);
    }
 
@@ -527,12 +527,12 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       return var5 >= (double)(var1 - 1) && var5 < (double)(var1 + var3 + 1) && var7 >= (double)(var2 - 1) && var7 < (double)(var2 + var4 + 1);
    }
 
-   public void method2626(Class5839 var1, int var2, int var3, ClickType var4) {
+   public void method2626(Slot var1, int var2, int var3, ClickType var4) {
       if (var1 != null) {
          var2 = var1.field25579;
       }
 
-      this.mc.playerController.method23144(this.field4727.field25471, var2, var3, var4, this.mc.player);
+      this.mc.playerController.windowClickFixed(this.field4727.field25471, var2, var3, var4, this.mc.player);
    }
 
    @Override
@@ -540,7 +540,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
       if (!super.keyPressed(var1, var2, var3)) {
          if (!this.mc.gameSettings.keyBindInventory.matchesKey(var1, var2)) {
             this.method2627(var1, var2);
-            if (this.field4729 != null && this.field4729.method18266()) {
+            if (this.field4729 != null && this.field4729.getHasStack()) {
                if (!this.mc.gameSettings.keyBindPickBlock.matchesKey(var1, var2)) {
                   if (this.mc.gameSettings.keyBindDrop.matchesKey(var1, var2)) {
                      this.method2626(this.field4729, this.field4729.field25579, ! hasControlDown() ? 0 : 1, ClickType.field14698);
@@ -581,7 +581,7 @@ public abstract class Class851<T extends Class5812> extends Screen implements Cl
    @Override
    public void onClose() {
       if (this.mc.player != null) {
-         this.field4727.method18113(this.mc.player);
+         this.field4727.onContainerClosed(this.mc.player);
       }
    }
 

@@ -53,7 +53,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    }
 
    public AbstractArrowEntity(EntityType<? extends AbstractArrowEntity> var1, LivingEntity var2, World var3) {
-      this(var1, var2.getPosX(), var2.method3442() - 0.1F, var2.getPosZ(), var3);
+      this(var1, var2.getPosX(), var2.getPosYEye() - 0.1F, var2.getPosZ(), var3);
       this.setShooter(var2);
       if (var2 instanceof PlayerEntity) {
          this.pickupStatus = AbstractArrowEntityPickupStatus.ALLOWED;
@@ -103,9 +103,9 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    public void tick() {
       super.tick();
       boolean var3 = this.method3493();
-      Vector3d var4 = this.getVec();
+      Vector3d var4 = this.getMotion();
       if (this.prevRotationPitch == 0.0F && this.prevRotationYaw == 0.0F) {
-         float var5 = MathHelper.method37766(method3234(var4));
+         float var5 = MathHelper.sqrt(horizontalMag(var4));
          this.rotationYaw = (float)(MathHelper.method37814(var4.x, var4.z) * 180.0F / (float)Math.PI);
          this.rotationPitch = (float)(MathHelper.method37814(var4.y, (double)var5) * 180.0F / (float)Math.PI);
          this.prevRotationYaw = this.rotationYaw;
@@ -133,7 +133,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       }
 
       if (this.method3253()) {
-         this.method3223();
+         this.extinguish();
       }
 
       if (this.field5100 && !var3) {
@@ -147,8 +147,8 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       } else {
          this.field5101 = 0;
          Vector3d var33 = this.getPositionVec();
-         Vector3d var34 = var33.method11338(var4);
-         Object var35 = this.world.method7036(new Class6809(var33, var34, Class2271.field14774, Class1985.field12962, this));
+         Vector3d var34 = var33.add(var4);
+         Object var35 = this.world.rayTraceBlocks(new RayTraceContext(var33, var34, Class2271.field14774, Class1985.field12962, this));
          if (((RayTraceResult)var35).getType() != RayTraceResult.Type.MISS) {
             var34 = ((RayTraceResult)var35).method31419();
          }
@@ -180,14 +180,14 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
             var35 = null;
          }
 
-         var4 = this.getVec();
+         var4 = this.getMotion();
          double var10 = var4.x;
          double var12 = var4.y;
          double var14 = var4.z;
          if (this.method3487()) {
             for (int var26 = 0; var26 < 4; var26++) {
                this.world
-                  .method6746(
+                  .addParticle(
                      ParticleTypes.field34054,
                      this.getPosX() + var10 * (double)var26 / 4.0,
                      this.getPosY() + var12 * (double)var26 / 4.0,
@@ -202,7 +202,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
          double var16 = this.getPosX() + var10;
          double var18 = this.getPosY() + var12;
          double var20 = this.getPosZ() + var14;
-         float var22 = MathHelper.method37766(method3234(var4));
+         float var22 = MathHelper.sqrt(horizontalMag(var4));
          if (!var3) {
             this.rotationYaw = (float)(MathHelper.method37814(var10, var14) * 180.0F / (float)Math.PI);
          } else {
@@ -214,43 +214,43 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
          this.rotationYaw = method3469(this.prevRotationYaw, this.rotationYaw);
          float var27 = 0.99F;
          float var28 = 0.05F;
-         if (this.method3250()) {
+         if (this.isInWater()) {
             for (int var29 = 0; var29 < 4; var29++) {
                float var30 = 0.25F;
-               this.world.method6746(ParticleTypes.field34052, var16 - var10 * 0.25, var18 - var12 * 0.25, var20 - var14 * 0.25, var10, var12, var14);
+               this.world.addParticle(ParticleTypes.field34052, var16 - var10 * 0.25, var18 - var12 * 0.25, var20 - var14 * 0.25, var10, var12, var14);
             }
 
             var27 = this.method3491();
          }
 
-         this.method3434(var4.method11344((double)var27));
+         this.setMotion(var4.scale((double)var27));
          if (!this.method3247() && !var3) {
-            Vector3d var37 = this.getVec();
-            this.method3435(var37.x, var37.y - 0.05F, var37.z);
+            Vector3d var37 = this.getMotion();
+            this.setMotion(var37.x, var37.y - 0.05F, var37.z);
          }
 
          this.setPosition(var16, var18, var20);
-         this.method3240();
+         this.doBlockCollisions();
       }
    }
 
    private boolean method3472() {
-      return this.field5100 && this.world.method7051(new AxisAlignedBB(this.getPositionVec(), this.getPositionVec()).method19664(0.06));
+      return this.field5100 && this.world.hasNoCollisions(new AxisAlignedBB(this.getPositionVec(), this.getPositionVec()).method19664(0.06));
    }
 
    private void method3473() {
       this.field5100 = false;
-      Vector3d var3 = this.getVec();
-      this.method3434(
+      Vector3d var3 = this.getMotion();
+      this.setMotion(
          var3.method11347((double)(this.rand.nextFloat() * 0.2F), (double)(this.rand.nextFloat() * 0.2F), (double)(this.rand.nextFloat() * 0.2F))
       );
       this.ticksInGround = 0;
    }
 
    @Override
-   public void move(Class2107 var1, Vector3d var2) {
+   public void move(MoverType var1, Vector3d var2) {
       super.move(var1, var2);
-      if (var1 != Class2107.field13742 && this.method3472()) {
+      if (var1 != MoverType.SELF && this.method3472()) {
          this.method3473();
       }
    }
@@ -258,7 +258,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    public void method3474() {
       this.ticksInGround++;
       if (this.ticksInGround >= 1200) {
-         this.method2904();
+         this.remove();
       }
    }
 
@@ -276,8 +276,8 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    public void method3465(EntityRayTraceResult var1) {
       super.method3465(var1);
       Entity var4 = var1.getEntity();
-      float var5 = (float)this.getVec().method11348();
-      int var6 = MathHelper.method37774(MathHelper.method37778((double)var5 * this.field5105, 0.0, 2.147483647E9));
+      float var5 = (float)this.getMotion().length();
+      int var6 = MathHelper.method37774(MathHelper.clamp((double)var5 * this.field5105, 0.0, 2.147483647E9));
       if (this.method3489() > 0) {
          if (this.field5108 == null) {
             this.field5108 = new IntOpenHashSet(5);
@@ -288,7 +288,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
          }
 
          if (this.field5108.size() >= this.method3489() + 1) {
-            this.method2904();
+            this.remove();
             return;
          }
 
@@ -312,22 +312,22 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       }
 
       boolean var11 = var4.getType() == EntityType.field41025;
-      int var12 = var4.method3222();
-      if (this.method3327() && !var11) {
-         var4.method3221(5);
+      int var12 = var4.getFireTimer();
+      if (this.isBurning() && !var11) {
+         var4.setFire(5);
       }
 
-      if (!var4.method2741(var8, (float)var6)) {
-         var4.method2966(var12);
-         this.method3434(this.getVec().method11344(-0.1));
+      if (!var4.attackEntityFrom(var8, (float)var6)) {
+         var4.forceFireTicks(var12);
+         this.setMotion(this.getMotion().scale(-0.1));
          this.rotationYaw += 180.0F;
          this.prevRotationYaw += 180.0F;
-         if (!this.world.isRemote && this.getVec().method11349() < 1.0E-7) {
+         if (!this.world.isRemote && this.getMotion().lengthSquared() < 1.0E-7) {
             if (this.pickupStatus == AbstractArrowEntityPickupStatus.ALLOWED) {
                this.method3303(this.method3480(), 0.1F);
             }
 
-            this.method2904();
+            this.remove();
          }
       } else {
          if (var11) {
@@ -341,19 +341,19 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
             }
 
             if (this.field5106 > 0) {
-               Vector3d var14 = this.getVec().method11347(1.0, 0.0, 1.0).method11333().method11344((double)this.field5106 * 0.6);
-               if (var14.method11349() > 0.0) {
-                  var13.method3280(var14.x, 0.1, var14.z);
+               Vector3d var14 = this.getMotion().method11347(1.0, 0.0, 1.0).method11333().scale((double)this.field5106 * 0.6);
+               if (var14.lengthSquared() > 0.0) {
+                  var13.addVelocity(var14.x, 0.1, var14.z);
                }
             }
 
             if (!this.world.isRemote && var7 instanceof LivingEntity) {
-               Class7858.method26320(var13, var7);
-               Class7858.method26321((LivingEntity)var7, var13);
+               EnchantmentHelper.applyThornEnchantments(var13, var7);
+               EnchantmentHelper.applyArthropodEnchantments((LivingEntity)var7, var13);
             }
 
             this.method3478(var13);
-            if (var7 != null && var13 != var7 && var13 instanceof PlayerEntity && var7 instanceof ServerPlayerEntity && !this.method3245()) {
+            if (var7 != null && var13 != var7 && var13 instanceof PlayerEntity && var7 instanceof ServerPlayerEntity && !this.isSilent()) {
                ((ServerPlayerEntity)var7).field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24566, 0.0F));
             }
 
@@ -371,9 +371,9 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
             }
          }
 
-         this.method2863(this.hitSound, 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
+         this.playSound(this.hitSound, 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
          if (this.method3489() <= 0) {
-            this.method2904();
+            this.remove();
          }
       }
    }
@@ -383,10 +383,10 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       this.field5099 = this.world.getBlockState(var1.getPos());
       super.method3466(var1);
       Vector3d var4 = var1.method31419().method11337(this.getPosX(), this.getPosY(), this.getPosZ());
-      this.method3434(var4);
-      Vector3d var5 = var4.method11333().method11344(0.05F);
-      this.method3446(this.getPosX() - var5.x, this.getPosY() - var5.y, this.getPosZ() - var5.z);
-      this.method2863(this.method3477(), 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
+      this.setMotion(var4);
+      Vector3d var5 = var4.method11333().scale(0.05F);
+      this.setRawPosition(this.getPosX() - var5.x, this.getPosY() - var5.y, this.getPosZ() - var5.z);
+      this.playSound(this.method3477(), 1.0F, 1.2F / (this.rand.nextFloat() * 0.2F + 0.9F));
       this.field5100 = true;
       this.field5103 = 7;
       this.method3484(false);
@@ -409,7 +409,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
 
    @Nullable
    public EntityRayTraceResult method3479(Vector3d var1, Vector3d var2) {
-      return Class9456.method36387(this.world, this, var1, var2, this.getBoundingBox().method19661(this.getVec()).method19664(1.0), this::method3467);
+      return Class9456.method36387(this.world, this, var1, var2, this.getBoundingBox().method19661(this.getMotion()).method19664(1.0), this::method3467);
    }
 
    @Override
@@ -418,9 +418,9 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method101("life", (short)this.ticksInGround);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putShort("life", (short)this.ticksInGround);
       if (this.field5099 != null) {
          var1.put("inBlockState", Class8354.method29287(this.field5099));
       }
@@ -436,8 +436,8 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.ticksInGround = var1.getShort("life");
       if (var1.contains("inBlockState", 10)) {
          this.field5099 = Class8354.method29285(var1.getCompound("inBlockState"));
@@ -475,7 +475,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    }
 
    @Override
-   public void method3279(PlayerEntity var1) {
+   public void onCollideWithPlayer(PlayerEntity var1) {
       if (!this.world.isRemote && (this.field5100 || this.method3493()) && this.field5103 <= 0) {
          boolean var4 = this.pickupStatus == AbstractArrowEntityPickupStatus.ALLOWED
             || this.pickupStatus == AbstractArrowEntityPickupStatus.field14333 && var1.abilities.isCreativeMode
@@ -485,8 +485,8 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
          }
 
          if (var4) {
-            var1.method2751(this, 1);
-            this.method2904();
+            var1.onItemPickup(this, 1);
+            this.remove();
          }
       }
    }
@@ -494,7 +494,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    public abstract ItemStack method3480();
 
    @Override
-   public boolean method2940() {
+   public boolean canTriggerWalking() {
       return false;
    }
 
@@ -516,7 +516,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    }
 
    @Override
-   public float method3181(Pose var1, EntitySize var2) {
+   public float getEyeHeight(Pose var1, EntitySize var2) {
       return 0.13F;
    }
 
@@ -552,8 +552,8 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    }
 
    public void method3490(LivingEntity var1, float var2) {
-      int var5 = Class7858.method26322(Class8122.field34919, var1);
-      int var6 = Class7858.method26322(Class8122.field34920, var1);
+      int var5 = EnchantmentHelper.method26322(Class8122.field34919, var1);
+      int var6 = EnchantmentHelper.method26322(Class8122.field34920, var1);
       this.method3481((double)(var2 * 2.0F) + this.rand.nextGaussian() * 0.25 + (double)((float)this.world.method6997().getId() * 0.11F));
       if (var5 > 0) {
          this.method3481(this.method3482() + (double)var5 * 0.5 + 0.5);
@@ -563,8 +563,8 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
          this.method3483(var6);
       }
 
-      if (Class7858.method26322(Class8122.field34921, var1) > 0) {
-         this.method3221(100);
+      if (EnchantmentHelper.method26322(Class8122.field34921, var1) > 0) {
+         this.setFire(100);
       }
    }
 
@@ -586,7 +586,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       Entity var3 = this.method3460();
       return new SSpawnObjectPacket(this, var3 != null ? var3.getEntityId() : 0);
    }

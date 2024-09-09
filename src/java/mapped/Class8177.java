@@ -38,8 +38,8 @@ public final class Class8177 implements Class8176 {
    }
 
    private double method28468(World var1, double var2) {
-      if (var1.method6783() != this.field35171) {
-         this.field35171 = var1.method6783();
+      if (var1.getGameTime() != this.field35171) {
+         this.field35171 = var1.getGameTime();
          double var6 = var2 - this.field35169;
          var6 = MathHelper.method37790(var6 + 0.5, 1.0) - 0.5;
          this.field35170 += var6 * 0.1;

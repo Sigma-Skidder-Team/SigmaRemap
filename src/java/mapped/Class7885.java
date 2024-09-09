@@ -31,7 +31,7 @@ public class Class7885 extends Class7882<LivingEntity> {
    }
 
    public static void method26441(LivingEntity var0) {
-      Optional<List<LivingEntity>> var3 = var0.method2992().<List<LivingEntity>>method21410(Class8830.field39818);
+      Optional<List<LivingEntity>> var3 = var0.getBrain().<List<LivingEntity>>method21410(Class8830.field39818);
       if (var3.isPresent()) {
          boolean var4 = var3.get().stream().anyMatch(var0x -> var0x.getType().equals(EntityType.field41041));
          if (var4) {
@@ -41,6 +41,6 @@ public class Class7885 extends Class7882<LivingEntity> {
    }
 
    public static void method26442(LivingEntity var0) {
-      var0.method2992().method21407(Class8830.field39842, true, 600L);
+      var0.getBrain().method21407(Class8830.field39842, true, 600L);
    }
 }

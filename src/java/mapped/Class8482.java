@@ -9,7 +9,7 @@ public class Class8482 {
    private static String[] field36360;
 
    public static Class6794<ItemStack> method29977(World var0, PlayerEntity var1, Hand var2) {
-      var1.method3154(var2);
+      var1.setActiveHand(var2);
       return Class6794.<ItemStack>method20697(var1.getHeldItem(var2));
    }
 

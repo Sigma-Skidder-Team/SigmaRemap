@@ -54,7 +54,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    @Nullable
    @Override
    public Entity method3407() {
-      return !this.method3408().isEmpty() ? this.method3408().get(0) : null;
+      return !this.getPassengers().isEmpty() ? this.getPassengers().get(0) : null;
    }
 
    @Override
@@ -69,12 +69,12 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public void method3155(DataParameter<?> var1) {
+   public void notifyDataManagerChange(DataParameter<?> var1) {
       if (field5913.equals(var1) && this.world.isRemote) {
          this.field5915.method19689();
       }
 
-      super.method3155(var1);
+      super.notifyDataManagerChange(var1);
    }
 
    @Override
@@ -85,14 +85,14 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       this.field5915.method19691(var1);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field5915.method19692(var1);
    }
 
@@ -112,8 +112,8 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(SoundEvents.field26928, 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(SoundEvents.field26928, 0.15F, 1.0F);
    }
 
    @Override
@@ -138,14 +138,14 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
 
    @Override
    public boolean method4901() {
-      return this.isAlive() && !this.method3005();
+      return this.isAlive() && !this.isChild();
    }
 
    @Override
-   public void method2877() {
-      super.method2877();
+   public void dropInventory() {
+      super.dropInventory();
       if (this.method4943()) {
-         this.method3300(Items.field37886);
+         this.entityDropItem(Items.field37886);
       }
    }
 
@@ -164,26 +164,26 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
 
    @Override
    public Vector3d method3420(LivingEntity var1) {
-      Direction var4 = this.method3387();
-      if (var4.method544() == Class113.field414) {
+      net.minecraft.util.Direction var4 = this.method3387();
+      if (var4.getAxis() == Direction.field414) {
          return super.method3420(var1);
       } else {
          int[][] var5 = Class4527.method14422(var4);
          BlockPos var6 = this.getPosition();
          BlockPos.Mutable var7 = new BlockPos.Mutable();
-         UnmodifiableIterator var8 = var1.method2982().iterator();
+         UnmodifiableIterator var8 = var1.getAvailablePoses().iterator();
 
          while (var8.hasNext()) {
             Pose var9 = (Pose)var8.next();
-            AxisAlignedBB var10 = var1.method3172(var9);
+            AxisAlignedBB var10 = var1.getPoseAABB(var9);
 
             for (int[] var14 : var5) {
                var7.method8372(var6.getX() + var14[0], var6.getY(), var6.getZ() + var14[1]);
                double var15 = this.world.method7039(var7);
                if (Class4527.method14423(var15)) {
                   Vector3d var17 = Vector3d.method11331(var7, var15);
-                  if (Class4527.method14424(this.world, var1, var10.method19669(var17))) {
-                     var1.method3211(var9);
+                  if (Class4527.method14424(this.world, var1, var10.offset(var17))) {
+                     var1.setPose(var9);
                      return var17;
                   }
                }
@@ -199,44 +199,44 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
       if (var1.method6997() == Difficulty.field14351) {
          super.method3353(var1, var2);
       } else {
-         Class1063 var5 = EntityType.field41110.method33215(var1);
-         var5.method2944(Class2106.field13731, new ItemStack(Items.field37815));
-         var5.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
+         Class1063 var5 = EntityType.field41110.create(var1);
+         var5.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37815));
+         var5.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var5.method4302(this.method4305());
-         var5.method4308(this.method3005());
+         var5.method4308(this.isChild());
          if (this.method3381()) {
             var5.method3379(this.method3380());
             var5.method3382(this.method3383());
          }
 
          var5.method4278();
-         var1.method6916(var5);
-         this.method2904();
+         var1.addEntity(var5);
+         this.remove();
       }
    }
 
    @Override
-   public void method2915(Vector3d var1) {
+   public void travel(Vector3d var1) {
       this.method4988(this, this.field5915, var1);
    }
 
    @Override
    public float method4980() {
-      return (float)this.method3086(Attributes.MOVEMENT_SPEED) * 0.225F;
+      return (float)this.getAttributeValue(Attributes.MOVEMENT_SPEED) * 0.225F;
    }
 
    @Override
    public void method4981(Vector3d var1) {
-      super.method2915(var1);
+      super.travel(var1);
    }
 
    @Override
    public boolean method4982() {
-      return this.field5915.method19690(this.method3013());
+      return this.field5915.method19690(this.getRNG());
    }
 
    public Class1072 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41064.method33215(var1);
+      return EntityType.field41064.create(var1);
    }
 
    @Override
@@ -245,7 +245,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public Vector3d method3394() {
-      return new Vector3d(0.0, (double)(0.6F * this.method3393()), (double)(this.method3429() * 0.4F));
+   public Vector3d func_241205_ce_() {
+      return new Vector3d(0.0, (double)(0.6F * this.getEyeHeight()), (double)(this.getWidth() * 0.4F));
    }
 }

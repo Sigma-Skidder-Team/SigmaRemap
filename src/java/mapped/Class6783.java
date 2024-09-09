@@ -55,14 +55,14 @@ public class Class6783 extends Class6768<Class8278> {
          var19.method8372(var22, var24, var23);
          BlockState var25 = var2.getBlockState(var19);
          if (!var25.isAir()) {
-            if (var25.method23448(var9.getBlock())) {
+            if (var25.isIn(var9.getBlock())) {
                if (var20 != -1) {
                   if (var20 > 0) {
                      var20--;
                      var2.setBlockState(var19, var18, false);
-                     if (var20 == 0 && var18.method23448(Blocks.SAND) && var21 > 1) {
+                     if (var20 == 0 && var18.isIn(Blocks.SAND) && var21 > 1) {
                         var20 = var1.nextInt(4) + Math.max(0, var24 - 63);
-                        var18 = !var18.method23448(Blocks.RED_SAND) ? Blocks.SANDSTONE.method11579() : Blocks.field36835.method11579();
+                        var18 = !var18.isIn(Blocks.RED_SAND) ? Blocks.SANDSTONE.method11579() : Blocks.field36835.method11579();
                      }
                   }
                } else {

@@ -3,9 +3,9 @@ package com.mentalfrostbyte.jello.module.impl.movement;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.movement.blockfly.*;
@@ -114,9 +114,9 @@ public class BlockFly extends ModuleWithModuleSettings {
         try {
             for (int var3 = 36; var3 < 45; var3++) {
                 int var4 = var3 - 36;
-                if (mc.player.field4904.method18131(var3).method18266()
-                        && method16733(mc.player.field4904.method18131(var3).method18265().getItem())
-                        && mc.player.field4904.method18131(var3).method18265().field39976 != 0) {
+                if (mc.player.container.getSlot(var3).getHasStack()
+                        && method16733(mc.player.container.getSlot(var3).getStack().getItem())
+                        && mc.player.container.getSlot(var3).getStack().field39976 != 0) {
                     if (mc.player.inventory.currentItem == var4) {
                         return;
                     }
@@ -137,8 +137,8 @@ public class BlockFly extends ModuleWithModuleSettings {
         int var3 = 0;
 
         for (int var4 = 0; var4 < 45; var4++) {
-            if (mc.player.field4904.method18131(var4).method18266()) {
-                ItemStack var5 = mc.player.field4904.method18131(var4).method18265();
+            if (mc.player.container.getSlot(var4).getHasStack()) {
+                ItemStack var5 = mc.player.container.getSlot(var4).getStack();
                 Item var6 = var5.getItem();
                 if (method16733(var6)) {
                     var3 += var5.field39976;
@@ -158,8 +158,8 @@ public class BlockFly extends ModuleWithModuleSettings {
                     int var5 = -1;
 
                     for (int var6 = 9; var6 < 36; var6++) {
-                        if (mc.player.field4904.method18131(var6).method18266()) {
-                            Item var7 = mc.player.field4904.method18131(var6).method18265().getItem();
+                        if (mc.player.container.getSlot(var6).getHasStack()) {
+                            Item var7 = mc.player.container.getSlot(var6).getStack().getItem();
                             if (method16733(var7)) {
                                 var5 = var6;
                                 break;
@@ -168,7 +168,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                     }
 
                     for (int var9 = 36; var9 < 45; var9++) {
-                        if (!mc.player.field4904.method18131(var9).method18266()) {
+                        if (!mc.player.container.getSlot(var9).getHasStack()) {
                             var4 = var9;
                             break;
                         }
@@ -189,19 +189,19 @@ public class BlockFly extends ModuleWithModuleSettings {
                 int var8 = this.method16737();
                 if (!this.method16738()) {
                     for (int var11 = 36; var11 < 45; var11++) {
-                        if (!mc.player.field4904.method18131(var11).method18266()) {
+                        if (!mc.player.container.getSlot(var11).getHasStack()) {
                             var4 = var11;
                             break;
                         }
                     }
                 } else {
                     for (int var10 = 36; var10 < 45; var10++) {
-                        if (mc.player.field4904.method18131(var10).method18266()) {
-                            Item var12 = mc.player.field4904.method18131(var10).method18265().getItem();
+                        if (mc.player.container.getSlot(var10).getHasStack()) {
+                            Item var12 = mc.player.container.getSlot(var10).getStack().getItem();
                             if (method16733(var12)) {
                                 var4 = var10;
-                                if (mc.player.field4904.method18131(var10).method18265().field39976
-                                        == mc.player.field4904.method18131(var8).method18265().field39976) {
+                                if (mc.player.container.getSlot(var10).getStack().field39976
+                                        == mc.player.container.getSlot(var8).getStack().field39976) {
                                     var4 = -1;
                                 }
                                 break;
@@ -210,7 +210,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                     }
                 }
 
-                if (var4 >= 0 && mc.player.field4904.method18131(var4).field25579 != var8) {
+                if (var4 >= 0 && mc.player.container.getSlot(var4).field25579 != var8) {
                     if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv") && JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
                         mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                     }
@@ -229,9 +229,9 @@ public class BlockFly extends ModuleWithModuleSettings {
         int var4 = 0;
         if (this.method16735() != 0) {
             for (int var5 = 9; var5 < 45; var5++) {
-                if (mc.player.field4904.method18131(var5).method18266()) {
-                    Item var6 = mc.player.field4904.method18131(var5).method18265().getItem();
-                    ItemStack var7 = mc.player.field4904.method18131(var5).method18265();
+                if (mc.player.container.getSlot(var5).getHasStack()) {
+                    Item var6 = mc.player.container.getSlot(var5).getStack().getItem();
+                    ItemStack var7 = mc.player.container.getSlot(var5).getStack();
                     if (method16733(var6) && var7.field39976 > var4) {
                         var4 = var7.field39976;
                         var3 = var5;
@@ -247,8 +247,8 @@ public class BlockFly extends ModuleWithModuleSettings {
 
     public boolean method16738() {
         for (int var3 = 36; var3 < 45; var3++) {
-            if (mc.player.field4904.method18131(var3).method18266()) {
-                Item var4 = mc.player.field4904.method18131(var3).method18265().getItem();
+            if (mc.player.container.getSlot(var3).getHasStack()) {
+                Item var4 = mc.player.container.getSlot(var3).getStack().getItem();
                 if (method16733(var4)) {
                     return true;
                 }
@@ -259,16 +259,16 @@ public class BlockFly extends ModuleWithModuleSettings {
     }
 
     public boolean method16739(Hand var1) {
-        if (!this.method16004().getStringSettingValueByName("ItemSpoof").equals("None")) {
+        if (!this.access().getStringSettingValueByName("ItemSpoof").equals("None")) {
             return this.method16735() != 0;
         } else return method16733(mc.player.getHeldItem(var1).getItem());
     }
 
     public void method16740(int var1, int var2) {
-        mc.playerController.method23144(mc.player.field4904.field25471, var1, var2, ClickType.field14696, mc.player);
+        mc.playerController.windowClickFixed(mc.player.container.field25471, var1, var2, ClickType.field14696, mc.player);
     }
 
-    public void method16741(Class4435 var1) {
+    public void method16741(EventMove var1) {
         if (mc.timer.timerSpeed == 0.8038576F) {
             mc.timer.timerSpeed = 1.0F;
         }
@@ -278,15 +278,15 @@ public class BlockFly extends ModuleWithModuleSettings {
                 String var4 = this.getStringSettingValueByName("Tower Mode");
                 switch (var4) {
                     case "NCP":
-                        if (var1.method13994() > 0.0) {
-                            if (Class9567.method37079() == 0) {
-                                if (var1.method13994() > 0.247 && var1.method13994() < 0.249) {
-                                    var1.method13995((double) ((int) (mc.player.getPosY() + var1.method13994())) - mc.player.getPosY());
+                        if (var1.getY() > 0.0) {
+                            if (MovementUtils.method37079() == 0) {
+                                if (var1.getY() > 0.247 && var1.getY() < 0.249) {
+                                    var1.setY((double) ((int) (mc.player.getPosY() + var1.getY())) - mc.player.getPosY());
                                 }
                             } else {
-                                double var6 = (int) (mc.player.getPosY() + var1.method13994());
-                                if (var6 != (double) ((int) mc.player.getPosY()) && mc.player.getPosY() + var1.method13994() - var6 < 0.15) {
-                                    var1.method13995(var6 - mc.player.getPosY());
+                                double var6 = (int) (mc.player.getPosY() + var1.getY());
+                                if (var6 != (double) ((int) mc.player.getPosY()) && mc.player.getPosY() + var1.getY() - var6 < 0.15) {
+                                    var1.setY(var6 - mc.player.getPosY());
                                 }
                             }
                         }
@@ -295,36 +295,36 @@ public class BlockFly extends ModuleWithModuleSettings {
                                 && ColorUtils.method17730(mc.player, 0.001F)) {
                             if (mc.gameSettings.keyBindJump.pressed) {
                                 if (!ColorUtils.method17686()) {
-                                    Class9567.method37090(0.0);
-                                    Class9567.method37088(var1, 0.0);
+                                    MovementUtils.method37090(0.0);
+                                    MovementUtils.method37088(var1, 0.0);
                                 }
 
-                                var1.method13995(Class9567.method37080());
+                                var1.setY(MovementUtils.method37080());
                             } else {
-                                var1.method13995(-1.0E-5);
+                                var1.setY(-1.0E-5);
                             }
                         }
                         break;
                     case "AAC":
-                        if (var1.method13994() > 0.247 && var1.method13994() < 0.249) {
-                            var1.method13995((double) ((int) (mc.player.getPosY() + var1.method13994())) - mc.player.getPosY());
+                        if (var1.getY() > 0.247 && var1.getY() < 0.249) {
+                            var1.setY((double) ((int) (mc.player.getPosY() + var1.getY())) - mc.player.getPosY());
                             if (mc.gameSettings.keyBindJump.pressed && !ColorUtils.method17686()) {
-                                Class9567.method37090(0.0);
-                                Class9567.method37088(var1, 0.0);
+                                MovementUtils.method37090(0.0);
+                                MovementUtils.method37088(var1, 0.0);
                             }
                         } else if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())
                                 && ColorUtils.method17730(mc.player, 0.001F)) {
-                            var1.method13995(-1.0E-10);
+                            var1.setY(-1.0E-10);
                         }
                         break;
                     case "Vanilla":
                         if (mc.gameSettings.keyBindJump.pressed
                                 && ColorUtils.method17730(mc.player, 0.001F)
-                                && mc.world.method7055(mc.player, mc.player.boundingBox.method19667(0.0, 1.0, 0.0)).count() == 0L) {
+                                && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, 1.0, 0.0)).count() == 0L) {
                             mc.player
                                     .setPosition(mc.player.getPosX(), mc.player.getPosY() + 1.0, mc.player.getPosZ());
-                            var1.method13995(0.0);
-                            Class9567.method37088(var1, 0.0);
+                            var1.setY(0.0);
+                            MovementUtils.method37088(var1, 0.0);
                             mc.timer.timerSpeed = 0.8038576F;
                         }
                 }
@@ -336,18 +336,18 @@ public class BlockFly extends ModuleWithModuleSettings {
                     && !this.getStringSettingValueByName("Tower Mode").equals("Vanilla")
                     && ColorUtils.method17730(mc.player, 0.001F)
                     && mc.gameSettings.keyBindJump.pressed) {
-                mc.player.field4999 = 20;
-                var1.method13995(Class9567.method37080());
+                mc.player.jumpTicks = 20;
+                var1.setY(MovementUtils.method37080());
             }
         } else if (!ColorUtils.method17686() || this.getBooleanValueFromSetttingName("Tower while moving")) {
-            mc.player.field4999 = 0;
-            mc.player.method2914();
-            Class9567.method37088(var1, Class9567.method37075());
-            Class9567.method37090(Class9567.method37075());
+            mc.player.jumpTicks = 0;
+            mc.player.jump();
+            MovementUtils.method37088(var1, MovementUtils.method37075());
+            MovementUtils.method37090(MovementUtils.method37075());
         }
 
         if (!this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")) {
-            ColorUtils.method17725(var1.method13994());
+            ColorUtils.method17725(var1.getY());
         }
     }
 
@@ -372,7 +372,7 @@ public class BlockFly extends ModuleWithModuleSettings {
     }
 
     @EventTarget
-    public void method16743(Class4415 var1) {
+    public void method16743(EventRender var1) {
         this.field23885.changeDirection(Direction.FORWARDS);
         if (this.field23885.calcPercent() != 0.0F) {
             if (this.getBooleanValueFromSetttingName("Show Block Amount")) {

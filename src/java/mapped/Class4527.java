@@ -5,7 +5,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -17,10 +16,10 @@ import java.util.function.Function;
 public class Class4527 {
    private static String[] field21839;
 
-   public static int[][] method14422(Direction var0) {
-      Direction var3 = var0.method537();
-      Direction var4 = var3.method536();
-      Direction var5 = var0.method536();
+   public static int[][] method14422(net.minecraft.util.Direction var0) {
+      net.minecraft.util.Direction var3 = var0.method537();
+      net.minecraft.util.Direction var4 = var3.method536();
+      net.minecraft.util.Direction var5 = var0.method536();
       return new int[][]{
          {var3.method539(), var3.method541()},
          {var4.method539(), var4.method541()},
@@ -37,15 +36,15 @@ public class Class4527 {
       return !Double.isInfinite(var0) && var0 < 1.0;
    }
 
-   public static boolean method14424(Class1668 var0, LivingEntity var1, AxisAlignedBB var2) {
-      return var0.method7055(var1, var2).allMatch(VoxelShape::method19516);
+   public static boolean method14424(ICollisionReader var0, LivingEntity var1, AxisAlignedBB var2) {
+      return var0.getCollisionShapes(var1, var2).allMatch(VoxelShape::method19516);
    }
 
    @Nullable
-   public static Vector3d method14425(Class1668 var0, double var1, double var3, double var5, LivingEntity var7, Pose var8) {
+   public static Vector3d method14425(ICollisionReader var0, double var1, double var3, double var5, LivingEntity var7, Pose var8) {
       if (method14423(var3)) {
          Vector3d var11 = new Vector3d(var1, var3, var5);
-         if (method14424(var0, var7, var7.method3172(var8).method19669(var11))) {
+         if (method14424(var0, var7, var7.getPoseAABB(var8).offset(var11))) {
             return var11;
          }
       }
@@ -67,18 +66,18 @@ public class Class4527 {
       while (var6 < var1) {
          VoxelShape var7 = (VoxelShape)var2.apply(var5);
          if (!var7.method19516()) {
-            return (double)(var0.getY() + var6) + var7.method19512(Class113.field414);
+            return (double)(var0.getY() + var6) + var7.method19512(Direction.field414);
          }
 
          var6++;
-         var5.method8379(Direction.field673);
+         var5.method8379(net.minecraft.util.Direction.field673);
       }
 
       return Double.POSITIVE_INFINITY;
    }
 
    @Nullable
-   public static Vector3d method14428(EntityType<?> var0, Class1668 var1, BlockPos var2, boolean var3) {
+   public static Vector3d method14428(EntityType<?> var0, ICollisionReader var1, BlockPos var2, boolean var3) {
       if (var3 && var0.method33220(var1.getBlockState(var2))) {
          return null;
       } else {
@@ -88,7 +87,7 @@ public class Class4527 {
                return null;
             } else {
                Vector3d var8 = Vector3d.method11331(var2, var6);
-               return !var1.method7055((Entity)null, var0.getSize().method32097(var8)).allMatch(VoxelShape::method19516) ? null : var8;
+               return !var1.getCollisionShapes((Entity)null, var0.getSize().method32097(var8)).allMatch(VoxelShape::method19516) ? null : var8;
             }
          } else {
             return null;

@@ -50,7 +50,7 @@ public enum Class2150 {
       }
    }
 
-   private static Optional<Class2150> method8859(Class1894 var0) {
+   private static Optional<Class2150> method8859(GameType var0) {
       switch (Class9243.field42532[var0.ordinal()]) {
          case 1:
             return Optional.<Class2150>of(field14058);
@@ -66,7 +66,7 @@ public enum Class2150 {
    }
 
    // $VF: synthetic method
-   public static Optional method8860(Class1894 var0) {
+   public static Optional method8860(GameType var0) {
       return method8859(var0);
    }
 

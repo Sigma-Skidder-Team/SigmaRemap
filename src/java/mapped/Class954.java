@@ -138,7 +138,7 @@ public class Class954 extends TileEntity {
       return new Class6619(
          ICommandSource.field5189,
          Vector3d.method11328(this.field5325),
-         Class8513.field37212,
+         Vector2f.field37212,
          (ServerWorld)this.field5324,
          2,
          var4,
@@ -157,7 +157,7 @@ public class Class954 extends TileEntity {
          return false;
       } else {
          this.field5360 = var1;
-         this.method3622();
+         this.markDirty();
          this.field5324.notifyBlockUpdate(this.getPos(), this.method3775(), this.method3775(), 3);
          return true;
       }

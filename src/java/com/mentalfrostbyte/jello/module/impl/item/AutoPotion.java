@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.item;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -41,7 +41,7 @@ public class AutoPotion extends Module {
 
     @EventTarget
     @LowestPriority
-    private void method16629(Class4399 var1) {
+    private void method16629(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             if (this.getBooleanValueFromSetttingName("In fight") || KillAura.field23949 == null && KillAura.field23948 == null) {
                 int var4 = this.method16631();
@@ -76,7 +76,7 @@ public class AutoPotion extends Module {
                                         this.method16634(var1, var4, var5[var6]);
                                     }
                                 } else if (this.field23808 > 18
-                                        && !mc.player.method3033(Effect.method22287(var5[var6]))
+                                        && !mc.player.isPotionActive(Effect.method22287(var5[var6]))
                                         && mc.player.getHealth() < this.getNumberValueBySettingName("Health") * 2.0F) {
                                     this.method16634(var1, var4, var5[var6]);
                                 }
@@ -92,17 +92,17 @@ public class AutoPotion extends Module {
     }
 
     public float[] method16630() {
-        double var3 = mc.player.getPosX() + mc.player.getVec().x * 26.0;
+        double var3 = mc.player.getPosX() + mc.player.getMotion().x * 26.0;
         double var5 = mc.player.boundingBox.minY - 3.6;
-        double var7 = mc.player.getPosZ() + mc.player.getVec().z * 26.0;
-        return !this.getBooleanValueFromSetttingName("Predict") ? new float[]{mc.player.rotationYaw, 90.0F} : Class9142.method34144(var3, var7, var5);
+        double var7 = mc.player.getPosZ() + mc.player.getMotion().z * 26.0;
+        return !this.getBooleanValueFromSetttingName("Predict") ? new float[]{mc.player.rotationYaw, 90.0F} : RotationHelper.method34144(var3, var7, var5);
     }
 
     public int method16631() {
         int var3 = 5;
 
         for (int var4 = 36; var4 < 45; var4++) {
-            if (!mc.player.field4904.method18131(var4).method18266()) {
+            if (!mc.player.container.getSlot(var4).getHasStack()) {
                 var3 = var4 - 36;
                 break;
             }
@@ -118,17 +118,17 @@ public class AutoPotion extends Module {
         int var7 = 0;
 
         for (int var8 = 9; var8 < 45; var8++) {
-            if (mc.player.field4904.method18131(var8).method18266()) {
-                ItemStack var9 = mc.player.field4904.method18131(var8).method18265();
+            if (mc.player.container.getSlot(var8).getHasStack()) {
+                ItemStack var9 = mc.player.container.getSlot(var8).getStack();
                 if (var9.getItem() instanceof Class3323) {
-                    List<Class2023> var10 = Class7789.method25858(var9);
+                    List<EffectInstance> var10 = InvManagerUtils.method25858(var9);
                     int var11 = this.method16633(var10);
                     if (var10 != null && !var10.isEmpty() && (this.getBooleanValueFromSetttingName("Custom potion") || var11 == 1)) {
-                        for (Class2023 var13 : var10) {
-                            int var14 = Effect.method22288(var13.method8627());
+                        for (EffectInstance var13 : var10) {
+                            int var14 = Effect.method22288(var13.getPotion());
                             int var15 = var13.method8629();
                             int var16 = var13.method8628();
-                            if (var14 == var1 && Class7789.method25859(var9)) {
+                            if (var14 == var1 && InvManagerUtils.method25859(var9)) {
                                 if (var15 <= var4) {
                                     if (var15 == var4 && var16 > var5) {
                                         var6 = var8;
@@ -147,17 +147,17 @@ public class AutoPotion extends Module {
             }
         }
 
-        return mc.player.method3033(Effect.method22287(var1)) && mc.player.method3034(Effect.method22287(var1)).method8629() >= var4
+        return mc.player.isPotionActive(Effect.method22287(var1)) && mc.player.getActivePotionEffect(Effect.method22287(var1)).method8629() >= var4
                 ? -1
                 : var6;
     }
 
-    private int method16633(List<Class2023> var1) {
+    private int method16633(List<EffectInstance> var1) {
         ArrayList var4 = new ArrayList();
         int var5 = 0;
 
-        for (Class2023 var7 : var1) {
-            int var8 = Effect.method22288(var7.method8627());
+        for (EffectInstance var7 : var1) {
+            int var8 = Effect.method22288(var7.getPotion());
             if (!var4.contains(var8)) {
                 var5++;
                 var4.add(var8);
@@ -167,12 +167,12 @@ public class AutoPotion extends Module {
         return var5;
     }
 
-    public void method16634(Class4399 var1, int var2, int var3) {
+    public void method16634(EventUpdate var1, int var2, int var3) {
         int var6 = this.method16632(var3);
         if (var6 != -1) {
             if (var6 < 36) {
-                if (Client.getInstance().method19939().method31333() > 2) {
-                    Class7789.method25873(var6, var2);
+                if (Client.getInstance().getPlayerTracker().method31333() > 2) {
+                    InvManagerUtils.method25873(var6, var2);
                 }
             } else {
                 this.field23808 = 0;
@@ -184,8 +184,8 @@ public class AutoPotion extends Module {
                 mc.playerController.syncCurrentPlayItem();
                 if (!this.getBooleanValueFromSetttingName("Instant")) {
                     this.field23811 = 1;
-                    var1.method13918(var9[0]);
-                    var1.method13916(var9[1]);
+                    var1.setPitch(var9[0]);
+                    var1.setYaw(var9[1]);
                 } else {
                     mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var9[0], var9[1], !var8 && mc.player.onGround));
                     mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));

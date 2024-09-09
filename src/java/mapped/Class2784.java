@@ -39,7 +39,7 @@ public class Class2784 extends Class2595 {
 
                BlockPos var4 = this.field17402.getPosition();
                BlockState var5 = this.field17401.world.getBlockState(var4);
-               if (var5.getBlock().method11540(BlockTags.field32770)) {
+               if (var5.getBlock().isIn(BlockTags.field32770)) {
                   this.field17403 = var5.<Direction>method23464(Class3250.field18484)
                      .<BlockPos>map(var1 -> var4.method8349(var1.method536()))
                      .orElseGet(() -> new BlockPos(var4));
@@ -100,11 +100,11 @@ public class Class2784 extends Class2595 {
    }
 
    private void method10975() {
-      Random var3 = this.field17401.method3013();
+      Random var3 = this.field17401.getRNG();
       BlockPos.Mutable var4 = new BlockPos.Mutable();
       var4.method8374(this.field17401.getPosition());
       this.field17401
-         .method3168(
+         .attemptTeleport(
             (double)(var4.getX() + var3.nextInt(11) - 5),
             (double)(var4.getY() + var3.nextInt(5) - 2),
             (double)(var4.getZ() + var3.nextInt(11) - 5),
@@ -120,12 +120,12 @@ public class Class2784 extends Class2595 {
       for (ItemStack var8 : var5.method23182(var6.method36460(Class8524.field38287))) {
          this.field17401
             .world
-            .method6916(
+            .addEntity(
                new ItemEntity(
                   this.field17401.world,
-                  (double)var4.getX() - (double) MathHelper.sin(this.field17401.field4965 * (float) (Math.PI / 180.0)),
+                  (double)var4.getX() - (double) MathHelper.sin(this.field17401.renderYawOffset * (float) (Math.PI / 180.0)),
                   (double)var4.getY(),
-                  (double)var4.getZ() + (double) MathHelper.cos(this.field17401.field4965 * (float) (Math.PI / 180.0)),
+                  (double)var4.getZ() + (double) MathHelper.cos(this.field17401.renderYawOffset * (float) (Math.PI / 180.0)),
                   var8
                )
             );

@@ -17,7 +17,7 @@ public class Class3284 extends Item {
       ListNBT var6 = var5.method131("Effects", 9);
       CompoundNBT var7 = new CompoundNBT();
       var7.method100("EffectId", (byte) Effect.method22288(var1));
-      var7.method102("EffectDuration", var2);
+      var7.putInt("EffectDuration", var2);
       var6.add(var7);
       var5.put("Effects", var6);
    }
@@ -38,7 +38,7 @@ public class Class3284 extends Item {
 
             Effect var12 = Effect.method22287(var11.getByte("EffectId"));
             if (var12 != null) {
-               var3.method3035(new Class2023(var12, var10));
+               var3.addPotionEffect(new EffectInstance(var12, var10));
             }
          }
       }

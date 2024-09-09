@@ -31,8 +31,8 @@ public class Class3683 extends Class3676<Class1046> {
       Optional<BlockPos> var9 = var8.stream()
          .filter(var1x -> !var1.method7022(var1x))
          .filter(var2x -> var1.method6765(var2x, var2))
-         .filter(var2x -> var1.method7052(var2))
+         .filter(var2x -> var1.hasNoCollisions(var2))
          .findFirst();
-      var9.ifPresent(var2x -> var2.method2992().method21406(Class8830.field39824, new Class8999(var2x, this.field19698, 0)));
+      var9.ifPresent(var2x -> var2.getBrain().method21406(Class8830.field39824, new Class8999(var2x, this.field19698, 0)));
    }
 }

@@ -25,7 +25,7 @@ public class Class2632 extends Class2628 {
 
    @Override
    public boolean method10803() {
-      if (this.field16946.world.method6789().method17135(Class5462.field24224)) {
+      if (this.field16946.world.getGameRules().getBoolean(Class5462.field24224)) {
          if (this.field16930 <= 0) {
             if (!this.method10841()) {
                this.field16930 = this.method10833(this.field16928);
@@ -71,15 +71,15 @@ public class Class2632 extends Class2628 {
       World var3 = this.field16946.world;
       BlockPos var4 = this.field16946.getPosition();
       BlockPos var5 = this.method10844(var4, var3);
-      Random var6 = this.field16946.method3013();
+      Random var6 = this.field16946.getRNG();
       if (this.method10838() && var5 != null) {
          if (this.field16947 > 0) {
-            Vector3d var7 = this.field16946.getVec();
-            this.field16946.method3435(var7.x, 0.3, var7.z);
+            Vector3d var7 = this.field16946.getMotion();
+            this.field16946.setMotion(var7.x, 0.3, var7.z);
             if (!var3.isRemote) {
                double var8 = 0.08;
                ((ServerWorld)var3)
-                  .method6939(
+                  .spawnParticle(
                      new Class7438(ParticleTypes.field34082, new ItemStack(Items.field37904)),
                      (double)var5.getX() + 0.5,
                      (double)var5.getY() + 0.7,
@@ -94,8 +94,8 @@ public class Class2632 extends Class2628 {
          }
 
          if (this.field16947 % 2 == 0) {
-            Vector3d var14 = this.field16946.getVec();
-            this.field16946.method3435(var14.x, -0.3, var14.z);
+            Vector3d var14 = this.field16946.getMotion();
+            this.field16946.setMotion(var14.x, -0.3, var14.z);
             if (this.field16947 % 6 == 0) {
                this.method10842(var3, this.field16933);
             }
@@ -109,7 +109,7 @@ public class Class2632 extends Class2628 {
                   double var10 = var6.nextGaussian() * 0.02;
                   double var12 = var6.nextGaussian() * 0.02;
                   ((ServerWorld)var3)
-                     .method6939(
+                     .spawnParticle(
                         ParticleTypes.field34089,
                         (double)var5.getX() + 0.5,
                         (double)var5.getY(),
@@ -132,7 +132,7 @@ public class Class2632 extends Class2628 {
 
    @Nullable
    private BlockPos method10844(BlockPos var1, IBlockReader var2) {
-      if (var2.getBlockState(var1).method23448(this.field16945)) {
+      if (var2.getBlockState(var1).isIn(this.field16945)) {
          return var1;
       } else {
          BlockPos[] var5 = new BlockPos[]{
@@ -140,7 +140,7 @@ public class Class2632 extends Class2628 {
          };
 
          for (BlockPos var9 : var5) {
-            if (var2.getBlockState(var9).method23448(this.field16945)) {
+            if (var2.getBlockState(var9).isIn(this.field16945)) {
                return var9;
             }
          }
@@ -154,7 +154,7 @@ public class Class2632 extends Class2628 {
       IChunk var5 = var1.getChunk(var2.getX() >> 4, var2.getZ() >> 4, ChunkStatus.FULL, false);
       return var5 == null
          ? false
-         : var5.getBlockState(var2).method23448(this.field16945)
+         : var5.getBlockState(var2).isIn(this.field16945)
             && var5.getBlockState(var2.up()).isAir()
             && var5.getBlockState(var2.method8339(2)).isAir();
    }

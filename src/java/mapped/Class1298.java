@@ -110,7 +110,7 @@ public abstract class Class1298 extends FocusableGui implements Class1190 {
    }
 
    public void method6158() {
-      this.field6880 = MathHelper.method37778(this.field6880, 0.0, (double)this.method6159());
+      this.field6880 = MathHelper.clamp(this.field6880, 0.0, (double)this.method6159());
    }
 
    public int method6159() {

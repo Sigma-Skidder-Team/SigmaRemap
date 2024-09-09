@@ -22,17 +22,17 @@ public class Class3729 extends Class3676<Class1042> {
    }
 
    public boolean method12508(ServerWorld var1, Class1042 var2) {
-      Class6947<Class1042> var5 = var2.method2992();
+      Brain<Class1042> var5 = var2.getBrain();
       if (!var5.method21410(Class8830.field39828).isPresent()) {
          return false;
       } else {
          LivingEntity var6 = var5.<LivingEntity>method21410(Class8830.field39828).get();
-         return var6.getType() == EntityType.PLAYER && var2.isAlive() && var6.isAlive() && !var2.method3005() && var2.getDistanceSq(var6) <= 17.0;
+         return var6.getType() == EntityType.PLAYER && var2.isAlive() && var6.isAlive() && !var2.isChild() && var2.getDistanceSq(var6) <= 17.0;
       }
    }
 
    public boolean method12499(ServerWorld var1, Class1042 var2, long var3) {
-      return this.method12508(var1, var2) && this.field19832 > 0 && var2.method2992().<LivingEntity>method21410(Class8830.field39828).isPresent();
+      return this.method12508(var1, var2) && this.field19832 > 0 && var2.getBrain().<LivingEntity>method21410(Class8830.field39828).isPresent();
    }
 
    public void method12502(ServerWorld var1, Class1042 var2, long var3) {
@@ -47,7 +47,7 @@ public class Class3729 extends Class3676<Class1042> {
       LivingEntity var7 = this.method12645(var2);
       this.method12641(var7, var2);
       if (this.field19829.isEmpty()) {
-         var2.method2944(Class2106.field13731, ItemStack.EMPTY);
+         var2.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
          this.field19832 = Math.min(this.field19832, 40);
       } else {
          this.method12646(var2);
@@ -58,8 +58,8 @@ public class Class3729 extends Class3676<Class1042> {
 
    public void method12506(ServerWorld var1, Class1042 var2, long var3) {
       super.method12506(var1, var2, var3);
-      var2.method2992().method21405(Class8830.field39828);
-      var2.method2944(Class2106.field13731, ItemStack.EMPTY);
+      var2.getBrain().method21405(Class8830.field39828);
+      var2.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
       this.field19828 = null;
    }
 
@@ -82,7 +82,7 @@ public class Class3729 extends Class3676<Class1042> {
    }
 
    private void method12642(Class1042 var1) {
-      var1.method2944(Class2106.field13731, this.field19829.get(0));
+      var1.setItemStackToSlot(EquipmentSlotType.field13731, this.field19829.get(0));
    }
 
    private void method12643(Class1042 var1) {
@@ -98,7 +98,7 @@ public class Class3729 extends Class3676<Class1042> {
    }
 
    private LivingEntity method12645(Class1042 var1) {
-      Class6947<Class1042> var4 = var1.method2992();
+      Brain<Class1042> var4 = var1.getBrain();
       LivingEntity var5 = var4.method21410(Class8830.field39828).get();
       var4.method21406(Class8830.field39825, new Class7865(var5, true));
       return var5;
@@ -112,7 +112,7 @@ public class Class3729 extends Class3676<Class1042> {
             this.field19831 = 0;
          }
 
-         var1.method2944(Class2106.field13731, this.field19829.get(this.field19831));
+         var1.setItemStackToSlot(EquipmentSlotType.field13731, this.field19829.get(this.field19831));
       }
    }
 }

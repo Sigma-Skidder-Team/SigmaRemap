@@ -8,7 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class8653 extends Class8652 {
+public class Class8653 extends EntityDamageSource {
    private final Entity field38991;
 
    public Class8653(String var1, Entity var2, Entity var3) {
@@ -18,13 +18,13 @@ public class Class8653 extends Class8652 {
 
    @Nullable
    @Override
-   public Entity method31113() {
+   public Entity getImmediateSource() {
       return this.field38989;
    }
 
    @Nullable
    @Override
-   public Entity method31109() {
+   public Entity getTrueSource() {
       return this.field38991;
    }
 

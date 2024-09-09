@@ -17,7 +17,6 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -83,7 +82,7 @@ public class ClientWorld extends World {
    }
 
    public void tick(BooleanSupplier var1) {
-      this.method6810().method24555();
+      this.getWorldBorder().method24555();
       this.method6832();
       this.getProfiler().startSection("blocks");
       this.field9036.method7401(var1);
@@ -92,7 +91,7 @@ public class ClientWorld extends World {
 
    private void method6832() {
       this.method6833(this.worldInfo.method20033() + 1L);
-      if (this.worldInfo.method20046().method17135(Class5462.field24232)) {
+      if (this.worldInfo.method20046().getBoolean(Class5462.field24232)) {
          this.method6834(this.worldInfo.method20034() + 1L);
       }
    }
@@ -103,10 +102,10 @@ public class ClientWorld extends World {
 
    public void method6834(long var1) {
       if (var1 >= 0L) {
-         this.method6789().<Class7466>method17128(Class5462.field24232).method24175(true, (MinecraftServer)null);
+         this.getGameRules().<Class7466>method17128(Class5462.field24232).method24175(true, (MinecraftServer)null);
       } else {
          var1 = -var1;
-         this.method6789().<Class7466>method17128(Class5462.field24232).method24175(false, (MinecraftServer)null);
+         this.getGameRules().<Class7466>method17128(Class5462.field24232).method24175(false, (MinecraftServer)null);
       }
 
       this.field9028.method20040(var1);
@@ -149,7 +148,7 @@ public class ClientWorld extends World {
       if (!(var1 instanceof PlayerEntity) && !this.getChunkProvider().method7351(var1)) {
          this.method6839(var1);
       } else {
-         var1.method3274(var1.getPosX(), var1.getPosY(), var1.getPosZ());
+         var1.setLocationAndAngles(var1.getPosX(), var1.getPosY(), var1.getPosZ());
          var1.prevRotationYaw = var1.rotationYaw;
          var1.prevRotationPitch = var1.rotationPitch;
          if (var1.addedToChunk || var1.isSpectator()) {
@@ -164,7 +163,7 @@ public class ClientWorld extends World {
 
          this.method6839(var1);
          if (var1.addedToChunk) {
-            for (Entity var5 : var1.method3408()) {
+            for (Entity var5 : var1.getPassengers()) {
                this.method6838(var1, var5);
             }
          }
@@ -175,17 +174,17 @@ public class ClientWorld extends World {
       if (var2.removed || var2.getRidingEntity() != var1) {
          var2.stopRiding();
       } else if (var2 instanceof PlayerEntity || this.getChunkProvider().method7351(var2)) {
-         var2.method3274(var2.getPosX(), var2.getPosY(), var2.getPosZ());
+         var2.setLocationAndAngles(var2.getPosX(), var2.getPosY(), var2.getPosZ());
          var2.prevRotationYaw = var2.rotationYaw;
          var2.prevRotationPitch = var2.rotationPitch;
          if (var2.addedToChunk) {
             var2.ticksExisted++;
-            var2.method2868();
+            var2.updateRidden();
          }
 
          this.method6839(var2);
          if (var2.addedToChunk) {
-            for (Entity var6 : var2.method3408()) {
+            for (Entity var6 : var2.getPassengers()) {
                this.method6838(var2, var6);
             }
          }
@@ -274,7 +273,7 @@ public class ClientWorld extends World {
    public void method6848(int var1) {
       Entity var4 = (Entity)this.field9025.remove(var1);
       if (var4 != null) {
-         var4.method2904();
+         var4.remove();
          this.method6849(var4);
       }
    }
@@ -330,7 +329,7 @@ public class ClientWorld extends World {
       int var6 = 32;
       Random var7 = new Random();
       boolean var8 = false;
-      if (this.field9030.playerController.method23157() == Class1894.field11103) {
+      if (this.field9030.playerController.getCurrentGameType() == GameType.field11103) {
          for (ItemStack var10 : this.field9030.player.method2946()) {
             if (var10.getItem() == Blocks.field36765.method11581()) {
                var8 = true;
@@ -359,14 +358,14 @@ public class ClientWorld extends World {
          var14.method23480(this, var7, var5);
          IParticleData var15 = var14.method23485();
          if (var15 != null && this.rand.nextInt(10) == 0) {
-            boolean var16 = var13.method23454(this, var7, Direction.DOWN);
+            boolean var16 = var13.method23454(this, var7, net.minecraft.util.Direction.DOWN);
             BlockPos var17 = var7.down();
             this.method6854(var17, this.getBlockState(var17), var15, var16);
          }
       }
 
-      if (var6 && var13.method23448(Blocks.field36765)) {
-         this.method6746(ParticleTypes.BARRIER, (double)var10 + 0.5, (double)var11 + 0.5, (double)var12 + 0.5, 0.0, 0.0, 0.0);
+      if (var6 && var13.isIn(Blocks.field36765)) {
+         this.addParticle(ParticleTypes.BARRIER, (double)var10 + 0.5, (double)var11 + 0.5, (double)var12 + 0.5, 0.0, 0.0, 0.0);
       }
 
       if (!var13.method23456(this, var7)) {
@@ -375,7 +374,7 @@ public class ClientWorld extends World {
             .ifPresent(
                var2x -> {
                   if (var2x.method25615(this.rand)) {
-                     this.method6746(
+                     this.addParticle(
                         var2x.method25614(),
                         (double)var7.getX() + this.rand.nextDouble(),
                         (double)var7.getY() + this.rand.nextDouble(),
@@ -393,15 +392,15 @@ public class ClientWorld extends World {
    private void method6854(BlockPos var1, BlockState var2, IParticleData var3, boolean var4) {
       if (var2.method23449().method23474()) {
          VoxelShape var7 = var2.method23414(this, var1);
-         double var8 = var7.method19513(Class113.field414);
+         double var8 = var7.method19513(Direction.field414);
          if (!(var8 < 1.0)) {
             if (!var2.method23446(BlockTags.field32781)) {
-               double var10 = var7.method19512(Class113.field414);
+               double var10 = var7.method19512(Direction.field414);
                if (!(var10 > 0.0)) {
                   BlockPos var12 = var1.down();
                   BlockState var13 = this.getBlockState(var12);
                   VoxelShape var14 = var13.method23414(this, var12);
-                  double var15 = var14.method19513(Class113.field414);
+                  double var15 = var14.method19513(Direction.field414);
                   if (var15 < 1.0 && var13.method23449().method23474()) {
                      this.method6855(var1, var3, var7, (double)var1.getY() - 0.05);
                   }
@@ -424,17 +423,17 @@ public class ClientWorld extends World {
 
    private void method6855(BlockPos var1, IParticleData var2, VoxelShape var3, double var4) {
       this.method6856(
-         (double)var1.getX() + var3.method19512(Class113.field413),
-         (double)var1.getX() + var3.method19513(Class113.field413),
-         (double)var1.getZ() + var3.method19512(Class113.field415),
-         (double)var1.getZ() + var3.method19513(Class113.field415),
+         (double)var1.getX() + var3.method19512(Direction.field413),
+         (double)var1.getX() + var3.method19513(Direction.field413),
+         (double)var1.getZ() + var3.method19512(Direction.field415),
+         (double)var1.getZ() + var3.method19513(Direction.field415),
          var4,
          var2
       );
    }
 
    private void method6856(double var1, double var3, double var5, double var7, double var9, IParticleData var11) {
-      this.method6746(
+      this.addParticle(
          var11,
          MathHelper.lerp(this.rand.nextDouble(), var1, var3),
          var9,
@@ -632,7 +631,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method6803(int var1, BlockPos var2, int var3) {
+   public void sendBlockBreakProgress(int var1, BlockPos var2, int var3) {
       this.field9027.method920(var1, var2, var3);
    }
 
@@ -657,7 +656,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method6746(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public void addParticle(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       this.field9027.method911(var1, var1.getType().method24006(), var2, var4, var6, var8, var10, var12);
    }
 
@@ -789,7 +788,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public float method6877(Direction var1, boolean var2) {
+   public float method6877(net.minecraft.util.Direction var1, boolean var2) {
       boolean var5 = this.method6830().method19307();
       boolean var6 = Class7944.method26921();
       if (!var2) {
@@ -854,8 +853,8 @@ public class ClientWorld extends World {
 
    public BlockPos method6880() {
       BlockPos var3 = new BlockPos(this.worldInfo.method20029(), this.worldInfo.method20030(), this.worldInfo.method20031());
-      if (!this.method6810().method24523(var3)) {
-         var3 = this.method7006(Class101.field299, new BlockPos(this.method6810().getCenterX(), 0.0, this.method6810().getCenterZ()));
+      if (!this.getWorldBorder().contains(var3)) {
+         var3 = this.method7006(Class101.field299, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
       }
 
       return var3;

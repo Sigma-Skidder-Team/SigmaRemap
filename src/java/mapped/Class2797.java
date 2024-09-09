@@ -72,13 +72,13 @@ public class Class2797<T extends LivingEntity> extends Class2855<T> implements C
    }
 
    public void method10997(T var1, float var2, float var3, float var4) {
-      this.field17442 = var1.method2999(var4);
+      this.field17442 = var1.getSwimAnimation(var4);
       super.method10997(var1, var2, var3, var4);
    }
 
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
-      boolean var9 = var1.method3167() > 4;
-      boolean var10 = var1.method3166();
+      boolean var9 = var1.getTicksElytraFlying() > 4;
+      boolean var10 = var1.isActualySwimming();
       this.field17432.field31036 = var5 * (float) (Math.PI / 180.0);
       if (!var9) {
          if (!(this.field17442 > 0.0F)) {
@@ -99,7 +99,7 @@ public class Class2797<T extends LivingEntity> extends Class2855<T> implements C
       this.field17436.field31032 = 5.0F;
       float var11 = 1.0F;
       if (var9) {
-         var11 = (float)var1.getVec().method11349();
+         var11 = (float)var1.getMotion().lengthSquared();
          var11 /= 0.2F;
          var11 = var11 * var11 * var11;
       }
@@ -131,7 +131,7 @@ public class Class2797<T extends LivingEntity> extends Class2855<T> implements C
 
       this.field17435.field31036 = 0.0F;
       this.field17436.field31036 = 0.0F;
-      boolean var12 = var1.method2967() == HandSide.field14418;
+      boolean var12 = var1.getPrimaryHand() == HandSide.field14418;
       boolean var13 = !var12 ? this.field17440.method9003() : this.field17439.method9003();
       if (var12 == var13) {
          this.method11003((T)var1);
@@ -366,7 +366,7 @@ public class Class2797<T extends LivingEntity> extends Class2855<T> implements C
    }
 
    public HandSide method11013(T var1) {
-      HandSide var4 = var1.method2967();
-      return var1.field4948 != Hand.MAIN_HAND ? var4.method8920() : var4;
+      HandSide var4 = var1.getPrimaryHand();
+      return var1.swingingHand != Hand.MAIN_HAND ? var4.method8920() : var4;
    }
 }

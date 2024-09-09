@@ -18,7 +18,7 @@ public class Class5692 extends Class5651<Class1042, Class2802<Class1042>> {
 
    public void method17857(Class1042 var1, MatrixStack var2, float var3) {
       float var6 = 0.9375F;
-      if (!var1.method3005()) {
+      if (!var1.isChild()) {
          this.field25098 = 0.5F;
       } else {
          var6 = (float)((double)var6 * 0.5);

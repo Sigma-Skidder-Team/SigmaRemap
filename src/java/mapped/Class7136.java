@@ -8,13 +8,13 @@ import org.jetbrains.annotations.Nullable;
 public class Class7136 {
    private static String[] field30686;
    private static final int[] field30687 = new int[0];
-   private final Class6355 field30688;
+   private final ViaVersion7 field30688;
    private final Class7981 field30689;
    private final List<Class8771> field30690 = new ArrayList<Class8771>();
    private final List<Class8771> field30691 = new ArrayList<Class8771>();
    private final List<Class8771> field30692 = new ArrayList<Class8771>();
 
-   public Class7136(Class6355 var1, Class7981 var2) {
+   public Class7136(ViaVersion7 var1, Class7981 var2) {
       this.field30688 = var1;
       this.field30689 = var2;
    }
@@ -108,7 +108,7 @@ public class Class7136 {
    }
 
    // $VF: synthetic method
-   public static Class6355 method22260(Class7136 var0) {
+   public static ViaVersion7 method22260(Class7136 var0) {
       return var0.field30688;
    }
 

@@ -64,13 +64,13 @@ public enum Class2230 implements Class2234 {
    field14620(Blocks.CHEST, Blocks.TRAPPED_CHEST) {
       @Override
       public BlockState method8970(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-         if (var3.method23448(var1.getBlock())
-                 && var2.method544().method324()
+         if (var3.isIn(var1.getBlock())
+                 && var2.getAxis().method324()
                  && var1.method23463(Class3348.field18866) == Class111.field379
                  && var3.method23463(Class3348.field18866) == Class111.field379) {
 
             Direction var9 = var1.method23463(Class3348.field18865);
-            if (var2.method544() != var9.method544() && var9 == var3.method23463(Class3348.field18865)) {
+            if (var2.getAxis() != var9.getAxis() && var9 == var3.method23463(Class3348.field18865)) {
                Class111 var10 = var2 != var9.method537() ? Class111.field381 : Class111.field380;
                var4.setBlockState(var6, var3.method23465(Class3348.field18866, var10.method308()), 18);
                if (var9 == Direction.NORTH || var9 == Direction.EAST
@@ -144,7 +144,7 @@ public enum Class2230 implements Class2234 {
       public BlockState method8970(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
          if (var1.method23463(Class3486.field19347) == 7) {
             Class3462 var9 = ((Class3486)var1.getBlock()).method12185();
-            if (var3.method23448(var9)) {
+            if (var3.isIn(var9)) {
                return var9.method12147().method11579().method23465(Class3198.field18484, var2);
             }
          }

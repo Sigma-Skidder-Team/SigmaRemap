@@ -139,7 +139,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
       this.method5859();
    }
 
-   public void method5841(Class5839 var1) {
+   public void method5841(Slot var1) {
       if (var1 != null && var1.field25579 < this.field6641.method18226()) {
          this.field6637.method34733();
          if (this.method5839()) {
@@ -286,7 +286,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
                }
 
                this.field6637.method34733();
-               this.field6642.playerController.method23145(this.field6642.player.field4905.field25471, var11, Screen.method2476());
+               this.field6642.playerController.sendPlaceRecipePacket(this.field6642.player.field4905.field25471, var11, Screen.method2476());
                if (!this.method5855()) {
                   this.method5840(false);
                }
@@ -430,10 +430,10 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
       }
    }
 
-   public void method5858(IRecipe<?> var1, List<Class5839> var2) {
+   public void method5858(IRecipe<?> var1, List<Slot> var2) {
       ItemStack var5 = var1.getRecipeOutput();
       this.field6637.method34738(var1);
-      this.field6637.method34734(Class120.method340(var5), ((Class5839)var2.get(0)).field25580, ((Class5839)var2.get(0)).field25581);
+      this.field6637.method34734(Class120.method340(var5), ((Slot)var2.get(0)).field25580, ((Slot)var2.get(0)).field25581);
       this.method5832(this.field6641.method18224(), this.field6641.method18225(), this.field6641.method18223(), var1, var1.method14969().iterator(), 0);
    }
 
@@ -441,7 +441,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
    public void method5830(Iterator<Class120> var1, int var2, int var3, int var4, int var5) {
       Class120 var8 = (Class120)var1.next();
       if (!var8.method337()) {
-         Class5839 var9 = this.field6641.field25468.get(var2);
+         Slot var9 = this.field6641.field25468.get(var2);
          this.field6637.method34734(var8, var9.field25580, var9.field25581);
       }
    }

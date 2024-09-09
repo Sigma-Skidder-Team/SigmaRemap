@@ -24,8 +24,8 @@ public abstract class Class1028 extends Class1009 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.field5724 != null) {
          var1.put("PatrolTarget", Class8354.method29284(this.field5724));
       }
@@ -35,8 +35,8 @@ public abstract class Class1028 extends Class1009 {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("PatrolTarget")) {
          this.field5724 = Class8354.method29283(var1.getCompound("PatrolTarget"));
       }
@@ -66,8 +66,8 @@ public abstract class Class1028 extends Class1009 {
       }
 
       if (this.method4577()) {
-         this.method2944(Class2106.field13736, Class7699.method25421());
-         this.method4279(Class2106.field13736, 2.0F);
+         this.setItemStackToSlot(EquipmentSlotType.field13736, Class7699.method25421());
+         this.method4279(EquipmentSlotType.field13736, 2.0F);
       }
 
       if (var3 == Class2202.field14406) {

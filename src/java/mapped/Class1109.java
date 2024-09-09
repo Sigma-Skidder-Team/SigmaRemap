@@ -30,13 +30,13 @@ public class Class1109 extends Class1108 {
 
    @Override
    public boolean method4266(Class1662 var1) {
-      return var1.method7050(this) && !var1.method7014(this.getBoundingBox());
+      return var1.checkNoEntityCollision(this) && !var1.method7014(this.getBoundingBox());
    }
 
    @Override
    public void method5318(int var1, boolean var2) {
       super.method5318(var1, var2);
-      this.method3085(Attributes.field42113).method38661((double)(var1 * 3));
+      this.getAttribute(Attributes.field42113).method38661((double)(var1 * 3));
    }
 
    @Override
@@ -55,7 +55,7 @@ public class Class1109 extends Class1108 {
    }
 
    @Override
-   public boolean method3327() {
+   public boolean isBurning() {
       return false;
    }
 
@@ -70,31 +70,31 @@ public class Class1109 extends Class1108 {
    }
 
    @Override
-   public void method2914() {
-      Vector3d var3 = this.getVec();
-      this.method3435(var3.x, (double)(this.method3103() + (float)this.method5319() * 0.1F), var3.z);
+   public void jump() {
+      Vector3d var3 = this.getMotion();
+      this.setMotion(var3.x, (double)(this.getJumpUpwardsMotion() + (float)this.method5319() * 0.1F), var3.z);
       this.isAirBorne = true;
    }
 
    @Override
-   public void method3105(ITag<Fluid> var1) {
-      if (var1 != Class8953.field40470) {
-         super.method3105(var1);
+   public void handleFluidJump(ITag<Fluid> var1) {
+      if (var1 != FluidTags.field40470) {
+         super.handleFluidJump(var1);
       } else {
-         Vector3d var4 = this.getVec();
-         this.method3435(var4.x, (double)(0.22F + (float)this.method5319() * 0.05F), var4.z);
+         Vector3d var4 = this.getMotion();
+         this.setMotion(var4.x, (double)(0.22F + (float)this.method5319() * 0.05F), var4.z);
          this.isAirBorne = true;
       }
    }
 
    @Override
-   public boolean method2921(float var1, float var2) {
+   public boolean onLivingFall(float var1, float var2) {
       return false;
    }
 
    @Override
    public boolean method5325() {
-      return this.method3138();
+      return this.isServerWorld();
    }
 
    @Override

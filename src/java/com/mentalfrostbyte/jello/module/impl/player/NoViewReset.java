@@ -18,10 +18,10 @@ public class NoViewReset extends Module {
                 if (mc.player.ticksExisted >= 10) {
                     if (mc.player != null && var1.getPacket() instanceof SPlayerPositionLookPacket) {
                         SPlayerPositionLookPacket var4 = (SPlayerPositionLookPacket) var1.getPacket();
-                        mc.player.prevRotationYaw = var4.field24300;
-                        mc.player.prevRotationPitch = var4.field24301;
-                        var4.field24300 = mc.player.rotationYaw;
-                        var4.field24301 = mc.player.rotationPitch;
+                        mc.player.prevRotationYaw = var4.yaw;
+                        mc.player.prevRotationPitch = var4.pitch;
+                        var4.yaw = mc.player.rotationYaw;
+                        var4.pitch = mc.player.rotationPitch;
                     }
                 }
             }

@@ -28,8 +28,8 @@ public class Class6100 {
                method18855(var11, (short)var7, var5, var1);
             }
          } catch (Exception var12) {
-            if (Class8042.method27614().method34425()) {
-               Class8042.method27613().method27366().warning("Block Entity: " + var12.getMessage() + ": " + var5);
+            if (ViaVersion3.method27614().method34425()) {
+               ViaVersion3.method27613().method27366().warning("Block Entity: " + var12.getMessage() + ": " + var5);
             }
          }
       }

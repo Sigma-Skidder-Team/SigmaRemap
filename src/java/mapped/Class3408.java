@@ -35,7 +35,7 @@ public class Class3408 extends Block {
       if (var2.method7007(var3.up())) {
          int var7 = 1;
 
-         while (var2.getBlockState(var3.method8340(var7)).method23448(this)) {
+         while (var2.getBlockState(var3.method8340(var7)).isIn(this)) {
             var7++;
          }
 
@@ -66,18 +66,18 @@ public class Class3408 extends Block {
       if (var6.getBlock() == this) {
          return true;
       } else {
-         if (var6.method23448(Blocks.field36395)
-            || var6.method23448(Blocks.field36396)
-            || var6.method23448(Blocks.field36397)
-            || var6.method23448(Blocks.field36398)
-            || var6.method23448(Blocks.SAND)
-            || var6.method23448(Blocks.RED_SAND)) {
+         if (var6.isIn(Blocks.field36395)
+            || var6.isIn(Blocks.field36396)
+            || var6.isIn(Blocks.field36397)
+            || var6.isIn(Blocks.field36398)
+            || var6.isIn(Blocks.SAND)
+            || var6.isIn(Blocks.RED_SAND)) {
             BlockPos var7 = var3.down();
 
             for (Direction var9 : Class76.field161) {
                BlockState var10 = var2.getBlockState(var7.method8349(var9));
                FluidState var11 = var2.getFluidState(var7.method8349(var9));
-               if (var11.method23486(Class8953.field40469) || var10.method23448(Blocks.field36889)) {
+               if (var11.method23486(FluidTags.field40469) || var10.isIn(Blocks.field36889)) {
                   return true;
                }
             }

@@ -42,14 +42,14 @@ public abstract class Class1702 implements Class1704, AutoCloseable {
    public void method7349(boolean var1, boolean var2) {
    }
 
-   public void method7350(Class7481 var1, boolean var2) {
+   public void method7350(ChunkPos var1, boolean var2) {
    }
 
    public boolean method7351(Entity var1) {
       return true;
    }
 
-   public boolean method7352(Class7481 var1) {
+   public boolean method7352(ChunkPos var1) {
       return true;
    }
 

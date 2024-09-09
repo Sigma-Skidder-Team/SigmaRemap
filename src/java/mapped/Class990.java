@@ -3,12 +3,12 @@ package mapped;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 
-public class Class990 implements Class920 {
+public class Class990 implements IInventory {
    private static String[] field5474;
-   private final Class920 field5475;
-   private final Class920 field5476;
+   private final IInventory field5475;
+   private final IInventory field5476;
 
-   public Class990(Class920 var1, Class920 var2) {
+   public Class990(IInventory var1, IInventory var2) {
       if (var1 == null) {
          var1 = var2;
       }
@@ -22,74 +22,74 @@ public class Class990 implements Class920 {
    }
 
    @Override
-   public int method3629() {
-      return this.field5475.method3629() + this.field5476.method3629();
+   public int getSizeInventory() {
+      return this.field5475.getSizeInventory() + this.field5476.getSizeInventory();
    }
 
    @Override
-   public boolean method3617() {
-      return this.field5475.method3617() && this.field5476.method3617();
+   public boolean isEmpty() {
+      return this.field5475.isEmpty() && this.field5476.isEmpty();
    }
 
-   public boolean method4070(Class920 var1) {
+   public boolean method4070(IInventory var1) {
       return this.field5475 == var1 || this.field5476 == var1;
    }
 
    @Override
-   public ItemStack method3618(int var1) {
-      return var1 < this.field5475.method3629() ? this.field5475.method3618(var1) : this.field5476.method3618(var1 - this.field5475.method3629());
+   public ItemStack getStackInSlot(int var1) {
+      return var1 < this.field5475.getSizeInventory() ? this.field5475.getStackInSlot(var1) : this.field5476.getStackInSlot(var1 - this.field5475.getSizeInventory());
    }
 
    @Override
-   public ItemStack method3619(int var1, int var2) {
-      return var1 < this.field5475.method3629() ? this.field5475.method3619(var1, var2) : this.field5476.method3619(var1 - this.field5475.method3629(), var2);
+   public ItemStack decrStackSize(int var1, int var2) {
+      return var1 < this.field5475.getSizeInventory() ? this.field5475.decrStackSize(var1, var2) : this.field5476.decrStackSize(var1 - this.field5475.getSizeInventory(), var2);
    }
 
    @Override
-   public ItemStack method3620(int var1) {
-      return var1 < this.field5475.method3629() ? this.field5475.method3620(var1) : this.field5476.method3620(var1 - this.field5475.method3629());
+   public ItemStack removeStackFromSlot(int var1) {
+      return var1 < this.field5475.getSizeInventory() ? this.field5475.removeStackFromSlot(var1) : this.field5476.removeStackFromSlot(var1 - this.field5475.getSizeInventory());
    }
 
    @Override
-   public void method3621(int var1, ItemStack var2) {
-      if (var1 < this.field5475.method3629()) {
-         this.field5475.method3621(var1, var2);
+   public void setInventorySlotContents(int var1, ItemStack var2) {
+      if (var1 < this.field5475.getSizeInventory()) {
+         this.field5475.setInventorySlotContents(var1, var2);
       } else {
-         this.field5476.method3621(var1 - this.field5475.method3629(), var2);
+         this.field5476.setInventorySlotContents(var1 - this.field5475.getSizeInventory(), var2);
       }
    }
 
    @Override
-   public int method3630() {
-      return this.field5475.method3630();
+   public int getInventoryStackLimit() {
+      return this.field5475.getInventoryStackLimit();
    }
 
    @Override
-   public void method3622() {
-      this.field5475.method3622();
-      this.field5476.method3622();
+   public void markDirty() {
+      this.field5475.markDirty();
+      this.field5476.markDirty();
    }
 
    @Override
-   public boolean method3623(PlayerEntity var1) {
-      return this.field5475.method3623(var1) && this.field5476.method3623(var1);
+   public boolean isUsableByPlayer(PlayerEntity var1) {
+      return this.field5475.isUsableByPlayer(var1) && this.field5476.isUsableByPlayer(var1);
    }
 
    @Override
-   public void method3631(PlayerEntity var1) {
-      this.field5475.method3631(var1);
-      this.field5476.method3631(var1);
+   public void openInventory(PlayerEntity var1) {
+      this.field5475.openInventory(var1);
+      this.field5476.openInventory(var1);
    }
 
    @Override
-   public void method3632(PlayerEntity var1) {
-      this.field5475.method3632(var1);
-      this.field5476.method3632(var1);
+   public void closeInventory(PlayerEntity var1) {
+      this.field5475.closeInventory(var1);
+      this.field5476.closeInventory(var1);
    }
 
    @Override
-   public boolean method3633(int var1, ItemStack var2) {
-      return var1 < this.field5475.method3629() ? this.field5475.method3633(var1, var2) : this.field5476.method3633(var1 - this.field5475.method3629(), var2);
+   public boolean isItemValidForSlot(int var1, ItemStack var2) {
+      return var1 < this.field5475.getSizeInventory() ? this.field5475.isItemValidForSlot(var1, var2) : this.field5476.isItemValidForSlot(var1 - this.field5475.getSizeInventory(), var2);
    }
 
    @Override

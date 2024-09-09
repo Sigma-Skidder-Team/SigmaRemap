@@ -36,15 +36,15 @@ public class Class3058 implements Class2982 {
             var6.getAsJsonObject().add("version", var8 = new JsonObject());
          }
 
-         if (Class8042.method27612().method21908()) {
-            var8.add("supportedVersions", Class9610.method37357().toJsonTree(Class8042.method27611().method33422()));
+         if (ViaVersion3.method27612().method21908()) {
+            var8.add("supportedVersions", Class9610.method37357().toJsonTree(ViaVersion3.method27611().method33422()));
          }
 
          if (Class9019.field41258 == -1) {
             Class9019.field41258 = ViaVerList.method18569(var7).method18573();
          }
 
-         Class5417 var9 = Class8042.method27614().method34424().<Class5417>method31084(Class5417.class);
+         Class5417 var9 = ViaVersion3.method27614().method34424().<Class5417>method31084(Class5417.class);
          if (var9 == null) {
             var1.method30580().method22469(false);
             return;
@@ -52,7 +52,7 @@ public class Class3058 implements Class2982 {
 
          int var10 = var9.method17012(var1.method30580());
          List var11 = null;
-         if (var4.method18675() >= var10 || Class8042.method27613().method27365()) {
+         if (var4.method18675() >= var10 || ViaVersion3.method27613().method27365()) {
             var11 = Class9019.method33363(var4.method18675(), var10);
          }
 
@@ -65,7 +65,7 @@ public class Class3058 implements Class2982 {
             var1.method30580().method22469(false);
          }
 
-         if (Class8042.method27612().method21942().contains(var4.method18675())) {
+         if (ViaVersion3.method27612().method21942().contains(var4.method18675())) {
             var8.addProperty("protocol", -1);
          }
 

@@ -28,7 +28,7 @@ public class Class903 extends Class901 {
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
       Entity var4 = this.method3460();
-      if ((var1.getType() != RayTraceResult.Type.ENTITY || !((EntityRayTraceResult)var1).getEntity().method3359(var4)) && !this.world.isRemote) {
+      if ((var1.getType() != RayTraceResult.Type.ENTITY || !((EntityRayTraceResult)var1).getEntity().isEntityEqual(var4)) && !this.world.isRemote) {
          List<LivingEntity> var5 = this.world.method7182(LivingEntity.class, this.getBoundingBox().method19663(4.0, 2.0, 4.0));
          Class999 var6 = new Class999(this.world, this.getPosX(), this.getPosY(), this.getPosZ());
          if (var4 instanceof LivingEntity) {
@@ -39,7 +39,7 @@ public class Class903 extends Class901 {
          var6.method4097(3.0F);
          var6.method4109(600);
          var6.method4111((7.0F - var6.method4098()) / (float)var6.method4108());
-         var6.method4101(new Class2023(Effects.INSTANT_DAMAGE, 1, 1));
+         var6.method4101(new EffectInstance(Effects.INSTANT_DAMAGE, 1, 1));
          if (!var5.isEmpty()) {
             for (LivingEntity var8 : var5) {
                double var9 = this.getDistanceSq(var8);
@@ -50,19 +50,19 @@ public class Class903 extends Class901 {
             }
          }
 
-         this.world.playEvent(2006, this.getPosition(), !this.method3245() ? 1 : -1);
-         this.world.method6916(var6);
-         this.method2904();
+         this.world.playEvent(2006, this.getPosition(), !this.isSilent() ? 1 : -1);
+         this.world.addEntity(var6);
+         this.remove();
       }
    }
 
    @Override
-   public boolean method3139() {
+   public boolean canBeCollidedWith() {
       return false;
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       return false;
    }
 

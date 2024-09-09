@@ -30,7 +30,7 @@ public class Class3344 extends Class3343 {
    public static void method11898(World var0, BlockPos var1, SkullTileEntity var2) {
       if (!var0.isRemote) {
          BlockState var5 = var2.method3775();
-         boolean var6 = var5.method23448(Blocks.field36703) || var5.method23448(Blocks.field36704);
+         boolean var6 = var5.isIn(Blocks.field36703) || var5.isIn(Blocks.field36704);
          if (var6 && var1.getY() >= 0 && var0.method6997() != Difficulty.field14351) {
             Class9803 var7 = method11900();
             Class9086 var8 = var7.method38656(var0, var1);
@@ -43,23 +43,23 @@ public class Class3344 extends Class3343 {
                   }
                }
 
-               Class1079 var13 = EntityType.field41102.method33215(var0);
+               WitherEntity var13 = EntityType.field41102.create(var0);
                BlockPos var14 = var8.method33881(1, 2, 0).method37551();
-               var13.method3273(
+               var13.setLocationAndAngles(
                   (double)var14.getX() + 0.5,
                   (double)var14.getY() + 0.55,
                   (double)var14.getZ() + 0.5,
-                  var8.method33879().method544() != Class113.field413 ? 90.0F : 0.0F,
+                  var8.method33879().getAxis() != Direction.field413 ? 90.0F : 0.0F,
                   0.0F
                );
-               var13.field4965 = var8.method33879().method544() != Class113.field413 ? 90.0F : 0.0F;
+               var13.renderYawOffset = var8.method33879().getAxis() != Direction.field413 ? 90.0F : 0.0F;
                var13.method5003();
 
                for (ServerPlayerEntity var12 : var0.<ServerPlayerEntity>method7182(ServerPlayerEntity.class, var13.getBoundingBox().method19664(50.0))) {
                   CriteriaTriggers.field44478.method15080(var12, var13);
                }
 
-               var0.method6916(var13);
+               var0.addEntity(var13);
 
                for (int var16 = 0; var16 < var7.method38654(); var16++) {
                   for (int var17 = 0; var17 < var7.method38653(); var17++) {

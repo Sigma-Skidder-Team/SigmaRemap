@@ -37,7 +37,7 @@ public class Class2887<T extends Class1057> extends Class2803<T> {
       }
 
       this.field17890.field31035 = var6 * (float) (Math.PI / 180.0);
-      this.field17890.field31036 = (var1.field4967 - 180.0F - var1.field4965) * (float) (Math.PI / 180.0);
+      this.field17890.field31036 = (var1.rotationYawHead - 180.0F - var1.renderYawOffset) * (float) (Math.PI / 180.0);
    }
 
    @Override

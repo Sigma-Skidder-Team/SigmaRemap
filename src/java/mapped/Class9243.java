@@ -4,26 +4,26 @@ package mapped;
 public class Class9243 {
    private static String[] field42530;
    public static final int[] field42531;
-   public static final int[] field42532 = new int[Class1894.values().length];
+   public static final int[] field42532 = new int[GameType.values().length];
 
    static {
       try {
-         field42532[Class1894.field11105.ordinal()] = 1;
+         field42532[GameType.SPECTATOR.ordinal()] = 1;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field42532[Class1894.field11102.ordinal()] = 2;
+         field42532[GameType.field11102.ordinal()] = 2;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field42532[Class1894.field11103.ordinal()] = 3;
+         field42532[GameType.field11103.ordinal()] = 3;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field42532[Class1894.field11104.ordinal()] = 4;
+         field42532[GameType.field11104.ordinal()] = 4;
       } catch (NoSuchFieldError var6) {
       }
 

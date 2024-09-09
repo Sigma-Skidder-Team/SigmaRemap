@@ -106,9 +106,9 @@ public class Class864 extends Class851<Class5811> {
             int var12 = var11 - this.field4799;
             double var13 = var1 - (double)(var8 + var12 % 4 * 16);
             double var15 = var3 - (double)(var9 + var12 / 4 * 18);
-            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 16.0 && var15 < 18.0 && this.field4727.method18104(this.mc.player, var11)) {
+            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 16.0 && var15 < 18.0 && this.field4727.enchantItem(this.mc.player, var11)) {
                Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27181, 1.0F));
-               this.mc.playerController.method23146(this.field4727.field25471, var11);
+               this.mc.playerController.sendEnchantPacket(this.field4727.field25471, var11);
                return true;
             }
          }

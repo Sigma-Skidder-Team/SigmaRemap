@@ -53,8 +53,8 @@ public class Class1110 extends Class1111 implements Class1008 {
    }
 
    private void method5337() {
-      this.method3385();
-      this.method3085(Attributes.field42110).method38661((double)(6 + this.method5338()));
+      this.recalculateSize();
+      this.getAttribute(Attributes.field42110).method38661((double)(6 + this.method5338()));
    }
 
    public int method5338() {
@@ -62,17 +62,17 @@ public class Class1110 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.35F;
    }
 
    @Override
-   public void method3155(DataParameter<?> var1) {
+   public void notifyDataManagerChange(DataParameter<?> var1) {
       if (field6087.equals(var1)) {
          this.method5337();
       }
 
-      super.method3155(var1);
+      super.notifyDataManagerChange(var1);
    }
 
    @Override
@@ -105,23 +105,23 @@ public class Class1110 extends Class1111 implements Class1008 {
          float var7 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)) * (1.3F + 0.21F * (float)var5);
          float var8 = (0.3F + var3 * 0.45F) * ((float)var5 * 0.2F + 1.0F);
          this.world
-            .method6746(
+            .addParticle(
                ParticleTypes.field34087, this.getPosX() + (double)var6, this.getPosY() + (double)var8, this.getPosZ() + (double)var7, 0.0, 0.0, 0.0
             );
          this.world
-            .method6746(
+            .addParticle(
                ParticleTypes.field34087, this.getPosX() - (double)var6, this.getPosY() + (double)var8, this.getPosZ() - (double)var7, 0.0, 0.0, 0.0
             );
       }
    }
 
    @Override
-   public void method2871() {
+   public void livingEntity() {
       if (this.isAlive() && this.method4310()) {
-         this.method3221(8);
+         this.setFire(8);
       }
 
-      super.method2871();
+      super.livingEntity();
    }
 
    @Override
@@ -137,8 +137,8 @@ public class Class1110 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("AX")) {
          this.field6089 = new BlockPos(var1.getInt("AX"), var1.getInt("AY"), var1.getInt("AZ"));
       }
@@ -147,12 +147,12 @@ public class Class1110 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("AX", this.field6089.getX());
-      var1.method102("AY", this.field6089.getY());
-      var1.method102("AZ", this.field6089.getZ());
-      var1.method102("Size", this.method5338());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("AX", this.field6089.getX());
+      var1.putInt("AY", this.field6089.getY());
+      var1.putInt("AZ", this.field6089.getZ());
+      var1.putInt("Size", this.method5338());
    }
 
    @Override
@@ -181,24 +181,24 @@ public class Class1110 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public Class7809 method3089() {
-      return Class7809.field33506;
+   public CreatureAttribute getCreatureAttribute() {
+      return CreatureAttribute.field33506;
    }
 
    @Override
-   public float method3099() {
+   public float getSoundVolume() {
       return 1.0F;
    }
 
    @Override
-   public boolean method2996(EntityType<?> var1) {
+   public boolean canAttack(EntityType<?> var1) {
       return true;
    }
 
    @Override
-   public EntitySize method2981(Pose var1) {
+   public EntitySize getSize(Pose var1) {
       int var4 = this.method5338();
-      EntitySize var5 = super.method2981(var1);
+      EntitySize var5 = super.getSize(var1);
       float var6 = (var5.field39968 + 0.2F * (float)var4) / var5.field39968;
       return var5.method32099(var6);
    }

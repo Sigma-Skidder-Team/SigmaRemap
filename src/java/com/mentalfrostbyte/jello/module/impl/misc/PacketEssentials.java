@@ -23,32 +23,32 @@ public class PacketEssentials extends Module {
                         if (!(var1.getPacket() instanceof SUpdateBossInfoPacket)) {
                             if (!(var1.getPacket() instanceof SScoreboardObjectivePacket)) {
                                 if (var1.getPacket() instanceof SEntityMetadataPacket) {
-                                    var1.method13900(true);
+                                    var1.setCancelled(true);
                                 }
                             } else {
-                                var1.method13900(true);
+                                var1.setCancelled(true);
                             }
                         } else {
-                            var1.method13900(true);
+                            var1.setCancelled(true);
                         }
                     } else {
                         SSpawnParticlePacket var4 = (SSpawnParticlePacket) var1.getPacket();
-                        var1.method13900(true);
+                        var1.setCancelled(true);
                     }
                 } else {
                     SSpawnMobPacket var5 = (SSpawnMobPacket) var1.getPacket();
                     if (var5.method17537() == 1) {
-                        var1.method13900(true);
+                        var1.setCancelled(true);
                     }
                 }
             } else {
                 SSpawnObjectPacket var6 = (SSpawnObjectPacket) var1.getPacket();
                 if (var6.method17266() == EntityType.field41006) {
-                    var1.method13900(true);
+                    var1.setCancelled(true);
                 }
 
                 if (var6.method17266() == EntityType.field41035) {
-                    var1.method13900(true);
+                    var1.setCancelled(true);
                 }
             }
         }

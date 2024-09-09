@@ -5,7 +5,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Ordering;
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.event.impl.Class4407;
+import com.mentalfrostbyte.jello.event.impl.EventRenderGUI;
 import com.mojang.datafixers.util.Pair;
 import mapped.*;
 import net.minecraft.client.GameSettings;
@@ -109,11 +109,11 @@ public class IngameGui extends AbstractGui {
         }
 
         float var7 = MathHelper.lerp(var2, this.field6716.player.field6142, this.field6716.player.field6141);
-        if (var7 > 0.0F && !this.field6716.player.method3033(Effects.NAUSEA)) {
+        if (var7 > 0.0F && !this.field6716.player.isPotionActive(Effects.NAUSEA)) {
             this.method5981(var7);
         }
 
-        if (this.field6716.playerController.method23157() != Class1894.field11105) {
+        if (this.field6716.playerController.getCurrentGameType() != GameType.SPECTATOR) {
             if (!this.field6716.gameSettings.hideGUI) {
                 this.method5966(var2, var1);
             }
@@ -134,7 +134,7 @@ public class IngameGui extends AbstractGui {
             this.field6716.getProfiler().endSection();
             RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.field6716.getTextureManager().bindTexture(field6453);
-            if (this.field6716.playerController.method23130()) {
+            if (this.field6716.playerController.shouldDrawHUD()) {
                 this.method5976(var1);
             }
 
@@ -142,14 +142,14 @@ public class IngameGui extends AbstractGui {
             RenderSystem.disableBlend();
             int var8 = this.field6741 / 2 - 91;
             if (!this.field6716.player.method5405()) {
-                if (this.field6716.playerController.method23150()) {
+                if (this.field6716.playerController.gameIsSurvivalOrAdventure()) {
                     this.method5968(var1, var8);
                 }
             } else {
                 this.method5967(var1, var8);
             }
 
-            if (this.field6716.gameSettings.field44594 && this.field6716.playerController.method23157() != Class1894.field11105) {
+            if (this.field6716.gameSettings.field44594 && this.field6716.playerController.getCurrentGameType() != GameType.SPECTATOR) {
                 this.method5969(var1);
             } else if (this.field6716.player.isSpectator()) {
                 this.field6728.method5723(var1);
@@ -268,14 +268,14 @@ public class IngameGui extends AbstractGui {
 
             Class8375 var28 = var21 == null ? var17.method20989(1) : var21;
             if (var28 != null) {
-                Class4407 var31 = new Class4407(true);
+                EventRenderGUI var31 = new EventRenderGUI(true);
                 Client.getInstance().getEventManager().call(var31);
                 if (var31.isCancelled()) {
                     return;
                 }
 
                 this.method5971(var1, var28);
-                Class4407 var13 = new Class4407(false);
+                EventRenderGUI var13 = new EventRenderGUI(false);
                 Client.getInstance().getEventManager().call(var13);
             }
 
@@ -312,7 +312,7 @@ public class IngameGui extends AbstractGui {
 
     private void method5963(MatrixStack var1) {
         GameSettings var4 = this.field6716.gameSettings;
-        if (var4.getPointOfView().func_243192_a() && (this.field6716.playerController.method23157() != Class1894.field11105 || this.method5964(this.field6716.objectMouseOver))) {
+        if (var4.getPointOfView().func_243192_a() && (this.field6716.playerController.getCurrentGameType() != GameType.SPECTATOR || this.method5964(this.field6716.objectMouseOver))) {
             if (var4.showDebugInfo && !var4.hideGUI && !this.field6716.player.hasReducedDebug() && !var4.reducedDebugInfo) {
                 RenderSystem.pushMatrix();
                 RenderSystem.translatef((float) (this.field6741 / 2), (float) (this.field6742 / 2), (float) this.method5702());
@@ -369,7 +369,7 @@ public class IngameGui extends AbstractGui {
     }
 
     public void method5965(MatrixStack var1) {
-        Collection<Class2023> var4 = this.field6716.player.method3031();
+        Collection<EffectInstance> var4 = this.field6716.player.getActivePotionEffects();
         if (!var4.isEmpty()) {
             RenderSystem.enableBlend();
             int var5 = 0;
@@ -378,8 +378,8 @@ public class IngameGui extends AbstractGui {
             List<Runnable> var8 = Lists.newArrayListWithExpectedSize(var4.size());
             this.field6716.getTextureManager().bindTexture(Class851.field4720);
 
-            for (Class2023 var10 : Ordering.natural().reverse().sortedCopy(var4)) {
-                Effect var11 = var10.method8627();
+            for (EffectInstance var10 : Ordering.natural().reverse().sortedCopy(var4)) {
+                Effect var11 = var10.getPotion();
                 if (Class9299.field42935.method20214()) {
                     if (!Class9299.method35064(var10, Class9299.field42935)) {
                         continue;
@@ -406,7 +406,7 @@ public class IngameGui extends AbstractGui {
 
                     RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
                     float var14 = 1.0F;
-                    if (!var10.method8630()) {
+                    if (!var10.isAmbient()) {
                         this.method5696(var1, var12, var13, 141, 166, 24, 24);
                         if (var10.method8628() <= 200) {
                             int var15 = 10 - var10.method8628() / 20;
@@ -443,7 +443,7 @@ public class IngameGui extends AbstractGui {
             RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.field6716.getTextureManager().bindTexture(field6712);
             ItemStack var6 = var5.method3091();
-            HandSide var7 = var5.method2967().method8920();
+            HandSide var7 = var5.getPrimaryHand().method8920();
             int var8 = this.field6741 / 2;
             int var9 = this.method5702();
             short var10 = 182;
@@ -570,7 +570,7 @@ public class IngameGui extends AbstractGui {
             int var6 = this.method5991().method38821((ITextProperties) var5);
             int var7 = (this.field6741 - var6) / 2;
             int var8 = this.field6742 - 59;
-            if (!this.field6716.playerController.method23130()) {
+            if (!this.field6716.playerController.shouldDrawHUD()) {
                 var8 += 14;
             }
 
@@ -607,8 +607,8 @@ public class IngameGui extends AbstractGui {
     public void method5970(MatrixStack var1) {
         this.field6716.getProfiler().startSection("demo");
         Object var4;
-        if (this.field6716.world.method6783() < 120500L) {
-            var4 = new TranslationTextComponent("demo.remainingTime", Class9001.method33254((int) (120500L - this.field6716.world.method6783())));
+        if (this.field6716.world.getGameTime() < 120500L) {
+            var4 = new TranslationTextComponent("demo.remainingTime", Class9001.method33254((int) (120500L - this.field6716.world.getGameTime())));
         } else {
             var4 = field6714;
         }
@@ -708,7 +708,7 @@ public class IngameGui extends AbstractGui {
     private void method5976(MatrixStack var1) {
         PlayerEntity var4 = this.method5972();
         if (var4 != null) {
-            int var5 = MathHelper.method37773(var4.getHealth());
+            int var5 = MathHelper.ceil(var4.getHealth());
             boolean var6 = this.field6740 > (long) this.field6719 && (this.field6740 - (long) this.field6719) / 3L % 2L == 1L;
             long var7 = Util.milliTime();
             if (var5 < this.field6737 && var4.hurtResistantTime > 0) {
@@ -728,22 +728,22 @@ public class IngameGui extends AbstractGui {
             this.field6737 = var5;
             int var9 = this.field6738;
             this.field6715.setSeed((long) (this.field6719 * 312871));
-            Class9640 var10 = var4.method2932();
-            int var11 = var10.method37574();
+            FoodStats var10 = var4.getFoodStats();
+            int var11 = var10.getFoodLevel();
             int var12 = this.field6741 / 2 - 91;
             int var13 = this.field6741 / 2 + 91;
             int var14 = this.field6742 - 39;
-            float var15 = (float) var4.method3086(Attributes.field42105);
-            int var16 = MathHelper.method37773(var4.method2959());
-            int var17 = MathHelper.method37773((var15 + (float) var16) / 2.0F / 10.0F);
+            float var15 = (float) var4.getAttributeValue(Attributes.field42105);
+            int var16 = MathHelper.ceil(var4.getAbsorptionAmount());
+            int var17 = MathHelper.ceil((var15 + (float) var16) / 2.0F / 10.0F);
             int var18 = Math.max(10 - (var17 - 2), 3);
             int var19 = var14 - (var17 - 1) * var18 - 10;
             int var20 = var14 - 10;
             int var21 = var16;
             int var22 = var4.method3070();
             int var23 = -1;
-            if (var4.method3033(Effects.REGENERATION)) {
-                var23 = this.field6719 % MathHelper.method37773(var15 + 5.0F);
+            if (var4.isPotionActive(Effects.REGENERATION)) {
+                var23 = this.field6719 % MathHelper.ceil(var15 + 5.0F);
             }
 
             this.field6716.getProfiler().startSection("armor");
@@ -767,10 +767,10 @@ public class IngameGui extends AbstractGui {
 
             this.field6716.getProfiler().endStartSection("health");
 
-            for (int var33 = MathHelper.method37773((var15 + (float) var16) / 2.0F) - 1; var33 >= 0; var33--) {
+            for (int var33 = MathHelper.ceil((var15 + (float) var16) / 2.0F) - 1; var33 >= 0; var33--) {
                 byte var35 = 16;
-                if (!var4.method3033(Effects.POISON)) {
-                    if (var4.method3033(Effects.WITHER)) {
+                if (!var4.isPotionActive(Effects.POISON)) {
+                    if (var4.isPotionActive(Effects.WITHER)) {
                         var35 += 72;
                     }
                 } else {
@@ -782,7 +782,7 @@ public class IngameGui extends AbstractGui {
                     var26 = 1;
                 }
 
-                int var27 = MathHelper.method37773((float) (var33 + 1) / 10.0F) - 1;
+                int var27 = MathHelper.ceil((float) (var33 + 1) / 10.0F) - 1;
                 int var28 = var12 + var33 % 10 * 8;
                 int var29 = var14 - var27 * var18;
                 if (var5 <= 4) {
@@ -835,12 +835,12 @@ public class IngameGui extends AbstractGui {
                     int var39 = var14;
                     byte var41 = 16;
                     byte var43 = 0;
-                    if (var4.method3033(Effects.HUNGER)) {
+                    if (var4.isPotionActive(Effects.HUNGER)) {
                         var41 += 36;
                         var43 = 13;
                     }
 
-                    if (var4.method2932().method37577() <= 0.0F && this.field6719 % (var11 * 3 + 1) == 0) {
+                    if (var4.getFoodStats().method37577() <= 0.0F && this.field6719 % (var11 * 3 + 1) == 0) {
                         var39 = var14 + (this.field6715.nextInt(3) - 1);
                     }
 
@@ -860,8 +860,8 @@ public class IngameGui extends AbstractGui {
 
             this.field6716.getProfiler().endStartSection("air");
             int var38 = var4.getMaxAir();
-            int var40 = Math.min(var4.method3351(), var38);
-            if (var4.method3263(Class8953.field40469) || var40 < var38) {
+            int var40 = Math.min(var4.getAir(), var38);
+            if (var4.areEyesInFluid(FluidTags.field40469) || var40 < var38) {
                 int var42 = this.method5975(var36) - 1;
                 var20 -= var42 * 10;
                 int var44 = MathHelper.method37774((double) (var40 - 2) * 10.0 / (double) var38);
@@ -946,7 +946,7 @@ public class IngameGui extends AbstractGui {
 
     private void method5980(Entity var1) {
         if (Class7944.method26883()) {
-            WorldBorder var4 = this.field6716.world.method6810();
+            WorldBorder var4 = this.field6716.world.getWorldBorder();
             float var5 = (float) var4.method24526(var1);
             double var6 = Math.min(var4.method24550() * (double) var4.method24551() * 1000.0, Math.abs(var4.method24539() - var4.method24537()));
             double var8 = Math.max((double) var4.method24553(), var6);

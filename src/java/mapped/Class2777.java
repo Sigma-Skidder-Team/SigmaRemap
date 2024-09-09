@@ -17,7 +17,7 @@ public class Class2777 extends Class2595 {
    @Override
    public boolean method10803() {
       if (this.field17372.world.method6740()) {
-         if (this.field17372.method3013().nextInt(8000) == 0) {
+         if (this.field17372.getRNG().nextInt(8000) == 0) {
             this.field17373 = this.field17372
                .world
                .<Class1042>method7191(

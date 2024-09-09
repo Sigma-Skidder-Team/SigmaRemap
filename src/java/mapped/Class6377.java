@@ -13,7 +13,7 @@ public class Class6377 extends Class6373 {
    }
 
    @Override
-   public void method19349(Class8648 var1) {
+   public void method19349(ViaVersion6 var1) {
       var1.method31082(Class5417.class, new Class5417());
    }
 

@@ -26,7 +26,7 @@ public class Class164 implements Predicate<Class9632> {
 
    public boolean test(Class9632 var1) {
       BlockState var4 = var1.method37548();
-      if (!var4.method23448(this.field529.getBlock())) {
+      if (!var4.isIn(this.field529.getBlock())) {
          return false;
       } else {
          for (Class8550 var6 : this.field530) {
@@ -55,9 +55,9 @@ public class Class164 implements Predicate<Class9632> {
             TileEntity var7 = var1.getTileEntity(var2);
             if (var7 != null) {
                CompoundNBT var8 = this.field531.method79();
-               var8.method102("x", var2.getX());
-               var8.method102("y", var2.getY());
-               var8.method102("z", var2.getZ());
+               var8.putInt("x", var2.getX());
+               var8.putInt("y", var2.getY());
+               var8.putInt("z", var2.getZ());
                var7.method3645(var6, var8);
             }
          }

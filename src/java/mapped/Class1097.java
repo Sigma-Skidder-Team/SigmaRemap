@@ -47,15 +47,15 @@ public class Class1097 extends Class1018 {
    public Class1097(EntityType<? extends Class1097> var1, World var2) {
       super(var1, var2);
       this.field5596 = new Class6834(this);
-      if (!this.method3005()) {
+      if (!this.isChild()) {
          this.method4281(true);
       }
    }
 
    @Override
-   public boolean method2980(ItemStack var1) {
-      Class2106 var4 = Class1006.method4271(var1);
-      return !this.method2943(var4).isEmpty() ? false : var4 == Class2106.field13731 && super.method2980(var1);
+   public boolean canPickUpItem(ItemStack var1) {
+      EquipmentSlotType var4 = Class1006.method4271(var1);
+      return !this.getItemStackFromSlot(var4).isEmpty() ? false : var4 == EquipmentSlotType.field13731 && super.canPickUpItem(var1);
    }
 
    public int method5186() {
@@ -174,15 +174,15 @@ public class Class1097 extends Class1018 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.method109("MainGene", this.method5200().method9043());
       var1.method109("HiddenGene", this.method5202().method9043());
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method5201(Class2293.method9047(var1.getString("MainGene")));
       this.method5203(Class2293.method9047(var1.getString("HiddenGene")));
    }
@@ -190,7 +190,7 @@ public class Class1097 extends Class1018 {
    @Nullable
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      Class1097 var5 = EntityType.field41061.method33215(var1);
+      Class1097 var5 = EntityType.field41061.create(var1);
       if (var2 instanceof Class1097) {
          var5.method5225(this, (Class1097)var2);
       }
@@ -255,20 +255,20 @@ public class Class1097 extends Class1018 {
    }
 
    @Override
-   public boolean method3114(Entity var1) {
-      this.method2863(SoundEvents.field26879, 1.0F, 1.0F);
+   public boolean attackEntityAsMob(Entity var1) {
+      this.playSound(SoundEvents.field26879, 1.0F, 1.0F);
       if (!this.method4307()) {
          this.field6025 = true;
       }
 
-      return super.method3114(var1);
+      return super.attackEntityAsMob(var1);
    }
 
    @Override
    public void tick() {
       super.tick();
       if (this.method5211()) {
-         if (this.world.method6794() && !this.method3250()) {
+         if (this.world.method6794() && !this.isInWater()) {
             this.method5190(true);
             this.method5194(false);
          } else if (!this.method5193()) {
@@ -287,7 +287,7 @@ public class Class1097 extends Class1018 {
          }
 
          if (this.method5186() == 29 || this.method5186() == 14) {
-            this.method2863(SoundEvents.field26875, 1.0F, 1.0F);
+            this.playSound(SoundEvents.field26875, 1.0F, 1.0F);
          }
 
          this.method5187(this.method5186() - 1);
@@ -297,7 +297,7 @@ public class Class1097 extends Class1018 {
          this.method5199(this.method5198() + 1);
          if (this.method5198() <= 20) {
             if (this.method5198() == 1) {
-               this.method2863(SoundEvents.field26869, 1.0F, 1.0F);
+               this.playSound(SoundEvents.field26869, 1.0F, 1.0F);
             }
          } else {
             this.method5197(false);
@@ -329,19 +329,19 @@ public class Class1097 extends Class1018 {
       if (!this.method5193()
          && this.method5189()
          && !this.method5214()
-         && !this.method2943(Class2106.field13731).isEmpty()
+         && !this.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty()
          && this.rand.nextInt(80) == 1) {
          this.method5194(true);
-      } else if (this.method2943(Class2106.field13731).isEmpty() || !this.method5189()) {
+      } else if (this.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty() || !this.method5189()) {
          this.method5194(false);
       }
 
       if (this.method5193()) {
          this.method5216();
          if (!this.world.isRemote && this.method5195() > 80 && this.rand.nextInt(20) == 1) {
-            if (this.method5195() > 100 && this.method5229(this.method2943(Class2106.field13731))) {
+            if (this.method5195() > 100 && this.method5229(this.getItemStackFromSlot(EquipmentSlotType.field13731))) {
                if (!this.world.isRemote) {
-                  this.method2944(Class2106.field13731, ItemStack.EMPTY);
+                  this.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
                }
 
                this.method5190(false);
@@ -357,7 +357,7 @@ public class Class1097 extends Class1018 {
 
    private void method5216() {
       if (this.method5195() % 5 == 0) {
-         this.method2863(
+         this.playSound(
             SoundEvents.field26873, 0.5F + 0.5F * (float)this.rand.nextInt(2), (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F
          );
 
@@ -369,11 +369,11 @@ public class Class1097 extends Class1018 {
             var4 = var4.method11351(-this.rotationYaw * (float) (Math.PI / 180.0));
             double var5 = (double)(-this.rand.nextFloat()) * 0.6 - 0.3;
             Vector3d var7 = new Vector3d(((double)this.rand.nextFloat() - 0.5) * 0.8, var5, 1.0 + ((double)this.rand.nextFloat() - 0.5) * 0.4);
-            var7 = var7.method11351(-this.field4965 * (float) (Math.PI / 180.0));
-            var7 = var7.method11339(this.getPosX(), this.method3442() + 1.0, this.getPosZ());
+            var7 = var7.method11351(-this.renderYawOffset * (float) (Math.PI / 180.0));
+            var7 = var7.add(this.getPosX(), this.getPosYEye() + 1.0, this.getPosZ());
             this.world
-               .method6746(
-                  new Class7438(ParticleTypes.field34082, this.method2943(Class2106.field13731)),
+               .addParticle(
+                  new Class7438(ParticleTypes.field34082, this.getItemStackFromSlot(EquipmentSlotType.field13731)),
                   var7.x,
                   var7.y,
                   var7.z,
@@ -428,20 +428,20 @@ public class Class1097 extends Class1018 {
       this.field6026++;
       if (this.field6026 <= 32) {
          if (!this.world.isRemote) {
-            Vector3d var3 = this.getVec();
+            Vector3d var3 = this.getMotion();
             if (this.field6026 != 1) {
                if ((float)this.field6026 != 7.0F && (float)this.field6026 != 15.0F && (float)this.field6026 != 23.0F) {
-                  this.method3435(this.field6027.x, var3.y, this.field6027.z);
+                  this.setMotion(this.field6027.x, var3.y, this.field6027.z);
                } else {
-                  this.method3435(0.0, !this.onGround ? var3.y : 0.27, 0.0);
+                  this.setMotion(0.0, !this.onGround ? var3.y : 0.27, 0.0);
                }
             } else {
                float var4 = this.rotationYaw * (float) (Math.PI / 180.0);
-               float var5 = !this.method3005() ? 0.2F : 0.1F;
+               float var5 = !this.isChild() ? 0.2F : 0.1F;
                this.field6027 = new Vector3d(
                   var3.x + (double)(-MathHelper.sin(var4) * var5), 0.0, var3.z + (double)(MathHelper.cos(var4) * var5)
                );
-               this.method3434(this.field6027.method11339(0.0, 0.27, 0.0));
+               this.setMotion(this.field6027.add(0.0, 0.27, 0.0));
             }
          }
       } else {
@@ -450,46 +450,46 @@ public class Class1097 extends Class1018 {
    }
 
    private void method5224() {
-      Vector3d var3 = this.getVec();
+      Vector3d var3 = this.getMotion();
       this.world
-         .method6746(
+         .addParticle(
             ParticleTypes.field34093,
-            this.getPosX() - (double)(this.method3429() + 1.0F) * 0.5 * (double) MathHelper.sin(this.field4965 * (float) (Math.PI / 180.0)),
-            this.method3442() - 0.1F,
-            this.getPosZ() + (double)(this.method3429() + 1.0F) * 0.5 * (double) MathHelper.cos(this.field4965 * (float) (Math.PI / 180.0)),
+            this.getPosX() - (double)(this.getWidth() + 1.0F) * 0.5 * (double) MathHelper.sin(this.renderYawOffset * (float) (Math.PI / 180.0)),
+            this.getPosYEye() - 0.1F,
+            this.getPosZ() + (double)(this.getWidth() + 1.0F) * 0.5 * (double) MathHelper.cos(this.renderYawOffset * (float) (Math.PI / 180.0)),
             var3.x,
             0.0,
             var3.z
          );
-      this.method2863(SoundEvents.field26870, 1.0F, 1.0F);
+      this.playSound(SoundEvents.field26870, 1.0F, 1.0F);
 
       for (Class1097 var5 : this.world.<Class1097>method7182(Class1097.class, this.getBoundingBox().method19664(10.0))) {
-         if (!var5.method3005() && var5.onGround && !var5.method3250() && var5.method5230()) {
-            var5.method2914();
+         if (!var5.isChild() && var5.onGround && !var5.isInWater() && var5.method5230()) {
+            var5.jump();
          }
       }
 
-      if (!this.world.isRemote() && this.rand.nextInt(700) == 0 && this.world.method6789().method17135(Class5462.field24227)) {
-         this.method3300(Items.field37901);
+      if (!this.world.isRemote() && this.rand.nextInt(700) == 0 && this.world.getGameRules().getBoolean(Class5462.field24227)) {
+         this.entityDropItem(Items.field37901);
       }
    }
 
    @Override
    public void method4246(ItemEntity var1) {
-      if (this.method2943(Class2106.field13731).isEmpty() && field6035.test(var1)) {
-         this.method3134(var1);
+      if (this.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty() && field6035.test(var1)) {
+         this.triggerItemPickupTrigger(var1);
          ItemStack var4 = var1.method4124();
-         this.method2944(Class2106.field13731, var4);
-         this.field5605[Class2106.field13731.method8773()] = 2.0F;
-         this.method2751(var1, var4.getCount());
-         var1.method2904();
+         this.setItemStackToSlot(EquipmentSlotType.field13731, var4);
+         this.field5605[EquipmentSlotType.field13731.method8773()] = 2.0F;
+         this.onItemPickup(var1, var4.getCount());
+         var1.remove();
       }
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       this.method5190(false);
-      return super.method2741(var1, var2);
+      return super.attackEntityFrom(var1, var2);
    }
 
    @Nullable
@@ -537,16 +537,16 @@ public class Class1097 extends Class1018 {
 
    public void method5227() {
       if (this.method5213()) {
-         this.method3085(Attributes.field42105).method38661(10.0);
+         this.getAttribute(Attributes.field42105).method38661(10.0);
       }
 
       if (this.method5210()) {
-         this.method3085(Attributes.MOVEMENT_SPEED).method38661(0.07F);
+         this.getAttribute(Attributes.MOVEMENT_SPEED).method38661(0.07F);
       }
    }
 
    private void method5228() {
-      if (!this.method3250()) {
+      if (!this.isInWater()) {
          this.method4243(0.0F);
          this.method4230().method21666();
          this.method5190(true);
@@ -567,23 +567,23 @@ public class Class1097 extends Class1018 {
                this.field6024 = true;
             }
 
-            if (!this.method3005()) {
+            if (!this.isChild()) {
                if (!this.world.isRemote && this.method4767() == 0 && this.method4502()) {
                   this.method4501(var1, var5);
                   this.method4503(var1);
                } else {
-                  if (this.world.isRemote || this.method5189() || this.method3250()) {
+                  if (this.world.isRemote || this.method5189() || this.isInWater()) {
                      return ActionResultType.field14820;
                   }
 
                   this.method5228();
                   this.method5194(true);
-                  ItemStack var6 = this.method2943(Class2106.field13731);
+                  ItemStack var6 = this.getItemStackFromSlot(EquipmentSlotType.field13731);
                   if (!var6.isEmpty() && !var1.abilities.isCreativeMode) {
                      this.method3302(var6);
                   }
 
-                  this.method2944(Class2106.field13731, new ItemStack(var5.getItem(), 1));
+                  this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(var5.getItem(), 1));
                   this.method4501(var1, var5);
                }
             } else {
@@ -591,7 +591,7 @@ public class Class1097 extends Class1018 {
                this.method4768((int)((float)(-this.method4767() / 20) * 0.1F), true);
             }
 
-            return ActionResultType.field14818;
+            return ActionResultType.SUCCESS;
          }
       } else {
          return ActionResultType.field14820;
@@ -609,8 +609,8 @@ public class Class1097 extends Class1018 {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(SoundEvents.field26874, 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(SoundEvents.field26874, 0.15F, 1.0F);
    }
 
    @Override

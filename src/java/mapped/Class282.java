@@ -46,19 +46,19 @@ public class Class282 extends Class281 {
       field1075.info("Loaded {} recipes", var6.size());
    }
 
-   public <C extends Class920, T extends IRecipe<C>> Optional<T> method1030(Class7207<T> var1, C var2, World var3) {
+   public <C extends IInventory, T extends IRecipe<C>> Optional<T> method1030(Class7207<T> var1, C var2, World var3) {
       return this.method1033(var1)
          .values()
          .stream()
-         .<T>flatMap(var3x -> Util.method38511(var1.method22635((IRecipe<Class920>)var3x, var3, var2)))
+         .<T>flatMap(var3x -> Util.method38511(var1.method22635((IRecipe<IInventory>)var3x, var3, var2)))
          .findFirst();
    }
 
-   public <C extends Class920, T extends IRecipe<C>> List<T> method1031(Class7207<T> var1) {
+   public <C extends IInventory, T extends IRecipe<C>> List<T> method1031(Class7207<T> var1) {
       return (List<T>) this.method1033(var1).values().stream().map(var0 -> (T) var0).collect(Collectors.toList());
    }
 
-   public <C extends Class920, T extends IRecipe<C>> List<T> method1032(Class7207<T> var1, C var2, World var3) {
+   public <C extends IInventory, T extends IRecipe<C>> List<T> method1032(Class7207<T> var1, C var2, World var3) {
       return this.method1033(var1)
          .values()
          .stream()
@@ -67,19 +67,19 @@ public class Class282 extends Class281 {
          .collect(Collectors.<T>toList());
    }
 
-   private <C extends Class920, T extends IRecipe<C>> Map<ResourceLocation, IRecipe<C>> method1033(Class7207<T> var1) {
+   private <C extends IInventory, T extends IRecipe<C>> Map<ResourceLocation, IRecipe<C>> method1033(Class7207<T> var1) {
       return (Map)this.field1076.getOrDefault(var1, Collections.emptyMap());
    }
 
-   public <C extends Class920, T extends IRecipe<C>> NonNullList<ItemStack> method1034(Class7207<T> var1, C var2, World var3) {
+   public <C extends IInventory, T extends IRecipe<C>> NonNullList<ItemStack> method1034(Class7207<T> var1, C var2, World var3) {
       Optional<T> var6 = this.method1030(var1, var2, var3);
       if (var6.isPresent()) {
          return ((IRecipe)var6.get()).method14968(var2);
       } else {
-         NonNullList var7 = NonNullList.<ItemStack>method68(var2.method3629(), ItemStack.EMPTY);
+         NonNullList var7 = NonNullList.<ItemStack>method68(var2.getSizeInventory(), ItemStack.EMPTY);
 
          for (int var8 = 0; var8 < var7.size(); var8++) {
-            var7.set(var8, var2.method3618(var8));
+            var7.set(var8, var2.getStackInSlot(var8));
          }
 
          return var7;

@@ -19,7 +19,7 @@ public class HypixelAntiBot extends Class7249 {
          String var4 = var1.getDisplayName().getString();
          String var5 = var1.method3380() != null ? var1.method3380().getString() : null;
          String var6 = var1.getName().getString();
-         if (var1.method3342() && !var4.startsWith("§c") && var4.endsWith("§r") && (var5 == null || var5.equals(var6))) {
+         if (var1.isInvisible() && !var4.startsWith("§c") && var4.endsWith("§r") && (var5 == null || var5.equals(var6))) {
             double var7 = Math.abs(var1.getPosX() - field31119.player.getPosX());
             double var9 = Math.abs(var1.getPosY() - field31119.player.getPosY());
             double var11 = Math.abs(var1.getPosZ() - field31119.player.getPosZ());
@@ -31,7 +31,7 @@ public class HypixelAntiBot extends Class7249 {
 
          if (!var4.startsWith("§") && var4.endsWith("§r")) {
             return true;
-         } else if (var1.method3342() && var6.equals(var4) && var5.equals(var6 + "§r")) {
+         } else if (var1.isInvisible() && var6.equals(var4) && var5.equals(var6 + "§r")) {
             return true;
          } else if (var5 != null && !var5.equalsIgnoreCase("") && var4.toLowerCase().contains("§c") && var4.toLowerCase().contains("§r")) {
             return true;

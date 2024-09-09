@@ -25,7 +25,7 @@ public interface IAngerable {
    void method4346();
 
    default void method4364(CompoundNBT var1) {
-      var1.method102("AngerTime", this.method4348());
+      var1.putInt("AngerTime", this.method4348());
       if (this.method4350() != null) {
          var1.method104("AngryAt", this.method4350());
       }
@@ -80,7 +80,7 @@ public interface IAngerable {
    }
 
    default boolean method4368(World var1) {
-      return var1.method6789().method17135(Class5462.field24255) && this.method4369() && this.method4350() == null;
+      return var1.getGameRules().getBoolean(Class5462.field24255) && this.method4369() && this.method4350() == null;
    }
 
    default boolean method4369() {
@@ -88,7 +88,7 @@ public interface IAngerable {
    }
 
    default void method4370(PlayerEntity var1) {
-      if (var1.world.method6789().method17135(Class5462.field24254) && var1.getUniqueID().equals(this.method4350())) {
+      if (var1.world.getGameRules().getBoolean(Class5462.field24254) && var1.getUniqueID().equals(this.method4350())) {
          this.method4372();
       }
    }

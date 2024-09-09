@@ -25,7 +25,7 @@ import java.util.UUID;
 
 public class Class1057 extends Class1056 implements Class1008 {
    private static final UUID field5839 = UUID.fromString("7E0292F2-9434-48D5-A29F-9583AF7DF27F");
-   private static final Class9689 field5840 = new Class9689(field5839, "Covered armor bonus", 20.0, AttributeModifierOperation.ADDITION);
+   private static final AttributeModifier field5840 = new AttributeModifier(field5839, "Covered armor bonus", 20.0, AttributeModifierOperation.ADDITION);
    public static final DataParameter<Direction> field5841 = EntityDataManager.<Direction>createKey(Class1057.class, DataSerializers.field33403);
    public static final DataParameter<Optional<BlockPos>> field5842 = EntityDataManager.<Optional<BlockPos>>createKey(Class1057.class, DataSerializers.field33402);
    public static final DataParameter<Byte> field5843 = EntityDataManager.<Byte>createKey(Class1057.class, DataSerializers.field33390);
@@ -52,7 +52,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public boolean method2940() {
+   public boolean canTriggerWalking() {
       return false;
    }
 
@@ -102,8 +102,8 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.dataManager.method35446(field5841, Direction.byIndex(var1.getByte("AttachFace")));
       this.dataManager.method35446(field5843, var1.getByte("Peek"));
       this.dataManager.method35446(field5844, var1.getByte("Color"));
@@ -118,16 +118,16 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.method100("AttachFace", (byte)this.dataManager.<Direction>method35445(field5841).getIndex());
       var1.method100("Peek", this.dataManager.<Byte>method35445(field5843));
       var1.method100("Color", this.dataManager.<Byte>method35445(field5844));
       BlockPos var4 = this.method4849();
       if (var4 != null) {
-         var1.method102("APX", var4.getX());
-         var1.method102("APY", var4.getY());
-         var1.method102("APZ", var4.getZ());
+         var1.putInt("APX", var4.getX());
+         var1.putInt("APY", var4.getY());
+         var1.putInt("APZ", var4.getZ());
       }
    }
 
@@ -144,8 +144,8 @@ public class Class1057 extends Class1056 implements Class1008 {
          if (!this.world.isRemote) {
             BlockState var4 = this.world.getBlockState(var3);
             if (!var4.isAir()) {
-               if (!var4.method23448(Blocks.MOVING_PISTON)) {
-                  if (!var4.method23448(Blocks.PISTON_HEAD)) {
+               if (!var4.isIn(Blocks.MOVING_PISTON)) {
+                  if (!var4.isIn(Blocks.PISTON_HEAD)) {
                      this.method4846();
                   } else {
                      Direction var5 = var4.<Direction>method23463(Class3436.field19198);
@@ -181,8 +181,8 @@ public class Class1057 extends Class1056 implements Class1008 {
          var3 = null;
          float var17 = this.getRidingEntity().rotationYaw;
          this.rotationYaw = var17;
-         this.field4965 = var17;
-         this.field4966 = var17;
+         this.renderYawOffset = var17;
+         this.prevRenderYawOffset = var17;
          this.field5848 = 0;
       }
 
@@ -205,11 +205,11 @@ public class Class1057 extends Class1056 implements Class1008 {
             }
          }
 
-         this.method3274((double)var3.getX() + 0.5, (double)var3.getY(), (double)var3.getZ() + 0.5);
+         this.setLocationAndAngles((double)var3.getX() + 0.5, (double)var3.getY(), (double)var3.getZ() + 0.5);
          double var7 = 0.5 - (double) MathHelper.sin((0.5F + this.field5846) * (float) Math.PI) * 0.5;
          double var9 = 0.5 - (double) MathHelper.sin((0.5F + this.field5845) * (float) Math.PI) * 0.5;
          Direction var11 = this.method4848().method536();
-         this.method3391(
+         this.setBoundingBox(
             new AxisAlignedBB(
                   this.getPosX() - 0.5,
                   this.getPosY(),
@@ -227,7 +227,7 @@ public class Class1057 extends Class1056 implements Class1008 {
                for (Entity var16 : var14) {
                   if (!(var16 instanceof Class1057) && !var16.noClip) {
                      var16.move(
-                        Class2107.field13746,
+                        MoverType.field13746,
                         new Vector3d(var12 * (double)var11.method539(), var12 * (double)var11.method540(), var12 * (double)var11.method541())
                      );
                   }
@@ -238,8 +238,8 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public void move(Class2107 var1, Vector3d var2) {
-      if (var1 != Class2107.field13745) {
+   public void move(MoverType var1, Vector3d var2) {
+      if (var1 != MoverType.field13745) {
          super.move(var1, var2);
       } else {
          this.method4846();
@@ -273,7 +273,7 @@ public class Class1057 extends Class1056 implements Class1008 {
 
    private boolean method4845(BlockPos var1, Direction var2) {
       return this.world.method6764(var1.method8349(var2), this, var2.method536())
-         && this.world.method7053(this, Class8919.method32596(var1, var2.method536()));
+         && this.world.hasNoCollisions(this, Class8919.method32596(var1, var2.method536()));
    }
 
    public boolean method4846() {
@@ -284,12 +284,12 @@ public class Class1057 extends Class1056 implements Class1008 {
             BlockPos var5 = var3.method8336(8 - this.rand.nextInt(17), 8 - this.rand.nextInt(17), 8 - this.rand.nextInt(17));
             if (var5.getY() > 0
                && this.world.method7007(var5)
-               && this.world.method6810().method24523(var5)
-               && this.world.method7053(this, new AxisAlignedBB(var5))) {
+               && this.world.getWorldBorder().contains(var5)
+               && this.world.hasNoCollisions(this, new AxisAlignedBB(var5))) {
                Direction var6 = this.method4844(var5);
                if (var6 != null) {
                   this.dataManager.method35446(field5841, var6);
-                  this.method2863(SoundEvents.field27054, 1.0F, 1.0F);
+                  this.playSound(SoundEvents.field27054, 1.0F, 1.0F);
                   this.dataManager.method35446(field5842, Optional.<BlockPos>of(var5));
                   this.dataManager.method35446(field5843, (byte)0);
                   this.method4233((LivingEntity)null);
@@ -305,17 +305,17 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
-      this.method3434(Vector3d.ZERO);
+   public void livingEntity() {
+      super.livingEntity();
+      this.setMotion(Vector3d.ZERO);
       if (!this.method4305()) {
-         this.field4966 = 0.0F;
-         this.field4965 = 0.0F;
+         this.prevRenderYawOffset = 0.0F;
+         this.renderYawOffset = 0.0F;
       }
    }
 
    @Override
-   public void method3155(DataParameter<?> var1) {
+   public void notifyDataManagerChange(DataParameter<?> var1) {
       if (field5842.equals(var1) && this.world.isRemote && !this.isPassenger()) {
          BlockPos var4 = this.method4849();
          if (var4 != null) {
@@ -325,28 +325,28 @@ public class Class1057 extends Class1056 implements Class1008 {
                this.field5847 = var4;
             }
 
-            this.method3274((double)var4.getX() + 0.5, (double)var4.getY(), (double)var4.getZ() + 0.5);
+            this.setLocationAndAngles((double)var4.getX() + 0.5, (double)var4.getY(), (double)var4.getZ() + 0.5);
          }
       }
 
-      super.method3155(var1);
+      super.notifyDataManagerChange(var1);
    }
 
    @Override
    public void setPositionAndRotationDirect(double var1, double var3, double var5, float var7, float var8, int var9, boolean var10) {
-      this.field4985 = 0;
+      this.newPosRotationIncrements = 0;
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (this.method4847()) {
-         Entity var5 = var1.method31113();
+         Entity var5 = var1.getImmediateSource();
          if (var5 instanceof AbstractArrowEntity) {
             return false;
          }
       }
 
-      if (!super.method2741(var1, var2)) {
+      if (!super.attackEntityFrom(var1, var2)) {
          return false;
       } else {
          if ((double)this.getHealth() < (double)this.method3075() * 0.5 && this.rand.nextInt(4) == 0) {
@@ -385,12 +385,12 @@ public class Class1057 extends Class1056 implements Class1008 {
 
    public void method4852(int var1) {
       if (!this.world.isRemote) {
-         this.method3085(Attributes.field42113).method38670(field5840);
+         this.getAttribute(Attributes.field42113).method38670(field5840);
          if (var1 != 0) {
-            this.method2863(SoundEvents.field27052, 1.0F, 1.0F);
+            this.playSound(SoundEvents.field27052, 1.0F, 1.0F);
          } else {
-            this.method3085(Attributes.field42113).method38668(field5840);
-            this.method2863(SoundEvents.field27048, 1.0F, 1.0F);
+            this.getAttribute(Attributes.field42113).method38668(field5840);
+            this.playSound(SoundEvents.field27048, 1.0F, 1.0F);
          }
       }
 
@@ -410,7 +410,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return 0.5F;
    }
 
@@ -425,11 +425,11 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public void method3101(Entity var1) {
+   public void applyEntityCollision(Entity var1) {
    }
 
    @Override
-   public float method3319() {
+   public float getCollisionBorderSize() {
       return 0.0F;
    }
 

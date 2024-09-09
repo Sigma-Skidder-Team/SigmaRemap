@@ -13,7 +13,7 @@ public class Class3073 implements Class2982 {
       Class6047 var4 = var1.method30580().<Class6047>method22438(Class6047.class);
       int var5 = var1.<Integer>method30555(Class4750.field22526, 0);
       var4.method18730(var5);
-      if (Class8042.method27612().method21925()) {
+      if (ViaVersion3.method27612().method21925()) {
          Class9322.method35226(var1.method30580());
       }
    }

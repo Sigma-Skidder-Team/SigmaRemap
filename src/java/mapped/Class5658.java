@@ -23,8 +23,8 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
          if (var1.method5305()) {
             LivingEntity var11 = var1.method5306();
             if (var11 != null) {
-               Vector3d var12 = this.method17861(var11, (double)var11.method3430() * 0.5, 1.0F);
-               Vector3d var13 = this.method17861(var1, (double)var1.method3393(), 1.0F);
+               Vector3d var12 = this.method17861(var11, (double)var11.getHeight() * 0.5, 1.0F);
+               Vector3d var13 = this.method17861(var1, (double)var1.getEyeHeight(), 1.0F);
                return var2.method25122(
                   new AxisAlignedBB(var13.x, var13.y, var13.z, var12.x, var12.y, var12.z)
                );
@@ -49,15 +49,15 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
       LivingEntity var9 = var1.method5306();
       if (var9 != null) {
          float var10 = var1.method5310(var3);
-         float var11 = (float)var1.world.method6783() + var3;
+         float var11 = (float)var1.world.getGameTime() + var3;
          float var12 = var11 * 0.5F % 1.0F;
-         float var13 = var1.method3393();
+         float var13 = var1.getEyeHeight();
          var4.push();
          var4.translate(0.0, (double)var13, 0.0);
-         Vector3d var14 = this.method17861(var9, (double)var9.method3430() * 0.5, var3);
+         Vector3d var14 = this.method17861(var9, (double)var9.getHeight() * 0.5, var3);
          Vector3d var15 = this.method17861(var1, (double)var13, var3);
          Vector3d var16 = var14.method11336(var15);
-         float var17 = (float)(var16.method11348() + 1.0);
+         float var17 = (float)(var16.length() + 1.0);
          var16 = var16.method11333();
          float var18 = (float)Math.acos(var16.y);
          float var19 = (float)Math.atan2(var16.z, var16.x);

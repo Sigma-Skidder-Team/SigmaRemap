@@ -25,7 +25,7 @@ public class Class4486 extends Class4457 {
    }
 
    public boolean method14153(BlockState var1, BlockPos var2, ServerWorld var3, ItemStack var4) {
-      if (this.field21682 != null && !var1.method23448(this.field21682)) {
+      if (this.field21682 != null && !var1.isIn(this.field21682)) {
          return false;
       } else if (this.field21683.method23258(var1)) {
          return this.field21684.method30651(var3, (float)var2.getX(), (float)var2.getY(), (float)var2.getZ())

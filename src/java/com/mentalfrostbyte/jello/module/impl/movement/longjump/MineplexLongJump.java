@@ -2,14 +2,14 @@ package com.mentalfrostbyte.jello.module.impl.movement.longjump;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
-import com.mentalfrostbyte.jello.event.impl.Class4436;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
+import com.mentalfrostbyte.jello.event.impl.JumpEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
-import mapped.Class9567;
+import mapped.MovementUtils;
 import mapped.ColorUtils;
 import net.minecraft.util.math.BlockPos;
 
@@ -27,7 +27,7 @@ public class MineplexLongJump extends Module {
 
     @Override
     public void onDisable() {
-        Class9567.method37090(Class9567.method37075() * 0.7);
+        MovementUtils.method37090(MovementUtils.method37075() * 0.7);
     }
 
     @Override
@@ -39,14 +39,14 @@ public class MineplexLongJump extends Module {
     }
 
     @EventTarget
-    public void method16621(Class4399 var1) {
+    public void method16621(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921() && this.field23804 >= 0) {
             var1.method13908(true);
         }
     }
 
     @EventTarget
-    public void method16622(Class4435 var1) {
+    public void method16622(EventMove var1) {
         if (this.isEnabled() && mc.player != null) {
             if (!mc.player.onGround) {
                 if (this.field23804 >= 0) {
@@ -85,8 +85,8 @@ public class MineplexLongJump extends Module {
                         this.field23802 = 0.3;
                     }
 
-                    Class9567.method37088(var1, this.field23802);
-                    var1.method13995(this.field23803);
+                    MovementUtils.method37088(var1, this.field23802);
+                    var1.setY(this.field23803);
                 }
             } else {
                 if (this.field23806 > 1) {
@@ -97,8 +97,8 @@ public class MineplexLongJump extends Module {
 
                 if (this.field23804 > 0) {
                     this.field23804 = -1;
-                    if (this.method16004().getBooleanValueFromSetttingName("Auto Disable")) {
-                        this.method16004().method16000();
+                    if (this.access().getBooleanValueFromSetttingName("Auto Disable")) {
+                        this.access().method16000();
                         return;
                     }
                 }
@@ -106,17 +106,17 @@ public class MineplexLongJump extends Module {
                 this.field23807 = ColorUtils.method17686();
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
                 if (ColorUtils.method17686()
-                        && (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var4) || this.method16004().getBooleanValueFromSetttingName("Auto Jump"))) {
-                    mc.player.method2914();
-                    var1.method13995(mc.player.getVec().y);
-                    Class9567.method37088(var1, 0.0);
+                        && (this.access().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var4) || this.access().getBooleanValueFromSetttingName("Auto Jump"))) {
+                    mc.player.jump();
+                    var1.setY(mc.player.getMotion().y);
+                    MovementUtils.method37088(var1, 0.0);
                 }
             }
         }
     }
 
     @EventTarget
-    public void method16623(Class4436 var1) {
+    public void method16623(JumpEvent var1) {
         if (this.isEnabled() && mc.player != null) {
             this.field23802 = 0.81 + (double) this.field23805 * 0.095;
             if (mc.player.getPosY() != (double) ((int) mc.player.getPosY())) {

@@ -33,7 +33,7 @@ public class Class3328 extends Item {
                   return Class6794.<ItemStack>method20698(var7);
                }
 
-               if (var1.getFluidState(var9).method23486(Class8953.field40469)) {
+               if (var1.getFluidState(var9).method23486(FluidTags.field40469)) {
                   var1.method6743(var2, var2.getPosX(), var2.getPosY(), var2.getPosZ(), SoundEvents.field26418, Class2266.field14734, 1.0F, 1.0F);
                   return Class6794.<ItemStack>method20700(
                      this.method11878(var7, var2, Class9741.method38187(new ItemStack(Items.field37971), Class8137.field34977)), var1.isRemote()
@@ -54,7 +54,7 @@ public class Class3328 extends Item {
    }
 
    public ItemStack method11878(ItemStack var1, PlayerEntity var2, ItemStack var3) {
-      var2.method2913(Class8876.field40098.method172(this));
+      var2.addStat(Stats.field40098.method172(this));
       return Class8482.method29979(var1, var2, var3);
    }
 }

@@ -120,15 +120,15 @@ public class Class1098 extends TameableEntity {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("CatType", this.method5250());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("CatType", this.method5250());
       var1.method100("CollarColor", (byte)this.method5256().method309());
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method5251(var1.getInt("CatType"));
       if (var1.contains("CollarColor", 99)) {
          this.method5257(Class112.method315(var1.getInt("CollarColor")));
@@ -138,20 +138,20 @@ public class Class1098 extends TameableEntity {
    @Override
    public void method4258() {
       if (!this.method4228().method20811()) {
-         this.method3211(Pose.STANDING);
+         this.setPose(Pose.STANDING);
          this.setSprinting(false);
       } else {
          double var3 = this.method4228().method20812();
          if (var3 != 0.6) {
             if (var3 != 1.33) {
-               this.method3211(Pose.STANDING);
+               this.setPose(Pose.STANDING);
                this.setSprinting(false);
             } else {
-               this.method3211(Pose.STANDING);
+               this.setPose(Pose.STANDING);
                this.setSprinting(true);
             }
          } else {
-            this.method3211(Pose.field13624);
+            this.setPose(Pose.field13624);
             this.setSprinting(false);
          }
       }
@@ -175,7 +175,7 @@ public class Class1098 extends TameableEntity {
    }
 
    public void method5258() {
-      this.method2863(SoundEvents.field26437, this.method3099(), this.method3100());
+      this.playSound(SoundEvents.field26437, this.getSoundVolume(), this.getSoundPitch());
    }
 
    @Override
@@ -193,33 +193,33 @@ public class Class1098 extends TameableEntity {
    }
 
    @Override
-   public boolean method2921(float var1, float var2) {
+   public boolean onLivingFall(float var1, float var2) {
       return false;
    }
 
    @Override
    public void method4501(PlayerEntity var1, ItemStack var2) {
       if (this.method4381(var2)) {
-         this.method2863(SoundEvents.field26436, 1.0F, 1.0F);
+         this.playSound(SoundEvents.field26436, 1.0F, 1.0F);
       }
 
       super.method4501(var1, var2);
    }
 
    private float method5260() {
-      return (float)this.method3086(Attributes.field42110);
+      return (float)this.getAttributeValue(Attributes.field42110);
    }
 
    @Override
-   public boolean method3114(Entity var1) {
-      return var1.method2741(DamageSource.method31115(this), this.method5260());
+   public boolean attackEntityAsMob(Entity var1) {
+      return var1.attackEntityFrom(DamageSource.method31115(this), this.method5260());
    }
 
    @Override
    public void tick() {
       super.tick();
       if (this.field6043 != null && this.field6043.method10900() && !this.method4393() && this.ticksExisted % 100 == 0) {
-         this.method2863(SoundEvents.field26438, 1.0F, 1.0F);
+         this.playSound(SoundEvents.field26438, 1.0F, 1.0F);
       }
 
       this.method5261();
@@ -227,7 +227,7 @@ public class Class1098 extends TameableEntity {
 
    private void method5261() {
       if ((this.method5253() || this.method5255()) && this.ticksExisted % 5 == 0) {
-         this.method2863(SoundEvents.field26440, 0.6F + 0.4F * (this.rand.nextFloat() - this.rand.nextFloat()), 1.0F);
+         this.playSound(SoundEvents.field26440, 0.6F + 0.4F * (this.rand.nextFloat() - this.rand.nextFloat()), 1.0F);
       }
 
       this.method5262();
@@ -268,7 +268,7 @@ public class Class1098 extends TameableEntity {
    }
 
    public Class1098 method4389(ServerWorld var1, Class1045 var2) {
-      Class1098 var5 = EntityType.field41012.method33215(var1);
+      Class1098 var5 = EntityType.field41012.create(var1);
       if (var2 instanceof Class1098) {
          if (!this.rand.nextBoolean()) {
             var5.method5251(((Class1098)var2).method5250());
@@ -332,11 +332,11 @@ public class Class1098 extends TameableEntity {
             if (this.method4381(var5)) {
                this.method4501(var1, var5);
                if (this.rand.nextInt(3) != 0) {
-                  this.world.method6786(this, (byte)6);
+                  this.world.setEntityState(this, (byte)6);
                } else {
                   this.method4399(var1);
                   this.method4403(true);
-                  this.world.method6786(this, (byte)7);
+                  this.world.setEntityState(this, (byte)7);
                }
 
                this.method4278();
@@ -346,12 +346,12 @@ public class Class1098 extends TameableEntity {
             if (!(var6 instanceof Class3321)) {
                if (var6.method11744() && this.method4381(var5) && this.getHealth() < this.method3075()) {
                   this.method4501(var1, var5);
-                  this.method3041((float)var6.method11745().method36157());
+                  this.heal((float)var6.method11745().method36157());
                   return ActionResultType.field14819;
                }
 
                ActionResultType var9 = super.method4285(var1, var2);
-               if (!var9.isSuccessOrConsume() || this.method3005()) {
+               if (!var9.isSuccessOrConsume() || this.isChild()) {
                   this.method4403(!this.method4402());
                }
 
@@ -377,9 +377,9 @@ public class Class1098 extends TameableEntity {
 
          return var8;
       } else if (this.method4393() && this.method4401(var1)) {
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       } else {
-         return this.method4381(var5) && (this.getHealth() < this.method3075() || !this.method4393()) ? ActionResultType.field14818 : ActionResultType.field14820;
+         return this.method4381(var5) && (this.getHealth() < this.method3075() || !this.method4393()) ? ActionResultType.SUCCESS : ActionResultType.field14820;
       }
    }
 
@@ -389,7 +389,7 @@ public class Class1098 extends TameableEntity {
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.5F;
    }
 

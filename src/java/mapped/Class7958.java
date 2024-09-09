@@ -111,7 +111,7 @@ public class Class7958 {
                ListIterator var16 = (ListIterator)var30.get(var15);
                Class1648 var17 = (Class1648)var32.get(var15);
                if (var16.hasNext()) {
-                  Class7481 var18 = (Class7481)var16.next();
+                  ChunkPos var18 = (ChunkPos)var16.next();
                   boolean var19 = false;
 
                   try {
@@ -120,7 +120,7 @@ public class Class7958 {
                         int var37 = Class1648.method6530(var20);
                         CompoundNBT var22 = var17.method6529(var15, () -> this.field34222, var20);
                         CompoundNBT var23 = var22.getCompound("Level");
-                        Class7481 var24 = new Class7481(var23.getInt("xPos"), var23.getInt("zPos"));
+                        ChunkPos var24 = new ChunkPos(var23.getInt("xPos"), var23.getInt("zPos"));
                         if (!var24.equals(var18)) {
                            field34206.warn("Chunk {} has invalid position {}", var18, var24);
                         }
@@ -189,7 +189,7 @@ public class Class7958 {
       }
    }
 
-   private List<Class7481> method27061(RegistryKey<World> var1) {
+   private List<ChunkPos> method27061(RegistryKey<World> var1) {
       File var4 = this.field34210.method7992(var1);
       File var5 = new File(var4, "region");
       File[] var6 = var5.listFiles((var0, var1x) -> var1x.endsWith(".mca"));
@@ -207,7 +207,7 @@ public class Class7958 {
                try (Class1692 var15 = new Class1692(var11, var5, true)) {
                   for (int var17 = 0; var17 < 32; var17++) {
                      for (int var18 = 0; var18 < 32; var18++) {
-                        Class7481 var19 = new Class7481(var17 + var13, var18 + var14);
+                        ChunkPos var19 = new ChunkPos(var17 + var13, var18 + var14);
                         if (var15.method7257(var19)) {
                            var7.add(var19);
                         }

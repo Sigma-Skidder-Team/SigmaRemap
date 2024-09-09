@@ -27,7 +27,7 @@ public class Class5451 extends Class5444<Class4712> {
    }
 
    @Override
-   public void method17112(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6) {
+   public void method17112(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6) {
       if (!this.field24210) {
          this.field24196.clear();
          this.method17126(this.method17118(), this.method17119());

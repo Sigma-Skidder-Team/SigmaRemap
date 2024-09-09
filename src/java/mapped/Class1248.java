@@ -48,7 +48,7 @@ public class Class1248 extends Class1200 {
             this.method5745(),
             this.field6477 + 24,
             this.field6478 + (this.field6476 - 8) / 2,
-            14737632 | MathHelper.method37773(this.field6484 * 255.0F) << 24
+            14737632 | MathHelper.ceil(this.field6484 * 255.0F) << 24
          );
       }
    }

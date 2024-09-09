@@ -25,11 +25,11 @@ public class Class5945 extends Class5942<Class955> {
             Class7551.method24692();
             var3.push();
             var3.translate((double)var1.method3850(var2), (double)var1.method3851(var2), (double)var1.method3852(var2));
-            if (var11.method23448(Blocks.PISTON_HEAD) && var1.method3849(var2) <= 4.0F) {
+            if (var11.isIn(Blocks.PISTON_HEAD) && var1.method3849(var2) <= 4.0F) {
                var11 = var11.method23465(Class3436.field19212, Boolean.valueOf(var1.method3849(var2) <= 0.5F));
                this.method18467(var10, var11, var3, var4, var9, false, var6);
             } else if (var1.method3848() && !var1.method3846()) {
-               Class180 var12 = !var11.method23448(Blocks.STICKY_PISTON) ? Class180.field638 : Class180.field639;
+               Class180 var12 = !var11.isIn(Blocks.STICKY_PISTON) ? Class180.field638 : Class180.field639;
                BlockState var13 = Blocks.PISTON_HEAD
                   .method11579()
                   .method23465(Class3436.field19211, var12)

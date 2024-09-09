@@ -56,7 +56,7 @@ public class Class3250 extends Class3198 implements Class3245 {
          if (var1.<Class82>method23463(field18713) != Class82.HEAD) {
             var3 = var3.method8349(var1.<Direction>method23463(field18484));
             var1 = var2.getBlockState(var3);
-            if (!var1.method23448(this)) {
+            if (!var1.isIn(this)) {
                return ActionResultType.field14819;
             }
          }
@@ -68,18 +68,18 @@ public class Class3250 extends Class3198 implements Class3245 {
                      var4.sendStatusMessage(var1x.method8769(), true);
                   }
                });
-               return ActionResultType.field14818;
+               return ActionResultType.SUCCESS;
             } else {
                if (!this.method11680(var2, var3)) {
                   var4.sendStatusMessage(new TranslationTextComponent("block.minecraft.bed.occupied"), true);
                }
 
-               return ActionResultType.field14818;
+               return ActionResultType.SUCCESS;
             }
          } else {
             var2.removeBlock(var3, false);
             BlockPos var9 = var3.method8349(var1.<Direction>method23463(field18484).method536());
-            if (var2.getBlockState(var9).method23448(this)) {
+            if (var2.getBlockState(var9).isIn(this)) {
                var2.removeBlock(var9, false);
             }
 
@@ -94,7 +94,7 @@ public class Class3250 extends Class3198 implements Class3245 {
                true,
                Class2141.field14016
             );
-            return ActionResultType.field14818;
+            return ActionResultType.SUCCESS;
          }
       } else {
          return ActionResultType.field14819;
@@ -108,7 +108,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    private boolean method11680(World var1, BlockPos var2) {
       List var5 = var1.<Class1042>method6772(Class1042.class, new AxisAlignedBB(var2), LivingEntity::isSleeping);
       if (!var5.isEmpty()) {
-         ((Class1042)var5.get(0)).method2907();
+         ((Class1042)var5.get(0)).wakeUp();
          return true;
       } else {
          return false;
@@ -116,8 +116,8 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Override
-   public void method11567(World var1, BlockPos var2, Entity var3, float var4) {
-      super.method11567(var1, var2, var3, var4 * 0.5F);
+   public void onFallenUpon(World var1, BlockPos var2, Entity var3, float var4) {
+      super.onFallenUpon(var1, var2, var3, var4 * 0.5F);
    }
 
    @Override
@@ -130,10 +130,10 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    private void method11681(Entity var1) {
-      Vector3d var4 = var1.getVec();
+      Vector3d var4 = var1.getMotion();
       if (var4.y < 0.0) {
          double var5 = !(var1 instanceof LivingEntity) ? 0.8 : 1.0;
-         var1.method3435(var4.x, -var4.y * 0.66F * var5, var4.z);
+         var1.setMotion(var4.x, -var4.y * 0.66F * var5, var4.z);
       }
    }
 
@@ -142,7 +142,7 @@ public class Class3250 extends Class3198 implements Class3245 {
       if (var2 != method11682(var1.<Class82>method23463(field18713), var1.<Direction>method23463(field18484))) {
          return super.method11491(var1, var2, var3, var4, var5, var6);
       } else {
-         return var3.method23448(this) && var3.method23463(field18713) != var1.method23463(field18713)
+         return var3.isIn(this) && var3.method23463(field18713) != var1.method23463(field18713)
             ? var1.method23465(field18714, var3.<Boolean>method23463(field18714))
             : Blocks.AIR.method11579();
       }
@@ -153,7 +153,7 @@ public class Class3250 extends Class3198 implements Class3245 {
    }
 
    @Override
-   public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
+   public void onBlockHarvested(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
       if (!var1.isRemote && var4.isCreative()) {
          Class82 var7 = var3.<Class82>method23463(field18713);
          if (var7 == Class82.FOOT) {
@@ -166,7 +166,7 @@ public class Class3250 extends Class3198 implements Class3245 {
          }
       }
 
-      super.method11574(var1, var2, var3, var4);
+      super.onBlockHarvested(var1, var2, var3, var4);
    }
 
    @Nullable
@@ -207,7 +207,7 @@ public class Class3250 extends Class3198 implements Class3245 {
       return var0.getBlockState(var1.down()).getBlock() instanceof Class3250;
    }
 
-   public static Optional<Vector3d> method11686(EntityType<?> var0, Class1668 var1, BlockPos var2, float var3) {
+   public static Optional<Vector3d> method11686(EntityType<?> var0, ICollisionReader var1, BlockPos var2, float var3) {
       Direction var6 = var1.getBlockState(var2).<Direction>method23463(field18484);
       Direction var7 = var6.method537();
       Direction var8 = !var7.method557(var3) ? var7 : var7.method536();
@@ -220,7 +220,7 @@ public class Class3250 extends Class3198 implements Class3245 {
       }
    }
 
-   private static Optional<Vector3d> method11687(EntityType<?> var0, Class1668 var1, BlockPos var2, Direction var3, Direction var4) {
+   private static Optional<Vector3d> method11687(EntityType<?> var0, ICollisionReader var1, BlockPos var2, Direction var3, Direction var4) {
       int[][] var7 = method11693(var3, var4);
       Optional var8 = method11688(var0, var1, var2, var7, true);
       if (!var8.isPresent()) {
@@ -248,7 +248,7 @@ public class Class3250 extends Class3198 implements Class3245 {
       }
    }
 
-   private static Optional<Vector3d> method11688(EntityType<?> var0, Class1668 var1, BlockPos var2, int[][] var3, boolean var4) {
+   private static Optional<Vector3d> method11688(EntityType<?> var0, ICollisionReader var1, BlockPos var2, int[][] var3, boolean var4) {
       BlockPos.Mutable var7 = new BlockPos.Mutable();
 
       for (int[] var11 : var3) {

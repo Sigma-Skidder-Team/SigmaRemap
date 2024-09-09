@@ -49,7 +49,7 @@ public class Class7369 extends Class7361 {
       if (this.field31540 != null && this.field31540.method28693()) {
          BlockPos var3 = this.field31519.world.method7006(Class101.field300, new BlockPos(Class2909.field17994));
          int var4 = this.field31519.method4337() != null ? this.field31519.method4337().method26125() : 0;
-         if (this.field31519.method3013().nextInt(var4 + 3) == 0) {
+         if (this.field31519.getRNG().nextInt(var4 + 3) == 0) {
             this.field31519.method4336().method32671(Class9598.field44898);
             return;
          }
@@ -62,7 +62,7 @@ public class Class7369 extends Class7361 {
 
          if (var7 != null
             && !var7.abilities.disableDamage
-            && (this.field31519.method3013().nextInt(MathHelper.method37772((int)var5) + 2) == 0 || this.field31519.method3013().nextInt(var4 + 2) == 0)) {
+            && (this.field31519.getRNG().nextInt(MathHelper.method37772((int)var5) + 2) == 0 || this.field31519.getRNG().nextInt(var4 + 2) == 0)) {
             this.method23374(var7);
             return;
          }
@@ -71,7 +71,7 @@ public class Class7369 extends Class7361 {
       if (this.field31540 == null || this.field31540.method28693()) {
          int var8 = this.field31519.method4328();
          int var9 = var8;
-         if (this.field31519.method3013().nextInt(8) == 0) {
+         if (this.field31519.getRNG().nextInt(8) == 0) {
             this.field31542 = !this.field31542;
             var9 = var8 + 6;
          }
@@ -116,7 +116,7 @@ public class Class7369 extends Class7361 {
 
          double var8;
          do {
-            var8 = (double)((float)var3.getY() + this.field31519.method3013().nextFloat() * 20.0F);
+            var8 = (double)((float)var3.getY() + this.field31519.getRNG().nextFloat() * 20.0F);
          } while (var8 < (double)var3.getY());
 
          this.field31541 = new Vector3d(var4, var8, var6);

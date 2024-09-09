@@ -28,7 +28,7 @@ public class Class3479 extends Class3194 implements Class3196 {
          byte var8 = 4;
 
          for (BlockPos var10 : BlockPos.method8359(var3.method8336(-4, -1, -4), var3.method8336(4, 1, 4))) {
-            if (var2.getBlockState(var10).method23448(this)) {
+            if (var2.getBlockState(var10).isIn(this)) {
                if (--var7 <= 0) {
                   return;
                }

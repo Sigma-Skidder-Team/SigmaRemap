@@ -3,9 +3,9 @@ package com.mentalfrostbyte.jello.module.impl.world.disabler;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
@@ -66,7 +66,7 @@ public class HypixelDisabler extends Module {
     }
 
     @EventTarget
-    public void method16898(Class4399 var1) {
+    public void method16898(EventUpdate var1) {
         if (mc.player != null) {
             if (!this.field23984 && mc.player.onGround) {
                 if (!this.getBooleanValueFromSetttingName("Instant")) {
@@ -83,12 +83,12 @@ public class HypixelDisabler extends Module {
     }
 
     @EventTarget
-    public void method16899(Class4435 var1) {
+    public void method16899(EventMove var1) {
         if (mc.player != null) {
             if (!this.getBooleanValueFromSetttingName("Instant") && this.field23984) {
-                var1.method13993(0.0);
-                var1.method13995(0.0);
-                var1.method13997(0.0);
+                var1.setX(0.0);
+                var1.setY(0.0);
+                var1.setZ(0.0);
             }
 
             if (this.field23985.method27121() > 10000L && this.field23984) {
@@ -102,7 +102,7 @@ public class HypixelDisabler extends Module {
                 this.field23983.clear();
                 this.field23985.method27120();
                 this.field23985.stop();
-                this.method16004().method16000();
+                this.access().method16000();
                 Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "Disabler failed"));
             }
         }
@@ -112,16 +112,16 @@ public class HypixelDisabler extends Module {
     private void method16900(SendPacketEvent var1) {
         if (mc.getConnection() != null) {
             if (this.field23984) {
-                if (var1.method13932() instanceof CEntityActionPacket
-                        || var1.method13932() instanceof CPlayerPacket
-                        || var1.method13932() instanceof CUseEntityPacket
-                        || var1.method13932() instanceof CAnimateHandPacket
-                        || var1.method13932() instanceof CPlayerTryUseItemPacket) {
+                if (var1.getPacket() instanceof CEntityActionPacket
+                        || var1.getPacket() instanceof CPlayerPacket
+                        || var1.getPacket() instanceof CUseEntityPacket
+                        || var1.getPacket() instanceof CAnimateHandPacket
+                        || var1.getPacket() instanceof CPlayerTryUseItemPacket) {
                     if (this.getBooleanValueFromSetttingName("Instant")) {
-                        this.field23983.add(var1.method13932());
+                        this.field23983.add(var1.getPacket());
                     }
 
-                    var1.method13900(true);
+                    var1.setCancelled(true);
                 }
             }
         }
@@ -132,14 +132,14 @@ public class HypixelDisabler extends Module {
         if (mc.player != null && this.field23984) {
             if (this.isEnabled() || this.getBooleanValueFromSetttingName("Instant")) {
                 if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
-                    this.method16004().method16000();
+                    this.access().method16000();
                     if (!this.getBooleanValueFromSetttingName("Instant")) {
                         Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "You can do what you want for 5s"));
                     } else {
                         SPlayerPositionLookPacket var4 = (SPlayerPositionLookPacket) var1.getPacket();
-                        var1.method13900(true);
+                        var1.setCancelled(true);
                         mc.getConnection()
-                                .sendPacket(new CPlayerPacket.PositionRotationPacket(var4.field24297, var4.field24298, var4.field24299, var4.field24300, var4.field24301, false));
+                                .sendPacket(new CPlayerPacket.PositionRotationPacket(var4.x, var4.y, var4.z, var4.yaw, var4.pitch, false));
                         int var5 = this.field23983.size();
 
                         for (int var6 = 0; var6 < var5; var6++) {

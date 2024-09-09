@@ -2,9 +2,9 @@ package com.mentalfrostbyte.jello.module.impl.movement.fly;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.StopUseItemEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
@@ -41,38 +41,38 @@ public class BowFly extends Module {
     public void onStopuseItem(StopUseItemEvent var1) {
         if (this.isEnabled()) {
             if (mc.player.getHeldItem(Hand.MAIN_HAND).getItem() == Items.BOW && this.field23504 >= 1) {
-                var1.method13900(true);
+                var1.setCancelled(true);
             }
         }
     }
 
     @EventTarget
-    public void method16179(Class4435 var1) {
+    public void method16179(EventMove var1) {
         if (this.isEnabled()) {
-            double var4 = var1.method13998().y;
-            var1.method13998().y = 0.0;
-            double var6 = var1.method13998().method11348();
-            var1.method13998().y = var4;
-            float var8 = Class9567.method37082()[1];
-            float var9 = Class9567.method37082()[2];
-            float var10 = Class9567.method37082()[0];
+            double var4 = var1.getVector().y;
+            var1.getVector().y = 0.0;
+            double var6 = var1.getVector().length();
+            var1.getVector().y = var4;
+            float var8 = MovementUtils.lenientStrafe()[1];
+            float var9 = MovementUtils.lenientStrafe()[2];
+            float var10 = MovementUtils.lenientStrafe()[0];
             System.out.println(var6);
-            if ((var8 != 0.0F || var9 != 0.0F) && !(var1.method13998().y < -0.5)) {
+            if ((var8 != 0.0F || var9 != 0.0F) && !(var1.getVector().y < -0.5)) {
                 double var11 = Math.cos(Math.toRadians(var10));
                 double var13 = Math.sin(Math.toRadians(var10));
-                var1.method13993((double) var8 * var6 * var11 + (double) var9 * var6 * var13);
-                var1.method13997((double) var8 * var6 * var13 - (double) var9 * var6 * var11);
-                mc.player.getVec().x = var1.method13992();
-                mc.player.getVec().y = var1.method13994();
+                var1.setX((double) var8 * var6 * var11 + (double) var9 * var6 * var13);
+                var1.setZ((double) var8 * var6 * var13 - (double) var9 * var6 * var11);
+                mc.player.getMotion().x = var1.getX();
+                mc.player.getMotion().y = var1.getY();
             } else {
-                var1.method13993(0.0);
-                var1.method13997(0.0);
+                var1.setX(0.0);
+                var1.setZ(0.0);
             }
         }
     }
 
     @EventTarget
-    public void method16180(Class4399 var1) {
+    public void method16180(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             if (!this.field23505.isEnabled()) {
                 this.field23505.start();
@@ -96,23 +96,23 @@ public class BowFly extends Module {
 
                     float var5 = mc.player.rotationYaw;
                     float var6 = -90.0F;
-                    if (mc.player.field4984 != 0.0F || mc.player.field4982 != 0.0F) {
+                    if (mc.player.moveForward != 0.0F || mc.player.moveStrafing != 0.0F) {
                         var6 = -80.0F;
                     }
 
-                    if (mc.player.field4984 < 0.0F) {
+                    if (mc.player.moveForward < 0.0F) {
                         var5 -= 180.0F;
                     }
 
-                    if (mc.player.getVec().y < -0.1) {
+                    if (mc.player.getMotion().y < -0.1) {
                         var6 = 90.0F;
                     }
 
-                    var1.method13916(var6);
-                    var1.method13918(var5);
+                    var1.setYaw(var6);
+                    var1.setPitch(var5);
                     if (mc.player.onGround && mc.player.collidedVertically) {
-                        mc.player.method2914();
-                    } else if (!(mc.player.getVec().y < 0.0)) {
+                        mc.player.jump();
+                    } else if (!(mc.player.getMotion().y < 0.0)) {
                         if (mc.timer.timerSpeed == 0.1F) {
                             mc.timer.timerSpeed = 1.0F;
                         }
@@ -136,8 +136,8 @@ public class BowFly extends Module {
 
     private int method16181() {
         for (int var3 = 36; var3 < 45; var3++) {
-            if (mc.player.field4904.method18131(var3).method18266()) {
-                ItemStack var4 = mc.player.field4904.method18131(var3).method18265();
+            if (mc.player.container.getSlot(var3).getHasStack()) {
+                ItemStack var4 = mc.player.container.getSlot(var3).getStack();
                 if (var4.getItem() == Items.BOW) {
                     return var3 - 36;
                 }
@@ -145,10 +145,10 @@ public class BowFly extends Module {
         }
 
         for (int var5 = 9; var5 < 36; var5++) {
-            if (mc.player.field4904.method18131(var5).method18266()) {
-                ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
+            if (mc.player.container.getSlot(var5).getHasStack()) {
+                ItemStack var6 = mc.player.container.getSlot(var5).getStack();
                 if (var6.getItem() == Items.BOW) {
-                    Class7789.method25873(var5, 7);
+                    InvManagerUtils.method25873(var5, 7);
                     return 7;
                 }
             }

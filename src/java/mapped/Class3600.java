@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.Comparator;
 
-public class Class3600 implements Comparator<Class7481> {
+public class Class3600 implements Comparator<ChunkPos> {
    private static String[] field19553;
    private int field19554;
    private int field19555;
@@ -13,16 +13,16 @@ public class Class3600 implements Comparator<Class7481> {
       this.field19554 = var1;
       this.field19555 = var2;
       this.field19556 = var3;
-      this.field19557 = 1.0 - MathHelper.method37778(Math.abs(var5) / (Math.PI / 2), 0.0, 1.0);
+      this.field19557 = 1.0 - MathHelper.clamp(Math.abs(var5) / (Math.PI / 2), 0.0, 1.0);
    }
 
-   public int compare(Class7481 var1, Class7481 var2) {
+   public int compare(ChunkPos var1, ChunkPos var2) {
       int var5 = this.method12201(var1);
       int var6 = this.method12201(var2);
       return var5 - var6;
    }
 
-   private int method12201(Class7481 var1) {
+   private int method12201(ChunkPos var1) {
       int var4 = var1.field32174 - this.field19554;
       int var5 = var1.field32175 - this.field19555;
       int var6 = var4 * var4 + var5 * var5;

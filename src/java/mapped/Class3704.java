@@ -33,13 +33,13 @@ public class Class3704<E extends Class1006> extends Class3676<E> {
    }
 
    public void method12502(ServerWorld var1, E var2, long var3) {
-      var2.method2992().method21406(Class8830.field39825, new Class7865(this.method12583((E)var2), true));
+      var2.getBrain().method21406(Class8830.field39825, new Class7865(this.method12583((E)var2), true));
       var2.method4228().method20814(-this.field19765, 0.0F);
-      var2.rotationYaw = MathHelper.method37796(var2.rotationYaw, var2.field4967, 0.0F);
+      var2.rotationYaw = MathHelper.method37796(var2.rotationYaw, var2.rotationYawHead, 0.0F);
    }
 
    private boolean method12581(E var1) {
-      return var1.method2992().<List<LivingEntity>>method21410(Class8830.field39819).get().contains(this.method12583((E)var1));
+      return var1.getBrain().<List<LivingEntity>>method21410(Class8830.field39819).get().contains(this.method12583((E)var1));
    }
 
    private boolean method12582(E var1) {
@@ -47,6 +47,6 @@ public class Class3704<E extends Class1006> extends Class3676<E> {
    }
 
    private LivingEntity method12583(E var1) {
-      return var1.method2992().<LivingEntity>method21410(Class8830.field39826).get();
+      return var1.getBrain().<LivingEntity>method21410(Class8830.field39826).get();
    }
 }

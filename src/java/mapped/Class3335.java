@@ -31,10 +31,10 @@ public class Class3335 extends Item {
          Class895 var7 = new Class895(var1, var2);
          var7.method3511(var6);
          var7.method3463(var2, var2.rotationPitch, var2.rotationYaw, 0.0F, 1.5F, 1.0F);
-         var1.method6916(var7);
+         var1.addEntity(var7);
       }
 
-      var2.method2913(Class8876.field40098.method172(this));
+      var2.addStat(Stats.field40098.method172(this));
       if (!var2.abilities.isCreativeMode) {
          var6.method32182(1);
       }

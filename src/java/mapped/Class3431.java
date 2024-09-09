@@ -102,7 +102,7 @@ public class Class3431 extends Class3429 {
 
    @Override
    public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var4.method23448(var1.getBlock())) {
+      if (!var4.isIn(var1.getBlock())) {
          this.method12094(var2, var3, this.method12089(var1, var2, var3, var5));
       }
    }
@@ -127,7 +127,7 @@ public class Class3431 extends Class3429 {
 
          List var7 = this.<AbstractMinecartEntity>method12096(var2, var3, AbstractMinecartEntity.class, Class8088.field34760);
          if (!var7.isEmpty()) {
-            return Class5812.method18152((Class920)var7.get(0));
+            return Container.calcRedstoneFromInventory((IInventory)var7.get(0));
          }
       }
 

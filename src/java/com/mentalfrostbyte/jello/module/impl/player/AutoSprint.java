@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.player;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4403;
+import com.mentalfrostbyte.jello.event.impl.EventRayTraceResult;
 import com.mentalfrostbyte.jello.event.impl.Class4423;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
@@ -28,7 +28,7 @@ public class AutoSprint extends Module {
             ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class);
             Module var5 = var4.module;
             if (var5 == null || !var5.isEnabled() || !(var5 instanceof BlockFlyAACMode) || var5.getBooleanValueFromSetttingName("Haphe (AACAP)")) {
-                mc.player.setSprinting(mc.player.field4984 > 0.0F && !((BlockFly) Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class)).method16732());
+                mc.player.setSprinting(mc.player.moveForward > 0.0F && !((BlockFly) Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class)).method16732());
             }
         }
     }
@@ -36,12 +36,12 @@ public class AutoSprint extends Module {
     @EventTarget
     public void method16344(Class4423 var1) {
         if (this.isEnabled()
-                && !(mc.player.field4984 <= 0.0F)
-                && (!mc.player.isHandActive() || mc.player.method3158().getItem() != Items.BOW)
+                && !(mc.player.moveForward <= 0.0F)
+                && (!mc.player.isHandActive() || mc.player.getActiveItemStack().getItem() != Items.BOW)
                 && !((BlockFly) Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class)).method16732()) {
-            Class9805 var4 = mc.player.method3085(Attributes.MOVEMENT_SPEED);
+            ModifiableAttributeInstance var4 = mc.player.getAttribute(Attributes.MOVEMENT_SPEED);
             float var5 = (float) (
-                    (var4.method38660() + 0.03F + (double) (0.015F * (float) Class9567.method37078())) / (double) mc.player.abilities.getWalkSpeed() + 1.0
+                    (var4.method38660() + 0.03F + (double) (0.015F * (float) MovementUtils.method37078())) / (double) mc.player.abilities.getWalkSpeed() + 1.0
             )
                     / 2.0F;
             var1.field21557 = var5;
@@ -49,24 +49,24 @@ public class AutoSprint extends Module {
     }
 
     @EventTarget
-    public void method16345(Class4403 var1) {
+    public void method16345(EventRayTraceResult var1) {
         if (this.isEnabled() && this.getBooleanValueFromSetttingName("Keep Sprint")) {
-            if (!var1.method13937()) {
+            if (!var1.isHovering()) {
                 if (this.field23605.length == 2) {
-                    double var4 = this.field23605[0] - mc.player.getVec().x;
-                    double var6 = this.field23605[1] - mc.player.getVec().z;
+                    double var4 = this.field23605[0] - mc.player.getMotion().x;
+                    double var6 = this.field23605[1] - mc.player.getMotion().z;
                     if (var4 != 0.0 || var6 != 0.0) {
-                        mc.player.method3435(this.field23605[0], mc.player.getVec().y, this.field23605[1]);
+                        mc.player.setMotion(this.field23605[0], mc.player.getMotion().y, this.field23605[1]);
                     }
 
-                    if (this.field23606 && !mc.player.method3337()) {
+                    if (this.field23606 && !mc.player.isSprinting()) {
                         mc.player.setSprinting(true);
                     }
                 }
             } else {
-                this.field23605[0] = mc.player.getVec().x;
-                this.field23605[1] = mc.player.getVec().z;
-                this.field23606 = mc.player.method3337();
+                this.field23605[0] = mc.player.getMotion().x;
+                this.field23605[1] = mc.player.getMotion().z;
+                this.field23606 = mc.player.isSprinting();
             }
         }
     }

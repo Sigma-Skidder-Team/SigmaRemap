@@ -33,12 +33,12 @@ public class Class931 extends Class932 implements Class930, Class935 {
    }
 
    @Override
-   public int method3629() {
+   public int getSizeInventory() {
       return this.field5273.size();
    }
 
    @Override
-   public boolean method3617() {
+   public boolean isEmpty() {
       for (ItemStack var4 : this.field5273) {
          if (!var4.isEmpty()) {
             return false;
@@ -54,7 +54,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
       if (this.field5277 <= 0 && var3.getItem() == Items.field37975) {
          this.field5277 = 20;
          var3.method32182(1);
-         this.method3622();
+         this.markDirty();
       }
 
       boolean var4 = this.method3688();
@@ -65,22 +65,22 @@ public class Class931 extends Class932 implements Class930, Class935 {
             this.field5277--;
             this.field5274 = 400;
             this.field5276 = var6.getItem();
-            this.method3622();
+            this.markDirty();
          }
       } else {
          this.field5274--;
          boolean var7 = this.field5274 == 0;
          if (var7 && var4) {
             this.method3689();
-            this.method3622();
+            this.markDirty();
          } else if (var4) {
             if (this.field5276 != var6.getItem()) {
                this.field5274 = 0;
-               this.method3622();
+               this.markDirty();
             }
          } else {
             this.field5274 = 0;
-            this.method3622();
+            this.markDirty();
          }
       }
 
@@ -161,7 +161,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
    @Override
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      this.field5273 = NonNullList.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
+      this.field5273 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
       Class7920.method26567(var2, this.field5273);
       this.field5274 = var2.getShort("BrewTime");
       this.field5277 = var2.getByte("Fuel");
@@ -170,52 +170,52 @@ public class Class931 extends Class932 implements Class930, Class935 {
    @Override
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
-      var1.method101("BrewTime", (short)this.field5274);
+      var1.putShort("BrewTime", (short)this.field5274);
       Class7920.method26565(var1, this.field5273);
       var1.method100("Fuel", (byte)this.field5277);
       return var1;
    }
 
    @Override
-   public ItemStack method3618(int var1) {
+   public ItemStack getStackInSlot(int var1) {
       return var1 >= 0 && var1 < this.field5273.size() ? this.field5273.get(var1) : ItemStack.EMPTY;
    }
 
    @Override
-   public ItemStack method3619(int var1, int var2) {
+   public ItemStack decrStackSize(int var1, int var2) {
       return Class7920.method26563(this.field5273, var1, var2);
    }
 
    @Override
-   public ItemStack method3620(int var1) {
+   public ItemStack removeStackFromSlot(int var1) {
       return Class7920.method26564(this.field5273, var1);
    }
 
    @Override
-   public void method3621(int var1, ItemStack var2) {
+   public void setInventorySlotContents(int var1, ItemStack var2) {
       if (var1 >= 0 && var1 < this.field5273.size()) {
          this.field5273.set(var1, var2);
       }
    }
 
    @Override
-   public boolean method3623(PlayerEntity var1) {
+   public boolean isUsableByPlayer(PlayerEntity var1) {
       return this.field5324.getTileEntity(this.field5325) == this
          ? !(
-            var1.method3276((double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.getZ() + 0.5)
+            var1.getDistanceNearest((double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.getZ() + 0.5)
                > 64.0
          )
          : false;
    }
 
    @Override
-   public boolean method3633(int var1, ItemStack var2) {
+   public boolean isItemValidForSlot(int var1, ItemStack var2) {
       if (var1 != 3) {
          Item var5 = var2.getItem();
          return var1 == 4
             ? var5 == Items.field37975
             : (var5 == Items.field37971 || var5 == Items.field38115 || var5 == Items.field38118 || var5 == Items.field37972)
-               && this.method3618(var1).isEmpty();
+               && this.getStackInSlot(var1).isEmpty();
       } else {
          return Class7105.method22132(var2);
       }
@@ -232,7 +232,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
 
    @Override
    public boolean method3654(int var1, ItemStack var2, Direction var3) {
-      return this.method3633(var1, var2);
+      return this.isItemValidForSlot(var1, var2);
    }
 
    @Override
@@ -246,7 +246,7 @@ public class Class931 extends Class932 implements Class930, Class935 {
    }
 
    @Override
-   public Class5812 method3690(int var1, PlayerInventory var2) {
+   public Container method3690(int var1, PlayerInventory var2) {
       return new Class5819(var1, var2, this, this.field5278);
    }
 

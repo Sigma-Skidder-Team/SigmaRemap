@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import mapped.Class1900;
 import mapped.Class6746;
-import mapped.Class8039;
+import mapped.CombatTracker;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.LivingEntity;
@@ -23,13 +23,13 @@ public class SCombatPacket implements Packet<IClientPlayNetHandler> {
    public SCombatPacket() {
    }
 
-   public SCombatPacket(Class8039 var1, Class1900 var2) {
+   public SCombatPacket(CombatTracker var1, Class1900 var2) {
       this(var1, var2, StringTextComponent.EMPTY);
    }
 
-   public SCombatPacket(Class8039 var1, Class1900 var2, ITextComponent var3) {
+   public SCombatPacket(CombatTracker var1, Class1900 var2, ITextComponent var3) {
       this.field24693 = var2;
-      LivingEntity var6 = var1.method27601();
+      LivingEntity var6 = var1.getBestAttacker();
       switch (Class6746.field29450[var2.ordinal()]) {
          case 1:
             this.field24696 = var1.method27604();

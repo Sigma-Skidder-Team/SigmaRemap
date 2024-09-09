@@ -158,7 +158,7 @@ public class IntegratedServer extends MinecraftServer {
    }
 
    @Override
-   public boolean method1374(Class1894 var1, boolean var2, int var3) {
+   public boolean method1374(GameType var1, boolean var2, int var3) {
       try {
          this.getNetworkSystem().method33398((InetAddress)null, var3);
          field1208.info("Started serving on {}", var3);
@@ -219,7 +219,7 @@ public class IntegratedServer extends MinecraftServer {
    }
 
    @Override
-   public void method1370(Class1894 var1) {
+   public void method1370(GameType var1) {
       super.method1370(var1);
       this.getPlayerList().method19480(var1);
    }
@@ -293,7 +293,7 @@ public class IntegratedServer extends MinecraftServer {
    }
 
    private void method6494(ServerWorld var1) {
-      if (this.method1286() == Class1894.field11103) {
+      if (this.method1286() == GameType.field11103) {
          long var4 = var1.method6784();
          long var6 = var4 % 24000L;
          if (Class7944.method26886()) {

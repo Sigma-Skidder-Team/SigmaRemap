@@ -235,7 +235,7 @@ public class Class9037 {
    }
 
    private static int method33491(Class6619 var0, String var1) throws CommandSyntaxException {
-      BlockRayTraceResult var4 = (BlockRayTraceResult)var0.method20175().method3289(10.0, 1.0F, false);
+      BlockRayTraceResult var4 = (BlockRayTraceResult)var0.method20175().customPick(10.0, 1.0F, false);
       BlockPos var5 = var4.getPos();
       ServerWorld var6 = var0.method20172();
       Optional var7 = Class7803.method26060(var5, 15, var6);

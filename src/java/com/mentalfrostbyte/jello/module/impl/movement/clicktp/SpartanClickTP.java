@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.ClickEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
@@ -32,17 +32,17 @@ public class SpartanClickTP extends Module {
     @Override
     public void onDisable() {
         ColorUtils.method17725(-0.08);
-        double var3 = Class9567.method37075();
-        Class9567.method37090(var3);
+        double var3 = MovementUtils.method37075();
+        MovementUtils.method37090(var3);
         mc.timer.timerSpeed = 1.0F;
     }
 
     @EventTarget
     private void method16104(ClickEvent var1) {
-        if (this.isEnabled() && (mc.player.method3331() || !this.method16004().getBooleanValueFromSetttingName("Sneak"))) {
-            if (var1.method13976() == ClickEvent.Button.RIGHT) {
-                BlockRayTraceResult var4 = BlockUtil.method34567(
-                        mc.player.rotationYaw, mc.player.rotationPitch, this.method16004().getNumberValueBySettingName("Maximum range")
+        if (this.isEnabled() && (mc.player.isSneaking() || !this.access().getBooleanValueFromSetttingName("Sneak"))) {
+            if (var1.getButton() == ClickEvent.Button.RIGHT) {
+                BlockRayTraceResult var4 = BlockUtil.rayTrace(
+                        mc.player.rotationYaw, mc.player.rotationPitch, this.access().getNumberValueBySettingName("Maximum range")
                 );
                 BlockPos var5 = null;
                 if (var4 != null) {
@@ -70,19 +70,19 @@ public class SpartanClickTP extends Module {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 SPlayerPositionLookPacket var4 = (SPlayerPositionLookPacket) var1.getPacket();
-                if (var4.field24297 == (double) this.field23465.getX() + 0.5
-                        && var4.field24298 == (double) (this.field23465.getY() + 1)
-                        && var4.field24299 == (double) this.field23465.getZ() + 0.5) {
+                if (var4.x == (double) this.field23465.getX() + 0.5
+                        && var4.y == (double) (this.field23465.getY() + 1)
+                        && var4.z == (double) this.field23465.getZ() + 0.5) {
                     Client.getInstance().getNotificationManager().post(new Notification("ClickTP", "Successfully teleported"));
-                    if (!this.method16004().getBooleanValueFromSetttingName("Auto Disable")) {
+                    if (!this.access().getBooleanValueFromSetttingName("Auto Disable")) {
                         this.field23464 = -1;
                         this.field23465 = null;
                         ColorUtils.method17725(-0.08);
-                        double var5 = Class9567.method37075();
-                        Class9567.method37090(var5);
+                        double var5 = MovementUtils.method37075();
+                        MovementUtils.method37090(var5);
                         mc.timer.timerSpeed = 1.0F;
                     } else {
-                        this.method16004().method16000();
+                        this.access().method16000();
                     }
                 }
             }
@@ -90,10 +90,10 @@ public class SpartanClickTP extends Module {
     }
 
     @EventTarget
-    private void method16106(Class4435 var1) {
+    private void method16106(EventMove var1) {
         if (this.isEnabled()) {
             if (this.field23464 > -1 && this.field23465 != null) {
-                var1.method13995(0.01);
+                var1.setY(0.01);
                 this.field23464++;
                 if (this.field23464 >= 20) {
                     mc.timer.timerSpeed = 1.4F;

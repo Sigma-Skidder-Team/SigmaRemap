@@ -36,7 +36,7 @@ public abstract class Class7637 extends Class7633 {
             double var8 = (double)var2.getX() + var4.nextDouble();
             double var10 = (double)var2.getY() + 1.0;
             double var12 = (double)var2.getZ() + var4.nextDouble();
-            var1.method6746(ParticleTypes.field34086, var8, var10, var12, 0.0, 0.0, 0.0);
+            var1.addParticle(ParticleTypes.field34086, var8, var10, var12, 0.0, 0.0, 0.0);
             var1.method6745(
                var8, var10, var12, SoundEvents.field26727, Class2266.field14732, 0.2F + var4.nextFloat() * 0.2F, 0.9F + var4.nextFloat() * 0.15F, false
             );
@@ -59,7 +59,7 @@ public abstract class Class7637 extends Class7633 {
 
    @Override
    public void method25053(World var1, BlockPos var2, FluidState var3, Random var4) {
-      if (var1.method6789().method17135(Class5462.field24223)) {
+      if (var1.getGameRules().getBoolean(Class5462.field24223)) {
          int var7 = var4.nextInt(3);
          if (var7 <= 0) {
             for (int var8 = 0; var8 < 3; var8++) {
@@ -83,7 +83,7 @@ public abstract class Class7637 extends Class7633 {
 
                BlockState var10 = var1.getBlockState(var11);
                if (!var10.isAir()) {
-                  if (var10.method23384().method31087()) {
+                  if (var10.getMaterial().method31087()) {
                      return;
                   }
                } else if (this.method25102(var1, var11)) {
@@ -106,7 +106,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    private boolean method25103(Class1662 var1, BlockPos var2) {
-      return var2.getY() >= 0 && var2.getY() < 256 && !var1.method7017(var2) ? false : var1.getBlockState(var2).method23384().method31088();
+      return var2.getY() >= 0 && var2.getY() < 256 && !var1.method7017(var2) ? false : var1.getBlockState(var2).getMaterial().method31088();
    }
 
    @Nullable
@@ -142,7 +142,7 @@ public abstract class Class7637 extends Class7633 {
 
    @Override
    public boolean method25055(FluidState var1, IBlockReader var2, BlockPos var3, Fluid var4, Direction var5) {
-      return var1.method23475(var2, var3) >= 0.44444445F && var4.method25067(Class8953.field40469);
+      return var1.method23475(var2, var3) >= 0.44444445F && var4.method25067(FluidTags.field40469);
    }
 
    @Override
@@ -178,7 +178,7 @@ public abstract class Class7637 extends Class7633 {
    public void method25080(Class1660 var1, BlockPos var2, BlockState var3, Direction var4, FluidState var5) {
       if (var4 == Direction.DOWN) {
          FluidState var8 = var1.getFluidState(var2);
-         if (this.method25067(Class8953.field40470) && var8.method23486(Class8953.field40469)) {
+         if (this.method25067(FluidTags.field40470) && var8.method23486(FluidTags.field40469)) {
             if (var3.getBlock() instanceof Class3404) {
                var1.setBlockState(var2, Blocks.STONE.method11579(), 3);
             }

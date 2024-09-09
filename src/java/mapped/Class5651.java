@@ -10,13 +10,13 @@ public abstract class Class5651<T extends Class1006, M extends Class2827<T>> ext
    }
 
    public boolean method17852(T var1) {
-      return super.method17852((T)var1) && (var1.method2939() || var1.method3381() && var1 == this.field25097.field40019);
+      return super.method17852((T)var1) && (var1.getAlwaysRenderNameTagForRender() || var1.method3381() && var1 == this.field25097.field40019);
    }
 
    public boolean method17854(T var1, Class7647 var2, double var3, double var5, double var7) {
       if (!super.method17854((T)var1, var2, var3, var5, var7)) {
          Entity var11 = var1.method4297();
-         return var11 == null ? false : var2.method25122(var11.method3186());
+         return var11 == null ? false : var2.method25122(var11.getRenderBoundingBox());
       } else {
          return true;
       }
@@ -33,9 +33,9 @@ public abstract class Class5651<T extends Class1006, M extends Class2827<T>> ext
    private <E extends Entity> void method17847(T var1, float var2, MatrixStack var3, Class7733 var4, E var5) {
       if (!Class7944.method26921() || ! Shaders.field40609) {
          var3.push();
-         Vector3d var8 = var5.method2986(var2);
-         double var9 = (double)(MathHelper.lerp(var2, var1.field4965, var1.field4966) * (float) (Math.PI / 180.0)) + (Math.PI / 2);
-         Vector3d var11 = var1.method3394();
+         Vector3d var8 = var5.getLeashPosition(var2);
+         double var9 = (double)(MathHelper.lerp(var2, var1.renderYawOffset, var1.prevRenderYawOffset) * (float) (Math.PI / 180.0)) + (Math.PI / 2);
+         Vector3d var11 = var1.func_241205_ce_();
          double var12 = Math.cos(var9) * var11.z + Math.sin(var9) * var11.x;
          double var14 = Math.sin(var9) * var11.z - Math.cos(var9) * var11.x;
          double var16 = MathHelper.lerp((double)var2, var1.prevPosX, var1.getPosX()) + var12;
@@ -51,8 +51,8 @@ public abstract class Class5651<T extends Class1006, M extends Class2827<T>> ext
          float var28 = MathHelper.method37815(var22 * var22 + var24 * var24) * 0.025F / 2.0F;
          float var29 = var24 * var28;
          float var30 = var22 * var28;
-         BlockPos var31 = new BlockPos(var1.method3286(var2));
-         BlockPos var32 = new BlockPos(var5.method3286(var2));
+         BlockPos var31 = new BlockPos(var1.getEyePosition(var2));
+         BlockPos var32 = new BlockPos(var5.getEyePosition(var2));
          int var33 = this.method17858((T)var1, var31);
          int var34 = this.field25097.<Entity>method32212(var5).method17858(var5, var32);
          int var35 = var1.world.method7020(Class1977.field12881, var31);

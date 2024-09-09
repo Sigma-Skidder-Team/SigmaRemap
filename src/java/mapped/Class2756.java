@@ -20,7 +20,7 @@ public class Class2756 extends Class2754 {
 
    @Override
    public boolean method10803() {
-      if (this.field17298.method3013().nextInt(this.field17299) != 0) {
+      if (this.field17298.getRNG().nextInt(this.field17299) != 0) {
          return false;
       } else {
          Direction var3 = this.field17298.method3387();
@@ -40,8 +40,8 @@ public class Class2756 extends Class2754 {
 
    private boolean method10959(BlockPos var1, int var2, int var3, int var4) {
       BlockPos var7 = var1.method8336(var2 * var4, 0, var3 * var4);
-      return this.field17298.world.getFluidState(var7).method23486(Class8953.field40469)
-         && !this.field17298.world.getBlockState(var7).method23384().method31087();
+      return this.field17298.world.getFluidState(var7).method23486(FluidTags.field40469)
+         && !this.field17298.world.getBlockState(var7).getMaterial().method31087();
    }
 
    private boolean method10960(BlockPos var1, int var2, int var3, int var4) {
@@ -51,9 +51,9 @@ public class Class2756 extends Class2754 {
 
    @Override
    public boolean method10806() {
-      double var3 = this.field17298.getVec().y;
-      return (!(var3 * var3 < 0.03F) || this.field17298.rotationPitch == 0.0F || !(Math.abs(this.field17298.rotationPitch) < 10.0F) || !this.field17298.method3250())
-         && !this.field17298.method3226();
+      double var3 = this.field17298.getMotion().y;
+      return (!(var3 * var3 < 0.03F) || this.field17298.rotationPitch == 0.0F || !(Math.abs(this.field17298.rotationPitch) < 10.0F) || !this.field17298.isInWater())
+         && !this.field17298.isOnGround();
    }
 
    @Override
@@ -64,7 +64,7 @@ public class Class2756 extends Class2754 {
    @Override
    public void method10804() {
       Direction var3 = this.field17298.method3387();
-      this.field17298.method3434(this.field17298.getVec().method11339((double)var3.method539() * 0.6, 0.7, (double)var3.method541() * 0.6));
+      this.field17298.setMotion(this.field17298.getMotion().add((double)var3.method539() * 0.6, 0.7, (double)var3.method541() * 0.6));
       this.field17298.method4230().method21666();
    }
 
@@ -78,19 +78,19 @@ public class Class2756 extends Class2754 {
       boolean var3 = this.field17300;
       if (!var3) {
          FluidState var4 = this.field17298.world.getFluidState(this.field17298.getPosition());
-         this.field17300 = var4.method23486(Class8953.field40469);
+         this.field17300 = var4.method23486(FluidTags.field40469);
       }
 
       if (this.field17300 && !var3) {
-         this.field17298.method2863(SoundEvents.field26504, 1.0F, 1.0F);
+         this.field17298.playSound(SoundEvents.field26504, 1.0F, 1.0F);
       }
 
-      Vector3d var9 = this.field17298.getVec();
+      Vector3d var9 = this.field17298.getMotion();
       if (var9.y * var9.y < 0.03F && this.field17298.rotationPitch != 0.0F) {
          this.field17298.rotationPitch = MathHelper.method37828(this.field17298.rotationPitch, 0.0F, 0.2F);
       } else {
-         double var5 = Math.sqrt(Entity.method3234(var9));
-         double var7 = Math.signum(-var9.y) * Math.acos(var5 / var9.method11348()) * 180.0F / (float)Math.PI;
+         double var5 = Math.sqrt(Entity.horizontalMag(var9));
+         double var7 = Math.signum(-var9.y) * Math.acos(var5 / var9.length()) * 180.0F / (float)Math.PI;
          this.field17298.rotationPitch = (float)var7;
       }
    }

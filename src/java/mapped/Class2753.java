@@ -31,7 +31,7 @@ public class Class2753 extends Class2595 {
       this.field17293--;
       if (this.field17293 <= 0) {
          World var3 = this.field17292.world;
-         Random var4 = this.field17292.method3013();
+         Random var4 = this.field17292.getRNG();
          BlockPos var5 = this.field17292.getPosition();
 
          for (int var6 = 0; var6 <= 5 && var6 >= -5; var6 = (var6 > 0 ? 0 : 1) - var6) {
@@ -41,7 +41,7 @@ public class Class2753 extends Class2595 {
                   BlockState var10 = var3.getBlockState(var9);
                   Block var11 = var10.getBlock();
                   if (var11 instanceof Class3442) {
-                     if (!var3.method6789().method17135(Class5462.field24224)) {
+                     if (!var3.getGameRules().getBoolean(Class5462.field24224)) {
                         var3.setBlockState(var9, ((Class3442)var11).method12118().method11579(), 3);
                      } else {
                         var3.method7180(var9, true, this.field17292);

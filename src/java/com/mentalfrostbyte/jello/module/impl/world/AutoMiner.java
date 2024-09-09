@@ -25,7 +25,7 @@ import java.util.*;
 
 public class AutoMiner extends Module {
    public List<Class6203> field23451 = new ArrayList<Class6203>();
-   public Set<Class7481> field23452 = new HashSet<Class7481>();
+   public Set<ChunkPos> field23452 = new HashSet<ChunkPos>();
    public Class9823 field23453;
    public Thread field23454;
    private BlockPos field23455;
@@ -47,17 +47,17 @@ public class AutoMiner extends Module {
 
          if (var1.getPacket() instanceof SMultiBlockChangePacket) {
             SMultiBlockChangePacket var5 = (SMultiBlockChangePacket)var1.getPacket();
-            this.method16076(new Class7481(var5.field24642.field13027, var5.field24642.field13029));
+            this.method16076(new ChunkPos(var5.field24642.field13027, var5.field24642.field13029));
          }
 
          if (var1.getPacket() instanceof SChunkDataPacket && Minecraft.getInstance().world != null) {
             SChunkDataPacket var6 = (SChunkDataPacket)var1.getPacket();
-            this.method16076(new Class7481(var6.method17378(), var6.method17379()));
+            this.method16076(new ChunkPos(var6.method17378(), var6.method17379()));
          }
       }
    }
 
-   public void method16076(Class7481 var1) {
+   public void method16076(ChunkPos var1) {
       for (Class6203 var5 : this.field23451) {
          if (var5.method19107(var1)) {
             this.field23452.add(var5.method19109());
@@ -71,7 +71,7 @@ public class AutoMiner extends Module {
       this.field23452.clear();
    }
 
-   public List<BlockPos> method16078(Class7481 var1) {
+   public List<BlockPos> method16078(ChunkPos var1) {
       ArrayList var4 = new ArrayList();
       int var5 = var1.field32174 * 16;
       int var6 = var1.field32175 * 16;
@@ -101,11 +101,11 @@ public class AutoMiner extends Module {
             this.field23451.clear();
          } else {
             int var4 = (int)this.getNumberValueBySettingName("Chunk Range");
-            List<Class7481> var5 = new ArrayList<>();
+            List<ChunkPos> var5 = new ArrayList<>();
 
             for (int var6 = -4; var6 < 4; var6++) {
                for (int var7 = -4; var7 < 4; var7++) {
-                  var5.add(new Class7481(mc.player.chunkCoordX + var6, mc.player.chunkCoordZ + var7));
+                  var5.add(new ChunkPos(mc.player.chunkCoordX + var6, mc.player.chunkCoordZ + var7));
                }
             }
 
@@ -113,7 +113,7 @@ public class AutoMiner extends Module {
 
             while (var12.hasNext()) {
                Class6203 var13 = (Class6203)var12.next();
-               if (var13.method19108(new Class7481(mc.player.chunkCoordX, mc.player.chunkCoordZ)) > 7
+               if (var13.method19108(new ChunkPos(mc.player.chunkCoordX, mc.player.chunkCoordZ)) > 7
                   || this.field23452.contains(var13.method19109())) {
                   var12.remove();
                }
@@ -123,7 +123,7 @@ public class AutoMiner extends Module {
             boolean var14 = false;
 
             label90:
-            for (Class7481 var9 : var5) {
+            for (ChunkPos var9 : var5) {
                for (Class6203 var11 : this.field23451) {
                   if (var11.method19107(var9)) {
                      continue label90;

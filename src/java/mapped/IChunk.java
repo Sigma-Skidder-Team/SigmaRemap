@@ -56,7 +56,7 @@ public interface IChunk extends IBlockReader, Class1671 {
 
    int method7071(Class101 var1, int var2, int var3);
 
-   Class7481 method7072();
+   ChunkPos method7072();
 
    void method7073(long var1);
 

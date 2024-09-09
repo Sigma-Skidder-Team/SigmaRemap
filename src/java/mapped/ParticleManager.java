@@ -321,7 +321,7 @@ public class ParticleManager implements Class268 {
          }
       };
       FluidState var10 = var4.method37512();
-      boolean var11 = var10.method23486(Class8953.field40469);
+      boolean var11 = var10.method23486(FluidTags.field40469);
       RenderSystem.pushMatrix();
       RenderSystem.method27888(var1.getLast().getMatrix());
       Collection<Class6843> var12 = field1167;

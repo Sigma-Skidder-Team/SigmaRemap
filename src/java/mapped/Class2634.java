@@ -18,7 +18,7 @@ public class Class2634 extends Class2628 {
    @Override
    public boolean method10803() {
       if (this.field16930 <= 0) {
-         if (!this.field16950.world.method6789().method17135(Class5462.field24224)) {
+         if (!this.field16950.world.getGameRules().getBoolean(Class5462.field24224)) {
             return false;
          }
 

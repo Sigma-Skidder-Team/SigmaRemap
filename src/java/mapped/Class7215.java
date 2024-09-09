@@ -3,7 +3,6 @@ package mapped;
 import com.google.common.annotations.VisibleForTesting;
 import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.function.Predicate;
@@ -11,12 +10,12 @@ import java.util.function.Predicate;
 public class Class7215 {
    private static String[] field31023;
 
-   public static Class9502 method22658(BlockPos var0, Class113 var1, int var2, Class113 var3, int var4, Predicate<BlockPos> var5) {
+   public static TeleportationRepositioner method22658(BlockPos var0, Direction var1, int var2, Direction var3, int var4, Predicate<BlockPos> var5) {
       BlockPos.Mutable var8 = var0.method8354();
-      Direction var9 = Direction.method555(Class1892.field11093, var1);
-      Direction var10 = var9.method536();
-      Direction var11 = Direction.method555(Class1892.field11093, var3);
-      Direction var12 = var11.method536();
+      net.minecraft.util.Direction var9 = net.minecraft.util.Direction.method555(Class1892.field11093, var1);
+      net.minecraft.util.Direction var10 = var9.method536();
+      net.minecraft.util.Direction var11 = net.minecraft.util.Direction.method555(Class1892.field11093, var3);
+      net.minecraft.util.Direction var12 = var11.method536();
       int var13 = method22659(var5, var8.method8374(var0), var9, var2);
       int var14 = method22659(var5, var8.method8374(var0), var10, var2);
       int var15 = var13;
@@ -66,10 +65,10 @@ public class Class7215 {
          }
       }
 
-      return new Class9502(var0.method8351(var1, var29 - var15).method8351(var3, var31 - var17), var20, var21);
+      return new TeleportationRepositioner(var0.method8351(var1, var29 - var15).method8351(var3, var31 - var17), var20, var21);
    }
 
-   private static int method22659(Predicate<BlockPos> var0, BlockPos.Mutable var1, Direction var2, int var3) {
+   private static int method22659(Predicate<BlockPos> var0, BlockPos.Mutable var1, net.minecraft.util.Direction var2, int var3) {
       int var6 = 0;
 
       while (var6 < var3 && var0.test(var1.method8379(var2))) {

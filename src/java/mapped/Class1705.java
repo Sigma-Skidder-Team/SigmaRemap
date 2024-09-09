@@ -21,7 +21,7 @@ public class Class1705 extends Class1702 {
 
    public Class1705(ClientWorld var1, int var2) {
       this.field9292 = var1;
-      this.field9289 = new Class1675(var1, new Class7481(0, 0));
+      this.field9289 = new Class1675(var1, new ChunkPos(0, 0));
       this.field9290 = new Class196(this, true, var1.method6812().hasSkyLight());
       this.field9291 = new Class8815(this, method7404(var2));
    }
@@ -35,7 +35,7 @@ public class Class1705 extends Class1702 {
       if (var0 == null) {
          return false;
       } else {
-         Class7481 var5 = var0.method7072();
+         ChunkPos var5 = var0.method7072();
          return var5.field32174 == var1 && var5.field32175 == var2;
       }
    }
@@ -107,14 +107,14 @@ public class Class1705 extends Class1702 {
                ((Chunk)var11).method7143(false);
             }
 
-            var11 = new Class1676(this.field9292, new Class7481(var1, var2), var3);
+            var11 = new Class1676(this.field9292, new ChunkPos(var1, var2), var3);
             ((Chunk)var11).method7142(var3, var4, var5, var6);
             this.field9291.method31824(var10, (Chunk)var11);
          }
 
          Class7038[] var16 = ((Chunk)var11).method7067();
          Class196 var17 = this.getLightManager();
-         var17.method605(new Class7481(var1, var2), true);
+         var17.method605(new ChunkPos(var1, var2), true);
 
          for (int var18 = 0; var18 < var16.length; var18++) {
             Class7038 var19 = var16[var18];
@@ -150,7 +150,7 @@ public class Class1705 extends Class1702 {
          for (int var7 = 0; var7 < this.field9291.field39654.length(); var7++) {
             Chunk var8 = this.field9291.field39654.get(var7);
             if (var8 != null) {
-               Class7481 var9 = var8.method7072();
+               ChunkPos var9 = var8.method7072();
                if (Class8815.method31828(var6, var9.field32174, var9.field32175)) {
                   var6.method31824(var6.method31823(var9.field32174, var9.field32175), var8);
                }
@@ -185,7 +185,7 @@ public class Class1705 extends Class1702 {
    }
 
    @Override
-   public boolean method7352(Class7481 var1) {
+   public boolean method7352(ChunkPos var1) {
       return this.method7345(var1.field32174, var1.field32175);
    }
 

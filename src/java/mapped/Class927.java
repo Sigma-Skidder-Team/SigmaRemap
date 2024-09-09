@@ -8,7 +8,7 @@ import net.minecraft.nbt.CompoundNBT;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Class927 implements Class920, Class925 {
+public class Class927 implements IInventory, Class925 {
    private static String[] field5260;
    private final int field5261;
    private final NonNullList<ItemStack> field5262;
@@ -37,7 +37,7 @@ public class Class927 implements Class920, Class925 {
    }
 
    @Override
-   public ItemStack method3618(int var1) {
+   public ItemStack getStackInSlot(int var1) {
       return var1 >= 0 && var1 < this.field5262.size() ? this.field5262.get(var1) : ItemStack.EMPTY;
    }
 
@@ -48,10 +48,10 @@ public class Class927 implements Class920, Class925 {
    }
 
    @Override
-   public ItemStack method3619(int var1, int var2) {
+   public ItemStack decrStackSize(int var1, int var2) {
       ItemStack var5 = Class7920.method26563(this.field5262, var1, var2);
       if (!var5.isEmpty()) {
-         this.method3622();
+         this.markDirty();
       }
 
       return var5;
@@ -61,7 +61,7 @@ public class Class927 implements Class920, Class925 {
       ItemStack var5 = new ItemStack(var1, 0);
 
       for (int var6 = this.field5261 - 1; var6 >= 0; var6--) {
-         ItemStack var7 = this.method3618(var6);
+         ItemStack var7 = this.getStackInSlot(var6);
          if (var7.getItem().equals(var1)) {
             int var8 = var2 - var5.getCount();
             ItemStack var9 = var7.method32106(var8);
@@ -73,7 +73,7 @@ public class Class927 implements Class920, Class925 {
       }
 
       if (!var5.isEmpty()) {
-         this.method3622();
+         this.markDirty();
       }
 
       return var5;
@@ -104,7 +104,7 @@ public class Class927 implements Class920, Class925 {
    }
 
    @Override
-   public ItemStack method3620(int var1) {
+   public ItemStack removeStackFromSlot(int var1) {
       ItemStack var4 = this.field5262.get(var1);
       if (!var4.isEmpty()) {
          this.field5262.set(var1, ItemStack.EMPTY);
@@ -115,22 +115,22 @@ public class Class927 implements Class920, Class925 {
    }
 
    @Override
-   public void method3621(int var1, ItemStack var2) {
+   public void setInventorySlotContents(int var1, ItemStack var2) {
       this.field5262.set(var1, var2);
-      if (!var2.isEmpty() && var2.getCount() > this.method3630()) {
-         var2.method32180(this.method3630());
+      if (!var2.isEmpty() && var2.getCount() > this.getInventoryStackLimit()) {
+         var2.method32180(this.getInventoryStackLimit());
       }
 
-      this.method3622();
+      this.markDirty();
    }
 
    @Override
-   public int method3629() {
+   public int getSizeInventory() {
       return this.field5261;
    }
 
    @Override
-   public boolean method3617() {
+   public boolean isEmpty() {
       for (ItemStack var4 : this.field5262) {
          if (!var4.isEmpty()) {
             return false;
@@ -141,7 +141,7 @@ public class Class927 implements Class920, Class925 {
    }
 
    @Override
-   public void method3622() {
+   public void markDirty() {
       if (this.field5263 != null) {
          for (Class1073 var4 : this.field5263) {
             var4.method4902(this);
@@ -150,14 +150,14 @@ public class Class927 implements Class920, Class925 {
    }
 
    @Override
-   public boolean method3623(PlayerEntity var1) {
+   public boolean isUsableByPlayer(PlayerEntity var1) {
       return true;
    }
 
    @Override
    public void method3625() {
       this.field5262.clear();
-      this.method3622();
+      this.markDirty();
    }
 
    @Override
@@ -174,9 +174,9 @@ public class Class927 implements Class920, Class925 {
 
    private void method3678(ItemStack var1) {
       for (int var4 = 0; var4 < this.field5261; var4++) {
-         ItemStack var5 = this.method3618(var4);
+         ItemStack var5 = this.getStackInSlot(var4);
          if (var5.isEmpty()) {
-            this.method3621(var4, var1.copy());
+            this.setInventorySlotContents(var4, var1.copy());
             var1.method32180(0);
             return;
          }
@@ -185,7 +185,7 @@ public class Class927 implements Class920, Class925 {
 
    private void method3679(ItemStack var1) {
       for (int var4 = 0; var4 < this.field5261; var4++) {
-         ItemStack var5 = this.method3618(var4);
+         ItemStack var5 = this.getStackInSlot(var4);
          if (this.method3680(var5, var1)) {
             this.method3681(var1, var5);
             if (var1.isEmpty()) {
@@ -200,12 +200,12 @@ public class Class927 implements Class920, Class925 {
    }
 
    private void method3681(ItemStack var1, ItemStack var2) {
-      int var5 = Math.min(this.method3630(), var2.method32113());
+      int var5 = Math.min(this.getInventoryStackLimit(), var2.method32113());
       int var6 = Math.min(var1.getCount(), var5 - var2.getCount());
       if (var6 > 0) {
          var2.method32181(var6);
          var1.method32182(var6);
-         this.method3622();
+         this.markDirty();
       }
    }
 
@@ -221,8 +221,8 @@ public class Class927 implements Class920, Class925 {
    public ListNBT method3683() {
       ListNBT var3 = new ListNBT();
 
-      for (int var4 = 0; var4 < this.method3629(); var4++) {
-         ItemStack var5 = this.method3618(var4);
+      for (int var4 = 0; var4 < this.getSizeInventory(); var4++) {
+         ItemStack var5 = this.getStackInSlot(var4);
          if (!var5.isEmpty()) {
             var3.add(var5.method32112(new CompoundNBT()));
          }

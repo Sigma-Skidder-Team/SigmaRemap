@@ -22,7 +22,7 @@ public class Class3716 extends Class3676<LivingEntity> {
 
    @Override
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
-      Class6947<?> var7 = var2.method2992();
+      Brain<?> var7 = var2.getBrain();
       Optional var8 = var7.<Long>method21410(Class8830.field39840);
       boolean var9 = (Long)var8.get() + 300L <= var3;
       if (this.field19793 <= this.field19792 && !var9) {
@@ -33,7 +33,7 @@ public class Class3716 extends Class3676<LivingEntity> {
       } else {
          var7.method21405(Class8830.field39840);
          var7.method21405(Class8830.field39839);
-         var7.method21422(var1.method6784(), var1.method6783());
+         var7.method21422(var1.method6784(), var1.getGameTime());
          this.field19793 = 0;
       }
    }

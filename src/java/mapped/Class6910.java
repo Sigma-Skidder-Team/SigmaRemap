@@ -31,7 +31,7 @@ public class Class6910 extends Class6904 {
 
          if (var3.method31148() == 8 && var2.method8128(Class1873.field10753)) {
             float var12 = ((Number)var3.method31152()).floatValue();
-            if (Float.isNaN(var12) && Class8042.method27612().method21936()) {
+            if (Float.isNaN(var12) && ViaVersion3.method27612().method21936()) {
                var3.method31154(1.0F);
             }
          }

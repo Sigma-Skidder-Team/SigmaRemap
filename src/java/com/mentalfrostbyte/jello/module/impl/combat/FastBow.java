@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
-import mapped.Class3263;
+import mapped.BowItem;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -21,7 +21,7 @@ public class FastBow extends Module {
     private void method16373(TickEvent var1) {
         if (this.isEnabled()) {
             if (mc.player.getHeldItemMainhand() != null
-                    && mc.player.getHeldItemMainhand().getItem() instanceof Class3263
+                    && mc.player.getHeldItemMainhand().getItem() instanceof BowItem
                     && mc.player.onGround) {
                 for (int var4 = 0; var4 < 25; var4++) {
                     mc.getConnection().sendPacket(new CPlayerPacket(true));

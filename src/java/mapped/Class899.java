@@ -26,7 +26,7 @@ public class Class899 extends Class898 {
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
       if (!this.world.isRemote) {
-         boolean var4 = this.world.method6789().method17135(Class5462.field24224);
+         boolean var4 = this.world.getGameRules().getBoolean(Class5462.field24224);
          this.world
             .method6756(
                (Entity)null,
@@ -37,7 +37,7 @@ public class Class899 extends Class898 {
                var4,
                !var4 ? Class2141.field14014 : Class2141.field14016
             );
-         this.method2904();
+         this.remove();
       }
    }
 
@@ -47,22 +47,22 @@ public class Class899 extends Class898 {
       if (!this.world.isRemote) {
          Entity var4 = var1.getEntity();
          Entity var5 = this.method3460();
-         var4.method2741(DamageSource.method31121(this, var5), 6.0F);
+         var4.attackEntityFrom(DamageSource.method31121(this, var5), 6.0F);
          if (var5 instanceof LivingEntity) {
-            this.method3399((LivingEntity)var5, var4);
+            this.applyEnchantments((LivingEntity)var5, var4);
          }
       }
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("ExplosionPower", this.field5139);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("ExplosionPower", this.field5139);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("ExplosionPower", 99)) {
          this.field5139 = var1.getInt("ExplosionPower");
       }

@@ -38,12 +38,12 @@ public enum Class2114 implements Class2115 {
    }
 
    @Override
-   public int method8785(Class2106 var1) {
+   public int method8785(EquipmentSlotType var1) {
       return field13780[var1.method8773()] * this.field13782;
    }
 
    @Override
-   public int method8786(Class2106 var1) {
+   public int method8786(EquipmentSlotType var1) {
       return this.field13783[var1.method8773()];
    }
 
@@ -53,7 +53,7 @@ public enum Class2114 implements Class2115 {
    }
 
    @Override
-   public SoundEvent method8788() {
+   public SoundEvent getSoundEvent() {
       return this.field13785;
    }
 

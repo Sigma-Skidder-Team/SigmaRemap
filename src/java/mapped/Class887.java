@@ -18,7 +18,7 @@ import java.util.Set;
 public class Class887 extends AbstractArrowEntity {
    private static final DataParameter<Integer> field5116 = EntityDataManager.<Integer>createKey(Class887.class, DataSerializers.VARINT);
    private Class8812 field5117 = Class8137.field34976;
-   private final Set<Class2023> field5118 = Sets.newHashSet();
+   private final Set<EffectInstance> field5118 = Sets.newHashSet();
    private boolean field5119;
 
    public Class887(EntityType<? extends Class887> var1, World var2) {
@@ -42,10 +42,10 @@ public class Class887 extends AbstractArrowEntity {
          }
       } else {
          this.field5117 = Class9741.method38185(var1);
-         List<Class2023> var4 = Class9741.method38179(var1);
+         List<EffectInstance> var4 = Class9741.method38179(var1);
          if (!var4.isEmpty()) {
-            for (Class2023 var6 : var4) {
-               this.field5118.add(new Class2023(var6));
+            for (EffectInstance var6 : var4) {
+               this.field5118.add(new EffectInstance(var6));
             }
          }
 
@@ -72,9 +72,9 @@ public class Class887 extends AbstractArrowEntity {
       }
    }
 
-   public void method3500(Class2023 var1) {
+   public void method3500(EffectInstance var1) {
       this.field5118.add(var1);
-      this.method3210().method35446(field5116, Class9741.method38184(Class9741.method38177(this.field5117, this.field5118)));
+      this.getDataManager().method35446(field5116, Class9741.method38184(Class9741.method38177(this.field5117, this.field5118)));
    }
 
    @Override
@@ -88,7 +88,7 @@ public class Class887 extends AbstractArrowEntity {
       super.tick();
       if (!this.world.isRemote) {
          if (this.field5100 && this.field5101 != 0 && !this.field5118.isEmpty() && this.field5101 >= 600) {
-            this.world.method6786(this, (byte)0);
+            this.world.setEntityState(this, (byte)0);
             this.field5117 = Class8137.field34976;
             this.field5118.clear();
             this.dataManager.method35446(field5116, -1);
@@ -108,7 +108,7 @@ public class Class887 extends AbstractArrowEntity {
          double var9 = (double)(var4 >> 0 & 0xFF) / 255.0;
 
          for (int var11 = 0; var11 < var1; var11++) {
-            this.world.method6746(ParticleTypes.field34068, this.method3438(0.5), this.method3441(), this.method3445(0.5), var5, var7, var9);
+            this.world.addParticle(ParticleTypes.field34068, this.getPosXRandom(0.5), this.getPosYRandom(), this.getPosZRandom(0.5), var5, var7, var9);
          }
       }
    }
@@ -123,20 +123,20 @@ public class Class887 extends AbstractArrowEntity {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.field5117 != Class8137.field34976 && this.field5117 != null) {
          var1.method109("Potion", Registry.field16076.getKey(this.field5117).toString());
       }
 
       if (this.field5119) {
-         var1.method102("Color", this.method3502());
+         var1.putInt("Color", this.method3502());
       }
 
       if (!this.field5118.isEmpty()) {
          ListNBT var4 = new ListNBT();
 
-         for (Class2023 var6 : this.field5118) {
+         for (EffectInstance var6 : this.field5118) {
             var4.add(var6.method8637(new CompoundNBT()));
          }
 
@@ -145,13 +145,13 @@ public class Class887 extends AbstractArrowEntity {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("Potion", 8)) {
          this.field5117 = Class9741.method38186(var1);
       }
 
-      for (Class2023 var5 : Class9741.method38180(var1)) {
+      for (EffectInstance var5 : Class9741.method38180(var1)) {
          this.method3500(var5);
       }
 
@@ -166,13 +166,13 @@ public class Class887 extends AbstractArrowEntity {
    public void method3478(LivingEntity var1) {
       super.method3478(var1);
 
-      for (Class2023 var5 : this.field5117.method31816()) {
-         var1.method3035(new Class2023(var5.method8627(), Math.max(var5.method8628() / 8, 1), var5.method8629(), var5.method8630(), var5.method8631()));
+      for (EffectInstance var5 : this.field5117.method31816()) {
+         var1.addPotionEffect(new EffectInstance(var5.getPotion(), Math.max(var5.method8628() / 8, 1), var5.method8629(), var5.isAmbient(), var5.method8631()));
       }
 
       if (!this.field5118.isEmpty()) {
-         for (Class2023 var7 : this.field5118) {
-            var1.method3035(var7);
+         for (EffectInstance var7 : this.field5118) {
+            var1.addPotionEffect(var7);
          }
       }
    }
@@ -186,7 +186,7 @@ public class Class887 extends AbstractArrowEntity {
          Class9741.method38187(var3, this.field5117);
          Class9741.method38188(var3, this.field5118);
          if (this.field5119) {
-            var3.getOrCreateTag().method102("CustomPotionColor", this.method3502());
+            var3.getOrCreateTag().putInt("CustomPotionColor", this.method3502());
          }
 
          return var3;
@@ -194,9 +194,9 @@ public class Class887 extends AbstractArrowEntity {
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 0) {
-         super.method2866(var1);
+         super.handleStatusUpdate(var1);
       } else {
          int var4 = this.method3502();
          if (var4 != -1) {
@@ -205,7 +205,7 @@ public class Class887 extends AbstractArrowEntity {
             double var9 = (double)(var4 >> 0 & 0xFF) / 255.0;
 
             for (int var11 = 0; var11 < 20; var11++) {
-               this.world.method6746(ParticleTypes.field34068, this.method3438(0.5), this.method3441(), this.method3445(0.5), var5, var7, var9);
+               this.world.addParticle(ParticleTypes.field34068, this.getPosXRandom(0.5), this.getPosYRandom(), this.getPosZRandom(0.5), var5, var7, var9);
             }
          }
       }

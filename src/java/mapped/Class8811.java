@@ -51,7 +51,7 @@ public class Class8811 {
    }
 
    public static CompoundNBT method31813(Entity var0) {
-      CompoundNBT var3 = var0.method3294(new CompoundNBT());
+      CompoundNBT var3 = var0.writeWithoutTypeId(new CompoundNBT());
       if (var0 instanceof PlayerEntity) {
          ItemStack var4 = ((PlayerEntity)var0).inventory.method4028();
          if (!var4.isEmpty()) {

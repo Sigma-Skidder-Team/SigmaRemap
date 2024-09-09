@@ -31,7 +31,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
    }
 
    @Override
-   public int method3629() {
+   public int getSizeInventory() {
       return 27;
    }
 
@@ -43,7 +43,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
    @Override
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      this.field5312 = NonNullList.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
+      this.field5312 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
       if (!this.method3741(var2)) {
          Class7920.method26567(var2, this.field5312);
       }
@@ -119,7 +119,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
          )
       )) {
          if (var10.field4905 instanceof Class5813) {
-            Class920 var11 = ((Class5813)var10.field4905).method18164();
+            IInventory var11 = ((Class5813)var10.field4905).method18164();
             if (var11 == var1 || var11 instanceof Class990 && ((Class990)var11).method4070(var1)) {
                var7++;
             }
@@ -156,7 +156,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
    }
 
    @Override
-   public void method3631(PlayerEntity var1) {
+   public void openInventory(PlayerEntity var1) {
       if (!var1.isSpectator()) {
          if (this.field5315 < 0) {
             this.field5315 = 0;
@@ -168,7 +168,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
    }
 
    @Override
-   public void method3632(PlayerEntity var1) {
+   public void closeInventory(PlayerEntity var1) {
       if (!var1.isSpectator()) {
          this.field5315--;
          this.method3761();
@@ -217,7 +217,7 @@ public class Class941 extends Class939 implements Class942, Class935 {
    }
 
    @Override
-   public Class5812 method3690(int var1, PlayerInventory var2) {
+   public Container method3690(int var1, PlayerInventory var2) {
       return Class5813.method18162(var1, var2, this);
    }
 

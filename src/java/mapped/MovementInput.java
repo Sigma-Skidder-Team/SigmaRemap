@@ -14,8 +14,8 @@ public class MovementInput {
    public void method36336(boolean var1) {
    }
 
-   public Class8513 method36337() {
-      return new Class8513(this.field43907, this.field43908);
+   public Vector2f method36337() {
+      return new Vector2f(this.field43907, this.field43908);
    }
 
    public boolean method36338() {

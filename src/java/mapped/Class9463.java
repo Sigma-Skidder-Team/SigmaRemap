@@ -13,7 +13,7 @@ public class Class9463 {
    private Class80 field43963 = Class80.field185;
    private BlockPos field43964 = BlockPos.ZERO;
    private boolean field43965;
-   private Class7481 field43966;
+   private ChunkPos field43966;
    private Class9764 field43967;
    private boolean field43968 = true;
    private Random field43969;
@@ -59,7 +59,7 @@ public class Class9463 {
       return this;
    }
 
-   public Class9463 method36429(Class7481 var1) {
+   public Class9463 method36429(ChunkPos var1) {
       this.field43966 = var1;
       return this;
    }
@@ -155,7 +155,7 @@ public class Class9463 {
    }
 
    @Nullable
-   private Class9764 method36447(Class7481 var1) {
+   private Class9764 method36447(ChunkPos var1) {
       if (var1 != null) {
          int var4 = var1.field32174 * 16;
          int var5 = var1.field32175 * 16;

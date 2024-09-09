@@ -226,7 +226,7 @@ public class Class6450 {
                 throw field28361.create(32768, var11);
             } else {
                 ServerWorld var12 = var0.method20172();
-                if (var12.method7018(var1, var2) && var12.method7018(var3, var9)) {
+                if (var12.isAreaLoaded(var1, var2) && var12.isAreaLoaded(var3, var9)) {
                     List var13 = Lists.newArrayList();
                     List<Class6202> var14 = Lists.newArrayList();
                     List var15 = Lists.newArrayList();
@@ -263,7 +263,7 @@ public class Class6450 {
                     if (var5 == Class2109.field13762) {
                         for (BlockPos var30 : var16) {
                             TileEntity var33 = var12.getTileEntity(var30);
-                            Class946.method3802(var33);
+                            IClearable.method3802(var33);
                             var12.setBlockState(var30, Blocks.field36765.method11579(), 2);
                         }
 
@@ -280,7 +280,7 @@ public class Class6450 {
 
                     for (Class6202 var36 : var32) {
                         TileEntity var40 = var12.getTileEntity(var36.field27679);
-                        Class946.method3802(var40);
+                        IClearable.method3802(var40);
                         var12.setBlockState(var36.field27679, Blocks.field36765.method11579(), 2);
                     }
 
@@ -295,11 +295,11 @@ public class Class6450 {
                     for (Class6202 var42 : var14) {
                         TileEntity var44 = var12.getTileEntity(var42.field27679);
                         if (var42.field27681 != null && var44 != null) {
-                            var42.field27681.method102("x", var42.field27679.getX());
-                            var42.field27681.method102("y", var42.field27679.getY());
-                            var42.field27681.method102("z", var42.field27679.getZ());
+                            var42.field27681.putInt("x", var42.field27679.getX());
+                            var42.field27681.putInt("y", var42.field27679.getY());
+                            var42.field27681.putInt("z", var42.field27679.getZ());
                             var44.method3645(var42.field27680, var42.field27681);
-                            var44.method3622();
+                            var44.markDirty();
                         }
 
                         var12.setBlockState(var42.field27679, var42.field27680, 2);

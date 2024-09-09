@@ -4,21 +4,21 @@ package mapped;
 public class Class9671 {
    private static String[] field45161;
    public static final int[] field45162;
-   public static final int[] field45163 = new int[Class113.values().length];
+   public static final int[] field45163 = new int[Direction.values().length];
 
    static {
       try {
-         field45163[Class113.field413.ordinal()] = 1;
+         field45163[Direction.field413.ordinal()] = 1;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field45163[Class113.field414.ordinal()] = 2;
+         field45163[Direction.field414.ordinal()] = 2;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field45163[Class113.field415.ordinal()] = 3;
+         field45163[Direction.field415.ordinal()] = 3;
       } catch (NoSuchFieldError var7) {
       }
 

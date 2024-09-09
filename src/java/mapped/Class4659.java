@@ -1,7 +1,7 @@
 package mapped;
 
 public class Class4659 extends Class4660 {
-   public Class4659(Class6355 var1, Class8584 var2) {
+   public Class4659(ViaVersion7 var1, Class8584 var2) {
       super(var1, var2);
       this.field22197.put("smithing", this::method14625);
    }

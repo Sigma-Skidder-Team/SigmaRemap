@@ -3,8 +3,8 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
@@ -28,7 +28,7 @@ public class Class9819 {
 
    @EventTarget
    @Class5631
-   public void method38763(Class4399 var1) {
+   public void method38763(EventUpdate var1) {
       if (this.field45879 != null) {
          if (this.field45878 != 1) {
             if (this.field45878 == 2) {
@@ -41,7 +41,7 @@ public class Class9819 {
                   for (Entity var8 : ColorUtils.method17708()) {
                      if (var8 instanceof PlayerEntity
                         && var8 != this.field45880.player
-                        && (var6 == null || var6.method3275(this.field45880.player) > var8.method3275(this.field45880.player))) {
+                        && (var6 == null || var6.getDistance(this.field45880.player) > var8.getDistance(this.field45880.player))) {
                         var6 = var8;
                      }
                   }
@@ -109,23 +109,23 @@ public class Class9819 {
                this.field45878 = 0;
             }
          } else {
-            var1.method13900(true);
+            var1.setCancelled(true);
          }
       }
    }
 
    @EventTarget
    @Class5631
-   public void method38764(Class4435 var1) {
+   public void method38764(EventMove var1) {
       if (this.field45878 == 1) {
-         var1.method13993(0.0);
-         var1.method13995(0.0);
-         var1.method13997(0.0);
+         var1.setX(0.0);
+         var1.setY(0.0);
+         var1.setZ(0.0);
          if (this.field45879 == null || !this.field45879.isAlive() || !ColorUtils.method17708().contains(this.field45879)) {
             Client.getInstance().getNotificationManager().post(new Notification("Teleport", "Target lost"));
             this.field45878 = 0;
             this.field45879 = null;
-         } else if (!this.field45880.player.method3331()) {
+         } else if (!this.field45880.player.isSneaking()) {
             double var4 = this.field45879.getPosY() - this.field45879.lastTickPosY;
             if (var4 < -2.0 && ColorUtils.method17763(this.field45879) && this.field45879.getPosY() - this.field45880.player.getPosY() < -10.0) {
                this.field45878 = 0;

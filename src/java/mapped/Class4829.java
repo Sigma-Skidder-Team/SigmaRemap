@@ -60,7 +60,7 @@ public class Class4829 {
             Class7698.method25376(var7, var3);
          }
 
-         boolean var8 = var4.method23486(Class8953.field40470);
+         boolean var8 = var4.method23486(FluidTags.field40470);
          TextureAtlasSprite[] var9 = var8 ? this.field22602 : this.field22603;
          BlockState var10 = var1.getBlockState(var2);
          if (Class9299.field42875.method20214()) {
@@ -391,7 +391,7 @@ public class Class4829 {
 
          FluidState var10 = var1.getFluidState(var9);
          if (!var10.method23472().method25066(var3)) {
-            if (!var1.getBlockState(var9).method23384().method31086()) {
+            if (!var1.getBlockState(var9).getMaterial().method31086()) {
                var6++;
             }
          } else {

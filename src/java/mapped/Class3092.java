@@ -20,13 +20,13 @@ public class Class3092 implements Class2982 {
       var4.method18682(var5);
       String var6 = var1.<String>method30561(Class4750.field22539);
       var4.method18680(var6);
-      Class8042.method27614().method34422(var1.method30580());
+      ViaVersion3.method27614().method34422(var1.method30580());
       if (var4.method18683().method19393().stream().allMatch(Class9019::method33366)) {
          var1.method30580().method22469(false);
       }
 
-      if (Class8042.method27614().method34425()) {
-         Class8042.method27613()
+      if (ViaVersion3.method27614().method34425()) {
+         ViaVersion3.method27613()
             .method27366()
             .log(
                Level.INFO,

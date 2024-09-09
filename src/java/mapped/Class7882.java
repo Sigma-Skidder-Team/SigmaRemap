@@ -34,6 +34,6 @@ public abstract class Class7882<E extends LivingEntity> {
    public abstract Set<Class8830<?>> method26424();
 
    public static boolean method26430(LivingEntity var0, LivingEntity var1) {
-      return !var0.method2992().method21411(Class8830.field39826, var1) ? field33826.method30210(var0, var1) : field33827.method30210(var0, var1);
+      return !var0.getBrain().method21411(Class8830.field39826, var1) ? field33826.canTarget(var0, var1) : field33827.canTarget(var0, var1);
    }
 }

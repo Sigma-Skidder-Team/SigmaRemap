@@ -32,7 +32,7 @@ public class Class7891 extends Class7882<Class1042> {
          }
       }
 
-      Class6947 var13 = var2.method2992();
+      Brain var13 = var2.getBrain();
       if (var7.isEmpty()) {
          var13.method21405(Class8830.field39817);
       } else {

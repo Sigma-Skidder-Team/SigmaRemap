@@ -47,12 +47,12 @@ public class Class3363 extends Class3241 {
             if (var4.nextInt(16) == 0) {
                for (int var9 = 0; var9 <= 1; var9++) {
                   BlockPos var10 = var3.method8336(var7, var9, var8);
-                  if (var2.getBlockState(var10).method23448(Blocks.field36525)) {
+                  if (var2.getBlockState(var10).isIn(Blocks.field36525)) {
                      if (!var2.method7007(var3.method8336(var7 / 2, 0, var8 / 2))) {
                         break;
                      }
 
-                     var2.method6746(
+                     var2.addParticle(
                         ParticleTypes.field34066,
                         (double)var3.getX() + 0.5,
                         (double)var3.getY() + 2.0,
@@ -84,7 +84,7 @@ public class Class3363 extends Class3241 {
          var4.method2766(var1.method23445(var2, var3));
          return ActionResultType.field14819;
       } else {
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       }
    }
 
@@ -96,7 +96,7 @@ public class Class3363 extends Class3241 {
          return null;
       } else {
          ITextComponent var7 = ((INameable)var6).getDisplayName();
-         return new Class953((var2x, var3x, var4) -> new Class5822(var2x, var3x, Class8786.method31714(var2, var3)), var7);
+         return new Class953((var2x, var3x, var4) -> new Class5822(var2x, var3x, IWorldPosCallable.method31714(var2, var3)), var7);
       }
    }
 

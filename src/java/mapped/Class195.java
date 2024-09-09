@@ -51,7 +51,7 @@ public class Class195 extends Class196 implements AutoCloseable {
       );
    }
 
-   public void method603(Class7481 var1) {
+   public void method603(ChunkPos var1) {
       this.method608(var1.field32174, var1.field32175, () -> 0, Class2044.field13349, Util.method38515(() -> {
          super.method609(var1, false);
          super.method605(var1, false);
@@ -79,7 +79,7 @@ public class Class195 extends Class196 implements AutoCloseable {
    }
 
    @Override
-   public void method605(Class7481 var1, boolean var2) {
+   public void method605(ChunkPos var1, boolean var2) {
       this.method607(
          var1.field32174,
          var1.field32175,
@@ -100,7 +100,7 @@ public class Class195 extends Class196 implements AutoCloseable {
    }
 
    private void method607(int var1, int var2, Class2044 var3, Runnable var4) {
-      this.method608(var1, var2, this.field737.method6540(Class7481.method24353(var1, var2)), var3, var4);
+      this.method608(var1, var2, this.field737.method6540(ChunkPos.method24353(var1, var2)), var3, var4);
    }
 
    private void method608(int var1, int var2, IntSupplier var3, Class2044 var4, Runnable var5) {
@@ -109,18 +109,18 @@ public class Class195 extends Class196 implements AutoCloseable {
          if (this.field736.size() >= this.field739) {
             this.method612();
          }
-      }, Class7481.method24353(var1, var2), var3));
+      }, ChunkPos.method24353(var1, var2), var3));
    }
 
    @Override
-   public void method609(Class7481 var1, boolean var2) {
+   public void method609(ChunkPos var1, boolean var2) {
       this.method608(
          var1.field32174, var1.field32175, () -> 0, Class2044.field13349, Util.method38515(() -> super.method609(var1, var2), () -> "retainData " + var1)
       );
    }
 
    public CompletableFuture<IChunk> method610(IChunk var1, boolean var2) {
-      Class7481 var5 = var1.method7072();
+      ChunkPos var5 = var1.method7072();
       var1.method7096(false);
       this.method607(var5.field32174, var5.field32175, Class2044.field13349, Util.method38515(() -> {
          Class7038[] var6 = var1.method7067();
@@ -134,7 +134,7 @@ public class Class195 extends Class196 implements AutoCloseable {
 
          super.method605(var5, true);
          if (!var2) {
-            var1.method7088().forEach(var2xx -> super.method601(var2xx, var1.method7032(var2xx)));
+            var1.method7088().forEach(var2xx -> super.method601(var2xx, var1.getLightValue(var2xx)));
          }
 
          this.field737.method6555(var5);

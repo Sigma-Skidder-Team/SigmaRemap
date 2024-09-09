@@ -64,17 +64,17 @@ public class PaintingEntity extends Class995 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
       var1.method109("Motive", Registry.field16079.getKey(this.field5496).toString());
       var1.method100("Facing", (byte)this.field5489.method534());
-      super.method2724(var1);
+      super.writeAdditional(var1);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.field5496 = Registry.field16079.method9184(ResourceLocation.method8289(var1.getString("Motive")));
       this.field5489 = Direction.method547(var1.getByte("Facing"));
-      super.method2723(var1);
+      super.readAdditional(var1);
       this.method4077(this.field5489);
    }
 
@@ -90,8 +90,8 @@ public class PaintingEntity extends Class995 {
 
    @Override
    public void method4083(Entity var1) {
-      if (this.world.method6789().method17135(Class5462.field24229)) {
-         this.method2863(SoundEvents.field26867, 1.0F, 1.0F);
+      if (this.world.getGameRules().getBoolean(Class5462.field24229)) {
+         this.playSound(SoundEvents.field26867, 1.0F, 1.0F);
          if (var1 instanceof PlayerEntity) {
             PlayerEntity var4 = (PlayerEntity)var1;
             if (var4.abilities.isCreativeMode) {
@@ -99,17 +99,17 @@ public class PaintingEntity extends Class995 {
             }
          }
 
-         this.method3300(Items.PAINTING);
+         this.entityDropItem(Items.PAINTING);
       }
    }
 
    @Override
    public void method4084() {
-      this.method2863(SoundEvents.field26868, 1.0F, 1.0F);
+      this.playSound(SoundEvents.field26868, 1.0F, 1.0F);
    }
 
    @Override
-   public void method3273(double var1, double var3, double var5, float var7, float var8) {
+   public void setLocationAndAngles(double var1, double var3, double var5, float var7, float var8) {
       this.setPosition(var1, var3, var5);
    }
 
@@ -120,7 +120,7 @@ public class PaintingEntity extends Class995 {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnPaintingPacket(this);
    }
 }

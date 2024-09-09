@@ -17,6 +17,6 @@ public class Class118 implements Predicate<BlockState> {
    }
 
    public boolean test(BlockState var1) {
-      return var1 != null && var1.method23448(this.field425);
+      return var1 != null && var1.isIn(this.field425);
    }
 }

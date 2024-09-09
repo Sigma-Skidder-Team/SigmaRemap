@@ -35,7 +35,7 @@ public class Class3220 extends Block {
       if (var2.method7007(var7)) {
          int var8 = 1;
 
-         while (var2.getBlockState(var3.method8340(var8)).method23448(this)) {
+         while (var2.getBlockState(var3.method8340(var8)).isIn(this)) {
             var8++;
          }
 
@@ -76,20 +76,20 @@ public class Class3220 extends Block {
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
       for (Direction var7 : Class76.field161) {
          BlockState var8 = var2.getBlockState(var3.method8349(var7));
-         Class8649 var9 = var8.method23384();
-         if (var9.method31086() || var2.getFluidState(var3.method8349(var7)).method23486(Class8953.field40470)) {
+         Class8649 var9 = var8.getMaterial();
+         if (var9.method31086() || var2.getFluidState(var3.method8349(var7)).method23486(FluidTags.field40470)) {
             return false;
          }
       }
 
       BlockState var10 = var2.getBlockState(var3.down());
-      return (var10.method23448(Blocks.CACTUS) || var10.method23448(Blocks.SAND) || var10.method23448(Blocks.RED_SAND))
-         && !var2.getBlockState(var3.up()).method23384().method31085();
+      return (var10.isIn(Blocks.CACTUS) || var10.isIn(Blocks.SAND) || var10.isIn(Blocks.RED_SAND))
+         && !var2.getBlockState(var3.up()).getMaterial().isLiquid();
    }
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      var4.method2741(DamageSource.field39001, 1.0F);
+      var4.attackEntityFrom(DamageSource.field39001, 1.0F);
    }
 
    @Override

@@ -215,7 +215,7 @@ public class Class8019 {
          var5 = true;
          if (!var7 && var6.method8489()) {
             var1.method27028().method30722(this.field34455);
-            if (var1.method27027() != null && var1.method27027().method34942() && this.field34455.world.method6789().method17135(Class5462.field24245)) {
+            if (var1.method27027() != null && var1.method27027().method34942() && this.field34455.world.getGameRules().getBoolean(Class5462.field24245)) {
                this.field34449
                   .method19484(
                      new TranslationTextComponent(

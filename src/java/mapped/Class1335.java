@@ -226,7 +226,7 @@ public class Class1335 extends Screen {
          if (var3.method26267()) {
             Class5462 var4 = new Class5462();
             var4.<Class7466>method17128(Class5462.field24232).method24175(false, (MinecraftServer)null);
-            var5 = new WorldSettings(this.field7068.getText().trim(), Class1894.field11105, false, Difficulty.field14351, true, var4, DatapackCodec.field33531);
+            var5 = new WorldSettings(this.field7068.getText().trim(), GameType.SPECTATOR, false, Difficulty.field14351, true, var4, DatapackCodec.field33531);
          } else {
             var5 = new WorldSettings(
                this.field7068.getText().trim(),

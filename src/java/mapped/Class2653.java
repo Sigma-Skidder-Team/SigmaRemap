@@ -13,7 +13,7 @@ public class Class2653 extends Class2647 {
 
    @Override
    public double method10859(LivingEntity var1) {
-      float var4 = this.field17005.method3429() - 0.1F;
-      return (double)(var4 * 2.0F * var4 * 2.0F + var1.method3429());
+      float var4 = this.field17005.getWidth() - 0.1F;
+      return (double)(var4 * 2.0F * var4 * 2.0F + var1.getWidth());
    }
 }

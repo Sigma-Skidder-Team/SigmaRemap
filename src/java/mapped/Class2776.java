@@ -19,17 +19,17 @@ public class Class2776 extends Class2595 {
    @Override
    public boolean method10803() {
       this.field17369 = this.field17367.world.method7188(Class1048.method4790(), this.field17367);
-      return this.field17369 == null ? false : this.field17369.method2951() && this.field17367.method4232() != this.field17369;
+      return this.field17369 == null ? false : this.field17369.isSwimming() && this.field17367.method4232() != this.field17369;
    }
 
    @Override
    public boolean method10806() {
-      return this.field17369 != null && this.field17369.method2951() && this.field17367.getDistanceSq(this.field17369) < 256.0;
+      return this.field17369 != null && this.field17369.isSwimming() && this.field17367.getDistanceSq(this.field17369) < 256.0;
    }
 
    @Override
    public void method10804() {
-      this.field17369.method3035(new Class2023(Effects.DOLPHINS_GRACE, 100));
+      this.field17369.addPotionEffect(new EffectInstance(Effects.DOLPHINS_GRACE, 100));
    }
 
    @Override
@@ -47,8 +47,8 @@ public class Class2776 extends Class2595 {
          this.field17367.method4230().method21666();
       }
 
-      if (this.field17369.method2951() && this.field17369.world.rand.nextInt(6) == 0) {
-         this.field17369.method3035(new Class2023(Effects.DOLPHINS_GRACE, 100));
+      if (this.field17369.isSwimming() && this.field17369.world.rand.nextInt(6) == 0) {
+         this.field17369.addPotionEffect(new EffectInstance(Effects.DOLPHINS_GRACE, 100));
       }
    }
 }

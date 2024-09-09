@@ -28,9 +28,9 @@ public class Class7347 implements ArgumentType<Class7329> {
       return new Class7347(true);
    }
 
-   public static Class8513 method23293(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static Vector2f method23293(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
       Vector3d var4 = ((Class7329)var0.getArgument(var1, Class7329.class)).method23228((Class6619)var0.getSource());
-      return new Class8513((float)var4.x, (float)var4.z);
+      return new Vector2f((float)var4.x, (float)var4.z);
    }
 
    public Class7329 parse(StringReader var1) throws CommandSyntaxException {

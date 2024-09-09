@@ -28,7 +28,7 @@ public class Class3224 extends Block implements Class3207 {
          return true;
       } else {
          for (Direction var8 : Direction.values()) {
-            if (var1.getFluidState(var2.method8349(var8)).method23486(Class8953.field40469)) {
+            if (var1.getFluidState(var2.method8349(var8)).method23486(FluidTags.field40469)) {
                return true;
             }
          }
@@ -41,7 +41,7 @@ public class Class3224 extends Block implements Class3207 {
    @Override
    public BlockState method11495(Class5909 var1) {
       FluidState var4 = var1.method18360().getFluidState(var1.method18345());
-      return this.method11579().method23465(field18663, Boolean.valueOf(var4.method23486(Class8953.field40469) && var4.method23477() == 8));
+      return this.method11579().method23465(field18663, Boolean.valueOf(var4.method23486(FluidTags.field40469) && var4.method23477() == 8));
    }
 
    @Override

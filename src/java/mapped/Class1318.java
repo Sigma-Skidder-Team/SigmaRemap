@@ -29,14 +29,14 @@ public class Class1318 extends Screen {
       this.field6965 = Class2150.method8860(this.method6256());
    }
 
-   private Class1894 method6256() {
-      Class1894 var3 = Minecraft.getInstance().playerController.method23157();
-      Class1894 var4 = Minecraft.getInstance().playerController.method23156();
-      if (var4 == Class1894.field11101) {
-         if (var3 != Class1894.field11103) {
-            var4 = Class1894.field11103;
+   private GameType method6256() {
+      GameType var3 = Minecraft.getInstance().playerController.getCurrentGameType();
+      GameType var4 = Minecraft.getInstance().playerController.method23156();
+      if (var4 == GameType.field11101) {
+         if (var3 != GameType.field11103) {
+            var4 = GameType.field11103;
          } else {
-            var4 = Class1894.field11102;
+            var4 = GameType.field11102;
          }
       }
 
@@ -46,7 +46,7 @@ public class Class1318 extends Screen {
    @Override
    public void init() {
       super.init();
-      this.field6966 = !this.field6965.isPresent() ? Class2150.method8860(this.mc.playerController.method23157()) : this.field6965;
+      this.field6966 = !this.field6965.isPresent() ? Class2150.method8860(this.mc.playerController.getCurrentGameType()) : this.field6965;
 
       for (int var3 = 0; var3 < Class2150.field14059.length; var3++) {
          Class2150 var4 = Class2150.field14059[var3];
@@ -91,7 +91,7 @@ public class Class1318 extends Screen {
 
    private static void method6258(Minecraft var0, Optional<Class2150> var1) {
       if (var0.playerController != null && var0.player != null && var1.isPresent()) {
-         Optional var4 = Class2150.method8860(var0.playerController.method23157());
+         Optional var4 = Class2150.method8860(var0.playerController.getCurrentGameType());
          Class2150 var5 = (Class2150)var1.get();
          if (var4.isPresent() && var0.player.method3424(2) && var5 != var4.get()) {
             var0.player.method5389(Class2150.method8861(var5));

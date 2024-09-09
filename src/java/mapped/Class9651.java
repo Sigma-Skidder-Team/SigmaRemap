@@ -149,7 +149,7 @@ public class Class9651 {
             var2.getPosX(),
             var2.getPosY(),
             var2.getPosZ(),
-            EnumSet.<Class2033>noneOf(Class2033.class),
+            EnumSet.<Flags>noneOf(Flags.class),
             var2.rotationYaw,
             var2.rotationPitch,
             (Class8502)null
@@ -169,31 +169,31 @@ public class Class9651 {
 
    private static int method37646(Class6619 var0, Collection<? extends Entity> var1, ServerWorld var2, Class7329 var3, Class7329 var4, Class8502 var5) throws CommandSyntaxException {
       Vector3d var8 = var3.method23228(var0);
-      Class8513 var9 = var4 != null ? var4.method23229(var0) : null;
-      EnumSet var10 = EnumSet.<Class2033>noneOf(Class2033.class);
+      Vector2f var9 = var4 != null ? var4.method23229(var0) : null;
+      EnumSet var10 = EnumSet.<Flags>noneOf(Flags.class);
       if (var3.method23231()) {
-         var10.add(Class2033.field13198);
+         var10.add(Flags.field13198);
       }
 
       if (var3.method23232()) {
-         var10.add(Class2033.field13199);
+         var10.add(Flags.field13199);
       }
 
       if (var3.method23233()) {
-         var10.add(Class2033.field13200);
+         var10.add(Flags.field13200);
       }
 
       if (var4 != null) {
          if (var4.method23231()) {
-            var10.add(Class2033.field13202);
+            var10.add(Flags.field13202);
          }
 
          if (var4.method23232()) {
-            var10.add(Class2033.field13201);
+            var10.add(Flags.field13201);
          }
       } else {
-         var10.add(Class2033.field13202);
-         var10.add(Class2033.field13201);
+         var10.add(Flags.field13202);
+         var10.add(Flags.field13201);
       }
 
       for (Entity var12 : var1) {
@@ -221,7 +221,7 @@ public class Class9651 {
    }
 
    private static void method37647(
-           Class6619 var0, Entity var1, ServerWorld var2, double var3, double var5, double var7, Set<Class2033> var9, float var10, float var11, Class8502 var12
+           Class6619 var0, Entity var1, ServerWorld var2, double var3, double var5, double var7, Set<Flags> var9, float var10, float var11, Class8502 var12
    ) throws CommandSyntaxException {
       BlockPos var15 = new BlockPos(var3, var5, var7);
       if (World.isInvalidPosition(var15)) {
@@ -232,23 +232,23 @@ public class Class9651 {
             if (var2 != var1.world) {
                var1.detach();
                Entity var18 = var1;
-               var1 = var1.getType().method33215(var2);
+               var1 = var1.getType().create(var2);
                if (var1 == null) {
                   return;
                }
 
                var1.method3365(var18);
-               var1.method3273(var3, var5, var7, var16, var17);
-               var1.method3143(var16);
+               var1.setLocationAndAngles(var3, var5, var7, var16, var17);
+               var1.setRotationYawHead(var16);
                var2.method6918(var1);
                var18.removed = true;
             } else {
-               var1.method3273(var3, var5, var7, var16, var17);
-               var1.method3143(var16);
+               var1.setLocationAndAngles(var3, var5, var7, var16, var17);
+               var1.setRotationYawHead(var16);
             }
          } else {
-            Class7481 var19 = new Class7481(new BlockPos(var3, var5, var7));
-            var2.getChunkProvider().method7374(Class8561.field38486, var19, 1, var1.getEntityId());
+            ChunkPos var19 = new ChunkPos(new BlockPos(var3, var5, var7));
+            var2.getChunkProvider().registerTicket(Class8561.field38486, var19, 1, var1.getEntityId());
             var1.stopRiding();
             if (((ServerPlayerEntity)var1).isSleeping()) {
                ((ServerPlayerEntity)var1).stopSleepInBed(true, true);
@@ -260,16 +260,16 @@ public class Class9651 {
                ((ServerPlayerEntity)var1).field4855.method15669(var3, var5, var7, var10, var11, var9);
             }
 
-            var1.method3143(var10);
+            var1.setRotationYawHead(var10);
          }
 
          if (var12 != null) {
             var12.method30092(var0, var1);
          }
 
-         if (!(var1 instanceof LivingEntity) || !((LivingEntity)var1).method3165()) {
-            var1.method3434(var1.getVec().method11347(1.0, 0.0, 1.0));
-            var1.method3061(true);
+         if (!(var1 instanceof LivingEntity) || !((LivingEntity)var1).isElytraFlying()) {
+            var1.setMotion(var1.getMotion().method11347(1.0, 0.0, 1.0));
+            var1.setOnGround(true);
          }
 
          if (var1 instanceof Class1046) {

@@ -26,7 +26,7 @@ public class Class1076 extends AbstractHorseEntity {
 
    @Override
    public void method4925() {
-      this.method3085(Attributes.field42117).method38661(this.method4972());
+      this.getAttribute(Attributes.field42117).method38661(this.method4972());
    }
 
    @Override
@@ -36,7 +36,7 @@ public class Class1076 extends AbstractHorseEntity {
    @Override
    public SoundEvent getAmbientSound() {
       super.getAmbientSound();
-      return !this.method3263(Class8953.field40469) ? SoundEvents.field27061 : SoundEvents.field27065;
+      return !this.areEyesInFluid(FluidTags.field40469) ? SoundEvents.field27061 : SoundEvents.field27065;
    }
 
    @Override
@@ -72,26 +72,26 @@ public class Class1076 extends AbstractHorseEntity {
    }
 
    @Override
-   public void method3242(float var1) {
+   public void playSwimSound(float var1) {
       if (!this.onGround) {
-         super.method3242(Math.min(0.1F, var1 * 25.0F));
+         super.playSwimSound(Math.min(0.1F, var1 * 25.0F));
       } else {
-         super.method3242(0.3F);
+         super.playSwimSound(0.3F);
       }
    }
 
    @Override
    public void method4960() {
-      if (!this.method3250()) {
+      if (!this.isInWater()) {
          super.method4960();
       } else {
-         this.method2863(SoundEvents.field27067, 0.4F, 1.0F);
+         this.playSound(SoundEvents.field27067, 0.4F, 1.0F);
       }
    }
 
    @Override
-   public Class7809 method3089() {
-      return Class7809.field33506;
+   public CreatureAttribute getCreatureAttribute() {
+      return CreatureAttribute.field33506;
    }
 
    @Override
@@ -100,34 +100,34 @@ public class Class1076 extends AbstractHorseEntity {
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
+   public void livingEntity() {
+      super.livingEntity();
       if (this.method5000() && this.field5921++ >= 18000) {
-         this.method2904();
+         this.remove();
       }
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("SkeletonTrap", this.method5000());
-      var1.method102("SkeletonTrapTime", this.field5921);
+      var1.putInt("SkeletonTrapTime", this.field5921);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method5001(var1.getBoolean("SkeletonTrap"));
       this.field5921 = var1.getInt("SkeletonTrapTime");
    }
 
    @Override
-   public boolean method3007() {
+   public boolean onDeathUpdate() {
       return true;
    }
 
    @Override
-   public float method3106() {
+   public float getWaterSlowDown() {
       return 0.96F;
    }
 
@@ -149,14 +149,14 @@ public class Class1076 extends AbstractHorseEntity {
    @Nullable
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41079.method33215(var1);
+      return EntityType.field41079.create(var1);
    }
 
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       if (this.method4932()) {
-         if (!this.method3005()) {
+         if (!this.isChild()) {
             if (!var1.method2851()) {
                if (!this.isBeingRidden()) {
                   if (!var5.isEmpty()) {

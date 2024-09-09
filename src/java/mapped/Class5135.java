@@ -65,7 +65,7 @@ public class Class5135 implements Class5119 {
                   (double)((float)var12.getY() + 0.75F),
                   (double)((float)var12.getZ() + 0.75F)
                )
-               .method19667(-var4, -var6, -var8),
+               .offset(-var4, -var6, -var8),
             0.0F,
             1.0F,
             0.0F,
@@ -86,7 +86,7 @@ public class Class5135 implements Class5119 {
                         (double)((float)var14.field30848 + 0.25F + 0.01F * (float)var13),
                         (double)((float)var14.field30849 + 0.5F + var1)
                      )
-                     .method19667(-var4, -var6, -var8),
+                     .offset(-var4, -var6, -var8),
                   var15,
                   0.0F,
                   var16,
@@ -108,7 +108,7 @@ public class Class5135 implements Class5119 {
                         (double)var25.field30848 + 0.1,
                         (double)((float)var25.field30849 + 0.5F + var1 / 2.0F)
                      )
-                     .method19667(-var4, -var6, -var8),
+                     .offset(-var4, -var6, -var8),
                   1.0F,
                   0.8F,
                   0.8F,
@@ -128,7 +128,7 @@ public class Class5135 implements Class5119 {
                         (double)var26.field30848 + 0.1,
                         (double)((float)var26.field30849 + 0.5F + var1 / 2.0F)
                      )
-                     .method19667(-var4, -var6, -var8),
+                     .offset(-var4, -var6, -var8),
                   0.8F,
                   1.0F,
                   1.0F,

@@ -9,7 +9,7 @@ public class Class9443 {
    private static volatile Class8933 field43872 = Class8933.method32664(
       Class7984.<Block>method27142(BlockTags.method25116().stream().collect(Collectors.toMap(Class7610::getName, var0 -> (ITag<Block>)var0))),
       Class7984.<Item>method27142(Class5985.method18562().stream().collect(Collectors.toMap(Class7610::getName, var0 -> (ITag<Item>)var0))),
-      Class7984.<Fluid>method27142(Class8953.method32717().stream().collect(Collectors.toMap(Class7610::getName, var0 -> (ITag<Fluid>)var0))),
+      Class7984.<Fluid>method27142(FluidTags.method32717().stream().collect(Collectors.toMap(Class7610::getName, var0 -> (ITag<Fluid>)var0))),
       Class7984.<EntityType<?>>method27142(
          Class8613.method30862().stream().collect(Collectors.toMap(Class7610::getName, var0 -> (ITag<EntityType<?>>)var0))
       )

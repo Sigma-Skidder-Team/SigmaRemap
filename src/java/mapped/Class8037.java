@@ -86,7 +86,7 @@ public class Class8037 {
       boolean var12
    ) {
       Class6990 var15 = var0.method4230();
-      Random var16 = var0.method3013();
+      Random var16 = var0.getRNG();
       boolean var17;
       if (!var0.method4291()) {
          var17 = false;
@@ -129,11 +129,11 @@ public class Class8037 {
                      var31,
                      var16.nextInt(var10 + 1) + var11,
                      var0.world.method7034(),
-                     var1x -> var0.world.getBlockState(var1x).method23384().method31086()
+                     var1x -> var0.world.getBlockState(var1x).getMaterial().method31086()
                   );
                }
 
-               if (var5 || !var0.world.getFluidState(var31).method23486(Class8953.field40469)) {
+               if (var5 || !var0.world.getFluidState(var31).method23486(FluidTags.field40469)) {
                   Class2163 var28 = Class6762.method20633(var0.world, var31.method8354());
                   if (var0.method4223(var28) == 0.0F) {
                      double var29 = var8.applyAsDouble(var31);

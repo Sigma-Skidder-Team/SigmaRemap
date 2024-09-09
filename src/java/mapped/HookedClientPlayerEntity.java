@@ -17,7 +17,7 @@ public class HookedClientPlayerEntity extends ClientPlayerEntity {
 
    @Override
    public void onUpdateWalkingPlayer() {
-      Class4404 var3 = new Class4404();
+      EventWalkingUpdate var3 = new EventWalkingUpdate();
       Client.getInstance().getEventManager().call(var3);
       if (!var3.isCancelled()) {
          super.onUpdateWalkingPlayer();
@@ -25,17 +25,17 @@ public class HookedClientPlayerEntity extends ClientPlayerEntity {
    }
 
    @Override
-   public void move(Class2107 var1, Vector3d var2) {
-      Class4435 var5 = new Class4435(var2);
+   public void move(MoverType var1, Vector3d var2) {
+      EventMove var5 = new EventMove(var2);
       Client.getInstance().getEventManager().call(var5);
       if (!var5.isCancelled()) {
-         super.move(var1, new Vector3d(var5.method13992(), var5.method13994(), var5.method13996()));
+         super.move(var1, new Vector3d(var5.getX(), var5.getY(), var5.getZ()));
       }
    }
 
    @Override
    public void pushOutOfBlocks(double var1, double var3, double var5) {
-      Class4425 var9 = new Class4425();
+      EventPushBlock var9 = new EventPushBlock();
       Client.getInstance().getEventManager().call(var9);
       if (!var9.isCancelled()) {
          super.pushOutOfBlocks(var1, var3, var5);
@@ -58,6 +58,6 @@ public class HookedClientPlayerEntity extends ClientPlayerEntity {
    @Override
    public void updateEntityActionState() {
       super.updateEntityActionState();
-      Client.getInstance().getEventManager().call(new Class4409());
+      Client.getInstance().getEventManager().call(new EventEntityActionState());
    }
 }

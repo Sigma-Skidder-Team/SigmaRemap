@@ -13,7 +13,7 @@ public class Class3691 extends Class3676<Class1006> {
    }
 
    public boolean method12508(ServerWorld var1, Class1006 var2) {
-      return var2.method3250() && var2.method3427(Class8953.field40469) > var2.method3428() || var2.method3264();
+      return var2.isInWater() && var2.method3427(FluidTags.field40469) > var2.func_233579_cu_() || var2.isInLava();
    }
 
    public boolean method12499(ServerWorld var1, Class1006 var2, long var3) {
@@ -21,7 +21,7 @@ public class Class3691 extends Class3676<Class1006> {
    }
 
    public void method12504(ServerWorld var1, Class1006 var2, long var3) {
-      if (var2.method3013().nextFloat() < this.field19719) {
+      if (var2.getRNG().nextFloat() < this.field19719) {
          var2.method4229().method27049();
       }
    }

@@ -18,7 +18,7 @@ public class Class2594 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return !Class1088.method5058(this.field16812) && !this.field16812.method5045() && this.field16812.method3250();
+      return !Class1088.method5058(this.field16812) && !this.field16812.method5045() && this.field16812.isInWater();
    }
 
    @Override

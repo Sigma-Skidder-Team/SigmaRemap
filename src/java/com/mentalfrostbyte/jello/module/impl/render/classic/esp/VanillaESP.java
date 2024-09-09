@@ -19,11 +19,11 @@ public class VanillaESP extends Module {
         if (this.isEnabled()) {
             for (Entity var5 : mc.world.method6835()) {
                 if (!Client.getInstance().getCombatManager().method29346(var5)) {
-                    boolean var6 = ColorUtils.method17744(var5) == Class2258.field14690 && this.method16004().getBooleanValueFromSetttingName("Show Players");
-                    boolean var7 = ColorUtils.method17744(var5) == Class2258.field14689 && this.method16004().getBooleanValueFromSetttingName("Show Mobs");
-                    boolean var8 = ColorUtils.method17744(var5) == Class2258.field14691 && this.method16004().getBooleanValueFromSetttingName("Show Passives");
-                    boolean var9 = !var5.method3342() || this.method16004().getBooleanValueFromSetttingName("Show Invisibles");
-                    var5.method3341((var7 || var6 || var8) && var9 && var5 != mc.player);
+                    boolean var6 = ColorUtils.method17744(var5) == Class2258.field14690 && this.access().getBooleanValueFromSetttingName("Show Players");
+                    boolean var7 = ColorUtils.method17744(var5) == Class2258.field14689 && this.access().getBooleanValueFromSetttingName("Show Mobs");
+                    boolean var8 = ColorUtils.method17744(var5) == Class2258.field14691 && this.access().getBooleanValueFromSetttingName("Show Passives");
+                    boolean var9 = !var5.isInvisible() || this.access().getBooleanValueFromSetttingName("Show Invisibles");
+                    var5.setGlowing((var7 || var6 || var8) && var9 && var5 != mc.player);
                 }
             }
         }
@@ -32,7 +32,7 @@ public class VanillaESP extends Module {
     @Override
     public void onDisable() {
         for (Entity var4 : mc.world.method6835()) {
-            var4.method3341(false);
+            var4.setGlowing(false);
         }
     }
 }

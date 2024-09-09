@@ -33,11 +33,11 @@ public class Class1086 extends Class1087 implements Class1020 {
 
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
-      return !var2.getBlockState(var1.down()).method23448(Blocks.MYCELIUM) ? var2.method7009(var1) - 0.5F : 10.0F;
+      return !var2.getBlockState(var1.down()).isIn(Blocks.MYCELIUM) ? var2.method7009(var1) - 0.5F : 10.0F;
    }
 
    public static boolean method5034(EntityType<Class1086> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.getBlockState(var3.down()).method23448(Blocks.MYCELIUM) && var1.method7021(var3, 0) > 8;
+      return var1.getBlockState(var3.down()).isIn(Blocks.MYCELIUM) && var1.method7021(var3, 0) > 8;
    }
 
    @Override
@@ -46,7 +46,7 @@ public class Class1086 extends Class1087 implements Class1020 {
       if (!var5.equals(this.field5954)) {
          this.method5036(this.method5037() != Class2210.field14452 ? Class2210.field14452 : Class2210.field14453);
          this.field5954 = var5;
-         this.method2863(SoundEvents.field26765, 2.0F, 1.0F);
+         this.playSound(SoundEvents.field26765, 2.0F, 1.0F);
       }
    }
 
@@ -59,7 +59,7 @@ public class Class1086 extends Class1087 implements Class1020 {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (var5.getItem() == Items.field37836 && !this.method3005()) {
+      if (var5.getItem() == Items.field37836 && !this.isChild()) {
          boolean var11 = false;
          ItemStack var12;
          if (this.field5952 == null) {
@@ -73,7 +73,7 @@ public class Class1086 extends Class1087 implements Class1020 {
          }
 
          ItemStack var13 = Class8482.method29978(var5, var1, var12, false);
-         var1.method3095(var2, var13);
+         var1.setHeldItem(var2, var13);
          SoundEvent var9;
          if (!var11) {
             var9 = SoundEvents.field26767;
@@ -81,12 +81,12 @@ public class Class1086 extends Class1087 implements Class1020 {
             var9 = SoundEvents.field26768;
          }
 
-         this.method2863(var9, 1.0F, 1.0F);
+         this.playSound(var9, 1.0F, 1.0F);
          return ActionResultType.method9002(this.world.isRemote);
       } else if (var5.getItem() == Items.field37956 && this.method4516()) {
          this.method4515(Class2266.field14735);
          if (!this.world.isRemote) {
-            var5.method32121(1, var1, var1x -> var1x.method3185(var2));
+            var5.method32121(1, var1, var1x -> var1x.sendBreakAnimation(var2));
          }
 
          return ActionResultType.method9002(this.world.isRemote);
@@ -104,10 +104,10 @@ public class Class1086 extends Class1087 implements Class1020 {
 
             for (int var8 = 0; var8 < 4; var8++) {
                this.world
-                  .method6746(
+                  .addParticle(
                      ParticleTypes.field34063,
                      this.getPosX() + this.rand.nextDouble() / 2.0,
-                     this.method3440(0.5),
+                     this.getPosYHeight(0.5),
                      this.getPosZ() + this.rand.nextDouble() / 2.0,
                      0.0,
                      this.rand.nextDouble() / 5.0,
@@ -117,14 +117,14 @@ public class Class1086 extends Class1087 implements Class1020 {
 
             this.field5952 = (Effect)var7.getLeft();
             this.field5953 = (Integer)var7.getRight();
-            this.method2863(SoundEvents.field26766, 2.0F, 1.0F);
+            this.playSound(SoundEvents.field26766, 2.0F, 1.0F);
          } else {
             for (int var10 = 0; var10 < 2; var10++) {
                this.world
-                  .method6746(
+                  .addParticle(
                      ParticleTypes.field34092,
                      this.getPosX() + this.rand.nextDouble() / 2.0,
-                     this.method3440(0.5),
+                     this.getPosYHeight(0.5),
                      this.getPosZ() + this.rand.nextDouble() / 2.0,
                      0.0,
                      this.rand.nextDouble() / 5.0,
@@ -143,12 +143,12 @@ public class Class1086 extends Class1087 implements Class1020 {
    public void method4515(Class2266 var1) {
       this.world.method6744((PlayerEntity)null, this, SoundEvents.field26769, var1, 1.0F, 1.0F);
       if (!this.world.isRemote()) {
-         ((ServerWorld)this.world).method6939(ParticleTypes.field34070, this.getPosX(), this.method3440(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);
-         this.method2904();
-         Class1087 var4 = EntityType.field41016.method33215(this.world);
-         var4.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
-         var4.method3043(this.getHealth());
-         var4.field4965 = this.field4965;
+         ((ServerWorld)this.world).spawnParticle(ParticleTypes.field34070, this.getPosX(), this.getPosYHeight(0.5), this.getPosZ(), 1, 0.0, 0.0, 0.0, 0.0);
+         this.remove();
+         Class1087 var4 = EntityType.field41016.create(this.world);
+         var4.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
+         var4.setHealth(this.getHealth());
+         var4.renderYawOffset = this.renderYawOffset;
          if (this.method3381()) {
             var4.method3379(this.method3380());
             var4.method3382(this.method3383());
@@ -159,15 +159,15 @@ public class Class1086 extends Class1087 implements Class1020 {
          }
 
          var4.method3363(this.method3362());
-         this.world.method6916(var4);
+         this.world.addEntity(var4);
 
          for (int var5 = 0; var5 < 5; var5++) {
             this.world
-               .method6916(
+               .addEntity(
                   new ItemEntity(
                      this.world,
                      this.getPosX(),
-                     this.method3440(1.0),
+                     this.getPosYHeight(1.0),
                      this.getPosZ(),
                      new ItemStack(Class2210.method8937(this.method5037()).getBlock())
                   )
@@ -178,22 +178,22 @@ public class Class1086 extends Class1087 implements Class1020 {
 
    @Override
    public boolean method4516() {
-      return this.isAlive() && !this.method3005();
+      return this.isAlive() && !this.isChild();
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.method109("Type", Class2210.method8936(this.method5037()));
       if (this.field5952 != null) {
          var1.method100("EffectId", (byte) Effect.method22288(this.field5952));
-         var1.method102("EffectDuration", this.field5953);
+         var1.putInt("EffectDuration", this.field5953);
       }
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method5036(Class2210.method8938(var1.getString("Type")));
       if (var1.contains("EffectId", 1)) {
          this.field5952 = Effect.method22287(var1.getByte("EffectId"));
@@ -226,7 +226,7 @@ public class Class1086 extends Class1087 implements Class1020 {
    }
 
    public Class1086 method4389(ServerWorld var1, Class1045 var2) {
-      Class1086 var5 = EntityType.field41058.method33215(var1);
+      Class1086 var5 = EntityType.field41058.create(var1);
       var5.method5036(this.method5038((Class1086)var2));
       return var5;
    }

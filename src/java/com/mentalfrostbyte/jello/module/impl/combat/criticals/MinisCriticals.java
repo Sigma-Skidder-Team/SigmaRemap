@@ -1,8 +1,8 @@
 package com.mentalfrostbyte.jello.module.impl.combat.criticals;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4434;
-import com.mentalfrostbyte.jello.event.impl.Class4436;
+import com.mentalfrostbyte.jello.event.impl.EventStep;
+import com.mentalfrostbyte.jello.event.impl.JumpEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
@@ -18,7 +18,7 @@ public class MinisCriticals extends Module {
     }
 
     @EventTarget
-    private void method16126(Class4436 var1) {
+    private void method16126(JumpEvent var1) {
         if (this.isEnabled()) {
             if (KillAura.field23937) {
                 mc.getConnection()
@@ -28,10 +28,10 @@ public class MinisCriticals extends Module {
     }
 
     @EventTarget
-    private void method16127(Class4434 var1) {
+    private void method16127(EventStep var1) {
         if (this.isEnabled()) {
             if (KillAura.field23937) {
-                var1.method13900(true);
+                var1.setCancelled(true);
             }
         }
     }

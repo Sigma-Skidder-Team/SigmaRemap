@@ -50,9 +50,9 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
       this.field17125.method4233((LivingEntity)null);
       this.field17129 = 0;
       if (this.field17125.isHandActive()) {
-         this.field17125.method3162();
+         this.field17125.resetActiveHand();
          this.field17125.method4535(false);
-         Class3261.method11756(this.field17125.method3158(), false);
+         Class3261.method11756(this.field17125.getActiveItemStack(), false);
       }
    }
 
@@ -81,7 +81,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
             this.field17131--;
             if (this.field17131 <= 0) {
                this.field17125.method4230().method21655(var3, !this.method10909() ? this.field17127 * 0.5 : this.field17127);
-               this.field17131 = field17124.method29319(this.field17125.method3013());
+               this.field17131 = field17124.method29319(this.field17125.getRNG());
             }
          }
 
@@ -106,17 +106,17 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
                   this.field17126 = Class2229.field14613;
                }
 
-               int var11 = this.field17125.method3160();
-               ItemStack var10 = this.field17125.method3158();
+               int var11 = this.field17125.getItemInUseMaxCount();
+               ItemStack var10 = this.field17125.getActiveItemStack();
                if (var11 >= Class3261.method11767(var10)) {
-                  this.field17125.method3161();
+                  this.field17125.stopActiveHand();
                   this.field17126 = Class2229.field14615;
-                  this.field17130 = 20 + this.field17125.method3013().nextInt(20);
+                  this.field17130 = 20 + this.field17125.getRNG().nextInt(20);
                   this.field17125.method4535(false);
                }
             }
          } else if (!var8) {
-            this.field17125.method3154(Class9456.method36389(this.field17125, Items.field38148));
+            this.field17125.setActiveHand(Class9456.method36389(this.field17125, Items.field38148));
             this.field17126 = Class2229.field14614;
             this.field17125.method4535(true);
          }

@@ -52,9 +52,9 @@ public abstract class TileEntity {
       ResourceLocation var4 = TileEntityType.method13793(this.method3786());
       if (var4 != null) {
          var1.method109("id", var4.toString());
-         var1.method102("x", this.field5325.getX());
-         var1.method102("y", this.field5325.getY());
-         var1.method102("z", this.field5325.getZ());
+         var1.putInt("x", this.field5325.getX());
+         var1.putInt("y", this.field5325.getY());
+         var1.putInt("z", this.field5325.getZ());
          return var1;
       } else {
          throw new RuntimeException(this.getClass() + " is missing a mapping! This is a bug!");
@@ -85,7 +85,7 @@ public abstract class TileEntity {
       });
    }
 
-   public void method3622() {
+   public void markDirty() {
       if (this.field5324 != null) {
          this.field5327 = this.field5324.getBlockState(this.field5325);
          this.field5324.method6775(this.field5325, this);

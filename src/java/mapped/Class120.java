@@ -103,8 +103,8 @@ public final class Class120 implements Predicate<ItemStack> {
       return var3.field428.length != 0 ? var3 : field427;
    }
 
-   public static Class120 method339(Class3303... var0) {
-      return method341(Arrays.<Class3303>stream(var0).<ItemStack>map(ItemStack::new));
+   public static Class120 method339(IItemProvider... var0) {
+      return method341(Arrays.<IItemProvider>stream(var0).<ItemStack>map(ItemStack::new));
    }
 
    public static Class120 method340(ItemStack... var0) {

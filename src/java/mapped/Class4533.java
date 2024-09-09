@@ -36,7 +36,7 @@ public class Class4533 {
 
    private static int method14454(Class6619 var0, Entity var1, ServerPlayerEntity var2) throws CommandSyntaxException {
       if (var2 != var1) {
-         if (var2.field4857.method33863() == Class1894.field11105) {
+         if (var2.field4857.method33863() == GameType.SPECTATOR) {
             var2.method2815(var1);
             if (var1 == null) {
                var0.method20179(new TranslationTextComponent("commands.spectate.success.stopped"), false);

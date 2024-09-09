@@ -8,7 +8,6 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -18,18 +17,18 @@ import net.minecraft.world.server.ServerWorld;
 
 public class Class3401 extends Block {
    private static String[] field19059;
-   public static final Class8552<Class113> field19060 = Class8820.field39712;
+   public static final Class8552<Direction> field19060 = Class8820.field39712;
    public static final VoxelShape field19061 = Block.method11539(0.0, 0.0, 6.0, 16.0, 16.0, 10.0);
    public static final VoxelShape field19062 = Block.method11539(6.0, 0.0, 0.0, 10.0, 16.0, 16.0);
 
    public Class3401(AbstractBlock var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field19060, Class113.field413));
+      this.method11578(this.field18612.method35393().method23465(field19060, Direction.field413));
    }
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      switch (Class9111.field41872[var1.<Class113>method23463(field19060).ordinal()]) {
+      switch (Class9111.field41872[var1.<Direction>method23463(field19060).ordinal()]) {
          case 1:
             return field19062;
          case 2:
@@ -40,8 +39,8 @@ public class Class3401 extends Block {
 
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
-      if (var2.method6812().isNatural() && var2.method6789().method17135(Class5462.field24226) && var4.nextInt(2000) < var2.method6997().getId()) {
-         while (var2.getBlockState(var3).method23448(this)) {
+      if (var2.method6812().isNatural() && var2.getGameRules().getBoolean(Class5462.field24226) && var4.nextInt(2000) < var2.method6997().getId()) {
+         while (var2.getBlockState(var3).isIn(this)) {
             var3 = var3.down();
          }
 
@@ -56,11 +55,11 @@ public class Class3401 extends Block {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      Class113 var9 = var2.method544();
-      Class113 var10 = var1.<Class113>method23463(field19060);
+   public BlockState method11491(BlockState var1, net.minecraft.util.Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+      Direction var9 = var2.getAxis();
+      Direction var10 = var1.<Direction>method23463(field19060);
       boolean var11 = var10 != var9 && var9.method324();
-      return !var11 && !var3.method23448(this) && !new Class7473(var4, var5, var10).method24205()
+      return !var11 && !var3.isIn(this) && !new Class7473(var4, var5, var10).method24205()
          ? Blocks.AIR.method11579()
          : super.method11491(var1, var2, var3, var4, var5, var6);
    }
@@ -68,7 +67,7 @@ public class Class3401 extends Block {
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (!var4.isPassenger() && !var4.isBeingRidden() && var4.method3367()) {
-         var4.method3323(var3);
+         var4.setPortal(var3);
       }
    }
 
@@ -95,7 +94,7 @@ public class Class3401 extends Block {
          double var16 = ((double)var4.nextFloat() - 0.5) * 0.5;
          double var18 = ((double)var4.nextFloat() - 0.5) * 0.5;
          int var20 = var4.nextInt(2) * 2 - 1;
-         if (!var2.getBlockState(var3.west()).method23448(this) && !var2.getBlockState(var3.east()).method23448(this)) {
+         if (!var2.getBlockState(var3.west()).isIn(this) && !var2.getBlockState(var3.east()).isIn(this)) {
             var8 = (double)var3.getX() + 0.5 + 0.25 * (double)var20;
             var14 = (double)(var4.nextFloat() * 2.0F * (float)var20);
          } else {
@@ -103,7 +102,7 @@ public class Class3401 extends Block {
             var18 = (double)(var4.nextFloat() * 2.0F * (float)var20);
          }
 
-         var2.method6746(ParticleTypes.field34090, var8, var10, var12, var14, var16, var18);
+         var2.addParticle(ParticleTypes.field34090, var8, var10, var12, var14, var16, var18);
       }
    }
 
@@ -117,11 +116,11 @@ public class Class3401 extends Block {
       switch (Class9111.field41873[var2.ordinal()]) {
          case 1:
          case 2:
-            switch (Class9111.field41872[var1.<Class113>method23463(field19060).ordinal()]) {
+            switch (Class9111.field41872[var1.<Direction>method23463(field19060).ordinal()]) {
                case 1:
-                  return var1.method23465(field19060, Class113.field413);
+                  return var1.method23465(field19060, Direction.field413);
                case 2:
-                  return var1.method23465(field19060, Class113.field415);
+                  return var1.method23465(field19060, Direction.field415);
                default:
                   return var1;
             }

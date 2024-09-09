@@ -46,19 +46,19 @@ public class Class865 extends Class851<Class5837> {
       int var7 = this.field4734;
       int var8 = this.field4735;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
-      Class5839 var9 = this.field4727.method18247();
-      Class5839 var10 = this.field4727.method18248();
-      Class5839 var11 = this.field4727.method18249();
-      Class5839 var12 = this.field4727.method18250();
-      if (!var9.method18266()) {
+      Slot var9 = this.field4727.method18247();
+      Slot var10 = this.field4727.method18248();
+      Slot var11 = this.field4727.method18249();
+      Slot var12 = this.field4727.method18250();
+      if (!var9.getHasStack()) {
          this.method5696(var1, var7 + var9.field25580, var8 + var9.field25581, this.field4721, 0, 16, 16);
       }
 
-      if (!var10.method18266()) {
+      if (!var10.getHasStack()) {
          this.method5696(var1, var7 + var10.field25580, var8 + var10.field25581, this.field4721 + 16, 0, 16, 16);
       }
 
-      if (!var11.method18266()) {
+      if (!var11.getHasStack()) {
          this.method5696(var1, var7 + var11.field25580, var8 + var11.field25581, this.field4721 + 32, 0, 16, 16);
       }
 
@@ -155,9 +155,9 @@ public class Class865 extends Class851<Class5837> {
             int var12 = var11 - this.field4813;
             double var13 = var1 - (double)(var8 + var12 % 4 * 14);
             double var15 = var3 - (double)(var9 + var12 / 4 * 14);
-            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 14.0 && var15 < 14.0 && this.field4727.method18104(this.mc.player, var11)) {
+            if (var13 >= 0.0 && var15 >= 0.0 && var13 < 14.0 && var15 < 14.0 && this.field4727.enchantItem(this.mc.player, var11)) {
                Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27177, 1.0F));
-               this.mc.playerController.method23146(this.field4727.field25471, var11);
+               this.mc.playerController.sendEnchantPacket(this.field4727.field25471, var11);
                return true;
             }
          }
@@ -210,16 +210,16 @@ public class Class865 extends Class851<Class5837> {
    }
 
    private void method2678() {
-      ItemStack var3 = this.field4727.method18250().method18265();
+      ItemStack var3 = this.field4727.method18250().getStack();
       if (!var3.isEmpty()) {
          this.field4804 = Class958.method3891(((Class3301)var3.getItem()).method11849(), Class958.method3886(var3));
       } else {
          this.field4804 = null;
       }
 
-      ItemStack var4 = this.field4727.method18247().method18265();
-      ItemStack var5 = this.field4727.method18248().method18265();
-      ItemStack var6 = this.field4727.method18249().method18265();
+      ItemStack var4 = this.field4727.method18247().getStack();
+      ItemStack var5 = this.field4727.method18248().getStack();
+      ItemStack var6 = this.field4727.method18249().getStack();
       CompoundNBT var7 = var4.method32144("BlockEntityTag");
       this.field4810 = var7.contains("Patterns", 9) && !var4.isEmpty() && var7.method131("Patterns", 10).size() >= 6;
       if (this.field4810) {

@@ -21,8 +21,8 @@ public final class Class1696 implements AutoCloseable {
       this.field9237 = var2;
    }
 
-   private Class1692 method7295(Class7481 var1) throws IOException {
-      long var4 = Class7481.method24353(var1.method24360(), var1.method24361());
+   private Class1692 method7295(ChunkPos var1) throws IOException {
+      long var4 = ChunkPos.method24353(var1.method24360(), var1.method24361());
       Class1692 var6 = (Class1692)this.field9235.getAndMoveToFirst(var4);
       if (var6 == null) {
          if (this.field9235.size() >= 256) {
@@ -43,7 +43,7 @@ public final class Class1696 implements AutoCloseable {
    }
 
    @Nullable
-   public CompoundNBT method7296(Class7481 var1) throws IOException {
+   public CompoundNBT method7296(ChunkPos var1) throws IOException {
       Class1692 var4 = this.method7295(var1);
 
       CompoundNBT var7;
@@ -59,7 +59,7 @@ public final class Class1696 implements AutoCloseable {
       return var7;
    }
 
-   public void method7297(Class7481 var1, CompoundNBT var2) throws IOException {
+   public void method7297(ChunkPos var1, CompoundNBT var2) throws IOException {
       Class1692 var5 = this.method7295(var1);
 
       try (DataOutputStream var6 = var5.method7258(var1)) {

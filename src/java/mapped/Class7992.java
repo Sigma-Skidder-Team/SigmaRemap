@@ -455,7 +455,7 @@ public class Class7992 {
       }
    }
 
-   public static ResourceLocation method27269(ItemStack var0, Class2106 var1, String var2, ResourceLocation var3) {
+   public static ResourceLocation method27269(ItemStack var0, EquipmentSlotType var1, String var2, ResourceLocation var3) {
       if (field34350 != null) {
          ResourceLocation var6 = method27270(var0, var1, var2);
          return var6 != null ? var6 : var3;
@@ -464,15 +464,15 @@ public class Class7992 {
       }
    }
 
-   private static ResourceLocation method27270(ItemStack var0, Class2106 var1, String var2) {
+   private static ResourceLocation method27270(ItemStack var0, EquipmentSlotType var1, String var2) {
       Class8090 var5 = method27272(var0, 3);
       if (var5 != null) {
          if (var5.field34791 != null) {
             Item var6 = var0.getItem();
-            if (var6 instanceof Class3279) {
-               Class3279 var7 = (Class3279)var6;
-               String var8 = var7.method11806().method8790();
-               int var9 = var1 != Class2106.field13734 ? 1 : 2;
+            if (var6 instanceof ArmorItem) {
+               ArmorItem var7 = (ArmorItem)var6;
+               String var8 = var7.getArmorMaterial().method8790();
+               int var9 = var1 != EquipmentSlotType.field13734 ? 1 : 2;
                StringBuffer var10 = new StringBuffer();
                var10.append("texture.");
                var10.append(var8);

@@ -51,22 +51,22 @@ public class Class1087 extends Class1018 {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(SoundEvents.field26481, 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(SoundEvents.field26481, 0.15F, 1.0F);
    }
 
    @Override
-   public float method3099() {
+   public float getSoundVolume() {
       return 0.4F;
    }
 
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (var5.getItem() == Items.field37882 && !this.method3005()) {
-         var1.method2863(SoundEvents.field26480, 1.0F, 1.0F);
+      if (var5.getItem() == Items.field37882 && !this.isChild()) {
+         var1.playSound(SoundEvents.field26480, 1.0F, 1.0F);
          ItemStack var6 = Class8482.method29979(var5, var1, Items.field37891.method11742());
-         var1.method3095(var2, var6);
+         var1.setHeldItem(var2, var6);
          return ActionResultType.method9002(this.world.isRemote);
       } else {
          return super.method4285(var1, var2);
@@ -74,11 +74,11 @@ public class Class1087 extends Class1018 {
    }
 
    public Class1087 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41016.method33215(var1);
+      return EntityType.field41016.create(var1);
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
-      return !this.method3005() ? 1.3F : var2.field39969 * 0.95F;
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
+      return !this.isChild() ? 1.3F : var2.field39969 * 0.95F;
    }
 }

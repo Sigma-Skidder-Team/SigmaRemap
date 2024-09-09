@@ -32,15 +32,15 @@ public class Class2596<T extends Class1006> extends Class2595 {
 
    @Override
    public void method10804() {
-      this.field16817.method2944(Class2106.field13731, this.field16818.copy());
-      this.field16817.method3154(Hand.MAIN_HAND);
+      this.field16817.setItemStackToSlot(EquipmentSlotType.field13731, this.field16818.copy());
+      this.field16817.setActiveHand(Hand.MAIN_HAND);
    }
 
    @Override
    public void method10807() {
-      this.field16817.method2944(Class2106.field13731, ItemStack.EMPTY);
+      this.field16817.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
       if (this.field16820 != null) {
-         this.field16817.method2863(this.field16820, 1.0F, this.field16817.method3013().nextFloat() * 0.2F + 0.9F);
+         this.field16817.playSound(this.field16820, 1.0F, this.field16817.getRNG().nextFloat() * 0.2F + 0.9F);
       }
    }
 }

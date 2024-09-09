@@ -35,14 +35,14 @@ public class Class7019 implements Class7016 {
 
    @Override
    public int method21742(ServerWorld var1, boolean var2, boolean var3) {
-      if (var1.method6789().method17135(Class5462.field24253)) {
+      if (var1.getGameRules().getBoolean(Class5462.field24253)) {
          if (--this.field30324 <= 0) {
             this.field30324 = 1200;
             this.field30325 -= 1200;
             this.field30323.method20063(this.field30325);
             if (this.field30325 <= 0) {
                this.field30325 = 24000;
-               if (var1.method6789().method17135(Class5462.field24226)) {
+               if (var1.getGameRules().getBoolean(Class5462.field24226)) {
                   int var6 = this.field30326;
                   this.field30326 = MathHelper.method37775(this.field30326 + 25, 25, 75);
                   this.field30323.method20065(this.field30326);

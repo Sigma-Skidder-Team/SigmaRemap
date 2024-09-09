@@ -50,8 +50,8 @@ public class Class4860 extends Class4837 {
       boolean var8 = false;
       boolean var9 = false;
 
-      for (int var10 = 0; var10 < var1.method3629(); var10++) {
-         ItemStack var11 = var1.method3618(var10);
+      for (int var10 = 0; var10 < var1.getSizeInventory(); var10++) {
+         ItemStack var11 = var1.getStackInSlot(var10);
          if (!var11.isEmpty()) {
             if (!field22658.test(var11)) {
                if (!field22660.test(var11)) {
@@ -102,8 +102,8 @@ public class Class4860 extends Class4837 {
       Class2119 var6 = Class2119.field13807;
       ArrayList var7 = Lists.newArrayList();
 
-      for (int var8 = 0; var8 < var1.method3629(); var8++) {
-         ItemStack var9 = var1.method3618(var8);
+      for (int var8 = 0; var8 < var1.getSizeInventory(); var8++) {
+         ItemStack var9 = var1.getStackInSlot(var8);
          if (!var9.isEmpty()) {
             if (!field22658.test(var9)) {
                if (!field22660.test(var9)) {

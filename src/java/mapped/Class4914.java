@@ -47,10 +47,10 @@ public class Class4914 implements ArgumentType<Integer> {
       var0.put("weapon", 98);
       var0.put("weapon.mainhand", 98);
       var0.put("weapon.offhand", 99);
-      var0.put("armor.head", 100 + Class2106.field13736.method8773());
-      var0.put("armor.chest", 100 + Class2106.field13735.method8773());
-      var0.put("armor.legs", 100 + Class2106.field13734.method8773());
-      var0.put("armor.feet", 100 + Class2106.field13733.method8773());
+      var0.put("armor.head", 100 + EquipmentSlotType.field13736.method8773());
+      var0.put("armor.chest", 100 + EquipmentSlotType.field13735.method8773());
+      var0.put("armor.legs", 100 + EquipmentSlotType.field13734.method8773());
+      var0.put("armor.feet", 100 + EquipmentSlotType.field13733.method8773());
       var0.put("horse.saddle", 400);
       var0.put("horse.armor", 401);
       var0.put("horse.chest", 499);

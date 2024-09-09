@@ -41,7 +41,7 @@ public abstract class Class7530 {
       if (this.method24607()) {
          CompoundNBT var4 = new CompoundNBT();
          var4.put("data", this.method24592(new CompoundNBT()));
-         var4.method102("DataVersion", SharedConstants.getVersion().getWorldVersion());
+         var4.putInt("DataVersion", SharedConstants.getVersion().getWorldVersion());
 
          try {
             CompressedStreamTools.writeCompressed(var4, var1);

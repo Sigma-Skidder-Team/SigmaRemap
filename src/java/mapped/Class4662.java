@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Class4662 {
-   public final Class6355 field22195;
+   public final ViaVersion7 field22195;
    public final Class8584 field22196;
    public final Map<String, Class6978> field22197 = new HashMap<String, Class6978>();
 
-   public Class4662(Class6355 var1, Class8584 var2) {
+   public Class4662(ViaVersion7 var1, Class8584 var2) {
       this.field22195 = var1;
       this.field22196 = var2;
    }

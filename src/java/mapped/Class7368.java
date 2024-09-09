@@ -63,7 +63,7 @@ public class Class7368 extends Class7361 {
 
             double var4;
             do {
-               var4 = (double)((float)var3.getY() + this.field31519.method3013().nextFloat() * 20.0F);
+               var4 = (double)((float)var3.getY() + this.field31519.getRNG().nextFloat() * 20.0F);
             } while (var4 < (double)var3.getY());
 
             this.field31537 = new Vector3d((double)var3.getX(), var4, (double)var3.getZ());

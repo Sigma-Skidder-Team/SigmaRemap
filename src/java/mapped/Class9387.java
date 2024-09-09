@@ -40,7 +40,7 @@ public class Class9387 {
 
    public static void method35629(Entity var0, World var1) {
       if (var1 != null) {
-         EntityDataManager var4 = var0.method3210();
+         EntityDataManager var4 = var0.getDataManager();
          var4.field43438 = var0.getPosition();
          var4.field43437 = var1.getBiome(var4.field43438);
          if (var0 instanceof Class1014) {
@@ -67,16 +67,16 @@ public class Class9387 {
          AbstractClientPlayerEntity var5 = (AbstractClientPlayerEntity)var4;
          UUID var6 = var0.getUniqueID();
          if (!var1) {
-            EntityDataManager var7 = var0.method3210();
+            EntityDataManager var7 = var0.getDataManager();
             if (var5.field6105 != null && Class7944.equals(var5.field6105.getUniqueID(), var6)) {
-               EntityDataManager var8 = var5.field6105.method3210();
+               EntityDataManager var8 = var5.field6105.getDataManager();
                var7.field43438 = var8.field43438;
                var7.field43437 = var8.field43437;
                var5.field6105 = null;
             }
 
             if (var5.field6106 != null && Class7944.equals(var5.field6106.getUniqueID(), var6)) {
-               EntityDataManager var10 = var5.field6106.method3210();
+               EntityDataManager var10 = var5.field6106.getDataManager();
                var7.field43438 = var10.field43438;
                var7.field43437 = var10.field43437;
                var5.field6106 = null;

@@ -25,7 +25,7 @@ public class Aimbot extends ModuleWithModuleSettings {
         this.registerSetting(new BooleanSetting("Invisible", "Aim at invisible entites", true));
     }
 
-    public Entity method16750(float var1) {
+    public Entity getTarget(float var1) {
         List var4 = ColorUtils.method17708();
         Entity var5 = null;
         Iterator var6 = var4.iterator();
@@ -36,14 +36,14 @@ public class Aimbot extends ModuleWithModuleSettings {
                 if (!Client.getInstance().getFriendManager().method26997(var7)) {
                     if (var7 instanceof LivingEntity) {
                         if (((LivingEntity) var7).getHealth() != 0.0F) {
-                            if (!(mc.player.method3275(var7) > var1)) {
-                                if (mc.player.method3026((LivingEntity) var7)) {
+                            if (!(mc.player.getDistance(var7) > var1)) {
+                                if (mc.player.canAttack((LivingEntity) var7)) {
                                     if (!(var7 instanceof ArmorStandEntity)) {
                                         if (!this.getBooleanValueFromSetttingName("Players") && var7 instanceof PlayerEntity) {
                                             var6.remove();
                                         } else if (var7 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var7)) {
                                             var6.remove();
-                                        } else if (!this.getBooleanValueFromSetttingName("Invisible") && var7.method3342()) {
+                                        } else if (!this.getBooleanValueFromSetttingName("Invisible") && var7.isInvisible()) {
                                             var6.remove();
                                         } else if (!this.getBooleanValueFromSetttingName("Animals/Monsters") && !(var7 instanceof PlayerEntity)) {
                                             var6.remove();
@@ -54,7 +54,7 @@ public class Aimbot extends ModuleWithModuleSettings {
                                                     && Class8781.method31662((PlayerEntity) var7)
                                                     && Client.getInstance().getModuleManager().getModuleByClass(Teams.class).isEnabled()) {
                                                 var6.remove();
-                                            } else if (var5 == null || mc.player.method3275(var7) < mc.player.method3275(var5)) {
+                                            } else if (var5 == null || mc.player.getDistance(var7) < mc.player.getDistance(var5)) {
                                                 var5 = var7;
                                             }
                                         } else {

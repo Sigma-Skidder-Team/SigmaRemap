@@ -607,14 +607,14 @@ public class Items {
    public static final Item field37790 = method30155(new Class3293(Blocks.field37113, new Class5643().method17780(Class1978.field12888)));
    public static final Item field37791 = method30155(new Class3293(Blocks.field37114, new Class5643().method17780(Class1978.field12888)));
    public static final Item field37792 = method30157(
-      "turtle_helmet", new Class3279(Class2114.field13778, Class2106.field13736, new Class5643().method17779(ItemGroup.field31673))
+      "turtle_helmet", new ArmorItem(Class2114.field13778, EquipmentSlotType.field13736, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37793 = method30157("scute", new Item(new Class5643().method17779(ItemGroup.field31675)));
    public static final Item field37794 = method30157("flint_and_steel", new Class3281(new Class5643().method17777(64).method17779(ItemGroup.field31672)));
    public static final Item field37795 = method30157(
       "apple", new Item(new Class5643().method17779(ItemGroup.field31671).method17774(Class8672.field39058))
    );
-   public static final Item BOW = method30157("bow", new Class3263(new Class5643().method17777(384).method17779(ItemGroup.field31673)));
+   public static final Item BOW = method30157("bow", new BowItem(new Class5643().method17777(384).method17779(ItemGroup.field31673)));
    public static final Item field37797 = method30157("arrow", new Class3308(new Class5643().method17779(ItemGroup.field31673)));
    public static final Item field37798 = method30157("coal", new Item(new Class5643().method17779(ItemGroup.field31675)));
    public static final Item field37799 = method30157("charcoal", new Item(new Class5643().method17779(ItemGroup.field31675)));
@@ -727,76 +727,76 @@ public class Items {
       "bread", new Item(new Class5643().method17779(ItemGroup.field31671).method17774(Class8672.field39063))
    );
    public static final Item field37844 = method30157(
-      "leather_helmet", new Class3278(Class2114.field13773, Class2106.field13736, new Class5643().method17779(ItemGroup.field31673))
+      "leather_helmet", new Class3278(Class2114.field13773, EquipmentSlotType.field13736, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37845 = method30157(
-      "leather_chestplate", new Class3278(Class2114.field13773, Class2106.field13735, new Class5643().method17779(ItemGroup.field31673))
+      "leather_chestplate", new Class3278(Class2114.field13773, EquipmentSlotType.field13735, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37846 = method30157(
-      "leather_leggings", new Class3278(Class2114.field13773, Class2106.field13734, new Class5643().method17779(ItemGroup.field31673))
+      "leather_leggings", new Class3278(Class2114.field13773, EquipmentSlotType.field13734, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37847 = method30157(
-      "leather_boots", new Class3278(Class2114.field13773, Class2106.field13733, new Class5643().method17779(ItemGroup.field31673))
+      "leather_boots", new Class3278(Class2114.field13773, EquipmentSlotType.field13733, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37848 = method30157(
-      "chainmail_helmet", new Class3279(Class2114.field13774, Class2106.field13736, new Class5643().method17779(ItemGroup.field31673))
+      "chainmail_helmet", new ArmorItem(Class2114.field13774, EquipmentSlotType.field13736, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37849 = method30157(
-      "chainmail_chestplate", new Class3279(Class2114.field13774, Class2106.field13735, new Class5643().method17779(ItemGroup.field31673))
+      "chainmail_chestplate", new ArmorItem(Class2114.field13774, EquipmentSlotType.field13735, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37850 = method30157(
-      "chainmail_leggings", new Class3279(Class2114.field13774, Class2106.field13734, new Class5643().method17779(ItemGroup.field31673))
+      "chainmail_leggings", new ArmorItem(Class2114.field13774, EquipmentSlotType.field13734, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37851 = method30157(
-      "chainmail_boots", new Class3279(Class2114.field13774, Class2106.field13733, new Class5643().method17779(ItemGroup.field31673))
+      "chainmail_boots", new ArmorItem(Class2114.field13774, EquipmentSlotType.field13733, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37852 = method30157(
-      "iron_helmet", new Class3279(Class2114.field13775, Class2106.field13736, new Class5643().method17779(ItemGroup.field31673))
+      "iron_helmet", new ArmorItem(Class2114.field13775, EquipmentSlotType.field13736, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37853 = method30157(
-      "iron_chestplate", new Class3279(Class2114.field13775, Class2106.field13735, new Class5643().method17779(ItemGroup.field31673))
+      "iron_chestplate", new ArmorItem(Class2114.field13775, EquipmentSlotType.field13735, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37854 = method30157(
-      "iron_leggings", new Class3279(Class2114.field13775, Class2106.field13734, new Class5643().method17779(ItemGroup.field31673))
+      "iron_leggings", new ArmorItem(Class2114.field13775, EquipmentSlotType.field13734, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37855 = method30157(
-      "iron_boots", new Class3279(Class2114.field13775, Class2106.field13733, new Class5643().method17779(ItemGroup.field31673))
+      "iron_boots", new ArmorItem(Class2114.field13775, EquipmentSlotType.field13733, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37856 = method30157(
-      "diamond_helmet", new Class3279(Class2114.field13777, Class2106.field13736, new Class5643().method17779(ItemGroup.field31673))
+      "diamond_helmet", new ArmorItem(Class2114.field13777, EquipmentSlotType.field13736, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37857 = method30157(
-      "diamond_chestplate", new Class3279(Class2114.field13777, Class2106.field13735, new Class5643().method17779(ItemGroup.field31673))
+      "diamond_chestplate", new ArmorItem(Class2114.field13777, EquipmentSlotType.field13735, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37858 = method30157(
-      "diamond_leggings", new Class3279(Class2114.field13777, Class2106.field13734, new Class5643().method17779(ItemGroup.field31673))
+      "diamond_leggings", new ArmorItem(Class2114.field13777, EquipmentSlotType.field13734, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37859 = method30157(
-      "diamond_boots", new Class3279(Class2114.field13777, Class2106.field13733, new Class5643().method17779(ItemGroup.field31673))
+      "diamond_boots", new ArmorItem(Class2114.field13777, EquipmentSlotType.field13733, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37860 = method30157(
-      "golden_helmet", new Class3279(Class2114.field13776, Class2106.field13736, new Class5643().method17779(ItemGroup.field31673))
+      "golden_helmet", new ArmorItem(Class2114.field13776, EquipmentSlotType.field13736, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37861 = method30157(
-      "golden_chestplate", new Class3279(Class2114.field13776, Class2106.field13735, new Class5643().method17779(ItemGroup.field31673))
+      "golden_chestplate", new ArmorItem(Class2114.field13776, EquipmentSlotType.field13735, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37862 = method30157(
-      "golden_leggings", new Class3279(Class2114.field13776, Class2106.field13734, new Class5643().method17779(ItemGroup.field31673))
+      "golden_leggings", new ArmorItem(Class2114.field13776, EquipmentSlotType.field13734, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37863 = method30157(
-      "golden_boots", new Class3279(Class2114.field13776, Class2106.field13733, new Class5643().method17779(ItemGroup.field31673))
+      "golden_boots", new ArmorItem(Class2114.field13776, EquipmentSlotType.field13733, new Class5643().method17779(ItemGroup.field31673))
    );
    public static final Item field37864 = method30157(
-      "netherite_helmet", new Class3279(Class2114.field13779, Class2106.field13736, new Class5643().method17779(ItemGroup.field31673).method17781())
+      "netherite_helmet", new ArmorItem(Class2114.field13779, EquipmentSlotType.field13736, new Class5643().method17779(ItemGroup.field31673).method17781())
    );
    public static final Item field37865 = method30157(
-      "netherite_chestplate", new Class3279(Class2114.field13779, Class2106.field13735, new Class5643().method17779(ItemGroup.field31673).method17781())
+      "netherite_chestplate", new ArmorItem(Class2114.field13779, EquipmentSlotType.field13735, new Class5643().method17779(ItemGroup.field31673).method17781())
    );
    public static final Item field37866 = method30157(
-      "netherite_leggings", new Class3279(Class2114.field13779, Class2106.field13734, new Class5643().method17779(ItemGroup.field31673).method17781())
+      "netherite_leggings", new ArmorItem(Class2114.field13779, EquipmentSlotType.field13734, new Class5643().method17779(ItemGroup.field31673).method17781())
    );
    public static final Item field37867 = method30157(
-      "netherite_boots", new Class3279(Class2114.field13779, Class2106.field13733, new Class5643().method17779(ItemGroup.field31673).method17781())
+      "netherite_boots", new ArmorItem(Class2114.field13779, EquipmentSlotType.field13733, new Class5643().method17779(ItemGroup.field31673).method17781())
    );
    public static final Item field37868 = method30157("flint", new Item(new Class5643().method17779(ItemGroup.field31675)));
    public static final Item field37869 = method30157(

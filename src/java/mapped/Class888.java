@@ -44,7 +44,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
          var11 += var8.method32144("Fireworks").getByte("Flight");
       }
 
-      this.method3435(this.rand.nextGaussian() * 0.001, 0.05, this.rand.nextGaussian() * 0.001);
+      this.setMotion(this.rand.nextGaussian() * 0.001, 0.05, this.rand.nextGaussian() * 0.001);
       this.field5124 = 10 * var11 + this.rand.nextInt(6) + this.rand.nextInt(7);
    }
 
@@ -82,8 +82,8 @@ public class Class888 extends ProjectileEntity implements Class889 {
    }
 
    @Override
-   public boolean method3290(double var1, double var3, double var5) {
-      return super.method3290(var1, var3, var5) && !this.method3507();
+   public boolean isInRangeToRender3d(double var1, double var3, double var5) {
+      return super.isInRangeToRender3d(var1, var3, var5) && !this.method3507();
    }
 
    @Override
@@ -92,12 +92,12 @@ public class Class888 extends ProjectileEntity implements Class889 {
       if (!this.method3507()) {
          if (!this.method3508()) {
             double var9 = !this.collidedHorizontally ? 1.15 : 1.0;
-            this.method3434(this.getVec().method11347(var9, 1.0, var9).method11339(0.0, 0.04, 0.0));
+            this.setMotion(this.getMotion().method11347(var9, 1.0, var9).add(0.0, 0.04, 0.0));
          }
 
-         Vector3d var3 = this.getVec();
-         this.move(Class2107.field13742, var3);
-         this.method3434(var3);
+         Vector3d var3 = this.getMotion();
+         this.move(MoverType.SELF, var3);
+         this.setMotion(var3);
       } else {
          if (this.field5125 == null) {
             this.dataManager.<OptionalInt>method35445(field5121).ifPresent(var1 -> {
@@ -109,14 +109,14 @@ public class Class888 extends ProjectileEntity implements Class889 {
          }
 
          if (this.field5125 != null) {
-            if (this.field5125.method3165()) {
-               Vector3d var11 = this.field5125.method3320();
+            if (this.field5125.isElytraFlying()) {
+               Vector3d var11 = this.field5125.getLookVec();
                double var4 = 1.5;
                double var6 = 0.1;
-               Vector3d var8 = this.field5125.getVec();
+               Vector3d var8 = this.field5125.getMotion();
                this.field5125
-                  .method3434(
-                     var8.method11339(
+                  .setMotion(
+                     var8.add(
                         var11.x * 0.1 + (var11.x * 1.5 - var8.x) * 0.5,
                         var11.y * 0.1 + (var11.y * 1.5 - var8.y) * 0.5,
                         var11.z * 0.1 + (var11.z * 1.5 - var8.z) * 0.5
@@ -125,7 +125,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
             }
 
             this.setPosition(this.field5125.getPosX(), this.field5125.getPosY(), this.field5125.getPosZ());
-            this.method3434(this.field5125.getVec());
+            this.setMotion(this.field5125.getMotion());
          }
       }
 
@@ -136,7 +136,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
       }
 
       this.method3468();
-      if (this.field5123 == 0 && !this.method3245()) {
+      if (this.field5123 == 0 && !this.isSilent()) {
          this.world
             .method6743((PlayerEntity)null, this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26577, Class2266.field14736, 3.0F, 1.0F);
       }
@@ -144,13 +144,13 @@ public class Class888 extends ProjectileEntity implements Class889 {
       this.field5123++;
       if (this.world.isRemote && this.field5123 % 2 < 2) {
          this.world
-            .method6746(
+            .addParticle(
                ParticleTypes.field34072,
                this.getPosX(),
                this.getPosY() - 0.3,
                this.getPosZ(),
                this.rand.nextGaussian() * 0.05,
-               -this.getVec().y * 0.5,
+               -this.getMotion().y * 0.5,
                this.rand.nextGaussian() * 0.05
             );
       }
@@ -161,9 +161,9 @@ public class Class888 extends ProjectileEntity implements Class889 {
    }
 
    private void method3504() {
-      this.world.method6786(this, (byte)17);
+      this.world.setEntityState(this, (byte)17);
       this.method3506();
-      this.method2904();
+      this.remove();
    }
 
    @Override
@@ -203,7 +203,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
 
       if (var3 > 0.0F) {
          if (this.field5125 != null) {
-            this.field5125.method2741(DamageSource.method31120(this, this.method3460()), 5.0F + (float)(var6.size() * 2));
+            this.field5125.attackEntityFrom(DamageSource.method31120(this, this.method3460()), 5.0F + (float)(var6.size() * 2));
          }
 
          double var7 = 5.0;
@@ -214,8 +214,8 @@ public class Class888 extends ProjectileEntity implements Class889 {
                boolean var12 = false;
 
                for (int var13 = 0; var13 < 2; var13++) {
-                  Vector3d var14 = new Vector3d(var11.getPosX(), var11.method3440(0.5 * (double)var13), var11.getPosZ());
-                  BlockRayTraceResult var15 = this.world.method7036(new Class6809(var9, var14, Class2271.field14774, Class1985.field12962, this));
+                  Vector3d var14 = new Vector3d(var11.getPosX(), var11.getPosYHeight(0.5 * (double)var13), var11.getPosZ());
+                  BlockRayTraceResult var15 = this.world.rayTraceBlocks(new RayTraceContext(var9, var14, Class2271.field14774, Class1985.field12962, this));
                   if (var15.getType() == RayTraceResult.Type.MISS) {
                      var12 = true;
                      break;
@@ -223,8 +223,8 @@ public class Class888 extends ProjectileEntity implements Class889 {
                }
 
                if (var12) {
-                  float var16 = var3 * (float)Math.sqrt((5.0 - (double)this.method3275(var11)) / 5.0);
-                  var11.method2741(DamageSource.method31120(this, this.method3460()), var16);
+                  float var16 = var3 * (float)Math.sqrt((5.0 - (double)this.getDistance(var11)) / 5.0);
+                  var11.attackEntityFrom(DamageSource.method31120(this, this.method3460()), var16);
                }
             }
          }
@@ -240,17 +240,17 @@ public class Class888 extends ProjectileEntity implements Class889 {
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 == 17 && this.world.isRemote) {
          if (this.method3505()) {
             ItemStack var4 = this.dataManager.<ItemStack>method35445(field5120);
             CompoundNBT var5 = !var4.isEmpty() ? var4.method32145("Fireworks") : null;
-            Vector3d var6 = this.getVec();
+            Vector3d var6 = this.getMotion();
             this.world.method6804(this.getPosX(), this.getPosY(), this.getPosZ(), var6.x, var6.y, var6.z, var5);
          } else {
             for (int var7 = 0; var7 < this.rand.nextInt(3) + 2; var7++) {
                this.world
-                  .method6746(
+                  .addParticle(
                      ParticleTypes.field34089,
                      this.getPosX(),
                      this.getPosY(),
@@ -263,14 +263,14 @@ public class Class888 extends ProjectileEntity implements Class889 {
          }
       }
 
-      super.method2866(var1);
+      super.handleStatusUpdate(var1);
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("Life", this.field5123);
-      var1.method102("LifeTime", this.field5124);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Life", this.field5123);
+      var1.putInt("LifeTime", this.field5124);
       ItemStack var4 = this.dataManager.<ItemStack>method35445(field5120);
       if (!var4.isEmpty()) {
          var1.put("FireworksItem", var4.method32112(new CompoundNBT()));
@@ -280,8 +280,8 @@ public class Class888 extends ProjectileEntity implements Class889 {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field5123 = var1.getInt("Life");
       this.field5124 = var1.getInt("LifeTime");
       ItemStack var4 = ItemStack.method32104(var1.getCompound("FireworksItem"));
@@ -306,7 +306,7 @@ public class Class888 extends ProjectileEntity implements Class889 {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this);
    }
 }

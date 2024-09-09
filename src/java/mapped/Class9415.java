@@ -33,22 +33,22 @@ public class Class9415 {
 
    public boolean method36121(Entity var1) {
       if (this != field43676) {
-         return !(var1 instanceof LivingEntity) ? false : this.method36123(((LivingEntity)var1).method3032());
+         return !(var1 instanceof LivingEntity) ? false : this.method36123(((LivingEntity)var1).getActivePotionMap());
       } else {
          return true;
       }
    }
 
    public boolean method36122(LivingEntity var1) {
-      return this != field43676 ? this.method36123(var1.method3032()) : true;
+      return this != field43676 ? this.method36123(var1.getActivePotionMap()) : true;
    }
 
-   public boolean method36123(Map<Effect, Class2023> var1) {
+   public boolean method36123(Map<Effect, EffectInstance> var1) {
       if (this == field43676) {
          return true;
       } else {
          for (Entry var5 : this.field43677.entrySet()) {
-            Class2023 var6 = (Class2023)var1.get(var5.getKey());
+            EffectInstance var6 = (EffectInstance)var1.get(var5.getKey());
             if (!((Class8053)var5.getValue()).method27657(var6)) {
                return false;
             }

@@ -58,12 +58,12 @@ public class Class3368 extends Class3241 {
                   var11 = true;
                } else {
                   Direction var12 = var1.<Direction>method23463(field18939);
-                  var11 = var2.method7051(Class8919.method32596(var3, var12));
+                  var11 = var2.hasNoCollisions(Class8919.method32596(var3, var12));
                }
 
                if (var11) {
                   var4.method2766(var10);
-                  var4.method2911(Class8876.field40163);
+                  var4.method2911(Stats.field40163);
                   Class4388.method13832(var4, true);
                }
 
@@ -73,7 +73,7 @@ public class Class3368 extends Class3241 {
             return ActionResultType.field14819;
          }
       } else {
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       }
    }
 
@@ -88,11 +88,11 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
+   public void onBlockHarvested(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
       TileEntity var7 = var1.getTileEntity(var2);
       if (var7 instanceof Class940) {
          Class940 var8 = (Class940)var7;
-         if (!var1.isRemote && var4.isCreative() && !var8.method3617()) {
+         if (!var1.isRemote && var4.isCreative() && !var8.isEmpty()) {
             ItemStack var9 = method11958(this.method11957());
             CompoundNBT var10 = var8.method3754(new CompoundNBT());
             if (!var10.method134()) {
@@ -104,14 +104,14 @@ public class Class3368 extends Class3241 {
             }
 
             ItemEntity var11 = new ItemEntity(var1, (double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5, var9);
-            var11.method4131();
-            var1.method6916(var11);
+            var11.setDefaultPickupDelay();
+            var1.addEntity(var11);
          } else {
             var8.method3743(var4);
          }
       }
 
-      super.method11574(var1, var2, var3, var4);
+      super.onBlockHarvested(var1, var2, var3, var4);
    }
 
    @Override
@@ -120,8 +120,8 @@ public class Class3368 extends Class3241 {
       if (var5 instanceof Class940) {
          Class940 var6 = (Class940)var5;
          var2 = var2.method36456(field18940, (var1x, var2x) -> {
-            for (int var5x = 0; var5x < var6.method3629(); var5x++) {
-               var2x.accept(var6.method3618(var5x));
+            for (int var5x = 0; var5x < var6.getSizeInventory(); var5x++) {
+               var2x.accept(var6.getStackInSlot(var5x));
             }
          });
       }
@@ -141,7 +141,7 @@ public class Class3368 extends Class3241 {
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.method23448(var4.getBlock())) {
+      if (!var1.isIn(var4.getBlock())) {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class940) {
             var2.updateComparatorOutputLevel(var3, var1.getBlock());
@@ -203,7 +203,7 @@ public class Class3368 extends Class3241 {
 
    @Override
    public int method11649(BlockState var1, World var2, BlockPos var3) {
-      return Class5812.method18152((Class920)var2.getTileEntity(var3));
+      return Container.calcRedstoneFromInventory((IInventory)var2.getTileEntity(var3));
    }
 
    @Override

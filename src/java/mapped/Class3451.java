@@ -18,7 +18,7 @@ public class Class3451 extends Class3452 implements Class3449 {
 
    @Override
    public boolean method12127(BlockState var1) {
-      return var1.method23448(Blocks.WATER);
+      return var1.isIn(Blocks.WATER);
    }
 
    @Override
@@ -50,7 +50,7 @@ public class Class3451 extends Class3452 implements Class3449 {
    @Override
    public BlockState method11495(Class5909 var1) {
       FluidState var4 = var1.method18360().getFluidState(var1.method18345());
-      return var4.method23486(Class8953.field40469) && var4.method23477() == 8 ? super.method11495(var1) : null;
+      return var4.method23486(FluidTags.field40469) && var4.method23477() == 8 ? super.method11495(var1) : null;
    }
 
    @Override

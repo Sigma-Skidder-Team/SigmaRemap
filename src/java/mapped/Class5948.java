@@ -34,7 +34,7 @@ public class Class5948 extends Class5942<Class958> {
          var3.push();
          long var12;
          if (!var11) {
-            var12 = var1.method3734().method6783();
+            var12 = var1.method3734().getGameTime();
             BlockState var14 = var1.method3775();
             if (!(var14.getBlock() instanceof Class3360)) {
                var3.translate(0.5, -0.16666667F, 0.5);

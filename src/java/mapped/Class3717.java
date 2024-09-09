@@ -70,7 +70,7 @@ public class Class3717 extends Class3676<Class1042> {
       this.field19797 = false;
       this.field19798 = var3;
       PlayerEntity var7 = this.method12607(var2).get();
-      var2.method2992().method21406(Class8830.field39828, var7);
+      var2.getBrain().method21406(Class8830.field39828, var7);
       Class6983.method21574(var2, var7);
    }
 
@@ -91,9 +91,9 @@ public class Class3717 extends Class3676<Class1042> {
 
    public void method12506(ServerWorld var1, Class1042 var2, long var3) {
       this.field19796 = method12610(var1);
-      var2.method2992().method21405(Class8830.field39828);
-      var2.method2992().method21405(Class8830.field39824);
-      var2.method2992().method21405(Class8830.field39825);
+      var2.getBrain().method21405(Class8830.field39828);
+      var2.getBrain().method21405(Class8830.field39824);
+      var2.getBrain().method21405(Class8830.field39825);
    }
 
    private void method12604(Class1042 var1, LivingEntity var2) {
@@ -103,7 +103,7 @@ public class Class3717 extends Class3676<Class1042> {
    }
 
    private List<ItemStack> method12605(Class1042 var1) {
-      if (!var1.method3005()) {
+      if (!var1.isChild()) {
          Class8395 var4 = var1.method4674().method26571();
          if (!field19795.containsKey(var4)) {
             return ImmutableList.of(new ItemStack(Items.field37841));
@@ -112,7 +112,7 @@ public class Class3717 extends Class3676<Class1042> {
             Class9464 var6 = new Class9464((ServerWorld)var1.world)
                .method36454(Class9525.field44335, var1.getPositionVec())
                .method36454(Class9525.field44330, var1)
-               .method36450(var1.method3013());
+               .method36450(var1.getRNG());
             return var5.method23182(var6.method36460(Class8524.field38287));
          }
       } else {
@@ -125,11 +125,11 @@ public class Class3717 extends Class3676<Class1042> {
    }
 
    private Optional<PlayerEntity> method12607(Class1042 var1) {
-      return var1.method2992().<PlayerEntity>method21410(Class8830.field39822).filter(this::method12608);
+      return var1.getBrain().<PlayerEntity>method21410(Class8830.field39822).filter(this::method12608);
    }
 
    private boolean method12608(PlayerEntity var1) {
-      return var1.method3033(Effects.HERO_OF_THE_VILLAGE);
+      return var1.isPotionActive(Effects.HERO_OF_THE_VILLAGE);
    }
 
    private boolean method12609(Class1042 var1, PlayerEntity var2) {

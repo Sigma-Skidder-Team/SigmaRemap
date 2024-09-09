@@ -27,7 +27,7 @@ public class Class3352 extends Class3350 {
       TileEntity var6 = var1.getTileEntity(var2);
       if (var6 instanceof Class985) {
          var3.method2766((Class949)var6);
-         var3.method2911(Class8876.field40166);
+         var3.method2911(Stats.field40166);
       }
    }
 
@@ -41,7 +41,7 @@ public class Class3352 extends Class3350 {
             var2.method6745(var7, var9, var11, SoundEvents.field27107, Class2266.field14732, 1.0F, 1.0F, false);
          }
 
-         var2.method6746(ParticleTypes.field34092, var7, var9 + 1.1, var11, 0.0, 0.0, 0.0);
+         var2.addParticle(ParticleTypes.field34092, var7, var9 + 1.1, var11, 0.0, 0.0, 0.0);
       }
    }
 }

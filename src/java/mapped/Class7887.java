@@ -27,9 +27,9 @@ public class Class7887 extends Class7882<Class1006> {
    }
 
    public void method26425(ServerWorld var1, Class1006 var2) {
-      if (var2.method3005()) {
+      if (var2.isChild()) {
          this.field33837 = 0;
-         this.field33838 = var1.method6783() + (long)var1.method6814().nextInt(20);
+         this.field33838 = var1.getGameTime() + (long)var1.method6814().nextInt(20);
          Class1653 var5 = var1.method6951();
          Predicate<BlockPos> var6 = var1x -> {
             long var4 = var1x.method8332();
@@ -50,7 +50,7 @@ public class Class7887 extends Class7882<Class1006> {
             BlockPos var9 = var8.method28712();
             Optional var10 = var5.method6676(var9);
             if (var10.isPresent()) {
-               var2.method2992().method21406(Class8830.field39834, var9);
+               var2.getBrain().method21406(Class8830.field39834, var9);
             }
          } else if (this.field33837 < 5) {
             this.field33836.long2LongEntrySet().removeIf(var1x -> var1x.getLongValue() < this.field33838);

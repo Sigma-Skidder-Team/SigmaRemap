@@ -14,8 +14,8 @@ public class ChatFilter extends Module {
     @EventTarget
     private void method16679(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13932() instanceof CChatMessagePacket) {
-                CChatMessagePacket var4 = (CChatMessagePacket) var1.method13932();
+            if (var1.getPacket() instanceof CChatMessagePacket) {
+                CChatMessagePacket var4 = (CChatMessagePacket) var1.getPacket();
                 String[] var5 = var4.message.split(" ");
                 if (var4.message.length() + var5.length <= 100) {
                     StringBuilder var6 = new StringBuilder();

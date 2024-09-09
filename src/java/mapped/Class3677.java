@@ -31,11 +31,11 @@ public class Class3677 extends Class3676<Class1042> {
 
    public void method12506(ServerWorld var1, Class1042 var2, long var3) {
       this.field19689 = null;
-      var2.method2992().method21422(var1.method6784(), var1.method6783());
+      var2.getBrain().method21422(var1.method6784(), var1.getGameTime());
    }
 
    public void method12504(ServerWorld var1, Class1042 var2, long var3) {
-      Random var7 = var2.method3013();
+      Random var7 = var2.getRNG();
       if (var7.nextInt(100) == 0) {
          var2.method4750();
       }
@@ -44,8 +44,8 @@ public class Class3677 extends Class3676<Class1042> {
          Class112 var8 = Util.<Class112>method38518(Class112.values(), var7);
          int var9 = var7.nextInt(3);
          ItemStack var10 = this.method12510(var8, var9);
-         Class888 var11 = new Class888(var2.world, var2, var2.getPosX(), var2.method3442(), var2.getPosZ(), var10);
-         var2.world.method6916(var11);
+         Class888 var11 = new Class888(var2.world, var2, var2.getPosX(), var2.getPosYEye(), var2.getPosZ(), var10);
+         var2.world.addEntity(var11);
       }
    }
 

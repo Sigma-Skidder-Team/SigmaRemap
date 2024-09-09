@@ -41,7 +41,7 @@ public class Class3201 extends Class3200 {
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       switch (Class6596.field29026[var1.<Class103>method23463(field18500).ordinal()]) {
          case 1:
-            switch (Class6596.field29024[var1.<Direction>method23463(field18484).method544().ordinal()]) {
+            switch (Class6596.field29024[var1.<Direction>method23463(field18484).getAxis().ordinal()]) {
                case 1:
                   return field18507;
                case 2:
@@ -62,7 +62,7 @@ public class Class3201 extends Class3200 {
             }
          case 3:
          default:
-            switch (Class6596.field29024[var1.<Direction>method23463(field18484).method544().ordinal()]) {
+            switch (Class6596.field29024[var1.<Direction>method23463(field18484).getAxis().ordinal()]) {
                case 1:
                   return field18509;
                case 2:
@@ -85,7 +85,7 @@ public class Class3201 extends Class3200 {
             method11511(var9, var2, var3, 1.0F);
          }
 
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       }
    }
 
@@ -102,7 +102,7 @@ public class Class3201 extends Class3200 {
       double var8 = (double)var2.getX() + 0.5 + 0.1 * (double)var6.method539() + 0.2 * (double)var7.method539();
       double var10 = (double)var2.getY() + 0.5 + 0.1 * (double)var6.method540() + 0.2 * (double)var7.method540();
       double var12 = (double)var2.getZ() + 0.5 + 0.1 * (double)var6.method541() + 0.2 * (double)var7.method541();
-      var1.method6746(new RedstoneParticleData(1.0F, 0.0F, 0.0F, var3), var8, var10, var12, 0.0, 0.0, 0.0);
+      var1.addParticle(new RedstoneParticleData(1.0F, 0.0F, 0.0F, var3), var8, var10, var12, 0.0, 0.0, 0.0);
    }
 
    @Override
@@ -114,7 +114,7 @@ public class Class3201 extends Class3200 {
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var5 && !var1.method23448(var4.getBlock())) {
+      if (!var5 && !var1.isIn(var4.getBlock())) {
          if (var1.<Boolean>method23463(field18501)) {
             this.method11517(var1, var2, var3);
          }

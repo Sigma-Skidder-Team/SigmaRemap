@@ -30,19 +30,19 @@ public class Jesus extends Module {
    }
 
    @EventTarget
-   public void method16945(Class4398 var1) {
+   public void method16945(EventBlockCollision var1) {
       if (this.isEnabled() && mc.world != null && !AutoMLG.method16421()) {
-         if (mc.world.getBlockState(var1.method13902()).method23384() == Class8649.field38940
-            || mc.world.getBlockState(var1.method13902()).method23384() == Class8649.field38941
-            || mc.world.getBlockState(var1.method13902()).method23384() == Class8649.field38943) {
+         if (mc.world.getBlockState(var1.getBlockPos()).getMaterial() == Class8649.field38940
+            || mc.world.getBlockState(var1.getBlockPos()).getMaterial() == Class8649.field38941
+            || mc.world.getBlockState(var1.getBlockPos()).getMaterial() == Class8649.field38943) {
             if (!(
-               (double)var1.method13902().getY()
+               (double)var1.getBlockPos().getY()
                   >= mc.player.getPosY() - (double)(mc.player.getPosY() % 0.5 != 0.0 ? 0.0F : 0.5F)
             )) {
                if (!this.method16951(mc.player.boundingBox)) {
-                  if (!mc.player.method3331()) {
+                  if (!mc.player.isSneaking()) {
                      if (!(mc.player.fallDistance > 10.0F)) {
-                        BlockState var4 = mc.world.getBlockState(var1.method13902());
+                        BlockState var4 = mc.world.getBlockState(var1.getBlockPos());
                         int var5 = var4.method23449().method23477();
                         float var6 = 0.0F;
                         if (var5 > 3) {
@@ -54,7 +54,7 @@ public class Jesus extends Module {
                         }
 
                         VoxelShape var7 = VoxelShapes.create(0.0, 0.0, 0.0, 1.0, (double)var6, 1.0);
-                        var1.method13905(var7);
+                        var1.setBoxelShape(var7);
                      }
                   }
                }
@@ -64,7 +64,7 @@ public class Jesus extends Module {
    }
 
    @EventTarget
-   public void method16946(Class4399 var1) {
+   public void method16946(EventUpdate var1) {
       if (this.isEnabled() && mc.world != null && var1.method13921() && mc.getCurrentServerData() != null) {
          if (method16953() && !this.method16951(mc.player.boundingBox)) {
             this.field24017++;
@@ -73,11 +73,11 @@ public class Jesus extends Module {
          }
 
          if (method16953() && !this.method16951(mc.player.boundingBox)) {
-            mc.player.field4999 = 0;
+            mc.player.jumpTicks = 0;
             var1.method13908(true);
             this.field24015++;
             if (this.field24015 % 2 == 0) {
-               var1.method13912(var1.method13911() - 0.001);
+               var1.setY(var1.getY() - 0.001);
             }
          } else {
             this.field24015 = !mc.player.onGround ? 1 : 0;
@@ -87,30 +87,30 @@ public class Jesus extends Module {
 
    @EventTarget
    @LowerPriority
-   public void method16947(Class4435 var1) {
+   public void method16947(EventMove var1) {
       if (this.isEnabled() && mc.world != null && !AutoMLG.method16421()) {
-         if (this.method16951(mc.player.boundingBox) && !mc.player.method3331()) {
+         if (this.method16951(mc.player.boundingBox) && !mc.player.isSneaking()) {
             BlockState var4 = mc.world.getBlockState(mc.player.getPosition());
             if (var4 != null && !var4.method23449().method23474()) {
                double var5 = (double)var4.method23449().method23476();
                if (var5 > 0.4) {
                   if (this.getBooleanValueFromSetttingName("Swim up")) {
-                     var1.method13995(0.13);
+                     var1.setY(0.13);
                   }
 
-                  boolean var7 = this.method16951(mc.player.boundingBox.method19667(0.0, var1.method13994(), 0.0));
+                  boolean var7 = this.method16951(mc.player.boundingBox.offset(0.0, var1.getY(), 0.0));
                   if (!var7) {
                      double var8 = (double)((int) mc.player.getPosY() + 1);
                      double var10 = var8 - mc.player.getPosY();
-                     var1.method13995(var10);
+                     var1.setY(var10);
                      mc.player.onGround = true;
                      this.field24015 = 1;
                   }
                }
             }
          } else {
-            if (method16953() && var1.method13994() != -0.0784000015258789 && var1.method13994() != Class9567.method37080()) {
-               var1.method13995(-0.078);
+            if (method16953() && var1.getY() != -0.0784000015258789 && var1.getY() != MovementUtils.method37080()) {
+               var1.setY(-0.078);
             }
 
             if (this.getStringSettingValueByName("Mode").equals("Dolphin")) {
@@ -118,43 +118,43 @@ public class Jesus extends Module {
                   if (ColorUtils.method17730(mc.player, 0.001F)) {
                      this.field24016 = 0;
                   } else {
-                     if (mc.player.method3331() || mc.player.collidedVertically) {
+                     if (mc.player.isSneaking() || mc.player.collidedVertically) {
                         this.field24016 = 0;
                         return;
                      }
 
                      if (this.field24016 > 0) {
-                        Class9567.method37088(var1, 0.25 + (double)Class9567.method37078() * 0.05);
+                        MovementUtils.method37088(var1, 0.25 + (double) MovementUtils.method37078() * 0.05);
                         this.field24016++;
                      }
 
                      double var14 = this.method16954((double)this.field24016);
                      if (var14 != -999.0) {
                         mc.player.field6120 = 0.0;
-                        var1.method13995(var14);
+                        var1.setY(var14);
                      }
                   }
                } else if (method16953() && this.field24015 % 2 == 0) {
                   this.field24016++;
                   double var12 = this.method16954((double)this.field24016);
-                  Class9567.method37088(var1, 0.25);
+                  MovementUtils.method37088(var1, 0.25);
                   if (var12 != -999.0) {
-                     var1.method13995(var12);
+                     var1.setY(var12);
                   }
                }
             }
 
-            ColorUtils.method17725(var1.method13994());
+            ColorUtils.method17725(var1.getY());
          }
       }
    }
 
    @EventTarget
-   public void method16948(Class4436 var1) {
+   public void method16948(JumpEvent var1) {
       if (this.isEnabled() && mc.world != null && mc.getCurrentServerData() != null) {
          if (method16953()) {
             if (this.field24015 % 2 != 0) {
-               var1.method13900(true);
+               var1.setCancelled(true);
             }
 
             var1.method14003(0.2);
@@ -163,10 +163,10 @@ public class Jesus extends Module {
    }
 
    @EventTarget
-   public void method16949(Class4434 var1) {
-      if (this.isEnabled() && !(var1.method13988() < 0.2)) {
+   public void method16949(EventStep var1) {
+      if (this.isEnabled() && !(var1.getHeight() < 0.2)) {
          if (method16953()) {
-            var1.method13900(true);
+            var1.setCancelled(true);
          }
       }
    }
@@ -177,7 +177,7 @@ public class Jesus extends Module {
    }
 
    public boolean method16950() {
-      return Class9567.method37081();
+      return MovementUtils.method37081();
    }
 
    public boolean method16951(AxisAlignedBB var1) {
@@ -196,8 +196,8 @@ public class Jesus extends Module {
    }
 
    public static boolean method16953() {
-      AxisAlignedBB var2 = mc.player.boundingBox.method19667(0.0, -0.001, 0.0);
-      Stream var3 = mc.world.method7055(mc.player, var2);
+      AxisAlignedBB var2 = mc.player.boundingBox.offset(0.0, -0.001, 0.0);
+      Stream var3 = mc.world.getCollisionShapes(mc.player, var2);
       Iterator var4 = var3.iterator();
       boolean var5 = true;
       if (var4.hasNext()) {

@@ -127,7 +127,7 @@ public class Class3399 extends AbstractFireBlock {
    @Override
    public void method11522(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       var2.method6860().method20726(var3, this, method12024(var2.rand));
-      if (var2.method6789().method17135(Class5462.field24223)) {
+      if (var2.getGameRules().getBoolean(Class5462.field24223)) {
          if (!var1.method23443(var2, var3)) {
             var2.removeBlock(var3, false);
          }
@@ -201,11 +201,11 @@ public class Class3399 extends AbstractFireBlock {
    }
 
    public boolean method12017(World var1, BlockPos var2) {
-      return var1.method6796(var2)
-         || var1.method6796(var2.west())
-         || var1.method6796(var2.east())
-         || var1.method6796(var2.north())
-         || var1.method6796(var2.south());
+      return var1.isRainingAt(var2)
+         || var1.isRainingAt(var2.west())
+         || var1.isRainingAt(var2.east())
+         || var1.isRainingAt(var2.north())
+         || var1.isRainingAt(var2.south());
    }
 
    private int method12018(BlockState var1) {
@@ -220,7 +220,7 @@ public class Class3399 extends AbstractFireBlock {
       int var8 = this.method12018(var1.getBlockState(var2));
       if (var4.nextInt(var3) < var8) {
          BlockState var9 = var1.getBlockState(var2);
-         if (var4.nextInt(var5 + 10) < 5 && !var1.method6796(var2)) {
+         if (var4.nextInt(var5 + 10) < 5 && !var1.isRainingAt(var2)) {
             int var10 = Math.min(var5 + var4.nextInt(5) / 4, 15);
             var1.setBlockState(var2, this.method12021(var1, var2, var10), 3);
          } else {
@@ -237,7 +237,7 @@ public class Class3399 extends AbstractFireBlock {
 
    private BlockState method12021(Class1660 var1, BlockPos var2, int var3) {
       BlockState var6 = method12009(var1, var2);
-      return !var6.method23448(Blocks.FIRE) ? var6 : var6.method23465(field19038, Integer.valueOf(var3));
+      return !var6.isIn(Blocks.FIRE) ? var6 : var6.method23465(field19038, Integer.valueOf(var3));
    }
 
    private boolean method12022(IBlockReader var1, BlockPos var2) {

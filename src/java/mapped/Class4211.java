@@ -33,7 +33,7 @@ public class Class4211 extends Class4209 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       this.method12927(
          var1, var5, 0, -4, 0, this.field20516 - 1, 0, this.field20518 - 1, Blocks.SANDSTONE.method11579(), Blocks.SANDSTONE.method11579(), false
       );

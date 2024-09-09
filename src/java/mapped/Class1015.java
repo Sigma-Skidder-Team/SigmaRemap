@@ -97,7 +97,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    @Override
-   public boolean method3005() {
+   public boolean isChild() {
       return false;
    }
 
@@ -127,15 +127,15 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.6F;
    }
 
    @Override
-   public void method2871() {
+   public void livingEntity() {
       if (this.field5683 == null
          || !this.field5683.method8317(this.getPositionVec(), 3.46)
-         || !this.world.getBlockState(this.field5683).method23448(Blocks.JUKEBOX)) {
+         || !this.world.getBlockState(this.field5683).isIn(Blocks.JUKEBOX)) {
          this.field5682 = false;
          this.field5683 = null;
       }
@@ -144,12 +144,12 @@ public class Class1015 extends Class1014 implements Class1016 {
          method4409(this.world, this);
       }
 
-      super.method2871();
+      super.livingEntity();
       this.method4408();
    }
 
    @Override
-   public void method3171(BlockPos var1, boolean var2) {
+   public void setPartying(BlockPos var1, boolean var2) {
       this.field5683 = var1;
       this.field5682 = var2;
    }
@@ -168,20 +168,20 @@ public class Class1015 extends Class1014 implements Class1016 {
       }
 
       this.field5681 = (float)((double)this.field5681 * 0.9);
-      Vector3d var3 = this.getVec();
+      Vector3d var3 = this.getMotion();
       if (!this.onGround && var3.y < 0.0) {
-         this.method3434(var3.method11347(1.0, 0.6, 1.0));
+         this.setMotion(var3.method11347(1.0, 0.6, 1.0));
       }
 
       this.field5677 = this.field5677 + this.field5681 * 2.0F;
    }
 
    public static boolean method4409(World var0, Entity var1) {
-      if (var1.isAlive() && !var1.method3245() && var0.rand.nextInt(2) == 0) {
+      if (var1.isAlive() && !var1.isSilent() && var0.rand.nextInt(2) == 0) {
          List var4 = var0.<Class1006>method6772(Class1006.class, var1.getBoundingBox().method19664(20.0), field5673);
          if (!var4.isEmpty()) {
             Class1006 var5 = (Class1006)var4.get(var0.rand.nextInt(var4.size()));
-            if (!var5.method3245()) {
+            if (!var5.isSilent()) {
                SoundEvent var6 = method4412(var5.getType());
                var0.method6743(
                   (PlayerEntity)null, var1.getPosX(), var1.getPosY(), var1.getPosZ(), var6, var1.method2864(), 0.7F, method4413(var0.rand)
@@ -204,7 +204,7 @@ public class Class1015 extends Class1014 implements Class1016 {
             var5.method32182(1);
          }
 
-         if (!this.method3245()) {
+         if (!this.isSilent()) {
             this.world
                .method6743(
                   (PlayerEntity)null,
@@ -220,10 +220,10 @@ public class Class1015 extends Class1014 implements Class1016 {
 
          if (!this.world.isRemote) {
             if (this.rand.nextInt(10) != 0) {
-               this.world.method6786(this, (byte)6);
+               this.world.setEntityState(this, (byte)6);
             } else {
                this.method4399(var1);
-               this.world.method6786(this, (byte)7);
+               this.world.setEntityState(this, (byte)7);
             }
          }
 
@@ -243,9 +243,9 @@ public class Class1015 extends Class1014 implements Class1016 {
             var5.method32182(1);
          }
 
-         this.method3035(new Class2023(Effects.POISON, 900));
+         this.addPotionEffect(new EffectInstance(Effects.POISON, 900));
          if (var1.isCreative() || !this.method3362()) {
-            this.method2741(DamageSource.method31117(var1), Float.MAX_VALUE);
+            this.attackEntityFrom(DamageSource.method31117(var1), Float.MAX_VALUE);
          }
 
          return ActionResultType.method9002(this.world.isRemote);
@@ -261,20 +261,20 @@ public class Class1015 extends Class1014 implements Class1016 {
       BlockState var7 = var1.getBlockState(var3.down());
       return (
             var7.method23446(BlockTags.field32767)
-               || var7.method23448(Blocks.field36395)
+               || var7.isIn(Blocks.field36395)
                || var7.method23446(BlockTags.field32751)
-               || var7.method23448(Blocks.AIR)
+               || var7.isIn(Blocks.AIR)
          )
          && var1.method7021(var3, 0) > 8;
    }
 
    @Override
-   public boolean method2921(float var1, float var2) {
+   public boolean onLivingFall(float var1, float var2) {
       return false;
    }
 
    @Override
-   public void method2761(double var1, boolean var3, BlockState var4, BlockPos var5) {
+   public void updateFallState(double var1, boolean var3, BlockState var4, BlockPos var5) {
    }
 
    @Override
@@ -289,8 +289,8 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    @Override
-   public boolean method3114(Entity var1) {
-      return var1.method2741(DamageSource.method31115(this), 3.0F);
+   public boolean attackEntityAsMob(Entity var1) {
+      return var1.attackEntityFrom(DamageSource.method31115(this), 3.0F);
    }
 
    @Nullable
@@ -323,23 +323,23 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(SoundEvents.field26917, 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(SoundEvents.field26917, 0.15F, 1.0F);
    }
 
    @Override
-   public float method3243(float var1) {
-      this.method2863(SoundEvents.field26883, 0.15F, 1.0F);
+   public float playFlySound(float var1) {
+      this.playSound(SoundEvents.field26883, 0.15F, 1.0F);
       return var1 + this.field5678 / 2.0F;
    }
 
    @Override
-   public boolean method3244() {
+   public boolean makeFlySound() {
       return true;
    }
 
    @Override
-   public float method3100() {
+   public float getSoundPitch() {
       return method4413(this.rand);
    }
 
@@ -353,22 +353,22 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    @Override
-   public boolean method3140() {
+   public boolean canBePushed() {
       return true;
    }
 
    @Override
-   public void method3128(Entity var1) {
+   public void collideWithEntity(Entity var1) {
       if (!(var1 instanceof PlayerEntity)) {
-         super.method3128(var1);
+         super.collideWithEntity(var1);
       }
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (!this.method2760(var1)) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (!this.isInvulnerableTo(var1)) {
          this.method4403(false);
-         return super.method2741(var1, var2);
+         return super.attackEntityFrom(var1, var2);
       } else {
          return false;
       }
@@ -389,14 +389,14 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("Variant", this.method4414());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Variant", this.method4414());
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method4415(var1.getInt("Variant"));
    }
 
@@ -405,8 +405,8 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    @Override
-   public Vector3d method3394() {
-      return new Vector3d(0.0, (double)(0.5F * this.method3393()), (double)(this.method3429() * 0.4F));
+   public Vector3d func_241205_ce_() {
+      return new Vector3d(0.0, (double)(0.5F * this.getEyeHeight()), (double)(this.getWidth() * 0.4F));
    }
 
    // $VF: synthetic method

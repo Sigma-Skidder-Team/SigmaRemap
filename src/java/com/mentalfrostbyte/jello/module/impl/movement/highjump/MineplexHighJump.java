@@ -36,41 +36,41 @@ public class MineplexHighJump extends Module {
    }
 
    @EventTarget
-   public void method16971(Class4435 var1) {
+   public void method16971(EventMove var1) {
       if (this.isEnabled()) {
          if (this.field24023 && mc.player.getPosY() + 0.42 < this.field24026) {
-            this.method16004().method16000();
+            this.access().method16000();
          }
 
          if (!mc.player.onGround && this.field24023) {
             this.field24024 = Math.max(this.field24024, 0.499);
-            Class9567.method37088(var1, this.field24024);
+            MovementUtils.method37088(var1, this.field24024);
             this.field24024 -= 0.007;
             double var4 = 0.5;
             if (this.getNumberValueBySettingName("Motion") > 3.0F) {
                var4 -= 0.8;
             }
 
-            if (Math.abs(var1.method13994()) < var4 && Math.abs(this.field24025) < var4) {
+            if (Math.abs(var1.getY()) < var4 && Math.abs(this.field24025) < var4) {
                this.field24025 -= 0.04000000000001;
-               var1.method13995(this.field24025);
-               ColorUtils.method17725(var1.method13994());
+               var1.setY(this.field24025);
+               ColorUtils.method17725(var1.getY());
             } else {
-               this.field24025 = var1.method13994();
+               this.field24025 = var1.getY();
             }
          }
       }
    }
 
    @EventTarget
-   public void method16972(Class4404 var1) {
+   public void method16972(EventWalkingUpdate var1) {
       if (this.isEnabled()) {
          if (mc.player.onGround) {
             if (this.field24023) {
                this.field24023 = !this.field24023;
-               Class9567.method37090(0.0);
+               MovementUtils.method37090(0.0);
                if (this.getBooleanValueFromSetttingName("Disable")) {
-                  this.method16004().method16000();
+                  this.access().method16000();
                }
 
                return;
@@ -88,7 +88,7 @@ public class MineplexHighJump extends Module {
             double var19 = var6
                + (var10 * 0.45 * Math.sin(Math.toRadians((double)(var14 + 90.0F))) - var12 * 0.45 * Math.cos(Math.toRadians((double)(var14 + 90.0F)))) * var15;
             AxisAlignedBB var21 = new AxisAlignedBB(var17 - 0.3, var8 - 1.0, var19 - 0.3, var17 + 0.3, var8 + 2.0, var19 + 0.3);
-            if (mc.world.method7055(mc.player, var21).count() == 0L) {
+            if (mc.world.getCollisionShapes(mc.player, var21).count() == 0L) {
                double var22 = this.method16975(var21);
                if (var22 != 11.0) {
                   double var24 = mc.player.getPosY();
@@ -112,7 +112,7 @@ public class MineplexHighJump extends Module {
       if (this.isEnabled()) {
          Packet var4 = var1.getPacket();
          if (var4 instanceof SPlayerPositionLookPacket) {
-            this.method16004().method16000();
+            this.access().method16000();
          }
       }
    }
@@ -124,7 +124,7 @@ public class MineplexHighJump extends Module {
          mc.player.lastTickPosY = this.field24026;
          mc.player.field4915 = this.field24026;
          mc.player.prevPosY = this.field24026;
-         if (Class9567.isMoving()) {
+         if (MovementUtils.isMoving()) {
             mc.player.field4909 = 0.099999994F;
          }
       }
@@ -132,16 +132,16 @@ public class MineplexHighJump extends Module {
 
    public double method16975(AxisAlignedBB var1) {
       double var4 = 6.0;
-      AxisAlignedBB var6 = var1.method19667(0.0, -var4, 0.0);
+      AxisAlignedBB var6 = var1.offset(0.0, -var4, 0.0);
 
       do {
-         var6 = var1.method19667(0.0, -var4, 0.0);
-         if (mc.world.method7055(mc.player, var6).count() == 0L) {
+         var6 = var1.offset(0.0, -var4, 0.0);
+         if (mc.world.getCollisionShapes(mc.player, var6).count() == 0L) {
             return var4;
          }
 
          var4 -= 0.5;
-      } while (mc.world.method7055(mc.player, var6).count() != 0L && var4 > 3.0);
+      } while (mc.world.getCollisionShapes(mc.player, var6).count() != 0L && var4 > 3.0);
 
       return 11.0;
    }

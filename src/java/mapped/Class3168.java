@@ -18,14 +18,14 @@ public class Class3168 implements Class2982 {
       for (Class6949 var11 : var7) {
          int var12 = Class7795.method25886(var11.method21452());
          Class9695 var13 = new Class9695(var11.method21448() + var4 * 16, var11.method21454(), var11.method21450() + var5 * 16);
-         if (Class8042.method27612().method21925()) {
+         if (ViaVersion3.method27612().method21925()) {
             Class9322.method35225(var6, var13.method37962(), var13.method37963(), var13.method37964(), var12);
          }
 
          var11.method21453(Class7795.method25888(var1.method30580(), var13, var12));
       }
 
-      if (Class8042.method27612().method21925()) {
+      if (ViaVersion3.method27612().method21925()) {
          for (Class6949 var21 : var7) {
             int var23 = var21.method21452();
             Class9695 var26 = new Class9695(var21.method21448() + var4 * 16, var21.method21454(), var21.method21450() + var5 * 16);

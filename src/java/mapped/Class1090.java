@@ -41,14 +41,14 @@ public class Class1090 extends Class1018 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("Trusting", this.method5072());
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method5073(var1.getBoolean("Trusting"));
    }
 
@@ -75,20 +75,20 @@ public class Class1090 extends Class1018 {
    @Override
    public void method4258() {
       if (!this.method4228().method20811()) {
-         this.method3211(Pose.STANDING);
+         this.setPose(Pose.STANDING);
          this.setSprinting(false);
       } else {
          double var3 = this.method4228().method20812();
          if (var3 != 0.6) {
             if (var3 != 1.33) {
-               this.method3211(Pose.STANDING);
+               this.setPose(Pose.STANDING);
                this.setSprinting(false);
             } else {
-               this.method3211(Pose.STANDING);
+               this.setPose(Pose.STANDING);
                this.setSprinting(true);
             }
          } else {
-            this.method3211(Pose.field13624);
+            this.setPose(Pose.field13624);
             this.setSprinting(false);
          }
       }
@@ -104,7 +104,7 @@ public class Class1090 extends Class1018 {
    }
 
    @Override
-   public boolean method2921(float var1, float var2) {
+   public boolean onLivingFall(float var1, float var2) {
       return false;
    }
 
@@ -130,17 +130,17 @@ public class Class1090 extends Class1018 {
    }
 
    private float method5075() {
-      return (float)this.method3086(Attributes.field42110);
+      return (float)this.getAttributeValue(Attributes.field42110);
    }
 
    @Override
-   public boolean method3114(Entity var1) {
-      return var1.method2741(DamageSource.method31115(this), this.method5075());
+   public boolean attackEntityAsMob(Entity var1) {
+      return var1.attackEntityFrom(DamageSource.method31115(this), this.method5075());
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      return !this.method2760(var1) ? super.method2741(var1, var2) : false;
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      return !this.isInvulnerableTo(var1) ? super.attackEntityFrom(var1, var2) : false;
    }
 
    @Override
@@ -151,11 +151,11 @@ public class Class1090 extends Class1018 {
          if (!this.world.isRemote) {
             if (this.rand.nextInt(3) != 0) {
                this.method5076(false);
-               this.world.method6786(this, (byte)40);
+               this.world.setEntityState(this, (byte)40);
             } else {
                this.method5073(true);
                this.method5076(true);
-               this.world.method6786(this, (byte)41);
+               this.world.setEntityState(this, (byte)41);
             }
          }
 
@@ -166,10 +166,10 @@ public class Class1090 extends Class1018 {
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 41) {
          if (var1 != 40) {
-            super.method2866(var1);
+            super.handleStatusUpdate(var1);
          } else {
             this.method5076(false);
          }
@@ -188,7 +188,7 @@ public class Class1090 extends Class1018 {
          double var6 = this.rand.nextGaussian() * 0.02;
          double var8 = this.rand.nextGaussian() * 0.02;
          double var10 = this.rand.nextGaussian() * 0.02;
-         this.world.method6746(var4, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var6, var8, var10);
+         this.world.addParticle(var4, this.getPosXRandom(1.0), this.getPosYRandom() + 0.5, this.getPosZRandom(1.0), var6, var8, var10);
       }
    }
 
@@ -204,7 +204,7 @@ public class Class1090 extends Class1018 {
    }
 
    public Class1090 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41059.method33215(var1);
+      return EntityType.field41059.create(var1);
    }
 
    @Override
@@ -218,14 +218,14 @@ public class Class1090 extends Class1018 {
 
    @Override
    public boolean method4266(Class1662 var1) {
-      if (var1.method7050(this) && !var1.method7014(this.getBoundingBox())) {
+      if (var1.checkNoEntityCollision(this) && !var1.method7014(this.getBoundingBox())) {
          BlockPos var4 = this.getPosition();
          if (var4.getY() < var1.method6776()) {
             return false;
          }
 
          BlockState var5 = var1.getBlockState(var4.down());
-         if (var5.method23448(Blocks.field36395) || var5.method23446(BlockTags.field32767)) {
+         if (var5.isIn(Blocks.field36395) || var5.method23446(BlockTags.field32767)) {
             return true;
          }
       }
@@ -244,8 +244,8 @@ public class Class1090 extends Class1018 {
    }
 
    @Override
-   public Vector3d method3394() {
-      return new Vector3d(0.0, (double)(0.5F * this.method3393()), (double)(this.method3429() * 0.4F));
+   public Vector3d func_241205_ce_() {
+      return new Vector3d(0.0, (double)(0.5F * this.getEyeHeight()), (double)(this.getWidth() * 0.4F));
    }
 
    // $VF: synthetic method

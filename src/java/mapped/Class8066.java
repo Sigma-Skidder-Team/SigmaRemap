@@ -208,7 +208,7 @@ public class Class8066 {
          if (!Class9016.method33345()) {
             this.field34611 = new Class2010(this, this.method27713(), var5);
          } else {
-            this.field34611 = new Class2010(this, new Class7481(this.method27718()), this.method27713(), var5);
+            this.field34611 = new Class2010(this, new ChunkPos(this.method27718()), this.method27713(), var5);
          }
 
          var2.method33326(this.field34611);
@@ -238,7 +238,7 @@ public class Class8066 {
       if (!Class9016.method33345()) {
          this.field34610 = new Class2011(this, this.method27713(), (Class1677)var5);
       } else {
-         this.field34610 = new Class2011(this, new Class7481(this.method27718()), this.method27713(), (Class1677)var5);
+         this.field34610 = new Class2011(this, new ChunkPos(this.method27718()), this.method27713(), (Class1677)var5);
       }
 
       return this.field34610;

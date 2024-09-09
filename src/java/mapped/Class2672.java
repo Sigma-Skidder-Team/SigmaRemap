@@ -37,7 +37,7 @@ public abstract class Class2672 extends Class2595 {
       this.field17058 = this.field17059.ticksExisted + this.method10893();
       SoundEvent var3 = this.method10894();
       if (var3 != null) {
-         this.field17059.method2863(var3, 1.0F, 1.0F);
+         this.field17059.playSound(var3, 1.0F, 1.0F);
       }
 
       this.field17059.method4595(this.method10895());
@@ -48,7 +48,7 @@ public abstract class Class2672 extends Class2595 {
       this.field17057--;
       if (this.field17057 == 0) {
          this.method10890();
-         this.field17059.method2863(this.field17059.method4598(), 1.0F, 1.0F);
+         this.field17059.playSound(this.field17059.method4598(), 1.0F, 1.0F);
       }
    }
 

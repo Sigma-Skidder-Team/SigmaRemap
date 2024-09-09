@@ -27,7 +27,7 @@ public class Class5979 {
    }
 
    public void method18527() {
-      Class8042.method27613().method27366().info("Loading " + this.field26038 + " -> " + this.field26039 + " mappings...");
+      ViaVersion3.method27613().method27366().info("Loading " + this.field26038 + " -> " + this.field26039 + " mappings...");
       JsonObject var3 = !this.field26040 ? null : this.method18541();
       JsonObject var4 = Class8159.method28359("mapping-" + this.field26038 + ".json", true);
       JsonObject var5 = Class8159.method28359("mapping-" + this.field26039 + ".json", true);
@@ -130,7 +130,7 @@ public class Class5979 {
       if (var2 != -1) {
          return var2;
       } else {
-         Class8042.method27613().method27366().warning(String.format("Missing %s %s for %s %s %d", this.field26039, var3, this.field26038, var3, var1));
+         ViaVersion3.method27613().method27366().warning(String.format("Missing %s %s for %s %s %d", this.field26039, var3, this.field26038, var3, var1));
          return 0;
       }
    }

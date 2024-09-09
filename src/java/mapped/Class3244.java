@@ -51,8 +51,8 @@ public class Class3244 extends Class3241 implements Class3207 {
          Optional var12 = var10.method3797(var11);
          if (var12.isPresent()) {
             if (!var2.isRemote && var10.method3798(!var4.abilities.isCreativeMode ? var11 : var11.copy(), ((Class4850)var12.get()).method14977())) {
-               var4.method2911(Class8876.field40168);
-               return ActionResultType.field14818;
+               var4.method2911(Stats.field40168);
+               return ActionResultType.SUCCESS;
             }
 
             return ActionResultType.field14819;
@@ -64,8 +64,8 @@ public class Class3244 extends Class3241 implements Class3207 {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (!var4.method3249() && var1.<Boolean>method23463(field18698) && var4 instanceof LivingEntity && !Class7858.method26332((LivingEntity)var4)) {
-         var4.method2741(DamageSource.field38992, (float)this.field18704);
+      if (!var4.isImmuneToFire() && var1.<Boolean>method23463(field18698) && var4 instanceof LivingEntity && !EnchantmentHelper.method26332((LivingEntity)var4)) {
+         var4.attackEntityFrom(DamageSource.field38992, (float)this.field18704);
       }
 
       super.method11523(var1, var2, var3, var4);
@@ -73,7 +73,7 @@ public class Class3244 extends Class3241 implements Class3207 {
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.method23448(var4.getBlock())) {
+      if (!var1.isIn(var4.getBlock())) {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class945) {
             Class7236.method22724(var2, var3, ((Class945)var8).method3795());
@@ -108,7 +108,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    private boolean method11651(BlockState var1) {
-      return var1.method23448(Blocks.field36777);
+      return var1.isIn(Blocks.field36777);
    }
 
    @Override
@@ -139,7 +139,7 @@ public class Class3244 extends Class3241 implements Class3207 {
 
          if (this.field18703 && var4.nextInt(5) == 0) {
             for (int var7 = 0; var7 < var4.nextInt(1) + 1; var7++) {
-               var2.method6746(
+               var2.addParticle(
                   ParticleTypes.field34086,
                   (double)var3.getX() + 0.5,
                   (double)var3.getY() + 0.5,
@@ -188,9 +188,9 @@ public class Class3244 extends Class3241 implements Class3207 {
 
    @Override
    public void method11595(World var1, BlockState var2, BlockRayTraceResult var3, ProjectileEntity var4) {
-      if (!var1.isRemote && var4.method3327()) {
+      if (!var1.isRemote && var4.isBurning()) {
          Entity var7 = var4.method3460();
-         boolean var8 = var7 == null || var7 instanceof PlayerEntity || var1.method6789().method17135(Class5462.field24224);
+         boolean var8 = var7 == null || var7 instanceof PlayerEntity || var1.getGameRules().getBoolean(Class5462.field24224);
          if (var8 && !var2.<Boolean>method23463(field18698) && !var2.<Boolean>method23463(field18700)) {
             BlockPos var9 = var3.getPos();
             var1.setBlockState(var9, var2.method23465(Class8820.field39699, Boolean.valueOf(true)), 11);
@@ -212,7 +212,7 @@ public class Class3244 extends Class3241 implements Class3207 {
          0.0
       );
       if (var3) {
-         var0.method6746(
+         var0.addParticle(
             ParticleTypes.field34092,
             (double)var1.getX() + 0.25 + var6.nextDouble() / 2.0 * (double)(!var6.nextBoolean() ? -1 : 1),
             (double)var1.getY() + 0.4,

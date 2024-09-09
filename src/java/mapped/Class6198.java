@@ -57,7 +57,7 @@ public class Class6198 implements Class6196 {
       }
 
       if (this.field27663 != -1 && this.field27664 != -1) {
-         if (this.field27655.method37036() != Class1894.field11102) {
+         if (this.field27655.method37036() != GameType.field11102) {
             this.field27655.method37034(Class2200.field14381);
          } else {
             this.field27655.method37034(Class2200.field14377);

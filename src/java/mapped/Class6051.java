@@ -18,7 +18,7 @@ public class Class6051 extends Class6037 {
    }
 
    public List<Object> method18737(Object var1) throws Exception {
-      return Class8042.method27614().method34424().<Class5419>method31084(Class5419.class).method17013(var1, this);
+      return ViaVersion3.method27614().method34424().<Class5419>method31084(Class5419.class).method17013(var1, this);
    }
 
    public Set<Long> method18738() {

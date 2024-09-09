@@ -36,16 +36,16 @@ public class Class3690<T> extends Class3676<Class1046> {
    }
 
    private Vector3d method12540(Class1046 var1) {
-      return this.field19717.apply(var1.method2992().<T>method21410(this.field19714).get());
+      return this.field19717.apply(var1.getBrain().<T>method21410(this.field19714).get());
    }
 
    private boolean method12541(Class1046 var1) {
-      if (var1.method2992().method21404(Class8830.field39824)) {
-         Class8999 var4 = var1.method2992().<Class8999>method21410(Class8830.field39824).get();
+      if (var1.getBrain().method21404(Class8830.field39824)) {
+         Class8999 var4 = var1.getBrain().<Class8999>method21410(Class8830.field39824).get();
          if (var4.method33252() == this.field19715) {
             Vector3d var5 = var4.method33251().method26356().method11336(var1.getPositionVec());
             Vector3d var6 = this.method12540(var1).method11336(var1.getPositionVec());
-            return var5.method11334(var6) < 0.0;
+            return var5.dotProduct(var6) < 0.0;
          } else {
             return false;
          }
@@ -62,7 +62,7 @@ public class Class3690<T> extends Class3676<Class1046> {
       for (int var5 = 0; var5 < 10; var5++) {
          Vector3d var6 = Class8037.method27591(var0, 16, 7, var1);
          if (var6 != null) {
-            var0.method2992().method21406(Class8830.field39824, new Class8999(var6, var2, 0));
+            var0.getBrain().method21406(Class8830.field39824, new Class8999(var6, var2, 0));
             return;
          }
       }

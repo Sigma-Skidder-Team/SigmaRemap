@@ -28,7 +28,7 @@ public class Class999 extends Entity {
    private static final DataParameter<Boolean> field5500 = EntityDataManager.<Boolean>createKey(Class999.class, DataSerializers.field33398);
    private static final DataParameter<IParticleData> field5501 = EntityDataManager.<IParticleData>createKey(Class999.class, DataSerializers.field33399);
    private Class8812 field5502 = Class8137.field34976;
-   private final List<Class2023> field5503 = Lists.newArrayList();
+   private final List<EffectInstance> field5503 = Lists.newArrayList();
    private final Map<Entity, Integer> field5504 = Maps.newHashMap();
    private int field5505 = 600;
    private int field5506 = 20;
@@ -53,29 +53,29 @@ public class Class999 extends Entity {
 
    @Override
    public void registerData() {
-      this.method3210().register(field5499, 0);
-      this.method3210().register(field5498, 0.5F);
-      this.method3210().register(field5500, false);
-      this.method3210().register(field5501, ParticleTypes.field34068);
+      this.getDataManager().register(field5499, 0);
+      this.getDataManager().register(field5498, 0.5F);
+      this.getDataManager().register(field5500, false);
+      this.getDataManager().register(field5501, ParticleTypes.field34068);
    }
 
    public void method4097(float var1) {
       if (!this.world.isRemote) {
-         this.method3210().method35446(field5498, var1);
+         this.getDataManager().method35446(field5498, var1);
       }
    }
 
    @Override
-   public void method3385() {
+   public void recalculateSize() {
       double var3 = this.getPosX();
       double var5 = this.getPosY();
       double var7 = this.getPosZ();
-      super.method3385();
+      super.recalculateSize();
       this.setPosition(var3, var5, var7);
    }
 
    public float method4098() {
-      return this.method3210().<Float>method35445(field5498);
+      return this.getDataManager().<Float>method35445(field5498);
    }
 
    public void method4099(Class8812 var1) {
@@ -87,13 +87,13 @@ public class Class999 extends Entity {
 
    private void method4100() {
       if (this.field5502 == Class8137.field34976 && this.field5503.isEmpty()) {
-         this.method3210().method35446(field5499, 0);
+         this.getDataManager().method35446(field5499, 0);
       } else {
-         this.method3210().method35446(field5499, Class9741.method38184(Class9741.method38177(this.field5502, this.field5503)));
+         this.getDataManager().method35446(field5499, Class9741.method38184(Class9741.method38177(this.field5502, this.field5503)));
       }
    }
 
-   public void method4101(Class2023 var1) {
+   public void method4101(EffectInstance var1) {
       this.field5503.add(var1);
       if (!this.field5508) {
          this.method4100();
@@ -101,28 +101,28 @@ public class Class999 extends Entity {
    }
 
    public int method4102() {
-      return this.method3210().<Integer>method35445(field5499);
+      return this.getDataManager().<Integer>method35445(field5499);
    }
 
    public void method4103(int var1) {
       this.field5508 = true;
-      this.method3210().method35446(field5499, var1);
+      this.getDataManager().method35446(field5499, var1);
    }
 
    public IParticleData method4104() {
-      return this.method3210().<IParticleData>method35445(field5501);
+      return this.getDataManager().<IParticleData>method35445(field5501);
    }
 
    public void method4105(IParticleData var1) {
-      this.method3210().method35446(field5501, var1);
+      this.getDataManager().method35446(field5501, var1);
    }
 
    public void method4106(boolean var1) {
-      this.method3210().method35446(field5500, var1);
+      this.getDataManager().method35446(field5500, var1);
    }
 
    public boolean method4107() {
-      return this.method3210().<Boolean>method35445(field5500);
+      return this.getDataManager().<Boolean>method35445(field5500);
    }
 
    public int method4108() {
@@ -140,7 +140,7 @@ public class Class999 extends Entity {
       float var4 = this.method4098();
       if (!this.world.isRemote) {
          if (this.ticksExisted >= this.field5506 + this.field5505) {
-            this.method2904();
+            this.remove();
             return;
          }
 
@@ -156,7 +156,7 @@ public class Class999 extends Entity {
          if (this.field5511 != 0.0F) {
             var4 += this.field5511;
             if (var4 < 0.5F) {
-               this.method2904();
+               this.remove();
                return;
             }
 
@@ -173,10 +173,10 @@ public class Class999 extends Entity {
                }
             }
 
-           List<Class2023> var27 = Lists.newArrayList();
+           List<EffectInstance> var27 = Lists.newArrayList();
 
-            for (Class2023 var9 : this.field5502.method31816()) {
-               var27.add(new Class2023(var9.method8627(), var9.method8628() / 4, var9.method8629(), var9.method8630(), var9.method8631()));
+            for (EffectInstance var9 : this.field5502.method31816()) {
+               var27.add(new EffectInstance(var9.getPotion(), var9.method8628() / 4, var9.method8629(), var9.isAmbient(), var9.method8631()));
             }
 
             var27.addAll(this.field5503);
@@ -184,25 +184,25 @@ public class Class999 extends Entity {
                List<LivingEntity> var30 = this.world.<LivingEntity>method7182(LivingEntity.class, this.getBoundingBox());
                if (!var30.isEmpty()) {
                   for (LivingEntity var10 : var30) {
-                     if (!this.field5504.containsKey(var10) && var10.method3169()) {
+                     if (!this.field5504.containsKey(var10) && var10.canBeHitWithPotion()) {
                         double var16 = var10.getPosX() - this.getPosX();
                         double var18 = var10.getPosZ() - this.getPosZ();
                         double var20 = var16 * var16 + var18 * var18;
                         if (var20 <= (double)(var4 * var4)) {
                            this.field5504.put(var10, this.ticksExisted + this.field5507);
 
-                           for (Class2023 var23 : var27) {
-                              if (!var23.method8627().method22292()) {
-                                 var10.method3035(new Class2023(var23));
+                           for (EffectInstance var23 : var27) {
+                              if (!var23.getPotion().method22292()) {
+                                 var10.addPotionEffect(new EffectInstance(var23));
                               } else {
-                                 var23.method8627().method22290(this, this.method4114(), var10, var23.method8629(), 0.5);
+                                 var23.getPotion().method22290(this, this.method4114(), var10, var23.method8629(), 0.5);
                               }
                            }
 
                            if (this.field5510 != 0.0F) {
                               var4 += this.field5510;
                               if (var4 < 0.5F) {
-                                 this.method2904();
+                                 this.remove();
                                  return;
                               }
 
@@ -212,7 +212,7 @@ public class Class999 extends Entity {
                            if (this.field5509 != 0) {
                               this.field5505 = this.field5505 + this.field5509;
                               if (this.field5505 <= 0) {
-                                 this.method2904();
+                                 this.remove();
                                  return;
                               }
                            }
@@ -321,7 +321,7 @@ public class Class999 extends Entity {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.ticksExisted = var1.getInt("Age");
       this.field5505 = var1.getInt("Duration");
       this.field5506 = var1.getInt("WaitTime");
@@ -355,7 +355,7 @@ public class Class999 extends Entity {
          this.field5503.clear();
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
-            Class2023 var6 = Class2023.method8639(var4.method153(var5));
+            EffectInstance var6 = EffectInstance.method8639(var4.method153(var5));
             if (var6 != null) {
                this.method4101(var6);
             }
@@ -364,12 +364,12 @@ public class Class999 extends Entity {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      var1.method102("Age", this.ticksExisted);
-      var1.method102("Duration", this.field5505);
-      var1.method102("WaitTime", this.field5506);
-      var1.method102("ReapplicationDelay", this.field5507);
-      var1.method102("DurationOnUse", this.field5509);
+   public void writeAdditional(CompoundNBT var1) {
+      var1.putInt("Age", this.ticksExisted);
+      var1.putInt("Duration", this.field5505);
+      var1.putInt("WaitTime", this.field5506);
+      var1.putInt("ReapplicationDelay", this.field5507);
+      var1.putInt("DurationOnUse", this.field5509);
       var1.putFloat("RadiusOnUse", this.field5510);
       var1.putFloat("RadiusPerTick", this.field5511);
       var1.putFloat("Radius", this.method4098());
@@ -379,7 +379,7 @@ public class Class999 extends Entity {
       }
 
       if (this.field5508) {
-         var1.method102("Color", this.method4102());
+         var1.putInt("Color", this.method4102());
       }
 
       if (this.field5502 != Class8137.field34976 && this.field5502 != null) {
@@ -389,7 +389,7 @@ public class Class999 extends Entity {
       if (!this.field5503.isEmpty()) {
          ListNBT var4 = new ListNBT();
 
-         for (Class2023 var6 : this.field5503) {
+         for (EffectInstance var6 : this.field5503) {
             var4.add(var6.method8637(new CompoundNBT()));
          }
 
@@ -398,12 +398,12 @@ public class Class999 extends Entity {
    }
 
    @Override
-   public void method3155(DataParameter<?> var1) {
+   public void notifyDataManagerChange(DataParameter<?> var1) {
       if (field5498.equals(var1)) {
-         this.method3385();
+         this.recalculateSize();
       }
 
-      super.method3155(var1);
+      super.notifyDataManagerChange(var1);
    }
 
    @Override
@@ -412,12 +412,12 @@ public class Class999 extends Entity {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this);
    }
 
    @Override
-   public EntitySize method2981(Pose var1) {
+   public EntitySize getSize(Pose var1) {
       return EntitySize.method32101(this.method4098() * 2.0F, 0.5F);
    }
 }

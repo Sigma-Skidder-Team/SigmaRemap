@@ -5,7 +5,6 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
 import net.minecraft.block.BlockState;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -40,7 +39,7 @@ public class Class6762 extends Class6764 {
       int var4 = MathHelper.floor(this.field29476.getPosY());
       BlockState var5 = this.field29475.getBlockState(var3.method8373(this.field29476.getPosX(), (double)var4, this.field29476.getPosZ()));
       if (!this.field29476.method3107(var5.method23449().method23472())) {
-         if (this.method20649() && this.field29476.method3250()) {
+         if (this.method20649() && this.field29476.isInWater()) {
             while (true) {
                if (var5.getBlock() != Blocks.WATER && var5.method23449() != Class9479.field44066.method25078(false)) {
                   var4--;
@@ -49,7 +48,7 @@ public class Class6762 extends Class6764 {
 
                var5 = this.field29475.getBlockState(var3.method8373(this.field29476.getPosX(), (double)(++var4), this.field29476.getPosZ()));
             }
-         } else if (!this.field29476.method3226()) {
+         } else if (!this.field29476.isOnGround()) {
             BlockPos var6 = this.field29476.getPosition();
 
             while (
@@ -113,42 +112,42 @@ public class Class6762 extends Class6764 {
       }
 
       double var9 = method20626(this.field29475, new BlockPos(var2.field30847, var2.field30848, var2.field30849));
-      Class7176 var11 = this.method20627(var2.field30847, var2.field30848, var2.field30849 + 1, var6, var9, Direction.SOUTH, var8);
+      Class7176 var11 = this.method20627(var2.field30847, var2.field30848, var2.field30849 + 1, var6, var9, net.minecraft.util.Direction.SOUTH, var8);
       if (this.method20623(var11, var2)) {
          var1[var5++] = var11;
       }
 
-      Class7176 var12 = this.method20627(var2.field30847 - 1, var2.field30848, var2.field30849, var6, var9, Direction.WEST, var8);
+      Class7176 var12 = this.method20627(var2.field30847 - 1, var2.field30848, var2.field30849, var6, var9, net.minecraft.util.Direction.WEST, var8);
       if (this.method20623(var12, var2)) {
          var1[var5++] = var12;
       }
 
-      Class7176 var13 = this.method20627(var2.field30847 + 1, var2.field30848, var2.field30849, var6, var9, Direction.EAST, var8);
+      Class7176 var13 = this.method20627(var2.field30847 + 1, var2.field30848, var2.field30849, var6, var9, net.minecraft.util.Direction.EAST, var8);
       if (this.method20623(var13, var2)) {
          var1[var5++] = var13;
       }
 
-      Class7176 var14 = this.method20627(var2.field30847, var2.field30848, var2.field30849 - 1, var6, var9, Direction.NORTH, var8);
+      Class7176 var14 = this.method20627(var2.field30847, var2.field30848, var2.field30849 - 1, var6, var9, net.minecraft.util.Direction.NORTH, var8);
       if (this.method20623(var14, var2)) {
          var1[var5++] = var14;
       }
 
-      Class7176 var15 = this.method20627(var2.field30847 - 1, var2.field30848, var2.field30849 - 1, var6, var9, Direction.NORTH, var8);
+      Class7176 var15 = this.method20627(var2.field30847 - 1, var2.field30848, var2.field30849 - 1, var6, var9, net.minecraft.util.Direction.NORTH, var8);
       if (this.method20624(var2, var12, var14, var15)) {
          var1[var5++] = var15;
       }
 
-      Class7176 var16 = this.method20627(var2.field30847 + 1, var2.field30848, var2.field30849 - 1, var6, var9, Direction.NORTH, var8);
+      Class7176 var16 = this.method20627(var2.field30847 + 1, var2.field30848, var2.field30849 - 1, var6, var9, net.minecraft.util.Direction.NORTH, var8);
       if (this.method20624(var2, var13, var14, var16)) {
          var1[var5++] = var16;
       }
 
-      Class7176 var17 = this.method20627(var2.field30847 - 1, var2.field30848, var2.field30849 + 1, var6, var9, Direction.SOUTH, var8);
+      Class7176 var17 = this.method20627(var2.field30847 - 1, var2.field30848, var2.field30849 + 1, var6, var9, net.minecraft.util.Direction.SOUTH, var8);
       if (this.method20624(var2, var12, var11, var17)) {
          var1[var5++] = var17;
       }
 
-      Class7176 var18 = this.method20627(var2.field30847 + 1, var2.field30848, var2.field30849 + 1, var6, var9, Direction.SOUTH, var8);
+      Class7176 var18 = this.method20627(var2.field30847 + 1, var2.field30848, var2.field30849 + 1, var6, var9, net.minecraft.util.Direction.SOUTH, var8);
       if (this.method20624(var2, var13, var11, var18)) {
          var1[var5++] = var18;
       }
@@ -168,7 +167,7 @@ public class Class6762 extends Class6764 {
       } else if (var3.field30848 > var1.field30848 || var2.field30848 > var1.field30848) {
          return false;
       } else if (var2.field30859 != Class2163.field14187 && var3.field30859 != Class2163.field14187 && var4.field30859 != Class2163.field14187) {
-         boolean var7 = var3.field30859 == Class2163.field14189 && var2.field30859 == Class2163.field14189 && (double)this.field29476.method3429() < 0.5;
+         boolean var7 = var3.field30859 == Class2163.field14189 && var2.field30859 == Class2163.field14189 && (double)this.field29476.getWidth() < 0.5;
          return var4.field30858 >= 0.0F
             && (var3.field30848 < var1.field30848 || var3.field30858 >= 0.0F || var7)
             && (var2.field30848 < var1.field30848 || var2.field30858 >= 0.0F || var7);
@@ -184,11 +183,11 @@ public class Class6762 extends Class6764 {
          (double)var1.field30849 - this.field29476.getPosZ()
       );
       AxisAlignedBB var5 = this.field29476.getBoundingBox();
-      int var6 = MathHelper.method37774(var4.method11348() / var5.getAverageEdgeLength());
-      var4 = var4.method11344((double)(1.0F / (float)var6));
+      int var6 = MathHelper.method37774(var4.length() / var5.getAverageEdgeLength());
+      var4 = var4.scale((double)(1.0F / (float)var6));
 
       for (int var7 = 1; var7 <= var6; var7++) {
-         var5 = var5.method19669(var4);
+         var5 = var5.offset(var4);
          if (this.method20628(var5)) {
             return false;
          }
@@ -200,18 +199,18 @@ public class Class6762 extends Class6764 {
    public static double method20626(IBlockReader var0, BlockPos var1) {
       BlockPos var4 = var1.down();
       VoxelShape var5 = var0.getBlockState(var4).method23414(var0, var4);
-      return (double)var4.getY() + (!var5.method19516() ? var5.method19513(Class113.field414) : 0.0);
+      return (double)var4.getY() + (!var5.method19516() ? var5.method19513(Direction.field414) : 0.0);
    }
 
    @Nullable
-   private Class7176 method20627(int var1, int var2, int var3, int var4, double var5, Direction var7, Class2163 var8) {
+   private Class7176 method20627(int var1, int var2, int var3, int var4, double var5, net.minecraft.util.Direction var7, Class2163 var8) {
       Class7176 var11 = null;
       BlockPos.Mutable var12 = new BlockPos.Mutable();
       double var13 = method20626(this.field29475, var12.method8372(var1, var2, var3));
       if (!(var13 - var5 > 1.125)) {
          Class2163 var15 = this.method20632(this.field29476, var1, var2, var3);
          float var16 = this.field29476.method4223(var15);
-         double var17 = (double)this.field29476.method3429() / 2.0;
+         double var17 = (double)this.field29476.getWidth() / 2.0;
          if (var16 >= 0.0F) {
             var11 = this.method20641(var1, var2, var3);
             var11.field30859 = var15;
@@ -233,7 +232,7 @@ public class Class6762 extends Class6764 {
                var11 = this.method20627(var1, var2 + 1, var3, var4 - 1, var5, var7, var8);
                if (var11 != null
                   && (var11.field30859 == Class2163.field14185 || var11.field30859 == Class2163.field14186)
-                  && this.field29476.method3429() < 1.0F) {
+                  && this.field29476.getWidth() < 1.0F) {
                   double var19 = (double)(var1 - var7.method539()) + 0.5;
                   double var21 = (double)(var3 - var7.method541()) + 0.5;
                   AxisAlignedBB var23 = new AxisAlignedBB(
@@ -241,7 +240,7 @@ public class Class6762 extends Class6764 {
                      method20626(this.field29475, var12.method8373(var19, (double)(var2 + 1), var21)) + 0.001,
                      var21 - var17,
                      var19 + var17,
-                     (double)this.field29476.method3430()
+                     (double)this.field29476.getHeight()
                         + method20626(this.field29475, var12.method8373((double)var11.field30847, (double)var11.field30848, (double)var11.field30849))
                         - 0.002,
                      var21 + var17
@@ -281,7 +280,7 @@ public class Class6762 extends Class6764 {
                      return var29;
                   }
 
-                  if (var24++ >= this.field29476.method3370()) {
+                  if (var24++ >= this.field29476.getMaxFallHeight()) {
                      Class7176 var28 = this.method20641(var1, var2, var3);
                      var28.field30859 = Class2163.field14184;
                      var28.field30858 = -1.0F;
@@ -321,7 +320,7 @@ public class Class6762 extends Class6764 {
    }
 
    private boolean method20628(AxisAlignedBB var1) {
-      return (Boolean)this.field29474.computeIfAbsent(var1, var2 -> !this.field29475.method7053(this.field29476, var1));
+      return (Boolean)this.field29474.computeIfAbsent(var1, var2 -> !this.field29475.hasNoCollisions(this.field29476, var1));
    }
 
    @Override
@@ -471,11 +470,11 @@ public class Class6762 extends Class6764 {
                if (var8 != 0 || var10 != 0) {
                   var1.method8372(var5 + var8, var6 + var9, var7 + var10);
                   BlockState var11 = var0.getBlockState(var1);
-                  if (var11.method23448(Blocks.CACTUS)) {
+                  if (var11.isIn(Blocks.CACTUS)) {
                      return Class2163.field14197;
                   }
 
-                  if (var11.method23448(Blocks.field37069)) {
+                  if (var11.isIn(Blocks.field37069)) {
                      return Class2163.field14199;
                   }
 
@@ -483,7 +482,7 @@ public class Class6762 extends Class6764 {
                      return Class2163.field14195;
                   }
 
-                  if (var0.getFluidState(var1).method23486(Class8953.field40469)) {
+                  if (var0.getFluidState(var1).method23486(FluidTags.field40469)) {
                      return Class2163.field14192;
                   }
                }
@@ -497,24 +496,24 @@ public class Class6762 extends Class6764 {
    public static Class2163 method20635(IBlockReader var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
       Block var5 = var4.getBlock();
-      Class8649 var6 = var4.method23384();
+      Class8649 var6 = var4.getMaterial();
       if (var4.isAir()) {
          return Class2163.field14185;
-      } else if (var4.method23446(BlockTags.field32768) || var4.method23448(Blocks.LILY_PAD)) {
+      } else if (var4.method23446(BlockTags.field32768) || var4.isIn(Blocks.LILY_PAD)) {
          return Class2163.field14188;
-      } else if (var4.method23448(Blocks.CACTUS)) {
+      } else if (var4.isIn(Blocks.CACTUS)) {
          return Class2163.field14198;
-      } else if (var4.method23448(Blocks.field37069)) {
+      } else if (var4.isIn(Blocks.field37069)) {
          return Class2163.field14200;
-      } else if (var4.method23448(Blocks.field37119)) {
+      } else if (var4.isIn(Blocks.field37119)) {
          return Class2163.field14206;
-      } else if (var4.method23448(Blocks.COCOA)) {
+      } else if (var4.isIn(Blocks.COCOA)) {
          return Class2163.field14207;
       } else {
          FluidState var7 = var0.getFluidState(var1);
-         if (var7.method23486(Class8953.field40469)) {
+         if (var7.method23486(FluidTags.field40469)) {
             return Class2163.field14191;
-         } else if (var7.method23486(Class8953.field40470)) {
+         } else if (var7.method23486(FluidTags.field40470)) {
             return Class2163.field14190;
          } else if (method20636(var4)) {
             return Class2163.field14196;
@@ -528,8 +527,8 @@ public class Class6762 extends Class6764 {
             return Class2163.field14193;
          } else if (var5 instanceof Class3465) {
             return Class2163.field14205;
-         } else if (!var5.method11540(BlockTags.field32771)
-            && !var5.method11540(BlockTags.field32764)
+         } else if (!var5.isIn(BlockTags.field32771)
+            && !var5.isIn(BlockTags.field32764)
             && (!(var5 instanceof Class3199) || var4.<Boolean>method23463(Class3199.field18486))) {
             return var4.method23440(var0, var1, Class1947.field12614) ? Class2163.field14185 : Class2163.field14184;
          } else {
@@ -540,8 +539,8 @@ public class Class6762 extends Class6764 {
 
    private static boolean method20636(BlockState var0) {
       return var0.method23446(BlockTags.field32798)
-         || var0.method23448(Blocks.LAVA)
-         || var0.method23448(Blocks.field36890)
+         || var0.isIn(Blocks.LAVA)
+         || var0.isIn(Blocks.field36890)
          || Class3244.method11655(var0);
    }
 }

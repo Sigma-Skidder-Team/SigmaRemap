@@ -50,8 +50,8 @@ public class Class1032 extends Class1031 {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
    }
 
    @Override
@@ -60,8 +60,8 @@ public class Class1032 extends Class1031 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
    }
 
    @Override
@@ -70,15 +70,15 @@ public class Class1032 extends Class1031 {
    }
 
    @Override
-   public boolean method3345(Entity var1) {
+   public boolean isOnSameTeam(Entity var1) {
       if (var1 != null) {
          if (var1 == this) {
             return true;
-         } else if (!super.method3345(var1)) {
+         } else if (!super.isOnSameTeam(var1)) {
             if (var1 instanceof Class1100) {
-               return this.method3345(((Class1100)var1).method5270());
+               return this.isOnSameTeam(((Class1100)var1).method5270());
             } else {
-               return var1 instanceof LivingEntity && ((LivingEntity)var1).method3089() == Class7809.field33508
+               return var1 instanceof LivingEntity && ((LivingEntity)var1).getCreatureAttribute() == CreatureAttribute.field33508
                   ? this.getTeam() == null && var1.getTeam() == null
                   : false;
             }

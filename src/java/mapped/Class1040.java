@@ -41,8 +41,8 @@ public class Class1040 extends Class1038 implements Class1041 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       Class7921.field33913
          .encodeStart(NBTDynamicOps.INSTANCE, this.method4674())
          .resultOrPartial(LOGGER::error)
@@ -55,17 +55,17 @@ public class Class1040 extends Class1038 implements Class1041 {
          var1.put("Gossips", this.field5773);
       }
 
-      var1.method102("ConversionTime", !this.method4667() ? -1 : this.field5771);
+      var1.putInt("ConversionTime", !this.method4667() ? -1 : this.field5771);
       if (this.field5772 != null) {
          var1.method104("ConversionPlayer", this.field5772);
       }
 
-      var1.method102("Xp", this.field5775);
+      var1.putInt("Xp", this.field5775);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("VillagerData", 10)) {
          DataResult<Class7921> var4 = Class7921.field33913.parse(new Dynamic<>(NBTDynamicOps.INSTANCE, var1.method116("VillagerData")));
          var4.resultOrPartial(LOGGER::error).ifPresent(this::method4673);
@@ -106,7 +106,7 @@ public class Class1040 extends Class1038 implements Class1041 {
       ItemStack var5 = var1.getHeldItem(var2);
       if (var5.getItem() != Items.GOLDEN_APPLE) {
          return super.method4285(var1, var2);
-      } else if (!this.method3033(Effects.WEAKNESS)) {
+      } else if (!this.isPotionActive(Effects.WEAKNESS)) {
          return ActionResultType.field14819;
       } else {
          if (!var1.abilities.isCreativeMode) {
@@ -117,7 +117,7 @@ public class Class1040 extends Class1038 implements Class1041 {
             this.method4668(var1.getUniqueID(), this.rand.nextInt(2401) + 3600);
          }
 
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       }
    }
 
@@ -132,27 +132,27 @@ public class Class1040 extends Class1038 implements Class1041 {
    }
 
    public boolean method4667() {
-      return this.method3210().<Boolean>method35445(field5769);
+      return this.getDataManager().<Boolean>method35445(field5769);
    }
 
    private void method4668(UUID var1, int var2) {
       this.field5772 = var1;
       this.field5771 = var2;
-      this.method3210().method35446(field5769, true);
+      this.getDataManager().method35446(field5769, true);
       this.removeEffects(Effects.WEAKNESS);
-      this.method3035(new Class2023(Effects.STRENGTH, var2, Math.min(this.world.method6997().getId() - 1, 0)));
-      this.world.method6786(this, (byte)16);
+      this.addPotionEffect(new EffectInstance(Effects.STRENGTH, var2, Math.min(this.world.method6997().getId() - 1, 0)));
+      this.world.setEntityState(this, (byte)16);
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 16) {
-         super.method2866(var1);
-      } else if (!this.method3245()) {
+         super.handleStatusUpdate(var1);
+      } else if (!this.isSilent()) {
          this.world
             .method6745(
                this.getPosX(),
-               this.method3442(),
+               this.getPosYEye(),
                this.getPosZ(),
                SoundEvents.field27301,
                this.method2864(),
@@ -166,10 +166,10 @@ public class Class1040 extends Class1038 implements Class1041 {
    private void method4669(ServerWorld var1) {
       Class1042 var4 = this.<Class1042>method4292(EntityType.field41098, false);
 
-      for (Class2106 var8 : Class2106.values()) {
-         ItemStack var9 = this.method2943(var8);
+      for (EquipmentSlotType var8 : EquipmentSlotType.values()) {
+         ItemStack var9 = this.getItemStackFromSlot(var8);
          if (!var9.isEmpty()) {
-            if (!Class7858.method26334(var9)) {
+            if (!EnchantmentHelper.method26334(var9)) {
                double var10 = (double)this.method4269(var8);
                if (var10 > 1.0) {
                   this.method3302(var9);
@@ -199,8 +199,8 @@ public class Class1040 extends Class1038 implements Class1041 {
          }
       }
 
-      var4.method3035(new Class2023(Effects.NAUSEA, 200, 0));
-      if (!this.method3245()) {
+      var4.addPotionEffect(new EffectInstance(Effects.NAUSEA, 200, 0));
+      if (!this.isSilent()) {
          var1.method6869((PlayerEntity)null, 1027, this.getPosition(), 0);
       }
    }
@@ -231,8 +231,8 @@ public class Class1040 extends Class1038 implements Class1041 {
    }
 
    @Override
-   public float method3100() {
-      return !this.method3005()
+   public float getSoundPitch() {
+      return !this.isChild()
          ? (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F
          : (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 2.0F;
    }

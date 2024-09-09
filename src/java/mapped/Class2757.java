@@ -28,12 +28,12 @@ public class Class2757 extends Class2595 {
             double var6 = var3.getPosX() - this.field17302.getPosX();
             double var8 = var3.getPosZ() - this.field17302.getPosZ();
             this.field17302.rotationYaw = -((float) MathHelper.method37814(var6, var8)) * (180.0F / (float)Math.PI);
-            this.field17302.field4965 = this.field17302.rotationYaw;
+            this.field17302.renderYawOffset = this.field17302.rotationYaw;
          }
       } else {
-         Vector3d var10 = this.field17302.getVec();
+         Vector3d var10 = this.field17302.getMotion();
          this.field17302.rotationYaw = -((float) MathHelper.method37814(var10.x, var10.z)) * (180.0F / (float)Math.PI);
-         this.field17302.field4965 = this.field17302.rotationYaw;
+         this.field17302.renderYawOffset = this.field17302.rotationYaw;
       }
    }
 }

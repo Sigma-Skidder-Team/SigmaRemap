@@ -55,7 +55,7 @@ public abstract class Class1236 extends Widget {
 
    private void method5817(double var1) {
       double var5 = this.field6584;
-      this.field6584 = MathHelper.method37778(var1, 0.0, 1.0);
+      this.field6584 = MathHelper.clamp(var1, 0.0, 1.0);
       if (var5 != this.field6584) {
          this.method5812();
       }

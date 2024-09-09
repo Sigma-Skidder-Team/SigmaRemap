@@ -11,7 +11,7 @@ public class Class260 extends Class219<Class1021, Class2878<Class1021>> {
    }
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, Class1021 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      if (!var4.method3342() && var4.method4531()) {
+      if (!var4.isInvisible() && var4.method4531()) {
          var1.push();
          this.method825().method11197().method22682(var1);
          float var13 = 0.625F;

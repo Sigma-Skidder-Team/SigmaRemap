@@ -21,7 +21,7 @@ import java.util.function.Predicate;
 
 public class Class1010 extends Class1009 implements IAngerable {
    private static final UUID field5645 = UUID.fromString("020E0DFB-87AE-4653-9556-831010E291A0");
-   private static final Class9689 field5646 = new Class9689(field5645, "Attacking speed boost", 0.15F, AttributeModifierOperation.ADDITION);
+   private static final AttributeModifier field5646 = new AttributeModifier(field5645, "Attacking speed boost", 0.15F, AttributeModifierOperation.ADDITION);
    private static final DataParameter<Optional<BlockState>> field5647 = EntityDataManager.<Optional<BlockState>>createKey(Class1010.class, DataSerializers.field33397);
    private static final DataParameter<Boolean> field5648 = EntityDataManager.<Boolean>createKey(Class1010.class, DataSerializers.field33398);
    private static final DataParameter<Boolean> field5649 = EntityDataManager.<Boolean>createKey(Class1010.class, DataSerializers.field33398);
@@ -65,7 +65,7 @@ public class Class1010 extends Class1009 implements IAngerable {
    @Override
    public void method4233(LivingEntity var1) {
       super.method4233(var1);
-      Class9805 var4 = this.method3085(Attributes.MOVEMENT_SPEED);
+      ModifiableAttributeInstance var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
       if (var1 != null) {
          this.field5652 = this.ticksExisted;
          this.dataManager.method35446(field5648, true);
@@ -116,24 +116,24 @@ public class Class1010 extends Class1009 implements IAngerable {
    public void method4351() {
       if (this.ticksExisted >= this.field5651 + 400) {
          this.field5651 = this.ticksExisted;
-         if (!this.method3245()) {
-            this.world.method6745(this.getPosX(), this.method3442(), this.getPosZ(), SoundEvents.field26549, this.method2864(), 2.5F, 1.0F, false);
+         if (!this.isSilent()) {
+            this.world.method6745(this.getPosX(), this.getPosYEye(), this.getPosZ(), SoundEvents.field26549, this.method2864(), 2.5F, 1.0F, false);
          }
       }
    }
 
    @Override
-   public void method3155(DataParameter<?> var1) {
+   public void notifyDataManagerChange(DataParameter<?> var1) {
       if (field5648.equals(var1) && this.method4359() && this.world.isRemote) {
          this.method4351();
       }
 
-      super.method3155(var1);
+      super.notifyDataManagerChange(var1);
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       BlockState var4 = this.method4357();
       if (var4 != null) {
          var1.put("carriedBlockState", Class8354.method29287(var4));
@@ -143,8 +143,8 @@ public class Class1010 extends Class1009 implements IAngerable {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       BlockState var4 = null;
       if (var1.contains("carriedBlockState", 10)) {
          var4 = Class8354.method29285(var1.getCompound("carriedBlockState"));
@@ -160,32 +160,32 @@ public class Class1010 extends Class1009 implements IAngerable {
    private boolean method4352(PlayerEntity var1) {
       ItemStack var4 = var1.inventory.field5440.get(3);
       if (var4.getItem() != Blocks.field36589.method11581()) {
-         Vector3d var5 = var1.method3281(1.0F).method11333();
-         Vector3d var6 = new Vector3d(this.getPosX() - var1.getPosX(), this.method3442() - var1.method3442(), this.getPosZ() - var1.getPosZ());
-         double var7 = var6.method11348();
+         Vector3d var5 = var1.getLook(1.0F).method11333();
+         Vector3d var6 = new Vector3d(this.getPosX() - var1.getPosX(), this.getPosYEye() - var1.getPosYEye(), this.getPosZ() - var1.getPosZ());
+         double var7 = var6.length();
          var6 = var6.method11333();
-         double var9 = var5.method11334(var6);
-         return !(var9 > 1.0 - 0.025 / var7) ? false : var1.method3135(this);
+         double var9 = var5.dotProduct(var6);
+         return !(var9 > 1.0 - 0.025 / var7) ? false : var1.canEntityBeSeen(this);
       } else {
          return false;
       }
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return 2.55F;
    }
 
    @Override
-   public void method2871() {
+   public void livingEntity() {
       if (this.world.isRemote) {
          for (int var3 = 0; var3 < 2; var3++) {
             this.world
-               .method6746(
+               .addParticle(
                   ParticleTypes.field34090,
-                  this.method3438(0.5),
-                  this.method3441() - 0.25,
-                  this.method3445(0.5),
+                  this.getPosXRandom(0.5),
+                  this.getPosYRandom() - 0.25,
+                  this.getPosZRandom(0.5),
                   (this.rand.nextDouble() - 0.5) * 2.0,
                   -this.rand.nextDouble(),
                   (this.rand.nextDouble() - 0.5) * 2.0
@@ -193,12 +193,12 @@ public class Class1010 extends Class1009 implements IAngerable {
          }
       }
 
-      this.field4981 = false;
+      this.isJumping = false;
       if (!this.world.isRemote) {
          this.method4366((ServerWorld)this.world, true);
       }
 
-      super.method2871();
+      super.livingEntity();
    }
 
    @Override
@@ -231,7 +231,7 @@ public class Class1010 extends Class1009 implements IAngerable {
    }
 
    private boolean method4354(Entity var1) {
-      Vector3d var4 = new Vector3d(this.getPosX() - var1.getPosX(), this.method3440(0.5) - var1.method3442(), this.getPosZ() - var1.getPosZ());
+      Vector3d var4 = new Vector3d(this.getPosX() - var1.getPosX(), this.getPosYHeight(0.5) - var1.getPosYEye(), this.getPosZ() - var1.getPosZ());
       var4 = var4.method11333();
       double var5 = 16.0;
       double var7 = this.getPosX() + (this.rand.nextDouble() - 0.5) * 8.0 - var4.x * 16.0;
@@ -243,18 +243,18 @@ public class Class1010 extends Class1009 implements IAngerable {
    private boolean method4355(double var1, double var3, double var5) {
       BlockPos.Mutable var9 = new BlockPos.Mutable(var1, var3, var5);
 
-      while (var9.getY() > 0 && !this.world.getBlockState(var9).method23384().method31087()) {
+      while (var9.getY() > 0 && !this.world.getBlockState(var9).getMaterial().method31087()) {
          var9.method8379(Direction.DOWN);
       }
 
       BlockState var10 = this.world.getBlockState(var9);
-      boolean var11 = var10.method23384().method31087();
-      boolean var12 = var10.method23449().method23486(Class8953.field40469);
+      boolean var11 = var10.getMaterial().method31087();
+      boolean var12 = var10.method23449().method23486(FluidTags.field40469);
       if (var11 && !var12) {
-         boolean var13 = this.method3168(var1, var3, var5, true);
-         if (var13 && !this.method3245()) {
+         boolean var13 = this.attemptTeleport(var1, var3, var5, true);
+         if (var13 && !this.isSilent()) {
             this.world.method6743((PlayerEntity)null, this.prevPosX, this.prevPosY, this.prevPosZ, SoundEvents.field26550, this.method2864(), 1.0F, 1.0F);
-            this.method2863(SoundEvents.field26550, 1.0F, 1.0F);
+            this.playSound(SoundEvents.field26550, 1.0F, 1.0F);
          }
 
          return var13;
@@ -279,11 +279,11 @@ public class Class1010 extends Class1009 implements IAngerable {
    }
 
    @Override
-   public void method3054(DamageSource var1, int var2, boolean var3) {
-      super.method3054(var1, var2, var3);
+   public void dropSpecialItems(DamageSource var1, int var2, boolean var3) {
+      super.dropSpecialItems(var1, var2, var3);
       BlockState var6 = this.method4357();
       if (var6 != null) {
-         this.method3300(var6.getBlock());
+         this.entityDropItem(var6.getBlock());
       }
    }
 
@@ -297,12 +297,12 @@ public class Class1010 extends Class1009 implements IAngerable {
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (this.method2760(var1)) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (this.isInvulnerableTo(var1)) {
          return false;
       } else if (!(var1 instanceof Class8653)) {
-         boolean var6 = super.method2741(var1, var2);
-         if (!this.world.isRemote() && !(var1.method31109() instanceof LivingEntity) && this.rand.nextInt(10) != 0) {
+         boolean var6 = super.attackEntityFrom(var1, var2);
+         if (!this.world.isRemote() && !(var1.getTrueSource() instanceof LivingEntity) && this.rand.nextInt(10) != 0) {
             this.method4353();
          }
 

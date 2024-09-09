@@ -14,7 +14,7 @@ import net.minecraft.world.World;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class PlayerInventory implements Class920, INameable {
+public class PlayerInventory implements IInventory, INameable {
    public final NonNullList<ItemStack> field5439 = NonNullList.<ItemStack>method68(36, ItemStack.EMPTY);
    public final NonNullList<ItemStack> field5440 = NonNullList.<ItemStack>method68(4, ItemStack.EMPTY);
    public final NonNullList<ItemStack> field5441 = NonNullList.<ItemStack>method68(1, ItemStack.EMPTY);
@@ -41,7 +41,7 @@ public class PlayerInventory implements Class920, INameable {
          && this.method4031(var1, var2)
          && var1.method32114()
          && var1.getCount() < var1.method32113()
-         && var1.getCount() < this.method3630();
+         && var1.getCount() < this.getInventoryStackLimit();
    }
 
    private boolean method4031(ItemStack var1, ItemStack var2) {
@@ -153,7 +153,7 @@ public class PlayerInventory implements Class920, INameable {
       }
    }
 
-   public int method4040(Predicate<ItemStack> var1, int var2, Class920 var3) {
+   public int method4040(Predicate<ItemStack> var1, int var2, IInventory var3) {
       int var6 = 0;
       boolean var7 = var2 == 0;
       var6 += Class7920.method26568(this, var1, var2 - var6, var7);
@@ -178,14 +178,14 @@ public class PlayerInventory implements Class920, INameable {
    private int method4042(int var1, ItemStack var2) {
       Item var5 = var2.getItem();
       int var6 = var2.getCount();
-      ItemStack var7 = this.method3618(var1);
+      ItemStack var7 = this.getStackInSlot(var1);
       if (var7.isEmpty()) {
          var7 = new ItemStack(var5, 0);
          if (var2.method32141()) {
             var7.method32148(var2.method32142().method79());
          }
 
-         this.method3621(var1, var7);
+         this.setInventorySlotContents(var1, var7);
       }
 
       int var8 = var6;
@@ -193,8 +193,8 @@ public class PlayerInventory implements Class920, INameable {
          var8 = var7.method32113() - var7.getCount();
       }
 
-      if (var8 > this.method3630() - var7.getCount()) {
-         var8 = this.method3630() - var7.getCount();
+      if (var8 > this.getInventoryStackLimit() - var7.getCount()) {
+         var8 = this.getInventoryStackLimit() - var7.getCount();
       }
 
       if (var8 != 0) {
@@ -208,9 +208,9 @@ public class PlayerInventory implements Class920, INameable {
    }
 
    public int method4043(ItemStack var1) {
-      if (this.method4030(this.method3618(this.currentItem), var1)) {
+      if (this.method4030(this.getStackInSlot(this.currentItem), var1)) {
          return this.currentItem;
-      } else if (this.method4030(this.method3618(40), var1)) {
+      } else if (this.method4030(this.getStackInSlot(40), var1)) {
          return 40;
       } else {
          for (int var4 = 0; var4 < this.field5439.size(); var4++) {
@@ -300,16 +300,16 @@ public class PlayerInventory implements Class920, INameable {
                break;
             }
 
-            int var6 = var2.method32113() - this.method3618(var5).getCount();
+            int var6 = var2.method32113() - this.getStackInSlot(var5).getCount();
             if (this.method4046(var5, var2.method32106(var6))) {
-               ((ServerPlayerEntity)this.field5444).field4855.sendPacket(new SSetSlotPacket(-2, var5, this.method3618(var5)));
+               ((ServerPlayerEntity)this.field5444).field4855.sendPacket(new SSetSlotPacket(-2, var5, this.getStackInSlot(var5)));
             }
          }
       }
    }
 
    @Override
-   public ItemStack method3619(int var1, int var2) {
+   public ItemStack decrStackSize(int var1, int var2) {
       NonNullList var5 = null;
 
       for (NonNullList var7 : this.field5442) {
@@ -336,7 +336,7 @@ public class PlayerInventory implements Class920, INameable {
    }
 
    @Override
-   public ItemStack method3620(int var1) {
+   public ItemStack removeStackFromSlot(int var1) {
       NonNullList var4 = null;
 
       for (NonNullList var6 : this.field5442) {
@@ -358,7 +358,7 @@ public class PlayerInventory implements Class920, INameable {
    }
 
    @Override
-   public void method3621(int var1, ItemStack var2) {
+   public void setInventorySlotContents(int var1, ItemStack var2) {
       NonNullList var5 = null;
 
       for (NonNullList var7 : this.field5442) {
@@ -432,12 +432,12 @@ public class PlayerInventory implements Class920, INameable {
    }
 
    @Override
-   public int method3629() {
+   public int getSizeInventory() {
       return this.field5439.size() + this.field5440.size() + this.field5441.size();
    }
 
    @Override
-   public boolean method3617() {
+   public boolean isEmpty() {
       for (ItemStack var4 : this.field5439) {
          if (!var4.isEmpty()) {
             return false;
@@ -460,7 +460,7 @@ public class PlayerInventory implements Class920, INameable {
    }
 
    @Override
-   public ItemStack method3618(int var1) {
+   public ItemStack getStackInSlot(int var1) {
       NonNullList var4 = null;
 
       for (NonNullList var6 : this.field5442) {
@@ -493,9 +493,9 @@ public class PlayerInventory implements Class920, INameable {
 
          for (int var5 = 0; var5 < this.field5440.size(); var5++) {
             ItemStack var6 = this.field5440.get(var5);
-            if ((!var1.method31141() || !var6.getItem().method11748()) && var6.getItem() instanceof Class3279) {
+            if ((!var1.method31141() || !var6.getItem().method11748()) && var6.getItem() instanceof ArmorItem) {
                int var7 = var5;
-               var6.method32121((int)var2, this.field5444, var1x -> var1x.method3184(Class2106.method8777(Class1969.field12837, var7)));
+               var6.method32121((int)var2, this.field5444, var1x -> var1x.sendBreakAnimation(EquipmentSlotType.method8777(Class1969.field12837, var7)));
             }
          }
       }
@@ -514,7 +514,7 @@ public class PlayerInventory implements Class920, INameable {
    }
 
    @Override
-   public void method3622() {
+   public void markDirty() {
       this.field5446++;
    }
 
@@ -531,7 +531,7 @@ public class PlayerInventory implements Class920, INameable {
    }
 
    @Override
-   public boolean method3623(PlayerEntity var1) {
+   public boolean isUsableByPlayer(PlayerEntity var1) {
       return !this.field5444.removed ? !(var1.getDistanceSq(this.field5444) > 64.0) : false;
    }
 
@@ -560,8 +560,8 @@ public class PlayerInventory implements Class920, INameable {
    }
 
    public void method4060(PlayerInventory var1) {
-      for (int var4 = 0; var4 < this.method3629(); var4++) {
-         this.method3621(var4, var1.method3618(var4));
+      for (int var4 = 0; var4 < this.getSizeInventory(); var4++) {
+         this.setInventorySlotContents(var4, var1.getStackInSlot(var4));
       }
 
       this.currentItem = var1.currentItem;

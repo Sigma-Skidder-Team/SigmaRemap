@@ -23,7 +23,7 @@ public abstract class Class2914 extends Class2898<Class4712> {
    public boolean method11250(Class1660 var1, Random var2, BlockPos var3, BlockState var4) {
       BlockPos var7 = var3.up();
       BlockState var8 = var1.getBlockState(var3);
-      if ((var8.method23448(Blocks.WATER) || var8.method23446(BlockTags.field32786)) && var1.getBlockState(var7).method23448(Blocks.WATER)) {
+      if ((var8.isIn(Blocks.WATER) || var8.method23446(BlockTags.field32786)) && var1.getBlockState(var7).isIn(Blocks.WATER)) {
          var1.setBlockState(var3, var4, 3);
          if (!(var2.nextFloat() < 0.25F)) {
             if (var2.nextFloat() < 0.05F) {
@@ -36,7 +36,7 @@ public abstract class Class2914 extends Class2898<Class4712> {
          for (Direction var10 : Class76.field161) {
             if (var2.nextFloat() < 0.2F) {
                BlockPos var11 = var3.method8349(var10);
-               if (var1.getBlockState(var11).method23448(Blocks.WATER)) {
+               if (var1.getBlockState(var11).isIn(Blocks.WATER)) {
                   BlockState var12 = BlockTags.field32784.method24919(var2).method11579().method23465(Class3229.field18669, var10);
                   var1.setBlockState(var11, var12, 2);
                }

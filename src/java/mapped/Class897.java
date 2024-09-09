@@ -37,12 +37,12 @@ public class Class897 extends Entity implements Class889 {
 
    public void method3522(ItemStack var1) {
       if (var1.getItem() != Items.field37979 || var1.method32141()) {
-         this.method3210().method35446(field5132, Util.<ItemStack>make(var1.copy(), var0 -> var0.method32180(1)));
+         this.getDataManager().method35446(field5132, Util.<ItemStack>make(var1.copy(), var0 -> var0.method32180(1)));
       }
    }
 
    private ItemStack method3523() {
-      return this.method3210().<ItemStack>method35445(field5132);
+      return this.getDataManager().<ItemStack>method35445(field5132);
    }
 
    @Override
@@ -53,7 +53,7 @@ public class Class897 extends Entity implements Class889 {
 
    @Override
    public void registerData() {
-      this.method3210().register(field5132, ItemStack.EMPTY);
+      this.getDataManager().register(field5132, ItemStack.EMPTY);
    }
 
    @Override
@@ -73,7 +73,7 @@ public class Class897 extends Entity implements Class889 {
       double var7 = (double)var1.getZ();
       double var9 = var4 - this.getPosX();
       double var11 = var7 - this.getPosZ();
-      float var13 = MathHelper.method37766(var9 * var9 + var11 * var11);
+      float var13 = MathHelper.sqrt(var9 * var9 + var11 * var11);
       if (!(var13 > 12.0F)) {
          this.field5133 = var4;
          this.field5134 = (double)var6;
@@ -90,9 +90,9 @@ public class Class897 extends Entity implements Class889 {
 
    @Override
    public void method3325(double var1, double var3, double var5) {
-      this.method3435(var1, var3, var5);
+      this.setMotion(var1, var3, var5);
       if (this.prevRotationPitch == 0.0F && this.prevRotationYaw == 0.0F) {
-         float var9 = MathHelper.method37766(var1 * var1 + var5 * var5);
+         float var9 = MathHelper.sqrt(var1 * var1 + var5 * var5);
          this.rotationYaw = (float)(MathHelper.method37814(var1, var5) * 180.0F / (float)Math.PI);
          this.rotationPitch = (float)(MathHelper.method37814(var3, (double)var9) * 180.0F / (float)Math.PI);
          this.prevRotationYaw = this.rotationYaw;
@@ -103,11 +103,11 @@ public class Class897 extends Entity implements Class889 {
    @Override
    public void tick() {
       super.tick();
-      Vector3d var3 = this.getVec();
+      Vector3d var3 = this.getMotion();
       double var4 = this.getPosX() + var3.x;
       double var6 = this.getPosY() + var3.y;
       double var8 = this.getPosZ() + var3.z;
-      float var10 = MathHelper.method37766(method3234(var3));
+      float var10 = MathHelper.sqrt(horizontalMag(var3));
       this.rotationPitch = ProjectileEntity.method3469(this.prevRotationPitch, (float)(MathHelper.method37814(var3.y, (double)var10) * 180.0F / (float)Math.PI));
       this.rotationYaw = ProjectileEntity.method3469(this.prevRotationYaw, (float)(MathHelper.method37814(var3.x, var3.z) * 180.0F / (float)Math.PI));
       if (!this.world.isRemote) {
@@ -124,13 +124,13 @@ public class Class897 extends Entity implements Class889 {
 
          int var22 = !(this.getPosY() < this.field5134) ? -1 : 1;
          var3 = new Vector3d(Math.cos((double)var17) * var18, var20 + ((double)var22 - var20) * 0.015F, Math.sin((double)var17) * var18);
-         this.method3434(var3);
+         this.setMotion(var3);
       }
 
       float var11 = 0.25F;
-      if (!this.method3250()) {
+      if (!this.isInWater()) {
          this.world
-            .method6746(
+            .addParticle(
                ParticleTypes.field34090,
                var4 - var3.x * 0.25 + this.rand.nextDouble() * 0.6 - 0.3,
                var6 - var3.y * 0.25 - 0.5,
@@ -142,7 +142,7 @@ public class Class897 extends Entity implements Class889 {
       } else {
          for (int var23 = 0; var23 < 4; var23++) {
             this.world
-               .method6746(
+               .addParticle(
                   ParticleTypes.field34052,
                   var4 - var3.x * 0.25,
                   var6 - var3.y * 0.25,
@@ -155,24 +155,24 @@ public class Class897 extends Entity implements Class889 {
       }
 
       if (this.world.isRemote) {
-         this.method3446(var4, var6, var8);
+         this.setRawPosition(var4, var6, var8);
       } else {
          this.setPosition(var4, var6, var8);
          this.field5136++;
          if (this.field5136 > 80 && !this.world.isRemote) {
-            this.method2863(SoundEvents.field26543, 1.0F, 1.0F);
-            this.method2904();
+            this.playSound(SoundEvents.field26543, 1.0F, 1.0F);
+            this.remove();
             if (!this.field5137) {
                this.world.playEvent(2003, this.getPosition(), 0);
             } else {
-               this.world.method6916(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), this.method3509()));
+               this.world.addEntity(new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), this.method3509()));
             }
          }
       }
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
       ItemStack var4 = this.method3523();
       if (!var4.isEmpty()) {
          var1.put("Item", var4.method32112(new CompoundNBT()));
@@ -180,7 +180,7 @@ public class Class897 extends Entity implements Class889 {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       ItemStack var4 = ItemStack.method32104(var1.getCompound("Item"));
       this.method3522(var4);
    }
@@ -196,7 +196,7 @@ public class Class897 extends Entity implements Class889 {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this);
    }
 }

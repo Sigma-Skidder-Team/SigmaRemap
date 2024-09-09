@@ -71,8 +71,8 @@ public class HypixelFly extends Module {
 
     @Override
     public void onDisable() {
-        double var3 = Class9567.method37075();
-        Class9567.method37090(var3 * 0.7);
+        double var3 = MovementUtils.method37075();
+        MovementUtils.method37090(var3 * 0.7);
         this.field23561 = 1.0F;
         mc.timer.timerSpeed = 1.0F;
         this.field23563 = -1;
@@ -91,7 +91,7 @@ public class HypixelFly extends Module {
     @Class5631
     public void method16258(SendPacketEvent var1) {
         if (ColorUtils.method17716()) {
-            Packet var4 = var1.method13932();
+            Packet var4 = var1.getPacket();
             if (var4 instanceof CClickWindowPacket) {
                 CClickWindowPacket var5 = (CClickWindowPacket) var4;
                 this.field23559 = var5.getActionNumber();
@@ -107,7 +107,7 @@ public class HypixelFly extends Module {
             Packet var4 = var1.getPacket();
             if (this.isEnabled()) {
                 if (var4 instanceof SPlayerPositionLookPacket) {
-                    this.method16004().method16000();
+                    this.access().method16000();
                 }
             }
         }
@@ -119,11 +119,11 @@ public class HypixelFly extends Module {
     }
 
     @EventTarget
-    public void method16261(Class4399 var1) {
+    public void method16261(EventUpdate var1) {
         if (var1.method13921()) {
             for (double var7 : ColorUtils.method17747()) {
-                if ((double) ((int) var1.method13911()) - var1.method13911() + var7 == 0.0) {
-                    var1.method13920(true);
+                if ((double) ((int) var1.getY()) - var1.getY() + var7 == 0.0) {
+                    var1.setGround(true);
                     break;
                 }
             }
@@ -133,7 +133,7 @@ public class HypixelFly extends Module {
     }
 
     @EventTarget
-    public void method16262(Class4435 var1) {
+    public void method16262(EventMove var1) {
         String var4 = this.getStringSettingValueByName("Mode");
         float var5 = this.getNumberValueBySettingName("Timer Boost");
         this.field23561 = (float) ((double) this.field23561 - 0.01);
@@ -156,20 +156,20 @@ public class HypixelFly extends Module {
                     this.field23562 = !this.field23562;
                     break;
                 case "Fast":
-                    var1.method13995(Class9567.method37080());
-                    Class9567.method37088(var1, var28);
+                    var1.setY(MovementUtils.method37080());
+                    MovementUtils.method37088(var1, var28);
                     this.field23562 = !this.field23562;
-                    this.field23560 = 0.51 + (double) this.getNumberValueBySettingName("Speed") + 0.015 * (double) Class9567.method37078();
+                    this.field23560 = 0.51 + (double) this.getNumberValueBySettingName("Speed") + 0.015 * (double) MovementUtils.method37078();
                     break;
                 case "NoDmg":
-                    var1.method13995(Class9567.method37080());
-                    Class9567.method37088(var1, var28);
+                    var1.setY(MovementUtils.method37080());
+                    MovementUtils.method37088(var1, var28);
                     this.field23562 = !this.field23562;
                     this.field23560 = var28 * 0.987;
                     break;
                 case "Funcraft":
-                    var1.method13995(Class9567.method37080());
-                    Class9567.method37088(var1, var28);
+                    var1.setY(MovementUtils.method37080());
+                    MovementUtils.method37088(var1, var28);
                     this.field23562 = !this.field23562;
                     this.field23560 = 0.51 + (double) this.getNumberValueBySettingName("Speed");
             }
@@ -184,17 +184,17 @@ public class HypixelFly extends Module {
                 this.field23560 = 0.0;
             }
 
-            double var10 = var4.equals("Basic") ? Class9567.method37076() : Class9567.method37076() - 0.008;
+            double var10 = var4.equals("Basic") ? MovementUtils.method37076() : MovementUtils.method37076() - 0.008;
             if (this.field23560 < var10) {
                 this.field23560 = var10;
             } else if (!ColorUtils.method17686()) {
                 this.field23560 = var10;
             }
 
-            Class9567.method37088(var1, this.field23560);
+            MovementUtils.method37088(var1, this.field23560);
             if (!mc.player.onGround || !ColorUtils.method17730(mc.player, 0.001F)) {
                 this.field23563++;
-                var1.method13995(0.0);
+                var1.setY(0.0);
                 ColorUtils.method17725(0.0);
                 if (this.field23563 % 5 < 4) {
                     double var12 = mc.player.getPosX();
@@ -204,12 +204,12 @@ public class HypixelFly extends Module {
                 }
             }
 
-            Vector3d var18 = mc.player.method3233(var1.method13998().method11339(0.0, -var1.method13998().getY(), 0.0));
-            double var19 = Math.abs(Math.sqrt(var18.method11349()) - this.field23560);
+            Vector3d var18 = mc.player.getAllowedMovement(var1.getVector().add(0.0, -var1.getVector().getY(), 0.0));
+            double var19 = Math.abs(Math.sqrt(var18.lengthSquared()) - this.field23560);
             boolean var21 = var19 < 1.0E-4;
             if (this.getBooleanValueFromSetttingName("No Collision") && this.field23560 > var10) {
                 List<Vector3d> var22 = new ArrayList();
-                float var23 = MathHelper.method37792(Class9567.method37086());
+                float var23 = MathHelper.method37792(MovementUtils.method37086());
                 if (var23 > 0.0F && var23 < 90.0F) {
                     var22.add(new Vector3d(1.0, 0.0, 0.0));
                     var22.add(new Vector3d(0.0, 0.0, 1.0));
@@ -232,15 +232,15 @@ public class HypixelFly extends Module {
                     var22.add(new Vector3d(-1.0, 0.0, 0.0));
                 }
 
-                var1.method13999(var18);
-                if (!var21 && mc.player.getPosY() % 1.0 > 0.1F && Class9567.isMoving()) {
+                var1.setVector(var18);
+                if (!var21 && mc.player.getPosY() % 1.0 > 0.1F && MovementUtils.isMoving()) {
                     for (Vector3d var25 : var22) {
                         var25.x = var25.x * this.field23560;
                         var25.z = var25.z * this.field23560;
-                        double var26 = Math.abs(Math.sqrt(mc.player.method3233(var25).method11349()) - this.field23560);
+                        double var26 = Math.abs(Math.sqrt(mc.player.getAllowedMovement(var25).lengthSquared()) - this.field23560);
                         var21 = var26 < 1.0E-4;
                         if (var21) {
-                            var1.method13999(var25);
+                            var1.setVector(var25);
                             break;
                         }
                     }
@@ -248,7 +248,7 @@ public class HypixelFly extends Module {
             }
 
             if (mc.gameSettings.keyBindJump.pressed) {
-                var1.method13995(0.25);
+                var1.setY(0.25);
             }
         }
     }

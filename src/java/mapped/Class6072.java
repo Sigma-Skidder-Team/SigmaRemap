@@ -6,7 +6,7 @@ import net.minecraft.item.Items;
 public class Class6072 extends Class6069 {
    private static String[] field27312;
 
-   public Class6072(Class1937 var1, Class2106... var2) {
+   public Class6072(Class1937 var1, EquipmentSlotType... var2) {
       super(var1, Class2242.field14676, var2);
    }
 

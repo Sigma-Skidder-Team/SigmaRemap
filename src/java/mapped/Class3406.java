@@ -24,14 +24,14 @@ public class Class3406 extends Block implements Class3405 {
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
       BlockState var7 = var2.getBlockState(var3.up());
       if (!var7.isAir()) {
-         var4.method3355(var1.<Boolean>method23463(field19084));
+         var4.onEnterBubbleColumnWithAirAbove(var1.<Boolean>method23463(field19084));
       } else {
          var4.method3354(var1.<Boolean>method23463(field19084));
          if (!var2.isRemote) {
             ServerWorld var8 = (ServerWorld)var2;
 
             for (int var9 = 0; var9 < 2; var9++) {
-               var8.method6939(
+               var8.spawnParticle(
                   ParticleTypes.field34099,
                   (double)var3.getX() + var2.rand.nextDouble(),
                   (double)(var3.getY() + 1),
@@ -42,7 +42,7 @@ public class Class3406 extends Block implements Class3405 {
                   0.0,
                   1.0
                );
-               var8.method6939(
+               var8.spawnParticle(
                   ParticleTypes.field34052,
                   (double)var3.getX() + var2.rand.nextDouble(),
                   (double)(var3.getY() + 1),
@@ -81,12 +81,12 @@ public class Class3406 extends Block implements Class3405 {
 
    public static boolean method12046(Class1660 var0, BlockPos var1) {
       FluidState var4 = var0.getFluidState(var1);
-      return var0.getBlockState(var1).method23448(Blocks.WATER) && var4.method23477() >= 8 && var4.method23473();
+      return var0.getBlockState(var1).isIn(Blocks.WATER) && var4.method23477() >= 8 && var4.method23473();
    }
 
    private static boolean method12047(IBlockReader var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
-      return !var4.method23448(Blocks.field37013) ? !var4.method23448(Blocks.SOUL_SAND) : var4.<Boolean>method23463(field19084);
+      return !var4.isIn(Blocks.field37013) ? !var4.isIn(Blocks.SOUL_SAND) : var4.<Boolean>method23463(field19084);
    }
 
    @Override
@@ -118,7 +118,7 @@ public class Class3406 extends Block implements Class3405 {
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var1.method23443(var4, var5)) {
          if (var2 != Direction.DOWN) {
-            if (var2 == Direction.field673 && !var3.method23448(Blocks.field37013) && method12046(var4, var6)) {
+            if (var2 == Direction.field673 && !var3.isIn(Blocks.field37013) && method12046(var4, var6)) {
                var4.method6860().method20726(var5, this, 5);
             }
          } else {
@@ -135,7 +135,7 @@ public class Class3406 extends Block implements Class3405 {
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.down());
-      return var6.method23448(Blocks.field37013) || var6.method23448(Blocks.field36890) || var6.method23448(Blocks.SOUL_SAND);
+      return var6.isIn(Blocks.field37013) || var6.isIn(Blocks.field36890) || var6.isIn(Blocks.SOUL_SAND);
    }
 
    @Override

@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 public class AtlasTexture extends Class290 implements Class288 {
    private static final Logger field1101 = LogManager.getLogger();
    /** @deprecated */
-   public static final ResourceLocation LOCATION_BLOCKS_TEXTURE = Class5830.field25539;
+   public static final ResourceLocation LOCATION_BLOCKS_TEXTURE = PlayerContainer.field25539;
    /** @deprecated */
    public static final ResourceLocation field1103 = new ResourceLocation("textures/atlas/particles.png");
    private final List<TextureAtlasSprite> field1104 = Lists.newArrayList();

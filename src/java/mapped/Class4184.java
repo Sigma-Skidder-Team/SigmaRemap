@@ -95,7 +95,7 @@ public class Class4184 extends Class4180 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       if (!var5.method38396(this.field20455)) {
          return true;
       } else {
@@ -125,7 +125,7 @@ public class Class4184 extends Class4180 {
 
    private void method12951(Random var1, Class1660 var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3);
-      if (!var6.isAir() && !var6.method23448(Blocks.VINE)) {
+      if (!var6.isAir() && !var6.isIn(Blocks.VINE)) {
          Direction var7 = Class76.field161.method247(var1);
          BlockPos var8 = var3.method8349(var7);
          BlockState var9 = var2.getBlockState(var8);
@@ -137,7 +137,7 @@ public class Class4184 extends Class4180 {
    }
 
    private void method12952(Random var1, Class1660 var2, BlockPos var3) {
-      if (var1.nextFloat() < 0.5F && var2.getBlockState(var3).method23448(Blocks.NETHERRACK) && var2.getBlockState(var3.up()).isAir()) {
+      if (var1.nextFloat() < 0.5F && var2.getBlockState(var3).isIn(Blocks.NETHERRACK) && var2.getBlockState(var3.up()).isAir()) {
          var2.setBlockState(var3.up(), Blocks.field36449.method11579().method23465(Class3465.field19306, Boolean.valueOf(true)), 3);
       }
    }
@@ -146,7 +146,7 @@ public class Class4184 extends Class4180 {
       for (int var5 = this.field20444.field45678 + 1; var5 < this.field20444.field45681; var5++) {
          for (int var6 = this.field20444.field45680 + 1; var6 < this.field20444.field45683; var6++) {
             BlockPos var7 = new BlockPos(var5, this.field20444.field45679, var6);
-            if (var2.getBlockState(var7).method23448(Blocks.NETHERRACK)) {
+            if (var2.getBlockState(var7).isIn(Blocks.NETHERRACK)) {
                this.method12954(var1, var2, var7.down());
             }
          }
@@ -203,10 +203,10 @@ public class Class4184 extends Class4180 {
 
    private boolean method12956(Class1660 var1, BlockPos var2) {
       BlockState var5 = var1.getBlockState(var2);
-      return !var5.method23448(Blocks.AIR)
-         && !var5.method23448(Blocks.field36527)
-         && !var5.method23448(Blocks.CHEST)
-         && (this.field20469 == Class2219.field14499 || !var5.method23448(Blocks.LAVA));
+      return !var5.isIn(Blocks.AIR)
+         && !var5.isIn(Blocks.field36527)
+         && !var5.isIn(Blocks.CHEST)
+         && (this.field20469 == Class2219.field14499 || !var5.isIn(Blocks.LAVA));
    }
 
    private void method12957(Random var1, Class1660 var2, BlockPos var3) {

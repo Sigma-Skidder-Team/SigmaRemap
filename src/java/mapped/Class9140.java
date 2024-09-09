@@ -48,11 +48,11 @@ public class Class9140 {
    }
 
    public static void method34124(float var0, float var1, float var2) {
-      if ((field41996.player.method3138() || field41996.player.method3418()) && field41996.player.method3250()) {
+      if ((field41996.player.isServerWorld() || field41996.player.canPassengerSteer()) && field41996.player.isInWater()) {
          double var5 = field41996.player.getPosY();
          float var7 = method34128();
          float var8 = 0.02F;
-         float var9 = (float)Class7858.method26326(field41996.player);
+         float var9 = (float) EnchantmentHelper.method26326(field41996.player);
          if (var9 > 3.0F) {
             var9 = 3.0F;
          }
@@ -63,7 +63,7 @@ public class Class9140 {
 
          if (var9 > 0.0F) {
             var7 += (0.54600006F - var7) * var9 / 3.0F;
-            var8 += (field41996.player.method2918() - var8) * var9 / 3.0F;
+            var8 += (field41996.player.getAIMoveSpeed() - var8) * var9 / 3.0F;
          }
 
          method34123(var0, var1, var2, var8);
@@ -76,7 +76,7 @@ public class Class9140 {
          }
 
          if (field41996.player.collidedHorizontally
-            && field41996.player.method3224(field42005, field42006 + 0.6F - field41996.player.getPosY() + var5, field42007)) {
+            && field41996.player.isOffsetPositionInLiquid(field42005, field42006 + 0.6F - field41996.player.getPosY() + var5, field42007)) {
             field42006 = 0.3F;
          }
       }
@@ -97,7 +97,7 @@ public class Class9140 {
                for (int var12 = var8; var12 < var9; var12++) {
                   BlockState var13 = field41996.world.getBlockState(new BlockPos(var10, var11, var12));
                   Block var14 = var13.getBlock();
-                  if (var13.method23384() == var1) {
+                  if (var13.getMaterial() == var1) {
                      return true;
                   }
                }

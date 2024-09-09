@@ -22,7 +22,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
    );
    private final Map<ResourceLocation, Class5888> field17614 = Maps.newHashMap();
 
-   private static Class5888 method11032(Class3303 var0) {
+   private static Class5888 method11032(IItemProvider var0) {
       return Class7318.method23188()
          .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4695.method14724(var0)))
          .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4687.method14706(EntityType.SHEEP.method33212())));

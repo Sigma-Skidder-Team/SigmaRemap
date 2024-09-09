@@ -27,13 +27,13 @@ public class Class235<T extends LivingEntity, M extends Class2827<T> & Class2824
    }
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      ItemStack var13 = var4.method2943(Class2106.field13736);
+      ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.field13736);
       if (!var13.isEmpty()) {
          Item var14 = var13.getItem();
          var1.push();
          var1.method35292(this.field881, this.field882, this.field883);
          boolean var15 = var4 instanceof Class1042 || var4 instanceof Class1040;
-         if (var4.method3005() && !(var4 instanceof Class1042)) {
+         if (var4.isChild() && !(var4 instanceof Class1042)) {
             float var16 = 2.0F;
             float var17 = 1.4F;
             var1.translate(0.0, 0.03125, 0.0);
@@ -67,7 +67,7 @@ public class Class235<T extends LivingEntity, M extends Class2827<T> & Class2824
 
             var1.translate(-0.5, 0.0, -0.5);
             Class5952.method18482((Direction)null, 180.0F, ((Class3251)((Class3292)var14).method11845()).method11696(), var22, var5, var1, var2, var3);
-         } else if (!(var14 instanceof Class3279) || ((Class3279)var14).method11805() != Class2106.field13736) {
+         } else if (!(var14 instanceof ArmorItem) || ((ArmorItem)var14).method11805() != EquipmentSlotType.field13736) {
             float var20 = 0.625F;
             var1.translate(0.0, -0.25, 0.0);
             var1.rotate(Vector3f.YP.rotationDegrees(180.0F));

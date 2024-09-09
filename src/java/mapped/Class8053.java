@@ -20,12 +20,12 @@ public class Class8053 {
       this(Class8840.field39936, Class8840.field39936, (Boolean)null, (Boolean)null);
    }
 
-   public boolean method27657(Class2023 var1) {
+   public boolean method27657(EffectInstance var1) {
       if (var1 != null) {
          if (!this.field34583.method32015(var1.method8629())) {
             return false;
          } else if (this.field34584.method32015(var1.method8628())) {
-            return this.field34585 != null && this.field34585 != var1.method8630() ? false : this.field34586 == null || this.field34586 == var1.method8631();
+            return this.field34585 != null && this.field34585 != var1.isAmbient() ? false : this.field34586 == null || this.field34586 == var1.method8631();
          } else {
             return false;
          }

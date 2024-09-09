@@ -17,7 +17,7 @@ public class Class2622 extends Class2595 {
    }
 
    public int method10826(AbstractGroupFishEntity var1) {
-      return 200 + var1.method3013().nextInt(200) % 20;
+      return 200 + var1.getRNG().nextInt(200) % 20;
    }
 
    @Override

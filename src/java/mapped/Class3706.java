@@ -14,12 +14,12 @@ public class Class3706 extends Class3676<Class1042> {
    }
 
    public boolean method12508(ServerWorld var1, Class1042 var2) {
-      if (var1.method6783() - this.field19770 >= 300L) {
+      if (var1.getGameTime() - this.field19770 >= 300L) {
          if (var1.rand.nextInt(2) != 0) {
             return false;
          } else {
-            this.field19770 = var1.method6783();
-            Class9378 var5 = var2.method2992().<Class9378>method21410(Class8830.field39814).get();
+            this.field19770 = var1.getGameTime();
+            Class9378 var5 = var2.getBrain().<Class9378>method21410(Class8830.field39814).get();
             return var5.method35578() == var1.getDimensionKey() && var5.method35579().method8317(var2.getPositionVec(), 1.73);
          }
       } else {
@@ -28,7 +28,7 @@ public class Class3706 extends Class3676<Class1042> {
    }
 
    public void method12502(ServerWorld var1, Class1042 var2, long var3) {
-      Class6947<Class1042> var7 = var2.method2992();
+      Brain<Class1042> var7 = var2.getBrain();
       var7.method21406(Class8830.field39845, var3);
       var7.method21410(Class8830.field39814).ifPresent(var1x -> var7.method21406(Class8830.field39825, new Class7863(var1x.method35579())));
       var2.method4694();
@@ -42,7 +42,7 @@ public class Class3706 extends Class3676<Class1042> {
    }
 
    public boolean method12499(ServerWorld var1, Class1042 var2, long var3) {
-      Optional var7 = var2.method2992().<Class9378>method21410(Class8830.field39814);
+      Optional var7 = var2.getBrain().<Class9378>method21410(Class8830.field39814);
       if (!var7.isPresent()) {
          return false;
       } else {

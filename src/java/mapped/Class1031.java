@@ -24,15 +24,15 @@ public abstract class Class1031 extends Class1025 {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field5734 = var1.getInt("SpellTicks");
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("SpellTicks", this.field5734);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("SpellTicks", this.field5734);
    }
 
    @Override
@@ -73,11 +73,11 @@ public abstract class Class1031 extends Class1025 {
          double var4 = Class2031.method8666(var3)[0];
          double var6 = Class2031.method8666(var3)[1];
          double var8 = Class2031.method8666(var3)[2];
-         float var10 = this.field4965 * (float) (Math.PI / 180.0) + MathHelper.cos((float)this.ticksExisted * 0.6662F) * 0.25F;
+         float var10 = this.renderYawOffset * (float) (Math.PI / 180.0) + MathHelper.cos((float)this.ticksExisted * 0.6662F) * 0.25F;
          float var11 = MathHelper.cos(var10);
          float var12 = MathHelper.sin(var10);
          this.world
-            .method6746(
+            .addParticle(
                ParticleTypes.field34068,
                this.getPosX() + (double)var11 * 0.6,
                this.getPosY() + 1.8,
@@ -87,7 +87,7 @@ public abstract class Class1031 extends Class1025 {
                var8
             );
          this.world
-            .method6746(
+            .addParticle(
                ParticleTypes.field34068,
                this.getPosX() - (double)var11 * 0.6,
                this.getPosY() + 1.8,

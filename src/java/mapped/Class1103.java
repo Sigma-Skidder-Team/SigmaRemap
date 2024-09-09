@@ -69,13 +69,13 @@ public class Class1103 extends Class1009 {
    }
 
    @Override
-   public void method2871() {
-      if (!this.onGround && this.getVec().y < 0.0) {
-         this.method3434(this.getVec().method11347(1.0, 0.6, 1.0));
+   public void livingEntity() {
+      if (!this.onGround && this.getMotion().y < 0.0) {
+         this.setMotion(this.getMotion().method11347(1.0, 0.6, 1.0));
       }
 
       if (this.world.isRemote) {
-         if (this.rand.nextInt(24) == 0 && !this.method3245()) {
+         if (this.rand.nextInt(24) == 0 && !this.isSilent()) {
             this.world
                .method6745(
                   this.getPosX() + 0.5,
@@ -90,11 +90,11 @@ public class Class1103 extends Class1009 {
          }
 
          for (int var3 = 0; var3 < 2; var3++) {
-            this.world.method6746(ParticleTypes.field34085, this.method3438(0.5), this.method3441(), this.method3445(0.5), 0.0, 0.0, 0.0);
+            this.world.addParticle(ParticleTypes.field34085, this.getPosXRandom(0.5), this.getPosYRandom(), this.getPosZRandom(0.5), 0.0, 0.0, 0.0);
          }
       }
 
-      super.method2871();
+      super.livingEntity();
    }
 
    @Override
@@ -111,9 +111,9 @@ public class Class1103 extends Class1009 {
       }
 
       LivingEntity var3 = this.method4232();
-      if (var3 != null && var3.method3442() > this.method3442() + (double)this.field6060 && this.method3026(var3)) {
-         Vector3d var4 = this.getVec();
-         this.method3434(this.getVec().method11339(0.0, (0.3F - var4.y) * 0.3F, 0.0));
+      if (var3 != null && var3.getPosYEye() > this.getPosYEye() + (double)this.field6060 && this.canAttack(var3)) {
+         Vector3d var4 = this.getMotion();
+         this.setMotion(this.getMotion().add(0.0, (0.3F - var4.y) * 0.3F, 0.0));
          this.isAirBorne = true;
       }
 
@@ -121,12 +121,12 @@ public class Class1103 extends Class1009 {
    }
 
    @Override
-   public boolean method2921(float var1, float var2) {
+   public boolean onLivingFall(float var1, float var2) {
       return false;
    }
 
    @Override
-   public boolean method3327() {
+   public boolean isBurning() {
       return this.method5293();
    }
 

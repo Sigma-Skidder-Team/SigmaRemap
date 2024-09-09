@@ -14,8 +14,8 @@ public class SRespawnPacket implements Packet<IClientPlayNetHandler> {
    private DimensionType field24615;
    private RegistryKey<World> field24616;
    private long field24617;
-   private Class1894 field24618;
-   private Class1894 field24619;
+   private GameType field24618;
+   private GameType field24619;
    private boolean field24620;
    private boolean field24621;
    private boolean field24622;
@@ -23,7 +23,7 @@ public class SRespawnPacket implements Packet<IClientPlayNetHandler> {
    public SRespawnPacket() {
    }
 
-   public SRespawnPacket(DimensionType var1, RegistryKey<World> var2, long var3, Class1894 var5, Class1894 var6, boolean var7, boolean var8, boolean var9) {
+   public SRespawnPacket(DimensionType var1, RegistryKey<World> var2, long var3, GameType var5, GameType var6, boolean var7, boolean var8, boolean var9) {
       this.field24615 = var1;
       this.field24616 = var2;
       this.field24617 = var3;
@@ -43,8 +43,8 @@ public class SRespawnPacket implements Packet<IClientPlayNetHandler> {
       this.field24615 = var1.<Supplier<DimensionType>>method35696(DimensionType.DIMENSION_TYPE_CODEC).get();
       this.field24616 = RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var1.readResourceLocation());
       this.field24617 = var1.readLong();
-      this.field24618 = Class1894.method8159(var1.readUnsignedByte());
-      this.field24619 = Class1894.method8159(var1.readUnsignedByte());
+      this.field24618 = GameType.method8159(var1.readUnsignedByte());
+      this.field24619 = GameType.method8159(var1.readUnsignedByte());
       this.field24620 = var1.readBoolean();
       this.field24621 = var1.readBoolean();
       this.field24622 = var1.readBoolean();
@@ -74,11 +74,11 @@ public class SRespawnPacket implements Packet<IClientPlayNetHandler> {
       return this.field24617;
    }
 
-   public Class1894 method17435() {
+   public GameType method17435() {
       return this.field24618;
    }
 
-   public Class1894 method17436() {
+   public GameType method17436() {
       return this.field24619;
    }
 

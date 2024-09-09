@@ -97,7 +97,7 @@ public abstract class AbstractOption {
       1.0,
       0.0F,
       var0 -> Math.pow((double)var0.field44671, 2.0),
-      (var0, var1) -> var0.field44671 = MathHelper.method37766(var1),
+      (var0, var1) -> var0.field44671 = MathHelper.sqrt(var1),
       (var0, var1) -> {
          var1.method17950(Minecraft.getInstance().fontRenderer.method38828(field25324, 200));
          double var4 = var1.method18083(var1.method18090(var0));

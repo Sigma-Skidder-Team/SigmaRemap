@@ -1,7 +1,6 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
 
@@ -16,14 +15,14 @@ public class Class4195 extends Class4194 {
       this.field20496 = true;
       this.method12939(Class76.field161.method247(var3));
       this.field20495 = Class2213.field14470;
-      if (this.method12938().method544() != Class113.field415) {
+      if (this.method12938().getAxis() != Direction.field415) {
          this.field20444 = new Class9764(var4, 64, var5, var4 + 5 - 1, 74, var5 + 5 - 1);
       } else {
          this.field20444 = new Class9764(var4, 64, var5, var4 + 5 - 1, 74, var5 + 5 - 1);
       }
    }
 
-   public Class4195(int var1, Random var2, Class9764 var3, Direction var4) {
+   public Class4195(int var1, Random var2, Class9764 var3, net.minecraft.util.Direction var4) {
       super(Class7792.field33453, var1);
       this.field20496 = false;
       this.method12939(var4);
@@ -55,13 +54,13 @@ public class Class4195 extends Class4194 {
       this.method12986((Class4196)var1, var2, var3, 1, 1);
    }
 
-   public static Class4195 method12990(List<Class4178> var0, Random var1, int var2, int var3, int var4, Direction var5, int var6) {
+   public static Class4195 method12990(List<Class4178> var0, Random var1, int var2, int var3, int var4, net.minecraft.util.Direction var5, int var6) {
       Class9764 var9 = Class9764.method38388(var2, var3, var4, -1, -7, 0, 5, 11, 5, var5);
       return method12989(var9) && Class4178.method12918(var0, var9) == null ? new Class4195(var6, var1, var9, var5) : null;
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       this.method12928(var1, var5, 0, 0, 0, 4, 10, 4, true, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, this.field20495, 1, 7, 0);
       this.method12984(var1, var4, var5, Class2213.field14470, 1, 1, 4);

@@ -31,7 +31,7 @@ public class Class4210 extends Class4209 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       if (!this.method13002(var1, var5, 0)) {
          return false;
       } else {
@@ -81,9 +81,9 @@ public class Class4210 extends Class4209 {
             int var16 = this.method12922(2, 5);
             if (var5.method38396(new BlockPos(var18, var19, var16))) {
                this.field20520 = true;
-               Class1027 var17 = EntityType.field41101.method33215(var1.method6970());
+               Class1027 var17 = EntityType.field41101.create(var1.method6970());
                var17.method4278();
-               var17.method3273((double)var18 + 0.5, (double)var19, (double)var16 + 0.5, 0.0F, 0.0F);
+               var17.setLocationAndAngles((double)var18 + 0.5, (double)var19, (double)var16 + 0.5, 0.0F, 0.0F);
                var17.method4276(var1, var1.method6807(new BlockPos(var18, var19, var16)), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
                var1.method6995(var17);
             }
@@ -101,9 +101,9 @@ public class Class4210 extends Class4209 {
          int var7 = this.method12922(2, 5);
          if (var2.method38396(new BlockPos(var5, var6, var7))) {
             this.field20521 = true;
-            Class1098 var8 = EntityType.field41012.method33215(var1.method6970());
+            Class1098 var8 = EntityType.field41012.create(var1.method6970());
             var8.method4278();
-            var8.method3273((double)var5 + 0.5, (double)var6, (double)var7 + 0.5, 0.0F, 0.0F);
+            var8.setLocationAndAngles((double)var5 + 0.5, (double)var6, (double)var7 + 0.5, 0.0F, 0.0F);
             var8.method4276(var1, var1.method6807(new BlockPos(var5, var6, var7)), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
             var1.method6995(var8);
          }

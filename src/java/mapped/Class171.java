@@ -21,7 +21,7 @@ public class Class171 implements Predicate<Class9632> {
 
    public boolean test(Class9632 var1) {
       BlockState var4 = var1.method37548();
-      if (!var4.method23448(this.field552.getBlock())) {
+      if (!var4.isIn(this.field552.getBlock())) {
          return false;
       } else {
          for (Class8550 var6 : this.field553) {

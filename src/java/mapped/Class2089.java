@@ -1,7 +1,5 @@
 package mapped;
 
-import net.minecraft.util.Direction;
-
 public enum Class2089 {
    field13614(Class178.field565),
    field13615(Class178.field592),
@@ -27,16 +25,16 @@ public enum Class2089 {
       }
    }
 
-   public Class80 method8749(Direction var1) {
-      Class113 var4 = var1.method544();
-      return this == field13615 && var4 == Class113.field415 || this == field13616 && var4 == Class113.field413 ? Class80.field187 : Class80.field185;
+   public Class80 method8749(net.minecraft.util.Direction var1) {
+      Direction var4 = var1.getAxis();
+      return this == field13615 && var4 == Direction.field415 || this == field13616 && var4 == Direction.field413 ? Class80.field187 : Class80.field185;
    }
 
-   public Direction method8750(Direction var1) {
-      if (this == field13616 && var1.method544() == Class113.field413) {
+   public net.minecraft.util.Direction method8750(net.minecraft.util.Direction var1) {
+      if (this == field13616 && var1.getAxis() == Direction.field413) {
          return var1.method536();
       } else {
-         return this == field13615 && var1.method544() == Class113.field415 ? var1.method536() : var1;
+         return this == field13615 && var1.getAxis() == Direction.field415 ? var1.method536() : var1;
       }
    }
 

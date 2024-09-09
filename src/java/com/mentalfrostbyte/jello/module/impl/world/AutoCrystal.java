@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.world;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
@@ -57,15 +57,15 @@ public class AutoCrystal extends PremiumModule {
 
     public static float method16380(double var0, double var2, double var4, Entity var6) {
         float var9 = 12.0F;
-        double var10 = Math.sqrt(var6.method3276(var0, var2, var4)) / (double) var9;
+        double var10 = Math.sqrt(var6.getDistanceNearest(var0, var2, var4)) / (double) var9;
         Vector3d var12 = new Vector3d(var0, var2, var4);
-        double var13 = Class7782.method25783(var12, var6);
+        double var13 = Explosion.method25783(var12, var6);
         double var15 = (1.0 - var10) * var13;
         float var17 = (float) ((int) ((var15 * var15 + var15) / 2.0 * 7.0 * (double) var9 + 1.0));
         double var18 = 1.0;
         if (var6 instanceof LivingEntity) {
             var18 = method16382(
-                    (LivingEntity) var6, method16381(var17), new Class7782(mc.world, null, null, null, var0, var2, var4, 6.0F, false, Class2141.field14015)
+                    (LivingEntity) var6, method16381(var17), new Explosion(mc.world, null, null, null, var0, var2, var4, 6.0F, false, Class2141.field14015)
             );
         }
 
@@ -77,21 +77,21 @@ public class AutoCrystal extends PremiumModule {
         return var0 * (var3 != 0 ? (var3 != 2 ? (var3 != 1 ? 1.5F : 0.5F) : 1.0F) : 0.0F);
     }
 
-    public static float method16382(LivingEntity var0, float var1, Class7782 var2) {
+    public static float method16382(LivingEntity var0, float var1, Explosion var2) {
         if (!(var0 instanceof PlayerEntity)) {
-            return Class8913.method32581(var1, (float) var0.method3070(), (float) var0.method3086(Attributes.field42114));
+            return Class8913.method32581(var1, (float) var0.method3070(), (float) var0.getAttributeValue(Attributes.field42114));
         } else {
             PlayerEntity var5 = (PlayerEntity) var0;
             DamageSource var6 = DamageSource.method31126(var2);
-            var1 = Class8913.method32581(var1, (float) var5.method3070(), (float) var5.method3086(Attributes.field42114));
-            int var7 = Class7858.method26317(var5.method2947(), var6);
+            var1 = Class8913.method32581(var1, (float) var5.method3070(), (float) var5.getAttributeValue(Attributes.field42114));
+            int var7 = EnchantmentHelper.method26317(var5.getArmorInventoryList(), var6);
             float var8 = MathHelper.clamp((float) var7, 0.0F, 20.0F);
             var1 *= 1.0F - var8 / 25.0F;
-            if (var0.method3033(Effect.method22287(11))) {
+            if (var0.isPotionActive(Effect.method22287(11))) {
                 var1 -= var1 / 4.0F;
             }
 
-            return Math.max(var1 - var5.method2959(), 0.0F);
+            return Math.max(var1 - var5.getAbsorptionAmount(), 0.0F);
         }
     }
 
@@ -166,7 +166,7 @@ public class AutoCrystal extends PremiumModule {
     }
 
     @EventTarget
-    public void method16374(Class4399 var1) {
+    public void method16374(EventUpdate var1) {
         if (!var1.method13921()) {
             if (this.field23635 != null) {
                 this.field23635.run();
@@ -188,14 +188,14 @@ public class AutoCrystal extends PremiumModule {
                         )
                         .stream()
                         .map(var0 -> (EnderCrystalEntity) var0)
-                        .filter(var0 -> var0.method3275(mc.player) < 6.0F)
-                        .filter(var1x -> (double) var1x.method3275(this.field23633) < 3.6)
+                        .filter(var0 -> var0.getDistance(mc.player) < 6.0F)
+                        .filter(var1x -> (double) var1x.getDistance(this.field23633) < 3.6)
                         .min(Comparator.comparing(var1x -> method16380(var1x.getPosX(), var1x.getPosY(), var1x.getPosZ(), this.field23633)))
                         .orElse(null);
                 if (var5 != null) {
-                    Class7461 var9 = Class9142.method34148(var5.positionVec);
-                    var1.method13918(var9.field32084);
-                    var1.method13916(var9.field32085);
+                    Class7461 var9 = RotationHelper.method34148(var5.positionVec);
+                    var1.setPitch(var9.field32084);
+                    var1.setYaw(var9.field32085);
                     this.field23636 = 0;
                     this.field23635 = new Class540(this, var5);
                     return;
@@ -209,7 +209,7 @@ public class AutoCrystal extends PremiumModule {
 
             this.field23637 = this.method16377();
             this.field23637
-                    .sort(Comparator.comparing(var1x -> this.field23633.method3276(var1x.field13027, var1x.field13028, var1x.field13029)));
+                    .sort(Comparator.comparing(var1x -> this.field23633.getDistanceNearest(var1x.field13027, var1x.field13028, var1x.field13029)));
             if (this.field23637 != null && !this.field23637.isEmpty()) {
                 BlockPos var6 = this.field23637
                         .stream()
@@ -220,11 +220,11 @@ public class AutoCrystal extends PremiumModule {
                         )
                         .orElse(null);
                 if (var6 != null) {
-                    Class7461 var7 = Class9142.method34148(
+                    Class7461 var7 = RotationHelper.method34148(
                             new Vector3d((double) var6.field13027 + 0.5, (double) var6.field13028 + 0.5, (double) var6.field13029 + 0.5)
                     );
-                    var1.method13918(var7.field32084);
-                    var1.method13916(var7.field32085);
+                    var1.setPitch(var7.field32084);
+                    var1.setYaw(var7.field32085);
                     this.field23635 = new Class335(this, var6, var8);
                 }
             }
@@ -299,7 +299,7 @@ public class AutoCrystal extends PremiumModule {
     }
 
     private void method16384(Vector3d var1) {
-        Class7461 var4 = Class9142.method34148(var1);
+        Class7461 var4 = RotationHelper.method34148(var1);
         field23629 = var4.field32084;
         field23630 = var4.field32085;
         field23631 = true;
@@ -315,14 +315,14 @@ public class AutoCrystal extends PremiumModule {
                 if (!Client.getInstance().getFriendManager().method26997(var6)) {
                     if (var6 instanceof LivingEntity) {
                         if (((LivingEntity) var6).getHealth() != 0.0F) {
-                            if (!(mc.player.method3275(var6) > var1)) {
-                                if (mc.player.method3026((LivingEntity) var6)) {
+                            if (!(mc.player.getDistance(var6) > var1)) {
+                                if (mc.player.canAttack((LivingEntity) var6)) {
                                     if (!(var6 instanceof ArmorStandEntity)) {
                                         if (!this.getBooleanValueFromSetttingName("Players") && var6 instanceof PlayerEntity) {
                                             var5.remove();
                                         } else if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var6)) {
                                             var5.remove();
-                                        } else if (!this.getBooleanValueFromSetttingName("Invisible") && var6.method3342()) {
+                                        } else if (!this.getBooleanValueFromSetttingName("Invisible") && var6.isInvisible()) {
                                             var5.remove();
                                         } else if (!this.getBooleanValueFromSetttingName("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
                                             var5.remove();
@@ -366,8 +366,8 @@ public class AutoCrystal extends PremiumModule {
 
     public int method16386() {
         for (int var3 = 36; var3 < 45; var3++) {
-            if (mc.player.field4904.method18131(var3).method18266()) {
-                ItemStack var4 = mc.player.field4904.method18131(var3).method18265();
+            if (mc.player.container.getSlot(var3).getHasStack()) {
+                ItemStack var4 = mc.player.container.getSlot(var3).getStack();
                 if (var4.getItem() == Items.END_CRYSTAL) {
                     return var3 - 36;
                 }
@@ -375,14 +375,14 @@ public class AutoCrystal extends PremiumModule {
         }
 
         for (int var5 = 9; var5 < 36; var5++) {
-            if (mc.player.field4904.method18131(var5).method18266()) {
-                ItemStack var6 = mc.player.field4904.method18131(var5).method18265();
+            if (mc.player.container.getSlot(var5).getHasStack()) {
+                ItemStack var6 = mc.player.container.getSlot(var5).getStack();
                 if (var6.getItem() == Items.END_CRYSTAL) {
                     if (JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
                         mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                     }
 
-                    Class7789.method25873(var5, 8);
+                    InvManagerUtils.method25873(var5, 8);
                     mc.getConnection().sendPacket(new CCloseWindowPacket(-1));
                     return 5;
                 }

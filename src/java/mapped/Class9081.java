@@ -22,8 +22,8 @@ public class Class9081 {
    private static final Logger field41569 = LogManager.getLogger();
    public ServerWorld field41570;
    public ServerPlayerEntity field41571;
-   private Class1894 field41572 = Class1894.field11101;
-   private Class1894 field41573 = Class1894.field11101;
+   private GameType field41572 = GameType.field11101;
+   private GameType field41573 = GameType.field11101;
    private boolean field41574;
    private int field41575;
    private BlockPos field41576 = BlockPos.ZERO;
@@ -37,11 +37,11 @@ public class Class9081 {
       this.field41570 = var1;
    }
 
-   public void method33861(Class1894 var1) {
+   public void method33861(GameType var1) {
       this.method33862(var1, var1 == this.field41572 ? this.field41573 : this.field41572);
    }
 
-   public void method33862(Class1894 var1, Class1894 var2) {
+   public void method33862(GameType var1, GameType var2) {
       this.field41573 = var2;
       this.field41572 = var1;
       var1.method8155(this.field41571.abilities);
@@ -50,11 +50,11 @@ public class Class9081 {
       this.field41570.method6902();
    }
 
-   public Class1894 method33863() {
+   public GameType method33863() {
       return this.field41572;
    }
 
-   public Class1894 method33864() {
+   public GameType method33864() {
       return this.field41573;
    }
 
@@ -66,8 +66,8 @@ public class Class9081 {
       return this.field41572.isCreative();
    }
 
-   public void method33867(Class1894 var1) {
-      if (this.field41572 == Class1894.field11101) {
+   public void method33867(GameType var1) {
+      if (this.field41572 == GameType.field11101) {
          this.field41572 = var1;
       }
 
@@ -82,7 +82,7 @@ public class Class9081 {
             if (!var3.isAir()) {
                this.method33868(var3, this.field41576, this.field41575);
             } else {
-               this.field41570.method6803(this.field41571.getEntityId(), this.field41576, -1);
+               this.field41570.sendBlockBreakProgress(this.field41571.getEntityId(), this.field41576, -1);
                this.field41581 = -1;
                this.field41574 = false;
             }
@@ -106,7 +106,7 @@ public class Class9081 {
       float var7 = var1.method23406(this.field41571, this.field41571.world, var2) * (float)(var6 + 1);
       int var8 = (int)(var7 * 10.0F);
       if (var8 != this.field41581) {
-         this.field41570.method6803(this.field41571.getEntityId(), var2, var8);
+         this.field41570.sendBlockBreakProgress(this.field41571.getEntityId(), var2, var8);
          this.field41581 = var8;
       }
 
@@ -126,7 +126,7 @@ public class Class9081 {
                      this.field41574 = false;
                      if (!Objects.equals(this.field41576, var1)) {
                         field41569.warn("Mismatch in destroy block pos: " + this.field41576 + " " + var1);
-                        this.field41570.method6803(this.field41571.getEntityId(), this.field41576, -1);
+                        this.field41570.sendBlockBreakProgress(this.field41571.getEntityId(), this.field41576, -1);
                         this.field41571
                            .field4855
                            .sendPacket(
@@ -134,7 +134,7 @@ public class Class9081 {
                            );
                      }
 
-                     this.field41570.method6803(this.field41571.getEntityId(), var1, -1);
+                     this.field41570.sendBlockBreakProgress(this.field41571.getEntityId(), var1, -1);
                      this.field41571.field4855.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, true, "aborted destroying"));
                   }
                } else {
@@ -145,7 +145,7 @@ public class Class9081 {
                         float var17 = var16.method23406(this.field41571, this.field41571.world, var1) * (float)(var15 + 1);
                         if (var17 >= 0.7F) {
                            this.field41574 = false;
-                           this.field41570.method6803(this.field41571.getEntityId(), var1, -1);
+                           this.field41570.sendBlockBreakProgress(this.field41571.getEntityId(), var1, -1);
                            this.method33869(var1, var2, "destroyed");
                            return;
                         }
@@ -172,7 +172,7 @@ public class Class9081 {
                   return;
                }
 
-               if (this.field41571.method2848(this.field41570, var1, this.field41572)) {
+               if (this.field41571.blockActionRestricted(this.field41570, var1, this.field41572)) {
                   this.field41571.field4855.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, false, "block action restricted"));
                   return;
                }
@@ -205,7 +205,7 @@ public class Class9081 {
                   this.field41574 = true;
                   this.field41576 = var1.toImmutable();
                   int var20 = (int)(var18 * 10.0F);
-                  this.field41570.method6803(this.field41571.getEntityId(), var1, var20);
+                  this.field41570.sendBlockBreakProgress(this.field41571.getEntityId(), var1, var20);
                   this.field41571.field4855.sendPacket(new SPlayerDiggingPacket(var1, this.field41570.getBlockState(var1), var2, true, "actual start of destroying"));
                   this.field41581 = var20;
                }
@@ -228,19 +228,19 @@ public class Class9081 {
 
    public boolean method33870(BlockPos var1) {
       BlockState var4 = this.field41570.getBlockState(var1);
-      if (!this.field41571.getHeldItemMainhand().getItem().method11706(var4, this.field41570, var1, this.field41571)) {
+      if (!this.field41571.getHeldItemMainhand().getItem().canPlayerBreakBlockWhileHolding(var4, this.field41570, var1, this.field41571)) {
          return false;
       } else {
          TileEntity var5 = this.field41570.getTileEntity(var1);
          Block var6 = var4.getBlock();
-         if ((var6 instanceof Class3355 || var6 instanceof Class3367 || var6 instanceof Class3249) && !this.field41571.method2979()) {
+         if ((var6 instanceof CommandBlockBlock || var6 instanceof StructureBlock || var6 instanceof JigsawBlock) && !this.field41571.canUseCommandBlock()) {
             this.field41570.notifyBlockUpdate(var1, var4, var4, 3);
             return false;
-         } else if (!this.field41571.method2848(this.field41570, var1, this.field41572)) {
-            var6.method11574(this.field41570, var1, var4, this.field41571);
+         } else if (!this.field41571.blockActionRestricted(this.field41570, var1, this.field41572)) {
+            var6.onBlockHarvested(this.field41570, var1, var4, this.field41571);
             boolean var7 = this.field41570.removeBlock(var1, false);
             if (var7) {
-               var6.method11551(this.field41570, var1, var4);
+               var6.onPlayerDestroy(this.field41570, var1, var4);
             }
 
             if (!this.method33866()) {
@@ -263,7 +263,7 @@ public class Class9081 {
    }
 
    public ActionResultType method33859(ServerPlayerEntity var1, World var2, ItemStack var3, Hand var4) {
-      if (this.field41572 != Class1894.field11105) {
+      if (this.field41572 != GameType.SPECTATOR) {
          if (!var1.method2976().method19635(var3.getItem())) {
             int var7 = var3.getCount();
             int var8 = var3.method32117();
@@ -274,7 +274,7 @@ public class Class9081 {
             } else if (var9.method20694() == ActionResultType.FAIL && var10.method32137() > 0 && !var1.isHandActive()) {
                return var9.method20694();
             } else {
-               var1.method3095(var4, var10);
+               var1.setHeldItem(var4, var10);
                if (this.method33866()) {
                   var10.method32180(var7);
                   if (var10.method32115() && var10.method32117() != var8) {
@@ -283,11 +283,11 @@ public class Class9081 {
                }
 
                if (var10.isEmpty()) {
-                  var1.method3095(var4, ItemStack.EMPTY);
+                  var1.setHeldItem(var4, ItemStack.EMPTY);
                }
 
                if (!var1.isHandActive()) {
-                  var1.method2771(var1.field4904);
+                  var1.method2771(var1.container);
                }
 
                return var9.method20694();
@@ -303,13 +303,13 @@ public class Class9081 {
    public ActionResultType method33860(ServerPlayerEntity var1, World var2, ItemStack var3, Hand var4, BlockRayTraceResult var5) {
       BlockPos var8 = var5.getPos();
       BlockState var9 = var2.getBlockState(var8);
-      if (this.field41572 == Class1894.field11105) {
+      if (this.field41572 == GameType.SPECTATOR) {
          Class949 var16 = var9.method23445(var2, var8);
          if (var16 == null) {
             return ActionResultType.field14820;
          } else {
             var1.method2766(var16);
-            return ActionResultType.field14818;
+            return ActionResultType.SUCCESS;
          }
       } else {
          boolean var10 = !var1.getHeldItemMainhand().isEmpty() || !var1.method3091().isEmpty();
@@ -324,13 +324,13 @@ public class Class9081 {
          }
 
          if (!var3.isEmpty() && !var1.method2976().method19635(var3.getItem())) {
-            Class5911 var17 = new Class5911(var1, var4, var5);
+            ItemUseContext var17 = new ItemUseContext(var1, var4, var5);
             ActionResultType var14;
             if (!this.method33866()) {
-               var14 = var3.method32108(var17);
+               var14 = var3.onItemUse(var17);
             } else {
                int var15 = var3.getCount();
-               var14 = var3.method32108(var17);
+               var14 = var3.onItemUse(var17);
                var3.method32180(var15);
             }
 

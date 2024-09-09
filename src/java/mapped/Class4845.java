@@ -12,8 +12,8 @@ public class Class4845 extends Class4844 {
    }
 
    @Override
-   public boolean method14963(Class920 var1, World var2) {
-      return this.field22618.test(var1.method3618(0));
+   public boolean method14963(IInventory var1, World var2) {
+      return this.field22618.test(var1.getStackInSlot(0));
    }
 
    @Override

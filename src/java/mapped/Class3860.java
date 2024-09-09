@@ -5,9 +5,9 @@ import java.util.List;
 
 public final class Class3860 extends Class3758 {
    private static String[] field20088;
-   public final Class6355 field20089;
+   public final ViaVersion7 field20089;
 
-   public Class3860(Class6355 var1) {
+   public Class3860(ViaVersion7 var1) {
       this.field20089 = var1;
    }
 

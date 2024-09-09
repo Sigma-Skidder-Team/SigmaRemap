@@ -20,7 +20,7 @@ public class Class3312 extends Item {
    }
 
    @Override
-   public ActionResultType method11707(Class5911 var1) {
+   public ActionResultType method11707(ItemUseContext var1) {
       BlockPos var4 = var1.method18345();
       Direction var5 = var1.method18354();
       BlockPos var6 = var4.method8349(var5);
@@ -51,7 +51,7 @@ public class Class3312 extends Item {
          } else {
             if (!var9.isRemote) {
                ((Class995)var10).method4084();
-               var9.method6916((Entity)var10);
+               var9.addEntity((Entity)var10);
             }
 
             var8.method32182(1);
@@ -61,6 +61,6 @@ public class Class3312 extends Item {
    }
 
    public boolean method11857(PlayerEntity var1, Direction var2, ItemStack var3, BlockPos var4) {
-      return !var2.method544().method323() && var1.method2936(var4, var2, var3);
+      return !var2.getAxis().method323() && var1.method2936(var4, var2, var3);
    }
 }

@@ -31,7 +31,7 @@ public class Class5130 implements Class5119 {
 
             for (Entry var19 : var17.method7068()) {
                Class101 var20 = (Class101)var19.getKey();
-               Class7481 var21 = var17.method7072();
+               ChunkPos var21 = var17.method7072();
                Vector3f var22 = this.method15867(var20);
 
                for (int var23 = 0; var23 < 16; var23++) {

@@ -68,7 +68,7 @@ public class Peek extends Command {
                   if (Class5980.field26051 != null) {
                      String var13 = (String)Class5980.field26051.get(var12);
                      CompoundNBT var14 = new CompoundNBT();
-                     var14.method101("lvl", var11);
+                     var14.putShort("lvl", var11);
                      var14.method109("id", var13);
                      var8.add(var14);
                   }

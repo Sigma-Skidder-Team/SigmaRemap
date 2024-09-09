@@ -28,7 +28,7 @@ public final class Class8178 implements Class8176 {
          }
 
          BlockPos var7 = !Class3271.method11789(var1) ? this.method28469(var2) : this.method28470(var2, var1.getOrCreateTag());
-         long var8 = var2.method6783();
+         long var8 = var2.getGameTime();
          if (var7 != null
             && !(
                ((Entity)var6).getPositionVec()
@@ -41,7 +41,7 @@ public final class Class8178 implements Class8176 {
                if (!(var6 instanceof ItemFrameEntity)) {
                   if (!(var6 instanceof ItemEntity)) {
                      if (var3 != null) {
-                        var13 = (double)var3.field4965;
+                        var13 = (double)var3.renderYawOffset;
                      }
                   } else {
                      var13 = (double)(180.0F - ((ItemEntity)var6).method4138(0.5F) / (float) (Math.PI * 2) * 360.0F);
@@ -99,7 +99,7 @@ public final class Class8178 implements Class8176 {
 
    private double method28471(ItemFrameEntity var1) {
       Direction var4 = var1.method3386();
-      int var5 = !var4.method544().method323() ? 0 : 90 * var4.method535().method8150();
+      int var5 = !var4.getAxis().method323() ? 0 : 90 * var4.getAxisDirection().getOffset();
       return (double) MathHelper.method37791(180 + var4.method534() * 90 + var1.method4093() * 45 + var5);
    }
 

@@ -51,7 +51,7 @@ public abstract class Class7633 extends Fluid {
                if (var14 > 0.0F) {
                   var15 = var3.method23476() - var14;
                }
-            } else if (!var1.getBlockState(var10).method23384().method31087()) {
+            } else if (!var1.getBlockState(var10).getMaterial().method31087()) {
                BlockPos var16 = var10.down();
                FluidState var17 = var1.getFluidState(var16);
                if (this.method25069(var17)) {
@@ -74,7 +74,7 @@ public abstract class Class7633 extends Fluid {
          for (Direction var20 : Class76.field161) {
             var10.method8377(var2, var20);
             if (this.method25070(var1, var10, var20) || this.method25070(var1, var10.up(), var20)) {
-               var18 = var18.method11333().method11339(0.0, -6.0, 0.0);
+               var18 = var18.method11333().add(0.0, -6.0, 0.0);
                break;
             }
          }
@@ -92,7 +92,7 @@ public abstract class Class7633 extends Fluid {
       FluidState var7 = var1.getFluidState(var2);
       if (!var7.method23472().method25066(this)) {
          if (var3 != Direction.field673) {
-            return var6.method23384() != Class8649.field38964 ? var6.method23454(var1, var2, var3) : false;
+            return var6.getMaterial() != Class8649.field38964 ? var6.method23454(var1, var2, var3) : false;
          } else {
             return true;
          }
@@ -161,7 +161,7 @@ public abstract class Class7633 extends Fluid {
       if (this.method25079() && var7 >= 2) {
          BlockState var13 = var1.getBlockState(var2.down());
          FluidState var15 = var13.method23449();
-         if (var13.method23384().method31086() || this.method25086(var15)) {
+         if (var13.getMaterial().method31086() || this.method25086(var15)) {
             return this.method25078(false);
          }
       }
@@ -368,11 +368,11 @@ public abstract class Class7633 extends Fluid {
       Block var7 = var3.getBlock();
       if (!(var7 instanceof Class3449)) {
          if (!(var7 instanceof Class3461)
-            && !var7.method11540(BlockTags.field32790)
+            && !var7.isIn(BlockTags.field32790)
             && var7 != Blocks.LADDER
             && var7 != Blocks.SUGAR_CANE
             && var7 != Blocks.field37013) {
-            Class8649 var8 = var3.method23384();
+            Class8649 var8 = var3.getMaterial();
             return var8 != Class8649.field38934 && var8 != Class8649.field38933 && var8 != Class8649.field38937 && var8 != Class8649.field38940
                ? !var8.method31087()
                : false;

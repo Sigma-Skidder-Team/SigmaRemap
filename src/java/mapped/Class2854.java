@@ -65,7 +65,7 @@ public class Class2854<T extends Class1066> extends Class2827<T> {
       this.field17680.field31035 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
       this.field17681.field31035 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
       this.field17682.field31035 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
-      boolean var9 = !var1.method3005() && var1.method4927();
+      boolean var9 = !var1.isChild() && var1.method4927();
       this.field17683.field31039 = var9;
       this.field17684.field31039 = var9;
    }

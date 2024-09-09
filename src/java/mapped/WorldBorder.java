@@ -20,14 +20,14 @@ public class WorldBorder {
    private WorldBorderIBorderInfo field32266 = new StationaryBorderInfo(this, 6.0E7);
    public static final Class7235 field32267 = new Class7235(0.0, 0.0, 0.2, 5.0, 5, 15, 6.0E7, 0L, 0.0);
 
-   public boolean method24523(BlockPos var1) {
+   public boolean contains(BlockPos var1) {
       return (double)(var1.getX() + 1) > this.method24530()
          && (double)var1.getX() < this.method24532()
          && (double)(var1.getZ() + 1) > this.method24531()
          && (double)var1.getZ() < this.method24533();
    }
 
-   public boolean method24524(Class7481 var1) {
+   public boolean method24524(ChunkPos var1) {
       return (double)var1.method24358() > this.method24530()
          && (double)var1.method24356() < this.method24532()
          && (double)var1.method24359() > this.method24531()
@@ -45,7 +45,7 @@ public class WorldBorder {
       return this.method24528(var1.getPosX(), var1.getPosZ());
    }
 
-   public VoxelShape method24527() {
+   public VoxelShape getShape() {
       return this.field32266.getShape();
    }
 

@@ -57,7 +57,7 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public float method3103() {
+   public float getJumpUpwardsMotion() {
       if (!this.collidedHorizontally && (!this.field5596.method20811() || !(this.field5596.method20818() > this.getPosY() + 0.5))) {
          Class8238 var3 = this.field5599.method21657();
          if (var3 != null && !var3.method28693()) {
@@ -74,18 +74,18 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public void method2914() {
-      super.method2914();
+   public void jump() {
+      super.jump();
       double var3 = this.field5596.method20812();
       if (var3 > 0.0) {
-         double var5 = method3234(this.getVec());
+         double var5 = horizontalMag(this.getMotion());
          if (var5 < 0.01) {
-            this.method3265(0.1F, new Vector3d(0.0, 0.0, 1.0));
+            this.moveRelative(0.1F, new Vector3d(0.0, 0.0, 1.0));
          }
       }
 
       if (!this.world.isRemote) {
-         this.world.method6786(this, (byte)1);
+         this.world.setEntityState(this, (byte)1);
       }
    }
 
@@ -99,15 +99,15 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public void method3133(boolean var1) {
-      super.method3133(var1);
+   public void setJumping(boolean var1) {
+      super.setJumping(var1);
       if (var1) {
-         this.method2863(this.method5112(), this.method3099(), ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F) * 0.8F);
+         this.playSound(this.method5112(), this.getSoundVolume(), ((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F) * 0.8F);
       }
    }
 
    public void method5105() {
-      this.method3133(true);
+      this.setJumping(true);
       this.field5989 = 10;
       this.field5988 = 0;
    }
@@ -133,7 +133,7 @@ public class Class1094 extends Class1018 {
 
       if (this.onGround) {
          if (!this.field5990) {
-            this.method3133(false);
+            this.setJumping(false);
             this.method5110();
          }
 
@@ -198,13 +198,13 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
+   public void livingEntity() {
+      super.livingEntity();
       if (this.field5988 == this.field5989) {
          if (this.field5989 != 0) {
             this.field5988 = 0;
             this.field5989 = 0;
-            this.method3133(false);
+            this.setJumping(false);
          }
       } else {
          this.field5988++;
@@ -216,15 +216,15 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("RabbitType", this.method5114());
-      var1.method102("MoreCarrotTicks", this.field5992);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("RabbitType", this.method5114());
+      var1.putInt("MoreCarrotTicks", this.field5992);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method5115(var1.getInt("RabbitType"));
       this.field5992 = var1.getInt("MoreCarrotTicks");
    }
@@ -249,12 +249,12 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public boolean method3114(Entity var1) {
+   public boolean attackEntityAsMob(Entity var1) {
       if (this.method5114() != 99) {
-         return var1.method2741(DamageSource.method31115(this), 3.0F);
+         return var1.attackEntityFrom(DamageSource.method31115(this), 3.0F);
       } else {
-         this.method2863(SoundEvents.field26988, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-         return var1.method2741(DamageSource.method31115(this), 8.0F);
+         this.playSound(SoundEvents.field26988, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+         return var1.attackEntityFrom(DamageSource.method31115(this), 8.0F);
       }
    }
 
@@ -264,8 +264,8 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      return !this.method2760(var1) ? super.method2741(var1, var2) : false;
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      return !this.isInvulnerableTo(var1) ? super.attackEntityFrom(var1, var2) : false;
    }
 
    private boolean method5113(Item var1) {
@@ -273,7 +273,7 @@ public class Class1094 extends Class1018 {
    }
 
    public Class1094 method4389(ServerWorld var1, Class1045 var2) {
-      Class1094 var5 = EntityType.RABBIT.method33215(var1);
+      Class1094 var5 = EntityType.RABBIT.create(var1);
       int var6 = this.method5116(var1);
       if (this.rand.nextInt(20) != 0) {
          if (var2 instanceof Class1094 && this.rand.nextBoolean()) {
@@ -298,7 +298,7 @@ public class Class1094 extends Class1018 {
 
    public void method5115(int var1) {
       if (var1 == 99) {
-         this.method3085(Attributes.field42113).method38661(8.0);
+         this.getAttribute(Attributes.field42113).method38661(8.0);
          this.field5600.method20002(4, new Class2648(this));
          this.field5601.method20002(1, new Class2704(this).method10918());
          this.field5601.method20002(2, new Class2709<PlayerEntity>(this, PlayerEntity.class, true));
@@ -341,7 +341,7 @@ public class Class1094 extends Class1018 {
 
    public static boolean method5117(EntityType<Class1094> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       BlockState var7 = var1.getBlockState(var3.down());
-      return (var7.method23448(Blocks.field36395) || var7.method23448(Blocks.SNOW) || var7.method23448(Blocks.SAND))
+      return (var7.isIn(Blocks.field36395) || var7.isIn(Blocks.SNOW) || var7.isIn(Blocks.SAND))
          && var1.method7021(var3, 0) > 8;
    }
 
@@ -350,9 +350,9 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 1) {
-         super.method2866(var1);
+         super.handleStatusUpdate(var1);
       } else {
          this.method3262();
          this.field5989 = 10;
@@ -361,8 +361,8 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public Vector3d method3394() {
-      return new Vector3d(0.0, (double)(0.6F * this.method3393()), (double)(this.method3429() * 0.4F));
+   public Vector3d func_241205_ce_() {
+      return new Vector3d(0.0, (double)(0.6F * this.getEyeHeight()), (double)(this.getWidth() * 0.4F));
    }
 
    // $VF: synthetic method

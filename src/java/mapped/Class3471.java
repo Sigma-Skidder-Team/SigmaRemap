@@ -16,14 +16,14 @@ public class Class3471 extends Block {
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       return var2 == Direction.field673
-         ? var1.method23465(field19323, Boolean.valueOf(var3.method23448(Blocks.SNOW_BLOCK) || var3.method23448(Blocks.SNOW)))
+         ? var1.method23465(field19323, Boolean.valueOf(var3.isIn(Blocks.SNOW_BLOCK) || var3.isIn(Blocks.SNOW)))
          : super.method11491(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
    public BlockState method11495(Class5909 var1) {
       BlockState var4 = var1.method18360().getBlockState(var1.method18345().up());
-      return this.method11579().method23465(field19323, Boolean.valueOf(var4.method23448(Blocks.SNOW_BLOCK) || var4.method23448(Blocks.SNOW)));
+      return this.method11579().method23465(field19323, Boolean.valueOf(var4.isIn(Blocks.SNOW_BLOCK) || var4.isIn(Blocks.SNOW)));
    }
 
    @Override

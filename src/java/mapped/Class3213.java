@@ -32,7 +32,7 @@ public class Class3213 extends Block {
       if (method11598(var2.getBlockState(var3.down())) && var3.getY() >= 0) {
          Class907 var7 = new Class907(var2, (double)var3.getX() + 0.5, (double)var3.getY(), (double)var3.getZ() + 0.5, var2.getBlockState(var3));
          this.method11596(var7);
-         var2.method6916(var7);
+         var2.addEntity(var7);
       }
    }
 
@@ -44,8 +44,8 @@ public class Class3213 extends Block {
    }
 
    public static boolean method11598(BlockState var0) {
-      Class8649 var3 = var0.method23384();
-      return var0.isAir() || var0.method23446(BlockTags.field32798) || var3.method31085() || var3.method31089();
+      Class8649 var3 = var0.getMaterial();
+      return var0.isAir() || var0.method23446(BlockTags.field32798) || var3.isLiquid() || var3.method31089();
    }
 
    public void method11599(World var1, BlockPos var2, BlockState var3, BlockState var4, Class907 var5) {
@@ -62,7 +62,7 @@ public class Class3213 extends Block {
             double var8 = (double)var3.getX() + var4.nextDouble();
             double var10 = (double)var3.getY() - 0.05;
             double var12 = (double)var3.getZ() + var4.nextDouble();
-            var2.method6746(new Class7439(ParticleTypes.field34071, var1), var8, var10, var12, 0.0, 0.0, 0.0);
+            var2.addParticle(new BlockParticleData(ParticleTypes.field34071, var1), var8, var10, var12, 0.0, 0.0, 0.0);
          }
       }
    }

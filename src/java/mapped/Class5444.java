@@ -40,7 +40,7 @@ public abstract class Class5444<C extends Class4698> {
       return this.field24196;
    }
 
-   public void method17112(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6) {
+   public void method17112(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6) {
       synchronized (this.field24196) {
          if (!this.field24196.isEmpty()) {
             Class9764 var10 = this.field24196.get(0).field20444;
@@ -72,9 +72,9 @@ public abstract class Class5444<C extends Class4698> {
       CompoundNBT var5 = new CompoundNBT();
       if (this.method17117()) {
          var5.method109("id", Registry.field16114.getKey(this.method17125()).toString());
-         var5.method102("ChunkX", var1);
-         var5.method102("ChunkZ", var2);
-         var5.method102("references", this.field24200);
+         var5.putInt("ChunkX", var1);
+         var5.putInt("ChunkZ", var2);
+         var5.putInt("references", this.field24200);
          var5.put("BB", this.field24197.method38402());
          ListNBT var6 = new ListNBT();
          synchronized (this.field24196) {

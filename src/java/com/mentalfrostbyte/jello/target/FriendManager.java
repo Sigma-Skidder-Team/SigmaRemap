@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.target;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.command.CommandManager;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4430;
+import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import totalcross.json.JSONArray;
 import net.minecraft.entity.Entity;
 import mapped.Class8906;
@@ -24,8 +24,8 @@ public class FriendManager {
     }
 
     @EventTarget
-    private void method26996(Class4430 var1) {
-        if (var1.method13977() == this.field34179.gameSettings.keyBindPickBlock.keycode.keyCode
+    private void method26996(EventKeyPress var1) {
+        if (var1.getKey() == this.field34179.gameSettings.keyBindPickBlock.keycode.keyCode
                 && this.field34179.pointedEntity != null
                 && this.field34179.pointedEntity.getName() != null) {
             CommandManager var4 = Client.getInstance().getCommandManager();

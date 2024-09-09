@@ -34,7 +34,7 @@ public class Class3482 extends Class3480 {
    }
 
    @Override
-   public Class3303 method12183() {
+   public IItemProvider method12183() {
       return Items.field38112;
    }
 

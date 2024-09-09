@@ -22,22 +22,22 @@ public class BasicAntiKB extends Module {
       if (this.isEnabled()) {
          if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
             SEntityVelocityPacket var4 = (SEntityVelocityPacket)var1.getPacket();
-            if (var4.method17565() == mc.player.getEntityId()) {
+            if (var4.getEntityID() == mc.player.getEntityId()) {
                if (this.getNumberValueBySettingName("H-Multiplier") == 0.0F && this.getNumberValueBySettingName("V-Multiplier") == 0.0F) {
-                  var1.method13900(true);
+                  var1.setCancelled(true);
                }
 
-               var4.field24801 = (int)((float)var4.field24801 * this.getNumberValueBySettingName("H-Multiplier"));
-               var4.field24803 = (int)((float)var4.field24803 * this.getNumberValueBySettingName("H-Multiplier"));
-               var4.field24802 = (int)((float)var4.field24802 * this.getNumberValueBySettingName("V-Multiplier"));
+               var4.motionX = (int)((float)var4.motionX * this.getNumberValueBySettingName("H-Multiplier"));
+               var4.motionZ = (int)((float)var4.motionZ * this.getNumberValueBySettingName("H-Multiplier"));
+               var4.motionY = (int)((float)var4.motionY * this.getNumberValueBySettingName("V-Multiplier"));
             }
          }
 
          if (var1.getPacket() instanceof SExplosionPacket && this.getBooleanValueFromSetttingName("Explosions")) {
             SExplosionPacket var5 = (SExplosionPacket)var1.getPacket();
-            var5.field24473 = var5.field24473 * this.getNumberValueBySettingName("H-Multiplier");
-            var5.field24475 = var5.field24475 * this.getNumberValueBySettingName("H-Multiplier");
-            var5.field24474 = var5.field24474 * this.getNumberValueBySettingName("V-Multiplier");
+            var5.motionX = var5.motionX * this.getNumberValueBySettingName("H-Multiplier");
+            var5.motionZ = var5.motionZ * this.getNumberValueBySettingName("H-Multiplier");
+            var5.motionY = var5.motionY * this.getNumberValueBySettingName("V-Multiplier");
          }
       }
    }

@@ -20,7 +20,7 @@ import java.util.*;
 
 public class Search extends Module {
     public List<Class7871> field23499 = new ArrayList<Class7871>();
-    public Set<Class7481> field23500 = new HashSet<Class7481>();
+    public Set<ChunkPos> field23500 = new HashSet<ChunkPos>();
 
     public Search() {
         super(ModuleCategory.RENDER, "Search", "Searches blocks through the world");
@@ -46,17 +46,17 @@ public class Search extends Module {
 
             if (var1.getPacket() instanceof SMultiBlockChangePacket) {
                 SMultiBlockChangePacket var5 = (SMultiBlockChangePacket) var1.getPacket();
-                this.method16164(new Class7481(var5.field24642.field13027, var5.field24642.field13029));
+                this.method16164(new ChunkPos(var5.field24642.field13027, var5.field24642.field13029));
             }
 
             if (var1.getPacket() instanceof SChunkDataPacket && Minecraft.getInstance().world != null) {
                 SChunkDataPacket var6 = (SChunkDataPacket) var1.getPacket();
-                this.method16164(new Class7481(var6.method17378(), var6.method17379()));
+                this.method16164(new ChunkPos(var6.method17378(), var6.method17379()));
             }
         }
     }
 
-    public void method16164(Class7481 var1) {
+    public void method16164(ChunkPos var1) {
         for (Class7871 var5 : this.field23499) {
             if (var5.method26390(var1)) {
                 this.field23500.add(var5.method26392());
@@ -70,7 +70,7 @@ public class Search extends Module {
         this.field23500.clear();
     }
 
-    public List<BlockPos> method16166(Class7481 var1) {
+    public List<BlockPos> method16166(ChunkPos var1) {
         ArrayList var4 = new ArrayList();
         int var5 = var1.field32174 * 16;
         int var6 = var1.field32175 * 16;
@@ -91,7 +91,7 @@ public class Search extends Module {
         return var4;
     }
 
-    public List<BlockPos> method16167(Class7481 var1) {
+    public List<BlockPos> method16167(ChunkPos var1) {
         ArrayList var4 = new ArrayList();
         if (var1 == null) {
             return null;
@@ -133,11 +133,11 @@ public class Search extends Module {
                 this.field23499.clear();
             } else {
                 int var4 = (int) this.getNumberValueBySettingName("Chunk Range");
-                List<Class7481> var5 = new ArrayList();
+                List<ChunkPos> var5 = new ArrayList();
 
                 for (int var6 = -5; var6 < 5; var6++) {
                     for (int var7 = -5; var7 < 5; var7++) {
-                        var5.add(new Class7481(mc.player.chunkCoordX + var6, mc.player.chunkCoordZ + var7));
+                        var5.add(new ChunkPos(mc.player.chunkCoordX + var6, mc.player.chunkCoordZ + var7));
                     }
                 }
 
@@ -145,7 +145,7 @@ public class Search extends Module {
 
                 while (var11.hasNext()) {
                     Class7871 var12 = (Class7871) var11.next();
-                    if (var12.method26391(new Class7481(mc.player.chunkCoordX, mc.player.chunkCoordZ)) > 7
+                    if (var12.method26391(new ChunkPos(mc.player.chunkCoordX, mc.player.chunkCoordZ)) > 7
                             || this.field23500.contains(var12.method26392())) {
                         var11.remove();
                     }
@@ -154,7 +154,7 @@ public class Search extends Module {
                 this.field23500.clear();
 
                 label52:
-                for (Class7481 var8 : var5) {
+                for (ChunkPos var8 : var5) {
                     for (Class7871 var10 : this.field23499) {
                         if (var10.method26390(var8)) {
                             continue label52;

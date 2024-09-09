@@ -64,14 +64,14 @@ public class Class8079 implements IAmbientSoundHandler {
                int var5 = var1.method27075() * 2 + 1;
                BlockPos var6 = new BlockPos(
                   this.field34720.getPosX() + (double)this.field34723.nextInt(var5) - (double)var1.method27075(),
-                  this.field34720.method3442() + (double)this.field34723.nextInt(var5) - (double)var1.method27075(),
+                  this.field34720.getPosYEye() + (double)this.field34723.nextInt(var5) - (double)var1.method27075(),
                   this.field34720.getPosZ() + (double)this.field34723.nextInt(var5) - (double)var1.method27075()
                );
                int var7 = var4.method7020(Class1977.field12881, var6);
                if (var7 <= 0) {
                   this.field34727 = this.field34727 - (float)(var4.method7020(Class1977.field12882, var6) - 1) / (float)var1.method27074();
                } else {
-                  this.field34727 = this.field34727 - (float)var7 / (float)var4.method7033() * 0.001F;
+                  this.field34727 = this.field34727 - (float)var7 / (float)var4.getMaxLightLevel() * 0.001F;
                }
 
                if (!(this.field34727 >= 1.0F)) {
@@ -81,14 +81,14 @@ public class Class8079 implements IAmbientSoundHandler {
                   double var10 = (double)var6.getY() + 0.5;
                   double var12 = (double)var6.getZ() + 0.5;
                   double var14 = var8 - this.field34720.getPosX();
-                  double var16 = var10 - this.field34720.method3442();
+                  double var16 = var10 - this.field34720.getPosYEye();
                   double var18 = var12 - this.field34720.getPosZ();
-                  double var20 = (double) MathHelper.method37766(var14 * var14 + var16 * var16 + var18 * var18);
+                  double var20 = (double) MathHelper.sqrt(var14 * var14 + var16 * var16 + var18 * var18);
                   double var22 = var20 + var1.method27076();
                   MinecraftSoundManager var24 = MinecraftSoundManager.method19298(
                      var1.method27073(),
                      this.field34720.getPosX() + var14 / var20 * var22,
-                     this.field34720.method3442() + var16 / var20 * var22,
+                     this.field34720.getPosYEye() + var16 / var20 * var22,
                      this.field34720.getPosZ() + var18 / var20 * var22
                   );
                   this.field34721.method1000(var24);

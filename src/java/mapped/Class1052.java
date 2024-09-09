@@ -97,14 +97,14 @@ public class Class1052 extends AbstractGroupFishEntity {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("Variant", this.method4818());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Variant", this.method4818());
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method4817(var1.getInt("Variant"));
    }
 
@@ -125,7 +125,7 @@ public class Class1052 extends AbstractGroupFishEntity {
    public void method4795(ItemStack var1) {
       super.method4795(var1);
       CompoundNBT var4 = var1.getOrCreateTag();
-      var4.method102("BucketVariantTag", this.method4818());
+      var4.putInt("BucketVariantTag", this.method4818());
    }
 
    @Override

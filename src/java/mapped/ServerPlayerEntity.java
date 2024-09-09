@@ -91,9 +91,9 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
    private void method2721(ServerWorld var1) {
       BlockPos var4 = var1.method6947();
-      if (var1.method6812().hasSkyLight() && var1.getServer().method1436().method20067() != Class1894.field11104) {
+      if (var1.method6812().hasSkyLight() && var1.getServer().method1436().method20067() != GameType.field11104) {
          int var5 = Math.max(0, this.field4856.method1395(var1));
-         int var6 = MathHelper.floor(var1.method6810().method24528((double)var4.getX(), (double)var4.getZ()));
+         int var6 = MathHelper.floor(var1.getWorldBorder().method24528((double)var4.getX(), (double)var4.getZ()));
          if (var6 < var5) {
             var5 = var6;
          }
@@ -114,16 +114,16 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
             int var17 = var15 / (var5 * 2 + 1);
             BlockPos var18 = Class6878.method20940(var1, var4.getX() + var16 - var5, var4.getZ() + var17 - var5, false);
             if (var18 != null) {
-               this.method3272(var18, 0.0F, 0.0F);
-               if (var1.method7052(this)) {
+               this.moveToBlockPosAndAngles(var18, 0.0F, 0.0F);
+               if (var1.hasNoCollisions(this)) {
                   break;
                }
             }
          }
       } else {
-         this.method3272(var4, 0.0F, 0.0F);
+         this.moveToBlockPosAndAngles(var4, 0.0F, 0.0F);
 
-         while (!var1.method7052(this) && this.getPosY() < 255.0) {
+         while (!var1.hasNoCollisions(this) && this.getPosY() < 255.0) {
             this.setPosition(this.getPosX(), this.getPosY() + 1.0, this.getPosZ());
          }
       }
@@ -134,17 +134,17 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("playerGameType", 99)) {
          if (!this.method3396().method1380()) {
             this.field4857
                .method33862(
-                  Class1894.method8159(var1.getInt("playerGameType")),
-                  !var1.contains("previousPlayerGameType", 3) ? Class1894.field11101 : Class1894.method8159(var1.getInt("previousPlayerGameType"))
+                  GameType.method8159(var1.getInt("playerGameType")),
+                  !var1.contains("previousPlayerGameType", 3) ? GameType.field11101 : GameType.method8159(var1.getInt("previousPlayerGameType"))
                );
          } else {
-            this.field4857.method33862(this.method3396().method1286(), Class1894.field11101);
+            this.field4857.method33862(this.method3396().method1286(), GameType.field11101);
          }
       }
 
@@ -159,7 +159,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       }
 
       if (this.isSleeping()) {
-         this.method2907();
+         this.wakeUp();
       }
 
       if (var1.contains("SpawnX", 99) && var1.contains("SpawnY", 99) && var1.contains("SpawnZ", 99)) {
@@ -176,10 +176,10 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("playerGameType", this.field4857.method33863().method8152());
-      var1.method102("previousPlayerGameType", this.field4857.method33864().method8152());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("playerGameType", this.field4857.method33863().method8152());
+      var1.putInt("previousPlayerGameType", this.field4857.method33864().method8152());
       var1.putBoolean("seenCredits", this.field4877);
       if (this.field4882 != null) {
          CompoundNBT var4 = new CompoundNBT();
@@ -194,7 +194,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       if (var5 != null && var8 != this && var8.method3413()) {
          CompoundNBT var6 = new CompoundNBT();
          CompoundNBT var7 = new CompoundNBT();
-         var8.method3293(var7);
+         var8.writeUnlessPassenger(var7);
          var6.method104("Attach", var5.getUniqueID());
          var6.put("Entity", var7);
          var1.put("RootVehicle", var6);
@@ -203,9 +203,9 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       var1.put("recipeBook", this.field4878.method21379());
       var1.method109("Dimension", this.world.getDimensionKey().getLocation().toString());
       if (this.field4885 != null) {
-         var1.method102("SpawnX", this.field4885.getX());
-         var1.method102("SpawnY", this.field4885.getY());
-         var1.method102("SpawnZ", this.field4885.getZ());
+         var1.putInt("SpawnX", this.field4885.getX());
+         var1.putInt("SpawnY", this.field4885.getY());
+         var1.putInt("SpawnZ", this.field4885.getZ());
          var1.putBoolean("SpawnForced", this.field4886);
          var1.putFloat("SpawnAngle", this.field4887);
          ResourceLocation.CODEC
@@ -240,23 +240,23 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    public void method2729() {
-      this.field4905.method18127(this);
+      this.field4905.addListener(this);
    }
 
    @Override
    public void method2730() {
       super.method2730();
-      this.field4855.sendPacket(new SCombatPacket(this.method3073(), Class1900.field11155));
+      this.field4855.sendPacket(new SCombatPacket(this.getCombatTracker(), Class1900.field11155));
    }
 
    @Override
-   public void method2731() {
-      super.method2731();
-      this.field4855.sendPacket(new SCombatPacket(this.method3073(), Class1900.field11156));
+   public void sendEndCombat() {
+      super.sendEndCombat();
+      this.field4855.sendPacket(new SCombatPacket(this.getCombatTracker(), Class1900.field11156));
    }
 
    @Override
-   public void method2732(BlockState var1) {
+   public void onInsideBlock(BlockState var1) {
       CriteriaTriggers.field44468.method15169(this, var1);
    }
 
@@ -273,10 +273,10 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          this.hurtResistantTime--;
       }
 
-      this.field4905.method18130();
-      if (!this.world.isRemote && !this.field4905.method18103(this)) {
+      this.field4905.detectAndSendChanges();
+      if (!this.world.isRemote && !this.field4905.canInteractWith(this)) {
          this.method2772();
-         this.field4905 = this.field4904;
+         this.field4905 = this.container;
       }
 
       while (!this.field4858.isEmpty()) {
@@ -320,8 +320,8 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
             super.tick();
          }
 
-         for (int var3 = 0; var3 < this.inventory.method3629(); var3++) {
-            ItemStack var7 = this.inventory.method3618(var3);
+         for (int var3 = 0; var3 < this.inventory.getSizeInventory(); var3++) {
+            ItemStack var7 = this.inventory.getStackInSlot(var3);
             if (var7.getItem().method11726()) {
                Packet var8 = ((Class3314)var7.getItem()).method11858(var7, this.world, this);
                if (var8 != null) {
@@ -330,41 +330,41 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
             }
          }
 
-         if (this.getHealth() != this.field4867 || this.field4868 != this.field4906.method37574() || this.field4906.method37577() == 0.0F != this.field4869) {
-            this.field4855.sendPacket(new SUpdateHealthPacket(this.getHealth(), this.field4906.method37574(), this.field4906.method37577()));
+         if (this.getHealth() != this.field4867 || this.field4868 != this.foodStats.getFoodLevel() || this.foodStats.method37577() == 0.0F != this.field4869) {
+            this.field4855.sendPacket(new SUpdateHealthPacket(this.getHealth(), this.foodStats.getFoodLevel(), this.foodStats.method37577()));
             this.field4867 = this.getHealth();
-            this.field4868 = this.field4906.method37574();
-            this.field4869 = this.field4906.method37577() == 0.0F;
+            this.field4868 = this.foodStats.getFoodLevel();
+            this.field4869 = this.foodStats.method37577() == 0.0F;
          }
 
-         if (this.getHealth() + this.method2959() != this.field4861) {
-            this.field4861 = this.getHealth() + this.method2959();
-            this.method2736(Class9008.field41194, MathHelper.method37773(this.field4861));
+         if (this.getHealth() + this.getAbsorptionAmount() != this.field4861) {
+            this.field4861 = this.getHealth() + this.getAbsorptionAmount();
+            this.method2736(Class9008.field41194, MathHelper.ceil(this.field4861));
          }
 
-         if (this.field4906.method37574() != this.field4862) {
-            this.field4862 = this.field4906.method37574();
-            this.method2736(Class9008.field41195, MathHelper.method37773((float)this.field4862));
+         if (this.foodStats.getFoodLevel() != this.field4862) {
+            this.field4862 = this.foodStats.getFoodLevel();
+            this.method2736(Class9008.field41195, MathHelper.ceil((float)this.field4862));
          }
 
-         if (this.method3351() != this.field4863) {
-            this.field4863 = this.method3351();
-            this.method2736(Class9008.field41196, MathHelper.method37773((float)this.field4863));
+         if (this.getAir() != this.field4863) {
+            this.field4863 = this.getAir();
+            this.method2736(Class9008.field41196, MathHelper.ceil((float)this.field4863));
          }
 
          if (this.method3070() != this.field4864) {
             this.field4864 = this.method3070();
-            this.method2736(Class9008.field41197, MathHelper.method37773((float)this.field4864));
+            this.method2736(Class9008.field41197, MathHelper.ceil((float)this.field4864));
          }
 
          if (this.field4921 != this.field4866) {
             this.field4866 = this.field4921;
-            this.method2736(Class9008.field41198, MathHelper.method37773((float)this.field4866));
+            this.method2736(Class9008.field41198, MathHelper.ceil((float)this.field4866));
          }
 
          if (this.field4920 != this.field4865) {
             this.field4865 = this.field4920;
-            this.method2736(Class9008.field41199, MathHelper.method37773((float)this.field4865));
+            this.method2736(Class9008.field41199, MathHelper.ceil((float)this.field4865));
          }
 
          if (this.field4921 != this.field4870) {
@@ -378,7 +378,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       } catch (Throwable var6) {
          CrashReport var4 = CrashReport.makeCrashReport(var6, "Ticking player");
          CrashReportCategory var5 = var4.makeCategory("Player being ticked");
-         this.method3372(var5);
+         this.fillCrashReport(var5);
          throw new ReportedException(var4);
       }
    }
@@ -388,15 +388,15 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2737(DamageSource var1) {
-      boolean var4 = this.world.method6789().method17135(Class5462.field24234);
+   public void onDeath(DamageSource var1) {
+      boolean var4 = this.world.getGameRules().getBoolean(Class5462.field24234);
       if (!var4) {
-         this.field4855.sendPacket(new SCombatPacket(this.method3073(), Class1900.field11157));
+         this.field4855.sendPacket(new SCombatPacket(this.getCombatTracker(), Class1900.field11157));
       } else {
-         ITextComponent var5 = this.method3073().method27600();
+         ITextComponent var5 = this.getCombatTracker().method27600();
          this.field4855
             .method15672(
-               new SCombatPacket(this.method3073(), Class1900.field11157, var5),
+               new SCombatPacket(this.getCombatTracker(), Class1900.field11157, var5),
                var2 -> {
                   if (!var2.isSuccess()) {
                      short var5x = 256;
@@ -406,7 +406,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
                      );
                      IFormattableTextComponent var8 = new TranslationTextComponent("death.attack.even_more_magic", this.getDisplayName())
                         .modifyStyle(var1xx -> var1xx.setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_TEXT, var7x)));
-                     this.field4855.sendPacket(new SCombatPacket(this.method3073(), Class1900.field11157, var8));
+                     this.field4855.sendPacket(new SCombatPacket(this.getCombatTracker(), Class1900.field11157, var8));
                   }
                }
             );
@@ -423,29 +423,29 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       }
 
       this.method2949();
-      if (this.world.method6789().method17135(Class5462.field24254)) {
+      if (this.world.getGameRules().getBoolean(Class5462.field24254)) {
          this.method2738();
       }
 
       if (!this.isSpectator()) {
-         this.method3052(var1);
+         this.spawnDrops(var1);
       }
 
       this.method2953().method20978(Class9008.field41191, this.method2956(), Class9411::method36049);
-      LivingEntity var7 = this.method3074();
+      LivingEntity var7 = this.getAttackingEntity();
       if (var7 != null) {
-         this.method2913(Class8876.field40103.method172(var7.getType()));
-         var7.method2739(this, this.field4979, var1);
-         this.method3051(var7);
+         this.addStat(Stats.field40103.method172(var7.getType()));
+         var7.awardKillScore(this, this.scoreValue, var1);
+         this.createWitherRose(var7);
       }
 
-      this.world.method6786(this, (byte)3);
-      this.method2911(Class8876.field40134);
-      this.method2777(Class8876.field40104.method172(Class8876.field40107));
-      this.method2777(Class8876.field40104.method172(Class8876.field40108));
-      this.method3223();
-      this.method3349(0, false);
-      this.method3073().method27606();
+      this.world.setEntityState(this, (byte)3);
+      this.method2911(Stats.field40134);
+      this.method2777(Stats.field40104.method172(Stats.field40107));
+      this.method2777(Stats.field40104.method172(Stats.field40108));
+      this.extinguish();
+      this.setFlag(0, false);
+      this.getCombatTracker().method27606();
    }
 
    private void method2738() {
@@ -458,17 +458,17 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2739(Entity var1, int var2, DamageSource var3) {
+   public void awardKillScore(Entity var1, int var2, DamageSource var3) {
       if (var1 != this) {
-         super.method2739(var1, var2, var3);
+         super.awardKillScore(var1, var2, var3);
          this.method2876(var2);
          String var6 = this.method2956();
          String var7 = var1.method2956();
          this.method2953().method20978(Class9008.field41193, var6, Class9411::method36049);
          if (!(var1 instanceof PlayerEntity)) {
-            this.method2911(Class8876.field40135);
+            this.method2911(Stats.field40135);
          } else {
-            this.method2911(Class8876.field40137);
+            this.method2911(Stats.field40137);
             this.method2953().method20978(Class9008.field41192, var6, Class9411::method36049);
          }
 
@@ -489,16 +489,16 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (this.method2760(var1)) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (this.isInvulnerableTo(var1)) {
          return false;
       } else {
          boolean var5 = this.field4856.method1348() && this.method2743() && "fall".equals(var1.field39022);
          if (!var5 && this.field4871 > 0 && var1 != DamageSource.field39004) {
             return false;
          } else {
-            if (var1 instanceof Class8652) {
-               Entity var6 = var1.method31109();
+            if (var1 instanceof EntityDamageSource) {
+               Entity var6 = var1.getTrueSource();
                if (var6 instanceof PlayerEntity && !this.method2742((PlayerEntity)var6)) {
                   return false;
                }
@@ -512,7 +512,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
                }
             }
 
-            return super.method2741(var1, var2);
+            return super.attackEntityFrom(var1, var2);
          }
       }
    }
@@ -528,11 +528,11 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
    @Nullable
    @Override
-   public Class9761 method2744(ServerWorld var1) {
-      Class9761 var4 = super.method2744(var1);
+   public PortalInfo method2744(ServerWorld var1) {
+      PortalInfo var4 = super.method2744(var1);
       if (var4 != null && this.world.getDimensionKey() == World.OVERWORLD && var1.getDimensionKey() == World.THE_END) {
-         Vector3d var5 = var4.field45665.method11339(0.0, -1.0, 0.0);
-         return new Class9761(var5, Vector3d.ZERO, 90.0F, 0.0F);
+         Vector3d var5 = var4.field45665.add(0.0, -1.0, 0.0);
+         return new PortalInfo(var5, Vector3d.ZERO, 90.0F, 0.0F);
       } else {
          return var4;
       }
@@ -540,7 +540,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
    @Nullable
    @Override
-   public Entity method2745(ServerWorld var1) {
+   public Entity changeDimension(ServerWorld var1) {
       this.field4876 = true;
       ServerWorld var4 = this.getServerWorld();
       RegistryKey var5 = var4.getDimensionKey();
@@ -574,7 +574,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          var7.method19454(this);
          var4.method6934(this);
          this.removed = false;
-         Class9761 var8 = this.method2744(var1);
+         PortalInfo var8 = this.method2744(var1);
          if (var8 != null) {
             var4.getProfiler().startSection("moving");
             if (var5 == World.OVERWORLD && var1.getDimensionKey() == World.THE_NETHER) {
@@ -588,7 +588,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
             this.method3268(var1);
             var1.method6920(this);
             this.setRotation(var8.field45667, var8.field45668);
-            this.method2794(var8.field45665.x, var8.field45665.y, var8.field45665.z);
+            this.moveForced(var8.field45665.x, var8.field45665.y, var8.field45665.z);
             var4.getProfiler().endSection();
             this.method2748(var4);
             this.field4857.method33871(var1);
@@ -596,7 +596,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
             var7.method19472(this, var1);
             var7.method19473(this);
 
-            for (Class2023 var10 : this.method3031()) {
+            for (EffectInstance var10 : this.getActivePotionEffects()) {
                this.field4855.sendPacket(new SPlayEntityEffectPacket(this.getEntityId(), var10));
             }
 
@@ -624,10 +624,10 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public Optional<Class9502> method2747(ServerWorld var1, BlockPos var2, boolean var3) {
+   public Optional<TeleportationRepositioner> method2747(ServerWorld var1, BlockPos var2, boolean var3) {
       Optional var6 = super.method2747(var1, var2, var3);
       if (!var6.isPresent()) {
-         Class113 var7 = this.world.getBlockState(this.field_242271_ac).<Class113>method23464(Class3401.field19060).orElse(Class113.field413);
+         Direction var7 = this.world.getBlockState(this.field_242271_ac).<Direction>method23464(Class3401.field19060).orElse(Direction.field413);
          Optional var8 = var1.method6937().method12332(var2, var7);
          if (!var8.isPresent()) {
             field4854.error("Unable to create a portal, likely target out of worldborder");
@@ -653,9 +653,9 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public boolean method2749(ServerPlayerEntity var1) {
+   public boolean isSpectatedByPlayer(ServerPlayerEntity var1) {
       if (!var1.isSpectator()) {
-         return !this.isSpectator() ? super.method2749(var1) : false;
+         return !this.isSpectator() ? super.isSpectatedByPlayer(var1) : false;
       } else {
          return this.method2814() == this;
       }
@@ -671,14 +671,14 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2751(Entity var1, int var2) {
-      super.method2751(var1, var2);
-      this.field4905.method18130();
+   public void onItemPickup(Entity var1, int var2) {
+      super.onItemPickup(var1, var2);
+      this.field4905.detectAndSendChanges();
    }
 
    @Override
    public Either<Class2104, Class2341> method2752(BlockPos var1) {
-      Direction var4 = this.world.getBlockState(var1).<Direction>method23463(Class3198.field18484);
+      net.minecraft.util.Direction var4 = this.world.getBlockState(var1).<net.minecraft.util.Direction>method23463(Class3198.field18484);
       if (this.isSleeping() || !this.isAlive()) {
          return Either.left(Class2104.field13718);
       } else if (!this.world.method6812().isNatural()) {
@@ -711,7 +711,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
             }
 
             Either var5 = super.method2752(var1).ifRight(var1x -> {
-               this.method2911(Class8876.field40162);
+               this.method2911(Stats.field40162);
                CriteriaTriggers.field44481.method15062(this);
             });
             ((ServerWorld)this.world).method6902();
@@ -725,12 +725,12 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2753(BlockPos var1) {
-      this.method2777(Class8876.field40104.method172(Class8876.field40108));
-      super.method2753(var1);
+   public void startSleeping(BlockPos var1) {
+      this.method2777(Stats.field40104.method172(Stats.field40108));
+      super.startSleeping(var1);
    }
 
-   private boolean method2754(BlockPos var1, Direction var2) {
+   private boolean method2754(BlockPos var1, net.minecraft.util.Direction var2) {
       return this.method2755(var1) || this.method2755(var1.method8349(var2.method536()));
    }
 
@@ -741,7 +741,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          && Math.abs(this.getPosZ() - var4.getZ()) <= 3.0;
    }
 
-   private boolean method2756(BlockPos var1, Direction var2) {
+   private boolean method2756(BlockPos var1, net.minecraft.util.Direction var2) {
       BlockPos var5 = var1.up();
       return !this.method2917(var5) || !this.method2917(var5.method8349(var2.method536()));
    }
@@ -749,7 +749,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    @Override
    public void stopSleepInBed(boolean var1, boolean var2) {
       if (this.isSleeping()) {
-         this.getServerWorld().getChunkProvider().method7379(this, new SAnimateHandPacket(this, 2));
+         this.getServerWorld().getChunkProvider().sendToAllTracking(this, new SAnimateHandPacket(this, 2));
       }
 
       super.stopSleepInBed(var1, var2);
@@ -759,9 +759,9 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public boolean method2758(Entity var1, boolean var2) {
+   public boolean startRiding(Entity var1, boolean var2) {
       Entity var5 = this.getRidingEntity();
-      if (super.method2758(var1, var2)) {
+      if (super.startRiding(var1, var2)) {
          Entity var6 = this.getRidingEntity();
          if (var6 != var5 && this.field4855 != null) {
             this.field4855.method15668(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
@@ -784,25 +784,25 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public boolean method2760(DamageSource var1) {
-      return super.method2760(var1) || this.method2821() || this.abilities.disableDamage && var1 == DamageSource.field39007;
+   public boolean isInvulnerableTo(DamageSource var1) {
+      return super.isInvulnerableTo(var1) || this.method2821() || this.abilities.disableDamage && var1 == DamageSource.field39007;
    }
 
    @Override
-   public void method2761(double var1, boolean var3, BlockState var4, BlockPos var5) {
+   public void updateFallState(double var1, boolean var3, BlockState var4, BlockPos var5) {
    }
 
    @Override
-   public void method2762(BlockPos var1) {
+   public void frostWalk(BlockPos var1) {
       if (!this.isSpectator()) {
-         super.method2762(var1);
+         super.frostWalk(var1);
       }
    }
 
    public void method2763(double var1, boolean var3) {
-      BlockPos var6 = this.method3228();
+      BlockPos var6 = this.getOnPosition();
       if (this.world.method7017(var6)) {
-         super.method2761(var1, var3, this.world.getBlockState(var6), var6);
+         super.updateFallState(var1, var3, this.world.getBlockState(var6), var6);
       }
    }
 
@@ -819,15 +819,15 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    @Override
    public OptionalInt method2766(Class949 var1) {
       if (var1 != null) {
-         if (this.field4905 != this.field4904) {
+         if (this.field4905 != this.container) {
             this.method2772();
          }
 
          this.method2765();
-         Class5812 var4 = var1.method3627(this.field4889, this.inventory, this);
+         Container var4 = var1.method3627(this.field4889, this.inventory, this);
          if (var4 != null) {
-            this.field4855.sendPacket(new SOpenWindowPacket(var4.field25471, var4.method18109(), var1.method2954()));
-            var4.method18127(this);
+            this.field4855.sendPacket(new SOpenWindowPacket(var4.field25471, var4.getType(), var1.method2954()));
+            var4.addListener(this);
             this.field4905 = var4;
             return OptionalInt.of(this.field4889);
          } else {
@@ -848,15 +848,15 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2768(AbstractHorseEntity var1, Class920 var2) {
-      if (this.field4905 != this.field4904) {
+   public void method2768(AbstractHorseEntity var1, IInventory var2) {
+      if (this.field4905 != this.container) {
          this.method2772();
       }
 
       this.method2765();
-      this.field4855.sendPacket(new SOpenHorseWindowPacket(this.field4889, var2.method3629(), var1.getEntityId()));
+      this.field4855.sendPacket(new SOpenHorseWindowPacket(this.field4889, var2.getSizeInventory(), var1.getEntityId()));
       this.field4905 = new Class5827(this.field4889, this.inventory, var2, var1);
-      this.field4905.method18127(this);
+      this.field4905.addListener(this);
    }
 
    @Override
@@ -864,7 +864,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       Item var5 = var1.getItem();
       if (var5 == Items.field38048) {
          if (Class3285.method11820(var1, this.getCommandSource(), this)) {
-            this.field4905.method18130();
+            this.field4905.detectAndSendChanges();
          }
 
          this.field4855.sendPacket(new SOpenBookWindowPacket(var2));
@@ -878,9 +878,9 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2720(Class5812 var1, int var2, ItemStack var3) {
-      if (!(var1.method18131(var2) instanceof Class5856)) {
-         if (var1 == this.field4904) {
+   public void method2720(Container var1, int var2, ItemStack var3) {
+      if (!(var1.getSlot(var2) instanceof Class5856)) {
+         if (var1 == this.container) {
             CriteriaTriggers.field44469.method15086(this, this.inventory, var3);
          }
 
@@ -890,18 +890,18 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       }
    }
 
-   public void method2771(Class5812 var1) {
-      this.method2718(var1, var1.method18129());
+   public void method2771(Container var1) {
+      this.method2718(var1, var1.getInventory());
    }
 
    @Override
-   public void method2718(Class5812 var1, NonNullList<ItemStack> var2) {
+   public void method2718(Container var1, NonNullList<ItemStack> var2) {
       this.field4855.sendPacket(new SWindowItemsPacket(var1.field25471, var2));
       this.field4855.sendPacket(new SSetSlotPacket(-1, -1, this.inventory.method4057()));
    }
 
    @Override
-   public void method2719(Class5812 var1, int var2, int var3) {
+   public void method2719(Container var1, int var2, int var3) {
       this.field4855.sendPacket(new SWindowPropertyPacket(var1.field25471, var2, var3));
    }
 
@@ -918,21 +918,21 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    public void method2774() {
-      this.field4905.method18113(this);
-      this.field4905 = this.field4904;
+      this.field4905.onContainerClosed(this);
+      this.field4905 = this.container;
    }
 
    public void method2775(float var1, float var2, boolean var3, boolean var4) {
       if (this.isPassenger()) {
          if (var1 >= -1.0F && var1 <= 1.0F) {
-            this.field4982 = var1;
+            this.moveStrafing = var1;
          }
 
          if (var2 >= -1.0F && var2 <= 1.0F) {
-            this.field4984 = var2;
+            this.moveForward = var2;
          }
 
-         this.field4981 = var3;
+         this.isJumping = var3;
          this.setSneaking(var4);
       }
    }
@@ -998,28 +998,28 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2786() {
-      if (!this.field5001.isEmpty() && this.isHandActive()) {
+   public void onItemUseFinish() {
+      if (!this.activeItemStack.isEmpty() && this.isHandActive()) {
          this.field4855.sendPacket(new SEntityStatusPacket(this, (byte)9));
-         super.method2786();
+         super.onItemUseFinish();
       }
    }
 
    @Override
-   public void method2787(Class2062 var1, Vector3d var2) {
-      super.method2787(var1, var2);
+   public void lookAt(Class2062 var1, Vector3d var2) {
+      super.lookAt(var1, var2);
       this.field4855.sendPacket(new SPlayerLookPacket(var1, var2.x, var2.y, var2.z));
    }
 
    public void method2788(Class2062 var1, Entity var2, Class2062 var3) {
       Vector3d var6 = var3.method8711(var2);
-      super.method2787(var1, var6);
+      super.lookAt(var1, var6);
       this.field4855.sendPacket(new SPlayerLookPacket(var1, var2, var3));
    }
 
    public void method2789(ServerPlayerEntity var1, boolean var2) {
       if (!var2) {
-         if (this.world.method6789().method17135(Class5462.field24225) || var1.isSpectator()) {
+         if (this.world.getGameRules().getBoolean(Class5462.field24225) || var1.isSpectator()) {
             this.inventory.method4060(var1.inventory);
             this.field4920 = var1.field4920;
             this.field4921 = var1.field4921;
@@ -1028,8 +1028,8 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          }
       } else {
          this.inventory.method4060(var1.inventory);
-         this.method3043(var1.getHealth());
-         this.field4906 = var1.field4906;
+         this.setHealth(var1.getHealth());
+         this.foodStats = var1.foodStats;
          this.field4920 = var1.field4920;
          this.field4921 = var1.field4921;
          this.field4922 = var1.field4922;
@@ -1039,7 +1039,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
       this.field4923 = var1.field4923;
       this.field4903 = var1.field4903;
-      this.method3210().method35446(field4897, var1.method3210().<Byte>method35445(field4897));
+      this.getDataManager().method35446(field4897, var1.getDataManager().<Byte>method35445(field4897));
       this.field4870 = -1;
       this.field4867 = -1.0F;
       this.field4868 = -1;
@@ -1052,10 +1052,10 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2790(Class2023 var1) {
-      super.method2790(var1);
+   public void onNewPotionEffect(EffectInstance var1) {
+      super.onNewPotionEffect(var1);
       this.field4855.sendPacket(new SPlayEntityEffectPacket(this.getEntityId(), var1));
-      if (var1.method8627() == Effects.LEVITATION) {
+      if (var1.getPotion() == Effects.LEVITATION) {
          this.field4880 = this.ticksExisted;
          this.field4879 = this.getPositionVec();
       }
@@ -1064,17 +1064,17 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2791(Class2023 var1, boolean var2) {
-      super.method2791(var1, var2);
+   public void onChangedPotionEffect(EffectInstance var1, boolean var2) {
+      super.onChangedPotionEffect(var1, var2);
       this.field4855.sendPacket(new SPlayEntityEffectPacket(this.getEntityId(), var1));
       CriteriaTriggers.field44491.method15083(this);
    }
 
    @Override
-   public void method2792(Class2023 var1) {
-      super.method2792(var1);
-      this.field4855.sendPacket(new SRemoveEntityEffectPacket(this.getEntityId(), var1.method8627()));
-      if (var1.method8627() == Effects.LEVITATION) {
+   public void onFinishedPotionEffect(EffectInstance var1) {
+      super.onFinishedPotionEffect(var1);
+      this.field4855.sendPacket(new SRemoveEntityEffectPacket(this.getEntityId(), var1.getPotion()));
+      if (var1.getPotion() == Effects.LEVITATION) {
          this.field4879 = null;
       }
 
@@ -1082,31 +1082,31 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2793(double var1, double var3, double var5) {
+   public void setPositionAndUpdate(double var1, double var3, double var5) {
       this.field4855.method15668(var1, var3, var5, this.rotationYaw, this.rotationPitch);
    }
 
    @Override
-   public void method2794(double var1, double var3, double var5) {
-      this.method2793(var1, var3, var5);
+   public void moveForced(double var1, double var3, double var5) {
+      this.setPositionAndUpdate(var1, var3, var5);
       this.field4855.method15656();
    }
 
    @Override
    public void method2795(Entity var1) {
-      this.getServerWorld().getChunkProvider().method7379(this, new SAnimateHandPacket(var1, 4));
+      this.getServerWorld().getChunkProvider().sendToAllTracking(this, new SAnimateHandPacket(var1, 4));
    }
 
    @Override
    public void method2796(Entity var1) {
-      this.getServerWorld().getChunkProvider().method7379(this, new SAnimateHandPacket(var1, 5));
+      this.getServerWorld().getChunkProvider().sendToAllTracking(this, new SAnimateHandPacket(var1, 5));
    }
 
    @Override
    public void method2797() {
       if (this.field4855 != null) {
          this.field4855.sendPacket(new SPlayerAbilitiesPacket(this.abilities));
-         this.method2813();
+         this.updatePotionMetadata();
       }
    }
 
@@ -1115,10 +1115,10 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2799(Class1894 var1) {
+   public void method2799(GameType var1) {
       this.field4857.method33861(var1);
       this.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24563, (float)var1.method8152()));
-      if (var1 != Class1894.field11105) {
+      if (var1 != GameType.SPECTATOR) {
          this.method2815(this);
       } else {
          this.method2949();
@@ -1126,17 +1126,17 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       }
 
       this.method2797();
-      this.method3147();
+      this.markPotionsDirty();
    }
 
    @Override
    public boolean isSpectator() {
-      return this.field4857.method33863() == Class1894.field11105;
+      return this.field4857.method33863() == GameType.SPECTATOR;
    }
 
    @Override
    public boolean isCreative() {
-      return this.field4857.method33863() == Class1894.field11103;
+      return this.field4857.method33863() == GameType.field11103;
    }
 
    @Override
@@ -1173,8 +1173,8 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    public void method2804(CClientSettingsPacket var1) {
       this.field4872 = var1.getChatVisibility();
       this.field4873 = var1.isColorsEnabled();
-      this.method3210().method35446(field4897, (byte)var1.getModelPartFlags());
-      this.method3210().method35446(field4898, (byte)(var1.getMainHand() != HandSide.field14417 ? 1 : 0));
+      this.getDataManager().method35446(field4897, (byte)var1.getModelPartFlags());
+      this.getDataManager().method35446(field4898, (byte)(var1.getMainHand() != HandSide.field14417 ? 1 : 0));
    }
 
    public ChatVisibility getChatVisibility() {
@@ -1215,12 +1215,12 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2813() {
+   public void updatePotionMetadata() {
       if (!this.isSpectator()) {
-         super.method2813();
+         super.updatePotionMetadata();
       } else {
-         this.method3029();
-         this.method3347(true);
+         this.resetPotionEffectMetadata();
+         this.setInvisible(true);
       }
    }
 
@@ -1233,20 +1233,20 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       this.field4875 = (Entity)(var1 != null ? var1 : this);
       if (var4 != this.field4875) {
          this.field4855.sendPacket(new SCameraPacket(this.field4875));
-         this.method2793(this.field4875.getPosX(), this.field4875.getPosY(), this.field4875.getPosZ());
+         this.setPositionAndUpdate(this.field4875.getPosX(), this.field4875.getPosY(), this.field4875.getPosZ());
       }
    }
 
    @Override
-   public void method2816() {
+   public void decrementTimeUntilPortal() {
       if (!this.field4876) {
-         super.method2816();
+         super.decrementTimeUntilPortal();
       }
    }
 
    @Override
    public void method2817(Entity var1) {
-      if (this.field4857.method33863() != Class1894.field11105) {
+      if (this.field4857.method33863() != GameType.SPECTATOR) {
          super.method2817(var1);
       } else {
          this.method2815(var1);
@@ -1303,7 +1303,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          this.field4856.getPlayerList().method19454(this);
          var12.method6934(this);
          this.removed = false;
-         this.method3273(var2, var4, var6, var8, var9);
+         this.setLocationAndAngles(var2, var4, var6, var8, var9);
          this.method3268(var1);
          var1.method6919(this);
          this.method2748(var12);
@@ -1352,12 +1352,12 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       }
    }
 
-   public void method2830(Class7481 var1, Packet<?> var2, Packet<?> var3) {
+   public void method2830(ChunkPos var1, Packet<?> var2, Packet<?> var3) {
       this.field4855.sendPacket(var3);
       this.field4855.sendPacket(var2);
    }
 
-   public void method2831(Class7481 var1) {
+   public void method2831(ChunkPos var1) {
       if (this.isAlive()) {
          this.field4855.sendPacket(new SUnloadChunkPacket(var1.field32174, var1.field32175));
       }
@@ -1377,7 +1377,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnPlayerPacket(this);
    }
 
@@ -1385,14 +1385,14 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    public ItemEntity method2836(ItemStack var1, boolean var2, boolean var3) {
       ItemEntity var6 = super.method2836(var1, var2, var3);
       if (var6 != null) {
-         this.world.method6916(var6);
+         this.world.addEntity(var6);
          ItemStack var7 = var6.method4124();
          if (var3) {
             if (!var7.isEmpty()) {
-               this.method2776(Class8876.field40101.method172(var7.getItem()), var1.getCount());
+               this.method2776(Stats.field40101.method172(var7.getItem()), var1.getCount());
             }
 
-            this.method2911(Class8876.field40126);
+            this.method2911(Stats.field40126);
          }
 
          return var6;

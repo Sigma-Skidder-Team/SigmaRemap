@@ -17,7 +17,7 @@ public class FuncraftGameplay extends Module {
 
     @Override
     public void method15953() {
-        this.field23579 = (GamePlay) this.method16004();
+        this.field23579 = (GamePlay) this.access();
     }
 
     @EventTarget
@@ -26,7 +26,7 @@ public class FuncraftGameplay extends Module {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SChatPacket) {
                 SChatPacket var5 = (SChatPacket) var4;
-                String var6 = var5.method17648().getString();
+                String var6 = var5.getChatComponent().getString();
                 String var7 = mc.player.getName().getString().toLowerCase();
                 if (this.field23579.getBooleanValueFromSetttingName("AutoL")
                         && (var6.toLowerCase().contains("a été tué par " + var7) || var6.toLowerCase().contains("a été tué par le vide et " + var7))) {

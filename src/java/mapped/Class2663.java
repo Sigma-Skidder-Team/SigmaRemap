@@ -26,7 +26,7 @@ public class Class2663 extends Class2661 {
          if (!var0.method23446(BlockTags.field32772)) {
             return var0.method23446(BlockTags.field32769);
          } else {
-            return !var0.method23448(Blocks.SUNFLOWER) ? true : var0.<Class84>method23463(Class3456.field19276) == Class84.field209;
+            return !var0.isIn(Blocks.SUNFLOWER) ? true : var0.<Class84>method23463(Class3456.field19276) == Class84.field209;
          }
       };
       this.field17026 = 0;
@@ -131,7 +131,7 @@ public class Class2663 extends Class2661 {
    public void method10805() {
       this.field17030++;
       if (this.field17030 <= 600) {
-         Vector3d var3 = Vector3d.method11330(Class1017.method4469(this.field17031)).method11339(0.0, 0.6F, 0.0);
+         Vector3d var3 = Vector3d.method11330(Class1017.method4469(this.field17031)).add(0.0, 0.6F, 0.0);
          if (!(var3.method11341(this.field17031.getPositionVec()) > 1.0)) {
             if (this.field17029 == null) {
                this.field17029 = var3;
@@ -163,7 +163,7 @@ public class Class2663 extends Class2661 {
                this.field17026++;
                if (Class1017.method4490(this.field17031).nextFloat() < 0.05F && this.field17026 > this.field17027 + 60) {
                   this.field17027 = this.field17026;
-                  this.field17031.method2863(SoundEvents.field26394, 1.0F, 1.0F);
+                  this.field17031.playSound(SoundEvents.field26394, 1.0F, 1.0F);
                }
             }
          } else {

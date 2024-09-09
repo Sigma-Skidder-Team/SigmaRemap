@@ -17,6 +17,6 @@ public class Class2604 extends Class2603 {
 
    @Override
    public boolean method10803() {
-      return this.field16850.method3250() && this.field16850.method3427(Class8953.field40469) > 0.25 || this.field16850.method3264();
+      return this.field16850.isInWater() && this.field16850.method3427(FluidTags.field40469) > 0.25 || this.field16850.isInLava();
    }
 }

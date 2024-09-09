@@ -130,20 +130,20 @@ public abstract class Class9307 {
       this.field43208.method680(var1, method35124(var6), false);
    }
 
-   public <T> void method35128(Class8561<T> var1, Class7481 var2, int var3, T var4) {
+   public <T> void method35128(Class8561<T> var1, ChunkPos var2, int var3, T var4) {
       this.method35126(var2.method24352(), new Class2005(var1, var3, var4));
    }
 
-   public <T> void method35129(Class8561<T> var1, Class7481 var2, int var3, T var4) {
+   public <T> void method35129(Class8561<T> var1, ChunkPos var2, int var3, T var4) {
       Class2005 var7 = new Class2005(var1, var3, var4);
       this.method35127(var2.method24352(), var7);
    }
 
-   public <T> void method35130(Class8561<T> var1, Class7481 var2, int var3, T var4) {
+   public <T> void method35130(Class8561<T> var1, ChunkPos var2, int var3, T var4) {
       this.method35126(var2.method24352(), new Class2005(var1, 33 - var3, var4));
    }
 
-   public <T> void method35131(Class8561<T> var1, Class7481 var2, int var3, T var4) {
+   public <T> void method35131(Class8561<T> var1, ChunkPos var2, int var3, T var4) {
       Class2005 var7 = new Class2005(var1, 33 - var3, var4);
       this.method35127(var2.method24352(), var7);
    }
@@ -152,8 +152,8 @@ public abstract class Class9307 {
       return (Class52<Class2005<?>>)this.field43207.computeIfAbsent(var1, var0 -> Class52.method179(4));
    }
 
-   public void method35133(Class7481 var1, boolean var2) {
-      Class2005 var5 = new Class2005<Class7481>(Class8561.field38483, 31, var1);
+   public void method35133(ChunkPos var1, boolean var2) {
+      Class2005 var5 = new Class2005<ChunkPos>(Class8561.field38483, 31, var1);
       if (!var2) {
          this.method35127(var1.method24352(), var5);
       } else {

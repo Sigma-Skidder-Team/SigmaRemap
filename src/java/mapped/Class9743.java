@@ -11,37 +11,37 @@ import java.util.Optional;
 public class Class9743 {
    private static String[] field45489;
 
-   public static Class6947<?> method38192(Class1036 var0, Class6947<Class1036> var1) {
+   public static Brain<?> method38192(Class1036 var0, Brain<Class1036> var1) {
       method38194(var0, var1);
       method38195(var0, var1);
       method38196(var0, var1);
-      var1.method21415(ImmutableSet.of(Class8890.field40219));
-      var1.method21424(Class8890.field40220);
+      var1.method21415(ImmutableSet.of(Activity.field40219));
+      var1.method21424(Activity.field40220);
       var1.method21417();
       return var1;
    }
 
    public static void method38193(Class1036 var0) {
       Class9378 var3 = Class9378.method35577(var0.world.getDimensionKey(), var0.getPosition());
-      var0.method2992().method21406(Class8830.field39813, var3);
+      var0.getBrain().method21406(Class8830.field39813, var3);
    }
 
-   private static void method38194(Class1036 var0, Class6947<Class1036> var1) {
-      var1.method21425(Class8890.field40219, 0,
+   private static void method38194(Class1036 var0, Brain<Class1036> var1) {
+      var1.method21425(Activity.field40219, 0,
               ImmutableList.of(new Class3681(45, 90), new Class3735(), new Class3697(), new Class3701<>()));
    }
 
-   private static void method38195(Class1036 var0, Class6947<Class1036> var1) {
+   private static void method38195(Class1036 var0, Brain<Class1036> var1) {
       var1.method21425(
-         Class8890.field40220,
+         Activity.field40220,
          10,
          ImmutableList.of(new Class3733<Class1035>(Class9743::method38201), method38197(), method38198(), new Class3715(EntityType.PLAYER, 4))
       );
    }
 
-   private static void method38196(Class1036 var0, Class6947<Class1036> var1) {
+   private static void method38196(Class1036 var0, Brain<Class1036> var1) {
       var1.method21426(
-         Class8890.field40229,
+         Activity.field40229,
          10,
          ImmutableList.of(new Class3685<>(var1x -> !method38200(var0, var1x)), new Class3720(1.0F), new Class3684(20)),
          Class8830.field39826
@@ -74,10 +74,10 @@ public class Class9743 {
    }
 
    public static void method38199(Class1036 var0) {
-      Class6947<Class1036> var3 = var0.method2992();
-      Class8890 var4 = var3.method21418().orElse(null);
-      var3.method21423(ImmutableList.of(Class8890.field40229, Class8890.field40220));
-      Class8890 var5 = var3.method21418().orElse(null);
+      Brain<Class1036> var3 = var0.getBrain();
+      Activity var4 = var3.method21418().orElse(null);
+      var3.method21423(ImmutableList.of(Activity.field40229, Activity.field40220));
+      Activity var5 = var3.method21418().orElse(null);
       if (var4 != var5) {
          method38206(var0);
       }
@@ -95,7 +95,7 @@ public class Class9743 {
          return var3;
       } else {
          Optional var4 = method38203(var0, Class8830.field39823);
-         return !var4.isPresent() ? var0.method2992().method21410(Class8830.field39848) : var4;
+         return !var4.isPresent() ? var0.getBrain().method21410(Class8830.field39848) : var4;
       }
    }
 
@@ -104,7 +104,7 @@ public class Class9743 {
    }
 
    private static Optional<? extends LivingEntity> method38203(Class1035 var0, Class8830<? extends LivingEntity> var1) {
-      return var0.method2992().method21410(var1).filter(var1x -> var1x.isEntityInRange(var0, 12.0));
+      return var0.getBrain().method21410(var1).filter(var1x -> var1x.isEntityInRange(var0, 12.0));
    }
 
    public static void method38204(Class1036 var0, LivingEntity var1) {
@@ -120,8 +120,8 @@ public class Class9743 {
    }
 
    private static void method38206(Class1036 var0) {
-      var0.method2992().method21418().ifPresent(var1 -> {
-         if (var1 == Class8890.field40229) {
+      var0.getBrain().method21418().ifPresent(var1 -> {
+         if (var1 == Activity.field40229) {
             var0.method4638();
          }
       });

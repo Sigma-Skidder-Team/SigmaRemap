@@ -94,7 +94,7 @@ public class Class4852 implements Class4842 {
                }
             }
 
-            if (!var11.test(var1.method3618(var7 + var8 * var1.method3671()))) {
+            if (!var11.test(var1.getStackInSlot(var7 + var8 * var1.method3671()))) {
                return false;
             }
          }

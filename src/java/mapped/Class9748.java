@@ -181,8 +181,8 @@ public class Class9748 {
                   }
                }
 
-               for (Class1894 var11 : Class1894.values()) {
-                  if (var11 != Class1894.field11101 && var11.method8153().toLowerCase(Locale.ROOT).startsWith(var5x)) {
+               for (GameType var11 : GameType.values()) {
+                  if (var11 != GameType.field11101 && var11.method8153().toLowerCase(Locale.ROOT).startsWith(var5x)) {
                      if (var7) {
                         var1.suggest('!' + var11.method8153());
                      }
@@ -202,12 +202,12 @@ public class Class9748 {
                throw field45500.createWithContext(var0.method30277(), "gamemode");
             } else {
                String var5 = var0.method30277().readUnquotedString();
-               Class1894 var6 = Class1894.method8162(var5, Class1894.field11101);
-               if (var6 != Class1894.field11101) {
+               GameType var6 = GameType.method8162(var5, GameType.field11101);
+               if (var6 != GameType.field11101) {
                   var0.method30301(false);
                   var0.method30278(var2 -> {
                      if (var2 instanceof ServerPlayerEntity) {
-                        Class1894 var5x = ((ServerPlayerEntity)var2).field4857.method33863();
+                        GameType var5x = ((ServerPlayerEntity)var2).field4857.method33863();
                         return !var4 ? var5x == var6 : var5x != var6;
                      } else {
                         return false;
@@ -286,13 +286,13 @@ public class Class9748 {
          method38218("tag", var0 -> {
             boolean var3 = var0.method30275();
             String var4 = var0.method30277().readUnquotedString();
-            var0.method30278(var2 -> !"".equals(var4) ? var2.method3207().contains(var4) != var3 : var2.method3207().isEmpty() != var3);
+            var0.method30278(var2 -> !"".equals(var4) ? var2.getTags().contains(var4) != var3 : var2.getTags().isEmpty() != var3);
          }, var0 -> true, new TranslationTextComponent("argument.entity.options.tag.description"));
          method38218("nbt", var0 -> {
             boolean var3 = var0.method30275();
             CompoundNBT var4 = new Class7671(var0.method30277()).method25195();
             var0.method30278(var2 -> {
-               CompoundNBT var5 = var2.method3294(new CompoundNBT());
+               CompoundNBT var5 = var2.writeWithoutTypeId(new CompoundNBT());
                if (var2 instanceof ServerPlayerEntity) {
                   ItemStack var6 = ((ServerPlayerEntity)var2).inventory.method4028();
                   if (!var6.isEmpty()) {

@@ -8,8 +8,8 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 public final class Class8497 {
-   private final Map<Class7481, String> field37169;
-   private final CompletableFuture<Map<Class7481, String>> field37170;
+   private final Map<ChunkPos, String> field37169;
+   private final CompletableFuture<Map<ChunkPos, String>> field37170;
    public final Class5126 field37171;
 
    public Class8497(Class5126 var1, IntegratedServer var2, double var3, double var5) {
@@ -23,7 +23,7 @@ public final class Class8497 {
 
       for (int var15 = var11 - 12; var15 <= var11 + 12; var15++) {
          for (int var16 = var12 - 12; var16 <= var12 + 12; var16++) {
-            Class7481 var17 = new Class7481(var15, var16);
+            ChunkPos var17 = new ChunkPos(var15, var16);
             String var18 = "";
             Chunk var19 = var14.method7342(var15, var16, false);
             var18 = var18 + "Client: ";
@@ -39,17 +39,17 @@ public final class Class8497 {
       }
 
       this.field37169 = var13.build();
-      this.field37170 = var2.<Map<Class7481, String>>supplyAsync(() -> {
+      this.field37170 = var2.<Map<ChunkPos, String>>supplyAsync(() -> {
          ServerWorld var6 = var2.method1318(var10);
          if (var6 == null) {
             return ImmutableMap.of();
          } else {
             Builder var7 = ImmutableMap.builder();
-            Class1703 var8 = var6.getChunkProvider();
+            ServerChunkProvider var8 = var6.getChunkProvider();
 
             for (int var9x = var11 - 12; var9x <= var11 + 12; var9x++) {
                for (int var10x = var12 - 12; var10x <= var12 + 12; var10x++) {
-                  Class7481 var11x = new Class7481(var9x, var10x);
+                  ChunkPos var11x = new ChunkPos(var9x, var10x);
                   var7.put(var11x, "Server: " + var8.method7382(var11x));
                }
             }
@@ -65,7 +65,7 @@ public final class Class8497 {
    }
 
    // $VF: synthetic method
-   public static Map<Class7481, String> method30087(Class8497 var0) {
+   public static Map<ChunkPos, String> method30087(Class8497 var0) {
       return var0.field37169;
    }
 }

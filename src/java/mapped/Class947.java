@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 
-public class Class947 extends TileEntity implements Class946 {
+public class Class947 extends TileEntity implements IClearable {
    private ItemStack field5332 = ItemStack.EMPTY;
 
    public Class947() {
@@ -36,7 +36,7 @@ public class Class947 extends TileEntity implements Class946 {
 
    public void method3804(ItemStack var1) {
       this.field5332 = var1;
-      this.method3622();
+      this.markDirty();
    }
 
    @Override

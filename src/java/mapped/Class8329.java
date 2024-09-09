@@ -46,7 +46,7 @@ public class Class8329 {
    @Class5631
    public void method29202(SendPacketEvent var1) {
       if (!ColorUtils.method17720() && ColorUtils.method17718()) {
-         Packet var4 = var1.method13932();
+         Packet var4 = var1.getPacket();
          if (!(var4 instanceof CClickWindowPacket)) {
             if (var4 instanceof CConfirmTransactionPacket) {
                CConfirmTransactionPacket var5 = (CConfirmTransactionPacket)var4;

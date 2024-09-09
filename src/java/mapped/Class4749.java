@@ -32,7 +32,7 @@ public class Class4749 extends Class4747<Class8173, Class6047> {
       int[] var14 = !var7 ? null : new int[256];
       if (var7) {
          if (var9.readableBytes() < 1024) {
-            Class8042.method27613().method27366().log(Level.WARNING, "Chunk x=" + var5 + " z=" + var6 + " doesn't have biome data!");
+            ViaVersion3.method27613().method27366().log(Level.WARNING, "Chunk x=" + var5 + " z=" + var6 + " doesn't have biome data!");
          } else {
             for (int var15 = 0; var15 < 256; var15++) {
                var14[var15] = var9.readInt();
@@ -43,8 +43,8 @@ public class Class4749 extends Class4747<Class8173, Class6047> {
       ArrayList var16 = new ArrayList<Class72>(Arrays.asList(Class4750.field22556.method14894(var1)));
       if (var1.readableBytes() > 0) {
          byte[] var13 = Class4750.field22521.method14894(var1);
-         if (Class8042.method27614().method34425()) {
-            Class8042.method27613().method27366().warning("Found " + var13.length + " more bytes than expected while reading the chunk: " + var5 + "/" + var6);
+         if (ViaVersion3.method27614().method34425()) {
+            ViaVersion3.method27613().method27366().warning("Found " + var13.length + " more bytes than expected while reading the chunk: " + var5 + "/" + var6);
          }
       }
 

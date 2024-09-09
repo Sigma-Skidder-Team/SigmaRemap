@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public interface IRecipe<C extends Class920> {
+public interface IRecipe<C extends IInventory> {
    boolean method14963(C var1, World var2);
 
    ItemStack method14962(C var1);
@@ -15,10 +15,10 @@ public interface IRecipe<C extends Class920> {
    ItemStack getRecipeOutput();
 
    default NonNullList<ItemStack> method14968(C var1) {
-      NonNullList var4 = NonNullList.<ItemStack>method68(var1.method3629(), ItemStack.EMPTY);
+      NonNullList var4 = NonNullList.<ItemStack>method68(var1.getSizeInventory(), ItemStack.EMPTY);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         Item var6 = var1.method3618(var5).getItem();
+         Item var6 = var1.getStackInSlot(var5).getItem();
          if (var6.method11723()) {
             var4.set(var5, new ItemStack(var6.method11722()));
          }

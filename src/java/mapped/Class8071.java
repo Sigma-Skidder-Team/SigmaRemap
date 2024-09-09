@@ -38,7 +38,7 @@ public class Class8071 {
                      .then(
                         Class6099.method18839("gametime")
                            .executes(
-                              var0x -> method27789((Class6619)var0x.getSource(), (int)(((Class6619)var0x.getSource()).method20172().method6783() % 2147483647L))
+                              var0x -> method27789((Class6619)var0x.getSource(), (int)(((Class6619)var0x.getSource()).method20172().getGameTime() % 2147483647L))
                            )
                      ))
                   .then(

@@ -73,9 +73,9 @@ public class Test extends Module {
     public static float[] method16562(Entity var0) {
         double var3 = var0.getPosX() - mc.player.getPosX();
         double var5 = var0.getPosZ() - mc.player.getPosZ();
-        double var7 = mc.player.getPosY() + (double) mc.player.method3393() - (var0.getPosY() + (double) var0.method3393());
+        double var7 = mc.player.getPosY() + (double) mc.player.getEyeHeight() - (var0.getPosY() + (double) var0.getEyeHeight());
         float var9 = (float) Math.toDegrees(Math.atan2(var5, var3)) - 90.0F;
-        double var10 = MathHelper.method37766(var3 * var3 + var5 * var5);
+        double var10 = MathHelper.sqrt(var3 * var3 + var5 * var5);
         float var12 = (float) (-(Math.atan2(var7, var10) * 180.0 / Math.PI));
         return new float[]{var9, -var12};
     }
@@ -102,8 +102,8 @@ public class Test extends Module {
     public static float method16565(float var0, Entity var1, double var2) {
         double var6 = var1.getPosX() - mc.player.getPosX();
         double var8 = var1.getPosZ() - mc.player.getPosZ();
-        double var10 = var2 - 2.2 + (double) var1.method3393() - mc.player.getPosY();
-        double var12 = MathHelper.method37766(var6 * var6 + var8 * var8);
+        double var10 = var2 - 2.2 + (double) var1.getEyeHeight() - mc.player.getPosY();
+        double var12 = MathHelper.sqrt(var6 * var6 + var8 * var8);
         double var14 = -Math.toDegrees(Math.atan(var10 / var12));
         return -MathHelper.method37792(var0 - (float) var14) - 2.5F;
     }
@@ -130,15 +130,15 @@ public class Test extends Module {
 
     @EventTarget
     @LowerPriority
-    public void method16547(Class4435 var1) {
+    public void method16547(EventMove var1) {
         if (this.isEnabled()) {
-            double var4 = Math.sqrt(var1.method13992() * var1.method13992() + var1.method13996() * var1.method13996());
-            ColorUtils.method17725(var1.method13994());
+            double var4 = Math.sqrt(var1.getX() * var1.getX() + var1.getZ() * var1.getZ());
+            ColorUtils.method17725(var1.getY());
         }
     }
 
     @EventTarget
-    public void method16548(Class4399 var1) {
+    public void method16548(EventUpdate var1) {
         if (!this.isEnabled() || !var1.method13921()) {
         }
     }
@@ -150,7 +150,7 @@ public class Test extends Module {
     }
 
     @EventTarget
-    public void method16550(Class4415 var1) {
+    public void method16550(EventRender var1) {
         if (!this.isEnabled()) {
         }
     }
@@ -178,7 +178,7 @@ public class Test extends Module {
 
     @EventTarget
     @LowestPriority
-    public void method16555(Class4430 var1) {
+    public void method16555(EventKeyPress var1) {
         if (!this.isEnabled()) {
         }
     }
@@ -197,7 +197,7 @@ public class Test extends Module {
     @EventTarget
     @LowestPriority
     public void method16558(SendPacketEvent var1) {
-        Packet var4 = var1.method13932();
+        Packet var4 = var1.getPacket();
         if (this.isEnabled() && mc.player != null) {
             if (!(var4 instanceof CUseEntityPacket)) {
                 if (!(var4 instanceof CPlayerPacket)) {
@@ -285,7 +285,7 @@ public class Test extends Module {
                                         }
                                     } else {
                                         SEntityVelocityPacket var8 = (SEntityVelocityPacket) var1.getPacket();
-                                        if (var8.method17565() != mc.player.getEntityId()) {
+                                        if (var8.getEntityID() != mc.player.getEntityId()) {
                                         }
                                     }
                                 } else {
@@ -345,8 +345,8 @@ public class Test extends Module {
                 if (!Client.getInstance().getFriendManager().method26997(var6)) {
                     if (var6 instanceof LivingEntity) {
                         if (((LivingEntity) var6).getHealth() != 0.0F) {
-                            if (!(mc.player.method3275(var6) > var1)) {
-                                if (mc.player.method3026((LivingEntity) var6)) {
+                            if (!(mc.player.getDistance(var6) > var1)) {
+                                if (mc.player.canAttack((LivingEntity) var6)) {
                                     if (!(var6 instanceof ArmorStandEntity) && !(var6 instanceof PlayerEntity)) {
                                         if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var6)) {
                                             var5.remove();
@@ -397,15 +397,15 @@ public class Test extends Module {
                 if (!Client.getInstance().getFriendManager().method26997(var7)) {
                     if (var7 instanceof LivingEntity) {
                         if (((LivingEntity) var7).getHealth() != 0.0F) {
-                            if (!(mc.player.method3275(var7) > var1)) {
-                                if (mc.player.method3026((LivingEntity) var7)) {
+                            if (!(mc.player.getDistance(var7) > var1)) {
+                                if (mc.player.canAttack((LivingEntity) var7)) {
                                     if (!(var7 instanceof ArmorStandEntity)) {
                                         if (var7 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var7)) {
                                             var6.remove();
                                         } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var7)) {
                                             var6.remove();
                                         } else if (!var7.method3362()) {
-                                            if (var5 == null || mc.player.method3275(var7) < mc.player.method3275(var5)) {
+                                            if (var5 == null || mc.player.getDistance(var7) < mc.player.getDistance(var5)) {
                                                 var5 = var7;
                                             }
                                         } else {

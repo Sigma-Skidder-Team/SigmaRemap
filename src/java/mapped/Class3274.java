@@ -19,7 +19,7 @@ public class Class3274 extends Item {
       if (var3 instanceof ServerPlayerEntity) {
          ServerPlayerEntity var6 = (ServerPlayerEntity)var3;
          CriteriaTriggers.field44490.method15174(var6, var1);
-         var6.method2913(Class8876.field40098.method172(this));
+         var6.addStat(Stats.field40098.method172(this));
       }
 
       if (var3 instanceof PlayerEntity && !((PlayerEntity)var3).abilities.isCreativeMode) {
@@ -27,7 +27,7 @@ public class Class3274 extends Item {
       }
 
       if (!var2.isRemote) {
-         var3.method3030();
+         var3.clearActivePotions();
       }
 
       return !var1.isEmpty() ? var1 : new ItemStack(Items.field37882);

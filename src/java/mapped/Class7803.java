@@ -111,7 +111,7 @@ public class Class7803 {
    }
 
    private static void method26057(BlockPos var0, ServerWorld var1) {
-      Class7481 var4 = new Class7481(var0);
+      ChunkPos var4 = new ChunkPos(var0);
 
       for (int var5 = -1; var5 < 4; var5++) {
          for (int var6 = -1; var6 < 4; var6++) {
@@ -133,7 +133,7 @@ public class Class7803 {
          (double)var5.field45678, (double)var5.field45679, (double)var5.field45680, (double)var5.field45681, (double)var5.field45682, (double)var5.field45683
       );
       List<Entity> var7 = var2.<Entity>method6772(Entity.class, var6, var0x -> !(var0x instanceof PlayerEntity));
-      var7.forEach(Entity::method2904);
+      var7.forEach(Entity::remove);
    }
 
    public static Class9764 method26059(BlockPos var0, BlockPos var1, Class80 var2) {
@@ -169,7 +169,7 @@ public class Class7803 {
             for (int var9 = (int)var6.minZ; var9 <= (int)var6.maxZ; var9++) {
                BlockPos var10 = new BlockPos(var7, var8, var9);
                BlockState var11 = var2.getBlockState(var10);
-               if (var11.method23448(Blocks.field37113)) {
+               if (var11.isIn(Blocks.field37113)) {
                   var5.add(var10);
                }
             }

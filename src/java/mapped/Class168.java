@@ -22,7 +22,7 @@ public class Class168 implements Predicate<LivingEntity> {
       } else if (var1 instanceof TameableEntity) {
          return !((TameableEntity)var1).method4393();
       } else if (!(var1 instanceof PlayerEntity) || !var1.isSpectator() && !((PlayerEntity)var1).isCreative()) {
-         return Class1095.method5163(this.field543, var1.getUniqueID()) ? false : !var1.isSleeping() && !var1.method3334();
+         return Class1095.method5163(this.field543, var1.getUniqueID()) ? false : !var1.isSleeping() && !var1.isDiscrete();
       } else {
          return false;
       }

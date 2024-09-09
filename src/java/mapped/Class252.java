@@ -6,12 +6,12 @@ public class Class252 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
    }
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      if ("deadmau5".equals(var4.getName().getString()) && var4.method5370() && !var4.method3342()) {
+      if ("deadmau5".equals(var4.getName().getString()) && var4.method5370() && !var4.isInvisible()) {
          Class5422 var13 = var2.method25597(RenderType.getEntitySolid(var4.method5371()));
          int var14 = Class5712.method17883(var4, 0.0F);
 
          for (int var15 = 0; var15 < 2; var15++) {
-            float var16 = MathHelper.lerp(var7, var4.prevRotationYaw, var4.rotationYaw) - MathHelper.lerp(var7, var4.field4966, var4.field4965);
+            float var16 = MathHelper.lerp(var7, var4.prevRotationYaw, var4.rotationYaw) - MathHelper.lerp(var7, var4.prevRenderYawOffset, var4.renderYawOffset);
             float var17 = MathHelper.lerp(var7, var4.prevRotationPitch, var4.rotationPitch);
             var1.push();
             var1.rotate(Vector3f.YP.rotationDegrees(var16));

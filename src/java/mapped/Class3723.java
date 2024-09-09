@@ -24,22 +24,22 @@ public class Class3723 extends Class3676<Class1042> {
    }
 
    public void method12502(ServerWorld var1, Class1042 var2, long var3) {
-      Class1045 var7 = var2.method2992().<Class1045>method21410(Class8830.field39829).get();
+      Class1045 var7 = var2.getBrain().<Class1045>method21410(Class8830.field39829).get();
       Class6983.method21569(var2, var7, 0.5F);
-      var1.method6786(var7, (byte)18);
-      var1.method6786(var2, (byte)18);
-      int var8 = 275 + var2.method3013().nextInt(50);
+      var1.setEntityState(var7, (byte)18);
+      var1.setEntityState(var2, (byte)18);
+      int var8 = 275 + var2.getRNG().nextInt(50);
       this.field19809 = var3 + (long)var8;
    }
 
    public void method12504(ServerWorld var1, Class1042 var2, long var3) {
-      Class1042 var7 = (Class1042)var2.method2992().<Class1045>method21410(Class8830.field39829).get();
+      Class1042 var7 = (Class1042)var2.getBrain().<Class1045>method21410(Class8830.field39829).get();
       if (!(var2.getDistanceSq(var7) > 5.0)) {
          Class6983.method21569(var2, var7, 0.5F);
          if (var3 < this.field19809) {
-            if (var2.method3013().nextInt(35) == 0) {
-               var1.method6786(var7, (byte)12);
-               var1.method6786(var2, (byte)12);
+            if (var2.getRNG().nextInt(35) == 0) {
+               var1.setEntityState(var7, (byte)12);
+               var1.setEntityState(var2, (byte)12);
             }
          } else {
             var2.method4705();
@@ -60,17 +60,17 @@ public class Class3723 extends Class3676<Class1042> {
             this.method12620(var1, (Class1042)var7.get(), (BlockPos)var6.get());
          }
       } else {
-         var1.method6786(var3, (byte)13);
-         var1.method6786(var2, (byte)13);
+         var1.setEntityState(var3, (byte)13);
+         var1.setEntityState(var2, (byte)13);
       }
    }
 
    public void method12506(ServerWorld var1, Class1042 var2, long var3) {
-      var2.method2992().method21405(Class8830.field39829);
+      var2.getBrain().method21405(Class8830.field39829);
    }
 
    private boolean method12616(Class1042 var1) {
-      Class6947<Class1042> var4 = var1.method2992();
+      Brain<Class1042> var4 = var1.getBrain();
       Optional<Class1045> var5 = var4.method21410(Class8830.field39829).filter(var0 -> var0.getType() == EntityType.field41098);
       return !var5.isPresent()
          ? false
@@ -92,9 +92,9 @@ public class Class3723 extends Class3676<Class1042> {
          var2.method4770(6000);
          var3.method4770(6000);
          var6.method4770(-24000);
-         var6.method3273(var2.getPosX(), var2.getPosY(), var2.getPosZ(), 0.0F, 0.0F);
+         var6.setLocationAndAngles(var2.getPosX(), var2.getPosY(), var2.getPosZ(), 0.0F, 0.0F);
          var1.method6995(var6);
-         var1.method6786(var6, (byte)12);
+         var1.setEntityState(var6, (byte)12);
          return Optional.<Class1042>of(var6);
       } else {
          return Optional.<Class1042>empty();
@@ -103,6 +103,6 @@ public class Class3723 extends Class3676<Class1042> {
 
    private void method12620(ServerWorld var1, Class1042 var2, BlockPos var3) {
       Class9378 var6 = Class9378.method35577(var1.getDimensionKey(), var3);
-      var2.method2992().method21406(Class8830.field39813, var6);
+      var2.getBrain().method21406(Class8830.field39813, var6);
    }
 }

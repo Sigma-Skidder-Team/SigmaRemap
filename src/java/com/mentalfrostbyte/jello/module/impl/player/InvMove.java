@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4430;
+import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
@@ -22,9 +22,9 @@ public class InvMove extends Module {
     }
 
     @EventTarget
-    private void method16583(Class4430 var1) {
+    private void method16583(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.method13977() == mc.gameSettings.keyBindInventory.keycode.keyCode && mc.player.method3337()) {
+            if (var1.getKey() == mc.gameSettings.keyBindInventory.keycode.keyCode && mc.player.isSprinting()) {
                 mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.STOP_SPRINTING));
             }
         }
@@ -33,10 +33,10 @@ public class InvMove extends Module {
     @EventTarget
     private void method16584(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            if (this.field23757 && var1.method13932() instanceof CEntityActionPacket && this.getBooleanValueFromSetttingName("AACP")) {
-                CEntityActionPacket var4 = (CEntityActionPacket) var1.method13932();
+            if (this.field23757 && var1.getPacket() instanceof CEntityActionPacket && this.getBooleanValueFromSetttingName("AACP")) {
+                CEntityActionPacket var4 = (CEntityActionPacket) var1.getPacket();
                 if (var4.getAction() == CEntityActionPacket.Action.START_SPRINTING) {
-                    var1.method13900(true);
+                    var1.setCancelled(true);
                 }
             }
         }
@@ -49,18 +49,18 @@ public class InvMove extends Module {
                 boolean var4 = !(mc.currentScreen instanceof InventoryScreen) || !(mc.currentScreen instanceof Class868);
                 if (this.field23757 && !var4) {
                     this.field23757 = !this.field23757;
-                    if (mc.player.method3337()) {
+                    if (mc.player.isSprinting()) {
                         mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.START_SPRINTING));
                     }
                 } else if (!this.field23757 && var4) {
                     this.field23757 = !this.field23757;
-                    if (mc.player.method3337()) {
+                    if (mc.player.isSprinting()) {
                         mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.STOP_SPRINTING));
                     }
                 }
             }
 
-            if (mc.currentScreen instanceof Class851 || Client.getInstance().method19939().focusGameTicks() <= 1) {
+            if (mc.currentScreen instanceof Class851 || Client.getInstance().getPlayerTracker().focusGameTicks() <= 1) {
                 if (mc.currentScreen instanceof ChatScreen) {
                     return;
                 }

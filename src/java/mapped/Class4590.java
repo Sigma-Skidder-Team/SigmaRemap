@@ -15,7 +15,7 @@ public class Class4590 extends Class4588 {
          double var4 = this.field22041 + (this.field22054.nextDouble() - this.field22054.nextDouble()) * 4.0;
          double var6 = this.field22042 + (this.field22054.nextDouble() - this.field22054.nextDouble()) * 4.0;
          double var8 = this.field22043 + (this.field22054.nextDouble() - this.field22054.nextDouble()) * 4.0;
-         this.field22037.method6746(ParticleTypes.field34070, var4, var6, var8, (double)((float)this.field22071 / 8.0F), 0.0, 0.0);
+         this.field22037.addParticle(ParticleTypes.field34070, var4, var6, var8, (double)((float)this.field22071 / 8.0F), 0.0, 0.0);
       }
 
       this.field22071++;

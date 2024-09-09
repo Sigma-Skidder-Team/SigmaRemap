@@ -18,6 +18,6 @@ public final class Class3984 extends Class3758 {
       this.map(Class4750.field22539);
       this.map(Class4750.field22544);
       this.map(Class4750.field22524);
-      this.method12732(var0 -> var0.method30560(Class4750.field22524, !Class8042.method27612().method21937()));
+      this.method12732(var0 -> var0.method30560(Class4750.field22524, !ViaVersion3.method27612().method21937()));
    }
 }

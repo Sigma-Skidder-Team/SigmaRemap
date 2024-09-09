@@ -1,12 +1,12 @@
 package com.mentalfrostbyte.jello.module.impl.movement.highjump;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.ColorUtils;
-import mapped.Class9567;
+import mapped.MovementUtils;
 import mapped.NumberSetting;
 
 public class HypixelHighJump extends Module {
@@ -27,12 +27,12 @@ public class HypixelHighJump extends Module {
    }
 
    @EventTarget
-   public void method16018(Class4435 var1) {
+   public void method16018(EventMove var1) {
       if (this.isEnabled() && mc.player != null) {
-         if (mc.player.fallDistance > 3.0F + this.getNumberValueBySettingName("Motion") * 4.0F && var1.method13994() < -0.3) {
+         if (mc.player.fallDistance > 3.0F + this.getNumberValueBySettingName("Motion") * 4.0F && var1.getY() < -0.3) {
             if (this.field23406) {
-               if (mc.player.getPosY() + var1.method13994() < this.field23407) {
-                  var1.method13995(this.field23407 - mc.player.getPosY());
+               if (mc.player.getPosY() + var1.getY() < this.field23407) {
+                  var1.setY(this.field23407 - mc.player.getPosY());
                   this.field23406 = false;
                }
             } else {
@@ -42,9 +42,9 @@ public class HypixelHighJump extends Module {
 
          if (this.field23405 >= 0) {
             this.field23405++;
-            var1.method13995(0.0);
-            Class9567.method37088(var1, 0.0);
-            var1.method13995((double)this.getNumberValueBySettingName("Motion"));
+            var1.setY(0.0);
+            MovementUtils.method37088(var1, 0.0);
+            var1.setY((double)this.getNumberValueBySettingName("Motion"));
             this.field23406 = true;
             this.field23407 = mc.player.getPosY();
             this.field23405 = -1;
@@ -54,12 +54,12 @@ public class HypixelHighJump extends Module {
             this.field23406 = !this.field23406;
          }
 
-         ColorUtils.method17725(var1.method13994());
+         ColorUtils.method17725(var1.getY());
       }
    }
 
    @EventTarget
-   public void method16019(Class4399 var1) {
+   public void method16019(EventUpdate var1) {
       if (this.isEnabled()) {
          if (this.field23405 >= 0) {
             var1.method13908(true);

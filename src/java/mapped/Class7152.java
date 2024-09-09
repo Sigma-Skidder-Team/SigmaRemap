@@ -25,12 +25,12 @@ public class Class7152 implements Class7151 {
 
    @Override
    public void method22311(CompoundNBT var1) {
-      var1.method102("x", this.field30726.getX());
-      var1.method102("y", this.field30726.getY());
-      var1.method102("z", this.field30726.getZ());
+      var1.putInt("x", this.field30726.getX());
+      var1.putInt("y", this.field30726.getY());
+      var1.putInt("z", this.field30726.getZ());
       BlockState var4 = this.field30725.method3734().getBlockState(this.field30726);
       this.field30725.method3645(var4, var1);
-      this.field30725.method3622();
+      this.field30725.markDirty();
       this.field30725.method3734().notifyBlockUpdate(this.field30726, var4, var4, 3);
    }
 

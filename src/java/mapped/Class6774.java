@@ -65,7 +65,7 @@ public class Class6774 extends Class6773 {
 
          BlockState var40 = var2.getBlockState(var38);
          if (!var40.isAir()) {
-            if (var40.method23448(var9.getBlock())) {
+            if (var40.isIn(var9.getBlock())) {
                if (var36 != -1) {
                   if (var36 > 0) {
                      var36--;

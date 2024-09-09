@@ -63,7 +63,7 @@ public class Class4181 extends Class4180 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       int var10 = 256;
       int var11 = 0;
       BlockPos var12 = this.field20453.method32886();

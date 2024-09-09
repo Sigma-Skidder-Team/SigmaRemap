@@ -15,7 +15,7 @@ public class Class3264 extends Class3266 implements Class3260 {
    private final Set<Block> field18751;
    public final float field18752;
    private final float field18753;
-   private final Multimap<Class4869, Class9689> field18754;
+   private final Multimap<Attribute, AttributeModifier> field18754;
 
    public Class3264(float var1, float var2, Class2283 var3, Set<Block> var4, Class5643 var5) {
       super(var3, var5);
@@ -23,8 +23,8 @@ public class Class3264 extends Class3266 implements Class3260 {
       this.field18752 = var3.method9011();
       this.field18753 = var1 + var3.method9012();
       Builder var8 = ImmutableMultimap.builder();
-      var8.put(Attributes.field42110, new Class9689(field18733, "Tool modifier", (double)this.field18753, AttributeModifierOperation.ADDITION));
-      var8.put(Attributes.ATTACK_SPEED, new Class9689(field18734, "Tool modifier", (double)var2, AttributeModifierOperation.ADDITION));
+      var8.put(Attributes.field42110, new AttributeModifier(field18733, "Tool modifier", (double)this.field18753, AttributeModifierOperation.ADDITION));
+      var8.put(Attributes.ATTACK_SPEED, new AttributeModifier(field18734, "Tool modifier", (double)var2, AttributeModifierOperation.ADDITION));
       this.field18754 = var8.build();
    }
 
@@ -35,22 +35,22 @@ public class Class3264 extends Class3266 implements Class3260 {
 
    @Override
    public boolean method11713(ItemStack var1, LivingEntity var2, LivingEntity var3) {
-      var1.method32121(2, var3, var0 -> var0.method3184(Class2106.field13731));
+      var1.method32121(2, var3, var0 -> var0.sendBreakAnimation(EquipmentSlotType.field13731));
       return true;
    }
 
    @Override
    public boolean method11714(ItemStack var1, World var2, BlockState var3, BlockPos var4, LivingEntity var5) {
       if (!var2.isRemote && var3.method23405(var2, var4) != 0.0F) {
-         var1.method32121(1, var5, var0 -> var0.method3184(Class2106.field13731));
+         var1.method32121(1, var5, var0 -> var0.sendBreakAnimation(EquipmentSlotType.field13731));
       }
 
       return true;
    }
 
    @Override
-   public Multimap<Class4869, Class9689> method11740(Class2106 var1) {
-      return var1 != Class2106.field13731 ? super.method11740(var1) : this.field18754;
+   public Multimap<Attribute, AttributeModifier> method11740(EquipmentSlotType var1) {
+      return var1 != EquipmentSlotType.field13731 ? super.method11740(var1) : this.field18754;
    }
 
    public float method11779() {

@@ -24,7 +24,7 @@ public class Class3165 implements Class2982 {
             var8 = 21;
          }
 
-         if (Class8042.method27612().method21923()) {
+         if (ViaVersion3.method27612().method21923()) {
             Class2307 var9 = this.field18406.field20335.method19395(var6);
             var8 = var9.ordinal();
             var7 = var9.toString() + var7;

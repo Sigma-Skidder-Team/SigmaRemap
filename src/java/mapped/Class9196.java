@@ -172,7 +172,7 @@ public class Class9196 {
       BlockState var4 = this.field42237.getBlockState(var1);
 
       for (Direction var8 : Direction.values()) {
-         if (var8.method544() != this.field42241.method544()) {
+         if (var8.getAxis() != this.field42241.getAxis()) {
             BlockPos var9 = var1.method8349(var8);
             BlockState var10 = this.field42237.getBlockState(var9);
             if (method34466(var10.getBlock(), var4.getBlock()) && !this.method34467(var9, var8)) {

@@ -217,7 +217,7 @@ public enum Class2133 {
          case 22:
             return (float) MathHelper.method37767(method8826(var1, 0));
          case 23:
-            return (float) MathHelper.method37773(method8826(var1, 0));
+            return (float) MathHelper.ceil(method8826(var1, 0));
          case 24:
             return MathHelper.method37807(method8826(var1, 0));
          case 25:
@@ -243,7 +243,7 @@ public enum Class2133 {
                return 0.0F;
             }
 
-            return (float)(var9.method6783() % 24000L) + var8.getRenderPartialTicks();
+            return (float)(var9.getGameTime() % 24000L) + var8.getRenderPartialTicks();
          case 33:
             int var10 = (var1.length - 1) / 2;
 

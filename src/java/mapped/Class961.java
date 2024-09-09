@@ -12,7 +12,7 @@ public class Class961 extends TileEntity implements Class935 {
 
    @Override
    public void method3647() {
-      if (this.field5324 != null && !this.field5324.isRemote && this.field5324.method6783() % 20L == 0L) {
+      if (this.field5324 != null && !this.field5324.isRemote && this.field5324.getGameTime() % 20L == 0L) {
          BlockState var3 = this.method3775();
          Block var4 = var3.getBlock();
          if (var4 instanceof Class3372) {

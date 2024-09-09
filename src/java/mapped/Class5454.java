@@ -70,7 +70,7 @@ public class Class5454 extends Class5444<Class4726> {
       Class80 var14 = Util.<Class80>method38518(Class80.values(), this.field24201);
       Class2089 var15 = !(this.field24201.nextFloat() < 0.5F) ? Class2089.field13616 : Class2089.field13614;
       BlockPos var16 = new BlockPos(var13.method32886().getX() / 2, 0, var13.method32886().getZ() / 2);
-      BlockPos var17 = new Class7481(var4, var5).method24364();
+      BlockPos var17 = new ChunkPos(var4, var5).method24364();
       Class9764 var18 = var13.method32910(var17, var14, var16, var15);
       Vector3i var19 = var18.method38401();
       int var20 = var19.getX();

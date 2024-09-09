@@ -85,7 +85,7 @@ public class Class6137 {
                                                          ((Class6619)var0x.getSource())
                                                             .method20166((ServerWorld)var5.world)
                                                             .method20158(var5.getPositionVec())
-                                                            .method20159(var5.method3321())
+                                                            .method20159(var5.getPitchYaw())
                                                       );
                                                    }
 
@@ -133,7 +133,7 @@ public class Class6137 {
                                  ArrayList var3x = Lists.newArrayList();
 
                                  for (Entity var5 : Class8700.method31349(var0x, "targets")) {
-                                    var3x.add(((Class6619)var0x.getSource()).method20159(var5.method3321()));
+                                    var3x.add(((Class6619)var0x.getSource()).method20159(var5.getPitchYaw()));
                                  }
 
                                  return var3x;
@@ -648,7 +648,7 @@ public class Class6137 {
                   BlockPos var15 = new BlockPos(var14, var13, var12);
                   BlockPos var16 = var15.method8337(var9);
                   BlockState var17 = var0.getBlockState(var15);
-                  if (!var4 || !var17.method23448(Blocks.AIR)) {
+                  if (!var4 || !var17.isIn(Blocks.AIR)) {
                      if (var17 != var0.getBlockState(var16)) {
                         return OptionalInt.empty();
                      }

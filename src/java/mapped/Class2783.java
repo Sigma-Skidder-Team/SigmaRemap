@@ -20,7 +20,7 @@ public class Class2783 extends Class2595 {
    @Override
    public boolean method10803() {
       LivingEntity var3 = this.field17396.method4232();
-      return var3 != null && var3.isAlive() && this.field17396.method3026(var3);
+      return var3 != null && var3.isAlive() && this.field17396.canAttack(var3);
    }
 
    @Override
@@ -54,13 +54,13 @@ public class Class2783 extends Class2595 {
 
             if (this.field17398 <= 0) {
                this.field17398 = 20;
-               this.field17396.method3114(var3);
+               this.field17396.attackEntityAsMob(var3);
             }
 
             this.field17396.method4228().method20813(var3.getPosX(), var3.getPosY(), var3.getPosZ(), 1.0);
          } else if (var5 < this.method10973() * this.method10973() && var4) {
             double var7 = var3.getPosX() - this.field17396.getPosX();
-            double var9 = var3.method3440(0.5) - this.field17396.method3440(0.5);
+            double var9 = var3.getPosYHeight(0.5) - this.field17396.getPosYHeight(0.5);
             double var11 = var3.getPosZ() - this.field17396.getPosZ();
             if (this.field17398 <= 0) {
                this.field17397++;
@@ -78,8 +78,8 @@ public class Class2783 extends Class2595 {
                }
 
                if (this.field17397 > 1) {
-                  float var13 = MathHelper.method37765(MathHelper.method37766(var5)) * 0.5F;
-                  if (!this.field17396.method3245()) {
+                  float var13 = MathHelper.method37765(MathHelper.sqrt(var5)) * 0.5F;
+                  if (!this.field17396.isSilent()) {
                      this.field17396.world.method6869((PlayerEntity)null, 1018, this.field17396.getPosition(), 0);
                   }
 
@@ -87,12 +87,12 @@ public class Class2783 extends Class2595 {
                      Class900 var15 = new Class900(
                         this.field17396.world,
                         this.field17396,
-                        var7 + this.field17396.method3013().nextGaussian() * (double)var13,
+                        var7 + this.field17396.getRNG().nextGaussian() * (double)var13,
                         var9,
-                        var11 + this.field17396.method3013().nextGaussian() * (double)var13
+                        var11 + this.field17396.getRNG().nextGaussian() * (double)var13
                      );
-                     var15.setPosition(var15.getPosX(), this.field17396.method3440(0.5) + 0.5, var15.getPosZ());
-                     this.field17396.world.method6916(var15);
+                     var15.setPosition(var15.getPosX(), this.field17396.getPosYHeight(0.5) + 0.5, var15.getPosZ());
+                     this.field17396.world.addEntity(var15);
                   }
                }
             }
@@ -107,6 +107,6 @@ public class Class2783 extends Class2595 {
    }
 
    private double method10973() {
-      return this.field17396.method3086(Attributes.field42106);
+      return this.field17396.getAttributeValue(Attributes.field42106);
    }
 }

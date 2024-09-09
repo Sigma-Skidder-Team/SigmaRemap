@@ -6,8 +6,8 @@ import club.minnced.discord.rpc.DiscordRichPresence;
 import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.command.CommandManager;
 import com.mentalfrostbyte.jello.event.EventManager;
-import com.mentalfrostbyte.jello.event.impl.Class4413;
-import com.mentalfrostbyte.jello.event.impl.Class4419;
+import com.mentalfrostbyte.jello.event.impl.EventRender2D;
+import com.mentalfrostbyte.jello.event.impl.EventWritter;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.ModuleManager;
@@ -56,7 +56,7 @@ public class Client {
     private MusicManager musicManager;
     private PlayerStateTracker playerStateTracker;
     private AccountManager accountManager;
-    private BlurUtil field28981;
+    private BlurEngine field28981;
     private CombatTracker field28982;
     private NetworkManager networkManager;
     private SoundManager soundManager;
@@ -122,7 +122,7 @@ public class Client {
         this.accountManager.registerEvents();
         this.waypointsManager = new WaypointsManager();
         this.waypointsManager.register();
-        this.field28981 = new BlurUtil();
+        this.field28981 = new BlurEngine();
         this.field28981.method29970();
         this.field28989 = new Class8795();
         this.field28989.method31737();
@@ -164,12 +164,12 @@ public class Client {
                 this.moduleManager.method14660(this.config);
             }
 
-            Class4419 var3 = new Class4419(this.config);
+            EventWritter var3 = new EventWritter(this.config);
             if (this.eventManager != null) {
                 this.eventManager.call(var3);
             }
 
-            FileUtil.save(var3.method13968(), new File(this.file + "/config.json"));
+            FileUtil.save(var3.getFile(), new File(this.file + "/config.json"));
         } catch (IOException var4) {
             this.logger.error("Unable to shutdown correctly. Config may be corrupt?");
             var4.printStackTrace();
@@ -204,7 +204,7 @@ public class Client {
         GL11.glDisable(2896);
         RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
         ResourcesDecrypter.gingerbreadIconPNG.bind();
-        getInstance().getEventManager().call(new Class4413());
+        getInstance().getEventManager().call(new EventRender2D());
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         RenderSystem.enableCull();
         RenderSystem.disableDepthTest();
@@ -298,7 +298,7 @@ public class Client {
         return this.guiManager;
     }
 
-    public PlayerStateTracker method19939() {
+    public PlayerStateTracker getPlayerTracker() {
         return this.playerStateTracker;
     }
 

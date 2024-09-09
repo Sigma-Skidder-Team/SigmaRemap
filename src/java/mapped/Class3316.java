@@ -58,7 +58,7 @@ public class Class3316 extends Class3314 {
       Class7529 var11 = new Class7529(method11864(var10));
       var11.method24589(var2, var3, var4, var5, var6, var7);
       var1.method6799(var11);
-      var0.getOrCreateTag().method102("map", var10);
+      var0.getOrCreateTag().putInt("map", var10);
       return var11;
    }
 
@@ -97,7 +97,7 @@ public class Class3316 extends Class3314 {
                      LinkedHashMultiset var23 = LinkedHashMultiset.create();
                      Chunk var24 = var1.getChunkAt(new BlockPos(var21, 0, var22));
                      if (!var24.method7141()) {
-                        Class7481 var25 = var24.method7072();
+                        ChunkPos var25 = var24.method7072();
                         int var26 = var21 & 15;
                         int var27 = var22 & 15;
                         int var28 = 0;
@@ -389,7 +389,7 @@ public class Class3316 extends Class3314 {
    }
 
    @Override
-   public ActionResultType method11707(Class5911 var1) {
+   public ActionResultType method11707(ItemUseContext var1) {
       BlockState var4 = var1.method18360().getBlockState(var1.method18345());
       if (!var4.method23446(BlockTags.field32760)) {
          return super.method11707(var1);

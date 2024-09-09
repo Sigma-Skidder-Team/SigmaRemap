@@ -35,7 +35,7 @@ public class Class3298 extends Class3292 {
          }
       }
 
-      return var5 != null && var6.method7049(var5, var7, ISelectionContext.method14947()) ? var5 : null;
+      return var5 != null && var6.placedBlockCollides(var5, var7, ISelectionContext.method14947()) ? var5 : null;
    }
 
    @Override

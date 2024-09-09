@@ -38,7 +38,7 @@ public class Class8641 {
    private int field38904;
    private int field38905;
    private int field38906;
-   private final Class7481 field38907;
+   private final ChunkPos field38907;
    private boolean field38908;
    private final ShortSet[] field38909 = new ShortSet[16];
    private int field38910;
@@ -49,7 +49,7 @@ public class Class8641 {
    private boolean field38915;
    private boolean field38916;
 
-   public Class8641(Class7481 var1, int var2, Class196 var3, Class1813 var4, Class1650 var5) {
+   public Class8641(ChunkPos var1, int var2, Class196 var3, Class1813 var4, Class1650 var5) {
       this.field38907 = var1;
       this.field38912 = var3;
       this.field38913 = var4;
@@ -234,7 +234,7 @@ public class Class8641 {
       return method31063(this.field38905);
    }
 
-   public Class7481 method31056() {
+   public ChunkPos method31056() {
       return this.field38907;
    }
 
@@ -351,7 +351,7 @@ public class Class8641 {
    }
 
    // $VF: synthetic method
-   public static Class7481 method31073(Class8641 var0) {
+   public static ChunkPos method31073(Class8641 var0) {
       return var0.field38907;
    }
 }

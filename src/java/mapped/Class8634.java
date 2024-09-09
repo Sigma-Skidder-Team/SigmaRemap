@@ -61,7 +61,7 @@ public class Class8634 {
                return false;
             } else {
                if (this.field38844.length > 0) {
-                  Map var4 = Class7858.method26313(var1.method32147());
+                  Map var4 = EnchantmentHelper.method26313(var1.method32147());
 
                   for (Class8605 var8 : this.field38844) {
                      if (!var8.method30835(var4)) {
@@ -71,7 +71,7 @@ public class Class8634 {
                }
 
                if (this.field38845.length > 0) {
-                  Map var9 = Class7858.method26313(Class3290.method11830(var1));
+                  Map var9 = EnchantmentHelper.method26313(Class3290.method11830(var1));
 
                   for (Class8605 var14 : this.field38845) {
                      if (!var14.method30835(var9)) {

@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.gui;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.impl.gui.classic.TabGUI;
 import com.mentalfrostbyte.jello.unmapped.*;
 import com.mentalfrostbyte.jello.util.FileUtil;
@@ -133,7 +133,7 @@ public class GuiManager {
     public void method33452() {
         field41337.clear();
         field41337.put(VanillaMainMenuScreen.class, ClassicMainScreen.class);
-        field41337.put(ClickGui.class, Class4321.class);
+        field41337.put(ClickGui.class, ClassicScreenk.class);
     }
 
     public void method33453(int var1, int var2) {
@@ -257,7 +257,7 @@ public class GuiManager {
                 RenderUtil.method11455((float) var3, var4, 170.0F, 104.0F, !(field41348 > 1.0F) ? ResourcesDecrypter.jelloWatermarkPNG : ResourcesDecrypter.jelloWatermark2xPNG);
             }
 
-            Client.getInstance().getEventManager().call(new Class4415());
+            Client.getInstance().getEventManager().call(new EventRender());
         }
 
         if (this.field41352 != null && Minecraft.getInstance().loadingGui == null) {

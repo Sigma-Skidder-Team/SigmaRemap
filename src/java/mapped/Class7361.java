@@ -58,7 +58,7 @@ public abstract class Class7361 implements Class7373 {
 
    @Override
    public float method23367() {
-      float var3 = MathHelper.method37766(Entity.method3234(this.field31519.getVec())) + 1.0F;
+      float var3 = MathHelper.sqrt(Entity.horizontalMag(this.field31519.getMotion())) + 1.0F;
       float var4 = Math.min(var3, 40.0F);
       return 0.7F / var4 / var3;
    }

@@ -112,8 +112,8 @@ public class Class7529 extends Class7530 {
          .encodeStart(NBTDynamicOps.INSTANCE, this.field32318.getLocation())
          .resultOrPartial(field32315::error)
          .ifPresent(var1x -> var1.put("dimension", var1x));
-      var1.method102("xCenter", this.field32316);
-      var1.method102("zCenter", this.field32317);
+      var1.putInt("xCenter", this.field32316);
+      var1.putInt("zCenter", this.field32317);
       var1.method100("scale", this.field32321);
       var1.method110("colors", this.field32322);
       var1.putBoolean("trackingPosition", this.field32319);
@@ -239,7 +239,7 @@ public class Class7529 extends Class7530 {
       var6.add(var7);
       if (var3.method8955()) {
          CompoundNBT var8 = var0.method32144("display");
-         var8.method102("MapColor", var3.method8956());
+         var8.putInt("MapColor", var3.method8956());
       }
    }
 

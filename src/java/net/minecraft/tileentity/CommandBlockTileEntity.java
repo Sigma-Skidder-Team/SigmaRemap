@@ -92,7 +92,7 @@ public class CommandBlockTileEntity extends TileEntity {
 
    private void method4015() {
       Block var3 = this.method3775().getBlock();
-      if (var3 instanceof Class3355) {
+      if (var3 instanceof CommandBlockBlock) {
          this.method4017();
          this.field5324.method6860().method20726(this.field5325, var3, 1);
       }
@@ -105,8 +105,8 @@ public class CommandBlockTileEntity extends TileEntity {
    public boolean method4017() {
       this.conditionMet = true;
       if (this.method4021()) {
-         BlockPos var3 = this.field5325.method8349(this.field5324.getBlockState(this.field5325).<Direction>method23463(Class3355.field18893).method536());
-         if (!(this.field5324.getBlockState(var3).getBlock() instanceof Class3355)) {
+         BlockPos var3 = this.field5325.method8349(this.field5324.getBlockState(this.field5325).<Direction>method23463(CommandBlockBlock.field18893).method536());
+         if (!(this.field5324.getBlockState(var3).getBlock() instanceof CommandBlockBlock)) {
             this.conditionMet = false;
          } else {
             TileEntity var4 = this.field5324.getTileEntity(var3);
@@ -127,9 +127,9 @@ public class CommandBlockTileEntity extends TileEntity {
 
    public Mode method4020() {
       BlockState var3 = this.method3775();
-      if (!var3.method23448(Blocks.COMMAND_BLOCK)) {
-         if (!var3.method23448(Blocks.field36887)) {
-            return !var3.method23448(Blocks.field36888) ? Mode.field13325 : Mode.field13323;
+      if (!var3.isIn(Blocks.COMMAND_BLOCK)) {
+         if (!var3.isIn(Blocks.field36887)) {
+            return !var3.isIn(Blocks.field36888) ? Mode.field13325 : Mode.field13323;
          } else {
             return Mode.field13324;
          }
@@ -140,7 +140,7 @@ public class CommandBlockTileEntity extends TileEntity {
 
    public boolean method4021() {
       BlockState var3 = this.field5324.getBlockState(this.getPos());
-      return !(var3.getBlock() instanceof Class3355) ? false : var3.<Boolean>method23463(Class3355.field18894);
+      return !(var3.getBlock() instanceof CommandBlockBlock) ? false : var3.<Boolean>method23463(CommandBlockBlock.field18894);
    }
 
    @Override
@@ -160,7 +160,7 @@ public class CommandBlockTileEntity extends TileEntity {
       @Override
       public void method3562(String var1) {
          super.method3562(var1);
-         this.field5203.method3622();
+         this.field5203.markDirty();
       }
 
       @Override
@@ -184,7 +184,7 @@ public class CommandBlockTileEntity extends TileEntity {
          return new Class6619(
             this,
             Vector3d.method11328(this.field5203.field5325),
-            Class8513.field37212,
+            Vector2f.field37212,
             this.method3567(),
             2,
             this.method3565().getString(),

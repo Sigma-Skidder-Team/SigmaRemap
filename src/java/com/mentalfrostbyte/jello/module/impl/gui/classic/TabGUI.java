@@ -2,9 +2,9 @@ package com.mentalfrostbyte.jello.module.impl.gui.classic;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4430;
+import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -49,9 +49,9 @@ public class TabGUI extends Module {
    }
 
    @EventTarget
-   private void method15954(Class4430 var1) {
+   private void method15954(EventKeyPress var1) {
       if (this.isEnabled()) {
-         Class2071 var4 = method15960(var1.method13977());
+         Class2071 var4 = method15960(var1.getKey());
          if (var4 != null) {
             field23380.changeDirection(Direction.FORWARDS);
             this.field23384 = 80;
@@ -181,7 +181,7 @@ public class TabGUI extends Module {
 
    @EventTarget
    @HigestPriority
-   private void method15957(Class4415 var1) {
+   private void method15957(EventRender var1) {
       if (this.isEnabled() && mc.player != null) {
          if (! Minecraft.getInstance().gameSettings.showDebugInfo) {
             if (!Minecraft.getInstance().gameSettings.hideGUI) {

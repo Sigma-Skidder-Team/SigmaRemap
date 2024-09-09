@@ -36,7 +36,7 @@ public class Class7531 extends Class7530 {
 
       while (var3.hasNext()) {
          Class7699 var4 = (Class7699)var3.next();
-         if (this.field32333.method6789().method17135(Class5462.field24246)) {
+         if (this.field32333.getGameRules().getBoolean(Class5462.field24246)) {
             var4.method25402();
          }
 
@@ -65,7 +65,7 @@ public class Class7531 extends Class7530 {
    public Class7699 method24613(ServerPlayerEntity var1) {
       if (var1.isSpectator()) {
          return null;
-      } else if (this.field32333.method6789().method17135(Class5462.field24246)) {
+      } else if (this.field32333.getGameRules().getBoolean(Class5462.field24246)) {
          return null;
       } else {
          DimensionType var4 = var1.world.method6812();
@@ -79,7 +79,7 @@ public class Class7531 extends Class7530 {
 
             for (Class9343 var10 : var6) {
                BlockPos var11 = var10.method35355();
-               var8 = var8.method11339((double)var11.getX(), (double)var11.getY(), (double)var11.getZ());
+               var8 = var8.add((double)var11.getX(), (double)var11.getY(), (double)var11.getZ());
                var7++;
             }
 
@@ -87,7 +87,7 @@ public class Class7531 extends Class7530 {
             if (var7 <= 0) {
                var13 = var5;
             } else {
-               var8 = var8.method11344(1.0 / (double)var7);
+               var8 = var8.scale(1.0 / (double)var7);
                var13 = new BlockPos(var8);
             }
 
@@ -112,7 +112,7 @@ public class Class7531 extends Class7530 {
                var14.method25401(var1);
                var1.field4855.sendPacket(new SEntityStatusPacket(var1, (byte)43));
                if (!var14.method25390()) {
-                  var1.method2911(Class8876.field40173);
+                  var1.method2911(Stats.field40173);
                   CriteriaTriggers.field44499.method15062(var1);
                }
             }
@@ -143,8 +143,8 @@ public class Class7531 extends Class7530 {
 
    @Override
    public CompoundNBT method24592(CompoundNBT var1) {
-      var1.method102("NextAvailableID", this.field32334);
-      var1.method102("Tick", this.field32335);
+      var1.putInt("NextAvailableID", this.field32334);
+      var1.putInt("Tick", this.field32335);
       ListNBT var4 = new ListNBT();
 
       for (Class7699 var6 : this.field32332.values()) {

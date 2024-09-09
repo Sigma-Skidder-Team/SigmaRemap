@@ -28,7 +28,7 @@ public class Class7480 {
          .getChunk(var1.method8410(), var1.method8412(), ChunkStatus.field42135)
          .method7099(var2)
          .stream()
-         .<Class2002>map(var0 -> Class2002.method8391(new Class7481(var0), 0))
+         .<Class2002>map(var0 -> Class2002.method8391(new ChunkPos(var0), 0))
          .<Class5444<?>>map(var2x -> this.method24341(var2x, var2, this.field32171.getChunk(var2x.method8410(), var2x.method8412(), ChunkStatus.field42134)))
          .filter(var0 -> var0 != null && var0.method17117());
    }

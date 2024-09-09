@@ -37,7 +37,7 @@ public class Class3480 extends Class3194 implements Class3196 {
 
    @Override
    public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.method23448(Blocks.FARMLAND);
+      return var1.isIn(Blocks.FARMLAND);
    }
 
    public Class8554 method12175() {
@@ -100,7 +100,7 @@ public class Class3480 extends Class3194 implements Class3196 {
          for (int var8 = -1; var8 <= 1; var8++) {
             float var9 = 0.0F;
             BlockState var10 = var1.getBlockState(var6.method8336(var7, 0, var8));
-            if (var10.method23448(Blocks.FARMLAND)) {
+            if (var10.isIn(Blocks.FARMLAND)) {
                var9 = 1.0F;
                if (var10.<Integer>method23463(Class3221.field18644) > 0) {
                   var9 = 3.0F;
@@ -143,14 +143,14 @@ public class Class3480 extends Class3194 implements Class3196 {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      if (var4 instanceof Class1029 && var2.method6789().method17135(Class5462.field24224)) {
+      if (var4 instanceof Class1029 && var2.getGameRules().getBoolean(Class5462.field24224)) {
          var2.method7180(var3, true, var4);
       }
 
       super.method11523(var1, var2, var3, var4);
    }
 
-   public Class3303 method12183() {
+   public IItemProvider method12183() {
       return Items.field37841;
    }
 

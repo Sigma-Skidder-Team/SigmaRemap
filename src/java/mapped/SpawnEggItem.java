@@ -38,22 +38,22 @@ public class SpawnEggItem extends Item {
    }
 
    @Override
-   public ActionResultType method11707(Class5911 var1) {
+   public ActionResultType method11707(ItemUseContext var1) {
       World var4 = var1.method18360();
       if (!(var4 instanceof ServerWorld)) {
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       } else {
          ItemStack var5 = var1.method18357();
          BlockPos var6 = var1.method18345();
          Direction var7 = var1.method18354();
          BlockState var8 = var4.getBlockState(var6);
-         if (var8.method23448(Blocks.field36532)) {
+         if (var8.isIn(Blocks.field36532)) {
             TileEntity var9 = var4.getTileEntity(var6);
             if (var9 instanceof Class960) {
                Class7574 var13 = ((Class960)var9).method3911();
                EntityType var11 = this.method11855(var5.method32142());
                var13.method24790(var11);
-               var9.method3622();
+               var9.markDirty();
                var4.notifyBlockUpdate(var6, var8, var8, 3);
                var5.method32182(1);
                return ActionResultType.field14819;
@@ -95,7 +95,7 @@ public class SpawnEggItem extends Item {
                         var6.method32182(1);
                      }
 
-                     var2.method2913(Class8876.field40098.method172(this));
+                     var2.addStat(Stats.field40098.method172(this));
                      return Class6794.<ItemStack>method20697(var6);
                   } else {
                      return Class6794.<ItemStack>method20698(var6);
@@ -146,15 +146,15 @@ public class SpawnEggItem extends Item {
       if (this.method11851(var6.method32142(), var3)) {
          Object var9;
          if (!(var2 instanceof Class1045)) {
-            var9 = (Class1006)var3.method33215(var4);
+            var9 = (Class1006)var3.create(var4);
          } else {
             var9 = ((Class1045)var2).method4389(var4, (Class1045)var2);
          }
 
          if (var9 != null) {
             ((Class1006)var9).method4308(true);
-            if (((Class1006)var9).method3005()) {
-               ((Class1006)var9).method3273(var5.getX(), var5.getY(), var5.getZ(), 0.0F, 0.0F);
+            if (((Class1006)var9).isChild()) {
+               ((Class1006)var9).setLocationAndAngles(var5.getX(), var5.getY(), var5.getZ(), 0.0F, 0.0F);
                var4.method6995((Entity)var9);
                if (var6.method32152()) {
                   ((Class1006)var9).method3379(var6.method32149());

@@ -52,7 +52,7 @@ public class Class3269 extends Class3264 {
    }
 
    @Override
-   public ActionResultType method11707(Class5911 var1) {
+   public ActionResultType method11707(ItemUseContext var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       if (var1.method18354() != Direction.DOWN && var4.getBlockState(var5.up()).isAir()) {
@@ -63,7 +63,7 @@ public class Class3269 extends Class3264 {
             if (!var4.isRemote) {
                var4.setBlockState(var5, var6, 11);
                if (var7 != null) {
-                  var1.method18357().method32121(1, var7, var1x -> var1x.method3185(var1.method18359()));
+                  var1.method18357().method32121(1, var7, var1x -> var1x.sendBreakAnimation(var1.method18359()));
                }
             }
 

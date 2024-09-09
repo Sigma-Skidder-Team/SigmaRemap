@@ -46,6 +46,6 @@ public class Class3748<E extends Class1006> extends Class3676<E> {
    }
 
    private static BlockPos method12709(Class1006 var0) {
-      return var0.method2992().<BlockPos>method21410(Class8830.field39856).get();
+      return var0.getBrain().<BlockPos>method21410(Class8830.field39856).get();
    }
 }

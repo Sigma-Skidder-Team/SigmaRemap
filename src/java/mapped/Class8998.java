@@ -70,7 +70,7 @@ public class Class8998 {
             && var4.x <= (double)var5
             && var4.z >= (double)(-var5)
             && var4.z <= (double)var5
-            && this.field41148.method2749(var1);
+            && this.field41148.isSpectatedByPlayer(var1);
          if (!var6) {
             if (this.field41151.remove(var1)) {
                this.field41147.method34970(var1);
@@ -78,7 +78,7 @@ public class Class8998 {
          } else {
             boolean var7 = this.field41148.forceSpawn;
             if (!var7) {
-               Class7481 var8 = new Class7481(this.field41148.chunkCoordX, this.field41148.chunkCoordZ);
+               ChunkPos var8 = new ChunkPos(this.field41148.chunkCoordX, this.field41148.chunkCoordZ);
                Class8641 var9 = this.field41152.method6539(var8.method24352());
                if (var9 != null && var9.method31043() != null) {
                   var7 = Class1649.method6635(var8, var1, false) <= Class1649.method6634(this.field41152);

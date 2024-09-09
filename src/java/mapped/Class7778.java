@@ -105,7 +105,7 @@ public abstract class Class7778 implements Class7779 {
       if (var4.isEmpty()) {
          var1.method34169(method25775("&cYou are not allowed to use these commands!"));
       } else {
-         var1.method34169(method25775("&aViaVersion &c" + Class8042.method27613().getVersion()));
+         var1.method34169(method25775("&aViaVersion &c" + ViaVersion3.method27613().getVersion()));
          var1.method34169(method25775("&6Commands:"));
 
          for (Class6255 var6 : var4) {

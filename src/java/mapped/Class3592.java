@@ -14,14 +14,14 @@ public class Class3592 implements Comparator<Entity> {
    }
 
    public int compare(Entity var1, Entity var2) {
-      float var5 = Class9142.method34143(Class9142.method34147(var1).field32084, BowAimbot.method16574().player.rotationYaw);
-      float var6 = Class9142.method34143(Class9142.method34147(var2).field32084, BowAimbot.method16575().player.rotationYaw);
+      float var5 = RotationHelper.angleDiff(RotationHelper.method34147(var1).field32084, BowAimbot.method16574().player.rotationYaw);
+      float var6 = RotationHelper.angleDiff(RotationHelper.method34147(var2).field32084, BowAimbot.method16575().player.rotationYaw);
       if (!(var5 - var6 < 0.0F)) {
          if (var5 - var6 != 0.0F) {
             return 1;
          } else {
-            float var7 = BowAimbot.method16576().player.method3275(var1);
-            float var8 = BowAimbot.method16577().player.method3275(var2);
+            float var7 = BowAimbot.method16576().player.getDistance(var1);
+            float var8 = BowAimbot.method16577().player.getDistance(var2);
             if (!(var7 - var8 < 0.0F)) {
                return var7 - var8 != 0.0F ? 1 : 0;
             } else {

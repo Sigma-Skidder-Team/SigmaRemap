@@ -20,10 +20,10 @@ public class SEntityPropertiesPacket implements Packet<IClientPlayNetHandler> {
    public SEntityPropertiesPacket() {
    }
 
-   public SEntityPropertiesPacket(int var1, Collection<Class9805> var2) {
+   public SEntityPropertiesPacket(int var1, Collection<ModifiableAttributeInstance> var2) {
       this.field24646 = var1;
 
-      for (Class9805 var6 : var2) {
+      for (ModifiableAttributeInstance var6 : var2) {
          this.field24647.add(new Class7919(var6.method38659(), var6.method38660(), var6.method38663()));
       }
    }
@@ -35,14 +35,14 @@ public class SEntityPropertiesPacket implements Packet<IClientPlayNetHandler> {
 
       for (int var5 = 0; var5 < var4; var5++) {
          ResourceLocation var6 = var1.readResourceLocation();
-         Class4869 var7 = Registry.field16087.method9184(var6);
+         Attribute var7 = Registry.field16087.method9184(var6);
          double var8 = var1.readDouble();
          ArrayList var10 = Lists.newArrayList();
          int var11 = var1.readVarInt();
 
          for (int var12 = 0; var12 < var11; var12++) {
             UUID var13 = var1.readUniqueId();
-            var10.add(new Class9689(var13, "Unknown synced attribute modifier", var1.readDouble(), AttributeModifierOperation.method8686(var1.readByte())));
+            var10.add(new AttributeModifier(var13, "Unknown synced attribute modifier", var1.readDouble(), AttributeModifierOperation.method8686(var1.readByte())));
          }
 
          this.field24647.add(new Class7919(var7, var8, var10));
@@ -59,7 +59,7 @@ public class SEntityPropertiesPacket implements Packet<IClientPlayNetHandler> {
          var1.writeDouble(var5.method26561());
          var1.writeVarInt(var5.method26562().size());
 
-         for (Class9689 var7 : var5.method26562()) {
+         for (AttributeModifier var7 : var5.method26562()) {
             var1.writeUniqueId(var7.method37930());
             var1.writeDouble(var7.method37933());
             var1.writeByte(var7.method37932().method8685());

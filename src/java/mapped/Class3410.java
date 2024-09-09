@@ -71,10 +71,10 @@ public class Class3410 extends Block {
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.down());
-      if (var6.method23448(Blocks.ICE) || var6.method23448(Blocks.PACKED_ICE) || var6.method23448(Blocks.field36765)) {
+      if (var6.isIn(Blocks.ICE) || var6.isIn(Blocks.PACKED_ICE) || var6.isIn(Blocks.field36765)) {
          return false;
       } else {
-         return !var6.method23448(Blocks.field37119) && !var6.method23448(Blocks.SOUL_SAND)
+         return !var6.isIn(Blocks.field37119) && !var6.isIn(Blocks.SOUL_SAND)
             ? Block.method11549(var6.method23414(var2, var3.down()), Direction.field673)
                || var6.getBlock() == this && var6.<Integer>method23463(field19092) == 8
             : true;
@@ -108,7 +108,7 @@ public class Class3410 extends Block {
    @Override
    public BlockState method11495(Class5909 var1) {
       BlockState var4 = var1.method18360().getBlockState(var1.method18345());
-      if (!var4.method23448(this)) {
+      if (!var4.isIn(this)) {
          return super.method11495(var1);
       } else {
          int var5 = var4.<Integer>method23463(field19092);

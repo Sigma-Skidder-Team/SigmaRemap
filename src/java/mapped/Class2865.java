@@ -80,7 +80,7 @@ public class Class2865<T extends Class1006 & Class1092> extends Class2855<T> {
       int var9 = ((Class1092)var1).method5082();
       float var10 = 1.0F - (float) MathHelper.method37772(10 - 2 * var9) / 10.0F;
       this.field17762.field31035 = MathHelper.lerp(var10, 0.87266463F, (float) (-Math.PI / 9));
-      if (!var1.method3005()) {
+      if (!var1.isChild()) {
          this.field17762.field31033 = 2.0F;
          this.field17770.field31034 = -7.0F;
       } else {

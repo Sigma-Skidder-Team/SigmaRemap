@@ -37,7 +37,7 @@ public class Class3733<E extends Class1006> extends Class3676<E> {
    }
 
    private void method12659(E var1, LivingEntity var2) {
-      var1.method2992().method21406(Class8830.field39826, var2);
-      var1.method2992().method21405(Class8830.field39841);
+      var1.getBrain().method21406(Class8830.field39826, var2);
+      var1.getBrain().method21405(Class8830.field39841);
    }
 }

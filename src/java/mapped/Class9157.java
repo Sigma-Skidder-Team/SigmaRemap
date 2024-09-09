@@ -25,16 +25,16 @@ public class Class9157 {
    }
 
    public boolean method34187(Entity var1) {
-      if (this.field42037 != null && var1.method3327() != this.field42037) {
+      if (this.field42037 != null && var1.isBurning() != this.field42037) {
          return false;
       } else if (this.field42038 != null && var1.method3336() != this.field42038) {
          return false;
-      } else if (this.field42039 != null && var1.method3337() != this.field42039) {
+      } else if (this.field42039 != null && var1.isSprinting() != this.field42039) {
          return false;
       } else {
-         return this.field42040 != null && var1.method2951() != this.field42040
+         return this.field42040 != null && var1.isSwimming() != this.field42040
             ? false
-            : this.field42041 == null || !(var1 instanceof LivingEntity) || ((LivingEntity)var1).method3005() == this.field42041;
+            : this.field42041 == null || !(var1 instanceof LivingEntity) || ((LivingEntity)var1).isChild() == this.field42041;
       }
    }
 

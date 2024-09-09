@@ -39,7 +39,7 @@ public class Class3394 extends Block {
       if (var2.isRemote) {
          ItemStack var9 = var4.getHeldItem(var5);
          if (this.method12005(var2, var3, var1, var4).isSuccessOrConsume()) {
-            return ActionResultType.field14818;
+            return ActionResultType.SUCCESS;
          }
 
          if (var9.isEmpty()) {
@@ -52,8 +52,8 @@ public class Class3394 extends Block {
 
    private ActionResultType method12005(Class1660 var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
       if (var4.method2933(false)) {
-         var4.method2911(Class8876.field40141);
-         var4.method2932().method37569(2, 0.1F);
+         var4.method2911(Stats.field40141);
+         var4.getFoodStats().method37569(2, 0.1F);
          int var7 = var3.<Integer>method23463(field19029);
          if (var7 >= 6) {
             var1.removeBlock(var2, false);
@@ -61,7 +61,7 @@ public class Class3394 extends Block {
             var1.setBlockState(var2, var3.method23465(field19029, Integer.valueOf(var7 + 1)), 3);
          }
 
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       } else {
          return ActionResultType.field14820;
       }
@@ -76,7 +76,7 @@ public class Class3394 extends Block {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      return var2.getBlockState(var3.down()).method23384().method31086();
+      return var2.getBlockState(var3.down()).getMaterial().method31086();
    }
 
    @Override

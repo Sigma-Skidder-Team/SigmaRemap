@@ -69,17 +69,17 @@ public class Class4187 extends Class4180 {
          Class1025 var11;
          switch (var1) {
             case "Mage":
-               var11 = EntityType.field41027.method33215(var3.method6970());
+               var11 = EntityType.field41027.create(var3.method6970());
                break;
             case "Warrior":
-               var11 = EntityType.field41099.method33215(var3.method6970());
+               var11 = EntityType.field41099.create(var3.method6970());
                break;
             default:
                return;
          }
 
          var11.method4278();
-         var11.method3272(var2, 0.0F, 0.0F);
+         var11.moveToBlockPosAndAngles(var2, 0.0F, 0.0F);
          var11.method4276(var3, var3.method6807(var11.getPosition()), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
          var3.method6995(var11);
          var3.setBlockState(var2, Blocks.AIR.method11579(), 2);

@@ -4,31 +4,31 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 
-public class Class5840 extends Class5839 {
+public class Class5840 extends Slot {
    private static String[] field25582;
 
-   public Class5840(Class920 var1, int var2, int var3, int var4) {
+   public Class5840(IInventory var1, int var2, int var3, int var4) {
       super(var1, var2, var3, var4);
    }
 
    @Override
-   public boolean method18259(ItemStack var1) {
+   public boolean isItemValid(ItemStack var1) {
       return method18275(var1);
    }
 
    @Override
-   public int method18269() {
+   public int getSlotStackLimit() {
       return 1;
    }
 
    @Override
-   public ItemStack method18264(PlayerEntity var1, ItemStack var2) {
+   public ItemStack onTake(PlayerEntity var1, ItemStack var2) {
       Class8812 var5 = Class9741.method38185(var2);
       if (var1 instanceof ServerPlayerEntity) {
          CriteriaTriggers.field44475.method15071((ServerPlayerEntity)var1, var5);
       }
 
-      super.method18264(var1, var2);
+      super.onTake(var1, var2);
       return var2;
    }
 

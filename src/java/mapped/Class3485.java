@@ -27,8 +27,8 @@ public class Class3485 extends Class3194 implements Class3196 {
    @Override
    public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
       return var1.method23446(BlockTags.field32799)
-         || var1.method23448(Blocks.MYCELIUM)
-         || var1.method23448(Blocks.SOUL_SOIL)
+         || var1.isIn(Blocks.MYCELIUM)
+         || var1.isIn(Blocks.SOUL_SOIL)
          || super.method11490(var1, var2, var3);
    }
 

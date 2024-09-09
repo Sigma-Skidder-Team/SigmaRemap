@@ -21,12 +21,12 @@ public class Class7890 extends Class7882<LivingEntity> {
 
    @Override
    public void method26425(ServerWorld var1, LivingEntity var2) {
-      Class6947<?> var5 = var2.method2992();
+      Brain<?> var5 = var2.getBrain();
       Optional var6 = Optional.empty();
       ArrayList var7 = Lists.newArrayList();
 
       for (LivingEntity var9 : var5.<List<LivingEntity>>method21410(Class8830.field39819).orElse(ImmutableList.of())) {
-         if (var9 instanceof Class1084 || var9 instanceof Class1079) {
+         if (var9 instanceof Class1084 || var9 instanceof WitherEntity) {
             var6 = Optional.<LivingEntity>of((Class1006)var9);
             break;
          }

@@ -47,7 +47,7 @@ public class Class2950 extends Class2898<Class4705> {
       for (int var26 = -var19; var26 < var19; var26++) {
          for (int var28 = -var19; var28 < var19; var28++) {
             for (int var29 = -1; var29 > -var17; var29--) {
-               int var30 = !var14 ? var19 : MathHelper.method37773((float)var19 * (1.0F - (float)Math.pow((double)var29, 2.0) / ((float)var17 * 8.0F)));
+               int var30 = !var14 ? var19 : MathHelper.ceil((float)var19 * (1.0F - (float)Math.pow((double)var29, 2.0) / ((float)var17 * 8.0F)));
                int var24 = this.method11302(var3, -var29, var17, var18);
                if (var26 < var24) {
                   this.method11295(var1, var3, var4, var17, var26, var29, var28, var24, var30, var14, var13, var10, var8, var9);
@@ -119,7 +119,7 @@ public class Class2950 extends Class2898<Class4705> {
    }
 
    private void method11294(Class1660 var1, BlockPos var2) {
-      if (var1.getBlockState(var2.up()).method23448(Blocks.SNOW)) {
+      if (var1.getBlockState(var2.up()).isIn(Blocks.SNOW)) {
          this.method11217(var1, var2.up(), Blocks.AIR.method11579());
       }
    }
@@ -156,13 +156,13 @@ public class Class2950 extends Class2898<Class4705> {
 
    private void method11296(BlockPos var1, Class1660 var2, Random var3, int var4, int var5, boolean var6, boolean var7, BlockState var8) {
       BlockState var11 = var2.getBlockState(var1);
-      if (var11.method23384() == Class8649.field38932
-         || var11.method23448(Blocks.SNOW_BLOCK)
-         || var11.method23448(Blocks.ICE)
-         || var11.method23448(Blocks.WATER)) {
+      if (var11.getMaterial() == Class8649.field38932
+         || var11.isIn(Blocks.SNOW_BLOCK)
+         || var11.isIn(Blocks.ICE)
+         || var11.isIn(Blocks.WATER)) {
          boolean var12 = !var6 || var3.nextDouble() > 0.05;
          int var13 = !var6 ? 2 : 3;
-         if (var7 && !var11.method23448(Blocks.WATER) && (double)var4 <= (double)var3.nextInt(Math.max(1, var5 / var13)) + (double)var5 * 0.6 && var12) {
+         if (var7 && !var11.isIn(Blocks.WATER) && (double)var4 <= (double)var3.nextInt(Math.max(1, var5 / var13)) + (double)var5 * 0.6 && var12) {
             this.method11217(var2, var1, Blocks.SNOW_BLOCK.method11579());
          } else {
             this.method11217(var2, var1, var8);
@@ -198,19 +198,19 @@ public class Class2950 extends Class2898<Class4705> {
          var8 = (1.0F - (float)var9 / ((float)var3 * var7 * 0.4F)) * (float)var4;
       }
 
-      return MathHelper.method37773(var8 / 2.0F);
+      return MathHelper.ceil(var8 / 2.0F);
    }
 
    private int method11301(int var1, int var2, int var3) {
       float var6 = 1.0F;
       float var7 = (1.0F - (float)Math.pow((double)var1, 2.0) / ((float)var2 * 1.0F)) * (float)var3;
-      return MathHelper.method37773(var7 / 2.0F);
+      return MathHelper.ceil(var7 / 2.0F);
    }
 
    private int method11302(Random var1, int var2, int var3, int var4) {
       float var7 = 1.0F + var1.nextFloat() / 2.0F;
       float var8 = (1.0F - (float)var2 / ((float)var3 * var7)) * (float)var4;
-      return MathHelper.method37773(var8 / 2.0F);
+      return MathHelper.ceil(var8 / 2.0F);
    }
 
    private boolean method11303(Block var1) {
@@ -218,7 +218,7 @@ public class Class2950 extends Class2898<Class4705> {
    }
 
    private boolean method11304(IBlockReader var1, BlockPos var2) {
-      return var1.getBlockState(var2.down()).method23384() == Class8649.field38932;
+      return var1.getBlockState(var2.down()).getMaterial() == Class8649.field38932;
    }
 
    private void method11305(Class1660 var1, BlockPos var2, int var3, int var4, boolean var5, int var6) {

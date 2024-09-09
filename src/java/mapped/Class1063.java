@@ -19,7 +19,7 @@ import java.util.UUID;
 
 public class Class1063 extends Class1038 implements IAngerable {
    private static final UUID field5860 = UUID.fromString("49455A49-7EC5-45BA-B886-3B90B23A1718");
-   private static final Class9689 field5861 = new Class9689(field5860, "Attacking speed boost", 0.05, AttributeModifierOperation.ADDITION);
+   private static final AttributeModifier field5861 = new AttributeModifier(field5860, "Attacking speed boost", 0.05, AttributeModifierOperation.ADDITION);
    private static final RangedInteger field5862 = TickRangeConverter.convertRange(0, 1);
    private int field5863;
    private static final RangedInteger field5864 = TickRangeConverter.convertRange(20, 39);
@@ -40,7 +40,7 @@ public class Class1063 extends Class1038 implements IAngerable {
 
    @Override
    public double method2894() {
-      return !this.method3005() ? -0.45 : -0.05;
+      return !this.isChild() ? -0.45 : -0.05;
    }
 
    @Override
@@ -63,13 +63,13 @@ public class Class1063 extends Class1038 implements IAngerable {
 
    @Override
    public void method4258() {
-      Class9805 var3 = this.method3085(Attributes.MOVEMENT_SPEED);
+      ModifiableAttributeInstance var3 = this.getAttribute(Attributes.MOVEMENT_SPEED);
       if (!this.method4369()) {
          if (var3.method38665(field5861)) {
             var3.method38670(field5861);
          }
       } else {
-         if (!this.method3005() && !var3.method38665(field5861)) {
+         if (!this.isChild() && !var3.method38665(field5861)) {
             var3.method38667(field5861);
          }
 
@@ -110,19 +110,19 @@ public class Class1063 extends Class1038 implements IAngerable {
    }
 
    private void method4877() {
-      double var3 = this.method3086(Attributes.field42106);
+      double var3 = this.getAttributeValue(Attributes.field42106);
       AxisAlignedBB var5 = AxisAlignedBB.method19657(this.getPositionVec()).method19663(var3, 10.0, var3);
       this.world
          .<Class1063>method7183(Class1063.class, var5)
          .stream()
          .filter(var1 -> var1 != this)
          .filter(var0 -> var0.method4232() == null)
-         .filter(var1 -> !var1.method3345(this.method4232()))
+         .filter(var1 -> !var1.isOnSameTeam(this.method4232()))
          .forEach(var1 -> var1.method4233(this.method4232()));
    }
 
    private void method4878() {
-      this.method2863(SoundEvents.field27295, this.method3099() * 2.0F, this.method3100() * 1.8F);
+      this.playSound(SoundEvents.field27295, this.getSoundVolume() * 2.0F, this.getSoundPitch() * 1.8F);
    }
 
    @Override
@@ -150,18 +150,18 @@ public class Class1063 extends Class1038 implements IAngerable {
 
    @Override
    public boolean method4266(Class1662 var1) {
-      return var1.method7050(this) && !var1.method7014(this.getBoundingBox());
+      return var1.checkNoEntityCollision(this) && !var1.method7014(this.getBoundingBox());
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       this.method4364(var1);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method4365((ServerWorld)this.world, var1);
    }
 
@@ -176,8 +176,8 @@ public class Class1063 extends Class1038 implements IAngerable {
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      return !this.method2760(var1) ? super.method2741(var1, var2) : false;
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      return !this.isInvulnerableTo(var1) ? super.attackEntityFrom(var1, var2) : false;
    }
 
    @Override
@@ -197,7 +197,7 @@ public class Class1063 extends Class1038 implements IAngerable {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.method2944(Class2106.field13731, new ItemStack(Items.field37815));
+      this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37815));
    }
 
    @Override
@@ -207,7 +207,7 @@ public class Class1063 extends Class1038 implements IAngerable {
 
    @Override
    public void method4663() {
-      this.method3085(Attributes.field42116).method38661(0.0);
+      this.getAttribute(Attributes.field42116).method38661(0.0);
    }
 
    @Override

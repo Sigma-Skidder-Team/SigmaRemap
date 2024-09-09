@@ -14,7 +14,7 @@ public class Class6252 implements Class6253 {
 
    private static CompoundNBT method19218(CompoundNBT var0) {
       if (!var0.contains("DataVersion", 99)) {
-         var0.method102("DataVersion", 500);
+         var0.putInt("DataVersion", 500);
       }
 
       return var0;

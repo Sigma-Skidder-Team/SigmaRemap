@@ -41,7 +41,7 @@ public abstract class Class2628 extends Class2595 {
    }
 
    public int method10833(Class1046 var1) {
-      return 200 + var1.method3013().nextInt(200);
+      return 200 + var1.getRNG().nextInt(200);
    }
 
    @Override
@@ -53,7 +53,7 @@ public abstract class Class2628 extends Class2595 {
    public void method10804() {
       this.method10834();
       this.field16931 = 0;
-      this.field16932 = this.field16928.method3013().nextInt(this.field16928.method3013().nextInt(1200) + 1200) + 1200;
+      this.field16932 = this.field16928.getRNG().nextInt(this.field16928.getRNG().nextInt(1200) + 1200) + 1200;
    }
 
    public void method10834() {

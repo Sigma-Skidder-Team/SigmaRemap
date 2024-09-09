@@ -17,7 +17,7 @@ public class Class6195 implements Class6196 {
    @Override
    public void method19097() {
       this.field27644++;
-      if (this.field27642.method37036() == Class1894.field11102) {
+      if (this.field27642.method37036() == GameType.field11102) {
          if (this.field27644 >= 600 && this.field27643 == null) {
             this.field27643 = new TutorialToast(TutorialToast.Icons.field13898, field27640, field27641, false);
             this.field27642.method37035().getToastGui().method5914(this.field27643);

@@ -50,20 +50,20 @@ public class ViaVersionLoader {
    @EventTarget
    public void method23342(StopUseItemEvent var1) {
       if (JelloPortal.method27349() == ViaVerList.field26129.method18582()) {
-         if (this.mc.player.method3160() <= 1) {
-            var1.method13900(true);
+         if (this.mc.player.getItemInUseMaxCount() <= 1) {
+            var1.setCancelled(true);
          }
       }
    }
 
    @EventTarget
-   public void method23343(Class4430 var1) {
-      if (var1.method13977() == this.mc.gameSettings.keyBindInventory.keycode.getKeyCode() && JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
+   public void method23343(EventKeyPress var1) {
+      if (var1.getKey() == this.mc.gameSettings.keyBindInventory.keycode.getKeyCode() && JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
          this.mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
       }
 
       if (JelloPortal.method27349() == ViaVerList.field26129.method18582()
-         && var1.method13977() == 258
+         && var1.getKey() == 258
          && this.field31496 != null
          && this.mc.currentScreen instanceof ChatScreen) {
          this.mc.getConnection().getNetworkManager().method30695(this.field31496);
@@ -80,22 +80,22 @@ public class ViaVersionLoader {
 
    @EventTarget
    @HigestPriority
-   public void method23345(Class4415 var1) {
+   public void method23345(EventRender var1) {
       if (this.mc.player != null
-         && this.mc.player.method3212() == Pose.field13622
+         && this.mc.player.getPose() == Pose.field13622
          && (JelloPortal.method27349() < ViaVerList.field26140.method18582() || ColorUtils.method17716())) {
-         this.mc.player.method3211(Pose.STANDING);
+         this.mc.player.setPose(Pose.STANDING);
       }
    }
 
    @EventTarget
    @HigestPriority
-   public void method23346(Class4398 var1) {
+   public void method23346(EventBlockCollision var1) {
       if (this.mc.world != null && this.mc.player != null) {
-         Block var4 = this.mc.world.getBlockState(var1.method13902()).getBlock();
+         Block var4 = this.mc.world.getBlockState(var1.getBlockPos()).getBlock();
          if (JelloPortal.method27349() == ViaVerList.field26129.method18582() && var4 instanceof Class3411) {
             VoxelShape var5 = VoxelShapes.create(0.0, 0.0, 0.0, 1.0, 1.0, 1.0);
-            var1.method13905(var5);
+            var1.setBoxelShape(var5);
          }
 
          if (JelloPortal.method27349() == ViaVerList.field26129.method18582()) {
@@ -156,7 +156,7 @@ public class ViaVersionLoader {
                   int var14 = this.mc.world.getChunkProvider().field9291.method31823(var10001, this.mc.player.chunkCoordZ + var12);
                   Chunk var15 = new Chunk(
                      this.mc.world,
-                     new Class7481(this.mc.player.chunkCoordX + var11, this.mc.player.chunkCoordZ + var12),
+                     new ChunkPos(this.mc.player.chunkCoordX + var11, this.mc.player.chunkCoordZ + var12),
                      var13.method7077()
                   );
                   this.mc.world.getChunkProvider().field9291.method31824(var14, var15);
@@ -168,20 +168,20 @@ public class ViaVersionLoader {
 
    @EventTarget
    public void method23348(SendPacketEvent var1) {
-      if (var1.method13932() instanceof CHeldItemChangePacket) {
-         int var4 = ((CHeldItemChangePacket)var1.method13932()).getSlotId();
+      if (var1.getPacket() instanceof CHeldItemChangePacket) {
+         int var4 = ((CHeldItemChangePacket)var1.getPacket()).getSlotId();
          if (PlayerInventory.isHotbar(var4)) {
             field31494 = var4;
          }
       }
 
-      if (var1.method13932() instanceof CTabCompletePacket) {
-         if (((CTabCompletePacket)var1.method13932()).getCommand().length() == 1) {
+      if (var1.getPacket() instanceof CTabCompletePacket) {
+         if (((CTabCompletePacket)var1.getPacket()).getCommand().length() == 1) {
             return;
          }
 
-         this.field31496 = (CTabCompletePacket)var1.method13932();
-         var1.method13900(true);
+         this.field31496 = (CTabCompletePacket)var1.getPacket();
+         var1.setCancelled(true);
       }
    }
 
@@ -196,7 +196,7 @@ public class ViaVersionLoader {
          SEntityEquipmentPacket var4 = (SEntityEquipmentPacket)var1.getPacket();
 
          for (Pair var6 : var4.method17562()) {
-            if (var6.getFirst() == Class2106.field13732
+            if (var6.getFirst() == EquipmentSlotType.field13732
                && var6.getSecond() != null
                && (
                   Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).isEnabled()
@@ -213,7 +213,7 @@ public class ViaVersionLoader {
                      field31493.add(var14);
                   }
 
-                  var1.method13900(true);
+                  var1.setCancelled(true);
                }
             }
          }
@@ -223,7 +223,7 @@ public class ViaVersionLoader {
          Class8920.method32597(var1, this.field31495);
          if (!(var1.getPacket() instanceof SHeldItemChangePacket)) {
             if (var1.getPacket() instanceof SUnloadChunkPacket && ColorUtils.method17717()) {
-               var1.method13900(true);
+               var1.setCancelled(true);
             } else if (!(var1.getPacket() instanceof SAnimateHandPacket)) {
                if (var1.getPacket() instanceof SUpdateChunkPositionPacket && this.mc.player != null) {
                   SUpdateChunkPositionPacket var10 = (SUpdateChunkPositionPacket)var1.getPacket();
@@ -233,15 +233,15 @@ public class ViaVersionLoader {
                      if (var8.method17206() != Class2151.field14064) {
                         if (this.field31497 != null && var8.method17206() == Class2151.field14065) {
                            if (this.field31497.compareTo(var8.method17205()) != 0) {
-                              var1.method13900(true);
+                              var1.setCancelled(true);
                            } else {
                               this.field31497 = null;
                            }
                         } else if (this.field31497 != null && this.field31497.compareTo(var8.method17205()) != 0) {
-                           var1.method13900(true);
+                           var1.setCancelled(true);
                         }
                      } else if (this.field31497 != null) {
-                        var1.method13900(true);
+                        var1.setCancelled(true);
                      } else {
                         this.field31497 = var8.method17205();
                      }
@@ -253,7 +253,7 @@ public class ViaVersionLoader {
                SAnimateHandPacket var11 = (SAnimateHandPacket)var1.getPacket();
                Entity var13 = this.mc.world.getEntityByID(var11.method17192());
                if (var13 != null && var11.method17193() == 3 && JelloPortal.method27349() == ViaVerList.field26129.method18582()) {
-                  var1.method13900(true);
+                  var1.setCancelled(true);
                }
             }
          } else {
@@ -267,14 +267,14 @@ public class ViaVersionLoader {
 
    @EventTarget
    @HigestPriority
-   public void method23350(Class4435 var1) {
+   public void method23350(EventMove var1) {
       if (JelloPortal.method27349() < ViaVerList.field26140.method18582() || ColorUtils.method17716()) {
-         if (this.mc.player.method3250()) {
+         if (this.mc.player.isInWater()) {
             this.field31498 = true;
             double var4 = this.mc.player.getPosY();
             float var6 = Class9140.method34128();
             float var7 = 0.02F;
-            float var8 = (float)Class7858.method26326(this.mc.player);
+            float var8 = (float) EnchantmentHelper.method26326(this.mc.player);
             if (var8 > 3.0F) {
                var8 = 3.0F;
             }
@@ -285,19 +285,19 @@ public class ViaVersionLoader {
 
             if (var8 > 0.0F) {
                var6 += (0.54600006F - var6) * var8 / 3.0F;
-               var7 += (this.mc.player.method2918() - var7) * var8 / 3.0F;
+               var7 += (this.mc.player.getAIMoveSpeed() - var7) * var8 / 3.0F;
             }
 
             if (!this.mc.gameSettings.keyBindSprint.isKeyDown()) {
-               if (this.mc.player.field4982 == 0.0F && this.mc.player.field4984 == 0.0F) {
+               if (this.mc.player.moveStrafing == 0.0F && this.mc.player.moveForward == 0.0F) {
                   this.mc.player.setSprinting(false);
                }
             } else {
                this.mc.player.setSprinting(true);
             }
 
-            var7 *= !this.mc.player.method3337() ? 1.0F : (!this.mc.player.onGround ? 1.3F : 1.5F);
-            Class9140.method34123(this.mc.player.field4982, this.mc.player.field4983, this.mc.player.field4984, var7);
+            var7 *= !this.mc.player.isSprinting() ? 1.0F : (!this.mc.player.onGround ? 1.3F : 1.5F);
+            Class9140.method34123(this.mc.player.moveStrafing, this.mc.player.moveVertical, this.mc.player.moveForward, var7);
             Class9140.method34126(Class9140.field42005, Class9140.field42006, Class9140.field42007);
             Class9140.field42005 *= (double)var6;
             Class9140.field42006 *= 0.8F;
@@ -309,44 +309,44 @@ public class ViaVersionLoader {
             if (this.mc.player.collidedHorizontally
                && this.mc
                   .player
-                  .method3224(Class9140.field42005, Class9140.field42006 + 0.6F - this.mc.player.getPosY() + var4, Class9140.field42007)) {
+                  .isOffsetPositionInLiquid(Class9140.field42005, Class9140.field42006 + 0.6F - this.mc.player.getPosY() + var4, Class9140.field42007)) {
                Class9140.field42006 = 0.3F;
             }
 
-            if (this.mc.player.field4981) {
+            if (this.mc.player.isJumping) {
                Class9140.method34127();
             }
 
-            var1.method13993(Class9140.field42005);
-            var1.method13995(Class9140.field42006);
-            var1.method13997(Class9140.field42007);
+            var1.setX(Class9140.field42005);
+            var1.setY(Class9140.field42006);
+            var1.setZ(Class9140.field42007);
          } else {
-            Class9140.field42006 = this.mc.player.getVec().y;
+            Class9140.field42006 = this.mc.player.getMotion().y;
             if (this.field31498 && Class9140.method34129()) {
                Class9140.field42006 = 0.2F;
                ColorUtils.method17725(Class9140.field42006);
             }
 
-            Class9140.field42005 = this.mc.player.getVec().x;
-            Class9140.field42007 = this.mc.player.getVec().z;
+            Class9140.field42005 = this.mc.player.getMotion().x;
+            Class9140.field42007 = this.mc.player.getMotion().z;
             this.field31498 = false;
          }
       }
 
       if (JelloPortal.method27349() == ViaVerList.field26129.method18582()) {
-         if (Math.abs(var1.method13992()) < 0.005) {
-            var1.method13993(0.0);
-            ColorUtils.method17724(var1.method13992());
+         if (Math.abs(var1.getX()) < 0.005) {
+            var1.setX(0.0);
+            ColorUtils.method17724(var1.getX());
          }
 
-         if (Math.abs(var1.method13994()) < 0.005) {
-            var1.method13995(0.0);
-            ColorUtils.method17725(var1.method13994());
+         if (Math.abs(var1.getY()) < 0.005) {
+            var1.setY(0.0);
+            ColorUtils.method17725(var1.getY());
          }
 
-         if (Math.abs(var1.method13996()) < 0.005) {
-            var1.method13997(0.0);
-            ColorUtils.method17726(var1.method13996());
+         if (Math.abs(var1.getZ()) < 0.005) {
+            var1.setZ(0.0);
+            ColorUtils.method17726(var1.getZ());
          }
       }
    }
@@ -357,25 +357,25 @@ public class ViaVersionLoader {
 
    @EventTarget
    @HigestPriority
-   public void method23352(Class4410 var1) {
+   public void method23352(EventRenderEntity var1) {
       if (var1.method13953() == this.mc.player || var1.method13953() == Freecam.field23814 || var1.method13953() == Blink.field23863) {
          if (var1.method13948() != 1.0F) {
-            if (Class4399.field21496 - this.mc.player.field4967 == 0.0F) {
+            if (EventUpdate.prevPitch - this.mc.player.rotationYawHead == 0.0F) {
                if (this.field31499) {
-                  var1.method13949(MathHelper.method37827(var1.method13948(), Class4399.field21498, var1.method13953().field4965));
-                  var1.method13950(MathHelper.method37827(var1.method13948(), Class4399.field21498, var1.method13953().field4967));
-                  var1.method13952(MathHelper.lerp(var1.method13948(), Class4399.field21499, var1.method13953().rotationPitch));
+                  var1.method13949(MathHelper.method37827(var1.method13948(), EventUpdate.field21498, var1.method13953().renderYawOffset));
+                  var1.method13950(MathHelper.method37827(var1.method13948(), EventUpdate.field21498, var1.method13953().rotationYawHead));
+                  var1.method13952(MathHelper.lerp(var1.method13948(), EventUpdate.field21499, var1.method13953().rotationPitch));
                   var1.method13951(var1.method13945() - var1.method13944());
-                  var1.method13953().prevRotationPitch = Class4399.field21499;
-                  var1.method13953().prevRotationYaw = Class4399.field21498;
-                  var1.method13953().field4968 = Class4399.field21498;
-                  var1.method13953().field4966 = Class4399.field21498;
+                  var1.method13953().prevRotationPitch = EventUpdate.field21499;
+                  var1.method13953().prevRotationYaw = EventUpdate.field21498;
+                  var1.method13953().prevRotationYawHead = EventUpdate.field21498;
+                  var1.method13953().prevRenderYawOffset = EventUpdate.field21498;
                   this.field31499 = !this.field31499;
                }
             } else {
-               var1.method13949(MathHelper.method37827(var1.method13948(), Class4399.field21498, Class4399.field21496));
-               var1.method13950(MathHelper.method37827(var1.method13948(), Class4399.field21498, Class4399.field21496));
-               var1.method13952(MathHelper.lerp(var1.method13948(), Class4399.field21499, Class4399.field21497));
+               var1.method13949(MathHelper.method37827(var1.method13948(), EventUpdate.field21498, EventUpdate.prevPitch));
+               var1.method13950(MathHelper.method37827(var1.method13948(), EventUpdate.field21498, EventUpdate.prevPitch));
+               var1.method13952(MathHelper.lerp(var1.method13948(), EventUpdate.field21499, EventUpdate.prevYaw));
                var1.method13951(var1.method13945() - var1.method13944());
                this.field31499 = true;
             }

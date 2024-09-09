@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public class Class1667 implements IBlockReader, Class1668 {
+public class Class1667 implements IBlockReader, ICollisionReader {
    private static String[] field9080;
    public final int field9081;
    public final int field9082;
@@ -56,19 +56,19 @@ public class Class1667 implements IBlockReader, Class1668 {
       int var6 = var2 - this.field9082;
       if (var5 >= 0 && var5 < this.field9083.length && var6 >= 0 && var6 < this.field9083[var5].length) {
          IChunk var7 = this.field9083[var5][var6];
-         return (IChunk)(var7 == null ? new Class1675(this.field9085, new Class7481(var1, var2)) : var7);
+         return (IChunk)(var7 == null ? new Class1675(this.field9085, new ChunkPos(var1, var2)) : var7);
       } else {
-         return new Class1675(this.field9085, new Class7481(var1, var2));
+         return new Class1675(this.field9085, new ChunkPos(var1, var2));
       }
    }
 
    @Override
-   public WorldBorder method6810() {
-      return this.field9085.method6810();
+   public WorldBorder getWorldBorder() {
+      return this.field9085.getWorldBorder();
    }
 
    @Override
-   public IBlockReader method6769(int var1, int var2) {
+   public IBlockReader getBlockReader(int var1, int var2) {
       return this.method7045(var1, var2);
    }
 
@@ -96,7 +96,7 @@ public class Class1667 implements IBlockReader, Class1668 {
 
    @Override
    public Stream<VoxelShape> method7047(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
-      return this.method7055(var1, var2);
+      return this.getCollisionShapes(var1, var2);
    }
 
    @Override

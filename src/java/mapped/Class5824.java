@@ -19,12 +19,12 @@ public class Class5824 extends Class5823 {
    private final Class4923 field25520 = Class4923.method15238();
 
    public Class5824(int var1, PlayerInventory var2) {
-      this(var1, var2, Class8786.field39521);
+      this(var1, var2, IWorldPosCallable.field39521);
    }
 
-   public Class5824(int var1, PlayerInventory var2, Class8786 var3) {
-      super(Class8298.field35655, var1, var2, var3);
-      this.method18125(this.field25520);
+   public Class5824(int var1, PlayerInventory var2, IWorldPosCallable var3) {
+      super(ContainerType.field35655, var1, var2, var3);
+      this.trackInt(this.field25520);
    }
 
    @Override
@@ -43,23 +43,23 @@ public class Class5824 extends Class5823 {
          var1.method2727(-this.field25520.method15234());
       }
 
-      this.field25513.method3621(0, ItemStack.EMPTY);
+      this.field25513.setInventorySlotContents(0, ItemStack.EMPTY);
       if (this.field25518 <= 0) {
-         this.field25513.method3621(1, ItemStack.EMPTY);
+         this.field25513.setInventorySlotContents(1, ItemStack.EMPTY);
       } else {
-         ItemStack var5 = this.field25513.method3618(1);
+         ItemStack var5 = this.field25513.getStackInSlot(1);
          if (!var5.isEmpty() && var5.getCount() > this.field25518) {
             var5.method32182(this.field25518);
-            this.field25513.method3621(1, var5);
+            this.field25513.setInventorySlotContents(1, var5);
          } else {
-            this.field25513.method3621(1, ItemStack.EMPTY);
+            this.field25513.setInventorySlotContents(1, ItemStack.EMPTY);
          }
       }
 
       this.field25520.method15235(0);
       this.field25514.method31716((var1x, var2x) -> {
          BlockState var5x = var1x.getBlockState(var2x);
-         if (!var1.abilities.isCreativeMode && var5x.method23446(BlockTags.field32765) && var1.method3013().nextFloat() < 0.12F) {
+         if (!var1.abilities.isCreativeMode && var5x.method23446(BlockTags.field32765) && var1.getRNG().nextFloat() < 0.12F) {
             BlockState var6 = Class3218.method11607(var5x);
             if (var6 != null) {
                var1x.setBlockState(var2x, var6, 2);
@@ -77,18 +77,18 @@ public class Class5824 extends Class5823 {
 
    @Override
    public void method18192() {
-      ItemStack var3 = this.field25513.method3618(0);
+      ItemStack var3 = this.field25513.getStackInSlot(0);
       this.field25520.method15235(1);
       int var4 = 0;
       int var5 = 0;
       int var6 = 0;
       if (var3.isEmpty()) {
-         this.field25512.method3621(0, ItemStack.EMPTY);
+         this.field25512.setInventorySlotContents(0, ItemStack.EMPTY);
          this.field25520.method15235(0);
       } else {
          ItemStack var7 = var3.copy();
-         ItemStack var8 = this.field25513.method3618(1);
-         Map<Class6069, Integer> var9 = Class7858.method26312(var7);
+         ItemStack var8 = this.field25513.getStackInSlot(1);
+         Map<Class6069, Integer> var9 = EnchantmentHelper.method26312(var7);
          var5 = var5 + var3.method32169() + (var8.isEmpty() ? 0 : var8.method32169());
          this.field25518 = 0;
          if (!var8.isEmpty()) {
@@ -96,7 +96,7 @@ public class Class5824 extends Class5823 {
             if (var7.method32115() && var7.getItem().method11699(var3, var8)) {
                int var24 = Math.min(var7.method32117(), var7.method32119() / 4);
                if (var24 <= 0) {
-                  this.field25512.method3621(0, ItemStack.EMPTY);
+                  this.field25512.setInventorySlotContents(0, ItemStack.EMPTY);
                   this.field25520.method15235(0);
                   return;
                }
@@ -112,7 +112,7 @@ public class Class5824 extends Class5823 {
                this.field25518 = var26;
             } else {
                if (!var10 && (var7.getItem() != var8.getItem() || !var7.method32115())) {
-                  this.field25512.method3621(0, ItemStack.EMPTY);
+                  this.field25512.setInventorySlotContents(0, ItemStack.EMPTY);
                   this.field25520.method15235(0);
                   return;
                }
@@ -133,7 +133,7 @@ public class Class5824 extends Class5823 {
                   }
                }
 
-               Map<Class6069, Integer> var23 = Class7858.method26312(var8);
+               Map<Class6069, Integer> var23 = EnchantmentHelper.method26312(var8);
                boolean var25 = false;
                boolean var27 = false;
 
@@ -191,7 +191,7 @@ public class Class5824 extends Class5823 {
                }
 
                if (var27 && !var25) {
-                  this.field25512.method3621(0, ItemStack.EMPTY);
+                  this.field25512.setInventorySlotContents(0, ItemStack.EMPTY);
                   this.field25520.method15235(0);
                   return;
                }
@@ -234,11 +234,11 @@ public class Class5824 extends Class5823 {
             }
 
             var7.method32170(var22);
-            Class7858.method26314(var9, var7);
+            EnchantmentHelper.method26314(var9, var7);
          }
 
-         this.field25512.method3621(0, var7);
-         this.method18130();
+         this.field25512.setInventorySlotContents(0, var7);
+         this.detectAndSendChanges();
       }
    }
 
@@ -248,8 +248,8 @@ public class Class5824 extends Class5823 {
 
    public void method18197(String var1) {
       this.field25519 = var1;
-      if (this.method18131(2).method18266()) {
-         ItemStack var4 = this.method18131(2).method18265();
+      if (this.getSlot(2).getHasStack()) {
+         ItemStack var4 = this.getSlot(2).getStack();
          if (!StringUtils.isBlank(var1)) {
             var4.method32150(new StringTextComponent(this.field25519));
          } else {

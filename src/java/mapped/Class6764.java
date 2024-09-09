@@ -20,9 +20,9 @@ public abstract class Class6764 {
       this.field29475 = var1;
       this.field29476 = var2;
       this.field29477.clear();
-      this.field29478 = MathHelper.method37767(var2.method3429() + 1.0F);
-      this.field29479 = MathHelper.method37767(var2.method3430() + 1.0F);
-      this.field29480 = MathHelper.method37767(var2.method3429() + 1.0F);
+      this.field29478 = MathHelper.method37767(var2.getWidth() + 1.0F);
+      this.field29479 = MathHelper.method37767(var2.getHeight() + 1.0F);
+      this.field29480 = MathHelper.method37767(var2.getWidth() + 1.0F);
    }
 
    public void method20614() {

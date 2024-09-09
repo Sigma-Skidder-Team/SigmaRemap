@@ -18,7 +18,7 @@ public class Class6201 implements Class6196 {
    @Override
    public void method19097() {
       this.field27677++;
-      if (this.field27675.method37036() == Class1894.field11102) {
+      if (this.field27675.method37036() == GameType.field11102) {
          if (this.field27677 == 1) {
             ClientPlayerEntity var3 = this.field27675.method37035().player;
             if (var3 != null) {
@@ -61,7 +61,7 @@ public class Class6201 implements Class6196 {
 
    public static boolean method19106(ClientPlayerEntity var0, ITag<Item> var1) {
       for (Item var5 : var1.method24918()) {
-         if (var0.method5396().method28961(Class8876.field40097.method172(var5)) > 0) {
+         if (var0.method5396().method28961(Stats.field40097.method172(var5)) > 0) {
             return true;
          }
       }

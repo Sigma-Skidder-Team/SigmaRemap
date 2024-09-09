@@ -12,12 +12,12 @@ public class Class984 extends Class927 {
    }
 
    @Override
-   public boolean method3633(int var1, ItemStack var2) {
+   public boolean isItemValidForSlot(int var1, ItemStack var2) {
       return var2.getItem().method11743(Class5985.field26121);
    }
 
    @Override
-   public int method3630() {
+   public int getInventoryStackLimit() {
       return 1;
    }
 }

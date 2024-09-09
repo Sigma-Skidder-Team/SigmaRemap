@@ -14,7 +14,7 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public interface Class1682 {
-   List<Entity> method6770(Entity var1, AxisAlignedBB var2, Predicate<? super Entity> var3);
+   List<Entity> getEntitiesInAABBexcluding(Entity var1, AxisAlignedBB var2, Predicate<? super Entity> var3);
 
    <T extends Entity> List<T> method6772(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3);
 
@@ -25,7 +25,7 @@ public interface Class1682 {
    List<? extends PlayerEntity> method6870();
 
    default List<Entity> method7181(Entity var1, AxisAlignedBB var2) {
-      return this.method6770(var1, var2, Class8088.field34763);
+      return this.getEntitiesInAABBexcluding(var1, var2, Class8088.field34763);
    }
 
    default boolean method7048(Entity var1, VoxelShape var2) {
@@ -53,13 +53,13 @@ public interface Class1682 {
       return this.<T>method6773(var1, var2, Class8088.field34763);
    }
 
-   default Stream<VoxelShape> method7046(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
+   default Stream<VoxelShape> func_230318_c_(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
       if (!(var2.getAverageEdgeLength() < 1.0E-7)) {
          AxisAlignedBB var6 = var2.method19664(1.0E-7);
-         return this.method6770(var1, var6, var3.and(var2x -> {
+         return this.getEntitiesInAABBexcluding(var1, var6, var3.and(var2x -> {
             if (var2x.getBoundingBox().method19670(var6)) {
                if (var1 != null) {
-                  if (var1.method3305(var2x)) {
+                  if (var1.canCollide(var2x)) {
                      return true;
                   }
                } else if (var2x.method3306()) {
@@ -81,7 +81,7 @@ public interface Class1682 {
 
       for (PlayerEntity var16 : this.method6870()) {
          if (var9 == null || var9.test(var16)) {
-            double var17 = var16.method3276(var1, var3, var5);
+            double var17 = var16.getDistanceNearest(var1, var3, var5);
             if ((var7 < 0.0 || var17 < var7 * var7) && (var12 == -1.0 || var17 < var12)) {
                var12 = var17;
                var14 = var16;
@@ -106,7 +106,7 @@ public interface Class1682 {
    default boolean method7187(double var1, double var3, double var5, double var7) {
       for (PlayerEntity var12 : this.method6870()) {
          if (Class8088.field34763.test(var12) && Class8088.field34758.test(var12)) {
-            double var13 = var12.method3276(var1, var3, var5);
+            double var13 = var12.getDistanceNearest(var1, var3, var5);
             if (var7 < 0.0 || var13 < var7 * var7) {
                return true;
             }
@@ -147,8 +147,8 @@ public interface Class1682 {
       LivingEntity var14 = null;
 
       for (LivingEntity var16 : var1) {
-         if (var2.method30210(var3, var16)) {
-            double var17 = var16.method3276(var4, var6, var8);
+         if (var2.canTarget(var3, var16)) {
+            double var17 = var16.getDistanceNearest(var4, var6, var8);
             if (var12 == -1.0 || var17 < var12) {
                var12 = var17;
                var14 = var16;
@@ -163,7 +163,7 @@ public interface Class1682 {
       ArrayList var6 = Lists.newArrayList();
 
       for (PlayerEntity var8 : this.method6870()) {
-         if (var3.method19674(var8.getPosX(), var8.getPosY(), var8.getPosZ()) && var1.method30210(var2, var8)) {
+         if (var3.method19674(var8.getPosX(), var8.getPosY(), var8.getPosZ()) && var1.canTarget(var2, var8)) {
             var6.add(var8);
          }
       }
@@ -176,7 +176,7 @@ public interface Class1682 {
       ArrayList var8 = Lists.newArrayList();
 
       for (LivingEntity var10 : var7) {
-         if (var2.method30210(var3, var10)) {
+         if (var2.canTarget(var3, var10)) {
             var8.add(var10);
          }
       }

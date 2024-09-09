@@ -33,7 +33,7 @@ public class Class9404 {
       if (this != field43627) {
          if (this.field43628.method32023(var3)) {
             if (this.field43629.method32023(var4)) {
-               if (this.field43630.method20328(var1, var2.method31109())) {
+               if (this.field43630.method20328(var1, var2.getTrueSource())) {
                   return this.field43631 != null && this.field43631 != var5 ? false : this.field43632.method36911(var1, var2);
                } else {
                   return false;

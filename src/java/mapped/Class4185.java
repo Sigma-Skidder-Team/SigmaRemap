@@ -58,7 +58,7 @@ public class Class4185 extends Class4180 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       Class9463 var10 = new Class9463()
          .method36426(this.field20472)
          .method36425(Class2089.field13614)
@@ -73,7 +73,7 @@ public class Class4185 extends Class4180 {
       if (this.field20471.equals(Class3191.method11410())) {
          BlockPos var16 = this.field20455.method8337(Class8969.method32896(var10, new BlockPos(3, 0, 5)));
          BlockState var17 = var1.getBlockState(var16.down());
-         if (!var17.isAir() && !var17.method23448(Blocks.LADDER)) {
+         if (!var17.isAir() && !var17.isIn(Blocks.LADDER)) {
             var1.setBlockState(var16, Blocks.SNOW_BLOCK.method11579(), 3);
          }
       }

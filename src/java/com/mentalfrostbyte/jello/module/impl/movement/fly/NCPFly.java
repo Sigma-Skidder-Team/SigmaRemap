@@ -26,50 +26,50 @@ public class NCPFly extends Module {
 
     @Override
     public void onDisable() {
-        Class9567.method37090(0.0);
-        if (mc.player.getVec().y > 0.0) {
+        MovementUtils.method37090(0.0);
+        if (mc.player.getMotion().y > 0.0) {
             ColorUtils.method17725(-0.0789);
         }
     }
 
     @EventTarget
     @LowerPriority
-    public void method16800(Class4435 var1) {
+    public void method16800(EventMove var1) {
         if (this.isEnabled()) {
             if (this.field23919 <= 1) {
                 if (this.field23919 != -1) {
                     if (this.field23919 != 0) {
                         if (this.field23919 == 1) {
-                            var1.method13995(-1.0E-7);
-                            Class9567.method37088(var1, Class9567.method37075());
-                            ColorUtils.method17725(var1.method13994());
+                            var1.setY(-1.0E-7);
+                            MovementUtils.method37088(var1, MovementUtils.method37075());
+                            ColorUtils.method17725(var1.getY());
                         }
                     } else {
-                        var1.method13995(-1.0E-7);
-                        Class9567.method37088(var1, Class9567.method37075());
-                        ColorUtils.method17725(var1.method13994());
+                        var1.setY(-1.0E-7);
+                        MovementUtils.method37088(var1, MovementUtils.method37075());
+                        ColorUtils.method17725(var1.getY());
                     }
                 } else {
-                    var1.method13995(0.0);
-                    ColorUtils.method17725(var1.method13994());
-                    Class9567.method37088(var1, Class9567.method37075());
+                    var1.setY(0.0);
+                    ColorUtils.method17725(var1.getY());
+                    MovementUtils.method37088(var1, MovementUtils.method37075());
                 }
             } else {
-                Class9567.method37088(var1, 0.0);
+                MovementUtils.method37088(var1, 0.0);
             }
         }
     }
 
     @EventTarget
-    public void method16801(Class4399 var1) {
+    public void method16801(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             this.field23919++;
             if (this.field23919 != 3) {
                 if (this.field23919 > 3 && this.field23919 >= 20 && this.field23919 % 20 == 0) {
-                    var1.method13912(-150.0 - Math.random() * 150.0);
+                    var1.setY(-150.0 - Math.random() * 150.0);
                 }
             } else {
-                var1.method13912(-150.0 - Math.random() * 150.0);
+                var1.setY(-150.0 - Math.random() * 150.0);
             }
 
             var1.method13908(true);
@@ -86,9 +86,9 @@ public class NCPFly extends Module {
                     this.field23919 = -1;
                 }
 
-                this.field23920 = var5.field24298;
-                var5.field24300 = mc.player.rotationYaw;
-                var5.field24301 = mc.player.rotationPitch;
+                this.field23920 = var5.y;
+                var5.yaw = mc.player.rotationYaw;
+                var5.pitch = mc.player.rotationPitch;
             }
         }
     }
@@ -96,7 +96,7 @@ public class NCPFly extends Module {
     @EventTarget
     public void method16803(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            Packet var4 = var1.method13932();
+            Packet var4 = var1.getPacket();
             if (var4 instanceof CPlayerPacket) {
                 CPlayerPacket var5 = (CPlayerPacket) var4;
                 if (this.field23919 == -1) {

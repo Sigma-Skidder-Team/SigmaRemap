@@ -42,7 +42,7 @@ public class SChatPacket implements Packet<IClientPlayNetHandler> {
       var1.handleChat(this);
    }
 
-   public ITextComponent method17648() {
+   public ITextComponent getChatComponent() {
       return this.field24919;
    }
 
@@ -50,11 +50,11 @@ public class SChatPacket implements Packet<IClientPlayNetHandler> {
       return this.field24920 == ChatType.SYSTEM || this.field24920 == ChatType.GAME_INFO;
    }
 
-   public ChatType method17650() {
+   public ChatType getType() {
       return this.field24920;
    }
 
-   public UUID method17651() {
+   public UUID func_240810_e_() {
       return this.field24921;
    }
 

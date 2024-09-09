@@ -66,7 +66,7 @@ public class Class8418 {
 
    public CompoundNBT method29575(CompoundNBT var1) {
       CompoundNBT var4 = var1.getCompound("Level");
-      Class7481 var5 = new Class7481(var4.getInt("xPos"), var4.getInt("zPos"));
+      ChunkPos var5 = new ChunkPos(var4.getInt("xPos"), var4.getInt("zPos"));
       if (this.method29577(var5.field32174, var5.field32175)) {
          var1 = this.method29578(var1, var5);
       }
@@ -83,7 +83,7 @@ public class Class8418 {
             for (int var13 = var5.field32174 - 8; var13 <= var5.field32174 + 8; var13++) {
                for (int var14 = var5.field32175 - 8; var14 <= var5.field32175 + 8; var14++) {
                   if (this.method29576(var13, var14, var9)) {
-                     var12.add(Class7481.method24353(var13, var14));
+                     var12.add(ChunkPos.method24353(var13, var14));
                   }
                }
             }
@@ -101,13 +101,13 @@ public class Class8418 {
    private boolean method29576(int var1, int var2, String var3) {
       return !this.field36090
          ? false
-         : this.field36091.get(var3) != null && this.field36092.get(field36088.get(var3)).method24620(Class7481.method24353(var1, var2));
+         : this.field36091.get(var3) != null && this.field36092.get(field36088.get(var3)).method24620(ChunkPos.method24353(var1, var2));
    }
 
    private boolean method29577(int var1, int var2) {
       if (this.field36090) {
          for (String var6 : this.field36094) {
-            if (this.field36091.get(var6) != null && this.field36092.get(field36088.get(var6)).method24621(Class7481.method24353(var1, var2))) {
+            if (this.field36091.get(var6) != null && this.field36092.get(field36088.get(var6)).method24621(ChunkPos.method24353(var1, var2))) {
                return true;
             }
          }
@@ -118,7 +118,7 @@ public class Class8418 {
       }
    }
 
-   private CompoundNBT method29578(CompoundNBT var1, Class7481 var2) {
+   private CompoundNBT method29578(CompoundNBT var1, ChunkPos var2) {
       CompoundNBT var5 = var1.getCompound("Level");
       CompoundNBT var6 = var5.getCompound("Structures");
       CompoundNBT var7 = var6.getCompound("Starts");
@@ -169,7 +169,7 @@ public class Class8418 {
 
             for (String var8 : var6.method97()) {
                CompoundNBT var9 = var6.getCompound(var8);
-               long var10 = Class7481.method24353(var9.getInt("ChunkX"), var9.getInt("ChunkZ"));
+               long var10 = ChunkPos.method24353(var9.getInt("ChunkX"), var9.getInt("ChunkZ"));
                ListNBT var12 = var9.method131("Children", 10);
                if (!var12.isEmpty()) {
                   String var13 = var12.method153(0).getString("id");
@@ -193,7 +193,7 @@ public class Class8418 {
 
                for (String var16 : var6.method97()) {
                   CompoundNBT var21 = var6.getCompound(var16);
-                  var20.method24619(Class7481.method24353(var21.getInt("ChunkX"), var21.getInt("ChunkZ")));
+                  var20.method24619(ChunkPos.method24353(var21.getInt("ChunkX"), var21.getInt("ChunkZ")));
                }
 
                var20.method24605();

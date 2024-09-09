@@ -1,8 +1,8 @@
 package com.mentalfrostbyte.jello.module.impl.movement.longjump;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
@@ -31,23 +31,23 @@ public class RedeskyLongJump extends Module {
     }
 
     @EventTarget
-    public void method16895(Class4435 var1) {
-        double var4 = Math.sqrt(var1.method13992() * var1.method13992() + var1.method13996() * var1.method13996());
+    public void method16895(EventMove var1) {
+        double var4 = Math.sqrt(var1.getX() * var1.getX() + var1.getZ() * var1.getZ());
         if (mc.player.onGround) {
             if (this.field23981 > 0) {
                 this.field23981 = 0;
-                if (this.method16004().getBooleanValueFromSetttingName("Auto Disable")) {
-                    this.method16004().method16000();
+                if (this.access().getBooleanValueFromSetttingName("Auto Disable")) {
+                    this.access().method16000();
                     return;
                 }
             } else {
                 BlockPos var6 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
-                if (this.method16004().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var6) && ColorUtils.method17686()
-                        || this.method16004().getBooleanValueFromSetttingName("Auto Jump") && ColorUtils.method17686()
-                        || var1.method13994() == Class9567.method37080()) {
+                if (this.access().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var6) && ColorUtils.method17686()
+                        || this.access().getBooleanValueFromSetttingName("Auto Jump") && ColorUtils.method17686()
+                        || var1.getY() == MovementUtils.method37080()) {
                     this.field23981 = 1;
-                    var1.method13995(Class9567.method37080());
-                    Class9567.method37088(var1, 0.55);
+                    var1.setY(MovementUtils.method37080());
+                    MovementUtils.method37088(var1, 0.55);
                 }
             }
         } else if (this.field23981 > 0) {
@@ -80,22 +80,22 @@ public class RedeskyLongJump extends Module {
                         var7 = 1.32;
                 }
 
-                Class9567.method37088(var1, (double) this.getNumberValueBySettingName("Boost") * var7);
-                var1.method13995((double) this.getNumberValueBySettingName("Heigh") * Class9567.method37080());
+                MovementUtils.method37088(var1, (double) this.getNumberValueBySettingName("Boost") * var7);
+                var1.setY((double) this.getNumberValueBySettingName("Heigh") * MovementUtils.method37080());
                 this.field23982 = 1.0;
-            } else if (var1.method13994() < 0.0 && mc.player.fallDistance < 3.0F) {
-                this.field23982 = this.field23982 - var1.method13994();
+            } else if (var1.getY() < 0.0 && mc.player.fallDistance < 3.0F) {
+                this.field23982 = this.field23982 - var1.getY();
             }
         }
 
-        ColorUtils.method17725(var1.method13994());
+        ColorUtils.method17725(var1.getY());
     }
 
     @EventTarget
-    public void method16896(Class4399 var1) {
+    public void method16896(EventUpdate var1) {
         if (this.getBooleanValueFromSetttingName("NoFall")) {
             if (this.field23982 > 3.0) {
-                var1.method13920(true);
+                var1.setGround(true);
                 this.field23982 = 0.0;
             }
         }

@@ -31,7 +31,7 @@ public class Class8588 {
       LootContext var4 = new Class9464(var1.getServerWorld())
          .method36454(Class9525.field44330, var1)
          .method36454(Class9525.field44335, var1.getPositionVec())
-         .method36450(var1.method3013())
+         .method36450(var1.getRNG())
          .method36460(Class8524.field38289);
       boolean var5 = false;
 
@@ -53,7 +53,7 @@ public class Class8588 {
                      SoundEvents.field26714,
                      Class2266.field14735,
                      0.2F,
-                     ((var1.method3013().nextFloat() - var1.method3013().nextFloat()) * 0.7F + 1.0F) * 2.0F
+                     ((var1.getRNG().nextFloat() - var1.getRNG().nextFloat()) * 0.7F + 1.0F) * 2.0F
                   );
                var5 = true;
             }
@@ -61,7 +61,7 @@ public class Class8588 {
       }
 
       if (var5) {
-         var1.field4904.method18130();
+         var1.container.detectAndSendChanges();
       }
 
       if (this.field38667.length > 0) {

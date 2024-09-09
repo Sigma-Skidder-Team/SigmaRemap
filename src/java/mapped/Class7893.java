@@ -27,7 +27,7 @@ public class Class7893 extends Class7882<LivingEntity> {
          .filter(var1x -> var2.isEntityInRange(var1x, 16.0))
          .sorted(Comparator.comparingDouble(var2::getDistanceSq))
          .collect(Collectors.toList());
-      Class6947 var6 = var2.method2992();
+      Brain var6 = var2.getBrain();
       var6.method21406(Class8830.field39821, var5);
       List var7 = var5.stream().filter(var1x -> method26430(var2, var1x)).collect(Collectors.toList());
       var6.method21406(Class8830.field39822, !var7.isEmpty() ? (PlayerEntity)var7.get(0) : null);

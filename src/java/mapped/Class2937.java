@@ -86,7 +86,7 @@ public class Class2937 extends Class2898<Class4712> {
          return true;
       } else {
          BlockState var4 = var0.getBlockState(var1.down());
-         return !var4.method23448(Blocks.NETHERRACK) && !var4.method23448(Blocks.field37074) && !var4.method23448(Blocks.field37076);
+         return !var4.isIn(Blocks.NETHERRACK) && !var4.isIn(Blocks.field37074) && !var4.isIn(Blocks.field37076);
       }
    }
 }

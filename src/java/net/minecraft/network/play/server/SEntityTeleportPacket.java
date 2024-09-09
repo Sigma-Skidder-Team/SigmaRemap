@@ -27,7 +27,7 @@ public class SEntityTeleportPacket implements Packet<IClientPlayNetHandler> {
       this.field24828 = var1.getPosZ();
       this.field24829 = (byte)((int)(var1.rotationYaw * 256.0F / 360.0F));
       this.field24830 = (byte)((int)(var1.rotationPitch * 256.0F / 360.0F));
-      this.field24831 = var1.method3226();
+      this.field24831 = var1.isOnGround();
    }
 
    @Override

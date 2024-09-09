@@ -18,10 +18,10 @@ public class HitSounds extends Module {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SEntityStatusPacket) {
                 SEntityStatusPacket var4 = (SEntityStatusPacket) var1.getPacket();
-                if (var4.method17178(mc.world) == null
-                        || !var4.method17178(mc.world).isAlive()
-                        || var4.method17178(mc.world).method3275(mc.player) > 5.0F
-                        || var4.method17178(mc.world) == mc.player) {
+                if (var4.getEntity(mc.world) == null
+                        || !var4.getEntity(mc.world).isAlive()
+                        || var4.getEntity(mc.world).getDistance(mc.player) > 5.0F
+                        || var4.getEntity(mc.world) == mc.player) {
                 }
             }
         }

@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 
 public class Class1019 extends Class1018 implements Class1020 {
    private static final DataParameter<Byte> field5704 = EntityDataManager.<Byte>createKey(Class1019.class, DataSerializers.field33390);
-   private static final Map<Class112, Class3303> field5705 = Util.<Map<Class112, Class3303>>make(Maps.newEnumMap(Class112.class), var0 -> {
+   private static final Map<Class112, IItemProvider> field5705 = Util.<Map<Class112, IItemProvider>>make(Maps.newEnumMap(Class112.class), var0 -> {
       var0.put(Class112.field386, Blocks.WHITE_WOOL);
       var0.put(Class112.field387, Blocks.ORANGE_WOOL);
       var0.put(Class112.field388, Blocks.MAGENTA_WOOL);
@@ -90,12 +90,12 @@ public class Class1019 extends Class1018 implements Class1020 {
    }
 
    @Override
-   public void method2871() {
+   public void livingEntity() {
       if (this.world.isRemote) {
          this.field5707 = Math.max(0, this.field5707 - 1);
       }
 
-      super.method2871();
+      super.livingEntity();
    }
 
    public static Class7037 method4512() {
@@ -152,9 +152,9 @@ public class Class1019 extends Class1018 implements Class1020 {
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 10) {
-         super.method2866(var1);
+         super.handleStatusUpdate(var1);
       } else {
          this.field5707 = 40;
       }
@@ -188,8 +188,8 @@ public class Class1019 extends Class1018 implements Class1020 {
          return super.method4285(var1, var2);
       } else if (!this.world.isRemote && this.method4516()) {
          this.method4515(Class2266.field14735);
-         var5.method32121(1, var1, var1x -> var1x.method3185(var2));
-         return ActionResultType.field14818;
+         var5.method32121(1, var1, var1x -> var1x.sendBreakAnimation(var2));
+         return ActionResultType.SUCCESS;
       } else {
          return ActionResultType.field14819;
       }
@@ -202,11 +202,11 @@ public class Class1019 extends Class1018 implements Class1020 {
       int var4 = 1 + this.rand.nextInt(3);
 
       for (int var5 = 0; var5 < var4; var5++) {
-         ItemEntity var6 = this.method3301(field5705.get(this.method4517()), 1);
+         ItemEntity var6 = this.entityDropItem(field5705.get(this.method4517()), 1);
          if (var6 != null) {
-            var6.method3434(
-               var6.getVec()
-                  .method11339(
+            var6.setMotion(
+               var6.getMotion()
+                  .add(
                      (double)((this.rand.nextFloat() - this.rand.nextFloat()) * 0.1F),
                      (double)(this.rand.nextFloat() * 0.05F),
                      (double)((this.rand.nextFloat() - this.rand.nextFloat()) * 0.1F)
@@ -218,19 +218,19 @@ public class Class1019 extends Class1018 implements Class1020 {
 
    @Override
    public boolean method4516() {
-      return this.isAlive() && !this.method4519() && !this.method3005();
+      return this.isAlive() && !this.method4519() && !this.isChild();
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("Sheared", this.method4519());
       var1.method100("Color", (byte)this.method4517().method309());
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method4520(var1.getBoolean("Sheared"));
       this.method4518(Class112.method315(var1.getByte("Color")));
    }
@@ -251,8 +251,8 @@ public class Class1019 extends Class1018 implements Class1020 {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(SoundEvents.field27034, 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(SoundEvents.field27034, 0.15F, 1.0F);
    }
 
    public Class112 method4517() {
@@ -300,7 +300,7 @@ public class Class1019 extends Class1018 implements Class1020 {
 
    public Class1019 method4389(ServerWorld var1, Class1045 var2) {
       Class1019 var5 = (Class1019)var2;
-      Class1019 var6 = EntityType.SHEEP.method33215(var1);
+      Class1019 var6 = EntityType.SHEEP.create(var1);
       var6.method4518(this.method4522(this, var5));
       return var6;
    }
@@ -308,7 +308,7 @@ public class Class1019 extends Class1018 implements Class1020 {
    @Override
    public void method4235() {
       this.method4520(false);
-      if (this.method3005()) {
+      if (this.isChild()) {
          this.method4769(60);
       }
    }
@@ -336,14 +336,14 @@ public class Class1019 extends Class1018 implements Class1020 {
    }
 
    private static Class926 method4523(Class112 var0, Class112 var1) {
-      Class926 var4 = new Class926(new Class5835((Class8298)null, -1), 2, 1);
-      var4.method3621(0, new ItemStack(Class3321.method11877(var0)));
-      var4.method3621(1, new ItemStack(Class3321.method11877(var1)));
+      Class926 var4 = new Class926(new Class5835((ContainerType)null, -1), 2, 1);
+      var4.setInventorySlotContents(0, new ItemStack(Class3321.method11877(var0)));
+      var4.setInventorySlotContents(1, new ItemStack(Class3321.method11877(var1)));
       return var4;
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return 0.95F * var2.field39969;
    }
 }

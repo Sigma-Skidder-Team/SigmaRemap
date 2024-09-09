@@ -32,7 +32,7 @@ public class Class7881 extends Class7882<LivingEntity> {
 
    @Override
    public void method26425(ServerWorld var1, LivingEntity var2) {
-      Class6947<?> var5 = var2.method2992();
+      Brain<?> var5 = var2.getBrain();
       var5.method21408(Class8830.field39870, method26426(var1, var2));
       Optional var6 = Optional.empty();
       Optional var7 = Optional.empty();
@@ -50,7 +50,7 @@ public class Class7881 extends Class7882<LivingEntity> {
             if (!(var17 instanceof Class1036)) {
                if (!(var17 instanceof Class1034)) {
                   if (!(var17 instanceof PlayerEntity)) {
-                     if (var6.isPresent() || !(var17 instanceof Class1084) && !(var17 instanceof Class1079)) {
+                     if (var6.isPresent() || !(var17 instanceof Class1084) && !(var17 instanceof WitherEntity)) {
                         if (!var10.isPresent() && Class4388.method13880(var17.getType())) {
                            var10 = Optional.<LivingEntity>of(var17);
                         }
@@ -69,7 +69,7 @@ public class Class7881 extends Class7882<LivingEntity> {
                   }
                } else {
                   Class1034 var21 = (Class1034)var17;
-                  if (var21.method3005() && !var9.isPresent()) {
+                  if (var21.isChild() && !var9.isPresent()) {
                      var9 = Optional.<Class1034>of(var21);
                   } else if (var21.method4635()) {
                      var14.add(var21);
@@ -80,7 +80,7 @@ public class Class7881 extends Class7882<LivingEntity> {
             }
          } else {
             Class1091 var18 = (Class1091)var17;
-            if (var18.method3005() && !var8.isPresent()) {
+            if (var18.isChild() && !var8.isPresent()) {
                var8 = Optional.<Class1091>of(var18);
             } else if (var18.method5084()) {
                var13++;
@@ -116,6 +116,6 @@ public class Class7881 extends Class7882<LivingEntity> {
    private static boolean method26427(ServerWorld var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
       boolean var5 = var4.method23446(BlockTags.field32774);
-      return var5 && var4.method23448(Blocks.field37068) ? Class3244.method11655(var4) : var5;
+      return var5 && var4.isIn(Blocks.field37068) ? Class3244.method11655(var4) : var5;
    }
 }

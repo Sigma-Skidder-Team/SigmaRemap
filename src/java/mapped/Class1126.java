@@ -25,7 +25,7 @@ public class Class1126 extends Class851<Class5815> {
       int var7 = (this.width - this.field4721) / 2;
       int var8 = (this.height - this.field4722) / 2;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
-      if ((this.field4727.method18131(0).method18266() || this.field4727.method18131(1).method18266()) && !this.field4727.method18131(2).method18266()) {
+      if ((this.field4727.getSlot(0).getHasStack() || this.field4727.getSlot(1).getHasStack()) && !this.field4727.getSlot(2).getHasStack()) {
          this.method5696(var1, var7 + 92, var8 + 31, this.field4721, 0, 28, 21);
       }
    }

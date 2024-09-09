@@ -35,7 +35,7 @@ public class Class3715 extends Class3676<LivingEntity> {
    @Override
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       super.method12502(var1, var2, var3);
-      Class6947<?> var7 = var2.method2992();
+      Brain<?> var7 = var2.getBrain();
       var7.<List<LivingEntity>>method21410(Class8830.field39819)
          .ifPresent(
             var3x -> var3x.stream()
@@ -54,6 +54,6 @@ public class Class3715 extends Class3676<LivingEntity> {
    }
 
    private List<LivingEntity> method12598(LivingEntity var1) {
-      return var1.method2992().<List<LivingEntity>>method21410(Class8830.field39819).get();
+      return var1.getBrain().<List<LivingEntity>>method21410(Class8830.field39819).get();
    }
 }

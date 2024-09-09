@@ -23,8 +23,8 @@ public class Class6225 extends Class6218 {
       double var11 = var1.getZ() + (double)((float)var5.method541() * 1.125F);
       BlockPos var13 = var1.method11323().method8349(var5);
       double var14;
-      if (!var6.getFluidState(var13).method23486(Class8953.field40469)) {
-         if (!var6.getBlockState(var13).isAir() || !var6.getFluidState(var13.down()).method23486(Class8953.field40469)) {
+      if (!var6.getFluidState(var13).method23486(FluidTags.field40469)) {
+         if (!var6.getBlockState(var13).isAir() || !var6.getFluidState(var13.down()).method23486(FluidTags.field40469)) {
             return this.field27720.method19196(var1, var2);
          }
 
@@ -36,7 +36,7 @@ public class Class6225 extends Class6218 {
       BoatEntity var16 = new BoatEntity(var6, var7, var9 + var14, var11);
       var16.method4171(this.field27721);
       var16.rotationYaw = var5.method551();
-      var6.method6916(var16);
+      var6.addEntity(var16);
       var2.method32182(1);
       return var2;
    }

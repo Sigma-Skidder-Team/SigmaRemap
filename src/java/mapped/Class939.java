@@ -76,50 +76,50 @@ public abstract class Class939 extends Class932 {
    }
 
    @Override
-   public boolean method3617() {
+   public boolean isEmpty() {
       this.method3743((PlayerEntity)null);
       return this.method3724().stream().allMatch(ItemStack::isEmpty);
    }
 
    @Override
-   public ItemStack method3618(int var1) {
+   public ItemStack getStackInSlot(int var1) {
       this.method3743((PlayerEntity)null);
       return this.method3724().get(var1);
    }
 
    @Override
-   public ItemStack method3619(int var1, int var2) {
+   public ItemStack decrStackSize(int var1, int var2) {
       this.method3743((PlayerEntity)null);
       ItemStack var5 = Class7920.method26563(this.method3724(), var1, var2);
       if (!var5.isEmpty()) {
-         this.method3622();
+         this.markDirty();
       }
 
       return var5;
    }
 
    @Override
-   public ItemStack method3620(int var1) {
+   public ItemStack removeStackFromSlot(int var1) {
       this.method3743((PlayerEntity)null);
       return Class7920.method26564(this.method3724(), var1);
    }
 
    @Override
-   public void method3621(int var1, ItemStack var2) {
+   public void setInventorySlotContents(int var1, ItemStack var2) {
       this.method3743((PlayerEntity)null);
       this.method3724().set(var1, var2);
-      if (var2.getCount() > this.method3630()) {
-         var2.method32180(this.method3630());
+      if (var2.getCount() > this.getInventoryStackLimit()) {
+         var2.method32180(this.getInventoryStackLimit());
       }
 
-      this.method3622();
+      this.markDirty();
    }
 
    @Override
-   public boolean method3623(PlayerEntity var1) {
+   public boolean isUsableByPlayer(PlayerEntity var1) {
       return this.field5324.getTileEntity(this.field5325) == this
          ? !(
-            var1.method3276((double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.getZ() + 0.5)
+            var1.getDistanceNearest((double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.getZ() + 0.5)
                > 64.0
          )
          : false;
@@ -141,7 +141,7 @@ public abstract class Class939 extends Class932 {
 
    @Nullable
    @Override
-   public Class5812 method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
+   public Container method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
       if (!this.method3696(var3)) {
          return null;
       } else {

@@ -28,7 +28,7 @@ public class Class2899 extends Class2898<Class4699> {
                   Block var16 = var1.getBlockState(var15).getBlock();
 
                   for (BlockState var18 : var5.field22295) {
-                     if (var18.method23448(var16)) {
+                     if (var18.isIn(var16)) {
                         var1.setBlockState(var15, var5.field22292, 2);
                         var8 = true;
                         break;

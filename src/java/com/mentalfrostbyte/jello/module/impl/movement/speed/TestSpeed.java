@@ -3,9 +3,9 @@ package com.mentalfrostbyte.jello.module.impl.movement.speed;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
-import com.mentalfrostbyte.jello.event.impl.Class4436;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
+import com.mentalfrostbyte.jello.event.impl.JumpEvent;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -13,7 +13,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import mapped.BooleanSetting;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
-import mapped.Class9567;
+import mapped.MovementUtils;
 import com.mentalfrostbyte.jello.module.impl.movement.Jesus;
 
 public class TestSpeed extends Module {
@@ -32,32 +32,32 @@ public class TestSpeed extends Module {
     }
 
     @EventTarget
-    public void method16796(Class4399 var1) {
+    public void method16796(EventUpdate var1) {
         if (this.isEnabled() && mc.player != null && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
             if (mc.player.onGround && var1.method13921()) {
-                var1.method13912(var1.method13911() + 1.0E-14);
+                var1.setY(var1.getY() + 1.0E-14);
             }
         }
     }
 
     @EventTarget
-    public void method16797(Class4435 var1) {
+    public void method16797(EventMove var1) {
         if (this.isEnabled()) {
             if (mc.player.onGround
                     && mc.player.collidedVertically
-                    && (mc.player.field4984 != 0.0F || mc.player.field4982 != 0.0F)
+                    && (mc.player.moveForward != 0.0F || mc.player.moveStrafing != 0.0F)
                     && this.getBooleanValueFromSetttingName("AutoJump")) {
-                mc.player.method2914();
-                var1.method13993(mc.player.getVec().x);
-                var1.method13995(mc.player.getVec().y);
-                var1.method13997(mc.player.getVec().z);
+                mc.player.jump();
+                var1.setX(mc.player.getMotion().x);
+                var1.setY(mc.player.getMotion().y);
+                var1.setZ(mc.player.getMotion().z);
             }
 
-            double var4 = var1.method13998().y;
-            var1.method13998().y = 0.0;
-            double var6 = var1.method13998().method11348();
-            var1.method13998().y = var4;
-            this.field23916 = Class9567.method37092(var1, var6, Class9567.method37083()[0], this.field23916, 45.0F);
+            double var4 = var1.getVector().y;
+            var1.getVector().y = 0.0;
+            double var6 = var1.getVector().length();
+            var1.getVector().y = var4;
+            this.field23916 = MovementUtils.method37092(var1, var6, MovementUtils.method37083()[0], this.field23916, 45.0F);
             if (this.field23913 != 0.0F || this.field23914 != 0.0F) {
                 this.field23913 = (float) ((double) this.field23913 * 0.85);
                 this.field23914 = (float) ((double) this.field23914 * 0.85);
@@ -77,12 +77,12 @@ public class TestSpeed extends Module {
 
     @EventTarget
     @LowerPriority
-    public void method16798(Class4436 var1) {
+    public void method16798(JumpEvent var1) {
         if (this.isEnabled() && !Jesus.method16953() && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
             if (!mc.gameSettings.keyBindJump.isKeyDown() || !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()) {
-                this.field23916 = Class9567.method37083()[0];
+                this.field23916 = MovementUtils.method37083()[0];
                 this.field23918 = 0;
-                var1.method14003(var1.method14001().method11348() * 1.05F);
+                var1.method14003(var1.getVector().length() * 1.05F);
             }
         }
     }
@@ -92,7 +92,7 @@ public class TestSpeed extends Module {
         if (this.isEnabled()) {
             if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
                 SEntityVelocityPacket var4 = (SEntityVelocityPacket) var1.getPacket();
-                if (var4.method17565() != mc.player.getEntityId()) {
+                if (var4.getEntityID() != mc.player.getEntityId()) {
                 }
             }
         }

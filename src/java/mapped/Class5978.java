@@ -35,11 +35,11 @@ public class Class5978 extends Class5979 {
          if (var13 != null) {
             this.field26036.add(var13);
          } else {
-            Class8042.method27613().method27366().warning("Unknown blockstate " + var12 + " :(");
+            ViaVersion3.method27613().method27366().warning("Unknown blockstate " + var12 + " :(");
          }
       }
 
-      if (Class8042.method27612().method21935()) {
+      if (ViaVersion3.method27612().method21935()) {
          this.field26037 = new IntOpenHashSet(1611, 1.0F);
 
          for (Entry var18 : var1.getAsJsonObject("blockstates").entrySet()) {

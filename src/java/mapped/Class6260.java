@@ -26,13 +26,13 @@ public class Class6260 extends Class6255 {
       int var7 = 0;
       long var8 = 0L;
 
-      for (Class9150 var13 : Class8042.method27613().method27358()) {
-         int var14 = Class8042.method27611().method33415(var13.method34170());
+      for (Class9150 var13 : ViaVersion3.method27613().method27358()) {
+         int var14 = ViaVersion3.method27611().method33415(var13.method34170());
          if (!var5.containsKey(var14)) {
             var5.put(var14, new HashSet<>());
          }
 
-         Class7161 var15 = Class8042.method27614().method34431(var13.method34170());
+         Class7161 var15 = ViaVersion3.method27614().method34431(var13.method34170());
          if (var15 != null && var15.method22482() > -1L) {
             var5.get(var14).add(var13.method34171() + " (" + var15.method22482() + " PPS)");
             var6 = (int)((long)var6 + var15.method22482());

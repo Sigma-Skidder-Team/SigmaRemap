@@ -59,23 +59,23 @@ public enum Class108 implements IStringSerializable {
    }
 
    public static Class108 method300(BlockState var0) {
-      if (!var0.method23448(Blocks.CLAY)) {
-         if (var0.method23448(Blocks.field36521)) {
+      if (!var0.isIn(Blocks.CLAY)) {
+         if (var0.isIn(Blocks.field36521)) {
             return field353;
          } else if (!var0.method23446(BlockTags.field32734)) {
-            if (var0.method23448(Blocks.PACKED_ICE)) {
+            if (var0.isIn(Blocks.PACKED_ICE)) {
                return field355;
-            } else if (!var0.method23448(Blocks.field36893)) {
-               if (var0.method23448(Blocks.field36522)) {
+            } else if (!var0.isIn(Blocks.field36893)) {
+               if (var0.isIn(Blocks.field36522)) {
                   return field357;
-               } else if (!var0.method23448(Blocks.SOUL_SAND)) {
-                  if (var0.method23448(Blocks.PUMPKIN)) {
+               } else if (!var0.isIn(Blocks.SOUL_SAND)) {
+                  if (var0.isIn(Blocks.PUMPKIN)) {
                      return field359;
-                  } else if (!var0.method23448(Blocks.EMERALD_BLOCK)) {
-                     if (var0.method23448(Blocks.field36777)) {
+                  } else if (!var0.isIn(Blocks.EMERALD_BLOCK)) {
+                     if (var0.isIn(Blocks.field36777)) {
                         return field361;
-                     } else if (!var0.method23448(Blocks.field36587)) {
-                        Class8649 var3 = var0.method23384();
+                     } else if (!var0.isIn(Blocks.field36587)) {
+                        Class8649 var3 = var0.getMaterial();
                         if (var3 == Class8649.field38966) {
                            return field348;
                         } else if (var3 != Class8649.field38953) {

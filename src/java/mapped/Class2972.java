@@ -7,7 +7,7 @@ public class Class2972 extends Structure<Class4735> {
       super(var1);
    }
 
-   public boolean method11361(ChunkGenerator var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Biome var8, Class7481 var9, Class4735 var10) {
+   public boolean method11361(ChunkGenerator var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Biome var8, ChunkPos var9, Class4735 var10) {
       var5.method10373(var3, var6, var7);
       double var13 = (double)var10.field22426;
       return var5.nextDouble() < var13;

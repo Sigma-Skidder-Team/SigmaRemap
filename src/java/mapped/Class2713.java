@@ -6,7 +6,7 @@ public class Class2713 extends Class2709<LivingEntity> {
    private static String[] field17187;
 
    public Class2713(Class1030 var1) {
-      super(var1, LivingEntity.class, 0, true, true, LivingEntity::method3170);
+      super(var1, LivingEntity.class, 0, true, true, LivingEntity::attackable);
    }
 
    @Override

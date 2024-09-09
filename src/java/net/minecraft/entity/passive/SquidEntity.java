@@ -47,7 +47,7 @@ public class SquidEntity extends WaterMobEntity {
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.5F;
    }
 
@@ -67,18 +67,18 @@ public class SquidEntity extends WaterMobEntity {
    }
 
    @Override
-   public float method3099() {
+   public float getSoundVolume() {
       return 0.4F;
    }
 
    @Override
-   public boolean method2940() {
+   public boolean canTriggerWalking() {
       return false;
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
+   public void livingEntity() {
+      super.livingEntity();
       this.prevSquidPitch = this.squidPitch;
       this.prevSquidYaw = this.squidYaw;
       this.prevSquidRotation = this.squidRotation;
@@ -91,7 +91,7 @@ public class SquidEntity extends WaterMobEntity {
                this.rotationVelocity = 1.0F / (this.rand.nextFloat() + 1.0F) * 0.2F;
             }
 
-            this.world.method6786(this, (byte)19);
+            this.world.setEntityState(this, (byte)19);
          } else {
             this.squidRotation = (float) (Math.PI * 2);
          }
@@ -100,16 +100,16 @@ public class SquidEntity extends WaterMobEntity {
       if (!this.method3255()) {
          this.tentacleAngle = MathHelper.method37771(MathHelper.sin(this.squidRotation)) * (float) Math.PI * 0.25F;
          if (!this.world.isRemote) {
-            double var5 = this.getVec().y;
-            if (!this.method3033(Effects.LEVITATION)) {
+            double var5 = this.getMotion().y;
+            if (!this.isPotionActive(Effects.LEVITATION)) {
                if (!this.method3247()) {
                   var5 -= 0.08;
                }
             } else {
-               var5 = 0.05 * (double)(this.method3034(Effects.LEVITATION).method8629() + 1);
+               var5 = 0.05 * (double)(this.getActivePotionEffect(Effects.LEVITATION).method8629() + 1);
             }
 
-            this.method3435(0.0, var5 * 0.98F, 0.0);
+            this.setMotion(0.0, var5 * 0.98F, 0.0);
          }
 
          this.squidPitch = (float)((double)this.squidPitch + (double)(-90.0F - this.squidPitch) * 0.02);
@@ -130,22 +130,22 @@ public class SquidEntity extends WaterMobEntity {
          }
 
          if (!this.world.isRemote) {
-            this.method3435((double)(this.randomMotionVecX * this.randomMotionSpeed), (double)(this.randomMotionVecY * this.randomMotionSpeed), (double)(this.randomMotionVecZ * this.randomMotionSpeed));
+            this.setMotion((double)(this.randomMotionVecX * this.randomMotionSpeed), (double)(this.randomMotionVecY * this.randomMotionSpeed), (double)(this.randomMotionVecZ * this.randomMotionSpeed));
          }
 
-         Vector3d var7 = this.getVec();
-         float var4 = MathHelper.method37766(method3234(var7));
-         this.field4965 = this.field4965
-            + (-((float) MathHelper.method37814(var7.x, var7.z)) * (180.0F / (float)Math.PI) - this.field4965) * 0.1F;
-         this.rotationYaw = this.field4965;
+         Vector3d var7 = this.getMotion();
+         float var4 = MathHelper.sqrt(horizontalMag(var7));
+         this.renderYawOffset = this.renderYawOffset
+            + (-((float) MathHelper.method37814(var7.x, var7.z)) * (180.0F / (float)Math.PI) - this.renderYawOffset) * 0.1F;
+         this.rotationYaw = this.renderYawOffset;
          this.squidYaw = (float)((double)this.squidYaw + Math.PI * (double)this.rotateSpeed * 1.5);
          this.squidPitch = this.squidPitch + (-((float) MathHelper.method37814((double)var4, var7.y)) * (180.0F / (float)Math.PI) - this.squidPitch) * 0.1F;
       }
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (super.method2741(var1, var2) && this.method3014() != null) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (super.attackEntityFrom(var1, var2) && this.method3014() != null) {
          this.method4838();
          return true;
       } else {
@@ -155,26 +155,26 @@ public class SquidEntity extends WaterMobEntity {
 
    private Vector3d method4837(Vector3d var1) {
       Vector3d var4 = var1.method11350(this.prevSquidPitch * (float) (Math.PI / 180.0));
-      return var4.method11351(-this.field4966 * (float) (Math.PI / 180.0));
+      return var4.method11351(-this.prevRenderYawOffset * (float) (Math.PI / 180.0));
    }
 
    private void method4838() {
-      this.method2863(SoundEvents.field27128, this.method3099(), this.method3100());
-      Vector3d var3 = this.method4837(new Vector3d(0.0, -1.0, 0.0)).method11339(this.getPosX(), this.getPosY(), this.getPosZ());
+      this.playSound(SoundEvents.field27128, this.getSoundVolume(), this.getSoundPitch());
+      Vector3d var3 = this.method4837(new Vector3d(0.0, -1.0, 0.0)).add(this.getPosX(), this.getPosY(), this.getPosZ());
 
       for (int var4 = 0; var4 < 30; var4++) {
          Vector3d var5 = this.method4837(new Vector3d((double)this.rand.nextFloat() * 0.6 - 0.3, -1.0, (double)this.rand.nextFloat() * 0.6 - 0.3));
-         Vector3d var6 = var5.method11344(0.3 + (double)(this.rand.nextFloat() * 2.0F));
+         Vector3d var6 = var5.scale(0.3 + (double)(this.rand.nextFloat() * 2.0F));
          ((ServerWorld)this.world)
-            .method6939(
+            .spawnParticle(
                ParticleTypes.field34095, var3.x, var3.y + 0.5, var3.z, 0, var6.x, var6.y, var6.z, 0.1F
             );
       }
    }
 
    @Override
-   public void method2915(Vector3d var1) {
-      this.move(Class2107.field13742, this.getVec());
+   public void travel(Vector3d var1) {
+      this.move(MoverType.SELF, this.getMotion());
    }
 
    public static boolean method4839(EntityType<SquidEntity> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
@@ -182,9 +182,9 @@ public class SquidEntity extends WaterMobEntity {
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 19) {
-         super.method2866(var1);
+         super.handleStatusUpdate(var1);
       } else {
          this.squidRotation = 0.0F;
       }

@@ -5,7 +5,7 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public abstract class Class4847 implements IRecipe<Class920> {
+public abstract class Class4847 implements IRecipe<IInventory> {
    public final Class7207<?> field22630;
    public final ResourceLocation field22631;
    public final String field22632;
@@ -25,12 +25,12 @@ public abstract class Class4847 implements IRecipe<Class920> {
    }
 
    @Override
-   public boolean method14963(Class920 var1, World var2) {
-      return this.field22633.test(var1.method3618(0));
+   public boolean method14963(IInventory var1, World var2) {
+      return this.field22633.test(var1.getStackInSlot(0));
    }
 
    @Override
-   public ItemStack method14962(Class920 var1) {
+   public ItemStack method14962(IInventory var1) {
       return this.field22634.copy();
    }
 

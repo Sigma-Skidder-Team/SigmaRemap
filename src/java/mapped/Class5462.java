@@ -124,7 +124,7 @@ public class Class5462 {
       this.method17128(var1).method24164(var6, var3);
    }
 
-   public boolean method17135(Class9221<Class7466> var1) {
+   public boolean getBoolean(Class9221<Class7466> var1) {
       return this.<Class7466>method17128(var1).method24174();
    }
 

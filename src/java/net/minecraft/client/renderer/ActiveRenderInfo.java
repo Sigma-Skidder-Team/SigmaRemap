@@ -36,7 +36,7 @@ public class ActiveRenderInfo {
       this.renderViewEntity = var2;
       this.thirdPerson = var3;
       this.thirdPersonReverse = var4;
-      this.method37501(var2.method3136(var5), var2.method3282(var5));
+      this.method37501(var2.getYaw(var5), var2.getPitch(var5));
       this.method37502(
          MathHelper.lerp((double)var5, var2.prevPosX, var2.getPosX()),
          MathHelper.lerp((double)var5, var2.prevPosY, var2.getPosY()) + (double) MathHelper.lerp(var5, this.previousHeight, this.height),
@@ -44,7 +44,7 @@ public class ActiveRenderInfo {
       );
       if (!var3) {
          if (var2 instanceof LivingEntity && ((LivingEntity)var2).isSleeping()) {
-            Direction var8 = ((LivingEntity)var2).method3179();
+            Direction var8 = ((LivingEntity)var2).getBedDirection();
             this.method37501(var8 == null ? 0.0F : var8.method551() - 180.0F, 0.0F);
             this.method37500(0.0, 0.3, 0.0);
          }
@@ -60,7 +60,7 @@ public class ActiveRenderInfo {
    public void method37498() {
       if (this.renderViewEntity != null) {
          this.previousHeight = this.height;
-         this.height = this.height + (this.renderViewEntity.method3393() - this.height) * 0.5F;
+         this.height = this.height + (this.renderViewEntity.getEyeHeight() - this.height) * 0.5F;
       }
    }
 
@@ -72,13 +72,13 @@ public class ActiveRenderInfo {
          var6 *= 0.1F;
          var7 *= 0.1F;
          var8 *= 0.1F;
-         Vector3d var9 = this.pos.method11339((double)var6, (double)var7, (double)var8);
+         Vector3d var9 = this.pos.add((double)var6, (double)var7, (double)var8);
          Vector3d var10 = new Vector3d(
             this.pos.x - (double)this.look.method25269() * var1 + (double)var6 + (double)var8,
             this.pos.y - (double)this.look.method25270() * var1 + (double)var7,
             this.pos.z - (double)this.look.method25271() * var1 + (double)var8
          );
-         BlockRayTraceResult var11 = this.world.method7036(new Class6809(var9, var10, Class2271.field14776, Class1985.field12962, this.renderViewEntity));
+         BlockRayTraceResult var11 = this.world.rayTraceBlocks(new RayTraceContext(var9, var10, Class2271.field14776, Class1985.field12962, this.renderViewEntity));
          if (var11.getType() != RayTraceResult.Type.MISS) {
             double var12 = var11.method31419().method11341(this.pos);
             if (var12 < var1 && !Client.getInstance().getModuleManager().getModuleByClass(CameraNoClip.class).isEnabled()) {

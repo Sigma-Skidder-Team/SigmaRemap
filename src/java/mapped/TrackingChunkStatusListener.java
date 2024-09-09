@@ -7,7 +7,7 @@ public class TrackingChunkStatusListener implements Class7243 {
    private static String[] field31101;
    private final Class7244 field31102;
    private final Long2ObjectOpenHashMap<ChunkStatus> field31103;
-   private Class7481 field31104 = new Class7481(0, 0);
+   private ChunkPos field31104 = new ChunkPos(0, 0);
    private final int field31105;
    private final int field31106;
    private final int field31107;
@@ -22,7 +22,7 @@ public class TrackingChunkStatusListener implements Class7243 {
    }
 
    @Override
-   public void method22736(Class7481 var1) {
+   public void method22736(ChunkPos var1) {
       if (this.field31108) {
          this.field31102.method22736(var1);
          this.field31104 = var1;
@@ -30,7 +30,7 @@ public class TrackingChunkStatusListener implements Class7243 {
    }
 
    @Override
-   public void method22737(Class7481 var1, ChunkStatus var2) {
+   public void method22737(ChunkPos var1, ChunkStatus var2) {
       if (this.field31108) {
          this.field31102.method22737(var1, var2);
          if (var2 != null) {
@@ -67,6 +67,6 @@ public class TrackingChunkStatusListener implements Class7243 {
    @Nullable
    public ChunkStatus method22746(int var1, int var2) {
       return (ChunkStatus)this.field31103
-         .get(Class7481.method24353(var1 + this.field31104.field32174 - this.field31106, var2 + this.field31104.field32175 - this.field31106));
+         .get(ChunkPos.method24353(var1 + this.field31104.field32174 - this.field31106, var2 + this.field31104.field32175 - this.field31106));
    }
 }

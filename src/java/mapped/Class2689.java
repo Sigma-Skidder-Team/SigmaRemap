@@ -19,7 +19,7 @@ public class Class2689 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      return !this.field17117.method3250() && (this.field17117.method5210() || Class1097.method5235(this.field17117).nextInt(600) != 1)
+      return !this.field17117.isInWater() && (this.field17117.method5210() || Class1097.method5235(this.field17117).nextInt(600) != 1)
          ? Class1097.method5236(this.field17117).nextInt(2000) != 1
          : false;
    }

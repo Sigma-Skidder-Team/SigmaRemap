@@ -52,21 +52,21 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
          Blocks.field36897,
          Blocks.field36901
       )
-      .<Item>map(Class3303::method11581)
+      .<Item>map(IItemProvider::method11581)
       .collect(ImmutableSet.toImmutableSet());
    private static final float[] field17634 = new float[]{0.05F, 0.0625F, 0.083333336F, 0.1F};
    private static final float[] field17635 = new float[]{0.025F, 0.027777778F, 0.03125F, 0.041666668F, 0.1F};
    private final Map<ResourceLocation, Class5888> field17636 = Maps.newHashMap();
 
-   private static <T> T method11059(Class3303 var0, Class5871<T> var1) {
+   private static <T> T method11059(IItemProvider var0, Class5871<T> var1) {
       return (T)(field17633.contains(var0.method11581()) ? var1.method18295() : var1.method18296(Class144.method442()));
    }
 
-   private static <T> T method11060(Class3303 var0, Class5875<T> var1) {
+   private static <T> T method11060(IItemProvider var0, Class5875<T> var1) {
       return (T)(field17633.contains(var0.method11581()) ? var1.method18295() : var1.method18297(Class162.method489()));
    }
 
-   private static Class5888 method11061(Class3303 var0) {
+   private static Class5888 method11061(IItemProvider var0) {
       return Class7318.method23188()
          .method18320(method11060(var0, Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4695.method14724(var0))));
    }
@@ -90,11 +90,11 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       return method11062(var0, field17631, var1);
    }
 
-   private static Class5888 method11066(Block var0, Class3303 var1) {
+   private static Class5888 method11066(Block var0, IItemProvider var1) {
       return method11063(var0, (Class5873<?>)method11060(var0, Class4695.method14724(var1)));
    }
 
-   private static Class5888 method11067(Class3303 var0, Class6870 var1) {
+   private static Class5888 method11067(IItemProvider var0, Class6870 var1) {
       return Class7318.method23188()
          .method18320(
             Class8894.method32373()
@@ -103,16 +103,16 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
          );
    }
 
-   private static Class5888 method11068(Block var0, Class3303 var1, Class6870 var2) {
+   private static Class5888 method11068(Block var0, IItemProvider var1, Class6870 var2) {
       return method11063(var0, (Class5873<?>)method11059(var0, Class4695.method14724(var1).method18296(Class140.method420(var2))));
    }
 
-   private static Class5888 method11069(Class3303 var0) {
+   private static Class5888 method11069(IItemProvider var0) {
       return Class7318.method23188()
          .method18320(Class8894.method32373().method18297(field17628).method18289(Class6871.method20919(1)).method18291(Class4695.method14724(var0)));
    }
 
-   private static Class5888 method11070(Class3303 var0) {
+   private static Class5888 method11070(IItemProvider var0) {
       return Class7318.method23188()
          .method18320(
             method11060(
@@ -237,7 +237,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       return method11063(var0, (Class5873<?>)method11059(var0, Class4695.method14724(var1).method18296(Class138.method407(Class8122.field34918))));
    }
 
-   private static Class5888 method11079(Block var0, Class3303 var1) {
+   private static Class5888 method11079(Block var0, IItemProvider var1) {
       return method11063(
          var0,
          (Class5873<?>)method11059(
@@ -316,7 +316,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
          );
    }
 
-   private static Class5888 method11083(Class3303 var0) {
+   private static Class5888 method11083(IItemProvider var0) {
       return Class7318.method23188()
          .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18297(field17630).method18291(Class4695.method14724(var0)));
    }
@@ -1472,7 +1472,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11098(var1, method11069(var2));
    }
 
-   public void method11094(Block var1, Class3303 var2) {
+   public void method11094(Block var1, IItemProvider var2) {
       this.method11098(var1, method11061(var2));
    }
 

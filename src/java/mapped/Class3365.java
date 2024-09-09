@@ -36,7 +36,7 @@ public class Class3365 extends Class3241 {
          && !var4.isBeingRidden()
          && var4.method3367()
          && VoxelShapes.compare(
-            VoxelShapes.create(var4.getBoundingBox().method19667((double)(-var3.getX()), (double)(-var3.getY()), (double)(-var3.getZ()))),
+            VoxelShapes.create(var4.getBoundingBox().offset((double)(-var3.getX()), (double)(-var3.getY()), (double)(-var3.getZ()))),
             var1.method23412(var2, var3),
             IBooleanFunction.AND
          )) {
@@ -46,7 +46,7 @@ public class Class3365 extends Class3241 {
             return;
          }
 
-         var4.method2745(var8);
+         var4.changeDimension(var8);
       }
    }
 
@@ -55,7 +55,7 @@ public class Class3365 extends Class3241 {
       double var7 = (double)var3.getX() + var4.nextDouble();
       double var9 = (double)var3.getY() + 0.8;
       double var11 = (double)var3.getZ() + var4.nextDouble();
-      var2.method6746(ParticleTypes.field34092, var7, var9, var11, 0.0, 0.0, 0.0);
+      var2.addParticle(ParticleTypes.field34092, var7, var9, var11, 0.0, 0.0, 0.0);
    }
 
    @Override

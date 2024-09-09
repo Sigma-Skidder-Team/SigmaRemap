@@ -65,21 +65,21 @@ public enum Class1890 implements Class1876 {
                case 1:
                   return var5.isAlive();
                case 2:
-                  return var5.method3327();
+                  return var5.isBurning();
                case 3:
-                  return var5.method3005();
+                  return var5.isChild();
                case 4:
                   return var5.isGlowing();
                case 5:
-                  return var5.field4952 > 0;
+                  return var5.hurtTime > 0;
                case 6:
-                  return var5.method3264();
+                  return var5.isInLava();
                case 7:
-                  return var5.method3250();
+                  return var5.isInWater();
                case 8:
-                  return var5.method3342();
+                  return var5.isInvisible();
                case 9:
-                  return var5.method3226();
+                  return var5.isOnGround();
                case 10:
                   return var5.isBeingRidden();
                case 11:
@@ -87,7 +87,7 @@ public enum Class1890 implements Class1876 {
                case 12:
                   return var5.method3336();
                case 13:
-                  return var5.method3337();
+                  return var5.isSprinting();
                case 14:
                   return var5.method3253();
             }

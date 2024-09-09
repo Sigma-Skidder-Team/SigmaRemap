@@ -4,26 +4,26 @@ package mapped;
 public class Class8979 {
    private static String[] field40588;
    public static final int[] field40589;
-   public static final int[] field40590 = new int[Class2106.values().length];
+   public static final int[] field40590 = new int[EquipmentSlotType.values().length];
 
    static {
       try {
-         field40590[Class2106.field13736.ordinal()] = 1;
+         field40590[EquipmentSlotType.field13736.ordinal()] = 1;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field40590[Class2106.field13735.ordinal()] = 2;
+         field40590[EquipmentSlotType.field13735.ordinal()] = 2;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field40590[Class2106.field13734.ordinal()] = 3;
+         field40590[EquipmentSlotType.field13734.ordinal()] = 3;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field40590[Class2106.field13733.ordinal()] = 4;
+         field40590[EquipmentSlotType.field13733.ordinal()] = 4;
       } catch (NoSuchFieldError var5) {
       }
 

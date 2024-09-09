@@ -65,8 +65,8 @@ public class Class2943 extends Class2898<Class4705> {
                               || var35 > 0 && var8[(var39 * 16 + var34) * 8 + (var35 - 1)]
                         );
                      if (var36) {
-                        Class8649 var37 = var1.getBlockState(var4.method8336(var39, var35, var34)).method23384();
-                        if (var35 >= 4 && var37.method31085()) {
+                        Class8649 var37 = var1.getBlockState(var4.method8336(var39, var35, var34)).getMaterial();
+                        if (var35 >= 4 && var37.isLiquid()) {
                            return false;
                         }
 
@@ -96,7 +96,7 @@ public class Class2943 extends Class2898<Class4705> {
                         if (method11219(var1.getBlockState(var52).getBlock())
                            && var1.method7020(Class1977.field12881, var4.method8336(var41, var49, var45)) > 0) {
                            Biome var55 = var1.getBiome(var52);
-                           if (!var55.method32507().method24283().method28934().method23448(Blocks.MYCELIUM)) {
+                           if (!var55.method32507().method24283().method28934().isIn(Blocks.MYCELIUM)) {
                               var1.setBlockState(var52, Blocks.field36395.method11579(), 2);
                            } else {
                               var1.setBlockState(var52, Blocks.MYCELIUM.method11579(), 2);
@@ -107,7 +107,7 @@ public class Class2943 extends Class2898<Class4705> {
                }
             }
 
-            if (var5.field22322.method23384() == Class8649.field38943) {
+            if (var5.field22322.getMaterial() == Class8649.field38943) {
                for (int var42 = 0; var42 < 16; var42++) {
                   for (int var46 = 0; var46 < 16; var46++) {
                      for (int var50 = 0; var50 < 8; var50++) {
@@ -120,7 +120,7 @@ public class Class2943 extends Class2898<Class4705> {
                                  || var50 < 7 && var8[(var42 * 16 + var46) * 8 + var50 + 1]
                                  || var50 > 0 && var8[(var42 * 16 + var46) * 8 + (var50 - 1)]
                            );
-                        if (var53 && (var50 < 4 || var3.nextInt(2) != 0) && var1.getBlockState(var4.method8336(var42, var50, var46)).method23384().method31086()) {
+                        if (var53 && (var50 < 4 || var3.nextInt(2) != 0) && var1.getBlockState(var4.method8336(var42, var50, var46)).getMaterial().method31086()) {
                            var1.setBlockState(var4.method8336(var42, var50, var46), Blocks.STONE.method11579(), 2);
                         }
                      }
@@ -128,7 +128,7 @@ public class Class2943 extends Class2898<Class4705> {
                }
             }
 
-            if (var5.field22322.method23384() == Class8649.field38941) {
+            if (var5.field22322.getMaterial() == Class8649.field38941) {
                for (int var43 = 0; var43 < 16; var43++) {
                   for (int var47 = 0; var47 < 16; var47++) {
                      byte var51 = 4;

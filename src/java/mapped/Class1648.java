@@ -35,7 +35,7 @@ public class Class1648 implements AutoCloseable {
 
       var3 = Class8354.method29289(this.field8948, Class2108.field13750, var3, Math.max(1493, var6));
       if (var6 < SharedConstants.getVersion().getWorldVersion()) {
-         var3.method102("DataVersion", SharedConstants.getVersion().getWorldVersion());
+         var3.putInt("DataVersion", SharedConstants.getVersion().getWorldVersion());
       }
 
       return var3;
@@ -46,11 +46,11 @@ public class Class1648 implements AutoCloseable {
    }
 
    @Nullable
-   public CompoundNBT method6531(Class7481 var1) throws IOException {
+   public CompoundNBT method6531(ChunkPos var1) throws IOException {
       return this.field8947.method7412(var1);
    }
 
-   public void method6532(Class7481 var1, CompoundNBT var2) {
+   public void method6532(ChunkPos var1, CompoundNBT var2) {
       this.field8947.method7411(var1, var2);
       if (this.field8949 != null) {
          this.field8949.method29574(var1.method24352());

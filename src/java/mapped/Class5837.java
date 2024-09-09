@@ -4,42 +4,42 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 
-public class Class5837 extends Class5812 {
-   private final Class8786 field25564;
+public class Class5837 extends Container {
+   private final IWorldPosCallable field25564;
    private final Class4923 field25565 = Class4923.method15238();
    private Runnable field25566 = () -> {
    };
-   private final Class5839 field25567;
-   private final Class5839 field25568;
-   private final Class5839 field25569;
-   private final Class5839 field25570;
+   private final Slot field25567;
+   private final Slot field25568;
+   private final Slot field25569;
+   private final Slot field25570;
    private long field25571;
-   private final Class920 field25572 = new Class978(this, 3);
-   private final Class920 field25573 = new Class979(this, 1);
+   private final IInventory field25572 = new Class978(this, 3);
+   private final IInventory field25573 = new Class979(this, 1);
 
    public Class5837(int var1, PlayerInventory var2) {
-      this(var1, var2, Class8786.field39521);
+      this(var1, var2, IWorldPosCallable.field39521);
    }
 
-   public Class5837(int var1, PlayerInventory var2, Class8786 var3) {
-      super(Class8298.field35665, var1);
+   public Class5837(int var1, PlayerInventory var2, IWorldPosCallable var3) {
+      super(ContainerType.field35665, var1);
       this.field25564 = var3;
-      this.field25567 = this.method18124(new Class5844(this, this.field25572, 0, 13, 26));
-      this.field25568 = this.method18124(new Class5851(this, this.field25572, 1, 33, 26));
-      this.field25569 = this.method18124(new Class5849(this, this.field25572, 2, 23, 45));
-      this.field25570 = this.method18124(new Class5866(this, this.field25573, 0, 143, 58, var3));
+      this.field25567 = this.addSlot(new Class5844(this, this.field25572, 0, 13, 26));
+      this.field25568 = this.addSlot(new Class5851(this, this.field25572, 1, 33, 26));
+      this.field25569 = this.addSlot(new Class5849(this, this.field25572, 2, 23, 45));
+      this.field25570 = this.addSlot(new Class5866(this, this.field25573, 0, 143, 58, var3));
 
       for (int var6 = 0; var6 < 3; var6++) {
          for (int var7 = 0; var7 < 9; var7++) {
-            this.method18124(new Class5839(var2, var7 + var6 * 9 + 9, 8 + var7 * 18, 84 + var6 * 18));
+            this.addSlot(new Slot(var2, var7 + var6 * 9 + 9, 8 + var7 * 18, 84 + var6 * 18));
          }
       }
 
       for (int var8 = 0; var8 < 9; var8++) {
-         this.method18124(new Class5839(var2, var8, 8 + var8 * 18, 142));
+         this.addSlot(new Slot(var2, var8, 8 + var8 * 18, 142));
       }
 
-      this.method18125(this.field25565);
+      this.trackInt(this.field25565);
    }
 
    public int method18244() {
@@ -47,12 +47,12 @@ public class Class5837 extends Class5812 {
    }
 
    @Override
-   public boolean method18103(PlayerEntity var1) {
-      return method18121(this.field25564, var1, Blocks.field37054);
+   public boolean canInteractWith(PlayerEntity var1) {
+      return isWithinUsableDistance(this.field25564, var1, Blocks.field37054);
    }
 
    @Override
-   public boolean method18104(PlayerEntity var1, int var2) {
+   public boolean enchantItem(PlayerEntity var1, int var2) {
       if (var2 > 0 && var2 <= Class2154.field14126) {
          this.field25565.method15235(var2);
          this.method18246();
@@ -63,11 +63,11 @@ public class Class5837 extends Class5812 {
    }
 
    @Override
-   public void method18106(Class920 var1) {
-      ItemStack var4 = this.field25567.method18265();
-      ItemStack var5 = this.field25568.method18265();
-      ItemStack var6 = this.field25569.method18265();
-      ItemStack var7 = this.field25570.method18265();
+   public void onCraftMatrixChanged(IInventory var1) {
+      ItemStack var4 = this.field25567.getStack();
+      ItemStack var5 = this.field25568.getStack();
+      ItemStack var6 = this.field25569.getStack();
+      ItemStack var7 = this.field25570.getStack();
       if (var7.isEmpty()
          || !var4.isEmpty()
             && !var5.isEmpty()
@@ -83,12 +83,12 @@ public class Class5837 extends Class5812 {
             }
          }
       } else {
-         this.field25570.method18267(ItemStack.EMPTY);
+         this.field25570.putStack(ItemStack.EMPTY);
          this.field25565.method15235(0);
       }
 
       this.method18246();
-      this.method18130();
+      this.detectAndSendChanges();
    }
 
    public void method18245(Runnable var1) {
@@ -96,70 +96,70 @@ public class Class5837 extends Class5812 {
    }
 
    @Override
-   public ItemStack method18112(PlayerEntity var1, int var2) {
+   public ItemStack transferStackInSlot(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
-      Class5839 var6 = this.field25468.get(var2);
-      if (var6 != null && var6.method18266()) {
-         ItemStack var7 = var6.method18265();
+      Slot var6 = this.field25468.get(var2);
+      if (var6 != null && var6.getHasStack()) {
+         ItemStack var7 = var6.getStack();
          var5 = var7.copy();
          if (var2 != this.field25570.field25579) {
             if (var2 != this.field25568.field25579 && var2 != this.field25567.field25579 && var2 != this.field25569.field25579) {
                if (var7.getItem() instanceof Class3301) {
-                  if (!this.method18142(var7, this.field25567.field25579, this.field25567.field25579 + 1, false)) {
+                  if (!this.mergeItemStack(var7, this.field25567.field25579, this.field25567.field25579 + 1, false)) {
                      return ItemStack.EMPTY;
                   }
                } else if (var7.getItem() instanceof Class3321) {
-                  if (!this.method18142(var7, this.field25568.field25579, this.field25568.field25579 + 1, false)) {
+                  if (!this.mergeItemStack(var7, this.field25568.field25579, this.field25568.field25579 + 1, false)) {
                      return ItemStack.EMPTY;
                   }
                } else if (var7.getItem() instanceof Class3286) {
-                  if (!this.method18142(var7, this.field25569.field25579, this.field25569.field25579 + 1, false)) {
+                  if (!this.mergeItemStack(var7, this.field25569.field25579, this.field25569.field25579 + 1, false)) {
                      return ItemStack.EMPTY;
                   }
                } else if (var2 >= 4 && var2 < 31) {
-                  if (!this.method18142(var7, 31, 40, false)) {
+                  if (!this.mergeItemStack(var7, 31, 40, false)) {
                      return ItemStack.EMPTY;
                   }
-               } else if (var2 >= 31 && var2 < 40 && !this.method18142(var7, 4, 31, false)) {
+               } else if (var2 >= 31 && var2 < 40 && !this.mergeItemStack(var7, 4, 31, false)) {
                   return ItemStack.EMPTY;
                }
-            } else if (!this.method18142(var7, 4, 40, false)) {
+            } else if (!this.mergeItemStack(var7, 4, 40, false)) {
                return ItemStack.EMPTY;
             }
          } else {
-            if (!this.method18142(var7, 4, 40, true)) {
+            if (!this.mergeItemStack(var7, 4, 40, true)) {
                return ItemStack.EMPTY;
             }
 
-            var6.method18260(var7, var5);
+            var6.onSlotChange(var7, var5);
          }
 
          if (!var7.isEmpty()) {
-            var6.method18268();
+            var6.onSlotChanged();
          } else {
-            var6.method18267(ItemStack.EMPTY);
+            var6.putStack(ItemStack.EMPTY);
          }
 
          if (var7.getCount() == var5.getCount()) {
             return ItemStack.EMPTY;
          }
 
-         var6.method18264(var1, var7);
+         var6.onTake(var1, var7);
       }
 
       return var5;
    }
 
    @Override
-   public void method18113(PlayerEntity var1) {
-      super.method18113(var1);
-      this.field25564.method31716((var2, var3) -> this.method18135(var1, var1.world, this.field25572));
+   public void onContainerClosed(PlayerEntity var1) {
+      super.onContainerClosed(var1);
+      this.field25564.method31716((var2, var3) -> this.clearContainer(var1, var1.world, this.field25572));
    }
 
    private void method18246() {
       if (this.field25565.method15234() > 0) {
-         ItemStack var3 = this.field25567.method18265();
-         ItemStack var4 = this.field25568.method18265();
+         ItemStack var3 = this.field25567.getStack();
+         ItemStack var4 = this.field25568.getStack();
          ItemStack var5 = ItemStack.EMPTY;
          if (!var3.isEmpty() && !var4.isEmpty()) {
             var5 = var3.copy();
@@ -177,29 +177,29 @@ public class Class5837 extends Class5812 {
 
             CompoundNBT var10 = new CompoundNBT();
             var10.method109("Pattern", var6.method8871());
-            var10.method102("Color", var7.method309());
+            var10.putInt("Color", var7.method309());
             var9.add(var10);
          }
 
-         if (!ItemStack.method32128(var5, this.field25570.method18265())) {
-            this.field25570.method18267(var5);
+         if (!ItemStack.method32128(var5, this.field25570.getStack())) {
+            this.field25570.putStack(var5);
          }
       }
    }
 
-   public Class5839 method18247() {
+   public Slot method18247() {
       return this.field25567;
    }
 
-   public Class5839 method18248() {
+   public Slot method18248() {
       return this.field25568;
    }
 
-   public Class5839 method18249() {
+   public Slot method18249() {
       return this.field25569;
    }
 
-   public Class5839 method18250() {
+   public Slot method18250() {
       return this.field25570;
    }
 
@@ -209,12 +209,12 @@ public class Class5837 extends Class5812 {
    }
 
    // $VF: synthetic method
-   public static Class5839 method18254(Class5837 var0) {
+   public static Slot method18254(Class5837 var0) {
       return var0.field25567;
    }
 
    // $VF: synthetic method
-   public static Class5839 method18255(Class5837 var0) {
+   public static Slot method18255(Class5837 var0) {
       return var0.field25568;
    }
 

@@ -1,7 +1,6 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 
@@ -28,9 +27,9 @@ public class Class3466 extends Block implements Class3207 {
    public BlockState method11495(Class5909 var1) {
       FluidState var4 = var1.method18360().getFluidState(var1.method18345());
 
-      for (Direction var8 : var1.method18349()) {
-         if (var8.method544() == Class113.field414) {
-            BlockState var9 = this.method11579().method23465(field19308, Boolean.valueOf(var8 == Direction.field673));
+      for (net.minecraft.util.Direction var8 : var1.method18349()) {
+         if (var8.getAxis() == Direction.field414) {
+            BlockState var9 = this.method11579().method23465(field19308, Boolean.valueOf(var8 == net.minecraft.util.Direction.field673));
             if (var9.method23443(var1.method18360(), var1.method18345())) {
                return var9.method23465(field19309, Boolean.valueOf(var4.method23472() == Class9479.field44066));
             }
@@ -52,12 +51,12 @@ public class Class3466 extends Block implements Class3207 {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      Direction var6 = method12151(var1).method536();
+      net.minecraft.util.Direction var6 = method12151(var1).method536();
       return Block.method11548(var2, var3.method8349(var6), var6.method536());
    }
 
-   public static Direction method12151(BlockState var0) {
-      return !var0.<Boolean>method23463(field19308) ? Direction.field673 : Direction.DOWN;
+   public static net.minecraft.util.Direction method12151(BlockState var0) {
+      return !var0.<Boolean>method23463(field19308) ? net.minecraft.util.Direction.field673 : net.minecraft.util.Direction.DOWN;
    }
 
    @Override
@@ -66,7 +65,7 @@ public class Class3466 extends Block implements Class3207 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, net.minecraft.util.Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var1.<Boolean>method23463(field19309)) {
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
       }

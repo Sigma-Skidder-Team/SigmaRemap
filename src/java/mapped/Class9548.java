@@ -120,8 +120,8 @@ public class Class9548 {
 
       for (Entity var11 : var1) {
          if (var11 instanceof LivingEntity) {
-            Class2023 var12 = new Class2023(var2, var9, var4, false, var5);
-            if (((LivingEntity)var11).method3035(var12)) {
+            EffectInstance var12 = new EffectInstance(var2, var9, var4, false, var5);
+            if (((LivingEntity)var11).addPotionEffect(var12)) {
                var8++;
             }
          }
@@ -149,7 +149,7 @@ public class Class9548 {
       int var4 = 0;
 
       for (Entity var6 : var1) {
-         if (var6 instanceof LivingEntity && ((LivingEntity)var6).method3030()) {
+         if (var6 instanceof LivingEntity && ((LivingEntity)var6).clearActivePotions()) {
             var4++;
          }
       }

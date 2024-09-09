@@ -70,7 +70,7 @@ public class Class6057 extends Class6036 {
       Class6852 var4 = this.field26281.remove(var1);
       if (var4 != null) {
          var4.method20882();
-         Class8042.method27614().method34424().<Class5415>method31084(Class5415.class).method17011(this.method18672(), var4.method20884());
+         ViaVersion3.method27614().method34424().<Class5415>method31084(Class5415.class).method17011(this.method18672(), var4.method20884());
       }
    }
 
@@ -105,7 +105,7 @@ public class Class6057 extends Class6036 {
             if (var5 == Class1872.field10733) {
                if (var7.method31148() == 0) {
                   byte var8 = (Byte)var7.method31152();
-                  if (var1 != this.method18753() && Class8042.method27612().method21895()) {
+                  if (var1 != this.method18753() && ViaVersion3.method27612().method21895()) {
                      if ((var8 & 16) == 16) {
                         if (this.field26282.contains(var1)) {
                            Class9738 var9 = new Class9738(442, (byte)1, (short)0, null);
@@ -119,12 +119,12 @@ public class Class6057 extends Class6036 {
                   }
                }
 
-               if (var7.method31148() == 12 && Class8042.method27612().method21932()) {
+               if (var7.method31148() == 12 && ViaVersion3.method27612().method21932()) {
                   var2.add(new Class8656(13, Class1950.field12630, (byte)((((byte) var7.method31152()) & 128) != 0 ? 0 : 1)));
                }
             }
 
-            if (var5 == Class1872.field10681 && Class8042.method27612().method21896() && var7.method31148() == 0 && this.method18749(var2, 10) != null) {
+            if (var5 == Class1872.field10681 && ViaVersion3.method27612().method21896() && var7.method31148() == 0 && this.method18749(var2, 10) != null) {
                Class8656 var13 = this.method18749(var2, 10);
                byte var18 = (Byte)var7.method31152();
                if ((var18 & 32) == 32
@@ -138,7 +138,7 @@ public class Class6057 extends Class6036 {
                      Class8563 var10 = new Class8563(37, null, this.method18672());
                      var10.method30560(Class4750.field22544, var1);
                      var10.method30560(Class4750.field22534, (short)0);
-                     var10.method30560(Class4750.field22534, (short)((int)(128.0 * Class8042.method27612().method21900() * 32.0)));
+                     var10.method30560(Class4750.field22534, (short)((int)(128.0 * ViaVersion3.method27612().method21900() * 32.0)));
                      var10.method30560(Class4750.field22534, (short)0);
                      var10.method30560(Class4750.field22524, true);
                      var10.method30568(Class6363.class, true, false);
@@ -147,31 +147,31 @@ public class Class6057 extends Class6036 {
                }
             }
 
-            if (Class8042.method27612().method21898() && (var5 == Class1872.field10704 || var5 == Class1872.field10705)) {
+            if (ViaVersion3.method27612().method21898() && (var5 == Class1872.field10704 || var5 == Class1872.field10705)) {
                if (var7.method31148() == 2) {
                   Class6852 var14 = this.field26281.get(var1);
                   String var19 = (String)var7.method31152();
                   var19 = var19.isEmpty() ? (var5 == Class1872.field10704 ? "Ender Dragon" : "Wither") : var19;
                   if (var14 == null) {
-                     var14 = Class8042.method27611().method33420(var19, Class2080.field13546, Class2326.field15917);
+                     var14 = ViaVersion3.method27611().method33420(var19, Class2080.field13546, Class2326.field15917);
                      this.field26281.put(var1, var14);
                      var14.method20871(this.method18672());
                      var14.method20881();
-                     Class8042.method27614().method34424().<Class5415>method31084(Class5415.class).method17010(this.method18672(), var14.method20884());
+                     ViaVersion3.method27614().method34424().<Class5415>method31084(Class5415.class).method17010(this.method18672(), var14.method20884());
                   } else {
                      var14.method20862(var19);
                   }
-               } else if (var7.method31148() == 6 && !Class8042.method27612().method21899()) {
+               } else if (var7.method31148() == 6 && !ViaVersion3.method27612().method21899()) {
                   Class6852 var16 = this.field26281.get(var1);
                   float var21 = var5 == Class1872.field10704 ? 200.0F : 300.0F;
                   float var22 = Math.max(0.0F, Math.min((Float)var7.method31152() / var21, 1.0F));
                   if (var16 == null) {
                      String var11 = var5 == Class1872.field10704 ? "Ender Dragon" : "Wither";
-                     var16 = Class8042.method27611().method33421(var11, var22, Class2080.field13546, Class2326.field15917);
+                     var16 = ViaVersion3.method27611().method33421(var11, var22, Class2080.field13546, Class2326.field15917);
                      this.field26281.put(var1, var16);
                      var16.method20871(this.method18672());
                      var16.method20881();
-                     Class8042.method27614().method34424().<Class5415>method31084(Class5415.class).method17010(this.method18672(), var16.method20884());
+                     ViaVersion3.method27614().method34424().<Class5415>method31084(Class5415.class).method17010(this.method18672(), var16.method20884());
                   } else {
                      var16.method20864(var22);
                   }
@@ -258,7 +258,7 @@ public class Class6057 extends Class6036 {
 
    public int method18753() {
       try {
-         return Class8042.method27614().method34424().<Class5401>method31084(Class5401.class).method16982(this.method18672());
+         return ViaVersion3.method27614().method34424().<Class5401>method31084(Class5401.class).method16982(this.method18672());
       } catch (Exception var4) {
          return this.method18670();
       }

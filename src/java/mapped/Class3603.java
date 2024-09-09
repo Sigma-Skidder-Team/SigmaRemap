@@ -14,8 +14,8 @@ public class Class3603 implements Comparator<Entity> {
    }
 
    public int compare(Entity var1, Entity var2) {
-      float var5 = AutoCrystal.method16403().player.method3275(var1);
-      float var6 = AutoCrystal.method16404().player.method3275(var2);
+      float var5 = AutoCrystal.method16403().player.getDistance(var1);
+      float var6 = AutoCrystal.method16404().player.getDistance(var2);
       if (!(var5 - var6 < 0.0F)) {
          return var5 - var6 != 0.0F ? 1 : 0;
       } else {

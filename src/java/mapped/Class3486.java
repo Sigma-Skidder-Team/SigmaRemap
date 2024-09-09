@@ -40,7 +40,7 @@ public class Class3486 extends Class3194 implements Class3196 {
 
    @Override
    public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.method23448(Blocks.FARMLAND);
+      return var1.isIn(Blocks.FARMLAND);
    }
 
    @Override
@@ -55,11 +55,11 @@ public class Class3486 extends Class3194 implements Class3196 {
                BlockState var11 = var2.getBlockState(var10.down());
                if (var2.getBlockState(var10).isAir()
                   && (
-                     var11.method23448(Blocks.FARMLAND)
-                        || var11.method23448(Blocks.field36396)
-                        || var11.method23448(Blocks.field36397)
-                        || var11.method23448(Blocks.field36398)
-                        || var11.method23448(Blocks.field36395)
+                     var11.isIn(Blocks.FARMLAND)
+                        || var11.isIn(Blocks.field36396)
+                        || var11.isIn(Blocks.field36397)
+                        || var11.isIn(Blocks.field36398)
+                        || var11.isIn(Blocks.field36395)
                   )) {
                   var2.setBlockState(var10, this.field19349.method11579());
                   var2.setBlockState(var3, this.field19349.method12147().method11579().method23465(Class3198.field18484, var9));

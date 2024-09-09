@@ -39,7 +39,7 @@ public class Class4581 extends Class4566 {
       this.field22040 = this.field22043;
       float var3 = (float)this.field22055 / (float)this.field22056;
       if (this.field22054.nextFloat() > var3) {
-         this.field22037.method6746(ParticleTypes.field34092, this.field22041, this.field22042, this.field22043, this.field22044, this.field22045, this.field22046);
+         this.field22037.addParticle(ParticleTypes.field34092, this.field22041, this.field22042, this.field22043, this.field22044, this.field22045, this.field22046);
       }
 
       if (this.field22055++ < this.field22056) {

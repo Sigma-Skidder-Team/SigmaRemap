@@ -83,8 +83,8 @@ public class ItemColors {
       return var5 != null ? var5.method22661(var1, var2) : -1;
    }
 
-   public void method33259(Class7216 var1, Class3303... var2) {
-      for (Class3303 var8 : var2) {
+   public void method33259(Class7216 var1, IItemProvider... var2) {
+      for (IItemProvider var8 : var2) {
          this.field41160.method9268(var1, Item.method11701(var8.method11581()));
       }
    }

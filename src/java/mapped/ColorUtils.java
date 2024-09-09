@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.event.impl.Class4403;
+import com.mentalfrostbyte.jello.event.impl.EventRayTraceResult;
 import com.mentalfrostbyte.jello.module.impl.combat.Teams;
 import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.player.Blink;
@@ -131,7 +131,7 @@ public class ColorUtils {
          Entity var4 = null;
 
          for (int var5 = 0; var5 < var1.size(); var5++) {
-            if (var4 == null || var0.method3275((Entity)var1.get(var5)) < var0.method3275(var4)) {
+            if (var4 == null || var0.getDistance((Entity)var1.get(var5)) < var0.getDistance(var4)) {
                var4 = (Entity)var1.get(var5);
             }
          }
@@ -154,14 +154,14 @@ public class ColorUtils {
    }
 
    public static final boolean method17686() {
-      return mc.player.field4982 != 0.0F || mc.player.field4984 != 0.0F;
+      return mc.player.moveStrafing != 0.0F || mc.player.moveForward != 0.0F;
    }
 
    public static float[] method17687(double var0, double var2, double var4) {
       double var8 = var0 - mc.player.getPosX();
-      double var10 = var2 - (mc.player.getPosY() + (double) mc.player.method3393());
+      double var10 = var2 - (mc.player.getPosY() + (double) mc.player.getEyeHeight());
       double var12 = var4 - mc.player.getPosZ();
-      double var14 = (double) MathHelper.method37766(var8 * var8 + var12 * var12);
+      double var14 = (double) MathHelper.sqrt(var8 * var8 + var12 * var12);
       float var16 = (float)(Math.atan2(var12, var8) * 180.0 / Math.PI) - 90.0F;
       float var17 = (float)(-(Math.atan2(var10, var14) * 180.0 / Math.PI));
       return new float[]{
@@ -444,7 +444,7 @@ public class ColorUtils {
 
    public static EntityRayTraceResult method17712(float var0, float var1, float var2, double var3) {
       Vector3d var7 = new Vector3d(
-         mc.player.getPosX(), mc.player.getPosY() + (double) mc.player.method3393(), mc.player.getPosZ()
+         mc.player.getPosX(), mc.player.getPosY() + (double) mc.player.getEyeHeight(), mc.player.getPosZ()
       );
       Entity var8 = mc.getRenderViewEntity();
       if (var8 != null && mc.world != null) {
@@ -454,9 +454,9 @@ public class ColorUtils {
          }
 
          Vector3d var11 = method17721(var1, var0);
-         Vector3d var12 = var7.method11339(var11.x * var9, var11.y * var9, var11.z * var9);
+         Vector3d var12 = var7.add(var11.x * var9, var11.y * var9, var11.z * var9);
          float var13 = 1.0F;
-         AxisAlignedBB var14 = var8.getBoundingBox().method19661(var11.method11344(var9)).method19663(1.0, 1.0, 1.0);
+         AxisAlignedBB var14 = var8.getBoundingBox().method19661(var11.scale(var9)).method19663(1.0, 1.0, 1.0);
          return method17713(
             mc.world, var8, var7, var12, var14, var0x -> var0x instanceof LivingEntity || var0x instanceof Class907, (double)(var2 * var2), var3
          );
@@ -471,7 +471,7 @@ public class ColorUtils {
       double var12 = var6;
       Entity var14 = null;
 
-      for (Entity var16 : var0.method6770(var1, var4, var5)) {
+      for (Entity var16 : var0.getEntitiesInAABBexcluding(var1, var4, var5)) {
          AxisAlignedBB var17 = var16.getBoundingBox().method19664(var8);
          Optional var18 = var17.method19680(var2, var3);
          if (!var18.isPresent()) {
@@ -496,13 +496,13 @@ public class ColorUtils {
       Entity var10 = null;
       Vector3d var11 = null;
       Vector3d var12 = new Vector3d(
-         mc.player.getPosX(), mc.player.getPosY() + (double) mc.player.method3393(), mc.player.getPosZ()
+         mc.player.getPosX(), mc.player.getPosY() + (double) mc.player.getEyeHeight(), mc.player.getPosZ()
       );
       Vector3d var13 = method17721(var2, var1);
-      Vector3d var14 = var12.method11339(var13.x * var8, var13.y * var8, var13.z * var8);
+      Vector3d var14 = var12.add(var13.x * var8, var13.y * var8, var13.z * var8);
 
       for (Entity var16 : mc.world
-         .method6770(mc.player, mc.player.getBoundingBox().method19661(var13.method11344(var8)).method19663(1.0, 1.0, 1.0), var3)) {
+         .getEntitiesInAABBexcluding(mc.player, mc.player.getBoundingBox().method19661(var13.scale(var8)).method19663(1.0, 1.0, 1.0), var3)) {
          AxisAlignedBB var17 = var16.getBoundingBox();
          Optional var18 = var17.method19680(var12, var14);
          if (var18.isPresent()) {
@@ -570,17 +570,17 @@ public class ColorUtils {
    }
 
    public static double method17724(double var0) {
-      mc.player.method3435(var0, mc.player.getVec().y, mc.player.getVec().z);
+      mc.player.setMotion(var0, mc.player.getMotion().y, mc.player.getMotion().z);
       return var0;
    }
 
    public static double method17725(double var0) {
-      mc.player.method3435(mc.player.getVec().x, var0, mc.player.getVec().z);
+      mc.player.setMotion(mc.player.getMotion().x, var0, mc.player.getMotion().z);
       return var0;
    }
 
    public static double method17726(double var0) {
-      mc.player.method3435(mc.player.getVec().x, mc.player.getVec().y, var0);
+      mc.player.setMotion(mc.player.getMotion().x, mc.player.getMotion().y, var0);
       return var0;
    }
 
@@ -593,7 +593,7 @@ public class ColorUtils {
       AxisAlignedBB var8 = new AxisAlignedBB(
          var7.minX + var0, var7.minY - 1.5, var7.minZ + var2, var7.maxX + var0, var7.maxY, var7.maxZ + var2
       );
-      Stream var9 = mc.world.method7055(mc.player, var8);
+      Stream var9 = mc.world.getCollisionShapes(mc.player, var8);
       return var9.count() != 0L;
    }
 
@@ -602,14 +602,14 @@ public class ColorUtils {
    }
 
    public static boolean method17729() {
-      AxisAlignedBB var2 = mc.player.boundingBox.method19667(0.0, -1.0, 0.0);
+      AxisAlignedBB var2 = mc.player.boundingBox.offset(0.0, -1.0, 0.0);
       if (mc.player.getRidingEntity() != null) {
          double var4 = mc.player.getRidingEntity().prevPosX - mc.player.getRidingEntity().getPosX();
          double var6 = mc.player.getRidingEntity().prevPosZ - mc.player.getRidingEntity().getPosZ();
          var2 = mc.player.getRidingEntity().boundingBox.method19662(Math.abs(var4), 1.0, Math.abs(var6));
       }
 
-      Stream var3 = mc.world.method7055(mc.player, var2);
+      Stream var3 = mc.world.getCollisionShapes(mc.player, var2);
       return var3.count() != 0L;
    }
 
@@ -622,7 +622,7 @@ public class ColorUtils {
          var0.boundingBox.maxY,
          var0.boundingBox.maxZ
       );
-      Stream var5 = mc.world.method7055(mc.player, var4);
+      Stream var5 = mc.world.getCollisionShapes(mc.player, var4);
       return var5.count() != 0L;
    }
 
@@ -666,28 +666,28 @@ public class ColorUtils {
 
    public static void method17735(Entity var0, boolean var1) {
       boolean var4 = JelloPortal.method27372().equals(ViaVerList.field26129);
-      Class4403 var5 = new Class4403(var0, true);
+      EventRayTraceResult var5 = new EventRayTraceResult(var0, true);
       Client.getInstance().getEventManager().call(var5);
       if (!var5.isCancelled()) {
          if (var4 && var1) {
             mc.player.swingArm(Hand.MAIN_HAND);
          }
 
-         mc.getConnection().sendPacket(new CUseEntityPacket(var5.method13935(), mc.player.method3331()));
-         if (Class7858.method26311(Class6069.method18810(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
-            mc.particles.method1195(var5.method13935(), ParticleTypes.field34065);
+         mc.getConnection().sendPacket(new CUseEntityPacket(var5.getEntity(), mc.player.isSneaking()));
+         if (EnchantmentHelper.method26311(Class6069.method18810(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
+            mc.particles.method1195(var5.getEntity(), ParticleTypes.field34065);
          }
 
          boolean var6 = (double) mc.player.method2974(0.5F) > 0.9 || var4;
          boolean var7 = var6
             && mc.player.fallDistance > 0.0F
             && !mc.player.onGround
-            && !mc.player.method3063()
-            && !mc.player.method3250()
-            && !mc.player.method3033(Effects.BLINDNESS)
+            && !mc.player.isOnLadder()
+            && !mc.player.isInWater()
+            && !mc.player.isPotionActive(Effects.BLINDNESS)
             && !mc.player.isPassenger();
          if (var7 || mc.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled()) {
-            mc.particles.method1195(var5.method13935(), ParticleTypes.field34054);
+            mc.particles.method1195(var5.getEntity(), ParticleTypes.field34054);
          }
 
          mc.player.resetCooldown();
@@ -1002,7 +1002,7 @@ public class ColorUtils {
          } else if (var0 instanceof LivingEntity) {
             if (((LivingEntity)var0).getHealth() == 0.0F) {
                return false;
-            } else if (!mc.player.method3026((LivingEntity)var0)) {
+            } else if (!mc.player.canAttack((LivingEntity)var0)) {
                return false;
             } else if (var0 instanceof ArmorStandEntity) {
                return false;
@@ -1010,7 +1010,7 @@ public class ColorUtils {
                return false;
             } else if (var0 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var0)) {
                return false;
-            } else if (!var3 && var0.method3342()) {
+            } else if (!var3 && var0.isInvisible()) {
                return false;
             } else if (!var2 && !(var0 instanceof PlayerEntity)) {
                return false;
@@ -1035,7 +1035,7 @@ public class ColorUtils {
       double var3 = mc.player.getPosX();
       double var5 = mc.player.getPosY();
       double var7 = mc.player.getPosZ();
-      int var9 = 49 + Class9567.method37079() * 17;
+      int var9 = 49 + MovementUtils.method37079() * 17;
 
       for (int var10 = 0; var10 < var9; var10++) {
          double var11 = !var0 ? 0.0 : method17750();
@@ -1065,7 +1065,7 @@ public class ColorUtils {
       double var9 = (var0.maxY - var5) * 0.95;
       double var11 = (var0.maxX - var0.minX) * 0.95;
       double var13 = (var0.maxZ - var0.minZ) * 0.95;
-      double var15 = Math.max(var5, Math.min(var5 + var9, mc.player.getPosY() + (double) mc.player.method3393()));
+      double var15 = Math.max(var5, Math.min(var5 + var9, mc.player.getPosY() + (double) mc.player.getEyeHeight()));
       double var17 = Math.max(var3 - var11 / 2.0, Math.min(var3 + var11 / 2.0, mc.player.getPosX()));
       double var19 = Math.max(var7 - var13 / 2.0, Math.min(var7 + var13 / 2.0, mc.player.getPosZ()));
       return new Vector3d(var17, var15, var19);
@@ -1117,7 +1117,7 @@ public class ColorUtils {
 
    public static double method17754(Vector3d var0) {
       double var3 = mc.player.getPosX() - var0.x;
-      double var5 = mc.player.getPosY() + (double) mc.player.method3393() - var0.y;
+      double var5 = mc.player.getPosY() + (double) mc.player.getEyeHeight() - var0.y;
       double var7 = mc.player.getPosZ() - var0.z;
       return Math.sqrt(var3 * var3 + var5 * var5 + var7 * var7);
    }
@@ -1161,9 +1161,9 @@ public class ColorUtils {
       double var4 = var1.x - var0.x;
       double var6 = (var1.y - var0.y) * -1.0;
       double var8 = var1.z - var0.z;
-      double var10 = (double) MathHelper.method37766(var4 * var4 + var8 * var8);
+      double var10 = (double) MathHelper.sqrt(var4 * var4 + var8 * var8);
       return new float[]{
-         (float) MathHelper.method37793(Math.toDegrees(Math.atan2(var8, var4)) - 90.0), (float) MathHelper.method37793(Math.toDegrees(Math.atan2(var6, var10)))
+         (float) MathHelper.wrapDegrees(Math.toDegrees(Math.atan2(var8, var4)) - 90.0), (float) MathHelper.wrapDegrees(Math.toDegrees(Math.atan2(var6, var10)))
       };
    }
 
@@ -1173,7 +1173,7 @@ public class ColorUtils {
 
       for (Direction var9 : var5) {
          if (mc.world
-               .method7055(mc.player, var4.method19662(var0 * (double)var9.method539(), 0.0, var0 * (double)var9.method541()))
+               .getCollisionShapes(mc.player, var4.method19662(var0 * (double)var9.method539(), 0.0, var0 * (double)var9.method541()))
                .count()
             > 0L) {
             return var9;
@@ -1189,12 +1189,12 @@ public class ColorUtils {
 
       for (Direction var9 : var5) {
          Iterator var10 = mc.world
-            .method7055(mc.player, var4.method19662(var0 * (double)var9.method539(), 0.0, var0 * (double)var9.method541()))
+            .getCollisionShapes(mc.player, var4.method19662(var0 * (double)var9.method539(), 0.0, var0 * (double)var9.method541()))
             .iterator();
          if (var10.hasNext()) {
             Vector3d var11 = mc.player
                .getPositionVec()
-               .method11338(mc.player.method3233(new Vector3d((double)var9.method539(), 0.0, (double)var9.method541())));
+               .add(mc.player.getAllowedMovement(new Vector3d((double)var9.method539(), 0.0, (double)var9.method541())));
             return new Class9629<Direction, Vector3d>(var9, var11);
          }
       }
@@ -1205,7 +1205,7 @@ public class ColorUtils {
    public static boolean method17761() {
       double var2 = 1.0E-7;
       return mc.world
-            .method7055(mc.player, mc.player.boundingBox.method19662(var2, 0.0, var2).method19662(-var2, 0.0, -var2))
+            .getCollisionShapes(mc.player, mc.player.boundingBox.method19662(var2, 0.0, var2).method19662(-var2, 0.0, -var2))
             .count()
          > 0L;
    }
@@ -1222,7 +1222,7 @@ public class ColorUtils {
          if (!var0.onGround) {
             AxisAlignedBB var3 = var0.getBoundingBox();
             var3 = var3.method19662(0.0, -var0.getPosY(), 0.0);
-            return mc.world.method7055(mc.player, var3).count() == 0L;
+            return mc.world.getCollisionShapes(mc.player, var3).count() == 0L;
          } else {
             return false;
          }

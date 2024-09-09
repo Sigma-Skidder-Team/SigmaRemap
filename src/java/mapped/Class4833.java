@@ -49,6 +49,6 @@ public class Class4833 implements ISelectionContext {
 
    @Override
    public boolean method14950(VoxelShape var1, BlockPos var2, boolean var3) {
-      return this.field22609 > (double)var2.getY() + var1.method19513(Class113.field414) - 1.0E-5F;
+      return this.field22609 > (double)var2.getY() + var1.method19513(Direction.field414) - 1.0E-5F;
    }
 }

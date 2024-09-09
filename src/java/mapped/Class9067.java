@@ -12,18 +12,18 @@ public class Class9067 {
    private String field41493;
    private final Class6504<?> field41494;
 
-   public Class9067(Class6504<?> var1, Class120 var2, Class3303 var3, int var4) {
+   public Class9067(Class6504<?> var1, Class120 var2, IItemProvider var3, int var4) {
       this.field41494 = var1;
       this.field41489 = var3.method11581();
       this.field41490 = var2;
       this.field41491 = var4;
    }
 
-   public static Class9067 method33769(Class120 var0, Class3303 var1) {
+   public static Class9067 method33769(Class120 var0, IItemProvider var1) {
       return new Class9067(Class6504.field28489, var0, var1, 1);
    }
 
-   public static Class9067 method33770(Class120 var0, Class3303 var1, int var2) {
+   public static Class9067 method33770(Class120 var0, IItemProvider var1, int var2) {
       return new Class9067(Class6504.field28489, var0, var1, var2);
    }
 

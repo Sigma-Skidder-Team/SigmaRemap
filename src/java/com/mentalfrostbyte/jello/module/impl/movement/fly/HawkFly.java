@@ -2,15 +2,15 @@ package com.mentalfrostbyte.jello.module.impl.movement.fly;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import mapped.ColorUtils;
-import mapped.Class9567;
+import mapped.MovementUtils;
 import net.minecraft.network.Packet;
 
 public class HawkFly extends Module {
@@ -33,42 +33,42 @@ public class HawkFly extends Module {
 
     @Override
     public void onDisable() {
-        Class9567.method37090(0.0);
-        if (mc.player.getVec().y > 0.0) {
+        MovementUtils.method37090(0.0);
+        if (mc.player.getMotion().y > 0.0) {
             ColorUtils.method17725(-0.0789);
         }
     }
 
     @EventTarget
     @LowerPriority
-    public void method16052(Class4435 var1) {
+    public void method16052(EventMove var1) {
         if (this.isEnabled()) {
             double var4 = 0.125;
             if (this.field23424 != -1) {
                 if (this.field23424 == 0) {
-                    Class9567.method37088(var1, 0.18);
+                    MovementUtils.method37088(var1, 0.18);
                 }
             } else {
-                var1.method13995(0.015);
-                Class9567.method37088(var1, var4);
+                var1.setY(0.015);
+                MovementUtils.method37088(var1, var4);
             }
 
-            ColorUtils.method17725(var1.method13994());
-            ColorUtils.method17724(var1.method13992());
-            ColorUtils.method17726(var1.method13996());
+            ColorUtils.method17725(var1.getY());
+            ColorUtils.method17724(var1.getX());
+            ColorUtils.method17726(var1.getZ());
         }
     }
 
     @EventTarget
-    public void method16053(Class4399 var1) {
+    public void method16053(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             this.field23424++;
             if (this.field23424 == 1) {
-                var1.method13912(0.1);
+                var1.setY(0.1);
             }
 
             var1.method13908(true);
-            var1.method13920(false);
+            var1.setGround(false);
         }
     }
 
@@ -82,11 +82,11 @@ public class HawkFly extends Module {
                     this.field23424 = -1;
                 }
 
-                this.field23425 = var5.field24297;
-                this.field23426 = var5.field24298;
-                this.field23427 = var5.field24299;
-                var5.field24300 = mc.player.rotationYaw;
-                var5.field24301 = mc.player.rotationPitch;
+                this.field23425 = var5.x;
+                this.field23426 = var5.y;
+                this.field23427 = var5.z;
+                var5.yaw = mc.player.rotationYaw;
+                var5.pitch = mc.player.rotationPitch;
             }
         }
     }

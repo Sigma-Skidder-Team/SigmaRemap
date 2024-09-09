@@ -19,7 +19,7 @@ public class Class3072 implements Class2982 {
          var1.method30587(29);
          var1.method30560(Class4750.field22526, var6.method28440());
          var1.method30560(Class4750.field22526, var6.method28441());
-         Class5413 var7 = Class8042.method27614().method34424().<Class5413>method31084(Class5413.class);
+         Class5413 var7 = ViaVersion3.method27614().method34424().<Class5413>method31084(Class5413.class);
          var7.method17003(var1.method30580(), var6.method28440(), var6.method28441());
       }
 

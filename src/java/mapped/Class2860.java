@@ -102,7 +102,7 @@ public class Class2860<T extends Entity> extends Class2855<T> {
       this.field17723.field31034 = 5.0F;
       this.field17726.field31035 = 0.9F;
       if (!var1.method3336()) {
-         if (!var1.method3337()) {
+         if (!var1.isSprinting()) {
             this.field17730 = 1;
          } else {
             this.field17727.field31033 = this.field17726.field31033;

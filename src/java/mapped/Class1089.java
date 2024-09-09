@@ -42,8 +42,8 @@ public class Class1089 extends Class1018 {
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
-      return !this.method3005() ? var2.field39969 * 0.92F : var2.field39969 * 0.85F;
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
+      return !this.isChild() ? var2.field39969 * 0.92F : var2.field39969 * 0.85F;
    }
 
    public static Class7037 method5069() {
@@ -51,8 +51,8 @@ public class Class1089 extends Class1018 {
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
+   public void livingEntity() {
+      super.livingEntity();
       this.field5968 = this.field5965;
       this.field5967 = this.field5966;
       this.field5966 = (float)((double)this.field5966 + (double)(!this.onGround ? 4 : -1) * 0.3);
@@ -62,21 +62,21 @@ public class Class1089 extends Class1018 {
       }
 
       this.field5969 = (float)((double)this.field5969 * 0.9);
-      Vector3d var3 = this.getVec();
+      Vector3d var3 = this.getMotion();
       if (!this.onGround && var3.y < 0.0) {
-         this.method3434(var3.method11347(1.0, 0.6, 1.0));
+         this.setMotion(var3.method11347(1.0, 0.6, 1.0));
       }
 
       this.field5965 = this.field5965 + this.field5969 * 2.0F;
-      if (!this.world.isRemote && this.isAlive() && !this.method3005() && !this.method5070() && --this.field5970 <= 0) {
-         this.method2863(SoundEvents.field26452, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
-         this.method3300(Items.field37904);
+      if (!this.world.isRemote && this.isAlive() && !this.isChild() && !this.method5070() && --this.field5970 <= 0) {
+         this.playSound(SoundEvents.field26452, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+         this.entityDropItem(Items.field37904);
          this.field5970 = this.rand.nextInt(6000) + 6000;
       }
    }
 
    @Override
-   public boolean method2921(float var1, float var2) {
+   public boolean onLivingFall(float var1, float var2) {
       return false;
    }
 
@@ -96,12 +96,12 @@ public class Class1089 extends Class1018 {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(SoundEvents.field26454, 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(SoundEvents.field26454, 0.15F, 1.0F);
    }
 
    public Class1089 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41014.method33215(var1);
+      return EntityType.field41014.create(var1);
    }
 
    @Override
@@ -110,13 +110,13 @@ public class Class1089 extends Class1018 {
    }
 
    @Override
-   public int method2937(PlayerEntity var1) {
-      return !this.method5070() ? super.method2937(var1) : 10;
+   public int getExperiencePoints(PlayerEntity var1) {
+      return !this.method5070() ? super.getExperiencePoints(var1) : 10;
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field5971 = var1.getBoolean("IsChickenJockey");
       if (var1.contains("EggLayTime")) {
          this.field5970 = var1.getInt("EggLayTime");
@@ -124,10 +124,10 @@ public class Class1089 extends Class1018 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("IsChickenJockey", this.field5971);
-      var1.method102("EggLayTime", this.field5970);
+      var1.putInt("EggLayTime", this.field5970);
    }
 
    @Override
@@ -138,13 +138,13 @@ public class Class1089 extends Class1018 {
    @Override
    public void method3307(Entity var1) {
       super.method3307(var1);
-      float var4 = MathHelper.sin(this.field4965 * (float) (Math.PI / 180.0));
-      float var5 = MathHelper.cos(this.field4965 * (float) (Math.PI / 180.0));
+      float var4 = MathHelper.sin(this.renderYawOffset * (float) (Math.PI / 180.0));
+      float var5 = MathHelper.cos(this.renderYawOffset * (float) (Math.PI / 180.0));
       float var6 = 0.1F;
       float var7 = 0.0F;
-      var1.setPosition(this.getPosX() + (double)(0.1F * var4), this.method3440(0.5) + var1.method2894() + 0.0, this.getPosZ() - (double)(0.1F * var5));
+      var1.setPosition(this.getPosX() + (double)(0.1F * var4), this.getPosYHeight(0.5) + var1.method2894() + 0.0, this.getPosZ() - (double)(0.1F * var5));
       if (var1 instanceof LivingEntity) {
-         ((LivingEntity)var1).field4965 = this.field4965;
+         ((LivingEntity)var1).renderYawOffset = this.renderYawOffset;
       }
    }
 

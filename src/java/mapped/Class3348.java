@@ -32,7 +32,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    public static final VoxelShape field18870 = Block.method11539(0.0, 0.0, 1.0, 15.0, 14.0, 15.0);
    public static final VoxelShape field18871 = Block.method11539(1.0, 0.0, 1.0, 16.0, 14.0, 15.0);
    public static final VoxelShape field18872 = Block.method11539(1.0, 0.0, 1.0, 15.0, 14.0, 15.0);
-   private static final Class6139<Class941, Optional<Class920>> field18873 = new Class6140();
+   private static final Class6139<Class941, Optional<IInventory>> field18873 = new Class6140();
    private static final Class6139<Class941, Optional<Class949>> field18874 = new Class6142();
 
    public Class3348(AbstractBlock var1, Supplier<TileEntityType<? extends Class941>> var2) {
@@ -66,7 +66,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
       }
 
-      if (var3.method23448(this) && var2.method544().method324()) {
+      if (var3.isIn(this) && var2.getAxis().method324()) {
          Class111 var9 = var3.<Class111>method23463(field18866);
          if (var1.<Class111>method23463(field18866) == Class111.field379
             && var9 != Class111.field379
@@ -112,9 +112,9 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
       FluidState var6 = var1.method18360().getFluidState(var1.method18345());
       boolean var7 = var1.method18351();
       Direction var8 = var1.method18354();
-      if (var8.method544().method324() && var7) {
+      if (var8.getAxis().method324() && var7) {
          Direction var9 = this.method11909(var1, var8.method536());
-         if (var9 != null && var9.method544() != var8.method544()) {
+         if (var9 != null && var9.getAxis() != var8.getAxis()) {
             var5 = var9;
             var4 = var9.method538() != var8.method536() ? Class111.field380 : Class111.field381;
          }
@@ -144,7 +144,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    @Nullable
    private Direction method11909(Class5909 var1, Direction var2) {
       BlockState var5 = var1.method18360().getBlockState(var1.method18345().method8349(var2));
-      return var5.method23448(this) && var5.method23463(field18866) == Class111.field379 ? var5.<Direction>method23463(field18865) : null;
+      return var5.isIn(this) && var5.method23463(field18866) == Class111.field379 ? var5.<Direction>method23463(field18865) : null;
    }
 
    @Override
@@ -159,10 +159,10 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.method23448(var4.getBlock())) {
+      if (!var1.isIn(var4.getBlock())) {
          TileEntity var8 = var2.getTileEntity(var3);
-         if (var8 instanceof Class920) {
-            Class7236.method22721(var2, var3, (Class920)var8);
+         if (var8 instanceof IInventory) {
+            Class7236.method22721(var2, var3, (IInventory)var8);
             var2.updateComparatorOutputLevel(var3, this);
          }
 
@@ -176,23 +176,23 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
          Class949 var9 = this.method11528(var1, var2, var3);
          if (var9 != null) {
             var4.method2766(var9);
-            var4.method2913(this.method11910());
+            var4.addStat(this.method11910());
             Class4388.method13832(var4, true);
          }
 
          return ActionResultType.field14819;
       } else {
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       }
    }
 
    public Class9007<ResourceLocation> method11910() {
-      return Class8876.field40104.method172(Class8876.field40161);
+      return Stats.field40104.method172(Stats.field40161);
    }
 
    @Nullable
-   public static Class920 method11911(Class3348 var0, BlockState var1, World var2, BlockPos var3, boolean var4) {
-      return var0.method11904(var1, var2, var3, var4).<Optional<Class920>>method27292(field18873).orElse((Class920)null);
+   public static IInventory method11911(Class3348 var0, BlockState var1, World var2, BlockPos var3, boolean var4) {
+      return var0.method11904(var1, var2, var3, var4).<Optional<IInventory>>method27292(field18873).orElse((IInventory)null);
    }
 
    @Override
@@ -261,7 +261,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
 
    @Override
    public int method11649(BlockState var1, World var2, BlockPos var3) {
-      return Class5812.method18152(method11911(this, var1, var2, var3, false));
+      return Container.calcRedstoneFromInventory(method11911(this, var1, var2, var3, false));
    }
 
    @Override

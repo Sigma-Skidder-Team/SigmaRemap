@@ -59,7 +59,7 @@ public abstract class Class3758 {
       } catch (Class2447 var7) {
          var7.method10459(this.getClass());
          throw var7;
-      } catch (Class2449 var8) {
+      } catch (ViaVersion4 var8) {
          throw var8;
       } catch (Exception var9) {
          Class2447 var5 = new Class2447(var9);

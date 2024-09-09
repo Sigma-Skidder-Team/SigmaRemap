@@ -25,7 +25,7 @@ public class Class3720 extends Class3676<Class1006> {
    }
 
    public void method12502(ServerWorld var1, Class1006 var2, long var3) {
-      LivingEntity var7 = var2.method2992().<LivingEntity>method21410(Class8830.field39826).get();
+      LivingEntity var7 = var2.getBrain().<LivingEntity>method21410(Class8830.field39826).get();
       if (Class6983.method21583(var2, var7) && Class6983.method21580(var2, var7, 1)) {
          this.method12614(var2);
       } else {
@@ -34,13 +34,13 @@ public class Class3720 extends Class3676<Class1006> {
    }
 
    private void method12613(LivingEntity var1, LivingEntity var2) {
-      Class6947 var5 = var1.method2992();
+      Brain var5 = var1.getBrain();
       var5.method21406(Class8830.field39825, new Class7865(var2, true));
       Class8999 var6 = new Class8999(new Class7865(var2, false), this.field19805, 0);
       var5.method21406(Class8830.field39824, var6);
    }
 
    private void method12614(LivingEntity var1) {
-      var1.method2992().method21405(Class8830.field39824);
+      var1.getBrain().method21405(Class8830.field39824);
    }
 }

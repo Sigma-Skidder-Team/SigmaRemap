@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.gui.jello;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.gui.GuiManager;
@@ -49,7 +49,7 @@ public class RearView extends PremiumModule {
                         .method6772(
                                 PlayerEntity.class,
                                 mc.player.getBoundingBox().method19664(14.0),
-                                var1x -> var1x.method3275(mc.player) < 12.0F
+                                var1x -> var1x.getDistance(mc.player) < 12.0F
                                         && !this.method16448(var1x)
                                         && mc.player != var1x
                                         && !Client.getInstance().getCombatManager().method29346(var1x)
@@ -66,7 +66,7 @@ public class RearView extends PremiumModule {
     }
 
     public boolean method16448(LivingEntity var1) {
-        float var4 = Class9142.method34138(var1, mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ())[0];
+        float var4 = RotationHelper.method34138(var1, mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ())[0];
         return this.method16449(mc.player.rotationYaw, var4) <= 90.0F;
     }
 
@@ -76,7 +76,7 @@ public class RearView extends PremiumModule {
     }
 
     @EventTarget
-    public void method16450(Class4415 var1) {
+    public void method16450(EventRender var1) {
         if (field23663 != null) {
             if (this.isEnabled()) {
                 if (! Minecraft.getInstance().gameSettings.hideGUI) {

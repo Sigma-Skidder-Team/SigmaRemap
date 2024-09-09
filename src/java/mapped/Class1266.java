@@ -145,7 +145,7 @@ public class Class1266 extends AbstractGui {
       double var3 = (double)var0 / 200.0;
       var3 = 1.0 - var3;
       var3 *= 10.0;
-      var3 = MathHelper.method37778(var3, 0.0, 1.0);
+      var3 = MathHelper.clamp(var3, 0.0, 1.0);
       return var3 * var3;
    }
 

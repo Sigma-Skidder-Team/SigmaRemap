@@ -16,7 +16,7 @@ public class Class908 extends Entity {
    public Class908(Class1007 var1, String var2, float var3, float var4) {
       super(var1.getType(), var1.world);
       this.field5188 = EntitySize.method32101(var3, var4);
-      this.method3385();
+      this.recalculateSize();
       this.field5186 = var1;
       this.field5187 = var2;
    }
@@ -26,35 +26,35 @@ public class Class908 extends Entity {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
    }
 
    @Override
-   public boolean method3139() {
+   public boolean canBeCollidedWith() {
       return true;
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      return !this.method2760(var1) ? this.field5186.method4325(this, var1, var2) : false;
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      return !this.isInvulnerableTo(var1) ? this.field5186.method4325(this, var1, var2) : false;
    }
 
    @Override
-   public boolean method3359(Entity var1) {
+   public boolean isEntityEqual(Entity var1) {
       return this == var1 || this.field5186 == var1;
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       throw new UnsupportedOperationException();
    }
 
    @Override
-   public EntitySize method2981(Pose var1) {
+   public EntitySize getSize(Pose var1) {
       return this.field5188;
    }
 }

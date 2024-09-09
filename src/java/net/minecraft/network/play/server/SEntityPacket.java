@@ -38,7 +38,7 @@ public class SEntityPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public static Vector3d method17232(long var0, long var2, long var4) {
-      return new Vector3d((double)var0, (double)var2, (double)var4).method11344(2.4414062E-4F);
+      return new Vector3d((double)var0, (double)var2, (double)var4).scale(2.4414062E-4F);
    }
 
    public SEntityPacket() {

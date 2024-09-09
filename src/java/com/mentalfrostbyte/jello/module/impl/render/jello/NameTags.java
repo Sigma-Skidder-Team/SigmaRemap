@@ -112,7 +112,7 @@ public class NameTags extends Module {
                 if (var7 != mc.player
                         && var7 != Freecam.field23814
                         && var7 != Blink.field23863
-                        && !var7.method3342()
+                        && !var7.isInvisible()
                         && !Client.getInstance().getCombatManager().method29346(var7)) {
                     this.field24005.add(var7);
                 }
@@ -123,15 +123,15 @@ public class NameTags extends Module {
     @EventTarget
     private void method16927(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13932() instanceof CPlayerTryUseItemOnBlockPacket) {
-                CPlayerTryUseItemOnBlockPacket var4 = (CPlayerTryUseItemOnBlockPacket) var1.method13932();
+            if (var1.getPacket() instanceof CPlayerTryUseItemOnBlockPacket) {
+                CPlayerTryUseItemOnBlockPacket var4 = (CPlayerTryUseItemOnBlockPacket) var1.getPacket();
                 if (mc.world.getBlockState(var4.func_218794_c().getPos()).getBlock() instanceof Class3353) {
                     this.field24001 = var4.func_218794_c().getPos();
                 }
             }
 
-            if (var1.method13932() instanceof CClickWindowPacket) {
-                CClickWindowPacket var7 = (CClickWindowPacket) var1.method13932();
+            if (var1.getPacket() instanceof CClickWindowPacket) {
+                CClickWindowPacket var7 = (CClickWindowPacket) var1.getPacket();
                 Class7070 var5 = this.method16929(var7.getWindowId());
                 if (var5 == null) {
                     return;
@@ -139,10 +139,10 @@ public class NameTags extends Module {
 
                 if (mc.currentScreen instanceof Class856) {
                     Class856 var6 = (Class856) mc.currentScreen;
-                    var5.field30453 = var6.method2628().method18131(0).method18265();
-                    var5.field30454 = new ItemStack(var6.method2628().method18131(1).method18265().getItem());
-                    var5.field30454.field39976 = var6.method2628().method18131(1).method18265().field39976;
-                    var5.field30455 = var6.method2628().method18131(2).method18265();
+                    var5.field30453 = var6.method2628().getSlot(0).getStack();
+                    var5.field30454 = new ItemStack(var6.method2628().getSlot(1).getStack().getItem());
+                    var5.field30454.field39976 = var6.method2628().getSlot(1).getStack().field39976;
+                    var5.field30455 = var6.method2628().getSlot(2).getStack();
                 }
             }
         }
@@ -153,7 +153,7 @@ public class NameTags extends Module {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SOpenWindowPacket) {
                 SOpenWindowPacket var4 = (SOpenWindowPacket) var1.getPacket();
-                if (var4.method17285() != Class8298.field35661) {
+                if (var4.method17285() != ContainerType.field35661) {
                     return;
                 }
 
@@ -227,13 +227,13 @@ public class NameTags extends Module {
 
                 this.method16933(
                         Class9647.method37622(var6).field43722,
-                        Class9647.method37622(var6).field43723 + (double) var6.method3430(),
+                        Class9647.method37622(var6).field43723 + (double) var6.getHeight(),
                         Class9647.method37622(var6).field43724,
                         var6,
                         var7,
                         null
                 );
-                var6.method3210().method35446(Entity.CUSTOM_NAME_VISIBLE, false);
+                var6.getDataManager().method35446(Entity.CUSTOM_NAME_VISIBLE, false);
             }
 
             for (Entry var11 : this.field24000.entrySet()) {
@@ -274,13 +274,13 @@ public class NameTags extends Module {
 
                                 this.method16933(
                                         Class9647.method37622(var12).field43722,
-                                        Class9647.method37622(var12).field43723 + (double) var12.method3430(),
+                                        Class9647.method37622(var12).field43723 + (double) var12.getHeight(),
                                         Class9647.method37622(var12).field43724,
                                         var12,
                                         var8,
                                         this.field24007.get(var14)
                                 );
-                                var12.method3210().method35446(Entity.CUSTOM_NAME_VISIBLE, false);
+                                var12.getDataManager().method35446(Entity.CUSTOM_NAME_VISIBLE, false);
                             }
                         }
                     }
@@ -444,7 +444,7 @@ public class NameTags extends Module {
             RenderUtil.method11426((float) (-var21 - 10), -25.0F, (float) (var21 + 10), (float) (var12.method23952() + 2), var19);
             RenderUtil.method11426(
                     (float) (-var21 - 10),
-                    (float) (var12.method23952() - 1) - (float) ((LivingEntity) var7).field4952 / 3.0F,
+                    (float) (var12.method23952() - 1) - (float) ((LivingEntity) var7).hurtTime / 3.0F,
                     Math.min((float) (var21 * 2 + 20) * (var18 - 0.5F), (float) (var21 + 10)),
                     (float) (var12.method23952() + 2),
                     var20
@@ -476,9 +476,9 @@ public class NameTags extends Module {
     }
 
     @EventTarget
-    public void method16934(Class4433 var1) {
+    public void method16934(EventRenderNameTag var1) {
         if (this.isEnabled() && var1.method13987() instanceof PlayerEntity) {
-            var1.method13900(true);
+            var1.setCancelled(true);
         }
     }
 }

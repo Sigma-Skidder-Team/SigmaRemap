@@ -40,7 +40,7 @@ public class Class2687 extends Class2595 {
          Vector3d var4 = Vector3d.method11328(Class1017.method4453(this.field17112));
          var3 = var4.method11336(this.field17112.getPositionVec()).method11333();
       } else {
-         var3 = this.field17112.method3281(0.0F);
+         var3 = this.field17112.getLook(0.0F);
       }
 
       byte var6 = 8;

@@ -53,7 +53,7 @@ public class Class2908 extends Class2898<Class4738> {
 
    private static boolean method11247(Class1660 var0, BlockPos var1, Class4738 var2) {
       BlockState var5 = var0.getBlockState(var1);
-      if (var5.method23448(var2.method14874().getBlock())) {
+      if (var5.isIn(var2.method14874().getBlock())) {
          return false;
       } else if (field17991.contains(var5.getBlock())) {
          return false;

@@ -44,7 +44,7 @@ public class Class1262 extends AbstractGui {
    private final FontRenderer field6666;
    private RayTraceResult field6667;
    private RayTraceResult field6668;
-   private Class7481 field6669;
+   private ChunkPos field6669;
    private Chunk field6670;
    private CompletableFuture<Chunk> field6671;
    private String field6672 = null;
@@ -67,8 +67,8 @@ public class Class1262 extends AbstractGui {
       this.field6665.getProfiler().startSection("debug");
       RenderSystem.pushMatrix();
       Entity var4 = this.field6665.getRenderViewEntity();
-      this.field6667 = var4.method3289(20.0, 0.0F, false);
-      this.field6668 = var4.method3289(20.0, 0.0F, true);
+      this.field6667 = var4.customPick(20.0, 0.0F, false);
+      this.field6668 = var4.customPick(20.0, 0.0F, true);
       this.method5879(var1);
       this.method5880(var1);
       RenderSystem.popMatrix();
@@ -268,7 +268,7 @@ public class Class1262 extends AbstractGui {
                var12 = "Invalid";
          }
 
-         Class7481 var13 = new Class7481(var8);
+         ChunkPos var13 = new ChunkPos(var8);
          if (!Objects.equals(this.field6669, var13)) {
             this.field6669 = var13;
             this.method5877();

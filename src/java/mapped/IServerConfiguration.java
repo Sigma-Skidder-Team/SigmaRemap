@@ -55,9 +55,9 @@ public interface IServerConfiguration {
 
    String method20054();
 
-   Class1894 method20067();
+   GameType method20067();
 
-   void method20073(Class1894 var1);
+   void method20073(GameType var1);
 
    boolean method20072();
 

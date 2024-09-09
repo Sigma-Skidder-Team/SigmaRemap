@@ -15,9 +15,9 @@ public class Class2682 extends Class2680 {
    @Override
    public void method10805() {
       super.method10805();
-      if (this.field17094 == null && this.field17079.method3013().nextInt(600) == 0) {
+      if (this.field17094 == null && this.field17079.getRNG().nextInt(600) == 0) {
          this.field17094 = this.field17086;
-      } else if (this.field17079.method3013().nextInt(500) == 0) {
+      } else if (this.field17079.getRNG().nextInt(500) == 0) {
          this.field17094 = null;
       }
    }

@@ -16,15 +16,15 @@ public class Class2621 extends Class2595 {
    @Override
    public boolean method10803() {
       return this.field16908.method4232() == null
-         && (this.field16908.onGround || this.field16908.method3250() || this.field16908.method3264() || this.field16908.method3033(Effects.LEVITATION))
+         && (this.field16908.onGround || this.field16908.isInWater() || this.field16908.isInLava() || this.field16908.isPotionActive(Effects.LEVITATION))
          && this.field16908.method4228() instanceof Class6841;
    }
 
    @Override
    public void method10805() {
       if (--this.field16910 <= 0) {
-         this.field16910 = 40 + this.field16908.method3013().nextInt(60);
-         this.field16909 = (float)this.field16908.method3013().nextInt(360);
+         this.field16910 = 40 + this.field16908.getRNG().nextInt(60);
+         this.field16909 = (float)this.field16908.getRNG().nextInt(360);
       }
 
       ((Class6841)this.field16908.method4228()).method20822(this.field16909, false);

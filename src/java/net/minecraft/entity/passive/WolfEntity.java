@@ -80,20 +80,20 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(SoundEvents.field27256, 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(SoundEvents.field27256, 0.15F, 1.0F);
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.method100("CollarColor", (byte)this.method4382().method309());
       this.method4364(var1);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("CollarColor", 99)) {
          this.method4383(Class112.method315(var1.getInt("CollarColor")));
       }
@@ -125,18 +125,18 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    @Override
-   public float method3099() {
+   public float getSoundVolume() {
       return 0.4F;
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
+   public void livingEntity() {
+      super.livingEntity();
       if (!this.world.isRemote && this.field5662 && !this.field5663 && !this.method4772() && this.onGround) {
          this.field5663 = true;
          this.field5664 = 0.0F;
          this.field5665 = 0.0F;
-         this.world.method6786(this, (byte)8);
+         this.world.setEntityState(this, (byte)8);
       }
 
       if (!this.world.isRemote) {
@@ -155,10 +155,10 @@ public class WolfEntity extends TameableEntity implements IAngerable {
             this.field5660 = this.field5660 + (1.0F - this.field5660) * 0.4F;
          }
 
-         if (!this.method3254()) {
+         if (!this.isInWaterRainOrBubbleColumn()) {
             if ((this.field5662 || this.field5663) && this.field5663) {
                if (this.field5664 == 0.0F) {
-                  this.method2863(SoundEvents.field27255, this.method3099(), (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+                  this.playSound(SoundEvents.field27255, this.getSoundVolume(), (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
                }
 
                this.field5665 = this.field5664;
@@ -173,13 +173,13 @@ public class WolfEntity extends TameableEntity implements IAngerable {
                if (this.field5664 > 0.4F) {
                   float var3 = (float)this.getPosY();
                   int var4 = (int)(MathHelper.sin((this.field5664 - 0.4F) * (float) Math.PI) * 7.0F);
-                  Vector3d var5 = this.getVec();
+                  Vector3d var5 = this.getMotion();
 
                   for (int var6 = 0; var6 < var4; var6++) {
-                     float var7 = (this.rand.nextFloat() * 2.0F - 1.0F) * this.method3429() * 0.5F;
-                     float var8 = (this.rand.nextFloat() * 2.0F - 1.0F) * this.method3429() * 0.5F;
+                     float var7 = (this.rand.nextFloat() * 2.0F - 1.0F) * this.getWidth() * 0.5F;
+                     float var8 = (this.rand.nextFloat() * 2.0F - 1.0F) * this.getWidth() * 0.5F;
                      this.world
-                        .method6746(
+                        .addParticle(
                            ParticleTypes.field34099,
                            this.getPosX() + (double)var7,
                            (double)(var3 + 0.8F),
@@ -194,7 +194,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
          } else {
             this.field5662 = true;
             if (this.field5663 && !this.world.isRemote) {
-               this.world.method6786(this, (byte)56);
+               this.world.setEntityState(this, (byte)56);
                this.method4374();
             }
          }
@@ -208,12 +208,12 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    @Override
-   public void method2737(DamageSource var1) {
+   public void onDeath(DamageSource var1) {
       this.field5662 = false;
       this.field5663 = false;
       this.field5665 = 0.0F;
       this.field5664 = 0.0F;
-      super.method2737(var1);
+      super.onDeath(var1);
    }
 
    public boolean method4375() {
@@ -242,7 +242,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.8F;
    }
 
@@ -252,25 +252,25 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (!this.method2760(var1)) {
-         Entity var5 = var1.method31109();
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (!this.isInvulnerableTo(var1)) {
+         Entity var5 = var1.getTrueSource();
          this.method4403(false);
          if (var5 != null && !(var5 instanceof PlayerEntity) && !(var5 instanceof AbstractArrowEntity)) {
             var2 = (var2 + 1.0F) / 2.0F;
          }
 
-         return super.method2741(var1, var2);
+         return super.attackEntityFrom(var1, var2);
       } else {
          return false;
       }
    }
 
    @Override
-   public boolean method3114(Entity var1) {
-      boolean var4 = var1.method2741(DamageSource.method31115(this), (float)((int)this.method3086(Attributes.field42110)));
+   public boolean attackEntityAsMob(Entity var1) {
+      boolean var4 = var1.attackEntityFrom(DamageSource.method31115(this), (float)((int)this.getAttributeValue(Attributes.field42110)));
       if (var4) {
-         this.method3399(this, var1);
+         this.applyEnchantments(this, var1);
       }
 
       return var4;
@@ -280,13 +280,13 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    public void method4379(boolean var1) {
       super.method4379(var1);
       if (!var1) {
-         this.method3085(Attributes.field42105).method38661(8.0);
+         this.getAttribute(Attributes.field42105).method38661(8.0);
       } else {
-         this.method3085(Attributes.field42105).method38661(20.0);
-         this.method3043(20.0F);
+         this.getAttribute(Attributes.field42105).method38661(20.0);
+         this.setHealth(20.0F);
       }
 
-      this.method3085(Attributes.field42110).method38661(4.0);
+      this.getAttribute(Attributes.field42110).method38661(4.0);
    }
 
    @Override
@@ -301,16 +301,16 @@ public class WolfEntity extends TameableEntity implements IAngerable {
                }
 
                if (this.rand.nextInt(3) != 0) {
-                  this.world.method6786(this, (byte)6);
+                  this.world.setEntityState(this, (byte)6);
                } else {
                   this.method4399(var1);
                   this.field5599.method21666();
                   this.method4233((LivingEntity)null);
                   this.method4403(true);
-                  this.world.method6786(this, (byte)7);
+                  this.world.setEntityState(this, (byte)7);
                }
 
-               return ActionResultType.field14818;
+               return ActionResultType.SUCCESS;
             }
          } else {
             if (this.method4381(var5) && this.getHealth() < this.method3075()) {
@@ -318,18 +318,18 @@ public class WolfEntity extends TameableEntity implements IAngerable {
                   var5.method32182(1);
                }
 
-               this.method3041((float)var6.method11745().method36157());
-               return ActionResultType.field14818;
+               this.heal((float)var6.method11745().method36157());
+               return ActionResultType.SUCCESS;
             }
 
             if (!(var6 instanceof Class3321)) {
                ActionResultType var9 = super.method4285(var1, var2);
-               if ((!var9.isSuccessOrConsume() || this.method3005()) && this.method4401(var1)) {
+               if ((!var9.isSuccessOrConsume() || this.isChild()) && this.method4401(var1)) {
                   this.method4403(!this.method4402());
-                  this.field4981 = false;
+                  this.isJumping = false;
                   this.field5599.method21666();
                   this.method4233((LivingEntity)null);
-                  return ActionResultType.field14818;
+                  return ActionResultType.SUCCESS;
                }
 
                return var9;
@@ -342,7 +342,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
                   var5.method32182(1);
                }
 
-               return ActionResultType.field14818;
+               return ActionResultType.SUCCESS;
             }
          }
 
@@ -354,10 +354,10 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 8) {
          if (var1 != 56) {
-            super.method2866(var1);
+            super.handleStatusUpdate(var1);
          } else {
             this.method4374();
          }
@@ -422,7 +422,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    public WolfEntity method4389(ServerWorld var1, Class1045 var2) {
-      WolfEntity var5 = EntityType.field41105.method33215(var1);
+      WolfEntity var5 = EntityType.field41105.create(var1);
       UUID var6 = this.method4397();
       if (var6 != null) {
          var5.method4398(var6);
@@ -482,8 +482,8 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    @Override
-   public Vector3d method3394() {
-      return new Vector3d(0.0, (double)(0.6F * this.method3393()), (double)(this.method3429() * 0.4F));
+   public Vector3d func_241205_ce_() {
+      return new Vector3d(0.0, (double)(0.6F * this.getEyeHeight()), (double)(this.getWidth() * 0.4F));
    }
 
    // $VF: synthetic method

@@ -23,7 +23,7 @@ public class Class3901 extends Class3758 {
                var4 = (Integer)var6.method35008();
                var5 = (Boolean)var6.method35009();
             } else {
-               Class8042.method27613().method27366().warning("Received unknown 1.11 -> 1.10.2 potion data (" + var4 + ")");
+               ViaVersion3.method27613().method27366().warning("Received unknown 1.11 -> 1.10.2 potion data (" + var4 + ")");
                var4 = 0;
             }
 

@@ -47,7 +47,7 @@ public class Class3692<E extends LivingEntity> extends Class3676<E> {
    @Override
    public void method12506(ServerWorld var1, E var2, long var3) {
       this.field19723.method22841().filter(var0 -> var0.method12500() == Class2092.field13633).forEach(var4 -> var4.method12505(var1, (E)var2, var3));
-      this.field19720.forEach(var2.method2992()::method21405);
+      this.field19720.forEach(var2.getBrain()::method21405);
    }
 
    @Override

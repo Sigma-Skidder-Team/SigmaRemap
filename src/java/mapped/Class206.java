@@ -40,7 +40,7 @@ public class Class206 extends Class205 {
 
    private void method686(long var1, int var3, boolean var4, boolean var5) {
       if (var4 != var5) {
-         Class2005 var8 = new Class2005<Class7481>(Class8561.field38482, Class9307.method35152(), new Class7481(var1));
+         Class2005 var8 = new Class2005<ChunkPos>(Class8561.field38482, Class9307.method35152(), new ChunkPos(var1));
          if (!var5) {
             Class9307.method35154(this.field764)
                .method1641(
@@ -71,7 +71,7 @@ public class Class206 extends Class205 {
             int var6 = this.field766.get(var4);
             int var7 = this.method652(var4);
             if (var6 != var7) {
-               Class9307.method35155(this.field764).method7965(new Class7481(var4), () -> this.field766.get(var4), var7, var3x -> {
+               Class9307.method35155(this.field764).method7965(new ChunkPos(var4), () -> this.field766.get(var4), var7, var3x -> {
                   if (var3x < this.field766.defaultReturnValue()) {
                      this.field766.put(var4, var3x);
                   } else {

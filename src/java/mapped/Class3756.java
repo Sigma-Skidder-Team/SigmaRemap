@@ -21,12 +21,12 @@ public class Class3756 extends Class3676<LivingEntity> {
       if (var2.isPassenger()) {
          return false;
       } else {
-         Class6947<?> var5 = var2.method2992();
+         Brain<?> var5 = var2.getBrain();
          Class9378 var6 = var5.method21410(Class8830.field39813).get();
          if (var1.getDimensionKey() == var6.method35578()) {
             Optional var7 = var5.<Long>method21410(Class8830.field39844);
             if (var7.isPresent()) {
-               long var9 = var1.method6783() - (Long)var7.get();
+               long var9 = var1.getGameTime() - (Long)var7.get();
                if (var9 > 0L && var9 < 100L) {
                   return false;
                }
@@ -34,7 +34,7 @@ public class Class3756 extends Class3676<LivingEntity> {
 
             BlockState var8 = var1.getBlockState(var6.method35579());
             return var6.method35579().method8317(var2.getPositionVec(), 2.0)
-               && var8.getBlock().method11540(BlockTags.field32770)
+               && var8.getBlock().isIn(BlockTags.field32770)
                && !var8.<Boolean>method23463(Class3250.field18714);
          } else {
             return false;
@@ -44,12 +44,12 @@ public class Class3756 extends Class3676<LivingEntity> {
 
    @Override
    public boolean method12499(ServerWorld var1, LivingEntity var2, long var3) {
-      Optional var7 = var2.method2992().<Class9378>method21410(Class8830.field39813);
+      Optional var7 = var2.getBrain().<Class9378>method21410(Class8830.field39813);
       if (!var7.isPresent()) {
          return false;
       } else {
          BlockPos var8 = ((Class9378)var7.get()).method35579();
-         return var2.method2992().method21430(Class8890.field40223)
+         return var2.getBrain().method21430(Activity.field40223)
             && var2.getPosY() > (double)var8.getY() + 0.4
             && var8.method8317(var2.getPositionVec(), 1.14);
       }
@@ -59,7 +59,7 @@ public class Class3756 extends Class3676<LivingEntity> {
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       if (var3 > this.field19915) {
          Class3697.method12561(var1, var2, (Class7176)null, (Class7176)null);
-         var2.method2753(var2.method2992().<Class9378>method21410(Class8830.field39813).get().method35579());
+         var2.startSleeping(var2.getBrain().<Class9378>method21410(Class8830.field39813).get().method35579());
       }
    }
 
@@ -71,7 +71,7 @@ public class Class3756 extends Class3676<LivingEntity> {
    @Override
    public void method12506(ServerWorld var1, LivingEntity var2, long var3) {
       if (var2.isSleeping()) {
-         var2.method2907();
+         var2.wakeUp();
          this.field19915 = var3 + 40L;
       }
    }

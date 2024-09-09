@@ -22,8 +22,8 @@ public class Class2744 extends Class2736 {
    public boolean method10803() {
       if (this.field17258.method4232() == null) {
          if (this.field17258.method4230().method21664()) {
-            Random var3 = this.field17258.method3013();
-            if (this.field17258.world.method6789().method17135(Class5462.field24224) && var3.nextInt(10) == 0) {
+            Random var3 = this.field17258.getRNG();
+            if (this.field17258.world.getGameRules().getBoolean(Class5462.field24224) && var3.nextInt(10) == 0) {
                this.field17271 = Direction.method552(var3);
                BlockPos var4 = new BlockPos(this.field17258.getPosX(), this.field17258.getPosY() + 0.5, this.field17258.getPosZ())
                   .method8349(this.field17271);
@@ -59,7 +59,7 @@ public class Class2744 extends Class2736 {
          if (Class3442.method12119(var5)) {
             var3.setBlockState(var4, Class3442.method12121(var5.getBlock()), 3);
             this.field17258.method4239();
-            this.field17258.method2904();
+            this.field17258.remove();
          }
       } else {
          super.method10804();

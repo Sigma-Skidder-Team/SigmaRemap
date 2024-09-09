@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.unmapped.Class4321;
+import com.mentalfrostbyte.jello.unmapped.ClassicScreenk;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.client.Minecraft;
 
@@ -54,7 +54,7 @@ public class Class4334 extends Class4333 {
       Class4361 var7;
       this.addToList(var7 = new Class4361(this, "exit", this.method13267() - 41, 9));
       var7.doThis((var0, var1x) -> Minecraft.getInstance().displayGuiScreen(null));
-      Class4321 var8 = (Class4321)this.method13258();
+      ClassicScreenk var8 = (ClassicScreenk)this.method13258();
       this.field21152.doThis((var1x, var2x) -> var8.method13418("Combat", ModuleCategory.COMBAT));
       this.field21153.doThis((var1x, var2x) -> var8.method13418("Movement", ModuleCategory.MOVEMENT));
       this.field21157.doThis((var1x, var2x) -> var8.method13418("World", ModuleCategory.WORLD));

@@ -5,7 +5,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -26,8 +25,8 @@ public class Class3464 extends Class3462 {
          return super.method11505(var1, var2, var3, var4, var5, var6);
       } else {
          if (!var2.isRemote) {
-            Direction var10 = var6.getFace();
-            Direction var11 = var10.method544() != Class113.field414 ? var10 : var4.method3386().method536();
+            net.minecraft.util.Direction var10 = var6.getFace();
+            net.minecraft.util.Direction var11 = var10.getAxis() != Direction.field414 ? var10 : var4.method3386().method536();
             var2.method6742((PlayerEntity)null, var3, SoundEvents.field26986, Class2266.field14732, 1.0F, 1.0F);
             var2.setBlockState(var3, Blocks.field36589.method11579().method23465(Class3342.field18848, var11), 11);
             ItemEntity var12 = new ItemEntity(
@@ -37,13 +36,13 @@ public class Class3464 extends Class3462 {
                (double)var3.getZ() + 0.5 + (double)var11.method541() * 0.65,
                new ItemStack(Items.field37959, 4)
             );
-            var12.method3435(
+            var12.setMotion(
                0.05 * (double)var11.method539() + var2.rand.nextDouble() * 0.02,
                0.05,
                0.05 * (double)var11.method541() + var2.rand.nextDouble() * 0.02
             );
-            var2.method6916(var12);
-            var9.method32121(1, var4, var1x -> var1x.method3185(var5));
+            var2.addEntity(var12);
+            var9.method32121(1, var4, var1x -> var1x.sendBreakAnimation(var5));
          }
 
          return ActionResultType.method9002(var2.isRemote);

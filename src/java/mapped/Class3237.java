@@ -49,7 +49,7 @@ public class Class3237 extends Class3238 {
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
       }
 
-      return !var2.method544().method324()
+      return !var2.getAxis().method324()
          ? super.method11491(var1, var2, var3, var4, var5, var6)
          : var1.method23465(field18685.get(var2), Boolean.valueOf(this.method11638(var3, var3.method23454(var4, var6, var2.method536()))));
    }
@@ -61,8 +61,8 @@ public class Class3237 extends Class3238 {
 
    @Override
    public boolean method11634(BlockState var1, BlockState var2, Direction var3) {
-      if (var2.method23448(this)) {
-         if (!var3.method544().method324()) {
+      if (var2.isIn(this)) {
+         if (!var3.getAxis().method324()) {
             return true;
          }
 
@@ -76,7 +76,7 @@ public class Class3237 extends Class3238 {
 
    public final boolean method11638(BlockState var1, boolean var2) {
       Block var5 = var1.getBlock();
-      return !method11545(var5) && var2 || var5 instanceof Class3237 || var5.method11540(BlockTags.field32764);
+      return !method11545(var5) && var2 || var5 instanceof Class3237 || var5.isIn(BlockTags.field32764);
    }
 
    @Override

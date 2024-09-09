@@ -3,7 +3,6 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -28,7 +27,7 @@ public class Class3353 extends Class3350 {
       TileEntity var6 = var1.getTileEntity(var2);
       if (var6 instanceof Class986) {
          var3.method2766((Class949)var6);
-         var3.method2911(Class8876.field40159);
+         var3.method2911(Stats.field40159);
       }
    }
 
@@ -42,15 +41,15 @@ public class Class3353 extends Class3350 {
             var2.method6745(var7, var9, var11, SoundEvents.field26604, Class2266.field14732, 1.0F, 1.0F, false);
          }
 
-         Direction var13 = var1.<Direction>method23463(field18875);
-         Class113 var14 = var13.method544();
+         net.minecraft.util.Direction var13 = var1.<net.minecraft.util.Direction>method23463(field18875);
+         Direction var14 = var13.getAxis();
          double var15 = 0.52;
          double var17 = var4.nextDouble() * 0.6 - 0.3;
-         double var19 = var14 != Class113.field413 ? var17 : (double)var13.method539() * 0.52;
+         double var19 = var14 != Direction.field413 ? var17 : (double)var13.method539() * 0.52;
          double var21 = var4.nextDouble() * 6.0 / 16.0;
-         double var23 = var14 != Class113.field415 ? var17 : (double)var13.method541() * 0.52;
-         var2.method6746(ParticleTypes.field34092, var7 + var19, var9 + var21, var11 + var23, 0.0, 0.0, 0.0);
-         var2.method6746(ParticleTypes.field34074, var7 + var19, var9 + var21, var11 + var23, 0.0, 0.0, 0.0);
+         double var23 = var14 != Direction.field415 ? var17 : (double)var13.method541() * 0.52;
+         var2.addParticle(ParticleTypes.field34092, var7 + var19, var9 + var21, var11 + var23, 0.0, 0.0, 0.0);
+         var2.addParticle(ParticleTypes.field34074, var7 + var19, var9 + var21, var11 + var23, 0.0, 0.0, 0.0);
       }
    }
 }

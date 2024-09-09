@@ -15,7 +15,7 @@ public class Class4599 extends Class4598 {
    public void method14534() {
       if (this.field22048) {
          this.method14518();
-         this.field22037.method6746(this.field22093, this.field22041, this.field22042, this.field22043, 0.0, 0.0, 0.0);
+         this.field22037.addParticle(this.field22093, this.field22041, this.field22042, this.field22043, 0.0, 0.0, 0.0);
       }
    }
 }

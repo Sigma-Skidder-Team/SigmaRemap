@@ -41,7 +41,7 @@ public class Fullbright extends Module {
                             .up();
                     IChunk var6 = mc.world.method7011(var5);
                     if (var6 != null && var5.getY() >= 0 && var5.getY() < 256 && !var6.method7095()) {
-                        var4 -= var6.method7032(var5);
+                        var4 -= var6.getLightValue(var5);
                     }
 
                     this.field23850 = this.field23850 + ((float) var4 - this.field23850) * 0.2F;

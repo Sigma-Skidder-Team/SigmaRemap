@@ -31,7 +31,7 @@ public class Class218<T extends LivingEntity & Class1041, M extends Class2827<T>
    }
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      if (!var4.method3342()) {
+      if (!var4.isInvisible()) {
          Class7921 var13 = ((Class1041)var4).method4674();
          Class9564 var14 = var13.method26570();
          Class8395 var15 = var13.method26571();
@@ -42,7 +42,7 @@ public class Class218<T extends LivingEntity & Class1041, M extends Class2827<T>
          ResourceLocation var19 = this.method818("type", Registry.field16089.getKey(var14));
          method824(var18, var19, var1, var2, var3, var4, 1.0F, 1.0F, 1.0F);
          ((Class2801)var18).method11014(true);
-         if (var15 != Class8395.field36011 && !var4.method3005()) {
+         if (var15 != Class8395.field36011 && !var4.isChild()) {
             ResourceLocation var20 = this.method818("profession", Registry.field16090.getKey(var15));
             method824(var18, var20, var1, var2, var3, var4, 1.0F, 1.0F, 1.0F);
             if (var15 != Class8395.field36022) {

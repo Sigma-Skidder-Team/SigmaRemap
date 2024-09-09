@@ -69,7 +69,7 @@ public class Class3371 extends Class3241 implements Class3207 {
    @Override
    public BlockState method11495(Class5909 var1) {
       FluidState var4 = var1.method18360().getFluidState(var1.method18345());
-      return this.method11579().method23465(field18960, Boolean.valueOf(var4.method23486(Class8953.field40469) && var4.method23477() == 8));
+      return this.method11579().method23465(field18960, Boolean.valueOf(var4.method23486(FluidTags.field40469) && var4.method23477() == 8));
    }
 
    @Override

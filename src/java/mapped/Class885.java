@@ -27,7 +27,7 @@ public class Class885 extends AbstractArrowEntity {
    public void tick() {
       super.tick();
       if (this.world.isRemote && !this.field5100) {
-         this.world.method6746(ParticleTypes.field34081, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
+         this.world.addParticle(ParticleTypes.field34081, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
       }
    }
 
@@ -39,21 +39,21 @@ public class Class885 extends AbstractArrowEntity {
    @Override
    public void method3478(LivingEntity var1) {
       super.method3478(var1);
-      Class2023 var4 = new Class2023(Effects.GLOWING, this.field5110, 0);
-      var1.method3035(var4);
+      EffectInstance var4 = new EffectInstance(Effects.GLOWING, this.field5110, 0);
+      var1.addPotionEffect(var4);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("Duration")) {
          this.field5110 = var1.getInt("Duration");
       }
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("Duration", this.field5110);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Duration", this.field5110);
    }
 }

@@ -36,8 +36,8 @@ public class OmegaCraftTestFly extends Module {
 
     @Override
     public void onDisable() {
-        Class9567.method37090(0.0);
-        if (mc.player.getVec().y > 0.0) {
+        MovementUtils.method37090(0.0);
+        if (mc.player.getMotion().y > 0.0) {
             ColorUtils.method17725(-0.0789);
         }
 
@@ -46,46 +46,46 @@ public class OmegaCraftTestFly extends Module {
 
     @EventTarget
     @LowerPriority
-    public void method16700(Class4435 var1) {
+    public void method16700(EventMove var1) {
         if (this.isEnabled()) {
-            double var4 = Math.sqrt(var1.method13992() * var1.method13992() + var1.method13996() * var1.method13996());
+            double var4 = Math.sqrt(var1.getX() * var1.getX() + var1.getZ() * var1.getZ());
             if (this.field23854 <= 1) {
                 if (this.field23854 != -1) {
                     if (this.field23854 != 0) {
                         if (this.field23854 < 1) {
                         }
                     } else {
-                        Class9567.method37088(var1, 0.1);
+                        MovementUtils.method37088(var1, 0.1);
                     }
                 } else {
                     this.field23855++;
                     if (this.field23855 != 1 && this.field23855 % 3 != 0 && this.field23855 % 3 != 1) {
                     }
 
-                    ColorUtils.method17725(var1.method13994());
-                    Class9567.method37088(var1, 1.0);
+                    ColorUtils.method17725(var1.getY());
+                    MovementUtils.method37088(var1, 1.0);
                 }
             } else {
-                var1.method13995(0.0);
-                Class9567.method37088(var1, 0.0);
+                var1.setY(0.0);
+                MovementUtils.method37088(var1, 0.0);
             }
         }
     }
 
     @EventTarget
-    public void method16701(Class4399 var1) {
+    public void method16701(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             this.field23854++;
             if (this.field23854 != 3) {
                 if (this.field23854 > 3) {
                     if (this.field23854 >= 20 && this.field23854 % 20 == 0) {
-                        var1.method13912(0.0);
+                        var1.setY(0.0);
                     } else {
-                        var1.method13900(true);
+                        var1.setCancelled(true);
                     }
                 }
             } else {
-                var1.method13912(1000.0);
+                var1.setY(1000.0);
             }
 
             var1.method13908(true);
@@ -104,11 +104,11 @@ public class OmegaCraftTestFly extends Module {
 
                 this.field23860 = this.field23857;
                 this.field23861 = this.field23858;
-                this.field23856 = var5.field24297;
-                this.field23857 = var5.field24298;
-                this.field23858 = var5.field24299;
-                var5.field24300 = mc.player.rotationYaw;
-                var5.field24301 = mc.player.rotationPitch;
+                this.field23856 = var5.x;
+                this.field23857 = var5.y;
+                this.field23858 = var5.z;
+                var5.yaw = mc.player.rotationYaw;
+                var5.pitch = mc.player.rotationPitch;
             }
         }
     }
@@ -116,7 +116,7 @@ public class OmegaCraftTestFly extends Module {
     @EventTarget
     public void method16703(SendPacketEvent event) {
         if (this.isEnabled()) {
-            Packet<?> packet = event.method13932();
+            Packet<?> packet = event.getPacket();
             if (packet instanceof CPlayerPacket) {
                 CPlayerPacket var5 = (CPlayerPacket) packet;
                 if (this.field23854 == -1) {

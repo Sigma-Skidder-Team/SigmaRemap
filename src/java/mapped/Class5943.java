@@ -17,7 +17,7 @@ public class Class5943 extends Class5942<Class960> {
       Entity var10 = var9.method24796();
       if (var10 != null) {
          float var11 = 0.53125F;
-         float var12 = Math.max(var10.method3429(), var10.method3430());
+         float var12 = Math.max(var10.getWidth(), var10.getHeight());
          if ((double)var12 > 1.0) {
             var11 /= var12;
          }

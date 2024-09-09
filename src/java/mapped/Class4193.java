@@ -49,10 +49,10 @@ public class Class4193 extends Class4178 {
 
    @Override
    public void method12897(CompoundNBT var1) {
-      var1.method102("PosX", this.field20490.getX());
-      var1.method102("PosY", this.field20490.getY());
-      var1.method102("PosZ", this.field20490.getZ());
-      var1.method102("ground_level_delta", this.field20491);
+      var1.putInt("PosX", this.field20490.getX());
+      var1.putInt("PosY", this.field20490.getY());
+      var1.putInt("PosZ", this.field20490.getZ());
+      var1.putInt("ground_level_delta", this.field20491);
       Class7487.field32183
          .encodeStart(NBTDynamicOps.INSTANCE, this.field20489)
          .resultOrPartial(field20488::error)
@@ -68,7 +68,7 @@ public class Class4193 extends Class4178 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       return this.method12976(var1, var2, var3, var4, var5, var7, false);
    }
 

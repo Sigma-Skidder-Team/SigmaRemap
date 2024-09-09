@@ -40,7 +40,7 @@ public class Class938 extends Class919 implements Class937 {
    }
 
    @Override
-   public int method3629() {
+   public int getSizeInventory() {
       return 5;
    }
 
@@ -95,7 +95,7 @@ public class Class938 extends Class919 implements Class937 {
             this.method3738(0);
             if (this.method3737()) {
                this.method3738(4);
-               this.method3622();
+               this.markDirty();
             }
          }
       }
@@ -117,21 +117,21 @@ public class Class938 extends Class919 implements Class937 {
    @Override
    public void method3586(DamageSource var1) {
       super.method3586(var1);
-      if (this.world.method6789().method17135(Class5462.field24229)) {
-         this.method3300(Blocks.field36723);
+      if (this.world.getGameRules().getBoolean(Class5462.field24229)) {
+         this.entityDropItem(Blocks.field36723);
       }
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("TransferCooldown", this.field5300);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("TransferCooldown", this.field5300);
       var1.putBoolean("Enabled", this.field5299);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field5300 = var1.getInt("TransferCooldown");
       this.field5299 = !var1.contains("Enabled") ? true : var1.getBoolean("Enabled");
    }
@@ -145,7 +145,7 @@ public class Class938 extends Class919 implements Class937 {
    }
 
    @Override
-   public Class5812 method3628(int var1, PlayerInventory var2) {
+   public Container method3628(int var1, PlayerInventory var2) {
       return new Class5816(var1, var2, this);
    }
 

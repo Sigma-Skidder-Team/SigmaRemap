@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.module.impl.render;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
@@ -24,9 +24,9 @@ public class Breadcrumbs extends Module {
     }
 
     @EventTarget
-    public void method16768(Class4435 var1) {
+    public void method16768(EventMove var1) {
         if (this.isEnabled()) {
-            if (var1.method13992() != 0.0 || var1.method13994() != 0.0 || var1.method13996() != 0.0) {
+            if (var1.getX() != 0.0 || var1.getY() != 0.0 || var1.getZ() != 0.0) {
                 this.field23896.add(new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ()));
             }
         }
@@ -45,7 +45,7 @@ public class Breadcrumbs extends Module {
     }
 
     public Vector3d method16770(Vector3d var1) {
-        return var1.method11338(
+        return var1.add(
                 new Vector3d(
                         - Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getX(),
                         -Minecraft.getInstance().gameRenderer.getActiveRenderInfo().getPos().getY(),

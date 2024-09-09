@@ -19,8 +19,8 @@ public class Class4859 extends Class4837 {
       boolean var5 = false;
       int var6 = 0;
 
-      for (int var7 = 0; var7 < var1.method3629(); var7++) {
-         ItemStack var8 = var1.method3618(var7);
+      for (int var7 = 0; var7 < var1.getSizeInventory(); var7++) {
+         ItemStack var8 = var1.getStackInSlot(var7);
          if (!var8.isEmpty()) {
             if (!field22655.test(var8)) {
                if (!field22656.test(var8)) {
@@ -49,8 +49,8 @@ public class Class4859 extends Class4837 {
       ListNBT var6 = new ListNBT();
       int var7 = 0;
 
-      for (int var8 = 0; var8 < var1.method3629(); var8++) {
-         ItemStack var9 = var1.method3618(var8);
+      for (int var8 = 0; var8 < var1.getSizeInventory(); var8++) {
+         ItemStack var9 = var1.getStackInSlot(var8);
          if (!var9.isEmpty()) {
             if (!field22656.test(var9)) {
                if (field22657.test(var9)) {

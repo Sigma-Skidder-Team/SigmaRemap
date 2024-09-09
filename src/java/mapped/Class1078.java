@@ -48,11 +48,11 @@ public class Class1078 extends Class1066 {
 
    @Override
    public void method4895() {
-      this.method2863(SoundEvents.field26772, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+      this.playSound(SoundEvents.field26772, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
    }
 
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41057.method33215(var1);
+      return EntityType.field41057.create(var1);
    }
 }

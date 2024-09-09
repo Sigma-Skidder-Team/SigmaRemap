@@ -47,13 +47,13 @@ public class Class6805<T> implements Class6802<T> {
             var3 = 65536;
          }
 
-         Class1703 var4 = this.field29623.getChunkProvider();
+         ServerChunkProvider var4 = this.field29623.getChunkProvider();
          Iterator var5 = this.field29622.iterator();
          this.field29623.getProfiler().startSection("cleaning");
 
          while (var3 > 0 && var5.hasNext()) {
             Class8269 var6 = (Class8269)var5.next();
-            if (var6.field35557 > this.field29623.method6783()) {
+            if (var6.field35557 > this.field29623.getGameTime()) {
                break;
             }
 
@@ -95,7 +95,7 @@ public class Class6805<T> implements Class6802<T> {
       return this.field29624.contains(new Class8269<Object>(var1, var2));
    }
 
-   public List<Class8269<T>> method20729(Class7481 var1, boolean var2, boolean var3) {
+   public List<Class8269<T>> method20729(ChunkPos var1, boolean var2, boolean var3) {
       int var6 = (var1.field32174 << 4) - 2;
       int var7 = var6 + 16 + 2;
       int var8 = (var1.field32175 << 4) - 2;
@@ -153,9 +153,9 @@ public class Class6805<T> implements Class6802<T> {
       }
    }
 
-   public ListNBT method20733(Class7481 var1) {
+   public ListNBT method20733(ChunkPos var1) {
       List var4 = this.method20729(var1, false, true);
-      return method20734(this.field29620, var4, this.field29623.method6783());
+      return method20734(this.field29620, var4, this.field29623.getGameTime());
    }
 
    private static <T> ListNBT method20734(Function<T, ResourceLocation> var0, Iterable<Class8269<T>> var1, long var2) {
@@ -164,11 +164,11 @@ public class Class6805<T> implements Class6802<T> {
       for (Class8269<T> var8 : var1) {
          CompoundNBT var9 = new CompoundNBT();
          var9.method109("i", var0.apply(var8.method28874()).toString());
-         var9.method102("x", var8.field35556.getX());
-         var9.method102("y", var8.field35556.getY());
-         var9.method102("z", var8.field35556.getZ());
-         var9.method102("t", (int)(var8.field35557 - var2));
-         var9.method102("p", var8.field35558.method8914());
+         var9.putInt("x", var8.field35556.getX());
+         var9.putInt("y", var8.field35556.getY());
+         var9.putInt("z", var8.field35556.getZ());
+         var9.putInt("t", (int)(var8.field35557 - var2));
+         var9.putInt("p", var8.field35558.method8914());
          var6.add(var9);
       }
 
@@ -183,7 +183,7 @@ public class Class6805<T> implements Class6802<T> {
    @Override
    public void method20719(BlockPos var1, T var2, int var3, Class2199 var4) {
       if (!this.field29619.test((T)var2)) {
-         this.method20735(new Class8269<T>(var1, (T)var2, (long)var3 + this.field29623.method6783(), var4));
+         this.method20735(new Class8269<T>(var1, (T)var2, (long)var3 + this.field29623.getGameTime(), var4));
       }
    }
 

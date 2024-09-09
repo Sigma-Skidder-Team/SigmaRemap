@@ -52,7 +52,7 @@ public class Class3248 extends Class3247 {
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      return !var4.isRemote() && var2.method544() != var1.<Direction>method23463(field18484).method544()
+      return !var4.isRemote() && var2.getAxis() != var1.<Direction>method23463(field18484).getAxis()
          ? var1.method23465(field18710, Boolean.valueOf(this.method11667(var4, var5, var1)))
          : super.method11491(var1, var2, var3, var4, var5, var6);
    }
@@ -82,7 +82,7 @@ public class Class3248 extends Class3247 {
          var14 /= 16.0F;
          double var15 = (double)(var14 * (float)var7.method539());
          double var17 = (double)(var14 * (float)var7.method541());
-         var2.method6746(RedstoneParticleData.REDSTONE_DUST, var8 + var15, var10, var12 + var17, 0.0, 0.0, 0.0);
+         var2.addParticle(RedstoneParticleData.REDSTONE_DUST, var8 + var15, var10, var12 + var17, 0.0, 0.0, 0.0);
       }
    }
 

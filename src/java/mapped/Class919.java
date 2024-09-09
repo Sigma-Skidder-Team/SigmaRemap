@@ -14,7 +14,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
 
-public abstract class Class919 extends AbstractMinecartEntity implements Class920, Class949 {
+public abstract class Class919 extends AbstractMinecartEntity implements IInventory, Class949 {
    private NonNullList<ItemStack> field5236 = NonNullList.<ItemStack>method68(36, ItemStack.EMPTY);
    private boolean field5237 = true;
    private ResourceLocation field5238;
@@ -31,10 +31,10 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
    @Override
    public void method3586(DamageSource var1) {
       super.method3586(var1);
-      if (this.world.method6789().method17135(Class5462.field24229)) {
+      if (this.world.getGameRules().getBoolean(Class5462.field24229)) {
          Class7236.method22722(this.world, this, this);
          if (!this.world.isRemote) {
-            Entity var4 = var1.method31113();
+            Entity var4 = var1.getImmediateSource();
             if (var4 != null && var4.getType() == EntityType.PLAYER) {
                Class4388.method13832((PlayerEntity)var4, true);
             }
@@ -43,7 +43,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
    }
 
    @Override
-   public boolean method3617() {
+   public boolean isEmpty() {
       for (ItemStack var4 : this.field5236) {
          if (!var4.isEmpty()) {
             return false;
@@ -54,19 +54,19 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
    }
 
    @Override
-   public ItemStack method3618(int var1) {
+   public ItemStack getStackInSlot(int var1) {
       this.method3624((PlayerEntity)null);
       return this.field5236.get(var1);
    }
 
    @Override
-   public ItemStack method3619(int var1, int var2) {
+   public ItemStack decrStackSize(int var1, int var2) {
       this.method3624((PlayerEntity)null);
       return Class7920.method26563(this.field5236, var1, var2);
    }
 
    @Override
-   public ItemStack method3620(int var1) {
+   public ItemStack removeStackFromSlot(int var1) {
       this.method3624((PlayerEntity)null);
       ItemStack var4 = this.field5236.get(var1);
       if (!var4.isEmpty()) {
@@ -78,18 +78,18 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
    }
 
    @Override
-   public void method3621(int var1, ItemStack var2) {
+   public void setInventorySlotContents(int var1, ItemStack var2) {
       this.method3624((PlayerEntity)null);
       this.field5236.set(var1, var2);
-      if (!var2.isEmpty() && var2.getCount() > this.method3630()) {
-         var2.method32180(this.method3630());
+      if (!var2.isEmpty() && var2.getCount() > this.getInventoryStackLimit()) {
+         var2.method32180(this.getInventoryStackLimit());
       }
    }
 
    @Override
    public boolean method2963(int var1, ItemStack var2) {
-      if (var1 >= 0 && var1 < this.method3629()) {
-         this.method3621(var1, var2);
+      if (var1 >= 0 && var1 < this.getSizeInventory()) {
+         this.setInventorySlotContents(var1, var2);
          return true;
       } else {
          return false;
@@ -97,33 +97,33 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
    }
 
    @Override
-   public void method3622() {
+   public void markDirty() {
    }
 
    @Override
-   public boolean method3623(PlayerEntity var1) {
+   public boolean isUsableByPlayer(PlayerEntity var1) {
       return !this.removed ? !(var1.getDistanceSq(this) > 64.0) : false;
    }
 
    @Nullable
    @Override
-   public Entity method2745(ServerWorld var1) {
+   public Entity changeDimension(ServerWorld var1) {
       this.field5237 = false;
-      return super.method2745(var1);
+      return super.changeDimension(var1);
    }
 
    @Override
-   public void method2904() {
+   public void remove() {
       if (!this.world.isRemote && this.field5237) {
          Class7236.method22722(this.world, this, this);
       }
 
-      super.method2904();
+      super.remove();
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.field5238 == null) {
          Class7920.method26565(var1, this.field5236);
       } else {
@@ -135,9 +135,9 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
-      this.field5236 = NonNullList.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
+      this.field5236 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
       if (!var1.contains("LootTable", 8)) {
          Class7920.method26567(var1, this.field5236);
       } else {
@@ -147,10 +147,10 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
    }
 
    @Override
-   public ActionResultType method3304(PlayerEntity var1, Hand var2) {
+   public ActionResultType processInitialInteract(PlayerEntity var1, Hand var2) {
       var1.method2766(this);
       if (var1.world.isRemote) {
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       } else {
          Class4388.method13832(var1, true);
          return ActionResultType.field14819;
@@ -161,11 +161,11 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
    public void method3593() {
       float var3 = 0.98F;
       if (this.field5238 == null) {
-         int var4 = 15 - Class5812.method18152(this);
+         int var4 = 15 - Container.calcRedstoneFromInventory(this);
          var3 += (float)var4 * 0.001F;
       }
 
-      this.method3434(this.getVec().method11347((double)var3, 0.0, (double)var3));
+      this.setMotion(this.getMotion().method11347((double)var3, 0.0, (double)var3));
    }
 
    public void method3624(PlayerEntity var1) {
@@ -198,7 +198,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
 
    @Nullable
    @Override
-   public Class5812 method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
+   public Container method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
       if (this.field5238 != null && var3.isSpectator()) {
          return null;
       } else {
@@ -207,5 +207,5 @@ public abstract class Class919 extends AbstractMinecartEntity implements Class92
       }
    }
 
-   public abstract Class5812 method3628(int var1, PlayerInventory var2);
+   public abstract Container method3628(int var1, PlayerInventory var2);
 }

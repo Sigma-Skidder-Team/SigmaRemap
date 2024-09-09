@@ -16,7 +16,7 @@ public final class Class6232 extends Class6230 {
       ServerWorld var7 = var1.method11326();
       BlockState var8 = var7.getBlockState(var6);
       this.method19204(true);
-      if (!var8.method23448(Blocks.field37124)) {
+      if (!var8.isIn(Blocks.field37124)) {
          return super.method19192(var1, var2);
       } else {
          if (var8.<Integer>method23463(Class3389.field19000) == 4) {

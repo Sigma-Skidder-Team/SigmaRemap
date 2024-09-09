@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
-public class Class5909 extends Class5911 {
+public class Class5909 extends ItemUseContext {
    private static String[] field25716;
    public BlockPos field25717;
    public boolean field25718 = true;
@@ -18,7 +18,7 @@ public class Class5909 extends Class5911 {
       this(var1.world, var1, var2, var3, var4);
    }
 
-   public Class5909(Class5911 var1) {
+   public Class5909(ItemUseContext var1) {
       this(var1.method18360(), var1.method18358(), var1.method18359(), var1.method18357(), var1.method18353());
    }
 

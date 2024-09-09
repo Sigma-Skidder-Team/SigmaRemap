@@ -54,7 +54,7 @@ public class Class3384 extends Class3383 {
          double var10 = (double)var3.getX() + 0.5 + (var4.nextDouble() - 0.5) * 0.2 + 0.27 * (double)var7.method539();
          double var12 = (double)var3.getY() + 0.7 + (var4.nextDouble() - 0.5) * 0.2 + 0.22;
          double var14 = (double)var3.getZ() + 0.5 + (var4.nextDouble() - 0.5) * 0.2 + 0.27 * (double)var7.method541();
-         var2.method6746(this.field18984, var10, var12, var14, 0.0, 0.0, 0.0);
+         var2.addParticle(this.field18984, var10, var12, var14, 0.0, 0.0, 0.0);
       }
    }
 

@@ -84,7 +84,7 @@ public class Class9271 {
       );
    }
 
-   private static int method34923(Class6619 var0, Class8513 var1, float var2, float var3, int var4, boolean var5, Collection<? extends Entity> var6) throws CommandSyntaxException {
+   private static int method34923(Class6619 var0, Vector2f var1, float var2, float var3, int var4, boolean var5, Collection<? extends Entity> var6) throws CommandSyntaxException {
       Random var9 = new Random();
       double var10 = (double)(var1.field37220 - var3);
       double var12 = (double)(var1.field37221 - var3);
@@ -121,7 +121,7 @@ public class Class9271 {
    }
 
    private static void method34925(
-      Class8513 var0,
+      Vector2f var0,
       double var1,
       ServerWorld var3,
       Random var4,
@@ -219,7 +219,7 @@ public class Class9271 {
             var13 = (Class9169)var10.get(var14);
          }
 
-         var12.method3384(
+         var12.teleportKeepLoaded(
             (double) MathHelper.floor(Class9169.method34254(var13)) + 0.5,
             (double)var13.method34250(var1, var3),
             (double) MathHelper.floor(Class9169.method34256(var13)) + 0.5

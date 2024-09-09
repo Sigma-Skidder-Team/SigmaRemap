@@ -75,9 +75,9 @@ public class Class8238 {
 
    public Vector3d method28701(Entity var1, int var2) {
       Class7176 var5 = this.field35368.get(var2);
-      double var6 = (double)var5.field30847 + (double)((int)(var1.method3429() + 1.0F)) * 0.5;
+      double var6 = (double)var5.field30847 + (double)((int)(var1.getWidth() + 1.0F)) * 0.5;
       double var8 = (double)var5.field30848;
-      double var10 = (double)var5.field30849 + (double)((int)(var1.method3429() + 1.0F)) * 0.5;
+      double var10 = (double)var5.field30849 + (double)((int)(var1.getWidth() + 1.0F)) * 0.5;
       return new Vector3d(var6, var8, var10);
    }
 

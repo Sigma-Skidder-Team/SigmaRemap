@@ -30,21 +30,21 @@ public class Class918 extends AbstractMinecartEntity {
    @Override
    public void registerData() {
       super.registerData();
-      this.method3210().register(field5232, "");
-      this.method3210().register(field5233, StringTextComponent.EMPTY);
+      this.getDataManager().register(field5232, "");
+      this.getDataManager().register(field5233, StringTextComponent.EMPTY);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field5234.method3561(var1);
-      this.method3210().method35446(field5232, this.method3614().method3563());
-      this.method3210().method35446(field5233, this.method3614().method3559());
+      this.getDataManager().method35446(field5232, this.method3614().method3563());
+      this.getDataManager().method35446(field5233, this.method3614().method3559());
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       this.field5234.method3560(var1);
    }
 
@@ -71,20 +71,20 @@ public class Class918 extends AbstractMinecartEntity {
    }
 
    @Override
-   public ActionResultType method3304(PlayerEntity var1, Hand var2) {
+   public ActionResultType processInitialInteract(PlayerEntity var1, Hand var2) {
       return this.field5234.method3572(var1);
    }
 
    @Override
-   public void method3155(DataParameter<?> var1) {
-      super.method3155(var1);
+   public void notifyDataManagerChange(DataParameter<?> var1) {
+      super.notifyDataManagerChange(var1);
       if (field5233.equals(var1)) {
          try {
-            this.field5234.method3569(this.method3210().<ITextComponent>method35445(field5233));
+            this.field5234.method3569(this.getDataManager().<ITextComponent>method35445(field5233));
          } catch (Throwable var5) {
          }
       } else if (field5232.equals(var1)) {
-         this.field5234.method3562(this.method3210().<String>method35445(field5232));
+         this.field5234.method3562(this.getDataManager().<String>method35445(field5232));
       }
    }
 

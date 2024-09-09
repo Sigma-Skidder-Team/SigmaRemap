@@ -102,7 +102,7 @@ public class SimsESP extends Module {
                 if (var5 != mc.player && !Client.getInstance().getCombatManager().method29346(var5)) {
                     method16216(
                             var5.lastTickPosX + (var5.getPosX() - var5.lastTickPosX) * (double) Minecraft.getInstance().timer.renderPartialTicks,
-                            var5.lastTickPosY + (double) var5.method3430() + (var5.getPosY() - var5.lastTickPosY) * (double) Minecraft.getInstance().timer.renderPartialTicks,
+                            var5.lastTickPosY + (double) var5.getHeight() + (var5.getPosY() - var5.lastTickPosY) * (double) Minecraft.getInstance().timer.renderPartialTicks,
                             var5.lastTickPosZ + (var5.getPosZ() - var5.lastTickPosZ) * (double) Minecraft.getInstance().timer.renderPartialTicks,
                             var5
                     );

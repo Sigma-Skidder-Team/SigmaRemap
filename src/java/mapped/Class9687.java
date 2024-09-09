@@ -210,8 +210,8 @@ public class Class9687 {
             if (var0.method38161() == 31 && var0.method38165() == 0) {
                var5 = 512;
             } else if (!Class6380.field27947.method18533().containsKey(var5 & -16)) {
-               if (!Class8042.method27612().method21941() || Class8042.method27614().method34425()) {
-                  Class8042.method27613().method27366().warning("Failed to get 1.13 item for " + var0.method38161());
+               if (!ViaVersion3.method27612().method21941() || ViaVersion3.method27614().method34425()) {
+                  ViaVersion3.method27613().method27366().warning("Failed to get 1.13 item for " + var0.method38161());
                }
 
                var5 = 16;
@@ -288,8 +288,8 @@ public class Class9687 {
          }
 
          if (var3 == null) {
-            if (!Class8042.method27612().method21941() || Class8042.method27614().method34425()) {
-               Class8042.method27613().method27366().warning("Failed to get 1.12 item for " + var0.method38161());
+            if (!ViaVersion3.method27612().method21941() || ViaVersion3.method27614().method34425()) {
+               ViaVersion3.method27613().method27366().warning("Failed to get 1.12 item for " + var0.method38161());
             }
 
             var3 = 65536;

@@ -39,7 +39,7 @@ public class Class3356 extends Class3241 {
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.method23448(var4.getBlock())) {
+      if (!var1.isIn(var4.getBlock())) {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class955) {
             ((Class955)var8).method3865();
@@ -48,7 +48,7 @@ public class Class3356 extends Class3241 {
    }
 
    @Override
-   public void method11551(Class1660 var1, BlockPos var2, BlockState var3) {
+   public void onPlayerDestroy(Class1660 var1, BlockPos var2, BlockState var3) {
       BlockPos var6 = var2.method8349(var3.<Direction>method23463(field18896).method536());
       BlockState var7 = var1.getBlockState(var6);
       if (var7.getBlock() instanceof Class3435 && var7.<Boolean>method23463(Class3435.field19202)) {

@@ -30,7 +30,7 @@ public class Class6693 extends Class6691 {
    public CompoundNBT method20413() {
       CompoundNBT var3 = new CompoundNBT();
       var3.put("Entity", this.field29314);
-      var3.method102("Weight", this.field29309);
+      var3.putInt("Weight", this.field29309);
       return var3;
    }
 

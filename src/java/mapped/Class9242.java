@@ -16,7 +16,7 @@ public class Class9242 {
    public int field42526;
    public int field42527;
    public Class8066[] field42528;
-   private Map<Class7481, Class8836[]> field42529 = new HashMap<Class7481, Class8836[]>();
+   private Map<ChunkPos, Class8836[]> field42529 = new HashMap<ChunkPos, Class8836[]>();
 
    public Class9242(Class9016 var1, World var2, int var3, WorldRenderer var4) {
       this.field42523 = var4;
@@ -124,7 +124,7 @@ public class Class9242 {
       BlockPos var4 = var1.method27718();
       int var5 = var4.getX() >> 8 << 8;
       int var6 = var4.getZ() >> 8 << 8;
-      Class7481 var7 = new Class7481(var5, var6);
+      ChunkPos var7 = new ChunkPos(var5, var6);
       RenderType[] var8 = RenderType.field21819;
       Class8836[] var9 = this.field42529.get(var7);
       if (var9 == null) {
@@ -147,7 +147,7 @@ public class Class9242 {
    }
 
    public void method34763() {
-      for (Class7481 var4 : this.field42529.keySet()) {
+      for (ChunkPos var4 : this.field42529.keySet()) {
          Class8836[] var5 = this.field42529.get(var4);
 
          for (int var6 = 0; var6 < var5.length; var6++) {

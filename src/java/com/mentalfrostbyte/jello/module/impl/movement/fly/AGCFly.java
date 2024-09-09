@@ -36,20 +36,20 @@ public class AGCFly extends Module {
     }
 
     @EventTarget
-    private void method16780(Class4430 var1) {
+    private void method16780(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.method13977() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                var1.method13900(true);
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+                var1.setCancelled(true);
                 this.field23904 = true;
             }
         }
     }
 
     @EventTarget
-    private void method16781(Class4426 var1) {
+    private void method16781(MouseHoverEvent var1) {
         if (this.isEnabled()) {
             if (var1.method13973() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                var1.method13900(true);
+                var1.setCancelled(true);
                 this.field23904 = false;
             }
         }
@@ -57,51 +57,51 @@ public class AGCFly extends Module {
 
     @Override
     public void onDisable() {
-        Class9567.method37090(0.0);
-        if (mc.player.getVec().y > 0.0) {
+        MovementUtils.method37090(0.0);
+        if (mc.player.getMotion().y > 0.0) {
             ColorUtils.method17725(-0.0789);
         }
     }
 
     @EventTarget
     @LowerPriority
-    public void method16782(Class4435 var1) {
+    public void method16782(EventMove var1) {
         if (this.isEnabled()) {
             if (this.field23902 <= (this.field23903 != 3 ? this.field23903 : 1) - 2) {
                 if (this.field23902 == -1) {
-                    var1.method13995(this.field23903 != 3 ? 0.001 : 0.095);
+                    var1.setY(this.field23903 != 3 ? 0.001 : 0.095);
                     if (this.field23903 != 3) {
-                        Class9567.method37088(var1, 0.32);
+                        MovementUtils.method37088(var1, 0.32);
                     }
 
-                    ColorUtils.method17725(var1.method13994());
+                    ColorUtils.method17725(var1.getY());
                 }
             } else {
-                var1.method13995(0.0);
-                Class9567.method37088(var1, 0.0);
+                var1.setY(0.0);
+                MovementUtils.method37088(var1, 0.0);
             }
         }
     }
 
     @EventTarget
-    public void method16783(Class4399 var1) {
+    public void method16783(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             this.field23902++;
             if (this.field23902 != (this.field23903 != 3 ? this.field23903 : 1)) {
                 if (this.field23902 > (this.field23903 != 3 ? this.field23903 : 1)) {
                     if (this.field23902 % 20 != 0) {
-                        var1.method13900(true);
+                        var1.setCancelled(true);
                     } else {
                         double var4 = this.method16785();
-                        var1.method13912(var4 - 1.0E-4);
+                        var1.setY(var4 - 1.0E-4);
                         var1.method13908(true);
-                        var1.method13920(true);
+                        var1.setGround(true);
                     }
                 }
             } else {
                 double var6 = this.method16785();
-                var1.method13912(var6 - 1.0E-4);
-                var1.method13920(true);
+                var1.setY(var6 - 1.0E-4);
+                var1.setGround(true);
                 var1.method13908(true);
                 this.field23903 = !this.field23904
                         ? (!mc.gameSettings.keyBindJump.isKeyDown() ? 1 : 3)
@@ -120,8 +120,8 @@ public class AGCFly extends Module {
                     this.field23902 = -1;
                 }
 
-                var5.field24300 = mc.player.rotationYaw;
-                var5.field24301 = mc.player.rotationPitch;
+                var5.yaw = mc.player.rotationYaw;
+                var5.pitch = mc.player.rotationPitch;
             }
         }
     }
@@ -130,7 +130,7 @@ public class AGCFly extends Module {
         if (!(mc.player.getPositionVec().y < 1.0)) {
             if (!mc.player.onGround) {
                 AxisAlignedBB var3 = mc.player.boundingBox.method19662(0.0, -mc.player.getPositionVec().y, 0.0);
-                Iterator var4 = mc.world.method7055(mc.player, var3).iterator();
+                Iterator var4 = mc.world.getCollisionShapes(mc.player, var3).iterator();
                 double var5 = -1.0;
                 BlockPos var7 = null;
 

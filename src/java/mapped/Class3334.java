@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 public class Class3334 extends Item {
    public Class3334(Class5643 var1) {
       super(var1);
-      Class3357.method11931(this, Class3279.field18780);
+      Class3357.method11931(this, ArmorItem.field18780);
    }
 
    @Override
@@ -37,7 +37,7 @@ public class Class3334 extends Item {
    @Override
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
-      var2.method3154(var3);
+      var2.setActiveHand(var3);
       return Class6794.<ItemStack>method20697(var6);
    }
 

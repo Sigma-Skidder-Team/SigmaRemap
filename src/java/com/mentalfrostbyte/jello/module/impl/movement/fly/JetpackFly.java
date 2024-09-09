@@ -13,8 +13,8 @@ public class JetpackFly extends Module {
     @EventTarget
     public void onTick(TickEvent event) {
         if (this.isEnabled()) {
-            if (mc.player.field4981) {
-                mc.player.method2914();
+            if (mc.player.isJumping) {
+                mc.player.jump();
             }
         }
     }

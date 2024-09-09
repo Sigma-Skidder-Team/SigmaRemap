@@ -20,41 +20,41 @@ import net.minecraft.util.text.TranslationTextComponent;
 public class Class9741 {
    private static final IFormattableTextComponent field45485 = new TranslationTextComponent("effect.none").mergeStyle(TextFormatting.GRAY);
 
-   public static List<Class2023> method38176(ItemStack var0) {
+   public static List<EffectInstance> method38176(ItemStack var0) {
       return method38178(var0.method32142());
    }
 
-   public static List<Class2023> method38177(Class8812 var0, Collection<Class2023> var1) {
+   public static List<EffectInstance> method38177(Class8812 var0, Collection<EffectInstance> var1) {
       ArrayList var4 = Lists.newArrayList();
       var4.addAll(var0.method31816());
       var4.addAll(var1);
       return var4;
    }
 
-   public static List<Class2023> method38178(CompoundNBT var0) {
+   public static List<EffectInstance> method38178(CompoundNBT var0) {
       ArrayList var3 = Lists.newArrayList();
       var3.addAll(method38186(var0).method31816());
       method38181(var0, var3);
       return var3;
    }
 
-   public static List<Class2023> method38179(ItemStack var0) {
+   public static List<EffectInstance> method38179(ItemStack var0) {
       return method38180(var0.method32142());
    }
 
-   public static List<Class2023> method38180(CompoundNBT var0) {
+   public static List<EffectInstance> method38180(CompoundNBT var0) {
       ArrayList var3 = Lists.newArrayList();
       method38181(var0, var3);
       return var3;
    }
 
-   public static void method38181(CompoundNBT var0, List<Class2023> var1) {
+   public static void method38181(CompoundNBT var0, List<EffectInstance> var1) {
       if (var0 != null && var0.contains("CustomPotionEffects", 9)) {
          ListNBT var4 = var0.method131("CustomPotionEffects", 10);
 
          for (int var5 = 0; var5 < var4.size(); var5++) {
             CompoundNBT var6 = var4.method153(var5);
-            Class2023 var7 = Class2023.method8639(var6);
+            EffectInstance var7 = EffectInstance.method8639(var6);
             if (var7 != null) {
                var1.add(var7);
             }
@@ -75,7 +75,7 @@ public class Class9741 {
       return var0 != Class8137.field34976 ? method38184(var0.method31816()) : 16253176;
    }
 
-   public static int method38184(Collection<Class2023> var0) {
+   public static int method38184(Collection<EffectInstance> var0) {
       int var3 = 3694022;
       if (!var0.isEmpty()) {
          float var4 = 0.0F;
@@ -83,11 +83,11 @@ public class Class9741 {
          float var6 = 0.0F;
          int var7 = 0;
 
-         for (Class2023 var9 : var0) {
+         for (EffectInstance var9 : var0) {
             if (var9.method8631()) {
-               int var10 = var9.method8627().method22297();
+               int var10 = var9.getPotion().method22297();
                if (Class7944.method26911()) {
-                  var10 = Class9680.method37891(var9.method8627(), var10);
+                  var10 = Class9680.method37891(var9.getPotion(), var10);
                }
 
                int var11 = var9.method8629() + 1;
@@ -130,14 +130,14 @@ public class Class9741 {
       return var0;
    }
 
-   public static ItemStack method38188(ItemStack var0, Collection<Class2023> var1) {
+   public static ItemStack method38188(ItemStack var0, Collection<EffectInstance> var1) {
       if (var1.isEmpty()) {
          return var0;
       } else {
          CompoundNBT var4 = var0.getOrCreateTag();
          ListNBT var5 = var4.method131("CustomPotionEffects", 9);
 
-         for (Class2023 var7 : var1) {
+         for (EffectInstance var7 : var1) {
             var5.add(var7.method8637(new CompoundNBT()));
          }
 
@@ -147,17 +147,17 @@ public class Class9741 {
    }
 
    public static void method38189(ItemStack var0, List<ITextComponent> var1, float var2) {
-      List<Class2023> var5 = method38176(var0);
+      List<EffectInstance> var5 = method38176(var0);
       ArrayList<Pair> var6 = Lists.newArrayList();
       if (!var5.isEmpty()) {
-         for (Class2023 var8 : var5) {
+         for (EffectInstance var8 : var5) {
             TranslationTextComponent var9 = new TranslationTextComponent(var8.method8636());
-            Effect var10 = var8.method8627();
-            Map<Class4869, Class9689> var11 = var10.method22299();
+            Effect var10 = var8.getPotion();
+            Map<Attribute, AttributeModifier> var11 = var10.method22299();
             if (!var11.isEmpty()) {
                for (Entry var13 : var11.entrySet()) {
-                  Class9689 var14 = (Class9689)var13.getValue();
-                  Class9689 var15 = new Class9689(var14.method37931(), var10.method22302(var8.method8629(), var14), var14.method37932());
+                  AttributeModifier var14 = (AttributeModifier)var13.getValue();
+                  AttributeModifier var15 = new AttributeModifier(var14.method37931(), var10.method22302(var8.method8629(), var14), var14.method37932());
                   var6.add(new Pair(var13.getKey(), var15));
                }
             }
@@ -181,7 +181,7 @@ public class Class9741 {
          var1.add(new TranslationTextComponent("potion.whenDrank").mergeStyle(TextFormatting.DARK_PURPLE));
 
          for (Pair var21 : var6) {
-            Class9689 var22 = (Class9689)var21.getSecond();
+            AttributeModifier var22 = (AttributeModifier)var21.getSecond();
             double var16 = var22.method37933();
             double var18;
             if (var22.method37932() != AttributeModifierOperation.field13353 && var22.method37932() != AttributeModifierOperation.MULTIPLY_TOTAL) {
@@ -197,7 +197,7 @@ public class Class9741 {
                      new TranslationTextComponent(
                            "attribute.modifier.take." + var22.method37932().method8685(),
                            ItemStack.field39974.format(var18),
-                           new TranslationTextComponent(((Class4869)var21.getFirst()).method15032())
+                           new TranslationTextComponent(((Attribute)var21.getFirst()).method15032())
                         )
                         .mergeStyle(TextFormatting.RED)
                   );
@@ -207,7 +207,7 @@ public class Class9741 {
                   new TranslationTextComponent(
                         "attribute.modifier.plus." + var22.method37932().method8685(),
                         ItemStack.field39974.format(var18),
-                        new TranslationTextComponent(((Class4869)var21.getFirst()).method15032())
+                        new TranslationTextComponent(((Attribute)var21.getFirst()).method15032())
                      )
                      .mergeStyle(TextFormatting.BLUE)
                );

@@ -42,11 +42,11 @@ public class Class3385 extends Block implements Class3196 {
 
       for (BlockPos var10 : BlockPos.method8359(var3.method8336(-1, -1, -1), var3.method8336(1, 1, 1))) {
          BlockState var11 = var1.getBlockState(var10);
-         if (var11.method23448(Blocks.field37074)) {
+         if (var11.isIn(Blocks.field37074)) {
             var8 = true;
          }
 
-         if (var11.method23448(Blocks.field37083)) {
+         if (var11.isIn(Blocks.field37083)) {
             var7 = true;
          }
 

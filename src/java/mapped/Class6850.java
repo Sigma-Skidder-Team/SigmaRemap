@@ -99,7 +99,7 @@ public class Class6850 {
    }
 
    public boolean method20831(double var1) {
-      return this.field29762 != null && this.field29762.method29310(MathHelper.method37778(var1, -1.0, 1.0));
+      return this.field29762 != null && this.field29762.method29310(MathHelper.clamp(var1, -1.0, 1.0));
    }
 
    public boolean method20832(double var1, double var3, int var5) {

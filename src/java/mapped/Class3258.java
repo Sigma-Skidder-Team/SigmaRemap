@@ -25,7 +25,7 @@ public class Class3258 extends Item {
       ItemStack var6 = var2.getHeldItem(var3);
       CompoundNBT var7 = var6.method32142();
       if (!var2.abilities.isCreativeMode) {
-         var2.method3095(var3, ItemStack.EMPTY);
+         var2.setHeldItem(var3, ItemStack.EMPTY);
       }
 
       if (var7 != null && var7.contains("Recipes", 9)) {
@@ -46,7 +46,7 @@ public class Class3258 extends Item {
             }
 
             var2.method2778(var9);
-            var2.method2913(Class8876.field40098.method172(this));
+            var2.addStat(Stats.field40098.method172(this));
          }
 
          return Class6794.<ItemStack>method20700(var6, var1.isRemote());

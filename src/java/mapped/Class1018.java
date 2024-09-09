@@ -36,8 +36,8 @@ public abstract class Class1018 extends Class1045 {
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
+   public void livingEntity() {
+      super.livingEntity();
       if (this.method4767() != 0) {
          this.field5702 = 0;
       }
@@ -48,16 +48,16 @@ public abstract class Class1018 extends Class1045 {
             double var3 = this.rand.nextGaussian() * 0.02;
             double var5 = this.rand.nextGaussian() * 0.02;
             double var7 = this.rand.nextGaussian() * 0.02;
-            this.world.method6746(ParticleTypes.field34080, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var3, var5, var7);
+            this.world.addParticle(ParticleTypes.field34080, this.getPosXRandom(1.0), this.getPosYRandom() + 0.5, this.getPosZRandom(1.0), var3, var5, var7);
          }
       }
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (!this.method2760(var1)) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (!this.isInvulnerableTo(var1)) {
          this.field5702 = 0;
-         return super.method2741(var1, var2);
+         return super.attackEntityFrom(var1, var2);
       } else {
          return false;
       }
@@ -65,13 +65,13 @@ public abstract class Class1018 extends Class1045 {
 
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
-      return !var2.getBlockState(var1.down()).method23448(Blocks.field36395) ? var2.method7009(var1) - 0.5F : 10.0F;
+      return !var2.getBlockState(var1.down()).isIn(Blocks.field36395) ? var2.method7009(var1) - 0.5F : 10.0F;
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("InLove", this.field5702);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("InLove", this.field5702);
       if (this.field5703 != null) {
          var1.method104("LoveCause", this.field5703);
       }
@@ -83,14 +83,14 @@ public abstract class Class1018 extends Class1045 {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field5702 = var1.getInt("InLove");
       this.field5703 = !var1.method106("LoveCause") ? null : var1.method105("LoveCause");
    }
 
    public static boolean method4500(EntityType<? extends Class1018> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.getBlockState(var3.down()).method23448(Blocks.field36395) && var1.method7021(var3, 0) > 8;
+      return var1.getBlockState(var3.down()).isIn(Blocks.field36395) && var1.method7021(var3, 0) > 8;
    }
 
    @Override
@@ -104,7 +104,7 @@ public abstract class Class1018 extends Class1045 {
    }
 
    @Override
-   public int method2937(PlayerEntity var1) {
+   public int getExperiencePoints(PlayerEntity var1) {
       return 1 + this.world.rand.nextInt(3);
    }
 
@@ -120,10 +120,10 @@ public abstract class Class1018 extends Class1045 {
          if (!this.world.isRemote && var6 == 0 && this.method4502()) {
             this.method4501(var1, var5);
             this.method4503(var1);
-            return ActionResultType.field14818;
+            return ActionResultType.SUCCESS;
          }
 
-         if (this.method3005()) {
+         if (this.isChild()) {
             this.method4501(var1, var5);
             this.method4768((int)((float)(-var6 / 20) * 0.1F), true);
             return ActionResultType.method9002(this.world.isRemote);
@@ -153,7 +153,7 @@ public abstract class Class1018 extends Class1045 {
          this.field5703 = var1.getUniqueID();
       }
 
-      this.world.method6786(this, (byte)18);
+      this.world.setEntityState(this, (byte)18);
    }
 
    public void method4504(int var1) {
@@ -199,7 +199,7 @@ public abstract class Class1018 extends Class1045 {
          }
 
          if (var6 != null) {
-            var6.method2911(Class8876.field40136);
+            var6.method2911(Stats.field40136);
             CriteriaTriggers.field44479.method15112(var6, this, var2, var5);
          }
 
@@ -208,25 +208,25 @@ public abstract class Class1018 extends Class1045 {
          this.method4508();
          var2.method4508();
          var5.method4308(true);
-         var5.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), 0.0F, 0.0F);
+         var5.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), 0.0F, 0.0F);
          var1.method6995(var5);
-         var1.method6786(this, (byte)18);
-         if (var1.method6789().method17135(Class5462.field24227)) {
-            var1.method6916(new ExperienceOrbEntity(var1, this.getPosX(), this.getPosY(), this.getPosZ(), this.method3013().nextInt(7) + 1));
+         var1.setEntityState(this, (byte)18);
+         if (var1.getGameRules().getBoolean(Class5462.field24227)) {
+            var1.addEntity(new ExperienceOrbEntity(var1, this.getPosX(), this.getPosY(), this.getPosZ(), this.getRNG().nextInt(7) + 1));
          }
       }
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 18) {
-         super.method2866(var1);
+         super.handleStatusUpdate(var1);
       } else {
          for (int var4 = 0; var4 < 7; var4++) {
             double var5 = this.rand.nextGaussian() * 0.02;
             double var7 = this.rand.nextGaussian() * 0.02;
             double var9 = this.rand.nextGaussian() * 0.02;
-            this.world.method6746(ParticleTypes.field34080, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var5, var7, var9);
+            this.world.addParticle(ParticleTypes.field34080, this.getPosXRandom(1.0), this.getPosYRandom() + 0.5, this.getPosZRandom(1.0), var5, var7, var9);
          }
       }
    }

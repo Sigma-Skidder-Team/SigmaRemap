@@ -1,27 +1,27 @@
 package com.mentalfrostbyte.jello.event.impl;
 
 import com.mentalfrostbyte.jello.event.Class4416;
-import mapped.Class1893;
+import mapped.Situation;
 
 public class SafeWalkEvent extends Class4416 {
     private static String[] field21544;
-    public boolean field21545;
-    public Class1893 field21546;
+    public boolean onEdge;
+    public Situation situation;
 
     public SafeWalkEvent(boolean var1) {
-        this.field21545 = var1;
-        this.field21546 = Class1893.field11097;
+        this.onEdge = var1;
+        this.situation = Situation.field11097;
     }
 
-    public Class1893 method13965() {
-        return this.field21546;
+    public Situation method13965() {
+        return this.situation;
     }
 
     public void setSafe(boolean var1) {
-        this.field21546 = !var1 ? Class1893.field11099 : Class1893.field11098;
+        this.situation = !var1 ? Situation.SAFE : Situation.PLAYER;
     }
 
     public boolean method13967() {
-        return this.field21545;
+        return this.onEdge;
     }
 }

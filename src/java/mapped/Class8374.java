@@ -13,7 +13,7 @@ public class Class8374 extends MessageToMessageEncoder<ByteBuf> {
 
    public void encode(ChannelHandlerContext var1, ByteBuf var2, List<Object> var3) throws Exception {
       if (var2.readableBytes() == 0) {
-         throw Class8042.method27614().method34425() ? new Class2449() : Class2449.field16532;
+         throw ViaVersion3.method27614().method34425() ? new ViaVersion4() : ViaVersion4.field16532;
       } else {
          var2.retain();
          this.field35936.method22447();
@@ -42,7 +42,7 @@ public class Class8374 extends MessageToMessageEncoder<ByteBuf> {
    }
 
    public void exceptionCaught(ChannelHandlerContext var1, Throwable var2) throws Exception {
-      if (!Class8190.method28486(var2, Class2449.class)) {
+      if (!Class8190.method28486(var2, ViaVersion4.class)) {
          super.exceptionCaught(var1, var2);
       }
    }

@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.gui.jello;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import mapped.Class5968;
@@ -52,7 +52,7 @@ public class MusicParticles extends PremiumModule {
     }
 
     @EventTarget
-    private void method16463(Class4415 var1) {
+    private void method16463(EventRender var1) {
         if (this.isEnabled() && mc.player != null) {
             if (Client.getInstance().getMusicManager().method24319() && Client.getInstance().getMusicManager().field32163.size() != 0) {
                 long var4 = System.nanoTime() - this.field23676;

@@ -49,28 +49,28 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(this.method5030(), 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(this.method5030(), 0.15F, 1.0F);
    }
 
    public abstract SoundEvent method5030();
 
    @Override
-   public Class7809 method3089() {
-      return Class7809.field33506;
+   public CreatureAttribute getCreatureAttribute() {
+      return CreatureAttribute.field33506;
    }
 
    @Override
-   public void method2871() {
+   public void livingEntity() {
       boolean var3 = this.method4310();
       if (var3) {
-         ItemStack var4 = this.method2943(Class2106.field13736);
+         ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.field13736);
          if (!var4.isEmpty()) {
             if (var4.method32115()) {
                var4.method32118(var4.method32117() + this.rand.nextInt(2));
                if (var4.method32117() >= var4.method32119()) {
-                  this.method3184(Class2106.field13736);
-                  this.method2944(Class2106.field13736, ItemStack.EMPTY);
+                  this.sendBreakAnimation(EquipmentSlotType.field13736);
+                  this.setItemStackToSlot(EquipmentSlotType.field13736, ItemStack.EMPTY);
                }
             }
 
@@ -78,26 +78,26 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
          }
 
          if (var3) {
-            this.method3221(8);
+            this.setFire(8);
          }
       }
 
-      super.method2871();
+      super.livingEntity();
    }
 
    @Override
-   public void method2868() {
-      super.method2868();
+   public void updateRidden() {
+      super.updateRidden();
       if (this.getRidingEntity() instanceof Class1046) {
          Class1046 var3 = (Class1046)this.getRidingEntity();
-         this.field4965 = var3.field4965;
+         this.renderYawOffset = var3.renderYawOffset;
       }
    }
 
    @Override
    public void method4270(Class9755 var1) {
       super.method4270(var1);
-      this.method2944(Class2106.field13731, new ItemStack(Items.BOW));
+      this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.BOW));
    }
 
    @Nullable
@@ -108,13 +108,13 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
       this.method4273(var2);
       this.method5031();
       this.method4281(this.rand.nextFloat() < 0.55F * var2.method38330());
-      if (this.method2943(Class2106.field13736).isEmpty()) {
+      if (this.getItemStackFromSlot(EquipmentSlotType.field13736).isEmpty()) {
          LocalDate var8 = LocalDate.now();
          int var9 = var8.get(ChronoField.DAY_OF_MONTH);
          int var10 = var8.get(ChronoField.MONTH_OF_YEAR);
          if (var10 == 10 && var9 == 31 && this.rand.nextFloat() < 0.25F) {
-            this.method2944(Class2106.field13736, new ItemStack(!(this.rand.nextFloat() < 0.1F) ? Blocks.field36589 : Blocks.field36590));
-            this.field5607[Class2106.field13736.method8773()] = 0.0F;
+            this.setItemStackToSlot(EquipmentSlotType.field13736, new ItemStack(!(this.rand.nextFloat() < 0.1F) ? Blocks.field36589 : Blocks.field36590));
+            this.field5607[EquipmentSlotType.field13736.method8773()] = 0.0F;
          }
       }
 
@@ -142,15 +142,15 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
 
    @Override
    public void method4530(LivingEntity var1, float var2) {
-      ItemStack var5 = this.method2983(this.getHeldItem(Class9456.method36389(this, Items.BOW)));
+      ItemStack var5 = this.findAmmo(this.getHeldItem(Class9456.method36389(this, Items.BOW)));
       AbstractArrowEntity var6 = this.method5032(var5, var2);
       double var7 = var1.getPosX() - this.getPosX();
-      double var9 = var1.method3440(0.3333333333333333) - var6.getPosY();
+      double var9 = var1.getPosYHeight(0.3333333333333333) - var6.getPosY();
       double var11 = var1.getPosZ() - this.getPosZ();
-      double var13 = (double) MathHelper.method37766(var7 * var7 + var11 * var11);
+      double var13 = (double) MathHelper.sqrt(var7 * var7 + var11 * var11);
       var6.shoot(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.world.method6997().getId() * 4));
-      this.method2863(SoundEvents.field27070, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
-      this.world.method6916(var6);
+      this.playSound(SoundEvents.field27070, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+      this.world.addEntity(var6);
    }
 
    public AbstractArrowEntity method5032(ItemStack var1, float var2) {
@@ -163,21 +163,21 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method5031();
    }
 
    @Override
-   public void method2944(Class2106 var1, ItemStack var2) {
-      super.method2944(var1, var2);
+   public void setItemStackToSlot(EquipmentSlotType var1, ItemStack var2) {
+      super.setItemStackToSlot(var1, var2);
       if (!this.world.isRemote) {
          this.method5031();
       }
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return 1.74F;
    }
 

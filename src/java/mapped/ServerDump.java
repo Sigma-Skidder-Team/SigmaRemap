@@ -20,15 +20,15 @@ public class ServerDump extends Class6255 {
          System.getProperty("os.name"),
          Class9019.field41258,
          Class9019.method33359(),
-         Class8042.method27613().getClientName(),
-         Class8042.method27613().getType(),
-         Class8042.method27613().getVersion(),
-         Class9191.class.getPackage().getImplementationVersion(),
-         Class8042.method27614().method34430()
+         ViaVersion3.method27613().getClientName(),
+         ViaVersion3.method27613().getType(),
+         ViaVersion3.method27613().getVersion(),
+         ViaVersion1.class.getPackage().getImplementationVersion(),
+         ViaVersion3.method27614().method34430()
       );
-      Map var6 = Class8042.method27613().method27362().method21882();
-      Class7801 var7 = new Class7801(var5, var6, Class8042.method27613().method27364(), Class8042.method27614().method34427().method20577());
-      Class8042.method27613().method27353(new Class324(this, var1, var5, var7));
+      Map var6 = ViaVersion3.method27613().method27362().method21882();
+      Class7801 var7 = new Class7801(var5, var6, ViaVersion3.method27613().method27364(), ViaVersion3.method27614().method34427().method20577());
+      ViaVersion3.method27613().method27353(new ViaVersion8(this, var1, var5, var7));
       return true;
    }
 

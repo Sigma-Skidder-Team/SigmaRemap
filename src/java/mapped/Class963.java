@@ -14,7 +14,7 @@ public class Class963 extends TileEntity {
    @Override
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
-      var1.method102("OutputSignal", this.field5394);
+      var1.putInt("OutputSignal", this.field5394);
       return var1;
    }
 

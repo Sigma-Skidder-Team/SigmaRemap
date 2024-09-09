@@ -28,7 +28,7 @@ public abstract class Class3350 extends Class3241 {
          this.method11918(var2, var3, var4);
          return ActionResultType.field14819;
       } else {
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       }
    }
 
@@ -51,7 +51,7 @@ public abstract class Class3350 extends Class3241 {
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.method23448(var4.getBlock())) {
+      if (!var1.isIn(var4.getBlock())) {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class924) {
             Class7236.method22721(var2, var3, (Class924)var8);
@@ -70,7 +70,7 @@ public abstract class Class3350 extends Class3241 {
 
    @Override
    public int method11649(BlockState var1, World var2, BlockPos var3) {
-      return Class5812.method18151(var2.getTileEntity(var3));
+      return Container.calcRedstone(var2.getTileEntity(var3));
    }
 
    @Override

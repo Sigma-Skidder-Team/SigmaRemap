@@ -31,11 +31,11 @@ public class Class4171 extends Class4167 {
    @Override
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
-      var1.method102("Seed", this.field20433);
+      var1.putInt("Seed", this.field20433);
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       Random var10 = new Random((long)this.field20433);
 
       for (int var11 = 0; var11 <= 4; var11++) {

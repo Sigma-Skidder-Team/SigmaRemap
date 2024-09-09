@@ -24,8 +24,8 @@ public class Class4748 extends Class4747<Class8173, Class6051> {
    }
 
    public Class8173 method14893(ByteBuf var1, Class6051 var2) throws Exception {
-      boolean var5 = var2.method18672().method22465().method18683().method19390(Class6362.class) && Class8042.method27612().method21911();
-      int var6 = Class8042.method27612().method21912();
+      boolean var5 = var2.method18672().method22465().method18683().method19390(Class6362.class) && ViaVersion3.method27612().method21911();
+      int var6 = ViaVersion3.method27612().method21912();
       int var7 = var1.readInt();
       int var8 = var1.readInt();
       long var9 = method14896(var7, var8);
@@ -91,7 +91,7 @@ public class Class4748 extends Class4747<Class8173, Class6051> {
             }
 
             if (var24 > 0) {
-               Class8042.method27613().method27366().log(Level.WARNING, var24 + " Bytes left after reading chunks! (" + var11 + ")");
+               ViaVersion3.method27613().method27366().log(Level.WARNING, var24 + " Bytes left after reading chunks! (" + var11 + ")");
             }
 
             return new Class8172(var7, var8, var11, var12, var15, var16, new ArrayList<Class72>());

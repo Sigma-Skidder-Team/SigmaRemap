@@ -31,7 +31,7 @@ public class Class3489 extends Class3194 {
 
    @Override
    public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.method23448(Blocks.SOUL_SAND);
+      return var1.isIn(Blocks.SOUL_SAND);
    }
 
    @Override

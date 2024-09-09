@@ -12,7 +12,7 @@ public class Class5946 extends Class5942<Class950> {
    }
 
    public void method18462(Class950 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
-      long var9 = var1.method3734().method6783();
+      long var9 = var1.method3734().getGameTime();
       List var11 = var1.method3823();
       int var12 = 0;
 

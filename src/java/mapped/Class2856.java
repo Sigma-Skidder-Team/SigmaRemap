@@ -145,8 +145,8 @@ public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
 
    public void method10997(T var1, float var2, float var3, float var4) {
       super.method10997(var1, var2, var3, var4);
-      float var7 = MathHelper.method37828(var1.field4966, var1.field4965, var4);
-      float var8 = MathHelper.method37828(var1.field4968, var1.field4967, var4);
+      float var7 = MathHelper.method37828(var1.prevRenderYawOffset, var1.renderYawOffset, var4);
+      float var8 = MathHelper.method37828(var1.prevRotationYawHead, var1.rotationYawHead, var4);
       float var9 = MathHelper.lerp(var4, var1.prevRotationPitch, var1.rotationPitch);
       float var10 = var8 - var7;
       float var11 = var9 * (float) (Math.PI / 180.0);
@@ -173,7 +173,7 @@ public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
       this.field17692.field31035 = 0.0F;
       this.field17693.field31035 = (float) (Math.PI / 6) + var11;
       this.field17693.field31036 = var10 * (float) (Math.PI / 180.0);
-      float var18 = !var1.method3250() ? 1.0F : 0.2F;
+      float var18 = !var1.isInWater() ? 1.0F : 0.2F;
       float var19 = MathHelper.cos(var18 * var2 * 0.6662F + (float) Math.PI);
       float var20 = var19 * 0.8F * var3;
       float var21 = (1.0F - Math.max(var13, var12)) * ((float) (Math.PI / 6) + var11 + var15 * MathHelper.sin(var17) * 0.05F);
@@ -215,7 +215,7 @@ public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
       this.field17701.field31033 = this.field17697.field31033;
       this.field17701.field31034 = this.field17697.field31034;
       this.field17701.field31035 = this.field17697.field31035;
-      boolean var26 = var1.method3005();
+      boolean var26 = var1.isChild();
       this.field17694.field31039 = !var26;
       this.field17695.field31039 = !var26;
       this.field17696.field31039 = !var26;

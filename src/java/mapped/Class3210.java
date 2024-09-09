@@ -21,12 +21,12 @@ public class Class3210 extends Block {
    }
 
    @Override
-   public void method11561(World var1, BlockPos var2, Entity var3) {
-      if (!var3.method3249() && var3 instanceof LivingEntity && !Class7858.method26332((LivingEntity)var3)) {
-         var3.method2741(DamageSource.field38996, 1.0F);
+   public void onEntityWalk(World var1, BlockPos var2, Entity var3) {
+      if (!var3.isImmuneToFire() && var3 instanceof LivingEntity && !EnchantmentHelper.method26332((LivingEntity)var3)) {
+         var3.attackEntityFrom(DamageSource.field38996, 1.0F);
       }
 
-      super.method11561(var1, var2, var3);
+      super.onEntityWalk(var1, var2, var3);
    }
 
    @Override
@@ -36,7 +36,7 @@ public class Class3210 extends Block {
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      if (var2 == Direction.field673 && var3.method23448(Blocks.WATER)) {
+      if (var2 == Direction.field673 && var3.isIn(Blocks.WATER)) {
          var4.method6860().method20726(var5, this, 20);
       }
 
@@ -46,11 +46,11 @@ public class Class3210 extends Block {
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       BlockPos var7 = var3.up();
-      if (var2.getFluidState(var3).method23486(Class8953.field40469)) {
+      if (var2.getFluidState(var3).method23486(FluidTags.field40469)) {
          var2.method6742(
             (PlayerEntity)null, var3, SoundEvents.field26582, Class2266.field14732, 0.5F, 2.6F + (var2.rand.nextFloat() - var2.rand.nextFloat()) * 0.8F
          );
-         var2.method6939(
+         var2.spawnParticle(
             ParticleTypes.field34085, (double)var7.getX() + 0.5, (double)var7.getY() + 0.25, (double)var7.getZ() + 0.5, 8, 0.5, 0.25, 0.5, 0.0
          );
       }

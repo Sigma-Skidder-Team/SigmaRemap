@@ -68,7 +68,7 @@ public abstract class Class2699 extends Class2595 {
    }
 
    public double method10914() {
-      return this.field17153.method3086(Attributes.field42106);
+      return this.field17153.getAttributeValue(Attributes.field42106);
    }
 
    @Override
@@ -86,7 +86,7 @@ public abstract class Class2699 extends Class2595 {
 
    public boolean method10915(LivingEntity var1, Class8522 var2) {
       if (var1 != null) {
-         if (var2.method30210(this.field17153, var1)) {
+         if (var2.canTarget(this.field17153, var1)) {
             if (this.field17153.method4287(var1.getPosition())) {
                if (this.field17155) {
                   if (--this.field17157 <= 0) {
@@ -115,7 +115,7 @@ public abstract class Class2699 extends Class2595 {
    }
 
    private boolean method10916(LivingEntity var1) {
-      this.field17157 = 10 + this.field17153.method3013().nextInt(5);
+      this.field17157 = 10 + this.field17153.getRNG().nextInt(5);
       Class8238 var4 = this.field17153.method4230().method21652(var1, 0);
       if (var4 != null) {
          Class7176 var5 = var4.method28694();

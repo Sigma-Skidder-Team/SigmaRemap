@@ -9,7 +9,7 @@ import net.minecraft.world.IBlockReader;
 import javax.annotation.Nullable;
 import java.util.stream.Stream;
 
-public interface Class1662 extends Class1663, Class1668, Class1683 {
+public interface Class1662 extends Class1663, ICollisionReader, Class1683 {
    @Nullable
    IChunk getChunk(int var1, int var2, ChunkStatus var3, boolean var4);
 
@@ -70,7 +70,7 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
          if (this.method7022(var4)) {
             for (BlockPos var5 = var4.down(); var5.getY() > var1.getY(); var5 = var5.down()) {
                BlockState var6 = this.getBlockState(var5);
-               if (var6.getOpacity(this, var5) > 0 && !var6.method23384().method31085()) {
+               if (var6.getOpacity(this, var5) > 0 && !var6.getMaterial().isLiquid()) {
                   return false;
                }
             }
@@ -107,12 +107,12 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
 
    @Nullable
    @Override
-   default IBlockReader method6769(int var1, int var2) {
+   default IBlockReader getBlockReader(int var1, int var2) {
       return this.getChunk(var1, var2, ChunkStatus.field42133, false);
    }
 
    default boolean method7013(BlockPos var1) {
-      return this.getFluidState(var1).method23486(Class8953.field40469);
+      return this.getFluidState(var1).method23486(FluidTags.field40469);
    }
 
    default boolean method7014(AxisAlignedBB var1) {
@@ -154,7 +154,7 @@ public interface Class1662 extends Class1663, Class1668, Class1683 {
    }
 
    @Deprecated
-   default boolean method7018(BlockPos var1, BlockPos var2) {
+   default boolean isAreaLoaded(BlockPos var1, BlockPos var2) {
       return this.method7019(var1.getX(), var1.getY(), var1.getZ(), var2.getX(), var2.getY(), var2.getZ());
    }
 

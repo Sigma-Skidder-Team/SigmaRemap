@@ -28,9 +28,9 @@ public class Class6765 extends Class6764 {
    public Class7175 method20616(double var1, double var3, double var5) {
       return new Class7175(
          super.method20641(
-            MathHelper.floor(var1 - (double)(this.field29476.method3429() / 2.0F)),
+            MathHelper.floor(var1 - (double)(this.field29476.getWidth() / 2.0F)),
             MathHelper.floor(var3 + 0.5),
-            MathHelper.floor(var5 - (double)(this.field29476.method3429() / 2.0F))
+            MathHelper.floor(var5 - (double)(this.field29476.getWidth() / 2.0F))
          )
       );
    }
@@ -62,7 +62,7 @@ public class Class6765 extends Class6764 {
       if (var8.method23474() && var9.method23440(var1, var7.down(), Class1947.field12615) && var9.isAir()) {
          return Class2163.field14204;
       } else {
-         return var8.method23486(Class8953.field40469) && var9.method23440(var1, var7, Class1947.field12615) ? Class2163.field14191 : Class2163.field14184;
+         return var8.method23486(FluidTags.field40469) && var9.method23440(var1, var7, Class1947.field12615) ? Class2163.field14191 : Class2163.field14184;
       }
    }
 
@@ -102,7 +102,7 @@ public class Class6765 extends Class6764 {
                   return Class2163.field14204;
                }
 
-               if (!var10.method23486(Class8953.field40469)) {
+               if (!var10.method23486(FluidTags.field40469)) {
                   return Class2163.field14184;
                }
             }

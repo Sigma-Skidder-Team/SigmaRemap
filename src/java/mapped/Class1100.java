@@ -32,9 +32,9 @@ public class Class1100 extends Class1009 {
    }
 
    @Override
-   public void move(Class2107 var1, Vector3d var2) {
+   public void move(MoverType var1, Vector3d var2) {
       super.move(var1, var2);
-      this.method3240();
+      this.doBlockCollisions();
    }
 
    @Override
@@ -45,7 +45,7 @@ public class Class1100 extends Class1009 {
       this.method3248(true);
       if (this.field6054 && --this.field6055 <= 0) {
          this.field6055 = 20;
-         this.method2741(DamageSource.field39000, 1.0F);
+         this.attackEntityFrom(DamageSource.field39000, 1.0F);
       }
    }
 
@@ -73,8 +73,8 @@ public class Class1100 extends Class1009 {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("BoundX")) {
          this.field6053 = new BlockPos(var1.getInt("BoundX"), var1.getInt("BoundY"), var1.getInt("BoundZ"));
       }
@@ -85,16 +85,16 @@ public class Class1100 extends Class1009 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.field6053 != null) {
-         var1.method102("BoundX", this.field6053.getX());
-         var1.method102("BoundY", this.field6053.getY());
-         var1.method102("BoundZ", this.field6053.getZ());
+         var1.putInt("BoundX", this.field6053.getX());
+         var1.putInt("BoundY", this.field6053.getY());
+         var1.putInt("BoundZ", this.field6053.getZ());
       }
 
       if (this.field6054) {
-         var1.method102("LifeTicks", this.field6055);
+         var1.putInt("LifeTicks", this.field6055);
       }
    }
 
@@ -174,8 +174,8 @@ public class Class1100 extends Class1009 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.method2944(Class2106.field13731, new ItemStack(Items.field37820));
-      this.method4279(Class2106.field13731, 0.0F);
+      this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37820));
+      this.method4279(EquipmentSlotType.field13731, 0.0F);
    }
 
    // $VF: synthetic method

@@ -34,28 +34,28 @@ public class ItemFrameEntity extends Class995 {
       super(var1, var2);
    }
 
-   public ItemFrameEntity(World var1, BlockPos var2, Direction var3) {
+   public ItemFrameEntity(World var1, BlockPos var2, net.minecraft.util.Direction var3) {
       super(EntityType.field41043, var1, var2);
       this.method4077(var3);
    }
 
    @Override
-   public float method3181(Pose var1, EntitySize var2) {
+   public float getEyeHeight(Pose var1, EntitySize var2) {
       return 0.0F;
    }
 
    @Override
    public void registerData() {
-      this.method3210().register(field5492, ItemStack.EMPTY);
-      this.method3210().register(field5493, 0);
+      this.getDataManager().register(field5492, ItemStack.EMPTY);
+      this.getDataManager().register(field5493, 0);
    }
 
    @Override
-   public void method4077(Direction var1) {
+   public void method4077(net.minecraft.util.Direction var1) {
       Validate.notNull(var1);
       this.field5489 = var1;
-      if (!var1.method544().method324()) {
-         this.rotationPitch = (float)(-90 * var1.method535().method8150());
+      if (!var1.getAxis().method324()) {
+         this.rotationPitch = (float)(-90 * var1.getAxisDirection().getOffset());
          this.rotationYaw = 0.0F;
       } else {
          this.rotationPitch = 0.0F;
@@ -74,11 +74,11 @@ public class ItemFrameEntity extends Class995 {
          double var5 = (double)this.field5488.getX() + 0.5 - (double)this.field5489.method539() * 0.46875;
          double var7 = (double)this.field5488.getY() + 0.5 - (double)this.field5489.method540() * 0.46875;
          double var9 = (double)this.field5488.getZ() + 0.5 - (double)this.field5489.method541() * 0.46875;
-         this.method3446(var5, var7, var9);
+         this.setRawPosition(var5, var7, var9);
          double var11 = (double)this.method4081();
          double var13 = (double)this.method4082();
          double var15 = (double)this.method4081();
-         Class113 var17 = this.field5489.method544();
+         Direction var17 = this.field5489.getAxis();
          switch (Class9811.field45858[var17.ordinal()]) {
             case 1:
                var11 = 1.0;
@@ -93,20 +93,20 @@ public class ItemFrameEntity extends Class995 {
          var11 /= 32.0;
          var13 /= 32.0;
          var15 /= 32.0;
-         this.method3391(new AxisAlignedBB(var5 - var11, var7 - var13, var9 - var15, var5 + var11, var7 + var13, var9 + var15));
+         this.setBoundingBox(new AxisAlignedBB(var5 - var11, var7 - var13, var9 - var15, var5 + var11, var7 + var13, var9 + var15));
       }
    }
 
    @Override
    public boolean method4080() {
       if (!this.field5495) {
-         if (!this.world.method7052(this)) {
+         if (!this.world.hasNoCollisions(this)) {
             return false;
          } else {
             BlockState var3 = this.world.getBlockState(this.field5488.method8349(this.field5489.method536()));
-            return !var3.method23384().method31086() && (!this.field5489.method544().method324() || !Class3247.method11672(var3))
+            return !var3.getMaterial().method31086() && (!this.field5489.getAxis().method324() || !Class3247.method11672(var3))
                ? false
-               : this.world.method6770(this, this.getBoundingBox(), field5486).isEmpty();
+               : this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox(), field5486).isEmpty();
          }
       } else {
          return true;
@@ -114,49 +114,49 @@ public class ItemFrameEntity extends Class995 {
    }
 
    @Override
-   public void move(Class2107 var1, Vector3d var2) {
+   public void move(MoverType var1, Vector3d var2) {
       if (!this.field5495) {
          super.move(var1, var2);
       }
    }
 
    @Override
-   public void method3280(double var1, double var3, double var5) {
+   public void addVelocity(double var1, double var3, double var5) {
       if (!this.field5495) {
-         super.method3280(var1, var3, var5);
+         super.addVelocity(var1, var3, var5);
       }
    }
 
    @Override
-   public float method3319() {
+   public float getCollisionBorderSize() {
       return 0.0F;
    }
 
    @Override
-   public void method2995() {
+   public void onKillCommand() {
       this.method4089(this.method4090());
-      super.method2995();
+      super.onKillCommand();
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (!this.field5495) {
-         if (!this.method2760(var1)) {
+         if (!this.isInvulnerableTo(var1)) {
             if (!var1.method31131() && !this.method4090().isEmpty()) {
                if (!this.world.isRemote) {
-                  this.method4088(var1.method31109(), false);
-                  this.method2863(SoundEvents.field26711, 1.0F, 1.0F);
+                  this.method4088(var1.getTrueSource(), false);
+                  this.playSound(SoundEvents.field26711, 1.0F, 1.0F);
                }
 
                return true;
             } else {
-               return super.method2741(var1, var2);
+               return super.attackEntityFrom(var1, var2);
             }
          } else {
             return false;
          }
       } else {
-         return var1 != DamageSource.field39004 && !var1.method31146() ? false : super.method2741(var1, var2);
+         return var1 != DamageSource.field39004 && !var1.method31146() ? false : super.attackEntityFrom(var1, var2);
       }
    }
 
@@ -179,20 +179,20 @@ public class ItemFrameEntity extends Class995 {
 
    @Override
    public void method4083(Entity var1) {
-      this.method2863(SoundEvents.field26709, 1.0F, 1.0F);
+      this.playSound(SoundEvents.field26709, 1.0F, 1.0F);
       this.method4088(var1, true);
    }
 
    @Override
    public void method4084() {
-      this.method2863(SoundEvents.field26710, 1.0F, 1.0F);
+      this.playSound(SoundEvents.field26710, 1.0F, 1.0F);
    }
 
    private void method4088(Entity var1, boolean var2) {
       if (!this.field5495) {
          ItemStack var5 = this.method4090();
          this.method4091(ItemStack.EMPTY);
-         if (this.world.method6789().method17135(Class5462.field24229)) {
+         if (this.world.getGameRules().getBoolean(Class5462.field24229)) {
             if (var1 instanceof PlayerEntity) {
                PlayerEntity var6 = (PlayerEntity)var1;
                if (var6.abilities.isCreativeMode) {
@@ -202,7 +202,7 @@ public class ItemFrameEntity extends Class995 {
             }
 
             if (var2) {
-               this.method3300(Items.ITEM_FRAME);
+               this.entityDropItem(Items.ITEM_FRAME);
             }
 
             if (!var5.isEmpty()) {
@@ -229,7 +229,7 @@ public class ItemFrameEntity extends Class995 {
    }
 
    public ItemStack method4090() {
-      return this.method3210().<ItemStack>method35445(field5492);
+      return this.getDataManager().<ItemStack>method35445(field5492);
    }
 
    public void method4091(ItemStack var1) {
@@ -243,9 +243,9 @@ public class ItemFrameEntity extends Class995 {
          var1.method32166(this);
       }
 
-      this.method3210().method35446(field5492, var1);
+      this.getDataManager().method35446(field5492, var1);
       if (!var1.isEmpty()) {
-         this.method2863(SoundEvents.field26708, 1.0F, 1.0F);
+         this.playSound(SoundEvents.field26708, 1.0F, 1.0F);
       }
 
       if (var2 && this.field5488 != null) {
@@ -264,7 +264,7 @@ public class ItemFrameEntity extends Class995 {
    }
 
    @Override
-   public void method3155(DataParameter<?> var1) {
+   public void notifyDataManagerChange(DataParameter<?> var1) {
       if (var1.equals(field5492)) {
          ItemStack var4 = this.method4090();
          if (!var4.isEmpty() && var4.method32167() != this) {
@@ -274,7 +274,7 @@ public class ItemFrameEntity extends Class995 {
    }
 
    public int method4093() {
-      return this.method3210().<Integer>method35445(field5493);
+      return this.getDataManager().<Integer>method35445(field5493);
    }
 
    public void method4094(int var1) {
@@ -282,15 +282,15 @@ public class ItemFrameEntity extends Class995 {
    }
 
    private void method4095(int var1, boolean var2) {
-      this.method3210().method35446(field5493, var1 % 8);
+      this.getDataManager().method35446(field5493, var1 % 8);
       if (var2 && this.field5488 != null) {
          this.world.updateComparatorOutputLevel(this.field5488, Blocks.AIR);
       }
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (!this.method4090().isEmpty()) {
          var1.put("Item", this.method4090().method32112(new CompoundNBT()));
          var1.method100("ItemRotation", (byte)this.method4093());
@@ -298,13 +298,13 @@ public class ItemFrameEntity extends Class995 {
       }
 
       var1.method100("Facing", (byte)this.field5489.getIndex());
-      var1.putBoolean("Invisible", this.method3342());
+      var1.putBoolean("Invisible", this.isInvisible());
       var1.putBoolean("Fixed", this.field5495);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       CompoundNBT var4 = var1.getCompound("Item");
       if (var4 != null && !var4.method134()) {
          ItemStack var5 = ItemStack.method32104(var4);
@@ -324,20 +324,20 @@ public class ItemFrameEntity extends Class995 {
          }
       }
 
-      this.method4077(Direction.byIndex(var1.getByte("Facing")));
-      this.method3347(var1.getBoolean("Invisible"));
+      this.method4077(net.minecraft.util.Direction.byIndex(var1.getByte("Facing")));
+      this.setInvisible(var1.getBoolean("Invisible"));
       this.field5495 = var1.getBoolean("Fixed");
    }
 
    @Override
-   public ActionResultType method3304(PlayerEntity var1, Hand var2) {
+   public ActionResultType processInitialInteract(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       boolean var6 = !this.method4090().isEmpty();
       boolean var7 = !var5.isEmpty();
       if (!this.field5495) {
          if (!this.world.isRemote) {
             if (var6) {
-               this.method2863(SoundEvents.field26712, 1.0F, 1.0F);
+               this.playSound(SoundEvents.field26712, 1.0F, 1.0F);
                this.method4094(this.method4093() + 1);
             } else if (var7 && !this.removed) {
                this.method4091(var5);
@@ -348,7 +348,7 @@ public class ItemFrameEntity extends Class995 {
 
             return ActionResultType.field14819;
          } else {
-            return !var6 && !var7 ? ActionResultType.field14820 : ActionResultType.field14818;
+            return !var6 && !var7 ? ActionResultType.field14820 : ActionResultType.SUCCESS;
          }
       } else {
          return ActionResultType.field14820;
@@ -360,7 +360,7 @@ public class ItemFrameEntity extends Class995 {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this, this.getType(), this.field5489.getIndex(), this.method4085());
    }
 }

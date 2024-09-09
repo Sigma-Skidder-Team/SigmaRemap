@@ -13,7 +13,7 @@ public class Class2748 extends Class2747 {
 
    @Override
    public boolean method10803() {
-      if (this.field17287.method3327()) {
+      if (this.field17287.isBurning()) {
          BlockPos var3 = this.method10957(this.field17281.world, this.field17281, 5, 4);
          if (var3 == null) {
             return this.method10955();

@@ -37,7 +37,7 @@ public final class Class6409 extends VoxelShape {
    }
 
    @Override
-   public DoubleList method19511(Class113 var1) {
+   public DoubleList method19511(Direction var1) {
       switch (Class8724.field39363[var1.ordinal()]) {
          case 1:
             return this.field28035;

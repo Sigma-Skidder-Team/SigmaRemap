@@ -1,7 +1,6 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 
 public class Class2719 extends Class2709<LivingEntity> {
@@ -18,9 +17,9 @@ public class Class2719 extends Class2709<LivingEntity> {
 
    @Override
    public AxisAlignedBB method10921(double var1) {
-      Direction var5 = ((Class1057)this.field17153).method4848();
-      if (var5.method544() != Class113.field413) {
-         return var5.method544() != Class113.field415
+      net.minecraft.util.Direction var5 = ((Class1057)this.field17153).method4848();
+      if (var5.getAxis() != Direction.field413) {
+         return var5.getAxis() != Direction.field415
             ? this.field17153.getBoundingBox().method19663(var1, 4.0, var1)
             : this.field17153.getBoundingBox().method19663(var1, var1, 4.0);
       } else {

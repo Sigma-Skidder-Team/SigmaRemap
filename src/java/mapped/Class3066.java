@@ -14,7 +14,7 @@ public class Class3066 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      if (Class8042.method27612().method21919()) {
+      if (ViaVersion3.method27612().method21919()) {
          if (var1.method30555(Class4750.field22544, 0) == var1.method30580().method22438(Class6057.class).method18753()) {
             int var4 = var1.method30559(Class4750.field22526);
             Map<String, Class9284> var5 = new HashMap<>(var4);

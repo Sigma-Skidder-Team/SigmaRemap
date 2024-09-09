@@ -328,12 +328,12 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
 
    @Override
    public void method17801(Class1691 var1, IChunk var2) {
-      Class7481 var5 = var2.method7072();
+      ChunkPos var5 = var2.method7072();
       int var6 = var5.field32174;
       int var7 = var5.field32175;
       Class2420 var8 = new Class2420();
       var8.method10370(var6, var7);
-      Class7481 var9 = var2.method7072();
+      ChunkPos var9 = var2.method7072();
       int var10 = var9.method24356();
       int var11 = var9.method24357();
       double var12 = 0.0625;
@@ -388,7 +388,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    public void method17803(Class1660 var1, Class7480 var2, IChunk var3) {
       ObjectArrayList var6 = new ObjectArrayList(10);
       ObjectArrayList var7 = new ObjectArrayList(32);
-      Class7481 var8 = var3.method7072();
+      ChunkPos var8 = var3.method7072();
       int var9 = var8.field32174;
       int var10 = var8.field32175;
       int var11 = var9 << 4;
@@ -482,7 +482,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
                         int var65 = var64 & 15;
                         double var66 = (double)var63 / (double)this.field24968;
                         double var68 = MathHelper.lerp(var66, var59, var61);
-                        double var70 = MathHelper.method37778(var68 / 200.0, -1.0, 1.0);
+                        double var70 = MathHelper.clamp(var68 / 200.0, -1.0, 1.0);
                         var70 = var70 / 2.0 - var70 * var70 * var70 / 24.0;
 
                         while (var18.hasNext()) {
@@ -596,7 +596,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
       if (!this.field24982.get().method35167()) {
          int var4 = var1.method7241();
          int var5 = var1.method7242();
-         Biome var6 = var1.getBiome(new Class7481(var4, var5).method24364());
+         Biome var6 = var1.getBiome(new ChunkPos(var4, var5).method24364());
          Class2420 var7 = new Class2420();
          var7.method10371(var1.method6967(), var4 << 4, var5 << 4);
          Class8170.method28430(var1, var6, var4, var5, var7);

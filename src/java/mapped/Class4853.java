@@ -35,8 +35,8 @@ public class Class4853 extends Class4852 {
       } else {
          ItemStack var5 = ItemStack.EMPTY;
 
-         for (int var6 = 0; var6 < var1.method3629() && var5.isEmpty(); var6++) {
-            ItemStack var7 = var1.method3618(var6);
+         for (int var6 = 0; var6 < var1.getSizeInventory() && var5.isEmpty(); var6++) {
+            ItemStack var7 = var1.getStackInSlot(var6);
             if (var7.getItem() == Items.field37955) {
                var5 = var7;
             }
@@ -71,8 +71,8 @@ public class Class4853 extends Class4852 {
    public ItemStack method14962(Class926 var1) {
       ItemStack var4 = ItemStack.EMPTY;
 
-      for (int var5 = 0; var5 < var1.method3629() && var4.isEmpty(); var5++) {
-         ItemStack var6 = var1.method3618(var5);
+      for (int var5 = 0; var5 < var1.getSizeInventory() && var4.isEmpty(); var5++) {
+         ItemStack var6 = var1.getStackInSlot(var5);
          if (var6.getItem() == Items.field37955) {
             var4 = var6;
          }
@@ -80,7 +80,7 @@ public class Class4853 extends Class4852 {
 
       var4 = var4.copy();
       var4.method32180(1);
-      var4.getOrCreateTag().method102("map_scale_direction", 1);
+      var4.getOrCreateTag().putInt("map_scale_direction", 1);
       return var4;
    }
 

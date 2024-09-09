@@ -9,7 +9,7 @@ import java.util.Map;
 public class Class7079 extends Class7080 {
    private final Map<String, String> field30482 = new HashMap<String, String>();
 
-   public Class7079(Class6355 var1) {
+   public Class7079(ViaVersion7 var1) {
       super(var1);
       this.field30482.put("block.minecraft.flowing_water", "Flowing Water");
       this.field30482.put("block.minecraft.flowing_lava", "Flowing Lava");

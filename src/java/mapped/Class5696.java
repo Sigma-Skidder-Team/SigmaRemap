@@ -32,7 +32,7 @@ public class Class5696 extends Class5651<Class1097, Class2867<Class1097>> {
          int var8 = var1.field6026;
          int var9 = var8 + 1;
          float var10 = 7.0F;
-         float var11 = !var1.method3005() ? 0.8F : 0.3F;
+         float var11 = !var1.isChild() ? 0.8F : 0.3F;
          if (var8 >= 8) {
             if (var8 >= 16) {
                if (!((float)var8 < 24.0F)) {
@@ -77,7 +77,7 @@ public class Class5696 extends Class5651<Class1097, Class2867<Class1097>> {
          if (var1.method5214()) {
             float var17 = (float)(Math.cos((double)var1.ticksExisted * 1.25) * Math.PI * 0.05F);
             var2.rotate(Vector3f.YP.rotationDegrees(var17));
-            if (var1.method3005()) {
+            if (var1.isChild()) {
                var2.translate(0.0, 0.8F, 0.55F);
             }
          }
@@ -85,7 +85,7 @@ public class Class5696 extends Class5651<Class1097, Class2867<Class1097>> {
 
       float var18 = var1.method5221(var5);
       if (var18 > 0.0F) {
-         float var19 = !var1.method3005() ? 1.3F : 0.5F;
+         float var19 = !var1.isChild() ? 1.3F : 0.5F;
          var2.translate(0.0, (double)(var19 * var18), 0.0);
          var2.rotate(Vector3f.field32898.rotationDegrees(MathHelper.lerp(var18, var1.rotationPitch, var1.rotationPitch + 180.0F)));
       }

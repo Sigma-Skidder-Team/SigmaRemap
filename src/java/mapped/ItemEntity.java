@@ -42,7 +42,7 @@ public class ItemEntity extends Entity {
       this(EntityType.field41042, var1);
       this.setPosition(var2, var4, var6);
       this.rotationYaw = this.rand.nextFloat() * 360.0F;
-      this.method3435(this.rand.nextDouble() * 0.2 - 0.1, 0.2, this.rand.nextDouble() * 0.2 - 0.1);
+      this.setMotion(this.rand.nextDouble() * 0.2 - 0.1, 0.2, this.rand.nextDouble() * 0.2 - 0.1);
    }
 
    public ItemEntity(World var1, double var2, double var4, double var6, ItemStack var8) {
@@ -59,13 +59,13 @@ public class ItemEntity extends Entity {
    }
 
    @Override
-   public boolean method2940() {
+   public boolean canTriggerWalking() {
       return false;
    }
 
    @Override
    public void registerData() {
-      this.method3210().register(field5514, ItemStack.EMPTY);
+      this.getDataManager().register(field5514, ItemStack.EMPTY);
    }
 
    @Override
@@ -79,18 +79,18 @@ public class ItemEntity extends Entity {
          this.prevPosX = this.getPosX();
          this.prevPosY = this.getPosY();
          this.prevPosZ = this.getPosZ();
-         Vector3d var3 = this.getVec();
-         float var4 = this.method3393() - 0.11111111F;
-         if (this.method3250() && this.method3427(Class8953.field40469) > (double)var4) {
+         Vector3d var3 = this.getMotion();
+         float var4 = this.getEyeHeight() - 0.11111111F;
+         if (this.isInWater() && this.method3427(FluidTags.field40469) > (double)var4) {
             this.method4115();
-         } else if (this.method3264() && this.method3427(Class8953.field40470) > (double)var4) {
+         } else if (this.isInLava() && this.method3427(FluidTags.field40470) > (double)var4) {
             this.method4116();
          } else if (!this.method3247()) {
-            this.method3434(this.getVec().method11339(0.0, -0.04, 0.0));
+            this.setMotion(this.getMotion().add(0.0, -0.04, 0.0));
          }
 
          if (!this.world.isRemote) {
-            this.noClip = !this.world.method7052(this);
+            this.noClip = !this.world.hasNoCollisions(this);
             if (this.noClip) {
                this.pushOutOfBlocks(this.getPosX(), (this.getBoundingBox().minY + this.getBoundingBox().maxY) / 2.0, this.getPosZ());
             }
@@ -98,19 +98,19 @@ public class ItemEntity extends Entity {
             this.noClip = false;
          }
 
-         if (!this.onGround || method3234(this.getVec()) > 1.0E-5F || (this.ticksExisted + this.getEntityId()) % 4 == 0) {
-            this.move(Class2107.field13742, this.getVec());
+         if (!this.onGround || horizontalMag(this.getMotion()) > 1.0E-5F || (this.ticksExisted + this.getEntityId()) % 4 == 0) {
+            this.move(MoverType.SELF, this.getMotion());
             float var5 = 0.98F;
             if (this.onGround) {
                var5 = this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).getBlock().method11571()
                   * 0.98F;
             }
 
-            this.method3434(this.getVec().method11347((double)var5, 0.98, (double)var5));
+            this.setMotion(this.getMotion().method11347((double)var5, 0.98, (double)var5));
             if (this.onGround) {
-               Vector3d var6 = this.getVec();
+               Vector3d var6 = this.getMotion();
                if (var6.y < 0.0) {
-                  this.method3434(var6.method11347(1.0, -0.5, 1.0));
+                  this.setMotion(var6.method11347(1.0, -0.5, 1.0));
                }
             }
          }
@@ -120,8 +120,8 @@ public class ItemEntity extends Entity {
             || MathHelper.floor(this.prevPosZ) != MathHelper.floor(this.getPosZ());
          int var10 = !var9 ? 40 : 2;
          if (this.ticksExisted % var10 == 0) {
-            if (this.world.getFluidState(this.getPosition()).method23486(Class8953.field40470) && !this.method3249()) {
-               this.method2863(SoundEvents.field26606, 0.4F, 2.0F + this.rand.nextFloat() * 0.4F);
+            if (this.world.getFluidState(this.getPosition()).method23486(FluidTags.field40470) && !this.isImmuneToFire()) {
+               this.playSound(SoundEvents.field26606, 0.4F, 2.0F + this.rand.nextFloat() * 0.4F);
             }
 
             if (!this.world.isRemote && this.method4118()) {
@@ -135,28 +135,28 @@ public class ItemEntity extends Entity {
 
          this.isAirBorne = this.isAirBorne | this.method3257();
          if (!this.world.isRemote) {
-            double var7 = this.getVec().method11336(var3).method11349();
+            double var7 = this.getMotion().method11336(var3).lengthSquared();
             if (var7 > 0.01) {
                this.isAirBorne = true;
             }
          }
 
          if (!this.world.isRemote && this.field5515 >= 6000) {
-            this.method2904();
+            this.remove();
          }
       } else {
-         this.method2904();
+         this.remove();
       }
    }
 
    private void method4115() {
-      Vector3d var3 = this.getVec();
-      this.method3435(var3.x * 0.99F, var3.y + (double)(!(var3.y < 0.06F) ? 0.0F : 5.0E-4F), var3.z * 0.99F);
+      Vector3d var3 = this.getMotion();
+      this.setMotion(var3.x * 0.99F, var3.y + (double)(!(var3.y < 0.06F) ? 0.0F : 5.0E-4F), var3.z * 0.99F);
    }
 
    private void method4116() {
-      Vector3d var3 = this.getVec();
-      this.method3435(var3.x * 0.95F, var3.y + (double)(!(var3.y < 0.06F) ? 0.0F : 5.0E-4F), var3.z * 0.95F);
+      Vector3d var3 = this.getMotion();
+      this.setMotion(var3.x * 0.95F, var3.y + (double)(!(var3.y < 0.06F) ? 0.0F : 5.0E-4F), var3.z * 0.95F);
    }
 
    private void method4117() {
@@ -218,25 +218,25 @@ public class ItemEntity extends Entity {
       var0.field5516 = Math.max(var0.field5516, var2.field5516);
       var0.field5515 = Math.min(var0.field5515, var2.field5515);
       if (var3.isEmpty()) {
-         var2.method2904();
+         var2.remove();
       }
    }
 
    @Override
-   public boolean method3249() {
-      return this.method4124().getItem().method11748() || super.method3249();
+   public boolean isImmuneToFire() {
+      return this.method4124().getItem().method11748() || super.isImmuneToFire();
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (!this.method2760(var1)) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (!this.isInvulnerableTo(var1)) {
          if (!this.method4124().isEmpty() && this.method4124().getItem() == Items.field38066 && var1.method31131()) {
             return false;
          } else if (this.method4124().getItem().method11749(var1)) {
-            this.method3141();
+            this.markVelocityChanged();
             this.field5517 = (int)((float)this.field5517 - var2);
             if (this.field5517 <= 0) {
-               this.method2904();
+               this.remove();
             }
 
             return false;
@@ -249,10 +249,10 @@ public class ItemEntity extends Entity {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      var1.method101("Health", (short)this.field5517);
-      var1.method101("Age", (short)this.field5515);
-      var1.method101("PickupDelay", (short)this.field5516);
+   public void writeAdditional(CompoundNBT var1) {
+      var1.putShort("Health", (short)this.field5517);
+      var1.putShort("Age", (short)this.field5515);
+      var1.putShort("PickupDelay", (short)this.field5516);
       if (this.method4128() != null) {
          var1.method104("Thrower", this.method4128());
       }
@@ -267,7 +267,7 @@ public class ItemEntity extends Entity {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.field5517 = var1.getShort("Health");
       this.field5515 = var1.getShort("Age");
       if (var1.contains("PickupDelay")) {
@@ -285,25 +285,25 @@ public class ItemEntity extends Entity {
       CompoundNBT var4 = var1.getCompound("Item");
       this.method4125(ItemStack.method32104(var4));
       if (this.method4124().isEmpty()) {
-         this.method2904();
+         this.remove();
       }
    }
 
    @Override
-   public void method3279(PlayerEntity var1) {
+   public void onCollideWithPlayer(PlayerEntity var1) {
       if (!this.world.isRemote) {
          ItemStack var4 = this.method4124();
          Item var5 = var4.getItem();
          int var6 = var4.getCount();
          if (this.field5516 == 0 && (this.field5519 == null || this.field5519.equals(var1.getUniqueID())) && var1.inventory.method4045(var4)) {
-            var1.method2751(this, var6);
+            var1.onItemPickup(this, var6);
             if (var4.isEmpty()) {
-               this.method2904();
+               this.remove();
                var4.method32180(var6);
             }
 
-            var1.method2776(Class8876.field40100.method172(var5), var6);
-            var1.method3134(this);
+            var1.method2776(Stats.field40100.method172(var5), var6);
+            var1.triggerItemPickupTrigger(this);
          }
       }
    }
@@ -321,8 +321,8 @@ public class ItemEntity extends Entity {
 
    @Nullable
    @Override
-   public Entity method2745(ServerWorld var1) {
-      Entity var4 = super.method2745(var1);
+   public Entity changeDimension(ServerWorld var1) {
+      Entity var4 = super.changeDimension(var1);
       if (!this.world.isRemote && var4 instanceof ItemEntity) {
          ((ItemEntity)var4).method4117();
       }
@@ -331,16 +331,16 @@ public class ItemEntity extends Entity {
    }
 
    public ItemStack method4124() {
-      return this.method3210().<ItemStack>method35445(field5514);
+      return this.getDataManager().<ItemStack>method35445(field5514);
    }
 
    public void method4125(ItemStack var1) {
-      this.method3210().method35446(field5514, var1);
+      this.getDataManager().method35446(field5514, var1);
    }
 
    @Override
-   public void method3155(DataParameter<?> var1) {
-      super.method3155(var1);
+   public void notifyDataManagerChange(DataParameter<?> var1) {
+      super.notifyDataManagerChange(var1);
       if (field5514.equals(var1)) {
          this.method4124().method32166(this);
       }
@@ -368,7 +368,7 @@ public class ItemEntity extends Entity {
       return this.field5515;
    }
 
-   public void method4131() {
+   public void setDefaultPickupDelay() {
       this.field5516 = 10;
    }
 
@@ -402,7 +402,7 @@ public class ItemEntity extends Entity {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this);
    }
 

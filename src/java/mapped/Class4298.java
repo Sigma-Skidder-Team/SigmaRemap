@@ -66,10 +66,10 @@ public class Class4298 extends Class4278 {
          GameProfile var20 = new GameProfile(var8, this.account.getKnownName());
          if (this.field20828 == null || !this.field20828.getDisplayName().getString().equals(this.account.getKnownName())) {
             this.field20828 = new Class1118(field20825, new GameProfile(var8, this.account.getKnownName()));
-            this.field20828.field6096 = new Class6589(new Class8790(var20, 0, Class1894.field11103, this.field20828.getDisplayName()));
+            this.field20828.field6096 = new Class6589(new Class8790(var20, 0, GameType.field11103, this.field20828.getDisplayName()));
          }
 
-         this.field20828.method3374(var8);
+         this.field20828.setUniqueId(var8);
          float var10 = (float)(System.currentTimeMillis() % 1750L) / 278.52115F;
          var10 = (float)Math.sin((double)var10);
          float var11 = (float)(System.currentTimeMillis() % 14000L) / 2228.1692F;

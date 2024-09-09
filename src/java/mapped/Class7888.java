@@ -17,15 +17,15 @@ public class Class7888 extends Class7882<Class1045> {
    }
 
    public void method26425(ServerWorld var1, Class1045 var2) {
-      var2.method2992().<List<LivingEntity>>method21410(Class8830.field39819).ifPresent(var2x -> this.method26448(var2, (List<LivingEntity>)var2x));
+      var2.getBrain().<List<LivingEntity>>method21410(Class8830.field39819).ifPresent(var2x -> this.method26448(var2, (List<LivingEntity>)var2x));
    }
 
    private void method26448(Class1045 var1, List<LivingEntity> var2) {
       Optional var5 = var2.stream()
          .filter(var1x -> var1x.getType() == var1.getType())
          .<Class1045>map(var0 -> (Class1045)var0)
-         .filter(var0 -> !var0.method3005())
+         .filter(var0 -> !var0.isChild())
          .findFirst();
-      var1.method2992().method21408(Class8830.field39846, var5);
+      var1.getBrain().method21408(Class8830.field39846, var5);
    }
 }

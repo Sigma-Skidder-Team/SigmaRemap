@@ -108,9 +108,9 @@ public class Class940 extends Class939 implements Class930, Class935 {
                   double var11 = 0.0;
                   double var13 = 0.0;
                   AxisAlignedBB var15 = var8.getBoundingBox();
-                  switch (Class9671.field45163[var4.method544().ordinal()]) {
+                  switch (Class9671.field45163[var4.getAxis().ordinal()]) {
                      case 1:
-                        if (var4.method535() == Class1892.field11092) {
+                        if (var4.getAxisDirection() == Class1892.field11092) {
                            var9 = var5.maxX - var15.minX;
                         } else {
                            var9 = var15.maxX - var5.minX;
@@ -119,7 +119,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
                         var9 += 0.01;
                         break;
                      case 2:
-                        if (var4.method535() == Class1892.field11092) {
+                        if (var4.getAxisDirection() == Class1892.field11092) {
                            var11 = var5.maxY - var15.minY;
                         } else {
                            var11 = var15.maxY - var5.minY;
@@ -128,7 +128,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
                         var11 += 0.01;
                         break;
                      case 3:
-                        if (var4.method535() == Class1892.field11092) {
+                        if (var4.getAxisDirection() == Class1892.field11092) {
                            var13 = var5.maxZ - var15.minZ;
                         } else {
                            var13 = var15.maxZ - var5.minZ;
@@ -138,7 +138,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
                   }
 
                   var8.move(
-                     Class2107.field13745, new Vector3d(var9 * (double)var4.method539(), var11 * (double)var4.method540(), var13 * (double)var4.method541())
+                     MoverType.field13745, new Vector3d(var9 * (double)var4.method539(), var11 * (double)var4.method540(), var13 * (double)var4.method541())
                   );
                }
             }
@@ -147,7 +147,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
    }
 
    @Override
-   public int method3629() {
+   public int getSizeInventory() {
       return this.field5305.size();
    }
 
@@ -176,7 +176,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
    }
 
    @Override
-   public void method3631(PlayerEntity var1) {
+   public void openInventory(PlayerEntity var1) {
       if (!var1.isSpectator()) {
          if (this.field5306 < 0) {
             this.field5306 = 0;
@@ -192,7 +192,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
    }
 
    @Override
-   public void method3632(PlayerEntity var1) {
+   public void closeInventory(PlayerEntity var1) {
       if (!var1.isSpectator()) {
          this.field5306--;
          this.field5324.method6787(this.field5325, this.method3775().getBlock(), 1, this.field5306);
@@ -221,7 +221,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
    }
 
    public void method3753(CompoundNBT var1) {
-      this.field5305 = NonNullList.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
+      this.field5305 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
       if (!this.method3741(var1) && var1.contains("Items", 9)) {
          Class7920.method26567(var1, this.field5305);
       }
@@ -275,7 +275,7 @@ public class Class940 extends Class939 implements Class930, Class935 {
    }
 
    @Override
-   public Class5812 method3690(int var1, PlayerInventory var2) {
+   public Container method3690(int var1, PlayerInventory var2) {
       return new Class5814(var1, var2, this);
    }
 

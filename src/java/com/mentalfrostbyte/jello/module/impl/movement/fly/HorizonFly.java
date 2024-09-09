@@ -27,8 +27,8 @@ public class HorizonFly extends Module {
 
     @Override
     public void onDisable() {
-        Class9567.method37090(0.0);
-        if (mc.player.getVec().y > 0.0) {
+        MovementUtils.method37090(0.0);
+        if (mc.player.getMotion().y > 0.0) {
             ColorUtils.method17725(-0.0789);
         }
 
@@ -37,39 +37,39 @@ public class HorizonFly extends Module {
 
     @EventTarget
     @LowerPriority
-    public void method16158(Class4435 var1) {
+    public void method16158(EventMove var1) {
         if (this.isEnabled()) {
-            double var4 = Math.sqrt(var1.method13992() * var1.method13992() + var1.method13996() * var1.method13996());
+            double var4 = Math.sqrt(var1.getX() * var1.getX() + var1.getZ() * var1.getZ());
             if (this.field23497 <= 9) {
                 if (this.field23497 != -1) {
                     if (this.field23497 != 0) {
                         if (this.field23497 >= 1) {
-                            Class9567.method37088(var1, var4 + 5.0E-4);
+                            MovementUtils.method37088(var1, var4 + 5.0E-4);
                         }
                     } else {
-                        Class9567.method37088(var1, var4 + 0.0015);
+                        MovementUtils.method37088(var1, var4 + 0.0015);
                     }
                 } else {
-                    var1.method13995(Class9567.method37080());
-                    ColorUtils.method17725(var1.method13994());
-                    Class9567.method37088(var1, 0.125);
+                    var1.setY(MovementUtils.method37080());
+                    ColorUtils.method17725(var1.getY());
+                    MovementUtils.method37088(var1, 0.125);
                 }
             } else {
-                Class9567.method37088(var1, 0.0);
+                MovementUtils.method37088(var1, 0.0);
             }
         }
     }
 
     @EventTarget
-    public void method16159(Class4399 var1) {
+    public void method16159(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             this.field23497++;
             if (this.field23497 != 11) {
                 if (this.field23497 > 11 && this.field23497 >= 20 && this.field23497 % 20 == 0) {
-                    var1.method13912(0.0);
+                    var1.setY(0.0);
                 }
             } else {
-                var1.method13912(0.0);
+                var1.setY(0.0);
             }
 
             var1.method13908(true);
@@ -86,9 +86,9 @@ public class HorizonFly extends Module {
                     this.field23497 = -1;
                 }
 
-                this.field23498 = var5.field24298;
-                var5.field24300 = mc.player.rotationYaw;
-                var5.field24301 = mc.player.rotationPitch;
+                this.field23498 = var5.y;
+                var5.yaw = mc.player.rotationYaw;
+                var5.pitch = mc.player.rotationPitch;
             }
         }
     }
@@ -96,7 +96,7 @@ public class HorizonFly extends Module {
     @EventTarget
     public void method16161(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            Packet var4 = var1.method13932();
+            Packet var4 = var1.getPacket();
             if (var4 instanceof CPlayerPacket) {
                 CPlayerPacket var5 = (CPlayerPacket) var4;
                 if (this.field23497 == -1) {

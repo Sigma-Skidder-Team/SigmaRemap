@@ -34,7 +34,7 @@ public class Class7070 {
          && this.field30455 != null
          && this.field30455.field39976 < 64;
       if (this.field30450 < this.field30449 && var4 && var5 && this.field30452 > 0) {
-         this.field30450 = this.field30450 + Client.getInstance().method19939().getPing();
+         this.field30450 = this.field30450 + Client.getInstance().getPlayerTracker().getPing();
       }
 
       if (this.field30452 > 0) {
@@ -72,7 +72,7 @@ public class Class7070 {
          return null;
       } else {
          if (!NameTags.method16937()
-            .<Class920, Class4849>method1030(Class7207.field30936, new Class927(new ItemStack(Items.field37236)), NameTags.method16936().world)
+            .<IInventory, Class4849>method1030(Class7207.field30936, new Class927(new ItemStack(Items.field37236)), NameTags.method16936().world)
             .isPresent()) {
             SimpleReloadableResourceManager var3 = new SimpleReloadableResourceManager(ResourcePackType.SERVER_DATA);
 
@@ -85,7 +85,7 @@ public class Class7070 {
          }
 
          Optional var7 = NameTags.method16937()
-            .<Class920, Class4849>method1030(Class7207.field30936, new Class927(this.field30453), NameTags.method16940().world);
+            .<IInventory, Class4849>method1030(Class7207.field30936, new Class927(this.field30453), NameTags.method16940().world);
          if (var7.isPresent()) {
             ItemStack var8 = ((Class4849)var7.get()).getRecipeOutput();
             if (!var8.isEmpty()) {

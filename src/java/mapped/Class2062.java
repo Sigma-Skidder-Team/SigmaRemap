@@ -11,7 +11,7 @@ import java.util.function.BiFunction;
 
 public enum Class2062 {
    field13441("feet", (var0, var1) -> var0),
-   field13442("eyes", (var0, var1) -> new Vector3d(var0.x, var0.y + (double)var1.method3393(), var0.z));
+   field13442("eyes", (var0, var1) -> new Vector3d(var0.x, var0.y + (double)var1.getEyeHeight(), var0.z));
 
    private static final Map<String, Class2062> field13443 = Util.<Map<String, Class2062>>make(Maps.newHashMap(), var0 -> {
       for (Class2062 var6 : values()) {

@@ -19,7 +19,7 @@ public class Class2694 extends Class2692 {
    @Override
    public boolean method10803() {
       return this.field17133.method3014() == null
-         && this.field17133.method3013().nextFloat() < 0.02F
+         && this.field17133.getRNG().nextFloat() < 0.02F
          && !this.field17133.isSleeping()
          && this.field17133.method4232() == null
          && this.field17133.method4230().method21664()
@@ -36,7 +36,7 @@ public class Class2694 extends Class2692 {
    @Override
    public void method10804() {
       this.method10913();
-      this.field17140 = 2 + this.field17133.method3013().nextInt(3);
+      this.field17140 = 2 + this.field17133.getRNG().nextInt(3);
       this.field17133.method5130(true);
       this.field17133.method4230().method21666();
    }
@@ -58,7 +58,7 @@ public class Class2694 extends Class2692 {
          .method4227()
          .method28042(
             this.field17133.getPosX() + this.field17137,
-            this.field17133.method3442(),
+            this.field17133.getPosYEye(),
             this.field17133.getPosZ() + this.field17138,
             (float)this.field17133.method4260(),
             (float)this.field17133.method4259()
@@ -66,9 +66,9 @@ public class Class2694 extends Class2692 {
    }
 
    private void method10913() {
-      double var3 = (Math.PI * 2) * this.field17133.method3013().nextDouble();
+      double var3 = (Math.PI * 2) * this.field17133.getRNG().nextDouble();
       this.field17137 = Math.cos(var3);
       this.field17138 = Math.sin(var3);
-      this.field17139 = 80 + this.field17133.method3013().nextInt(20);
+      this.field17139 = 80 + this.field17133.getRNG().nextInt(20);
    }
 }

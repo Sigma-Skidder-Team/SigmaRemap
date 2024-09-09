@@ -25,14 +25,14 @@ public class BoxChestESP extends Module {
     }
 
     private void method16298() {
-        int var3 = ColorUtils.applyAlpha(this.method16004().parseSettingValueToIntBySettingName("Regular Color"), 0.14F);
-        int var4 = ColorUtils.applyAlpha(this.method16004().parseSettingValueToIntBySettingName("Ender Color"), 0.14F);
-        int var5 = ColorUtils.applyAlpha(this.method16004().parseSettingValueToIntBySettingName("Trapped Color"), 0.14F);
+        int var3 = ColorUtils.applyAlpha(this.access().parseSettingValueToIntBySettingName("Regular Color"), 0.14F);
+        int var4 = ColorUtils.applyAlpha(this.access().parseSettingValueToIntBySettingName("Ender Color"), 0.14F);
+        int var5 = ColorUtils.applyAlpha(this.access().parseSettingValueToIntBySettingName("Trapped Color"), 0.14F);
 
         for (TileEntity var7 : mc.world.loadedTileEntityList) {
-            boolean var8 = var7 instanceof Class941 && !(var7 instanceof Class970) && this.method16004().getBooleanValueFromSetttingName("Show Regular Chests");
-            boolean var9 = var7 instanceof Class943 && this.method16004().getBooleanValueFromSetttingName("Show Ender Chests");
-            boolean var10 = var7 instanceof Class970 && this.method16004().getBooleanValueFromSetttingName("Show Trapped Chests");
+            boolean var8 = var7 instanceof Class941 && !(var7 instanceof Class970) && this.access().getBooleanValueFromSetttingName("Show Regular Chests");
+            boolean var9 = var7 instanceof Class943 && this.access().getBooleanValueFromSetttingName("Show Ender Chests");
+            boolean var10 = var7 instanceof Class970 && this.access().getBooleanValueFromSetttingName("Show Trapped Chests");
             if (var8 || var9 || var10) {
                 double var11 = Class9647.method37624(var7.getPos()).field43722;
                 double var13 = Class9647.method37624(var7.getPos()).field43723;
@@ -49,7 +49,7 @@ public class BoxChestESP extends Module {
                 }
 
                 Box3D var18 = new Box3D(
-                        var7.method3775().method23412(mc.world, var7.getPos()).method19514().method19667(var11, var13, var15)
+                        var7.method3775().method23412(mc.world, var7.getPos()).method19514().offset(var11, var13, var15)
                 );
                 GL11.glAlphaFunc(519, 0.0F);
                 RenderUtil.render3DColoredBox(var18, var17);

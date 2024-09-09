@@ -26,11 +26,11 @@ public class Class6328 implements Class6326 {
 
             return var7;
          } else {
-            Class8042.method27613().method27366().warning("Why does this block have the skull block entity? " + var2);
+            ViaVersion3.method27613().method27366().warning("Why does this block have the skull block entity? " + var2);
             return -1;
          }
       } else {
-         Class8042.method27613().method27366().warning("Received an head update packet, but there is no head! O_o " + var2);
+         ViaVersion3.method27613().method27366().warning("Received an head update packet, but there is no head! O_o " + var2);
          return -1;
       }
    }

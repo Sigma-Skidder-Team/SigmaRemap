@@ -41,11 +41,11 @@ public class Class3712 extends Class3676<Class1046> {
 
    private void method12593(Class1046 var1, Class2002 var2) {
       Optional<Vector3d> var5 = Optional.<Vector3d>ofNullable(Class8037.method27587(var1, this.field19780, this.field19781, Vector3d.method11330(var2.method8422())));
-      var1.method2992().method21408(Class8830.field39824, var5.map(var1x -> new Class8999(var1x, this.field19779, 0)));
+      var1.getBrain().method21408(Class8830.field39824, var5.map(var1x -> new Class8999(var1x, this.field19779, 0)));
    }
 
    private void method12594(Class1046 var1) {
       Optional<Vector3d> var4 = Optional.<Vector3d>ofNullable(Class8037.method27583(var1, this.field19780, this.field19781));
-      var1.method2992().method21408(Class8830.field39824, var4.map(var1x -> new Class8999(var1x, this.field19779, 0)));
+      var1.getBrain().method21408(Class8830.field39824, var4.map(var1x -> new Class8999(var1x, this.field19779, 0)));
    }
 }

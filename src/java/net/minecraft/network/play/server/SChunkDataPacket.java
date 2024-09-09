@@ -34,7 +34,7 @@ public class SChunkDataPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public SChunkDataPacket(Chunk var1, int var2) {
-      Class7481 var5 = var1.method7072();
+      ChunkPos var5 = var1.method7072();
       this.field24514 = var5.field32174;
       this.field24515 = var5.field32175;
       this.field24521 = var2 == 65535;

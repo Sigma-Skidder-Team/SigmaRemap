@@ -47,7 +47,7 @@ public class Class7490 extends Class7487 {
       var7.add(
          new Class8266(
             var2,
-            Blocks.field37114.method11579().method23465(Class3249.field18712, Class182.method526(Direction.DOWN, Direction.SOUTH)),
+            Blocks.field37114.method11579().method23465(JigsawBlock.field18712, Class182.method526(Direction.DOWN, Direction.SOUTH)),
             this.field32192
          )
       );

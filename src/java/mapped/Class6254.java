@@ -9,7 +9,7 @@ public class Class6254 extends Class6255 {
    @Override
    public String method19221() {
       return "Forces ViaVersion to scan server protocol versions "
-         + (((Class7040)Class8042.method27612()).method21920() != -1 ? "(Also happens at an interval)" : "");
+         + (((Class7040) ViaVersion3.method27612()).method21920() != -1 ? "(Also happens at an interval)" : "");
    }
 
    @Override

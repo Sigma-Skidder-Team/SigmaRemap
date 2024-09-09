@@ -21,7 +21,7 @@ public class Class929 extends Class927 implements Class930 {
    }
 
    @Override
-   public int method3630() {
+   public int getInventoryStackLimit() {
       return 1;
    }
 
@@ -41,7 +41,7 @@ public class Class929 extends Class927 implements Class930 {
    }
 
    @Override
-   public void method3622() {
+   public void markDirty() {
       Class3475.method12171(this.field5266, this.field5267, this.field5268);
       this.field5269 = true;
    }

@@ -14,28 +14,28 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public enum Direction implements IStringSerializable {
-   DOWN(0, 1, -1, "down", Class1892.field11093, Class113.field414, new Vector3i(0, -1, 0)),
-   field673(1, 0, -1, "up", Class1892.field11092, Class113.field414, new Vector3i(0, 1, 0)),
-   NORTH(2, 3, 2, "north", Class1892.field11093, Class113.field415, new Vector3i(0, 0, -1)),
-   SOUTH(3, 2, 0, "south", Class1892.field11092, Class113.field415, new Vector3i(0, 0, 1)),
-   WEST(4, 5, 1, "west", Class1892.field11093, Class113.field413, new Vector3i(-1, 0, 0)),
-   EAST(5, 4, 3, "east", Class1892.field11092, Class113.field413, new Vector3i(1, 0, 0));
+   DOWN(0, 1, -1, "down", Class1892.field11093, mapped.Direction.field414, new Vector3i(0, -1, 0)),
+   field673(1, 0, -1, "up", Class1892.field11092, mapped.Direction.field414, new Vector3i(0, 1, 0)),
+   NORTH(2, 3, 2, "north", Class1892.field11093, mapped.Direction.field415, new Vector3i(0, 0, -1)),
+   SOUTH(3, 2, 0, "south", Class1892.field11092, mapped.Direction.field415, new Vector3i(0, 0, 1)),
+   WEST(4, 5, 1, "west", Class1892.field11093, mapped.Direction.field413, new Vector3i(-1, 0, 0)),
+   EAST(5, 4, 3, "east", Class1892.field11092, mapped.Direction.field413, new Vector3i(1, 0, 0));
 
    private final int field678;
    private final int field679;
    private final int field680;
    private final String field681;
-   private final Class113 field682;
+   private final mapped.Direction field682;
    private final Class1892 field683;
    private final Vector3i field684;
    public static final Direction[] field685 = values();
    private static final Map<String, Direction> field686 = Arrays.<Direction>stream(field685)
-      .collect(Collectors.toMap(Direction::method543, var0 -> (Direction)var0));
+      .collect(Collectors.toMap(net.minecraft.util.Direction::method543, var0 -> (Direction)var0));
    public static final Direction[] field687 = Arrays.<Direction>stream(field685)
       .sorted(Comparator.comparingInt(var0 -> var0.field678))
       .<Direction>toArray(Direction[]::new);
    private static final Direction[] field688 = Arrays.<Direction>stream(field685)
-      .filter(var0 -> var0.method544().method324())
+      .filter(var0 -> var0.getAxis().method324())
       .sorted(Comparator.comparingInt(var0 -> var0.field680))
       .<Direction>toArray(Direction[]::new);
    private static final Long2ObjectMap<Direction> field689 = Arrays.<Direction>stream(field685)
@@ -44,7 +44,7 @@ public enum Direction implements IStringSerializable {
       }, Long2ObjectOpenHashMap::new));
    private static final Direction[] field690 = new Direction[]{DOWN, field673, NORTH, SOUTH, WEST, EAST};
 
-   private Direction(int var3, int var4, int var5, String var6, Class1892 var7, Class113 var8, Vector3i var9) {
+   private Direction(int var3, int var4, int var5, String var6, Class1892 var7, mapped.Direction var8, Vector3i var9) {
       this.field678 = var3;
       this.field680 = var5;
       this.field679 = var4;
@@ -55,8 +55,8 @@ public enum Direction implements IStringSerializable {
    }
 
    public static Direction[] method529(Entity var0) {
-      float var3 = var0.method3282(1.0F) * (float) (Math.PI / 180.0);
-      float var4 = -var0.method3136(1.0F) * (float) (Math.PI / 180.0);
+      float var3 = var0.getPitch(1.0F) * (float) (Math.PI / 180.0);
+      float var4 = -var0.getYaw(1.0F) * (float) (Math.PI / 180.0);
       float var5 = MathHelper.sin(var3);
       float var6 = MathHelper.cos(var3);
       float var7 = MathHelper.sin(var4);
@@ -126,7 +126,7 @@ public enum Direction implements IStringSerializable {
       return this.field680;
    }
 
-   public Class1892 method535() {
+   public Class1892 getAxisDirection() {
       return this.field683;
    }
 
@@ -184,7 +184,7 @@ public enum Direction implements IStringSerializable {
       return this.field681;
    }
 
-   public Class113 method544() {
+   public mapped.Direction getAxis() {
       return this.field682;
    }
 
@@ -210,7 +210,7 @@ public enum Direction implements IStringSerializable {
       return method547(MathHelper.floor(var0 / 90.0 + 0.5) & 3);
    }
 
-   public static Direction method550(Class113 var0, Class1892 var1) {
+   public static Direction method550(mapped.Direction var0, Class1892 var1) {
       switch (Class7747.field33266[var0.ordinal()]) {
          case 1:
             return var1 == Class1892.field11092 ? EAST : WEST;
@@ -259,9 +259,9 @@ public enum Direction implements IStringSerializable {
       return this.field681;
    }
 
-   public static Direction method555(Class1892 var0, Class113 var1) {
+   public static Direction method555(Class1892 var0, mapped.Direction var1) {
       for (Direction var7 : field685) {
-         if (var7.method535() == var0 && var7.method544() == var1) {
+         if (var7.getAxisDirection() == var0 && var7.getAxis() == var1) {
             return var7;
          }
       }

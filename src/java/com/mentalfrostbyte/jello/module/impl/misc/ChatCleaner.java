@@ -16,8 +16,8 @@ public class ChatCleaner extends Module {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SChatPacket) {
                 SChatPacket var4 = (SChatPacket) var1.getPacket();
-                if (this.method16121(this.method16120(var4.method17648().getString()))) {
-                    var1.method13900(true);
+                if (this.method16121(this.method16120(var4.getChatComponent().getString()))) {
+                    var1.setCancelled(true);
                 }
             }
         }

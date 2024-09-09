@@ -249,12 +249,12 @@ public class EntityRendererManager {
                   Class8564.method30598();
                }
 
-               if (var1.method3373()) {
+               if (var1.canRenderOnFire()) {
                   this.method32222(var10, var11, var1);
                }
 
                var10.translate(-var16.getX(), -var16.getY(), -var16.getZ());
-               if (this.field40020.field44616 && this.field40021 && var15.field25098 > 0.0F && !var1.method3342()) {
+               if (this.field40020.field44616 && this.field40021 && var15.field25098 > 0.0F && !var1.isInvisible()) {
                   double var23 = this.method32229(var1.getPosX(), var1.getPosY(), var1.getPosZ());
                   float var25 = (float)((1.0 - var23 / 256.0) * (double)var15.field25099);
                   if (var25 > 0.0F) {
@@ -262,7 +262,7 @@ public class EntityRendererManager {
                   }
                }
 
-               if (this.field40022 && !var1.method3342() && ! Minecraft.getInstance().isReducedDebug()) {
+               if (this.field40022 && !var1.isInvisible() && ! Minecraft.getInstance().isReducedDebug()) {
                   this.method32220(var10, var11.method25597(RenderType.method14345()), var1, var9);
                }
 
@@ -270,7 +270,7 @@ public class EntityRendererManager {
             } catch (Throwable var29) {
                CrashReport var26 = CrashReport.makeCrashReport(var29, "Rendering entity in world");
                CrashReportCategory var27 = var26.makeCategory("Entity being rendered");
-               var1.method3372(var27);
+               var1.fillCrashReport(var27);
                CrashReportCategory var28 = var26.makeCategory("Renderer details");
                var28.addDetail("Assigned renderer", var15);
                var28.addDetail("Location", CrashReportCategory.method32803(var2, var4, var6));
@@ -284,7 +284,7 @@ public class EntityRendererManager {
 
    private void method32220(MatrixStack var1, Class5422 var2, Entity var3, float var4) {
       if (! Shaders.field40609) {
-         float var7 = var3.method3429() / 2.0F;
+         float var7 = var3.getWidth() / 2.0F;
          this.method32221(var1, var2, var3, 1.0F, 1.0F, 1.0F);
          if (var3 instanceof Class1007) {
             double var10 = -MathHelper.lerp((double)var4, var3.lastTickPosX, var3.getPosX());
@@ -308,10 +308,10 @@ public class EntityRendererManager {
                var1,
                var2,
                (double)(-var7),
-               (double)(var3.method3393() - 0.01F),
+               (double)(var3.getEyeHeight() - 0.01F),
                (double)(-var7),
                (double)var7,
-               (double)(var3.method3393() + 0.01F),
+               (double)(var3.getEyeHeight() + 0.01F),
                (double)var7,
                1.0F,
                0.0F,
@@ -320,17 +320,17 @@ public class EntityRendererManager {
             );
          }
 
-         Vector3d var26 = var3.method3281(var4);
+         Vector3d var26 = var3.getLook(var4);
          Matrix4f var9 = var1.getLast().getMatrix();
-         var2.pos(var9, 0.0F, var3.method3393(), 0.0F).color(0, 0, 255, 255).endVertex();
-         var2.pos(var9, (float)(var26.x * 2.0), (float)((double)var3.method3393() + var26.y * 2.0), (float)(var26.z * 2.0))
+         var2.pos(var9, 0.0F, var3.getEyeHeight(), 0.0F).color(0, 0, 255, 255).endVertex();
+         var2.pos(var9, (float)(var26.x * 2.0), (float)((double)var3.getEyeHeight() + var26.y * 2.0), (float)(var26.z * 2.0))
             .color(0, 0, 255, 255)
             .endVertex();
       }
    }
 
    private void method32221(MatrixStack var1, Class5422 var2, Entity var3, float var4, float var5, float var6) {
-      AxisAlignedBB var9 = var3.getBoundingBox().method19667(-var3.getPosX(), -var3.getPosY(), -var3.getPosZ());
+      AxisAlignedBB var9 = var3.getBoundingBox().offset(-var3.getPosX(), -var3.getPosY(), -var3.getPosZ());
       WorldRenderer.method897(var1, var2, var9, var4, var5, var6, 1.0F);
    }
 
@@ -338,11 +338,11 @@ public class EntityRendererManager {
       TextureAtlasSprite var6 = ModelBakery.field40508.getSprite();
       TextureAtlasSprite var7 = ModelBakery.LOCATION_FIRE_1.getSprite();
       var1.push();
-      float var8 = var3.method3429() * 1.4F;
+      float var8 = var3.getWidth() * 1.4F;
       var1.method35292(var8, var8, var8);
       float var9 = 0.5F;
       float var10 = 0.0F;
-      float var11 = var3.method3430() / var8;
+      float var11 = var3.getHeight() / var8;
       float var12 = 0.0F;
       var1.rotate(Vector3f.YP.rotationDegrees(-this.field40017.getYaw()));
       var1.translate(0.0, 0.0, (double)(-0.3F + (float)((int)var11) * 0.02F));
@@ -400,7 +400,7 @@ public class EntityRendererManager {
          float var9 = var6;
          if (var2 instanceof Class1006) {
             Class1006 var25 = (Class1006)var2;
-            if (var25.method3005()) {
+            if (var25.isChild()) {
                var9 = var6 * 0.5F;
             }
          }

@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.Random;
 
-public class Class945 extends TileEntity implements Class946, Class935 {
+public class Class945 extends TileEntity implements IClearable, Class935 {
    private final NonNullList<ItemStack> field5329 = NonNullList.<ItemStack>method68(4, ItemStack.EMPTY);
    private final int[] field5330 = new int[4];
    private final int[] field5331 = new int[4];
@@ -50,7 +50,7 @@ public class Class945 extends TileEntity implements Class946, Class935 {
                Class927 var6 = new Class927(var4);
                ItemStack var7 = this.field5324
                   .method6816()
-                  .<Class920, Class4850>method1030(Class7207.field30939, var6, this.field5324)
+                  .<IInventory, Class4850>method1030(Class7207.field30939, var6, this.field5324)
                   .<ItemStack>map(var1 -> var1.method14962(var6))
                   .orElse(var4);
                BlockPos var8 = this.getPos();
@@ -90,7 +90,7 @@ public class Class945 extends TileEntity implements Class946, Class935 {
                   + (double)((float)var8.method537().method541() * 0.3125F);
 
                for (int var16 = 0; var16 < 4; var16++) {
-                  var3.method6746(ParticleTypes.field34092, var10, var12, var14, 0.0, 5.0E-4, 0.0);
+                  var3.addParticle(ParticleTypes.field34092, var10, var12, var14, 0.0, 5.0E-4, 0.0);
                }
             }
          }
@@ -144,7 +144,7 @@ public class Class945 extends TileEntity implements Class946, Class935 {
 
    public Optional<Class4850> method3797(ItemStack var1) {
       return !this.field5329.stream().noneMatch(ItemStack::isEmpty)
-         ? this.field5324.method6816().<Class920, Class4850>method1030(Class7207.field30939, new Class927(var1), this.field5324)
+         ? this.field5324.method6816().<IInventory, Class4850>method1030(Class7207.field30939, new Class927(var1), this.field5324)
          : Optional.<Class4850>empty();
    }
 
@@ -164,7 +164,7 @@ public class Class945 extends TileEntity implements Class946, Class935 {
    }
 
    private void method3799() {
-      this.method3622();
+      this.markDirty();
       this.method3734().notifyBlockUpdate(this.getPos(), this.method3775(), this.method3775(), 3);
    }
 

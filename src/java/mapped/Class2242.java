@@ -4,31 +4,31 @@ public enum Class2242 {
    field14670 {
       @Override
       public boolean method8990(Item var1) {
-         return var1 instanceof Class3279;
+         return var1 instanceof ArmorItem;
       }
    },
    field14671 {
       @Override
       public boolean method8990(Item var1) {
-         return var1 instanceof Class3279 && ((Class3279)var1).method11805() == Class2106.field13733;
+         return var1 instanceof ArmorItem && ((ArmorItem)var1).method11805() == EquipmentSlotType.field13733;
       }
    },
    field14672 {
       @Override
       public boolean method8990(Item var1) {
-         return var1 instanceof Class3279 && ((Class3279)var1).method11805() == Class2106.field13734;
+         return var1 instanceof ArmorItem && ((ArmorItem)var1).method11805() == EquipmentSlotType.field13734;
       }
    },
    field14673 {
       @Override
       public boolean method8990(Item var1) {
-         return var1 instanceof Class3279 && ((Class3279)var1).method11805() == Class2106.field13735;
+         return var1 instanceof ArmorItem && ((ArmorItem)var1).method11805() == EquipmentSlotType.field13735;
       }
    },
    field14674 {
       @Override
       public boolean method8990(Item var1) {
-         return var1 instanceof Class3279 && ((Class3279)var1).method11805() == Class2106.field13736;
+         return var1 instanceof ArmorItem && ((ArmorItem)var1).method11805() == EquipmentSlotType.field13736;
       }
    },
    field14675 {
@@ -64,7 +64,7 @@ public enum Class2242 {
    field14680 {
       @Override
       public boolean method8990(Item var1) {
-         return var1 instanceof Class3263;
+         return var1 instanceof BowItem;
       }
    },
    field14681 {

@@ -13,7 +13,7 @@ public class Class7575 extends Class7574 {
 
    @Override
    public void method24785(int var1) {
-      this.field32529.world.method6786(this.field32529, (byte)var1);
+      this.field32529.world.setEntityState(this.field32529, (byte)var1);
    }
 
    @Override

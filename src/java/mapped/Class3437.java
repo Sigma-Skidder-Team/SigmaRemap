@@ -31,7 +31,7 @@ public class Class3437 extends Class3433 {
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      switch (Class8694.field39238[var1.<Direction>method23463(field19198).method544().ordinal()]) {
+      switch (Class8694.field39238[var1.<Direction>method23463(field19198).getAxis().ordinal()]) {
          case 1:
          default:
             return field19236;
@@ -46,7 +46,7 @@ public class Class3437 extends Class3433 {
    public BlockState method11495(Class5909 var1) {
       Direction var4 = var1.method18354();
       BlockState var5 = var1.method18360().getBlockState(var1.method18345().method8349(var4.method536()));
-      return var5.method23448(this) && var5.method23463(field19198) == var4
+      return var5.isIn(this) && var5.method23463(field19198) == var4
          ? this.method11579().method23465(field19198, var4.method536())
          : this.method11579().method23465(field19198, var4);
    }
@@ -59,7 +59,7 @@ public class Class3437 extends Class3433 {
       double var12 = (double)var3.getZ() + 0.55 - (double)(var4.nextFloat() * 0.1F);
       double var14 = (double)(0.4F - (var4.nextFloat() + var4.nextFloat()) * 0.4F);
       if (var4.nextInt(5) == 0) {
-         var2.method6746(
+         var2.addParticle(
             ParticleTypes.field34067,
             var8 + (double)var7.method539() * var14,
             var10 + (double)var7.method540() * var14,

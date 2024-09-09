@@ -3,8 +3,8 @@ package mapped;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.RecipeBookCategory;
 
-public abstract class Class5828<C extends Class920> extends Class5812 {
-   public Class5828(Class8298<?> var1, int var2) {
+public abstract class Class5828<C extends IInventory> extends Container {
+   public Class5828(ContainerType<?> var1, int var2) {
       super(var1, var2);
    }
 

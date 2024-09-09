@@ -25,7 +25,7 @@ public abstract class Class3444 extends Block {
    @Override
    public BlockState method11495(Class5909 var1) {
       BlockState var4 = var1.method18360().getBlockState(var1.method18345().method8349(this.field19256));
-      return !var4.method23448(this.method12124()) && !var4.method23448(this.method12125())
+      return !var4.isIn(this.method12124()) && !var4.isIn(this.method12125())
          ? this.method12122(var1.method18360())
          : this.method12125().method11579();
    }

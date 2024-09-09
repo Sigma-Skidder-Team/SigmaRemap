@@ -23,7 +23,7 @@ public class Class2608 extends Class2595 {
    public boolean method10803() {
       if (!this.field16860.isBeingRidden()) {
          if (!this.field16860.world.method6740()) {
-            if (this.field16860.method3013().nextInt(this.field16861) == 0) {
+            if (this.field16860.getRNG().nextInt(this.field16861) == 0) {
                ServerWorld var3 = (ServerWorld)this.field16860.world;
                BlockPos var4 = this.field16860.getPosition();
                if (var3.method6954(var4, 6)) {
@@ -57,8 +57,8 @@ public class Class2608 extends Class2595 {
             Vector3d var4 = Vector3d.method11330(this.field16862);
             Vector3d var5 = this.field16860.getPositionVec();
             Vector3d var6 = var5.method11336(var4);
-            var4 = var6.method11344(0.4).method11338(var4);
-            Vector3d var7 = var4.method11336(var5).method11333().method11344(10.0).method11338(var5);
+            var4 = var6.scale(0.4).add(var4);
+            Vector3d var7 = var4.method11336(var5).method11333().scale(10.0).add(var5);
             BlockPos var8 = new BlockPos(var7);
             var8 = this.field16860.world.method7006(Class101.field300, var8);
             if (!var3.method21654((double)var8.getX(), (double)var8.getY(), (double)var8.getZ(), 1.0)) {
@@ -69,7 +69,7 @@ public class Class2608 extends Class2595 {
    }
 
    private void method10814() {
-      Random var3 = this.field16860.method3013();
+      Random var3 = this.field16860.getRNG();
       BlockPos var4 = this.field16860
          .world
          .method7006(Class101.field300, this.field16860.getPosition().method8336(-8 + var3.nextInt(16), 0, -8 + var3.nextInt(16)));

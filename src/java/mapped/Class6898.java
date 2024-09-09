@@ -112,16 +112,16 @@ public class Class6898 extends Class6896 {
       return Math.max(var4, Math.max(var5, var6));
    }
 
-   private Class113 method21079(BlockPos var1, BlockPos var2) {
-      Class113 var5 = Class113.field414;
+   private Direction method21079(BlockPos var1, BlockPos var2) {
+      Direction var5 = Direction.field414;
       int var6 = Math.abs(var2.getX() - var1.getX());
       int var7 = Math.abs(var2.getZ() - var1.getZ());
       int var8 = Math.max(var6, var7);
       if (var8 > 0) {
          if (var6 != var8) {
-            var5 = Class113.field415;
+            var5 = Direction.field415;
          } else {
-            var5 = Class113.field413;
+            var5 = Direction.field413;
          }
       }
 

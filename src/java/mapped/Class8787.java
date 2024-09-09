@@ -6,7 +6,7 @@ import net.minecraft.world.World;
 import java.util.Optional;
 import java.util.function.BiFunction;
 
-public final class Class8787 implements Class8786 {
+public final class Class8787 implements IWorldPosCallable {
    private static String[] field39522;
 
    @Override

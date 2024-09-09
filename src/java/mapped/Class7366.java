@@ -19,18 +19,18 @@ public class Class7366 extends Class7361 {
       Vector3d var3 = this.field31519.method4334(1.0F).method11333();
       var3.method11351((float) (-Math.PI / 4));
       double var4 = this.field31519.field5624.getPosX();
-      double var6 = this.field31519.field5624.method3440(0.5);
+      double var6 = this.field31519.field5624.getPosYHeight(0.5);
       double var8 = this.field31519.field5624.getPosZ();
 
       for (int var10 = 0; var10 < 8; var10++) {
-         Random var11 = this.field31519.method3013();
+         Random var11 = this.field31519.getRNG();
          double var12 = var4 + var11.nextGaussian() / 2.0;
          double var14 = var6 + var11.nextGaussian() / 2.0;
          double var16 = var8 + var11.nextGaussian() / 2.0;
-         Vector3d var18 = this.field31519.getVec();
+         Vector3d var18 = this.field31519.getMotion();
          this.field31519
             .world
-            .method6746(
+            .addParticle(
                ParticleTypes.field34056,
                var12,
                var14,
@@ -62,7 +62,7 @@ public class Class7366 extends Class7361 {
 
    @Override
    public float method23367() {
-      float var3 = MathHelper.method37766(Entity.method3234(this.field31519.getVec())) + 1.0F;
+      float var3 = MathHelper.sqrt(Entity.horizontalMag(this.field31519.getMotion())) + 1.0F;
       float var4 = Math.min(var3, 40.0F);
       return var4 / var3;
    }

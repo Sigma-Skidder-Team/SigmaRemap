@@ -60,7 +60,7 @@ public class Class2888<T extends Class1070> extends Class2803<T> {
 
    public void method10998(Class1070 var1, float var2, float var3, float var4, float var5, float var6) {
       var3 = Math.min(0.25F, var3);
-      if (var1.method3408().size() > 0) {
+      if (var1.getPassengers().size() > 0) {
          this.field17894.field31035 = 0.0F;
          this.field17894.field31036 = 0.0F;
       } else {

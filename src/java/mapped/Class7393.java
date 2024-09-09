@@ -33,7 +33,7 @@ public class Class7393 {
       method23625(var0, var3, SCustomPayloadPlayPacket.field24552);
    }
 
-   public static void method23612(ServerWorld var0, Class7481 var1) {
+   public static void method23612(ServerWorld var0, ChunkPos var1) {
    }
 
    public static void method23613(ServerWorld var0, BlockPos var1) {

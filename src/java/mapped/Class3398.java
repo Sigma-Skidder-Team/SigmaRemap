@@ -22,7 +22,7 @@ public class Class3398 extends AbstractFireBlock {
    }
 
    public static boolean method12014(Block var0) {
-      return var0.method11540(BlockTags.field32807);
+      return var0.isIn(BlockTags.field32807);
    }
 
    @Override

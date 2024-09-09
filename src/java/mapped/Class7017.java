@@ -15,7 +15,7 @@ public class Class7017 implements Class7016 {
 
    @Override
    public int method21742(ServerWorld var1, boolean var2, boolean var3) {
-      if (var3 && var1.method6789().method17135(Class5462.field24226)) {
+      if (var3 && var1.getGameRules().getBoolean(Class5462.field24226)) {
          this.field30318--;
          if (this.field30318 <= 0) {
             this.field30318 = 1200;
@@ -77,10 +77,10 @@ public class Class7017 implements Class7016 {
    }
 
    private int method21748(BlockPos var1, ServerWorld var2) {
-      Class1098 var5 = EntityType.field41012.method33215(var2);
+      Class1098 var5 = EntityType.field41012.create(var2);
       if (var5 != null) {
          var5.method4276(var2, var2.method6807(var1), Class2202.field14391, (Class5093)null, (CompoundNBT)null);
-         var5.method3272(var1, 0.0F, 0.0F);
+         var5.moveToBlockPosAndAngles(var1, 0.0F, 0.0F);
          var2.method6995(var5);
          return 1;
       } else {

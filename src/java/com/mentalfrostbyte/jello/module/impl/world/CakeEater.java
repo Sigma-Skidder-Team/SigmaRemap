@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.module.impl.world;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -54,8 +54,8 @@ public class CakeEater extends Module {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SChatPacket) {
                 SChatPacket var4 = (SChatPacket) var1.getPacket();
-                if (var4.method17648().getString().equals("§9Game> §r§7You cannot eat your own cake!§r")) {
-                    var1.method13900(true);
+                if (var4.getChatComponent().getString().equals("§9Game> §r§7You cannot eat your own cake!§r")) {
+                    var1.setCancelled(true);
                 }
             }
         }
@@ -63,7 +63,7 @@ public class CakeEater extends Module {
 
     @EventTarget
     @HigherPriority
-    private void method16320(Class4399 var1) {
+    private void method16320(EventUpdate var1) {
         if (this.isEnabled()) {
             ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Fly.class);
             if (var4.method16726() instanceof MineplexFly) {
@@ -101,11 +101,11 @@ public class CakeEater extends Module {
                     Collections.sort(var8, new Class3593(this));
                     field23588 = (BlockPos) var8.get(0);
                     if (!this.getBooleanValueFromSetttingName("Mineplex")) {
-                        float[] var6 = Class9142.method34144(
+                        float[] var6 = RotationHelper.method34144(
                                 (double) field23588.getX() + 0.5, (double) field23588.getZ() + 0.5, field23588.getY()
                         );
-                        var1.method13918(var6[0]);
-                        var1.method13916(var6[1]);
+                        var1.setPitch(var6[0]);
+                        var1.setYaw(var6[1]);
                     }
                 }
             }
@@ -125,7 +125,7 @@ public class CakeEater extends Module {
                     );
                     if (mc.world.getBlockState(var8).getBlock() instanceof Class3394
                             && Math.sqrt(
-                            mc.player.method3276((double) var8.getX() + 0.5, (double) var8.getY() + 0.5, (double) var8.getZ() + 0.5)
+                            mc.player.getDistanceNearest((double) var8.getX() + 0.5, (double) var8.getY() + 0.5, (double) var8.getZ() + 0.5)
                     )
                             < (double) var1) {
                         var4.add(var8);

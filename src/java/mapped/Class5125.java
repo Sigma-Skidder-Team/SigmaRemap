@@ -62,7 +62,7 @@ public class Class5125 implements Class5119 {
    }
 
    private void method15827() {
-      long var3 = this.field23306.world.method6783() - 20L;
+      long var3 = this.field23306.world.getGameTime() - 20L;
       this.field23307.entrySet().removeIf(var2 -> var2.getValue().field40572 < var3);
    }
 
@@ -243,7 +243,7 @@ public class Class5125 implements Class5119 {
    }
 
    private String method15842(Class6986 var1, BlockPos var2) {
-      float var5 = MathHelper.method37766(var2.method8320(var1.field30221.getX(), var1.field30221.getY(), var1.field30221.getZ(), true));
+      float var5 = MathHelper.sqrt(var2.method8320(var1.field30221.getX(), var1.field30221.getY(), var1.field30221.getZ(), true));
       double var6 = (double)Math.round(var5 * 10.0F) / 10.0;
       return var2.method8323() + " (dist " + var6 + ")";
    }

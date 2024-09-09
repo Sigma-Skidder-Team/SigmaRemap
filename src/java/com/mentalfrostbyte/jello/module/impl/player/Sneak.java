@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.player;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.client.CEntityActionPacket;
@@ -17,7 +17,7 @@ public class Sneak extends Module {
     }
 
     @EventTarget
-    public void method16229(Class4399 var1) {
+    public void method16229(EventUpdate var1) {
         if (this.isEnabled()) {
             if (!var1.method13921()) {
                 mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.RELEASE_SHIFT_KEY));

@@ -3,7 +3,7 @@ package mapped;
 public class Class6070 extends Class6069 {
    private static String[] field27310;
 
-   public Class6070(Class1937 var1, Class2106... var2) {
+   public Class6070(Class1937 var1, EquipmentSlotType... var2) {
       super(var1, Class2242.field14678, var2);
    }
 
@@ -23,7 +23,7 @@ public class Class6070 extends Class6069 {
    }
 
    @Override
-   public float method18815(int var1, Class7809 var2) {
-      return var2 != Class7809.field33509 ? 0.0F : (float)var1 * 2.5F;
+   public float method18815(int var1, CreatureAttribute var2) {
+      return var2 != CreatureAttribute.field33509 ? 0.0F : (float)var1 * 2.5F;
    }
 }

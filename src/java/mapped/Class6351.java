@@ -13,7 +13,7 @@ public class Class6351 extends Class6349 {
 
    @Override
    public Vector3d method19299(Vector3d var1, float var2) {
-      return var1.method11344(0.15F);
+      return var1.scale(0.15F);
    }
 
    @Override

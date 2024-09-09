@@ -11,7 +11,7 @@ import java.util.NoSuchElementException;
 
 public class Class8563 {
    public static final int field38494 = 1000;
-   private static final Class6355[] field38495 = new Class6355[0];
+   private static final ViaVersion7[] field38495 = new ViaVersion7[0];
    private final ByteBuf field38496;
    private final Class7161 field38497;
    private boolean field38498 = true;
@@ -129,7 +129,7 @@ public class Class8563 {
    public <T> void method30560(Class4750<T> var1, T var2) {
       if (var2 != null && !var1.method14898().isAssignableFrom(var2.getClass())) {
          if (!(var1 instanceof Class4755)) {
-            Class8042.method27613().method27366().warning("Possible type mismatch: " + var2.getClass().getName() + " -> " + var1.method14898());
+            ViaVersion3.method27613().method27366().warning("Possible type mismatch: " + var2.getClass().getName() + " -> " + var1.method14898());
          } else {
             var2 = (T) ((Class4755)var1).method14904(var2);
          }
@@ -171,7 +171,7 @@ public class Class8563 {
                if (var6.method35008() instanceof Class4755) {
                   var7 = ((Class4755)var6.method35008()).method14904(var7);
                } else {
-                  Class8042.method27613()
+                  ViaVersion3.method27613()
                      .method27366()
                      .warning("Possible type mismatch: " + var7.getClass().getName() + " -> " + ((Class4750)var6.method35008()).method14898());
                }
@@ -207,25 +207,25 @@ public class Class8563 {
       }
    }
 
-   public void method30567(Class<? extends Class6355> var1, boolean var2) throws Exception {
+   public void method30567(Class<? extends ViaVersion7> var1, boolean var2) throws Exception {
       this.method30568(var1, var2, false);
    }
 
-   public void method30568(Class<? extends Class6355> var1, boolean var2, boolean var3) throws Exception {
+   public void method30568(Class<? extends ViaVersion7> var1, boolean var2, boolean var3) throws Exception {
       if (!this.method30579()) {
          try {
             ByteBuf var6 = this.method30569(var1, var2, Class2302.field15717);
             this.method30580().method22442(var6, var3);
          } catch (Exception var7) {
-            if (!Class8190.method28486(var7, Class2449.class)) {
+            if (!Class8190.method28486(var7, ViaVersion4.class)) {
                throw var7;
             }
          }
       }
    }
 
-   private ByteBuf method30569(Class<? extends Class6355> var1, boolean var2, Class2302 var3) throws Exception {
-      Class6355[] var6 = this.method30580().method22465().method18683().method19393().<Class6355>toArray(field38495);
+   private ByteBuf method30569(Class<? extends ViaVersion7> var1, boolean var2, Class2302 var3) throws Exception {
+      ViaVersion7[] var6 = this.method30580().method22465().method18683().method19393().<ViaVersion7>toArray(field38495);
       boolean var7 = var3 == Class2302.field15717;
       int var8 = -1;
 
@@ -251,11 +251,11 @@ public class Class8563 {
       }
    }
 
-   public void method30570(Class<? extends Class6355> var1) throws Exception {
+   public void method30570(Class<? extends ViaVersion7> var1) throws Exception {
       this.method30567(var1, true);
    }
 
-   public ChannelFuture method30571(Class<? extends Class6355> var1) throws Exception {
+   public ChannelFuture method30571(Class<? extends ViaVersion7> var1) throws Exception {
       if (this.method30579()) {
          return this.method30580().method22464().newFailedFuture(new Exception("Cancelled packet"));
       } else {
@@ -283,16 +283,16 @@ public class Class8563 {
       return var5;
    }
 
-   public Class8563 method30575(Class2302 var1, Class187 var2, int var3, List<Class6355> var4, boolean var5) throws Exception {
-      Class6355[] var8 = var4.<Class6355>toArray(field38495);
+   public Class8563 method30575(Class2302 var1, Class187 var2, int var3, List<ViaVersion7> var4, boolean var5) throws Exception {
+      ViaVersion7[] var8 = var4.<ViaVersion7>toArray(field38495);
       return this.method30577(var1, var2, !var5 ? var3 : var8.length - 1, var8, var5);
    }
 
-   public Class8563 method30576(Class2302 var1, Class187 var2, int var3, List<Class6355> var4) throws Exception {
-      return this.method30577(var1, var2, var3, var4.<Class6355>toArray(field38495), false);
+   public Class8563 method30576(Class2302 var1, Class187 var2, int var3, List<ViaVersion7> var4) throws Exception {
+      return this.method30577(var1, var2, var3, var4.<ViaVersion7>toArray(field38495), false);
    }
 
-   private Class8563 method30577(Class2302 var1, Class187 var2, int var3, Class6355[] var4, boolean var5) throws Exception {
+   private Class8563 method30577(Class2302 var1, Class187 var2, int var3, ViaVersion7[] var4, boolean var5) throws Exception {
       if (!var5) {
          for (int var8 = var3; var8 < var4.length; var8++) {
             var4[var8].method19369(var1, var2, this);
@@ -336,24 +336,24 @@ public class Class8563 {
       }
    }
 
-   public void method30583(Class<? extends Class6355> var1, boolean var2, boolean var3) throws Exception {
+   public void method30583(Class<? extends ViaVersion7> var1, boolean var2, boolean var3) throws Exception {
       if (!this.method30579()) {
          try {
             ByteBuf var6 = this.method30569(var1, var2, Class2302.field15718);
             this.method30580().method22451(var6, var3);
          } catch (Exception var7) {
-            if (!Class8190.method28486(var7, Class2449.class)) {
+            if (!Class8190.method28486(var7, ViaVersion4.class)) {
                throw var7;
             }
          }
       }
    }
 
-   public void method30584(Class<? extends Class6355> var1, boolean var2) throws Exception {
+   public void method30584(Class<? extends ViaVersion7> var1, boolean var2) throws Exception {
       this.method30583(var1, var2, false);
    }
 
-   public void method30585(Class<? extends Class6355> var1) throws Exception {
+   public void method30585(Class<? extends ViaVersion7> var1) throws Exception {
       this.method30584(var1, true);
    }
 

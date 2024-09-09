@@ -57,7 +57,7 @@ public class Class3197 extends Class3198 implements Class3196 {
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
       Block var6 = var2.getBlockState(var3.method8349(var1.<Direction>method23463(field18484))).getBlock();
-      return var6.method11540(BlockTags.field32756);
+      return var6.isIn(BlockTags.field32756);
    }
 
    @Override
@@ -84,7 +84,7 @@ public class Class3197 extends Class3198 implements Class3196 {
       BlockPos var6 = var1.method18345();
 
       for (Direction var10 : var1.method18349()) {
-         if (var10.method544().method324()) {
+         if (var10.getAxis().method324()) {
             var4 = var4.method23465(field18484, var10);
             if (var4.method23443(var5, var6)) {
                return var4;

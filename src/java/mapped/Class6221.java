@@ -18,7 +18,7 @@ public final class Class6221 extends Class6218 {
       ArmorStandEntity var8 = new ArmorStandEntity(var7, (double)var6.getX() + 0.5, (double)var6.getY(), (double)var6.getZ() + 0.5);
       EntityType.method33204(var7, (PlayerEntity)null, var8, var2.method32142());
       var8.rotationYaw = var5.method551();
-      var7.method6916(var8);
+      var7.addEntity(var8);
       var2.method32182(1);
       return var2;
    }

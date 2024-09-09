@@ -42,13 +42,13 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
    @Override
    public boolean isSpectator() {
       Class6589 var3 = Minecraft.getInstance().getConnection().method15792(this.getGameProfile().getId());
-      return var3 != null && var3.method19967() == Class1894.field11105;
+      return var3 != null && var3.method19967() == GameType.SPECTATOR;
    }
 
    @Override
    public boolean isCreative() {
       Class6589 var3 = Minecraft.getInstance().getConnection().method15792(this.getGameProfile().getId());
-      return var3 != null && var3.method19967() == Class1894.field11103;
+      return var3 != null && var3.method19967() == GameType.field11103;
    }
 
    public boolean method5368() {
@@ -135,13 +135,13 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
          var3 *= 1.1F;
       }
 
-      var3 = (float)((double)var3 * ((this.method3086(Attributes.MOVEMENT_SPEED) / (double)this.abilities.getWalkSpeed() + 1.0) / 2.0));
+      var3 = (float)((double)var3 * ((this.getAttributeValue(Attributes.MOVEMENT_SPEED) / (double)this.abilities.getWalkSpeed() + 1.0) / 2.0));
       if (this.abilities.getWalkSpeed() == 0.0F || Float.isNaN(var3) || Float.isInfinite(var3)) {
          var3 = 1.0F;
       }
 
-      if (this.isHandActive() && this.method3158().getItem() instanceof Class3263) {
-         int var4 = this.method3160();
+      if (this.isHandActive() && this.getActiveItemStack().getItem() instanceof BowItem) {
+         int var4 = this.getItemInUseMaxCount();
          float var5 = (float)var4 / 20.0F;
          if (!(var5 > 1.0F)) {
             var5 *= var5;

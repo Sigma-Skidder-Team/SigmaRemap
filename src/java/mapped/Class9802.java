@@ -18,8 +18,8 @@ public final class Class9802<U> {
       this.field45822 = var2;
    }
 
-   private void method38646(Class6947<?> var1) {
-      Class6947.method21447(var1, this.field45821, this.field45822);
+   private void method38646(Brain<?> var1) {
+      Brain.method21447(var1, this.field45821, this.field45822);
    }
 
    public <T> void method38647(DynamicOps<T> var1, RecordBuilder<T> var2) {
@@ -34,7 +34,7 @@ public final class Class9802<U> {
    }
 
    // $VF: synthetic method
-   public static void method38650(Class9802 var0, Class6947 var1) {
+   public static void method38650(Class9802 var0, Brain var1) {
       var0.method38646(var1);
    }
 

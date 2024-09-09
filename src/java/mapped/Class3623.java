@@ -135,8 +135,8 @@ public class Class3623 extends Class3624 {
       CompoundNBT var3 = new CompoundNBT();
       var3.method109("Name", ITextComponent$Serializer.toJson(this.field19634));
       var3.putBoolean("Visible", this.method12286());
-      var3.method102("Value", this.field19627);
-      var3.method102("Max", this.field19628);
+      var3.putInt("Value", this.field19627);
+      var3.putInt("Max", this.field19628);
       var3.method109("Color", this.method12292().method9070());
       var3.method109("Overlay", this.method12293().method9067());
       var3.putBoolean("DarkenScreen", this.method12294());

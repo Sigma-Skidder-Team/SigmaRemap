@@ -22,9 +22,9 @@ public class Class883 extends ProjectileEntity {
       this(EntityType.field41048, var1);
       super.setShooter(var2);
       this.setPosition(
-         var2.getPosX() - (double)(var2.method3429() + 1.0F) * 0.5 * (double) MathHelper.sin(var2.field4965 * (float) (Math.PI / 180.0)),
-         var2.method3442() - 0.1F,
-         var2.getPosZ() + (double)(var2.method3429() + 1.0F) * 0.5 * (double) MathHelper.cos(var2.field4965 * (float) (Math.PI / 180.0))
+         var2.getPosX() - (double)(var2.getWidth() + 1.0F) * 0.5 * (double) MathHelper.sin(var2.renderYawOffset * (float) (Math.PI / 180.0)),
+         var2.getPosYEye() - 0.1F,
+         var2.getPosZ() + (double)(var2.getWidth() + 1.0F) * 0.5 * (double) MathHelper.cos(var2.renderYawOffset * (float) (Math.PI / 180.0))
       );
    }
 
@@ -34,16 +34,16 @@ public class Class883 extends ProjectileEntity {
 
       for (int var16 = 0; var16 < 7; var16++) {
          double var17 = 0.4 + 0.1 * (double)var16;
-         var1.method6746(ParticleTypes.field34094, var2, var4, var6, var8 * var17, var10, var12 * var17);
+         var1.addParticle(ParticleTypes.field34094, var2, var4, var6, var8 * var17, var10, var12 * var17);
       }
 
-      this.method3435(var8, var10, var12);
+      this.setMotion(var8, var10, var12);
    }
 
    @Override
    public void tick() {
       super.tick();
-      Vector3d var3 = this.getVec();
+      Vector3d var3 = this.getMotion();
       RayTraceResult var4 = Class9456.method36385(this, this::method3467);
       if (var4 != null) {
          this.method3464(var4);
@@ -57,17 +57,17 @@ public class Class883 extends ProjectileEntity {
       float var12 = 0.06F;
       if (!this.world.method7035(this.getBoundingBox()).noneMatch(Class7377::isAir)) {
          if (!this.method3255()) {
-            this.method3434(var3.method11344(0.99F));
+            this.setMotion(var3.scale(0.99F));
             if (!this.method3247()) {
-               this.method3434(this.getVec().method11339(0.0, -0.06F, 0.0));
+               this.setMotion(this.getMotion().add(0.0, -0.06F, 0.0));
             }
 
             this.setPosition(var5, var7, var9);
          } else {
-            this.method2904();
+            this.remove();
          }
       } else {
-         this.method2904();
+         this.remove();
       }
    }
 
@@ -76,7 +76,7 @@ public class Class883 extends ProjectileEntity {
       super.method3465(var1);
       Entity var4 = this.method3460();
       if (var4 instanceof LivingEntity) {
-         var1.getEntity().method2741(DamageSource.method31116(this, (LivingEntity)var4).method31130(), 1.0F);
+         var1.getEntity().attackEntityFrom(DamageSource.method31116(this, (LivingEntity)var4).method31130(), 1.0F);
       }
    }
 
@@ -84,7 +84,7 @@ public class Class883 extends ProjectileEntity {
    public void method3466(BlockRayTraceResult var1) {
       super.method3466(var1);
       if (!this.world.isRemote) {
-         this.method2904();
+         this.remove();
       }
    }
 
@@ -93,7 +93,7 @@ public class Class883 extends ProjectileEntity {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this);
    }
 }

@@ -12,7 +12,7 @@ public class Class6840 extends Class6829 {
 
    @Override
    public void method20810() {
-      if (this.field29728.onGround && !this.field29728.field4981 && !((Class7955)Class1094.method5119(this.field29728)).method27045()) {
+      if (this.field29728.onGround && !this.field29728.isJumping && !((Class7955)Class1094.method5119(this.field29728)).method27045()) {
          this.field29728.method5104(0.0);
       } else if (this.method20811()) {
          this.field29728.method5104(this.field29729);
@@ -23,7 +23,7 @@ public class Class6840 extends Class6829 {
 
    @Override
    public void method20813(double var1, double var3, double var5, double var7) {
-      if (this.field29728.method3250()) {
+      if (this.field29728.isInWater()) {
          var7 = 1.5;
       }
 

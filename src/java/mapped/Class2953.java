@@ -18,7 +18,7 @@ public class Class2953 extends Class2898<Class4712> {
          return false;
       } else {
          BlockState var8 = var1.getBlockState(var4.up());
-         if (!var8.method23448(Blocks.NETHERRACK) && !var8.method23448(Blocks.BASALT) && !var8.method23448(Blocks.field37130)) {
+         if (!var8.isIn(Blocks.NETHERRACK) && !var8.isIn(Blocks.BASALT) && !var8.isIn(Blocks.field37130)) {
             return false;
          } else {
             var1.setBlockState(var4, Blocks.field36587.method11579(), 2);
@@ -29,7 +29,7 @@ public class Class2953 extends Class2898<Class4712> {
                   int var11 = 0;
 
                   for (Direction var15 : Direction.values()) {
-                     if (var1.getBlockState(var10.method8349(var15)).method23448(Blocks.field36587)) {
+                     if (var1.getBlockState(var10.method8349(var15)).isIn(Blocks.field36587)) {
                         var11++;
                      }
 

@@ -38,14 +38,14 @@ public class Class1691 implements ISeedReader {
    private final Class6802<Block> field9210 = new Class6803<Block>(var1x -> this.method7011(var1x).method7089());
    private final Class6802<Fluid> field9211 = new Class6803<Fluid>(var1x -> this.method7011(var1x).method7090());
    private final BiomeManager field9212;
-   private final Class7481 field9213;
-   private final Class7481 field9214;
+   private final ChunkPos field9213;
+   private final ChunkPos field9214;
    private final Class7480 field9215;
 
    public Class1691(ServerWorld var1, List<IChunk> var2) {
       int var5 = MathHelper.floor(Math.sqrt((double)var2.size()));
       if (var5 * var5 == var2.size()) {
-         Class7481 var6 = ((IChunk)var2.get(var2.size() / 2)).method7072();
+         ChunkPos var6 = ((IChunk)var2.get(var2.size() / 2)).method7072();
          this.field9201 = var2;
          this.field9202 = var6.field32174;
          this.field9203 = var6.field32175;
@@ -223,9 +223,9 @@ public class Class1691 implements ISeedReader {
          }
       } else if (var7.method7080().method34303() != Class2076.field13525) {
          CompoundNBT var10 = new CompoundNBT();
-         var10.method102("x", var1.getX());
-         var10.method102("y", var1.getY());
-         var10.method102("z", var1.getZ());
+         var10.putInt("x", var1.getX());
+         var10.putInt("y", var1.getY());
+         var10.putInt("z", var1.getZ());
          var10.method109("id", "DUMMY");
          var7.method7085(var10);
       } else {
@@ -244,7 +244,7 @@ public class Class1691 implements ISeedReader {
    }
 
    @Override
-   public boolean method6916(Entity var1) {
+   public boolean addEntity(Entity var1) {
       int var4 = MathHelper.floor(var1.getPosX() / 16.0);
       int var5 = MathHelper.floor(var1.getPosZ() / 16.0);
       this.getChunk(var4, var5).method7063(var1);
@@ -257,8 +257,8 @@ public class Class1691 implements ISeedReader {
    }
 
    @Override
-   public WorldBorder method6810() {
-      return this.field9205.method6810();
+   public WorldBorder getWorldBorder() {
+      return this.field9205.getWorldBorder();
    }
 
    @Override
@@ -331,7 +331,7 @@ public class Class1691 implements ISeedReader {
    }
 
    @Override
-   public void method6746(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public void addParticle(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12) {
    }
 
    @Override
@@ -354,7 +354,7 @@ public class Class1691 implements ISeedReader {
    }
 
    @Override
-   public List<Entity> method6770(Entity var1, AxisAlignedBB var2, Predicate<? super Entity> var3) {
+   public List<Entity> getEntitiesInAABBexcluding(Entity var1, AxisAlignedBB var2, Predicate<? super Entity> var3) {
       return Collections.<Entity>emptyList();
    }
 

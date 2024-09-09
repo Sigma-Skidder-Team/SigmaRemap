@@ -14,7 +14,7 @@ public class Class7956 {
    }
 
    public void method27048() {
-      this.field34202.method3133(this.field34203);
+      this.field34202.setJumping(this.field34203);
       this.field34203 = false;
    }
 }

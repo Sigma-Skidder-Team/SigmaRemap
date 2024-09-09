@@ -66,15 +66,15 @@ public class Class2607 extends Class2605 {
    @Override
    public void method10805() {
       LivingEntity var3 = this.field16858.method4232();
-      Class1110.method5351(this.field16858, new Vector3d(var3.getPosX(), var3.method3440(0.5), var3.getPosZ()));
+      Class1110.method5351(this.field16858, new Vector3d(var3.getPosX(), var3.getPosYHeight(0.5), var3.getPosZ()));
       if (!this.field16858.getBoundingBox().method19664(0.2F).method19670(var3.getBoundingBox())) {
-         if (this.field16858.collidedHorizontally || this.field16858.field4952 > 0) {
+         if (this.field16858.collidedHorizontally || this.field16858.hurtTime > 0) {
             Class1110.method5352(this.field16858, Class2143.field14028);
          }
       } else {
-         this.field16858.method3114(var3);
+         this.field16858.attackEntityAsMob(var3);
          Class1110.method5352(this.field16858, Class2143.field14028);
-         if (!this.field16858.method3245()) {
+         if (!this.field16858.isSilent()) {
             this.field16858.world.playEvent(1039, this.field16858.getPosition(), 0);
          }
       }

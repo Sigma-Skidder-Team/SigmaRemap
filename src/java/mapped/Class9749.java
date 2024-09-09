@@ -78,7 +78,7 @@ public class Class9749 {
    }
 
    private static int method38287(Class6619 var0, Class7760 var1) throws CommandSyntaxException {
-      Class7481 var4 = new Class7481(var1.field33332 >> 4, var1.field33333 >> 4);
+      ChunkPos var4 = new ChunkPos(var1.field33332 >> 4, var1.field33333 >> 4);
       ServerWorld var5 = var0.method20172();
       RegistryKey var6 = var5.getDimensionKey();
       boolean var7 = var5.method6949().contains(var4.method24352());
@@ -98,7 +98,7 @@ public class Class9749 {
       if (var6 <= 0) {
          var0.method20181(new TranslationTextComponent("commands.forceload.added.none", var4.getLocation()));
       } else {
-         String var7 = Joiner.on(", ").join(var5.stream().sorted().<Class7481>map(Class7481::new).<String>map(Class7481::toString).iterator());
+         String var7 = Joiner.on(", ").join(var5.stream().sorted().<ChunkPos>map(ChunkPos::new).<String>map(ChunkPos::toString).iterator());
          if (var6 != 1) {
             var0.method20179(new TranslationTextComponent("commands.forceload.list.multiple", var6, var4.getLocation(), var7), false);
          } else {
@@ -114,7 +114,7 @@ public class Class9749 {
       RegistryKey<World> var4 = var3.getDimensionKey();
       LongSet var5 = var3.method6949();
       for (long var1 : var5) {
-         var3.method6950(Class7481.method24354(var1), Class7481.method24355(var1), false);
+         var3.method6950(ChunkPos.method24354(var1), ChunkPos.method24355(var1), false);
       }
       var0.method20179(new TranslationTextComponent("commands.forceload.removed.all", var4.getLocation()), true);
       return 0;
@@ -136,7 +136,7 @@ public class Class9749 {
          } else {
             ServerWorld var16 = var0.method20172();
             RegistryKey var17 = var16.getDimensionKey();
-            Class7481 var18 = null;
+            ChunkPos var18 = null;
             int var19 = 0;
 
             for (int var20 = var10; var20 <= var12; var20++) {
@@ -145,7 +145,7 @@ public class Class9749 {
                   if (var22) {
                      var19++;
                      if (var18 == null) {
-                        var18 = new Class7481(var20, var21);
+                        var18 = new ChunkPos(var20, var21);
                      }
                   }
                }
@@ -153,8 +153,8 @@ public class Class9749 {
 
             if (var19 != 0) {
                if (var19 != 1) {
-                  Class7481 var23 = new Class7481(var10, var11);
-                  Class7481 var24 = new Class7481(var12, var13);
+                  ChunkPos var23 = new ChunkPos(var10, var11);
+                  ChunkPos var24 = new ChunkPos(var12, var13);
                   var0.method20179(
                      new TranslationTextComponent("commands.forceload." + (!var3 ? "removed" : "added") + ".multiple", var19, var17.getLocation(), var23, var24),
                      true

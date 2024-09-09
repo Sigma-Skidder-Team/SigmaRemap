@@ -98,7 +98,7 @@ public class Class950 extends TileEntity implements Class949, Class935 {
       }
 
       int var14 = this.field5342;
-      if (this.field5324.method6783() % 80L == 0L) {
+      if (this.field5324.getGameTime() % 80L == 0L) {
          if (!this.field5340.isEmpty()) {
             this.method3820(var3, var4, var5);
          }
@@ -177,12 +177,12 @@ public class Class950 extends TileEntity implements Class949, Class935 {
          List<PlayerEntity> var8 = this.field5324.<PlayerEntity>method7182(PlayerEntity.class, var7);
 
          for (PlayerEntity var10 : var8) {
-            var10.method3035(new Class2023(this.field5344, var6, var5, true, true));
+            var10.addPotionEffect(new EffectInstance(this.field5344, var6, var5, true, true));
          }
 
          if (this.field5342 >= 4 && this.field5344 != this.field5345 && this.field5345 != null) {
             for (PlayerEntity var12 : var8) {
-               var12.method3035(new Class2023(this.field5345, var6, 0, true, true));
+               var12.addPotionEffect(new EffectInstance(this.field5345, var6, 0, true, true));
             }
          }
       }
@@ -237,9 +237,9 @@ public class Class950 extends TileEntity implements Class949, Class935 {
    @Override
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
-      var1.method102("Primary", Effect.method22288(this.field5344));
-      var1.method102("Secondary", Effect.method22288(this.field5345));
-      var1.method102("Levels", this.field5342);
+      var1.putInt("Primary", Effect.method22288(this.field5344));
+      var1.putInt("Secondary", Effect.method22288(this.field5345));
+      var1.putInt("Levels", this.field5342);
       if (this.field5346 != null) {
          var1.method109("CustomName", ITextComponent$Serializer.toJson(this.field5346));
       }
@@ -254,10 +254,10 @@ public class Class950 extends TileEntity implements Class949, Class935 {
 
    @Nullable
    @Override
-   public Class5812 method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
+   public Container method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
       return !Class932.method3697(var3, this.field5347, this.method2954())
          ? null
-         : new Class5821(var1, var2, this.field5348, Class8786.method31714(this.field5324, this.getPos()));
+         : new Class5821(var1, var2, this.field5348, IWorldPosCallable.method31714(this.field5324, this.getPos()));
    }
 
    @Override

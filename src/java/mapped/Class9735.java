@@ -23,7 +23,7 @@ public class Class9735 {
       return new Class9735();
    }
 
-   public Class9735 method38147(Class3303 var1) {
+   public Class9735 method38147(IItemProvider var1) {
       this.field45461 = var1.method11581();
       return this;
    }

@@ -10,7 +10,6 @@ import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -24,13 +23,13 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 public class Class3366 extends Class3241 {
-   private static final Direction[] field18934 = new Direction[]{Direction.WEST, Direction.EAST, Direction.SOUTH};
+   private static final net.minecraft.util.Direction[] field18934 = new net.minecraft.util.Direction[]{net.minecraft.util.Direction.WEST, net.minecraft.util.Direction.EAST, net.minecraft.util.Direction.SOUTH};
    public static final Class8553 field18935 = Class3198.field18484;
    public static final Class8554 field18936 = Class8820.field39754;
 
    public Class3366(AbstractBlock var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18936, Integer.valueOf(0)).method23465(field18935, Direction.NORTH));
+      this.method11578(this.field18612.method35393().method23465(field18936, Integer.valueOf(0)).method23465(field18935, net.minecraft.util.Direction.NORTH));
    }
 
    @Override
@@ -48,7 +47,7 @@ public class Class3366 extends Class3241 {
       super.method11562(var1, var2, var3, var4, var5, var6);
       if (!var1.isRemote && var5 instanceof Class962) {
          Class962 var9 = (Class962)var5;
-         if (Class7858.method26311(Class8122.field34916, var6) == 0) {
+         if (EnchantmentHelper.method26311(Class8122.field34916, var6) == 0) {
             var9.method3915(var2, var4, Class2084.field13573);
             var1.updateComparatorOutputLevel(var3, this);
             this.method11943(var1, var3);
@@ -91,7 +90,7 @@ public class Class3366 extends Class3241 {
                      var4.method2882(new ItemStack(Items.field38177), false);
                   }
                } else {
-                  var4.method3095(var5, new ItemStack(Items.field38177));
+                  var4.setHeldItem(var5, new ItemStack(Items.field38177));
                }
 
                var11 = true;
@@ -99,7 +98,7 @@ public class Class3366 extends Class3241 {
          } else {
             var2.method6743(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26398, Class2266.field14734, 1.0F, 1.0F);
             method11944(var2, var3);
-            var9.method32121(1, var4, var1x -> var1x.method3185(var5));
+            var9.method32121(1, var4, var1x -> var1x.sendBreakAnimation(var5));
             var11 = true;
          }
       }
@@ -156,14 +155,14 @@ public class Class3366 extends Class3241 {
    private void method11948(World var1, BlockPos var2, BlockState var3) {
       if (var3.method23449().method23474() && !(var1.rand.nextFloat() < 0.3F)) {
          VoxelShape var6 = var3.method23414(var1, var2);
-         double var7 = var6.method19513(Class113.field414);
+         double var7 = var6.method19513(Direction.field414);
          if (var7 >= 1.0 && !var3.method23446(BlockTags.field32781)) {
-            double var9 = var6.method19512(Class113.field414);
+            double var9 = var6.method19512(Direction.field414);
             if (!(var9 > 0.0)) {
                BlockPos var11 = var2.down();
                BlockState var12 = var1.getBlockState(var11);
                VoxelShape var13 = var12.method23414(var1, var11);
-               double var14 = var13.method19513(Class113.field414);
+               double var14 = var13.method19513(Direction.field414);
                if ((var14 < 1.0 || !var12.method23456(var1, var11)) && var12.method23449().method23474()) {
                   this.method11949(var1, var2, var6, (double)var2.getY() - 0.05);
                }
@@ -177,16 +176,16 @@ public class Class3366 extends Class3241 {
    private void method11949(World var1, BlockPos var2, VoxelShape var3, double var4) {
       this.method11950(
          var1,
-         (double)var2.getX() + var3.method19512(Class113.field413),
-         (double)var2.getX() + var3.method19513(Class113.field413),
-         (double)var2.getZ() + var3.method19512(Class113.field415),
-         (double)var2.getZ() + var3.method19513(Class113.field415),
+         (double)var2.getX() + var3.method19512(Direction.field413),
+         (double)var2.getX() + var3.method19513(Direction.field413),
+         (double)var2.getZ() + var3.method19512(Direction.field415),
+         (double)var2.getZ() + var3.method19513(Direction.field415),
          var4
       );
    }
 
    private void method11950(World var1, double var2, double var4, double var6, double var8, double var10) {
-      var1.method6746(
+      var1.addParticle(
          ParticleTypes.field34108,
          MathHelper.lerp(var1.rand.nextDouble(), var2, var4),
          var10,
@@ -219,8 +218,8 @@ public class Class3366 extends Class3241 {
    }
 
    @Override
-   public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
-      if (!var1.isRemote && var4.isCreative() && var1.method6789().method17135(Class5462.field24228)) {
+   public void onBlockHarvested(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
+      if (!var1.isRemote && var4.isCreative() && var1.getGameRules().getBoolean(Class5462.field24228)) {
          TileEntity var7 = var1.getTileEntity(var2);
          if (var7 instanceof Class962) {
             Class962 var8 = (Class962)var7;
@@ -238,21 +237,21 @@ public class Class3366 extends Class3241 {
             }
 
             CompoundNBT var14 = new CompoundNBT();
-            var14.method102("honey_level", var10);
+            var14.putInt("honey_level", var10);
             var9.setTagInfo("BlockStateTag", var14);
             ItemEntity var13 = new ItemEntity(var1, (double)var2.getX(), (double)var2.getY(), (double)var2.getZ(), var9);
-            var13.method4131();
-            var1.method6916(var13);
+            var13.setDefaultPickupDelay();
+            var1.addEntity(var13);
          }
       }
 
-      super.method11574(var1, var2, var3, var4);
+      super.onBlockHarvested(var1, var2, var3, var4);
    }
 
    @Override
    public List<ItemStack> method11697(BlockState var1, Class9464 var2) {
       Entity var5 = var2.<Entity>method36459(Class9525.field44330);
-      if (var5 instanceof Class1004 || var5 instanceof Class1081 || var5 instanceof Class902 || var5 instanceof Class1079 || var5 instanceof Class993) {
+      if (var5 instanceof Class1004 || var5 instanceof Class1081 || var5 instanceof Class902 || var5 instanceof WitherEntity || var5 instanceof Class993) {
          TileEntity var6 = var2.<TileEntity>method36459(Class9525.field44337);
          if (var6 instanceof Class962) {
             Class962 var7 = (Class962)var6;
@@ -264,7 +263,7 @@ public class Class3366 extends Class3241 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, net.minecraft.util.Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var4.getBlockState(var6).getBlock() instanceof Class3399) {
          TileEntity var9 = var4.getTileEntity(var5);
          if (var9 instanceof Class962) {
@@ -276,7 +275,7 @@ public class Class3366 extends Class3241 {
       return super.method11491(var1, var2, var3, var4, var5, var6);
    }
 
-   public static Direction method11951(Random var0) {
-      return Util.<Direction>method38518(field18934, var0);
+   public static net.minecraft.util.Direction method11951(Random var0) {
+      return Util.<net.minecraft.util.Direction>method38518(field18934, var0);
    }
 }

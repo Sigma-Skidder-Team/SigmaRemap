@@ -13,10 +13,10 @@ public class Class3695 extends Class3676<LivingEntity> {
 
    @Override
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
-      Class6947 var7 = var2.method2992();
+      Brain var7 = var2.getBrain();
       Class7699 var8 = var1.method6957(var2.getPosition());
       if (var8 == null) {
-         var7.method21419(Class8890.field40228);
+         var7.method21419(Activity.field40228);
       }
    }
 }

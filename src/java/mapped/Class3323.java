@@ -28,17 +28,17 @@ public class Class3323 extends Item {
       }
 
       if (!var2.isRemote) {
-         for (Class2023 var8 : Class9741.method38176(var1)) {
-            if (!var8.method8627().method22292()) {
-               var3.method3035(new Class2023(var8));
+         for (EffectInstance var8 : Class9741.method38176(var1)) {
+            if (!var8.getPotion().method22292()) {
+               var3.addPotionEffect(new EffectInstance(var8));
             } else {
-               var8.method8627().method22290(var6, var6, var3, var8.method8629(), 1.0);
+               var8.getPotion().method22290(var6, var6, var3, var8.method8629(), 1.0);
             }
          }
       }
 
       if (var6 != null) {
-         var6.method2913(Class8876.field40098.method172(this));
+         var6.addStat(Stats.field40098.method172(this));
          if (!var6.abilities.isCreativeMode) {
             var1.method32182(1);
          }

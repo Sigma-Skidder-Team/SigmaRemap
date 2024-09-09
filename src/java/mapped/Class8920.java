@@ -21,7 +21,7 @@ public class Class8920 {
          }
 
          var1.method33180(var0.getPacket());
-         var0.method13900(true);
+         var0.setCancelled(true);
       }
 
       if (var0.getPacket() instanceof SMultiBlockChangePacket) {
@@ -36,7 +36,7 @@ public class Class8920 {
 
          var1.method33174();
          var1.method33180(var0.getPacket());
-         var0.method13900(true);
+         var0.setCancelled(true);
       }
 
       if (var0.getPacket() instanceof SChunkDataPacket && Minecraft.getInstance().world != null) {
@@ -52,7 +52,7 @@ public class Class8920 {
          Class1684 var19 = var18.method17384() == null
             ? null
             : new Class1684(Minecraft.getInstance().getConnection().field23287.<Biome>getRegistry(Registry.BIOME_KEY), var18.method17384());
-         Chunk var20 = new Chunk(Minecraft.getInstance().world, new Class7481(var18.method17378(), var18.method17379()), null);
+         Chunk var20 = new Chunk(Minecraft.getInstance().world, new ChunkPos(var18.method17378(), var18.method17379()), null);
          var20.method7142(var19, new PacketBuffer(var18.method17374().copy()), var18.method17382(), var18.method17380());
          if (var20 != null) {
             int var7 = 0;

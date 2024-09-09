@@ -36,14 +36,14 @@ public class Class1085 extends Class1082 {
    }
 
    @Override
-   public void method3054(DamageSource var1, int var2, boolean var3) {
-      super.method3054(var1, var2, var3);
-      Entity var6 = var1.method31109();
+   public void dropSpecialItems(DamageSource var1, int var2, boolean var3) {
+      super.dropSpecialItems(var1, var2, var3);
+      Entity var6 = var1.getTrueSource();
       if (var6 instanceof Class1081) {
          Class1081 var7 = (Class1081)var6;
          if (var7.method5026()) {
             var7.method5027();
-            this.method3300(Items.field38058);
+            this.entityDropItem(Items.field38058);
          }
       }
    }

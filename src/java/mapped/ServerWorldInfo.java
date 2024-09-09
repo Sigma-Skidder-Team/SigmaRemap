@@ -217,29 +217,29 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
       var2.putBoolean("WasModded", this.field29092);
       CompoundNBT var7 = new CompoundNBT();
       var7.method109("Name", SharedConstants.getVersion().getName());
-      var7.method102("Id", SharedConstants.getVersion().getWorldVersion());
+      var7.putInt("Id", SharedConstants.getVersion().getWorldVersion());
       var7.putBoolean("Snapshot", !SharedConstants.getVersion().isStable());
       var2.put("Version", var7);
-      var2.method102("DataVersion", SharedConstants.getVersion().getWorldVersion());
+      var2.putInt("DataVersion", SharedConstants.getVersion().getWorldVersion());
       WorldGenSettingsExport<INBT> var8 = WorldGenSettingsExport.create(NBTDynamicOps.INSTANCE, var1);
       DimensionGeneratorSettings.field_236201_a_
          .encodeStart(var8, this.field29065)
          .resultOrPartial(Util.func_240982_a_("WorldGenSettings: ", field29063::error))
          .ifPresent(var1x -> var2.put("WorldGenSettings", var1x));
-      var2.method102("GameType", this.field29064.method32427().method8152());
-      var2.method102("SpawnX", this.field29067);
-      var2.method102("SpawnY", this.field29068);
-      var2.method102("SpawnZ", this.field29069);
+      var2.putInt("GameType", this.field29064.method32427().method8152());
+      var2.putInt("SpawnX", this.field29067);
+      var2.putInt("SpawnY", this.field29068);
+      var2.putInt("SpawnZ", this.field29069);
       var2.putFloat("SpawnAngle", this.field29070);
       var2.method103("Time", this.field29071);
       var2.method103("DayTime", this.field29072);
       var2.method103("LastPlayed", Util.method38489());
       var2.method109("LevelName", this.field29064.method32426());
-      var2.method102("version", 19133);
-      var2.method102("clearWeatherTime", this.field29078);
-      var2.method102("rainTime", this.field29080);
+      var2.putInt("version", 19133);
+      var2.putInt("clearWeatherTime", this.field29078);
+      var2.putInt("rainTime", this.field29080);
       var2.putBoolean("raining", this.field29079);
-      var2.method102("thunderTime", this.field29082);
+      var2.putInt("thunderTime", this.field29082);
       var2.putBoolean("thundering", this.field29081);
       var2.putBoolean("hardcore", this.field29064.method32428());
       var2.putBoolean("allowCommands", this.field29064.method32430());
@@ -259,8 +259,8 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
       }
 
       var2.put("ScheduledEvents", this.field29093.method30540());
-      var2.method102("WanderingTraderSpawnDelay", this.field29088);
-      var2.method102("WanderingTraderSpawnChance", this.field29089);
+      var2.putInt("WanderingTraderSpawnDelay", this.field29088);
+      var2.putInt("WanderingTraderSpawnChance", this.field29089);
       if (this.field29090 != null) {
          var2.method104("WanderingTraderId", this.field29090);
       }
@@ -417,12 +417,12 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
    }
 
    @Override
-   public Class1894 method20067() {
+   public GameType method20067() {
       return this.field29064.method32427();
    }
 
    @Override
-   public void method20073(Class1894 var1) {
+   public void method20073(GameType var1) {
       this.field29064 = this.field29064.method32433(var1);
    }
 

@@ -20,13 +20,13 @@ public class Class875<T extends Class5823> extends Class851<T> implements Class8
    public void init() {
       super.init();
       this.method2716();
-      this.field4727.method18127(this);
+      this.field4727.addListener(this);
    }
 
    @Override
    public void onClose() {
       super.onClose();
-      this.field4727.method18128(this);
+      this.field4727.removeListener(this);
    }
 
    @Override
@@ -48,22 +48,22 @@ public class Class875<T extends Class5823> extends Class851<T> implements Class8
       int var7 = (this.width - this.field4721) / 2;
       int var8 = (this.height - this.field4722) / 2;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
-      this.method5696(var1, var7 + 59, var8 + 20, 0, this.field4722 + (!this.field4727.method18131(0).method18266() ? 16 : 0), 110, 16);
-      if ((this.field4727.method18131(0).method18266() || this.field4727.method18131(1).method18266()) && !this.field4727.method18131(2).method18266()) {
+      this.method5696(var1, var7 + 59, var8 + 20, 0, this.field4722 + (!this.field4727.getSlot(0).getHasStack() ? 16 : 0), 110, 16);
+      if ((this.field4727.getSlot(0).getHasStack() || this.field4727.getSlot(1).getHasStack()) && !this.field4727.getSlot(2).getHasStack()) {
          this.method5696(var1, var7 + 99, var8 + 45, this.field4721, 0, 28, 21);
       }
    }
 
    @Override
-   public void method2718(Class5812 var1, NonNullList<ItemStack> var2) {
-      this.method2720(var1, 0, var1.method18131(0).method18265());
+   public void method2718(Container var1, NonNullList<ItemStack> var2) {
+      this.method2720(var1, 0, var1.getSlot(0).getStack());
    }
 
    @Override
-   public void method2719(Class5812 var1, int var2, int var3) {
+   public void method2719(Container var1, int var2, int var3) {
    }
 
    @Override
-   public void method2720(Class5812 var1, int var2, ItemStack var3) {
+   public void method2720(Container var1, int var2, ItemStack var3) {
    }
 }

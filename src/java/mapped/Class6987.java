@@ -208,8 +208,8 @@ public class Class6987 {
       );
    }
 
-   private static Class9805 method21611(Entity var0, Class4869 var1) throws CommandSyntaxException {
-      Class9805 var4 = method21612(var0).method3088().method33380(var1);
+   private static ModifiableAttributeInstance method21611(Entity var0, Attribute var1) throws CommandSyntaxException {
+      ModifiableAttributeInstance var4 = method21612(var0).getAttributeManager().createInstanceIfAbsent(var1);
       if (var4 != null) {
          return var4;
       } else {
@@ -225,25 +225,25 @@ public class Class6987 {
       }
    }
 
-   private static LivingEntity method21613(Entity var0, Class4869 var1) throws CommandSyntaxException {
+   private static LivingEntity method21613(Entity var0, Attribute var1) throws CommandSyntaxException {
       LivingEntity var4 = method21612(var0);
-      if (var4.method3088().method33381(var1)) {
+      if (var4.getAttributeManager().method33381(var1)) {
          return var4;
       } else {
          throw field30230.create(var0.getName(), new TranslationTextComponent(var1.method15032()));
       }
    }
 
-   private static int method21614(Class6619 var0, Entity var1, Class4869 var2, double var3) throws CommandSyntaxException {
+   private static int method21614(Class6619 var0, Entity var1, Attribute var2, double var3) throws CommandSyntaxException {
       LivingEntity var7 = method21613(var1, var2);
-      double var8 = var7.method3086(var2);
+      double var8 = var7.getAttributeValue(var2);
       var0.method20179(
          new TranslationTextComponent("commands.attribute.value.get.success", new TranslationTextComponent(var2.method15032()), var1.getName(), var8), false
       );
       return (int)(var8 * var3);
    }
 
-   private static int method21615(Class6619 var0, Entity var1, Class4869 var2, double var3) throws CommandSyntaxException {
+   private static int method21615(Class6619 var0, Entity var1, Attribute var2, double var3) throws CommandSyntaxException {
       LivingEntity var7 = method21613(var1, var2);
       double var8 = var7.method3087(var2);
       var0.method20179(
@@ -253,9 +253,9 @@ public class Class6987 {
       return (int)(var8 * var3);
    }
 
-   private static int method21616(Class6619 var0, Entity var1, Class4869 var2, UUID var3, double var4) throws CommandSyntaxException {
+   private static int method21616(Class6619 var0, Entity var1, Attribute var2, UUID var3, double var4) throws CommandSyntaxException {
       LivingEntity var8 = method21613(var1, var2);
-      Class9020 var9 = var8.method3088();
+      AttributeModifierManager var9 = var8.getAttributeManager();
       if (var9.method33382(var2, var3)) {
          double var10 = var9.method33385(var2, var3);
          var0.method20179(
@@ -270,7 +270,7 @@ public class Class6987 {
       }
    }
 
-   private static int method21617(Class6619 var0, Entity var1, Class4869 var2, double var3) throws CommandSyntaxException {
+   private static int method21617(Class6619 var0, Entity var1, Attribute var2, double var3) throws CommandSyntaxException {
       method21611(var1, var2).method38661(var3);
       var0.method20179(
          new TranslationTextComponent("commands.attribute.base_value.set.success", new TranslationTextComponent(var2.method15032()), var1.getName(), var3),
@@ -279,9 +279,9 @@ public class Class6987 {
       return 1;
    }
 
-   private static int method21618(Class6619 var0, Entity var1, Class4869 var2, UUID var3, String var4, double var5, AttributeModifierOperation var7) throws CommandSyntaxException {
-      Class9805 var10 = method21611(var1, var2);
-      Class9689 var11 = new Class9689(var3, var4, var5, var7);
+   private static int method21618(Class6619 var0, Entity var1, Attribute var2, UUID var3, String var4, double var5, AttributeModifierOperation var7) throws CommandSyntaxException {
+      ModifiableAttributeInstance var10 = method21611(var1, var2);
+      AttributeModifier var11 = new AttributeModifier(var3, var4, var5, var7);
       if (!var10.method38665(var11)) {
          var10.method38668(var11);
          var0.method20179(
@@ -294,8 +294,8 @@ public class Class6987 {
       }
    }
 
-   private static int method21619(Class6619 var0, Entity var1, Class4869 var2, UUID var3) throws CommandSyntaxException {
-      Class9805 var6 = method21611(var1, var2);
+   private static int method21619(Class6619 var0, Entity var1, Attribute var2, UUID var3) throws CommandSyntaxException {
+      ModifiableAttributeInstance var6 = method21611(var1, var2);
       if (!var6.method38672(var3)) {
          throw field30231.create(var1.getName(), new TranslationTextComponent(var2.method15032()), var3);
       } else {

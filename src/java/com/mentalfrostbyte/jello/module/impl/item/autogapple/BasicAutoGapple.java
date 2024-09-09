@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.StopUseItemEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4430;
+import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.item.AutoGapple;
@@ -34,13 +34,13 @@ public class BasicAutoGapple extends Module {
     public void method16246(StopUseItemEvent var1) {
         if (this.isEnabled()) {
             if (this.field23549 >= 0) {
-                var1.method13900(true);
+                var1.setCancelled(true);
             }
         }
     }
 
     @EventTarget
-    public void method16247(Class4430 var1) {
+    public void method16247(EventKeyPress var1) {
         if (this.isEnabled()) {
             int var4 = mc.gameSettings.keyBindsHotbar.length;
 
@@ -48,7 +48,7 @@ public class BasicAutoGapple extends Module {
                 KeyBinding var6 = mc.gameSettings.keyBindsHotbar[var5];
                 String var7 = var6.getKeyDescription();
                 int var8 = Integer.parseInt(String.valueOf(var7.charAt(var7.length() - 1)));
-                if (var1.method13977() == var6.keycode.keyCode && var8 - 1 != mc.player.inventory.currentItem) {
+                if (var1.getKey() == var6.keycode.keyCode && var8 - 1 != mc.player.inventory.currentItem) {
                     this.field23549 = -1;
                     this.field23551 = 0;
                 }
@@ -64,8 +64,8 @@ public class BasicAutoGapple extends Module {
             }
 
             int var4 = -1;
-            if (mc.player.getHealth() <= this.method16004().getNumberValueBySettingName("Health") * 2.0F) {
-                var4 = ((AutoGapple) this.method16004()).method16749(false);
+            if (mc.player.getHealth() <= this.access().getNumberValueBySettingName("Health") * 2.0F) {
+                var4 = ((AutoGapple) this.access()).method16749(false);
                 if (this.field23549 == -1 && this.field23551 >= 20 && var4 != -1) {
                     this.field23549 = 0;
                     this.field23551 = 0;

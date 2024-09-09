@@ -30,7 +30,7 @@ public class Class1088 extends Class1018 {
    private static final DataParameter<Boolean> field5960 = EntityDataManager.<Boolean>createKey(Class1088.class, DataSerializers.field33398);
    private static final DataParameter<Boolean> field5961 = EntityDataManager.<Boolean>createKey(Class1088.class, DataSerializers.field33398);
    private int field5962;
-   public static final Predicate<LivingEntity> field5963 = var0 -> var0.method3005() && !var0.method3250();
+   public static final Predicate<LivingEntity> field5963 = var0 -> var0.isChild() && !var0.isInWater();
 
    public Class1088(EntityType<? extends Class1088> var1, World var2) {
       super(var1, var2);
@@ -100,24 +100,24 @@ public class Class1088 extends Class1018 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("HomePosX", this.method5042().getX());
-      var1.method102("HomePosY", this.method5042().getY());
-      var1.method102("HomePosZ", this.method5042().getZ());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("HomePosX", this.method5042().getX());
+      var1.putInt("HomePosY", this.method5042().getY());
+      var1.putInt("HomePosZ", this.method5042().getZ());
       var1.putBoolean("HasEgg", this.method5045());
-      var1.method102("TravelPosX", this.method5044().getX());
-      var1.method102("TravelPosY", this.method5044().getY());
-      var1.method102("TravelPosZ", this.method5044().getZ());
+      var1.putInt("TravelPosX", this.method5044().getX());
+      var1.putInt("TravelPosY", this.method5044().getY());
+      var1.putInt("TravelPosZ", this.method5044().getZ());
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       int var4 = var1.getInt("HomePosX");
       int var5 = var1.getInt("HomePosY");
       int var6 = var1.getInt("HomePosZ");
       this.method5041(new BlockPos(var4, var5, var6));
-      super.method2723(var1);
+      super.readAdditional(var1);
       this.method5046(var1.getBoolean("HasEgg"));
       int var7 = var1.getInt("TravelPosX");
       int var8 = var1.getInt("TravelPosY");
@@ -160,13 +160,13 @@ public class Class1088 extends Class1018 {
    }
 
    @Override
-   public boolean method2998() {
+   public boolean canBreatheUnderwater() {
       return true;
    }
 
    @Override
-   public Class7809 method3089() {
-      return Class7809.field33509;
+   public CreatureAttribute getCreatureAttribute() {
+      return CreatureAttribute.field33509;
    }
 
    @Override
@@ -177,12 +177,12 @@ public class Class1088 extends Class1018 {
    @Nullable
    @Override
    public SoundEvent getAmbientSound() {
-      return !this.method3250() && this.onGround && !this.method3005() ? SoundEvents.field27164 : super.getAmbientSound();
+      return !this.isInWater() && this.onGround && !this.isChild() ? SoundEvents.field27164 : super.getAmbientSound();
    }
 
    @Override
-   public void method3242(float var1) {
-      super.method3242(var1 * 1.5F);
+   public void playSwimSound(float var1) {
+      super.playSwimSound(var1 * 1.5F);
    }
 
    @Override
@@ -193,19 +193,19 @@ public class Class1088 extends Class1018 {
    @Nullable
    @Override
    public SoundEvent getHurtSound(DamageSource var1) {
-      return !this.method3005() ? SoundEvents.field27170 : SoundEvents.field27171;
+      return !this.isChild() ? SoundEvents.field27170 : SoundEvents.field27171;
    }
 
    @Nullable
    @Override
    public SoundEvent getDeathSound() {
-      return !this.method3005() ? SoundEvents.field27165 : SoundEvents.field27166;
+      return !this.isChild() ? SoundEvents.field27165 : SoundEvents.field27166;
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      SoundEvent var5 = !this.method3005() ? SoundEvents.field27173 : SoundEvents.field27174;
-      this.method2863(var5, 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      SoundEvent var5 = !this.isChild() ? SoundEvents.field27173 : SoundEvents.field27174;
+      this.playSound(var5, 0.15F, 1.0F);
    }
 
    @Override
@@ -214,13 +214,13 @@ public class Class1088 extends Class1018 {
    }
 
    @Override
-   public float method3238() {
+   public float determineNextStepDistance() {
       return this.distanceWalkedOnStepModified + 0.15F;
    }
 
    @Override
-   public float method3006() {
-      return !this.method3005() ? 1.0F : 0.3F;
+   public float getRenderScale() {
+      return !this.isChild() ? 1.0F : 0.3F;
    }
 
    @Override
@@ -231,7 +231,7 @@ public class Class1088 extends Class1018 {
    @Nullable
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41096.method33215(var1);
+      return EntityType.field41096.create(var1);
    }
 
    @Override
@@ -241,7 +241,7 @@ public class Class1088 extends Class1018 {
 
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
-      if (!this.method5049() && var2.getFluidState(var1).method23486(Class8953.field40469)) {
+      if (!this.method5049() && var2.getFluidState(var1).method23486(FluidTags.field40469)) {
          return 10.0F;
       } else {
          return !Class3441.method12114(var2, var1) ? var2.method7009(var1) - 0.5F : 10.0F;
@@ -249,8 +249,8 @@ public class Class1088 extends Class1018 {
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
+   public void livingEntity() {
+      super.livingEntity();
       if (this.isAlive() && this.method5047() && this.field5962 >= 1 && this.field5962 % 5 == 0) {
          BlockPos var3 = this.getPosition();
          if (Class3441.method12114(this.world, var3)) {
@@ -262,22 +262,22 @@ public class Class1088 extends Class1018 {
    @Override
    public void method4679() {
       super.method4679();
-      if (!this.method3005() && this.world.method6789().method17135(Class5462.field24227)) {
-         this.method3301(Items.field37793, 1);
+      if (!this.isChild() && this.world.getGameRules().getBoolean(Class5462.field24227)) {
+         this.entityDropItem(Items.field37793, 1);
       }
    }
 
    @Override
-   public void method2915(Vector3d var1) {
-      if (this.method3138() && this.method3250()) {
-         this.method3265(0.1F, var1);
-         this.move(Class2107.field13742, this.getVec());
-         this.method3434(this.getVec().method11344(0.9));
+   public void travel(Vector3d var1) {
+      if (this.isServerWorld() && this.isInWater()) {
+         this.moveRelative(0.1F, var1);
+         this.move(MoverType.SELF, this.getMotion());
+         this.setMotion(this.getMotion().scale(0.9));
          if (this.method4232() == null && (!this.method5049() || !this.method5042().method8317(this.getPositionVec(), 20.0))) {
-            this.method3434(this.getVec().method11339(0.0, -0.005, 0.0));
+            this.setMotion(this.getMotion().add(0.0, -0.005, 0.0));
          }
       } else {
-         super.method2915(var1);
+         super.travel(var1);
       }
    }
 
@@ -288,7 +288,7 @@ public class Class1088 extends Class1018 {
 
    @Override
    public void method3353(ServerWorld var1, Class906 var2) {
-      this.method2741(DamageSource.field38993, Float.MAX_VALUE);
+      this.attackEntityFrom(DamageSource.field38993, Float.MAX_VALUE);
    }
 
    // $VF: synthetic method

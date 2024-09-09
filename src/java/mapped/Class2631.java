@@ -52,6 +52,6 @@ public class Class2631 extends Class2628 {
 
    @Override
    public boolean method10840(Class1662 var1, BlockPos var2) {
-      return var1.method7007(var2.up()) && var1.getBlockState(var2).getBlock().method11540(BlockTags.field32770);
+      return var1.method7007(var2.up()) && var1.getBlockState(var2).getBlock().isIn(BlockTags.field32770);
    }
 }

@@ -59,10 +59,10 @@ public class FakeLag extends Module {
                     this.field23990.method27120();
                 }
             } else if (!((float) this.field23990.method27121() > this.getNumberValueBySettingName("Lag duration") * 1000.0F)) {
-                if (!(var1.method13932() instanceof CPlayerPacket)) {
-                    if (!(var1.method13932() instanceof CKeepAlivePacket) && !(var1.method13932() instanceof CConfirmTransactionPacket)) {
-                        if (!(var1.method13932() instanceof CUseEntityPacket) && !(var1.method13932() instanceof CAnimateHandPacket)) {
-                            if (!(var1.method13932() instanceof CPlayerTryUseItemPacket) && !(var1.method13932() instanceof CPlayerDiggingPacket) && !(var1.method13932() instanceof CPlayerTryUseItemOnBlockPacket)
+                if (!(var1.getPacket() instanceof CPlayerPacket)) {
+                    if (!(var1.getPacket() instanceof CKeepAlivePacket) && !(var1.getPacket() instanceof CConfirmTransactionPacket)) {
+                        if (!(var1.getPacket() instanceof CUseEntityPacket) && !(var1.getPacket() instanceof CAnimateHandPacket)) {
+                            if (!(var1.getPacket() instanceof CPlayerTryUseItemPacket) && !(var1.getPacket() instanceof CPlayerDiggingPacket) && !(var1.getPacket() instanceof CPlayerTryUseItemOnBlockPacket)
                             ) {
                                 return;
                             }
@@ -78,8 +78,8 @@ public class FakeLag extends Module {
                     }
                 }
 
-                this.field23989.add(var1.method13932());
-                var1.method13900(true);
+                this.field23989.add(var1.getPacket());
+                var1.setCancelled(true);
             } else {
                 this.field23991 = false;
                 this.field23990.method27120();

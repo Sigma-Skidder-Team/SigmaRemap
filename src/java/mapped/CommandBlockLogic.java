@@ -39,7 +39,7 @@ public abstract class CommandBlockLogic implements ICommandSource {
 
    public CompoundNBT method3560(CompoundNBT var1) {
       var1.method109("Command", this.field5198);
-      var1.method102("SuccessCount", this.field5195);
+      var1.putInt("SuccessCount", this.field5195);
       var1.method109("CustomName", ITextComponent$Serializer.toJson(this.field5199));
       var1.putBoolean("TrackOutput", this.field5196);
       if (this.field5197 != null && this.field5196) {
@@ -96,7 +96,7 @@ public abstract class CommandBlockLogic implements ICommandSource {
    }
 
    public boolean method3564(World var1) {
-      if (var1.isRemote || var1.method6783() == this.field5193) {
+      if (var1.isRemote || var1.getGameTime() == this.field5193) {
          return false;
       } else if ("Searge".equalsIgnoreCase(this.field5198)) {
          this.field5197 = new StringTextComponent("#itzlipofutzli");
@@ -124,7 +124,7 @@ public abstract class CommandBlockLogic implements ICommandSource {
          }
 
          if (this.field5194) {
-            this.field5193 = var1.method6783();
+            this.field5193 = var1.getGameTime();
          } else {
             this.field5193 = -1L;
          }
@@ -170,7 +170,7 @@ public abstract class CommandBlockLogic implements ICommandSource {
    }
 
    public ActionResultType method3572(PlayerEntity var1) {
-      if (var1.method2979()) {
+      if (var1.canUseCommandBlock()) {
          if (var1.method3395().isRemote) {
             var1.method2890(this);
          }
@@ -187,7 +187,7 @@ public abstract class CommandBlockLogic implements ICommandSource {
 
    @Override
    public boolean method1405() {
-      return this.method3567().method6789().method17135(Class5462.field24236) && this.field5196;
+      return this.method3567().getGameRules().getBoolean(Class5462.field24236) && this.field5196;
    }
 
    @Override
@@ -197,6 +197,6 @@ public abstract class CommandBlockLogic implements ICommandSource {
 
    @Override
    public boolean method3425() {
-      return this.method3567().method6789().method17135(Class5462.field24230);
+      return this.method3567().getGameRules().getBoolean(Class5462.field24230);
    }
 }

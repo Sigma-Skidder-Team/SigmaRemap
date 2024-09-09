@@ -73,13 +73,13 @@ public class Class3418 extends Block implements Class3196 {
          BlockState var5 = var1.method18360().getBlockState(var1.method18345().down());
          if (!var5.method23446(BlockTags.field32787)) {
             return null;
-         } else if (!var5.method23448(Blocks.field37008)) {
-            if (var5.method23448(Blocks.field37009)) {
+         } else if (!var5.isIn(Blocks.field37008)) {
+            if (var5.isIn(Blocks.field37009)) {
                int var7 = var5.<Integer>method23463(field19125) <= 0 ? 0 : 1;
                return this.method11579().method23465(field19125, Integer.valueOf(var7));
             } else {
                BlockState var6 = var1.method18360().getBlockState(var1.method18345().up());
-               return !var6.method23448(Blocks.field37009) && !var6.method23448(Blocks.field37008)
+               return !var6.isIn(Blocks.field37009) && !var6.isIn(Blocks.field37008)
                   ? Blocks.field37008.method11579()
                   : this.method11579().method23465(field19125, var6.<Integer>method23463(field19125));
             }
@@ -127,7 +127,7 @@ public class Class3418 extends Block implements Class3196 {
          var4.method6860().method20726(var5, this, 1);
       }
 
-      if (var2 == Direction.field673 && var3.method23448(Blocks.field37009) && var3.<Integer>method23463(field19125) > var1.<Integer>method23463(field19125)) {
+      if (var2 == Direction.field673 && var3.isIn(Blocks.field37009) && var3.<Integer>method23463(field19125) > var1.<Integer>method23463(field19125)) {
          var4.setBlockState(var5, var1.method23459(field19125), 2);
       }
 
@@ -177,18 +177,18 @@ public class Class3418 extends Block implements Class3196 {
       BlockState var10 = var2.getBlockState(var9);
       Class181 var11 = Class181.field642;
       if (var5 >= 1) {
-         if (!var8.method23448(Blocks.field37009) || var8.<Class181>method23463(field19126) == Class181.field642) {
+         if (!var8.isIn(Blocks.field37009) || var8.<Class181>method23463(field19126) == Class181.field642) {
             var11 = Class181.field643;
-         } else if (var8.method23448(Blocks.field37009) && var8.<Class181>method23463(field19126) != Class181.field642) {
+         } else if (var8.isIn(Blocks.field37009) && var8.<Class181>method23463(field19126) != Class181.field642) {
             var11 = Class181.field644;
-            if (var10.method23448(Blocks.field37009)) {
+            if (var10.isIn(Blocks.field37009)) {
                var2.setBlockState(var3.down(), var8.method23465(field19126, Class181.field643), 3);
                var2.setBlockState(var9, var10.method23465(field19126, Class181.field642), 3);
             }
          }
       }
 
-      int var12 = var1.<Integer>method23463(field19125) != 1 && !var10.method23448(Blocks.field37009) ? 0 : 1;
+      int var12 = var1.<Integer>method23463(field19125) != 1 && !var10.isIn(Blocks.field37009) ? 0 : 1;
       int var13 = (var5 < 11 || !(var4.nextFloat() < 0.25F)) && var5 != 15 ? 0 : 1;
       var2.setBlockState(
          var3.up(),
@@ -200,7 +200,7 @@ public class Class3418 extends Block implements Class3196 {
    public int method12066(IBlockReader var1, BlockPos var2) {
       int var5 = 0;
 
-      while (var5 < 16 && var1.getBlockState(var2.method8339(var5 + 1)).method23448(Blocks.field37009)) {
+      while (var5 < 16 && var1.getBlockState(var2.method8339(var5 + 1)).isIn(Blocks.field37009)) {
          var5++;
       }
 
@@ -210,7 +210,7 @@ public class Class3418 extends Block implements Class3196 {
    public int method12067(IBlockReader var1, BlockPos var2) {
       int var5 = 0;
 
-      while (var5 < 16 && var1.getBlockState(var2.method8340(var5 + 1)).method23448(Blocks.field37009)) {
+      while (var5 < 16 && var1.getBlockState(var2.method8340(var5 + 1)).isIn(Blocks.field37009)) {
          var5++;
       }
 

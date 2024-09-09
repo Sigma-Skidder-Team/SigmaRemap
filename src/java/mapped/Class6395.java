@@ -59,7 +59,7 @@ public abstract class Class6395 {
    private final DynamicRegistriesImpl field28001;
    public final int field28002;
    private int field28003;
-   private Class1894 field28004;
+   private GameType field28004;
    private boolean field28005;
    private int field28006;
 
@@ -108,9 +108,9 @@ public abstract class Class6395 {
       Class6612 var14 = var12.getWorldInfo();
       this.method19481(var2, (ServerPlayerEntity)null, var12);
       ServerPlayNetHandler var15 = new ServerPlayNetHandler(this.field27990, var1, var2);
-      Class5462 var16 = var12.method6789();
-      boolean var17 = var16.method17135(Class5462.field24248);
-      boolean var18 = var16.method17135(Class5462.field24237);
+      Class5462 var16 = var12.getGameRules();
+      boolean var17 = var16.getBoolean(Class5462.field24248);
+      boolean var18 = var16.getBoolean(Class5462.field24237);
       var15.sendPacket(
          new SJoinGamePacket(
             var2.getEntityId(),
@@ -165,7 +165,7 @@ public abstract class Class6395 {
          var2.method2806(this.field27990.method1344(), this.field27990.method1345());
       }
 
-      for (Class2023 var21 : var2.method3031()) {
+      for (EffectInstance var21 : var2.getActivePotionEffects()) {
          var15.sendPacket(new SPlayEntityEffectPacket(var2.getEntityId(), var21));
       }
 
@@ -183,12 +183,12 @@ public abstract class Class6395 {
             if (!var27.getUniqueID().equals(var22)) {
                for (Entity var24 : var27.method3411()) {
                   if (var24.getUniqueID().equals(var22)) {
-                     var2.method2758(var24, true);
+                     var2.startRiding(var24, true);
                      break;
                   }
                }
             } else {
-               var2.method2758(var27, true);
+               var2.startRiding(var27, true);
             }
 
             if (!var2.isPassenger()) {
@@ -225,7 +225,7 @@ public abstract class Class6395 {
    }
 
    public void method19447(ServerWorld var1) {
-      var1.method6810().method24543(new Class7046(this));
+      var1.getWorldBorder().method24543(new Class7046(this));
    }
 
    @Nullable
@@ -234,7 +234,7 @@ public abstract class Class6395 {
       CompoundNBT var5;
       if (var1.getName().getString().equals(this.field27990.method1332()) && var4 != null) {
          var5 = var4;
-         var1.method3295(var4);
+         var1.read(var4);
          field27988.debug("loading single player");
       } else {
          var5 = this.field27999.method31442(var1);
@@ -258,7 +258,7 @@ public abstract class Class6395 {
 
    public void method19450(ServerPlayerEntity var1) {
       ServerWorld var4 = var1.getServerWorld();
-      var1.method2911(Class8876.field40105);
+      var1.method2911(Stats.field40105);
       this.method19449(var1);
       if (var1.isPassenger()) {
          Entity var5 = var1.method3415();
@@ -378,11 +378,11 @@ public abstract class Class6395 {
       ServerPlayerEntity var12 = new ServerPlayerEntity(this.field27990, var10, var1.getGameProfile(), (Class9081)var11);
       var12.field4855 = var1.field4855;
       var12.method2789(var1, var2);
-      var12.method3206(var1.getEntityId());
-      var12.method2968(var1.method2967());
+      var12.setEntityId(var1.getEntityId());
+      var12.method2968(var1.getPrimaryHand());
 
-      for (String var14 : var1.method3207()) {
-         var12.method3208(var14);
+      for (String var14 : var1.getTags()) {
+         var12.addTag(var14);
       }
 
       this.method19481(var12, var1, var10);
@@ -393,22 +393,22 @@ public abstract class Class6395 {
          }
       } else {
          BlockState var20 = var10.getBlockState(var5);
-         boolean var15 = var20.method23448(Blocks.field37124);
+         boolean var15 = var20.isIn(Blocks.field37124);
          Vector3d var16 = (Vector3d)var9.get();
          float var18;
          if (!var20.method23446(BlockTags.field32770) && !var15) {
             var18 = var6;
          } else {
             Vector3d var17 = Vector3d.method11330(var5).method11336(var16).method11333();
-            var18 = (float) MathHelper.method37793(MathHelper.method37814(var17.z, var17.x) * 180.0F / (float)Math.PI - 90.0);
+            var18 = (float) MathHelper.wrapDegrees(MathHelper.method37814(var17.z, var17.x) * 180.0F / (float)Math.PI - 90.0);
          }
 
-         var12.method3273(var16.x, var16.y, var16.z, var18, 0.0F);
+         var12.setLocationAndAngles(var16.x, var16.y, var16.z, var18, 0.0F);
          var12.method2829(var10.getDimensionKey(), var5, var6, var7, false);
          var19 = !var2 && var15;
       }
 
-      while (!var10.method7052(var12) && var12.getPosY() < 256.0) {
+      while (!var10.hasNoCollisions(var12) && var12.getPosY() < 256.0) {
          var12.setPosition(var12.getPosX(), var12.getPosY() + 1.0, var12.getPosZ());
       }
 
@@ -436,7 +436,7 @@ public abstract class Class6395 {
       this.field27991.add(var12);
       this.field27992.put(var12.getUniqueID(), var12);
       var12.method2729();
-      var12.method3043(var12.getHealth());
+      var12.setHealth(var12.getHealth());
       if (var19) {
          var12.field4855
             .sendPacket(
@@ -615,9 +615,9 @@ public abstract class Class6395 {
    }
 
    public void method19472(ServerPlayerEntity var1, ServerWorld var2) {
-      WorldBorder var5 = this.field27990.method1317().method6810();
+      WorldBorder var5 = this.field27990.method1317().getWorldBorder();
       var1.field4855.sendPacket(new SWorldBorderPacket(var5, Class1864.field10036));
-      var1.field4855.sendPacket(new SUpdateTimePacket(var2.method6783(), var2.method6784(), var2.method6789().method17135(Class5462.field24232)));
+      var1.field4855.sendPacket(new SUpdateTimePacket(var2.getGameTime(), var2.method6784(), var2.getGameRules().getBoolean(Class5462.field24232)));
       var1.field4855.sendPacket(new SWorldSpawnChangedPacket(var2.method6947(), var2.method6948()));
       if (var2.method6795()) {
          var1.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24561, 0.0F));
@@ -627,7 +627,7 @@ public abstract class Class6395 {
    }
 
    public void method19473(ServerPlayerEntity var1) {
-      var1.method2771(var1.field4904);
+      var1.method2771(var1.container);
       var1.method2784();
       var1.field4855.sendPacket(new SHeldItemChangePacket(var1.inventory.currentItem));
    }
@@ -672,14 +672,14 @@ public abstract class Class6395 {
       return null;
    }
 
-   public void method19480(Class1894 var1) {
+   public void method19480(GameType var1) {
       this.field28004 = var1;
    }
 
    private void method19481(ServerPlayerEntity var1, ServerPlayerEntity var2, ServerWorld var3) {
       if (var2 == null) {
          if (this.field28004 != null) {
-            var1.field4857.method33862(this.field28004, Class1894.field11101);
+            var1.field4857.method33862(this.field28004, GameType.field11101);
          }
       } else {
          var1.field4857.method33862(var2.field4857.method33863(), var2.field4857.method33864());

@@ -12,7 +12,7 @@ public class Class3134 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      if (Class8042.method27612().method21915()) {
+      if (ViaVersion3.method27612().method21915()) {
          try {
             JsonElement var4 = Class6363.field27929.method11402(null, var1.<JsonElement>method30561(Class4750.field22538).toString());
             Class9256.method34813(var4, var1.method30580());

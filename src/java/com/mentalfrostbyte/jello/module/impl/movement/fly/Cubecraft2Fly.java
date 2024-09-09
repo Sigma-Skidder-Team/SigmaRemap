@@ -44,17 +44,17 @@ public class Cubecraft2Fly extends PremiumModule {
 
     @Override
     public void onDisable() {
-        Class9567.method37090(0.2);
+        MovementUtils.method37090(0.2);
         ColorUtils.method17725(-0.0789);
         if (ColorUtils.method17730(mc.player, 0.001F)) {
-            Class9567.method37090(0.0);
+            MovementUtils.method37090(0.0);
             ColorUtils.method17725(-0.0789);
         } else {
             double var3 = mc.player.getPosX();
             double var5 = mc.player.getPosY();
             double var7 = mc.player.getPosZ();
             mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3, -150.0, var7, false));
-            Class9567.method37090(0.0);
+            MovementUtils.method37090(0.0);
             ColorUtils.method17725(0.0);
             this.field23696 = -3;
             this.field23697.method27120();
@@ -63,20 +63,20 @@ public class Cubecraft2Fly extends PremiumModule {
     }
 
     @EventTarget
-    private void method16483(Class4430 var1) {
+    private void method16483(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.method13977() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                var1.method13900(true);
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+                var1.setCancelled(true);
                 this.field23699 = true;
             }
         }
     }
 
     @EventTarget
-    private void method16484(Class4426 var1) {
+    private void method16484(MouseHoverEvent var1) {
         if (this.isEnabled()) {
             if (var1.method13973() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                var1.method13900(true);
+                var1.setCancelled(true);
                 this.field23699 = false;
             }
         }
@@ -84,36 +84,36 @@ public class Cubecraft2Fly extends PremiumModule {
 
     @EventTarget
     @LowerPriority
-    public void method16485(Class4435 var1) {
+    public void method16485(EventMove var1) {
         if (this.isEnabled()) {
             this.field23696++;
             if (this.field23696 != 1) {
                 if (this.field23696 != 2) {
-                    var1.method13995(0.0);
-                    Class9567.method37088(var1, 0.0);
+                    var1.setY(0.0);
+                    MovementUtils.method37088(var1, 0.0);
                 } else {
-                    var1.method13995(-9.999999999E-5);
-                    Class9567.method37088(var1, 0.28);
+                    var1.setY(-9.999999999E-5);
+                    MovementUtils.method37088(var1, 0.28);
                 }
             } else {
-                var1.method13995(!mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 1.0E-4 : -0.99) : (!this.field23699 ? 0.99 : 1.0E-4));
-                Class9567.method37088(var1, !mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 3.7 : 2.8) : (!this.field23699 ? 2.8 : 3.7));
+                var1.setY(!mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 1.0E-4 : -0.99) : (!this.field23699 ? 0.99 : 1.0E-4));
+                MovementUtils.method37088(var1, !mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 3.7 : 2.8) : (!this.field23699 ? 2.8 : 3.7));
             }
 
-            ColorUtils.method17725(var1.method13994());
+            ColorUtils.method17725(var1.getY());
         } else {
             if (this.field23696 < 0) {
                 if (this.field23696 != -3) {
                     if (this.field23696 != -2) {
                         if (this.field23696 == -1) {
                             this.field23696++;
-                            var1.method13995(-0.4);
-                            Class9567.method37088(var1, 0.0);
+                            var1.setY(-0.4);
+                            MovementUtils.method37088(var1, 0.0);
                         }
                     } else {
-                        var1.method13995(0.4);
+                        var1.setY(0.4);
                         this.field23696++;
-                        Class9567.method37088(var1, 0.0);
+                        MovementUtils.method37088(var1, 0.0);
                     }
                 } else {
                     if (this.field23697.method27121() > 1000L) {
@@ -122,33 +122,33 @@ public class Cubecraft2Fly extends PremiumModule {
                         this.field23697.stop();
                     }
 
-                    var1.method13995(0.0);
-                    Class9567.method37088(var1, 0.0);
+                    var1.setY(0.0);
+                    MovementUtils.method37088(var1, 0.0);
                 }
             }
         }
     }
 
     @EventTarget
-    public void method16486(Class4399 var1) {
+    public void method16486(EventUpdate var1) {
         if (this.field23696 == -3) {
-            var1.method13900(true);
+            var1.setCancelled(true);
         }
 
         if (this.isEnabled() && var1.method13921()) {
             var1.method13908(true);
-            var1.method13920(true);
+            var1.setGround(true);
             if (this.field23696 != 3) {
                 if (this.field23696 > 3) {
                     if (this.field23698.isEnabled() && this.field23698.method27121() > 2000L) {
-                        var1.method13912(-150.0);
+                        var1.setY(-150.0);
                         this.field23698.method27120();
                     } else {
-                        var1.method13900(true);
+                        var1.setCancelled(true);
                     }
                 }
             } else {
-                var1.method13912(-150.0);
+                var1.setY(-150.0);
                 this.field23698.start();
             }
         }
@@ -160,8 +160,8 @@ public class Cubecraft2Fly extends PremiumModule {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SPlayerPositionLookPacket) {
                 SPlayerPositionLookPacket var5 = (SPlayerPositionLookPacket) var4;
-                var5.field24300 = mc.player.rotationYaw;
-                var5.field24301 = mc.player.rotationPitch;
+                var5.yaw = mc.player.rotationYaw;
+                var5.pitch = mc.player.rotationPitch;
                 this.field23698.method27120();
                 this.field23698.stop();
                 if (this.field23696 != -3) {

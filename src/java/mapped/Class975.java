@@ -20,7 +20,7 @@ public class Class975 extends Class927 implements Class930 {
    }
 
    @Override
-   public int method3630() {
+   public int getInventoryStackLimit() {
       return 1;
    }
 
@@ -40,13 +40,13 @@ public class Class975 extends Class927 implements Class930 {
    }
 
    @Override
-   public void method3622() {
-      ItemStack var3 = this.method3618(0);
+   public void markDirty() {
+      ItemStack var3 = this.getStackInSlot(0);
       if (!var3.isEmpty()) {
          this.field5450 = true;
          BlockState var4 = Class3475.method12172(this.field5447, this.field5448, this.field5449, var3);
          this.field5448.playEvent(1500, this.field5449, var4 == this.field5447 ? 0 : 1);
-         this.method3620(0);
+         this.removeStackFromSlot(0);
       }
    }
 }

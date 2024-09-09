@@ -19,7 +19,7 @@ public interface Class7207<T extends IRecipe<?>> {
       return Registry.<Class7207<?>, Class7207<T>>register(Registry.field16085, new ResourceLocation(var0), new Class7208(var0));
    }
 
-   default <C extends Class920> Optional<T> method22635(IRecipe<C> var1, World var2, C var3) {
+   default <C extends IInventory> Optional<T> method22635(IRecipe<C> var1, World var2, C var3) {
       return !var1.method14963(var3, var2) ? Optional.<T>empty() : Optional.<T>of((T)var1);
    }
 }

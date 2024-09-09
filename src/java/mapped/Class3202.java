@@ -5,7 +5,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -42,7 +41,7 @@ public abstract class Class3202 extends Class3200 {
       this.method11578(
          this.field18612
             .method35393()
-            .method23465(field18484, Direction.NORTH)
+            .method23465(field18484, net.minecraft.util.Direction.NORTH)
             .method23465(field18510, Boolean.valueOf(false))
             .method23465(field18500, Class103.field314)
       );
@@ -55,11 +54,11 @@ public abstract class Class3202 extends Class3200 {
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      Direction var7 = var1.<Direction>method23463(field18484);
+      net.minecraft.util.Direction var7 = var1.<net.minecraft.util.Direction>method23463(field18484);
       boolean var8 = var1.<Boolean>method23463(field18510);
       switch (Class6392.field27980[var1.<Class103>method23463(field18500).ordinal()]) {
          case 1:
-            if (var7.method544() == Class113.field413) {
+            if (var7.getAxis() == Direction.field413) {
                return var8 ? field18521 : field18513;
             }
 
@@ -78,7 +77,7 @@ public abstract class Class3202 extends Class3200 {
             }
          case 3:
          default:
-            if (var7.method544() == Class113.field413) {
+            if (var7.getAxis() == Direction.field413) {
                return var8 ? field18519 : field18511;
             } else {
                return var8 ? field18520 : field18512;
@@ -111,7 +110,7 @@ public abstract class Class3202 extends Class3200 {
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var5 && !var1.method23448(var4.getBlock())) {
+      if (!var5 && !var1.isIn(var4.getBlock())) {
          if (var1.<Boolean>method23463(field18510)) {
             this.method11525(var1, var2, var3);
          }
@@ -121,12 +120,12 @@ public abstract class Class3202 extends Class3200 {
    }
 
    @Override
-   public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
+   public int method11514(BlockState var1, IBlockReader var2, BlockPos var3, net.minecraft.util.Direction var4) {
       return !var1.<Boolean>method23463(field18510) ? 0 : 15;
    }
 
    @Override
-   public int method11515(BlockState var1, IBlockReader var2, BlockPos var3, Direction var4) {
+   public int method11515(BlockState var1, IBlockReader var2, BlockPos var3, net.minecraft.util.Direction var4) {
       return var1.<Boolean>method23463(field18510) && method11509(var1) == var4 ? 15 : 0;
    }
 

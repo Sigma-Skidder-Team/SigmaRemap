@@ -3,9 +3,9 @@ package com.mentalfrostbyte.jello.module.impl.movement.speed;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4434;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
-import com.mentalfrostbyte.jello.event.impl.Class4436;
+import com.mentalfrostbyte.jello.event.impl.EventStep;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
+import com.mentalfrostbyte.jello.event.impl.JumpEvent;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -36,7 +36,7 @@ public class MineplexSpeed extends Module {
 
     @Override
     public void onDisable() {
-        Class9567.method37090(Class9567.method37075() * 0.7);
+        MovementUtils.method37090(MovementUtils.method37075() * 0.7);
         if (mc.player.inventory.currentItem != this.field23554) {
             mc.getConnection().sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem));
             this.field23554 = mc.player.inventory.currentItem;
@@ -53,7 +53,7 @@ public class MineplexSpeed extends Module {
 
     @EventTarget
     @HigherPriority
-    public void method16250(Class4435 var1) {
+    public void method16250(EventMove var1) {
         if (this.isEnabled()
                 && !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()
                 && !ColorUtils.method17684(mc.player)) {
@@ -73,7 +73,7 @@ public class MineplexSpeed extends Module {
                     this.field23555 = 0.3;
                 }
 
-                Class9567.method37088(var1, this.field23555);
+                MovementUtils.method37088(var1, this.field23555);
             } else {
                 if (this.field23552 > 1) {
                     this.field23553 = 0;
@@ -82,12 +82,12 @@ public class MineplexSpeed extends Module {
                 }
 
                 if (this.getBooleanValueFromSetttingName("AutoJump") && ColorUtils.method17686()) {
-                    mc.player.method2914();
-                    var1.method13995(mc.player.getVec().y);
+                    mc.player.jump();
+                    var1.setY(mc.player.getMotion().y);
                 }
 
-                if (var1.method13994() == 0.4199998) {
-                    Class9567.method37088(var1, 0.0);
+                if (var1.getY() == 0.4199998) {
+                    MovementUtils.method37088(var1, 0.0);
                     return;
                 }
 
@@ -97,7 +97,7 @@ public class MineplexSpeed extends Module {
 
                 int var6 = this.method16254();
                 if (var6 == -1) {
-                    Class9567.method37088(var1, 0.2);
+                    MovementUtils.method37088(var1, 0.2);
                     return;
                 }
 
@@ -119,13 +119,13 @@ public class MineplexSpeed extends Module {
                     this.field23555 = 0.3;
                 }
 
-                Class9567.method37088(var1, this.field23555);
+                MovementUtils.method37088(var1, this.field23555);
             }
         }
     }
 
     @EventTarget
-    public void method16251(Class4436 var1) {
+    public void method16251(JumpEvent var1) {
         if (this.isEnabled()) {
             this.field23555 = 0.81 + (double) this.field23553 * 0.095;
             if (mc.player.getPosY() != (double) ((int) mc.player.getPosY())) {
@@ -158,9 +158,9 @@ public class MineplexSpeed extends Module {
     }
 
     @EventTarget
-    public void method16253(Class4434 var1) {
+    public void method16253(EventStep var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (var1.method13988() > 0.2) {
+            if (var1.getHeight() > 0.2) {
                 this.field23555 = this.field23555 - (double) (this.getNumberValueBySettingName("OnGround Speed") / 4.0F);
             }
         }
@@ -173,7 +173,7 @@ public class MineplexSpeed extends Module {
         } else {
             for (int var3 = 36; var3 < 45; var3++) {
                 int var4 = var3 - 36;
-                if (mc.player.field4904.method18131(var3).method18265().isEmpty()) {
+                if (mc.player.container.getSlot(var3).getStack().isEmpty()) {
                     if (mc.player.inventory.currentItem != var4 && this.field23554 != var4) {
                         mc.getConnection().sendPacket(new CHeldItemChangePacket(var4));
                         this.field23554 = var4;
@@ -183,8 +183,8 @@ public class MineplexSpeed extends Module {
                 }
             }
 
-            Class7789.method25870(mc.player.field4904.field25471, 42, 0, ClickType.field14695, mc.player, true);
-            if (mc.player.field4904.method18131(42).method18265().isEmpty()
+            InvManagerUtils.fixedClick(mc.player.container.field25471, 42, 0, ClickType.field14695, mc.player, true);
+            if (mc.player.container.getSlot(42).getStack().isEmpty()
                     && mc.player.inventory.currentItem != 6
                     && this.field23554 != 6) {
                 mc.getConnection().sendPacket(new CHeldItemChangePacket(6));

@@ -87,7 +87,7 @@ public class Class896 extends Class890 implements Class889 {
 
          int var8 = !var5.method31817() ? 2002 : 2007;
          this.world.playEvent(var8, this.getPosition(), Class9741.method38182(var4));
-         this.method2904();
+         this.remove();
       }
    }
 
@@ -98,18 +98,18 @@ public class Class896 extends Class890 implements Class889 {
          for (LivingEntity var6 : var4) {
             double var7 = this.getDistanceSq(var6);
             if (var7 < 16.0 && var6.method3124()) {
-               var6.method2741(DamageSource.method31124(var6, this.method3460()), 1.0F);
+               var6.attackEntityFrom(DamageSource.method31124(var6, this.method3460()), 1.0F);
             }
          }
       }
    }
 
-   private void method3518(List<Class2023> var1, Entity var2) {
+   private void method3518(List<EffectInstance> var1, Entity var2) {
       AxisAlignedBB var5 = this.getBoundingBox().method19663(4.0, 2.0, 4.0);
       List<LivingEntity> var6 = this.world.method7182(LivingEntity.class, var5);
       if (!var6.isEmpty()) {
          for (LivingEntity var8 : var6) {
-            if (var8.method3169()) {
+            if (var8.canBeHitWithPotion()) {
                double var9 = this.getDistanceSq(var8);
                if (var9 < 16.0) {
                   double var11 = 1.0 - Math.sqrt(var9) / 4.0;
@@ -117,12 +117,12 @@ public class Class896 extends Class890 implements Class889 {
                      var11 = 1.0;
                   }
 
-                  for (Class2023 var14 : var1) {
-                     Effect var15 = var14.method8627();
+                  for (EffectInstance var14 : var1) {
+                     Effect var15 = var14.getPotion();
                      if (!var15.method22292()) {
                         int var16 = (int)(var11 * (double)var14.method8628() + 0.5);
                         if (var16 > 20) {
-                           var8.method3035(new Class2023(var15, var16, var14.method8629(), var14.method8630(), var14.method8631()));
+                           var8.addPotionEffect(new EffectInstance(var15, var16, var14.method8629(), var14.isAmbient(), var14.method8631()));
                         }
                      } else {
                         var15.method22290(this, this.method3460(), var8, var14.method8629(), var11);
@@ -147,8 +147,8 @@ public class Class896 extends Class890 implements Class889 {
       var5.method4111(-var5.method4098() / (float)var5.method4108());
       var5.method4099(var2);
 
-      for (Class2023 var8 : Class9741.method38179(var1)) {
-         var5.method4101(new Class2023(var8));
+      for (EffectInstance var8 : Class9741.method38179(var1)) {
+         var5.method4101(new EffectInstance(var8));
       }
 
       CompoundNBT var9 = var1.method32142();
@@ -156,7 +156,7 @@ public class Class896 extends Class890 implements Class889 {
          var5.method4103(var9.getInt("CustomPotionColor"));
       }
 
-      this.world.method6916(var5);
+      this.world.addEntity(var5);
    }
 
    private boolean method3520() {

@@ -25,7 +25,7 @@ public class Class4491 extends Class4457 {
       return new Class4491(Class9587.field44822, Class8840.field39936, Class8840.field39936, Class8840.field39936, var0);
    }
 
-   public static Class4491 method14164(Class3303... var0) {
+   public static Class4491 method14164(IItemProvider... var0) {
       Class8634[] var3 = new Class8634[var0.length];
 
       for (int var4 = 0; var4 < var0.length; var4++) {
@@ -83,14 +83,14 @@ public class Class4491 extends Class4457 {
             return !var2.isEmpty() && this.field21696[0].method31016(var2);
          } else {
             List<Class8634> var9 = new ObjectArrayList<>(this.field21696);
-            int var10 = var1.method3629();
+            int var10 = var1.getSizeInventory();
 
             for (int var11 = 0; var11 < var10; var11++) {
                if (var9.isEmpty()) {
                   return true;
                }
 
-               ItemStack var12 = var1.method3618(var11);
+               ItemStack var12 = var1.getStackInSlot(var11);
                if (!var12.isEmpty()) {
                   var9.removeIf(var1x -> var1x.method31016(var12));
                }

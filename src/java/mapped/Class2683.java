@@ -24,7 +24,7 @@ public class Class2683 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return this.field17097.method4778() && this.field17097.method3351() >= 100;
+      return this.field17097.method4778() && this.field17097.getAir() >= 100;
    }
 
    @Override
@@ -32,7 +32,7 @@ public class Class2683 extends Class2595 {
       BlockPos var3 = this.field17097.method4777();
       return !new BlockPos((double)var3.getX(), this.field17097.getPosY(), (double)var3.getZ()).method8317(this.field17097.getPositionVec(), 4.0)
          && !this.field17098
-         && this.field17097.method3351() >= 100;
+         && this.field17097.getAir() >= 100;
    }
 
    @Override
@@ -57,7 +57,7 @@ public class Class2683 extends Class2595 {
             this.field17097.method4776(var8);
          }
 
-         var3.method6786(this.field17097, (byte)38);
+         var3.setEntityState(this.field17097, (byte)38);
       }
    }
 
@@ -82,7 +82,7 @@ public class Class2683 extends Class2595 {
 
          if (var5 != null) {
             BlockPos var6 = new BlockPos(var5);
-            if (!var3.getFluidState(var6).method23486(Class8953.field40469) || !var3.getBlockState(var6).method23440(var3, var6, Class1947.field12615)) {
+            if (!var3.getFluidState(var6).method23486(FluidTags.field40469) || !var3.getBlockState(var6).method23440(var3, var6, Class1947.field12615)) {
                var5 = Class8037.method27587(this.field17097, 8, 5, var4);
             }
          }
@@ -97,7 +97,7 @@ public class Class2683 extends Class2595 {
             .method28042(var5.x, var5.y, var5.z, (float)(this.field17097.method4260() + 20), (float)this.field17097.method4259());
          this.field17097.method4230().method21654(var5.x, var5.y, var5.z, 1.3);
          if (var3.rand.nextInt(80) == 0) {
-            var3.method6786(this.field17097, (byte)38);
+            var3.setEntityState(this.field17097, (byte)38);
          }
       }
    }

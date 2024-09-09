@@ -37,13 +37,13 @@ public class Class3473 extends Class3472 implements Class3196 {
 
          for (int var11 = 0; var11 < var9 / 16; var11++) {
             var10 = var10.method8336(var2.nextInt(3) - 1, (var2.nextInt(3) - 1) * var2.nextInt(3) / 2, var2.nextInt(3) - 1);
-            if (!var1.getBlockState(var10.down()).method23448(this) || var1.getBlockState(var10).method23456(var1, var10)) {
+            if (!var1.getBlockState(var10.down()).isIn(this) || var1.getBlockState(var10).method23456(var1, var10)) {
                continue label61;
             }
          }
 
          BlockState var16 = var1.getBlockState(var10);
-         if (var16.method23448(var8.getBlock()) && var2.nextInt(10) == 0) {
+         if (var16.isIn(var8.getBlock()) && var2.nextInt(10) == 0) {
             ((Class3196)var8.getBlock()).method11488(var1, var2, var10, var16);
          }
 

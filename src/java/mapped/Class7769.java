@@ -7,7 +7,7 @@ public class Class7769 {
    private static String[] field33344;
 
    public static AxisAlignedBB method25747(AxisAlignedBB var0, Direction var1, double var2) {
-      double var6 = var2 * (double)var1.method535().method8150();
+      double var6 = var2 * (double)var1.getAxisDirection().getOffset();
       double var8 = Math.min(var6, 0.0);
       double var10 = Math.max(var6, 0.0);
       switch (Class8712.field39323[var1.ordinal()]) {

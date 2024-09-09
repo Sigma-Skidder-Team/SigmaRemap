@@ -43,6 +43,6 @@ public class Class3724<E extends LivingEntity> extends Class3676<E> {
    }
 
    private ItemEntity method12623(E var1) {
-      return var1.method2992().<ItemEntity>method21410(Class8830.field39847).get();
+      return var1.getBrain().<ItemEntity>method21410(Class8830.field39847).get();
    }
 }

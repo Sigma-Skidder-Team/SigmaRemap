@@ -29,7 +29,7 @@ public class Class3727 extends Class3676<LivingEntity> {
 
    @Override
    public boolean method12508(ServerWorld var1, LivingEntity var2) {
-      Class6947<?> var5 = var2.method2992();
+      Brain<?> var5 = var2.getBrain();
       Optional var6 = var5.<Class9378>method21410(Class8830.field39816);
       return var1.method6814().nextInt(100) == 0
          && var6.isPresent()
@@ -40,7 +40,7 @@ public class Class3727 extends Class3676<LivingEntity> {
 
    @Override
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
-      Class6947<?> var7 = var2.method2992();
+      Brain<?> var7 = var2.getBrain();
       var7.method21410(Class8830.field39819)
          .ifPresent(
             var2x -> var2x.stream()

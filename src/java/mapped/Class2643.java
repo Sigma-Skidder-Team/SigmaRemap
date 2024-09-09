@@ -28,7 +28,7 @@ public class Class2643 extends Class2642 {
    @Override
    public boolean method10803() {
       if (super.method10803()) {
-         return !this.field16974.world.method6789().method17135(Class5462.field24224)
+         return !this.field16974.world.getGameRules().getBoolean(Class5462.field24224)
             ? false
             : this.method10853(this.field16974.world.method6997()) && !this.method10850();
       } else {
@@ -53,23 +53,23 @@ public class Class2643 extends Class2642 {
    @Override
    public void method10807() {
       super.method10807();
-      this.field16974.world.method6803(this.field16974.getEntityId(), this.field16975, -1);
+      this.field16974.world.sendBlockBreakProgress(this.field16974.getEntityId(), this.field16975, -1);
    }
 
    @Override
    public void method10805() {
       super.method10805();
-      if (this.field16974.method3013().nextInt(20) == 0) {
+      if (this.field16974.getRNG().nextInt(20) == 0) {
          this.field16974.world.playEvent(1019, this.field16975, 0);
-         if (!this.field16974.field4947) {
-            this.field16974.swingArm(this.field16974.method3149());
+         if (!this.field16974.isSwingInProgress) {
+            this.field16974.swingArm(this.field16974.getActiveHand());
          }
       }
 
       this.field16982++;
       int var3 = (int)((float)this.field16982 / (float)this.method10852() * 10.0F);
       if (var3 != this.field16983) {
-         this.field16974.world.method6803(this.field16974.getEntityId(), this.field16975, var3);
+         this.field16974.world.sendBlockBreakProgress(this.field16974.getEntityId(), this.field16975, var3);
          this.field16983 = var3;
       }
 

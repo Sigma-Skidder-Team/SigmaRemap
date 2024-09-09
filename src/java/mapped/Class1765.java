@@ -6,10 +6,10 @@ import java.nio.ByteBuffer;
 
 public class Class1765 extends ByteArrayOutputStream {
    private static String[] field9550;
-   private final Class7481 field9551;
+   private final ChunkPos field9551;
    public final Class1692 field9552;
 
-   public Class1765(Class1692 var1, Class7481 var2) {
+   public Class1765(Class1692 var1, ChunkPos var2) {
       super(8096);
       this.field9552 = var1;
       super.write(0);

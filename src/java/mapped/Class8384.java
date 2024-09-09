@@ -37,7 +37,7 @@ public class Class8384 {
    }
 
    public static void method29381() {
-      Class7656[] var2 = new Class7656[]{BlockTags.field32733, Class5985.field26069, Class8953.field40468, Class8613.field38733};
+      Class7656[] var2 = new Class7656[]{BlockTags.field32733, Class5985.field26069, FluidTags.field40468, Class8613.field38733};
       boolean var3 = Stream.<Class7656>of(var2).anyMatch(var0 -> !field35957.containsValue(var0));
       if (var3) {
          throw new IllegalStateException("Missing helper registrations");

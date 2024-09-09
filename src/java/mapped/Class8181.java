@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.event.impl.Class4398;
+import com.mentalfrostbyte.jello.event.impl.EventBlockCollision;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -23,15 +23,15 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
    private final Class8893 field35189;
    private final BlockPos.Mutable field35190;
    private final VoxelShape field35191;
-   private final Class1668 field35192;
+   private final ICollisionReader field35192;
    private boolean field35193;
    private final BiPredicate<BlockState, BlockPos> field35194;
 
-   public Class8181(Class1668 var1, Entity var2, AxisAlignedBB var3) {
+   public Class8181(ICollisionReader var1, Entity var2, AxisAlignedBB var3) {
       this(var1, var2, var3, (var0, var1x) -> true);
    }
 
-   public Class8181(Class1668 var1, Entity var2, AxisAlignedBB var3, BiPredicate<BlockState, BlockPos> var4) {
+   public Class8181(ICollisionReader var1, Entity var2, AxisAlignedBB var3, BiPredicate<BlockState, BlockPos> var4) {
       super(Long.MAX_VALUE, 1280);
       this.field35188 = var2 != null ? ISelectionContext.forEntity(var2) : ISelectionContext.method14947();
       this.field35190 = new BlockPos.Mutable();
@@ -66,12 +66,12 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
             if (var8 != null) {
                this.field35190.method8372(var4, var5, var6);
                BlockState var9 = var8.getBlockState(this.field35190);
-               if (this.field35194.test(var9, this.field35190) && (var7 != 1 || var9.method23390()) && (var7 != 2 || var9.method23448(Blocks.MOVING_PISTON))) {
+               if (this.field35194.test(var9, this.field35190) && (var7 != 1 || var9.method23390()) && (var7 != 2 || var9.isIn(Blocks.MOVING_PISTON))) {
                   VoxelShape var10 = var9.getCollisionShape(this.field35192, this.field35190, this.field35188);
                   if (this.field35186 instanceof PlayerEntity) {
-                     Class4398 var11 = new Class4398(this.field35190, var10);
+                     EventBlockCollision var11 = new EventBlockCollision(this.field35190, var10);
                      Client.getInstance().getEventManager().call(var11);
-                     var10 = var11.method13903();
+                     var10 = var11.getVoxelShape();
                      if (var11.isCancelled()) {
                         return false;
                      }
@@ -99,16 +99,16 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
    private IBlockReader method28474(int var1, int var2) {
       int var5 = var1 >> 4;
       int var6 = var2 >> 4;
-      return this.field35192.method6769(var5, var6);
+      return this.field35192.getBlockReader(var5, var6);
    }
 
    public boolean method28475(Consumer<? super VoxelShape> var1) {
       Objects.<Entity>requireNonNull(this.field35186);
       this.field35193 = false;
-      WorldBorder var4 = this.field35192.method6810();
+      WorldBorder var4 = this.field35192.getWorldBorder();
       AxisAlignedBB var5 = this.field35186.getBoundingBox();
       if (!method28478(var4, var5)) {
-         VoxelShape var6 = var4.method24527();
+         VoxelShape var6 = var4.getShape();
          if (!method28477(var6, var5) && method28476(var6, var5)) {
             var1.accept(var6);
             return true;
@@ -123,7 +123,7 @@ public class Class8181 extends AbstractSpliterator<VoxelShape> {
    }
 
    private static boolean method28477(VoxelShape var0, AxisAlignedBB var1) {
-      return VoxelShapes.compare(var0, VoxelShapes.create(var1.method19679(1.0E-7)), IBooleanFunction.AND);
+      return VoxelShapes.compare(var0, VoxelShapes.create(var1.shrink(1.0E-7)), IBooleanFunction.AND);
    }
 
    public static boolean method28478(WorldBorder var0, AxisAlignedBB var1) {

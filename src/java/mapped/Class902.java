@@ -35,13 +35,13 @@ public class Class902 extends Class901 {
    }
 
    @Override
-   public boolean method3327() {
+   public boolean isBurning() {
       return false;
    }
 
    @Override
-   public float method3368(Class7782 var1, IBlockReader var2, BlockPos var3, BlockState var4, FluidState var5, float var6) {
-      return this.method3532() && Class1079.method5002(var4) ? Math.min(0.8F, var6) : var6;
+   public float getExplosionResistance(Explosion var1, IBlockReader var2, BlockPos var3, BlockState var4, FluidState var5, float var6) {
+      return this.method3532() && WitherEntity.method5002(var4) ? Math.min(0.8F, var6) : var6;
    }
 
    @Override
@@ -52,15 +52,15 @@ public class Class902 extends Class901 {
          Entity var5 = this.method3460();
          boolean var6;
          if (!(var5 instanceof LivingEntity)) {
-            var6 = var4.method2741(DamageSource.field39006, 5.0F);
+            var6 = var4.attackEntityFrom(DamageSource.field39006, 5.0F);
          } else {
             LivingEntity var7 = (LivingEntity)var5;
-            var6 = var4.method2741(DamageSource.method31122(this, var7), 8.0F);
+            var6 = var4.attackEntityFrom(DamageSource.method31122(this, var7), 8.0F);
             if (var6) {
                if (!var4.isAlive()) {
-                  var7.method3041(5.0F);
+                  var7.heal(5.0F);
                } else {
-                  this.method3399(var7, var4);
+                  this.applyEnchantments(var7, var4);
                }
             }
          }
@@ -76,7 +76,7 @@ public class Class902 extends Class901 {
             }
 
             if (var8 > 0) {
-               ((LivingEntity)var4).method3035(new Class2023(Effects.WITHER, 20 * var8, 1));
+               ((LivingEntity)var4).addPotionEffect(new EffectInstance(Effects.WITHER, 20 * var8, 1));
             }
          }
       }
@@ -86,19 +86,19 @@ public class Class902 extends Class901 {
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
       if (!this.world.isRemote) {
-         Class2141 var4 = !this.world.method6789().method17135(Class5462.field24224) ? Class2141.field14014 : Class2141.field14016;
+         Class2141 var4 = !this.world.getGameRules().getBoolean(Class5462.field24224) ? Class2141.field14014 : Class2141.field14016;
          this.world.method6756(this, this.getPosX(), this.getPosY(), this.getPosZ(), 1.0F, false, var4);
-         this.method2904();
+         this.remove();
       }
    }
 
    @Override
-   public boolean method3139() {
+   public boolean canBeCollidedWith() {
       return false;
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       return false;
    }
 

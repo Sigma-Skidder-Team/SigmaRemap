@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.movement;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
@@ -17,16 +17,16 @@ public class FastLadder extends Module {
     }
 
     @EventTarget
-    private void method16217(Class4435 var1) {
-        if (this.isEnabled() && mc.player.method3063()) {
+    private void method16217(EventMove var1) {
+        if (this.isEnabled() && mc.player.isOnLadder()) {
             boolean var4 = JelloPortal.method27349() >= ViaVerList.field26130.method18582() || mc.getCurrentServerData() == null;
-            if (!mc.player.collidedHorizontally && (!mc.player.field4981 || !var4)) {
+            if (!mc.player.collidedHorizontally && (!mc.player.isJumping || !var4)) {
                 if (this.getStringSettingValueByName("Down mode").equals("OnSneak") && mc.gameSettings.keyBindSneak.isKeyDown()
                         || this.getStringSettingValueByName("Down mode").equals("Always")) {
-                    var1.method13995(-this.getNumberValueBySettingName("Motion"));
+                    var1.setY(-this.getNumberValueBySettingName("Motion"));
                 }
             } else {
-                var1.method13995(this.getNumberValueBySettingName("Motion"));
+                var1.setY(this.getNumberValueBySettingName("Motion"));
             }
         }
     }

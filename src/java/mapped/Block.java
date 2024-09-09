@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.LoadingCache;
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.event.impl.Class4424;
+import com.mentalfrostbyte.jello.event.impl.EventRenderBlocks;
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
@@ -12,7 +12,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.IFormattableTextComponent;
@@ -29,7 +28,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Stream;
 
-public class Block extends Class3390 implements Class3303 {
+public class Block extends Class3390 implements IItemProvider {
    public static final Logger field18609 = LogManager.getLogger();
    public static final Class2352<BlockState> field18610 = new Class2352<BlockState>();
    private static final LoadingCache<VoxelShape, Boolean> field18611 = CacheBuilder.newBuilder().maximumSize(512L).weakKeys().build(new Class4562());
@@ -68,8 +67,8 @@ public class Block extends Class3390 implements Class3303 {
          .withOffset((double)var3.getX(), (double)var3.getY(), (double)var3.getZ());
 
       for (Entity var8 : var2.method7181((Entity)null, var6.method19514())) {
-         double var9 = VoxelShapes.method27437(Class113.field414, var8.getBoundingBox().method19667(0.0, 1.0, 0.0), Stream.<VoxelShape>of(var6), -1.0);
-         var8.method2793(var8.getPosX(), var8.getPosY() + 1.0 + var9, var8.getPosZ());
+         double var9 = VoxelShapes.method27437(Direction.field414, var8.getBoundingBox().offset(0.0, 1.0, 0.0), Stream.<VoxelShape>of(var6), -1.0);
+         var8.setPositionAndUpdate(var8.getPosX(), var8.getPosY() + 1.0 + var9, var8.getPosZ());
       }
 
       return var1;
@@ -79,7 +78,7 @@ public class Block extends Class3390 implements Class3303 {
       return VoxelShapes.create(var0 / 16.0, var2 / 16.0, var4 / 16.0, var6 / 16.0, var8 / 16.0, var10 / 16.0);
    }
 
-   public boolean method11540(ITag<Block> var1) {
+   public boolean isIn(ITag<Block> var1) {
       return var1.method24917(this);
    }
 
@@ -91,7 +90,7 @@ public class Block extends Class3390 implements Class3303 {
       BlockState var5 = var0;
       BlockPos.Mutable var6 = new BlockPos.Mutable();
 
-      for (Direction var10 : field19003) {
+      for (net.minecraft.util.Direction var10 : field19003) {
          var6.method8377(var2, var10);
          var5 = var5.method23439(var10, var1.getBlockState(var6), var1, var2, var6);
       }
@@ -128,17 +127,17 @@ public class Block extends Class3390 implements Class3303 {
          || var0 == Blocks.field36590
          || var0 == Blocks.MELON
          || var0 == Blocks.PUMPKIN
-         || var0.method11540(BlockTags.field32805);
+         || var0.isIn(BlockTags.field32805);
    }
 
    public boolean method11499(BlockState var1) {
       return this.field19007;
    }
 
-   public static boolean method11546(BlockState var0, IBlockReader var1, BlockPos var2, Direction var3) {
+   public static boolean method11546(BlockState var0, IBlockReader var1, BlockPos var2, net.minecraft.util.Direction var3) {
       BlockPos var6 = var2.method8349(var3);
       BlockState var7 = var1.getBlockState(var6);
-      Class4424 var8 = new Class4424(var0);
+      EventRenderBlocks var8 = new EventRenderBlocks(var0);
       Client.getInstance().getEventManager().call(var8);
       if (!var8.isCancelled()) {
          if (!var8.method13971()) {
@@ -175,15 +174,15 @@ public class Block extends Class3390 implements Class3303 {
    }
 
    public static boolean method11547(IBlockReader var0, BlockPos var1) {
-      return var0.getBlockState(var1).method23455(var0, var1, Direction.field673, Class2156.field14142);
+      return var0.getBlockState(var1).method23455(var0, var1, net.minecraft.util.Direction.field673, Class2156.field14142);
    }
 
-   public static boolean method11548(Class1662 var0, BlockPos var1, Direction var2) {
+   public static boolean method11548(Class1662 var0, BlockPos var1, net.minecraft.util.Direction var2) {
       BlockState var5 = var0.getBlockState(var1);
-      return var2 == Direction.DOWN && var5.method23446(BlockTags.field32813) ? false : var5.method23455(var0, var1, var2, Class2156.field14141);
+      return var2 == net.minecraft.util.Direction.DOWN && var5.method23446(BlockTags.field32813) ? false : var5.method23455(var0, var1, var2, Class2156.field14141);
    }
 
-   public static boolean method11549(VoxelShape var0, Direction var1) {
+   public static boolean method11549(VoxelShape var0, net.minecraft.util.Direction var1) {
       VoxelShape var4 = var0.method19526(var1);
       return method11550(var4);
    }
@@ -199,7 +198,7 @@ public class Block extends Class3390 implements Class3303 {
    public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
    }
 
-   public void method11551(Class1660 var1, BlockPos var2, BlockState var3) {
+   public void onPlayerDestroy(Class1660 var1, BlockPos var2, BlockState var3) {
    }
 
    public static List<ItemStack> method11552(BlockState var0, ServerWorld var1, BlockPos var2, TileEntity var3) {
@@ -243,23 +242,23 @@ public class Block extends Class3390 implements Class3303 {
    }
 
    public static void method11557(World var0, BlockPos var1, ItemStack var2) {
-      if (!var0.isRemote && !var2.isEmpty() && var0.method6789().method17135(Class5462.field24228)) {
+      if (!var0.isRemote && !var2.isEmpty() && var0.getGameRules().getBoolean(Class5462.field24228)) {
          float var5 = 0.5F;
          double var6 = (double)(var0.rand.nextFloat() * 0.5F) + 0.25;
          double var8 = (double)(var0.rand.nextFloat() * 0.5F) + 0.25;
          double var10 = (double)(var0.rand.nextFloat() * 0.5F) + 0.25;
          ItemEntity var12 = new ItemEntity(var0, (double)var1.getX() + var6, (double)var1.getY() + var8, (double)var1.getZ() + var10, var2);
-         var12.method4131();
-         var0.method6916(var12);
+         var12.setDefaultPickupDelay();
+         var0.addEntity(var12);
       }
    }
 
    public void method11558(ServerWorld var1, BlockPos var2, int var3) {
-      if (var1.method6789().method17135(Class5462.field24228)) {
+      if (var1.getGameRules().getBoolean(Class5462.field24228)) {
          while (var3 > 0) {
-            int var6 = ExperienceOrbEntity.method4179(var3);
+            int var6 = ExperienceOrbEntity.getXPSplit(var3);
             var3 -= var6;
-            var1.method6916(new ExperienceOrbEntity(var1, (double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5, var6));
+            var1.addEntity(new ExperienceOrbEntity(var1, (double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5, var6));
          }
       }
    }
@@ -268,10 +267,10 @@ public class Block extends Class3390 implements Class3303 {
       return this.field19006;
    }
 
-   public void method11560(World var1, BlockPos var2, Class7782 var3) {
+   public void method11560(World var1, BlockPos var2, Explosion var3) {
    }
 
-   public void method11561(World var1, BlockPos var2, Entity var3) {
+   public void onEntityWalk(World var1, BlockPos var2, Entity var3) {
    }
 
    @Nullable
@@ -280,7 +279,7 @@ public class Block extends Class3390 implements Class3303 {
    }
 
    public void method11562(World var1, PlayerEntity var2, BlockPos var3, BlockState var4, TileEntity var5, ItemStack var6) {
-      var2.method2913(Class8876.field40096.method172(this));
+      var2.addStat(Stats.field40096.method172(this));
       var2.method2931(0.005F);
       spawnDrops(var4, var1, var3, var5, var2, var6);
    }
@@ -289,7 +288,7 @@ public class Block extends Class3390 implements Class3303 {
    }
 
    public boolean method11564() {
-      return !this.field19004.method31086() && !this.field19004.method31085();
+      return !this.field19004.method31086() && !this.field19004.isLiquid();
    }
 
    public IFormattableTextComponent method11565() {
@@ -304,12 +303,12 @@ public class Block extends Class3390 implements Class3303 {
       return this.field18614;
    }
 
-   public void method11567(World var1, BlockPos var2, Entity var3, float var4) {
-      var3.method2921(var4, 1.0F);
+   public void onFallenUpon(World var1, BlockPos var2, Entity var3, float var4) {
+      var3.onLivingFall(var4, 1.0F);
    }
 
    public void method11568(IBlockReader var1, Entity var2) {
-      var2.method3434(var2.getVec().method11347(1.0, 0.0, 1.0));
+      var2.setMotion(var2.getMotion().method11347(1.0, 0.0, 1.0));
    }
 
    public ItemStack getItem(IBlockReader var1, BlockPos var2, BlockState var3) {
@@ -332,9 +331,9 @@ public class Block extends Class3390 implements Class3303 {
       return this.field19011;
    }
 
-   public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
+   public void onBlockHarvested(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
       var1.method6869(var4, 2001, var2, getStateId(var3));
-      if (this.method11540(BlockTags.field32810)) {
+      if (this.isIn(BlockTags.field32810)) {
          Class4388.method13832(var4, false);
       }
    }
@@ -342,7 +341,7 @@ public class Block extends Class3390 implements Class3303 {
    public void method11575(World var1, BlockPos var2) {
    }
 
-   public boolean method11576(Class7782 var1) {
+   public boolean method11576(Explosion var1) {
       return true;
    }
 
@@ -361,7 +360,7 @@ public class Block extends Class3390 implements Class3303 {
       return this.field18613;
    }
 
-   public Class8447 method11580(BlockState var1) {
+   public SoundType method11580(BlockState var1) {
       return this.field19008;
    }
 

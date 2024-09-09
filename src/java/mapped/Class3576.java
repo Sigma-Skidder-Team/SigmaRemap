@@ -9,8 +9,8 @@ public final class Class3576 implements Comparator<Entity> {
    private static String[] field19516;
 
    public int compare(Entity var1, Entity var2) {
-      float var5 = BlockUtil.method34586().player.method3275(var1);
-      float var6 = BlockUtil.method34586().player.method3275(var2);
+      float var5 = BlockUtil.method34586().player.getDistance(var1);
+      float var6 = BlockUtil.method34586().player.getDistance(var2);
       if (!(var5 - var6 < 0.0F)) {
          return var5 - var6 != 0.0F ? 1 : 0;
       } else {

@@ -33,7 +33,7 @@ public class HypixelGamePlay extends Module {
 
     @Override
     public void method15953() {
-        this.field23626 = (GamePlay) this.method16004();
+        this.field23626 = (GamePlay) this.access();
     }
 
     @EventTarget
@@ -42,8 +42,8 @@ public class HypixelGamePlay extends Module {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SChatPacket) {
                 SChatPacket var5 = (SChatPacket) var4;
-                String var6 = var5.method17648().getString().replaceAll("§.", "");
-                if (var5.method17650() != ChatType.SYSTEM && var5.method17650() != ChatType.CHAT) {
+                String var6 = var5.getChatComponent().getString().replaceAll("§.", "");
+                if (var5.getType() != ChatType.SYSTEM && var5.getType() != ChatType.CHAT) {
                     return;
                 }
 
@@ -114,7 +114,7 @@ public class HypixelGamePlay extends Module {
                 }
 
                 if (this.getBooleanValueFromSetttingName("FriendAccept") && var6.contains("[ACCEPT] - [DENY] - [IGNORE]")) {
-                    for (ITextComponent var31 : var5.method17648().getSiblings()) {
+                    for (ITextComponent var31 : var5.getChatComponent().getSiblings()) {
                         ClickEvent var35 = var31.getStyle().getClickEvent();
                         if (var35 != null && var35.getAction() == ClickEvent$Action.RUN_COMMAND && var35.getValue().contains("/f accept")) {
                             ColorUtils.sendChatMessage(var35.getValue());
@@ -124,7 +124,7 @@ public class HypixelGamePlay extends Module {
 
                 if (var6.contains("Want to play again? Click here! ") || var6.contains("coins! (Win)")) {
                     if (this.field23626.getBooleanValueFromSetttingName("Auto Join")) {
-                        for (ITextComponent var32 : var5.method17648().getSiblings()) {
+                        for (ITextComponent var32 : var5.getChatComponent().getSiblings()) {
                             ClickEvent var36 = var32.getStyle().getClickEvent();
                             if (var36 != null && var36.getAction() == ClickEvent$Action.RUN_COMMAND) {
                                 Class7200 var37 = new Class7200(var36.getValue(), (long) this.field23626.getNumberValueBySettingName("Auto Join delay") * 1000L);
@@ -143,7 +143,7 @@ public class HypixelGamePlay extends Module {
                     String var27 = var26.method17533().getString() + var26.method17534().getString();
                     String[] var28 = var27.split(" ");
                     if (var28 != null && var28.length > 1 && StringUtils.countMatches(var28[0], "/") == 2) {
-                        var1.method13900(true);
+                        var1.setCancelled(true);
                     }
                 }
             }

@@ -88,7 +88,7 @@ public class Class9251 {
       ) {
          for (int var14 = 0; var14 < 32; var14++) {
             for (int var15 = 0; var15 < 32; var15++) {
-               Class7481 var16 = new Class7481(var14, var15);
+               ChunkPos var16 = new ChunkPos(var14, var15);
                if (var10.method7265(var16) && !var12.method7265(var16)) {
                   CompoundNBT var20;
                   try (DataInputStream var17 = var10.method7247(var16)) {

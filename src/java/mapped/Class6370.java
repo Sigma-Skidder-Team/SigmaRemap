@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class6370 extends Class6355<Class1935, Class1935, Class1928, Class1928> {
+public class Class6370 extends ViaVersion7<Class1935, Class1935, Class1928, Class1928> {
    private static String[] field27936;
 
    public Class6370() {

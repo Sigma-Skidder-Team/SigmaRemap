@@ -21,7 +21,7 @@ public class Class6344 extends Class6333 {
 
    @Override
    public boolean method19268() {
-      return !this.field27875.method3245();
+      return !this.field27875.isSilent();
    }
 
    @Override
@@ -32,7 +32,7 @@ public class Class6344 extends Class6333 {
    @Override
    public void method19269() {
       if (!this.field27875.removed && this.field27874.isPassenger() && this.field27874.getRidingEntity() == this.field27875) {
-         float var3 = MathHelper.method37766(Entity.method3234(this.field27875.getVec()));
+         float var3 = MathHelper.sqrt(Entity.horizontalMag(this.field27875.getMotion()));
          if (!((double)var3 >= 0.01)) {
             this.field27856 = 0.0F;
          } else {

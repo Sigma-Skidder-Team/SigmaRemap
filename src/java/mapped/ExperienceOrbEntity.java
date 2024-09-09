@@ -28,7 +28,7 @@ public class ExperienceOrbEntity extends Entity {
       this(EntityType.field41029, var1);
       this.setPosition(var2, var4, var6);
       this.rotationYaw = (float)(this.rand.nextDouble() * 360.0);
-      this.method3435(
+      this.setMotion(
          (this.rand.nextDouble() * 0.2F - 0.1F) * 2.0, this.rand.nextDouble() * 0.2 * 2.0, (this.rand.nextDouble() * 0.2F - 0.1F) * 2.0
       );
       this.field5559 = var8;
@@ -39,7 +39,7 @@ public class ExperienceOrbEntity extends Entity {
    }
 
    @Override
-   public boolean method2940() {
+   public boolean canTriggerWalking() {
       return false;
    }
 
@@ -57,24 +57,24 @@ public class ExperienceOrbEntity extends Entity {
       this.prevPosX = this.getPosX();
       this.prevPosY = this.getPosY();
       this.prevPosZ = this.getPosZ();
-      if (!this.method3263(Class8953.field40469)) {
+      if (!this.areEyesInFluid(FluidTags.field40469)) {
          if (!this.method3247()) {
-            this.method3434(this.getVec().method11339(0.0, -0.03, 0.0));
+            this.setMotion(this.getMotion().add(0.0, -0.03, 0.0));
          }
       } else {
          this.method4174();
       }
 
-      if (this.world.getFluidState(this.getPosition()).method23486(Class8953.field40470)) {
-         this.method3435(
+      if (this.world.getFluidState(this.getPosition()).method23486(FluidTags.field40470)) {
+         this.setMotion(
             (double)((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F),
             0.2F,
             (double)((this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F)
          );
-         this.method2863(SoundEvents.field26606, 0.4F, 2.0F + this.rand.nextFloat() * 0.4F);
+         this.playSound(SoundEvents.field26606, 0.4F, 2.0F + this.rand.nextFloat() * 0.4F);
       }
 
-      if (!this.world.method7051(this.getBoundingBox())) {
+      if (!this.world.hasNoCollisions(this.getBoundingBox())) {
          this.pushOutOfBlocks(this.getPosX(), (this.getBoundingBox().minY + this.getBoundingBox().maxY) / 2.0, this.getPosZ());
       }
 
@@ -94,50 +94,50 @@ public class ExperienceOrbEntity extends Entity {
       if (this.field5560 != null) {
          Vector3d var5 = new Vector3d(
             this.field5560.getPosX() - this.getPosX(),
-            this.field5560.getPosY() + (double)this.field5560.method3393() / 2.0 - this.getPosY(),
+            this.field5560.getPosY() + (double)this.field5560.getEyeHeight() / 2.0 - this.getPosY(),
             this.field5560.getPosZ() - this.getPosZ()
          );
-         double var6 = var5.method11349();
+         double var6 = var5.lengthSquared();
          if (var6 < 64.0) {
             double var8 = 1.0 - Math.sqrt(var6) / 8.0;
-            this.method3434(this.getVec().method11338(var5.method11333().method11344(var8 * var8 * 0.1)));
+            this.setMotion(this.getMotion().add(var5.method11333().scale(var8 * var8 * 0.1)));
          }
       }
 
-      this.move(Class2107.field13742, this.getVec());
+      this.move(MoverType.SELF, this.getMotion());
       float var10 = 0.98F;
       if (this.onGround) {
          var10 = this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).getBlock().method11571() * 0.98F;
       }
 
-      this.method3434(this.getVec().method11347((double)var10, 0.98, (double)var10));
+      this.setMotion(this.getMotion().method11347((double)var10, 0.98, (double)var10));
       if (this.onGround) {
-         this.method3434(this.getVec().method11347(1.0, -0.9, 1.0));
+         this.setMotion(this.getMotion().method11347(1.0, -0.9, 1.0));
       }
 
       this.field5555++;
       this.field5556++;
       if (this.field5556 >= 6000) {
-         this.method2904();
+         this.remove();
       }
    }
 
    private void method4174() {
-      Vector3d var3 = this.getVec();
-      this.method3435(var3.x * 0.99F, Math.min(var3.y + 5.0E-4F, 0.06F), var3.z * 0.99F);
+      Vector3d var3 = this.getMotion();
+      this.setMotion(var3.x * 0.99F, Math.min(var3.y + 5.0E-4F, 0.06F), var3.z * 0.99F);
    }
 
    @Override
-   public void method2925() {
+   public void doWaterSplashEffect() {
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (!this.method2760(var1)) {
-         this.method3141();
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (!this.isInvulnerableTo(var1)) {
+         this.markVelocityChanged();
          this.field5558 = (int)((float)this.field5558 - var2);
          if (this.field5558 <= 0) {
-            this.method2904();
+            this.remove();
          }
 
          return false;
@@ -147,25 +147,25 @@ public class ExperienceOrbEntity extends Entity {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      var1.method101("Health", (short)this.field5558);
-      var1.method101("Age", (short)this.field5556);
-      var1.method101("Value", (short)this.field5559);
+   public void writeAdditional(CompoundNBT var1) {
+      var1.putShort("Health", (short)this.field5558);
+      var1.putShort("Age", (short)this.field5556);
+      var1.putShort("Value", (short)this.field5559);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.field5558 = var1.getShort("Health");
       this.field5556 = var1.getShort("Age");
       this.field5559 = var1.getShort("Value");
    }
 
    @Override
-   public void method3279(PlayerEntity var1) {
+   public void onCollideWithPlayer(PlayerEntity var1) {
       if (!this.world.isRemote && this.field5557 == 0 && var1.field4910 == 0) {
          var1.field4910 = 2;
-         var1.method2751(this, 1);
-         Entry var4 = Class7858.method26340(Class8122.field34932, var1, ItemStack::method32116);
+         var1.onItemPickup(this, 1);
+         Entry var4 = EnchantmentHelper.method26340(Class8122.field34932, var1, ItemStack::method32116);
          if (var4 != null) {
             ItemStack var5 = (ItemStack)var4.getValue();
             if (!var5.isEmpty() && var5.method32116()) {
@@ -179,7 +179,7 @@ public class ExperienceOrbEntity extends Entity {
             var1.method2781(this.field5559);
          }
 
-         this.method2904();
+         this.remove();
       }
    }
 
@@ -235,7 +235,7 @@ public class ExperienceOrbEntity extends Entity {
       }
    }
 
-   public static int method4179(int var0) {
+   public static int getXPSplit(int var0) {
       if (var0 < 2477) {
          if (var0 < 1237) {
             if (var0 < 617) {
@@ -281,7 +281,7 @@ public class ExperienceOrbEntity extends Entity {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnExperienceOrbPacket(this);
    }
 }

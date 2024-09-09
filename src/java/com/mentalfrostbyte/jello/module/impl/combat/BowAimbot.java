@@ -2,8 +2,8 @@ package com.mentalfrostbyte.jello.module.impl.combat;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
@@ -68,27 +68,27 @@ public class BowAimbot extends Module {
     }
 
     @EventTarget
-    private void method16569(Class4399 var1) {
+    private void method16569(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
-            if (!(mc.player.method3158().getItem() instanceof Class3263)) {
+            if (!(mc.player.getActiveItemStack().getItem() instanceof BowItem)) {
                 this.field23754.clear();
             } else {
-                this.field23754 = this.method16571(this.method16004().getNumberValueBySettingName("Range"));
+                this.field23754 = this.method16571(this.access().getNumberValueBySettingName("Range"));
             }
 
             if (!this.field23754.isEmpty() && this.getBooleanValueFromSetttingName("Silent")) {
-                float[] var4 = Class9142.method34146((LivingEntity) this.field23754.get(0));
-                var1.method13918(var4[0]);
-                var1.method13916(var4[1]);
+                float[] var4 = RotationHelper.method34146((LivingEntity) this.field23754.get(0));
+                var1.setPitch(var4[0]);
+                var1.setYaw(var4[1]);
             }
         }
     }
 
     @EventTarget
-    private void method16570(Class4415 var1) {
+    private void method16570(EventRender var1) {
         if (this.isEnabled() && !this.getBooleanValueFromSetttingName("Silent")) {
             if (!this.field23754.isEmpty()) {
-                float[] var4 = Class9142.method34146((LivingEntity) this.field23754.get(0));
+                float[] var4 = RotationHelper.method34146((LivingEntity) this.field23754.get(0));
                 mc.player.rotationYaw = var4[0];
                 mc.player.rotationPitch = var4[1];
             }
@@ -109,9 +109,9 @@ public class BowAimbot extends Module {
                 var5.remove();
             } else if (((LivingEntity) var6).getHealth() == 0.0F) {
                 var5.remove();
-            } else if (mc.player.method3275(var6) > var1) {
+            } else if (mc.player.getDistance(var6) > var1) {
                 var5.remove();
-            } else if (!mc.player.method3026((LivingEntity) var6)) {
+            } else if (!mc.player.canAttack((LivingEntity) var6)) {
                 var5.remove();
             } else if (var6 instanceof ArmorStandEntity) {
                 var5.remove();
@@ -119,7 +119,7 @@ public class BowAimbot extends Module {
                 var5.remove();
             } else if (this.getBooleanValueFromSetttingName("Anti-Bot") && var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var6)) {
                 var5.remove();
-            } else if (!this.getBooleanValueFromSetttingName("Invisible") && var6.method3342()) {
+            } else if (!this.getBooleanValueFromSetttingName("Invisible") && var6.isInvisible()) {
                 var5.remove();
             } else if (!this.getBooleanValueFromSetttingName("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
                 var5.remove();

@@ -157,11 +157,11 @@ public class Class1271 extends AbstractGui {
 
    public void method6009(double var1, double var3) {
       if (this.field6762 - this.field6760 > 234) {
-         this.field6758 = MathHelper.method37778(this.field6758 + var1, (double)(-(this.field6762 - 234)), 0.0);
+         this.field6758 = MathHelper.clamp(this.field6758 + var1, (double)(-(this.field6762 - 234)), 0.0);
       }
 
       if (this.field6763 - this.field6761 > 113) {
-         this.field6759 = MathHelper.method37778(this.field6759 + var3, (double)(-(this.field6763 - 113)), 0.0);
+         this.field6759 = MathHelper.clamp(this.field6759 + var3, (double)(-(this.field6763 - 113)), 0.0);
       }
    }
 

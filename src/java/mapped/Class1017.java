@@ -86,8 +86,8 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.method4432()) {
          var1.put("HivePos", Class8354.method29284(this.method4433()));
       }
@@ -98,14 +98,14 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
 
       var1.putBoolean("HasNectar", this.method4438());
       var1.putBoolean("HasStung", this.method4440());
-      var1.method102("TicksSincePollination", this.field5691);
-      var1.method102("CannotEnterHiveTicks", this.field5692);
-      var1.method102("CropsGrownSincePollination", this.field5693);
+      var1.putInt("TicksSincePollination", this.field5691);
+      var1.putInt("CannotEnterHiveTicks", this.field5692);
+      var1.putInt("CropsGrownSincePollination", this.field5693);
       this.method4364(var1);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.field5697 = null;
       if (var1.contains("HivePos")) {
          this.field5697 = Class8354.method29283(var1.getCompound("HivePos"));
@@ -116,7 +116,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
          this.field5696 = Class8354.method29283(var1.getCompound("FlowerPos"));
       }
 
-      super.method2723(var1);
+      super.readAdditional(var1);
       this.method4439(var1.getBoolean("HasNectar"));
       this.method4441(var1.getBoolean("HasStung"));
       this.field5691 = var1.getInt("TicksSincePollination");
@@ -126,10 +126,10 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    }
 
    @Override
-   public boolean method3114(Entity var1) {
-      boolean var4 = var1.method2741(DamageSource.method31114(this), (float)((int)this.method3086(Attributes.field42110)));
+   public boolean attackEntityAsMob(Entity var1) {
+      boolean var4 = var1.attackEntityFrom(DamageSource.method31114(this), (float)((int)this.getAttributeValue(Attributes.field42110)));
       if (var4) {
-         this.method3399(this, var1);
+         this.applyEnchantments(this, var1);
          if (var1 instanceof LivingEntity) {
             ((LivingEntity)var1).method3079(((LivingEntity)var1).method3078() + 1);
             byte var5 = 0;
@@ -142,13 +142,13 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
             }
 
             if (var5 > 0) {
-               ((LivingEntity)var1).method3035(new Class2023(Effects.POISON, var5 * 20, 0));
+               ((LivingEntity)var1).addPotionEffect(new EffectInstance(Effects.POISON, var5 * 20, 0));
             }
          }
 
          this.method4441(true);
          this.method4372();
-         this.method2863(SoundEvents.field26393, 1.0F, 1.0F);
+         this.playSound(SoundEvents.field26393, 1.0F, 1.0F);
       }
 
       return var4;
@@ -165,7 +165,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
                this.getPosX() + 0.3F,
                this.getPosZ() - 0.3F,
                this.getPosZ() + 0.3F,
-               this.method3440(0.5),
+               this.getPosYHeight(0.5),
                ParticleTypes.field34111
             );
          }
@@ -175,7 +175,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    }
 
    private void method4419(World var1, double var2, double var4, double var6, double var8, double var10, IParticleData var12) {
-      var1.method6746(
+      var1.addParticle(
          var12,
          MathHelper.lerp(var1.rand.nextDouble(), var2, var4),
          var10,
@@ -267,13 +267,13 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
       }
 
       if (this.field5701 > 20) {
-         this.method2741(DamageSource.field38999, 1.0F);
+         this.attackEntityFrom(DamageSource.field38999, 1.0F);
       }
 
       if (var3) {
          this.field5690++;
          if (this.field5690 % 5 == 0 && this.rand.nextInt(MathHelper.method37775(1200 - this.field5690, 1, 1200)) == 0) {
-            this.method2741(DamageSource.field39005, this.getHealth());
+            this.attackEntityFrom(DamageSource.field39005, this.getHealth());
          }
       }
 
@@ -357,8 +357,8 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
+   public void livingEntity() {
+      super.livingEntity();
       if (!this.world.isRemote) {
          if (this.field5692 > 0) {
             this.field5692--;
@@ -457,11 +457,11 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    }
 
    private boolean method4448(BlockPos var1) {
-      return this.world.method6763(var1) && this.world.getBlockState(var1).getBlock().method11540(BlockTags.field32773);
+      return this.world.method6763(var1) && this.world.getBlockState(var1).getBlock().isIn(BlockTags.field32773);
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
+   public void playStepSound(BlockPos var1, BlockState var2) {
    }
 
    @Override
@@ -480,30 +480,30 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    }
 
    @Override
-   public float method3099() {
+   public float getSoundVolume() {
       return 0.4F;
    }
 
    public Class1017 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41009.method33215(var1);
+      return EntityType.field41009.create(var1);
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
-      return !this.method3005() ? var2.field39969 * 0.5F : var2.field39969 * 0.5F;
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
+      return !this.isChild() ? var2.field39969 * 0.5F : var2.field39969 * 0.5F;
    }
 
    @Override
-   public boolean method2921(float var1, float var2) {
+   public boolean onLivingFall(float var1, float var2) {
       return false;
    }
 
    @Override
-   public void method2761(double var1, boolean var3, BlockState var4, BlockPos var5) {
+   public void updateFallState(double var1, boolean var3, BlockState var4, BlockPos var5) {
    }
 
    @Override
-   public boolean method3244() {
+   public boolean makeFlySound() {
       return true;
    }
 
@@ -513,32 +513,32 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (!this.method2760(var1)) {
-         Entity var5 = var1.method31109();
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (!this.isInvulnerableTo(var1)) {
+         Entity var5 = var1.getTrueSource();
          if (!this.world.isRemote) {
             Class2663.method10871(this.field5698);
          }
 
-         return super.method2741(var1, var2);
+         return super.attackEntityFrom(var1, var2);
       } else {
          return false;
       }
    }
 
    @Override
-   public Class7809 method3089() {
-      return Class7809.field33507;
+   public CreatureAttribute getCreatureAttribute() {
+      return CreatureAttribute.field33507;
    }
 
    @Override
-   public void method3105(ITag<Fluid> var1) {
-      this.method3434(this.getVec().method11339(0.0, 0.01, 0.0));
+   public void handleFluidJump(ITag<Fluid> var1) {
+      this.setMotion(this.getMotion().add(0.0, 0.01, 0.0));
    }
 
    @Override
-   public Vector3d method3394() {
-      return new Vector3d(0.0, (double)(0.5F * this.method3393()), (double)(this.method3429() * 0.2F));
+   public Vector3d func_241205_ce_() {
+      return new Vector3d(0.0, (double)(0.5F * this.getEyeHeight()), (double)(this.getWidth() * 0.2F));
    }
 
    private boolean method4450(BlockPos var1, int var2) {

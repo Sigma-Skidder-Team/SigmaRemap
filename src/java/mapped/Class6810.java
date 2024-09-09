@@ -259,7 +259,7 @@ public class Class6810 {
             Entity var20 = var14.method24131();
             if (var20 instanceof LivingEntity) {
                LivingEntity var26 = (LivingEntity)var20;
-               if (var26.method3005() != this.field29656) {
+               if (var26.isChild() != this.field29656) {
                   return false;
                }
             }

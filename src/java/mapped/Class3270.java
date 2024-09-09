@@ -59,11 +59,11 @@ public class Class3270 extends Class3264 {
 
    @Override
    public boolean method11715(BlockState var1) {
-      return var1.method23448(Blocks.SNOW) || var1.method23448(Blocks.SNOW_BLOCK);
+      return var1.isIn(Blocks.SNOW) || var1.isIn(Blocks.SNOW_BLOCK);
    }
 
    @Override
-   public ActionResultType method11707(Class5911 var1) {
+   public ActionResultType method11707(ItemUseContext var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       BlockState var6 = var4.getBlockState(var5);
@@ -91,7 +91,7 @@ public class Class3270 extends Class3264 {
             if (!var4.isRemote) {
                var4.setBlockState(var5, var9, 11);
                if (var7 != null) {
-                  var1.method18357().method32121(1, var7, var1x -> var1x.method3185(var1.method18359()));
+                  var1.method18357().method32121(1, var7, var1x -> var1x.sendBreakAnimation(var1.method18359()));
                }
             }
 

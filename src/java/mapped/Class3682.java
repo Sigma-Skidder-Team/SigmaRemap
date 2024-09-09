@@ -16,7 +16,7 @@ public class Class3682<E extends Class1045> extends Class3676<E> {
    }
 
    public boolean method12508(ServerWorld var1, E var2) {
-      if (!var2.method3005()) {
+      if (!var2.isChild()) {
          return false;
       } else {
          Class1045 var5 = this.method12518((E)var2);
@@ -29,6 +29,6 @@ public class Class3682<E extends Class1045> extends Class3676<E> {
    }
 
    private Class1045 method12518(E var1) {
-      return var1.method2992().<Class1045>method21410(Class8830.field39846).get();
+      return var1.getBrain().<Class1045>method21410(Class8830.field39846).get();
    }
 }

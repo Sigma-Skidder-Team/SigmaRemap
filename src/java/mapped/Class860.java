@@ -6,7 +6,7 @@ import net.minecraft.util.text.ITextComponent;
 import java.util.Collection;
 import java.util.List;
 
-public abstract class Class860<T extends Class5812> extends Class851<T> {
+public abstract class Class860<T extends Container> extends Class851<T> {
    public boolean field4772;
 
    public Class860(T var1, PlayerInventory var2, ITextComponent var3) {
@@ -20,7 +20,7 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
    }
 
    public void method2638() {
-      if (!this.mc.player.method3031().isEmpty()) {
+      if (!this.mc.player.getActivePotionEffects().isEmpty()) {
          this.field4734 = 160 + (this.width - this.field4721 - 200) / 2;
          this.field4772 = true;
       } else {
@@ -39,7 +39,7 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
 
    private void method2639(MatrixStack var1) {
       int var4 = this.field4734 - 124;
-      Collection var5 = this.mc.player.method3031();
+      Collection var5 = this.mc.player.getActivePotionEffects();
       if (!var5.isEmpty()) {
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          int var6 = 33;
@@ -54,23 +54,23 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
       }
    }
 
-   private void method2640(MatrixStack var1, int var2, int var3, Iterable<Class2023> var4) {
+   private void method2640(MatrixStack var1, int var2, int var3, Iterable<EffectInstance> var4) {
       this.mc.getTextureManager().bindTexture(field4720);
       int var7 = this.field4735;
 
-      for (Class2023 var9 : var4) {
+      for (EffectInstance var9 : var4) {
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          this.method5696(var1, var2, var7, 0, 166, 140, 32);
          var7 += var3;
       }
    }
 
-   private void method2641(MatrixStack var1, int var2, int var3, Iterable<Class2023> var4) {
+   private void method2641(MatrixStack var1, int var2, int var3, Iterable<EffectInstance> var4) {
       PotionSpriteUploader var7 = this.mc.getPotionSpriteUploader();
       int var8 = this.field4735;
 
-      for (Class2023 var10 : var4) {
-         Effect var11 = var10.method8627();
+      for (EffectInstance var10 : var4) {
+         Effect var11 = var10.getPotion();
          TextureAtlasSprite var12 = var7.method1022(var11);
          this.mc.getTextureManager().bindTexture(var12.getAtlasTexture().getTextureLocation());
          method5695(var1, var2 + 6, var8 + 7, this.method5702(), 18, 18, var12);
@@ -78,11 +78,11 @@ public abstract class Class860<T extends Class5812> extends Class851<T> {
       }
    }
 
-   private void method2642(MatrixStack var1, int var2, int var3, Iterable<Class2023> var4) {
+   private void method2642(MatrixStack var1, int var2, int var3, Iterable<EffectInstance> var4) {
       int var7 = this.field4735;
 
-      for (Class2023 var9 : var4) {
-         String var10 = I18n.format(var9.method8627().method22294());
+      for (EffectInstance var9 : var4) {
+         String var10 = I18n.format(var9.getPotion().method22294());
          if (var9.method8629() >= 1 && var9.method8629() <= 9) {
             var10 = var10 + ' ' + I18n.format("enchantment.level." + (var9.method8629() + 1));
          }

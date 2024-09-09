@@ -37,7 +37,7 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
 
    @Nullable
    private IBlockReader method645(int var1, int var2) {
-      long var5 = Class7481.method24353(var1, var2);
+      long var5 = ChunkPos.method24353(var1, var2);
 
       for (int var7 = 0; var7 < 2; var7++) {
          if (var5 == this.field751[var7]) {
@@ -58,7 +58,7 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
    }
 
    private void method646() {
-      Arrays.fill(this.field751, Class7481.field32173);
+      Arrays.fill(this.field751, ChunkPos.field32173);
       Arrays.fill(this.field752, null);
    }
 
@@ -208,12 +208,12 @@ public abstract class Class200<M extends Class7586<M>, S extends Class208<M>> ex
       this.field748.method715(var1.method8425(), var2);
    }
 
-   public void method662(Class7481 var1, boolean var2) {
+   public void method662(ChunkPos var1, boolean var2) {
       long var5 = Class2002.method8420(Class2002.method8424(var1.field32174, 0, var1.field32175));
       this.field748.method712(var5, var2);
    }
 
-   public void method663(Class7481 var1, boolean var2) {
+   public void method663(ChunkPos var1, boolean var2) {
       long var5 = Class2002.method8420(Class2002.method8424(var1.field32174, 0, var1.field32175));
       this.field748.method713(var5, var2);
    }

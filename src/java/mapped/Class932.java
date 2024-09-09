@@ -11,7 +11,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 import javax.annotation.Nullable;
 
-public abstract class Class932 extends TileEntity implements Class920, Class949, INameable {
+public abstract class Class932 extends TileEntity implements IInventory, Class949, INameable {
    private Class7969 field5279 = Class7969.field34259;
    private ITextComponent field5280;
 
@@ -77,9 +77,9 @@ public abstract class Class932 extends TileEntity implements Class920, Class949,
 
    @Nullable
    @Override
-   public Class5812 method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
+   public Container method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
       return !this.method3696(var3) ? null : this.method3690(var1, var2);
    }
 
-   public abstract Class5812 method3690(int var1, PlayerInventory var2);
+   public abstract Container method3690(int var1, PlayerInventory var2);
 }

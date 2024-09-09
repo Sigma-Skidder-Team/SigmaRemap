@@ -69,44 +69,44 @@ public class Class904 extends ProjectileEntity {
       float var11 = -MathHelper.cos(-var7 * (float) (Math.PI / 180.0));
       float var12 = MathHelper.sin(-var7 * (float) (Math.PI / 180.0));
       double var13 = var1.getPosX() - (double)var10 * 0.3;
-      double var15 = var1.method3442();
+      double var15 = var1.getPosYEye();
       double var17 = var1.getPosZ() - (double)var9 * 0.3;
-      this.method3273(var13, var15, var17, var8, var7);
+      this.setLocationAndAngles(var13, var15, var17, var8, var7);
       Vector3d var19 = new Vector3d((double)(-var10), (double) MathHelper.clamp(-(var12 / var11), -5.0F, 5.0F), (double)(-var9));
-      double var20 = var19.method11348();
+      double var20 = var19.length();
       var19 = var19.method11347(
          0.6 / var20 + 0.5 + this.rand.nextGaussian() * 0.0045,
          0.6 / var20 + 0.5 + this.rand.nextGaussian() * 0.0045,
          0.6 / var20 + 0.5 + this.rand.nextGaussian() * 0.0045
       );
-      this.method3434(var19);
+      this.setMotion(var19);
       this.rotationYaw = (float)(MathHelper.method37814(var19.x, var19.z) * 180.0F / (float)Math.PI);
-      this.rotationPitch = (float)(MathHelper.method37814(var19.y, (double) MathHelper.method37766(method3234(var19))) * 180.0F / (float)Math.PI);
+      this.rotationPitch = (float)(MathHelper.method37814(var19.y, (double) MathHelper.sqrt(horizontalMag(var19))) * 180.0F / (float)Math.PI);
       this.prevRotationYaw = this.rotationYaw;
       this.prevRotationPitch = this.rotationPitch;
    }
 
    @Override
    public void registerData() {
-      this.method3210().register(field5151, 0);
-      this.method3210().register(field5152, false);
+      this.getDataManager().register(field5151, 0);
+      this.getDataManager().register(field5152, false);
    }
 
    @Override
-   public void method3155(DataParameter<?> var1) {
+   public void notifyDataManagerChange(DataParameter<?> var1) {
       if (field5151.equals(var1)) {
-         int var4 = this.method3210().<Integer>method35445(field5151);
+         int var4 = this.getDataManager().<Integer>method35445(field5151);
          this.field5159 = var4 <= 0 ? null : this.world.getEntityByID(var4 - 1);
       }
 
       if (field5152.equals(var1)) {
-         this.field5149 = this.method3210().<Boolean>method35445(field5152);
+         this.field5149 = this.getDataManager().<Boolean>method35445(field5152);
          if (this.field5149) {
-            this.method3435(this.getVec().x, (double)(-0.4F * MathHelper.method37783(this.field5148, 0.6F, 1.0F)), this.getVec().z);
+            this.setMotion(this.getMotion().x, (double)(-0.4F * MathHelper.method37783(this.field5148, 0.6F, 1.0F)), this.getMotion().z);
          }
       }
 
-      super.method3155(var1);
+      super.notifyDataManagerChange(var1);
    }
 
    @Override
@@ -121,7 +121,7 @@ public class Class904 extends ProjectileEntity {
 
    @Override
    public void tick() {
-      this.field5148.setSeed(this.getUniqueID().getLeastSignificantBits() ^ this.world.method6783());
+      this.field5148.setSeed(this.getUniqueID().getLeastSignificantBits() ^ this.world.getGameTime());
       super.tick();
       PlayerEntity var3 = this.method3544();
       if (var3 != null) {
@@ -131,7 +131,7 @@ public class Class904 extends ProjectileEntity {
             } else {
                this.field5153++;
                if (this.field5153 >= 1200) {
-                  this.method2904();
+                  this.remove();
                   return;
                }
             }
@@ -139,7 +139,7 @@ public class Class904 extends ProjectileEntity {
             float var4 = 0.0F;
             BlockPos var5 = this.getPosition();
             FluidState var6 = this.world.getFluidState(var5);
-            if (var6.method23486(Class8953.field40469)) {
+            if (var6.method23486(FluidTags.field40469)) {
                var4 = var6.method23475(this.world, var5);
             }
 
@@ -148,7 +148,7 @@ public class Class904 extends ProjectileEntity {
                if (this.field5160 == Class2152.field14072) {
                   if (this.field5159 != null) {
                      if (!this.field5159.removed) {
-                        this.setPosition(this.field5159.getPosX(), this.field5159.method3440(0.8), this.field5159.getPosZ());
+                        this.setPosition(this.field5159.getPosX(), this.field5159.getPosYHeight(0.8), this.field5159.getPosZ());
                      } else {
                         this.field5159 = null;
                         this.field5160 = Class2152.field14071;
@@ -159,13 +159,13 @@ public class Class904 extends ProjectileEntity {
                }
 
                if (this.field5160 == Class2152.field14073) {
-                  Vector3d var10 = this.getVec();
+                  Vector3d var10 = this.getMotion();
                   double var11 = this.getPosY() + var10.y - (double)var5.getY() - (double)var4;
                   if (Math.abs(var11) < 0.01) {
                      var11 += Math.signum(var11) * 0.1;
                   }
 
-                  this.method3435(var10.x * 0.9, var10.y - var11 * (double)this.rand.nextFloat() * 0.2, var10.z * 0.9);
+                  this.setMotion(var10.x * 0.9, var10.y - var11 * (double)this.rand.nextFloat() * 0.2, var10.z * 0.9);
                   if (this.field5154 <= 0 && this.field5156 <= 0) {
                      this.field5158 = true;
                   } else {
@@ -177,7 +177,7 @@ public class Class904 extends ProjectileEntity {
                   } else {
                      this.field5150 = Math.max(0, this.field5150 - 1);
                      if (this.field5149) {
-                        this.method3434(this.getVec().method11339(0.0, -0.1 * (double)this.field5148.nextFloat() * (double)this.field5148.nextFloat(), 0.0));
+                        this.setMotion(this.getMotion().add(0.0, -0.1 * (double)this.field5148.nextFloat() * (double)this.field5148.nextFloat(), 0.0));
                      }
 
                      if (!this.world.isRemote) {
@@ -187,13 +187,13 @@ public class Class904 extends ProjectileEntity {
                }
             } else {
                if (this.field5159 != null) {
-                  this.method3434(Vector3d.ZERO);
+                  this.setMotion(Vector3d.ZERO);
                   this.field5160 = Class2152.field14072;
                   return;
                }
 
                if (var7) {
-                  this.method3434(this.getVec().method11347(0.3, 0.2, 0.3));
+                  this.setMotion(this.getMotion().method11347(0.3, 0.2, 0.3));
                   this.field5160 = Class2152.field14073;
                   return;
                }
@@ -201,22 +201,22 @@ public class Class904 extends ProjectileEntity {
                this.method3535();
             }
 
-            if (!var6.method23486(Class8953.field40469)) {
-               this.method3434(this.getVec().method11339(0.0, -0.03, 0.0));
+            if (!var6.method23486(FluidTags.field40469)) {
+               this.setMotion(this.getMotion().add(0.0, -0.03, 0.0));
             }
 
-            this.move(Class2107.field13742, this.getVec());
+            this.move(MoverType.SELF, this.getMotion());
             this.method3468();
             if (this.field5160 == Class2152.field14071 && (this.onGround || this.collidedHorizontally)) {
-               this.method3434(Vector3d.ZERO);
+               this.setMotion(Vector3d.ZERO);
             }
 
             double var8 = 0.92;
-            this.method3434(this.getVec().method11344(0.92));
-            this.method3216();
+            this.setMotion(this.getMotion().scale(0.92));
+            this.recenterBoundingBox();
          }
       } else {
-         this.method2904();
+         this.remove();
       }
    }
 
@@ -228,7 +228,7 @@ public class Class904 extends ProjectileEntity {
       if (!var1.removed && var1.isAlive() && (var6 || var7) && !(this.getDistanceSq(var1) > 1024.0)) {
          return false;
       } else {
-         this.method2904();
+         this.remove();
          return true;
       }
    }
@@ -255,18 +255,18 @@ public class Class904 extends ProjectileEntity {
    @Override
    public void method3466(BlockRayTraceResult var1) {
       super.method3466(var1);
-      this.method3434(this.getVec().method11333().method11344(var1.method31418(this)));
+      this.setMotion(this.getMotion().method11333().scale(var1.method31418(this)));
    }
 
    private void method3536() {
-      this.method3210().method35446(field5151, this.field5159.getEntityId() + 1);
+      this.getDataManager().method35446(field5151, this.field5159.getEntityId() + 1);
    }
 
    private void method3537(BlockPos var1) {
       ServerWorld var4 = (ServerWorld)this.world;
       int var5 = 1;
       BlockPos var6 = var1.up();
-      if (this.rand.nextFloat() < 0.25F && this.world.method6796(var6)) {
+      if (this.rand.nextFloat() < 0.25F && this.world.isRainingAt(var6)) {
          var5++;
       }
 
@@ -301,8 +301,8 @@ public class Class904 extends ProjectileEntity {
                   double var14 = (double)((float) MathHelper.floor(this.getPosY()) + 1.0F);
                   double var16 = this.getPosZ() + (double)(MathHelper.cos(var10) * var11 * 0.1F);
                   BlockState var18 = var4.getBlockState(new BlockPos(var12, var14 - 1.0, var16));
-                  if (var18.method23448(Blocks.WATER)) {
-                     var4.method6939(ParticleTypes.field34099, var12, var14, var16, 2 + this.rand.nextInt(2), 0.1F, 0.0, 0.1F, 0.0);
+                  if (var18.isIn(Blocks.WATER)) {
+                     var4.spawnParticle(ParticleTypes.field34099, var12, var14, var16, 2 + this.rand.nextInt(2), 0.1F, 0.0, 0.1F, 0.0);
                   }
                }
 
@@ -314,32 +314,32 @@ public class Class904 extends ProjectileEntity {
          } else {
             this.field5156 -= var5;
             if (this.field5156 <= 0) {
-               this.method2863(SoundEvents.field26585, 0.25F, 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.4F);
+               this.playSound(SoundEvents.field26585, 0.25F, 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.4F);
                double var7 = this.getPosY() + 0.5;
-               var4.method6939(
+               var4.spawnParticle(
                   ParticleTypes.field34052,
                   this.getPosX(),
                   var7,
                   this.getPosZ(),
-                  (int)(1.0F + this.method3429() * 20.0F),
-                  (double)this.method3429(),
+                  (int)(1.0F + this.getWidth() * 20.0F),
+                  (double)this.getWidth(),
                   0.0,
-                  (double)this.method3429(),
+                  (double)this.getWidth(),
                   0.2F
                );
-               var4.method6939(
+               var4.spawnParticle(
                   ParticleTypes.field34073,
                   this.getPosX(),
                   var7,
                   this.getPosZ(),
-                  (int)(1.0F + this.method3429() * 20.0F),
-                  (double)this.method3429(),
+                  (int)(1.0F + this.getWidth() * 20.0F),
+                  (double)this.getWidth(),
                   0.0,
-                  (double)this.method3429(),
+                  (double)this.getWidth(),
                   0.2F
                );
                this.field5154 = MathHelper.method37782(this.rand, 20, 40);
-               this.method3210().method35446(field5152, true);
+               this.getDataManager().method35446(field5152, true);
             } else {
                this.field5157 = (float)((double)this.field5157 + this.rand.nextGaussian() * 4.0);
                float var21 = this.field5157 * (float) (Math.PI / 180.0);
@@ -349,15 +349,15 @@ public class Class904 extends ProjectileEntity {
                double var25 = (double)((float) MathHelper.floor(this.getPosY()) + 1.0F);
                double var26 = this.getPosZ() + (double)(var23 * (float)this.field5156 * 0.1F);
                BlockState var27 = var4.getBlockState(new BlockPos(var24, var25 - 1.0, var26));
-               if (var27.method23448(Blocks.WATER)) {
+               if (var27.isIn(Blocks.WATER)) {
                   if (this.rand.nextFloat() < 0.15F) {
-                     var4.method6939(ParticleTypes.field34052, var24, var25 - 0.1F, var26, 1, (double)var22, 0.1, (double)var23, 0.0);
+                     var4.spawnParticle(ParticleTypes.field34052, var24, var25 - 0.1F, var26, 1, (double)var22, 0.1, (double)var23, 0.0);
                   }
 
                   float var19 = var22 * 0.04F;
                   float var20 = var23 * 0.04F;
-                  var4.method6939(ParticleTypes.field34073, var24, var25, var26, 0, (double)var20, 0.01, (double)(-var19), 1.0);
-                  var4.method6939(ParticleTypes.field34073, var24, var25, var26, 0, (double)(-var20), 0.01, (double)var19, 1.0);
+                  var4.spawnParticle(ParticleTypes.field34073, var24, var25, var26, 0, (double)var20, 0.01, (double)(-var19), 1.0);
+                  var4.spawnParticle(ParticleTypes.field34073, var24, var25, var26, 0, (double)(-var20), 0.01, (double)var19, 1.0);
                }
             }
          }
@@ -366,7 +366,7 @@ public class Class904 extends ProjectileEntity {
          if (this.field5154 <= 0) {
             this.field5155 = 0;
             this.field5156 = 0;
-            this.method3210().method35446(field5152, false);
+            this.getDataManager().method35446(field5152, false);
          }
       }
    }
@@ -405,9 +405,9 @@ public class Class904 extends ProjectileEntity {
 
    private Class2331 method3540(BlockPos var1) {
       BlockState var4 = this.world.getBlockState(var1);
-      if (!var4.isAir() && !var4.method23448(Blocks.LILY_PAD)) {
+      if (!var4.isAir() && !var4.isIn(Blocks.LILY_PAD)) {
          FluidState var5 = var4.method23449();
-         return var5.method23486(Class8953.field40469) && var5.method23473() && var4.method23414(this.world, var1).method19516()
+         return var5.method23486(FluidTags.field40469) && var5.method23473() && var4.method23414(this.world, var1).method19516()
             ? Class2331.field15948
             : Class2331.field15949;
       } else {
@@ -420,11 +420,11 @@ public class Class904 extends ProjectileEntity {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
    }
 
    public int method3542(ItemStack var1) {
@@ -449,14 +449,14 @@ public class Class904 extends ProjectileEntity {
                   double var14 = var4.getPosY() - this.getPosY();
                   double var16 = var4.getPosZ() - this.getPosZ();
                   double var18 = 0.1;
-                  var11.method3435(var12 * 0.1, var14 * 0.1 + Math.sqrt(Math.sqrt(var12 * var12 + var14 * var14 + var16 * var16)) * 0.08, var16 * 0.1);
-                  this.world.method6916(var11);
+                  var11.setMotion(var12 * 0.1, var14 * 0.1 + Math.sqrt(Math.sqrt(var12 * var12 + var14 * var14 + var16 * var16)) * 0.08, var16 * 0.1);
+                  this.world.addEntity(var11);
                   var4.world
-                     .method6916(
+                     .addEntity(
                         new ExperienceOrbEntity(var4.world, var4.getPosX(), var4.getPosY() + 0.5, var4.getPosZ() + 0.5, this.rand.nextInt(6) + 1)
                      );
                   if (var10.getItem().method11743(Class5985.field26114)) {
-                     var4.method2912(Class8876.field40138, 1);
+                     var4.addStat(Stats.field40138, 1);
                   }
                }
 
@@ -465,7 +465,7 @@ public class Class904 extends ProjectileEntity {
          } else {
             this.method3543();
             CriteriaTriggers.field44494.method15124((ServerPlayerEntity)var4, var1, this, Collections.<ItemStack>emptyList());
-            this.world.method6786(this, (byte)31);
+            this.world.setEntityState(this, (byte)31);
             var5 = !(this.field5159 instanceof ItemEntity) ? 5 : 3;
          }
 
@@ -473,7 +473,7 @@ public class Class904 extends ProjectileEntity {
             var5 = 2;
          }
 
-         this.method2904();
+         this.remove();
          return var5;
       } else {
          return 0;
@@ -481,31 +481,31 @@ public class Class904 extends ProjectileEntity {
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 == 31 && this.world.isRemote && this.field5159 instanceof PlayerEntity && ((PlayerEntity)this.field5159).method2905()) {
          this.method3543();
       }
 
-      super.method2866(var1);
+      super.handleStatusUpdate(var1);
    }
 
    public void method3543() {
       Entity var3 = this.method3460();
       if (var3 != null) {
          Vector3d var4 = new Vector3d(var3.getPosX() - this.getPosX(), var3.getPosY() - this.getPosY(), var3.getPosZ() - this.getPosZ())
-            .method11344(0.1);
-         this.field5159.method3434(this.field5159.getVec().method11338(var4));
+            .scale(0.1);
+         this.field5159.setMotion(this.field5159.getMotion().add(var4));
       }
    }
 
    @Override
-   public boolean method2940() {
+   public boolean canTriggerWalking() {
       return false;
    }
 
    @Override
-   public void method2904() {
-      super.method2904();
+   public void remove() {
+      super.remove();
       PlayerEntity var3 = this.method3544();
       if (var3 != null) {
          var3.field4930 = null;
@@ -529,7 +529,7 @@ public class Class904 extends ProjectileEntity {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       Entity var3 = this.method3460();
       return new SSpawnObjectPacket(this, var3 != null ? var3.getEntityId() : this.getEntityId());
    }

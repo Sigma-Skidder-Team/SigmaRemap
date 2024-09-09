@@ -54,13 +54,13 @@ public class Class1112 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (!this.method2760(var1)) {
-         if (var1.method31113() instanceof Class899 && var1.method31109() instanceof PlayerEntity) {
-            super.method2741(var1, 1000.0F);
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (!this.isInvulnerableTo(var1)) {
+         if (var1.getImmediateSource() instanceof Class899 && var1.getTrueSource() instanceof PlayerEntity) {
+            super.attackEntityFrom(var1, 1000.0F);
             return true;
          } else {
-            return super.method2741(var1, var2);
+            return super.attackEntityFrom(var1, var2);
          }
       } else {
          return false;
@@ -98,7 +98,7 @@ public class Class1112 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public float method3099() {
+   public float getSoundVolume() {
       return 5.0F;
    }
 
@@ -112,21 +112,21 @@ public class Class1112 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("ExplosionPower", this.field6092);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("ExplosionPower", this.field6092);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("ExplosionPower", 99)) {
          this.field6092 = var1.getInt("ExplosionPower");
       }
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return 2.6F;
    }
 }

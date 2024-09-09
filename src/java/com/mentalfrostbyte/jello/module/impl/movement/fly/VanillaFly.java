@@ -1,10 +1,10 @@
 package com.mentalfrostbyte.jello.module.impl.movement.fly;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4426;
-import com.mentalfrostbyte.jello.event.impl.Class4430;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.MouseHoverEvent;
+import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
@@ -42,69 +42,69 @@ public class VanillaFly extends Module {
     @Override
     public void onDisable() {
         ColorUtils.method17725(-0.08);
-        double var3 = Class9567.method37075();
-        Class9567.method37090(var3);
+        double var3 = MovementUtils.method37075();
+        MovementUtils.method37090(var3);
         if (this.field23995) {
             mc.gameSettings.keyBindSneak.pressed = true;
         }
     }
 
     @EventTarget
-    private void method16916(Class4430 var1) {
+    private void method16916(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.method13977() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                var1.method13900(true);
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+                var1.setCancelled(true);
                 this.field23995 = true;
             }
         }
     }
 
     @EventTarget
-    private void method16917(Class4426 var1) {
+    private void method16917(MouseHoverEvent var1) {
         if (this.isEnabled()) {
             if (var1.method13973() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                var1.method13900(true);
+                var1.setCancelled(true);
                 this.field23995 = false;
             }
         }
     }
 
     @EventTarget
-    public void method16918(Class4399 var1) {
+    public void method16918(EventUpdate var1) {
         if (this.isEnabled()) {
             if (!mc.player.onGround && this.getBooleanValueFromSetttingName("Kick bypass")) {
                 if (this.field23996 > 0 && this.field23996 % 30 == 0 && !ColorUtils.method17730(mc.player, 0.01F)) {
                     if (JelloPortal.method27349() != ViaVerList.field26129.method18582()) {
-                        var1.method13912(var1.method13911() - 0.04);
+                        var1.setY(var1.getY() - 0.04);
                     } else {
                         double var4 = this.method16920();
                         if (var4 < 0.0) {
                             return;
                         }
 
-                        double var6 = var1.method13911();
+                        double var6 = var1.getY();
                        List<Double> var8 = new ArrayList();
                         if (!(var6 - var4 > 9.0)) {
-                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.method13909(), var4, var1.method13913(), true));
+                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.getX(), var4, var1.getZ(), true));
                         } else {
                             while (var6 > var4 + 9.0) {
                                 var6 -= 9.0;
                                 var8.add(var6);
-                                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.method13909(), var6, var1.method13913(), true));
+                                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.getX(), var6, var1.getZ(), true));
                             }
 
                             for (Double var10 : var8) {
-                                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.method13909(), var10, var1.method13913(), true));
+                                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.getX(), var10, var1.getZ(), true));
                             }
 
-                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.method13909(), var4, var1.method13913(), true));
+                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.getX(), var4, var1.getZ(), true));
                             Collections.reverse(var8);
 
                             for (Double var12 : var8) {
-                                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.method13909(), var12, var1.method13913(), true));
+                                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.getX(), var12, var1.getZ(), true));
                             }
 
-                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.method13909(), var1.method13911(), var1.method13913(), true));
+                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.getX(), var1.getY(), var1.getZ(), true));
                         }
 
                         this.field23996 = 0;
@@ -115,7 +115,7 @@ public class VanillaFly extends Module {
     }
 
     @EventTarget
-    public void method16919(Class4435 var1) {
+    public void method16919(EventMove var1) {
         if (this.isEnabled()) {
             if (!ColorUtils.method17730(mc.player, 0.01F)) {
                 this.field23996++;
@@ -135,9 +135,9 @@ public class VanillaFly extends Module {
                 var6 = -var4 / 2.0;
             }
 
-            Class9567.method37088(var1, var4);
-            var1.method13995(var6);
-            ColorUtils.method17725(var1.method13994());
+            MovementUtils.method37088(var1, var4);
+            var1.setY(var6);
+            ColorUtils.method17725(var1.getY());
         }
     }
 
@@ -145,7 +145,7 @@ public class VanillaFly extends Module {
         if (!(mc.player.getPositionVec().y < 1.0)) {
             if (!mc.player.onGround) {
                 AxisAlignedBB var3 = mc.player.boundingBox.method19662(0.0, -mc.player.getPositionVec().y, 0.0);
-                Iterator var4 = mc.world.method7055(mc.player, var3).iterator();
+                Iterator var4 = mc.world.getCollisionShapes(mc.player, var3).iterator();
                 double var5 = -1.0;
 
                 while (var4.hasNext()) {

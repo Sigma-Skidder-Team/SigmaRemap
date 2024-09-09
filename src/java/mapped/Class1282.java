@@ -30,9 +30,9 @@ public class Class1282 extends Class1274<Class1171> {
       this.field6841 = -1;
       this.field6843 = new Class3588(this);
       this.field6838 = Lists.newArrayList();
-      this.field6838.add(Class8876.field40096);
+      this.field6838.add(Stats.field40096);
       this.field6839 = Lists.newArrayList(
-         new Class49[]{Class8876.field40099, Class8876.field40097, Class8876.field40098, Class8876.field40100, Class8876.field40101}
+         new Class49[]{Stats.field40099, Stats.field40097, Stats.field40098, Stats.field40100, Stats.field40101}
       );
       this.method6021(true, 20);
       Set var5 = Sets.newIdentityHashSet();

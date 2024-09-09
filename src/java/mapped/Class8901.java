@@ -151,7 +151,7 @@ public class Class8901 {
          (double)var1 + var6.method19677(),
          (double)((float)var2 + 0.5F) + var6.method19678() / 2.0
       );
-      return field40291.world.method7055(field40291.player, var7).count() == 0L;
+      return field40291.world.getCollisionShapes(field40291.player, var7).count() == 0L;
    }
 
    public Class8534 method32450(Class8472 var1) {

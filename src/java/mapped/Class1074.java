@@ -26,9 +26,9 @@ public class Class1074 extends AbstractHorseEntity {
 
    @Override
    public void method4925() {
-      this.method3085(Attributes.field42105).method38661((double)this.method4971());
-      this.method3085(Attributes.MOVEMENT_SPEED).method38661(this.method4973());
-      this.method3085(Attributes.field42117).method38661(this.method4972());
+      this.getAttribute(Attributes.field42105).method38661((double)this.method4971());
+      this.getAttribute(Attributes.MOVEMENT_SPEED).method38661(this.method4973());
+      this.getAttribute(Attributes.field42117).method38661(this.method4972());
    }
 
    @Override
@@ -38,31 +38,31 @@ public class Class1074 extends AbstractHorseEntity {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("Variant", this.method4993());
-      if (!this.field5890.method3618(1).isEmpty()) {
-         var1.put("ArmorItem", this.field5890.method3618(1).method32112(new CompoundNBT()));
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Variant", this.method4993());
+      if (!this.field5890.getStackInSlot(1).isEmpty()) {
+         var1.put("ArmorItem", this.field5890.getStackInSlot(1).method32112(new CompoundNBT()));
       }
    }
 
    public ItemStack method4990() {
-      return this.method2943(Class2106.field13735);
+      return this.getItemStackFromSlot(EquipmentSlotType.field13735);
    }
 
    private void method4991(ItemStack var1) {
-      this.method2944(Class2106.field13735, var1);
-      this.method4279(Class2106.field13735, 0.0F);
+      this.setItemStackToSlot(EquipmentSlotType.field13735, var1);
+      this.method4279(EquipmentSlotType.field13735, 0.0F);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method4992(var1.getInt("Variant"));
       if (var1.contains("ArmorItem", 10)) {
          ItemStack var4 = ItemStack.method32104(var1.getCompound("ArmorItem"));
          if (!var4.isEmpty() && this.method4900(var4)) {
-            this.field5890.method3621(1, var4);
+            this.field5890.setInventorySlotContents(1, var4);
          }
       }
 
@@ -93,39 +93,39 @@ public class Class1074 extends AbstractHorseEntity {
    public void method4903() {
       if (!this.world.isRemote) {
          super.method4903();
-         this.method4997(this.field5890.method3618(1));
-         this.method4279(Class2106.field13735, 0.0F);
+         this.method4997(this.field5890.getStackInSlot(1));
+         this.method4279(EquipmentSlotType.field13735, 0.0F);
       }
    }
 
    private void method4997(ItemStack var1) {
       this.method4991(var1);
       if (!this.world.isRemote) {
-         this.method3085(Attributes.field42113).method38671(field5916);
+         this.getAttribute(Attributes.field42113).method38671(field5916);
          if (this.method4900(var1)) {
             int var4 = ((Class3275)var1.getItem()).method11798();
             if (var4 != 0) {
-               this.method3085(Attributes.field42113).method38667(new Class9689(field5916, "Horse armor bonus", (double)var4, AttributeModifierOperation.ADDITION));
+               this.getAttribute(Attributes.field42113).method38667(new AttributeModifier(field5916, "Horse armor bonus", (double)var4, AttributeModifierOperation.ADDITION));
             }
          }
       }
    }
 
    @Override
-   public void method4902(Class920 var1) {
+   public void method4902(IInventory var1) {
       ItemStack var4 = this.method4990();
       super.method4902(var1);
       ItemStack var5 = this.method4990();
       if (this.ticksExisted > 20 && this.method4900(var5) && var4 != var5) {
-         this.method2863(SoundEvents.field26669, 0.5F, 1.0F);
+         this.playSound(SoundEvents.field26669, 0.5F, 1.0F);
       }
    }
 
    @Override
-   public void method4950(Class8447 var1) {
+   public void method4950(SoundType var1) {
       super.method4950(var1);
       if (this.rand.nextInt(10) == 0) {
-         this.method2863(SoundEvents.field26670, var1.method29710() * 0.6F, var1.method29711());
+         this.playSound(SoundEvents.field26670, var1.getVolume() * 0.6F, var1.method29711());
       }
    }
 
@@ -162,7 +162,7 @@ public class Class1074 extends AbstractHorseEntity {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (!this.method3005()) {
+      if (!this.isChild()) {
          if (this.method4932() && var1.method2851()) {
             this.openGUI(var1);
             return ActionResultType.method9002(this.world.isRemote);
@@ -188,14 +188,14 @@ public class Class1074 extends AbstractHorseEntity {
             return ActionResultType.method9002(this.world.isRemote);
          }
 
-         boolean var7 = !this.method3005() && !this.method4943() && var5.getItem() == Items.field37886;
+         boolean var7 = !this.isChild() && !this.method4943() && var5.getItem() == Items.field37886;
          if (this.method4900(var5) || var7) {
             this.openGUI(var1);
             return ActionResultType.method9002(this.world.isRemote);
          }
       }
 
-      if (!this.method3005()) {
+      if (!this.isChild()) {
          this.method4920(var1);
          return ActionResultType.method9002(this.world.isRemote);
       } else {
@@ -217,7 +217,7 @@ public class Class1074 extends AbstractHorseEntity {
       AbstractHorseEntity var6;
       if (!(var2 instanceof Class1067)) {
          Class1074 var5 = (Class1074)var2;
-         var6 = EntityType.field41038.method33215(var1);
+         var6 = EntityType.field41038.create(var1);
          int var7 = this.rand.nextInt(9);
          Class2190 var8;
          if (var7 >= 4) {
@@ -244,7 +244,7 @@ public class Class1074 extends AbstractHorseEntity {
 
          ((Class1074)var6).method4994(var8, var10);
       } else {
-         var6 = EntityType.field41057.method33215(var1);
+         var6 = EntityType.field41057.create(var1);
       }
 
       this.method4962(var2, var6);

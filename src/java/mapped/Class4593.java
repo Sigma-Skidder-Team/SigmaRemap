@@ -13,7 +13,7 @@ public class Class4593 extends Class4587 {
    private final EntityRendererManager field22085;
 
    public Class4593(EntityRendererManager var1, RenderTypeBuffers var2, ClientWorld var3, Entity var4, Entity var5) {
-      this(var1, var2, var3, var4, var5, var4.getVec());
+      this(var1, var2, var3, var4, var5, var4.getMotion());
    }
 
    private Class4593(EntityRendererManager var1, RenderTypeBuffers var2, ClientWorld var3, Entity var4, Entity var5, Vector3d var6) {

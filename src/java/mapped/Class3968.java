@@ -19,21 +19,21 @@ public class Class3968 extends Class3758 {
          int var4 = var0.<Integer>method30561(Class4750.field22544);
          Class6038 var5 = var0.method30580().method22465();
          var5.method18676(var3);
-         if (Class8042.method27614().method34424().<Class5417>method31084(Class5417.class) == null) {
+         if (ViaVersion3.method27614().method34424().<Class5417>method31084(Class5417.class) == null) {
             var0.method30580().method22469(false);
          } else {
-            int var6 = Class8042.method27614().method34424().<Class5417>method31084(Class5417.class).method17012(var0.method30580());
+            int var6 = ViaVersion3.method27614().method34424().<Class5417>method31084(Class5417.class).method17012(var0.method30580());
             var5.method18678(var6);
-            List<Class9284<Integer, Class6355>> var7 = null;
-            if (var5.method18675() >= var6 || Class8042.method27613().method27365()) {
+            List<Class9284<Integer, ViaVersion7>> var7 = null;
+            if (var5.method18675() >= var6 || ViaVersion3.method27613().method27365()) {
                var7 = Class9019.method33363(var5.method18675(), var6);
             }
 
             Class6376 var8 = var0.method30580().method22465().method18683();
             if (var7 != null) {
                for (Class9284 var10 : var7) {
-                  var8.method19388((Class6355)var10.method35009());
-                  Class9019.method33367((Class<? extends Class6355>)((Class6355)var10.method35009()).getClass());
+                  var8.method19388((ViaVersion7)var10.method35009());
+                  Class9019.method33367((Class<? extends ViaVersion7>)((ViaVersion7)var10.method35009()).getClass());
                }
 
                ViaVerList var11 = ViaVerList.method18569(var6);

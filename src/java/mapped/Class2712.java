@@ -22,7 +22,7 @@ public class Class2712<T extends LivingEntity> extends Class2709<T> {
 
    @Override
    public boolean method10803() {
-      if (this.field17200 > 0 || !this.field17153.method3013().nextBoolean()) {
+      if (this.field17200 > 0 || !this.field17153.getRNG().nextBoolean()) {
          return false;
       } else if (((Class1026)this.field17153).method4552()) {
          this.method10922();

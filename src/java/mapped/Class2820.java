@@ -70,8 +70,8 @@ public class Class2820 extends Class2803<Class1105> {
       }
 
       if (var11 != null) {
-         Vector3d var12 = ((Entity)var11).method3286(0.0F);
-         Vector3d var13 = var1.method3286(0.0F);
+         Vector3d var12 = ((Entity)var11).getEyePosition(0.0F);
+         Vector3d var13 = var1.getEyePosition(0.0F);
          double var14 = var12.y - var13.y;
          if (!(var14 > 0.0)) {
             this.field17573.field31033 = 1.0F;
@@ -79,12 +79,12 @@ public class Class2820 extends Class2803<Class1105> {
             this.field17573.field31033 = 0.0F;
          }
 
-         Vector3d var16 = var1.method3281(0.0F);
+         Vector3d var16 = var1.getLook(0.0F);
          var16 = new Vector3d(var16.x, 0.0, var16.z);
          Vector3d var17 = new Vector3d(var13.x - var12.x, 0.0, var13.z - var12.z)
             .method11333()
             .method11351((float) (Math.PI / 2));
-         double var18 = var16.method11334(var17);
+         double var18 = var16.dotProduct(var17);
          this.field17573.field31032 = MathHelper.method37765((float)Math.abs(var18)) * 2.0F * (float)Math.signum(var18);
       }
 

@@ -26,7 +26,7 @@ public class Class1116 extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       return true;
    }
 
@@ -37,41 +37,41 @@ public class Class1116 extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void method2871() {
-      if (this.field4985 > 0) {
-         double var4 = this.getPosX() + (this.field4986 - this.getPosX()) / (double)this.field4985;
-         double var6 = this.getPosY() + (this.field4987 - this.getPosY()) / (double)this.field4985;
-         double var8 = this.getPosZ() + (this.field4988 - this.getPosZ()) / (double)this.field4985;
-         this.rotationYaw = (float)((double)this.rotationYaw + MathHelper.method37793(this.field4989 - (double)this.rotationYaw) / (double)this.field4985);
-         this.rotationPitch = (float)((double)this.rotationPitch + (this.field4990 - (double)this.rotationPitch) / (double)this.field4985);
-         this.field4985--;
+   public void livingEntity() {
+      if (this.newPosRotationIncrements > 0) {
+         double var4 = this.getPosX() + (this.interpTargetX - this.getPosX()) / (double)this.newPosRotationIncrements;
+         double var6 = this.getPosY() + (this.interpTargetY - this.getPosY()) / (double)this.newPosRotationIncrements;
+         double var8 = this.getPosZ() + (this.interpTargetZ - this.getPosZ()) / (double)this.newPosRotationIncrements;
+         this.rotationYaw = (float)((double)this.rotationYaw + MathHelper.wrapDegrees(this.interpTargetYaw - (double)this.rotationYaw) / (double)this.newPosRotationIncrements);
+         this.rotationPitch = (float)((double)this.rotationPitch + (this.interpTargetPitch - (double)this.rotationPitch) / (double)this.newPosRotationIncrements);
+         this.newPosRotationIncrements--;
          this.setPosition(var4, var6, var8);
          this.setRotation(this.rotationYaw, this.rotationPitch);
       }
 
-      if (this.field4992 > 0) {
-         this.field4967 = (float)((double)this.field4967 + MathHelper.method37793(this.field4991 - (double)this.field4967) / (double)this.field4992);
-         this.field4992--;
+      if (this.interpTicksHead > 0) {
+         this.rotationYawHead = (float)((double)this.rotationYawHead + MathHelper.wrapDegrees(this.interpTargetHeadYaw - (double)this.rotationYawHead) / (double)this.interpTicksHead);
+         this.interpTicksHead--;
       }
 
       this.field4908 = this.field4909;
-      this.method3084();
+      this.updateArmSwingProgress();
       float var3;
       if (this.onGround && !this.getShouldBeDead()) {
-         var3 = Math.min(0.1F, MathHelper.method37766(method3234(this.getVec())));
+         var3 = Math.min(0.1F, MathHelper.sqrt(horizontalMag(this.getMotion())));
       } else {
          var3 = 0.0F;
       }
 
       if (!this.onGround && !this.getShouldBeDead()) {
-         float var11 = (float)Math.atan(-this.getVec().y * 0.2F) * 15.0F;
+         float var11 = (float)Math.atan(-this.getMotion().y * 0.2F) * 15.0F;
       } else {
          float var10 = 0.0F;
       }
 
       this.field4909 = this.field4909 + (var3 - this.field4909) * 0.4F;
       this.world.getProfiler().startSection("push");
-      this.method3126();
+      this.collideWithNearbyEntities();
       this.world.getProfiler().endSection();
    }
 

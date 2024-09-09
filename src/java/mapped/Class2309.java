@@ -44,9 +44,9 @@ public enum Class2309 {
       if (!this.field15821.equals(Items.BOW)) {
          return this.field15823;
       } else {
-         return !(this.field15823 * Class3263.method11777(Projectiles.method16524().player.method3159()) > 0.0F)
-            ? Class3263.method11777(20)
-            : Class3263.method11777(Projectiles.method16525().player.method3159());
+         return !(this.field15823 * BowItem.method11777(Projectiles.method16524().player.getItemInUseCount()) > 0.0F)
+            ? BowItem.method11777(20)
+            : BowItem.method11777(Projectiles.method16525().player.getItemInUseCount());
       }
    }
 
@@ -86,9 +86,9 @@ public enum Class2309 {
          + (Projectiles.method16537().player.getPosZ() - Projectiles.method16538().player.lastTickPosZ)
             * (double) Projectiles.method16539().timer.renderPartialTicks;
       this.field15825 = var6;
-      this.field15826 = var8 + (double) Projectiles.method16540().player.method3393() - 0.1F;
+      this.field15826 = var8 + (double) Projectiles.method16540().player.getEyeHeight() - 0.1F;
       this.field15827 = var10;
-      float var12 = Math.min(20.0F, (float)(72000 - Projectiles.method16541().player.method3159()) + Projectiles.method16542().getRenderPartialTicks()) / 20.0F;
+      float var12 = Math.min(20.0F, (float)(72000 - Projectiles.method16541().player.getItemInUseCount()) + Projectiles.method16542().getRenderPartialTicks()) / 20.0F;
       this.field15828 = -MathHelper.sin(var4) * MathHelper.cos(var5) * this.field15823 * var12;
       this.field15829 = -MathHelper.sin(var5) * this.field15823 * var12;
       this.field15830 = MathHelper.cos(var4) * MathHelper.cos(var5) * this.field15823 * var12;
@@ -101,7 +101,7 @@ public enum Class2309 {
          Vector3d var14 = new Vector3d(
             this.field15825 + (double)this.field15828, this.field15826 + (double)this.field15829, this.field15827 + (double)this.field15830
          );
-         float var15 = (float)(!(this.field15821 instanceof Class3263) ? 0.25 : 0.3);
+         float var15 = (float)(!(this.field15821 instanceof BowItem) ? 0.25 : 0.3);
          AxisAlignedBB var16 = new AxisAlignedBB(
             this.field15825 - (double)var15,
             this.field15826 - (double)var15,
@@ -112,9 +112,9 @@ public enum Class2309 {
          );
          List<Entity> var17 = Projectiles.method16544()
             .world
-            .method6770(
+            .getEntitiesInAABBexcluding(
                Projectiles.method16543().player,
-               var16.method19667((double)this.field15828, (double)this.field15829, (double)this.field15830).method19663(1.0, 1.0, 1.0),
+               var16.offset((double)this.field15828, (double)this.field15829, (double)this.field15830).method19663(1.0, 1.0, 1.0),
                Class8088.field34763.and(new Class167(this, var15, var13, var14))
             );
          if (var17.size() > 0) {
@@ -126,7 +126,7 @@ public enum Class2309 {
 
          BlockRayTraceResult var18 = Projectiles.method16546()
             .world
-            .method7036(new Class6809(var13, var14, Class2271.field14774, Class1985.field12962, Projectiles.method16545().player));
+            .rayTraceBlocks(new RayTraceContext(var13, var14, Class2271.field14774, Class1985.field12962, Projectiles.method16545().player));
          if (var18 != null && var18.getType() != RayTraceResult.Type.MISS) {
             this.field15831 = var18;
             this.field15825 = this.field15831.method31419().x;

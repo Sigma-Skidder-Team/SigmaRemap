@@ -15,7 +15,7 @@ public class Class6878 {
       Biome var7 = var0.getBiome(var6);
       boolean var8 = var0.method6812().getHasCeiling();
       BlockState var9 = var7.method32507().method24283().method28934();
-      if (var3 && !var9.getBlock().method11540(BlockTags.field32780)) {
+      if (var3 && !var9.getBlock().isIn(BlockTags.field32780)) {
          return null;
       } else {
          Chunk var10 = var0.getChunk(var1 >> 4, var2 >> 4);
@@ -46,7 +46,7 @@ public class Class6878 {
    }
 
    @Nullable
-   public static BlockPos method20941(ServerWorld var0, Class7481 var1, boolean var2) {
+   public static BlockPos method20941(ServerWorld var0, ChunkPos var1, boolean var2) {
       for (int var5 = var1.method24356(); var5 <= var1.method24358(); var5++) {
          for (int var6 = var1.method24357(); var6 <= var1.method24359(); var6++) {
             BlockPos var7 = method20940(var0, var5, var6, var2);

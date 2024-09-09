@@ -10,7 +10,7 @@ public class Class3122 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      if (Class8042.method27612().method21924()) {
+      if (ViaVersion3.method27612().method21924()) {
          var1.method30578();
       }
 

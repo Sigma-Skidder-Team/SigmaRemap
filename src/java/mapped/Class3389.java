@@ -82,7 +82,7 @@ public class Class3389 extends Block {
                      1.0F,
                      1.0F
                   );
-                  return ActionResultType.field14818;
+                  return ActionResultType.SUCCESS;
                }
             }
 
@@ -103,12 +103,12 @@ public class Class3389 extends Block {
 
    private static boolean method11986(BlockPos var0, World var1) {
       FluidState var4 = var1.getFluidState(var0);
-      if (var4.method23486(Class8953.field40469)) {
+      if (var4.method23486(FluidTags.field40469)) {
          if (!var4.method23473()) {
             float var5 = (float)var4.method23477();
             if (!(var5 < 2.0F)) {
                FluidState var6 = var1.getFluidState(var0.down());
-               return !var6.method23486(Class8953.field40469);
+               return !var6.method23486(FluidTags.field40469);
             } else {
                return false;
             }
@@ -123,7 +123,7 @@ public class Class3389 extends Block {
    private void method11987(BlockState var1, World var2, BlockPos var3) {
       var2.removeBlock(var3, false);
       boolean var6 = Class76.field161.method248().<BlockPos>map(var3::method8349).anyMatch(var1x -> method11986(var1x, var2));
-      boolean var7 = var6 || var2.getFluidState(var3.up()).method23486(Class8953.field40469);
+      boolean var7 = var6 || var2.getFluidState(var3.up()).method23486(FluidTags.field40469);
       Class5925 var8 = new Class5925(this, var7);
       var2.method6757(
          (Entity)null,
@@ -176,7 +176,7 @@ public class Class3389 extends Block {
          double var9 = (double)var3.getY() + 1.0;
          double var11 = (double)var3.getZ() + 0.5 + (0.5 - var4.nextDouble());
          double var13 = (double)var4.nextFloat() * 0.04;
-         var2.method6746(ParticleTypes.field34118, var7, var9, var11, 0.0, var13, 0.0);
+         var2.addParticle(ParticleTypes.field34118, var7, var9, var11, 0.0, var13, 0.0);
       }
    }
 
@@ -199,12 +199,12 @@ public class Class3389 extends Block {
       return method11990(var1, 15);
    }
 
-   public static Optional<Vector3d> method11991(EntityType<?> var0, Class1668 var1, BlockPos var2) {
+   public static Optional<Vector3d> method11991(EntityType<?> var0, ICollisionReader var1, BlockPos var2) {
       Optional var5 = method11992(var0, var1, var2, true);
       return !var5.isPresent() ? method11992(var0, var1, var2, false) : var5;
    }
 
-   private static Optional<Vector3d> method11992(EntityType<?> var0, Class1668 var1, BlockPos var2, boolean var3) {
+   private static Optional<Vector3d> method11992(EntityType<?> var0, ICollisionReader var1, BlockPos var2, boolean var3) {
       BlockPos.Mutable var6 = new BlockPos.Mutable();
       UnmodifiableIterator var7 = field19002.iterator();
 

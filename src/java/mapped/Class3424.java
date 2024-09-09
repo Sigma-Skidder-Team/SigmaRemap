@@ -47,7 +47,7 @@ public class Class3424 extends Block implements Class3196 {
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var1.method23443(var4, var5)) {
-         if (var2 == Direction.field673 && var3.method23448(Blocks.field37009)) {
+         if (var2 == Direction.field673 && var3.isIn(Blocks.field37009)) {
             var4.setBlockState(var5, Blocks.field37009.method11579(), 2);
          }
 

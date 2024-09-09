@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.render.classic.esp;
 
 import com.ibm.icu.text.NumberFormat;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4413;
+import com.mentalfrostbyte.jello.event.impl.EventRender2D;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -117,9 +117,9 @@ public class TwoDESP extends Module {
     }
 
     @EventTarget
-    public void method16515(Class4413 var1) {
+    public void method16515(EventRender2D var1) {
         if (this.isEnabled()) {
-            boolean var4 = this.method16004().getBooleanValueFromSetttingName("Show Invisibles");
+            boolean var4 = this.access().getBooleanValueFromSetttingName("Show Invisibles");
             boolean var5 = this.getBooleanValueFromSetttingName("Show Health");
             RenderSystem.pushMatrix();
 
@@ -128,7 +128,7 @@ public class TwoDESP extends Module {
                 double[] var9 = field23729.get(var7);
                 if (var8[3] > 0.0 || var8[3] <= 1.0) {
                     RenderSystem.pushMatrix();
-                    if ((var4 || !var7.method3342()) && var7 instanceof PlayerEntity && !(var7 instanceof ClientPlayerEntity)) {
+                    if ((var4 || !var7.isInvisible()) && var7 instanceof PlayerEntity && !(var7 instanceof ClientPlayerEntity)) {
                         this.method16520(var7);
 
                         try {
@@ -148,7 +148,7 @@ public class TwoDESP extends Module {
                             GL11.glEnable(3042);
                             GL11.glDisable(3553);
                             int var15 = -65536;
-                            if (!mc.player.method3135(var7)) {
+                            if (!mc.player.canEntityBeSeen(var7)) {
                                 var15 = -256;
                             }
 
@@ -222,7 +222,7 @@ public class TwoDESP extends Module {
                 double var13 = var12.lastTickPosY + (var12.getPosY() - var12.lastTickPosY) * (double) var9 - var5;
                 double var15 = var12.lastTickPosX + (var12.getPosX() + 10.0 - (var12.lastTickPosX + 10.0)) * (double) var9 - var3;
                 double var17 = var12.lastTickPosZ + (var12.getPosZ() + 10.0 - (var12.lastTickPosZ + 10.0)) * (double) var9 - var7;
-                var13 += (double) var12.method3430() + 0.2;
+                var13 += (double) var12.getHeight() + 0.2;
                 double[] var19 = RenderUtil.method11482(var15, var13, var17);
                 double var20 = Math.abs(RenderUtil.method11482(var15, var13 + 1.0, var17)[1] - RenderUtil.method11482(var15, var13, var17)[1]);
                 if (!field23730 && var19 == null) {

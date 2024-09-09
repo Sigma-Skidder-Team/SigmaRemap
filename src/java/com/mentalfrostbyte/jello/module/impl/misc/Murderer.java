@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.misc;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ClientResource;
@@ -63,7 +63,7 @@ public class Murderer extends Module {
     }
 
     @EventTarget
-    private void method16655(Class4415 var1) throws IOException {
+    private void method16655(EventRender var1) throws IOException {
         if (this.isEnabled()) {
             if (this.field23836) {
                 if (this.getBooleanValueFromSetttingName("GUI")) {

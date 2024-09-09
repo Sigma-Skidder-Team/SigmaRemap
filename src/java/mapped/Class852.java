@@ -27,11 +27,11 @@ public class Class852 extends Class851<Class5836> {
       int var7 = this.field4734;
       int var8 = this.field4735;
       this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
-      Item var9 = this.field4727.method18131(1).method18265().getItem();
+      Item var9 = this.field4727.getSlot(1).getStack().getItem();
       boolean var10 = var9 == Items.field38056;
       boolean var11 = var9 == Items.field37899;
       boolean var12 = var9 == Items.field37471;
-      ItemStack var13 = this.field4727.method18131(0).method18265();
+      ItemStack var13 = this.field4727.getSlot(0).getStack();
       boolean var14 = false;
       Class7529 var15;
       if (var13.getItem() != Items.field37955) {

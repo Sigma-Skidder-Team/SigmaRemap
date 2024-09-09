@@ -61,10 +61,10 @@ public abstract class Class6777 extends Class6768<Class8278> {
       for (int var29 = 127; var29 >= 0; var29--) {
          var27.method8372(var18, var29, var19);
          BlockState var30 = var2.getBlockState(var27);
-         if (var28.method23448(var9.getBlock()) && (var30.isAir() || var30 == var10)) {
+         if (var28.isIn(var9.getBlock()) && (var30.isAir() || var30 == var10)) {
             for (int var31 = 0; var31 < var20; var31++) {
                var27.method8379(Direction.field673);
-               if (!var2.getBlockState(var27).method23448(var9.getBlock())) {
+               if (!var2.getBlockState(var27).isIn(var9.getBlock())) {
                   break;
                }
 
@@ -74,8 +74,8 @@ public abstract class Class6777 extends Class6768<Class8278> {
             var27.method8372(var18, var29, var19);
          }
 
-         if ((var28.isAir() || var28 == var10) && var30.method23448(var9.getBlock())) {
-            for (int var32 = 0; var32 < var21 && var2.getBlockState(var27).method23448(var9.getBlock()); var32++) {
+         if ((var28.isAir() || var28 == var10) && var30.isIn(var9.getBlock())) {
+            for (int var32 = 0; var32 < var21 && var2.getBlockState(var27).isIn(var9.getBlock()); var32++) {
                if (var24 && var29 >= var17 - 4 && var29 <= var17 + 1) {
                   var2.setBlockState(var27, this.method20664(), false);
                } else {

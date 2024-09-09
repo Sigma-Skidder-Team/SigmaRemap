@@ -41,7 +41,7 @@ public class Class2755 extends Class2754 {
    public boolean method10806() {
       LivingEntity var3 = this.field17295.method4232();
       if (var3 != null && var3.isAlive()) {
-         double var4 = this.field17295.getVec().y;
+         double var4 = this.field17295.getMotion().y;
          return (!(var4 * var4 < 0.05F) || !(Math.abs(this.field17295.rotationPitch) < 15.0F) || !this.field17295.onGround) && !this.field17295.method5131();
       } else {
          return false;
@@ -55,7 +55,7 @@ public class Class2755 extends Class2754 {
 
    @Override
    public void method10804() {
-      this.field17295.method3133(true);
+      this.field17295.setJumping(true);
       this.field17295.method5141(true);
       this.field17295.method5144(false);
       LivingEntity var3 = this.field17295.method4232();
@@ -66,7 +66,7 @@ public class Class2755 extends Class2754 {
             var3.getPosZ() - this.field17295.getPosZ()
          )
          .method11333();
-      this.field17295.method3434(this.field17295.getVec().method11339(var4.x * 0.8, 0.9, var4.z * 0.8));
+      this.field17295.setMotion(this.field17295.getMotion().add(var4.x * 0.8, 0.9, var4.z * 0.8));
       this.field17295.method4230().method21666();
    }
 
@@ -87,22 +87,22 @@ public class Class2755 extends Class2754 {
       }
 
       if (!this.field17295.method5131()) {
-         Vector3d var4 = this.field17295.getVec();
+         Vector3d var4 = this.field17295.getMotion();
          if (var4.y * var4.y < 0.03F && this.field17295.rotationPitch != 0.0F) {
             this.field17295.rotationPitch = MathHelper.method37828(this.field17295.rotationPitch, 0.0F, 0.2F);
          } else {
-            double var5 = Math.sqrt(Entity.method3234(var4));
-            double var7 = Math.signum(-var4.y) * Math.acos(var5 / var4.method11348()) * 180.0F / (float)Math.PI;
+            double var5 = Math.sqrt(Entity.horizontalMag(var4));
+            double var7 = Math.signum(-var4.y) * Math.acos(var5 / var4.length()) * 180.0F / (float)Math.PI;
             this.field17295.rotationPitch = (float)var7;
          }
       }
 
-      if (var3 != null && this.field17295.method3275(var3) <= 2.0F) {
-         this.field17295.method3114(var3);
+      if (var3 != null && this.field17295.getDistance(var3) <= 2.0F) {
+         this.field17295.attackEntityAsMob(var3);
       } else if (this.field17295.rotationPitch > 0.0F
          && this.field17295.onGround
-         && (float)this.field17295.getVec().y != 0.0F
-         && this.field17295.world.getBlockState(this.field17295.getPosition()).method23448(Blocks.SNOW)) {
+         && (float)this.field17295.getMotion().y != 0.0F
+         && this.field17295.world.getBlockState(this.field17295.getPosition()).isIn(Blocks.SNOW)) {
          this.field17295.rotationPitch = 60.0F;
          this.field17295.method4233((LivingEntity)null);
          Class1095.method5170(this.field17295, true);

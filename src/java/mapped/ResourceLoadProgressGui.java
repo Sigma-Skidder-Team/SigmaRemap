@@ -56,7 +56,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
             this.field6438.currentScreen.render(var1, 0, 0, var4);
          }
 
-         int var13 = MathHelper.method37773((1.0F - MathHelper.clamp(var11 - 1.0F, 0.0F, 1.0F)) * 255.0F);
+         int var13 = MathHelper.ceil((1.0F - MathHelper.clamp(var11 - 1.0F, 0.0F, 1.0F)) * 255.0F);
          method5686(var1, 0, 0, var7, var8, this.field6445 | var13 << 24);
          var14 = 1.0F - MathHelper.clamp(var11 - 1.0F, 0.0F, 1.0F);
       } else if (this.field6441) {
@@ -64,7 +64,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
             this.field6438.currentScreen.render(var1, var2, var3, var4);
          }
 
-         int var27 = MathHelper.method37774(MathHelper.method37778((double)var12, 0.15, 1.0) * 255.0);
+         int var27 = MathHelper.method37774(MathHelper.clamp((double)var12, 0.15, 1.0) * 255.0);
          method5686(var1, 0, 0, var7, var8, this.field6445 | var27 << 24);
          var14 = MathHelper.clamp(var12, 0.0F, 1.0F);
       } else {
@@ -129,7 +129,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
    }
 
    private void method5678(MatrixStack var1, int var2, int var3, int var4, int var5, float var6) {
-      int var9 = MathHelper.method37773((float)(var4 - var2 - 2) * this.field6442);
+      int var9 = MathHelper.ceil((float)(var4 - var2 - 2) * this.field6442);
       int var10 = Math.round(var6 * 255.0F);
       if (this.field6446 != this.field6445) {
          int var11 = this.field6446 >> 16 & 0xFF;

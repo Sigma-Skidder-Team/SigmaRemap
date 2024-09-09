@@ -16,7 +16,7 @@ public class Class2693 extends Class2692 {
 
    @Override
    public boolean method10803() {
-      return this.field17133.field4982 == 0.0F && this.field17133.field4983 == 0.0F && this.field17133.field4984 == 0.0F
+      return this.field17133.moveStrafing == 0.0F && this.field17133.moveVertical == 0.0F && this.field17133.moveForward == 0.0F
          ? this.method10912() || this.field17133.isSleeping()
          : false;
    }
@@ -46,7 +46,7 @@ public class Class2693 extends Class2692 {
       this.field17133.method5130(false);
       this.field17133.method5143(false);
       this.field17133.method5144(false);
-      this.field17133.method3133(false);
+      this.field17133.setJumping(false);
       Class1095.method5179(this.field17133, true);
       this.field17133.method4230().method21666();
       this.field17133.method4228().method20813(this.field17133.getPosX(), this.field17133.getPosY(), this.field17133.getPosZ(), 0.0);

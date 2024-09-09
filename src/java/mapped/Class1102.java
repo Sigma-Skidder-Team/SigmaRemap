@@ -19,8 +19,8 @@ public class Class1102 extends Class1101 {
    }
 
    @Override
-   public boolean method3114(Entity var1) {
-      if (!super.method3114(var1)) {
+   public boolean attackEntityAsMob(Entity var1) {
+      if (!super.attackEntityAsMob(var1)) {
          return false;
       } else {
          if (var1 instanceof LivingEntity) {
@@ -34,7 +34,7 @@ public class Class1102 extends Class1101 {
             }
 
             if (var4 > 0) {
-               ((LivingEntity)var1).method3035(new Class2023(Effects.POISON, var4 * 20, 0));
+               ((LivingEntity)var1).addPotionEffect(new EffectInstance(Effects.POISON, var4 * 20, 0));
             }
          }
 
@@ -49,7 +49,7 @@ public class Class1102 extends Class1101 {
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return 0.45F;
    }
 }

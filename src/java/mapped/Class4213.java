@@ -139,9 +139,9 @@ public abstract class Class4213 extends Class4178 {
       if (!var2.method38396(new BlockPos(var8, var9, var10))) {
          return false;
       } else {
-         Class1106 var11 = EntityType.field41022.method33215(var1.method6970());
-         var11.method3041(var11.method3075());
-         var11.method3273((double)var8 + 0.5, (double)var9, (double)var10 + 0.5, 0.0F, 0.0F);
+         Class1106 var11 = EntityType.field41022.create(var1.method6970());
+         var11.heal(var11.method3075());
+         var11.setLocationAndAngles((double)var8 + 0.5, (double)var9, (double)var10 + 0.5, 0.0F, 0.0F);
          var11.method4276(var1, var1.method6807(var11.getPosition()), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
          var1.method6995(var11);
          return true;

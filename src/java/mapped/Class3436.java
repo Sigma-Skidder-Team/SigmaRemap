@@ -80,13 +80,13 @@ public class Class3436 extends Class3433 {
 
    private boolean method12108(BlockState var1, BlockState var2) {
       Block var5 = var1.method23463(field19211) != Class180.field638 ? Blocks.STICKY_PISTON : Blocks.PISTON;
-      return var2.method23448(var5)
+      return var2.isIn(var5)
          && var2.<Boolean>method23463(Class3435.field19202)
          && var2.<Direction>method23463(field19198) == var1.<Direction>method23463(field19198);
    }
 
    @Override
-   public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
+   public void onBlockHarvested(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
       if (!var1.isRemote && var4.abilities.isCreativeMode) {
          BlockPos var7 = var2.method8349(var3.<Direction>method23463(field19198).method536());
          if (this.method12108(var3, var1.getBlockState(var7))) {
@@ -94,12 +94,12 @@ public class Class3436 extends Class3433 {
          }
       }
 
-      super.method11574(var1, var2, var3, var4);
+      super.onBlockHarvested(var1, var2, var3, var4);
    }
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.method23448(var4.getBlock())) {
+      if (!var1.isIn(var4.getBlock())) {
          super.method11513(var1, var2, var3, var4, var5);
          BlockPos var8 = var3.method8349(var1.<Direction>method23463(field19198).method536());
          if (this.method12108(var1, var2.getBlockState(var8))) {
@@ -119,7 +119,7 @@ public class Class3436 extends Class3433 {
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.method8349(var1.<Direction>method23463(field19198).method536()));
       return this.method12108(var1, var6)
-         || var6.method23448(Blocks.MOVING_PISTON) && var6.<Direction>method23463(field19198) == var1.<Direction>method23463(field19198);
+         || var6.isIn(Blocks.MOVING_PISTON) && var6.<Direction>method23463(field19198) == var1.<Direction>method23463(field19198);
    }
 
    @Override

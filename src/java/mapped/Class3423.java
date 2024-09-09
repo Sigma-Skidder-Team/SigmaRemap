@@ -66,7 +66,7 @@ public class Class3423 extends Block implements Class3207 {
    public BlockState method11495(Class5909 var1) {
       if (!var1.method18347()) {
          BlockState var4 = var1.method18360().getBlockState(var1.method18345().method8349(var1.method18354().method536()));
-         if (var4.method23448(this) && var4.<Direction>method23463(field19154) == var1.method18354()) {
+         if (var4.isIn(this) && var4.<Direction>method23463(field19154) == var1.method18354()) {
             return null;
          }
       }
@@ -77,7 +77,7 @@ public class Class3423 extends Block implements Class3207 {
       FluidState var7 = var1.method18360().getFluidState(var1.method18345());
 
       for (Direction var11 : var1.method18349()) {
-         if (var11.method544().method324()) {
+         if (var11.getAxis().method324()) {
             var12 = var12.method23465(field19154, var11.method536());
             if (var12.method23443(var5, var6)) {
                return var12.method23465(field19155, Boolean.valueOf(var7.method23472() == Class9479.field44066));

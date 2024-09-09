@@ -80,7 +80,7 @@ public class Class8686 {
          boolean var9;
          if (var3 != Class2047.field13362) {
             TileEntity var8 = var7.getTileEntity(var1);
-            Class946.method3802(var8);
+            IClearable.method3802(var8);
             var9 = true;
          } else {
             var7.method7179(var1, true);

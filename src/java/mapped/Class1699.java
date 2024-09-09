@@ -84,7 +84,7 @@ public class Class1699 implements AutoCloseable {
          if (var4 != null) {
             this.field9256 = false;
             if (Class7944.method26911()) {
-               boolean var5 = this.field9254.player.method3033(Effects.NIGHT_VISION) || this.field9254.player.method3033(Effects.CONDUIT_POWER);
+               boolean var5 = this.field9254.player.isPotionActive(Effects.NIGHT_VISION) || this.field9254.player.isPotionActive(Effects.CONDUIT_POWER);
                if (Class9680.method37875(var4, this.field9252, this.field9249, var5, var1)) {
                   this.field9248.method1140();
                   this.field9251 = false;
@@ -104,8 +104,8 @@ public class Class1699 implements AutoCloseable {
 
             float var7 = this.field9254.player.method5416();
             float var8;
-            if (!this.field9254.player.method3033(Effects.NIGHT_VISION)) {
-               if (var7 > 0.0F && this.field9254.player.method3033(Effects.CONDUIT_POWER)) {
+            if (!this.field9254.player.isPotionActive(Effects.NIGHT_VISION)) {
+               if (var7 > 0.0F && this.field9254.player.isPotionActive(Effects.CONDUIT_POWER)) {
                   var8 = var7;
                } else {
                   var8 = 0.0F;

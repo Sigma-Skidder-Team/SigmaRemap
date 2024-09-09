@@ -25,7 +25,7 @@ public class Class6701 extends Class6698 {
 
    @Override
    public BlockState method20424(Random var1, BlockPos var2) {
-      Class113 var5 = Class113.method325(var1);
+      Direction var5 = Direction.method325(var1);
       return this.field29336.method11579().method23465(Class3386.field18994, var5);
    }
 }

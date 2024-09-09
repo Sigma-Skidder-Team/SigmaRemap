@@ -85,8 +85,8 @@ public class Class966 extends TileEntity implements Class935 {
 
    private void method3992() {
       BlockPos var3 = this.getPos();
-      if (this.field5324.method6783() > this.field5415 + 60L || this.field5419 == null) {
-         this.field5415 = this.field5324.method6783();
+      if (this.field5324.getGameTime() > this.field5415 + 60L || this.field5419 == null) {
+         this.field5415 = this.field5324.getGameTime();
          AxisAlignedBB var4 = new AxisAlignedBB(var3).method19664(48.0);
          this.field5419 = this.field5324.<LivingEntity>method7182(LivingEntity.class, var4);
       }
@@ -94,7 +94,7 @@ public class Class966 extends TileEntity implements Class935 {
       if (!this.field5324.isRemote) {
          for (LivingEntity var5 : this.field5419) {
             if (var5.isAlive() && !var5.removed && var3.method8317(var5.getPositionVec(), 32.0)) {
-               var5.method2992().method21406(Class8830.field39840, this.field5324.method6783());
+               var5.getBrain().method21406(Class8830.field39840, this.field5324.getGameTime());
             }
          }
       }
@@ -129,7 +129,7 @@ public class Class966 extends TileEntity implements Class935 {
             .forEach(
                var4x -> {
                   float var7 = 1.0F;
-                  float var8 = MathHelper.method37766(
+                  float var8 = MathHelper.sqrt(
                      (var4x.getPosX() - (double)var4.getX()) * (var4x.getPosX() - (double)var4.getX())
                         + (var4x.getPosZ() - (double)var4.getZ()) * (var4x.getPosZ() - (double)var4.getZ())
                   );
@@ -142,7 +142,7 @@ public class Class966 extends TileEntity implements Class935 {
                      double var16 = (double)Class9470.method36517(var15) / 255.0;
                      double var18 = (double)Class9470.method36518(var15) / 255.0;
                      double var20 = (double)Class9470.method36519(var15) / 255.0;
-                     var1.method6746(ParticleTypes.field34068, var9, (double)((float)var4.getY() + 0.5F), var11, var16, var18, var20);
+                     var1.addParticle(ParticleTypes.field34068, var9, (double)((float)var4.getY() + 0.5F), var11, var16, var18, var20);
                   }
                }
             );
@@ -157,6 +157,6 @@ public class Class966 extends TileEntity implements Class935 {
    }
 
    private void method3997(LivingEntity var1) {
-      var1.method3035(new Class2023(Effects.GLOWING, 60));
+      var1.addPotionEffect(new EffectInstance(Effects.GLOWING, 60));
    }
 }

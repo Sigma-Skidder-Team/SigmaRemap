@@ -42,7 +42,7 @@ public class Class1652<R> implements AutoCloseable {
 
    public void method6641(BooleanSupplier var1) {
       while (!this.field8982.isEmpty() && var1.getAsBoolean()) {
-         Class7481 var4 = Class2002.method8393(this.field8982.firstLong()).method8423();
+         ChunkPos var4 = Class2002.method8393(this.field8982.firstLong()).method8423();
          this.method6649(var4);
       }
    }
@@ -87,12 +87,12 @@ public class Class1652<R> implements AutoCloseable {
       }
    }
 
-   private void method6646(Class7481 var1) {
+   private void method6646(ChunkPos var1) {
       this.method6648(var1, NBTDynamicOps.INSTANCE, this.method6647(var1));
    }
 
    @Nullable
-   private CompoundNBT method6647(Class7481 var1) {
+   private CompoundNBT method6647(ChunkPos var1) {
       try {
          return this.field8980.method7412(var1);
       } catch (IOException var5) {
@@ -101,7 +101,7 @@ public class Class1652<R> implements AutoCloseable {
       }
    }
 
-   private <T> void method6648(Class7481 var1, DynamicOps<T> var2, T var3) {
+   private <T> void method6648(ChunkPos var1, DynamicOps<T> var2, T var3) {
       if (var3 != null) {
          Dynamic<T> var6 = new Dynamic<>(var2, var3);
          int var7 = method6653(var6);
@@ -130,7 +130,7 @@ public class Class1652<R> implements AutoCloseable {
       }
    }
 
-   private void method6649(Class7481 var1) {
+   private void method6649(ChunkPos var1) {
       Dynamic var4 = this.method6650(var1, NBTDynamicOps.INSTANCE);
       INBT var5 = (INBT)var4.getValue();
       if (!(var5 instanceof CompoundNBT)) {
@@ -140,7 +140,7 @@ public class Class1652<R> implements AutoCloseable {
       }
    }
 
-   private <T> Dynamic<T> method6650(Class7481 var1, DynamicOps<T> var2) {
+   private <T> Dynamic<T> method6650(ChunkPos var1, DynamicOps<T> var2) {
       Map<T, T> var5 = Maps.newHashMap();
 
       for (int var6 = 0; var6 < 16; var6++) {
@@ -180,7 +180,7 @@ public class Class1652<R> implements AutoCloseable {
       return var0.get("DataVersion").asInt(1945);
    }
 
-   public void method6654(Class7481 var1) {
+   public void method6654(ChunkPos var1) {
       if (!this.field8982.isEmpty()) {
          for (int var4 = 0; var4 < 16; var4++) {
             long var5 = Class2002.method8391(var1, var4).method8425();

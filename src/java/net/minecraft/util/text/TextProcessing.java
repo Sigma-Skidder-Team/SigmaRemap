@@ -87,7 +87,7 @@ public class TextProcessing {
    public static boolean drawString(String p_238340_0_, int p_238340_1_, Style p_238340_2_, Style p_238340_3_, Class2545 p_238340_4_) {
       TextReplaceEvent i = new TextReplaceEvent(p_238340_0_);
       Client.getInstance().getEventManager().call(i);
-      p_238340_0_ = i.method13958();
+      p_238340_0_ = i.setText();
       int style = p_238340_0_.length();
       Style j = p_238340_2_;
 

@@ -17,12 +17,12 @@ public class Class7370 extends Class7361 {
    @Override
    public void method23359() {
       if (this.field31545++ % 10 == 0) {
-         float var3 = (this.field31519.method3013().nextFloat() - 0.5F) * 8.0F;
-         float var4 = (this.field31519.method3013().nextFloat() - 0.5F) * 4.0F;
-         float var5 = (this.field31519.method3013().nextFloat() - 0.5F) * 8.0F;
+         float var3 = (this.field31519.getRNG().nextFloat() - 0.5F) * 8.0F;
+         float var4 = (this.field31519.getRNG().nextFloat() - 0.5F) * 4.0F;
+         float var5 = (this.field31519.getRNG().nextFloat() - 0.5F) * 8.0F;
          this.field31519
             .world
-            .method6746(
+            .addParticle(
                ParticleTypes.field34069,
                this.field31519.getPosX() + (double)var3,
                this.field31519.getPosY() + 2.0 + (double)var4,
@@ -44,9 +44,9 @@ public class Class7370 extends Class7361 {
 
       double var3 = this.field31544.method11343(this.field31519.getPosX(), this.field31519.getPosY(), this.field31519.getPosZ());
       if (!(var3 < 100.0) && !(var3 > 22500.0) && !this.field31519.collidedHorizontally && !this.field31519.collidedVertically) {
-         this.field31519.method3043(1.0F);
+         this.field31519.setHealth(1.0F);
       } else {
-         this.field31519.method3043(0.0F);
+         this.field31519.setHealth(0.0F);
       }
    }
 

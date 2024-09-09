@@ -32,57 +32,57 @@ public class ElytraFly extends Module {
     public void method16220(TickEvent var1) {
         if (this.isEnabled()) {
             mc.gameSettings.keyBindSneak.pressed = false;
-            if (!(mc.player.getVec().y < 0.08) || mc.player.onGround) {
-                mc.player.method3349(7, false);
-                if (mc.player.method3331()) {
+            if (!(mc.player.getMotion().y < 0.08) || mc.player.onGround) {
+                mc.player.setFlag(7, false);
+                if (mc.player.isSneaking()) {
                     this.method15999(false);
                 }
-            } else if (!mc.player.method3165()) {
+            } else if (!mc.player.isElytraFlying()) {
                 mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.START_FALL_FLYING));
-                mc.player.method3349(7, true);
+                mc.player.setFlag(7, true);
             }
         }
     }
 
     @EventTarget
-    public void method16221(Class4435 var1) {
+    public void method16221(EventMove var1) {
         if (this.isEnabled()) {
-            double var4 = Class9567.method37075();
+            double var4 = MovementUtils.method37075();
             boolean var6 = ColorUtils.method17686();
-            if (!this.getBooleanValueFromSetttingName("NCP") && mc.player.method3331()) {
+            if (!this.getBooleanValueFromSetttingName("NCP") && mc.player.isSneaking()) {
                 var4 *= 2.5;
             }
 
-            Class9567.method37088(var1, 0.0);
-            if (!mc.player.method3165()) {
+            MovementUtils.method37088(var1, 0.0);
+            if (!mc.player.isElytraFlying()) {
                 this.field23528 = 0;
             } else {
                 if (this.field23528 > 0) {
                     if (this.field23528 > 7) {
-                        Class9567.method37088(var1, var4 * 6.3F);
+                        MovementUtils.method37088(var1, var4 * 6.3F);
                     }
 
                     ColorUtils.method17725(-0.071);
-                    var1.method13995(-1.0001E-4F);
+                    var1.setY(-1.0001E-4F);
                 }
 
                 this.field23528++;
             }
 
-            if (this.field23530 > 1.0001E-4F && mc.player.field4981) {
-                Class9567.method37088(var1, var4 * 6.3F);
-                var1.method13995(this.field23530);
+            if (this.field23530 > 1.0001E-4F && mc.player.isJumping) {
+                MovementUtils.method37088(var1, var4 * 6.3F);
+                var1.setY(this.field23530);
             }
 
             int var7 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.keyBindSneak.keycode.keyCode);
             if (var7 == 1 && this.getBooleanValueFromSetttingName("NCP")) {
-                var1.method13995(-0.9F);
-            } else if (!mc.player.method3331()) {
-                if (mc.player.field4981 && !this.getBooleanValueFromSetttingName("NCP")) {
-                    var1.method13995(1.4F);
+                var1.setY(-0.9F);
+            } else if (!mc.player.isSneaking()) {
+                if (mc.player.isJumping && !this.getBooleanValueFromSetttingName("NCP")) {
+                    var1.setY(1.4F);
                 }
             } else {
-                var1.method13995(1.4F);
+                var1.setY(1.4F);
             }
 
             this.field23530 = (float) ((double) this.field23530 * 0.85);
@@ -94,13 +94,13 @@ public class ElytraFly extends Module {
         if (this.isEnabled()) {
             if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
                 SEntityVelocityPacket var4 = (SEntityVelocityPacket) var1.getPacket();
-                Entity var5 = mc.world.getEntityByID(var4.method17565());
+                Entity var5 = mc.world.getEntityByID(var4.getEntityID());
                 if (var5 instanceof Class888) {
                     Class888 var6 = (Class888) var5;
                     if (var6.field5125 != null && var6.field5125.getEntityId() == mc.player.getEntityId()) {
-                        this.field23529 = this.field23529 + (float) var4.field24801 / 8000.0F;
-                        this.field23531 = this.field23531 + (float) var4.field24803 / 8000.0F;
-                        this.field23530 = this.field23530 + (float) var4.field24802 / 8000.0F;
+                        this.field23529 = this.field23529 + (float) var4.motionX / 8000.0F;
+                        this.field23531 = this.field23531 + (float) var4.motionZ / 8000.0F;
+                        this.field23530 = this.field23530 + (float) var4.motionY / 8000.0F;
                         this.field23532 = true;
                     }
                 }
@@ -109,15 +109,15 @@ public class ElytraFly extends Module {
     }
 
     @EventTarget
-    private void method16223(Class4399 var1) {
+    private void method16223(EventUpdate var1) {
         if (this.isEnabled()) {
             byte var4 = 65;
             if (this.field23533 != var4 - 1) {
-                if (this.field23533 <= 0 && mc.player.field4981) {
+                if (this.field23533 <= 0 && mc.player.isJumping) {
                     this.field23533 = var4;
                 }
             } else {
-                int var5 = Class7789.method25843(Items.field38068);
+                int var5 = InvManagerUtils.method25843(Items.field38068);
                 if (var5 >= 0) {
                     if (var5 != mc.player.inventory.currentItem) {
                         mc.getConnection().sendPacket(new CHeldItemChangePacket(var5));
@@ -131,10 +131,10 @@ public class ElytraFly extends Module {
             }
 
             if (this.field23533 > 0) {
-                var1.method13916(-90.0F);
+                var1.setYaw(-90.0F);
             }
 
-            if (!mc.player.field4981) {
+            if (!mc.player.isJumping) {
                 this.field23533 = 0;
             }
 
@@ -150,7 +150,7 @@ public class ElytraFly extends Module {
     }
 
     @EventTarget
-    private void method16225(Class4426 var1) {
+    private void method16225(MouseHoverEvent var1) {
         if (!this.isEnabled()) {
         }
     }
@@ -164,7 +164,7 @@ public class ElytraFly extends Module {
 
     @Override
     public void onDisable() {
-        if (!Class9567.isMoving()) {
+        if (!MovementUtils.isMoving()) {
             ColorUtils.method17724(0.0);
             ColorUtils.method17726(0.0);
         }

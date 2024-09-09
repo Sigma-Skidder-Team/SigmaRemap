@@ -33,7 +33,7 @@ public class PathFinder extends Module {
 
     @EventTarget
     public void method16142(TickEvent var1) {
-        this.field23490 = BlockUtil.method34567(mc.player.rotationYaw, mc.player.rotationPitch, 200.0F);
+        this.field23490 = BlockUtil.rayTrace(mc.player.rotationYaw, mc.player.rotationPitch, 200.0F);
         if (this.field23491 != null && this.field23492 != null) {
             Client.getInstance()
                     .getNotificationManager()

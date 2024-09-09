@@ -23,7 +23,7 @@ public class CubecraftGamePlay extends Module {
 
     @Override
     public void method15953() {
-        this.field23580 = (GamePlay) this.method16004();
+        this.field23580 = (GamePlay) this.access();
     }
 
     @EventTarget
@@ -32,8 +32,8 @@ public class CubecraftGamePlay extends Module {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SChatPacket) {
                 SChatPacket var5 = (SChatPacket) var4;
-                String var6 = var5.method17648().getString();
-                String var7 = var5.method17648().getString();
+                String var6 = var5.getChatComponent().getString();
+                String var7 = var5.getChatComponent().getString();
                 String var8 = mc.player.getName().getString().toLowerCase();
                 if (this.field23580.getBooleanValueFromSetttingName("AutoL")
                         && (
@@ -50,7 +50,7 @@ public class CubecraftGamePlay extends Module {
                 }
 
                 if (var7.contains("§a§lPlay Again §r§8• §r§6§lAuto Mode §r§8• §r§c§lLeave") && this.field23580.getBooleanValueFromSetttingName("Auto Join")) {
-                    for (ITextComponent var10 : var5.method17648().getSiblings()) {
+                    for (ITextComponent var10 : var5.getChatComponent().getSiblings()) {
                         ClickEvent var11 = var10.getStyle().getClickEvent();
                         if (var11 != null && var11.getAction() == ClickEvent$Action.RUN_COMMAND && var11.getValue().contains("playagain")) {
                             this.field23580.method16759(new Class7200(var11.getValue(), (long) this.field23580.getNumberValueBySettingName("Auto Join delay") * 1000L));

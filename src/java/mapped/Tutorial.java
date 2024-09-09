@@ -107,8 +107,8 @@ public class Tutorial {
       return this.field44523;
    }
 
-   public Class1894 method37036() {
-      return this.field44523.playerController != null ? this.field44523.playerController.method23157() : Class1894.field11101;
+   public GameType method37036() {
+      return this.field44523.playerController != null ? this.field44523.playerController.getCurrentGameType() : GameType.field11101;
    }
 
    public static ITextComponent createKeybindComponent(String var0) {

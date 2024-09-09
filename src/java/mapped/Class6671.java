@@ -220,7 +220,7 @@ public class Class6671 {
       return new Class9464(var0.getServerWorld())
          .method36454(Class9525.field44330, var1)
          .method36454(Class9525.field44335, var0.getPositionVec())
-         .method36450(var0.method3013())
+         .method36450(var0.getRNG())
          .method36460(Class8524.field38290);
    }
 }

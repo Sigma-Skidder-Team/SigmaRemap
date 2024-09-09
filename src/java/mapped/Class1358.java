@@ -18,7 +18,7 @@ public class Class1358 implements Runnable {
 
    @Override
    public void run() {
-      AutoFarm.mc.getConnection().sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, BlockUtil.method34567(this.field7245[0], this.field7245[1], 4.5F)));
+      AutoFarm.mc.getConnection().sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, BlockUtil.rayTrace(this.field7245[0], this.field7245[1], 4.5F)));
       AutoFarm.mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
    }
 }

@@ -37,10 +37,10 @@ public class BasicClickTP extends Module {
 
     @EventTarget
     private void method16324(ClickEvent var1) {
-        if (this.isEnabled() && (mc.player.method3331() || !this.method16004().getBooleanValueFromSetttingName("Sneak"))) {
-            if (var1.method13976() == ClickEvent.Button.RIGHT) {
-                BlockRayTraceResult var4 = BlockUtil.method34567(
-                        mc.player.rotationYaw, mc.player.rotationPitch, this.method16004().getNumberValueBySettingName("Maximum range")
+        if (this.isEnabled() && (mc.player.isSneaking() || !this.access().getBooleanValueFromSetttingName("Sneak"))) {
+            if (var1.getButton() == ClickEvent.Button.RIGHT) {
+                BlockRayTraceResult var4 = BlockUtil.rayTrace(
+                        mc.player.rotationYaw, mc.player.rotationPitch, this.access().getNumberValueBySettingName("Maximum range")
                 );
                 BlockPos var5 = null;
                 if (var4 != null) {
@@ -75,7 +75,7 @@ public class BasicClickTP extends Module {
                     var34 -= var28;
                     double var37 = 0.3;
                     AxisAlignedBB var39 = new AxisAlignedBB(var30 - var37, var34, var32 - var37, var30 + var37, var34 + 1.9, var32 + var37);
-                    if (mc.world.method7055(mc.player, var39).count() == 0L) {
+                    if (mc.world.getCollisionShapes(mc.player, var39).count() == 0L) {
                         mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var30, var34, var32, true));
                     }
 
@@ -86,8 +86,8 @@ public class BasicClickTP extends Module {
                 mc.player.setPosition(var6, var8, var10);
                 this.field23590.method27120();
                 this.field23590.start();
-                if (this.method16004().getBooleanValueFromSetttingName("Auto Disable")) {
-                    this.method16004().method16000();
+                if (this.access().getBooleanValueFromSetttingName("Auto Disable")) {
+                    this.access().method16000();
                 }
             }
         }

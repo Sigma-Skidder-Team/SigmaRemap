@@ -104,26 +104,26 @@ public class Class3268 extends Class3264 {
    @Override
    public boolean method11715(BlockState var1) {
       int var4 = this.method11783().method9013();
-      if (var1.method23448(Blocks.field36527)
-         || var1.method23448(Blocks.field37123)
-         || var1.method23448(Blocks.field37121)
-         || var1.method23448(Blocks.field37124)
-         || var1.method23448(Blocks.field37122)) {
+      if (var1.isIn(Blocks.field36527)
+         || var1.isIn(Blocks.field37123)
+         || var1.isIn(Blocks.field37121)
+         || var1.isIn(Blocks.field37124)
+         || var1.isIn(Blocks.field37122)) {
          return var4 >= 3;
-      } else if (var1.method23448(Blocks.field36537)
-         || var1.method23448(Blocks.field36536)
-         || var1.method23448(Blocks.EMERALD_ORE)
-         || var1.method23448(Blocks.EMERALD_BLOCK)
-         || var1.method23448(Blocks.field36521)
-         || var1.method23448(Blocks.field36418)
-         || var1.method23448(Blocks.field36567)) {
+      } else if (var1.isIn(Blocks.field36537)
+         || var1.isIn(Blocks.field36536)
+         || var1.isIn(Blocks.EMERALD_ORE)
+         || var1.isIn(Blocks.EMERALD_BLOCK)
+         || var1.isIn(Blocks.field36521)
+         || var1.isIn(Blocks.field36418)
+         || var1.isIn(Blocks.field36567)) {
          return var4 >= 2;
-      } else if (!var1.method23448(Blocks.field36522)
-         && !var1.method23448(Blocks.field36419)
-         && !var1.method23448(Blocks.field36456)
-         && !var1.method23448(Blocks.field36455)) {
-         Class8649 var5 = var1.method23384();
-         return var5 == Class8649.field38966 || var5 == Class8649.field38967 || var5 == Class8649.field38969 || var1.method23448(Blocks.field36421);
+      } else if (!var1.isIn(Blocks.field36522)
+         && !var1.isIn(Blocks.field36419)
+         && !var1.isIn(Blocks.field36456)
+         && !var1.isIn(Blocks.field36455)) {
+         Class8649 var5 = var1.getMaterial();
+         return var5 == Class8649.field38966 || var5 == Class8649.field38967 || var5 == Class8649.field38969 || var1.isIn(Blocks.field36421);
       } else {
          return var4 >= 1;
       }
@@ -131,7 +131,7 @@ public class Class3268 extends Class3264 {
 
    @Override
    public float method11708(ItemStack var1, BlockState var2) {
-      Class8649 var5 = var2.method23384();
+      Class8649 var5 = var2.getMaterial();
       return var5 != Class8649.field38967 && var5 != Class8649.field38969 && var5 != Class8649.field38966 ? super.method11708(var1, var2) : this.field18752;
    }
 }

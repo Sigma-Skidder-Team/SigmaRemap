@@ -35,12 +35,12 @@ public class Class3240 extends Class3241 implements Class3235 {
          TileEntity var9 = var2.getTileEntity(var3);
          if (var9 instanceof Class950) {
             var4.method2766((Class950)var9);
-            var4.method2911(Class8876.field40148);
+            var4.method2911(Stats.field40148);
          }
 
          return ActionResultType.field14819;
       } else {
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       }
    }
 

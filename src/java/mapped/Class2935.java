@@ -72,7 +72,7 @@ public class Class2935 extends Class2898<Class4708> {
 
             for (BlockPos.Mutable var14 = var12.method8354(); var13 >= 0; var13--) {
                if (!method11276(var1, var2, var14)) {
-                  if (!var1.getBlockState(var14).method23448(Blocks.BASALT)) {
+                  if (!var1.getBlockState(var14).isIn(Blocks.BASALT)) {
                      break;
                   }
 
@@ -135,6 +135,6 @@ public class Class2935 extends Class2898<Class4708> {
 
    private static boolean method11276(Class1660 var0, int var1, BlockPos var2) {
       BlockState var5 = var0.getBlockState(var2);
-      return var5.isAir() || var5.method23448(Blocks.LAVA) && var2.getY() <= var1;
+      return var5.isAir() || var5.isIn(Blocks.LAVA) && var2.getY() <= var1;
    }
 }

@@ -7,7 +7,7 @@ import java.util.Random;
 public class Class6095 extends Class6069 {
    private static String[] field27339;
 
-   public Class6095(Class1937 var1, Class2106... var2) {
+   public Class6095(Class1937 var1, EquipmentSlotType... var2) {
       super(var1, Class2242.field14679, var2);
    }
 
@@ -32,6 +32,6 @@ public class Class6095 extends Class6069 {
    }
 
    public static boolean method18833(ItemStack var0, int var1, Random var2) {
-      return var0.getItem() instanceof Class3279 && var2.nextFloat() < 0.6F ? false : var2.nextInt(var1 + 1) > 0;
+      return var0.getItem() instanceof ArmorItem && var2.nextFloat() < 0.6F ? false : var2.nextInt(var1 + 1) > 0;
    }
 }

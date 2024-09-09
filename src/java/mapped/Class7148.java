@@ -10,7 +10,7 @@ public class Class7148 extends Effect {
    }
 
    @Override
-   public double method22302(int var1, Class9689 var2) {
+   public double method22302(int var1, AttributeModifier var2) {
       return this.field30715 * (double)(var1 + 1);
    }
 }

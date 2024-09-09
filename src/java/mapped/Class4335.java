@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.unmapped.Class4321;
+import com.mentalfrostbyte.jello.unmapped.ClassicScreenk;
 
 public class Class4335 extends Class4333 {
    public Class4345 field21181;
@@ -27,7 +27,7 @@ public class Class4335 extends Class4333 {
       this.addToList(var14 = new Class4361(this, "exit", this.method13267() - 47, 18));
       var14.doThis((var1x, var2x) -> {
          if (this.field21181 == null) {
-            ((Class4321)this.method13258()).method13417();
+            ((ClassicScreenk)this.method13258()).method13417();
          } else {
             this.field21181.method13556();
          }

@@ -18,11 +18,11 @@ public class Class917 extends AbstractMinecartEntity {
    }
 
    @Override
-   public ActionResultType method3304(PlayerEntity var1, Hand var2) {
+   public ActionResultType processInitialInteract(PlayerEntity var1, Hand var2) {
       if (!var1.method2851()) {
          if (!this.isBeingRidden()) {
             if (this.world.isRemote) {
-               return ActionResultType.field14818;
+               return ActionResultType.SUCCESS;
             } else {
                return !var1.method3311(this) ? ActionResultType.field14820 : ActionResultType.field14819;
             }
@@ -45,7 +45,7 @@ public class Class917 extends AbstractMinecartEntity {
             this.method3600(-this.method3601());
             this.method3598(10);
             this.method3596(50.0F);
-            this.method3141();
+            this.markVelocityChanged();
          }
       }
    }

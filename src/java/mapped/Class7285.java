@@ -21,7 +21,7 @@ public final class Class7285 {
    public List<Class8266> method22981(Block var1) {
       return this.field31260
          .computeIfAbsent(
-            var1, var1x -> this.field31259.stream().filter(var1xx -> var1xx.field35531.method23448(var1x)).collect(Collectors.<Class8266>toList())
+            var1, var1x -> this.field31259.stream().filter(var1xx -> var1xx.field35531.isIn(var1x)).collect(Collectors.<Class8266>toList())
          );
    }
 }

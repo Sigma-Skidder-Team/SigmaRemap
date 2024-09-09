@@ -50,12 +50,12 @@ public class Class9278 {
       this.method34974();
       this.field42675 = MathHelper.method37767(var2.rotationYaw * 256.0F / 360.0F);
       this.field42676 = MathHelper.method37767(var2.rotationPitch * 256.0F / 360.0F);
-      this.field42677 = MathHelper.method37767(var2.method3142() * 256.0F / 360.0F);
-      this.field42683 = var2.method3226();
+      this.field42677 = MathHelper.method37767(var2.getRotationYawHead() * 256.0F / 360.0F);
+      this.field42683 = var2.isOnGround();
    }
 
    public void method34969() {
-      List var3 = this.field42668.method3408();
+      List var3 = this.field42668.getPassengers();
       if (!var3.equals(this.field42681)) {
          this.field42681 = var3;
          this.field42671.accept(new SSetPassengersPacket(this.field42668));
@@ -79,13 +79,13 @@ public class Class9278 {
          this.method34973();
       }
 
-      if (this.field42679 % this.field42669 == 0 || this.field42668.isAirBorne || this.field42668.method3210().method35447()) {
+      if (this.field42679 % this.field42669 == 0 || this.field42668.isAirBorne || this.field42668.getDataManager().method35447()) {
          if (!this.field42668.isPassenger()) {
             this.field42680++;
             int var22 = MathHelper.method37767(this.field42668.rotationYaw * 256.0F / 360.0F);
             int var25 = MathHelper.method37767(this.field42668.rotationPitch * 256.0F / 360.0F);
             Vector3d var27 = this.field42668.getPositionVec().method11336(SEntityPacket.method17232(this.field42672, this.field42673, this.field42674));
-            boolean var28 = var27.method11349() >= 7.6293945E-6F;
+            boolean var28 = var27.lengthSquared() >= 7.6293945E-6F;
             Object var29 = null;
             boolean var30 = var28 || this.field42679 % 60 == 0;
             boolean var10 = Math.abs(var22 - this.field42675) >= 1 || Math.abs(var25 - this.field42676) >= 1;
@@ -94,18 +94,18 @@ public class Class9278 {
                long var13 = SEntityPacket.method17229(var27.y);
                long var15 = SEntityPacket.method17229(var27.z);
                boolean var17 = var11 < -32768L || var11 > 32767L || var13 < -32768L || var13 > 32767L || var15 < -32768L || var15 > 32767L;
-               if (var17 || this.field42680 > 400 || this.field42682 || this.field42683 != this.field42668.method3226()) {
-                  this.field42683 = this.field42668.method3226();
+               if (var17 || this.field42680 > 400 || this.field42682 || this.field42683 != this.field42668.isOnGround()) {
+                  this.field42683 = this.field42668.isOnGround();
                   this.field42680 = 0;
                   var29 = new SEntityTeleportPacket(this.field42668);
                } else if ((!var30 || !var10) && !(this.field42668 instanceof AbstractArrowEntity)) {
                   if (!var30) {
                      if (var10) {
-                        var29 = new SEntityPacket.LookPacket(this.field42668.getEntityId(), (byte)var22, (byte)var25, this.field42668.method3226());
+                        var29 = new SEntityPacket.LookPacket(this.field42668.getEntityId(), (byte)var22, (byte)var25, this.field42668.isOnGround());
                      }
                   } else {
                      var29 = new SEntityPacket.RelativeMovePacket(
-                        this.field42668.getEntityId(), (short)((int)var11), (short)((int)var13), (short)((int)var15), this.field42668.method3226()
+                        this.field42668.getEntityId(), (short)((int)var11), (short)((int)var13), (short)((int)var15), this.field42668.isOnGround()
                      );
                   }
                } else {
@@ -116,16 +116,16 @@ public class Class9278 {
                      (short)((int)var15),
                      (byte)var22,
                      (byte)var25,
-                     this.field42668.method3226()
+                     this.field42668.isOnGround()
                   );
                }
             }
 
-            if ((this.field42670 || this.field42668.isAirBorne || this.field42668 instanceof LivingEntity && ((LivingEntity)this.field42668).method3165())
+            if ((this.field42670 || this.field42668.isAirBorne || this.field42668 instanceof LivingEntity && ((LivingEntity)this.field42668).isElytraFlying())
                && this.field42679 > 0) {
-               Vector3d var18 = this.field42668.getVec();
+               Vector3d var18 = this.field42668.getMotion();
                double var19 = var18.method11342(this.field42678);
-               if (var19 > 1.0E-7 || var19 > 0.0 && var18.method11349() == 0.0) {
+               if (var19 > 1.0E-7 || var19 > 0.0 && var18.lengthSquared() == 0.0) {
                   this.field42678 = var18;
                   this.field42671.accept(new SEntityVelocityPacket(this.field42668.getEntityId(), this.field42678));
                }
@@ -151,7 +151,7 @@ public class Class9278 {
             int var24 = MathHelper.method37767(this.field42668.rotationPitch * 256.0F / 360.0F);
             boolean var26 = Math.abs(var21 - this.field42675) >= 1 || Math.abs(var24 - this.field42676) >= 1;
             if (var26) {
-               this.field42671.accept(new SEntityPacket.LookPacket(this.field42668.getEntityId(), (byte)var21, (byte)var24, this.field42668.method3226()));
+               this.field42671.accept(new SEntityPacket.LookPacket(this.field42668.getEntityId(), (byte)var21, (byte)var24, this.field42668.isOnGround()));
                this.field42675 = var21;
                this.field42676 = var24;
             }
@@ -161,7 +161,7 @@ public class Class9278 {
             this.field42682 = true;
          }
 
-         int var23 = MathHelper.method37767(this.field42668.method3142() * 256.0F / 360.0F);
+         int var23 = MathHelper.method37767(this.field42668.getRotationYawHead() * 256.0F / 360.0F);
          if (Math.abs(var23 - this.field42677) >= 1) {
             this.field42671.accept(new SEntityHeadLookPacket(this.field42668, (byte)var23));
             this.field42677 = var23;
@@ -193,26 +193,26 @@ public class Class9278 {
          field42666.warn("Fetching packet for removed entity " + this.field42668);
       }
 
-      Packet var4 = this.field42668.method2835();
-      this.field42677 = MathHelper.method37767(this.field42668.method3142() * 256.0F / 360.0F);
+      Packet var4 = this.field42668.createSpawnPacket();
+      this.field42677 = MathHelper.method37767(this.field42668.getRotationYawHead() * 256.0F / 360.0F);
       var1.accept(var4);
-      if (!this.field42668.method3210().method35456()) {
-         var1.accept(new SEntityMetadataPacket(this.field42668.getEntityId(), this.field42668.method3210(), true));
+      if (!this.field42668.getDataManager().method35456()) {
+         var1.accept(new SEntityMetadataPacket(this.field42668.getEntityId(), this.field42668.getDataManager(), true));
       }
 
       boolean var5 = this.field42670;
       if (this.field42668 instanceof LivingEntity) {
-         Collection var6 = ((LivingEntity)this.field42668).method3088().method33379();
+         Collection var6 = ((LivingEntity)this.field42668).getAttributeManager().method33379();
          if (!var6.isEmpty()) {
             var1.accept(new SEntityPropertiesPacket(this.field42668.getEntityId(), var6));
          }
 
-         if (((LivingEntity)this.field42668).method3165()) {
+         if (((LivingEntity)this.field42668).isElytraFlying()) {
             var5 = true;
          }
       }
 
-      this.field42678 = this.field42668.getVec();
+      this.field42678 = this.field42668.getMotion();
       if (var5 && !(var4 instanceof SSpawnMobPacket)) {
          var1.accept(new SEntityVelocityPacket(this.field42668.getEntityId(), this.field42678));
       }
@@ -220,8 +220,8 @@ public class Class9278 {
       if (this.field42668 instanceof LivingEntity) {
          ArrayList var12 = Lists.newArrayList();
 
-         for (Class2106 var10 : Class2106.values()) {
-            ItemStack var11 = ((LivingEntity)this.field42668).method2943(var10);
+         for (EquipmentSlotType var10 : EquipmentSlotType.values()) {
+            ItemStack var11 = ((LivingEntity)this.field42668).getItemStackFromSlot(var10);
             if (!var11.isEmpty()) {
                var12.add(Pair.of(var10, var11.copy()));
             }
@@ -235,12 +235,12 @@ public class Class9278 {
       if (this.field42668 instanceof LivingEntity) {
          LivingEntity var13 = (LivingEntity)this.field42668;
 
-         for (Class2023 var16 : var13.method3031()) {
+         for (EffectInstance var16 : var13.getActivePotionEffects()) {
             var1.accept(new SPlayEntityEffectPacket(this.field42668.getEntityId(), var16));
          }
       }
 
-      if (!this.field42668.method3408().isEmpty()) {
+      if (!this.field42668.getPassengers().isEmpty()) {
          var1.accept(new SSetPassengersPacket(this.field42668));
       }
 
@@ -257,13 +257,13 @@ public class Class9278 {
    }
 
    private void method34973() {
-      EntityDataManager var3 = this.field42668.method3210();
+      EntityDataManager var3 = this.field42668.getDataManager();
       if (var3.method35447()) {
          this.method34976(new SEntityMetadataPacket(this.field42668.getEntityId(), var3, false));
       }
 
       if (this.field42668 instanceof LivingEntity) {
-         Set var4 = ((LivingEntity)this.field42668).method3088().method33378();
+         Set var4 = ((LivingEntity)this.field42668).getAttributeManager().method33378();
          if (!var4.isEmpty()) {
             this.method34976(new SEntityPropertiesPacket(this.field42668.getEntityId(), var4));
          }

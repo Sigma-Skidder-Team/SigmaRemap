@@ -18,13 +18,13 @@ public class Class7244 implements Class7243 {
    }
 
    @Override
-   public void method22736(Class7481 var1) {
+   public void method22736(ChunkPos var1) {
       this.field31100 = Util.milliTime();
       this.field31099 = this.field31100;
    }
 
    @Override
-   public void method22737(Class7481 var1, ChunkStatus var2) {
+   public void method22737(ChunkPos var1, ChunkStatus var2) {
       if (var2 == ChunkStatus.FULL) {
          this.field31098++;
       }

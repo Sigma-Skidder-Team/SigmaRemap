@@ -78,11 +78,11 @@ public class ModelBakery {
          var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, var4));
       }
 
-      var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, Class5830.field25540));
-      var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, Class5830.field25541));
-      var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, Class5830.field25542));
-      var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, Class5830.field25543));
-      var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, Class5830.field25544));
+      var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, PlayerContainer.field25540));
+      var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, PlayerContainer.field25541));
+      var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, PlayerContainer.field25542));
+      var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, PlayerContainer.field25543));
+      var0.add(new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, PlayerContainer.field25544));
       Class8624.method30910(var0::add);
    });
    private static final Logger field40520 = LogManager.getLogger();

@@ -169,7 +169,7 @@ public abstract class Class7195<C extends Class4729> {
          var5.method8372(var11, var14, var12);
          BlockState var20 = var1.getBlockState(var5);
          BlockState var21 = var1.getBlockState(var6.method8377(var5, Direction.field673));
-         if (var20.method23448(Blocks.field36395) || var20.method23448(Blocks.MYCELIUM)) {
+         if (var20.isIn(Blocks.field36395) || var20.isIn(Blocks.MYCELIUM)) {
             var16.setTrue();
          }
 
@@ -178,7 +178,7 @@ public abstract class Class7195<C extends Class4729> {
                var1.setBlockState(var5, field30894, false);
                if (var16.isTrue()) {
                   var7.method8377(var5, Direction.DOWN);
-                  if (var1.getBlockState(var7).method23448(Blocks.field36396)) {
+                  if (var1.getBlockState(var7).isIn(Blocks.field36396)) {
                      var1.setBlockState(var7, ((Biome)var2.apply(var5)).method32507().method24283().method28934(), false);
                   }
                }
@@ -205,7 +205,7 @@ public abstract class Class7195<C extends Class4729> {
 
    public boolean method22610(BlockState var1, BlockState var2) {
       return this.method22609(var1)
-         || (var1.method23448(Blocks.SAND) || var1.method23448(Blocks.GRAVEL)) && !var2.method23449().method23486(Class8953.field40469);
+         || (var1.isIn(Blocks.SAND) || var1.isIn(Blocks.GRAVEL)) && !var2.method23449().method23486(FluidTags.field40469);
    }
 
    public boolean method22611(IChunk var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {

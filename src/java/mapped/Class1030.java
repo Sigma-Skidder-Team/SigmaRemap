@@ -66,8 +66,8 @@ public class Class1030 extends Class1025 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.field5732) {
          var1.putBoolean("Johnny", true);
       }
@@ -83,8 +83,8 @@ public class Class1030 extends Class1025 {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("Johnny", 99)) {
          this.field5732 = var1.getBoolean("Johnny");
       }
@@ -108,16 +108,16 @@ public class Class1030 extends Class1025 {
    @Override
    public void method4270(Class9755 var1) {
       if (this.method4551() == null) {
-         this.method2944(Class2106.field13731, new ItemStack(Items.field37823));
+         this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37823));
       }
    }
 
    @Override
-   public boolean method3345(Entity var1) {
-      if (super.method3345(var1)) {
+   public boolean isOnSameTeam(Entity var1) {
+      if (super.isOnSameTeam(var1)) {
          return true;
       } else {
-         return var1 instanceof LivingEntity && ((LivingEntity)var1).method3089() == Class7809.field33508
+         return var1 instanceof LivingEntity && ((LivingEntity)var1).getCreatureAttribute() == CreatureAttribute.field33508
             ? this.getTeam() == null && var1.getTeam() == null
             : false;
       }
@@ -159,10 +159,10 @@ public class Class1030 extends Class1025 {
       if (var8) {
          HashMap var9 = Maps.newHashMap();
          var9.put(Class8122.field34908, Integer.valueOf(var7));
-         Class7858.method26314(var9, var5);
+         EnchantmentHelper.method26314(var9, var5);
       }
 
-      this.method2944(Class2106.field13731, var5);
+      this.setItemStackToSlot(EquipmentSlotType.field13731, var5);
    }
 
    // $VF: synthetic method

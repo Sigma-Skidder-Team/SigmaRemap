@@ -690,7 +690,7 @@ public class Class9680 {
    public static int method37854(Class1663 var0, BlockState var1, BlockPos var2, Class8391 var3) {
       Block var6 = var1.getBlock();
       Object var7 = method37852(var1);
-      if (var7 == null && var1.method23384() == Class8649.field38941) {
+      if (var7 == null && var1.getMaterial() == Class8649.field38941) {
          var7 = field45273;
       }
 

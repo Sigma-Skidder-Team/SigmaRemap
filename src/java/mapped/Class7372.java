@@ -78,7 +78,7 @@ public class Class7372 extends Class7361 {
 
          double var8;
          do {
-            var8 = (double)((float)var3.getY() + this.field31519.method3013().nextFloat() * 20.0F);
+            var8 = (double)((float)var3.getY() + this.field31519.getRNG().nextFloat() * 20.0F);
          } while (var8 < (double)var3.getY());
 
          this.field31552 = new Vector3d(var4, var8, var6);

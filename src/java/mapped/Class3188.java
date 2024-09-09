@@ -11,7 +11,7 @@ public class Class3188 implements Class2982 {
    @Override
    public void method11398(Class8563 var1) throws Exception {
       Class9738 var4 = var1.<Class9738>method30555(Class4750.field22561, 0);
-      if (!Class8042.method27612().method21916()) {
+      if (!ViaVersion3.method27612().method21916()) {
          Class8417.method29573(var4);
       } else {
          byte var5 = var1.<Byte>method30555(Class4750.field22518, 0);
@@ -20,7 +20,7 @@ public class Class3188 implements Class2982 {
             short var7 = var1.<Short>method30555(Class4750.field22522, 0);
             short var8 = var1.<Short>method30555(Class4750.field22534, 0);
             short var9 = var1.<Short>method30555(Class4750.field22534, 1);
-            Class5414 var10 = Class8042.method27614().method34424().<Class5414>method31084(Class5414.class);
+            Class5414 var10 = ViaVersion3.method27614().method34424().<Class5414>method31084(Class5414.class);
             boolean var11 = var10.method17009(var7, var8, var9, var1.method30580());
             if (var11) {
                var1.method30578();

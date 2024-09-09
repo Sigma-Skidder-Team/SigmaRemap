@@ -9,10 +9,10 @@ import org.jetbrains.annotations.Nullable;
 
 public abstract class Class6904 {
    private final Class<? extends Class6036> field29901;
-   public final Class6355 field29902;
+   public final ViaVersion7 field29902;
    private Int2IntMap field29903;
 
-   public Class6904(Class6355 var1, Class<? extends Class6036> var2) {
+   public Class6904(ViaVersion7 var1, Class<? extends Class6036> var2) {
       this.field29902 = var1;
       this.field29901 = var2;
       var1.method19374(this);
@@ -26,8 +26,8 @@ public abstract class Class6904 {
             this.method21088(var1, var6, var8, var2, var3);
          } catch (Exception var11) {
             var2.remove(var8);
-            if (!Class8042.method27612().method21894() || Class8042.method27614().method34425()) {
-               Logger var10 = Class8042.method27613().method27366();
+            if (!ViaVersion3.method27612().method21894() || ViaVersion3.method27614().method34425()) {
+               Logger var10 = ViaVersion3.method27613().method27366();
                var10.warning("An error occurred with entity metadata handler");
                var10.warning(
                   "This is most likely down to one of your plugins sending bad datawatchers. Please test if this occurs without any plugins except ViaVersion before reporting it on GitHub"
@@ -91,7 +91,7 @@ public abstract class Class6904 {
          }
          catch (IllegalArgumentException | NullPointerException runtimeException) {
             if (this.field29903.containsKey(class1867.method8121())) continue;
-            Class8042.method27613().method27366().warning("Could not find new entity type for " + class1867 + "! Old type: " + class1867.getClass().getEnclosingClass().getSimpleName() + ", new type: " + clazz.getEnclosingClass().getSimpleName());
+            ViaVersion3.method27613().method27366().warning("Could not find new entity type for " + class1867 + "! Old type: " + class1867.getClass().getEnclosingClass().getSimpleName() + ", new type: " + clazz.getEnclosingClass().getSimpleName());
          }
       }
    }

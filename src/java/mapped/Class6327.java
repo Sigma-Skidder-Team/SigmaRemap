@@ -27,7 +27,7 @@ public class Class6327 implements Class6326 {
          } else if (var7 >= 7110 && var7 <= 7173) {
             var7 += (15 - var9) * 4;
          } else {
-            Class8042.method27613().method27366().warning("Why does this block have the banner block entity? :(" + var2);
+            ViaVersion3.method27613().method27366().warning("Why does this block have the banner block entity? :(" + var2);
          }
 
          if (var2.method235("Patterns") instanceof Class60) {
@@ -48,7 +48,7 @@ public class Class6327 implements Class6326 {
 
          return var7;
       } else {
-         Class8042.method27613().method27366().warning("Received an banner color update packet, but there is no banner! O_o " + var2);
+         ViaVersion3.method27613().method27366().warning("Received an banner color update packet, but there is no banner! O_o " + var2);
          return -1;
       }
    }

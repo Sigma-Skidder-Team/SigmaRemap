@@ -202,7 +202,7 @@ public class Class9733 {
       for (Class9537 var9 : this.field45447) {
          for (int var6 = var9.method36907(); var6 < var9.method36907() + var9.method36905(); var6++) {
             BlockState var7 = var9.method36906();
-            if (!var7.method23448(Blocks.AIR)) {
+            if (!var7.isIn(Blocks.AIR)) {
                this.field45450 = false;
                this.field45449[var6] = var7;
             }

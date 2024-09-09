@@ -38,27 +38,27 @@ public class ACRFly extends Module {
 
     @Override
     public void onDisable() {
-        Class9567.method37090(0.0);
-        if (mc.player.getVec().y > 0.0) {
+        MovementUtils.method37090(0.0);
+        if (mc.player.getMotion().y > 0.0) {
             ColorUtils.method17725(-0.0789);
         }
     }
 
     @EventTarget
-    private void method16902(Class4430 var1) {
+    private void method16902(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.method13977() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                var1.method13900(true);
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+                var1.setCancelled(true);
                 this.field23988 = true;
             }
         }
     }
 
     @EventTarget
-    private void method16903(Class4426 var1) {
+    private void method16903(MouseHoverEvent var1) {
         if (this.isEnabled()) {
             if (var1.method13973() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                var1.method13900(true);
+                var1.setCancelled(true);
                 this.field23988 = false;
             }
         }
@@ -66,16 +66,16 @@ public class ACRFly extends Module {
 
     @EventTarget
     @LowerPriority
-    public void method16904(Class4435 var1) {
+    public void method16904(EventMove var1) {
         if (this.isEnabled()) {
             if (this.field23986 != -1) {
                 if (this.field23986 == 0) {
-                    if (Math.abs(var1.method13994()) < 0.08) {
-                        var1.method13995(!this.getBooleanValueFromSetttingName("Offset") ? 0.0 : -0.01);
+                    if (Math.abs(var1.getY()) < 0.08) {
+                        var1.setY(!this.getBooleanValueFromSetttingName("Offset") ? 0.0 : -0.01);
                     }
 
-                    ColorUtils.method17725(var1.method13994());
-                    Class9567.method37088(var1, 0.35);
+                    ColorUtils.method17725(var1.getY());
+                    MovementUtils.method37088(var1, 0.35);
                 }
             } else {
                 double var4 = !this.getBooleanValueFromSetttingName("Offset") ? 0.0 : 0.01;
@@ -87,27 +87,27 @@ public class ACRFly extends Module {
                     var4 += this.getNumberValueBySettingName("Speed") / 2.0F;
                 }
 
-                var1.method13995(var4);
-                ColorUtils.method17725(var1.method13994());
-                Class9567.method37088(var1, this.getNumberValueBySettingName("Speed"));
+                var1.setY(var4);
+                ColorUtils.method17725(var1.getY());
+                MovementUtils.method37088(var1, this.getNumberValueBySettingName("Speed"));
             }
         }
     }
 
     @EventTarget
-    public void method16905(Class4399 var1) {
+    public void method16905(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             this.field23986++;
             if (this.field23986 != 2) {
                 if (this.field23986 > 2 && this.field23986 >= 20 && this.field23986 % 20 == 0) {
-                    var1.method13912(-150.0 - Math.random() * 150.0);
+                    var1.setY(-150.0 - Math.random() * 150.0);
                 }
             } else {
-                var1.method13912(-150.0 - Math.random() * 150.0);
+                var1.setY(-150.0 - Math.random() * 150.0);
             }
 
             if (this.getBooleanValueFromSetttingName("NoFall")) {
-                var1.method13920(true);
+                var1.setGround(true);
             }
 
             var1.method13908(true);
@@ -124,9 +124,9 @@ public class ACRFly extends Module {
                     this.field23986 = -1;
                 }
 
-                this.field23987 = var5.field24298;
-                var5.field24300 = mc.player.rotationYaw;
-                var5.field24301 = mc.player.rotationPitch;
+                this.field23987 = var5.y;
+                var5.yaw = mc.player.rotationYaw;
+                var5.pitch = mc.player.rotationPitch;
             }
         }
     }
@@ -134,7 +134,7 @@ public class ACRFly extends Module {
     @EventTarget
     public void method16907(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            Packet var4 = var1.method13932();
+            Packet var4 = var1.getPacket();
             if (var4 instanceof CPlayerPacket) {
                 CPlayerPacket var5 = (CPlayerPacket) var4;
                 if (this.field23986 == -1 && this.getBooleanValueFromSetttingName("NoFall")) {

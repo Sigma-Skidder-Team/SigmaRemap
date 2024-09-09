@@ -35,12 +35,12 @@ public class Class894 extends Class890 {
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 == 3) {
          IParticleData var4 = this.method3516();
 
          for (int var5 = 0; var5 < 8; var5++) {
-            this.world.method6746(var4, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
+            this.world.addParticle(var4, this.getPosX(), this.getPosY(), this.getPosZ(), 0.0, 0.0, 0.0);
          }
       }
    }
@@ -50,15 +50,15 @@ public class Class894 extends Class890 {
       super.method3465(var1);
       Entity var4 = var1.getEntity();
       int var5 = !(var4 instanceof Class1103) ? 0 : 3;
-      var4.method2741(DamageSource.method31123(this, this.method3460()), (float)var5);
+      var4.attackEntityFrom(DamageSource.method31123(this, this.method3460()), (float)var5);
    }
 
    @Override
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
       if (!this.world.isRemote) {
-         this.world.method6786(this, (byte)3);
-         this.method2904();
+         this.world.setEntityState(this, (byte)3);
+         this.remove();
       }
    }
 }

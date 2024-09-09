@@ -38,7 +38,7 @@ public class Class1107 extends Class1009 {
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return 0.13F;
    }
 
@@ -47,7 +47,7 @@ public class Class1107 extends Class1009 {
    }
 
    @Override
-   public boolean method2940() {
+   public boolean canTriggerWalking() {
       return false;
    }
 
@@ -67,33 +67,33 @@ public class Class1107 extends Class1009 {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(SoundEvents.field27058, 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(SoundEvents.field27058, 0.15F, 1.0F);
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (this.method2760(var1)) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (this.isInvulnerableTo(var1)) {
          return false;
       } else {
-         if ((var1 instanceof Class8652 || var1 == DamageSource.field39006) && this.field6080 != null) {
+         if ((var1 instanceof EntityDamageSource || var1 == DamageSource.field39006) && this.field6080 != null) {
             this.field6080.method10958();
          }
 
-         return super.method2741(var1, var2);
+         return super.attackEntityFrom(var1, var2);
       }
    }
 
    @Override
    public void tick() {
-      this.field4965 = this.rotationYaw;
+      this.renderYawOffset = this.rotationYaw;
       super.tick();
    }
 
    @Override
-   public void method3144(float var1) {
+   public void setRenderYawOffset(float var1) {
       this.rotationYaw = var1;
-      super.method3144(var1);
+      super.setRenderYawOffset(var1);
    }
 
    @Override
@@ -111,7 +111,7 @@ public class Class1107 extends Class1009 {
    }
 
    @Override
-   public Class7809 method3089() {
-      return Class7809.field33507;
+   public CreatureAttribute getCreatureAttribute() {
+      return CreatureAttribute.field33507;
    }
 }

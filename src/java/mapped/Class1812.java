@@ -73,7 +73,7 @@ public class Class1812 implements AutoCloseable, Class1813 {
    }
 
    @Override
-   public void method7965(Class7481 var1, IntSupplier var2, int var3, IntConsumer var4) {
+   public void method7965(ChunkPos var1, IntSupplier var2, int var3, IntConsumer var4) {
       this.field9778.method1641(new Class497(0, () -> {
          int var7 = var2.getAsInt();
          this.field9776.values().forEach(var3xx -> var3xx.method30625(var7, var1, var3));
@@ -139,7 +139,7 @@ public class Class1812 implements AutoCloseable, Class1813 {
             .<CharSequence>map(
                var0 -> var0.getKey().method1631()
                      + "=["
-                     + var0.getValue().method30630().stream().<CharSequence>map(var0x -> var0x + ":" + new Class7481(var0x)).collect(Collectors.joining(","))
+                     + var0.getValue().method30630().stream().<CharSequence>map(var0x -> var0x + ":" + new ChunkPos(var0x)).collect(Collectors.joining(","))
                      + "]"
             )
             .collect(Collectors.joining(","))

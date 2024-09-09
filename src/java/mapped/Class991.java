@@ -21,13 +21,13 @@ public class Class991 extends Class919 {
    @Override
    public void method3586(DamageSource var1) {
       super.method3586(var1);
-      if (this.world.method6789().method17135(Class5462.field24229)) {
-         this.method3300(Blocks.CHEST);
+      if (this.world.getGameRules().getBoolean(Class5462.field24229)) {
+         this.entityDropItem(Blocks.CHEST);
       }
    }
 
    @Override
-   public int method3629() {
+   public int getSizeInventory() {
       return 27;
    }
 
@@ -47,7 +47,7 @@ public class Class991 extends Class919 {
    }
 
    @Override
-   public Class5812 method3628(int var1, PlayerInventory var2) {
+   public Container method3628(int var1, PlayerInventory var2) {
       return Class5813.method18162(var1, var2, this);
    }
 

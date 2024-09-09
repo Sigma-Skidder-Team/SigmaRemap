@@ -18,7 +18,7 @@ public class Class2968 extends Class2967 {
       return field18084;
    }
 
-   public boolean method11361(ChunkGenerator var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Biome var8, Class7481 var9, Class4700 var10) {
+   public boolean method11361(ChunkGenerator var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Biome var8, ChunkPos var9, Class4700 var10) {
       int var13 = var6 >> 4;
       int var14 = var7 >> 4;
       var5.setSeed((long)(var13 ^ var14 << 4) ^ var3);
@@ -33,7 +33,7 @@ public class Class2968 extends Class2967 {
       } else {
          for (int var10 = var5 - 10; var10 <= var5 + 10; var10++) {
             for (int var11 = var6 - 10; var11 <= var6 + 10; var11++) {
-               Class7481 var12 = Structure.field18073.method11370(var9, var2, var4, var10, var11);
+               ChunkPos var12 = Structure.field18073.method11370(var9, var2, var4, var10, var11);
                if (var10 == var12.field32174 && var11 == var12.field32175) {
                   return true;
                }

@@ -64,28 +64,28 @@ public class AutoArmor extends Module {
                         this.field23799 = true;
                         break;
                     case "On Use":
-                        if (!mc.player.onGround && mc.player.field4999 == 0 && mc.player.field4981 && !this.field23800) {
+                        if (!mc.player.onGround && mc.player.jumpTicks == 0 && mc.player.isJumping && !this.field23800) {
                             this.field23799 = true;
                         } else if (mc.player.onGround) {
                             this.field23799 = false;
                         }
                 }
 
-                this.field23800 = mc.player.field4981;
+                this.field23800 = mc.player.isJumping;
                 if (mc.currentScreen instanceof InventoryScreen) {
                     this.isInventoryOpen = false;
                 }
 
                 if ((mc.currentScreen == null || mc.currentScreen instanceof InventoryScreen || mc.currentScreen instanceof ChatScreen)
                         && this.timer.method27121() > var4
-                        && (float) Client.getInstance().method19939().method31333() > (float) var4 / 50.0F) {
+                        && (float) Client.getInstance().getPlayerTracker().method31333() > (float) var4 / 50.0F) {
                     field23798 = false;
                     this.method16616(this.getStringSettingValueByName("Mode").equalsIgnoreCase("FakeInv"));
                 }
 
-                for (Class2106 var9 : Class2106.values()) {
-                    if (mc.player.field4904.method18131(8 - var9.method8773()).method18266()) {
-                        if (Class7789.method25847(8 - var9.method8773())) {
+                for (EquipmentSlotType var9 : EquipmentSlotType.values()) {
+                    if (mc.player.container.getSlot(8 - var9.method8773()).getHasStack()) {
+                        if (InvManagerUtils.method25847(8 - var9.method8773())) {
                             return;
                         }
                     } else if (this.method16618(var9)) {
@@ -102,63 +102,63 @@ public class AutoArmor extends Module {
     }
 
     private void method16616(boolean var1) {
-        for (Class2106 var7 : Class2106.values()) {
-            if (mc.player.field4904.method18131(8 - var7.method8773()).method18266()) {
-                ItemStack var8 = mc.player.field4904.method18131(8 - var7.method8773()).method18265();
-                if (Class7789.method25872(var8) && (!this.field23799 || var7 != Class2106.field13735)) {
+        for (EquipmentSlotType var7 : EquipmentSlotType.values()) {
+            if (mc.player.container.getSlot(8 - var7.method8773()).getHasStack()) {
+                ItemStack var8 = mc.player.container.getSlot(8 - var7.method8773()).getStack();
+                if (InvManagerUtils.method25872(var8) && (!this.field23799 || var7 != EquipmentSlotType.field13735)) {
                     continue;
                 }
             }
 
             for (int var12 = 9; var12 < 45; var12++) {
-                if (mc.player.field4904.method18131(var12).method18266()) {
-                    ItemStack var9 = mc.player.field4904.method18131(var12).method18265();
+                if (mc.player.container.getSlot(var12).getHasStack()) {
+                    ItemStack var9 = mc.player.container.getSlot(var12).getStack();
                     if (var9.getItem() instanceof Class3256
                             && this.field23799
-                            && !(mc.player.inventory.method3618(36 + Class2106.field13735.method8773()).getItem() instanceof Class3256)) {
+                            && !(mc.player.inventory.getStackInSlot(36 + EquipmentSlotType.field13735.method8773()).getItem() instanceof Class3256)) {
                         Class3256 var13 = (Class3256) var9.getItem();
-                        if (Class2106.field13735 == var7
+                        if (EquipmentSlotType.field13735 == var7
                                 && (
                                 !Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getBooleanValueFromSetttingName("Fake Items")
                                         || Client.getInstance().getSlotChangeTracker().method33238(var12) >= 1500L
                         )) {
                             this.method16617(var1);
-                            if (!(mc.player.inventory.method3618(36 + var7.method8773()).getItem() instanceof Class3280)) {
-                                Class7789.method25826(8 - var7.method8773(), 0, true);
+                            if (!(mc.player.inventory.getStackInSlot(36 + var7.method8773()).getItem() instanceof Class3280)) {
+                                InvManagerUtils.method25826(8 - var7.method8773(), 0, true);
                             }
 
-                            Class7789.method25870(mc.player.field4904.field25471, var12, 0, ClickType.field14695, mc.player, true);
+                            InvManagerUtils.fixedClick(mc.player.container.field25471, var12, 0, ClickType.field14695, mc.player, true);
                             this.timer.method27120();
                             field23798 = true;
                             if (this.getStringSettingValueByName("Elytra").equals("On Use")) {
                                 mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.START_FALL_FLYING));
-                                mc.player.method3349(7, true);
+                                mc.player.setFlag(7, true);
                             }
 
                             if (Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getNumberValueBySettingName("Delay") > 0.0F) {
                                 return;
                             }
                         }
-                    } else if (var9.getItem() instanceof Class3279 && !this.field23799) {
-                        Class3279 var10 = (Class3279) var9.getItem();
+                    } else if (var9.getItem() instanceof ArmorItem && !this.field23799) {
+                        ArmorItem var10 = (ArmorItem) var9.getItem();
                         if (var10.method11805() == var7
-                                && Class7789.method25872(var9)
-                                && Class7789.method25850(var9) > 0
+                                && InvManagerUtils.method25872(var9)
+                                && InvManagerUtils.method25850(var9) > 0
                                 && (
                                 !Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getBooleanValueFromSetttingName("Fake Items")
                                         || Client.getInstance().getSlotChangeTracker().method33238(var12) >= 1500L
                         )) {
                             this.method16617(var1);
-                            Item var11 = mc.player.inventory.method3618(36 + var10.method11805().method8773()).getItem();
+                            Item var11 = mc.player.inventory.getStackInSlot(36 + var10.method11805().method8773()).getItem();
                             if (!(var11 instanceof Class3256)) {
                                 if (!(var11 instanceof Class3280)) {
-                                    Class7789.method25871(8 - var10.method11805().method8773());
+                                    InvManagerUtils.method25871(8 - var10.method11805().method8773());
                                 }
                             } else {
-                                Class7789.method25826(8 - var7.method8773(), 0, true);
+                                InvManagerUtils.method25826(8 - var7.method8773(), 0, true);
                             }
 
-                            Class7789.method25870(mc.player.field4904.field25471, var12, 0, ClickType.field14695, mc.player, true);
+                            InvManagerUtils.fixedClick(mc.player.container.field25471, var12, 0, ClickType.field14695, mc.player, true);
                             this.timer.method27120();
                             field23798 = true;
                             if (Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getNumberValueBySettingName("Delay") > 0.0F) {
@@ -178,13 +178,13 @@ public class AutoArmor extends Module {
         }
     }
 
-    private boolean method16618(Class2106 var1) {
+    private boolean method16618(EquipmentSlotType var1) {
         for (int var4 = 9; var4 < 45; var4++) {
-            if (mc.player.field4904.method18131(var4).method18266()) {
-                ItemStack var5 = mc.player.field4904.method18131(var4).method18265();
+            if (mc.player.container.getSlot(var4).getHasStack()) {
+                ItemStack var5 = mc.player.container.getSlot(var4).getStack();
                 Item var6 = var5.getItem();
-                if (var6 instanceof Class3279) {
-                    Class3279 var7 = (Class3279) var6;
+                if (var6 instanceof ArmorItem) {
+                    ArmorItem var7 = (ArmorItem) var6;
                     if (var1 == var7.method11805()) {
                         return true;
                     }

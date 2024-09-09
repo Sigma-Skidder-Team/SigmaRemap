@@ -27,7 +27,7 @@ public class Class158 implements ILootCondition {
 
    public boolean test(LootContext var1) {
       ItemStack var4 = var1.<ItemStack>method26081(Class9525.field44338);
-      int var5 = var4 == null ? 0 : Class7858.method26311(this.field515, var4);
+      int var5 = var4 == null ? 0 : EnchantmentHelper.method26311(this.field515, var4);
       float var6 = this.field516[Math.min(var5, this.field516.length - 1)];
       return var1.method26088().nextFloat() < var6;
    }

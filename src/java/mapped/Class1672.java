@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 
 public class Class1672 implements IChunk {
    private static final Logger field9088 = LogManager.getLogger();
-   private final Class7481 field9089;
+   private final ChunkPos field9089;
    private volatile boolean field9090;
    private Class1684 field9091;
    private volatile Class196 field9092;
@@ -44,7 +44,7 @@ public class Class1672 implements IChunk {
    private final Map<Class97, BitSet> field9107 = new Object2ObjectArrayMap();
    private volatile boolean field9108;
 
-   public Class1672(Class7481 var1, Class8922 var2) {
+   public Class1672(ChunkPos var1, Class8922 var2) {
       this(
          var1,
          var2,
@@ -54,7 +54,7 @@ public class Class1672 implements IChunk {
       );
    }
 
-   public Class1672(Class7481 var1, Class8922 var2, Class7038[] var3, Class6806<Block> var4, Class6806<Fluid> var5) {
+   public Class1672(ChunkPos var1, Class8922 var2, Class7038[] var3, Class6806<Block> var4, Class6806<Fluid> var5) {
       this.field9089 = var1;
       this.field9103 = var2;
       this.field9104 = var4;
@@ -120,7 +120,7 @@ public class Class1672 implements IChunk {
       int var7 = var1.getY();
       int var8 = var1.getZ();
       if (var7 >= 0 && var7 < 256) {
-         if (this.field9097[var7 >> 4] == Chunk.field9111 && var2.method23448(Blocks.AIR)) {
+         if (this.field9097[var7 >> 4] == Chunk.field9111 && var2.isIn(Blocks.AIR)) {
             return var2;
          } else {
             if (var2.getLightValue() > 0) {
@@ -209,7 +209,7 @@ public class Class1672 implements IChunk {
    public void method7063(Entity var1) {
       if (!var1.isPassenger()) {
          CompoundNBT var4 = new CompoundNBT();
-         var1.method3293(var4);
+         var1.writeUnlessPassenger(var4);
          this.method7108(var4);
       }
    }
@@ -285,7 +285,7 @@ public class Class1672 implements IChunk {
    }
 
    @Override
-   public Class7481 method7072() {
+   public ChunkPos method7072() {
       return this.field9089;
    }
 
@@ -350,7 +350,7 @@ public class Class1672 implements IChunk {
       return (short)(var6 | var7 << 4 | var8 << 8);
    }
 
-   public static BlockPos method7114(short var0, int var1, Class7481 var2) {
+   public static BlockPos method7114(short var0, int var1, ChunkPos var2) {
       int var5 = (var0 & 15) + (var2.field32174 << 4);
       int var6 = (var0 >>> 4 & 15) + (var1 << 4);
       int var7 = (var0 >>> 8 & 15) + (var2.field32175 << 4);

@@ -34,11 +34,11 @@ public class Class5980 extends Class5979 {
       this.method18545(this.field26050, var2.getAsJsonObject("fluid_tags"));
       this.method18546(field26051, var1.getAsJsonObject("enchantments"));
       this.field26055 = new Class7112(72, var1.getAsJsonObject("enchantments"), var2.getAsJsonObject("enchantments"));
-      if (Class8042.method27612().method21929()) {
+      if (ViaVersion3.method27612().method21929()) {
          this.field26043.method22148()[1248] = 3416;
       }
 
-      if (Class8042.method27612().method21938()) {
+      if (ViaVersion3.method27612().method21938()) {
          short[] var6 = this.field26043.method22148();
          var6[1552] = 1;
          var6[1553] = 14;
@@ -54,7 +54,7 @@ public class Class5980 extends Class5979 {
             String var9 = (String)var8.getKey();
             String var10 = ((JsonElement)var8.getValue()).getAsString();
             if (!method18544(var10)) {
-               Class8042.method27613().method27366().warning("Channel '" + var10 + "' is not a valid 1.13 plugin channel, please check your configuration!");
+               ViaVersion3.method27613().method27366().warning("Channel '" + var10 + "' is not a valid 1.13 plugin channel, please check your configuration!");
             } else {
                this.field26054.put(var9, var10);
             }

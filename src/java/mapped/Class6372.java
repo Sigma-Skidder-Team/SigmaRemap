@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class6372 extends Class6355<Class1931, Class1912, Class1929, Class1930> {
+public class Class6372 extends ViaVersion7<Class1931, Class1912, Class1929, Class1930> {
    private static String[] field27939;
 
    public Class6372() {
@@ -68,7 +68,7 @@ public class Class6372 extends Class6355<Class1931, Class1912, Class1929, Class1
    }
 
    @Override
-   public void method19349(Class8648 var1) {
+   public void method19349(ViaVersion6 var1) {
       var1.method31082(Class5414.class, new Class5414());
    }
 

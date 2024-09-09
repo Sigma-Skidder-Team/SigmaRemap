@@ -148,6 +148,6 @@ public class Class7832 {
          var13 = ((double)((float)(var7 >> 20 & 15L) / 15.0F) - 1.0) * 0.2;
       }
 
-      return var0.method19667(var9, var13, var11);
+      return var0.offset(var9, var13, var11);
    }
 }

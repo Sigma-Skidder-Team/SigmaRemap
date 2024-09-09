@@ -23,7 +23,7 @@ public class Class2671<T extends Class1026> extends Class2595 {
       if (this.field17055.method4552()
          && !this.field17055.method4551().method25388()
          && this.field17055.method4570()
-         && !ItemStack.method32128(this.field17055.method2943(Class2106.field13736), Class7699.method25421())) {
+         && !ItemStack.method32128(this.field17055.getItemStackFromSlot(EquipmentSlotType.field13736), Class7699.method25421())) {
          Class1026 var4 = var3.method25422(this.field17055.method4554());
          if (var4 == null || !var4.isAlive()) {
             List var5 = this.field17055

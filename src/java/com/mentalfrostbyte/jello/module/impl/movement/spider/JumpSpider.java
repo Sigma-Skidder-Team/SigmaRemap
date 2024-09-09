@@ -1,13 +1,12 @@
 package com.mentalfrostbyte.jello.module.impl.movement.spider;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4398;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventBlockCollision;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class JumpSpider extends Module {
@@ -25,42 +24,42 @@ public class JumpSpider extends Module {
     }
 
     @EventTarget
-    private void method16651(Class4435 var1) {
+    private void method16651(EventMove var1) {
         if (!mc.player.collidedHorizontally) {
             this.field23832 = false;
         } else if (!mc.player.onGround) {
             if (mc.player.getPositionVec().y != (double) ((int) mc.player.getPositionVec().y)) {
-                if (var1.method13994() < 0.0
-                        && mc.player.getPositionVec().y + var1.method13994() < (double) ((int) mc.player.getPositionVec().y)) {
-                    var1.method13995((double) ((int) mc.player.getPositionVec().y) - mc.player.getPositionVec().y);
+                if (var1.getY() < 0.0
+                        && mc.player.getPositionVec().y + var1.getY() < (double) ((int) mc.player.getPositionVec().y)) {
+                    var1.setY((double) ((int) mc.player.getPositionVec().y) - mc.player.getPositionVec().y);
                     this.field23832 = true;
                 }
             } else if (this.getBooleanValueFromSetttingName("AutoJump") || mc.gameSettings.keyBindJump.isKeyDown()) {
-                mc.player.method2914();
-                var1.method13995(mc.player.getVec().y);
+                mc.player.jump();
+                var1.setY(mc.player.getMotion().y);
             } else if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
-                Class9567.method37088(var1, 0.28 + (double) Class9567.method37078() * 0.05);
-                var1.method13995(0.0);
+                MovementUtils.method37088(var1, 0.28 + (double) MovementUtils.method37078() * 0.05);
+                var1.setY(0.0);
             } else {
-                var1.method13995(-0.0784);
+                var1.setY(-0.0784);
             }
         } else if (this.getBooleanValueFromSetttingName("AutoJump")) {
-            mc.player.method2914();
-            var1.method13995(mc.player.getVec().y);
+            mc.player.jump();
+            var1.setY(mc.player.getMotion().y);
         }
 
-        ColorUtils.method17725(var1.method13994());
+        ColorUtils.method17725(var1.getY());
     }
 
     @EventTarget
-    private void method16652(Class4399 var1) {
+    private void method16652(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             Class9629 var4 = ColorUtils.method17760(1.0E-4);
             String var5 = this.getStringSettingValueByName("Mode");
             if (this.getBooleanValueFromSetttingName("Ceiling")
                     && !mc.player.onGround
-                    && mc.world.method7055(mc.player, mc.player.boundingBox.method19667(0.0, 1.0E-6, 0.0)).count() > 0L) {
-                var1.method13912(var1.method13911() + 4.9E-7);
+                    && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, 1.0E-6, 0.0)).count() > 0L) {
+                var1.setY(var1.getY() + 4.9E-7);
             }
 
             if (var4 != null) {
@@ -79,7 +78,7 @@ public class JumpSpider extends Module {
                         this.field23832 = !this.field23832;
                     }
 
-                    var1.method13920(true);
+                    var1.setGround(true);
                     switch (var5) {
                         case "AGC":
                             var6 = 4.85E-7;
@@ -89,15 +88,15 @@ public class JumpSpider extends Module {
                     }
                 }
 
-                if (((Direction) var4.method37538()).method544() == Class113.field413) {
-                    var1.method13910(
+                if (((net.minecraft.util.Direction) var4.method37538()).getAxis() == Direction.field413) {
+                    var1.setX(
                             (double) Math.round((((Vector3d) var4.method37539()).x + 1.1921022E-8) * 10000.0) / 10000.0
-                                    + (double) ((Direction) var4.method37538()).method539() * var6
+                                    + (double) ((net.minecraft.util.Direction) var4.method37538()).method539() * var6
                     );
                 } else {
-                    var1.method13914(
+                    var1.setZ(
                             (double) Math.round((((Vector3d) var4.method37539()).z + 1.1921022E-8) * 10000.0) / 10000.0
-                                    + (double) ((Direction) var4.method37538()).method541() * var6
+                                    + (double) ((net.minecraft.util.Direction) var4.method37538()).method541() * var6
                     );
                 }
             }
@@ -105,12 +104,12 @@ public class JumpSpider extends Module {
     }
 
     @EventTarget
-    private void method16653(Class4398 var1) {
+    private void method16653(EventBlockCollision var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (var1.method13903() != null
-                    && !var1.method13903().method19516()
-                    && var1.method13903().method19514().minY > mc.player.boundingBox.minY + 1.0) {
-                var1.method13900(true);
+            if (var1.getVoxelShape() != null
+                    && !var1.getVoxelShape().method19516()
+                    && var1.getVoxelShape().method19514().minY > mc.player.boundingBox.minY + 1.0) {
+                var1.setCancelled(true);
             }
         }
     }

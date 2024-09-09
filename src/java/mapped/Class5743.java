@@ -26,15 +26,15 @@ public class Class5743<T extends Entity> extends Class5712<AbstractClientPlayerE
       Class2797 var11 = this.field25086;
       var11.method11009(false);
       var11.field17432.field31039 = true;
-      float var12 = var1.field4967;
+      float var12 = var1.rotationYawHead;
       float var13 = var1.rotationPitch;
       float var14 = MathUtils.lerp(var8, 0.15, 0.84, 0.34, 1.0);
       float var15 = ((float) Minecraft.getInstance().player.ticksExisted + Minecraft.getInstance().getRenderPartialTicks()) * 3.0F + var14 * 160.0F;
-      var1.field4967 = var15;
+      var1.rotationYawHead = var15;
       var1.rotationPitch = -10.0F;
       this.field25096 = var7;
       super.method17853(var1, var2, 1.0F, var4, var5, var6);
-      var1.field4967 = var12;
+      var1.rotationYawHead = var12;
       var1.rotationPitch = var13;
    }
 

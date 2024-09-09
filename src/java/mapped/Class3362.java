@@ -7,7 +7,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -35,12 +34,12 @@ public class Class3362 extends Class3241 {
 
    public Class3362(AbstractBlock var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18913, Direction.DOWN).method23465(field18914, Boolean.valueOf(true)));
+      this.method11578(this.field18612.method35393().method23465(field18913, net.minecraft.util.Direction.DOWN).method23465(field18914, Boolean.valueOf(true)));
    }
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      switch (Class9391.field43583[var1.<Direction>method23463(field18913).ordinal()]) {
+      switch (Class9391.field43583[var1.<net.minecraft.util.Direction>method23463(field18913).ordinal()]) {
          case 1:
             return field18919;
          case 2:
@@ -58,7 +57,7 @@ public class Class3362 extends Class3241 {
 
    @Override
    public VoxelShape method11938(BlockState var1, IBlockReader var2, BlockPos var3) {
-      switch (Class9391.field43583[var1.<Direction>method23463(field18913).ordinal()]) {
+      switch (Class9391.field43583[var1.<net.minecraft.util.Direction>method23463(field18913).ordinal()]) {
          case 1:
             return field18924;
          case 2:
@@ -76,9 +75,9 @@ public class Class3362 extends Class3241 {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      Direction var4 = var1.method18354().method536();
+      net.minecraft.util.Direction var4 = var1.method18354().method536();
       return this.method11579()
-         .method23465(field18913, var4.method544() != Class113.field414 ? var4 : Direction.DOWN)
+         .method23465(field18913, var4.getAxis() != Direction.field414 ? var4 : net.minecraft.util.Direction.DOWN)
          .method23465(field18914, Boolean.valueOf(true));
    }
 
@@ -99,7 +98,7 @@ public class Class3362 extends Class3241 {
 
    @Override
    public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var4.method23448(var1.getBlock())) {
+      if (!var4.isIn(var1.getBlock())) {
          this.method11939(var2, var3, var1);
       }
    }
@@ -110,12 +109,12 @@ public class Class3362 extends Class3241 {
          TileEntity var9 = var2.getTileEntity(var3);
          if (var9 instanceof Class936) {
             var4.method2766((Class936)var9);
-            var4.method2911(Class8876.field40150);
+            var4.method2911(Stats.field40150);
          }
 
          return ActionResultType.field14819;
       } else {
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       }
    }
 
@@ -133,7 +132,7 @@ public class Class3362 extends Class3241 {
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.method23448(var4.getBlock())) {
+      if (!var1.isIn(var4.getBlock())) {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class936) {
             Class7236.method22721(var2, var3, (Class936)var8);
@@ -156,17 +155,17 @@ public class Class3362 extends Class3241 {
 
    @Override
    public int method11649(BlockState var1, World var2, BlockPos var3) {
-      return Class5812.method18151(var2.getTileEntity(var3));
+      return Container.calcRedstone(var2.getTileEntity(var3));
    }
 
    @Override
    public BlockState method11500(BlockState var1, Class80 var2) {
-      return var1.method23465(field18913, var2.method252(var1.<Direction>method23463(field18913)));
+      return var1.method23465(field18913, var2.method252(var1.<net.minecraft.util.Direction>method23463(field18913)));
    }
 
    @Override
    public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23395(var2.method8749(var1.<Direction>method23463(field18913)));
+      return var1.method23395(var2.method8749(var1.<net.minecraft.util.Direction>method23463(field18913)));
    }
 
    @Override

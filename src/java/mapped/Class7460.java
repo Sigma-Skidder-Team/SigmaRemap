@@ -19,12 +19,12 @@ public class Class7460 implements Class7458 {
 
    @Override
    public BlockPos method24124() {
-      return this.field32082.method3210().field43438;
+      return this.field32082.getDataManager().field43438;
    }
 
    @Override
    public Biome method24125() {
-      return this.field32082.method3210().field43437;
+      return this.field32082.getDataManager().field43437;
    }
 
    @Override

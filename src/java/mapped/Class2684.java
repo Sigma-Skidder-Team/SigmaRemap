@@ -33,7 +33,7 @@ public class Class2684 extends Class2595 {
 
    @Override
    public void method10804() {
-      Random var3 = this.field17100.method3013();
+      Random var3 = this.field17100.getRNG();
       double var4 = this.field17100.getPosX() + (double)((var3.nextFloat() * 2.0F - 1.0F) * 16.0F);
       double var6 = this.field17100.getPosY() + (double)((var3.nextFloat() * 2.0F - 1.0F) * 16.0F);
       double var8 = this.field17100.getPosZ() + (double)((var3.nextFloat() * 2.0F - 1.0F) * 16.0F);

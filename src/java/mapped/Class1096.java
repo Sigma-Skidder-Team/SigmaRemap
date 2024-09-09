@@ -35,7 +35,7 @@ public class Class1096 extends Class1018 implements IAngerable {
 
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41068.method33215(var1);
+      return EntityType.field41068.create(var1);
    }
 
    @Override
@@ -73,18 +73,18 @@ public class Class1096 extends Class1018 implements IAngerable {
       return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44131))
             && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44171))
          ? method4500(var0, var1, var2, var3, var4)
-         : var1.method7021(var3, 0) > 8 && var1.getBlockState(var3.down()).method23448(Blocks.ICE);
+         : var1.method7021(var3, 0) > 8 && var1.getBlockState(var3.down()).isIn(Blocks.ICE);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method4365((ServerWorld)this.world, var1);
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       this.method4364(var1);
    }
 
@@ -115,7 +115,7 @@ public class Class1096 extends Class1018 implements IAngerable {
 
    @Override
    public SoundEvent getAmbientSound() {
-      return !this.method3005() ? SoundEvents.field26970 : SoundEvents.field26971;
+      return !this.isChild() ? SoundEvents.field26970 : SoundEvents.field26971;
    }
 
    @Override
@@ -129,13 +129,13 @@ public class Class1096 extends Class1018 implements IAngerable {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(SoundEvents.field26974, 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(SoundEvents.field26974, 0.15F, 1.0F);
    }
 
    public void method5182() {
       if (this.field6013 <= 0) {
-         this.method2863(SoundEvents.field26975, 1.0F, this.method3100());
+         this.playSound(SoundEvents.field26975, 1.0F, this.getSoundPitch());
          this.field6013 = 40;
       }
    }
@@ -151,7 +151,7 @@ public class Class1096 extends Class1018 implements IAngerable {
       super.tick();
       if (this.world.isRemote) {
          if (this.field6012 != this.field6011) {
-            this.method3385();
+            this.recalculateSize();
          }
 
          this.field6011 = this.field6012;
@@ -172,21 +172,21 @@ public class Class1096 extends Class1018 implements IAngerable {
    }
 
    @Override
-   public EntitySize method2981(Pose var1) {
+   public EntitySize getSize(Pose var1) {
       if (!(this.field6012 > 0.0F)) {
-         return super.method2981(var1);
+         return super.getSize(var1);
       } else {
          float var4 = this.field6012 / 6.0F;
          float var5 = 1.0F + var4;
-         return super.method2981(var1).method32100(1.0F, var5);
+         return super.getSize(var1).method32100(1.0F, var5);
       }
    }
 
    @Override
-   public boolean method3114(Entity var1) {
-      boolean var4 = var1.method2741(DamageSource.method31115(this), (float)((int)this.method3086(Attributes.field42110)));
+   public boolean attackEntityAsMob(Entity var1) {
+      boolean var4 = var1.attackEntityFrom(DamageSource.method31115(this), (float)((int)this.getAttributeValue(Attributes.field42110)));
       if (var4) {
-         this.method3399(this, var1);
+         this.applyEnchantments(this, var1);
       }
 
       return var4;
@@ -205,7 +205,7 @@ public class Class1096 extends Class1018 implements IAngerable {
    }
 
    @Override
-   public float method3106() {
+   public float getWaterSlowDown() {
       return 0.98F;
    }
 

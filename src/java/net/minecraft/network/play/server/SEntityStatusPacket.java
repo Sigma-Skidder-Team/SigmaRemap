@@ -37,11 +37,11 @@ public class SEntityStatusPacket implements Packet<IClientPlayNetHandler> {
       var1.handleEntityStatus(this);
    }
 
-   public Entity method17178(World var1) {
+   public Entity getEntity(World var1) {
       return var1.getEntityByID(this.field24259);
    }
 
-   public byte method17179() {
+   public byte getOpCode() {
       return this.field24260;
    }
 }

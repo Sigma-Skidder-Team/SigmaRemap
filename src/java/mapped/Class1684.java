@@ -37,7 +37,7 @@ public class Class1684 implements Class1683 {
       }
    }
 
-   public Class1684(Class2347<Biome> var1, Class7481 var2, Class1685 var3) {
+   public Class1684(Class2347<Biome> var1, ChunkPos var2, Class1685 var3) {
       this(var1);
       int var6 = var2.method24356() >> 2;
       int var7 = var2.method24357() >> 2;
@@ -50,7 +50,7 @@ public class Class1684 implements Class1683 {
       }
    }
 
-   public Class1684(Class2347<Biome> var1, Class7481 var2, Class1685 var3, int[] var4) {
+   public Class1684(Class2347<Biome> var1, ChunkPos var2, Class1685 var3, int[] var4) {
       this(var1);
       int var7 = var2.method24356() >> 2;
       int var8 = var2.method24357() >> 2;

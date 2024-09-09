@@ -13,7 +13,7 @@ public class AbstractBlock {
    private Class8649 field33964;
    private Function<BlockState, Class7210> field33965;
    private boolean field33966 = true;
-   private Class8447 field33967 = Class8447.field36204;
+   private SoundType field33967 = SoundType.field36204;
    private ToIntFunction<BlockState> field33968 = var0 -> 0;
    private float field33969;
    private float field33970;
@@ -26,7 +26,7 @@ public class AbstractBlock {
    private boolean field33977 = true;
    private boolean field33978;
    private Class9817<EntityType<?>> field33979 = (var0, var1x, var2x, var3) -> var0.method23454(var1x, var2x, Direction.field673) && var0.getLightValue() < 14;
-   private Class8609 field33980 = (var0, var1x, var2x) -> var0.method23384().method31090() && var0.method23456(var1x, var2x);
+   private Class8609 field33980 = (var0, var1x, var2x) -> var0.getMaterial().method31090() && var0.method23456(var1x, var2x);
    private Class8609 field33981 = (var1x, var2x, var3) -> this.field33964.method31087() && var1x.method23456(var2x, var3);
    private Class8609 field33982 = this.field33981;
    private Class8609 field33983 = (var0, var1x, var2x) -> false;
@@ -103,7 +103,7 @@ public class AbstractBlock {
       return this;
    }
 
-   public AbstractBlock method26619(Class8447 var1) {
+   public AbstractBlock method26619(SoundType var1) {
       this.field33967 = var1;
       return this;
    }
@@ -214,7 +214,7 @@ public class AbstractBlock {
    }
 
    // $VF: synthetic method
-   public static Class8447 method26648(AbstractBlock var0) {
+   public static SoundType method26648(AbstractBlock var0) {
       return var0.field33967;
    }
 

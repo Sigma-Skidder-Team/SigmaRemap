@@ -25,7 +25,7 @@ public class Class1004 extends Entity {
       this(EntityType.field41069, var1);
       this.setPosition(var2, var4, var6);
       double var11 = var1.rand.nextDouble() * (float) (Math.PI * 2);
-      this.method3435(-Math.sin(var11) * 0.02, 0.2F, -Math.cos(var11) * 0.02);
+      this.setMotion(-Math.sin(var11) * 0.02, 0.2F, -Math.cos(var11) * 0.02);
       this.method4182(80);
       this.prevPosX = var2;
       this.prevPosY = var4;
@@ -39,35 +39,35 @@ public class Class1004 extends Entity {
    }
 
    @Override
-   public boolean method2940() {
+   public boolean canTriggerWalking() {
       return false;
    }
 
    @Override
-   public boolean method3139() {
+   public boolean canBeCollidedWith() {
       return !this.removed;
    }
 
    @Override
    public void tick() {
       if (!this.method3247()) {
-         this.method3434(this.getVec().method11339(0.0, -0.04, 0.0));
+         this.setMotion(this.getMotion().add(0.0, -0.04, 0.0));
       }
 
-      this.move(Class2107.field13742, this.getVec());
-      this.method3434(this.getVec().method11344(0.98));
+      this.move(MoverType.SELF, this.getMotion());
+      this.setMotion(this.getMotion().scale(0.98));
       if (this.onGround) {
-         this.method3434(this.getVec().method11347(0.7, -0.5, 0.7));
+         this.setMotion(this.getMotion().method11347(0.7, -0.5, 0.7));
       }
 
       this.field5564--;
       if (this.field5564 > 0) {
          this.method3257();
          if (this.world.isRemote) {
-            this.world.method6746(ParticleTypes.field34092, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
+            this.world.addParticle(ParticleTypes.field34092, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), 0.0, 0.0, 0.0);
          }
       } else {
-         this.method2904();
+         this.remove();
          if (!this.world.isRemote) {
             this.method4180();
          }
@@ -76,16 +76,16 @@ public class Class1004 extends Entity {
 
    private void method4180() {
       float var3 = 4.0F;
-      this.world.method6755(this, this.getPosX(), this.method3440(0.0625), this.getPosZ(), 4.0F, Class2141.field14015);
+      this.world.method6755(this, this.getPosX(), this.getPosYHeight(0.0625), this.getPosZ(), 4.0F, Class2141.field14015);
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      var1.method101("Fuse", (short)this.method4184());
+   public void writeAdditional(CompoundNBT var1) {
+      var1.putShort("Fuse", (short)this.method4184());
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.method4182(var1.getShort("Fuse"));
    }
 
@@ -95,7 +95,7 @@ public class Class1004 extends Entity {
    }
 
    @Override
-   public float method3181(Pose var1, EntitySize var2) {
+   public float getEyeHeight(Pose var1, EntitySize var2) {
       return 0.15F;
    }
 
@@ -105,7 +105,7 @@ public class Class1004 extends Entity {
    }
 
    @Override
-   public void method3155(DataParameter<?> var1) {
+   public void notifyDataManagerChange(DataParameter<?> var1) {
       if (field5562.equals(var1)) {
          this.field5564 = this.method4183();
       }
@@ -120,7 +120,7 @@ public class Class1004 extends Entity {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this);
    }
 }

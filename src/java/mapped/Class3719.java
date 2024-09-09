@@ -18,11 +18,11 @@ public class Class3719 extends Class3676<LivingEntity> {
 
    @Override
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
-      Class6947 var7 = var2.method2992();
+      Brain var7 = var2.getBrain();
       Class7699 var8 = var1.method6957(var2.getPosition());
       if (var8 == null || var8.method25391() || var8.method25393()) {
-         var7.method21424(Class8890.field40220);
-         var7.method21422(var1.method6784(), var1.method6783());
+         var7.method21424(Activity.field40220);
+         var7.method21422(var1.method6784(), var1.getGameTime());
       }
    }
 }

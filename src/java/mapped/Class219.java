@@ -29,7 +29,7 @@ public abstract class Class219<T extends Entity, M extends Class2827<T>> {
       float var14,
       float var15
    ) {
-      if (!var6.method3342()) {
+      if (!var6.isInvisible()) {
          var0.method11027(var1);
          var1.method10997(var6, var7, var8, var12);
          var1.method10998(var6, var7, var8, var9, var10, var11);

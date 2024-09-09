@@ -18,11 +18,11 @@ public class Class6343 extends Class6333 {
    @Override
    public void method19269() {
       this.field27872++;
-      if (!this.field27871.removed && (this.field27872 <= 20 || this.field27871.method3165())) {
+      if (!this.field27871.removed && (this.field27872 <= 20 || this.field27871.isElytraFlying())) {
          this.field27858 = (double)((float)this.field27871.getPosX());
          this.field27859 = (double)((float)this.field27871.getPosY());
          this.field27860 = (double)((float)this.field27871.getPosZ());
-         float var3 = (float)this.field27871.getVec().method11349();
+         float var3 = (float)this.field27871.getMotion().lengthSquared();
          if (!((double)var3 >= 1.0E-7)) {
             this.field27856 = 0.0F;
          } else {

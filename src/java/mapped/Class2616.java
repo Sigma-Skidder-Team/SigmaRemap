@@ -23,7 +23,7 @@ public class Class2616 extends Class2612 {
 
    @Override
    public boolean method10803() {
-      if (!(this.field16881.method3013().nextFloat() >= this.field16885)) {
+      if (!(this.field16881.getRNG().nextFloat() >= this.field16885)) {
          if (this.field16882 == null) {
             if (this.field16886 != PlayerEntity.class) {
                this.field16882 = this.field16881
@@ -33,14 +33,14 @@ public class Class2616 extends Class2612 {
                      this.field16887,
                      this.field16881,
                      this.field16881.getPosX(),
-                     this.field16881.method3442(),
+                     this.field16881.getPosYEye(),
                      this.field16881.getPosZ(),
                      this.field16881.getBoundingBox().method19663((double)this.field16883, 3.0, (double)this.field16883)
                   );
             } else {
                this.field16882 = this.field16881
                   .world
-                  .method7189(this.field16887, this.field16881, this.field16881.getPosX(), this.field16881.method3442(), this.field16881.getPosZ());
+                  .method7189(this.field16887, this.field16881, this.field16881.getPosX(), this.field16881.getPosYEye(), this.field16881.getPosZ());
             }
          }
 

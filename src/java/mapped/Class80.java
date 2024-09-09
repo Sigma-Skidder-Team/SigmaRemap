@@ -2,7 +2,6 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.client.util.Util;
-import net.minecraft.util.Direction;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -66,8 +65,8 @@ public enum Class80 {
       return this.field189;
    }
 
-   public Direction method252(Direction var1) {
-      if (var1.method544() == Class113.field414) {
+   public net.minecraft.util.Direction method252(net.minecraft.util.Direction var1) {
+      if (var1.getAxis() == Direction.field414) {
          return var1;
       } else {
          switch (Class8568.field38525[this.ordinal()]) {

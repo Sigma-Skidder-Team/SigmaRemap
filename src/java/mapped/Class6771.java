@@ -79,7 +79,7 @@ public class Class6771 extends Class6768<Class8278> {
          var21.method8372(var25, var37, var26);
          if (var2.getBlockState(var21).isAir() && var37 < (int)var17 && var1.nextDouble() > 0.01) {
             var2.setBlockState(var21, field29539, false);
-         } else if (var2.getBlockState(var21).method23384() == Class8649.field38941
+         } else if (var2.getBlockState(var21).getMaterial() == Class8649.field38941
             && var37 > (int)var19
             && var37 < var11
             && var19 != 0.0
@@ -89,14 +89,14 @@ public class Class6771 extends Class6768<Class8278> {
 
          BlockState var44 = var2.getBlockState(var21);
          if (!var44.isAir()) {
-            if (var44.method23448(var9.getBlock())) {
+            if (var44.isIn(var9.getBlock())) {
                if (var33 != -1) {
                   if (var33 > 0) {
                      var33--;
                      var2.setBlockState(var21, var30, false);
-                     if (var33 == 0 && var30.method23448(Blocks.SAND) && var32 > 1) {
+                     if (var33 == 0 && var30.isIn(Blocks.SAND) && var32 > 1) {
                         var33 = var1.nextInt(4) + Math.max(0, var37 - 63);
-                        var30 = !var30.method23448(Blocks.RED_SAND) ? Blocks.SANDSTONE.method11579() : Blocks.field36835.method11579();
+                        var30 = !var30.isIn(Blocks.RED_SAND) ? Blocks.SANDSTONE.method11579() : Blocks.field36835.method11579();
                      }
                   }
                } else {
@@ -131,7 +131,7 @@ public class Class6771 extends Class6768<Class8278> {
                      var2.setBlockState(var21, var31, false);
                   }
                }
-            } else if (var44.method23448(Blocks.PACKED_ICE) && var34 <= var35 && var37 > var36) {
+            } else if (var44.isIn(Blocks.PACKED_ICE) && var34 <= var35 && var37 > var36) {
                var2.setBlockState(var21, field29540, false);
                var34++;
             }

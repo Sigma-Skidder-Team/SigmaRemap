@@ -28,7 +28,7 @@ public abstract class Class3390 {
    public final boolean field19005;
    public final float field19006;
    public final boolean field19007;
-   public final Class8447 field19008;
+   public final SoundType field19008;
    public final float field19009;
    public final float field19010;
    public final float field19011;
@@ -60,7 +60,7 @@ public abstract class Class3390 {
          case 1:
             return !var1.method23456(var2, var3);
          case 2:
-            return var2.getFluidState(var3).method23486(Class8953.field40469);
+            return var2.getFluidState(var3).method23486(FluidTags.field40469);
          case 3:
             return !var1.method23456(var2, var3);
          default:
@@ -89,7 +89,7 @@ public abstract class Class3390 {
 
    @Deprecated
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (this.isTileEntityProvider() && !var1.method23448(var4.getBlock())) {
+      if (this.isTileEntityProvider() && !var1.isIn(var4.getBlock())) {
          var2.method6762(var3);
       }
    }
@@ -196,7 +196,7 @@ public abstract class Class3390 {
       if (!var1.method23409(var2, var3)) {
          return !var1.method23386(var2, var3) ? 1 : 0;
       } else {
-         return var2.method7033();
+         return var2.getMaxLightLevel();
       }
    }
 

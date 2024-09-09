@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.UUID;
 
-public class Class6356 extends Class6355<Class1916, Class1917, Class1922, Class1926> {
+public class Class6356 extends ViaVersion7<Class1916, Class1917, Class1922, Class1926> {
    private static final UUID field27917 = new UUID(0L, 0L);
    public static final Class5981 field27918 = new Class5981();
    private Class7136 field27919;
@@ -31,7 +31,7 @@ public class Class6356 extends Class6355<Class1916, Class1917, Class1922, Class1
       var5.method15951(Class1916.field11615);
       var5.method15951(Class1916.field11614);
       this.method19364(Class1926.field11968, new Class3912(this));
-      if (Class8042.method27612().method21943()) {
+      if (ViaVersion3.method27612().method21943()) {
          this.method19364(Class1926.field11965, new Class3783(this));
       }
 

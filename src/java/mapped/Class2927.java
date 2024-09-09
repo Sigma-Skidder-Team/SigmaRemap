@@ -46,8 +46,8 @@ public class Class2927 extends Class2898<Class4709> {
 
    private static boolean method11257(Class1660 var0, BlockPos var1, boolean var2) {
       return var0.method6815(var1, var1x -> {
-         Class8649 var4 = var1x.method23384();
-         return var1x.method23384().method31089() || var2 && var4 == Class8649.field38936;
+         Class8649 var4 = var1x.getMaterial();
+         return var1x.getMaterial().method31089() || var2 && var4 == Class8649.field38936;
       });
    }
 
@@ -84,7 +84,7 @@ public class Class2927 extends Class2898<Class4709> {
 
    private void method11259(Class1660 var1, Random var2, Class4709 var3, BlockPos var4, int var5, boolean var6) {
       BlockPos.Mutable var9 = new BlockPos.Mutable();
-      boolean var10 = var3.field22339.method23448(Blocks.field36891);
+      boolean var10 = var3.field22339.isIn(Blocks.field36891);
       int var11 = Math.min(var2.nextInt(1 + var5 / 3) + 5, var5);
       int var12 = var5 - var11;
 
@@ -144,7 +144,7 @@ public class Class2927 extends Class2898<Class4709> {
    }
 
    private void method11261(Class1660 var1, Random var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.getBlockState(var3.down()).method23448(var4.getBlock())) {
+      if (!var1.getBlockState(var3.down()).isIn(var4.getBlock())) {
          if ((double)var2.nextFloat() < 0.15) {
             this.method11217(var1, var3, var4);
             if (var5 && var2.nextInt(11) == 0) {

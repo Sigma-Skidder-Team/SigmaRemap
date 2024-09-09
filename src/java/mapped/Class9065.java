@@ -48,7 +48,7 @@ public class Class9065 {
    }
 
    static {
-      method33750(new ResourceLocation("lefthanded"), (var0, var1, var2) -> var2 != null && var2.method2967() != HandSide.field14418 ? 1.0F : 0.0F);
+      method33750(new ResourceLocation("lefthanded"), (var0, var1, var2) -> var2 != null && var2.getPrimaryHand() != HandSide.field14418 ? 1.0F : 0.0F);
       method33750(
          new ResourceLocation("cooldown"),
          (var0, var1, var2) -> !(var2 instanceof PlayerEntity) ? 0.0F : ((PlayerEntity)var2).method2976().method19636(var0.getItem(), 0.0F)
@@ -56,19 +56,19 @@ public class Class9065 {
       method33750(new ResourceLocation("custom_model_data"), (var0, var1, var2) -> !var0.method32141() ? 0.0F : (float)var0.method32142().getInt("CustomModelData"));
       method33751(Items.BOW, new ResourceLocation("pull"), (var0, var1, var2) -> {
          if (var2 != null) {
-            return var2.method3158() == var0 ? (float)(var0.method32137() - var2.method3159()) / 20.0F : 0.0F;
+            return var2.getActiveItemStack() == var0 ? (float)(var0.method32137() - var2.getItemInUseCount()) / 20.0F : 0.0F;
          } else {
             return 0.0F;
          }
       });
       method33751(
-         Items.BOW, new ResourceLocation("pulling"), (var0, var1, var2) -> var2 != null && var2.isHandActive() && var2.method3158() == var0 ? 1.0F : 0.0F
+         Items.BOW, new ResourceLocation("pulling"), (var0, var1, var2) -> var2 != null && var2.isHandActive() && var2.getActiveItemStack() == var0 ? 1.0F : 0.0F
       );
       method33751(Items.field37907, new ResourceLocation("time"), new Class8177());
       method33751(Items.field37905, new ResourceLocation("angle"), new Class8178());
       method33751(Items.field38148, new ResourceLocation("pull"), (var0, var1, var2) -> {
          if (var2 != null) {
-            return !Class3261.method11755(var0) ? (float)(var0.method32137() - var2.method3159()) / (float)Class3261.method11767(var0) : 0.0F;
+            return !Class3261.method11755(var0) ? (float)(var0.method32137() - var2.getItemInUseCount()) / (float)Class3261.method11767(var0) : 0.0F;
          } else {
             return 0.0F;
          }
@@ -76,7 +76,7 @@ public class Class9065 {
       method33751(
          Items.field38148,
          new ResourceLocation("pulling"),
-         (var0, var1, var2) -> var2 != null && var2.isHandActive() && var2.method3158() == var0 && !Class3261.method11755(var0) ? 1.0F : 0.0F
+         (var0, var1, var2) -> var2 != null && var2.isHandActive() && var2.getActiveItemStack() == var0 && !Class3261.method11755(var0) ? 1.0F : 0.0F
       );
       method33751(Items.field38148, new ResourceLocation("charged"), (var0, var1, var2) -> var2 != null && Class3261.method11755(var0) ? 1.0F : 0.0F);
       method33751(
@@ -99,10 +99,10 @@ public class Class9065 {
          }
       });
       method33751(
-         Items.field38119, new ResourceLocation("blocking"), (var0, var1, var2) -> var2 != null && var2.isHandActive() && var2.method3158() == var0 ? 1.0F : 0.0F
+         Items.field38119, new ResourceLocation("blocking"), (var0, var1, var2) -> var2 != null && var2.isHandActive() && var2.getActiveItemStack() == var0 ? 1.0F : 0.0F
       );
       method33751(
-         Items.field38144, new ResourceLocation("throwing"), (var0, var1, var2) -> var2 != null && var2.isHandActive() && var2.method3158() == var0 ? 1.0F : 0.0F
+         Items.field38144, new ResourceLocation("throwing"), (var0, var1, var2) -> var2 != null && var2.isHandActive() && var2.getActiveItemStack() == var0 ? 1.0F : 0.0F
       );
    }
 }

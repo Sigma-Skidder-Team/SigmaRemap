@@ -23,7 +23,7 @@ public class Class143 extends Class128 {
    @Override
    public ItemStack method371(ItemStack var1, LootContext var2) {
       Random var5 = var2.method26088();
-      return Class7858.method26342(var5, var1, this.field484.method20914(var5), this.field485);
+      return EnchantmentHelper.method26342(var5, var1, this.field484.method20914(var5), this.field485);
    }
 
    public static Class5879 method439(Class6870 var0) {

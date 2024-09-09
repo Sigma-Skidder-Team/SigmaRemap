@@ -13,7 +13,7 @@ public class Class512 implements Runnable {
    }
 
    public static Integer method1892(String var0) {
-      Map var3 = ((Class7040)Class8042.method27612()).method21922();
+      Map var3 = ((Class7040) ViaVersion3.method27612()).method21922();
       Integer var4 = (Integer)var3.get(var0);
       if (var4 != null) {
          return var4;
@@ -27,7 +27,7 @@ public class Class512 implements Runnable {
                return var6;
             } else {
                try {
-                  return Class8042.method27614().method34427().method20574();
+                  return ViaVersion3.method27614().method34427().method20574();
                } catch (Exception var8) {
                   var8.printStackTrace();
                   return ViaVerList.field26129.method18582();

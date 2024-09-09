@@ -51,12 +51,12 @@ public class Class964 extends TileEntity {
       var1.method109("name", this.method3934());
       var1.method109("author", this.field5396);
       var1.method109("metadata", this.field5397);
-      var1.method102("posX", this.field5398.getX());
-      var1.method102("posY", this.field5398.getY());
-      var1.method102("posZ", this.field5398.getZ());
-      var1.method102("sizeX", this.field5399.getX());
-      var1.method102("sizeY", this.field5399.getY());
-      var1.method102("sizeZ", this.field5399.getZ());
+      var1.putInt("posX", this.field5398.getX());
+      var1.putInt("posY", this.field5398.getY());
+      var1.putInt("posZ", this.field5398.getZ());
+      var1.putInt("sizeX", this.field5399.getX());
+      var1.putInt("sizeY", this.field5399.getY());
+      var1.putInt("sizeZ", this.field5399.getZ());
       var1.method109("rotation", this.field5401.toString());
       var1.method109("mirror", this.field5400.toString());
       var1.method109("mode", this.field5402.toString());
@@ -120,8 +120,8 @@ public class Class964 extends TileEntity {
       if (this.field5324 != null) {
          BlockPos var3 = this.getPos();
          BlockState var4 = this.field5324.getBlockState(var3);
-         if (var4.method23448(Blocks.field37113)) {
-            this.field5324.setBlockState(var3, var4.method23465(Class3367.field18938, this.field5402), 2);
+         if (var4.isIn(Blocks.field37113)) {
+            this.field5324.setBlockState(var3, var4.method23465(StructureBlock.field18938, this.field5402), 2);
          }
       }
    }
@@ -138,7 +138,7 @@ public class Class964 extends TileEntity {
    }
 
    public boolean method3933(PlayerEntity var1) {
-      if (var1.method2979()) {
+      if (var1.canUseCommandBlock()) {
          if (var1.method3395().isRemote) {
             var1.method2891(this);
          }
@@ -220,8 +220,8 @@ public class Class964 extends TileEntity {
    public void method3951(Class104 var1) {
       this.field5402 = var1;
       BlockState var4 = this.field5324.getBlockState(this.getPos());
-      if (var4.method23448(Blocks.field37113)) {
-         this.field5324.setBlockState(this.getPos(), var4.method23465(Class3367.field18938, var1), 2);
+      if (var4.isIn(Blocks.field37113)) {
+         this.field5324.setBlockState(this.getPos(), var4.method23465(StructureBlock.field18938, var1), 2);
       }
    }
 
@@ -282,7 +282,7 @@ public class Class964 extends TileEntity {
                this.field5399 = new BlockPos(
                   var9.field45681 - var9.field45678 - 1, var9.field45682 - var9.field45679 - 1, var9.field45683 - var9.field45680 - 1
                );
-               this.method3622();
+               this.markDirty();
                BlockState var10 = this.field5324.getBlockState(var3);
                this.field5324.notifyBlockUpdate(var3, var10, var10, 3);
                return true;
@@ -307,7 +307,7 @@ public class Class964 extends TileEntity {
 
       for (BlockPos var7 : BlockPos.method8359(var1, var2)) {
          BlockState var8 = this.field5324.getBlockState(var7);
-         if (var8.method23448(Blocks.field37113)) {
+         if (var8.isIn(Blocks.field37113)) {
             TileEntity var9 = this.field5324.getTileEntity(var7);
             if (var9 != null && var9 instanceof Class964) {
                var5.add((Class964)var9);
@@ -425,7 +425,7 @@ public class Class964 extends TileEntity {
       boolean var8 = this.field5399.equals(var7);
       if (!var8) {
          this.field5399 = var7;
-         this.method3622();
+         this.markDirty();
          BlockState var9 = var1.getBlockState(var6);
          var1.notifyBlockUpdate(var6, var9, var9, 3);
       }
@@ -433,7 +433,7 @@ public class Class964 extends TileEntity {
       if (var2 && !var8) {
          return false;
       } else {
-         Class9463 var11 = new Class9463().method36425(this.field5400).method36426(this.field5401).method36428(this.field5403).method36429((Class7481)null);
+         Class9463 var11 = new Class9463().method36425(this.field5400).method36426(this.field5401).method36428(this.field5403).method36429((ChunkPos)null);
          if (this.field5407 < 1.0F) {
             var11.method36433().method36434(new Class7094(MathHelper.clamp(this.field5407, 0.0F, 1.0F))).method36431(method3966(this.field5408));
          }

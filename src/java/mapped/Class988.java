@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 
 import javax.annotation.Nullable;
 
-public class Class988 implements Class920 {
+public class Class988 implements IInventory {
    private static String[] field5466;
    private final Class1060 field5467;
    private final NonNullList<ItemStack> field5468 = NonNullList.<ItemStack>method68(3, ItemStack.EMPTY);
@@ -18,12 +18,12 @@ public class Class988 implements Class920 {
    }
 
    @Override
-   public int method3629() {
+   public int getSizeInventory() {
       return this.field5468.size();
    }
 
    @Override
-   public boolean method3617() {
+   public boolean isEmpty() {
       for (ItemStack var4 : this.field5468) {
          if (!var4.isEmpty()) {
             return false;
@@ -34,12 +34,12 @@ public class Class988 implements Class920 {
    }
 
    @Override
-   public ItemStack method3618(int var1) {
+   public ItemStack getStackInSlot(int var1) {
       return this.field5468.get(var1);
    }
 
    @Override
-   public ItemStack method3619(int var1, int var2) {
+   public ItemStack decrStackSize(int var1, int var2) {
       ItemStack var5 = this.field5468.get(var1);
       if (var1 == 2 && !var5.isEmpty()) {
          return Class7920.method26563(this.field5468, var1, var5.getCount());
@@ -58,15 +58,15 @@ public class Class988 implements Class920 {
    }
 
    @Override
-   public ItemStack method3620(int var1) {
+   public ItemStack removeStackFromSlot(int var1) {
       return Class7920.method26564(this.field5468, var1);
    }
 
    @Override
-   public void method3621(int var1, ItemStack var2) {
+   public void setInventorySlotContents(int var1, ItemStack var2) {
       this.field5468.set(var1, var2);
-      if (!var2.isEmpty() && var2.getCount() > this.method3630()) {
-         var2.method32180(this.method3630());
+      if (!var2.isEmpty() && var2.getCount() > this.getInventoryStackLimit()) {
+         var2.method32180(this.getInventoryStackLimit());
       }
 
       if (this.method4065(var1)) {
@@ -75,12 +75,12 @@ public class Class988 implements Class920 {
    }
 
    @Override
-   public boolean method3623(PlayerEntity var1) {
+   public boolean isUsableByPlayer(PlayerEntity var1) {
       return this.field5467.method4740() == var1;
    }
 
    @Override
-   public void method3622() {
+   public void markDirty() {
       this.method4066();
    }
 
@@ -107,17 +107,17 @@ public class Class988 implements Class920 {
 
             if (var6 != null && !var6.method35382()) {
                this.field5469 = var6;
-               this.method3621(2, var6.method35370());
+               this.setInventorySlotContents(2, var6.method35370());
                this.field5471 = var6.method35381();
             } else {
-               this.method3621(2, ItemStack.EMPTY);
+               this.setInventorySlotContents(2, ItemStack.EMPTY);
                this.field5471 = 0;
             }
          }
 
-         this.field5467.method4747(this.method3618(2));
+         this.field5467.method4747(this.getStackInSlot(2));
       } else {
-         this.method3621(2, ItemStack.EMPTY);
+         this.setInventorySlotContents(2, ItemStack.EMPTY);
          this.field5471 = 0;
       }
    }

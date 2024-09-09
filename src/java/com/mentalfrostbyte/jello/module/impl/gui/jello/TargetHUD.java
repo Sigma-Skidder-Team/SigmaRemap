@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.gui.jello;
 
 import net.minecraft.entity.passive.WolfEntity;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -88,7 +88,7 @@ public class TargetHUD extends PremiumModule {
 
     @EventTarget
     @HigestPriority
-    public void method16474(Class4415 var1) {
+    public void method16474(EventRender var1) {
     }
 
     private void method16475(int var1) {
@@ -252,7 +252,7 @@ public class TargetHUD extends PremiumModule {
     }
 
     private void method16480(int var1) {
-        Iterator var4 = this.entity.method2947().iterator();
+        Iterator var4 = this.entity.getArmorInventoryList().iterator();
         int var5 = 0;
 
         while (var4.hasNext()) {

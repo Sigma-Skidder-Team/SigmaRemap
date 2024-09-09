@@ -28,7 +28,7 @@ public class Class9010 {
       return this.field41216.method17807();
    }
 
-   public BitSet method33299(Class7481 var1, Class97 var2) {
+   public BitSet method33299(ChunkPos var1, Class97 var2) {
       return ((Class1672)this.field41215.getChunk(var1.field32174, var1.field32175)).method7117(var2);
    }
 

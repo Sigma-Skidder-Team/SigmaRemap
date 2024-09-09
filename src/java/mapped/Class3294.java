@@ -25,7 +25,7 @@ public class Class3294 extends Class3292 {
       World var5 = var1.method18360();
       BlockState var6 = var5.getBlockState(var4);
       Block var7 = this.method11845();
-      if (!var6.method23448(var7)) {
+      if (!var6.isIn(var7)) {
          return Class3428.method12085(var5, var4) != 7 ? var1 : null;
       } else {
          Direction var8;
@@ -52,7 +52,7 @@ public class Class3294 extends Class3292 {
             }
 
             var6 = var5.getBlockState(var10);
-            if (!var6.method23448(this.method11845())) {
+            if (!var6.isIn(this.method11845())) {
                if (var6.method23441(var1)) {
                   return Class5909.method18344(var1, var10, var8);
                }
@@ -60,7 +60,7 @@ public class Class3294 extends Class3292 {
             }
 
             var10.method8379(var8);
-            if (var8.method544().method324()) {
+            if (var8.getAxis().method324()) {
                var9++;
             }
          }

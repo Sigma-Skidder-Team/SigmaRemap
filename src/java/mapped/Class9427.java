@@ -10,9 +10,9 @@ public class Class9427 {
    private final boolean field43731;
    private final boolean field43732;
    private final boolean field43733;
-   private final List<Pair<Class2023, Float>> field43734;
+   private final List<Pair<EffectInstance, Float>> field43734;
 
-   public Class9427(int var1, float var2, boolean var3, boolean var4, boolean var5, List<Pair<Class2023, Float>> var6) {
+   public Class9427(int var1, float var2, boolean var3, boolean var4, boolean var5, List<Pair<EffectInstance, Float>> var6) {
       this.field43729 = var1;
       this.field43730 = var2;
       this.field43731 = var3;
@@ -41,7 +41,7 @@ public class Class9427 {
       return this.field43733;
    }
 
-   public List<Pair<Class2023, Float>> method36162() {
+   public List<Pair<EffectInstance, Float>> method36162() {
       return this.field43734;
    }
 }

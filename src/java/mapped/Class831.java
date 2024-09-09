@@ -56,7 +56,7 @@ public class Class831 extends Screen {
    }
 
    private void method2541() {
-      this.field4611.method3622();
+      this.field4611.markDirty();
       this.mc.displayGuiScreen((Screen)null);
    }
 

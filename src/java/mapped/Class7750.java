@@ -14,7 +14,7 @@ public class Class7750 {
       if (var4.isPresent()) {
          return (Class1871)var4.get();
       } else {
-         Class8042.method27613().method27366().severe("Could not find 1.12 type id " + var0 + " isObject=" + var1);
+         ViaVersion3.method27613().method27366().severe("Could not find 1.12 type id " + var0 + " isObject=" + var1);
          return Class1871.field10550;
       }
    }

@@ -18,7 +18,7 @@ public class Class116 implements Predicate<BlockState> {
    }
 
    public boolean test(BlockState var1) {
-      return var1 != null && var1.method23384() == this.field423;
+      return var1 != null && var1.getMaterial() == this.field423;
    }
 
    // $VF: synthetic method

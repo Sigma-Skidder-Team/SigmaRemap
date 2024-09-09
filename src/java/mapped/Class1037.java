@@ -51,9 +51,9 @@ public class Class1037 extends Class1038 implements Class1022 {
    @Override
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
-      if (this.method2943(Class2106.field13732).isEmpty() && this.rand.nextFloat() < 0.03F) {
-         this.method2944(Class2106.field13732, new ItemStack(Items.field38146));
-         this.field5605[Class2106.field13732.method8773()] = 2.0F;
+      if (this.getItemStackFromSlot(EquipmentSlotType.field13732).isEmpty() && this.rand.nextFloat() < 0.03F) {
+         this.setItemStackToSlot(EquipmentSlotType.field13732, new ItemStack(Items.field38146));
+         this.field5605[EquipmentSlotType.field13732.method8773()] = 2.0F;
       }
 
       return var4;
@@ -63,7 +63,7 @@ public class Class1037 extends Class1038 implements Class1022 {
       Optional var7 = var1.method7178(var3);
       boolean var8 = var1.method6997() != Difficulty.field14351
          && method4340(var1, var3, var4)
-         && (var2 == Class2202.field14393 || var1.getFluidState(var3).method23486(Class8953.field40469));
+         && (var2 == Class2202.field14393 || var1.getFluidState(var3).method23486(FluidTags.field40469));
       return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44128))
             && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44132))
          ? var4.nextInt(40) == 0 && method4641(var1, var3) && var8
@@ -81,17 +81,17 @@ public class Class1037 extends Class1038 implements Class1022 {
 
    @Override
    public SoundEvent getAmbientSound() {
-      return !this.method3250() ? SoundEvents.field26514 : SoundEvents.field26515;
+      return !this.isInWater() ? SoundEvents.field26514 : SoundEvents.field26515;
    }
 
    @Override
    public SoundEvent getHurtSound(DamageSource var1) {
-      return !this.method3250() ? SoundEvents.field26518 : SoundEvents.field26519;
+      return !this.isInWater() ? SoundEvents.field26518 : SoundEvents.field26519;
    }
 
    @Override
    public SoundEvent getDeathSound() {
-      return !this.method3250() ? SoundEvents.field26516 : SoundEvents.field26517;
+      return !this.isInWater() ? SoundEvents.field26516 : SoundEvents.field26517;
    }
 
    @Override
@@ -114,9 +114,9 @@ public class Class1037 extends Class1038 implements Class1022 {
       if ((double)this.rand.nextFloat() > 0.9) {
          int var4 = this.rand.nextInt(16);
          if (var4 >= 10) {
-            this.method2944(Class2106.field13731, new ItemStack(Items.field37906));
+            this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37906));
          } else {
-            this.method2944(Class2106.field13731, new ItemStack(Items.field38144));
+            this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field38144));
          }
       }
    }
@@ -141,16 +141,16 @@ public class Class1037 extends Class1038 implements Class1022 {
 
    @Override
    public boolean method4266(Class1662 var1) {
-      return var1.method7050(this);
+      return var1.checkNoEntityCollision(this);
    }
 
    public boolean method4646(LivingEntity var1) {
-      return var1 == null ? false : !this.world.method6740() || var1.method3250();
+      return var1 == null ? false : !this.world.method6740() || var1.isInWater();
    }
 
    @Override
    public boolean method2952() {
-      return !this.method2951();
+      return !this.isSwimming();
    }
 
    private boolean method4647() {
@@ -158,30 +158,30 @@ public class Class1037 extends Class1038 implements Class1022 {
          return true;
       } else {
          LivingEntity var3 = this.method4232();
-         return var3 != null && var3.method3250();
+         return var3 != null && var3.isInWater();
       }
    }
 
    @Override
-   public void method2915(Vector3d var1) {
-      if (this.method3138() && this.method3250() && this.method4647()) {
-         this.method3265(0.01F, var1);
-         this.move(Class2107.field13742, this.getVec());
-         this.method3434(this.getVec().method11344(0.9));
+   public void travel(Vector3d var1) {
+      if (this.isServerWorld() && this.isInWater() && this.method4647()) {
+         this.moveRelative(0.01F, var1);
+         this.move(MoverType.SELF, this.getMotion());
+         this.setMotion(this.getMotion().scale(0.9));
       } else {
-         super.method2915(var1);
+         super.travel(var1);
       }
    }
 
    @Override
-   public void method2916() {
+   public void updateSwimming() {
       if (!this.world.isRemote) {
-         if (this.method3138() && this.method3250() && this.method4647()) {
+         if (this.isServerWorld() && this.isInWater() && this.method4647()) {
             this.field5599 = this.field5756;
-            this.method3339(true);
+            this.setSwimming(true);
          } else {
             this.field5599 = this.field5757;
-            this.method3339(false);
+            this.setSwimming(false);
          }
       }
    }
@@ -191,7 +191,7 @@ public class Class1037 extends Class1038 implements Class1022 {
       if (var3 != null) {
          BlockPos var4 = var3.method28712();
          if (var4 != null) {
-            double var5 = this.method3276((double)var4.getX(), (double)var4.getY(), (double)var4.getZ());
+            double var5 = this.getDistanceNearest((double)var4.getX(), (double)var4.getY(), (double)var4.getZ());
             if (var5 < 4.0) {
                return true;
             }
@@ -205,12 +205,12 @@ public class Class1037 extends Class1038 implements Class1022 {
    public void method4530(LivingEntity var1, float var2) {
       Class886 var5 = new Class886(this.world, this, new ItemStack(Items.field38144));
       double var6 = var1.getPosX() - this.getPosX();
-      double var8 = var1.method3440(0.3333333333333333) - var5.getPosY();
+      double var8 = var1.getPosYHeight(0.3333333333333333) - var5.getPosY();
       double var10 = var1.getPosZ() - this.getPosZ();
-      double var12 = (double) MathHelper.method37766(var6 * var6 + var10 * var10);
+      double var12 = (double) MathHelper.sqrt(var6 * var6 + var10 * var10);
       var5.shoot(var6, var8 + var12 * 0.2F, var10, 1.6F, (float)(14 - this.world.method6997().getId() * 4));
-      this.method2863(SoundEvents.field26520, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
-      this.world.method6916(var5);
+      this.playSound(SoundEvents.field26520, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+      this.world.addEntity(var5);
    }
 
    public void method4649(boolean var1) {

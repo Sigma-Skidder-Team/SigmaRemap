@@ -21,7 +21,7 @@ public class Class3238 extends Block implements Class3207 {
    public static final Map<Direction, Class8551> field18685 = Class3392.field19025
       .entrySet()
       .stream()
-      .filter(var0 -> var0.getKey().method544().method324())
+      .filter(var0 -> var0.getKey().getAxis().method324())
       .collect(Util.<Direction, Class8551>method38484());
    public final VoxelShape[] field18686;
    public final VoxelShape[] field18687;

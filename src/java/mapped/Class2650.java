@@ -17,8 +17,8 @@ public class Class2650 extends Class2647 {
       double var6 = this.method10859(var1);
       if (var2 <= var6 && this.method10856()) {
          this.method10855();
-         this.field16990.method3114(var1);
-         this.field17002.method2863(SoundEvents.field26590, 1.0F, 1.0F);
+         this.field16990.attackEntityAsMob(var1);
+         this.field17002.playSound(SoundEvents.field26590, 1.0F, 1.0F);
       }
    }
 

@@ -18,11 +18,11 @@ public class Class5397 implements Class5391 {
    private final int field24067;
    private final float field24068;
 
-   public Class5397(Class3303 var1, int var2, Item var3, int var4, int var5, int var6) {
+   public Class5397(IItemProvider var1, int var2, Item var3, int var4, int var5, int var6) {
       this(var1, var2, 1, var3, var4, var5, var6);
    }
 
-   public Class5397(Class3303 var1, int var2, int var3, Item var4, int var5, int var6, int var7) {
+   public Class5397(IItemProvider var1, int var2, int var3, Item var4, int var5, int var6, int var7) {
       this.field24061 = new ItemStack(var1);
       this.field24062 = var2;
       this.field24063 = var3;

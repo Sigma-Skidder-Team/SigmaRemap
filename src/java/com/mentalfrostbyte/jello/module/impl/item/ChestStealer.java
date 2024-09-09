@@ -2,8 +2,8 @@ package com.mentalfrostbyte.jello.module.impl.item;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -55,7 +55,7 @@ public class ChestStealer extends Module {
     }
 
     @EventTarget
-    public void method16365(Class4399 var1) {
+    public void method16365(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             if (this.getBooleanValueFromSetttingName("Aura")) {
                 if (this.field23624.method27121() > 2000L && this.field23621) {
@@ -91,11 +91,11 @@ public class ChestStealer extends Module {
                     if (!this.field23621
                             && (
                             this.field23625 == null
-                                    || mc.player.method3276(var9, var10, var11)
-                                    > mc.player.method3276(var9, var10, var11)
+                                    || mc.player.getDistanceNearest(var9, var10, var11)
+                                    > mc.player.getDistanceNearest(var9, var10, var11)
                     )
                             && !var8
-                            && Math.sqrt(mc.player.method3276(var9, var10, var11)) < 5.0
+                            && Math.sqrt(mc.player.getDistanceNearest(var9, var10, var11)) < 5.0
                             && this.field23624.method27121() > 1000L
                             && mc.currentScreen == null) {
                         BlockRayTraceResult var12 = (BlockRayTraceResult) BlockUtil.method34570(var7.getPos());
@@ -103,9 +103,9 @@ public class ChestStealer extends Module {
                                 && var12.getPos().getY() == var7.getPos().getY()
                                 && var12.getPos().getZ() == var7.getPos().getZ()) {
                             this.field23625 = var7;
-                            float[] var13 = Class9142.method34144((double) var9 + 0.5, (double) var11 + 0.5, (double) var10 + 0.35);
-                            var1.method13918(var13[0]);
-                            var1.method13916(var13[1]);
+                            float[] var13 = RotationHelper.method34144((double) var9 + 0.5, (double) var11 + 0.5, (double) var10 + 0.35);
+                            var1.setPitch(var13[0]);
+                            var1.setYaw(var13[1]);
                             var14 = true;
                         }
                     }
@@ -127,13 +127,13 @@ public class ChestStealer extends Module {
     }
 
     @EventTarget
-    public void method16367(Class4415 var1) {
+    public void method16367(EventRender var1) {
         if (this.isEnabled()) {
             if (!(mc.currentScreen instanceof Class868)) {
                 this.field23621 = false;
                 this.field23623.stop();
                 this.field23623.method27120();
-                if (mc.currentScreen == null && Class7789.method25875()) {
+                if (mc.currentScreen == null && InvManagerUtils.method25875()) {
                     this.field23624.method27120();
                 }
             } else {
@@ -141,8 +141,8 @@ public class ChestStealer extends Module {
                     this.field23623.start();
                 }
 
-                if (!((float) Client.getInstance().method19939().method31333() < this.getNumberValueBySettingName("Delay") * 20.0F)) {
-                    if (Class7789.method25875()) {
+                if (!((float) Client.getInstance().getPlayerTracker().method31333() < this.getNumberValueBySettingName("Delay") * 20.0F)) {
+                    if (InvManagerUtils.method25875()) {
                         if (this.getBooleanValueFromSetttingName("Close")) {
                             mc.player.method2772();
                         }
@@ -155,9 +155,9 @@ public class ChestStealer extends Module {
                         } else {
                             boolean var5 = true;
 
-                            for (Class5839 var7 : var4.field4727.field25468) {
-                                if (var7.method18266() && var7.field25579 < var4.field4727.method18165() * 9) {
-                                    ItemStack var8 = var7.method18265();
+                            for (Slot var7 : var4.field4727.field25468) {
+                                if (var7.getHasStack() && var7.field25579 < var4.field4727.method18165() * 9) {
+                                    ItemStack var8 = var7.getStack();
                                     if (!this.method16369(var8)) {
                                         if (!this.field23621) {
                                             if ((float) this.field23623.method27121() < this.getNumberValueBySettingName("First Item") * 1000.0F) {
@@ -168,9 +168,9 @@ public class ChestStealer extends Module {
                                         }
 
                                         if (!this.getBooleanValueFromSetttingName("Fix ViaVersion")) {
-                                            Class7789.method25869(var4.field4727.field25471, var7.field25579, 0, ClickType.field14695, mc.player);
+                                            InvManagerUtils.method25869(var4.field4727.field25471, var7.field25579, 0, ClickType.field14695, mc.player);
                                         } else {
-                                            Class7789.method25870(var4.field4727.field25471, var7.field25579, 0, ClickType.field14695, mc.player, true);
+                                            InvManagerUtils.fixedClick(var4.field4727.field25471, var7.field25579, 0, ClickType.field14695, mc.player, true);
                                         }
 
                                         this.field23623.method27120();
@@ -293,7 +293,7 @@ public class ChestStealer extends Module {
                     if (var4 instanceof Class3292) {
                         return !BlockFly.method16733(var4);
                     } else if (!(var4 instanceof Class3308)
-                            && (!(var4 instanceof Class3263) || !Client.getInstance().getModuleManager().getModuleByClass(InvManager.class).getBooleanValueFromSetttingName("Archery"))) {
+                            && (!(var4 instanceof BowItem) || !Client.getInstance().getModuleManager().getModuleByClass(InvManager.class).getBooleanValueFromSetttingName("Archery"))) {
                         if (var4 == Items.field37883 && Client.getInstance().getModuleManager().getModuleByClass(AutoMLG.class).isEnabled()) {
                             return false;
                         } else {
@@ -332,7 +332,7 @@ public class ChestStealer extends Module {
                         return true;
                     }
                 } else {
-                    return Class7789.method25874(var1);
+                    return InvManagerUtils.method25874(var1);
                 }
             } else {
                 return !InvManager.method16444(var1);

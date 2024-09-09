@@ -10,7 +10,7 @@ public class Class5689 extends Class5651<Class1088, Class2873<Class1088>> {
    }
 
    public void method17853(Class1088 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      if (var1.method3005()) {
+      if (var1.isChild()) {
          this.field25098 *= 0.5F;
       }
 

@@ -1,9 +1,9 @@
 package com.mentalfrostbyte.jello.module.impl.gui.classic;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.ClickEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4430;
+import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 
@@ -13,13 +13,13 @@ public class KeyStrokes extends Module {
     }
 
     @EventTarget
-    private void method16626(Class4415 var1) {
+    private void method16626(EventRender var1) {
         if (!this.isEnabled() || mc.player == null) {
         }
     }
 
     @EventTarget
-    private void method16627(Class4430 var1) {
+    private void method16627(EventKeyPress var1) {
         if (!this.isEnabled() || mc.player == null) {
         }
     }
@@ -27,7 +27,7 @@ public class KeyStrokes extends Module {
     @EventTarget
     private void method16628(ClickEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (var1.method13976() != ClickEvent.Button.LEFT && var1.method13976() != ClickEvent.Button.RIGHT) {
+            if (var1.getButton() != ClickEvent.Button.LEFT && var1.getButton() != ClickEvent.Button.RIGHT) {
             }
         }
     }

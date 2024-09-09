@@ -13,7 +13,7 @@ public class Class2619 extends Class2595 {
    @Override
    public boolean method10803() {
       ServerPlayerEntity var3 = (ServerPlayerEntity)this.field16901.method4400();
-      boolean var4 = var3 != null && !var3.isSpectator() && !var3.abilities.isFlying && !var3.method3250();
+      boolean var4 = var3 != null && !var3.isSpectator() && !var3.abilities.isFlying && !var3.isInWater();
       return !this.field16901.method4402() && var4 && this.field16901.method4405();
    }
 

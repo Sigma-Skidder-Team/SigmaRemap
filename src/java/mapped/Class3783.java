@@ -25,8 +25,8 @@ public class Class3783 extends Class3758 {
                   for (String var9 : var4) {
                      if (var9.length() <= 32) {
                         var5.add(var9);
-                     } else if (!Class8042.method27612().method21941()) {
-                        Class8042.method27613()
+                     } else if (!ViaVersion3.method27612().method21941()) {
+                        ViaVersion3.method27613()
                            .method27366()
                            .warning("Ignoring incoming plugin channel register of '" + var9 + "', as it is longer than 32 characters");
                      }
@@ -40,8 +40,8 @@ public class Class3783 extends Class3758 {
                   var0.method30560(Class4750.field22521, Joiner.on('\u0000').join(var5).getBytes(StandardCharsets.UTF_8));
                }
             } else {
-               if (!Class8042.method27612().method21941()) {
-                  Class8042.method27613().method27366().warning("Ignoring incoming plugin channel, as it is longer than 32 characters: " + var3);
+               if (!ViaVersion3.method27612().method21941()) {
+                  ViaVersion3.method27613().method27366().warning("Ignoring incoming plugin channel, as it is longer than 32 characters: " + var3);
                }
 
                var0.method30578();

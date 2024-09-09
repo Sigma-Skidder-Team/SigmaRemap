@@ -56,7 +56,7 @@ public class Class196 implements Class197 {
       }
    }
 
-   public void method605(Class7481 var1, boolean var2) {
+   public void method605(ChunkPos var1, boolean var2) {
       if (this.field741 != null) {
          this.field741.method662(var1, var2);
       }
@@ -96,7 +96,7 @@ public class Class196 implements Class197 {
       }
    }
 
-   public void method609(Class7481 var1, boolean var2) {
+   public void method609(ChunkPos var1, boolean var2) {
       if (this.field741 != null) {
          this.field741.method663(var1, var2);
       }

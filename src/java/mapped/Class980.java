@@ -17,15 +17,15 @@ public class Class980 extends Class927 {
 
    @Override
    public void method3682(ListNBT var1) {
-      for (int var4 = 0; var4 < this.method3629(); var4++) {
-         this.method3621(var4, ItemStack.EMPTY);
+      for (int var4 = 0; var4 < this.getSizeInventory(); var4++) {
+         this.setInventorySlotContents(var4, ItemStack.EMPTY);
       }
 
       for (int var7 = 0; var7 < var1.size(); var7++) {
          CompoundNBT var5 = var1.method153(var7);
          int var6 = var5.getByte("Slot") & 255;
-         if (var6 >= 0 && var6 < this.method3629()) {
-            this.method3621(var6, ItemStack.method32104(var5));
+         if (var6 >= 0 && var6 < this.getSizeInventory()) {
+            this.setInventorySlotContents(var6, ItemStack.method32104(var5));
          }
       }
    }
@@ -34,8 +34,8 @@ public class Class980 extends Class927 {
    public ListNBT method3683() {
       ListNBT var3 = new ListNBT();
 
-      for (int var4 = 0; var4 < this.method3629(); var4++) {
-         ItemStack var5 = this.method3618(var4);
+      for (int var4 = 0; var4 < this.getSizeInventory(); var4++) {
+         ItemStack var5 = this.getStackInSlot(var4);
          if (!var5.isEmpty()) {
             CompoundNBT var6 = new CompoundNBT();
             var6.method100("Slot", (byte)var4);
@@ -48,26 +48,26 @@ public class Class980 extends Class927 {
    }
 
    @Override
-   public boolean method3623(PlayerEntity var1) {
-      return this.field5457 != null && !this.field5457.method3768(var1) ? false : super.method3623(var1);
+   public boolean isUsableByPlayer(PlayerEntity var1) {
+      return this.field5457 != null && !this.field5457.method3768(var1) ? false : super.isUsableByPlayer(var1);
    }
 
    @Override
-   public void method3631(PlayerEntity var1) {
+   public void openInventory(PlayerEntity var1) {
       if (this.field5457 != null) {
          this.field5457.method3766();
       }
 
-      super.method3631(var1);
+      super.openInventory(var1);
    }
 
    @Override
-   public void method3632(PlayerEntity var1) {
+   public void closeInventory(PlayerEntity var1) {
       if (this.field5457 != null) {
          this.field5457.method3767();
       }
 
-      super.method3632(var1);
+      super.closeInventory(var1);
       this.field5457 = null;
    }
 }

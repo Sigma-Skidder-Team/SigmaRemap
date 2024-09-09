@@ -4,11 +4,11 @@ import net.minecraft.block.BlockState;
 
 public class Class3386 extends Block {
    private static String[] field18993;
-   public static final Class8552<Class113> field18994 = Class8820.field39713;
+   public static final Class8552<Direction> field18994 = Class8820.field39713;
 
    public Class3386(AbstractBlock var1) {
       super(var1);
-      this.method11578(this.method11579().method23465(field18994, Class113.field414));
+      this.method11578(this.method11579().method23465(field18994, Direction.field414));
    }
 
    @Override
@@ -16,11 +16,11 @@ public class Class3386 extends Block {
       switch (Class9779.field45746[var2.ordinal()]) {
          case 1:
          case 2:
-            switch (Class9779.field45745[var1.<Class113>method23463(field18994).ordinal()]) {
+            switch (Class9779.field45745[var1.<Direction>method23463(field18994).ordinal()]) {
                case 1:
-                  return var1.method23465(field18994, Class113.field415);
+                  return var1.method23465(field18994, Direction.field415);
                case 2:
-                  return var1.method23465(field18994, Class113.field413);
+                  return var1.method23465(field18994, Direction.field413);
                default:
                   return var1;
             }
@@ -36,6 +36,6 @@ public class Class3386 extends Block {
 
    @Override
    public BlockState method11495(Class5909 var1) {
-      return this.method11579().method23465(field18994, var1.method18354().method544());
+      return this.method11579().method23465(field18994, var1.method18354().getAxis());
    }
 }

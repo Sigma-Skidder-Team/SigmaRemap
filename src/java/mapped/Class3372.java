@@ -69,7 +69,7 @@ public class Class3372 extends Class3241 {
          method11966(var9, var2, var3);
          return ActionResultType.field14819;
       } else {
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       }
    }
 

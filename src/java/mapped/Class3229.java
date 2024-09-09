@@ -78,7 +78,7 @@ public class Class3229 extends Class3227 {
       Direction[] var7 = var1.method18349();
 
       for (Direction var11 : var7) {
-         if (var11.method544().method324()) {
+         if (var11.getAxis().method324()) {
             var4 = var4.method23465(field18669, var11.method536());
             if (var4.method23443(var5, var6)) {
                return var4;

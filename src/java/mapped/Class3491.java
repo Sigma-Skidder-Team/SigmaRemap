@@ -22,9 +22,9 @@ public class Class3491 extends Class3490 {
    @Override
    public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
       return super.method11490(var1, var2, var3)
-         || var1.method23448(Blocks.NETHERRACK)
-         || var1.method23448(Blocks.SOUL_SAND)
-         || var1.method23448(Blocks.SOUL_SOIL);
+         || var1.isIn(Blocks.NETHERRACK)
+         || var1.isIn(Blocks.SOUL_SAND)
+         || var1.isIn(Blocks.SOUL_SOIL);
    }
 
    @Override
@@ -36,7 +36,7 @@ public class Class3491 extends Class3490 {
 
       for (int var13 = 0; var13 < 3; var13++) {
          if (var4.nextBoolean()) {
-            var2.method6746(
+            var2.addParticle(
                ParticleTypes.field34092,
                var9 + var4.nextDouble() / 5.0,
                (double)var3.getY() + (0.5 - var4.nextDouble()),
@@ -53,8 +53,8 @@ public class Class3491 extends Class3490 {
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (!var2.isRemote && var2.method6997() != Difficulty.field14351 && var4 instanceof LivingEntity) {
          LivingEntity var7 = (LivingEntity)var4;
-         if (!var7.method2760(DamageSource.field39007)) {
-            var7.method3035(new Class2023(Effects.WITHER, 40));
+         if (!var7.isInvulnerableTo(DamageSource.field39007)) {
+            var7.addPotionEffect(new EffectInstance(Effects.WITHER, 40));
          }
       }
    }

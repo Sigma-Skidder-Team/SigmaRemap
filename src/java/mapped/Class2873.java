@@ -54,7 +54,7 @@ public class Class2873<T extends Class1088> extends Class2866<T> {
       this.field17774.field31036 = 0.0F;
       this.field17775.field31036 = 0.0F;
       this.field17787.field31035 = (float) (Math.PI / 2);
-      if (!var1.method3250() && var1.method3226()) {
+      if (!var1.isInWater() && var1.isOnGround()) {
          float var9 = !var1.method5047() ? 1.0F : 4.0F;
          float var10 = !var1.method5047() ? 1.0F : 2.0F;
          float var11 = 5.0F;

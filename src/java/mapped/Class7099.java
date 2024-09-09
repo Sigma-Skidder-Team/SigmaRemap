@@ -20,7 +20,7 @@ public class Class7099 extends Class7092 {
    @Override
    public Class8266 method22068(Class1662 var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
       BlockState var9 = var5.field35531;
-      if (var9.method23448(Blocks.field37114)) {
+      if (var9.isIn(Blocks.field37114)) {
          String var10 = var5.field35532.getString("final_state");
          Class8268 var11 = new Class8268(new StringReader(var10), false);
 
@@ -30,7 +30,7 @@ public class Class7099 extends Class7092 {
             throw new RuntimeException(var13);
          }
 
-         return var11.method28837().method23448(Blocks.field36894) ? null : new Class8266(var5.field35530, var11.method28837(), (CompoundNBT)null);
+         return var11.method28837().isIn(Blocks.field36894) ? null : new Class8266(var5.field35530, var11.method28837(), (CompoundNBT)null);
       } else {
          return var5;
       }

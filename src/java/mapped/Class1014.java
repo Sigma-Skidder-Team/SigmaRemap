@@ -14,12 +14,12 @@ public abstract class Class1014 extends TameableEntity {
 
    public boolean method4404(ServerPlayerEntity var1) {
       CompoundNBT var4 = new CompoundNBT();
-      var4.method109("id", this.method3297());
-      this.method3294(var4);
+      var4.method109("id", this.getEntityString());
+      this.writeWithoutTypeId(var4);
       if (!var1.method2948(var4)) {
          return false;
       } else {
-         this.method2904();
+         this.remove();
          return true;
       }
    }

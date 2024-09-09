@@ -17,11 +17,11 @@ public class Class2738 extends Class2737 {
    @Override
    public Vector3d method10943() {
       Vector3d var3 = null;
-      if (this.field17258.method3250()) {
+      if (this.field17258.isInWater()) {
          var3 = Class8037.method27583(this.field17258, 15, 15);
       }
 
-      if (this.field17258.method3013().nextFloat() >= this.field17266) {
+      if (this.field17258.getRNG().nextFloat() >= this.field17266) {
          var3 = this.method10946();
       }
 
@@ -44,7 +44,7 @@ public class Class2738 extends Class2737 {
       )) {
          if (!var3.equals(var7)) {
             Block var8 = this.field17258.world.getBlockState(var5.method8377(var7, Direction.DOWN)).getBlock();
-            boolean var9 = var8 instanceof Class3465 || var8.method11540(BlockTags.field32751);
+            boolean var9 = var8 instanceof Class3465 || var8.isIn(BlockTags.field32751);
             if (var9 && this.field17258.world.method7007(var7) && this.field17258.world.method7007(var4.method8377(var7, Direction.field673))) {
                return Vector3d.method11330(var7);
             }

@@ -3,8 +3,8 @@ package com.mentalfrostbyte.jello.module.impl.player;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4400;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.EventHandAnimation;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
@@ -35,13 +35,13 @@ public class OldHitting extends Module {
     @EventTarget
     @HigherPriority
     @Class5631
-    private void method16020(Class4399 var1) {
+    private void method16020(EventUpdate var1) {
         if (this.isEnabled() || JelloPortal.method27372() == ViaVerList.field26129) {
             if (var1.method13921()) {
                 boolean var4 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof ItemSword;
                 boolean var5 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988();
                 boolean var6 = true;
-                if (!mc.player.method3331()
+                if (!mc.player.isSneaking()
                         && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK
                         && !Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988()) {
                     BlockRayTraceResult var7 = (BlockRayTraceResult) mc.objectMouseOver;
@@ -109,7 +109,7 @@ public class OldHitting extends Module {
                     SEntityEquipmentPacket var4 = (SEntityEquipmentPacket) var1.getPacket();
 
                     var4.method17562().removeIf(var6 -> var4.method17561() == mc.player.getEntityId()
-                            && var6.getFirst() == Class2106.field13732
+                            && var6.getFirst() == EquipmentSlotType.field13732
                             && var6.getSecond() != null
                             && var6.getSecond().getItem() == Items.field38119);
                 }
@@ -120,45 +120,45 @@ public class OldHitting extends Module {
     @EventTarget
     @LowerPriority
     @Class5631
-    private void method16022(Class4400 var1) {
+    private void method16022(EventHandAnimation var1) {
         if (this.isEnabled() || JelloPortal.method27372() == ViaVerList.field26129) {
             float var4 = var1.method13924();
-            if (var1.method13926() && var1.method13927() == HandSide.field14417 && var1.method13928().getItem() instanceof Class3334) {
+            if (var1.method13926() && var1.getHand() == HandSide.field14417 && var1.getItemStack().getItem() instanceof Class3334) {
                 var1.method13931(false);
-            } else if (var1.method13927() != HandSide.field14417 || !field23408) {
+            } else if (var1.getHand() != HandSide.field14417 || !field23408) {
                 if (field23408 && var1.method13926()) {
-                    var1.method13900(true);
+                    var1.setCancelled(true);
                     String var5 = this.getStringSettingValueByName("Animation");
                     switch (var5) {
                         case "Vanilla":
-                            this.method16026(0.0F, var4, var1.method13929());
+                            this.method16026(0.0F, var4, var1.getMatrix());
                             break;
                         case "Tap":
-                            this.method16027(0.0F, var4, var1.method13929());
+                            this.method16027(0.0F, var4, var1.getMatrix());
                             break;
                         case "Tap2":
-                            this.method16028(0.0F, var4, var1.method13929());
+                            this.method16028(0.0F, var4, var1.getMatrix());
                             break;
                         case "Slide":
-                            this.method16029(0.0F, var4, var1.method13929());
+                            this.method16029(0.0F, var4, var1.getMatrix());
                             break;
                         case "Slide2":
-                            this.method16030(0.0F, var4, var1.method13929());
+                            this.method16030(0.0F, var4, var1.getMatrix());
                             break;
                         case "Scale":
-                            this.method16031(0.0F, var4, var1.method13929());
+                            this.method16031(0.0F, var4, var1.getMatrix());
                             break;
                         case "Leaked":
-                            this.method16032(0.0F, var4, var1.method13929());
+                            this.method16032(0.0F, var4, var1.getMatrix());
                             break;
                         case "Ninja":
-                            this.method16025(0.0F, var4, var1.method13929());
+                            this.method16025(0.0F, var4, var1.getMatrix());
                             break;
                         case "Tomy":
-                            this.method16024(0.0F, var4, var1.method13929());
+                            this.method16024(0.0F, var4, var1.getMatrix());
                             break;
                         case "Down":
-                            this.method16033(0.0F, var4, var1.method13929());
+                            this.method16033(0.0F, var4, var1.getMatrix());
                     }
                 }
             }

@@ -55,7 +55,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
             var6 = !var1.method3091().isEmpty() ? Class2278.field14837 : Class2278.field14836;
          }
 
-         if (var1.method2967() != HandSide.field14418) {
+         if (var1.getPrimaryHand() != HandSide.field14418) {
             var4.field17440 = var6;
             var4.field17439 = var5;
          } else {
@@ -74,7 +74,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
       if (var4.isEmpty()) {
          return Class2278.field14836;
       } else {
-         if (var0.method3149() == var1 && var0.method3159() > 0) {
+         if (var0.getActiveHand() == var1 && var0.getItemInUseCount() > 0) {
             Class2103 var5 = var4.method32138();
             if (var5 == Class2103.field13709) {
                return Class2278.field14838;
@@ -88,10 +88,10 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
                return Class2278.field14840;
             }
 
-            if (var5 == Class2103.field13712 && var1 == var0.method3149()) {
+            if (var5 == Class2103.field13712 && var1 == var0.getActiveHand()) {
                return Class2278.field14841;
             }
-         } else if (!var0.field4947 && var4.getItem() == Items.field38148 && Class3261.method11755(var4)) {
+         } else if (!var0.isSwingInProgress && var4.getItem() == Items.field38148 && Class3261.method11755(var4)) {
             return Class2278.field14842;
          }
 
@@ -149,31 +149,31 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
    }
 
    public void method17842(AbstractClientPlayerEntity var1, MatrixStack var2, float var3, float var4, float var5) {
-      float var8 = var1.method2999(var5);
-      if (!var1.method3165()) {
+      float var8 = var1.getSwimAnimation(var5);
+      if (!var1.isElytraFlying()) {
          if (!(var8 > 0.0F)) {
             super.method17842(var1, var2, var3, var4, var5);
          } else {
             super.method17842(var1, var2, var3, var4, var5);
-            float var9 = !var1.method3250() ? -90.0F : -90.0F - var1.rotationPitch;
+            float var9 = !var1.isInWater() ? -90.0F : -90.0F - var1.rotationPitch;
             float var10 = MathHelper.lerp(var8, 0.0F, var9);
             var2.rotate(Vector3f.field32898.rotationDegrees(var10));
-            if (var1.method3166()) {
+            if (var1.isActualySwimming()) {
                var2.translate(0.0, -1.0, 0.3F);
             }
          }
       } else {
          super.method17842(var1, var2, var3, var4, var5);
-         float var21 = (float)var1.method3167() + var5;
+         float var21 = (float)var1.getTicksElytraFlying() + var5;
          float var22 = MathHelper.clamp(var21 * var21 / 100.0F, 0.0F, 1.0F);
-         if (!var1.method3130()) {
+         if (!var1.isSpinAttacking()) {
             var2.rotate(Vector3f.field32898.rotationDegrees(var22 * (-90.0F - var1.rotationPitch)));
          }
 
-         Vector3d var11 = var1.method3281(var5);
-         Vector3d var12 = var1.getVec();
-         double var13 = Entity.method3234(var12);
-         double var15 = Entity.method3234(var11);
+         Vector3d var11 = var1.getLook(var5);
+         Vector3d var12 = var1.getMotion();
+         double var13 = Entity.horizontalMag(var12);
+         double var15 = Entity.horizontalMag(var11);
          if (var13 > 0.0 && var15 > 0.0) {
             double var17 = (var12.x * var11.x + var12.z * var11.z) / Math.sqrt(var13 * var15);
             double var19 = var12.x * var11.z - var12.z * var11.x;

@@ -97,10 +97,10 @@ public class Class9195 {
 
    private static int method34455(Class6619 var0, BlockPos var1, int var2, ItemStack var3) throws CommandSyntaxException {
       TileEntity var6 = var0.method20172().getTileEntity(var1);
-      if (var6 instanceof Class920) {
-         Class920 var7 = (Class920)var6;
-         if (var2 >= 0 && var2 < var7.method3629()) {
-            var7.method3621(var2, var3);
+      if (var6 instanceof IInventory) {
+         IInventory var7 = (IInventory)var6;
+         if (var2 >= 0 && var2 < var7.getSizeInventory()) {
+            var7.setInventorySlotContents(var2, var3);
             var0.method20179(
                new TranslationTextComponent("commands.replaceitem.block.success", var1.getX(), var1.getY(), var1.getZ(), var3.method32173()),
                true
@@ -119,13 +119,13 @@ public class Class9195 {
 
       for (Entity var8 : var1) {
          if (var8 instanceof ServerPlayerEntity) {
-            ((ServerPlayerEntity)var8).field4904.method18130();
+            ((ServerPlayerEntity)var8).container.detectAndSendChanges();
          }
 
          if (var8.method2963(var2, var3.copy())) {
             var6.add(var8);
             if (var8 instanceof ServerPlayerEntity) {
-               ((ServerPlayerEntity)var8).field4904.method18130();
+               ((ServerPlayerEntity)var8).container.detectAndSendChanges();
             }
          }
       }

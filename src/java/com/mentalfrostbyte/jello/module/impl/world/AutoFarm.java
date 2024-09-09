@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.world;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
@@ -19,7 +19,7 @@ public class AutoFarm extends Module {
     }
 
     @EventTarget
-    public void method16865(Class4399 var1) {
+    public void method16865(EventUpdate var1) {
         if (this.isEnabled()) {
             if (mc.player != null && mc.world != null) {
                 for (BlockPos var5 : BlockUtil.method34545(BlockUtil.method34561(mc.playerController.getBlockReachDistance()))) {
@@ -30,15 +30,15 @@ public class AutoFarm extends Module {
                             if (var14 != null && var14.getItem() instanceof Class3321) {
                                 if (var6.<Integer>method23463(Class8820.field39742) != 7) {
                                     float[] var18 = BlockUtil.method34542(var5, Direction.DOWN);
-                                    var1.method13918(var18[0]);
-                                    var1.method13916(var18[1]);
+                                    var1.setPitch(var18[0]);
+                                    var1.setYaw(var18[1]);
                                     var1.method13922(new Class1358(this, var18));
                                     return;
                                 }
                             } else if (var6.<Integer>method23463(Class8820.field39742) == 7) {
                                 float[] var17 = BlockUtil.method34542(var5, Direction.DOWN);
-                                var1.method13918(var17[0]);
-                                var1.method13916(var17[1]);
+                                var1.setPitch(var17[0]);
+                                var1.setYaw(var17[1]);
                                 var1.method13922(new Class532(this, var5));
                                 mc.world.method7179(var5, false);
                                 return;
@@ -50,8 +50,8 @@ public class AutoFarm extends Module {
                                     BlockState var8 = mc.world.getBlockState(var5.up());
                                     if (!(var7.getBlock() instanceof Class3448) && var8.getBlock() instanceof Class3448) {
                                         float[] var9 = BlockUtil.method34541(var5.up());
-                                        var1.method13918(var9[0]);
-                                        var1.method13916(var9[1]);
+                                        var1.setPitch(var9[0]);
+                                        var1.setYaw(var9[1]);
                                         var1.method13922(new Class1431(this, var5));
                                         mc.world.method7179(var5.up(), false);
                                     }
@@ -61,39 +61,39 @@ public class AutoFarm extends Module {
                                 BlockState var15 = mc.world.getBlockState(var5.up());
                                 if (!(var12.getBlock() instanceof Class3408) && var15.getBlock() instanceof Class3408) {
                                     float[] var19 = BlockUtil.method34541(var5.up());
-                                    var1.method13918(var19[0]);
-                                    var1.method13916(var19[1]);
+                                    var1.setPitch(var19[0]);
+                                    var1.setYaw(var19[1]);
                                     var1.method13922(new Class654(this, var5));
                                     mc.world.method7179(var5.up(), false);
                                 }
                             }
                         } else if (mc.rightClickDelayTimer == 0) {
                             BlockState var13 = mc.world.getBlockState(var5.up());
-                            int var16 = Class7789.method25843(Items.field37841);
+                            int var16 = InvManagerUtils.method25843(Items.field37841);
                             if (var16 == -1) {
-                                var16 = Class7789.method25843(Items.field38052);
+                                var16 = InvManagerUtils.method25843(Items.field38052);
                             }
 
                             if (var16 == -1) {
-                                var16 = Class7789.method25843(Items.field38053);
+                                var16 = InvManagerUtils.method25843(Items.field38053);
                             }
 
                             if (var16 == -1) {
-                                var16 = Class7789.method25843(Items.field38112);
+                                var16 = InvManagerUtils.method25843(Items.field38112);
                             }
 
                             if (var16 == -1) {
-                                var16 = Class7789.method25843(Items.field37960);
+                                var16 = InvManagerUtils.method25843(Items.field37960);
                             }
 
                             if (var16 == -1) {
-                                var16 = Class7789.method25843(Items.field37959);
+                                var16 = InvManagerUtils.method25843(Items.field37959);
                             }
 
                             if (var16 != -1 && var13.getBlock() instanceof AirBlock) {
                                 float[] var20 = BlockUtil.method34542(var5, Direction.field673);
-                                var1.method13918(var20[0]);
-                                var1.method13916(var20[1]);
+                                var1.setPitch(var20[0]);
+                                var1.setYaw(var20[1]);
                                 var1.method13922(new Class649(this, var16, var20));
                                 mc.rightClickDelayTimer = 2;
                                 BlockState var11 = Blocks.field36539.method11579();

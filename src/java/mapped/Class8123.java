@@ -3,11 +3,11 @@ package mapped;
 import com.google.gson.JsonElement;
 
 public class Class8123 {
-   private final Class6355 field34935;
+   private final ViaVersion7 field34935;
    private final Class8584 field34936;
    private final Class8584 field34937;
 
-   public Class8123(Class6355 var1, Class8584 var2, Class8584 var3) {
+   public Class8123(ViaVersion7 var1, Class8584 var2, Class8584 var3) {
       this.field34935 = var1;
       this.field34936 = var2;
       this.field34937 = var3;
@@ -226,7 +226,7 @@ public class Class8123 {
    }
 
    // $VF: synthetic method
-   public static Class6355 method28143(Class8123 var0) {
+   public static ViaVersion7 method28143(Class8123 var0) {
       return var0.field34935;
    }
 }

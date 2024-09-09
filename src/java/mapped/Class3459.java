@@ -56,7 +56,7 @@ public class Class3459 extends Block {
       Direction var6 = var1.<Direction>method23463(field19281);
       BlockPos var7 = var3.method8349(var6.method536());
       BlockState var8 = var2.getBlockState(var7);
-      return var6.method544().method324() && var8.method23454(var2, var7, var6);
+      return var6.getAxis().method324() && var8.method23454(var2, var7, var6);
    }
 
    @Override
@@ -75,7 +75,7 @@ public class Class3459 extends Block {
       Direction[] var7 = var1.method18349();
 
       for (Direction var11 : var7) {
-         if (var11.method544().method324()) {
+         if (var11.getAxis().method324()) {
             Direction var12 = var11.method536();
             var4 = var4.method23465(field19281, var12);
             if (var4.method23443(var5, var6)) {
@@ -104,14 +104,14 @@ public class Class3459 extends Block {
       for (int var17 = 1; var17 < 42; var17++) {
          BlockPos var18 = var2.method8350(var10, var17);
          BlockState var19 = var1.getBlockState(var18);
-         if (var19.method23448(Blocks.TRIPWIRE_HOOK)) {
+         if (var19.isIn(Blocks.TRIPWIRE_HOOK)) {
             if (var19.<Direction>method23463(field19281) == var10.method536()) {
                var15 = var17;
             }
             break;
          }
 
-         if (!var19.method23448(Blocks.TRIPWIRE) && var17 != var6) {
+         if (!var19.isIn(Blocks.TRIPWIRE) && var17 != var6) {
             var16[var17] = null;
             var13 = false;
          } else {
@@ -186,7 +186,7 @@ public class Class3459 extends Block {
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var5 && !var1.method23448(var4.getBlock())) {
+      if (!var5 && !var1.isIn(var4.getBlock())) {
          boolean var8 = var1.<Boolean>method23463(field19283);
          boolean var9 = var1.<Boolean>method23463(field19282);
          if (var8 || var9) {

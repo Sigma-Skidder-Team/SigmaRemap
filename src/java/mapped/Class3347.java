@@ -61,11 +61,11 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
             Class943 var12 = (Class943)var10;
             var9.method4064(var12);
             var4.method2766(new Class953((var1x, var2x, var3x) -> Class5813.method18162(var1x, var2x, var9), field18863));
-            var4.method2911(Class8876.field40156);
+            var4.method2911(Stats.field40156);
             Class4388.method13832(var4, true);
             return ActionResultType.field14819;
          } else {
-            return ActionResultType.field14818;
+            return ActionResultType.SUCCESS;
          }
       } else {
          return ActionResultType.method9002(var2.isRemote);
@@ -88,7 +88,7 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
          double var16 = (double)(var4.nextFloat() * (float)var8);
          double var18 = ((double)var4.nextFloat() - 0.5) * 0.125;
          double var20 = (double)(var4.nextFloat() * (float)var9);
-         var2.method6746(ParticleTypes.field34090, var10, var12, var14, var16, var18, var20);
+         var2.addParticle(ParticleTypes.field34090, var10, var12, var14, var16, var18, var20);
       }
    }
 

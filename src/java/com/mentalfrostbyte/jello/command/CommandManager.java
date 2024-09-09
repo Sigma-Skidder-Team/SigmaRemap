@@ -108,8 +108,8 @@ public class CommandManager {
     @EventTarget
     private void onSendPacket(SendPacketEvent var1) {
         if (Client.getInstance().getClientMode() != ClientMode.NOADDONS) {
-            if (var1.method13932() instanceof CChatMessagePacket) {
-                CChatMessagePacket var4 = (CChatMessagePacket) var1.method13932();
+            if (var1.getPacket() instanceof CChatMessagePacket) {
+                CChatMessagePacket var4 = (CChatMessagePacket) var1.getPacket();
                 String var5 = var4.getMessage();
                 if (var5.startsWith(".") && var5.substring(1).startsWith(".")) {
                     var4.message = var5.substring(1);
@@ -117,7 +117,7 @@ public class CommandManager {
                 }
 
                 if (var5.startsWith(".")) {
-                    var1.method13900(true);
+                    var1.setCancelled(true);
                     this.method30236();
                     String[] var6 = var5.substring(".".length()).split(" ");
                     Command var7 = this.method30231(var6[0]);
@@ -148,10 +148,10 @@ public class CommandManager {
                 }
             }
 
-            if (var1.method13932() instanceof CTabCompletePacket) {
-                CTabCompletePacket var11 = (CTabCompletePacket) var1.method13932();
+            if (var1.getPacket() instanceof CTabCompletePacket) {
+                CTabCompletePacket var11 = (CTabCompletePacket) var1.getPacket();
                 if (var11.getCommand().startsWith(".")) {
-                    var1.method13900(true);
+                    var1.setCancelled(true);
                 }
             }
         }

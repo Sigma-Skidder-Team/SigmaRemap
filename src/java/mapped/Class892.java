@@ -22,13 +22,13 @@ public class Class892 extends Class890 {
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 == 3) {
          double var4 = 0.08;
 
          for (int var6 = 0; var6 < 8; var6++) {
             this.world
-               .method6746(
+               .addParticle(
                   new Class7438(ParticleTypes.field34082, this.method3509()),
                   this.getPosX(),
                   this.getPosY(),
@@ -44,7 +44,7 @@ public class Class892 extends Class890 {
    @Override
    public void method3465(EntityRayTraceResult var1) {
       super.method3465(var1);
-      var1.getEntity().method2741(DamageSource.method31123(this, this.method3460()), 0.0F);
+      var1.getEntity().attackEntityFrom(DamageSource.method31123(this, this.method3460()), 0.0F);
    }
 
    @Override
@@ -58,15 +58,15 @@ public class Class892 extends Class890 {
             }
 
             for (int var5 = 0; var5 < var4; var5++) {
-               Class1089 var6 = EntityType.field41014.method33215(this.world);
+               Class1089 var6 = EntityType.field41014.create(this.world);
                var6.method4770(-24000);
-               var6.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
-               this.world.method6916(var6);
+               var6.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
+               this.world.addEntity(var6);
             }
          }
 
-         this.world.method6786(this, (byte)3);
-         this.method2904();
+         this.world.setEntityState(this, (byte)3);
+         this.remove();
       }
    }
 

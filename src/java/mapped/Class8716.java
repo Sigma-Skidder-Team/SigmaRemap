@@ -24,7 +24,7 @@ public class Class8716 {
 
    public void method31441(PlayerEntity var1) {
       try {
-         CompoundNBT var4 = var1.method3294(new CompoundNBT());
+         CompoundNBT var4 = var1.writeWithoutTypeId(new CompoundNBT());
          File var5 = File.createTempFile(var1.method3376() + "-", ".dat", this.field39330);
          CompressedStreamTools.writeCompressed(var4, var5);
          File var6 = new File(this.field39330, var1.method3376() + ".dat");
@@ -50,7 +50,7 @@ public class Class8716 {
 
       if (var4 != null) {
          int var7 = var4.contains("DataVersion", 3) ? var4.getInt("DataVersion") : -1;
-         var1.method3295(Class8354.method29289(this.field39331, Class2108.field13749, var4, var7));
+         var1.read(Class8354.method29289(this.field39331, Class2108.field13749, var4, var7));
       }
 
       return var4;

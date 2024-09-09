@@ -12,7 +12,7 @@ import java.util.Set;
 public abstract class Class1255 extends Class1254 {
    private Iterator<Item> field6650;
    private Set<Item> field6651;
-   private Class5839 field6652;
+   private Slot field6652;
    private Item field6653;
    private float field6654;
 
@@ -22,7 +22,7 @@ public abstract class Class1255 extends Class1254 {
    }
 
    @Override
-   public void method5841(Class5839 var1) {
+   public void method5841(Slot var1) {
       super.method5841(var1);
       if (var1 != null && var1.field25579 < this.field6641.method18226()) {
          this.field6652 = null;
@@ -30,12 +30,12 @@ public abstract class Class1255 extends Class1254 {
    }
 
    @Override
-   public void method5858(IRecipe<?> var1, List<Class5839> var2) {
+   public void method5858(IRecipe<?> var1, List<Slot> var2) {
       ItemStack var5 = var1.getRecipeOutput();
       this.field6637.method34738(var1);
-      this.field6637.method34734(Class120.method340(var5), ((Class5839)var2.get(2)).field25580, ((Class5839)var2.get(2)).field25581);
+      this.field6637.method34734(Class120.method340(var5), ((Slot)var2.get(2)).field25580, ((Slot)var2.get(2)).field25581);
       NonNullList var6 = var1.method14969();
-      this.field6652 = (Class5839)var2.get(1);
+      this.field6652 = (Slot)var2.get(1);
       if (this.field6651 == null) {
          this.field6651 = this.method5866();
       }
@@ -51,7 +51,7 @@ public abstract class Class1255 extends Class1254 {
 
          Class120 var9 = (Class120)var7.next();
          if (!var9.method337()) {
-            Class5839 var10 = (Class5839)var2.get(var8);
+            Slot var10 = (Slot)var2.get(var8);
             this.field6637.method34734(var9, var10.field25580, var10.field25581);
          }
       }

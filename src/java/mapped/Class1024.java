@@ -81,12 +81,12 @@ public class Class1024 extends Class1025 implements Class1023 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       ListNBT var4 = new ListNBT();
 
-      for (int var5 = 0; var5 < this.field5711.method3629(); var5++) {
-         ItemStack var6 = this.field5711.method3618(var5);
+      for (int var5 = 0; var5 < this.field5711.getSizeInventory(); var5++) {
+         ItemStack var6 = this.field5711.getStackInSlot(var5);
          if (!var6.isEmpty()) {
             var4.add(var6.method32112(new CompoundNBT()));
          }
@@ -109,8 +109,8 @@ public class Class1024 extends Class1025 implements Class1023 {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       ListNBT var4 = var1.method131("Inventory", 10);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
@@ -126,7 +126,7 @@ public class Class1024 extends Class1025 implements Class1023 {
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
       BlockState var5 = var2.getBlockState(var1.down());
-      return !var5.method23448(Blocks.field36395) && !var5.method23448(Blocks.SAND) ? 0.5F - var2.method7009(var1) : 10.0F;
+      return !var5.isIn(Blocks.field36395) && !var5.isIn(Blocks.SAND) ? 0.5F - var2.method7009(var1) : 10.0F;
    }
 
    @Override
@@ -144,7 +144,7 @@ public class Class1024 extends Class1025 implements Class1023 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.method2944(Class2106.field13731, new ItemStack(Items.field38148));
+      this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field38148));
    }
 
    @Override
@@ -153,20 +153,20 @@ public class Class1024 extends Class1025 implements Class1023 {
       if (this.rand.nextInt(300) == 0) {
          ItemStack var4 = this.getHeldItemMainhand();
          if (var4.getItem() == Items.field38148) {
-            Map var5 = Class7858.method26312(var4);
+            Map var5 = EnchantmentHelper.method26312(var4);
             var5.putIfAbsent(Class8122.field34931, 1);
-            Class7858.method26314(var5, var4);
-            this.method2944(Class2106.field13731, var4);
+            EnchantmentHelper.method26314(var5, var4);
+            this.setItemStackToSlot(EquipmentSlotType.field13731, var4);
          }
       }
    }
 
    @Override
-   public boolean method3345(Entity var1) {
-      if (super.method3345(var1)) {
+   public boolean isOnSameTeam(Entity var1) {
+      if (super.isOnSameTeam(var1)) {
          return true;
       } else {
-         return var1 instanceof LivingEntity && ((LivingEntity)var1).method3089() == Class7809.field33508
+         return var1 instanceof LivingEntity && ((LivingEntity)var1).getCreatureAttribute() == CreatureAttribute.field33508
             ? this.getTeam() == null && var1.getTeam() == null
             : false;
       }
@@ -203,12 +203,12 @@ public class Class1024 extends Class1025 implements Class1023 {
       if (!(var4.getItem() instanceof Class3301)) {
          Item var5 = var4.getItem();
          if (this.method4544(var5)) {
-            this.method3134(var1);
+            this.triggerItemPickupTrigger(var1);
             ItemStack var6 = this.field5711.method3676(var4);
             if (!var6.isEmpty()) {
                var4.method32180(var6.getCount());
             } else {
-               var1.method2904();
+               var1.remove();
             }
          }
       } else {
@@ -224,8 +224,8 @@ public class Class1024 extends Class1025 implements Class1023 {
    public boolean method2963(int var1, ItemStack var2) {
       if (!super.method2963(var1, var2)) {
          int var5 = var1 - 300;
-         if (var5 >= 0 && var5 < this.field5711.method3629()) {
-            this.field5711.method3621(var5, var2);
+         if (var5 >= 0 && var5 < this.field5711.getSizeInventory()) {
+            this.field5711.setInventorySlotContents(var5, var2);
             return true;
          } else {
             return false;
@@ -251,8 +251,8 @@ public class Class1024 extends Class1025 implements Class1023 {
          }
 
          var8.put(Class8122.field34929, 1);
-         Class7858.method26314(var8, var7);
-         this.method2944(Class2106.field13731, var7);
+         EnchantmentHelper.method26314(var8, var7);
+         this.setItemStackToSlot(EquipmentSlotType.field13731, var7);
       }
    }
 

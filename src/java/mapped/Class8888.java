@@ -16,16 +16,16 @@ public class Class8888 {
    private final Class7999 field40213 = Class7999.method27304();
    private String field40214;
 
-   public Class8888(Class3303 var1, int var2) {
+   public Class8888(IItemProvider var1, int var2) {
       this.field40210 = var1.method11581();
       this.field40211 = var2;
    }
 
-   public static Class8888 method32341(Class3303 var0) {
+   public static Class8888 method32341(IItemProvider var0) {
       return new Class8888(var0, 1);
    }
 
-   public static Class8888 method32342(Class3303 var0, int var1) {
+   public static Class8888 method32342(IItemProvider var0, int var1) {
       return new Class8888(var0, var1);
    }
 
@@ -33,11 +33,11 @@ public class Class8888 {
       return this.method32346(Class120.method342(var1));
    }
 
-   public Class8888 method32344(Class3303 var1) {
+   public Class8888 method32344(IItemProvider var1) {
       return this.method32345(var1, 1);
    }
 
-   public Class8888 method32345(Class3303 var1, int var2) {
+   public Class8888 method32345(IItemProvider var1, int var2) {
       for (int var5 = 0; var5 < var2; var5++) {
          this.method32346(Class120.method339(var1));
       }

@@ -33,12 +33,12 @@ public class Class3738 extends Class3676<LivingEntity> {
 
    @Override
    public boolean method12508(ServerWorld var1, LivingEntity var2) {
-      return var2.method2992().<List<LivingEntity>>method21410(Class8830.field39819).get().stream().anyMatch(this.field19861);
+      return var2.getBrain().<List<LivingEntity>>method21410(Class8830.field39819).get().stream().anyMatch(this.field19861);
    }
 
    @Override
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
-      Class6947<?> var7 = var2.method2992();
+      Brain<?> var7 = var2.getBrain();
       var7.<List<LivingEntity>>method21410(Class8830.field39819)
          .ifPresent(
             var3x -> var3x.stream()

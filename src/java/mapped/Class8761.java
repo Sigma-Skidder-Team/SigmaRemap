@@ -94,7 +94,7 @@ public class Class8761 {
 
    public Class8969 method31609(CompoundNBT var1) {
       if (!var1.contains("DataVersion", 99)) {
-         var1.method102("DataVersion", 500);
+         var1.putInt("DataVersion", 500);
       }
 
       Class8969 var4 = new Class8969();

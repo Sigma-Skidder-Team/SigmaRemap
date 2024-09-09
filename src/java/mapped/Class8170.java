@@ -43,7 +43,7 @@ public final class Class8170 {
          Class179 var11 = var8.getType().method33209();
          if (var11 != Class179.field628) {
             BlockPos var12 = var8.getPosition();
-            long var13 = Class7481.method24353(var12.getX() >> 4, var12.getZ() >> 4);
+            long var13 = ChunkPos.method24353(var12.getX() >> 4, var12.getZ() >> 4);
             var2.method30928(var13, var5x -> {
                Class7763 var8x = method28416(var12, var5x).method32499().method31969(var8.getType());
                if (var8x != null) {
@@ -102,7 +102,7 @@ public final class Class8170 {
             byte var17 = 6;
             Class6692 var18 = null;
             Class5093 var19 = null;
-            int var20 = MathHelper.method37773(var1.rand.nextFloat() * 4.0F);
+            int var20 = MathHelper.ceil(var1.rand.nextFloat() * 4.0F);
             int var21 = 0;
 
             for (int var22 = 0; var22 < var20; var22++) {
@@ -113,7 +113,7 @@ public final class Class8170 {
                double var25 = (double)var16 + 0.5;
                PlayerEntity var27 = var1.method7186(var23, (double)var10, var25, -1.0, false);
                if (var27 != null) {
-                  double var28 = var27.method3276(var23, (double)var10, var25);
+                  double var28 = var27.getDistanceNearest(var23, (double)var10, var25);
                   if (method28420(var1, var2, var12, var28)) {
                      if (var18 == null) {
                         var18 = method28424(var1, var8, var9, var0, var1.rand, var12);
@@ -130,7 +130,7 @@ public final class Class8170 {
                            return;
                         }
 
-                        var30.method3273(var23, (double)var10, var25, var1.rand.nextFloat() * 360.0F, 0.0F);
+                        var30.setLocationAndAngles(var23, (double)var10, var25, var1.rand.nextFloat() * 360.0F, 0.0F);
                         if (method28423(var1, var30, var28)) {
                            var19 = var30.method4276(var1, var1.method6807(var30.getPosition()), Class2202.field14391, var19, (CompoundNBT)null);
                            var13++;
@@ -158,7 +158,7 @@ public final class Class8170 {
          if (var0.method6947().method8317(new Vector3d((double)var2.getX() + 0.5, (double)var2.getY(), (double)var2.getZ() + 0.5), 24.0)) {
             return false;
          } else {
-            Class7481 var7 = new Class7481(var2);
+            ChunkPos var7 = new ChunkPos(var2);
             return Objects.equals(var7, var1.method7072()) || var0.getChunkProvider().method7352(var7);
          }
       } else {
@@ -177,7 +177,7 @@ public final class Class8170 {
                return false;
             } else {
                return Class6914.method21122(var10, var0, Class2202.field14391, var5, var0.rand)
-                  ? var0.method7051(var10.method33219((double)var5.getX() + 0.5, (double)var5.getY(), (double)var5.getZ() + 0.5))
+                  ? var0.hasNoCollisions(var10.method33219((double)var5.getX() + 0.5, (double)var5.getY(), (double)var5.getZ() + 0.5))
                   : false;
             }
          } else {
@@ -191,7 +191,7 @@ public final class Class8170 {
    @Nullable
    private static Class1006 method28422(ServerWorld var0, EntityType<?> var1) {
       try {
-         Entity var4 = var1.method33215(var0);
+         Entity var4 = var1.create(var0);
          if (!(var4 instanceof Class1006)) {
             throw new IllegalStateException("Trying to spawn a non-mob: " + Registry.ENTITY_TYPE.getKey(var1));
          } else {
@@ -233,7 +233,7 @@ public final class Class8170 {
    }
 
    private static BlockPos method28427(World var0, Chunk var1) {
-      Class7481 var4 = var1.method7072();
+      ChunkPos var4 = var1.method7072();
       int var5 = var4.method24356() + var0.rand.nextInt(16);
       int var6 = var4.method24357() + var0.rand.nextInt(16);
       int var7 = var1.method7071(Class101.field296, var5, var6) + 1;
@@ -260,18 +260,18 @@ public final class Class8170 {
    public static boolean method28429(Class2068 var0, Class1662 var1, BlockPos var2, EntityType<?> var3) {
       if (var0 == Class2068.field13474) {
          return true;
-      } else if (var3 != null && var1.method6810().method24523(var2)) {
+      } else if (var3 != null && var1.getWorldBorder().contains(var2)) {
          BlockState var6 = var1.getBlockState(var2);
          FluidState var7 = var1.getFluidState(var2);
          BlockPos var8 = var2.up();
          BlockPos var9 = var2.down();
          switch (Class8470.field36295[var0.ordinal()]) {
             case 1:
-               return var7.method23486(Class8953.field40469)
-                  && var1.getFluidState(var9).method23486(Class8953.field40469)
+               return var7.method23486(FluidTags.field40469)
+                  && var1.getFluidState(var9).method23486(FluidTags.field40469)
                   && !var1.getBlockState(var8).method23400(var1, var8);
             case 2:
-               return var7.method23486(Class8953.field40470);
+               return var7.method23486(FluidTags.field40470);
             case 3:
             default:
                BlockState var10 = var1.getBlockState(var9);
@@ -307,9 +307,9 @@ public final class Class8170 {
                   BlockPos var21 = method28431(var0, var11.field29311, var14, var15);
                   if (var11.field29311.method33206() && method28429(Class6914.method21120(var11.field29311), var0, var21, var11.field29311)) {
                      float var22 = var11.field29311.method33213();
-                     double var23 = MathHelper.method37778((double)var14, (double)var9 + (double)var22, (double)var9 + 16.0 - (double)var22);
-                     double var25 = MathHelper.method37778((double)var15, (double)var10 + (double)var22, (double)var10 + 16.0 - (double)var22);
-                     if (!var0.method7051(var11.field29311.method33219(var23, (double)var21.getY(), var25))
+                     double var23 = MathHelper.clamp((double)var14, (double)var9 + (double)var22, (double)var9 + 16.0 - (double)var22);
+                     double var25 = MathHelper.clamp((double)var15, (double)var10 + (double)var22, (double)var10 + 16.0 - (double)var22);
+                     if (!var0.hasNoCollisions(var11.field29311.method33219(var23, (double)var21.getY(), var25))
                         || !Class6914.method21122(
                            var11.field29311, var0, Class2202.field14392, new BlockPos(var23, (double)var21.getY(), var25), var0.method6814()
                         )) {
@@ -318,13 +318,13 @@ public final class Class8170 {
 
                      Entity var27;
                      try {
-                        var27 = var11.field29311.method33215(var0.method6970());
+                        var27 = var11.field29311.create(var0.method6970());
                      } catch (Exception var29) {
                         field35149.warn("Failed to create mob", var29);
                         continue;
                      }
 
-                     var27.method3273(var23, (double)var21.getY(), var25, var4.nextFloat() * 360.0F, 0.0F);
+                     var27.setLocationAndAngles(var23, (double)var21.getY(), var25, var4.nextFloat() * 360.0F, 0.0F);
                      if (var27 instanceof Class1006) {
                         Class1006 var28 = (Class1006)var27;
                         if (var28.method4265(var0, Class2202.field14392) && var28.method4266(var0)) {

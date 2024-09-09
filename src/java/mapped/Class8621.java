@@ -121,7 +121,7 @@ public class Class8621 {
                continue;
             }
 
-            double var25 = (double) MathHelper.method37766(var21);
+            double var25 = (double) MathHelper.sqrt(var21);
             var23 = new Vector3d(var14.getPosX() + var15 / var25 * 2.0, var14.getPosY() + var17 / var25 * 2.0, var14.getPosZ() + var19 / var25 * 2.0);
             var24 = var7;
          }

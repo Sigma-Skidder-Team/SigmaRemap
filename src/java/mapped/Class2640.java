@@ -28,9 +28,9 @@ public class Class2640 extends Class2595 {
    public boolean method10803() {
       if (this.field16966.method4232() == null) {
          if (this.field16971.method6740()) {
-            if (this.field16966.method3327()) {
+            if (this.field16966.isBurning()) {
                if (this.field16971.method7022(this.field16966.getPosition())) {
-                  return this.field16966.method2943(Class2106.field13736).isEmpty() ? this.method10848() : false;
+                  return this.field16966.getItemStackFromSlot(EquipmentSlotType.field13736).isEmpty() ? this.method10848() : false;
                } else {
                   return false;
                }
@@ -69,7 +69,7 @@ public class Class2640 extends Class2595 {
 
    @Nullable
    public Vector3d method10849() {
-      Random var3 = this.field16966.method3013();
+      Random var3 = this.field16966.getRNG();
       BlockPos var4 = this.field16966.getPosition();
 
       for (int var5 = 0; var5 < 10; var5++) {

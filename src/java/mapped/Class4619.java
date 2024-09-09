@@ -53,7 +53,7 @@ public class Class4619 extends Class4566 {
             double var4 = var3.getPosY();
             if (this.field22042 > var4) {
                this.field22042 = this.field22042 + (var4 - this.field22042) * 0.2;
-               this.field22045 = this.field22045 + (var3.getVec().y - this.field22045) * 0.2;
+               this.field22045 = this.field22045 + (var3.getMotion().y - this.field22045) * 0.2;
                this.method14520(this.field22041, this.field22042, this.field22043);
             }
          }

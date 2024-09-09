@@ -45,7 +45,7 @@ public abstract class Class7634 extends Class7633 {
             );
          }
       } else if (var4.nextInt(10) == 0) {
-         var1.method6746(
+         var1.addParticle(
             ParticleTypes.field34098,
             (double)var2.getX() + var4.nextDouble(),
             (double)var2.getY() + var4.nextDouble(),
@@ -101,7 +101,7 @@ public abstract class Class7634 extends Class7633 {
 
    @Override
    public boolean method25055(FluidState var1, IBlockReader var2, BlockPos var3, Fluid var4, Direction var5) {
-      return var5 == Direction.DOWN && !var4.method25067(Class8953.field40469);
+      return var5 == Direction.DOWN && !var4.method25067(FluidTags.field40469);
    }
 
    @Override

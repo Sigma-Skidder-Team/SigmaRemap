@@ -99,7 +99,7 @@ public class Class7015 implements Class7016 {
             return;
          }
 
-         var5.method3273(var4.x, var4.y, var4.z, var1.rand.nextFloat() * 360.0F, 0.0F);
+         var5.setLocationAndAngles(var4.x, var4.y, var4.z, var1.rand.nextFloat() * 360.0F, 0.0F);
          var1.method6995(var5);
       }
    }

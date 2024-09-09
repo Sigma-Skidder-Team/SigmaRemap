@@ -38,11 +38,11 @@ public class OverlayRenderer {
       }
 
       if (!var0.player.isSpectator()) {
-         if (var0.player.method3263(Class8953.field40469) && !Class9299.field42851.method20218(var4, var1)) {
+         if (var0.player.areEyesInFluid(FluidTags.field40469) && !Class9299.field42851.method20218(var4, var1)) {
             renderUnderwater(var0, var1);
          }
 
-         if (var0.player.method3327() && !Class9299.field42850.method20218(var4, var1)) {
+         if (var0.player.isBurning() && !Class9299.field42850.method20218(var4, var1)) {
             renderFire(var0, var1);
          }
       }
@@ -60,9 +60,9 @@ public class OverlayRenderer {
       BlockPos.Mutable var3 = new BlockPos.Mutable();
 
       for (int var4 = 0; var4 < 8; var4++) {
-         double var5 = var0.getPosX() + (double)(((float)((var4 >> 0) % 2) - 0.5F) * var0.method3429() * 0.8F);
-         double var7 = var0.method3442() + (double)(((float)((var4 >> 1) % 2) - 0.5F) * 0.1F);
-         double var9 = var0.getPosZ() + (double)(((float)((var4 >> 2) % 2) - 0.5F) * var0.method3429() * 0.8F);
+         double var5 = var0.getPosX() + (double)(((float)((var4 >> 0) % 2) - 0.5F) * var0.getWidth() * 0.8F);
+         double var7 = var0.getPosYEye() + (double)(((float)((var4 >> 1) % 2) - 0.5F) * 0.1F);
+         double var9 = var0.getPosZ() + (double)(((float)((var4 >> 2) % 2) - 0.5F) * var0.getWidth() * 0.8F);
          var3.method8373(var5, var7, var9);
          BlockState var11 = var0.world.getBlockState(var3);
          if (var11.getRenderType() != BlockRenderType.field9885 && var11.method23438(var0.world, var3)) {

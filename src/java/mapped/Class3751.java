@@ -36,11 +36,11 @@ public class Class3751 extends Class3676<LivingEntity> {
 
    @Override
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
-      Class6947 var7 = var2.method2992();
+      Brain var7 = var2.getBrain();
       Optional var8 = this.field19906;
       if (!var8.isPresent()) {
          var8 = var1.method6951()
-            .method6673(var0 -> var0 == Class4913.field22766, var0 -> true, Class2093.field13637, var2.getPosition(), this.field19904, var2.method3013());
+            .method6673(var0 -> var0 == Class4913.field22766, var0 -> true, Class2093.field13637, var2.getPosition(), this.field19904, var2.getRNG());
          if (!var8.isPresent()) {
             Optional var9 = var7.<Class9378>method21410(Class8830.field39813);
             if (var9.isPresent()) {

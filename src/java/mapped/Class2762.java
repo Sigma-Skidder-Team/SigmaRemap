@@ -49,8 +49,8 @@ public class Class2762 extends Class2595 {
 
    @Override
    public void method10805() {
-      if (!this.field17325.method4932() && this.field17325.method3013().nextInt(50) == 0) {
-         Entity var3 = this.field17325.method3408().get(0);
+      if (!this.field17325.method4932() && this.field17325.getRNG().nextInt(50) == 0) {
+         Entity var3 = this.field17325.getPassengers().get(0);
          if (var3 == null) {
             return;
          }
@@ -58,7 +58,7 @@ public class Class2762 extends Class2595 {
          if (var3 instanceof PlayerEntity) {
             int var4 = this.field17325.method4944();
             int var5 = this.field17325.method4907();
-            if (var5 > 0 && this.field17325.method3013().nextInt(var5) < var4) {
+            if (var5 > 0 && this.field17325.getRNG().nextInt(var5) < var4) {
                this.field17325.method4959((PlayerEntity)var3);
                return;
             }
@@ -68,7 +68,7 @@ public class Class2762 extends Class2595 {
 
          this.field17325.removePassengers();
          this.field17325.method4896();
-         this.field17325.world.method6786(this.field17325, (byte)6);
+         this.field17325.world.setEntityState(this.field17325, (byte)6);
       }
    }
 }

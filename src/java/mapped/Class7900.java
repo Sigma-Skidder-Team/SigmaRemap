@@ -16,7 +16,7 @@ public final class Class7900 implements Class7899 {
 
    @Override
    public int method26471(int var1, int var2) {
-      long var5 = Class7481.method24353(var1, var2);
+      long var5 = ChunkPos.method24353(var1, var2);
       synchronized (this.field33856) {
          int var8 = this.field33856.get(var5);
          if (var8 != Integer.MIN_VALUE) {

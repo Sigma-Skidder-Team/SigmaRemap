@@ -51,10 +51,10 @@ public class Chunk implements IChunk {
    private long field9129;
    private Supplier<ChunkHolderLocationType> field9130;
    private Consumer<Chunk> field9131;
-   private final Class7481 field9132;
+   private final ChunkPos field9132;
    private volatile boolean field9133;
 
-   public Chunk(World var1, Class7481 var2, Class1684 var3) {
+   public Chunk(World var1, ChunkPos var2, Class1684 var3) {
       this(
          var1,
          var2,
@@ -70,7 +70,7 @@ public class Chunk implements IChunk {
 
    public Chunk(
       World var1,
-      Class7481 var2,
+      ChunkPos var2,
       Class1684 var3,
       Class8922 var4,
       Class6802<Block> var5,
@@ -264,7 +264,7 @@ public class Chunk implements IChunk {
             var11.method23429(this.field9116, var1, var2, var3);
          }
 
-         if (var9.method21852(var6, var7 & 15, var8).method23448(var12)) {
+         if (var9.method21852(var6, var7 & 15, var8).isIn(var12)) {
             if (var13 instanceof Class3245) {
                TileEntity var15 = this.method7029(var1, Class2206.field14423);
                if (var15 != null) {
@@ -521,7 +521,7 @@ public class Chunk implements IChunk {
    }
 
    @Override
-   public Class7481 method7072() {
+   public ChunkPos method7072() {
       return this.field9132;
    }
 
@@ -618,7 +618,7 @@ public class Chunk implements IChunk {
 
    @Override
    public boolean method7079() {
-      return this.field9128 || this.field9126 && this.field9116.method6783() != this.field9127;
+      return this.field9128 || this.field9126 && this.field9116.getGameTime() != this.field9127;
    }
 
    public void method7147(boolean var1) {
@@ -684,7 +684,7 @@ public class Chunk implements IChunk {
    }
 
    public void method7148() {
-      Class7481 var3 = this.method7072();
+      ChunkPos var3 = this.method7072();
 
       for (int var4 = 0; var4 < this.field9123.length; var4++) {
          if (this.field9123[var4] != null) {
@@ -773,14 +773,14 @@ public class Chunk implements IChunk {
    public void method7151(ServerWorld var1) {
       if (this.field9124 == Class6804.<Block>method20727()) {
          this.field9124 = new Class6801<>(
-                 Registry.BLOCK::getKey, var1.method6860().method20729(this.field9132, true, false), var1.method6783()
+                 Registry.BLOCK::getKey, var1.method6860().method20729(this.field9132, true, false), var1.getGameTime()
          );
          this.method7078(true);
       }
 
       if (this.field9125 == Class6804.<Fluid>method20727()) {
          this.field9125 = new Class6801<>(
-                 Registry.field16070::getKey, var1.method6861().method20729(this.field9132, true, false), var1.method6783()
+                 Registry.field16070::getKey, var1.method6861().method20729(this.field9132, true, false), var1.getGameTime()
          );
          this.method7078(true);
       }

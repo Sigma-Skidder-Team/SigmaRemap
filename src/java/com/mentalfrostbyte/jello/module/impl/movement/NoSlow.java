@@ -2,8 +2,8 @@ package com.mentalfrostbyte.jello.module.impl.movement;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4408;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.EventSlowDown;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.ColorUtils;
@@ -20,14 +20,14 @@ public class NoSlow extends Module {
     }
 
     @EventTarget
-    private void method16233(Class4408 var1) {
+    private void method16233(EventSlowDown var1) {
         if (this.isEnabled()) {
-            var1.method13900(true);
+            var1.setCancelled(true);
         }
     }
 
     @EventTarget
-    private void method16234(Class4399 var1) {
+    private void method16234(EventUpdate var1) {
         if (this.isEnabled()) {
             boolean var4 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988();
             boolean var5 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof ItemSword;

@@ -21,13 +21,13 @@ public class Class3699 extends Class3676<LivingEntity> {
 
    @Override
    public boolean method12508(ServerWorld var1, LivingEntity var2) {
-      Class9378 var5 = var2.method2992().<Class9378>method21410(this.field19748).get();
+      Class9378 var5 = var2.getBrain().<Class9378>method21410(this.field19748).get();
       return var1.getDimensionKey() == var5.method35578() && var5.method35579().method8317(var2.getPositionVec(), 16.0);
    }
 
    @Override
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
-      Class6947<?> var7 = var2.method2992();
+      Brain<?> var7 = var2.getBrain();
       Class9378 var8 = var7.method21410(this.field19748).get();
       BlockPos var9 = var8.method35579();
       ServerWorld var10 = var1.getServer().method1318(var8.method35578());
@@ -42,7 +42,7 @@ public class Class3699 extends Class3676<LivingEntity> {
 
    private boolean method12576(ServerWorld var1, BlockPos var2, LivingEntity var3) {
       BlockState var6 = var1.getBlockState(var2);
-      return var6.getBlock().method11540(BlockTags.field32770) && var6.<Boolean>method23463(Class3250.field18714) && !var3.isSleeping();
+      return var6.getBlock().isIn(BlockTags.field32770) && var6.<Boolean>method23463(Class3250.field18714) && !var3.isSleeping();
    }
 
    private boolean method12577(ServerWorld var1, BlockPos var2) {

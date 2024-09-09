@@ -59,9 +59,9 @@ public class Class4183 extends Class4180 {
    public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, Class9764 var5) {
       if (!"chest".equals(var1)) {
          if ("drowned".equals(var1)) {
-            Class1037 var8 = EntityType.field41021.method33215(var3.method6970());
+            Class1037 var8 = EntityType.field41021.create(var3.method6970());
             var8.method4278();
-            var8.method3272(var2, 0.0F, 0.0F);
+            var8.moveToBlockPosAndAngles(var2, 0.0F, 0.0F);
             var8.method4276(var3, var3.method6807(var2), Class2202.field14394, (Class5093)null, (CompoundNBT)null);
             var3.method6995(var8);
             if (var2.getY() <= var3.method6776()) {
@@ -73,7 +73,7 @@ public class Class4183 extends Class4180 {
       } else {
          var3.setBlockState(
             var2,
-            Blocks.CHEST.method11579().method23465(Class3348.field18867, Boolean.valueOf(var3.getFluidState(var2).method23486(Class8953.field40469))),
+            Blocks.CHEST.method11579().method23465(Class3348.field18867, Boolean.valueOf(var3.getFluidState(var2).method23486(FluidTags.field40469))),
             2
          );
          TileEntity var9 = var3.getTileEntity(var2);
@@ -84,7 +84,7 @@ public class Class4183 extends Class4180 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       this.field20454.method36433().method36434(new Class7094(this.field20461)).method36434(Class7095.field30528);
       int var10 = var1.method6736(Class101.field297, this.field20455.getX(), this.field20455.getZ());
       this.field20455 = new BlockPos(this.field20455.getX(), var10, this.field20455.getZ());
@@ -113,7 +113,7 @@ public class Class4183 extends Class4180 {
          BlockState var16 = var2.getBlockState(var15);
 
          for (FluidState var17 = var2.getFluidState(var15);
-              (var16.isAir() || var17.method23486(Class8953.field40469) || var16.getBlock().method11540(BlockTags.field32779)) && var14 > 1;
+              (var16.isAir() || var17.method23486(FluidTags.field40469) || var16.getBlock().isIn(BlockTags.field32779)) && var14 > 1;
               var17 = var2.getFluidState(var15)
          ) {
             var15.method8372(var12, --var14, var13);

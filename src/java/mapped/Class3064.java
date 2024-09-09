@@ -15,7 +15,7 @@ public class Class3064 implements Class2982 {
       int var5 = var1.<Integer>method30555(Class4750.field22544, 0);
       Class6057 var6 = var1.method30580().<Class6057>method22438(Class6057.class);
       if (!var6.method18667(var5)) {
-         Class8042.method27613().method27366().warning("Unable to find entity for metadata, entity ID: " + var5);
+         ViaVersion3.method27613().method27366().warning("Unable to find entity for metadata, entity ID: " + var5);
          var4.clear();
       } else {
          this.field18230.field20269.<Class6912>method19373(Class6912.class).method21090(var5, var4, var1.method30580());

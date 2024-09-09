@@ -83,15 +83,15 @@ public enum Class1889 implements Class1884 {
                      case 1:
                         return var5.getHealth();
                      case 2:
-                        return (float)var5.field4952;
+                        return (float)var5.hurtTime;
                      case 3:
                         return (float)var5.method3021();
                      case 4:
                         return var5.method3075();
                      case 5:
-                        return var5.field4984;
+                        return var5.moveForward;
                      case 6:
-                        return var5.field4982;
+                        return var5.moveStrafing;
                      case 7:
                         return (float)var5.getPosX();
                      case 8:
@@ -101,7 +101,7 @@ public enum Class1889 implements Class1884 {
                      case 10:
                         return (float)var5.method3015();
                      case 11:
-                        return var5.method3137(var4.field25094);
+                        return var5.getSwingProgress(var4.field25094);
                   }
             }
          }

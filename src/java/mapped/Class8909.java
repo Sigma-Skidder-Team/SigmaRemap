@@ -66,9 +66,9 @@ public class Class8909 {
                      SoundEvents.field26714,
                      Class2266.field14735,
                      0.2F,
-                     ((var7.method3013().nextFloat() - var7.method3013().nextFloat()) * 0.7F + 1.0F) * 2.0F
+                     ((var7.getRNG().nextFloat() - var7.getRNG().nextFloat()) * 0.7F + 1.0F) * 2.0F
                   );
-               var7.field4904.method18130();
+               var7.container.detectAndSendChanges();
             } else {
                ItemEntity var12 = var7.method2882(var10, false);
                if (var12 != null) {

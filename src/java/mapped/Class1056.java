@@ -13,7 +13,7 @@ public abstract class Class1056 extends Class1046 {
    }
 
    @Override
-   public boolean method2921(float var1, float var2) {
+   public boolean onLivingFall(float var1, float var2) {
       return false;
    }
 

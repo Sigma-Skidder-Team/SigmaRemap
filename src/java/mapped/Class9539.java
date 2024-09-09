@@ -47,7 +47,7 @@ public class Class9539 {
             return false;
          } else if (this.field44411 != null && this.field44411 != var3.method31131()) {
             return false;
-         } else if (this.field44412 != null && this.field44412 != var3.method31133()) {
+         } else if (this.field44412 != null && this.field44412 != var3.isUnblockable()) {
             return false;
          } else if (this.field44413 != null && this.field44413 != var3.method31135()) {
             return false;
@@ -60,7 +60,7 @@ public class Class9539 {
          } else if (this.field44417 != null && this.field44417 != (var3 == DamageSource.field38993)) {
             return false;
          } else {
-            return this.field44418.method20329(var1, var2, var3.method31113()) ? this.field44419.method20329(var1, var2, var3.method31109()) : false;
+            return this.field44418.method20329(var1, var2, var3.getImmediateSource()) ? this.field44419.method20329(var1, var2, var3.getTrueSource()) : false;
          }
       } else {
          return true;

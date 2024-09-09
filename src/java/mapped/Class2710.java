@@ -49,7 +49,7 @@ public class Class2710 extends Class2709<PlayerEntity> {
             return false;
          }
       } else {
-         return this.field17190 != null && this.field17197.method30210(this.field17192, this.field17190) ? true : super.method10806();
+         return this.field17190 != null && this.field17197.canTarget(this.field17192, this.field17190) ? true : super.method10806();
       }
    }
 

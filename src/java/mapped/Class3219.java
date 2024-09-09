@@ -20,7 +20,7 @@ public class Class3219 extends Block implements Class3196 {
       BlockPos var5 = var2.up();
       BlockState var6 = var1.getBlockState(var5);
       int var7 = Class200.method649(var1, var0, var2, var6, var5, Direction.field673, var6.getOpacity(var1, var5));
-      return var7 < var1.method7033();
+      return var7 < var1.getMaxLightLevel();
    }
 
    @Override
@@ -44,8 +44,8 @@ public class Class3219 extends Block implements Class3196 {
    public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
       BlockState var7 = var1.getBlockState(var3);
       BlockPos var8 = var3.up();
-      if (!var7.method23448(Blocks.field37083)) {
-         if (var7.method23448(Blocks.field37074)) {
+      if (!var7.isIn(Blocks.field37083)) {
+         if (var7.isIn(Blocks.field37074)) {
             Class2946.method11288(var1, var2, var8, Class8529.field38323, 3, 1);
             Class2946.method11288(var1, var2, var8, Class8529.field38324, 3, 1);
             if (var2.nextInt(8) == 0) {

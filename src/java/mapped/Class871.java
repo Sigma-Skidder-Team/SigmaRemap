@@ -40,8 +40,8 @@ public class Class871 extends Class851<Class5822> {
       for (int var10 = 0; var10 < 3; var10++) {
          double var11 = var1 - (double)(var8 + 60);
          double var13 = var3 - (double)(var9 + 14 + 19 * var10);
-         if (var11 >= 0.0 && var13 >= 0.0 && var11 < 108.0 && var13 < 19.0 && this.field4727.method18104(this.mc.player, var10)) {
-            this.mc.playerController.method23146(this.field4727.field25471, var10);
+         if (var11 >= 0.0 && var13 >= 0.0 && var11 < 108.0 && var13 < 19.0 && this.field4727.enchantItem(this.mc.player, var10)) {
+            this.mc.playerController.sendEnchantPacket(this.field4727.field25471, var10);
             return true;
          }
       }
@@ -202,7 +202,7 @@ public class Class871 extends Class851<Class5822> {
    }
 
    public void method2700() {
-      ItemStack var3 = this.field4727.method18131(0).method18265();
+      ItemStack var3 = this.field4727.getSlot(0).getStack();
       if (!ItemStack.method32128(var3, this.field4840)) {
          this.field4840 = var3;
 

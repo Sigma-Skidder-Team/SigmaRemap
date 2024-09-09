@@ -3,7 +3,6 @@ package net.minecraft.util.math;
 import com.mojang.serialization.Codec;
 import mapped.*;
 import net.minecraft.client.util.Util;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector3i;
 import org.apache.commons.lang3.Validate;
@@ -57,7 +56,7 @@ public class BlockPos extends Vector3i {
       this(var1.getX(), var1.getY(), var1.getZ());
    }
 
-   public static long method8314(long var0, Direction var2) {
+   public static long method8314(long var0, net.minecraft.util.Direction var2) {
       return method8327(var0, var2.method539(), var2.method540(), var2.method541());
    }
 
@@ -115,68 +114,68 @@ public class BlockPos extends Vector3i {
    }
 
    public BlockPos up() {
-      return this.method8349(Direction.field673);
+      return this.method8349(net.minecraft.util.Direction.field673);
    }
 
    public BlockPos method8339(int var1) {
-      return this.method8350(Direction.field673, var1);
+      return this.method8350(net.minecraft.util.Direction.field673, var1);
    }
 
    public BlockPos down() {
-      return this.method8349(Direction.DOWN);
+      return this.method8349(net.minecraft.util.Direction.DOWN);
    }
 
    public BlockPos method8340(int var1) {
-      return this.method8350(Direction.DOWN, var1);
+      return this.method8350(net.minecraft.util.Direction.DOWN, var1);
    }
 
    public BlockPos north() {
-      return this.method8349(Direction.NORTH);
+      return this.method8349(net.minecraft.util.Direction.NORTH);
    }
 
    public BlockPos method8342(int var1) {
-      return this.method8350(Direction.NORTH, var1);
+      return this.method8350(net.minecraft.util.Direction.NORTH, var1);
    }
 
    public BlockPos south() {
-      return this.method8349(Direction.SOUTH);
+      return this.method8349(net.minecraft.util.Direction.SOUTH);
    }
 
    public BlockPos method8344(int var1) {
-      return this.method8350(Direction.SOUTH, var1);
+      return this.method8350(net.minecraft.util.Direction.SOUTH, var1);
    }
 
    public BlockPos west() {
-      return this.method8349(Direction.WEST);
+      return this.method8349(net.minecraft.util.Direction.WEST);
    }
 
    public BlockPos method8346(int var1) {
-      return this.method8350(Direction.WEST, var1);
+      return this.method8350(net.minecraft.util.Direction.WEST, var1);
    }
 
    public BlockPos east() {
-      return this.method8349(Direction.EAST);
+      return this.method8349(net.minecraft.util.Direction.EAST);
    }
 
    public BlockPos method8348(int var1) {
-      return this.method8350(Direction.EAST, var1);
+      return this.method8350(net.minecraft.util.Direction.EAST, var1);
    }
 
-   public BlockPos method8349(Direction var1) {
+   public BlockPos method8349(net.minecraft.util.Direction var1) {
       return new BlockPos(this.getX() + var1.method539(), this.getY() + var1.method540(), this.getZ() + var1.method541());
    }
 
-   public BlockPos method8350(Direction var1, int var2) {
+   public BlockPos method8350(net.minecraft.util.Direction var1, int var2) {
       return var2 != 0
          ? new BlockPos(this.getX() + var1.method539() * var2, this.getY() + var1.method540() * var2, this.getZ() + var1.method541() * var2)
          : this;
    }
 
-   public BlockPos method8351(Class113 var1, int var2) {
+   public BlockPos method8351(Direction var1, int var2) {
       if (var2 != 0) {
-         int var5 = var1 != Class113.field413 ? 0 : var2;
-         int var6 = var1 != Class113.field414 ? 0 : var2;
-         int var7 = var1 != Class113.field415 ? 0 : var2;
+         int var5 = var1 != Direction.field413 ? 0 : var2;
+         int var6 = var1 != Direction.field414 ? 0 : var2;
+         int var7 = var1 != Direction.field415 ? 0 : var2;
          return new BlockPos(this.getX() + var5, this.getY() + var6, this.getZ() + var7);
       } else {
          return this;
@@ -285,8 +284,8 @@ public class BlockPos extends Vector3i {
       return () -> new Class4554(var11, var8, var9, var0, var1, var2);
    }
 
-   public static Iterable<Mutable> method8365(BlockPos var0, int var1, Direction var2, Direction var3) {
-      Validate.validState(var2.method544() != var3.method544(), "The two directions cannot be on the same axis", new Object[0]);
+   public static Iterable<Mutable> method8365(BlockPos var0, int var1, net.minecraft.util.Direction var2, net.minecraft.util.Direction var3) {
+      Validate.validState(var2.getAxis() != var3.getAxis(), "The two directions cannot be on the same axis", new Object[0]);
       return () -> new Class4556(var2, var3, var0, var1);
    }
 
@@ -314,12 +313,12 @@ public class BlockPos extends Vector3i {
       }
 
       @Override
-      public BlockPos method8350(Direction var1, int var2) {
+      public BlockPos method8350(net.minecraft.util.Direction var1, int var2) {
          return super.method8350(var1, var2).toImmutable();
       }
 
       @Override
-      public BlockPos method8351(Class113 var1, int var2) {
+      public BlockPos method8351(Direction var1, int var2) {
          return super.method8351(var1, var2).toImmutable();
       }
 
@@ -349,13 +348,13 @@ public class BlockPos extends Vector3i {
 
       public Mutable method8376(Class2321 var1, int var2, int var3, int var4) {
          return this.method8372(
-            var1.method9098(var2, var3, var4, Class113.field413),
-            var1.method9098(var2, var3, var4, Class113.field414),
-            var1.method9098(var2, var3, var4, Class113.field415)
+            var1.method9098(var2, var3, var4, Direction.field413),
+            var1.method9098(var2, var3, var4, Direction.field414),
+            var1.method9098(var2, var3, var4, Direction.field415)
          );
       }
 
-      public Mutable method8377(Vector3i var1, Direction var2) {
+      public Mutable method8377(Vector3i var1, net.minecraft.util.Direction var2) {
          return this.method8372(var1.getX() + var2.method539(), var1.getY() + var2.method540(), var1.getZ() + var2.method541());
       }
 
@@ -363,11 +362,11 @@ public class BlockPos extends Vector3i {
          return this.method8372(var1.getX() + var2, var1.getY() + var3, var1.getZ() + var4);
       }
 
-      public Mutable method8379(Direction var1) {
+      public Mutable method8379(net.minecraft.util.Direction var1) {
          return this.method8380(var1, 1);
       }
 
-      public Mutable method8380(Direction var1, int var2) {
+      public Mutable method8380(net.minecraft.util.Direction var1, int var2) {
          return this.method8372(
             this.getX() + var1.method539() * var2, this.getY() + var1.method540() * var2, this.getZ() + var1.method541() * var2
          );
@@ -381,7 +380,7 @@ public class BlockPos extends Vector3i {
          return this.method8372(this.getX() + var1.getX(), this.getY() + var1.getY(), this.getZ() + var1.getZ());
       }
 
-      public Mutable method8383(Class113 var1, int var2, int var3) {
+      public Mutable method8383(Direction var1, int var2, int var3) {
          switch (Class4503.field21731[var1.ordinal()]) {
             case 1:
                return this.method8372(MathHelper.method37775(this.getX(), var2, var3), this.getY(), this.getZ());

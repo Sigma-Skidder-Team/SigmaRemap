@@ -14,7 +14,7 @@ public class Class3068 implements Class2982 {
    @Override
    public void method11398(Class8563 var1) throws Exception {
       var1.method30578();
-      Class5419 var4 = Class8042.method27614().method34424().<Class5419>method31084(Class5419.class);
+      Class5419 var4 = ViaVersion3.method27614().method34424().<Class5419>method31084(Class5419.class);
       if (var4.method17015()) {
          for (Object var7 : var4.method17013(var1, var1.method30580().<Class6051>method22438(Class6051.class))) {
             if (!(var7 instanceof Class8563)) {

@@ -95,11 +95,11 @@ public abstract class Class7574 {
                double var21 = var16 < 3
                   ? (double)var4.getZ() + (var3.rand.nextDouble() - var3.rand.nextDouble()) * (double)this.field32527 + 0.5
                   : var15.method158(2);
-               if (var3.method7051(((EntityType)var14.get()).method33219(var17, var19, var21))) {
+               if (var3.hasNoCollisions(((EntityType)var14.get()).method33219(var17, var19, var21))) {
                   ServerWorld var23 = (ServerWorld)var3;
                   if (Class6914.method21122((EntityType)var14.get(), var23, Class2202.field14393, new BlockPos(var17, var19, var21), var3.method6814())) {
                      Entity var24 = EntityType.method33223(var13, var3, var6x -> {
-                        var6x.method3273(var17, var19, var21, var6x.rotationYaw, var6x.rotationPitch);
+                        var6x.setLocationAndAngles(var17, var19, var21, var6x.rotationYaw, var6x.rotationPitch);
                         return var6x;
                      });
                      if (var24 == null) {
@@ -125,7 +125,7 @@ public abstract class Class7574 {
                         return;
                      }
 
-                     var24.method3273(var24.getPosX(), var24.getPosY(), var24.getPosZ(), var3.rand.nextFloat() * 360.0F, 0.0F);
+                     var24.setLocationAndAngles(var24.getPosX(), var24.getPosY(), var24.getPosZ(), var3.rand.nextFloat() * 360.0F, 0.0F);
                      if (var24 instanceof Class1006) {
                         Class1006 var26 = (Class1006)var24;
                         if (!var26.method4265(var3, Class2202.field14393) || !var26.method4266(var3)) {
@@ -159,8 +159,8 @@ public abstract class Class7574 {
             double var7 = (double)var4.getX() + var3.rand.nextDouble();
             double var9 = (double)var4.getY() + var3.rand.nextDouble();
             double var11 = (double)var4.getZ() + var3.rand.nextDouble();
-            var3.method6746(ParticleTypes.field34092, var7, var9, var11, 0.0, 0.0, 0.0);
-            var3.method6746(ParticleTypes.field34074, var7, var9, var11, 0.0, 0.0, 0.0);
+            var3.addParticle(ParticleTypes.field34092, var7, var9, var11, 0.0, 0.0, 0.0);
+            var3.addParticle(ParticleTypes.field34074, var7, var9, var11, 0.0, 0.0, 0.0);
             if (this.field32516 > 0) {
                this.field32516--;
             }
@@ -232,13 +232,13 @@ public abstract class Class7574 {
       if (var4 == null) {
          return var1;
       } else {
-         var1.method101("Delay", (short)this.field32516);
-         var1.method101("MinSpawnDelay", (short)this.field32521);
-         var1.method101("MaxSpawnDelay", (short)this.field32522);
-         var1.method101("SpawnCount", (short)this.field32523);
-         var1.method101("MaxNearbyEntities", (short)this.field32525);
-         var1.method101("RequiredPlayerRange", (short)this.field32526);
-         var1.method101("SpawnRange", (short)this.field32527);
+         var1.putShort("Delay", (short)this.field32516);
+         var1.putShort("MinSpawnDelay", (short)this.field32521);
+         var1.putShort("MaxSpawnDelay", (short)this.field32522);
+         var1.putShort("SpawnCount", (short)this.field32523);
+         var1.putShort("MaxNearbyEntities", (short)this.field32525);
+         var1.putShort("RequiredPlayerRange", (short)this.field32526);
+         var1.putShort("SpawnRange", (short)this.field32527);
          var1.put("SpawnData", this.field32518.method20414().method79());
          ListNBT var5 = new ListNBT();
          if (!this.field32517.isEmpty()) {

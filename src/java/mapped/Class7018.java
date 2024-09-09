@@ -17,7 +17,7 @@ public class Class7018 implements Class7016 {
    public int method21742(ServerWorld var1, boolean var2, boolean var3) {
       if (!var2) {
          return 0;
-      } else if (var1.method6789().method17135(Class5462.field24252)) {
+      } else if (var1.getGameRules().getBoolean(Class5462.field24252)) {
          Random var6 = var1.rand;
          this.field30320--;
          if (this.field30320 > 0) {
@@ -90,7 +90,7 @@ public class Class7018 implements Class7016 {
       BlockState var7 = var1.getBlockState(var2);
       if (Class8170.method28428(var1, var2, var7, var7.method23449(), EntityType.field41067)) {
          if (Class1028.method4572(EntityType.field41067, var1, Class2202.field14406, var2, var3)) {
-            Class1028 var8 = EntityType.field41067.method33215(var1);
+            Class1028 var8 = EntityType.field41067.create(var1);
             if (var8 == null) {
                return false;
             } else {

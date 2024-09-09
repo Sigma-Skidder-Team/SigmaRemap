@@ -19,7 +19,7 @@ public class Class9313 {
       if (this.method35199(var1)) {
          UUID var4 = var1.method22465().method18681();
          if (this.field43248.put(var4, var1) != null) {
-            Class8042.method27613().method27366().warning("Duplicate UUID on frontend connection! (" + var4 + ")");
+            ViaVersion3.method27613().method27366().warning("Duplicate UUID on frontend connection! (" + var4 + ")");
          }
       }
 

@@ -10,7 +10,7 @@ import java.util.Map;
 public class Class9017 {
    private static String[] field41248;
    private Class8840 field41249 = Class8840.field39936;
-   private Class1894 field41250 = Class1894.field11101;
+   private GameType field41250 = GameType.field11101;
    private final Map<Class9007<?>, Class8840> field41251 = Maps.newHashMap();
    private final Object2BooleanMap<ResourceLocation> field41252 = new Object2BooleanOpenHashMap();
    private final Map<ResourceLocation, Class172> field41253 = Maps.newHashMap();

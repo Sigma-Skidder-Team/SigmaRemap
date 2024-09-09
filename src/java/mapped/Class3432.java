@@ -91,7 +91,7 @@ public class Class3432 extends Class3429 {
 
    public boolean method12099(World var1, BlockPos var2, boolean var3, int var4, Class96 var5) {
       BlockState var8 = var1.getBlockState(var2);
-      if (!var8.method23448(this)) {
+      if (!var8.isIn(this)) {
          return false;
       } else {
          Class96 var9 = var8.<Class96>method23463(field19196);

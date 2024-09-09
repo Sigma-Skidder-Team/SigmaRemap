@@ -25,14 +25,14 @@ public class Class3450 extends Class3194 implements Class3196, Class3449 {
 
    @Override
    public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.method23454(var2, var3, Direction.field673) && !var1.method23448(Blocks.field36890);
+      return var1.method23454(var2, var3, Direction.field673) && !var1.isIn(Blocks.field36890);
    }
 
    @Nullable
    @Override
    public BlockState method11495(Class5909 var1) {
       FluidState var4 = var1.method18360().getFluidState(var1.method18345());
-      return var4.method23486(Class8953.field40469) && var4.method23477() == 8 ? super.method11495(var1) : null;
+      return var4.method23486(FluidTags.field40469) && var4.method23477() == 8 ? super.method11495(var1) : null;
    }
 
    @Override
@@ -65,7 +65,7 @@ public class Class3450 extends Class3194 implements Class3196, Class3449 {
       BlockState var7 = Blocks.TALL_SEAGRASS.method11579();
       BlockState var8 = var7.method23465(Class3455.field19274, Class84.field209);
       BlockPos var9 = var3.up();
-      if (var1.getBlockState(var9).method23448(Blocks.WATER)) {
+      if (var1.getBlockState(var9).isIn(Blocks.WATER)) {
          var1.setBlockState(var3, var7, 2);
          var1.setBlockState(var9, var8, 2);
       }

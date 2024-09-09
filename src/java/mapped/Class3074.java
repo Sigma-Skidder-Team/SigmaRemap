@@ -36,7 +36,7 @@ public class Class3074 implements Class2982 {
             }
 
             boolean var28 = false;
-            if (Class8042.method27612().method21925() && Class9322.method35227()) {
+            if (ViaVersion3.method27612().method21925() && Class9322.method35227()) {
                for (int var31 = 0; var31 < var10.method28631(); var31++) {
                   int var14 = var10.method28632(var31);
                   if (Class9322.method35230(var14)) {
@@ -84,8 +84,8 @@ public class Class3074 implements Class2982 {
             int var24 = var8.method28447()[var20];
             if (!Class7795.method25889().contains(var24)) {
                if (var24 != 255 && var18 != var24) {
-                  if (!Class8042.method27612().method21941() || Class8042.method27614().method34425()) {
-                     Class8042.method27613().method27366().warning("Received invalid biome id " + var24);
+                  if (!ViaVersion3.method27612().method21941() || ViaVersion3.method27614().method34425()) {
+                     ViaVersion3.method27613().method27366().warning("Received invalid biome id " + var24);
                   }
 
                   var18 = var24;
@@ -96,7 +96,7 @@ public class Class3074 implements Class2982 {
          }
       }
 
-      Class5412 var19 = Class8042.method27614().method34424().<Class5412>method31084(Class5412.class);
+      Class5412 var19 = ViaVersion3.method27614().method34424().<Class5412>method31084(Class5412.class);
 
       for (Class72 var25 : var8.method28451()) {
          int var29 = var19.method16999(var1.method30580(), null, var25, false);
@@ -114,7 +114,7 @@ public class Class3074 implements Class2982 {
          }
       }
 
-      if (Class8042.method27612().method21925()) {
+      if (ViaVersion3.method27612().method21925()) {
          Class9322.method35228(var1.method30580(), var8);
          var1.method30568(Class6380.class, true, true);
          var1.method30578();

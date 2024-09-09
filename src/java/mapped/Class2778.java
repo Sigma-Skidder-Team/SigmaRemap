@@ -24,7 +24,7 @@ public class Class2778 extends Class2595 {
       if (this.field17376.method4393()) {
          if (this.field17376.method3255()) {
             return false;
-         } else if (this.field17376.method3226()) {
+         } else if (this.field17376.isOnGround()) {
             LivingEntity var3 = this.field17376.method4400();
             if (var3 == null) {
                return true;

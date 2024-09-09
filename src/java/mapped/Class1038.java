@@ -28,7 +28,7 @@ import java.util.function.Predicate;
 
 public class Class1038 extends Class1009 {
    private static final UUID field5758 = UUID.fromString("B9766B59-9566-4402-BC1F-2EE2A276D836");
-   private static final Class9689 field5759 = new Class9689(field5758, "Baby speed boost", 0.5, AttributeModifierOperation.field13353);
+   private static final AttributeModifier field5759 = new AttributeModifier(field5758, "Baby speed boost", 0.5, AttributeModifierOperation.field13353);
    private static final DataParameter<Boolean> field5760 = EntityDataManager.<Boolean>createKey(Class1038.class, DataSerializers.field33398);
    private static final DataParameter<Integer> field5761 = EntityDataManager.<Integer>createKey(Class1038.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field5762 = EntityDataManager.<Boolean>createKey(Class1038.class, DataSerializers.field33398);
@@ -77,13 +77,13 @@ public class Class1038 extends Class1009 {
    @Override
    public void registerData() {
       super.registerData();
-      this.method3210().register(field5760, false);
-      this.method3210().register(field5761, 0);
-      this.method3210().register(field5762, false);
+      this.getDataManager().register(field5760, false);
+      this.getDataManager().register(field5761, 0);
+      this.getDataManager().register(field5762, false);
    }
 
    public boolean method4654() {
-      return this.method3210().<Boolean>method35445(field5762);
+      return this.getDataManager().<Boolean>method35445(field5762);
    }
 
    public boolean method4655() {
@@ -112,24 +112,24 @@ public class Class1038 extends Class1009 {
    }
 
    @Override
-   public boolean method3005() {
-      return this.method3210().<Boolean>method35445(field5760);
+   public boolean isChild() {
+      return this.getDataManager().<Boolean>method35445(field5760);
    }
 
    @Override
-   public int method2937(PlayerEntity var1) {
-      if (this.method3005()) {
+   public int getExperiencePoints(PlayerEntity var1) {
+      if (this.isChild()) {
          this.field5594 = (int)((float)this.field5594 * 2.5F);
       }
 
-      return super.method2937(var1);
+      return super.getExperiencePoints(var1);
    }
 
    @Override
    public void method4308(boolean var1) {
-      this.method3210().method35446(field5760, var1);
+      this.getDataManager().method35446(field5760, var1);
       if (this.world != null && !this.world.isRemote) {
-         Class9805 var4 = this.method3085(Attributes.MOVEMENT_SPEED);
+         ModifiableAttributeInstance var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
          var4.method38670(field5759);
          if (var1) {
             var4.method38667(field5759);
@@ -138,12 +138,12 @@ public class Class1038 extends Class1009 {
    }
 
    @Override
-   public void method3155(DataParameter<?> var1) {
+   public void notifyDataManagerChange(DataParameter<?> var1) {
       if (field5760.equals(var1)) {
-         this.method3385();
+         this.recalculateSize();
       }
 
-      super.method3155(var1);
+      super.notifyDataManagerChange(var1);
    }
 
    public boolean method4645() {
@@ -155,7 +155,7 @@ public class Class1038 extends Class1009 {
       if (!this.world.isRemote && this.isAlive() && !this.method4305()) {
          if (!this.method4654()) {
             if (this.method4645()) {
-               if (!this.method3263(Class8953.field40469)) {
+               if (!this.areEyesInFluid(FluidTags.field40469)) {
                   this.field5766 = -1;
                } else {
                   this.field5766++;
@@ -176,17 +176,17 @@ public class Class1038 extends Class1009 {
    }
 
    @Override
-   public void method2871() {
+   public void livingEntity() {
       if (this.isAlive()) {
          boolean var3 = this.method4660() && this.method4310();
          if (var3) {
-            ItemStack var4 = this.method2943(Class2106.field13736);
+            ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.field13736);
             if (!var4.isEmpty()) {
                if (var4.method32115()) {
                   var4.method32118(var4.method32117() + this.rand.nextInt(2));
                   if (var4.method32117() >= var4.method32119()) {
-                     this.method3184(Class2106.field13736);
-                     this.method2944(Class2106.field13736, ItemStack.EMPTY);
+                     this.sendBreakAnimation(EquipmentSlotType.field13736);
+                     this.setItemStackToSlot(EquipmentSlotType.field13736, ItemStack.EMPTY);
                   }
                }
 
@@ -194,22 +194,22 @@ public class Class1038 extends Class1009 {
             }
 
             if (var3) {
-               this.method3221(8);
+               this.setFire(8);
             }
          }
       }
 
-      super.method2871();
+      super.livingEntity();
    }
 
    private void method4657(int var1) {
       this.field5767 = var1;
-      this.method3210().method35446(field5762, true);
+      this.getDataManager().method35446(field5762, true);
    }
 
    public void method4658() {
       this.method4659(EntityType.field41021);
-      if (!this.method3245()) {
+      if (!this.isSilent()) {
          this.world.method6869((PlayerEntity)null, 1040, this.getPosition(), 0);
       }
    }
@@ -227,20 +227,20 @@ public class Class1038 extends Class1009 {
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (!super.method2741(var1, var2)) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (!super.attackEntityFrom(var1, var2)) {
          return false;
       } else if (this.world instanceof ServerWorld) {
          ServerWorld var5 = (ServerWorld)this.world;
          LivingEntity var6 = this.method4232();
-         if (var6 == null && var1.method31109() instanceof LivingEntity) {
-            var6 = (LivingEntity)var1.method31109();
+         if (var6 == null && var1.getTrueSource() instanceof LivingEntity) {
+            var6 = (LivingEntity)var1.getTrueSource();
          }
 
          if (var6 != null
             && this.world.method6997() == Difficulty.field14354
-            && (double)this.rand.nextFloat() < this.method3086(Attributes.field42116)
-            && this.world.method6789().method17135(Class5462.field24226)) {
+            && (double)this.rand.nextFloat() < this.getAttributeValue(Attributes.field42116)
+            && this.world.getGameRules().getBoolean(Class5462.field24226)) {
             int var7 = MathHelper.floor(this.getPosX());
             int var8 = MathHelper.floor(this.getPosY());
             int var9 = MathHelper.floor(this.getPosZ());
@@ -257,14 +257,14 @@ public class Class1038 extends Class1009 {
                   && Class6914.method21122(var16, var5, Class2202.field14400, var15, this.world.rand)) {
                   var10.setPosition((double)var12, (double)var13, (double)var14);
                   if (!this.world.method7187((double)var12, (double)var13, (double)var14, 7.0)
-                     && this.world.method7050(var10)
-                     && this.world.method7052(var10)
+                     && this.world.checkNoEntityCollision(var10)
+                     && this.world.hasNoCollisions(var10)
                      && !this.world.method7014(var10.getBoundingBox())) {
                      var10.method4233(var6);
                      var10.method4276(var5, this.world.method6807(var10.getPosition()), Class2202.field14400, (Class5093)null, (CompoundNBT)null);
                      var5.method6995(var10);
-                     this.method3085(Attributes.field42116).method38668(new Class9689("Zombie reinforcement caller charge", -0.05F, AttributeModifierOperation.ADDITION));
-                     var10.method3085(Attributes.field42116).method38668(new Class9689("Zombie reinforcement callee charge", -0.05F, AttributeModifierOperation.ADDITION));
+                     this.getAttribute(Attributes.field42116).method38668(new AttributeModifier("Zombie reinforcement caller charge", -0.05F, AttributeModifierOperation.ADDITION));
+                     var10.getAttribute(Attributes.field42116).method38668(new AttributeModifier("Zombie reinforcement callee charge", -0.05F, AttributeModifierOperation.ADDITION));
                      break;
                   }
                }
@@ -278,12 +278,12 @@ public class Class1038 extends Class1009 {
    }
 
    @Override
-   public boolean method3114(Entity var1) {
-      boolean var4 = super.method3114(var1);
+   public boolean attackEntityAsMob(Entity var1) {
+      boolean var4 = super.attackEntityAsMob(var1);
       if (var4) {
          float var5 = this.world.method6807(this.getPosition()).method38328();
-         if (this.getHeldItemMainhand().isEmpty() && this.method3327() && this.rand.nextFloat() < var5 * 0.3F) {
-            var1.method3221(2 * (int)var5);
+         if (this.getHeldItemMainhand().isEmpty() && this.isBurning() && this.rand.nextFloat() < var5 * 0.3F) {
+            var1.setFire(2 * (int)var5);
          }
       }
 
@@ -310,13 +310,13 @@ public class Class1038 extends Class1009 {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(this.method4643(), 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(this.method4643(), 0.15F, 1.0F);
    }
 
    @Override
-   public Class7809 method3089() {
-      return Class7809.field33506;
+   public CreatureAttribute getCreatureAttribute() {
+      return CreatureAttribute.field33506;
    }
 
    @Override
@@ -325,25 +325,25 @@ public class Class1038 extends Class1009 {
       if (this.rand.nextFloat() < (this.world.method6997() != Difficulty.field14354 ? 0.01F : 0.05F)) {
          int var4 = this.rand.nextInt(3);
          if (var4 != 0) {
-            this.method2944(Class2106.field13731, new ItemStack(Items.field37821));
+            this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37821));
          } else {
-            this.method2944(Class2106.field13731, new ItemStack(Items.field37820));
+            this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37820));
          }
       }
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.putBoolean("IsBaby", this.method3005());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putBoolean("IsBaby", this.isChild());
       var1.putBoolean("CanBreakDoors", this.method4655());
-      var1.method102("InWaterTime", !this.method3250() ? -1 : this.field5766);
-      var1.method102("DrownedConversionTime", !this.method4654() ? -1 : this.field5767);
+      var1.putInt("InWaterTime", !this.isInWater() ? -1 : this.field5766);
+      var1.putInt("DrownedConversionTime", !this.method4654() ? -1 : this.field5767);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method4308(var1.getBoolean("IsBaby"));
       this.method4656(var1.getBoolean("CanBreakDoors"));
       this.field5766 = var1.getInt("InWaterTime");
@@ -367,20 +367,20 @@ public class Class1038 extends Class1009 {
          var6.method4672((INBT)var5.method4724().method25528(NBTDynamicOps.INSTANCE).getValue());
          var6.method4671(var5.method4742().method166());
          var6.method4675(var5.method4721());
-         if (!this.method3245()) {
+         if (!this.isSilent()) {
             var1.method6869((PlayerEntity)null, 1026, this.getPosition(), 0);
          }
       }
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
-      return !this.method3005() ? 1.74F : 0.93F;
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
+      return !this.isChild() ? 1.74F : 0.93F;
    }
 
    @Override
    public boolean method4252(ItemStack var1) {
-      return var1.getItem() == Items.field37904 && this.method3005() && this.isPassenger() ? false : super.method4252(var1);
+      return var1.getItem() == Items.field37904 && this.isChild() && this.isPassenger() ? false : super.method4252(var1);
    }
 
    @Nullable
@@ -400,12 +400,12 @@ public class Class1038 extends Class1009 {
             if (var9.field23190) {
                if (!((double)var1.method6814().nextFloat() < 0.05)) {
                   if ((double)var1.method6814().nextFloat() < 0.05) {
-                     Class1089 var10 = EntityType.field41014.method33215(this.world);
-                     var10.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
+                     Class1089 var10 = EntityType.field41014.create(this.world);
+                     var10.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
                      var10.method4276(var1, var2, Class2202.field14397, (Class5093)null, (CompoundNBT)null);
                      var10.method5071(true);
                      this.method3311(var10);
-                     var1.method6916(var10);
+                     var1.addEntity(var10);
                   }
                } else {
                   List var14 = var1.<Entity>method6772(Class1089.class, this.getBoundingBox().method19663(5.0, 3.0, 5.0), Class8088.field34759);
@@ -423,13 +423,13 @@ public class Class1038 extends Class1009 {
          this.method4273(var2);
       }
 
-      if (this.method2943(Class2106.field13736).isEmpty()) {
+      if (this.getItemStackFromSlot(EquipmentSlotType.field13736).isEmpty()) {
          LocalDate var13 = LocalDate.now();
          int var15 = var13.get(ChronoField.DAY_OF_MONTH);
          int var16 = var13.get(ChronoField.MONTH_OF_YEAR);
          if (var16 == 10 && var15 == 31 && this.rand.nextFloat() < 0.25F) {
-            this.method2944(Class2106.field13736, new ItemStack(!(this.rand.nextFloat() < 0.1F) ? Blocks.field36589 : Blocks.field36590));
-            this.field5607[Class2106.field13736.method8773()] = 0.0F;
+            this.setItemStackToSlot(EquipmentSlotType.field13736, new ItemStack(!(this.rand.nextFloat() < 0.1F) ? Blocks.field36589 : Blocks.field36590));
+            this.field5607[EquipmentSlotType.field13736.method8773()] = 0.0F;
          }
       }
 
@@ -443,33 +443,33 @@ public class Class1038 extends Class1009 {
 
    public void method4662(float var1) {
       this.method4663();
-      this.method3085(Attributes.field42107).method38668(new Class9689("Random spawn bonus", this.rand.nextDouble() * 0.05F, AttributeModifierOperation.ADDITION));
+      this.getAttribute(Attributes.field42107).method38668(new AttributeModifier("Random spawn bonus", this.rand.nextDouble() * 0.05F, AttributeModifierOperation.ADDITION));
       double var4 = this.rand.nextDouble() * 1.5 * (double)var1;
       if (var4 > 1.0) {
-         this.method3085(Attributes.field42106).method38668(new Class9689("Random zombie-spawn bonus", var4, AttributeModifierOperation.MULTIPLY_TOTAL));
+         this.getAttribute(Attributes.field42106).method38668(new AttributeModifier("Random zombie-spawn bonus", var4, AttributeModifierOperation.MULTIPLY_TOTAL));
       }
 
       if (this.rand.nextFloat() < var1 * 0.05F) {
-         this.method3085(Attributes.field42116)
-            .method38668(new Class9689("Leader zombie bonus", this.rand.nextDouble() * 0.25 + 0.5, AttributeModifierOperation.ADDITION));
-         this.method3085(Attributes.field42105).method38668(new Class9689("Leader zombie bonus", this.rand.nextDouble() * 3.0 + 1.0, AttributeModifierOperation.MULTIPLY_TOTAL));
+         this.getAttribute(Attributes.field42116)
+            .method38668(new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 0.25 + 0.5, AttributeModifierOperation.ADDITION));
+         this.getAttribute(Attributes.field42105).method38668(new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 3.0 + 1.0, AttributeModifierOperation.MULTIPLY_TOTAL));
          this.method4656(this.method4642());
       }
    }
 
    public void method4663() {
-      this.method3085(Attributes.field42116).method38661(this.rand.nextDouble() * 0.1F);
+      this.getAttribute(Attributes.field42116).method38661(this.rand.nextDouble() * 0.1F);
    }
 
    @Override
    public double method2894() {
-      return !this.method3005() ? -0.45 : 0.0;
+      return !this.isChild() ? -0.45 : 0.0;
    }
 
    @Override
-   public void method3054(DamageSource var1, int var2, boolean var3) {
-      super.method3054(var1, var2, var3);
-      Entity var6 = var1.method31109();
+   public void dropSpecialItems(DamageSource var1, int var2, boolean var3) {
+      super.dropSpecialItems(var1, var2, var3);
+      Entity var6 = var1.getTrueSource();
       if (var6 instanceof Class1081) {
          Class1081 var7 = (Class1081)var6;
          if (var7.method5026()) {

@@ -55,7 +55,7 @@ public class Class2816<T extends Entity> extends Class2803<T> {
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
       float var9 = 1.0F;
       float var10 = 1.0F;
-      if (!var1.method3250()) {
+      if (!var1.isInWater()) {
          var9 = 1.3F;
          var10 = 1.7F;
       }

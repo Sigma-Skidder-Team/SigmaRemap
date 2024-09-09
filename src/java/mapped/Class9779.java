@@ -17,15 +17,15 @@ public class Class9779 {
       } catch (NoSuchFieldError var5) {
       }
 
-      field45745 = new int[Class113.values().length];
+      field45745 = new int[Direction.values().length];
 
       try {
-         field45745[Class113.field413.ordinal()] = 1;
+         field45745[Direction.field413.ordinal()] = 1;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field45745[Class113.field415.ordinal()] = 2;
+         field45745[Direction.field415.ordinal()] = 2;
       } catch (NoSuchFieldError var3) {
       }
    }

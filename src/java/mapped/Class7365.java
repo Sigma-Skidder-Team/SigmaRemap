@@ -20,18 +20,18 @@ public class Class7365 extends Class7362 {
          Vector3d var3 = this.field31519.method4334(1.0F).method11333();
          var3.method11351((float) (-Math.PI / 4));
          double var4 = this.field31519.field5624.getPosX();
-         double var6 = this.field31519.field5624.method3440(0.5);
+         double var6 = this.field31519.field5624.getPosYHeight(0.5);
          double var8 = this.field31519.field5624.getPosZ();
 
          for (int var10 = 0; var10 < 8; var10++) {
-            double var11 = var4 + this.field31519.method3013().nextGaussian() / 2.0;
-            double var13 = var6 + this.field31519.method3013().nextGaussian() / 2.0;
-            double var15 = var8 + this.field31519.method3013().nextGaussian() / 2.0;
+            double var11 = var4 + this.field31519.getRNG().nextGaussian() / 2.0;
+            double var13 = var6 + this.field31519.getRNG().nextGaussian() / 2.0;
+            double var15 = var8 + this.field31519.getRNG().nextGaussian() / 2.0;
 
             for (int var17 = 0; var17 < 6; var17++) {
                this.field31519
                   .world
-                  .method6746(
+                  .addParticle(
                      ParticleTypes.field34056,
                      var11,
                      var13,
@@ -61,7 +61,7 @@ public class Class7365 extends Class7362 {
             float var4 = 5.0F;
             double var5 = this.field31519.field5624.getPosX() + var3.x * 5.0 / 2.0;
             double var7 = this.field31519.field5624.getPosZ() + var3.z * 5.0 / 2.0;
-            double var9 = this.field31519.field5624.method3440(0.5);
+            double var9 = this.field31519.field5624.getPosYHeight(0.5);
             double var11 = var9;
             BlockPos.Mutable var13 = new BlockPos.Mutable(var5, var9, var7);
 
@@ -80,8 +80,8 @@ public class Class7365 extends Class7362 {
             this.field31529.method4097(5.0F);
             this.field31529.method4109(200);
             this.field31529.method4105(ParticleTypes.field34056);
-            this.field31529.method4101(new Class2023(Effects.INSTANT_DAMAGE));
-            this.field31519.world.method6916(this.field31529);
+            this.field31529.method4101(new EffectInstance(Effects.INSTANT_DAMAGE));
+            this.field31519.world.addEntity(this.field31529);
          }
       } else if (this.field31528 < 4) {
          this.field31519.method4336().method32671(Class9598.field44902);
@@ -99,7 +99,7 @@ public class Class7365 extends Class7362 {
    @Override
    public void method23363() {
       if (this.field31529 != null) {
-         this.field31529.method2904();
+         this.field31529.remove();
          this.field31529 = null;
       }
    }

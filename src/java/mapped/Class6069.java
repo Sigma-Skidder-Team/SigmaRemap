@@ -15,7 +15,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public abstract class Class6069 {
-   private final Class2106[] field27306;
+   private final EquipmentSlotType[] field27306;
    private final Class1937 field27307;
    public final Class2242 field27308;
    public String field27309;
@@ -25,17 +25,17 @@ public abstract class Class6069 {
       return Registry.field16073.method9172(var0);
    }
 
-   public Class6069(Class1937 var1, Class2242 var2, Class2106[] var3) {
+   public Class6069(Class1937 var1, Class2242 var2, EquipmentSlotType[] var3) {
       this.field27307 = var1;
       this.field27308 = var2;
       this.field27306 = var3;
    }
 
-   public Map<Class2106, ItemStack> method18811(LivingEntity var1) {
-      EnumMap var4 = Maps.newEnumMap(Class2106.class);
+   public Map<EquipmentSlotType, ItemStack> method18811(LivingEntity var1) {
+      EnumMap var4 = Maps.newEnumMap(EquipmentSlotType.class);
 
-      for (Class2106 var8 : this.field27306) {
-         ItemStack var9 = var1.method2943(var8);
+      for (EquipmentSlotType var8 : this.field27306) {
+         ItemStack var9 = var1.getItemStackFromSlot(var8);
          if (!var9.isEmpty()) {
             var4.put(var8, var9);
          }
@@ -68,7 +68,7 @@ public abstract class Class6069 {
       return 0;
    }
 
-   public float method18815(int var1, Class7809 var2) {
+   public float method18815(int var1, CreatureAttribute var2) {
       return 0.0F;
    }
 

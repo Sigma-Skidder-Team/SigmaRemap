@@ -23,7 +23,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
 
    @Override
    public void method4925() {
-      this.method3085(Attributes.field42105).method38661((double)this.method4971());
+      this.getAttribute(Attributes.field42105).method38661((double)this.method4971());
    }
 
    @Override
@@ -55,11 +55,11 @@ public abstract class Class1066 extends AbstractHorseEntity {
    }
 
    @Override
-   public void method2877() {
-      super.method2877();
+   public void dropInventory() {
+      super.dropInventory();
       if (this.method4927()) {
          if (!this.world.isRemote) {
-            this.method3300(Blocks.CHEST);
+            this.entityDropItem(Blocks.CHEST);
          }
 
          this.method4928(false);
@@ -67,14 +67,14 @@ public abstract class Class1066 extends AbstractHorseEntity {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("ChestedHorse", this.method4927());
       if (this.method4927()) {
          ListNBT var4 = new ListNBT();
 
-         for (int var5 = 2; var5 < this.field5890.method3629(); var5++) {
-            ItemStack var6 = this.field5890.method3618(var5);
+         for (int var5 = 2; var5 < this.field5890.getSizeInventory(); var5++) {
+            ItemStack var6 = this.field5890.getStackInSlot(var5);
             if (!var6.isEmpty()) {
                CompoundNBT var7 = new CompoundNBT();
                var7.method100("Slot", (byte)var5);
@@ -88,8 +88,8 @@ public abstract class Class1066 extends AbstractHorseEntity {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method4928(var1.getBoolean("ChestedHorse"));
       if (this.method4927()) {
          ListNBT var4 = var1.method131("Items", 10);
@@ -98,8 +98,8 @@ public abstract class Class1066 extends AbstractHorseEntity {
          for (int var5 = 0; var5 < var4.size(); var5++) {
             CompoundNBT var6 = var4.method153(var5);
             int var7 = var6.getByte("Slot") & 255;
-            if (var7 >= 2 && var7 < this.field5890.method3629()) {
-               this.field5890.method3621(var7, ItemStack.method32104(var6));
+            if (var7 >= 2 && var7 < this.field5890.getSizeInventory()) {
+               this.field5890.setInventorySlotContents(var7, ItemStack.method32104(var6));
             }
          }
       }
@@ -129,7 +129,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (!this.method3005()) {
+      if (!this.isChild()) {
          if (this.method4932() && var1.method2851()) {
             this.openGUI(var1);
             return ActionResultType.method9002(this.world.isRemote);
@@ -161,13 +161,13 @@ public abstract class Class1066 extends AbstractHorseEntity {
             return ActionResultType.method9002(this.world.isRemote);
          }
 
-         if (!this.method3005() && !this.method4943() && var5.getItem() == Items.field37886) {
+         if (!this.isChild() && !this.method4943() && var5.getItem() == Items.field37886) {
             this.openGUI(var1);
             return ActionResultType.method9002(this.world.isRemote);
          }
       }
 
-      if (!this.method3005()) {
+      if (!this.isChild()) {
          this.method4920(var1);
          return ActionResultType.method9002(this.world.isRemote);
       } else {
@@ -176,7 +176,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
    }
 
    public void method4895() {
-      this.method2863(SoundEvents.field26510, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
+      this.playSound(SoundEvents.field26510, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
    }
 
    public int method4897() {

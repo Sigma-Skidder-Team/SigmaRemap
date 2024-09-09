@@ -30,11 +30,11 @@ public class Class3283 extends Item {
    }
 
    @Override
-   public ActionResultType method11707(Class5911 var1) {
+   public ActionResultType method11707(ItemUseContext var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       BlockState var6 = var4.getBlockState(var5);
-      if (var6.method23448(Blocks.JUKEBOX) && !var6.<Boolean>method23463(Class3364.field18931)) {
+      if (var6.isIn(Blocks.JUKEBOX) && !var6.<Boolean>method23463(Class3364.field18931)) {
          ItemStack var7 = var1.method18357();
          if (!var4.isRemote) {
             ((Class3364) Blocks.JUKEBOX).method11941(var4, var5, var6, var7);
@@ -42,7 +42,7 @@ public class Class3283 extends Item {
             var7.method32182(1);
             PlayerEntity var8 = var1.method18358();
             if (var8 != null) {
-               var8.method2911(Class8876.field40158);
+               var8.method2911(Stats.field40158);
             }
          }
 

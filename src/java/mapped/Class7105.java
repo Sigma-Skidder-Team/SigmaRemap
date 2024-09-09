@@ -102,7 +102,7 @@ public class Class7105 {
          for (int var7 = field30618.size(); var6 < var7; var6++) {
             Class9127 var8 = field30618.get(var6);
             if (Class9127.method34061(var8) == var5 && Class9127.method34059(var8).test(var0)) {
-               return Class9741.method38187(new ItemStack((Class3303)Class9127.method34060(var8)), var4);
+               return Class9741.method38187(new ItemStack((IItemProvider)Class9127.method34060(var8)), var4);
             }
          }
 

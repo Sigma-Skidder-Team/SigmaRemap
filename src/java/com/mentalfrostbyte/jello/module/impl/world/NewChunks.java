@@ -13,8 +13,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class NewChunks extends Module {
-    private final ArrayList<Class7481> field23905 = new ArrayList<Class7481>();
-    private final ArrayList<Class7481> field23906 = new ArrayList<Class7481>();
+    private final ArrayList<ChunkPos> field23905 = new ArrayList<ChunkPos>();
+    private final ArrayList<ChunkPos> field23906 = new ArrayList<ChunkPos>();
 
     public NewChunks() {
         super(ModuleCategory.WORLD, "NewChunks", "Detects new chunks on non vanilla servers");
@@ -25,7 +25,7 @@ public class NewChunks extends Module {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SChunkDataPacket) {
                 SChunkDataPacket var4 = (SChunkDataPacket) var1.getPacket();
-                Class7481 var5 = new Class7481(var4.method17378(), var4.method17379());
+                ChunkPos var5 = new ChunkPos(var4.method17378(), var4.method17379());
                 if (!var4.method17381()) {
                     this.field23906.add(var5);
                 }
@@ -37,7 +37,7 @@ public class NewChunks extends Module {
     private void method16787(Render3DEvent var1) {
         if (this.isEnabled()) {
             for (Iterator var4 = this.field23906.iterator(); var4.hasNext(); var4.remove()) {
-                Class7481 var5 = (Class7481) var4.next();
+                ChunkPos var5 = (ChunkPos) var4.next();
                 if (!this.field23905.contains(var5)) {
                     this.field23905.add(var5);
                 }
@@ -46,7 +46,7 @@ public class NewChunks extends Module {
             Iterator var18 = this.field23905.iterator();
 
             while (var18.hasNext()) {
-                Class7481 var6 = (Class7481) var18.next();
+                ChunkPos var6 = (ChunkPos) var18.next();
                 if (var6 != null) {
                     double var7 = (double) var6.method24356() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
                     double var9 = (double) var6.method24357() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();

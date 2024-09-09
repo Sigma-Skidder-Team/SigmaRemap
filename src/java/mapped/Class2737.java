@@ -21,7 +21,7 @@ public class Class2737 extends Class2736 {
    @Override
    public Vector3d method10943() {
       if (!this.field17258.method3255()) {
-         return !(this.field17258.method3013().nextFloat() >= this.field17266) ? super.method10943() : Class8037.method27583(this.field17258, 10, 7);
+         return !(this.field17258.getRNG().nextFloat() >= this.field17266) ? super.method10943() : Class8037.method27583(this.field17258, 10, 7);
       } else {
          Vector3d var3 = Class8037.method27583(this.field17258, 15, 7);
          return var3 != null ? var3 : super.method10943();

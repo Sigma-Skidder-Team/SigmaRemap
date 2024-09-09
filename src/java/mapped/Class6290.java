@@ -47,7 +47,7 @@ public class Class6290 extends Class6272<Class4715> {
       for (int var10 = var2; var10 >= 1; var10--) {
          var7.method8308(var10 - 1);
          BlockState var11 = var0.method33300(var7);
-         if (!method19254(var11) && method19254(var9) && !var11.method23448(Blocks.BEDROCK)) {
+         if (!method19254(var11) && method19254(var9) && !var11.isIn(Blocks.BEDROCK)) {
             if (var8 == var4) {
                return var7.getY() + 1;
             }
@@ -62,6 +62,6 @@ public class Class6290 extends Class6272<Class4715> {
    }
 
    private static boolean method19254(BlockState var0) {
-      return var0.isAir() || var0.method23448(Blocks.WATER) || var0.method23448(Blocks.LAVA);
+      return var0.isAir() || var0.isIn(Blocks.WATER) || var0.isIn(Blocks.LAVA);
    }
 }

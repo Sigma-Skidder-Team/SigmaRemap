@@ -38,7 +38,7 @@ public class Class3361 extends Class3359 {
 
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
-      return var2.getBlockState(var3.method8349(var1.<Direction>method23463(field18910).method536())).method23384().method31086();
+      return var2.getBlockState(var3.method8349(var1.<Direction>method23463(field18910).method536())).getMaterial().method31086();
    }
 
    @Override
@@ -61,7 +61,7 @@ public class Class3361 extends Class3359 {
       Direction[] var7 = var1.method18349();
 
       for (Direction var11 : var7) {
-         if (var11.method544().method324()) {
+         if (var11.getAxis().method324()) {
             Direction var12 = var11.method536();
             var4 = var4.method23465(field18910, var12);
             if (var4.method23443(var5, var6)) {

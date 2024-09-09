@@ -35,7 +35,7 @@ public final class Class6236 extends Class6230 {
          ((Class3366)var7.getBlock()).method11946(var5, var7, var6, (PlayerEntity)null, Class2084.field13572);
          this.method19204(true);
          return this.method19208(var1, var2, new ItemStack(Items.field38177));
-      } else if (!var5.getFluidState(var6).method23486(Class8953.field40469)) {
+      } else if (!var5.getFluidState(var6).method23486(FluidTags.field40469)) {
          return super.method19192(var1, var2);
       } else {
          this.method19204(true);

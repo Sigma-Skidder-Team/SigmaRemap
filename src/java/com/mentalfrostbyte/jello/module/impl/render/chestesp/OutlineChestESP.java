@@ -37,14 +37,14 @@ public class OutlineChestESP extends Module {
    }
 
    private void method16964(boolean var1) {
-      int var4 = ColorUtils.applyAlpha(this.method16004().parseSettingValueToIntBySettingName("Regular Color"), 0.7F);
-      int var5 = ColorUtils.applyAlpha(this.method16004().parseSettingValueToIntBySettingName("Ender Color"), 0.7F);
-      int var6 = ColorUtils.applyAlpha(this.method16004().parseSettingValueToIntBySettingName("Trapped Color"), 0.7F);
+      int var4 = ColorUtils.applyAlpha(this.access().parseSettingValueToIntBySettingName("Regular Color"), 0.7F);
+      int var5 = ColorUtils.applyAlpha(this.access().parseSettingValueToIntBySettingName("Ender Color"), 0.7F);
+      int var6 = ColorUtils.applyAlpha(this.access().parseSettingValueToIntBySettingName("Trapped Color"), 0.7F);
 
       for (TileEntity var8 : mc.world.loadedTileEntityList) {
-         boolean var9 = var8 instanceof Class941 && !(var8 instanceof Class970) && this.method16004().getBooleanValueFromSetttingName("Show Regular Chests");
-         boolean var10 = var8 instanceof Class943 && this.method16004().getBooleanValueFromSetttingName("Show Ender Chests");
-         boolean var11 = var8 instanceof Class970 && this.method16004().getBooleanValueFromSetttingName("Show Trapped Chests");
+         boolean var9 = var8 instanceof Class941 && !(var8 instanceof Class970) && this.access().getBooleanValueFromSetttingName("Show Regular Chests");
+         boolean var10 = var8 instanceof Class943 && this.access().getBooleanValueFromSetttingName("Show Ender Chests");
+         boolean var11 = var8 instanceof Class970 && this.access().getBooleanValueFromSetttingName("Show Trapped Chests");
          if (var9 || var10 || var11) {
             double var12 = Class9647.method37624(var8.getPos()).field43722;
             double var14 = Class9647.method37624(var8.getPos()).field43723;
@@ -61,7 +61,7 @@ public class OutlineChestESP extends Module {
             }
 
             Box3D var19 = new Box3D(
-               var8.method3775().method23412(mc.world, var8.getPos()).method19514().method19667(var12, var14, var16)
+               var8.method3775().method23412(mc.world, var8.getPos()).method19514().offset(var12, var14, var16)
             );
             if (var1) {
                RenderUtil.renderWireframeBox(var19, 3.0F, var18);

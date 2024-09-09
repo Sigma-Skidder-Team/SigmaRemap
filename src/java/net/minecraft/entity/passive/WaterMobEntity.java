@@ -3,7 +3,7 @@ package net.minecraft.entity.passive;
 import mapped.Class1046;
 import mapped.Class1662;
 import mapped.Class2163;
-import mapped.Class7809;
+import mapped.CreatureAttribute;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
@@ -16,18 +16,18 @@ public abstract class WaterMobEntity extends Class1046 {
    }
 
    @Override
-   public boolean method2998() {
+   public boolean canBreatheUnderwater() {
       return true;
    }
 
    @Override
-   public Class7809 method3089() {
-      return Class7809.field33509;
+   public CreatureAttribute getCreatureAttribute() {
+      return CreatureAttribute.field33509;
    }
 
    @Override
    public boolean method4266(Class1662 var1) {
-      return var1.method7050(this);
+      return var1.checkNoEntityCollision(this);
    }
 
    @Override
@@ -36,26 +36,26 @@ public abstract class WaterMobEntity extends Class1046 {
    }
 
    @Override
-   public int method2937(PlayerEntity var1) {
+   public int getExperiencePoints(PlayerEntity var1) {
       return 1 + this.world.rand.nextInt(3);
    }
 
    public void method4775(int var1) {
       if (this.isAlive() && !this.method3255()) {
-         this.method3352(var1 - 1);
-         if (this.method3351() == -20) {
-            this.method3352(0);
-            this.method2741(DamageSource.field38999, 2.0F);
+         this.setAir(var1 - 1);
+         if (this.getAir() == -20) {
+            this.setAir(0);
+            this.attackEntityFrom(DamageSource.field38999, 2.0F);
          }
       } else {
-         this.method3352(300);
+         this.setAir(300);
       }
    }
 
    @Override
-   public void method3000() {
-      int var3 = this.method3351();
-      super.method3000();
+   public void baseTick() {
+      int var3 = this.getAir();
+      super.baseTick();
       this.method4775(var3);
    }
 

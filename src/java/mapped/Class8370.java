@@ -48,7 +48,7 @@ public class Class8370 extends MessageToMessageDecoder<ByteBuf> {
    }
 
    public void exceptionCaught(ChannelHandlerContext var1, Throwable var2) throws Exception {
-      if (!Class8190.method28486(var2, Class2449.class)) {
+      if (!Class8190.method28486(var2, ViaVersion4.class)) {
          super.exceptionCaught(var1, var2);
       }
    }

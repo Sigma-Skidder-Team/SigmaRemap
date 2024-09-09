@@ -5,14 +5,14 @@ import net.minecraft.world.Difficulty;
 
 public final class WorldSettings {
    private final String field40268;
-   private final Class1894 field40269;
+   private final GameType field40269;
    private final boolean field40270;
    private final Difficulty field40271;
    private final boolean field40272;
    private final Class5462 field40273;
    private final DatapackCodec field40274;
 
-   public WorldSettings(String var1, Class1894 var2, boolean var3, Difficulty var4, boolean var5, Class5462 var6, DatapackCodec var7) {
+   public WorldSettings(String var1, GameType var2, boolean var3, Difficulty var4, boolean var5, Class5462 var6, DatapackCodec var7) {
       this.field40268 = var1;
       this.field40269 = var2;
       this.field40270 = var3;
@@ -23,13 +23,13 @@ public final class WorldSettings {
    }
 
    public static WorldSettings method32425(Dynamic<?> var0, DatapackCodec var1) {
-      Class1894 var4 = Class1894.method8159(var0.get("GameType").asInt(0));
+      GameType var4 = GameType.method8159(var0.get("GameType").asInt(0));
       return new WorldSettings(
          var0.get("LevelName").asString(""),
          var4,
          var0.get("hardcore").asBoolean(false),
          var0.get("Difficulty").asNumber().map(var0x -> Difficulty.method8907(var0x.byteValue())).result().orElse(Difficulty.field14353),
-         var0.get("allowCommands").asBoolean(var4 == Class1894.field11103),
+         var0.get("allowCommands").asBoolean(var4 == GameType.field11103),
          new Class5462(var0.get("GameRules")),
          var1
       );
@@ -39,7 +39,7 @@ public final class WorldSettings {
       return this.field40268;
    }
 
-   public Class1894 method32427() {
+   public GameType method32427() {
       return this.field40269;
    }
 
@@ -63,7 +63,7 @@ public final class WorldSettings {
       return this.field40274;
    }
 
-   public WorldSettings method32433(Class1894 var1) {
+   public WorldSettings method32433(GameType var1) {
       return new WorldSettings(this.field40268, var1, this.field40270, this.field40271, this.field40272, this.field40273, this.field40274);
    }
 

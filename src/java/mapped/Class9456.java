@@ -18,16 +18,16 @@ public final class Class9456 {
    private static String[] field43938;
 
    public static RayTraceResult method36385(Entity var0, Predicate<Entity> var1) {
-      Vector3d var4 = var0.getVec();
+      Vector3d var4 = var0.getMotion();
       World var5 = var0.world;
       Vector3d var6 = var0.getPositionVec();
-      Vector3d var7 = var6.method11338(var4);
-      Object var8 = var5.method7036(new Class6809(var6, var7, Class2271.field14774, Class1985.field12962, var0));
+      Vector3d var7 = var6.add(var4);
+      Object var8 = var5.rayTraceBlocks(new RayTraceContext(var6, var7, Class2271.field14774, Class1985.field12962, var0));
       if (((RayTraceResult)var8).getType() != RayTraceResult.Type.MISS) {
          var7 = ((RayTraceResult)var8).method31419();
       }
 
-      EntityRayTraceResult var9 = method36387(var5, var0, var6, var7, var0.getBoundingBox().method19661(var0.getVec()).method19664(1.0), var1);
+      EntityRayTraceResult var9 = method36387(var5, var0, var6, var7, var0.getBoundingBox().method19661(var0.getMotion()).method19664(1.0), var1);
       if (var9 != null) {
          var8 = var9;
       }
@@ -42,8 +42,8 @@ public final class Class9456 {
       Entity var12 = null;
       Vector3d var13 = null;
 
-      for (Entity var15 : var9.method6770(var0, var3, var4)) {
-         AxisAlignedBB var16 = var15.getBoundingBox().method19664((double)var15.method3319());
+      for (Entity var15 : var9.getEntitiesInAABBexcluding(var0, var3, var4)) {
+         AxisAlignedBB var16 = var15.getBoundingBox().method19664((double)var15.getCollisionBorderSize());
          Optional<Vector3d> var17 = var16.method19680(var1, var2);
          if (!var16.method19673(var1)) {
             if (var17.isPresent()) {
@@ -75,7 +75,7 @@ public final class Class9456 {
       double var8 = Double.MAX_VALUE;
       Entity var10 = null;
 
-      for (Entity var12 : var0.method6770(var1, var4, var5)) {
+      for (Entity var12 : var0.getEntitiesInAABBexcluding(var1, var4, var5)) {
          AxisAlignedBB var13 = var12.getBoundingBox().method19664(0.3F);
          Optional var14 = var13.method19680(var2, var3);
          if (var14.isPresent()) {
@@ -91,9 +91,9 @@ public final class Class9456 {
    }
 
    public static final void method36388(Entity var0, float var1) {
-      Vector3d var4 = var0.getVec();
-      if (var4.method11349() != 0.0) {
-         float var5 = MathHelper.method37766(Entity.method3234(var4));
+      Vector3d var4 = var0.getMotion();
+      if (var4.lengthSquared() != 0.0) {
+         float var5 = MathHelper.sqrt(Entity.horizontalMag(var4));
          var0.rotationYaw = (float)(MathHelper.method37814(var4.z, var4.x) * 180.0F / (float)Math.PI) + 90.0F;
          var0.rotationPitch = (float)(MathHelper.method37814((double)var5, var4.y) * 180.0F / (float)Math.PI) - 90.0F;
 

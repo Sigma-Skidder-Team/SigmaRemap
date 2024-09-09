@@ -26,8 +26,8 @@ public class Class7154 implements Class7151 {
    public void method22311(CompoundNBT var1) throws CommandSyntaxException {
       if (!(this.field30733 instanceof PlayerEntity)) {
          UUID var4 = this.field30733.getUniqueID();
-         this.field30733.method3295(var1);
-         this.field30733.method3374(var4);
+         this.field30733.read(var1);
+         this.field30733.setUniqueId(var4);
       } else {
          throw field30731.create();
       }

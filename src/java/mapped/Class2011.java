@@ -18,10 +18,10 @@ public class Class2011 extends Class2009 {
    public final Class8066 field13078;
 
    public Class2011(Class8066 var1, double var2, Class1677 var4) {
-      this(var1, (Class7481)null, var2, var4);
+      this(var1, (ChunkPos)null, var2, var4);
    }
 
-   public Class2011(Class8066 var1, Class7481 var2, double var3, Class1677 var5) {
+   public Class2011(Class8066 var1, ChunkPos var2, double var3, Class1677 var5) {
       super(var1, var2, var3);
       this.field13078 = var1;
       this.field13080 = var5;

@@ -48,13 +48,13 @@ public class Class1081 extends Class1009 implements Class1080 {
    }
 
    @Override
-   public int method3370() {
+   public int getMaxFallHeight() {
       return this.method4232() != null ? 3 + (int)(this.getHealth() - 1.0F) : 3;
    }
 
    @Override
-   public boolean method2921(float var1, float var2) {
-      boolean var5 = super.method2921(var1, var2);
+   public boolean onLivingFall(float var1, float var2) {
+      boolean var5 = super.onLivingFall(var1, var2);
       this.field5942 = (int)((float)this.field5942 + var1 * 1.5F);
       if (this.field5942 > this.field5943 - 5) {
          this.field5942 = this.field5943 - 5;
@@ -72,20 +72,20 @@ public class Class1081 extends Class1009 implements Class1080 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.dataManager.<Boolean>method35445(field5939)) {
          var1.putBoolean("powered", true);
       }
 
-      var1.method101("Fuse", (short)this.field5943);
+      var1.putShort("Fuse", (short)this.field5943);
       var1.method100("ExplosionRadius", (byte)this.field5944);
       var1.putBoolean("ignited", this.method5024());
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.dataManager.method35446(field5939, var1.getBoolean("powered"));
       if (var1.contains("Fuse", 99)) {
          this.field5943 = var1.getShort("Fuse");
@@ -110,7 +110,7 @@ public class Class1081 extends Class1009 implements Class1080 {
 
          int var3 = this.method5020();
          if (var3 > 0 && this.field5942 == 0) {
-            this.method2863(SoundEvents.field26484, 1.0F, 0.5F);
+            this.playSound(SoundEvents.field26484, 1.0F, 0.5F);
          }
 
          this.field5942 += var3;
@@ -138,20 +138,20 @@ public class Class1081 extends Class1009 implements Class1080 {
    }
 
    @Override
-   public void method3054(DamageSource var1, int var2, boolean var3) {
-      super.method3054(var1, var2, var3);
-      Entity var6 = var1.method31109();
+   public void dropSpecialItems(DamageSource var1, int var2, boolean var3) {
+      super.dropSpecialItems(var1, var2, var3);
+      Entity var6 = var1.getTrueSource();
       if (var6 != this && var6 instanceof Class1081) {
          Class1081 var7 = (Class1081)var6;
          if (var7.method5026()) {
             var7.method5027();
-            this.method3300(Items.field38062);
+            this.entityDropItem(Items.field38062);
          }
       }
    }
 
    @Override
-   public boolean method3114(Entity var1) {
+   public boolean attackEntityAsMob(Entity var1) {
       return true;
    }
 
@@ -197,7 +197,7 @@ public class Class1081 extends Class1009 implements Class1080 {
             );
          if (!this.world.isRemote) {
             this.method5025();
-            var5.method32121(1, var1, var1x -> var1x.method3185(var2));
+            var5.method32121(1, var1, var1x -> var1x.sendBreakAnimation(var2));
          }
 
          return ActionResultType.method9002(this.world.isRemote);
@@ -206,17 +206,17 @@ public class Class1081 extends Class1009 implements Class1080 {
 
    private void method5022() {
       if (!this.world.isRemote) {
-         Class2141 var3 = !this.world.method6789().method17135(Class5462.field24224) ? Class2141.field14014 : Class2141.field14016;
+         Class2141 var3 = !this.world.getGameRules().getBoolean(Class5462.field24224) ? Class2141.field14014 : Class2141.field14016;
          float var4 = !this.method5016() ? 1.0F : 2.0F;
-         this.field4972 = true;
+         this.dead = true;
          this.world.method6755(this, this.getPosX(), this.getPosY(), this.getPosZ(), (float)this.field5944 * var4, var3);
-         this.method2904();
+         this.remove();
          this.method5023();
       }
    }
 
    private void method5023() {
-      Collection<Class2023> var3 = this.method3031();
+      Collection<EffectInstance> var3 = this.getActivePotionEffects();
       if (!var3.isEmpty()) {
          Class999 var4 = new Class999(this.world, this.getPosX(), this.getPosY(), this.getPosZ());
          var4.method4097(2.5F);
@@ -225,11 +225,11 @@ public class Class1081 extends Class1009 implements Class1080 {
          var4.method4109(var4.method4108() / 2);
          var4.method4111(-var4.method4098() / (float)var4.method4108());
 
-         for (Class2023 var6 : var3) {
-            var4.method4101(new Class2023(var6));
+         for (EffectInstance var6 : var3) {
+            var4.method4101(new EffectInstance(var6));
          }
 
-         this.world.method6916(var4);
+         this.world.addEntity(var4);
       }
    }
 

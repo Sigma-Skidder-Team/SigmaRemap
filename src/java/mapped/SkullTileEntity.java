@@ -61,7 +61,7 @@ public class SkullTileEntity extends TileEntity implements Class935 {
    @Override
    public void method3647() {
       BlockState var3 = this.method3775();
-      if (var3.method23448(Blocks.field36711) || var3.method23448(Blocks.field36712)) {
+      if (var3.isIn(Blocks.field36711) || var3.isIn(Blocks.field36712)) {
          if (!this.field5324.method6780(this.field5325)) {
             this.field5428 = false;
          } else {
@@ -98,7 +98,7 @@ public class SkullTileEntity extends TileEntity implements Class935 {
 
    private void method4007() {
       this.field5426 = method4008(this.field5426);
-      this.method3622();
+      this.markDirty();
    }
 
    @Nullable

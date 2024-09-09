@@ -3439,15 +3439,15 @@ public class Class4447 implements Class4442 {
          .method38785(var0, Registry.ITEM.getKey(var2.method11581()).getPath() + "_smithing");
    }
 
-   private static void method14049(Consumer<Class4664> var0, Class3303 var1, ITag<Item> var2) {
+   private static void method14049(Consumer<Class4664> var0, IItemProvider var1, ITag<Item> var2) {
       Class8888.method32342(var1, 4).method32343(var2).method32349("planks").method32348("has_log", method14076(var2)).method32350(var0);
    }
 
-   private static void method14050(Consumer<Class4664> var0, Class3303 var1, ITag<Item> var2) {
+   private static void method14050(Consumer<Class4664> var0, IItemProvider var1, ITag<Item> var2) {
       Class8888.method32342(var1, 4).method32343(var2).method32349("planks").method32348("has_logs", method14076(var2)).method32350(var0);
    }
 
-   private static void method14051(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14051(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8528.method30248(var1, 3)
          .method30250('#', var2)
          .method30252("##")
@@ -3457,7 +3457,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14052(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14052(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8528.method30247(var1)
          .method30250('#', var2)
          .method30252("# #")
@@ -3467,11 +3467,11 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14053(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14053(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8888.method32341(var1).method32344(var2).method32349("wooden_button").method32348("has_planks", method14075(var2)).method32350(var0);
    }
 
-   private static void method14054(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14054(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8528.method30248(var1, 3)
          .method30250('#', var2)
          .method30252("##")
@@ -3482,7 +3482,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14055(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14055(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8528.method30248(var1, 3)
          .method30250('#', Items.field37835)
          .method30250('W', var2)
@@ -3493,7 +3493,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14056(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14056(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8528.method30247(var1)
          .method30250('#', Items.field37835)
          .method30250('W', var2)
@@ -3504,7 +3504,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14057(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14057(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8528.method30247(var1)
          .method30250('#', var2)
          .method30252("##")
@@ -3513,7 +3513,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14058(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14058(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8528.method30248(var1, 6)
          .method30250('#', var2)
          .method30252("###")
@@ -3522,7 +3522,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14059(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14059(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8528.method30248(var1, 4)
          .method30250('#', var2)
          .method30252("#  ")
@@ -3533,7 +3533,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14060(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14060(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8528.method30248(var1, 2)
          .method30250('#', var2)
          .method30252("###")
@@ -3543,7 +3543,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14061(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14061(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       String var5 = Registry.ITEM.getKey(var2.method11581()).getPath();
       Class8528.method30248(var1, 3)
          .method30254("sign")
@@ -3556,7 +3556,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14062(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14062(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8888.method32341(var1)
          .method32344(var2)
          .method32344(Blocks.WHITE_WOOL)
@@ -3565,7 +3565,7 @@ public class Class4447 implements Class4442 {
          .method32350(var0);
    }
 
-   private static void method14063(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14063(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       String var5 = Registry.ITEM.getKey(var2.method11581()).getPath();
       Class8528.method30248(var1, 3)
          .method30250('#', var2)
@@ -3575,7 +3575,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14064(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14064(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       String var5 = Registry.ITEM.getKey(var1.method11581()).getPath();
       String var6 = Registry.ITEM.getKey(var2.method11581()).getPath();
       Class8528.method30248(var1, 8)
@@ -3590,7 +3590,7 @@ public class Class4447 implements Class4442 {
          .method30256(var0, var5 + "_from_white_carpet");
    }
 
-   private static void method14065(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14065(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       String var5 = Registry.ITEM.getKey(var2.method11581()).getPath();
       Class8528.method30247(var1)
          .method30250('#', var2)
@@ -3602,7 +3602,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14066(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14066(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       String var5 = Registry.ITEM.getKey(var1.method11581()).getPath();
       Class8888.method32341(var1)
          .method32344(Items.field37938)
@@ -3612,7 +3612,7 @@ public class Class4447 implements Class4442 {
          .method32351(var0, var5 + "_from_white_bed");
    }
 
-   private static void method14067(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14067(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       String var5 = Registry.ITEM.getKey(var2.method11581()).getPath();
       Class8528.method30247(var1)
          .method30250('#', var2)
@@ -3625,7 +3625,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14068(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14068(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8528.method30248(var1, 8)
          .method30250('#', Blocks.field36454)
          .method30250('X', var2)
@@ -3637,7 +3637,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14069(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14069(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8528.method30248(var1, 16)
          .method30250('#', var2)
          .method30252("###")
@@ -3647,7 +3647,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14070(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14070(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       String var5 = Registry.ITEM.getKey(var1.method11581()).getPath();
       String var6 = Registry.ITEM.getKey(var2.method11581()).getPath();
       Class8528.method30248(var1, 8)
@@ -3662,7 +3662,7 @@ public class Class4447 implements Class4442 {
          .method30256(var0, var5 + "_from_glass_pane");
    }
 
-   private static void method14071(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14071(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8528.method30248(var1, 8)
          .method30250('#', Blocks.field36794)
          .method30250('X', var2)
@@ -3674,7 +3674,7 @@ public class Class4447 implements Class4442 {
          .method30255(var0);
    }
 
-   private static void method14072(Consumer<Class4664> var0, Class3303 var1, Class3303 var2) {
+   private static void method14072(Consumer<Class4664> var0, IItemProvider var1, IItemProvider var2) {
       Class8888.method32342(var1, 8)
          .method32344(var2)
          .method32345(Blocks.SAND, 4)
@@ -3719,7 +3719,7 @@ public class Class4447 implements Class4442 {
       return new Class4466(Class9587.field44822, var0, Class7340.field31445);
    }
 
-   private static Class4491 method14075(Class3303 var0) {
+   private static Class4491 method14075(IItemProvider var0) {
       return method14077(Class9735.method38146().method38147(var0).method38151());
    }
 

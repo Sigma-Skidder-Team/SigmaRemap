@@ -11,8 +11,8 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
    }
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      if (var4.method5368() && !var4.method3342() && var4.method2962(Class2318.field15879) && var4.method5372() != null) {
-         ItemStack var13 = var4.method2943(Class2106.field13735);
+      if (var4.method5368() && !var4.isInvisible() && var4.method2962(Class2318.field15879) && var4.method5372() != null) {
+         ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.field13735);
          if (var13.getItem() != Items.field38120) {
             var1.push();
             var1.translate(0.0, 0.0, 0.125);
@@ -22,7 +22,7 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
                - MathHelper.lerp((double)var7, var4.prevPosY, var4.getPosY());
             double var18 = MathHelper.lerp((double)var7, var4.field4913, var4.field4916)
                - MathHelper.lerp((double)var7, var4.prevPosZ, var4.getPosZ());
-            float var20 = var4.field4966 + (var4.field4965 - var4.field4966);
+            float var20 = var4.prevRenderYawOffset + (var4.renderYawOffset - var4.prevRenderYawOffset);
             double var21 = (double) MathHelper.sin(var20 * (float) (Math.PI / 180.0));
             double var23 = (double)(-MathHelper.cos(var20 * (float) (Math.PI / 180.0)));
             float var25 = (float)var16 * 10.0F;

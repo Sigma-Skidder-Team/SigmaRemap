@@ -8,8 +8,8 @@ public class Class9145 {
    public static void method34158(CommandDispatcher<Class6619> var0) {
       LiteralArgumentBuilder var3 = (LiteralArgumentBuilder)Class6099.method18839("defaultgamemode").requires(var0x -> var0x.method20129(2));
 
-      for (Class1894 var7 : Class1894.values()) {
-         if (var7 != Class1894.field11101) {
+      for (GameType var7 : GameType.values()) {
+         if (var7 != GameType.field11101) {
             var3.then(Class6099.method18839(var7.method8153()).executes(var1 -> method34159((Class6619)var1.getSource(), var7)));
          }
       }
@@ -17,7 +17,7 @@ public class Class9145 {
       var0.register(var3);
    }
 
-   private static int method34159(Class6619 var0, Class1894 var1) {
+   private static int method34159(Class6619 var0, GameType var1) {
       int var4 = 0;
       MinecraftServer var5 = var0.method20177();
       var5.method1370(var1);

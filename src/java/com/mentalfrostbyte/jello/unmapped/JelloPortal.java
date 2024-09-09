@@ -32,8 +32,8 @@ public class JelloPortal implements Class8006<ClientPlayerEntity> {
          field34416 = var1;
       }
 
-      if (Class8042.method27614() != null) {
-         Class8042.method27614().method34416();
+      if (ViaVersion3.method27614() != null) {
+         ViaVersion3.method27614().method34416();
       }
 
       this.field34425 = new Class7289();
@@ -42,8 +42,8 @@ public class JelloPortal implements Class8006<ClientPlayerEntity> {
       this.field34423 = new Class7040(new File("assets/viaversion/"));
       this.field34420 = new JelloPortalLogger(this.field34419);
       this.field34426 = new Class9313();
-      Class8042.method27610(Class9191.method34413().method38598(this).method38601(var4).method38600(new Class9212()).method38599(new Class6750()).method38602());
-      Class8042.method27614().method34414();
+      ViaVersion3.method27610(ViaVersion1.method34413().method38598(this).method38601(var4).method38600(new Class9212()).method38599(new Class6750()).method38602());
+      ViaVersion3.method27614().method34414();
       if (var1 != null) {
          this.field34424 = new Class9144(var1);
       }

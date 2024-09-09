@@ -3,7 +3,7 @@ package mapped;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 
-public class Class989 implements Class920 {
+public class Class989 implements IInventory {
    private static String[] field5472;
    public final Class948 field5473;
 
@@ -12,22 +12,22 @@ public class Class989 implements Class920 {
    }
 
    @Override
-   public int method3629() {
+   public int getSizeInventory() {
       return 1;
    }
 
    @Override
-   public boolean method3617() {
+   public boolean isEmpty() {
       return Class948.method3815(this.field5473).isEmpty();
    }
 
    @Override
-   public ItemStack method3618(int var1) {
+   public ItemStack getStackInSlot(int var1) {
       return var1 != 0 ? ItemStack.EMPTY : Class948.method3815(this.field5473);
    }
 
    @Override
-   public ItemStack method3619(int var1, int var2) {
+   public ItemStack decrStackSize(int var1, int var2) {
       if (var1 != 0) {
          return ItemStack.EMPTY;
       } else {
@@ -41,7 +41,7 @@ public class Class989 implements Class920 {
    }
 
    @Override
-   public ItemStack method3620(int var1) {
+   public ItemStack removeStackFromSlot(int var1) {
       if (var1 != 0) {
          return ItemStack.EMPTY;
       } else {
@@ -53,24 +53,24 @@ public class Class989 implements Class920 {
    }
 
    @Override
-   public void method3621(int var1, ItemStack var2) {
+   public void setInventorySlotContents(int var1, ItemStack var2) {
    }
 
    @Override
-   public int method3630() {
+   public int getInventoryStackLimit() {
       return 1;
    }
 
    @Override
-   public void method3622() {
-      this.field5473.method3622();
+   public void markDirty() {
+      this.field5473.markDirty();
    }
 
    @Override
-   public boolean method3623(PlayerEntity var1) {
+   public boolean isUsableByPlayer(PlayerEntity var1) {
       if (this.field5473.field5324.getTileEntity(this.field5473.field5325) == this.field5473) {
          return !(
-               var1.method3276(
+               var1.getDistanceNearest(
                      (double)this.field5473.field5325.getX() + 0.5,
                      (double)this.field5473.field5325.getY() + 0.5,
                      (double)this.field5473.field5325.getZ() + 0.5
@@ -85,7 +85,7 @@ public class Class989 implements Class920 {
    }
 
    @Override
-   public boolean method3633(int var1, ItemStack var2) {
+   public boolean isItemValidForSlot(int var1, ItemStack var2) {
       return false;
    }
 

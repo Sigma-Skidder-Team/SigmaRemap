@@ -195,10 +195,10 @@ public class Class3222 extends Block {
 
       for (Direction var10 : Class76.field161) {
          Class98 var11 = var1.<Class98>method23463(field18652.get(var10));
-         if (var11 != Class98.field267 && !var2.getBlockState(var8.method8377(var3, var10)).method23448(this)) {
+         if (var11 != Class98.field267 && !var2.getBlockState(var8.method8377(var3, var10)).isIn(this)) {
             var8.method8379(Direction.DOWN);
             BlockState var12 = var2.getBlockState(var8);
-            if (!var12.method23448(Blocks.field36895)) {
+            if (!var12.isIn(Blocks.field36895)) {
                BlockPos var13 = var8.method8349(var10.method536());
                BlockState var14 = var12.method23439(var10.method536(), var2.getBlockState(var13), var2, var8, var13);
                method11544(var12, var14, var2, var8, var4, var5);
@@ -206,7 +206,7 @@ public class Class3222 extends Block {
 
             var8.method8377(var3, var10).method8379(Direction.field673);
             BlockState var16 = var2.getBlockState(var8);
-            if (!var16.method23448(Blocks.field36895)) {
+            if (!var16.isIn(Blocks.field36895)) {
                BlockPos var17 = var8.method8349(var10.method536());
                BlockState var15 = var16.method23439(var10.method536(), var2.getBlockState(var17), var2, var8, var17);
                method11544(var16, var15, var2, var8, var4, var5);
@@ -246,7 +246,7 @@ public class Class3222 extends Block {
    }
 
    private boolean method11621(IBlockReader var1, BlockPos var2, BlockState var3) {
-      return var3.method23454(var1, var2, Direction.field673) || var3.method23448(Blocks.field36723);
+      return var3.method23454(var1, var2, Direction.field673) || var3.isIn(Blocks.field36723);
    }
 
    private void method11622(World var1, BlockPos var2, BlockState var3) {
@@ -292,11 +292,11 @@ public class Class3222 extends Block {
    }
 
    private int method11624(BlockState var1) {
-      return !var1.method23448(this) ? 0 : var1.<Integer>method23463(field18651);
+      return !var1.isIn(this) ? 0 : var1.<Integer>method23463(field18651);
    }
 
    private void method11625(World var1, BlockPos var2) {
-      if (var1.getBlockState(var2).method23448(this)) {
+      if (var1.getBlockState(var2).isIn(this)) {
          var1.notifyNeighborsOfStateChange(var2, this);
 
          for (Direction var8 : Direction.values()) {
@@ -307,7 +307,7 @@ public class Class3222 extends Block {
 
    @Override
    public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var4.method23448(var1.getBlock()) && !var2.isRemote) {
+      if (!var4.isIn(var1.getBlock()) && !var2.isRemote) {
          this.method11622(var2, var3, var1);
 
          for (Direction var9 : Class76.field162) {
@@ -320,7 +320,7 @@ public class Class3222 extends Block {
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var5 && !var1.method23448(var4.getBlock())) {
+      if (!var5 && !var1.isIn(var4.getBlock())) {
          super.method11513(var1, var2, var3, var4, var5);
          if (!var2.isRemote) {
             for (Direction var11 : Direction.values()) {
@@ -386,10 +386,10 @@ public class Class3222 extends Block {
    }
 
    public static boolean method11628(BlockState var0, Direction var1) {
-      if (var0.method23448(Blocks.REDSTONE_WIRE)) {
+      if (var0.isIn(Blocks.REDSTONE_WIRE)) {
          return true;
-      } else if (!var0.method23448(Blocks.field36592)) {
-         return var0.method23448(Blocks.field36895) ? var1 == var0.<Direction>method23463(Class3434.field19198) : var0.method23401() && var1 != null;
+      } else if (!var0.isIn(Blocks.field36592)) {
+         return var0.isIn(Blocks.field36895) ? var1 == var0.<Direction>method23463(Class3434.field19198) : var0.method23401() && var1 != null;
       } else {
          Direction var4 = var0.<Direction>method23463(Class3248.field18484);
          return var4 == var1 || var4.method536() == var1;
@@ -414,7 +414,7 @@ public class Class3222 extends Block {
          double var14 = 0.5 + (double)(0.4375F * (float)var5.method539()) + (double)(var13 * (float)var6.method539());
          double var16 = 0.5 + (double)(0.4375F * (float)var5.method540()) + (double)(var13 * (float)var6.method540());
          double var18 = 0.5 + (double)(0.4375F * (float)var5.method541()) + (double)(var13 * (float)var6.method541());
-         var1.method6746(
+         var1.addParticle(
             new RedstoneParticleData(var4.method25269(), var4.method25270(), var4.method25271(), 1.0F),
             (double)var3.getX() + var14,
             (double)var3.getY() + var16,
@@ -498,7 +498,7 @@ public class Class3222 extends Block {
             if (var9 != var1) {
                var2.setBlockState(var3, var9, 3);
                this.method11631(var2, var3, var1, var9);
-               return ActionResultType.field14818;
+               return ActionResultType.SUCCESS;
             }
          }
 

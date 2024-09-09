@@ -21,6 +21,6 @@ public class Class7805 extends EncoderException implements Class7804 {
    }
 
    public static Class7805 method26072(Throwable var0) {
-      return !Class8042.method27614().method34425() ? field33502 : new Class7805(var0);
+      return !ViaVersion3.method27614().method34425() ? field33502 : new Class7805(var0);
    }
 }

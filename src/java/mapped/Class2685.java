@@ -19,7 +19,7 @@ public class Class2685 extends Class2595 {
    @Override
    public boolean method10803() {
       if (this.field17102.method4357() != null) {
-         return this.field17102.world.method6789().method17135(Class5462.field24224) ? this.field17102.method3013().nextInt(2000) == 0 : false;
+         return this.field17102.world.getGameRules().getBoolean(Class5462.field24224) ? this.field17102.getRNG().nextInt(2000) == 0 : false;
       } else {
          return false;
       }
@@ -27,7 +27,7 @@ public class Class2685 extends Class2595 {
 
    @Override
    public void method10805() {
-      Random var3 = this.field17102.method3013();
+      Random var3 = this.field17102.getRNG();
       World var4 = this.field17102.world;
       int var5 = MathHelper.floor(this.field17102.getPosX() - 1.0 + var3.nextDouble() * 2.0);
       int var6 = MathHelper.floor(this.field17102.getPosY() + var3.nextDouble() * 2.0);
@@ -49,7 +49,7 @@ public class Class2685 extends Class2595 {
    private boolean method10901(World var1, BlockPos var2, BlockState var3, BlockState var4, BlockState var5, BlockPos var6) {
       return var4.isAir()
          && !var5.isAir()
-         && !var5.method23448(Blocks.BEDROCK)
+         && !var5.isIn(Blocks.BEDROCK)
          && var5.method23456(var1, var6)
          && var3.method23443(var1, var2)
          && var1.method7181(this.field17102, AxisAlignedBB.method19657(Vector3d.method11329(var2))).isEmpty();

@@ -15,6 +15,6 @@ public class Class3212 extends Block {
 
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
-      var4.method2928(var1, new Vector3d(0.25, 0.05F, 0.25));
+      var4.setMotionMultiplier(var1, new Vector3d(0.25, 0.05F, 0.25));
    }
 }

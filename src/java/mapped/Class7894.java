@@ -18,13 +18,13 @@ public class Class7894 extends Class7882<LivingEntity> {
 
    @Override
    public void method26425(ServerWorld var1, LivingEntity var2) {
-      Class6947<?> var5 = var2.method2992();
-      DamageSource var6 = var2.method3047();
+      Brain<?> var5 = var2.getBrain();
+      DamageSource var6 = var2.getLastDamageSource();
       if (var6 == null) {
          var5.method21405(Class8830.field39835);
       } else {
-         var5.method21406(Class8830.field39835, var2.method3047());
-         Entity var7 = var6.method31109();
+         var5.method21406(Class8830.field39835, var2.getLastDamageSource());
+         Entity var7 = var6.getTrueSource();
          if (var7 instanceof LivingEntity) {
             var5.method21406(Class8830.field39836, (LivingEntity)var7);
          }

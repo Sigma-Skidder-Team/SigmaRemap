@@ -26,7 +26,7 @@ public class Class2902 extends Class2898<Class4701> {
                if (var6 instanceof Class957) {
                   Class957 var7 = (Class957)var6;
                   var7.method3885(var3x, var5.method14748());
-                  var6.method3622();
+                  var6.markDirty();
                }
             });
          } else if (!var11) {

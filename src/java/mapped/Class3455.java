@@ -24,7 +24,7 @@ public class Class3455 extends Class3456 implements Class3449 {
 
    @Override
    public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.method23454(var2, var3, Direction.field673) && !var1.method23448(Blocks.field36890);
+      return var1.method23454(var2, var3, Direction.field673) && !var1.isIn(Blocks.field36890);
    }
 
    @Override
@@ -38,7 +38,7 @@ public class Class3455 extends Class3456 implements Class3449 {
       BlockState var4 = super.method11495(var1);
       if (var4 != null) {
          FluidState var5 = var1.method18360().getFluidState(var1.method18345().up());
-         if (var5.method23486(Class8953.field40469) && var5.method23477() == 8) {
+         if (var5.method23486(FluidTags.field40469) && var5.method23477() == 8) {
             return var4;
          }
       }
@@ -50,10 +50,10 @@ public class Class3455 extends Class3456 implements Class3449 {
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
       if (var1.<Class84>method23463(field19274) != Class84.field209) {
          FluidState var7 = var2.getFluidState(var3);
-         return super.method11492(var1, var2, var3) && var7.method23486(Class8953.field40469) && var7.method23477() == 8;
+         return super.method11492(var1, var2, var3) && var7.method23486(FluidTags.field40469) && var7.method23477() == 8;
       } else {
          BlockState var6 = var2.getBlockState(var3.down());
-         return var6.method23448(this) && var6.<Class84>method23463(field19274) == Class84.field210;
+         return var6.isIn(this) && var6.<Class84>method23463(field19274) == Class84.field210;
       }
    }
 

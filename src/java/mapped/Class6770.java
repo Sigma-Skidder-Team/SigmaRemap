@@ -34,7 +34,7 @@ public class Class6770 extends Class6768<Class8278> {
          for (int var22 = var6; var22 >= 0; var22--) {
             var21.method8372(var19, var22, var20);
             if (!var2.getBlockState(var21).isAir()) {
-               if (var22 == 62 && !var2.getBlockState(var21).method23448(var10.getBlock())) {
+               if (var22 == 62 && !var2.getBlockState(var21).isIn(var10.getBlock())) {
                   var2.setBlockState(var21, var10, false);
                }
                break;

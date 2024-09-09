@@ -22,7 +22,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -50,7 +49,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
    private static final ResourceLocation field935 = new ResourceLocation("textures/misc/forcefield.png");
    private static final ResourceLocation field936 = new ResourceLocation("textures/environment/rain.png");
    private static final ResourceLocation field937 = new ResourceLocation("textures/environment/snow.png");
-   public static final Direction[] field938 = Direction.values();
+   public static final net.minecraft.util.Direction[] field938 = net.minecraft.util.Direction.values();
    private final Minecraft field939;
    private final TextureManager field940;
    public final EntityRendererManager field941;
@@ -127,7 +126,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
    private List field1012 = new ArrayList(1024);
    private int field1013 = 0;
    private int field1014 = 0;
-   private static final Set field1015 = Collections.<Direction>unmodifiableSet(new HashSet(Arrays.asList(Direction.field685)));
+   private static final Set field1015 = Collections.<net.minecraft.util.Direction>unmodifiableSet(new HashSet(Arrays.asList(net.minecraft.util.Direction.field685)));
    private int field1016;
    private int field1017 = 0;
    private Class8391 field1018 = new Class8391(Blocks.AIR.method11579(), new BlockPos(0, 0, 0));
@@ -142,7 +141,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
    private Map<RenderType, Map> field1027 = new LinkedHashMap<RenderType, Map>();
 
    @Nullable
-   private Class8066 method854(BlockPos var1, Class8066 var2, Direction var3) {
+   private Class8066 method854(BlockPos var1, Class8066 var2, net.minecraft.util.Direction var3) {
       BlockPos var4 = var2.method27723(var3);
       if (MathHelper.method37772(var1.getX() - var4.getX()) > this.field985 * 16) {
          return null;
@@ -257,7 +256,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                         float var35 = -((float)var34 + var2) / 32.0F * (3.0F + var32.nextFloat());
                         double var36 = (double)((float)var21 + 0.5F) - var3;
                         double var38 = (double)((float)var20 + 0.5F) - var7;
-                        float var40 = MathHelper.method37766(var36 * var36 + var38 * var38) / (float)var16;
+                        float var40 = MathHelper.sqrt(var36 * var36 + var38 * var38) / (float)var16;
                         float var41 = ((1.0F - var40 * var40) * 0.5F + 0.5F) * var48;
                         var19.method8372(var21, var31, var20);
                         int var42 = method944(var10, var19);
@@ -297,7 +296,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                         float var51 = (float)(var32.nextDouble() + (double)(var18 * (float)var32.nextGaussian()) * 0.001);
                         double var37 = (double)((float)var21 + 0.5F) - var3;
                         double var39 = (double)((float)var20 + 0.5F) - var7;
-                        float var52 = MathHelper.method37766(var37 * var37 + var39 * var39) / (float)var16;
+                        float var52 = MathHelper.sqrt(var37 * var37 + var39 * var39) / (float)var16;
                         float var53 = ((1.0F - var52 * var52) * 0.3F + 0.5F) * var48;
                         var19.method8372(var21, var31, var20);
                         int var43 = method944(var10, var19);
@@ -376,15 +375,15 @@ public class WorldRenderer implements Class215, AutoCloseable {
                BlockState var17 = var4.getBlockState(var11);
                FluidState var18 = var4.getFluidState(var11);
                VoxelShape var19 = var17.method23414(var4, var11);
-               double var20 = var19.method19522(Class113.field414, var13, var15);
+               double var20 = var19.method19522(Direction.field414, var13, var15);
                double var22 = (double)var18.method23475(var4, var11);
                double var24 = Math.max(var20, var22);
-               Class7435 var26 = !var18.method23486(Class8953.field40470) && !var17.method23448(Blocks.field36890) && !Class3244.method11655(var17)
+               Class7435 var26 = !var18.method23486(FluidTags.field40470) && !var17.isIn(Blocks.field36890) && !Class3244.method11655(var17)
                   ? ParticleTypes.field34091
                   : ParticleTypes.field34092;
                this.field939
                   .world
-                  .method6746(var26, (double)var11.getX() + var13, (double)var11.getY() + var24, (double)var11.getZ() + var15, 0.0, 0.0, 0.0);
+                  .addParticle(var26, (double)var11.getX() + var13, (double)var11.getY() + var24, (double)var11.getZ() + var15, 0.0, 0.0, 0.0);
             }
          }
 
@@ -870,7 +869,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          this.method931();
          this.field1004.clear();
          Deque var41 = this.field1004;
-         Entity.method3378(MathHelper.method37778((double)this.field939.gameSettings.field44574 / 8.0, 1.0, 2.5) * (double)this.field939.gameSettings.field44575);
+         Entity.method3378(MathHelper.clamp((double)this.field939.gameSettings.field44574 / 8.0, 1.0, 2.5) * (double)this.field939.gameSettings.field44575);
          boolean var43 = this.field939.renderChunksMany;
          BlockPos var45 = var1.getBlockPos();
          int var26 = var45.getY();
@@ -894,7 +893,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                double var34 = (double)(var31.method25271() * 16.0F);
                double var36 = (double)(this.field985 * 16);
 
-               for (double var38 = var36 * var36; var29.method11342(var28) < var38; var29 = var29.method11339(var32, 0.0, var34)) {
+               for (double var38 = var36 * var36; var29.method11342(var28) < var38; var29 = var29.add(var32, 0.0, var34)) {
                   Class8066 var40 = this.field947.method34761(new BlockPos(var29));
                   if (var40 == null) {
                      break;
@@ -902,7 +901,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
                   if (var2.method25122(var40.field34614)) {
                      var40.method27710(var4);
-                     var41.add(new Class7002(var40, (Direction)null, 0));
+                     var41.add(new Class7002(var40, (net.minecraft.util.Direction)null, 0));
                      break;
                   }
                }
@@ -916,7 +915,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                }
 
                var14.method27710(var4);
-               var41.add(new Class7002(var14, (Direction)null, 0));
+               var41.add(new Class7002(var14, (net.minecraft.util.Direction)null, 0));
             } else {
                int var49 = var16.getY() > 0 ? Math.min(var21, 248) : 8;
                if (var22 != null) {
@@ -933,7 +932,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                      if (var61 != null && var2.method25122(var61.field34614)) {
                         var61.method27710(var4);
                         Class7002 var35 = var61.method27746();
-                        Class7002.method21715(var35, (Direction)null, 0, 0);
+                        Class7002.method21715(var35, (net.minecraft.util.Direction)null, 0, 0);
                         var56.add(var35);
                      }
                   }
@@ -950,7 +949,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          while (!var41.isEmpty()) {
             Class7002 var53 = (Class7002)var41.poll();
             Class8066 var55 = var53.field30281;
-            Direction var57 = Class7002.method21716(var53);
+            net.minecraft.util.Direction var57 = Class7002.method21716(var53);
             Class7457 var59 = var55.field34609.get();
             if (!var59.method24109() || var55.method27721()) {
                this.field945.add(var53);
@@ -964,9 +963,9 @@ public class WorldRenderer implements Class215, AutoCloseable {
                this.renderInfosTileEntities.add(var53);
             }
 
-            Direction[] var60 = var43 ? Class8597.method30746(Class7002.method21717(var53)) : Direction.field685;
+            net.minecraft.util.Direction[] var60 = var43 ? Class8597.method30746(Class7002.method21717(var53)) : net.minecraft.util.Direction.field685;
 
-            for (Direction var37 : var60) {
+            for (net.minecraft.util.Direction var37 : var60) {
                if (!var43 || var57 == null || var59.method24107(var57.method536(), var37)) {
                   Class8066 var65 = this.method875(var16, var55, var37, var50, var21);
                   if (var65 != null && var65.method27710(var4) && var2.method25122(var65.field34614)) {
@@ -1024,7 +1023,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
    }
 
    @Nullable
-   private Class8066 method875(BlockPos var1, Class8066 var2, Direction var3, boolean var4, int var5) {
+   private Class8066 method875(BlockPos var1, Class8066 var2, net.minecraft.util.Direction var3, boolean var4, int var5) {
       Class8066 var6 = var2.method27745(var3);
       if (var6 == null) {
          return null;
@@ -1413,9 +1412,9 @@ public class WorldRenderer implements Class215, AutoCloseable {
          if (Class9299.field42830.method20214() && Class9299.field42882.method20214()) {
             var80 = !Class9299.method35056(Class9299.field42882, this, var6, var64, var2, matrixStackIn, irendertypebuffer$impl)
                && !Class9299.method35064(var75, Class9299.field42830, this.field943, var69)
-               && this.field943.method6810().method24523(var69);
+               && this.field943.getWorldBorder().contains(var69);
          } else {
-            var80 = !var75.isAir() && this.field943.method6810().method24523(var69);
+            var80 = !var75.isAir() && this.field943.getWorldBorder().contains(var69);
          }
 
          if (var80) {
@@ -1731,7 +1730,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                int var15 = var14 >> 16 & 0xFF;
                int var16 = var14 >> 8 & 0xFF;
                int var17 = var14 & 0xFF;
-               Direction var18 = Class7002.method21716(var11);
+               net.minecraft.util.Direction var18 = Class7002.method21716(var11);
                if (var18 != null) {
                   var3.pos(8.0, 8.0, 8.0).color(var15, var16, var17, 255).endVertex();
                   var3.pos((double)(8 - 16 * var18.method539()), (double)(8 - 16 * var18.method540()), (double)(8 - 16 * var18.method541()))
@@ -1748,8 +1747,8 @@ public class WorldRenderer implements Class215, AutoCloseable {
                RenderSystem.lineWidth(10.0F);
                int var24 = 0;
 
-               for (Direction var30 : field938) {
-                  for (Direction var22 : field938) {
+               for (net.minecraft.util.Direction var30 : field938) {
+                  for (net.minecraft.util.Direction var22 : field938) {
                      boolean var23 = var12.method27715().method24107(var30, var22);
                      if (!var23) {
                         var24++;
@@ -2150,7 +2149,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          }
 
          RenderSystem.method27890(0.0F, 0.0F, 0.0F);
-         double var29 = this.field939.player.method3286(var2).y - this.field943.getWorldInfo().method20052();
+         double var29 = this.field939.player.getEyePosition(var2).y - this.field943.getWorldInfo().method20052();
          boolean var32 = false;
          if (var29 < 0.0) {
             var1.push();
@@ -2549,7 +2548,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
    private void method892(ActiveRenderInfo var1) {
       BufferBuilder var2 = Tessellator.getInstance().getBuffer();
-      WorldBorder var3 = this.field943.method6810();
+      WorldBorder var3 = this.field943.getWorldBorder();
       double var4 = (double)(this.field939.gameSettings.field44574 * 16);
       if (!(var1.getPos().x < var3.method24532() - var4)
          || !(var1.getPos().x > var3.method24530() + var4)
@@ -2695,7 +2694,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
          float var19 = var17 * (float)(var18 == 0.0F ? 1 : 0);
          float var20 = var17 * (float)(var18 == 1.0F ? 1 : 0);
          float var21 = var17 * (float)(var18 == 2.0F ? 1 : 0);
-         method896(var0, var1, VoxelShapes.create(var16.method19667(0.0, 0.0, 0.0)), var3, var5, var7, var19, var20, var21, 1.0F);
+         method896(var0, var1, VoxelShapes.create(var16.offset(0.0, 0.0, 0.0)), var3, var5, var7, var19, var20, var21, 1.0F);
       }
    }
 
@@ -2910,7 +2909,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
    private void method910(World var1, BlockPos var2, boolean var3) {
       for (LivingEntity var5 : var1.<LivingEntity>method7182(LivingEntity.class, new AxisAlignedBB(var2).method19664(3.0))) {
-         var5.method3171(var2, var3);
+         var5.setPartying(var2, var3);
       }
    }
 
@@ -3221,7 +3220,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
 
             for (int var40 = 0; var40 < 8; var40++) {
                this.field943
-                  .method6746(
+                  .addParticle(
                      ParticleTypes.field34085,
                      (double)var3.getX() + var5.nextDouble(),
                      (double)var3.getY() + 1.2,
@@ -3239,7 +3238,7 @@ public class WorldRenderer implements Class215, AutoCloseable {
                double var42 = (double)var3.getX() + var5.nextDouble() * 0.6 + 0.2;
                double var44 = (double)var3.getY() + var5.nextDouble() * 0.6 + 0.2;
                double var45 = (double)var3.getZ() + var5.nextDouble() * 0.6 + 0.2;
-               this.field943.method6746(ParticleTypes.field34092, var42, var44, var45, 0.0, 0.0, 0.0);
+               this.field943.addParticle(ParticleTypes.field34092, var42, var44, var45, 0.0, 0.0, 0.0);
             }
             break;
          case 1503:
@@ -3249,11 +3248,11 @@ public class WorldRenderer implements Class215, AutoCloseable {
                double var41 = (double)var3.getX() + (5.0 + var5.nextDouble() * 6.0) / 16.0;
                double var43 = (double)var3.getY() + 0.8125;
                double var11 = (double)var3.getZ() + (5.0 + var5.nextDouble() * 6.0) / 16.0;
-               this.field943.method6746(ParticleTypes.field34092, var41, var43, var11, 0.0, 0.0, 0.0);
+               this.field943.addParticle(ParticleTypes.field34092, var41, var43, var11, 0.0, 0.0, 0.0);
             }
             break;
          case 2000:
-            Direction var6 = Direction.byIndex(var4);
+            net.minecraft.util.Direction var6 = net.minecraft.util.Direction.byIndex(var4);
             int var7 = var6.method539();
             int var8 = var6.method540();
             int var9 = var6.method541();
@@ -3275,13 +3274,13 @@ public class WorldRenderer implements Class215, AutoCloseable {
          case 2001:
             BlockState var16 = Block.method11536(var4);
             if (!Class9561.method37050(var16, this.field943, var3)) {
-               Class8447 var47 = var16.method23452();
+               SoundType var47 = var16.getSoundType();
                if (Class9299.field42827.method20214()) {
-                  var47 = (Class8447)Class9299.method35070(var16, Class9299.field42827, this.field943, var3, null);
+                  var47 = (SoundType)Class9299.method35070(var16, Class9299.field42827, this.field943, var3, null);
                }
 
                this.field943
-                  .method6858(var3, var47.method29712(), Class2266.field14732, (var47.method29710() + 1.0F) / 2.0F, var47.method29711() * 0.8F, false);
+                  .method6858(var3, var47.method29712(), Class2266.field14732, (var47.getVolume() + 1.0F) / 2.0F, var47.method29711() * 0.8F, false);
             }
 
             this.field939.particles.method1206(var3, var16);
@@ -3375,8 +3374,8 @@ public class WorldRenderer implements Class215, AutoCloseable {
                double var60 = (double)var3.getX() + 0.5 + (var5.nextDouble() - 0.5) * 2.0;
                double var63 = (double)var3.getY() + 0.5 + (var5.nextDouble() - 0.5) * 2.0;
                double var65 = (double)var3.getZ() + 0.5 + (var5.nextDouble() - 0.5) * 2.0;
-               this.field943.method6746(ParticleTypes.field34092, var60, var63, var65, 0.0, 0.0, 0.0);
-               this.field943.method6746(ParticleTypes.field34074, var60, var63, var65, 0.0, 0.0, 0.0);
+               this.field943.addParticle(ParticleTypes.field34092, var60, var63, var65, 0.0, 0.0, 0.0);
+               this.field943.addParticle(ParticleTypes.field34074, var60, var63, var65, 0.0, 0.0, 0.0);
             }
             break;
          case 2005:
@@ -3410,14 +3409,14 @@ public class WorldRenderer implements Class215, AutoCloseable {
             break;
          case 2008:
             this.field943
-               .method6746(
+               .addParticle(
                   ParticleTypes.field34070, (double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5, 0.0, 0.0, 0.0
                );
             break;
          case 2009:
             for (int var28 = 0; var28 < 8; var28++) {
                this.field943
-                  .method6746(
+                  .addParticle(
                      ParticleTypes.field34053,
                      (double)var3.getX() + var5.nextDouble(),
                      (double)var3.getY() + 1.2,

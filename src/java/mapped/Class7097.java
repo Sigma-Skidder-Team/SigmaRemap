@@ -23,12 +23,12 @@ public class Class7097 extends Class7092 {
       BlockState var10 = var5.field35531;
       BlockPos var11 = var5.field35530;
       BlockState var12 = null;
-      if (var10.method23448(Blocks.field36615) || var10.method23448(Blocks.STONE) || var10.method23448(Blocks.field36618)) {
+      if (var10.isIn(Blocks.field36615) || var10.isIn(Blocks.STONE) || var10.isIn(Blocks.field36618)) {
          var12 = this.method22076(var9);
       } else if (!var10.method23446(BlockTags.field32762)) {
          if (!var10.method23446(BlockTags.field32763)) {
             if (!var10.method23446(BlockTags.field32764)) {
-               if (var10.method23448(Blocks.field36527)) {
+               if (var10.isIn(Blocks.field36527)) {
                   var12 = this.method22080(var9);
                }
             } else {

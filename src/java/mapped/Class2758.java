@@ -55,14 +55,14 @@ public class Class2758<T extends Class1009 & Class1022> extends Class2595 {
       this.field17304.method4304(false);
       this.field17309 = 0;
       this.field17308 = -1;
-      this.field17304.method3162();
+      this.field17304.resetActiveHand();
    }
 
    @Override
    public void method10805() {
       LivingEntity var3 = this.field17304.method4232();
       if (var3 != null) {
-         double var4 = this.field17304.method3276(var3.getPosX(), var3.getPosY(), var3.getPosZ());
+         double var4 = this.field17304.getDistanceNearest(var3.getPosX(), var3.getPosY(), var3.getPosZ());
          boolean var6 = this.field17304.method4231().method35460(var3);
          boolean var7 = this.field17309 > 0;
          if (var6 != var7) {
@@ -84,11 +84,11 @@ public class Class2758<T extends Class1009 & Class1022> extends Class2595 {
          }
 
          if (this.field17312 >= 20) {
-            if ((double)this.field17304.method3013().nextFloat() < 0.3) {
+            if ((double)this.field17304.getRNG().nextFloat() < 0.3) {
                this.field17310 = !this.field17310;
             }
 
-            if ((double)this.field17304.method3013().nextFloat() < 0.3) {
+            if ((double)this.field17304.getRNG().nextFloat() < 0.3) {
                this.field17311 = !this.field17311;
             }
 
@@ -112,15 +112,15 @@ public class Class2758<T extends Class1009 & Class1022> extends Class2595 {
 
          if (!this.field17304.isHandActive()) {
             if (--this.field17308 <= 0 && this.field17309 >= -60) {
-               this.field17304.method3154(Class9456.method36389(this.field17304, Items.BOW));
+               this.field17304.setActiveHand(Class9456.method36389(this.field17304, Items.BOW));
             }
          } else if (!var6 && this.field17309 < -60) {
-            this.field17304.method3162();
+            this.field17304.resetActiveHand();
          } else if (var6) {
-            int var8 = this.field17304.method3160();
+            int var8 = this.field17304.getItemInUseMaxCount();
             if (var8 >= 20) {
-               this.field17304.method3162();
-               this.field17304.method4530(var3, Class3263.method11777(var8));
+               this.field17304.resetActiveHand();
+               this.field17304.method4530(var3, BowItem.method11777(var8));
                this.field17308 = this.field17306;
             }
          }

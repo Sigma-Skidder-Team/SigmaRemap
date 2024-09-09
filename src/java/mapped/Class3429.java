@@ -30,7 +30,7 @@ public abstract class Class3429 extends Block {
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      Class96 var7 = !var1.method23448(this) ? null : var1.<Class96>method23463(this.method12093());
+      Class96 var7 = !var1.isIn(this) ? null : var1.<Class96>method23463(this.method12093());
       return var7 != null && var7.method275() ? field19188 : field19187;
    }
 
@@ -41,7 +41,7 @@ public abstract class Class3429 extends Block {
 
    @Override
    public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var4.method23448(var1.getBlock())) {
+      if (!var4.isIn(var1.getBlock())) {
          this.method12089(var1, var2, var3, var5);
       }
    }
@@ -57,7 +57,7 @@ public abstract class Class3429 extends Block {
 
    @Override
    public void method11506(BlockState var1, World var2, BlockPos var3, Block var4, BlockPos var5, boolean var6) {
-      if (!var2.isRemote && var2.getBlockState(var3).method23448(this)) {
+      if (!var2.isRemote && var2.getBlockState(var3).isIn(this)) {
          Class96 var9 = var1.<Class96>method23463(this.method12093());
          if (!method12090(var3, var2, var9)) {
             this.method12091(var1, var2, var3, var4);

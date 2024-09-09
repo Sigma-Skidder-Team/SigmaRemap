@@ -31,7 +31,7 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
       var4.translate((double)var9.method539() * 0.46875, (double)var9.method540() * 0.46875, (double)var9.method541() * 0.46875);
       var4.rotate(Vector3f.field32898.rotationDegrees(var1.rotationPitch));
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F - var1.rotationYaw));
-      boolean var13 = var1.method3342();
+      boolean var13 = var1.isInvisible();
       if (!var13) {
          BlockRendererDispatcher var14 = this.field25155.getBlockRendererDispatcher();
          ModelManager var15 = var14.getBlockModelShapes().getModelManager();
@@ -98,7 +98,7 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
    public boolean method17852(ItemFrameEntity var1) {
       if (Minecraft.isGuiEnabled() && !var1.method4090().isEmpty() && var1.method4090().method32152() && this.field25097.field40019 == var1) {
          double var4 = this.field25097.method32228(var1);
-         float var6 = !var1.method3334() ? 64.0F : 32.0F;
+         float var6 = !var1.isDiscrete() ? 64.0F : 32.0F;
          return var4 < (double)(var6 * var6);
       } else {
          return false;
@@ -113,7 +113,7 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
       if (! Shaders.field40609) {
          if (!Class7944.field34162) {
             Entity var4 = this.field25155.getRenderViewEntity();
-            double var5 = var1.method3276(var4.getPosX(), var4.getPosY(), var4.getPosZ());
+            double var5 = var1.getDistanceNearest(var4.getPosX(), var4.getPosY(), var4.getPosZ());
             if (var5 > field25157) {
                return false;
             }

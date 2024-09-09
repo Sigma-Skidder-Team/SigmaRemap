@@ -2,15 +2,15 @@ package com.mentalfrostbyte.jello.module.impl.gui.jello;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4430;
+import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.BlurUtil;
+import com.mentalfrostbyte.jello.unmapped.BlurEngine;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -68,9 +68,9 @@ public class TabGUI extends Module {
             if (Client.getInstance().getGuiManager().method33472()) {
                 if (! Minecraft.getInstance().gameSettings.showDebugInfo) {
                     if (!Minecraft.getInstance().gameSettings.hideGUI) {
-                        BlurUtil.method29971(this.field23768, this.field23769, this.field23770, this.field23771);
+                        BlurEngine.method29971(this.field23768, this.field23769, this.field23770, this.field23771);
                         if (this.field23781) {
-                            BlurUtil.method29971(170, this.field23769, this.field23786, this.field23783);
+                            BlurEngine.method29971(170, this.field23769, this.field23786, this.field23783);
                         }
                     }
                 }
@@ -80,7 +80,7 @@ public class TabGUI extends Module {
 
     @EventTarget
     @HigestPriority
-    private void method16591(Class4415 var1) {
+    private void method16591(EventRender var1) {
         if (this.isEnabled() && mc.player != null && mc.world != null) {
             if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                 if (!Minecraft.getInstance().gameSettings.hideGUI) {
@@ -316,9 +316,9 @@ public class TabGUI extends Module {
     }
 
     @EventTarget
-    private void method16599(Class4430 var1) {
+    private void method16599(EventKeyPress var1) {
         if (this.isEnabled()) {
-            switch (var1.method13977()) {
+            switch (var1.getKey()) {
                 case 257:
                     if (this.field23781) {
                         this.field23785.method16000();
@@ -391,7 +391,7 @@ public class TabGUI extends Module {
             RenderUtil.method11431(var1, var2, var1 + var3, var2 + var4, var14, var15);
         } else {
             RenderUtil.method11419((float) var1, (float) var2, (float) var3, (float) var4);
-            BlurUtil.method29974();
+            BlurEngine.method29974();
             RenderUtil.endScissor();
             RenderUtil.method11426((float) var1, (float) var2, (float) (var1 + var3), (float) (var2 + var4), this.field23793);
         }

@@ -20,7 +20,7 @@ public final class Class201 extends Class200<Class7585, Class209> {
       int var6 = BlockPos.method8329(var1);
       int var7 = BlockPos.method8330(var1);
       IBlockReader var8 = this.field746.method7344(var5 >> 4, var7 >> 4);
-      return var8 == null ? 0 : var8.method7032(this.field750.method8372(var5, var6, var7));
+      return var8 == null ? 0 : var8.getLightValue(this.field750.method8372(var5, var6, var7));
    }
 
    @Override

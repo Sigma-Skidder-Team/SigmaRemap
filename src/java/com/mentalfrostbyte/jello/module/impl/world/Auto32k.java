@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.world;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
@@ -54,7 +54,7 @@ public class Auto32k extends Module {
             }
         }
 
-        this.field23872 = Class7789.method25843(
+        this.field23872 = InvManagerUtils.method25843(
                 Items.field37669,
                 Items.field37665,
                 Items.field37666,
@@ -73,20 +73,20 @@ public class Auto32k extends Module {
                 Items.field37654,
                 Items.field37658
         );
-        this.field23871 = Class7789.method25843(Items.field37545);
+        this.field23871 = InvManagerUtils.method25843(Items.field37545);
         if (this.field23871 == -1) {
-            this.field23871 = Class7789.method25822(Items.field37545);
+            this.field23871 = InvManagerUtils.method25822(Items.field37545);
             if (this.field23871 != -1) {
                 if (this.field23871 >= 36 && this.field23871 <= 44) {
                     this.field23871 %= 9;
                 } else {
-                    this.field23871 = Class7789.method25857(this.field23871);
+                    this.field23871 = InvManagerUtils.method25857(this.field23871);
                 }
             }
         }
 
         if (this.field23872 == -1) {
-            this.field23872 = Class7789.method25823(
+            this.field23872 = InvManagerUtils.method25823(
                     Items.field37669,
                     Items.field37665,
                     Items.field37666,
@@ -109,7 +109,7 @@ public class Auto32k extends Module {
                 if (this.field23872 >= 36 && this.field23872 <= 44) {
                     this.field23872 %= 9;
                 } else {
-                    this.field23872 = Class7789.method25857(this.field23872);
+                    this.field23872 = InvManagerUtils.method25857(this.field23872);
                 }
             }
         }
@@ -216,7 +216,7 @@ public class Auto32k extends Module {
     }
 
     @EventTarget
-    private void method16720(Class4399 var1) {
+    private void method16720(EventUpdate var1) {
         if (this.isEnabled()) {
             if (this.field23871 != -1) {
                 if (this.field23872 != -1) {
@@ -225,15 +225,15 @@ public class Auto32k extends Module {
                             if (this.field23873 == 1) {
                                 float var4 = BlockUtil.method34543(this.field23870.up(), Direction.field673)[0];
                                 float var5 = BlockUtil.method34543(this.field23870.up(), Direction.field673)[1];
-                                var1.method13918(var4);
-                                var1.method13916(var5);
+                                var1.setPitch(var4);
+                                var1.setYaw(var5);
                                 int var6 = mc.player.inventory.currentItem;
                                 mc.player.inventory.currentItem = this.field23871;
                                 Vector3d var7 = BlockUtil.method34572(Direction.field673, this.field23870);
                                 BlockRayTraceResult var8 = new BlockRayTraceResult(var7, Direction.field673, this.field23870, false);
                                 ActionResultType var9 = mc.playerController.func_217292_a(mc.player, mc.world, Hand.MAIN_HAND, var8);
                                 mc.player.swingArm(Hand.MAIN_HAND);
-                                if (var9 == ActionResultType.field14818) {
+                                if (var9 == ActionResultType.SUCCESS) {
                                     this.field23873++;
                                     mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.PRESS_SHIFT_KEY));
                                     mc.player.field6131.field43914 = true;
@@ -250,8 +250,8 @@ public class Auto32k extends Module {
                         } else {
                             float var12 = BlockUtil.method34543(this.field23870, Direction.field673)[0];
                             float var13 = BlockUtil.method34543(this.field23870, Direction.field673)[1];
-                            var1.method13918(var12);
-                            var1.method13916(var13);
+                            var1.setPitch(var12);
+                            var1.setYaw(var13);
                             this.field23873++;
                         }
                     }
@@ -265,8 +265,8 @@ public class Auto32k extends Module {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SOpenWindowPacket) {
                 this.field23876 = (SOpenWindowPacket) var1.getPacket();
-                if (this.isEnabled() && this.field23876.method17285() == Class8298.field35663) {
-                    var1.method13900(true);
+                if (this.isEnabled() && this.field23876.method17285() == ContainerType.field35663) {
+                    var1.setCancelled(true);
                 }
 
                 this.field23874 = this.field23876.method17284();
@@ -279,12 +279,12 @@ public class Auto32k extends Module {
                 ItemStack var6 = var4.method17305();
                 int var7 = var4.method17303();
                 if (this.field23874 == var7 && var5 == 0 && var6.getItem() != Items.field37222 && !this.field23877) {
-                    var1.method13900(true);
+                    var1.setCancelled(true);
                     mc.getConnection().sendPacket(new CClickWindowPacket(var7, var5, 1, ClickType.field14695, var6, this.field23875++));
                     int var8 = -1;
 
                     for (int var9 = 44; var9 > 9; var9--) {
-                        ItemStack var10 = mc.player.field4904.method18131(var9).method18265();
+                        ItemStack var10 = mc.player.container.getSlot(var9).getStack();
                         if (var10.isEmpty()) {
                             var8 = var9;
                             break;
@@ -292,7 +292,7 @@ public class Auto32k extends Module {
                     }
 
                     if (var8 != -1) {
-                        mc.player.field4904.method18131(var8).method18267(var6);
+                        mc.player.container.getSlot(var8).putStack(var6);
                         if (var8 >= 36) {
                             mc.player.inventory.currentItem = var8 % 9;
                         }
@@ -311,17 +311,17 @@ public class Auto32k extends Module {
     @EventTarget
     private void method16722(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13932() instanceof CCloseWindowPacket) {
-                var1.method13900(true);
+            if (var1.getPacket() instanceof CCloseWindowPacket) {
+                var1.setCancelled(true);
             }
 
-            if (var1.method13932() instanceof CUseEntityPacket) {
+            if (var1.getPacket() instanceof CUseEntityPacket) {
                 float var4 = BlockUtil.method34543(this.field23870.up(), Direction.field673)[0];
                 float var5 = BlockUtil.method34543(this.field23870.up(), Direction.field673)[1];
             }
 
-            if (var1.method13932() instanceof CPlayerPacket) {
-                CPlayerPacket var6 = (CPlayerPacket) var1.method13932();
+            if (var1.getPacket() instanceof CPlayerPacket) {
+                CPlayerPacket var6 = (CPlayerPacket) var1.getPacket();
                 var6.onGround = false;
             }
         }

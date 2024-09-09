@@ -8,7 +8,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class InventoryScreen extends Class860<Class5830> implements Class854 {
+public class InventoryScreen extends Class860<PlayerContainer> implements Class854 {
    private static final ResourceLocation field4765 = new ResourceLocation("textures/gui/recipe_button.png");
    private float field4766;
    private float field4767;
@@ -18,7 +18,7 @@ public class InventoryScreen extends Class860<Class5830> implements Class854 {
    private boolean field4771;
 
    public InventoryScreen(PlayerEntity var1) {
-      super(var1.field4904, var1.inventory, new TranslationTextComponent("container.crafting"));
+      super(var1.container, var1.inventory, new TranslationTextComponent("container.crafting"));
       this.field4567 = true;
       this.field4723 = 97;
    }
@@ -101,16 +101,16 @@ public class InventoryScreen extends Class860<Class5830> implements Class854 {
       Quaternion var12 = Vector3f.field32898.rotationDegrees(var9 * 20.0F);
       var11.method31182(var12);
       var10.rotate(var11);
-      float var13 = var5.field4965;
+      float var13 = var5.renderYawOffset;
       float var14 = var5.rotationYaw;
       float var15 = var5.rotationPitch;
-      float var16 = var5.field4968;
-      float var17 = var5.field4967;
-      var5.field4965 = 180.0F + var8 * 20.0F;
+      float var16 = var5.prevRotationYawHead;
+      float var17 = var5.rotationYawHead;
+      var5.renderYawOffset = 180.0F + var8 * 20.0F;
       var5.rotationYaw = 180.0F + var8 * 40.0F;
       var5.rotationPitch = -var9 * 20.0F;
-      var5.field4967 = var5.rotationYaw;
-      var5.field4968 = var5.rotationYaw;
+      var5.rotationYawHead = var5.rotationYaw;
+      var5.prevRotationYawHead = var5.rotationYaw;
       EntityRendererManager var18 = Minecraft.getInstance().getRenderManager();
       var12.method31184();
       var18.method32214(var12);
@@ -119,11 +119,11 @@ public class InventoryScreen extends Class860<Class5830> implements Class854 {
       RenderSystem.runAsFancy(() -> var18.method32219(var5, 0.0, 0.0, 0.0, 0.0F, 1.0F, var10, var19, 15728880));
       var19.method25602();
       var18.method32215(true);
-      var5.field4965 = var13;
+      var5.renderYawOffset = var13;
       var5.rotationYaw = var14;
       var5.rotationPitch = var15;
-      var5.field4968 = var16;
-      var5.field4967 = var17;
+      var5.prevRotationYawHead = var16;
+      var5.rotationYawHead = var17;
       RenderSystem.popMatrix();
    }
 
@@ -159,7 +159,7 @@ public class InventoryScreen extends Class860<Class5830> implements Class854 {
    }
 
    @Override
-   public void method2626(Class5839 var1, int var2, int var3, ClickType var4) {
+   public void method2626(Slot var1, int var2, int var3, ClickType var4) {
       super.method2626(var1, var2, var3, var4);
       this.field4768.method5841(var1);
    }

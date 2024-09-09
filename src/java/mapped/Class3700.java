@@ -22,7 +22,7 @@ public class Class3700 extends Class3676<Class1046> {
    }
 
    public boolean method12508(ServerWorld var1, Class1046 var2) {
-      Optional var5 = var2.method2992().<Class9378>method21410(this.field19751);
+      Optional var5 = var2.getBrain().<Class9378>method21410(this.field19751);
       return var5.isPresent()
          && var1.getDimensionKey() == ((Class9378)var5.get()).method35578()
          && ((Class9378)var5.get()).method35579().method8317(var2.getPositionVec(), (double)this.field19753);
@@ -30,7 +30,7 @@ public class Class3700 extends Class3676<Class1046> {
 
    public void method12502(ServerWorld var1, Class1046 var2, long var3) {
       if (var3 > this.field19755) {
-         Class6947<?> var7 = var2.method2992();
+         Brain<?> var7 = var2.getBrain();
          Optional<Class9378> var8 = var7.method21410(this.field19751);
          var8.ifPresent(var2x -> var7.method21406(Class8830.field39824, new Class8999(var2x.method35579(), this.field19754, this.field19752)));
          this.field19755 = var3 + 80L;

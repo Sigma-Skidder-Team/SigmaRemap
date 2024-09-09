@@ -32,12 +32,12 @@ public final class Class7939 extends Class7938 {
    }
 
    @Override
-   public int method26720(Class113 var1) {
+   public int method26720(Direction var1) {
       return Math.max(0, this.field34041.method26720(var1) - var1.method327(this.field34042, this.field34043, this.field34044));
    }
 
    @Override
-   public int method26721(Class113 var1) {
+   public int method26721(Direction var1) {
       return Math.min(
          var1.method327(this.field34045, this.field34046, this.field34047),
          this.field34041.method26721(var1) - var1.method327(this.field34042, this.field34043, this.field34044)

@@ -142,7 +142,7 @@ public class Class8429 {
       if (this.field36115 == null) {
          var1.addAll(var2.method6912(this.field36120, var4));
       } else {
-         var1.addAll(var2.method6771(this.field36120, this.field36115.method19669(var3), var4));
+         var1.addAll(var2.method6771(this.field36120, this.field36115.offset(var3), var4));
       }
    }
 
@@ -198,12 +198,12 @@ public class Class8429 {
    private Predicate<Entity> method29621(Vector3d var1) {
       Predicate<Entity> var4 = this.field36112;
       if (this.field36115 != null) {
-         AxisAlignedBB var5 = this.field36115.method19669(var1);
+         AxisAlignedBB var5 = this.field36115.offset(var1);
          var4 = var4.and(var1x -> var5.method19670(var1x.getBoundingBox()));
       }
 
       if (!this.field36113.method32004()) {
-         var4 = var4.and(var2 -> this.field36113.method32024(var2.method3278(var1)));
+         var4 = var4.and(var2 -> this.field36113.method32024(var2.getDistanceNearest3(var1)));
       }
 
       return var4;

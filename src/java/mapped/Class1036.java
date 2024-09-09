@@ -64,22 +64,22 @@ public class Class1036 extends Class1035 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.method2944(Class2106.field13731, new ItemStack(Items.field37818));
+      this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37818));
    }
 
    @Override
-   public Class6971<Class1036> method2993() {
-      return Class6947.<Class1036>method21400(field5753, field5752);
+   public Class6971<Class1036> getBrainCodec() {
+      return Brain.<Class1036>method21400(field5753, field5752);
    }
 
    @Override
-   public Class6947<?> method2994(Dynamic<?> var1) {
-      return Class9743.method38192(this, this.method2993().method21513(var1));
+   public Brain<?> createBrain(Dynamic<?> var1) {
+      return Class9743.method38192(this, this.getBrainCodec().method21513(var1));
    }
 
    @Override
-   public Class6947<Class1036> method2992() {
-      return (Class6947<Class1036>)super.method2992();
+   public Brain<Class1036> getBrain() {
+      return (Brain<Class1036>)super.getBrain();
    }
 
    @Override
@@ -95,7 +95,7 @@ public class Class1036 extends Class1035 {
    @Override
    public void method4258() {
       this.world.getProfiler().startSection("piglinBruteBrain");
-      this.method2992().method21432((ServerWorld)this.world, this);
+      this.getBrain().method21432((ServerWorld)this.world, this);
       this.world.getProfiler().endSection();
       Class9743.method38199(this);
       Class9743.method38205(this);
@@ -108,11 +108,11 @@ public class Class1036 extends Class1035 {
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      boolean var5 = super.method2741(var1, var2);
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      boolean var5 = super.attackEntityFrom(var1, var2);
       if (!this.world.isRemote) {
-         if (var5 && var1.method31109() instanceof LivingEntity) {
-            Class9743.method38204(this, (LivingEntity)var1.method31109());
+         if (var5 && var1.getTrueSource() instanceof LivingEntity) {
+            Class9743.method38204(this, (LivingEntity)var1.getTrueSource());
          }
 
          return var5;
@@ -137,16 +137,16 @@ public class Class1036 extends Class1035 {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(SoundEvents.field26943, 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(SoundEvents.field26943, 0.15F, 1.0F);
    }
 
    public void method4638() {
-      this.method2863(SoundEvents.field26940, 1.0F, this.method3100());
+      this.playSound(SoundEvents.field26940, 1.0F, this.getSoundPitch());
    }
 
    @Override
    public void method4630() {
-      this.method2863(SoundEvents.field26944, 1.0F, this.method3100());
+      this.playSound(SoundEvents.field26944, 1.0F, this.getSoundPitch());
    }
 }

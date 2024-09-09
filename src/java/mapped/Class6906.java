@@ -72,7 +72,7 @@ public class Class6906 extends Class6904 {
             }
          }
 
-         if (var2.method8127(Class1868.field10202) && Class8042.method27612().method21896()) {
+         if (var2.method8127(Class1868.field10202) && ViaVersion3.method27612().method21896()) {
             Class8656 var17 = this.method21107(11, var4);
             Class8656 var18 = this.method21107(2, var4);
             Class8656 var10 = this.method21107(3, var4);
@@ -87,7 +87,7 @@ public class Class6906 extends Class6904 {
                         Class8563 var13 = new Class8563(37, null, var5);
                         var13.method30560(Class4750.field22544, var1);
                         var13.method30560(Class4750.field22534, (short)0);
-                        var13.method30560(Class4750.field22534, (short)((int)(128.0 * -Class8042.method27612().method21900() * 32.0)));
+                        var13.method30560(Class4750.field22534, (short)((int)(128.0 * -ViaVersion3.method27612().method21900() * 32.0)));
                         var13.method30560(Class4750.field22534, (short)0);
                         var13.method30560(Class4750.field22524, true);
                         var13.method30570(Class6386.class);
@@ -114,7 +114,7 @@ public class Class6906 extends Class6904 {
    public static Class1868 method21112(int var0, List<Class8656> var1) {
       Optional var4 = Class1868.method8129(var0);
       if (!var4.isPresent()) {
-         Class8042.method27614().method34423().method27366().severe("Error: could not find Entity type " + var0 + " with metadata: " + var1);
+         ViaVersion3.method27614().method34423().method27366().severe("Error: could not find Entity type " + var0 + " with metadata: " + var1);
          return null;
       } else {
          Class1868 var5 = (Class1868)var4.get();
@@ -180,9 +180,9 @@ public class Class6906 extends Class6904 {
                }
             }
          } catch (Exception var8) {
-            if (!Class8042.method27612().method21894() || Class8042.method27614().method34425()) {
-               Class8042.method27613().method27366().warning("An error occurred with entity type rewriter");
-               Class8042.method27613().method27366().warning("Metadata: " + var1);
+            if (!ViaVersion3.method27612().method21894() || ViaVersion3.method27614().method34425()) {
+               ViaVersion3.method27613().method27366().warning("An error occurred with entity type rewriter");
+               ViaVersion3.method27613().method27366().warning("Metadata: " + var1);
                var8.printStackTrace();
             }
          }

@@ -55,7 +55,7 @@ public class Class8615 {
       HashSet var3 = Sets.newHashSet();
 
       for (Entity var5 : var0) {
-         var3.addAll(var5.method3207());
+         var3.addAll(var5.getTags());
       }
 
       return var3;
@@ -65,7 +65,7 @@ public class Class8615 {
       int var5 = 0;
 
       for (Entity var7 : var1) {
-         if (var7.method3208(var2)) {
+         if (var7.addTag(var2)) {
             var5++;
          }
       }
@@ -87,7 +87,7 @@ public class Class8615 {
       int var5 = 0;
 
       for (Entity var7 : var1) {
-         if (var7.method3209(var2)) {
+         if (var7.removeTag(var2)) {
             var5++;
          }
       }
@@ -109,7 +109,7 @@ public class Class8615 {
       HashSet var4 = Sets.newHashSet();
 
       for (Entity var6 : var1) {
-         var4.addAll(var6.method3207());
+         var4.addAll(var6.getTags());
       }
 
       if (var1.size() != 1) {

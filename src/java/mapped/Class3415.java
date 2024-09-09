@@ -203,7 +203,7 @@ public class Class3415 extends Block implements Class3207 {
             return true;
          } else {
             boolean var16 = var7 == Class184.field669 && var8 == Class184.field669 || var9 == Class184.field669 && var10 == Class184.field669;
-            return var16 ? false : var2.getBlock().method11540(BlockTags.field32803) || method12057(var3, field19114);
+            return var16 ? false : var2.getBlock().isIn(BlockTags.field32803) || method12057(var3, field19114);
          }
       } else {
          return true;

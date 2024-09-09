@@ -41,9 +41,9 @@ public class SSpawnObjectPacket implements Packet<IClientPlayNetHandler> {
       this.field24369 = MathHelper.method37767(var10 * 256.0F / 360.0F);
       this.field24370 = var11;
       this.field24371 = var12;
-      this.field24365 = (int)(MathHelper.method37778(var13.x, -3.9, 3.9) * 8000.0);
-      this.field24366 = (int)(MathHelper.method37778(var13.y, -3.9, 3.9) * 8000.0);
-      this.field24367 = (int)(MathHelper.method37778(var13.z, -3.9, 3.9) * 8000.0);
+      this.field24365 = (int)(MathHelper.clamp(var13.x, -3.9, 3.9) * 8000.0);
+      this.field24366 = (int)(MathHelper.clamp(var13.y, -3.9, 3.9) * 8000.0);
+      this.field24367 = (int)(MathHelper.clamp(var13.z, -3.9, 3.9) * 8000.0);
    }
 
    public SSpawnObjectPacket(Entity var1) {
@@ -61,7 +61,7 @@ public class SSpawnObjectPacket implements Packet<IClientPlayNetHandler> {
          var1.rotationYaw,
          var1.getType(),
          var2,
-         var1.getVec()
+         var1.getMotion()
       );
    }
 
@@ -76,7 +76,7 @@ public class SSpawnObjectPacket implements Packet<IClientPlayNetHandler> {
          var1.rotationYaw,
          var2,
          var3,
-         var1.getVec()
+         var1.getMotion()
       );
    }
 

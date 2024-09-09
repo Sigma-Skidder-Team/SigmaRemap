@@ -77,7 +77,7 @@ public class Class2862<T extends Class1017> extends Class2855<T> {
       this.field17744.field31035 = 0.0F;
       this.field17735.field31035 = 0.0F;
       this.field17735.field31033 = 19.0F;
-      boolean var9 = var1.method3226() && var1.getVec().method11349() < 1.0E-7;
+      boolean var9 = var1.isOnGround() && var1.getMotion().lengthSquared() < 1.0E-7;
       if (!var9) {
          float var10 = var4 * 2.1F;
          this.field17737.field31036 = 0.0F;

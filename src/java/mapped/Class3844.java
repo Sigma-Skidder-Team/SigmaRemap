@@ -5,7 +5,7 @@ public final class Class3844 extends Class3758 {
 
    @Override
    public void method12725() {
-      if (Class8042.method27612().method21925()) {
+      if (ViaVersion3.method27612().method21925()) {
          this.method12733(new Class3189(this));
       }
    }

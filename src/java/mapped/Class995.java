@@ -7,7 +7,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -21,7 +20,7 @@ public abstract class Class995 extends Entity {
    public static final Predicate<Entity> field5486 = var0 -> var0 instanceof Class995;
    private int field5487;
    public BlockPos field5488;
-   public Direction field5489 = Direction.SOUTH;
+   public net.minecraft.util.Direction field5489 = net.minecraft.util.Direction.SOUTH;
 
    public Class995(EntityType<? extends Class995> var1, World var2) {
       super(var1, var2);
@@ -36,9 +35,9 @@ public abstract class Class995 extends Entity {
    public void registerData() {
    }
 
-   public void method4077(Direction var1) {
+   public void method4077(net.minecraft.util.Direction var1) {
       Validate.notNull(var1);
-      Validate.isTrue(var1.method544().method324());
+      Validate.isTrue(var1.getAxis().method324());
       this.field5489 = var1;
       this.rotationYaw = (float)(this.field5489.method534() * 90);
       this.prevRotationYaw = this.rotationYaw;
@@ -56,14 +55,14 @@ public abstract class Class995 extends Entity {
          var3 -= (double)this.field5489.method539() * 0.46875;
          var7 -= (double)this.field5489.method541() * 0.46875;
          var5 += var13;
-         Direction var15 = this.field5489.method538();
+         net.minecraft.util.Direction var15 = this.field5489.method538();
          var3 += var11 * (double)var15.method539();
          var7 += var11 * (double)var15.method541();
-         this.method3446(var3, var5, var7);
+         this.setRawPosition(var3, var5, var7);
          double var16 = (double)this.method4081();
          double var18 = (double)this.method4082();
          double var20 = (double)this.method4081();
-         if (this.field5489.method544() != Class113.field415) {
+         if (this.field5489.getAxis() != Direction.field415) {
             var16 = 1.0;
          } else {
             var20 = 1.0;
@@ -72,7 +71,7 @@ public abstract class Class995 extends Entity {
          var16 /= 32.0;
          var18 /= 32.0;
          var20 /= 32.0;
-         this.method3391(new AxisAlignedBB(var3 - var16, var5 - var18, var7 - var20, var3 + var16, var5 + var18, var7 + var20));
+         this.setBoundingBox(new AxisAlignedBB(var3 - var16, var5 - var18, var7 - var20, var3 + var16, var5 + var18, var7 + var20));
       }
    }
 
@@ -84,13 +83,13 @@ public abstract class Class995 extends Entity {
    public void tick() {
       if (!this.world.isRemote) {
          if (this.getPosY() < -64.0) {
-            this.method3083();
+            this.outOfWorld();
          }
 
          if (this.field5487++ == 100) {
             this.field5487 = 0;
             if (!this.removed && !this.method4080()) {
-               this.method2904();
+               this.remove();
                this.method4083((Entity)null);
             }
          }
@@ -98,33 +97,33 @@ public abstract class Class995 extends Entity {
    }
 
    public boolean method4080() {
-      if (!this.world.method7052(this)) {
+      if (!this.world.hasNoCollisions(this)) {
          return false;
       } else {
          int var3 = Math.max(1, this.method4081() / 16);
          int var4 = Math.max(1, this.method4082() / 16);
          BlockPos var5 = this.field5488.method8349(this.field5489.method536());
-         Direction var6 = this.field5489.method538();
+         net.minecraft.util.Direction var6 = this.field5489.method538();
          BlockPos.Mutable var7 = new BlockPos.Mutable();
 
          for (int var8 = 0; var8 < var3; var8++) {
             for (int var9 = 0; var9 < var4; var9++) {
                int var10 = (var3 - 1) / -2;
                int var11 = (var4 - 1) / -2;
-               var7.method8374(var5).method8380(var6, var8 + var10).method8380(Direction.field673, var9 + var11);
+               var7.method8374(var5).method8380(var6, var8 + var10).method8380(net.minecraft.util.Direction.field673, var9 + var11);
                BlockState var12 = this.world.getBlockState(var7);
-               if (!var12.method23384().method31086() && !Class3247.method11672(var12)) {
+               if (!var12.getMaterial().method31086() && !Class3247.method11672(var12)) {
                   return false;
                }
             }
          }
 
-         return this.world.method6770(this, this.getBoundingBox(), field5486).isEmpty();
+         return this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox(), field5486).isEmpty();
       }
    }
 
    @Override
-   public boolean method3139() {
+   public boolean canBeCollidedWith() {
       return true;
    }
 
@@ -134,22 +133,22 @@ public abstract class Class995 extends Entity {
          return false;
       } else {
          PlayerEntity var4 = (PlayerEntity)var1;
-         return this.world.method6785(var4, this.field5488) ? this.method2741(DamageSource.method31117(var4), 0.0F) : true;
+         return this.world.method6785(var4, this.field5488) ? this.attackEntityFrom(DamageSource.method31117(var4), 0.0F) : true;
       }
    }
 
    @Override
-   public Direction method3386() {
+   public net.minecraft.util.Direction method3386() {
       return this.field5489;
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (!this.method2760(var1)) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (!this.isInvulnerableTo(var1)) {
          if (!this.removed && !this.world.isRemote) {
-            this.method2904();
-            this.method3141();
-            this.method4083(var1.method31109());
+            this.remove();
+            this.markVelocityChanged();
+            this.method4083(var1.getTrueSource());
          }
 
          return true;
@@ -159,31 +158,31 @@ public abstract class Class995 extends Entity {
    }
 
    @Override
-   public void move(Class2107 var1, Vector3d var2) {
-      if (!this.world.isRemote && !this.removed && var2.method11349() > 0.0) {
-         this.method2904();
+   public void move(MoverType var1, Vector3d var2) {
+      if (!this.world.isRemote && !this.removed && var2.lengthSquared() > 0.0) {
+         this.remove();
          this.method4083((Entity)null);
       }
    }
 
    @Override
-   public void method3280(double var1, double var3, double var5) {
+   public void addVelocity(double var1, double var3, double var5) {
       if (!this.world.isRemote && !this.removed && var1 * var1 + var3 * var3 + var5 * var5 > 0.0) {
-         this.method2904();
+         this.remove();
          this.method4083((Entity)null);
       }
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
       BlockPos var4 = this.method4085();
-      var1.method102("TileX", var4.getX());
-      var1.method102("TileY", var4.getY());
-      var1.method102("TileZ", var4.getZ());
+      var1.putInt("TileX", var4.getX());
+      var1.putInt("TileY", var4.getY());
+      var1.putInt("TileZ", var4.getZ());
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.field5488 = new BlockPos(var1.getInt("TileX"), var1.getInt("TileY"), var1.getInt("TileZ"));
    }
 
@@ -204,8 +203,8 @@ public abstract class Class995 extends Entity {
          this.getPosZ() + (double)((float)this.field5489.method541() * 0.15F),
          var1
       );
-      var5.method4131();
-      this.world.method6916(var5);
+      var5.setDefaultPickupDelay();
+      this.world.addEntity(var5);
       return var5;
    }
 
@@ -226,8 +225,8 @@ public abstract class Class995 extends Entity {
    }
 
    @Override
-   public float method3402(Class80 var1) {
-      if (this.field5489.method544() != Class113.field414) {
+   public float getRotatedYaw(Class80 var1) {
+      if (this.field5489.getAxis() != Direction.field414) {
          switch (Class9399.field43617[var1.ordinal()]) {
             case 1:
                this.field5489 = this.field5489.method536();
@@ -254,8 +253,8 @@ public abstract class Class995 extends Entity {
    }
 
    @Override
-   public float method3403(Class2089 var1) {
-      return this.method3402(var1.method8749(this.field5489));
+   public float getMirroredYaw(Class2089 var1) {
+      return this.getRotatedYaw(var1.method8749(this.field5489));
    }
 
    @Override
@@ -263,6 +262,6 @@ public abstract class Class995 extends Entity {
    }
 
    @Override
-   public void method3385() {
+   public void recalculateSize() {
    }
 }

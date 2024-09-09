@@ -22,21 +22,21 @@ public class Class7884 extends Class7882<Class1091> {
    }
 
    public void method26425(ServerWorld var1, Class1091 var2) {
-      Class6947<?> var5 = var2.method2992();
+      Brain<?> var5 = var2.getBrain();
       var5.method21408(Class8830.field39870, this.method26439(var1, var2));
       Optional var6 = Optional.empty();
       int var7 = 0;
       ArrayList var8 = Lists.newArrayList();
 
       for (LivingEntity var10 : var5.<List<LivingEntity>>method21410(Class8830.field39819).orElse(Lists.newArrayList())) {
-         if (var10 instanceof Class1034 && !var10.method3005()) {
+         if (var10 instanceof Class1034 && !var10.isChild()) {
             var7++;
             if (!var6.isPresent()) {
                var6 = Optional.<LivingEntity>of((Class1034)var10);
             }
          }
 
-         if (var10 instanceof Class1091 && !var10.method3005()) {
+         if (var10 instanceof Class1091 && !var10.isChild()) {
             var8.add((Class1091)var10);
          }
       }

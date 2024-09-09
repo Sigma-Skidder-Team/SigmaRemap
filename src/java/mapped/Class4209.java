@@ -17,7 +17,7 @@ public abstract class Class4209 extends Class4178 {
       this.field20517 = var7;
       this.field20518 = var8;
       this.method12939(Class76.field161.method247(var2));
-      if (this.method12938().method544() != Class113.field415) {
+      if (this.method12938().getAxis() != Direction.field415) {
          this.field20444 = new Class9764(var3, var4, var5, var3 + var8 - 1, var4 + var7 - 1, var5 + var6 - 1);
       } else {
          this.field20444 = new Class9764(var3, var4, var5, var3 + var6 - 1, var4 + var7 - 1, var5 + var8 - 1);
@@ -34,10 +34,10 @@ public abstract class Class4209 extends Class4178 {
 
    @Override
    public void method12897(CompoundNBT var1) {
-      var1.method102("Width", this.field20516);
-      var1.method102("Height", this.field20517);
-      var1.method102("Depth", this.field20518);
-      var1.method102("HPos", this.field20519);
+      var1.putInt("Width", this.field20516);
+      var1.putInt("Height", this.field20517);
+      var1.putInt("Depth", this.field20518);
+      var1.putInt("HPos", this.field20519);
    }
 
    public boolean method13002(Class1660 var1, Class9764 var2, int var3) {

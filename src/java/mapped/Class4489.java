@@ -15,7 +15,7 @@ public class Class4489 extends Class4457 {
       return new Class4489(Class9587.field44822, Class8634.field38839);
    }
 
-   public static Class4489 method14159(Class3303 var0) {
+   public static Class4489 method14159(IItemProvider var0) {
       return new Class4489(
          Class9587.field44822,
          new Class8634(

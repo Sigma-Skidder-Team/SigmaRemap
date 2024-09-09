@@ -46,7 +46,7 @@ public class Class3443 extends Block {
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      return !var3.method23448(this) ? super.method11491(var1, var2, var3, var4, var5, var6) : var1.method23465(field19255.get(var2), Boolean.valueOf(false));
+      return !var3.isIn(this) ? super.method11491(var1, var2, var3, var4, var5, var6) : var1.method23465(field19255.get(var2), Boolean.valueOf(false));
    }
 
    @Override

@@ -24,7 +24,7 @@ public class Class6439 extends Class6434 {
 
    @Override
    public boolean method19540(BlockState var1, Random var2) {
-      return var1.method23448(this.field28284) && var2.nextFloat() < this.field28285;
+      return var1.isIn(this.field28284) && var2.nextFloat() < this.field28285;
    }
 
    @Override

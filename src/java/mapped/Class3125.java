@@ -16,7 +16,7 @@ public class Class3125 implements Class2982 {
       var1.method30560(Class4750.field22551, new Class9695(-1, (short)-1, -1));
       var1.method30560(Class4750.field22522, (short)255);
       Class9738 var5 = Class6363.method19383(var1.method30580());
-      if (Class8042.method27612().method21895()) {
+      if (ViaVersion3.method27612().method21895()) {
          Class6057 var6 = var1.method30580().<Class6057>method22438(Class6057.class);
          if (var5 == null || !Class6363.method19384(var5.method38161())) {
             var6.method18744(null);

@@ -6,7 +6,7 @@ import it.unimi.dsi.fastutil.ints.IntSet;
 public class Class7795 {
    private static final IntSet field33484 = new IntOpenHashSet(70, 1.0F);
 
-   public static void method25885(Class6355 var0) {
+   public static void method25885(ViaVersion7 var0) {
       var0.method19360(Class1914.field11360, new Class3994());
       var0.method19360(Class1914.field11365, new Class3947());
       var0.method19360(Class1914.field11366, new Class3905());
@@ -30,14 +30,14 @@ public class Class7795 {
       } else {
          var3 = Class6380.field27947.method18535().method22147(var0 & -16);
          if (var3 == -1) {
-            if (!Class8042.method27612().method21941() || Class8042.method27614().method34425()) {
-               Class8042.method27613().method27366().warning("Missing block completely " + var0);
+            if (!ViaVersion3.method27612().method21941() || ViaVersion3.method27614().method34425()) {
+               ViaVersion3.method27613().method27366().warning("Missing block completely " + var0);
             }
 
             return 1;
          } else {
-            if (!Class8042.method27612().method21941() || Class8042.method27614().method34425()) {
-               Class8042.method27613().method27366().warning("Missing block " + var0);
+            if (!ViaVersion3.method27612().method21941() || ViaVersion3.method27614().method34425()) {
+               ViaVersion3.method27613().method27366().warning("Missing block " + var0);
             }
 
             return var3;

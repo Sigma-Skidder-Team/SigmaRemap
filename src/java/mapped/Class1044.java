@@ -31,13 +31,13 @@ public class Class1044 extends Class1043 {
                this,
                Class9741.method38187(new ItemStack(Items.field37971), Class8137.field34983),
                SoundEvents.field27217,
-               var1 -> this.world.method6741() && !var1.method3342()
+               var1 -> this.world.method6741() && !var1.isInvisible()
             )
          );
       this.field5600
          .method20002(
             0,
-            new Class2596<Class1044>(this, new ItemStack(Items.field37891), SoundEvents.field27222, var1 -> this.world.method6740() && var1.method3342())
+            new Class2596<Class1044>(this, new ItemStack(Items.field37891), SoundEvents.field27222, var1 -> this.world.method6740() && var1.isInvisible())
          );
       this.field5600.method20002(1, new Class2781(this));
       this.field5600.method20002(1, new Class2770<Class1038>(this, Class1038.class, 8.0F, 0.5, 0.5));
@@ -70,9 +70,9 @@ public class Class1044 extends Class1043 {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (var5.getItem() != Items.field38034 && this.isAlive() && !this.method4741() && !this.method3005()) {
+      if (var5.getItem() != Items.field38034 && this.isAlive() && !this.method4741() && !this.isChild()) {
          if (var2 == Hand.MAIN_HAND) {
-            var1.method2911(Class8876.field40139);
+            var1.method2911(Stats.field40139);
          }
 
          if (!this.method4742().isEmpty()) {
@@ -107,17 +107,17 @@ public class Class1044 extends Class1043 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("DespawnDelay", this.field5799);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("DespawnDelay", this.field5799);
       if (this.field5798 != null) {
          var1.put("WanderTarget", Class8354.method29284(this.field5798));
       }
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("DespawnDelay", 99)) {
          this.field5799 = var1.getInt("DespawnDelay");
       }
@@ -138,7 +138,7 @@ public class Class1044 extends Class1043 {
    public void method4696(Class9346 var1) {
       if (var1.method35385()) {
          int var4 = 3 + this.rand.nextInt(4);
-         this.world.method6916(new ExperienceOrbEntity(this.world, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), var4));
+         this.world.addEntity(new ExperienceOrbEntity(this.world, this.getPosX(), this.getPosY() + 0.5, this.getPosZ(), var4));
       }
    }
 
@@ -158,7 +158,7 @@ public class Class1044 extends Class1043 {
    }
 
    @Override
-   public SoundEvent method3059(ItemStack var1) {
+   public SoundEvent getDrinkSound(ItemStack var1) {
       Item var4 = var1.getItem();
       return var4 != Items.field37891 ? SoundEvents.field27219 : SoundEvents.field27218;
    }
@@ -182,8 +182,8 @@ public class Class1044 extends Class1043 {
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
+   public void livingEntity() {
+      super.livingEntity();
       if (!this.world.isRemote) {
          this.method4757();
       }
@@ -191,7 +191,7 @@ public class Class1044 extends Class1043 {
 
    private void method4757() {
       if (this.field5799 > 0 && !this.method4741() && --this.field5799 == 0) {
-         this.method2904();
+         this.remove();
       }
    }
 

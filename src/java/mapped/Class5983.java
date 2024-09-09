@@ -18,7 +18,7 @@ public class Class5983 extends Class5979 {
       try {
          this.field26058 = Class8401.method29501(Class8159.method28368("dimension-registry-1.16.2.nbt"));
       } catch (IOException var11) {
-         Class8042.method27613().method27366().severe("Error loading dimension registry:");
+         ViaVersion3.method27613().method27366().severe("Error loading dimension registry:");
          var11.printStackTrace();
       }
 

@@ -6,7 +6,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Level;
 
 public class Class6376 extends Class6373 {
-   private List<Class6355> field27941;
+   private List<ViaVersion7> field27941;
    private Class7161 field27942;
 
    public Class6376(Class7161 var1) {
@@ -15,7 +15,7 @@ public class Class6376 extends Class6373 {
 
    @Override
    public void method19341() {
-      this.field27941 = new CopyOnWriteArrayList<Class6355>();
+      this.field27941 = new CopyOnWriteArrayList<ViaVersion7>();
       this.field27941.add(Class9019.field41257);
    }
 
@@ -26,12 +26,12 @@ public class Class6376 extends Class6373 {
       var4.method18684(this);
       var1.method22466(var4);
 
-      for (Class6355 var6 : this.field27941) {
+      for (ViaVersion7 var6 : this.field27941) {
          var6.method19342(var1);
       }
    }
 
-   public void method19388(Class6355 var1) {
+   public void method19388(ViaVersion7 var1) {
       if (this.field27941 == null) {
          throw new NullPointerException("Tried to add protocol too early");
       } else {
@@ -39,7 +39,7 @@ public class Class6376 extends Class6373 {
          var1.method19342(this.field27942);
          ArrayList var4 = new ArrayList();
 
-         for (Class6355 var6 : this.field27941) {
+         for (ViaVersion7 var6 : this.field27941) {
             if (Class9019.method33366(var6)) {
                var4.add(var6);
             }
@@ -55,14 +55,14 @@ public class Class6376 extends Class6373 {
       int var6 = var3.method30586();
       var3.method30575(var1, var2, 0, this.field27941, var1 == Class2302.field15717);
       super.method19369(var1, var2, var3);
-      if (Class8042.method27614().method34425()) {
+      if (ViaVersion3.method27614().method34425()) {
          this.method19389(var1, var2, var3, var6);
       }
    }
 
    private void method19389(Class2302 var1, Class187 var2, Class8563 var3, int var4) {
       int var7 = this.field27942.method22465().method18675();
-      Class8006 var8 = Class8042.method27613();
+      Class8006 var8 = ViaVersion3.method27613();
       String var9 = var3.method30580().method22465().method18679();
       String var10 = var9 == null ? "" : var9 + " ";
       var8.method27366()
@@ -75,8 +75,8 @@ public class Class6376 extends Class6373 {
          );
    }
 
-   public boolean method19390(Class<? extends Class6355> var1) {
-      for (Class6355 var5 : this.field27941) {
+   public boolean method19390(Class<? extends ViaVersion7> var1) {
+      for (ViaVersion7 var5 : this.field27941) {
          if (var5.getClass().equals(var1)) {
             return true;
          }
@@ -85,8 +85,8 @@ public class Class6376 extends Class6373 {
       return false;
    }
 
-   public <P extends Class6355> P method19391(Class<P> var1) {
-      for (Class6355 var5 : this.field27941) {
+   public <P extends ViaVersion7> P method19391(Class<P> var1) {
+      for (ViaVersion7 var5 : this.field27941) {
          if (var5.getClass() == var1) {
             return (P)var5;
          }
@@ -96,7 +96,7 @@ public class Class6376 extends Class6373 {
    }
 
    public boolean method19392(Object var1, List var2) throws Exception {
-      for (Class6355 var6 : this.field27941) {
+      for (ViaVersion7 var6 : this.field27941) {
          if (var6.method19345(var1.getClass())) {
             var6.method19346(this.field27942, var1, var2);
             return true;
@@ -106,7 +106,7 @@ public class Class6376 extends Class6373 {
       return false;
    }
 
-   public List<Class6355> method19393() {
+   public List<ViaVersion7> method19393() {
       return this.field27941;
    }
 

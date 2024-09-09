@@ -49,11 +49,11 @@ public class Class6801<T> implements Class6802<T> {
       for (Class6575 var5 : this.field29613) {
          CompoundNBT var6 = new CompoundNBT();
          var6.method109("i", this.field29614.apply((T)Class6575.method19905(var5)).toString());
-         var6.method102("x", var5.field28943.getX());
-         var6.method102("y", var5.field28943.getY());
-         var6.method102("z", var5.field28943.getZ());
-         var6.method102("t", var5.field28944);
-         var6.method102("p", var5.field28945.method8914());
+         var6.putInt("x", var5.field28943.getX());
+         var6.putInt("y", var5.field28943.getY());
+         var6.putInt("z", var5.field28943.getZ());
+         var6.putInt("t", var5.field28944);
+         var6.putInt("p", var5.field28945.method8914());
          var3.add(var6);
       }
 

@@ -2,20 +2,20 @@ package mapped;
 
 import net.minecraft.item.ItemStack;
 
-public class Class5855 extends Class5839 {
+public class Class5855 extends Slot {
    private static String[] field25611;
 
-   public Class5855(Class920 var1, int var2, int var3, int var4) {
+   public Class5855(IInventory var1, int var2, int var3, int var4) {
       super(var1, var2, var3, var4);
    }
 
    @Override
-   public boolean method18259(ItemStack var1) {
+   public boolean isItemValid(ItemStack var1) {
       return Class7105.method22132(var1);
    }
 
    @Override
-   public int method18269() {
+   public int getSlotStackLimit() {
       return 64;
    }
 }

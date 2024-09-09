@@ -10,12 +10,12 @@ import java.util.stream.Stream;
 
 public interface Class1678 extends Class1682, Class1662, Class1679 {
    @Override
-   default Stream<VoxelShape> method7046(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
-      return Class1682.super.method7046(var1, var2, var3);
+   default Stream<VoxelShape> func_230318_c_(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
+      return Class1682.super.func_230318_c_(var1, var2, var3);
    }
 
    @Override
-   default boolean method7048(Entity var1, VoxelShape var2) {
+   default boolean checkNoEntityCollision(Entity var1, VoxelShape var2) {
       return Class1682.super.method7048(var1, var2);
    }
 

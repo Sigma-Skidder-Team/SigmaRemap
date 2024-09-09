@@ -35,11 +35,11 @@ public class Class1095 extends Class1018 {
          return false;
       } else {
          LivingEntity var3 = (LivingEntity)var0;
-         return var3.method3018() != null && var3.method3019() < var3.ticksExisted + 600;
+         return var3.getLastAttackedEntity() != null && var3.getLastAttackedEntityTime() < var3.ticksExisted + 600;
       }
    };
    private static final Predicate<Entity> field5999 = var0 -> var0 instanceof Class1089 || var0 instanceof Class1094;
-   private static final Predicate<Entity> field6000 = var0 -> !var0.method3334() && Class8088.field34761.test(var0);
+   private static final Predicate<Entity> field6000 = var0 -> !var0.isDiscrete() && Class8088.field34761.test(var0);
    private Class2595 field6001;
    private Class2595 field6002;
    private Class2595 field6003;
@@ -104,25 +104,25 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public SoundEvent method3060(ItemStack var1) {
+   public SoundEvent getEatSound(ItemStack var1) {
       return SoundEvents.field26592;
    }
 
    @Override
-   public void method2871() {
-      if (!this.world.isRemote && this.isAlive() && this.method3138()) {
+   public void livingEntity() {
+      if (!this.world.isRemote && this.isAlive() && this.isServerWorld()) {
          this.field6008++;
-         ItemStack var3 = this.method2943(Class2106.field13731);
+         ItemStack var3 = this.getItemStackFromSlot(EquipmentSlotType.field13731);
          if (this.method5122(var3)) {
             if (this.field6008 <= 600) {
                if (this.field6008 > 560 && this.rand.nextFloat() < 0.1F) {
-                  this.method2863(this.method3060(var3), 1.0F, 1.0F);
-                  this.world.method6786(this, (byte)45);
+                  this.playSound(this.getEatSound(var3), 1.0F, 1.0F);
+                  this.world.setEntityState(this, (byte)45);
                }
             } else {
                ItemStack var4 = var3.method32111(this.world, this);
                if (!var4.isEmpty()) {
-                  this.method2944(Class2106.field13731, var4);
+                  this.setItemStackToSlot(EquipmentSlotType.field13731, var4);
                }
 
                this.field6008 = 0;
@@ -136,20 +136,20 @@ public class Class1095 extends Class1018 {
          }
       }
 
-      if (this.isSleeping() || this.method2896()) {
-         this.field4981 = false;
-         this.field4982 = 0.0F;
-         this.field4984 = 0.0F;
+      if (this.isSleeping() || this.isMovementBlocked()) {
+         this.isJumping = false;
+         this.moveStrafing = 0.0F;
+         this.moveForward = 0.0F;
       }
 
-      super.method2871();
+      super.livingEntity();
       if (this.method5133() && this.rand.nextFloat() < 0.05F) {
-         this.method2863(SoundEvents.field26588, 1.0F, 1.0F);
+         this.playSound(SoundEvents.field26588, 1.0F, 1.0F);
       }
    }
 
    @Override
-   public boolean method2896() {
+   public boolean isMovementBlocked() {
       return this.getShouldBeDead();
    }
 
@@ -184,27 +184,27 @@ public class Class1095 extends Class1018 {
             var5 = new ItemStack(Items.field38049);
          }
 
-         this.method2944(Class2106.field13731, var5);
+         this.setItemStackToSlot(EquipmentSlotType.field13731, var5);
       }
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 45) {
-         super.method2866(var1);
+         super.handleStatusUpdate(var1);
       } else {
-         ItemStack var4 = this.method2943(Class2106.field13731);
+         ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.field13731);
          if (!var4.isEmpty()) {
             for (int var5 = 0; var5 < 8; var5++) {
                Vector3d var6 = new Vector3d(((double)this.rand.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, 0.0)
                   .method11350(-this.rotationPitch * (float) (Math.PI / 180.0))
                   .method11351(-this.rotationYaw * (float) (Math.PI / 180.0));
                this.world
-                  .method6746(
+                  .addParticle(
                      new Class7438(ParticleTypes.field34082, var4),
-                     this.getPosX() + this.method3320().x / 2.0,
+                     this.getPosX() + this.getLookVec().x / 2.0,
                      this.getPosY(),
-                     this.getPosZ() + this.method3320().z / 2.0,
+                     this.getPosZ() + this.getLookVec().z / 2.0,
                      var6.x,
                      var6.y + 0.05,
                      var6.z
@@ -223,7 +223,7 @@ public class Class1095 extends Class1018 {
    }
 
    public Class1095 method4389(ServerWorld var1, Class1045 var2) {
-      Class1095 var5 = EntityType.FOX.method33215(var1);
+      Class1095 var5 = EntityType.FOX.create(var1);
       var5.method5126(!this.rand.nextBoolean() ? ((Class1095)var2).method5125() : this.method5125());
       return var5;
    }
@@ -271,15 +271,15 @@ public class Class1095 extends Class1018 {
    @Override
    public void method4501(PlayerEntity var1, ItemStack var2) {
       if (this.method4381(var2)) {
-         this.method2863(this.method3060(var2), 1.0F, 1.0F);
+         this.playSound(this.getEatSound(var2), 1.0F, 1.0F);
       }
 
       super.method4501(var1, var2);
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
-      return !this.method3005() ? 0.4F : var2.field39969 * 0.85F;
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
+      return !this.isChild() ? 0.4F : var2.field39969 * 0.85F;
    }
 
    public Class186 method5125() {
@@ -306,8 +306,8 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       List<UUID> var4 = this.method5127();
       ListNBT var5 = new ListNBT();
 
@@ -325,8 +325,8 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       ListNBT var4 = var1.method131("Trusted", 11);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
@@ -388,33 +388,33 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public boolean method2980(ItemStack var1) {
-      Class2106 var4 = Class1006.method4271(var1);
-      return !this.method2943(var4).isEmpty() ? false : var4 == Class2106.field13731 && super.method2980(var1);
+   public boolean canPickUpItem(ItemStack var1) {
+      EquipmentSlotType var4 = Class1006.method4271(var1);
+      return !this.getItemStackFromSlot(var4).isEmpty() ? false : var4 == EquipmentSlotType.field13731 && super.canPickUpItem(var1);
    }
 
    @Override
    public boolean method4252(ItemStack var1) {
       Item var4 = var1.getItem();
-      ItemStack var5 = this.method2943(Class2106.field13731);
+      ItemStack var5 = this.getItemStackFromSlot(EquipmentSlotType.field13731);
       return var5.isEmpty() || this.field6008 > 0 && var4.method11744() && !var5.getItem().method11744();
    }
 
    private void method5138(ItemStack var1) {
       if (!var1.isEmpty() && !this.world.isRemote) {
          ItemEntity var4 = new ItemEntity(
-            this.world, this.getPosX() + this.method3320().x, this.getPosY() + 1.0, this.getPosZ() + this.method3320().z, var1
+            this.world, this.getPosX() + this.getLookVec().x, this.getPosY() + 1.0, this.getPosZ() + this.getLookVec().z, var1
          );
          var4.method4134(40);
          var4.method4129(this.getUniqueID());
-         this.method2863(SoundEvents.field26597, 1.0F, 1.0F);
-         this.world.method6916(var4);
+         this.playSound(SoundEvents.field26597, 1.0F, 1.0F);
+         this.world.addEntity(var4);
       }
    }
 
    private void method5139(ItemStack var1) {
       ItemEntity var4 = new ItemEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), var1);
-      this.world.method6916(var4);
+      this.world.addEntity(var4);
    }
 
    @Override
@@ -426,12 +426,12 @@ public class Class1095 extends Class1018 {
             this.method5139(var4.method32106(var5 - 1));
          }
 
-         this.method5138(this.method2943(Class2106.field13731));
-         this.method3134(var1);
-         this.method2944(Class2106.field13731, var4.method32106(1));
-         this.field5605[Class2106.field13731.method8773()] = 2.0F;
-         this.method2751(var1, var4.getCount());
-         var1.method2904();
+         this.method5138(this.getItemStackFromSlot(EquipmentSlotType.field13731));
+         this.triggerItemPickupTrigger(var1);
+         this.setItemStackToSlot(EquipmentSlotType.field13731, var4.method32106(1));
+         this.field5605[EquipmentSlotType.field13731.method8773()] = 2.0F;
+         this.onItemPickup(var1, var4.getCount());
+         var1.remove();
          this.field6008 = 0;
       }
    }
@@ -439,8 +439,8 @@ public class Class1095 extends Class1018 {
    @Override
    public void tick() {
       super.tick();
-      if (this.method3138()) {
-         boolean var3 = this.method3250();
+      if (this.isServerWorld()) {
+         boolean var3 = this.isInWater();
          if (var3 || this.method4232() != null || this.world.method6794()) {
             this.method5148();
          }
@@ -531,8 +531,8 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public int method3067(float var1, float var2) {
-      return MathHelper.method37773((var1 - 5.0F) * var2);
+   public int calculateFallDamage(float var1, float var2) {
+      return MathHelper.ceil((var1 - 5.0F) * var2);
    }
 
    private void method5148() {
@@ -558,7 +558,7 @@ public class Class1095 extends Class1018 {
       if (var3 != SoundEvents.field26594) {
          super.method4237();
       } else {
-         this.method2863(var3, 2.0F, this.method3100());
+         this.playSound(var3, 2.0F, this.getSoundPitch());
       }
    }
 
@@ -596,14 +596,14 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public void method3052(DamageSource var1) {
-      ItemStack var4 = this.method2943(Class2106.field13731);
+   public void spawnDrops(DamageSource var1) {
+      ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.field13731);
       if (!var4.isEmpty()) {
          this.method3302(var4);
-         this.method2944(Class2106.field13731, ItemStack.EMPTY);
+         this.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
       }
 
-      super.method3052(var1);
+      super.spawnDrops(var1);
    }
 
    public static boolean method5152(Class1095 var0, LivingEntity var1) {
@@ -618,7 +618,7 @@ public class Class1095 extends Class1018 {
          for (int var16 = 1; var16 < 4; var16++) {
             if (!var0.world
                .getBlockState(new BlockPos(var0.getPosX() + var14, var0.getPosY() + (double)var16, var0.getPosZ() + var12))
-               .method23384()
+               .getMaterial()
                .method31089()) {
                return false;
             }
@@ -629,8 +629,8 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public Vector3d method3394() {
-      return new Vector3d(0.0, (double)(0.55F * this.method3393()), (double)(this.method3429() * 0.4F));
+   public Vector3d func_241205_ce_() {
+      return new Vector3d(0.0, (double)(0.55F * this.getEyeHeight()), (double)(this.getWidth() * 0.4F));
    }
 
    // $VF: synthetic method
@@ -746,7 +746,7 @@ public class Class1095 extends Class1018 {
 
       @Override
       public boolean method10803() {
-         if (this.field17189 > 0 && this.field17153.method3013().nextInt(this.field17189) != 0) {
+         if (this.field17189 > 0 && this.field17153.getRNG().nextInt(this.field17189) != 0) {
             return false;
          } else {
             for (UUID var4 : method5174(Class1095.this)) {
@@ -774,7 +774,7 @@ public class Class1095 extends Class1018 {
             this.field17203 = this.field17202.method3015();
          }
 
-         Class1095.this.method2863(SoundEvents.field26588, 1.0F, 1.0F);
+         Class1095.this.playSound(SoundEvents.field26588, 1.0F, 1.0F);
          method5175(Class1095.this, true);
          method5176(Class1095.this);
          super.method10804();

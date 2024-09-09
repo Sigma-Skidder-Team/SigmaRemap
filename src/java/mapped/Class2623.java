@@ -19,14 +19,14 @@ public class Class2623 extends Class2595 {
    @Override
    public boolean method10803() {
       if (this.field16916 <= this.field16917.ticksExisted
-         && !this.field16917.method3005()
-         && !this.field16917.method3250()
+         && !this.field16917.isChild()
+         && !this.field16917.isInWater()
          && this.field16917.method5230()
          && this.field16917.method5186() <= 0) {
          List var3 = this.field16917
             .world
             .<ItemEntity>method6772(ItemEntity.class, this.field16917.getBoundingBox().method19663(6.0, 6.0, 6.0), Class1097.method5243());
-         return !var3.isEmpty() || !this.field16917.method2943(Class2106.field13731).isEmpty();
+         return !var3.isEmpty() || !this.field16917.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty();
       } else {
          return false;
       }
@@ -34,14 +34,14 @@ public class Class2623 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      return !this.field16917.method3250() && (this.field16917.method5210() || Class1097.method5244(this.field16917).nextInt(600) != 1)
+      return !this.field16917.isInWater() && (this.field16917.method5210() || Class1097.method5244(this.field16917).nextInt(600) != 1)
          ? Class1097.method5245(this.field16917).nextInt(2000) != 1
          : false;
    }
 
    @Override
    public void method10805() {
-      if (!this.field16917.method5189() && !this.field16917.method2943(Class2106.field13731).isEmpty()) {
+      if (!this.field16917.method5189() && !this.field16917.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty()) {
          Class1097.method5246(this.field16917);
       }
    }
@@ -51,9 +51,9 @@ public class Class2623 extends Class2595 {
       List var3 = this.field16917
          .world
          .<ItemEntity>method6772(ItemEntity.class, this.field16917.getBoundingBox().method19663(8.0, 8.0, 8.0), Class1097.method5243());
-      if (!var3.isEmpty() && this.field16917.method2943(Class2106.field13731).isEmpty()) {
+      if (!var3.isEmpty() && this.field16917.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty()) {
          this.field16917.method4230().method21655((Entity)var3.get(0), 1.2F);
-      } else if (!this.field16917.method2943(Class2106.field13731).isEmpty()) {
+      } else if (!this.field16917.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty()) {
          Class1097.method5246(this.field16917);
       }
 
@@ -62,10 +62,10 @@ public class Class2623 extends Class2595 {
 
    @Override
    public void method10807() {
-      ItemStack var3 = this.field16917.method2943(Class2106.field13731);
+      ItemStack var3 = this.field16917.getItemStackFromSlot(EquipmentSlotType.field13731);
       if (!var3.isEmpty()) {
          this.field16917.method3302(var3);
-         this.field16917.method2944(Class2106.field13731, ItemStack.EMPTY);
+         this.field16917.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
          int var4 = !this.field16917.method5210()
             ? Class1097.method5248(this.field16917).nextInt(150) + 10
             : Class1097.method5247(this.field16917).nextInt(50) + 10;

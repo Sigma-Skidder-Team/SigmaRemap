@@ -21,7 +21,7 @@ import java.util.Random;
 public class Class3475 extends Block implements Class3476 {
    private static String[] field19325;
    public static final Class8554 field19326 = Class8820.field39752;
-   public static final Object2FloatMap<Class3303> field19327 = new Object2FloatOpenHashMap();
+   public static final Object2FloatMap<IItemProvider> field19327 = new Object2FloatOpenHashMap();
    private static final VoxelShape field19328 = VoxelShapes.method27426();
    private static final VoxelShape[] field19329 = Util.<VoxelShape[]>make(
       new VoxelShape[9],
@@ -124,7 +124,7 @@ public class Class3475 extends Block implements Class3476 {
       method12163(1.0F, Items.field38067);
    }
 
-   private static void method12163(float var0, Class3303 var1) {
+   private static void method12163(float var0, IItemProvider var1) {
       field19327.put(var1.method11581(), var0);
    }
 
@@ -145,7 +145,7 @@ public class Class3475 extends Block implements Class3476 {
          1.0F,
          false
       );
-      double var6 = var5.method23412(var0, var1).method19522(Class113.field414, 0.5, 0.5) + 0.03125;
+      double var6 = var5.method23412(var0, var1).method19522(Direction.field414, 0.5, 0.5) + 0.03125;
       double var8 = 0.13125F;
       double var10 = 0.7375F;
       Random var12 = var0.method6814();
@@ -154,7 +154,7 @@ public class Class3475 extends Block implements Class3476 {
          double var14 = var12.nextGaussian() * 0.02;
          double var16 = var12.nextGaussian() * 0.02;
          double var18 = var12.nextGaussian() * 0.02;
-         var0.method6746(
+         var0.addParticle(
             ParticleTypes.field34079,
             (double)var1.getX() + 0.13125F + 0.7375F * (double)var12.nextFloat(),
             (double)var1.getY() + var6 + (double)var12.nextFloat() * (1.0 - var6),
@@ -230,8 +230,8 @@ public class Class3475 extends Block implements Class3476 {
          ItemEntity var12 = new ItemEntity(
             var1, (double)var2.getX() + var6, (double)var2.getY() + var8, (double)var2.getZ() + var10, new ItemStack(Items.field37934)
          );
-         var12.method4131();
-         var1.method6916(var12);
+         var12.setDefaultPickupDelay();
+         var1.addEntity(var12);
       }
 
       BlockState var13 = method12167(var0, var1, var2);

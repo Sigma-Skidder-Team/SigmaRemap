@@ -28,7 +28,7 @@ public class Class2704 extends Class2699 {
       int var3 = this.field17153.method3015();
       LivingEntity var4 = this.field17153.method3014();
       if (var3 != this.field17181 && var4 != null) {
-         if (var4.getType() == EntityType.PLAYER && this.field17153.world.method6789().method17135(Class5462.field24255)) {
+         if (var4.getType() == EntityType.PLAYER && this.field17153.world.getGameRules().getBoolean(Class5462.field24255)) {
             return false;
          } else {
             for (Class var8 : this.field17182) {
@@ -80,7 +80,7 @@ public class Class2704 extends Class2699 {
             if (this.field17153 != var8
                && var8.method4232() == null
                && (!(this.field17153 instanceof TameableEntity) || ((TameableEntity)this.field17153).method4400() == ((TameableEntity)var8).method4400())
-               && !var8.method3345(this.field17153.method3014())) {
+               && !var8.isOnSameTeam(this.field17153.method3014())) {
                if (this.field17183 == null) {
                   break;
                }

@@ -39,12 +39,12 @@ public class Class6597 {
       if (this != field29027) {
          if (var1 instanceof LivingEntity) {
             LivingEntity var4 = (LivingEntity)var1;
-            if (this.field29029.method31016(var4.method2943(Class2106.field13736))) {
-               if (this.field29030.method31016(var4.method2943(Class2106.field13735))) {
-                  if (this.field29031.method31016(var4.method2943(Class2106.field13734))) {
-                     if (this.field29032.method31016(var4.method2943(Class2106.field13733))) {
-                        return this.field29033.method31016(var4.method2943(Class2106.field13731))
-                           ? this.field29034.method31016(var4.method2943(Class2106.field13732))
+            if (this.field29029.method31016(var4.getItemStackFromSlot(EquipmentSlotType.field13736))) {
+               if (this.field29030.method31016(var4.getItemStackFromSlot(EquipmentSlotType.field13735))) {
+                  if (this.field29031.method31016(var4.getItemStackFromSlot(EquipmentSlotType.field13734))) {
+                     if (this.field29032.method31016(var4.getItemStackFromSlot(EquipmentSlotType.field13733))) {
+                        return this.field29033.method31016(var4.getItemStackFromSlot(EquipmentSlotType.field13731))
+                           ? this.field29034.method31016(var4.getItemStackFromSlot(EquipmentSlotType.field13732))
                            : false;
                      } else {
                         return false;

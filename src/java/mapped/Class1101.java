@@ -42,7 +42,7 @@ public class Class1101 extends Class1009 {
 
    @Override
    public double method3310() {
-      return (double)(this.method3430() * 0.5F);
+      return (double)(this.getHeight() * 0.5F);
    }
 
    @Override
@@ -84,30 +84,30 @@ public class Class1101 extends Class1009 {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(SoundEvents.field27122, 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(SoundEvents.field27122, 0.15F, 1.0F);
    }
 
    @Override
-   public boolean method3063() {
+   public boolean isOnLadder() {
       return this.method5289();
    }
 
    @Override
-   public void method2928(BlockState var1, Vector3d var2) {
-      if (!var1.method23448(Blocks.COBWEB)) {
-         super.method2928(var1, var2);
+   public void setMotionMultiplier(BlockState var1, Vector3d var2) {
+      if (!var1.isIn(Blocks.COBWEB)) {
+         super.setMotionMultiplier(var1, var2);
       }
    }
 
    @Override
-   public Class7809 method3089() {
-      return Class7809.field33507;
+   public CreatureAttribute getCreatureAttribute() {
+      return CreatureAttribute.field33507;
    }
 
    @Override
-   public boolean method3036(Class2023 var1) {
-      return var1.method8627() != Effects.POISON ? super.method3036(var1) : false;
+   public boolean isPotionApplicable(EffectInstance var1) {
+      return var1.getPotion() != Effects.POISON ? super.isPotionApplicable(var1) : false;
    }
 
    public boolean method5289() {
@@ -130,8 +130,8 @@ public class Class1101 extends Class1009 {
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       if (var1.method6814().nextInt(100) == 0) {
-         Class1085 var8 = EntityType.field41078.method33215(this.world);
-         var8.method3273(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
+         Class1085 var8 = EntityType.field41078.create(this.world);
+         var8.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
          var8.method4276(var1, var2, var3, (Class5093)null, (CompoundNBT)null);
          var8.method3311(this);
       }
@@ -146,7 +146,7 @@ public class Class1101 extends Class1009 {
       if (var4 instanceof Class5092) {
          Effect var10 = ((Class5092)var4).field23180;
          if (var10 != null) {
-            this.method3035(new Class2023(var10, Integer.MAX_VALUE));
+            this.addPotionEffect(new EffectInstance(var10, Integer.MAX_VALUE));
          }
       }
 
@@ -154,7 +154,7 @@ public class Class1101 extends Class1009 {
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return 0.65F;
    }
 }

@@ -49,29 +49,29 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    @Override
-   public Class6971<Class1093> method2993() {
-      return Class6947.<Class1093>method21400(field5985, field5984);
+   public Class6971<Class1093> getBrainCodec() {
+      return Brain.<Class1093>method21400(field5985, field5984);
    }
 
    @Override
-   public Class6947<?> method2994(Dynamic<?> var1) {
-      Class6947 var4 = this.method2993().method21513(var1);
+   public Brain<?> createBrain(Dynamic<?> var1) {
+      Brain var4 = this.getBrainCodec().method21513(var1);
       method5093(var4);
       method5094(var4);
       method5095(var4);
-      var4.method21415(ImmutableSet.of(Class8890.field40219));
-      var4.method21424(Class8890.field40220);
+      var4.method21415(ImmutableSet.of(Activity.field40219));
+      var4.method21424(Activity.field40220);
       var4.method21417();
       return var4;
    }
 
-   private static void method5093(Class6947<Class1093> var0) {
-      var0.method21425(Class8890.field40219, 0, ImmutableList.of(new Class3681(45, 90), new Class3735()));
+   private static void method5093(Brain<Class1093> var0) {
+      var0.method21425(Activity.field40219, 0, ImmutableList.of(new Class3681(45, 90), new Class3735()));
    }
 
-   private static void method5094(Class6947<Class1093> var0) {
+   private static void method5094(Brain<Class1093> var0) {
       var0.method21425(
-         Class8890.field40220,
+         Activity.field40220,
          10,
          ImmutableList.<Class3676<? super Class1093>>of(
                  new Class3733<>(Class1093::method5096),
@@ -82,14 +82,14 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
       );
    }
 
-   private static void method5095(Class6947<Class1093> var0) {
+   private static void method5095(Brain<Class1093> var0) {
       var0.method21426(
-         Class8890.field40229,
+         Activity.field40229,
          10,
               ImmutableList.<Class3676<? super Class1093>>of(
             new Class3720(1.0F),
             new Class3740<>(Class1093::method5099, new Class3684(40)),
-            new Class3740<>(Class1093::method3005, new Class3684(15)),
+            new Class3740<>(Class1093::isChild, new Class3684(15)),
             new Class3685()
          ),
          Class8830.field39826
@@ -97,7 +97,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    private Optional<? extends LivingEntity> method5096() {
-      return this.method2992().<List<LivingEntity>>method21410(Class8830.field39819).orElse(ImmutableList.of()).stream().filter(Class1093::method5097).findFirst();
+      return this.getBrain().<List<LivingEntity>>method21410(Class8830.field39819).orElse(ImmutableList.of()).stream().filter(Class1093::method5097).findFirst();
    }
 
    private static boolean method5097(LivingEntity var0) {
@@ -112,10 +112,10 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method3155(DataParameter<?> var1) {
-      super.method3155(var1);
+   public void notifyDataManagerChange(DataParameter<?> var1) {
+      super.notifyDataManagerChange(var1);
       if (field5982.equals(var1)) {
-         this.method3385();
+         this.recalculateSize();
       }
    }
 
@@ -129,15 +129,15 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    public boolean method5099() {
-      return !this.method3005();
+      return !this.isChild();
    }
 
    @Override
-   public boolean method3114(Entity var1) {
+   public boolean attackEntityAsMob(Entity var1) {
       if (var1 instanceof LivingEntity) {
          this.field5983 = 10;
-         this.world.method6786(this, (byte)4);
-         this.method2863(SoundEvents.field27278, 1.0F, this.method3100());
+         this.world.setEntityState(this, (byte)4);
+         this.playSound(SoundEvents.field27278, 1.0F, this.getSoundPitch());
          return Class1092.method5091(this, (LivingEntity)var1);
       } else {
          return false;
@@ -150,23 +150,23 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method3045(LivingEntity var1) {
-      if (!this.method3005()) {
+   public void constructKnockBackVector(LivingEntity var1) {
+      if (!this.isChild()) {
          Class1092.method5092(this, var1);
       }
    }
 
    @Override
    public double method3310() {
-      return (double)this.method3430() - (!this.method3005() ? 0.15 : 0.2);
+      return (double)this.getHeight() - (!this.isChild() ? 0.15 : 0.2);
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      boolean var5 = super.method2741(var1, var2);
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      boolean var5 = super.attackEntityFrom(var1, var2);
       if (!this.world.isRemote) {
-         if (var5 && var1.method31109() instanceof LivingEntity) {
-            LivingEntity var6 = (LivingEntity)var1.method31109();
+         if (var5 && var1.getTrueSource() instanceof LivingEntity) {
+            LivingEntity var6 = (LivingEntity)var1.getTrueSource();
             if (Class8088.field34762.test(var6) && !Class6983.method21582(this, var6, 4.0)) {
                this.method5100(var6);
             }
@@ -186,15 +186,15 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    @Override
-   public Class6947<Class1093> method2992() {
-      return (Class6947<Class1093>)super.method2992();
+   public Brain<Class1093> getBrain() {
+      return (Brain<Class1093>)super.getBrain();
    }
 
    public void method5101() {
-      Class8890 var3 = this.field5011.method21418().orElse((Class8890)null);
-      this.field5011.method21423(ImmutableList.of(Class8890.field40229, Class8890.field40220));
-      Class8890 var4 = this.field5011.method21418().orElse((Class8890)null);
-      if (var4 == Class8890.field40229 && var3 != Class8890.field40229) {
+      Activity var3 = this.field5011.method21418().orElse((Activity)null);
+      this.field5011.method21423(ImmutableList.of(Activity.field40229, Activity.field40220));
+      Activity var4 = this.field5011.method21418().orElse((Activity)null);
+      if (var4 == Activity.field40229 && var3 != Activity.field40229) {
          this.method5102();
       }
 
@@ -204,40 +204,40 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    @Override
    public void method4258() {
       this.world.getProfiler().startSection("zoglinBrain");
-      this.method2992().method21432((ServerWorld)this.world, this);
+      this.getBrain().method21432((ServerWorld)this.world, this);
       this.world.getProfiler().endSection();
       this.method5101();
    }
 
    @Override
    public void method4308(boolean var1) {
-      this.method3210().method35446(field5982, var1);
+      this.getDataManager().method35446(field5982, var1);
       if (!this.world.isRemote && var1) {
-         this.method3085(Attributes.field42110).method38661(0.5);
+         this.getAttribute(Attributes.field42110).method38661(0.5);
       }
    }
 
    @Override
-   public boolean method3005() {
-      return this.method3210().<Boolean>method35445(field5982);
+   public boolean isChild() {
+      return this.getDataManager().<Boolean>method35445(field5982);
    }
 
    @Override
-   public void method2871() {
+   public void livingEntity() {
       if (this.field5983 > 0) {
          this.field5983--;
       }
 
-      super.method2871();
+      super.livingEntity();
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 4) {
-         super.method2866(var1);
+         super.handleStatusUpdate(var1);
       } else {
          this.field5983 = 10;
-         this.method2863(SoundEvents.field27278, 1.0F, this.method3100());
+         this.playSound(SoundEvents.field27278, 1.0F, this.getSoundPitch());
       }
    }
 
@@ -266,12 +266,12 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(SoundEvents.field27281, 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(SoundEvents.field27281, 0.15F, 1.0F);
    }
 
    public void method5102() {
-      this.method2863(SoundEvents.field27277, 1.0F, this.method3100());
+      this.playSound(SoundEvents.field27277, 1.0F, this.getSoundPitch());
    }
 
    @Override
@@ -281,21 +281,21 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    @Override
-   public Class7809 method3089() {
-      return Class7809.field33506;
+   public CreatureAttribute getCreatureAttribute() {
+      return CreatureAttribute.field33506;
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      if (this.method3005()) {
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      if (this.isChild()) {
          var1.putBoolean("IsBaby", true);
       }
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.getBoolean("IsBaby")) {
          this.method4308(true);
       }

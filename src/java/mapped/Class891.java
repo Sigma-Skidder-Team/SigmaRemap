@@ -38,12 +38,12 @@ public class Class891 extends Class890 {
          int var4 = 3 + this.world.rand.nextInt(5) + this.world.rand.nextInt(5);
 
          while (var4 > 0) {
-            int var5 = ExperienceOrbEntity.method4179(var4);
+            int var5 = ExperienceOrbEntity.getXPSplit(var4);
             var4 -= var5;
-            this.world.method6916(new ExperienceOrbEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), var5));
+            this.world.addEntity(new ExperienceOrbEntity(this.world, this.getPosX(), this.getPosY(), this.getPosZ(), var5));
          }
 
-         this.method2904();
+         this.remove();
       }
    }
 }

@@ -6,7 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-public class Class4846 implements IRecipe<Class920> {
+public class Class4846 implements IRecipe<IInventory> {
    private static String[] field22625;
    private final Class120 field22626;
    private final Class120 field22627;
@@ -21,14 +21,14 @@ public class Class4846 implements IRecipe<Class920> {
    }
 
    @Override
-   public boolean method14963(Class920 var1, World var2) {
-      return this.field22626.test(var1.method3618(0)) && this.field22627.test(var1.method3618(1));
+   public boolean method14963(IInventory var1, World var2) {
+      return this.field22626.test(var1.getStackInSlot(0)) && this.field22627.test(var1.getStackInSlot(1));
    }
 
    @Override
-   public ItemStack method14962(Class920 var1) {
+   public ItemStack method14962(IInventory var1) {
       ItemStack var4 = this.field22628.copy();
-      CompoundNBT var5 = var1.method3618(0).method32142();
+      CompoundNBT var5 = var1.getStackInSlot(0).method32142();
       if (var5 != null) {
          var4.method32148(var5.method79());
       }

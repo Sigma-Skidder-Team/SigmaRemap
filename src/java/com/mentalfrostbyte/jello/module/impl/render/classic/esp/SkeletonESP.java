@@ -28,7 +28,7 @@ public class SkeletonESP extends Module {
                         ? (!var2.getName().getString().equalsIgnoreCase(mc.player.getName().getString()) ? new Color(16775672).getRGB() : -6684775)
                         : -8401409
         );
-        if (!var2.method3342()) {
+        if (!var2.isInvisible()) {
             float[][] var6 = field23459.get(var2);
             if (var6 != null && var2.isAlive() && var2 != mc.player && !var2.isSleeping()) {
                 GL11.glPushMatrix();
@@ -39,10 +39,10 @@ public class SkeletonESP extends Module {
                 double var10 = var7.method29877() - mc.getRenderManager().field40017.getPos().y;
                 double var12 = var7.method29878() - mc.getRenderManager().field40017.getPos().z;
                 GL11.glTranslated(var8, var10, var12);
-                float var14 = var2.field4966 + (var2.field4965 - var2.field4966) * mc.getRenderPartialTicks();
+                float var14 = var2.prevRenderYawOffset + (var2.renderYawOffset - var2.prevRenderYawOffset) * mc.getRenderPartialTicks();
                 GL11.glRotatef(-var14, 0.0F, 1.0F, 0.0F);
-                GL11.glTranslated(0.0, 0.0, !var2.method3331() ? 0.0 : -0.235);
-                float var15 = !var2.method3331() ? 0.75F : 0.6F;
+                GL11.glTranslated(0.0, 0.0, !var2.isSneaking() ? 0.0 : -0.235);
+                float var15 = !var2.isSneaking() ? 0.75F : 0.6F;
                 GL11.glPushMatrix();
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 GL11.glTranslated(-0.125, (double) var15, 0.0);
@@ -83,10 +83,10 @@ public class SkeletonESP extends Module {
                 GL11.glVertex3d(0.0, (double) (-var15), 0.0);
                 GL11.glEnd();
                 GL11.glPopMatrix();
-                GL11.glTranslated(0.0, 0.0, !var2.method3331() ? 0.0 : 0.25);
+                GL11.glTranslated(0.0, 0.0, !var2.isSneaking() ? 0.0 : 0.25);
                 GL11.glPushMatrix();
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-                GL11.glTranslated(0.0, !var2.method3331() ? 0.0 : -0.05, !var2.method3331() ? 0.0 : -0.01725);
+                GL11.glTranslated(0.0, !var2.isSneaking() ? 0.0 : -0.05, !var2.isSneaking() ? 0.0 : -0.01725);
                 GL11.glPushMatrix();
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 GL11.glTranslated(-0.375, (double) var15 + 0.55, 0.0);
@@ -126,7 +126,7 @@ public class SkeletonESP extends Module {
                 GL11.glVertex3d(0.0, -0.5, 0.0);
                 GL11.glEnd();
                 GL11.glPopMatrix();
-                GL11.glRotatef(var14 - var2.field4967, 0.0F, 1.0F, 0.0F);
+                GL11.glRotatef(var14 - var2.rotationYawHead, 0.0F, 1.0F, 0.0F);
                 GL11.glPushMatrix();
                 GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
                 GL11.glTranslated(0.0, (double) var15 + 0.55, 0.0);
@@ -140,8 +140,8 @@ public class SkeletonESP extends Module {
                 GL11.glEnd();
                 GL11.glPopMatrix();
                 GL11.glPopMatrix();
-                GL11.glRotatef(!var2.method3331() ? 0.0F : 25.0F, 1.0F, 0.0F, 0.0F);
-                GL11.glTranslated(0.0, !var2.method3331() ? 0.0 : -0.16175, !var2.method3331() ? 0.0 : -0.48025);
+                GL11.glRotatef(!var2.isSneaking() ? 0.0F : 25.0F, 1.0F, 0.0F, 0.0F);
+                GL11.glTranslated(0.0, !var2.isSneaking() ? 0.0 : -0.16175, !var2.isSneaking() ? 0.0 : -0.48025);
                 GL11.glPushMatrix();
                 GL11.glTranslated(0.0, (double) var15, 0.0);
                 GL11.glBegin(3);

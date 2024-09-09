@@ -19,7 +19,7 @@ public final class Class953 implements Class949 {
    }
 
    @Override
-   public Class5812 method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
+   public Container method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
       return this.field5355.method3627(var1, var2, var3);
    }
 }

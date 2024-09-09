@@ -39,7 +39,7 @@ public class Class2923 extends Class2898<Class4710> {
    private boolean method11255(Class1660 var1, BlockPos var2, Random var3) {
       BlockPos var6 = var2.down();
       BlockState var7 = var1.getBlockState(var6);
-      return !var7.method23448(Blocks.field36885) ? var7.method23454(var1, var6, Direction.field673) : var3.nextBoolean();
+      return !var7.isIn(Blocks.field36885) ? var7.method23454(var1, var6, Direction.field673) : var3.nextBoolean();
    }
 
    private void method11256(Class1660 var1, BlockPos var2, Random var3, Class4710 var4) {

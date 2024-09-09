@@ -8,7 +8,7 @@ public class Class4406 implements Event, ICancellableEvent {
     public boolean field21520 = false;
 
     @Override
-    public boolean method13900(boolean var1) {
+    public boolean setCancelled(boolean var1) {
         return this.field21520 = var1;
     }
 

@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.gui.jello;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
@@ -105,7 +105,7 @@ public class MiniMap extends Module {
 
                 while (var11.hasNext()) {
                     Class8444 var12 = (Class8444) var11.next();
-                    int var7 = var12.field36184.method7072().method24365(new Class7481(mc.player.chunkCoordX, mc.player.chunkCoordZ));
+                    int var7 = var12.field36184.method7072().method24365(new ChunkPos(mc.player.chunkCoordX, mc.player.chunkCoordZ));
                     if (var7 > 7) {
                         var11.remove();
                     }
@@ -146,7 +146,7 @@ public class MiniMap extends Module {
 
     @EventTarget
     @HigherPriority
-    private void method16501(Class4415 var1) throws IOException {
+    private void method16501(EventRender var1) throws IOException {
         if (this.isEnabled() && mc.player != null && mc.world != null) {
             if (this.field23704 != null) {
                 if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
@@ -189,7 +189,7 @@ public class MiniMap extends Module {
                             RenderUtil.endScissor();
                             GL11.glPopMatrix();
                             GL11.glPushMatrix();
-                            int var15 = (int) Class9567.method37083()[0];
+                            int var15 = (int) MovementUtils.method37083()[0];
                             GL11.glTranslatef((float) (this.field23711 + this.field23710 / 2 + 1), (float) (this.field23712 + this.field23709 / 2 + 3), 0.0F);
                             GL11.glRotatef((float) (270 + var15) - mc.player.rotationYaw, 0.0F, 0.0F, 1.0F);
                             GL11.glTranslatef((float) (-(this.field23711 + this.field23710 / 2 + 1)), (float) (-(this.field23712 + this.field23709 / 2)), 0.0F);

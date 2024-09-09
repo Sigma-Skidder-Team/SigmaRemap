@@ -32,11 +32,11 @@ public abstract class Class1035 extends Class1009 {
    public abstract boolean method4618();
 
    public void method4632(boolean var1) {
-      this.method3210().method35446(field5750, var1);
+      this.getDataManager().method35446(field5750, var1);
    }
 
    public boolean method4633() {
-      return this.method3210().<Boolean>method35445(field5750);
+      return this.getDataManager().<Boolean>method35445(field5750);
    }
 
    @Override
@@ -46,23 +46,23 @@ public abstract class Class1035 extends Class1009 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.method4633()) {
          var1.putBoolean("IsImmuneToZombification", true);
       }
 
-      var1.method102("TimeInOverworld", this.field5751);
+      var1.putInt("TimeInOverworld", this.field5751);
    }
 
    @Override
    public double method2894() {
-      return !this.method3005() ? -0.45 : -0.05;
+      return !this.isChild() ? -0.45 : -0.05;
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method4632(var1.getBoolean("IsImmuneToZombification"));
       this.field5751 = var1.getInt("TimeInOverworld");
    }
@@ -89,12 +89,12 @@ public abstract class Class1035 extends Class1009 {
    public void method4619(ServerWorld var1) {
       Class1063 var4 = this.<Class1063>method4292(EntityType.field41110, true);
       if (var4 != null) {
-         var4.method3035(new Class2023(Effects.NAUSEA, 200, 0));
+         var4.addPotionEffect(new EffectInstance(Effects.NAUSEA, 200, 0));
       }
    }
 
    public boolean method4635() {
-      return !this.method3005();
+      return !this.isChild();
    }
 
    public abstract Class2172 method4622();

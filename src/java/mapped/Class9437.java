@@ -21,8 +21,8 @@ public class Class9437 extends Class9436<Class9437> {
    public final Difficulty field43796 = this.<Difficulty>method36252(
       "difficulty", method36249(Difficulty::method8907, Difficulty::method8908), Difficulty::method8909, Difficulty.field14352
    );
-   public final Class1894 field43797 = this.<Class1894>method36252(
-      "gamemode", method36249(Class1894::method8159, Class1894::method8161), Class1894::method8153, Class1894.field11102
+   public final GameType field43797 = this.<GameType>method36252(
+      "gamemode", method36249(GameType::method8159, GameType::method8161), GameType::method8153, GameType.field11102
    );
    public final String field43798 = this.method36257("level-name", "world");
    public final int field43799 = this.method36259("server-port", 25565);

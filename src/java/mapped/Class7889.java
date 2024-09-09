@@ -20,7 +20,7 @@ public class Class7889 extends Class7882<LivingEntity> {
 
    @Override
    public void method26425(ServerWorld var1, LivingEntity var2) {
-      var2.method2992().method21406(Class8830.field39820, this.method26453(var2));
+      var2.getBrain().method21406(Class8830.field39820, this.method26453(var2));
    }
 
    private List<LivingEntity> method26453(LivingEntity var1) {
@@ -28,10 +28,10 @@ public class Class7889 extends Class7882<LivingEntity> {
    }
 
    private boolean method26454(LivingEntity var1) {
-      return var1.getType() == EntityType.field41098 && var1.method3005();
+      return var1.getType() == EntityType.field41098 && var1.isChild();
    }
 
    private List<LivingEntity> method26455(LivingEntity var1) {
-      return var1.method2992().<List<LivingEntity>>method21410(Class8830.field39819).orElse(Lists.newArrayList());
+      return var1.getBrain().<List<LivingEntity>>method21410(Class8830.field39819).orElse(Lists.newArrayList());
    }
 }

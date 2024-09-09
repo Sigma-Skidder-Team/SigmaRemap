@@ -15,7 +15,7 @@ public class Class3710 extends Class3676<Class1042> {
 
    public boolean method12508(ServerWorld var1, Class1042 var2) {
       PlayerEntity var5 = var2.method4740();
-      return var2.isAlive() && var5 != null && !var2.method3250() && !var2.velocityChanged && var2.getDistanceSq(var5) <= 16.0 && var5.field4905 != null;
+      return var2.isAlive() && var5 != null && !var2.isInWater() && !var2.velocityChanged && var2.getDistanceSq(var5) <= 16.0 && var5.field4905 != null;
    }
 
    public boolean method12499(ServerWorld var1, Class1042 var2, long var3) {
@@ -27,7 +27,7 @@ public class Class3710 extends Class3676<Class1042> {
    }
 
    public void method12506(ServerWorld var1, Class1042 var2, long var3) {
-      Class6947 var7 = var2.method2992();
+      Brain var7 = var2.getBrain();
       var7.method21405(Class8830.field39824);
       var7.method21405(Class8830.field39825);
    }
@@ -42,7 +42,7 @@ public class Class3710 extends Class3676<Class1042> {
    }
 
    private void method12590(Class1042 var1) {
-      Class6947 var4 = var1.method2992();
+      Brain var4 = var1.getBrain();
       var4.method21406(Class8830.field39824, new Class8999(new Class7865(var1.method4740(), false), this.field19776, 2));
       var4.method21406(Class8830.field39825, new Class7865(var1.method4740(), true));
    }

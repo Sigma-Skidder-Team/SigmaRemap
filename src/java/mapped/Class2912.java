@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class Class2912 extends Class2898<Class4712> {
    private static final BlockPos field17996 = new BlockPos(8, 3, 8);
-   private static final Class7481 field17997 = new Class7481(field17996);
+   private static final ChunkPos field17997 = new ChunkPos(field17996);
 
    public Class2912(Codec<Class4712> var1) {
       super(var1);
@@ -19,7 +19,7 @@ public class Class2912 extends Class2898<Class4712> {
    }
 
    public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
-      Class7481 var8 = new Class7481(var4);
+      ChunkPos var8 = new ChunkPos(var4);
       if (method11248(var8.field32174, var8.field32175, field17997.field32174, field17997.field32175) > 1) {
          return true;
       } else {

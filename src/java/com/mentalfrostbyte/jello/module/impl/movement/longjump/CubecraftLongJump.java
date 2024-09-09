@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Class9567;
+import mapped.MovementUtils;
 import mapped.ColorUtils;
 import mapped.NumberSetting;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -20,7 +20,7 @@ public class CubecraftLongJump extends Module {
 
     @Override
     public void onDisable() {
-        Class9567.method37090(Class9567.method37075() * 0.8);
+        MovementUtils.method37090(MovementUtils.method37075() * 0.8);
         mc.timer.timerSpeed = 1.0F;
     }
 
@@ -40,21 +40,21 @@ public class CubecraftLongJump extends Module {
                     this.field23502 = 0.26;
                 }
 
-                Class9567.method37090(this.field23502);
+                MovementUtils.method37090(this.field23502);
                 if (this.field23501 > 5) {
-                    this.method16004().method16000();
+                    this.access().method16000();
                 }
             } else {
                 if (this.field23501 > 0) {
-                    Class9567.method37090(0.0);
-                    this.method16004().method16000();
+                    MovementUtils.method37090(0.0);
+                    this.access().method16000();
                     this.field23501 = 0;
                 }
 
                 double var4 = mc.player.getPosX();
                 double var6 = mc.player.getPosY();
                 double var8 = mc.player.getPosZ();
-                int var10 = 49 + Class9567.method37079() * 17;
+                int var10 = 49 + MovementUtils.method37079() * 17;
 
                 for (int var11 = 0; var11 < var10; var11++) {
                     mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var4, var6 + 0.06248, var8, false));
@@ -62,10 +62,10 @@ public class CubecraftLongJump extends Module {
                 }
 
                 mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var4, var6, var8, true));
-                ColorUtils.method17725(Class9567.method37080());
+                ColorUtils.method17725(MovementUtils.method37080());
                 this.field23501 = 0;
                 this.field23502 = this.getNumberValueBySettingName("Boost") / 2.0F;
-                Class9567.method37090(this.field23502);
+                MovementUtils.method37090(this.field23502);
             }
         }
     }

@@ -70,8 +70,8 @@ public class Class3364 extends Class3241 {
                ItemEntity var16 = new ItemEntity(
                   var1, (double)var2.getX() + var9, (double)var2.getY() + var11, (double)var2.getZ() + var13, var15
                );
-               var16.method4131();
-               var1.method6916(var16);
+               var16.setDefaultPickupDelay();
+               var1.addEntity(var16);
             }
          }
       }
@@ -79,7 +79,7 @@ public class Class3364 extends Class3241 {
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.method23448(var4.getBlock())) {
+      if (!var1.isIn(var4.getBlock())) {
          this.method11942(var2, var3);
          super.method11513(var1, var2, var3, var4, var5);
       }

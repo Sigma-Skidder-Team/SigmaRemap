@@ -15,7 +15,7 @@ public class PortalGodMode extends Module {
    private void method16069(RecievePacketEvent var1) {
       if (this.isEnabled()) {
          if (var1.getPacket() instanceof CConfirmTeleportPacket) {
-            var1.method13900(true);
+            var1.setCancelled(true);
          }
       }
    }

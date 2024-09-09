@@ -19,7 +19,7 @@ public class Class1675 extends Chunk {
       new Biome[Class1684.field9154], var0 -> Arrays.fill(var0, Class8900.field40281)
    );
 
-   public Class1675(World var1, Class7481 var2) {
+   public Class1675(World var1, ChunkPos var2) {
       super(var1, var2, new Class1684(var1.method6867().<Biome>getRegistry(Registry.BIOME_KEY), field9135));
    }
 
@@ -46,7 +46,7 @@ public class Class1675 extends Chunk {
    }
 
    @Override
-   public int method7032(BlockPos var1) {
+   public int getLightValue(BlockPos var1) {
       return 0;
    }
 

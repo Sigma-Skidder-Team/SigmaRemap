@@ -11,6 +11,6 @@ public class Class2752 extends Class2747 {
 
    @Override
    public boolean method10803() {
-      return !this.field17290.method3005() && !this.field17290.method3327() ? false : super.method10803();
+      return !this.field17290.isChild() && !this.field17290.isBurning() ? false : super.method10803();
    }
 }

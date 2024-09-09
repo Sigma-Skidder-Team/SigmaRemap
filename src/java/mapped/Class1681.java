@@ -23,7 +23,7 @@ public interface Class1681 {
 
    boolean destroyBlock(BlockPos var1, boolean var2, Entity var3, int var4);
 
-   default boolean method6916(Entity var1) {
+   default boolean addEntity(Entity var1) {
       return false;
    }
 }

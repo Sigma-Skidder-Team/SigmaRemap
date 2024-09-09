@@ -44,9 +44,9 @@ public class Class2746 extends Class2595 {
             this.field17279.method4233((LivingEntity)null);
          } else if (this.field17278 <= 0) {
             this.field17278 = 20 + Class1057.method4858(this.field17279).nextInt(10) * 20 / 2;
-            this.field17279.world.method6916(new Class905(this.field17279.world, this.field17279, var3, this.field17279.method4848().method544()));
+            this.field17279.world.addEntity(new Class905(this.field17279.world, this.field17279, var3, this.field17279.method4848().getAxis()));
             this.field17279
-               .method2863(
+               .playSound(
                   SoundEvents.field27053,
                   2.0F,
                   (Class1057.method4859(this.field17279).nextFloat() - Class1057.method4860(this.field17279).nextFloat()) * 0.2F + 1.0F

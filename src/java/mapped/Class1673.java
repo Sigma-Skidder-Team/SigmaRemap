@@ -39,8 +39,8 @@ public class Class1673 extends Class1672 {
    }
 
    @Override
-   public int method7033() {
-      return this.field9109.method7033();
+   public int getMaxLightLevel() {
+      return this.field9109.getMaxLightLevel();
    }
 
    @Nullable
@@ -90,7 +90,7 @@ public class Class1673 extends Class1672 {
    }
 
    @Override
-   public Class7481 method7072() {
+   public ChunkPos method7072() {
       return this.field9109.method7072();
    }
 

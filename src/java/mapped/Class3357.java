@@ -27,7 +27,7 @@ public class Class3357 extends Class3241 {
       new Object2ObjectOpenHashMap(), var0 -> var0.defaultReturnValue(new Class6218())
    );
 
-   public static void method11931(Class3303 var0, Class6226 var1) {
+   public static void method11931(IItemProvider var0, Class6226 var1) {
       field18901.put(var0.method11581(), var1);
    }
 
@@ -43,15 +43,15 @@ public class Class3357 extends Class3241 {
          if (var9 instanceof Class971) {
             var4.method2766((Class971)var9);
             if (!(var9 instanceof Class972)) {
-               var4.method2911(Class8876.field40151);
+               var4.method2911(Stats.field40151);
             } else {
-               var4.method2911(Class8876.field40149);
+               var4.method2911(Stats.field40149);
             }
          }
 
          return ActionResultType.field14819;
       } else {
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       }
    }
 
@@ -60,10 +60,10 @@ public class Class3357 extends Class3241 {
       Class971 var6 = var5.<Class971>method11325();
       int var7 = var6.method4022();
       if (var7 >= 0) {
-         ItemStack var8 = var6.method3618(var7);
+         ItemStack var8 = var6.getStackInSlot(var7);
          Class6226 var9 = this.method11933(var8);
          if (var9 != Class6226.field27722) {
-            var6.method3621(var7, var9.method19196(var5, var8));
+            var6.setInventorySlotContents(var7, var9.method19196(var5, var8));
          }
       } else {
          var1.playEvent(1001, var2, 0);
@@ -113,7 +113,7 @@ public class Class3357 extends Class3241 {
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.method23448(var4.getBlock())) {
+      if (!var1.isIn(var4.getBlock())) {
          TileEntity var8 = var2.getTileEntity(var3);
          if (var8 instanceof Class971) {
             Class7236.method22721(var2, var3, (Class971)var8);
@@ -139,7 +139,7 @@ public class Class3357 extends Class3241 {
 
    @Override
    public int method11649(BlockState var1, World var2, BlockPos var3) {
-      return Class5812.method18151(var2.getTileEntity(var3));
+      return Container.calcRedstone(var2.getTileEntity(var3));
    }
 
    @Override

@@ -15,11 +15,11 @@ public class Class3380 extends Class3231 {
    }
 
    @Override
-   public void method11567(World var1, BlockPos var2, Entity var3, float var4) {
+   public void onFallenUpon(World var1, BlockPos var2, Entity var3, float var4) {
       if (!var3.method3333()) {
-         var3.method2921(var4, 0.0F);
+         var3.onLivingFall(var4, 0.0F);
       } else {
-         super.method11567(var1, var2, var3, var4);
+         super.onFallenUpon(var1, var2, var3, var4);
       }
    }
 
@@ -33,21 +33,21 @@ public class Class3380 extends Class3231 {
    }
 
    private void method11979(Entity var1) {
-      Vector3d var4 = var1.getVec();
+      Vector3d var4 = var1.getMotion();
       if (var4.y < 0.0) {
          double var5 = !(var1 instanceof LivingEntity) ? 0.8 : 1.0;
-         var1.method3435(var4.x, -var4.y * var5, var4.z);
+         var1.setMotion(var4.x, -var4.y * var5, var4.z);
       }
    }
 
    @Override
-   public void method11561(World var1, BlockPos var2, Entity var3) {
-      double var6 = Math.abs(var3.getVec().y);
-      if (var6 < 0.1 && !var3.method3332()) {
+   public void onEntityWalk(World var1, BlockPos var2, Entity var3) {
+      double var6 = Math.abs(var3.getMotion().y);
+      if (var6 < 0.1 && !var3.isSteppingCarefully()) {
          double var8 = 0.4 + var6 * 0.2;
-         var3.method3434(var3.getVec().method11347(var8, 1.0, var8));
+         var3.setMotion(var3.getMotion().method11347(var8, 1.0, var8));
       }
 
-      super.method11561(var1, var2, var3);
+      super.onEntityWalk(var1, var2, var3);
    }
 }

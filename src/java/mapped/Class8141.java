@@ -11,7 +11,7 @@ public class Class8141 {
    private boolean field35036;
    private boolean field35037;
    private boolean field35038;
-   private final List<Pair<Class2023, Float>> field35039 = Lists.newArrayList();
+   private final List<Pair<EffectInstance, Float>> field35039 = Lists.newArrayList();
 
    public Class8141 method28229(int var1) {
       this.field35034 = var1;
@@ -38,7 +38,7 @@ public class Class8141 {
       return this;
    }
 
-   public Class8141 method28234(Class2023 var1, float var2) {
+   public Class8141 method28234(EffectInstance var1, float var2) {
       this.field35039.add(Pair.of(var1, var2));
       return this;
    }

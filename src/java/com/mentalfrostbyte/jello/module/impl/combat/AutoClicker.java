@@ -32,7 +32,7 @@ public class AutoClicker extends Module {
                     mc.getConnection()
                             .sendPacket(
                                     new CUseEntityPacket(
-                                            ColorUtils.method17711(mc.player.rotationYaw, mc.player.rotationPitch, 4.6F, 0.0), mc.player.method3331()
+                                            ColorUtils.method17711(mc.player.rotationYaw, mc.player.rotationPitch, 4.6F, 0.0), mc.player.isSneaking()
                                     )
                             );
                     mc.player.swingArm(Hand.MAIN_HAND);

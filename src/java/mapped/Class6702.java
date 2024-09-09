@@ -31,7 +31,7 @@ public class Class6702 extends Class6698 {
 
    @Override
    public BlockState method20424(Random var1, BlockPos var2) {
-      double var5 = MathHelper.method37778(
+      double var5 = MathHelper.clamp(
          (1.0 + Biome.field40314.method25315((double)var2.getX() / 48.0, (double)var2.getZ() / 48.0, false)) / 2.0, 0.0, 0.9999
       );
       return field29339[(int)(var5 * (double)field29339.length)];

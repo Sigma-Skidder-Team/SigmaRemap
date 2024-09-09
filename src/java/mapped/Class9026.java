@@ -32,7 +32,7 @@ public class Class9026 implements Class9027<ClientPlayerEntity> {
 
    @Override
    public String method33417() {
-      return Class8042.method27613().getVersion();
+      return ViaVersion3.method27613().getVersion();
    }
 
    public void method33418(UUID var1, ByteBuf var2) throws IllegalArgumentException {
@@ -63,12 +63,12 @@ public class Class9026 implements Class9027<ClientPlayerEntity> {
    @Override
    public SortedSet<Integer> method33422() {
       TreeSet var3 = new TreeSet<Integer>(Class9019.method33359());
-      var3.removeAll(Class8042.method27613().method27368().method21942());
+      var3.removeAll(ViaVersion3.method27613().method27368().method21942());
       return var3;
    }
 
    public Map<UUID, Class7161> method33423() {
-      return Class8042.method27614().method34418();
+      return ViaVersion3.method27614().method34418();
    }
 
    @Override

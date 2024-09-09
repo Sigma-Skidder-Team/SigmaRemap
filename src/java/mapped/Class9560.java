@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.EnumSet;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class9560 implements ArgumentType<EnumSet<Class113>> {
+public class Class9560 implements ArgumentType<EnumSet<Direction>> {
    private static final Collection<String> field44530 = Arrays.<String>asList("xyz", "x");
    private static final SimpleCommandExceptionType field44531 = new SimpleCommandExceptionType(new TranslationTextComponent("arguments.swizzle.invalid"));
 
@@ -18,25 +18,25 @@ public class Class9560 implements ArgumentType<EnumSet<Class113>> {
       return new Class9560();
    }
 
-   public static EnumSet<Class113> method37041(CommandContext<Class6619> var0, String var1) {
-      return (EnumSet<Class113>)var0.getArgument(var1, EnumSet.class);
+   public static EnumSet<Direction> method37041(CommandContext<Class6619> var0, String var1) {
+      return (EnumSet<Direction>)var0.getArgument(var1, EnumSet.class);
    }
 
-   public EnumSet<Class113> parse(StringReader var1) throws CommandSyntaxException {
-      EnumSet var4 = EnumSet.<Class113>noneOf(Class113.class);
+   public EnumSet<Direction> parse(StringReader var1) throws CommandSyntaxException {
+      EnumSet var4 = EnumSet.<Direction>noneOf(Direction.class);
 
       while (var1.canRead() && var1.peek() != ' ') {
          char var5 = var1.read();
-         Class113 var6;
+         Direction var6;
          switch (var5) {
             case 'x':
-               var6 = Class113.field413;
+               var6 = Direction.field413;
                break;
             case 'y':
-               var6 = Class113.field414;
+               var6 = Direction.field414;
                break;
             case 'z':
-               var6 = Class113.field415;
+               var6 = Direction.field415;
                break;
             default:
                throw field44531.create();

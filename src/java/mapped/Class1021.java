@@ -46,14 +46,14 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("Pumpkin", this.method4531());
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("Pumpkin")) {
          this.method4532(var1.getBoolean("Pumpkin"));
       }
@@ -65,17 +65,17 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
+   public void livingEntity() {
+      super.livingEntity();
       if (!this.world.isRemote) {
          int var3 = MathHelper.floor(this.getPosX());
          int var4 = MathHelper.floor(this.getPosY());
          int var5 = MathHelper.floor(this.getPosZ());
          if (this.world.getBiome(new BlockPos(var3, 0, var5)).method32503(new BlockPos(var3, var4, var5)) > 1.0F) {
-            this.method2741(DamageSource.field38994, 1.0F);
+            this.attackEntityFrom(DamageSource.field38994, 1.0F);
          }
 
-         if (!this.world.method6789().method17135(Class5462.field24224)) {
+         if (!this.world.getGameRules().getBoolean(Class5462.field24224)) {
             return;
          }
 
@@ -98,18 +98,18 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    @Override
    public void method4530(LivingEntity var1, float var2) {
       Class894 var5 = new Class894(this.world, this);
-      double var6 = var1.method3442() - 1.1F;
+      double var6 = var1.getPosYEye() - 1.1F;
       double var8 = var1.getPosX() - this.getPosX();
       double var10 = var6 - var5.getPosY();
       double var12 = var1.getPosZ() - this.getPosZ();
-      float var14 = MathHelper.method37766(var8 * var8 + var12 * var12) * 0.2F;
+      float var14 = MathHelper.sqrt(var8 * var8 + var12 * var12) * 0.2F;
       var5.shoot(var8, var10 + (double)var14, var12, 1.6F, 12.0F);
-      this.method2863(SoundEvents.field27114, 1.0F, 0.4F / (this.method3013().nextFloat() * 0.4F + 0.8F));
-      this.world.method6916(var5);
+      this.playSound(SoundEvents.field27114, 1.0F, 0.4F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+      this.world.addEntity(var5);
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return 1.7F;
    }
 
@@ -119,7 +119,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
       if (var5.getItem() == Items.field37956 && this.method4516()) {
          this.method4515(Class2266.field14735);
          if (!this.world.isRemote) {
-            var5.method32121(1, var1, var1x -> var1x.method3185(var2));
+            var5.method32121(1, var1, var1x -> var1x.sendBreakAnimation(var2));
          }
 
          return ActionResultType.method9002(this.world.isRemote);
@@ -174,7 +174,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    }
 
    @Override
-   public Vector3d method3394() {
-      return new Vector3d(0.0, (double)(0.75F * this.method3393()), (double)(this.method3429() * 0.4F));
+   public Vector3d func_241205_ce_() {
+      return new Vector3d(0.0, (double)(0.75F * this.getEyeHeight()), (double)(this.getWidth() * 0.4F));
    }
 }

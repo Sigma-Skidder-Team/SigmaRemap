@@ -120,7 +120,7 @@ public class Class8969 {
             var8.getPosX() - (double)var2.getX(), var8.getPosY() - (double)var2.getY(), var8.getPosZ() - (double)var2.getZ()
          );
          CompoundNBT var10 = new CompoundNBT();
-         var8.method3293(var10);
+         var8.writeUnlessPassenger(var10);
          BlockPos var11;
          if (!(var8 instanceof PaintingEntity)) {
             var11 = new BlockPos(var9);
@@ -198,7 +198,7 @@ public class Class8969 {
                   BlockState var23 = var20.field35531.method23396(var4.method36436()).method23395(var4.method36437());
                   if (var20.field35532 != null) {
                      TileEntity var24 = var1.getTileEntity(var21);
-                     Class946.method3802(var24);
+                     IClearable.method3802(var24);
                      var1.setBlockState(var21, Blocks.field36765.method11579(), 20);
                   }
 
@@ -213,9 +213,9 @@ public class Class8969 {
                      if (var20.field35532 != null) {
                         TileEntity var39 = var1.getTileEntity(var21);
                         if (var39 != null) {
-                           var20.field35532.method102("x", var21.getX());
-                           var20.field35532.method102("y", var21.getY());
-                           var20.field35532.method102("z", var21.getZ());
+                           var20.field35532.putInt("x", var21.getX());
+                           var20.field35532.putInt("y", var21.getY());
+                           var20.field35532.putInt("z", var21.getZ());
                            if (var39 instanceof Class939) {
                               var20.field35532.method103("LootTableSeed", var5.nextLong());
                            }
@@ -299,7 +299,7 @@ public class Class8969 {
                   if (var35.getSecond() != null) {
                      TileEntity var43 = var1.getTileEntity(var38);
                      if (var43 != null) {
-                        var43.method3622();
+                        var43.markDirty();
                      }
                   }
                }
@@ -360,7 +360,7 @@ public class Class8969 {
          if (var6 == null || var6.method38396(var12)) {
             CompoundNBT var13 = var11.field44529.method79();
             Vector3d var14 = method32906(var11.field44527, var3, var4, var5);
-            Vector3d var15 = var14.method11339((double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
+            Vector3d var15 = var14.add((double)var2.getX(), (double)var2.getY(), (double)var2.getZ());
             ListNBT var16 = new ListNBT();
             var16.add(Class34.method93(var15.x));
             var16.add(Class34.method93(var15.y));
@@ -368,9 +368,9 @@ public class Class8969 {
             var13.put("Pos", var16);
             var13.method133("UUID");
             method32903(var1, var13).ifPresent(var6x -> {
-               float var9 = var6x.method3403(var3);
-               var9 += var6x.rotationYaw - var6x.method3402(var4);
-               var6x.method3273(var15.x, var15.y, var15.z, var9, var6x.rotationPitch);
+               float var9 = var6x.getMirroredYaw(var3);
+               var9 += var6x.rotationYaw - var6x.getRotatedYaw(var4);
+               var6x.setLocationAndAngles(var15.x, var15.y, var15.z, var9, var6x.rotationPitch);
                if (var7 && var6x instanceof Class1006) {
                   ((Class1006)var6x).method4276(var1, var1.method6807(new BlockPos(var15)), Class2202.field14394, (Class5093)null, var13);
                }
@@ -556,7 +556,7 @@ public class Class8969 {
             CompoundNBT var10 = new CompoundNBT();
             var10.put("pos", this.method32915(var9.field35530.getX(), var9.field35530.getY(), var9.field35530.getZ()));
             int var11 = var5.method9281(var9.field35531);
-            var10.method102("state", var11);
+            var10.putInt("state", var11);
             if (var9.field35532 != null) {
                var10.put("nbt", var9.field35532);
             }
@@ -613,7 +613,7 @@ public class Class8969 {
 
       var1.put("entities", var14);
       var1.put("size", this.method32915(this.field40547.getX(), this.field40547.getY(), this.field40547.getZ()));
-      var1.method102("DataVersion", SharedConstants.getVersion().getWorldVersion());
+      var1.putInt("DataVersion", SharedConstants.getVersion().getWorldVersion());
       return var1;
    }
 

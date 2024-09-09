@@ -28,11 +28,11 @@ import org.apache.logging.log4j.Logger;
 public class Class9725 {
    private static final Logger field45421 = LogManager.getLogger();
 
-   public static Class1672 method38087(ServerWorld var0, Class8761 var1, Class1653 var2, Class7481 var3, CompoundNBT var4) {
+   public static Class1672 method38087(ServerWorld var0, Class8761 var1, Class1653 var2, ChunkPos var3, CompoundNBT var4) {
       ChunkGenerator var7 = var0.getChunkProvider().method7370();
       Class1685 var8 = var7.method17824();
       CompoundNBT var9 = var4.getCompound("Level");
-      Class7481 var10 = new Class7481(var9.getInt("xPos"), var9.getInt("zPos"));
+      ChunkPos var10 = new ChunkPos(var9.getInt("xPos"), var9.getInt("zPos"));
       if (!Objects.equals(var3, var10)) {
          field45421.error("Chunk file at {} is in the wrong location; relocating. (Expected {}, got {})", var3, var3, var10);
       }
@@ -48,7 +48,7 @@ public class Class9725 {
       byte var17 = 16;
       Class7038[] var18 = new Class7038[16];
       boolean var19 = var0.method6812().hasSkyLight();
-      Class1703 var20 = var0.getChunkProvider();
+      ServerChunkProvider var20 = var0.getChunkProvider();
       Class196 var21 = var20.getLightManager();
       if (var15) {
          var21.method609(var3, true);
@@ -189,14 +189,14 @@ public class Class9725 {
    }
 
    public static CompoundNBT method38088(ServerWorld var0, IChunk var1) {
-      Class7481 var4 = var1.method7072();
+      ChunkPos var4 = var1.method7072();
       CompoundNBT var5 = new CompoundNBT();
       CompoundNBT var6 = new CompoundNBT();
-      var5.method102("DataVersion", SharedConstants.getVersion().getWorldVersion());
+      var5.putInt("DataVersion", SharedConstants.getVersion().getWorldVersion());
       var5.put("Level", var6);
-      var6.method102("xPos", var4.field32174);
-      var6.method102("zPos", var4.field32175);
-      var6.method103("LastUpdate", var0.method6783());
+      var6.putInt("xPos", var4.field32174);
+      var6.putInt("zPos", var4.field32175);
+      var6.method103("LastUpdate", var0.getGameTime());
       var6.method103("InhabitedTime", var1.method7093());
       var6.method109("Status", var1.method7080().method34298());
       Class8922 var7 = var1.method7091();
@@ -278,7 +278,7 @@ public class Class9725 {
          for (int var32 = 0; var32 < var28.method7146().length; var32++) {
             for (Entity var37 : var28.method7146()[var32]) {
                CompoundNBT var39 = new CompoundNBT();
-               if (var37.method3293(var39)) {
+               if (var37.writeUnlessPassenger(var39)) {
                   var28.method7147(true);
                   var25.add(var39);
                }
@@ -364,7 +364,7 @@ public class Class9725 {
       }
    }
 
-   private static CompoundNBT method38091(Class7481 var0, Map<Structure<?>, Class5444<?>> var1, Map<Structure<?>, LongSet> var2) {
+   private static CompoundNBT method38091(ChunkPos var0, Map<Structure<?>, Class5444<?>> var1, Map<Structure<?>, LongSet> var2) {
       CompoundNBT var5 = new CompoundNBT();
       CompoundNBT var6 = new CompoundNBT();
 
@@ -403,13 +403,13 @@ public class Class9725 {
       return var6;
    }
 
-   private static Map<Structure<?>, LongSet> method38093(Class7481 var0, CompoundNBT var1) {
+   private static Map<Structure<?>, LongSet> method38093(ChunkPos var0, CompoundNBT var1) {
       HashMap var4 = Maps.newHashMap();
       CompoundNBT var5 = var1.getCompound("References");
 
       for (String var7 : var5.method97()) {
          var4.put(Structure.field_236365_a_.get(var7.toLowerCase(Locale.ROOT)), new LongOpenHashSet(Arrays.stream(var5.getLongArray(var7)).filter(var2 -> {
-            Class7481 var6 = new Class7481(var2);
+            ChunkPos var6 = new ChunkPos(var2);
             if (var6.method24365(var0) <= 8) {
                return true;
             } else {

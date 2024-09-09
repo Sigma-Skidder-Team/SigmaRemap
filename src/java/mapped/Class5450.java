@@ -48,7 +48,7 @@ public class Class5450 extends Class5444<Class4712> {
    }
 
    @Override
-   public void method17112(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6) {
+   public void method17112(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6) {
       super.method17112(var1, var2, var3, var4, var5, var6);
       int var9 = this.field24197.field45679;
 
@@ -68,7 +68,7 @@ public class Class5450 extends Class5444<Class4712> {
                if (var13) {
                   for (int var16 = var9 - 1; var16 > 1; var16--) {
                      BlockPos var17 = new BlockPos(var10, var16, var11);
-                     if (!var1.method7007(var17) && !var1.getBlockState(var17).method23384().method31085()) {
+                     if (!var1.method7007(var17) && !var1.getBlockState(var17).getMaterial().isLiquid()) {
                         break;
                      }
 

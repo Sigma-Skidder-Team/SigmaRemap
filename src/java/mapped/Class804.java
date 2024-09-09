@@ -192,7 +192,7 @@ public class Class804 extends RealmsScreen {
    }
 
    private void method1969(Class6108 var1) {
-      new Class354(this, "realms-template-fetcher", var1).start();
+      new Realm(this, "realms-template-fetcher", var1).start();
    }
 
    private Either<Class6108, String> method1970(Class6108 var1, Class4624 var2) {

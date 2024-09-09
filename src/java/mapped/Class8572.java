@@ -28,7 +28,7 @@ public class Class8572<T> {
       this.field38537 = var2;
    }
 
-   public void method30625(int var1, Class7481 var2, int var3) {
+   public void method30625(int var1, ChunkPos var2, int var3) {
       if (var1 < field38532) {
          Long2ObjectLinkedOpenHashMap<List<Optional<T>>> var6 = this.field38533.get(var1);
          List<Optional<T>> var7 = var6.remove(var2.method24352());

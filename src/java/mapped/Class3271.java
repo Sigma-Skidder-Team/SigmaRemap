@@ -55,10 +55,10 @@ public class Class3271 extends Item implements Class3260 {
    }
 
    @Override
-   public ActionResultType method11707(Class5911 var1) {
+   public ActionResultType method11707(ItemUseContext var1) {
       BlockPos var4 = var1.method18345();
       World var5 = var1.method18360();
-      if (!var5.getBlockState(var4).method23448(Blocks.field37129)) {
+      if (!var5.getBlockState(var4).isIn(Blocks.field37129)) {
          return super.method11707(var1);
       } else {
          var5.method6742((PlayerEntity)null, var4, SoundEvents.field26749, Class2266.field14735, 1.0F, 1.0F);

@@ -25,7 +25,7 @@ public class Class9169 {
    }
 
    public float method34247() {
-      return MathHelper.method37766(this.field42089 * this.field42089 + this.field42090 * this.field42090);
+      return MathHelper.sqrt(this.field42089 * this.field42089 + this.field42090 * this.field42090);
    }
 
    public void method34248(Class9169 var1) {
@@ -81,8 +81,8 @@ public class Class9169 {
    public boolean method34251(IBlockReader var1, int var2) {
       BlockPos var5 = new BlockPos(this.field42089, (double)(this.method34250(var1, var2) - 1), this.field42090);
       BlockState var6 = var1.getBlockState(var5);
-      Class8649 var7 = var6.method23384();
-      return var5.getY() < var2 && !var7.method31085() && var7 != Class8649.field38945;
+      Class8649 var7 = var6.getMaterial();
+      return var5.getY() < var2 && !var7.isLiquid() && var7 != Class8649.field38945;
    }
 
    public void method34252(Random var1, double var2, double var4, double var6, double var8) {

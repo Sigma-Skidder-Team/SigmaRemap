@@ -25,7 +25,7 @@ public class Class3689 extends Class3676<LivingEntity> {
 
    @Override
    public boolean method12508(ServerWorld var1, LivingEntity var2) {
-      if (var1.method6783() - this.field19712 < 20L) {
+      if (var1.getGameTime() - this.field19712 < 20L) {
          return false;
       } else {
          Class1046 var5 = (Class1046)var2;
@@ -38,7 +38,7 @@ public class Class3689 extends Class3676<LivingEntity> {
    @Override
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       this.field19711 = 0;
-      this.field19712 = var1.method6783() + (long)var1.method6814().nextInt(20);
+      this.field19712 = var1.getGameTime() + (long)var1.method6814().nextInt(20);
       Class1046 var7 = (Class1046)var2;
       Class1653 var8 = var1.method6951();
       Predicate<BlockPos> var9 = var1x -> {
@@ -60,7 +60,7 @@ public class Class3689 extends Class3676<LivingEntity> {
          BlockPos var12 = var11.method28712();
          Optional var13 = var8.method6676(var12);
          if (var13.isPresent()) {
-            var2.method2992().method21406(Class8830.field39824, new Class8999(var12, this.field19709, 1));
+            var2.getBrain().method21406(Class8830.field39824, new Class8999(var12, this.field19709, 1));
             Class7393.method23615(var1, var12);
          }
       } else if (this.field19711 < 5) {

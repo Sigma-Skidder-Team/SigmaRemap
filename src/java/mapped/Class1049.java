@@ -31,7 +31,7 @@ public abstract class Class1049 extends WaterMobEntity {
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.65F;
    }
 
@@ -45,7 +45,7 @@ public abstract class Class1049 extends WaterMobEntity {
    }
 
    public static boolean method4792(EntityType<? extends Class1049> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return var1.getBlockState(var3).method23448(Blocks.WATER) && var1.getBlockState(var3.up()).method23448(Blocks.WATER);
+      return var1.getBlockState(var3).isIn(Blocks.WATER) && var1.getBlockState(var3.up()).isIn(Blocks.WATER);
    }
 
    @Override
@@ -73,14 +73,14 @@ public abstract class Class1049 extends WaterMobEntity {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("FromBucket", this.method4793());
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method4794(var1.getBoolean("FromBucket"));
    }
 
@@ -98,39 +98,39 @@ public abstract class Class1049 extends WaterMobEntity {
    }
 
    @Override
-   public void method2915(Vector3d var1) {
-      if (this.method3138() && this.method3250()) {
-         this.method3265(0.01F, var1);
-         this.move(Class2107.field13742, this.getVec());
-         this.method3434(this.getVec().method11344(0.9));
+   public void travel(Vector3d var1) {
+      if (this.isServerWorld() && this.isInWater()) {
+         this.moveRelative(0.01F, var1);
+         this.move(MoverType.SELF, this.getMotion());
+         this.setMotion(this.getMotion().scale(0.9));
          if (this.method4232() == null) {
-            this.method3434(this.getVec().method11339(0.0, -0.005, 0.0));
+            this.setMotion(this.getMotion().add(0.0, -0.005, 0.0));
          }
       } else {
-         super.method2915(var1);
+         super.travel(var1);
       }
    }
 
    @Override
-   public void method2871() {
-      if (!this.method3250() && this.onGround && this.collidedVertically) {
-         this.method3434(
-            this.getVec()
-               .method11339((double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.05F), 0.4F, (double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.05F))
+   public void livingEntity() {
+      if (!this.isInWater() && this.onGround && this.collidedVertically) {
+         this.setMotion(
+            this.getMotion()
+               .add((double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.05F), 0.4F, (double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.05F))
          );
          this.onGround = false;
          this.isAirBorne = true;
-         this.method2863(this.getFlopSound(), this.method3099(), this.method3100());
+         this.playSound(this.getFlopSound(), this.getSoundVolume(), this.getSoundPitch());
       }
 
-      super.method2871();
+      super.livingEntity();
    }
 
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       if (var5.getItem() == Items.field37883 && this.isAlive()) {
-         this.method2863(SoundEvents.field26430, 1.0F, 1.0F);
+         this.playSound(SoundEvents.field26430, 1.0F, 1.0F);
          var5.method32182(1);
          ItemStack var6 = this.getFishBucket();
          this.method4795(var6);
@@ -143,10 +143,10 @@ public abstract class Class1049 extends WaterMobEntity {
                var1.method2882(var6, false);
             }
          } else {
-            var1.method3095(var2, var6);
+            var1.setHeldItem(var2, var6);
          }
 
-         this.method2904();
+         this.remove();
          return ActionResultType.method9002(this.world.isRemote);
       } else {
          return super.method4285(var1, var2);
@@ -173,6 +173,6 @@ public abstract class Class1049 extends WaterMobEntity {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
+   public void playStepSound(BlockPos var1, BlockState var2) {
    }
 }

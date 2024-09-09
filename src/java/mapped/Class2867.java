@@ -39,7 +39,7 @@ public class Class2867<T extends Class1097> extends Class2866<T> {
       super.method10997((T)var1, var2, var3, var4);
       this.field17779 = var1.method5220(var4);
       this.field17780 = var1.method5221(var4);
-      this.field17781 = !var1.method3005() ? var1.method5222(var4) : 0.0F;
+      this.field17781 = !var1.isChild() ? var1.method5222(var4) : 0.0F;
    }
 
    public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {

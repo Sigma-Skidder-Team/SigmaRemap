@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.command.impl;
 
 import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
-import mapped.Class2033;
+import mapped.Flags;
 import mapped.Class2193;
 import mapped.Class6669;
 import mapped.Class8623;
@@ -31,7 +31,7 @@ public class VClip extends Command {
                         mc.player.getPosZ(),
                         mc.player.rotationYaw,
                         mc.player.rotationPitch,
-                        Collections.<Class2033>emptySet(),
+                        Collections.<Flags>emptySet(),
                         (int)(2.147483647E9 * Math.random())
                      )
                   );

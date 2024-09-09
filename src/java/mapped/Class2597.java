@@ -22,9 +22,9 @@ public class Class2597 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      if (this.field16823.method3013().nextInt(!this.field16823.method3005() ? 1000 : 50) == 0) {
+      if (this.field16823.getRNG().nextInt(!this.field16823.isChild() ? 1000 : 50) == 0) {
          BlockPos var3 = this.field16823.getPosition();
-         return !field16822.test(this.field16824.getBlockState(var3)) ? this.field16824.getBlockState(var3.down()).method23448(Blocks.field36395) : true;
+         return !field16822.test(this.field16824.getBlockState(var3)) ? this.field16824.getBlockState(var3.down()).isIn(Blocks.field36395) : true;
       } else {
          return false;
       }
@@ -33,7 +33,7 @@ public class Class2597 extends Class2595 {
    @Override
    public void method10804() {
       this.field16825 = 40;
-      this.field16824.method6786(this.field16823, (byte)10);
+      this.field16824.setEntityState(this.field16823, (byte)10);
       this.field16823.method4230().method21666();
    }
 
@@ -58,8 +58,8 @@ public class Class2597 extends Class2595 {
          BlockPos var3 = this.field16823.getPosition();
          if (!field16822.test(this.field16824.getBlockState(var3))) {
             BlockPos var4 = var3.down();
-            if (this.field16824.getBlockState(var4).method23448(Blocks.field36395)) {
-               if (this.field16824.method6789().method17135(Class5462.field24224)) {
+            if (this.field16824.getBlockState(var4).isIn(Blocks.field36395)) {
+               if (this.field16824.getGameRules().getBoolean(Class5462.field24224)) {
                   this.field16824.playEvent(2001, var4, Block.getStateId(Blocks.field36395.method11579()));
                   this.field16824.setBlockState(var4, Blocks.field36396.method11579(), 2);
                }
@@ -67,7 +67,7 @@ public class Class2597 extends Class2595 {
                this.field16823.method4235();
             }
          } else {
-            if (this.field16824.method6789().method17135(Class5462.field24224)) {
+            if (this.field16824.getGameRules().getBoolean(Class5462.field24224)) {
                this.field16824.method7179(var3, false);
             }
 

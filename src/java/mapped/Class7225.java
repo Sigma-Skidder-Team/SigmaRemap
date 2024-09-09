@@ -25,7 +25,7 @@ public class Class7225 implements Class7226, Class7222 {
 
    public Class7225(Collection<Class6589> var1) {
       for (Class6589 var5 : field31060.sortedCopy(var1)) {
-         if (var5.method19967() != Class1894.field11105) {
+         if (var5.method19967() != GameType.SPECTATOR) {
             this.field31063.add(new Class7229(var5.method19966()));
          }
       }

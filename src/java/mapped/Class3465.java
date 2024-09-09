@@ -82,14 +82,14 @@ public class Class3465 extends Block {
 
    @Override
    public void method11512(BlockState var1, World var2, BlockPos var3, Random var4) {
-      if (var2.method6796(var3.up()) && var4.nextInt(15) == 1) {
+      if (var2.isRainingAt(var3.up()) && var4.nextInt(15) == 1) {
          BlockPos var7 = var3.down();
          BlockState var8 = var2.getBlockState(var7);
          if (!var8.method23410() || !var8.method23454(var2, var7, Direction.field673)) {
             double var9 = (double)var3.getX() + var4.nextDouble();
             double var11 = (double)var3.getY() - 0.05;
             double var13 = (double)var3.getZ() + var4.nextDouble();
-            var2.method6746(ParticleTypes.field34060, var9, var11, var13, 0.0, 0.0, 0.0);
+            var2.addParticle(ParticleTypes.field34060, var9, var11, var13, 0.0, 0.0, 0.0);
          }
       }
    }

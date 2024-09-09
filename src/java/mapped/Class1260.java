@@ -13,7 +13,7 @@ import org.apache.logging.log4j.Logger;
 import java.util.Iterator;
 import java.util.List;
 
-public class Class1260<C extends Class920> implements Class1253<Integer> {
+public class Class1260<C extends IInventory> implements Class1253<Integer> {
    public static final Logger field6658 = LogManager.getLogger();
    public final Class6207 field6659 = new Class6207();
    public PlayerInventory field6660;
@@ -37,14 +37,14 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
                this.method5871(var2, var3);
             }
 
-            var1.inventory.method3622();
+            var1.inventory.markDirty();
          }
       }
    }
 
    public void method5869() {
       for (int var3 = 0; var3 < this.field6661.method18224() * this.field6661.method18225() + 1; var3++) {
-         if (var3 != this.field6661.method18223() || !(this.field6661 instanceof Class5829) && !(this.field6661 instanceof Class5830)) {
+         if (var3 != this.field6661.method18223() || !(this.field6661 instanceof Class5829) && !(this.field6661 instanceof PlayerContainer)) {
             this.method5870(var3);
          }
       }
@@ -53,9 +53,9 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
    }
 
    public void method5870(int var1) {
-      ItemStack var4 = this.field6661.method18131(var1).method18265();
+      ItemStack var4 = this.field6661.getSlot(var1).getStack();
       if (!var4.isEmpty()) {
-         for (; var4.getCount() > 0; this.field6661.method18131(var1).method18272(1)) {
+         for (; var4.getCount() > 0; this.field6661.getSlot(var1).decrStackSize(1)) {
             int var5 = this.field6660.method4043(var4);
             if (var5 == -1) {
                var5 = this.field6660.method4032();
@@ -76,7 +76,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
       if (var5) {
          for (int var7 = 0; var7 < this.field6661.method18225() * this.field6661.method18224() + 1; var7++) {
             if (var7 != this.field6661.method18223()) {
-               ItemStack var8 = this.field6661.method18131(var7).method18265();
+               ItemStack var8 = this.field6661.getSlot(var7).getStack();
                if (!var8.isEmpty() && Math.min(var6, var8.method32113()) < var8.getCount() + 1) {
                   return;
                }
@@ -107,7 +107,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
 
    @Override
    public void method5830(Iterator<Integer> var1, int var2, int var3, int var4, int var5) {
-      Class5839 var8 = this.field6661.method18131(var2);
+      Slot var8 = this.field6661.getSlot(var2);
       ItemStack var9 = Class6207.method19127((Integer)var1.next());
       if (!var9.isEmpty()) {
          for (int var10 = 0; var10 < var3; var10++) {
@@ -124,7 +124,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
 
             for (int var7 = 0; var7 < this.field6661.method18224() * this.field6661.method18225() + 1; var7++) {
                if (var7 != this.field6661.method18223()) {
-                  ItemStack var8 = this.field6661.method18131(var7).method18265();
+                  ItemStack var8 = this.field6661.getSlot(var7).getStack();
                   if (!var8.isEmpty() && var6 > var8.getCount()) {
                      var6 = var8.getCount();
                   }
@@ -142,22 +142,22 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
       return var6;
    }
 
-   public void method5873(Class5839 var1, ItemStack var2) {
+   public void method5873(Slot var1, ItemStack var2) {
       int var5 = this.field6660.method4037(var2);
       if (var5 != -1) {
-         ItemStack var6 = this.field6660.method3618(var5).copy();
+         ItemStack var6 = this.field6660.getStackInSlot(var5).copy();
          if (!var6.isEmpty()) {
             if (var6.getCount() <= 1) {
-               this.field6660.method3620(var5);
+               this.field6660.removeStackFromSlot(var5);
             } else {
-               this.field6660.method3619(var5, 1);
+               this.field6660.decrStackSize(var5, 1);
             }
 
             var6.method32180(1);
-            if (!var1.method18265().isEmpty()) {
-               var1.method18265().method32181(1);
+            if (!var1.getStack().isEmpty()) {
+               var1.getStack().method32181(1);
             } else {
-               var1.method18267(var6);
+               var1.putStack(var6);
             }
          }
       }
@@ -169,7 +169,7 @@ public class Class1260<C extends Class920> implements Class1253<Integer> {
 
       for (int var5 = 0; var5 < this.field6661.method18224() * this.field6661.method18225() + 1; var5++) {
          if (var5 != this.field6661.method18223()) {
-            ItemStack var6 = this.field6661.method18131(var5).method18265().copy();
+            ItemStack var6 = this.field6661.getSlot(var5).getStack().copy();
             if (!var6.isEmpty()) {
                int var7 = this.field6660.method4043(var6);
                if (var7 == -1 && var3.size() <= var4) {

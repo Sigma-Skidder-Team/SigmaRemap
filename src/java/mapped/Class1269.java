@@ -32,7 +32,7 @@ public class Class1269 extends AbstractGui implements Class1270 {
          RenderSystem.pushMatrix();
          RenderSystem.enableBlend();
          RenderSystem.defaultBlendFunc();
-         Vector3d var4 = new Vector3d(this.field6744.player.getPosX(), this.field6744.player.method3442(), this.field6744.player.getPosZ());
+         Vector3d var4 = new Vector3d(this.field6744.player.getPosX(), this.field6744.player.getPosYEye(), this.field6744.player.getPosZ());
          Vector3d var5 = new Vector3d(0.0, 0.0, -1.0)
             .method11350(-this.field6744.player.rotationPitch * (float) (Math.PI / 180.0))
             .method11351(-this.field6744.player.rotationYaw * (float) (Math.PI / 180.0));
@@ -63,8 +63,8 @@ public class Class1269 extends AbstractGui implements Class1270 {
             short var13 = 255;
             ITextComponent var14 = var12.method33993();
             Vector3d var15 = var12.method33995().method11336(var4).method11333();
-            double var16 = -var7.method11334(var15);
-            double var18 = -var5.method11334(var15);
+            double var16 = -var7.dotProduct(var15);
+            double var18 = -var5.dotProduct(var15);
             boolean var20 = var18 > 0.5;
             int var21 = var9 / 2;
             byte var22 = 9;

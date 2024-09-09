@@ -19,7 +19,7 @@ public class Class4222 extends Class4213 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       this.method12927(var1, var5, 0, 3, 0, 2, 3, 7, field20529, field20529, false);
       this.method12927(var1, var5, 5, 3, 0, 7, 3, 7, field20529, field20529, false);
       this.method12927(var1, var5, 0, 2, 0, 1, 2, 7, field20529, field20529, false);

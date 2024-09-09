@@ -18,8 +18,8 @@ public class Class912 extends CommandBlockLogic {
 
    @Override
    public void method3568() {
-      this.field5201.method3210().method35446(Class918.method3615(), this.method3563());
-      this.field5201.method3210().method35446(Class918.method3616(), this.method3559());
+      this.field5201.getDataManager().method35446(Class918.method3615(), this.method3563());
+      this.field5201.getDataManager().method35446(Class918.method3616(), this.method3559());
    }
 
    @Override
@@ -36,7 +36,7 @@ public class Class912 extends CommandBlockLogic {
       return new Class6619(
          this,
          this.field5201.getPositionVec(),
-         this.field5201.method3321(),
+         this.field5201.getPitchYaw(),
          this.method3567(),
          2,
          this.method3565().getString(),

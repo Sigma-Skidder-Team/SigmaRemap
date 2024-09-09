@@ -3,9 +3,9 @@ package com.mentalfrostbyte.jello.module.impl.gui.jello;
 import com.google.common.collect.Lists;
 import com.mentalfrostbyte.jello.command.impl.Peek;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4414;
+import com.mentalfrostbyte.jello.event.impl.EventRenderShulker;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4431;
+import com.mentalfrostbyte.jello.event.impl.EventMouse;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -32,7 +32,7 @@ public class ShulkerInfo extends Module {
     }
 
     @EventTarget
-    private void method16669(Class4431 var1) {
+    private void method16669(EventMouse var1) {
         this.field23842 = this.field23842 - var1.method13980();
     }
 
@@ -57,7 +57,7 @@ public class ShulkerInfo extends Module {
 
                     this.method16674(
                             Class9647.method37622(var5).field43722,
-                            Class9647.method37622(var5).field43723 + (double) var5.method3430(),
+                            Class9647.method37622(var5).field43723 + (double) var5.getHeight(),
                             Class9647.method37622(var5).field43724,
                             var5,
                             0.8F
@@ -103,17 +103,17 @@ public class ShulkerInfo extends Module {
     }
 
     public boolean method16672(ItemEntity var1) {
-        if (mc.player.method3275(var1) > 5.0F) {
+        if (mc.player.getDistance(var1) > 5.0F) {
             return false;
         } else {
             float var4 = (float) Math.sqrt(6.0 / Class9647.method37620(var1));
             float var5 = 10.0F * var4;
             double var6 = var1.getPosX() - mc.player.getPosX();
-            double var8 = var1.getPosY() - mc.player.getPosY() - (double) mc.player.method3430() + 0.4F;
+            double var8 = var1.getPosY() - mc.player.getPosY() - (double) mc.player.getHeight() + 0.4F;
             double var10 = var1.getPosZ() - mc.player.getPosZ();
-            double var12 = MathHelper.method37766(var6 * var6 + var10 * var10);
-            float var14 = Class9142.method34135(mc.player.rotationYaw, (float) (Math.atan2(var10, var6) * 180.0 / Math.PI) - 90.0F, 360.0F);
-            float var15 = Class9142.method34135(mc.player.rotationPitch, (float) (-(Math.atan2(var8, var12) * 180.0 / Math.PI)), 360.0F);
+            double var12 = MathHelper.sqrt(var6 * var6 + var10 * var10);
+            float var14 = RotationHelper.method34135(mc.player.rotationYaw, (float) (Math.atan2(var10, var6) * 180.0 / Math.PI) - 90.0F, 360.0F);
+            float var15 = RotationHelper.method34135(mc.player.rotationPitch, (float) (-(Math.atan2(var8, var12) * 180.0 / Math.PI)), 360.0F);
             return this.method16673(mc.player.rotationYaw, var14) <= var5 && this.method16673(mc.player.rotationPitch, var15) <= var5;
         }
     }
@@ -154,16 +154,16 @@ public class ShulkerInfo extends Module {
     }
 
     @EventTarget
-    private void method16675(Class4414 var1) {
+    private void method16675(EventRenderShulker var1) {
         if (this.isEnabled()) {
             if (mc.currentScreen instanceof Class851) {
                 Class851 var4 = (Class851) mc.currentScreen;
-                Class5839 var5 = var4.field4729;
+                Slot var5 = var4.field4729;
                 if (var5 != null
-                        && var5.method18266()
-                        && var5.method18265().getItem() instanceof Class3292
-                        && ((Class3292) var5.method18265().getItem()).method11845() instanceof Class3368) {
-                    ItemStack var6 = var5.method18265();
+                        && var5.getHasStack()
+                        && var5.getStack().getItem() instanceof Class3292
+                        && ((Class3292) var5.getStack().getItem()).method11845() instanceof Class3368) {
+                    ItemStack var6 = var5.getStack();
                     List var7 = this.method16678(var6);
                     int var8 = Math.max(-1, Math.min(1, this.method16670()));
                     if (var8 != 0 || this.field23841 != -1) {

@@ -124,7 +124,7 @@ public class EntityDataManager {
       Class9773 var5 = this.method35444(var1);
       if (ObjectUtils.notEqual(var2, var5.method38449())) {
          var5.method38448(var2);
-         this.field43432.method3155(var1);
+         this.field43432.notifyDataManagerChange(var1);
          var5.method38451(true);
          this.field43436 = true;
       }
@@ -232,7 +232,7 @@ public class EntityDataManager {
          Class9773 var6 = this.field43433.get(var5.method38447().method35015());
          if (var6 != null) {
             this.method35455(var6, var5);
-            this.field43432.method3155(var5.method38447());
+            this.field43432.notifyDataManagerChange(var5.method38447());
          }
       }
 

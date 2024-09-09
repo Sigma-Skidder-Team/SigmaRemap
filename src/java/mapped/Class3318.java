@@ -23,7 +23,7 @@ public class Class3318 extends Item {
    }
 
    @Override
-   public ActionResultType method11707(Class5911 var1) {
+   public ActionResultType method11707(ItemUseContext var1) {
       World var4 = var1.method18360();
       if (!var4.isRemote) {
          ItemStack var5 = var1.method18357();
@@ -37,7 +37,7 @@ public class Class3318 extends Item {
             var6.z + (double)var7.method541() * 0.15,
             var5
          );
-         var4.method6916(var8);
+         var4.addEntity(var8);
          var5.method32182(1);
       }
 
@@ -46,12 +46,12 @@ public class Class3318 extends Item {
 
    @Override
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
-      if (!var2.method3165()) {
+      if (!var2.isElytraFlying()) {
          return Class6794.<ItemStack>method20698(var2.getHeldItem(var3));
       } else {
          ItemStack var6 = var2.getHeldItem(var3);
          if (!var1.isRemote) {
-            var1.method6916(new Class888(var1, var6, var2));
+            var1.addEntity(new Class888(var1, var6, var2));
             if (!var2.abilities.isCreativeMode) {
                var6.method32182(1);
             }

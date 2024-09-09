@@ -23,7 +23,7 @@ public class JartexGamePlay extends Module {
 
     @Override
     public void method15953() {
-        this.field23527 = (GamePlay) this.method16004();
+        this.field23527 = (GamePlay) this.access();
     }
 
     @EventTarget
@@ -32,9 +32,9 @@ public class JartexGamePlay extends Module {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SChatPacket) {
                 SChatPacket var5 = (SChatPacket) var4;
-                String var6 = var5.method17648().getString();
+                String var6 = var5.getChatComponent().getString();
                 String var7 = mc.player.getName().getString().toLowerCase();
-                String var8 = var5.method17648().getString();
+                String var8 = var5.getChatComponent().getString();
                 if (this.field23527.getBooleanValueFromSetttingName("AutoL")
                         && (
                         var8.toLowerCase().contains("§r§7 has been killed by §r§a§l" + var7)
@@ -50,7 +50,7 @@ public class JartexGamePlay extends Module {
                     }
 
                     if (this.field23527.getBooleanValueFromSetttingName("Auto Join")) {
-                        for (ITextComponent var10 : var5.method17648().getSiblings()) {
+                        for (ITextComponent var10 : var5.getChatComponent().getSiblings()) {
                             ClickEvent var11 = var10.getStyle().getClickEvent();
                             if (var11 != null && var11.getAction() == ClickEvent$Action.RUN_COMMAND) {
                                 this.field23527.method16759(new Class7200(var11.getValue(), (long) this.field23527.getNumberValueBySettingName("Auto Join delay") * 1000L));

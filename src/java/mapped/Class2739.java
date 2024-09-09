@@ -85,6 +85,6 @@ public class Class2739 extends Class2736 {
    }
 
    private boolean method10952(Class1042 var1) {
-      return var1.method4717(this.field17258.world.method6783());
+      return var1.method4717(this.field17258.world.getGameTime());
    }
 }

@@ -18,7 +18,7 @@ public class Class2726 extends Class2595 {
    @Override
    public boolean method10803() {
       LivingEntity var3 = this.field17232.method3014();
-      return this.field17232.method3250() && var3 != null ? this.field17232.getDistanceSq(var3) < 100.0 : false;
+      return this.field17232.isInWater() && var3 != null ? this.field17232.getDistanceSq(var3) < 100.0 : false;
    }
 
    @Override
@@ -54,8 +54,8 @@ public class Class2726 extends Class2595 {
                   this.field17232.getPosZ() + var4.z
                )
             );
-         if (var6.method23486(Class8953.field40469) || var5.isAir()) {
-            double var7 = var4.method11348();
+         if (var6.method23486(FluidTags.field40469) || var5.isAir()) {
+            double var7 = var4.length();
             if (var7 > 0.0) {
                var4.method11333();
                float var9 = 3.0F;
@@ -64,7 +64,7 @@ public class Class2726 extends Class2595 {
                }
 
                if (var9 > 0.0F) {
-                  var4 = var4.method11344((double)var9);
+                  var4 = var4.scale((double)var9);
                }
             }
 
@@ -78,7 +78,7 @@ public class Class2726 extends Class2595 {
          if (this.field17231 % 10 == 5) {
             this.field17232
                .world
-               .method6746(ParticleTypes.field34052, this.field17232.getPosX(), this.field17232.getPosY(), this.field17232.getPosZ(), 0.0, 0.0, 0.0);
+               .addParticle(ParticleTypes.field34052, this.field17232.getPosX(), this.field17232.getPosY(), this.field17232.getPosZ(), 0.0, 0.0, 0.0);
          }
       }
    }

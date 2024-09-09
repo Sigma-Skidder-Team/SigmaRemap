@@ -47,8 +47,8 @@ public class Class2695 extends Class2595 {
    @Override
    public void method10805() {
       this.field17143.method4227().method28040(this.field17144, 30.0F, 30.0F);
-      double var3 = (double)(this.field17143.method3429() * 2.0F * this.field17143.method3429() * 2.0F);
-      double var5 = this.field17143.method3276(this.field17144.getPosX(), this.field17144.getPosY(), this.field17144.getPosZ());
+      double var3 = (double)(this.field17143.getWidth() * 2.0F * this.field17143.getWidth() * 2.0F);
+      double var5 = this.field17143.getDistanceNearest(this.field17144.getPosX(), this.field17144.getPosY(), this.field17144.getPosZ());
       double var7 = 0.8;
       if (var5 > var3 && var5 < 16.0) {
          var7 = 1.33;
@@ -60,7 +60,7 @@ public class Class2695 extends Class2595 {
       this.field17145 = Math.max(this.field17145 - 1, 0);
       if (!(var5 > var3) && this.field17145 <= 0) {
          this.field17145 = 20;
-         this.field17143.method3114(this.field17144);
+         this.field17143.attackEntityAsMob(this.field17144);
       }
    }
 }

@@ -8,7 +8,7 @@ public class Class5990 {
       if (var3.isPresent()) {
          return (Class1873)var3.get();
       } else {
-         Class8042.method27613().method27366().severe("Could not find 1.14 type id " + var0);
+         ViaVersion3.method27613().method27366().severe("Could not find 1.14 type id " + var0);
          return Class1873.field10740;
       }
    }

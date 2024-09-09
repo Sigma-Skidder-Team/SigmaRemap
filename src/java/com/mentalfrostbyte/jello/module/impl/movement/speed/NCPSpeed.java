@@ -2,10 +2,10 @@ package com.mentalfrostbyte.jello.module.impl.movement.speed;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4434;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
-import com.mentalfrostbyte.jello.event.impl.Class4436;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.EventStep;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
+import com.mentalfrostbyte.jello.event.impl.JumpEvent;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -14,7 +14,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.movement.Speed;
 import mapped.BooleanSetting;
 import mapped.ColorUtils;
-import mapped.Class9567;
+import mapped.MovementUtils;
 import com.mentalfrostbyte.jello.module.impl.movement.Jesus;
 
 public class NCPSpeed extends Module {
@@ -30,13 +30,13 @@ public class NCPSpeed extends Module {
     @Override
     public void onEnable() {
         this.field23608 = 1;
-        double var3 = mc.player.getVec().x;
-        double var5 = mc.player.getVec().z;
+        double var3 = mc.player.getMotion().x;
+        double var5 = mc.player.getMotion().z;
         this.field23609 = Math.sqrt(var3 * var3 + var5 * var5);
     }
 
     @EventTarget
-    public void method16346(Class4399 var1) {
+    public void method16346(EventUpdate var1) {
         if (this.isEnabled()
                 && mc.player != null
                 && !Jesus.method16953()
@@ -54,9 +54,9 @@ public class NCPSpeed extends Module {
     }
 
     @EventTarget
-    public void method16347(Class4435 var1) {
+    public void method16347(EventMove var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (!Jesus.method16953() && !mc.player.method3250()) {
+            if (!Jesus.method16953() && !mc.player.isInWater()) {
                 if (this.field23608 < 2) {
                     this.field23608++;
                 }
@@ -66,22 +66,22 @@ public class NCPSpeed extends Module {
                         this.field23607++;
                         double var4 = this.field23609;
                         if (this.field23607 > 1) {
-                            var4 = Math.max(Class9567.method37076(), this.field23609 - (0.004 - Class9567.method37076() * 0.003) - Math.random() * 1.0E-10);
+                            var4 = Math.max(MovementUtils.method37076(), this.field23609 - (0.004 - MovementUtils.method37076() * 0.003) - Math.random() * 1.0E-10);
                         }
 
-                        Class9567.method37088(var1, var4);
-                        if (var1.method13994() >= -0.008744698139753596 && var1.method13994() <= -0.008724698139753597) {
-                            var1.method13995(0.001);
-                        } else if (var1.method13994() >= -0.07743000150680542 && var1.method13994() <= -0.07741000150680542) {
-                            var1.method13995(var1.method13994() - 0.01);
+                        MovementUtils.method37088(var1, var4);
+                        if (var1.getY() >= -0.008744698139753596 && var1.getY() <= -0.008724698139753597) {
+                            var1.setY(0.001);
+                        } else if (var1.getY() >= -0.07743000150680542 && var1.getY() <= -0.07741000150680542) {
+                            var1.setY(var1.getY() - 0.01);
                         }
                     }
                 } else if (this.field23608 > 1 && (this.getBooleanValueFromSetttingName("Auto Jump") && ColorUtils.method17686() || mc.gameSettings.keyBindJump.isKeyDown())) {
                     this.field23607 = 0;
-                    mc.player.method2914();
-                    var1.method13993(mc.player.getVec().x);
-                    var1.method13995(mc.player.getVec().y);
-                    var1.method13997(mc.player.getVec().z);
+                    mc.player.jump();
+                    var1.setX(mc.player.getMotion().x);
+                    var1.setY(mc.player.getMotion().y);
+                    var1.setZ(mc.player.getMotion().z);
                 }
             } else {
                 this.field23607 = -1;
@@ -91,20 +91,20 @@ public class NCPSpeed extends Module {
 
     @EventTarget
     @LowerPriority
-    public void method16348(Class4436 var1) {
+    public void method16348(JumpEvent var1) {
         if (this.isEnabled() && !Jesus.method16953()) {
             if (this.field23607 != 0) {
-                var1.method13900(true);
+                var1.setCancelled(true);
             }
 
             if (!mc.gameSettings.keyBindJump.isKeyDown() || !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()) {
-                double var4 = 0.56 + (double) Class9567.method37078() * 0.1;
-                var1.method14002(0.407 + (double) Class9567.method37079() * 0.1 + Math.random() * 1.0E-5);
+                double var4 = 0.56 + (double) MovementUtils.method37078() * 0.1;
+                var1.method14002(0.407 + (double) MovementUtils.method37079() * 0.1 + Math.random() * 1.0E-5);
                 if (Speed.field23893 < 2) {
                     var4 /= 2.5;
                 }
 
-                var4 = Math.max(Class9567.method37076(), var4);
+                var4 = Math.max(MovementUtils.method37076(), var4);
                 var1.method14003(var4);
                 this.field23609 = var4;
             }
@@ -112,8 +112,8 @@ public class NCPSpeed extends Module {
     }
 
     @EventTarget
-    public void method16349(Class4434 var1) {
-        if (this.isEnabled() && !(var1.method13988() < 0.9)) {
+    public void method16349(EventStep var1) {
+        if (this.isEnabled() && !(var1.getHeight() < 0.9)) {
             this.field23608 = 0;
         }
     }

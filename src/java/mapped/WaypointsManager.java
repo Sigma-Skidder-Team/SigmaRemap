@@ -32,8 +32,8 @@ import totalcross.json.JSONObject;
 
 public class WaypointsManager {
    private Minecraft field36365 = Minecraft.getInstance();
-   private List<Class7481> field36366 = new ArrayList<Class7481>();
-   private List<Class7481> field36367 = new ArrayList<Class7481>();
+   private List<ChunkPos> field36366 = new ArrayList<ChunkPos>();
+   private List<ChunkPos> field36367 = new ArrayList<ChunkPos>();
    private List<Class8351> field36368 = new ArrayList<Class8351>();
    private boolean field36369 = false;
    private int field36370 = 10;
@@ -299,12 +299,12 @@ public class WaypointsManager {
       return var1 + "/" + var5.field16734 + "c" + var5.field16735 + ".jmap";
    }
 
-   public Class7101 method30003(Class7481 var1, int var2) {
-      List<Class7481> var5 = new ArrayList<>();
+   public Class7101 method30003(ChunkPos var1, int var2) {
+      List<ChunkPos> var5 = new ArrayList<>();
 
       for (int var6 = -var2 / 2; var6 < var2 / 2; var6++) {
          for (int var7 = -var2 / 2; var7 < var2 / 2; var7++) {
-            var5.add(new Class7481(var1.field32174 + var6, var1.field32175 + var7));
+            var5.add(new ChunkPos(var1.field32174 + var6, var1.field32175 + var7));
          }
       }
 
@@ -313,9 +313,9 @@ public class WaypointsManager {
       int var8 = var21.position();
       String var9 = this.field36371;
 
-      for (Class7481 var11 : var5) {
+      for (ChunkPos var11 : var5) {
          ByteBuffer var12 = this.field36376.duplicate();
-         Long var13 = Class7481.method24353(var11.field32174, var11.field32175);
+         Long var13 = ChunkPos.method24353(var11.field32174, var11.field32175);
          ((Buffer)var12).position(0);
          Class2531 var14 = Class7927.method26605(var11);
          Class7927 var15 = this.field36372.get(var14.method10678());
@@ -406,9 +406,9 @@ public class WaypointsManager {
          var1 = var1.down();
       }
 
-      Class7210 var5 = this.field36365.world.getBlockState(var1).method23384().method31092();
+      Class7210 var5 = this.field36365.world.getBlockState(var1).getMaterial().method31092();
       int var6 = var5.field31006;
-      Class8649 var7 = this.field36365.world.getBlockState(var1.up()).method23384();
+      Class8649 var7 = this.field36365.world.getBlockState(var1.up()).getMaterial();
       if (var7 != Class8649.field38944) {
          if (var7 == Class8649.field38943) {
             var6 = var7.method31092().field31006;
@@ -431,8 +431,8 @@ public class WaypointsManager {
       }
 
       if (var2 || var11) {
-         Class8649 var12 = this.field36365.world.getBlockState(var1.north()).method23384();
-         Class8649 var13 = this.field36365.world.getBlockState(var1.south()).method23384();
+         Class8649 var12 = this.field36365.world.getBlockState(var1.north()).getMaterial();
+         Class8649 var13 = this.field36365.world.getBlockState(var1.south()).getMaterial();
          if (var12 == Class8649.field38932 || var12 == Class8649.field38944) {
             var6 = ColorUtils.method17681(new Color(var6, true), Color.BLACK, 0.6F).getRGB();
          } else if (var13 == Class8649.field38932 || var13 == Class8649.field38944) {

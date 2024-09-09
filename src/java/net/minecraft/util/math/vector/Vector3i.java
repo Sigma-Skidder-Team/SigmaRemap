@@ -2,11 +2,10 @@ package net.minecraft.util.math.vector;
 
 import com.google.common.base.MoreObjects;
 import com.mojang.serialization.Codec;
-import mapped.Class113;
+import mapped.Direction;
 import mapped.Class2955;
 import mapped.MathHelper;
 import net.minecraft.client.util.Util;
-import net.minecraft.util.Direction;
 
 import javax.annotation.concurrent.Immutable;
 import java.util.stream.IntStream;
@@ -93,7 +92,7 @@ public class Vector3i implements Comparable<Vector3i> {
    }
 
    public Vector3i method8311(int var1) {
-      return this.method8314(Direction.field673, var1);
+      return this.method8314(net.minecraft.util.Direction.field673, var1);
    }
 
    public Vector3i method8312() {
@@ -101,10 +100,10 @@ public class Vector3i implements Comparable<Vector3i> {
    }
 
    public Vector3i method8313(int var1) {
-      return this.method8314(Direction.DOWN, var1);
+      return this.method8314(net.minecraft.util.Direction.DOWN, var1);
    }
 
-   public Vector3i method8314(Direction var1, int var2) {
+   public Vector3i method8314(net.minecraft.util.Direction var1, int var2) {
       return var2 != 0
          ? new Vector3i(this.getX() + var1.method539() * var2, this.getY() + var1.method540() * var2, this.getZ() + var1.method541() * var2)
          : this;
@@ -149,7 +148,7 @@ public class Vector3i implements Comparable<Vector3i> {
       return (int)(var4 + var5 + var6);
    }
 
-   public int method8322(Class113 var1) {
+   public int method8322(Direction var1) {
       return var1.method327(this.field13027, this.field13028, this.field13029);
    }
 

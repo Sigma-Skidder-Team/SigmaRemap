@@ -81,7 +81,7 @@ public class Class957 extends Class956 implements Class935 {
       }
 
       if (var3 != this.method3872() || var4 != this.method3873()) {
-         this.method3622();
+         this.markDirty();
       }
    }
 
@@ -120,7 +120,7 @@ public class Class957 extends Class956 implements Class935 {
       if (!this.field5324.isRemote) {
          this.field5373 = 40;
          this.field5324.method6787(this.getPos(), this.method3775().getBlock(), 1, 0);
-         this.method3622();
+         this.markDirty();
       }
    }
 
@@ -156,12 +156,12 @@ public class Class957 extends Class956 implements Class935 {
                   var5 = var1;
                } else {
                   var5 = var6;
-                  var1.method2904();
+                  var1.remove();
                }
             }
 
             var5.method3218();
-            var5.method3384((double)var4.getX() + 0.5, (double)var4.getY(), (double)var4.getZ() + 0.5);
+            var5.teleportKeepLoaded((double)var4.getX() + 0.5, (double)var4.getY(), (double)var4.getZ() + 0.5);
          }
 
          this.method3876();
@@ -176,13 +176,13 @@ public class Class957 extends Class956 implements Class935 {
 
    private void method3879(ServerWorld var1) {
       Vector3d var4 = new Vector3d((double)this.getPos().getX(), 0.0, (double)this.getPos().getZ()).method11333();
-      Vector3d var5 = var4.method11344(1024.0);
+      Vector3d var5 = var4.scale(1024.0);
 
-      for (int var6 = 16; method3881(var1, var5).method7065() > 0 && var6-- > 0; var5 = var5.method11338(var4.method11344(-16.0))) {
+      for (int var6 = 16; method3881(var1, var5).method7065() > 0 && var6-- > 0; var5 = var5.add(var4.scale(-16.0))) {
          field5371.debug("Skipping backwards past nonempty chunk at {}", var5);
       }
 
-      for (int var7 = 16; method3881(var1, var5).method7065() == 0 && var7-- > 0; var5 = var5.method11338(var4.method11344(16.0))) {
+      for (int var7 = 16; method3881(var1, var5).method7065() == 0 && var7-- > 0; var5 = var5.add(var4.scale(16.0))) {
          field5371.debug("Skipping forward past empty chunk at {}", var5);
       }
 
@@ -201,7 +201,7 @@ public class Class957 extends Class956 implements Class935 {
       field5371.debug("Creating portal at {}", this.field5374);
       this.field5374 = this.field5374.method8339(10);
       this.method3883(var1, this.field5374);
-      this.method3622();
+      this.markDirty();
    }
 
    private static BlockPos method3880(IBlockReader var0, BlockPos var1, int var2, boolean var3) {
@@ -213,7 +213,7 @@ public class Class957 extends Class956 implements Class935 {
                for (int var9 = 255; var9 > (var6 != null ? var6.getY() : 0); var9--) {
                   BlockPos var10 = new BlockPos(var1.getX() + var7, var9, var1.getZ() + var8);
                   BlockState var11 = var0.getBlockState(var10);
-                  if (var11.method23456(var0, var10) && (var3 || !var11.method23448(Blocks.BEDROCK))) {
+                  if (var11.method23456(var0, var10) && (var3 || !var11.isIn(Blocks.BEDROCK))) {
                      var6 = var10;
                      break;
                   }
@@ -231,7 +231,7 @@ public class Class957 extends Class956 implements Class935 {
 
    @Nullable
    private static BlockPos method3882(Chunk var0) {
-      Class7481 var3 = var0.method7072();
+      ChunkPos var3 = var0.method7072();
       BlockPos var4 = new BlockPos(var3.method24356(), 30, var3.method24357());
       int var5 = var0.method7065() + 16 - 1;
       BlockPos var6 = new BlockPos(var3.method24358(), var5, var3.method24359());
@@ -242,7 +242,7 @@ public class Class957 extends Class956 implements Class935 {
          BlockState var12 = var0.getBlockState(var11);
          BlockPos var13 = var11.up();
          BlockPos var14 = var11.method8339(2);
-         if (var12.method23448(Blocks.field36651) && !var0.getBlockState(var13).method23456(var0, var13) && !var0.getBlockState(var14).method23456(var0, var14)) {
+         if (var12.isIn(Blocks.field36651) && !var0.getBlockState(var13).method23456(var0, var13) && !var0.getBlockState(var14).method23456(var0, var14)) {
             double var15 = var11.method8320(0.0, 0.0, 0.0, true);
             if (var7 == null || var15 < var8) {
                var7 = var11;

@@ -41,11 +41,11 @@ public class Class5807 extends AbstractOption {
    }
 
    public double method18083(double var1) {
-      return MathHelper.method37778((this.method18085(var1) - this.field25450) / (this.field25451 - this.field25450), 0.0, 1.0);
+      return MathHelper.clamp((this.method18085(var1) - this.field25450) / (this.field25451 - this.field25450), 0.0, 1.0);
    }
 
    public double method18084(double var1) {
-      return this.method18085(MathHelper.lerp(MathHelper.method37778(var1, 0.0, 1.0), this.field25450, this.field25451));
+      return this.method18085(MathHelper.lerp(MathHelper.clamp(var1, 0.0, 1.0), this.field25450, this.field25451));
    }
 
    private double method18085(double var1) {
@@ -53,7 +53,7 @@ public class Class5807 extends AbstractOption {
          var1 = (double)(this.field25449 * (float)Math.round(var1 / (double)this.field25449));
       }
 
-      return MathHelper.method37778(var1, this.field25450, this.field25451);
+      return MathHelper.clamp(var1, this.field25450, this.field25451);
    }
 
    public double method18086() {

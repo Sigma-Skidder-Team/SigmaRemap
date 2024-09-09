@@ -23,12 +23,12 @@ public class Class1075 extends AbstractHorseEntity {
 
    @Override
    public void method4925() {
-      this.method3085(Attributes.field42117).method38661(this.method4972());
+      this.getAttribute(Attributes.field42117).method38661(this.method4972());
    }
 
    @Override
-   public Class7809 method3089() {
-      return Class7809.field33506;
+   public CreatureAttribute getCreatureAttribute() {
+      return CreatureAttribute.field33506;
    }
 
    @Override
@@ -52,14 +52,14 @@ public class Class1075 extends AbstractHorseEntity {
    @Nullable
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      return EntityType.field41108.method33215(var1);
+      return EntityType.field41108.create(var1);
    }
 
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
       if (this.method4932()) {
-         if (!this.method3005()) {
+         if (!this.isChild()) {
             if (!var1.method2851()) {
                if (!this.isBeingRidden()) {
                   if (!var5.isEmpty()) {

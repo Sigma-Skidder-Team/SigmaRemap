@@ -18,7 +18,7 @@ public class Class2946 extends Class2898<Class4710> {
 
    public static boolean method11288(Class1660 var0, Random var1, BlockPos var2, Class4710 var3, int var4, int var5) {
       Block var8 = var0.getBlockState(var2.down()).getBlock();
-      if (var8.method11540(BlockTags.field32799)) {
+      if (var8.isIn(BlockTags.field32799)) {
          int var9 = var2.getY();
          if (var9 >= 1 && var9 + 1 < 256) {
             int var10 = 0;

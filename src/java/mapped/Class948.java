@@ -12,8 +12,8 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class948 extends TileEntity implements Class946, Class949 {
-   private final Class920 field5333 = new Class989(this);
+public class Class948 extends TileEntity implements IClearable, Class949 {
+   private final IInventory field5333 = new Class989(this);
    private final Class8202 field5334 = new Class8205(this);
    private ItemStack field5335 = ItemStack.EMPTY;
    private int field5336;
@@ -46,14 +46,14 @@ public class Class948 extends TileEntity implements Class946, Class949 {
       this.field5335 = this.method3813(var1, var2);
       this.field5336 = 0;
       this.field5337 = Class3285.method11819(this.field5335);
-      this.method3622();
+      this.markDirty();
    }
 
    private void method3810(int var1) {
       int var4 = MathHelper.method37775(var1, 0, this.field5337 - 1);
       if (var4 != this.field5336) {
          this.field5336 = var4;
-         this.method3622();
+         this.markDirty();
          Class3354.method11922(this.method3734(), this.getPos(), this.method3775());
       }
    }
@@ -88,7 +88,7 @@ public class Class948 extends TileEntity implements Class946, Class949 {
 
       Vector3d var6 = Vector3d.method11328(this.field5325);
       return new Class6619(
-         ICommandSource.field5189, var6, Class8513.field37212, (ServerWorld)this.field5324, 2, var4, (ITextComponent)var5, this.field5324.getServer(), var1
+         ICommandSource.field5189, var6, Vector2f.field37212, (ServerWorld)this.field5324, 2, var4, (ITextComponent)var5, this.field5324.getServer(), var1
       );
    }
 
@@ -115,7 +115,7 @@ public class Class948 extends TileEntity implements Class946, Class949 {
       super.write(var1);
       if (!this.method3805().isEmpty()) {
          var1.put("Book", this.method3805().method32112(new CompoundNBT()));
-         var1.method102("Page", this.field5336);
+         var1.putInt("Page", this.field5336);
       }
 
       return var1;
@@ -127,7 +127,7 @@ public class Class948 extends TileEntity implements Class946, Class949 {
    }
 
    @Override
-   public Class5812 method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
+   public Container method3627(int var1, PlayerInventory var2, PlayerEntity var3) {
       return new Class5818(var1, this.field5333, this.field5334);
    }
 

@@ -1,12 +1,12 @@
 package com.mentalfrostbyte.jello.module.impl.movement;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4426;
+import com.mentalfrostbyte.jello.event.impl.MouseHoverEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4430;
+import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
-import mapped.Class9567;
+import mapped.MovementUtils;
 import mapped.NumberSetting;
 import net.minecraft.entity.Entity;
 
@@ -22,29 +22,29 @@ public class BoatFly extends PremiumModule {
     public void method16416(TickEvent var1) {
         if (this.isEnabled()) {
             if (mc.player.getRidingEntity() != null) {
-                float var4 = Class9567.method37086();
+                float var4 = MovementUtils.method37086();
                 float var5 = this.getNumberValueBySettingName("Speed");
                 double var6 = Math.cos(Math.toRadians(var4)) * (double) var5;
                 double var8 = Math.sin(Math.toRadians(var4)) * (double) var5;
-                if (!Class9567.isMoving()) {
+                if (!MovementUtils.isMoving()) {
                     var6 = 0.0;
                     var8 = 0.0;
                 }
 
                 Entity var10 = mc.player.getRidingEntity();
                 var10.rotationYaw = mc.player.rotationYaw;
-                var10.method3435(var6, !mc.player.field4981 ? (!this.field23643 ? 0.0 : (double) (-var5)) : (double) var5, var8);
+                var10.setMotion(var6, !mc.player.isJumping ? (!this.field23643 ? 0.0 : (double) (-var5)) : (double) var5, var8);
             }
         }
     }
 
     @EventTarget
-    private void method16417(Class4430 var1) {
+    private void method16417(EventKeyPress var1) {
         if (this.isEnabled()) {
             if (mc.player.getRidingEntity() != null) {
                 if (!mc.player.getRidingEntity().onGround) {
-                    if (var1.method13977() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                        var1.method13900(true);
+                    if (var1.getKey() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+                        var1.setCancelled(true);
                         this.field23643 = true;
                     }
                 }
@@ -53,7 +53,7 @@ public class BoatFly extends PremiumModule {
     }
 
     @EventTarget
-    private void method16418(Class4426 var1) {
+    private void method16418(MouseHoverEvent var1) {
         if (this.isEnabled()) {
             if (this.field23643 && var1.method13973() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
                 this.field23643 = false;
@@ -62,7 +62,7 @@ public class BoatFly extends PremiumModule {
             if (mc.player.getRidingEntity() != null) {
                 if (!mc.player.getRidingEntity().onGround) {
                     if (var1.method13973() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                        var1.method13900(true);
+                        var1.setCancelled(true);
                         this.field23643 = false;
                     }
                 }

@@ -5,7 +5,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -21,12 +20,12 @@ public class Class3456 extends Class3194 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, net.minecraft.util.Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       Class84 var9 = var1.<Class84>method23463(field19276);
-      if (var2.method544() != Class113.field414
-         || var9 == Class84.field210 != (var2 == Direction.field673)
-         || var3.method23448(this) && var3.<Class84>method23463(field19276) != var9) {
-         return var9 == Class84.field210 && var2 == Direction.DOWN && !var1.method23443(var4, var5)
+      if (var2.getAxis() != Direction.field414
+         || var9 == Class84.field210 != (var2 == net.minecraft.util.Direction.field673)
+         || var3.isIn(this) && var3.<Class84>method23463(field19276) != var9) {
+         return var9 == Class84.field210 && var2 == net.minecraft.util.Direction.DOWN && !var1.method23443(var4, var5)
             ? Blocks.AIR.method11579()
             : super.method11491(var1, var2, var3, var4, var5, var6);
       } else {
@@ -52,7 +51,7 @@ public class Class3456 extends Class3194 {
          return super.method11492(var1, var2, var3);
       } else {
          BlockState var6 = var2.getBlockState(var3.down());
-         return var6.method23448(this) && var6.<Class84>method23463(field19276) == Class84.field210;
+         return var6.isIn(this) && var6.<Class84>method23463(field19276) == Class84.field210;
       }
    }
 
@@ -62,7 +61,7 @@ public class Class3456 extends Class3194 {
    }
 
    @Override
-   public void method11574(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
+   public void onBlockHarvested(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
       if (!var1.isRemote) {
          if (!var4.isCreative()) {
             spawnDrops(var3, var1, var2, (TileEntity)null, var4, var4.getHeldItemMainhand());
@@ -71,7 +70,7 @@ public class Class3456 extends Class3194 {
          }
       }
 
-      super.method11574(var1, var2, var3, var4);
+      super.onBlockHarvested(var1, var2, var3, var4);
    }
 
    @Override

@@ -21,13 +21,13 @@ public class Class2599 extends Class2598 {
    public void method10804() {
       super.method10804();
       this.field16837.method4304(true);
-      this.field16837.method3154(Hand.MAIN_HAND);
+      this.field16837.setActiveHand(Hand.MAIN_HAND);
    }
 
    @Override
    public void method10807() {
       super.method10807();
-      this.field16837.method3162();
+      this.field16837.resetActiveHand();
       this.field16837.method4304(false);
    }
 }

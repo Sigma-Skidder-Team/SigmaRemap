@@ -18,7 +18,7 @@ public class SSetPassengersPacket implements Packet<IClientPlayNetHandler> {
 
    public SSetPassengersPacket(Entity var1) {
       this.field24354 = var1.getEntityId();
-      List var4 = var1.method3408();
+      List var4 = var1.getPassengers();
       this.field24355 = new int[var4.size()];
 
       for (int var5 = 0; var5 < var4.size(); var5++) {

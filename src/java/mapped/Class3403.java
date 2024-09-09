@@ -6,7 +6,6 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -31,9 +30,9 @@ public class Class3403 extends Block {
    }
 
    @Override
-   public void method11561(World var1, BlockPos var2, Entity var3) {
+   public void onEntityWalk(World var1, BlockPos var2, Entity var3) {
       method12041(var1.getBlockState(var2), var1, var2);
-      super.method11561(var1, var2, var3);
+      super.onEntityWalk(var1, var2, var3);
    }
 
    @Override
@@ -45,7 +44,7 @@ public class Class3403 extends Block {
       }
 
       ItemStack var9 = var4.getHeldItem(var5);
-      return var9.getItem() instanceof Class3292 && new Class5909(var4, var5, var9, var6).method18346() ? ActionResultType.field14820 : ActionResultType.field14818;
+      return var9.getItem() instanceof Class3292 && new Class5909(var4, var5, var9, var6).method18346() ? ActionResultType.field14820 : ActionResultType.SUCCESS;
    }
 
    private static void method12041(BlockState var0, World var1, BlockPos var2) {
@@ -70,7 +69,7 @@ public class Class3403 extends Block {
    @Override
    public void method11965(BlockState var1, ServerWorld var2, BlockPos var3, ItemStack var4) {
       super.method11965(var1, var2, var3, var4);
-      if (Class7858.method26311(Class8122.field34916, var4) == 0) {
+      if (EnchantmentHelper.method26311(Class8122.field34916, var4) == 0) {
          int var7 = 1 + var2.rand.nextInt(5);
          this.method11558(var2, var3, var7);
       }
@@ -87,14 +86,14 @@ public class Class3403 extends Block {
       double var4 = 0.5625;
       Random var6 = var0.rand;
 
-      for (Direction var10 : Direction.values()) {
+      for (net.minecraft.util.Direction var10 : net.minecraft.util.Direction.values()) {
          BlockPos var11 = var1.method8349(var10);
          if (!var0.getBlockState(var11).method23409(var0, var11)) {
-            Class113 var12 = var10.method544();
-            double var13 = var12 != Class113.field413 ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method539();
-            double var15 = var12 != Class113.field414 ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method540();
-            double var17 = var12 != Class113.field415 ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method541();
-            var0.method6746(
+            Direction var12 = var10.getAxis();
+            double var13 = var12 != Direction.field413 ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method539();
+            double var15 = var12 != Direction.field414 ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method540();
+            double var17 = var12 != Direction.field415 ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method541();
+            var0.addParticle(
                RedstoneParticleData.REDSTONE_DUST, (double)var1.getX() + var13, (double)var1.getY() + var15, (double)var1.getZ() + var17, 0.0, 0.0, 0.0
             );
          }

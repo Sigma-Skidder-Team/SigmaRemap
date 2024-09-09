@@ -18,7 +18,7 @@ public class Class3407 extends Block {
 
    @Override
    public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var4.method23448(var1.getBlock())) {
+      if (!var4.isIn(var1.getBlock())) {
          this.method12048(var2, var3);
       }
    }
@@ -50,8 +50,8 @@ public class Class3407 extends Block {
             BlockPos var14 = var8.method8349(var13);
             BlockState var15 = var1.getBlockState(var14);
             FluidState var16 = var1.getFluidState(var14);
-            Class8649 var17 = var15.method23384();
-            if (var16.method23486(Class8953.field40469)) {
+            Class8649 var17 = var15.getMaterial();
+            if (var16.method23486(FluidTags.field40469)) {
                if (var15.getBlock() instanceof Class3405 && ((Class3405)var15.getBlock()).method11533(var1, var14, var15) != Class9479.field44064) {
                   var6++;
                   if (var9 < 6) {

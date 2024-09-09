@@ -35,7 +35,7 @@ public class Class1265 extends AbstractGui {
    }
 
    private ITextComponent method5918(Class6589 var1, IFormattableTextComponent var2) {
-      return var1.method19967() != Class1894.field11105 ? var2 : var2.mergeStyle(TextFormatting.ITALIC);
+      return var1.method19967() != GameType.SPECTATOR ? var2 : var2.mergeStyle(TextFormatting.ITALIC);
    }
 
    public void method5919(boolean var1) {
@@ -150,8 +150,8 @@ public class Class1265 extends AbstractGui {
 
             this.field6692
                .fontRenderer
-               .method38803(var1, this.method5917(var28), (float)var26, (float)var27, var28.method19967() != Class1894.field11105 ? -1 : -1862270977);
-            if (var4 != null && var28.method19967() != Class1894.field11105) {
+               .method38803(var1, this.method5917(var28), (float)var26, (float)var27, var28.method19967() != GameType.SPECTATOR ? -1 : -1862270977);
+            if (var4 != null && var28.method19967() != GameType.SPECTATOR) {
                int var52 = var26 + var9 + 1;
                int var53 = var52 + var15;
                if (var53 - var52 > 5) {
@@ -235,8 +235,8 @@ public class Class1265 extends AbstractGui {
 
          var6.method19989(this.field6696);
          var6.method19981(var10);
-         int var14 = MathHelper.method37773((float)Math.max(var10, var6.method19982()) / 2.0F);
-         int var15 = Math.max(MathHelper.method37773((float)(var10 / 2)), Math.max(MathHelper.method37773((float)(var6.method19982() / 2)), 10));
+         int var14 = MathHelper.ceil((float)Math.max(var10, var6.method19982()) / 2.0F);
+         int var15 = Math.max(MathHelper.ceil((float)(var10 / 2)), Math.max(MathHelper.ceil((float)(var6.method19982() / 2)), 10));
          boolean var16 = var6.method19986() > (long)this.field6693.method5990() && (var6.method19986() - (long)this.field6693.method5990()) / 3L % 2L == 1L;
          if (var14 > 0) {
             int var17 = MathHelper.method37767(Math.min((float)(var5 - var4 - 4) / (float)var15, 9.0F));

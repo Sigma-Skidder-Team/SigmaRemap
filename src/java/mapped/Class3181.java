@@ -48,7 +48,7 @@ public class Class3181 implements Class2982 {
                            var6[var21 + var14 * 16] = var26 + var8 * 16 + 1;
                         }
 
-                        if (Class8042.method27612().method21935() && this.field18436.field19972.method19376().method18526().contains(var15)) {
+                        if (ViaVersion3.method27612().method21935() && this.field18436.field19972.method19376().method18526().contains(var15)) {
                            Class7290.method23055(var5, var9, var8, var21, var26, var14);
                         }
                      }

@@ -17,7 +17,7 @@ public class Class9316 {
       if (var3 != null) {
          return var3;
       } else {
-         Class8042.method27613().method27366().severe("Could not get dimension data of " + var0);
+         ViaVersion3.method27613().method27366().severe("Could not get dimension data of " + var0);
          throw new NullPointerException("Dimension data for " + var0 + " is null!");
       }
    }

@@ -61,12 +61,12 @@ public class Class3484 extends Class3194 implements Class3196 {
    @Override
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
       if (var4 instanceof LivingEntity && var4.getType() != EntityType.FOX && var4.getType() != EntityType.field41009) {
-         var4.method2928(var1, new Vector3d(0.8F, 0.75, 0.8F));
+         var4.setMotionMultiplier(var1, new Vector3d(0.8F, 0.75, 0.8F));
          if (!var2.isRemote && var1.<Integer>method23463(field19342) > 0 && (var4.lastTickPosX != var4.getPosX() || var4.lastTickPosZ != var4.getPosZ())) {
             double var7 = Math.abs(var4.getPosX() - var4.lastTickPosX);
             double var9 = Math.abs(var4.getPosZ() - var4.lastTickPosZ);
             if (var7 >= 0.003F || var9 >= 0.003F) {
-               var4.method2741(DamageSource.field39012, 1.0F);
+               var4.attackEntityFrom(DamageSource.field39012, 1.0F);
             }
          }
       }

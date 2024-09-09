@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.gui.jello;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.module.Module;
@@ -32,7 +32,7 @@ public class Cords extends Module {
                 this.field23755--;
             }
 
-            boolean var4 = Class9567.isMoving() || mc.player.field4981 || mc.player.method3331();
+            boolean var4 = MovementUtils.isMoving() || mc.player.isJumping || mc.player.isSneaking();
             if (!var4) {
                 if (this.field23756.calcPercent() == 1.0F && this.field23756.getDirection() == Direction.FORWARDS) {
                     this.field23756.changeDirection(Direction.BACKWARDS);
@@ -45,7 +45,7 @@ public class Cords extends Module {
 
     @EventTarget
     @LowestPriority
-    private void method16579(Class4415 var1) {
+    private void method16579(EventRender var1) {
         if (this.isEnabled()) {
             if (mc.player != null) {
                 if (! Minecraft.getInstance().gameSettings.showDebugInfo) {

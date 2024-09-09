@@ -2,7 +2,7 @@ package mapped;
 
 import com.google.gson.JsonSyntaxException;
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.event.impl.Class4414;
+import com.mentalfrostbyte.jello.event.impl.EventRenderShulker;
 import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
 import com.mentalfrostbyte.jello.event.impl.RenderFireEvent;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
@@ -247,12 +247,12 @@ public class GameRenderer implements Class215, AutoCloseable {
          this.mc.getProfiler().startSection("pick");
          this.mc.pointedEntity = null;
          double var5 = (double)this.mc.playerController.getBlockReachDistance();
-         this.mc.objectMouseOver = var4.method3289(var5, var1, false);
-         Vector3d var7 = var4.method3286(var1);
+         this.mc.objectMouseOver = var4.customPick(var5, var1, false);
+         Vector3d var7 = var4.getEyePosition(var1);
          boolean var8 = false;
          byte var9 = 3;
          double var10 = var5;
-         if (!this.mc.playerController.method23153()) {
+         if (!this.mc.playerController.extendedReach()) {
             if (var5 > 3.0) {
                var8 = true;
             }
@@ -268,11 +268,11 @@ public class GameRenderer implements Class215, AutoCloseable {
             var10 = this.mc.objectMouseOver.method31419().method11342(var7);
          }
 
-         Vector3d var12 = var4.method3281(1.0F);
-         Vector3d var13 = var7.method11339(var12.x * var5, var12.y * var5, var12.z * var5);
+         Vector3d var12 = var4.getLook(1.0F);
+         Vector3d var13 = var7.add(var12.x * var5, var12.y * var5, var12.z * var5);
          float var14 = 1.0F;
-         AxisAlignedBB var15 = var4.getBoundingBox().method19661(var12.method11344(var5)).method19663(1.0, 1.0, 1.0);
-         EntityRayTraceResult var16 = Class9456.method36386(var4, var7, var13, var15, var0 -> !var0.isSpectator() && var0.method3139(), var10);
+         AxisAlignedBB var15 = var4.getBoundingBox().method19661(var12.scale(var5)).method19663(1.0, 1.0, 1.0);
+         EntityRayTraceResult var16 = Class9456.method36386(var4, var7, var13, var15, var0 -> !var0.isSpectator() && var0.canBeCollidedWith(), var10);
          if (var16 != null) {
             Entity var17 = var16.getEntity();
             Vector3d var18 = var16.method31419();
@@ -346,7 +346,7 @@ public class GameRenderer implements Class215, AutoCloseable {
          }
 
          if (var1.getRenderViewEntity() instanceof LivingEntity && ((LivingEntity)var1.getRenderViewEntity()).getShouldBeDead()) {
-            float var9 = Math.min((float)((LivingEntity)var1.getRenderViewEntity()).field4955 + var2, 20.0F);
+            float var9 = Math.min((float)((LivingEntity)var1.getRenderViewEntity()).deathTime + var2, 20.0F);
             var6 /= (double)((1.0F - 500.0F / (var9 + 500.0F)) * 2.0F + 1.0F);
          }
 
@@ -364,9 +364,9 @@ public class GameRenderer implements Class215, AutoCloseable {
    private void method744(MatrixStack var1, float var2) {
       if (this.mc.getRenderViewEntity() instanceof LivingEntity) {
          LivingEntity var5 = (LivingEntity)this.mc.getRenderViewEntity();
-         float var6 = (float)var5.field4952 - var2;
+         float var6 = (float)var5.hurtTime - var2;
          if (var5.getShouldBeDead()) {
-            float var7 = Math.min((float)var5.field4955 + var2, 20.0F);
+            float var7 = Math.min((float)var5.deathTime + var2, 20.0F);
             var1.rotate(Vector3f.field32902.rotationDegrees(40.0F - 8000.0F / (var7 + 200.0F)));
          }
 
@@ -374,9 +374,9 @@ public class GameRenderer implements Class215, AutoCloseable {
             return;
          }
 
-         var6 /= (float)var5.field4953;
+         var6 /= (float)var5.maxHurtTime;
          var6 = MathHelper.sin(var6 * var6 * var6 * var6 * (float) Math.PI);
-         float var10 = var5.field4954;
+         float var10 = var5.attackedAtYaw;
          var1.rotate(Vector3f.YP.rotationDegrees(-var10));
          var1.rotate(Vector3f.field32902.rotationDegrees(-var6 * 14.0F));
          var1.rotate(Vector3f.YP.rotationDegrees(var10));
@@ -422,7 +422,7 @@ public class GameRenderer implements Class215, AutoCloseable {
             if (this.mc.gameSettings.getPointOfView().func_243192_a()
                && !var10
                && !this.mc.gameSettings.hideGUI
-               && this.mc.playerController.method23157() != Class1894.field11105) {
+               && this.mc.playerController.getCurrentGameType() != GameType.SPECTATOR) {
                this.field818.method7317();
                if (!Class7944.method26921()) {
                   this.itemRenderer
@@ -504,7 +504,7 @@ public class GameRenderer implements Class215, AutoCloseable {
    }
 
    public static float method750(LivingEntity var0, float var1) {
-      int var4 = var0.method3034(Effects.NIGHT_VISION).method8628();
+      int var4 = var0.getActivePotionEffect(Effects.NIGHT_VISION).method8628();
       return var4 <= 200 ? 0.7F + MathHelper.sin(((float)var4 - var1) * (float) Math.PI * 0.2F) * 0.3F : 1.0F;
    }
 
@@ -573,7 +573,7 @@ public class GameRenderer implements Class215, AutoCloseable {
             this.mc.getProfiler().endStartSection("gui");
             if (this.mc.player != null) {
                float var11 = MathHelper.lerp(var1, this.mc.player.field6142, this.mc.player.field6141);
-               if (var11 > 0.0F && this.mc.player.method3033(Effects.NAUSEA) && this.mc.gameSettings.field44670 < 1.0F) {
+               if (var11 > 0.0F && this.mc.player.isPotionActive(Effects.NAUSEA) && this.mc.gameSettings.field44670 < 1.0F) {
                   this.func_243497_c(var11 * (1.0F - this.mc.gameSettings.field44670));
                }
             }
@@ -627,7 +627,7 @@ public class GameRenderer implements Class215, AutoCloseable {
                   Class9299.method35055(Class9299.field42867, this.mc.currentScreen, var10, var7, var8, this.mc.getTickLength());
                } else {
                   this.mc.currentScreen.render(var10, var7, var8, this.mc.getTickLength());
-                  Client.getInstance().getEventManager().call(new Class4414());
+                  Client.getInstance().getEventManager().call(new EventRenderShulker());
                }
             } catch (Throwable var14) {
                CrashReport var17 = CrashReport.makeCrashReport(var14, "Rendering screen");
@@ -712,7 +712,7 @@ public class GameRenderer implements Class215, AutoCloseable {
             if (var6 != null && var6.getType() == RayTraceResult.Type.BLOCK) {
                BlockPos var7 = ((BlockRayTraceResult)var6).getPos();
                BlockState var8 = this.mc.world.getBlockState(var7);
-               if (this.mc.playerController.method23157() != Class1894.field11105) {
+               if (this.mc.playerController.getCurrentGameType() != GameType.SPECTATOR) {
                   Class9632 var9 = new Class9632(this.mc.world, var7, false);
                   var4 = !var5.isEmpty()
                      && (var5.method32175(this.mc.world.method6817(), var9) || var5.method32176(this.mc.world.method6817(), var9));
@@ -771,7 +771,7 @@ public class GameRenderer implements Class215, AutoCloseable {
          * this.mc.gameSettings.field44670
          * this.mc.gameSettings.field44670;
       if (var12 > 0.0F) {
-         int var13 = !this.mc.player.method3033(Effects.NAUSEA) ? 20 : 7;
+         int var13 = !this.mc.player.isPotionActive(Effects.NAUSEA) ? 20 : 7;
          float var14 = 5.0F / (var12 * var12 + 5.0F) - var12 * 0.04F;
          var14 *= var14;
          Vector3f var15 = new Vector3f(0.0F, MathHelper.field45205 / 2.0F, MathHelper.field45205 / 2.0F);

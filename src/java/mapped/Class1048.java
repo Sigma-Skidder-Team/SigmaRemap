@@ -28,7 +28,7 @@ public class Class1048 extends WaterMobEntity {
    private static final DataParameter<Boolean> field5805 = EntityDataManager.<Boolean>createKey(Class1048.class, DataSerializers.field33398);
    private static final DataParameter<Integer> field5806 = EntityDataManager.<Integer>createKey(Class1048.class, DataSerializers.VARINT);
    private static final Class8522 field5807 = new Class8522().method30203(10.0).method30205().method30204().method30206();
-   public static final Predicate<ItemEntity> field5808 = var0 -> !var0.method4135() && var0.isAlive() && var0.method3250();
+   public static final Predicate<ItemEntity> field5808 = var0 -> !var0.method4135() && var0.isAlive() && var0.isInWater();
 
    public Class1048(EntityType<? extends Class1048> var1, World var2) {
       super(var1, var2);
@@ -40,13 +40,13 @@ public class Class1048 extends WaterMobEntity {
    @Nullable
    @Override
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
-      this.method3352(this.getMaxAir());
+      this.setAir(this.getMaxAir());
       this.rotationPitch = 0.0F;
       return super.method4276(var1, var2, var3, var4, var5);
    }
 
    @Override
-   public boolean method2998() {
+   public boolean canBreatheUnderwater() {
       return false;
    }
 
@@ -87,22 +87,22 @@ public class Class1048 extends WaterMobEntity {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("TreasurePosX", this.method4777().getX());
-      var1.method102("TreasurePosY", this.method4777().getY());
-      var1.method102("TreasurePosZ", this.method4777().getZ());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("TreasurePosX", this.method4777().getX());
+      var1.putInt("TreasurePosY", this.method4777().getY());
+      var1.putInt("TreasurePosZ", this.method4777().getZ());
       var1.putBoolean("GotFish", this.method4778());
-      var1.method102("Moistness", this.method4780());
+      var1.putInt("Moistness", this.method4780());
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       int var4 = var1.getInt("TreasurePosX");
       int var5 = var1.getInt("TreasurePosY");
       int var6 = var1.getInt("TreasurePosZ");
       this.method4776(new BlockPos(var4, var5, var6));
-      super.method2723(var1);
+      super.readAdditional(var1);
       this.method4779(var1.getBoolean("GotFish"));
       this.method4781(var1.getInt("Moistness"));
    }
@@ -134,11 +134,11 @@ public class Class1048 extends WaterMobEntity {
    }
 
    @Override
-   public boolean method3114(Entity var1) {
-      boolean var4 = var1.method2741(DamageSource.method31115(this), (float)((int)this.method3086(Attributes.field42110)));
+   public boolean attackEntityAsMob(Entity var1) {
+      boolean var4 = var1.attackEntityFrom(DamageSource.method31115(this), (float)((int)this.getAttributeValue(Attributes.field42110)));
       if (var4) {
-         this.method3399(this, var1);
-         this.method2863(SoundEvents.field26500, 1.0F, 1.0F);
+         this.applyEnchantments(this, var1);
+         this.playSound(SoundEvents.field26500, 1.0F, 1.0F);
       }
 
       return var4;
@@ -150,12 +150,12 @@ public class Class1048 extends WaterMobEntity {
    }
 
    @Override
-   public int method3012(int var1) {
+   public int determineNextAir(int var1) {
       return this.getMaxAir();
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return 0.3F;
    }
 
@@ -170,26 +170,26 @@ public class Class1048 extends WaterMobEntity {
    }
 
    @Override
-   public boolean method3313(Entity var1) {
+   public boolean canBeRidden(Entity var1) {
       return true;
    }
 
    @Override
-   public boolean method2980(ItemStack var1) {
-      Class2106 var4 = Class1006.method4271(var1);
-      return !this.method2943(var4).isEmpty() ? false : var4 == Class2106.field13731 && super.method2980(var1);
+   public boolean canPickUpItem(ItemStack var1) {
+      EquipmentSlotType var4 = Class1006.method4271(var1);
+      return !this.getItemStackFromSlot(var4).isEmpty() ? false : var4 == EquipmentSlotType.field13731 && super.canPickUpItem(var1);
    }
 
    @Override
    public void method4246(ItemEntity var1) {
-      if (this.method2943(Class2106.field13731).isEmpty()) {
+      if (this.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty()) {
          ItemStack var4 = var1.method4124();
          if (this.method4252(var4)) {
-            this.method3134(var1);
-            this.method2944(Class2106.field13731, var4);
-            this.field5605[Class2106.field13731.method8773()] = 2.0F;
-            this.method2751(var1, var4.getCount());
-            var1.method2904();
+            this.triggerItemPickupTrigger(var1);
+            this.setItemStackToSlot(EquipmentSlotType.field13731, var4);
+            this.field5605[EquipmentSlotType.field13731.method8773()] = 2.0F;
+            this.onItemPickup(var1, var4.getCount());
+            var1.remove();
          }
       }
    }
@@ -198,16 +198,16 @@ public class Class1048 extends WaterMobEntity {
    public void tick() {
       super.tick();
       if (!this.method4305()) {
-         if (!this.method3254()) {
+         if (!this.isInWaterRainOrBubbleColumn()) {
             this.method4781(this.method4780() - 1);
             if (this.method4780() <= 0) {
-               this.method2741(DamageSource.field39011, 1.0F);
+               this.attackEntityFrom(DamageSource.field39011, 1.0F);
             }
 
             if (this.onGround) {
-               this.method3434(
-                  this.getVec()
-                     .method11339((double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.2F), 0.5, (double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.2F))
+               this.setMotion(
+                  this.getMotion()
+                     .add((double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.2F), 0.5, (double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.2F))
                );
                this.rotationYaw = this.rand.nextFloat() * 360.0F;
                this.onGround = false;
@@ -217,15 +217,15 @@ public class Class1048 extends WaterMobEntity {
             this.method4781(2400);
          }
 
-         if (this.world.isRemote && this.method3250() && this.getVec().method11349() > 0.03) {
-            Vector3d var3 = this.method3281(0.0F);
+         if (this.world.isRemote && this.isInWater() && this.getMotion().lengthSquared() > 0.03) {
+            Vector3d var3 = this.getLook(0.0F);
             float var4 = MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0)) * 0.3F;
             float var5 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0)) * 0.3F;
             float var6 = 1.2F - this.rand.nextFloat() * 0.7F;
 
             for (int var7 = 0; var7 < 2; var7++) {
                this.world
-                  .method6746(
+                  .addParticle(
                      ParticleTypes.field34105,
                      this.getPosX() - var3.x * (double)var6 + (double)var4,
                      this.getPosY() - var3.y,
@@ -235,7 +235,7 @@ public class Class1048 extends WaterMobEntity {
                      0.0
                   );
                this.world
-                  .method6746(
+                  .addParticle(
                      ParticleTypes.field34105,
                      this.getPosX() - var3.x * (double)var6 - (double)var4,
                      this.getPosY() - var3.y,
@@ -247,14 +247,14 @@ public class Class1048 extends WaterMobEntity {
             }
          }
       } else {
-         this.method3352(this.getMaxAir());
+         this.setAir(this.getMaxAir());
       }
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 38) {
-         super.method2866(var1);
+         super.handleStatusUpdate(var1);
       } else {
          this.method4783(ParticleTypes.field34078);
       }
@@ -265,7 +265,7 @@ public class Class1048 extends WaterMobEntity {
          double var5 = this.rand.nextGaussian() * 0.01;
          double var7 = this.rand.nextGaussian() * 0.01;
          double var9 = this.rand.nextGaussian() * 0.01;
-         this.world.method6746(var1, this.method3438(1.0), this.method3441() + 0.2, this.method3445(1.0), var5, var7, var9);
+         this.world.addParticle(var1, this.getPosXRandom(1.0), this.getPosYRandom() + 0.2, this.getPosZRandom(1.0), var5, var7, var9);
       }
    }
 
@@ -274,7 +274,7 @@ public class Class1048 extends WaterMobEntity {
       ItemStack var5 = var1.getHeldItem(var2);
       if (!var5.isEmpty() && var5.getItem().method11743(Class5985.field26114)) {
          if (!this.world.isRemote) {
-            this.method2863(SoundEvents.field26502, 1.0F, 1.0F);
+            this.playSound(SoundEvents.field26502, 1.0F, 1.0F);
          }
 
          this.method4779(true);
@@ -295,7 +295,7 @@ public class Class1048 extends WaterMobEntity {
                !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44121))
                   || !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44145))
             )
-            && var1.getFluidState(var3).method23486(Class8953.field40469);
+            && var1.getFluidState(var3).method23486(FluidTags.field40469);
       } else {
          return false;
       }
@@ -315,7 +315,7 @@ public class Class1048 extends WaterMobEntity {
    @Nullable
    @Override
    public SoundEvent getAmbientSound() {
-      return !this.method3250() ? SoundEvents.field26498 : SoundEvents.field26499;
+      return !this.isInWater() ? SoundEvents.field26498 : SoundEvents.field26499;
    }
 
    @Override
@@ -334,16 +334,16 @@ public class Class1048 extends WaterMobEntity {
    }
 
    @Override
-   public void method2915(Vector3d var1) {
-      if (this.method3138() && this.method3250()) {
-         this.method3265(this.method2918(), var1);
-         this.move(Class2107.field13742, this.getVec());
-         this.method3434(this.getVec().method11344(0.9));
+   public void travel(Vector3d var1) {
+      if (this.isServerWorld() && this.isInWater()) {
+         this.moveRelative(this.getAIMoveSpeed(), var1);
+         this.move(MoverType.SELF, this.getMotion());
+         this.setMotion(this.getMotion().scale(0.9));
          if (this.method4232() == null) {
-            this.method3434(this.getVec().method11339(0.0, -0.005, 0.0));
+            this.setMotion(this.getMotion().add(0.0, -0.005, 0.0));
          }
       } else {
-         super.method2915(var1);
+         super.travel(var1);
       }
    }
 

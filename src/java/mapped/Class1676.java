@@ -9,7 +9,7 @@ public class Class1676 extends Chunk {
    private boolean field9138;
    private boolean field9139;
 
-   public Class1676(World var1, Class7481 var2, Class1684 var3) {
+   public Class1676(World var1, ChunkPos var2, Class1684 var3) {
       super(var1, var2, var3);
    }
 

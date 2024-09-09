@@ -96,7 +96,7 @@ public class Class3428 extends Block implements Class3207 {
       } else if (var1.<Integer>method23463(field19184) != 7) {
          var2.method7179(var3, true);
       } else {
-         var2.method6916(
+         var2.addEntity(
             new Class907(
                var2,
                (double)var3.getX() + 0.5,
@@ -130,14 +130,14 @@ public class Class3428 extends Block implements Class3207 {
    }
 
    private boolean method12084(IBlockReader var1, BlockPos var2, int var3) {
-      return var3 > 0 && !var1.getBlockState(var2.down()).method23448(this);
+      return var3 > 0 && !var1.getBlockState(var2.down()).isIn(this);
    }
 
    public static int method12085(IBlockReader var0, BlockPos var1) {
       BlockPos.Mutable var4 = var1.method8354().method8379(Direction.DOWN);
       BlockState var5 = var0.getBlockState(var4);
       int var6 = 7;
-      if (!var5.method23448(Blocks.field37053)) {
+      if (!var5.isIn(Blocks.field37053)) {
          if (var5.method23454(var0, var4, Direction.field673)) {
             return 0;
          }
@@ -147,7 +147,7 @@ public class Class3428 extends Block implements Class3207 {
 
       for (Direction var8 : Class76.field161) {
          BlockState var9 = var0.getBlockState(var4.method8377(var1, var8));
-         if (var9.method23448(Blocks.field37053)) {
+         if (var9.isIn(Blocks.field37053)) {
             var6 = Math.min(var6, var9.<Integer>method23463(field19184) + 1);
             if (var6 != 1) {
                continue;

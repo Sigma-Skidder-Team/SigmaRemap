@@ -84,7 +84,7 @@ public class Class7318 {
       }
    }
 
-   public void method23185(Class920 var1, LootContext var2) {
+   public void method23185(IInventory var1, LootContext var2) {
       List<ItemStack> var5 = this.method23182(var2);
       Random var6 = var2.method26088();
       List<Integer> var7 = this.method23187(var1, var6);
@@ -97,9 +97,9 @@ public class Class7318 {
          }
 
          if (!var9.isEmpty()) {
-            var1.method3621((Integer)var7.remove(var7.size() - 1), var9);
+            var1.setInventorySlotContents((Integer)var7.remove(var7.size() - 1), var9);
          } else {
-            var1.method3621((Integer)var7.remove(var7.size() - 1), ItemStack.EMPTY);
+            var1.setInventorySlotContents((Integer)var7.remove(var7.size() - 1), ItemStack.EMPTY);
          }
       }
    }
@@ -141,11 +141,11 @@ public class Class7318 {
       Collections.shuffle(var1, var3);
    }
 
-   private List<Integer> method23187(Class920 var1, Random var2) {
+   private List<Integer> method23187(IInventory var1, Random var2) {
       ArrayList var5 = Lists.newArrayList();
 
-      for (int var6 = 0; var6 < var1.method3629(); var6++) {
-         if (var1.method3618(var6).isEmpty()) {
+      for (int var6 = 0; var6 < var1.getSizeInventory(); var6++) {
+         if (var1.getStackInSlot(var6).isEmpty()) {
             var5.add(var6);
          }
       }

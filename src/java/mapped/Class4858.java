@@ -20,8 +20,8 @@ public class Class4858 extends Class4837 {
    public boolean method14963(Class926 var1, World var2) {
       ArrayList var5 = Lists.newArrayList();
 
-      for (int var6 = 0; var6 < var1.method3629(); var6++) {
-         ItemStack var7 = var1.method3618(var6);
+      for (int var6 = 0; var6 < var1.getSizeInventory(); var6++) {
+         ItemStack var7 = var1.getStackInSlot(var6);
          if (!var7.isEmpty()) {
             var5.add(var7);
             if (var5.size() > 1) {
@@ -39,8 +39,8 @@ public class Class4858 extends Class4837 {
    public ItemStack method14962(Class926 var1) {
       ArrayList var4 = Lists.newArrayList();
 
-      for (int var5 = 0; var5 < var1.method3629(); var5++) {
-         ItemStack var6 = var1.method3618(var5);
+      for (int var5 = 0; var5 < var1.getSizeInventory(); var5++) {
+         ItemStack var6 = var1.getStackInSlot(var5);
          if (!var6.isEmpty()) {
             var4.add(var6);
             if (var4.size() > 1) {
@@ -68,8 +68,8 @@ public class Class4858 extends Class4837 {
             ItemStack var12 = new ItemStack(var16.getItem());
             var12.method32118(var11);
             HashMap var13 = Maps.newHashMap();
-            Map<Class6069, Integer> var14 = Class7858.method26312(var16);
-            Map<Class6069, Integer> var15 = Class7858.method26312(var17);
+            Map<Class6069, Integer> var14 = EnchantmentHelper.method26312(var16);
+            Map<Class6069, Integer> var15 = EnchantmentHelper.method26312(var17);
             Registry.field16073.method9192().filter(Class6069::method18825).forEach(var3 -> {
                int var6x = Math.max(var14.getOrDefault(var3, 0), var15.getOrDefault(var3, 0));
                if (var6x > 0) {
@@ -77,7 +77,7 @@ public class Class4858 extends Class4837 {
                }
             });
             if (!var13.isEmpty()) {
-               Class7858.method26314(var13, var12);
+               EnchantmentHelper.method26314(var13, var12);
             }
 
             return var12;

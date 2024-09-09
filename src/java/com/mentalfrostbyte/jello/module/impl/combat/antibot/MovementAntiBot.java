@@ -40,8 +40,8 @@ public class MovementAntiBot extends Class7249 {
          if (var5 != field31119.player) {
             if (var5 == null
                || !ColorUtils.method17730(var5, 0.01F)
-               || var5.method3342()
-               || !(var5.method3275(field31119.player) > 5.0F)
+               || var5.isInvisible()
+               || !(var5.getDistance(field31119.player) > 5.0F)
                   && (var5.getPosX() != var5.lastTickPosX || var5.getPosZ() != var5.lastTickPosZ || var5.getPosY() != var5.lastTickPosY)) {
                if (this.field31116.getOrDefault(var5, 0) < this.field31118) {
                   this.field31116.put(var5, 0);

@@ -14,11 +14,11 @@ public class Class3329 extends Item {
    }
 
    @Override
-   public ActionResultType method11707(Class5911 var1) {
+   public ActionResultType method11707(ItemUseContext var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       Block var6 = var4.getBlockState(var5).getBlock();
-      if (!var6.method11540(BlockTags.field32771)) {
+      if (!var6.isIn(BlockTags.field32771)) {
          return ActionResultType.field14820;
       } else {
          PlayerEntity var7 = var1.method18358();
@@ -52,6 +52,6 @@ public class Class3329 extends Item {
          }
       }
 
-      return !var6 ? ActionResultType.field14820 : ActionResultType.field14818;
+      return !var6 ? ActionResultType.field14820 : ActionResultType.SUCCESS;
    }
 }

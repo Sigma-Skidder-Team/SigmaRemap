@@ -65,7 +65,7 @@ public class Class3382 extends Class3381 {
       Direction[] var7 = var1.method18349();
 
       for (Direction var11 : var7) {
-         if (var11.method544().method324()) {
+         if (var11.getAxis().method324()) {
             Direction var12 = var11.method536();
             var4 = var4.method23465(field18985, var12);
             if (var4.method23443(var5, var6)) {
@@ -91,8 +91,8 @@ public class Class3382 extends Class3381 {
       double var14 = 0.22;
       double var16 = 0.27;
       Direction var18 = var7.method536();
-      var2.method6746(ParticleTypes.field34092, var8 + 0.27 * (double)var18.method539(), var10 + 0.22, var12 + 0.27 * (double)var18.method541(), 0.0, 0.0, 0.0);
-      var2.method6746(this.field18984, var8 + 0.27 * (double)var18.method539(), var10 + 0.22, var12 + 0.27 * (double)var18.method541(), 0.0, 0.0, 0.0);
+      var2.addParticle(ParticleTypes.field34092, var8 + 0.27 * (double)var18.method539(), var10 + 0.22, var12 + 0.27 * (double)var18.method541(), 0.0, 0.0, 0.0);
+      var2.addParticle(this.field18984, var8 + 0.27 * (double)var18.method539(), var10 + 0.22, var12 + 0.27 * (double)var18.method541(), 0.0, 0.0, 0.0);
    }
 
    @Override

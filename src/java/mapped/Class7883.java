@@ -33,7 +33,7 @@ public class Class7883 extends Class7882<LivingEntity> {
 
    @Override
    public void method26425(ServerWorld var1, LivingEntity var2) {
-      var2.method2992().method21408(Class8830.field39838, this.method26431(var2));
+      var2.getBrain().method21408(Class8830.field39838, this.method26431(var2));
    }
 
    private Optional<LivingEntity> method26431(LivingEntity var1) {
@@ -47,7 +47,7 @@ public class Class7883 extends Class7882<LivingEntity> {
    }
 
    private Optional<List<LivingEntity>> method26432(LivingEntity var1) {
-      return var1.method2992().<List<LivingEntity>>method21410(Class8830.field39819);
+      return var1.getBrain().<List<LivingEntity>>method21410(Class8830.field39819);
    }
 
    private int method26433(LivingEntity var1, LivingEntity var2, LivingEntity var3) {

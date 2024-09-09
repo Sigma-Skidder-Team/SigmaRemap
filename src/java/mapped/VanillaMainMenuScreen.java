@@ -34,7 +34,7 @@ public class VanillaMainMenuScreen extends Screen {
    private Screen field4713;
    private int field4714;
    private int field4715;
-   private final Class4385 field4716 = new Class4385(field4704);
+   private final Parallex field4716 = new Parallex(field4704);
    private final boolean field4717;
    private long field4718;
    private Screen field4719;
@@ -267,10 +267,10 @@ public class VanillaMainMenuScreen extends Screen {
       this.mc.getTextureManager().bindTexture(field4705);
       RenderSystem.enableBlend();
       RenderSystem.method27834(GlStateManager.SourceFactor.field15997, DestFactor.field12932);
-      RenderSystem.color4f(1.0F, 1.0F, 1.0F, !this.field4717 ? 1.0F : (float) MathHelper.method37773(MathHelper.clamp(var7, 0.0F, 1.0F)));
+      RenderSystem.color4f(1.0F, 1.0F, 1.0F, !this.field4717 ? 1.0F : (float) MathHelper.ceil(MathHelper.clamp(var7, 0.0F, 1.0F)));
       method5698(var1, 0, 0, this.width, this.height, 0.0F, 0.0F, 16, 128, 16, 128);
       float var11 = !this.field4717 ? 1.0F : MathHelper.clamp(var7 - 1.0F, 0.0F, 1.0F);
-      int var12 = MathHelper.method37773(var11 * 255.0F) << 24;
+      int var12 = MathHelper.ceil(var11 * 255.0F) << 24;
       if ((var12 & -67108864) != 0) {
          this.mc.getTextureManager().bindTexture(field4710);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, var11);

@@ -1,5 +1,5 @@
 package mapped;
 
-public interface Class867<T extends Class5812> {
+public interface Class867<T extends Container> {
    T method2628();
 }

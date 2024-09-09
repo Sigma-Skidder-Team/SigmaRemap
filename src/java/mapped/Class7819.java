@@ -119,9 +119,9 @@ public class Class7819 {
       }
 
       if (this.field33537.method12288().isEmpty()) {
-         this.field33538.getChunkProvider().method7375(Class8561.field38481, new Class7481(0, 0), 9, Class2341.field16010);
+         this.field33538.getChunkProvider().method7375(Class8561.field38481, new ChunkPos(0, 0), 9, Class2341.field16010);
       } else {
-         this.field33538.getChunkProvider().method7374(Class8561.field38481, new Class7481(0, 0), 9, Class2341.field16010);
+         this.field33538.getChunkProvider().registerTicket(Class8561.field38481, new ChunkPos(0, 0), 9, Class2341.field16010);
          boolean var3 = this.method26116();
          if (this.field33548 && var3) {
             this.method26111();
@@ -173,7 +173,7 @@ public class Class7819 {
          this.field33545 = false;
          if (!var3) {
             field33535.info("But we didn't have a portal, let's remove it.");
-            var5.method2904();
+            var5.remove();
             this.field33547 = null;
          }
       } else {
@@ -349,7 +349,7 @@ public class Class7819 {
       if (this.field33549 == null) {
          this.field33549 = this.field33538.method7006(Class101.field300, Class2909.field17994).down();
 
-         while (this.field33538.getBlockState(this.field33549).method23448(Blocks.BEDROCK) && this.field33549.getY() > this.field33538.method6776()) {
+         while (this.field33538.getBlockState(this.field33549).isIn(Blocks.BEDROCK) && this.field33549.getY() > this.field33538.method6776()) {
             this.field33549 = this.field33549.down();
          }
       }
@@ -359,10 +359,10 @@ public class Class7819 {
 
    private Class1007 method26123() {
       this.field33538.getChunkAt(new BlockPos(0, 128, 0));
-      Class1007 var3 = EntityType.field41024.method33215(this.field33538);
+      Class1007 var3 = EntityType.field41024.create(this.field33538);
       var3.method4336().method32671(Class9598.field44896);
-      var3.method3273(0.0, 128.0, 0.0, this.field33538.rand.nextFloat() * 360.0F, 0.0F);
-      this.field33538.method6916(var3);
+      var3.setLocationAndAngles(0.0, 128.0, 0.0, this.field33538.rand.nextFloat() * 360.0F, 0.0F);
+      this.field33538.addEntity(var3);
       this.field33547 = var3.getUniqueID();
       return var3;
    }
@@ -441,7 +441,7 @@ public class Class7819 {
                for (int var6 = 0; var6 < this.field33540.method38653(); var6++) {
                   for (int var7 = 0; var7 < this.field33540.method38652(); var7++) {
                      Class9632 var8 = var4.method33881(var5, var6, var7);
-                     if (var8.method37548().method23448(Blocks.BEDROCK) || var8.method37548().method23448(Blocks.field36649)) {
+                     if (var8.method37548().isIn(Blocks.BEDROCK) || var8.method37548().isIn(Blocks.field36649)) {
                         this.field33538.setBlockState(var8.method37551(), Blocks.field36651.method11579());
                      }
                   }

@@ -25,9 +25,9 @@ public class Class7331 implements Class7329 {
    }
 
    @Override
-   public Class8513 method23229(Class6619 var1) {
-      Class8513 var4 = var1.method20176();
-      return new Class8513((float)this.field31416.method31754((double)var4.field37220), (float)this.field31417.method31754((double)var4.field37221));
+   public Vector2f method23229(Class6619 var1) {
+      Vector2f var4 = var1.method20176();
+      return new Vector2f((float)this.field31416.method31754((double)var4.field37220), (float)this.field31417.method31754((double)var4.field37221));
    }
 
    @Override

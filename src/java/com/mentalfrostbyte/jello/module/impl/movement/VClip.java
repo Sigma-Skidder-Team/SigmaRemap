@@ -30,7 +30,7 @@ public class VClip extends Module {
     @EventTarget
     private void method16289(ClickEvent var1) {
         if (this.isEnabled()) {
-            if (mc.gameSettings.keyBindSneak.isKeyDown() && var1.method13976() == ClickEvent.Button.RIGHT) {
+            if (mc.gameSettings.keyBindSneak.isKeyDown() && var1.getButton() == ClickEvent.Button.RIGHT) {
                 if (!(mc.player.rotationPitch < 0.0F)) {
                     this.method16294(this.method16292());
                 } else {
@@ -42,15 +42,15 @@ public class VClip extends Module {
 
     @EventTarget
     private void method16290(SendPacketEvent var1) {
-        if (var1.method13932() instanceof CChatMessagePacket) {
-            CChatMessagePacket var4 = (CChatMessagePacket) var1.method13932();
+        if (var1.getPacket() instanceof CChatMessagePacket) {
+            CChatMessagePacket var4 = (CChatMessagePacket) var1.getPacket();
             String var5 = var4.getMessage();
             String var6 = "hclip";
             if (!var5.startsWith("/" + var6)) {
                 return;
             }
 
-            var1.method13900(true);
+            var1.setCancelled(true);
             int var7 = 0;
             var5 = var5.replace("/" + var6, "").replaceAll("\\s", "");
             if (method16291(var5)) {

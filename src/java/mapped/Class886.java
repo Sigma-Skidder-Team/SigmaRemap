@@ -36,7 +36,7 @@ public class Class886 extends AbstractArrowEntity {
    public Class886(World var1, LivingEntity var2, ItemStack var3) {
       super(EntityType.field41093, var2, var1);
       this.field5113 = var3.copy();
-      this.dataManager.method35446(field5111, (byte)Class7858.method26336(var3));
+      this.dataManager.method35446(field5111, (byte) EnchantmentHelper.method26336(var3));
       this.dataManager.method35446(field5112, var3.method32159());
    }
 
@@ -65,19 +65,19 @@ public class Class886 extends AbstractArrowEntity {
                this.method3303(this.method3480(), 0.1F);
             }
 
-            this.method2904();
+            this.remove();
          } else if (var4 > 0) {
             this.method3492(true);
-            Vector3d var5 = new Vector3d(var3.getPosX() - this.getPosX(), var3.method3442() - this.getPosY(), var3.getPosZ() - this.getPosZ());
-            this.method3446(this.getPosX(), this.getPosY() + var5.y * 0.015 * (double)var4, this.getPosZ());
+            Vector3d var5 = new Vector3d(var3.getPosX() - this.getPosX(), var3.getPosYEye() - this.getPosY(), var3.getPosZ() - this.getPosZ());
+            this.setRawPosition(this.getPosX(), this.getPosY() + var5.y * 0.015 * (double)var4, this.getPosZ());
             if (this.world.isRemote) {
                this.lastTickPosY = this.getPosY();
             }
 
             double var6 = 0.05 * (double)var4;
-            this.method3434(this.getVec().method11344(0.95).method11338(var5.method11333().method11344(var6)));
+            this.setMotion(this.getMotion().scale(0.95).add(var5.method11333().scale(var6)));
             if (this.field5115 == 0) {
-               this.method2863(SoundEvents.field27150, 10.0F, 1.0F);
+               this.playSound(SoundEvents.field27150, 10.0F, 1.0F);
             }
 
             this.field5115++;
@@ -113,14 +113,14 @@ public class Class886 extends AbstractArrowEntity {
       float var5 = 8.0F;
       if (var4 instanceof LivingEntity) {
          LivingEntity var6 = (LivingEntity)var4;
-         var5 += Class7858.method26318(this.field5113, var6.method3089());
+         var5 += EnchantmentHelper.method26318(this.field5113, var6.getCreatureAttribute());
       }
 
       Entity var12 = this.method3460();
       DamageSource var7 = DamageSource.method31119(this, (Entity)(var12 != null ? var12 : this));
       this.field5114 = true;
       SoundEvent var8 = SoundEvents.field27148;
-      if (var4.method2741(var7, var5)) {
+      if (var4.attackEntityFrom(var7, var5)) {
          if (var4.getType() == EntityType.field41025) {
             return;
          }
@@ -128,29 +128,29 @@ public class Class886 extends AbstractArrowEntity {
          if (var4 instanceof LivingEntity) {
             LivingEntity var9 = (LivingEntity)var4;
             if (var12 instanceof LivingEntity) {
-               Class7858.method26320(var9, var12);
-               Class7858.method26321((LivingEntity)var12, var9);
+               EnchantmentHelper.applyThornEnchantments(var9, var12);
+               EnchantmentHelper.applyArthropodEnchantments((LivingEntity)var12, var9);
             }
 
             this.method3478(var9);
          }
       }
 
-      this.method3434(this.getVec().method11347(-0.01, -0.1, -0.01));
+      this.setMotion(this.getMotion().method11347(-0.01, -0.1, -0.01));
       float var13 = 1.0F;
-      if (this.world instanceof ServerWorld && this.world.method6794() && Class7858.method26338(this.field5113)) {
+      if (this.world instanceof ServerWorld && this.world.method6794() && EnchantmentHelper.method26338(this.field5113)) {
          BlockPos var10 = var4.getPosition();
          if (this.world.method7022(var10)) {
-            Class906 var11 = EntityType.field41046.method33215(this.world);
-            var11.method3271(Vector3d.method11330(var10));
+            Class906 var11 = EntityType.field41046.create(this.world);
+            var11.moveForced(Vector3d.method11330(var10));
             var11.method3550(!(var12 instanceof ServerPlayerEntity) ? null : (ServerPlayerEntity)var12);
-            this.world.method6916(var11);
+            this.world.addEntity(var11);
             var8 = SoundEvents.field27155;
             var13 = 5.0F;
          }
       }
 
-      this.method2863(var8, var13, 1.0F);
+      this.playSound(var8, var13, 1.0F);
    }
 
    @Override
@@ -159,27 +159,27 @@ public class Class886 extends AbstractArrowEntity {
    }
 
    @Override
-   public void method3279(PlayerEntity var1) {
+   public void onCollideWithPlayer(PlayerEntity var1) {
       Entity var4 = this.method3460();
       if (var4 == null || var4.getUniqueID() == var1.getUniqueID()) {
-         super.method3279(var1);
+         super.onCollideWithPlayer(var1);
       }
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("Trident", 10)) {
          this.field5113 = ItemStack.method32104(var1.getCompound("Trident"));
       }
 
       this.field5114 = var1.getBoolean("DealtDamage");
-      this.dataManager.method35446(field5111, (byte)Class7858.method26336(this.field5113));
+      this.dataManager.method35446(field5111, (byte) EnchantmentHelper.method26336(this.field5113));
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.put("Trident", this.field5113.method32112(new CompoundNBT()));
       var1.putBoolean("DealtDamage", this.field5114);
    }
@@ -198,7 +198,7 @@ public class Class886 extends AbstractArrowEntity {
    }
 
    @Override
-   public boolean method3290(double var1, double var3, double var5) {
+   public boolean isInRangeToRender3d(double var1, double var3, double var5) {
       return true;
    }
 }

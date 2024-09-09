@@ -37,7 +37,7 @@ public class Class3414 extends Block {
    public boolean method12052(IBlockReader var1, BlockPos var2) {
       for (Direction var8 : Direction.values()) {
          FluidState var9 = var1.getFluidState(var2.method8349(var8));
-         if (var9.method23486(Class8953.field40469)) {
+         if (var9.method23486(FluidTags.field40469)) {
             return true;
          }
       }

@@ -10,7 +10,6 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.util.DamageSource;
-import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -24,7 +23,7 @@ import java.util.UUID;
 
 public class Class905 extends ProjectileEntity {
    private Entity field5163;
-   private Direction field5164;
+   private net.minecraft.util.Direction field5164;
    private int field5165;
    private double field5166;
    private double field5167;
@@ -38,20 +37,20 @@ public class Class905 extends ProjectileEntity {
 
    public Class905(World var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       this(EntityType.field41076, var1);
-      this.method3273(var2, var4, var6, this.rotationYaw, this.rotationPitch);
-      this.method3435(var8, var10, var12);
+      this.setLocationAndAngles(var2, var4, var6, this.rotationYaw, this.rotationPitch);
+      this.setMotion(var8, var10, var12);
    }
 
-   public Class905(World var1, LivingEntity var2, Entity var3, Class113 var4) {
+   public Class905(World var1, LivingEntity var2, Entity var3, Direction var4) {
       this(EntityType.field41076, var1);
       this.setShooter(var2);
       BlockPos var7 = var2.getPosition();
       double var8 = (double)var7.getX() + 0.5;
       double var10 = (double)var7.getY() + 0.5;
       double var12 = (double)var7.getZ() + 0.5;
-      this.method3273(var8, var10, var12, this.rotationYaw, this.rotationPitch);
+      this.setLocationAndAngles(var8, var10, var12, this.rotationYaw, this.rotationPitch);
       this.field5163 = var3;
-      this.field5164 = Direction.field673;
+      this.field5164 = net.minecraft.util.Direction.field673;
       this.method3548(var4);
    }
 
@@ -61,31 +60,31 @@ public class Class905 extends ProjectileEntity {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.field5163 != null) {
          var1.method104("Target", this.field5163.getUniqueID());
       }
 
       if (this.field5164 != null) {
-         var1.method102("Dir", this.field5164.getIndex());
+         var1.putInt("Dir", this.field5164.getIndex());
       }
 
-      var1.method102("Steps", this.field5165);
+      var1.putInt("Steps", this.field5165);
       var1.method108("TXD", this.field5166);
       var1.method108("TYD", this.field5167);
       var1.method108("TZD", this.field5168);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field5165 = var1.getInt("Steps");
       this.field5166 = var1.getDouble("TXD");
       this.field5167 = var1.getDouble("TYD");
       this.field5168 = var1.getDouble("TZD");
       if (var1.contains("Dir", 99)) {
-         this.field5164 = Direction.byIndex(var1.getInt("Dir"));
+         this.field5164 = net.minecraft.util.Direction.byIndex(var1.getInt("Dir"));
       }
 
       if (var1.method106("Target")) {
@@ -97,15 +96,15 @@ public class Class905 extends ProjectileEntity {
    public void registerData() {
    }
 
-   private void method3547(Direction var1) {
+   private void method3547(net.minecraft.util.Direction var1) {
       this.field5164 = var1;
    }
 
-   private void method3548(Class113 var1) {
+   private void method3548(Direction var1) {
       double var4 = 0.5;
       BlockPos var6;
       if (this.field5163 != null) {
-         var4 = (double)this.field5163.method3430() * 0.5;
+         var4 = (double)this.field5163.getHeight() * 0.5;
          var6 = new BlockPos(this.field5163.getPosX(), this.field5163.getPosY() + var4, this.field5163.getPosZ());
       } else {
          var6 = this.getPosition().down();
@@ -114,40 +113,40 @@ public class Class905 extends ProjectileEntity {
       double var7 = (double)var6.getX() + 0.5;
       double var9 = (double)var6.getY() + var4;
       double var11 = (double)var6.getZ() + 0.5;
-      Direction var13 = null;
+      net.minecraft.util.Direction var13 = null;
       if (!var6.method8317(this.getPositionVec(), 2.0)) {
          BlockPos var22 = this.getPosition();
          ArrayList var23 = Lists.newArrayList();
-         if (var1 != Class113.field413) {
+         if (var1 != Direction.field413) {
             if (var22.getX() < var6.getX() && this.world.method7007(var22.east())) {
-               var23.add(Direction.EAST);
+               var23.add(net.minecraft.util.Direction.EAST);
             } else if (var22.getX() > var6.getX() && this.world.method7007(var22.west())) {
-               var23.add(Direction.WEST);
+               var23.add(net.minecraft.util.Direction.WEST);
             }
          }
 
-         if (var1 != Class113.field414) {
+         if (var1 != Direction.field414) {
             if (var22.getY() < var6.getY() && this.world.method7007(var22.up())) {
-               var23.add(Direction.field673);
+               var23.add(net.minecraft.util.Direction.field673);
             } else if (var22.getY() > var6.getY() && this.world.method7007(var22.down())) {
-               var23.add(Direction.DOWN);
+               var23.add(net.minecraft.util.Direction.DOWN);
             }
          }
 
-         if (var1 != Class113.field415) {
+         if (var1 != Direction.field415) {
             if (var22.getZ() < var6.getZ() && this.world.method7007(var22.south())) {
-               var23.add(Direction.SOUTH);
+               var23.add(net.minecraft.util.Direction.SOUTH);
             } else if (var22.getZ() > var6.getZ() && this.world.method7007(var22.north())) {
-               var23.add(Direction.NORTH);
+               var23.add(net.minecraft.util.Direction.NORTH);
             }
          }
 
-         var13 = Direction.method552(this.rand);
+         var13 = net.minecraft.util.Direction.method552(this.rand);
          if (!var23.isEmpty()) {
-            var13 = (Direction)var23.get(this.rand.nextInt(var23.size()));
+            var13 = (net.minecraft.util.Direction)var23.get(this.rand.nextInt(var23.size()));
          } else {
             for (int var24 = 5; !this.world.method7007(var22.method8349(var13)) && var24 > 0; var24--) {
-               var13 = Direction.method552(this.rand);
+               var13 = net.minecraft.util.Direction.method552(this.rand);
             }
          }
 
@@ -160,7 +159,7 @@ public class Class905 extends ProjectileEntity {
       double var14 = var7 - this.getPosX();
       double var16 = var9 - this.getPosY();
       double var18 = var11 - this.getPosZ();
-      double var20 = (double) MathHelper.method37766(var14 * var14 + var16 * var16 + var18 * var18);
+      double var20 = (double) MathHelper.sqrt(var14 * var14 + var16 * var16 + var18 * var18);
       if (var20 != 0.0) {
          this.field5166 = var14 / var20 * 0.15;
          this.field5167 = var16 / var20 * 0.15;
@@ -178,7 +177,7 @@ public class Class905 extends ProjectileEntity {
    @Override
    public void method3447() {
       if (this.world.method6997() == Difficulty.field14351) {
-         this.method2904();
+         this.remove();
       }
    }
 
@@ -195,15 +194,15 @@ public class Class905 extends ProjectileEntity {
 
          if (this.field5163 == null || !this.field5163.isAlive() || this.field5163 instanceof PlayerEntity && ((PlayerEntity)this.field5163).isSpectator()) {
             if (!this.method3247()) {
-               this.method3434(this.getVec().method11339(0.0, -0.04, 0.0));
+               this.setMotion(this.getMotion().add(0.0, -0.04, 0.0));
             }
          } else {
-            this.field5166 = MathHelper.method37778(this.field5166 * 1.025, -1.0, 1.0);
-            this.field5167 = MathHelper.method37778(this.field5167 * 1.025, -1.0, 1.0);
-            this.field5168 = MathHelper.method37778(this.field5168 * 1.025, -1.0, 1.0);
-            Vector3d var3 = this.getVec();
-            this.method3434(
-               var3.method11339((this.field5166 - var3.x) * 0.2, (this.field5167 - var3.y) * 0.2, (this.field5168 - var3.z) * 0.2)
+            this.field5166 = MathHelper.clamp(this.field5166 * 1.025, -1.0, 1.0);
+            this.field5167 = MathHelper.clamp(this.field5167 * 1.025, -1.0, 1.0);
+            this.field5168 = MathHelper.clamp(this.field5168 * 1.025, -1.0, 1.0);
+            Vector3d var3 = this.getMotion();
+            this.setMotion(
+               var3.add((this.field5166 - var3.x) * 0.2, (this.field5167 - var3.y) * 0.2, (this.field5168 - var3.z) * 0.2)
             );
          }
 
@@ -213,8 +212,8 @@ public class Class905 extends ProjectileEntity {
          }
       }
 
-      this.method3240();
-      Vector3d var8 = this.getVec();
+      this.doBlockCollisions();
+      Vector3d var8 = this.getMotion();
       this.setPosition(this.getPosX() + var8.x, this.getPosY() + var8.y, this.getPosZ() + var8.z);
       Class9456.method36388(this, 0.5F);
       if (!this.world.isRemote) {
@@ -222,18 +221,18 @@ public class Class905 extends ProjectileEntity {
             if (this.field5165 > 0) {
                this.field5165--;
                if (this.field5165 == 0) {
-                  this.method3548(this.field5164 != null ? this.field5164.method544() : null);
+                  this.method3548(this.field5164 != null ? this.field5164.getAxis() : null);
                }
             }
 
             if (this.field5164 != null) {
                BlockPos var4 = this.getPosition();
-               Class113 var5 = this.field5164.method544();
+               Direction var5 = this.field5164.getAxis();
                if (!this.world.method6765(var4.method8349(this.field5164), this)) {
                   BlockPos var6 = this.field5163.getPosition();
-                  if (var5 == Class113.field413 && var4.getX() == var6.getX()
-                     || var5 == Class113.field415 && var4.getZ() == var6.getZ()
-                     || var5 == Class113.field414 && var4.getY() == var6.getY()) {
+                  if (var5 == Direction.field413 && var4.getX() == var6.getX()
+                     || var5 == Direction.field415 && var4.getZ() == var6.getZ()
+                     || var5 == Direction.field414 && var4.getY() == var6.getY()) {
                      this.method3548(var5);
                   }
                } else {
@@ -243,7 +242,7 @@ public class Class905 extends ProjectileEntity {
          }
       } else {
          this.world
-            .method6746(
+            .addParticle(
                ParticleTypes.field34067,
                this.getPosX() - var8.x,
                this.getPosY() - var8.y + 0.15,
@@ -261,7 +260,7 @@ public class Class905 extends ProjectileEntity {
    }
 
    @Override
-   public boolean method3327() {
+   public boolean isBurning() {
       return false;
    }
 
@@ -281,11 +280,11 @@ public class Class905 extends ProjectileEntity {
       Entity var4 = var1.getEntity();
       Entity var5 = this.method3460();
       LivingEntity var6 = !(var5 instanceof LivingEntity) ? null : (LivingEntity)var5;
-      boolean var7 = var4.method2741(DamageSource.method31116(this, var6).method31130(), 4.0F);
+      boolean var7 = var4.attackEntityFrom(DamageSource.method31116(this, var6).method31130(), 4.0F);
       if (var7) {
-         this.method3399(var6, var4);
+         this.applyEnchantments(var6, var4);
          if (var4 instanceof LivingEntity) {
-            ((LivingEntity)var4).method3035(new Class2023(Effects.LEVITATION, 200));
+            ((LivingEntity)var4).addPotionEffect(new EffectInstance(Effects.LEVITATION, 200));
          }
       }
    }
@@ -293,34 +292,34 @@ public class Class905 extends ProjectileEntity {
    @Override
    public void method3466(BlockRayTraceResult var1) {
       super.method3466(var1);
-      ((ServerWorld)this.world).method6939(ParticleTypes.field34070, this.getPosX(), this.getPosY(), this.getPosZ(), 2, 0.2, 0.2, 0.2, 0.0);
-      this.method2863(SoundEvents.field27046, 1.0F, 1.0F);
+      ((ServerWorld)this.world).spawnParticle(ParticleTypes.field34070, this.getPosX(), this.getPosY(), this.getPosZ(), 2, 0.2, 0.2, 0.2, 0.0);
+      this.playSound(SoundEvents.field27046, 1.0F, 1.0F);
    }
 
    @Override
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
-      this.method2904();
+      this.remove();
    }
 
    @Override
-   public boolean method3139() {
+   public boolean canBeCollidedWith() {
       return true;
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (!this.world.isRemote) {
-         this.method2863(SoundEvents.field27047, 1.0F, 1.0F);
-         ((ServerWorld)this.world).method6939(ParticleTypes.field34054, this.getPosX(), this.getPosY(), this.getPosZ(), 15, 0.2, 0.2, 0.2, 0.0);
-         this.method2904();
+         this.playSound(SoundEvents.field27047, 1.0F, 1.0F);
+         ((ServerWorld)this.world).spawnParticle(ParticleTypes.field34054, this.getPosX(), this.getPosY(), this.getPosZ(), 15, 0.2, 0.2, 0.2, 0.0);
+         this.remove();
       }
 
       return true;
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this);
    }
 }

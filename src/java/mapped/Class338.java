@@ -16,7 +16,7 @@ public class Class338 implements Runnable {
    @Override
    public void run() {
       boolean var3 = (float)Math.round((float)Math.random() * 100.0F) <= this.field1478.getNumberValueBySettingName("Hit Chance");
-      float var4 = Math.max(KillAura.method16837().player.method3275(KillAura.field23949.method27397()), this.field1478.getNumberValueBySettingName("Range"));
+      float var4 = Math.max(KillAura.method16837().player.getDistance(KillAura.field23949.method27397()), this.field1478.getNumberValueBySettingName("Range"));
       EntityRayTraceResult var5;
       if (!this.field1478.getStringSettingValueByName("Attack Mode").equals("Pre")) {
          var5 = ColorUtils.method17712(
@@ -24,8 +24,8 @@ public class Class338 implements Runnable {
          );
       } else {
          double var6 = Math.sqrt(
-            KillAura.method16838().player.getVec().x * KillAura.method16839().player.getVec().x
-               + KillAura.method16840().player.getVec().z * KillAura.method16841().player.getVec().z
+            KillAura.method16838().player.getMotion().x * KillAura.method16839().player.getMotion().x
+               + KillAura.method16840().player.getMotion().z * KillAura.method16841().player.getMotion().z
          );
          double var10003 = (double)this.field1477;
          var5 = ColorUtils.method17712(KillAura.method16842(this.field1478).field32084, KillAura.method16842(this.field1478).field32085, var4, var10003 + var6);

@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableList;
 import com.google.gson.JsonElement;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.item.Items;
-import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Arrays;
@@ -58,37 +57,37 @@ public class Class9407 {
    }
 
    private static Class3629 method35810() {
-      return Class3629.<Direction>method12310(Class8820.field39722)
-         .method12320(Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
-         .method12320(Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
-         .method12320(Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
-         .method12320(Direction.NORTH, Class5138.method15912());
+      return Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39722)
+         .method12320(net.minecraft.util.Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
+         .method12320(net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+         .method12320(net.minecraft.util.Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
+         .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912());
    }
 
    private static Class3629 method35811() {
-      return Class3629.<Direction>method12310(Class8820.field39722)
-         .method12320(Direction.SOUTH, Class5138.method15912())
-         .method12320(Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
-         .method12320(Direction.NORTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
-         .method12320(Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819));
+      return Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39722)
+         .method12320(net.minecraft.util.Direction.SOUTH, Class5138.method15912())
+         .method12320(net.minecraft.util.Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
+         .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+         .method12320(net.minecraft.util.Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819));
    }
 
    private static Class3629 method35812() {
-      return Class3629.<Direction>method12310(Class8820.field39722)
-         .method12320(Direction.EAST, Class5138.method15912())
-         .method12320(Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
-         .method12320(Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
-         .method12320(Direction.NORTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819));
+      return Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39722)
+         .method12320(net.minecraft.util.Direction.EAST, Class5138.method15912())
+         .method12320(net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
+         .method12320(net.minecraft.util.Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+         .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819));
    }
 
    private static Class3629 method35813() {
-      return Class3629.<Direction>method12310(Class8820.field39720)
-         .method12320(Direction.DOWN, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
-         .method12320(Direction.field673, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13819))
-         .method12320(Direction.NORTH, Class5138.method15912())
-         .method12320(Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
-         .method12320(Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
-         .method12320(Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817));
+      return Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39720)
+         .method12320(net.minecraft.util.Direction.DOWN, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
+         .method12320(net.minecraft.util.Direction.field673, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13819))
+         .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912())
+         .method12320(net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+         .method12320(net.minecraft.util.Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
+         .method12320(net.minecraft.util.Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817));
    }
 
    private static Class5148 method35814(Block var0, ResourceLocation var1) {
@@ -139,14 +138,14 @@ public class Class9407 {
                .method12320(true, Class5138.method15912().method15911(Class6891.field29864, var2))
          )
          .method15939(
-            Class3629.<Class103, Direction>method12311(Class8820.field39724, Class8820.field39722)
-               .method12300(Class103.field313, Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
-               .method12300(Class103.field313, Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
-               .method12300(Class103.field313, Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
-               .method12300(Class103.field313, Direction.NORTH, Class5138.method15912())
+            Class3629.<Class103, net.minecraft.util.Direction>method12311(Class8820.field39724, Class8820.field39722)
+               .method12300(Class103.field313, net.minecraft.util.Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
+               .method12300(Class103.field313, net.minecraft.util.Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
+               .method12300(Class103.field313, net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+               .method12300(Class103.field313, net.minecraft.util.Direction.NORTH, Class5138.method15912())
                .method12300(
                   Class103.field314,
-                  Direction.EAST,
+                  net.minecraft.util.Direction.EAST,
                   Class5138.method15912()
                      .method15911(Class6891.field29863, Class2120.field13817)
                      .method15911(Class6891.field29862, Class2120.field13817)
@@ -154,7 +153,7 @@ public class Class9407 {
                )
                .method12300(
                   Class103.field314,
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class5138.method15912()
                      .method15911(Class6891.field29863, Class2120.field13819)
                      .method15911(Class6891.field29862, Class2120.field13817)
@@ -162,7 +161,7 @@ public class Class9407 {
                )
                .method12300(
                   Class103.field314,
-                  Direction.SOUTH,
+                  net.minecraft.util.Direction.SOUTH,
                   Class5138.method15912()
                      .method15911(Class6891.field29863, Class2120.field13818)
                      .method15911(Class6891.field29862, Class2120.field13817)
@@ -170,114 +169,114 @@ public class Class9407 {
                )
                .method12300(
                   Class103.field314,
-                  Direction.NORTH,
+                  net.minecraft.util.Direction.NORTH,
                   Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29865, true)
                )
                .method12300(
                   Class103.field315,
-                  Direction.EAST,
+                  net.minecraft.util.Direction.EAST,
                   Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819).method15911(Class6891.field29862, Class2120.field13818)
                )
                .method12300(
                   Class103.field315,
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817).method15911(Class6891.field29862, Class2120.field13818)
                )
-               .method12300(Class103.field315, Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
+               .method12300(Class103.field315, net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
                .method12300(
                   Class103.field315,
-                  Direction.NORTH,
+                  net.minecraft.util.Direction.NORTH,
                   Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818).method15911(Class6891.field29862, Class2120.field13818)
                )
          );
    }
 
-   private static Class3632<Direction, Class84, Class183, Boolean> method35821(
-           Class3632<Direction, Class84, Class183, Boolean> var0, Class84 var1, ResourceLocation var2, ResourceLocation var3
+   private static Class3632<net.minecraft.util.Direction, Class84, Class183, Boolean> method35821(
+           Class3632<net.minecraft.util.Direction, Class84, Class183, Boolean> var0, Class84 var1, ResourceLocation var2, ResourceLocation var3
    ) {
-      return var0.method12324(Direction.EAST, var1, Class183.field664, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+      return var0.method12324(net.minecraft.util.Direction.EAST, var1, Class183.field664, false, Class5138.method15912().method15911(Class6891.field29864, var2))
          .method12324(
-            Direction.SOUTH,
+            net.minecraft.util.Direction.SOUTH,
             var1,
             Class183.field664,
             false,
             Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13817)
          )
          .method12324(
-            Direction.WEST,
+            net.minecraft.util.Direction.WEST,
             var1,
             Class183.field664,
             false,
             Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13818)
          )
          .method12324(
-            Direction.NORTH,
+            net.minecraft.util.Direction.NORTH,
             var1,
             Class183.field664,
             false,
             Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13819)
          )
-         .method12324(Direction.EAST, var1, Class183.field665, false, Class5138.method15912().method15911(Class6891.field29864, var3))
+         .method12324(net.minecraft.util.Direction.EAST, var1, Class183.field665, false, Class5138.method15912().method15911(Class6891.field29864, var3))
          .method12324(
-            Direction.SOUTH,
+            net.minecraft.util.Direction.SOUTH,
             var1,
             Class183.field665,
             false,
             Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13817)
          )
          .method12324(
-            Direction.WEST,
+            net.minecraft.util.Direction.WEST,
             var1,
             Class183.field665,
             false,
             Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13818)
          )
          .method12324(
-            Direction.NORTH,
+            net.minecraft.util.Direction.NORTH,
             var1,
             Class183.field665,
             false,
             Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13819)
          )
          .method12324(
-            Direction.EAST,
+            net.minecraft.util.Direction.EAST,
             var1,
             Class183.field664,
             true,
             Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13817)
          )
          .method12324(
-            Direction.SOUTH,
+            net.minecraft.util.Direction.SOUTH,
             var1,
             Class183.field664,
             true,
             Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13818)
          )
          .method12324(
-            Direction.WEST,
+            net.minecraft.util.Direction.WEST,
             var1,
             Class183.field664,
             true,
             Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13819)
          )
-         .method12324(Direction.NORTH, var1, Class183.field664, true, Class5138.method15912().method15911(Class6891.field29864, var3))
+         .method12324(net.minecraft.util.Direction.NORTH, var1, Class183.field664, true, Class5138.method15912().method15911(Class6891.field29864, var3))
          .method12324(
-            Direction.EAST,
+            net.minecraft.util.Direction.EAST,
             var1,
             Class183.field665,
             true,
             Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13819)
          )
-         .method12324(Direction.SOUTH, var1, Class183.field665, true, Class5138.method15912().method15911(Class6891.field29864, var2))
+         .method12324(net.minecraft.util.Direction.SOUTH, var1, Class183.field665, true, Class5138.method15912().method15911(Class6891.field29864, var2))
          .method12324(
-            Direction.WEST,
+            net.minecraft.util.Direction.WEST,
             var1,
             Class183.field665,
             true,
             Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13817)
          )
          .method12324(
-            Direction.NORTH,
+            net.minecraft.util.Direction.NORTH,
             var1,
             Class183.field665,
             true,
@@ -290,7 +289,7 @@ public class Class9407 {
          .method15939(
             method35821(
                method35821(
-                  Class3629.<Direction, Class84, Class183, Boolean>method12313(
+                  Class3629.<net.minecraft.util.Direction, Class84, Class183, Boolean>method12313(
                      Class8820.field39722, Class8820.field39734, Class8820.field39767, Class8820.field39702
                   ),
                   Class84.field210,
@@ -404,10 +403,10 @@ public class Class9407 {
    private static Class5146 method35826(Block var0, ResourceLocation var1, ResourceLocation var2, ResourceLocation var3) {
       return Class5148.method15941(var0)
          .method15939(
-            Class3629.<Direction, Class99, Class106>method12312(Class8820.field39722, Class8820.field39735, Class8820.field39771)
-               .method12326(Direction.EAST, Class99.field271, Class106.field329, Class5138.method15912().method15911(Class6891.field29864, var2))
+            Class3629.<net.minecraft.util.Direction, Class99, Class106>method12312(Class8820.field39722, Class8820.field39735, Class8820.field39771)
+               .method12326(net.minecraft.util.Direction.EAST, Class99.field271, Class106.field329, Class5138.method15912().method15911(Class6891.field29864, var2))
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field271,
                   Class106.field329,
                   Class5138.method15912()
@@ -416,7 +415,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.SOUTH,
+                  net.minecraft.util.Direction.SOUTH,
                   Class99.field271,
                   Class106.field329,
                   Class5138.method15912()
@@ -425,7 +424,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.NORTH,
+                  net.minecraft.util.Direction.NORTH,
                   Class99.field271,
                   Class106.field329,
                   Class5138.method15912()
@@ -433,9 +432,9 @@ public class Class9407 {
                      .method15911(Class6891.field29863, Class2120.field13819)
                      .method15911(Class6891.field29865, true)
                )
-               .method12326(Direction.EAST, Class99.field271, Class106.field333, Class5138.method15912().method15911(Class6891.field29864, var3))
+               .method12326(net.minecraft.util.Direction.EAST, Class99.field271, Class106.field333, Class5138.method15912().method15911(Class6891.field29864, var3))
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field271,
                   Class106.field333,
                   Class5138.method15912()
@@ -444,7 +443,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.SOUTH,
+                  net.minecraft.util.Direction.SOUTH,
                   Class99.field271,
                   Class106.field333,
                   Class5138.method15912()
@@ -453,7 +452,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.NORTH,
+                  net.minecraft.util.Direction.NORTH,
                   Class99.field271,
                   Class106.field333,
                   Class5138.method15912()
@@ -462,7 +461,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.EAST,
+                  net.minecraft.util.Direction.EAST,
                   Class99.field271,
                   Class106.field332,
                   Class5138.method15912()
@@ -471,7 +470,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field271,
                   Class106.field332,
                   Class5138.method15912()
@@ -479,9 +478,9 @@ public class Class9407 {
                      .method15911(Class6891.field29863, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
-               .method12326(Direction.SOUTH, Class99.field271, Class106.field332, Class5138.method15912().method15911(Class6891.field29864, var3))
+               .method12326(net.minecraft.util.Direction.SOUTH, Class99.field271, Class106.field332, Class5138.method15912().method15911(Class6891.field29864, var3))
                .method12326(
-                  Direction.NORTH,
+                  net.minecraft.util.Direction.NORTH,
                   Class99.field271,
                   Class106.field332,
                   Class5138.method15912()
@@ -489,9 +488,9 @@ public class Class9407 {
                      .method15911(Class6891.field29863, Class2120.field13818)
                      .method15911(Class6891.field29865, true)
                )
-               .method12326(Direction.EAST, Class99.field271, Class106.field331, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(net.minecraft.util.Direction.EAST, Class99.field271, Class106.field331, Class5138.method15912().method15911(Class6891.field29864, var1))
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field271,
                   Class106.field331,
                   Class5138.method15912()
@@ -500,7 +499,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.SOUTH,
+                  net.minecraft.util.Direction.SOUTH,
                   Class99.field271,
                   Class106.field331,
                   Class5138.method15912()
@@ -509,7 +508,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.NORTH,
+                  net.minecraft.util.Direction.NORTH,
                   Class99.field271,
                   Class106.field331,
                   Class5138.method15912()
@@ -518,7 +517,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.EAST,
+                  net.minecraft.util.Direction.EAST,
                   Class99.field271,
                   Class106.field330,
                   Class5138.method15912()
@@ -527,7 +526,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field271,
                   Class106.field330,
                   Class5138.method15912()
@@ -535,9 +534,9 @@ public class Class9407 {
                      .method15911(Class6891.field29863, Class2120.field13817)
                      .method15911(Class6891.field29865, true)
                )
-               .method12326(Direction.SOUTH, Class99.field271, Class106.field330, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(net.minecraft.util.Direction.SOUTH, Class99.field271, Class106.field330, Class5138.method15912().method15911(Class6891.field29864, var1))
                .method12326(
-                  Direction.NORTH,
+                  net.minecraft.util.Direction.NORTH,
                   Class99.field271,
                   Class106.field330,
                   Class5138.method15912()
@@ -546,7 +545,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.EAST,
+                  net.minecraft.util.Direction.EAST,
                   Class99.field270,
                   Class106.field329,
                   Class5138.method15912()
@@ -555,7 +554,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field270,
                   Class106.field329,
                   Class5138.method15912()
@@ -565,7 +564,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.SOUTH,
+                  net.minecraft.util.Direction.SOUTH,
                   Class99.field270,
                   Class106.field329,
                   Class5138.method15912()
@@ -575,7 +574,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.NORTH,
+                  net.minecraft.util.Direction.NORTH,
                   Class99.field270,
                   Class106.field329,
                   Class5138.method15912()
@@ -585,7 +584,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.EAST,
+                  net.minecraft.util.Direction.EAST,
                   Class99.field270,
                   Class106.field333,
                   Class5138.method15912()
@@ -595,7 +594,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field270,
                   Class106.field333,
                   Class5138.method15912()
@@ -605,7 +604,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.SOUTH,
+                  net.minecraft.util.Direction.SOUTH,
                   Class99.field270,
                   Class106.field333,
                   Class5138.method15912()
@@ -615,7 +614,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.NORTH,
+                  net.minecraft.util.Direction.NORTH,
                   Class99.field270,
                   Class106.field333,
                   Class5138.method15912()
@@ -624,7 +623,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.EAST,
+                  net.minecraft.util.Direction.EAST,
                   Class99.field270,
                   Class106.field332,
                   Class5138.method15912()
@@ -633,7 +632,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field270,
                   Class106.field332,
                   Class5138.method15912()
@@ -643,7 +642,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.SOUTH,
+                  net.minecraft.util.Direction.SOUTH,
                   Class99.field270,
                   Class106.field332,
                   Class5138.method15912()
@@ -653,7 +652,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.NORTH,
+                  net.minecraft.util.Direction.NORTH,
                   Class99.field270,
                   Class106.field332,
                   Class5138.method15912()
@@ -663,7 +662,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.EAST,
+                  net.minecraft.util.Direction.EAST,
                   Class99.field270,
                   Class106.field331,
                   Class5138.method15912()
@@ -673,7 +672,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field270,
                   Class106.field331,
                   Class5138.method15912()
@@ -683,7 +682,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.SOUTH,
+                  net.minecraft.util.Direction.SOUTH,
                   Class99.field270,
                   Class106.field331,
                   Class5138.method15912()
@@ -693,7 +692,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.NORTH,
+                  net.minecraft.util.Direction.NORTH,
                   Class99.field270,
                   Class106.field331,
                   Class5138.method15912()
@@ -702,7 +701,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.EAST,
+                  net.minecraft.util.Direction.EAST,
                   Class99.field270,
                   Class106.field330,
                   Class5138.method15912()
@@ -711,7 +710,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field270,
                   Class106.field330,
                   Class5138.method15912()
@@ -721,7 +720,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.SOUTH,
+                  net.minecraft.util.Direction.SOUTH,
                   Class99.field270,
                   Class106.field330,
                   Class5138.method15912()
@@ -731,7 +730,7 @@ public class Class9407 {
                      .method15911(Class6891.field29865, true)
                )
                .method12326(
-                  Direction.NORTH,
+                  net.minecraft.util.Direction.NORTH,
                   Class99.field270,
                   Class106.field330,
                   Class5138.method15912()
@@ -746,66 +745,66 @@ public class Class9407 {
    private static Class5146 method35827(Block var0, ResourceLocation var1, ResourceLocation var2, ResourceLocation var3) {
       return Class5148.method15941(var0)
          .method15939(
-            Class3629.<Direction, Class99, Boolean>method12312(Class8820.field39722, Class8820.field39735, Class8820.field39702)
-               .method12326(Direction.NORTH, Class99.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+            Class3629.<net.minecraft.util.Direction, Class99, Boolean>method12312(Class8820.field39722, Class8820.field39735, Class8820.field39702)
+               .method12326(net.minecraft.util.Direction.NORTH, Class99.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
                .method12326(
-                  Direction.SOUTH,
+                  net.minecraft.util.Direction.SOUTH,
                   Class99.field271,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
-                  Direction.EAST,
+                  net.minecraft.util.Direction.EAST,
                   Class99.field271,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field271,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29863, Class2120.field13819)
                )
-               .method12326(Direction.NORTH, Class99.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(net.minecraft.util.Direction.NORTH, Class99.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
                .method12326(
-                  Direction.SOUTH,
+                  net.minecraft.util.Direction.SOUTH,
                   Class99.field270,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var1).method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
-                  Direction.EAST,
+                  net.minecraft.util.Direction.EAST,
                   Class99.field270,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var1).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field270,
                   false,
                   Class5138.method15912().method15911(Class6891.field29864, var1).method15911(Class6891.field29863, Class2120.field13819)
                )
-               .method12326(Direction.NORTH, Class99.field271, true, Class5138.method15912().method15911(Class6891.field29864, var3))
+               .method12326(net.minecraft.util.Direction.NORTH, Class99.field271, true, Class5138.method15912().method15911(Class6891.field29864, var3))
                .method12326(
-                  Direction.SOUTH,
+                  net.minecraft.util.Direction.SOUTH,
                   Class99.field271,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
-                  Direction.EAST,
+                  net.minecraft.util.Direction.EAST,
                   Class99.field271,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field271,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13819)
                )
                .method12326(
-                  Direction.NORTH,
+                  net.minecraft.util.Direction.NORTH,
                   Class99.field270,
                   true,
                   Class5138.method15912()
@@ -814,7 +813,7 @@ public class Class9407 {
                      .method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
-                  Direction.SOUTH,
+                  net.minecraft.util.Direction.SOUTH,
                   Class99.field270,
                   true,
                   Class5138.method15912()
@@ -823,7 +822,7 @@ public class Class9407 {
                      .method15911(Class6891.field29863, Class2120.field13816)
                )
                .method12326(
-                  Direction.EAST,
+                  net.minecraft.util.Direction.EAST,
                   Class99.field270,
                   true,
                   Class5138.method15912()
@@ -832,7 +831,7 @@ public class Class9407 {
                      .method15911(Class6891.field29863, Class2120.field13819)
                )
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field270,
                   true,
                   Class5138.method15912()
@@ -846,49 +845,49 @@ public class Class9407 {
    private static Class5146 method35828(Block var0, ResourceLocation var1, ResourceLocation var2, ResourceLocation var3) {
       return Class5148.method15941(var0)
          .method15939(
-            Class3629.<Direction, Class99, Boolean>method12312(Class8820.field39722, Class8820.field39735, Class8820.field39702)
-               .method12326(Direction.NORTH, Class99.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
-               .method12326(Direction.SOUTH, Class99.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
-               .method12326(Direction.EAST, Class99.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
-               .method12326(Direction.WEST, Class99.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
-               .method12326(Direction.NORTH, Class99.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
-               .method12326(Direction.SOUTH, Class99.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
-               .method12326(Direction.EAST, Class99.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
-               .method12326(Direction.WEST, Class99.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
-               .method12326(Direction.NORTH, Class99.field271, true, Class5138.method15912().method15911(Class6891.field29864, var3))
+            Class3629.<net.minecraft.util.Direction, Class99, Boolean>method12312(Class8820.field39722, Class8820.field39735, Class8820.field39702)
+               .method12326(net.minecraft.util.Direction.NORTH, Class99.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+               .method12326(net.minecraft.util.Direction.SOUTH, Class99.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+               .method12326(net.minecraft.util.Direction.EAST, Class99.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+               .method12326(net.minecraft.util.Direction.WEST, Class99.field271, false, Class5138.method15912().method15911(Class6891.field29864, var2))
+               .method12326(net.minecraft.util.Direction.NORTH, Class99.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(net.minecraft.util.Direction.SOUTH, Class99.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(net.minecraft.util.Direction.EAST, Class99.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(net.minecraft.util.Direction.WEST, Class99.field270, false, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12326(net.minecraft.util.Direction.NORTH, Class99.field271, true, Class5138.method15912().method15911(Class6891.field29864, var3))
                .method12326(
-                  Direction.SOUTH,
+                  net.minecraft.util.Direction.SOUTH,
                   Class99.field271,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
-                  Direction.EAST,
+                  net.minecraft.util.Direction.EAST,
                   Class99.field271,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field271,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13819)
                )
-               .method12326(Direction.NORTH, Class99.field270, true, Class5138.method15912().method15911(Class6891.field29864, var3))
+               .method12326(net.minecraft.util.Direction.NORTH, Class99.field270, true, Class5138.method15912().method15911(Class6891.field29864, var3))
                .method12326(
-                  Direction.SOUTH,
+                  net.minecraft.util.Direction.SOUTH,
                   Class99.field270,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13818)
                )
                .method12326(
-                  Direction.EAST,
+                  net.minecraft.util.Direction.EAST,
                   Class99.field270,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13817)
                )
                .method12326(
-                  Direction.WEST,
+                  net.minecraft.util.Direction.WEST,
                   Class99.field270,
                   true,
                   Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13819)
@@ -901,11 +900,11 @@ public class Class9407 {
    }
 
    private static Class3629 method35830() {
-      return Class3629.<Class113>method12310(Class8820.field39713)
-         .method12320(Class113.field414, Class5138.method15912())
-         .method12320(Class113.field415, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
+      return Class3629.<Direction>method12310(Class8820.field39713)
+         .method12320(Direction.field414, Class5138.method15912())
+         .method12320(Direction.field415, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
          .method12320(
-            Class113.field413,
+            Direction.field413,
             Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13817)
          );
    }
@@ -931,13 +930,13 @@ public class Class9407 {
    private static Class5146 method35835(Block var0, ResourceLocation var1, ResourceLocation var2) {
       return Class5148.method15941(var0)
          .method15939(
-            Class3629.<Class113>method12310(Class8820.field39713)
-               .method12320(Class113.field414, Class5138.method15912().method15911(Class6891.field29864, var1))
+            Class3629.<Direction>method12310(Class8820.field39713)
+               .method12320(Direction.field414, Class5138.method15912().method15911(Class6891.field29864, var1))
                .method12320(
-                  Class113.field415, Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29862, Class2120.field13817)
+                  Direction.field415, Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29862, Class2120.field13817)
                )
                .method12320(
-                  Class113.field413,
+                  Direction.field413,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29862, Class2120.field13817)
@@ -1085,11 +1084,11 @@ public class Class9407 {
          .accept(
             Class5148.method15942(var2, Class5138.method15912().method15911(Class6891.field29864, var7))
                .method15939(
-                  Class3629.<Direction>method12310(Class8820.field39722)
-                     .method12320(Direction.WEST, Class5138.method15912())
-                     .method12320(Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
-                     .method12320(Direction.NORTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
-                     .method12320(Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+                  Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39722)
+                     .method12320(net.minecraft.util.Direction.WEST, Class5138.method15912())
+                     .method12320(net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
+                     .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
+                     .method12320(net.minecraft.util.Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
                )
          );
       this.field43642
@@ -1332,20 +1331,20 @@ public class Class9407 {
    }
 
    private Class3629 method35879() {
-      return Class3629.<Direction>method12310(Class8820.field39720)
-         .method12320(Direction.DOWN, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
-         .method12320(Direction.field673, Class5138.method15912())
-         .method12320(Direction.NORTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
+      return Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39720)
+         .method12320(net.minecraft.util.Direction.DOWN, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
+         .method12320(net.minecraft.util.Direction.field673, Class5138.method15912())
+         .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
          .method12320(
-            Direction.SOUTH,
+            net.minecraft.util.Direction.SOUTH,
             Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13818)
          )
          .method12320(
-            Direction.WEST,
+            net.minecraft.util.Direction.WEST,
             Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13819)
          )
          .method12320(
-            Direction.EAST,
+            net.minecraft.util.Direction.EAST,
             Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13817)
          );
    }
@@ -1424,68 +1423,68 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field37064)
                .method15939(
-                  Class3629.<Direction, Class85>method12311(Class8820.field39722, Class8820.field39725)
-                     .method12300(Direction.NORTH, Class85.field212, Class5138.method15912().method15911(Class6891.field29864, var3))
+                  Class3629.<net.minecraft.util.Direction, Class85>method12311(Class8820.field39722, Class8820.field39725)
+                     .method12300(net.minecraft.util.Direction.NORTH, Class85.field212, Class5138.method15912().method15911(Class6891.field29864, var3))
                      .method12300(
-                        Direction.SOUTH,
+                        net.minecraft.util.Direction.SOUTH,
                         Class85.field212,
                         Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12300(
-                        Direction.EAST,
+                        net.minecraft.util.Direction.EAST,
                         Class85.field212,
                         Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12300(
-                        Direction.WEST,
+                        net.minecraft.util.Direction.WEST,
                         Class85.field212,
                         Class5138.method15912().method15911(Class6891.field29864, var3).method15911(Class6891.field29863, Class2120.field13819)
                      )
-                     .method12300(Direction.NORTH, Class85.field213, Class5138.method15912().method15911(Class6891.field29864, var4))
+                     .method12300(net.minecraft.util.Direction.NORTH, Class85.field213, Class5138.method15912().method15911(Class6891.field29864, var4))
                      .method12300(
-                        Direction.SOUTH,
+                        net.minecraft.util.Direction.SOUTH,
                         Class85.field213,
                         Class5138.method15912().method15911(Class6891.field29864, var4).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12300(
-                        Direction.EAST,
+                        net.minecraft.util.Direction.EAST,
                         Class85.field213,
                         Class5138.method15912().method15911(Class6891.field29864, var4).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12300(
-                        Direction.WEST,
+                        net.minecraft.util.Direction.WEST,
                         Class85.field213,
                         Class5138.method15912().method15911(Class6891.field29864, var4).method15911(Class6891.field29863, Class2120.field13819)
                      )
                      .method12300(
-                        Direction.NORTH,
+                        net.minecraft.util.Direction.NORTH,
                         Class85.field214,
                         Class5138.method15912().method15911(Class6891.field29864, var5).method15911(Class6891.field29863, Class2120.field13819)
                      )
                      .method12300(
-                        Direction.SOUTH,
+                        net.minecraft.util.Direction.SOUTH,
                         Class85.field214,
                         Class5138.method15912().method15911(Class6891.field29864, var5).method15911(Class6891.field29863, Class2120.field13817)
                      )
-                     .method12300(Direction.EAST, Class85.field214, Class5138.method15912().method15911(Class6891.field29864, var5))
+                     .method12300(net.minecraft.util.Direction.EAST, Class85.field214, Class5138.method15912().method15911(Class6891.field29864, var5))
                      .method12300(
-                        Direction.WEST,
+                        net.minecraft.util.Direction.WEST,
                         Class85.field214,
                         Class5138.method15912().method15911(Class6891.field29864, var5).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12300(
-                        Direction.SOUTH,
+                        net.minecraft.util.Direction.SOUTH,
                         Class85.field215,
                         Class5138.method15912().method15911(Class6891.field29864, var6).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12300(
-                        Direction.NORTH,
+                        net.minecraft.util.Direction.NORTH,
                         Class85.field215,
                         Class5138.method15912().method15911(Class6891.field29864, var6).method15911(Class6891.field29863, Class2120.field13819)
                      )
-                     .method12300(Direction.EAST, Class85.field215, Class5138.method15912().method15911(Class6891.field29864, var6))
+                     .method12300(net.minecraft.util.Direction.EAST, Class85.field215, Class5138.method15912().method15911(Class6891.field29864, var6))
                      .method12300(
-                        Direction.WEST,
+                        net.minecraft.util.Direction.WEST,
                         Class85.field215,
                         Class5138.method15912().method15911(Class6891.field29864, var6).method15911(Class6891.field29863, Class2120.field13818)
                      )
@@ -1498,41 +1497,41 @@ public class Class9407 {
          .accept(
             Class5148.method15942(Blocks.field37060, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33723(Blocks.field37060)))
                .method15939(
-                  Class3629.<Class103, Direction>method12311(Class8820.field39724, Class8820.field39722)
-                     .method12300(Class103.field313, Direction.NORTH, Class5138.method15912())
-                     .method12300(Class103.field313, Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
-                     .method12300(Class103.field313, Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
-                     .method12300(Class103.field313, Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
-                     .method12300(Class103.field314, Direction.NORTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
+                  Class3629.<Class103, net.minecraft.util.Direction>method12311(Class8820.field39724, Class8820.field39722)
+                     .method12300(Class103.field313, net.minecraft.util.Direction.NORTH, Class5138.method15912())
+                     .method12300(Class103.field313, net.minecraft.util.Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
+                     .method12300(Class103.field313, net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+                     .method12300(Class103.field313, net.minecraft.util.Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
+                     .method12300(Class103.field314, net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
                      .method12300(
                         Class103.field314,
-                        Direction.EAST,
+                        net.minecraft.util.Direction.EAST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12300(
                         Class103.field314,
-                        Direction.SOUTH,
+                        net.minecraft.util.Direction.SOUTH,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12300(
                         Class103.field314,
-                        Direction.WEST,
+                        net.minecraft.util.Direction.WEST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13819)
                      )
-                     .method12300(Class103.field315, Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
+                     .method12300(Class103.field315, net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
                      .method12300(
                         Class103.field315,
-                        Direction.WEST,
+                        net.minecraft.util.Direction.WEST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12300(
                         Class103.field315,
-                        Direction.NORTH,
+                        net.minecraft.util.Direction.NORTH,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12300(
                         Class103.field315,
-                        Direction.EAST,
+                        net.minecraft.util.Direction.EAST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818).method15911(Class6891.field29863, Class2120.field13819)
                      )
                )
@@ -1889,23 +1888,23 @@ public class Class9407 {
          .accept(
             Class5148.method15941(var1)
                .method15939(
-                  Class3629.<Direction>method12310(Class8820.field39720)
+                  Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39720)
                      .method12320(
-                        Direction.DOWN,
+                        net.minecraft.util.Direction.DOWN,
                         Class5138.method15912().method15911(Class6891.field29864, var7).method15911(Class6891.field29862, Class2120.field13818)
                      )
-                     .method12320(Direction.field673, Class5138.method15912().method15911(Class6891.field29864, var7))
-                     .method12320(Direction.NORTH, Class5138.method15912().method15911(Class6891.field29864, var6))
+                     .method12320(net.minecraft.util.Direction.field673, Class5138.method15912().method15911(Class6891.field29864, var7))
+                     .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29864, var6))
                      .method12320(
-                        Direction.EAST,
+                        net.minecraft.util.Direction.EAST,
                         Class5138.method15912().method15911(Class6891.field29864, var6).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12320(
-                        Direction.SOUTH,
+                        net.minecraft.util.Direction.SOUTH,
                         Class5138.method15912().method15911(Class6891.field29864, var6).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12320(
-                        Direction.WEST,
+                        net.minecraft.util.Direction.WEST,
                         Class5138.method15912().method15911(Class6891.field29864, var6).method15911(Class6891.field29863, Class2120.field13819)
                      )
                )
@@ -2352,19 +2351,19 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field36723)
                .method15939(
-                  Class3629.<Direction>method12310(Class8820.field39721)
-                     .method12320(Direction.DOWN, Class5138.method15912().method15911(Class6891.field29864, var3))
-                     .method12320(Direction.NORTH, Class5138.method15912().method15911(Class6891.field29864, var4))
+                  Class3629.<net.minecraft.util.Direction>method12310(Class8820.field39721)
+                     .method12320(net.minecraft.util.Direction.DOWN, Class5138.method15912().method15911(Class6891.field29864, var3))
+                     .method12320(net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29864, var4))
                      .method12320(
-                        Direction.EAST,
+                        net.minecraft.util.Direction.EAST,
                         Class5138.method15912().method15911(Class6891.field29864, var4).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12320(
-                        Direction.SOUTH,
+                        net.minecraft.util.Direction.SOUTH,
                         Class5138.method15912().method15911(Class6891.field29864, var4).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12320(
-                        Direction.WEST,
+                        net.minecraft.util.Direction.WEST,
                         Class5138.method15912().method15911(Class6891.field29864, var4).method15911(Class6891.field29863, Class2120.field13819)
                      )
                )
@@ -2456,41 +2455,41 @@ public class Class9407 {
             Class5148.method15941(Blocks.LEVER)
                .method15939(method35817(Class8820.field39704, var3, var4))
                .method15939(
-                  Class3629.<Class103, Direction>method12311(Class8820.field39724, Class8820.field39722)
+                  Class3629.<Class103, net.minecraft.util.Direction>method12311(Class8820.field39724, Class8820.field39722)
                      .method12300(
                         Class103.field315,
-                        Direction.NORTH,
+                        net.minecraft.util.Direction.NORTH,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12300(
                         Class103.field315,
-                        Direction.EAST,
+                        net.minecraft.util.Direction.EAST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818).method15911(Class6891.field29863, Class2120.field13819)
                      )
-                     .method12300(Class103.field315, Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
+                     .method12300(Class103.field315, net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818))
                      .method12300(
                         Class103.field315,
-                        Direction.WEST,
+                        net.minecraft.util.Direction.WEST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13818).method15911(Class6891.field29863, Class2120.field13817)
                      )
-                     .method12300(Class103.field313, Direction.NORTH, Class5138.method15912())
-                     .method12300(Class103.field313, Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
-                     .method12300(Class103.field313, Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
-                     .method12300(Class103.field313, Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
-                     .method12300(Class103.field314, Direction.NORTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
+                     .method12300(Class103.field313, net.minecraft.util.Direction.NORTH, Class5138.method15912())
+                     .method12300(Class103.field313, net.minecraft.util.Direction.EAST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13817))
+                     .method12300(Class103.field313, net.minecraft.util.Direction.SOUTH, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13818))
+                     .method12300(Class103.field313, net.minecraft.util.Direction.WEST, Class5138.method15912().method15911(Class6891.field29863, Class2120.field13819))
+                     .method12300(Class103.field314, net.minecraft.util.Direction.NORTH, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
                      .method12300(
                         Class103.field314,
-                        Direction.EAST,
+                        net.minecraft.util.Direction.EAST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13817)
                      )
                      .method12300(
                         Class103.field314,
-                        Direction.SOUTH,
+                        net.minecraft.util.Direction.SOUTH,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13818)
                      )
                      .method12300(
                         Class103.field314,
-                        Direction.WEST,
+                        net.minecraft.util.Direction.WEST,
                         Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13819)
                      )
                )
@@ -2507,12 +2506,12 @@ public class Class9407 {
          .accept(
             Class5148.method15941(Blocks.field36588)
                .method15939(
-                  Class3629.<Class113>method12310(Class8820.field39712)
+                  Class3629.<Direction>method12310(Class8820.field39712)
                      .method12320(
-                        Class113.field413, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36588, "_ns"))
+                        Direction.field413, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36588, "_ns"))
                      )
                      .method12320(
-                        Class113.field415, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36588, "_ew"))
+                        Direction.field415, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36588, "_ew"))
                      )
                )
          );

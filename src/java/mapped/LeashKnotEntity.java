@@ -32,7 +32,7 @@ public class LeashKnotEntity extends Class995 {
       float var5 = 0.125F;
       float var6 = 0.1875F;
       float var7 = 0.25F;
-      this.method3391(
+      this.setBoundingBox(
          new AxisAlignedBB(
             this.getPosX() - 0.1875,
             this.getPosY() - 0.25 + 0.125,
@@ -52,7 +52,7 @@ public class LeashKnotEntity extends Class995 {
 
    @Override
    public void method4078() {
-      this.method3446((double)this.field5488.getX() + 0.5, (double)this.field5488.getY() + 0.5, (double)this.field5488.getZ() + 0.5);
+      this.setRawPosition((double)this.field5488.getX() + 0.5, (double)this.field5488.getY() + 0.5, (double)this.field5488.getZ() + 0.5);
    }
 
    @Override
@@ -70,7 +70,7 @@ public class LeashKnotEntity extends Class995 {
    }
 
    @Override
-   public float method3181(Pose var1, EntitySize var2) {
+   public float getEyeHeight(Pose var1, EntitySize var2) {
       return -0.0625F;
    }
 
@@ -81,21 +81,21 @@ public class LeashKnotEntity extends Class995 {
 
    @Override
    public void method4083(Entity var1) {
-      this.method2863(SoundEvents.field26728, 1.0F, 1.0F);
+      this.playSound(SoundEvents.field26728, 1.0F, 1.0F);
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
    }
 
    @Override
-   public ActionResultType method3304(PlayerEntity var1, Hand var2) {
+   public ActionResultType processInitialInteract(PlayerEntity var1, Hand var2) {
       if (this.world.isRemote) {
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       } else {
          boolean var5 = false;
          double var6 = 7.0;
@@ -120,7 +120,7 @@ public class LeashKnotEntity extends Class995 {
          }
 
          if (!var5) {
-            this.method2904();
+            this.remove();
             if (var1.abilities.isCreativeMode) {
                for (Class1006 var12 : var8) {
                   if (var12.method4296() && var12.method4297() == this) {
@@ -136,7 +136,7 @@ public class LeashKnotEntity extends Class995 {
 
    @Override
    public boolean method4080() {
-      return this.world.getBlockState(this.field5488).getBlock().method11540(BlockTags.field32771);
+      return this.world.getBlockState(this.field5488).getBlock().isIn(BlockTags.field32771);
    }
 
    public static LeashKnotEntity method4087(World var0, BlockPos var1) {
@@ -153,23 +153,23 @@ public class LeashKnotEntity extends Class995 {
       }
 
       LeashKnotEntity var9 = new LeashKnotEntity(var0, var1);
-      var0.method6916(var9);
+      var0.addEntity(var9);
       var9.method4084();
       return var9;
    }
 
    @Override
    public void method4084() {
-      this.method2863(SoundEvents.field26729, 1.0F, 1.0F);
+      this.playSound(SoundEvents.field26729, 1.0F, 1.0F);
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this, this.getType(), 0, this.method4085());
    }
 
    @Override
-   public Vector3d method2986(float var1) {
-      return this.method3288(var1).method11339(0.0, 0.2, 0.0);
+   public Vector3d getLeashPosition(float var1) {
+      return this.method3288(var1).add(0.0, 0.2, 0.0);
    }
 }

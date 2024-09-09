@@ -22,7 +22,7 @@ public final class Class6222 extends Class6218 {
       double var15 = var14.nextGaussian() * 0.05 + (double)var5.method539();
       double var17 = var14.nextGaussian() * 0.05 + (double)var5.method540();
       double var19 = var14.nextGaussian() * 0.05 + (double)var5.method541();
-      var13.method6916(Util.make(new Class900(var13, var7, var9, var11, var15, var17, var19), var1x -> var1x.method3526(var2)));
+      var13.addEntity(Util.make(new Class900(var13, var7, var9, var11, var15, var17, var19), var1x -> var1x.method3526(var2)));
       var2.method32182(1);
       return var2;
    }

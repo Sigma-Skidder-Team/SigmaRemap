@@ -16,7 +16,7 @@ public class Class2668 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return this.field17042.method3013().nextFloat() < 0.02F;
+      return this.field17042.getRNG().nextFloat() < 0.02F;
    }
 
    @Override
@@ -26,10 +26,10 @@ public class Class2668 extends Class2595 {
 
    @Override
    public void method10804() {
-      double var3 = (Math.PI * 2) * this.field17042.method3013().nextDouble();
+      double var3 = (Math.PI * 2) * this.field17042.getRNG().nextDouble();
       this.field17043 = Math.cos(var3);
       this.field17044 = Math.sin(var3);
-      this.field17045 = 20 + this.field17042.method3013().nextInt(20);
+      this.field17045 = 20 + this.field17042.getRNG().nextInt(20);
    }
 
    @Override
@@ -37,6 +37,6 @@ public class Class2668 extends Class2595 {
       this.field17045--;
       this.field17042
          .method4227()
-         .method28041(this.field17042.getPosX() + this.field17043, this.field17042.method3442(), this.field17042.getPosZ() + this.field17044);
+         .method28041(this.field17042.getPosX() + this.field17043, this.field17042.getPosYEye(), this.field17042.getPosZ() + this.field17044);
    }
 }

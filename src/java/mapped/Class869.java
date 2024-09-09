@@ -22,7 +22,7 @@ public class Class869 extends Class870 implements Class867<Class5818> {
    @Override
    public void init() {
       super.init();
-      this.field4817.method18127(this.field4818);
+      this.field4817.addListener(this.field4818);
    }
 
    @Override
@@ -34,7 +34,7 @@ public class Class869 extends Class870 implements Class867<Class5818> {
    @Override
    public void onClose() {
       super.onClose();
-      this.field4817.method18128(this.field4818);
+      this.field4817.removeListener(this.field4818);
    }
 
    @Override
@@ -72,7 +72,7 @@ public class Class869 extends Class870 implements Class867<Class5818> {
    }
 
    private void method2683(int var1) {
-      this.mc.playerController.method23146(this.field4817.field25471, var1);
+      this.mc.playerController.sendEnchantPacket(this.field4817.field25471, var1);
    }
 
    @Override

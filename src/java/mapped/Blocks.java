@@ -35,66 +35,66 @@ public class Blocks {
       "polished_andesite", new Block(AbstractBlock.method26611(Class8649.field38966, Class7210.field30958).method26635().method26621(1.5F, 6.0F))
    );
    public static final Block field36395 = register(
-      "grass_block", new Class3473(AbstractBlock.method26609(Class8649.field38951).method26624().method26623(0.6F).method26619(Class8447.field36202))
+      "grass_block", new Class3473(AbstractBlock.method26609(Class8649.field38951).method26624().method26623(0.6F).method26619(SoundType.field36202))
    );
    public static final Block field36396 = register(
-      "dirt", new Block(AbstractBlock.method26611(Class8649.field38950, Class7210.field30957).method26623(0.5F).method26619(Class8447.field36201))
+      "dirt", new Block(AbstractBlock.method26611(Class8649.field38950, Class7210.field30957).method26623(0.5F).method26619(SoundType.field36201))
    );
    public static final Block field36397 = register(
-      "coarse_dirt", new Block(AbstractBlock.method26611(Class8649.field38950, Class7210.field30957).method26623(0.5F).method26619(Class8447.field36201))
+      "coarse_dirt", new Block(AbstractBlock.method26611(Class8649.field38950, Class7210.field30957).method26623(0.5F).method26619(SoundType.field36201))
    );
    public static final Block field36398 = register(
-      "podzol", new Class3471(AbstractBlock.method26611(Class8649.field38950, Class7210.field30981).method26623(0.5F).method26619(Class8447.field36201))
+      "podzol", new Class3471(AbstractBlock.method26611(Class8649.field38950, Class7210.field30981).method26623(0.5F).method26619(SoundType.field36201))
    );
    public static final Block field36399 = register(
       "cobblestone", new Block(AbstractBlock.method26609(Class8649.field38966).method26635().method26621(2.0F, 6.0F))
    );
    public static final Block field36400 = register(
-      "oak_planks", new Block(AbstractBlock.method26611(Class8649.field38956, Class7210.field30960).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      "oak_planks", new Block(AbstractBlock.method26611(Class8649.field38956, Class7210.field30960).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36401 = register(
       "spruce_planks",
-      new Block(AbstractBlock.method26611(Class8649.field38956, Class7210.field30981).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Block(AbstractBlock.method26611(Class8649.field38956, Class7210.field30981).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36402 = register(
       "birch_planks",
-      new Block(AbstractBlock.method26611(Class8649.field38956, Class7210.field30949).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Block(AbstractBlock.method26611(Class8649.field38956, Class7210.field30949).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36403 = register(
       "jungle_planks",
-      new Block(AbstractBlock.method26611(Class8649.field38956, Class7210.field30957).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Block(AbstractBlock.method26611(Class8649.field38956, Class7210.field30957).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36404 = register(
       "acacia_planks",
-      new Block(AbstractBlock.method26611(Class8649.field38956, Class7210.field30962).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Block(AbstractBlock.method26611(Class8649.field38956, Class7210.field30962).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36405 = register(
       "dark_oak_planks",
-      new Block(AbstractBlock.method26611(Class8649.field38956, Class7210.field30973).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Block(AbstractBlock.method26611(Class8649.field38956, Class7210.field30973).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36406 = register(
       "oak_sapling",
-      new Class3193(new Class7667(), AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(Class8447.field36202))
+      new Class3193(new Class7667(), AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(SoundType.field36202))
    );
    public static final Block SPRUCE_SAPLING = register(
       "spruce_sapling",
-      new Class3193(new Class7662(), AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(Class8447.field36202))
+      new Class3193(new Class7662(), AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(SoundType.field36202))
    );
    public static final Block BIRCH_SAPLING = register(
       "birch_sapling",
-      new Class3193(new Class7666(), AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(Class8447.field36202))
+      new Class3193(new Class7666(), AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(SoundType.field36202))
    );
    public static final Block JUNGLE_SAPLING = register(
       "jungle_sapling",
-      new Class3193(new Class7664(), AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(Class8447.field36202))
+      new Class3193(new Class7664(), AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(SoundType.field36202))
    );
    public static final Block ACACIA_SAPLING = register(
       "acacia_sapling",
-      new Class3193(new Class7668(), AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(Class8447.field36202))
+      new Class3193(new Class7668(), AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(SoundType.field36202))
    );
    public static final Block DARK_OAK_SAPLING = register(
       "dark_oak_sapling",
-      new Class3193(new Class7663(), AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(Class8447.field36202))
+      new Class3193(new Class7663(), AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(SoundType.field36202))
    );
    public static final Block BEDROCK = register(
       "bedrock", new Block(AbstractBlock.method26609(Class8649.field38966).method26621(-1.0F, 3600000.0F).method26626().method26629(Blocks::method30012))
@@ -110,14 +110,14 @@ public class Blocks {
       )
    );
    public static final Block SAND = register(
-      "sand", new Class3216(14406560, AbstractBlock.method26611(Class8649.field38953, Class7210.field30949).method26623(0.5F).method26619(Class8447.field36208))
+      "sand", new Class3216(14406560, AbstractBlock.method26611(Class8649.field38953, Class7210.field30949).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block RED_SAND = register(
       "red_sand",
-      new Class3216(11098145, AbstractBlock.method26611(Class8649.field38953, Class7210.field30962).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3216(11098145, AbstractBlock.method26611(Class8649.field38953, Class7210.field30962).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block GRAVEL = register(
-      "gravel", new Class3215(AbstractBlock.method26611(Class8649.field38953, Class7210.field30958).method26623(0.6F).method26619(Class8447.field36201))
+      "gravel", new Class3215(AbstractBlock.method26611(Class8649.field38953, Class7210.field30958).method26623(0.6F).method26619(SoundType.field36201))
    );
    public static final Block field36418 = register(
       "gold_ore", new Class3420(AbstractBlock.method26609(Class8649.field38966).method26635().method26621(3.0F, 3.0F))
@@ -130,7 +130,7 @@ public class Blocks {
    );
    public static final Block field36421 = register(
       "nether_gold_ore",
-      new Class3420(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(3.0F, 3.0F).method26619(Class8447.field36245))
+      new Class3420(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(3.0F, 3.0F).method26619(SoundType.field36245))
    );
    public static final Block field36422 = register("oak_log", method30016(Class7210.field30960, Class7210.field30981));
    public static final Block field36423 = register("spruce_log", method30016(Class7210.field30981, Class7210.field30973));
@@ -145,45 +145,45 @@ public class Blocks {
    public static final Block field36432 = register("stripped_dark_oak_log", method30016(Class7210.field30973, Class7210.field30973));
    public static final Block field36433 = register("stripped_oak_log", method30016(Class7210.field30960, Class7210.field30960));
    public static final Block field36434 = register(
-      "oak_wood", new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30960).method26623(2.0F).method26619(Class8447.field36200))
+      "oak_wood", new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30960).method26623(2.0F).method26619(SoundType.field36200))
    );
    public static final Block field36435 = register(
-      "spruce_wood", new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30981).method26623(2.0F).method26619(Class8447.field36200))
+      "spruce_wood", new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30981).method26623(2.0F).method26619(SoundType.field36200))
    );
    public static final Block field36436 = register(
-      "birch_wood", new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30949).method26623(2.0F).method26619(Class8447.field36200))
+      "birch_wood", new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30949).method26623(2.0F).method26619(SoundType.field36200))
    );
    public static final Block field36437 = register(
-      "jungle_wood", new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30957).method26623(2.0F).method26619(Class8447.field36200))
+      "jungle_wood", new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30957).method26623(2.0F).method26619(SoundType.field36200))
    );
    public static final Block field36438 = register(
-      "acacia_wood", new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30968).method26623(2.0F).method26619(Class8447.field36200))
+      "acacia_wood", new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30968).method26623(2.0F).method26619(SoundType.field36200))
    );
    public static final Block field36439 = register(
-      "dark_oak_wood", new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30973).method26623(2.0F).method26619(Class8447.field36200))
+      "dark_oak_wood", new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30973).method26623(2.0F).method26619(SoundType.field36200))
    );
    public static final Block field36440 = register(
-      "stripped_oak_wood", new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30960).method26623(2.0F).method26619(Class8447.field36200))
+      "stripped_oak_wood", new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30960).method26623(2.0F).method26619(SoundType.field36200))
    );
    public static final Block field36441 = register(
       "stripped_spruce_wood",
-      new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30981).method26623(2.0F).method26619(Class8447.field36200))
+      new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30981).method26623(2.0F).method26619(SoundType.field36200))
    );
    public static final Block field36442 = register(
       "stripped_birch_wood",
-      new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30949).method26623(2.0F).method26619(Class8447.field36200))
+      new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30949).method26623(2.0F).method26619(SoundType.field36200))
    );
    public static final Block field36443 = register(
       "stripped_jungle_wood",
-      new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30957).method26623(2.0F).method26619(Class8447.field36200))
+      new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30957).method26623(2.0F).method26619(SoundType.field36200))
    );
    public static final Block field36444 = register(
       "stripped_acacia_wood",
-      new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30962).method26623(2.0F).method26619(Class8447.field36200))
+      new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30962).method26623(2.0F).method26619(SoundType.field36200))
    );
    public static final Block field36445 = register(
       "stripped_dark_oak_wood",
-      new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30973).method26623(2.0F).method26619(Class8447.field36200))
+      new Class3386(AbstractBlock.method26611(Class8649.field38956, Class7210.field30973).method26623(2.0F).method26619(SoundType.field36200))
    );
    public static final Block field36446 = register("oak_leaves", method30021());
    public static final Block field36447 = register("spruce_leaves", method30021());
@@ -192,17 +192,17 @@ public class Blocks {
    public static final Block field36450 = register("acacia_leaves", method30021());
    public static final Block field36451 = register("dark_oak_leaves", method30021());
    public static final Block field36452 = register(
-      "sponge", new Class3407(AbstractBlock.method26609(Class8649.field38954).method26623(0.6F).method26619(Class8447.field36202))
+      "sponge", new Class3407(AbstractBlock.method26609(Class8649.field38954).method26623(0.6F).method26619(SoundType.field36202))
    );
    public static final Block field36453 = register(
-      "wet_sponge", new Class3417(AbstractBlock.method26609(Class8649.field38954).method26623(0.6F).method26619(Class8447.field36202))
+      "wet_sponge", new Class3417(AbstractBlock.method26609(Class8649.field38954).method26623(0.6F).method26619(SoundType.field36202))
    );
    public static final Block field36454 = register(
       "glass",
       new Class3233(
          AbstractBlock.method26609(Class8649.field38963)
             .method26623(0.3F)
-            .method26619(Class8447.field36206)
+            .method26619(SoundType.field36206)
             .method26615()
             .method26629(Blocks::method30012)
             .method26630(Blocks::method30019)
@@ -229,7 +229,7 @@ public class Blocks {
       "cut_sandstone", new Block(AbstractBlock.method26611(Class8649.field38966, Class7210.field30949).method26635().method26623(0.8F))
    );
    public static final Block NOTE_BLOCK = register(
-      "note_block", new Class3426(AbstractBlock.method26609(Class8649.field38956).method26619(Class8447.field36200).method26623(0.8F))
+      "note_block", new Class3426(AbstractBlock.method26609(Class8649.field38956).method26619(SoundType.field36200).method26623(0.8F))
    );
    public static final Block WHITE_BED = register("white_bed", method30015(Class112.field386));
    public static final Block ORANGE_BED = register("orange_bed", method30015(Class112.field387));
@@ -248,82 +248,82 @@ public class Blocks {
    public static final Block RED_BED = register("red_bed", method30015(Class112.field400));
    public static final Block BLACK_BED = register("black_bed", method30015(Class112.field401));
    public static final Block POWERED_RAIL = register(
-      "powered_rail", new Class3432(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.7F).method26619(Class8447.field36205))
+      "powered_rail", new Class3432(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.7F).method26619(SoundType.field36205))
    );
    public static final Block DETECTOR_RAIL = register(
-      "detector_rail", new Class3431(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.7F).method26619(Class8447.field36205))
+      "detector_rail", new Class3431(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.7F).method26619(SoundType.field36205))
    );
    public static final Block STICKY_PISTON = register("sticky_piston", method30023(true));
    public static final Block COBWEB = register(
       "cobweb", new Class3212(AbstractBlock.method26609(Class8649.field38947).method26614().method26635().method26623(4.0F))
    );
    public static final Block GRASS = register(
-      "grass", new Class3487(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(Class8447.field36202))
+      "grass", new Class3487(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block FERN = register(
-      "fern", new Class3487(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(Class8447.field36202))
+      "fern", new Class3487(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block DEAD_BUSH = register(
       "dead_bush",
-      new Class3492(AbstractBlock.method26611(Class8649.field38938, Class7210.field30960).method26614().method26622().method26619(Class8447.field36202))
+      new Class3492(AbstractBlock.method26611(Class8649.field38938, Class7210.field30960).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block SEAGRASS = register(
-      "seagrass", new Class3450(AbstractBlock.method26609(Class8649.field38940).method26614().method26622().method26619(Class8447.field36214))
+      "seagrass", new Class3450(AbstractBlock.method26609(Class8649.field38940).method26614().method26622().method26619(SoundType.field36214))
    );
    public static final Block TALL_SEAGRASS = register(
-      "tall_seagrass", new Class3455(AbstractBlock.method26609(Class8649.field38940).method26614().method26622().method26619(Class8447.field36214))
+      "tall_seagrass", new Class3455(AbstractBlock.method26609(Class8649.field38940).method26614().method26622().method26619(SoundType.field36214))
    );
    public static final Block PISTON = register("piston", method30023(false));
    public static final Block PISTON_HEAD = register(
       "piston_head", new Class3436(AbstractBlock.method26609(Class8649.field38971).method26623(1.5F).method26626())
    );
    public static final Block WHITE_WOOL = register(
-      "white_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30955).method26623(0.8F).method26619(Class8447.field36207))
+      "white_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30955).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block ORANGE_WOOL = register(
-      "orange_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30962).method26623(0.8F).method26619(Class8447.field36207))
+      "orange_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30962).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block MAGENTA_WOOL = register(
-      "magenta_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30963).method26623(0.8F).method26619(Class8447.field36207))
+      "magenta_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30963).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block LIGHT_BLUE_WOOL = register(
-      "light_blue_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30964).method26623(0.8F).method26619(Class8447.field36207))
+      "light_blue_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30964).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block YELLOW_WOOL = register(
-      "yellow_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30965).method26623(0.8F).method26619(Class8447.field36207))
+      "yellow_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30965).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block LIME_WOOL = register(
-      "lime_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30966).method26623(0.8F).method26619(Class8447.field36207))
+      "lime_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30966).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block PINK_WOOL = register(
-      "pink_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30967).method26623(0.8F).method26619(Class8447.field36207))
+      "pink_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30967).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block GRAY_WOOL = register(
-      "gray_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30968).method26623(0.8F).method26619(Class8447.field36207))
+      "gray_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30968).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block LIGHT_GRAY_WOOL = register(
-      "light_gray_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30969).method26623(0.8F).method26619(Class8447.field36207))
+      "light_gray_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30969).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block CYAN_WOOL = register(
-      "cyan_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30970).method26623(0.8F).method26619(Class8447.field36207))
+      "cyan_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30970).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block PURPLE_WOOL = register(
-      "purple_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30971).method26623(0.8F).method26619(Class8447.field36207))
+      "purple_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30971).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block BLUE_WOOL = register(
-      "blue_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30972).method26623(0.8F).method26619(Class8447.field36207))
+      "blue_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30972).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block BROWN_WOOL = register(
-      "brown_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30973).method26623(0.8F).method26619(Class8447.field36207))
+      "brown_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30973).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block GREEN_WOOL = register(
-      "green_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30974).method26623(0.8F).method26619(Class8447.field36207))
+      "green_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30974).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block RED_WOOL = register(
-      "red_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30975).method26623(0.8F).method26619(Class8447.field36207))
+      "red_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30975).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block BLACK_WOOL = register(
-      "black_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30976).method26623(0.8F).method26619(Class8447.field36207))
+      "black_wool", new Block(AbstractBlock.method26611(Class8649.field38960, Class7210.field30976).method26623(0.8F).method26619(SoundType.field36207))
    );
    public static final Block MOVING_PISTON = register(
       "moving_piston",
@@ -340,55 +340,55 @@ public class Blocks {
    );
    public static final Block DANDELION = register(
       "dandelion",
-      new Class3490(Effects.SATURATION, 7, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.SATURATION, 7, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block POPPY = register(
       "poppy",
-      new Class3490(Effects.NIGHT_VISION, 5, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.NIGHT_VISION, 5, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block BLUE_ORCHID = register(
       "blue_orchid",
-      new Class3490(Effects.SATURATION, 7, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.SATURATION, 7, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block ALLIUM = register(
       "allium",
-      new Class3490(Effects.FIRE_RESISTANCE, 4, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.FIRE_RESISTANCE, 4, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block AZURE_BLUET = register(
       "azure_bluet",
-      new Class3490(Effects.BLINDNESS, 8, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.BLINDNESS, 8, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block RED_TULIP = register(
       "red_tulip",
-      new Class3490(Effects.WEAKNESS, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.WEAKNESS, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block ORANGE_TULIP = register(
       "orange_tulip",
-      new Class3490(Effects.WEAKNESS, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.WEAKNESS, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block WHITE_TULIP = register(
       "white_tulip",
-      new Class3490(Effects.WEAKNESS, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.WEAKNESS, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block PINK_TULIP = register(
       "pink_tulip",
-      new Class3490(Effects.WEAKNESS, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.WEAKNESS, 9, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block OXEYE_DAISY = register(
       "oxeye_daisy",
-      new Class3490(Effects.REGENERATION, 8, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.REGENERATION, 8, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block CORNFLOWER = register(
       "cornflower",
-      new Class3490(Effects.JUMP_BOOST, 6, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.JUMP_BOOST, 6, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block WITHER_ROSE = register(
       "wither_rose",
-      new Class3491(Effects.WITHER, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3491(Effects.WITHER, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block LILY_OF_THE_VALLEY = register(
       "lily_of_the_valley",
-      new Class3490(Effects.POISON, 12, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36202))
+      new Class3490(Effects.POISON, 12, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block BROWN_MUSHROOM = register(
       "brown_mushroom",
@@ -397,7 +397,7 @@ public class Blocks {
             .method26614()
             .method26624()
             .method26622()
-            .method26619(Class8447.field36202)
+            .method26619(SoundType.field36202)
             .method26620(var0 -> 1)
             .method26633(Blocks::method30018)
       )
@@ -409,26 +409,26 @@ public class Blocks {
             .method26614()
             .method26624()
             .method26622()
-            .method26619(Class8447.field36202)
+            .method26619(SoundType.field36202)
             .method26633(Blocks::method30018)
       )
    );
    public static final Block field36521 = register(
       "gold_block",
-      new Block(AbstractBlock.method26611(Class8649.field38967, Class7210.field30977).method26635().method26621(3.0F, 6.0F).method26619(Class8447.field36205))
+      new Block(AbstractBlock.method26611(Class8649.field38967, Class7210.field30977).method26635().method26621(3.0F, 6.0F).method26619(SoundType.field36205))
    );
    public static final Block field36522 = register(
       "iron_block",
-      new Block(AbstractBlock.method26611(Class8649.field38967, Class7210.field30953).method26635().method26621(5.0F, 6.0F).method26619(Class8447.field36205))
+      new Block(AbstractBlock.method26611(Class8649.field38967, Class7210.field30953).method26635().method26621(5.0F, 6.0F).method26619(SoundType.field36205))
    );
    public static final Block field36523 = register(
       "bricks", new Block(AbstractBlock.method26611(Class8649.field38966, Class7210.field30975).method26635().method26621(2.0F, 6.0F))
    );
    public static final Block TNT = register(
-      "tnt", new Class3458(AbstractBlock.method26609(Class8649.field38961).method26622().method26619(Class8447.field36202))
+      "tnt", new Class3458(AbstractBlock.method26609(Class8649.field38961).method26622().method26619(SoundType.field36202))
    );
    public static final Block field36525 = register(
-      "bookshelf", new Block(AbstractBlock.method26609(Class8649.field38956).method26623(1.5F).method26619(Class8447.field36200))
+      "bookshelf", new Block(AbstractBlock.method26609(Class8649.field38956).method26623(1.5F).method26619(SoundType.field36200))
    );
    public static final Block field36526 = register(
       "mossy_cobblestone", new Block(AbstractBlock.method26609(Class8649.field38966).method26635().method26621(2.0F, 6.0F))
@@ -439,7 +439,7 @@ public class Blocks {
    public static final Block TORCH = register(
       "torch",
       new Class3381(
-         AbstractBlock.method26609(Class8649.field38946).method26614().method26622().method26620(var0 -> 14).method26619(Class8447.field36200),
+         AbstractBlock.method26609(Class8649.field38946).method26614().method26622().method26620(var0 -> 14).method26619(SoundType.field36200),
          ParticleTypes.field34074
       )
    );
@@ -450,7 +450,7 @@ public class Blocks {
             .method26614()
             .method26622()
             .method26620(var0 -> 14)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26627(TORCH),
          ParticleTypes.field34074
       )
@@ -462,7 +462,7 @@ public class Blocks {
             .method26614()
             .method26622()
             .method26620(var0 -> 15)
-            .method26619(Class8447.field36207)
+            .method26619(SoundType.field36207)
       )
    );
    public static final Block field36531 = register(
@@ -472,15 +472,15 @@ public class Blocks {
             .method26614()
             .method26622()
             .method26620(var0 -> 10)
-            .method26619(Class8447.field36207)
+            .method26619(SoundType.field36207)
       )
    );
    public static final Block field36532 = register(
-      "spawner", new Class3370(AbstractBlock.method26609(Class8649.field38966).method26635().method26623(5.0F).method26619(Class8447.field36205).method26615())
+      "spawner", new Class3370(AbstractBlock.method26609(Class8649.field38966).method26635().method26623(5.0F).method26619(SoundType.field36205).method26615())
    );
    public static final Block field36533 = register("oak_stairs", new Class3421(field36400.method11579(), AbstractBlock.method26613(field36400)));
    public static final Block CHEST = register(
-      "chest", new Class3348(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(Class8447.field36200), () -> TileEntityType.field21422)
+      "chest", new Class3348(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(SoundType.field36200), () -> TileEntityType.field21422)
    );
    public static final Block REDSTONE_WIRE = register(
       "redstone_wire", new Class3222(AbstractBlock.method26609(Class8649.field38946).method26614().method26622())
@@ -490,13 +490,13 @@ public class Blocks {
    );
    public static final Block field36537 = register(
       "diamond_block",
-      new Block(AbstractBlock.method26611(Class8649.field38967, Class7210.field30978).method26635().method26621(5.0F, 6.0F).method26619(Class8447.field36205))
+      new Block(AbstractBlock.method26611(Class8649.field38967, Class7210.field30978).method26635().method26621(5.0F, 6.0F).method26619(SoundType.field36205))
    );
    public static final Block CRAFTING_TABLE = register(
-      "crafting_table", new Class3438(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(Class8447.field36200))
+      "crafting_table", new Class3438(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(SoundType.field36200))
    );
    public static final Block field36539 = register(
-      "wheat", new Class3480(AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(Class8447.field36220))
+      "wheat", new Class3480(AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(SoundType.field36220))
    );
    public static final Block FARMLAND = register(
       "farmland",
@@ -504,7 +504,7 @@ public class Blocks {
          AbstractBlock.method26609(Class8649.field38950)
             .method26624()
             .method26623(0.6F)
-            .method26619(Class8447.field36201)
+            .method26619(SoundType.field36201)
             .method26632(Blocks::method30018)
             .method26631(Blocks::method30018)
       )
@@ -514,58 +514,58 @@ public class Blocks {
    );
    public static final Block OAK_SIGN = register(
       "oak_sign",
-      new Class3374(AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200), Class9673.field45166)
+      new Class3374(AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200), Class9673.field45166)
    );
    public static final Block SPRUCE_SIGN = register(
       "spruce_sign",
       new Class3374(
-         AbstractBlock.method26611(Class8649.field38956, field36423.method12000()).method26614().method26623(1.0F).method26619(Class8447.field36200),
+         AbstractBlock.method26611(Class8649.field38956, field36423.method12000()).method26614().method26623(1.0F).method26619(SoundType.field36200),
          Class9673.field45167
       )
    );
    public static final Block BIRCH_SIGN = register(
       "birch_sign",
       new Class3374(
-         AbstractBlock.method26611(Class8649.field38956, Class7210.field30949).method26614().method26623(1.0F).method26619(Class8447.field36200),
+         AbstractBlock.method26611(Class8649.field38956, Class7210.field30949).method26614().method26623(1.0F).method26619(SoundType.field36200),
          Class9673.field45168
       )
    );
    public static final Block ACACIA_SIGN = register(
       "acacia_sign",
       new Class3374(
-         AbstractBlock.method26611(Class8649.field38956, Class7210.field30962).method26614().method26623(1.0F).method26619(Class8447.field36200),
+         AbstractBlock.method26611(Class8649.field38956, Class7210.field30962).method26614().method26623(1.0F).method26619(SoundType.field36200),
          Class9673.field45169
       )
    );
    public static final Block JUNGLE_SIGN = register(
       "jungle_sign",
       new Class3374(
-         AbstractBlock.method26611(Class8649.field38956, field36425.method12000()).method26614().method26623(1.0F).method26619(Class8447.field36200),
+         AbstractBlock.method26611(Class8649.field38956, field36425.method12000()).method26614().method26623(1.0F).method26619(SoundType.field36200),
          Class9673.field45170
       )
    );
    public static final Block DARK_OAK_SIGN = register(
       "dark_oak_sign",
       new Class3374(
-         AbstractBlock.method26611(Class8649.field38956, field36427.method12000()).method26614().method26623(1.0F).method26619(Class8447.field36200),
+         AbstractBlock.method26611(Class8649.field38956, field36427.method12000()).method26614().method26623(1.0F).method26619(SoundType.field36200),
          Class9673.field45171
       )
    );
    public static final Block OAK_DOOR = register(
       "oak_door",
-      new Class3461(AbstractBlock.method26611(Class8649.field38956, field36400.method12000()).method26623(3.0F).method26619(Class8447.field36200).method26615())
+      new Class3461(AbstractBlock.method26611(Class8649.field38956, field36400.method12000()).method26623(3.0F).method26619(SoundType.field36200).method26615())
    );
    public static final Block LADDER = register(
-      "ladder", new Class3423(AbstractBlock.method26609(Class8649.field38946).method26623(0.4F).method26619(Class8447.field36210).method26615())
+      "ladder", new Class3423(AbstractBlock.method26609(Class8649.field38946).method26623(0.4F).method26619(SoundType.field36210).method26615())
    );
    public static final Block RAIL = register(
-      "rail", new Class3430(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.7F).method26619(Class8447.field36205))
+      "rail", new Class3430(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.7F).method26619(SoundType.field36205))
    );
    public static final Block COBBLESTONE_STAIRS = register("cobblestone_stairs", new Class3421(field36399.method11579(), AbstractBlock.method26613(field36399)));
    public static final Block OAK_WALL_SIGN = register(
       "oak_wall_sign",
       new Class3375(
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(OAK_SIGN),
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(OAK_SIGN),
          Class9673.field45166
       )
    );
@@ -575,7 +575,7 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38956, field36423.method12000())
             .method26614()
             .method26623(1.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26627(SPRUCE_SIGN),
          Class9673.field45167
       )
@@ -586,7 +586,7 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38956, Class7210.field30949)
             .method26614()
             .method26623(1.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26627(BIRCH_SIGN),
          Class9673.field45168
       )
@@ -597,7 +597,7 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38956, Class7210.field30962)
             .method26614()
             .method26623(1.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26627(ACACIA_SIGN),
          Class9673.field45169
       )
@@ -608,7 +608,7 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38956, field36425.method12000())
             .method26614()
             .method26623(1.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26627(JUNGLE_SIGN),
          Class9673.field45170
       )
@@ -619,13 +619,13 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38956, field36427.method12000())
             .method26614()
             .method26623(1.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26627(DARK_OAK_SIGN),
          Class9673.field45171
       )
    );
    public static final Block LEVER = register(
-      "lever", new Class3201(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(Class8447.field36200))
+      "lever", new Class3201(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(SoundType.field36200))
    );
    public static final Block field36559 = register(
       "stone_pressure_plate", new Class3469(Class2275.field14824, AbstractBlock.method26609(Class8649.field38966).method26635().method26614().method26623(0.5F))
@@ -633,49 +633,49 @@ public class Blocks {
    public static final Block IRON_DOOR = register(
       "iron_door",
       new Class3461(
-         AbstractBlock.method26611(Class8649.field38967, Class7210.field30953).method26635().method26623(5.0F).method26619(Class8447.field36205).method26615()
+         AbstractBlock.method26611(Class8649.field38967, Class7210.field30953).method26635().method26623(5.0F).method26619(SoundType.field36205).method26615()
       )
    );
    public static final Block field36561 = register(
       "oak_pressure_plate",
       new Class3469(
          Class2275.field14823,
-         AbstractBlock.method26611(Class8649.field38956, field36400.method12000()).method26614().method26623(0.5F).method26619(Class8447.field36200)
+         AbstractBlock.method26611(Class8649.field38956, field36400.method12000()).method26614().method26623(0.5F).method26619(SoundType.field36200)
       )
    );
    public static final Block field36562 = register(
       "spruce_pressure_plate",
       new Class3469(
          Class2275.field14823,
-         AbstractBlock.method26611(Class8649.field38956, field36401.method12000()).method26614().method26623(0.5F).method26619(Class8447.field36200)
+         AbstractBlock.method26611(Class8649.field38956, field36401.method12000()).method26614().method26623(0.5F).method26619(SoundType.field36200)
       )
    );
    public static final Block field36563 = register(
       "birch_pressure_plate",
       new Class3469(
          Class2275.field14823,
-         AbstractBlock.method26611(Class8649.field38956, field36402.method12000()).method26614().method26623(0.5F).method26619(Class8447.field36200)
+         AbstractBlock.method26611(Class8649.field38956, field36402.method12000()).method26614().method26623(0.5F).method26619(SoundType.field36200)
       )
    );
    public static final Block field36564 = register(
       "jungle_pressure_plate",
       new Class3469(
          Class2275.field14823,
-         AbstractBlock.method26611(Class8649.field38956, field36403.method12000()).method26614().method26623(0.5F).method26619(Class8447.field36200)
+         AbstractBlock.method26611(Class8649.field38956, field36403.method12000()).method26614().method26623(0.5F).method26619(SoundType.field36200)
       )
    );
    public static final Block field36565 = register(
       "acacia_pressure_plate",
       new Class3469(
          Class2275.field14823,
-         AbstractBlock.method26611(Class8649.field38956, field36404.method12000()).method26614().method26623(0.5F).method26619(Class8447.field36200)
+         AbstractBlock.method26611(Class8649.field38956, field36404.method12000()).method26614().method26623(0.5F).method26619(SoundType.field36200)
       )
    );
    public static final Block field36566 = register(
       "dark_oak_pressure_plate",
       new Class3469(
          Class2275.field14823,
-         AbstractBlock.method26611(Class8649.field38956, field36405.method12000()).method26614().method26623(0.5F).method26619(Class8447.field36200)
+         AbstractBlock.method26611(Class8649.field38956, field36405.method12000()).method26614().method26623(0.5F).method26619(SoundType.field36200)
       )
    );
    public static final Block field36567 = register(
@@ -684,7 +684,7 @@ public class Blocks {
    );
    public static final Block field36568 = register(
       "redstone_torch",
-      new Class3383(AbstractBlock.method26609(Class8649.field38946).method26614().method26622().method26620(method30011(7)).method26619(Class8447.field36200))
+      new Class3383(AbstractBlock.method26609(Class8649.field38946).method26614().method26622().method26620(method30011(7)).method26619(SoundType.field36200))
    );
    public static final Block field36569 = register(
       "redstone_wall_torch",
@@ -693,7 +693,7 @@ public class Blocks {
             .method26614()
             .method26622()
             .method26620(method30011(7))
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26627(field36568)
       )
    );
@@ -701,7 +701,7 @@ public class Blocks {
       "stone_button", new Class3203(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F))
    );
    public static final Block SNOW = register(
-      "snow", new Class3410(AbstractBlock.method26609(Class8649.field38944).method26624().method26623(0.1F).method26635().method26619(Class8447.field36209))
+      "snow", new Class3410(AbstractBlock.method26609(Class8649.field38944).method26624().method26623(0.1F).method26635().method26619(SoundType.field36209))
    );
    public static final Block ICE = register(
       "ice",
@@ -710,36 +710,36 @@ public class Blocks {
             .method26616(0.98F)
             .method26624()
             .method26623(0.5F)
-            .method26619(Class8447.field36206)
+            .method26619(SoundType.field36206)
             .method26615()
             .method26629((var0, var1, var2, var3) -> var3 == EntityType.field41068)
       )
    );
    public static final Block SNOW_BLOCK = register(
-      "snow_block", new Block(AbstractBlock.method26609(Class8649.field38968).method26635().method26623(0.2F).method26619(Class8447.field36209))
+      "snow_block", new Block(AbstractBlock.method26609(Class8649.field38968).method26635().method26623(0.2F).method26619(SoundType.field36209))
    );
    public static final Block CACTUS = register(
-      "cactus", new Class3220(AbstractBlock.method26609(Class8649.field38965).method26624().method26623(0.4F).method26619(Class8447.field36207))
+      "cactus", new Class3220(AbstractBlock.method26609(Class8649.field38965).method26624().method26623(0.4F).method26619(SoundType.field36207))
    );
    public static final Block CLAY = register(
-      "clay", new Block(AbstractBlock.method26609(Class8649.field38949).method26623(0.6F).method26619(Class8447.field36201))
+      "clay", new Block(AbstractBlock.method26609(Class8649.field38949).method26623(0.6F).method26619(SoundType.field36201))
    );
    public static final Block SUGAR_CANE = register(
-      "sugar_cane", new Class3408(AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(Class8447.field36202))
+      "sugar_cane", new Class3408(AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(SoundType.field36202))
    );
    public static final Block JUKEBOX = register(
       "jukebox", new Class3364(AbstractBlock.method26611(Class8649.field38956, Class7210.field30957).method26621(2.0F, 6.0F))
    );
    public static final Block OAK_FENCE = register(
       "oak_fence",
-      new Class3239(AbstractBlock.method26611(Class8649.field38956, field36400.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3239(AbstractBlock.method26611(Class8649.field38956, field36400.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block PUMPKIN = register(
-      "pumpkin", new Class3464(AbstractBlock.method26611(Class8649.field38973, Class7210.field30962).method26623(1.0F).method26619(Class8447.field36200))
+      "pumpkin", new Class3464(AbstractBlock.method26611(Class8649.field38973, Class7210.field30962).method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block NETHERRACK = register(
       "netherrack",
-      new Class3385(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26623(0.4F).method26619(Class8447.field36236))
+      new Class3385(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26623(0.4F).method26619(SoundType.field36236))
    );
    public static final Block SOUL_SAND = register(
       "soul_sand",
@@ -747,7 +747,7 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38953, Class7210.field30973)
             .method26623(0.5F)
             .method26617(0.4F)
-            .method26619(Class8447.field36232)
+            .method26619(SoundType.field36232)
             .method26629(Blocks::method30013)
             .method26630(Blocks::method30018)
             .method26632(Blocks::method30018)
@@ -755,20 +755,20 @@ public class Blocks {
       )
    );
    public static final Block SOUL_SOIL = register(
-      "soul_soil", new Block(AbstractBlock.method26611(Class8649.field38950, Class7210.field30973).method26623(0.5F).method26619(Class8447.field36233))
+      "soul_soil", new Block(AbstractBlock.method26611(Class8649.field38950, Class7210.field30973).method26623(0.5F).method26619(SoundType.field36233))
    );
    public static final Block BASALT = register(
       "basalt",
-      new Class3386(AbstractBlock.method26611(Class8649.field38966, Class7210.field30976).method26635().method26621(1.25F, 4.2F).method26619(Class8447.field36234))
+      new Class3386(AbstractBlock.method26611(Class8649.field38966, Class7210.field30976).method26635().method26621(1.25F, 4.2F).method26619(SoundType.field36234))
    );
    public static final Block POLISHED_BASALT = register(
       "polished_basalt",
-      new Class3386(AbstractBlock.method26611(Class8649.field38966, Class7210.field30976).method26635().method26621(1.25F, 4.2F).method26619(Class8447.field36234))
+      new Class3386(AbstractBlock.method26611(Class8649.field38966, Class7210.field30976).method26635().method26621(1.25F, 4.2F).method26619(SoundType.field36234))
    );
    public static final Block field36585 = register(
       "soul_torch",
       new Class3381(
-         AbstractBlock.method26609(Class8649.field38946).method26614().method26622().method26620(var0 -> 10).method26619(Class8447.field36200),
+         AbstractBlock.method26609(Class8649.field38946).method26614().method26622().method26620(var0 -> 10).method26619(SoundType.field36200),
          ParticleTypes.field34075
       )
    );
@@ -779,7 +779,7 @@ public class Blocks {
             .method26614()
             .method26622()
             .method26620(var0 -> 10)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26627(field36585),
          ParticleTypes.field34075
       )
@@ -787,13 +787,13 @@ public class Blocks {
    public static final Block field36587 = register(
       "glowstone",
       new Block(
-         AbstractBlock.method26611(Class8649.field38963, Class7210.field30949).method26623(0.3F).method26619(Class8447.field36206).method26620(var0 -> 15)
+         AbstractBlock.method26611(Class8649.field38963, Class7210.field30949).method26623(0.3F).method26619(SoundType.field36206).method26620(var0 -> 15)
       )
    );
    public static final Block field36588 = register(
       "nether_portal",
       new Class3401(
-         AbstractBlock.method26609(Class8649.field38934).method26614().method26624().method26623(-1.0F).method26619(Class8447.field36206).method26620(var0 -> 11)
+         AbstractBlock.method26609(Class8649.field38934).method26614().method26624().method26623(-1.0F).method26619(SoundType.field36206).method26620(var0 -> 11)
       )
    );
    public static final Block field36589 = register(
@@ -801,7 +801,7 @@ public class Blocks {
       new Class3342(
          AbstractBlock.method26611(Class8649.field38973, Class7210.field30962)
             .method26623(1.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26629(Blocks::method30013)
       )
    );
@@ -810,16 +810,16 @@ public class Blocks {
       new Class3342(
          AbstractBlock.method26611(Class8649.field38973, Class7210.field30962)
             .method26623(1.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26620(var0 -> 15)
             .method26629(Blocks::method30013)
       )
    );
    public static final Block field36591 = register(
-      "cake", new Class3394(AbstractBlock.method26609(Class8649.field38975).method26623(0.5F).method26619(Class8447.field36207))
+      "cake", new Class3394(AbstractBlock.method26609(Class8649.field38975).method26623(0.5F).method26619(SoundType.field36207))
    );
    public static final Block field36592 = register(
-      "repeater", new Class3248(AbstractBlock.method26609(Class8649.field38946).method26622().method26619(Class8447.field36200))
+      "repeater", new Class3248(AbstractBlock.method26609(Class8649.field38946).method26622().method26619(SoundType.field36200))
    );
    public static final Block field36593 = register("white_stained_glass", method30020(Class112.field386));
    public static final Block field36594 = register("orange_stained_glass", method30020(Class112.field387));
@@ -842,7 +842,7 @@ public class Blocks {
       new Class3206(
          AbstractBlock.method26611(Class8649.field38956, Class7210.field30960)
             .method26623(3.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26615()
             .method26629(Blocks::method30012)
       )
@@ -852,7 +852,7 @@ public class Blocks {
       new Class3206(
          AbstractBlock.method26611(Class8649.field38956, Class7210.field30981)
             .method26623(3.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26615()
             .method26629(Blocks::method30012)
       )
@@ -862,7 +862,7 @@ public class Blocks {
       new Class3206(
          AbstractBlock.method26611(Class8649.field38956, Class7210.field30949)
             .method26623(3.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26615()
             .method26629(Blocks::method30012)
       )
@@ -872,7 +872,7 @@ public class Blocks {
       new Class3206(
          AbstractBlock.method26611(Class8649.field38956, Class7210.field30957)
             .method26623(3.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26615()
             .method26629(Blocks::method30012)
       )
@@ -882,7 +882,7 @@ public class Blocks {
       new Class3206(
          AbstractBlock.method26611(Class8649.field38956, Class7210.field30962)
             .method26623(3.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26615()
             .method26629(Blocks::method30012)
       )
@@ -892,7 +892,7 @@ public class Blocks {
       new Class3206(
          AbstractBlock.method26611(Class8649.field38956, Class7210.field30973)
             .method26623(3.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26615()
             .method26629(Blocks::method30012)
       )
@@ -929,14 +929,14 @@ public class Blocks {
    );
    public static final Block BROWN_MUSHROOM_BLOCK = register(
       "brown_mushroom_block",
-      new Class3443(AbstractBlock.method26611(Class8649.field38956, Class7210.field30957).method26623(0.2F).method26619(Class8447.field36200))
+      new Class3443(AbstractBlock.method26611(Class8649.field38956, Class7210.field30957).method26623(0.2F).method26619(SoundType.field36200))
    );
    public static final Block RED_MUSHROOM_BLOCK = register(
       "red_mushroom_block",
-      new Class3443(AbstractBlock.method26611(Class8649.field38956, Class7210.field30975).method26623(0.2F).method26619(Class8447.field36200))
+      new Class3443(AbstractBlock.method26611(Class8649.field38956, Class7210.field30975).method26623(0.2F).method26619(SoundType.field36200))
    );
    public static final Block MUSHROOM_STEM = register(
-      "mushroom_stem", new Class3443(AbstractBlock.method26611(Class8649.field38956, Class7210.field30950).method26623(0.2F).method26619(Class8447.field36200))
+      "mushroom_stem", new Class3443(AbstractBlock.method26611(Class8649.field38956, Class7210.field30950).method26623(0.2F).method26619(SoundType.field36200))
    );
    public static final Block IRON_BARS = register(
       "iron_bars",
@@ -944,7 +944,7 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38967, Class7210.field30947)
             .method26635()
             .method26621(5.0F, 6.0F)
-            .method26619(Class8447.field36205)
+            .method26619(SoundType.field36205)
             .method26615()
       )
    );
@@ -954,64 +954,64 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38967, Class7210.field30947)
             .method26635()
             .method26621(5.0F, 6.0F)
-            .method26619(Class8447.field36244)
+            .method26619(SoundType.field36244)
             .method26615()
       )
    );
    public static final Block GLASS_PANE = register(
-      "glass_pane", new Class3237(AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      "glass_pane", new Class3237(AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block MELON = register(
-      "melon", new Class3463(AbstractBlock.method26611(Class8649.field38973, Class7210.field30966).method26623(1.0F).method26619(Class8447.field36200))
+      "melon", new Class3463(AbstractBlock.method26611(Class8649.field38973, Class7210.field30966).method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block ATTACHED_PUMPKIN_STEM = register(
       "attached_pumpkin_stem",
-      new Class3493((Class3462) PUMPKIN, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36200))
+      new Class3493((Class3462) PUMPKIN, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(SoundType.field36200))
    );
    public static final Block ATTACHED_MELON_STEM = register(
       "attached_melon_stem",
-      new Class3493((Class3462) MELON, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(Class8447.field36200))
+      new Class3493((Class3462) MELON, AbstractBlock.method26609(Class8649.field38936).method26614().method26622().method26619(SoundType.field36200))
    );
    public static final Block PUMPKIN_STEM = register(
       "pumpkin_stem",
       new Class3486(
-         (Class3462) PUMPKIN, AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(Class8447.field36221)
+         (Class3462) PUMPKIN, AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(SoundType.field36221)
       )
    );
    public static final Block MELON_STEM = register(
       "melon_stem",
       new Class3486(
-         (Class3462) MELON, AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(Class8447.field36221)
+         (Class3462) MELON, AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(SoundType.field36221)
       )
    );
    public static final Block VINE = register(
-      "vine", new Class3402(AbstractBlock.method26609(Class8649.field38938).method26614().method26624().method26623(0.2F).method26619(Class8447.field36222))
+      "vine", new Class3402(AbstractBlock.method26609(Class8649.field38938).method26614().method26624().method26623(0.2F).method26619(SoundType.field36222))
    );
    public static final Block OAK_FENCE_GATE = register(
       "oak_fence_gate",
-      new Class3199(AbstractBlock.method26611(Class8649.field38956, field36400.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3199(AbstractBlock.method26611(Class8649.field38956, field36400.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block BRICK_STAIRS = register("brick_stairs", new Class3421(field36523.method11579(), AbstractBlock.method26613(field36523)));
    public static final Block STONE_BRICK_STAIRS = register("stone_brick_stairs", new Class3421(field36615.method11579(), AbstractBlock.method26613(field36615)));
    public static final Block MYCELIUM = register(
       "mycelium",
-      new Class3474(AbstractBlock.method26611(Class8649.field38951, Class7210.field30971).method26624().method26623(0.6F).method26619(Class8447.field36202))
+      new Class3474(AbstractBlock.method26611(Class8649.field38951, Class7210.field30971).method26624().method26623(0.6F).method26619(SoundType.field36202))
    );
    public static final Block LILY_PAD = register(
-      "lily_pad", new Class3494(AbstractBlock.method26609(Class8649.field38936).method26622().method26619(Class8447.field36203).method26615())
+      "lily_pad", new Class3494(AbstractBlock.method26609(Class8649.field38936).method26622().method26619(SoundType.field36203).method26615())
    );
    public static final Block NETHER_BRICKS = register(
       "nether_bricks",
-      new Block(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(2.0F, 6.0F).method26619(Class8447.field36237))
+      new Block(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(2.0F, 6.0F).method26619(SoundType.field36237))
    );
    public static final Block NETHER_BRICK_FENCE = register(
       "nether_brick_fence",
-      new Class3239(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(2.0F, 6.0F).method26619(Class8447.field36237))
+      new Class3239(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(2.0F, 6.0F).method26619(SoundType.field36237))
    );
    public static final Block NETHER_BRICK_STAIRS = register("nether_brick_stairs", new Class3421(NETHER_BRICKS.method11579(), AbstractBlock.method26613(NETHER_BRICKS)));
    public static final Block NETHER_WART = register(
       "nether_wart",
-      new Class3489(AbstractBlock.method26611(Class8649.field38936, Class7210.field30975).method26614().method26624().method26619(Class8447.field36223))
+      new Class3489(AbstractBlock.method26611(Class8649.field38936, Class7210.field30975).method26614().method26624().method26619(SoundType.field36223))
    );
    public static final Block ENCHANTING_TABLE = register(
       "enchanting_table", new Class3363(AbstractBlock.method26611(Class8649.field38966, Class7210.field30975).method26635().method26621(5.0F, 1200.0F))
@@ -1032,7 +1032,7 @@ public class Blocks {
       "end_portal_frame",
       new Class3400(
          AbstractBlock.method26611(Class8649.field38966, Class7210.field30974)
-            .method26619(Class8447.field36206)
+            .method26619(SoundType.field36206)
             .method26620(var0 -> 1)
             .method26621(-1.0F, 3600000.0F)
             .method26626()
@@ -1051,12 +1051,12 @@ public class Blocks {
          AbstractBlock.method26609(Class8649.field38948)
             .method26620(method30011(15))
             .method26623(0.3F)
-            .method26619(Class8447.field36206)
+            .method26619(SoundType.field36206)
             .method26629(Blocks::method30013)
       )
    );
    public static final Block COCOA = register(
-      "cocoa", new Class3197(AbstractBlock.method26609(Class8649.field38936).method26624().method26621(0.2F, 3.0F).method26619(Class8447.field36200).method26615())
+      "cocoa", new Class3197(AbstractBlock.method26609(Class8649.field38936).method26624().method26621(0.2F, 3.0F).method26619(SoundType.field36200).method26615())
    );
    public static final Block SANDSTONE_STAIRS = register("sandstone_stairs", new Class3421(SANDSTONE.method11579(), AbstractBlock.method26613(SANDSTONE)));
    public static final Block EMERALD_ORE = register(
@@ -1071,14 +1071,14 @@ public class Blocks {
    );
    public static final Block EMERALD_BLOCK = register(
       "emerald_block",
-      new Block(AbstractBlock.method26611(Class8649.field38967, Class7210.field30980).method26635().method26621(5.0F, 6.0F).method26619(Class8447.field36205))
+      new Block(AbstractBlock.method26611(Class8649.field38967, Class7210.field30980).method26635().method26621(5.0F, 6.0F).method26619(SoundType.field36205))
    );
    public static final Block SPRUCE_STAIRS = register("spruce_stairs", new Class3421(field36401.method11579(), AbstractBlock.method26613(field36401)));
    public static final Block field36662 = register("birch_stairs", new Class3421(field36402.method11579(), AbstractBlock.method26613(field36402)));
    public static final Block field36663 = register("jungle_stairs", new Class3421(field36403.method11579(), AbstractBlock.method26613(field36403)));
    public static final Block COMMAND_BLOCK = register(
       "command_block",
-      new Class3355(AbstractBlock.method26611(Class8649.field38967, Class7210.field30973).method26635().method26621(-1.0F, 3600000.0F).method26626())
+      new CommandBlockBlock(AbstractBlock.method26611(Class8649.field38967, Class7210.field30973).method26635().method26621(-1.0F, 3600000.0F).method26626())
    );
    public static final Block BEACON = register(
       "beacon",
@@ -1168,28 +1168,28 @@ public class Blocks {
       "potted_cactus", new Class3460(CACTUS, AbstractBlock.method26609(Class8649.field38946).method26622().method26615())
    );
    public static final Block field36693 = register(
-      "carrots", new Class3483(AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(Class8447.field36220))
+      "carrots", new Class3483(AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(SoundType.field36220))
    );
    public static final Block field36694 = register(
-      "potatoes", new Class3481(AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(Class8447.field36220))
+      "potatoes", new Class3481(AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(SoundType.field36220))
    );
    public static final Block field36695 = register(
-      "oak_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(Class8447.field36200))
+      "oak_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(SoundType.field36200))
    );
    public static final Block field36696 = register(
-      "spruce_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(Class8447.field36200))
+      "spruce_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(SoundType.field36200))
    );
    public static final Block field36697 = register(
-      "birch_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(Class8447.field36200))
+      "birch_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(SoundType.field36200))
    );
    public static final Block field36698 = register(
-      "jungle_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(Class8447.field36200))
+      "jungle_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(SoundType.field36200))
    );
    public static final Block field36699 = register(
-      "acacia_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(Class8447.field36200))
+      "acacia_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(SoundType.field36200))
    );
    public static final Block field36700 = register(
-      "dark_oak_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(Class8447.field36200))
+      "dark_oak_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(SoundType.field36200))
    );
    public static final Block field36701 = register(
       "skeleton_skull", new Class3343(Class2136.field13989, AbstractBlock.method26609(Class8649.field38946).method26623(1.0F))
@@ -1226,39 +1226,39 @@ public class Blocks {
    public static final Block ANVIL = register(
       "anvil",
       new Class3218(
-         AbstractBlock.method26611(Class8649.field38969, Class7210.field30953).method26635().method26621(5.0F, 1200.0F).method26619(Class8447.field36211)
+         AbstractBlock.method26611(Class8649.field38969, Class7210.field30953).method26635().method26621(5.0F, 1200.0F).method26619(SoundType.field36211)
       )
    );
    public static final Block field36714 = register(
       "chipped_anvil",
       new Class3218(
-         AbstractBlock.method26611(Class8649.field38969, Class7210.field30953).method26635().method26621(5.0F, 1200.0F).method26619(Class8447.field36211)
+         AbstractBlock.method26611(Class8649.field38969, Class7210.field30953).method26635().method26621(5.0F, 1200.0F).method26619(SoundType.field36211)
       )
    );
    public static final Block field36715 = register(
       "damaged_anvil",
       new Class3218(
-         AbstractBlock.method26611(Class8649.field38969, Class7210.field30953).method26635().method26621(5.0F, 1200.0F).method26619(Class8447.field36211)
+         AbstractBlock.method26611(Class8649.field38969, Class7210.field30953).method26635().method26621(5.0F, 1200.0F).method26619(SoundType.field36211)
       )
    );
    public static final Block TRAPPED_CHEST = register(
-      "trapped_chest", new Class3349(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(Class8447.field36200))
+      "trapped_chest", new Class3349(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(SoundType.field36200))
    );
    public static final Block field36717 = register(
       "light_weighted_pressure_plate",
       new Class3470(
-         15, AbstractBlock.method26611(Class8649.field38967, Class7210.field30977).method26635().method26614().method26623(0.5F).method26619(Class8447.field36200)
+         15, AbstractBlock.method26611(Class8649.field38967, Class7210.field30977).method26635().method26614().method26623(0.5F).method26619(SoundType.field36200)
       )
    );
    public static final Block field36718 = register(
       "heavy_weighted_pressure_plate",
-      new Class3470(150, AbstractBlock.method26609(Class8649.field38967).method26635().method26614().method26623(0.5F).method26619(Class8447.field36200))
+      new Class3470(150, AbstractBlock.method26609(Class8649.field38967).method26635().method26614().method26623(0.5F).method26619(SoundType.field36200))
    );
    public static final Block field36719 = register(
-      "comparator", new Class3246(AbstractBlock.method26609(Class8649.field38946).method26622().method26619(Class8447.field36200))
+      "comparator", new Class3246(AbstractBlock.method26609(Class8649.field38946).method26622().method26619(SoundType.field36200))
    );
    public static final Block field36720 = register(
-      "daylight_detector", new Class3372(AbstractBlock.method26609(Class8649.field38956).method26623(0.2F).method26619(Class8447.field36200))
+      "daylight_detector", new Class3372(AbstractBlock.method26609(Class8649.field38956).method26623(0.2F).method26619(SoundType.field36200))
    );
    public static final Block field36721 = register(
       "redstone_block",
@@ -1266,13 +1266,13 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38967, Class7210.field30951)
             .method26635()
             .method26621(5.0F, 6.0F)
-            .method26619(Class8447.field36205)
+            .method26619(SoundType.field36205)
             .method26630(Blocks::method30019)
       )
    );
    public static final Block field36722 = register(
       "nether_quartz_ore",
-      new Class3420(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(3.0F, 3.0F).method26619(Class8447.field36239))
+      new Class3420(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(3.0F, 3.0F).method26619(SoundType.field36239))
    );
    public static final Block field36723 = register(
       "hopper",
@@ -1280,7 +1280,7 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38967, Class7210.field30958)
             .method26635()
             .method26621(3.0F, 4.8F)
-            .method26619(Class8447.field36205)
+            .method26619(SoundType.field36205)
             .method26615()
       )
    );
@@ -1295,7 +1295,7 @@ public class Blocks {
    );
    public static final Block field36727 = register("quartz_stairs", new Class3421(field36724.method11579(), AbstractBlock.method26613(field36724)));
    public static final Block field36728 = register(
-      "activator_rail", new Class3432(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.7F).method26619(Class8447.field36205))
+      "activator_rail", new Class3432(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.7F).method26619(SoundType.field36205))
    );
    public static final Block DROPPER = register("dropper", new Class3358(AbstractBlock.method26609(Class8649.field38966).method26635().method26623(3.5F)));
    public static final Block field36730 = register(
@@ -1348,73 +1348,73 @@ public class Blocks {
    );
    public static final Block field36746 = register(
       "white_stained_glass_pane",
-      new Class3236(Class112.field386, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field386, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36747 = register(
       "orange_stained_glass_pane",
-      new Class3236(Class112.field387, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field387, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36748 = register(
       "magenta_stained_glass_pane",
-      new Class3236(Class112.field388, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field388, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36749 = register(
       "light_blue_stained_glass_pane",
-      new Class3236(Class112.field389, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field389, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36750 = register(
       "yellow_stained_glass_pane",
-      new Class3236(Class112.field390, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field390, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36751 = register(
       "lime_stained_glass_pane",
-      new Class3236(Class112.field391, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field391, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36752 = register(
       "pink_stained_glass_pane",
-      new Class3236(Class112.field392, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field392, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36753 = register(
       "gray_stained_glass_pane",
-      new Class3236(Class112.field393, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field393, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36754 = register(
       "light_gray_stained_glass_pane",
-      new Class3236(Class112.field394, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field394, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36755 = register(
       "cyan_stained_glass_pane",
-      new Class3236(Class112.field395, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field395, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36756 = register(
       "purple_stained_glass_pane",
-      new Class3236(Class112.field396, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field396, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36757 = register(
       "blue_stained_glass_pane",
-      new Class3236(Class112.field397, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field397, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36758 = register(
       "brown_stained_glass_pane",
-      new Class3236(Class112.field398, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field398, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36759 = register(
       "green_stained_glass_pane",
-      new Class3236(Class112.field399, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field399, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36760 = register(
       "red_stained_glass_pane",
-      new Class3236(Class112.field400, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field400, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36761 = register(
       "black_stained_glass_pane",
-      new Class3236(Class112.field401, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(Class8447.field36206).method26615())
+      new Class3236(Class112.field401, AbstractBlock.method26609(Class8649.field38963).method26623(0.3F).method26619(SoundType.field36206).method26615())
    );
    public static final Block field36762 = register("acacia_stairs", new Class3421(field36404.method11579(), AbstractBlock.method26613(field36404)));
    public static final Block field36763 = register("dark_oak_stairs", new Class3421(field36405.method11579(), AbstractBlock.method26613(field36405)));
    public static final Block field36764 = register(
       "slime_block",
-      new Class3380(AbstractBlock.method26611(Class8649.field38949, Class7210.field30948).method26616(0.8F).method26619(Class8447.field36212).method26615())
+      new Class3380(AbstractBlock.method26611(Class8649.field38949, Class7210.field30948).method26616(0.8F).method26619(SoundType.field36212).method26615())
    );
    public static final Block field36765 = register(
       "barrier",
@@ -1426,7 +1426,7 @@ public class Blocks {
          AbstractBlock.method26609(Class8649.field38967)
             .method26635()
             .method26623(5.0F)
-            .method26619(Class8447.field36205)
+            .method26619(SoundType.field36205)
             .method26615()
             .method26629(Blocks::method30012)
       )
@@ -1455,75 +1455,75 @@ public class Blocks {
    public static final Block field36776 = register(
       "sea_lantern",
       new Block(
-         AbstractBlock.method26611(Class8649.field38963, Class7210.field30961).method26623(0.3F).method26619(Class8447.field36206).method26620(var0 -> 15)
+         AbstractBlock.method26611(Class8649.field38963, Class7210.field30961).method26623(0.3F).method26619(SoundType.field36206).method26620(var0 -> 15)
       )
    );
    public static final Block field36777 = register(
-      "hay_block", new Class3388(AbstractBlock.method26611(Class8649.field38951, Class7210.field30965).method26623(0.5F).method26619(Class8447.field36202))
+      "hay_block", new Class3388(AbstractBlock.method26611(Class8649.field38951, Class7210.field30965).method26623(0.5F).method26619(SoundType.field36202))
    );
    public static final Block WHITE_CARPET = register(
       "white_carpet",
-      new Class3422(Class112.field386, AbstractBlock.method26611(Class8649.field38935, Class7210.field30955).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field386, AbstractBlock.method26611(Class8649.field38935, Class7210.field30955).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block ORANGE_CARPET = register(
       "orange_carpet",
-      new Class3422(Class112.field387, AbstractBlock.method26611(Class8649.field38935, Class7210.field30962).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field387, AbstractBlock.method26611(Class8649.field38935, Class7210.field30962).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block MAGENTA_CARPET = register(
       "magenta_carpet",
-      new Class3422(Class112.field388, AbstractBlock.method26611(Class8649.field38935, Class7210.field30963).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field388, AbstractBlock.method26611(Class8649.field38935, Class7210.field30963).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block LIGHT_BLUE_CARPET = register(
       "light_blue_carpet",
-      new Class3422(Class112.field389, AbstractBlock.method26611(Class8649.field38935, Class7210.field30964).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field389, AbstractBlock.method26611(Class8649.field38935, Class7210.field30964).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block YELLOW_CARPET = register(
       "yellow_carpet",
-      new Class3422(Class112.field390, AbstractBlock.method26611(Class8649.field38935, Class7210.field30965).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field390, AbstractBlock.method26611(Class8649.field38935, Class7210.field30965).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block LIME_CARPET = register(
       "lime_carpet",
-      new Class3422(Class112.field391, AbstractBlock.method26611(Class8649.field38935, Class7210.field30966).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field391, AbstractBlock.method26611(Class8649.field38935, Class7210.field30966).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block PINK_CARPET = register(
       "pink_carpet",
-      new Class3422(Class112.field392, AbstractBlock.method26611(Class8649.field38935, Class7210.field30967).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field392, AbstractBlock.method26611(Class8649.field38935, Class7210.field30967).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block GRAY_CARPET = register(
       "gray_carpet",
-      new Class3422(Class112.field393, AbstractBlock.method26611(Class8649.field38935, Class7210.field30968).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field393, AbstractBlock.method26611(Class8649.field38935, Class7210.field30968).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block LIGHT_GRAY_CARPET = register(
       "light_gray_carpet",
-      new Class3422(Class112.field394, AbstractBlock.method26611(Class8649.field38935, Class7210.field30969).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field394, AbstractBlock.method26611(Class8649.field38935, Class7210.field30969).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block CYAN_CARPET = register(
       "cyan_carpet",
-      new Class3422(Class112.field395, AbstractBlock.method26611(Class8649.field38935, Class7210.field30970).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field395, AbstractBlock.method26611(Class8649.field38935, Class7210.field30970).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block PURPLE_CARPET = register(
       "purple_carpet",
-      new Class3422(Class112.field396, AbstractBlock.method26611(Class8649.field38935, Class7210.field30971).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field396, AbstractBlock.method26611(Class8649.field38935, Class7210.field30971).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block BLUE_CARPET = register(
       "blue_carpet",
-      new Class3422(Class112.field397, AbstractBlock.method26611(Class8649.field38935, Class7210.field30972).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field397, AbstractBlock.method26611(Class8649.field38935, Class7210.field30972).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block BROWN_CARPET = register(
       "brown_carpet",
-      new Class3422(Class112.field398, AbstractBlock.method26611(Class8649.field38935, Class7210.field30973).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field398, AbstractBlock.method26611(Class8649.field38935, Class7210.field30973).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block GREEN_CARPET = register(
       "green_carpet",
-      new Class3422(Class112.field399, AbstractBlock.method26611(Class8649.field38935, Class7210.field30974).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field399, AbstractBlock.method26611(Class8649.field38935, Class7210.field30974).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block RED_CARPET = register(
       "red_carpet",
-      new Class3422(Class112.field400, AbstractBlock.method26611(Class8649.field38935, Class7210.field30975).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field400, AbstractBlock.method26611(Class8649.field38935, Class7210.field30975).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block BLACK_CARPET = register(
       "black_carpet",
-      new Class3422(Class112.field401, AbstractBlock.method26611(Class8649.field38935, Class7210.field30976).method26623(0.1F).method26619(Class8447.field36207))
+      new Class3422(Class112.field401, AbstractBlock.method26611(Class8649.field38935, Class7210.field30976).method26623(0.1F).method26619(SoundType.field36207))
    );
    public static final Block field36794 = register(
       "terracotta", new Block(AbstractBlock.method26611(Class8649.field38966, Class7210.field30962).method26635().method26621(1.25F, 4.2F))
@@ -1532,200 +1532,200 @@ public class Blocks {
       "coal_block", new Block(AbstractBlock.method26611(Class8649.field38966, Class7210.field30976).method26635().method26621(5.0F, 6.0F))
    );
    public static final Block PACKED_ICE = register(
-      "packed_ice", new Block(AbstractBlock.method26609(Class8649.field38952).method26616(0.98F).method26623(0.5F).method26619(Class8447.field36206))
+      "packed_ice", new Block(AbstractBlock.method26609(Class8649.field38952).method26616(0.98F).method26623(0.5F).method26619(SoundType.field36206))
    );
    public static final Block SUNFLOWER = register(
-      "sunflower", new Class3457(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(Class8447.field36202))
+      "sunflower", new Class3457(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block LILAC = register(
-      "lilac", new Class3457(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(Class8447.field36202))
+      "lilac", new Class3457(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block ROSE_BUSH = register(
-      "rose_bush", new Class3457(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(Class8447.field36202))
+      "rose_bush", new Class3457(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block field36800 = register(
-      "peony", new Class3457(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(Class8447.field36202))
+      "peony", new Class3457(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block TALL_GRASS = register(
-      "tall_grass", new Class3456(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(Class8447.field36202))
+      "tall_grass", new Class3456(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block field36802 = register(
-      "large_fern", new Class3456(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(Class8447.field36202))
+      "large_fern", new Class3456(AbstractBlock.method26609(Class8649.field38938).method26614().method26622().method26619(SoundType.field36202))
    );
    public static final Block field36803 = register(
       "white_banner",
-      new Class3360(Class112.field386, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field386, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36804 = register(
       "orange_banner",
-      new Class3360(Class112.field387, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field387, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36805 = register(
       "magenta_banner",
-      new Class3360(Class112.field388, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field388, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36806 = register(
       "light_blue_banner",
-      new Class3360(Class112.field389, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field389, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36807 = register(
       "yellow_banner",
-      new Class3360(Class112.field390, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field390, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36808 = register(
       "lime_banner",
-      new Class3360(Class112.field391, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field391, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36809 = register(
       "pink_banner",
-      new Class3360(Class112.field392, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field392, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36810 = register(
       "gray_banner",
-      new Class3360(Class112.field393, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field393, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36811 = register(
       "light_gray_banner",
-      new Class3360(Class112.field394, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field394, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36812 = register(
       "cyan_banner",
-      new Class3360(Class112.field395, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field395, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36813 = register(
       "purple_banner",
-      new Class3360(Class112.field396, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field396, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36814 = register(
       "blue_banner",
-      new Class3360(Class112.field397, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field397, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36815 = register(
       "brown_banner",
-      new Class3360(Class112.field398, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field398, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36816 = register(
       "green_banner",
-      new Class3360(Class112.field399, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field399, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36817 = register(
       "red_banner",
-      new Class3360(Class112.field400, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field400, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36818 = register(
       "black_banner",
-      new Class3360(Class112.field401, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200))
+      new Class3360(Class112.field401, AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200))
    );
    public static final Block field36819 = register(
       "white_wall_banner",
       new Class3361(
          Class112.field386,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36803)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36803)
       )
    );
    public static final Block field36820 = register(
       "orange_wall_banner",
       new Class3361(
          Class112.field387,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36804)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36804)
       )
    );
    public static final Block field36821 = register(
       "magenta_wall_banner",
       new Class3361(
          Class112.field388,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36805)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36805)
       )
    );
    public static final Block field36822 = register(
       "light_blue_wall_banner",
       new Class3361(
          Class112.field389,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36806)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36806)
       )
    );
    public static final Block field36823 = register(
       "yellow_wall_banner",
       new Class3361(
          Class112.field390,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36807)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36807)
       )
    );
    public static final Block field36824 = register(
       "lime_wall_banner",
       new Class3361(
          Class112.field391,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36808)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36808)
       )
    );
    public static final Block field36825 = register(
       "pink_wall_banner",
       new Class3361(
          Class112.field392,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36809)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36809)
       )
    );
    public static final Block field36826 = register(
       "gray_wall_banner",
       new Class3361(
          Class112.field393,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36810)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36810)
       )
    );
    public static final Block field36827 = register(
       "light_gray_wall_banner",
       new Class3361(
          Class112.field394,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36811)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36811)
       )
    );
    public static final Block field36828 = register(
       "cyan_wall_banner",
       new Class3361(
          Class112.field395,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36812)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36812)
       )
    );
    public static final Block field36829 = register(
       "purple_wall_banner",
       new Class3361(
          Class112.field396,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36813)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36813)
       )
    );
    public static final Block field36830 = register(
       "blue_wall_banner",
       new Class3361(
          Class112.field397,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36814)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36814)
       )
    );
    public static final Block field36831 = register(
       "brown_wall_banner",
       new Class3361(
          Class112.field398,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36815)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36815)
       )
    );
    public static final Block field36832 = register(
       "green_wall_banner",
       new Class3361(
          Class112.field399,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36816)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36816)
       )
    );
    public static final Block field36833 = register(
       "red_wall_banner",
       new Class3361(
          Class112.field400,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36817)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36817)
       )
    );
    public static final Block field36834 = register(
       "black_wall_banner",
       new Class3361(
          Class112.field401,
-         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(Class8447.field36200).method26627(field36818)
+         AbstractBlock.method26609(Class8649.field38956).method26614().method26623(1.0F).method26619(SoundType.field36200).method26627(field36818)
       )
    );
    public static final Block field36835 = register(
@@ -1739,23 +1739,23 @@ public class Blocks {
    );
    public static final Block field36838 = register("red_sandstone_stairs", new Class3421(field36835.method11579(), AbstractBlock.method26613(field36835)));
    public static final Block field36839 = register(
-      "oak_slab", new Class3208(AbstractBlock.method26611(Class8649.field38956, Class7210.field30960).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      "oak_slab", new Class3208(AbstractBlock.method26611(Class8649.field38956, Class7210.field30960).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36840 = register(
-      "spruce_slab", new Class3208(AbstractBlock.method26611(Class8649.field38956, Class7210.field30981).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      "spruce_slab", new Class3208(AbstractBlock.method26611(Class8649.field38956, Class7210.field30981).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36841 = register(
-      "birch_slab", new Class3208(AbstractBlock.method26611(Class8649.field38956, Class7210.field30949).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      "birch_slab", new Class3208(AbstractBlock.method26611(Class8649.field38956, Class7210.field30949).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36842 = register(
-      "jungle_slab", new Class3208(AbstractBlock.method26611(Class8649.field38956, Class7210.field30957).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      "jungle_slab", new Class3208(AbstractBlock.method26611(Class8649.field38956, Class7210.field30957).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36843 = register(
-      "acacia_slab", new Class3208(AbstractBlock.method26611(Class8649.field38956, Class7210.field30962).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      "acacia_slab", new Class3208(AbstractBlock.method26611(Class8649.field38956, Class7210.field30962).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36844 = register(
       "dark_oak_slab",
-      new Class3208(AbstractBlock.method26611(Class8649.field38956, Class7210.field30973).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3208(AbstractBlock.method26611(Class8649.field38956, Class7210.field30973).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36845 = register(
       "stone_slab", new Class3208(AbstractBlock.method26611(Class8649.field38966, Class7210.field30958).method26635().method26621(2.0F, 6.0F))
@@ -1783,7 +1783,7 @@ public class Blocks {
    );
    public static final Block field36853 = register(
       "nether_brick_slab",
-      new Class3208(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(2.0F, 6.0F).method26619(Class8447.field36237))
+      new Class3208(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(2.0F, 6.0F).method26619(SoundType.field36237))
    );
    public static final Block field36854 = register(
       "quartz_slab", new Class3208(AbstractBlock.method26611(Class8649.field38966, Class7210.field30961).method26635().method26621(2.0F, 6.0F))
@@ -1811,77 +1811,77 @@ public class Blocks {
    );
    public static final Block field36862 = register(
       "spruce_fence_gate",
-      new Class3199(AbstractBlock.method26611(Class8649.field38956, field36401.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3199(AbstractBlock.method26611(Class8649.field38956, field36401.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36863 = register(
       "birch_fence_gate",
-      new Class3199(AbstractBlock.method26611(Class8649.field38956, field36402.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3199(AbstractBlock.method26611(Class8649.field38956, field36402.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36864 = register(
       "jungle_fence_gate",
-      new Class3199(AbstractBlock.method26611(Class8649.field38956, field36403.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3199(AbstractBlock.method26611(Class8649.field38956, field36403.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36865 = register(
       "acacia_fence_gate",
-      new Class3199(AbstractBlock.method26611(Class8649.field38956, field36404.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3199(AbstractBlock.method26611(Class8649.field38956, field36404.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36866 = register(
       "dark_oak_fence_gate",
-      new Class3199(AbstractBlock.method26611(Class8649.field38956, field36405.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3199(AbstractBlock.method26611(Class8649.field38956, field36405.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36867 = register(
       "spruce_fence",
-      new Class3239(AbstractBlock.method26611(Class8649.field38956, field36401.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3239(AbstractBlock.method26611(Class8649.field38956, field36401.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36868 = register(
       "birch_fence",
-      new Class3239(AbstractBlock.method26611(Class8649.field38956, field36402.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3239(AbstractBlock.method26611(Class8649.field38956, field36402.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36869 = register(
       "jungle_fence",
-      new Class3239(AbstractBlock.method26611(Class8649.field38956, field36403.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3239(AbstractBlock.method26611(Class8649.field38956, field36403.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36870 = register(
       "acacia_fence",
-      new Class3239(AbstractBlock.method26611(Class8649.field38956, field36404.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3239(AbstractBlock.method26611(Class8649.field38956, field36404.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36871 = register(
       "dark_oak_fence",
-      new Class3239(AbstractBlock.method26611(Class8649.field38956, field36405.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3239(AbstractBlock.method26611(Class8649.field38956, field36405.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field36872 = register(
       "spruce_door",
-      new Class3461(AbstractBlock.method26611(Class8649.field38956, field36401.method12000()).method26623(3.0F).method26619(Class8447.field36200).method26615())
+      new Class3461(AbstractBlock.method26611(Class8649.field38956, field36401.method12000()).method26623(3.0F).method26619(SoundType.field36200).method26615())
    );
    public static final Block field36873 = register(
       "birch_door",
-      new Class3461(AbstractBlock.method26611(Class8649.field38956, field36402.method12000()).method26623(3.0F).method26619(Class8447.field36200).method26615())
+      new Class3461(AbstractBlock.method26611(Class8649.field38956, field36402.method12000()).method26623(3.0F).method26619(SoundType.field36200).method26615())
    );
    public static final Block field36874 = register(
       "jungle_door",
-      new Class3461(AbstractBlock.method26611(Class8649.field38956, field36403.method12000()).method26623(3.0F).method26619(Class8447.field36200).method26615())
+      new Class3461(AbstractBlock.method26611(Class8649.field38956, field36403.method12000()).method26623(3.0F).method26619(SoundType.field36200).method26615())
    );
    public static final Block field36875 = register(
       "acacia_door",
-      new Class3461(AbstractBlock.method26611(Class8649.field38956, field36404.method12000()).method26623(3.0F).method26619(Class8447.field36200).method26615())
+      new Class3461(AbstractBlock.method26611(Class8649.field38956, field36404.method12000()).method26623(3.0F).method26619(SoundType.field36200).method26615())
    );
    public static final Block field36876 = register(
       "dark_oak_door",
-      new Class3461(AbstractBlock.method26611(Class8649.field38956, field36405.method12000()).method26623(3.0F).method26619(Class8447.field36200).method26615())
+      new Class3461(AbstractBlock.method26611(Class8649.field38956, field36405.method12000()).method26623(3.0F).method26619(SoundType.field36200).method26615())
    );
    public static final Block field36877 = register(
       "end_rod",
-      new Class3437(AbstractBlock.method26609(Class8649.field38946).method26622().method26620(var0 -> 14).method26619(Class8447.field36200).method26615())
+      new Class3437(AbstractBlock.method26609(Class8649.field38946).method26622().method26620(var0 -> 14).method26619(SoundType.field36200).method26615())
    );
    public static final Block field36878 = register(
       "chorus_plant",
-      new Class3393(AbstractBlock.method26611(Class8649.field38936, Class7210.field30971).method26623(0.4F).method26619(Class8447.field36200).method26615())
+      new Class3393(AbstractBlock.method26611(Class8649.field38936, Class7210.field30971).method26623(0.4F).method26619(SoundType.field36200).method26615())
    );
    public static final Block field36879 = register(
       "chorus_flower",
       new Class3211(
          (Class3393)field36878,
-         AbstractBlock.method26611(Class8649.field38936, Class7210.field30971).method26624().method26623(0.4F).method26619(Class8447.field36200).method26615()
+         AbstractBlock.method26611(Class8649.field38936, Class7210.field30971).method26624().method26623(0.4F).method26619(SoundType.field36200).method26615()
       )
    );
    public static final Block field36880 = register(
@@ -1895,14 +1895,14 @@ public class Blocks {
       "end_stone_bricks", new Block(AbstractBlock.method26611(Class8649.field38966, Class7210.field30949).method26635().method26621(3.0F, 9.0F))
    );
    public static final Block field36884 = register(
-      "beetroots", new Class3482(AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(Class8447.field36220))
+      "beetroots", new Class3482(AbstractBlock.method26609(Class8649.field38936).method26614().method26624().method26622().method26619(SoundType.field36220))
    );
    public static final Block field36885 = register(
       "grass_path",
       new Class3411(
          AbstractBlock.method26609(Class8649.field38950)
             .method26623(0.65F)
-            .method26619(Class8447.field36202)
+            .method26619(SoundType.field36202)
             .method26632(Blocks::method30018)
             .method26631(Blocks::method30018)
       )
@@ -1915,11 +1915,11 @@ public class Blocks {
    );
    public static final Block field36887 = register(
       "repeating_command_block",
-      new Class3355(AbstractBlock.method26611(Class8649.field38967, Class7210.field30971).method26635().method26621(-1.0F, 3600000.0F).method26626())
+      new CommandBlockBlock(AbstractBlock.method26611(Class8649.field38967, Class7210.field30971).method26635().method26621(-1.0F, 3600000.0F).method26626())
    );
    public static final Block field36888 = register(
       "chain_command_block",
-      new Class3355(AbstractBlock.method26611(Class8649.field38967, Class7210.field30974).method26635().method26621(-1.0F, 3600000.0F).method26626())
+      new CommandBlockBlock(AbstractBlock.method26611(Class8649.field38967, Class7210.field30974).method26635().method26621(-1.0F, 3600000.0F).method26626())
    );
    public static final Block field36889 = register(
       "frosted_ice",
@@ -1928,7 +1928,7 @@ public class Blocks {
             .method26616(0.98F)
             .method26624()
             .method26623(0.5F)
-            .method26619(Class8447.field36206)
+            .method26619(SoundType.field36206)
             .method26615()
             .method26629((var0, var1, var2, var3) -> var3 == EntityType.field41068)
       )
@@ -1947,15 +1947,15 @@ public class Blocks {
       )
    );
    public static final Block field36891 = register(
-      "nether_wart_block", new Block(AbstractBlock.method26611(Class8649.field38951, Class7210.field30975).method26623(1.0F).method26619(Class8447.field36235))
+      "nether_wart_block", new Block(AbstractBlock.method26611(Class8649.field38951, Class7210.field30975).method26623(1.0F).method26619(SoundType.field36235))
    );
    public static final Block field36892 = register(
       "red_nether_bricks",
-      new Block(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(2.0F, 6.0F).method26619(Class8447.field36237))
+      new Block(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(2.0F, 6.0F).method26619(SoundType.field36237))
    );
    public static final Block field36893 = register(
       "bone_block",
-      new Class3386(AbstractBlock.method26611(Class8649.field38966, Class7210.field30949).method26635().method26623(2.0F).method26619(Class8447.field36240))
+      new Class3386(AbstractBlock.method26611(Class8649.field38966, Class7210.field30949).method26635().method26623(2.0F).method26619(SoundType.field36240))
    );
    public static final Block field36894 = register(
       "structure_void", new Class3391(AbstractBlock.method26609(Class8649.field38933).method26614().method26626())
@@ -2110,82 +2110,82 @@ public class Blocks {
    );
    public static final Block field36945 = register(
       "white_concrete_powder",
-      new Class3217(field36929, AbstractBlock.method26610(Class8649.field38953, Class112.field386).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36929, AbstractBlock.method26610(Class8649.field38953, Class112.field386).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36946 = register(
       "orange_concrete_powder",
-      new Class3217(field36930, AbstractBlock.method26610(Class8649.field38953, Class112.field387).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36930, AbstractBlock.method26610(Class8649.field38953, Class112.field387).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36947 = register(
       "magenta_concrete_powder",
-      new Class3217(field36931, AbstractBlock.method26610(Class8649.field38953, Class112.field388).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36931, AbstractBlock.method26610(Class8649.field38953, Class112.field388).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36948 = register(
       "light_blue_concrete_powder",
-      new Class3217(field36932, AbstractBlock.method26610(Class8649.field38953, Class112.field389).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36932, AbstractBlock.method26610(Class8649.field38953, Class112.field389).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36949 = register(
       "yellow_concrete_powder",
-      new Class3217(field36933, AbstractBlock.method26610(Class8649.field38953, Class112.field390).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36933, AbstractBlock.method26610(Class8649.field38953, Class112.field390).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36950 = register(
       "lime_concrete_powder",
-      new Class3217(field36934, AbstractBlock.method26610(Class8649.field38953, Class112.field391).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36934, AbstractBlock.method26610(Class8649.field38953, Class112.field391).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36951 = register(
       "pink_concrete_powder",
-      new Class3217(field36935, AbstractBlock.method26610(Class8649.field38953, Class112.field392).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36935, AbstractBlock.method26610(Class8649.field38953, Class112.field392).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36952 = register(
       "gray_concrete_powder",
-      new Class3217(field36936, AbstractBlock.method26610(Class8649.field38953, Class112.field393).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36936, AbstractBlock.method26610(Class8649.field38953, Class112.field393).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36953 = register(
       "light_gray_concrete_powder",
-      new Class3217(field36937, AbstractBlock.method26610(Class8649.field38953, Class112.field394).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36937, AbstractBlock.method26610(Class8649.field38953, Class112.field394).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36954 = register(
       "cyan_concrete_powder",
-      new Class3217(field36938, AbstractBlock.method26610(Class8649.field38953, Class112.field395).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36938, AbstractBlock.method26610(Class8649.field38953, Class112.field395).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36955 = register(
       "purple_concrete_powder",
-      new Class3217(field36939, AbstractBlock.method26610(Class8649.field38953, Class112.field396).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36939, AbstractBlock.method26610(Class8649.field38953, Class112.field396).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36956 = register(
       "blue_concrete_powder",
-      new Class3217(field36940, AbstractBlock.method26610(Class8649.field38953, Class112.field397).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36940, AbstractBlock.method26610(Class8649.field38953, Class112.field397).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36957 = register(
       "brown_concrete_powder",
-      new Class3217(field36941, AbstractBlock.method26610(Class8649.field38953, Class112.field398).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36941, AbstractBlock.method26610(Class8649.field38953, Class112.field398).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36958 = register(
       "green_concrete_powder",
-      new Class3217(field36942, AbstractBlock.method26610(Class8649.field38953, Class112.field399).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36942, AbstractBlock.method26610(Class8649.field38953, Class112.field399).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36959 = register(
       "red_concrete_powder",
-      new Class3217(field36943, AbstractBlock.method26610(Class8649.field38953, Class112.field400).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36943, AbstractBlock.method26610(Class8649.field38953, Class112.field400).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36960 = register(
       "black_concrete_powder",
-      new Class3217(field36944, AbstractBlock.method26610(Class8649.field38953, Class112.field401).method26623(0.5F).method26619(Class8447.field36208))
+      new Class3217(field36944, AbstractBlock.method26610(Class8649.field38953, Class112.field401).method26623(0.5F).method26619(SoundType.field36208))
    );
    public static final Block field36961 = register(
-      "kelp", new Class3451(AbstractBlock.method26609(Class8649.field38937).method26614().method26624().method26622().method26619(Class8447.field36214))
+      "kelp", new Class3451(AbstractBlock.method26609(Class8649.field38937).method26614().method26624().method26622().method26619(SoundType.field36214))
    );
    public static final Block field36962 = register(
-      "kelp_plant", new Class3448(AbstractBlock.method26609(Class8649.field38937).method26614().method26622().method26619(Class8447.field36214))
+      "kelp_plant", new Class3448(AbstractBlock.method26609(Class8649.field38937).method26614().method26622().method26619(SoundType.field36214))
    );
    public static final Block field36963 = register(
       "dried_kelp_block",
-      new Block(AbstractBlock.method26611(Class8649.field38951, Class7210.field30974).method26621(0.5F, 2.5F).method26619(Class8447.field36202))
+      new Block(AbstractBlock.method26611(Class8649.field38951, Class7210.field30974).method26621(0.5F, 2.5F).method26619(SoundType.field36202))
    );
    public static final Block field36964 = register(
       "turtle_egg",
       new Class3441(
-         AbstractBlock.method26611(Class8649.field38974, Class7210.field30949).method26623(0.5F).method26619(Class8447.field36205).method26624().method26615()
+         AbstractBlock.method26611(Class8649.field38974, Class7210.field30949).method26623(0.5F).method26619(SoundType.field36205).method26624().method26615()
       )
    );
    public static final Block field36965 = register(
@@ -2206,31 +2206,31 @@ public class Blocks {
    public static final Block field36970 = register(
       "tube_coral_block",
       new Class3414(
-         field36965, AbstractBlock.method26611(Class8649.field38966, Class7210.field30972).method26635().method26621(1.5F, 6.0F).method26619(Class8447.field36215)
+         field36965, AbstractBlock.method26611(Class8649.field38966, Class7210.field30972).method26635().method26621(1.5F, 6.0F).method26619(SoundType.field36215)
       )
    );
    public static final Block field36971 = register(
       "brain_coral_block",
       new Class3414(
-         field36966, AbstractBlock.method26611(Class8649.field38966, Class7210.field30967).method26635().method26621(1.5F, 6.0F).method26619(Class8447.field36215)
+         field36966, AbstractBlock.method26611(Class8649.field38966, Class7210.field30967).method26635().method26621(1.5F, 6.0F).method26619(SoundType.field36215)
       )
    );
    public static final Block field36972 = register(
       "bubble_coral_block",
       new Class3414(
-         field36967, AbstractBlock.method26611(Class8649.field38966, Class7210.field30971).method26635().method26621(1.5F, 6.0F).method26619(Class8447.field36215)
+         field36967, AbstractBlock.method26611(Class8649.field38966, Class7210.field30971).method26635().method26621(1.5F, 6.0F).method26619(SoundType.field36215)
       )
    );
    public static final Block field36973 = register(
       "fire_coral_block",
       new Class3414(
-         field36968, AbstractBlock.method26611(Class8649.field38966, Class7210.field30975).method26635().method26621(1.5F, 6.0F).method26619(Class8447.field36215)
+         field36968, AbstractBlock.method26611(Class8649.field38966, Class7210.field30975).method26635().method26621(1.5F, 6.0F).method26619(SoundType.field36215)
       )
    );
    public static final Block field36974 = register(
       "horn_coral_block",
       new Class3414(
-         field36969, AbstractBlock.method26611(Class8649.field38966, Class7210.field30965).method26635().method26621(1.5F, 6.0F).method26619(Class8447.field36215)
+         field36969, AbstractBlock.method26611(Class8649.field38966, Class7210.field30965).method26635().method26621(1.5F, 6.0F).method26619(SoundType.field36215)
       )
    );
    public static final Block field36975 = register(
@@ -2250,23 +2250,23 @@ public class Blocks {
    );
    public static final Block field36980 = register(
       "tube_coral",
-      new Class3226(field36975, AbstractBlock.method26611(Class8649.field38937, Class7210.field30972).method26614().method26622().method26619(Class8447.field36214))
+      new Class3226(field36975, AbstractBlock.method26611(Class8649.field38937, Class7210.field30972).method26614().method26622().method26619(SoundType.field36214))
    );
    public static final Block field36981 = register(
       "brain_coral",
-      new Class3226(field36976, AbstractBlock.method26611(Class8649.field38937, Class7210.field30967).method26614().method26622().method26619(Class8447.field36214))
+      new Class3226(field36976, AbstractBlock.method26611(Class8649.field38937, Class7210.field30967).method26614().method26622().method26619(SoundType.field36214))
    );
    public static final Block field36982 = register(
       "bubble_coral",
-      new Class3226(field36977, AbstractBlock.method26611(Class8649.field38937, Class7210.field30971).method26614().method26622().method26619(Class8447.field36214))
+      new Class3226(field36977, AbstractBlock.method26611(Class8649.field38937, Class7210.field30971).method26614().method26622().method26619(SoundType.field36214))
    );
    public static final Block field36983 = register(
       "fire_coral",
-      new Class3226(field36978, AbstractBlock.method26611(Class8649.field38937, Class7210.field30975).method26614().method26622().method26619(Class8447.field36214))
+      new Class3226(field36978, AbstractBlock.method26611(Class8649.field38937, Class7210.field30975).method26614().method26622().method26619(SoundType.field36214))
    );
    public static final Block field36984 = register(
       "horn_coral",
-      new Class3226(field36979, AbstractBlock.method26611(Class8649.field38937, Class7210.field30965).method26614().method26622().method26619(Class8447.field36214))
+      new Class3226(field36979, AbstractBlock.method26611(Class8649.field38937, Class7210.field30965).method26614().method26622().method26619(SoundType.field36214))
    );
    public static final Block field36985 = register(
       "dead_tube_coral_fan", new Class3227(AbstractBlock.method26611(Class8649.field38966, Class7210.field30968).method26635().method26614().method26622())
@@ -2285,23 +2285,23 @@ public class Blocks {
    );
    public static final Block field36990 = register(
       "tube_coral_fan",
-      new Class3228(field36985, AbstractBlock.method26611(Class8649.field38937, Class7210.field30972).method26614().method26622().method26619(Class8447.field36214))
+      new Class3228(field36985, AbstractBlock.method26611(Class8649.field38937, Class7210.field30972).method26614().method26622().method26619(SoundType.field36214))
    );
    public static final Block field36991 = register(
       "brain_coral_fan",
-      new Class3228(field36986, AbstractBlock.method26611(Class8649.field38937, Class7210.field30967).method26614().method26622().method26619(Class8447.field36214))
+      new Class3228(field36986, AbstractBlock.method26611(Class8649.field38937, Class7210.field30967).method26614().method26622().method26619(SoundType.field36214))
    );
    public static final Block field36992 = register(
       "bubble_coral_fan",
-      new Class3228(field36987, AbstractBlock.method26611(Class8649.field38937, Class7210.field30971).method26614().method26622().method26619(Class8447.field36214))
+      new Class3228(field36987, AbstractBlock.method26611(Class8649.field38937, Class7210.field30971).method26614().method26622().method26619(SoundType.field36214))
    );
    public static final Block field36993 = register(
       "fire_coral_fan",
-      new Class3228(field36988, AbstractBlock.method26611(Class8649.field38937, Class7210.field30975).method26614().method26622().method26619(Class8447.field36214))
+      new Class3228(field36988, AbstractBlock.method26611(Class8649.field38937, Class7210.field30975).method26614().method26622().method26619(SoundType.field36214))
    );
    public static final Block field36994 = register(
       "horn_coral_fan",
-      new Class3228(field36989, AbstractBlock.method26611(Class8649.field38937, Class7210.field30965).method26614().method26622().method26619(Class8447.field36214))
+      new Class3228(field36989, AbstractBlock.method26611(Class8649.field38937, Class7210.field30965).method26614().method26622().method26619(SoundType.field36214))
    );
    public static final Block field36995 = register(
       "dead_tube_coral_wall_fan",
@@ -2330,7 +2330,7 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38937, Class7210.field30972)
             .method26614()
             .method26622()
-            .method26619(Class8447.field36214)
+            .method26619(SoundType.field36214)
             .method26627(field36990)
       )
    );
@@ -2341,7 +2341,7 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38937, Class7210.field30967)
             .method26614()
             .method26622()
-            .method26619(Class8447.field36214)
+            .method26619(SoundType.field36214)
             .method26627(field36991)
       )
    );
@@ -2352,7 +2352,7 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38937, Class7210.field30971)
             .method26614()
             .method26622()
-            .method26619(Class8447.field36214)
+            .method26619(SoundType.field36214)
             .method26627(field36992)
       )
    );
@@ -2363,7 +2363,7 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38937, Class7210.field30975)
             .method26614()
             .method26622()
-            .method26619(Class8447.field36214)
+            .method26619(SoundType.field36214)
             .method26627(field36993)
       )
    );
@@ -2374,7 +2374,7 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38937, Class7210.field30965)
             .method26614()
             .method26622()
-            .method26619(Class8447.field36214)
+            .method26619(SoundType.field36214)
             .method26627(field36994)
       )
    );
@@ -2383,19 +2383,19 @@ public class Blocks {
       new Class3195(
          AbstractBlock.method26611(Class8649.field38937, Class7210.field30974)
             .method26620(var0 -> !Class3195.method11496(var0) ? 3 + 3 * var0.<Integer>method23463(Class3195.field18472) : 0)
-            .method26619(Class8447.field36212)
+            .method26619(SoundType.field36212)
             .method26615()
       )
    );
    public static final Block field37006 = register(
-      "blue_ice", new Class3231(AbstractBlock.method26609(Class8649.field38952).method26623(2.8F).method26616(0.989F).method26619(Class8447.field36206))
+      "blue_ice", new Class3231(AbstractBlock.method26609(Class8649.field38952).method26623(2.8F).method26616(0.989F).method26619(SoundType.field36206))
    );
    public static final Block field37007 = register(
       "conduit", new Class3371(AbstractBlock.method26611(Class8649.field38963, Class7210.field30978).method26623(3.0F).method26620(var0 -> 15).method26615())
    );
    public static final Block field37008 = register(
       "bamboo_sapling",
-      new Class3424(AbstractBlock.method26609(Class8649.field38958).method26624().method26622().method26614().method26623(1.0F).method26619(Class8447.field36217))
+      new Class3424(AbstractBlock.method26609(Class8649.field38958).method26624().method26622().method26614().method26623(1.0F).method26619(SoundType.field36217))
    );
    public static final Block field37009 = register(
       "bamboo",
@@ -2404,7 +2404,7 @@ public class Blocks {
             .method26624()
             .method26622()
             .method26623(1.0F)
-            .method26619(Class8447.field36216)
+            .method26619(SoundType.field36216)
             .method26615()
       )
    );
@@ -2469,13 +2469,13 @@ public class Blocks {
    public static final Block field37052 = register("diorite_wall", new Class3415(AbstractBlock.method26613(DIORITE)));
    public static final Block field37053 = register(
       "scaffolding",
-      new Class3428(AbstractBlock.method26611(Class8649.field38946, Class7210.field30949).method26614().method26619(Class8447.field36218).method26625())
+      new Class3428(AbstractBlock.method26611(Class8649.field38946, Class7210.field30949).method26614().method26619(SoundType.field36218).method26625())
    );
    public static final Block field37054 = register(
-      "loom", new Class3478(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(Class8447.field36200))
+      "loom", new Class3478(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(SoundType.field36200))
    );
    public static final Block field37055 = register(
-      "barrel", new Class3242(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(Class8447.field36200))
+      "barrel", new Class3242(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(SoundType.field36200))
    );
    public static final Block field37056 = register(
       "smoker", new Class3352(AbstractBlock.method26609(Class8649.field38966).method26635().method26623(3.5F).method26620(method30011(13)))
@@ -2484,38 +2484,38 @@ public class Blocks {
       "blast_furnace", new Class3351(AbstractBlock.method26609(Class8649.field38966).method26635().method26623(3.5F).method26620(method30011(13)))
    );
    public static final Block field37058 = register(
-      "cartography_table", new Class3416(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(Class8447.field36200))
+      "cartography_table", new Class3416(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(SoundType.field36200))
    );
    public static final Block field37059 = register(
-      "fletching_table", new Class3439(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(Class8447.field36200))
+      "fletching_table", new Class3439(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(SoundType.field36200))
    );
    public static final Block field37060 = register(
       "grindstone",
-      new Class3205(AbstractBlock.method26611(Class8649.field38969, Class7210.field30953).method26635().method26621(2.0F, 6.0F).method26619(Class8447.field36204))
+      new Class3205(AbstractBlock.method26611(Class8649.field38969, Class7210.field30953).method26635().method26621(2.0F, 6.0F).method26619(SoundType.field36204))
    );
    public static final Block field37061 = register(
-      "lectern", new Class3354(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(Class8447.field36200))
+      "lectern", new Class3354(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(SoundType.field36200))
    );
    public static final Block field37062 = register(
-      "smithing_table", new Class3440(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(Class8447.field36200))
+      "smithing_table", new Class3440(AbstractBlock.method26609(Class8649.field38956).method26623(2.5F).method26619(SoundType.field36200))
    );
    public static final Block field37063 = register(
       "stonecutter", new Class3412(AbstractBlock.method26609(Class8649.field38966).method26635().method26623(3.5F))
    );
    public static final Block field37064 = register(
       "bell",
-      new Class3369(AbstractBlock.method26611(Class8649.field38967, Class7210.field30977).method26635().method26623(5.0F).method26619(Class8447.field36211))
+      new Class3369(AbstractBlock.method26611(Class8649.field38967, Class7210.field30977).method26635().method26623(5.0F).method26619(SoundType.field36211))
    );
    public static final Block field37065 = register(
       "lantern",
       new Class3466(
-         AbstractBlock.method26609(Class8649.field38967).method26635().method26623(3.5F).method26619(Class8447.field36224).method26620(var0 -> 15).method26615()
+         AbstractBlock.method26609(Class8649.field38967).method26635().method26623(3.5F).method26619(SoundType.field36224).method26620(var0 -> 15).method26615()
       )
    );
    public static final Block field37066 = register(
       "soul_lantern",
       new Class3466(
-         AbstractBlock.method26609(Class8649.field38967).method26635().method26623(3.5F).method26619(Class8447.field36224).method26620(var0 -> 10).method26615()
+         AbstractBlock.method26609(Class8649.field38967).method26635().method26623(3.5F).method26619(SoundType.field36224).method26620(var0 -> 10).method26615()
       )
    );
    public static final Block field37067 = register(
@@ -2525,7 +2525,7 @@ public class Blocks {
          1,
          AbstractBlock.method26611(Class8649.field38956, Class7210.field30981)
             .method26623(2.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26620(method30011(15))
             .method26615()
       )
@@ -2537,143 +2537,143 @@ public class Blocks {
          2,
          AbstractBlock.method26611(Class8649.field38956, Class7210.field30981)
             .method26623(2.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26620(method30011(10))
             .method26615()
       )
    );
    public static final Block field37069 = register(
-      "sweet_berry_bush", new Class3484(AbstractBlock.method26609(Class8649.field38936).method26624().method26614().method26619(Class8447.field36219))
+      "sweet_berry_bush", new Class3484(AbstractBlock.method26609(Class8649.field38936).method26624().method26614().method26619(SoundType.field36219))
    );
    public static final Block field37070 = register("warped_stem", method30017(Class7210.field31003));
    public static final Block field37071 = register("stripped_warped_stem", method30017(Class7210.field31003));
    public static final Block field37072 = register(
-      "warped_hyphae", new Class3386(AbstractBlock.method26611(Class8649.field38957, Class7210.field31004).method26623(2.0F).method26619(Class8447.field36225))
+      "warped_hyphae", new Class3386(AbstractBlock.method26611(Class8649.field38957, Class7210.field31004).method26623(2.0F).method26619(SoundType.field36225))
    );
    public static final Block field37073 = register(
       "stripped_warped_hyphae",
-      new Class3386(AbstractBlock.method26611(Class8649.field38957, Class7210.field31004).method26623(2.0F).method26619(Class8447.field36225))
+      new Class3386(AbstractBlock.method26611(Class8649.field38957, Class7210.field31004).method26623(2.0F).method26619(SoundType.field36225))
    );
    public static final Block field37074 = register(
       "warped_nylium",
       new Class3219(
-         AbstractBlock.method26611(Class8649.field38966, Class7210.field31002).method26635().method26623(0.4F).method26619(Class8447.field36226).method26624()
+         AbstractBlock.method26611(Class8649.field38966, Class7210.field31002).method26635().method26623(0.4F).method26619(SoundType.field36226).method26624()
       )
    );
    public static final Block field37075 = register(
       "warped_fungus",
       new Class3485(
-         AbstractBlock.method26611(Class8649.field38936, Class7210.field30970).method26622().method26614().method26619(Class8447.field36227),
+         AbstractBlock.method26611(Class8649.field38936, Class7210.field30970).method26622().method26614().method26619(SoundType.field36227),
          () -> Class9104.field41767
       )
    );
    public static final Block field37076 = register(
-      "warped_wart_block", new Block(AbstractBlock.method26611(Class8649.field38951, Class7210.field31005).method26623(1.0F).method26619(Class8447.field36235))
+      "warped_wart_block", new Block(AbstractBlock.method26611(Class8649.field38951, Class7210.field31005).method26623(1.0F).method26619(SoundType.field36235))
    );
    public static final Block field37077 = register(
       "warped_roots",
-      new Class3495(AbstractBlock.method26611(Class8649.field38939, Class7210.field30970).method26614().method26622().method26619(Class8447.field36228))
+      new Class3495(AbstractBlock.method26611(Class8649.field38939, Class7210.field30970).method26614().method26622().method26619(SoundType.field36228))
    );
    public static final Block field37078 = register(
       "nether_sprouts",
-      new Class3488(AbstractBlock.method26611(Class8649.field38939, Class7210.field30970).method26614().method26622().method26619(Class8447.field36238))
+      new Class3488(AbstractBlock.method26611(Class8649.field38939, Class7210.field30970).method26614().method26622().method26619(SoundType.field36238))
    );
    public static final Block field37079 = register("crimson_stem", method30017(Class7210.field31000));
    public static final Block field37080 = register("stripped_crimson_stem", method30017(Class7210.field31000));
    public static final Block field37081 = register(
-      "crimson_hyphae", new Class3386(AbstractBlock.method26611(Class8649.field38957, Class7210.field31001).method26623(2.0F).method26619(Class8447.field36225))
+      "crimson_hyphae", new Class3386(AbstractBlock.method26611(Class8649.field38957, Class7210.field31001).method26623(2.0F).method26619(SoundType.field36225))
    );
    public static final Block field37082 = register(
       "stripped_crimson_hyphae",
-      new Class3386(AbstractBlock.method26611(Class8649.field38957, Class7210.field31001).method26623(2.0F).method26619(Class8447.field36225))
+      new Class3386(AbstractBlock.method26611(Class8649.field38957, Class7210.field31001).method26623(2.0F).method26619(SoundType.field36225))
    );
    public static final Block field37083 = register(
       "crimson_nylium",
       new Class3219(
-         AbstractBlock.method26611(Class8649.field38966, Class7210.field30999).method26635().method26623(0.4F).method26619(Class8447.field36226).method26624()
+         AbstractBlock.method26611(Class8649.field38966, Class7210.field30999).method26635().method26623(0.4F).method26619(SoundType.field36226).method26624()
       )
    );
    public static final Block field37084 = register(
       "crimson_fungus",
       new Class3485(
-         AbstractBlock.method26611(Class8649.field38936, Class7210.field30982).method26622().method26614().method26619(Class8447.field36227),
+         AbstractBlock.method26611(Class8649.field38936, Class7210.field30982).method26622().method26614().method26619(SoundType.field36227),
          () -> Class9104.field41765
       )
    );
    public static final Block field37085 = register(
       "shroomlight",
       new Block(
-         AbstractBlock.method26611(Class8649.field38951, Class7210.field30975).method26623(1.0F).method26619(Class8447.field36229).method26620(var0 -> 15)
+         AbstractBlock.method26611(Class8649.field38951, Class7210.field30975).method26623(1.0F).method26619(SoundType.field36229).method26620(var0 -> 15)
       )
    );
    public static final Block field37086 = register(
       "weeping_vines",
       new Class3454(
-         AbstractBlock.method26611(Class8649.field38936, Class7210.field30982).method26624().method26614().method26622().method26619(Class8447.field36230)
+         AbstractBlock.method26611(Class8649.field38936, Class7210.field30982).method26624().method26614().method26622().method26619(SoundType.field36230)
       )
    );
    public static final Block field37087 = register(
       "weeping_vines_plant",
-      new Class3446(AbstractBlock.method26611(Class8649.field38936, Class7210.field30982).method26614().method26622().method26619(Class8447.field36230))
+      new Class3446(AbstractBlock.method26611(Class8649.field38936, Class7210.field30982).method26614().method26622().method26619(SoundType.field36230))
    );
    public static final Block field37088 = register(
       "twisting_vines",
       new Class3453(
-         AbstractBlock.method26611(Class8649.field38936, Class7210.field30970).method26624().method26614().method26622().method26619(Class8447.field36230)
+         AbstractBlock.method26611(Class8649.field38936, Class7210.field30970).method26624().method26614().method26622().method26619(SoundType.field36230)
       )
    );
    public static final Block field37089 = register(
       "twisting_vines_plant",
-      new Class3447(AbstractBlock.method26611(Class8649.field38936, Class7210.field30970).method26614().method26622().method26619(Class8447.field36230))
+      new Class3447(AbstractBlock.method26611(Class8649.field38936, Class7210.field30970).method26614().method26622().method26619(SoundType.field36230))
    );
    public static final Block field37090 = register(
       "crimson_roots",
-      new Class3495(AbstractBlock.method26611(Class8649.field38939, Class7210.field30982).method26614().method26622().method26619(Class8447.field36228))
+      new Class3495(AbstractBlock.method26611(Class8649.field38939, Class7210.field30982).method26614().method26622().method26619(SoundType.field36228))
    );
    public static final Block field37091 = register(
       "crimson_planks",
-      new Block(AbstractBlock.method26611(Class8649.field38957, Class7210.field31000).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Block(AbstractBlock.method26611(Class8649.field38957, Class7210.field31000).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field37092 = register(
       "warped_planks",
-      new Block(AbstractBlock.method26611(Class8649.field38957, Class7210.field31003).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Block(AbstractBlock.method26611(Class8649.field38957, Class7210.field31003).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field37093 = register(
       "crimson_slab",
-      new Class3208(AbstractBlock.method26611(Class8649.field38957, field37091.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3208(AbstractBlock.method26611(Class8649.field38957, field37091.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field37094 = register(
       "warped_slab",
-      new Class3208(AbstractBlock.method26611(Class8649.field38957, field37092.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3208(AbstractBlock.method26611(Class8649.field38957, field37092.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field37095 = register(
       "crimson_pressure_plate",
       new Class3469(
          Class2275.field14823,
-         AbstractBlock.method26611(Class8649.field38957, field37091.method12000()).method26614().method26623(0.5F).method26619(Class8447.field36200)
+         AbstractBlock.method26611(Class8649.field38957, field37091.method12000()).method26614().method26623(0.5F).method26619(SoundType.field36200)
       )
    );
    public static final Block field37096 = register(
       "warped_pressure_plate",
       new Class3469(
          Class2275.field14823,
-         AbstractBlock.method26611(Class8649.field38957, field37092.method12000()).method26614().method26623(0.5F).method26619(Class8447.field36200)
+         AbstractBlock.method26611(Class8649.field38957, field37092.method12000()).method26614().method26623(0.5F).method26619(SoundType.field36200)
       )
    );
    public static final Block field37097 = register(
       "crimson_fence",
-      new Class3239(AbstractBlock.method26611(Class8649.field38957, field37091.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3239(AbstractBlock.method26611(Class8649.field38957, field37091.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field37098 = register(
       "warped_fence",
-      new Class3239(AbstractBlock.method26611(Class8649.field38957, field37092.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3239(AbstractBlock.method26611(Class8649.field38957, field37092.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field37099 = register(
       "crimson_trapdoor",
       new Class3206(
          AbstractBlock.method26611(Class8649.field38957, field37091.method12000())
             .method26623(3.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26615()
             .method26629(Blocks::method30012)
       )
@@ -2683,46 +2683,46 @@ public class Blocks {
       new Class3206(
          AbstractBlock.method26611(Class8649.field38957, field37092.method12000())
             .method26623(3.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26615()
             .method26629(Blocks::method30012)
       )
    );
    public static final Block field37101 = register(
       "crimson_fence_gate",
-      new Class3199(AbstractBlock.method26611(Class8649.field38957, field37091.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3199(AbstractBlock.method26611(Class8649.field38957, field37091.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field37102 = register(
       "warped_fence_gate",
-      new Class3199(AbstractBlock.method26611(Class8649.field38957, field37092.method12000()).method26621(2.0F, 3.0F).method26619(Class8447.field36200))
+      new Class3199(AbstractBlock.method26611(Class8649.field38957, field37092.method12000()).method26621(2.0F, 3.0F).method26619(SoundType.field36200))
    );
    public static final Block field37103 = register("crimson_stairs", new Class3421(field37091.method11579(), AbstractBlock.method26613(field37091)));
    public static final Block field37104 = register("warped_stairs", new Class3421(field37092.method11579(), AbstractBlock.method26613(field37092)));
    public static final Block field37105 = register(
-      "crimson_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(Class8447.field36200))
+      "crimson_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(SoundType.field36200))
    );
    public static final Block field37106 = register(
-      "warped_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(Class8447.field36200))
+      "warped_button", new Class3204(AbstractBlock.method26609(Class8649.field38946).method26614().method26623(0.5F).method26619(SoundType.field36200))
    );
    public static final Block field37107 = register(
       "crimson_door",
-      new Class3461(AbstractBlock.method26611(Class8649.field38957, field37091.method12000()).method26623(3.0F).method26619(Class8447.field36200).method26615())
+      new Class3461(AbstractBlock.method26611(Class8649.field38957, field37091.method12000()).method26623(3.0F).method26619(SoundType.field36200).method26615())
    );
    public static final Block field37108 = register(
       "warped_door",
-      new Class3461(AbstractBlock.method26611(Class8649.field38957, field37092.method12000()).method26623(3.0F).method26619(Class8447.field36200).method26615())
+      new Class3461(AbstractBlock.method26611(Class8649.field38957, field37092.method12000()).method26623(3.0F).method26619(SoundType.field36200).method26615())
    );
    public static final Block field37109 = register(
       "crimson_sign",
       new Class3374(
-         AbstractBlock.method26611(Class8649.field38957, field37091.method12000()).method26614().method26623(1.0F).method26619(Class8447.field36200),
+         AbstractBlock.method26611(Class8649.field38957, field37091.method12000()).method26614().method26623(1.0F).method26619(SoundType.field36200),
          Class9673.field45172
       )
    );
    public static final Block field37110 = register(
       "warped_sign",
       new Class3374(
-         AbstractBlock.method26611(Class8649.field38957, field37092.method12000()).method26614().method26623(1.0F).method26619(Class8447.field36200),
+         AbstractBlock.method26611(Class8649.field38957, field37092.method12000()).method26614().method26623(1.0F).method26619(SoundType.field36200),
          Class9673.field45173
       )
    );
@@ -2732,7 +2732,7 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38957, field37091.method12000())
             .method26614()
             .method26623(1.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26627(field37109),
          Class9673.field45172
       )
@@ -2743,49 +2743,49 @@ public class Blocks {
          AbstractBlock.method26611(Class8649.field38957, field37092.method12000())
             .method26614()
             .method26623(1.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26627(field37110),
          Class9673.field45173
       )
    );
    public static final Block field37113 = register(
       "structure_block",
-      new Class3367(AbstractBlock.method26611(Class8649.field38967, Class7210.field30969).method26635().method26621(-1.0F, 3600000.0F).method26626())
+      new StructureBlock(AbstractBlock.method26611(Class8649.field38967, Class7210.field30969).method26635().method26621(-1.0F, 3600000.0F).method26626())
    );
    public static final Block field37114 = register(
-      "jigsaw", new Class3249(AbstractBlock.method26611(Class8649.field38967, Class7210.field30969).method26635().method26621(-1.0F, 3600000.0F).method26626())
+      "jigsaw", new JigsawBlock(AbstractBlock.method26611(Class8649.field38967, Class7210.field30969).method26635().method26621(-1.0F, 3600000.0F).method26626())
    );
    public static final Block field37115 = register(
-      "composter", new Class3475(AbstractBlock.method26609(Class8649.field38956).method26623(0.6F).method26619(Class8447.field36200))
+      "composter", new Class3475(AbstractBlock.method26609(Class8649.field38956).method26623(0.6F).method26619(SoundType.field36200))
    );
    public static final Block field37116 = register(
-      "target", new Class3395(AbstractBlock.method26611(Class8649.field38951, Class7210.field30961).method26623(0.5F).method26619(Class8447.field36202))
+      "target", new Class3395(AbstractBlock.method26611(Class8649.field38951, Class7210.field30961).method26623(0.5F).method26619(SoundType.field36202))
    );
    public static final Block field37117 = register(
-      "bee_nest", new Class3366(AbstractBlock.method26611(Class8649.field38956, Class7210.field30965).method26623(0.3F).method26619(Class8447.field36200))
+      "bee_nest", new Class3366(AbstractBlock.method26611(Class8649.field38956, Class7210.field30965).method26623(0.3F).method26619(SoundType.field36200))
    );
    public static final Block field37118 = register(
-      "beehive", new Class3366(AbstractBlock.method26609(Class8649.field38956).method26623(0.6F).method26619(Class8447.field36200))
+      "beehive", new Class3366(AbstractBlock.method26609(Class8649.field38956).method26623(0.6F).method26619(SoundType.field36200))
    );
    public static final Block field37119 = register(
       "honey_block",
-      new Class3379(
-         AbstractBlock.method26611(Class8649.field38949, Class7210.field30962).method26617(0.4F).method26618(0.5F).method26615().method26619(Class8447.field36213)
+      new HoneyBlock(
+         AbstractBlock.method26611(Class8649.field38949, Class7210.field30962).method26617(0.4F).method26618(0.5F).method26615().method26619(SoundType.field36213)
       )
    );
    public static final Block field37120 = register(
-      "honeycomb_block", new Block(AbstractBlock.method26611(Class8649.field38949, Class7210.field30962).method26623(0.6F).method26619(Class8447.field36215))
+      "honeycomb_block", new Block(AbstractBlock.method26611(Class8649.field38949, Class7210.field30962).method26623(0.6F).method26619(SoundType.field36215))
    );
    public static final Block field37121 = register(
       "netherite_block",
       new Block(
-         AbstractBlock.method26611(Class8649.field38967, Class7210.field30976).method26635().method26621(50.0F, 1200.0F).method26619(Class8447.field36241)
+         AbstractBlock.method26611(Class8649.field38967, Class7210.field30976).method26635().method26621(50.0F, 1200.0F).method26619(SoundType.field36241)
       )
    );
    public static final Block field37122 = register(
       "ancient_debris",
       new Block(
-         AbstractBlock.method26611(Class8649.field38967, Class7210.field30976).method26635().method26621(30.0F, 1200.0F).method26619(Class8447.field36242)
+         AbstractBlock.method26611(Class8649.field38967, Class7210.field30976).method26635().method26621(30.0F, 1200.0F).method26619(SoundType.field36242)
       )
    );
    public static final Block field37123 = register(
@@ -2814,7 +2814,7 @@ public class Blocks {
       "potted_warped_roots", new Class3460(field37077, AbstractBlock.method26609(Class8649.field38946).method26622().method26615())
    );
    public static final Block field37129 = register(
-      "lodestone", new Block(AbstractBlock.method26609(Class8649.field38969).method26635().method26623(3.5F).method26619(Class8447.field36243))
+      "lodestone", new Block(AbstractBlock.method26609(Class8649.field38969).method26635().method26623(3.5F).method26619(SoundType.field36243))
    );
    public static final Block field37130 = register(
       "blackstone", new Block(AbstractBlock.method26611(Class8649.field38966, Class7210.field30976).method26635().method26621(1.5F, 6.0F))
@@ -2838,7 +2838,7 @@ public class Blocks {
    );
    public static final Block field37140 = register("polished_blackstone_brick_wall", new Class3415(AbstractBlock.method26613(field37135)));
    public static final Block field37141 = register(
-      "gilded_blackstone", new Block(AbstractBlock.method26613(field37130).method26619(Class8447.field36246))
+      "gilded_blackstone", new Block(AbstractBlock.method26613(field37130).method26619(SoundType.field36246))
    );
    public static final Block field37142 = register(
       "polished_blackstone_stairs", new Class3421(field37134.method11579(), AbstractBlock.method26613(field37134))
@@ -2854,11 +2854,11 @@ public class Blocks {
    public static final Block field37146 = register("polished_blackstone_wall", new Class3415(AbstractBlock.method26613(field37134)));
    public static final Block field37147 = register(
       "chiseled_nether_bricks",
-      new Block(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(2.0F, 6.0F).method26619(Class8447.field36237))
+      new Block(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(2.0F, 6.0F).method26619(SoundType.field36237))
    );
    public static final Block field37148 = register(
       "cracked_nether_bricks",
-      new Block(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(2.0F, 6.0F).method26619(Class8447.field36237))
+      new Block(AbstractBlock.method26611(Class8649.field38966, Class7210.field30982).method26635().method26621(2.0F, 6.0F).method26619(SoundType.field36237))
    );
    public static final Block field37149 = register("quartz_bricks", new Block(AbstractBlock.method26613(field36724)));
 
@@ -2884,7 +2884,7 @@ public class Blocks {
          AbstractBlock.method26612(
                Class8649.field38960, var1 -> var1.method23463(Class3250.field18713) != Class82.FOOT ? Class7210.field30950 : var0.method312()
             )
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
             .method26623(0.2F)
             .method26615()
       );
@@ -2892,14 +2892,14 @@ public class Blocks {
 
    private static Class3386 method30016(Class7210 var0, Class7210 var1) {
       return new Class3386(
-         AbstractBlock.method26612(Class8649.field38956, var2 -> var2.method23463(Class3386.field18994) != Class113.field414 ? var1 : var0)
+         AbstractBlock.method26612(Class8649.field38956, var2 -> var2.method23463(Class3386.field18994) != Direction.field414 ? var1 : var0)
             .method26623(2.0F)
-            .method26619(Class8447.field36200)
+            .method26619(SoundType.field36200)
       );
    }
 
    private static Block method30017(Class7210 var0) {
-      return new Class3386(AbstractBlock.method26612(Class8649.field38957, var1 -> var0).method26623(2.0F).method26619(Class8447.field36225));
+      return new Class3386(AbstractBlock.method26612(Class8649.field38957, var1 -> var0).method26623(2.0F).method26619(SoundType.field36225));
    }
 
    private static boolean method30018(BlockState var0, IBlockReader var1, BlockPos var2) {
@@ -2915,7 +2915,7 @@ public class Blocks {
          var0,
          AbstractBlock.method26610(Class8649.field38963, var0)
             .method26623(0.3F)
-            .method26619(Class8447.field36206)
+            .method26619(SoundType.field36206)
             .method26615()
             .method26629(Blocks::method30012)
             .method26630(Blocks::method30019)
@@ -2929,7 +2929,7 @@ public class Blocks {
          AbstractBlock.method26609(Class8649.field38962)
             .method26623(0.2F)
             .method26624()
-            .method26619(Class8447.field36202)
+            .method26619(SoundType.field36202)
             .method26615()
             .method26629(Blocks::method30014)
             .method26631(Blocks::method30019)

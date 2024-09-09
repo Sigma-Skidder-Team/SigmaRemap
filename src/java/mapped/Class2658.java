@@ -16,7 +16,7 @@ public class Class2658 extends Class2647 {
       double var6 = this.method10859(var1);
       if (var2 <= var6 && this.method10856()) {
          this.method10855();
-         this.field16990.method3114(var1);
+         this.field16990.attackEntityAsMob(var1);
          this.field17010.method5184(false);
       } else if (!(var2 <= var6 * 2.0)) {
          this.method10855();
@@ -42,6 +42,6 @@ public class Class2658 extends Class2647 {
 
    @Override
    public double method10859(LivingEntity var1) {
-      return (double)(4.0F + var1.method3429());
+      return (double)(4.0F + var1.getWidth());
    }
 }

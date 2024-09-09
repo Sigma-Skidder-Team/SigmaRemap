@@ -3,11 +3,11 @@ package com.mentalfrostbyte.jello.module.impl.combat.antikb;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
-import mapped.Class9567;
+import mapped.MovementUtils;
 import mapped.NumberSetting;
 
 public class GommeAntiKB extends Module {
@@ -26,18 +26,18 @@ public class GommeAntiKB extends Module {
     }
 
     @EventTarget
-    private void method16351(Class4435 var1) {
+    private void method16351(EventMove var1) {
         double var4 = this.field23611 * (double) (1.0F - this.getNumberValueBySettingName("Delay")) - this.field23611 / 2.0;
         if (mc.player.onGround && this.field23610 <= 0) {
         }
 
-        if (this.field23610 == 1 && var1.method13994() < var4) {
+        if (this.field23610 == 1 && var1.getY() < var4) {
             this.field23610++;
-            var1.method13993(var1.method13992() * 0.5);
-            var1.method13997(var1.method13996() * 0.5);
+            var1.setX(var1.getX() * 0.5);
+            var1.setZ(var1.getZ() * 0.5);
         } else if (this.field23610 == 2) {
             this.field23610++;
-            Class9567.method37088(var1, this.getNumberValueBySettingName("Boost"));
+            MovementUtils.method37088(var1, this.getNumberValueBySettingName("Boost"));
         }
     }
 
@@ -45,9 +45,9 @@ public class GommeAntiKB extends Module {
     private void method16352(RecievePacketEvent var1) {
         if (var1.getPacket() instanceof SEntityVelocityPacket) {
             SEntityVelocityPacket var4 = (SEntityVelocityPacket) var1.getPacket();
-            if (var4.method17565() == mc.player.getEntityId()) {
+            if (var4.getEntityID() == mc.player.getEntityId()) {
                 this.field23610 = 1;
-                this.field23611 = (double) var4.method17567() / 8000.0;
+                this.field23611 = (double) var4.getMotionY() / 8000.0;
             }
         }
     }

@@ -2,9 +2,9 @@ package com.mentalfrostbyte.jello.module.impl.movement.phase;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4425;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.EventPushBlock;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import mapped.*;
@@ -39,7 +39,7 @@ public class NCPPhase extends PremiumModule {
     }
 
     @EventTarget
-    private void method16426(Class4399 var1) {
+    private void method16426(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             if (mc.gameSettings.keyBindSneak.isKeyDown()) {
                 double var4 = mc.player.getPosX();
@@ -48,9 +48,9 @@ public class NCPPhase extends PremiumModule {
                 if (!ColorUtils.method17686()) {
                     if (ColorUtils.method17730(mc.player, 0.001F) && !ColorUtils.method17761()) {
                         mc.player.setPosition(var4, var6 - 1.0, var8);
-                        var1.method13912(var6 - 1.0);
+                        var1.setY(var6 - 1.0);
                         var1.method13908(true);
-                        var1.method13918(var1.method13917() + 10.0F);
+                        var1.setPitch(var1.getPitch() + 10.0F);
                         ColorUtils.method17725(0.0);
                     } else if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())) {
                         mc.player.setPosition(var4, var6 - 0.3, var8);
@@ -62,8 +62,8 @@ public class NCPPhase extends PremiumModule {
                 this.field23653++;
                 float var10 = (float) Math.sin(this.field23653) * 5.0F;
                 float var11 = (float) Math.cos(this.field23653) * 5.0F;
-                var1.method13918(var1.method13917() + var10);
-                var1.method13916(var1.method13915() + var11);
+                var1.setPitch(var1.getPitch() + var10);
+                var1.setYaw(var1.getYaw() + var11);
             } else if (this.field23652 < 0) {
                 return;
             }
@@ -73,7 +73,7 @@ public class NCPPhase extends PremiumModule {
     }
 
     @EventTarget
-    private void method16427(Class4435 var1) {
+    private void method16427(EventMove var1) {
         if (this.isEnabled()) {
             if (mc.player.collidedHorizontally && this.field23652 != 0) {
                 this.field23652 = 0;
@@ -89,18 +89,18 @@ public class NCPPhase extends PremiumModule {
                 if (this.field23652 != 0) {
                     if (!ColorUtils.method17761()) {
                         this.field23651 = false;
-                        Class9567.method37088(var1, 0.0);
+                        MovementUtils.method37088(var1, 0.0);
                         return;
                     }
 
                     if (!this.field23651) {
-                        Class9567.method37088(var1, !this.getBooleanValueFromSetttingName("Hypixel") ? 0.0031 : 0.03);
+                        MovementUtils.method37088(var1, !this.getBooleanValueFromSetttingName("Hypixel") ? 0.0031 : 0.03);
                     } else {
-                        Class9567.method37088(var1, 0.617);
+                        MovementUtils.method37088(var1, 0.617);
                     }
                 } else {
-                    Class9567.method37088(var1, 0.0);
-                    Class9567.method37095(6.000000238415E-4);
+                    MovementUtils.method37088(var1, 0.0);
+                    MovementUtils.method37095(6.000000238415E-4);
                 }
 
                 this.field23652++;
@@ -109,9 +109,9 @@ public class NCPPhase extends PremiumModule {
     }
 
     @EventTarget
-    private void method16428(Class4425 var1) {
+    private void method16428(EventPushBlock var1) {
         if (this.isEnabled()) {
-            var1.method13900(true);
+            var1.setCancelled(true);
         }
     }
 
@@ -121,8 +121,8 @@ public class NCPPhase extends PremiumModule {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SPlayerPositionLookPacket) {
                 SPlayerPositionLookPacket var5 = (SPlayerPositionLookPacket) var4;
-                var5.field24300 = mc.player.rotationYaw;
-                var5.field24301 = mc.player.rotationPitch;
+                var5.yaw = mc.player.rotationYaw;
+                var5.pitch = mc.player.rotationPitch;
                 this.field23651 = true;
             }
         }

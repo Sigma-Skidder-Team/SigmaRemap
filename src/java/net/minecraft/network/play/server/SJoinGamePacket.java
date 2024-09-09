@@ -16,8 +16,8 @@ public class SJoinGamePacket implements Packet<IClientPlayNetHandler> {
    private int field24406;
    private long field24407;
    private boolean field24408;
-   private Class1894 field24409;
-   private Class1894 field24410;
+   private GameType field24409;
+   private GameType field24410;
    private Set<RegistryKey<World>> field24411;
    private DynamicRegistriesImpl field24412;
    private DimensionType field24413;
@@ -34,8 +34,8 @@ public class SJoinGamePacket implements Packet<IClientPlayNetHandler> {
 
    public SJoinGamePacket(
       int var1,
-      Class1894 var2,
-      Class1894 var3,
+      GameType var2,
+      GameType var3,
       long var4,
       boolean var6,
       Set<RegistryKey<World>> var7,
@@ -70,8 +70,8 @@ public class SJoinGamePacket implements Packet<IClientPlayNetHandler> {
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24406 = var1.readInt();
       this.field24408 = var1.readBoolean();
-      this.field24409 = Class1894.method8159(var1.readByte());
-      this.field24410 = Class1894.method8159(var1.readByte());
+      this.field24409 = GameType.method8159(var1.readByte());
+      this.field24410 = GameType.method8159(var1.readByte());
       int var4 = var1.readVarInt();
       this.field24411 = Sets.newHashSet();
 
@@ -131,11 +131,11 @@ public class SJoinGamePacket implements Packet<IClientPlayNetHandler> {
       return this.field24408;
    }
 
-   public Class1894 method17290() {
+   public GameType method17290() {
       return this.field24409;
    }
 
-   public Class1894 method17291() {
+   public GameType method17291() {
       return this.field24410;
    }
 

@@ -175,8 +175,8 @@ public class Class9322 {
    }
 
    public static void method35229() {
-      if (Class8042.method27612().method21925()) {
-         Class8042.method27613().method27366().info("Loading block connection mappings ...");
+      if (ViaVersion3.method27612().method21925()) {
+         ViaVersion3.method27613().method27366().info("Loading block connection mappings ...");
          JsonObject var2 = Class8159.method28359("mapping-1.13.json", true);
          JsonObject var3 = var2.getAsJsonObject("blockstates");
 
@@ -188,7 +188,7 @@ public class Class9322 {
          }
 
          field43276 = new Int2ObjectOpenHashMap(3650, 1.0F);
-         if (!Class8042.method27612().method21927()) {
+         if (!ViaVersion3.method27612().method21927()) {
             field43277 = new Int2ObjectOpenHashMap(1146, 1.0F);
             JsonObject var19 = Class8159.method28358("blockConnections.json");
 
@@ -241,7 +241,7 @@ public class Class9322 {
          var25.add(Class4164.method12887());
          var25.add(Class4158.method12863());
          var25.add(Class4162.method12881());
-         if (Class8042.method27612().method21939()) {
+         if (ViaVersion3.method27612().method21939()) {
             var25.add(Class4165.method12890());
          }
 
@@ -253,9 +253,9 @@ public class Class9322 {
             }
          }
 
-         if (Class8042.method27612().method21926().equalsIgnoreCase("packet")) {
+         if (ViaVersion3.method27612().method21926().equalsIgnoreCase("packet")) {
             field43273 = new Class5406();
-            Class8042.method27614().method34424().method31082(Class5404.class, field43273);
+            ViaVersion3.method27614().method34424().method31082(Class5404.class, field43273);
          }
       }
    }

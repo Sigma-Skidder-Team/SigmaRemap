@@ -37,13 +37,13 @@ public abstract class Class4180 extends Class4178 {
 
    @Override
    public void method12897(CompoundNBT var1) {
-      var1.method102("TPX", this.field20455.getX());
-      var1.method102("TPY", this.field20455.getY());
-      var1.method102("TPZ", this.field20455.getZ());
+      var1.putInt("TPX", this.field20455.getX());
+      var1.putInt("TPY", this.field20455.getY());
+      var1.putInt("TPZ", this.field20455.getZ());
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       this.field20454.method36430(var5);
       this.field20444 = this.field20453.method32909(this.field20454, this.field20455);
       if (this.field20453.method32899(var1, this.field20455, var7, this.field20454, var4, 2)) {

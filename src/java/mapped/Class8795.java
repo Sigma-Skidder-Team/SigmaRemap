@@ -70,12 +70,12 @@ public class Class8795 {
    }
 
    @EventTarget
-   private void method31745(Class4409 var1) {
+   private void method31745(EventEntityActionState var1) {
       if (this.method31743()) {
          if (this.field39616 == null) {
             double var4 = Math.sqrt(
-               this.mc.player.getVec().x * this.mc.player.getVec().x
-                  + this.mc.player.getVec().z * this.mc.player.getVec().z
+               this.mc.player.getMotion().x * this.mc.player.getMotion().x
+                  + this.mc.player.getMotion().z * this.mc.player.getMotion().z
             );
             boolean var6 = ColorUtils.method17730(this.mc.player, 0.02F);
             int var7 = this.field39613.size() - 1;
@@ -125,8 +125,8 @@ public class Class8795 {
                this.field39618 = this.field39613.get(var7);
                this.field39613.remove(var7);
                if (this.field39613.size() == 0) {
-                  ColorUtils.method17724(this.mc.player.getVec().x * 0.5);
-                  ColorUtils.method17726(this.mc.player.getVec().z * 0.5);
+                  ColorUtils.method17724(this.mc.player.getMotion().x * 0.5);
+                  ColorUtils.method17726(this.mc.player.getMotion().z * 0.5);
                   this.method31738();
                   return;
                }
@@ -134,24 +134,24 @@ public class Class8795 {
                var7 = this.field39613.size() - 1;
                var8 = this.field39613.get(var7);
                var9 = var8.field44279;
-               float var18 = Class9142.method34145(this.mc.player.getPositionVec(), var8.field44271.method33972())[0];
-               float var19 = Class9142.method34145(new Vector3d(0.0, 0.0, 0.0), this.mc.player.getVec().method11333())[0];
+               float var18 = RotationHelper.method34145(this.mc.player.getPositionVec(), var8.field44271.method33972())[0];
+               float var19 = RotationHelper.method34145(new Vector3d(0.0, 0.0, 0.0), this.mc.player.getMotion().method11333())[0];
                float var20 = Math.abs(ColorUtils.method17756(var19, var18));
                if (!this.mc.player.onGround && var20 > 60.0F
-                  || !this.mc.player.onGround && var20 > 45.0F && this.mc.player.getVec().method11348() > 0.24
+                  || !this.mc.player.onGround && var20 > 45.0F && this.mc.player.getMotion().length() > 0.24
                   || var20 > 110.0F) {
-                  ColorUtils.method17724(this.mc.player.getVec().x * 0.25);
-                  ColorUtils.method17726(this.mc.player.getVec().z * 0.25);
+                  ColorUtils.method17724(this.mc.player.getMotion().x * 0.25);
+                  ColorUtils.method17726(this.mc.player.getMotion().z * 0.25);
                }
             }
 
             if (var10 < var12
                && (var14 || var8.field44281.size() > 0 && (double)this.mc.player.position.field13028 > var8.field44271.method33970())) {
-               ColorUtils.method17724(this.mc.player.getVec().x * 0.5);
-               ColorUtils.method17726(this.mc.player.getVec().z * 0.5);
+               ColorUtils.method17724(this.mc.player.getMotion().x * 0.5);
+               ColorUtils.method17726(this.mc.player.getMotion().z * 0.5);
             }
 
-            float var43 = Class9142.method34145(this.mc.player.getPositionVec(), var8.field44271.method33972())[0];
+            float var43 = RotationHelper.method34145(this.mc.player.getPositionVec(), var8.field44271.method33972())[0];
             this.field39614 = var43;
             double var21 = Math.cos(Math.toRadians((double)(this.mc.player.rotationYaw - var43)));
             double var23 = Math.sin(Math.toRadians((double)(this.mc.player.rotationYaw - var43)));
@@ -160,16 +160,16 @@ public class Class8795 {
             double var26 = Math.min(1.0 / Math.abs(var21), 1.0 / Math.abs(var23));
             boolean var28 = !this.mc.player.onGround && this.mc.player.collidedHorizontally && var9 == Class2317.field15874;
             if (!var28) {
-               this.mc.player.field4984 = (float)(var21 * var26);
-               this.mc.player.field4982 = (float)(var23 * var26);
+               this.mc.player.moveForward = (float)(var21 * var26);
+               this.mc.player.moveStrafing = (float)(var23 * var26);
             } else {
-               if (this.mc.player.method3337()) {
-                  ColorUtils.method17724(this.mc.player.getVec().x * 0.9);
-                  ColorUtils.method17726(this.mc.player.getVec().z * 0.9);
+               if (this.mc.player.isSprinting()) {
+                  ColorUtils.method17724(this.mc.player.getMotion().x * 0.9);
+                  ColorUtils.method17726(this.mc.player.getMotion().z * 0.9);
                }
 
-               this.mc.player.field4984 = 0.0F;
-               this.mc.player.field4982 = 0.0F;
+               this.mc.player.moveForward = 0.0F;
+               this.mc.player.moveStrafing = 0.0F;
             }
 
             double var29 = Math.cos(Math.toRadians((double)(var43 + 90.0F))) * var4;
@@ -177,7 +177,7 @@ public class Class8795 {
             boolean var33 = Class8627.method30925();
             boolean var34 = this.mc
                   .world
-                  .method7055(this.mc.player, this.mc.player.getBoundingBox().method19667(var29, -1.0, var31))
+                  .getCollisionShapes(this.mc.player, this.mc.player.getBoundingBox().offset(var29, -1.0, var31))
                   .count()
                == 0L;
             boolean var35 = false;
@@ -198,7 +198,7 @@ public class Class8795 {
                      if (this.mc.world.getBlockState(var8.field44271.method33979().down()).getBlock() instanceof Class3421 && var10 < 1.1) {
                         ColorUtils.addChatMessage("YA" + var10);
                      } else {
-                        this.mc.player.method2914();
+                        this.mc.player.jump();
                      }
 
                      var9 = Class2317.field15873;
@@ -207,7 +207,7 @@ public class Class8795 {
                case 2:
                   this.mc.player.setSprinting(true);
                   if (var25 && var33 && var34) {
-                     this.mc.player.method2914();
+                     this.mc.player.jump();
                      var9 = Class2317.field15873;
                   }
                   break;
@@ -241,7 +241,7 @@ public class Class8795 {
    }
 
    @EventTarget
-   private void method31747(Class4399 var1) {
+   private void method31747(EventUpdate var1) {
       if (var1.method13921()) {
          if (this.method31743()) {
             ArrayList var4 = new ArrayList();
@@ -267,7 +267,7 @@ public class Class8795 {
                   || Math.sqrt(
                         this.mc
                            .player
-                           .method3276(
+                           .getDistanceNearest(
                               (double)this.field39616.getX() + 0.5,
                               (double)this.field39616.getY() + 0.5,
                               (double)this.field39616.getZ() + 0.5
@@ -279,36 +279,36 @@ public class Class8795 {
 
                Direction var13 = BlockUtil.method34580(this.field39616);
                float[] var11 = BlockUtil.method34542(this.field39616, var13);
-               var1.method13918(var11[0]);
-               var1.method13916(var11[1]);
+               var1.setPitch(var11[0]);
+               var1.setYaw(var11[1]);
                this.mc.player.swingArm(Hand.MAIN_HAND);
                this.mc.playerController.onPlayerDamageBlock(this.field39616, BlockUtil.method34580(this.field39616));
             } else {
                this.field39616 = (BlockPos)var4.get(0);
                Direction var14 = BlockUtil.method34580(this.field39616);
                float[] var15 = BlockUtil.method34542(this.field39616, var14);
-               var1.method13918(var15[0]);
-               var1.method13916(var15[1]);
-               Class4430 var12 = new Class4430(0, false, this.field39616);
+               var1.setPitch(var15[0]);
+               var1.setYaw(var15[1]);
+               EventKeyPress var12 = new EventKeyPress(0, false, this.field39616);
                Client.getInstance().getEventManager().call(var12);
             }
 
             if (var6.field44279 != Class2317.field15876) {
-               this.field39615 = var1.method13915();
-               this.field39614 = var1.method13917();
+               this.field39615 = var1.getYaw();
+               this.field39614 = var1.getPitch();
             }
          }
       }
    }
 
    @EventTarget
-   public void method31748(Class4398 var1) {
+   public void method31748(EventBlockCollision var1) {
       if (this.method31743()) {
          int var4 = this.field39613.size() - 1;
          Class9510 var5 = this.field39613.get(var4);
-         if (var5 != null && var5.field44282.contains(var1.method13902().method8332())) {
+         if (var5 != null && var5.field44282.contains(var1.getBlockPos().method8332())) {
             VoxelShape var6 = VoxelShapes.create(0.0, 0.0, 0.0, 1.0, 0.1, 1.0);
-            var1.method13905(var6);
+            var1.setBoxelShape(var6);
          }
       }
    }

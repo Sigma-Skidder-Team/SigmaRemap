@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
-import mapped.Class9567;
+import mapped.MovementUtils;
 import mapped.NumberSetting;
 
 public class SpartanAntiKB extends Module {
@@ -23,7 +23,7 @@ public class SpartanAntiKB extends Module {
             if (this.field23617 < 10) {
                 this.field23617++;
                 if (this.field23617 == (int) this.getNumberValueBySettingName("Ticks")) {
-                    Class9567.method37090(0.0);
+                    MovementUtils.method37090(0.0);
                 }
             }
         }
@@ -34,7 +34,7 @@ public class SpartanAntiKB extends Module {
         if (this.isEnabled()) {
             if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
                 SEntityVelocityPacket var4 = (SEntityVelocityPacket) var1.getPacket();
-                if (var4.method17565() == mc.player.getEntityId()) {
+                if (var4.getEntityID() == mc.player.getEntityId()) {
                     this.field23617 = 0;
                 }
             }

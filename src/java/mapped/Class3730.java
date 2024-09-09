@@ -20,7 +20,7 @@ public class Class3730 extends Class3676<Class1006> {
    }
 
    public boolean method12508(ServerWorld var1, Class1006 var2) {
-      return var2.method3005() && this.method12648(var1, var2);
+      return var2.isChild() && this.method12648(var1, var2);
    }
 
    public void method12502(ServerWorld var1, Class1006 var2, long var3) {
@@ -43,7 +43,7 @@ public class Class3730 extends Class3676<Class1006> {
    }
 
    public boolean method12499(ServerWorld var1, Class1006 var2, long var3) {
-      return var2.method3005()
+      return var2.isChild()
          && this.field19835 != null
          && this.method12651(var1, this.field19835)
          && !this.method12653(var1, var2)
@@ -72,7 +72,7 @@ public class Class3730 extends Class3676<Class1006> {
    }
 
    private void method12647(Class1006 var1, BlockPos var2) {
-      var1.method2992().method21406(Class8830.field39824, new Class8999(var2, this.field19834, 0));
+      var1.getBrain().method21406(Class8830.field39824, new Class8999(var2, this.field19834, 0));
    }
 
    private boolean method12648(ServerWorld var1, Class1006 var2) {
@@ -94,7 +94,7 @@ public class Class3730 extends Class3676<Class1006> {
    }
 
    private Optional<BlockPos> method12652(Class1006 var1) {
-      return var1.method2992().<BlockPos>method21410(Class8830.field39834);
+      return var1.getBrain().<BlockPos>method21410(Class8830.field39834);
    }
 
    private boolean method12653(ServerWorld var1, Class1006 var2) {

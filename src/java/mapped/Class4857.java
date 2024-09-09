@@ -15,8 +15,8 @@ public class Class4857 extends Class4837 {
       int var5 = 0;
       ItemStack var6 = ItemStack.EMPTY;
 
-      for (int var7 = 0; var7 < var1.method3629(); var7++) {
-         ItemStack var8 = var1.method3618(var7);
+      for (int var7 = 0; var7 < var1.getSizeInventory(); var7++) {
+         ItemStack var8 = var1.getStackInSlot(var7);
          if (!var8.isEmpty()) {
             if (var8.getItem() != Items.field38048) {
                if (var8.getItem() != Items.field38047) {
@@ -41,8 +41,8 @@ public class Class4857 extends Class4837 {
       int var4 = 0;
       ItemStack var5 = ItemStack.EMPTY;
 
-      for (int var6 = 0; var6 < var1.method3629(); var6++) {
-         ItemStack var7 = var1.method3618(var6);
+      for (int var6 = 0; var6 < var1.getSizeInventory(); var6++) {
+         ItemStack var7 = var1.getStackInSlot(var6);
          if (!var7.isEmpty()) {
             if (var7.getItem() != Items.field38048) {
                if (var7.getItem() != Items.field38047) {
@@ -63,7 +63,7 @@ public class Class4857 extends Class4837 {
       if (!var5.isEmpty() && var5.method32141() && var4 >= 1 && Class3285.method11818(var5) < 2) {
          ItemStack var8 = new ItemStack(Items.field38048, var4);
          CompoundNBT var9 = var5.method32142().method79();
-         var9.method102("generation", Class3285.method11818(var5) + 1);
+         var9.putInt("generation", Class3285.method11818(var5) + 1);
          var8.method32148(var9);
          return var8;
       } else {
@@ -72,10 +72,10 @@ public class Class4857 extends Class4837 {
    }
 
    public NonNullList<ItemStack> method14968(Class926 var1) {
-      NonNullList var4 = NonNullList.<ItemStack>method68(var1.method3629(), ItemStack.EMPTY);
+      NonNullList var4 = NonNullList.<ItemStack>method68(var1.getSizeInventory(), ItemStack.EMPTY);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         ItemStack var6 = var1.method3618(var5);
+         ItemStack var6 = var1.getStackInSlot(var5);
          if (!var6.getItem().method11723()) {
             if (var6.getItem() instanceof Class3285) {
                ItemStack var7 = var6.copy();

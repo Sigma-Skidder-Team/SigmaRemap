@@ -1,10 +1,10 @@
 package com.mentalfrostbyte.jello.module.impl.movement.speed;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.Class9567;
+import mapped.MovementUtils;
 import mapped.NumberSetting;
 
 public class VanillaSpeed extends Module {
@@ -14,10 +14,10 @@ public class VanillaSpeed extends Module {
     }
 
     @EventTarget
-    public void method16056(Class4435 var1) {
+    public void method16056(EventMove var1) {
         if (this.isEnabled()) {
-            double var4 = Class9567.method37075() * (double) this.getNumberValueBySettingName("Speed");
-            Class9567.method37088(var1, var4);
+            double var4 = MovementUtils.method37075() * (double) this.getNumberValueBySettingName("Speed");
+            MovementUtils.method37088(var1, var4);
         }
     }
 }

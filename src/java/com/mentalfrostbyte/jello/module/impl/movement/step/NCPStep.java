@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SafeWalkEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4434;
+import com.mentalfrostbyte.jello.event.impl.EventStep;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -39,10 +39,10 @@ public class NCPStep extends Module {
 
     @EventTarget
     @LowerPriority
-    private void method16913(Class4434 var1) {
+    private void method16913(EventStep var1) {
         if (this.isEnabled() && !var1.isCancelled()) {
-            double var4 = var1.method13988();
-            if (ColorUtils.method17730(mc.player, 1.0E-4F) && !Class9567.method37081()) {
+            double var4 = var1.getHeight();
+            if (ColorUtils.method17730(mc.player, 1.0E-4F) && !MovementUtils.method37081()) {
                 if (var4 >= 0.625) {
                     double var6 = mc.player.getPosX();
                     double var8 = mc.player.getPosY();
@@ -91,7 +91,7 @@ public class NCPStep extends Module {
                     mc.timer.timerSpeed = this.field23992;
                 }
             } else {
-                var1.method13900(true);
+                var1.setCancelled(true);
             }
         }
     }
@@ -117,9 +117,9 @@ public class NCPStep extends Module {
 
     @EventTarget
     private void method16915(SendPacketEvent var1) {
-        if (var1.method13932() instanceof CPlayerPacket && !this.field23993.isEmpty()) {
-            this.field23993.add(var1.method13932());
-            var1.method13900(true);
+        if (var1.getPacket() instanceof CPlayerPacket && !this.field23993.isEmpty()) {
+            this.field23993.add(var1.getPacket());
+            var1.setCancelled(true);
             if (this.field23994 == 0) {
                 for (Packet var5 : this.field23993) {
                     mc.getConnection().getNetworkManager().method30695(var5);

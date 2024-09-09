@@ -23,7 +23,7 @@ public class Class872 extends Class851<Class5821> {
       super(var1, var2, var3);
       this.field4721 = 230;
       this.field4722 = 219;
-      var1.method18127(new Class1122(this, var1));
+      var1.addListener(new Class1122(this, var1));
    }
 
    @Override

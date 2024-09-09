@@ -13,7 +13,7 @@ public enum Class1892 {
       this.field11095 = var4;
    }
 
-   public int method8150() {
+   public int getOffset() {
       return this.field11094;
    }
 

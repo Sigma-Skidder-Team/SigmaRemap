@@ -66,7 +66,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    private static final Logger LOGGER = LogManager.getLogger();
    public static final File USER_CACHE_FILE = new File("usercache.json");
    public static final WorldSettings field1210 = new WorldSettings(
-      "Demo World", Class1894.field11102, false, Difficulty.field14353, false, new Class5462(), DatapackCodec.field33531
+      "Demo World", GameType.field11102, false, Difficulty.field14353, false, new Class5462(), DatapackCodec.field33531
    );
    public final SaveFormat.LevelSave field1211;
    public final Class8716 field1212;
@@ -225,7 +225,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       Class8250 var17 = var16.method6945();
       this.method1276(var17);
       this.field1259 = new Class8962(var17);
-      WorldBorder var18 = var16.method6810();
+      WorldBorder var18 = var16.getWorldBorder();
       var18.method24557(var4.method20069());
       if (!var4.method20070()) {
          try {
@@ -261,7 +261,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
             ChunkGenerator var24 = ((Dimension)var29.getValue()).method36413();
             Class6609 var25 = new Class6609(this.field1269, var4);
             ServerWorld var26 = new ServerWorld(this, this.field1265, this.field1211, var25, var22, var23, var1, var24, var6, var9, ImmutableList.of(), false);
-            var18.method24543(new Class7048(var26.method6810()));
+            var18.method24543(new Class7048(var26.getWorldBorder()));
             this.field1225.put(var22, var26);
          }
       }
@@ -274,7 +274,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
             Class1685 var8 = var7.method17824();
             Random var9 = new Random(var0.method6967());
             BlockPos var10 = var8.method7203(0, var0.method6776(), 0, 256, var0x -> var0x.method32499().method31971(), var9);
-            Class7481 var11 = var10 != null ? new Class7481(var10) : new Class7481(0, 0);
+            ChunkPos var11 = var10 != null ? new ChunkPos(var10) : new ChunkPos(0, 0);
             if (var10 == null) {
                LOGGER.warn("Unable to find spawn biome");
             }
@@ -296,7 +296,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
             for (int var18 = 0; var18 < 1024; var18++) {
                if (var20 > -16 && var20 <= 16 && var21 > -16 && var21 <= 16) {
-                  BlockPos var19 = Class6878.method20941(var0, new Class7481(var11.field32174 + var20, var11.field32175 + var21), var12);
+                  BlockPos var19 = Class6878.method20941(var0, new ChunkPos(var11.field32174 + var20, var11.field32175 + var21), var12);
                   if (var19 != null) {
                      var1.method20041(var19, 0.0F);
                      break;
@@ -333,18 +333,18 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       var4.method20055(false);
       var4.method20061(1000000000);
       var4.method20076(6000L);
-      var4.method20073(Class1894.field11105);
+      var4.method20073(GameType.SPECTATOR);
    }
 
    private void method1284(Class7243 var1) {
       ServerWorld var4 = this.method1317();
       LOGGER.info("Preparing start region for dimension {}", var4.getDimensionKey().getLocation());
       BlockPos var5 = var4.method6947();
-      var1.method22736(new Class7481(var5));
-      Class1703 var6 = var4.getChunkProvider();
+      var1.method22736(new ChunkPos(var5));
+      ServerChunkProvider var6 = var4.getChunkProvider();
       var6.getLightManager().method613(500);
       this.field1253 = Util.milliTime();
-      var6.method7374(Class8561.field38480, new Class7481(var5), 11, Class2341.field16010);
+      var6.registerTicket(Class8561.field38480, new ChunkPos(var5), 11, Class2341.field16010);
 
       while (var6.method7355() != 441) {
          this.field1253 = Util.milliTime() + 10L;
@@ -361,7 +361,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
             while (var10.hasNext()) {
                long var11 = var10.nextLong();
-               Class7481 var13 = new Class7481(var11);
+               ChunkPos var13 = new ChunkPos(var11);
                var8.getChunkProvider().method7350(var13, true);
             }
          }
@@ -387,7 +387,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       }
    }
 
-   public Class1894 method1286() {
+   public GameType method1286() {
       return this.field1269.method20067();
    }
 
@@ -415,7 +415,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
       ServerWorld var9 = this.method1317();
       Class6608 var10 = this.field1269.method20098();
-      var10.method20068(var9.method6810().method24556());
+      var10.method20068(var9.getWorldBorder().method24556());
       this.field1269.method20094(this.method1414().method29605());
       this.field1211.method8001(this.field1224, this.field1269, this.getPlayerList().method19479());
       return var6;
@@ -703,7 +703,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          if (this.field1229 % 20 == 0) {
             this.field1216.startSection("timeSync");
             this.field1226
-               .method19457(new SUpdateTimePacket(var5.method6783(), var5.method6784(), var5.method6789().method17135(Class5462.field24232)), var5.getDimensionKey());
+               .method19457(new SUpdateTimePacket(var5.getGameTime(), var5.method6784(), var5.getGameRules().getBoolean(Class5462.field24232)), var5.getDimensionKey());
             this.field1216.endSection();
          }
 
@@ -1027,7 +1027,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
    public abstract boolean getPublic();
 
-   public void method1370(Class1894 var1) {
+   public void method1370(GameType var1) {
       this.field1269.method20073(var1);
    }
 
@@ -1044,7 +1044,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return false;
    }
 
-   public abstract boolean method1374(Class1894 var1, boolean var2, int var3);
+   public abstract boolean method1374(GameType var1, boolean var2, int var3);
 
    public int method1375() {
       return this.field1229;
@@ -1129,7 +1129,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public int method1395(ServerWorld var1) {
-      return var1 == null ? 10 : var1.method6789().method17136(Class5462.field24239);
+      return var1 == null ? 10 : var1.getGameRules().method17136(Class5462.field24239);
    }
 
    public Class285 method1396() {
@@ -1237,7 +1237,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return new Class6619(
          this,
          var3 != null ? Vector3d.method11329(var3.method6947()) : Vector3d.ZERO,
-         Class8513.field37212,
+         Vector2f.field37212,
          var3,
          4,
          "Server",
@@ -1286,7 +1286,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public Class5462 method1413() {
-      return this.method1317().method6789();
+      return this.method1317().getGameRules();
    }
 
    public Class8426 method1414() {

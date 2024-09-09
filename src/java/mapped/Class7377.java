@@ -1,7 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
-import com.mentalfrostbyte.jello.event.impl.Class4424;
+import com.mentalfrostbyte.jello.event.impl.EventRenderBlocks;
 import com.mojang.serialization.MapCodec;
 import com.mentalfrostbyte.jello.Client;
 import net.minecraft.block.BlockState;
@@ -69,7 +69,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.field31579;
    }
 
-   public Class8649 method23384() {
+   public Class8649 getMaterial() {
       return this.field31567;
    }
 
@@ -104,7 +104,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
    }
 
    public int getLightValue() {
-      Class4424 var3 = new Class4424(this);
+      EventRenderBlocks var3 = new EventRenderBlocks(this);
       Client.getInstance().getEventManager().call(var3);
       return !var3.method13971() ? this.field31564 : 1;
    }
@@ -346,14 +346,14 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
    }
 
    public boolean method23446(ITag<Block> var1) {
-      return this.getBlock().method11540(var1);
+      return this.getBlock().isIn(var1);
    }
 
    public boolean method23447(ITag<Block> var1, Predicate<Class7377> var2) {
-      return this.getBlock().method11540(var1) && var2.test(this);
+      return this.getBlock().isIn(var1) && var2.test(this);
    }
 
-   public boolean method23448(Block var1) {
+   public boolean isIn(Block var1) {
       return this.getBlock().method11541(var1);
    }
 
@@ -369,7 +369,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11691(this.method23457(), var1);
    }
 
-   public Class8447 method23452() {
+   public SoundType getSoundType() {
       return this.getBlock().method11580(this.method23457());
    }
 

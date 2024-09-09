@@ -44,8 +44,8 @@ public class Class3413 extends Block {
    public void method11523(BlockState var1, World var2, BlockPos var3, Entity var4) {
       int var7 = var1.<Integer>method23463(field19100);
       float var8 = (float)var3.getY() + (6.0F + (float)(3 * var7)) / 16.0F;
-      if (!var2.isRemote && var4.method3327() && var7 > 0 && var4.getPosY() <= (double)var8) {
-         var4.method3223();
+      if (!var2.isRemote && var4.isBurning() && var7 > 0 && var4.getPosY() <= (double)var8) {
+         var4.extinguish();
          this.method12051(var2, var3, var1, var7 - 1);
       }
    }
@@ -63,10 +63,10 @@ public class Class3413 extends Block {
                      if (var10 < 3 && !var2.isRemote) {
                         if (!var4.abilities.isCreativeMode) {
                            ItemStack var17 = new ItemStack(Items.field37972);
-                           var4.method2911(Class8876.field40143);
-                           var4.method3095(var5, var17);
+                           var4.method2911(Stats.field40143);
+                           var4.setHeldItem(var5, var17);
                            if (var4 instanceof ServerPlayerEntity) {
-                              ((ServerPlayerEntity)var4).method2771(var4.field4904);
+                              ((ServerPlayerEntity)var4).method2771(var4.container);
                            }
                         }
 
@@ -81,8 +81,8 @@ public class Class3413 extends Block {
                         if (var14.method11799(var9) && !var2.isRemote) {
                            var14.method11801(var9);
                            this.method12051(var2, var3, var1, var10 - 1);
-                           var4.method2911(Class8876.field40144);
-                           return ActionResultType.field14818;
+                           var4.method2911(Stats.field40144);
+                           return ActionResultType.SUCCESS;
                         }
                      }
 
@@ -91,7 +91,7 @@ public class Class3413 extends Block {
                            ItemStack var16 = var9.copy();
                            var16.method32180(1);
                            Class958.method3892(var16);
-                           var4.method2911(Class8876.field40145);
+                           var4.method2911(Stats.field40145);
                            if (!var4.abilities.isCreativeMode) {
                               var9.method32182(1);
                               this.method12051(var2, var3, var1, var10 - 1);
@@ -100,13 +100,13 @@ public class Class3413 extends Block {
                            if (!var9.isEmpty()) {
                               if (var4.inventory.method4045(var16)) {
                                  if (var4 instanceof ServerPlayerEntity) {
-                                    ((ServerPlayerEntity)var4).method2771(var4.field4904);
+                                    ((ServerPlayerEntity)var4).method2771(var4.container);
                                  }
                               } else {
                                  var4.method2882(var16, false);
                               }
                            } else {
-                              var4.method3095(var5, var16);
+                              var4.setHeldItem(var5, var16);
                            }
                         }
 
@@ -119,10 +119,10 @@ public class Class3413 extends Block {
                               var13.method32148(var9.method32142().method79());
                            }
 
-                           var4.method3095(var5, var13);
+                           var4.setHeldItem(var5, var13);
                            this.method12051(var2, var3, var1, var10 - 1);
-                           var4.method2911(Class8876.field40146);
-                           return ActionResultType.field14818;
+                           var4.method2911(Stats.field40146);
+                           return ActionResultType.SUCCESS;
                         } else {
                            return ActionResultType.field14819;
                         }
@@ -134,18 +134,18 @@ public class Class3413 extends Block {
                   if (var10 > 0 && !var2.isRemote) {
                      if (!var4.abilities.isCreativeMode) {
                         ItemStack var12 = Class9741.method38187(new ItemStack(Items.field37971), Class8137.field34977);
-                        var4.method2911(Class8876.field40143);
+                        var4.method2911(Stats.field40143);
                         var9.method32182(1);
                         if (!var9.isEmpty()) {
                            if (var4.inventory.method4045(var12)) {
                               if (var4 instanceof ServerPlayerEntity) {
-                                 ((ServerPlayerEntity)var4).method2771(var4.field4904);
+                                 ((ServerPlayerEntity)var4).method2771(var4.container);
                               }
                            } else {
                               var4.method2882(var12, false);
                            }
                         } else {
-                           var4.method3095(var5, var12);
+                           var4.setHeldItem(var5, var12);
                         }
                      }
 
@@ -164,11 +164,11 @@ public class Class3413 extends Block {
                            var4.method2882(new ItemStack(Items.field37883), false);
                         }
                      } else {
-                        var4.method3095(var5, new ItemStack(Items.field37883));
+                        var4.setHeldItem(var5, new ItemStack(Items.field37883));
                      }
                   }
 
-                  var4.method2911(Class8876.field40143);
+                  var4.method2911(Stats.field40143);
                   this.method12051(var2, var3, var1, 0);
                   var2.method6742((PlayerEntity)null, var3, SoundEvents.field26429, Class2266.field14732, 1.0F, 1.0F);
                }
@@ -178,10 +178,10 @@ public class Class3413 extends Block {
          } else {
             if (var10 < 3 && !var2.isRemote) {
                if (!var4.abilities.isCreativeMode) {
-                  var4.method3095(var5, new ItemStack(Items.field37882));
+                  var4.setHeldItem(var5, new ItemStack(Items.field37882));
                }
 
-               var4.method2911(Class8876.field40142);
+               var4.method2911(Stats.field40142);
                this.method12051(var2, var3, var1, 3);
                var2.method6742((PlayerEntity)null, var3, SoundEvents.field26426, Class2266.field14732, 1.0F, 1.0F);
             }

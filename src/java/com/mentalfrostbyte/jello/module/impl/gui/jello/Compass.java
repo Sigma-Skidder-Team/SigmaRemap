@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.gui.jello;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
@@ -21,7 +21,7 @@ public class Compass extends Module {
     }
 
     @EventTarget
-    private void method16657(Class4415 var1) {
+    private void method16657(EventRender var1) {
         if (this.isEnabled() && mc.player != null) {
             if (! Minecraft.getInstance().gameSettings.hideGUI) {
                 byte var4 = 5;

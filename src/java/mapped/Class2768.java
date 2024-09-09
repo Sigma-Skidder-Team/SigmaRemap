@@ -16,7 +16,7 @@ public class Class2768 extends Class2595 {
    @Override
    public boolean method10803() {
       LivingEntity var3 = this.field17345.method4232();
-      return var3 == null ? false : this.field17345.method3027(this.field17345.method4232(), Class8522.field38240);
+      return var3 == null ? false : this.field17345.canAttack(this.field17345.method4232(), Class8522.field38240);
    }
 
    @Override
@@ -45,7 +45,7 @@ public class Class2768 extends Class2595 {
             Class1110.method5352(this.field17345, Class2143.field14029);
             this.method10963();
             this.field17344 = (8 + Class1110.method5354(this.field17345).nextInt(4)) * 20;
-            this.field17345.method2863(SoundEvents.field26923, 10.0F, 0.95F + Class1110.method5355(this.field17345).nextFloat() * 0.1F);
+            this.field17345.playSound(SoundEvents.field26923, 10.0F, 0.95F + Class1110.method5355(this.field17345).nextFloat() * 0.1F);
          }
       }
    }

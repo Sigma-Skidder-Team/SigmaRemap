@@ -15,7 +15,7 @@ public class Class3709 extends Class3676<LivingEntity> {
 
    @Override
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
-      var2.method2992().method21407(Class8830.field39871, true, (long)this.field19774);
-      var2.method2992().method21405(Class8830.field39826);
+      var2.getBrain().method21407(Class8830.field39871, true, (long)this.field19774);
+      var2.getBrain().method21405(Class8830.field39826);
    }
 }

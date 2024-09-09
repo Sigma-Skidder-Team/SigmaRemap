@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.module.impl.world;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
@@ -26,7 +26,7 @@ public class AntiVanish extends Module {
     }
 
     @EventTarget
-    private void method16862(Class4399 var1) {
+    private void method16862(EventUpdate var1) {
         if (this.isEnabled()) {
             if (var1.method13921() && mc.getCurrentServerData() != null) {
                 if (!this.field23967.isEmpty()) {

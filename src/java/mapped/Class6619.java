@@ -40,9 +40,9 @@ public class Class6619 implements Class6618 {
    private final Entity field29132;
    private final ResultConsumer<Class6619> field29133;
    private final Class2062 field29134;
-   private final Class8513 field29135;
+   private final Vector2f field29135;
 
-   public Class6619(ICommandSource var1, Vector3d var2, Class8513 var3, ServerWorld var4, int var5, String var6, ITextComponent var7, MinecraftServer var8, Entity var9) {
+   public Class6619(ICommandSource var1, Vector3d var2, Vector2f var3, ServerWorld var4, int var5, String var6, ITextComponent var7, MinecraftServer var8, Entity var9) {
       this(var1, var2, var3, var4, var5, var6, var7, var8, var9, false, (var0, var1x, var2x) -> {
       }, Class2062.field13441);
    }
@@ -50,7 +50,7 @@ public class Class6619 implements Class6618 {
    public Class6619(
       ICommandSource var1,
       Vector3d var2,
-      Class8513 var3,
+      Vector2f var3,
       ServerWorld var4,
       int var5,
       String var6,
@@ -113,7 +113,7 @@ public class Class6619 implements Class6618 {
          : this;
    }
 
-   public Class6619 method20159(Class8513 var1) {
+   public Class6619 method20159(Vector2f var1) {
       return !this.field29135.equals(var1)
          ? new Class6619(
             this.field29124,
@@ -264,10 +264,10 @@ public class Class6619 implements Class6618 {
       double var5 = var1.x - var4.x;
       double var7 = var1.y - var4.y;
       double var9 = var1.z - var4.z;
-      double var11 = (double) MathHelper.method37766(var5 * var5 + var9 * var9);
+      double var11 = (double) MathHelper.sqrt(var5 * var5 + var9 * var9);
       float var13 = MathHelper.method37792((float)(-(MathHelper.method37814(var7, var11) * 180.0F / (float)Math.PI)));
       float var14 = MathHelper.method37792((float)(MathHelper.method37814(var9, var5) * 180.0F / (float)Math.PI) - 90.0F);
-      return this.method20159(new Class8513(var13, var14));
+      return this.method20159(new Vector2f(var13, var14));
    }
 
    public ITextComponent method20169() {
@@ -312,7 +312,7 @@ public class Class6619 implements Class6618 {
       }
    }
 
-   public Class8513 method20176() {
+   public Vector2f method20176() {
       return this.field29135;
    }
 
@@ -337,7 +337,7 @@ public class Class6619 implements Class6618 {
    private void method20180(ITextComponent var1) {
       IFormattableTextComponent var4 = new TranslationTextComponent("chat.type.admin", this.method20169(), var1)
          .mergeStyle(new TextFormatting[]{TextFormatting.GRAY, TextFormatting.ITALIC});
-      if (this.field29130.method1413().method17135(Class5462.field24236)) {
+      if (this.field29130.method1413().getBoolean(Class5462.field24236)) {
          for (ServerPlayerEntity var6 : this.field29130.getPlayerList().method19488()) {
             if (var6 != this.field29124 && this.field29130.getPlayerList().canSendCommands(var6.getGameProfile())) {
                var6.sendMessage(var4, Util.DUMMY_UUID);
@@ -345,7 +345,7 @@ public class Class6619 implements Class6618 {
          }
       }
 
-      if (this.field29124 != this.field29130 && this.field29130.method1413().method17135(Class5462.field24233)) {
+      if (this.field29124 != this.field29130 && this.field29130.method1413().getBoolean(Class5462.field24233)) {
          this.field29130.sendMessage(var4, Util.DUMMY_UUID);
       }
    }

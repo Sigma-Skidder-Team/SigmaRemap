@@ -27,7 +27,7 @@ public class Class914 implements ICommandSource {
 
    public Class6619 method3580() {
       ServerWorld var3 = this.field5206.method1317();
-      return new Class6619(this, Vector3d.method11329(var3.method6947()), Class8513.field37212, var3, 4, "Rcon", field5204, this.field5206, (Entity)null);
+      return new Class6619(this, Vector3d.method11329(var3.method6947()), Vector2f.field37212, var3, 4, "Rcon", field5204, this.field5206, (Entity)null);
    }
 
    @Override

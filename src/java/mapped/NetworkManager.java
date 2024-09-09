@@ -159,7 +159,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
    public void method30694(Packet<?> var1, GenericFutureListener<? extends Future<? super Void>> var2) {
       SendPacketEvent var5 = new SendPacketEvent(var1);
       Client.getInstance().getEventManager().call(var5);
-      var1 = var5.method13932();
+      var1 = var5.getPacket();
       if (!var5.isCancelled()) {
          if (!this.isChannelOpen()) {
             this.field38647.add(new Class9742(var1, var2));

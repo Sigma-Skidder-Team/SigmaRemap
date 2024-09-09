@@ -11,7 +11,7 @@ import java.util.function.Predicate;
 public class Class7527 {
    private static String[] field32307;
    private static final Predicate<BlockState> field32308 = var0 -> !var0.isAir();
-   private static final Predicate<BlockState> field32309 = var0 -> var0.method23384().method31087();
+   private static final Predicate<BlockState> field32309 = var0 -> var0.getMaterial().method31087();
    private final Class7776 field32310 = new Class7776(9, 256);
    private final Predicate<BlockState> field32311;
    private final IChunk field32312;
@@ -37,7 +37,7 @@ public class Class7527 {
             for (int var14 = var7 - 1; var14 >= 0; var14--) {
                var8.method8372(var9, var14, var10);
                BlockState var15 = var0.getBlockState(var8);
-               if (!var15.method23448(Blocks.AIR)) {
+               if (!var15.isIn(Blocks.AIR)) {
                   while (var6.hasNext()) {
                      Class7527 var13 = (Class7527)var6.next();
                      if (var13.field32311.test(var15)) {

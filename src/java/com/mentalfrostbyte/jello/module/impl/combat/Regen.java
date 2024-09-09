@@ -19,7 +19,7 @@ public class Regen extends Module {
    private void method16007(TickEvent var1) {
       if (this.isEnabled()) {
          if (!mc.player.abilities.isCreativeMode
-            && mc.player.method2932().method37574() > 17
+            && mc.player.getFoodStats().getFoodLevel() > 17
             && mc.player.getHealth() < 20.0F
             && mc.player.getHealth() != 0.0F
             && (mc.player.onGround || !this.getBooleanValueFromSetttingName("Only OnGround"))) {

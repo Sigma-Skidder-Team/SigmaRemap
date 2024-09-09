@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.world.disabler;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.BooleanSetting;
@@ -27,7 +27,7 @@ public class TPDisabler extends Module {
     }
 
     @EventTarget
-    public void method16197(Class4399 var1) {
+    public void method16197(EventUpdate var1) {
         if (this.isEnabled() && mc.player != null && var1.method13921() && mc.getCurrentServerData() != null) {
             this.field23517++;
             double var4 = -4.503599627370497E15;
@@ -58,8 +58,8 @@ public class TPDisabler extends Module {
                 if (this.getBooleanValueFromSetttingName("More Packets")) {
                     mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(mc.player.getPosX(), var4, mc.player.getPosX(), var8));
                 } else {
-                    var1.method13912(var4);
-                    var1.method13920(var8);
+                    var1.setY(var4);
+                    var1.setGround(var8);
                 }
             }
         }

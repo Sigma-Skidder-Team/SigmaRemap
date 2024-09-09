@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.notification;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.resource.ClientResource;
@@ -67,7 +67,7 @@ public class NotificationManager {
     }
 
     @EventTarget
-    private void method31995(Class4415 var1) {
+    private void method31995(EventRender var1) {
         if (!Minecraft.getInstance().gameSettings.hideGUI) {
             this.field39921 = Math.max(Math.round((float) (6 - Minecraft.getFps() / 10)), 1);
 

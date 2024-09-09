@@ -123,7 +123,7 @@ public final class Class8649 {
       this.field38977 = var8;
    }
 
-   public boolean method31085() {
+   public boolean isLiquid() {
       return this.field38980;
    }
 

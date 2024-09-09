@@ -29,7 +29,7 @@ public class Class1149 extends Screen {
             this.mc.displayGuiScreen((Screen)null);
             int var4 = Class6639.method20257();
             TranslationTextComponent var5;
-            if (!this.mc.getIntegratedServer().method1374(Class1894.method8161(this.field6286), this.field6287, var4)) {
+            if (!this.mc.getIntegratedServer().method1374(GameType.method8161(this.field6286), this.field6287, var4)) {
                var5 = new TranslationTextComponent("commands.publish.failed");
             } else {
                var5 = new TranslationTextComponent("commands.publish.started", var4);

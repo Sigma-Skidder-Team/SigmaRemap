@@ -40,8 +40,8 @@ public class Class3287 extends Item {
                if (var15.getBlock() instanceof Class3405) {
                   Fluid var16 = ((Class3405)var15.getBlock()).method11533(var1, var9, var15);
                   if (var16 != Class9479.field44064) {
-                     var2.method2913(Class8876.field40098.method172(this));
-                     var2.method2863(!var16.method25067(Class8953.field40470) ? SoundEvents.field26429 : SoundEvents.field26431, 1.0F, 1.0F);
+                     var2.addStat(Stats.field40098.method172(this));
+                     var2.playSound(!var16.method25067(FluidTags.field40470) ? SoundEvents.field26429 : SoundEvents.field26431, 1.0F, 1.0F);
                      ItemStack var14 = Class8482.method29979(var6, var2, new ItemStack(var16.method25050()));
                      if (!var1.isRemote) {
                         CriteriaTriggers.field44474.method15152((ServerPlayerEntity)var2, new ItemStack(var16.method25050()));
@@ -63,7 +63,7 @@ public class Class3287 extends Item {
                      CriteriaTriggers.field44489.method15138((ServerPlayerEntity)var2, var13, var6);
                   }
 
-                  var2.method2913(Class8876.field40098.method172(this));
+                  var2.addStat(Stats.field40098.method172(this));
                   return Class6794.<ItemStack>method20700(this.method11823(var6, var2), var1.isRemote());
                }
             }
@@ -86,11 +86,11 @@ public class Class3287 extends Item {
       } else {
          BlockState var7 = var2.getBlockState(var3);
          Block var8 = var7.getBlock();
-         Class8649 var9 = var7.method23384();
+         Class8649 var9 = var7.getMaterial();
          boolean var10 = var7.method23442(this.field18798);
          boolean var11 = var7.isAir() || var10 || var8 instanceof Class3449 && ((Class3449)var8).method11531(var2, var3, var7, this.field18798);
          if (var11) {
-            if (var2.method6812().isUltrawarm() && this.field18798.method25067(Class8953.field40469)) {
+            if (var2.method6812().isUltrawarm() && this.field18798.method25067(FluidTags.field40469)) {
                int var12 = var3.getX();
                int var13 = var3.getY();
                int var14 = var3.getZ();
@@ -99,7 +99,7 @@ public class Class3287 extends Item {
                );
 
                for (int var15 = 0; var15 < 8; var15++) {
-                  var2.method6746(
+                  var2.addParticle(
                      ParticleTypes.field34085, (double)var12 + Math.random(), (double)var13 + Math.random(), (double)var14 + Math.random(), 0.0, 0.0, 0.0
                   );
                }
@@ -110,7 +110,7 @@ public class Class3287 extends Item {
                this.method11826(var1, var2, var3);
                return true;
             } else {
-               if (!var2.isRemote && var10 && !var9.method31085()) {
+               if (!var2.isRemote && var10 && !var9.isLiquid()) {
                   var2.method7179(var3, true);
                }
 
@@ -128,7 +128,7 @@ public class Class3287 extends Item {
    }
 
    public void method11826(PlayerEntity var1, Class1660 var2, BlockPos var3) {
-      SoundEvent var6 = !this.field18798.method25067(Class8953.field40470) ? SoundEvents.field26426 : SoundEvents.field26428;
+      SoundEvent var6 = !this.field18798.method25067(FluidTags.field40470) ? SoundEvents.field26426 : SoundEvents.field26428;
       var2.method6742(var1, var3, var6, Class2266.field14732, 1.0F, 1.0F);
    }
 }

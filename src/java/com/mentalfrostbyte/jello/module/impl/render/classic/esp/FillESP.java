@@ -2,9 +2,9 @@ package com.mentalfrostbyte.jello.module.impl.render.classic.esp;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4410;
+import com.mentalfrostbyte.jello.event.impl.EventRenderEntity;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4433;
+import com.mentalfrostbyte.jello.event.impl.EventRenderNameTag;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
@@ -88,9 +88,9 @@ public class FillESP extends Module {
     }
 
     @EventTarget
-    public void method16135(Class4433 var1) {
+    public void method16135(EventRenderNameTag var1) {
         if (this.isEnabled() && this.field23481 && var1.method13987() instanceof PlayerEntity) {
-            var1.method13900(true);
+            var1.setCancelled(true);
         }
     }
 
@@ -103,7 +103,7 @@ public class FillESP extends Module {
     }
 
     @EventTarget
-    public void method16137(Class4410 var1) {
+    public void method16137(EventRenderEntity var1) {
         if (this.isEnabled()) {
             if (this.field23481) {
                 var1.method13957(false);

@@ -16,11 +16,11 @@ public class Class3707 extends Class3706 {
 
    @Override
    public void method12585(ServerWorld var1, Class1042 var2) {
-      Optional var5 = var2.method2992().<Class9378>method21410(Class8830.field39814);
+      Optional var5 = var2.getBrain().<Class9378>method21410(Class8830.field39814);
       if (var5.isPresent()) {
          Class9378 var6 = (Class9378)var5.get();
          BlockState var7 = var1.getBlockState(var6.method35579());
-         if (var7.method23448(Blocks.field37115)) {
+         if (var7.isIn(Blocks.field37115)) {
             this.method12589(var2);
             this.method12587(var1, var2, var6, var7);
          }
@@ -37,11 +37,11 @@ public class Class3707 extends Class3706 {
       byte var9 = 10;
       int[] var10 = new int[field19771.size()];
       Class927 var11 = var2.method4752();
-      int var12 = var11.method3629();
+      int var12 = var11.getSizeInventory();
       BlockState var13 = var4;
 
       for (int var14 = var12 - 1; var14 >= 0 && var8 > 0; var14--) {
-         ItemStack var15 = var11.method3618(var14);
+         ItemStack var15 = var11.getStackInSlot(var14);
          int var16 = field19771.indexOf(var15.getItem());
          if (var16 != -1) {
             int var17 = var15.getCount();
@@ -71,8 +71,8 @@ public class Class3707 extends Class3706 {
 
    private void method12589(Class1042 var1) {
       Class927 var4 = var1.method4752();
-      if (var4.method3634(Items.field37843) <= 36) {
-         int var5 = var4.method3634(Items.field37842);
+      if (var4.count(Items.field37843) <= 36) {
+         int var5 = var4.count(Items.field37842);
          byte var6 = 3;
          byte var7 = 3;
          int var8 = Math.min(3, var5 / 3);

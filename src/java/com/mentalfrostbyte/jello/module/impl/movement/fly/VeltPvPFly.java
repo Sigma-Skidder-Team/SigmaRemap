@@ -39,27 +39,27 @@ public class VeltPvPFly extends Module {
 
     @Override
     public void onDisable() {
-        Class9567.method37090(0.0);
-        if (mc.player.getVec().y > 0.0) {
+        MovementUtils.method37090(0.0);
+        if (mc.player.getMotion().y > 0.0) {
             ColorUtils.method17725(-0.0789);
         }
     }
 
     @EventTarget
-    private void method16045(Class4430 var1) {
+    private void method16045(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.method13977() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                var1.method13900(true);
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+                var1.setCancelled(true);
                 this.field23423 = true;
             }
         }
     }
 
     @EventTarget
-    private void method16046(Class4426 var1) {
+    private void method16046(MouseHoverEvent var1) {
         if (this.isEnabled()) {
             if (var1.method13973() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                var1.method13900(true);
+                var1.setCancelled(true);
                 this.field23423 = false;
             }
         }
@@ -67,40 +67,40 @@ public class VeltPvPFly extends Module {
 
     @EventTarget
     @LowerPriority
-    public void method16047(Class4435 var1) {
+    public void method16047(EventMove var1) {
         if (this.isEnabled()) {
             double var4 = (double) this.getNumberValueBySettingName("Speed");
             if (this.field23419 <= 0) {
                 if (this.field23419 != -1) {
                     if (this.field23419 == 0) {
-                        if (!mc.gameSettings.keyBindJump.isKeyDown() && var1.method13994() > 0.0) {
-                            var1.method13995(-Class9567.method37080());
+                        if (!mc.gameSettings.keyBindJump.isKeyDown() && var1.getY() > 0.0) {
+                            var1.setY(-MovementUtils.method37080());
                         }
 
-                        ColorUtils.method17725(var1.method13994());
-                        Class9567.method37088(var1, var4 - 0.1);
+                        ColorUtils.method17725(var1.getY());
+                        MovementUtils.method37088(var1, var4 - 0.1);
                     }
                 } else {
                     if (!mc.gameSettings.keyBindJump.isKeyDown()) {
-                        var1.method13995(!this.field23423 ? Class9567.method37080() : -var4 / 2.0);
+                        var1.setY(!this.field23423 ? MovementUtils.method37080() : -var4 / 2.0);
                     } else {
-                        var1.method13995(!this.field23423 ? var4 / 2.0 : Class9567.method37080());
+                        var1.setY(!this.field23423 ? var4 / 2.0 : MovementUtils.method37080());
                         this.field23422 = this.field23421;
-                        this.field23421 = !this.field23423 ? mc.player.getPosY() + var1.method13994() : this.field23421;
+                        this.field23421 = !this.field23423 ? mc.player.getPosY() + var1.getY() : this.field23421;
                     }
 
-                    ColorUtils.method17725(var1.method13994());
-                    Class9567.method37088(var1, var4);
+                    ColorUtils.method17725(var1.getY());
+                    MovementUtils.method37088(var1, var4);
                 }
             } else {
-                var1.method13995(0.0);
-                Class9567.method37088(var1, 0.0);
+                var1.setY(0.0);
+                MovementUtils.method37088(var1, 0.0);
             }
         }
     }
 
     @EventTarget
-    public void method16048(Class4399 var1) {
+    public void method16048(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             this.field23419++;
             if (this.field23419 != 2) {
@@ -108,16 +108,16 @@ public class VeltPvPFly extends Module {
                     if (this.field23419 >= 20 && this.field23419 % 20 == 0) {
                         double var4 = 150.0 + Math.random() * 150.0;
                         double var6 = -var4;
-                        var1.method13912(var6);
+                        var1.setY(var6);
                         this.field23420 += 2;
                     } else {
-                        var1.method13900(true);
+                        var1.setCancelled(true);
                     }
                 }
             } else {
                 double var8 = 150.0 + Math.random() * 150.0;
                 double var9 = -var8;
-                var1.method13912(var9);
+                var1.setY(var9);
                 this.field23420 += 2;
             }
 
@@ -132,10 +132,10 @@ public class VeltPvPFly extends Module {
             if (!(var4 instanceof SPlayerPositionLookPacket)) {
                 if (var4 instanceof SChatPacket) {
                     SChatPacket var5 = (SChatPacket) var4;
-                    String var6 = var5.method17648().getString();
+                    String var6 = var5.getChatComponent().getString();
                     if (this.field23420 > 0 && (var6.contains("Now leaving: §") || var6.contains("Now entering: §"))) {
                         this.field23420--;
-                        var1.method13900(true);
+                        var1.setCancelled(true);
                     }
                 }
             } else {
@@ -145,7 +145,7 @@ public class VeltPvPFly extends Module {
                 }
 
                 this.field23422 = this.field23421;
-                this.field23421 = var7.field24298;
+                this.field23421 = var7.y;
             }
         }
     }
@@ -153,7 +153,7 @@ public class VeltPvPFly extends Module {
     @EventTarget
     public void method16050(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            Packet var4 = var1.method13932();
+            Packet var4 = var1.getPacket();
             if (var4 instanceof CPlayerPacket) {
                 CPlayerPacket var5 = (CPlayerPacket) var4;
                 if (this.field23419 == -1) {

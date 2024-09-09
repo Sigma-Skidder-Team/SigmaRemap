@@ -16,8 +16,8 @@ public class Class4840 extends Class4837 {
       int var5 = 0;
       ItemStack var6 = ItemStack.EMPTY;
 
-      for (int var7 = 0; var7 < var1.method3629(); var7++) {
-         ItemStack var8 = var1.method3618(var7);
+      for (int var7 = 0; var7 < var1.getSizeInventory(); var7++) {
+         ItemStack var8 = var1.getStackInSlot(var7);
          if (!var8.isEmpty()) {
             if (var8.getItem() != Items.field37955) {
                if (var8.getItem() != Items.field38056) {
@@ -42,8 +42,8 @@ public class Class4840 extends Class4837 {
       int var4 = 0;
       ItemStack var5 = ItemStack.EMPTY;
 
-      for (int var6 = 0; var6 < var1.method3629(); var6++) {
-         ItemStack var7 = var1.method3618(var6);
+      for (int var6 = 0; var6 < var1.getSizeInventory(); var6++) {
+         ItemStack var7 = var1.getStackInSlot(var6);
          if (!var7.isEmpty()) {
             if (var7.getItem() != Items.field37955) {
                if (var7.getItem() != Items.field38056) {

@@ -62,7 +62,7 @@ public class Class301 implements Class268 {
                Class6619 var7 = new Class6619(
                   ICommandSource.field5189,
                   Vector3d.ZERO,
-                  Class8513.field37212,
+                  Vector2f.field37212,
                        null,
                   this.field1165,
                   "",

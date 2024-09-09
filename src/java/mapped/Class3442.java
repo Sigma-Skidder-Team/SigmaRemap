@@ -30,22 +30,22 @@ public class Class3442 extends Block {
    }
 
    private void method12120(ServerWorld var1, BlockPos var2) {
-      Class1107 var5 = EntityType.field41077.method33215(var1);
-      var5.method3273((double)var2.getX() + 0.5, (double)var2.getY(), (double)var2.getZ() + 0.5, 0.0F, 0.0F);
-      var1.method6916(var5);
+      Class1107 var5 = EntityType.field41077.create(var1);
+      var5.setLocationAndAngles((double)var2.getX() + 0.5, (double)var2.getY(), (double)var2.getZ() + 0.5, 0.0F, 0.0F);
+      var1.addEntity(var5);
       var5.method4239();
    }
 
    @Override
    public void method11965(BlockState var1, ServerWorld var2, BlockPos var3, ItemStack var4) {
       super.method11965(var1, var2, var3, var4);
-      if (var2.method6789().method17135(Class5462.field24228) && Class7858.method26311(Class8122.field34916, var4) == 0) {
+      if (var2.getGameRules().getBoolean(Class5462.field24228) && EnchantmentHelper.method26311(Class8122.field34916, var4) == 0) {
          this.method12120(var2, var3);
       }
    }
 
    @Override
-   public void method11560(World var1, BlockPos var2, Class7782 var3) {
+   public void method11560(World var1, BlockPos var2, Explosion var3) {
       if (var1 instanceof ServerWorld) {
          this.method12120((ServerWorld)var1, var2);
       }

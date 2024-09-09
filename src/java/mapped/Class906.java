@@ -88,7 +88,7 @@ public class Class906 extends Entity {
                this.method3551(0);
             }
          } else {
-            this.method2904();
+            this.remove();
          }
       }
 
@@ -97,7 +97,7 @@ public class Class906 extends Entity {
             if (!this.field5174) {
                double var4 = 3.0;
                List<Entity> var6 = this.world
-                  .method6770(
+                  .getEntitiesInAABBexcluding(
                      this,
                      new AxisAlignedBB(
                         this.getPosX() - 3.0,
@@ -125,7 +125,7 @@ public class Class906 extends Entity {
    }
 
    private void method3551(int var1) {
-      if (!this.field5174 && !this.world.isRemote && this.world.method6789().method17135(Class5462.field24223)) {
+      if (!this.field5174 && !this.world.isRemote && this.world.getGameRules().getBoolean(Class5462.field24223)) {
          BlockPos var4 = this.getPosition();
          BlockState var5 = AbstractFireBlock.method12009(this.world, var4);
          if (this.world.getBlockState(var4).isAir() && var5.method23443(this.world, var4)) {
@@ -153,15 +153,15 @@ public class Class906 extends Entity {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this);
    }
 }

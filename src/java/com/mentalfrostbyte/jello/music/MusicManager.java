@@ -3,8 +3,8 @@ package com.mentalfrostbyte.jello.music;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4413;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender2D;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
@@ -151,7 +151,7 @@ public class MusicManager {
     }
 
     @EventTarget
-    private void method24296(Class4415 var1) {
+    private void method24296(EventRender var1) {
         if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
             if (this.field32144 && this.field32163.size() != 0) {
                 double[] var4 = this.field32163.get(0);
@@ -181,7 +181,7 @@ public class MusicManager {
     }
 
     @EventTarget
-    private void method24297(Class4413 var1) {
+    private void method24297(EventRender2D var1) {
         if (this.field32144 && this.field32163.size() != 0 && this.field32161) {
             this.method24298();
         }

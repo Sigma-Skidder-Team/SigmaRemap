@@ -15,11 +15,11 @@ public enum Class101 implements IStringSerializable {
    field296("WORLD_SURFACE", Class2029.field13172, Class7527.method24587()),
    field297("OCEAN_FLOOR_WG", Class2029.field13170, Class7527.method24588()),
    field298("OCEAN_FLOOR", Class2029.field13171, Class7527.method24588()),
-   field299("MOTION_BLOCKING", Class2029.field13172, var0 -> var0.method23384().method31087() || !var0.method23449().method23474()),
+   field299("MOTION_BLOCKING", Class2029.field13172, var0 -> var0.getMaterial().method31087() || !var0.method23449().method23474()),
    field300(
       "MOTION_BLOCKING_NO_LEAVES",
       Class2029.field13171,
-      var0 -> (var0.method23384().method31087() || !var0.method23449().method23474()) && !(var0.getBlock() instanceof Class3465)
+      var0 -> (var0.getMaterial().method31087() || !var0.method23449().method23474()) && !(var0.getBlock() instanceof Class3465)
    );
 
    public static final Codec<Class101> field301 = IStringSerializable.<Class101>method258(Class101::values, Class101::method286);

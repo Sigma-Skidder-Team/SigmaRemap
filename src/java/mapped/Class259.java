@@ -12,7 +12,7 @@ public class Class259 extends Class219<Class1048, Class2805<Class1048>> {
    }
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, Class1048 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      boolean var13 = var4.method2967() == HandSide.field14418;
+      boolean var13 = var4.getPrimaryHand() == HandSide.field14418;
       var1.push();
       float var14 = 1.0F;
       float var15 = -1.0F;

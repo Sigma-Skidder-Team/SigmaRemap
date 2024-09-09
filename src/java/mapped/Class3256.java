@@ -11,7 +11,7 @@ public class Class3256 extends Item implements Class3255 {
 
    public Class3256(Class5643 var1) {
       super(var1);
-      Class3357.method11931(this, Class3279.field18780);
+      Class3357.method11931(this, ArmorItem.field18780);
    }
 
    public static boolean method11698(ItemStack var0) {
@@ -26,12 +26,12 @@ public class Class3256 extends Item implements Class3255 {
    @Override
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
-      Class2106 var7 = Class1006.method4271(var6);
-      ItemStack var8 = var2.method2943(var7);
+      EquipmentSlotType var7 = Class1006.method4271(var6);
+      ItemStack var8 = var2.getItemStackFromSlot(var7);
       if (!var8.isEmpty()) {
          return Class6794.<ItemStack>method20699(var6);
       } else {
-         var2.method2944(var7, var6.copy());
+         var2.setItemStackToSlot(var7, var6.copy());
          var6.method32180(0);
          return Class6794.<ItemStack>method20700(var6, var1.isRemote());
       }

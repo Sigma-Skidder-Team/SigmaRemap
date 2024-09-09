@@ -66,8 +66,8 @@ public class Class1124 extends Class875<Class5824> {
    private void method5420(String var1) {
       if (!var1.isEmpty()) {
          String var4 = var1;
-         Class5839 var5 = this.field4727.method18131(0);
-         if (var5 != null && var5.method18266() && !var5.method18265().method32152() && var1.equals(var5.method18265().method32149().getString())) {
+         Slot var5 = this.field4727.getSlot(0);
+         if (var5 != null && var5.getHasStack() && !var5.getStack().method32152() && var1.equals(var5.getStack().method32149().getString())) {
             var4 = "";
          }
 
@@ -87,9 +87,9 @@ public class Class1124 extends Class875<Class5824> {
          if (var6 >= 40 && !this.mc.player.abilities.isCreativeMode) {
             var8 = field6159;
             var7 = 16736352;
-         } else if (this.field4727.method18131(2).method18266()) {
+         } else if (this.field4727.getSlot(2).getHasStack()) {
             var8 = new TranslationTextComponent("container.repair.cost", var6);
-            if (!this.field4727.method18131(2).method18273(this.field4728.field5444)) {
+            if (!this.field4727.getSlot(2).canTakeStack(this.field4728.field5444)) {
                var7 = 16736352;
             }
          } else {
@@ -111,7 +111,7 @@ public class Class1124 extends Class875<Class5824> {
    }
 
    @Override
-   public void method2720(Class5812 var1, int var2, ItemStack var3) {
+   public void method2720(Container var1, int var2, ItemStack var3) {
       if (var2 == 0) {
          this.field6160.method5635(!var3.isEmpty() ? var3.method32149().getString() : "");
          this.field6160.method5666(!var3.isEmpty());

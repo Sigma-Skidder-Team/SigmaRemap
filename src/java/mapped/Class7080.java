@@ -6,9 +6,9 @@ import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSyntaxException;
 
 public class Class7080 {
-   public final Class6355 field30483;
+   public final ViaVersion7 field30483;
 
-   public Class7080(Class6355 var1) {
+   public Class7080(ViaVersion7 var1) {
       this.field30483 = var1;
    }
 
@@ -38,8 +38,8 @@ public class Class7080 {
          this.method21999(var4);
          return var4;
       } catch (JsonSyntaxException var5) {
-         if (Class8042.method27614().method34425()) {
-            Class8042.method27613().method27366().severe("Error when trying to parse json: " + var1);
+         if (ViaVersion3.method27614().method34425()) {
+            ViaVersion3.method27613().method27366().severe("Error when trying to parse json: " + var1);
             throw var5;
          } else {
             return new JsonPrimitive(var1);
@@ -109,7 +109,7 @@ public class Class7080 {
       }
    }
 
-   public <T extends Class6355> T method22009() {
+   public <T extends ViaVersion7> T method22009() {
       return (T)this.field30483;
    }
 }

@@ -8,11 +8,11 @@ import net.minecraft.util.text.ITextComponent$Serializer;
 
 public class Class8790 {
    private final int field39527;
-   private final Class1894 field39528;
+   private final GameType field39528;
    private final GameProfile field39529;
    public ITextComponent field39530;
 
-   public Class8790(GameProfile var1, int var2, Class1894 var3, ITextComponent var4) {
+   public Class8790(GameProfile var1, int var2, GameType var3, ITextComponent var4) {
       this.field39529 = var1;
       this.field39527 = var2;
       this.field39528 = var3;
@@ -27,7 +27,7 @@ public class Class8790 {
       return this.field39527;
    }
 
-   public Class1894 method31728() {
+   public GameType method31728() {
       return this.field39528;
    }
 

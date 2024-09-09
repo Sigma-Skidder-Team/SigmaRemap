@@ -16,7 +16,7 @@ public class Class3086 implements Class2982 {
          var1.<String>method30561(Class4750.field22539);
          var1.<Byte>method30561(Class4750.field22518);
          var1.<String>method30561(Class4750.field22539);
-         var1.method30560(Class4750.field22539, !Class8042.method27612().method21891() ? "" : "never");
+         var1.method30560(Class4750.field22539, !ViaVersion3.method27612().method21891() ? "" : "never");
          var1.<Byte>method30561(Class4750.field22518);
       }
 

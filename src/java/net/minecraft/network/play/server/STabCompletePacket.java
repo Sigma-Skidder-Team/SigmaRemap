@@ -15,20 +15,20 @@ import net.minecraft.util.text.TextComponentUtils;
 
 public class STabCompletePacket implements Packet<IClientPlayNetHandler> {
    private static String[] field24604;
-   private int field24605;
-   private Suggestions field24606;
+   private int transactionId;
+   private Suggestions sugestions;
 
    public STabCompletePacket() {
    }
 
    public STabCompletePacket(int var1, Suggestions var2) {
-      this.field24605 = var1;
-      this.field24606 = var2;
+      this.transactionId = var1;
+      this.sugestions = var2;
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24605 = var1.readVarInt();
+      this.transactionId = var1.readVarInt();
       int var4 = var1.readVarInt();
       int var5 = var1.readVarInt();
       StringRange var6 = StringRange.between(var4, var4 + var5);
@@ -41,17 +41,17 @@ public class STabCompletePacket implements Packet<IClientPlayNetHandler> {
          var8.add(new Suggestion(var6, var10, var11));
       }
 
-      this.field24606 = new Suggestions(var6, var8);
+      this.sugestions = new Suggestions(var6, var8);
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeVarInt(this.field24605);
-      var1.writeVarInt(this.field24606.getRange().getStart());
-      var1.writeVarInt(this.field24606.getRange().getLength());
-      var1.writeVarInt(this.field24606.getList().size());
+      var1.writeVarInt(this.transactionId);
+      var1.writeVarInt(this.sugestions.getRange().getStart());
+      var1.writeVarInt(this.sugestions.getRange().getLength());
+      var1.writeVarInt(this.sugestions.getList().size());
 
-      for (Suggestion var5 : this.field24606.getList()) {
+      for (Suggestion var5 : this.sugestions.getList()) {
          var1.writeString(var5.getText());
          var1.writeBoolean(var5.getTooltip() != null);
          if (var5.getTooltip() != null) {
@@ -64,11 +64,11 @@ public class STabCompletePacket implements Packet<IClientPlayNetHandler> {
       var1.handleTabComplete(this);
    }
 
-   public int method17424() {
-      return this.field24605;
+   public int getTransactionId() {
+      return this.transactionId;
    }
 
-   public Suggestions method17425() {
-      return this.field24606;
+   public Suggestions getSugestions() {
+      return this.sugestions;
    }
 }

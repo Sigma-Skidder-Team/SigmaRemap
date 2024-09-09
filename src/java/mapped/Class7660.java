@@ -27,8 +27,8 @@ public class Class7660 {
    }
 
    public static void method25181(DynamicRegistriesImpl var0, Class9028 var1, CompoundNBT var2, Class1685 var3) {
-      var2.method102("xPos", var1.field41310);
-      var2.method102("zPos", var1.field41311);
+      var2.putInt("xPos", var1.field41310);
+      var2.putInt("zPos", var1.field41311);
       var2.method103("LastUpdate", var1.field41300);
       int[] var6 = new int[var1.field41302.length];
 
@@ -87,7 +87,7 @@ public class Class7660 {
 
       var2.put("Sections", var19);
       var2.method111(
-         "Biomes", new Class1684(var0.<Biome>getRegistry(Registry.BIOME_KEY), new Class7481(var1.field41310, var1.field41311), var3).method7198()
+         "Biomes", new Class1684(var0.<Biome>getRegistry(Registry.BIOME_KEY), new ChunkPos(var1.field41310, var1.field41311), var3).method7198()
       );
       var2.put("Entities", var1.field41307);
       var2.put("TileEntities", var1.field41308);

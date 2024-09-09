@@ -13,7 +13,7 @@ public class Class9252 {
    public static Iterator<Class8066> method34804(ClientWorld var0, double var1, Entity var3, int var4, Class9242 var5) {
       float var8 = Shaders.method33159();
       if (!(var8 <= 0.0F) && !(var8 >= (float)((var4 - 1) * 16))) {
-         int var19 = MathHelper.method37773(var8 / 16.0F) + 1;
+         int var19 = MathHelper.ceil(var8 / 16.0F) + 1;
          float var10 = var0.method6750((float)var1);
          float var11 = Shaders.field40936 * MathHelper.field45214;
          float var12 = var10 > MathHelper.field45212 && var10 < 3.0F * MathHelper.field45212 ? var10 + MathHelper.field45210 : var10;

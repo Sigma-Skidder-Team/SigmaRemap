@@ -76,13 +76,13 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public boolean method2998() {
+   public boolean canBreatheUnderwater() {
       return true;
    }
 
    @Override
-   public Class7809 method3089() {
-      return Class7809.field33509;
+   public CreatureAttribute getCreatureAttribute() {
+      return CreatureAttribute.field33509;
    }
 
    public boolean method5301() {
@@ -127,8 +127,8 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public void method3155(DataParameter<?> var1) {
-      super.method3155(var1);
+   public void notifyDataManagerChange(DataParameter<?> var1) {
+      super.notifyDataManagerChange(var1);
       if (field6067.equals(var1)) {
          this.field6074 = 0;
          this.field6073 = null;
@@ -156,26 +156,26 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public boolean method2940() {
+   public boolean canTriggerWalking() {
       return false;
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.5F;
    }
 
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
-      return !var2.getFluidState(var1).method23486(Class8953.field40469) ? super.method4339(var1, var2) : 10.0F + var2.method7009(var1) - 0.5F;
+      return !var2.getFluidState(var1).method23486(FluidTags.field40469) ? super.method4339(var1, var2) : 10.0F + var2.method7009(var1) - 0.5F;
    }
 
    @Override
-   public void method2871() {
+   public void livingEntity() {
       if (this.isAlive()) {
          if (this.world.isRemote) {
             this.field6069 = this.field6068;
-            if (this.method3250()) {
+            if (this.isInWater()) {
                if (!this.method5301()) {
                   this.field6070 = this.field6070 + (0.125F - this.field6070) * 0.2F;
                } else if (!(this.field6070 < 0.5F)) {
@@ -185,8 +185,8 @@ public class Class1105 extends Class1009 {
                }
             } else {
                this.field6070 = 2.0F;
-               Vector3d var3 = this.getVec();
-               if (var3.y > 0.0 && this.field6075 && !this.method3245()) {
+               Vector3d var3 = this.getMotion();
+               if (var3.y > 0.0 && this.field6075 && !this.isSilent()) {
                   this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), this.method5307(), this.method2864(), 1.0F, 1.0F, false);
                }
 
@@ -205,16 +205,16 @@ public class Class1105 extends Class1009 {
                this.field6071 = this.rand.nextFloat();
             }
 
-            if (this.method5301() && this.method3250()) {
-               Vector3d var17 = this.method3281(0.0F);
+            if (this.method5301() && this.isInWater()) {
+               Vector3d var17 = this.getLook(0.0F);
 
                for (int var4 = 0; var4 < 2; var4++) {
                   this.world
-                     .method6746(
+                     .addParticle(
                         ParticleTypes.field34052,
-                        this.method3438(0.5) - var17.x * 1.5,
-                        this.method3441() - var17.y * 1.5,
-                        this.method3445(0.5) - var17.z * 1.5,
+                        this.getPosXRandom(0.5) - var17.x * 1.5,
+                        this.getPosYRandom() - var17.y * 1.5,
+                        this.getPosZRandom(0.5) - var17.z * 1.5,
                         0.0,
                         0.0,
                         0.0
@@ -233,7 +233,7 @@ public class Class1105 extends Class1009 {
                   this.method4227().method28037();
                   double var5 = (double)this.method5310(0.0F);
                   double var7 = var18.getPosX() - this.getPosX();
-                  double var9 = var18.method3440(0.5) - this.method3442();
+                  double var9 = var18.getPosYHeight(0.5) - this.getPosYEye();
                   double var11 = var18.getPosZ() - this.getPosZ();
                   double var13 = Math.sqrt(var7 * var7 + var9 * var9 + var11 * var11);
                   var7 /= var13;
@@ -244,10 +244,10 @@ public class Class1105 extends Class1009 {
                   while (var15 < var13) {
                      var15 += 1.8 - var5 + this.rand.nextDouble() * (1.7 - var5);
                      this.world
-                        .method6746(
+                        .addParticle(
                            ParticleTypes.field34052,
                            this.getPosX() + var7 * var15,
-                           this.method3442() + var9 * var15,
+                           this.getPosYEye() + var9 * var15,
                            this.getPosZ() + var11 * var15,
                            0.0,
                            0.0,
@@ -260,24 +260,24 @@ public class Class1105 extends Class1009 {
 
          if (!this.method3255()) {
             if (this.onGround) {
-               this.method3434(
-                  this.getVec()
-                     .method11339((double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.4F), 0.5, (double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.4F))
+               this.setMotion(
+                  this.getMotion()
+                     .add((double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.4F), 0.5, (double)((this.rand.nextFloat() * 2.0F - 1.0F) * 0.4F))
                );
                this.rotationYaw = this.rand.nextFloat() * 360.0F;
                this.onGround = false;
                this.isAirBorne = true;
             }
          } else {
-            this.method3352(300);
+            this.setAir(300);
          }
 
          if (this.method5305()) {
-            this.rotationYaw = this.field4967;
+            this.rotationYaw = this.rotationYawHead;
          }
       }
 
-      super.method2871();
+      super.livingEntity();
    }
 
    public SoundEvent method5307() {
@@ -298,21 +298,21 @@ public class Class1105 extends Class1009 {
 
    @Override
    public boolean method4266(Class1662 var1) {
-      return var1.method7050(this);
+      return var1.checkNoEntityCollision(this);
    }
 
    public static boolean method5311(EntityType<? extends Class1105> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       return (var4.nextInt(20) == 0 || !var1.method7008(var3))
          && var1.method6997() != Difficulty.field14351
-         && (var2 == Class2202.field14393 || var1.getFluidState(var3).method23486(Class8953.field40469));
+         && (var2 == Class2202.field14393 || var1.getFluidState(var3).method23486(FluidTags.field40469));
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (!this.method5301() && !var1.method31144() && var1.method31113() instanceof LivingEntity) {
-         LivingEntity var5 = (LivingEntity)var1.method31113();
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (!this.method5301() && !var1.method31144() && var1.getImmediateSource() instanceof LivingEntity) {
+         LivingEntity var5 = (LivingEntity)var1.getImmediateSource();
          if (!var1.method31131()) {
-            var5.method2741(DamageSource.method31125(this), 2.0F);
+            var5.attackEntityFrom(DamageSource.method31125(this), 2.0F);
          }
       }
 
@@ -320,7 +320,7 @@ public class Class1105 extends Class1009 {
          this.field6076.method10944();
       }
 
-      return super.method2741(var1, var2);
+      return super.attackEntityFrom(var1, var2);
    }
 
    @Override
@@ -329,16 +329,16 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public void method2915(Vector3d var1) {
-      if (this.method3138() && this.method3250()) {
-         this.method3265(0.1F, var1);
-         this.move(Class2107.field13742, this.getVec());
-         this.method3434(this.getVec().method11344(0.9));
+   public void travel(Vector3d var1) {
+      if (this.isServerWorld() && this.isInWater()) {
+         this.moveRelative(0.1F, var1);
+         this.move(MoverType.SELF, this.getMotion());
+         this.setMotion(this.getMotion().scale(0.9));
          if (!this.method5301() && this.method4232() == null) {
-            this.method3434(this.getVec().method11339(0.0, -0.005, 0.0));
+            this.setMotion(this.getMotion().add(0.0, -0.005, 0.0));
          }
       } else {
-         super.method2915(var1);
+         super.travel(var1);
       }
    }
 

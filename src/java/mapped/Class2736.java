@@ -40,7 +40,7 @@ public class Class2736 extends Class2595 {
                return false;
             }
 
-            if (this.field17258.method3013().nextInt(this.field17263) != 0) {
+            if (this.field17258.getRNG().nextInt(this.field17263) != 0) {
                return false;
             }
          }

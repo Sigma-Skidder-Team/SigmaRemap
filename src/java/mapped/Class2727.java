@@ -17,7 +17,7 @@ public class Class2727 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return this.field17234.method3351() < 140;
+      return this.field17234.getAir() < 140;
    }
 
    @Override
@@ -63,12 +63,12 @@ public class Class2727 extends Class2595 {
    @Override
    public void method10805() {
       this.method10938();
-      this.field17234.method3265(0.02F, new Vector3d((double)this.field17234.field4982, (double)this.field17234.field4983, (double)this.field17234.field4984));
-      this.field17234.move(Class2107.field13742, this.field17234.getVec());
+      this.field17234.moveRelative(0.02F, new Vector3d((double)this.field17234.moveStrafing, (double)this.field17234.moveVertical, (double)this.field17234.moveForward));
+      this.field17234.move(MoverType.SELF, this.field17234.getMotion());
    }
 
    private boolean method10939(Class1662 var1, BlockPos var2) {
       BlockState var5 = var1.getBlockState(var2);
-      return (var1.getFluidState(var2).method23474() || var5.method23448(Blocks.field37013)) && var5.method23440(var1, var2, Class1947.field12614);
+      return (var1.getFluidState(var2).method23474() || var5.isIn(Blocks.field37013)) && var5.method23440(var1, var2, Class1947.field12614);
    }
 }

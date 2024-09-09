@@ -2,8 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.event.impl.Class4410;
-import com.mentalfrostbyte.jello.event.impl.Class4433;
+import com.mentalfrostbyte.jello.event.impl.EventRenderEntity;
+import com.mentalfrostbyte.jello.event.impl.EventRenderNameTag;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Pose;
@@ -59,13 +59,13 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
             this.field25086.field17601 = var1.isPassenger() && var1.getRidingEntity() != null && Class9299.method35064(var1.getRidingEntity(), Class9299.field42838);
          }
 
-         this.field25086.field17602 = var1.method3005();
-         float var9 = MathHelper.method37827(var3, var1.field4966, var1.field4965);
-         float var10 = MathHelper.method37827(var3, var1.field4968, var1.field4967);
+         this.field25086.field17602 = var1.isChild();
+         float var9 = MathHelper.method37827(var3, var1.prevRenderYawOffset, var1.renderYawOffset);
+         float var10 = MathHelper.method37827(var3, var1.prevRotationYawHead, var1.rotationYawHead);
          float var11 = var10 - var9;
          if (this.field25086.field17601 && var1.getRidingEntity() instanceof LivingEntity) {
             LivingEntity var12 = (LivingEntity)var1.getRidingEntity();
-            var9 = MathHelper.method37827(var3, var12.field4966, var12.field4965);
+            var9 = MathHelper.method37827(var3, var12.prevRenderYawOffset, var12.renderYawOffset);
             var11 = var10 - var9;
             float var13 = MathHelper.method37792(var11);
             if (var13 < -85.0F) {
@@ -85,7 +85,7 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
          }
 
          float var31 = MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch);
-         Class4410 var33 = new Class4410(var9, var10, var11, var31, var3, var1);
+         EventRenderEntity var33 = new EventRenderEntity(var9, var10, var11, var31, var3, var1);
          Client.getInstance().getEventManager().call(var33);
          if (var33.isCancelled()) {
             var4.pop();
@@ -96,10 +96,10 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
          var10 = var33.method13945();
          var11 = var33.method13946();
          var31 = var33.method13947();
-         if (var1.method3212() == Pose.field13621) {
-            Direction var14 = var1.method3179();
+         if (var1.getPose() == Pose.field13621) {
+            Direction var14 = var1.getBedDirection();
             if (var14 != null) {
-               float var15 = var1.method3392(Pose.STANDING) - 0.1F;
+               float var15 = var1.getEyeHeight(Pose.STANDING) - 0.1F;
                var4.translate((double)((float)(-var14.method539()) * var15), 0.0, (double)((float)(-var14.method541()) * var15));
             }
          }
@@ -112,9 +112,9 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
          float var35 = 0.0F;
          float var16 = 0.0F;
          if (!var1.isPassenger() && var1.isAlive()) {
-            var35 = MathHelper.lerp(var3, var1.field4959, var1.field4960);
+            var35 = MathHelper.lerp(var3, var1.prevLimbSwingAmount, var1.field4960);
             var16 = var1.field4961 - var1.field4960 * (1.0F - var3);
-            if (var1.method3005()) {
+            if (var1.isChild()) {
                var16 *= 3.0F;
             }
 
@@ -140,14 +140,14 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
          boolean var17 = Class7944.method26921();
          Minecraft var18 = Minecraft.getInstance();
          boolean var19 = this.method17869((T)var1);
-         boolean var20 = !var19 && !var1.method3343(var18.player);
+         boolean var20 = !var19 && !var1.isInvisibleToPlayer(var18.player);
          boolean var21 = var18.isEntityGlowing(var1);
          RenderType var22 = this.method17882((T)var1, var19, var20, var21);
          if (var22 != null) {
             Class5422 var23 = var5.method25597(var22);
             float var24 = this.method17879((T)var1, var3);
             if (var17) {
-               if (var1.field4952 > 0 || var1.field4955 > 0) {
+               if (var1.hurtTime > 0 || var1.deathTime > 0) {
                   Shaders.method33086(1.0F, 0.0F, 0.0F, 0.3F);
                }
 
@@ -207,11 +207,11 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
    }
 
    public static int method17883(LivingEntity var0, float var1) {
-      return Class213.method730(Class213.method728(var1), Class213.method729(var0.field4952 > 0 || var0.field4955 > 0));
+      return Class213.method730(Class213.method728(var1), Class213.method729(var0.hurtTime > 0 || var0.deathTime > 0));
    }
 
    public boolean method17869(T var1) {
-      return !var1.method3342();
+      return !var1.isInvisible();
    }
 
    private static float method17884(Direction var0) {
@@ -238,25 +238,25 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
          var4 += (float)(Math.cos((double)var1.ticksExisted * 3.25) * Math.PI * 0.4F);
       }
 
-      Pose var8 = var1.method3212();
+      Pose var8 = var1.getPose();
       if (var8 != Pose.field13621) {
          var2.rotate(Vector3f.YP.rotationDegrees(180.0F - var4));
       }
 
-      if (var1.field4955 <= 0) {
-         if (!var1.method3130()) {
+      if (var1.deathTime <= 0) {
+         if (!var1.isSpinAttacking()) {
             if (var8 != Pose.field13621) {
                if (var1.method3381() || var1 instanceof PlayerEntity) {
                   String var9 = TextFormatting.getTextWithoutFormattingCodes(var1.getName().getString());
                   if (("Dinnerbone".equals(var9) || "Grumm".equals(var9)) && (!(var1 instanceof PlayerEntity) || ((PlayerEntity)var1).method2962(Class2318.field15879))
                      )
                    {
-                     var2.translate(0.0, (double)(var1.method3430() + 0.1F), 0.0);
+                     var2.translate(0.0, (double)(var1.getHeight() + 0.1F), 0.0);
                      var2.rotate(Vector3f.field32902.rotationDegrees(180.0F));
                   }
                }
             } else {
-               Direction var11 = var1.method3179();
+               Direction var11 = var1.getBedDirection();
                float var10 = var11 == null ? var4 : method17884(var11);
                var2.rotate(Vector3f.YP.rotationDegrees(var10));
                var2.rotate(Vector3f.field32902.rotationDegrees(this.method17865((T)var1)));
@@ -267,7 +267,7 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
             var2.rotate(Vector3f.YP.rotationDegrees(((float)var1.ticksExisted + var5) * -75.0F));
          }
       } else {
-         float var12 = ((float)var1.field4955 + var5 - 1.0F) / 20.0F * 1.6F;
+         float var12 = ((float)var1.deathTime + var5 - 1.0F) / 20.0F * 1.6F;
          var12 = MathHelper.method37765(var12);
          if (var12 > 1.0F) {
             var12 = 1.0F;
@@ -278,7 +278,7 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
    }
 
    public float method17885(T var1, float var2) {
-      return var1.method3137(var2);
+      return var1.getSwingProgress(var2);
    }
 
    public float method17871(T var1, float var2) {
@@ -297,19 +297,19 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
    }
 
    public boolean method17852(T var1) {
-      Class4433 var4 = new Class4433(var1);
+      EventRenderNameTag var4 = new EventRenderNameTag(var1);
       Client.getInstance().getEventManager().call(var4);
       if (var4.isCancelled()) {
          return false;
       } else {
          double var5 = this.field25097.method32228(var1);
-         float var7 = var1.method3334() ? 32.0F : 64.0F;
+         float var7 = var1.isDiscrete() ? 32.0F : 64.0F;
          if (var5 >= (double)(var7 * var7)) {
             return false;
          } else {
             Minecraft var8 = Minecraft.getInstance();
             ClientPlayerEntity var9 = var8.player;
-            boolean var10 = !var1.method3343(var9);
+            boolean var10 = !var1.isInvisibleToPlayer(var9);
             if (var1 != var9) {
                Team var11 = var1.getTeam();
                Team var12 = var9.getTeam();

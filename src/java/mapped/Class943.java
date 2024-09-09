@@ -106,7 +106,7 @@ public class Class943 extends TileEntity implements Class942, Class935 {
    public boolean method3768(PlayerEntity var1) {
       return this.field5324.getTileEntity(this.field5325) == this
          ? !(
-            var1.method3276((double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.getZ() + 0.5)
+            var1.getDistanceNearest((double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.getZ() + 0.5)
                > 64.0
          )
          : false;

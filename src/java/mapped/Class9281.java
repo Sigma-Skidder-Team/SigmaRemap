@@ -20,7 +20,7 @@ import java.util.Map.Entry;
 public class Class9281 {
    public static final Class9281 field42697 = new Class9017().method33351();
    private final Class8840 field42698;
-   private final Class1894 field42699;
+   private final GameType field42699;
    private final Map<Class9007<?>, Class8840> field42700;
    private final Object2BooleanMap<ResourceLocation> field42701;
    private final Map<ResourceLocation, Class172> field42702;
@@ -40,7 +40,7 @@ public class Class9281 {
       }
    }
 
-   public Class9281(Class8840 var1, Class1894 var2, Map<Class9007<?>, Class8840> var3, Object2BooleanMap<ResourceLocation> var4, Map<ResourceLocation, Class172> var5) {
+   public Class9281(Class8840 var1, GameType var2, Map<Class9007<?>, Class8840> var3, Object2BooleanMap<ResourceLocation> var4, Map<ResourceLocation, Class172> var5) {
       this.field42698 = var1;
       this.field42699 = var2;
       this.field42700 = var3;
@@ -57,7 +57,7 @@ public class Class9281 {
          ServerPlayerEntity var4 = (ServerPlayerEntity)var1;
          if (!this.field42698.method32015(var4.field4920)) {
             return false;
-         } else if (this.field42699 != Class1894.field11101 && this.field42699 != var4.field4857.method33863()) {
+         } else if (this.field42699 != GameType.field11101 && this.field42699 != var4.field4857.method33863()) {
             return false;
          } else {
             Class8287 var5 = var4.method2809();
@@ -101,7 +101,7 @@ public class Class9281 {
          JsonObject var3 = JSONUtils.method32781(var0, "player");
          Class8840 var4 = Class8840.method32016(var3.get("level"));
          String var5 = JSONUtils.method32764(var3, "gamemode", "");
-         Class1894 var6 = Class1894.method8162(var5, Class1894.field11101);
+         GameType var6 = GameType.method8162(var5, GameType.field11101);
          HashMap var7 = Maps.newHashMap();
          JsonArray var8 = JSONUtils.method32786(var3, "stats", (JsonArray)null);
          if (var8 != null) {
@@ -162,7 +162,7 @@ public class Class9281 {
       if (this != field42697) {
          JsonObject var3 = new JsonObject();
          var3.add("level", this.field42698.method32005());
-         if (this.field42699 != Class1894.field11101) {
+         if (this.field42699 != GameType.field11101) {
             var3.addProperty("gamemode", this.field42699.method8153());
          }
 

@@ -19,7 +19,7 @@ public abstract class Class4188 extends Class4178 {
 
    @Override
    public void method12897(CompoundNBT var1) {
-      var1.method102("MST", this.field20479.ordinal());
+      var1.putInt("MST", this.field20479.ordinal());
    }
 
    public BlockState method12967() {

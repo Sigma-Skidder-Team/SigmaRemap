@@ -51,14 +51,14 @@ public class Class3739 extends Class3676<Class1046> {
       for (int var6 = 0; var6 < 10; var6++) {
          Vector3d var7 = Class8037.method27583(var2, 20, 8);
          if (var7 != null && var1.method6952(new BlockPos(var7))) {
-            var2.method2992().method21406(Class8830.field39824, new Class8999(var7, 0.6F, 0));
+            var2.getBrain().method21406(Class8830.field39824, new Class8999(var7, 0.6F, 0));
             return;
          }
       }
    }
 
    private static void method12682(Class1046 var0, LivingEntity var1) {
-      Class6947 var4 = var0.method2992();
+      Brain var4 = var0.getBrain();
       var4.method21406(Class8830.field39828, var1);
       var4.method21406(Class8830.field39825, new Class7865(var1, true));
       var4.method21406(Class8830.field39824, new Class8999(new Class7865(var1, false), 0.6F, 1));
@@ -87,16 +87,16 @@ public class Class3739 extends Class3676<Class1046> {
    }
 
    private List<LivingEntity> method12686(Class1046 var1) {
-      return var1.method2992().<List<LivingEntity>>method21410(Class8830.field39820).get();
+      return var1.getBrain().<List<LivingEntity>>method21410(Class8830.field39820).get();
    }
 
    private LivingEntity method12687(LivingEntity var1) {
-      return var1.method2992().<LivingEntity>method21410(Class8830.field39828).get();
+      return var1.getBrain().<LivingEntity>method21410(Class8830.field39828).get();
    }
 
    @Nullable
    private LivingEntity method12688(LivingEntity var1) {
-      return var1.method2992()
+      return var1.getBrain()
          .<List<LivingEntity>>method21410(Class8830.field39820)
          .get()
          .stream()
@@ -106,14 +106,14 @@ public class Class3739 extends Class3676<Class1046> {
    }
 
    private boolean method12689(LivingEntity var1) {
-      return var1.method2992().<LivingEntity>method21410(Class8830.field39828).isPresent();
+      return var1.getBrain().<LivingEntity>method21410(Class8830.field39828).isPresent();
    }
 
    private boolean method12690(LivingEntity var1, LivingEntity var2) {
-      return var2.method2992().<LivingEntity>method21410(Class8830.field39828).filter(var1x -> var1x == var1).isPresent();
+      return var2.getBrain().<LivingEntity>method21410(Class8830.field39828).filter(var1x -> var1x == var1).isPresent();
    }
 
    private boolean method12691(Class1046 var1) {
-      return var1.method2992().method21404(Class8830.field39820);
+      return var1.getBrain().method21404(Class8830.field39820);
    }
 }

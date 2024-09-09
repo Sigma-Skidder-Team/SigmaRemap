@@ -133,7 +133,7 @@ public abstract class Structure<C extends Class4698> {
                if (var17 || var19) {
                   int var20 = var12 + var11 * var16;
                   int var21 = var13 + var11 * var18;
-                  Class7481 var22 = this.method11370(var8, var6, var15, var20, var21);
+                  ChunkPos var22 = this.method11370(var8, var6, var15, var20, var21);
                   IChunk var23 = var1.getChunk(var22.field32174, var22.field32175, ChunkStatus.field42134);
                   Class5444 var24 = var2.method24341(Class2002.method8391(var23.method7072(), 0), this, var23);
                   if (var24 != null && var24.method17117()) {
@@ -166,7 +166,7 @@ public abstract class Structure<C extends Class4698> {
       return true;
    }
 
-   public final Class7481 method11370(Class8483 var1, long var2, Class2420 var4, int var5, int var6) {
+   public final ChunkPos method11370(Class8483 var1, long var2, Class2420 var4, int var5, int var6) {
       int var9 = var1.method29980();
       int var10 = var1.method29981();
       int var11 = Math.floorDiv(var5, var9);
@@ -182,10 +182,10 @@ public abstract class Structure<C extends Class4698> {
          var14 = var4.nextInt(var9 - var10);
       }
 
-      return new Class7481(var11 * var9 + var13, var12 * var9 + var14);
+      return new ChunkPos(var11 * var9 + var13, var12 * var9 + var14);
    }
 
-   public boolean method11361(ChunkGenerator var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Biome var8, Class7481 var9, C var10) {
+   public boolean method11361(ChunkGenerator var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Biome var8, ChunkPos var9, C var10) {
       return true;
    }
 
@@ -199,14 +199,14 @@ public abstract class Structure<C extends Class4698> {
       Class1685 var3,
       Class8761 var4,
       long var5,
-      Class7481 var7,
+      ChunkPos var7,
       Biome var8,
       int var9,
       Class2420 var10,
       Class8483 var11,
       C var12
    ) {
-      Class7481 var15 = this.method11370(var11, var5, var10, var7.field32174, var7.field32175);
+      ChunkPos var15 = this.method11370(var11, var5, var10, var7.field32174, var7.field32175);
       if (var7.field32174 == var15.field32174
          && var7.field32175 == var15.field32175
          && this.method11361(var2, var3, var5, var10, var7.field32174, var7.field32175, var8, var15, (C)var12)) {

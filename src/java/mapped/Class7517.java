@@ -79,7 +79,7 @@ public class Class7517 {
 
    private static int method24505(Class6619 var0, Pair<ResourceLocation, Either<Class7744, ITag<Class7744>>> var1, int var2, boolean var3) throws CommandSyntaxException {
       if (var2 != 0) {
-         long var6 = var0.method20172().method6783() + (long)var2;
+         long var6 = var0.method20172().getGameTime() + (long)var2;
          ResourceLocation var8 = (ResourceLocation)var1.getFirst();
          Class8559 var9 = var0.method20177().method1436().method20098().method20074();
          ((Either)var1.getSecond()).ifLeft(var7 -> {

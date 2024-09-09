@@ -4,11 +4,11 @@ import com.google.common.collect.Maps;
 import java.util.Map;
 
 public class Class7037 {
-   private final Map<Class4869, Class9805> field30365 = Maps.newHashMap();
+   private final Map<Attribute, ModifiableAttributeInstance> field30365 = Maps.newHashMap();
    private boolean field30366;
 
-   private Class9805 method21847(Class4869 var1) {
-      Class9805 var4 = new Class9805(var1, var2 -> {
+   private ModifiableAttributeInstance method21847(Attribute var1) {
+      ModifiableAttributeInstance var4 = new ModifiableAttributeInstance(var1, var2 -> {
          if (this.field30366) {
             throw new UnsupportedOperationException("Tried to change value for default attribute instance: " + Registry.field16087.getKey(var1));
          }
@@ -17,13 +17,13 @@ public class Class7037 {
       return var4;
    }
 
-   public Class7037 method21848(Class4869 var1) {
+   public Class7037 method21848(Attribute var1) {
       this.method21847(var1);
       return this;
    }
 
-   public Class7037 method21849(Class4869 var1, double var2) {
-      Class9805 var6 = this.method21847(var1);
+   public Class7037 method21849(Attribute var1, double var2) {
+      ModifiableAttributeInstance var6 = this.method21847(var1);
       var6.method38661(var2);
       return this;
    }

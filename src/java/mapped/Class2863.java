@@ -31,7 +31,7 @@ public class Class2863<T extends LivingEntity> extends Class2855<T> {
       float var10 = (float) (-Math.PI / 12);
       float var11 = 0.0F;
       float var12 = 0.0F;
-      if (!var1.method3165()) {
+      if (!var1.isElytraFlying()) {
          if (var1.method3336()) {
             var9 = (float) (Math.PI * 2.0 / 9.0);
             var10 = (float) (-Math.PI / 4);
@@ -40,7 +40,7 @@ public class Class2863<T extends LivingEntity> extends Class2855<T> {
          }
       } else {
          float var13 = 1.0F;
-         Vector3d var14 = var1.getVec();
+         Vector3d var14 = var1.getMotion();
          if (var14.y < 0.0) {
             Vector3d var15 = var14.method11333();
             var13 = 1.0F - (float)Math.pow(-var15.y, 1.5);

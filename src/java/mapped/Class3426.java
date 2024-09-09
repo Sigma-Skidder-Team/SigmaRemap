@@ -60,10 +60,10 @@ public class Class3426 extends Block {
          var1 = var1.method23459(field19177);
          var2.setBlockState(var3, var1, 3);
          this.method12083(var2, var3);
-         var4.method2911(Class8876.field40153);
+         var4.method2911(Stats.field40153);
          return ActionResultType.field14819;
       } else {
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       }
    }
 
@@ -71,7 +71,7 @@ public class Class3426 extends Block {
    public void method11602(BlockState var1, World var2, BlockPos var3, PlayerEntity var4) {
       if (!var2.isRemote) {
          this.method12083(var2, var3);
-         var4.method2911(Class8876.field40152);
+         var4.method2911(Stats.field40152);
       }
    }
 
@@ -80,7 +80,7 @@ public class Class3426 extends Block {
       int var8 = var1.<Integer>method23463(field19177);
       float var9 = (float)Math.pow(2.0, (double)(var8 - 12) / 12.0);
       var2.method6742((PlayerEntity)null, var3, var1.<Class108>method23463(field19175).method299(), Class2266.field14730, 3.0F, var9);
-      var2.method6746(
+      var2.addParticle(
          ParticleTypes.field34088, (double)var3.getX() + 0.5, (double)var3.getY() + 1.2, (double)var3.getZ() + 0.5, (double)var8 / 24.0, 0.0, 0.0
       );
       return true;

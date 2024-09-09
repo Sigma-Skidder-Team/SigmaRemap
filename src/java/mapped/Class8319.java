@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
-import com.mentalfrostbyte.jello.event.impl.Class4426;
+import com.mentalfrostbyte.jello.event.impl.MouseHoverEvent;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
@@ -43,7 +43,7 @@ public class Class8319 {
    }
 
    public static void method29127(int var0) {
-      Class4426 var3 = new Class4426(var0);
+      MouseHoverEvent var3 = new MouseHoverEvent(var0);
       Client.getInstance().getEventManager().call(var3);
    }
 }

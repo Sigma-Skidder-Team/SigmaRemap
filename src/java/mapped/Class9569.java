@@ -33,7 +33,7 @@ public class Class9569 {
    }
 
    public boolean method37103() {
-      return this.field44557.method31109() instanceof LivingEntity;
+      return this.field44557.getTrueSource() instanceof LivingEntity;
    }
 
    @Nullable
@@ -43,7 +43,7 @@ public class Class9569 {
 
    @Nullable
    public ITextComponent method37105() {
-      return this.method37101().method31109() != null ? this.method37101().method31109().getDisplayName() : null;
+      return this.method37101().getTrueSource() != null ? this.method37101().getTrueSource().getDisplayName() : null;
    }
 
    public float method37106() {

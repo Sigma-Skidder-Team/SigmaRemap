@@ -48,7 +48,7 @@ public class Class3208 extends Block implements Class3207 {
    public BlockState method11495(Class5909 var1) {
       BlockPos var4 = var1.method18345();
       BlockState var5 = var1.method18360().getBlockState(var4);
-      if (!var5.method23448(this)) {
+      if (!var5.isIn(this)) {
          FluidState var6 = var1.method18360().getFluidState(var4);
          BlockState var7 = this.method11579()
             .method23465(field18605, Class86.field219)
@@ -74,8 +74,8 @@ public class Class3208 extends Block implements Class3207 {
          boolean var7 = var2.method18355().y - (double)var2.method18345().getY() > 0.5;
          Direction var8 = var2.method18354();
          return var6 != Class86.field219
-            ? var8 == Direction.DOWN || !var7 && var8.method544().method324()
-            : var8 == Direction.field673 || var7 && var8.method544().method324();
+            ? var8 == Direction.DOWN || !var7 && var8.getAxis().method324()
+            : var8 == Direction.field673 || var7 && var8.getAxis().method324();
       }
    }
 
@@ -109,7 +109,7 @@ public class Class3208 extends Block implements Class3207 {
          case 1:
             return false;
          case 2:
-            return var2.getFluidState(var3).method23486(Class8953.field40469);
+            return var2.getFluidState(var3).method23486(FluidTags.field40469);
          case 3:
             return false;
          default:

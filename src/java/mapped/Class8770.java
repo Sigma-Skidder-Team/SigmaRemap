@@ -8,7 +8,7 @@ public class Class8770 {
    private static final Set<String> field39467 = Sets.newHashSet("crafting_special_banneraddpattern", "crafting_special_repairitem");
    private static final Class7080 field39468 = new Class7084();
 
-   public static void method31634(Class6355 var0) {
+   public static void method31634(ViaVersion7 var0) {
       Class8123 var3 = new Class8123(var0, Class8770::method31635, Class8770::method31636);
       var3.method28132(Class1932.field12206);
       var3.method28134(Class1932.field12263, Class4750.field22569);

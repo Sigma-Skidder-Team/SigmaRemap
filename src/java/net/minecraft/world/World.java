@@ -360,7 +360,7 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    @Override
-   public void method6746(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12) {
+   public void addParticle(IParticleData var1, double var2, double var4, double var6, double var8, double var10, double var12) {
    }
 
    public void method6747(IParticleData var1, boolean var2, double var3, double var5, double var7, double var9, double var11, double var13) {
@@ -425,7 +425,7 @@ public abstract class World implements Class1660, AutoCloseable {
          TileEntity var5 = (TileEntity)var4.next();
          if (!var5.method3778() && var5.method3770()) {
             BlockPos var6 = var5.getPos();
-            if (this.getChunkProvider().method7353(var6) && this.method6810().method24523(var6)) {
+            if (this.getChunkProvider().method7353(var6) && this.getWorldBorder().contains(var6)) {
                try {
                   var3.method22504(() -> String.valueOf(TileEntityType.method13793(var5.method3786())));
                   if (var5.method3786().method13796(this.getBlockState(var6).getBlock())) {
@@ -484,23 +484,23 @@ public abstract class World implements Class1660, AutoCloseable {
       } catch (Throwable var8) {
          CrashReport var6 = CrashReport.makeCrashReport(var8, "Ticking entity");
          CrashReportCategory var7 = var6.makeCategory("Entity being ticked");
-         var2.method3372(var7);
+         var2.fillCrashReport(var7);
          throw new ReportedException(var6);
       }
    }
 
-   public Class7782 method6755(Entity var1, double var2, double var4, double var6, float var8, Class2141 var9) {
+   public Explosion method6755(Entity var1, double var2, double var4, double var6, float var8, Class2141 var9) {
       return this.method6757(var1, (DamageSource)null, (Class5924)null, var2, var4, var6, var8, false, var9);
    }
 
-   public Class7782 method6756(Entity var1, double var2, double var4, double var6, float var8, boolean var9, Class2141 var10) {
+   public Explosion method6756(Entity var1, double var2, double var4, double var6, float var8, boolean var9, Class2141 var10) {
       return this.method6757(var1, (DamageSource)null, (Class5924)null, var2, var4, var6, var8, var9, var10);
    }
 
-   public Class7782 method6757(
+   public Explosion method6757(
            Entity var1, DamageSource var2, Class5924 var3, double var4, double var6, double var8, float var10, boolean var11, Class2141 var12
    ) {
-      Class7782 var15 = new Class7782(this, var1, var2, var3, var4, var6, var8, var10, var11, var12);
+      Explosion var15 = new Explosion(this, var1, var2, var3, var4, var6, var8, var10, var11, var12);
       var15.method25784();
       var15.method25785(true);
       return var15;
@@ -607,7 +607,7 @@ public abstract class World implements Class1660, AutoCloseable {
    public void method6766() {
       double var3 = 1.0 - (double)(this.method6792(1.0F) * 5.0F) / 16.0;
       double var5 = 1.0 - (double)(this.method6790(1.0F) * 5.0F) / 16.0;
-      double var7 = 0.5 + 2.0 * MathHelper.method37778((double) MathHelper.cos(this.method7001(1.0F) * (float) (Math.PI * 2)), -0.25, 0.25);
+      double var7 = 0.5 + 2.0 * MathHelper.clamp((double) MathHelper.cos(this.method7001(1.0F) * (float) (Math.PI * 2)), -0.25, 0.25);
       this.skylightSubtracted = (int)((1.0 - var7 * var3 * var5) * 11.0);
    }
 
@@ -631,12 +631,12 @@ public abstract class World implements Class1660, AutoCloseable {
 
    @Nullable
    @Override
-   public IBlockReader method6769(int var1, int var2) {
+   public IBlockReader getBlockReader(int var1, int var2) {
       return this.getChunk(var1, var2, ChunkStatus.FULL, false);
    }
 
    @Override
-   public List<Entity> method6770(Entity var1, AxisAlignedBB var2, Predicate<? super Entity> var3) {
+   public List<Entity> getEntitiesInAABBexcluding(Entity var1, AxisAlignedBB var2, Predicate<? super Entity> var3) {
       this.getProfiler().func_230035_c_("getEntities");
       ArrayList var6 = Lists.newArrayList();
       int var7 = MathHelper.floor((var2.minX - 2.0) / 16.0);
@@ -816,7 +816,7 @@ public abstract class World implements Class1660, AutoCloseable {
    public void sendQuittingDisconnectingPacket() {
    }
 
-   public long method6783() {
+   public long getGameTime() {
       return this.worldInfo.method20033();
    }
 
@@ -828,7 +828,7 @@ public abstract class World implements Class1660, AutoCloseable {
       return true;
    }
 
-   public void method6786(Entity var1, byte var2) {
+   public void setEntityState(Entity var1, byte var2) {
    }
 
    public void method6787(BlockPos var1, Block var2, int var3, int var4) {
@@ -840,7 +840,7 @@ public abstract class World implements Class1660, AutoCloseable {
       return this.worldInfo;
    }
 
-   public Class5462 method6789() {
+   public Class5462 getGameRules() {
       return this.worldInfo.method20046();
    }
 
@@ -870,7 +870,7 @@ public abstract class World implements Class1660, AutoCloseable {
       return (double)this.method6792(1.0F) > 0.2;
    }
 
-   public boolean method6796(BlockPos var1) {
+   public boolean isRainingAt(BlockPos var1) {
       if (!this.method6795()) {
          return false;
       } else if (this.method7022(var1)) {
@@ -915,7 +915,7 @@ public abstract class World implements Class1660, AutoCloseable {
       return var4;
    }
 
-   public abstract void method6803(int var1, BlockPos var2, int var3);
+   public abstract void sendBlockBreakProgress(int var1, BlockPos var2, int var3);
 
    public void method6804(double var1, double var3, double var5, double var7, double var9, double var11, CompoundNBT var13) {
    }
@@ -927,11 +927,11 @@ public abstract class World implements Class1660, AutoCloseable {
          BlockPos var7 = var1.method8349(var6);
          if (this.method7017(var7)) {
             BlockState var8 = this.getBlockState(var7);
-            if (!var8.method23448(Blocks.field36719)) {
+            if (!var8.isIn(Blocks.field36719)) {
                if (var8.method23400(this, var7)) {
                   var7 = var7.method8349(var6);
                   var8 = this.getBlockState(var7);
-                  if (var8.method23448(Blocks.field36719)) {
+                  if (var8.isIn(Blocks.field36719)) {
                      var8.method23423(this, var7, var2, var1, false);
                   }
                }
@@ -963,7 +963,7 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    @Override
-   public WorldBorder method6810() {
+   public WorldBorder getWorldBorder() {
       return this.worldBorder;
    }
 

@@ -11,7 +11,7 @@ public class Class6076 extends Class6069 {
    private static final int[] field27319 = new int[]{20, 20, 20};
    public final int field27320;
 
-   public Class6076(Class1937 var1, int var2, Class2106... var3) {
+   public Class6076(Class1937 var1, int var2, EquipmentSlotType... var3) {
       super(var1, Class2242.field14675, var3);
       this.field27320 = var2;
    }
@@ -32,12 +32,12 @@ public class Class6076 extends Class6069 {
    }
 
    @Override
-   public float method18815(int var1, Class7809 var2) {
+   public float method18815(int var1, CreatureAttribute var2) {
       if (this.field27320 != 0) {
-         if (this.field27320 == 1 && var2 == Class7809.field33506) {
+         if (this.field27320 == 1 && var2 == CreatureAttribute.field33506) {
             return (float)var1 * 2.5F;
          } else {
-            return this.field27320 == 2 && var2 == Class7809.field33507 ? (float)var1 * 2.5F : 0.0F;
+            return this.field27320 == 2 && var2 == CreatureAttribute.field33507 ? (float)var1 * 2.5F : 0.0F;
          }
       } else {
          return 1.0F + (float)Math.max(0, var1 - 1) * 0.5F;
@@ -58,9 +58,9 @@ public class Class6076 extends Class6069 {
    public void method18822(LivingEntity var1, Entity var2, int var3) {
       if (var2 instanceof LivingEntity) {
          LivingEntity var6 = (LivingEntity)var2;
-         if (this.field27320 == 2 && var6.method3089() == Class7809.field33507) {
-            int var7 = 20 + var1.method3013().nextInt(10 * var3);
-            var6.method3035(new Class2023(Effects.SLOWNESS, var7, 3));
+         if (this.field27320 == 2 && var6.getCreatureAttribute() == CreatureAttribute.field33507) {
+            int var7 = 20 + var1.getRNG().nextInt(10 * var3);
+            var6.addPotionEffect(new EffectInstance(Effects.SLOWNESS, var7, 3));
          }
       }
    }

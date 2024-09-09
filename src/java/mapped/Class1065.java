@@ -22,18 +22,18 @@ public class Class1065 extends Class1064 {
 
    @Override
    public Class1064 method4908() {
-      return EntityType.field41094.method33215(this.world);
+      return EntityType.field41094.create(this.world);
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("DespawnDelay", this.field5876);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("DespawnDelay", this.field5876);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("DespawnDelay", 99)) {
          this.field5876 = var1.getInt("DespawnDelay");
       }
@@ -55,8 +55,8 @@ public class Class1065 extends Class1064 {
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
+   public void livingEntity() {
+      super.livingEntity();
       if (!this.world.isRemote) {
          this.method4921();
       }
@@ -67,7 +67,7 @@ public class Class1065 extends Class1064 {
          this.field5876 = !this.method4923() ? this.field5876 - 1 : ((Class1044)this.method4297()).method4756() - 1;
          if (this.field5876 <= 0) {
             this.method4294(true, false);
-            this.method2904();
+            this.remove();
          }
       }
    }

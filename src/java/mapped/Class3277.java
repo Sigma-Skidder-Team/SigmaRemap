@@ -24,7 +24,7 @@ public interface Class3277 {
    }
 
    default void method11802(ItemStack var1, int var2) {
-      var1.method32144("display").method102("color", var2);
+      var1.method32144("display").putInt("color", var2);
    }
 
    static ItemStack method11803(ItemStack var0, List<Class3321> var1) {

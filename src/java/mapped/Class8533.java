@@ -43,10 +43,10 @@ public class Class8533 {
    public static final BiConsumer<Vector3d, List<? extends Entity>> field38334 = (var0, var1) -> {
    };
    public static final BiConsumer<Vector3d, List<? extends Entity>> field38335 = (var0, var1) -> var1.sort(
-         (var1x, var2) -> Doubles.compare(var1x.method3278(var0), var2.method3278(var0))
+         (var1x, var2) -> Doubles.compare(var1x.getDistanceNearest3(var0), var2.getDistanceNearest3(var0))
       );
    public static final BiConsumer<Vector3d, List<? extends Entity>> field38336 = (var0, var1) -> var1.sort(
-         (var1x, var2) -> Doubles.compare(var2.method3278(var0), var1x.method3278(var0))
+         (var1x, var2) -> Doubles.compare(var2.getDistanceNearest3(var0), var1x.getDistanceNearest3(var0))
       );
    public static final BiConsumer<Vector3d, List<? extends Entity>> field38337 = (var0, var1) -> Collections.shuffle(var1);
    public static final BiFunction<SuggestionsBuilder, Consumer<SuggestionsBuilder>, CompletableFuture<Suggestions>> field38338 = (var0, var1) -> var0.buildFuture();
@@ -169,7 +169,7 @@ public class Class8533 {
       double var5 = (double) MathHelper.method37792(var1.method38630() != null ? var1.method38630() : 0.0F);
       double var7 = (double) MathHelper.method37792(var1.method38631() != null ? var1.method38631() : 359.0F);
       return var5x -> {
-         double var8 = MathHelper.method37793(var2.applyAsDouble(var5x));
+         double var8 = MathHelper.wrapDegrees(var2.applyAsDouble(var5x));
          return !(var5 > var7) ? var8 >= var5 && var8 <= var7 : var8 >= var5 || var8 <= var7;
       };
    }

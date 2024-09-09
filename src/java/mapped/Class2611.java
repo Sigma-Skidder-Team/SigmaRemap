@@ -35,7 +35,7 @@ public class Class2611 extends Class2595 {
          .method6772(Class1006.class, this.field16871.getBoundingBox().method19664((double)this.field16879), this.field16872);
       if (!var3.isEmpty()) {
          for (Class1006 var5 : var3) {
-            if (!var5.method3342()) {
+            if (!var5.isInvisible()) {
                this.field16873 = var5;
                return true;
             }

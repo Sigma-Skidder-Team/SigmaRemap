@@ -54,7 +54,7 @@ public class Class1033 extends Class1031 implements Class1022 {
 
    @Override
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
-      this.method2944(Class2106.field13731, new ItemStack(Items.BOW));
+      this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.BOW));
       return super.method4276(var1, var2, var3, var4, var5);
    }
 
@@ -64,20 +64,20 @@ public class Class1033 extends Class1031 implements Class1022 {
    }
 
    @Override
-   public AxisAlignedBB method3186() {
+   public AxisAlignedBB getRenderBoundingBox() {
       return this.getBoundingBox().method19663(3.0, 0.0, 3.0);
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
-      if (this.world.isRemote && this.method3342()) {
+   public void livingEntity() {
+      super.livingEntity();
+      if (this.world.isRemote && this.isInvisible()) {
          this.field5739--;
          if (this.field5739 < 0) {
             this.field5739 = 0;
          }
 
-         if (this.field4952 == 1 || this.ticksExisted % 1200 == 0) {
+         if (this.hurtTime == 1 || this.ticksExisted % 1200 == 0) {
             this.field5739 = 3;
             float var6 = -6.0F;
             byte var4 = 13;
@@ -92,11 +92,11 @@ public class Class1033 extends Class1031 implements Class1022 {
             }
 
             for (int var7 = 0; var7 < 16; var7++) {
-               this.world.method6746(ParticleTypes.field34053, this.method3438(0.5), this.method3441(), this.method3444(0.5), 0.0, 0.0, 0.0);
+               this.world.addParticle(ParticleTypes.field34053, this.getPosXRandom(0.5), this.getPosYRandom(), this.getPosZWidth(0.5), 0.0, 0.0, 0.0);
             }
 
             this.world.method6745(this.getPosX(), this.getPosY(), this.getPosZ(), SoundEvents.field26695, this.method2864(), 1.0F, 1.0F, false);
-         } else if (this.field4952 == this.field4953 - 1) {
+         } else if (this.hurtTime == this.maxHurtTime - 1) {
             this.field5739 = 3;
 
             for (int var3 = 0; var3 < 4; var3++) {
@@ -121,7 +121,7 @@ public class Class1033 extends Class1031 implements Class1022 {
          Vector3d[] var6 = new Vector3d[4];
 
          for (int var7 = 0; var7 < 4; var7++) {
-            var6[var7] = this.field5740[1][var7].method11344(1.0 - var4).method11338(this.field5740[0][var7].method11344(var4));
+            var6[var7] = this.field5740[1][var7].scale(1.0 - var4).add(this.field5740[0][var7].scale(var4));
          }
 
          return var6;
@@ -129,11 +129,11 @@ public class Class1033 extends Class1031 implements Class1022 {
    }
 
    @Override
-   public boolean method3345(Entity var1) {
-      if (super.method3345(var1)) {
+   public boolean isOnSameTeam(Entity var1) {
+      if (super.isOnSameTeam(var1)) {
          return true;
       } else {
-         return var1 instanceof LivingEntity && ((LivingEntity)var1).method3089() == Class7809.field33508
+         return var1 instanceof LivingEntity && ((LivingEntity)var1).getCreatureAttribute() == CreatureAttribute.field33508
             ? this.getTeam() == null && var1.getTeam() == null
             : false;
       }
@@ -165,15 +165,15 @@ public class Class1033 extends Class1031 implements Class1022 {
 
    @Override
    public void method4530(LivingEntity var1, float var2) {
-      ItemStack var5 = this.method2983(this.getHeldItem(Class9456.method36389(this, Items.BOW)));
+      ItemStack var5 = this.findAmmo(this.getHeldItem(Class9456.method36389(this, Items.BOW)));
       AbstractArrowEntity var6 = Class9456.method36390(this, var5, var2);
       double var7 = var1.getPosX() - this.getPosX();
-      double var9 = var1.method3440(0.3333333333333333) - var6.getPosY();
+      double var9 = var1.getPosYHeight(0.3333333333333333) - var6.getPosY();
       double var11 = var1.getPosZ() - this.getPosZ();
-      double var13 = (double) MathHelper.method37766(var7 * var7 + var11 * var11);
+      double var13 = (double) MathHelper.sqrt(var7 * var7 + var11 * var11);
       var6.shoot(var7, var9 + var13 * 0.2F, var11, 1.6F, (float)(14 - this.world.method6997().getId() * 4));
-      this.method2863(SoundEvents.field27070, 1.0F, 1.0F / (this.method3013().nextFloat() * 0.4F + 0.8F));
-      this.world.method6916(var6);
+      this.playSound(SoundEvents.field27070, 1.0F, 1.0F / (this.getRNG().nextFloat() * 0.4F + 0.8F));
+      this.world.addEntity(var6);
    }
 
    @Override

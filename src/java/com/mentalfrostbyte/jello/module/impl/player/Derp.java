@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.player;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
@@ -24,7 +24,7 @@ public class Derp extends Module {
     }
 
     @EventTarget
-    public void method16065(Class4399 var1) {
+    public void method16065(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             if (this.getBooleanValueFromSetttingName("Sneak")) {
                 if (this.field23435) {
@@ -45,8 +45,8 @@ public class Derp extends Module {
             String var6 = this.getStringSettingValueByName("Rotation Mode");
             switch (var6) {
                 case "Random":
-                    var1.method13918(this.field23434.nextFloat() * 360.0F);
-                    var1.method13916(this.field23434.nextFloat() * 180.0F - 90.0F);
+                    var1.setPitch(this.field23434.nextFloat() * 360.0F);
+                    var1.setYaw(this.field23434.nextFloat() * 180.0F - 90.0F);
                     break;
                 case "Spin":
                     this.field23437 += 20;
@@ -55,7 +55,7 @@ public class Derp extends Module {
                         this.field23437 -= 360;
                     }
 
-                    var1.method13918((float) this.field23437 + this.field23434.nextFloat());
+                    var1.setPitch((float) this.field23437 + this.field23434.nextFloat());
             }
         }
     }

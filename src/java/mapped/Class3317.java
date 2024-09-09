@@ -27,7 +27,7 @@ public class Class3317<T extends Entity & Class1071> extends Item {
          if (var2.isPassenger() && var7 instanceof Class1071 && var7.getType() == this.field18826) {
             Class1071 var8 = (Class1071)var7;
             if (var8.method4982()) {
-               var6.method32121(this.field18827, var2, var1x -> var1x.method3185(var3));
+               var6.method32121(this.field18827, var2, var1x -> var1x.sendBreakAnimation(var3));
                if (!var6.isEmpty()) {
                   return Class6794.<ItemStack>method20696(var6);
                }
@@ -38,7 +38,7 @@ public class Class3317<T extends Entity & Class1071> extends Item {
             }
          }
 
-         var2.method2913(Class8876.field40098.method172(this));
+         var2.addStat(Stats.field40098.method172(this));
          return Class6794.<ItemStack>method20698(var6);
       } else {
          return Class6794.<ItemStack>method20698(var6);

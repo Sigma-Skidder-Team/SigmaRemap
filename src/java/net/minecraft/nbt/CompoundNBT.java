@@ -75,11 +75,11 @@ public class CompoundNBT implements INBT {
       this.tagMap.put(var1, Class33.method91(var2));
    }
 
-   public void method101(String var1, short var2) {
+   public void putShort(String var1, short var2) {
       this.tagMap.put(var1, Class37.method96(var2));
    }
 
-   public void method102(String var1, int var2) {
+   public void putInt(String var1, int var2) {
       this.tagMap.put(var1, Class36.method95(var2));
    }
 

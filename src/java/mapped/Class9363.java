@@ -23,7 +23,7 @@ public class Class9363 {
       if (!this.field43442.contains(var1)) {
          if (!this.field43443.contains(var1)) {
             this.field43441.world.getProfiler().startSection("canSee");
-            boolean var4 = this.field43441.method3135(var1);
+            boolean var4 = this.field43441.canEntityBeSeen(var1);
             this.field43441.world.getProfiler().endSection();
             if (!var4) {
                this.field43443.add(var1);

@@ -25,7 +25,7 @@ public class Class5129 implements Class5119 {
 
       for (BlockPos var14 : BlockPos.method8359(var11.method8336(-10, -10, -10), var11.method8336(10, 10, 10))) {
          FluidState var15 = var12.getFluidState(var14);
-         if (var15.method23486(Class8953.field40469)) {
+         if (var15.method23486(FluidTags.field40469)) {
             double var16 = (double)((float)var14.getY() + var15.method23475(var12, var14));
             DebugRenderer.method27457(
                new AxisAlignedBB(
@@ -36,7 +36,7 @@ public class Class5129 implements Class5119 {
                      var16,
                      (double)((float)var14.getZ() + 0.99F)
                   )
-                  .method19667(-var3, -var5, -var7),
+                  .offset(-var3, -var5, -var7),
                1.0F,
                1.0F,
                1.0F,
@@ -47,7 +47,7 @@ public class Class5129 implements Class5119 {
 
       for (BlockPos var19 : BlockPos.method8359(var11.method8336(-10, -10, -10), var11.method8336(10, 10, 10))) {
          FluidState var20 = var12.getFluidState(var19);
-         if (var20.method23486(Class8953.field40469)) {
+         if (var20.method23486(FluidTags.field40469)) {
             DebugRenderer.method27460(
                String.valueOf(var20.method23477()),
                (double)var19.getX() + 0.5,

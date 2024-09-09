@@ -79,7 +79,7 @@ public class Class6609 implements Class6608 {
    }
 
    @Override
-   public Class1894 method20067() {
+   public GameType method20067() {
       return this.field29061.method20067();
    }
 
@@ -128,7 +128,7 @@ public class Class6609 implements Class6608 {
    }
 
    @Override
-   public void method20073(Class1894 var1) {
+   public void method20073(GameType var1) {
    }
 
    @Override

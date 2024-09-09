@@ -2,9 +2,9 @@ package com.mentalfrostbyte.jello.module.impl.world;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4430;
+import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
@@ -40,17 +40,17 @@ public class Nuker extends Module {
     }
 
     @EventTarget
-    private void method16263(Class4399 var1) {
+    private void method16263(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             this.field23567 = this.method16267(this.getNumberValueBySettingName("Range") / 2.0F);
             if (this.field23567.isEmpty()) {
                 this.field23566 = null;
-            } else if (mc.playerController.method23157() != Class1894.field11103) {
+            } else if (mc.playerController.getCurrentGameType() != GameType.field11103) {
                 if (this.field23566 != null) {
                     if (mc.world.getBlockState(this.field23566).isAir()
                             || Math.sqrt(
                             mc.player
-                                    .method3276(
+                                    .getDistanceNearest(
                                             (double) this.field23566.getX() + 0.5,
                                             (double) this.field23566.getY() + 0.5,
                                             (double) this.field23566.getZ() + 0.5
@@ -60,12 +60,12 @@ public class Nuker extends Module {
                         this.field23566 = this.field23567.get(0);
                     }
 
-                    float[] var4 = Class9142.method34144(
+                    float[] var4 = RotationHelper.method34144(
                             (double) this.field23566.getX(), (double) this.field23566.getZ(), (double) this.field23566.getY()
                     );
-                    var1.method13918(var4[0]);
-                    var1.method13916(var4[1]);
-                    Class4430 var5 = new Class4430(0, false, this.field23566);
+                    var1.setPitch(var4[0]);
+                    var1.setYaw(var4[1]);
+                    EventKeyPress var5 = new EventKeyPress(0, false, this.field23566);
                     Client.getInstance().getEventManager().call(var5);
                     mc.playerController.onPlayerDamageBlock(this.field23566, BlockUtil.method34580(this.field23566));
                     if (!this.getBooleanValueFromSetttingName("NoSwing")) {
@@ -75,12 +75,12 @@ public class Nuker extends Module {
                     }
                 } else {
                     this.field23566 = this.field23567.get(0);
-                    float[] var6 = Class9142.method34144(
+                    float[] var6 = RotationHelper.method34144(
                             (double) this.field23566.getX() + 0.5, (double) this.field23566.getZ(), (double) this.field23566.getY() + 0.5
                     );
-                    var1.method13918(var6[0]);
-                    var1.method13916(var6[1]);
-                    Class4430 var8 = new Class4430(0, false, this.field23566);
+                    var1.setPitch(var6[0]);
+                    var1.setYaw(var6[1]);
+                    EventKeyPress var8 = new EventKeyPress(0, false, this.field23566);
                     Client.getInstance().getEventManager().call(var8);
                     mc.playerController.onPlayerDamageBlock(this.field23566, BlockUtil.method34580(this.field23566));
                     if (!this.getBooleanValueFromSetttingName("NoSwing")) {
@@ -128,7 +128,7 @@ public class Nuker extends Module {
 
     private boolean method16266(BlockPos var1) {
         Block var4 = mc.world.getBlockState(var1).getBlock();
-        return mc.world.getBlockState(var1).method23384().method31089() || var4 instanceof Class3194;
+        return mc.world.getBlockState(var1).getMaterial().method31089() || var4 instanceof Class3194;
     }
 
     private List<BlockPos> method16267(float var1) {
@@ -145,7 +145,7 @@ public class Nuker extends Module {
                     if (!mc.world.getBlockState(var8).isAir()
                             && mc.world.getBlockState(var8).method23449().method23474()
                             && Math.sqrt(
-                            mc.player.method3276((double) var8.getX() + 0.5, (double) var8.getY() + 0.5, (double) var8.getZ() + 0.5)
+                            mc.player.getDistanceNearest((double) var8.getX() + 0.5, (double) var8.getY() + 0.5, (double) var8.getZ() + 0.5)
                     )
                             < (double) var1) {
                         String var9 = this.getStringSettingValueByName("Mode");

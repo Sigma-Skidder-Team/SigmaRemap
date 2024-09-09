@@ -17,9 +17,9 @@ public class Class2760 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      if (!this.field17319.method3005()) {
+      if (!this.field17319.isChild()) {
          if (!this.field17319.method5045()) {
-            return this.field17319.method3013().nextInt(700) == 0
+            return this.field17319.getRNG().nextInt(700) == 0
                ? !Class1088.method5056(this.field17319).method8317(this.field17319.getPositionVec(), 64.0)
                : false;
          } else {
@@ -62,7 +62,7 @@ public class Class2760 extends Class2595 {
             var6 = Class8037.method27587(this.field17319, 8, 7, var5);
          }
 
-         if (var6 != null && !var4 && !this.field17319.world.getBlockState(new BlockPos(var6)).method23448(Blocks.WATER)) {
+         if (var6 != null && !var4 && !this.field17319.world.getBlockState(new BlockPos(var6)).isIn(Blocks.WATER)) {
             var6 = Class8037.method27587(this.field17319, 16, 5, var5);
          }
 

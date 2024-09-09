@@ -91,31 +91,31 @@ public abstract class Class1045 extends Class1046 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("Age", this.method4767());
-      var1.method102("ForcedAge", this.field5802);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Age", this.method4767());
+      var1.putInt("ForcedAge", this.field5802);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method4770(var1.getInt("Age"));
       this.field5802 = var1.getInt("ForcedAge");
    }
 
    @Override
-   public void method3155(DataParameter<?> var1) {
+   public void notifyDataManagerChange(DataParameter<?> var1) {
       if (field5800.equals(var1)) {
-         this.method3385();
+         this.recalculateSize();
       }
 
-      super.method3155(var1);
+      super.notifyDataManagerChange(var1);
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
+   public void livingEntity() {
+      super.livingEntity();
       if (!this.world.isRemote) {
          if (this.isAlive()) {
             int var3 = this.method4767();
@@ -129,7 +129,7 @@ public abstract class Class1045 extends Class1046 {
          }
       } else if (this.field5803 > 0) {
          if (this.field5803 % 4 == 0) {
-            this.world.method6746(ParticleTypes.field34078, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), 0.0, 0.0, 0.0);
+            this.world.addParticle(ParticleTypes.field34078, this.getPosXRandom(1.0), this.getPosYRandom() + 0.5, this.getPosZRandom(1.0), 0.0, 0.0, 0.0);
          }
 
          this.field5803--;
@@ -140,7 +140,7 @@ public abstract class Class1045 extends Class1046 {
    }
 
    @Override
-   public boolean method3005() {
+   public boolean isChild() {
       return this.method4767() < 0;
    }
 

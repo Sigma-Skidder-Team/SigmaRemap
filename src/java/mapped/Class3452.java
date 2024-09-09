@@ -45,7 +45,7 @@ public abstract class Class3452 extends Class3444 implements Class3196 {
          var4.method6860().method20726(var5, this, 1);
       }
 
-      if (var2 != this.field19256 || !var3.method23448(this) && !var3.method23448(this.method12125())) {
+      if (var2 != this.field19256 || !var3.isIn(this) && !var3.isIn(this.method12125())) {
          if (this.field19257) {
             var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
          }

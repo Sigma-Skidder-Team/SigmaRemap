@@ -25,7 +25,7 @@ public class Class2729 extends Class2595 {
             && this.field17239.getDistanceSq(var3) > 36.0
             && !this.field17239.method3336()
             && !this.field17239.method5145()
-            && !this.field17239.field4981;
+            && !this.field17239.isJumping;
       }
    }
 

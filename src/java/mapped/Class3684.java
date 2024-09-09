@@ -27,11 +27,11 @@ public class Class3684 extends Class3676<Class1006> {
       LivingEntity var7 = this.method12524(var2);
       Class6983.method21574(var2, var7);
       var2.swingArm(Hand.MAIN_HAND);
-      var2.method3114(var7);
-      var2.method2992().method21407(Class8830.field39827, true, (long)this.field19700);
+      var2.attackEntityAsMob(var7);
+      var2.getBrain().method21407(Class8830.field39827, true, (long)this.field19700);
    }
 
    private LivingEntity method12524(Class1006 var1) {
-      return var1.method2992().<LivingEntity>method21410(Class8830.field39826).get();
+      return var1.getBrain().<LivingEntity>method21410(Class8830.field39826).get();
    }
 }

@@ -22,7 +22,7 @@ public class Class7025 implements Class7022 {
    @Override
    public String toString() {
       return "Unloaded "
-         + new Class7481(this.field30333 + this.field30334 % (this.field30335 * 2 + 1), this.field30336 + this.field30334 / (this.field30335 * 2 + 1))
+         + new ChunkPos(this.field30333 + this.field30334 % (this.field30335 * 2 + 1), this.field30336 + this.field30334 / (this.field30335 * 2 + 1))
          + " "
          + ((Class7022)this.field30337.right().get()).toString();
    }

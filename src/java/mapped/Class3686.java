@@ -23,7 +23,7 @@ public class Class3686 extends Class3676<LivingEntity> {
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       Optional<Vector3d> var7 = Optional.ofNullable(this.method12532(var1, var2));
       if (var7.isPresent()) {
-         var2.method2992().method21408(Class8830.field39824, var7.map(var1x -> new Class8999(var1x, this.field19704, 0)));
+         var2.getBrain().method21408(Class8830.field39824, var7.map(var1x -> new Class8999(var1x, this.field19704, 0)));
       }
    }
 
@@ -34,7 +34,7 @@ public class Class3686 extends Class3676<LivingEntity> {
 
    @Nullable
    private Vector3d method12532(ServerWorld var1, LivingEntity var2) {
-      Random var5 = var2.method3013();
+      Random var5 = var2.getRNG();
       BlockPos var6 = var2.getPosition();
 
       for (int var7 = 0; var7 < 10; var7++) {

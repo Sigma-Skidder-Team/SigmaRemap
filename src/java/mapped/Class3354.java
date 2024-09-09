@@ -85,7 +85,7 @@ public class Class3354 extends Class3241 {
       CompoundNBT var6 = var5.method32142();
       PlayerEntity var7 = var1.method18358();
       boolean var8 = false;
-      if (!var4.isRemote && var7 != null && var6 != null && var7.method2979() && var6.contains("BlockEntityTag")) {
+      if (!var4.isRemote && var7 != null && var6 != null && var7.canUseCommandBlock() && var6.contains("BlockEntityTag")) {
          CompoundNBT var9 = var6.getCompound("BlockEntityTag");
          if (var9.contains("Book")) {
             var8 = true;
@@ -186,7 +186,7 @@ public class Class3354 extends Class3241 {
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.method23448(var4.getBlock())) {
+      if (!var1.isIn(var4.getBlock())) {
          if (var1.<Boolean>method23463(field18882)) {
             this.method11925(var1, var2, var3);
          }
@@ -210,8 +210,8 @@ public class Class3354 extends Class3241 {
          ItemEntity var12 = new ItemEntity(
             var2, (double)var3.getX() + 0.5 + (double)var10, (double)(var3.getY() + 1), (double)var3.getZ() + 0.5 + (double)var11, var9
          );
-         var12.method4131();
-         var2.method6916(var12);
+         var12.setDefaultPickupDelay();
+         var2.addEntity(var12);
          var7.method3625();
       }
    }
@@ -272,7 +272,7 @@ public class Class3354 extends Class3241 {
       TileEntity var6 = var1.getTileEntity(var2);
       if (var6 instanceof Class948) {
          var3.method2766((Class948)var6);
-         var3.method2911(Class8876.field40167);
+         var3.method2911(Stats.field40167);
       }
    }
 

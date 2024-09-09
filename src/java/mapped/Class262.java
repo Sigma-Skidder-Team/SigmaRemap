@@ -25,7 +25,7 @@ public class Class262<T extends Class1086> extends Class219<T, Class2870<T>> {
    }
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      if (!var4.method3005() && !var4.method3342()) {
+      if (!var4.isChild() && !var4.isInvisible()) {
          BlockRendererDispatcher var13 = Minecraft.getInstance().getBlockRendererDispatcher();
          BlockState var14 = var4.method5037().method8934();
          ResourceLocation var15 = this.method852(var14);

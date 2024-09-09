@@ -25,7 +25,7 @@ public class Class2788 extends Class2785 {
          if (this.field17416 <= this.field17415.ticksExisted) {
             this.field17415.method5187(32);
             this.field17416 = this.field17415.ticksExisted + 600;
-            if (this.field17415.method3138()) {
+            if (this.field17415.isServerWorld()) {
                PlayerEntity var3 = this.field17409.method7188(Class1097.method5237(), this.field17415);
                Class1097.method5238(this.field17415).method10824(var3);
             }
@@ -44,7 +44,7 @@ public class Class2788 extends Class2785 {
             for (int var7 = 0; var7 <= var6; var7 = var7 <= 0 ? 1 - var7 : -var7) {
                for (int var8 = var7 < var6 && var7 > -var6 ? var6 : 0; var8 <= var6; var8 = var8 <= 0 ? 1 - var8 : -var8) {
                   var4.method8378(var3, var7, var5, var8);
-                  if (this.field17409.getBlockState(var4).method23448(Blocks.field37009)) {
+                  if (this.field17409.getBlockState(var4).isIn(Blocks.field37009)) {
                      return true;
                   }
                }

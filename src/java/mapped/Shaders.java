@@ -3232,9 +3232,9 @@ public class Shaders {
                 field40657 = field40657 * var10 + (float) (field40656 & 65535) * (1.0F - var10);
                 field40658 = field40658 * var10 + (float) (field40656 >> 16) * (1.0F - var10);
                 FluidState var11 = var1.method37512();
-                if (var11.method23486(Class8953.field40469)) {
+                if (var11.method23486(FluidTags.field40469)) {
                     field40655 = 1;
-                } else if (var11.method23486(Class8953.field40470)) {
+                } else if (var11.method23486(FluidTags.field40470)) {
                     field40655 = 2;
                 } else {
                     field40655 = 0;
@@ -3243,14 +3243,14 @@ public class Shaders {
                 if (var8 instanceof LivingEntity) {
                     LivingEntity var12 = (LivingEntity) var8;
                     field40665 = 0.0F;
-                    if (var12.method3033(Effects.NIGHT_VISION)) {
+                    if (var12.isPotionActive(Effects.NIGHT_VISION)) {
                         GameRenderer var13 = field40592;
                         field40665 = GameRenderer.method750(var12, var2);
                     }
 
                     field40666 = 0.0F;
-                    if (var12.method3033(Effects.BLINDNESS)) {
-                        int var18 = var12.method3034(Effects.BLINDNESS).method8628();
+                    if (var12.isPotionActive(Effects.BLINDNESS)) {
+                        int var18 = var12.getActivePotionEffect(Effects.BLINDNESS).method8628();
                         field40666 = Class7944.method26832((float) var18 / 20.0F, 0.0F, 1.0F);
                     }
                 }

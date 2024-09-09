@@ -25,7 +25,7 @@ public class Class3749 extends Class3676<Class1042> {
    }
 
    public boolean method12508(ServerWorld var1, Class1042 var2) {
-      if (!var1.method6789().method17135(Class5462.field24224)) {
+      if (!var1.getGameRules().getBoolean(Class5462.field24224)) {
          return false;
       } else if (var2.method4674().method26571() != Class8395.field36016) {
          return false;
@@ -63,14 +63,14 @@ public class Class3749 extends Class3676<Class1042> {
 
    public void method12502(ServerWorld var1, Class1042 var2, long var3) {
       if (var3 > this.field19898 && this.field19897 != null) {
-         var2.method2992().method21406(Class8830.field39825, new Class7863(this.field19897));
-         var2.method2992().method21406(Class8830.field39824, new Class8999(new Class7863(this.field19897), 0.5F, 1));
+         var2.getBrain().method21406(Class8830.field39825, new Class7863(this.field19897));
+         var2.getBrain().method21406(Class8830.field39824, new Class8999(new Class7863(this.field19897), 0.5F, 1));
       }
    }
 
    public void method12506(ServerWorld var1, Class1042 var2, long var3) {
-      var2.method2992().method21405(Class8830.field39825);
-      var2.method2992().method21405(Class8830.field39824);
+      var2.getBrain().method21405(Class8830.field39825);
+      var2.getBrain().method21405(Class8830.field39824);
       this.field19899 = 0;
       this.field19898 = var3 + 40L;
    }
@@ -88,8 +88,8 @@ public class Class3749 extends Class3676<Class1042> {
             if (var7.isAir() && var9 instanceof Class3221 && var2.method4712()) {
                Class927 var10 = var2.method4752();
 
-               for (int var11 = 0; var11 < var10.method3629(); var11++) {
-                  ItemStack var12 = var10.method3618(var11);
+               for (int var11 = 0; var11 < var10.getSizeInventory(); var11++) {
+                  ItemStack var12 = var10.getStackInSlot(var11);
                   boolean var13 = false;
                   if (!var12.isEmpty()) {
                      if (var12.getItem() != Items.field37841) {
@@ -126,7 +126,7 @@ public class Class3749 extends Class3676<Class1042> {
                      );
                      var12.method32182(1);
                      if (var12.isEmpty()) {
-                        var10.method3621(var11, ItemStack.EMPTY);
+                        var10.setInventorySlotContents(var11, ItemStack.EMPTY);
                      }
                      break;
                   }
@@ -138,8 +138,8 @@ public class Class3749 extends Class3676<Class1042> {
                this.field19897 = this.method12710(var1);
                if (this.field19897 != null) {
                   this.field19898 = var3 + 20L;
-                  var2.method2992().method21406(Class8830.field39824, new Class8999(new Class7863(this.field19897), 0.5F, 1));
-                  var2.method2992().method21406(Class8830.field39825, new Class7863(this.field19897));
+                  var2.getBrain().method21406(Class8830.field39824, new Class8999(new Class7863(this.field19897), 0.5F, 1));
+                  var2.getBrain().method21406(Class8830.field39825, new Class7863(this.field19897));
                }
             }
          }

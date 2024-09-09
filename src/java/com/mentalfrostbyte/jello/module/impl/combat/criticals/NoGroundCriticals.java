@@ -1,9 +1,9 @@
 package com.mentalfrostbyte.jello.module.impl.combat.criticals;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4434;
-import com.mentalfrostbyte.jello.event.impl.Class4436;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.EventStep;
+import com.mentalfrostbyte.jello.event.impl.JumpEvent;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -34,19 +34,19 @@ public class NoGroundCriticals extends Module {
 
     @EventTarget
     @HigherPriority
-    private void method16034(Class4434 var1) {
-        if (this.isEnabled() && !(var1.method13988() < 0.625)) {
+    private void method16034(EventStep var1) {
+        if (this.isEnabled() && !(var1.getHeight() < 0.625)) {
             if (this.field23410 == 0 && this.field23411) {
-                var1.method13900(true);
+                var1.setCancelled(true);
             }
         }
     }
 
     @EventTarget
-    private void method16035(Class4436 var1) {
+    private void method16035(JumpEvent var1) {
         if (this.isEnabled()) {
             if (this.field23410 == 1) {
-                var1.method13900(true);
+                var1.setCancelled(true);
                 this.field23412 = true;
             }
         }
@@ -54,13 +54,13 @@ public class NoGroundCriticals extends Module {
 
     @EventTarget
     @HigherPriority
-    private void method16036(Class4399 var1) {
+    private void method16036(EventUpdate var1) {
         if (this.isEnabled()) {
             if (mc.player.onGround) {
                 this.field23413 = false;
                 if (this.field23412 && this.field23410 != 1) {
                     this.field23412 = !this.field23412;
-                    mc.player.method2914();
+                    mc.player.jump();
                 }
 
                 if (this.getStringSettingValueByName("Offset").equals("OldHypixel") != this.field23411) {
@@ -102,13 +102,13 @@ public class NoGroundCriticals extends Module {
                     var6 = true;
                 }
 
-                var1.method13912(var1.method13911() + var4);
-                var1.method13920(var6);
+                var1.setY(var1.getY() + var4);
+                var1.setGround(var6);
             } else {
                 this.field23410 = this.getBooleanValueFromSetttingName("Avoid Fall Damage") && !this.field23411 ? 3 : 0;
-                if (this.getBooleanValueFromSetttingName("Avoid Fall Damage") && this.field23411 && !this.field23413 && mc.player.getVec().y < -0.1) {
+                if (this.getBooleanValueFromSetttingName("Avoid Fall Damage") && this.field23411 && !this.field23413 && mc.player.getMotion().y < -0.1) {
                     this.field23413 = !this.field23413;
-                    var1.method13920(true);
+                    var1.setGround(true);
                 }
             }
         }

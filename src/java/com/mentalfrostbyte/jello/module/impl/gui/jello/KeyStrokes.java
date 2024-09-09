@@ -2,13 +2,13 @@ package com.mentalfrostbyte.jello.module.impl.gui.jello;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.ClickEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4430;
+import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.BlurUtil;
+import com.mentalfrostbyte.jello.unmapped.BlurEngine;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 
@@ -110,7 +110,7 @@ public class KeyStrokes extends Module {
     }
 
     @EventTarget
-    private void method16304(Class4415 var1) {
+    private void method16304(EventRender var1) {
         if (this.isEnabled() && mc.player != null) {
             if (!Minecraft.getInstance().gameSettings.showDebugInfo) {
                 if (!Minecraft.getInstance().gameSettings.hideGUI) {
@@ -125,8 +125,8 @@ public class KeyStrokes extends Module {
                                     this.field23585 + var8.field42635 + var9.field42635,
                                     this.field23586 + var8.field42636 + var9.field42636
                             );
-                            BlurUtil.method29971(this.field23585 + var8.field42635, this.field23586 + var8.field42636, var9.field42635, var9.field42636);
-                            BlurUtil.method29974();
+                            BlurEngine.method29971(this.field23585 + var8.field42635, this.field23586 + var8.field42636, var9.field42635, var9.field42636);
+                            BlurEngine.method29974();
                             RenderUtil.endScissor();
                         }
                     }
@@ -225,10 +225,10 @@ public class KeyStrokes extends Module {
     }
 
     @EventTarget
-    private void method16305(Class4430 var1) {
+    private void method16305(EventKeyPress var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (this.method16303(var1.method13977()) != null && !var1.method13978()) {
-                this.field23587.add(new Class7930(this, this.method16303(var1.method13977())));
+            if (this.method16303(var1.getKey()) != null && !var1.isPressed()) {
+                this.field23587.add(new Class7930(this, this.method16303(var1.getKey())));
             }
         }
     }

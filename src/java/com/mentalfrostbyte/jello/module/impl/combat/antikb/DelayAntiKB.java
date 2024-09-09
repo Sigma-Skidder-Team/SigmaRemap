@@ -32,14 +32,14 @@ public class DelayAntiKB extends Module {
             if (var1.getPacket() instanceof SExplosionPacket) {
                 SExplosionPacket var4 = (SExplosionPacket) var1.getPacket();
                 this.field23518.add(var4);
-                var1.method13900(true);
+                var1.setCancelled(true);
             }
 
             if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
                 SEntityVelocityPacket var5 = (SEntityVelocityPacket) var1.getPacket();
-                if (var5.method17565() == mc.player.getEntityId()) {
+                if (var5.getEntityID() == mc.player.getEntityId()) {
                     this.field23518.add(var5);
-                    var1.method13900(true);
+                    var1.setCancelled(true);
                     if (this.field23519 == 0) {
                         this.field23519 = (int) this.getNumberValueBySettingName("Delay");
                     }
@@ -51,8 +51,8 @@ public class DelayAntiKB extends Module {
     @EventTarget
     private void method16199(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13932() instanceof CUseEntityPacket) {
-                CUseEntityPacket var4 = (CUseEntityPacket) var1.method13932();
+            if (var1.getPacket() instanceof CUseEntityPacket) {
+                CUseEntityPacket var4 = (CUseEntityPacket) var1.getPacket();
                 CUseEntityPacket.Action var5 = var4.getAction();
                 if (var5 != CUseEntityPacket.Action.ATTACK) {
                 }
@@ -76,16 +76,16 @@ public class DelayAntiKB extends Module {
             if (!(var4 instanceof SEntityVelocityPacket)) {
                 if (var4 instanceof SExplosionPacket) {
                     SExplosionPacket var5 = (SExplosionPacket) var4;
-                    var5.field24473 = var5.field24473 * this.getNumberValueBySettingName("H-Multiplier");
-                    var5.field24475 = var5.field24475 * this.getNumberValueBySettingName("H-Multiplier");
-                    var5.field24474 = var5.field24474 * this.getNumberValueBySettingName("V-Multiplier");
+                    var5.motionX = var5.motionX * this.getNumberValueBySettingName("H-Multiplier");
+                    var5.motionZ = var5.motionZ * this.getNumberValueBySettingName("H-Multiplier");
+                    var5.motionY = var5.motionY * this.getNumberValueBySettingName("V-Multiplier");
                     mc.getConnection().handleExplosion(var5);
                 }
             } else {
                 SEntityVelocityPacket var6 = (SEntityVelocityPacket) var4;
-                var6.field24801 = (int) ((float) var6.field24801 * this.getNumberValueBySettingName("H-Multiplier"));
-                var6.field24803 = (int) ((float) var6.field24803 * this.getNumberValueBySettingName("H-Multiplier"));
-                var6.field24802 = (int) ((float) var6.field24802 * this.getNumberValueBySettingName("V-Multiplier"));
+                var6.motionX = (int) ((float) var6.motionX * this.getNumberValueBySettingName("H-Multiplier"));
+                var6.motionZ = (int) ((float) var6.motionZ * this.getNumberValueBySettingName("H-Multiplier"));
+                var6.motionY = (int) ((float) var6.motionY * this.getNumberValueBySettingName("V-Multiplier"));
                 mc.getConnection().handleEntityVelocity(var6);
             }
         }

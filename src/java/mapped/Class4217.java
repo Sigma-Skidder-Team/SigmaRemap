@@ -21,7 +21,7 @@ public class Class4217 extends Class4213 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       if (Class9312.method35192(this.field20539) / 25 > 0) {
          this.method13006(var1, var5, 0, 0, Class9312.method35193(this.field20539)[Direction.DOWN.getIndex()]);
       }

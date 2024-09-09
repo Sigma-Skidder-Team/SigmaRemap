@@ -48,8 +48,8 @@ public class Class4854 implements Class4842 {
       Class6207 var5 = new Class6207();
       int var6 = 0;
 
-      for (int var7 = 0; var7 < var1.method3629(); var7++) {
-         ItemStack var8 = var1.method3618(var7);
+      for (int var7 = 0; var7 < var1.getSizeInventory(); var7++) {
+         ItemStack var8 = var1.getStackInSlot(var7);
          if (!var8.isEmpty()) {
             var6++;
             var5.method19118(var8, 1);

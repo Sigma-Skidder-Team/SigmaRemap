@@ -4,14 +4,14 @@ import com.mentalfrostbyte.jello.event.CancellableEvent;
 
 public class ClickEvent extends CancellableEvent {
     private static String[] field21567;
-    private final Button field21568;
+    private final Button butoon;
 
     public ClickEvent(Button var1) {
-        this.field21568 = var1;
+        this.butoon = var1;
     }
 
-    public Button method13976() {
-        return this.field21568;
+    public Button getButton() {
+        return this.butoon;
     }
 
     public enum Button {

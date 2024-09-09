@@ -13,13 +13,13 @@ import java.util.UUID;
 
 public class Class6884 {
    private final String field29832;
-   private final Class4869 field29833;
+   private final Attribute field29833;
    private final AttributeModifierOperation field29834;
    private final Class6872 field29835;
    private final UUID field29836;
-   private final Class2106[] field29837;
+   private final EquipmentSlotType[] field29837;
 
-   private Class6884(String var1, Class4869 var2, AttributeModifierOperation var3, Class6872 var4, Class2106[] var5, UUID var6) {
+   private Class6884(String var1, Attribute var2, AttributeModifierOperation var3, Class6872 var4, EquipmentSlotType[] var5, UUID var6) {
       this.field29832 = var1;
       this.field29833 = var2;
       this.field29834 = var3;
@@ -41,7 +41,7 @@ public class Class6884 {
       if (this.field29837.length != 1) {
          JsonArray var5 = new JsonArray();
 
-         for (Class2106 var9 : this.field29837) {
+         for (EquipmentSlotType var9 : this.field29837) {
             var5.add(new JsonPrimitive(var9.method8775()));
          }
 
@@ -56,27 +56,27 @@ public class Class6884 {
    public static Class6884 method20961(JsonObject var0, JsonDeserializationContext var1) {
       String var4 = JSONUtils.method32763(var0, "name");
       ResourceLocation var5 = new ResourceLocation(JSONUtils.method32763(var0, "attribute"));
-      Class4869 var6 = Registry.field16087.method9184(var5);
+      Attribute var6 = Registry.field16087.method9184(var5);
       if (var6 == null) {
          throw new JsonSyntaxException("Unknown attribute: " + var5);
       } else {
          AttributeModifierOperation var7 = method20963(JSONUtils.method32763(var0, "operation"));
          Class6872 var8 = JSONUtils.<Class6872>method32788(var0, "amount", var1, Class6872.class);
          UUID var9 = null;
-         Class2106[] var10;
+         EquipmentSlotType[] var10;
          if (JSONUtils.method32755(var0, "slot")) {
-            var10 = new Class2106[]{Class2106.method8776(JSONUtils.method32763(var0, "slot"))};
+            var10 = new EquipmentSlotType[]{EquipmentSlotType.method8776(JSONUtils.method32763(var0, "slot"))};
          } else {
             if (!JSONUtils.method32759(var0, "slot")) {
                throw new JsonSyntaxException("Invalid or missing attribute modifier slot; must be either string or array of strings.");
             }
 
             JsonArray var11 = JSONUtils.method32785(var0, "slot");
-            var10 = new Class2106[var11.size()];
+            var10 = new EquipmentSlotType[var11.size()];
             int var12 = 0;
 
             for (JsonElement var14 : var11) {
-               var10[var12++] = Class2106.method8776(JSONUtils.method32762(var14, "slot"));
+               var10[var12++] = EquipmentSlotType.method8776(JSONUtils.method32762(var14, "slot"));
             }
 
             if (var10.length == 0) {
@@ -130,12 +130,12 @@ public class Class6884 {
    }
 
    // $VF: synthetic method
-   public static Class2106[] method20965(Class6884 var0) {
+   public static EquipmentSlotType[] method20965(Class6884 var0) {
       return var0.field29837;
    }
 
    // $VF: synthetic method
-   public static Class4869 method20966(Class6884 var0) {
+   public static Attribute method20966(Class6884 var0) {
       return var0.field29833;
    }
 

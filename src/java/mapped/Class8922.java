@@ -70,7 +70,7 @@ public class Class8922 {
          boolean var10 = var5.contains(Direction.SOUTH);
          boolean var11 = var5.contains(Direction.NORTH);
          boolean var12 = var5.size() == 1;
-         Class7481 var13 = var0.method7072();
+         ChunkPos var13 = var0.method7072();
          int var14 = var13.method24356() + (!var12 || !var11 && !var10 ? (!var9 ? 15 : 0) : 1);
          int var15 = var13.method24356() + (!var12 || !var11 && !var10 ? (!var9 ? 15 : 0) : 14);
          int var16 = var13.method24357() + (!var12 || !var8 && !var9 ? (!var11 ? 15 : 0) : 1);
@@ -99,7 +99,7 @@ public class Class8922 {
    private void method32606(Chunk var1) {
       BlockPos.Mutable var4 = new BlockPos.Mutable();
       BlockPos.Mutable var5 = new BlockPos.Mutable();
-      Class7481 var6 = var1.method7072();
+      ChunkPos var6 = var1.method7072();
       World var7 = var1.method7144();
 
       for (int var8 = 0; var8 < 16; var8++) {

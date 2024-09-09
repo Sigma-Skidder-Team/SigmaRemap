@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class Class6380 extends Class6355<Class1914, Class1932, Class1924, Class1921> {
+public class Class6380 extends ViaVersion7<Class1914, Class1932, Class1924, Class1921> {
    private static String[] field27946;
    public static final Class5980 field27947 = new Class5980();
    public static final Class2982 field27948 = var0 -> {
@@ -88,13 +88,13 @@ public class Class6380 extends Class6355<Class1914, Class1932, Class1924, Class1
       }
 
       var1.method22440(new Class6039(var1));
-      if (Class8042.method27612().method21925() && Class8042.method27614().method34424().<Class5404>method31084(Class5404.class) instanceof Class5406) {
+      if (ViaVersion3.method27612().method21925() && ViaVersion3.method27614().method34424().<Class5404>method31084(Class5404.class) instanceof Class5406) {
          var1.method22440(new Class6041(var1));
       }
    }
 
    @Override
-   public void method19349(Class8648 var1) {
+   public void method19349(ViaVersion6 var1) {
       var1.method31082(Class5412.class, new Class5412());
       var1.method31082(Class5403.class, new Class5403());
    }

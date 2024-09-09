@@ -53,7 +53,7 @@ public class Class3239 extends Class3238 {
    }
 
    private boolean method11645(Block var1) {
-      return var1.method11540(BlockTags.field32771) && var1.method11540(BlockTags.field32743) == this.method11579().method23446(BlockTags.field32743);
+      return var1.isIn(BlockTags.field32771) && var1.isIn(BlockTags.field32743) == this.method11579().method23446(BlockTags.field32743);
    }
 
    @Override
@@ -62,7 +62,7 @@ public class Class3239 extends Class3238 {
          return Class3329.method11880(var4, var2, var3);
       } else {
          ItemStack var9 = var4.getHeldItem(var5);
-         return var9.getItem() != Items.LEAD ? ActionResultType.field14820 : ActionResultType.field14818;
+         return var9.getItem() != Items.LEAD ? ActionResultType.field14820 : ActionResultType.SUCCESS;
       }
    }
 
@@ -93,7 +93,7 @@ public class Class3239 extends Class3238 {
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
       }
 
-      return var2.method544().method326() != Class76.field161
+      return var2.getAxis().method326() != Class76.field161
          ? super.method11491(var1, var2, var3, var4, var5, var6)
          : var1.method23465(field18685.get(var2), Boolean.valueOf(this.method11644(var3, var3.method23454(var4, var6, var2.method536()), var2.method536())));
    }

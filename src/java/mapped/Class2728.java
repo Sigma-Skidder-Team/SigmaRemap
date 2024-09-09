@@ -33,8 +33,8 @@ public class Class2728 extends Class2595 {
 
    @Override
    public void method10805() {
-      if (!this.field17236.method3245() && Class1026.method4560(this.field17236).nextInt(100) == 0) {
-         this.field17237.method2863(this.field17237.method4546(), Class1026.method4561(this.field17237), Class1026.method4562(this.field17237));
+      if (!this.field17236.isSilent() && Class1026.method4560(this.field17236).nextInt(100) == 0) {
+         this.field17237.playSound(this.field17237.method4546(), Class1026.method4561(this.field17237), Class1026.method4562(this.field17237));
       }
 
       if (!this.field17236.isPassenger() && Class1026.method4563(this.field17236).nextInt(50) == 0) {

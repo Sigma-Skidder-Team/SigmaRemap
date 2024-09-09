@@ -3,11 +3,11 @@ package mapped;
 import org.jetbrains.annotations.Nullable;
 
 public class Class7310 {
-   private final Class6355 field31335;
+   private final ViaVersion7 field31335;
    private final Class7981 field31336;
    private final int field31337 = 8;
 
-   public Class7310(Class6355 var1, Class7981 var2) {
+   public Class7310(ViaVersion7 var1, Class7981 var2) {
       this.field31335 = var1;
       this.field31336 = var2;
    }
@@ -50,7 +50,7 @@ public class Class7310 {
    }
 
    // $VF: synthetic method
-   public static Class6355 method23101(Class7310 var0) {
+   public static ViaVersion7 method23101(Class7310 var0) {
       return var0.field31335;
    }
 }

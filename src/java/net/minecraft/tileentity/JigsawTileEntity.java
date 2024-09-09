@@ -90,7 +90,7 @@ public class JigsawTileEntity extends TileEntity {
       this.field5411 = new ResourceLocation(var2.getString("pool"));
       this.field5413 = var2.getString("final_state");
       this.field5412 = OrientationType.method269(var2.getString("joint"))
-         .orElseGet(() -> !Class3249.method11675(var1).method544().method324() ? OrientationType.ROLLABLE : OrientationType.ALIGNED);
+         .orElseGet(() -> !JigsawBlock.method11675(var1).getAxis().method324() ? OrientationType.ROLLABLE : OrientationType.ALIGNED);
    }
 
    @Nullable

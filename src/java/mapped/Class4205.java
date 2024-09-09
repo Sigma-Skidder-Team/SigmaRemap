@@ -28,7 +28,7 @@ public class Class4205 extends Class4194 {
    @Override
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
-      var1.method102("Type", this.field20512);
+      var1.putInt("Type", this.field20512);
    }
 
    @Override
@@ -44,7 +44,7 @@ public class Class4205 extends Class4194 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       this.method12928(var1, var5, 0, 0, 0, 10, 6, 10, true, var4, Class9331.method35288());
       this.method12984(var1, var4, var5, this.field20495, 4, 1, 0);
       this.method12927(var1, var5, 4, 1, 10, 6, 3, 10, field20443, field20443, false);

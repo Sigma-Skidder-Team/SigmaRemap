@@ -32,7 +32,7 @@ public class Class3732<E extends Class1034> extends Class3676<E> {
    }
 
    public void method12502(ServerWorld var1, E var2, long var3) {
-      Class6947 var7 = var2.method2992();
+      Brain var7 = var2.getBrain();
       Optional var8 = var7.<Integer>method21410(Class8830.field39852);
       if (var8.isPresent()) {
          int var9 = (Integer)var8.get();

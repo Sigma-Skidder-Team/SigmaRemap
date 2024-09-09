@@ -309,7 +309,7 @@ public abstract class Module {
         this.field23394 = var1;
     }
 
-    public Module method16004() {
+    public Module access() {
         return this.field23394 != null ? this.field23394 : this;
     }
 

@@ -42,16 +42,16 @@ public class Class7363 extends Class7362 {
                (double)(-MathHelper.cos(this.field31519.rotationYaw * (float) (Math.PI / 180.0)))
             )
             .method11333();
-         float var6 = (float)var5.method11334(var4);
+         float var6 = (float)var5.dotProduct(var4);
          float var7 = (float)(Math.acos((double)var6) * 180.0F / (float)Math.PI) + 0.5F;
          if (var7 < 0.0F || var7 > 10.0F) {
             double var8 = var3.getPosX() - this.field31519.field5624.getPosX();
             double var10 = var3.getPosZ() - this.field31519.field5624.getPosZ();
-            double var12 = MathHelper.method37778(
-               MathHelper.method37793(180.0 - MathHelper.method37814(var8, var10) * 180.0F / (float)Math.PI - (double)this.field31519.rotationYaw), -100.0, 100.0
+            double var12 = MathHelper.clamp(
+               MathHelper.wrapDegrees(180.0 - MathHelper.method37814(var8, var10) * 180.0F / (float)Math.PI - (double)this.field31519.rotationYaw), -100.0, 100.0
             );
             this.field31519.field5636 *= 0.8F;
-            float var14 = MathHelper.method37766(var8 * var8 + var10 * var10) + 1.0F;
+            float var14 = MathHelper.sqrt(var8 * var8 + var10 * var10) + 1.0F;
             float var15 = var14;
             if (var14 > 40.0F) {
                var14 = 40.0F;

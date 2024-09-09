@@ -2,8 +2,8 @@ package com.mentalfrostbyte.jello.module.impl.gui.jello;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4407;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRenderGUI;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ClientResource;
@@ -73,7 +73,7 @@ public class ActiveMods extends Module {
     }
 
     @EventTarget
-    private void method16354(Class4407 var1) {
+    private void method16354(EventRenderGUI var1) {
         if (this.isEnabled() && mc.player != null) {
             if (!var1.method13939()) {
                 GlStateManager.method23839(0.0F, (float) (-this.field23614), 0.0F);
@@ -113,7 +113,7 @@ public class ActiveMods extends Module {
     }
 
     @EventTarget
-    private void method16355(Class4415 var1) {
+    private void method16355(EventRender var1) {
         if (this.isEnabled() && mc.player != null) {
             for (Module var5 : this.field23615.keySet()) {
                 if (this.getBooleanValueFromSetttingName("Animations")) {

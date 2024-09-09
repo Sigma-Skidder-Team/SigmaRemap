@@ -56,7 +56,7 @@ public class InfiniteAura extends Module {
     @Override
     public void onEnable() {
         this.field23898 = false;
-        this.field23897 = (int) (20.0F / this.method16004().getNumberValueBySettingName("CPS"));
+        this.field23897 = (int) (20.0F / this.access().getNumberValueBySettingName("CPS"));
         this.field23899 = (float) this.field23897;
     }
 
@@ -74,7 +74,7 @@ public class InfiniteAura extends Module {
             List<Class8012> var4 = this.method16775((float) ((int) this.getNumberValueBySettingName("Range")));
             if (var4 != null && var4.size() != 0) {
                 if (this.field23899 < 1.0F) {
-                    this.field23899 = this.field23899 + 20.0F / this.method16004().getNumberValueBySettingName("CPS");
+                    this.field23899 = this.field23899 + 20.0F / this.access().getNumberValueBySettingName("CPS");
                 }
 
                 this.field23897++;
@@ -202,14 +202,14 @@ public class InfiniteAura extends Module {
                 if (!Client.getInstance().getFriendManager().method26997(var8)) {
                     if (var8 instanceof LivingEntity) {
                         if (((LivingEntity) var8).getHealth() != 0.0F) {
-                            if (!(mc.player.method3275(var8) > var1)) {
-                                if (mc.player.method3026((LivingEntity) var8)) {
+                            if (!(mc.player.getDistance(var8) > var1)) {
+                                if (mc.player.canAttack((LivingEntity) var8)) {
                                     if (!(var8 instanceof ArmorStandEntity)) {
                                         if (!this.getBooleanValueFromSetttingName("Players") && var8 instanceof PlayerEntity) {
                                             var7.remove();
                                         } else if (var8 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var8)) {
                                             var7.remove();
-                                        } else if (!this.getBooleanValueFromSetttingName("Invisible") && var8.method3342()) {
+                                        } else if (!this.getBooleanValueFromSetttingName("Invisible") && var8.isInvisible()) {
                                             var7.remove();
                                         } else if (!this.getBooleanValueFromSetttingName("Animals/Monsters") && !(var8 instanceof PlayerEntity)) {
                                             var7.remove();
@@ -259,6 +259,6 @@ public class InfiniteAura extends Module {
 
     @Override
     public boolean method15988() {
-        return this.isEnabled() && this.method16776() && Client.getInstance().method19939().isalive();
+        return this.isEnabled() && this.method16776() && Client.getInstance().getPlayerTracker().isalive();
     }
 }

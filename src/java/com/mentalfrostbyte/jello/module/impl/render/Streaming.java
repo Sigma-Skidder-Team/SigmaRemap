@@ -1,9 +1,9 @@
 package com.mentalfrostbyte.jello.module.impl.render;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4410;
+import com.mentalfrostbyte.jello.event.impl.EventRenderEntity;
 import com.mentalfrostbyte.jello.event.impl.TextReplaceEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4433;
+import com.mentalfrostbyte.jello.event.impl.EventRenderNameTag;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.BooleanSetting;
@@ -22,19 +22,19 @@ public class Streaming extends Module {
     public void method16849(TextReplaceEvent var1) {
         if (this.isEnabled()) {
             if (this.getBooleanValueFromSetttingName("Hide server name") && this.getStringSettingValueByName("Server name").length() > 1) {
-                var1.method13959(var1.method13958().replaceAll(this.getStringSettingValueByName("Server name"), "sigmaclient"));
-                var1.method13959(var1.method13958().replaceAll(this.getStringSettingValueByName("Server name").toLowerCase(), "sigmaclient"));
-                var1.method13959(var1.method13958().replaceAll(this.getStringSettingValueByName("Server name").toUpperCase(), "sigmaclient"));
+                var1.setText(var1.setText().replaceAll(this.getStringSettingValueByName("Server name"), "sigmaclient"));
+                var1.setText(var1.setText().replaceAll(this.getStringSettingValueByName("Server name").toLowerCase(), "sigmaclient"));
+                var1.setText(var1.setText().replaceAll(this.getStringSettingValueByName("Server name").toUpperCase(), "sigmaclient"));
             }
         }
     }
 
     @EventTarget
-    public void method16850(Class4433 var1) {
+    public void method16850(EventRenderNameTag var1) {
     }
 
     @EventTarget
-    public void method16851(Class4410 var1) {
+    public void method16851(EventRenderEntity var1) {
         if (this.isEnabled()) {
             if (this.getBooleanValueFromSetttingName("Hide skins")) {
                 var1.method13955(false);

@@ -14,14 +14,14 @@ public class Class8368 {
    private final List<Suggestion> field35922;
    private int field35923;
    private int field35924;
-   private Class8513 field35925;
+   private Vector2f field35925;
    private boolean field35926;
    private int field35927;
    public final Class6850 field35928;
 
    public Class8368(Class6850 var0, int var1, int var2, int var3, List<Suggestion> var4, boolean var5) {
       this.field35928 = var0;
-      this.field35925 = Class8513.field37212;
+      this.field35925 = Vector2f.field37212;
       int var9 = var1 - 1;
       int var10 = !Class6850.method20846(var0) ? var2 : var2 - 3 - Math.min(var4.size(), Class6850.method20847(var0)) * 12;
       this.field35920 = new Class9518(var9, var10, var3 + 1, Math.min(var4.size(), Class6850.method20847(var0)) * 12);
@@ -38,7 +38,7 @@ public class Class8368 {
       boolean var10 = var8 || var9;
       boolean var11 = this.field35925.field37220 != (float)var2 || this.field35925.field37221 != (float)var3;
       if (var11) {
-         this.field35925 = new Class8513((float)var2, (float)var3);
+         this.field35925 = new Vector2f((float)var2, (float)var3);
       }
 
       if (var10) {

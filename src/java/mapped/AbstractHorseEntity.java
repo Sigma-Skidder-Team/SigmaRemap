@@ -147,12 +147,12 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    @Override
    public boolean method4901() {
-      return this.isAlive() && !this.method3005() && this.method4932();
+      return this.isAlive() && !this.isChild() && this.method4932();
    }
 
    @Override
    public void method4942(Class2266 var1) {
-      this.field5890.method3621(0, new ItemStack(Items.field37886));
+      this.field5890.setInventorySlotContents(0, new ItemStack(Items.field37886));
       if (var1 != null) {
          this.world.method6744((PlayerEntity)null, this, SoundEvents.field26677, var1, 0.5F, 1.0F);
       }
@@ -178,13 +178,13 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public boolean method3140() {
+   public boolean canBePushed() {
       return !this.isBeingRidden();
    }
 
    private void method4947() {
       this.method4955();
-      if (!this.method3245()) {
+      if (!this.isSilent()) {
          SoundEvent var3 = this.method4894();
          if (var3 != null) {
             this.world
@@ -203,30 +203,30 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public boolean method2921(float var1, float var2) {
+   public boolean onLivingFall(float var1, float var2) {
       if (var1 > 1.0F) {
-         this.method2863(SoundEvents.field26676, 0.4F, 1.0F);
+         this.playSound(SoundEvents.field26676, 0.4F, 1.0F);
       }
 
-      int var5 = this.method3067(var1, var2);
+      int var5 = this.calculateFallDamage(var1, var2);
       if (var5 <= 0) {
          return false;
       } else {
-         this.method2741(DamageSource.field39002, (float)var5);
+         this.attackEntityFrom(DamageSource.field39002, (float)var5);
          if (this.isBeingRidden()) {
             for (Entity var7 : this.method3411()) {
-               var7.method2741(DamageSource.field39002, (float)var5);
+               var7.attackEntityFrom(DamageSource.field39002, (float)var5);
             }
          }
 
-         this.method3068();
+         this.playFallSound();
          return true;
       }
    }
 
    @Override
-   public int method3067(float var1, float var2) {
-      return MathHelper.method37773((var1 * 0.5F - 3.0F) * var2);
+   public int calculateFallDamage(float var1, float var2) {
+      return MathHelper.ceil((var1 * 0.5F - 3.0F) * var2);
    }
 
    public int method4891() {
@@ -238,12 +238,12 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       this.field5890 = new Class927(this.method4891());
       if (var3 != null) {
          var3.method3673(this);
-         int var4 = Math.min(var3.method3629(), this.field5890.method3629());
+         int var4 = Math.min(var3.getSizeInventory(), this.field5890.getSizeInventory());
 
          for (int var5 = 0; var5 < var4; var5++) {
-            ItemStack var6 = var3.method3618(var5);
+            ItemStack var6 = var3.getStackInSlot(var5);
             if (!var6.isEmpty()) {
-               this.field5890.method3621(var5, var6.copy());
+               this.field5890.setInventorySlotContents(var5, var6.copy());
             }
          }
       }
@@ -254,21 +254,21 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    public void method4903() {
       if (!this.world.isRemote) {
-         this.method4931(4, !this.field5890.method3618(0).isEmpty());
+         this.method4931(4, !this.field5890.getStackInSlot(0).isEmpty());
       }
    }
 
    @Override
-   public void method4902(Class920 var1) {
+   public void method4902(IInventory var1) {
       boolean var4 = this.method4943();
       this.method4903();
       if (this.ticksExisted > 20 && !var4 && this.method4943()) {
-         this.method2863(SoundEvents.field26677, 0.5F, 1.0F);
+         this.playSound(SoundEvents.field26677, 0.5F, 1.0F);
       }
    }
 
    public double method4949() {
-      return this.method3086(Attributes.field42117);
+      return this.getAttributeValue(Attributes.field42117);
    }
 
    @Nullable
@@ -295,7 +295,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Nullable
    @Override
    public SoundEvent getAmbientSound() {
-      if (this.rand.nextInt(10) == 0 && !this.method2896()) {
+      if (this.rand.nextInt(10) == 0 && !this.isMovementBlocked()) {
          this.method4958();
       }
 
@@ -309,12 +309,12 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      if (!var2.method23384().method31085()) {
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      if (!var2.getMaterial().isLiquid()) {
          BlockState var5 = this.world.getBlockState(var1.up());
-         Class8447 var6 = var2.method23452();
-         if (var5.method23448(Blocks.SNOW)) {
-            var6 = var5.method23452();
+         SoundType var6 = var2.getSoundType();
+         if (var5.isIn(Blocks.SNOW)) {
+            var6 = var5.getSoundType();
          }
 
          if (this.isBeingRidden() && this.field5900) {
@@ -322,18 +322,18 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             if (this.field5901 > 5 && this.field5901 % 3 == 0) {
                this.method4950(var6);
             } else if (this.field5901 <= 5) {
-               this.method2863(SoundEvents.field26679, var6.method29710() * 0.15F, var6.method29711());
+               this.playSound(SoundEvents.field26679, var6.getVolume() * 0.15F, var6.method29711());
             }
-         } else if (var6 != Class8447.field36200) {
-            this.method2863(SoundEvents.field26678, var6.method29710() * 0.15F, var6.method29711());
+         } else if (var6 != SoundType.field36200) {
+            this.playSound(SoundEvents.field26678, var6.getVolume() * 0.15F, var6.method29711());
          } else {
-            this.method2863(SoundEvents.field26679, var6.method29710() * 0.15F, var6.method29711());
+            this.playSound(SoundEvents.field26679, var6.getVolume() * 0.15F, var6.method29711());
          }
       }
    }
 
-   public void method4950(Class8447 var1) {
-      this.method2863(SoundEvents.field26673, var1.method29710() * 0.15F, var1.method29711());
+   public void method4950(SoundType var1) {
+      this.playSound(SoundEvents.field26673, var1.getVolume() * 0.15F, var1.method29711());
    }
 
    public static Class7037 method4951() {
@@ -350,7 +350,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public float method3099() {
+   public float getSoundVolume() {
       return 0.8F;
    }
 
@@ -372,7 +372,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       }
 
       if (!this.world.isRemote) {
-         return !var5 ? ActionResultType.field14820 : ActionResultType.field14818;
+         return !var5 ? ActionResultType.field14820 : ActionResultType.SUCCESS;
       } else {
          return ActionResultType.field14819;
       }
@@ -428,12 +428,12 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       }
 
       if (this.getHealth() < this.method3075() && var6 > 0.0F) {
-         this.method3041(var6);
+         this.heal(var6);
          var5 = true;
       }
 
-      if (this.method3005() && var7 > 0) {
-         this.world.method6746(ParticleTypes.field34078, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), 0.0, 0.0, 0.0);
+      if (this.isChild() && var7 > 0) {
+         this.world.addParticle(ParticleTypes.field34078, this.getPosXRandom(1.0), this.getPosYRandom() + 0.5, this.getPosZRandom(1.0), 0.0, 0.0, 0.0);
          if (!this.world.isRemote) {
             this.method4769(var7);
          }
@@ -466,8 +466,8 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public boolean method2896() {
-      return super.method2896() && this.isBeingRidden() && this.method4943() || this.method4938() || this.method4939();
+   public boolean isMovementBlocked() {
+      return super.isMovementBlocked() && this.isBeingRidden() && this.method4943() || this.method4938() || this.method4939();
    }
 
    @Override
@@ -480,12 +480,12 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public void method2877() {
-      super.method2877();
+   public void dropInventory() {
+      super.dropInventory();
       if (this.field5890 != null) {
-         for (int var3 = 0; var3 < this.field5890.method3629(); var3++) {
-            ItemStack var4 = this.field5890.method3618(var3);
-            if (!var4.isEmpty() && !Class7858.method26335(var4)) {
+         for (int var3 = 0; var3 < this.field5890.getSizeInventory(); var3++) {
+            ItemStack var4 = this.field5890.getStackInSlot(var3);
+            if (!var4.isEmpty() && !EnchantmentHelper.method26335(var4)) {
                this.method3302(var4);
             }
          }
@@ -493,22 +493,22 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public void method2871() {
+   public void livingEntity() {
       if (this.rand.nextInt(200) == 0) {
          this.method4954();
       }
 
-      super.method2871();
+      super.livingEntity();
       if (!this.world.isRemote && this.isAlive()) {
-         if (this.rand.nextInt(900) == 0 && this.field4955 == 0) {
-            this.method3041(1.0F);
+         if (this.rand.nextInt(900) == 0 && this.deathTime == 0) {
+            this.heal(1.0F);
          }
 
          if (this.method4917()) {
             if (!this.method4938()
                && !this.isBeingRidden()
                && this.rand.nextInt(300) == 0
-               && this.world.getBlockState(this.getPosition().down()).method23448(Blocks.field36395)) {
+               && this.world.getBlockState(this.getPosition().down()).isIn(Blocks.field36395)) {
                this.method4956(true);
             }
 
@@ -523,7 +523,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public void method4916() {
-      if (this.method4940() && this.method3005() && !this.method4938()) {
+      if (this.method4940() && this.isChild() && !this.method4938()) {
          LivingEntity var3 = this.world
             .<AbstractHorseEntity>method7191(
                AbstractHorseEntity.class, field5880, this, this.getPosX(), this.getPosY(), this.getPosZ(), this.getBoundingBox().method19664(16.0)
@@ -546,7 +546,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          this.method4931(64, false);
       }
 
-      if ((this.method3418() || this.method3138()) && this.field5886 > 0 && ++this.field5886 > 20) {
+      if ((this.canPassengerSteer() || this.isServerWorld()) && this.field5886 > 0 && ++this.field5886 > 20) {
          this.field5886 = 0;
          this.method4957(false);
       }
@@ -625,7 +625,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    private void method4958() {
-      if (this.method3418() || this.method3138()) {
+      if (this.canPassengerSteer() || this.isServerWorld()) {
          this.field5886 = 1;
          this.method4957(true);
       }
@@ -636,7 +636,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          this.method4958();
          SoundEvent var3 = this.method4893();
          if (var3 != null) {
-            this.method2863(var3, this.method3099(), this.method3100());
+            this.playSound(var3, this.getSoundVolume(), this.getSoundPitch());
          }
       }
    }
@@ -648,12 +648,12 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          CriteriaTriggers.field44488.method15115((ServerPlayerEntity)var1, this);
       }
 
-      this.world.method6786(this, (byte)7);
+      this.world.setEntityState(this, (byte)7);
       return true;
    }
 
    @Override
-   public void method2915(Vector3d var1) {
+   public void travel(Vector3d var1) {
       if (this.isAlive()) {
          if (this.isBeingRidden() && this.method4277() && this.method4943()) {
             LivingEntity var4 = (LivingEntity)this.method3407();
@@ -661,10 +661,10 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             this.prevRotationYaw = this.rotationYaw;
             this.rotationPitch = var4.rotationPitch * 0.5F;
             this.setRotation(this.rotationYaw, this.rotationPitch);
-            this.field4965 = this.rotationYaw;
-            this.field4967 = this.field4965;
-            float var5 = var4.field4982 * 0.5F;
-            float var6 = var4.field4984;
+            this.renderYawOffset = this.rotationYaw;
+            this.rotationYawHead = this.renderYawOffset;
+            float var5 = var4.moveStrafing * 0.5F;
+            float var6 = var4.moveForward;
             if (var6 <= 0.0F) {
                var6 *= 0.25F;
                this.field5901 = 0;
@@ -676,35 +676,35 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             }
 
             if (this.field5892 > 0.0F && !this.method4935() && this.onGround) {
-               double var7 = this.method4949() * (double)this.field5892 * (double)this.method3229();
+               double var7 = this.method4949() * (double)this.field5892 * (double)this.getJumpFactor();
                double var9;
-               if (!this.method3033(Effects.JUMP_BOOST)) {
+               if (!this.isPotionActive(Effects.JUMP_BOOST)) {
                   var9 = var7;
                } else {
-                  var9 = var7 + (double)((float)(this.method3034(Effects.JUMP_BOOST).method8629() + 1) * 0.1F);
+                  var9 = var7 + (double)((float)(this.getActivePotionEffect(Effects.JUMP_BOOST).method8629() + 1) * 0.1F);
                }
 
-               Vector3d var11 = this.getVec();
-               this.method3435(var11.x, var9, var11.z);
+               Vector3d var11 = this.getMotion();
+               this.setMotion(var11.x, var9, var11.z);
                this.method4937(true);
                this.isAirBorne = true;
                if (var6 > 0.0F) {
                   float var12 = MathHelper.sin(this.rotationYaw * (float) (Math.PI / 180.0));
                   float var13 = MathHelper.cos(this.rotationYaw * (float) (Math.PI / 180.0));
-                  this.method3434(this.getVec().method11339((double)(-0.4F * var12 * this.field5892), 0.0, (double)(0.4F * var13 * this.field5892)));
+                  this.setMotion(this.getMotion().add((double)(-0.4F * var12 * this.field5892), 0.0, (double)(0.4F * var13 * this.field5892)));
                }
 
                this.field5892 = 0.0F;
             }
 
-            this.field4969 = this.method2918() * 0.1F;
-            if (!this.method3418()) {
+            this.jumpMovementFactor = this.getAIMoveSpeed() * 0.1F;
+            if (!this.canPassengerSteer()) {
                if (var4 instanceof PlayerEntity) {
-                  this.method3434(Vector3d.ZERO);
+                  this.setMotion(Vector3d.ZERO);
                }
             } else {
-               this.method3113((float)this.method3086(Attributes.MOVEMENT_SPEED));
-               super.method2915(new Vector3d((double)var5, var1.y, (double)var6));
+               this.setAIMoveSpeed((float)this.getAttributeValue(Attributes.MOVEMENT_SPEED));
+               super.travel(new Vector3d((double)var5, var1.y, (double)var6));
             }
 
             if (this.onGround) {
@@ -714,35 +714,35 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
             this.method3108(this, false);
          } else {
-            this.field4969 = 0.02F;
-            super.method2915(var1);
+            this.jumpMovementFactor = 0.02F;
+            super.travel(var1);
          }
       }
    }
 
    public void method4960() {
-      this.method2863(SoundEvents.field26675, 0.4F, 1.0F);
+      this.playSound(SoundEvents.field26675, 0.4F, 1.0F);
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.putBoolean("EatingHaystack", this.method4938());
       var1.putBoolean("Bred", this.method4940());
-      var1.method102("Temper", this.method4944());
+      var1.putInt("Temper", this.method4944());
       var1.putBoolean("Tame", this.method4932());
       if (this.method4933() != null) {
          var1.method104("Owner", this.method4933());
       }
 
-      if (!this.field5890.method3618(0).isEmpty()) {
-         var1.put("SaddleItem", this.field5890.method3618(0).method32112(new CompoundNBT()));
+      if (!this.field5890.getStackInSlot(0).isEmpty()) {
+         var1.put("SaddleItem", this.field5890.getStackInSlot(0).method32112(new CompoundNBT()));
       }
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method4956(var1.getBoolean("EatingHaystack"));
       this.method4941(var1.getBoolean("Bred"));
       this.method4945(var1.getInt("Temper"));
@@ -762,7 +762,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       if (var1.contains("SaddleItem", 10)) {
          ItemStack var6 = ItemStack.method32104(var1.getCompound("SaddleItem"));
          if (var6.getItem() == Items.field37886) {
-            this.field5890.method3621(0, var6);
+            this.field5890.setInventorySlotContents(0, var6);
          }
       }
 
@@ -775,7 +775,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public boolean method4961() {
-      return !this.isBeingRidden() && !this.isPassenger() && this.method4932() && !this.method3005() && this.getHealth() >= this.method3075() && this.method4507();
+      return !this.isBeingRidden() && !this.isPassenger() && this.method4932() && !this.isChild() && this.getHealth() >= this.method3075() && this.method4507();
    }
 
    @Nullable
@@ -786,11 +786,11 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    public void method4962(Class1045 var1, AbstractHorseEntity var2) {
       double var5 = this.method3087(Attributes.field42105) + var1.method3087(Attributes.field42105) + (double)this.method4971();
-      var2.method3085(Attributes.field42105).method38661(var5 / 3.0);
+      var2.getAttribute(Attributes.field42105).method38661(var5 / 3.0);
       double var7 = this.method3087(Attributes.field42117) + var1.method3087(Attributes.field42117) + this.method4972();
-      var2.method3085(Attributes.field42117).method38661(var7 / 3.0);
+      var2.getAttribute(Attributes.field42117).method38661(var7 / 3.0);
       double var9 = this.method3087(Attributes.MOVEMENT_SPEED) + var1.method3087(Attributes.MOVEMENT_SPEED) + this.method4973();
-      var2.method3085(Attributes.MOVEMENT_SPEED).method38661(var9 / 3.0);
+      var2.getAttribute(Attributes.MOVEMENT_SPEED).method38661(var9 / 3.0);
    }
 
    @Override
@@ -851,15 +851,15 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          double var6 = this.rand.nextGaussian() * 0.02;
          double var8 = this.rand.nextGaussian() * 0.02;
          double var10 = this.rand.nextGaussian() * 0.02;
-         this.world.method6746(var4, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var6, var8, var10);
+         this.world.addParticle(var4, this.getPosXRandom(1.0), this.getPosYRandom() + 0.5, this.getPosZRandom(1.0), var6, var8, var10);
       }
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 7) {
          if (var1 != 6) {
-            super.method2866(var1);
+            super.handleStatusUpdate(var1);
          } else {
             this.method4970(false);
          }
@@ -873,12 +873,12 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       super.method3307(var1);
       if (var1 instanceof Class1006) {
          Class1006 var4 = (Class1006)var1;
-         this.field4965 = var4.field4965;
+         this.renderYawOffset = var4.renderYawOffset;
       }
 
       if (this.field5897 > 0.0F) {
-         float var8 = MathHelper.sin(this.field4965 * (float) (Math.PI / 180.0));
-         float var5 = MathHelper.cos(this.field4965 * (float) (Math.PI / 180.0));
+         float var8 = MathHelper.sin(this.renderYawOffset * (float) (Math.PI / 180.0));
+         float var5 = MathHelper.cos(this.renderYawOffset * (float) (Math.PI / 180.0));
          float var6 = 0.7F * this.field5897;
          float var7 = 0.15F * this.field5897;
          var1.setPosition(
@@ -887,7 +887,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             this.getPosZ() - (double)(var6 * var5)
          );
          if (var1 instanceof LivingEntity) {
-            ((LivingEntity)var1).field4965 = this.field4965;
+            ((LivingEntity)var1).renderYawOffset = this.renderYawOffset;
          }
       }
    }
@@ -905,12 +905,12 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public boolean method3063() {
+   public boolean isOnLadder() {
       return false;
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return var2.field39969 * 0.95F;
    }
 
@@ -919,7 +919,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public boolean method4899() {
-      return !this.method2943(Class2106.field13735).isEmpty();
+      return !this.getItemStackFromSlot(EquipmentSlotType.field13735).isEmpty();
    }
 
    public boolean method4900(ItemStack var1) {
@@ -929,20 +929,20 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Override
    public boolean method2963(int var1, ItemStack var2) {
       int var5 = var1 - 400;
-      if (var5 >= 0 && var5 < 2 && var5 < this.field5890.method3629()) {
+      if (var5 >= 0 && var5 < 2 && var5 < this.field5890.getSizeInventory()) {
          if (var5 == 0 && var2.getItem() != Items.field37886) {
             return false;
          } else if (var5 == 1 && (!this.method4898() || !this.method4900(var2))) {
             return false;
          } else {
-            this.field5890.method3621(var5, var2);
+            this.field5890.setInventorySlotContents(var5, var2);
             this.method4903();
             return true;
          }
       } else {
          int var6 = var1 - 500 + 2;
-         if (var6 >= 2 && var6 < this.field5890.method3629()) {
-            this.field5890.method3621(var6, var2);
+         if (var6 >= 2 && var6 < this.field5890.getSizeInventory()) {
+            this.field5890.setInventorySlotContents(var6, var2);
             return true;
          } else {
             return false;
@@ -953,7 +953,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Nullable
    @Override
    public Entity method3407() {
-      return !this.method3408().isEmpty() ? this.method3408().get(0) : null;
+      return !this.getPassengers().isEmpty() ? this.getPassengers().get(0) : null;
    }
 
    @Nullable
@@ -962,7 +962,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
       double var7 = this.getBoundingBox().minY;
       double var9 = this.getPosZ() + var1.z;
       BlockPos.Mutable var11 = new BlockPos.Mutable();
-      UnmodifiableIterator var12 = var2.method2982().iterator();
+      UnmodifiableIterator var12 = var2.getAvailablePoses().iterator();
 
       while (var12.hasNext()) {
          Pose var13 = (Pose)var12.next();
@@ -976,10 +976,10 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
             }
 
             if (Class4527.method14423(var16)) {
-               AxisAlignedBB var18 = var2.method3172(var13);
+               AxisAlignedBB var18 = var2.getPoseAABB(var13);
                Vector3d var19 = new Vector3d(var5, (double)var11.getY() + var16, var9);
-               if (Class4527.method14424(this.world, var2, var18.method19669(var19))) {
-                  var2.method3211(var13);
+               if (Class4527.method14424(this.world, var2, var18.offset(var19))) {
+                  var2.setPose(var13);
                   return var19;
                }
             }
@@ -994,12 +994,12 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Override
    public Vector3d method3420(LivingEntity var1) {
       Vector3d var4 = method3419(
-         (double)this.method3429(), (double)var1.method3429(), this.rotationYaw + (var1.method2967() != HandSide.field14418 ? -90.0F : 90.0F)
+         (double)this.getWidth(), (double)var1.getWidth(), this.rotationYaw + (var1.getPrimaryHand() != HandSide.field14418 ? -90.0F : 90.0F)
       );
       Vector3d var5 = this.method4974(var4, var1);
       if (var5 == null) {
          Vector3d var6 = method3419(
-            (double)this.method3429(), (double)var1.method3429(), this.rotationYaw + (var1.method2967() != HandSide.field14417 ? -90.0F : 90.0F)
+            (double)this.getWidth(), (double)var1.getWidth(), this.rotationYaw + (var1.getPrimaryHand() != HandSide.field14417 ? -90.0F : 90.0F)
          );
          Vector3d var7 = this.method4974(var6, var1);
          return var7 == null ? this.getPositionVec() : var7;

@@ -118,7 +118,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       }
    }
 
-   private static void method3643(Map<Item, Integer> var0, Class3303 var1, int var2) {
+   private static void method3643(Map<Item, Integer> var0, IItemProvider var1, int var2) {
       Item var5 = var1.method11581();
       if (!method3641(var5)) {
          var0.put(var5, var2);
@@ -140,7 +140,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    @Override
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      this.field5247 = NonNullList.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
+      this.field5247 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
       Class7920.method26567(var2, this.field5247);
       this.field5248 = var2.getShort("BurnTime");
       this.field5250 = var2.getShort("CookTime");
@@ -156,12 +156,12 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    @Override
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
-      var1.method101("BurnTime", (short)this.field5248);
-      var1.method101("CookTime", (short)this.field5250);
-      var1.method101("CookTimeTotal", (short)this.field5251);
+      var1.putShort("BurnTime", (short)this.field5248);
+      var1.putShort("CookTime", (short)this.field5250);
+      var1.putShort("CookTimeTotal", (short)this.field5251);
       Class7920.method26565(var1, this.field5247);
       CompoundNBT var4 = new CompoundNBT();
-      this.field5253.forEach((var1x, var2) -> var4.method102(var1x.toString(), var2));
+      this.field5253.forEach((var1x, var2) -> var4.putInt(var1x.toString(), var2));
       var1.put("RecipesUsed", var4);
       return var1;
    }
@@ -217,7 +217,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       }
 
       if (var4) {
-         this.method3622();
+         this.markDirty();
       }
    }
 
@@ -229,7 +229,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
             if (var5.isEmpty()) {
                return true;
             } else if (var5.method32132(var4)) {
-               return var5.getCount() < this.method3630() && var5.getCount() < var5.method32113() ? true : var5.getCount() < var4.method32113();
+               return var5.getCount() < this.getInventoryStackLimit() && var5.getCount() < var5.method32113() ? true : var5.getCount() < var4.method32113();
             } else {
                return false;
             }
@@ -296,7 +296,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
 
    @Override
    public boolean method3654(int var1, ItemStack var2, Direction var3) {
-      return this.method3633(var1, var2);
+      return this.isItemValidForSlot(var1, var2);
    }
 
    @Override
@@ -312,12 +312,12 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    @Override
-   public int method3629() {
+   public int getSizeInventory() {
       return this.field5247.size();
    }
 
    @Override
-   public boolean method3617() {
+   public boolean isEmpty() {
       for (ItemStack var4 : this.field5247) {
          if (!var4.isEmpty()) {
             return false;
@@ -328,46 +328,46 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    }
 
    @Override
-   public ItemStack method3618(int var1) {
+   public ItemStack getStackInSlot(int var1) {
       return this.field5247.get(var1);
    }
 
    @Override
-   public ItemStack method3619(int var1, int var2) {
+   public ItemStack decrStackSize(int var1, int var2) {
       return Class7920.method26563(this.field5247, var1, var2);
    }
 
    @Override
-   public ItemStack method3620(int var1) {
+   public ItemStack removeStackFromSlot(int var1) {
       return Class7920.method26564(this.field5247, var1);
    }
 
    @Override
-   public void method3621(int var1, ItemStack var2) {
+   public void setInventorySlotContents(int var1, ItemStack var2) {
       ItemStack var5 = this.field5247.get(var1);
       boolean var6 = !var2.isEmpty() && var2.method32132(var5) && ItemStack.method32127(var2, var5);
       this.field5247.set(var1, var2);
-      if (var2.getCount() > this.method3630()) {
-         var2.method32180(this.method3630());
+      if (var2.getCount() > this.getInventoryStackLimit()) {
+         var2.method32180(this.getInventoryStackLimit());
       }
 
       if (var1 == 0 && !var6) {
          this.field5251 = this.method3651();
          this.field5250 = 0;
-         this.method3622();
+         this.markDirty();
       }
    }
 
    @Override
-   public boolean method3623(PlayerEntity var1) {
+   public boolean isUsableByPlayer(PlayerEntity var1) {
       return this.field5324.getTileEntity(this.field5325) == this
-         ? var1.method3276((double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.getZ() + 0.5)
+         ? var1.getDistanceNearest((double)this.field5325.getX() + 0.5, (double)this.field5325.getY() + 0.5, (double)this.field5325.getZ() + 0.5)
             <= 64.0
          : false;
    }
 
    @Override
-   public boolean method3633(int var1, ItemStack var2) {
+   public boolean isItemValidForSlot(int var1, ItemStack var2) {
       if (var1 != 2) {
          if (var1 != 1) {
             return true;
@@ -432,9 +432,9 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       }
 
       while (var6 > 0) {
-         int var8 = ExperienceOrbEntity.method4179(var6);
+         int var8 = ExperienceOrbEntity.getXPSplit(var6);
          var6 -= var8;
-         var0.method6916(new ExperienceOrbEntity(var0, var1.x, var1.y, var1.z, var8));
+         var0.addEntity(new ExperienceOrbEntity(var0, var1.x, var1.y, var1.z, var8));
       }
    }
 

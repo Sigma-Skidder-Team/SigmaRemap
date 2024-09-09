@@ -26,7 +26,7 @@ public class Class2745 extends Class2595 {
             if (var3 < 4.0 || var3 > 16.0) {
                return false;
             } else {
-               return this.field17274.method3226() ? this.field17274.method3013().nextInt(5) == 0 : false;
+               return this.field17274.isOnGround() ? this.field17274.getRNG().nextInt(5) == 0 : false;
             }
          } else {
             return false;
@@ -38,19 +38,19 @@ public class Class2745 extends Class2595 {
 
    @Override
    public boolean method10806() {
-      return !this.field17274.method3226();
+      return !this.field17274.isOnGround();
    }
 
    @Override
    public void method10804() {
-      Vector3d var3 = this.field17274.getVec();
+      Vector3d var3 = this.field17274.getMotion();
       Vector3d var4 = new Vector3d(
          this.field17275.getPosX() - this.field17274.getPosX(), 0.0, this.field17275.getPosZ() - this.field17274.getPosZ()
       );
-      if (var4.method11349() > 1.0E-7) {
-         var4 = var4.method11333().method11344(0.4).method11338(var3.method11344(0.2));
+      if (var4.lengthSquared() > 1.0E-7) {
+         var4 = var4.method11333().scale(0.4).add(var3.scale(0.2));
       }
 
-      this.field17274.method3435(var4.x, (double)this.field17276, var4.z);
+      this.field17274.setMotion(var4.x, (double)this.field17276, var4.z);
    }
 }

@@ -5,7 +5,7 @@ import com.google.common.collect.Queues;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.event.impl.StopUseItemEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4403;
+import com.mentalfrostbyte.jello.event.impl.EventRayTraceResult;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.ClickEvent;
 import com.mojang.authlib.GameProfile;
@@ -1123,9 +1123,9 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
                   this.leftClickCounter = 10;
                }
             } else if (!this.player.isRowingBoat()) {
-               Class4403 var2 = null;
+               EventRayTraceResult var2 = null;
                if (this.objectMouseOver.getType() == RayTraceResult.Type.ENTITY) {
-                  var2 = new Class4403(((EntityRayTraceResult)this.objectMouseOver).getEntity(), true);
+                  var2 = new EventRayTraceResult(((EntityRayTraceResult)this.objectMouseOver).getEntity(), true);
                   Client.getInstance().getEventManager().call(var2);
                   if (var2.isCancelled()) {
                      return;
@@ -1135,7 +1135,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
                switch (Class9158.field42043[this.objectMouseOver.getType().ordinal()]) {
                   case 1:
-                     this.playerController.method23141(this.player, ((EntityRayTraceResult)this.objectMouseOver).getEntity());
+                     this.playerController.attackEntity(this.player, ((EntityRayTraceResult)this.objectMouseOver).getEntity());
                      if (var2 != null) {
                         var2.method13938();
                         Client.getInstance().getEventManager().call(var2);

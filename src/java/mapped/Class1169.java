@@ -18,7 +18,7 @@ public class Class1169 extends Class1155<Class1169> {
       this.field6341 = var1;
       this.field6335 = var2;
       this.field6336 = var2.method33211();
-      int var5 = Class1305.method6193(var1.field6817).method28961(Class8876.field40102.method172(var2));
+      int var5 = Class1305.method6193(var1.field6817).method28961(Stats.field40102.method172(var2));
       if (var5 != 0) {
          this.field6337 = new TranslationTextComponent("stat_type.minecraft.killed", var5, this.field6336);
          this.field6338 = true;
@@ -27,7 +27,7 @@ public class Class1169 extends Class1155<Class1169> {
          this.field6338 = false;
       }
 
-      int var6 = Class1305.method6193(var1.field6817).method28961(Class8876.field40103.method172(var2));
+      int var6 = Class1305.method6193(var1.field6817).method28961(Stats.field40103.method172(var2));
       if (var6 != 0) {
          this.field6339 = new TranslationTextComponent("stat_type.minecraft.killed_by", this.field6336, var6);
          this.field6340 = true;

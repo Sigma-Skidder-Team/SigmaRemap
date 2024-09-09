@@ -27,7 +27,7 @@ public class Class2670 extends Class2595 {
    @Override
    public boolean method10803() {
       if (this.field17053.method6740()) {
-         if (!this.field17048.method3250()) {
+         if (!this.field17048.isInWater()) {
             Vector3d var3 = this.method10889();
             if (var3 != null) {
                this.field17049 = var3.x;
@@ -57,12 +57,12 @@ public class Class2670 extends Class2595 {
 
    @Nullable
    private Vector3d method10889() {
-      Random var3 = this.field17048.method3013();
+      Random var3 = this.field17048.getRNG();
       BlockPos var4 = this.field17048.getPosition();
 
       for (int var5 = 0; var5 < 10; var5++) {
          BlockPos var6 = var4.method8336(var3.nextInt(20) - 10, 2 - var3.nextInt(8), var3.nextInt(20) - 10);
-         if (this.field17053.getBlockState(var6).method23448(Blocks.WATER)) {
+         if (this.field17053.getBlockState(var6).isIn(Blocks.WATER)) {
             return Vector3d.method11330(var6);
          }
       }

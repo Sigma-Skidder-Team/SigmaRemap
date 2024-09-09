@@ -17,8 +17,8 @@ public class Class3711 extends Class3676<Class1042> {
 
    public void method12502(ServerWorld var1, Class1042 var2, long var3) {
       if (method12592(var2) || method12591(var2)) {
-         Class6947 var7 = var2.method2992();
-         if (!var7.method21430(Class8890.field40225)) {
+         Brain var7 = var2.getBrain();
+         if (!var7.method21430(Activity.field40225)) {
             var7.method21405(Class8830.field39831);
             var7.method21405(Class8830.field39824);
             var7.method21405(Class8830.field39825);
@@ -26,7 +26,7 @@ public class Class3711 extends Class3676<Class1042> {
             var7.method21405(Class8830.field39828);
          }
 
-         var7.method21419(Class8890.field40225);
+         var7.method21419(Activity.field40225);
       }
    }
 
@@ -37,10 +37,10 @@ public class Class3711 extends Class3676<Class1042> {
    }
 
    public static boolean method12591(LivingEntity var0) {
-      return var0.method2992().method21404(Class8830.field39838);
+      return var0.getBrain().method21404(Class8830.field39838);
    }
 
    public static boolean method12592(LivingEntity var0) {
-      return var0.method2992().method21404(Class8830.field39835);
+      return var0.getBrain().method21404(Class8830.field39835);
    }
 }

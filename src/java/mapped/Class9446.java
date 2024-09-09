@@ -272,7 +272,7 @@ public class Class9446 {
             }
          }
 
-         if (!var0.method3327()) {
+         if (!var0.isBurning()) {
             if (!field43881.isEmpty()) {
                String var11 = Class6022.method18649(var0);
                Integer var4 = field43881.get(var11);
@@ -306,7 +306,7 @@ public class Class9446 {
                            int var5 = method36318(var17);
                            ItemStack var6 = var15.method3091();
                            int var7 = method36318(var6);
-                           ItemStack var8 = var15.method2943(Class2106.field13736);
+                           ItemStack var8 = var15.getItemStackFromSlot(EquipmentSlotType.field13736);
                            int var9 = method36318(var8);
                            int var10 = Math.max(var5, var7);
                            return Math.max(var10, var9);
@@ -317,7 +317,7 @@ public class Class9446 {
                      }
                   } else {
                      Class1103 var12 = (Class1103)var0;
-                     return !var12.method3327() ? 10 : 15;
+                     return !var12.isBurning() ? 10 : 15;
                   }
                } else {
                   return 15;
@@ -357,6 +357,6 @@ public class Class9446 {
    }
 
    public static ItemStack method36323(ItemEntity var0) {
-      return var0.method3210().<ItemStack>method35445(field43893);
+      return var0.getDataManager().<ItemStack>method35445(field43893);
    }
 }

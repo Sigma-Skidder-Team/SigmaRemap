@@ -54,7 +54,7 @@ public class Class2610 extends Class2595 {
       return this.field16865.method4230().method21664()
          ? false
          : this.field16865.method4232() == null
-            && !this.field16867.method8317(this.field16865.getPositionVec(), (double)(this.field16865.method3429() + (float)this.field16869))
+            && !this.field16867.method8317(this.field16865.getPositionVec(), (double)(this.field16865.getWidth() + (float)this.field16869))
             && !this.field16870;
    }
 

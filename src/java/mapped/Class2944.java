@@ -85,11 +85,11 @@ public class Class2944 extends Class2898<Class4707> {
          }
       }
 
-      EnderCrystalEntity var22 = EntityType.field41023.method33215(var1.method6970());
+      EnderCrystalEntity var22 = EntityType.field41023.create(var1.method6970());
       var22.method4142(var3.method14777());
       var22.method3363(var3.method14775());
-      var22.method3273((double)var4.method37626() + 0.5, (double)(var4.method37629() + 1), (double)var4.method37627() + 0.5, var2.nextFloat() * 360.0F, 0.0F);
-      var1.method6916(var22);
+      var22.setLocationAndAngles((double)var4.method37626() + 0.5, (double)(var4.method37629() + 1), (double)var4.method37627() + 0.5, var2.nextFloat() * 360.0F, 0.0F);
+      var1.addEntity(var22);
       this.method11217(var1, new BlockPos(var4.method37626(), var4.method37629(), var4.method37627()), Blocks.BEDROCK.method11579());
    }
 }

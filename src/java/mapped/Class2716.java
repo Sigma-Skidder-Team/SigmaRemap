@@ -21,6 +21,6 @@ public class Class2716<T extends LivingEntity> extends Class2709<T> {
 
    @Override
    public boolean method10806() {
-      return this.field17191 == null ? super.method10806() : this.field17191.method30210(this.field17153, this.field17190);
+      return this.field17191 == null ? super.method10806() : this.field17191.canTarget(this.field17153, this.field17190);
    }
 }

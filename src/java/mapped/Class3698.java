@@ -44,12 +44,12 @@ public class Class3698 extends Class3676<Class1046> {
    }
 
    public boolean method12508(ServerWorld var1, Class1046 var2) {
-      if (this.field19743 && var2.method3005()) {
+      if (this.field19743 && var2.isChild()) {
          return false;
       } else if (this.field19745 != 0L) {
-         return var1.method6783() >= this.field19745;
+         return var1.getGameTime() >= this.field19745;
       } else {
-         this.field19745 = var2.world.method6783() + (long)var1.rand.nextInt(20);
+         this.field19745 = var2.world.getGameTime() + (long)var1.rand.nextInt(20);
          return false;
       }
    }
@@ -77,8 +77,8 @@ public class Class3698 extends Class3676<Class1046> {
          BlockPos var13 = var10.method28712();
          var7.method6676(var13).ifPresent(var5 -> {
             var7.method6672(this.field19741.method15182(), var1xx -> var1xx.equals(var13), var13, 1);
-            var2.method2992().method21406(this.field19742, Class9378.method35577(var1.getDimensionKey(), var13));
-            this.field19744.ifPresent(var2xx -> var1.method6786(var2, var2xx));
+            var2.getBrain().method21406(this.field19742, Class9378.method35577(var1.getDimensionKey(), var13));
+            this.field19744.ifPresent(var2xx -> var1.setEntityState(var2, var2xx));
             this.field19746.clear();
             Class7393.method23615(var1, var13);
          });

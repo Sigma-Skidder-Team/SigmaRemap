@@ -51,7 +51,7 @@ public class Class2024 implements Comparable<Class2024> {
       }
    }
 
-   public Class1894 method8648() {
+   public GameType method8648() {
       return this.field13143.method32427();
    }
 

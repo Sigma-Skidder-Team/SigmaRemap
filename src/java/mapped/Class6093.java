@@ -11,7 +11,7 @@ import java.util.Map.Entry;
 public class Class6093 extends Class6069 {
    private static String[] field27337;
 
-   public Class6093(Class1937 var1, Class2106... var2) {
+   public Class6093(Class1937 var1, EquipmentSlotType... var2) {
       super(var1, Class2242.field14673, var2);
    }
 
@@ -32,20 +32,20 @@ public class Class6093 extends Class6069 {
 
    @Override
    public boolean method18821(ItemStack var1) {
-      return !(var1.getItem() instanceof Class3279) ? super.method18821(var1) : true;
+      return !(var1.getItem() instanceof ArmorItem) ? super.method18821(var1) : true;
    }
 
    @Override
    public void method18823(LivingEntity var1, Entity var2, int var3) {
-      Random var6 = var1.method3013();
-      Entry var7 = Class7858.method26339(Class8122.field34903, var1);
+      Random var6 = var1.getRNG();
+      Entry var7 = EnchantmentHelper.method26339(Class8122.field34903, var1);
       if (method18830(var3, var6)) {
          if (var2 != null) {
-            var2.method2741(DamageSource.method31125(var1), (float)method18831(var3, var6));
+            var2.attackEntityFrom(DamageSource.method31125(var1), (float)method18831(var3, var6));
          }
 
          if (var7 != null) {
-            ((ItemStack)var7.getValue()).method32121(2, var1, var1x -> var1x.method3184((Class2106)var7.getKey()));
+            ((ItemStack)var7.getValue()).method32121(2, var1, var1x -> var1x.sendBreakAnimation((EquipmentSlotType)var7.getKey()));
          }
       }
    }

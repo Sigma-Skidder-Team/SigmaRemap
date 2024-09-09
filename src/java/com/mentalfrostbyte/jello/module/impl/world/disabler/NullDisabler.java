@@ -21,11 +21,11 @@ public class NullDisabler extends Module {
                 if (var1.getPacket() instanceof SConfirmTransactionPacket) {
                     SConfirmTransactionPacket var4 = (SConfirmTransactionPacket) var1.getPacket();
                     if (var4.method17422() < 0 || !this.getBooleanValueFromSetttingName("Inv Bypass")) {
-                        var1.method13900(true);
+                        var1.setCancelled(true);
                     }
                 }
             } else {
-                var1.method13900(true);
+                var1.setCancelled(true);
             }
         }
     }

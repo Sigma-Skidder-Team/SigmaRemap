@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableList.Builder;
 import java.util.Arrays;
 
-public class Class2881<T extends Class1079> extends Class2803<T> {
+public class Class2881<T extends WitherEntity> extends Class2803<T> {
    private static String[] field17862;
    private final Class7219[] field17863;
    private final Class7219[] field17864;
@@ -59,7 +59,7 @@ public class Class2881<T extends Class1079> extends Class2803<T> {
 
    public void method10997(T var1, float var2, float var3, float var4) {
       for (int var7 = 1; var7 < 3; var7++) {
-         this.field17864[var7].field31036 = (var1.method5010(var7 - 1) - var1.field4965) * (float) (Math.PI / 180.0);
+         this.field17864[var7].field31036 = (var1.method5010(var7 - 1) - var1.renderYawOffset) * (float) (Math.PI / 180.0);
          this.field17864[var7].field31035 = var1.method5011(var7 - 1) * (float) (Math.PI / 180.0);
       }
    }

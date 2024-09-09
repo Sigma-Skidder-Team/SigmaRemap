@@ -35,7 +35,7 @@ public class Class1104 extends Class1009 {
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return 0.13F;
    }
 
@@ -44,7 +44,7 @@ public class Class1104 extends Class1009 {
    }
 
    @Override
-   public boolean method2940() {
+   public boolean canTriggerWalking() {
       return false;
    }
 
@@ -64,34 +64,34 @@ public class Class1104 extends Class1009 {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(SoundEvents.field26554, 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(SoundEvents.field26554, 0.15F, 1.0F);
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.field6063 = var1.getInt("Lifetime");
       this.field6064 = var1.getBoolean("PlayerSpawned");
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("Lifetime", this.field6063);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("Lifetime", this.field6063);
       var1.putBoolean("PlayerSpawned", this.field6064);
    }
 
    @Override
    public void tick() {
-      this.field4965 = this.rotationYaw;
+      this.renderYawOffset = this.rotationYaw;
       super.tick();
    }
 
    @Override
-   public void method3144(float var1) {
+   public void setRenderYawOffset(float var1) {
       this.rotationYaw = var1;
-      super.method3144(var1);
+      super.setRenderYawOffset(var1);
    }
 
    @Override
@@ -108,24 +108,24 @@ public class Class1104 extends Class1009 {
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
+   public void livingEntity() {
+      super.livingEntity();
       if (!this.world.isRemote) {
          if (!this.method4282()) {
             this.field6063++;
          }
 
          if (this.field6063 >= 2400) {
-            this.method2904();
+            this.remove();
          }
       } else {
          for (int var3 = 0; var3 < 2; var3++) {
             this.world
-               .method6746(
+               .addParticle(
                   ParticleTypes.field34090,
-                  this.method3438(0.5),
-                  this.method3441(),
-                  this.method3445(0.5),
+                  this.getPosXRandom(0.5),
+                  this.getPosYRandom(),
+                  this.getPosZRandom(0.5),
                   (this.rand.nextDouble() - 0.5) * 2.0,
                   -this.rand.nextDouble(),
                   (this.rand.nextDouble() - 0.5) * 2.0
@@ -144,7 +144,7 @@ public class Class1104 extends Class1009 {
    }
 
    @Override
-   public Class7809 method3089() {
-      return Class7809.field33507;
+   public CreatureAttribute getCreatureAttribute() {
+      return CreatureAttribute.field33507;
    }
 }

@@ -47,7 +47,7 @@ public class Class2673 extends Class2672 {
 
    @Override
    public void method10890() {
-      this.field17062.method4232().method3035(new Class2023(Effects.BLINDNESS, 400));
+      this.field17062.method4232().addPotionEffect(new EffectInstance(Effects.BLINDNESS, 400));
    }
 
    @Override

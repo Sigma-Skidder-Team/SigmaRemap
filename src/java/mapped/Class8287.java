@@ -79,7 +79,7 @@ public class Class8287 extends Class8286 {
             if (!var7.isJsonNull()) {
                CompoundNBT var8 = method28966(var7.getAsJsonObject());
                if (!var8.contains("DataVersion", 99)) {
-                  var8.method102("DataVersion", 1343);
+                  var8.putInt("DataVersion", 1343);
                }
 
                var8 = Class8354.method29289(var1, Class2108.field13754, var8, var8.getInt("DataVersion"));
@@ -151,7 +151,7 @@ public class Class8287 extends Class8286 {
             if (var6.isJsonPrimitive()) {
                JsonPrimitive var7 = var6.getAsJsonPrimitive();
                if (var7.isNumber()) {
-                  var3.method102((String)var5.getKey(), var7.getAsInt());
+                  var3.putInt((String)var5.getKey(), var7.getAsInt());
                }
             }
          } else {

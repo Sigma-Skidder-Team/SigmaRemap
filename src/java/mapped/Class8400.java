@@ -18,7 +18,7 @@ public class Class8400 {
       this.field36049 = var1;
    }
 
-   public TextureAtlasSprite method29490(Class3303 var1) {
+   public TextureAtlasSprite method29490(IItemProvider var1) {
       return this.method29491(new ItemStack(var1));
    }
 

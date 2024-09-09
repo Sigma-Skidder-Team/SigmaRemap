@@ -33,10 +33,10 @@ public class Class2766 extends Class2595 {
    @Override
    public void method10804() {
       LivingEntity var3 = this.field17340.method4232();
-      Vector3d var4 = var3.method3286(1.0F);
+      Vector3d var4 = var3.getEyePosition(1.0F);
       Class1100.method5280(this.field17340).method20813(var4.x, var4.y, var4.z, 1.0);
       this.field17340.method5276(true);
-      this.field17340.method2863(SoundEvents.field27186, 1.0F, 1.0F);
+      this.field17340.playSound(SoundEvents.field27186, 1.0F, 1.0F);
    }
 
    @Override
@@ -50,11 +50,11 @@ public class Class2766 extends Class2595 {
       if (!this.field17340.getBoundingBox().method19670(var3.getBoundingBox())) {
          double var4 = this.field17340.getDistanceSq(var3);
          if (var4 < 9.0) {
-            Vector3d var6 = var3.method3286(1.0F);
+            Vector3d var6 = var3.getEyePosition(1.0F);
             Class1100.method5281(this.field17340).method20813(var6.x, var6.y, var6.z, 1.0);
          }
       } else {
-         this.field17340.method3114(var3);
+         this.field17340.attackEntityAsMob(var3);
          this.field17340.method5276(false);
       }
    }

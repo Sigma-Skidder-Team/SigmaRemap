@@ -16,11 +16,11 @@ public class Class7871 {
       this.field33732 = var3;
    }
 
-   public boolean method26390(Class7481 var1) {
+   public boolean method26390(ChunkPos var1) {
       return var1.field32174 == this.field33730 && var1.field32175 == this.field33731;
    }
 
-   public int method26391(Class7481 var1) {
+   public int method26391(ChunkPos var1) {
       return (int)Math.sqrt(
          (double)(
             (var1.field32174 - this.field33730) * (var1.field32174 - this.field33730)
@@ -29,7 +29,7 @@ public class Class7871 {
       );
    }
 
-   public Class7481 method26392() {
-      return new Class7481(this.field33730, this.field33731);
+   public ChunkPos method26392() {
+      return new ChunkPos(this.field33730, this.field33731);
    }
 }

@@ -26,43 +26,43 @@ import java.util.concurrent.TimeUnit;
 import org.jetbrains.annotations.Nullable;
 
 public class Class9019 {
-   public static final Class6355 field41257 = new Class6377();
+   public static final ViaVersion7 field41257 = new Class6377();
    public static int field41258 = -1;
    public static int field41259 = 50;
-   private static final Int2ObjectMap<Int2ObjectMap<Class6355>> field41260 = new Int2ObjectOpenHashMap(32);
-   private static final Map<Class<? extends Class6355>, Class6355> field41261 = new HashMap<Class<? extends Class6355>, Class6355>();
-   private static final Map<Class9284<Integer, Integer>, List<Class9284<Integer, Class6355>>> field41262 = new ConcurrentHashMap<Class9284<Integer, Integer>, List<Class9284<Integer, Class6355>>>();
+   private static final Int2ObjectMap<Int2ObjectMap<ViaVersion7>> field41260 = new Int2ObjectOpenHashMap(32);
+   private static final Map<Class<? extends ViaVersion7>, ViaVersion7> field41261 = new HashMap<Class<? extends ViaVersion7>, ViaVersion7>();
+   private static final Map<Class9284<Integer, Integer>, List<Class9284<Integer, ViaVersion7>>> field41262 = new ConcurrentHashMap<Class9284<Integer, Integer>, List<Class9284<Integer, ViaVersion7>>>();
    private static final Set<Integer> field41263 = new HashSet<Integer>();
-   private static final List<Class9284<Range<Integer>, Class6355>> field41264 = Lists.newCopyOnWriteArrayList();
-   private static final List<Class6355> field41265 = new ArrayList<Class6355>();
+   private static final List<Class9284<Range<Integer>, ViaVersion7>> field41264 = Lists.newCopyOnWriteArrayList();
+   private static final List<ViaVersion7> field41265 = new ArrayList<ViaVersion7>();
    private static final Object field41266 = new Object();
-   private static Map<Class<? extends Class6355>, CompletableFuture<Void>> field41267 = new HashMap<Class<? extends Class6355>, CompletableFuture<Void>>();
+   private static Map<Class<? extends ViaVersion7>, CompletableFuture<Void>> field41267 = new HashMap<Class<? extends ViaVersion7>, CompletableFuture<Void>>();
    private static ThreadPoolExecutor field41268;
    private static boolean field41269;
 
    public static void method33354() {
    }
 
-   public static void method33355(Class6355 var0, ViaVerList var1, ViaVerList var2) {
+   public static void method33355(ViaVersion7 var0, ViaVerList var1, ViaVerList var2) {
       method33356(var0, Collections.<Integer>singletonList(var1.method18573()), var2.method18573());
    }
 
-   public static void method33356(Class6355 var0, List<Integer> var1, int var2) {
+   public static void method33356(ViaVersion7 var0, List<Integer> var1, int var2) {
       if (!field41262.isEmpty()) {
          field41262.clear();
       }
 
-      field41261.put((Class<? extends Class6355>)var0.getClass(), var0);
+      field41261.put((Class<? extends ViaVersion7>)var0.getClass(), var0);
 
       for (int var6 : var1) {
          Int2ObjectMap var7 = (Int2ObjectMap)field41260.computeIfAbsent(var6, var0x -> new Int2ObjectOpenHashMap(2));
          var7.put(var2, var0);
       }
 
-      if (!Class8042.method27613().method27361()) {
+      if (!ViaVersion3.method27613().method27361()) {
          field41265.add(var0);
       } else {
-         var0.method19349(Class8042.method27614().method34424());
+         var0.method19349(ViaVersion3.method27614().method34424());
          method33358();
       }
 
@@ -70,17 +70,17 @@ public class Class9019 {
          if (field41268 == null) {
             var0.method19347();
          } else {
-            method33370((Class<? extends Class6355>)var0.getClass(), var0::method19347);
+            method33370((Class<? extends ViaVersion7>)var0.getClass(), var0::method19347);
          }
       }
    }
 
-   public static void method33357(Class6355 var0, Range<Integer> var1) {
-      field41264.add(new Class9284<Range<Integer>, Class6355>(var1, var0));
-      if (!Class8042.method27613().method27361()) {
+   public static void method33357(ViaVersion7 var0, Range<Integer> var1) {
+      field41264.add(new Class9284<Range<Integer>, ViaVersion7>(var1, var0));
+      if (!ViaVersion3.method27613().method27361()) {
          field41265.add(var0);
       } else {
-         var0.method19349(Class8042.method27614().method34424());
+         var0.method19349(ViaVersion3.method27614().method34424());
          method33358();
       }
    }
@@ -90,7 +90,7 @@ public class Class9019 {
       field41263.add(field41258);
 
       for (ViaVerList var3 : ViaVerList.method18571()) {
-         List<Class9284<Integer, Class6355>> var4 = method33363(var3.method18573(), field41258);
+         List<Class9284<Integer, ViaVersion7>> var4 = method33363(var3.method18573(), field41258);
          if (var4 != null) {
             field41263.add(var3.method18573());
 
@@ -119,13 +119,13 @@ public class Class9019 {
    }
 
    public static void method33361() {
-      for (Class6355 var3 : field41265) {
-         var3.method19349(Class8042.method27614().method34424());
+      for (ViaVersion7 var3 : field41265) {
+         var3.method19349(ViaVersion3.method27614().method34424());
       }
    }
 
    @Nullable
-   private static List<Class9284<Integer, Class6355>> method33362(List<Class9284<Integer, Class6355>> var0, int var1, int var2) {
+   private static List<Class9284<Integer, ViaVersion7>> method33362(List<Class9284<Integer, ViaVersion7>> var0, int var1, int var2) {
       if (var1 == var2) {
          return null;
       } else if (var0.size() > field41259) {
@@ -135,9 +135,9 @@ public class Class9019 {
          if (var5 == null) {
             return null;
          } else {
-            Class6355 var6 = (Class6355)var5.get(var2);
+            ViaVersion7 var6 = (ViaVersion7)var5.get(var2);
             if (var6 != null) {
-               var0.add(new Class9284<Integer, Class6355>(var2, var6));
+               var0.add(new Class9284<Integer, ViaVersion7>(var2, var6));
                return var0;
             } else {
                List var7 = null;
@@ -165,11 +165,11 @@ public class Class9019 {
    }
 
    @Nullable
-   public static List<Class9284<Integer, Class6355>> method33363(int var0, int var1) {
+   public static List<Class9284<Integer, ViaVersion7>> method33363(int var0, int var1) {
       Class9284 var4 = new Class9284<Integer, Integer>(var0, var1);
       List var5 = field41262.get(var4);
       if (var5 == null) {
-         List var6 = method33362(new ArrayList<Class9284<Integer, Class6355>>(), var0, var1);
+         List var6 = method33362(new ArrayList<Class9284<Integer, ViaVersion7>>(), var0, var1);
          if (var6 != null) {
             field41262.put(var4, var6);
          }
@@ -181,21 +181,21 @@ public class Class9019 {
    }
 
    @Nullable
-   public static Class6355 method33364(Class<? extends Class6355> var0) {
+   public static ViaVersion7 method33364(Class<? extends ViaVersion7> var0) {
       return field41261.get(var0);
    }
 
-   public static Class6355 method33365(int var0) {
+   public static ViaVersion7 method33365(int var0) {
       for (Class9284 var4 : Lists.reverse(field41264)) {
          if (((Range)var4.method35008()).contains(var0)) {
-            return (Class6355)var4.method35009();
+            return (ViaVersion7)var4.method35009();
          }
       }
 
       throw new IllegalStateException("No Base Protocol for " + var0);
    }
 
-   public static boolean method33366(Class6355 var0) {
+   public static boolean method33366(ViaVersion7 var0) {
       for (Class9284 var4 : field41264) {
          if (var4.method35009() == var0) {
             return true;
@@ -205,7 +205,7 @@ public class Class9019 {
       return false;
    }
 
-   public static void method33367(Class<? extends Class6355> var0) throws Exception {
+   public static void method33367(Class<? extends ViaVersion7> var0) throws Exception {
       if (!field41269) {
          CompletableFuture var3 = method33372(var0);
          if (var3 != null) {
@@ -232,7 +232,7 @@ public class Class9019 {
    }
 
    private static void method33369() {
-      Class8042.method27613().method27366().info("Shutting down mapping loader executor!");
+      ViaVersion3.method27613().method27366().info("Shutting down mapping loader executor!");
       field41269 = true;
       field41268.shutdown();
       field41268 = null;
@@ -243,10 +243,10 @@ public class Class9019 {
       }
    }
 
-   public static void method33370(Class<? extends Class6355> var0, Runnable var1) {
+   public static void method33370(Class<? extends ViaVersion7> var0, Runnable var1) {
       synchronized (field41266) {
          CompletableFuture var5 = CompletableFuture.runAsync(var1, field41268).exceptionally(var1x -> {
-            Class8042.method27613().method27366().severe("Error during mapping loading of " + var0.getSimpleName());
+            ViaVersion3.method27613().method27366().severe("Error during mapping loading of " + var0.getSimpleName());
             var1x.printStackTrace();
             return null;
          });
@@ -254,10 +254,10 @@ public class Class9019 {
       }
    }
 
-   public static void method33371(Class<? extends Class6355> var0, Class<? extends Class6355> var1, Runnable var2) {
+   public static void method33371(Class<? extends ViaVersion7> var0, Class<? extends ViaVersion7> var1, Runnable var2) {
       synchronized (field41266) {
          CompletableFuture var6 = method33372(var1).whenCompleteAsync((var1x, var2x) -> var2.run(), field41268).exceptionally(var1x -> {
-            Class8042.method27613().method27366().severe("Error during mapping loading of " + var0.getSimpleName());
+            ViaVersion3.method27613().method27366().severe("Error during mapping loading of " + var0.getSimpleName());
             var1x.printStackTrace();
             return null;
          });
@@ -266,7 +266,7 @@ public class Class9019 {
    }
 
    @Nullable
-   public static CompletableFuture<Void> method33372(Class<? extends Class6355> var0) {
+   public static CompletableFuture<Void> method33372(Class<? extends ViaVersion7> var0) {
       synchronized (field41266) {
          return field41269 ? null : field41267.get(var0);
       }

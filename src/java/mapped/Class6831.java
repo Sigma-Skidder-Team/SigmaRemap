@@ -34,7 +34,7 @@ public class Class6831 extends Class6829 {
       float var14 = MathHelper.method37792(this.field29717.rotationYaw + 90.0F);
       float var15 = MathHelper.method37792(var13 * (180.0F / (float)Math.PI));
       this.field29717.rotationYaw = MathHelper.method37798(var14, var15, 4.0F) - 90.0F;
-      this.field29717.field4965 = this.field29717.rotationYaw;
+      this.field29717.renderYawOffset = this.field29717.rotationYaw;
       if (!(MathHelper.method37795(var12, this.field29717.rotationYaw) < 3.0F)) {
          this.field29716 = MathHelper.method37797(this.field29716, 0.2F, 0.025F);
       } else {
@@ -47,7 +47,7 @@ public class Class6831 extends Class6829 {
       double var18 = (double)(this.field29716 * MathHelper.cos(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var3 / var10);
       double var20 = (double)(this.field29716 * MathHelper.sin(var17 * (float) (Math.PI / 180.0))) * Math.abs((double)var5 / var10);
       double var22 = (double)(this.field29716 * MathHelper.sin(var16 * (float) (Math.PI / 180.0))) * Math.abs((double)var4 / var10);
-      Vector3d var24 = this.field29717.getVec();
-      this.field29717.method3434(var24.method11338(new Vector3d(var18, var22, var20).method11336(var24).method11344(0.2)));
+      Vector3d var24 = this.field29717.getMotion();
+      this.field29717.setMotion(var24.add(new Vector3d(var18, var22, var20).method11336(var24).scale(0.2)));
    }
 }

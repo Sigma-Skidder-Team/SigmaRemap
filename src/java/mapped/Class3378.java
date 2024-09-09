@@ -34,7 +34,7 @@ public class Class3378 extends Class3377 {
          for (Direction var11 : Direction.values()) {
             var7.method8377(var3, var11);
             BlockState var12 = var2.getBlockState(var7);
-            if (var12.method23448(this) && !this.method11969(var12, var2, var7)) {
+            if (var12.isIn(this) && !this.method11969(var12, var2, var7)) {
                var2.method6860().method20726(var7, this, MathHelper.method37782(var4, 20, 40));
             }
          }
@@ -69,7 +69,7 @@ public class Class3378 extends Class3377 {
 
       for (Direction var11 : Direction.values()) {
          var7.method8377(var2, var11);
-         if (var1.getBlockState(var7).method23448(this)) {
+         if (var1.getBlockState(var7).isIn(this)) {
             if (++var6 >= var3) {
                return false;
             }

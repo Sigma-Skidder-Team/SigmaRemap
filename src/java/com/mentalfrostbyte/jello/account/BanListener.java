@@ -31,9 +31,9 @@ public class BanListener {
                                 "You are blacklisted from MinemenClub. "
                         )
                 );
-                if (!var4.method17648().getSiblings().isEmpty()
-                        && var5.contains(var4.method17648().getString())
-                        && var4.method17648().getSiblings().get(0).getStyle().getColor().toString().equalsIgnoreCase("red")) {
+                if (!var4.getChatComponent().getSiblings().isEmpty()
+                        && var5.contains(var4.getChatComponent().getString())
+                        && var4.getChatComponent().getSiblings().get(0).getStyle().getColor().toString().equalsIgnoreCase("red")) {
                     Account var6 = Client.getInstance().getAccountManager().containsAccount();
                     if (var6 != null) {
                         Ban var7 = new Ban(this.field38719.getCurrentServerData().field33189, new Date(Long.MAX_VALUE));

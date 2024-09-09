@@ -43,16 +43,16 @@ public class Vector3d implements Class2955 {
       this((double)var1.method25269(), (double)var1.method25270(), (double)var1.method25271());
    }
 
-   public Vector3d method11332(Vector3d var1) {
+   public Vector3d subtractReverse(Vector3d var1) {
       return new Vector3d(var1.x - this.x, var1.y - this.y, var1.z - this.z);
    }
 
    public Vector3d method11333() {
-      double var3 = (double) MathHelper.method37766(this.x * this.x + this.y * this.y + this.z * this.z);
+      double var3 = (double) MathHelper.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
       return !(var3 < 1.0E-4) ? new Vector3d(this.x / var3, this.y / var3, this.z / var3) : ZERO;
    }
 
-   public double method11334(Vector3d var1) {
+   public double dotProduct(Vector3d var1) {
       return this.x * var1.x + this.y * var1.y + this.z * var1.z;
    }
 
@@ -69,14 +69,14 @@ public class Vector3d implements Class2955 {
    }
 
    public Vector3d method11337(double var1, double var3, double var5) {
-      return this.method11339(-var1, -var3, -var5);
+      return this.add(-var1, -var3, -var5);
    }
 
-   public Vector3d method11338(Vector3d var1) {
-      return this.method11339(var1.x, var1.y, var1.z);
+   public Vector3d add(Vector3d var1) {
+      return this.add(var1.x, var1.y, var1.z);
    }
 
-   public Vector3d method11339(double var1, double var3, double var5) {
+   public Vector3d add(double var1, double var3, double var5) {
       return new Vector3d(this.x + var1, this.y + var3, this.z + var5);
    }
 
@@ -88,7 +88,7 @@ public class Vector3d implements Class2955 {
       double var4 = var1.x - this.x;
       double var6 = var1.y - this.y;
       double var8 = var1.z - this.z;
-      return (double) MathHelper.method37766(var4 * var4 + var6 * var6 + var8 * var8);
+      return (double) MathHelper.sqrt(var4 * var4 + var6 * var6 + var8 * var8);
    }
 
    public double method11342(Vector3d var1) {
@@ -105,12 +105,12 @@ public class Vector3d implements Class2955 {
       return var9 * var9 + var11 * var11 + var13 * var13;
    }
 
-   public Vector3d method11344(double var1) {
+   public Vector3d scale(double var1) {
       return this.method11347(var1, var1, var1);
    }
 
    public Vector3d method11345() {
-      return this.method11344(-1.0);
+      return this.scale(-1.0);
    }
 
    public Vector3d method11346(Vector3d var1) {
@@ -121,11 +121,11 @@ public class Vector3d implements Class2955 {
       return new Vector3d(this.x * var1, this.y * var3, this.z * var5);
    }
 
-   public double method11348() {
-      return (double) MathHelper.method37766(this.x * this.x + this.y * this.y + this.z * this.z);
+   public double length() {
+      return (double) MathHelper.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
    }
 
-   public double method11349() {
+   public double lengthSquared() {
       return this.x * this.x + this.y * this.y + this.z * this.z;
    }
 
@@ -189,7 +189,7 @@ public class Vector3d implements Class2955 {
       return new Vector3d(var6, var8, var10);
    }
 
-   public static Vector3d method11353(Class8513 var0) {
+   public static Vector3d method11353(Vector2f var0) {
       return method11354(var0.field37220, var0.field37221);
    }
 
@@ -201,14 +201,14 @@ public class Vector3d implements Class2955 {
       return new Vector3d((double)(var5 * var6), (double)var7, (double)(var4 * var6));
    }
 
-   public Vector3d method11355(EnumSet<Class113> var1) {
-      double var4 = !var1.contains(Class113.field413) ? this.x : (double) MathHelper.floor(this.x);
-      double var6 = !var1.contains(Class113.field414) ? this.y : (double) MathHelper.floor(this.y);
-      double var8 = !var1.contains(Class113.field415) ? this.z : (double) MathHelper.floor(this.z);
+   public Vector3d method11355(EnumSet<Direction> var1) {
+      double var4 = !var1.contains(Direction.field413) ? this.x : (double) MathHelper.floor(this.x);
+      double var6 = !var1.contains(Direction.field414) ? this.y : (double) MathHelper.floor(this.y);
+      double var8 = !var1.contains(Direction.field415) ? this.z : (double) MathHelper.floor(this.z);
       return new Vector3d(var4, var6, var8);
    }
 
-   public double method11356(Class113 var1) {
+   public double getCoordinate(Direction var1) {
       return var1.method328(this.x, this.y, this.z);
    }
 

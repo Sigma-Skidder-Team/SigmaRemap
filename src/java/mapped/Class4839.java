@@ -18,8 +18,8 @@ public class Class4839 extends Class4837 {
       ItemStack var5 = ItemStack.EMPTY;
       ArrayList var6 = Lists.newArrayList();
 
-      for (int var7 = 0; var7 < var1.method3629(); var7++) {
-         ItemStack var8 = var1.method3618(var7);
+      for (int var7 = 0; var7 < var1.getSizeInventory(); var7++) {
+         ItemStack var8 = var1.getStackInSlot(var7);
          if (!var8.isEmpty()) {
             if (!(var8.getItem() instanceof Class3277)) {
                if (!(var8.getItem() instanceof Class3321)) {
@@ -44,8 +44,8 @@ public class Class4839 extends Class4837 {
       ArrayList var4 = Lists.newArrayList();
       ItemStack var5 = ItemStack.EMPTY;
 
-      for (int var6 = 0; var6 < var1.method3629(); var6++) {
-         ItemStack var7 = var1.method3618(var6);
+      for (int var6 = 0; var6 < var1.getSizeInventory(); var6++) {
+         ItemStack var7 = var1.getStackInSlot(var6);
          if (!var7.isEmpty()) {
             Item var8 = var7.getItem();
             if (!(var8 instanceof Class3277)) {

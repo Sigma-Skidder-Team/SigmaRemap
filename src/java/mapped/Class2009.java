@@ -16,10 +16,10 @@ public abstract class Class2009 implements Comparable<Class2009> {
    public final Class8066 field13078;
 
    public Class2009(Class8066 var1, double var2) {
-      this(var1, (Class7481)null, var2);
+      this(var1, (ChunkPos)null, var2);
    }
 
-   public Class2009(Class8066 var1, Class7481 var2, double var3) {
+   public Class2009(Class8066 var1, ChunkPos var2, double var3) {
       this.field13078 = var1;
       this.field13076 = new AtomicBoolean(false);
       this.field13075 = var3;

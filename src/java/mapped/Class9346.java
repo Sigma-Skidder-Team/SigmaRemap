@@ -158,13 +158,13 @@ public class Class9346 {
       var3.put("buy", this.field43384.method32112(new CompoundNBT()));
       var3.put("sell", this.field43386.method32112(new CompoundNBT()));
       var3.put("buyB", this.field43385.method32112(new CompoundNBT()));
-      var3.method102("uses", this.field43387);
-      var3.method102("maxUses", this.field43388);
+      var3.putInt("uses", this.field43387);
+      var3.putInt("maxUses", this.field43388);
       var3.putBoolean("rewardExp", this.field43389);
-      var3.method102("xp", this.field43393);
+      var3.putInt("xp", this.field43393);
       var3.putFloat("priceMultiplier", this.field43392);
-      var3.method102("specialPrice", this.field43390);
-      var3.method102("demand", this.field43391);
+      var3.putInt("specialPrice", this.field43390);
+      var3.putInt("demand", this.field43391);
       return var3;
    }
 

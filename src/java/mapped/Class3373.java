@@ -63,10 +63,10 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
                }
             }
 
-            return !var12.method3842(var4) ? ActionResultType.field14820 : ActionResultType.field14818;
+            return !var12.method3842(var4) ? ActionResultType.field14820 : ActionResultType.SUCCESS;
          }
       } else {
-         return !var10 ? ActionResultType.field14819 : ActionResultType.field14818;
+         return !var10 ? ActionResultType.field14819 : ActionResultType.SUCCESS;
       }
    }
 

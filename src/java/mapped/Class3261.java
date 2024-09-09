@@ -48,13 +48,13 @@ public class Class3261 extends Class3262 implements Class3260 {
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
       if (!method11755(var6)) {
-         if (var2.method2983(var6).isEmpty()) {
+         if (var2.findAmmo(var6).isEmpty()) {
             return Class6794.<ItemStack>method20699(var6);
          } else {
             if (!method11755(var6)) {
                this.field18746 = false;
                this.field18747 = false;
-               var2.method3154(var3);
+               var2.setActiveHand(var3);
             }
 
             return Class6794.<ItemStack>method20697(var6);
@@ -87,10 +87,10 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    private static boolean method11753(LivingEntity var0, ItemStack var1) {
-      int var4 = Class7858.method26311(Class8122.field34929, var1);
+      int var4 = EnchantmentHelper.method26311(Class8122.field34929, var1);
       int var5 = var4 != 0 ? 3 : 1;
       boolean var6 = var0 instanceof PlayerEntity && ((PlayerEntity)var0).abilities.isCreativeMode;
-      ItemStack var7 = var0.method2983(var1);
+      ItemStack var7 = var0.findAmmo(var1);
       ItemStack var8 = var7.copy();
 
       for (int var9 = 0; var9 < var5; var9++) {
@@ -197,13 +197,13 @@ public class Class3261 extends Class3262 implements Class3260 {
                ((AbstractArrowEntity)var13).pickupStatus = AbstractArrowEntityPickupStatus.field14333;
             }
          } else {
-            var13 = new Class888(var0, var4, var1, var1.getPosX(), var1.method3442() - 0.15F, var1.getPosZ(), true);
+            var13 = new Class888(var0, var4, var1, var1.getPosX(), var1.getPosYEye() - 0.15F, var1.getPosZ(), true);
          }
 
          if (!(var1 instanceof Class1023)) {
-            Vector3d var14 = var1.method3284(1.0F);
+            Vector3d var14 = var1.getUpVector(1.0F);
             Quaternion var15 = new Quaternion(new Vector3f(var14), var9, true);
-            Vector3d var16 = var1.method3281(1.0F);
+            Vector3d var16 = var1.getLook(1.0F);
             Vector3f var17 = new Vector3f(var16);
             var17.method25283(var15);
             ((ProjectileEntity)var13).shoot((double)var17.method25269(), (double)var17.method25270(), (double)var17.method25271(), var7, var8);
@@ -212,8 +212,8 @@ public class Class3261 extends Class3262 implements Class3260 {
             var18.method4536(var18.method4232(), var3, (ProjectileEntity)var13, var9);
          }
 
-         var3.method32121(!var12 ? 1 : 3, var1, var1x -> var1x.method3185(var2));
-         var0.method6916((Entity)var13);
+         var3.method32121(!var12 ? 1 : 3, var1, var1x -> var1x.sendBreakAnimation(var2));
+         var0.addEntity((Entity)var13);
          var0.method6743((PlayerEntity)null, var1.getPosX(), var1.getPosY(), var1.getPosZ(), SoundEvents.field26494, Class2266.field14735, 1.0F, var5);
       }
    }
@@ -227,7 +227,7 @@ public class Class3261 extends Class3262 implements Class3260 {
 
       var7.setHitSound(SoundEvents.field26487);
       var7.method3494(true);
-      int var8 = Class7858.method26311(Class8122.field34931, var2);
+      int var8 = EnchantmentHelper.method26311(Class8122.field34931, var2);
       if (var8 > 0) {
          var7.method3485((byte)var8);
       }
@@ -237,7 +237,7 @@ public class Class3261 extends Class3262 implements Class3260 {
 
    public static void method11763(World var0, LivingEntity var1, Hand var2, ItemStack var3, float var4, float var5) {
       List var8 = method11758(var3);
-      float[] var9 = method11764(var1.method3013());
+      float[] var9 = method11764(var1.getRNG());
 
       for (int var10 = 0; var10 < var8.size(); var10++) {
          ItemStack var11 = (ItemStack)var8.get(var10);
@@ -277,7 +277,7 @@ public class Class3261 extends Class3262 implements Class3260 {
             CriteriaTriggers.field44496.method15103(var5, var2);
          }
 
-         var5.method2913(Class8876.field40098.method172(var2.getItem()));
+         var5.addStat(Stats.field40098.method172(var2.getItem()));
       }
 
       method11759(var2);
@@ -286,7 +286,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    @Override
    public void method11704(World var1, LivingEntity var2, ItemStack var3, int var4) {
       if (!var1.isRemote) {
-         int var7 = Class7858.method26311(Class8122.field34930, var3);
+         int var7 = EnchantmentHelper.method26311(Class8122.field34930, var3);
          SoundEvent var8 = this.method11768(var7);
          SoundEvent var9 = var7 != 0 ? null : SoundEvents.field26489;
          float var10 = (float)(var3.method32137() - var4) / (float)method11767(var3);
@@ -313,7 +313,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    public static int method11767(ItemStack var0) {
-      int var3 = Class7858.method26311(Class8122.field34930, var0);
+      int var3 = EnchantmentHelper.method26311(Class8122.field34930, var0);
       return var3 != 0 ? 25 - 5 * var3 : 25;
    }
 

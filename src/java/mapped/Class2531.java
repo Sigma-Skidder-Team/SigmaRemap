@@ -18,7 +18,7 @@ public class Class2531 implements Serializable {
    }
 
    public Long method10678() {
-      return Class7481.method24353(this.field16734, this.field16735);
+      return ChunkPos.method24353(this.field16734, this.field16735);
    }
 
    @Override

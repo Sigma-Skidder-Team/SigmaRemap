@@ -23,7 +23,7 @@ public class Class4190 extends Class4188 {
    public void method12897(CompoundNBT var1) {
       super.method12897(var1);
       var1.putBoolean("tf", this.field20482);
-      var1.method102("D", this.field20481.method534());
+      var1.putInt("D", this.field20481.method534());
    }
 
    public Class4190(int var1, Class9764 var2, Direction var3, Class102 var4) {
@@ -143,7 +143,7 @@ public class Class4190 extends Class4188 {
    }
 
    @Override
-   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7) {
+   public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       if (this.method12919(var1, var5)) {
          return false;
       } else {

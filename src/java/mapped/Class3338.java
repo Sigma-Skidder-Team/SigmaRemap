@@ -23,17 +23,17 @@ public class Class3338 extends Item {
          double var11 = var3.getPosZ();
 
          for (int var13 = 0; var13 < 16; var13++) {
-            double var14 = var3.getPosX() + (var3.method3013().nextDouble() - 0.5) * 16.0;
-            double var16 = MathHelper.method37778(var3.getPosY() + (double)(var3.method3013().nextInt(16) - 8), 0.0, (double)(var2.method6998() - 1));
-            double var18 = var3.getPosZ() + (var3.method3013().nextDouble() - 0.5) * 16.0;
+            double var14 = var3.getPosX() + (var3.getRNG().nextDouble() - 0.5) * 16.0;
+            double var16 = MathHelper.clamp(var3.getPosY() + (double)(var3.getRNG().nextInt(16) - 8), 0.0, (double)(var2.method6998() - 1));
+            double var18 = var3.getPosZ() + (var3.getRNG().nextDouble() - 0.5) * 16.0;
             if (var3.isPassenger()) {
                var3.stopRiding();
             }
 
-            if (var3.method3168(var14, var16, var18, true)) {
+            if (var3.attemptTeleport(var14, var16, var18, true)) {
                SoundEvent var20 = !(var3 instanceof Class1095) ? SoundEvents.field26457 : SoundEvents.field26598;
                var2.method6743((PlayerEntity)null, var7, var9, var11, var20, Class2266.field14735, 1.0F, 1.0F);
-               var3.method2863(var20, 1.0F, 1.0F);
+               var3.playSound(var20, 1.0F, 1.0F);
                break;
             }
          }

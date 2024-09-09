@@ -21,7 +21,7 @@ public class NameProtect extends Module {
     @EventTarget
     public void method16883(TextReplaceEvent var1) {
         if (this.isEnabled()) {
-            var1.method13959(var1.method13958().replaceAll(mc.getSession().getUsername(), this.getStringSettingValueByName("Username")));
+            var1.setText(var1.setText().replaceAll(mc.getSession().getUsername(), this.getStringSettingValueByName("Username")));
         }
     }
 

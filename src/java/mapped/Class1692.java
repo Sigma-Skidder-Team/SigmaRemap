@@ -90,13 +90,13 @@ public class Class1692 implements AutoCloseable {
       }
    }
 
-   private Path method7246(Class7481 var1) {
+   private Path method7246(ChunkPos var1) {
       String var4 = "c." + var1.field32174 + "." + var1.field32175 + ".mcc";
       return this.field9219.resolve(var4);
    }
 
    @Nullable
-   public synchronized DataInputStream method7247(Class7481 var1) throws IOException {
+   public synchronized DataInputStream method7247(ChunkPos var1) throws IOException {
       int var4 = this.method7264(var1);
       if (var4 != 0) {
          int var5 = method7255(var4);
@@ -151,7 +151,7 @@ public class Class1692 implements AutoCloseable {
    }
 
    @Nullable
-   private DataInputStream method7250(Class7481 var1, byte var2, InputStream var3) throws IOException {
+   private DataInputStream method7250(ChunkPos var1, byte var2, InputStream var3) throws IOException {
       Class9471 var6 = Class9471.method36523(var2);
       if (var6 != null) {
          return new DataInputStream(new BufferedInputStream(var6.method36527(var3)));
@@ -162,7 +162,7 @@ public class Class1692 implements AutoCloseable {
    }
 
    @Nullable
-   private DataInputStream method7251(Class7481 var1, byte var2) throws IOException {
+   private DataInputStream method7251(ChunkPos var1, byte var2) throws IOException {
       Path var5 = this.method7246(var1);
       if (Files.isRegularFile(var5)) {
          return this.method7250(var1, var2, Files.newInputStream(var5));
@@ -192,7 +192,7 @@ public class Class1692 implements AutoCloseable {
       return (var0 + 4096 - 1) / 4096;
    }
 
-   public boolean method7257(Class7481 var1) {
+   public boolean method7257(ChunkPos var1) {
       int var4 = this.method7264(var1);
       if (var4 == 0) {
          return false;
@@ -240,7 +240,7 @@ public class Class1692 implements AutoCloseable {
       }
    }
 
-   public DataOutputStream method7258(Class7481 var1) throws IOException {
+   public DataOutputStream method7258(ChunkPos var1) throws IOException {
       return new DataOutputStream(new BufferedOutputStream(this.field9220.method36526(new Class1765(this, var1))));
    }
 
@@ -248,7 +248,7 @@ public class Class1692 implements AutoCloseable {
       this.field9218.force(true);
    }
 
-   public synchronized void method7260(Class7481 var1, ByteBuffer var2) throws IOException {
+   public synchronized void method7260(ChunkPos var1, ByteBuffer var2) throws IOException {
       int var5 = method7266(var1);
       int var6 = this.field9222.get(var5);
       int var7 = method7255(var6);
@@ -305,15 +305,15 @@ public class Class1692 implements AutoCloseable {
       this.field9218.write(this.field9221, 0L);
    }
 
-   private int method7264(Class7481 var1) {
+   private int method7264(ChunkPos var1) {
       return this.field9222.get(method7266(var1));
    }
 
-   public boolean method7265(Class7481 var1) {
+   public boolean method7265(ChunkPos var1) {
       return this.method7264(var1) != 0;
    }
 
-   private static int method7266(Class7481 var0) {
+   private static int method7266(ChunkPos var0) {
       return var0.method24362() + var0.method24363() * 32;
    }
 

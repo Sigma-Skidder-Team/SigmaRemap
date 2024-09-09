@@ -30,13 +30,13 @@ public class Class4558 implements Iterator<BlockPos> {
       );
       Vector3d var11 = var10.method11333();
       Vector3d var12 = new Vector3d(1.0, 0.0, 0.0);
-      double var13 = var11.method11334(var12);
+      double var13 = var11.dotProduct(var12);
       double var15 = Math.abs(var13);
       Vector3d var17 = new Vector3d(0.0, 1.0, 0.0);
-      double var18 = var11.method11334(var17);
+      double var18 = var11.dotProduct(var17);
       double var20 = Math.abs(var18);
       Vector3d var22 = new Vector3d(0.0, 0.0, 1.0);
-      double var23 = var11.method11334(var22);
+      double var23 = var11.dotProduct(var22);
       double var25 = Math.abs(var23);
       if (var25 >= var20 && var25 >= var15) {
          this.field21987 = 2;

@@ -322,9 +322,9 @@ public class EntityType<T extends Entity> {
    public static final EntityType<Class1027> field41101 = method33197(
       "witch", Class8878.<Class1027>method32299(Class1027::new, Class179.field623).method32301(0.6F, 1.95F).method32307(8)
    );
-   public static final EntityType<Class1079> field41102 = method33197(
+   public static final EntityType<WitherEntity> field41102 = method33197(
       "wither",
-      Class8878.<Class1079>method32299(Class1079::new, Class179.field623)
+      Class8878.<WitherEntity>method32299(WitherEntity::new, Class179.field623)
          .method32304()
          .method32305(Blocks.WITHER_ROSE)
          .method32301(0.9F, 3.5F)
@@ -434,7 +434,7 @@ public class EntityType<T extends Entity> {
 
    @Nullable
    public T method33202(ServerWorld var1, CompoundNBT var2, ITextComponent var3, PlayerEntity var4, BlockPos var5, Class2202 var6, boolean var7, boolean var8) {
-      Entity var11 = this.method33215(var1);
+      Entity var11 = this.create(var1);
       if (var11 != null) {
          double var12;
          if (!var7) {
@@ -444,7 +444,7 @@ public class EntityType<T extends Entity> {
             var12 = method33203(var1, var5, var8, var11.getBoundingBox());
          }
 
-         var11.method3273(
+         var11.setLocationAndAngles(
             (double)var5.getX() + 0.5,
             (double)var5.getY() + var12,
             (double)var5.getZ() + 0.5,
@@ -453,8 +453,8 @@ public class EntityType<T extends Entity> {
          );
          if (var11 instanceof Class1006) {
             Class1006 var14 = (Class1006)var11;
-            var14.field4967 = var14.rotationYaw;
-            var14.field4965 = var14.rotationYaw;
+            var14.rotationYawHead = var14.rotationYaw;
+            var14.renderYawOffset = var14.rotationYaw;
             var14.method4276(var1, var1.method6807(var14.getPosition()), var6, (Class5093)null, var2);
             var14.method4237();
          }
@@ -477,18 +477,18 @@ public class EntityType<T extends Entity> {
       }
 
       Stream var7 = var0.method7047((Entity)null, var6, var0x -> true);
-      return 1.0 + VoxelShapes.method27437(Class113.field414, var3, var7, !var2 ? -1.0 : -2.0);
+      return 1.0 + VoxelShapes.method27437(Direction.field414, var3, var7, !var2 ? -1.0 : -2.0);
    }
 
    public static void method33204(World var0, PlayerEntity var1, Entity var2, CompoundNBT var3) {
       if (var3 != null && var3.contains("EntityTag", 10)) {
          MinecraftServer var6 = var0.getServer();
          if (var6 != null && var2 != null && (var0.isRemote || !var2.method3404() || var1 != null && var6.getPlayerList().canSendCommands(var1.getGameProfile()))) {
-            CompoundNBT var7 = var2.method3294(new CompoundNBT());
+            CompoundNBT var7 = var2.writeWithoutTypeId(new CompoundNBT());
             UUID var8 = var2.getUniqueID();
             var7.method140(var3.getCompound("EntityTag"));
-            var2.method3374(var8);
-            var2.method3295(var7);
+            var2.setUniqueId(var8);
+            var2.read(var7);
          }
       }
    }
@@ -552,7 +552,7 @@ public class EntityType<T extends Entity> {
    }
 
    @Nullable
-   public T method33215(World var1) {
+   public T create(World var1) {
       return this.field41113.method35007(this, var1);
    }
 
@@ -563,15 +563,15 @@ public class EntityType<T extends Entity> {
 
    public static Optional<Entity> method33217(CompoundNBT var0, World var1) {
       return Util.<Entity>acceptOrElse(
-         method33222(var0).<Entity>map(var1x -> var1x.method33215(var1)),
-         var1x -> var1x.method3295(var0),
+         method33222(var0).<Entity>map(var1x -> var1x.create(var1)),
+         var1x -> var1x.read(var0),
          () -> field41004.warn("Skipping Entity with id {}", var0.getString("id"))
       );
    }
 
    @Nullable
    private static Entity method33218(World var0, EntityType<?> var1) {
-      return var1 != null ? var1.method33215(var0) : null;
+      return var1 != null ? var1.create(var0) : null;
    }
 
    public AxisAlignedBB method33219(double var1, double var3, double var5) {
@@ -585,10 +585,10 @@ public class EntityType<T extends Entity> {
       } else {
          return this.field41118
                || !var1.method23446(BlockTags.field32798)
-                  && !var1.method23448(Blocks.field36890)
+                  && !var1.isIn(Blocks.field36890)
                   && !Class3244.method11655(var1)
-                  && !var1.method23448(Blocks.LAVA)
-            ? var1.method23448(Blocks.WITHER_ROSE) || var1.method23448(Blocks.field37069) || var1.method23448(Blocks.CACTUS)
+                  && !var1.isIn(Blocks.LAVA)
+            ? var1.isIn(Blocks.WITHER_ROSE) || var1.isIn(Blocks.field37069) || var1.isIn(Blocks.CACTUS)
             : true;
       }
    }
@@ -610,7 +610,7 @@ public class EntityType<T extends Entity> {
             for (int var7 = 0; var7 < var6.size(); var7++) {
                Entity var8 = method33223(var6.method153(var7), var1, var2);
                if (var8 != null) {
-                  var8.method2758(var3, true);
+                  var8.startRiding(var3, true);
                }
             }
          }

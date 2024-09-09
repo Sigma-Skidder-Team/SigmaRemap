@@ -15,7 +15,7 @@ public class Class6438 extends Class6434 {
 
    @Override
    public boolean method19540(BlockState var1, Random var2) {
-      return var1.method23448(this.field28282);
+      return var1.isIn(this.field28282);
    }
 
    @Override

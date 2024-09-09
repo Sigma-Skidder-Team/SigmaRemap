@@ -27,7 +27,7 @@ public class Class1054 extends Class1049 {
       if (var0 == null) {
          return false;
       } else {
-         return !(var0 instanceof PlayerEntity) || !var0.isSpectator() && !((PlayerEntity)var0).isCreative() ? var0.method3089() != Class7809.field33509 : false;
+         return !(var0 instanceof PlayerEntity) || !var0.isSpectator() && !((PlayerEntity)var0).isCreative() ? var0.getCreatureAttribute() != CreatureAttribute.field33509 : false;
       }
    };
 
@@ -50,23 +50,23 @@ public class Class1054 extends Class1049 {
    }
 
    @Override
-   public void method3155(DataParameter<?> var1) {
+   public void notifyDataManagerChange(DataParameter<?> var1) {
       if (field5820.equals(var1)) {
-         this.method3385();
+         this.recalculateSize();
       }
 
-      super.method3155(var1);
+      super.notifyDataManagerChange(var1);
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
-      var1.method102("PuffState", this.method4828());
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
+      var1.putInt("PuffState", this.method4828());
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method4829(var1.getInt("PuffState"));
    }
 
@@ -83,14 +83,14 @@ public class Class1054 extends Class1049 {
 
    @Override
    public void tick() {
-      if (!this.world.isRemote && this.isAlive() && this.method3138()) {
+      if (!this.world.isRemote && this.isAlive() && this.isServerWorld()) {
          if (this.field5821 <= 0) {
             if (this.method4828() != 0) {
                if (this.field5822 > 60 && this.method4828() == 2) {
-                  this.method2863(SoundEvents.field26980, this.method3099(), this.method3100());
+                  this.playSound(SoundEvents.field26980, this.getSoundVolume(), this.getSoundPitch());
                   this.method4829(1);
                } else if (this.field5822 > 100 && this.method4828() == 1) {
-                  this.method2863(SoundEvents.field26980, this.method3099(), this.method3100());
+                  this.playSound(SoundEvents.field26980, this.getSoundVolume(), this.getSoundPitch());
                   this.method4829(0);
                }
 
@@ -99,11 +99,11 @@ public class Class1054 extends Class1049 {
          } else {
             if (this.method4828() != 0) {
                if (this.field5821 > 40 && this.method4828() == 1) {
-                  this.method2863(SoundEvents.field26981, this.method3099(), this.method3100());
+                  this.playSound(SoundEvents.field26981, this.getSoundVolume(), this.getSoundPitch());
                   this.method4829(2);
                }
             } else {
-               this.method2863(SoundEvents.field26981, this.method3099(), this.method3100());
+               this.playSound(SoundEvents.field26981, this.getSoundVolume(), this.getSoundPitch());
                this.method4829(1);
             }
 
@@ -115,8 +115,8 @@ public class Class1054 extends Class1049 {
    }
 
    @Override
-   public void method2871() {
-      super.method2871();
+   public void livingEntity() {
+      super.livingEntity();
       if (this.isAlive() && this.method4828() > 0) {
          for (Class1006 var4 : this.world.method6772(Class1006.class, this.getBoundingBox().method19664(0.3), field5823)) {
             if (var4.isAlive()) {
@@ -128,21 +128,21 @@ public class Class1054 extends Class1049 {
 
    private void method4830(Class1006 var1) {
       int var4 = this.method4828();
-      if (var1.method2741(DamageSource.method31115(this), (float)(1 + var4))) {
-         var1.method3035(new Class2023(Effects.POISON, 60 * var4, 0));
-         this.method2863(SoundEvents.field26985, 1.0F, 1.0F);
+      if (var1.attackEntityFrom(DamageSource.method31115(this), (float)(1 + var4))) {
+         var1.addPotionEffect(new EffectInstance(Effects.POISON, 60 * var4, 0));
+         this.playSound(SoundEvents.field26985, 1.0F, 1.0F);
       }
    }
 
    @Override
-   public void method3279(PlayerEntity var1) {
+   public void onCollideWithPlayer(PlayerEntity var1) {
       int var4 = this.method4828();
-      if (var1 instanceof ServerPlayerEntity && var4 > 0 && var1.method2741(DamageSource.method31115(this), (float)(1 + var4))) {
-         if (!this.method3245()) {
+      if (var1 instanceof ServerPlayerEntity && var4 > 0 && var1.attackEntityFrom(DamageSource.method31115(this), (float)(1 + var4))) {
+         if (!this.isSilent()) {
             ((ServerPlayerEntity)var1).field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24569, 0.0F));
          }
 
-         var1.method3035(new Class2023(Effects.POISON, 60 * var4, 0));
+         var1.addPotionEffect(new EffectInstance(Effects.POISON, 60 * var4, 0));
       }
    }
 
@@ -167,8 +167,8 @@ public class Class1054 extends Class1049 {
    }
 
    @Override
-   public EntitySize method2981(Pose var1) {
-      return super.method2981(var1).method32099(method4831(this.method4828()));
+   public EntitySize getSize(Pose var1) {
+      return super.getSize(var1).method32099(method4831(this.method4828()));
    }
 
    private static float method4831(int var0) {

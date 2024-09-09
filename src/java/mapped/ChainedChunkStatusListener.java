@@ -12,12 +12,12 @@ public class ChainedChunkStatusListener implements Class7243 {
    }
 
    @Override
-   public void method22736(Class7481 var1) {
+   public void method22736(ChunkPos var1) {
       this.field31095.method1641(() -> this.field31094.method22736(var1));
    }
 
    @Override
-   public void method22737(Class7481 var1, ChunkStatus var2) {
+   public void method22737(ChunkPos var1, ChunkStatus var2) {
       this.field31095.method1641(() -> this.field31094.method22737(var1, var2));
    }
 

@@ -53,13 +53,13 @@ public class Class4186 extends Class4180 {
             if (var1.startsWith("Elytra")) {
                ItemFrameEntity var8 = new ItemFrameEntity(var3.method6970(), var2, this.field20474.method252(Direction.SOUTH));
                var8.method4092(new ItemStack(Items.field38120), false);
-               var3.method6916(var8);
+               var3.addEntity(var8);
             }
          } else {
-            Class1057 var9 = EntityType.field41075.method33215(var3.method6970());
+            Class1057 var9 = EntityType.field41075.create(var3.method6970());
             var9.setPosition((double)var2.getX() + 0.5, (double)var2.getY() + 0.5, (double)var2.getZ() + 0.5);
             var9.method4850(var2);
-            var3.method6916(var9);
+            var3.addEntity(var9);
          }
       } else {
          BlockPos var10 = var2.down();

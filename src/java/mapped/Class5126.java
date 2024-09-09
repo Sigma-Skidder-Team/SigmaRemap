@@ -39,7 +39,7 @@ public class Class5126 implements Class5119 {
          double var14 = this.field23310.gameRenderer.getActiveRenderInfo().getPos().y * 0.85;
 
          for (Entry var17 : Class8497.method30087(this.field23313).entrySet()) {
-            Class7481 var18 = (Class7481)var17.getKey();
+            ChunkPos var18 = (ChunkPos)var17.getKey();
             String var19 = (String)var17.getValue();
             if (var26 != null) {
                var19 = var19 + (String)var26.get(var18);

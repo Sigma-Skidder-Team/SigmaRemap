@@ -58,7 +58,7 @@ public class Class2680 extends Class2595 {
             this.field17082 = this.field17086.getPosY();
             this.field17083 = this.field17086.getPosZ();
          } else {
-            if (this.field17086.method3276(this.field17081, this.field17082, this.field17083) > 0.010000000000000002) {
+            if (this.field17086.getDistanceNearest(this.field17081, this.field17082, this.field17083) > 0.010000000000000002) {
                return false;
             }
 

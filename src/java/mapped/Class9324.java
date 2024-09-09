@@ -30,7 +30,7 @@ public class Class9324 {
             if (!var12) {
                BlockPos var14 = var6.method8349((Direction)var2.apply(var4));
                BlockState var15 = var5.getBlockState(var14);
-               if (var15.method23448(var4.getBlock())) {
+               if (var15.isIn(var4.getBlock())) {
                   Class1895 var16 = (Class1895)var1.apply(var15);
                   if (var16 != Class1895.field11109 && var11 != var16 && var15.<Direction>method23463(var3) == var4.<Direction>method23463(var3)) {
                      if (var7.test(var5, var14)) {

@@ -21,7 +21,7 @@ public class Class7364 extends Class7362 {
             SoundEvents.field26540,
             this.field31519.method2864(),
             2.5F,
-            0.8F + this.field31519.method3013().nextFloat() * 0.3F,
+            0.8F + this.field31519.getRNG().nextFloat() * 0.3F,
             false
          );
    }

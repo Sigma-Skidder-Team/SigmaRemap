@@ -39,13 +39,13 @@ public class Class1114 extends Class1113 {
    }
 
    @Override
-   public float method3099() {
+   public float getSoundVolume() {
       return 0.1F;
    }
 
    @Override
-   public float method3100() {
-      return super.method3100() * 0.95F;
+   public float getSoundPitch() {
+      return super.getSoundPitch() * 0.95F;
    }
 
    @Nullable
@@ -65,16 +65,16 @@ public class Class1114 extends Class1113 {
    }
 
    @Override
-   public boolean method3140() {
+   public boolean canBePushed() {
       return false;
    }
 
    @Override
-   public void method3128(Entity var1) {
+   public void collideWithEntity(Entity var1) {
    }
 
    @Override
-   public void method3126() {
+   public void collideWithNearbyEntities() {
    }
 
    public static Class7037 method5363() {
@@ -98,10 +98,10 @@ public class Class1114 extends Class1113 {
    public void tick() {
       super.tick();
       if (!this.method5364()) {
-         this.method3434(this.getVec().method11347(1.0, 0.6, 1.0));
+         this.setMotion(this.getMotion().method11347(1.0, 0.6, 1.0));
       } else {
-         this.method3434(Vector3d.ZERO);
-         this.method3446(this.getPosX(), (double) MathHelper.floor(this.getPosY()) + 1.0 - (double)this.method3430(), this.getPosZ());
+         this.setMotion(Vector3d.ZERO);
+         this.setRawPosition(this.getPosX(), (double) MathHelper.floor(this.getPosY()) + 1.0 - (double)this.getHeight(), this.getPosZ());
       }
    }
 
@@ -126,22 +126,22 @@ public class Class1114 extends Class1113 {
          double var6 = (double)this.field6095.getX() + 0.5 - this.getPosX();
          double var8 = (double)this.field6095.getY() + 0.1 - this.getPosY();
          double var10 = (double)this.field6095.getZ() + 0.5 - this.getPosZ();
-         Vector3d var12 = this.getVec();
-         Vector3d var13 = var12.method11339(
+         Vector3d var12 = this.getMotion();
+         Vector3d var13 = var12.add(
             (Math.signum(var6) * 0.5 - var12.x) * 0.1F,
             (Math.signum(var8) * 0.7F - var12.y) * 0.1F,
             (Math.signum(var10) * 0.5 - var12.z) * 0.1F
          );
-         this.method3434(var13);
+         this.setMotion(var13);
          float var14 = (float)(MathHelper.method37814(var13.z, var13.x) * 180.0F / (float)Math.PI) - 90.0F;
          float var15 = MathHelper.method37792(var14 - this.rotationYaw);
-         this.field4984 = 0.5F;
+         this.moveForward = 0.5F;
          this.rotationYaw += var15;
          if (this.rand.nextInt(100) == 0 && this.world.getBlockState(var4).method23400(this.world, var4)) {
             this.method5365(true);
          }
       } else {
-         boolean var5 = this.method3245();
+         boolean var5 = this.isSilent();
          if (!this.world.getBlockState(var4).method23400(this.world, var3)) {
             this.method5365(false);
             if (!var5) {
@@ -149,7 +149,7 @@ public class Class1114 extends Class1113 {
             }
          } else {
             if (this.rand.nextInt(200) == 0) {
-               this.field4967 = (float)this.rand.nextInt(360);
+               this.rotationYawHead = (float)this.rand.nextInt(360);
             }
 
             if (this.world.method7188(field6094, this) != null) {
@@ -163,17 +163,17 @@ public class Class1114 extends Class1113 {
    }
 
    @Override
-   public boolean method2940() {
+   public boolean canTriggerWalking() {
       return false;
    }
 
    @Override
-   public boolean method2921(float var1, float var2) {
+   public boolean onLivingFall(float var1, float var2) {
       return false;
    }
 
    @Override
-   public void method2761(double var1, boolean var3, BlockState var4, BlockPos var5) {
+   public void updateFallState(double var1, boolean var3, BlockState var4, BlockPos var5) {
    }
 
    @Override
@@ -182,27 +182,27 @@ public class Class1114 extends Class1113 {
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (!this.method2760(var1)) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (!this.isInvulnerableTo(var1)) {
          if (!this.world.isRemote && this.method5364()) {
             this.method5365(false);
          }
 
-         return super.method2741(var1, var2);
+         return super.attackEntityFrom(var1, var2);
       } else {
          return false;
       }
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.dataManager.method35446(field6093, var1.getByte("BatFlags"));
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       var1.method100("BatFlags", this.dataManager.<Byte>method35445(field6093));
    }
 
@@ -232,7 +232,7 @@ public class Class1114 extends Class1113 {
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
       return var2.field39969 / 2.0F;
    }
 }

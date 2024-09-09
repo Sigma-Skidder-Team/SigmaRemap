@@ -3,8 +3,8 @@ package com.mentalfrostbyte.jello.module.impl.player;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
@@ -41,7 +41,7 @@ public class AntiVoid extends Module {
     }
 
     @EventTarget
-    private void method16664(Class4435 var1) {
+    private void method16664(EventMove var1) {
         if (this.isEnabled()) {
             if (mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F)) {
                 this.field23840 = new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
@@ -53,7 +53,7 @@ public class AntiVoid extends Module {
                 Module var6 = Client.getInstance().getModuleManager().getModuleByClass(HighJump.class);
                 String var7 = var6.getStringSettingValueByName("Type");
                 boolean var8 = var4.isEnabled();
-                if (var5.equals("Cubecraft") && var1.method13994() < -0.4) {
+                if (var5.equals("Cubecraft") && var1.getY() < -0.4) {
                     var8 = false;
                 }
 
@@ -61,14 +61,14 @@ public class AntiVoid extends Module {
                     var8 = true;
                 }
 
-                if (mc.player.getVec().y < -0.08 && !var8) {
-                    this.field23837 = this.field23837 - mc.player.getVec().y;
+                if (mc.player.getMotion().y < -0.08 && !var8) {
+                    this.field23837 = this.field23837 - mc.player.getMotion().y;
                 } else if (mc.player.onGround) {
                     this.field23837 = 0.0;
                 }
             } else {
-                Class9567.method37088(var1, 0.0);
-                var1.method13995(0.0);
+                MovementUtils.method37088(var1, 0.0);
+                var1.setY(0.0);
                 this.field23839--;
             }
 
@@ -79,15 +79,15 @@ public class AntiVoid extends Module {
 
             if (this.field23838 > 0) {
                 this.field23838--;
-                Class9567.method37088(var1, 0.1);
+                MovementUtils.method37088(var1, 0.1);
             }
         }
     }
 
     @EventTarget
-    private void method16665(Class4399 var1) {
+    private void method16665(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921() && this.field23839 != 0) {
-            var1.method13900(true);
+            var1.setCancelled(true);
         }
     }
 
@@ -106,7 +106,7 @@ public class AntiVoid extends Module {
             if (!mc.player.onGround) {
                 AxisAlignedBB var3 = mc.player.boundingBox;
                 var3 = var3.method19662(0.0, -mc.player.getPositionVec().y, 0.0);
-                return mc.world.method7055(mc.player, var3).count() == 0L;
+                return mc.world.getCollisionShapes(mc.player, var3).count() == 0L;
             } else {
                 return false;
             }
@@ -115,7 +115,7 @@ public class AntiVoid extends Module {
         }
     }
 
-    private void method16668(String var1, Class4435 var2) {
+    private void method16668(String var1, EventMove var2) {
         double var5 = mc.player.getPositionVec().getX();
         double var7 = mc.player.getPositionVec().getY();
         double var9 = mc.player.getPositionVec().getZ();
@@ -128,8 +128,8 @@ public class AntiVoid extends Module {
                 mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(0.0, -999.0, 0.0, true));
                 break;
             case "Motion":
-                var2.method13995(0.1);
-                ColorUtils.method17725(var2.method13994());
+                var2.setY(0.1);
+                ColorUtils.method17725(var2.getY());
                 break;
             case "Cubecraft":
                 double var13 = 3.2E7;

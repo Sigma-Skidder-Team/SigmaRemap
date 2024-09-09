@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
-public class Item implements Class3303 {
+public class Item implements IItemProvider {
    public static final Map<Block, Item> field18732 = Maps.newHashMap();
    public static final UUID field18733 = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
    public static final UUID field18734 = UUID.fromString("FA233E1C-4180-4865-B01B-BCCE9785ACA3");
@@ -69,7 +69,7 @@ public class Item implements Class3303 {
       return false;
    }
 
-   public boolean method11706(BlockState var1, World var2, BlockPos var3, PlayerEntity var4) {
+   public boolean canPlayerBreakBlockWhileHolding(BlockState var1, World var2, BlockPos var3, PlayerEntity var4) {
       return true;
    }
 
@@ -78,7 +78,7 @@ public class Item implements Class3303 {
       return this;
    }
 
-   public ActionResultType method11707(Class5911 var1) {
+   public ActionResultType method11707(ItemUseContext var1) {
       return ActionResultType.field14820;
    }
 
@@ -94,14 +94,14 @@ public class Item implements Class3303 {
          if (!var2.method2933(this.method11745().method36160())) {
             return Class6794.<ItemStack>method20699(var6);
          } else {
-            var2.method3154(var3);
+            var2.setActiveHand(var3);
             return Class6794.<ItemStack>method20697(var6);
          }
       }
    }
 
    public ItemStack method11709(ItemStack var1, World var2, LivingEntity var3) {
-      return !this.method11744() ? var1 : var3.method2984(var2, var1);
+      return !this.method11744() ? var1 : var3.onFoodEaten(var2, var1);
    }
 
    public final int method11710() {
@@ -230,7 +230,7 @@ public class Item implements Class3303 {
    public static BlockRayTraceResult method11735(World var0, PlayerEntity var1, Class1985 var2) {
       float var5 = var1.rotationPitch;
       float var6 = var1.rotationYaw;
-      Vector3d var7 = var1.method3286(1.0F);
+      Vector3d var7 = var1.getEyePosition(1.0F);
       float var8 = MathHelper.cos(-var6 * (float) (Math.PI / 180.0) - (float) Math.PI);
       float var9 = MathHelper.sin(-var6 * (float) (Math.PI / 180.0) - (float) Math.PI);
       float var10 = -MathHelper.cos(-var5 * (float) (Math.PI / 180.0));
@@ -238,8 +238,8 @@ public class Item implements Class3303 {
       float var12 = var9 * var10;
       float var13 = var8 * var10;
       double var14 = 5.0;
-      Vector3d var16 = var7.method11339((double)var12 * 5.0, (double)var11 * 5.0, (double)var13 * 5.0);
-      return var0.method7036(new Class6809(var7, var16, Class2271.field14775, var2, var1));
+      Vector3d var16 = var7.add((double)var12 * 5.0, (double)var11 * 5.0, (double)var13 * 5.0);
+      return var0.rayTraceBlocks(new RayTraceContext(var7, var16, Class2271.field14775, var2, var1));
    }
 
    public int method11736() {
@@ -266,7 +266,7 @@ public class Item implements Class3303 {
       return false;
    }
 
-   public Multimap<Class4869, Class9689> method11740(Class2106 var1) {
+   public Multimap<Attribute, AttributeModifier> method11740(EquipmentSlotType var1) {
       return ImmutableMultimap.of();
    }
 

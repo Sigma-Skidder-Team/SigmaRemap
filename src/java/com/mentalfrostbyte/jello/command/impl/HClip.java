@@ -31,7 +31,7 @@ public class HClip extends Command {
                         mc.player.getPosZ() + var9,
                         mc.player.rotationYaw,
                         mc.player.rotationPitch,
-                        Collections.<Class2033>emptySet(),
+                        Collections.<Flags>emptySet(),
                         0
                      )
                   );

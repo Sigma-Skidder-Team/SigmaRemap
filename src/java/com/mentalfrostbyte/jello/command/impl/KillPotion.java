@@ -20,13 +20,13 @@ public class KillPotion extends Command {
          if (!mc.playerController.isNotCreative()) {
             ItemStack var6 = new ItemStack(Items.field38115);
             CompoundNBT var7 = new CompoundNBT();
-            var7.method102("Amplifier", 125);
-            var7.method102("Duration", 2000);
-            var7.method102("Id", 6);
+            var7.putInt("Amplifier", 125);
+            var7.putInt("Duration", 2000);
+            var7.putInt("Id", 6);
             ListNBT var8 = new ListNBT();
             var8.add(var7);
             var6.setTagInfo("CustomPotionEffects", var8);
-            mc.getConnection().sendPacket(new CCreativeInventoryActionPacket(36 + Class7789.method25846(), var6));
+            mc.getConnection().sendPacket(new CCreativeInventoryActionPacket(36 + InvManagerUtils.method25846(), var6));
             var3.method20327("Requested server a killpotion!");
          } else {
             throw new CommandException("Creative mode only!");

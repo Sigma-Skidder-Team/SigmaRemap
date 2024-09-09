@@ -306,7 +306,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
    }
 
    public void method6045(double var1) {
-      this.field6792 = MathHelper.method37778(var1, 0.0, (double)this.method6046());
+      this.field6792 = MathHelper.clamp(var1, 0.0, (double)this.method6046());
    }
 
    public int method6046() {

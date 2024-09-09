@@ -29,7 +29,7 @@ public class Class962 extends TileEntity implements Class935 {
          this.method3915((PlayerEntity)null, this.field5324.getBlockState(this.getPos()), Class2084.field13573);
       }
 
-      super.method3622();
+      super.markDirty();
    }
 
    public boolean method3912() {
@@ -103,7 +103,7 @@ public class Class962 extends TileEntity implements Class935 {
          var1.stopRiding();
          var1.removePassengers();
          CompoundNBT var6 = new CompoundNBT();
-         var1.method3293(var6);
+         var1.writeUnlessPassenger(var6);
          this.field5392.add(new Class9327(var6, var3, !var2 ? 600 : 2400));
          if (this.field5324 != null) {
             if (var1 instanceof Class1017) {
@@ -127,7 +127,7 @@ public class Class962 extends TileEntity implements Class935 {
                );
          }
 
-         var1.method2904();
+         var1.remove();
       }
    }
 
@@ -158,7 +158,7 @@ public class Class962 extends TileEntity implements Class935 {
 
                   if (var4 == Class2084.field13571) {
                      var13.method4449();
-                     if (var1.getBlock().method11540(BlockTags.field32794)) {
+                     if (var1.getBlock().isIn(BlockTags.field32794)) {
                         int var14 = method3919(var1);
                         if (var14 < 5) {
                            int var15 = this.field5324.rand.nextInt(100) != 0 ? 1 : 2;
@@ -176,16 +176,16 @@ public class Class962 extends TileEntity implements Class935 {
                      var3.add(var13);
                   }
 
-                  float var24 = var12.method3429();
+                  float var24 = var12.getWidth();
                   double var16 = !var11 ? 0.55 + (double)(var24 / 2.0F) : 0.0;
                   double var18 = (double)var7.getX() + 0.5 + var16 * (double)var9.method539();
-                  double var20 = (double)var7.getY() + 0.5 - (double)(var12.method3430() / 2.0F);
+                  double var20 = (double)var7.getY() + 0.5 - (double)(var12.getHeight() / 2.0F);
                   double var22 = (double)var7.getZ() + 0.5 + var16 * (double)var9.method541();
-                  var12.method3273(var18, var20, var22, var12.rotationYaw, var12.rotationPitch);
+                  var12.setLocationAndAngles(var18, var20, var22, var12.rotationYaw, var12.rotationPitch);
                }
 
                this.field5324.method6742((PlayerEntity)null, var7, SoundEvents.field26397, Class2266.field14732, 1.0F, 1.0F);
-               return this.field5324.method6916(var12);
+               return this.field5324.addEntity(var12);
             } else {
                return false;
             }
@@ -280,8 +280,8 @@ public class Class962 extends TileEntity implements Class935 {
          Class9327.method35245(var5).method133("UUID");
          CompoundNBT var6 = new CompoundNBT();
          var6.put("EntityData", Class9327.method35245(var5));
-         var6.method102("TicksInHive", Class9327.method35246(var5));
-         var6.method102("MinOccupationTicks", Class9327.method35248(var5));
+         var6.putInt("TicksInHive", Class9327.method35246(var5));
+         var6.putInt("MinOccupationTicks", Class9327.method35248(var5));
          var3.add(var6);
       }
 

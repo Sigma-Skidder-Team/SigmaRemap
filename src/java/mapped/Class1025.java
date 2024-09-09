@@ -14,8 +14,8 @@ public abstract class Class1025 extends Class1026 {
    }
 
    @Override
-   public Class7809 method3089() {
-      return Class7809.field33508;
+   public CreatureAttribute getCreatureAttribute() {
+      return CreatureAttribute.field33508;
    }
 
    public Class2117 method4543() {

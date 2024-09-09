@@ -24,14 +24,14 @@ public class Class1707 implements AutoCloseable {
    private final AtomicBoolean field9302 = new AtomicBoolean();
    private final Class322<Class497> field9303;
    private final Class1696 field9304;
-   private final Map<Class7481, Class9713> field9305 = Maps.newLinkedHashMap();
+   private final Map<ChunkPos, Class9713> field9305 = Maps.newLinkedHashMap();
 
    public Class1707(File var1, boolean var2, String var3) {
       this.field9304 = new Class1696(var1, var2);
       this.field9303 = new Class322<>(new Class7384(Class2262.values().length), Util.method38493(), "IOWorker-" + var3);
    }
 
-   public CompletableFuture<Void> method7411(Class7481 var1, CompoundNBT var2) {
+   public CompletableFuture<Void> method7411(ChunkPos var1, CompoundNBT var2) {
       return this.method7414(() -> {
          Class9713 var5 = this.field9305.computeIfAbsent(var1, var1xx -> new Class9713(var2));
          var5.field45380 = var2;
@@ -40,7 +40,7 @@ public class Class1707 implements AutoCloseable {
    }
 
    @Nullable
-   public CompoundNBT method7412(Class7481 var1) throws IOException {
+   public CompoundNBT method7412(ChunkPos var1) throws IOException {
       CompletableFuture<CompoundNBT> var4 = this.method7414(() -> {
          Class9713 var4x = this.field9305.get(var1);
          if (var4x != null) {
@@ -106,7 +106,7 @@ public class Class1707 implements AutoCloseable {
       if (var3.hasNext()) {
          Entry var4 = (Entry)var3.next();
          var3.remove();
-         this.method7417((Class7481)var4.getKey(), (Class9713)var4.getValue());
+         this.method7417((ChunkPos)var4.getKey(), (Class9713)var4.getValue());
          this.method7416();
       }
    }
@@ -115,7 +115,7 @@ public class Class1707 implements AutoCloseable {
       this.field9303.method1641(new Class497(Class2262.field14711.ordinal(), this::method7415));
    }
 
-   private void method7417(Class7481 var1, Class9713 var2) {
+   private void method7417(ChunkPos var1, Class9713 var2) {
       try {
          this.field9304.method7297(var1, Class9713.method38053(var2));
          Class9713.method38054(var2).complete((Void)null);

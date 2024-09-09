@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.combat.criticals;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4403;
+import com.mentalfrostbyte.jello.event.impl.EventRayTraceResult;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -24,9 +24,9 @@ public class PacketCriticals extends Module {
     }
 
     @EventTarget
-    private void method16923(Class4403 var1) {
-        if (this.isEnabled() && var1.method13935() != null && var1.method13937()) {
-            Entity var4 = var1.method13935();
+    private void method16923(EventRayTraceResult var1) {
+        if (this.isEnabled() && var1.getEntity() != null && var1.isHovering()) {
+            Entity var4 = var1.getEntity();
             if (var4 instanceof LivingEntity
                     && var4.hurtResistantTime <= (int) this.getNumberValueBySettingName("HurtTime")
                     && Step.field23887 > 1
@@ -57,13 +57,13 @@ public class PacketCriticals extends Module {
     @HigherPriority
     private void method16924(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13932() instanceof CPlayerPacket) {
+            if (var1.getPacket() instanceof CPlayerPacket) {
                 if (!this.timer.isEnabled()) {
                     this.timer.start();
                 }
 
                 if (this.field23999 && mc.player.onGround) {
-                    var1.method13900(true);
+                    var1.setCancelled(true);
                     this.field23999 = false;
                 }
             }

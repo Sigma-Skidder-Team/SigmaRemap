@@ -33,14 +33,14 @@ public class EnderCrystalEntity extends Entity {
    }
 
    @Override
-   public boolean method2940() {
+   public boolean canTriggerWalking() {
       return false;
    }
 
    @Override
    public void registerData() {
-      this.method3210().register(field5521, Optional.<BlockPos>empty());
-      this.method3210().register(field5522, true);
+      this.getDataManager().register(field5521, Optional.<BlockPos>empty());
+      this.getDataManager().register(field5522, true);
    }
 
    @Override
@@ -55,7 +55,7 @@ public class EnderCrystalEntity extends Entity {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
       if (this.method4143() != null) {
          var1.put("BeamTarget", Class8354.method29284(this.method4143()));
       }
@@ -64,7 +64,7 @@ public class EnderCrystalEntity extends Entity {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       if (var1.contains("BeamTarget", 10)) {
          this.method4142(Class8354.method29283(var1.getCompound("BeamTarget")));
       }
@@ -75,16 +75,16 @@ public class EnderCrystalEntity extends Entity {
    }
 
    @Override
-   public boolean method3139() {
+   public boolean canBeCollidedWith() {
       return true;
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      if (!this.method2760(var1)) {
-         if (!(var1.method31109() instanceof Class1007)) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      if (!this.isInvulnerableTo(var1)) {
+         if (!(var1.getTrueSource() instanceof Class1007)) {
             if (!this.removed && !this.world.isRemote) {
-               this.method2904();
+               this.remove();
                if (!var1.method31131()) {
                   this.world.method6755((Entity)null, this.getPosX(), this.getPosY(), this.getPosZ(), 6.0F, Class2141.field14016);
                }
@@ -102,9 +102,9 @@ public class EnderCrystalEntity extends Entity {
    }
 
    @Override
-   public void method2995() {
+   public void onKillCommand() {
       this.method4141(DamageSource.field39005);
-      super.method2995();
+      super.onKillCommand();
    }
 
    private void method4141(DamageSource var1) {
@@ -117,20 +117,20 @@ public class EnderCrystalEntity extends Entity {
    }
 
    public void method4142(BlockPos var1) {
-      this.method3210().method35446(field5521, Optional.<BlockPos>ofNullable(var1));
+      this.getDataManager().method35446(field5521, Optional.<BlockPos>ofNullable(var1));
    }
 
    @Nullable
    public BlockPos method4143() {
-      return this.method3210().<Optional<BlockPos>>method35445(field5521).orElse((BlockPos)null);
+      return this.getDataManager().<Optional<BlockPos>>method35445(field5521).orElse((BlockPos)null);
    }
 
    public void method4144(boolean var1) {
-      this.method3210().method35446(field5522, var1);
+      this.getDataManager().method35446(field5522, var1);
    }
 
    public boolean method4145() {
-      return this.method3210().<Boolean>method35445(field5522);
+      return this.getDataManager().<Boolean>method35445(field5522);
    }
 
    @Override
@@ -139,7 +139,7 @@ public class EnderCrystalEntity extends Entity {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this);
    }
 }

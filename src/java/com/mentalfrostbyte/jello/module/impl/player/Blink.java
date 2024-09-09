@@ -31,7 +31,7 @@ public class Blink extends Module {
         field23863 = new Class1116(mc.world, mc.player.getGameProfile());
         field23863.inventory = mc.player.inventory;
         field23863.method3269(this.field23865.x, this.field23865.y, this.field23865.z, this.field23866, this.field23867);
-        field23863.field4967 = mc.player.field4967;
+        field23863.rotationYawHead = mc.player.rotationYawHead;
         mc.world.method6846(-1, field23863);
     }
 
@@ -50,13 +50,13 @@ public class Blink extends Module {
     @EventTarget
     private void method16710(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            if (mc.player != null && var1.method13932() instanceof CEntityActionPacket
-                    || var1.method13932() instanceof CPlayerPacket
-                    || var1.method13932() instanceof CUseEntityPacket
-                    || var1.method13932() instanceof CAnimateHandPacket
-                    || var1.method13932() instanceof CPlayerTryUseItemPacket) {
-                this.field23864.add(var1.method13932());
-                var1.method13900(true);
+            if (mc.player != null && var1.getPacket() instanceof CEntityActionPacket
+                    || var1.getPacket() instanceof CPlayerPacket
+                    || var1.getPacket() instanceof CUseEntityPacket
+                    || var1.getPacket() instanceof CAnimateHandPacket
+                    || var1.getPacket() instanceof CPlayerTryUseItemPacket) {
+                this.field23864.add(var1.getPacket());
+                var1.setCancelled(true);
             }
         }
     }

@@ -39,7 +39,7 @@ public class Class3409 extends Block {
 
    @Override
    public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      if (var2 == Direction.field673 && var3.method23448(Blocks.WATER)) {
+      if (var2 == Direction.field673 && var3.isIn(Blocks.WATER)) {
          var4.method6860().method20726(var5, this, 20);
       }
 

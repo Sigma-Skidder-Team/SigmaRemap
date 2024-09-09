@@ -60,7 +60,7 @@ public class Class3404 extends Block implements Class3405 {
 
    @Override
    public boolean method11494(BlockState var1, IBlockReader var2, BlockPos var3, Class1947 var4) {
-      return !this.field19080.method25067(Class8953.field40470);
+      return !this.field19080.method25067(FluidTags.field40470);
    }
 
    @Override
@@ -113,20 +113,20 @@ public class Class3404 extends Block implements Class3405 {
    }
 
    private boolean method12043(World var1, BlockPos var2, BlockState var3) {
-      if (this.field19080.method25067(Class8953.field40470)) {
-         boolean var6 = var1.getBlockState(var2.down()).method23448(Blocks.SOUL_SOIL);
+      if (this.field19080.method25067(FluidTags.field40470)) {
+         boolean var6 = var1.getBlockState(var2.down()).isIn(Blocks.SOUL_SOIL);
 
          for (Direction var10 : Direction.values()) {
             if (var10 != Direction.DOWN) {
                BlockPos var11 = var2.method8349(var10);
-               if (var1.getFluidState(var11).method23486(Class8953.field40469)) {
+               if (var1.getFluidState(var11).method23486(FluidTags.field40469)) {
                   Block var12 = !var1.getFluidState(var2).method23473() ? Blocks.field36399 : Blocks.field36527;
                   var1.setBlockState(var2, var12.method11579());
                   this.method12044(var1, var2);
                   return false;
                }
 
-               if (var6 && var1.getBlockState(var11).method23448(Blocks.field37006)) {
+               if (var6 && var1.getBlockState(var11).isIn(Blocks.field37006)) {
                   var1.setBlockState(var2, Blocks.BASALT.method11579());
                   this.method12044(var1, var2);
                   return false;

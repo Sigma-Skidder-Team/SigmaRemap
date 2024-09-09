@@ -3,15 +3,15 @@ package com.mentalfrostbyte.jello.module.impl.misc;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import mapped.ColorUtils;
-import mapped.Class9567;
+import mapped.MovementUtils;
 import mapped.NumberSetting;
 
 public class Unstuck extends Module {
@@ -29,12 +29,12 @@ public class Unstuck extends Module {
     }
 
     @EventTarget
-    public void method16285(Class4435 var1) {
+    public void method16285(EventMove var1) {
         if (this.isEnabled()) {
             if ((float) this.field23574 >= this.getNumberValueBySettingName("Flags")) {
-                Class9567.method37088(var1, 0.0);
-                var1.method13995(0.0);
-                mc.player.method3435(0.0, 0.0, 0.0);
+                MovementUtils.method37088(var1, 0.0);
+                var1.setY(0.0);
+                mc.player.setMotion(0.0, 0.0, 0.0);
             }
         }
     }
@@ -47,7 +47,7 @@ public class Unstuck extends Module {
     }
 
     @EventTarget
-    public void method16287(Class4399 var1) {
+    public void method16287(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             if (!mc.player.onGround && !ColorUtils.method17730(mc.player, 0.001F)) {
                 if ((float) this.field23574 >= this.getNumberValueBySettingName("Flags") && this.field23575 == 0) {
@@ -61,7 +61,7 @@ public class Unstuck extends Module {
                         this.field23574 = 0;
                     }
 
-                    var1.method13900(true);
+                    var1.setCancelled(true);
                 }
             } else {
                 this.field23574 = 0;
@@ -76,7 +76,7 @@ public class Unstuck extends Module {
                 if (var1.getPacket() instanceof SPlayerPositionLookPacket && !ColorUtils.method17730(mc.player, 0.3F) && mc.player.ticksExisted > 10) {
                     this.field23574++;
                     if ((float) this.field23574 > this.getNumberValueBySettingName("Flags")) {
-                        var1.method13900(true);
+                        var1.setCancelled(true);
                     }
                 }
             }

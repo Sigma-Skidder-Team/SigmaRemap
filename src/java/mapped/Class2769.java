@@ -10,7 +10,7 @@ public class Class2769 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      if (this.field17347.method3005() && this.field17347.method5230()) {
+      if (this.field17347.isChild() && this.field17347.method5230()) {
          return this.field17347.method5213() && Class1097.method5232(this.field17347).nextInt(500) == 1
             ? true
             : Class1097.method5233(this.field17347).nextInt(6000) == 1;

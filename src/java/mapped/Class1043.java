@@ -57,8 +57,8 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    }
 
    @Override
-   public float method2957(Pose var1, EntitySize var2) {
-      return !this.method3005() ? 1.62F : 0.81F;
+   public float getStandingEyeHeight(Pose var1, EntitySize var2) {
+      return !this.isChild() ? 1.62F : 0.81F;
    }
 
    @Override
@@ -121,7 +121,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    public void method4747(ItemStack var1) {
       if (!this.world.isRemote && this.field5593 > -this.method4236() + 20) {
          this.field5593 = -this.method4236();
-         this.method2863(this.method4749(!var1.isEmpty()), this.method3099(), this.method3100());
+         this.playSound(this.method4749(!var1.isEmpty()), this.getSoundVolume(), this.getSoundPitch());
       }
    }
 
@@ -135,12 +135,12 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    }
 
    public void method4750() {
-      this.method2863(SoundEvents.field27190, this.method3099(), this.method3100());
+      this.playSound(SoundEvents.field27190, this.getSoundVolume(), this.getSoundPitch());
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       Class46 var4 = this.method4742();
       if (!var4.isEmpty()) {
          var1.put("Offers", var4.method166());
@@ -150,8 +150,8 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       if (var1.contains("Offers", 10)) {
          this.field5796 = new Class46(var1.getCompound("Offers"));
       }
@@ -161,9 +161,9 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
 
    @Nullable
    @Override
-   public Entity method2745(ServerWorld var1) {
+   public Entity changeDimension(ServerWorld var1) {
       this.method4684();
-      return super.method2745(var1);
+      return super.changeDimension(var1);
    }
 
    public void method4684() {
@@ -171,8 +171,8 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    }
 
    @Override
-   public void method2737(DamageSource var1) {
-      super.method2737(var1);
+   public void onDeath(DamageSource var1) {
+      super.onDeath(var1);
       this.method4684();
    }
 
@@ -181,7 +181,7 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
          double var5 = this.rand.nextGaussian() * 0.02;
          double var7 = this.rand.nextGaussian() * 0.02;
          double var9 = this.rand.nextGaussian() * 0.02;
-         this.world.method6746(var1, this.method3438(1.0), this.method3441() + 1.0, this.method3445(1.0), var5, var7, var9);
+         this.world.addParticle(var1, this.getPosXRandom(1.0), this.getPosYRandom() + 1.0, this.getPosZRandom(1.0), var5, var7, var9);
       }
    }
 
@@ -198,8 +198,8 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    public boolean method2963(int var1, ItemStack var2) {
       if (!super.method2963(var1, var2)) {
          int var5 = var1 - 300;
-         if (var5 >= 0 && var5 < this.field5797.method3629()) {
-            this.field5797.method3621(var5, var2);
+         if (var5 >= 0 && var5 < this.field5797.getSizeInventory()) {
+            this.field5797.setInventorySlotContents(var5, var2);
             return true;
          } else {
             return false;
@@ -238,9 +238,9 @@ public abstract class Class1043 extends Class1045 implements Class1059, Class106
    }
 
    @Override
-   public Vector3d method2986(float var1) {
-      float var4 = MathHelper.lerp(var1, this.field4966, this.field4965) * (float) (Math.PI / 180.0);
+   public Vector3d getLeashPosition(float var1) {
+      float var4 = MathHelper.lerp(var1, this.prevRenderYawOffset, this.renderYawOffset) * (float) (Math.PI / 180.0);
       Vector3d var5 = new Vector3d(0.0, this.getBoundingBox().method19677() - 1.0, 0.2);
-      return this.method3288(var1).method11338(var5.method11351(-var4));
+      return this.method3288(var1).add(var5.method11351(-var4));
    }
 }

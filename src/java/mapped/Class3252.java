@@ -49,7 +49,7 @@ public class Class3252 extends Class3251 {
       Direction[] var7 = var1.method18349();
 
       for (Direction var11 : var7) {
-         if (var11.method544().method324()) {
+         if (var11.getAxis().method324()) {
             Direction var12 = var11.method536();
             var4 = var4.method23465(field18727, var12);
             if (!var5.getBlockState(var6.method8349(var11)).method23441(var1)) {

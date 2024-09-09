@@ -75,7 +75,7 @@ public class Class3435 extends Class3433 {
 
    @Override
    public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var4.method23448(var1.getBlock()) && !var2.isRemote && var2.getTileEntity(var3) == null) {
+      if (!var4.isIn(var1.getBlock()) && !var2.isRemote && var2.getTileEntity(var3) == null) {
          this.method12102(var2, var3, var1);
       }
    }
@@ -96,11 +96,11 @@ public class Class3435 extends Class3433 {
          BlockPos var8 = var2.method8350(var6, 2);
          BlockState var9 = var1.getBlockState(var8);
          byte var10 = 1;
-         if (var9.method23448(Blocks.MOVING_PISTON) && var9.<Direction>method23463(field19198) == var6) {
+         if (var9.isIn(Blocks.MOVING_PISTON) && var9.<Direction>method23463(field19198) == var6) {
             TileEntity var11 = var1.getTileEntity(var8);
             if (var11 instanceof Class955) {
                Class955 var12 = (Class955)var11;
-               if (var12.method3846() && (var12.method3849(0.0F) < 0.5F || var1.method6783() == var12.method3867() || ((ServerWorld)var1).method6901())) {
+               if (var12.method3846() && (var12.method3849(0.0F) < 0.5F || var1.getGameTime() == var12.method3867() || ((ServerWorld)var1).method6901())) {
                   var10 = 2;
                }
             }
@@ -168,7 +168,7 @@ public class Class3435 extends Class3433 {
                BlockPos var11 = var3.method8336(var8.method539() * 2, var8.method540() * 2, var8.method541() * 2);
                BlockState var12 = var2.getBlockState(var11);
                boolean var13 = false;
-               if (var12.method23448(Blocks.MOVING_PISTON)) {
+               if (var12.isIn(Blocks.MOVING_PISTON)) {
                   TileEntity var14 = var2.getTileEntity(var11);
                   if (var14 instanceof Class955) {
                      Class955 var15 = (Class955)var14;
@@ -183,7 +183,7 @@ public class Class3435 extends Class3433 {
                   if (var4 == 1
                      && !var12.isAir()
                      && method12104(var12, var2, var11, var8.method536(), false, var8)
-                     && (var12.method23408() == Class2315.field15862 || var12.method23448(Blocks.PISTON) || var12.method23448(Blocks.STICKY_PISTON))) {
+                     && (var12.method23408() == Class2315.field15862 || var12.isIn(Blocks.PISTON) || var12.isIn(Blocks.STICKY_PISTON))) {
                      this.method12105(var2, var3, var8, false);
                   } else {
                      var2.removeBlock(var3.method8349(var8), false);
@@ -206,18 +206,18 @@ public class Class3435 extends Class3433 {
    }
 
    public static boolean method12104(BlockState var0, World var1, BlockPos var2, Direction var3, boolean var4, Direction var5) {
-      if (var2.getY() < 0 || var2.getY() > var1.method7034() - 1 || !var1.method6810().method24523(var2)) {
+      if (var2.getY() < 0 || var2.getY() > var1.method7034() - 1 || !var1.getWorldBorder().contains(var2)) {
          return false;
       } else if (var0.isAir()) {
          return true;
-      } else if (var0.method23448(Blocks.field36527) || var0.method23448(Blocks.field37123) || var0.method23448(Blocks.field37124)) {
+      } else if (var0.isIn(Blocks.field36527) || var0.isIn(Blocks.field37123) || var0.isIn(Blocks.field37124)) {
          return false;
       } else if (var3 == Direction.DOWN && var2.getY() == 0) {
          return false;
       } else if (var3 == Direction.field673 && var2.getY() == var1.method7034() - 1) {
          return false;
       } else {
-         if (!var0.method23448(Blocks.PISTON) && !var0.method23448(Blocks.STICKY_PISTON)) {
+         if (!var0.isIn(Blocks.PISTON) && !var0.isIn(Blocks.STICKY_PISTON)) {
             if (var0.method23405(var1, var2) == -1.0F) {
                return false;
             }
@@ -240,7 +240,7 @@ public class Class3435 extends Class3433 {
 
    private boolean method12105(World var1, BlockPos var2, Direction var3, boolean var4) {
       BlockPos var7 = var2.method8349(var3);
-      if (!var4 && var1.getBlockState(var7).method23448(Blocks.PISTON_HEAD)) {
+      if (!var4 && var1.getBlockState(var7).isIn(Blocks.PISTON_HEAD)) {
          var1.setBlockState(var7, Blocks.AIR.method11579(), 20);
       }
 

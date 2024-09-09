@@ -18,7 +18,7 @@ public class Class3282 extends Item {
    }
 
    @Override
-   public ActionResultType method11707(Class5911 var1) {
+   public ActionResultType method11707(ItemUseContext var1) {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       BlockState var6 = var4.getBlockState(var5);
@@ -40,7 +40,7 @@ public class Class3282 extends Item {
                var11.method3379(var7.method32149());
             }
 
-            var4.method6916(var11);
+            var4.addEntity(var11);
          }
 
          var7.method32182(1);

@@ -29,6 +29,6 @@ public class Class4468 extends Class4457 {
    }
 
    public boolean method14119(BlockState var1) {
-      return this.field21655 != null && !var1.method23448(this.field21655) ? false : this.field21656.method23258(var1);
+      return this.field21655 != null && !var1.isIn(this.field21655) ? false : this.field21656.method23258(var1);
    }
 }

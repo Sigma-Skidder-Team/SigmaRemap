@@ -53,8 +53,8 @@ public class Class3393 extends Class3392 {
          return super.method11491(var1, var2, var3, var4, var5, var6);
       } else {
          boolean var9 = var3.getBlock() == this
-            || var3.method23448(Blocks.field36879)
-            || var2 == Direction.DOWN && var3.method23448(Blocks.field36651);
+            || var3.isIn(Blocks.field36879)
+            || var2 == Direction.DOWN && var3.isIn(Blocks.field36651);
          return var1.method23465(field19025.get(var2), Boolean.valueOf(var9));
       }
    }

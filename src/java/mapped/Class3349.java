@@ -21,7 +21,7 @@ public class Class3349 extends Class3348 {
 
    @Override
    public Class9007<ResourceLocation> method11910() {
-      return Class8876.field40104.method172(Class8876.field40155);
+      return Stats.field40104.method172(Stats.field40155);
    }
 
    @Override

@@ -26,7 +26,7 @@ public class Class3339 extends Item {
    }
 
    @Override
-   public boolean method11706(BlockState var1, World var2, BlockPos var3, PlayerEntity var4) {
+   public boolean canPlayerBreakBlockWhileHolding(BlockState var1, World var2, BlockPos var3, PlayerEntity var4) {
       if (!var2.isRemote) {
          this.method11886(var4, var1, var2, var3, false, var4.getHeldItem(Hand.MAIN_HAND));
       }
@@ -35,7 +35,7 @@ public class Class3339 extends Item {
    }
 
    @Override
-   public ActionResultType method11707(Class5911 var1) {
+   public ActionResultType method11707(ItemUseContext var1) {
       PlayerEntity var4 = var1.method18358();
       World var5 = var1.method18360();
       if (!var5.isRemote && var4 != null) {
@@ -47,7 +47,7 @@ public class Class3339 extends Item {
    }
 
    private void method11886(PlayerEntity var1, BlockState var2, Class1660 var3, BlockPos var4, boolean var5, ItemStack var6) {
-      if (var1.method2979()) {
+      if (var1.canUseCommandBlock()) {
          Block var9 = var2.getBlock();
          Class9348 var10 = var9.getStateContainer();
          Collection var11 = var10.method35395();

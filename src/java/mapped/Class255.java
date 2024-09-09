@@ -20,16 +20,16 @@ public class Class255<T extends LivingEntity, M extends Class2797<T>, A extends 
    }
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      this.method843(var1, var2, (T)var4, Class2106.field13735, var3, this.method847(Class2106.field13735));
-      this.method843(var1, var2, (T)var4, Class2106.field13734, var3, this.method847(Class2106.field13734));
-      this.method843(var1, var2, (T)var4, Class2106.field13733, var3, this.method847(Class2106.field13733));
-      this.method843(var1, var2, (T)var4, Class2106.field13736, var3, this.method847(Class2106.field13736));
+      this.method843(var1, var2, (T)var4, EquipmentSlotType.field13735, var3, this.method847(EquipmentSlotType.field13735));
+      this.method843(var1, var2, (T)var4, EquipmentSlotType.field13734, var3, this.method847(EquipmentSlotType.field13734));
+      this.method843(var1, var2, (T)var4, EquipmentSlotType.field13733, var3, this.method847(EquipmentSlotType.field13733));
+      this.method843(var1, var2, (T)var4, EquipmentSlotType.field13736, var3, this.method847(EquipmentSlotType.field13736));
    }
 
-   private void method843(MatrixStack var1, Class7733 var2, T var3, Class2106 var4, int var5, A var6) {
-      ItemStack var9 = var3.method2943(var4);
-      if (var9.getItem() instanceof Class3279) {
-         Class3279 var10 = (Class3279)var9.getItem();
+   private void method843(MatrixStack var1, Class7733 var2, T var3, EquipmentSlotType var4, int var5, A var6) {
+      ItemStack var9 = var3.getItemStackFromSlot(var4);
+      if (var9.getItem() instanceof ArmorItem) {
+         ArmorItem var10 = (ArmorItem)var9.getItem();
          if (var10.method11805() == var4) {
             if (Class9299.field42864.method20245()) {
                var6 = this.method850((T)var3, var9, var4, (A)var6);
@@ -53,7 +53,7 @@ public class Class255<T extends LivingEntity, M extends Class2797<T>, A extends 
       }
    }
 
-   public void method844(A var1, Class2106 var2) {
+   public void method844(A var1, EquipmentSlotType var2) {
       var1.method11009(false);
       switch (Class8875.field40095[var2.ordinal()]) {
          case 1:
@@ -77,7 +77,7 @@ public class Class255<T extends LivingEntity, M extends Class2797<T>, A extends 
    }
 
    private void method845(
-           MatrixStack var1, Class7733 var2, int var3, Class3279 var4, boolean var5, A var6, boolean var7, float var8, float var9, float var10, String var11
+           MatrixStack var1, Class7733 var2, int var3, ArmorItem var4, boolean var5, A var6, boolean var7, float var8, float var9, float var10, String var11
    ) {
       this.method846(var1, var2, var3, var5, (A)var6, var8, var9, var10, this.method849(var4, var7, var11));
    }
@@ -87,26 +87,26 @@ public class Class255<T extends LivingEntity, M extends Class2797<T>, A extends 
       var5.method11016(var1, var12, var3, Class213.field798, var6, var7, var8, 1.0F);
    }
 
-   private A method847(Class2106 var1) {
+   private A method847(EquipmentSlotType var1) {
       return !this.method848(var1) ? this.field914 : this.field913;
    }
 
-   private boolean method848(Class2106 var1) {
-      return var1 == Class2106.field13734;
+   private boolean method848(EquipmentSlotType var1) {
+      return var1 == EquipmentSlotType.field13734;
    }
 
-   private ResourceLocation method849(Class3279 var1, boolean var2, String var3) {
-      String var6 = "textures/models/armor/" + var1.method11806().method8790() + "_layer_" + (!var2 ? 1 : 2) + (var3 != null ? "_" + var3 : "") + ".png";
+   private ResourceLocation method849(ArmorItem var1, boolean var2, String var3) {
+      String var6 = "textures/models/armor/" + var1.getArmorMaterial().method8790() + "_layer_" + (!var2 ? 1 : 2) + (var3 != null ? "_" + var3 : "") + ".png";
       return field912.computeIfAbsent(var6, ResourceLocation::new);
    }
 
-   public A method850(T var1, ItemStack var2, Class2106 var3, A var4) {
+   public A method850(T var1, ItemStack var2, EquipmentSlotType var3, A var4) {
       return (A)(!Class9299.field42873.method20214() ? var4 : Class9299.field42873.method20217(var1, var2, var3, var4));
    }
 
-   public ResourceLocation method851(Entity var1, ItemStack var2, Class2106 var3, String var4) {
-      Class3279 var7 = (Class3279)var2.getItem();
-      String var8 = var7.method11806().method8790();
+   public ResourceLocation method851(Entity var1, ItemStack var2, EquipmentSlotType var3, String var4) {
+      ArmorItem var7 = (ArmorItem)var2.getItem();
+      String var8 = var7.getArmorMaterial().method8790();
       String var9 = "minecraft";
       int var10 = var8.indexOf(58);
       if (var10 != -1) {

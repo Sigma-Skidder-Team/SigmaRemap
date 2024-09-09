@@ -76,7 +76,7 @@ public class Class6795 {
                   if (var1.size() == 1) {
                      throw field29599.create(var9.getName().getString());
                   }
-               } else if (var2.method18821(var10) && Class7858.method26345(Class7858.method26312(var10).keySet(), var2)) {
+               } else if (var2.method18821(var10) && EnchantmentHelper.method26345(EnchantmentHelper.method26312(var10).keySet(), var2)) {
                   var10.method32162(var2, var3);
                   var6++;
                } else if (var1.size() == 1) {

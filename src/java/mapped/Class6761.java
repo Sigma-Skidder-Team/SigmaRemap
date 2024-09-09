@@ -1,7 +1,6 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -116,12 +115,12 @@ public class Class6761 extends Class6762 {
    }
 
    private double method20618(BlockPos var1) {
-      if (this.field29476.method3250()) {
+      if (this.field29476.isInWater()) {
          return (double)var1.getY() + 0.5;
       } else {
          BlockPos var4 = var1.down();
          VoxelShape var5 = this.field29475.getBlockState(var4).method23414(this.field29475, var4);
-         return (double)var4.getY() + (!var5.method19516() ? var5.method19513(Class113.field414) : 0.0);
+         return (double)var4.getY() + (!var5.method19516() ? var5.method19513(Direction.field414) : 0.0);
       }
    }
 
@@ -133,7 +132,7 @@ public class Class6761 extends Class6762 {
       if (!(var11 - var5 > 1.125)) {
          Class2163 var13 = this.method20629(this.field29475, var1, var2, var3, this.field29476, this.field29478, this.field29479, this.field29480, false, false);
          float var14 = this.field29476.method4223(var13);
-         double var15 = (double)this.field29476.method3429() / 2.0;
+         double var15 = (double)this.field29476.getWidth() / 2.0;
          if (var14 >= 0.0F) {
             var9 = this.method20641(var1, var2, var3);
             var9.field30859 = var13;
@@ -151,10 +150,10 @@ public class Class6761 extends Class6762 {
                   (double)var2 + 0.001,
                   (double)var3 - var15 + 0.5,
                   (double)var1 + var15 + 0.5,
-                  (double)((float)var2 + this.field29476.method3430()),
+                  (double)((float)var2 + this.field29476.getHeight()),
                   (double)var3 + var15 + 0.5
                );
-               if (!this.field29476.world.method7053(this.field29476, var17)) {
+               if (!this.field29476.world.hasNoCollisions(this.field29476, var17)) {
                   return null;
                }
 
@@ -179,7 +178,7 @@ public class Class6761 extends Class6762 {
 
                while (var2 > 0 && var13 == Class2163.field14185) {
                   var2--;
-                  if (var19++ >= this.field29476.method3370()) {
+                  if (var19++ >= this.field29476.getMaxFallHeight()) {
                      return null;
                   }
 
@@ -244,7 +243,7 @@ public class Class6761 extends Class6762 {
                var8 = Class2163.field14185;
             }
 
-            if (var15 == Class2163.field14196 || var14.method23448(Blocks.field36890) || var14.method23446(BlockTags.field32809)) {
+            if (var15 == Class2163.field14196 || var14.isIn(Blocks.field36890) || var14.method23446(BlockTags.field32809)) {
                var8 = Class2163.field14196;
             }
 
@@ -263,7 +262,7 @@ public class Class6761 extends Class6762 {
 
          return var8;
       } else {
-         for (Direction var12 : Direction.values()) {
+         for (net.minecraft.util.Direction var12 : net.minecraft.util.Direction.values()) {
             Class2163 var13 = method20635(var1, var7.method8372(var2, var3, var4).method8379(var12));
             if (var13 == Class2163.field14184) {
                return Class2163.field14192;

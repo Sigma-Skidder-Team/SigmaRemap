@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.item;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -47,7 +47,7 @@ public class AutoSoup extends Module {
     }
 
     @EventTarget
-    private void method16057(Class4399 var1) {
+    private void method16057(EventUpdate var1) {
         if (this.isEnabled() && var1.method13921()) {
             this.field23428++;
             this.field23431++;
@@ -80,10 +80,10 @@ public class AutoSoup extends Module {
     @EventTarget
     private void method16058(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            if (this.field23433 && var1.method13932() instanceof CClientStatusPacket) {
-                CClientStatusPacket var4 = (CClientStatusPacket) var1.method13932();
+            if (this.field23433 && var1.getPacket() instanceof CClientStatusPacket) {
+                CClientStatusPacket var4 = (CClientStatusPacket) var1.getPacket();
                 if (var4.getStatus() == CClientStatusPacketState.field14279) {
-                    var1.method13900(true);
+                    var1.setCancelled(true);
                 }
             }
         }
@@ -103,9 +103,9 @@ public class AutoSoup extends Module {
             if (var3 > 0) {
                 int var4 = this.method16062(var3);
                 if (var4 > 0) {
-                    Class7789.method25870(mc.player.field4904.field25471, var4, 0, ClickType.field14694, mc.player, true);
-                    Class7789.method25870(mc.player.field4904.field25471, var4, 0, ClickType.field14700, mc.player, true);
-                    Class7789.method25870(mc.player.field4904.field25471, var4, 0, ClickType.field14694, mc.player, true);
+                    InvManagerUtils.fixedClick(mc.player.container.field25471, var4, 0, ClickType.field14694, mc.player, true);
+                    InvManagerUtils.fixedClick(mc.player.container.field25471, var4, 0, ClickType.field14700, mc.player, true);
+                    InvManagerUtils.fixedClick(mc.player.container.field25471, var4, 0, ClickType.field14694, mc.player, true);
                     this.field23431 = -5;
                 }
             }
@@ -116,12 +116,12 @@ public class AutoSoup extends Module {
 
     private void method16060() {
         int var3 = (int) this.getNumberValueBySettingName("Refill delay");
-        if (this.field23431 >= var3 && Client.getInstance().method19939().method31333() >= var3) {
+        if (this.field23431 >= var3 && Client.getInstance().getPlayerTracker().method31333() >= var3) {
             while (this.field23429 < 36) {
                 boolean var4 = false;
-                if (Class7789.method25866(this.field23429).getItem() == Items.field37837
+                if (InvManagerUtils.method25866(this.field23429).getItem() == Items.field37837
                         && Math.random() * 100.0 > (double) this.getNumberValueBySettingName("Refill accuracy")) {
-                    Class7789.method25870(mc.player.field4904.field25471, this.field23429, 0, ClickType.field14695, mc.player, true);
+                    InvManagerUtils.fixedClick(mc.player.container.field25471, this.field23429, 0, ClickType.field14695, mc.player, true);
                     this.field23431 = 0;
                     var4 = true;
                 }
@@ -149,7 +149,7 @@ public class AutoSoup extends Module {
         int var3 = -1;
 
         for (int var4 = 36; var4 < 45; var4++) {
-            if (mc.player.field4904.method18131(var4).method18265().getItem() == Items.field37837
+            if (mc.player.container.getSlot(var4).getStack().getItem() == Items.field37837
                     && Client.getInstance().getSlotChangeTracker().method33238(var4) > 100L) {
                 var3 = var4 - 36;
                 break;
@@ -196,44 +196,44 @@ public class AutoSoup extends Module {
     }
 
     private int method16062(int var1) {
-        ItemStack var4 = Class7789.method25866(13);
+        ItemStack var4 = InvManagerUtils.method25866(13);
         if (var4.getItem() == Items.field37836 && var4.getCount() <= 64 - var1) {
             return 13;
         } else {
             for (int var5 = 9; var5 < 36; var5++) {
-                var4 = Class7789.method25866(var5);
+                var4 = InvManagerUtils.method25866(var5);
                 if (var4.getItem() == Items.field37836 && var4.getCount() <= 64 - var1) {
                     return var5;
                 }
             }
 
-            var4 = Class7789.method25866(13);
+            var4 = InvManagerUtils.method25866(13);
             if (var4.getItem() == Items.field37836 && var4.getCount() < 64) {
                 return 13;
             } else {
                 for (int var12 = 9; var12 < 36; var12++) {
-                    var4 = Class7789.method25866(var12);
+                    var4 = InvManagerUtils.method25866(var12);
                     if (var4.getItem() == Items.field37836 && var4.getCount() < 64) {
                         return var12;
                     }
                 }
 
-                var4 = Class7789.method25866(13);
+                var4 = InvManagerUtils.method25866(13);
                 if (var4.getItem() == Items.field37222) {
                     for (int var13 = 36; var13 < 45; var13++) {
-                        if (mc.player.field4904.method18131(var13).method18265().getItem() == Items.field37836) {
-                            Class7789.method25873(13, var13 - 36);
+                        if (mc.player.container.getSlot(var13).getStack().getItem() == Items.field37836) {
+                            InvManagerUtils.method25873(13, var13 - 36);
                             return 13;
                         }
                     }
                 }
 
                 for (int var14 = 9; var14 < 36; var14++) {
-                    var4 = Class7789.method25866(var14);
+                    var4 = InvManagerUtils.method25866(var14);
                     if (var4.getItem() == Items.field37222) {
                         for (int var6 = 36; var6 < 45; var6++) {
-                            if (mc.player.field4904.method18131(var6).method18265().getItem() == Items.field37836) {
-                                Class7789.method25873(var14, var6 - 36);
+                            if (mc.player.container.getSlot(var6).getStack().getItem() == Items.field37836) {
+                                InvManagerUtils.method25873(var14, var6 - 36);
                                 return -1;
                             }
                         }
@@ -241,8 +241,8 @@ public class AutoSoup extends Module {
                 }
 
                 for (int var15 = 36; var15 < 45; var15++) {
-                    if (mc.player.field4904.method18131(var15).method18265().getItem() == Items.field37836) {
-                        Class7789.method25873(13, var15 - 36);
+                    if (mc.player.container.getSlot(var15).getStack().getItem() == Items.field37836) {
+                        InvManagerUtils.method25873(13, var15 - 36);
                         return -1;
                     }
                 }
@@ -256,7 +256,7 @@ public class AutoSoup extends Module {
         int var4 = 0;
 
         for (int var5 = 36; var5 < 45; var5++) {
-            if (mc.player.field4904.method18131(var5).method18265().getItem() == var1) {
+            if (mc.player.container.getSlot(var5).getStack().getItem() == var1) {
                 var4++;
             }
         }
@@ -268,7 +268,7 @@ public class AutoSoup extends Module {
         int var4 = 0;
 
         for (int var5 = 9; var5 < 36; var5++) {
-            if (mc.player.field4904.method18131(var5).method18265().getItem() == var1) {
+            if (mc.player.container.getSlot(var5).getStack().getItem() == var1) {
                 var4++;
             }
         }

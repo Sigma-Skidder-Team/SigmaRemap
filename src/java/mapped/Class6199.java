@@ -21,7 +21,7 @@ public class Class6199 implements Class6196 {
    @Override
    public void method19097() {
       this.field27669++;
-      if (this.field27667.method37036() == Class1894.field11102) {
+      if (this.field27667.method37036() == GameType.field11102) {
          if (this.field27669 == 1) {
             ClientPlayerEntity var3 = this.field27667.method37035().player;
             if (var3 != null) {

@@ -37,7 +37,7 @@ public class Class2798<T extends Class1006 & Class1022> extends Class2797<T> {
       this.field17439 = Class2278.field14836;
       ItemStack var7 = var1.getHeldItem(Hand.MAIN_HAND);
       if (var7.getItem() == Items.BOW && var1.method4307()) {
-         if (var1.method2967() != HandSide.field14418) {
+         if (var1.getPrimaryHand() != HandSide.field14418) {
             this.field17439 = Class2278.field14839;
          } else {
             this.field17440 = Class2278.field14839;

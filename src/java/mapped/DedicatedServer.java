@@ -343,7 +343,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
    }
 
    @Override
-   public boolean method1374(Class1894 var1, boolean var2, int var3) {
+   public boolean method1374(GameType var1, boolean var2, int var3) {
       return false;
    }
 

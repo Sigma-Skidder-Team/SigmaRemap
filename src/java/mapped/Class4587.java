@@ -57,7 +57,7 @@ public abstract class Class4587 {
       this.field22045 = var10 + (Math.random() * 2.0 - 1.0) * 0.4F;
       this.field22046 = var12 + (Math.random() * 2.0 - 1.0) * 0.4F;
       float var16 = (float)(Math.random() + Math.random() + 1.0) * 0.15F;
-      float var17 = MathHelper.method37766(this.field22044 * this.field22044 + this.field22045 * this.field22045 + this.field22046 * this.field22046);
+      float var17 = MathHelper.sqrt(this.field22044 * this.field22044 + this.field22045 * this.field22045 + this.field22046 * this.field22046);
       this.field22044 = this.field22044 / (double)var17 * (double)var16 * 0.4F;
       this.field22045 = this.field22045 / (double)var17 * (double)var16 * 0.4F + 0.1F;
       this.field22046 = this.field22046 / (double)var17 * (double)var16 * 0.4F;
@@ -171,7 +171,7 @@ public abstract class Class4587 {
          double var11 = var3;
          double var13 = var5;
          if (this.field22049 && (var1 != 0.0 || var3 != 0.0 || var5 != 0.0) && this.method14525(var1, var3, var5)) {
-            Vector3d var15 = Entity.method3235(
+            Vector3d var15 = Entity.collideBoundingBoxHeuristically(
                (Entity)null,
                new Vector3d(var1, var3, var5),
                this.method14523(),
@@ -185,7 +185,7 @@ public abstract class Class4587 {
          }
 
          if (var1 != 0.0 || var3 != 0.0 || var5 != 0.0) {
-            this.method14524(this.method14523().method19667(var1, var3, var5));
+            this.method14524(this.method14523().offset(var1, var3, var5));
             this.method14521();
          }
 

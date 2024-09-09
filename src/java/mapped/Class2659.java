@@ -17,7 +17,7 @@ public class Class2659 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return !this.field17012.world.method6740() && this.field17012.method3250() && this.field17012.getPosY() < (double)(this.field17014 - 2);
+      return !this.field17012.world.method6740() && this.field17012.isInWater() && this.field17012.getPosY() < (double)(this.field17014 - 2);
    }
 
    @Override

@@ -36,14 +36,14 @@ public class Class6832 extends Class6829 {
          float var11 = (float)(MathHelper.method37814(var7, var3) * 180.0F / (float)Math.PI) - 90.0F;
          this.field29707.rotationYaw = this.method20816(this.field29707.rotationYaw, var11, 90.0F);
          float var12;
-         if (!this.field29707.method3226()) {
-            var12 = (float)(this.field29711 * this.field29707.method3086(Attributes.field42109));
+         if (!this.field29707.isOnGround()) {
+            var12 = (float)(this.field29711 * this.field29707.getAttributeValue(Attributes.field42109));
          } else {
-            var12 = (float)(this.field29711 * this.field29707.method3086(Attributes.MOVEMENT_SPEED));
+            var12 = (float)(this.field29711 * this.field29707.getAttributeValue(Attributes.MOVEMENT_SPEED));
          }
 
-         this.field29707.method3113(var12);
-         double var13 = (double) MathHelper.method37766(var3 * var3 + var7 * var7);
+         this.field29707.setAIMoveSpeed(var12);
+         double var13 = (double) MathHelper.sqrt(var3 * var3 + var7 * var7);
          float var15 = (float)(-(MathHelper.method37814(var5, var13) * 180.0F / (float)Math.PI));
          this.field29707.rotationPitch = this.method20816(this.field29707.rotationPitch, var15, (float)this.field29718);
          this.field29707.method4244(!(var5 > 0.0) ? -var12 : var12);

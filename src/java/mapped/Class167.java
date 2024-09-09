@@ -23,6 +23,6 @@ public class Class167 implements Predicate<Entity> {
    public boolean apply(Entity var1) {
       AxisAlignedBB var4 = var1.getBoundingBox().method19662((double)this.field538, (double)this.field538, (double)this.field538);
       boolean var5 = var4.method19672(this.field539, this.field540);
-      return var1 != null && var1.method3139() && var5 && !Client.getInstance().getCombatManager().method29346(var1);
+      return var1 != null && var1.canBeCollidedWith() && var5 && !Client.getInstance().getCombatManager().method29346(var1);
    }
 }

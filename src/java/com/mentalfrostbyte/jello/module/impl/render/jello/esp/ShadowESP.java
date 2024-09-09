@@ -2,9 +2,9 @@ package com.mentalfrostbyte.jello.module.impl.render.jello.esp;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4410;
+import com.mentalfrostbyte.jello.event.impl.EventRenderEntity;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4433;
+import com.mentalfrostbyte.jello.event.impl.EventRenderNameTag;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
@@ -62,15 +62,15 @@ public class ShadowESP extends Module {
                                 GL11.glPushMatrix();
                                 GL11.glAlphaFunc(519, 0.0F);
                                 GL11.glTranslated(var6, var8, var10);
-                                GL11.glTranslatef(0.0F, var3x.method3430(), 0.0F);
+                                GL11.glTranslatef(0.0F, var3x.getHeight(), 0.0F);
                                 GL11.glTranslatef(0.0F, 0.1F, 0.0F);
                                 GL11.glRotatef(mc.gameRenderer.getActiveRenderInfo().getYaw(), 0.0F, -1.0F, 0.0F);
                                 GL11.glScalef(-0.11F, -0.11F, -0.11F);
                                 RenderUtil.method11450(
-                                        -var3x.method3429() * 22.0F,
-                                        -var3x.method3430() * 5.5F,
-                                        var3x.method3429() * 44.0F,
-                                        var3x.method3430() * 21.0F,
+                                        -var3x.getWidth() * 22.0F,
+                                        -var3x.getHeight() * 5.5F,
+                                        var3x.getWidth() * 44.0F,
+                                        var3x.getHeight() * 21.0F,
                                         ResourcesDecrypter.shadowPNG,
                                         var3,
                                         false
@@ -116,13 +116,13 @@ public class ShadowESP extends Module {
                 RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
                 RenderSystem.enableBlend();
                 mc.gameSettings.field44616 = false;
-                int var20 = var10.method3222();
-                boolean var21 = var10.method3348(0);
-                var10.method3221(0);
-                var10.method3349(0, false);
+                int var20 = var10.getFireTimer();
+                boolean var21 = var10.getFlag(0);
+                var10.setFire(0);
+                var10.setFlag(0, false);
                 this.method16608(var10, var12, var14, var16, mc.timer.renderPartialTicks, var18, this.field23795);
-                var10.method3221(var20);
-                var10.method3349(0, var21);
+                var10.setFire(var20);
+                var10.setFlag(0, var21);
                 mc.gameSettings.field44616 = var19;
                 GL11.glPopMatrix();
             }
@@ -152,7 +152,7 @@ public class ShadowESP extends Module {
     }
 
     @EventTarget
-    public void method16609(Class4410 var1) {
+    public void method16609(EventRenderEntity var1) {
         if (this.isEnabled()) {
             if (field23794 != Class2191.field14327) {
                 var1.method13957(false);
@@ -161,9 +161,9 @@ public class ShadowESP extends Module {
     }
 
     @EventTarget
-    public void method16610(Class4433 var1) {
+    public void method16610(EventRenderNameTag var1) {
         if (this.isEnabled() && field23794 != Class2191.field14327 && var1.method13987() instanceof PlayerEntity) {
-            var1.method13900(true);
+            var1.setCancelled(true);
         }
     }
 
@@ -171,7 +171,7 @@ public class ShadowESP extends Module {
         if (var1 instanceof LivingEntity) {
             if (var1 instanceof PlayerEntity) {
                 if (!(var1 instanceof ClientPlayerEntity)) {
-                    return !var1.method3342() && !Client.getInstance().getCombatManager().method29346(var1);
+                    return !var1.isInvisible() && !Client.getInstance().getCombatManager().method29346(var1);
                 } else {
                     return false;
                 }

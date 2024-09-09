@@ -16,8 +16,8 @@ public class Class4861 extends Class4837 {
       ItemStack var6 = null;
       ItemStack var7 = null;
 
-      for (int var8 = 0; var8 < var1.method3629(); var8++) {
-         ItemStack var9 = var1.method3618(var8);
+      for (int var8 = 0; var8 < var1.getSizeInventory(); var8++) {
+         ItemStack var9 = var1.getStackInSlot(var8);
          Item var10 = var9.getItem();
          if (var10 instanceof Class3301) {
             Class3301 var11 = (Class3301)var10;
@@ -54,8 +54,8 @@ public class Class4861 extends Class4837 {
    }
 
    public ItemStack method14962(Class926 var1) {
-      for (int var4 = 0; var4 < var1.method3629(); var4++) {
-         ItemStack var5 = var1.method3618(var4);
+      for (int var4 = 0; var4 < var1.getSizeInventory(); var4++) {
+         ItemStack var5 = var1.getStackInSlot(var4);
          if (!var5.isEmpty()) {
             int var6 = Class958.method3889(var5);
             if (var6 > 0 && var6 <= 6) {
@@ -70,10 +70,10 @@ public class Class4861 extends Class4837 {
    }
 
    public NonNullList<ItemStack> method14968(Class926 var1) {
-      NonNullList var4 = NonNullList.<ItemStack>method68(var1.method3629(), ItemStack.EMPTY);
+      NonNullList var4 = NonNullList.<ItemStack>method68(var1.getSizeInventory(), ItemStack.EMPTY);
 
       for (int var5 = 0; var5 < var4.size(); var5++) {
-         ItemStack var6 = var1.method3618(var5);
+         ItemStack var6 = var1.getStackInSlot(var5);
          if (!var6.isEmpty()) {
             if (!var6.getItem().method11723()) {
                if (var6.method32141() && Class958.method3889(var6) > 0) {

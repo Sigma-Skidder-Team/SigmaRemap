@@ -26,10 +26,10 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    @Override
-   public void method2871() {
-      this.method3084();
+   public void livingEntity() {
+      this.updateArmSwingProgress();
       this.method4338();
-      super.method2871();
+      super.livingEntity();
    }
 
    public void method4338() {
@@ -55,8 +55,8 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      return !this.method2760(var1) ? super.method2741(var1, var2) : false;
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      return !this.isInvulnerableTo(var1) ? super.attackEntityFrom(var1, var2) : false;
    }
 
    @Override
@@ -70,7 +70,7 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    @Override
-   public SoundEvent method2926(int var1) {
+   public SoundEvent getFallSound(int var1) {
       return var1 <= 4 ? SoundEvents.field26683 : SoundEvents.field26680;
    }
 
@@ -101,7 +101,7 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    @Override
-   public boolean method3009() {
+   public boolean canDropLoot() {
       return true;
    }
 
@@ -115,7 +115,7 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    @Override
-   public ItemStack method2983(ItemStack var1) {
+   public ItemStack findAmmo(ItemStack var1) {
       if (!(var1.getItem() instanceof Class3262)) {
          return ItemStack.EMPTY;
       } else {

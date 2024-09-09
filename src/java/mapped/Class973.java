@@ -36,14 +36,14 @@ public class Class973 extends Class939 {
    @Override
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      this.field5437 = NonNullList.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
+      this.field5437 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
       if (!this.method3741(var2)) {
          Class7920.method26567(var2, this.field5437);
       }
    }
 
    @Override
-   public int method3629() {
+   public int getSizeInventory() {
       return 27;
    }
 
@@ -63,12 +63,12 @@ public class Class973 extends Class939 {
    }
 
    @Override
-   public Class5812 method3690(int var1, PlayerInventory var2) {
+   public Container method3690(int var1, PlayerInventory var2) {
       return Class5813.method18162(var1, var2, this);
    }
 
    @Override
-   public void method3631(PlayerEntity var1) {
+   public void openInventory(PlayerEntity var1) {
       if (!var1.isSpectator()) {
          if (this.field5438 < 0) {
             this.field5438 = 0;
@@ -97,7 +97,7 @@ public class Class973 extends Class939 {
       this.field5438 = Class941.method3759(this.field5324, this, var3, var4, var5);
       if (this.field5438 <= 0) {
          BlockState var6 = this.method3775();
-         if (!var6.method23448(Blocks.field37055)) {
+         if (!var6.isIn(Blocks.field37055)) {
             this.method3765();
             return;
          }
@@ -113,7 +113,7 @@ public class Class973 extends Class939 {
    }
 
    @Override
-   public void method3632(PlayerEntity var1) {
+   public void closeInventory(PlayerEntity var1) {
       if (!var1.isSpectator()) {
          this.field5438--;
       }

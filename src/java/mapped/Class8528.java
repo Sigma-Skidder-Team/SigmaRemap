@@ -21,16 +21,16 @@ public class Class8528 {
    private final Class7999 field38309 = Class7999.method27304();
    private String field38310;
 
-   public Class8528(Class3303 var1, int var2) {
+   public Class8528(IItemProvider var1, int var2) {
       this.field38305 = var1.method11581();
       this.field38306 = var2;
    }
 
-   public static Class8528 method30247(Class3303 var0) {
+   public static Class8528 method30247(IItemProvider var0) {
       return method30248(var0, 1);
    }
 
-   public static Class8528 method30248(Class3303 var0, int var1) {
+   public static Class8528 method30248(IItemProvider var0, int var1) {
       return new Class8528(var0, var1);
    }
 
@@ -38,7 +38,7 @@ public class Class8528 {
       return this.method30251(var1, Class120.method342(var2));
    }
 
-   public Class8528 method30250(Character var1, Class3303 var2) {
+   public Class8528 method30250(Character var1, IItemProvider var2) {
       return this.method30251(var1, Class120.method339(var2));
    }
 

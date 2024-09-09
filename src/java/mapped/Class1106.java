@@ -60,9 +60,9 @@ public class Class1106 extends Class1105 {
          List<ServerPlayerEntity> var5 = ((ServerWorld)this.world).method6914(var1 -> this.getDistanceSq(var1) < 2500.0 && var1.field4857.method33865());
 
          for (ServerPlayerEntity var10 : var5) {
-            if (!var10.method3033(var4) || var10.method3034(var4).method8629() < 2 || var10.method3034(var4).method8628() < 1200) {
-               var10.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24570, !this.method3245() ? 1.0F : 0.0F));
-               var10.method3035(new Class2023(var4, 6000, 2));
+            if (!var10.isPotionActive(var4) || var10.getActivePotionEffect(var4).method8629() < 2 || var10.getActivePotionEffect(var4).method8628() < 1200) {
+               var10.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24570, !this.isSilent() ? 1.0F : 0.0F));
+               var10.addPotionEffect(new EffectInstance(var4, 6000, 2));
             }
          }
       }

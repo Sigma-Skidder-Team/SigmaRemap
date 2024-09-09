@@ -31,7 +31,7 @@ public abstract class Class6334 extends Class6333 {
          this.field27858 = (double)((float)this.field27846.getPosX());
          this.field27859 = (double)((float)this.field27846.getPosY());
          this.field27860 = (double)((float)this.field27846.getPosZ());
-         float var4 = MathHelper.method37766(Entity.method3234(this.field27846.getVec()));
+         float var4 = MathHelper.sqrt(Entity.horizontalMag(this.field27846.getMotion()));
          if (!((double)var4 >= 0.01)) {
             this.field27857 = 0.0F;
             this.field27856 = 0.0F;
@@ -45,11 +45,11 @@ public abstract class Class6334 extends Class6333 {
    }
 
    private float method19272() {
-      return !this.field27846.method3005() ? 0.7F : 1.1F;
+      return !this.field27846.isChild() ? 0.7F : 1.1F;
    }
 
    private float method19273() {
-      return !this.field27846.method3005() ? 1.1F : 1.5F;
+      return !this.field27846.isChild() ? 1.1F : 1.5F;
    }
 
    @Override
@@ -59,7 +59,7 @@ public abstract class Class6334 extends Class6333 {
 
    @Override
    public boolean method19268() {
-      return !this.field27846.method3245();
+      return !this.field27846.isSilent();
    }
 
    public abstract Class6333 method19275();

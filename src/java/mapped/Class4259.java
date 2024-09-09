@@ -15,7 +15,7 @@ public class Class4259 extends Class4247 {
    private List<Class4240> field20645 = new ArrayList<Class4240>();
    public int field20646;
    public Class4266 field20647;
-   public Class7481 field20648;
+   public ChunkPos field20648;
    public int field20649 = 8;
    public float field20650 = 0.0F;
    public float field20651 = 0.0F;
@@ -25,7 +25,7 @@ public class Class4259 extends Class4247 {
    public int field20655;
    public float field20656;
    public float field20657;
-   public Class7481 field20658;
+   public ChunkPos field20658;
    private final List<Class8041> field20659 = new ArrayList<Class8041>();
    private final List<Class9693> field20660 = new ArrayList<Class9693>();
 
@@ -62,7 +62,7 @@ public class Class4259 extends Class4247 {
    }
 
    public void method13077(int var1, int var2) {
-      this.field20648 = new Class7481(var1 / 16, var2 / 16);
+      this.field20648 = new ChunkPos(var1 / 16, var2 / 16);
       this.field20651 = -0.5F;
       this.field20650 = -0.5F;
       this.field20647.field20687 = true;
@@ -102,7 +102,7 @@ public class Class4259 extends Class4247 {
    @Override
    public void draw(float var1) {
       Minecraft var4 = Minecraft.getInstance();
-      Class7481 var5 = new Class7481(this.field20648.field32174, this.field20648.field32175);
+      ChunkPos var5 = new ChunkPos(this.field20648.field32174, this.field20648.field32175);
       var5.field32174 = (int)((double)var5.field32174 - Math.floor((double)this.field20651));
       var5.field32175 = (int)((double)var5.field32175 - Math.floor((double)this.field20650));
       if (var1 != 1.0F) {

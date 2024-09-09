@@ -24,8 +24,8 @@ public class Class2703 extends Class2699 {
          if (var3 == null) {
             return false;
          } else {
-            this.field17176 = var3.method3018();
-            int var4 = var3.method3019();
+            this.field17176 = var3.getLastAttackedEntity();
+            int var4 = var3.getLastAttackedEntityTime();
             return var4 != this.field17177 && this.method10915(this.field17176, Class8522.field38240) && this.field17175.method4388(this.field17176, var3);
          }
       } else {
@@ -38,7 +38,7 @@ public class Class2703 extends Class2699 {
       this.field17153.method4233(this.field17176);
       LivingEntity var3 = this.field17175.method4400();
       if (var3 != null) {
-         this.field17177 = var3.method3019();
+         this.field17177 = var3.getLastAttackedEntityTime();
       }
 
       super.method10804();

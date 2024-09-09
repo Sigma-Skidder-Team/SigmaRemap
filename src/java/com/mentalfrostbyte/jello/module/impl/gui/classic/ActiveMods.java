@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.gui.classic;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4415;
+import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ClientResource;
@@ -52,7 +52,7 @@ public class ActiveMods extends Module {
     }
 
     @EventTarget
-    private void method16854(Class4415 var1) {
+    private void method16854(EventRender var1) {
         if (this.isEnabled() && mc.player != null) {
             String var4 = this.getStringSettingValueByName("Animation");
             String var5 = this.getStringSettingValueByName("Outline");

@@ -13,7 +13,7 @@ public class Class6966 {
          Class7514 var4 = field30176.get(var0);
          return var4.method24495(new Class8600(var4.method24496()), var1);
       } else {
-         Class8042.method27613().method27366().severe("Failed to transform particles with id " + var0 + " and data " + Arrays.toString((Object[])var1));
+         ViaVersion3.method27613().method27366().severe("Failed to transform particles with id " + var0 + " and data " + Arrays.toString((Object[])var1));
          return null;
       }
    }

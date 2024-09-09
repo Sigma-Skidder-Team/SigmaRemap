@@ -22,7 +22,7 @@ public class Class971 extends Class939 {
    }
 
    @Override
-   public int method3629() {
+   public int getSizeInventory() {
       return 9;
    }
 
@@ -43,7 +43,7 @@ public class Class971 extends Class939 {
    public int method4023(ItemStack var1) {
       for (int var4 = 0; var4 < this.field5436.size(); var4++) {
          if (this.field5436.get(var4).isEmpty()) {
-            this.method3621(var4, var1);
+            this.setInventorySlotContents(var4, var1);
             return var4;
          }
       }
@@ -59,7 +59,7 @@ public class Class971 extends Class939 {
    @Override
    public void method3645(BlockState var1, CompoundNBT var2) {
       super.method3645(var1, var2);
-      this.field5436 = NonNullList.<ItemStack>method68(this.method3629(), ItemStack.EMPTY);
+      this.field5436 = NonNullList.<ItemStack>method68(this.getSizeInventory(), ItemStack.EMPTY);
       if (!this.method3741(var2)) {
          Class7920.method26567(var2, this.field5436);
       }
@@ -86,7 +86,7 @@ public class Class971 extends Class939 {
    }
 
    @Override
-   public Class5812 method3690(int var1, PlayerInventory var2) {
+   public Container method3690(int var1, PlayerInventory var2) {
       return new Class5817(var1, var2, this);
    }
 

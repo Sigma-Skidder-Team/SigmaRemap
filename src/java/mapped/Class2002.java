@@ -23,7 +23,7 @@ public class Class2002 extends Vector3i {
       return new Class2002(method8396(var0.getX()), method8396(var0.getY()), method8396(var0.getZ()));
    }
 
-   public static Class2002 method8391(Class7481 var0, int var1) {
+   public static Class2002 method8391(ChunkPos var0, int var1) {
       return new Class2002(var0.field32174, var1, var0.field32175);
    }
 
@@ -158,8 +158,8 @@ public class Class2002 extends Vector3i {
       return this.method8421().method8336(8, 8, 8);
    }
 
-   public Class7481 method8423() {
-      return new Class7481(this.method8410(), this.method8412());
+   public ChunkPos method8423() {
+      return new ChunkPos(this.method8410(), this.method8412());
    }
 
    public static long method8424(int var0, int var1, int var2) {
@@ -184,7 +184,7 @@ public class Class2002 extends Vector3i {
       return method8429(var4 - var1, var5 - var1, var6 - var1, var4 + var1, var5 + var1, var6 + var1);
    }
 
-   public static Stream<Class2002> method8428(Class7481 var0, int var1) {
+   public static Stream<Class2002> method8428(ChunkPos var0, int var1) {
       int var4 = var0.field32174;
       int var5 = var0.field32175;
       return method8429(var4 - var1, 0, var5 - var1, var4 + var1, 15, var5 + var1);

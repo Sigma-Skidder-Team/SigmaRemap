@@ -2,9 +2,9 @@ package mapped;
 
 public class Class4043 extends Class3758 {
    private static String[] field20374;
-   public final Class6355 field20375;
+   public final ViaVersion7 field20375;
 
-   public Class4043(Class6355 var1) {
+   public Class4043(ViaVersion7 var1) {
       this.field20375 = var1;
    }
 

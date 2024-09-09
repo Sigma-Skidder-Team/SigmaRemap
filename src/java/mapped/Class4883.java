@@ -26,8 +26,8 @@ public class Class4883 extends Class4874<Class4491> {
       int var7 = 0;
       int var8 = 0;
 
-      for (int var9 = 0; var9 < var2.method3629(); var9++) {
-         ItemStack var10 = var2.method3618(var9);
+      for (int var9 = 0; var9 < var2.getSizeInventory(); var9++) {
+         ItemStack var10 = var2.getStackInSlot(var9);
          if (!var10.isEmpty()) {
             var8++;
             if (var10.getCount() >= var10.method32113()) {

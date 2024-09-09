@@ -18,7 +18,7 @@ public class Class2949 extends Class2898<Class4712> {
    public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
       if (var1.method7007(var4)) {
          BlockState var8 = var1.getBlockState(var4.up());
-         if (!var8.method23448(Blocks.NETHERRACK) && !var8.method23448(Blocks.field36891)) {
+         if (!var8.isIn(Blocks.NETHERRACK) && !var8.isIn(Blocks.field36891)) {
             return false;
          } else {
             this.method11289(var1, var3, var4);
@@ -42,7 +42,7 @@ public class Class2949 extends Class2898<Class4712> {
 
             for (Direction var13 : field18026) {
                BlockState var14 = var1.getBlockState(var7.method8377(var6, var13));
-               if (var14.method23448(Blocks.NETHERRACK) || var14.method23448(Blocks.field36891)) {
+               if (var14.isIn(Blocks.NETHERRACK) || var14.isIn(Blocks.field36891)) {
                   var9++;
                }
 
@@ -65,7 +65,7 @@ public class Class2949 extends Class2898<Class4712> {
          var6.method8378(var3, var2.nextInt(8) - var2.nextInt(8), var2.nextInt(2) - var2.nextInt(7), var2.nextInt(8) - var2.nextInt(8));
          if (var1.method7007(var6)) {
             BlockState var8 = var1.getBlockState(var6.up());
-            if (var8.method23448(Blocks.NETHERRACK) || var8.method23448(Blocks.field36891)) {
+            if (var8.isIn(Blocks.NETHERRACK) || var8.isIn(Blocks.field36891)) {
                int var9 = MathHelper.method37782(var2, 1, 8);
                if (var2.nextInt(6) == 0) {
                   var9 *= 2;

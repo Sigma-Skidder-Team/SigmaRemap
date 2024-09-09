@@ -1,7 +1,6 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 
@@ -16,12 +15,12 @@ public class Class3387 extends Class3386 implements Class3207 {
 
    public Class3387(AbstractBlock var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18995, Boolean.valueOf(false)).method23465(field18994, Class113.field414));
+      this.method11578(this.field18612.method35393().method23465(field18995, Boolean.valueOf(false)).method23465(field18994, Direction.field414));
    }
 
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
-      switch (Class9607.field44929[var1.<Class113>method23463(field18994).ordinal()]) {
+      switch (Class9607.field44929[var1.<Direction>method23463(field18994).ordinal()]) {
          case 1:
          default:
             return field18998;
@@ -41,7 +40,7 @@ public class Class3387 extends Class3386 implements Class3207 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, net.minecraft.util.Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var1.<Boolean>method23463(field18995)) {
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
       }

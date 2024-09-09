@@ -18,7 +18,7 @@ public class Class165 implements Predicate<Entity> {
       if (var1.isAlive()) {
          if (var1 instanceof LivingEntity) {
             LivingEntity var4 = (LivingEntity)var1;
-            return var4.method2980(this.field533);
+            return var4.canPickUpItem(this.field533);
          } else {
             return false;
          }

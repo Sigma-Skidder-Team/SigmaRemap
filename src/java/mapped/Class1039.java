@@ -50,11 +50,11 @@ public class Class1039 extends Class1038 {
    }
 
    @Override
-   public boolean method3114(Entity var1) {
-      boolean var4 = super.method3114(var1);
+   public boolean attackEntityAsMob(Entity var1) {
+      boolean var4 = super.attackEntityAsMob(var1);
       if (var4 && this.getHeldItemMainhand().isEmpty() && var1 instanceof LivingEntity) {
          float var5 = this.world.method6807(this.getPosition()).method38328();
-         ((LivingEntity)var1).method3035(new Class2023(Effects.HUNGER, 140 * (int)var5));
+         ((LivingEntity)var1).addPotionEffect(new EffectInstance(Effects.HUNGER, 140 * (int)var5));
       }
 
       return var4;
@@ -68,7 +68,7 @@ public class Class1039 extends Class1038 {
    @Override
    public void method4658() {
       this.method4659(EntityType.field41107);
-      if (!this.method3245()) {
+      if (!this.isSilent()) {
          this.world.method6869((PlayerEntity)null, 1041, this.getPosition(), 0);
       }
    }

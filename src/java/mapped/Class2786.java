@@ -37,7 +37,7 @@ public class Class2786 extends Class2785 {
          }
 
          if (var7 != null) {
-            var7.method2911(Class8876.field40136);
+            var7.method2911(Stats.field40136);
             CriteriaTriggers.field44479.method15112(var7, this.field17407, this.field17410, var4);
          }
 
@@ -46,18 +46,18 @@ public class Class2786 extends Class2785 {
          this.field17407.method4508();
          this.field17410.method4508();
          var4.method4770(-24000);
-         var4.method3273(this.field17407.getPosX(), this.field17407.getPosY(), this.field17407.getPosZ(), 0.0F, 0.0F);
+         var4.setLocationAndAngles(this.field17407.getPosX(), this.field17407.getPosY(), this.field17407.getPosZ(), 0.0F, 0.0F);
          var3.method6995(var4);
-         this.field17409.method6786(this.field17407, (byte)18);
-         if (this.field17409.method6789().method17135(Class5462.field24227)) {
+         this.field17409.setEntityState(this.field17407, (byte)18);
+         if (this.field17409.getGameRules().getBoolean(Class5462.field24227)) {
             this.field17409
-               .method6916(
+               .addEntity(
                   new ExperienceOrbEntity(
                      this.field17409,
                      this.field17407.getPosX(),
                      this.field17407.getPosY(),
                      this.field17407.getPosZ(),
-                     this.field17407.method3013().nextInt(7) + 1
+                     this.field17407.getRNG().nextInt(7) + 1
                   )
                );
          }

@@ -45,15 +45,15 @@ public class Class8092 {
       }
 
       if (!this.field34815) {
-         this.field34812.field4967 = this.method28049(this.field34812.field4967, this.field34812.field4965, 10.0F);
+         this.field34812.rotationYawHead = this.method28049(this.field34812.rotationYawHead, this.field34812.renderYawOffset, 10.0F);
       } else {
          this.field34815 = false;
-         this.field34812.field4967 = this.method28049(this.field34812.field4967, this.method28048(), this.field34813);
+         this.field34812.rotationYawHead = this.method28049(this.field34812.rotationYawHead, this.method28048(), this.field34813);
          this.field34812.rotationPitch = this.method28049(this.field34812.rotationPitch, this.method28047(), this.field34814);
       }
 
       if (!this.field34812.method4230().method21664()) {
-         this.field34812.field4967 = MathHelper.method37796(this.field34812.field4967, this.field34812.field4965, (float)this.field34812.method4260());
+         this.field34812.rotationYawHead = MathHelper.method37796(this.field34812.rotationYawHead, this.field34812.renderYawOffset, (float)this.field34812.method4260());
       }
    }
 
@@ -79,9 +79,9 @@ public class Class8092 {
 
    public float method28047() {
       double var3 = this.field34816 - this.field34812.getPosX();
-      double var5 = this.field34817 - this.field34812.method3442();
+      double var5 = this.field34817 - this.field34812.getPosYEye();
       double var7 = this.field34818 - this.field34812.getPosZ();
-      double var9 = (double) MathHelper.method37766(var3 * var3 + var7 * var7);
+      double var9 = (double) MathHelper.sqrt(var3 * var3 + var7 * var7);
       return (float)(-(MathHelper.method37814(var5, var9) * 180.0F / (float)Math.PI));
    }
 
@@ -98,6 +98,6 @@ public class Class8092 {
    }
 
    private static double method28050(Entity var0) {
-      return !(var0 instanceof LivingEntity) ? (var0.getBoundingBox().minY + var0.getBoundingBox().maxY) / 2.0 : var0.method3442();
+      return !(var0 instanceof LivingEntity) ? (var0.getBoundingBox().minY + var0.getBoundingBox().maxY) / 2.0 : var0.getPosYEye();
    }
 }

@@ -22,7 +22,7 @@ public class Class2780 extends Class2595 {
    @Override
    public boolean method10803() {
       if (!this.field17382.method4296() && !this.field17382.method4914()) {
-         List<Entity> var3 = this.field17382.world.method6770(this.field17382, this.field17382.getBoundingBox().method19663(9.0, 4.0, 9.0), var0 -> {
+         List<Entity> var3 = this.field17382.world.getEntitiesInAABBexcluding(this.field17382, this.field17382.getBoundingBox().method19663(9.0, 4.0, 9.0), var0 -> {
             EntityType var3x = var0.getType();
             return var3x == EntityType.field41047 || var3x == EntityType.field41094;
          });
@@ -104,7 +104,7 @@ public class Class2780 extends Class2595 {
    public void method10805() {
       if (this.field17382.method4914() && !(this.field17382.method4297() instanceof LeashKnotEntity)) {
          Class1064 var3 = this.field17382.method4915();
-         double var4 = (double)this.field17382.method3275(var3);
+         double var4 = (double)this.field17382.getDistance(var3);
          float var6 = 2.0F;
          Vector3d var7 = new Vector3d(
                var3.getPosX() - this.field17382.getPosX(),
@@ -112,7 +112,7 @@ public class Class2780 extends Class2595 {
                var3.getPosZ() - this.field17382.getPosZ()
             )
             .method11333()
-            .method11344(Math.max(var4 - 2.0, 0.0));
+            .scale(Math.max(var4 - 2.0, 0.0));
          this.field17382
             .method4230()
             .method21654(

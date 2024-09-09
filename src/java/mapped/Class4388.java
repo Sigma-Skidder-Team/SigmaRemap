@@ -27,7 +27,7 @@ public class Class4388 {
    private static final RangedInteger field21464 = TickRangeConverter.convertRange(5, 7);
    private static final Set<Item> field21465 = ImmutableSet.of(Items.field37869, Items.field37870);
 
-   public static Class6947<?> method13798(Class1034 var0, Class6947<Class1034> var1) {
+   public static Brain<?> method13798(Class1034 var0, Brain<Class1034> var1) {
       method13800(var1);
       method13801(var1);
       method13804(var1);
@@ -35,20 +35,20 @@ public class Class4388 {
       method13803(var1);
       method13805(var1);
       method13806(var1);
-      var1.method21415(ImmutableSet.of(Class8890.field40219));
-      var1.method21424(Class8890.field40220);
+      var1.method21415(ImmutableSet.of(Activity.field40219));
+      var1.method21424(Activity.field40220);
       var1.method21417();
       return var1;
    }
 
    public static void method13799(Class1034 var0) {
       int var3 = field21459.method29319(var0.world.rand);
-      var0.method2992().method21407(Class8830.field39855, true, (long)var3);
+      var0.getBrain().method21407(Class8830.field39855, true, (long)var3);
    }
 
-   private static void method13800(Class6947<Class1034> var0) {
+   private static void method13800(Brain<Class1034> var0) {
       var0.method21425(
-         Class8890.field40219,
+         Activity.field40219,
          0,
          ImmutableList.<Class3676<? super Class1034>>of(
             new Class3681(45, 90),
@@ -64,9 +64,9 @@ public class Class4388 {
       );
    }
 
-   private static void method13801(Class6947<Class1034> var0) {
+   private static void method13801(Brain<Class1034> var0) {
       var0.method21425(
-         Class8890.field40220,
+         Activity.field40220,
          10,
          ImmutableList.of(
             new Class3738(Class4388::method13875, 14.0F),
@@ -81,9 +81,9 @@ public class Class4388 {
       );
    }
 
-   private static void method13802(Class1034 var0, Class6947<Class1034> var1) {
+   private static void method13802(Class1034 var0, Brain<Class1034> var1) {
       var1.method21426(
-         Class8890.field40229,
+         Activity.field40229,
          10,
          ImmutableList.<Class3676<? super Class1034>>of(
             new Class3685<>(var1x -> !method13829(var0, var1x)),
@@ -98,9 +98,9 @@ public class Class4388 {
       );
    }
 
-   private static void method13803(Class6947<Class1034> var0) {
+   private static void method13803(Brain<Class1034> var0) {
       var0.method21426(
-         Class8890.field40230,
+         Activity.field40230,
          10,
          ImmutableList.<Class3676<? super Class1034>>of(
             method13809(),
@@ -116,18 +116,18 @@ public class Class4388 {
       );
    }
 
-   private static void method13804(Class6947<Class1034> var0) {
+   private static void method13804(Brain<Class1034> var0) {
       var0.method21426(
-         Class8890.field40231,
+         Activity.field40231,
          10,
          ImmutableList.<Class3676<? super Class1034>>of(new Class3724<>(Class4388::method13879, 1.0F, true, 9), new Class3743<>(9), new Class3732(200, 200)),
          Class8830.field39851
       );
    }
 
-   private static void method13805(Class6947<Class1034> var0) {
+   private static void method13805(Brain<Class1034> var0) {
       var0.method21426(
-         Class8890.field40232,
+         Activity.field40232,
          10,
          ImmutableList.of(
             Class3690.method12539(Class8830.field39837, 1.0F, 12, true),
@@ -139,9 +139,9 @@ public class Class4388 {
       );
    }
 
-   private static void method13806(Class6947<Class1034> var0) {
+   private static void method13806(Brain<Class1034> var0) {
       var0.method21426(
-         Class8890.field40233,
+         Activity.field40233,
          10,
          ImmutableList.<Class3676<? super Class1034>>of(
             new Class3741<>(0.8F),
@@ -180,7 +180,7 @@ public class Class4388 {
    }
 
    private static Class3744<Class1034, LivingEntity> method13810() {
-      return new Class3744<Class1034, LivingEntity>(Class1034::method3005, Class8830.field39848, Class8830.field39837, field21464);
+      return new Class3744<Class1034, LivingEntity>(Class1034::isChild, Class8830.field39848, Class8830.field39837, field21464);
    }
 
    private static Class3744<Class1034, LivingEntity> method13811() {
@@ -188,12 +188,12 @@ public class Class4388 {
    }
 
    public static void method13812(Class1034 var0) {
-      Class6947<Class1034> var3 = var0.method2992();
-      Class8890 var4 = var3.method21418().orElse(null);
+      Brain<Class1034> var3 = var0.getBrain();
+      Activity var4 = var3.method21418().orElse(null);
       var3.method21423(
-         ImmutableList.of(Class8890.field40231, Class8890.field40229, Class8890.field40232, Class8890.field40230, Class8890.field40233, Class8890.field40220)
+         ImmutableList.of(Activity.field40231, Activity.field40229, Activity.field40232, Activity.field40230, Activity.field40233, Activity.field40220)
       );
-      Class8890 var5 = var3.method21418().orElse(null);
+      Activity var5 = var3.method21418().orElse(null);
       if (var4 != var5) {
          method13837(var0).ifPresent(var0::method4629);
       }
@@ -211,11 +211,11 @@ public class Class4388 {
    }
 
    private static boolean method13813(Class1034 var0) {
-      if (!var0.method3005()) {
+      if (!var0.isChild()) {
          return false;
       } else {
          Entity var3 = var0.getRidingEntity();
-         return var3 instanceof Class1034 && ((Class1034)var3).method3005() || var3 instanceof Class1091 && ((Class1091)var3).method3005();
+         return var3 instanceof Class1034 && ((Class1034)var3).isChild() || var3 instanceof Class1091 && ((Class1091)var3).isChild();
       }
    }
 
@@ -223,12 +223,12 @@ public class Class4388 {
       method13844(var0);
       ItemStack var4;
       if (var1.method4124().getItem() != Items.field37969) {
-         var0.method2751(var1, 1);
+         var0.onItemPickup(var1, 1);
          var4 = method13816(var1);
       } else {
-         var0.method2751(var1, var1.method4124().getCount());
+         var0.onItemPickup(var1, var1.method4124().getCount());
          var4 = var1.method4124();
-         var1.method2904();
+         var1.remove();
       }
 
       Item var5 = var4.getItem();
@@ -242,7 +242,7 @@ public class Class4388 {
             }
          }
       } else {
-         var0.method2992().method21405(Class8830.field39852);
+         var0.getBrain().method21405(Class8830.field39852);
          method13815(var0, var4);
          method13867(var0);
       }
@@ -262,7 +262,7 @@ public class Class4388 {
       if (!var3.isEmpty()) {
          var0.method4125(var3);
       } else {
-         var0.method2904();
+         var0.remove();
       }
 
       return var4;
@@ -270,7 +270,7 @@ public class Class4388 {
 
    public static void method13817(Class1034 var0, boolean var1) {
       ItemStack var4 = var0.getHeldItem(Hand.field183);
-      var0.method3095(Hand.field183, ItemStack.EMPTY);
+      var0.setHeldItem(Hand.field183, ItemStack.EMPTY);
       if (!var0.method4635()) {
          boolean var5 = var0.method4247(var4);
          if (!var5) {
@@ -299,7 +299,7 @@ public class Class4388 {
    public static void method13818(Class1034 var0) {
       if (method13868(var0) && !var0.method3091().isEmpty()) {
          var0.method3302(var0.method3091());
-         var0.method3095(Hand.field183, ItemStack.EMPTY);
+         var0.setHeldItem(Hand.field183, ItemStack.EMPTY);
       }
    }
 
@@ -309,7 +309,7 @@ public class Class4388 {
    }
 
    private static void method13820(Class1034 var0, List<ItemStack> var1) {
-      Optional var4 = var0.method2992().<PlayerEntity>method21410(Class8830.field39822);
+      Optional var4 = var0.getBrain().<PlayerEntity>method21410(Class8830.field39822);
       if (!var4.isPresent()) {
          method13821(var0, var1);
       } else {
@@ -330,7 +330,7 @@ public class Class4388 {
          var0.swingArm(Hand.field183);
 
          for (ItemStack var6 : var1) {
-            Class6983.method21578(var0, var6, var2.method11339(0.0, 1.0, 0.0));
+            Class6983.method21578(var0, var6, var2.add(0.0, 1.0, 0.0));
          }
       }
    }
@@ -346,13 +346,13 @@ public class Class4388 {
    }
 
    private static boolean method13825(LivingEntity var0, LivingEntity var1) {
-      return var1.getType() == EntityType.field41037 ? new Random(var0.world.method6783()).nextFloat() < 0.1F : false;
+      return var1.getType() == EntityType.field41037 ? new Random(var0.world.getGameTime()).nextFloat() < 0.1F : false;
    }
 
    public static boolean method13826(Class1034 var0, ItemStack var1) {
       Item var4 = var1.getItem();
       if (!var4.method11743(Class5985.field26108)) {
-         if (method13876(var0) && var0.method2992().method21404(Class8830.field39826)) {
+         if (method13876(var0) && var0.getBrain().method21404(Class8830.field39826)) {
             return false;
          } else if (!method13869(var4)) {
             boolean var5 = var0.method4613(var1);
@@ -380,7 +380,7 @@ public class Class4388 {
          return false;
       } else {
          Class1006 var4 = (Class1006)var1;
-         return !var4.method3005() || !var4.isAlive() || method13877(var0) || method13877(var4) || var4 instanceof Class1034 && var4.getRidingEntity() == null;
+         return !var4.isChild() || !var4.isAlive() || method13877(var0) || method13877(var4) || var4 instanceof Class1034 && var4.getRidingEntity() == null;
       }
    }
 
@@ -389,7 +389,7 @@ public class Class4388 {
    }
 
    private static boolean method13830(Class1034 var0) {
-      Class6947<Class1034> var3 = var0.method2992();
+      Brain<Class1034> var3 = var0.getBrain();
       if (!var3.method21404(Class8830.field39865)) {
          return false;
       } else {
@@ -399,7 +399,7 @@ public class Class4388 {
    }
 
    private static Optional<? extends LivingEntity> method13831(Class1034 var0) {
-      Class6947 var3 = var0.method2992();
+      Brain var3 = var0.getBrain();
       if (!method13830(var0)) {
          Optional var4 = Class6983.method21586(var0, Class8830.field39849);
          if (var4.isPresent() && method13871((LivingEntity)var4.get())) {
@@ -428,7 +428,7 @@ public class Class4388 {
    public static void method13832(PlayerEntity var0, boolean var1) {
       List<Class1034> var4 = var0.world.method7182(Class1034.class, var0.getBoundingBox().method19664(16.0));
       var4.stream().filter(Class4388::method13865).filter(var2 -> !var1 || Class6983.method21583(var2, var0)).forEach(var1x -> {
-         if (!var1x.world.method6789().method17135(Class5462.field24255)) {
+         if (!var1x.world.getGameRules().getBoolean(Class5462.field24255)) {
             method13849(var1x, var0);
          } else {
             method13850(var1x, var0);
@@ -459,7 +459,7 @@ public class Class4388 {
             method13817(var0, false);
          }
 
-         Class6947 var4 = var0.method2992();
+         Brain var4 = var0.getBrain();
          var4.method21405(Class8830.field39856);
          var4.method21405(Class8830.field39857);
          var4.method21405(Class8830.field39851);
@@ -472,7 +472,7 @@ public class Class4388 {
                var4.method21405(Class8830.field39837);
             }
          });
-         if (!var0.method3005()) {
+         if (!var0.isChild()) {
             if (var1.getType() == EntityType.field41037 && method13859(var0)) {
                method13860(var0, var1);
                method13855(var0, var1);
@@ -489,8 +489,8 @@ public class Class4388 {
    }
 
    public static void method13836(Class1035 var0, LivingEntity var1) {
-      if (!var0.method2992().method21430(Class8890.field40232) && method13871(var1) && !Class6983.method21582(var0, var1, 4.0)) {
-         if (var1.getType() == EntityType.PLAYER && var0.world.method6789().method17135(Class5462.field24255)) {
+      if (!var0.getBrain().method21430(Activity.field40232) && method13871(var1) && !Class6983.method21582(var0, var1, 4.0)) {
+         if (var1.getType() == EntityType.PLAYER && var0.world.getGameRules().getBoolean(Class5462.field24255)) {
             method13850(var0, var1);
             method13847(var0);
          } else {
@@ -501,16 +501,16 @@ public class Class4388 {
    }
 
    public static Optional<SoundEvent> method13837(Class1034 var0) {
-      return var0.method2992().method21418().<SoundEvent>map(var1 -> method13838(var0, var1));
+      return var0.getBrain().method21418().<SoundEvent>map(var1 -> method13838(var0, var1));
    }
 
-   private static SoundEvent method13838(Class1034 var0, Class8890 var1) {
-      if (var1 != Class8890.field40229) {
+   private static SoundEvent method13838(Class1034 var0, Activity var1) {
+      if (var1 != Activity.field40229) {
          if (!var0.method4634()) {
-            if (var1 == Class8890.field40232 && method13839(var0)) {
+            if (var1 == Activity.field40232 && method13839(var0)) {
                return SoundEvents.field26936;
-            } else if (var1 != Class8890.field40231) {
-               if (var1 != Class8890.field40230) {
+            } else if (var1 != Activity.field40231) {
+               if (var1 != Activity.field40230) {
                   if (!method13873(var0)) {
                      return !method13872(var0) ? SoundEvents.field26930 : SoundEvents.field26936;
                   } else {
@@ -531,27 +531,27 @@ public class Class4388 {
    }
 
    private static boolean method13839(Class1034 var0) {
-      Class6947<Class1034> var3 = var0.method2992();
+      Brain<Class1034> var3 = var0.getBrain();
       return var3.method21404(Class8830.field39837) ? var3.method21410(Class8830.field39837).get().isEntityInRange(var0, 12.0) : false;
    }
 
    public static boolean method13840(Class1034 var0) {
-      return var0.method2992().method21404(Class8830.field39855)
-         || method13841(var0).stream().anyMatch(var0x -> var0x.method2992().method21404(Class8830.field39855));
+      return var0.getBrain().method21404(Class8830.field39855)
+         || method13841(var0).stream().anyMatch(var0x -> var0x.getBrain().method21404(Class8830.field39855));
    }
 
    private static List<Class1035> method13841(Class1034 var0) {
-      return var0.method2992().<List<Class1035>>method21410(Class8830.field39862).orElse(ImmutableList.of());
+      return var0.getBrain().<List<Class1035>>method21410(Class8830.field39862).orElse(ImmutableList.of());
    }
 
    private static List<Class1035> method13842(Class1035 var0) {
-      return var0.method2992().<List<Class1035>>method21410(Class8830.field39861).orElse(ImmutableList.of());
+      return var0.getBrain().<List<Class1035>>method21410(Class8830.field39861).orElse(ImmutableList.of());
    }
 
    public static boolean method13843(LivingEntity var0) {
-      for (ItemStack var4 : var0.method2947()) {
+      for (ItemStack var4 : var0.getArmorInventoryList()) {
          Item var5 = var4.getItem();
-         if (var5 instanceof Class3279 && ((Class3279)var5).method11806() == Class2114.field13776) {
+         if (var5 instanceof ArmorItem && ((ArmorItem)var5).getArmorMaterial() == Class2114.field13776) {
             return true;
          }
       }
@@ -560,12 +560,12 @@ public class Class4388 {
    }
 
    private static void method13844(Class1034 var0) {
-      var0.method2992().method21405(Class8830.field39824);
+      var0.getBrain().method21405(Class8830.field39824);
       var0.method4230().method21666();
    }
 
    private static Class3702<Class1034> method13845() {
-      return new Class3702<Class1034>(new Class3744<>(Class1034::method3005, Class8830.field39859, Class8830.field39830, field21461), field21460);
+      return new Class3702<Class1034>(new Class3744<>(Class1034::isChild, Class8830.field39859, Class8830.field39830, field21461), field21460);
    }
 
    public static void method13846(Class1035 var0, LivingEntity var1) {
@@ -586,14 +586,14 @@ public class Class4388 {
 
    public static void method13849(Class1035 var0, LivingEntity var1) {
       if (method13871(var1)) {
-         var0.method2992().method21405(Class8830.field39841);
-         var0.method2992().method21407(Class8830.field39849, var1.getUniqueID(), 600L);
+         var0.getBrain().method21405(Class8830.field39841);
+         var0.getBrain().method21407(Class8830.field39849, var1.getUniqueID(), 600L);
          if (var1.getType() == EntityType.field41037 && var0.method4618()) {
             method13861(var0);
          }
 
-         if (var1.getType() == EntityType.PLAYER && var0.world.method6789().method17135(Class5462.field24255)) {
-            var0.method2992().method21407(Class8830.field39850, true, 600L);
+         if (var1.getType() == EntityType.PLAYER && var0.world.getGameRules().getBoolean(Class5462.field24255)) {
+            var0.getBrain().method21407(Class8830.field39850, true, 600L);
          }
       }
    }
@@ -620,11 +620,11 @@ public class Class4388 {
    }
 
    public static Optional<LivingEntity> method13853(Class1034 var0) {
-      return !var0.method2992().method21404(Class8830.field39837) ? Optional.<LivingEntity>empty() : var0.method2992().<LivingEntity>method21410(Class8830.field39837);
+      return !var0.getBrain().method21404(Class8830.field39837) ? Optional.<LivingEntity>empty() : var0.getBrain().<LivingEntity>method21410(Class8830.field39837);
    }
 
    public static Optional<PlayerEntity> method13854(Class1035 var0) {
-      return !var0.method2992().method21404(Class8830.field39823) ? Optional.<PlayerEntity>empty() : var0.method2992().<PlayerEntity>method21410(Class8830.field39823);
+      return !var0.getBrain().method21404(Class8830.field39823) ? Optional.<PlayerEntity>empty() : var0.getBrain().<PlayerEntity>method21410(Class8830.field39823);
    }
 
    private static void method13855(Class1034 var0, LivingEntity var1) {
@@ -632,14 +632,14 @@ public class Class4388 {
    }
 
    private static void method13856(Class1034 var0, LivingEntity var1) {
-      Class6947 var4 = var0.method2992();
+      Brain var4 = var0.getBrain();
       LivingEntity var5 = Class6983.method21584(var0, var4.<LivingEntity>method21410(Class8830.field39837), var1);
       var5 = Class6983.method21584(var0, var4.<LivingEntity>method21410(Class8830.field39826), var5);
       method13860(var0, var5);
    }
 
    private static boolean method13857(Class1034 var0) {
-      Class6947<Class1034> var3 = var0.method2992();
+      Brain<Class1034> var3 = var0.getBrain();
       if (var3.method21404(Class8830.field39837)) {
          LivingEntity var4 = var3.method21410(Class8830.field39837).get();
          EntityType<?> var5 = var4.getType();
@@ -658,25 +658,25 @@ public class Class4388 {
    }
 
    private static boolean method13859(Class1034 var0) {
-      int var3 = var0.method2992().<Integer>method21410(Class8830.field39866).orElse(0) + 1;
-      int var4 = var0.method2992().<Integer>method21410(Class8830.field39867).orElse(0);
+      int var3 = var0.getBrain().<Integer>method21410(Class8830.field39866).orElse(0) + 1;
+      int var4 = var0.getBrain().<Integer>method21410(Class8830.field39867).orElse(0);
       return var4 > var3;
    }
 
    private static void method13860(Class1034 var0, LivingEntity var1) {
-      var0.method2992().method21405(Class8830.field39849);
-      var0.method2992().method21405(Class8830.field39826);
-      var0.method2992().method21405(Class8830.field39824);
-      var0.method2992().method21407(Class8830.field39837, var1, (long)field21462.method29319(var0.world.rand));
+      var0.getBrain().method21405(Class8830.field39849);
+      var0.getBrain().method21405(Class8830.field39826);
+      var0.getBrain().method21405(Class8830.field39824);
+      var0.getBrain().method21407(Class8830.field39837, var1, (long)field21462.method29319(var0.world.rand));
       method13861(var0);
    }
 
    public static void method13861(Class1035 var0) {
-      var0.method2992().method21407(Class8830.field39855, true, (long)field21459.method29319(var0.world.rand));
+      var0.getBrain().method21407(Class8830.field39855, true, (long)field21459.method29319(var0.world.rand));
    }
 
    private static void method13862(Class1034 var0) {
-      var0.method2992().method21407(Class8830.field39869, true, 200L);
+      var0.getBrain().method21407(Class8830.field39869, true, 200L);
    }
 
    private static Vector3d method13863(Class1034 var0) {
@@ -685,11 +685,11 @@ public class Class4388 {
    }
 
    private static boolean method13864(Class1034 var0) {
-      return var0.method2992().method21404(Class8830.field39869);
+      return var0.getBrain().method21404(Class8830.field39869);
    }
 
    public static boolean method13865(Class1035 var0) {
-      return var0.method2992().method21430(Class8890.field40220);
+      return var0.getBrain().method21430(Activity.field40220);
    }
 
    private static boolean method13866(LivingEntity var0) {
@@ -697,11 +697,11 @@ public class Class4388 {
    }
 
    private static void method13867(LivingEntity var0) {
-      var0.method2992().method21407(Class8830.field39851, true, 120L);
+      var0.getBrain().method21407(Class8830.field39851, true, 120L);
    }
 
    private static boolean method13868(Class1034 var0) {
-      return var0.method2992().method21404(Class8830.field39851);
+      return var0.getBrain().method21404(Class8830.field39851);
    }
 
    private static boolean method13869(Item var0) {
@@ -717,11 +717,11 @@ public class Class4388 {
    }
 
    private static boolean method13872(Class1034 var0) {
-      return var0.method2992().method21404(Class8830.field39870);
+      return var0.getBrain().method21404(Class8830.field39870);
    }
 
    private static boolean method13873(LivingEntity var0) {
-      return var0.method2992().method21404(Class8830.field39868);
+      return var0.getBrain().method21404(Class8830.field39868);
    }
 
    private static boolean method13874(LivingEntity var0) {
@@ -733,11 +733,11 @@ public class Class4388 {
    }
 
    private static boolean method13876(Class1034 var0) {
-      return var0.method2992().method21404(Class8830.field39854);
+      return var0.getBrain().method21404(Class8830.field39854);
    }
 
    private static boolean method13877(LivingEntity var0) {
-      return var0.method2992().method21404(Class8830.field39835);
+      return var0.getBrain().method21404(Class8830.field39835);
    }
 
    private static boolean method13878(Class1034 var0) {

@@ -2,8 +2,8 @@ package com.mentalfrostbyte.jello.module.impl.player;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -34,10 +34,10 @@ public class NoFall extends Module {
 
     @EventTarget
     @LowerPriority
-    private void method16187(Class4435 var1) {
+    private void method16187(EventMove var1) {
         if (this.isEnabled()) {
-            if (var1.method13994() < -0.5
-                    && (double) mc.player.fallDistance > 2.0 + (double) Class9567.method37079() * 0.5
+            if (var1.getY() < -0.5
+                    && (double) mc.player.fallDistance > 2.0 + (double) MovementUtils.method37079() * 0.5
                     && !mc.player.onGround
                     && this.getStringSettingValueByName("Mode").equals("Hypixel")
                     && ColorUtils.method17716()) {
@@ -48,19 +48,19 @@ public class NoFall extends Module {
                 for (int var8 = 0; var8 < var5; var8++) {
                     double var9 = var4[var8];
                     double var11 = mc.player.getPosY();
-                    double var13 = (double) ((int) (var11 + var1.method13994())) - var11 - var1.method13994() + var9;
+                    double var13 = (double) ((int) (var11 + var1.getY())) - var11 - var1.getY() + var9;
                     double var15 = 0.02;
                     double var17 = -0.05;
-                    if (var1.method13994() > -0.5 + (double) (Class9567.method37079())) {
+                    if (var1.getY() > -0.5 + (double) (MovementUtils.method37079())) {
                         var15 = 0.0;
                     }
 
                     if (var13 > var17 && var13 < var15) {
-                        AxisAlignedBB var19 = mc.player.boundingBox.method19667(var1.method13992(), var1.method13994() + var13 + var17, var1.method13996());
-                        if (mc.world.method7055(mc.player, var19).count() != 0L) {
+                        AxisAlignedBB var19 = mc.player.boundingBox.offset(var1.getX(), var1.getY() + var13 + var17, var1.getZ());
+                        if (mc.world.getCollisionShapes(mc.player, var19).count() != 0L) {
                             var13 -= 1.0E-5;
-                            var1.method13995(var1.method13994() + var13);
-                            ColorUtils.method17725(var1.method13994());
+                            var1.setY(var1.getY() + var13);
+                            ColorUtils.method17725(var1.getY());
                             var6 = Double.MAX_VALUE;
                             break;
                         }
@@ -72,15 +72,15 @@ public class NoFall extends Module {
                 }
 
                 if (Math.abs(var6) < 0.1) {
-                    var1.method13995(var1.method13994() + var6);
-                    ColorUtils.method17725(var1.method13994());
+                    var1.setY(var1.getY() + var6);
+                    ColorUtils.method17725(var1.getY());
                 }
             }
         }
     }
 
     @EventTarget
-    private void method16188(Class4399 var1) {
+    private void method16188(EventUpdate var1) {
         if (this.isEnabled() && mc.player != null) {
             if (!(mc.player.getPosY() < 2.0)) {
                 String var4 = this.getStringSettingValueByName("Mode");
@@ -96,24 +96,24 @@ public class NoFall extends Module {
                                 return;
                             }
 
-                            if (mc.player.getVec().y < -0.1) {
+                            if (mc.player.getMotion().y < -0.1) {
                                 if (this.field23509 == 0.0) {
                                 }
 
-                                this.field23509 = this.field23509 - mc.player.getVec().y;
+                                this.field23509 = this.field23509 - mc.player.getMotion().y;
                             }
 
                             if (this.field23509 > 3.0) {
                                 this.field23509 = 1.0E-14;
-                                var1.method13920(true);
+                                var1.setGround(true);
                             }
                         }
                         break;
                     case "Hypixel":
-                        if (var1.method13921() && mc.player.getVec().y < 0.0 && !mc.player.onGround && ColorUtils.method17716()) {
+                        if (var1.method13921() && mc.player.getMotion().y < 0.0 && !mc.player.onGround && ColorUtils.method17716()) {
                             for (double var10 : ColorUtils.method17747()) {
-                                if ((double) ((int) var1.method13911()) - var1.method13911() + var10 == 0.0) {
-                                    var1.method13920(true);
+                                if ((double) ((int) var1.getY()) - var1.getY() + var10 == 0.0) {
+                                    var1.setGround(true);
                                     break;
                                 }
                             }
@@ -126,7 +126,7 @@ public class NoFall extends Module {
                                 return;
                             }
 
-                            if (mc.player.getVec().y < -0.1 && mc.player.fallDistance > 3.0F) {
+                            if (mc.player.getMotion().y < -0.1 && mc.player.fallDistance > 3.0F) {
                                 this.field23509++;
                                 if (this.field23509 == 1.0) {
                                     mc.getConnection().sendPacket(new CPlayerPacket(true));
@@ -150,20 +150,20 @@ public class NoFall extends Module {
                         }
                         break;
                     case "Vanilla":
-                        if (var1.method13921() && mc.player.getVec().y < -0.1) {
-                            var1.method13920(true);
+                        if (var1.method13921() && mc.player.getMotion().y < -0.1) {
+                            var1.setGround(true);
                         }
                         break;
                     case "Vanilla Legit":
-                        if (mc.player.getVec().y < -0.1) {
-                            var1.method13920(true);
+                        if (mc.player.getMotion().y < -0.1) {
+                            var1.setGround(true);
                         }
 
                         if (mc.player.fallDistance > 3.0F) {
                             this.field23510 = true;
                         }
 
-                        if (this.field23510 && mc.player.onGround && !mc.player.method3250()) {
+                        if (this.field23510 && mc.player.onGround && !mc.player.isInWater()) {
                             double var12 = mc.player.getPosX();
                             double var14 = mc.player.getPosY();
                             double var16 = mc.player.getPosZ();
@@ -180,8 +180,8 @@ public class NoFall extends Module {
                                 this.field23508 = true;
                             }
 
-                            if (this.field23508 && Client.getInstance().method19939().getgroundTicks() == 0 && mc.player.onGround) {
-                                var1.method13912(var1.method13911() - 11.0);
+                            if (this.field23508 && Client.getInstance().getPlayerTracker().getgroundTicks() == 0 && mc.player.onGround) {
+                                var1.setY(var1.getY() - 11.0);
                                 this.field23508 = false;
                             }
                         }

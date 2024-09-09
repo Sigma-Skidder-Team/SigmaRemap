@@ -14,7 +14,7 @@ public class Class986 extends Class924 {
    }
 
    @Override
-   public Class5812 method3690(int var1, PlayerInventory var2) {
+   public Container method3690(int var1, PlayerInventory var2) {
       return new Class5832(var1, var2, this, this.field5252);
    }
 

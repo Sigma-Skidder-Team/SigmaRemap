@@ -40,15 +40,15 @@ public class CEditBookPacket implements Packet<IServerPlayNetHandler> {
       var1.processEditBook(this);
    }
 
-   public ItemStack method17465() {
+   public ItemStack getStack() {
       return this.field24649;
    }
 
-   public boolean method17466() {
+   public boolean shouldUpdateAll() {
       return this.field24650;
    }
 
-   public int method17467() {
+   public int func_244708_d() {
       return this.field24651;
    }
 }

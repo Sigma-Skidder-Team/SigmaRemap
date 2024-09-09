@@ -54,7 +54,7 @@ public class Class3217 extends Class3213 {
    }
 
    private static boolean method11606(BlockState var0) {
-      return var0.method23449().method23486(Class8953.field40469);
+      return var0.method23449().method23486(FluidTags.field40469);
    }
 
    @Override

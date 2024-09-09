@@ -20,6 +20,6 @@ public interface Class1663 extends IBlockReader {
    }
 
    default boolean method7022(BlockPos var1) {
-      return this.method7020(Class1977.field12881, var1) >= this.method7033();
+      return this.method7020(Class1977.field12881, var1) >= this.getMaxLightLevel();
    }
 }

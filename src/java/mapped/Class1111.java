@@ -12,18 +12,18 @@ public abstract class Class1111 extends Class1006 {
    }
 
    @Override
-   public boolean method2921(float var1, float var2) {
+   public boolean onLivingFall(float var1, float var2) {
       return false;
    }
 
    @Override
-   public void method2761(double var1, boolean var3, BlockState var4, BlockPos var5) {
+   public void updateFallState(double var1, boolean var3, BlockState var4, BlockPos var5) {
    }
 
    @Override
-   public void method2915(Vector3d var1) {
-      if (!this.method3250()) {
-         if (!this.method3264()) {
+   public void travel(Vector3d var1) {
+      if (!this.isInWater()) {
+         if (!this.isInLava()) {
             float var4 = 0.91F;
             if (this.onGround) {
                var4 = this.world.getBlockState(new BlockPos(this.getPosX(), this.getPosY() - 1.0, this.getPosZ())).getBlock().method11571()
@@ -37,25 +37,25 @@ public abstract class Class1111 extends Class1006 {
                   * 0.91F;
             }
 
-            this.method3265(!this.onGround ? 0.02F : 0.1F * var5, var1);
-            this.move(Class2107.field13742, this.getVec());
-            this.method3434(this.getVec().method11344((double)var4));
+            this.moveRelative(!this.onGround ? 0.02F : 0.1F * var5, var1);
+            this.move(MoverType.SELF, this.getMotion());
+            this.setMotion(this.getMotion().scale((double)var4));
          } else {
-            this.method3265(0.02F, var1);
-            this.move(Class2107.field13742, this.getVec());
-            this.method3434(this.getVec().method11344(0.5));
+            this.moveRelative(0.02F, var1);
+            this.move(MoverType.SELF, this.getMotion());
+            this.setMotion(this.getMotion().scale(0.5));
          }
       } else {
-         this.method3265(0.02F, var1);
-         this.move(Class2107.field13742, this.getVec());
-         this.method3434(this.getVec().method11344(0.8F));
+         this.moveRelative(0.02F, var1);
+         this.move(MoverType.SELF, this.getMotion());
+         this.setMotion(this.getMotion().scale(0.8F));
       }
 
       this.method3108(this, false);
    }
 
    @Override
-   public boolean method3063() {
+   public boolean isOnLadder() {
       return false;
    }
 }

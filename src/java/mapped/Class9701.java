@@ -20,7 +20,7 @@ public class Class9701 {
 
    public Class9701(Entity var1) {
       this.field45345 = var1;
-      this.field45346 = (double)var1.method3393();
+      this.field45346 = (double)var1.getEyeHeight();
    }
 
    public void method38008(WorldRenderer var1) {

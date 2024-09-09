@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.world.disabler;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4399;
+import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
@@ -27,18 +27,18 @@ public class ViperDisabler extends Module {
     }
 
     @EventTarget
-    public void method16715(Class4399 var1) {
+    public void method16715(EventUpdate var1) {
         if (this.isEnabled() && mc.player != null) {
             this.field23868++;
-            boolean var4 = var1.method13911() > mc.player.getPosY() - 1.0E-6 && var1.method13911() < mc.player.getPosY() + 1.0E-6;
+            boolean var4 = var1.getY() > mc.player.getPosY() - 1.0E-6 && var1.getY() < mc.player.getPosY() + 1.0E-6;
             if (var4) {
-                var1.method13912(mc.player.getPosY() + 0.4);
-                var1.method13920(false);
+                var1.setY(mc.player.getPosY() + 0.4);
+                var1.setGround(false);
             }
 
             if (this.field23868 > 60) {
-                var1.method13912(mc.player.getPosY() + 0.4);
-                var1.method13920(false);
+                var1.setY(mc.player.getPosY() + 0.4);
+                var1.setGround(false);
             } else {
                 for (int var5 = 0; var5 < 10; var5++) {
                     boolean var6 = var5 > 2 && var5 < 8;
@@ -73,12 +73,12 @@ public class ViperDisabler extends Module {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SKeepAlivePacket) {
                 SKeepAlivePacket var5 = (SKeepAlivePacket) var4;
-                var1.method13900(true);
+                var1.setCancelled(true);
             }
 
             if (var4 instanceof SConfirmTransactionPacket) {
                 SConfirmTransactionPacket var6 = (SConfirmTransactionPacket) var4;
-                var1.method13900(true);
+                var1.setCancelled(true);
             }
         }
     }

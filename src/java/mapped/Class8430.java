@@ -32,11 +32,11 @@ public class Class8430 {
                int var27 = var6 - 2 + var24;
                double var28 = var17 * var21 * var25;
                var13 += var28;
-               var15 = var15.method11338(var1.method34078(var19, var23, var27).method11344(var28));
+               var15 = var15.add(var1.method34078(var19, var23, var27).scale(var28));
             }
          }
       }
 
-      return var15.method11344(1.0 / var13);
+      return var15.scale(1.0 / var13);
    }
 }

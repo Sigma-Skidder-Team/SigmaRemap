@@ -48,7 +48,7 @@ public final class Class6244 extends Class6218 {
          var20.method3379(var2.method32149());
       }
 
-      var6.method6916(var20);
+      var6.addEntity(var20);
       var2.method32182(1);
       return var2;
    }

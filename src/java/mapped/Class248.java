@@ -21,7 +21,7 @@ public class Class248 extends Class219<Class1074, Class2856<Class1074>> {
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, Class1074 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       ResourceLocation var13 = field904.get(var4.method4996());
-      if (var13 != null && !var4.method3342()) {
+      if (var13 != null && !var4.isInvisible()) {
          Class5422 var14 = var2.method25597(RenderType.method14318(var13));
          this.method825().method11016(var1, var14, var3, Class5712.method17883(var4, 0.0F), 1.0F, 1.0F, 1.0F, 1.0F);
       }

@@ -89,12 +89,12 @@ public class DebugRenderer {
 
    public static Optional<Entity> method27454(Entity var0, int var1) {
       if (var0 != null) {
-         Vector3d var4 = var0.method3286(1.0F);
-         Vector3d var5 = var0.method3281(1.0F).method11344((double)var1);
-         Vector3d var6 = var4.method11338(var5);
+         Vector3d var4 = var0.getEyePosition(1.0F);
+         Vector3d var5 = var0.getLook(1.0F).scale((double)var1);
+         Vector3d var6 = var4.add(var5);
          AxisAlignedBB var7 = var0.getBoundingBox().method19661(var5).method19664(1.0);
          int var8 = var1 * var1;
-         Predicate<Entity> var9 = var0x -> !var0x.isSpectator() && var0x.method3139();
+         Predicate<Entity> var9 = var0x -> !var0x.isSpectator() && var0x.canBeCollidedWith();
          EntityRayTraceResult var10 = Class9456.method36386(var0, var4, var6, var7, var9, (double)var8);
          if (var10 != null) {
             return !(var4.method11342(var10.method31419()) > (double)var8) ? Optional.<Entity>of(var10.getEntity()) : Optional.<Entity>empty();
@@ -110,7 +110,7 @@ public class DebugRenderer {
       ActiveRenderInfo var8 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
       if (var8.method37510()) {
          Vector3d var9 = var8.getPos().method11345();
-         AxisAlignedBB var10 = new AxisAlignedBB(var0, var1).method19669(var9);
+         AxisAlignedBB var10 = new AxisAlignedBB(var0, var1).offset(var9);
          method27457(var10, var2, var3, var4, var5);
       }
    }
@@ -119,7 +119,7 @@ public class DebugRenderer {
       ActiveRenderInfo var8 = Minecraft.getInstance().gameRenderer.getActiveRenderInfo();
       if (var8.method37510()) {
          Vector3d var9 = var8.getPos().method11345();
-         AxisAlignedBB var10 = new AxisAlignedBB(var0).method19669(var9).method19664((double)var1);
+         AxisAlignedBB var10 = new AxisAlignedBB(var0).offset(var9).method19664((double)var1);
          method27457(var10, var2, var3, var4, var5);
       }
    }

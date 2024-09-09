@@ -38,7 +38,7 @@ public class Class3696<E extends LivingEntity, T extends LivingEntity> extends C
    }
 
    private boolean method12552(E var1) {
-      List<LivingEntity> var4 = var1.method2992().<List<LivingEntity>>method21410(Class8830.field39819).get();
+      List<LivingEntity> var4 = var1.getBrain().<List<LivingEntity>>method21410(Class8830.field39819).get();
       return var4.stream().anyMatch(this::method12553);
    }
 
@@ -48,7 +48,7 @@ public class Class3696<E extends LivingEntity, T extends LivingEntity> extends C
 
    @Override
    public void method12502(ServerWorld var1, E var2, long var3) {
-      Class6947<?> var7 = var2.method2992();
+      Brain<?> var7 = var2.getBrain();
       var7.method21410(Class8830.field39819).ifPresent(
             var3x -> var3x.stream()
                   .filter(var1xx -> this.field19732.equals(var1xx.getType()))

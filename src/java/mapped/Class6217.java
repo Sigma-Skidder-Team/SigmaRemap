@@ -14,7 +14,7 @@ public abstract class Class6217 extends Class6218 {
       Direction var7 = var1.method11324().<Direction>method23463(Class3357.field18899);
       ProjectileEntity var8 = this.method19191(var5, var6, var2);
       var8.shoot((double)var7.method539(), (double)((float)var7.method540() + 0.1F), (double)var7.method541(), this.method19195(), this.method19194());
-      var5.method6916(var8);
+      var5.addEntity(var8);
       var2.method32182(1);
       return var2;
    }

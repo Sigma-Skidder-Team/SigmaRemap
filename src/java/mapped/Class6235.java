@@ -21,7 +21,7 @@ public final class Class6235 extends Class6230 {
          var2.method32182(1);
          this.method19204(true);
       } else {
-         this.method19204(Class3279.method11804(var1, var2));
+         this.method19204(ArmorItem.method11804(var1, var2));
       }
 
       return var2;

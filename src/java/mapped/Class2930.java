@@ -35,7 +35,7 @@ public abstract class Class2930 extends Class2898<Class4727> {
       int var8 = var2.getY();
       if (var8 >= 1 && var8 + var3 + 1 < 256) {
          Block var9 = var1.getBlockState(var2.down()).getBlock();
-         if (!method11219(var9) && !var9.method11540(BlockTags.field32814)) {
+         if (!method11219(var9) && !var9.isIn(BlockTags.field32814)) {
             return false;
          } else {
             for (int var10 = 0; var10 <= var3; var10++) {

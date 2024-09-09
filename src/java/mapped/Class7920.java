@@ -53,14 +53,14 @@ public class Class7920 {
       }
    }
 
-   public static int method26568(Class920 var0, Predicate<ItemStack> var1, int var2, boolean var3) {
+   public static int method26568(IInventory var0, Predicate<ItemStack> var1, int var2, boolean var3) {
       int var6 = 0;
 
-      for (int var7 = 0; var7 < var0.method3629(); var7++) {
-         ItemStack var8 = var0.method3618(var7);
+      for (int var7 = 0; var7 < var0.getSizeInventory(); var7++) {
+         ItemStack var8 = var0.getStackInSlot(var7);
          int var9 = method26569(var8, var1, var2 - var6, var3);
          if (var9 > 0 && !var3 && var8.isEmpty()) {
-            var0.method3621(var7, ItemStack.EMPTY);
+            var0.setInventorySlotContents(var7, ItemStack.EMPTY);
          }
 
          var6 += var9;

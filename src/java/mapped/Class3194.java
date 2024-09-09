@@ -13,11 +13,11 @@ public class Class3194 extends Block {
    }
 
    public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return var1.method23448(Blocks.field36395)
-         || var1.method23448(Blocks.field36396)
-         || var1.method23448(Blocks.field36397)
-         || var1.method23448(Blocks.field36398)
-         || var1.method23448(Blocks.FARMLAND);
+      return var1.isIn(Blocks.field36395)
+         || var1.isIn(Blocks.field36396)
+         || var1.isIn(Blocks.field36397)
+         || var1.isIn(Blocks.field36398)
+         || var1.isIn(Blocks.FARMLAND);
    }
 
    @Override

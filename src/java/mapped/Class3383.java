@@ -54,7 +54,7 @@ public class Class3383 extends Class3381 {
       boolean var7 = this.method11981(var2, var3, var1);
       List var8 = field18988.get(var2);
 
-      while (var8 != null && !var8.isEmpty() && var2.method6783() - Class9018.method33352((Class9018)var8.get(0)) > 60L) {
+      while (var8 != null && !var8.isEmpty() && var2.getGameTime() - Class9018.method33352((Class9018)var8.get(0)) > 60L) {
          var8.remove(0);
       }
 
@@ -94,7 +94,7 @@ public class Class3383 extends Class3381 {
          double var7 = (double)var3.getX() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
          double var9 = (double)var3.getY() + 0.7 + (var4.nextDouble() - 0.5) * 0.2;
          double var11 = (double)var3.getZ() + 0.5 + (var4.nextDouble() - 0.5) * 0.2;
-         var2.method6746(this.field18984, var7, var9, var11, 0.0, 0.0, 0.0);
+         var2.addParticle(this.field18984, var7, var9, var11, 0.0, 0.0, 0.0);
       }
    }
 
@@ -106,7 +106,7 @@ public class Class3383 extends Class3381 {
    private static boolean method11982(World var0, BlockPos var1, boolean var2) {
       List var5 = field18988.computeIfAbsent(var0, var0x -> Lists.newArrayList());
       if (var2) {
-         var5.add(new Class9018(var1.toImmutable(), var0.method6783()));
+         var5.add(new Class9018(var1.toImmutable(), var0.getGameTime()));
       }
 
       int var6 = 0;

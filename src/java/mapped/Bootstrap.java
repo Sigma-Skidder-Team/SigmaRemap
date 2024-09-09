@@ -54,7 +54,7 @@ public class Bootstrap {
 
    public static Set<String> method25569() {
       TreeSet var2 = new TreeSet();
-      method25567(Registry.field16087, Class4869::method15032, var2);
+      method25567(Registry.field16087, Attribute::method15032, var2);
       method25567(Registry.ENTITY_TYPE, EntityType::method33210, var2);
       method25567(Registry.EFFECTS, Effect::method22294, var2);
       method25567(Registry.ITEM, Item::getTranslationKey, var2);

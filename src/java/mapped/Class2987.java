@@ -11,11 +11,11 @@ public class Class2987 implements Class2982 {
    @Override
    public void method11398(Class8563 var1) throws Exception {
       int var4 = var1.<Integer>method30555(Class4750.field22544, 0);
-      if (Class8042.method27612().method21896()) {
+      if (ViaVersion3.method27612().method21896()) {
          Class6055 var5 = var1.method30580().<Class6055>method22438(Class6055.class);
          if (var5.method18741(var4)) {
             Double var6 = var1.<Double>method30555(Class4750.field22528, 1);
-            var6 = var6 - Class8042.method27612().method21900();
+            var6 = var6 - ViaVersion3.method27612().method21900();
             var1.method30558(Class4750.field22528, 1, var6);
          }
       }

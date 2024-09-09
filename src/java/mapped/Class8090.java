@@ -701,25 +701,25 @@ public class Class8090 {
             return new String[]{var15, (String)var16};
          }
 
-         if (var3 instanceof Class3279) {
-            Class3279 var5 = (Class3279)var3;
-            if (var5.method11806() == Class2114.field13773) {
+         if (var3 instanceof ArmorItem) {
+            ArmorItem var5 = (ArmorItem)var3;
+            if (var5.getArmorMaterial() == Class2114.field13773) {
                String var6 = "leather";
                String var7 = "helmet";
-               Class2106 var8 = var5.method11805();
-               if (var8 == Class2106.field13736) {
+               EquipmentSlotType var8 = var5.method11805();
+               if (var8 == EquipmentSlotType.field13736) {
                   var7 = "helmet";
                }
 
-               if (var8 == Class2106.field13735) {
+               if (var8 == EquipmentSlotType.field13735) {
                   var7 = "chestplate";
                }
 
-               if (var8 == Class2106.field13734) {
+               if (var8 == EquipmentSlotType.field13734) {
                   var7 = "leggings";
                }
 
-               if (var8 == Class2106.field13733) {
+               if (var8 == EquipmentSlotType.field13733) {
                   var7 = "boots";
                }
 

@@ -6,7 +6,7 @@ import net.minecraft.util.math.BlockPos;
 
 import javax.annotation.Nullable;
 
-public class Class3521 implements Class3499<Class7439> {
+public class Class3521 implements Class3499<BlockParticleData> {
    private static String[] field19415;
    private final Class8975 field19416;
 
@@ -15,7 +15,7 @@ public class Class3521 implements Class3499<Class7439> {
    }
 
    @Nullable
-   public Class4587 method12199(Class7439 var1, ClientWorld var2, double var3, double var5, double var7, double var9, double var11, double var13) {
+   public Class4587 method12199(BlockParticleData var1, ClientWorld var2, double var3, double var5, double var7, double var9, double var11, double var13) {
       BlockState var17 = var1.method24026();
       if (!var17.isAir() && var17.getRenderType() == BlockRenderType.field9885) {
          return null;

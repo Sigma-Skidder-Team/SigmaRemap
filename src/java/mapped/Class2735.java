@@ -14,12 +14,12 @@ public class Class2735 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return (this.field17256.method3250() || this.field17256.method3264()) && this.field17256.method4228() instanceof Class6841;
+      return (this.field17256.isInWater() || this.field17256.isInLava()) && this.field17256.method4228() instanceof Class6841;
    }
 
    @Override
    public void method10805() {
-      if (this.field17256.method3013().nextFloat() < 0.8F) {
+      if (this.field17256.getRNG().nextFloat() < 0.8F) {
          this.field17256.method4229().method27049();
       }
 

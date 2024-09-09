@@ -18,7 +18,7 @@ public class Class5750 extends Class5651<SalmonEntity, Class2816<SalmonEntity>> 
       super.method17842(var1, var2, var3, var4, var5);
       float var8 = 1.0F;
       float var9 = 1.0F;
-      if (!var1.method3250()) {
+      if (!var1.isInWater()) {
          var8 = 1.3F;
          var9 = 1.7F;
       }
@@ -26,7 +26,7 @@ public class Class5750 extends Class5651<SalmonEntity, Class2816<SalmonEntity>> 
       float var10 = var8 * 4.3F * MathHelper.sin(var9 * 0.6F * var3);
       var2.rotate(Vector3f.YP.rotationDegrees(var10));
       var2.translate(0.0, 0.0, -0.4F);
-      if (!var1.method3250()) {
+      if (!var1.isInWater()) {
          var2.translate(0.2F, 0.1F, 0.0);
          var2.rotate(Vector3f.field32902.rotationDegrees(90.0F));
       }

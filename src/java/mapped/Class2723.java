@@ -24,7 +24,7 @@ public class Class2723<T extends Class1028> extends Class2595 {
 
    @Override
    public boolean method10803() {
-      boolean var3 = this.field17212.world.method6783() < this.field17215;
+      boolean var3 = this.field17212.world.getGameTime() < this.field17215;
       return this.field17212.method4579() && this.field17212.method4232() == null && !this.field17212.isBeingRidden() && this.field17212.method4575() && !var3;
    }
 
@@ -50,8 +50,8 @@ public class Class2723<T extends Class1028> extends Class2595 {
             Vector3d var6 = Vector3d.method11330(this.field17212.method4574());
             Vector3d var7 = this.field17212.getPositionVec();
             Vector3d var8 = var7.method11336(var6);
-            var6 = var8.method11351(90.0F).method11344(0.4).method11338(var6);
-            Vector3d var9 = var6.method11336(var7).method11333().method11344(10.0).method11338(var7);
+            var6 = var8.method11351(90.0F).scale(0.4).add(var6);
+            Vector3d var9 = var6.method11336(var7).method11333().scale(10.0).add(var7);
             BlockPos var10 = new BlockPos(var9);
             var10 = this.field17212.world.method7006(Class101.field300, var10);
             if (var4.method21654((double)var10.getX(), (double)var10.getY(), (double)var10.getZ(), !var3 ? this.field17213 : this.field17214)
@@ -64,7 +64,7 @@ public class Class2723<T extends Class1028> extends Class2595 {
                }
             } else {
                this.method10932();
-               this.field17215 = this.field17212.world.method6783() + 200L;
+               this.field17215 = this.field17212.world.getGameTime() + 200L;
             }
          }
       }
@@ -73,11 +73,11 @@ public class Class2723<T extends Class1028> extends Class2595 {
    private List<Class1028> method10931() {
       return this.field17212
          .world
-         .<Class1028>method6772(Class1028.class, this.field17212.getBoundingBox().method19664(16.0), var1 -> var1.method4549() && !var1.method3359(this.field17212));
+         .<Class1028>method6772(Class1028.class, this.field17212.getBoundingBox().method19664(16.0), var1 -> var1.method4549() && !var1.isEntityEqual(this.field17212));
    }
 
    private boolean method10932() {
-      Random var3 = this.field17212.method3013();
+      Random var3 = this.field17212.getRNG();
       BlockPos var4 = this.field17212
          .world
          .method7006(Class101.field300, this.field17212.getPosition().method8336(-8 + var3.nextInt(16), 0, -8 + var3.nextInt(16)));

@@ -22,7 +22,7 @@ public class Class9450 {
 
    private static int method36332(Class6619 var0, Collection<? extends Entity> var1) {
       for (Entity var5 : var1) {
-         var5.method2995();
+         var5.onKillCommand();
       }
 
       if (var1.size() != 1) {

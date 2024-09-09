@@ -35,7 +35,7 @@ public class Class2662 extends Class2661 {
             Block var6 = var5.getBlock();
             boolean var7 = false;
             Class8554 var8 = null;
-            if (var6.method11540(BlockTags.field32796)) {
+            if (var6.isIn(BlockTags.field32796)) {
                if (!(var6 instanceof Class3480)) {
                   if (!(var6 instanceof Class3486)) {
                      if (var6 == Blocks.field37069) {

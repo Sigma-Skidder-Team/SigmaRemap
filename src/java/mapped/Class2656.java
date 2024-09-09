@@ -16,8 +16,8 @@ public class Class2656 extends Class2647 {
       if (!(this.field16990.getRidingEntity() instanceof Class1029)) {
          return super.method10859(var1);
       } else {
-         float var4 = this.field16990.getRidingEntity().method3429() - 0.1F;
-         return (double)(var4 * 2.0F * var4 * 2.0F + var1.method3429());
+         float var4 = this.field16990.getRidingEntity().getWidth() - 0.1F;
+         return (double)(var4 * 2.0F * var4 * 2.0F + var1.getWidth());
       }
    }
 }

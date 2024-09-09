@@ -35,8 +35,8 @@ public abstract class TameableEntity extends Class1018 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.method4397() != null) {
          var1.method104("Owner", this.method4397());
       }
@@ -45,8 +45,8 @@ public abstract class TameableEntity extends Class1018 {
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       UUID var4;
       if (var1.method106("Owner")) {
          var4 = var1.method105("Owner");
@@ -83,15 +83,15 @@ public abstract class TameableEntity extends Class1018 {
          double var6 = this.rand.nextGaussian() * 0.02;
          double var8 = this.rand.nextGaussian() * 0.02;
          double var10 = this.rand.nextGaussian() * 0.02;
-         this.world.method6746(var4, this.method3438(1.0), this.method3441() + 0.5, this.method3445(1.0), var6, var8, var10);
+         this.world.addParticle(var4, this.getPosXRandom(1.0), this.getPosYRandom() + 0.5, this.getPosZRandom(1.0), var6, var8, var10);
       }
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 7) {
          if (var1 != 6) {
-            super.method2866(var1);
+            super.handleStatusUpdate(var1);
          } else {
             this.method4392(false);
          }
@@ -159,8 +159,8 @@ public abstract class TameableEntity extends Class1018 {
    }
 
    @Override
-   public boolean method3026(LivingEntity var1) {
-      return !this.method4401(var1) ? super.method3026(var1) : false;
+   public boolean canAttack(LivingEntity var1) {
+      return !this.method4401(var1) ? super.canAttack(var1) : false;
    }
 
    public boolean method4401(LivingEntity var1) {
@@ -184,7 +184,7 @@ public abstract class TameableEntity extends Class1018 {
    }
 
    @Override
-   public boolean method3345(Entity var1) {
+   public boolean isOnSameTeam(Entity var1) {
       if (this.method4393()) {
          LivingEntity var4 = this.method4400();
          if (var1 == var4) {
@@ -192,20 +192,20 @@ public abstract class TameableEntity extends Class1018 {
          }
 
          if (var4 != null) {
-            return var4.method3345(var1);
+            return var4.isOnSameTeam(var1);
          }
       }
 
-      return super.method3345(var1);
+      return super.isOnSameTeam(var1);
    }
 
    @Override
-   public void method2737(DamageSource var1) {
-      if (!this.world.isRemote && this.world.method6789().method17135(Class5462.field24234) && this.method4400() instanceof ServerPlayerEntity) {
-         this.method4400().sendMessage(this.method3073().method27600(), Util.DUMMY_UUID);
+   public void onDeath(DamageSource var1) {
+      if (!this.world.isRemote && this.world.getGameRules().getBoolean(Class5462.field24234) && this.method4400() instanceof ServerPlayerEntity) {
+         this.method4400().sendMessage(this.getCombatTracker().method27600(), Util.DUMMY_UUID);
       }
 
-      super.method2737(var1);
+      super.onDeath(var1);
    }
 
    public boolean method4402() {

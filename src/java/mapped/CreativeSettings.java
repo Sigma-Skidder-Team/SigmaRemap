@@ -32,7 +32,7 @@ public class CreativeSettings {
          }
 
          if (!var3.contains("DataVersion", 99)) {
-            var3.method102("DataVersion", 1343);
+            var3.putInt("DataVersion", 1343);
          }
 
          var3 = Class8354.method29289(this.field34555, Class2108.field13751, var3, var3.getInt("DataVersion"));
@@ -48,7 +48,7 @@ public class CreativeSettings {
    public void method27628() {
       try {
          CompoundNBT var3 = new CompoundNBT();
-         var3.method102("DataVersion", SharedConstants.getVersion().getWorldVersion());
+         var3.putInt("DataVersion", SharedConstants.getVersion().getWorldVersion());
 
          for (int var4 = 0; var4 < 9; var4++) {
             var3.put(String.valueOf(var4), this.method27629(var4).method9284());

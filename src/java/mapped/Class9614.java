@@ -79,7 +79,7 @@ public class Class9614 {
       .put(EntityType.field41099, Class1030.method4589().method21850())
       .put(EntityType.field41100, Class1006.method4220().method21850())
       .put(EntityType.field41101, Class1027.method4569().method21850())
-      .put(EntityType.field41102, Class1079.method2997().method21850())
+      .put(EntityType.field41102, WitherEntity.method2997().method21850())
       .put(EntityType.field41103, Class1082.method5029().method21850())
       .put(EntityType.field41105, WolfEntity.method4373().method21850())
       .put(EntityType.field41106, Class1093.method5098().method21850())

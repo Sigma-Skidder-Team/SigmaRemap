@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.movement.highjump;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.Class4436;
+import com.mentalfrostbyte.jello.event.impl.JumpEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.NumberSetting;
@@ -13,7 +13,7 @@ public class VanillaHighJump extends Module {
     }
 
     @EventTarget
-    public void method16273(Class4436 var1) {
+    public void method16273(JumpEvent var1) {
         if (this.isEnabled()) {
             var1.method14002(this.getNumberValueBySettingName("Motion"));
         }

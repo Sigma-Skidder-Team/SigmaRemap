@@ -93,7 +93,7 @@ public abstract class Class3468 extends Block {
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var5 && !var1.method23448(var4.getBlock())) {
+      if (!var5 && !var1.isIn(var4.getBlock())) {
          if (this.method12158(var1) > 0) {
             this.method12156(var2, var3);
          }

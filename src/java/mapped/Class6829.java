@@ -49,8 +49,8 @@ public class Class6829 {
             if (this.field29714 != Class2335.field15969) {
                this.field29707.method4243(0.0F);
             } else {
-               this.field29707.method3113((float)(this.field29711 * this.field29707.method3086(Attributes.MOVEMENT_SPEED)));
-               if (this.field29707.method3226()) {
+               this.field29707.setAIMoveSpeed((float)(this.field29711 * this.field29707.getAttributeValue(Attributes.MOVEMENT_SPEED)));
+               if (this.field29707.isOnGround()) {
                   this.field29714 = Class2335.field15966;
                }
             }
@@ -67,22 +67,22 @@ public class Class6829 {
 
             float var11 = (float)(MathHelper.method37814(var14, var12) * 180.0F / (float)Math.PI) - 90.0F;
             this.field29707.rotationYaw = this.method20816(this.field29707.rotationYaw, var11, 90.0F);
-            this.field29707.method3113((float)(this.field29711 * this.field29707.method3086(Attributes.MOVEMENT_SPEED)));
+            this.field29707.setAIMoveSpeed((float)(this.field29711 * this.field29707.getAttributeValue(Attributes.MOVEMENT_SPEED)));
             BlockPos var20 = this.field29707.getPosition();
             BlockState var21 = this.field29707.world.getBlockState(var20);
             Block var22 = var21.getBlock();
             VoxelShape var23 = var21.method23414(this.field29707.world, var20);
-            if (var16 > (double)this.field29707.stepHeight && var12 * var12 + var14 * var14 < (double)Math.max(1.0F, this.field29707.method3429())
+            if (var16 > (double)this.field29707.stepHeight && var12 * var12 + var14 * var14 < (double)Math.max(1.0F, this.field29707.getWidth())
                || !var23.method19516()
-                  && this.field29707.getPosY() < var23.method19513(Class113.field414) + (double)var20.getY()
-                  && !var22.method11540(BlockTags.field32748)
-                  && !var22.method11540(BlockTags.field32771)) {
+                  && this.field29707.getPosY() < var23.method19513(Direction.field414) + (double)var20.getY()
+                  && !var22.isIn(BlockTags.field32748)
+                  && !var22.isIn(BlockTags.field32771)) {
                this.field29707.method4229().method27049();
                this.field29714 = Class2335.field15969;
             }
          }
       } else {
-         float var3 = (float)this.field29707.method3086(Attributes.MOVEMENT_SPEED);
+         float var3 = (float)this.field29707.getAttributeValue(Attributes.MOVEMENT_SPEED);
          float var4 = (float)this.field29711 * var3;
          float var5 = this.field29712;
          float var6 = this.field29713;
@@ -103,7 +103,7 @@ public class Class6829 {
             this.field29713 = 0.0F;
          }
 
-         this.field29707.method3113(var4);
+         this.field29707.setAIMoveSpeed(var4);
          this.field29707.method4243(this.field29712);
          this.field29707.method4245(this.field29713);
          this.field29714 = Class2335.field15966;

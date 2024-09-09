@@ -2,12 +2,12 @@ package com.mentalfrostbyte.jello.module.impl.movement.speed;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4435;
+import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import mapped.ColorUtils;
-import mapped.Class9567;
+import mapped.MovementUtils;
 
 public class GommeSpeed extends Module {
     private int field23581;
@@ -23,15 +23,15 @@ public class GommeSpeed extends Module {
     public void onEnable() {
         this.field23581 = 0;
         this.field23582 = 0;
-        this.field23584 = Class9567.method37083()[0];
+        this.field23584 = MovementUtils.method37083()[0];
     }
 
     @Override
     public void onDisable() {
         if (ColorUtils.method17686()) {
-            Class9567.method37093(0.27, Class9567.method37083()[0], this.field23584, 45.0F);
+            MovementUtils.method37093(0.27, MovementUtils.method37083()[0], this.field23584, 45.0F);
         } else {
-            Class9567.method37090(0.0);
+            MovementUtils.method37090(0.0);
         }
     }
 
@@ -45,7 +45,7 @@ public class GommeSpeed extends Module {
     }
 
     @EventTarget
-    public void method16302(Class4435 var1) {
+    public void method16302(EventMove var1) {
         if (this.isEnabled()) {
             if (!mc.player.onGround) {
                 if (this.field23583 > 0.0 && this.field23582 > 0) {
@@ -78,23 +78,23 @@ public class GommeSpeed extends Module {
                     }
 
                     if (ColorUtils.method17686()) {
-                        this.field23584 = Class9567.method37092(var1, Math.max(this.field23583, 0.23), Class9567.method37083()[0], this.field23584, 45.0F);
+                        this.field23584 = MovementUtils.method37092(var1, Math.max(this.field23583, 0.23), MovementUtils.method37083()[0], this.field23584, 45.0F);
                     } else {
                         this.field23583 = 0.1;
-                        Class9567.method37088(var1, 0.0);
+                        MovementUtils.method37088(var1, 0.0);
                     }
                 }
             } else if (ColorUtils.method17686()) {
                 this.field23581 = 0;
-                var1.method13995(Class9567.method37080());
+                var1.setY(MovementUtils.method37080());
                 double[] var9 = new double[]{0.549, 0.625};
                 this.field23583 = var9[Math.min(this.field23582, var9.length - 1)];
                 if (this.field23582 < var9.length) {
                     this.field23582++;
                 }
 
-                Class9567.method37088(var1, this.field23583);
-                this.field23584 = Class9567.method37083()[0];
+                MovementUtils.method37088(var1, this.field23583);
+                this.field23584 = MovementUtils.method37083()[0];
             }
         }
     }

@@ -45,7 +45,7 @@ public class Class3411 extends Block {
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.up());
-      return !var6.method23384().method31086() || var6.getBlock() instanceof Class3199;
+      return !var6.getMaterial().method31086() || var6.getBlock() instanceof Class3199;
    }
 
    @Override

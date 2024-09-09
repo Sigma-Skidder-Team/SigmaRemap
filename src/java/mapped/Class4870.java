@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class4870 extends Class4869 {
+public class Class4870 extends Attribute {
    private final double field22697;
    private final double field22698;
 
@@ -23,6 +23,6 @@ public class Class4870 extends Class4869 {
 
    @Override
    public double method15031(double var1) {
-      return MathHelper.method37778(var1, this.field22697, this.field22698);
+      return MathHelper.clamp(var1, this.field22697, this.field22698);
    }
 }

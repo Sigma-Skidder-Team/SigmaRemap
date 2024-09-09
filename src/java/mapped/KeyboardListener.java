@@ -3,7 +3,7 @@ package mapped;
 import java.util.Locale;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.event.impl.Class4430;
+import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.AbstractOption;
 import net.minecraft.client.Minecraft;
@@ -107,7 +107,7 @@ public class KeyboardListener {
                AbstractOption.field25333
                   .method18089(
                      this.field43915.gameSettings,
-                     MathHelper.method37778(
+                     MathHelper.clamp(
                         (double)(this.field43915.gameSettings.field44574 + (Screen.method2476() ? -1 : 1)),
                         AbstractOption.field25333.method18086(),
                         AbstractOption.field25333.getMaxValue()
@@ -235,7 +235,7 @@ public class KeyboardListener {
                         this.method36339("debug.inspect.server.entity");
                      });
                   } else {
-                     CompoundNBT var10 = var8.method3294(new CompoundNBT());
+                     CompoundNBT var10 = var8.writeWithoutTypeId(new CompoundNBT());
                      this.method36344(var9, var8.getPositionVec(), var10);
                      this.method36339("debug.inspect.client.entity");
                   }
@@ -279,7 +279,7 @@ public class KeyboardListener {
       this.method36350(var6);
    }
 
-   public void method36345(long var1, int var3, int var4, int var5, int var6) {
+   public void onKeyEvent(long var1, int var3, int var4, int var5, int var6) {
       if (var1 == this.field43915.getMainWindow().getHandle()) {
          if (Client.getInstance().getGuiManager().method33480() != null) {
             Client.getInstance().getGuiManager().method33453(var3, var5);
@@ -288,7 +288,7 @@ public class KeyboardListener {
 
          if (this.field43915.currentScreen != null) {
             if (this.field43915.currentScreen instanceof ChatScreen && var3 == 258) {
-               Class4430 var14 = new Class4430(var3, var5 == 2, null);
+               EventKeyPress var14 = new EventKeyPress(var3, var5 == 2, null);
                Client.getInstance().getEventManager().call(var14);
                if (var14.isCancelled()) {
                   return;
@@ -296,7 +296,7 @@ public class KeyboardListener {
             }
          } else if (var5 == 1 || var5 == 2) {
             Class8319.method29126(var3);
-            Class4430 var9 = new Class4430(var3, var5 == 2, null);
+            EventKeyPress var9 = new EventKeyPress(var3, var5 == 2, null);
             Client.getInstance().getEventManager().call(var9);
             if (var9.isCancelled()) {
                return;
@@ -491,7 +491,7 @@ public class KeyboardListener {
    public void setupCallbacks(long var1) {
       InputMappings.method38640(
          var1,
-         (var1x, var3, var4, var5, var6) -> this.field43915.execute(() -> this.method36345(var1x, var3, var4, var5, var6)),
+         (var1x, var3, var4, var5, var6) -> this.field43915.execute(() -> this.onKeyEvent(var1x, var3, var4, var5, var6)),
          (var1x, var3, var4) -> this.field43915.execute(() -> this.method36346(var1x, var3, var4))
       );
    }
@@ -523,7 +523,7 @@ public class KeyboardListener {
 
          if (var7 >= 1000L) {
             if (this.field43920 != 0L) {
-               this.method36340("debug.crash.warning", MathHelper.method37773((float)var5 / 1000.0F));
+               this.method36340("debug.crash.warning", MathHelper.ceil((float)var5 / 1000.0F));
             } else {
                this.method36339("debug.crash.message");
             }

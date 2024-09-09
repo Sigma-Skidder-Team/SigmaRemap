@@ -57,8 +57,8 @@ public abstract class Class4178 {
       var3.method109("id", Registry.field16116.getKey(this.method12941()).toString());
       var3.put("BB", this.field20444.method38402());
       Direction var4 = this.method12938();
-      var3.method102("O", var4 != null ? var4.method534() : -1);
-      var3.method102("GD", this.field20448);
+      var3.putInt("O", var4 != null ? var4.method534() : -1);
+      var3.putInt("GD", this.field20448);
       this.method12897(var3);
       return var3;
    }
@@ -68,7 +68,7 @@ public abstract class Class4178 {
    public void method12894(Class4178 var1, List<Class4178> var2, Random var3) {
    }
 
-   public abstract boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, Class7481 var6, BlockPos var7);
+   public abstract boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7);
 
    public Class9764 method12915() {
       return this.field20444;
@@ -78,7 +78,7 @@ public abstract class Class4178 {
       return this.field20448;
    }
 
-   public boolean method12917(Class7481 var1, int var2) {
+   public boolean method12917(ChunkPos var1, int var2) {
       int var5 = var1.field32174 << 4;
       int var6 = var1.field32175 << 4;
       return this.field20444.method38391(var5 - var2, var6 - var2, var5 + 15 + var2, var6 + 15 + var2);
@@ -105,11 +105,11 @@ public abstract class Class4178 {
 
       for (int var12 = var5; var12 <= var8; var12++) {
          for (int var13 = var7; var13 <= var10; var13++) {
-            if (var1.getBlockState(var11.method8372(var12, var6, var13)).method23384().method31085()) {
+            if (var1.getBlockState(var11.method8372(var12, var6, var13)).getMaterial().isLiquid()) {
                return true;
             }
 
-            if (var1.getBlockState(var11.method8372(var12, var9, var13)).method23384().method31085()) {
+            if (var1.getBlockState(var11.method8372(var12, var9, var13)).getMaterial().isLiquid()) {
                return true;
             }
          }
@@ -117,11 +117,11 @@ public abstract class Class4178 {
 
       for (int var14 = var5; var14 <= var8; var14++) {
          for (int var16 = var6; var16 <= var9; var16++) {
-            if (var1.getBlockState(var11.method8372(var14, var16, var7)).method23384().method31085()) {
+            if (var1.getBlockState(var11.method8372(var14, var16, var7)).getMaterial().isLiquid()) {
                return true;
             }
 
-            if (var1.getBlockState(var11.method8372(var14, var16, var10)).method23384().method31085()) {
+            if (var1.getBlockState(var11.method8372(var14, var16, var10)).getMaterial().isLiquid()) {
                return true;
             }
          }
@@ -129,11 +129,11 @@ public abstract class Class4178 {
 
       for (int var15 = var7; var15 <= var10; var15++) {
          for (int var17 = var6; var17 <= var9; var17++) {
-            if (var1.getBlockState(var11.method8372(var5, var17, var15)).method23384().method31085()) {
+            if (var1.getBlockState(var11.method8372(var5, var17, var15)).getMaterial().isLiquid()) {
                return true;
             }
 
-            if (var1.getBlockState(var11.method8372(var8, var17, var15)).method23384().method31085()) {
+            if (var1.getBlockState(var11.method8372(var8, var17, var15)).getMaterial().isLiquid()) {
                return true;
             }
          }
@@ -339,7 +339,7 @@ public abstract class Class4178 {
       int var11 = this.method12922(var3, var5);
       if (var6.method38396(new BlockPos(var9, var10, var11))) {
          while (
-            (var1.method7007(new BlockPos(var9, var10, var11)) || var1.getBlockState(new BlockPos(var9, var10, var11)).method23384().method31085()) && var10 > 1
+            (var1.method7007(new BlockPos(var9, var10, var11)) || var1.getBlockState(new BlockPos(var9, var10, var11)).getMaterial().isLiquid()) && var10 > 1
          ) {
             var1.setBlockState(new BlockPos(var9, var10, var11), var2, 2);
             var10--;
@@ -358,7 +358,7 @@ public abstract class Class4178 {
       for (Direction var7 : Class76.field161) {
          BlockPos var8 = var1.method8349(var7);
          BlockState var9 = var0.getBlockState(var8);
-         if (var9.method23448(Blocks.CHEST)) {
+         if (var9.isIn(Blocks.CHEST)) {
             return var2;
          }
 
@@ -397,7 +397,7 @@ public abstract class Class4178 {
    }
 
    public boolean method12935(Class1659 var1, Class9764 var2, Random var3, BlockPos var4, ResourceLocation var5, BlockState var6) {
-      if (var2.method38396(var4) && !var1.getBlockState(var4).method23448(Blocks.CHEST)) {
+      if (var2.method38396(var4) && !var1.getBlockState(var4).isIn(Blocks.CHEST)) {
          if (var6 == null) {
             var6 = method12934(var1, var4, Blocks.CHEST.method11579());
          }
@@ -416,7 +416,7 @@ public abstract class Class4178 {
 
    public boolean method12936(ISeedReader var1, Class9764 var2, Random var3, int var4, int var5, int var6, Direction var7, ResourceLocation var8) {
       BlockPos var11 = new BlockPos(this.method12920(var4, var6), this.method12921(var5), this.method12922(var4, var6));
-      if (var2.method38396(var11) && !var1.getBlockState(var11).method23448(Blocks.DISPENSER)) {
+      if (var2.method38396(var11) && !var1.getBlockState(var11).isIn(Blocks.DISPENSER)) {
          this.method12923(var1, Blocks.DISPENSER.method11579().method23465(Class3357.field18899, var7), var4, var5, var6, var2);
          TileEntity var12 = var1.getTileEntity(var11);
          if (var12 instanceof Class971) {

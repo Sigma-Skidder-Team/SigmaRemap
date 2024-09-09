@@ -41,7 +41,7 @@ public class Class3688 extends Class3676<Class1042> {
       }
 
       if (var9 != null) {
-         var2.method2992().method21406(Class8830.field39824, new Class8999(var9, this.field19706, this.field19707));
+         var2.getBrain().method21406(Class8830.field39824, new Class8999(var9, this.field19706, this.field19707));
       }
    }
 }

@@ -116,7 +116,7 @@ public class Class9299 {
    public static Class6636 field42843 = new Class6636("net.minecraftforge.event.ForgeEventFactory");
    public static Class6631 field42844 = new Class6631(field42843, "canEntityDespawn");
    public static Class6631 field42845 = new Class6631(
-      field42843, "fireChunkWatch", new Class[]{boolean.class, boolean.class, ServerPlayerEntity.class, Class7481.class, ServerWorld.class}
+      field42843, "fireChunkWatch", new Class[]{boolean.class, boolean.class, ServerPlayerEntity.class, ChunkPos.class, ServerWorld.class}
    );
    public static Class6631 field42846 = new Class6631(field42843, "getMaxSpawnPackSize");
    public static Class6631 field42847 = new Class6631(field42843, "getMobGriefingEvent");

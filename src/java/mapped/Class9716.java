@@ -2,7 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.event.impl.Class4424;
+import com.mentalfrostbyte.jello.event.impl.EventRenderBlocks;
 import it.unimi.dsi.fastutil.longs.Long2ByteLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2ByteLinkedOpenHashMap;
 import net.minecraft.block.BlockState;
@@ -28,7 +28,7 @@ public class Class9716 {
    );
 
    public static boolean method38063(BlockState var0, IBlockReader var1, BlockPos var2, Direction var3, Class8391 var4) {
-      Class4424 var7 = new Class4424(var0);
+      EventRenderBlocks var7 = new EventRenderBlocks(var0);
       Client.getInstance().getEventManager().call(var7);
       if (!var7.method13971()) {
          if (!var7.isCancelled()) {

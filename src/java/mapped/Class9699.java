@@ -15,7 +15,7 @@ public class Class9699 {
             var4x = "minecraft:the_end";
             break;
          default:
-            Class8042.method27613().method27366().warning("Invalid dimension id: " + var3);
+            ViaVersion3.method27613().method27366().warning("Invalid dimension id: " + var3);
             var4x = "minecraft:overworld";
       }
 

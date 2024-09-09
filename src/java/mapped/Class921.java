@@ -6,18 +6,18 @@ import net.minecraft.item.crafting.IRecipe;
 
 import javax.annotation.Nullable;
 
-public class Class921 implements Class920, Class923 {
+public class Class921 implements IInventory, Class923 {
    private static String[] field5240;
    private final NonNullList<ItemStack> field5241 = NonNullList.<ItemStack>method68(1, ItemStack.EMPTY);
    private IRecipe<?> field5242;
 
    @Override
-   public int method3629() {
+   public int getSizeInventory() {
       return 1;
    }
 
    @Override
-   public boolean method3617() {
+   public boolean isEmpty() {
       for (ItemStack var4 : this.field5241) {
          if (!var4.isEmpty()) {
             return false;
@@ -28,31 +28,31 @@ public class Class921 implements Class920, Class923 {
    }
 
    @Override
-   public ItemStack method3618(int var1) {
+   public ItemStack getStackInSlot(int var1) {
       return this.field5241.get(0);
    }
 
    @Override
-   public ItemStack method3619(int var1, int var2) {
+   public ItemStack decrStackSize(int var1, int var2) {
       return Class7920.method26564(this.field5241, 0);
    }
 
    @Override
-   public ItemStack method3620(int var1) {
+   public ItemStack removeStackFromSlot(int var1) {
       return Class7920.method26564(this.field5241, 0);
    }
 
    @Override
-   public void method3621(int var1, ItemStack var2) {
+   public void setInventorySlotContents(int var1, ItemStack var2) {
       this.field5241.set(0, var2);
    }
 
    @Override
-   public void method3622() {
+   public void markDirty() {
    }
 
    @Override
-   public boolean method3623(PlayerEntity var1) {
+   public boolean isUsableByPlayer(PlayerEntity var1) {
       return true;
    }
 

@@ -27,7 +27,7 @@ public class Class9080 extends Class9081 {
    public void method33856() {
       super.method33856();
       this.field41568++;
-      long var3 = this.field41570.method6783();
+      long var3 = this.field41570.getGameTime();
       long var5 = var3 / 24000L + 1L;
       if (!this.field41565 && this.field41568 > 20) {
          this.field41565 = true;

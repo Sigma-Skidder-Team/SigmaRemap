@@ -3,7 +3,6 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.server.ServerWorld;
@@ -21,11 +20,11 @@ public class Class3402 extends Block {
    public static final Class8551 field19066 = Class3392.field19020;
    public static final Class8551 field19067 = Class3392.field19021;
    public static final Class8551 field19068 = Class3392.field19022;
-   public static final Map<Direction, Class8551> field19069 = Class3392.field19025
+   public static final Map<net.minecraft.util.Direction, Class8551> field19069 = Class3392.field19025
       .entrySet()
       .stream()
-      .filter(var0 -> var0.getKey() != Direction.DOWN)
-      .collect(Util.<Direction, Class8551>method38484());
+      .filter(var0 -> var0.getKey() != net.minecraft.util.Direction.DOWN)
+      .collect(Util.<net.minecraft.util.Direction, Class8551>method38484());
    private static final VoxelShape field19070 = Block.method11539(0.0, 15.0, 0.0, 16.0, 16.0, 16.0);
    private static final VoxelShape field19071 = Block.method11539(0.0, 0.0, 0.0, 1.0, 16.0, 16.0);
    private static final VoxelShape field19072 = Block.method11539(15.0, 0.0, 0.0, 16.0, 16.0, 16.0);
@@ -98,18 +97,18 @@ public class Class3402 extends Block {
       return var4;
    }
 
-   private boolean method12033(IBlockReader var1, BlockPos var2, Direction var3) {
-      if (var3 == Direction.DOWN) {
+   private boolean method12033(IBlockReader var1, BlockPos var2, net.minecraft.util.Direction var3) {
+      if (var3 == net.minecraft.util.Direction.DOWN) {
          return false;
       } else {
          BlockPos var6 = var2.method8349(var3);
          if (!method12034(var1, var6, var3)) {
-            if (var3.method544() == Class113.field414) {
+            if (var3.getAxis() == Direction.field414) {
                return false;
             } else {
                Class8551 var7 = field19069.get(var3);
                BlockState var8 = var1.getBlockState(var2.up());
-               return var8.method23448(this) && var8.<Boolean>method23463(var7);
+               return var8.isIn(this) && var8.<Boolean>method23463(var7);
             }
          } else {
             return true;
@@ -117,7 +116,7 @@ public class Class3402 extends Block {
       }
    }
 
-   public static boolean method12034(IBlockReader var0, BlockPos var1, Direction var2) {
+   public static boolean method12034(IBlockReader var0, BlockPos var1, net.minecraft.util.Direction var2) {
       BlockState var5 = var0.getBlockState(var1);
       return Block.method11549(var5.method23414(var0, var1), var2.method536());
    }
@@ -125,12 +124,12 @@ public class Class3402 extends Block {
    private BlockState method12035(BlockState var1, IBlockReader var2, BlockPos var3) {
       BlockPos var6 = var3.up();
       if (var1.<Boolean>method23463(field19064)) {
-         var1 = var1.method23465(field19064, Boolean.valueOf(method12034(var2, var6, Direction.DOWN)));
+         var1 = var1.method23465(field19064, Boolean.valueOf(method12034(var2, var6, net.minecraft.util.Direction.DOWN)));
       }
 
       BlockState var7 = null;
 
-      for (Direction var9 : Class76.field161) {
+      for (net.minecraft.util.Direction var9 : Class76.field161) {
          Class8551 var10 = method12039(var9);
          if (var1.<Boolean>method23463(var10)) {
             boolean var11 = this.method12033(var2, var3, var9);
@@ -139,7 +138,7 @@ public class Class3402 extends Block {
                   var7 = var2.getBlockState(var6);
                }
 
-               var11 = var7.method23448(this) && var7.<Boolean>method23463(var10);
+               var11 = var7.isIn(this) && var7.<Boolean>method23463(var10);
             }
 
             var1 = var1.method23465(var10, Boolean.valueOf(var11));
@@ -150,8 +149,8 @@ public class Class3402 extends Block {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
-      if (var2 != Direction.DOWN) {
+   public BlockState method11491(BlockState var1, net.minecraft.util.Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+      if (var2 != net.minecraft.util.Direction.DOWN) {
          BlockState var9 = this.method12035(var1, var4, var5);
          return this.method12031(var9) ? var9 : Blocks.AIR.method11579();
       } else {
@@ -162,9 +161,9 @@ public class Class3402 extends Block {
    @Override
    public void method11484(BlockState var1, ServerWorld var2, BlockPos var3, Random var4) {
       if (var2.rand.nextInt(4) == 0) {
-         Direction var7 = Direction.method552(var4);
+         net.minecraft.util.Direction var7 = net.minecraft.util.Direction.method552(var4);
          BlockPos var8 = var3.up();
-         if (var7.method544().method324() && !var1.<Boolean>method23463(method12039(var7))) {
+         if (var7.getAxis().method324() && !var1.<Boolean>method23463(method12039(var7))) {
             if (this.method12038(var2, var3)) {
                BlockPos var19 = var3.method8349(var7);
                BlockState var21 = var2.getBlockState(var19);
@@ -173,8 +172,8 @@ public class Class3402 extends Block {
                      var2.setBlockState(var3, var1.method23465(method12039(var7), Boolean.valueOf(true)), 2);
                   }
                } else {
-                  Direction var23 = var7.method537();
-                  Direction var24 = var7.method538();
+                  net.minecraft.util.Direction var23 = var7.method537();
+                  net.minecraft.util.Direction var24 = var7.method538();
                   boolean var13 = var1.<Boolean>method23463(method12039(var23));
                   boolean var14 = var1.<Boolean>method23463(method12039(var24));
                   BlockPos var15 = var19.method8349(var23);
@@ -184,19 +183,19 @@ public class Class3402 extends Block {
                   } else if (var14 && method12034(var2, var16, var24)) {
                      var2.setBlockState(var19, this.method11579().method23465(method12039(var24), Boolean.valueOf(true)), 2);
                   } else {
-                     Direction var17 = var7.method536();
+                     net.minecraft.util.Direction var17 = var7.method536();
                      if (var13 && var2.method7007(var15) && method12034(var2, var3.method8349(var23), var17)) {
                         var2.setBlockState(var15, this.method11579().method23465(method12039(var17), Boolean.valueOf(true)), 2);
                      } else if (var14 && var2.method7007(var16) && method12034(var2, var3.method8349(var24), var17)) {
                         var2.setBlockState(var16, this.method11579().method23465(method12039(var17), Boolean.valueOf(true)), 2);
-                     } else if ((double)var2.rand.nextFloat() < 0.05 && method12034(var2, var19.up(), Direction.field673)) {
+                     } else if ((double)var2.rand.nextFloat() < 0.05 && method12034(var2, var19.up(), net.minecraft.util.Direction.field673)) {
                         var2.setBlockState(var19, this.method11579().method23465(field19064, Boolean.valueOf(true)), 2);
                      }
                   }
                }
             }
          } else {
-            if (var7 == Direction.field673 && var3.getY() < 255) {
+            if (var7 == net.minecraft.util.Direction.field673 && var3.getY() < 255) {
                if (this.method12033(var2, var3, var7)) {
                   var2.setBlockState(var3, var1.method23465(field19064, Boolean.valueOf(true)), 2);
                   return;
@@ -209,8 +208,8 @@ public class Class3402 extends Block {
 
                   BlockState var18 = var1;
 
-                  for (Direction var22 : Class76.field161) {
-                     if (var4.nextBoolean() || !method12034(var2, var8.method8349(var22), Direction.field673)) {
+                  for (net.minecraft.util.Direction var22 : Class76.field161) {
+                     if (var4.nextBoolean() || !method12034(var2, var8.method8349(var22), net.minecraft.util.Direction.field673)) {
                         var18 = var18.method23465(method12039(var22), Boolean.valueOf(false));
                      }
                   }
@@ -226,7 +225,7 @@ public class Class3402 extends Block {
             if (var3.getY() > 0) {
                BlockPos var9 = var3.down();
                BlockState var10 = var2.getBlockState(var9);
-               if (var10.isAir() || var10.method23448(this)) {
+               if (var10.isAir() || var10.isIn(this)) {
                   BlockState var11 = !var10.isAir() ? var10 : this.method11579();
                   BlockState var12 = this.method12036(var1, var11, var4);
                   if (var11 != var12 && this.method12037(var12)) {
@@ -239,7 +238,7 @@ public class Class3402 extends Block {
    }
 
    private BlockState method12036(BlockState var1, BlockState var2, Random var3) {
-      for (Direction var7 : Class76.field161) {
+      for (net.minecraft.util.Direction var7 : Class76.field161) {
          if (var3.nextBoolean()) {
             Class8551 var8 = method12039(var7);
             if (var1.<Boolean>method23463(var8)) {
@@ -265,7 +264,7 @@ public class Class3402 extends Block {
       int var7 = 5;
 
       for (BlockPos var9 : var6) {
-         if (var1.getBlockState(var9).method23448(this)) {
+         if (var1.getBlockState(var9).isIn(this)) {
             if (--var7 <= 0) {
                return false;
             }
@@ -278,18 +277,18 @@ public class Class3402 extends Block {
    @Override
    public boolean method11497(BlockState var1, Class5909 var2) {
       BlockState var5 = var2.method18360().getBlockState(var2.method18345());
-      return !var5.method23448(this) ? super.method11497(var1, var2) : this.method12032(var5) < field19069.size();
+      return !var5.isIn(this) ? super.method11497(var1, var2) : this.method12032(var5) < field19069.size();
    }
 
    @Nullable
    @Override
    public BlockState method11495(Class5909 var1) {
       BlockState var4 = var1.method18360().getBlockState(var1.method18345());
-      boolean var5 = var4.method23448(this);
+      boolean var5 = var4.isIn(this);
       BlockState var6 = !var5 ? this.method11579() : var4;
 
-      for (Direction var10 : var1.method18349()) {
-         if (var10 != Direction.DOWN) {
+      for (net.minecraft.util.Direction var10 : var1.method18349()) {
+         if (var10 != net.minecraft.util.Direction.DOWN) {
             Class8551 var11 = method12039(var10);
             boolean var12 = var5 && var4.<Boolean>method23463(var11);
             if (!var12 && this.method12033(var1.method18360(), var1.method18345(), var10)) {
@@ -341,7 +340,7 @@ public class Class3402 extends Block {
       }
    }
 
-   public static Class8551 method12039(Direction var0) {
+   public static Class8551 method12039(net.minecraft.util.Direction var0) {
       return field19069.get(var0);
    }
 }

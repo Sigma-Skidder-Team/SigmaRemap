@@ -22,7 +22,7 @@ public class Class6991 extends Class6990 {
 
    @Override
    public boolean method21668() {
-      return this.field30243.method3226() || this.method21669() || this.field30243.isPassenger();
+      return this.field30243.isOnGround() || this.method21669() || this.field30243.isPassenger();
    }
 
    @Override
@@ -50,12 +50,12 @@ public class Class6991 extends Class6990 {
          var1 = var5;
       }
 
-      if (!this.field30244.getBlockState(var1).method23384().method31086()) {
+      if (!this.field30244.getBlockState(var1).getMaterial().method31086()) {
          return super.method21651(var1, var2);
       } else {
          BlockPos var6 = var1.up();
 
-         while (var6.getY() < this.field30244.method7034() && this.field30244.getBlockState(var6).method23384().method31086()) {
+         while (var6.getY() < this.field30244.method7034() && this.field30244.getBlockState(var6).getMaterial().method31086()) {
             var6 = var6.up();
          }
 
@@ -69,7 +69,7 @@ public class Class6991 extends Class6990 {
    }
 
    private int method21678() {
-      if (this.field30243.method3250() && this.method21675()) {
+      if (this.field30243.isInWater() && this.method21675()) {
          int var3 = MathHelper.floor(this.field30243.getPosY());
          Block var4 = this.field30244.getBlockState(new BlockPos(this.field30243.getPosX(), (double)var3, this.field30243.getPosZ())).getBlock();
          int var5 = 0;

@@ -35,7 +35,7 @@ public abstract class Class1046 extends Class1006 {
       Entity var3 = this.method4297();
       if (var3 != null && var3.world == this.world) {
          this.method4288(var3.getPosition(), 5);
-         float var4 = this.method3275(var3);
+         float var4 = this.getDistance(var3);
          if (this instanceof TameableEntity && ((TameableEntity)this).method4395()) {
             if (var4 > 10.0F) {
                this.method4294(true, true);
@@ -53,16 +53,16 @@ public abstract class Class1046 extends Class1006 {
                      var3.getPosX() - this.getPosX(), var3.getPosY() - this.getPosY(), var3.getPosZ() - this.getPosZ()
                   )
                   .method11333()
-                  .method11344((double)Math.max(var4 - 2.0F, 0.0F));
+                  .scale((double)Math.max(var4 - 2.0F, 0.0F));
                this.method4230()
                   .method21654(this.getPosX() + var6.x, this.getPosY() + var6.y, this.getPosZ() + var6.z, this.method4773());
             } else {
                double var7 = (var3.getPosX() - this.getPosX()) / (double)var4;
                double var9 = (var3.getPosY() - this.getPosY()) / (double)var4;
                double var11 = (var3.getPosZ() - this.getPosZ()) / (double)var4;
-               this.method3434(
-                  this.getVec()
-                     .method11339(Math.copySign(var7 * var7 * 0.4, var7), Math.copySign(var9 * var9 * 0.4, var9), Math.copySign(var11 * var11 * 0.4, var11))
+               this.setMotion(
+                  this.getMotion()
+                     .add(Math.copySign(var7 * var7 * 0.4, var7), Math.copySign(var9 * var9 * 0.4, var9), Math.copySign(var11 * var11 * 0.4, var11))
                );
             }
          } else {

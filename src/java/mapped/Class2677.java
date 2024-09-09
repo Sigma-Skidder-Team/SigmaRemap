@@ -16,7 +16,7 @@ public class Class2677 extends Class2672 {
 
    @Override
    public boolean method10803() {
-      return super.method10803() ? !this.field17072.method3033(Effects.INVISIBILITY) : false;
+      return super.method10803() ? !this.field17072.isPotionActive(Effects.INVISIBILITY) : false;
    }
 
    @Override
@@ -31,7 +31,7 @@ public class Class2677 extends Class2672 {
 
    @Override
    public void method10890() {
-      this.field17072.method3035(new Class2023(Effects.INVISIBILITY, 1200));
+      this.field17072.addPotionEffect(new EffectInstance(Effects.INVISIBILITY, 1200));
    }
 
    @Nullable

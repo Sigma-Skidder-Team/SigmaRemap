@@ -137,7 +137,7 @@ public class Class8031 {
                Class164 var13 = var3.field14514.method26284(var1, var12, var2, var9);
                if (var13 != null) {
                   TileEntity var14 = var9.getTileEntity(var12);
-                  Class946.method3802(var14);
+                  IClearable.method3802(var14);
                   if (var13.method496(var9, var12, 2)) {
                      var8.add(var12.toImmutable());
                      var10++;

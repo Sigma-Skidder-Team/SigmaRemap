@@ -13,8 +13,8 @@ public class Class6587 {
    public static void method19960(CommandDispatcher<Class6619> var0) {
       LiteralArgumentBuilder var3 = (LiteralArgumentBuilder)Class6099.method18839("gamemode").requires(var0x -> var0x.method20129(2));
 
-      for (Class1894 var7 : Class1894.values()) {
-         if (var7 != Class1894.field11101) {
+      for (GameType var7 : GameType.values()) {
+         if (var7 != GameType.field11101) {
             var3.then(
                ((LiteralArgumentBuilder)Class6099.method18839(var7.method8153())
                      .executes(var1 -> method19962(var1, Collections.<ServerPlayerEntity>singleton(((Class6619)var1.getSource()).method20175()), var7)))
@@ -28,10 +28,10 @@ public class Class6587 {
       var0.register(var3);
    }
 
-   private static void method19961(Class6619 var0, ServerPlayerEntity var1, Class1894 var2) {
+   private static void method19961(Class6619 var0, ServerPlayerEntity var1, GameType var2) {
       TranslationTextComponent var5 = new TranslationTextComponent("gameMode." + var2.method8153());
       if (var0.method20173() != var1) {
-         if (var0.method20172().method6789().method17135(Class5462.field24236)) {
+         if (var0.method20172().getGameRules().getBoolean(Class5462.field24236)) {
             var1.sendMessage(new TranslationTextComponent("gameMode.changed", var5), Util.DUMMY_UUID);
          }
 
@@ -41,7 +41,7 @@ public class Class6587 {
       }
    }
 
-   private static int method19962(CommandContext<Class6619> var0, Collection<ServerPlayerEntity> var1, Class1894 var2) {
+   private static int method19962(CommandContext<Class6619> var0, Collection<ServerPlayerEntity> var1, GameType var2) {
       int var5 = 0;
 
       for (ServerPlayerEntity var7 : var1) {

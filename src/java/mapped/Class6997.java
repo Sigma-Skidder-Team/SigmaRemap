@@ -28,7 +28,7 @@ public class Class6997 extends Class6990 {
 
    @Override
    public Vector3d method21667() {
-      return new Vector3d(this.field30243.getPosX(), this.field30243.method3440(0.5), this.field30243.getPosZ());
+      return new Vector3d(this.field30243.getPosX(), this.field30243.getPosYHeight(0.5), this.field30243.getPosZ());
    }
 
    @Override
@@ -64,11 +64,11 @@ public class Class6997 extends Class6990 {
    public void method21659() {
       if (this.field30245 != null) {
          Vector3d var3 = this.method21667();
-         float var4 = this.field30243.method3429();
+         float var4 = this.field30243.getWidth();
          float var5 = !(var4 > 0.75F) ? 0.75F - var4 / 2.0F : var4 / 2.0F;
-         Vector3d var6 = this.field30243.getVec();
+         Vector3d var6 = this.field30243.getMotion();
          if (Math.abs(var6.x) > 0.2 || Math.abs(var6.z) > 0.2) {
-            var5 = (float)((double)var5 * var6.method11348() * 6.0);
+            var5 = (float)((double)var5 * var6.length() * 6.0);
          }
 
          byte var7 = 6;
@@ -107,7 +107,7 @@ public class Class6997 extends Class6990 {
          if (!var4.equals(this.field30250)) {
             this.field30250 = var4;
             double var5 = var1.method11341(Vector3d.method11328(this.field30250));
-            this.field30253 = !(this.field30243.method2918() > 0.0F) ? 0.0 : var5 / (double)this.field30243.method2918() * 100.0;
+            this.field30253 = !(this.field30243.getAIMoveSpeed() > 0.0F) ? 0.0 : var5 / (double)this.field30243.getAIMoveSpeed() * 100.0;
          } else {
             this.field30251 = this.field30251 + (Util.milliTime() - this.field30252);
          }
@@ -125,8 +125,8 @@ public class Class6997 extends Class6990 {
 
    @Override
    public boolean method21671(Vector3d var1, Vector3d var2, int var3, int var4, int var5) {
-      Vector3d var8 = new Vector3d(var2.x, var2.y + (double)this.field30243.method3430() * 0.5, var2.z);
-      return this.field30244.method7036(new Class6809(var1, var8, Class2271.field14774, Class1985.field12962, this.field30243)).getType()
+      Vector3d var8 = new Vector3d(var2.x, var2.y + (double)this.field30243.getHeight() * 0.5, var2.z);
+      return this.field30244.rayTraceBlocks(new RayTraceContext(var1, var8, Class2271.field14774, Class1985.field12962, this.field30243)).getType()
          == RayTraceResult.Type.MISS;
    }
 

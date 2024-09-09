@@ -51,7 +51,7 @@ public interface Class6608 extends ISpawnWorldInfo {
 
    void method20066(UUID var1);
 
-   Class1894 method20067();
+   GameType method20067();
 
    void method20068(Class7235 var1);
 
@@ -63,7 +63,7 @@ public interface Class6608 extends ISpawnWorldInfo {
 
    boolean method20072();
 
-   void method20073(Class1894 var1);
+   void method20073(GameType var1);
 
    Class8559<MinecraftServer> method20074();
 

@@ -23,7 +23,7 @@ public abstract class Class893 extends ProjectileEntity {
    }
 
    public Class893(EntityType<? extends Class893> var1, LivingEntity var2, World var3) {
-      this(var1, var2.getPosX(), var2.method3442() - 0.1F, var2.getPosZ(), var3);
+      this(var1, var2.getPosX(), var2.getPosYEye() - 0.1F, var2.getPosZ(), var3);
       this.setShooter(var2);
    }
 
@@ -46,8 +46,8 @@ public abstract class Class893 extends ProjectileEntity {
       if (var3.getType() == RayTraceResult.Type.BLOCK) {
          BlockPos var5 = ((BlockRayTraceResult)var3).getPos();
          BlockState var13 = this.world.getBlockState(var5);
-         if (!var13.method23448(Blocks.field36588)) {
-            if (var13.method23448(Blocks.field36886)) {
+         if (!var13.isIn(Blocks.field36588)) {
+            if (var13.isIn(Blocks.field36886)) {
                TileEntity var14 = this.world.getTileEntity(var5);
                if (var14 instanceof Class957 && Class957.method3871(this)) {
                   ((Class957)var14).method3877(this);
@@ -56,7 +56,7 @@ public abstract class Class893 extends ProjectileEntity {
                var4 = true;
             }
          } else {
-            this.method3323(var5);
+            this.setPortal(var5);
             var4 = true;
          }
       }
@@ -65,20 +65,20 @@ public abstract class Class893 extends ProjectileEntity {
          this.method3464(var3);
       }
 
-      this.method3240();
-      Vector3d var17 = this.getVec();
+      this.doBlockCollisions();
+      Vector3d var17 = this.getMotion();
       double var6 = this.getPosX() + var17.x;
       double var8 = this.getPosY() + var17.y;
       double var10 = this.getPosZ() + var17.z;
       this.method3468();
       float var12;
-      if (!this.method3250()) {
+      if (!this.isInWater()) {
          var12 = 0.99F;
       } else {
          for (int var15 = 0; var15 < 4; var15++) {
             float var16 = 0.25F;
             this.world
-               .method6746(
+               .addParticle(
                   ParticleTypes.field34052,
                   var6 - var17.x * 0.25,
                   var8 - var17.y * 0.25,
@@ -92,10 +92,10 @@ public abstract class Class893 extends ProjectileEntity {
          var12 = 0.8F;
       }
 
-      this.method3434(var17.method11344((double)var12));
+      this.setMotion(var17.scale((double)var12));
       if (!this.method3247()) {
-         Vector3d var18 = this.getVec();
-         this.method3435(var18.x, var18.y - (double)this.method3515(), var18.z);
+         Vector3d var18 = this.getMotion();
+         this.setMotion(var18.x, var18.y - (double)this.method3515(), var18.z);
       }
 
       this.setPosition(var6, var8, var10);
@@ -106,7 +106,7 @@ public abstract class Class893 extends ProjectileEntity {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this);
    }
 }

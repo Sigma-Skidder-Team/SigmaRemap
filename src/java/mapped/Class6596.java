@@ -1,7 +1,5 @@
 package mapped;
 
-import net.minecraft.util.Direction;
-
 // $VF: synthetic class
 public class Class6596 {
    private static String[] field29023;
@@ -25,37 +23,37 @@ public class Class6596 {
       } catch (NoSuchFieldError var9) {
       }
 
-      field29025 = new int[Direction.values().length];
+      field29025 = new int[net.minecraft.util.Direction.values().length];
 
       try {
-         field29025[Direction.EAST.ordinal()] = 1;
+         field29025[net.minecraft.util.Direction.EAST.ordinal()] = 1;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field29025[Direction.WEST.ordinal()] = 2;
+         field29025[net.minecraft.util.Direction.WEST.ordinal()] = 2;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field29025[Direction.SOUTH.ordinal()] = 3;
+         field29025[net.minecraft.util.Direction.SOUTH.ordinal()] = 3;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field29025[Direction.NORTH.ordinal()] = 4;
+         field29025[net.minecraft.util.Direction.NORTH.ordinal()] = 4;
       } catch (NoSuchFieldError var5) {
       }
 
-      field29024 = new int[Class113.values().length];
+      field29024 = new int[Direction.values().length];
 
       try {
-         field29024[Class113.field413.ordinal()] = 1;
+         field29024[Direction.field413.ordinal()] = 1;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field29024[Class113.field415.ordinal()] = 2;
+         field29024[Direction.field415.ordinal()] = 2;
       } catch (NoSuchFieldError var3) {
       }
    }

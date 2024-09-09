@@ -21,7 +21,7 @@ public class Class3731<E extends Class1006 & Class1023, T extends LivingEntity> 
    }
 
    public boolean method12499(ServerWorld var1, E var2, long var3) {
-      return var2.method2992().method21404(Class8830.field39826) && this.method12508(var1, (E)var2);
+      return var2.getBrain().method21404(Class8830.field39826) && this.method12508(var1, (E)var2);
    }
 
    public void method12504(ServerWorld var1, E var2, long var3) {
@@ -32,12 +32,12 @@ public class Class3731<E extends Class1006 & Class1023, T extends LivingEntity> 
 
    public void method12506(ServerWorld var1, E var2, long var3) {
       if (var2.isHandActive()) {
-         var2.method3162();
+         var2.resetActiveHand();
       }
 
       if (var2.method3092(Items.field38148)) {
          ((Class1023)var2).method4535(false);
-         Class3261.method11756(var2.method3158(), false);
+         Class3261.method11756(var2.getActiveItemStack(), false);
       }
    }
 
@@ -62,27 +62,27 @@ public class Class3731<E extends Class1006 & Class1023, T extends LivingEntity> 
                this.field19841 = Class2276.field14826;
             }
 
-            int var7 = var1.method3160();
-            ItemStack var6 = var1.method3158();
+            int var7 = var1.getItemInUseMaxCount();
+            ItemStack var6 = var1.getActiveItemStack();
             if (var7 >= Class3261.method11767(var6)) {
-               var1.method3161();
+               var1.stopActiveHand();
                this.field19841 = Class2276.field14828;
-               this.field19840 = 20 + var1.method3013().nextInt(20);
+               this.field19840 = 20 + var1.getRNG().nextInt(20);
                ((Class1023)var1).method4535(false);
             }
          }
       } else {
-         var1.method3154(Class9456.method36389(var1, Items.field38148));
+         var1.setActiveHand(Class9456.method36389(var1, Items.field38148));
          this.field19841 = Class2276.field14827;
          ((Class1023)var1).method4535(true);
       }
    }
 
    private void method12657(Class1006 var1, LivingEntity var2) {
-      var1.method2992().method21406(Class8830.field39825, new Class7865(var2, true));
+      var1.getBrain().method21406(Class8830.field39825, new Class7865(var2, true));
    }
 
    private static LivingEntity method12658(LivingEntity var0) {
-      return var0.method2992().<LivingEntity>method21410(Class8830.field39826).get();
+      return var0.getBrain().<LivingEntity>method21410(Class8830.field39826).get();
    }
 }

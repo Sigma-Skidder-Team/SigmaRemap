@@ -51,7 +51,7 @@ public class Class6197 implements Class6196 {
    @Override
    public void method19097() {
       this.field27650++;
-      if (this.field27648.method37036() == Class1894.field11102) {
+      if (this.field27648.method37036() == GameType.field11102) {
          if (this.field27650 == 1) {
             ClientPlayerEntity var3 = this.field27648.method37035().player;
             if (var3 != null) {
@@ -108,7 +108,7 @@ public class Class6197 implements Class6196 {
 
    public static boolean method19105(ClientPlayerEntity var0) {
       for (Block var4 : field27645) {
-         if (var0.method5396().method28961(Class8876.field40096.method172(var4)) > 0) {
+         if (var0.method5396().method28961(Stats.field40096.method172(var4)) > 0) {
             return true;
          }
       }

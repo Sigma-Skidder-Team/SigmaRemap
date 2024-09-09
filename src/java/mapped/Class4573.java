@@ -32,7 +32,7 @@ public class Class4573 extends Class4566 {
 
    @Override
    public void method14511(double var1, double var3, double var5) {
-      this.method14524(this.method14523().method19667(var1, var3, var5));
+      this.method14524(this.method14523().offset(var1, var3, var5));
       this.method14521();
    }
 

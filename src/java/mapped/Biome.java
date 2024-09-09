@@ -184,7 +184,7 @@ public final class Biome {
                try {
                   var1.method24340(Class2002.method8390(var7), var15)
                      .forEach(
-                        var8 -> var8.method17112(var3, var1, var2, var6, new Class9764(var18, var19, var18 + 15, var19 + 15), new Class7481(var16, var17))
+                        var8 -> var8.method17112(var3, var1, var2, var6, new Class9764(var18, var19, var18 + 15, var19 + 15), new ChunkPos(var16, var17))
                      );
                } catch (Exception var22) {
                   CrashReport var21 = CrashReport.makeCrashReport(var22, "Feature placement");

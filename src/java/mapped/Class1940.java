@@ -101,7 +101,7 @@ public enum Class1940 {
             for (EnderCrystalEntity var11 : var3) {
                var11.method4142((BlockPos)null);
                var1.method6755(var11, var11.getPosX(), var11.getPosY(), var11.getPosZ(), 6.0F, Class2141.field14014);
-               var11.method2904();
+               var11.remove();
             }
          }
       }

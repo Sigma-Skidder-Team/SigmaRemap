@@ -17,7 +17,7 @@ public class Class2905 extends Class2898<Class4712> {
          var4 = var4.down();
       }
 
-      if (!var1.getBlockState(var4).method23448(Blocks.SNOW_BLOCK)) {
+      if (!var1.getBlockState(var4).isIn(Blocks.SNOW_BLOCK)) {
          return false;
       } else {
          var4 = var4.method8339(var3.nextInt(4));
@@ -29,7 +29,7 @@ public class Class2905 extends Class2898<Class4712> {
 
          for (int var10 = 0; var10 < var8; var10++) {
             float var11 = (1.0F - (float)var10 / (float)var8) * (float)var9;
-            int var12 = MathHelper.method37773(var11);
+            int var12 = MathHelper.ceil(var11);
 
             for (int var13 = -var12; var13 <= var12; var13++) {
                float var14 = (float) MathHelper.method37772(var13) - 0.25F;

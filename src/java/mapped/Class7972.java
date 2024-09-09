@@ -21,8 +21,8 @@ public class Class7972 {
       var6.field31036 = !var3 ? 0.8F : -0.8F;
       var6.field31035 = -0.97079635F;
       var7.field31035 = var6.field31035;
-      float var8 = (float)Class3261.method11767(var2.method3158());
-      float var9 = MathHelper.clamp((float)var2.method3160(), 0.0F, var8);
+      float var8 = (float)Class3261.method11767(var2.getActiveItemStack());
+      float var9 = MathHelper.clamp((float)var2.getItemInUseMaxCount(), 0.0F, var8);
       float var10 = var9 / var8;
       var7.field31036 = MathHelper.lerp(var10, 0.4F, 0.85F) * (float)(!var3 ? -1 : 1);
       var7.field31035 = MathHelper.lerp(var10, var7.field31035, (float) (-Math.PI / 2));
@@ -35,7 +35,7 @@ public class Class7972 {
       var1.field31037 = 0.0F;
       var0.field31036 = (float) (Math.PI / 20);
       var1.field31036 = (float) (-Math.PI / 20);
-      if (var2.method2967() != HandSide.field14418) {
+      if (var2.getPrimaryHand() != HandSide.field14418) {
          var0.field31035 = -0.0F + MathHelper.cos(var4 * 0.19F) * 0.5F;
          var1.field31035 = -1.8849558F + MathHelper.cos(var4 * 0.09F) * 0.15F;
          var0.field31035 += var7 * 1.2F - var8 * 0.4F;

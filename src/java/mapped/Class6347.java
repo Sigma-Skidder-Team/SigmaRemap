@@ -16,7 +16,7 @@ public class Class6347 extends Class6333 {
 
    @Override
    public boolean method19268() {
-      return !this.field27882.method3245();
+      return !this.field27882.isSilent();
    }
 
    @Override

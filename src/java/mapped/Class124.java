@@ -30,7 +30,7 @@ public class Class124 implements ILootCondition {
       Entity var4 = var1.<Entity>method26081(Class9525.field44333);
       int var5 = 0;
       if (var4 instanceof LivingEntity) {
-         var5 = Class7858.method26330((LivingEntity)var4);
+         var5 = EnchantmentHelper.method26330((LivingEntity)var4);
       }
 
       return var1.method26088().nextFloat() < this.field437 + (float)var5 * this.field438;

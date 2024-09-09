@@ -10,8 +10,8 @@ public class Class981 extends Class927 {
    }
 
    @Override
-   public void method3622() {
-      this.field5459.method18106(this);
-      super.method3622();
+   public void markDirty() {
+      this.field5459.onCraftMatrixChanged(this);
+      super.markDirty();
    }
 }

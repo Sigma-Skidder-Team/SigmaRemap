@@ -133,13 +133,13 @@ public class Class3211 extends Block {
    @Override
    public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.down());
-      if (var6.getBlock() != this.field18620 && !var6.method23448(Blocks.field36651)) {
+      if (var6.getBlock() != this.field18620 && !var6.isIn(Blocks.field36651)) {
          if (var6.isAir()) {
             boolean var7 = false;
 
             for (Direction var9 : Class76.field161) {
                BlockState var10 = var2.getBlockState(var3.method8349(var9));
-               if (!var10.method23448(this.field18620)) {
+               if (!var10.isIn(this.field18620)) {
                   if (!var10.isAir()) {
                      return false;
                   }

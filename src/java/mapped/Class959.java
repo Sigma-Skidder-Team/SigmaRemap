@@ -72,7 +72,7 @@ public class Class959 extends TileEntity implements Class935 {
    @Override
    public void method3647() {
       this.field5382++;
-      long var3 = this.field5324.method6783();
+      long var3 = this.field5324.getGameTime();
       if (var3 % 40L == 0L) {
          this.method3905(this.method3896());
          if (!this.field5324.isRemote && this.method3903()) {
@@ -125,7 +125,7 @@ public class Class959 extends TileEntity implements Class935 {
                   BlockState var10 = this.field5324.getBlockState(var9);
 
                   for (Block var14 : field5381) {
-                     if (var10.method23448(var14)) {
+                     if (var10.isIn(var14)) {
                         this.field5386.add(var9);
                      }
                   }
@@ -151,7 +151,7 @@ public class Class959 extends TileEntity implements Class935 {
       if (!var9.isEmpty()) {
          for (PlayerEntity var11 : var9) {
             if (this.field5325.method8316(var11.getPosition(), (double)var4) && var11.method3253()) {
-               var11.method3035(new Class2023(Effects.CONDUIT_POWER, 260, 0, true, true));
+               var11.addPotionEffect(new EffectInstance(Effects.CONDUIT_POWER, 260, 0, true, true));
             }
          }
       }
@@ -190,7 +190,7 @@ public class Class959 extends TileEntity implements Class935 {
                1.0F,
                1.0F
             );
-         this.field5387.method2741(DamageSource.field39006, 4.0F);
+         this.field5387.attackEntityFrom(DamageSource.field39006, 4.0F);
       }
 
       if (var3 != this.field5387) {
@@ -240,20 +240,20 @@ public class Class959 extends TileEntity implements Class935 {
             float var11 = -0.5F + var3.nextFloat();
             BlockPos var12 = var8.method8338(this.field5325);
             Vector3d var13 = new Vector3d((double)var9, (double)var10, (double)var11)
-               .method11339((double)var12.getX(), (double)var12.getY(), (double)var12.getZ());
+               .add((double)var12.getX(), (double)var12.getY(), (double)var12.getZ());
             this.field5324
-               .method6746(ParticleTypes.field34104, var6.x, var6.y, var6.z, var13.x, var13.y, var13.z);
+               .addParticle(ParticleTypes.field34104, var6.x, var6.y, var6.z, var13.x, var13.y, var13.z);
          }
       }
 
       if (this.field5387 != null) {
-         Vector3d var15 = new Vector3d(this.field5387.getPosX(), this.field5387.method3442(), this.field5387.getPosZ());
-         float var16 = (-0.5F + var3.nextFloat()) * (3.0F + this.field5387.method3429());
-         float var17 = -1.0F + var3.nextFloat() * this.field5387.method3430();
-         float var18 = (-0.5F + var3.nextFloat()) * (3.0F + this.field5387.method3429());
+         Vector3d var15 = new Vector3d(this.field5387.getPosX(), this.field5387.getPosYEye(), this.field5387.getPosZ());
+         float var16 = (-0.5F + var3.nextFloat()) * (3.0F + this.field5387.getWidth());
+         float var17 = -1.0F + var3.nextFloat() * this.field5387.getHeight();
+         float var18 = (-0.5F + var3.nextFloat()) * (3.0F + this.field5387.getWidth());
          Vector3d var19 = new Vector3d((double)var16, (double)var17, (double)var18);
          this.field5324
-            .method6746(ParticleTypes.field34104, var15.x, var15.y, var15.z, var19.x, var19.y, var19.z);
+            .addParticle(ParticleTypes.field34104, var15.x, var15.y, var15.z, var19.x, var19.y, var19.z);
       }
    }
 

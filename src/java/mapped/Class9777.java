@@ -47,7 +47,7 @@ public final class Class9777 {
 
       label174:
       for (Class8266 var17 : var8.method24374(this.field45737, var9, var10, this.field45739)) {
-         Direction var18 = Class3249.method11675(var17.field35531);
+         Direction var18 = JigsawBlock.method11675(var17.field35531);
          BlockPos var19 = var17.field35530;
          BlockPos var20 = var19.method8349(var18);
          int var21 = var19.getY() - var15;
@@ -92,7 +92,7 @@ public final class Class9777 {
                      int var37;
                      if (var5 && var36.method38399() <= 16) {
                         var37 = var35.stream().mapToInt(var2x -> {
-                           if (var36.method38396(var2x.field35530.method8349(Class3249.method11675(var2x.field35531)))) {
+                           if (var36.method38396(var2x.field35530.method8349(JigsawBlock.method11675(var2x.field35531)))) {
                               ResourceLocation var5x = new ResourceLocation(var2x.field35532.getString("pool"));
                               Optional<Class9369> var6 = this.field45733.method9187(var5x);
                               Optional<Class9369> var7 = var6.<Class9369>flatMap(var1xx -> this.field45733.method9187(var1xx.method35534()));
@@ -108,7 +108,7 @@ public final class Class9777 {
                      }
 
                      for (Class8266 var39 : var35) {
-                        if (Class3249.method11674(var17, var39)) {
+                        if (JigsawBlock.method11674(var17, var39)) {
                            BlockPos var40 = var39.field35530;
                            BlockPos var41 = new BlockPos(
                               var20.getX() - var40.getX(), var20.getY() - var40.getY(), var20.getZ() - var40.getZ()
@@ -118,7 +118,7 @@ public final class Class9777 {
                            Class109 var44 = var32.method24382();
                            boolean var45 = var44 == Class109.field367;
                            int var46 = var40.getY();
-                           int var47 = var21 - var46 + Class3249.method11675(var17.field35531).method540();
+                           int var47 = var21 - var46 + JigsawBlock.method11675(var17.field35531).method540();
                            int var48;
                            if (var12 && var45) {
                               var48 = var15 + var47;
@@ -139,7 +139,7 @@ public final class Class9777 {
                            }
 
                            if (! VoxelShapes.compare(
-                              (VoxelShape)var28.getValue(), VoxelShapes.create(AxisAlignedBB.method19656(var50).method19679(0.25)), IBooleanFunction.field44039
+                              (VoxelShape)var28.getValue(), VoxelShapes.create(AxisAlignedBB.method19656(var50).shrink(0.25)), IBooleanFunction.field44039
                            )) {
                               var28.setValue(
                                  VoxelShapes.method27434((VoxelShape)var28.getValue(), VoxelShapes.create(AxisAlignedBB.method19656(var50)), IBooleanFunction.ONLY_FIRST)

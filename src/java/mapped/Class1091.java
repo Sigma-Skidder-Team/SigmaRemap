@@ -64,11 +64,11 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public boolean method3114(Entity var1) {
+   public boolean attackEntityAsMob(Entity var1) {
       if (var1 instanceof LivingEntity) {
          this.field5977 = 10;
-         this.world.method6786(this, (byte)4);
-         this.method2863(SoundEvents.field26654, 1.0F, this.method3100());
+         this.world.setEntityState(this, (byte)4);
+         this.playSound(SoundEvents.field26654, 1.0F, this.getSoundPitch());
          Class9069.method33785(this, (LivingEntity)var1);
          return Class1092.method5091(this, (LivingEntity)var1);
       } else {
@@ -77,18 +77,18 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method3045(LivingEntity var1) {
+   public void constructKnockBackVector(LivingEntity var1) {
       if (this.method5084()) {
          Class1092.method5092(this, var1);
       }
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
-      boolean var5 = super.method2741(var1, var2);
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
+      boolean var5 = super.attackEntityFrom(var1, var2);
       if (!this.world.isRemote) {
-         if (var5 && var1.method31109() instanceof LivingEntity) {
-            Class9069.method33793(this, (LivingEntity)var1.method31109());
+         if (var5 && var1.getTrueSource() instanceof LivingEntity) {
+            Class9069.method33793(this, (LivingEntity)var1.getTrueSource());
          }
 
          return var5;
@@ -98,24 +98,24 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public Class6971<Class1091> method2993() {
-      return Class6947.<Class1091>method21400(field5981, field5980);
+   public Class6971<Class1091> getBrainCodec() {
+      return Brain.<Class1091>method21400(field5981, field5980);
    }
 
    @Override
-   public Class6947<?> method2994(Dynamic<?> var1) {
-      return Class9069.method33778(this.method2993().method21513(var1));
+   public Brain<?> createBrain(Dynamic<?> var1) {
+      return Class9069.method33778(this.getBrainCodec().method21513(var1));
    }
 
    @Override
-   public Class6947<Class1091> method2992() {
-      return (Class6947<Class1091>)super.method2992();
+   public Brain<Class1091> getBrain() {
+      return (Brain<Class1091>)super.getBrain();
    }
 
    @Override
    public void method4258() {
       this.world.getProfiler().startSection("hoglinBrain");
-      this.method2992().method21432((ServerWorld)this.world, this);
+      this.getBrain().method21432((ServerWorld)this.world, this);
       this.world.getProfiler().endSection();
       Class9069.method33784(this);
       if (!this.method5087()) {
@@ -130,27 +130,27 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method2871() {
+   public void livingEntity() {
       if (this.field5977 > 0) {
          this.field5977--;
       }
 
-      super.method2871();
+      super.livingEntity();
    }
 
    @Override
    public void method4679() {
-      if (!this.method3005()) {
+      if (!this.isChild()) {
          this.field5594 = 5;
-         this.method3085(Attributes.field42110).method38661(6.0);
+         this.getAttribute(Attributes.field42110).method38661(6.0);
       } else {
          this.field5594 = 3;
-         this.method3085(Attributes.field42110).method38661(0.5);
+         this.getAttribute(Attributes.field42110).method38661(0.5);
       }
    }
 
    public static boolean method5081(EntityType<Class1091> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
-      return !var1.getBlockState(var3.down()).method23448(Blocks.field36891);
+      return !var1.getBlockState(var3.down()).isIn(Blocks.field36891);
    }
 
    @Nullable
@@ -171,7 +171,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    @Override
    public float method4339(BlockPos var1, Class1662 var2) {
       if (!Class9069.method33790(this, var1)) {
-         return !var2.getBlockState(var1.down()).method23448(Blocks.field37083) ? 0.0F : 10.0F;
+         return !var2.getBlockState(var1.down()).isIn(Blocks.field37083) ? 0.0F : 10.0F;
       } else {
          return -1.0F;
       }
@@ -179,7 +179,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
 
    @Override
    public double method3310() {
-      return (double)this.method3430() - (!this.method3005() ? 0.15 : 0.2);
+      return (double)this.getHeight() - (!this.isChild() ? 0.15 : 0.2);
    }
 
    @Override
@@ -193,12 +193,12 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method2866(byte var1) {
+   public void handleStatusUpdate(byte var1) {
       if (var1 != 4) {
-         super.method2866(var1);
+         super.handleStatusUpdate(var1);
       } else {
          this.field5977 = 10;
-         this.method2863(SoundEvents.field26654, 1.0F, this.method3100());
+         this.playSound(SoundEvents.field26654, 1.0F, this.getSoundPitch());
       }
    }
 
@@ -208,19 +208,19 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public boolean method3009() {
+   public boolean canDropLoot() {
       return true;
    }
 
    @Override
-   public int method2937(PlayerEntity var1) {
+   public int getExperiencePoints(PlayerEntity var1) {
       return this.field5594;
    }
 
    private void method5083(ServerWorld var1) {
       Class1093 var4 = this.<Class1093>method4292(EntityType.field41106, true);
       if (var4 != null) {
-         var4.method3035(new Class2023(Effects.NAUSEA, 200, 0));
+         var4.addPotionEffect(new EffectInstance(Effects.NAUSEA, 200, 0));
       }
    }
 
@@ -230,7 +230,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    public boolean method5084() {
-      return !this.method3005();
+      return !this.isChild();
    }
 
    @Override
@@ -240,32 +240,32 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
-      super.method2724(var1);
+   public void writeAdditional(CompoundNBT var1) {
+      super.writeAdditional(var1);
       if (this.method5086()) {
          var1.putBoolean("IsImmuneToZombification", true);
       }
 
-      var1.method102("TimeInOverworld", this.field5978);
+      var1.putInt("TimeInOverworld", this.field5978);
       if (this.field5979) {
          var1.putBoolean("CannotBeHunted", true);
       }
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
-      super.method2723(var1);
+   public void readAdditional(CompoundNBT var1) {
+      super.readAdditional(var1);
       this.method5085(var1.getBoolean("IsImmuneToZombification"));
       this.field5978 = var1.getInt("TimeInOverworld");
       this.method5088(var1.getBoolean("CannotBeHunted"));
    }
 
    public void method5085(boolean var1) {
-      this.method3210().method35446(field5976, var1);
+      this.getDataManager().method35446(field5976, var1);
    }
 
    private boolean method5086() {
-      return this.method3210().<Boolean>method35445(field5976);
+      return this.getDataManager().<Boolean>method35445(field5976);
    }
 
    public boolean method5087() {
@@ -283,7 +283,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    @Nullable
    @Override
    public Class1045 method4389(ServerWorld var1, Class1045 var2) {
-      Class1091 var5 = EntityType.field41037.method33215(var1);
+      Class1091 var5 = EntityType.field41037.create(var1);
       if (var5 != null) {
          var5.method4278();
       }
@@ -327,12 +327,12 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method3241(BlockPos var1, BlockState var2) {
-      this.method2863(SoundEvents.field26659, 0.15F, 1.0F);
+   public void playStepSound(BlockPos var1, BlockState var2) {
+      this.playSound(SoundEvents.field26659, 0.15F, 1.0F);
    }
 
    public void method5090(SoundEvent var1) {
-      this.method2863(var1, this.method3099(), this.method3100());
+      this.playSound(var1, this.getSoundVolume(), this.getSoundPitch());
    }
 
    @Override

@@ -34,7 +34,7 @@ public class Class138 extends Class128 {
    public ItemStack method371(ItemStack var1, LootContext var2) {
       ItemStack var5 = var2.<ItemStack>method26081(Class9525.field44338);
       if (var5 != null) {
-         int var6 = Class7858.method26311(this.field465, var5);
+         int var6 = EnchantmentHelper.method26311(this.field465, var5);
          int var7 = this.field466.method10785(var2.method26088(), var1.getCount(), var6);
          var1.method32180(var7);
       }

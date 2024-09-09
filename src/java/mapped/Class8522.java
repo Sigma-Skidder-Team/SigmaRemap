@@ -50,7 +50,7 @@ public class Class8522 {
       return this;
    }
 
-   public boolean method30210(LivingEntity var1, LivingEntity var2) {
+   public boolean canTarget(LivingEntity var1, LivingEntity var2) {
       if (var1 != var2) {
          if (!var2.isSpectator()) {
             if (var2.isAlive()) {
@@ -61,23 +61,23 @@ public class Class8522 {
                } else {
                   if (var1 != null) {
                      if (!this.field38245) {
-                        if (!var1.method3026(var2)) {
+                        if (!var1.canAttack(var2)) {
                            return false;
                         }
 
-                        if (!var1.method2996(var2.getType())) {
+                        if (!var1.canAttack(var2.getType())) {
                            return false;
                         }
                      }
 
-                     if (!this.field38243 && var1.method3345(var2)) {
+                     if (!this.field38243 && var1.isOnSameTeam(var2)) {
                         return false;
                      }
 
                      if (this.field38241 > 0.0) {
-                        double var5 = !this.field38246 ? 1.0 : var2.method3025(var1);
+                        double var5 = !this.field38246 ? 1.0 : var2.getVisibilityMultiplier(var1);
                         double var7 = Math.max(this.field38241 * var5, 2.0);
-                        double var9 = var1.method3276(var2.getPosX(), var2.getPosY(), var2.getPosZ());
+                        double var9 = var1.getDistanceNearest(var2.getPosX(), var2.getPosY(), var2.getPosZ());
                         if (var9 > var7 * var7) {
                            return false;
                         }

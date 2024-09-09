@@ -38,17 +38,17 @@ public class Class3705 extends Class3676<LivingEntity> {
    public void method12502(ServerWorld var1, LivingEntity var2, long var3) {
       LivingEntity var7 = this.method12584(var2);
       if (this.field19768.test(var2, var7)) {
-         var2.method2992().method21407(Class8830.field39857, true, (long)this.field19767);
+         var2.getBrain().method21407(Class8830.field39857, true, (long)this.field19767);
       }
 
-      var2.method2992().method21407(Class8830.field39856, var7.getPosition(), (long)this.field19767);
-      if (var7.getType() != EntityType.PLAYER || var1.method6789().method17135(Class5462.field24254)) {
-         var2.method2992().method21405(Class8830.field39826);
-         var2.method2992().method21405(Class8830.field39849);
+      var2.getBrain().method21407(Class8830.field39856, var7.getPosition(), (long)this.field19767);
+      if (var7.getType() != EntityType.PLAYER || var1.getGameRules().getBoolean(Class5462.field24254)) {
+         var2.getBrain().method21405(Class8830.field39826);
+         var2.getBrain().method21405(Class8830.field39849);
       }
    }
 
    private LivingEntity method12584(LivingEntity var1) {
-      return var1.method2992().<LivingEntity>method21410(Class8830.field39826).get();
+      return var1.getBrain().<LivingEntity>method21410(Class8830.field39826).get();
    }
 }

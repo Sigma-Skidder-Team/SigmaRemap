@@ -32,7 +32,7 @@ public class Class2709<T extends LivingEntity> extends Class2699 {
 
    @Override
    public boolean method10803() {
-      if (this.field17189 > 0 && this.field17153.method3013().nextInt(this.field17189) != 0) {
+      if (this.field17189 > 0 && this.field17153.getRNG().nextInt(this.field17189) != 0) {
          return false;
       } else {
          this.method10922();
@@ -53,14 +53,14 @@ public class Class2709<T extends LivingEntity> extends Class2699 {
                this.field17191,
                this.field17153,
                this.field17153.getPosX(),
-               this.field17153.method3442(),
+               this.field17153.getPosYEye(),
                this.field17153.getPosZ(),
                this.method10921(this.method10914())
             );
       } else {
          this.field17190 = this.field17153
             .world
-            .method7189(this.field17191, this.field17153, this.field17153.getPosX(), this.field17153.method3442(), this.field17153.getPosZ());
+            .method7189(this.field17191, this.field17153, this.field17153.getPosX(), this.field17153.getPosYEye(), this.field17153.getPosZ());
       }
    }
 

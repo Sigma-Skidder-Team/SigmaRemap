@@ -31,7 +31,7 @@ public class Class7532 extends Class7530 {
 
       while (var4.hasNext()) {
          Entry var5 = (Entry)var4.next();
-         var1.method102((String)var5.getKey(), var5.getIntValue());
+         var1.putInt((String)var5.getKey(), var5.getIntValue());
       }
 
       return var1;

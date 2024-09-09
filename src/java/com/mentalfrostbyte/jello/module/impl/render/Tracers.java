@@ -51,7 +51,7 @@ public class Tracers extends Module {
 
     public void method16522(Entity var1) {
         double var4 = Class9647.method37623(var1).field43722;
-        double var6 = Class9647.method37623(var1).field43723 + (double) (var1.method3430() / 2.0F);
+        double var6 = Class9647.method37623(var1).field43723 + (double) (var1.getHeight() / 2.0F);
         double var8 = Class9647.method37623(var1).field43724;
         Vector3d var10 = new Vector3d(0.0, 0.0, 10.0)
                 .method11350(-((float) Math.toRadians(Minecraft.getInstance().player.rotationPitch)))

@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
-import com.mentalfrostbyte.jello.event.impl.Class4419;
+import com.mentalfrostbyte.jello.event.impl.EventWritter;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.Packet;
@@ -89,7 +89,7 @@ public class PacketDumper extends Module {
     @EventTarget
     private void method16097(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            this.method16096(var1.method13932(), true);
+            this.method16096(var1.getPacket(), true);
         }
     }
 
@@ -101,7 +101,7 @@ public class PacketDumper extends Module {
     }
 
     @EventTarget
-    private void method16099(Class4419 var1) {
+    private void method16099(EventWritter var1) {
         try {
             this.field23460.close();
         } catch (IOException var5) {

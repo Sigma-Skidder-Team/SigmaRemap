@@ -204,15 +204,15 @@ public class FontRenderer {
    }
 
    public int getStringWidth(String var1) {
-      return MathHelper.method37773(this.field45931.func_238350_a_(var1));
+      return MathHelper.ceil(this.field45931.func_238350_a_(var1));
    }
 
    public int method38821(ITextProperties var1) {
-      return MathHelper.method37773(this.field45931.func_238356_a_(var1));
+      return MathHelper.ceil(this.field45931.func_238356_a_(var1));
    }
 
    public int method38822(Class9125 var1) {
-      return MathHelper.method37773(this.field45931.func_243238_a(var1));
+      return MathHelper.ceil(this.field45931.func_243238_a(var1));
    }
 
    public String method38823(String var1, int var2, boolean var3) {

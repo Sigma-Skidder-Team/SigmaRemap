@@ -41,8 +41,8 @@ public class Class907 extends Entity {
       this(EntityType.field41031, var1);
       this.field5176 = var8;
       this.preventEntitySpawning = true;
-      this.setPosition(var2, var4 + (double)((1.0F - this.method3430()) / 2.0F), var6);
-      this.method3434(Vector3d.ZERO);
+      this.setPosition(var2, var4 + (double)((1.0F - this.getHeight()) / 2.0F), var6);
+      this.setMotion(Vector3d.ZERO);
       this.prevPosX = var2;
       this.prevPosY = var4;
       this.prevPosZ = var6;
@@ -63,7 +63,7 @@ public class Class907 extends Entity {
    }
 
    @Override
-   public boolean method2940() {
+   public boolean canTriggerWalking() {
       return false;
    }
 
@@ -73,7 +73,7 @@ public class Class907 extends Entity {
    }
 
    @Override
-   public boolean method3139() {
+   public boolean canBeCollidedWith() {
       return !this.removed;
    }
 
@@ -83,9 +83,9 @@ public class Class907 extends Entity {
          Block var3 = this.field5176.getBlock();
          if (this.field5177++ == 0) {
             BlockPos var4 = this.getPosition();
-            if (!this.world.getBlockState(var4).method23448(var3)) {
+            if (!this.world.getBlockState(var4).isIn(var3)) {
                if (!this.world.isRemote) {
-                  this.method2904();
+                  this.remove();
                   return;
                }
             } else {
@@ -94,23 +94,23 @@ public class Class907 extends Entity {
          }
 
          if (!this.method3247()) {
-            this.method3434(this.getVec().method11339(0.0, -0.04, 0.0));
+            this.setMotion(this.getMotion().add(0.0, -0.04, 0.0));
          }
 
-         this.move(Class2107.field13742, this.getVec());
+         this.move(MoverType.SELF, this.getMotion());
          if (!this.world.isRemote) {
             BlockPos var18 = this.getPosition();
             boolean var5 = this.field5176.getBlock() instanceof Class3217;
-            boolean var6 = var5 && this.world.getFluidState(var18).method23486(Class8953.field40469);
-            double var7 = this.getVec().method11349();
+            boolean var6 = var5 && this.world.getFluidState(var18).method23486(FluidTags.field40469);
+            double var7 = this.getMotion().lengthSquared();
             if (var5 && var7 > 1.0) {
                BlockRayTraceResult var9 = this.world
-                  .method7036(
-                     new Class6809(
+                  .rayTraceBlocks(
+                     new RayTraceContext(
                         new Vector3d(this.prevPosX, this.prevPosY, this.prevPosZ), this.getPositionVec(), Class2271.field14774, Class1985.field12963, this
                      )
                   );
-               if (var9.getType() != RayTraceResult.Type.MISS && this.world.getFluidState(var9.getPos()).method23486(Class8953.field40469)) {
+               if (var9.getType() != RayTraceResult.Type.MISS && this.world.getFluidState(var9.getPos()).method23486(FluidTags.field40469)) {
                   var18 = var9.getPos();
                   var6 = true;
                }
@@ -118,17 +118,17 @@ public class Class907 extends Entity {
 
             if (!this.onGround && !var6) {
                if (!this.world.isRemote && (this.field5177 > 100 && (var18.getY() < 1 || var18.getY() > 256) || this.field5177 > 600)) {
-                  if (this.field5178 && this.world.method6789().method17135(Class5462.field24229)) {
-                     this.method3300(var3);
+                  if (this.field5178 && this.world.getGameRules().getBoolean(Class5462.field24229)) {
+                     this.entityDropItem(var3);
                   }
 
-                  this.method2904();
+                  this.remove();
                }
             } else {
                BlockState var19 = this.world.getBlockState(var18);
-               this.method3434(this.getVec().method11347(0.7, -0.5, 0.7));
-               if (!var19.method23448(Blocks.MOVING_PISTON)) {
-                  this.method2904();
+               this.setMotion(this.getMotion().method11347(0.7, -0.5, 0.7));
+               if (!var19.isIn(Blocks.MOVING_PISTON)) {
+                  this.remove();
                   if (this.field5179) {
                      if (var3 instanceof Class3213) {
                         ((Class3213)var3).method11600(this.world, var18, this);
@@ -143,8 +143,8 @@ public class Class907 extends Entity {
                         }
 
                         if (!this.world.setBlockState(var18, this.field5176, 3)) {
-                           if (this.field5178 && this.world.method6789().method17135(Class5462.field24229)) {
-                              this.method3300(var3);
+                           if (this.field5178 && this.world.getGameRules().getBoolean(Class5462.field24229)) {
+                              this.entityDropItem(var3);
                            }
                         } else {
                            if (var3 instanceof Class3213) {
@@ -164,35 +164,35 @@ public class Class907 extends Entity {
                                  }
 
                                  var13.method3645(this.field5176, var14);
-                                 var13.method3622();
+                                 var13.markDirty();
                               }
                            }
                         }
-                     } else if (this.field5178 && this.world.method6789().method17135(Class5462.field24229)) {
-                        this.method3300(var3);
+                     } else if (this.field5178 && this.world.getGameRules().getBoolean(Class5462.field24229)) {
+                        this.entityDropItem(var3);
                      }
                   }
                }
             }
          }
 
-         this.method3434(this.getVec().method11344(0.98));
+         this.setMotion(this.getMotion().scale(0.98));
       } else {
-         this.method2904();
+         this.remove();
       }
    }
 
    @Override
-   public boolean method2921(float var1, float var2) {
+   public boolean onLivingFall(float var1, float var2) {
       if (this.field5180) {
-         int var5 = MathHelper.method37773(var1 - 1.0F);
+         int var5 = MathHelper.ceil(var1 - 1.0F);
          if (var5 > 0) {
             List<Entity> var6 = Lists.newArrayList(this.world.method7181(this, this.getBoundingBox()));
             boolean var7 = this.field5176.method23446(BlockTags.field32765);
             DamageSource var8 = !var7 ? DamageSource.field39009 : DamageSource.field39008;
 
             for (Entity var10 : var6) {
-               var10.method2741(var8, (float)Math.min(MathHelper.method37767((float)var5 * this.field5182), this.field5181));
+               var10.attackEntityFrom(var8, (float)Math.min(MathHelper.method37767((float)var5 * this.field5182), this.field5181));
             }
 
             if (var7 && (double)this.rand.nextFloat() < 0.05F + (double)var5 * 0.05) {
@@ -210,20 +210,20 @@ public class Class907 extends Entity {
    }
 
    @Override
-   public void method2724(CompoundNBT var1) {
+   public void writeAdditional(CompoundNBT var1) {
       var1.put("BlockState", Class8354.method29287(this.field5176));
-      var1.method102("Time", this.field5177);
+      var1.putInt("Time", this.field5177);
       var1.putBoolean("DropItem", this.field5178);
       var1.putBoolean("HurtEntities", this.field5180);
       var1.putFloat("FallHurtAmount", this.field5182);
-      var1.method102("FallHurtMax", this.field5181);
+      var1.putInt("FallHurtMax", this.field5181);
       if (this.field5183 != null) {
          var1.put("TileEntityData", this.field5183);
       }
    }
 
    @Override
-   public void method2723(CompoundNBT var1) {
+   public void readAdditional(CompoundNBT var1) {
       this.field5176 = Class8354.method29285(var1.getCompound("BlockState"));
       this.field5177 = var1.getInt("Time");
       if (!var1.contains("HurtEntities", 99)) {
@@ -258,13 +258,13 @@ public class Class907 extends Entity {
    }
 
    @Override
-   public boolean method3373() {
+   public boolean canRenderOnFire() {
       return false;
    }
 
    @Override
-   public void method3372(CrashReportCategory var1) {
-      super.method3372(var1);
+   public void fillCrashReport(CrashReportCategory var1) {
+      super.fillCrashReport(var1);
       var1.addDetail("Immitating BlockState", this.field5176.toString());
    }
 
@@ -278,7 +278,7 @@ public class Class907 extends Entity {
    }
 
    @Override
-   public Packet<?> method2835() {
+   public Packet<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this, Block.getStateId(this.method3556()));
    }
 }

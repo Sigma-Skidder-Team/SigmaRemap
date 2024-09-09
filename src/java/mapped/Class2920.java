@@ -33,16 +33,16 @@ public class Class2920 extends Class2898<Class4703> {
          );
          BlockPos var13 = var11.down();
          BlockState var14 = var1.getBlockState(var13);
-         if ((var1.method7007(var11) || var5.field22314 && var1.getBlockState(var11).method23384().method31089())
+         if ((var1.method7007(var11) || var5.field22314 && var1.getBlockState(var11).getMaterial().method31089())
             && var8.method23443(var1, var11)
             && (var5.field22308.isEmpty() || var5.field22308.contains(var14.getBlock()))
             && !var5.field22309.contains(var14)
             && (
                !var5.field22316
-                  || var1.getFluidState(var13.west()).method23486(Class8953.field40469)
-                  || var1.getFluidState(var13.east()).method23486(Class8953.field40469)
-                  || var1.getFluidState(var13.north()).method23486(Class8953.field40469)
-                  || var1.getFluidState(var13.south()).method23486(Class8953.field40469)
+                  || var1.getFluidState(var13.west()).method23486(FluidTags.field40469)
+                  || var1.getFluidState(var13.east()).method23486(FluidTags.field40469)
+                  || var1.getFluidState(var13.north()).method23486(FluidTags.field40469)
+                  || var1.getFluidState(var13.south()).method23486(FluidTags.field40469)
             )) {
             var5.field22307.method19061(var1, var11, var8, var3);
             var10++;

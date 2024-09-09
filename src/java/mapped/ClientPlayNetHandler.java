@@ -135,17 +135,17 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       }
 
       this.field23272.debugRenderer.method27451();
-      this.field23272.player.method2869();
+      this.field23272.player.preparePlayerToSpawn();
       int var10 = var1.method17287();
       this.field23273.method6845(var10, this.field23272.player);
       this.field23272.player.field6131 = new Class9451(this.field23272.gameSettings);
-      this.field23272.playerController.method23127(this.field23272.player);
+      this.field23272.playerController.setPlayerCapabilities(this.field23272.player);
       this.field23272.renderViewEntity = this.field23272.player;
       this.field23272.displayGuiScreen(new Class1312());
-      this.field23272.player.method3206(var10);
+      this.field23272.player.setEntityId(var10);
       this.field23272.player.method2965(var1.method17297());
       this.field23272.player.method5403(var1.method17298());
-      this.field23272.playerController.method23129(var1.method17290());
+      this.field23272.playerController.setGameType(var1.method17290());
       this.field23272.playerController.method23128(var1.method17291());
       this.field23272.gameSettings.method37149();
       this.field23269.sendPacket(new CCustomPayloadPacket(CCustomPayloadPacket.BRAND, new PacketBuffer(Unpooled.buffer()).writeString(ClientBrandRetriever.getClientModName())));
@@ -370,11 +370,11 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       if (var11 != null) {
          int var16 = var1.method17256();
          ((Entity)var11).setPacketCoordinates(var4, var6, var8);
-         ((Entity)var11).method2794(var4, var6, var8);
+         ((Entity)var11).moveForced(var4, var6, var8);
          ((Entity)var11).rotationPitch = (float)(var1.method17264() * 360) / 256.0F;
          ((Entity)var11).rotationYaw = (float)(var1.method17265() * 360) / 256.0F;
-         ((Entity)var11).method3206(var16);
-         ((Entity)var11).method3374(var1.method17257());
+         ((Entity)var11).setEntityId(var16);
+         ((Entity)var11).setUniqueId(var1.method17257());
          this.field23273.method6846(var16, (Entity)var11);
          if (var11 instanceof AbstractMinecartEntity) {
             this.field23272.getSoundHandler().method1000(new Class6345((AbstractMinecartEntity)var11));
@@ -392,7 +392,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       var10.setPacketCoordinates(var4, var6, var8);
       var10.rotationYaw = 0.0F;
       var10.rotationPitch = 0.0F;
-      var10.method3206(var1.method17353());
+      var10.setEntityId(var1.method17353());
       this.field23273.method6846(var1.method17353(), var10);
    }
 
@@ -400,17 +400,17 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handleSpawnPainting(SSpawnPaintingPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       PaintingEntity var4 = new PaintingEntity(this.field23273, var1.method17196(), var1.method17197(), var1.method17198());
-      var4.method3206(var1.method17194());
-      var4.method3374(var1.method17195());
+      var4.setEntityId(var1.method17194());
+      var4.setUniqueId(var1.method17195());
       this.field23273.method6846(var1.method17194(), var4);
    }
 
    @Override
    public void handleEntityVelocity(SEntityVelocityPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.getEntityByID(var1.method17565());
+      Entity var4 = this.field23273.getEntityByID(var1.getEntityID());
       if (var4 != null) {
-         var4.method3325((double)var1.method17566() / 8000.0, (double)var1.method17567() / 8000.0, (double)var1.method17568() / 8000.0);
+         var4.method3325((double)var1.getMotionX() / 8000.0, (double)var1.getMotionY() / 8000.0, (double)var1.getMotionZ() / 8000.0);
       }
    }
 
@@ -419,7 +419,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.getEntityByID(var1.method17470());
       if (var4 != null && var1.method17469() != null) {
-         var4.method3210().method35454(var1.method17469());
+         var4.getDataManager().method35454(var1.method17469());
       }
    }
 
@@ -434,8 +434,8 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       if (this.method15792(var1.method17593()) != null) {
          int var12 = var1.method17592();
          Class1116 var13 = new Class1116(this.field23272.world, this.method15792(var1.method17593()).method19966());
-         var13.method3206(var12);
-         var13.method3274(var4, var6, var8);
+         var13.setEntityId(var12);
+         var13.setLocationAndAngles(var4, var6, var8);
          var13.setPacketCoordinates(var4, var6, var8);
          var13.method3269(var4, var6, var8, var10, var11);
          this.field23273.method6845(var12, var13);
@@ -451,11 +451,11 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          double var7 = var1.method17587();
          double var9 = var1.method17588();
          var4.setPacketCoordinates(var5, var7, var9);
-         if (!var4.method3418()) {
+         if (!var4.canPassengerSteer()) {
             float var11 = (float)(var1.method17589() * 360) / 256.0F;
             float var12 = (float)(var1.method17590() * 360) / 256.0F;
             var4.setPositionAndRotationDirect(var5, var7, var9, var11, var12, 3, true);
-            var4.method3061(var1.method17591());
+            var4.setOnGround(var1.method17591());
          }
       }
    }
@@ -472,7 +472,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handleEntityMovement(SEntityPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = var1.getEntity(this.field23273);
-      if (var4 != null && !var4.method3418()) {
+      if (var4 != null && !var4.canPassengerSteer()) {
          if (!var1.func_229745_h_()) {
             if (var1.isRotating()) {
                float var5 = (float)(var1.getYaw() * 360) / 256.0F;
@@ -480,14 +480,14 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                var4.setPositionAndRotationDirect(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var5, var6, 3, false);
             }
          } else {
-            Vector3d var8 = var1.method17231(var4.func_242274_V());
+            Vector3d var8 = var1.method17231(var4.getServerPos());
             var4.func_242277_a(var8);
             float var9 = !var1.isRotating() ? var4.rotationYaw : (float)(var1.getYaw() * 360) / 256.0F;
             float var7 = !var1.isRotating() ? var4.rotationPitch : (float)(var1.getPitch() * 360) / 256.0F;
             var4.setPositionAndRotationDirect(var8.getX(), var8.getY(), var8.getZ(), var9, var7, 3, false);
          }
 
-         var4.method3061(var1.getOnGround());
+         var4.setOnGround(var1.getOnGround());
       }
    }
 
@@ -497,7 +497,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       Entity var4 = var1.method17346(this.field23273);
       if (var4 != null) {
          float var5 = (float)(var1.method17347() * 360) / 256.0F;
-         var4.method3132(var5, 3);
+         var4.setHeadRotation(var5, 3);
       }
    }
 
@@ -515,67 +515,67 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handlePlayerPosLook(SPlayerPositionLookPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       ClientPlayerEntity var4 = this.field23272.player;
-      Vector3d var5 = var4.getVec();
-      boolean var6 = var1.method17220().contains(Class2033.field13198);
-      boolean var7 = var1.method17220().contains(Class2033.field13199);
-      boolean var8 = var1.method17220().contains(Class2033.field13200);
+      Vector3d var5 = var4.getMotion();
+      boolean var6 = var1.getFlags().contains(Flags.field13198);
+      boolean var7 = var1.getFlags().contains(Flags.field13199);
+      boolean var8 = var1.getFlags().contains(Flags.field13200);
       double var9;
       double var11;
       if (!var6) {
          var9 = 0.0;
-         var11 = var1.method17214();
+         var11 = var1.getX();
          var4.lastTickPosX = var11;
       } else {
          var9 = var5.getX();
-         var11 = var4.getPosX() + var1.method17214();
-         var4.lastTickPosX = var4.lastTickPosX + var1.method17214();
+         var11 = var4.getPosX() + var1.getX();
+         var4.lastTickPosX = var4.lastTickPosX + var1.getX();
       }
 
       double var13;
       double var15;
       if (!var7) {
          var13 = 0.0;
-         var15 = var1.method17215();
+         var15 = var1.getY();
          var4.lastTickPosY = var15;
       } else {
          var13 = var5.getY();
-         var15 = var4.getPosY() + var1.method17215();
-         var4.lastTickPosY = var4.lastTickPosY + var1.method17215();
+         var15 = var4.getPosY() + var1.getY();
+         var4.lastTickPosY = var4.lastTickPosY + var1.getY();
       }
 
       double var17;
       double var19;
       if (!var8) {
          var17 = 0.0;
-         var19 = var1.method17216();
+         var19 = var1.getZ();
          var4.lastTickPosZ = var19;
       } else {
          var17 = var5.getZ();
-         var19 = var4.getPosZ() + var1.method17216();
-         var4.lastTickPosZ = var4.lastTickPosZ + var1.method17216();
+         var19 = var4.getPosZ() + var1.getZ();
+         var4.lastTickPosZ = var4.lastTickPosZ + var1.getZ();
       }
 
       if (var4.ticksExisted > 0 && var4.getRidingEntity() != null) {
-         var4.method2895();
+         var4.dismount();
       }
 
-      var4.method3446(var11, var15, var19);
+      var4.setRawPosition(var11, var15, var19);
       var4.prevPosX = var11;
       var4.prevPosY = var15;
       var4.prevPosZ = var19;
-      var4.method3435(var9, var13, var17);
-      float var21 = var1.method17217();
-      float var22 = var1.method17218();
-      if (var1.method17220().contains(Class2033.field13202)) {
+      var4.setMotion(var9, var13, var17);
+      float var21 = var1.getYaw();
+      float var22 = var1.getPitch();
+      if (var1.getFlags().contains(Flags.field13202)) {
          var22 += var4.rotationPitch;
       }
 
-      if (var1.method17220().contains(Class2033.field13201)) {
+      if (var1.getFlags().contains(Flags.field13201)) {
          var21 += var4.rotationYaw;
       }
 
       var4.method3269(var11, var15, var19, var21, var22);
-      this.field23269.sendPacket(new CConfirmTeleportPacket(var1.method17219()));
+      this.field23269.sendPacket(new CConfirmTeleportPacket(var1.getTeleportI()));
       this.field23269.sendPacket(new CPlayerPacket.PositionRotationPacket(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var4.rotationYaw, var4.rotationPitch, false));
       if (!this.field23275) {
          this.field23275 = true;
@@ -630,7 +630,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          var7.method604(Class2002.method8389(var4, var8, var5), true);
       }
 
-      var7.method605(new Class7481(var4, var5), false);
+      var7.method605(new ChunkPos(var4, var5), false);
    }
 
    @Override
@@ -713,7 +713,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleChat(SChatPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.ingameGUI.method5988(var1.method17650(), var1.method17648(), var1.method17651());
+      this.field23272.ingameGUI.method5988(var1.getType(), var1.getChatComponent(), var1.func_240810_e_());
    }
 
    @Override
@@ -737,7 +737,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                      var5.stopSleepInBed(false, false);
                   }
                } else {
-                  var4.method3069();
+                  var4.performHurtAnimation();
                }
             } else {
                LivingEntity var6 = (LivingEntity)var4;
@@ -763,20 +763,20 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          field23267.warn("Skipping Entity with id {}", var1.method17537());
       } else {
          var12.setPacketCoordinates(var4, var6, var8);
-         var12.field4965 = (float)(var1.method17546() * 360) / 256.0F;
-         var12.field4967 = (float)(var1.method17546() * 360) / 256.0F;
+         var12.renderYawOffset = (float)(var1.method17546() * 360) / 256.0F;
+         var12.rotationYawHead = (float)(var1.method17546() * 360) / 256.0F;
          if (var12 instanceof Class1007) {
             Class908[] var13 = ((Class1007)var12).method4332();
 
             for (int var14 = 0; var14 < var13.length; var14++) {
-               var13[var14].method3206(var14 + var1.method17535());
+               var13[var14].setEntityId(var14 + var1.method17535());
             }
          }
 
-         var12.method3206(var1.method17535());
-         var12.method3374(var1.method17536());
+         var12.setEntityId(var1.method17535());
+         var12.setUniqueId(var1.method17536());
          var12.method3269(var4, var6, var8, var10, var11);
-         var12.method3435(
+         var12.setMotion(
             (double)((float)var1.method17541() / 8000.0F), (double)((float)var1.method17542() / 8000.0F), (double)((float)var1.method17543() / 8000.0F)
          );
          this.field23273.method6846(var1.method17535(), var12);
@@ -818,7 +818,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          for (int var9 : var1.method17252()) {
             Entity var10 = this.field23273.getEntityByID(var9);
             if (var10 != null) {
-               var10.method2758(var4, true);
+               var10.startRiding(var4, true);
                if (var10 == this.field23272.player && !var5) {
                   this.field23272.ingameGUI.method5985(new TranslationTextComponent("mount.onboard", this.field23272.gameSettings.keyBindSneak.func_238171_j_()), false);
                }
@@ -852,11 +852,11 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleEntityStatus(SEntityStatusPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = var1.method17178(this.field23273);
+      Entity var4 = var1.getEntity(this.field23273);
       if (var4 != null) {
-         if (var1.method17179() != 21) {
-            if (var1.method17179() != 35) {
-               var4.method2866(var1.method17179());
+         if (var1.getOpCode() != 21) {
+            if (var1.getOpCode() != 35) {
+               var4.handleStatusUpdate(var1.getOpCode());
             } else {
                byte var5 = 40;
                this.field23272.particles.method1196(var4, ParticleTypes.field34097, 30);
@@ -875,8 +875,8 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handleUpdateHealth(SUpdateHealthPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272.player.method5391(var1.method17574());
-      this.field23272.player.method2932().method37578(var1.method17575());
-      this.field23272.player.method2932().method37579(var1.method17576());
+      this.field23272.player.getFoodStats().method37578(var1.method17575());
+      this.field23272.player.getFoodStats().method37579(var1.method17576());
    }
 
    @Override
@@ -910,45 +910,45 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23273.method6857();
       String var12 = var6.method5395();
       this.field23272.renderViewEntity = null;
-      ClientPlayerEntity var13 = this.field23272.playerController.func_239167_a_(this.field23273, var6.method5396(), var6.method5397(), var6.method3331(), var6.method3337());
-      var13.method3206(var7);
+      ClientPlayerEntity var13 = this.field23272.playerController.func_239167_a_(this.field23273, var6.method5396(), var6.method5397(), var6.isSneaking(), var6.isSprinting());
+      var13.setEntityId(var7);
       this.field23272.player = var13;
       if (var4 != var6.world.getDimensionKey()) {
          this.field23272.getMusicTicker().method33668();
       }
 
       this.field23272.renderViewEntity = var13;
-      var13.method3210().method35454(var6.method3210().method35450());
+      var13.getDataManager().method35454(var6.getDataManager().method35450());
       if (var1.method17439()) {
-         var13.method3088().method33388(var6.method3088());
+         var13.getAttributeManager().method33388(var6.getAttributeManager());
       }
 
-      var13.method2869();
+      var13.preparePlayerToSpawn();
       var13.method5394(var12);
       this.field23273.method6845(var7, var13);
       var13.rotationYaw = -180.0F;
       var13.field6131 = new Class9451(this.field23272.gameSettings);
-      this.field23272.playerController.method23127(var13);
+      this.field23272.playerController.setPlayerCapabilities(var13);
       var13.method2965(var6.hasReducedDebug());
       var13.method5403(var6.isShowDeathScreen());
       if (this.field23272.currentScreen instanceof DeathScreen) {
          this.field23272.displayGuiScreen((Screen)null);
       }
 
-      this.field23272.playerController.method23129(var1.method17435());
+      this.field23272.playerController.setGameType(var1.method17435());
       this.field23272.playerController.method23128(var1.method17436());
    }
 
    @Override
    public void handleExplosion(SExplosionPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Class7782 var4 = new Class7782(
-         this.field23272.world, (Entity)null, var1.method17341(), var1.method17342(), var1.method17343(), var1.method17344(), var1.method17345()
+      Explosion var4 = new Explosion(
+         this.field23272.world, (Entity)null, var1.getX(), var1.getY(), var1.getZ(), var1.getStrength(), var1.getAffectedBlockPositions()
       );
       var4.method25785(true);
       this.field23272
          .player
-         .method3434(this.field23272.player.getVec().method11339((double)var1.method17338(), (double)var1.method17339(), (double)var1.method17340()));
+         .setMotion(this.field23272.player.getMotion().add((double)var1.getMotionX(), (double)var1.getMotionY(), (double)var1.getMotionZ()));
    }
 
    @Override
@@ -988,18 +988,18 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
             if (var1.method17303() == 0 && var1.method17304() >= 36 && var6 < 45) {
                if (!var5.isEmpty()) {
-                  ItemStack var9 = var4.field4904.method18131(var6).method18265();
+                  ItemStack var9 = var4.container.getSlot(var6).getStack();
                   if (var9.isEmpty() || var9.getCount() < var5.getCount()) {
                      var5.method32178(5);
                   }
                }
 
-               var4.field4904.method18136(var6, var5);
+               var4.container.putStackInSlot(var6, var5);
             } else if (var1.method17303() == var4.field4905.field25471 && (var1.method17303() != 0 || !var7)) {
-               var4.field4905.method18136(var6, var5);
+               var4.field4905.putStackInSlot(var6, var5);
             }
          } else {
-            var4.inventory.method3621(var6, var5);
+            var4.inventory.setInventorySlotContents(var6, var5);
          }
       } else if (!(this.field23272.currentScreen instanceof CreativeScreen)) {
          var4.inventory.method4056(var5);
@@ -1016,7 +1016,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             var4 = var5.field4905;
          }
       } else {
-         var4 = var5.field4904;
+         var4 = var5.container;
       }
 
       if (var4 != null && !var1.method17423()) {
@@ -1030,10 +1030,10 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       ClientPlayerEntity var4 = this.field23272.player;
       if (var1.method17644() != 0) {
          if (var1.method17644() == var4.field4905.field25471) {
-            var4.field4905.method18137(var1.method17645());
+            var4.field4905.setAll(var1.method17645());
          }
       } else {
-         var4.field4904.method18137(var1.method17645());
+         var4.container.setAll(var1.method17645());
       }
    }
 
@@ -1082,7 +1082,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       ClientPlayerEntity var4 = this.field23272.player;
       if (var4.field4905 != null && var4.field4905.field25471 == var1.method17239()) {
-         var4.field4905.method18138(var1.method17240(), var1.method17241());
+         var4.field4905.updateProgressBar(var1.method17240(), var1.method17241());
       }
    }
 
@@ -1091,7 +1091,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.getEntityByID(var1.method17561());
       if (var4 != null) {
-         var1.method17562().forEach(var1x -> var4.method2944((Class2106)var1x.getFirst(), (ItemStack)var1x.getSecond()));
+         var1.method17562().forEach(var1x -> var4.setItemStackToSlot((EquipmentSlotType)var1x.getFirst(), (ItemStack)var1x.getSecond()));
       }
    }
 
@@ -1110,7 +1110,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleBlockBreakAnim(SAnimateBlockBreakPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.world.method6803(var1.method17369(), var1.method17370(), var1.method17371());
+      this.field23272.world.sendBlockBreakProgress(var1.method17369(), var1.method17370(), var1.method17371());
    }
 
    @Override
@@ -1135,7 +1135,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                                           this.field23272.player.method5403(var6 == 0.0F);
                                        }
                                     } else {
-                                       this.field23273.method6746(ParticleTypes.field34064, var4.getPosX(), var4.getPosY(), var4.getPosZ(), 0.0, 0.0, 0.0);
+                                       this.field23273.addParticle(ParticleTypes.field34064, var4.getPosX(), var4.getPosY(), var4.getPosZ(), 0.0, 0.0, 0.0);
                                        if (var7 == 1) {
                                           this.field23273
                                              .method6743(
@@ -1165,7 +1165,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                         } else {
                            this.field23273
                               .method6743(
-                                 var4, var4.getPosX(), var4.method3442(), var4.getPosZ(), SoundEvents.field26362, Class2266.field14735, 0.18F, 0.45F
+                                 var4, var4.getPosX(), var4.getPosYEye(), var4.getPosZ(), SoundEvents.field26362, Class2266.field14735, 0.18F, 0.45F
                               );
                         }
                      } else {
@@ -1220,7 +1220,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                      this.field23272.displayGuiScreen(new Class1312());
                   }
                } else {
-                  this.field23272.playerController.method23129(Class1894.method8159(var7));
+                  this.field23272.playerController.setGameType(GameType.method8159(var7));
                }
             } else {
                this.field23273.getWorldInfo().method20044(false);
@@ -1300,7 +1300,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleTabComplete(STabCompletePacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23278.method20137(var1.method17424(), var1.method17425());
+      this.field23278.method20137(var1.getTransactionId(), var1.getSugestions());
    }
 
    @Override
@@ -1320,7 +1320,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Vector3d var4 = var1.method17624(this.field23273);
       if (var4 != null) {
-         this.field23272.player.method2787(var1.method17623(), var4);
+         this.field23272.player.lookAt(var1.method17623(), var4);
       }
    }
 
@@ -1391,7 +1391,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       if (var4 instanceof LivingEntity) {
          Effect var5 = Effect.method22287(var1.method17408());
          if (var5 != null) {
-            Class2023 var6 = new Class2023(var5, var1.method17410(), var1.method17409(), var1.method17412(), var1.method17411(), var1.method17413());
+            EffectInstance var6 = new EffectInstance(var5, var1.method17410(), var1.method17409(), var1.method17412(), var1.method17411(), var1.method17413());
             var6.method8641(var1.method17406());
             ((LivingEntity)var4).method3037(var6);
          }
@@ -1450,7 +1450,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleWorldBorder(SWorldBorderPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      var1.method17221(this.field23273.method6810());
+      var1.method17221(this.field23273.getWorldBorder());
    }
 
    @Override
@@ -1490,7 +1490,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = var1.method17349(this.field23273);
       if (var4 instanceof LivingEntity) {
-         ((LivingEntity)var4).method3039(var1.method17350());
+         ((LivingEntity)var4).removeActivePotionEffect(var1.method17350());
       }
    }
 
@@ -1699,7 +1699,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handleMoveVehicle(SMoveVehiclePacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23272.player.method3415();
-      if (var4 != this.field23272.player && var4.method3418()) {
+      if (var4 != this.field23272.player && var4.canPassengerSteer()) {
          var4.method3269(var1.method17401(), var1.method17402(), var1.method17403(), var1.method17404(), var1.method17405());
          this.field23269.sendPacket(new CMoveVehiclePacket(var4));
       }
@@ -1923,7 +1923,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             int var69 = var5.readInt();
             int var76 = var5.readInt();
             boolean var80 = var5.readBoolean();
-            Class8974 var82 = new Class8974(var50, var60, var69, var76, var80, this.field23273.method6783());
+            Class8974 var82 = new Class8974(var50, var60, var69, var76, var80, this.field23273.getGameTime());
             this.field23272.debugRenderer.field34480.method15824(var82);
          } else if (SCustomPayloadPlayPacket.field24552.equals(var4)) {
             this.field23272.debugRenderer.field34483.method15814();
@@ -2087,15 +2087,15 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             throw new IllegalStateException("Server tried to update attributes of a non-living entity (actually: " + var4 + ")");
          }
 
-         Class9020 var5 = ((LivingEntity)var4).method3088();
+         AttributeModifierManager var5 = ((LivingEntity)var4).getAttributeManager();
 
          for (Class7919 var7 : var1.method17464()) {
-            Class9805 var8 = var5.method33380(var7.method26560());
+            ModifiableAttributeInstance var8 = var5.createInstanceIfAbsent(var7.method26560());
             if (var8 != null) {
                var8.method38661(var7.method26561());
                var8.method38673();
 
-               for (Class9689 var10 : var7.method26562()) {
+               for (AttributeModifier var10 : var7.method26562()) {
                   var8.method38667(var10);
                }
             } else {
@@ -2108,8 +2108,8 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handlePlaceGhostRecipe(SPlaceGhostRecipePacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Class5812 var4 = this.field23272.player.field4905;
-      if (var4.field25471 == var1.method17564() && var4.method18140(this.field23272.player)) {
+      Container var4 = this.field23272.player.field4905;
+      if (var4.field25471 == var1.method17564() && var4.getCanCraft(this.field23272.player)) {
          this.field23284.method1035(var1.method17563()).ifPresent(var2 -> {
             if (this.field23272.currentScreen instanceof Class854) {
                Class1254 var5 = ((Class854)this.field23272.currentScreen).method2632();
@@ -2138,7 +2138,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleMerchantOffers(SMerchantOffersPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Class5812 var4 = this.field23272.player.field4905;
+      Container var4 = this.field23272.player.field4905;
       if (var1.method17309() == var4.field25471 && var4 instanceof Class5826) {
          ((Class5826)var4).method18216(new Class46(var1.method17310().method166()));
          ((Class5826)var4).method18207(var1.method17312());
@@ -2164,7 +2164,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleAcknowledgePlayerDigging(SPlayerDiggingPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.playerController.method23161(this.field23273, var1.method17557(), var1.method17556(), var1.method17559(), var1.method17558());
+      this.field23272.playerController.acknowledgePlayerDiggingReceived(this.field23273, var1.method17557(), var1.method17556(), var1.method17559(), var1.method17558());
    }
 
    private void method15789(int var1, int var2, Class196 var3, Class1977 var4, int var5, int var6, Iterator<byte[]> var7, boolean var8) {

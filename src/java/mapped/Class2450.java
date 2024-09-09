@@ -1,6 +1,6 @@
 package mapped;
 
-public final class Class2450 extends Class2449 {
+public final class Class2450 extends ViaVersion4 {
    public Class2450(String var1) {
       super(var1);
    }

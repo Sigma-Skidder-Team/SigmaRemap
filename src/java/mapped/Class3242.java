@@ -33,22 +33,22 @@ public class Class3242 extends Class3241 {
          TileEntity var9 = var2.getTileEntity(var3);
          if (var9 instanceof Class973) {
             var4.method2766((Class973)var9);
-            var4.method2911(Class8876.field40164);
+            var4.method2911(Stats.field40164);
             Class4388.method13832(var4, true);
          }
 
          return ActionResultType.field14819;
       } else {
-         return ActionResultType.field14818;
+         return ActionResultType.SUCCESS;
       }
    }
 
    @Override
    public void method11513(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
-      if (!var1.method23448(var4.getBlock())) {
+      if (!var1.isIn(var4.getBlock())) {
          TileEntity var8 = var2.getTileEntity(var3);
-         if (var8 instanceof Class920) {
-            Class7236.method22721(var2, var3, (Class920)var8);
+         if (var8 instanceof IInventory) {
+            Class7236.method22721(var2, var3, (IInventory)var8);
             var2.updateComparatorOutputLevel(var3, this);
          }
 
@@ -92,7 +92,7 @@ public class Class3242 extends Class3241 {
 
    @Override
    public int method11649(BlockState var1, World var2, BlockPos var3) {
-      return Class5812.method18151(var2.getTileEntity(var3));
+      return Container.calcRedstone(var2.getTileEntity(var3));
    }
 
    @Override

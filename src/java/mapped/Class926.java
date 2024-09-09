@@ -3,14 +3,14 @@ package mapped;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 
-public class Class926 implements Class920, Class925 {
+public class Class926 implements IInventory, Class925 {
    private static String[] field5255;
    private final NonNullList<ItemStack> field5256;
    private final int field5257;
    private final int field5258;
-   private final Class5812 field5259;
+   private final Container field5259;
 
-   public Class926(Class5812 var1, int var2, int var3) {
+   public Class926(Container var1, int var2, int var3) {
       this.field5256 = NonNullList.<ItemStack>method68(var2 * var3, ItemStack.EMPTY);
       this.field5259 = var1;
       this.field5257 = var2;
@@ -18,12 +18,12 @@ public class Class926 implements Class920, Class925 {
    }
 
    @Override
-   public int method3629() {
+   public int getSizeInventory() {
       return this.field5256.size();
    }
 
    @Override
-   public boolean method3617() {
+   public boolean isEmpty() {
       for (ItemStack var4 : this.field5256) {
          if (!var4.isEmpty()) {
             return false;
@@ -34,37 +34,37 @@ public class Class926 implements Class920, Class925 {
    }
 
    @Override
-   public ItemStack method3618(int var1) {
-      return var1 < this.method3629() ? this.field5256.get(var1) : ItemStack.EMPTY;
+   public ItemStack getStackInSlot(int var1) {
+      return var1 < this.getSizeInventory() ? this.field5256.get(var1) : ItemStack.EMPTY;
    }
 
    @Override
-   public ItemStack method3620(int var1) {
+   public ItemStack removeStackFromSlot(int var1) {
       return Class7920.method26564(this.field5256, var1);
    }
 
    @Override
-   public ItemStack method3619(int var1, int var2) {
+   public ItemStack decrStackSize(int var1, int var2) {
       ItemStack var5 = Class7920.method26563(this.field5256, var1, var2);
       if (!var5.isEmpty()) {
-         this.field5259.method18106(this);
+         this.field5259.onCraftMatrixChanged(this);
       }
 
       return var5;
    }
 
    @Override
-   public void method3621(int var1, ItemStack var2) {
+   public void setInventorySlotContents(int var1, ItemStack var2) {
       this.field5256.set(var1, var2);
-      this.field5259.method18106(this);
+      this.field5259.onCraftMatrixChanged(this);
    }
 
    @Override
-   public void method3622() {
+   public void markDirty() {
    }
 
    @Override
-   public boolean method3623(PlayerEntity var1) {
+   public boolean isUsableByPlayer(PlayerEntity var1) {
       return true;
    }
 

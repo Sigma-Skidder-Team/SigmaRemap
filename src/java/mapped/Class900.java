@@ -28,17 +28,17 @@ public class Class900 extends Class898 {
       super.method3465(var1);
       if (!this.world.isRemote) {
          Entity var4 = var1.getEntity();
-         if (!var4.method3249()) {
+         if (!var4.isImmuneToFire()) {
             Entity var5 = this.method3460();
-            int var6 = var4.method3222();
-            var4.method3221(5);
-            boolean var7 = var4.method2741(DamageSource.method31121(this, var5), 5.0F);
+            int var6 = var4.getFireTimer();
+            var4.setFire(5);
+            boolean var7 = var4.attackEntityFrom(DamageSource.method31121(this, var5), 5.0F);
             if (var7) {
                if (var5 instanceof LivingEntity) {
-                  this.method3399((LivingEntity)var5, var4);
+                  this.applyEnchantments((LivingEntity)var5, var4);
                }
             } else {
-               var4.method2966(var6);
+               var4.forceFireTicks(var6);
             }
          }
       }
@@ -49,7 +49,7 @@ public class Class900 extends Class898 {
       super.method3466(var1);
       if (!this.world.isRemote) {
          Entity var4 = this.method3460();
-         if (var4 == null || !(var4 instanceof Class1006) || this.world.method6789().method17135(Class5462.field24224)) {
+         if (var4 == null || !(var4 instanceof Class1006) || this.world.getGameRules().getBoolean(Class5462.field24224)) {
             BlockPos var5 = var1.getPos().method8349(var1.getFace());
             if (this.world.method7007(var5)) {
                this.world.setBlockState(var5, AbstractFireBlock.method12009(this.world, var5));
@@ -62,17 +62,17 @@ public class Class900 extends Class898 {
    public void method3464(RayTraceResult var1) {
       super.method3464(var1);
       if (!this.world.isRemote) {
-         this.method2904();
+         this.remove();
       }
    }
 
    @Override
-   public boolean method3139() {
+   public boolean canBeCollidedWith() {
       return false;
    }
 
    @Override
-   public boolean method2741(DamageSource var1, float var2) {
+   public boolean attackEntityFrom(DamageSource var1, float var2) {
       return false;
    }
 }

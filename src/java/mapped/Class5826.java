@@ -4,7 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 
-public class Class5826 extends Class5812 {
+public class Class5826 extends Container {
    private static String[] field25525;
    private final Class1060 field25526;
    private final Class988 field25527;
@@ -17,21 +17,21 @@ public class Class5826 extends Class5812 {
    }
 
    public Class5826(int var1, PlayerInventory var2, Class1060 var3) {
-      super(Class8298.field35666, var1);
+      super(ContainerType.field35666, var1);
       this.field25526 = var3;
       this.field25527 = new Class988(var3);
-      this.method18124(new Class5839(this.field25527, 0, 136, 37));
-      this.method18124(new Class5839(this.field25527, 1, 162, 37));
-      this.method18124(new Class5868(var2.field5444, var3, this.field25527, 2, 220, 37));
+      this.addSlot(new Slot(this.field25527, 0, 136, 37));
+      this.addSlot(new Slot(this.field25527, 1, 162, 37));
+      this.addSlot(new Class5868(var2.field5444, var3, this.field25527, 2, 220, 37));
 
       for (int var6 = 0; var6 < 3; var6++) {
          for (int var7 = 0; var7 < 9; var7++) {
-            this.method18124(new Class5839(var2, var7 + var6 * 9 + 9, 108 + var7 * 18, 84 + var6 * 18));
+            this.addSlot(new Slot(var2, var7 + var6 * 9 + 9, 108 + var7 * 18, 84 + var6 * 18));
          }
       }
 
       for (int var8 = 0; var8 < 9; var8++) {
-         this.method18124(new Class5839(var2, var8, 108 + var8 * 18, 142));
+         this.addSlot(new Slot(var2, var8, 108 + var8 * 18, 142));
       }
    }
 
@@ -40,9 +40,9 @@ public class Class5826 extends Class5812 {
    }
 
    @Override
-   public void method18106(Class920 var1) {
+   public void onCraftMatrixChanged(IInventory var1) {
       this.field25527.method4066();
-      super.method18106(var1);
+      super.onCraftMatrixChanged(var1);
    }
 
    public void method18204(int var1) {
@@ -50,7 +50,7 @@ public class Class5826 extends Class5812 {
    }
 
    @Override
-   public boolean method18103(PlayerEntity var1) {
+   public boolean canInteractWith(PlayerEntity var1) {
       return this.field25526.method4740() == var1;
    }
 
@@ -83,49 +83,49 @@ public class Class5826 extends Class5812 {
    }
 
    @Override
-   public boolean method18111(ItemStack var1, Class5839 var2) {
+   public boolean canMergeSlot(ItemStack var1, Slot var2) {
       return false;
    }
 
    @Override
-   public ItemStack method18112(PlayerEntity var1, int var2) {
+   public ItemStack transferStackInSlot(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
-      Class5839 var6 = this.field25468.get(var2);
-      if (var6 != null && var6.method18266()) {
-         ItemStack var7 = var6.method18265();
+      Slot var6 = this.field25468.get(var2);
+      if (var6 != null && var6.getHasStack()) {
+         ItemStack var7 = var6.getStack();
          var5 = var7.copy();
          if (var2 != 2) {
             if (var2 != 0 && var2 != 1) {
                if (var2 >= 3 && var2 < 30) {
-                  if (!this.method18142(var7, 30, 39, false)) {
+                  if (!this.mergeItemStack(var7, 30, 39, false)) {
                      return ItemStack.EMPTY;
                   }
-               } else if (var2 >= 30 && var2 < 39 && !this.method18142(var7, 3, 30, false)) {
+               } else if (var2 >= 30 && var2 < 39 && !this.mergeItemStack(var7, 3, 30, false)) {
                   return ItemStack.EMPTY;
                }
-            } else if (!this.method18142(var7, 3, 39, false)) {
+            } else if (!this.mergeItemStack(var7, 3, 39, false)) {
                return ItemStack.EMPTY;
             }
          } else {
-            if (!this.method18142(var7, 3, 39, true)) {
+            if (!this.mergeItemStack(var7, 3, 39, true)) {
                return ItemStack.EMPTY;
             }
 
-            var6.method18260(var7, var5);
+            var6.onSlotChange(var7, var5);
             this.method18212();
          }
 
          if (!var7.isEmpty()) {
-            var6.method18268();
+            var6.onSlotChanged();
          } else {
-            var6.method18267(ItemStack.EMPTY);
+            var6.putStack(ItemStack.EMPTY);
          }
 
          if (var7.getCount() == var5.getCount()) {
             return ItemStack.EMPTY;
          }
 
-         var6.method18264(var1, var7);
+         var6.onTake(var1, var7);
       }
 
       return var5;
@@ -141,48 +141,48 @@ public class Class5826 extends Class5812 {
    }
 
    @Override
-   public void method18113(PlayerEntity var1) {
-      super.method18113(var1);
+   public void onContainerClosed(PlayerEntity var1) {
+      super.onContainerClosed(var1);
       this.field25526.method4683((PlayerEntity)null);
       if (!this.field25526.method4753().isRemote) {
          if (!var1.isAlive() || var1 instanceof ServerPlayerEntity && ((ServerPlayerEntity)var1).method2783()) {
-            ItemStack var4 = this.field25527.method3620(0);
+            ItemStack var4 = this.field25527.removeStackFromSlot(0);
             if (!var4.isEmpty()) {
                var1.method2882(var4, false);
             }
 
-            var4 = this.field25527.method3620(1);
+            var4 = this.field25527.removeStackFromSlot(1);
             if (!var4.isEmpty()) {
                var1.method2882(var4, false);
             }
          } else {
-            var1.inventory.method4047(var1.world, this.field25527.method3620(0));
-            var1.inventory.method4047(var1.world, this.field25527.method3620(1));
+            var1.inventory.method4047(var1.world, this.field25527.removeStackFromSlot(0));
+            var1.inventory.method4047(var1.world, this.field25527.removeStackFromSlot(1));
          }
       }
    }
 
    public void method18213(int var1) {
       if (this.method18217().size() > var1) {
-         ItemStack var4 = this.field25527.method3618(0);
+         ItemStack var4 = this.field25527.getStackInSlot(0);
          if (!var4.isEmpty()) {
-            if (!this.method18142(var4, 3, 39, true)) {
+            if (!this.mergeItemStack(var4, 3, 39, true)) {
                return;
             }
 
-            this.field25527.method3621(0, var4);
+            this.field25527.setInventorySlotContents(0, var4);
          }
 
-         ItemStack var5 = this.field25527.method3618(1);
+         ItemStack var5 = this.field25527.getStackInSlot(1);
          if (!var5.isEmpty()) {
-            if (!this.method18142(var5, 3, 39, true)) {
+            if (!this.mergeItemStack(var5, 3, 39, true)) {
                return;
             }
 
-            this.field25527.method3621(1, var5);
+            this.field25527.setInventorySlotContents(1, var5);
          }
 
-         if (this.field25527.method3618(0).isEmpty() && this.field25527.method3618(1).isEmpty()) {
+         if (this.field25527.getStackInSlot(0).isEmpty() && this.field25527.getStackInSlot(1).isEmpty()) {
             ItemStack var6 = this.method18217().get(var1).method35366();
             this.method18214(0, var6);
             ItemStack var7 = this.method18217().get(var1).method35367();
@@ -194,16 +194,16 @@ public class Class5826 extends Class5812 {
    private void method18214(int var1, ItemStack var2) {
       if (!var2.isEmpty()) {
          for (int var5 = 3; var5 < 39; var5++) {
-            ItemStack var6 = this.field25468.get(var5).method18265();
+            ItemStack var6 = this.field25468.get(var5).getStack();
             if (!var6.isEmpty() && this.method18215(var2, var6)) {
-               ItemStack var7 = this.field25527.method3618(var1);
+               ItemStack var7 = this.field25527.getStackInSlot(var1);
                int var8 = !var7.isEmpty() ? var7.getCount() : 0;
                int var9 = Math.min(var2.method32113() - var8, var6.getCount());
                ItemStack var10 = var6.copy();
                int var11 = var8 + var9;
                var6.method32182(var9);
                var10.method32180(var11);
-               this.field25527.method3621(var1, var10);
+               this.field25527.setInventorySlotContents(var1, var10);
                if (var11 >= var2.method32113()) {
                   break;
                }

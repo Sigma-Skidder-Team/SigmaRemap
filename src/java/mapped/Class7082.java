@@ -5,7 +5,7 @@ import com.google.gson.JsonObject;
 public class Class7082 extends Class7081 {
    private static String[] field30484;
 
-   public Class7082(Class6355 var1) {
+   public Class7082(ViaVersion7 var1) {
       super(var1);
    }
 

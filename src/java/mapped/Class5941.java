@@ -13,7 +13,7 @@ public class Class5941 extends Class5942<Class964> {
    }
 
    public void method18462(Class964 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
-      if (Minecraft.getInstance().player.method2979() || Minecraft.getInstance().player.isSpectator()) {
+      if (Minecraft.getInstance().player.canUseCommandBlock() || Minecraft.getInstance().player.isSpectator()) {
          BlockPos var9 = var1.method3940();
          BlockPos var10 = var1.method3942();
          if (var10.getX() >= 1
@@ -94,7 +94,7 @@ public class Class5941 extends Class5942<Class964> {
       for (BlockPos var12 : BlockPos.method8359(var10, var10.method8337(var1.method3942()).method8336(-1, -1, -1))) {
          BlockState var13 = var8.getBlockState(var12);
          boolean var14 = var13.isAir();
-         boolean var15 = var13.method23448(Blocks.field36894);
+         boolean var15 = var13.isIn(Blocks.field36894);
          if (var14 || var15) {
             float var16 = !var14 ? 0.0F : 0.05F;
             double var17 = (double)((float)(var12.getX() - var9.getX()) + 0.45F - var16);

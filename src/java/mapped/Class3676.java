@@ -86,7 +86,7 @@ public abstract class Class3676<E extends LivingEntity> {
       for (Entry var5 : this.field19684.entrySet()) {
          Class8830 var6 = (Class8830)var5.getKey();
          Class2217 var7 = (Class2217)var5.getValue();
-         if (!var1.method2992().method21412(var6, var7)) {
+         if (!var1.getBrain().method21412(var6, var7)) {
             return false;
          }
       }

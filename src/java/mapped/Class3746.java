@@ -25,14 +25,14 @@ public class Class3746 extends Class3676<Class1042> {
    }
 
    private void method12701(Class1042 var1, long var2) {
-      Class6947 var6 = var1.method2992();
+      Brain var6 = var1.getBrain();
       var1.method4699(this.field19886);
       var6.method21405(this.field19886);
       var6.method21406(Class8830.field39841, var2);
    }
 
    public void method12502(ServerWorld var1, Class1042 var2, long var3) {
-      Class6947<Class1042> var7 = var2.method2992();
+      Brain<Class1042> var7 = var2.getBrain();
       var7.method21410(this.field19886)
          .ifPresent(
             var6 -> {
@@ -65,8 +65,8 @@ public class Class3746 extends Class3676<Class1042> {
    }
 
    private boolean method12702(ServerWorld var1, Class1042 var2) {
-      Optional var5 = var2.method2992().<Long>method21410(Class8830.field39841);
-      return !var5.isPresent() ? false : var1.method6783() - (Long)var5.get() > (long)this.field19890;
+      Optional var5 = var2.getBrain().<Long>method21410(Class8830.field39841);
+      return !var5.isPresent() ? false : var1.getGameTime() - (Long)var5.get() > (long)this.field19890;
    }
 
    private boolean method12703(Class1042 var1, Class9378 var2) {

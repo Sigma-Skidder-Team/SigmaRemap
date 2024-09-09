@@ -6,41 +6,41 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.RecipeBookCategory;
 import net.minecraft.world.World;
 
-public abstract class Class5831 extends Class5828<Class920> {
-   private final Class920 field25551;
+public abstract class Class5831 extends Class5828<IInventory> {
+   private final IInventory field25551;
    private final Class8202 field25552;
    public final World field25553;
    private final Class7207<? extends Class4847> field25554;
    private final RecipeBookCategory field25555;
 
-   public Class5831(Class8298<?> var1, Class7207<? extends Class4847> var2, RecipeBookCategory var3, int var4, PlayerInventory var5) {
+   public Class5831(ContainerType<?> var1, Class7207<? extends Class4847> var2, RecipeBookCategory var3, int var4, PlayerInventory var5) {
       this(var1, var2, var3, var4, var5, new Class927(3), new Class8206(4));
    }
 
-   public Class5831(Class8298<?> var1, Class7207<? extends Class4847> var2, RecipeBookCategory var3, int var4, PlayerInventory var5, Class920 var6, Class8202 var7) {
+   public Class5831(ContainerType<?> var1, Class7207<? extends Class4847> var2, RecipeBookCategory var3, int var4, PlayerInventory var5, IInventory var6, Class8202 var7) {
       super(var1, var4);
       this.field25554 = var2;
       this.field25555 = var3;
-      method18122(var6, 3);
-      method18123(var7, 4);
+      assertInventorySize(var6, 3);
+      assertIntArraySize(var7, 4);
       this.field25551 = var6;
       this.field25552 = var7;
       this.field25553 = var5.field5444.world;
-      this.method18124(new Class5839(var6, 0, 56, 17));
-      this.method18124(new Class5858(this, var6, 1, 56, 53));
-      this.method18124(new Class5853(var5.field5444, var6, 2, 116, 35));
+      this.addSlot(new Slot(var6, 0, 56, 17));
+      this.addSlot(new Class5858(this, var6, 1, 56, 53));
+      this.addSlot(new Class5853(var5.field5444, var6, 2, 116, 35));
 
       for (int var10 = 0; var10 < 3; var10++) {
          for (int var11 = 0; var11 < 9; var11++) {
-            this.method18124(new Class5839(var5, var11 + var10 * 9 + 9, 8 + var11 * 18, 84 + var10 * 18));
+            this.addSlot(new Slot(var5, var11 + var10 * 9 + 9, 8 + var11 * 18, 84 + var10 * 18));
          }
       }
 
       for (int var12 = 0; var12 < 9; var12++) {
-         this.method18124(new Class5839(var5, var12, 8 + var12 * 18, 142));
+         this.addSlot(new Slot(var5, var12, 8 + var12 * 18, 142));
       }
 
-      this.method18126(var7);
+      this.trackIntArray(var7);
    }
 
    @Override
@@ -61,7 +61,7 @@ public abstract class Class5831 extends Class5828<Class920> {
    }
 
    @Override
-   public boolean method18222(IRecipe<? super Class920> var1) {
+   public boolean method18222(IRecipe<? super IInventory> var1) {
       return var1.method14963(this.field25551, this.field25553);
    }
 
@@ -86,56 +86,56 @@ public abstract class Class5831 extends Class5828<Class920> {
    }
 
    @Override
-   public boolean method18103(PlayerEntity var1) {
-      return this.field25551.method3623(var1);
+   public boolean canInteractWith(PlayerEntity var1) {
+      return this.field25551.isUsableByPlayer(var1);
    }
 
    @Override
-   public ItemStack method18112(PlayerEntity var1, int var2) {
+   public ItemStack transferStackInSlot(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
-      Class5839 var6 = this.field25468.get(var2);
-      if (var6 != null && var6.method18266()) {
-         ItemStack var7 = var6.method18265();
+      Slot var6 = this.field25468.get(var2);
+      if (var6 != null && var6.getHasStack()) {
+         ItemStack var7 = var6.getStack();
          var5 = var7.copy();
          if (var2 != 2) {
             if (var2 != 1 && var2 != 0) {
                if (!this.method18234(var7)) {
                   if (!this.method18235(var7)) {
                      if (var2 >= 3 && var2 < 30) {
-                        if (!this.method18142(var7, 30, 39, false)) {
+                        if (!this.mergeItemStack(var7, 30, 39, false)) {
                            return ItemStack.EMPTY;
                         }
-                     } else if (var2 >= 30 && var2 < 39 && !this.method18142(var7, 3, 30, false)) {
+                     } else if (var2 >= 30 && var2 < 39 && !this.mergeItemStack(var7, 3, 30, false)) {
                         return ItemStack.EMPTY;
                      }
-                  } else if (!this.method18142(var7, 1, 2, false)) {
+                  } else if (!this.mergeItemStack(var7, 1, 2, false)) {
                      return ItemStack.EMPTY;
                   }
-               } else if (!this.method18142(var7, 0, 1, false)) {
+               } else if (!this.mergeItemStack(var7, 0, 1, false)) {
                   return ItemStack.EMPTY;
                }
-            } else if (!this.method18142(var7, 3, 39, false)) {
+            } else if (!this.mergeItemStack(var7, 3, 39, false)) {
                return ItemStack.EMPTY;
             }
          } else {
-            if (!this.method18142(var7, 3, 39, true)) {
+            if (!this.mergeItemStack(var7, 3, 39, true)) {
                return ItemStack.EMPTY;
             }
 
-            var6.method18260(var7, var5);
+            var6.onSlotChange(var7, var5);
          }
 
          if (!var7.isEmpty()) {
-            var6.method18268();
+            var6.onSlotChanged();
          } else {
-            var6.method18267(ItemStack.EMPTY);
+            var6.putStack(ItemStack.EMPTY);
          }
 
          if (var7.getCount() == var5.getCount()) {
             return ItemStack.EMPTY;
          }
 
-         var6.method18264(var1, var7);
+         var6.onTake(var1, var7);
       }
 
       return var5;

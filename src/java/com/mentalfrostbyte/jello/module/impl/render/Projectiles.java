@@ -219,8 +219,8 @@ public class Projectiles extends Module {
                             double var44 = var4.field15832.lastTickPosZ
                                     + (var4.field15832.getPosZ() - var4.field15832.lastTickPosZ) * (double) mc.timer.renderPartialTicks
                                     - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
-                            double var47 = var4.field15832.method3429() / 2.0F + 0.2F;
-                            double var35 = var4.field15832.method3430() + 0.1F;
+                            double var47 = var4.field15832.getWidth() / 2.0F + 0.2F;
+                            double var35 = var4.field15832.getHeight() + 0.1F;
                             Box3D var37 = new Box3D(var31 - var47, var41, var44 - var47, var31 + var47, var41 + var35, var44 + var47);
                             RenderUtil.render3DColoredBox(var37, ColorUtils.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
                             RenderUtil.renderWireframeBox(var37, ColorUtils.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));

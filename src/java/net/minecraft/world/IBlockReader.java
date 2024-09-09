@@ -3,7 +3,6 @@ package net.minecraft.world;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -23,11 +22,11 @@ public interface IBlockReader {
 
    FluidState getFluidState(BlockPos var1);
 
-   default int method7032(BlockPos var1) {
+   default int getLightValue(BlockPos var1) {
       return this.getBlockState(var1).getLightValue();
    }
 
-   default int method7033() {
+   default int getMaxLightLevel() {
       return 15;
    }
 
@@ -39,8 +38,8 @@ public interface IBlockReader {
       return BlockPos.method8362(var1).<BlockState>map(this::getBlockState);
    }
 
-   default BlockRayTraceResult method7036(Class6809 var1) {
-      return method7040(
+   default BlockRayTraceResult rayTraceBlocks(RayTraceContext var1) {
+      return doRayTrace(
          var1,
          (var1x, var2) -> {
             BlockState var5 = this.getBlockState(var2);
@@ -48,7 +47,7 @@ public interface IBlockReader {
             Vector3d var7 = var1x.method20745();
             Vector3d var8 = var1x.method20744();
             VoxelShape var9 = var1x.method20746(var5, this, var2);
-            BlockRayTraceResult var10 = this.method7037(var7, var8, var2, var9, var5);
+            BlockRayTraceResult var10 = this.rayTraceBlocks(var7, var8, var2, var9, var5);
             VoxelShape var11 = var1x.method20747(var6, this, var2);
             BlockRayTraceResult var12 = var11.method19525(var7, var8, var2);
             double var13 = var10 != null ? var1x.method20745().method11342(var10.method31419()) : Double.MAX_VALUE;
@@ -58,18 +57,18 @@ public interface IBlockReader {
          var0 -> {
             Vector3d var3 = var0.method20745().method11336(var0.method20744());
             return BlockRayTraceResult.method31420(
-               var0.method20744(), Direction.method553(var3.x, var3.y, var3.z), new BlockPos(var0.method20744())
+               var0.method20744(), net.minecraft.util.Direction.method553(var3.x, var3.y, var3.z), new BlockPos(var0.method20744())
             );
          }
       );
    }
 
    @Nullable
-   default BlockRayTraceResult method7037(Vector3d var1, Vector3d var2, BlockPos var3, VoxelShape var4, BlockState var5) {
+   default BlockRayTraceResult rayTraceBlocks(Vector3d var1, Vector3d var2, BlockPos var3, VoxelShape var4, BlockState var5) {
       BlockRayTraceResult var8 = var4.method19525(var1, var2, var3);
       if (var8 != null) {
          BlockRayTraceResult var9 = var5.method23418(this, var3).method19525(var1, var2, var3);
-         if (var9 != null && var9.method31419().method11336(var1).method11349() < var8.method31419().method11336(var1).method11349()) {
+         if (var9 != null && var9.method31419().method11336(var1).lengthSquared() < var8.method31419().method11336(var1).lengthSquared()) {
             return var8.method31421(var9.getFace());
          }
       }
@@ -79,10 +78,10 @@ public interface IBlockReader {
 
    default double method7038(VoxelShape var1, Supplier<VoxelShape> var2) {
       if (var1.method19516()) {
-         double var5 = ((VoxelShape)var2.get()).method19513(Class113.field414);
+         double var5 = ((VoxelShape)var2.get()).method19513(Direction.field414);
          return !(var5 >= 1.0) ? Double.NEGATIVE_INFINITY : var5 - 1.0;
       } else {
-         return var1.method19513(Class113.field414);
+         return var1.method19513(Direction.field414);
       }
    }
 
@@ -93,7 +92,7 @@ public interface IBlockReader {
       });
    }
 
-   static <T> T method7040(Class6809 var0, BiFunction<Class6809, BlockPos, T> var1, Function<Class6809, T> var2) {
+   static <T> T doRayTrace(RayTraceContext var0, BiFunction<RayTraceContext, BlockPos, T> var1, Function<RayTraceContext, T> var2) {
       Vector3d var5 = var0.method20745();
       Vector3d var6 = var0.method20744();
       if (!var5.equals(var6)) {
