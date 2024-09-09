@@ -19,7 +19,7 @@ public class Class6943 extends Class6941 {
 
    public void method21383(Iterable<IRecipe<?>> var1) {
       Map<Class1896, List<List<IRecipe<?>>>> var4 = method21384(var1);
-      Map<Class1896, ImmutableList<RecipeList>> var5 = Maps.newHashMap();
+      Map<Class1896, ImmutableList<RecipeList>> var5 = com.google.common.collect.Maps.newHashMap();
       Builder<RecipeList> var6 = ImmutableList.builder();
       var4.forEach((var2, var3) -> {
          List<RecipeList> var6x = var5.put(var2, var3.stream().map(RecipeList::new).peek(var6::add).collect(ImmutableList.toImmutableList()));
@@ -38,7 +38,7 @@ public class Class6943 extends Class6941 {
    }
 
    private static Map<Class1896, List<List<IRecipe<?>>>> method21384(Iterable<IRecipe<?>> var0) {
-      Map<Class1896, List<List<IRecipe<?>>>> var3 = Maps.newHashMap();
+      Map<Class1896, List<List<IRecipe<?>>>> var3 = com.google.common.collect.Maps.newHashMap();
       Table<Class1896, String, List<IRecipe<?>>> var4 = HashBasedTable.create();
 
       for (IRecipe<?> var6 : var0) {
