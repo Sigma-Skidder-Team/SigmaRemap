@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 public class Class6995 extends Class6990 {
    private static String[] field30268;
 
-   public Class6995(Class1006 var1, World var2) {
+   public Class6995(MobEntity var1, World var2) {
       super(var1, var2);
    }
 

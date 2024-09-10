@@ -37,10 +37,10 @@ public abstract class Class1026 extends Class1028 {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.method20002(1, new Class2671<Class1026>(this, this));
-      this.field5600.method20002(3, new Class2730<Class1026>(this));
-      this.field5600.method20002(4, new Class2610(this, 1.05F, 1));
-      this.field5600.method20002(5, new Class2728(this, this));
+      this.field5600.addGoal(1, new Class2671<Class1026>(this, this));
+      this.field5600.addGoal(3, new Class2730<Class1026>(this));
+      this.field5600.addGoal(4, new Class2610(this, 1.05F, 1));
+      this.field5600.addGoal(5, new Class2728(this, this));
    }
 
    @Override

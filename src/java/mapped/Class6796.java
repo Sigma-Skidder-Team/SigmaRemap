@@ -13,7 +13,7 @@ public class Class6796 implements Class6797 {
    }
 
    @Override
-   public void method20710(Class7268 var1, Class6619 var2, ArrayDeque<Class7159> var3, int var4) throws CommandSyntaxException {
+   public void method20710(FunctionManager var1, Class6619 var2, ArrayDeque<Class7159> var3, int var4) throws CommandSyntaxException {
       var1.method22822().execute(new ParseResults(this.field29604.getContext().withSource(var2), this.field29604.getReader(), this.field29604.getExceptions()));
    }
 

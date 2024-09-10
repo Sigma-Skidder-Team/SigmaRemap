@@ -100,13 +100,13 @@ public class Class8634 {
             Class8811 var6 = Class8811.method31812(var3.get("nbt"));
             Item var7 = null;
             if (var3.has("item")) {
-               ResourceLocation var8 = new ResourceLocation(JSONUtils.method32763(var3, "item"));
+               ResourceLocation var8 = new ResourceLocation(JSONUtils.getString(var3, "item"));
                var7 = Registry.ITEM.method9187(var8).orElseThrow(() -> new JsonSyntaxException("Unknown item id '" + var8 + "'"));
             }
 
             ITag var12 = null;
             if (var3.has("tag")) {
-               ResourceLocation var9 = new ResourceLocation(JSONUtils.method32763(var3, "tag"));
+               ResourceLocation var9 = new ResourceLocation(JSONUtils.getString(var3, "tag"));
                var12 = Class9443.method36296().method32658().get(var9);
                if (var12 == null) {
                   throw new JsonSyntaxException("Unknown item tag '" + var9 + "'");
@@ -115,7 +115,7 @@ public class Class8634 {
 
             Class8812 var13 = null;
             if (var3.has("potion")) {
-               ResourceLocation var10 = new ResourceLocation(JSONUtils.method32763(var3, "potion"));
+               ResourceLocation var10 = new ResourceLocation(JSONUtils.getString(var3, "potion"));
                var13 = Registry.field16076.method9187(var10).orElseThrow(() -> new JsonSyntaxException("Unknown potion '" + var10 + "'"));
             }
 

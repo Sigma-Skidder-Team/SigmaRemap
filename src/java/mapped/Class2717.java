@@ -2,7 +2,7 @@ package mapped;
 
 import net.minecraft.entity.passive.WolfEntity;
 
-public class Class2717 extends Class2709<WolfEntity> {
+public class Class2717 extends NearestAttackableTargetGoal<WolfEntity> {
    private static String[] field17187;
 
    public Class2717(Class1064 var1) {

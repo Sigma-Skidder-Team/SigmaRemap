@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class2655 extends Class2654 {
+public class Class2655 extends ZombieAttackGoal {
    private static String[] field16989;
    private final Class1037 field17008;
 

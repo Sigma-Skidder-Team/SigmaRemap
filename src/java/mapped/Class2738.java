@@ -6,7 +6,7 @@ import net.minecraft.util.math.vector.Vector3d;
 
 import javax.annotation.Nullable;
 
-public class Class2738 extends Class2737 {
+public class Class2738 extends WaterAvoidingRandomWalkingGoal {
    private static String[] field17267;
 
    public Class2738(Class1046 var1, double var2) {

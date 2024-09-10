@@ -63,18 +63,18 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
 
    @Override
    public void method4219() {
-      this.field5600.method20002(1, new Class2747(this, 1.2));
-      this.field5600.method20002(1, new Class2762(this, 1.2));
-      this.field5600.method20002(2, new Class2785(this, 1.0, AbstractHorseEntity.class));
-      this.field5600.method20002(4, new Class2764(this, 1.0));
-      this.field5600.method20002(6, new Class2737(this, 0.7));
-      this.field5600.method20002(7, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.method20002(8, new Class2668(this));
+      this.field5600.addGoal(1, new Class2747(this, 1.2));
+      this.field5600.addGoal(1, new Class2762(this, 1.2));
+      this.field5600.addGoal(2, new Class2785(this, 1.0, AbstractHorseEntity.class));
+      this.field5600.addGoal(4, new Class2764(this, 1.0));
+      this.field5600.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 0.7));
+      this.field5600.addGoal(7, new Class2612(this, PlayerEntity.class, 6.0F));
+      this.field5600.addGoal(8, new Class2668(this));
       this.method4929();
    }
 
    public void method4929() {
-      this.field5600.method20002(0, new Class2603(this));
+      this.field5600.addGoal(0, new Class2603(this));
    }
 
    @Override
@@ -337,7 +337,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public static Class7037 method4951() {
-      return Class1006.method4220().method21848(Attributes.field42117).method21849(Attributes.field42105, 53.0).method21849(Attributes.MOVEMENT_SPEED, 0.225F);
+      return MobEntity.method4220().method21848(Attributes.field42117).method21849(Attributes.field42105, 53.0).method21849(Attributes.MOVEMENT_SPEED, 0.225F);
    }
 
    @Override
@@ -871,8 +871,8 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Override
    public void method3307(Entity var1) {
       super.method3307(var1);
-      if (var1 instanceof Class1006) {
-         Class1006 var4 = (Class1006)var1;
+      if (var1 instanceof MobEntity) {
+         MobEntity var4 = (MobEntity)var1;
          this.renderYawOffset = var4.renderYawOffset;
       }
 
@@ -883,7 +883,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
          float var7 = 0.15F * this.field5897;
          var1.setPosition(
             this.getPosX() + (double)(var6 * var8),
-            this.getPosY() + this.method3310() + var1.method2894() + (double)var7,
+            this.getPosY() + this.method3310() + var1.getYOffset() + (double)var7,
             this.getPosZ() - (double)(var6 * var5)
          );
          if (var1 instanceof LivingEntity) {
@@ -984,7 +984,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                }
             }
 
-            var11.method8379(Direction.field673);
+            var11.method8379(net.minecraft.util.Direction.field673);
          } while (!((double)var11.getY() < var14));
       }
 

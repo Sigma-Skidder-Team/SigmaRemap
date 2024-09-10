@@ -46,29 +46,29 @@ public class WolfEntity extends TameableEntity implements IAngerable {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(1, new Class2603(this));
-      this.field5600.method20002(2, new Class2778(this));
-      this.field5600.method20002(3, new Class2773(this, Class1064.class, 24.0f, 1.5, 1.5));
-      this.field5600.method20002(4, new Class2745(this, 0.4F));
-      this.field5600.method20002(5, new Class2647(this, 1.0, true));
-      this.field5600.method20002(6, new Class2725(this, 1.0, 10.0F, 2.0F, false));
-      this.field5600.method20002(7, new Class2785(this, 1.0));
-      this.field5600.method20002(8, new Class2737(this, 1.0));
-      this.field5600.method20002(9, new Class2618(this, 8.0F));
-      this.field5600.method20002(10, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.method20002(10, new Class2668(this));
-      this.field5601.method20002(1, new Class2702(this));
-      this.field5601.method20002(2, new Class2703(this));
-      this.field5601.method20002(3, new Class2704(this).method10918());
-      this.field5601.method20002(4, new Class2709<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
-      this.field5601.method20002(5, new Class2716<Class1018>(this, Class1018.class, false, field5659));
-      this.field5601.method20002(6, new Class2716<Class1088>(this, Class1088.class, false, Class1088.field5963));
-      this.field5601.method20002(7, new Class2709<Class1082>(this, Class1082.class, false));
-      this.field5601.method20002(8, new Class2779<WolfEntity>(this, true));
+      this.field5600.addGoal(1, new Class2603(this));
+      this.field5600.addGoal(2, new Class2778(this));
+      this.field5600.addGoal(3, new Class2773(this, Class1064.class, 24.0f, 1.5, 1.5));
+      this.field5600.addGoal(4, new Class2745(this, 0.4F));
+      this.field5600.addGoal(5, new Class2647(this, 1.0, true));
+      this.field5600.addGoal(6, new Class2725(this, 1.0, 10.0F, 2.0F, false));
+      this.field5600.addGoal(7, new Class2785(this, 1.0));
+      this.field5600.addGoal(8, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.field5600.addGoal(9, new Class2618(this, 8.0F));
+      this.field5600.addGoal(10, new Class2612(this, PlayerEntity.class, 8.0F));
+      this.field5600.addGoal(10, new Class2668(this));
+      this.field5601.addGoal(1, new Class2702(this));
+      this.field5601.addGoal(2, new Class2703(this));
+      this.field5601.addGoal(3, new HurtByTargetGoal(this).method10918());
+      this.field5601.addGoal(4, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
+      this.field5601.addGoal(5, new Class2716<Class1018>(this, Class1018.class, false, field5659));
+      this.field5601.addGoal(6, new Class2716<Class1088>(this, Class1088.class, false, Class1088.field5963));
+      this.field5601.addGoal(7, new NearestAttackableTargetGoal<Class1082>(this, Class1082.class, false));
+      this.field5601.addGoal(8, new ResetAngerGoal<WolfEntity>(this, true));
    }
 
    public static Class7037 method4373() {
-      return Class1006.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.field42105, 8.0).method21849(Attributes.field42110, 2.0);
+      return MobEntity.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.field42105, 8.0).method21849(Attributes.field42110, 2.0);
    }
 
    @Override
@@ -409,7 +409,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    @Override
-   public void method4349(UUID var1) {
+   public void setAngerTarget(UUID var1) {
       this.field5667 = var1;
    }
 

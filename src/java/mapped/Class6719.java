@@ -10,12 +10,12 @@ import com.mojang.serialization.Dynamic;
 
 public class Class6719 extends Class6717 {
    public Class6719(Schema var1, boolean var2) {
-      super(var1, var2, "BlockEntityBlockStateFix", Class8239.field35386, "minecraft:piston");
+      super(var1, var2, "BlockEntityBlockStateFix", TypeReferences.field35386, "minecraft:piston");
    }
 
    @Override
    public Typed<?> method20508(Typed<?> var1) {
-      Type<?> var4 = this.getOutputSchema().getChoiceType(Class8239.field35386, "minecraft:piston");
+      Type<?> var4 = this.getOutputSchema().getChoiceType(TypeReferences.field35386, "minecraft:piston");
       Type<?> var5 = var4.findFieldType("blockState");
       OpticFinder<?> var6 = DSL.fieldFinder("blockState", var5);
       Dynamic<?> var7 = var1.get(DSL.remainderFinder());

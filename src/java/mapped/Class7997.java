@@ -12,8 +12,8 @@ public class Class7997 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getOutputSchema().getType(Class8239.field35382);
-      Type var4 = this.getInputSchema().getType(Class8239.field35382);
+      Type var3 = this.getOutputSchema().getType(TypeReferences.field35382);
+      Type var4 = this.getInputSchema().getType(TypeReferences.field35382);
       OpticFinder var5 = var4.findField("stats");
       OpticFinder var6 = var5.type().findField("minecraft:custom");
       OpticFinder var7 = Class3639.method12354().finder();

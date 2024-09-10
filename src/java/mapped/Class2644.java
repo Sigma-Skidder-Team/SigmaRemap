@@ -5,7 +5,7 @@ import java.util.EnumSet;
 public class Class2644 extends Class2643 {
    private static String[] field16980;
 
-   public Class2644(Class1006 var1) {
+   public Class2644(MobEntity var1) {
       super(var1, 6, Class1030.method4591());
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657));
    }

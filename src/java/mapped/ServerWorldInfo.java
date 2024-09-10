@@ -518,7 +518,7 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
    }
 
    @Override
-   public void method20092(DatapackCodec var1) {
+   public void setDatapackCodec(DatapackCodec var1) {
       this.field29064 = this.field29064.method32435(var1);
    }
 

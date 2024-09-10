@@ -33,7 +33,7 @@ public class SimpleReloadableResourceManager implements IReloadableResourceManag
    public void method588(IResourcePack var1) {
       this.field728.add(var1);
 
-      for (String var5 : var1.method1226(this.field729)) {
+      for (String var5 : var1.getResourceNamespaces(this.field729)) {
          this.field727.add(var5);
          Class1817 var6 = this.field724.get(var5);
          if (var6 == null) {
@@ -123,14 +123,14 @@ public class SimpleReloadableResourceManager implements IReloadableResourceManag
    public Class8335 reloadResources(Executor var1, Executor var2, CompletableFuture<Class2341> var3, List<IResourcePack> var4) {
       this.method589();
       field723.info(
-         "Reloading ResourceManager: {}", new Supplier[]{() -> var4.stream().<CharSequence>map(IResourcePack::method1228).collect(Collectors.joining(", "))}
+         "Reloading ResourceManager: {}", new Supplier[]{() -> var4.stream().<CharSequence>map(IResourcePack::getName).collect(Collectors.joining(", "))}
       );
 
       for (IResourcePack var8 : var4) {
          try {
             this.method588(var8);
          } catch (Exception var10) {
-            field723.error("Failed to add resource pack {}", var8.method1228(), var10);
+            field723.error("Failed to add resource pack {}", var8.getName(), var10);
             return new Class8336(new FailedPackException(var8, var10));
          }
       }
@@ -148,7 +148,7 @@ public class SimpleReloadableResourceManager implements IReloadableResourceManag
       private final IResourcePack field16616;
 
       public FailedPackException(IResourcePack var1, Throwable var2) {
-         super(var1.method1228(), var2);
+         super(var1.getName(), var2);
          this.field16616 = var1;
       }
 

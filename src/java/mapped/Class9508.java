@@ -15,8 +15,7 @@ import com.mojang.serialization.Dynamic;
 import it.unimi.dsi.fastutil.ints.*;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
-import it.unimi.dsi.fastutil.objects.ObjectIterator;
-import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -59,7 +58,7 @@ public class Class9508 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<?> var3 = this.getInputSchema().getType(Class8239.field35378);
+      Type<?> var3 = this.getInputSchema().getType(TypeReferences.field35378);
       OpticFinder<?> var4 = var3.findField("Level");
       OpticFinder<?> var5 = var4.type().findField("Sections");
       Type<?> var6 = var5.type();

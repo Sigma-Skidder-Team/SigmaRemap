@@ -7,16 +7,16 @@ import net.minecraft.world.World;
 
 public class Class2633 extends Class2632 {
    private static String[] field16944;
-   public final Class1038 field16948;
+   public final ZombieEntity field16948;
 
-   public Class2633(Class1038 var1, Class1046 var2, double var3, int var5) {
+   public Class2633(ZombieEntity var1, Class1046 var2, double var3, int var5) {
       super(Blocks.field36964, var2, var3, var5);
       this.field16948 = var1;
    }
 
    @Override
    public void method10842(Class1660 var1, BlockPos var2) {
-      var1.method6742((PlayerEntity)null, var2, SoundEvents.field27288, Class2266.field14733, 0.5F, 0.9F + Class1038.method4665(this.field16948).nextFloat() * 0.2F);
+      var1.method6742((PlayerEntity)null, var2, SoundEvents.field27288, Class2266.field14733, 0.5F, 0.9F + ZombieEntity.method4665(this.field16948).nextFloat() * 0.2F);
    }
 
    @Override

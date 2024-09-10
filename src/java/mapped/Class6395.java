@@ -589,7 +589,7 @@ public abstract class Class6395 {
       }
    }
 
-   public void method19467() {
+   public void saveAllPlayerData() {
       for (int var3 = 0; var3 < this.field27991.size(); var3++) {
          this.method19449(this.field27991.get(var3));
       }
@@ -729,7 +729,7 @@ public abstract class Class6395 {
       if (var5 == null) {
          File var6 = this.field27990.method1433(FolderName.field23346).toFile();
          File var7 = new File(var6, var4 + ".json");
-         var5 = new Class8019(this.field27990.method1394(), this, this.field27990.method1396(), var7, var1);
+         var5 = new Class8019(this.field27990.getDataFixer(), this, this.field27990.method1396(), var7, var1);
          this.field27998.put(var4, var5);
       }
 
@@ -761,7 +761,7 @@ public abstract class Class6395 {
       return false;
    }
 
-   public void method19490() {
+   public void reloadResources() {
       for (Class8019 var4 : this.field27998.values()) {
          var4.method27404(this.field27990.method1396());
       }

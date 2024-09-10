@@ -17,7 +17,7 @@ public class Class7545 implements Class7544 {
    }
 
    public static Class7544 method24665(JsonObject var0) {
-      return new Class7545(new ResourceLocation(JSONUtils.method32763(var0, "sizes")), JSONUtils.method32763(var0, "template"));
+      return new Class7545(new ResourceLocation(JSONUtils.getString(var0, "sizes")), JSONUtils.getString(var0, "template"));
    }
 
    @Nullable

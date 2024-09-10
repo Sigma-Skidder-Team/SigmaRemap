@@ -108,9 +108,9 @@ public class Class9611 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<?> var3 = this.getOutputSchema().getType(Class8239.field35376);
+      Type<?> var3 = this.getOutputSchema().getType(TypeReferences.field35376);
       return this.fixTypeEverywhereTyped(
-         "LevelDataGeneratorOptionsFix", this.getInputSchema().getType(Class8239.field35376), var3, var1 -> (Typed)var1.write().flatMap(var1x -> {
+         "LevelDataGeneratorOptionsFix", this.getInputSchema().getType(TypeReferences.field35376), var3, var1 -> (Typed)var1.write().flatMap(var1x -> {
                Optional<String> var4 = var1x.get("generatorOptions").asString().result();
                Dynamic<?> var5;
                if (!"flat".equalsIgnoreCase(var1x.get("generatorName").asString(""))) {

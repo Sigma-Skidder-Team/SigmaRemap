@@ -50,13 +50,13 @@ public class WitherEntity extends Class1009 implements Class1080, Class1022 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(0, new Class2733(this));
-      this.field5600.method20002(2, new Class2598(this, 1.0, 40, 20.0F));
-      this.field5600.method20002(5, new Class2737(this, 1.0));
-      this.field5600.method20002(6, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.method20002(7, new Class2668(this));
-      this.field5601.method20002(1, new Class2704(this));
-      this.field5601.method20002(2, new Class2709<Class1006>(this, Class1006.class, 0, false, false, field5936));
+      this.field5600.addGoal(0, new Class2733(this));
+      this.field5600.addGoal(2, new Class2598(this, 1.0, 40, 20.0F));
+      this.field5600.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.field5600.addGoal(6, new Class2612(this, PlayerEntity.class, 8.0F));
+      this.field5600.addGoal(7, new Class2668(this));
+      this.field5601.addGoal(1, new HurtByTargetGoal(this));
+      this.field5601.addGoal(2, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 0, false, false, field5936));
    }
 
    @Override
@@ -208,9 +208,9 @@ public class WitherEntity extends Class1009 implements Class1080, Class1022 {
    }
 
    @Override
-   public void method4258() {
+   public void updateAITasks() {
       if (this.method5012() <= 0) {
-         super.method4258();
+         super.updateAITasks();
 
          for (int var3 = 1; var3 < 3; var3++) {
             if (this.ticksExisted >= this.field5932[var3 - 1]) {

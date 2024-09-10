@@ -5,11 +5,10 @@ import com.mojang.datafixers.DataFixUtils;
 import com.mojang.datafixers.Typed;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.serialization.Dynamic;
-import java.util.stream.Stream;
 
 public class Class6721 extends Class6717 {
    public Class6721(Schema var1, String var2) {
-      super(var1, false, "Gossip for for " + var2, Class8239.field35391, var2);
+      super(var1, false, "Gossip for for " + var2, TypeReferences.ENTITY, var2);
    }
 
    @Override

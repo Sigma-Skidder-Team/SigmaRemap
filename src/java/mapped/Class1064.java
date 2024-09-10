@@ -75,18 +75,18 @@ public class Class1064 extends Class1066 implements Class1022 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(0, new Class2603(this));
-      this.field5600.method20002(1, new Class2762(this, 1.2));
-      this.field5600.method20002(2, new Class2780(this, 2.1F));
-      this.field5600.method20002(3, new Class2598(this, 1.25, 40, 20.0F));
-      this.field5600.method20002(3, new Class2747(this, 1.2));
-      this.field5600.method20002(4, new Class2785(this, 1.0));
-      this.field5600.method20002(5, new Class2764(this, 1.0));
-      this.field5600.method20002(6, new Class2737(this, 0.7));
-      this.field5600.method20002(7, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.method20002(8, new Class2668(this));
-      this.field5601.method20002(1, new Class2705(this));
-      this.field5601.method20002(2, new Class2717(this));
+      this.field5600.addGoal(0, new Class2603(this));
+      this.field5600.addGoal(1, new Class2762(this, 1.2));
+      this.field5600.addGoal(2, new Class2780(this, 2.1F));
+      this.field5600.addGoal(3, new Class2598(this, 1.25, 40, 20.0F));
+      this.field5600.addGoal(3, new Class2747(this, 1.2));
+      this.field5600.addGoal(4, new Class2785(this, 1.0));
+      this.field5600.addGoal(5, new Class2764(this, 1.0));
+      this.field5600.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 0.7));
+      this.field5600.addGoal(7, new Class2612(this, PlayerEntity.class, 6.0F));
+      this.field5600.addGoal(8, new Class2668(this));
+      this.field5601.addGoal(1, new Class2705(this));
+      this.field5601.addGoal(2, new Class2717(this));
    }
 
    public static Class7037 method4888() {
@@ -121,7 +121,7 @@ public class Class1064 extends Class1066 implements Class1022 {
          float var5 = MathHelper.sin(this.renderYawOffset * (float) (Math.PI / 180.0));
          float var6 = 0.3F;
          var1.setPosition(
-            this.getPosX() + (double)(0.3F * var5), this.getPosY() + this.method3310() + var1.method2894(), this.getPosZ() - (double)(0.3F * var4)
+            this.getPosX() + (double)(0.3F * var5), this.getPosY() + this.method3310() + var1.getYOffset(), this.getPosZ() - (double)(0.3F * var4)
          );
       }
    }

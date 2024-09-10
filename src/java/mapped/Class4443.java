@@ -18,7 +18,7 @@ public class Class4443 implements Class4442 {
    @Override
    public void method14013(Class8297 var1) throws IOException {
       Path var4 = this.field21604.method33776().resolve("reports/commands.json");
-      CommandDispatcher var5 = new Class6099(Class2085.field13575).method18842();
+      CommandDispatcher var5 = new Class6099(Commands.field13575).method18842();
       Class4442.method14020(field21603, var1, Class8651.method31102(var5, var5.getRoot()), var4);
    }
 

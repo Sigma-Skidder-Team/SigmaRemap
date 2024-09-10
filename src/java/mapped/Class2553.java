@@ -29,7 +29,7 @@ public class Class2553 implements JsonDeserializer<Class7496> {
       List var15 = this.method10743(var3, var6);
       Class2129 var13 = null;
       if (var6.has("gui_light")) {
-         var13 = Class2129.method8811(JSONUtils.method32763(var6, "gui_light"));
+         var13 = Class2129.method8811(JSONUtils.getString(var6, "gui_light"));
       }
 
       ResourceLocation var14 = !var8.isEmpty() ? new ResourceLocation(var8) : null;

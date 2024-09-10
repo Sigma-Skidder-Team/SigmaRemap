@@ -6,7 +6,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
 
-public class Class3704<E extends Class1006> extends Class3676<E> {
+public class Class3704<E extends MobEntity> extends Class3676<E> {
    private static String[] field19763;
    private final int field19764;
    private final float field19765;

@@ -15,6 +15,6 @@ public class Class3674 extends Class3639 {
 
    public void registerTypes(Schema var1, Map<String, Supplier<TypeTemplate>> var2, Map<String, Supplier<TypeTemplate>> var3) {
       super.registerTypes(var1, var2, var3);
-      var1.registerType(false, Class8239.field35392, () -> DSL.constType(method12354()));
+      var1.registerType(false, TypeReferences.field35392, () -> DSL.constType(method12354()));
    }
 }

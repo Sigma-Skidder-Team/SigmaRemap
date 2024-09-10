@@ -9,12 +9,12 @@ import java.util.List;
 import java.util.Random;
 
 public class Class9215 {
-   private final Class8761 field42405;
+   private final TemplateManager field42405;
    private final Random field42406;
    private int field42407;
    private int field42408;
 
-   public Class9215(Class8761 var1, Random var2) {
+   public Class9215(TemplateManager var1, Random var2) {
       this.field42405 = var1;
       this.field42406 = var2;
    }

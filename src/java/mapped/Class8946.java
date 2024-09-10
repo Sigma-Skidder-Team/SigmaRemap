@@ -25,26 +25,26 @@ public class Class8946 extends DataFix {
    public TypeRewriteRule makeRule() {
       Schema var3 = this.getInputSchema();
       Schema var4 = this.getOutputSchema();
-      Type var5 = var3.getTypeRaw(Class8239.field35390);
-      Type var6 = var4.getTypeRaw(Class8239.field35390);
-      Type var7 = var3.getTypeRaw(Class8239.field35391);
+      Type var5 = var3.getTypeRaw(TypeReferences.field35390);
+      Type var6 = var4.getTypeRaw(TypeReferences.field35390);
+      Type var7 = var3.getTypeRaw(TypeReferences.ENTITY);
       return this.method32688(var3, var4, var5, var6, var7);
    }
 
    private <OldEntityTree, NewEntityTree, Entity> TypeRewriteRule method32688(
       Schema var1, Schema var2, Type<OldEntityTree> var3, Type<NewEntityTree> var4, Type<Entity> var5
    ) {
-      Type<Pair<String, Pair<Either<OldEntityTree, Unit>, Entity>>> var8 = DSL.named(Class8239.field35390.typeName(), DSL.and(DSL.optional(DSL.field("Riding", var3)), var5));
-      Type<Pair<String, Pair<Either<List<NewEntityTree>, Unit>, Entity>>> var9 = DSL.named(Class8239.field35390.typeName(), DSL.and(DSL.optional(DSL.field("Passengers", DSL.list(var4))), var5));
-      Type<?> var10 = var1.getType(Class8239.field35390);
-      Type<?> var11 = var2.getType(Class8239.field35390);
+      Type<Pair<String, Pair<Either<OldEntityTree, Unit>, Entity>>> var8 = DSL.named(TypeReferences.field35390.typeName(), DSL.and(DSL.optional(DSL.field("Riding", var3)), var5));
+      Type<Pair<String, Pair<Either<List<NewEntityTree>, Unit>, Entity>>> var9 = DSL.named(TypeReferences.field35390.typeName(), DSL.and(DSL.optional(DSL.field("Passengers", DSL.list(var4))), var5));
+      Type<?> var10 = var1.getType(TypeReferences.field35390);
+      Type<?> var11 = var2.getType(TypeReferences.field35390);
       if (Objects.equals(var10, var8)) {
          if (var11.equals(var9, true, true)) {
             OpticFinder<Pair<String, Pair<Either<OldEntityTree, Unit>, Entity>>> var12 = DSL.typeFinder(var8);
             OpticFinder<Pair<String, Pair<Either<List<NewEntityTree>, Unit>, Entity>>> var13 = DSL.typeFinder(var9);
             OpticFinder<NewEntityTree> var14 = DSL.typeFinder(var4);
-            Type<?> var15 = var1.getType(Class8239.field35377);
-            Type<?> var16 = var2.getType(Class8239.field35377);
+            Type<?> var15 = var1.getType(TypeReferences.field35377);
+            Type<?> var16 = var2.getType(TypeReferences.field35377);
             return TypeRewriteRule.seq(
                this.fixTypeEverywhere(
                   "EntityRidingToPassengerFix",
@@ -67,7 +67,7 @@ public class Class8946 extends DataFix {
                               ),
                               Either.right(DSL.unit())
                            );
-                           var9x = Optional.of(Pair.of(Class8239.field35390.typeName(), Pair.of(var11x, (var10x.getSecond()).getSecond())));
+                           var9x = Optional.of(Pair.of(TypeReferences.field35390.typeName(), Pair.of(var11x, (var10x.getSecond()).getSecond())));
                            Optional<OldEntityTree> var12x = var10x.getSecond().getFirst().left();
                            if (!var12x.isPresent()) {
                               return var9x.orElseThrow(() -> new IllegalStateException("Should always have an entity tree here"));

@@ -69,8 +69,8 @@ public class Class8838 extends DataFix {
     }
 
     public TypeRewriteRule makeRule() {
-        Type var3 = this.getInputSchema().getType(Class8239.field35387);
-        OpticFinder var4 = DSL.fieldFinder("id", DSL.named(Class8239.field35393.typeName(), Class3639.method12354()));
+        Type var3 = this.getInputSchema().getType(TypeReferences.field35387);
+        OpticFinder var4 = DSL.fieldFinder("id", DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354()));
         OpticFinder var5 = DSL.fieldFinder("id", Class3639.method12354());
         OpticFinder var6 = var3.findField("tag");
         OpticFinder var7 = var6.type().findField("EntityTag");
@@ -81,7 +81,7 @@ public class Class8838 extends DataFix {
                 Typed var9 = var8.getOrCreateTyped(var7);
                 Optional var10 = var9.getOptional(var5);
                 if (var10.isPresent()) {
-                    return var4x.set(var4, Pair.of(Class8239.field35393.typeName(), field39930.getOrDefault(var10.get(), "minecraft:pig_spawn_egg")));
+                    return var4x.set(var4, Pair.of(TypeReferences.field35393.typeName(), field39930.getOrDefault(var10.get(), "minecraft:pig_spawn_egg")));
                 }
             }
 

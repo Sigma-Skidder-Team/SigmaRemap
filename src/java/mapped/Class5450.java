@@ -14,7 +14,7 @@ public class Class5450 extends Class5444<Class4712> {
       super(var1, var2, var3, var4, var5, var6);
    }
 
-   public void method17109(DynamicRegistries var1, ChunkGenerator var2, Class8761 var3, int var4, int var5, Biome var6, Class4712 var7) {
+   public void method17109(DynamicRegistries var1, ChunkGenerator var2, TemplateManager var3, int var4, int var5, Biome var6, Class4712 var7) {
       Class80 var10 = Class80.method254(this.field24201);
       byte var11 = 5;
       byte var12 = 5;

@@ -18,7 +18,7 @@ public class Class8754 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(Class8239.field35387);
+      Type var3 = this.getInputSchema().getType(TypeReferences.field35387);
       OpticFinder var4 = var3.findField("tag");
       return this.fixTypeEverywhereTyped(
          "Item Lore componentize",

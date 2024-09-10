@@ -14,7 +14,7 @@ public class Class4223 extends Class4213 {
       super(Class7792.field33465, 1, var1, var2, 2, 1, 1);
    }
 
-   public Class4223(Class8761 var1, CompoundNBT var2) {
+   public Class4223(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33465, var2);
    }
 

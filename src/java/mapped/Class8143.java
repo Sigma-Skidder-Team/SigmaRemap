@@ -17,8 +17,8 @@ public abstract class Class8143 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<Pair<String, Dynamic<?>>> var3 = DSL.named(Class8239.field35385.typeName(), DSL.remainderType());
-      if (Objects.equals(var3, this.getInputSchema().getType(Class8239.field35385))) {
+      Type<Pair<String, Dynamic<?>>> var3 = DSL.named(TypeReferences.field35385.typeName(), DSL.remainderType());
+      if (Objects.equals(var3, this.getInputSchema().getType(TypeReferences.field35385))) {
          return this.fixTypeEverywhere("POI rename", var3, var1 -> var1x -> var1x.mapSecond(this::method28237));
       } else {
          throw new IllegalStateException("Poi type is not what was expected.");

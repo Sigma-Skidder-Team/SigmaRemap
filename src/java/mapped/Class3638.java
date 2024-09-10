@@ -28,7 +28,7 @@ public class Class3638 extends Class3639 {
          var4,
          "minecraft:beehive",
          () -> DSL.optionalFields(
-               "Items", DSL.list(Class8239.field35387.in(var1)), "Bees", DSL.list(DSL.optionalFields("EntityData", Class8239.field35390.in(var1)))
+               "Items", DSL.list(TypeReferences.field35387.in(var1)), "Bees", DSL.list(DSL.optionalFields("EntityData", TypeReferences.field35390.in(var1)))
             )
       );
       return var4;

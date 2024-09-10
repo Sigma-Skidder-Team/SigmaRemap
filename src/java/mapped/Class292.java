@@ -46,7 +46,7 @@ public class Class292 extends Class290 {
                return var1;
             }
 
-            Class9620 var10 = Class9620.field44993.method22519(var18);
+            Class9620 var10 = Class9620.field44993.deserialize(var18);
             if (var10 != null) {
                return var10;
             }

@@ -81,7 +81,7 @@ public class Class9281 {
 
             if (!this.field42702.isEmpty()) {
                Class8019 var14 = var4.method2823();
-               Class285 var16 = var4.method3396().method1396();
+               AdvancementManager var16 = var4.method3396().method1396();
 
                for (Entry var10 : this.field42702.entrySet()) {
                   Advancement var11 = var16.method1065((ResourceLocation)var10.getKey());
@@ -107,13 +107,13 @@ public class Class9281 {
          if (var8 != null) {
             for (JsonElement var10 : var8) {
                JsonObject var11 = JSONUtils.method32781(var10, "stats entry");
-               ResourceLocation var12 = new ResourceLocation(JSONUtils.method32763(var11, "type"));
+               ResourceLocation var12 = new ResourceLocation(JSONUtils.getString(var11, "type"));
                Class49 var13 = Registry.field16088.method9184(var12);
                if (var13 == null) {
                   throw new JsonParseException("Invalid stat type: " + var12);
                }
 
-               ResourceLocation var14 = new ResourceLocation(JSONUtils.method32763(var11, "stat"));
+               ResourceLocation var14 = new ResourceLocation(JSONUtils.getString(var11, "stat"));
                Class9007 var15 = method34998(var13, var14);
                Class8840 var16 = Class8840.method32016(var11.get("value"));
                var7.put(var15, var16);
@@ -121,7 +121,7 @@ public class Class9281 {
          }
 
          Object2BooleanOpenHashMap var17 = new Object2BooleanOpenHashMap();
-         JsonObject var18 = JSONUtils.method32783(var3, "recipes", new JsonObject());
+         JsonObject var18 = JSONUtils.getJsonObject(var3, "recipes", new JsonObject());
 
          for (Entry var21 : var18.entrySet()) {
             ResourceLocation var23 = new ResourceLocation((String)var21.getKey());
@@ -130,7 +130,7 @@ public class Class9281 {
          }
 
          HashMap var20 = Maps.newHashMap();
-         JsonObject var22 = JSONUtils.method32783(var3, "advancements", new JsonObject());
+         JsonObject var22 = JSONUtils.getJsonObject(var3, "advancements", new JsonObject());
 
          for (Entry var26 : var22.entrySet()) {
             ResourceLocation var27 = new ResourceLocation((String)var26.getKey());

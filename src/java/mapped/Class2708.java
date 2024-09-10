@@ -2,7 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 
-public class Class2708 extends Class2704 {
+public class Class2708 extends HurtByTargetGoal {
    private static String[] field17178;
    public final Class1017 field17186;
 
@@ -17,7 +17,7 @@ public class Class2708 extends Class2704 {
    }
 
    @Override
-   public void method10920(Class1006 var1, LivingEntity var2) {
+   public void method10920(MobEntity var1, LivingEntity var2) {
       if (var1 instanceof Class1017 && this.field17153.canEntityBeSeen(var2)) {
          var1.method4233(var2);
       }

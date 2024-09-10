@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Class6733 extends Class6717 {
    public Class6733(Schema var1) {
-      super(var1, false, "EntityShulkerRotationFix", Class8239.field35391, "minecraft:shulker");
+      super(var1, false, "EntityShulkerRotationFix", TypeReferences.ENTITY, "minecraft:shulker");
    }
 
    public Dynamic<?> method20544(Dynamic<?> var1) {

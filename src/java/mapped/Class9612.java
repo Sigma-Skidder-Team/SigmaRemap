@@ -35,7 +35,7 @@ public class Class9612 extends DataFix {
 
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
-         "WallPropertyFix", this.getInputSchema().getType(Class8239.field35388), var0 -> var0.update(DSL.remainderFinder(), Class9612::method37371)
+         "WallPropertyFix", this.getInputSchema().getType(TypeReferences.field35388), var0 -> var0.update(DSL.remainderFinder(), Class9612::method37371)
       );
    }
 

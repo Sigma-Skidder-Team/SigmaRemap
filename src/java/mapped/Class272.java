@@ -51,7 +51,7 @@ public class Class272 extends Class269<Map<ResourceLocation, List<Class1768>>> {
                      JsonObject var20 = JSONUtils.method32781(var18.get(var19), "providers[" + var19 + "]");
 
                      try {
-                        String var21 = JSONUtils.method32763(var20, "type");
+                        String var21 = JSONUtils.getString(var20, "type");
                         Class2038 var22 = Class2038.method8682(var21);
                         var2.startSection(var21);
                         Class1768 var23 = var22.method8683(var20).method24664(var1);

@@ -13,7 +13,7 @@ public class Class6761 extends Class6762 {
    private float field29470;
 
    @Override
-   public void method20613(Class1667 var1, Class1006 var2) {
+   public void method20613(Class1667 var1, MobEntity var2) {
       super.method20613(var1, var2);
       var2.method4224(Class2163.field14191, 0.0F);
       this.field29469 = var2.method4223(Class2163.field14186);

@@ -7,7 +7,7 @@ public class Class5453 extends Class5444<Class4735> {
       super(var1, var2, var3, var4, var5, var6);
    }
 
-   public void method17109(DynamicRegistries var1, ChunkGenerator var2, Class8761 var3, int var4, int var5, Biome var6, Class4735 var7) {
+   public void method17109(DynamicRegistries var1, ChunkGenerator var2, TemplateManager var3, int var4, int var5, Biome var6, Class4735 var7) {
       Class4189 var10 = new Class4189(0, this.field24201, (var4 << 4) + 2, (var5 << 4) + 2, var7.field22427);
       this.field24196.add(var10);
       var10.method12894(var10, this.field24196, this.field24201);

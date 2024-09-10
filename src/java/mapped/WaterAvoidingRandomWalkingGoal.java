@@ -4,15 +4,15 @@ import net.minecraft.util.math.vector.Vector3d;
 
 import javax.annotation.Nullable;
 
-public class Class2737 extends Class2736 {
+public class WaterAvoidingRandomWalkingGoal extends Class2736 {
    private static String[] field17257;
    public final float field17266;
 
-   public Class2737(Class1046 var1, double var2) {
+   public WaterAvoidingRandomWalkingGoal(Class1046 var1, double var2) {
       this(var1, var2, 0.001F);
    }
 
-   public Class2737(Class1046 var1, double var2, float var4) {
+   public WaterAvoidingRandomWalkingGoal(Class1046 var1, double var2, float var4) {
       super(var1, var2);
       this.field17266 = var4;
    }

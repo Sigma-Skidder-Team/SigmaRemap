@@ -23,7 +23,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class Class924 extends Class932 implements Class930, Class923, Class925, Class935 {
+public abstract class Class924 extends Class932 implements Class930, Class923, Class925, ITickableTileEntity {
    private static final int[] field5244 = new int[]{0};
    private static final int[] field5245 = new int[]{2, 1};
    private static final int[] field5246 = new int[]{1};

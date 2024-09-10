@@ -45,7 +45,7 @@ public class Class8043 {
          for (int var5 = 0; var5 < var1.length; var5++) {
             String var6 = var1[var5];
             ResourceLocation var7 = new ResourceLocation(var6);
-            if (var0.method1225(ResourcePackType.CLIENT_RESOURCES, var7)) {
+            if (var0.resourceExists(ResourcePackType.CLIENT_RESOURCES, var7)) {
                InputStream var8 = var0.getResourceStream(ResourcePackType.CLIENT_RESOURCES, var7);
                if (var8 != null) {
                   method27617(var8, var2);

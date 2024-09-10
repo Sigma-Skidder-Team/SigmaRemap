@@ -7,7 +7,7 @@ import com.mojang.serialization.Dynamic;
 
 public class Class6738 extends Class6717 {
    public Class6738(Schema var1, boolean var2) {
-      super(var1, var2, "StriderGravityFix", Class8239.field35391, "minecraft:strider");
+      super(var1, var2, "StriderGravityFix", TypeReferences.ENTITY, "minecraft:strider");
    }
 
    public Dynamic<?> method20551(Dynamic<?> var1) {

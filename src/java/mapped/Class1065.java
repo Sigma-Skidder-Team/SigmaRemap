@@ -42,8 +42,8 @@ public class Class1065 extends Class1064 {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.method20002(1, new Class2747(this, 2.0));
-      this.field5601.method20002(1, new Class2701(this, this));
+      this.field5600.addGoal(1, new Class2747(this, 2.0));
+      this.field5601.addGoal(1, new Class2701(this, this));
    }
 
    @Override

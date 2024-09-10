@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.resources.data.IMetadataSectionSerializer;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.Closeable;
@@ -12,7 +13,7 @@ public interface Class1783 extends Closeable {
    InputStream method7763();
 
    @Nullable
-   <T> T method7764(Class7170<T> var1);
+   <T> T method7764(IMetadataSectionSerializer<T> var1);
 
    String method7765();
 }

@@ -14,7 +14,7 @@ public class Class9769 extends DataFix {
    public TypeRewriteRule makeRule() {
       Schema var3 = this.getInputSchema();
       return this.fixTypeEverywhereTyped(
-         "RedstoneConnectionsFix", var3.getType(Class8239.field35388), var1 -> var1.update(DSL.remainderFinder(), this::method38426)
+         "RedstoneConnectionsFix", var3.getType(TypeReferences.field35388), var1 -> var1.update(DSL.remainderFinder(), this::method38426)
       );
    }
 

@@ -19,7 +19,7 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-public class Class1040 extends Class1038 implements Class1041 {
+public class Class1040 extends ZombieEntity implements Class1041 {
    private static final DataParameter<Boolean> field5769 = EntityDataManager.<Boolean>createKey(Class1040.class, DataSerializers.field33398);
    private static final DataParameter<Class7921> field5770 = EntityDataManager.<Class7921>createKey(Class1040.class, DataSerializers.field33406);
    private int field5771;
@@ -122,7 +122,7 @@ public class Class1040 extends Class1038 implements Class1041 {
    }
 
    @Override
-   public boolean method4645() {
+   public boolean shouldDrown() {
       return false;
    }
 

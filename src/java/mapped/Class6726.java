@@ -16,7 +16,7 @@ public class Class6726 extends Class6717 {
    public static final Gson field29439 = new GsonBuilder().registerTypeAdapter(ITextComponent.class, new Class2554()).create();
 
    public Class6726(Schema var1, boolean var2) {
-      super(var1, var2, "BlockEntitySignTextStrictJsonFix", Class8239.field35386, "Sign");
+      super(var1, var2, "BlockEntitySignTextStrictJsonFix", TypeReferences.field35386, "Sign");
    }
 
    private Dynamic<?> method20525(Dynamic<?> var1, String var2) {

@@ -13,7 +13,7 @@ public class Class4185 extends Class4180 {
    private final ResourceLocation field20471;
    private final Class80 field20472;
 
-   public Class4185(Class8761 var1, ResourceLocation var2, BlockPos var3, Class80 var4, int var5) {
+   public Class4185(TemplateManager var1, ResourceLocation var2, BlockPos var3, Class80 var4, int var5) {
       super(Class7792.field33459, 0);
       this.field20471 = var2;
       BlockPos var8 = (BlockPos)Class3191.method11408().get(var2);
@@ -22,14 +22,14 @@ public class Class4185 extends Class4180 {
       this.method12964(var1);
    }
 
-   public Class4185(Class8761 var1, CompoundNBT var2) {
+   public Class4185(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33459, var2);
       this.field20471 = new ResourceLocation(var2.getString("Template"));
       this.field20472 = Class80.valueOf(var2.getString("Rot"));
       this.method12964(var1);
    }
 
-   private void method12964(Class8761 var1) {
+   private void method12964(TemplateManager var1) {
       Class8969 var4 = var1.method31603(this.field20471);
       Class9463 var5 = new Class9463()
          .method36426(this.field20472)

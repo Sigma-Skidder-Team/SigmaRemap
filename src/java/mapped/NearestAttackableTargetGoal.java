@@ -7,22 +7,22 @@ import net.minecraft.util.math.AxisAlignedBB;
 import java.util.EnumSet;
 import java.util.function.Predicate;
 
-public class Class2709<T extends LivingEntity> extends Class2699 {
+public class NearestAttackableTargetGoal<T extends LivingEntity> extends Class2699 {
    private static String[] field17187;
    public final Class<T> field17188;
    public final int field17189;
    public LivingEntity field17190;
    public Class8522 field17191;
 
-   public Class2709(Class1006 var1, Class<T> var2, boolean var3) {
+   public NearestAttackableTargetGoal(MobEntity var1, Class<T> var2, boolean var3) {
       this(var1, var2, var3, false);
    }
 
-   public Class2709(Class1006 var1, Class<T> var2, boolean var3, boolean var4) {
+   public NearestAttackableTargetGoal(MobEntity var1, Class<T> var2, boolean var3, boolean var4) {
       this(var1, var2, 10, var3, var4, (Predicate<LivingEntity>)null);
    }
 
-   public Class2709(Class1006 var1, Class<T> var2, int var3, boolean var4, boolean var5, Predicate<LivingEntity> var6) {
+   public NearestAttackableTargetGoal(MobEntity var1, Class<T> var2, int var3, boolean var4, boolean var5, Predicate<LivingEntity> var6) {
       super(var1, var4, var5);
       this.field17188 = var2;
       this.field17189 = var3;

@@ -12,7 +12,7 @@ public class Class3667 extends Class3639 {
    }
 
    public static void method12477(Schema var0, Map<String, Supplier<TypeTemplate>> var1, String var2) {
-      var0.register(var1, var2, () -> DSL.optionalFields("Items", DSL.list(Class8239.field35387.in(var0))));
+      var0.register(var1, var2, () -> DSL.optionalFields("Items", DSL.list(TypeReferences.field35387.in(var0))));
    }
 
    public Map<String, Supplier<TypeTemplate>> registerBlockEntities(Schema var1) {

@@ -6,7 +6,7 @@ import net.minecraft.util.SoundEvent;
 
 import java.util.function.Predicate;
 
-public class Class2596<T extends Class1006> extends Class2595 {
+public class Class2596<T extends MobEntity> extends Class2595 {
    private static String[] field16816;
    private final T field16817;
    private final ItemStack field16818;

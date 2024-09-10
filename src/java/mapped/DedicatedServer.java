@@ -89,7 +89,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
       this.method1379(var4.field43794);
       super.method1383((Integer)var4.field43831.get());
       this.method1416(var4.field43795);
-      this.field1269.method20073(var4.field43797);
+      this.field_240768_i_.method20073(var4.field43797);
       field1208.info("Default game type: {}", var4.field43797);
       InetAddress var5 = null;
       if (!this.method1293().isEmpty()) {
@@ -293,7 +293,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
    }
 
    @Override
-   public boolean method1348() {
+   public boolean isDedicatedServer() {
       return true;
    }
 
@@ -393,7 +393,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
    }
 
    @Override
-   public int method1289() {
+   public int getFunctionLevel() {
       return this.method6498().field43817;
    }
 
@@ -419,7 +419,7 @@ public class DedicatedServer extends MinecraftServer implements Class1646 {
    }
 
    @Override
-   public int method1392() {
+   public int getNetworkCompressionThreshold() {
       return this.method6498().field43822;
    }
 

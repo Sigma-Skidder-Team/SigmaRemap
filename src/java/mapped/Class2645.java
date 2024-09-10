@@ -5,7 +5,7 @@ public class Class2645 extends Class2642 {
    private final boolean field16986;
    private int field16987;
 
-   public Class2645(Class1006 var1, boolean var2) {
+   public Class2645(MobEntity var1, boolean var2) {
       super(var1);
       this.field16974 = var1;
       this.field16986 = var2;

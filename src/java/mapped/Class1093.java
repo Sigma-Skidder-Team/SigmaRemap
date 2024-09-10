@@ -202,7 +202,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method4258() {
+   public void updateAITasks() {
       this.world.getProfiler().startSection("zoglinBrain");
       this.getBrain().method21432((ServerWorld)this.world, this);
       this.world.getProfiler().endSection();

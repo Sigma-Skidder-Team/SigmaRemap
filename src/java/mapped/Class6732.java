@@ -12,7 +12,7 @@ import java.util.function.Function;
 
 public class Class6732 extends Class6717 {
    public Class6732(Schema var1, boolean var2) {
-      super(var1, var2, "Villager trade fix", Class8239.field35391, "minecraft:villager");
+      super(var1, var2, "Villager trade fix", TypeReferences.ENTITY, "minecraft:villager");
    }
 
    @Override
@@ -27,7 +27,7 @@ public class Class6732 extends Class6717 {
          OpticFinder var10 = var8.findField("buy");
          OpticFinder var11 = var8.findField("buyB");
          OpticFinder var12 = var8.findField("sell");
-         OpticFinder var13 = DSL.fieldFinder("id", DSL.named(Class8239.field35393.typeName(), Class3639.method12354()));
+         OpticFinder var13 = DSL.fieldFinder("id", DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354()));
          Function<Typed<?>, Typed<?>> var14 = var2 -> this.method20538(var13, var2);
          return var1.updateTyped(
             var4,

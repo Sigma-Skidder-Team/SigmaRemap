@@ -16,7 +16,7 @@ public class Class4196 extends Class4195 {
       super(Class7792.field33454, 0, var1, var2, var3);
    }
 
-   public Class4196(Class8761 var1, CompoundNBT var2) {
+   public Class4196(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33454, var2);
    }
 }

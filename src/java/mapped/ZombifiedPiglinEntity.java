@@ -17,7 +17,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Random;
 import java.util.UUID;
 
-public class Class1063 extends Class1038 implements IAngerable {
+public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
    private static final UUID field5860 = UUID.fromString("49455A49-7EC5-45BA-B886-3B90B23A1718");
    private static final AttributeModifier field5861 = new AttributeModifier(field5860, "Attacking speed boost", 0.05, AttributeModifierOperation.ADDITION);
    private static final RangedInteger field5862 = TickRangeConverter.convertRange(0, 1);
@@ -28,41 +28,41 @@ public class Class1063 extends Class1038 implements IAngerable {
    private static final RangedInteger field5867 = TickRangeConverter.convertRange(4, 6);
    private int field5868;
 
-   public Class1063(EntityType<? extends Class1063> var1, World var2) {
+   public ZombifiedPiglinEntity(EntityType<? extends ZombifiedPiglinEntity> var1, World var2) {
       super(var1, var2);
       this.method4224(Class2163.field14190, 8.0F);
    }
 
    @Override
-   public void method4349(UUID var1) {
+   public void setAngerTarget(UUID var1) {
       this.field5866 = var1;
    }
 
    @Override
-   public double method2894() {
+   public double getYOffset() {
       return !this.isChild() ? -0.45 : -0.05;
    }
 
    @Override
-   public void method4639() {
-      this.field5600.method20002(2, new Class2654(this, 1.0, false));
-      this.field5600.method20002(7, new Class2737(this, 1.0));
-      this.field5601.method20002(1, new Class2704(this).method10918());
-      this.field5601.method20002(2, new Class2709<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
-      this.field5601.method20002(3, new Class2779<Class1063>(this, true));
+   public void applyEntityAI() {
+      this.field5600.addGoal(2, new ZombieAttackGoal(this, 1.0, false));
+      this.field5600.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.field5601.addGoal(1, new HurtByTargetGoal(this).method10918());
+      this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
+      this.field5601.addGoal(3, new ResetAngerGoal<ZombifiedPiglinEntity>(this, true));
    }
 
-   public static Class7037 method4874() {
-      return Class1038.method4653().method21849(Attributes.field42116, 0.0).method21849(Attributes.MOVEMENT_SPEED, 0.23F).method21849(Attributes.field42110, 5.0);
+   public static Class7037 func_234352_eU_() {
+      return ZombieEntity.method4653().method21849(Attributes.field42116, 0.0).method21849(Attributes.MOVEMENT_SPEED, 0.23F).method21849(Attributes.field42110, 5.0);
    }
 
    @Override
-   public boolean method4645() {
+   public boolean shouldDrown() {
       return false;
    }
 
    @Override
-   public void method4258() {
+   public void updateAITasks() {
       ModifiableAttributeInstance var3 = this.getAttribute(Attributes.MOVEMENT_SPEED);
       if (!this.method4369()) {
          if (var3.method38665(field5861)) {
@@ -85,7 +85,7 @@ public class Class1063 extends Class1038 implements IAngerable {
          this.field4971 = this.ticksExisted;
       }
 
-      super.method4258();
+      super.updateAITasks();
    }
 
    private void method4875() {
@@ -113,7 +113,7 @@ public class Class1063 extends Class1038 implements IAngerable {
       double var3 = this.getAttributeValue(Attributes.field42106);
       AxisAlignedBB var5 = AxisAlignedBB.method19657(this.getPositionVec()).method19663(var3, 10.0, var3);
       this.world
-         .<Class1063>method7183(Class1063.class, var5)
+         .<ZombifiedPiglinEntity>method7183(ZombifiedPiglinEntity.class, var5)
          .stream()
          .filter(var1 -> var1 != this)
          .filter(var0 -> var0.method4232() == null)
@@ -144,7 +144,9 @@ public class Class1063 extends Class1038 implements IAngerable {
       this.method4347(field5864.method29319(this.rand));
    }
 
-   public static boolean method4879(EntityType<Class1063> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+
+
+   public static boolean method4879(EntityType<ZombifiedPiglinEntity> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       return var1.method6997() != Difficulty.field14351 && var1.getBlockState(var3.down()).getBlock() != Blocks.field36891;
    }
 

@@ -7,7 +7,7 @@ import com.mojang.serialization.Dynamic;
 
 public class Class6716 extends Class6717 {
    public Class6716(Schema var1, boolean var2) {
-      super(var1, var2, "EntityShulkerColorFix", Class8239.field35391, "minecraft:shulker");
+      super(var1, var2, "EntityShulkerColorFix", TypeReferences.ENTITY, "minecraft:shulker");
    }
 
    public Dynamic<?> method20507(Dynamic<?> var1) {

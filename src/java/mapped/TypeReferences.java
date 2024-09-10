@@ -2,7 +2,7 @@ package mapped;
 
 import com.mojang.datafixers.DSL.TypeReference;
 
-public class Class8239 {
+public class TypeReferences {
    public static final TypeReference field35376 = () -> "level";
    public static final TypeReference field35377 = () -> "player";
    public static final TypeReference field35378 = () -> "chunk";
@@ -18,7 +18,7 @@ public class Class8239 {
    public static final TypeReference field35388 = () -> "block_state";
    public static final TypeReference field35389 = () -> "entity_name";
    public static final TypeReference field35390 = () -> "entity_tree";
-   public static final TypeReference field35391 = () -> "entity";
+   public static final TypeReference ENTITY = () -> "entity";
    public static final TypeReference field35392 = () -> "block_name";
    public static final TypeReference field35393 = () -> "item_name";
    public static final TypeReference field35394 = () -> "untagged_spawner";

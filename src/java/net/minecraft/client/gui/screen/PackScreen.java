@@ -178,8 +178,8 @@ public class PackScreen extends Screen {
 
    private ResourceLocation method6405(TextureManager var1, ResourcePackInfo var2) {
       try (
-              IResourcePack var5 = var2.method7950();
-              InputStream var7 = var5.method1222("pack.png");
+              IResourcePack var5 = var2.getResourcePack();
+              InputStream var7 = var5.getRootResourceStream("pack.png");
       ) {
          String var9 = var2.getName();
          ResourceLocation var10 = new ResourceLocation(

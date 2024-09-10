@@ -14,7 +14,7 @@ import java.util.Random;
 public class Class2632 extends Class2628 {
    private static String[] field16944;
    private final Block field16945;
-   private final Class1006 field16946;
+   private final MobEntity field16946;
    private int field16947;
 
    public Class2632(Block var1, Class1046 var2, double var3, int var5) {

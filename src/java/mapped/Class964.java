@@ -365,7 +365,7 @@ public class Class964 extends TileEntity {
       if (this.field5402 == Class104.field318 && !this.field5324.isRemote && this.field5395 != null) {
          BlockPos var4 = this.getPos().method8337(this.field5398);
          ServerWorld var5 = (ServerWorld)this.field5324;
-         Class8761 var6 = var5.method6938();
+         TemplateManager var6 = var5.method6938();
 
          Class8969 var7;
          try {
@@ -400,7 +400,7 @@ public class Class964 extends TileEntity {
 
    public boolean method3967(ServerWorld var1, boolean var2) {
       if (this.field5402 == Class104.field319 && this.field5395 != null) {
-         Class8761 var5 = var1.method6938();
+         TemplateManager var5 = var1.method6938();
 
          Class8969 var6;
          try {
@@ -447,7 +447,7 @@ public class Class964 extends TileEntity {
    public void method3969() {
       if (this.field5395 != null) {
          ServerWorld var3 = (ServerWorld)this.field5324;
-         Class8761 var4 = var3.method6938();
+         TemplateManager var4 = var3.method6938();
          var4.method31613(this.field5395);
       }
    }
@@ -455,7 +455,7 @@ public class Class964 extends TileEntity {
    public boolean method3970() {
       if (this.field5402 == Class104.field319 && !this.field5324.isRemote && this.field5395 != null) {
          ServerWorld var3 = (ServerWorld)this.field5324;
-         Class8761 var4 = var3.method6938();
+         TemplateManager var4 = var3.method6938();
 
          try {
             return var4.method31604(this.field5395) != null;

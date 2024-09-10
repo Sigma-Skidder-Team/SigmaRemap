@@ -75,7 +75,7 @@ public class Class8878<T extends Entity> {
 
    public EntityType<T> method32309(String var1) {
       if (this.field40184) {
-         Util.method38500(Class8239.field35390, var1);
+         Util.method38500(TypeReferences.field35390, var1);
       }
 
       return new EntityType<T>(

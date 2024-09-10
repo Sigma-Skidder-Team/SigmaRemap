@@ -22,7 +22,7 @@ public class Class2565 implements JsonDeserializer<Class8783>, JsonSerializer<Cl
       }
 
       if (var6.has("favicon")) {
-         var7.method31706(JSONUtils.method32763(var6, "favicon"));
+         var7.method31706(JSONUtils.getString(var6, "favicon"));
       }
 
       return var7;

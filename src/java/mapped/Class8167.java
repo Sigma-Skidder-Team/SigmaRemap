@@ -21,8 +21,8 @@ public class Class8167 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<Pair<String, String>> var3 = DSL.named(Class8239.field35398.typeName(), Class3639.method12354());
-      if (Objects.equals(var3, this.getInputSchema().getType(Class8239.field35398))) {
+      Type<Pair<String, String>> var3 = DSL.named(TypeReferences.field35398.typeName(), Class3639.method12354());
+      if (Objects.equals(var3, this.getInputSchema().getType(TypeReferences.field35398))) {
          return this.fixTypeEverywhere(this.field35146, var3, var1 -> var1x -> var1x.mapSecond(this.field35147));
       } else {
          throw new IllegalStateException("Recipe type is not what was expected.");

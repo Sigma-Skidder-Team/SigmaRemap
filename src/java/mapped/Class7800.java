@@ -15,8 +15,8 @@ public class Class7800 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<Pair<String, Dynamic<?>>> var3 = DSL.named(Class8239.field35385.typeName(), DSL.remainderType());
-      if (Objects.equals(var3, this.getInputSchema().getType(Class8239.field35385))) {
+      Type<Pair<String, Dynamic<?>>> var3 = DSL.named(TypeReferences.field35385.typeName(), DSL.remainderType());
+      if (Objects.equals(var3, this.getInputSchema().getType(TypeReferences.field35385))) {
          return this.fixTypeEverywhere("POI rebuild", var3, var0 -> var0x -> var0x.mapSecond(Class7800::method26041));
       } else {
          throw new IllegalStateException("Poi type is not what was expected.");

@@ -178,7 +178,7 @@ public class ParticleManager implements Class268 {
          Class1783 var7 = var1.method580(var6);
          InputStreamReader var9 = new InputStreamReader(var7.method7763(), Charsets.UTF_8);
       ) {
-         Class8532 var11 = Class8532.method30266(JSONUtils.method32801(var9));
+         Class8532 var11 = Class8532.method30266(JSONUtils.fromJson(var9));
          List<ResourceLocation> var12 = var11.method30265();
          boolean var13 = this.field1175.containsKey(var2);
          if (var12 == null) {

@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class Class950 extends TileEntity implements Class949, Class935 {
+public class Class950 extends TileEntity implements Class949, ITickableTileEntity {
    public static final Effect[][] field5338 = new Effect[][]{
       {Effects.SPEED, Effects.HASTE}, {Effects.RESISTANCE, Effects.JUMP_BOOST}, {Effects.STRENGTH}, {Effects.REGENERATION}
    };

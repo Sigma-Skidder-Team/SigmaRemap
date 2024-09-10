@@ -6,7 +6,7 @@ import net.minecraft.util.math.vector.Vector3d;
 
 public class Class8092 {
    private static String[] field34811;
-   public final Class1006 field34812;
+   public final MobEntity field34812;
    public float field34813;
    public float field34814;
    public boolean field34815;
@@ -14,7 +14,7 @@ public class Class8092 {
    public double field34817;
    public double field34818;
 
-   public Class8092(Class1006 var1) {
+   public Class8092(MobEntity var1) {
       this.field34812 = var1;
    }
 

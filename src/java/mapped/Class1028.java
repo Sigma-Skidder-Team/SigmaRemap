@@ -20,7 +20,7 @@ public abstract class Class1028 extends Class1009 {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.method20002(4, new Class2723<Class1028>(this, 0.7, 0.595));
+      this.field5600.addGoal(4, new Class2723<Class1028>(this, 0.7, 0.595));
    }
 
    @Override
@@ -46,7 +46,7 @@ public abstract class Class1028 extends Class1009 {
    }
 
    @Override
-   public double method2894() {
+   public double getYOffset() {
       return -0.45;
    }
 

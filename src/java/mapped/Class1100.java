@@ -20,7 +20,7 @@ import java.util.Random;
 
 public class Class1100 extends Class1009 {
    public static final DataParameter<Byte> field6051 = EntityDataManager.<Byte>createKey(Class1100.class, DataSerializers.field33390);
-   private Class1006 field6052;
+   private MobEntity field6052;
    private BlockPos field6053;
    private boolean field6054;
    private int field6055;
@@ -52,14 +52,14 @@ public class Class1100 extends Class1009 {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.method20002(0, new Class2603(this));
-      this.field5600.method20002(4, new Class2766(this));
-      this.field5600.method20002(8, new Class2678(this));
-      this.field5600.method20002(9, new Class2612(this, PlayerEntity.class, 3.0F, 1.0F));
-      this.field5600.method20002(10, new Class2612(this, Class1006.class, 8.0F));
-      this.field5601.method20002(1, new Class2704(this, Class1026.class).method10918());
-      this.field5601.method20002(2, new Class2722(this, this));
-      this.field5601.method20002(3, new Class2709<PlayerEntity>(this, PlayerEntity.class, true));
+      this.field5600.addGoal(0, new Class2603(this));
+      this.field5600.addGoal(4, new Class2766(this));
+      this.field5600.addGoal(8, new Class2678(this));
+      this.field5600.addGoal(9, new Class2612(this, PlayerEntity.class, 3.0F, 1.0F));
+      this.field5600.addGoal(10, new Class2612(this, MobEntity.class, 8.0F));
+      this.field5601.addGoal(1, new HurtByTargetGoal(this, Class1026.class).method10918());
+      this.field5601.addGoal(2, new Class2722(this, this));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
    }
 
    public static Class7037 method5269() {
@@ -98,7 +98,7 @@ public class Class1100 extends Class1009 {
       }
    }
 
-   public Class1006 method5270() {
+   public MobEntity method5270() {
       return this.field6052;
    }
 
@@ -135,7 +135,7 @@ public class Class1100 extends Class1009 {
       this.method5274(1, var1);
    }
 
-   public void method5277(Class1006 var1) {
+   public void method5277(MobEntity var1) {
       this.field6052 = var1;
    }
 
@@ -194,7 +194,7 @@ public class Class1100 extends Class1009 {
    }
 
    // $VF: synthetic method
-   public static Class1006 method5282(Class1100 var0) {
+   public static MobEntity method5282(Class1100 var0) {
       return var0.field6052;
    }
 

@@ -873,7 +873,7 @@ public class ColorUtils {
    public static Class2258 method17744(Entity var0) {
       if (var0 instanceof LivingEntity) {
          if (!(var0 instanceof PlayerEntity)) {
-            return !(var0 instanceof Class1006) && !(var0 instanceof Class1009) && !(var0 instanceof Class1108) && !(var0 instanceof Class1111)
+            return !(var0 instanceof MobEntity) && !(var0 instanceof Class1009) && !(var0 instanceof Class1108) && !(var0 instanceof Class1111)
                ? Class2258.field14691
                : Class2258.field14689;
          } else {

@@ -398,8 +398,8 @@ public class EntityRendererManager {
    private static void method32224(MatrixStack var0, Class7733 var1, Entity var2, float var3, float var4, Class1662 var5, float var6) {
       if (!Class7944.method26921() || ! Shaders.field40794) {
          float var9 = var6;
-         if (var2 instanceof Class1006) {
-            Class1006 var25 = (Class1006)var2;
+         if (var2 instanceof MobEntity) {
+            MobEntity var25 = (MobEntity)var2;
             if (var25.isChild()) {
                var9 = var6 * 0.5F;
             }

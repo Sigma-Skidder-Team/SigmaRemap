@@ -15,7 +15,7 @@ public class Class4211 extends Class4209 {
       super(Class7792.field33462, var1, var2, 64, var3, 21, 15, 21);
    }
 
-   public Class4211(Class8761 var1, CompoundNBT var2) {
+   public Class4211(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33462, var2);
       this.field20522[0] = var2.getBoolean("hasPlacedChest0");
       this.field20522[1] = var2.getBoolean("hasPlacedChest1");

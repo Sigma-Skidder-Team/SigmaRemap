@@ -833,8 +833,8 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handleEntityAttach(SMountEntityPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.getEntityByID(var1.method17577());
-      if (var4 instanceof Class1006) {
-         ((Class1006)var4).method4299(var1.method17578());
+      if (var4 instanceof MobEntity) {
+         ((MobEntity)var4).method4299(var1.method17578());
       }
    }
 
@@ -1068,7 +1068,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          || var6 == 5 && var5 instanceof Class959
          || var6 == 12 && var5 instanceof JigsawTileEntity
          || var6 == 13 && var5 instanceof Class945
-         || var6 == 14 && var5 instanceof Class962) {
+         || var6 == 14 && var5 instanceof BeehiveTileEntity) {
          var5.method3645(this.field23272.world.getBlockState(var4), var1.method17638());
       }
 
@@ -1620,7 +1620,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
             ServerData var11 = this.field23272.getCurrentServerData();
             if (var11 != null && var11.method25577() == Class2168.field14234) {
                this.method15788(CResourcePackStatusPacket.Action.ACCEPTED);
-               this.method15787(this.field23272.getPackFinder().method25148(var4, var5));
+               this.method15787(this.field23272.getPackFinder().downloadResourcePack(var4, var5));
             } else if (var11 != null && var11.method25577() != Class2168.field14236) {
                this.method15788(CResourcePackStatusPacket.Action.DECLINED);
             } else {
@@ -1639,7 +1639,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                         }
 
                         this.method15788(CResourcePackStatusPacket.Action.ACCEPTED);
-                        this.method15787(this.field23272.getPackFinder().method25148(var4, var5));
+                        this.method15787(this.field23272.getPackFinder().downloadResourcePack(var4, var5));
                      }
 
                      Class7970.method27102(var6x);

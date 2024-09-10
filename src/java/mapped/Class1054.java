@@ -78,7 +78,7 @@ public class Class1054 extends Class1049 {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.method20002(1, new Class2767(this));
+      this.field5600.addGoal(1, new Class2767(this));
    }
 
    @Override
@@ -118,7 +118,7 @@ public class Class1054 extends Class1049 {
    public void livingEntity() {
       super.livingEntity();
       if (this.isAlive() && this.method4828() > 0) {
-         for (Class1006 var4 : this.world.method6772(Class1006.class, this.getBoundingBox().method19664(0.3), field5823)) {
+         for (MobEntity var4 : this.world.method6772(MobEntity.class, this.getBoundingBox().method19664(0.3), field5823)) {
             if (var4.isAlive()) {
                this.method4830(var4);
             }
@@ -126,7 +126,7 @@ public class Class1054 extends Class1049 {
       }
    }
 
-   private void method4830(Class1006 var1) {
+   private void method4830(MobEntity var1) {
       int var4 = this.method4828();
       if (var1.attackEntityFrom(DamageSource.method31115(this), (float)(1 + var4))) {
          var1.addPotionEffect(new EffectInstance(Effects.POISON, 60 * var4, 0));

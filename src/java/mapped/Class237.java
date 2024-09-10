@@ -2,7 +2,7 @@ package mapped;
 
 import net.minecraft.util.ResourceLocation;
 
-public class Class237<T extends Class1006 & Class1022, M extends Class2827<T>> extends Class219<T, M> {
+public class Class237<T extends MobEntity & Class1022, M extends Class2827<T>> extends Class219<T, M> {
    private static final ResourceLocation field887 = new ResourceLocation("textures/entity/skeleton/stray_overlay.png");
    private final Class2798<T> field888 = new Class2798<T>(0.25F, true);
 

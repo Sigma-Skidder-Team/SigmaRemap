@@ -113,7 +113,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public void method4258() {
+   public void updateAITasks() {
       this.world.getProfiler().startSection("hoglinBrain");
       this.getBrain().method21432((ServerWorld)this.world, this);
       this.world.getProfiler().endSection();

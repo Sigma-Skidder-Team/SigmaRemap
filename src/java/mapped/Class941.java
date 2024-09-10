@@ -15,7 +15,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
-public class Class941 extends Class939 implements Class942, Class935 {
+public class Class941 extends Class939 implements Class942, ITickableTileEntity {
    private NonNullList<ItemStack> field5312 = NonNullList.<ItemStack>method68(27, ItemStack.EMPTY);
    public float field5313;
    public float field5314;

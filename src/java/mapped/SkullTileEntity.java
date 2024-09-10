@@ -12,7 +12,7 @@ import net.minecraft.tileentity.TileEntity;
 import javax.annotation.Nullable;
 import java.util.UUID;
 
-public class SkullTileEntity extends TileEntity implements Class935 {
+public class SkullTileEntity extends TileEntity implements ITickableTileEntity {
    private static PlayerProfileCache field5424;
    private static MinecraftSessionService field5425;
    private GameProfile field5426;

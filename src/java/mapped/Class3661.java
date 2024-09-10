@@ -16,7 +16,7 @@ public class Class3661 extends Class3639 {
          var1,
          var2,
          () -> DSL.optionalFields(
-               "Items", DSL.list(Class8239.field35387.in(var0)), "RecipesUsed", DSL.compoundList(Class8239.field35398.in(var0), DSL.constType(DSL.intType()))
+               "Items", DSL.list(TypeReferences.field35387.in(var0)), "RecipesUsed", DSL.compoundList(TypeReferences.field35398.in(var0), DSL.constType(DSL.intType()))
             )
       );
    }

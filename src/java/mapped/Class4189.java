@@ -18,7 +18,7 @@ public class Class4189 extends Class4188 {
       this.field20444 = new Class9764(var3, 50, var4, var3 + 7 + var2.nextInt(6), 54 + var2.nextInt(6), var4 + 7 + var2.nextInt(6));
    }
 
-   public Class4189(Class8761 var1, CompoundNBT var2) {
+   public Class4189(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33427, var2);
       ListNBT var5 = var2.method131("Entrances", 11);
 

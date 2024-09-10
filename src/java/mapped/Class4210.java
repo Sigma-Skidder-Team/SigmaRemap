@@ -17,7 +17,7 @@ public class Class4210 extends Class4209 {
       super(Class7792.field33461, var1, var2, 64, var3, 7, 7, 9);
    }
 
-   public Class4210(Class8761 var1, CompoundNBT var2) {
+   public Class4210(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33461, var2);
       this.field20520 = var2.getBoolean("Witch");
       this.field20521 = var2.getBoolean("Cat");

@@ -14,7 +14,7 @@ public class Class8759 extends DataFix {
 
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
-         "OptionsLowerCaseLanguageFix", this.getInputSchema().getType(Class8239.field35380), var0 -> var0.update(DSL.remainderFinder(), var0x -> {
+         "OptionsLowerCaseLanguageFix", this.getInputSchema().getType(TypeReferences.field35380), var0 -> var0.update(DSL.remainderFinder(), var0x -> {
                Optional var3 = var0x.get("lang").asString().result();
                return !var3.isPresent() ? var0x : var0x.set("lang", var0x.createString(((String)var3.get()).toLowerCase(Locale.ROOT)));
             })

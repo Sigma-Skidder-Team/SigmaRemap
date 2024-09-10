@@ -24,16 +24,16 @@ public class Class1107 extends Class1009 {
    @Override
    public void method4219() {
       this.field6080 = new Class2753(this);
-      this.field5600.method20002(1, new Class2603(this));
-      this.field5600.method20002(3, this.field6080);
-      this.field5600.method20002(4, new Class2647(this, 1.0, false));
-      this.field5600.method20002(5, new Class2744(this));
-      this.field5601.method20002(1, new Class2704(this).method10918());
-      this.field5601.method20002(2, new Class2709<PlayerEntity>(this, PlayerEntity.class, true));
+      this.field5600.addGoal(1, new Class2603(this));
+      this.field5600.addGoal(3, this.field6080);
+      this.field5600.addGoal(4, new Class2647(this, 1.0, false));
+      this.field5600.addGoal(5, new Class2744(this));
+      this.field5601.addGoal(1, new HurtByTargetGoal(this).method10918());
+      this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
    }
 
    @Override
-   public double method2894() {
+   public double getYOffset() {
       return 0.1;
    }
 

@@ -99,9 +99,9 @@ public class LeashKnotEntity extends Class995 {
       } else {
          boolean var5 = false;
          double var6 = 7.0;
-         List<Class1006> var8 = this.world
-            .<Class1006>method7182(
-               Class1006.class,
+         List<MobEntity> var8 = this.world
+            .<MobEntity>method7182(
+               MobEntity.class,
                new AxisAlignedBB(
                   this.getPosX() - 7.0,
                   this.getPosY() - 7.0,
@@ -112,7 +112,7 @@ public class LeashKnotEntity extends Class995 {
                )
             );
 
-         for (Class1006 var10 : var8) {
+         for (MobEntity var10 : var8) {
             if (var10.method4297() == var1) {
                var10.method4298(this, true);
                var5 = true;
@@ -122,7 +122,7 @@ public class LeashKnotEntity extends Class995 {
          if (!var5) {
             this.remove();
             if (var1.abilities.isCreativeMode) {
-               for (Class1006 var12 : var8) {
+               for (MobEntity var12 : var8) {
                   if (var12.method4296() && var12.method4297() == this) {
                      var12.method4294(true, false);
                   }

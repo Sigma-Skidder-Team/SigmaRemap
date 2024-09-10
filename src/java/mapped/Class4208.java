@@ -18,7 +18,7 @@ public class Class4208 extends Class4194 {
       this.field20515 = var3 != Direction.NORTH && var3 != Direction.SOUTH ? var2.method38398() : var2.method38400();
    }
 
-   public Class4208(Class8761 var1, CompoundNBT var2) {
+   public Class4208(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33445, var2);
       this.field20515 = var2.getInt("Steps");
    }

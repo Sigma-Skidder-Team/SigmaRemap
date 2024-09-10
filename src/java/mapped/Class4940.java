@@ -14,7 +14,7 @@ public class Class4940 extends Class4936<Class4685> {
    }
 
    public Class4685 method15251(JsonObject var1, JsonDeserializationContext var2, int var3, int var4, ILootCondition[] var5, ILootFunction[] var6) {
-      ResourceLocation var9 = new ResourceLocation(JSONUtils.method32763(var1, "name"));
+      ResourceLocation var9 = new ResourceLocation(JSONUtils.getString(var1, "name"));
       ITag var10 = Class9443.method36296().method32658().get(var9);
       if (var10 != null) {
          boolean var11 = JSONUtils.method32768(var1, "expand");

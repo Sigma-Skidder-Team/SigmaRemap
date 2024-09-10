@@ -23,7 +23,7 @@ public class Class5843 extends Slot {
 
    @Override
    public boolean isItemValid(ItemStack var1) {
-      return this.field25588 == Class1006.method4271(var1);
+      return this.field25588 == MobEntity.method4271(var1);
    }
 
    @Override

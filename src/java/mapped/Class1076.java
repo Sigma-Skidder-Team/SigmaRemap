@@ -141,7 +141,7 @@ public class Class1076 extends AbstractHorseEntity {
          if (!var1) {
             this.field5600.method20003(this.field5919);
          } else {
-            this.field5600.method20002(1, this.field5919);
+            this.field5600.addGoal(1, this.field5919);
          }
       }
    }

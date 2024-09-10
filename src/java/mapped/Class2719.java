@@ -3,7 +3,7 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 
-public class Class2719 extends Class2709<LivingEntity> {
+public class Class2719 extends NearestAttackableTargetGoal<LivingEntity> {
    private static String[] field17187;
 
    public Class2719(Class1057 var1) {

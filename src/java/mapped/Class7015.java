@@ -90,9 +90,9 @@ public class Class7015 implements Class7016 {
    private void method21744(ServerWorld var1) {
       Vector3d var4 = this.method21745(var1, new BlockPos(this.field30314, this.field30315, this.field30316));
       if (var4 != null) {
-         Class1038 var5;
+         ZombieEntity var5;
          try {
-            var5 = new Class1038(var1);
+            var5 = new ZombieEntity(var1);
             var5.method4276(var1, var1.method6807(var5.getPosition()), Class2202.field14398, (Class5093)null, (CompoundNBT)null);
          } catch (Exception var7) {
             field30309.warn("Failed to create zombie for village siege at {}", var4, var7);

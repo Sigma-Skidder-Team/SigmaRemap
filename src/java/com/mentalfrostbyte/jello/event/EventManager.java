@@ -11,7 +11,7 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public class EventManager {
-    public final Map<Class<? extends Event>, MethodWrapper[]> field31401 = new HashMap<Class<? extends Event>, MethodWrapper[]>();
+    public final Map<Class<? extends Event>, MethodWrapper[]> eventList = new HashMap<Class<? extends Event>, MethodWrapper[]>();
     public final Map<Class<? extends Module>, Map<Class<? extends Event>, List<MethodWrapper>>> field31402 = new HashMap<>();
     public int field31403 = 0;
     public long field31404 = System.currentTimeMillis();
@@ -46,7 +46,7 @@ public class EventManager {
 
     public boolean method23211(MethodWrapper[] var1, Class<?> var2, MethodWrapper var3) {
         try {
-            Method var6 = var3.method29022().getClass().getMethod(var3.method29025().getName(), var3.method29025().getParameterTypes());
+            Method var6 = var3.getOBjecct().getClass().getMethod(var3.method29025().getName(), var3.method29025().getParameterTypes());
             return !this.method23210(var1, var3) && (var6.getDeclaringClass() == var2 || !this.isEventMethod(var6));
         } catch (NoSuchMethodException var7) {
             return true;
@@ -78,9 +78,9 @@ public class EventManager {
             for (Entry<Class<? extends Event>, List<MethodWrapper>> var6 : var4.entrySet()) {
                 Class<? extends Event> var7 = var6.getKey();
                 Set<MethodWrapper> var8 = new LinkedHashSet<>(var6.getValue());
-                MethodWrapper[] var9 = this.field31401.getOrDefault(var7, new MethodWrapper[0]);
+                MethodWrapper[] var9 = this.eventList.getOrDefault(var7, new MethodWrapper[0]);
                 var8.addAll(Arrays.asList(var9));
-                this.field31401.put(var7, this.filterByPriority(var8.toArray(var9)));
+                this.eventList.put(var7, this.filterByPriority(var8.toArray(var9)));
             }
         }
     }
@@ -91,10 +91,10 @@ public class EventManager {
             for (Entry<Class<? extends Event>, List<MethodWrapper>> var6 : var4.entrySet()) {
                 Class<? extends Event> var7 = var6.getKey();
                 List<MethodWrapper> var8 = var6.getValue();
-                Set<MethodWrapper> var9 = new LinkedHashSet<>(Arrays.asList(this.field31401.getOrDefault(var7,
+                Set<MethodWrapper> var9 = new LinkedHashSet<>(Arrays.asList(this.eventList.getOrDefault(var7,
                         new MethodWrapper[0])));
                 var9.removeAll(var8);
-                this.field31401.put(var7, var9.toArray(new MethodWrapper[0]));
+                this.eventList.put(var7, var9.toArray(new MethodWrapper[0]));
             }
         }
 
@@ -111,7 +111,7 @@ public class EventManager {
                         var9.setAccessible(true);
                         Priority var10 = this.getMethodPriority(var9);
                         Class<? extends Event> var11 = (Class<? extends Event>) var9.getParameterTypes()[0];
-                        MethodWrapper[] var12 = this.field31401.computeIfAbsent(var11, k -> new MethodWrapper[0]);
+                        MethodWrapper[] var12 = this.eventList.computeIfAbsent(var11, k -> new MethodWrapper[0]);
 
                         MethodWrapper var13 = new MethodWrapper(var1, var5, var9, var10);
                         if (this.method23211(var12, var5, var13)) {
@@ -119,7 +119,7 @@ public class EventManager {
                             if (!var14) {
                                 var12 = Arrays.copyOf(var12, var12.length + 1);
                                 var12[var12.length - 1] = var13;
-                                this.field31401.put(var11, this.filterByPriority(var12));
+                                this.eventList.put(var11, this.filterByPriority(var12));
                                 var4 = true;
                             } else if (!var13.method29027()) {
                                 Map<Class<? extends Event>, List<MethodWrapper>> var15 = this.field31402.getOrDefault(var5, new HashMap<Class<? extends Event>, List<MethodWrapper>>());
@@ -142,19 +142,23 @@ public class EventManager {
     }
 
     public void method23217() {
-        this.field31401.values().removeIf(var4 -> var4.length == 0);
+        this.eventList.values().removeIf(var4 -> var4.length == 0);
     }
 
-    public void call(Event var1) {
-        if (var1 != null) {
-            MethodWrapper[] var4 = this.field31401.get(var1.getClass());
+    public void call(Event event) {
+        if (event != null) {
+            MethodWrapper[] var4 = this.eventList.get(event.getClass());
             if (var4 != null) {
                 int var5 = var4.length;
 
                 try {
                     for (int var6 = 0; var6 < var5; var6++) {
                         MethodWrapper var7 = var4[var6];
-                        var7.method29024().method31519(var7.method29022(), var1);
+                        if (var7.getReflection() != null) {
+                            var7.getReflection().method31519(var7.getOBjecct(), event);
+                        } else {
+                            System.out.println("null->  " + var7.getOBjecct());
+                        }
                     }
                 } catch (Exception var8) {
                     var8.printStackTrace();

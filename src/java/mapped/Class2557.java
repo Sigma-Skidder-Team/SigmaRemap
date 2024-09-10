@@ -31,7 +31,7 @@ public class Class2557 implements JsonDeserializer<Class1903> {
    }
 
    public ResourceLocation method10751(JsonObject var1) {
-      return new ResourceLocation(JSONUtils.method32763(var1, "model"));
+      return new ResourceLocation(JSONUtils.getString(var1, "model"));
    }
 
    public int method10752(JsonObject var1) {

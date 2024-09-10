@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 public abstract class Class6990 {
-   public final Class1006 field30243;
+   public final MobEntity field30243;
    public final World field30244;
    public Class8238 field30245;
    public double field30246;
@@ -36,7 +36,7 @@ public abstract class Class6990 {
    private final Class9597 field30261;
    private boolean field30262;
 
-   public Class6990(Class1006 var1, World var2) {
+   public Class6990(MobEntity var1, World var2) {
       this.field30243 = var1;
       this.field30244 = var2;
       int var5 = MathHelper.floor(var1.getAttributeValue(Attributes.field42106) * 16.0);

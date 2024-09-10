@@ -416,7 +416,7 @@ public class Class9748 {
                   } else {
                      ServerPlayerEntity var4x = (ServerPlayerEntity)var1;
                      Class8019 var5x = var4x.method2823();
-                     Class285 var6x = var4x.method3396().method1396();
+                     AdvancementManager var6x = var4x.method3396().method1396();
 
                      for (Entry var8x : var4.entrySet()) {
                         Advancement var9x = var6x.method1065((ResourceLocation)var8x.getKey());

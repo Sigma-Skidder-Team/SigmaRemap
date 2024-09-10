@@ -11,7 +11,7 @@ public class Class4931 implements ILootSerializer<Class157> {
    }
 
    public Class157 method15248(JsonObject var1, JsonDeserializationContext var2) {
-      ResourceLocation var5 = new ResourceLocation(JSONUtils.method32763(var1, "name"));
+      ResourceLocation var5 = new ResourceLocation(JSONUtils.getString(var1, "name"));
       return new Class157(var5);
    }
 }

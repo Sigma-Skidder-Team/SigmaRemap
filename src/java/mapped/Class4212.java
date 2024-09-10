@@ -19,7 +19,7 @@ public class Class4212 extends Class4209 {
       super(Class7792.field33457, var1, var2, 64, var3, 12, 10, 15);
    }
 
-   public Class4212(Class8761 var1, CompoundNBT var2) {
+   public Class4212(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33457, var2);
       this.field20523 = var2.getBoolean("placedMainChest");
       this.field20524 = var2.getBoolean("placedHiddenChest");

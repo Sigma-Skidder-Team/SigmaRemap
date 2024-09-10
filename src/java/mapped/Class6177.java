@@ -13,7 +13,7 @@ public class Class6177 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(Class8239.field35395);
+      Type var3 = this.getInputSchema().getType(TypeReferences.field35395);
       return this.fixTypeEverywhereTyped("Structure Reference Fix", var3, var0 -> var0.update(DSL.remainderFinder(), Class6177::method19085));
    }
 

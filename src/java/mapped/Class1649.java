@@ -59,7 +59,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    private final Class7243 field8967;
    private final Class9306 field8968;
    private final AtomicInteger field8969 = new AtomicInteger();
-   private final Class8761 field8970;
+   private final TemplateManager field8970;
    private final File field8971;
    private final Class6858 field8972 = new Class6858();
    private final Int2ObjectMap<Class8998> field8973 = new Int2ObjectOpenHashMap();
@@ -71,7 +71,7 @@ public class Class1649 extends Class1648 implements Class1650 {
       ServerWorld var1,
       SaveFormat.LevelSave var2,
       DataFixer var3,
-      Class8761 var4,
+      TemplateManager var4,
       Executor var5,
       Class318<Runnable> var6,
       Class1704 var7,
@@ -990,7 +990,7 @@ public class Class1649 extends Class1648 implements Class1650 {
            Entity var10 = Class8998.method33247(var9);
            if (var10 != var1 && var10.chunkCoordX == var3.method7072().field32174 && var10.chunkCoordZ == var3.method7072().field32175) {
                var9.method33243(var1);
-               if (var10 instanceof Class1006 && ((Class1006) var10).method4297() != null) {
+               if (var10 instanceof MobEntity && ((MobEntity) var10).method4297() != null) {
                    var6.add(var10);
                }
 
@@ -1002,7 +1002,7 @@ public class Class1649 extends Class1648 implements Class1650 {
 
       if (!var6.isEmpty()) {
          for (Entity var13 : var6) {
-            var1.field4855.sendPacket(new SMountEntityPacket(var13, ((Class1006)var13).method4297()));
+            var1.field4855.sendPacket(new SMountEntityPacket(var13, ((MobEntity)var13).method4297()));
          }
       }
 

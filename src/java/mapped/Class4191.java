@@ -17,7 +17,7 @@ public class Class4191 extends Class4188 {
    private boolean field20485;
    private final int field20486;
 
-   public Class4191(Class8761 var1, CompoundNBT var2) {
+   public Class4191(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33425, var2);
       this.field20483 = var2.getBoolean("hr");
       this.field20484 = var2.getBoolean("sc");

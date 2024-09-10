@@ -28,7 +28,7 @@ public class Class7972 {
       var7.field31035 = MathHelper.lerp(var10, var7.field31035, (float) (-Math.PI / 2));
    }
 
-   public static <T extends Class1006> void method27107(Class7219 var0, Class7219 var1, T var2, float var3, float var4) {
+   public static <T extends MobEntity> void method27107(Class7219 var0, Class7219 var1, T var2, float var3, float var4) {
       float var7 = MathHelper.sin(var3 * (float) Math.PI);
       float var8 = MathHelper.sin((1.0F - (1.0F - var3) * (1.0F - var3)) * (float) Math.PI);
       var0.field31037 = 0.0F;

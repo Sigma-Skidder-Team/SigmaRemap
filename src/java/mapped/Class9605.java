@@ -41,7 +41,7 @@ public class Class9605 extends DataFix {
 
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
-         "WorldGenSettings building", this.getInputSchema().getType(Class8239.field35400), var0 -> var0.update(DSL.remainderFinder(), Class9605::method37318)
+         "WorldGenSettings building", this.getInputSchema().getType(TypeReferences.field35400), var0 -> var0.update(DSL.remainderFinder(), Class9605::method37318)
       );
    }
 

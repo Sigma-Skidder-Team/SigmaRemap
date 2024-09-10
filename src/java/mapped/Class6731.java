@@ -6,7 +6,7 @@ import com.mojang.datafixers.schemas.Schema;
 
 public class Class6731 extends Class6717 {
    public Class6731(Schema var1, boolean var2) {
-      super(var1, var2, "BlockEntityShulkerBoxColorFix", Class8239.field35386, "minecraft:shulker_box");
+      super(var1, var2, "BlockEntityShulkerBoxColorFix", TypeReferences.field35386, "minecraft:shulker_box");
    }
 
    @Override

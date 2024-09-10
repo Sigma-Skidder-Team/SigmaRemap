@@ -12,7 +12,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 import java.util.Arrays;
 
-public class Class931 extends Class932 implements Class930, Class935 {
+public class Class931 extends Class932 implements Class930, ITickableTileEntity {
    private static final int[] field5270 = new int[]{3};
    private static final int[] field5271 = new int[]{0, 1, 2, 3};
    private static final int[] field5272 = new int[]{0, 1, 2, 4};

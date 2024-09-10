@@ -7,7 +7,7 @@ import com.mojang.serialization.Dynamic;
 
 public class Class7117 extends Class7114 {
    public Class7117(Schema var1) {
-      super(var1, Class8239.field35376);
+      super(var1, TypeReferences.field35376);
    }
 
    public TypeRewriteRule makeRule() {

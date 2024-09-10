@@ -193,7 +193,7 @@ public abstract class ChunkGenerator {
       return var1.method32499().method31968(var3);
    }
 
-   public void method17825(DynamicRegistries var1, Class7480 var2, IChunk var3, Class8761 var4, long var5) {
+   public void method17825(DynamicRegistries var1, Class7480 var2, IChunk var3, TemplateManager var4, long var5) {
       ChunkPos var9 = var3.method7072();
       Biome var10 = this.field24985.method7005((var9.field32174 << 2) + 2, 0, (var9.field32175 << 2) + 2);
       this.method17826(Class9438.field43844, var1, var2, var3, var4, var5, var9, var10);
@@ -203,7 +203,7 @@ public abstract class ChunkGenerator {
       }
    }
 
-   private void method17826(Class9300<?, ?> var1, DynamicRegistries var2, Class7480 var3, IChunk var4, Class8761 var5, long var6, ChunkPos var8, Biome var9) {
+   private void method17826(Class9300<?, ?> var1, DynamicRegistries var2, Class7480 var3, IChunk var4, TemplateManager var5, long var6, ChunkPos var8, Biome var9) {
       Class5444 var12 = var3.method24341(Class2002.method8391(var4.method7072(), 0), var1.field43174, var4);
       int var13 = var12 == null ? 0 : var12.method17123();
       Class8483 var14 = this.field24987.method38381(var1.field43174);

@@ -50,7 +50,7 @@ public class Class6765 extends Class6764 {
    }
 
    @Override
-   public Class2163 method20629(IBlockReader var1, int var2, int var3, int var4, Class1006 var5, int var6, int var7, int var8, boolean var9, boolean var10) {
+   public Class2163 method20629(IBlockReader var1, int var2, int var3, int var4, MobEntity var5, int var6, int var7, int var8, boolean var9, boolean var10) {
       return this.method20621(var1, var2, var3, var4);
    }
 

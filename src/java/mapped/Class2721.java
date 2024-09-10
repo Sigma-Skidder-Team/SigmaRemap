@@ -4,7 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.world.Difficulty;
 
-public class Class2721 extends Class2709<PlayerEntity> {
+public class Class2721 extends NearestAttackableTargetGoal<PlayerEntity> {
    private static String[] field17187;
    public final Class1057 field17207;
 

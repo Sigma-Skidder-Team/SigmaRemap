@@ -36,19 +36,19 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(0, new Class2603(this));
-      this.field5600.method20002(1, new Class2747(this, 1.25));
-      this.field5600.method20002(3, new Class2785(this, 1.0));
-      this.field5600.method20002(4, new Class2680(this, 1.2, Class120.method339(Items.field38064), false));
-      this.field5600.method20002(4, new Class2680(this, 1.2, false, field5914));
-      this.field5600.method20002(5, new Class2764(this, 1.1));
-      this.field5600.method20002(6, new Class2737(this, 1.0));
-      this.field5600.method20002(7, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.method20002(8, new Class2668(this));
+      this.field5600.addGoal(0, new Class2603(this));
+      this.field5600.addGoal(1, new Class2747(this, 1.25));
+      this.field5600.addGoal(3, new Class2785(this, 1.0));
+      this.field5600.addGoal(4, new Class2680(this, 1.2, Class120.method339(Items.field38064), false));
+      this.field5600.addGoal(4, new Class2680(this, 1.2, false, field5914));
+      this.field5600.addGoal(5, new Class2764(this, 1.1));
+      this.field5600.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.field5600.addGoal(7, new Class2612(this, PlayerEntity.class, 6.0F));
+      this.field5600.addGoal(8, new Class2668(this));
    }
 
    public static Class7037 method4989() {
-      return Class1006.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
+      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Nullable
@@ -199,7 +199,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
       if (var1.method6997() == Difficulty.field14351) {
          super.method3353(var1, var2);
       } else {
-         Class1063 var5 = EntityType.field41110.create(var1);
+         ZombifiedPiglinEntity var5 = EntityType.field41110.create(var1);
          var5.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37815));
          var5.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var5.method4302(this.method4305());

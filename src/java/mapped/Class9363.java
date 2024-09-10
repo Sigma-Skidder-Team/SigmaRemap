@@ -6,11 +6,11 @@ import net.minecraft.entity.Entity;
 import java.util.List;
 
 public class Class9363 {
-   private final Class1006 field43441;
+   private final MobEntity field43441;
    private final List<Entity> field43442 = Lists.newArrayList();
    private final List<Entity> field43443 = Lists.newArrayList();
 
-   public Class9363(Class1006 var1) {
+   public Class9363(MobEntity var1) {
       this.field43441 = var1;
    }
 

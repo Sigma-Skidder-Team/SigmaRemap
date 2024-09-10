@@ -83,7 +83,7 @@ public class Class8522 {
                         }
                      }
 
-                     if (!this.field38244 && var1 instanceof Class1006 && !((Class1006)var1).method4231().method35460(var2)) {
+                     if (!this.field38244 && var1 instanceof MobEntity && !((MobEntity)var1).method4231().method35460(var2)) {
                         return false;
                      }
                   }

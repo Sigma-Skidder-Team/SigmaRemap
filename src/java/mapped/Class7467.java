@@ -19,7 +19,7 @@ public class Class7467 extends DataFix {
    public TypeRewriteRule makeRule() {
       OpticFinder var3 = DSL.fieldFinder("id", Class3639.method12354());
       return this.fixTypeEverywhereTyped(
-         "EntityCustomNameToComponentFix", this.getInputSchema().getType(Class8239.field35391), var1 -> var1.update(DSL.remainderFinder(), var2 -> {
+         "EntityCustomNameToComponentFix", this.getInputSchema().getType(TypeReferences.ENTITY), var1 -> var1.update(DSL.remainderFinder(), var2 -> {
                Optional var5 = var1.getOptional(var3);
                return var5.isPresent() && Objects.equals(var5.get(), "minecraft:commandblock_minecart") ? var2 : method24180(var2);
             })

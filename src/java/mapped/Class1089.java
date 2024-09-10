@@ -31,14 +31,14 @@ public class Class1089 extends Class1018 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(0, new Class2603(this));
-      this.field5600.method20002(1, new Class2747(this, 1.4));
-      this.field5600.method20002(2, new Class2785(this, 1.0));
-      this.field5600.method20002(3, new Class2680(this, 1.0, false, field5964));
-      this.field5600.method20002(4, new Class2764(this, 1.1));
-      this.field5600.method20002(5, new Class2737(this, 1.0));
-      this.field5600.method20002(6, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.method20002(7, new Class2668(this));
+      this.field5600.addGoal(0, new Class2603(this));
+      this.field5600.addGoal(1, new Class2747(this, 1.4));
+      this.field5600.addGoal(2, new Class2785(this, 1.0));
+      this.field5600.addGoal(3, new Class2680(this, 1.0, false, field5964));
+      this.field5600.addGoal(4, new Class2764(this, 1.1));
+      this.field5600.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.field5600.addGoal(6, new Class2612(this, PlayerEntity.class, 6.0F));
+      this.field5600.addGoal(7, new Class2668(this));
    }
 
    @Override
@@ -47,7 +47,7 @@ public class Class1089 extends Class1018 {
    }
 
    public static Class7037 method5069() {
-      return Class1006.method4220().method21849(Attributes.field42105, 4.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
+      return MobEntity.method4220().method21849(Attributes.field42105, 4.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override
@@ -142,7 +142,7 @@ public class Class1089 extends Class1018 {
       float var5 = MathHelper.cos(this.renderYawOffset * (float) (Math.PI / 180.0));
       float var6 = 0.1F;
       float var7 = 0.0F;
-      var1.setPosition(this.getPosX() + (double)(0.1F * var4), this.getPosYHeight(0.5) + var1.method2894() + 0.0, this.getPosZ() - (double)(0.1F * var5));
+      var1.setPosition(this.getPosX() + (double)(0.1F * var4), this.getPosYHeight(0.5) + var1.getYOffset() + 0.0, this.getPosZ() - (double)(0.1F * var5));
       if (var1 instanceof LivingEntity) {
          ((LivingEntity)var1).renderYawOffset = this.renderYawOffset;
       }

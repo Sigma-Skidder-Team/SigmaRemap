@@ -20,7 +20,7 @@ public class Class8823 extends DataFix {
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
          this.field39785,
-         this.getInputSchema().getType(Class8239.field35384),
+         this.getInputSchema().getType(TypeReferences.field35384),
          var1 -> var1.update(DSL.remainderFinder(), var1x -> var1x.updateMapValues(var2 -> {
                   String var5 = ((Dynamic)var2.getFirst()).asString("");
                   return var2.mapFirst(var3 -> var1x.createString(this.field39786.apply(var5)));

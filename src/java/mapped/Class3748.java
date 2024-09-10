@@ -6,7 +6,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
 
-public class Class3748<E extends Class1006> extends Class3676<E> {
+public class Class3748<E extends MobEntity> extends Class3676<E> {
    private static String[] field19893;
    private final int field19894;
    private final float field19895;
@@ -28,7 +28,7 @@ public class Class3748<E extends Class1006> extends Class3676<E> {
       this.field19895 = var2;
    }
 
-   public void method12502(ServerWorld var1, Class1006 var2, long var3) {
+   public void method12502(ServerWorld var1, MobEntity var2, long var3) {
       BlockPos var7 = method12709(var2);
       boolean var8 = var7.method8316(var2.getPosition(), (double)this.field19894);
       if (!var8) {
@@ -36,7 +36,7 @@ public class Class3748<E extends Class1006> extends Class3676<E> {
       }
    }
 
-   private static BlockPos method12707(Class1006 var0, BlockPos var1) {
+   private static BlockPos method12707(MobEntity var0, BlockPos var1) {
       Random var4 = var0.world.rand;
       return var1.method8336(method12708(var4), 0, method12708(var4));
    }
@@ -45,7 +45,7 @@ public class Class3748<E extends Class1006> extends Class3676<E> {
       return var0.nextInt(3) - 1;
    }
 
-   private static BlockPos method12709(Class1006 var0) {
+   private static BlockPos method12709(MobEntity var0) {
       return var0.getBrain().<BlockPos>method21410(Class8830.field39856).get();
    }
 }

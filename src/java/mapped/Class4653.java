@@ -6,7 +6,7 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
 
-public abstract class Class4653 extends Class4655 {
+public abstract class Class4653 extends EntityRename {
    public Class4653(String var1, Schema var2, boolean var3) {
       super(var1, var2, var3);
    }

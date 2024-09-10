@@ -12,7 +12,7 @@ public class Class4941 extends Class4936<Class4687> {
    }
 
    public Class4687 method15251(JsonObject var1, JsonDeserializationContext var2, int var3, int var4, ILootCondition[] var5, ILootFunction[] var6) {
-      ResourceLocation var9 = new ResourceLocation(JSONUtils.method32763(var1, "name"));
+      ResourceLocation var9 = new ResourceLocation(JSONUtils.getString(var1, "name"));
       return new Class4687(var9, var3, var4, var5, var6);
    }
 }

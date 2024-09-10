@@ -69,38 +69,38 @@ public class Class1095 extends Class1018 {
 
    @Override
    public void method4219() {
-      this.field6001 = new Class2709<Class1018>(this, Class1018.class, 10, false, false, var0 -> var0 instanceof Class1089 || var0 instanceof Class1094);
-      this.field6002 = new Class2709<Class1088>(this, Class1088.class, 10, false, false, Class1088.field5963);
-      this.field6003 = new Class2709<Class1049>(this, Class1049.class, 20, false, false, var0 -> var0 instanceof AbstractGroupFishEntity);
-      this.field5600.method20002(0, new Class2604(this));
-      this.field5600.method20002(1, new Class2698(this));
-      this.field5600.method20002(2, new Class2750(this, 2.2));
-      this.field5600.method20002(3, new Class2786(this, 1.0));
+      this.field6001 = new NearestAttackableTargetGoal<Class1018>(this, Class1018.class, 10, false, false, var0 -> var0 instanceof Class1089 || var0 instanceof Class1094);
+      this.field6002 = new NearestAttackableTargetGoal<Class1088>(this, Class1088.class, 10, false, false, Class1088.field5963);
+      this.field6003 = new NearestAttackableTargetGoal<Class1049>(this, Class1049.class, 20, false, false, var0 -> var0 instanceof AbstractGroupFishEntity);
+      this.field5600.addGoal(0, new Class2604(this));
+      this.field5600.addGoal(1, new Class2698(this));
+      this.field5600.addGoal(2, new Class2750(this, 2.2));
+      this.field5600.addGoal(3, new Class2786(this, 1.0));
       this.field5600
-         .method20002(
+         .addGoal(
             4,
             new Class2770<PlayerEntity>(
                this, PlayerEntity.class, 16.0F, 1.6, 1.4, var1 -> field6000.test(var1) && !this.method5151(var1.getUniqueID()) && !this.method5133()
             )
          );
       this.field5600
-         .method20002(4, new Class2770<WolfEntity>(this, WolfEntity.class, 8.0F, 1.6, 1.4, var1 -> !((WolfEntity)var1).method4393() && !this.method5133()));
-      this.field5600.method20002(4, new Class2770<Class1096>(this, Class1096.class, 8.0F, 1.6, 1.4, var1 -> !this.method5133()));
-      this.field5600.method20002(5, new Class2729(this));
-      this.field5600.method20002(6, new Class2755(this));
-      this.field5600.method20002(6, new Class2641(this, 1.25));
-      this.field5600.method20002(7, new Class2650(this, 1.2F, true));
-      this.field5600.method20002(7, new Class2693(this));
-      this.field5600.method20002(8, new Class2765(this, this, 1.25));
-      this.field5600.method20002(9, new Class2609(this, 32, 200));
-      this.field5600.method20002(10, new Class2636(this, 1.2F, 12, 2));
-      this.field5600.method20002(10, new Class2745(this, 0.4F));
-      this.field5600.method20002(11, new Class2737(this, 1.0));
-      this.field5600.method20002(11, new Class2790(this));
-      this.field5600.method20002(12, new Class2614(this, PlayerEntity.class, 24.0F));
-      this.field5600.method20002(13, new Class2694(this));
+         .addGoal(4, new Class2770<WolfEntity>(this, WolfEntity.class, 8.0F, 1.6, 1.4, var1 -> !((WolfEntity)var1).method4393() && !this.method5133()));
+      this.field5600.addGoal(4, new Class2770<Class1096>(this, Class1096.class, 8.0F, 1.6, 1.4, var1 -> !this.method5133()));
+      this.field5600.addGoal(5, new Class2729(this));
+      this.field5600.addGoal(6, new Class2755(this));
+      this.field5600.addGoal(6, new Class2641(this, 1.25));
+      this.field5600.addGoal(7, new Class2650(this, 1.2F, true));
+      this.field5600.addGoal(7, new Class2693(this));
+      this.field5600.addGoal(8, new Class2765(this, this, 1.25));
+      this.field5600.addGoal(9, new Class2609(this, 32, 200));
+      this.field5600.addGoal(10, new Class2636(this, 1.2F, 12, 2));
+      this.field5600.addGoal(10, new Class2745(this, 0.4F));
+      this.field5600.addGoal(11, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.field5600.addGoal(11, new Class2790(this));
+      this.field5600.addGoal(12, new Class2614(this, PlayerEntity.class, 24.0F));
+      this.field5600.addGoal(13, new Class2694(this));
       this.field5601
-         .method20002(3, new Class2714(LivingEntity.class, false, false, var1 -> field5998.test(var1) && !this.method5151(var1.getUniqueID())));
+         .addGoal(3, new Class2714(LivingEntity.class, false, false, var1 -> field5998.test(var1) && !this.method5151(var1.getUniqueID())));
    }
 
    @Override
@@ -215,7 +215,7 @@ public class Class1095 extends Class1018 {
    }
 
    public static Class7037 method5123() {
-      return Class1006.method4220()
+      return MobEntity.method4220()
          .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
          .method21849(Attributes.field42105, 10.0)
          .method21849(Attributes.field42106, 32.0)
@@ -258,13 +258,13 @@ public class Class1095 extends Class1018 {
 
    private void method5124() {
       if (this.method5125() != Class186.field691) {
-         this.field5601.method20002(4, this.field6003);
-         this.field5601.method20002(6, this.field6001);
-         this.field5601.method20002(6, this.field6002);
+         this.field5601.addGoal(4, this.field6003);
+         this.field5601.addGoal(6, this.field6001);
+         this.field5601.addGoal(6, this.field6002);
       } else {
-         this.field5601.method20002(4, this.field6001);
-         this.field5601.method20002(4, this.field6002);
-         this.field5601.method20002(6, this.field6003);
+         this.field5601.addGoal(4, this.field6001);
+         this.field5601.addGoal(4, this.field6002);
+         this.field5601.addGoal(6, this.field6003);
       }
    }
 
@@ -389,7 +389,7 @@ public class Class1095 extends Class1018 {
 
    @Override
    public boolean canPickUpItem(ItemStack var1) {
-      EquipmentSlotType var4 = Class1006.method4271(var1);
+      EquipmentSlotType var4 = MobEntity.method4271(var1);
       return !this.getItemStackFromSlot(var4).isEmpty() ? false : var4 == EquipmentSlotType.field13731 && super.canPickUpItem(var1);
    }
 
@@ -480,7 +480,7 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public void method4284(PlayerEntity var1, Class1006 var2) {
+   public void method4284(PlayerEntity var1, MobEntity var2) {
       ((Class1095)var2).method5128(var1.getUniqueID());
    }
 
@@ -720,7 +720,7 @@ public class Class1095 extends Class1018 {
 
    public class Class2614 extends Class2612 {
 
-      public Class2614(Class1006 var1, Class<? extends LivingEntity> var2, float var3) {
+      public Class2614(MobEntity var1, Class<? extends LivingEntity> var2, float var3) {
          super(var1, var2, var3);
       }
 
@@ -735,7 +735,7 @@ public class Class1095 extends Class1018 {
       }
    }
 
-   public class Class2714 extends Class2709<LivingEntity> {
+   public class Class2714 extends NearestAttackableTargetGoal<LivingEntity> {
       private LivingEntity field17201;
       private LivingEntity field17202;
       private int field17203;

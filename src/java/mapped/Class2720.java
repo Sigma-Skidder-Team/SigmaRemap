@@ -5,7 +5,7 @@ import net.minecraft.entity.player.PlayerEntity;
 
 import java.util.function.Predicate;
 
-public class Class2720 extends Class2709<PlayerEntity> {
+public class Class2720 extends NearestAttackableTargetGoal<PlayerEntity> {
    private static String[] field17187;
    public final Class1096 field17206;
 

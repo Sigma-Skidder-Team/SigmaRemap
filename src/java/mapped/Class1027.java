@@ -39,14 +39,14 @@ public class Class1027 extends Class1026 implements Class1022 {
          this, Class1026.class, true, var1 -> var1 != null && this.method4552() && var1.getType() != EntityType.field41101
       );
       this.field5723 = new Class2711<PlayerEntity>(this, PlayerEntity.class, 10, true, false, (Predicate<LivingEntity>)null);
-      this.field5600.method20002(1, new Class2603(this));
-      this.field5600.method20002(2, new Class2598(this, 1.0, 60, 10.0F));
-      this.field5600.method20002(2, new Class2737(this, 1.0));
-      this.field5600.method20002(3, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.method20002(3, new Class2668(this));
-      this.field5601.method20002(1, new Class2704(this, Class1026.class));
-      this.field5601.method20002(2, this.field5722);
-      this.field5601.method20002(3, this.field5723);
+      this.field5600.addGoal(1, new Class2603(this));
+      this.field5600.addGoal(2, new Class2598(this, 1.0, 60, 10.0F));
+      this.field5600.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.field5600.addGoal(3, new Class2612(this, PlayerEntity.class, 8.0F));
+      this.field5600.addGoal(3, new Class2668(this));
+      this.field5601.addGoal(1, new HurtByTargetGoal(this, Class1026.class));
+      this.field5601.addGoal(2, this.field5722);
+      this.field5601.addGoal(3, this.field5723);
    }
 
    @Override

@@ -19,10 +19,10 @@ public abstract class Class6319 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      TaggedChoiceType<String> var3 = (TaggedChoiceType<String>) this.getInputSchema().findChoiceType(Class8239.field35391);
-      TaggedChoiceType<String> var4 = (TaggedChoiceType<String>) this.getOutputSchema().findChoiceType(Class8239.field35391);
-      Type<Pair<String, String>> var5 = DSL.named(Class8239.field35389.typeName(), Class3639.method12354());
-      if (Objects.equals(this.getOutputSchema().getType(Class8239.field35389), var5)) {
+      TaggedChoiceType<String> var3 = (TaggedChoiceType<String>) this.getInputSchema().findChoiceType(TypeReferences.ENTITY);
+      TaggedChoiceType<String> var4 = (TaggedChoiceType<String>) this.getOutputSchema().findChoiceType(TypeReferences.ENTITY);
+      Type<Pair<String, String>> var5 = DSL.named(TypeReferences.field35389.typeName(), Class3639.method12354());
+      if (Objects.equals(this.getOutputSchema().getType(TypeReferences.field35389), var5)) {
          return TypeRewriteRule.seq(this.fixTypeEverywhere(this.field27828, var3, var4, var3x -> var3xx -> var3xx.mapFirst(var3xxx -> {
                   String var6 = this.method19259(var3xxx);
                   Type var7 = var3.types().get(var3xxx);

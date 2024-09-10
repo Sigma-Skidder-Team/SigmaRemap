@@ -23,9 +23,9 @@ public class Class1044 extends Class1043 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(0, new Class2603(this));
+      this.field5600.addGoal(0, new Class2603(this));
       this.field5600
-         .method20002(
+         .addGoal(
             0,
             new Class2596<Class1044>(
                this,
@@ -35,25 +35,25 @@ public class Class1044 extends Class1043 {
             )
          );
       this.field5600
-         .method20002(
+         .addGoal(
             0,
             new Class2596<Class1044>(this, new ItemStack(Items.field37891), SoundEvents.field27222, var1 -> this.world.method6740() && var1.isInvisible())
          );
-      this.field5600.method20002(1, new Class2781(this));
-      this.field5600.method20002(1, new Class2770<Class1038>(this, Class1038.class, 8.0F, 0.5, 0.5));
-      this.field5600.method20002(1, new Class2770<Class1032>(this, Class1032.class, 12.0F, 0.5, 0.5));
-      this.field5600.method20002(1, new Class2770<Class1030>(this, Class1030.class, 8.0F, 0.5, 0.5));
-      this.field5600.method20002(1, new Class2770<Class1100>(this, Class1100.class, 8.0F, 0.5, 0.5));
-      this.field5600.method20002(1, new Class2770<Class1024>(this, Class1024.class, 15.0F, 0.5, 0.5));
-      this.field5600.method20002(1, new Class2770<Class1033>(this, Class1033.class, 12.0F, 0.5, 0.5));
-      this.field5600.method20002(1, new Class2770<Class1093>(this, Class1093.class, 10.0F, 0.5, 0.5));
-      this.field5600.method20002(1, new Class2747(this, 0.5));
-      this.field5600.method20002(1, new Class2615(this));
-      this.field5600.method20002(2, new Class2789(this, this, 2.0, 0.35));
-      this.field5600.method20002(4, new Class2660(this, 0.35));
-      this.field5600.method20002(8, new Class2737(this, 0.35));
-      this.field5600.method20002(9, new Class2613(this, PlayerEntity.class, 3.0F, 1.0F));
-      this.field5600.method20002(10, new Class2612(this, Class1006.class, 8.0F));
+      this.field5600.addGoal(1, new Class2781(this));
+      this.field5600.addGoal(1, new Class2770<ZombieEntity>(this, ZombieEntity.class, 8.0F, 0.5, 0.5));
+      this.field5600.addGoal(1, new Class2770<Class1032>(this, Class1032.class, 12.0F, 0.5, 0.5));
+      this.field5600.addGoal(1, new Class2770<Class1030>(this, Class1030.class, 8.0F, 0.5, 0.5));
+      this.field5600.addGoal(1, new Class2770<Class1100>(this, Class1100.class, 8.0F, 0.5, 0.5));
+      this.field5600.addGoal(1, new Class2770<Class1024>(this, Class1024.class, 15.0F, 0.5, 0.5));
+      this.field5600.addGoal(1, new Class2770<Class1033>(this, Class1033.class, 12.0F, 0.5, 0.5));
+      this.field5600.addGoal(1, new Class2770<Class1093>(this, Class1093.class, 10.0F, 0.5, 0.5));
+      this.field5600.addGoal(1, new Class2747(this, 0.5));
+      this.field5600.addGoal(1, new Class2615(this));
+      this.field5600.addGoal(2, new Class2789(this, this, 2.0, 0.35));
+      this.field5600.addGoal(4, new Class2660(this, 0.35));
+      this.field5600.addGoal(8, new WaterAvoidingRandomWalkingGoal(this, 0.35));
+      this.field5600.addGoal(9, new Class2613(this, PlayerEntity.class, 3.0F, 1.0F));
+      this.field5600.addGoal(10, new Class2612(this, MobEntity.class, 8.0F));
    }
 
    @Nullable

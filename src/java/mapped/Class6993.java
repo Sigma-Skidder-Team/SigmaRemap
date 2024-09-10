@@ -8,7 +8,7 @@ public class Class6993 extends Class6991 {
    private static String[] field30263;
    private BlockPos field30266;
 
-   public Class6993(Class1006 var1, World var2) {
+   public Class6993(MobEntity var1, World var2) {
       super(var1, var2);
    }
 

@@ -114,19 +114,19 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    private long field1254;
    private boolean field1255;
    private boolean field1256;
-   private final ResourcePackList field1257;
+   private final ResourcePackList resourcePacks;
    private final Class6887 field1258 = new Class6887(this);
    private Class8962 field1259;
    private final Class8426 field1260 = new Class8426();
-   private final Class7268 field1261;
+   private final FunctionManager functionManager;
    private final FrameTimer field1262 = new FrameTimer();
    private boolean field1263;
    private float field1264;
-   private final Executor field1265;
+   private final Executor backgroundExecutor;
    private String field1266;
-   private DataPackRegistries field1267;
-   private final Class8761 field1268;
-   public final IServerConfiguration field1269;
+   private DataPackRegistries resourceManager;
+   private final TemplateManager field_240765_ak_;
+   public final IServerConfiguration field_240768_i_;
 
    public static <S extends MinecraftServer> S func_240784_a_(Function<Thread, S> p_240784_0_) {
       AtomicReference<S> atomicreference = new AtomicReference<>();
@@ -154,10 +154,10 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    ) {
       super("Server");
       this.field1224 = var2;
-      this.field1269 = var4;
+      this.field_240768_i_ = var4;
       this.field1230 = var6;
-      this.field1257 = var5;
-      this.field1267 = var8;
+      this.resourcePacks = var5;
+      this.resourceManager = var8;
       this.field1248 = var9;
       this.field1249 = var10;
       this.field1250 = var11;
@@ -166,10 +166,10 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       this.field1211 = var3;
       this.field1212 = var3.method7994();
       this.field1221 = var7;
-      this.field1261 = new Class7268(this, var8.method7330());
-      this.field1268 = new Class8761(var8.getResourceManager(), var3, var7);
+      this.functionManager = new FunctionManager(this, var8.getFunctionReloader());
+      this.field_240765_ak_ = new TemplateManager(var8.getResourceManager(), var3, var7);
       this.field1252 = var1;
-      this.field1265 = Util.getServerExecutor();
+      this.backgroundExecutor = Util.getServerExecutor();
    }
 
    private void method1276(Class8250 var1) {
@@ -189,7 +189,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
    public void method1279() {
       this.method1285();
-      this.field1269.method20095(this.method1325(), this.method1327().isPresent());
+      this.field_240768_i_.method20095(this.method1325(), this.method1327().isPresent());
       Class7243 var3 = this.field1218.method28561(11);
       this.method1281(var3);
       this.method1280();
@@ -200,8 +200,8 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public void method1281(Class7243 var1) {
-      Class6608 var4 = this.field1269.method20098();
-      DimensionGeneratorSettings var5 = this.field1269.getDimensionGeneratorSettings();
+      Class6608 var4 = this.field_240768_i_.method20098();
+      DimensionGeneratorSettings var5 = this.field_240768_i_.getDimensionGeneratorSettings();
       boolean var6 = var5.method26267();
       long var7 = var5.method26259();
       long var9 = BiomeManager.method20321(var7);
@@ -220,7 +220,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          var15 = var13.method36413();
       }
 
-      ServerWorld var16 = new ServerWorld(this, this.field1265, this.field1211, var4, World.OVERWORLD, var14, var1, (ChunkGenerator)var15, var6, var9, var11, true);
+      ServerWorld var16 = new ServerWorld(this, this.backgroundExecutor, this.field1211, var4, World.OVERWORLD, var14, var1, (ChunkGenerator)var15, var6, var9, var11, true);
       this.field1225.put(World.OVERWORLD, var16);
       Class8250 var17 = var16.method6945();
       this.method1276(var17);
@@ -232,7 +232,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
             method1282(var16, var4, var5.method26261(), var6, true);
             var4.method20071(true);
             if (var6) {
-               this.method1283(this.field1269);
+               this.method1283(this.field_240768_i_);
             }
          } catch (Throwable var28) {
             CrashReport var20 = CrashReport.makeCrashReport(var28, "Exception initializing level");
@@ -249,8 +249,8 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       }
 
       this.getPlayerList().method19447(var16);
-      if (this.field1269.method20093() != null) {
-         this.method1414().method29606(this.field1269.method20093());
+      if (this.field_240768_i_.method20093() != null) {
+         this.method1414().method29606(this.field_240768_i_.method20093());
       }
 
       for (Entry var29 : var12.method9191()) {
@@ -259,8 +259,8 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
             RegistryKey var22 = RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var21.getLocation());
             DimensionType var23 = ((Dimension)var29.getValue()).method36412();
             ChunkGenerator var24 = ((Dimension)var29.getValue()).method36413();
-            Class6609 var25 = new Class6609(this.field1269, var4);
-            ServerWorld var26 = new ServerWorld(this, this.field1265, this.field1211, var25, var22, var23, var1, var24, var6, var9, ImmutableList.of(), false);
+            Class6609 var25 = new Class6609(this.field_240768_i_, var4);
+            ServerWorld var26 = new ServerWorld(this, this.backgroundExecutor, this.field1211, var25, var22, var23, var1, var24, var6, var9, ImmutableList.of(), false);
             var18.method24543(new Class7048(var26.getWorldBorder()));
             this.field1225.put(var22, var26);
          }
@@ -388,16 +388,16 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public GameType method1286() {
-      return this.field1269.method20067();
+      return this.field_240768_i_.method20067();
    }
 
    public boolean method1287() {
-      return this.field1269.method20045();
+      return this.field_240768_i_.method20045();
    }
 
    public abstract int method1288();
 
-   public abstract int method1289();
+   public abstract int getFunctionLevel();
 
    public abstract boolean method1290();
 
@@ -414,10 +414,10 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       }
 
       ServerWorld var9 = this.method1317();
-      Class6608 var10 = this.field1269.method20098();
+      Class6608 var10 = this.field_240768_i_.method20098();
       var10.method20068(var9.getWorldBorder().method24556());
-      this.field1269.method20094(this.method1414().method29605());
-      this.field1211.method8001(this.field1224, this.field1269, this.getPlayerList().method19479());
+      this.field_240768_i_.method20094(this.method1414().method29605());
+      this.field1211.method8001(this.field1224, this.field_240768_i_, this.getPlayerList().method19479());
       return var6;
    }
 
@@ -434,7 +434,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
       if (this.field1226 != null) {
          LOGGER.info("Saving players");
-         this.field1226.method19467();
+         this.field1226.saveAllPlayerData();
          this.field1226.method19483();
       }
 
@@ -462,7 +462,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          this.field1213.method27301();
       }
 
-      this.field1267.close();
+      this.resourceManager.close();
 
       try {
          this.field1211.close();
@@ -669,7 +669,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       if (this.field1229 % 6000 == 0) {
          LOGGER.debug("Autosave started");
          this.field1216.startSection("save");
-         this.field1226.method19467();
+         this.field1226.saveAllPlayerData();
          this.method1291(true, false, false);
          this.field1216.endSection();
          LOGGER.debug("Autosave finished");
@@ -804,7 +804,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       var1.getCategory().addDetail("Data Packs", () -> {
          StringBuilder var3 = new StringBuilder();
 
-         for (ResourcePackInfo var5 : this.field1257.getEnabledPacks()) {
+         for (ResourcePackInfo var5 : this.resourcePacks.getEnabledPacks()) {
             if (var3.length() > 0) {
                var3.append(", ");
             }
@@ -866,8 +866,8 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public void method1336(Difficulty var1, boolean var2) {
-      if (var2 || !this.field1269.method20048()) {
-         this.field1269.method20085(!this.field1269.method20045() ? var1 : Difficulty.field14354);
+      if (var2 || !this.field_240768_i_.method20048()) {
+         this.field_240768_i_.method20085(!this.field_240768_i_.method20045() ? var1 : Difficulty.field14354);
          this.method1338();
          this.getPlayerList().method19488().forEach(this::method1340);
       }
@@ -884,7 +884,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public void method1339(boolean var1) {
-      this.field1269.method20086(var1);
+      this.field_240768_i_.method20086(var1);
       this.getPlayerList().method19488().forEach(this::method1340);
    }
 
@@ -894,7 +894,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public boolean method1341() {
-      return this.field1269.method20047() != Difficulty.field14351;
+      return this.field_240768_i_.method20047() != Difficulty.field14351;
    }
 
    public boolean method1342() {
@@ -937,9 +937,9 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       for (ServerWorld var6 : this.method1320()) {
          if (var6 != null) {
             var1.addClientStat("world[" + var4 + "][dimension]", var6.getDimensionKey().getLocation());
-            var1.addClientStat("world[" + var4 + "][mode]", this.field1269.method20067());
+            var1.addClientStat("world[" + var4 + "][mode]", this.field_240768_i_.method20067());
             var1.addClientStat("world[" + var4 + "][difficulty]", var6.method6997());
-            var1.addClientStat("world[" + var4 + "][hardcore]", this.field1269.method20045());
+            var1.addClientStat("world[" + var4 + "][hardcore]", this.field_240768_i_.method20045());
             var1.addClientStat("world[" + var4 + "][height]", this.field1236);
             var1.addClientStat("world[" + var4 + "][chunks_loaded]", var6.getChunkProvider().method7371());
             var4++;
@@ -949,7 +949,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       var1.addClientStat("worlds", var4);
    }
 
-   public abstract boolean method1348();
+   public abstract boolean isDedicatedServer();
 
    public abstract int method1349();
 
@@ -1028,7 +1028,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    public abstract boolean getPublic();
 
    public void method1370(GameType var1) {
-      this.field1269.method20073(var1);
+      this.field_240768_i_.method20073(var1);
    }
 
    @Nullable
@@ -1116,15 +1116,15 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return this.field1252;
    }
 
-   public int method1392() {
+   public int getNetworkCompressionThreshold() {
       return 256;
    }
 
-   public long method1393() {
+   public long getServerTime() {
       return this.field1253;
    }
 
-   public DataFixer method1394() {
+   public DataFixer getDataFixer() {
       return this.field1221;
    }
 
@@ -1132,42 +1132,41 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return var1 == null ? 10 : var1.getGameRules().method17136(Class5462.field24239);
    }
 
-   public Class285 method1396() {
-      return this.field1267.method7336();
+   public AdvancementManager method1396() {
+      return this.resourceManager.method7336();
    }
 
-   public Class7268 method1397() {
-      return this.field1261;
+   public FunctionManager method1397() {
+      return this.functionManager;
    }
 
-   public CompletableFuture<Void> method1398(Collection<String> var1) {
-      CompletableFuture var4 = CompletableFuture.<ImmutableList>supplyAsync(
-            () -> var1.stream()
-                  .<ResourcePackInfo>map(this.field1257::method1271)
-                  .filter(Objects::nonNull)
-                  .<IResourcePack>map(ResourcePackInfo::method7950)
-                  .collect(ImmutableList.toImmutableList()),
-            this
-         )
-         .<DataPackRegistries>thenCompose(
-            var1x -> DataPackRegistries.func_240961_a_(var1x, !this.method1348() ? Class2085.INTEGRATED : Class2085.field13576, this.method1289(), this.field1265, this)
-         )
-         .thenAcceptAsync(var2 -> {
-            this.field1267.close();
-            this.field1267 = var2;
-            this.field1257.setEnabledPacks(var1);
-            this.field1269.method20092(method1400(this.field1257));
-            var2.updateTags();
-            this.getPlayerList().method19467();
-            this.getPlayerList().method19490();
-            this.field1261.method22826(this.field1267.method7330());
-            this.field1268.method31605(this.field1267.getResourceManager());
-         }, this);
-      if (this.method1629()) {
-         this.driveUntil(var4::isDone);
+   public CompletableFuture<Void> func_240780_a_(Collection<String> p_240780_1_)
+   {
+      CompletableFuture<Void> completablefuture = CompletableFuture.supplyAsync(() ->
+      {
+         return p_240780_1_.stream().map(this.resourcePacks::getPackInfo).filter(Objects::nonNull).map(ResourcePackInfo::getResourcePack).collect(ImmutableList.toImmutableList());
+      }, this).thenCompose((p_240775_1_) ->
+      {
+         return DataPackRegistries.func_240961_a_(p_240775_1_, this.isDedicatedServer() ? Commands.DEDICATED : Commands.INTEGRATED, this.getFunctionLevel(), this.backgroundExecutor, this);
+      }).thenAcceptAsync((p_240782_2_) ->
+      {
+         this.resourceManager.close();
+         this.resourceManager = p_240782_2_;
+         this.resourcePacks.setEnabledPacks(p_240780_1_);
+         this.field_240768_i_.setDatapackCodec(func_240771_a_(this.resourcePacks));
+         p_240782_2_.updateTags();
+         this.getPlayerList().saveAllPlayerData();
+         this.getPlayerList().reloadResources();
+         this.functionManager.setFunctionReloader(this.resourceManager.getFunctionReloader());
+         this.field_240765_ak_.onResourceManagerReload(this.resourceManager.getResourceManager());
+      }, this);
+
+      if (this.isOnExecutionThread())
+      {
+         this.driveUntil(completablefuture::isDone);
       }
 
-      return var4;
+      return completablefuture;
    }
 
    public static DatapackCodec func_240772_a_(ResourcePackList var0, DatapackCodec var1, boolean var2) {
@@ -1197,14 +1196,14 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
          }
 
          var0.setEnabledPacks(var5);
-         return method1400(var0);
+         return func_240771_a_(var0);
       } else {
          var0.setEnabledPacks(Collections.<String>singleton("vanilla"));
          return new DatapackCodec(ImmutableList.of("vanilla"), ImmutableList.of());
       }
    }
 
-   private static DatapackCodec method1400(ResourcePackList var0) {
+   private static DatapackCodec func_240771_a_(ResourcePackList var0) {
       Collection var3 = var0.func_232621_d_();
       ImmutableList var4 = ImmutableList.copyOf(var3);
       List var5 = var0.method1267().stream().filter(var1 -> !var3.contains(var1)).collect(ImmutableList.toImmutableList());
@@ -1225,11 +1224,11 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public ResourcePackList method1402() {
-      return this.field1257;
+      return this.resourcePacks;
    }
 
    public Class6099 getCommandManager() {
-      return this.field1267.method7335();
+      return this.resourceManager.method7335();
    }
 
    public Class6619 method1404() {
@@ -1258,11 +1257,11 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public Class282 method1407() {
-      return this.field1267.method7334();
+      return this.resourceManager.method7334();
    }
 
    public Class8933 method1408() {
-      return this.field1267.method7333();
+      return this.resourceManager.method7333();
    }
 
    public Class6887 method1409() {
@@ -1278,11 +1277,11 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    }
 
    public Class284 method1411() {
-      return this.field1267.method7332();
+      return this.resourceManager.method7332();
    }
 
    public Class283 method1412() {
-      return this.field1267.method7331();
+      return this.resourceManager.method7331();
    }
 
    public Class5462 method1413() {
@@ -1447,12 +1446,12 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       return true;
    }
 
-   public Class8761 method1435() {
-      return this.field1268;
+   public TemplateManager method1435() {
+      return this.field_240765_ak_;
    }
 
    public IServerConfiguration method1436() {
-      return this.field1269;
+      return this.field_240768_i_;
    }
 
    public DynamicRegistries method1437() {

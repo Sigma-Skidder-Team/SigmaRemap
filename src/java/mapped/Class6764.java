@@ -7,7 +7,7 @@ import net.minecraft.world.IBlockReader;
 
 public abstract class Class6764 {
    public Class1667 field29475;
-   public Class1006 field29476;
+   public MobEntity field29476;
    public final Int2ObjectMap<Class7176> field29477 = new Int2ObjectOpenHashMap();
    public int field29478;
    public int field29479;
@@ -16,7 +16,7 @@ public abstract class Class6764 {
    public boolean field29482;
    public boolean field29483;
 
-   public void method20613(Class1667 var1, Class1006 var2) {
+   public void method20613(Class1667 var1, MobEntity var2) {
       this.field29475 = var1;
       this.field29476 = var2;
       this.field29477.clear();
@@ -45,7 +45,7 @@ public abstract class Class6764 {
    public abstract int method20617(Class7176[] var1, Class7176 var2);
 
    public abstract Class2163 method20629(
-           IBlockReader var1, int var2, int var3, int var4, Class1006 var5, int var6, int var7, int var8, boolean var9, boolean var10
+           IBlockReader var1, int var2, int var3, int var4, MobEntity var5, int var6, int var7, int var8, boolean var9, boolean var10
    );
 
    public abstract Class2163 method20621(IBlockReader var1, int var2, int var3, int var4);

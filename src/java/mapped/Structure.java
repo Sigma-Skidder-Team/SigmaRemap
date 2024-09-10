@@ -63,7 +63,7 @@ public abstract class Structure<C extends Class4698> {
    }
 
    @Nullable
-   public static Class5444<?> method11366(Class8761 var0, CompoundNBT var1, long var2) {
+   public static Class5444<?> method11366(TemplateManager var0, CompoundNBT var1, long var2) {
       String var6 = var1.getString("id");
       if ("INVALID".equals(var6)) {
          return Class5444.field24194;
@@ -197,7 +197,7 @@ public abstract class Structure<C extends Class4698> {
       DynamicRegistries var1,
       ChunkGenerator var2,
       Class1685 var3,
-      Class8761 var4,
+      TemplateManager var4,
       long var5,
       ChunkPos var7,
       Biome var8,

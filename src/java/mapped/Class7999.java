@@ -210,7 +210,7 @@ public class Class7999 {
    }
 
    public static Class7999 method27320(JsonObject var0, Class9366 var1) {
-      ResourceLocation var4 = !var0.has("parent") ? null : new ResourceLocation(JSONUtils.method32763(var0, "parent"));
+      ResourceLocation var4 = !var0.has("parent") ? null : new ResourceLocation(JSONUtils.getString(var0, "parent"));
       Class9272 var5 = !var0.has("display") ? null : Class9272.method34944(JSONUtils.method32782(var0, "display"));
       Class8588 var6 = !var0.has("rewards") ? Class8588.field38664 : Class8588.method30724(JSONUtils.method32782(var0, "rewards"));
       Map<String, Class9181> var7 = Class9181.method34338(JSONUtils.method32782(var0, "criteria"), var1);

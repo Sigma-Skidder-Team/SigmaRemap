@@ -854,7 +854,7 @@ public class Class7944 {
    }
 
    public static boolean method26868(IResourcePack var0, ResourceLocation var1) {
-      return var0 != null && var1 != null ? var0.method1225(ResourcePackType.CLIENT_RESOURCES, var1) : false;
+      return var0 != null && var1 != null ? var0.resourceExists(ResourcePackType.CLIENT_RESOURCES, var1) : false;
    }
 
    public static IResourcePack[] method26869() {
@@ -863,7 +863,7 @@ public class Class7944 {
       ArrayList<IResourcePack> var4 = new ArrayList();
 
       for (ResourcePackInfo var6 : var3) {
-         IResourcePack var7 = var6.method7950();
+         IResourcePack var7 = var6.getResourcePack();
          if (var7 != method26871()) {
             var4.add(var7);
          }
@@ -878,12 +878,12 @@ public class Class7944 {
       } else {
          IResourcePack[] var2 = method26869();
          if (var2.length <= 0) {
-            return method26871().method1228();
+            return method26871().getName();
          } else {
             String[] var3 = new String[var2.length];
 
             for (int var4 = 0; var4 < var2.length; var4++) {
-               var3[var4] = var2[var4].method1228();
+               var3[var4] = var2[var4].getName();
             }
 
             return method26854(var3);
@@ -906,8 +906,8 @@ public class Class7944 {
 
       for (int var6 = var5.size() - 1; var6 >= 0; var6--) {
          ResourcePackInfo var7 = (ResourcePackInfo)var5.get(var6);
-         IResourcePack var8 = var7.method7950();
-         if (var8.method1225(ResourcePackType.CLIENT_RESOURCES, var0)) {
+         IResourcePack var8 = var7.getResourcePack();
+         if (var8.resourceExists(ResourcePackType.CLIENT_RESOURCES, var0)) {
             return var8;
          }
       }

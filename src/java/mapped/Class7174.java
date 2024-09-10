@@ -1,16 +1,17 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.resources.data.IMetadataSectionSerializer;
 
-public class Class7174 implements Class7170<Class9620> {
-   public Class9620 method22519(JsonObject var1) {
+public class Class7174 implements IMetadataSectionSerializer<Class9620> {
+   public Class9620 deserialize(JsonObject var1) {
       boolean var4 = JSONUtils.getBoolean(var1, "blur", false);
       boolean var5 = JSONUtils.getBoolean(var1, "clamp", false);
       return new Class9620(var4, var5);
    }
 
    @Override
-   public String method22518() {
+   public String getSectionName() {
       return "texture";
    }
 }

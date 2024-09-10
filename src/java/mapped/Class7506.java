@@ -94,11 +94,11 @@ public class Class7506 extends Schema {
    }
 
    public static void method24469(Schema var0, Map<String, Supplier<TypeTemplate>> var1, String var2) {
-      var0.register(var1, var2, () -> DSL.optionalFields("Items", DSL.list(Class8239.field35387.in(var0))));
+      var0.register(var1, var2, () -> DSL.optionalFields("Items", DSL.list(TypeReferences.field35387.in(var0))));
    }
 
    public Type<?> getChoiceType(TypeReference var1, String var2) {
-      return !Objects.equals(var1.typeName(), Class8239.field35386.typeName())
+      return !Objects.equals(var1.typeName(), TypeReferences.field35386.typeName())
          ? super.getChoiceType(var1, var2)
          : super.getChoiceType(var1, Class3639.method12353(var2));
    }
@@ -108,11 +108,11 @@ public class Class7506 extends Schema {
       method24469(var1, var4, "minecraft:furnace");
       method24469(var1, var4, "minecraft:chest");
       var1.registerSimple(var4, "minecraft:ender_chest");
-      var1.register(var4, "minecraft:jukebox", var1x -> DSL.optionalFields("RecordItem", Class8239.field35387.in(var1)));
+      var1.register(var4, "minecraft:jukebox", var1x -> DSL.optionalFields("RecordItem", TypeReferences.field35387.in(var1)));
       method24469(var1, var4, "minecraft:dispenser");
       method24469(var1, var4, "minecraft:dropper");
       var1.registerSimple(var4, "minecraft:sign");
-      var1.register(var4, "minecraft:mob_spawner", var1x -> Class8239.field35394.in(var1));
+      var1.register(var4, "minecraft:mob_spawner", var1x -> TypeReferences.field35394.in(var1));
       var1.registerSimple(var4, "minecraft:noteblock");
       var1.registerSimple(var4, "minecraft:piston");
       method24469(var1, var4, "minecraft:brewing_stand");
@@ -123,7 +123,7 @@ public class Class7506 extends Schema {
       var1.registerSimple(var4, "minecraft:daylight_detector");
       method24469(var1, var4, "minecraft:hopper");
       var1.registerSimple(var4, "minecraft:comparator");
-      var1.register(var4, "minecraft:flower_pot", var1x -> DSL.optionalFields("Item", DSL.or(DSL.constType(DSL.intType()), Class8239.field35393.in(var1))));
+      var1.register(var4, "minecraft:flower_pot", var1x -> DSL.optionalFields("Item", DSL.or(DSL.constType(DSL.intType()), TypeReferences.field35393.in(var1))));
       var1.registerSimple(var4, "minecraft:banner");
       var1.registerSimple(var4, "minecraft:structure_block");
       var1.registerSimple(var4, "minecraft:end_gateway");
@@ -133,24 +133,24 @@ public class Class7506 extends Schema {
 
    public void registerTypes(Schema var1, Map<String, Supplier<TypeTemplate>> var2, Map<String, Supplier<TypeTemplate>> var3) {
       super.registerTypes(var1, var2, var3);
-      var1.registerType(false, Class8239.field35386, () -> DSL.taggedChoiceLazy("id", Class3639.method12354(), var3));
+      var1.registerType(false, TypeReferences.field35386, () -> DSL.taggedChoiceLazy("id", Class3639.method12354(), var3));
       var1.registerType(
          true,
-         Class8239.field35387,
+         TypeReferences.field35387,
          () -> DSL.hook(
                DSL.optionalFields(
                   "id",
-                  Class8239.field35393.in(var1),
+                  TypeReferences.field35393.in(var1),
                   "tag",
                   DSL.optionalFields(
                      "EntityTag",
-                     Class8239.field35390.in(var1),
+                     TypeReferences.field35390.in(var1),
                      "BlockEntityTag",
-                     Class8239.field35386.in(var1),
+                     TypeReferences.field35386.in(var1),
                      "CanDestroy",
-                     DSL.list(Class8239.field35392.in(var1)),
+                     DSL.list(TypeReferences.field35392.in(var1)),
                      "CanPlaceOn",
-                     DSL.list(Class8239.field35392.in(var1))
+                     DSL.list(TypeReferences.field35392.in(var1))
                   )
                ),
                field32229,

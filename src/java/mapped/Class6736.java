@@ -7,7 +7,7 @@ import com.mojang.serialization.Dynamic;
 
 public class Class6736 extends Class6717 {
    public Class6736(Schema var1) {
-      super(var1, false, "Villager Follow Range Fix", Class8239.field35391, "minecraft:villager");
+      super(var1, false, "Villager Follow Range Fix", TypeReferences.ENTITY, "minecraft:villager");
    }
 
    @Override

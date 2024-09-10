@@ -6,7 +6,7 @@ import net.minecraft.util.ResourceLocation;
 
 import java.util.Map;
 
-public class Class5671 extends Class5661<Class1006, Class2895<Class1006>> {
+public class Class5671 extends Class5661<MobEntity, Class2895<MobEntity>> {
    private static final Map<EntityType<?>, ResourceLocation> field25036 = ImmutableMap.of(
       EntityType.field41065,
       new ResourceLocation("textures/entity/piglin/piglin.png"),
@@ -21,7 +21,7 @@ public class Class5671 extends Class5661<Class1006, Class2895<Class1006>> {
       this.method17880(new Class255(this, new Class2797(0.5F), new Class2797(1.02F)));
    }
 
-   private static Class2895<Class1006> method17863(boolean var0) {
+   private static Class2895<MobEntity> method17863(boolean var0) {
       Class2895 var3 = new Class2895(0.0F, 64, 64);
       if (var0) {
          var3.field17929.field31039 = false;
@@ -31,7 +31,7 @@ public class Class5671 extends Class5661<Class1006, Class2895<Class1006>> {
    }
 
    @Override
-   public ResourceLocation method17843(Class1006 var1) {
+   public ResourceLocation method17843(MobEntity var1) {
       ResourceLocation var4 = field25036.get(var1.getType());
       if (var4 != null) {
          return var4;
@@ -40,7 +40,7 @@ public class Class5671 extends Class5661<Class1006, Class2895<Class1006>> {
       }
    }
 
-   public boolean method17860(Class1006 var1) {
+   public boolean method17860(MobEntity var1) {
       return var1 instanceof Class1035 && ((Class1035)var1).method4634();
    }
 }

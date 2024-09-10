@@ -109,23 +109,23 @@ public class Class1048 extends WaterMobEntity {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(0, new Class2727(this));
-      this.field5600.method20002(0, new Class2763(this));
-      this.field5600.method20002(1, new Class2683(this));
-      this.field5600.method20002(2, new Class2776(this, 4.0));
-      this.field5600.method20002(4, new Class2740(this, 1.0, 10));
-      this.field5600.method20002(4, new Class2668(this));
-      this.field5600.method20002(5, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.method20002(5, new Class2756(this, 10));
-      this.field5600.method20002(6, new Class2647(this, 1.2F, true));
-      this.field5600.method20002(8, new Class2688(this));
-      this.field5600.method20002(8, new Class2602(this));
-      this.field5600.method20002(9, new Class2770<Class1105>(this, Class1105.class, 8.0F, 1.0, 1.0));
-      this.field5601.method20002(1, new Class2704(this, Class1105.class).method10918());
+      this.field5600.addGoal(0, new Class2727(this));
+      this.field5600.addGoal(0, new Class2763(this));
+      this.field5600.addGoal(1, new Class2683(this));
+      this.field5600.addGoal(2, new Class2776(this, 4.0));
+      this.field5600.addGoal(4, new Class2740(this, 1.0, 10));
+      this.field5600.addGoal(4, new Class2668(this));
+      this.field5600.addGoal(5, new Class2612(this, PlayerEntity.class, 6.0F));
+      this.field5600.addGoal(5, new Class2756(this, 10));
+      this.field5600.addGoal(6, new Class2647(this, 1.2F, true));
+      this.field5600.addGoal(8, new Class2688(this));
+      this.field5600.addGoal(8, new Class2602(this));
+      this.field5600.addGoal(9, new Class2770<Class1105>(this, Class1105.class, 8.0F, 1.0, 1.0));
+      this.field5601.addGoal(1, new HurtByTargetGoal(this, Class1105.class).method10918());
    }
 
    public static Class7037 method4782() {
-      return Class1006.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 1.2F).method21849(Attributes.field42110, 3.0);
+      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 1.2F).method21849(Attributes.field42110, 3.0);
    }
 
    @Override
@@ -176,7 +176,7 @@ public class Class1048 extends WaterMobEntity {
 
    @Override
    public boolean canPickUpItem(ItemStack var1) {
-      EquipmentSlotType var4 = Class1006.method4271(var1);
+      EquipmentSlotType var4 = MobEntity.method4271(var1);
       return !this.getItemStackFromSlot(var4).isEmpty() ? false : var4 == EquipmentSlotType.field13731 && super.canPickUpItem(var1);
    }
 

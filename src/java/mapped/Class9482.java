@@ -16,7 +16,7 @@ public class Class9482 {
    private static final Logger field44075 = LogManager.getLogger();
 
    public static void method36605(Collection<String> var0, Class6619 var1) {
-      var1.method20177().method1398(var0).exceptionally(var1x -> {
+      var1.method20177().func_240780_a_(var0).exceptionally(var1x -> {
          field44075.warn("Failed to execute reload", var1x);
          var1.method20181(new TranslationTextComponent("commands.reload.failure"));
          return null;

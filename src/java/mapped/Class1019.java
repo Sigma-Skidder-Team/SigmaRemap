@@ -72,21 +72,21 @@ public class Class1019 extends Class1018 implements Class1020 {
    @Override
    public void method4219() {
       this.field5708 = new Class2597(this);
-      this.field5600.method20002(0, new Class2603(this));
-      this.field5600.method20002(1, new Class2747(this, 1.25));
-      this.field5600.method20002(2, new Class2785(this, 1.0));
-      this.field5600.method20002(3, new Class2680(this, 1.1, Class120.method339(Items.field37842), false));
-      this.field5600.method20002(4, new Class2764(this, 1.1));
-      this.field5600.method20002(5, this.field5708);
-      this.field5600.method20002(6, new Class2737(this, 1.0));
-      this.field5600.method20002(7, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.method20002(8, new Class2668(this));
+      this.field5600.addGoal(0, new Class2603(this));
+      this.field5600.addGoal(1, new Class2747(this, 1.25));
+      this.field5600.addGoal(2, new Class2785(this, 1.0));
+      this.field5600.addGoal(3, new Class2680(this, 1.1, Class120.method339(Items.field37842), false));
+      this.field5600.addGoal(4, new Class2764(this, 1.1));
+      this.field5600.addGoal(5, this.field5708);
+      this.field5600.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.field5600.addGoal(7, new Class2612(this, PlayerEntity.class, 6.0F));
+      this.field5600.addGoal(8, new Class2668(this));
    }
 
    @Override
-   public void method4258() {
+   public void updateAITasks() {
       this.field5707 = this.field5708.method10811();
-      super.method4258();
+      super.updateAITasks();
    }
 
    @Override
@@ -99,7 +99,7 @@ public class Class1019 extends Class1018 implements Class1020 {
    }
 
    public static Class7037 method4512() {
-      return Class1006.method4220().method21849(Attributes.field42105, 8.0).method21849(Attributes.MOVEMENT_SPEED, 0.23F);
+      return MobEntity.method4220().method21849(Attributes.field42105, 8.0).method21849(Attributes.MOVEMENT_SPEED, 0.23F);
    }
 
    @Override

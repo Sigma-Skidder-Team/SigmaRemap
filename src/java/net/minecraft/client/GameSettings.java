@@ -2317,9 +2317,9 @@ public class GameSettings {
 
       while (var3.hasNext()) {
          String var4 = (String)var3.next();
-         ResourcePackInfo var5 = var1.method1271(var4);
+         ResourcePackInfo var5 = var1.getPackInfo(var4);
          if (var5 == null && !var4.startsWith("file/")) {
-            var5 = var1.method1271("file/" + var4);
+            var5 = var1.getPackInfo("file/" + var4);
          }
 
          if (var5 == null) {

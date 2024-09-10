@@ -36,7 +36,7 @@ public class Class3441 extends Block {
 
    @Override
    public void onFallenUpon(World var1, BlockPos var2, Entity var3, float var4) {
-      if (!(var3 instanceof Class1038)) {
+      if (!(var3 instanceof ZombieEntity)) {
          this.method12112(var1, var2, var3, 3);
       }
 

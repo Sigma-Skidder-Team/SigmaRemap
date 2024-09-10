@@ -38,7 +38,7 @@ public class SetStewEffectSerializer extends LootFunctionSerializer<Class133> {
       HashMap var6 = Maps.newHashMap();
       if (var1.has("effects")) {
          for (JsonElement var8 : JSONUtils.method32785(var1, "effects")) {
-            String var9 = JSONUtils.method32763(var8.getAsJsonObject(), "type");
+            String var9 = JSONUtils.getString(var8.getAsJsonObject(), "type");
             Effect var10 = Registry.EFFECTS
                .method9187(new ResourceLocation(var9))
                .orElseThrow(() -> new JsonSyntaxException("Unknown mob effect '" + var9 + "'"));

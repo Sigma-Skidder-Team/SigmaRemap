@@ -123,7 +123,7 @@ public class Class6671 {
                      if (!this.field29251.method31429(var3)) {
                         return false;
                      } else if (this.field29252.method20329(var1, var2, var3.getRidingEntity())) {
-                        if (!this.field29253.method20329(var1, var2, !(var3 instanceof Class1006) ? null : ((Class1006)var3).method4232())) {
+                        if (!this.field29253.method20329(var1, var2, !(var3 instanceof MobEntity) ? null : ((MobEntity)var3).method4232())) {
                            return false;
                         } else {
                            if (this.field29254 != null) {
@@ -170,7 +170,7 @@ public class Class6671 {
          Class6671 var13 = method20330(var3.get("vehicle"));
          Class6671 var14 = method20330(var3.get("targeted_entity"));
          String var15 = JSONUtils.method32764(var3, "team", (String)null);
-         ResourceLocation var16 = !var3.has("catType") ? null : new ResourceLocation(JSONUtils.method32763(var3, "catType"));
+         ResourceLocation var16 = !var3.has("catType") ? null : new ResourceLocation(JSONUtils.getString(var3, "catType"));
          return new Class7552()
             .method24704(var4)
             .method24705(var5)

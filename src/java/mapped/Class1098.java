@@ -58,20 +58,20 @@ public class Class1098 extends TameableEntity {
    @Override
    public void method4219() {
       this.field6043 = new Class2682(this, 0.6, field6036, true);
-      this.field5600.method20002(1, new Class2603(this));
-      this.field5600.method20002(1, new Class2778(this));
-      this.field5600.method20002(2, new Class2784(this));
-      this.field5600.method20002(3, this.field6043);
-      this.field5600.method20002(5, new Class2631(this, 1.1, 8));
-      this.field5600.method20002(6, new Class2725(this, 1.0, 10.0F, 5.0F, false));
-      this.field5600.method20002(7, new Class2637(this, 0.8));
-      this.field5600.method20002(8, new Class2745(this, 0.3F));
-      this.field5600.method20002(9, new Class2695(this));
-      this.field5600.method20002(10, new Class2785(this, 0.8));
-      this.field5600.method20002(11, new Class2737(this, 0.8, 1.0000001E-5F));
-      this.field5600.method20002(12, new Class2612(this, PlayerEntity.class, 10.0F));
-      this.field5601.method20002(1, new Class2716<Class1094>(this, Class1094.class, false, (Predicate<LivingEntity>)null));
-      this.field5601.method20002(1, new Class2716<Class1088>(this, Class1088.class, false, Class1088.field5963));
+      this.field5600.addGoal(1, new Class2603(this));
+      this.field5600.addGoal(1, new Class2778(this));
+      this.field5600.addGoal(2, new Class2784(this));
+      this.field5600.addGoal(3, this.field6043);
+      this.field5600.addGoal(5, new Class2631(this, 1.1, 8));
+      this.field5600.addGoal(6, new Class2725(this, 1.0, 10.0F, 5.0F, false));
+      this.field5600.addGoal(7, new Class2637(this, 0.8));
+      this.field5600.addGoal(8, new Class2745(this, 0.3F));
+      this.field5600.addGoal(9, new Class2695(this));
+      this.field5600.addGoal(10, new Class2785(this, 0.8));
+      this.field5600.addGoal(11, new WaterAvoidingRandomWalkingGoal(this, 0.8, 1.0000001E-5F));
+      this.field5600.addGoal(12, new Class2612(this, PlayerEntity.class, 10.0F));
+      this.field5601.addGoal(1, new Class2716<Class1094>(this, Class1094.class, false, (Predicate<LivingEntity>)null));
+      this.field5601.addGoal(1, new Class2716<Class1088>(this, Class1088.class, false, Class1088.field5963));
    }
 
    public int method5250() {
@@ -136,7 +136,7 @@ public class Class1098 extends TameableEntity {
    }
 
    @Override
-   public void method4258() {
+   public void updateAITasks() {
       if (!this.method4228().method20811()) {
          this.setPose(Pose.STANDING);
          this.setSprinting(false);
@@ -189,7 +189,7 @@ public class Class1098 extends TameableEntity {
    }
 
    public static Class7037 method5259() {
-      return Class1006.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.field42110, 3.0);
+      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.field42110, 3.0);
    }
 
    @Override
@@ -406,7 +406,7 @@ public class Class1098 extends TameableEntity {
 
       this.field5600.method20003(this.field6042);
       if (!this.method4393()) {
-         this.field5600.method20002(4, this.field6042);
+         this.field5600.addGoal(4, this.field6042);
       }
    }
 }

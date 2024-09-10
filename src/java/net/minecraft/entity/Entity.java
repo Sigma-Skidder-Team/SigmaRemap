@@ -1569,7 +1569,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    private void positionRider(Entity var1, Class9347 var2) {
       if (this.method3409(var1)) {
-         double var5 = this.getPosY() + this.method3310() + var1.method2894();
+         double var5 = this.getPosY() + this.method3310() + var1.getYOffset();
          var2.method35390(var1, this.getPosX(), var5, this.getPosZ());
       }
    }
@@ -1577,7 +1577,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public void applyOrientationToEntity(Entity var1) {
    }
 
-   public double method2894() {
+   public double getYOffset() {
       return 0.0;
    }
 

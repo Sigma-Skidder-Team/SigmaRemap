@@ -35,7 +35,7 @@ public class Class4195 extends Class4194 {
       this.field20496 = var2.getBoolean("Source");
    }
 
-   public Class4195(Class8761 var1, CompoundNBT var2) {
+   public Class4195(TemplateManager var1, CompoundNBT var2) {
       this(Class7792.field33453, var2);
    }
 

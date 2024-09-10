@@ -1,6 +1,6 @@
 package net.minecraft.entity;
 
-import mapped.Class1006;
+import mapped.MobEntity;
 import mapped.Class5462;
 import mapped.Class8088;
 import net.minecraft.entity.player.PlayerEntity;
@@ -12,6 +12,7 @@ import javax.annotation.Nullable;
 import java.util.Objects;
 import java.util.UUID;
 
+
 public interface IAngerable {
    int method4348();
 
@@ -20,7 +21,7 @@ public interface IAngerable {
    @Nullable
    UUID method4350();
 
-   void method4349(UUID var1);
+   void setAngerTarget(UUID var1);
 
    void method4346();
 
@@ -35,11 +36,11 @@ public interface IAngerable {
       this.method4347(var2.getInt("AngerTime"));
       if (var2.method106("AngryAt")) {
          UUID var5 = var2.method105("AngryAt");
-         this.method4349(var5);
+         this.setAngerTarget(var5);
          Entity var6 = var1.getEntityByUuid(var5);
          if (var6 != null) {
-            if (var6 instanceof Class1006) {
-               this.method3017((Class1006)var6);
+            if (var6 instanceof MobEntity) {
+               this.setRevengeTarget((MobEntity)var6);
             }
 
             if (var6.getType() == EntityType.PLAYER) {
@@ -47,18 +48,18 @@ public interface IAngerable {
             }
          }
       } else {
-         this.method4349((UUID)null);
+         this.setAngerTarget((UUID)null);
       }
    }
 
    default void method4366(ServerWorld var1, boolean var2) {
       LivingEntity var5 = this.method4232();
       UUID var6 = this.method4350();
-      if ((var5 == null || var5.getShouldBeDead()) && var6 != null && var1.getEntityByUuid(var6) instanceof Class1006) {
+      if ((var5 == null || var5.getShouldBeDead()) && var6 != null && var1.getEntityByUuid(var6) instanceof MobEntity) {
          this.method4372();
       } else {
          if (var5 != null && !Objects.equals(var6, var5.getUniqueID())) {
-            this.method4349(var5.getUniqueID());
+            this.setAngerTarget(var5.getUniqueID());
             this.method4346();
          }
 
@@ -99,13 +100,13 @@ public interface IAngerable {
    }
 
    default void method4372() {
-      this.method3017((LivingEntity)null);
-      this.method4349((UUID)null);
+      this.setRevengeTarget((LivingEntity)null);
+      this.setAngerTarget((UUID)null);
       this.method4233((LivingEntity)null);
       this.method4347(0);
    }
 
-   void method3017(LivingEntity var1);
+   void setRevengeTarget(LivingEntity var1);
 
    void method3016(PlayerEntity var1);
 

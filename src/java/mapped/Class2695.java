@@ -8,11 +8,11 @@ import java.util.EnumSet;
 public class Class2695 extends Class2595 {
    private static String[] field17141;
    private final IBlockReader field17142;
-   private final Class1006 field17143;
+   private final MobEntity field17143;
    private LivingEntity field17144;
    private int field17145;
 
-   public Class2695(Class1006 var1) {
+   public Class2695(MobEntity var1) {
       this.field17143 = var1;
       this.field17142 = var1.world;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));

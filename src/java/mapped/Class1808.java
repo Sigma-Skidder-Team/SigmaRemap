@@ -47,9 +47,9 @@ public class Class1808 implements Class1809, AutoCloseable {
 
       try {
          var6 = var1.method580(var5);
-         JsonObject var7 = JSONUtils.method32801(new InputStreamReader(var6.method7763(), StandardCharsets.UTF_8));
-         String var29 = JSONUtils.method32763(var7, "vertex");
-         String var30 = JSONUtils.method32763(var7, "fragment");
+         JsonObject var7 = JSONUtils.fromJson(new InputStreamReader(var6.method7763(), StandardCharsets.UTF_8));
+         String var29 = JSONUtils.getString(var7, "vertex");
+         String var30 = JSONUtils.getString(var7, "fragment");
          JsonArray var10 = JSONUtils.method32786(var7, "samplers", (JsonArray)null);
          if (var10 != null) {
             int var11 = 0;
@@ -106,7 +106,7 @@ public class Class1808 implements Class1809, AutoCloseable {
             }
          }
 
-         this.field9755 = method7932(JSONUtils.method32783(var7, "blend", (JsonObject)null));
+         this.field9755 = method7932(JSONUtils.getJsonObject(var7, "blend", (JsonObject)null));
          this.field9758 = method7931(var1, Class1853.field9872, var29);
          this.field9759 = method7931(var1, Class1853.field9873, var30);
          this.field9752 = Class8692.method31317();
@@ -315,7 +315,7 @@ public class Class1808 implements Class1809, AutoCloseable {
 
    private void method7939(JsonElement var1) {
       JsonObject var4 = JSONUtils.method32781(var1, "sampler");
-      String var5 = JSONUtils.method32763(var4, "name");
+      String var5 = JSONUtils.getString(var4, "name");
       if (JSONUtils.method32755(var4, "file")) {
          this.field9747.add(var5);
       } else {
@@ -335,8 +335,8 @@ public class Class1808 implements Class1809, AutoCloseable {
 
    private void method7941(JsonElement var1) throws JSONException {
       JsonObject var4 = JSONUtils.method32781(var1, "uniform");
-      String var5 = JSONUtils.method32763(var4, "name");
-      int var6 = Class1708.method7434(JSONUtils.method32763(var4, "type"));
+      String var5 = JSONUtils.getString(var4, "name");
+      int var6 = Class1708.method7434(JSONUtils.getString(var4, "type"));
       int var7 = JSONUtils.method32777(var4, "count");
       float[] var8 = new float[Math.max(var7, 16)];
       JsonArray var9 = JSONUtils.method32785(var4, "values");

@@ -101,7 +101,7 @@ public class Class791 extends Class789 {
                               try {
                                  Minecraft.getInstance()
                                     .getPackFinder()
-                                    .method25148(var16.field27440, var16.field27441)
+                                    .downloadResourcePack(var16.field27440, var16.field27441)
                                     .thenRun(() -> this.method1906(new RealmsLongRunningMcoTaskScreen(this.field4139, new Class793(this.field4139, this.field4138, var16))))
                                     .exceptionally(var5x);
                               } catch (Exception var10x) {

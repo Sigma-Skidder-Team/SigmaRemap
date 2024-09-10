@@ -20,12 +20,12 @@ public final class Class9777 {
    private final int field45734;
    private final Class6989 field45735;
    private final ChunkGenerator field45736;
-   private final Class8761 field45737;
+   private final TemplateManager field45737;
    private final List<? super Class4193> field45738;
    private final Random field45739;
    private final Deque<Class7213> field45740 = Queues.newArrayDeque();
 
-   public Class9777(Registry<Class9369> var1, int var2, Class6989 var3, ChunkGenerator var4, Class8761 var5, List<? super Class4193> var6, Random var7) {
+   public Class9777(Registry<Class9369> var1, int var2, Class6989 var3, ChunkGenerator var4, TemplateManager var5, List<? super Class4193> var6, Random var7) {
       this.field45733 = var1;
       this.field45734 = var2;
       this.field45735 = var3;

@@ -13,7 +13,7 @@ public class Class4948 implements ILootSerializer<Class161> {
    }
 
    public Class161 method15248(JsonObject var1, JsonDeserializationContext var2) {
-      ResourceLocation var5 = new ResourceLocation(JSONUtils.method32763(var1, "block"));
+      ResourceLocation var5 = new ResourceLocation(JSONUtils.getString(var1, "block"));
       Block var6 = Registry.BLOCK.method9187(var5).orElseThrow(() -> new IllegalArgumentException("Can't find block " + var5));
       Class7340 var7 = Class7340.method23261(var1.get("properties"));
       var7.method23260(var6.getStateContainer(), var1x -> {

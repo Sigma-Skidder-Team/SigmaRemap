@@ -64,8 +64,8 @@ public class Class9772 {
             var0 = var8;
          }
 
-         if (var0 instanceof Class308) {
-            Class308 var9 = (Class308)var0;
+         if (var0 instanceof ResourcePack) {
+            ResourcePack var9 = (ResourcePack)var0;
             File var7 = var9.field1197;
             if (var7 != null) {
                if (!var7.isDirectory()) {
@@ -98,7 +98,7 @@ public class Class9772 {
             String var6 = var1[var5];
             if (method38444(var6)) {
                ResourceLocation var7 = new ResourceLocation(var6);
-               if (var0.method1225(ResourcePackType.CLIENT_RESOURCES, var7)) {
+               if (var0.resourceExists(ResourcePackType.CLIENT_RESOURCES, var7)) {
                   var4.add(var6);
                }
             } else {

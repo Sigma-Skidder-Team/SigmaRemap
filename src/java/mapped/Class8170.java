@@ -33,8 +33,8 @@ public final class Class8170 {
       Object2IntOpenHashMap var6 = new Object2IntOpenHashMap();
 
       for (Entity var8 : var1) {
-         if (var8 instanceof Class1006) {
-            Class1006 var9 = (Class1006)var8;
+         if (var8 instanceof MobEntity) {
+            MobEntity var9 = (MobEntity)var8;
             if (var9.method4282() || var9.method4255()) {
                continue;
             }
@@ -125,7 +125,7 @@ public final class Class8170 {
                      }
 
                      if (method28421(var1, var0, var8, var9, var18, var12, var28) && var4.method28251(var18.field29311, var12, var2)) {
-                        Class1006 var30 = method28422(var1, var18.field29311);
+                        MobEntity var30 = method28422(var1, var18.field29311);
                         if (var30 == null) {
                            return;
                         }
@@ -189,13 +189,13 @@ public final class Class8170 {
    }
 
    @Nullable
-   private static Class1006 method28422(ServerWorld var0, EntityType<?> var1) {
+   private static MobEntity method28422(ServerWorld var0, EntityType<?> var1) {
       try {
          Entity var4 = var1.create(var0);
-         if (!(var4 instanceof Class1006)) {
+         if (!(var4 instanceof MobEntity)) {
             throw new IllegalStateException("Trying to spawn a non-mob: " + Registry.ENTITY_TYPE.getKey(var1));
          } else {
-            return (Class1006)var4;
+            return (MobEntity)var4;
          }
       } catch (Exception var5) {
          field35149.warn("Failed to create mob", var5);
@@ -203,7 +203,7 @@ public final class Class8170 {
       }
    }
 
-   private static boolean method28423(ServerWorld var0, Class1006 var1, double var2) {
+   private static boolean method28423(ServerWorld var0, MobEntity var1, double var2) {
       return var2 > (double)(var1.getType().method33209().method522() * var1.getType().method33209().method522()) && var1.method4254(var2)
          ? false
          : var1.method4265(var0, Class2202.field14391) && var1.method4266(var0);
@@ -325,8 +325,8 @@ public final class Class8170 {
                      }
 
                      var27.setLocationAndAngles(var23, (double)var21.getY(), var25, var4.nextFloat() * 360.0F, 0.0F);
-                     if (var27 instanceof Class1006) {
-                        Class1006 var28 = (Class1006)var27;
+                     if (var27 instanceof MobEntity) {
+                        MobEntity var28 = (MobEntity)var27;
                         if (var28.method4265(var0, Class2202.field14392) && var28.method4266(var0)) {
                            var13 = var28.method4276(var0, var0.method6807(var28.getPosition()), Class2202.field14392, var13, (CompoundNBT)null);
                            var0.method6995(var28);

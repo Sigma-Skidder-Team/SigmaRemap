@@ -4,14 +4,14 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 
 public abstract class Class2642 extends Class2595 {
-   public Class1006 field16974;
+   public MobEntity field16974;
    public BlockPos field16975 = BlockPos.ZERO;
    public boolean field16976;
    private boolean field16977;
    private float field16978;
    private float field16979;
 
-   public Class2642(Class1006 var1) {
+   public Class2642(MobEntity var1) {
       this.field16974 = var1;
       if (!Class8100.method28053(var1)) {
          throw new IllegalArgumentException("Unsupported mob type for DoorInteractGoal");

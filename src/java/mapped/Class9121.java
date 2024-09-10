@@ -16,21 +16,21 @@ public class Class9121 extends Schema {
       super.registerTypes(var1, var2, var3);
       var1.registerType(
          true,
-         Class8239.field35387,
+         TypeReferences.field35387,
          () -> DSL.hook(
                DSL.optionalFields(
                   "id",
-                  Class8239.field35393.in(var1),
+                  TypeReferences.field35393.in(var1),
                   "tag",
                   DSL.optionalFields(
                      "EntityTag",
-                     Class8239.field35390.in(var1),
+                     TypeReferences.field35390.in(var1),
                      "BlockEntityTag",
-                     Class8239.field35386.in(var1),
+                     TypeReferences.field35386.in(var1),
                      "CanDestroy",
-                     DSL.list(Class8239.field35392.in(var1)),
+                     DSL.list(TypeReferences.field35392.in(var1)),
                      "CanPlaceOn",
-                     DSL.list(Class8239.field35392.in(var1))
+                     DSL.list(TypeReferences.field35392.in(var1))
                   )
                ),
                Class8604.field38714,

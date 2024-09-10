@@ -126,14 +126,14 @@ public abstract class Class7574 {
                      }
 
                      var24.setLocationAndAngles(var24.getPosX(), var24.getPosY(), var24.getPosZ(), var3.rand.nextFloat() * 360.0F, 0.0F);
-                     if (var24 instanceof Class1006) {
-                        Class1006 var26 = (Class1006)var24;
+                     if (var24 instanceof MobEntity) {
+                        MobEntity var26 = (MobEntity)var24;
                         if (!var26.method4265(var3, Class2202.field14393) || !var26.method4266(var3)) {
                            continue;
                         }
 
                         if (this.field32518.method20414().method98() == 1 && this.field32518.method20414().contains("id", 8)) {
-                           ((Class1006)var24).method4276(var23, var3.method6807(var24.getPosition()), Class2202.field14393, (Class5093)null, (CompoundNBT)null);
+                           ((MobEntity)var24).method4276(var23, var3.method6807(var24.getPosition()), Class2202.field14393, (Class5093)null, (CompoundNBT)null);
                         }
                      }
 
@@ -143,8 +143,8 @@ public abstract class Class7574 {
                      }
 
                      var3.playEvent(2004, var4, 0);
-                     if (var24 instanceof Class1006) {
-                        ((Class1006)var24).method4239();
+                     if (var24 instanceof MobEntity) {
+                        ((MobEntity)var24).method4239();
                      }
 
                      var5 = true;
@@ -258,7 +258,7 @@ public abstract class Class7574 {
    public Entity method24796() {
       if (this.field32524 == null) {
          this.field32524 = EntityType.method33223(this.field32518.method20414(), this.method24786(), Function.<Entity>identity());
-         if (this.field32518.method20414().method98() == 1 && this.field32518.method20414().contains("id", 8) && !(this.field32524 instanceof Class1006)) {
+         if (this.field32518.method20414().method98() == 1 && this.field32518.method20414().contains("id", 8) && !(this.field32524 instanceof MobEntity)) {
          }
       }
 

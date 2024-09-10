@@ -15,7 +15,7 @@ public class Class8372 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(Class8239.field35378);
+      Type var3 = this.getInputSchema().getType(TypeReferences.field35378);
       OpticFinder var4 = var3.findField("Level");
       return this.fixTypeEverywhereTyped(
          "HeightmapRenamingFix", var3, var2 -> var2.updateTyped(var4, var1x -> var1x.update(DSL.remainderFinder(), this::method29327))

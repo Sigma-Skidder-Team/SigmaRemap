@@ -45,17 +45,17 @@ public class Class1817 implements IResourceManager {
 
       for (int var6 = this.field9814.size() - 1; var6 >= 0; var6--) {
          IResourcePack var7 = this.field9814.get(var6);
-         if (var4 == null && var7.method1225(this.field9815, var5)) {
+         if (var4 == null && var7.resourceExists(this.field9815, var5)) {
             var4 = var7;
          }
 
-         if (var7.method1225(this.field9815, var1)) {
+         if (var7.resourceExists(this.field9815, var1)) {
             InputStream var8 = null;
             if (var4 != null) {
                var8 = this.method8063(var5, var4);
             }
 
-            return new Class1785(var7.method1228(), var1, this.method8063(var1, var7), var8);
+            return new Class1785(var7.getName(), var1, this.method8063(var1, var7), var8);
          }
       }
 
@@ -69,7 +69,7 @@ public class Class1817 implements IResourceManager {
       } else {
          for (int var4 = this.field9814.size() - 1; var4 >= 0; var4--) {
             IResourcePack var5 = this.field9814.get(var4);
-            if (var5.method1225(this.field9815, var1)) {
+            if (var5.resourceExists(this.field9815, var1)) {
                return true;
             }
          }
@@ -80,7 +80,7 @@ public class Class1817 implements IResourceManager {
 
    public InputStream method8063(ResourceLocation var1, IResourcePack var2) throws IOException {
       InputStream var5 = var2.getResourceStream(this.field9815, var1);
-      return (InputStream)(!field9813.isDebugEnabled() ? var5 : new Class1780(var5, var1, var2.method1228()));
+      return (InputStream)(!field9813.isDebugEnabled() ? var5 : new Class1780(var5, var1, var2.getName()));
    }
 
    private void method8064(ResourceLocation var1) throws IOException {
@@ -100,9 +100,9 @@ public class Class1817 implements IResourceManager {
       ResourceLocation var5 = method8066(var1);
 
       for (IResourcePack var7 : this.field9814) {
-         if (var7.method1225(this.field9815, var1)) {
-            InputStream var8 = !var7.method1225(this.field9815, var5) ? null : this.method8063(var5, var7);
-            var4.add(new Class1785(var7.method1228(), var1, this.method8063(var1, var7), var8));
+         if (var7.resourceExists(this.field9815, var1)) {
+            InputStream var8 = !var7.resourceExists(this.field9815, var5) ? null : this.method8063(var5, var7);
+            var4.add(new Class1785(var7.getName(), var1, this.method8063(var1, var7), var8));
          }
       }
 
@@ -118,7 +118,7 @@ public class Class1817 implements IResourceManager {
       ArrayList var5 = Lists.newArrayList();
 
       for (IResourcePack var7 : this.field9814) {
-         var5.addAll(var7.method1224(this.field9815, this.field9816, var1, Integer.MAX_VALUE, var2));
+         var5.addAll(var7.getAllResourceLocations(this.field9815, this.field9816, var1, Integer.MAX_VALUE, var2));
       }
 
       Collections.sort(var5);

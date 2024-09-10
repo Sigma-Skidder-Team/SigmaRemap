@@ -20,7 +20,7 @@ public class Class4205 extends Class4194 {
       this.field20512 = var2.nextInt(5);
    }
 
-   public Class4205(Class8761 var1, CompoundNBT var2) {
+   public Class4205(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33452, var2);
       this.field20512 = var2.getInt("Type");
    }

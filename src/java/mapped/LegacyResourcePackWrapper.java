@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
 import net.minecraft.client.util.Util;
+import net.minecraft.resources.data.IMetadataSectionSerializer;
 import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
@@ -897,8 +898,8 @@ public class LegacyResourcePackWrapper implements IResourcePack {
    }
 
    @Override
-   public InputStream method1222(String var1) throws IOException {
-      return this.field1177.method1222(var1);
+   public InputStream getRootResourceStream(String var1) throws IOException {
+      return this.field1177.getRootResourceStream(var1);
    }
 
    @Override
@@ -907,29 +908,29 @@ public class LegacyResourcePackWrapper implements IResourcePack {
    }
 
    @Override
-   public Collection<ResourceLocation> method1224(ResourcePackType var1, String var2, String var3, int var4, Predicate<String> var5) {
+   public Collection<ResourceLocation> getAllResourceLocations(ResourcePackType var1, String var2, String var3, int var4, Predicate<String> var5) {
       return Collections.<ResourceLocation>emptyList();
    }
 
    @Override
-   public boolean method1225(ResourcePackType var1, ResourceLocation var2) {
-      return this.field1177.method1225(var1, this.method1230(var2));
+   public boolean resourceExists(ResourcePackType var1, ResourceLocation var2) {
+      return this.field1177.resourceExists(var1, this.method1230(var2));
    }
 
    @Override
-   public Set<String> method1226(ResourcePackType var1) {
-      return this.field1177.method1226(var1);
+   public Set<String> getResourceNamespaces(ResourcePackType var1) {
+      return this.field1177.getResourceNamespaces(var1);
    }
 
    @Nullable
    @Override
-   public <T> T method1227(Class7170<T> var1) throws IOException {
-      return this.field1177.<T>method1227(var1);
+   public <T> T getMetadata(IMetadataSectionSerializer<T> var1) throws IOException {
+      return this.field1177.<T>getMetadata(var1);
    }
 
    @Override
-   public String method1228() {
-      return this.field1177.method1228();
+   public String getName() {
+      return this.field1177.getName();
    }
 
    @Override

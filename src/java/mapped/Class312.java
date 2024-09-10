@@ -8,7 +8,7 @@ public final class Class312 extends Class311 {
    }
 
    @Override
-   public String method1228() {
+   public String getName() {
       return "Programmer Art";
    }
 }

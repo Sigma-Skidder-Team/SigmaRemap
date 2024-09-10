@@ -11,7 +11,7 @@ public class Class5456 extends Class5455<Class4700> {
       this.field24215 = var1;
    }
 
-   public void method17109(DynamicRegistries var1, ChunkGenerator var2, Class8761 var3, int var4, int var5, Biome var6, Class4700 var7) {
+   public void method17109(DynamicRegistries var1, ChunkGenerator var2, TemplateManager var3, int var4, int var5, Biome var6, Class4700 var7) {
       BlockPos var10 = new BlockPos(var4 * 16, Class2967.method11379(this.field24215), var5 * 16);
       Class9837.method38885();
       Class8814.method31820(

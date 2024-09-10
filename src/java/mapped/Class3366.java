@@ -45,8 +45,8 @@ public class Class3366 extends Class3241 {
    @Override
    public void method11562(World var1, PlayerEntity var2, BlockPos var3, BlockState var4, TileEntity var5, ItemStack var6) {
       super.method11562(var1, var2, var3, var4, var5, var6);
-      if (!var1.isRemote && var5 instanceof Class962) {
-         Class962 var9 = (Class962)var5;
+      if (!var1.isRemote && var5 instanceof BeehiveTileEntity) {
+         BeehiveTileEntity var9 = (BeehiveTileEntity)var5;
          if (EnchantmentHelper.method26311(Class8122.field34916, var6) == 0) {
             var9.method3915(var2, var4, Class2084.field13573);
             var1.updateComparatorOutputLevel(var3, this);
@@ -122,10 +122,10 @@ public class Class3366 extends Class3241 {
 
    private boolean method11945(World var1, BlockPos var2) {
       TileEntity var5 = var1.getTileEntity(var2);
-      if (!(var5 instanceof Class962)) {
+      if (!(var5 instanceof BeehiveTileEntity)) {
          return false;
       } else {
-         Class962 var6 = (Class962)var5;
+         BeehiveTileEntity var6 = (BeehiveTileEntity)var5;
          return !var6.method3913();
       }
    }
@@ -133,8 +133,8 @@ public class Class3366 extends Class3241 {
    public void method11946(World var1, BlockState var2, BlockPos var3, PlayerEntity var4, Class2084 var5) {
       this.method11947(var1, var2, var3);
       TileEntity var8 = var1.getTileEntity(var3);
-      if (var8 instanceof Class962) {
-         Class962 var9 = (Class962)var8;
+      if (var8 instanceof BeehiveTileEntity) {
+         BeehiveTileEntity var9 = (BeehiveTileEntity)var8;
          var9.method3915(var4, var2, var5);
       }
    }
@@ -214,15 +214,15 @@ public class Class3366 extends Class3241 {
    @Nullable
    @Override
    public TileEntity method11646(IBlockReader var1) {
-      return new Class962();
+      return new BeehiveTileEntity();
    }
 
    @Override
    public void onBlockHarvested(World var1, BlockPos var2, BlockState var3, PlayerEntity var4) {
       if (!var1.isRemote && var4.isCreative() && var1.getGameRules().getBoolean(Class5462.field24228)) {
          TileEntity var7 = var1.getTileEntity(var2);
-         if (var7 instanceof Class962) {
-            Class962 var8 = (Class962)var7;
+         if (var7 instanceof BeehiveTileEntity) {
+            BeehiveTileEntity var8 = (BeehiveTileEntity)var7;
             ItemStack var9 = new ItemStack(this);
             int var10 = var3.<Integer>method23463(field18936);
             boolean var11 = !var8.method3913();
@@ -253,8 +253,8 @@ public class Class3366 extends Class3241 {
       Entity var5 = var2.<Entity>method36459(Class9525.field44330);
       if (var5 instanceof Class1004 || var5 instanceof Class1081 || var5 instanceof Class902 || var5 instanceof WitherEntity || var5 instanceof Class993) {
          TileEntity var6 = var2.<TileEntity>method36459(Class9525.field44337);
-         if (var6 instanceof Class962) {
-            Class962 var7 = (Class962)var6;
+         if (var6 instanceof BeehiveTileEntity) {
+            BeehiveTileEntity var7 = (BeehiveTileEntity)var6;
             var7.method3915((PlayerEntity)null, var1, Class2084.field13573);
          }
       }
@@ -266,8 +266,8 @@ public class Class3366 extends Class3241 {
    public BlockState method11491(BlockState var1, net.minecraft.util.Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var4.getBlockState(var6).getBlock() instanceof Class3399) {
          TileEntity var9 = var4.getTileEntity(var5);
-         if (var9 instanceof Class962) {
-            Class962 var10 = (Class962)var9;
+         if (var9 instanceof BeehiveTileEntity) {
+            BeehiveTileEntity var10 = (BeehiveTileEntity)var9;
             var10.method3915((PlayerEntity)null, var1, Class2084.field13573);
          }
       }

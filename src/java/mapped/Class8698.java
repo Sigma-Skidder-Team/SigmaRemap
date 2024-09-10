@@ -15,7 +15,7 @@ public class Class8698 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(Class8239.field35383);
+      Type var3 = this.getInputSchema().getType(TypeReferences.field35383);
       OpticFinder var4 = var3.findField("data");
       return this.fixTypeEverywhereTyped("Map id fix", var3, var1 -> {
          Optional var4x = var1.getOptionalTyped(var4);

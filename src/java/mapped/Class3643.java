@@ -18,12 +18,12 @@ public class Class3643 extends Class3639 {
          "minecraft:wandering_trader",
          var1x -> DSL.optionalFields(
                "Inventory",
-               DSL.list(Class8239.field35387.in(var1)),
+               DSL.list(TypeReferences.field35387.in(var1)),
                "Offers",
                DSL.optionalFields(
                   "Recipes",
                   DSL.list(
-                     DSL.optionalFields("buy", Class8239.field35387.in(var1), "buyB", Class8239.field35387.in(var1), "sell", Class8239.field35387.in(var1))
+                     DSL.optionalFields("buy", TypeReferences.field35387.in(var1), "buyB", TypeReferences.field35387.in(var1), "sell", TypeReferences.field35387.in(var1))
                   )
                ),
                Class9674.method37738(var1)
@@ -34,11 +34,11 @@ public class Class3643 extends Class3639 {
          "minecraft:trader_llama",
          var1x -> DSL.optionalFields(
                "Items",
-               DSL.list(Class8239.field35387.in(var1)),
+               DSL.list(TypeReferences.field35387.in(var1)),
                "SaddleItem",
-               Class8239.field35387.in(var1),
+               TypeReferences.field35387.in(var1),
                "DecorItem",
-               Class8239.field35387.in(var1),
+               TypeReferences.field35387.in(var1),
                Class9674.method37738(var1)
             )
       );

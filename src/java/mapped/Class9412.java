@@ -13,7 +13,7 @@ public class Class9412 extends DataFix {
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
          "OptionsForceVBOFix",
-         this.getInputSchema().getType(Class8239.field35380),
+         this.getInputSchema().getType(TypeReferences.field35380),
          var0 -> var0.update(DSL.remainderFinder(), var0x -> var0x.set("useVbo", var0x.createString("true")))
       );
    }

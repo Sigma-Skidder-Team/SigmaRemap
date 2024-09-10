@@ -35,19 +35,19 @@ public class Class1058 extends Class1056 implements IAngerable {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(1, new Class2647(this, 1.0, true));
-      this.field5600.method20002(2, new Class2782(this, 0.9, 32.0F));
-      this.field5600.method20002(2, new Class2742(this, 0.6, false));
-      this.field5600.method20002(4, new Class2739(this, 0.6));
-      this.field5600.method20002(5, new Class2777(this));
-      this.field5600.method20002(7, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.method20002(8, new Class2668(this));
-      this.field5601.method20002(1, new Class2700(this));
-      this.field5601.method20002(2, new Class2704(this));
-      this.field5601.method20002(3, new Class2709<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
+      this.field5600.addGoal(1, new Class2647(this, 1.0, true));
+      this.field5600.addGoal(2, new Class2782(this, 0.9, 32.0F));
+      this.field5600.addGoal(2, new Class2742(this, 0.6, false));
+      this.field5600.addGoal(4, new Class2739(this, 0.6));
+      this.field5600.addGoal(5, new Class2777(this));
+      this.field5600.addGoal(7, new Class2612(this, PlayerEntity.class, 6.0F));
+      this.field5600.addGoal(8, new Class2668(this));
+      this.field5601.addGoal(1, new Class2700(this));
+      this.field5601.addGoal(2, new HurtByTargetGoal(this));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4367));
       this.field5601
-         .method20002(3, new Class2709<Class1006>(this, Class1006.class, 5, false, false, var0 -> var0 instanceof Class1008 && !(var0 instanceof Class1081)));
-      this.field5601.method20002(4, new Class2779<Class1058>(this, false));
+         .addGoal(3, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 5, false, false, var0 -> var0 instanceof Class1008 && !(var0 instanceof Class1081)));
+      this.field5601.addGoal(4, new ResetAngerGoal<Class1058>(this, false));
    }
 
    @Override
@@ -57,7 +57,7 @@ public class Class1058 extends Class1056 implements IAngerable {
    }
 
    public static Class7037 method4863() {
-      return Class1006.method4220()
+      return MobEntity.method4220()
          .method21849(Attributes.field42105, 100.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.25)
          .method21849(Attributes.field42107, 1.0)
@@ -152,7 +152,7 @@ public class Class1058 extends Class1056 implements IAngerable {
    }
 
    @Override
-   public void method4349(UUID var1) {
+   public void setAngerTarget(UUID var1) {
       this.field5854 = var1;
    }
 

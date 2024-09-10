@@ -1,5 +1,5 @@
 package mapped;
 
-public interface Class935 {
+public interface ITickableTileEntity {
    void method3647();
 }

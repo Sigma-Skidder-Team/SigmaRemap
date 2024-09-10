@@ -32,16 +32,16 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(2, new Class2617(this));
-      this.field5600.method20002(3, new Class2640(this, 1.0));
-      this.field5600.method20002(3, new Class2770<WolfEntity>(this, WolfEntity.class, 6.0F, 1.0, 1.2));
-      this.field5600.method20002(5, new Class2737(this, 1.0));
-      this.field5600.method20002(6, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.method20002(6, new Class2668(this));
-      this.field5601.method20002(1, new Class2704(this));
-      this.field5601.method20002(2, new Class2709<PlayerEntity>(this, PlayerEntity.class, true));
-      this.field5601.method20002(3, new Class2709<Class1058>(this, Class1058.class, true));
-      this.field5601.method20002(3, new Class2709<Class1088>(this, Class1088.class, 10, true, false, Class1088.field5963));
+      this.field5600.addGoal(2, new Class2617(this));
+      this.field5600.addGoal(3, new Class2640(this, 1.0));
+      this.field5600.addGoal(3, new Class2770<WolfEntity>(this, WolfEntity.class, 6.0F, 1.0, 1.2));
+      this.field5600.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.field5600.addGoal(6, new Class2612(this, PlayerEntity.class, 8.0F));
+      this.field5600.addGoal(6, new Class2668(this));
+      this.field5601.addGoal(1, new HurtByTargetGoal(this));
+      this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, true));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1088>(this, Class1088.class, 10, true, false, Class1088.field5963));
    }
 
    public static Class7037 method5029() {
@@ -127,7 +127,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
          this.field5600.method20003(this.field5946);
          ItemStack var3 = this.getHeldItem(Class9456.method36389(this, Items.BOW));
          if (var3.getItem() != Items.BOW) {
-            this.field5600.method20002(4, this.field5947);
+            this.field5600.addGoal(4, this.field5947);
          } else {
             byte var4 = 20;
             if (this.world.method6997() != Difficulty.field14354) {
@@ -135,7 +135,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
             }
 
             this.field5946.method10961(var4);
-            this.field5600.method20002(4, this.field5946);
+            this.field5600.addGoal(4, this.field5946);
          }
       }
    }
@@ -182,7 +182,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    }
 
    @Override
-   public double method2894() {
+   public double getYOffset() {
       return -0.6;
    }
 }

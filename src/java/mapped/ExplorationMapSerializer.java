@@ -31,7 +31,7 @@ public class ExplorationMapSerializer extends LootFunctionSerializer<Exploration
 
    public ExplorationMap deserialize(JsonObject var1, JsonDeserializationContext var2, ILootCondition[] conditionsIn) {
       Structure<?> structure = func_237428_a_(var1);
-      String s = var1.has("decoration") ? JSONUtils.method32763(var1, "decoration") : "mansion";
+      String s = var1.has("decoration") ? JSONUtils.getString(var1, "decoration") : "mansion";
       MapDecorationType mapdecoration = ExplorationMap.field_215910_a;
 
       try {
@@ -48,7 +48,7 @@ public class ExplorationMapSerializer extends LootFunctionSerializer<Exploration
 
    private static Structure<?> func_237428_a_(JsonObject p_237428_0_) {
       if (p_237428_0_.has("destination")) {
-         String s = JSONUtils.method32763(p_237428_0_, "destination");
+         String s = JSONUtils.getString(p_237428_0_, "destination");
          Structure structure = (Structure) Structure.field_236365_a_.get(s.toLowerCase(Locale.ROOT));
          if (structure != null) {
             return structure;

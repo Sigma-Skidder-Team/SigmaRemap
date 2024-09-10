@@ -2,7 +2,7 @@ package mapped;
 
 import net.minecraft.util.ResourceLocation;
 
-public abstract class Class5662<T extends Class1038, M extends Class2794<T>> extends Class5661<T, M> {
+public abstract class Class5662<T extends ZombieEntity, M extends Class2794<T>> extends Class5661<T, M> {
    private static final ResourceLocation field25026 = new ResourceLocation("textures/entity/zombie/zombie.png");
 
    public Class5662(EntityRendererManager var1, M var2, M var3, M var4) {
@@ -10,7 +10,7 @@ public abstract class Class5662<T extends Class1038, M extends Class2794<T>> ext
       this.method17880(new Class255<>(this, var3, var4));
    }
 
-   public ResourceLocation method17843(Class1038 var1) {
+   public ResourceLocation method17843(ZombieEntity var1) {
       return field25026;
    }
 

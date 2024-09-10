@@ -190,7 +190,7 @@ public class Class8576 {
    public static Class8576 method30653(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
          JsonObject var3 = JSONUtils.method32781(var0, "location");
-         JsonObject var4 = JSONUtils.method32783(var3, "position", new JsonObject());
+         JsonObject var4 = JSONUtils.getJsonObject(var3, "position", new JsonObject());
          Class8841 var5 = Class8841.method32025(var4.get("x"));
          Class8841 var6 = Class8841.method32025(var4.get("y"));
          Class8841 var7 = Class8841.method32025(var4.get("z"));
@@ -201,10 +201,10 @@ public class Class8576 {
                .resultOrPartial(field38558::error)
                .<RegistryKey>map(var0x -> RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var0x))
                .orElse((RegistryKey)null);
-         Structure var9 = !var3.has("feature") ? null : (Structure) Structure.field_236365_a_.get(JSONUtils.method32763(var3, "feature"));
+         Structure var9 = !var3.has("feature") ? null : (Structure) Structure.field_236365_a_.get(JSONUtils.getString(var3, "feature"));
          RegistryKey var10 = null;
          if (var3.has("biome")) {
-            ResourceLocation var11 = new ResourceLocation(JSONUtils.method32763(var3, "biome"));
+            ResourceLocation var11 = new ResourceLocation(JSONUtils.getString(var3, "biome"));
             var10 = RegistryKey.<Biome>getOrCreateKey(Registry.BIOME_KEY, var11);
          }
 

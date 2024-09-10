@@ -82,7 +82,7 @@ public class Class6879 {
          var4 = true;
       } else {
          JsonObject var5 = var0.getAsJsonObject();
-         var3 = JSONUtils.method32763(var5, "id");
+         var3 = JSONUtils.getString(var5, "id");
          var4 = JSONUtils.getBoolean(var5, "required", true);
       }
 

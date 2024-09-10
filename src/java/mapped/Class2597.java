@@ -10,11 +10,11 @@ import java.util.function.Predicate;
 public class Class2597 extends Class2595 {
    private static String[] field16821;
    private static final Predicate<BlockState> field16822 = Class166.method497(Blocks.GRASS);
-   private final Class1006 field16823;
+   private final MobEntity field16823;
    private final World field16824;
    private int field16825;
 
-   public Class2597(Class1006 var1) {
+   public Class2597(MobEntity var1) {
       this.field16823 = var1;
       this.field16824 = var1.world;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658, Class2240.field14659));

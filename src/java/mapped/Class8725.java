@@ -11,7 +11,6 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.serialization.Dynamic;
 import java.util.Map;
-import java.util.stream.Stream;
 
 public class Class8725 extends DataFix {
    private static final Map<String, String> field39364 = ImmutableMap.<String, String>builder()
@@ -40,13 +39,13 @@ public class Class8725 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(Class8239.field35387);
+      Type var3 = this.getInputSchema().getType(TypeReferences.field35387);
       OpticFinder var4 = var3.findField("tag");
       return TypeRewriteRule.seq(
          this.fixTypeEverywhereTyped("Rename ItemStack Attributes", var3, var1 -> var1.updateTyped(var4, Class8725::method31485)),
          new TypeRewriteRule[]{
-            this.fixTypeEverywhereTyped("Rename Entity Attributes", this.getInputSchema().getType(Class8239.field35391), Class8725::method31486),
-            this.fixTypeEverywhereTyped("Rename Player Attributes", this.getInputSchema().getType(Class8239.field35377), Class8725::method31486)
+            this.fixTypeEverywhereTyped("Rename Entity Attributes", this.getInputSchema().getType(TypeReferences.ENTITY), Class8725::method31486),
+            this.fixTypeEverywhereTyped("Rename Player Attributes", this.getInputSchema().getType(TypeReferences.field35377), Class8725::method31486)
          }
       );
    }

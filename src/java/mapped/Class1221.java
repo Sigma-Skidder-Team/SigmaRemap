@@ -122,7 +122,7 @@ public class Class1221 implements IScreen, Class1190 {
                   DataPackRegistries var11;
                   try {
                      MinecraftServer.func_240772_a_(var9, var1.field7077, false);
-                     CompletableFuture var10 = DataPackRegistries.func_240961_a_(var9.func_232623_f_(), Class2085.INTEGRATED, 2, Util.getServerExecutor(), var2);
+                     CompletableFuture var10 = DataPackRegistries.func_240961_a_(var9.func_232623_f_(), Commands.INTEGRATED, 2, Util.getServerExecutor(), var2);
                      var2.driveUntil(var10::isDone);
                      var11 = (DataPackRegistries)var10.get();
                   } catch (InterruptedException | ExecutionException var27) {

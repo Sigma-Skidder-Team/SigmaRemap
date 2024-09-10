@@ -16,7 +16,7 @@ public class Class9201 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(Class8239.field35378);
+      Type var3 = this.getInputSchema().getType(TypeReferences.field35378);
       OpticFinder var4 = var3.findField("Level");
       return this.fixTypeEverywhereTyped("Leaves fix", var3, var1 -> var1.updateTyped(var4, var0x -> var0x.update(DSL.remainderFinder(), var0xx -> {
                Optional var3x = var0xx.get("Biomes").asIntStreamOpt().result();

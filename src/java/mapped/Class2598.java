@@ -5,7 +5,7 @@ import net.minecraft.entity.LivingEntity;
 import java.util.EnumSet;
 
 public class Class2598 extends Class2595 {
-   private final Class1006 field16826;
+   private final MobEntity field16826;
    private final Class1022 field16827;
    private LivingEntity field16828;
    private int field16829 = -1;
@@ -23,7 +23,7 @@ public class Class2598 extends Class2595 {
    public Class2598(Class1022 var1, double var2, int var4, int var5, float var6) {
       if (var1 instanceof LivingEntity) {
          this.field16827 = var1;
-         this.field16826 = (Class1006)var1;
+         this.field16826 = (MobEntity)var1;
          this.field16830 = var2;
          this.field16832 = var4;
          this.field16833 = var5;

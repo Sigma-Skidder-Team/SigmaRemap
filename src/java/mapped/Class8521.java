@@ -16,8 +16,8 @@ public class Class8521 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      OpticFinder var3 = DSL.fieldFinder("id", DSL.named(Class8239.field35393.typeName(), Class3639.method12354()));
-      return this.fixTypeEverywhereTyped("BedItemColorFix", this.getInputSchema().getType(Class8239.field35387), var1 -> {
+      OpticFinder var3 = DSL.fieldFinder("id", DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354()));
+      return this.fixTypeEverywhereTyped("BedItemColorFix", this.getInputSchema().getType(TypeReferences.field35387), var1 -> {
          Optional var4 = var1.getOptional(var3);
          if (var4.isPresent() && Objects.equals(((Pair)var4.get()).getSecond(), "minecraft:bed")) {
             Dynamic var5 = (Dynamic)var1.get(DSL.remainderFinder());

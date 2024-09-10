@@ -51,7 +51,7 @@ public class Class2579 implements JsonDeserializer<Class9726> {
    }
 
    private Direction method10775(JsonObject var1) {
-      String var4 = JSONUtils.method32763(var1, "axis");
+      String var4 = JSONUtils.getString(var1, "axis");
       Direction var5 = Direction.method321(var4.toLowerCase(Locale.ROOT));
       if (var5 != null) {
          return var5;

@@ -58,13 +58,13 @@ public class Class9449 {
          Class8811 var4 = Class8811.method31812(var3.get("nbt"));
          Block var5 = null;
          if (var3.has("block")) {
-            ResourceLocation var6 = new ResourceLocation(JSONUtils.method32763(var3, "block"));
+            ResourceLocation var6 = new ResourceLocation(JSONUtils.getString(var3, "block"));
             var5 = Registry.BLOCK.method9184(var6);
          }
 
          ITag var8 = null;
          if (var3.has("tag")) {
-            ResourceLocation var7 = new ResourceLocation(JSONUtils.method32763(var3, "tag"));
+            ResourceLocation var7 = new ResourceLocation(JSONUtils.getString(var3, "tag"));
             var8 = Class9443.method36296().method32657().get(var7);
             if (var8 == null) {
                throw new JsonSyntaxException("Unknown block tag '" + var7 + "'");

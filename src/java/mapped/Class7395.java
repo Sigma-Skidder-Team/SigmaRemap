@@ -2,11 +2,11 @@ package mapped;
 
 public class Class7395 {
    private static String[] field31656;
-   private final Class1006 field31657;
+   private final MobEntity field31657;
    private int field31658;
    private float field31659;
 
-   public Class7395(Class1006 var1) {
+   public Class7395(MobEntity var1) {
       this.field31657 = var1;
    }
 
@@ -48,7 +48,7 @@ public class Class7395 {
    }
 
    private boolean method23630() {
-      return this.field31657.getPassengers().isEmpty() || !(this.field31657.getPassengers().get(0) instanceof Class1006);
+      return this.field31657.getPassengers().isEmpty() || !(this.field31657.getPassengers().get(0) instanceof MobEntity);
    }
 
    private boolean method23631() {

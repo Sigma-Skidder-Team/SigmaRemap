@@ -1,12 +1,13 @@
-package mapped;
+package net.minecraft.resources.data;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
+import mapped.JSONUtils;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 
-public class Class7173 implements Class7170<PackMetadataSection> {
-   public PackMetadataSection method22519(JsonObject var1) {
+public class PackMetadataSectionSerializer implements IMetadataSectionSerializer<PackMetadataSection> {
+   public PackMetadataSection deserialize(JsonObject var1) {
       IFormattableTextComponent var4 = ITextComponent$Serializer.func_240641_a_(var1.get("description"));
       if (var4 != null) {
          int var5 = JSONUtils.method32777(var1, "pack_format");
@@ -17,7 +18,7 @@ public class Class7173 implements Class7170<PackMetadataSection> {
    }
 
    @Override
-   public String method22518() {
+   public String getSectionName() {
       return "pack";
    }
 }

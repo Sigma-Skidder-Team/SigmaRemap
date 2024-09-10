@@ -371,8 +371,8 @@ public class Class8969 {
                float var9 = var6x.getMirroredYaw(var3);
                var9 += var6x.rotationYaw - var6x.getRotatedYaw(var4);
                var6x.setLocationAndAngles(var15.x, var15.y, var15.z, var9, var6x.rotationPitch);
-               if (var7 && var6x instanceof Class1006) {
-                  ((Class1006)var6x).method4276(var1, var1.method6807(new BlockPos(var15)), Class2202.field14394, (Class5093)null, var13);
+               if (var7 && var6x instanceof MobEntity) {
+                  ((MobEntity)var6x).method4276(var1, var1.method6807(new BlockPos(var15)), Class2202.field14394, (Class5093)null, var13);
                }
 
                var1.method6995(var6x);

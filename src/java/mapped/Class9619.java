@@ -1702,7 +1702,7 @@ public class Class9619 {
       ResourceLocation var4 = new ResourceLocation(var1);
       IResourcePack var5 = Class7944.method26873(var4);
       if (var5 != null) {
-         if (var5.method1228().equals("Programmer Art")) {
+         if (var5.getName().equals("Programmer Art")) {
             String var6 = var3 + "programmer_art/";
             var0.add(var6 + var2);
          } else if (var5 == Class7944.method26871()) {

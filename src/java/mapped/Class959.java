@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.UUID;
 
-public class Class959 extends TileEntity implements Class935 {
+public class Class959 extends TileEntity implements ITickableTileEntity {
    private static final Block[] field5381 = new Block[]{Blocks.field36767, Blocks.field36768, Blocks.field36776, Blocks.field36769};
    public int field5382;
    private float field5383;

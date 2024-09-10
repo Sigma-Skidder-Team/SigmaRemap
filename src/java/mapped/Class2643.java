@@ -11,12 +11,12 @@ public class Class2643 extends Class2642 {
    public int field16983 = -1;
    public int field16984 = -1;
 
-   public Class2643(Class1006 var1, Predicate<Difficulty> var2) {
+   public Class2643(MobEntity var1, Predicate<Difficulty> var2) {
       super(var1);
       this.field16981 = var2;
    }
 
-   public Class2643(Class1006 var1, int var2, Predicate<Difficulty> var3) {
+   public Class2643(MobEntity var1, int var2, Predicate<Difficulty> var3) {
       this(var1, var3);
       this.field16984 = var2;
    }

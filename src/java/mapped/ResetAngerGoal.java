@@ -6,13 +6,13 @@ import net.minecraft.util.math.AxisAlignedBB;
 
 import java.util.List;
 
-public class Class2779<T extends Class1006 & IAngerable> extends Class2595 {
+public class ResetAngerGoal<T extends MobEntity & IAngerable> extends Class2595 {
    private static String[] field17377;
    private final T field17378;
    private final boolean field17379;
    private int field17380;
 
-   public Class2779(T var1, boolean var2) {
+   public ResetAngerGoal(T var1, boolean var2) {
       this.field17378 = (T)var1;
       this.field17379 = var2;
    }
@@ -39,9 +39,9 @@ public class Class2779<T extends Class1006 & IAngerable> extends Class2595 {
       super.method10804();
    }
 
-   private List<Class1006> method10968() {
+   private List<MobEntity> method10968() {
       double var3 = this.field17378.getAttributeValue(Attributes.field42106);
       AxisAlignedBB var5 = AxisAlignedBB.method19657(this.field17378.getPositionVec()).method19663(var3, 10.0, var3);
-      return this.field17378.world.<Class1006>method7183((Class<? extends Class1006>)this.field17378.getClass(), var5);
+      return this.field17378.world.<MobEntity>method7183((Class<? extends MobEntity>)this.field17378.getClass(), var5);
    }
 }

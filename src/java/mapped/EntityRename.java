@@ -9,17 +9,17 @@ import com.mojang.datafixers.types.templates.TaggedChoice.TaggedChoiceType;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.DynamicOps;
 
-public abstract class Class4655 extends DataFix {
+public abstract class EntityRename extends DataFix {
    public final String field22194;
 
-   public Class4655(String var1, Schema var2, boolean var3) {
+   public EntityRename(String var1, Schema var2, boolean var3) {
       super(var2, var3);
       this.field22194 = var1;
    }
 
    public TypeRewriteRule makeRule() {
-      TaggedChoiceType<String> var3 = (TaggedChoiceType<String>) this.getInputSchema().findChoiceType(Class8239.field35391);
-      TaggedChoiceType<String> var4 = (TaggedChoiceType<String>) this.getOutputSchema().findChoiceType(Class8239.field35391);
+      TaggedChoiceType<String> var3 = (TaggedChoiceType<String>) this.getInputSchema().findChoiceType(TypeReferences.ENTITY);
+      TaggedChoiceType<String> var4 = (TaggedChoiceType<String>) this.getOutputSchema().findChoiceType(TypeReferences.ENTITY);
       return this.fixTypeEverywhere(this.field22194, var3, var4, var3x -> var4x -> {
             String var7 = var4x.getFirst();
             Type<?> var8 = var3.types().get(var7);

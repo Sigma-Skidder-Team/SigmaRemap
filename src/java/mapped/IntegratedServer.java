@@ -77,7 +77,7 @@ public class IntegratedServer extends MinecraftServer {
       if (!var4 && this.field8921) {
          var5.startSection("autoSave");
          field1208.info("Saving and pausing game...");
-         this.getPlayerList().method19467();
+         this.getPlayerList().saveAllPlayerData();
          this.method1291(false, false, false);
          var5.endSection();
       }
@@ -108,7 +108,7 @@ public class IntegratedServer extends MinecraftServer {
    }
 
    @Override
-   public boolean method1348() {
+   public boolean isDedicatedServer() {
       return false;
    }
 
@@ -235,7 +235,7 @@ public class IntegratedServer extends MinecraftServer {
    }
 
    @Override
-   public int method1289() {
+   public int getFunctionLevel() {
       return 2;
    }
 

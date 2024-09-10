@@ -7,7 +7,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Optional;
 
-public class Class3735 extends Class3676<Class1006> {
+public class Class3735 extends Class3676<MobEntity> {
    private static String[] field19849;
    private int field19850;
    private Class8238 field19851;
@@ -26,7 +26,7 @@ public class Class3735 extends Class3676<Class1006> {
       );
    }
 
-   public boolean method12508(ServerWorld var1, Class1006 var2) {
+   public boolean method12508(ServerWorld var1, MobEntity var2) {
       if (this.field19850 <= 0) {
          Brain<?> var5 = var2.getBrain();
          Class8999 var6 = var5.method21410(Class8830.field39824).get();
@@ -48,7 +48,7 @@ public class Class3735 extends Class3676<Class1006> {
       }
    }
 
-   public boolean method12499(ServerWorld var1, Class1006 var2, long var3) {
+   public boolean method12499(ServerWorld var1, MobEntity var2, long var3) {
       if (this.field19851 != null && this.field19852 != null) {
          Optional var7 = var2.getBrain().<Class8999>method21410(Class8830.field39824);
          Class6990 var8 = var2.method4230();
@@ -58,7 +58,7 @@ public class Class3735 extends Class3676<Class1006> {
       }
    }
 
-   public void method12506(ServerWorld var1, Class1006 var2, long var3) {
+   public void method12506(ServerWorld var1, MobEntity var2, long var3) {
       if (var2.getBrain().method21404(Class8830.field39824)
          && !this.method12663(var2, var2.getBrain().<Class8999>method21410(Class8830.field39824).get())
          && var2.method4230().method21677()) {
@@ -71,12 +71,12 @@ public class Class3735 extends Class3676<Class1006> {
       this.field19851 = null;
    }
 
-   public void method12502(ServerWorld var1, Class1006 var2, long var3) {
+   public void method12502(ServerWorld var1, MobEntity var2, long var3) {
       var2.getBrain().method21406(Class8830.field39831, this.field19851);
       var2.method4230().method21656(this.field19851, (double)this.field19853);
    }
 
-   public void method12504(ServerWorld var1, Class1006 var2, long var3) {
+   public void method12504(ServerWorld var1, MobEntity var2, long var3) {
       Class8238 var7 = var2.method4230().method21657();
       Brain<?> var8 = var2.getBrain();
       if (this.field19851 != var7) {
@@ -93,7 +93,7 @@ public class Class3735 extends Class3676<Class1006> {
       }
    }
 
-   private boolean method12662(Class1006 var1, Class8999 var2, long var3) {
+   private boolean method12662(MobEntity var1, Class8999 var2, long var3) {
       BlockPos var7 = var2.method33251().method26357();
       this.field19851 = var1.method4230().method21651(var7, 0);
       this.field19853 = var2.method33252();
@@ -124,7 +124,7 @@ public class Class3735 extends Class3676<Class1006> {
       return false;
    }
 
-   private boolean method12663(Class1006 var1, Class8999 var2) {
+   private boolean method12663(MobEntity var1, Class8999 var2) {
       return var2.method33251().method26357().method8321(var1.getPosition()) <= var2.method33253();
    }
 }

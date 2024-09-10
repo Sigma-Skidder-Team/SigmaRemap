@@ -655,7 +655,7 @@ public class BoatEntity extends Entity {
    public void method3307(Entity var1) {
       if (this.method3409(var1)) {
          float var4 = 0.0F;
-         float var5 = (float)((!this.removed ? this.method3310() : 0.01F) + var1.method2894());
+         float var5 = (float)((!this.removed ? this.method3310() : 0.01F) + var1.getYOffset());
          if (this.getPassengers().size() > 1) {
             int var6 = this.getPassengers().indexOf(var1);
             if (var6 != 0) {

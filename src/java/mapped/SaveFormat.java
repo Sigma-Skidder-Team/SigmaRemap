@@ -90,7 +90,7 @@ public class SaveFormat {
          }
       }
 
-      Dynamic<T> var9 = var1.update(Class8239.field35400, var5, var2, SharedConstants.getVersion().getWorldVersion());
+      Dynamic<T> var9 = var1.update(TypeReferences.field35400, var5, var2, SharedConstants.getVersion().getWorldVersion());
       DataResult<DimensionGeneratorSettings> var10 = DimensionGeneratorSettings.field_236201_a_.parse(var9);
       return Pair.of(
          var10.resultOrPartial(Util.func_240982_a_("WorldGenSettings: ", field45713::error))

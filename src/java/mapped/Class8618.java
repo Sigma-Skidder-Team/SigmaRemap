@@ -121,7 +121,7 @@ public class Class8618 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(Class8239.field35395);
+      Type var3 = this.getInputSchema().getType(TypeReferences.field35395);
       OpticFinder var4 = var3.findField("Children");
       return this.fixTypeEverywhereTyped(
          "ChunkStructuresTemplateRenameFix",

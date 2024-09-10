@@ -2,10 +2,10 @@ package mapped;
 
 public class Class7956 {
    private static String[] field34201;
-   private final Class1006 field34202;
+   private final MobEntity field34202;
    public boolean field34203;
 
-   public Class7956(Class1006 var1) {
+   public Class7956(MobEntity var1) {
       this.field34202 = var1;
    }
 

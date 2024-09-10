@@ -4,9 +4,9 @@ import java.util.EnumSet;
 
 public class Class2603 extends Class2595 {
    private static String[] field16848;
-   private final Class1006 field16849;
+   private final MobEntity field16849;
 
-   public Class2603(Class1006 var1) {
+   public Class2603(MobEntity var1) {
       this.field16849 = var1;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14659));
       var1.method4230().method21674(true);

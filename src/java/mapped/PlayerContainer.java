@@ -92,7 +92,7 @@ public class PlayerContainer extends Class5828<Class926> {
       if (var6 != null && var6.getHasStack()) {
          ItemStack var7 = var6.getStack();
          var5 = var7.copy();
-         EquipmentSlotType var8 = Class1006.method4271(var5);
+         EquipmentSlotType var8 = MobEntity.method4271(var5);
          if (var2 != 0) {
             if (var2 >= 1 && var2 < 5) {
                if (!this.mergeItemStack(var7, 9, 45, false)) {

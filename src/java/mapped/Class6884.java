@@ -54,18 +54,18 @@ public class Class6884 {
    }
 
    public static Class6884 method20961(JsonObject var0, JsonDeserializationContext var1) {
-      String var4 = JSONUtils.method32763(var0, "name");
-      ResourceLocation var5 = new ResourceLocation(JSONUtils.method32763(var0, "attribute"));
+      String var4 = JSONUtils.getString(var0, "name");
+      ResourceLocation var5 = new ResourceLocation(JSONUtils.getString(var0, "attribute"));
       Attribute var6 = Registry.field16087.method9184(var5);
       if (var6 == null) {
          throw new JsonSyntaxException("Unknown attribute: " + var5);
       } else {
-         AttributeModifierOperation var7 = method20963(JSONUtils.method32763(var0, "operation"));
+         AttributeModifierOperation var7 = method20963(JSONUtils.getString(var0, "operation"));
          Class6872 var8 = JSONUtils.<Class6872>method32788(var0, "amount", var1, Class6872.class);
          UUID var9 = null;
          EquipmentSlotType[] var10;
          if (JSONUtils.method32755(var0, "slot")) {
-            var10 = new EquipmentSlotType[]{EquipmentSlotType.method8776(JSONUtils.method32763(var0, "slot"))};
+            var10 = new EquipmentSlotType[]{EquipmentSlotType.method8776(JSONUtils.getString(var0, "slot"))};
          } else {
             if (!JSONUtils.method32759(var0, "slot")) {
                throw new JsonSyntaxException("Invalid or missing attribute modifier slot; must be either string or array of strings.");
@@ -85,7 +85,7 @@ public class Class6884 {
          }
 
          if (var0.has("id")) {
-            String var16 = JSONUtils.method32763(var0, "id");
+            String var16 = JSONUtils.getString(var0, "id");
 
             try {
                var9 = UUID.fromString(var16);

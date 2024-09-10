@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.resources.data.IMetadataSectionSerializer;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.ByteArrayInputStream;
@@ -23,7 +24,7 @@ public class Class1784 implements Class1783 {
    }
 
    @Override
-   public <T> T method7764(Class7170<T> var1) {
+   public <T> T method7764(IMetadataSectionSerializer<T> var1) {
       return null;
    }
 

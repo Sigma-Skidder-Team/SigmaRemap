@@ -6,10 +6,12 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import java.util.ArrayList;
+
+import net.minecraft.resources.data.IMetadataSectionSerializer;
 import org.apache.commons.lang3.Validate;
 
-public class Class7172 implements Class7170<Class7788> {
-   public Class7788 method22519(JsonObject var1) {
+public class Class7172 implements IMetadataSectionSerializer<Class7788> {
+   public Class7788 deserialize(JsonObject var1) {
       ArrayList var4 = Lists.newArrayList();
       int var5 = JSONUtils.getInt(var1, "frametime", 1);
       if (var5 != 1) {
@@ -67,7 +69,7 @@ public class Class7172 implements Class7170<Class7788> {
    }
 
    @Override
-   public String method22518() {
+   public String getSectionName() {
       return "animation";
    }
 }

@@ -48,7 +48,7 @@ public class Class1647 implements AutoCloseable {
 
       try {
          var5 = this.field8937.method580(var2);
-         JsonObject var6 = JSONUtils.method32801(new InputStreamReader(var5.method7763(), StandardCharsets.UTF_8));
+         JsonObject var6 = JSONUtils.fromJson(new InputStreamReader(var5.method7763(), StandardCharsets.UTF_8));
          if (JSONUtils.method32759(var6, "targets")) {
             JsonArray var22 = var6.getAsJsonArray("targets");
             int var24 = 0;
@@ -101,7 +101,7 @@ public class Class1647 implements AutoCloseable {
    private void method6518(JsonElement var1) throws JSONException {
       if (!JSONUtils.method32756(var1)) {
          JsonObject var4 = JSONUtils.method32781(var1, "target");
-         String var5 = JSONUtils.method32763(var4, "name");
+         String var5 = JSONUtils.getString(var4, "name");
          int var6 = JSONUtils.getInt(var4, "width", this.field8943);
          int var7 = JSONUtils.getInt(var4, "height", this.field8944);
          if (this.field8940.containsKey(var5)) {
@@ -116,9 +116,9 @@ public class Class1647 implements AutoCloseable {
 
    private void method6519(TextureManager var1, JsonElement var2) throws IOException {
       JsonObject var5 = JSONUtils.method32781(var2, "pass");
-      String var6 = JSONUtils.method32763(var5, "name");
-      String var7 = JSONUtils.method32763(var5, "intarget");
-      String var8 = JSONUtils.method32763(var5, "outtarget");
+      String var6 = JSONUtils.getString(var5, "name");
+      String var7 = JSONUtils.getString(var5, "intarget");
+      String var8 = JSONUtils.getString(var5, "outtarget");
       Framebuffer var9 = this.method6528(var7);
       Framebuffer var10 = this.method6528(var8);
       if (var9 == null) {
@@ -134,8 +134,8 @@ public class Class1647 implements AutoCloseable {
             for (JsonElement var15 : var12) {
                try {
                   JsonObject var16 = JSONUtils.method32781(var15, "auxtarget");
-                  String var40 = JSONUtils.method32763(var16, "name");
-                  String var18 = JSONUtils.method32763(var16, "id");
+                  String var40 = JSONUtils.getString(var16, "name");
+                  String var18 = JSONUtils.getString(var16, "id");
                   boolean var19;
                   String var20;
                   if (var18.endsWith(":depth")) {
@@ -213,7 +213,7 @@ public class Class1647 implements AutoCloseable {
 
    private void method6520(JsonElement var1) throws JSONException {
       JsonObject var4 = JSONUtils.method32781(var1, "uniform");
-      String var5 = JSONUtils.method32763(var4, "name");
+      String var5 = JSONUtils.getString(var4, "name");
       Class1708 var6 = this.field8939.get(this.field8939.size() - 1).method7410().method7936(var5);
       if (var6 == null) {
          throw new JSONException("Uniform '" + var5 + "' does not exist");

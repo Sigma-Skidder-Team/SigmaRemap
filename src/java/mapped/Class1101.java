@@ -29,15 +29,15 @@ public class Class1101 extends Class1009 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(1, new Class2603(this));
-      this.field5600.method20002(3, new Class2745(this, 0.4F));
-      this.field5600.method20002(4, new Class2657(this));
-      this.field5600.method20002(5, new Class2737(this, 0.8));
-      this.field5600.method20002(6, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.method20002(6, new Class2668(this));
-      this.field5601.method20002(1, new Class2704(this));
-      this.field5601.method20002(2, new Class2718<PlayerEntity>(this, PlayerEntity.class));
-      this.field5601.method20002(3, new Class2718<Class1058>(this, Class1058.class));
+      this.field5600.addGoal(1, new Class2603(this));
+      this.field5600.addGoal(3, new Class2745(this, 0.4F));
+      this.field5600.addGoal(4, new Class2657(this));
+      this.field5600.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 0.8));
+      this.field5600.addGoal(6, new Class2612(this, PlayerEntity.class, 8.0F));
+      this.field5600.addGoal(6, new Class2668(this));
+      this.field5601.addGoal(1, new HurtByTargetGoal(this));
+      this.field5601.addGoal(2, new Class2718<PlayerEntity>(this, PlayerEntity.class));
+      this.field5601.addGoal(3, new Class2718<Class1058>(this, Class1058.class));
    }
 
    @Override

@@ -34,7 +34,7 @@ public class Class4184 extends Class4180 {
       this.method12949(var5, var8);
    }
 
-   public Class4184(Class8761 var1, CompoundNBT var2) {
+   public Class4184(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33460, var2);
       this.field20466 = new ResourceLocation(var2.getString("Template"));
       this.field20467 = Class80.valueOf(var2.getString("Rotation"));

@@ -41,8 +41,8 @@ public class Class7141 extends Class7139 {
                BlockState var14 = Blocks.field37117.method11579().method23465(Class3366.field18935, Direction.SOUTH);
                this.method22274(var1, var13, var14, var5, var6);
                TileEntity var15 = var1.getTileEntity(var13);
-               if (var15 instanceof Class962) {
-                  Class962 var16 = (Class962)var15;
+               if (var15 instanceof BeehiveTileEntity) {
+                  BeehiveTileEntity var16 = (BeehiveTileEntity)var15;
                   int var17 = 2 + var2.nextInt(2);
 
                   for (int var18 = 0; var18 < var17; var18++) {

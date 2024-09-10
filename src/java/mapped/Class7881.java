@@ -55,7 +55,7 @@ public class Class7881 extends Class7882<LivingEntity> {
                            var10 = Optional.<LivingEntity>of(var17);
                         }
                      } else {
-                        var6 = Optional.<LivingEntity>of((Class1006)var17);
+                        var6 = Optional.<LivingEntity>of((MobEntity)var17);
                      }
                   } else {
                      PlayerEntity var22 = (PlayerEntity)var17;

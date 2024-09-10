@@ -5,7 +5,7 @@ import net.minecraft.util.math.BlockPos;
 
 public class Class6829 {
    private static String[] field29706;
-   public final Class1006 field29707;
+   public final MobEntity field29707;
    public double field29708;
    public double field29709;
    public double field29710;
@@ -14,7 +14,7 @@ public class Class6829 {
    public float field29713;
    public Class2335 field29714 = Class2335.field15966;
 
-   public Class6829(Class1006 var1) {
+   public Class6829(MobEntity var1) {
       this.field29707 = var1;
    }
 

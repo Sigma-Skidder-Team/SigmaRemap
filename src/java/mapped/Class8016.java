@@ -14,7 +14,7 @@ public final class Class8016 implements Class8015 {
    }
 
    @Override
-   public boolean method27401(Class8761 var1, int var2, Class4186 var3, BlockPos var4, List<Class4178> var5, Random var6) {
+   public boolean method27401(TemplateManager var1, int var2, Class4186 var3, BlockPos var4, List<Class4178> var5, Random var6) {
       Class80 var9 = var3.field20454.method36437();
       int var10 = var6.nextInt(4) + 1;
       Class4186 var11 = Class9489.method36644(var5, Class9489.method36643(var1, var3, new BlockPos(0, 0, -4), "bridge_piece", var9, true));

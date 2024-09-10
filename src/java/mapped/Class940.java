@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.stream.IntStream;
 
-public class Class940 extends Class939 implements Class930, Class935 {
+public class Class940 extends Class939 implements Class930, ITickableTileEntity {
    private static final int[] field5304 = IntStream.range(0, 27).toArray();
    private NonNullList<ItemStack> field5305 = NonNullList.<ItemStack>method68(27, ItemStack.EMPTY);
    private int field5306;

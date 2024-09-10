@@ -19,8 +19,8 @@ public abstract class Class7325 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<Pair<String, String>> var3 = DSL.named(Class8239.field35393.typeName(), Class3639.method12354());
-      if (Objects.equals(this.getInputSchema().getType(Class8239.field35393), var3)) {
+      Type<Pair<String, String>> var3 = DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354());
+      if (Objects.equals(this.getInputSchema().getType(TypeReferences.field35393), var3)) {
          return this.fixTypeEverywhere(this.field31406, var3, var1 -> var1x -> var1x.mapSecond(this::method23220));
       } else {
          throw new IllegalStateException("item name type is not what was expected.");

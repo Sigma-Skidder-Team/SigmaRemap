@@ -93,13 +93,13 @@ public class Class1036 extends Class1035 {
    }
 
    @Override
-   public void method4258() {
+   public void updateAITasks() {
       this.world.getProfiler().startSection("piglinBruteBrain");
       this.getBrain().method21432((ServerWorld)this.world, this);
       this.world.getProfiler().endSection();
       Class9743.method38199(this);
       Class9743.method38205(this);
-      super.method4258();
+      super.updateAITasks();
    }
 
    @Override

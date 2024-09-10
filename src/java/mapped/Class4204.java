@@ -20,7 +20,7 @@ public class Class4204 extends Class4194 {
       this.field20444 = var2;
    }
 
-   public Class4204(Class8761 var1, CompoundNBT var2) {
+   public Class4204(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33449, var2);
       this.field20511 = var2.getBoolean("Mob");
    }

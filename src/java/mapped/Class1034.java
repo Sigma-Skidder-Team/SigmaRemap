@@ -253,12 +253,12 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    @Override
-   public void method4258() {
+   public void updateAITasks() {
       this.world.getProfiler().startSection("piglinBrain");
       this.getBrain().method21432((ServerWorld)this.world, this);
       this.world.getProfiler().endSection();
       Class4388.method13812(this);
-      super.method4258();
+      super.updateAITasks();
    }
 
    @Override
@@ -364,7 +364,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    public boolean method4627(ItemStack var1) {
-      EquipmentSlotType var4 = Class1006.method4271(var1);
+      EquipmentSlotType var4 = MobEntity.method4271(var1);
       ItemStack var5 = this.getItemStackFromSlot(var4);
       return this.method4250(var1, var5);
    }

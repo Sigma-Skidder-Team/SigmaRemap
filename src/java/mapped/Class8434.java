@@ -33,7 +33,7 @@ public class Class8434 extends DataFix {
 
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
-         "jigsaw_rotation_fix", this.getInputSchema().getType(Class8239.field35388), var0 -> var0.update(DSL.remainderFinder(), Class8434::method29645)
+         "jigsaw_rotation_fix", this.getInputSchema().getType(TypeReferences.field35388), var0 -> var0.update(DSL.remainderFinder(), Class8434::method29645)
       );
    }
 }

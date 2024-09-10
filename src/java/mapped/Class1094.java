@@ -44,16 +44,16 @@ public class Class1094 extends Class1018 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(1, new Class2603(this));
-      this.field5600.method20002(1, new Class2749(this, 2.2));
-      this.field5600.method20002(2, new Class2785(this, 0.8));
-      this.field5600.method20002(3, new Class2680(this, 1.0, Class120.method339(Items.field38052, Items.field38057, Blocks.DANDELION), false));
-      this.field5600.method20002(4, new Class2772<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.2, 2.2));
-      this.field5600.method20002(4, new Class2772<WolfEntity>(this, WolfEntity.class, 10.0F, 2.2, 2.2));
-      this.field5600.method20002(4, new Class2772<Class1009>(this, Class1009.class, 4.0F, 2.2, 2.2));
-      this.field5600.method20002(5, new Class2634(this));
-      this.field5600.method20002(6, new Class2737(this, 0.6));
-      this.field5600.method20002(11, new Class2612(this, PlayerEntity.class, 10.0F));
+      this.field5600.addGoal(1, new Class2603(this));
+      this.field5600.addGoal(1, new Class2749(this, 2.2));
+      this.field5600.addGoal(2, new Class2785(this, 0.8));
+      this.field5600.addGoal(3, new Class2680(this, 1.0, Class120.method339(Items.field38052, Items.field38057, Blocks.DANDELION), false));
+      this.field5600.addGoal(4, new Class2772<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.2, 2.2));
+      this.field5600.addGoal(4, new Class2772<WolfEntity>(this, WolfEntity.class, 10.0F, 2.2, 2.2));
+      this.field5600.addGoal(4, new Class2772<Class1009>(this, Class1009.class, 4.0F, 2.2, 2.2));
+      this.field5600.addGoal(5, new Class2634(this));
+      this.field5600.addGoal(6, new WaterAvoidingRandomWalkingGoal(this, 0.6));
+      this.field5600.addGoal(11, new Class2612(this, PlayerEntity.class, 10.0F));
    }
 
    @Override
@@ -119,7 +119,7 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public void method4258() {
+   public void updateAITasks() {
       if (this.field5991 > 0) {
          this.field5991--;
       }
@@ -212,7 +212,7 @@ public class Class1094 extends Class1018 {
    }
 
    public static Class7037 method5111() {
-      return Class1006.method4220().method21849(Attributes.field42105, 3.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F);
+      return MobEntity.method4220().method21849(Attributes.field42105, 3.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F);
    }
 
    @Override
@@ -299,10 +299,10 @@ public class Class1094 extends Class1018 {
    public void method5115(int var1) {
       if (var1 == 99) {
          this.getAttribute(Attributes.field42113).method38661(8.0);
-         this.field5600.method20002(4, new Class2648(this));
-         this.field5601.method20002(1, new Class2704(this).method10918());
-         this.field5601.method20002(2, new Class2709<PlayerEntity>(this, PlayerEntity.class, true));
-         this.field5601.method20002(2, new Class2709<WolfEntity>(this, WolfEntity.class, true));
+         this.field5600.addGoal(4, new Class2648(this));
+         this.field5601.addGoal(1, new HurtByTargetGoal(this).method10918());
+         this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+         this.field5601.addGoal(2, new NearestAttackableTargetGoal<WolfEntity>(this, WolfEntity.class, true));
          if (!this.method3381()) {
             this.method3379(new TranslationTextComponent(Util.method38486("entity", field5987)));
          }

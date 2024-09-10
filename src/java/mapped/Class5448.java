@@ -9,7 +9,7 @@ public class Class5448 extends Class5444<Class4728> {
       super(var1, var2, var3, var4, var5, var6);
    }
 
-   public void method17109(DynamicRegistries var1, ChunkGenerator var2, Class8761 var3, int var4, int var5, Biome var6, Class4728 var7) {
+   public void method17109(DynamicRegistries var1, ChunkGenerator var2, TemplateManager var3, int var4, int var5, Biome var6, Class4728 var7) {
       int var10 = var4 * 16;
       int var11 = var5 * 16;
       BlockPos var12 = new BlockPos(var10 + 9, 90, var11 + 9);

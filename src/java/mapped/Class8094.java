@@ -4,7 +4,7 @@ public class Class8094 extends Class8092 {
    private static String[] field34811;
    public final Class1017 field34821;
 
-   public Class8094(Class1017 var1, Class1006 var2) {
+   public Class8094(Class1017 var1, MobEntity var2) {
       super(var2);
       this.field34821 = var1;
    }

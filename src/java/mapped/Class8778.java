@@ -15,7 +15,7 @@ public class Class8778 extends DataFix {
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
          "EntityStringUuidFix",
-         this.getInputSchema().getType(Class8239.field35391),
+         this.getInputSchema().getType(TypeReferences.ENTITY),
          var0 -> var0.update(
                DSL.remainderFinder(),
                var0x -> {

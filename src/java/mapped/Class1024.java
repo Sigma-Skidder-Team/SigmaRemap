@@ -35,16 +35,16 @@ public class Class1024 extends Class1025 implements Class1023 {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.method20002(0, new Class2603(this));
-      this.field5600.method20002(2, new Class2759(this, this, 10.0F));
-      this.field5600.method20002(3, new Class2691<Class1024>(this, 1.0, 8.0F));
-      this.field5600.method20002(8, new Class2736(this, 0.6));
-      this.field5600.method20002(9, new Class2612(this, PlayerEntity.class, 15.0F, 1.0F));
-      this.field5600.method20002(10, new Class2612(this, Class1006.class, 15.0F));
-      this.field5601.method20002(1, new Class2704(this, Class1026.class).method10918());
-      this.field5601.method20002(2, new Class2709<PlayerEntity>(this, PlayerEntity.class, true));
-      this.field5601.method20002(3, new Class2709<Class1043>(this, Class1043.class, false));
-      this.field5601.method20002(3, new Class2709<Class1058>(this, Class1058.class, true));
+      this.field5600.addGoal(0, new Class2603(this));
+      this.field5600.addGoal(2, new Class2759(this, this, 10.0F));
+      this.field5600.addGoal(3, new Class2691<Class1024>(this, 1.0, 8.0F));
+      this.field5600.addGoal(8, new Class2736(this, 0.6));
+      this.field5600.addGoal(9, new Class2612(this, PlayerEntity.class, 15.0F, 1.0F));
+      this.field5600.addGoal(10, new Class2612(this, MobEntity.class, 15.0F));
+      this.field5601.addGoal(1, new HurtByTargetGoal(this, Class1026.class).method10918());
+      this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, false));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, true));
    }
 
    public static Class7037 method4541() {

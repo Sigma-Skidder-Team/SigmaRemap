@@ -15,7 +15,7 @@ public class Class7840 extends DataFix {
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
          "OptionsAddTextBackgroundFix",
-         this.getInputSchema().getType(Class8239.field35380),
+         this.getInputSchema().getType(TypeReferences.field35380),
          var1 -> var1.update(
                DSL.remainderFinder(),
                var1x -> (Dynamic)DataFixUtils.orElse(

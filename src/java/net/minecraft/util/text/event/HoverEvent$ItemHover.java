@@ -63,10 +63,10 @@ public class HoverEvent$ItemHover {
          return new HoverEvent$ItemHover(Registry.ITEM.method9184(new ResourceLocation(element.getAsString())), 1, (CompoundNBT)null);
       } else {
          JsonObject item = JSONUtils.method32781(element, "item");
-         Item i = Registry.ITEM.method9184(new ResourceLocation(JSONUtils.method32763(item, "id")));
+         Item i = Registry.ITEM.method9184(new ResourceLocation(JSONUtils.getString(item, "id")));
          int s = JSONUtils.getInt(item, "count", 1);
          if (item.has("tag")) {
-            String commandsyntaxexception = JSONUtils.method32763(item, "tag");
+            String commandsyntaxexception = JSONUtils.getString(item, "tag");
 
             try {
                CompoundNBT var7 = Class7671.method25188(commandsyntaxexception);

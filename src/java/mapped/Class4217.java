@@ -16,7 +16,7 @@ public class Class4217 extends Class4213 {
       this.field20545 = var3.nextInt(3);
    }
 
-   public Class4217(Class8761 var1, CompoundNBT var2) {
+   public Class4217(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33472, var2);
    }
 

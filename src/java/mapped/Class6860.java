@@ -11,7 +11,7 @@ public class Class6860 implements Class6861<MinecraftServer> {
    }
 
    public void run(MinecraftServer var1, Class8559<MinecraftServer> var2, long var3) {
-      Class7268 var7 = var1.method1397();
+      FunctionManager var7 = var1.method1397();
       var7.method22829(this.field29787).ifPresent(var1x -> var7.method22825(var1x, var7.method22828()));
    }
 

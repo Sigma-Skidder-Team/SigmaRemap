@@ -19,8 +19,8 @@ public class Class9631 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<Pair<String, Dynamic<?>>> var3 = DSL.named(Class8239.field35396.typeName(), DSL.remainderType());
-      if (Objects.equals(var3, this.getInputSchema().getType(Class8239.field35396))) {
+      Type<Pair<String, Dynamic<?>>> var3 = DSL.named(TypeReferences.field35396.typeName(), DSL.remainderType());
+      if (Objects.equals(var3, this.getInputSchema().getType(TypeReferences.field35396))) {
          return this.fixTypeEverywhere(
             "ObjectiveDisplayNameFix",
             var3,

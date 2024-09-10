@@ -26,43 +26,43 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.function.Predicate;
 
-public class Class1038 extends Class1009 {
+public class ZombieEntity extends Class1009 {
    private static final UUID field5758 = UUID.fromString("B9766B59-9566-4402-BC1F-2EE2A276D836");
    private static final AttributeModifier field5759 = new AttributeModifier(field5758, "Baby speed boost", 0.5, AttributeModifierOperation.field13353);
-   private static final DataParameter<Boolean> field5760 = EntityDataManager.<Boolean>createKey(Class1038.class, DataSerializers.field33398);
-   private static final DataParameter<Integer> field5761 = EntityDataManager.<Integer>createKey(Class1038.class, DataSerializers.VARINT);
-   private static final DataParameter<Boolean> field5762 = EntityDataManager.<Boolean>createKey(Class1038.class, DataSerializers.field33398);
+   private static final DataParameter<Boolean> field5760 = EntityDataManager.<Boolean>createKey(ZombieEntity.class, DataSerializers.field33398);
+   private static final DataParameter<Integer> field5761 = EntityDataManager.<Integer>createKey(ZombieEntity.class, DataSerializers.VARINT);
+   private static final DataParameter<Boolean> field5762 = EntityDataManager.<Boolean>createKey(ZombieEntity.class, DataSerializers.field33398);
    private static final Predicate<Difficulty> field5763 = var0 -> var0 == Difficulty.field14354;
    private final Class2643 field5764 = new Class2643(this, field5763);
    private boolean field5765;
    private int field5766;
    private int field5767;
 
-   public Class1038(EntityType<? extends Class1038> var1, World var2) {
+   public ZombieEntity(EntityType<? extends ZombieEntity> var1, World var2) {
       super(var1, var2);
    }
 
-   public Class1038(World var1) {
+   public ZombieEntity(World var1) {
       this(EntityType.field41107, var1);
    }
 
    @Override
    public void method4219() {
-      this.field5600.method20002(4, new Class2633(this, this, 1.0, 3));
-      this.field5600.method20002(8, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.method20002(8, new Class2668(this));
-      this.method4639();
+      this.field5600.addGoal(4, new Class2633(this, this, 1.0, 3));
+      this.field5600.addGoal(8, new Class2612(this, PlayerEntity.class, 8.0F));
+      this.field5600.addGoal(8, new Class2668(this));
+      this.applyEntityAI();
    }
 
-   public void method4639() {
-      this.field5600.method20002(2, new Class2654(this, 1.0, false));
-      this.field5600.method20002(6, new Class2686(this, 1.0, true, 4, this::method4655));
-      this.field5600.method20002(7, new Class2737(this, 1.0));
-      this.field5601.method20002(1, new Class2704(this).method10918(Class1063.class));
-      this.field5601.method20002(2, new Class2709<PlayerEntity>(this, PlayerEntity.class, true));
-      this.field5601.method20002(3, new Class2709<Class1043>(this, Class1043.class, false));
-      this.field5601.method20002(3, new Class2709<Class1058>(this, Class1058.class, true));
-      this.field5601.method20002(5, new Class2709<Class1088>(this, Class1088.class, 10, true, false, Class1088.field5963));
+   public void applyEntityAI() {
+      this.field5600.addGoal(2, new ZombieAttackGoal(this, 1.0, false));
+      this.field5600.addGoal(6, new Class2686(this, 1.0, true, 4, this::method4655));
+      this.field5600.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.field5601.addGoal(1, new HurtByTargetGoal(this).method10918(ZombifiedPiglinEntity.class));
+      this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, false));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, true));
+      this.field5601.addGoal(5, new NearestAttackableTargetGoal<Class1088>(this, Class1088.class, 10, true, false, Class1088.field5963));
    }
 
    public static Class7037 method4653() {
@@ -98,7 +98,7 @@ public class Class1038 extends Class1009 {
             if (!var1) {
                this.field5600.method20003(this.field5764);
             } else {
-               this.field5600.method20002(1, this.field5764);
+               this.field5600.addGoal(1, this.field5764);
             }
          }
       } else if (this.field5765) {
@@ -146,7 +146,7 @@ public class Class1038 extends Class1009 {
       super.notifyDataManagerChange(var1);
    }
 
-   public boolean method4645() {
+   public boolean shouldDrown() {
       return true;
    }
 
@@ -154,7 +154,7 @@ public class Class1038 extends Class1009 {
    public void tick() {
       if (!this.world.isRemote && this.isAlive() && !this.method4305()) {
          if (!this.method4654()) {
-            if (this.method4645()) {
+            if (this.shouldDrown()) {
                if (!this.areEyesInFluid(FluidTags.field40469)) {
                   this.field5766 = -1;
                } else {
@@ -214,8 +214,8 @@ public class Class1038 extends Class1009 {
       }
    }
 
-   public void method4659(EntityType<? extends Class1038> var1) {
-      Class1038 var4 = this.method4292(var1, true);
+   public void method4659(EntityType<? extends ZombieEntity> var1) {
+      ZombieEntity var4 = this.method4292(var1, true);
       if (var4 != null) {
          var4.method4662(var4.world.method6807(var4.getPosition()).method38330());
          var4.method4656(var4.method4642() && this.method4655());
@@ -244,7 +244,7 @@ public class Class1038 extends Class1009 {
             int var7 = MathHelper.floor(this.getPosX());
             int var8 = MathHelper.floor(this.getPosY());
             int var9 = MathHelper.floor(this.getPosZ());
-            Class1038 var10 = new Class1038(this.world);
+            ZombieEntity var10 = new ZombieEntity(this.world);
 
             for (int var11 = 0; var11 < 50; var11++) {
                int var12 = var7 + MathHelper.method37782(this.rand, 7, 40) * MathHelper.method37782(this.rand, -1, 1);
@@ -462,7 +462,7 @@ public class Class1038 extends Class1009 {
    }
 
    @Override
-   public double method2894() {
+   public double getYOffset() {
       return !this.isChild() ? -0.45 : 0.0;
    }
 
@@ -487,7 +487,7 @@ public class Class1038 extends Class1009 {
    }
 
    // $VF: synthetic method
-   public static Random method4665(Class1038 var0) {
+   public static Random method4665(ZombieEntity var0) {
       return var0.rand;
    }
 }

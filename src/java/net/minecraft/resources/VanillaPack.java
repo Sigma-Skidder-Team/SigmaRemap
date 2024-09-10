@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import mapped.*;
 import net.minecraft.client.util.Util;
+import net.minecraft.resources.data.IMetadataSectionSerializer;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,43 +23,58 @@ import java.util.*;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
+import static net.minecraft.world.World.LOGGER;
+
 public class VanillaPack implements IResourcePack {
    public static Path field1188;
    private static final Logger field1189 = LogManager.getLogger();
    public static Class<?> field1190;
-   private static final Map<ResourcePackType, FileSystem> field1191 = Util.<Map<ResourcePackType, FileSystem>>make(Maps.newHashMap(), var0 -> {
-      synchronized (VanillaPack.class) {
-         for (ResourcePackType packType : ResourcePackType.values()) {
-            URL var8 = VanillaPack.class.getResource("/" + packType.getDirectoryName() + "/.mcassetsroot");
+   private static final Map<ResourcePackType, FileSystem> FILE_SYSTEMS_BY_PACK_TYPE = Util.make(Maps.newHashMap(), (p_lambda$static$0_0_) ->
+   {
+      synchronized (VanillaPack.class)
+      {
+         for (ResourcePackType resourcepacktype : ResourcePackType.values())
+         {
+            URL url = VanillaPack.class.getResource("/" + resourcepacktype.getDirectoryName() + "/.mcassetsroot");
 
-            try {
-               URI var9 = var8.toURI();
-               if ("jar".equals(var9.getScheme())) {
-                  FileSystem var10;
-                  try {
-                     var10 = FileSystems.getFileSystem(var9);
-                  } catch (FileSystemNotFoundException var13) {
-                     var10 = FileSystems.newFileSystem(var9, Collections.emptyMap());
+            try
+            {
+               URI uri = url.toURI();
+
+               if ("jar".equals(uri.getScheme()))
+               {
+                  FileSystem filesystem;
+
+                  try
+                  {
+                     filesystem = FileSystems.getFileSystem(uri);
+                  }
+                  catch (FileSystemNotFoundException filesystemnotfoundexception)
+                  {
+                     filesystem = FileSystems.newFileSystem(uri, Collections.emptyMap());
                   }
 
-                  var0.put(packType, var10);
+                  p_lambda$static$0_0_.put(resourcepacktype, filesystem);
                }
-            } catch (IOException | URISyntaxException var14) {
-               field1189.error("Couldn't get a list of all vanilla resources", var14);
+            }
+            catch (URISyntaxException | IOException ioexception)
+            {
+               LOGGER.error("Couldn't get a list of all vanilla resources", (Throwable)ioexception);
             }
          }
       }
    });
-   public final Set<String> field1192;
+   public final Set<String> resourceNamespaces;
    private static final boolean field1193 = Util.getOSType() == OS.WINDOWS;
    private static final boolean field1194 = Class9299.field42864.method20245();
 
-   public VanillaPack(String... var1) {
-      this.field1192 = ImmutableSet.copyOf(var1);
+   public VanillaPack(String... resourceNamespacesIn)
+   {
+      this.resourceNamespaces = ImmutableSet.copyOf(resourceNamespacesIn);
    }
 
    @Override
-   public InputStream method1222(String var1) throws IOException {
+   public InputStream getRootResourceStream(String var1) throws IOException {
       if (!var1.contains("/") && !var1.contains("\\")) {
          if (field1188 != null) {
             Path var4 = field1188.resolve(var1);
@@ -67,7 +83,7 @@ public class VanillaPack implements IResourcePack {
             }
          }
 
-         return this.method1246(var1);
+         return this.getInputStreamVanilla(var1);
       } else {
          throw new IllegalArgumentException("Root resources can only be filenames, not paths (no / allowed!)");
       }
@@ -75,7 +91,7 @@ public class VanillaPack implements IResourcePack {
 
    @Override
    public InputStream getResourceStream(ResourcePackType var1, ResourceLocation var2) throws IOException {
-      InputStream var5 = this.method1243(var1, var2);
+      InputStream var5 = this.getInputStreamVanilla(var1, var2);
       if (var5 == null) {
          throw new FileNotFoundException(var2.getPath());
       } else {
@@ -84,7 +100,7 @@ public class VanillaPack implements IResourcePack {
    }
 
    @Override
-   public Collection<ResourceLocation> method1224(ResourcePackType var1, String var2, String var3, int var4, Predicate<String> var5) {
+   public Collection<ResourceLocation> getAllResourceLocations(ResourcePackType var1, String var2, String var3, int var4, Predicate<String> var5) {
       HashSet var8 = Sets.newHashSet();
       if (field1188 != null) {
          try {
@@ -125,7 +141,7 @@ public class VanillaPack implements IResourcePack {
             Path var12 = Paths.get(var11.toURI());
             method1242(var8, var4, var2, var12, var3, var5);
          } else if ("jar".equals(var19.getScheme())) {
-            Path var20 = field1191.get(var1).getPath("/" + var1.getDirectoryName());
+            Path var20 = FILE_SYSTEMS_BY_PACK_TYPE.get(var1).getPath("/" + var1.getDirectoryName());
             method1242(var8, var4, "minecraft", var20, var3, var5);
          } else {
             field1189.error("Unsupported scheme {} trying to list vanilla resources (NYI?)", var19);
@@ -149,7 +165,7 @@ public class VanillaPack implements IResourcePack {
    }
 
    @Nullable
-   public InputStream method1243(ResourcePackType var1, ResourceLocation var2) {
+   public InputStream getInputStreamVanilla(ResourcePackType var1, ResourceLocation var2) {
       String var5 = method1244(var1, var2);
       InputStream var6 = Class9561.method37043(var5);
       if (var6 != null) {
@@ -183,12 +199,12 @@ public class VanillaPack implements IResourcePack {
    }
 
    @Nullable
-   public InputStream method1246(String var1) {
+   public InputStream getInputStreamVanilla(String var1) {
       return !field1194 ? VanillaPack.class.getResourceAsStream("/" + var1) : this.method1248(ResourcePackType.SERVER_DATA, "/" + var1);
    }
 
    @Override
-   public boolean method1225(ResourcePackType var1, ResourceLocation var2) {
+   public boolean resourceExists(ResourcePackType var1, ResourceLocation var2) {
       String var5 = method1244(var1, var2);
       InputStream var6 = Class9561.method37043(var5);
       if (var6 != null) {
@@ -211,22 +227,22 @@ public class VanillaPack implements IResourcePack {
    }
 
    @Override
-   public Set<String> method1226(ResourcePackType var1) {
-      return this.field1192;
+   public Set<String> getResourceNamespaces(ResourcePackType var1) {
+      return this.resourceNamespaces;
    }
 
    @Nullable
    @Override
-   public <T> T method1227(Class7170<T> var1) throws IOException {
-      try (InputStream var4 = this.method1222("pack.mcmeta")) {
-         return Class308.<T>method1257(var1, var4);
+   public <T> T getMetadata(IMetadataSectionSerializer<T> var1) throws IOException {
+      try (InputStream var4 = this.getRootResourceStream("pack.mcmeta")) {
+         return ResourcePack.<T>method1257(var1, var4);
       } catch (FileNotFoundException | RuntimeException var18) {
          return null;
       }
    }
 
    @Override
-   public String method1228() {
+   public String getName() {
       return "Default";
    }
 
@@ -249,7 +265,7 @@ public class VanillaPack implements IResourcePack {
 
    private InputStream method1248(ResourcePackType var1, String var2) {
       try {
-         FileSystem var5 = field1191.get(var1);
+         FileSystem var5 = FILE_SYSTEMS_BY_PACK_TYPE.get(var1);
          return var5 != null ? Files.newInputStream(var5.getPath(var2)) : VanillaPack.class.getResourceAsStream(var2);
       } catch (IOException var6) {
          return VanillaPack.class.getResourceAsStream(var2);

@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public class Class6739 extends Class6717 {
    public Class6739(Schema var1, boolean var2) {
-      super(var1, var2, "OminousBannerBlockEntityRenameFix", Class8239.field35386, "minecraft:banner");
+      super(var1, var2, "OminousBannerBlockEntityRenameFix", TypeReferences.field35386, "minecraft:banner");
    }
 
    @Override

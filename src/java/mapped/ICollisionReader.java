@@ -48,10 +48,10 @@ public interface ICollisionReader extends IBlockReader {
       return this.method7047(var1, var2, var3).allMatch(VoxelShape::method19516);
    }
 
-   Stream<VoxelShape> method7046(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3);
+   Stream<VoxelShape> func_230318_c_(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3);
 
    default Stream<VoxelShape> method7047(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
-      return Stream.<VoxelShape>concat(this.getCollisionShapes(var1, var2), this.method7046(var1, var2, var3));
+      return Stream.<VoxelShape>concat(this.getCollisionShapes(var1, var2), this.func_230318_c_(var1, var2, var3));
    }
 
    default Stream<VoxelShape> getCollisionShapes(Entity var1, AxisAlignedBB var2) {

@@ -52,8 +52,8 @@ public class Class1106 extends Class1105 {
    }
 
    @Override
-   public void method4258() {
-      super.method4258();
+   public void updateAITasks() {
+      super.updateAITasks();
       short var3 = 1200;
       if ((this.ticksExisted + this.getEntityId()) % 1200 == 0) {
          Effect var4 = Effects.MINING_FATIGUE;

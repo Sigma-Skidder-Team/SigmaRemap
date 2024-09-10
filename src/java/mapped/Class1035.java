@@ -56,7 +56,7 @@ public abstract class Class1035 extends Class1009 {
    }
 
    @Override
-   public double method2894() {
+   public double getYOffset() {
       return !this.isChild() ? -0.45 : -0.05;
    }
 
@@ -68,8 +68,8 @@ public abstract class Class1035 extends Class1009 {
    }
 
    @Override
-   public void method4258() {
-      super.method4258();
+   public void updateAITasks() {
+      super.updateAITasks();
       if (!this.method4634()) {
          this.field5751 = 0;
       } else {
@@ -87,7 +87,7 @@ public abstract class Class1035 extends Class1009 {
    }
 
    public void method4619(ServerWorld var1) {
-      Class1063 var4 = this.<Class1063>method4292(EntityType.field41110, true);
+      ZombifiedPiglinEntity var4 = this.<ZombifiedPiglinEntity>method4292(EntityType.field41110, true);
       if (var4 != null) {
          var4.addPotionEffect(new EffectInstance(Effects.NAUSEA, 200, 0));
       }

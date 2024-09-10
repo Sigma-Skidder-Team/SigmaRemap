@@ -15,7 +15,7 @@ public class Class4879 extends Class4874<Class4470> {
    public Class4470 method15047(JsonObject var1, Class9587 var2, Class9366 var3) {
       Class8812 var6 = null;
       if (var1.has("potion")) {
-         ResourceLocation var7 = new ResourceLocation(JSONUtils.method32763(var1, "potion"));
+         ResourceLocation var7 = new ResourceLocation(JSONUtils.getString(var1, "potion"));
          var6 = Registry.field16076.method9187(var7).orElseThrow(() -> new JsonSyntaxException("Unknown potion '" + var7 + "'"));
       }
 

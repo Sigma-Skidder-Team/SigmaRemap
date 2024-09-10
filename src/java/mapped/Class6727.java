@@ -7,7 +7,7 @@ import com.mojang.serialization.Dynamic;
 
 public class Class6727 extends Class6717 {
    public Class6727(Schema var1, boolean var2) {
-      super(var1, var2, "Remove Golem Gossip Fix", Class8239.field35391, "minecraft:villager");
+      super(var1, var2, "Remove Golem Gossip Fix", TypeReferences.ENTITY, "minecraft:villager");
    }
 
    @Override

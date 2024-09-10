@@ -9,11 +9,11 @@ import com.mojang.serialization.Dynamic;
 
 public class Class7116 extends Class7114 {
    public Class7116(Schema var1) {
-      super(var1, Class8239.field35387);
+      super(var1, TypeReferences.field35387);
    }
 
    public TypeRewriteRule makeRule() {
-      OpticFinder<Pair<String, String>> var3 = DSL.fieldFinder("id", DSL.named(Class8239.field35393.typeName(), Class3639.method12354()));
+      OpticFinder<Pair<String, String>> var3 = DSL.fieldFinder("id", DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354()));
       return this.fixTypeEverywhereTyped("ItemStackUUIDFix", this.getInputSchema().getType(this.field30634), var2 -> {
          OpticFinder<?> var5 = var2.getType().findField("tag");
          return var2.updateTyped(var5, var3x -> var3x.update(DSL.remainderFinder(), var3xx -> {

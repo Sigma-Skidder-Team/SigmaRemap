@@ -37,7 +37,7 @@ public class Class2569 implements JsonDeserializer<Class9304> {
    }
 
    private Class6647 method10760(JsonObject var1) {
-      String var4 = JSONUtils.method32763(var1, "name");
+      String var4 = JSONUtils.getString(var1, "name");
       Class2221 var5 = this.method10761(var1, Class2221.field14506);
       float var6 = JSONUtils.method32772(var1, "volume", 1.0F);
       Validate.isTrue(var6 > 0.0F, "Invalid volume", new Object[0]);
@@ -54,7 +54,7 @@ public class Class2569 implements JsonDeserializer<Class9304> {
    private Class2221 method10761(JsonObject var1, Class2221 var2) {
       Class2221 var5 = var2;
       if (var1.has("type")) {
-         var5 = Class2221.method8948(JSONUtils.method32763(var1, "type"));
+         var5 = Class2221.method8948(JSONUtils.getString(var1, "type"));
          Validate.notNull(var5, "Invalid type", new Object[0]);
       }
 

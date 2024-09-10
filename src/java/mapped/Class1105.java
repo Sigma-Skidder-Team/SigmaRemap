@@ -44,15 +44,15 @@ public class Class1105 extends Class1009 {
    public void method4219() {
       Class2660 var3 = new Class2660(this, 1.0);
       this.field6076 = new Class2736(this, 1.0, 80);
-      this.field5600.method20002(4, new Class2724(this));
-      this.field5600.method20002(5, var3);
-      this.field5600.method20002(7, this.field6076);
-      this.field5600.method20002(8, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.method20002(8, new Class2612(this, Class1105.class, 12.0F, 0.01F));
-      this.field5600.method20002(9, new Class2668(this));
+      this.field5600.addGoal(4, new Class2724(this));
+      this.field5600.addGoal(5, var3);
+      this.field5600.addGoal(7, this.field6076);
+      this.field5600.addGoal(8, new Class2612(this, PlayerEntity.class, 8.0F));
+      this.field5600.addGoal(8, new Class2612(this, Class1105.class, 12.0F, 0.01F));
+      this.field5600.addGoal(9, new Class2668(this));
       this.field6076.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
       var3.method10809(EnumSet.<Class2240>of(Class2240.field14657, Class2240.field14658));
-      this.field5601.method20002(1, new Class2709<LivingEntity>(this, LivingEntity.class, 10, true, false, new Class121(this)));
+      this.field5601.addGoal(1, new NearestAttackableTargetGoal<LivingEntity>(this, LivingEntity.class, 10, true, false, new Class121(this)));
    }
 
    public static Class7037 method5300() {

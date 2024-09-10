@@ -69,7 +69,7 @@ public class Class8605 {
          JsonObject var3 = JSONUtils.method32781(var0, "enchantment");
          Class6069 var4 = null;
          if (var3.has("enchantment")) {
-            ResourceLocation var5 = new ResourceLocation(JSONUtils.method32763(var3, "enchantment"));
+            ResourceLocation var5 = new ResourceLocation(JSONUtils.getString(var3, "enchantment"));
             var4 = Registry.field16073.method9187(var5).orElseThrow(() -> new JsonSyntaxException("Unknown enchantment '" + var5 + "'"));
          }
 

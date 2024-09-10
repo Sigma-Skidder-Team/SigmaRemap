@@ -14,7 +14,7 @@ import java.io.*;
 import java.util.*;
 import java.util.function.Predicate;
 
-public class Class309 extends Class308 {
+public class Class309 extends ResourcePack {
    private static final Logger field1198 = LogManager.getLogger();
    private static final boolean field1199 = Util.getOSType() == OS.WINDOWS;
    private static final CharMatcher field1200 = CharMatcher.is('\\');
@@ -61,7 +61,7 @@ public class Class309 extends Class308 {
    }
 
    @Override
-   public Set<String> method1226(ResourcePackType var1) {
+   public Set<String> getResourceNamespaces(ResourcePackType var1) {
       Set<String> var4 = Sets.newHashSet();
       File var5 = new File(this.field1197, var1.getDirectoryName());
       File[] var6 = var5.listFiles((FileFilter) DirectoryFileFilter.DIRECTORY);
@@ -84,7 +84,7 @@ public class Class309 extends Class308 {
    }
 
    @Override
-   public Collection<ResourceLocation> method1224(ResourcePackType var1, String var2, String var3, int var4, Predicate<String> var5) {
+   public Collection<ResourceLocation> getAllResourceLocations(ResourcePackType var1, String var2, String var3, int var4, Predicate<String> var5) {
       File var8 = new File(this.field1197, var1.getDirectoryName());
       ArrayList var9 = Lists.newArrayList();
       this.method1260(new File(new File(var8, var2), var3), var4, var2, var9, var3 + "/", var5);

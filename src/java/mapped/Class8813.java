@@ -73,7 +73,7 @@ public class Class8813 extends DataFix {
 
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
-         "EntityHealthFix", this.getInputSchema().getType(Class8239.field35391), var1 -> var1.update(DSL.remainderFinder(), this::method31818)
+         "EntityHealthFix", this.getInputSchema().getType(TypeReferences.ENTITY), var1 -> var1.update(DSL.remainderFinder(), this::method31818)
       );
    }
 }

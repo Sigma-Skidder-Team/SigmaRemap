@@ -451,7 +451,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    private void method2738() {
       AxisAlignedBB var3 = new AxisAlignedBB(this.getPosition()).method19663(32.0, 10.0, 32.0);
       this.world
-         .<Class1006>method7183(Class1006.class, var3)
+         .<MobEntity>method7183(MobEntity.class, var3)
          .stream()
          .filter(var0 -> var0 instanceof IAngerable)
          .forEach(var1 -> ((IAngerable)var1).method4370(this));
@@ -493,7 +493,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       if (this.isInvulnerableTo(var1)) {
          return false;
       } else {
-         boolean var5 = this.field4856.method1348() && this.method2743() && "fall".equals(var1.field39022);
+         boolean var5 = this.field4856.isDedicatedServer() && this.method2743() && "fall".equals(var1.field39022);
          if (!var5 && this.field4871 > 0 && var1 != DamageSource.field39004) {
             return false;
          } else {

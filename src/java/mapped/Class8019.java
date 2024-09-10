@@ -60,7 +60,7 @@ public class Class8019 {
    private Advancement field34456;
    private boolean field34457 = true;
 
-   public Class8019(DataFixer var1, Class6395 var2, Class285 var3, File var4, ServerPlayerEntity var5) {
+   public Class8019(DataFixer var1, Class6395 var2, AdvancementManager var3, File var4, ServerPlayerEntity var5) {
       this.field34448 = var1;
       this.field34449 = var2;
       this.field34450 = var4;
@@ -78,7 +78,7 @@ public class Class8019 {
       }
    }
 
-   public void method27404(Class285 var1) {
+   public void method27404(AdvancementManager var1) {
       this.method27403();
       this.field34451.clear();
       this.field34452.clear();
@@ -89,7 +89,7 @@ public class Class8019 {
       this.method27408(var1);
    }
 
-   private void method27405(Class285 var1) {
+   private void method27405(AdvancementManager var1) {
       for (Advancement var5 : var1.method1066()) {
          this.method27412(var5);
       }
@@ -110,7 +110,7 @@ public class Class8019 {
       }
    }
 
-   private void method27407(Class285 var1) {
+   private void method27407(AdvancementManager var1) {
       for (Advancement var5 : var1.method1066()) {
          if (var5.method27030().isEmpty()) {
             this.method27410(var5, "");
@@ -119,7 +119,7 @@ public class Class8019 {
       }
    }
 
-   private void method27408(Class285 var1) {
+   private void method27408(AdvancementManager var1) {
       if (this.field34450.isFile()) {
          try {
             JsonReader var4 = new JsonReader(new StringReader(Files.toString(this.field34450, StandardCharsets.UTF_8)));

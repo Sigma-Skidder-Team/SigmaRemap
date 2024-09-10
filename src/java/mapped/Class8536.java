@@ -90,13 +90,13 @@ public class Class8536 extends DataFix {
 
    public TypeRewriteRule makeRule() {
       Schema var3 = this.getInputSchema();
-      Type<?> var4 = var3.getType(Class8239.field35387);
-      OpticFinder<Pair<String, String>> var5 = DSL.fieldFinder("id", DSL.named(Class8239.field35393.typeName(), Class3639.method12354()));
+      Type<?> var4 = var3.getType(TypeReferences.field35387);
+      OpticFinder<Pair<String, String>> var5 = DSL.fieldFinder("id", DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354()));
       OpticFinder<String> var6 = DSL.fieldFinder("id", DSL.string());
       OpticFinder<?> var7 = var4.findField("tag");
       OpticFinder<?> var8 = var7.type().findField("EntityTag");
-      OpticFinder<?> var9 = DSL.typeFinder(var3.getTypeRaw(Class8239.field35391));
-      Type<?> var10 = this.getOutputSchema().getTypeRaw(Class8239.field35391);
+      OpticFinder<?> var9 = DSL.typeFinder(var3.getTypeRaw(TypeReferences.ENTITY));
+      Type<?> var10 = this.getOutputSchema().getTypeRaw(TypeReferences.ENTITY);
       return this.fixTypeEverywhereTyped(
          "ItemSpawnEggFix",
          var4,

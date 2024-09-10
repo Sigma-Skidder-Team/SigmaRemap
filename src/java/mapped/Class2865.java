@@ -2,7 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 
-public class Class2865<T extends Class1006 & Class1092> extends Class2855<T> {
+public class Class2865<T extends MobEntity & Class1092> extends Class2855<T> {
    private static String[] field17761;
    private final Class7219 field17762;
    private final Class7219 field17763;

@@ -65,24 +65,24 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(0, new Class2651(this, this, 1.4F, true));
-      this.field5600.method20002(1, new Class2666(this, null));
-      this.field5600.method20002(2, new Class2785(this, 1.0));
-      this.field5600.method20002(3, new Class2680(this, 1.25, Class120.method342(Class5985.field26107), false));
+      this.field5600.addGoal(0, new Class2651(this, this, 1.4F, true));
+      this.field5600.addGoal(1, new Class2666(this, null));
+      this.field5600.addGoal(2, new Class2785(this, 1.0));
+      this.field5600.addGoal(3, new Class2680(this, 1.25, Class120.method342(Class5985.field26107), false));
       this.field5698 = new Class2663(this);
-      this.field5600.method20002(4, this.field5698);
-      this.field5600.method20002(5, new Class2764(this, 1.25));
-      this.field5600.method20002(5, new Class2667(this, null));
+      this.field5600.addGoal(4, this.field5698);
+      this.field5600.addGoal(5, new Class2764(this, 1.25));
+      this.field5600.addGoal(5, new Class2667(this, null));
       this.field5699 = new Class2664(this);
-      this.field5600.method20002(5, this.field5699);
+      this.field5600.addGoal(5, this.field5699);
       this.field5700 = new Class2665(this);
-      this.field5600.method20002(6, this.field5700);
-      this.field5600.method20002(7, new Class2662(this, null));
-      this.field5600.method20002(8, new Class2687(this));
-      this.field5600.method20002(9, new Class2603(this));
-      this.field5601.method20002(1, new Class2708(this, this).method10918(new Class[0]));
-      this.field5601.method20002(2, new Class2715(this));
-      this.field5601.method20002(3, new Class2779<Class1017>(this, true));
+      this.field5600.addGoal(6, this.field5700);
+      this.field5600.addGoal(7, new Class2662(this, null));
+      this.field5600.addGoal(8, new Class2687(this));
+      this.field5600.addGoal(9, new Class2603(this));
+      this.field5601.addGoal(1, new Class2708(this, this).method10918(new Class[0]));
+      this.field5601.addGoal(2, new Class2715(this));
+      this.field5601.addGoal(3, new ResetAngerGoal<Class1017>(this, true));
    }
 
    @Override
@@ -258,7 +258,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    }
 
    @Override
-   public void method4258() {
+   public void updateAITasks() {
       boolean var3 = this.method4440();
       if (!this.method3255()) {
          this.field5701 = 0;
@@ -295,7 +295,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
          return false;
       } else {
          TileEntity var3 = this.world.getTileEntity(this.field5697);
-         return var3 instanceof Class962 && ((Class962)var3).method3912();
+         return var3 instanceof BeehiveTileEntity && ((BeehiveTileEntity)var3).method3912();
       }
    }
 
@@ -315,7 +315,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    }
 
    @Override
-   public void method4349(UUID var1) {
+   public void setAngerTarget(UUID var1) {
       this.field5687 = var1;
    }
 
@@ -326,7 +326,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
 
    private boolean method4431(BlockPos var1) {
       TileEntity var4 = this.world.getTileEntity(var1);
-      return !(var4 instanceof Class962) ? false : !((Class962)var4).method3914();
+      return !(var4 instanceof BeehiveTileEntity) ? false : !((BeehiveTileEntity)var4).method3914();
    }
 
    public boolean method4432() {
@@ -434,7 +434,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    }
 
    public static Class7037 method4447() {
-      return Class1006.method4220()
+      return MobEntity.method4220()
          .method21849(Attributes.field42105, 10.0)
          .method21849(Attributes.field42109, 0.6F)
          .method21849(Attributes.MOVEMENT_SPEED, 0.3F)

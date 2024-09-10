@@ -28,7 +28,7 @@ import org.apache.logging.log4j.Logger;
 public class Class9725 {
    private static final Logger field45421 = LogManager.getLogger();
 
-   public static Class1672 method38087(ServerWorld var0, Class8761 var1, Class1653 var2, ChunkPos var3, CompoundNBT var4) {
+   public static Class1672 method38087(ServerWorld var0, TemplateManager var1, Class1653 var2, ChunkPos var3, CompoundNBT var4) {
       ChunkGenerator var7 = var0.getChunkProvider().method7370();
       Class1685 var8 = var7.method17824();
       CompoundNBT var9 = var4.getCompound("Level");
@@ -383,7 +383,7 @@ public class Class9725 {
       return var5;
    }
 
-   private static Map<Structure<?>, Class5444<?>> method38092(Class8761 var0, CompoundNBT var1, long var2) {
+   private static Map<Structure<?>, Class5444<?>> method38092(TemplateManager var0, CompoundNBT var1, long var2) {
       HashMap var6 = Maps.newHashMap();
       CompoundNBT var7 = var1.getCompound("Starts");
 

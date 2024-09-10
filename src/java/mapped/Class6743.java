@@ -7,7 +7,7 @@ import com.mojang.serialization.Dynamic;
 
 public class Class6743 extends Class6717 {
    public Class6743(Schema var1, boolean var2) {
-      super(var1, var2, "BlockEntityKeepPacked", Class8239.field35386, "DUMMY");
+      super(var1, var2, "BlockEntityKeepPacked", TypeReferences.field35386, "DUMMY");
    }
 
    private static Dynamic<?> method20556(Dynamic<?> var0) {

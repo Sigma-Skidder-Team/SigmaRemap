@@ -38,7 +38,7 @@ public class Class2947 extends Class2898<Class4712> {
    public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
       Class80 var8 = Class80.method254(var3);
       int var9 = var3.nextInt(field18024.length);
-      Class8761 var10 = var1.method6970().getServer().method1435();
+      TemplateManager var10 = var1.method6970().getServer().method1435();
       Class8969 var11 = var10.method31603(field18024[var9]);
       Class8969 var12 = var10.method31603(field18025[var9]);
       ChunkPos var13 = new ChunkPos(var4);

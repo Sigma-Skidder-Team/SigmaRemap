@@ -5,7 +5,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
 import net.minecraft.util.HandSide;
 
-public class Class2793<T extends Class1038> extends Class2794<T> {
+public class Class2793<T extends ZombieEntity> extends Class2794<T> {
    private static String[] field17428;
 
    public Class2793(float var1, float var2, int var3, int var4) {

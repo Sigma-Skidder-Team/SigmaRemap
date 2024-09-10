@@ -12,8 +12,8 @@ public class Class9462 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(Class8239.field35395);
-      Type var4 = this.getOutputSchema().getType(Class8239.field35395);
+      Type var3 = this.getInputSchema().getType(TypeReferences.field35395);
+      Type var4 = this.getOutputSchema().getType(TypeReferences.field35395);
       return this.writeFixAndRead("IglooMetadataRemovalFix", var3, var4, Class9462::method36419);
    }
 

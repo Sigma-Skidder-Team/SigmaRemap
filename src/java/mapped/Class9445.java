@@ -27,7 +27,7 @@ public class Class9445 extends DataFix {
 
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
-         "LevelFlatGeneratorInfoFix", this.getInputSchema().getType(Class8239.field35376), var1 -> var1.update(DSL.remainderFinder(), this::method36302)
+         "LevelFlatGeneratorInfoFix", this.getInputSchema().getType(TypeReferences.field35376), var1 -> var1.update(DSL.remainderFinder(), this::method36302)
       );
    }
 

@@ -38,8 +38,8 @@ public class Class3329 extends Item {
       int var10 = var2.getY();
       int var11 = var2.getZ();
 
-      for (Class1006 var13 : var1.<Class1006>method7182(
-         Class1006.class,
+      for (MobEntity var13 : var1.<MobEntity>method7182(
+         MobEntity.class,
          new AxisAlignedBB((double)var9 - 7.0, (double)var10 - 7.0, (double)var11 - 7.0, (double)var9 + 7.0, (double)var10 + 7.0, (double)var11 + 7.0)
       )) {
          if (var13.method4297() == var0) {

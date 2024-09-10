@@ -4,7 +4,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundEvents;
 
-public class Class943 extends TileEntity implements Class942, Class935 {
+public class Class943 extends TileEntity implements Class942, ITickableTileEntity {
    private static String[] field5317;
    public float field5318;
    public float field5319;

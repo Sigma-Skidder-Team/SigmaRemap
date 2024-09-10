@@ -186,7 +186,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    public static Class7037 method2997() {
-      return Class1006.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.5).method21849(Attributes.field42106, 48.0);
+      return MobEntity.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.5).method21849(Attributes.field42106, 48.0);
    }
 
    public boolean method4680() {
@@ -194,7 +194,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
    }
 
    @Override
-   public void method4258() {
+   public void updateAITasks() {
       this.world.getProfiler().startSection("villagerBrain");
       this.getBrain().method21432((ServerWorld)this.world, this);
       this.world.getProfiler().endSection();
@@ -231,7 +231,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          this.method4684();
       }
 
-      super.method4258();
+      super.updateAITasks();
    }
 
    @Override

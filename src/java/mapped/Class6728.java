@@ -20,7 +20,7 @@ public class Class6728 extends Class6717 {
    });
 
    public Class6728(Schema var1, boolean var2) {
-      super(var1, var2, "EntityPaintingMotiveFix", Class8239.field35391, "minecraft:painting");
+      super(var1, var2, "EntityPaintingMotiveFix", TypeReferences.ENTITY, "minecraft:painting");
    }
 
    public Dynamic<?> method20530(Dynamic<?> var1) {

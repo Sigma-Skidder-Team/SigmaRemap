@@ -42,13 +42,13 @@ public class Class1057 extends Class1056 implements Class1008 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(1, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.method20002(4, new Class2746(this));
-      this.field5600.method20002(7, new Class2600(this));
-      this.field5600.method20002(8, new Class2668(this));
-      this.field5601.method20002(1, new Class2704(this).method10918());
-      this.field5601.method20002(2, new Class2721(this, this));
-      this.field5601.method20002(3, new Class2719(this));
+      this.field5600.addGoal(1, new Class2612(this, PlayerEntity.class, 8.0F));
+      this.field5600.addGoal(4, new Class2746(this));
+      this.field5600.addGoal(7, new Class2600(this));
+      this.field5600.addGoal(8, new Class2668(this));
+      this.field5601.addGoal(1, new HurtByTargetGoal(this).method10918());
+      this.field5601.addGoal(2, new Class2721(this, this));
+      this.field5601.addGoal(3, new Class2719(this));
    }
 
    @Override
@@ -93,7 +93,7 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    public static Class7037 method4843() {
-      return Class1006.method4220().method21849(Attributes.field42105, 30.0);
+      return MobEntity.method4220().method21849(Attributes.field42105, 30.0);
    }
 
    @Override

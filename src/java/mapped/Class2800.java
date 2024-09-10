@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class2800<T extends Class1038> extends Class2797<T> implements Class2801 {
+public class Class2800<T extends ZombieEntity> extends Class2797<T> implements Class2801 {
    private static String[] field17431;
    private Class7219 field17445;
 

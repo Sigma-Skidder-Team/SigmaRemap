@@ -25,7 +25,7 @@ public class Class4200 extends Class4194 {
       this.field20506 = var2.nextInt(3) > 0;
    }
 
-   public Class4200(Class8761 var1, CompoundNBT var2) {
+   public Class4200(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33446, var2);
       this.field20503 = var2.getBoolean("leftLow");
       this.field20504 = var2.getBoolean("leftHigh");

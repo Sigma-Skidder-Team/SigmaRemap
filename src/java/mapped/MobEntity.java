@@ -21,8 +21,8 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.*;
 
-public abstract class Class1006 extends LivingEntity {
-   private static final DataParameter<Byte> field5592 = EntityDataManager.<Byte>createKey(Class1006.class, DataSerializers.field33390);
+public abstract class MobEntity extends LivingEntity {
+   private static final DataParameter<Byte> field5592 = EntityDataManager.<Byte>createKey(MobEntity.class, DataSerializers.field33390);
    public int field5593;
    public int field5594;
    public Class8092 field5595;
@@ -49,7 +49,7 @@ public abstract class Class1006 extends LivingEntity {
    private BlockPos field5616 = BlockPos.ZERO;
    private float field5617 = -1.0F;
 
-   public Class1006(EntityType<? extends Class1006> var1, World var2) {
+   public MobEntity(EntityType<? extends MobEntity> var1, World var2) {
       super(var1, var2);
       this.field5600 = new Class6603(var2.method6821());
       this.field5601 = new Class6603(var2.method6821());
@@ -82,9 +82,9 @@ public abstract class Class1006 extends LivingEntity {
    }
 
    public float method4223(Class2163 var1) {
-      Class1006 var4;
-      if (this.getRidingEntity() instanceof Class1006 && ((Class1006)this.getRidingEntity()).method4222()) {
-         var4 = (Class1006)this.getRidingEntity();
+      MobEntity var4;
+      if (this.getRidingEntity() instanceof MobEntity && ((MobEntity)this.getRidingEntity()).method4222()) {
+         var4 = (MobEntity)this.getRidingEntity();
       } else {
          var4 = this;
       }
@@ -110,8 +110,8 @@ public abstract class Class1006 extends LivingEntity {
    }
 
    public Class6829 method4228() {
-      if (this.isPassenger() && this.getRidingEntity() instanceof Class1006) {
-         Class1006 var3 = (Class1006)this.getRidingEntity();
+      if (this.isPassenger() && this.getRidingEntity() instanceof MobEntity) {
+         MobEntity var3 = (MobEntity)this.getRidingEntity();
          return var3.method4228();
       } else {
          return this.field5596;
@@ -123,8 +123,8 @@ public abstract class Class1006 extends LivingEntity {
    }
 
    public Class6990 method4230() {
-      if (this.isPassenger() && this.getRidingEntity() instanceof Class1006) {
-         Class1006 var3 = (Class1006)this.getRidingEntity();
+      if (this.isPassenger() && this.getRidingEntity() instanceof MobEntity) {
+         MobEntity var3 = (MobEntity)this.getRidingEntity();
          return var3.method4230();
       } else {
          return this.field5599;
@@ -267,7 +267,7 @@ public abstract class Class1006 extends LivingEntity {
    }
 
    public void method4240() {
-      boolean var3 = !(this.method3407() instanceof Class1006);
+      boolean var3 = !(this.method3407() instanceof MobEntity);
       boolean var4 = !(this.getRidingEntity() instanceof BoatEntity);
       this.field5600.method20010(Class2240.field14657, var3);
       this.field5600.method20010(Class2240.field14659, var3 && var4);
@@ -655,7 +655,7 @@ public abstract class Class1006 extends LivingEntity {
       this.field5599.method21658();
       this.world.getProfiler().endSection();
       this.world.getProfiler().startSection("mob tick");
-      this.method4258();
+      this.updateAITasks();
       this.world.getProfiler().endSection();
       this.world.getProfiler().startSection("controls");
       this.world.getProfiler().startSection("move");
@@ -673,7 +673,7 @@ public abstract class Class1006 extends LivingEntity {
       Class7393.method23620(this.world, this, this.field5600);
    }
 
-   public void method4258() {
+   public void updateAITasks() {
    }
 
    public int method4259() {
@@ -719,7 +719,7 @@ public abstract class Class1006 extends LivingEntity {
       return var1 + var6;
    }
 
-   public static boolean method4264(EntityType<? extends Class1006> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
+   public static boolean method4264(EntityType<? extends MobEntity> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       BlockPos var7 = var3.down();
       return var2 == Class2202.field14393 || var1.getBlockState(var7).method23385(var1, var7, var0);
    }
@@ -1055,14 +1055,14 @@ public abstract class Class1006 extends LivingEntity {
             return ActionResultType.field14819;
          } else {
             SpawnEggItem var8 = (SpawnEggItem)var5.getItem();
-            Optional<Class1006> var7 = var8.method11856(var1, this, (EntityType<? extends Class1006>)this.getType(), (ServerWorld)this.world, this.getPositionVec(), var5);
+            Optional<MobEntity> var7 = var8.method11856(var1, this, (EntityType<? extends MobEntity>)this.getType(), (ServerWorld)this.world, this.getPositionVec(), var5);
             var7.ifPresent(var2x -> this.method4284(var1, var2x));
             return !var7.isPresent() ? ActionResultType.field14820 : ActionResultType.SUCCESS;
          }
       }
    }
 
-   public void method4284(PlayerEntity var1, Class1006 var2) {
+   public void method4284(PlayerEntity var1, MobEntity var2) {
    }
 
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
@@ -1095,11 +1095,11 @@ public abstract class Class1006 extends LivingEntity {
    }
 
    @Nullable
-   public <T extends Class1006> T method4292(EntityType<T> var1, boolean var2) {
+   public <T extends MobEntity> T method4292(EntityType<T> var1, boolean var2) {
       if (this.removed) {
          return null;
       } else {
-         Class1006 var5 = (Class1006)var1.create(this.world);
+         MobEntity var5 = (MobEntity)var1.create(this.world);
          var5.method3364(this);
          var5.method4308(this.isChild());
          var5.method4302(this.method4305());

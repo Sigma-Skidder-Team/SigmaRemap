@@ -102,7 +102,7 @@ public class Class9561 {
       return !Class9299.field42830.method20214() ? var0.isAir() : Class9299.method35064(var0, Class9299.field42830, var1, var2);
    }
 
-   public static boolean method37051(ItemStack var0, ItemStack var1, PlayerEntity var2, Class1006 var3) {
+   public static boolean method37051(ItemStack var0, ItemStack var1, PlayerEntity var2, MobEntity var3) {
       return !Class9299.field42921.method20214()
          ? var0.getItem() instanceof Class3265
          : Class9299.method35064(var0, Class9299.field42921, var1, var2, var3);

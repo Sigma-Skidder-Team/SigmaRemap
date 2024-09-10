@@ -14,7 +14,6 @@ import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
 import javax.imageio.ImageIO;
-import javax.xml.bind.DatatypeConverter;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -104,7 +103,7 @@ public class Account {
         }
 
         if (var1.has("skin")) {
-            byte[] var7 = DatatypeConverter.parseBase64Binary(var1.getString("skin"));
+            byte[] var7 = parseBase64Binary(var1.getString("skin"));
 
             try {
                 this.skin = ImageIO.read(new ByteArrayInputStream(var7));
@@ -325,6 +324,9 @@ public class Account {
         }
 
         return var3;
+    }
+    public static byte[] parseBase64Binary(String base64String) {
+        return Base64.decodeBase64(base64String);
     }
 
     public JSONArray makeBanJSONArray() {

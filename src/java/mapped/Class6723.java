@@ -7,7 +7,7 @@ import com.mojang.serialization.Dynamic;
 
 public class Class6723 extends Class6717 {
    public Class6723(Schema var1, boolean var2) {
-      super(var1, var2, "CatTypeFix", Class8239.field35391, "minecraft:cat");
+      super(var1, var2, "CatTypeFix", TypeReferences.ENTITY, "minecraft:cat");
    }
 
    public Dynamic<?> method20522(Dynamic<?> var1) {

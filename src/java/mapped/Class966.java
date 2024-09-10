@@ -12,7 +12,7 @@ import org.apache.commons.lang3.mutable.MutableInt;
 
 import java.util.List;
 
-public class Class966 extends TileEntity implements Class935 {
+public class Class966 extends TileEntity implements ITickableTileEntity {
    private static String[] field5414;
    private long field5415;
    public int field5416;

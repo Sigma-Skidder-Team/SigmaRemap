@@ -7,7 +7,7 @@ import net.minecraft.tileentity.TileEntity;
 
 import javax.annotation.Nullable;
 
-public class Class960 extends TileEntity implements Class935 {
+public class Class960 extends TileEntity implements ITickableTileEntity {
    private final Class7574 field5390 = new Class7573(this);
 
    public Class960() {

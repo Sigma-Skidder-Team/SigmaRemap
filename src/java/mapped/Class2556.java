@@ -17,8 +17,8 @@ public class Class2556 implements JsonDeserializer<Class9762>, JsonSerializer<Cl
 
             for (int var10 = 0; var10 < var9.length; var10++) {
                JsonObject var11 = JSONUtils.method32781(var8.get(var10), "player[" + var10 + "]");
-               String var12 = JSONUtils.method32763(var11, "id");
-               var9[var10] = new GameProfile(UUID.fromString(var12), JSONUtils.method32763(var11, "name"));
+               String var12 = JSONUtils.getString(var11, "id");
+               var9[var10] = new GameProfile(UUID.fromString(var12), JSONUtils.getString(var11, "name"));
             }
 
             var7.method38379(var9);

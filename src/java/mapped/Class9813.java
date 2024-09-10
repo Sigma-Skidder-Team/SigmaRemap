@@ -177,7 +177,7 @@ public class Class9813 {
    private static ResourcePackInfo method38706(CommandContext<Class6619> var0, String var1, boolean var2) throws CommandSyntaxException {
       String var5 = StringArgumentType.getString(var0, var1);
       ResourcePackList var6 = ((Class6619)var0.getSource()).method20177().method1402();
-      ResourcePackInfo var7 = var6.method1271(var5);
+      ResourcePackInfo var7 = var6.getPackInfo(var5);
       if (var7 != null) {
          boolean var8 = var6.getEnabledPacks().contains(var7);
          if (var2 && var8) {

@@ -2,7 +2,6 @@ package net.minecraft.world.server;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.*;
-import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectLinkedOpenHashMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap.Entry;
@@ -104,7 +103,7 @@ public class ServerWorld extends World implements ISeedReader {
       this.field9043 = new ServerChunkProvider(
          this,
          var3,
-         var1.method1394(),
+         var1.getDataFixer(),
          var1.method1435(),
          var2,
          var8,
@@ -815,8 +814,8 @@ public class ServerWorld extends World implements ISeedReader {
       }
 
       this.method6805().method21011(var1);
-      if (var1 instanceof Class1006) {
-         this.field9053.remove(((Class1006)var1).method4230());
+      if (var1 instanceof MobEntity) {
+         this.field9053.remove(((MobEntity)var1).method4230());
       }
    }
 
@@ -831,8 +830,8 @@ public class ServerWorld extends World implements ISeedReader {
 
          this.field9040.put(var1.getUniqueID(), var1);
          this.getChunkProvider().method7378(var1);
-         if (var1 instanceof Class1006) {
-            this.field9053.add(((Class1006)var1).method4230());
+         if (var1 instanceof MobEntity) {
+            this.field9053.add(((MobEntity)var1).method4230());
          }
       } else {
          this.field9041.add(var1);
@@ -1016,7 +1015,7 @@ public class ServerWorld extends World implements ISeedReader {
       return this.field9050;
    }
 
-   public Class8761 method6938() {
+   public TemplateManager method6938() {
       return this.field9045.method1435();
    }
 

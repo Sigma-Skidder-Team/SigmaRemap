@@ -5,7 +5,7 @@ import net.minecraft.entity.passive.TameableEntity;
 
 import java.util.function.Predicate;
 
-public class Class2716<T extends LivingEntity> extends Class2709<T> {
+public class Class2716<T extends LivingEntity> extends NearestAttackableTargetGoal<T> {
    private static String[] field17187;
    private final TameableEntity field17205;
 

@@ -22,7 +22,7 @@ public class Class4201 extends Class4194 {
       this.field20508 = var2.nextInt(2) == 0;
    }
 
-   public Class4201(Class8761 var1, CompoundNBT var2) {
+   public Class4201(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33455, var2);
       this.field20507 = var2.getBoolean("Left");
       this.field20508 = var2.getBoolean("Right");

@@ -14,8 +14,8 @@ public class Class6975 extends DataFix {
    public TypeRewriteRule makeRule() {
       return this.writeFixAndRead(
          "SavedDataVillageCropFix",
-         this.getInputSchema().getType(Class8239.field35395),
-         this.getOutputSchema().getType(Class8239.field35395),
+         this.getInputSchema().getType(TypeReferences.field35395),
+         this.getOutputSchema().getType(TypeReferences.field35395),
          this::method21529
       );
    }

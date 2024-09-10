@@ -11,7 +11,7 @@ public class Class5665 extends Class5662<Class1037, Class2793<Class1037>> {
    }
 
    @Override
-   public ResourceLocation method17843(Class1038 var1) {
+   public ResourceLocation method17843(ZombieEntity var1) {
       return field25029;
    }
 

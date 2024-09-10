@@ -2,7 +2,7 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 
-public class Class2715 extends Class2709<PlayerEntity> {
+public class Class2715 extends NearestAttackableTargetGoal<PlayerEntity> {
    private static String[] field17187;
 
    public Class2715(Class1017 var1) {

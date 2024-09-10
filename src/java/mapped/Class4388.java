@@ -376,10 +376,10 @@ public class Class4388 {
    }
 
    private static boolean method13828(Class1034 var0, Entity var1) {
-      if (!(var1 instanceof Class1006)) {
+      if (!(var1 instanceof MobEntity)) {
          return false;
       } else {
-         Class1006 var4 = (Class1006)var1;
+         MobEntity var4 = (MobEntity)var1;
          return !var4.isChild() || !var4.isAlive() || method13877(var0) || method13877(var4) || var4 instanceof Class1034 && var4.getRidingEntity() == null;
       }
    }
@@ -412,7 +412,7 @@ public class Class4388 {
                }
             }
 
-            Optional var7 = var3.<Class1006>method21410(Class8830.field39848);
+            Optional var7 = var3.<MobEntity>method21410(Class8830.field39848);
             if (var7.isPresent()) {
                return var7;
             } else {

@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.util.Util;
+import net.minecraft.resources.data.IMetadataSectionSerializer;
 import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
@@ -92,28 +93,28 @@ public class LegacyResourcePackWrapperV4 implements IResourcePack {
    }
 
    @Override
-   public InputStream method1222(String var1) throws IOException {
-      return this.field1187.method1222(var1);
+   public InputStream getRootResourceStream(String var1) throws IOException {
+      return this.field1187.getRootResourceStream(var1);
    }
 
    @Override
-   public boolean method1225(ResourcePackType var1, ResourceLocation var2) {
+   public boolean resourceExists(ResourcePackType var1, ResourceLocation var2) {
       if (!"minecraft".equals(var2.getNamespace())) {
-         return this.field1187.method1225(var1, var2);
+         return this.field1187.resourceExists(var1, var2);
       } else {
          String var5 = var2.getPath();
          if (!"textures/misc/enchanted_item_glint.png".equals(var5)) {
             if ("textures/entity/iron_golem/iron_golem.png".equals(var5)) {
-               return this.field1187.method1225(var1, field1186);
+               return this.field1187.resourceExists(var1, field1186);
             } else if ("textures/entity/conduit/wind.png".equals(var5) || "textures/entity/conduit/wind_vertical.png".equals(var5)) {
                return false;
             } else if (field1182.contains(var5)) {
-               return this.field1187.method1225(var1, field1184) && this.field1187.method1225(var1, var2);
+               return this.field1187.resourceExists(var1, field1184) && this.field1187.resourceExists(var1, var2);
             } else if (field1183.contains(var5)) {
-               return this.field1187.method1225(var1, field1185) && this.field1187.method1225(var1, var2);
+               return this.field1187.resourceExists(var1, field1185) && this.field1187.resourceExists(var1, var2);
             } else {
                Pair var6 = field1180.get(var5);
-               return var6 != null && this.field1187.method1225(var1, (ResourceLocation)var6.getSecond()) ? true : this.field1187.method1225(var1, var2);
+               return var6 != null && this.field1187.resourceExists(var1, (ResourceLocation)var6.getSecond()) ? true : this.field1187.resourceExists(var1, var2);
             }
          } else {
             return false;
@@ -327,24 +328,24 @@ public class LegacyResourcePackWrapperV4 implements IResourcePack {
    }
 
    @Override
-   public Collection<ResourceLocation> method1224(ResourcePackType var1, String var2, String var3, int var4, Predicate<String> var5) {
-      return this.field1187.method1224(var1, var2, var3, var4, var5);
+   public Collection<ResourceLocation> getAllResourceLocations(ResourcePackType var1, String var2, String var3, int var4, Predicate<String> var5) {
+      return this.field1187.getAllResourceLocations(var1, var2, var3, var4, var5);
    }
 
    @Override
-   public Set<String> method1226(ResourcePackType var1) {
-      return this.field1187.method1226(var1);
+   public Set<String> getResourceNamespaces(ResourcePackType var1) {
+      return this.field1187.getResourceNamespaces(var1);
    }
 
    @Nullable
    @Override
-   public <T> T method1227(Class7170<T> var1) throws IOException {
-      return this.field1187.<T>method1227(var1);
+   public <T> T getMetadata(IMetadataSectionSerializer<T> var1) throws IOException {
+      return this.field1187.<T>getMetadata(var1);
    }
 
    @Override
-   public String method1228() {
-      return this.field1187.method1228();
+   public String getName() {
+      return this.field1187.getName();
    }
 
    @Override

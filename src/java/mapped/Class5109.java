@@ -85,8 +85,8 @@ public class Class5109 implements Class5108 {
       ITextComponent var3 = this.field23215.getPlayerList().method19451(this.field23216.method30700(), this.field23219);
       if (var3 == null) {
          this.field23217 = Class2241.field14668;
-         if (this.field23215.method1392() >= 0 && !this.field23216.method30702()) {
-            this.field23216.method30694(new SEnableCompressionPacket(this.field23215.method1392()), var1 -> this.field23216.method30712(this.field23215.method1392()));
+         if (this.field23215.getNetworkCompressionThreshold() >= 0 && !this.field23216.method30702()) {
+            this.field23216.method30694(new SEnableCompressionPacket(this.field23215.getNetworkCompressionThreshold()), var1 -> this.field23216.method30712(this.field23215.getNetworkCompressionThreshold()));
          }
 
          this.field23216.sendPacket(new SLoginSuccessPacket(this.field23219));

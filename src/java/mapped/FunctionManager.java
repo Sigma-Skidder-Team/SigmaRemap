@@ -9,7 +9,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
-public class Class7268 {
+public class FunctionManager {
    private static final ResourceLocation field31179 = new ResourceLocation("tick");
    private static final ResourceLocation field31180 = new ResourceLocation("load");
    private final MinecraftServer field31181;
@@ -20,7 +20,7 @@ public class Class7268 {
    private boolean field31186;
    private Class301 field31187;
 
-   public Class7268(MinecraftServer var1, Class301 var2) {
+   public FunctionManager(MinecraftServer var1, Class301 var2) {
       this.field31181 = var1;
       this.field31187 = var2;
       this.method22827(var2);
@@ -101,7 +101,7 @@ public class Class7268 {
       }
    }
 
-   public void method22826(Class301 var1) {
+   public void setFunctionReloader(Class301 var1) {
       this.field31187 = var1;
       this.method22827(var1);
    }

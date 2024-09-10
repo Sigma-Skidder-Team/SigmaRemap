@@ -1,8 +1,6 @@
 package mapped;
 
-import com.sun.media.sound.InvalidDataException;
 
-import javax.naming.LimitExceededException;
 import java.math.BigInteger;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;

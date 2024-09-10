@@ -16,10 +16,10 @@ public class Class9091 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<?> var3 = this.getInputSchema().getType(Class8239.field35392);
-      Type<?> var4 = this.getOutputSchema().getType(Class8239.field35392);
-      Type<Pair<String, Either<Integer, String>>>  var5 = DSL.named(Class8239.field35392.typeName(), DSL.or(DSL.intType(), Class3639.method12354()));
-      Type<Pair<String, String>> var6 = DSL.named(Class8239.field35392.typeName(), Class3639.method12354());
+      Type<?> var3 = this.getInputSchema().getType(TypeReferences.field35392);
+      Type<?> var4 = this.getOutputSchema().getType(TypeReferences.field35392);
+      Type<Pair<String, Either<Integer, String>>>  var5 = DSL.named(TypeReferences.field35392.typeName(), DSL.or(DSL.intType(), Class3639.method12354()));
+      Type<Pair<String, String>> var6 = DSL.named(TypeReferences.field35392.typeName(), Class3639.method12354());
       if (Objects.equals(var3, var5) && Objects.equals(var4, var6)) {
          return this.fixTypeEverywhere(
             "BlockNameFlatteningFix",

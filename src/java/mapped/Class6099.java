@@ -36,7 +36,7 @@ public class Class6099 {
    private static final Logger field27344 = LogManager.getLogger();
    private final CommandDispatcher<Class6619> field27345 = new CommandDispatcher();
 
-   public Class6099(Class2085 var1) {
+   public Class6099(Commands var1) {
       Class7848.method26285(this.field27345);
       Class6987.method21610(this.field27345);
       Class6137.method18958(this.field27345);
@@ -74,7 +74,7 @@ public class Class6099 {
       Class9504.method36698(this.field27345);
       Class7517.method24504(this.field27345);
       Class9601.method37271(this.field27345);
-      Class9554.method37005(this.field27345, var1 != Class2085.INTEGRATED);
+      Class9554.method37005(this.field27345, var1 != Commands.INTEGRATED);
       Class8686.method31294(this.field27345);
       Class9160.method34194(this.field27345);
       Class8751.method31569(this.field27345);
@@ -96,7 +96,7 @@ public class Class6099 {
          Class9037.method33489(this.field27345);
       }
 
-      if (Class2085.method8739(var1)) {
+      if (Commands.method8739(var1)) {
          Class8345.method29252(this.field27345);
          Class8658.method31159(this.field27345);
          Class8508.method30139(this.field27345);
@@ -112,7 +112,7 @@ public class Class6099 {
          Class7676.method25217(this.field27345);
       }
 
-      if (Class2085.method8740(var1)) {
+      if (Commands.method8740(var1)) {
          Class8883.method32320(this.field27345);
       }
 
@@ -271,7 +271,7 @@ public class Class6099 {
    }
 
    public static void method18844() {
-      RootCommandNode<Class6619> var2 = new Class6099(Class2085.field13575).method18842().getRoot();
+      RootCommandNode<Class6619> var2 = new Class6099(Commands.field13575).method18842().getRoot();
       Set<ArgumentType<?>> var3 = Class8651.method31104(var2);
       Set<ArgumentType<?>> var4 = var3.stream().filter(var0 -> !Class8651.method31103(var0)).collect(Collectors.toSet());
       if (!var4.isEmpty()) {

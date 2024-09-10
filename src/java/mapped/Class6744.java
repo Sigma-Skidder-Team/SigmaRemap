@@ -10,7 +10,7 @@ public class Class6744 extends Class6717 {
    private static final Random field29442 = new Random();
 
    public Class6744(Schema var1, boolean var2) {
-      super(var1, var2, "EntityZombieVillagerTypeFix", Class8239.field35391, "Zombie");
+      super(var1, var2, "EntityZombieVillagerTypeFix", TypeReferences.ENTITY, "Zombie");
    }
 
    public Dynamic<?> method20557(Dynamic<?> var1) {

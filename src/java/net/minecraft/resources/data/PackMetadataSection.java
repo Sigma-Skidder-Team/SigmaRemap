@@ -1,10 +1,10 @@
-package mapped;
+package net.minecraft.resources.data;
 
 import net.minecraft.util.text.ITextComponent;
 
 public class PackMetadataSection {
    private static String[] field29660;
-   public static final Class7173 field29661 = new Class7173();
+   public static final PackMetadataSectionSerializer field29661 = new PackMetadataSectionSerializer();
    private final ITextComponent field29662;
    private final int field29663;
 

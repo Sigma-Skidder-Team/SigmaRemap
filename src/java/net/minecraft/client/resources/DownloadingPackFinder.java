@@ -20,6 +20,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.resources.IPackFinder;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.VanillaPack;
+import net.minecraft.resources.data.PackMetadataSection;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.codec.digest.DigestUtils;
@@ -46,7 +47,7 @@ public class DownloadingPackFinder implements IPackFinder {
    }
 
    @Override
-   public void method25140(Consumer<ResourcePackInfo> var1, Class9325 var2) {
+   public void findPacks(Consumer<ResourcePackInfo> var1, Class9325 var2) {
       ResourcePackInfo var5 = ResourcePackInfo.createResourcePack("vanilla", true, () -> this.vanillaPack, var2, ResourcePackInfo.Priority.field12830, IPackNameDecorator.field33171);
       if (var5 != null) {
          var1.accept(var5);
@@ -66,7 +67,7 @@ public class DownloadingPackFinder implements IPackFinder {
       return this.vanillaPack;
    }
 
-   private static Map<String, String> method25147() {
+   private static Map<String, String> getPackDownloadRequestProperties() {
       HashMap var2 = Maps.newHashMap();
       var2.put("X-Minecraft-Username", Minecraft.getInstance().getSession().getUsername());
       var2.put("X-Minecraft-UUID", Minecraft.getInstance().getSession().getPlayerID());
@@ -77,7 +78,7 @@ public class DownloadingPackFinder implements IPackFinder {
       return var2;
    }
 
-   public CompletableFuture<?> method25148(String var1, String var2) {
+   public CompletableFuture<?> downloadResourcePack(String var1, String var2) {
       String var5 = DigestUtils.sha1Hex(var1);
       String var6 = field32841.matcher(var2).matches() ? var2 : "";
       this.field32844.lock();
@@ -92,7 +93,7 @@ public class DownloadingPackFinder implements IPackFinder {
             var8 = CompletableFuture.completedFuture("");
          } else {
             WorkingScreen var9 = new WorkingScreen();
-            Map var10 = method25147();
+            Map var10 = getPackDownloadRequestProperties();
             Minecraft var11 = Minecraft.getInstance();
             var11.method1635(() -> var11.displayGuiScreen(var9));
             var8 = Class6639.method20256(var7, var1, var10, 104857600, var9, var11.getProxy());
@@ -179,7 +180,7 @@ public class DownloadingPackFinder implements IPackFinder {
    public CompletableFuture<Void> method25153(File var1, IPackNameDecorator var2) {
       PackMetadataSection var7;
       try (Class311 var5 = new Class311(var1)) {
-         var7 = var5.<PackMetadataSection>method1227(PackMetadataSection.field29661);
+         var7 = var5.<PackMetadataSection>getMetadata(PackMetadataSection.field29661);
       } catch (IOException var19) {
          return Util.<Void>method38497(new IOException(String.format("Invalid resourcepack at %s", var1), var19));
       }
@@ -202,13 +203,13 @@ public class DownloadingPackFinder implements IPackFinder {
    @Nullable
    private ResourcePackInfo method25154(Class9325 var1) {
       ResourcePackInfo var4 = null;
-      File var5 = this.resourceIndex.method27015(new ResourceLocation("resourcepacks/programmer_art.zip"));
+      File var5 = this.resourceIndex.getFile(new ResourceLocation("resourcepacks/programmer_art.zip"));
       if (var5 != null && var5.isFile()) {
          var4 = method25155(var1, () -> method25157(var5));
       }
 
       if (var4 == null && SharedConstants.developmentMode) {
-         File var6 = this.resourceIndex.method27016("../resourcepacks/programmer_art");
+         File var6 = this.resourceIndex.getFile("../resourcepacks/programmer_art");
          if (var6 != null && var6.isDirectory()) {
             var4 = method25155(var1, () -> method25156(var6));
          }

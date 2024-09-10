@@ -20,7 +20,7 @@ public class Class8971 {
    private static int method32924(Class6619 var0, boolean var1) throws CommandSyntaxException {
       var0.method20179(new TranslationTextComponent("commands.save.saving"), false);
       MinecraftServer var4 = var0.method20177();
-      var4.getPlayerList().method19467();
+      var4.getPlayerList().saveAllPlayerData();
       boolean var5 = var4.method1291(true, var1, true);
       if (var5) {
          var0.method20179(new TranslationTextComponent("commands.save.success"), true);

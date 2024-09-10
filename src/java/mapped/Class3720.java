@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class3720 extends Class3676<Class1006> {
+public class Class3720 extends Class3676<MobEntity> {
    private static String[] field19804;
    private final float field19805;
 
@@ -24,7 +24,7 @@ public class Class3720 extends Class3676<Class1006> {
       this.field19805 = var1;
    }
 
-   public void method12502(ServerWorld var1, Class1006 var2, long var3) {
+   public void method12502(ServerWorld var1, MobEntity var2, long var3) {
       LivingEntity var7 = var2.getBrain().<LivingEntity>method21410(Class8830.field39826).get();
       if (Class6983.method21583(var2, var7) && Class6983.method21580(var2, var7, 1)) {
          this.method12614(var2);

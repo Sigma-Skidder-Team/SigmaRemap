@@ -142,7 +142,7 @@ public class Class8588 {
       if (!var0.has("function")) {
          var10 = Class9137.field41987;
       } else {
-         var10 = new Class9137(new ResourceLocation(JSONUtils.method32763(var0, "function")));
+         var10 = new Class9137(new ResourceLocation(JSONUtils.getString(var0, "function")));
       }
 
       return new Class8588(var3, var5, var7, var10);

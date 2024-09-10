@@ -62,7 +62,7 @@ public class Class7543 implements Class7544 {
       }
 
       return new Class7543(
-         new ResourceLocation(JSONUtils.method32763(var0, "file")),
+         new ResourceLocation(JSONUtils.getString(var0, "file")),
          JSONUtils.method32772(var0, "size", 11.0F),
          JSONUtils.method32772(var0, "oversample", 1.0F),
          var3,

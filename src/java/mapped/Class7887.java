@@ -11,7 +11,7 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public class Class7887 extends Class7882<Class1006> {
+public class Class7887 extends Class7882<MobEntity> {
    private static String[] field33835;
    private final Long2LongMap field33836 = new Long2LongOpenHashMap();
    private int field33837;
@@ -26,7 +26,7 @@ public class Class7887 extends Class7882<Class1006> {
       return ImmutableSet.of(Class8830.field39834);
    }
 
-   public void method26425(ServerWorld var1, Class1006 var2) {
+   public void method26425(ServerWorld var1, MobEntity var2) {
       if (var2.isChild()) {
          this.field33837 = 0;
          this.field33838 = var1.getGameTime() + (long)var1.method6814().nextInt(20);

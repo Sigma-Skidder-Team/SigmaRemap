@@ -39,7 +39,7 @@ public class Style$Serializer implements JsonDeserializer<Style>, JsonSerializer
    @Nullable
    private static ResourceLocation deserializeFont(JsonObject json) {
       if (json.has("font")) {
-         String resourcelocationexception = JSONUtils.method32763(json, "font");
+         String resourcelocationexception = JSONUtils.getString(json, "font");
 
          try {
             return new ResourceLocation(resourcelocationexception);
@@ -87,7 +87,7 @@ public class Style$Serializer implements JsonDeserializer<Style>, JsonSerializer
    @Nullable
    private static Color deserializeColor(JsonObject json) {
       if (json.has("color")) {
-         String var3 = JSONUtils.method32763(json, "color");
+         String var3 = JSONUtils.getString(json, "color");
          return Color.func_240745_a_(var3);
       } else {
          return null;

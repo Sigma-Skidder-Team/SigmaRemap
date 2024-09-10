@@ -17,8 +17,8 @@ public class Class2666 extends Class2661 {
          && Class1017.method4452(this.field17022)
          && Class1017.method4453(this.field17022).method8317(this.field17022.getPositionVec(), 2.0)) {
          TileEntity var3 = this.field17022.world.getTileEntity(Class1017.method4453(this.field17022));
-         if (var3 instanceof Class962) {
-            Class962 var4 = (Class962)var3;
+         if (var3 instanceof BeehiveTileEntity) {
+            BeehiveTileEntity var4 = (BeehiveTileEntity)var3;
             if (!var4.method3914()) {
                return true;
             }
@@ -38,8 +38,8 @@ public class Class2666 extends Class2661 {
    @Override
    public void method10804() {
       TileEntity var3 = this.field17022.world.getTileEntity(Class1017.method4453(this.field17022));
-      if (var3 instanceof Class962) {
-         Class962 var4 = (Class962)var3;
+      if (var3 instanceof BeehiveTileEntity) {
+         BeehiveTileEntity var4 = (BeehiveTileEntity)var3;
          var4.method3917(this.field17022, this.field17022.method4438());
       }
    }

@@ -49,7 +49,7 @@ public class ServerChunkProvider extends Class1702 {
       ServerWorld var1,
       SaveFormat.LevelSave var2,
       DataFixer var3,
-      Class8761 var4,
+      TemplateManager var4,
       Executor var5,
       ChunkGenerator var6,
       int var7,

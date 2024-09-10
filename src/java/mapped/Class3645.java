@@ -15,19 +15,19 @@ public class Class3645 extends Class3639 {
       super.registerTypes(var1, var2, var3);
       var1.registerType(
          false,
-         Class8239.field35395,
+         TypeReferences.field35395,
          () -> DSL.optionalFields(
                "Children",
                DSL.list(
                   DSL.optionalFields(
                      "CA",
-                     Class8239.field35388.in(var1),
+                     TypeReferences.field35388.in(var1),
                      "CB",
-                     Class8239.field35388.in(var1),
+                     TypeReferences.field35388.in(var1),
                      "CC",
-                     Class8239.field35388.in(var1),
+                     TypeReferences.field35388.in(var1),
                      "CD",
-                     Class8239.field35388.in(var1)
+                     TypeReferences.field35388.in(var1)
                   )
                )
             )

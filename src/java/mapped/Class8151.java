@@ -22,13 +22,13 @@ public class Class8151 extends DataFix {
     }
 
     public TypeRewriteRule makeRule() {
-        Type<?> var3 = this.getOutputSchema().getType(Class8239.field35378);
+        Type<?> var3 = this.getOutputSchema().getType(TypeReferences.field35378);
         Type<?> var4 = var3.findFieldType("Level");
         Type<?> var5 = var4.findFieldType("TileEntities");
         if (var5 instanceof ListType) {
             ListType<?> var6 = (ListType) var5;
             OpticFinder<? extends List<?>> var7 = DSL.fieldFinder("TileEntities", var6);
-            Type<?> var8 = this.getInputSchema().getType(Class8239.field35378);
+            Type<?> var8 = this.getInputSchema().getType(TypeReferences.field35378);
             OpticFinder<?> var9 = var8.findField("Level");
             OpticFinder<?> var10 = var9.type().findField("Sections");
             Type<?> var11 = var10.type();
@@ -36,7 +36,7 @@ public class Class8151 extends DataFix {
                 Type<?> var12 = ((ListType) var11).getElement();
                 OpticFinder<?> var13 = DSL.typeFinder(var12);
                 return TypeRewriteRule.seq(
-                        new Class7335(this.getOutputSchema(), "AddTrappedChestFix", Class8239.field35386).makeRule(),
+                        new Class7335(this.getOutputSchema(), "AddTrappedChestFix", TypeReferences.field35386).makeRule(),
                         this.fixTypeEverywhereTyped(
                                 "Trapped Chest fix",
                                 var8,
@@ -65,7 +65,7 @@ public class Class8151 extends DataFix {
                                                 Dynamic<?> var15 = var4xx.get(DSL.remainderFinder());
                                                 int var16 = var15.get("xPos").asInt(0);
                                                 int var17 = var15.get("zPos").asInt(0);
-                                                TaggedChoiceType<String> var18 = (TaggedChoiceType<String>) this.getInputSchema().findChoiceType(Class8239.field35386);
+                                                TaggedChoiceType<String> var18 = (TaggedChoiceType<String>) this.getInputSchema().findChoiceType(TypeReferences.field35386);
                                                 return var4xx.updateTyped(
                                                         var7,
                                                         var4xxx -> var4xxx.updateTyped(

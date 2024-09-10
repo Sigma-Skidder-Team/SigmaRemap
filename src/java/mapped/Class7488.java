@@ -49,11 +49,11 @@ public class Class7488 extends Class7487 {
       this(Either.right(var1), () -> Class8523.field38250, Class109.field367);
    }
 
-   private Class8969 method24407(Class8761 var1) {
+   private Class8969 method24407(TemplateManager var1) {
       return (Class8969)this.field32187.map(var1::method31603, Function.identity());
    }
 
-   public List<Class8266> method24408(Class8761 var1, BlockPos var2, Class80 var3, boolean var4) {
+   public List<Class8266> method24408(TemplateManager var1, BlockPos var2, Class80 var3, boolean var4) {
       Class8969 var7 = this.method24407(var1);
       List<Class8266> var8 = var7.method32894(var2, new Class9463().method36426(var3), Blocks.field37113, var4);
       ArrayList var9 = Lists.newArrayList();
@@ -71,7 +71,7 @@ public class Class7488 extends Class7487 {
    }
 
    @Override
-   public List<Class8266> method24374(Class8761 var1, BlockPos var2, Class80 var3, Random var4) {
+   public List<Class8266> method24374(TemplateManager var1, BlockPos var2, Class80 var3, Random var4) {
       Class8969 var7 = this.method24407(var1);
       List var8 = var7.method32894(var2, new Class9463().method36426(var3), Blocks.field37114, true);
       Collections.shuffle(var8, var4);
@@ -79,14 +79,14 @@ public class Class7488 extends Class7487 {
    }
 
    @Override
-   public Class9764 method24375(Class8761 var1, BlockPos var2, Class80 var3) {
+   public Class9764 method24375(TemplateManager var1, BlockPos var2, Class80 var3) {
       Class8969 var6 = this.method24407(var1);
       return var6.method32909(new Class9463().method36426(var3), var2);
    }
 
    @Override
    public boolean method24376(
-           Class8761 var1, ISeedReader var2, Class7480 var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
+           TemplateManager var1, ISeedReader var2, Class7480 var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
    ) {
       Class8969 var13 = this.method24407(var1);
       Class9463 var14 = this.method24409(var7, var8, var10);

@@ -20,7 +20,7 @@ public class PacketThreadUtil {
    }
 
    public static <T extends INetHandler> void method31780(Packet<T> var0, T var1, Class318<?> var2) throws Class2466 {
-      if (var2.method1629()) {
+      if (var2.isOnExecutionThread()) {
          method31781(var0);
       } else {
          var2.execute(() -> {

@@ -51,7 +51,7 @@ public class Class7546 implements Class7544 {
          }
 
          if (!var5.isEmpty() && ((int[])var5.get(0)).length != 0) {
-            return new Class7546(new ResourceLocation(JSONUtils.method32763(var0, "file")), var3, var4, var5);
+            return new Class7546(new ResourceLocation(JSONUtils.getString(var0, "file")), var3, var4, var5);
          } else {
             throw new JsonParseException("Expected to find data in chars, found none.");
          }

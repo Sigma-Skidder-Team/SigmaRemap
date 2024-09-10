@@ -25,7 +25,7 @@ public class Class3668 extends Class3639 {
       method12479(var1, var4, "minecraft:phantom");
       method12479(var1, var4, "minecraft:dolphin");
       method12479(var1, var4, "minecraft:drowned");
-      var1.register(var4, "minecraft:trident", var1x -> DSL.optionalFields("inBlockState", Class8239.field35388.in(var1)));
+      var1.register(var4, "minecraft:trident", var1x -> DSL.optionalFields("inBlockState", TypeReferences.field35388.in(var1)));
       return var4;
    }
 }

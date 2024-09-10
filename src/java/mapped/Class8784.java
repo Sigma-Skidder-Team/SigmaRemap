@@ -17,7 +17,7 @@ public class Class8784 extends DataFix {
 
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
-         "EntityRedundantChanceTagsFix", this.getInputSchema().getType(Class8239.field35391), var0 -> var0.update(DSL.remainderFinder(), var0x -> {
+         "EntityRedundantChanceTagsFix", this.getInputSchema().getType(TypeReferences.ENTITY), var0 -> var0.update(DSL.remainderFinder(), var0x -> {
                if (method31708(var0x.get("HandDropChances"), 2)) {
                   var0x = var0x.remove("HandDropChances");
                }

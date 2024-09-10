@@ -60,7 +60,7 @@ public class DataFixesManager {
       Schema var18 = var0.addSchema(165, field21708);
       var0.addFixer(new Class8809(var18, true));
       Schema var19 = var0.addSchema(501, Class9771::new);
-      var0.addFixer(new Class7335(var19, "Add 1.10 entities fix", Class8239.field35391));
+      var0.addFixer(new Class7335(var19, "Add 1.10 entities fix", TypeReferences.ENTITY));
       Schema var20 = var0.addSchema(502, field21708);
       var0.addFixer(
          Class7325.method23221(
@@ -79,7 +79,7 @@ public class DataFixesManager {
       Schema var24 = var0.addSchema(702, Class8038::new);
       var0.addFixer(new Class4657(var24, true));
       Schema var25 = var0.addSchema(703, Class9197::new);
-      var0.addFixer(new Class4656(var25, true));
+      var0.addFixer(new HorseSplit(var25, true));
       Schema var26 = var0.addSchema(704, Class7506::new);
       var0.addFixer(new Class8441(var26, true));
       Schema var27 = var0.addSchema(705, Class3647::new);
@@ -89,7 +89,7 @@ public class DataFixesManager {
       Schema var29 = var0.addSchema(806, field21709);
       var0.addFixer(new Class9552(var29, false));
       Schema var30 = var0.addSchema(808, Class3667::new);
-      var0.addFixer(new Class7335(var30, "added shulker box", Class8239.field35386));
+      var0.addFixer(new Class7335(var30, "added shulker box", TypeReferences.field35386));
       Schema var31 = var0.addSchema(808, 1, field21709);
       var0.addFixer(new Class6716(var31, false));
       Schema var32 = var0.addSchema(813, field21709);
@@ -100,7 +100,7 @@ public class DataFixesManager {
       Schema var34 = var0.addSchema(820, field21709);
       var0.addFixer(Class7325.method23221(var34, "totem item renamer", method14184("minecraft:totem", "minecraft:totem_of_undying")));
       Schema var35 = var0.addSchema(1022, Class8257::new);
-      var0.addFixer(new Class9314(var35, "added shoulder entities to players", Class8239.field35377));
+      var0.addFixer(new Class9314(var35, "added shoulder entities to players", TypeReferences.field35377));
       Schema var36 = var0.addSchema(1125, Class3648::new);
       var0.addFixer(new Class9130(var36, true));
       var0.addFixer(new Class8521(var36, false));
@@ -111,7 +111,7 @@ public class DataFixesManager {
       Schema var39 = var0.addSchema(1450, field21709);
       var0.addFixer(new Class9053(var39, false));
       Schema var40 = var0.addSchema(1451, Class3660::new);
-      var0.addFixer(new Class7335(var40, "AddTrappedChestFix", Class8239.field35386));
+      var0.addFixer(new Class7335(var40, "AddTrappedChestFix", TypeReferences.field35386));
       Schema var41 = var0.addSchema(1451, 1, Class3659::new);
       var0.addFixer(new Class8782(var41, true));
       Schema var42 = var0.addSchema(1451, 2, Class3664::new);
@@ -123,7 +123,7 @@ public class DataFixesManager {
       var0.addFixer(new Class9091(var44, true));
       var0.addFixer(new Class7774(var44, false));
       Schema var45 = var0.addSchema(1451, 5, Class3658::new);
-      var0.addFixer(new Class7335(var45, "RemoveNoteBlockFlowerPotFix", Class8239.field35386));
+      var0.addFixer(new Class7335(var45, "RemoveNoteBlockFlowerPotFix", TypeReferences.field35386));
       var0.addFixer(new Class8838(var45, false));
       var0.addFixer(new Class6735(var45, false));
       var0.addFixer(new Class6730(var45, false));
@@ -146,7 +146,7 @@ public class DataFixesManager {
       Schema var52 = var0.addSchema(1466, Class3642::new);
       var0.addFixer(new Class9562(var52, true));
       Schema var53 = var0.addSchema(1470, Class3668::new);
-      var0.addFixer(new Class7335(var53, "Add 1.13 entities fix", Class8239.field35391));
+      var0.addFixer(new Class7335(var53, "Add 1.13 entities fix", TypeReferences.ENTITY));
       Schema var54 = var0.addSchema(1474, field21709);
       var0.addFixer(new Class6740(var54, false));
       var0.addFixer(
@@ -173,7 +173,7 @@ public class DataFixesManager {
       var0.addFixer(Class7765.method25738(var56, "Rename coral blocks", method14183(Class9623.field45003)));
       var0.addFixer(Class7325.method23221(var56, "Rename coral items", method14183(Class9623.field45003)));
       Schema var57 = var0.addSchema(1481, Class3646::new);
-      var0.addFixer(new Class7335(var57, "Add conduit", Class8239.field35386));
+      var0.addFixer(new Class7335(var57, "Add conduit", TypeReferences.field35386));
       Schema var58 = var0.addSchema(1483, Class3653::new);
       var0.addFixer(new Class6318(var58, true));
       var0.addFixer(Class7325.method23221(var58, "Rename pufferfish egg item", method14183(Class6318.field27827)));
@@ -232,8 +232,8 @@ public class DataFixesManager {
          )
       );
       var0.addFixer(Class7325.method23221(var62, "Rename kelptop", method14184("minecraft:kelp_top", "minecraft:kelp")));
-      var0.addFixer(new Class6737(var62, false, "Command block block entity custom name fix", Class8239.field35386, "minecraft:command_block"));
-      var0.addFixer(new Class6722(var62, false, "Command block minecart custom name fix", Class8239.field35391, "minecraft:commandblock_minecart"));
+      var0.addFixer(new Class6737(var62, false, "Command block block entity custom name fix", TypeReferences.field35386, "minecraft:command_block"));
+      var0.addFixer(new Class6722(var62, false, "Command block minecart custom name fix", TypeReferences.ENTITY, "minecraft:commandblock_minecart"));
       var0.addFixer(new Class9462(var62, false));
       Schema var63 = var0.addSchema(1490, field21709);
       var0.addFixer(Class7765.method25738(var63, "Rename melon_block", method14184("minecraft:melon_block", "minecraft:melon")));
@@ -282,10 +282,10 @@ public class DataFixesManager {
       Schema var74 = var0.addSchema(1624, field21709);
       var0.addFixer(new Class8151(var74, false));
       Schema var75 = var0.addSchema(1800, Class3670::new);
-      var0.addFixer(new Class7335(var75, "Added 1.14 mobs fix", Class8239.field35391));
+      var0.addFixer(new Class7335(var75, "Added 1.14 mobs fix", TypeReferences.ENTITY));
       var0.addFixer(Class7325.method23221(var75, "Rename dye items", method14183(Class9730.field45433)));
       Schema var76 = var0.addSchema(1801, Class3671::new);
-      var0.addFixer(new Class7335(var76, "Added Illager Beast", Class8239.field35391));
+      var0.addFixer(new Class7335(var76, "Added Illager Beast", TypeReferences.ENTITY));
       Schema var77 = var0.addSchema(1802, field21709);
       var0.addFixer(
          Class7765.method25738(
@@ -313,14 +313,14 @@ public class DataFixesManager {
       Schema var78 = var0.addSchema(1803, field21709);
       var0.addFixer(new Class8754(var78, false));
       Schema var79 = var0.addSchema(1904, Class3652::new);
-      var0.addFixer(new Class7335(var79, "Added Cats", Class8239.field35391));
+      var0.addFixer(new Class7335(var79, "Added Cats", TypeReferences.ENTITY));
       var0.addFixer(new Class4654(var79, false));
       Schema var80 = var0.addSchema(1905, field21709);
       var0.addFixer(new Class8263(var80, false));
       Schema var81 = var0.addSchema(1906, Class3662::new);
-      var0.addFixer(new Class7335(var81, "Add POI Blocks", Class8239.field35386));
+      var0.addFixer(new Class7335(var81, "Add POI Blocks", TypeReferences.field35386));
       Schema var82 = var0.addSchema(1909, Class3663::new);
-      var0.addFixer(new Class7335(var82, "Add jigsaw", Class8239.field35386));
+      var0.addFixer(new Class7335(var82, "Add jigsaw", TypeReferences.field35386));
       Schema var83 = var0.addSchema(1911, field21709);
       var0.addFixer(new Class9589(var83, false));
       Schema var84 = var0.addSchema(1917, field21709);
@@ -330,16 +330,16 @@ public class DataFixesManager {
       var0.addFixer(new Class6742(var85, "minecraft:zombie_villager"));
       Schema var86 = var0.addSchema(1920, Class3669::new);
       var0.addFixer(new Class8929(var86, false));
-      var0.addFixer(new Class7335(var86, "Add campfire", Class8239.field35386));
+      var0.addFixer(new Class7335(var86, "Add campfire", TypeReferences.field35386));
       Schema var87 = var0.addSchema(1925, field21709);
       var0.addFixer(new Class8698(var87, false));
       Schema var88 = var0.addSchema(1928, Class3672::new);
       var0.addFixer(new Class6322(var88, true));
       var0.addFixer(Class7325.method23221(var88, "Rename ravager egg item", method14183(Class6322.field27832)));
       Schema var89 = var0.addSchema(1929, Class3643::new);
-      var0.addFixer(new Class7335(var89, "Add Wandering Trader and Trader Llama", Class8239.field35391));
+      var0.addFixer(new Class7335(var89, "Add Wandering Trader and Trader Llama", TypeReferences.ENTITY));
       Schema var90 = var0.addSchema(1931, Class3640::new);
-      var0.addFixer(new Class7335(var90, "Added Fox", Class8239.field35391));
+      var0.addFixer(new Class7335(var90, "Added Fox", TypeReferences.ENTITY));
       Schema var91 = var0.addSchema(1936, field21709);
       var0.addFixer(new Class7840(var91, false));
       Schema var92 = var0.addSchema(1946, field21709);
@@ -356,8 +356,8 @@ public class DataFixesManager {
       Schema var97 = var0.addSchema(1963, field21709);
       var0.addFixer(new Class6727(var97, false));
       Schema var98 = var0.addSchema(2100, Class3638::new);
-      var0.addFixer(new Class7335(var98, "Added Bee and Bee Stinger", Class8239.field35391));
-      var0.addFixer(new Class7335(var98, "Add beehive", Class8239.field35386));
+      var0.addFixer(new Class7335(var98, "Added Bee and Bee Stinger", TypeReferences.ENTITY));
+      var0.addFixer(new Class7335(var98, "Add beehive", TypeReferences.field35386));
       var0.addFixer(new Class8167(var98, false, "Rename sugar recipe", method14184("minecraft:sugar", "sugar_from_sugar_cane")));
       var0.addFixer(
          new Class8823(
@@ -377,14 +377,14 @@ public class DataFixesManager {
       Schema var103 = var0.addSchema(2501, Class3661::new);
       var0.addFixer(new Class9646(var103, true));
       Schema var104 = var0.addSchema(2502, Class3656::new);
-      var0.addFixer(new Class7335(var104, "Added Hoglin", Class8239.field35391));
+      var0.addFixer(new Class7335(var104, "Added Hoglin", TypeReferences.ENTITY));
       Schema var105 = var0.addSchema(2503, field21709);
       var0.addFixer(new Class9612(var105, false));
       var0.addFixer(
          new Class8823(var105, false, "Composter category change", method14184("minecraft:recipes/misc/composter", "minecraft:recipes/decorations/composter"))
       );
       Schema var106 = var0.addSchema(2505, Class3657::new);
-      var0.addFixer(new Class7335(var106, "Added Piglin", Class8239.field35391));
+      var0.addFixer(new Class7335(var106, "Added Piglin", TypeReferences.ENTITY));
       var0.addFixer(new Class6720(var106, "minecraft:villager"));
       Schema var107 = var0.addSchema(2508, field21709);
       var0.addFixer(
@@ -420,9 +420,9 @@ public class DataFixesManager {
       var0.addFixer(new Class6729(var112, false));
       var0.addFixer(new Class8434(var112, false));
       Schema var113 = var0.addSchema(2519, Class3654::new);
-      var0.addFixer(new Class7335(var113, "Added Strider", Class8239.field35391));
+      var0.addFixer(new Class7335(var113, "Added Strider", TypeReferences.ENTITY));
       Schema var114 = var0.addSchema(2522, Class3649::new);
-      var0.addFixer(new Class7335(var114, "Added Zoglin", Class8239.field35391));
+      var0.addFixer(new Class7335(var114, "Added Zoglin", TypeReferences.ENTITY));
       Schema var115 = var0.addSchema(2523, field21709);
       var0.addFixer(new Class8725(var115));
       Schema var116 = var0.addSchema(2527, field21709);
@@ -462,7 +462,7 @@ public class DataFixesManager {
       Schema var122 = var0.addSchema(2550, field21709);
       var0.addFixer(new Class9605(var122));
       Schema var123 = var0.addSchema(2551, Class3673::new);
-      var0.addFixer(new Class9314(var123, "add types to WorldGenData", Class8239.field35400));
+      var0.addFixer(new Class9314(var123, "add types to WorldGenData", TypeReferences.field35400));
       Schema var124 = var0.addSchema(2552, field21709);
       var0.addFixer(new Class7641(var124, false, "Nether biome rename", ImmutableMap.of("minecraft:nether", "minecraft:nether_wastes")));
       Schema var125 = var0.addSchema(2553, field21709);
@@ -471,7 +471,7 @@ public class DataFixesManager {
       var0.addFixer(new Class7953(var126, false));
       var0.addFixer(new Class7359(var126, false, "Rename swapHands setting", "key_key.swapHands", "key_key.swapOffhand"));
       Schema var127 = var0.addSchema(2568, Class3666::new);
-      var0.addFixer(new Class7335(var127, "Added Piglin Brute", Class8239.field35391));
+      var0.addFixer(new Class7335(var127, "Added Piglin Brute", TypeReferences.ENTITY));
    }
 
    private static UnaryOperator<String> method14183(Map<String, String> var0) {

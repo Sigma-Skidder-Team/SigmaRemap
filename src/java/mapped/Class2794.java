@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class2794<T extends Class1038> extends Class2795<T> {
+public class Class2794<T extends ZombieEntity> extends Class2795<T> {
    private static String[] field17429;
 
    public Class2794(float var1, boolean var2) {

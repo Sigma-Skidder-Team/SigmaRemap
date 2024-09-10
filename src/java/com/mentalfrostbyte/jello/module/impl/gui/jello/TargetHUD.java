@@ -100,7 +100,7 @@ public class TargetHUD extends PremiumModule {
             short var6 = 150;
             UUID uuidForSkin = this.entity.getUniqueID();
             if (!(this.entity instanceof Class1087)) {
-                if (!(this.entity instanceof Class1038)) {
+                if (!(this.entity instanceof ZombieEntity)) {
                     if (!(this.entity instanceof Class1010)) {
                         if (!(this.entity instanceof Class1085)) {
                             if (!(this.entity instanceof Class1085)) {

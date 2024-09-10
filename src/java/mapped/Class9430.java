@@ -55,8 +55,8 @@ public class Class9430 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getOutputSchema().getType(Class8239.field35394);
-      return this.fixTypeEverywhereTyped("MobSpawnerEntityIdentifiersFix", this.getInputSchema().getType(Class8239.field35394), var3, var2 -> {
+      Type var3 = this.getOutputSchema().getType(TypeReferences.field35394);
+      return this.fixTypeEverywhereTyped("MobSpawnerEntityIdentifiersFix", this.getInputSchema().getType(TypeReferences.field35394), var3, var2 -> {
          Dynamic var5 = (Dynamic)var2.get(DSL.remainderFinder());
          var5 = var5.set("id", var5.createString("MobSpawner"));
          DataResult var6 = var3.readTyped(this.method36192(var5));

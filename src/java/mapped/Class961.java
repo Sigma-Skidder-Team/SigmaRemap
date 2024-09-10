@@ -3,7 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
 
-public class Class961 extends TileEntity implements Class935 {
+public class Class961 extends TileEntity implements ITickableTileEntity {
    private static String[] field5391;
 
    public Class961() {

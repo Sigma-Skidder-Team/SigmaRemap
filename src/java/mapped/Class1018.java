@@ -27,12 +27,12 @@ public abstract class Class1018 extends Class1045 {
    }
 
    @Override
-   public void method4258() {
+   public void updateAITasks() {
       if (this.method4767() != 0) {
          this.field5702 = 0;
       }
 
-      super.method4258();
+      super.updateAITasks();
    }
 
    @Override
@@ -78,7 +78,7 @@ public abstract class Class1018 extends Class1045 {
    }
 
    @Override
-   public double method2894() {
+   public double getYOffset() {
       return 0.14;
    }
 

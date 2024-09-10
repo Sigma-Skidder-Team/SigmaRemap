@@ -180,7 +180,7 @@ public class Class7803 {
    }
 
    private static Class8969 method26063(String var0, ServerWorld var1) {
-      Class8761 var4 = var1.method6938();
+      TemplateManager var4 = var1.method6938();
       Class8969 var5 = var4.method31604(new ResourceLocation(var0));
       if (var5 == null) {
          String var6 = var0 + ".snbt";

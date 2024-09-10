@@ -5,10 +5,8 @@ import com.mojang.datafixers.DataFix;
 import com.mojang.datafixers.DataFixUtils;
 import com.mojang.datafixers.OpticFinder;
 import com.mojang.datafixers.TypeRewriteRule;
-import com.mojang.datafixers.Typed;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
-import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
 import it.unimi.dsi.fastutil.shorts.ShortArrayList;
 import it.unimi.dsi.fastutil.shorts.ShortList;
@@ -26,8 +24,8 @@ public class Class9562 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<?> var3 = this.getInputSchema().getType(Class8239.field35378);
-      Type<?> var4 = this.getOutputSchema().getType(Class8239.field35378);
+      Type<?> var3 = this.getInputSchema().getType(TypeReferences.field35378);
+      Type<?> var4 = this.getOutputSchema().getType(TypeReferences.field35378);
       Type<?> var5 = var3.findFieldType("Level");
       Type<?> var6 = var4.findFieldType("Level");
       Type<?> var7 = var5.findFieldType("TileTicks");
@@ -37,7 +35,7 @@ public class Class9562 extends DataFix {
          this.fixTypeEverywhereTyped(
             "ChunkToProtoChunkFix",
             var3,
-            this.getOutputSchema().getType(Class8239.field35378),
+            this.getOutputSchema().getType(TypeReferences.field35378),
             var3x -> var3x.updateTyped(
                   var8,
                   var6,
@@ -92,7 +90,7 @@ public class Class9562 extends DataFix {
                   }
                )
          ),
-         this.writeAndRead("Structure biome inject", this.getInputSchema().getType(Class8239.field35395), this.getOutputSchema().getType(Class8239.field35395))
+         this.writeAndRead("Structure biome inject", this.getInputSchema().getType(TypeReferences.field35395), this.getOutputSchema().getType(TypeReferences.field35395))
       );
    }
 

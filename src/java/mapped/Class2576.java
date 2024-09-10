@@ -27,7 +27,7 @@ public class Class2576 implements JsonDeserializer<Class2006>, JsonSerializer<Cl
 
    public Class2006 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
       JsonObject var6 = JSONUtils.method32781(var1, "advancement");
-      JsonObject var7 = JSONUtils.method32783(var6, "criteria", new JsonObject());
+      JsonObject var7 = JSONUtils.getJsonObject(var6, "criteria", new JsonObject());
       Class2006 var8 = new Class2006();
 
       for (Entry var10 : var7.entrySet()) {

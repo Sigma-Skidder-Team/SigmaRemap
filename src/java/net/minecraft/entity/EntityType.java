@@ -347,8 +347,8 @@ public class EntityType<T extends Entity> {
    public static final EntityType<Class1093> field41106 = method33197(
       "zoglin", Class8878.<Class1093>method32299(Class1093::new, Class179.field623).method32304().method32301(1.3964844F, 1.4F).method32307(8)
    );
-   public static final EntityType<Class1038> field41107 = method33197(
-      "zombie", Class8878.<Class1038>method32299(Class1038::new, Class179.field623).method32301(0.6F, 1.95F).method32307(8)
+   public static final EntityType<ZombieEntity> field41107 = method33197(
+      "zombie", Class8878.<ZombieEntity>method32299(ZombieEntity::new, Class179.field623).method32301(0.6F, 1.95F).method32307(8)
    );
    public static final EntityType<Class1075> field41108 = method33197(
       "zombie_horse", Class8878.<Class1075>method32299(Class1075::new, Class179.field624).method32301(1.3964844F, 1.6F).method32307(10)
@@ -356,8 +356,8 @@ public class EntityType<T extends Entity> {
    public static final EntityType<Class1040> field41109 = method33197(
       "zombie_villager", Class8878.<Class1040>method32299(Class1040::new, Class179.field623).method32301(0.6F, 1.95F).method32307(8)
    );
-   public static final EntityType<Class1063> field41110 = method33197(
-      "zombified_piglin", Class8878.<Class1063>method32299(Class1063::new, Class179.field623).method32304().method32301(0.6F, 1.95F).method32307(8)
+   public static final EntityType<ZombifiedPiglinEntity> field41110 = method33197(
+      "zombified_piglin", Class8878.<ZombifiedPiglinEntity>method32299(ZombifiedPiglinEntity::new, Class179.field623).method32304().method32301(0.6F, 1.95F).method32307(8)
    );
    public static final EntityType<PlayerEntity> PLAYER = method33197(
       "player", Class8878.<PlayerEntity>method32300(Class179.field628).method32303().method32302().method32301(0.6F, 1.8F).method32307(32).method32308(2)
@@ -451,8 +451,8 @@ public class EntityType<T extends Entity> {
             MathHelper.method37792(var1.rand.nextFloat() * 360.0F),
             0.0F
          );
-         if (var11 instanceof Class1006) {
-            Class1006 var14 = (Class1006)var11;
+         if (var11 instanceof MobEntity) {
+            MobEntity var14 = (MobEntity)var11;
             var14.rotationYawHead = var14.rotationYaw;
             var14.renderYawOffset = var14.rotationYaw;
             var14.method4276(var1, var1.method6807(var14.getPosition()), var6, (Class5093)null, var2);

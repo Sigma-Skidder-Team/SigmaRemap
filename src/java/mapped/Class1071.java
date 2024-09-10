@@ -11,7 +11,7 @@ public interface Class1071 {
 
    float method4980();
 
-   default boolean method4988(Class1006 var1, Class6500 var2, Vector3d var3) {
+   default boolean method4988(MobEntity var1, Class6500 var2, Vector3d var3) {
       if (var1.isAlive()) {
          Entity var6 = !var1.getPassengers().isEmpty() ? var1.getPassengers().get(0) : null;
          if (var1.isBeingRidden() && var1.method4277() && var6 instanceof PlayerEntity) {

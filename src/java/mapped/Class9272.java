@@ -89,8 +89,8 @@ public class Class9272 {
       IFormattableTextComponent var4 = ITextComponent$Serializer.func_240641_a_(var0.get("description"));
       if (var3 != null && var4 != null) {
          ItemStack var5 = method34945(JSONUtils.method32782(var0, "icon"));
-         ResourceLocation var6 = !var0.has("background") ? null : new ResourceLocation(JSONUtils.method32763(var0, "background"));
-         Class1965 var7 = !var0.has("frame") ? Class1965.field12814 : Class1965.method8243(JSONUtils.method32763(var0, "frame"));
+         ResourceLocation var6 = !var0.has("background") ? null : new ResourceLocation(JSONUtils.getString(var0, "background"));
+         Class1965 var7 = !var0.has("frame") ? Class1965.field12814 : Class1965.method8243(JSONUtils.getString(var0, "frame"));
          boolean var8 = JSONUtils.getBoolean(var0, "show_toast", true);
          boolean var9 = JSONUtils.getBoolean(var0, "announce_to_chat", true);
          boolean var10 = JSONUtils.getBoolean(var0, "hidden", false);

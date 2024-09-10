@@ -153,7 +153,7 @@ public class ArmorStandEntity extends LivingEntity {
          var5 = EquipmentSlotType.field13731;
       }
 
-      if (!var2.isEmpty() && !Class1006.method4301(var5, var2) && var5 != EquipmentSlotType.field13736) {
+      if (!var2.isEmpty() && !MobEntity.method4301(var5, var2) && var5 != EquipmentSlotType.field13736) {
          return false;
       } else {
          this.setItemStackToSlot(var5, var2);
@@ -163,7 +163,7 @@ public class ArmorStandEntity extends LivingEntity {
 
    @Override
    public boolean canPickUpItem(ItemStack var1) {
-      EquipmentSlotType var4 = Class1006.method4271(var1);
+      EquipmentSlotType var4 = MobEntity.method4271(var1);
       return this.getItemStackFromSlot(var4).isEmpty() && !this.method4189(var4);
    }
 
@@ -309,7 +309,7 @@ public class ArmorStandEntity extends LivingEntity {
       } else if (var1.isSpectator()) {
          return ActionResultType.SUCCESS;
       } else if (!var1.world.isRemote) {
-         EquipmentSlotType var7 = Class1006.method4271(var6);
+         EquipmentSlotType var7 = MobEntity.method4271(var6);
          if (!var6.isEmpty()) {
             if (this.method4189(var7)) {
                return ActionResultType.FAIL;
@@ -533,7 +533,7 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    @Override
-   public double method2894() {
+   public double getYOffset() {
       return !this.method4203() ? 0.1F : 0.0;
    }
 

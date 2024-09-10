@@ -13,7 +13,7 @@ public class Class4897 extends Class4874<Class4485> {
    }
 
    public Class4485 method15047(JsonObject var1, Class9587 var2, Class9366 var3) {
-      ResourceLocation var6 = new ResourceLocation(JSONUtils.method32763(var1, "recipe"));
+      ResourceLocation var6 = new ResourceLocation(JSONUtils.getString(var1, "recipe"));
       return new Class4485(var2, var6);
    }
 

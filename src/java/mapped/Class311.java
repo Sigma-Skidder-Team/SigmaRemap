@@ -14,7 +14,7 @@ import java.util.function.Predicate;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-public class Class311 extends Class308 {
+public class Class311 extends ResourcePack {
    public static final Splitter field1201 = Splitter.on('/').omitEmptyStrings().limit(3);
    private ZipFile field1202;
 
@@ -51,7 +51,7 @@ public class Class311 extends Class308 {
    }
 
    @Override
-   public Set<String> method1226(ResourcePackType var1) {
+   public Set<String> getResourceNamespaces(ResourcePackType var1) {
       ZipFile var4;
       try {
          var4 = this.method1261();
@@ -96,7 +96,7 @@ public class Class311 extends Class308 {
    }
 
    @Override
-   public Collection<ResourceLocation> method1224(ResourcePackType var1, String var2, String var3, int var4, Predicate<String> var5) {
+   public Collection<ResourceLocation> getAllResourceLocations(ResourcePackType var1, String var2, String var3, int var4, Predicate<String> var5) {
       ZipFile var8;
       try {
          var8 = this.method1261();

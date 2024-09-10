@@ -16,7 +16,7 @@ public class Class4876 extends Class4874<Class4474> {
    }
 
    public Class4474 method15047(JsonObject var1, Class9587 var2, Class9366 var3) {
-      JsonObject var6 = JSONUtils.method32783(var1, "location", var1);
+      JsonObject var6 = JSONUtils.getJsonObject(var1, "location", var1);
       Class8576 var7 = Class8576.method30653(var6);
       return new Class4474(this.field22710, var2, var7);
    }

@@ -8,7 +8,7 @@ import com.mojang.serialization.Dynamic;
 
 public class Class6730 extends Class6717 {
    public Class6730(Schema var1, boolean var2) {
-      super(var1, var2, "BlockEntityBannerColorFix", Class8239.field35386, "minecraft:banner");
+      super(var1, var2, "BlockEntityBannerColorFix", TypeReferences.field35386, "minecraft:banner");
    }
 
    public Dynamic<?> method20533(Dynamic<?> var1) {

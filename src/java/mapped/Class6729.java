@@ -7,7 +7,7 @@ import com.mojang.serialization.Dynamic;
 
 public class Class6729 extends Class6717 {
    public Class6729(Schema var1, boolean var2) {
-      super(var1, var2, "JigsawPropertiesFix", Class8239.field35386, "minecraft:jigsaw");
+      super(var1, var2, "JigsawPropertiesFix", TypeReferences.field35386, "minecraft:jigsaw");
    }
 
    private static Dynamic<?> method20532(Dynamic<?> var0) {

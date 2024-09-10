@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class2705 extends Class2704 {
+public class Class2705 extends HurtByTargetGoal {
    private static String[] field17178;
 
    public Class2705(Class1064 var1) {

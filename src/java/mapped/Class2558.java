@@ -21,7 +21,7 @@ public class Class2558 implements JsonDeserializer<Class9163> {
    }
 
    private String method10754(JsonObject var1) {
-      return JSONUtils.method32763(var1, "texture");
+      return JSONUtils.getString(var1, "texture");
    }
 
    @Nullable

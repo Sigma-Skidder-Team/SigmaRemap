@@ -7,7 +7,7 @@ import com.mojang.serialization.Dynamic;
 
 public class Class6718 extends Class6717 {
    public Class6718(Schema var1, boolean var2) {
-      super(var1, var2, "EntityItemFrameDirectionFix", Class8239.field35391, "minecraft:item_frame");
+      super(var1, var2, "EntityItemFrameDirectionFix", TypeReferences.ENTITY, "minecraft:item_frame");
    }
 
    public Dynamic<?> method20510(Dynamic<?> var1) {

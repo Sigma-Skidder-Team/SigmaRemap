@@ -7,7 +7,7 @@ public class Class6831 extends Class6829 {
    private float field29716;
    public final Class1110 field29717;
 
-   public Class6831(Class1110 var1, Class1006 var2) {
+   public Class6831(Class1110 var1, MobEntity var2) {
       super(var2);
       this.field29717 = var1;
       this.field29716 = 0.1F;

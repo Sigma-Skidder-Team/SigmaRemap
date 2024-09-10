@@ -13,7 +13,7 @@ public class Class3660 extends Class3639 {
 
    public Map<String, Supplier<TypeTemplate>> registerBlockEntities(Schema var1) {
       Map var4 = super.registerBlockEntities(var1);
-      var1.register(var4, "minecraft:trapped_chest", () -> DSL.optionalFields("Items", DSL.list(Class8239.field35387.in(var1))));
+      var1.register(var4, "minecraft:trapped_chest", () -> DSL.optionalFields("Items", DSL.list(TypeReferences.field35387.in(var1))));
       return var4;
    }
 }

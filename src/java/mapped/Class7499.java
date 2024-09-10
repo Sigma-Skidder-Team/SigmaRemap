@@ -141,10 +141,10 @@ public class Class7499 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<?> var3 = this.getOutputSchema().getType(Class8239.field35382);
+      Type<?> var3 = this.getOutputSchema().getType(TypeReferences.field35382);
       return this.fixTypeEverywhereTyped(
          "StatsCounterFix",
-         this.getInputSchema().getType(Class8239.field35382),
+         this.getInputSchema().getType(TypeReferences.field35382),
          var3,
          var2 -> {
             Dynamic<?> var5 = var2.get(DSL.remainderFinder());

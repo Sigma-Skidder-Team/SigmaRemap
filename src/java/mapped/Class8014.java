@@ -11,7 +11,7 @@ public final class Class8014 implements Class8015 {
    }
 
    @Override
-   public boolean method27401(Class8761 var1, int var2, Class4186 var3, BlockPos var4, List<Class4178> var5, Random var6) {
+   public boolean method27401(TemplateManager var1, int var2, Class4186 var3, BlockPos var4, List<Class4178> var5, Random var6) {
       Class80 var9 = var3.field20454.method36437();
       Class4186 var10 = Class9489.method36644(var5, Class9489.method36643(var1, var3, new BlockPos(-3, 4, -3), "fat_tower_base", var9, true));
       var10 = Class9489.method36644(var5, Class9489.method36643(var1, var10, new BlockPos(0, 4, 0), "fat_tower_middle", var9, true));

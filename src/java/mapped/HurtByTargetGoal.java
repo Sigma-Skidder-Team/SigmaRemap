@@ -9,7 +9,7 @@ import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.List;
 
-public class Class2704 extends Class2699 {
+public class HurtByTargetGoal extends Class2699 {
    private static String[] field17178;
    private static final Class8522 field17179 = new Class8522().method30206().method30208();
    private boolean field17180;
@@ -17,7 +17,7 @@ public class Class2704 extends Class2699 {
    private final Class<?>[] field17182;
    private Class<?>[] field17183;
 
-   public Class2704(Class1046 var1, Class<?>... var2) {
+   public HurtByTargetGoal(Class1046 var1, Class<?>... var2) {
       super(var1, true);
       this.field17182 = var2;
       this.method10809(EnumSet.<Class2240>of(Class2240.field14660));
@@ -44,7 +44,7 @@ public class Class2704 extends Class2699 {
       }
    }
 
-   public Class2704 method10918(Class<?>... var1) {
+   public HurtByTargetGoal method10918(Class<?>... var1) {
       this.field17180 = true;
       this.field17183 = var1;
       return this;
@@ -70,13 +70,13 @@ public class Class2704 extends Class2699 {
       Iterator var7 = var6.iterator();
 
       while (true) {
-         Class1006 var8;
+         MobEntity var8;
          while (true) {
             if (!var7.hasNext()) {
                return;
             }
 
-            var8 = (Class1006)var7.next();
+            var8 = (MobEntity)var7.next();
             if (this.field17153 != var8
                && var8.method4232() == null
                && (!(this.field17153 instanceof TameableEntity) || ((TameableEntity)this.field17153).method4400() == ((TameableEntity)var8).method4400())
@@ -104,7 +104,7 @@ public class Class2704 extends Class2699 {
       }
    }
 
-   public void method10920(Class1006 var1, LivingEntity var2) {
+   public void method10920(MobEntity var1, LivingEntity var2) {
       var1.method4233(var2);
    }
 }

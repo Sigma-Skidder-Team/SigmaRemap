@@ -23,7 +23,7 @@ public class Class8104 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      return this.method28071(this.getInputSchema().getTypeRaw(Class8239.field35387));
+      return this.method28071(this.getInputSchema().getTypeRaw(TypeReferences.field35387));
    }
 
    private <IS> TypeRewriteRule method28071(Type<IS> var1) {
@@ -33,8 +33,8 @@ public class Class8104 extends DataFix {
       OpticFinder var7 = DSL.fieldFinder("Equipment", DSL.list(var1));
       return this.fixTypeEverywhereTyped(
          "EntityEquipmentToArmorAndHandFix",
-         this.getInputSchema().getType(Class8239.field35391),
-         this.getOutputSchema().getType(Class8239.field35391),
+         this.getInputSchema().getType(TypeReferences.ENTITY),
+         this.getOutputSchema().getType(TypeReferences.ENTITY),
          var4x -> {
             Either<Object, Unit> var7x = Either.right(DSL.unit());
             Either<Object, Unit> var8 = Either.right(DSL.unit());

@@ -19,7 +19,7 @@ public class Class4229 extends Class4167 {
       this.field20560 = var2.nextInt(3) == 0;
    }
 
-   public Class4229(Class8761 var1, CompoundNBT var2) {
+   public Class4229(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33438, var2);
       this.field20560 = var2.getBoolean("Chest");
    }

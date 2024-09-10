@@ -240,7 +240,7 @@ public class Class4852 implements Class4842 {
    }
 
    public static ItemStack method14987(JsonObject var0) {
-      String var3 = JSONUtils.method32763(var0, "item");
+      String var3 = JSONUtils.getString(var0, "item");
       Item var4 = Registry.ITEM.method9187(new ResourceLocation(var3)).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
       if (!var0.has("data")) {
          int var5 = JSONUtils.getInt(var0, "count", 1);

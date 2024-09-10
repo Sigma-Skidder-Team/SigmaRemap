@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class Class2611 extends Class2595 {
-   private final Class1006 field16871;
-   private final Predicate<Class1006> field16872;
-   private Class1006 field16873;
+   private final MobEntity field16871;
+   private final Predicate<MobEntity> field16872;
+   private MobEntity field16873;
    private final double field16874;
    private final Class6990 field16875;
    private int field16876;
@@ -15,7 +15,7 @@ public class Class2611 extends Class2595 {
    private float field16878;
    private final float field16879;
 
-   public Class2611(Class1006 var1, double var2, float var4, float var5) {
+   public Class2611(MobEntity var1, double var2, float var4, float var5) {
       this.field16871 = var1;
       this.field16872 = var1x -> var1x != null && var1.getClass() != var1x.getClass();
       this.field16874 = var2;
@@ -30,11 +30,11 @@ public class Class2611 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      List<Class1006> var3 = this.field16871
+      List<MobEntity> var3 = this.field16871
          .world
-         .method6772(Class1006.class, this.field16871.getBoundingBox().method19664((double)this.field16879), this.field16872);
+         .method6772(MobEntity.class, this.field16871.getBoundingBox().method19664((double)this.field16879), this.field16872);
       if (!var3.isEmpty()) {
-         for (Class1006 var5 : var3) {
+         for (MobEntity var5 : var3) {
             if (!var5.isInvisible()) {
                this.field16873 = var5;
                return true;

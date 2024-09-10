@@ -43,13 +43,13 @@ public class Class8463 {
          JsonObject var3 = JSONUtils.method32781(var0, "fluid");
          Fluid var4 = null;
          if (var3.has("fluid")) {
-            ResourceLocation var5 = new ResourceLocation(JSONUtils.method32763(var3, "fluid"));
+            ResourceLocation var5 = new ResourceLocation(JSONUtils.getString(var3, "fluid"));
             var4 = Registry.field16070.method9184(var5);
          }
 
          ITag var7 = null;
          if (var3.has("tag")) {
-            ResourceLocation var6 = new ResourceLocation(JSONUtils.method32763(var3, "tag"));
+            ResourceLocation var6 = new ResourceLocation(JSONUtils.getString(var3, "tag"));
             var7 = Class9443.method36296().method32659().get(var6);
             if (var7 == null) {
                throw new JsonSyntaxException("Unknown fluid tag '" + var6 + "'");

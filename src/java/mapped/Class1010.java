@@ -40,18 +40,18 @@ public class Class1010 extends Class1009 implements IAngerable {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(0, new Class2603(this));
-      this.field5600.method20002(1, new Class2624(this));
-      this.field5600.method20002(2, new Class2647(this, 1.0, false));
-      this.field5600.method20002(7, new Class2737(this, 1.0, 0.0F));
-      this.field5600.method20002(8, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.method20002(8, new Class2668(this));
-      this.field5600.method20002(10, new Class2685(this));
-      this.field5600.method20002(11, new Class2734(this));
-      this.field5601.method20002(1, new Class2710(this, this::method4367));
-      this.field5601.method20002(2, new Class2704(this));
-      this.field5601.method20002(3, new Class2709<Class1104>(this, Class1104.class, 10, true, false, field5650));
-      this.field5601.method20002(4, new Class2779<Class1010>(this, false));
+      this.field5600.addGoal(0, new Class2603(this));
+      this.field5600.addGoal(1, new Class2624(this));
+      this.field5600.addGoal(2, new Class2647(this, 1.0, false));
+      this.field5600.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0, 0.0F));
+      this.field5600.addGoal(8, new Class2612(this, PlayerEntity.class, 8.0F));
+      this.field5600.addGoal(8, new Class2668(this));
+      this.field5600.addGoal(10, new Class2685(this));
+      this.field5600.addGoal(11, new Class2734(this));
+      this.field5601.addGoal(1, new Class2710(this, this::method4367));
+      this.field5601.addGoal(2, new HurtByTargetGoal(this));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1104>(this, Class1104.class, 10, true, false, field5650));
+      this.field5601.addGoal(4, new ResetAngerGoal<Class1010>(this, false));
    }
 
    public static Class7037 method4345() {
@@ -104,7 +104,7 @@ public class Class1010 extends Class1009 implements IAngerable {
    }
 
    @Override
-   public void method4349(UUID var1) {
+   public void setAngerTarget(UUID var1) {
       this.field5655 = var1;
    }
 
@@ -207,7 +207,7 @@ public class Class1010 extends Class1009 implements IAngerable {
    }
 
    @Override
-   public void method4258() {
+   public void updateAITasks() {
       if (this.world.method6740() && this.ticksExisted >= this.field5652 + 600) {
          float var3 = this.getBrightness();
          if (var3 > 0.5F && this.world.method7022(this.getPosition()) && this.rand.nextFloat() * 30.0F < (var3 - 0.4F) * 2.0F) {
@@ -216,7 +216,7 @@ public class Class1010 extends Class1009 implements IAngerable {
          }
       }
 
-      super.method4258();
+      super.updateAITasks();
    }
 
    public boolean method4353() {
@@ -244,7 +244,7 @@ public class Class1010 extends Class1009 implements IAngerable {
       BlockPos.Mutable var9 = new BlockPos.Mutable(var1, var3, var5);
 
       while (var9.getY() > 0 && !this.world.getBlockState(var9).getMaterial().method31087()) {
-         var9.method8379(Direction.DOWN);
+         var9.method8379(net.minecraft.util.Direction.DOWN);
       }
 
       BlockState var10 = this.world.getBlockState(var9);

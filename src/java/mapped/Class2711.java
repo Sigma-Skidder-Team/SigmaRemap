@@ -4,7 +4,7 @@ import net.minecraft.entity.LivingEntity;
 
 import java.util.function.Predicate;
 
-public class Class2711<T extends LivingEntity> extends Class2709<T> {
+public class Class2711<T extends LivingEntity> extends NearestAttackableTargetGoal<T> {
    private static String[] field17187;
    private boolean field17198 = true;
 

@@ -38,12 +38,12 @@ public class SquidEntity extends WaterMobEntity {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(0, new Class2679(this, this));
-      this.field5600.method20002(1, new Class2726(this));
+      this.field5600.addGoal(0, new Class2679(this, this));
+      this.field5600.addGoal(1, new Class2726(this));
    }
 
    public static Class7037 method4836() {
-      return Class1006.method4220().method21849(Attributes.field42105, 10.0);
+      return MobEntity.method4220().method21849(Attributes.field42105, 10.0);
    }
 
    @Override

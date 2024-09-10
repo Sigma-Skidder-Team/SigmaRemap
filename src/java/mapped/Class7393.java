@@ -51,7 +51,7 @@ public class Class7393 {
    private static void method23616(ServerWorld var0, BlockPos var1) {
    }
 
-   public static void method23617(World var0, Class1006 var1, Class8238 var2, float var3) {
+   public static void method23617(World var0, MobEntity var1, Class8238 var2, float var3) {
    }
 
    public static void method23618(World var0, BlockPos var1) {
@@ -60,7 +60,7 @@ public class Class7393 {
    public static void method23619(ISeedReader var0, Class5444<?> var1) {
    }
 
-   public static void method23620(World var0, Class1006 var1, Class6603 var2) {
+   public static void method23620(World var0, MobEntity var1, Class6603 var2) {
       if (!(var0 instanceof ServerWorld)) {
       }
    }
@@ -74,7 +74,7 @@ public class Class7393 {
    public static void method23623(Class1017 var0) {
    }
 
-   public static void method23624(Class962 var0) {
+   public static void method23624(BeehiveTileEntity var0) {
    }
 
    private static void method23625(ServerWorld var0, PacketBuffer var1, ResourceLocation var2) {

@@ -7,7 +7,7 @@ import net.minecraft.world.server.ServerWorld;
 import java.util.Optional;
 import java.util.function.Predicate;
 
-public class Class3685<E extends Class1006> extends Class3676<E> {
+public class Class3685<E extends MobEntity> extends Class3676<E> {
    private static String[] field19701;
    private final Predicate<LivingEntity> field19702;
 

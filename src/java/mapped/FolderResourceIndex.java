@@ -1,6 +1,5 @@
 package mapped;
 
-import net.minecraft.client.resources.ResourceIndex;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.File;
@@ -14,25 +13,25 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class Class7948 extends ResourceIndex {
+public class FolderResourceIndex extends net.minecraft.client.resources.ResourceIndex {
    private final File field34180;
 
-   public Class7948(File var1) {
+   public FolderResourceIndex(File var1) {
       this.field34180 = var1;
    }
 
    @Override
-   public File method27015(ResourceLocation var1) {
+   public File getFile(ResourceLocation var1) {
       return new File(this.field34180, var1.toString().replace(':', '/'));
    }
 
    @Override
-   public File method27016(String var1) {
+   public File getFile(String var1) {
       return new File(this.field34180, var1);
    }
 
    @Override
-   public Collection<ResourceLocation> method27017(String var1, String var2, int var3, Predicate<String> var4) {
+   public Collection<ResourceLocation> getFiles(String var1, String var2, int var3, Predicate<String> var4) {
       Path var7 = this.field34180.toPath().resolve(var2);
 
       try (Stream<Path> var8 = Files.walk(var7.resolve(var1), var3)) {
@@ -43,7 +42,7 @@ public class Class7948 extends ResourceIndex {
             .collect(Collectors.<ResourceLocation>toList());
       } catch (NoSuchFileException var23) {
       } catch (IOException var24) {
-         field34181.warn("Unable to getFiles on {}", var1, var24);
+         LOGGER.warn("Unable to getFiles on {}", var1, var24);
       }
 
       return Collections.<ResourceLocation>emptyList();

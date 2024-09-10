@@ -19,7 +19,7 @@ public class Class6503<T extends Class4847> implements Class6504<T> {
       String var5 = JSONUtils.method32764(var2, "group", "");
       Object var6 = !JSONUtils.method32759(var2, "ingredient") ? JSONUtils.method32782(var2, "ingredient") : JSONUtils.method32785(var2, "ingredient");
       Class120 var7 = Class120.method344((JsonElement)var6);
-      String var8 = JSONUtils.method32763(var2, "result");
+      String var8 = JSONUtils.getString(var2, "result");
       ResourceLocation var9 = new ResourceLocation(var8);
       ItemStack var10 = new ItemStack(Registry.ITEM.method9187(var9).orElseThrow(() -> new IllegalStateException("Item: " + var8 + " does not exist")));
       float var11 = JSONUtils.method32772(var2, "experience", 0.0F);

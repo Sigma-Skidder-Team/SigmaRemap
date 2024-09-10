@@ -18,7 +18,7 @@ public class CopyNBTSerializer extends LootFunctionSerializer<Class142> {
    }
 
    public Class142 deserialize(JsonObject var1, JsonDeserializationContext var2, ILootCondition[] var3) {
-      Class2343 var6 = Class2343.method9119(JSONUtils.method32763(var1, "source"));
+      Class2343 var6 = Class2343.method9119(JSONUtils.getString(var1, "source"));
       ArrayList var7 = Lists.newArrayList();
 
       for (JsonElement var9 : JSONUtils.method32785(var1, "ops")) {

@@ -78,7 +78,7 @@ public class Class1114 extends Class1113 {
    }
 
    public static Class7037 method5363() {
-      return Class1006.method4220().method21849(Attributes.field42105, 6.0);
+      return MobEntity.method4220().method21849(Attributes.field42105, 6.0);
    }
 
    public boolean method5364() {
@@ -106,8 +106,8 @@ public class Class1114 extends Class1113 {
    }
 
    @Override
-   public void method4258() {
-      super.method4258();
+   public void updateAITasks() {
+      super.updateAITasks();
       BlockPos var3 = this.getPosition();
       BlockPos var4 = var3.up();
       if (!this.method5364()) {

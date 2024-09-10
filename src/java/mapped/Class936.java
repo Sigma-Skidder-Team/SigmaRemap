@@ -19,7 +19,7 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class Class936 extends Class939 implements Class937, Class935 {
+public class Class936 extends Class939 implements Class937, ITickableTileEntity {
    private NonNullList<ItemStack> field5293 = NonNullList.<ItemStack>method68(5, ItemStack.EMPTY);
    private int field5294 = -1;
    private long field5295;

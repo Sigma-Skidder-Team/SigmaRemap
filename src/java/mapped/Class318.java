@@ -25,14 +25,14 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
 
    public abstract boolean canRun(R var1);
 
-   public boolean method1629() {
+   public boolean isOnExecutionThread() {
       return Thread.currentThread() == this.getExecutionThread();
    }
 
    public abstract Thread getExecutionThread();
 
    public boolean method1390() {
-      return !this.method1629();
+      return !this.isOnExecutionThread();
    }
 
    public int method1630() {
@@ -65,7 +65,7 @@ public abstract class Class318<R extends Runnable> implements Class321<R>, Execu
    }
 
    public void method1635(Runnable var1) {
-      if (this.method1629()) {
+      if (this.isOnExecutionThread()) {
          var1.run();
       } else {
          this.method1633(var1).join();

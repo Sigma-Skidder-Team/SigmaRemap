@@ -19,9 +19,9 @@ public class Class4193 extends Class4178 {
    private final int field20491;
    public final Class80 field20492;
    private final List<Class3637> field20493 = Lists.newArrayList();
-   private final Class8761 field20494;
+   private final TemplateManager field20494;
 
-   public Class4193(Class8761 var1, Class7487 var2, BlockPos var3, int var4, Class80 var5, Class9764 var6) {
+   public Class4193(TemplateManager var1, Class7487 var2, BlockPos var3, int var4, Class80 var5, Class9764 var6) {
       super(Class7792.field33480, 0);
       this.field20494 = var1;
       this.field20489 = var2;
@@ -31,7 +31,7 @@ public class Class4193 extends Class4178 {
       this.field20444 = var6;
    }
 
-   public Class4193(Class8761 var1, CompoundNBT var2) {
+   public Class4193(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33480, var2);
       this.field20494 = var1;
       this.field20490 = new BlockPos(var2.getInt("PosX"), var2.getInt("PosY"), var2.getInt("PosZ"));

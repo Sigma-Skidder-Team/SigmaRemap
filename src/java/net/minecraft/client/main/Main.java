@@ -106,7 +106,7 @@ public class Main {
       GameConfiguration var55 = new GameConfiguration(
          new Class8227(var54, var44, var45, var31),
          new ScreenSize(var34, var35, var36, var37, var38),
-         new Class8281(var47, var49, var48, var51),
+         new FolderInformation(var47, var49, var48, var51),
          new Class7745(var39, var42, var46, var40, var41),
          new Class7199(var52, var53)
       );

@@ -12,8 +12,7 @@ import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.types.templates.List.ListType;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
-import java.util.ArrayList;
-import java.util.HashMap;
+
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -25,7 +24,7 @@ public class Class9130 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getOutputSchema().getType(Class8239.field35378);
+      Type var3 = this.getOutputSchema().getType(TypeReferences.field35378);
       Type var4 = var3.findFieldType("Level");
       Type var5 = var4.findFieldType("TileEntities");
       if (var5 instanceof ListType) {
@@ -44,13 +43,13 @@ public class Class9130 extends DataFix {
       return TypeRewriteRule.seq(
          this.fixTypeEverywhere(
             "InjectBedBlockEntityType",
-            this.getInputSchema().findChoiceType(Class8239.field35386),
-            this.getOutputSchema().findChoiceType(Class8239.field35386),
+            this.getInputSchema().findChoiceType(TypeReferences.field35386),
+            this.getOutputSchema().findChoiceType(TypeReferences.field35386),
             var0 -> var0x -> (Pair) var0x
          ),
          this.fixTypeEverywhereTyped(
             "BedBlockEntityInjecter",
-            this.getOutputSchema().getType(Class8239.field35378),
+            this.getOutputSchema().getType(TypeReferences.field35378),
             var3 -> {
                Typed<?> var6x = var3.getTyped(var6);
                Dynamic<?> var7x = (Dynamic)var6x.get(DSL.remainderFinder());

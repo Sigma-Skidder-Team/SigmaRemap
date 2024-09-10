@@ -8,7 +8,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class6206 {
    public static final SuggestionProvider<Class6619> field27688 = (var0, var1) -> {
-      Class7268 var4 = ((Class6619)var0.getSource()).method20177().method1397();
+      FunctionManager var4 = ((Class6619)var0.getSource()).method20177().method1397();
       Class6618.method20140(var4.method22832(), var1, "#");
       return Class6618.method20141(var4.method22831(), var1);
    };

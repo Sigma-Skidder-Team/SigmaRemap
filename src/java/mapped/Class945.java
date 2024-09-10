@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 import java.util.Optional;
 import java.util.Random;
 
-public class Class945 extends TileEntity implements IClearable, Class935 {
+public class Class945 extends TileEntity implements IClearable, ITickableTileEntity {
    private final NonNullList<ItemStack> field5329 = NonNullList.<ItemStack>method68(4, ItemStack.EMPTY);
    private final int[] field5330 = new int[4];
    private final int[] field5331 = new int[4];

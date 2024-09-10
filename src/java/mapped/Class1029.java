@@ -32,20 +32,20 @@ public class Class1029 extends Class1026 {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.method20002(0, new Class2603(this));
-      this.field5600.method20002(4, new Class2653(this));
-      this.field5600.method20002(5, new Class2737(this, 0.4));
-      this.field5600.method20002(6, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.method20002(10, new Class2612(this, Class1006.class, 8.0F));
-      this.field5601.method20002(2, new Class2704(this, Class1026.class).method10918());
-      this.field5601.method20002(3, new Class2709<PlayerEntity>(this, PlayerEntity.class, true));
-      this.field5601.method20002(4, new Class2709<Class1043>(this, Class1043.class, true));
-      this.field5601.method20002(4, new Class2709<Class1058>(this, Class1058.class, true));
+      this.field5600.addGoal(0, new Class2603(this));
+      this.field5600.addGoal(4, new Class2653(this));
+      this.field5600.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 0.4));
+      this.field5600.addGoal(6, new Class2612(this, PlayerEntity.class, 6.0F));
+      this.field5600.addGoal(10, new Class2612(this, MobEntity.class, 8.0F));
+      this.field5601.addGoal(2, new HurtByTargetGoal(this, Class1026.class).method10918());
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.field5601.addGoal(4, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, true));
+      this.field5601.addGoal(4, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, true));
    }
 
    @Override
    public void method4240() {
-      boolean var3 = !(this.method3407() instanceof Class1006) || this.method3407().getType().method33228(Class8613.field38735);
+      boolean var3 = !(this.method3407() instanceof MobEntity) || this.method3407().getType().method33228(Class8613.field38735);
       boolean var4 = !(this.getRidingEntity() instanceof BoatEntity);
       this.field5600.method20010(Class2240.field14657, var3);
       this.field5600.method20010(Class2240.field14659, var3 && var4);

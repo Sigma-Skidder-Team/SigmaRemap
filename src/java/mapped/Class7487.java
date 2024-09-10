@@ -24,12 +24,12 @@ public abstract class Class7487 {
       this.field32184 = var1;
    }
 
-   public abstract List<Class8266> method24374(Class8761 var1, BlockPos var2, Class80 var3, Random var4);
+   public abstract List<Class8266> method24374(TemplateManager var1, BlockPos var2, Class80 var3, Random var4);
 
-   public abstract Class9764 method24375(Class8761 var1, BlockPos var2, Class80 var3);
+   public abstract Class9764 method24375(TemplateManager var1, BlockPos var2, Class80 var3);
 
    public abstract boolean method24376(
-           Class8761 var1, ISeedReader var2, Class7480 var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
+           TemplateManager var1, ISeedReader var2, Class7480 var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
    );
 
    public abstract Class8325<?> method24377();

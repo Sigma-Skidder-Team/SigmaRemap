@@ -18,7 +18,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 
-public class Class1037 extends Class1038 implements Class1022 {
+public class Class1037 extends ZombieEntity implements Class1022 {
    private static String[] field5754;
    private boolean field5755;
    public final Class6997 field5756;
@@ -34,18 +34,18 @@ public class Class1037 extends Class1038 implements Class1022 {
    }
 
    @Override
-   public void method4639() {
-      this.field5600.method20002(1, new Class2670(this, 1.0));
-      this.field5600.method20002(2, new Class2599(this, 1.0, 40, 10.0F));
-      this.field5600.method20002(2, new Class2655(this, 1.0, false));
-      this.field5600.method20002(5, new Class2629(this, 1.0));
-      this.field5600.method20002(6, new Class2659(this, 1.0, this.world.method6776()));
-      this.field5600.method20002(7, new Class2736(this, 1.0));
-      this.field5601.method20002(1, new Class2704(this, Class1037.class).method10918(Class1063.class));
-      this.field5601.method20002(2, new Class2709<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4646));
-      this.field5601.method20002(3, new Class2709<Class1043>(this, Class1043.class, false));
-      this.field5601.method20002(3, new Class2709<Class1058>(this, Class1058.class, true));
-      this.field5601.method20002(5, new Class2709<Class1088>(this, Class1088.class, 10, true, false, Class1088.field5963));
+   public void applyEntityAI() {
+      this.field5600.addGoal(1, new Class2670(this, 1.0));
+      this.field5600.addGoal(2, new Class2599(this, 1.0, 40, 10.0F));
+      this.field5600.addGoal(2, new Class2655(this, 1.0, false));
+      this.field5600.addGoal(5, new Class2629(this, 1.0));
+      this.field5600.addGoal(6, new Class2659(this, 1.0, this.world.method6776()));
+      this.field5600.addGoal(7, new Class2736(this, 1.0));
+      this.field5601.addGoal(1, new HurtByTargetGoal(this, Class1037.class).method10918(ZombifiedPiglinEntity.class));
+      this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, this::method4646));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, false));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, true));
+      this.field5601.addGoal(5, new NearestAttackableTargetGoal<Class1088>(this, Class1088.class, 10, true, false, Class1088.field5963));
    }
 
    @Override
@@ -135,7 +135,7 @@ public class Class1037 extends Class1038 implements Class1022 {
    }
 
    @Override
-   public boolean method4645() {
+   public boolean shouldDrown() {
       return false;
    }
 

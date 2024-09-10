@@ -7,7 +7,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
-public abstract class Class1046 extends Class1006 {
+public abstract class Class1046 extends MobEntity {
    public Class1046(EntityType<? extends Class1046> var1, World var2) {
       super(var1, var2);
    }

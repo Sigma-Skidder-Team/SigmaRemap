@@ -58,8 +58,8 @@ public abstract class Class1031 extends Class1025 {
    }
 
    @Override
-   public void method4258() {
-      super.method4258();
+   public void updateAITasks() {
+      super.updateAITasks();
       if (this.field5734 > 0) {
          this.field5734--;
       }

@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import javax.annotation.Nullable;
 
+import net.minecraft.resources.data.IMetadataSectionSerializer;
 import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.IOUtils;
 
@@ -43,7 +44,7 @@ public class Class1785 implements Class1783 {
 
    @Nullable
    @Override
-   public <T> T method7764(Class7170<T> var1) {
+   public <T> T method7764(IMetadataSectionSerializer<T> var1) {
       if (!this.method7766()) {
          return null;
       } else {
@@ -53,7 +54,7 @@ public class Class1785 implements Class1783 {
 
             try {
                var4 = new BufferedReader(new InputStreamReader(this.field9627, StandardCharsets.UTF_8));
-               this.field9629 = JSONUtils.method32801(var4);
+               this.field9629 = JSONUtils.fromJson(var4);
             } finally {
                IOUtils.closeQuietly(var4);
             }
@@ -62,8 +63,8 @@ public class Class1785 implements Class1783 {
          if (this.field9629 == null) {
             return null;
          } else {
-            String var8 = var1.method22518();
-            return (T)(this.field9629.has(var8) ? var1.method22519(JSONUtils.method32782(this.field9629, var8)) : null);
+            String var8 = var1.getSectionName();
+            return (T)(this.field9629.has(var8) ? var1.deserialize(JSONUtils.method32782(this.field9629, var8)) : null);
          }
       }
    }

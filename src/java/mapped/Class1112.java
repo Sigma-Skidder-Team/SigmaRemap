@@ -29,11 +29,11 @@ public class Class1112 extends Class1111 implements Class1008 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(5, new Class2684(this));
-      this.field5600.method20002(7, new Class2757(this));
-      this.field5600.method20002(7, new Class2639(this));
+      this.field5600.addGoal(5, new Class2684(this));
+      this.field5600.addGoal(7, new Class2757(this));
+      this.field5600.addGoal(7, new Class2639(this));
       this.field5601
-         .method20002(1, new Class2709<PlayerEntity>(this, PlayerEntity.class, 10, true, false, var1 -> Math.abs(var1.getPosY() - this.getPosY()) <= 4.0));
+         .addGoal(1, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, var1 -> Math.abs(var1.getPosY() - this.getPosY()) <= 4.0));
    }
 
    public boolean method5357() {
@@ -74,7 +74,7 @@ public class Class1112 extends Class1111 implements Class1008 {
    }
 
    public static Class7037 method5360() {
-      return Class1006.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.field42106, 100.0);
+      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.field42106, 100.0);
    }
 
    @Override

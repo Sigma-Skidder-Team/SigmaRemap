@@ -7,7 +7,7 @@ import com.mojang.serialization.Dynamic;
 
 public class Class6735 extends Class6717 {
    public Class6735(Schema var1, boolean var2) {
-      super(var1, var2, "EntityWolfColorFix", Class8239.field35391, "minecraft:wolf");
+      super(var1, var2, "EntityWolfColorFix", TypeReferences.ENTITY, "minecraft:wolf");
    }
 
    public Dynamic<?> method20546(Dynamic<?> var1) {

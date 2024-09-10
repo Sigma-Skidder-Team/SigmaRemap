@@ -12,7 +12,7 @@ public class Class5457 extends Class5455<Class4712> {
       super(var1, var2, var3, var4, var5, var6);
    }
 
-   public void method17109(DynamicRegistries var1, ChunkGenerator var2, Class8761 var3, int var4, int var5, Biome var6, Class4712 var7) {
+   public void method17109(DynamicRegistries var1, ChunkGenerator var2, TemplateManager var3, int var4, int var5, Biome var6, Class4712 var7) {
       ChunkPos var10 = new ChunkPos(var4, var5);
       int var11 = var10.method24356() + this.field24201.nextInt(16);
       int var12 = var10.method24357() + this.field24201.nextInt(16);

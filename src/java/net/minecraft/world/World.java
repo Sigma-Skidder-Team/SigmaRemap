@@ -386,7 +386,7 @@ public abstract class World implements Class1660, AutoCloseable {
       }
 
       boolean var4 = this.loadedTileEntityList.add(var1);
-      if (var4 && var1 instanceof Class935) {
+      if (var4 && var1 instanceof ITickableTileEntity) {
          this.tickableTileEntities.add(var1);
       }
 
@@ -429,7 +429,7 @@ public abstract class World implements Class1660, AutoCloseable {
                try {
                   var3.method22504(() -> String.valueOf(TileEntityType.method13793(var5.method3786())));
                   if (var5.method3786().method13796(this.getBlockState(var6).getBlock())) {
-                     ((Class935)var5).method3647();
+                     ((ITickableTileEntity)var5).method3647();
                   } else {
                      var5.method3787();
                   }

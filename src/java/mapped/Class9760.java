@@ -23,7 +23,7 @@ public class Class9760 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<?> var3 = this.getInputSchema().getChoiceType(Class8239.field35391, "minecraft:villager");
+      Type<?> var3 = this.getInputSchema().getChoiceType(TypeReferences.ENTITY, "minecraft:villager");
       OpticFinder var4 = DSL.namedChoice("minecraft:villager", var3);
       OpticFinder<?> var5 = var3.findField("Offers");
       Type var6 = var5.type();
@@ -32,7 +32,7 @@ public class Class9760 extends DataFix {
       OpticFinder<?> var9 = var8.getElement().finder();
       return this.fixTypeEverywhereTyped(
          "Villager level and xp rebuild",
-         this.getInputSchema().getType(Class8239.field35391),
+         this.getInputSchema().getType(TypeReferences.ENTITY),
          var5x -> var5x.updateTyped(
                var4,
                var3,

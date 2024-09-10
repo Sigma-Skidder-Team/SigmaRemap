@@ -11,7 +11,7 @@ public class CopyNameSerializer extends LootFunctionSerializer<Class139> {
    }
 
    public Class139 deserialize(JsonObject var1, JsonDeserializationContext var2, ILootCondition[] var3) {
-      Class2138 var6 = Class2138.method8831(JSONUtils.method32763(var1, "source"));
+      Class2138 var6 = Class2138.method8831(JSONUtils.getString(var1, "source"));
       return new Class139(var3, var6);
    }
 }

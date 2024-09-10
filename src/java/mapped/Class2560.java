@@ -12,7 +12,7 @@ import java.util.Map.Entry;
 public class Class2560 implements JsonDeserializer<Class7781> {
    public Class7781 deserialize(JsonElement var1, Type var2, JsonDeserializationContext var3) throws JsonParseException {
       JsonObject var6 = var1.getAsJsonObject();
-      ResourceLocation var7 = new ResourceLocation(JSONUtils.method32763(var6, "model"));
+      ResourceLocation var7 = new ResourceLocation(JSONUtils.getString(var6, "model"));
       Map var8 = this.method10756(var6);
       return new Class7781(var7, var8);
    }

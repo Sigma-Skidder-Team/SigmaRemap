@@ -15,16 +15,16 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Class962 extends TileEntity implements Class935 {
-   private final List<Class9327> field5392 = Lists.newArrayList();
+public class BeehiveTileEntity extends TileEntity implements ITickableTileEntity {
+   private final List<Beeee> field5392 = Lists.newArrayList();
    private BlockPos field5393 = null;
 
-   public Class962() {
+   public BeehiveTileEntity() {
       super(TileEntityType.field21453);
    }
 
    @Override
-   public void method3622() {
+   public void markDirty() {
       if (this.method3912()) {
          this.method3915((PlayerEntity)null, this.field5324.getBlockState(this.getPos()), Class2084.field13573);
       }
@@ -104,7 +104,7 @@ public class Class962 extends TileEntity implements Class935 {
          var1.removePassengers();
          CompoundNBT var6 = new CompoundNBT();
          var1.writeUnlessPassenger(var6);
-         this.field5392.add(new Class9327(var6, var3, !var2 ? 600 : 2400));
+         this.field5392.add(new Beeee(var6, var3, !var2 ? 600 : 2400));
          if (this.field5324 != null) {
             if (var1 instanceof Class1017) {
                Class1017 var7 = (Class1017)var1;
@@ -131,12 +131,12 @@ public class Class962 extends TileEntity implements Class935 {
       }
    }
 
-   private boolean method3923(BlockState var1, Class9327 var2, List<Entity> var3, Class2084 var4) {
+   private boolean method3923(BlockState var1, Beeee var2, List<Entity> var3, Class2084 var4) {
       if ((this.field5324.method6741() || this.field5324.method6795()) && var4 != Class2084.field13573) {
          return false;
       } else {
          BlockPos var7 = this.getPos();
-         CompoundNBT var8 = Class9327.method35245(var2);
+         CompoundNBT var8 = Beeee.method35245(var2);
          var8.method133("Passengers");
          var8.method133("Leash");
          var8.method133("UUID");
@@ -171,7 +171,7 @@ public class Class962 extends TileEntity implements Class935 {
                      }
                   }
 
-                  this.method3924(Class9327.method35246(var2), var13);
+                  this.method3924(Beeee.method35246(var2), var13);
                   if (var3 != null) {
                      var3.add(var13);
                   }
@@ -216,15 +216,15 @@ public class Class962 extends TileEntity implements Class935 {
       BlockState var4 = this.method3775();
 
       while (var3.hasNext()) {
-         Class9327 var5 = (Class9327)var3.next();
-         if (Class9327.method35246(var5) > Class9327.method35248(var5)) {
-            Class2084 var6 = !Class9327.method35245(var5).getBoolean("HasNectar") ? Class2084.field13572 : Class2084.field13571;
+         Beeee var5 = (Beeee)var3.next();
+         if (Beeee.method35246(var5) > Beeee.method35248(var5)) {
+            Class2084 var6 = !Beeee.method35245(var5).getBoolean("HasNectar") ? Class2084.field13572 : Class2084.field13571;
             if (this.method3923(var4, var5, (List<Entity>)null, var6)) {
                var3.remove();
             }
          }
 
-         Class9327.method35247(var5);
+         Beeee.method35247(var5);
       }
    }
 
@@ -252,7 +252,7 @@ public class Class962 extends TileEntity implements Class935 {
 
       for (int var6 = 0; var6 < var5.size(); var6++) {
          CompoundNBT var7 = var5.method153(var6);
-         Class9327 var8 = new Class9327(var7.getCompound("EntityData"), var7.getInt("TicksInHive"), var7.getInt("MinOccupationTicks"));
+         Beeee var8 = new Beeee(var7.getCompound("EntityData"), var7.getInt("TicksInHive"), var7.getInt("MinOccupationTicks"));
          this.field5392.add(var8);
       }
 
@@ -276,12 +276,12 @@ public class Class962 extends TileEntity implements Class935 {
    public ListNBT method3927() {
       ListNBT var3 = new ListNBT();
 
-      for (Class9327 var5 : this.field5392) {
-         Class9327.method35245(var5).method133("UUID");
+      for (Beeee var5 : this.field5392) {
+         Beeee.method35245(var5).method133("UUID");
          CompoundNBT var6 = new CompoundNBT();
-         var6.put("EntityData", Class9327.method35245(var5));
-         var6.putInt("TicksInHive", Class9327.method35246(var5));
-         var6.putInt("MinOccupationTicks", Class9327.method35248(var5));
+         var6.put("EntityData", Beeee.method35245(var5));
+         var6.putInt("TicksInHive", Beeee.method35246(var5));
+         var6.putInt("MinOccupationTicks", Beeee.method35248(var5));
          var3.add(var6);
       }
 

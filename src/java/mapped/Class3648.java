@@ -21,19 +21,19 @@ public class Class3648 extends Class3639 {
       super.registerTypes(var1, var2, var3);
       var1.registerType(
          false,
-         Class8239.field35384,
+         TypeReferences.field35384,
          () -> DSL.optionalFields(
                "minecraft:adventure/adventuring_time",
-               DSL.optionalFields("criteria", DSL.compoundList(Class8239.field35399.in(var1), DSL.constType(DSL.string()))),
+               DSL.optionalFields("criteria", DSL.compoundList(TypeReferences.field35399.in(var1), DSL.constType(DSL.string()))),
                "minecraft:adventure/kill_a_mob",
-               DSL.optionalFields("criteria", DSL.compoundList(Class8239.field35389.in(var1), DSL.constType(DSL.string()))),
+               DSL.optionalFields("criteria", DSL.compoundList(TypeReferences.field35389.in(var1), DSL.constType(DSL.string()))),
                "minecraft:adventure/kill_all_mobs",
-               DSL.optionalFields("criteria", DSL.compoundList(Class8239.field35389.in(var1), DSL.constType(DSL.string()))),
+               DSL.optionalFields("criteria", DSL.compoundList(TypeReferences.field35389.in(var1), DSL.constType(DSL.string()))),
                "minecraft:husbandry/bred_all_animals",
-               DSL.optionalFields("criteria", DSL.compoundList(Class8239.field35389.in(var1), DSL.constType(DSL.string())))
+               DSL.optionalFields("criteria", DSL.compoundList(TypeReferences.field35389.in(var1), DSL.constType(DSL.string())))
             )
       );
-      var1.registerType(false, Class8239.field35399, () -> DSL.constType(method12354()));
-      var1.registerType(false, Class8239.field35389, () -> DSL.constType(method12354()));
+      var1.registerType(false, TypeReferences.field35399, () -> DSL.constType(method12354()));
+      var1.registerType(false, TypeReferences.field35389, () -> DSL.constType(method12354()));
    }
 }

@@ -19,14 +19,14 @@ import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class8761 {
+public class TemplateManager {
    private static final Logger field39441 = LogManager.getLogger();
    private final Map<ResourceLocation, Class8969> field39442 = Maps.newHashMap();
    private final DataFixer field39443;
    private IResourceManager field39444;
    private final Path field39445;
 
-   public Class8761(IResourceManager var1, SaveFormat.LevelSave var2, DataFixer var3) {
+   public TemplateManager(IResourceManager var1, SaveFormat.LevelSave var2, DataFixer var3) {
       this.field39444 = var1;
       this.field39443 = var3;
       this.field39445 = var2.resolveFilePath(FolderName.field23351).normalize();
@@ -50,7 +50,7 @@ public class Class8761 {
       });
    }
 
-   public void method31605(IResourceManager var1) {
+   public void onResourceManagerReload(IResourceManager var1) {
       this.field39444 = var1;
       this.field39442.clear();
    }

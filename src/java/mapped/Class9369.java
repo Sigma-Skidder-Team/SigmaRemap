@@ -72,7 +72,7 @@ public class Class9369 {
       this.field43496 = var2;
    }
 
-   public int method35533(Class8761 var1) {
+   public int method35533(TemplateManager var1) {
       if (this.field43497 == Integer.MIN_VALUE) {
          this.field43497 = this.field43495
             .stream()

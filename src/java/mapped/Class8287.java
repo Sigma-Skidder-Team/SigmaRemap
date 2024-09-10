@@ -39,7 +39,7 @@ public class Class8287 extends Class8286 {
       this.field35593 = var2;
       if (var2.isFile()) {
          try {
-            this.method28964(var1.method1394(), FileUtils.readFileToString(var2));
+            this.method28964(var1.getDataFixer(), FileUtils.readFileToString(var2));
          } catch (IOException var6) {
             field35591.error("Couldn't read statistics file {}", var2, var6);
          } catch (JsonParseException var7) {

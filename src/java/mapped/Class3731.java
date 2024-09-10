@@ -6,7 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.world.server.ServerWorld;
 
-public class Class3731<E extends Class1006 & Class1023, T extends LivingEntity> extends Class3676<E> {
+public class Class3731<E extends MobEntity & Class1023, T extends LivingEntity> extends Class3676<E> {
    private static String[] field19839;
    private int field19840;
    private Class2276 field19841 = Class2276.field14826;
@@ -78,7 +78,7 @@ public class Class3731<E extends Class1006 & Class1023, T extends LivingEntity> 
       }
    }
 
-   private void method12657(Class1006 var1, LivingEntity var2) {
+   private void method12657(MobEntity var1, LivingEntity var2) {
       var1.getBrain().method21406(Class8830.field39825, new Class7865(var2, true));
    }
 

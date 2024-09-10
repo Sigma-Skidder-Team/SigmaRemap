@@ -23,7 +23,7 @@ public class FolderPackFinder implements IPackFinder {
    }
 
    @Override
-   public void method25140(Consumer<ResourcePackInfo> var1, Class9325 var2) {
+   public void findPacks(Consumer<ResourcePackInfo> var1, Class9325 var2) {
       if (!this.field32838.isDirectory()) {
          this.field32838.mkdirs();
       }

@@ -940,7 +940,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public double method2894() {
+   public double getYOffset() {
       return -0.35;
    }
 
@@ -1631,7 +1631,7 @@ public abstract class PlayerEntity extends LivingEntity {
       return this.abilities.allowEdit;
    }
 
-   public boolean method2936(BlockPos var1, Direction var2, ItemStack var3) {
+   public boolean method2936(BlockPos var1, net.minecraft.util.Direction var2, ItemStack var3) {
       if (!this.abilities.allowEdit) {
          BlockPos var6 = var1.method8349(var2.method536());
          Class9632 var7 = new Class9632(this.world, var6, false);
@@ -1892,7 +1892,7 @@ public abstract class PlayerEntity extends LivingEntity {
                      if (var5 != EquipmentSlotType.field13736) {
                         return false;
                      }
-                  } else if (Class1006.method4271(var2) != var5) {
+                  } else if (MobEntity.method4271(var2) != var5) {
                      return false;
                   }
                }
@@ -1976,7 +1976,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public boolean canPickUpItem(ItemStack var1) {
-      EquipmentSlotType var4 = Class1006.method4271(var1);
+      EquipmentSlotType var4 = MobEntity.method4271(var1);
       return this.getItemStackFromSlot(var4).isEmpty();
    }
 

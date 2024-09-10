@@ -74,8 +74,8 @@ public class Class8002 {
             return var1x;
          });
          if (var10 != null) {
-            if (var4 && var10 instanceof Class1006) {
-               ((Class1006)var10)
+            if (var4 && var10 instanceof MobEntity) {
+               ((MobEntity)var10)
                   .method4276(var0.method20172(), var0.method20172().method6807(var10.getPosition()), Class2202.field14404, (Class5093)null, (CompoundNBT)null);
             }
 

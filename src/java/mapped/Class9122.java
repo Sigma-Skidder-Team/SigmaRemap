@@ -8,7 +8,6 @@ import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.Typed;
 import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
-import com.mojang.datafixers.types.templates.Tag.TagType;
 import com.mojang.datafixers.util.Either;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.datafixers.util.Unit;
@@ -290,10 +289,10 @@ public class Class9122 extends DataFix {
       Function<Typed<?>, Typed<?>> var5 = var1 -> this.method34020(var1, "DisplayTile", "DisplayData", "DisplayState");
       Function<Typed<?>, Typed<?>> var6 = var1 -> this.method34020(var1, "inTile", "inData", "inBlockState");
       Type<Pair<Either<Pair<String, Either<Integer, String>>, Unit>, Dynamic<?>>> var7 = DSL.and(
-         DSL.optional(DSL.field("inTile", DSL.named(Class8239.field35392.typeName(), DSL.or(DSL.intType(), Class3639.method12354())))), DSL.remainderType()
+         DSL.optional(DSL.field("inTile", DSL.named(TypeReferences.field35392.typeName(), DSL.or(DSL.intType(), Class3639.method12354())))), DSL.remainderType()
       );
       Function<Typed<?>, Typed<?>> var8 = var1 -> var1.update(var7.finder(), DSL.remainderType(), Pair::getSecond);
-      return this.fixTypeEverywhereTyped("EntityBlockStateFix", var3.getType(Class8239.field35391), var4.getType(Class8239.field35391), var4x -> {
+      return this.fixTypeEverywhereTyped("EntityBlockStateFix", var3.getType(TypeReferences.ENTITY), var4.getType(TypeReferences.ENTITY), var4x -> {
          var4x = this.method34021(var4x, "minecraft:falling_block", this::method34019);
          var4x = this.method34021(var4x, "minecraft:enderman", var1x -> this.method34020(var1x, "carried", "carriedData", "carriedBlockState"));
          var4x = this.method34021(var4x, "minecraft:arrow", var6);
@@ -317,8 +316,8 @@ public class Class9122 extends DataFix {
    }
 
    private Typed<?> method34019(Typed<?> var1) {
-      Type<Either<Pair<String, Either<Integer, String>>, Unit>> var4 = DSL.optional(DSL.field("Block", DSL.named(Class8239.field35392.typeName(), DSL.or(DSL.intType(), Class3639.method12354()))));
-      Type<Either<Pair<String, Dynamic<?>>, Unit>> var5 = DSL.optional(DSL.field("BlockState", DSL.named(Class8239.field35388.typeName(), DSL.remainderType())));
+      Type<Either<Pair<String, Either<Integer, String>>, Unit>> var4 = DSL.optional(DSL.field("Block", DSL.named(TypeReferences.field35392.typeName(), DSL.or(DSL.intType(), Class3639.method12354()))));
+      Type<Either<Pair<String, Dynamic<?>>, Unit>> var5 = DSL.optional(DSL.field("BlockState", DSL.named(TypeReferences.field35388.typeName(), DSL.remainderType())));
       Dynamic<?> var6 = var1.get(DSL.remainderFinder());
       return var1.update(var4.finder(), var5, var1x -> {
          int var4x = var1x.map(var0x -> var0x.getSecond().map(var0xx -> var0xx, Class9122::method34018), var1xx -> {
@@ -326,24 +325,24 @@ public class Class9122 extends DataFix {
             return var4xx.map(Number::intValue).orElseGet(() -> var6.get("Tile").asByte((byte)0) & 0xFF);
          });
          int var5x = var6.get("Data").asInt(0) & 15;
-         return Either.left(Pair.of(Class8239.field35388.typeName(), Class9398.method35692(var4x << 4 | var5x)));
+         return Either.left(Pair.of(TypeReferences.field35388.typeName(), Class9398.method35692(var4x << 4 | var5x)));
       }).set(DSL.remainderFinder(), var6.remove("Data").remove("TileID").remove("Tile"));
    }
 
    private Typed<?> method34020(Typed<?> var1, String var2, String var3, String var4) {
-      Type<Pair<String, Either<Integer, String>>> var7 = DSL.field(var2, DSL.named(Class8239.field35392.typeName(), DSL.or(DSL.intType(), Class3639.method12354())));
-      Type<Pair<String, Dynamic<?>>> var8 = DSL.field(var4, DSL.named(Class8239.field35388.typeName(), DSL.remainderType()));
+      Type<Pair<String, Either<Integer, String>>> var7 = DSL.field(var2, DSL.named(TypeReferences.field35392.typeName(), DSL.or(DSL.intType(), Class3639.method12354())));
+      Type<Pair<String, Dynamic<?>>> var8 = DSL.field(var4, DSL.named(TypeReferences.field35388.typeName(), DSL.remainderType()));
       Dynamic<?> var9 = var1.getOrCreate(DSL.remainderFinder());
       return var1.update(var7.finder(), var8, var2x -> {
          int var5 = var2x.getSecond().map(var0x -> var0x, Class9122::method34018);
          int var6 = var9.get(var3).asInt(0) & 15;
-         return Pair.of(Class8239.field35388.typeName(), Class9398.method35692(var5 << 4 | var6));
+         return Pair.of(TypeReferences.field35388.typeName(), Class9398.method35692(var5 << 4 | var6));
       }).set(DSL.remainderFinder(), var9.remove(var3));
    }
 
    private Typed<?> method34021(Typed<?> var1, String var2, Function<Typed<?>, Typed<?>> var3) {
-      Type var6 = this.getInputSchema().getChoiceType(Class8239.field35391, var2);
-      Type var7 = this.getOutputSchema().getChoiceType(Class8239.field35391, var2);
+      Type var6 = this.getInputSchema().getChoiceType(TypeReferences.ENTITY, var2);
+      Type var7 = this.getOutputSchema().getChoiceType(TypeReferences.ENTITY, var2);
       return var1.updateTyped(DSL.namedChoice(var2, var6), var7, var3);
    }
 }

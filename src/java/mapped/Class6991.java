@@ -9,7 +9,7 @@ public class Class6991 extends Class6990 {
    private static String[] field30263;
    private boolean field30264;
 
-   public Class6991(Class1006 var1, World var2) {
+   public Class6991(MobEntity var1, World var2) {
       super(var1, var2);
    }
 

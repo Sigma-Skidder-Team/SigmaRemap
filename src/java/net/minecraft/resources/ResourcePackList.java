@@ -40,7 +40,7 @@ public class ResourcePackList implements AutoCloseable {
       Map<String, ResourcePackInfo> var3 = Maps.newTreeMap();
 
       for (IPackFinder var5 : this.field1204) {
-         var5.method25140(var1 -> {
+         var5.findPacks(var1 -> {
             ResourcePackInfo var4 = var3.put(var1.getName(), var1);
          }, this.field1207);
       }
@@ -85,7 +85,7 @@ public class ResourcePackList implements AutoCloseable {
    }
 
    @Nullable
-   public ResourcePackInfo method1271(String var1) {
+   public ResourcePackInfo getPackInfo(String var1) {
       return this.field1205.get(var1);
    }
 
@@ -99,6 +99,6 @@ public class ResourcePackList implements AutoCloseable {
    }
 
    public List<IResourcePack> func_232623_f_() {
-      return this.field1206.stream().<IResourcePack>map(ResourcePackInfo::method7950).collect(ImmutableList.toImmutableList());
+      return this.field1206.stream().<IResourcePack>map(ResourcePackInfo::getResourcePack).collect(ImmutableList.toImmutableList());
    }
 }

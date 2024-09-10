@@ -23,7 +23,7 @@ public class Class6603 {
       this.field29043 = var1;
    }
 
-   public void method20002(int var1, Class2595 var2) {
+   public void addGoal(int var1, Class2595 var2) {
       this.field29042.add(new Class2625(var1, var2));
    }
 

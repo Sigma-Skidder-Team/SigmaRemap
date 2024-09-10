@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 import java.util.Random;
 
-public class Class957 extends Class956 implements Class935 {
+public class Class957 extends Class956 implements ITickableTileEntity {
    private static final Logger field5371 = LogManager.getLogger();
    private long field5372;
    private int field5373;

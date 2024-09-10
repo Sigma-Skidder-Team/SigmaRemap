@@ -12,7 +12,7 @@ import net.minecraft.world.IBlockReader;
 import java.util.Iterator;
 import java.util.List;
 
-public class Class955 extends TileEntity implements Class935 {
+public class Class955 extends TileEntity implements ITickableTileEntity {
    private BlockState field5361;
    private net.minecraft.util.Direction field5362;
    private boolean field5363;

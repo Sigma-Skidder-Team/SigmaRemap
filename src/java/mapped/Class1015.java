@@ -29,7 +29,7 @@ import java.util.function.Predicate;
 
 public class Class1015 extends Class1014 implements Class1016 {
    private static final DataParameter<Integer> field5672 = EntityDataManager.<Integer>createKey(Class1015.class, DataSerializers.VARINT);
-   private static final Predicate<Class1006> field5673 = new Class119();
+   private static final Predicate<MobEntity> field5673 = new Class119();
    private static final Item field5674 = Items.field37954;
    private static final Set<Item> field5675 = Sets.newHashSet(
       new Item[]{Items.field37841, Items.field37960, Items.field37959, Items.field38112}
@@ -103,18 +103,18 @@ public class Class1015 extends Class1014 implements Class1016 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(0, new Class2747(this, 1.25));
-      this.field5600.method20002(0, new Class2603(this));
-      this.field5600.method20002(1, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.method20002(2, new Class2778(this));
-      this.field5600.method20002(2, new Class2725(this, 1.0, 5.0F, 1.0F, true));
-      this.field5600.method20002(2, new Class2738(this, 1.0));
-      this.field5600.method20002(3, new Class2619(this));
-      this.field5600.method20002(3, new Class2611(this, 1.0, 3.0F, 7.0F));
+      this.field5600.addGoal(0, new Class2747(this, 1.25));
+      this.field5600.addGoal(0, new Class2603(this));
+      this.field5600.addGoal(1, new Class2612(this, PlayerEntity.class, 8.0F));
+      this.field5600.addGoal(2, new Class2778(this));
+      this.field5600.addGoal(2, new Class2725(this, 1.0, 5.0F, 1.0F, true));
+      this.field5600.addGoal(2, new Class2738(this, 1.0));
+      this.field5600.addGoal(3, new Class2619(this));
+      this.field5600.addGoal(3, new Class2611(this, 1.0, 3.0F, 7.0F));
    }
 
    public static Class7037 method4406() {
-      return Class1006.method4220().method21849(Attributes.field42105, 6.0).method21849(Attributes.field42109, 0.4F).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
+      return MobEntity.method4220().method21849(Attributes.field42105, 6.0).method21849(Attributes.field42109, 0.4F).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    @Override
@@ -178,9 +178,9 @@ public class Class1015 extends Class1014 implements Class1016 {
 
    public static boolean method4409(World var0, Entity var1) {
       if (var1.isAlive() && !var1.isSilent() && var0.rand.nextInt(2) == 0) {
-         List var4 = var0.<Class1006>method6772(Class1006.class, var1.getBoundingBox().method19664(20.0), field5673);
+         List var4 = var0.<MobEntity>method6772(MobEntity.class, var1.getBoundingBox().method19664(20.0), field5673);
          if (!var4.isEmpty()) {
-            Class1006 var5 = (Class1006)var4.get(var0.rand.nextInt(var4.size()));
+            MobEntity var5 = (MobEntity)var4.get(var0.rand.nextInt(var4.size()));
             if (!var5.isSilent()) {
                SoundEvent var6 = method4412(var5.getType());
                var0.method6743(

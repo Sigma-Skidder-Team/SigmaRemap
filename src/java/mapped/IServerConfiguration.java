@@ -10,7 +10,7 @@ import javax.annotation.Nullable;
 public interface IServerConfiguration {
    DatapackCodec method20091();
 
-   void method20092(DatapackCodec var1);
+   void setDatapackCodec(DatapackCodec var1);
 
    boolean method20096();
 

@@ -45,7 +45,7 @@ public class Class8628 {
       new ResourceLocation("shipwreck/rightsideup_backhalf_degraded")
    };
 
-   public static void method30926(Class8761 var0, BlockPos var1, Class80 var2, List<Class4178> var3, Random var4, Class4737 var5) {
+   public static void method30926(TemplateManager var0, BlockPos var1, Class80 var2, List<Class4178> var3, Random var4, Class4737 var5) {
       ResourceLocation var8 = Util.<ResourceLocation>method38518(!var5.field22432 ? field38810 : field38809, var4);
       var3.add(new Class4181(var0, var8, var1, var2, var5.field22432));
    }

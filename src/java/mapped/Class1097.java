@@ -54,7 +54,7 @@ public class Class1097 extends Class1018 {
 
    @Override
    public boolean canPickUpItem(ItemStack var1) {
-      EquipmentSlotType var4 = Class1006.method4271(var1);
+      EquipmentSlotType var4 = MobEntity.method4271(var1);
       return !this.getItemStackFromSlot(var4).isEmpty() ? false : var4 == EquipmentSlotType.field13731 && super.canPickUpItem(var1);
    }
 
@@ -201,27 +201,27 @@ public class Class1097 extends Class1018 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(0, new Class2603(this));
-      this.field5600.method20002(2, new Class2748(this, 2.0));
-      this.field5600.method20002(2, new Class2788(this, this, 1.0));
-      this.field5600.method20002(3, new Class2649(this, 1.2F, true));
-      this.field5600.method20002(4, new Class2680(this, 1.0, Class120.method339(Blocks.field37009.method11581()), false));
-      this.field5600.method20002(6, new Class2771<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.0, 2.0));
-      this.field5600.method20002(6, new Class2771<Class1009>(this, Class1009.class, 4.0F, 2.0, 2.0));
-      this.field5600.method20002(7, new Class2623(this));
-      this.field5600.method20002(8, new Class2689(this));
-      this.field5600.method20002(8, new Class2769(this));
+      this.field5600.addGoal(0, new Class2603(this));
+      this.field5600.addGoal(2, new Class2748(this, 2.0));
+      this.field5600.addGoal(2, new Class2788(this, this, 1.0));
+      this.field5600.addGoal(3, new Class2649(this, 1.2F, true));
+      this.field5600.addGoal(4, new Class2680(this, 1.0, Class120.method339(Blocks.field37009.method11581()), false));
+      this.field5600.addGoal(6, new Class2771<PlayerEntity>(this, PlayerEntity.class, 8.0F, 2.0, 2.0));
+      this.field5600.addGoal(6, new Class2771<Class1009>(this, Class1009.class, 4.0F, 2.0, 2.0));
+      this.field5600.addGoal(7, new Class2623(this));
+      this.field5600.addGoal(8, new Class2689(this));
+      this.field5600.addGoal(8, new Class2769(this));
       this.field6034 = new Class2616(this, PlayerEntity.class, 6.0F);
-      this.field5600.method20002(9, this.field6034);
-      this.field5600.method20002(10, new Class2668(this));
-      this.field5600.method20002(12, new Class2732(this));
-      this.field5600.method20002(13, new Class2764(this, 1.25));
-      this.field5600.method20002(14, new Class2737(this, 1.0));
-      this.field5601.method20002(1, new Class2706(this).method10918(new Class[0]));
+      this.field5600.addGoal(9, this.field6034);
+      this.field5600.addGoal(10, new Class2668(this));
+      this.field5600.addGoal(12, new Class2732(this));
+      this.field5600.addGoal(13, new Class2764(this, 1.25));
+      this.field5600.addGoal(14, new WaterAvoidingRandomWalkingGoal(this, 1.0));
+      this.field5601.addGoal(1, new Class2706(this).method10918(new Class[0]));
    }
 
    public static Class7037 method5208() {
-      return Class1006.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.15F).method21849(Attributes.field42110, 6.0);
+      return MobEntity.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.15F).method21849(Attributes.field42110, 6.0);
    }
 
    public Class2293 method5209() {

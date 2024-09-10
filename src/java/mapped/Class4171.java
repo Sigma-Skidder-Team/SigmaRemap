@@ -18,7 +18,7 @@ public class Class4171 extends Class4167 {
       this.field20433 = var2.nextInt();
    }
 
-   public Class4171(Class8761 var1, CompoundNBT var2) {
+   public Class4171(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33430, var2);
       this.field20433 = var2.getInt("Seed");
    }

@@ -148,7 +148,7 @@ public final class Class120 implements Predicate<ItemStack> {
          if (!var0.has("tag")) {
             throw new JsonParseException("An ingredient entry needs either a tag or an item");
          } else {
-            ResourceLocation var5 = new ResourceLocation(JSONUtils.method32763(var0, "tag"));
+            ResourceLocation var5 = new ResourceLocation(JSONUtils.getString(var0, "tag"));
             ITag var6 = Class9443.method36296().method32658().get(var5);
             if (var6 != null) {
                return new Class4828(var6);
@@ -157,7 +157,7 @@ public final class Class120 implements Predicate<ItemStack> {
             }
          }
       } else {
-         ResourceLocation var3 = new ResourceLocation(JSONUtils.method32763(var0, "item"));
+         ResourceLocation var3 = new ResourceLocation(JSONUtils.getString(var0, "item"));
          Item var4 = Registry.ITEM.method9187(var3).orElseThrow(() -> new JsonSyntaxException("Unknown item '" + var3 + "'"));
          return new Class4827(new ItemStack(var4));
       }

@@ -40,11 +40,11 @@ public class Class7485 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getChoiceType(Class8239.field35391, "Painting");
+      Type var3 = this.getInputSchema().getChoiceType(TypeReferences.ENTITY, "Painting");
       OpticFinder var4 = DSL.namedChoice("Painting", var3);
-      Type var5 = this.getInputSchema().getChoiceType(Class8239.field35391, "ItemFrame");
+      Type var5 = this.getInputSchema().getChoiceType(TypeReferences.ENTITY, "ItemFrame");
       OpticFinder var6 = DSL.namedChoice("ItemFrame", var5);
-      Type var7 = this.getInputSchema().getType(Class8239.field35391);
+      Type var7 = this.getInputSchema().getType(TypeReferences.ENTITY);
       TypeRewriteRule var8 = this.fixTypeEverywhereTyped(
          "EntityPaintingFix",
          var7,

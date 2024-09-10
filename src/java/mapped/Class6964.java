@@ -13,7 +13,7 @@ public interface Class6964 extends Class6965 {
       ChunkStatus var1,
       ServerWorld var2,
       ChunkGenerator var3,
-      Class8761 var4,
+      TemplateManager var4,
       Class195 var5,
       Function<IChunk, CompletableFuture<Either<IChunk, Class7022>>> var6,
       List<IChunk> var7,

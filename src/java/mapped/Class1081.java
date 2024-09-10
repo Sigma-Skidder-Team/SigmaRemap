@@ -31,16 +31,16 @@ public class Class1081 extends Class1009 implements Class1080 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(1, new Class2603(this));
-      this.field5600.method20002(2, new Class2627(this));
-      this.field5600.method20002(3, new Class2770<Class1090>(this, Class1090.class, 6.0F, 1.0, 1.2));
-      this.field5600.method20002(3, new Class2770<Class1098>(this, Class1098.class, 6.0F, 1.0, 1.2));
-      this.field5600.method20002(4, new Class2647(this, 1.0, false));
-      this.field5600.method20002(5, new Class2737(this, 0.8));
-      this.field5600.method20002(6, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.method20002(6, new Class2668(this));
-      this.field5601.method20002(1, new Class2709<PlayerEntity>(this, PlayerEntity.class, true));
-      this.field5601.method20002(2, new Class2704(this));
+      this.field5600.addGoal(1, new Class2603(this));
+      this.field5600.addGoal(2, new Class2627(this));
+      this.field5600.addGoal(3, new Class2770<Class1090>(this, Class1090.class, 6.0F, 1.0, 1.2));
+      this.field5600.addGoal(3, new Class2770<Class1098>(this, Class1098.class, 6.0F, 1.0, 1.2));
+      this.field5600.addGoal(4, new Class2647(this, 1.0, false));
+      this.field5600.addGoal(5, new WaterAvoidingRandomWalkingGoal(this, 0.8));
+      this.field5600.addGoal(6, new Class2612(this, PlayerEntity.class, 8.0F));
+      this.field5600.addGoal(6, new Class2668(this));
+      this.field5601.addGoal(1, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
+      this.field5601.addGoal(2, new HurtByTargetGoal(this));
    }
 
    public static Class7037 method5018() {

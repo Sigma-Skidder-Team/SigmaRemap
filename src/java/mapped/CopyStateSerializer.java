@@ -19,7 +19,7 @@ public class CopyStateSerializer extends LootFunctionSerializer<Class129> {
    }
 
    public Class129 deserialize(JsonObject var1, JsonDeserializationContext var2, ILootCondition[] var3) {
-      ResourceLocation var6 = new ResourceLocation(JSONUtils.method32763(var1, "block"));
+      ResourceLocation var6 = new ResourceLocation(JSONUtils.getString(var1, "block"));
       Block var7 = Registry.BLOCK.method9187(var6).orElseThrow(() -> new IllegalArgumentException("Can't find block " + var6));
       Class9348 var8 = var7.getStateContainer();
       HashSet var9 = Sets.newHashSet();

@@ -13,7 +13,7 @@ public class Class9053 extends DataFix {
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
          "BlockStateStructureTemplateFix",
-         this.getInputSchema().getType(Class8239.field35388),
+         this.getInputSchema().getType(TypeReferences.field35388),
          var0 -> var0.update(DSL.remainderFinder(), Class9398::method35688)
       );
    }

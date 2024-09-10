@@ -19,7 +19,7 @@ public class Class4207 extends Class4194 {
       this.field20444 = var3;
    }
 
-   public Class4207(Class8761 var1, CompoundNBT var2) {
+   public Class4207(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33450, var2);
    }
 

@@ -12,13 +12,13 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Class285 extends Class281 {
+public class AdvancementManager extends Class281 {
    private static final Logger field1084 = LogManager.getLogger();
    private static final Gson field1085 = new GsonBuilder().create();
    private Class8220 field1086 = new Class8220();
    private final Class283 field1087;
 
-   public Class285(Class283 var1) {
+   public AdvancementManager(Class283 var1) {
       super(field1085, "advancements");
       this.field1087 = var1;
    }

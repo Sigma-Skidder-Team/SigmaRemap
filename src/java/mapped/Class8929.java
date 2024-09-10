@@ -22,14 +22,14 @@ public class Class8929 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      CompoundListType var3 = DSL.compoundList(DSL.string(), this.getInputSchema().getType(Class8239.field35395));
+      CompoundListType var3 = DSL.compoundList(DSL.string(), this.getInputSchema().getType(TypeReferences.field35395));
       OpticFinder var4 = var3.finder();
       return this.method32638(var3);
    }
 
    private <SF> TypeRewriteRule method32638(CompoundListType<String, SF> var1) {
-      Type<?> var4 = this.getInputSchema().getType(Class8239.field35378);
-      Type<?> var5 = this.getInputSchema().getType(Class8239.field35395);
+      Type<?> var4 = this.getInputSchema().getType(TypeReferences.field35378);
+      Type<?> var5 = this.getInputSchema().getType(TypeReferences.field35395);
       OpticFinder<?> var6 = var4.findField("Level");
       OpticFinder<?> var7 = var6.type().findField("Structures");
       OpticFinder<?> var8 = var7.type().findField("Starts");

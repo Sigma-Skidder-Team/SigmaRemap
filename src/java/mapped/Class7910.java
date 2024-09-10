@@ -18,7 +18,7 @@ public class Class7910 extends DataFix {
 
    public TypeRewriteRule makeRule() {
       Schema var3 = this.getInputSchema();
-      return this.fixTypeEverywhereTyped("EntityProjectileOwner", var3.getType(Class8239.field35391), this::method26525);
+      return this.fixTypeEverywhereTyped("EntityProjectileOwner", var3.getType(TypeReferences.ENTITY), this::method26525);
    }
 
    private Typed<?> method26525(Typed<?> var1) {
@@ -70,8 +70,8 @@ public class Class7910 extends DataFix {
    }
 
    private Typed<?> method26532(Typed<?> var1, String var2, Function<Dynamic<?>, Dynamic<?>> var3) {
-      Type var6 = this.getInputSchema().getChoiceType(Class8239.field35391, var2);
-      Type var7 = this.getOutputSchema().getChoiceType(Class8239.field35391, var2);
+      Type var6 = this.getInputSchema().getChoiceType(TypeReferences.ENTITY, var2);
+      Type var7 = this.getOutputSchema().getChoiceType(TypeReferences.ENTITY, var2);
       return var1.updateTyped(DSL.namedChoice(var2, var6), var7, var1x -> var1x.update(DSL.remainderFinder(), var3));
    }
 }

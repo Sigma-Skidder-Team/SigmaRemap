@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
-public class Class7892 extends Class7882<Class1006> {
+public class Class7892 extends Class7882<MobEntity> {
    private static String[] field33843;
 
    @Override
@@ -16,7 +16,7 @@ public class Class7892 extends Class7882<Class1006> {
       return ImmutableSet.of(Class8830.field39847);
    }
 
-   public void method26425(ServerWorld var1, Class1006 var2) {
+   public void method26425(ServerWorld var1, MobEntity var2) {
       Brain var5 = var2.getBrain();
       List<ItemEntity> var6 = var1.<ItemEntity>method6772(ItemEntity.class, var2.getBoundingBox().method19663(8.0, 4.0, 8.0), var0 -> true);
       var6.sort(Comparator.comparingDouble(var2::getDistanceSq));

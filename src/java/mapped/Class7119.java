@@ -7,7 +7,7 @@ import com.mojang.datafixers.schemas.Schema;
 
 public class Class7119 extends Class7114 {
    public Class7119(Schema var1) {
-      super(var1, Class8239.field35377);
+      super(var1, TypeReferences.field35377);
    }
 
    public TypeRewriteRule makeRule() {

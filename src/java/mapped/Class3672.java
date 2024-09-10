@@ -12,7 +12,7 @@ public class Class3672 extends Class3639 {
    }
 
    public static TypeTemplate method12489(Schema var0) {
-      return DSL.optionalFields("ArmorItems", DSL.list(Class8239.field35387.in(var0)), "HandItems", DSL.list(Class8239.field35387.in(var0)));
+      return DSL.optionalFields("ArmorItems", DSL.list(TypeReferences.field35387.in(var0)), "HandItems", DSL.list(TypeReferences.field35387.in(var0)));
    }
 
    public static void method12490(Schema var0, Map<String, Supplier<TypeTemplate>> var1, String var2) {

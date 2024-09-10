@@ -21,8 +21,8 @@ public class Class7641 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<Pair<String, String>> var3 = DSL.named(Class8239.field35399.typeName(), Class3639.method12354());
-      if (Objects.equals(var3, this.getInputSchema().getType(Class8239.field35399))) {
+      Type<Pair<String, String>> var3 = DSL.named(TypeReferences.field35399.typeName(), Class3639.method12354());
+      if (Objects.equals(var3, this.getInputSchema().getType(TypeReferences.field35399))) {
          return this.fixTypeEverywhere(this.field32721, var3, var1 -> var1x -> var1x.mapSecond(var1xx -> this.field32722.getOrDefault(var1xx, var1xx)));
       } else {
          throw new IllegalStateException("Biome type is not what was expected.");

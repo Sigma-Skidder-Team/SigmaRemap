@@ -22,50 +22,68 @@ public class VirtualAssetsPack extends VanillaPack {
 
    @Nullable
    @Override
-   public InputStream method1243(ResourcePackType var1, ResourceLocation var2) {
-      if (var1 == ResourcePackType.CLIENT_RESOURCES) {
-         File var5 = this.field_195785_b.method27015(var2);
-         if (var5 != null && var5.exists()) {
-            try {
-               return new FileInputStream(var5);
-            } catch (FileNotFoundException var7) {
+   public InputStream getInputStreamVanilla(ResourcePackType type, ResourceLocation location)
+   {
+      if (type == ResourcePackType.CLIENT_RESOURCES)
+      {
+         File file1 = this.field_195785_b.getFile(location);
+
+         if (file1 != null && file1.exists())
+         {
+            try
+            {
+               return new FileInputStream(file1);
+            }
+            catch (FileNotFoundException filenotfoundexception)
+            {
             }
          }
       }
 
-      return super.method1243(var1, var2);
+      return super.getInputStreamVanilla(type, location);
    }
 
    @Override
-   public boolean method1225(ResourcePackType var1, ResourceLocation var2) {
-      if (var1 == ResourcePackType.CLIENT_RESOURCES) {
-         File var5 = this.field_195785_b.method27015(var2);
-         if (var5 != null && var5.exists()) {
+   public boolean resourceExists(ResourcePackType type, ResourceLocation location)
+   {
+      if (type == ResourcePackType.CLIENT_RESOURCES)
+      {
+         File file1 = this.field_195785_b.getFile(location);
+
+         if (file1 != null && file1.exists())
+         {
             return true;
          }
       }
 
-      return super.method1225(var1, var2);
+      return super.resourceExists(type, location);
    }
 
    @Nullable
    @Override
-   public InputStream method1246(String var1) {
-      File var4 = this.field_195785_b.method27016(var1);
-      if (var4 != null && var4.exists()) {
-         try {
-            return new FileInputStream(var4);
-         } catch (FileNotFoundException var6) {
+   public InputStream getInputStreamVanilla(String pathIn)
+   {
+      File file1 = this.field_195785_b.getFile(pathIn);
+
+      if (file1 != null && file1.exists())
+      {
+         try
+         {
+            return new FileInputStream(file1);
+         }
+         catch (FileNotFoundException filenotfoundexception)
+         {
          }
       }
 
-      return super.method1246(var1);
+      return super.getInputStreamVanilla(pathIn);
    }
 
    @Override
-   public Collection<ResourceLocation> method1224(ResourcePackType var1, String var2, String var3, int var4, Predicate<String> var5) {
-      Collection var8 = super.method1224(var1, var2, var3, var4, var5);
-      var8.addAll(this.field_195785_b.method27017(var3, var2, var4, var5));
-      return var8;
+   public Collection<ResourceLocation> getAllResourceLocations(ResourcePackType type, String namespaceIn, String pathIn, int maxDepthIn, Predicate<String> filterIn)
+   {
+      Collection<ResourceLocation> collection = super.getAllResourceLocations(type, namespaceIn, pathIn, maxDepthIn, filterIn);
+      collection.addAll(this.field_195785_b.getFiles(pathIn, namespaceIn, maxDepthIn, filterIn));
+      return collection;
    }
 }

@@ -8,7 +8,7 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class Class3733<E extends Class1006> extends Class3676<E> {
+public class Class3733<E extends MobEntity> extends Class3676<E> {
    private static String[] field19845;
    private final Predicate<E> field19846;
    private final Function<E, Optional<? extends LivingEntity>> field19847;

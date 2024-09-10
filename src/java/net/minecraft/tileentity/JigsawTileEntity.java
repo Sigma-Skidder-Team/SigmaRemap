@@ -106,7 +106,7 @@ public class JigsawTileEntity extends TileEntity {
 
    public void method3988(ServerWorld var1, int var2, boolean var3) {
       ChunkGenerator var6 = var1.getChunkProvider().method7370();
-      Class8761 var7 = var1.method6938();
+      TemplateManager var7 = var1.method6938();
       Class7480 var8 = var1.method6893();
       Random var9 = var1.method6814();
       BlockPos var10 = this.getPos();

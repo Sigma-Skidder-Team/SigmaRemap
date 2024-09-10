@@ -22,7 +22,7 @@ public class Class1084 extends Class1082 {
 
    @Override
    public void method4219() {
-      this.field5601.method20002(3, new Class2709<Class1035>(this, Class1035.class, true));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1035>(this, Class1035.class, true));
       super.method4219();
    }
 

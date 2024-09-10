@@ -12,7 +12,7 @@ public class Class2564 implements JsonDeserializer<Class7318>, JsonSerializer<Cl
       Class8894[] var7 = JSONUtils.<Class8894[]>method32789(var6, "pools", new Class8894[0], var3, Class8894[].class);
       Class7538 var8 = null;
       if (var6.has("type")) {
-         String var9 = JSONUtils.method32763(var6, "type");
+         String var9 = JSONUtils.getString(var6, "type");
          var8 = Class8524.method30213(new ResourceLocation(var9));
       }
 

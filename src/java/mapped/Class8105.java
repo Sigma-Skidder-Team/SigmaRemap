@@ -341,14 +341,14 @@ public class Class8105 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type<Either<Integer, Pair<String, String>>> var3 = DSL.or(DSL.intType(), DSL.named(Class8239.field35393.typeName(), Class3639.method12354()));
-      Type<Pair<String, String>> var4 = DSL.named(Class8239.field35393.typeName(), Class3639.method12354());
+      Type<Either<Integer, Pair<String, String>>> var3 = DSL.or(DSL.intType(), DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354()));
+      Type<Pair<String, String>> var4 = DSL.named(TypeReferences.field35393.typeName(), Class3639.method12354());
       OpticFinder<Either<Integer, Pair<String, String>>> var5 = DSL.fieldFinder("id", var3);
       return this.fixTypeEverywhereTyped(
          "ItemIdFix",
-         this.getInputSchema().getType(Class8239.field35387),
-         this.getOutputSchema().getType(Class8239.field35387),
-         var2 -> var2.update(var5, var4, var0x -> var0x.map(var0xx -> Pair.of(Class8239.field35393.typeName(), method28074(var0xx)), var0xx -> var0xx))
+         this.getInputSchema().getType(TypeReferences.field35387),
+         this.getOutputSchema().getType(TypeReferences.field35387),
+         var2 -> var2.update(var5, var4, var0x -> var0x.map(var0xx -> Pair.of(TypeReferences.field35393.typeName(), method28074(var0xx)), var0xx -> var0xx))
       );
    }
 }

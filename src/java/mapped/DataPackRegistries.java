@@ -13,10 +13,10 @@ public class DataPackRegistries implements AutoCloseable {
    private final Class286 field9267 = new Class286();
    private final Class283 field9268 = new Class283();
    private final Class284 field9269 = new Class284(this.field9268);
-   private final Class285 field9270 = new Class285(this.field9268);
+   private final AdvancementManager field9270 = new AdvancementManager(this.field9268);
    private final Class301 field9271;
 
-   public DataPackRegistries(Class2085 var1, int var2) {
+   public DataPackRegistries(Commands var1, int var2) {
       this.field9265 = new Class6099(var1);
       this.field9271 = new Class301(var2, this.field9265.method18842());
       this.field9264.addReloadListener(this.field9267);
@@ -27,7 +27,7 @@ public class DataPackRegistries implements AutoCloseable {
       this.field9264.addReloadListener(this.field9270);
    }
 
-   public Class301 method7330() {
+   public Class301 getFunctionReloader() {
       return this.field9271;
    }
 
@@ -51,7 +51,7 @@ public class DataPackRegistries implements AutoCloseable {
       return this.field9265;
    }
 
-   public Class285 method7336() {
+   public AdvancementManager method7336() {
       return this.field9270;
    }
 
@@ -59,7 +59,7 @@ public class DataPackRegistries implements AutoCloseable {
       return this.field9264;
    }
 
-   public static CompletableFuture<DataPackRegistries> func_240961_a_(List<IResourcePack> var0, Class2085 var1, int var2, Executor var3, Executor var4) {
+   public static CompletableFuture<DataPackRegistries> func_240961_a_(List<IResourcePack> var0, Commands var1, int var2, Executor var3, Executor var4) {
       DataPackRegistries var7 = new DataPackRegistries(var1, var2);
       CompletableFuture var8 = var7.field9264.method585(var3, var4, var0, field9263);
       return var8.whenComplete((var1x, var2x) -> {

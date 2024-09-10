@@ -30,14 +30,14 @@ public class LanguageManager implements Class215 {
       HashMap var3 = Maps.newHashMap();
       var0.forEach(var1 -> {
          try {
-            Class9168 var4 = var1.<Class9168>method1227(Class9168.field42086);
+            Class9168 var4 = var1.<Class9168>getMetadata(Class9168.field42086);
             if (var4 != null) {
                for (Class2019 var6 : var4.method34244()) {
                   var3.putIfAbsent(var6.getCode(), var6);
                }
             }
          } catch (RuntimeException | IOException var7) {
-            field1034.warn("Unable to parse language metadata section of resourcepack: {}", var1.method1228(), var7);
+            field1034.warn("Unable to parse language metadata section of resourcepack: {}", var1.getName(), var7);
          }
       });
       return ImmutableMap.copyOf(var3);

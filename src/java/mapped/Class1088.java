@@ -139,19 +139,19 @@ public class Class1088 extends Class1018 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(0, new Class2751(this, 1.2));
-      this.field5600.method20002(1, new Class2787(this, 1.0));
-      this.field5600.method20002(1, new Class2630(this, 1.0));
-      this.field5600.method20002(2, new Class2731(this, 1.1, Blocks.SEAGRASS.method11581()));
-      this.field5600.method20002(3, new Class2635(this, 1.0));
-      this.field5600.method20002(4, new Class2760(this, 1.0));
-      this.field5600.method20002(7, new Class2594(this, 1.0));
-      this.field5600.method20002(8, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.method20002(9, new Class2743(this, 1.0, 100));
+      this.field5600.addGoal(0, new Class2751(this, 1.2));
+      this.field5600.addGoal(1, new Class2787(this, 1.0));
+      this.field5600.addGoal(1, new Class2630(this, 1.0));
+      this.field5600.addGoal(2, new Class2731(this, 1.1, Blocks.SEAGRASS.method11581()));
+      this.field5600.addGoal(3, new Class2635(this, 1.0));
+      this.field5600.addGoal(4, new Class2760(this, 1.0));
+      this.field5600.addGoal(7, new Class2594(this, 1.0));
+      this.field5600.addGoal(8, new Class2612(this, PlayerEntity.class, 8.0F));
+      this.field5600.addGoal(9, new Class2743(this, 1.0, 100));
    }
 
    public static Class7037 method5054() {
-      return Class1006.method4220().method21849(Attributes.field42105, 30.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
+      return MobEntity.method4220().method21849(Attributes.field42105, 30.0).method21849(Attributes.MOVEMENT_SPEED, 0.25);
    }
 
    @Override

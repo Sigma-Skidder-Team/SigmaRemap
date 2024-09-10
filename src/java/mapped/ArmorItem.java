@@ -36,12 +36,12 @@ public class ArmorItem extends Item implements Class3255 {
       List var5 = var0.method11326().<Entity>method6772(LivingEntity.class, new AxisAlignedBB(var4), Class8088.field34763.and(new Class165(var1)));
       if (!var5.isEmpty()) {
          LivingEntity var6 = (LivingEntity)var5.get(0);
-         EquipmentSlotType var7 = Class1006.method4271(var1);
+         EquipmentSlotType var7 = MobEntity.method4271(var1);
          ItemStack var8 = var1.method32106(1);
          var6.setItemStackToSlot(var7, var8);
-         if (var6 instanceof Class1006) {
-            ((Class1006)var6).method4279(var7, 2.0F);
-            ((Class1006)var6).method4278();
+         if (var6 instanceof MobEntity) {
+            ((MobEntity)var6).method4279(var7, 2.0F);
+            ((MobEntity)var6).method4278();
          }
 
          return true;
@@ -90,7 +90,7 @@ public class ArmorItem extends Item implements Class3255 {
    @Override
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
-      EquipmentSlotType var7 = Class1006.method4271(var6);
+      EquipmentSlotType var7 = MobEntity.method4271(var6);
       ItemStack var8 = var2.getItemStackFromSlot(var7);
       if (!var8.isEmpty()) {
          return Class6794.<ItemStack>method20699(var6);

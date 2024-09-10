@@ -171,8 +171,8 @@ public class TileEntityType<T extends TileEntity> {
    public static final TileEntityType<Class945> field21452 = method13794(
       "campfire", Class9785.<Class945>method38569(Class945::new, Blocks.field37067, Blocks.field37068)
    );
-   public static final TileEntityType<Class962> field21453 = method13794(
-      "beehive", Class9785.<Class962>method38569(Class962::new, Blocks.field37117, Blocks.field37118)
+   public static final TileEntityType<BeehiveTileEntity> field21453 = method13794(
+      "beehive", Class9785.<BeehiveTileEntity>method38569(BeehiveTileEntity::new, Blocks.field37117, Blocks.field37118)
    );
    private final Supplier<? extends T> field21454;
    private final Set<Block> field21455;
@@ -188,7 +188,7 @@ public class TileEntityType<T extends TileEntity> {
          field21420.warn("Block entity type {} requires at least one valid block to be defined!", var0);
       }
 
-      Type var4 = Util.method38500(Class8239.field35386, var0);
+      Type var4 = Util.method38500(TypeReferences.field35386, var0);
       return Registry.<TileEntityType<T>>method9194(Registry.field16078, var0, var1.method38570(var4));
    }
 

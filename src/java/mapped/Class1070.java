@@ -49,7 +49,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
       BlockPos.Mutable var7 = var3.method8354();
 
       do {
-         var7.method8379(Direction.field673);
+         var7.method8379(net.minecraft.util.Direction.field673);
       } while (var1.getFluidState(var7).method23486(FluidTags.field40470));
 
       return var1.getBlockState(var7).isAir();
@@ -105,16 +105,16 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    @Override
    public void method4219() {
       this.field5910 = new Class2747(this, 1.65);
-      this.field5600.method20002(1, this.field5910);
-      this.field5600.method20002(2, new Class2785(this, 1.0));
+      this.field5600.addGoal(1, this.field5910);
+      this.field5600.addGoal(2, new Class2785(this, 1.0));
       this.field5909 = new Class2680(this, 1.4, false, field5904);
-      this.field5600.method20002(3, this.field5909);
-      this.field5600.method20002(4, new Class2638(this, 1.5));
-      this.field5600.method20002(5, new Class2764(this, 1.1));
-      this.field5600.method20002(7, new Class2736(this, 1.0, 60));
-      this.field5600.method20002(8, new Class2612(this, PlayerEntity.class, 8.0F));
-      this.field5600.method20002(8, new Class2668(this));
-      this.field5600.method20002(9, new Class2612(this, Class1070.class, 8.0F));
+      this.field5600.addGoal(3, this.field5909);
+      this.field5600.addGoal(4, new Class2638(this, 1.5));
+      this.field5600.addGoal(5, new Class2764(this, 1.1));
+      this.field5600.addGoal(7, new Class2736(this, 1.0, 60));
+      this.field5600.addGoal(8, new Class2612(this, PlayerEntity.class, 8.0F));
+      this.field5600.addGoal(8, new Class2668(this));
+      this.field5600.addGoal(9, new Class2612(this, Class1070.class, 8.0F));
    }
 
    public void method4977(boolean var1) {
@@ -178,7 +178,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
 
          for (double var15 = var6; var15 > var8; var15--) {
             var5.add(var10.toImmutable());
-            var10.method8379(Direction.DOWN);
+            var10.method8379(net.minecraft.util.Direction.DOWN);
          }
       }
 
@@ -292,7 +292,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    public static Class7037 method4986() {
-      return Class1006.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.175F).method21849(Attributes.field42106, 16.0);
+      return MobEntity.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.175F).method21849(Attributes.field42106, 16.0);
    }
 
    @Override
@@ -409,8 +409,8 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
                var8 = this.method4987(var1, var2, var9, (Class5093)null);
             }
          } else {
-            Class1006 var10 = EntityType.field41110.create(var1.method6970());
-            var8 = this.method4987(var1, var2, var10, new Class5096(Class1038.method4661(this.rand), false));
+            MobEntity var10 = EntityType.field41110.create(var1.method6970());
+            var8 = this.method4987(var1, var2, var10, new Class5096(ZombieEntity.method4661(this.rand), false));
             var10.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field38065));
             this.method4942((Class2266)null);
          }
@@ -421,7 +421,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
       }
    }
 
-   private Class5093 method4987(Class1659 var1, Class9755 var2, Class1006 var3, Class5093 var4) {
+   private Class5093 method4987(Class1659 var1, Class9755 var2, MobEntity var3, Class5093 var4) {
       var3.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, 0.0F);
       var3.method4276(var1, var2, Class2202.field14397, var4, (CompoundNBT)null);
       var3.startRiding(this, true);

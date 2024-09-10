@@ -134,7 +134,7 @@ public class Class9259 extends DataFix {
    public TypeRewriteRule makeRule() {
       return this.fixTypeEverywhereTyped(
          "OptionsKeyLwjgl3Fix",
-         this.getInputSchema().getType(Class8239.field35380),
+         this.getInputSchema().getType(TypeReferences.field35380),
          var0 -> var0.update(DSL.remainderFinder(), var0x -> var0x.getMapValues().<Dynamic<?>>map(var1 -> var0x.createMap(var1.entrySet().stream().map(var0xxx -> {
                      if (!(var0xxx.getKey()).asString("").startsWith("key_")) {
                         return Pair.of(var0xxx.getKey(), var0xxx.getValue());

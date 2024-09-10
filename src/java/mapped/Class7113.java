@@ -3,11 +3,10 @@ package mapped;
 import com.mojang.datafixers.DSL;
 import com.mojang.datafixers.TypeRewriteRule;
 import com.mojang.datafixers.schemas.Schema;
-import com.mojang.serialization.Dynamic;
 
 public class Class7113 extends Class7114 {
    public Class7113(Schema var1) {
-      super(var1, Class8239.field35383);
+      super(var1, TypeReferences.field35383);
    }
 
    public TypeRewriteRule makeRule() {

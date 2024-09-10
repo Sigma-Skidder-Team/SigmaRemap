@@ -18,7 +18,7 @@ public class Class4183 extends Class4180 {
    private final Class80 field20463;
    private final boolean field20464;
 
-   public Class4183(Class8761 var1, ResourceLocation var2, BlockPos var3, Class80 var4, float var5, Class110 var6, boolean var7) {
+   public Class4183(TemplateManager var1, ResourceLocation var2, BlockPos var3, Class80 var4, float var5, Class110 var6, boolean var7) {
       super(Class7792.field33458, 0);
       this.field20462 = var2;
       this.field20455 = var3;
@@ -29,7 +29,7 @@ public class Class4183 extends Class4180 {
       this.method12947(var1);
    }
 
-   public Class4183(Class8761 var1, CompoundNBT var2) {
+   public Class4183(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33458, var2);
       this.field20462 = new ResourceLocation(var2.getString("Template"));
       this.field20463 = Class80.valueOf(var2.getString("Rot"));
@@ -39,7 +39,7 @@ public class Class4183 extends Class4180 {
       this.method12947(var1);
    }
 
-   private void method12947(Class8761 var1) {
+   private void method12947(TemplateManager var1) {
       Class8969 var4 = var1.method31603(this.field20462);
       Class9463 var5 = new Class9463().method36426(this.field20463).method36425(Class2089.field13614).method36434(Class7095.field30528);
       this.method12943(var4, this.field20455, var5);

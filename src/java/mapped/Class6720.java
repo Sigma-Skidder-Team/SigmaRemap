@@ -9,7 +9,7 @@ import com.mojang.serialization.Dynamic;
 
 public class Class6720 extends Class6717 {
    public Class6720(Schema var1, String var2) {
-      super(var1, false, "Memory expiry data fix (" + var2 + ")", Class8239.field35391, var2);
+      super(var1, false, "Memory expiry data fix (" + var2 + ")", TypeReferences.ENTITY, var2);
    }
 
    @Override

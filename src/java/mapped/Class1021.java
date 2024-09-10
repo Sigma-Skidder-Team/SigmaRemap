@@ -28,15 +28,15 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(1, new Class2598(this, 1.25, 20, 10.0F));
-      this.field5600.method20002(2, new Class2737(this, 1.0, 1.0000001E-5F));
-      this.field5600.method20002(3, new Class2612(this, PlayerEntity.class, 6.0F));
-      this.field5600.method20002(4, new Class2668(this));
-      this.field5601.method20002(1, new Class2709<Class1006>(this, Class1006.class, 10, true, false, var0 -> var0 instanceof Class1008));
+      this.field5600.addGoal(1, new Class2598(this, 1.25, 20, 10.0F));
+      this.field5600.addGoal(2, new WaterAvoidingRandomWalkingGoal(this, 1.0, 1.0000001E-5F));
+      this.field5600.addGoal(3, new Class2612(this, PlayerEntity.class, 6.0F));
+      this.field5600.addGoal(4, new Class2668(this));
+      this.field5601.addGoal(1, new NearestAttackableTargetGoal<MobEntity>(this, MobEntity.class, 10, true, false, var0 -> var0 instanceof Class1008));
    }
 
    public static Class7037 method4529() {
-      return Class1006.method4220().method21849(Attributes.field42105, 4.0).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
+      return MobEntity.method4220().method21849(Attributes.field42105, 4.0).method21849(Attributes.MOVEMENT_SPEED, 0.2F);
    }
 
    @Override

@@ -247,9 +247,10 @@ public class Util {
       return (T)var0.get();
    }
 
-   public static <T> T make(T var0, Consumer<T> var1) {
-      var1.accept(var0);
-      return (T)var0;
+   public static <T> T make(T object, Consumer<T> consumer)
+   {
+      consumer.accept(object);
+      return object;
    }
 
    public static <K> Strategy<K> method38509() {

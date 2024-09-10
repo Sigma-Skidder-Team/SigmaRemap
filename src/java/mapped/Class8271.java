@@ -15,8 +15,8 @@ public class Class8271 extends Schema {
       super.registerTypes(var1, var2, var3);
       var1.registerType(
          true,
-         Class8239.field35394,
-         () -> DSL.optionalFields("SpawnPotentials", DSL.list(DSL.fields("Entity", Class8239.field35390.in(var1))), "SpawnData", Class8239.field35390.in(var1))
+         TypeReferences.field35394,
+         () -> DSL.optionalFields("SpawnPotentials", DSL.list(DSL.fields("Entity", TypeReferences.field35390.in(var1))), "SpawnData", TypeReferences.field35390.in(var1))
       );
    }
 }

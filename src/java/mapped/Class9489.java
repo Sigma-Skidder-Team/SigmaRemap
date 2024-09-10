@@ -31,14 +31,14 @@ public class Class9489 {
    );
    private static final Class8015 field44112 = new Class8014();
 
-   private static Class4186 method36639(Class8761 var0, Class4186 var1, BlockPos var2, String var3, Class80 var4, boolean var5) {
+   private static Class4186 method36639(TemplateManager var0, Class4186 var1, BlockPos var2, String var3, Class80 var4, boolean var5) {
       Class4186 var8 = new Class4186(var0, var3, var1.field20455, var4, var5);
       BlockPos var9 = var1.field20453.method32895(var1.field20454, var2, var8.field20454, BlockPos.ZERO);
       var8.method12937(var9.getX(), var9.getY(), var9.getZ());
       return var8;
    }
 
-   public static void method36640(Class8761 var0, BlockPos var1, Class80 var2, List<Class4178> var3, Random var4) {
+   public static void method36640(TemplateManager var0, BlockPos var1, Class80 var2, List<Class4178> var3, Random var4) {
       field44112.method27400();
       field44107.method27400();
       field44110.method27400();
@@ -55,7 +55,7 @@ public class Class9489 {
       return var1;
    }
 
-   private static boolean method36642(Class8761 var0, Class8015 var1, int var2, Class4186 var3, BlockPos var4, List<Class4178> var5, Random var6) {
+   private static boolean method36642(TemplateManager var0, Class8015 var1, int var2, Class4186 var3, BlockPos var4, List<Class4178> var5, Random var6) {
       if (var2 > 8) {
          return false;
       } else {
@@ -84,7 +84,7 @@ public class Class9489 {
    }
 
    // $VF: synthetic method
-   public static Class4186 method36643(Class8761 var0, Class4186 var1, BlockPos var2, String var3, Class80 var4, boolean var5) {
+   public static Class4186 method36643(TemplateManager var0, Class4186 var1, BlockPos var2, String var3, Class80 var4, boolean var5) {
       return method36639(var0, var1, var2, var3, var4, var5);
    }
 
@@ -99,7 +99,7 @@ public class Class9489 {
    }
 
    // $VF: synthetic method
-   public static boolean method36646(Class8761 var0, Class8015 var1, int var2, Class4186 var3, BlockPos var4, List var5, Random var6) {
+   public static boolean method36646(TemplateManager var0, Class8015 var1, int var2, Class4186 var3, BlockPos var4, List var5, Random var6) {
       return method36642(var0, var1, var2, var3, var4, var5, var6);
    }
 

@@ -34,6 +34,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
+import net.minecraft.resources.data.PackMetadataSection;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.client.gui.DialogTexts;
@@ -384,7 +385,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       if (this.resourcePackRepository.func_232621_d_().size() > 1) {
          StringTextComponent itextcomponent;
          if (throwableIn instanceof SimpleReloadableResourceManager.FailedPackException) {
-            itextcomponent = new StringTextComponent(((SimpleReloadableResourceManager.FailedPackException)throwableIn).method10488().method1228());
+            itextcomponent = new StringTextComponent(((SimpleReloadableResourceManager.FailedPackException)throwableIn).method10488().getName());
          } else {
             itextcomponent = null;
          }
@@ -1096,7 +1097,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
             BlockRayTraceResult var2 = (BlockRayTraceResult)this.objectMouseOver;
             BlockPos var3 = var2.getPos();
             if (!this.world.getBlockState(var3).isAir()) {
-               Direction var4 = var2.getFace();
+               net.minecraft.util.Direction var4 = var2.getFace();
                if (this.playerController.onPlayerDamageBlock(var3, var4)) {
                   this.particles.addBlockHitEffects(var3, var4);
                   this.player.swingArm(Hand.MAIN_HAND);
@@ -1433,7 +1434,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
       while (this.gameSettings.keyBindSwapHands.isPressed()) {
          if (!this.player.isSpectator()) {
-            this.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.SWAP_ITEM_WITH_OFFHAND, BlockPos.ZERO, Direction.DOWN));
+            this.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.SWAP_ITEM_WITH_OFFHAND, BlockPos.ZERO, net.minecraft.util.Direction.DOWN));
          }
       }
 
@@ -1695,7 +1696,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
 
       try {
          DatapackCodec var8 = MinecraftServer.func_240772_a_(var7, var6, var4);
-         CompletableFuture var9 = DataPackRegistries.func_240961_a_(var7.func_232623_f_(), Class2085.INTEGRATED, 2, Util.getServerExecutor(), this);
+         CompletableFuture var9 = DataPackRegistries.func_240961_a_(var7.func_232623_f_(), Commands.INTEGRATED, 2, Util.getServerExecutor(), this);
          this.driveUntil(var9::isDone);
          DataPackRegistries var10 = (DataPackRegistries)var9.get();
          IServerConfiguration var11 = var3.apply(var5, var1, var10.getResourceManager(), var8);

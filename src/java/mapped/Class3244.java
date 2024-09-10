@@ -38,7 +38,7 @@ public class Class3244 extends Class3241 implements Class3207 {
             .method23465(field18698, Boolean.valueOf(true))
             .method23465(field18699, Boolean.valueOf(false))
             .method23465(field18700, Boolean.valueOf(false))
-            .method23465(field18701, Direction.NORTH)
+            .method23465(field18701,net.minecraft.util.Direction.NORTH)
       );
    }
 
@@ -97,12 +97,12 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public BlockState method11491(BlockState var1, Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
+   public BlockState method11491(BlockState var1, net.minecraft.util.Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       if (var1.<Boolean>method23463(field18700)) {
          var4.method6861().method20726(var5, Class9479.field44066, Class9479.field44066.method25057(var4));
       }
 
-      return var2 != Direction.DOWN
+      return var2 != net.minecraft.util.Direction.DOWN
          ? super.method11491(var1, var2, var3, var4, var5, var6)
          : var1.method23465(field18699, Boolean.valueOf(this.method11651(var3)));
    }
@@ -253,12 +253,12 @@ public class Class3244 extends Class3241 implements Class3207 {
 
    @Override
    public BlockState method11500(BlockState var1, Class80 var2) {
-      return var1.method23465(field18701, var2.method252(var1.<Direction>method23463(field18701)));
+      return var1.method23465(field18701, var2.method252(var1.<net.minecraft.util.Direction>method23463(field18701)));
    }
 
    @Override
    public BlockState method11501(BlockState var1, Class2089 var2) {
-      return var1.method23395(var2.method8749(var1.<Direction>method23463(field18701)));
+      return var1.method23395(var2.method8749(var1.<net.minecraft.util.Direction>method23463(field18701)));
    }
 
    @Override

@@ -15,7 +15,7 @@ public class SetLootTableSerializer extends LootFunctionSerializer<Class149> {
    }
 
    public Class149 deserialize(JsonObject var1, JsonDeserializationContext var2, ILootCondition[] var3) {
-      ResourceLocation var6 = new ResourceLocation(JSONUtils.method32763(var1, "name"));
+      ResourceLocation var6 = new ResourceLocation(JSONUtils.getString(var1, "name"));
       long var7 = JSONUtils.method32775(var1, "seed", 0L);
       return new Class149(var3, var6, var7);
    }

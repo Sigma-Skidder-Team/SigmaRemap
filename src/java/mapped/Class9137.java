@@ -22,7 +22,7 @@ public class Class9137 {
       this.field41990 = Optional.<Class7744>of(var1);
    }
 
-   public Optional<Class7744> method34115(Class7268 var1) {
+   public Optional<Class7744> method34115(FunctionManager var1) {
       if (!this.field41989) {
          if (this.field41988 != null) {
             this.field41990 = var1.method22829(this.field41988);

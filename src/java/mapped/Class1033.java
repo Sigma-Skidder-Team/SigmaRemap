@@ -34,18 +34,18 @@ public class Class1033 extends Class1031 implements Class1022 {
    @Override
    public void method4219() {
       super.method4219();
-      this.field5600.method20002(0, new Class2603(this));
-      this.field5600.method20002(1, new Class2696(this));
-      this.field5600.method20002(4, new Class2677(this));
-      this.field5600.method20002(5, new Class2673(this));
-      this.field5600.method20002(6, new Class2758<Class1033>(this, 0.5, 20, 15.0F));
-      this.field5600.method20002(8, new Class2736(this, 0.6));
-      this.field5600.method20002(9, new Class2612(this, PlayerEntity.class, 3.0F, 1.0F));
-      this.field5600.method20002(10, new Class2612(this, Class1006.class, 8.0F));
-      this.field5601.method20002(1, new Class2704(this, Class1026.class).method10918());
-      this.field5601.method20002(2, new Class2709<PlayerEntity>(this, PlayerEntity.class, true).method10917(300));
-      this.field5601.method20002(3, new Class2709<Class1043>(this, Class1043.class, false).method10917(300));
-      this.field5601.method20002(3, new Class2709<Class1058>(this, Class1058.class, false).method10917(300));
+      this.field5600.addGoal(0, new Class2603(this));
+      this.field5600.addGoal(1, new Class2696(this));
+      this.field5600.addGoal(4, new Class2677(this));
+      this.field5600.addGoal(5, new Class2673(this));
+      this.field5600.addGoal(6, new Class2758<Class1033>(this, 0.5, 20, 15.0F));
+      this.field5600.addGoal(8, new Class2736(this, 0.6));
+      this.field5600.addGoal(9, new Class2612(this, PlayerEntity.class, 3.0F, 1.0F));
+      this.field5600.addGoal(10, new Class2612(this, MobEntity.class, 8.0F));
+      this.field5601.addGoal(1, new HurtByTargetGoal(this, Class1026.class).method10918());
+      this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true).method10917(300));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1043>(this, Class1043.class, false).method10917(300));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, false).method10917(300));
    }
 
    public static Class7037 method4610() {

@@ -41,10 +41,10 @@ public class Class8441 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(Class8239.field35387);
-      Type var4 = this.getOutputSchema().getType(Class8239.field35387);
-      TaggedChoiceType<String> var5 = (TaggedChoiceType<String>) this.getInputSchema().findChoiceType(Class8239.field35386);
-      TaggedChoiceType<String> var6 = (TaggedChoiceType<String>) this.getOutputSchema().findChoiceType(Class8239.field35386);
+      Type var3 = this.getInputSchema().getType(TypeReferences.field35387);
+      Type var4 = this.getOutputSchema().getType(TypeReferences.field35387);
+      TaggedChoiceType<String> var5 = (TaggedChoiceType<String>) this.getInputSchema().findChoiceType(TypeReferences.field35386);
+      TaggedChoiceType<String> var6 = (TaggedChoiceType<String>) this.getOutputSchema().findChoiceType(TypeReferences.field35386);
       return TypeRewriteRule.seq(
          this.convertUnchecked("item stack block entity name hook converter", var3, var4),
          this.fixTypeEverywhere("BlockEntityIdFix", var5, var6, var0 -> var0x -> var0x.mapFirst(var0xx -> field36162.getOrDefault(var0xx, var0xx)))

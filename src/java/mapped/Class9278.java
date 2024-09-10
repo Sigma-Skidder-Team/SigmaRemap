@@ -248,8 +248,8 @@ public class Class9278 {
          var1.accept(new SSetPassengersPacket(this.field42668.getRidingEntity()));
       }
 
-      if (this.field42668 instanceof Class1006) {
-         Class1006 var14 = (Class1006)this.field42668;
+      if (this.field42668 instanceof MobEntity) {
+         MobEntity var14 = (MobEntity)this.field42668;
          if (var14.method4296()) {
             var1.accept(new SMountEntityPacket(var14, var14.method4297()));
          }

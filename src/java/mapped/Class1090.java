@@ -61,19 +61,19 @@ public class Class1090 extends Class1018 {
    @Override
    public void method4219() {
       this.field5975 = new Class2681(this, 0.6, field5972, true);
-      this.field5600.method20002(1, new Class2603(this));
-      this.field5600.method20002(3, this.field5975);
-      this.field5600.method20002(7, new Class2745(this, 0.3F));
-      this.field5600.method20002(8, new Class2695(this));
-      this.field5600.method20002(9, new Class2785(this, 0.8));
-      this.field5600.method20002(10, new Class2737(this, 0.8, 1.0000001E-5F));
-      this.field5600.method20002(11, new Class2612(this, PlayerEntity.class, 10.0F));
-      this.field5601.method20002(1, new Class2709<Class1089>(this, Class1089.class, false));
-      this.field5601.method20002(1, new Class2709<Class1088>(this, Class1088.class, 10, false, false, Class1088.field5963));
+      this.field5600.addGoal(1, new Class2603(this));
+      this.field5600.addGoal(3, this.field5975);
+      this.field5600.addGoal(7, new Class2745(this, 0.3F));
+      this.field5600.addGoal(8, new Class2695(this));
+      this.field5600.addGoal(9, new Class2785(this, 0.8));
+      this.field5600.addGoal(10, new WaterAvoidingRandomWalkingGoal(this, 0.8, 1.0000001E-5F));
+      this.field5600.addGoal(11, new Class2612(this, PlayerEntity.class, 10.0F));
+      this.field5601.addGoal(1, new NearestAttackableTargetGoal<Class1089>(this, Class1089.class, false));
+      this.field5601.addGoal(1, new NearestAttackableTargetGoal<Class1088>(this, Class1088.class, 10, false, false, Class1088.field5963));
    }
 
    @Override
-   public void method4258() {
+   public void updateAITasks() {
       if (!this.method4228().method20811()) {
          this.setPose(Pose.STANDING);
          this.setSprinting(false);
@@ -100,7 +100,7 @@ public class Class1090 extends Class1018 {
    }
 
    public static Class7037 method5074() {
-      return Class1006.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.field42110, 3.0);
+      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.field42110, 3.0);
    }
 
    @Override
@@ -199,7 +199,7 @@ public class Class1090 extends Class1018 {
 
       this.field5600.method20003(this.field5974);
       if (!this.method5072()) {
-         this.field5600.method20002(4, this.field5974);
+         this.field5600.addGoal(4, this.field5974);
       }
    }
 

@@ -30,11 +30,11 @@ public class Class9589 extends DataFix {
    }
 
    public TypeRewriteRule makeRule() {
-      Type var3 = this.getInputSchema().getType(Class8239.field35378);
+      Type var3 = this.getInputSchema().getType(TypeReferences.field35378);
       Type var4 = var3.findFieldType("Level");
       OpticFinder var5 = DSL.fieldFinder("Level", var4);
       return this.fixTypeEverywhereTyped(
-         "ChunkStatusFix2", var3, this.getOutputSchema().getType(Class8239.field35378), var1 -> var1.updateTyped(var5, var0x -> {
+         "ChunkStatusFix2", var3, this.getOutputSchema().getType(TypeReferences.field35378), var1 -> var1.updateTyped(var5, var0x -> {
                Dynamic var3x = (Dynamic)var0x.get(DSL.remainderFinder());
                String var4x = var3x.get("Status").asString("empty");
                String var5x = field44862.getOrDefault(var4x, "empty");

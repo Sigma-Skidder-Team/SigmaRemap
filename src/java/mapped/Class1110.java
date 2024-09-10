@@ -36,10 +36,10 @@ public class Class1110 extends Class1111 implements Class1008 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(1, new Class2768(this));
-      this.field5600.method20002(2, new Class2607(this));
-      this.field5600.method20002(3, new Class2606(this));
-      this.field5601.method20002(1, new Class2690(this));
+      this.field5600.addGoal(1, new Class2768(this));
+      this.field5600.addGoal(2, new Class2607(this));
+      this.field5600.addGoal(3, new Class2606(this));
+      this.field5601.addGoal(1, new Class2690(this));
    }
 
    @Override
@@ -125,8 +125,8 @@ public class Class1110 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public void method4258() {
-      super.method4258();
+   public void updateAITasks() {
+      super.updateAITasks();
    }
 
    @Override

@@ -13,7 +13,7 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class1039 extends Class1038 {
+public class Class1039 extends ZombieEntity {
    private static String[] field5768;
 
    public Class1039(EntityType<? extends Class1039> var1, World var2) {
@@ -61,7 +61,7 @@ public class Class1039 extends Class1038 {
    }
 
    @Override
-   public boolean method4645() {
+   public boolean shouldDrown() {
       return true;
    }
 

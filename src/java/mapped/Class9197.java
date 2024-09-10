@@ -17,20 +17,20 @@ public class Class9197 extends Schema {
       var1.register(
          var4,
          "Horse",
-         () -> DSL.optionalFields("ArmorItem", Class8239.field35387.in(var1), "SaddleItem", Class8239.field35387.in(var1), Class9674.method37738(var1))
+         () -> DSL.optionalFields("ArmorItem", TypeReferences.field35387.in(var1), "SaddleItem", TypeReferences.field35387.in(var1), Class9674.method37738(var1))
       );
       var1.register(
          var4,
          "Donkey",
-         () -> DSL.optionalFields("Items", DSL.list(Class8239.field35387.in(var1)), "SaddleItem", Class8239.field35387.in(var1), Class9674.method37738(var1))
+         () -> DSL.optionalFields("Items", DSL.list(TypeReferences.field35387.in(var1)), "SaddleItem", TypeReferences.field35387.in(var1), Class9674.method37738(var1))
       );
       var1.register(
          var4,
          "Mule",
-         () -> DSL.optionalFields("Items", DSL.list(Class8239.field35387.in(var1)), "SaddleItem", Class8239.field35387.in(var1), Class9674.method37738(var1))
+         () -> DSL.optionalFields("Items", DSL.list(TypeReferences.field35387.in(var1)), "SaddleItem", TypeReferences.field35387.in(var1), Class9674.method37738(var1))
       );
-      var1.register(var4, "ZombieHorse", () -> DSL.optionalFields("SaddleItem", Class8239.field35387.in(var1), Class9674.method37738(var1)));
-      var1.register(var4, "SkeletonHorse", () -> DSL.optionalFields("SaddleItem", Class8239.field35387.in(var1), Class9674.method37738(var1)));
+      var1.register(var4, "ZombieHorse", () -> DSL.optionalFields("SaddleItem", TypeReferences.field35387.in(var1), Class9674.method37738(var1)));
+      var1.register(var4, "SkeletonHorse", () -> DSL.optionalFields("SaddleItem", TypeReferences.field35387.in(var1), Class9674.method37738(var1)));
       return var4;
    }
 }

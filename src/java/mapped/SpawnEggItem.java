@@ -142,37 +142,37 @@ public class SpawnEggItem extends Item {
       return this.field18820;
    }
 
-   public Optional<Class1006> method11856(PlayerEntity var1, Class1006 var2, EntityType<? extends Class1006> var3, ServerWorld var4, Vector3d var5, ItemStack var6) {
+   public Optional<MobEntity> method11856(PlayerEntity var1, MobEntity var2, EntityType<? extends MobEntity> var3, ServerWorld var4, Vector3d var5, ItemStack var6) {
       if (this.method11851(var6.method32142(), var3)) {
          Object var9;
          if (!(var2 instanceof Class1045)) {
-            var9 = (Class1006)var3.create(var4);
+            var9 = (MobEntity)var3.create(var4);
          } else {
             var9 = ((Class1045)var2).method4389(var4, (Class1045)var2);
          }
 
          if (var9 != null) {
-            ((Class1006)var9).method4308(true);
-            if (((Class1006)var9).isChild()) {
-               ((Class1006)var9).setLocationAndAngles(var5.getX(), var5.getY(), var5.getZ(), 0.0F, 0.0F);
+            ((MobEntity)var9).method4308(true);
+            if (((MobEntity)var9).isChild()) {
+               ((MobEntity)var9).setLocationAndAngles(var5.getX(), var5.getY(), var5.getZ(), 0.0F, 0.0F);
                var4.method6995((Entity)var9);
                if (var6.method32152()) {
-                  ((Class1006)var9).method3379(var6.method32149());
+                  ((MobEntity)var9).method3379(var6.method32149());
                }
 
                if (!var1.abilities.isCreativeMode) {
                   var6.method32182(1);
                }
 
-               return Optional.<Class1006>of((Class1006)var9);
+               return Optional.<MobEntity>of((MobEntity)var9);
             } else {
-               return Optional.<Class1006>empty();
+               return Optional.<MobEntity>empty();
             }
          } else {
-            return Optional.<Class1006>empty();
+            return Optional.<MobEntity>empty();
          }
       } else {
-         return Optional.<Class1006>empty();
+         return Optional.<MobEntity>empty();
       }
    }
 }

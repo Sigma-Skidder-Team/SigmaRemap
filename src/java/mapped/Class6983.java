@@ -78,7 +78,7 @@ public class Class6983 {
       return Class2002.method8427(var1, var2).filter(var2x -> var0.method6955(var2x) < var5).min(Comparator.comparingInt(var0::method6955)).orElse(var1);
    }
 
-   public static boolean method21580(Class1006 var0, LivingEntity var1, int var2) {
+   public static boolean method21580(MobEntity var0, LivingEntity var1, int var2) {
       Item var5 = var0.getHeldItemMainhand().getItem();
       if (var5 instanceof Class3262 && var0.method4234((Class3262)var5)) {
          int var6 = ((Class3262)var5).method11771() - var2;

@@ -15,18 +15,18 @@ public class Class9048 extends Schema {
       super.registerTypes(var1, var2, var3);
       var1.registerType(
          false,
-         Class8239.field35377,
+         TypeReferences.field35377,
          () -> DSL.optionalFields(
                "RootVehicle",
-               DSL.optionalFields("Entity", Class8239.field35390.in(var1)),
+               DSL.optionalFields("Entity", TypeReferences.field35390.in(var1)),
                "Inventory",
-               DSL.list(Class8239.field35387.in(var1)),
+               DSL.list(TypeReferences.field35387.in(var1)),
                "EnderItems",
-               DSL.list(Class8239.field35387.in(var1))
+               DSL.list(TypeReferences.field35387.in(var1))
             )
       );
       var1.registerType(
-         true, Class8239.field35390, () -> DSL.optionalFields("Passengers", DSL.list(Class8239.field35390.in(var1)), Class8239.field35391.in(var1))
+         true, TypeReferences.field35390, () -> DSL.optionalFields("Passengers", DSL.list(TypeReferences.field35390.in(var1)), TypeReferences.ENTITY.in(var1))
       );
    }
 }

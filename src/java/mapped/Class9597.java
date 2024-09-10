@@ -27,7 +27,7 @@ public class Class9597 {
    }
 
    @Nullable
-   public Class8238 method37250(Class1667 var1, Class1006 var2, Set<BlockPos> var3, float var4, int var5, float var6) {
+   public Class8238 method37250(Class1667 var1, MobEntity var2, Set<BlockPos> var3, float var4, int var5, float var6) {
       this.field44894.method31191();
       this.field44893.method20613(var1, var2);
       Class7176 var9 = this.field44893.method20615();

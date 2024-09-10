@@ -23,7 +23,7 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 
-public class Class1108 extends Class1006 implements Class1008 {
+public class Class1108 extends MobEntity implements Class1008 {
    private static final DataParameter<Integer> field6081 = EntityDataManager.<Integer>createKey(Class1108.class, DataSerializers.VARINT);
    public float field6082;
    public float field6083;
@@ -37,13 +37,13 @@ public class Class1108 extends Class1006 implements Class1008 {
 
    @Override
    public void method4219() {
-      this.field5600.method20002(1, new Class2735(this));
-      this.field5600.method20002(2, new Class2620(this));
-      this.field5600.method20002(3, new Class2621(this));
-      this.field5600.method20002(5, new Class2601(this));
+      this.field5600.addGoal(1, new Class2735(this));
+      this.field5600.addGoal(2, new Class2620(this));
+      this.field5600.addGoal(3, new Class2621(this));
+      this.field5600.addGoal(5, new Class2601(this));
       this.field5601
-         .method20002(1, new Class2709<PlayerEntity>(this, PlayerEntity.class, 10, true, false, var1 -> Math.abs(var1.getPosY() - this.getPosY()) <= 4.0));
-      this.field5601.method20002(3, new Class2709<Class1058>(this, Class1058.class, true));
+         .addGoal(1, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 10, true, false, var1 -> Math.abs(var1.getPosY() - this.getPosY()) <= 4.0));
+      this.field5601.addGoal(3, new NearestAttackableTargetGoal<Class1058>(this, Class1058.class, true));
    }
 
    @Override

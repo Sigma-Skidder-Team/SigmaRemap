@@ -6,7 +6,7 @@ import net.minecraft.world.server.ServerWorld;
 
 import java.util.Optional;
 
-public class Class3730 extends Class3676<Class1006> {
+public class Class3730 extends Class3676<MobEntity> {
    private static String[] field19833;
    private final float field19834;
    private BlockPos field19835;
@@ -19,11 +19,11 @@ public class Class3730 extends Class3676<Class1006> {
       this.field19834 = var1;
    }
 
-   public boolean method12508(ServerWorld var1, Class1006 var2) {
+   public boolean method12508(ServerWorld var1, MobEntity var2) {
       return var2.isChild() && this.method12648(var1, var2);
    }
 
-   public void method12502(ServerWorld var1, Class1006 var2, long var3) {
+   public void method12502(ServerWorld var1, MobEntity var2, long var3) {
       super.method12502(var1, var2, var3);
       this.method12652(var2).ifPresent(var3x -> {
          this.field19835 = var3x;
@@ -34,7 +34,7 @@ public class Class3730 extends Class3676<Class1006> {
       });
    }
 
-   public void method12506(ServerWorld var1, Class1006 var2, long var3) {
+   public void method12506(ServerWorld var1, MobEntity var2, long var3) {
       super.method12506(var1, var2, var3);
       this.field19835 = null;
       this.field19836 = 0;
@@ -42,7 +42,7 @@ public class Class3730 extends Class3676<Class1006> {
       this.field19838 = 0;
    }
 
-   public boolean method12499(ServerWorld var1, Class1006 var2, long var3) {
+   public boolean method12499(ServerWorld var1, MobEntity var2, long var3) {
       return var2.isChild()
          && this.field19835 != null
          && this.method12651(var1, this.field19835)
@@ -55,7 +55,7 @@ public class Class3730 extends Class3676<Class1006> {
       return false;
    }
 
-   public void method12504(ServerWorld var1, Class1006 var2, long var3) {
+   public void method12504(ServerWorld var1, MobEntity var2, long var3) {
       if (this.method12649(var1, var2)) {
          if (this.field19838 <= 0) {
             if (this.method12650(var1, var2)) {
@@ -71,21 +71,21 @@ public class Class3730 extends Class3676<Class1006> {
       }
    }
 
-   private void method12647(Class1006 var1, BlockPos var2) {
+   private void method12647(MobEntity var1, BlockPos var2) {
       var1.getBrain().method21406(Class8830.field39824, new Class8999(var2, this.field19834, 0));
    }
 
-   private boolean method12648(ServerWorld var1, Class1006 var2) {
+   private boolean method12648(ServerWorld var1, MobEntity var2) {
       return this.method12649(var1, var2) || this.method12652(var2).isPresent();
    }
 
-   private boolean method12649(ServerWorld var1, Class1006 var2) {
+   private boolean method12649(ServerWorld var1, MobEntity var2) {
       BlockPos var5 = var2.getPosition();
       BlockPos var6 = var5.down();
       return this.method12651(var1, var5) || this.method12651(var1, var6);
    }
 
-   private boolean method12650(ServerWorld var1, Class1006 var2) {
+   private boolean method12650(ServerWorld var1, MobEntity var2) {
       return this.method12651(var1, var2.getPosition());
    }
 
@@ -93,15 +93,15 @@ public class Class3730 extends Class3676<Class1006> {
       return var1.getBlockState(var2).method23446(BlockTags.field32770);
    }
 
-   private Optional<BlockPos> method12652(Class1006 var1) {
+   private Optional<BlockPos> method12652(MobEntity var1) {
       return var1.getBrain().<BlockPos>method21410(Class8830.field39834);
    }
 
-   private boolean method12653(ServerWorld var1, Class1006 var2) {
+   private boolean method12653(ServerWorld var1, MobEntity var2) {
       return !this.method12649(var1, var2) && this.field19836 <= 0;
    }
 
-   private boolean method12654(ServerWorld var1, Class1006 var2) {
+   private boolean method12654(ServerWorld var1, MobEntity var2) {
       return this.method12649(var1, var2) && this.field19837 <= 0;
    }
 }

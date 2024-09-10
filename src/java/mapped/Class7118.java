@@ -18,7 +18,7 @@ public class Class7118 extends Class7114 {
    private static final Set<String> field30640 = Sets.newHashSet();
 
    public Class7118(Schema var1) {
-      super(var1, Class8239.field35391);
+      super(var1, TypeReferences.ENTITY);
    }
 
    public TypeRewriteRule makeRule() {

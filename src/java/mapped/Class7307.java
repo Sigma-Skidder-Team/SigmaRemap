@@ -38,7 +38,7 @@ public class Class7307 {
       }
    }
 
-   private void method23089(Class1006 var1, IChunk var2) {
+   private void method23089(MobEntity var1, IChunk var2) {
       EntityType var5 = var1.getType();
       BlockPos var6 = var1.getPosition();
       double var8;
@@ -76,7 +76,7 @@ public class Class7307 {
    }
 
    // $VF: synthetic method
-   public static void method23094(Class7307 var0, Class1006 var1, IChunk var2) {
+   public static void method23094(Class7307 var0, MobEntity var1, IChunk var2) {
       var0.method23089(var1, var2);
    }
 

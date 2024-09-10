@@ -14,11 +14,11 @@ public class Class4187 extends Class4180 {
    private final Class80 field20477;
    private final Class2089 field20478;
 
-   public Class4187(Class8761 var1, String var2, BlockPos var3, Class80 var4) {
+   public Class4187(TemplateManager var1, String var2, BlockPos var3, Class80 var4) {
       this(var1, var2, var3, var4, Class2089.field13614);
    }
 
-   public Class4187(Class8761 var1, String var2, BlockPos var3, Class80 var4, Class2089 var5) {
+   public Class4187(TemplateManager var1, String var2, BlockPos var3, Class80 var4, Class2089 var5) {
       super(Class7792.field33476, 0);
       this.field20476 = var2;
       this.field20455 = var3;
@@ -27,7 +27,7 @@ public class Class4187 extends Class4180 {
       this.method12966(var1);
    }
 
-   public Class4187(Class8761 var1, CompoundNBT var2) {
+   public Class4187(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33476, var2);
       this.field20476 = var2.getString("Template");
       this.field20477 = Class80.valueOf(var2.getString("Rot"));
@@ -35,7 +35,7 @@ public class Class4187 extends Class4180 {
       this.method12966(var1);
    }
 
-   private void method12966(Class8761 var1) {
+   private void method12966(TemplateManager var1) {
       Class8969 var4 = var1.method31603(new ResourceLocation("woodland_mansion/" + this.field20476));
       Class9463 var5 = new Class9463().method36428(true).method36426(this.field20477).method36425(this.field20478).method36434(Class7095.field30526);
       this.method12943(var4, this.field20455, var5);

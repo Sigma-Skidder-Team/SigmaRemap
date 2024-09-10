@@ -220,7 +220,7 @@ public class ChunkStatus {
    public CompletableFuture<Either<IChunk, Class7022>> method34300(
       ServerWorld var1,
       ChunkGenerator var2,
-      Class8761 var3,
+      TemplateManager var3,
       Class195 var4,
       Function<IChunk, CompletableFuture<Either<IChunk, Class7022>>> var5,
       List<IChunk> var6
@@ -229,7 +229,7 @@ public class ChunkStatus {
    }
 
    public CompletableFuture<Either<IChunk, Class7022>> method34301(
-           ServerWorld var1, Class8761 var2, Class195 var3, Function<IChunk, CompletableFuture<Either<IChunk, Class7022>>> var4, IChunk var5
+           ServerWorld var1, TemplateManager var2, Class195 var3, Function<IChunk, CompletableFuture<Either<IChunk, Class7022>>> var4, IChunk var5
    ) {
       return this.field42152.method34754(this, var1, var2, var3, var4, var5);
    }

@@ -4,7 +4,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 
 public abstract class Class2699 extends Class2595 {
-   public final Class1006 field17153;
+   public final MobEntity field17153;
    public final boolean field17154;
    private final boolean field17155;
    private int field17156;
@@ -13,11 +13,11 @@ public abstract class Class2699 extends Class2595 {
    public LivingEntity field17159;
    public int field17160 = 60;
 
-   public Class2699(Class1006 var1, boolean var2) {
+   public Class2699(MobEntity var1, boolean var2) {
       this(var1, var2, false);
    }
 
-   public Class2699(Class1006 var1, boolean var2, boolean var3) {
+   public Class2699(MobEntity var1, boolean var2, boolean var3) {
       this.field17153 = var1;
       this.field17154 = var2;
       this.field17155 = var3;

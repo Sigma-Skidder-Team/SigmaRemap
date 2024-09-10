@@ -15,18 +15,18 @@ public class Class3659 extends Class3639 {
       super.registerTypes(var1, var2, var3);
       var1.registerType(
          false,
-         Class8239.field35378,
+         TypeReferences.field35378,
          () -> DSL.fields(
                "Level",
                DSL.optionalFields(
                   "Entities",
-                  DSL.list(Class8239.field35390.in(var1)),
+                  DSL.list(TypeReferences.field35390.in(var1)),
                   "TileEntities",
-                  DSL.list(Class8239.field35386.in(var1)),
+                  DSL.list(TypeReferences.field35386.in(var1)),
                   "TileTicks",
-                  DSL.list(DSL.fields("i", Class8239.field35392.in(var1))),
+                  DSL.list(DSL.fields("i", TypeReferences.field35392.in(var1))),
                   "Sections",
-                  DSL.list(DSL.optionalFields("Palette", DSL.list(Class8239.field35388.in(var1))))
+                  DSL.list(DSL.optionalFields("Palette", DSL.list(TypeReferences.field35388.in(var1))))
                )
             )
       );

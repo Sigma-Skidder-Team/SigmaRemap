@@ -58,7 +58,7 @@ public class JSONUtils {
       }
    }
 
-   public static String method32763(JsonObject var0, String var1) {
+   public static String getString(JsonObject var0, String var1) {
       if (!var0.has(var1)) {
          throw new JsonSyntaxException("Missing " + var1 + ", expected to find a string");
       } else {
@@ -197,7 +197,7 @@ public class JSONUtils {
       }
    }
 
-   public static JsonObject method32783(JsonObject var0, String var1, JsonObject var2) {
+   public static JsonObject getJsonObject(JsonObject var0, String var1, JsonObject var2) {
       return !var0.has(var1) ? var2 : method32781(var0.get(var1), var1);
    }
 
@@ -338,7 +338,7 @@ public class JSONUtils {
       return method32798(var0, false);
    }
 
-   public static JsonObject method32801(Reader var0) {
+   public static JsonObject fromJson(Reader var0) {
       return method32799(var0, false);
    }
 }

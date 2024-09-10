@@ -4,11 +4,13 @@ import com.google.common.collect.Sets;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
+import net.minecraft.resources.data.IMetadataSectionSerializer;
+
 import java.util.HashSet;
 import java.util.Map.Entry;
 
-public class Class7171 implements Class7170<Class9168> {
-   public Class9168 method22519(JsonObject var1) {
+public class Class7171 implements IMetadataSectionSerializer<Class9168> {
+   public Class9168 deserialize(JsonObject var1) {
       HashSet var4 = Sets.newHashSet();
 
       for (Entry var6 : var1.entrySet()) {
@@ -18,8 +20,8 @@ public class Class7171 implements Class7170<Class9168> {
          }
 
          JsonObject var8 = JSONUtils.method32781((JsonElement)var6.getValue(), "language");
-         String var9 = JSONUtils.method32763(var8, "region");
-         String var10 = JSONUtils.method32763(var8, "name");
+         String var9 = JSONUtils.getString(var8, "region");
+         String var10 = JSONUtils.getString(var8, "name");
          boolean var11 = JSONUtils.getBoolean(var8, "bidirectional", false);
          if (var9.isEmpty()) {
             throw new JsonParseException("Invalid language->'" + var7 + "'->region: empty value");
@@ -38,7 +40,7 @@ public class Class7171 implements Class7170<Class9168> {
    }
 
    @Override
-   public String method22518() {
+   public String getSectionName() {
       return "language";
    }
 }

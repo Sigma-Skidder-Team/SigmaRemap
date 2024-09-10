@@ -76,7 +76,7 @@ public class Class7070 {
             .isPresent()) {
             SimpleReloadableResourceManager var3 = new SimpleReloadableResourceManager(ResourcePackType.SERVER_DATA);
 
-            for (IResourcePack var6 : NameTags.method16938().resourcePackRepository.getEnabledPacks().stream().<IResourcePack>map(ResourcePackInfo::method7950).collect(Collectors.toList())) {
+            for (IResourcePack var6 : NameTags.method16938().resourcePackRepository.getEnabledPacks().stream().<IResourcePack>map(ResourcePackInfo::getResourcePack).collect(Collectors.toList())) {
                var3.method588(var6);
             }
 

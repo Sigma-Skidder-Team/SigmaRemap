@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public class Class6725 extends Class6717 {
    public Class6725(Schema var1, boolean var2) {
-      super(var1, var2, "Zombie Villager XP rebuild", Class8239.field35391, "minecraft:zombie_villager");
+      super(var1, var2, "Zombie Villager XP rebuild", TypeReferences.ENTITY, "minecraft:zombie_villager");
    }
 
    @Override

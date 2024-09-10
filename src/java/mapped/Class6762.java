@@ -20,7 +20,7 @@ public class Class6762 extends Class6764 {
    private final Object2BooleanMap<AxisAlignedBB> field29474 = new Object2BooleanOpenHashMap();
 
    @Override
-   public void method20613(Class1667 var1, Class1006 var2) {
+   public void method20613(Class1667 var1, MobEntity var2) {
       super.method20613(var1, var2);
       this.field29472 = var2.method4223(Class2163.field14191);
    }
@@ -324,7 +324,7 @@ public class Class6762 extends Class6764 {
    }
 
    @Override
-   public Class2163 method20629(IBlockReader var1, int var2, int var3, int var4, Class1006 var5, int var6, int var7, int var8, boolean var9, boolean var10) {
+   public Class2163 method20629(IBlockReader var1, int var2, int var3, int var4, MobEntity var5, int var6, int var7, int var8, boolean var9, boolean var10) {
       EnumSet<Class2163> var13 = EnumSet.noneOf(Class2163.class);
       Class2163 var14 = Class2163.field14184;
       BlockPos var15 = var5.getPosition();
@@ -406,11 +406,11 @@ public class Class6762 extends Class6764 {
       return var5;
    }
 
-   private Class2163 method20631(Class1006 var1, BlockPos var2) {
+   private Class2163 method20631(MobEntity var1, BlockPos var2) {
       return this.method20632(var1, var2.getX(), var2.getY(), var2.getZ());
    }
 
-   private Class2163 method20632(Class1006 var1, int var2, int var3, int var4) {
+   private Class2163 method20632(MobEntity var1, int var2, int var3, int var4) {
       return (Class2163)this.field29473
          .computeIfAbsent(
             BlockPos.method8333(var2, var3, var4),

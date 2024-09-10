@@ -8,6 +8,7 @@ import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
 import mapped.*;
+import net.minecraft.resources.data.PackMetadataSection;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextComponentUtils;
@@ -37,7 +38,7 @@ public class ResourcePackInfo implements AutoCloseable {
    @Nullable
    public static ResourcePackInfo createResourcePack(String var0, boolean var1, Supplier<IResourcePack> var2, Class9325 var3, Priority var4, IPackNameDecorator var5) {
       try (IResourcePack var8 = (IResourcePack)var2.get()) {
-         PackMetadataSection var10 = var8.<PackMetadataSection>method1227(PackMetadataSection.field29661);
+         PackMetadataSection var10 = var8.<PackMetadataSection>getMetadata(PackMetadataSection.field29661);
          if (var1 && var10 == null) {
             field9760.error(
                "Broken/missing pack.mcmeta detected, fudging it into existance. Please check that your launcher has downloaded all assets for the game correctly!"
@@ -80,7 +81,7 @@ public class ResourcePackInfo implements AutoCloseable {
    }
 
    public ResourcePackInfo(String var1, boolean var2, Supplier<IResourcePack> var3, IResourcePack var4, PackMetadataSection var5, Priority var6, IPackNameDecorator var7) {
-      this(var1, var2, var3, new StringTextComponent(var4.method1228()), var5.method20752(), Class2064.method8721(var5.getPackFormat()), var6, false, var7);
+      this(var1, var2, var3, new StringTextComponent(var4.getName()), var5.method20752(), Class2064.method8721(var5.getPackFormat()), var6, false, var7);
    }
 
    public ITextComponent method7946() {
@@ -106,7 +107,7 @@ public class ResourcePackInfo implements AutoCloseable {
       return this.field9766;
    }
 
-   public IResourcePack method7950() {
+   public IResourcePack getResourcePack() {
       return this.field9763.get();
    }
 
