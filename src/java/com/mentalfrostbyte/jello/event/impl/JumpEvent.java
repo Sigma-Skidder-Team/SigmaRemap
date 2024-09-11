@@ -5,7 +5,6 @@ import net.minecraft.util.math.vector.Vector3d;
 import mapped.MovementUtils;
 
 public class JumpEvent extends CancellableEvent {
-    private static String[] field21586;
     public Vector3d vector;
     public boolean field21588;
 

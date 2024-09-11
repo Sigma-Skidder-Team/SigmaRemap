@@ -4,7 +4,6 @@ import mapped.Class2035;
 import net.minecraft.entity.LivingEntity;
 
 public class EventRenderEntity extends Class4406 {
-    private static String[] field21526;
     private float field21527;
     private float field21528;
     private float field21529;

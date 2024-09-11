@@ -16,6 +16,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.resources.IResourceManagerReloadListener;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -38,7 +39,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
 
-public class GameRenderer implements Class215, AutoCloseable {
+public class GameRenderer implements IResourceManagerReloadListener, AutoCloseable {
    private static final ResourceLocation field800 = new ResourceLocation("textures/misc/nausea.png");
    private static final Logger field801 = LogManager.getLogger();
    private final Minecraft mc;

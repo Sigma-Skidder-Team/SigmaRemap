@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.event.Event;
 import com.mentalfrostbyte.jello.event.ICancellableEvent;
 
 public class Class4406 implements Event, ICancellableEvent {
-    private static String[] field21519;
     public boolean field21520 = false;
 
     @Override

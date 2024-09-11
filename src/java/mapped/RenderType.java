@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.*;

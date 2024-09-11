@@ -10,7 +10,6 @@ import java.lang.invoke.MethodHandles;
 import java.lang.reflect.Method;
 
 public class MethodWrapper {
-    private static String[] field35680;
     private final Object field35681;
     private final Class<?> field35682;
     private final Method field35683;

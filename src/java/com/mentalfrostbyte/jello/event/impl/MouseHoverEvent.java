@@ -3,7 +3,6 @@ package com.mentalfrostbyte.jello.event.impl;
 import com.mentalfrostbyte.jello.event.CancellableEvent;
 
 public class MouseHoverEvent extends CancellableEvent {
-    private static String[] field21562;
     private final int field21563;
 
     public MouseHoverEvent(int var1) {

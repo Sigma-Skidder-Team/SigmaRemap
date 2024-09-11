@@ -3,7 +3,6 @@ package com.mentalfrostbyte.jello.event.impl;
 import com.mentalfrostbyte.jello.event.Event;
 
 public class Render2DEvent implements Event {
-    private static String[] field21553;
     public final float field21554;
     public final long field21555;
 

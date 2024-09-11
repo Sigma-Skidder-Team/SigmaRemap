@@ -2,10 +2,11 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.item.ItemStack;
+import net.minecraft.resources.IResourceManagerReloadListener;
 
 import java.util.Map;
 
-public class SearchTreeManager implements Class215 {
+public class SearchTreeManager implements IResourceManagerReloadListener {
    private static String[] field1029;
    public static final Key<ItemStack> ITEMS = new Key<ItemStack>();
    public static final Key<ItemStack> TAGS = new Key<ItemStack>();

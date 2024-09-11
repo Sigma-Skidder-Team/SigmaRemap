@@ -10,8 +10,6 @@ public class EventUpdate extends CancellableEvent {
     public static float prevYaw;
     public static float field21498;
     public static float field21499;
-    public static float field21500;
-    private static String[] field21488;
     public boolean pre;
     private double x;
     private double y;
@@ -20,7 +18,7 @@ public class EventUpdate extends CancellableEvent {
     private float pitch;
     private boolean ground;
     private boolean field21495;
-    private final List<Runnable> field21501 = new ArrayList<Runnable>();
+    private final List<Runnable> field21501 = new ArrayList<>();
 
     public EventUpdate(double var1, double var3, double var5, float var7, float var8, boolean var9) {
         this.x = var1;

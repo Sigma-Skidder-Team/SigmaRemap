@@ -7,6 +7,7 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.util.Util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;

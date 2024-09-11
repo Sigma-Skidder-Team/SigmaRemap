@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 

@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.event.CancellableEvent;
 import net.minecraft.entity.Entity;
 
 public class EventRayTraceResult extends CancellableEvent {
-    private static String[] field21515;
     private Entity field21516;
     private boolean field21517;
 

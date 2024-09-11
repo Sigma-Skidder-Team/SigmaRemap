@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.util.ResourceLocation;
 
 public class Class5726 extends Class5715<Class888> {

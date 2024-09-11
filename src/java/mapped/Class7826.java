@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Objects;

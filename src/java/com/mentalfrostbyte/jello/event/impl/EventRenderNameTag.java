@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.event.CancellableEvent;
 import net.minecraft.entity.Entity;
 
 public class EventRenderNameTag extends CancellableEvent {
-    private static String[] field21579;
     private final Entity field21580;
 
     public EventRenderNameTag(Entity var1) {

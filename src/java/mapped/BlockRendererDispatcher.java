@@ -3,11 +3,12 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
+import net.minecraft.resources.IResourceManagerReloadListener;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.Random;
 
-public class BlockRendererDispatcher implements Class215 {
+public class BlockRendererDispatcher implements IResourceManagerReloadListener {
    private final BlockModelShapes field853;
    private final Class7551 field854;
    private final Class4829 field855;

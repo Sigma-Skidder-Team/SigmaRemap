@@ -7,12 +7,13 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.resources.IResourceManagerReloadListener;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
 import java.io.IOException;
 
-public class Class218<T extends LivingEntity & Class1041, M extends Class2827<T> & Class2801> extends Class219<T, M> implements Class215 {
+public class Class218<T extends LivingEntity & Class1041, M extends Class2827<T> & Class2801> extends Class219<T, M> implements IResourceManagerReloadListener {
    private static final Int2ObjectMap<ResourceLocation> field858 = Util.<Int2ObjectMap<ResourceLocation>>make(new Int2ObjectOpenHashMap(), var0 -> {
       var0.put(1, new ResourceLocation("stone"));
       var0.put(2, new ResourceLocation("iron"));

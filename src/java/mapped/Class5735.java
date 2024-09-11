@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;

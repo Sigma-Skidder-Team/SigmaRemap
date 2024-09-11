@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;

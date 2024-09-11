@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.event.CancellableEvent;
 import net.minecraft.util.math.BlockPos;
 
 public class EventKeyPress extends CancellableEvent {
-    private static String[] field21569;
     private final int field21570;
     private final boolean field21571;
     private final BlockPos field21572;

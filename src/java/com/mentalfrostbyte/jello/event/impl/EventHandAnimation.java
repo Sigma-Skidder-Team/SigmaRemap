@@ -6,7 +6,6 @@ import net.minecraft.item.ItemStack;
 import com.mojang.blaze3d.matrix.MatrixStack;
 
 public class EventHandAnimation extends CancellableEvent {
-    private static String[] field21503;
     private final boolean field21504;
     private boolean field21505;
     private final float field21506;

@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.event.CancellableEvent;
 import mapped.Class7377;
 
 public class EventRenderBlocks extends CancellableEvent {
-    private static String[] field21558;
     private final Class7377 field21559;
     private boolean field21560 = false;
 

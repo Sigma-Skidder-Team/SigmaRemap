@@ -1,9 +1,11 @@
-package mapped;
+package net.minecraft.resources;
+
+import mapped.*;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 
-public interface Class215 extends Class268 {
+public interface IResourceManagerReloadListener extends Class268 {
    @Override
    default CompletableFuture<Void> method777(Class7121 var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
       return var1.<Class2341>method22225(Class2341.field16010).thenRunAsync(() -> {

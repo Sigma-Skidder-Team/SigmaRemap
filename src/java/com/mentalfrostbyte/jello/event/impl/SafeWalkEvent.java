@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.event.Class4416;
 import mapped.Situation;
 
 public class SafeWalkEvent extends Class4416 {
-    private static String[] field21544;
     public boolean onEdge;
     public Situation situation;
 

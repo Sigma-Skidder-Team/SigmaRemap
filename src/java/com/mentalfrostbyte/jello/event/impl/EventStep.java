@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.event.CancellableEvent;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class EventStep extends CancellableEvent {
-    private static String[] field21581;
     private final double field21582;
     private final Vector3d vector;
 

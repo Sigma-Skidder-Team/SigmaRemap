@@ -1,7 +1,6 @@
 package com.mentalfrostbyte.jello.event.impl;
 
 public class TextReplaceEvent extends Class4406 {
-    private static String[] field21536;
     private String text;
 
     public TextReplaceEvent(String var1) {

@@ -4,7 +4,6 @@ import com.mentalfrostbyte.jello.event.CancellableEvent;
 import net.minecraft.network.Packet;
 
 public class ReceivePacketEvent extends CancellableEvent {
-    private static String[] field21480;
     private Packet packet;
 
     public ReceivePacketEvent(Packet var1) {

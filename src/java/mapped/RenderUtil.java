@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.item.ItemStack;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.EXTFramebufferObject;

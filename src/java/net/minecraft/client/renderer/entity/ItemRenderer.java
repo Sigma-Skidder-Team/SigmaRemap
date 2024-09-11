@@ -1,13 +1,15 @@
-package mapped;
+package net.minecraft.client.renderer.entity;
 
 import com.google.common.collect.Sets;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.resources.IResourceManagerReloadListener;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -17,7 +19,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
-public class ItemRenderer implements Class215 {
+public class ItemRenderer implements IResourceManagerReloadListener {
    public static final ResourceLocation field845 = new ResourceLocation("textures/misc/enchanted_item_glint.png");
    private static final Set<Item> field846 = Sets.newHashSet(new Item[]{Items.field37222});
    public float field847;

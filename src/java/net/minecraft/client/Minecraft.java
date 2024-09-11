@@ -25,6 +25,7 @@ import com.mojang.serialization.Lifecycle;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.DownloadingPackFinder;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.ChatVisibility;

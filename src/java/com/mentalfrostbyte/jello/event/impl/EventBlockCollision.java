@@ -6,8 +6,6 @@ import mapped.VoxelShape;
 import mapped.VoxelShapes;
 
 public class EventBlockCollision extends CancellableEvent {
-    public static boolean field21487 = false;
-    private static String[] field21484;
     private BlockPos blockPos;
     private VoxelShape voxelShape;
 

@@ -1,6 +1,8 @@
 package mapped;
 
-public final class Class265 implements Class215 {
+import net.minecraft.resources.IResourceManagerReloadListener;
+
+public final class Class265 implements IResourceManagerReloadListener {
    private static String[] field1028;
 
    @Override

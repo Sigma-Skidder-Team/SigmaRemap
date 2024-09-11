@@ -22,6 +22,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.resources.IResourceManagerReloadListener;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -42,7 +43,7 @@ import javax.annotation.Nullable;
 import java.io.IOException;
 import java.util.*;
 
-public class WorldRenderer implements Class215, AutoCloseable {
+public class WorldRenderer implements IResourceManagerReloadListener, AutoCloseable {
    private static final Logger field930 = LogManager.getLogger();
    private static final ResourceLocation field931 = new ResourceLocation("textures/environment/moon_phases.png");
    private static final ResourceLocation field932 = new ResourceLocation("textures/environment/sun.png");

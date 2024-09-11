@@ -3,7 +3,6 @@ package com.mentalfrostbyte.jello.event.impl;
 import com.mentalfrostbyte.jello.event.CancellableEvent;
 
 public class EventMoveRideable extends CancellableEvent {
-    private static String[] field21575;
     public double field21576;
     public double field21577;
     public double field21578;

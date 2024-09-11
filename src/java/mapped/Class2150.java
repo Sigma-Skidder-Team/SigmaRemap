@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.text.ITextComponent;

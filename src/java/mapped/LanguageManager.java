@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import net.minecraft.resources.IResourceManagerReloadListener;
 import net.minecraft.util.text.LanguageMap;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,7 +16,7 @@ import java.util.Map;
 import java.util.SortedSet;
 import java.util.stream.Stream;
 
-public class LanguageManager implements Class215 {
+public class LanguageManager implements IResourceManagerReloadListener {
    private static final Logger field1034 = LogManager.getLogger();
    private static final Class2019 field1035 = new Class2019("en_us", "US", "English", false);
    private Map<String, Class2019> field1036 = ImmutableMap.of("en_us", field1035);

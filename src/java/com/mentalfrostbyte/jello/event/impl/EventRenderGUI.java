@@ -1,7 +1,6 @@
 package com.mentalfrostbyte.jello.event.impl;
 
 public class EventRenderGUI extends Class4406 {
-    private static String[] field21521;
     public boolean field21522;
 
     public EventRenderGUI(boolean var1) {
