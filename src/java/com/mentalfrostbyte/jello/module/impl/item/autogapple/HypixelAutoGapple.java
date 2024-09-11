@@ -32,8 +32,8 @@ public class HypixelAutoGapple extends PremiumModule {
     }
 
     @EventTarget
-    public void onUpdate(EventUpdate var1) {
-        if (this.isEnabled() && var1.isPre() && !(mc.currentScreen instanceof ChestScreen)) {
+    public void onUpdate(EventUpdate event) {
+        if (this.isEnabled() && event.isPre() && !(mc.currentScreen instanceof ChestScreen)) {
             if (this.gappleCooldown < 20) {
                 this.gappleCooldown++;
             }
@@ -59,7 +59,7 @@ public class HypixelAutoGapple extends PremiumModule {
             if (this.firePotionSlot >= 0 && this.currentTickCounter >= 0) {
                 this.currentTickCounter++;
                 if (this.currentTickCounter == 2) {
-                    var1.setYaw(var1.getYaw() + 1.0F);
+                    event.setYaw(event.getYaw() + 1.0F);
                 }
 
                 if (this.currentTickCounter != 1) {
