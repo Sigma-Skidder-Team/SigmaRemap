@@ -5,6 +5,8 @@ import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
@@ -60,10 +62,10 @@ public class ArmorItem extends Item implements Class3255 {
       Class3357.method11931(this, field18780);
       Builder var6 = ImmutableMultimap.builder();
       UUID var7 = field18779[var2.method8773()];
-      var6.put(Attributes.field42113, new AttributeModifier(var7, "Armor modifier", (double)this.field18782, AttributeModifierOperation.ADDITION));
-      var6.put(Attributes.field42114, new AttributeModifier(var7, "Armor toughness", (double)this.field18783, AttributeModifierOperation.ADDITION));
+      var6.put(Attributes.field42113, new AttributeModifier(var7, "Armor modifier", (double)this.field18782, AttributeModifier.Operation.ADDITION));
+      var6.put(Attributes.field42114, new AttributeModifier(var7, "Armor toughness", (double)this.field18783, AttributeModifier.Operation.ADDITION));
       if (var1 == Class2114.field13779) {
-         var6.put(Attributes.field42107, new AttributeModifier(var7, "Armor knockback resistance", (double)this.field18784, AttributeModifierOperation.ADDITION));
+         var6.put(Attributes.field42107, new AttributeModifier(var7, "Armor knockback resistance", (double)this.field18784, AttributeModifier.Operation.ADDITION));
       }
 
       this.field18786 = var6.build();

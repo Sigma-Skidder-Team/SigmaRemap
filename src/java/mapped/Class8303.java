@@ -9,8 +9,10 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8303 implements ArgumentType<ResourceLocation> {
@@ -59,7 +61,7 @@ public class Class8303 implements ArgumentType<ResourceLocation> {
 
    public static Attribute method29035(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
       ResourceLocation var4 = (ResourceLocation)var0.getArgument(var1, ResourceLocation.class);
-      return Registry.field16087.method9187(var4).orElseThrow(() -> field35697.create(var4));
+      return Registry.ATTRIBUTE.method9187(var4).orElseThrow(() -> field35697.create(var4));
    }
 
    public static ResourceLocation method29036(CommandContext<Class6619> var0, String var1) {

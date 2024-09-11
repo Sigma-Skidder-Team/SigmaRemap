@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 public class Class8231 implements Class8232 {
    private static String[] field35346;

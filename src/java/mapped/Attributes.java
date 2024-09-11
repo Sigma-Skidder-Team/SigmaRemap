@@ -1,5 +1,8 @@
 package mapped;
 
+import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.util.registry.Registry;
+
 public class Attributes {
    public static final Attribute field42105 = method34279(
       "generic.max_health", new Class4870("attribute.name.generic.max_health", 20.0, 1.0, 1024.0).method15030(true)
@@ -32,6 +35,6 @@ public class Attributes {
    );
 
    private static Attribute method34279(String var0, Attribute var1) {
-      return Registry.<Attribute>method9194(Registry.field16087, var0, var1);
+      return Registry.<Attribute>method9194(Registry.ATTRIBUTE, var0, var1);
    }
 }

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.util.registry.Registry;
 
 public class Class4470 extends Class4457 {
    private final Class8812 field21659;

@@ -20,6 +20,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.LongArrayNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
@@ -104,14 +105,14 @@ public class Class9725 {
          if (!var9.contains("TileTicks", 9)) {
             var41 = var13;
          } else {
-            var41 = Class6801.<Block>method20722(var9.method131("TileTicks", 10), Registry.BLOCK::getKey, Registry.BLOCK::method9184);
+            var41 = Class6801.<Block>method20722(var9.method131("TileTicks", 10), Registry.BLOCK::getKey, Registry.BLOCK::getOrDefault);
          }
 
          Object var44;
          if (!var9.contains("LiquidTicks", 9)) {
             var44 = var14;
          } else {
-            var44 = Class6801.<Fluid>method20722(var9.method131("LiquidTicks", 10), Registry.field16070::getKey, Registry.field16070::method9184);
+            var44 = Class6801.<Fluid>method20722(var9.method131("LiquidTicks", 10), Registry.field16070::getKey, Registry.field16070::getOrDefault);
          }
 
          var43 = new Chunk(

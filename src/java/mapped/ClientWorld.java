@@ -18,9 +18,9 @@ import net.minecraft.network.Packet;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
@@ -29,9 +29,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.function.BooleanSupplier;
-import java.util.function.Predicate;
 import java.util.function.Supplier;
-import java.util.stream.Stream;
 
 public class ClientWorld extends World {
    public final Int2ObjectMap<Entity> field9025 = new Int2ObjectOpenHashMap();

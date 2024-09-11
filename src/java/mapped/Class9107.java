@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.registry.Registry;
 
 public class Class9107<P extends Class6896> {
    public static final Class9107<Class6897> field41831 = method33959("straight_trunk_placer", Class6897.field29889);

@@ -8,6 +8,7 @@ import net.minecraft.network.play.server.SChangeBlockPacket;
 import net.minecraft.network.play.server.SChunkDataPacket;
 import net.minecraft.network.play.server.SMultiBlockChangePacket;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 
 public class Class8920 {
    private static String[] field40380;

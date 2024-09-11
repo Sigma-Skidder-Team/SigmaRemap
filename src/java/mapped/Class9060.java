@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 public class Class9060 {
    @Deprecated

@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class8463 {
@@ -44,7 +45,7 @@ public class Class8463 {
          Fluid var4 = null;
          if (var3.has("fluid")) {
             ResourceLocation var5 = new ResourceLocation(JSONUtils.getString(var3, "fluid"));
-            var4 = Registry.field16070.method9184(var5);
+            var4 = Registry.field16070.getOrDefault(var5);
          }
 
          ITag var7 = null;

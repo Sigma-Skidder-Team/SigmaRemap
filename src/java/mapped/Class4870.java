@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.ai.attributes.Attribute;
+
 public class Class4870 extends Attribute {
    private final double field22697;
    private final double field22698;

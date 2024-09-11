@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 public class Class8695 {
    public static final Class7131 field39239 = method31321("empty", new Class4938());

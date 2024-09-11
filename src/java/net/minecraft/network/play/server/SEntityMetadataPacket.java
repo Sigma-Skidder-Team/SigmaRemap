@@ -1,6 +1,5 @@
 package net.minecraft.network.play.server;
 
-import mapped.Class9773;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
@@ -10,44 +9,43 @@ import java.io.IOException;
 import java.util.List;
 
 public class SEntityMetadataPacket implements Packet<IClientPlayNetHandler> {
-   private static String[] field24655;
-   private int field24656;
-   private List<Class9773<?>> field24657;
+   private int entityId;
+   private List < EntityDataManager.DataEntry<? >> dataManagerEntries;
 
    public SEntityMetadataPacket() {
    }
 
-   public SEntityMetadataPacket(int var1, EntityDataManager var2, boolean var3) {
-      this.field24656 = var1;
+   public SEntityMetadataPacket(int var1, EntityDataManager dataManagerIn, boolean var3) {
+      this.entityId = var1;
       if (!var3) {
-         this.field24657 = var2.method35449();
+         this.dataManagerEntries = dataManagerIn.getDirty();
       } else {
-         this.field24657 = var2.method35450();
-         var2.method35457();
+         this.dataManagerEntries = dataManagerIn.getAll();
+         dataManagerIn.setClean();
       }
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24656 = var1.readVarInt();
-      this.field24657 = EntityDataManager.method35452(var1);
+      this.entityId = var1.readVarInt();
+      this.dataManagerEntries = EntityDataManager.readEntries(var1);
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeVarInt(this.field24656);
-      EntityDataManager.method35448(this.field24657, var1);
+      var1.writeVarInt(this.entityId);
+      EntityDataManager.writeEntries(this.dataManagerEntries, var1);
    }
 
    public void processPacket(IClientPlayNetHandler var1) {
       var1.handleEntityMetadata(this);
    }
 
-   public List<Class9773<?>> method17469() {
-      return this.field24657;
+   public List<EntityDataManager.DataEntry<?>> getDataManagerEntries() {
+      return this.dataManagerEntries;
    }
 
-   public int method17470() {
-      return this.field24656;
+   public int getEntityId() {
+      return this.entityId;
    }
 }

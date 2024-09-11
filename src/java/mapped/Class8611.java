@@ -5,6 +5,8 @@ import com.mojang.serialization.DynamicOps;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.MapLike;
 import com.mojang.serialization.RecordBuilder;
+import net.minecraft.util.registry.Registry;
+
 import java.util.stream.Stream;
 
 public final class Class8611<E> extends MapCodec<Registry<E>> {

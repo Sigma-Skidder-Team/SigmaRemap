@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -28,7 +30,7 @@ import java.util.function.Predicate;
 
 public class ZombieEntity extends Class1009 {
    private static final UUID field5758 = UUID.fromString("B9766B59-9566-4402-BC1F-2EE2A276D836");
-   private static final AttributeModifier field5759 = new AttributeModifier(field5758, "Baby speed boost", 0.5, AttributeModifierOperation.field13353);
+   private static final AttributeModifier field5759 = new AttributeModifier(field5758, "Baby speed boost", 0.5, AttributeModifier.Operation.field13353);
    private static final DataParameter<Boolean> field5760 = EntityDataManager.<Boolean>createKey(ZombieEntity.class, DataSerializers.field33398);
    private static final DataParameter<Integer> field5761 = EntityDataManager.<Integer>createKey(ZombieEntity.class, DataSerializers.VARINT);
    private static final DataParameter<Boolean> field5762 = EntityDataManager.<Boolean>createKey(ZombieEntity.class, DataSerializers.field33398);
@@ -263,8 +265,8 @@ public class ZombieEntity extends Class1009 {
                      var10.method4233(var6);
                      var10.method4276(var5, this.world.method6807(var10.getPosition()), Class2202.field14400, (Class5093)null, (CompoundNBT)null);
                      var5.method6995(var10);
-                     this.getAttribute(Attributes.field42116).method38668(new AttributeModifier("Zombie reinforcement caller charge", -0.05F, AttributeModifierOperation.ADDITION));
-                     var10.getAttribute(Attributes.field42116).method38668(new AttributeModifier("Zombie reinforcement callee charge", -0.05F, AttributeModifierOperation.ADDITION));
+                     this.getAttribute(Attributes.field42116).method38668(new AttributeModifier("Zombie reinforcement caller charge", -0.05F, AttributeModifier.Operation.ADDITION));
+                     var10.getAttribute(Attributes.field42116).method38668(new AttributeModifier("Zombie reinforcement callee charge", -0.05F, AttributeModifier.Operation.ADDITION));
                      break;
                   }
                }
@@ -443,16 +445,16 @@ public class ZombieEntity extends Class1009 {
 
    public void method4662(float var1) {
       this.method4663();
-      this.getAttribute(Attributes.field42107).method38668(new AttributeModifier("Random spawn bonus", this.rand.nextDouble() * 0.05F, AttributeModifierOperation.ADDITION));
+      this.getAttribute(Attributes.field42107).method38668(new AttributeModifier("Random spawn bonus", this.rand.nextDouble() * 0.05F, AttributeModifier.Operation.ADDITION));
       double var4 = this.rand.nextDouble() * 1.5 * (double)var1;
       if (var4 > 1.0) {
-         this.getAttribute(Attributes.field42106).method38668(new AttributeModifier("Random zombie-spawn bonus", var4, AttributeModifierOperation.MULTIPLY_TOTAL));
+         this.getAttribute(Attributes.field42106).method38668(new AttributeModifier("Random zombie-spawn bonus", var4, AttributeModifier.Operation.MULTIPLY_TOTAL));
       }
 
       if (this.rand.nextFloat() < var1 * 0.05F) {
          this.getAttribute(Attributes.field42116)
-            .method38668(new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 0.25 + 0.5, AttributeModifierOperation.ADDITION));
-         this.getAttribute(Attributes.field42105).method38668(new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 3.0 + 1.0, AttributeModifierOperation.MULTIPLY_TOTAL));
+            .method38668(new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 0.25 + 0.5, AttributeModifier.Operation.ADDITION));
+         this.getAttribute(Attributes.field42105).method38668(new AttributeModifier("Leader zombie bonus", this.rand.nextDouble() * 3.0 + 1.0, AttributeModifier.Operation.MULTIPLY_TOTAL));
          this.method4656(this.method4642());
       }
    }

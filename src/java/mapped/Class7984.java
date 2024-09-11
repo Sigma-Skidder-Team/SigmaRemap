@@ -7,6 +7,7 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.ImmutableSet.Builder;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 import java.util.ArrayList;
 import java.util.Collection;

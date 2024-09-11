@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Lifecycle;
+import net.minecraft.util.registry.Registry;
 
 import java.util.OptionalInt;
 

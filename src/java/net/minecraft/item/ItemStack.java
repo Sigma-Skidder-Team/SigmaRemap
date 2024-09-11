@@ -22,6 +22,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
@@ -30,6 +32,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
@@ -97,7 +100,7 @@ public final class ItemStack {
    }
 
    private ItemStack(CompoundNBT var1) {
-      this.field39978 = Registry.ITEM.method9184(new ResourceLocation(var1.getString("id")));
+      this.field39978 = Registry.ITEM.getOrDefault(new ResourceLocation(var1.getString("id")));
       this.field39976 = var1.getByte("Count");
       if (var1.contains("tag", 10)) {
          this.field39979 = var1.getCompound("tag");
@@ -547,21 +550,21 @@ public final class ItemStack {
 
                for (Entry var14 : var30.entries()) {
                   AttributeModifier var15 = (AttributeModifier)var14.getValue();
-                  double var16 = var15.method37933();
+                  double var16 = var15.getAmount();
                   boolean var18 = false;
                   if (var1 != null) {
-                     if (var15.method37930() == Item.field18733) {
+                     if (var15.getID() == Item.field18733) {
                         var16 += var1.method3087(Attributes.field42110);
                         var16 += (double) EnchantmentHelper.method26318(this, CreatureAttribute.field33505);
                         var18 = true;
-                     } else if (var15.method37930() == Item.field18734) {
+                     } else if (var15.getID() == Item.field18734) {
                         var16 += var1.method3087(Attributes.ATTACK_SPEED);
                         var18 = true;
                      }
                   }
 
                   double var19;
-                  if (var15.method37932() == AttributeModifierOperation.field13353 || var15.method37932() == AttributeModifierOperation.MULTIPLY_TOTAL) {
+                  if (var15.getOperation() == AttributeModifier.Operation.field13353 || var15.getOperation() == AttributeModifier.Operation.MULTIPLY_TOTAL) {
                      var19 = var16 * 100.0;
                   } else if (((Attribute)var14.getKey()).equals(Attributes.field42107)) {
                      var19 = var16 * 10.0;
@@ -574,7 +577,7 @@ public final class ItemStack {
                         new StringTextComponent(" ")
                            .append(
                               new TranslationTextComponent(
-                                 "attribute.modifier.equals." + var15.method37932().method8685(),
+                                 "attribute.modifier.equals." + var15.getOperation().getId(),
                                  field39974.format(var19),
                                  new TranslationTextComponent(((Attribute)var14.getKey()).method15032())
                               )
@@ -584,7 +587,7 @@ public final class ItemStack {
                   } else if (var16 > 0.0) {
                      var5.add(
                         new TranslationTextComponent(
-                              "attribute.modifier.plus." + var15.method37932().method8685(),
+                              "attribute.modifier.plus." + var15.getOperation().getId(),
                               field39974.format(var19),
                               new TranslationTextComponent(((Attribute)var14.getKey()).method15032())
                            )
@@ -594,7 +597,7 @@ public final class ItemStack {
                      var19 *= -1.0;
                      var5.add(
                         new TranslationTextComponent(
-                              "attribute.modifier.take." + var15.method37932().method8685(),
+                              "attribute.modifier.take." + var15.getOperation().getId(),
                               field39974.format(var19),
                               new TranslationTextComponent(((Attribute)var14.getKey()).method15032())
                            )
@@ -767,10 +770,10 @@ public final class ItemStack {
          for (int var6 = 0; var6 < var5.size(); var6++) {
             CompoundNBT var7 = var5.method153(var6);
             if (!var7.contains("Slot", 8) || var7.getString("Slot").equals(var1.method8775())) {
-               Optional<Attribute> var8 = Registry.field16087.method9187(ResourceLocation.method8289(var7.getString("AttributeName")));
+               Optional<Attribute> var8 = Registry.ATTRIBUTE.method9187(ResourceLocation.method8289(var7.getString("AttributeName")));
                if (var8.isPresent()) {
                   AttributeModifier var9 = AttributeModifier.method37935(var7);
-                  if (var9 != null && var9.method37930().getLeastSignificantBits() != 0L && var9.method37930().getMostSignificantBits() != 0L) {
+                  if (var9 != null && var9.getID().getLeastSignificantBits() != 0L && var9.getID().getMostSignificantBits() != 0L) {
                      var4.put(var8.get(), var9);
                   }
                }
@@ -791,7 +794,7 @@ public final class ItemStack {
 
       ListNBT var6 = this.field39979.method131("AttributeModifiers", 10);
       CompoundNBT var7 = var2.method37934();
-      var7.method109("AttributeName", Registry.field16087.getKey(var1).toString());
+      var7.method109("AttributeName", Registry.ATTRIBUTE.getKey(var1).toString());
       if (var3 != null) {
          var7.method109("Slot", var3.method8775());
       }

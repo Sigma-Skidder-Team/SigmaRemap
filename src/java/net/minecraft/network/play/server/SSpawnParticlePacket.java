@@ -5,6 +5,7 @@ import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.util.registry.Registry;
 
 import java.io.IOException;
 

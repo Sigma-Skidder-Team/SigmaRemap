@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.registry.Registry;
 
 public class Class7921 {
    private static final int[] field33912 = new int[]{0, 10, 70, 150, 250};

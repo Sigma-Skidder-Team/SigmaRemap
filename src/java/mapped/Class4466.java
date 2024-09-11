@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.registry.Registry;
 
 public class Class4466 extends Class4457 {
    private final Block field21651;

@@ -4,6 +4,7 @@ import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
 import java.io.IOException;

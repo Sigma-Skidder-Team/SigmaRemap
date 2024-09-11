@@ -9,6 +9,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
 
 import java.util.Collection;
@@ -75,7 +76,7 @@ public class Class9716 {
    }
 
    public static Block method38066(ResourceLocation var0) {
-      return Registry.BLOCK.method9193(var0) ? Registry.BLOCK.method9184(var0) : null;
+      return Registry.BLOCK.method9193(var0) ? Registry.BLOCK.getOrDefault(var0) : null;
    }
 
    public static int method38067(BlockState var0) {

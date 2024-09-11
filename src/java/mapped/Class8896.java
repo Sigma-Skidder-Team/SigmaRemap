@@ -5,6 +5,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -737,7 +738,7 @@ public class Class8896 {
          var1 = var1.toLowerCase();
          ResourceLocation var4 = new ResourceLocation(var1);
          Class2351 var5 = Registry.field16090;
-         return var5.method9193(var4) ? (Class8395)var5.method9184(var4) : null;
+         return var5.method9193(var4) ? (Class8395)var5.getOrDefault(var4) : null;
       } else {
          return null;
       }

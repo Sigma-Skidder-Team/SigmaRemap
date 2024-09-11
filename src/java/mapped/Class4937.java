@@ -4,6 +4,7 @@ import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 public class Class4937 extends Class4936<Class4695> {
    public void method15249(JsonObject var1, Class4695 var2, JsonSerializationContext var3) {

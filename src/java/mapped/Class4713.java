@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.registry.Registry;
+
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 

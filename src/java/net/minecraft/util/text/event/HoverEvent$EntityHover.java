@@ -9,6 +9,7 @@ import mapped.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.*;
 
 import javax.annotation.Nullable;
@@ -34,7 +35,7 @@ public class HoverEvent$EntityHover {
          return null;
       } else {
          JsonObject entitytype = element.getAsJsonObject();
-         EntityType uuid = Registry.ENTITY_TYPE.method9184(new ResourceLocation(JSONUtils.getString(entitytype, "type")));
+         EntityType uuid = Registry.ENTITY_TYPE.getOrDefault(new ResourceLocation(JSONUtils.getString(entitytype, "type")));
          UUID itextcomponent = UUID.fromString(JSONUtils.getString(entitytype, "id"));
          IFormattableTextComponent var6 = ITextComponent$Serializer.func_240641_a_(entitytype.get("name"));
          return new HoverEvent$EntityHover(uuid, itextcomponent, var6);
@@ -46,7 +47,7 @@ public class HoverEvent$EntityHover {
       try {
          CompoundNBT itextcomponent = Class7671.method25188(component.getString());
          IFormattableTextComponent entitytype = ITextComponent$Serializer.func_240643_a_(itextcomponent.getString("name"));
-         EntityType uuid = Registry.ENTITY_TYPE.method9184(new ResourceLocation(itextcomponent.getString("type")));
+         EntityType uuid = Registry.ENTITY_TYPE.getOrDefault(new ResourceLocation(itextcomponent.getString("type")));
          UUID var6 = UUID.fromString(itextcomponent.getString("id"));
          return new HoverEvent$EntityHover(uuid, var6, entitytype);
       } catch (JsonSyntaxException | CommandSyntaxException var7) {

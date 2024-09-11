@@ -14,6 +14,7 @@ import net.minecraft.network.play.server.SChunkDataPacket;
 import net.minecraft.network.play.server.SMultiBlockChangePacket;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import org.lwjgl.opengl.GL11;
 
 import java.util.*;

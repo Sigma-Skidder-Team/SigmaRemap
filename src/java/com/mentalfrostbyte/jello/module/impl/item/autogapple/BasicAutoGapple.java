@@ -12,6 +12,7 @@ import mapped.*;
 import net.minecraft.item.Items;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
+import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SEntityMetadataPacket;
 import net.minecraft.util.Hand;
 
@@ -100,8 +101,8 @@ public class BasicAutoGapple extends Module {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SEntityMetadataPacket) {
                 SEntityMetadataPacket var5 = (SEntityMetadataPacket) var4;
-                if (var5.method17470() == mc.player.getEntityId()) {
-                    for (Class9773 var7 : var5.method17469()) {
+                if (var5.getEntityId() == mc.player.getEntityId()) {
+                    for (EntityDataManager.DataEntry var7 : var5.getDataManagerEntries()) {
                         DataParameter var8 = var7.method38447();
                         if (var8.method35015() == 14) {
                             mc.player.inventory.currentItem = this.field23550;

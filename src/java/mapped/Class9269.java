@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.registry.Registry;
 
 public class Class9269<P extends Class6166> {
    public static final Class9269<Class6168> field42638 = method34905("simple_block_placer", Class6168.field27596);

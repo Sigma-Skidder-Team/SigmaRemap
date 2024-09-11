@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.util.registry.Registry;
 
 public class Class7438 implements IParticleData {
    public static final IDeserializer<Class7438> field32007 = new Class6866();

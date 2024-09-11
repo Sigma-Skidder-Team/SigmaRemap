@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import mapped.MathHelper;
 import net.minecraft.network.PacketBuffer;
-import mapped.Registry;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;

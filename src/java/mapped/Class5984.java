@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.registry.Registry;
 
 public class Class5984<P extends Class6819> {
    public static final Class5984<Class6824> field26059 = method18558("blob_foliage_placer", Class6824.field29696);

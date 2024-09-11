@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonSyntaxException;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 public abstract class Class8924 {
    public static final Class8924 field40401 = new Class8925();

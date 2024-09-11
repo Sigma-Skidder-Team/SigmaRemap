@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TextFormatting;
 
 public class Class9008 {

@@ -5,6 +5,8 @@ import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -18,8 +20,8 @@ public class ItemSword extends Class3266 implements Class3260 {
       super(var1, var4);
       this.field18761 = (float)var2 + var1.method9012();
       Builder var7 = ImmutableMultimap.builder();
-      var7.put(Attributes.field42110, new AttributeModifier(field18733, "Weapon modifier", (double)this.field18761, AttributeModifierOperation.ADDITION));
-      var7.put(Attributes.ATTACK_SPEED, new AttributeModifier(field18734, "Weapon modifier", (double)var3, AttributeModifierOperation.ADDITION));
+      var7.put(Attributes.field42110, new AttributeModifier(field18733, "Weapon modifier", (double)this.field18761, AttributeModifier.Operation.ADDITION));
+      var7.put(Attributes.ATTACK_SPEED, new AttributeModifier(field18734, "Weapon modifier", (double)var3, AttributeModifier.Operation.ADDITION));
       this.field18762 = var7.build();
    }
 

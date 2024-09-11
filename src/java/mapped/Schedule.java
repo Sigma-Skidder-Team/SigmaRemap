@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.util.registry.Registry;
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;

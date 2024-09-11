@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.registry.Registry;
 
 public final class Class6472 implements Class6466<Class7921> {
    private static String[] field28419;

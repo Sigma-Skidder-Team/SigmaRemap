@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.serialization.DynamicOps;
 import com.mojang.serialization.RecordBuilder;
+import net.minecraft.util.registry.Registry;
+
 import java.util.Optional;
 
 public final class Class9802<U> {

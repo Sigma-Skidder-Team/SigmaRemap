@@ -108,7 +108,7 @@ public class OldHitting extends Module {
                 if (var1.getPacket() instanceof SEntityEquipmentPacket) {
                     SEntityEquipmentPacket var4 = (SEntityEquipmentPacket) var1.getPacket();
 
-                    var4.method17562().removeIf(var6 -> var4.method17561() == mc.player.getEntityId()
+                    var4.func_241790_c_().removeIf(var6 -> var4.getEntityID() == mc.player.getEntityId()
                             && var6.getFirst() == EquipmentSlotType.field13732
                             && var6.getSecond() != null
                             && var6.getSecond().getItem() == Items.field38119);

@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.function.Consumer;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

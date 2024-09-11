@@ -8,9 +8,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -157,7 +160,7 @@ public class Class9741 {
             if (!var11.isEmpty()) {
                for (Entry var13 : var11.entrySet()) {
                   AttributeModifier var14 = (AttributeModifier)var13.getValue();
-                  AttributeModifier var15 = new AttributeModifier(var14.method37931(), var10.method22302(var8.method8629(), var14), var14.method37932());
+                  AttributeModifier var15 = new AttributeModifier(var14.method37931(), var10.method22302(var8.method8629(), var14), var14.getOperation());
                   var6.add(new Pair(var13.getKey(), var15));
                }
             }
@@ -182,12 +185,12 @@ public class Class9741 {
 
          for (Pair var21 : var6) {
             AttributeModifier var22 = (AttributeModifier)var21.getSecond();
-            double var16 = var22.method37933();
+            double var16 = var22.getAmount();
             double var18;
-            if (var22.method37932() != AttributeModifierOperation.field13353 && var22.method37932() != AttributeModifierOperation.MULTIPLY_TOTAL) {
-               var18 = var22.method37933();
+            if (var22.getOperation() != AttributeModifier.Operation.field13353 && var22.getOperation() != AttributeModifier.Operation.MULTIPLY_TOTAL) {
+               var18 = var22.getAmount();
             } else {
-               var18 = var22.method37933() * 100.0;
+               var18 = var22.getAmount() * 100.0;
             }
 
             if (!(var16 > 0.0)) {
@@ -195,7 +198,7 @@ public class Class9741 {
                   var18 *= -1.0;
                   var1.add(
                      new TranslationTextComponent(
-                           "attribute.modifier.take." + var22.method37932().method8685(),
+                           "attribute.modifier.take." + var22.getOperation().getId(),
                            ItemStack.field39974.format(var18),
                            new TranslationTextComponent(((Attribute)var21.getFirst()).method15032())
                         )
@@ -205,7 +208,7 @@ public class Class9741 {
             } else {
                var1.add(
                   new TranslationTextComponent(
-                        "attribute.modifier.plus." + var22.method37932().method8685(),
+                        "attribute.modifier.plus." + var22.getOperation().getId(),
                         ItemStack.field39974.format(var18),
                         new TranslationTextComponent(((Attribute)var21.getFirst()).method15032())
                      )

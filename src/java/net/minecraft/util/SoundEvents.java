@@ -1,6 +1,6 @@
 package net.minecraft.util;
 
-import mapped.Registry;
+import net.minecraft.util.registry.Registry;
 
 public class SoundEvents {
    public static final SoundEvent field26313 = method18806("ambient.cave");

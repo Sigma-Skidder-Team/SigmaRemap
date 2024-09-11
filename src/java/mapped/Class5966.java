@@ -1,6 +1,8 @@
 package mapped;
 
 import java.util.function.Function;
+
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class5966 {

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.registry.Registry;
 
 public class Class7660 {
    public static Class9028 method25180(CompoundNBT var0) {

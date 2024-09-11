@@ -13,6 +13,7 @@ import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8050 implements ArgumentType<IParticleData> {

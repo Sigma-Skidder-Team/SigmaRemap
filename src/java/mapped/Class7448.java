@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -140,7 +141,7 @@ public class Class7448 implements Class7443 {
          Class9727[] var10 = var9.method32386(this.field32022);
          return var10 == null ? null : var10;
       } else {
-         Block var4 = Registry.BLOCK.method9184(var3);
+         Block var4 = Registry.BLOCK.getOrDefault(var3);
          return new Class9727[]{new Class9727(Class9716.method38065(var4))};
       }
    }

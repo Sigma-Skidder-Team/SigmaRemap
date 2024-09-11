@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.util.registry.Registry;
+
 import java.util.function.Function;
 
 public class Class8643<E, T extends Class7129<E>> {

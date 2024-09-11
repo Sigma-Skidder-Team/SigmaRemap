@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Lifecycle;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
@@ -41,14 +42,14 @@ public class Class2351<T> extends SimpleRegistry<T> {
 
    @Nonnull
    @Override
-   public T method9184(ResourceLocation var1) {
-      Object var4 = super.method9184(var1);
+   public T getOrDefault(ResourceLocation var1) {
+      Object var4 = super.getOrDefault(var1);
       return (T)(var4 != null ? var4 : this.field16152);
    }
 
    @Override
    public Optional<T> method9187(ResourceLocation var1) {
-      return Optional.<T>ofNullable(super.method9184(var1));
+      return Optional.<T>ofNullable(super.getOrDefault(var1));
    }
 
    @Nonnull

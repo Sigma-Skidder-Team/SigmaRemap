@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import mapped.Class2266;
 import net.minecraft.network.PacketBuffer;
-import mapped.Registry;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.util.SoundEvent;

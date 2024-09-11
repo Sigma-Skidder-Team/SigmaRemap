@@ -6,6 +6,7 @@ import mapped.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CCreativeInventoryActionPacket;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 
 public class Enchant extends Command {
@@ -23,7 +24,7 @@ public class Enchant extends Command {
 
                for (ResourceLocation var9 : Registry.field16073.method9190()) {
                   if (var2[0].method30899().equals(var9.getPath())) {
-                     var6 = Registry.field16073.method9184(var9);
+                     var6 = Registry.field16073.getOrDefault(var9);
                   }
                }
 

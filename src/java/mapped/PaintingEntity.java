@@ -12,6 +12,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
@@ -72,7 +73,7 @@ public class PaintingEntity extends Class995 {
 
    @Override
    public void readAdditional(CompoundNBT var1) {
-      this.field5496 = Registry.field16079.method9184(ResourceLocation.method8289(var1.getString("Motive")));
+      this.field5496 = Registry.field16079.getOrDefault(ResourceLocation.method8289(var1.getString("Motive")));
       this.field5489 = Direction.method547(var1.getByte("Facing"));
       super.readAdditional(var1);
       this.method4077(this.field5489);

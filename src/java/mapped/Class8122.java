@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.registry.Registry;
+
 public class Class8122 {
    private static final EquipmentSlotType[] field34895 = new EquipmentSlotType[]{EquipmentSlotType.field13736, EquipmentSlotType.field13735, EquipmentSlotType.field13734, EquipmentSlotType.field13733};
    public static final Class6069 field34896 = method28125("protection", new ProtectionEnchantment(Class1937.field12586, Class1957.field12753, field34895));

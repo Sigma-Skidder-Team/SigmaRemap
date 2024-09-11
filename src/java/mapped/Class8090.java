@@ -12,6 +12,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.item.Items;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import org.lwjgl.opengl.GL11;
 
 public class Class8090 {
@@ -187,7 +188,7 @@ public class Class8090 {
 
    private Item method27999(String var1) {
       ResourceLocation var4 = new ResourceLocation(var1);
-      return Registry.ITEM.method9193(var4) ? Registry.ITEM.method9184(var4) : null;
+      return Registry.ITEM.method9193(var4) ? Registry.ITEM.getOrDefault(var4) : null;
    }
 
    private static String method28000(String var0, String var1, String var2, String var3, String var4, int var5, Map<String, String> var6, boolean var7) {

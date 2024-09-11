@@ -7,6 +7,7 @@ import java.util.Map;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class9222 {

@@ -9,6 +9,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class9449 {
@@ -59,7 +60,7 @@ public class Class9449 {
          Block var5 = null;
          if (var3.has("block")) {
             ResourceLocation var6 = new ResourceLocation(JSONUtils.getString(var3, "block"));
-            var5 = Registry.BLOCK.method9184(var6);
+            var5 = Registry.BLOCK.getOrDefault(var6);
          }
 
          ITag var8 = null;

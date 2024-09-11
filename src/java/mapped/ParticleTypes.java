@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.particles.RedstoneParticleData;
+import net.minecraft.util.registry.Registry;
 
 import java.util.function.Function;
 

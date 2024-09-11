@@ -7,6 +7,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 
 import java.util.HashSet;
 import java.util.Map;

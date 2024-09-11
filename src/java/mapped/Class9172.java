@@ -6,6 +6,7 @@ import com.google.gson.JsonParser;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -380,7 +381,7 @@ public class Class9172 {
 
    private static void method34274() {
       for (ResourceLocation var3 : Registry.BLOCK.method9190()) {
-         Block var4 = Registry.BLOCK.method9184(var3);
+         Block var4 = Registry.BLOCK.getOrDefault(var3);
          int var5 = var4.method11579().method23490();
          Class9590[] var6 = method34263(var5);
          if (var6 != null) {

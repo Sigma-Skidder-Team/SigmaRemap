@@ -1,6 +1,10 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
+import net.minecraft.util.registry.Registry;
+
 import java.util.Map;
 
 public class Class7037 {
@@ -10,7 +14,7 @@ public class Class7037 {
    private ModifiableAttributeInstance method21847(Attribute var1) {
       ModifiableAttributeInstance var4 = new ModifiableAttributeInstance(var1, var2 -> {
          if (this.field30366) {
-            throw new UnsupportedOperationException("Tried to change value for default attribute instance: " + Registry.field16087.getKey(var1));
+            throw new UnsupportedOperationException("Tried to change value for default attribute instance: " + Registry.ATTRIBUTE.getKey(var1));
          }
       });
       this.field30365.put(var1, var4);

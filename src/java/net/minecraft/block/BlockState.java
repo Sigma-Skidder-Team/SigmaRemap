@@ -6,6 +6,7 @@ import com.mojang.serialization.MapCodec;
 import mapped.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
 
 import java.util.concurrent.atomic.AtomicInteger;

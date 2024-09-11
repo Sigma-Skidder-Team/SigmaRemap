@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.registry.Registry;
+
 import java.util.List;
 import java.util.function.Supplier;
 

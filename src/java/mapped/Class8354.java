@@ -19,6 +19,7 @@ import net.minecraft.nbt.IntArrayNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.UUIDCodec;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -185,7 +186,7 @@ public final class Class8354 {
       if (!var0.contains("Name", 8)) {
          return Blocks.AIR.method11579();
       } else {
-         Block var3 = Registry.BLOCK.method9184(new ResourceLocation(var0.getString("Name")));
+         Block var3 = Registry.BLOCK.getOrDefault(new ResourceLocation(var0.getString("Name")));
          BlockState var4 = var3.method11579();
          if (var0.contains("Properties", 10)) {
             CompoundNBT var5 = var0.getCompound("Properties");

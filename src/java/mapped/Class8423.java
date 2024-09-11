@@ -5,6 +5,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.DynamicOps;
 import com.mojang.serialization.Lifecycle;
+import net.minecraft.util.registry.Registry;
 
 public final class Class8423<E> implements Codec<SimpleRegistry<E>> {
    private final Codec<SimpleRegistry<E>> field36097;

@@ -12,6 +12,7 @@ import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectList;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -153,7 +154,7 @@ public class SimpleRegistry<T> extends MutableRegistry<T> {
 
    @Nullable
    @Override
-   public T method9184(ResourceLocation var1) {
+   public T getOrDefault(ResourceLocation var1) {
       return (T)this.field16144.get(var1);
    }
 

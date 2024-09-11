@@ -10,6 +10,7 @@ import java.util.Collection;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7822 implements ArgumentType<ResourceLocation> {

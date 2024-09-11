@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.*;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 import java.lang.reflect.Type;
 import java.util.function.Function;
@@ -32,7 +33,7 @@ public class Class2567<E, T extends Class7129<E>> implements JsonDeserializer<E>
       } else {
          JsonObject var6 = JSONUtils.method32781(var1, this.field16791);
          ResourceLocation var7 = new ResourceLocation(JSONUtils.getString(var6, this.field16792));
-         Class7129 var8 = this.field16790.method9184(var7);
+         Class7129 var8 = this.field16790.getOrDefault(var7);
          if (var8 != null) {
             return (E)var8.method22239().method15248(var6, var3);
          } else {

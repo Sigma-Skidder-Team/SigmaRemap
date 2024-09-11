@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.util.registry.Registry;
 
 public final class Class6482 implements Class6466<IParticleData> {
    private static String[] field28429;

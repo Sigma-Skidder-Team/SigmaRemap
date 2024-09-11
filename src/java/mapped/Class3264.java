@@ -5,6 +5,8 @@ import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -23,8 +25,8 @@ public class Class3264 extends Class3266 implements Class3260 {
       this.field18752 = var3.method9011();
       this.field18753 = var1 + var3.method9012();
       Builder var8 = ImmutableMultimap.builder();
-      var8.put(Attributes.field42110, new AttributeModifier(field18733, "Tool modifier", (double)this.field18753, AttributeModifierOperation.ADDITION));
-      var8.put(Attributes.ATTACK_SPEED, new AttributeModifier(field18734, "Tool modifier", (double)var2, AttributeModifierOperation.ADDITION));
+      var8.put(Attributes.field42110, new AttributeModifier(field18733, "Tool modifier", (double)this.field18753, AttributeModifier.Operation.ADDITION));
+      var8.put(Attributes.ATTACK_SPEED, new AttributeModifier(field18734, "Tool modifier", (double)var2, AttributeModifier.Operation.ADDITION));
       this.field18754 = var8.build();
    }
 

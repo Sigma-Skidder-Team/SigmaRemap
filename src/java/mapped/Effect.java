@@ -9,8 +9,12 @@ import javax.annotation.Nullable;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -127,7 +131,7 @@ public class Effect {
       return this.field30709;
    }
 
-   public Effect addAttributesModifier(Attribute var1, String var2, double var3, AttributeModifierOperation var5) {
+   public Effect addAttributesModifier(Attribute var1, String var2, double var3, AttributeModifier.Operation var5) {
       AttributeModifier var8 = new AttributeModifier(UUID.fromString(var2), this::method22294, var3, var5);
       this.field30707.put(var1, var8);
       return this;
@@ -152,13 +156,13 @@ public class Effect {
          if (var8 != null) {
             AttributeModifier var9 = (AttributeModifier)var7.getValue();
             var8.method38670(var9);
-            var8.method38668(new AttributeModifier(var9.method37930(), this.method22294() + " " + var3, this.method22302(var3, var9), var9.method37932()));
+            var8.method38668(new AttributeModifier(var9.getID(), this.method22294() + " " + var3, this.method22302(var3, var9), var9.getOperation()));
          }
       }
    }
 
    public double method22302(int var1, AttributeModifier var2) {
-      return var2.method37933() * (double)(var1 + 1);
+      return var2.getAmount() * (double)(var1 + 1);
    }
 
    public boolean method22303() {

@@ -5,6 +5,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -68,7 +69,7 @@ public abstract class Structure<C extends Class4698> {
       if ("INVALID".equals(var6)) {
          return Class5444.field24194;
       } else {
-         Structure var7 = Registry.field16114.method9184(new ResourceLocation(var6.toLowerCase(Locale.ROOT)));
+         Structure var7 = Registry.field16114.getOrDefault(new ResourceLocation(var6.toLowerCase(Locale.ROOT)));
          if (var7 == null) {
             field18057.error("Unknown feature id: {}", var6);
             return null;
@@ -87,7 +88,7 @@ public abstract class Structure<C extends Class4698> {
                   String var16 = var15.getString("id").toLowerCase(Locale.ROOT);
                   ResourceLocation var17 = new ResourceLocation(var16);
                   ResourceLocation var18 = field18078.getOrDefault(var17, var17);
-                  Class7792 var19 = Registry.field16116.method9184(var18);
+                  Class7792 var19 = Registry.field16116.getOrDefault(var18);
                   if (var19 == null) {
                      field18057.error("Unknown structure piece id: {}", var18);
                   } else {

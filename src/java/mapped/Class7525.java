@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.datafixers.util.Either;
 import com.mojang.serialization.Codec;
+import net.minecraft.util.registry.Registry;
+
 import java.util.function.Supplier;
 
 public interface Class7525<P extends Class7092> {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.registry.Registry;
+
 public class ContainerType<T extends Container> {
    public static final ContainerType<Class5813> field35648 = method29012("generic_9x1", Class5813::method18156);
    public static final ContainerType<Class5813> field35649 = method29012("generic_9x2", Class5813::method18157);

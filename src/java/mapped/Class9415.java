@@ -8,6 +8,7 @@ import com.google.gson.JsonSyntaxException;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 import java.util.Collections;
 import java.util.LinkedHashMap;

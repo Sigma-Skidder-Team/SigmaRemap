@@ -1,10 +1,12 @@
-package mapped;
+package net.minecraft.entity.ai.attributes;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import it.unimi.dsi.fastutil.objects.ObjectArraySet;
+import mapped.ListNBT;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.nbt.CompoundNBT;
 
 import java.util.Collection;
@@ -17,7 +19,7 @@ import javax.annotation.Nullable;
 
 public class ModifiableAttributeInstance {
    private final Attribute field45827;
-   private final Map<AttributeModifierOperation, Set<AttributeModifier>> field45828 = Maps.newEnumMap(AttributeModifierOperation.class);
+   private final Map<AttributeModifier.Operation, Set<AttributeModifier>> field45828 = Maps.newEnumMap(AttributeModifier.Operation.class);
    private final Map<UUID, AttributeModifier> field45829 = new Object2ObjectArrayMap();
    private final Set<AttributeModifier> field45830 = new ObjectArraySet();
    private double field45831;
@@ -31,11 +33,11 @@ public class ModifiableAttributeInstance {
       this.field45831 = var1.method15028();
    }
 
-   public Attribute method38659() {
+   public Attribute getAttribute() {
       return this.field45827;
    }
 
-   public double method38660() {
+   public double getBaseValue() {
       return this.field45831;
    }
 
@@ -46,11 +48,11 @@ public class ModifiableAttributeInstance {
       }
    }
 
-   public Set<AttributeModifier> method38662(AttributeModifierOperation var1) {
+   public Set<AttributeModifier> method38662(AttributeModifier.Operation var1) {
       return this.field45828.computeIfAbsent(var1, var0 -> Sets.newHashSet());
    }
 
-   public Set<AttributeModifier> method38663() {
+   public Set<AttributeModifier> getModifierListCopy() {
       return ImmutableSet.copyOf(this.field45829.values());
    }
 
@@ -60,13 +62,13 @@ public class ModifiableAttributeInstance {
    }
 
    public boolean method38665(AttributeModifier var1) {
-      return this.field45829.get(var1.method37930()) != null;
+      return this.field45829.get(var1.getID()) != null;
    }
 
    private void method38666(AttributeModifier var1) {
-      AttributeModifier var4 = this.field45829.putIfAbsent(var1.method37930(), var1);
+      AttributeModifier var4 = this.field45829.putIfAbsent(var1.getID(), var1);
       if (var4 == null) {
-         this.method38662(var1.method37932()).add(var1);
+         this.method38662(var1.getOperation()).add(var1);
          this.method38669();
       } else {
          throw new IllegalArgumentException("Modifier is already applied on this attribute!");
@@ -88,8 +90,8 @@ public class ModifiableAttributeInstance {
    }
 
    public void method38670(AttributeModifier var1) {
-      this.method38662(var1.method37932()).remove(var1);
-      this.field45829.remove(var1.method37930());
+      this.method38662(var1.getOperation()).remove(var1);
+      this.field45829.remove(var1.getID());
       this.field45830.remove(var1);
       this.method38669();
    }
@@ -112,7 +114,7 @@ public class ModifiableAttributeInstance {
    }
 
    public void method38673() {
-      for (AttributeModifier var4 : this.method38663()) {
+      for (AttributeModifier var4 : this.getModifierListCopy()) {
          this.method38670(var4);
       }
    }
@@ -127,26 +129,26 @@ public class ModifiableAttributeInstance {
    }
 
    private double method38675() {
-      double var3 = this.method38660();
+      double var3 = this.getBaseValue();
 
-      for (AttributeModifier var9 : this.method38676(AttributeModifierOperation.ADDITION)) {
-         var3 += var9.method37933();
+      for (AttributeModifier var9 : this.method38676(AttributeModifier.Operation.ADDITION)) {
+         var3 += var9.getAmount();
       }
 
       double var6 = var3;
 
-      for (AttributeModifier var10 : this.method38676(AttributeModifierOperation.field13353)) {
-         var6 += var3 * var10.method37933();
+      for (AttributeModifier var10 : this.method38676(AttributeModifier.Operation.field13353)) {
+         var6 += var3 * var10.getAmount();
       }
 
-      for (AttributeModifier var12 : this.method38676(AttributeModifierOperation.MULTIPLY_TOTAL)) {
-         var6 *= 1.0 + var12.method37933();
+      for (AttributeModifier var12 : this.method38676(AttributeModifier.Operation.MULTIPLY_TOTAL)) {
+         var6 *= 1.0 + var12.getAmount();
       }
 
       return this.field45827.method15031(var6);
    }
 
-   private Collection<AttributeModifier> method38676(AttributeModifierOperation var1) {
+   private Collection<AttributeModifier> method38676(AttributeModifier.Operation var1) {
       return this.field45828.getOrDefault(var1, Collections.<AttributeModifier>emptySet());
    }
 
@@ -163,7 +165,7 @@ public class ModifiableAttributeInstance {
 
    public CompoundNBT method38678() {
       CompoundNBT var3 = new CompoundNBT();
-      var3.method109("Name", Registry.field16087.getKey(this.field45827).toString());
+      var3.method109("Name", Registry.ATTRIBUTE.getKey(this.field45827).toString());
       var3.method108("Base", this.field45831);
       if (!this.field45830.isEmpty()) {
          ListNBT var4 = new ListNBT();
@@ -186,8 +188,8 @@ public class ModifiableAttributeInstance {
          for (int var5 = 0; var5 < var4.size(); var5++) {
             AttributeModifier var6 = AttributeModifier.method37935(var4.method153(var5));
             if (var6 != null) {
-               this.field45829.put(var6.method37930(), var6);
-               this.method38662(var6.method37932()).add(var6);
+               this.field45829.put(var6.getID(), var6);
+               this.method38662(var6.getOperation()).add(var6);
                this.field45830.add(var6);
             }
          }

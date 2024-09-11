@@ -13,6 +13,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.StringTextComponent;
 import net.optifine.render.GlAlphaState;
 import net.optifine.render.GlBlendState;
@@ -2862,7 +2863,7 @@ public class Shaders {
         field40981 = new IdentityHashMap<Block, Integer>(300);
         if (field40981.isEmpty()) {
             for (ResourceLocation var1 : Registry.BLOCK.method9190()) {
-                Block var2 = Registry.BLOCK.method9184(var1);
+                Block var2 = Registry.BLOCK.getOrDefault(var1);
                 int var3 = Registry.BLOCK.getId(var2);
                 field40981.put(var2, var3);
             }
@@ -2886,7 +2887,7 @@ public class Shaders {
                         int var5 = Integer.parseInt(var4);
                         ResourceLocation var6 = new ResourceLocation(var14);
                         if (Registry.BLOCK.method9193(var6)) {
-                            Block var7 = Registry.BLOCK.method9184(var6);
+                            Block var7 = Registry.BLOCK.getOrDefault(var6);
                             field40981.put(var7, var5);
                         } else {
                             Class7399.method23637("Unknown block name %s", var14);

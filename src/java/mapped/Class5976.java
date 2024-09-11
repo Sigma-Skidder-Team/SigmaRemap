@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.registry.Registry;
+
 public final class Class5976 extends Class5970 {
    public Class5976(String var1) {
       super(var1, null);

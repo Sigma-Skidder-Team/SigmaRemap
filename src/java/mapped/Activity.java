@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.registry.Registry;
+
 public class Activity {
    public static final Activity field40219 = method32358("core");
    public static final Activity field40220 = method32358("idle");

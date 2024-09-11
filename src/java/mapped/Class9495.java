@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 public abstract class Class9495 {
    public static final RegistryKey<Biome> field44121 = method36682("ocean");

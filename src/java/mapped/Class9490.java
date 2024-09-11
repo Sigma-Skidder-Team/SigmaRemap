@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import org.apache.commons.lang3.mutable.MutableObject;
 
 public final class Class9490<E extends LivingEntity> extends MapCodec<Brain<E>> {

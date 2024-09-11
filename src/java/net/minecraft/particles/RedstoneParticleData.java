@@ -6,6 +6,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import mapped.*;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.util.registry.Registry;
 
 import java.util.Locale;
 

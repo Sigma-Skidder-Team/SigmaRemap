@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3i;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.ISeedReader;
 
 import java.util.Iterator;

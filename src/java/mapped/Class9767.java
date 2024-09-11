@@ -1,6 +1,11 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
+import net.minecraft.util.registry.Registry;
+
 import java.util.Map;
 import java.util.UUID;
 import java.util.function.Consumer;
@@ -18,7 +23,7 @@ public class Class9767 {
       if (var4 != null) {
          return var4;
       } else {
-         throw new IllegalArgumentException("Can't find attribute " + Registry.field16087.getKey(var1));
+         throw new IllegalArgumentException("Can't find attribute " + Registry.ATTRIBUTE.getKey(var1));
       }
    }
 
@@ -27,15 +32,15 @@ public class Class9767 {
    }
 
    public double method38413(Attribute var1) {
-      return this.method38411(var1).method38660();
+      return this.method38411(var1).getBaseValue();
    }
 
    public double method38414(Attribute var1, UUID var2) {
       AttributeModifier var5 = this.method38411(var1).method38664(var2);
       if (var5 != null) {
-         return var5.method37933();
+         return var5.getAmount();
       } else {
-         throw new IllegalArgumentException("Can't find modifier " + var2 + " on attribute " + Registry.field16087.getKey(var1));
+         throw new IllegalArgumentException("Can't find modifier " + var2 + " on attribute " + Registry.ATTRIBUTE.getKey(var1));
       }
    }
 

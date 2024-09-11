@@ -195,7 +195,7 @@ public class ViaVersionLoader {
       } else if (var1.getPacket() instanceof SEntityEquipmentPacket) {
          SEntityEquipmentPacket var4 = (SEntityEquipmentPacket)var1.getPacket();
 
-         for (Pair var6 : var4.method17562()) {
+         for (Pair var6 : var4.func_241790_c_()) {
             if (var6.getFirst() == EquipmentSlotType.field13732
                && var6.getSecond() != null
                && (
@@ -203,12 +203,12 @@ public class ViaVersionLoader {
                      || JelloPortal.method27349() == ViaVerList.field26129.method18582()
                )) {
                if (!(((ItemStack)var6.getSecond()).getItem() instanceof Class3334)) {
-                  Entity var7 = this.mc.world.getEntityByID(var4.method17561());
+                  Entity var7 = this.mc.world.getEntityByID(var4.getEntityID());
                   if (field31493.contains(var7)) {
                      field31493.remove(var7);
                   }
                } else {
-                  Entity var14 = this.mc.world.getEntityByID(var4.method17561());
+                  Entity var14 = this.mc.world.getEntityByID(var4.getEntityID());
                   if (!field31493.contains(var14) && !ColorUtils.method17719()) {
                      field31493.add(var14);
                   }

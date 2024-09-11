@@ -12,6 +12,7 @@ import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -108,7 +109,7 @@ public class Class9281 {
             for (JsonElement var10 : var8) {
                JsonObject var11 = JSONUtils.method32781(var10, "stats entry");
                ResourceLocation var12 = new ResourceLocation(JSONUtils.getString(var11, "type"));
-               Class49 var13 = Registry.field16088.method9184(var12);
+               Class49 var13 = Registry.field16088.getOrDefault(var12);
                if (var13 == null) {
                   throw new JsonParseException("Invalid stat type: " + var12);
                }
@@ -146,7 +147,7 @@ public class Class9281 {
 
    private static <T> Class9007<T> method34998(Class49<T> var0, ResourceLocation var1) {
       Registry<T> var4 = var0.method171();
-      T var5 = var4.method9184(var1);
+      T var5 = var4.getOrDefault(var1);
       if (var5 != null) {
          return var0.method172(var5);
       } else {

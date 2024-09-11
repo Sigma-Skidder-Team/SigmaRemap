@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -969,7 +970,7 @@ public abstract class MobEntity extends LivingEntity {
 
    @Nullable
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
-      this.getAttribute(Attributes.field42106).method38668(new AttributeModifier("Random spawn bonus", this.rand.nextGaussian() * 0.05, AttributeModifierOperation.field13353));
+      this.getAttribute(Attributes.field42106).method38668(new AttributeModifier("Random spawn bonus", this.rand.nextGaussian() * 0.05, AttributeModifier.Operation.field13353));
       if (!(this.rand.nextFloat() < 0.05F)) {
          this.method4303(false);
       } else {

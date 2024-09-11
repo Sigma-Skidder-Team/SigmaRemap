@@ -35,6 +35,7 @@ import javax.annotation.Nullable;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.tuple.Triple;
 import org.apache.logging.log4j.LogManager;
@@ -308,7 +309,7 @@ public class ModelBakery {
          if (!Objects.equals(var4.method8303(), "inventory")) {
             ResourceLocation var31 = new ResourceLocation(var1.getNamespace(), var1.getPath());
             Class9348<Block, BlockState> var32 = Optional.ofNullable(field40531.get(var31))
-               .orElseGet(() -> Registry.BLOCK.method9184(var31).getStateContainer());
+               .orElseGet(() -> Registry.BLOCK.getOrDefault(var31).getStateContainer());
             this.field40536.method38573(var32);
             ImmutableList<Class8550<?>> var33 = ImmutableList.copyOf(this.field40534.method29469((Block)var32.method35394()));
             ImmutableList<BlockState> var8 = var32.getValidStates();

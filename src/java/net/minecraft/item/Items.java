@@ -4,6 +4,7 @@ import mapped.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.registry.Registry;
 
 public class Items {
    public static final Item field37222 = method30156(Blocks.AIR, new Class3280(Blocks.AIR, new Class5643()));

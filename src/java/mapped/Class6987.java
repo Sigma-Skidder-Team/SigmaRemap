@@ -14,10 +14,14 @@ import java.util.UUID;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class6987 {
-   private static final SuggestionProvider<Class6619> field30228 = (var0, var1) -> Class6618.method20141(Registry.field16087.method9190(), var1);
+   private static final SuggestionProvider<Class6619> field30228 = (var0, var1) -> Class6618.method20141(Registry.ATTRIBUTE.method9190(), var1);
    private static final DynamicCommandExceptionType field30229 = new DynamicCommandExceptionType(
       var0 -> new TranslationTextComponent("commands.attribute.failed.entity", var0)
    );
@@ -122,7 +126,7 @@ public class Class6987 {
                                                                                  Class9728.method38109(var0x, "uuid"),
                                                                                  StringArgumentType.getString(var0x, "name"),
                                                                                  DoubleArgumentType.getDouble(var0x, "value"),
-                                                                                 AttributeModifierOperation.ADDITION
+                                                                                 AttributeModifier.Operation.ADDITION
                                                                               )
                                                                         )
                                                                   ))
@@ -136,7 +140,7 @@ public class Class6987 {
                                                                               Class9728.method38109(var0x, "uuid"),
                                                                               StringArgumentType.getString(var0x, "name"),
                                                                               DoubleArgumentType.getDouble(var0x, "value"),
-                                                                              AttributeModifierOperation.MULTIPLY_TOTAL
+                                                                              AttributeModifier.Operation.MULTIPLY_TOTAL
                                                                            )
                                                                      )
                                                                ))
@@ -150,7 +154,7 @@ public class Class6987 {
                                                                            Class9728.method38109(var0x, "uuid"),
                                                                            StringArgumentType.getString(var0x, "name"),
                                                                            DoubleArgumentType.getDouble(var0x, "value"),
-                                                                           AttributeModifierOperation.field13353
+                                                                           AttributeModifier.Operation.field13353
                                                                         )
                                                                   )
                                                             )
@@ -279,7 +283,7 @@ public class Class6987 {
       return 1;
    }
 
-   private static int method21618(Class6619 var0, Entity var1, Attribute var2, UUID var3, String var4, double var5, AttributeModifierOperation var7) throws CommandSyntaxException {
+   private static int method21618(Class6619 var0, Entity var1, Attribute var2, UUID var3, String var4, double var5, AttributeModifier.Operation var7) throws CommandSyntaxException {
       ModifiableAttributeInstance var10 = method21611(var1, var2);
       AttributeModifier var11 = new AttributeModifier(var3, var4, var5, var7);
       if (!var10.method38665(var11)) {

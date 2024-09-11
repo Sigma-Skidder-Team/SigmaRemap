@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.registry.Registry;
 
 public class Class9537 {
    public static final Codec<Class9537> field44402 = RecordCodecBuilder.create(

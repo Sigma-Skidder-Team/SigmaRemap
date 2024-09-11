@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.registry.Registry;
 
 public interface Class8989<P extends Class8033> {
    Class8989<Class8034> field41001 = method33194("always_true", Class8034.field34521);

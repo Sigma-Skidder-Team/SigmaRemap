@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.registry.Registry;
 
 public interface Class8325<P extends Class7487> {
    Class8325<Class7488> field35770 = method29187("single_pool_element", Class7488.field32186);

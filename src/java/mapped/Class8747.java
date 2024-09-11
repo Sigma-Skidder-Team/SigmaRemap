@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.registry.Registry;
+
 import java.util.stream.Stream;
 
 public class Class8747<T> {

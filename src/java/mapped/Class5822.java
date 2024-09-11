@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.registry.Registry;
 
 import java.util.List;
 import java.util.Random;

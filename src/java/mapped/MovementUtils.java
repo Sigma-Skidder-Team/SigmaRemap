@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import net.minecraft.client.Minecraft;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.vector.Vector3d;
 

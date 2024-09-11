@@ -1,6 +1,9 @@
 package net.minecraft.entity;
 
 import mapped.Direction;
+import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.passive.WolfEntity;
 import com.google.common.base.Objects;
 import com.google.common.collect.ImmutableList;
@@ -39,7 +42,7 @@ import java.util.function.Predicate;
 public abstract class LivingEntity extends Entity {
    private static final UUID SPRINTING_SPEED_BOOST_ID = UUID.fromString("662A6B8D-DA3E-4C1C-8813-96EA6097278D");
    private static final UUID SOUL_SPEED_BOOT_ID = UUID.fromString("87f46a96-686f-4796-b035-22e16ee9e038");
-   private static final AttributeModifier SPRINTING_SPEED_BOOST = new AttributeModifier(SPRINTING_SPEED_BOOST_ID, "Sprinting speed boost", 0.3F, AttributeModifierOperation.MULTIPLY_TOTAL);
+   private static final AttributeModifier SPRINTING_SPEED_BOOST = new AttributeModifier(SPRINTING_SPEED_BOOST_ID, "Sprinting speed boost", 0.3F, AttributeModifier.Operation.MULTIPLY_TOTAL);
    public static final DataParameter<Byte> LIVING_FLAGS = EntityDataManager.<Byte>createKey(LivingEntity.class, DataSerializers.field33390);
    private static final DataParameter<Float> field4935 = EntityDataManager.<Float>createKey(LivingEntity.class, DataSerializers.field33392);
    private static final DataParameter<Integer> field4936 = EntityDataManager.<Integer>createKey(LivingEntity.class, DataSerializers.VARINT);
@@ -386,7 +389,7 @@ public abstract class LivingEntity extends Entity {
                return;
             }
 
-            var4.method38667(new AttributeModifier(SOUL_SPEED_BOOT_ID, "Soul speed boost", (double)(0.03F * (1.0F + (float)var3 * 0.35F)), AttributeModifierOperation.ADDITION));
+            var4.method38667(new AttributeModifier(SOUL_SPEED_BOOT_ID, "Soul speed boost", (double)(0.03F * (1.0F + (float)var3 * 0.35F)), AttributeModifier.Operation.ADDITION));
             if (this.getRNG().nextFloat() < 0.04F) {
                ItemStack var5 = this.getItemStackFromSlot(EquipmentSlotType.field13733);
                var5.method32121(1, this, var0 -> var0.sendBreakAnimation(EquipmentSlotType.field13733));

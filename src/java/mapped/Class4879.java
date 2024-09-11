@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 public class Class4879 extends Class4874<Class4470> {
    private static final ResourceLocation field22713 = new ResourceLocation("brewed_potion");

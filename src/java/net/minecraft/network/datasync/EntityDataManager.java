@@ -25,7 +25,7 @@ public class EntityDataManager {
    private static final Logger field43430 = LogManager.getLogger();
    private static final Map<Class<? extends Entity>, Integer> field43431 = Maps.newHashMap();
    private final Entity field43432;
-   private final Map<Integer, Class9773<?>> field43433 = Maps.newHashMap();
+   private final Map<Integer, DataEntry<?>> field43433 = Maps.newHashMap();
    private final ReadWriteLock field43434 = new ReentrantReadWriteLock();
    private boolean field43435 = true;
    private boolean field43436;
@@ -91,17 +91,17 @@ public class EntityDataManager {
    }
 
    private <T> void method35443(DataParameter<T> var1, T var2) {
-      Class9773<T> var5 = new Class9773<>(var1, var2);
+      DataEntry<T> var5 = new DataEntry<>(var1, var2);
       this.field43434.writeLock().lock();
       this.field43433.put(var1.method35015(), var5);
       this.field43435 = false;
       this.field43434.writeLock().unlock();
    }
 
-   private <T> Class9773<T> method35444(DataParameter<T> var1) {
+   private <T> DataEntry<T> method35444(DataParameter<T> var1) {
       this.field43434.readLock().lock();
 
-      Class9773 var4;
+      DataEntry var4;
       try {
          var4 = this.field43433.get(var1.method35015());
       } catch (Throwable var11) {
@@ -121,7 +121,7 @@ public class EntityDataManager {
    }
 
    public <T> void method35446(DataParameter<T> var1, T var2) {
-      Class9773 var5 = this.method35444(var1);
+      DataEntry var5 = this.method35444(var1);
       if (ObjectUtils.notEqual(var2, var5.method38449())) {
          var5.method38448(var2);
          this.field43432.notifyDataManagerChange(var1);
@@ -134,12 +134,12 @@ public class EntityDataManager {
       return this.field43436;
    }
 
-   public static void method35448(List<Class9773<?>> var0, PacketBuffer var1) throws IOException {
+   public static void writeEntries(List<DataEntry<?>> var0, PacketBuffer var1) throws IOException {
       if (var0 != null) {
          int var4 = 0;
 
          for (int var5 = var0.size(); var4 < var5; var4++) {
-            method35451(var1, (Class9773)var0.get(var4));
+            method35451(var1, (DataEntry)var0.get(var4));
          }
       }
 
@@ -147,12 +147,12 @@ public class EntityDataManager {
    }
 
    @Nullable
-   public List<Class9773<?>> method35449() {
+   public List<DataEntry<?>> getDirty() {
       ArrayList var3 = null;
       if (this.field43436) {
          this.field43434.readLock().lock();
 
-         for (Class9773 var5 : this.field43433.values()) {
+         for (DataEntry var5 : this.field43433.values()) {
             if (var5.method38450()) {
                var5.method38451(false);
                if (var3 == null) {
@@ -171,11 +171,11 @@ public class EntityDataManager {
    }
 
    @Nullable
-   public List<Class9773<?>> method35450() {
+   public List<DataEntry<?>> getAll() {
       ArrayList var3 = null;
       this.field43434.readLock().lock();
 
-      for (Class9773 var5 : this.field43433.values()) {
+      for (DataEntry var5 : this.field43433.values()) {
          if (var3 == null) {
             var3 = Lists.newArrayList();
          }
@@ -187,7 +187,7 @@ public class EntityDataManager {
       return var3;
    }
 
-   private static <T> void method35451(PacketBuffer var0, Class9773<T> var1) throws IOException {
+   private static <T> void method35451(PacketBuffer var0, DataEntry<T> var1) throws IOException {
       DataParameter var4 = var1.method38447();
       int var5 = DataSerializers.method25806(var4.method35016());
       if (var5 >= 0) {
@@ -200,7 +200,7 @@ public class EntityDataManager {
    }
 
    @Nullable
-   public static List<Class9773<?>> method35452(PacketBuffer var0) throws IOException {
+   public static List<DataEntry<?>> readEntries(PacketBuffer var0) throws IOException {
       ArrayList var3 = null;
 
       short var4;
@@ -221,15 +221,15 @@ public class EntityDataManager {
       return var3;
    }
 
-   private static <T> Class9773<T> method35453(PacketBuffer var0, int var1, Class6466<T> var2) {
-      return new Class9773<T>(var2.method19647(var1), (T)var2.method19645(var0));
+   private static <T> DataEntry<T> method35453(PacketBuffer var0, int var1, Class6466<T> var2) {
+      return new DataEntry<T>(var2.method19647(var1), (T)var2.method19645(var0));
    }
 
-   public void method35454(List<Class9773<?>> var1) {
+   public void method35454(List<DataEntry<?>> var1) {
       this.field43434.writeLock().lock();
 
-      for (Class9773 var5 : var1) {
-         Class9773 var6 = this.field43433.get(var5.method38447().method35015());
+      for (DataEntry var5 : var1) {
+         DataEntry var6 = this.field43433.get(var5.method38447().method35015());
          if (var6 != null) {
             this.method35455(var6, var5);
             this.field43432.notifyDataManagerChange(var5.method38447());
@@ -240,19 +240,19 @@ public class EntityDataManager {
       this.field43436 = true;
    }
 
-   private <T> void method35455(Class9773<T> var1, Class9773<?> var2) {
-      if (Objects.equals(Class9773.method38453(var2).method35016(), Class9773.method38453(var1).method35016())) {
+   private <T> void method35455(DataEntry<T> var1, DataEntry<?> var2) {
+      if (Objects.equals(DataEntry.method38453(var2).method35016(), DataEntry.method38453(var1).method35016())) {
          var1.method38448((T) var2.method38449());
       } else {
          throw new IllegalStateException(
             String.format(
                "Invalid entity data item type for field %d on entity %s: old=%s(%s), new=%s(%s)",
-               Class9773.method38453(var1).method35015(),
+               DataEntry.method38453(var1).method35015(),
                this.field43432,
-               Class9773.method38454(var1),
-               Class9773.method38454(var1).getClass(),
-               Class9773.method38454(var2),
-               Class9773.method38454(var2).getClass()
+               DataEntry.method38454(var1),
+               DataEntry.method38454(var1).getClass(),
+               DataEntry.method38454(var2),
+               DataEntry.method38454(var2).getClass()
             )
          );
       }
@@ -262,14 +262,61 @@ public class EntityDataManager {
       return this.field43435;
    }
 
-   public void method35457() {
+   public void setClean() {
       this.field43436 = false;
       this.field43434.readLock().lock();
 
-      for (Class9773 var4 : this.field43433.values()) {
+      for (DataEntry var4 : this.field43433.values()) {
          var4.method38451(false);
       }
 
       this.field43434.readLock().unlock();
+   }
+
+   public static class DataEntry<T> {
+      private static String[] field45709;
+      private final DataParameter<T> field45710;
+      private T field45711;
+      private boolean field45712;
+
+      public DataEntry(DataParameter<T> var1, T var2) {
+         this.field45710 = var1;
+         this.field45711 = (T)var2;
+         this.field45712 = true;
+      }
+
+      public DataParameter<T> method38447() {
+         return this.field45710;
+      }
+
+      public void method38448(T var1) {
+         this.field45711 = (T)var1;
+      }
+
+      public T method38449() {
+         return this.field45711;
+      }
+
+      public boolean method38450() {
+         return this.field45712;
+      }
+
+      public void method38451(boolean var1) {
+         this.field45712 = var1;
+      }
+
+      public DataEntry<T> method38452() {
+         return new DataEntry<T>(this.field45710, this.field45710.method35016().method19644(this.field45711));
+      }
+
+      // $VF: synthetic method
+      public static DataParameter method38453(DataEntry var0) {
+         return var0.field45710;
+      }
+
+      // $VF: synthetic method
+      public static Object method38454(DataEntry var0) {
+         return var0.field45711;
+      }
    }
 }

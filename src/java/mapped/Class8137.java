@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.registry.Registry;
+
 public class Class8137 {
    public static final Class8812 field34976 = method28212("empty", new Class8812());
    public static final Class8812 field34977 = method28212("water", new Class8812());

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.registry.Registry;
+
 public class Class9078 {
    public static final Class9078 field41530 = method33824("kebab", 16, 16);
    public static final Class9078 field41531 = method33824("aztec", 16, 16);

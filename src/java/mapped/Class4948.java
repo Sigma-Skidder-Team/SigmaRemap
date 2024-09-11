@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSyntaxException;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 public class Class4948 implements ILootSerializer<Class161> {
    public void serialize(JsonObject var1, Class161 var2, JsonSerializationContext var3) {

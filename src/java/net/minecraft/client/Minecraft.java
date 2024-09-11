@@ -46,6 +46,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.util.Timer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.*;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;

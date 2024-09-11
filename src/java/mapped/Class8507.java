@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 public class Class8507 {
    private final ResourceLocation field37202;
@@ -19,7 +20,7 @@ public class Class8507 {
       this.field37204 = null;
       Registry var3 = Class8708.method31404(this.field37203);
       if (var3.method9193(this.field37202)) {
-         this.field37204 = (Biome)var3.method9184(this.field37202);
+         this.field37204 = (Biome)var3.getOrDefault(this.field37202);
       }
    }
 

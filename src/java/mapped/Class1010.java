@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -21,7 +23,7 @@ import java.util.function.Predicate;
 
 public class Class1010 extends Class1009 implements IAngerable {
    private static final UUID field5645 = UUID.fromString("020E0DFB-87AE-4653-9556-831010E291A0");
-   private static final AttributeModifier field5646 = new AttributeModifier(field5645, "Attacking speed boost", 0.15F, AttributeModifierOperation.ADDITION);
+   private static final AttributeModifier field5646 = new AttributeModifier(field5645, "Attacking speed boost", 0.15F, AttributeModifier.Operation.ADDITION);
    private static final DataParameter<Optional<BlockState>> field5647 = EntityDataManager.<Optional<BlockState>>createKey(Class1010.class, DataSerializers.field33397);
    private static final DataParameter<Boolean> field5648 = EntityDataManager.<Boolean>createKey(Class1010.class, DataSerializers.field33398);
    private static final DataParameter<Boolean> field5649 = EntityDataManager.<Boolean>createKey(Class1010.class, DataSerializers.field33398);

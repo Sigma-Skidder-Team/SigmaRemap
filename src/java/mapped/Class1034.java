@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
@@ -27,7 +29,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    private static final DataParameter<Boolean> field5742 = EntityDataManager.<Boolean>createKey(Class1034.class, DataSerializers.field33398);
    private static final DataParameter<Boolean> field5743 = EntityDataManager.<Boolean>createKey(Class1034.class, DataSerializers.field33398);
    private static final UUID field5744 = UUID.fromString("766bfa64-11f3-11ea-8d71-362b9e155667");
-   private static final AttributeModifier field5745 = new AttributeModifier(field5744, "Baby speed boost", 0.2F, AttributeModifierOperation.field13353);
+   private static final AttributeModifier field5745 = new AttributeModifier(field5744, "Baby speed boost", 0.2F, AttributeModifier.Operation.field13353);
    private final Class927 field5746 = new Class927(8);
    private boolean field5747 = false;
    public static final ImmutableList<Class7963<? extends Class7882<? super Class1034>>> field5748 = ImmutableList.of(

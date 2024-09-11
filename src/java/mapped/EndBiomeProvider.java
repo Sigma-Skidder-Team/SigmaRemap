@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.registry.Registry;
 
 public class EndBiomeProvider extends Class1685 {
    public static final Codec<EndBiomeProvider> field9191 = RecordCodecBuilder.create(

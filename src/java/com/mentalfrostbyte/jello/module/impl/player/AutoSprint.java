@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.blockfly.BlockFlyAACMode;
 import mapped.*;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.item.Items;
 
 public class AutoSprint extends Module {
@@ -41,7 +42,7 @@ public class AutoSprint extends Module {
                 && !((BlockFly) Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class)).method16732()) {
             ModifiableAttributeInstance var4 = mc.player.getAttribute(Attributes.MOVEMENT_SPEED);
             float var5 = (float) (
-                    (var4.method38660() + 0.03F + (double) (0.015F * (float) MovementUtils.method37078())) / (double) mc.player.abilities.getWalkSpeed() + 1.0
+                    (var4.getBaseValue() + 0.03F + (double) (0.015F * (float) MovementUtils.method37078())) / (double) mc.player.abilities.getWalkSpeed() + 1.0
             )
                     / 2.0F;
             var1.field21557 = var5;

@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.registry.Registry;
 
 import java.util.Collection;
 import java.util.Collections;

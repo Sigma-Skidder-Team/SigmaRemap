@@ -4,6 +4,8 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -22,7 +24,7 @@ import java.util.function.Predicate;
 
 public class Class1027 extends Class1026 implements Class1022 {
    private static final UUID field5718 = UUID.fromString("5CD17E52-A79A-43D3-A529-90FDE04B181E");
-   private static final AttributeModifier field5719 = new AttributeModifier(field5718, "Drinking speed penalty", -0.25, AttributeModifierOperation.ADDITION);
+   private static final AttributeModifier field5719 = new AttributeModifier(field5718, "Drinking speed penalty", -0.25, AttributeModifier.Operation.ADDITION);
    private static final DataParameter<Boolean> field5720 = EntityDataManager.<Boolean>createKey(Class1027.class, DataSerializers.field33398);
    private int field5721;
    private Class2712<Class1026> field5722;

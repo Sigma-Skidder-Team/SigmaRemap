@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.entity.ai.attributes;
 
 public class Attribute {
    private static String[] field22693;

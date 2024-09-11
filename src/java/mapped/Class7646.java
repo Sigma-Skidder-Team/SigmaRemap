@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.registry.Registry;
 
 public class Class7646<P extends Class7617> {
    public static final Class7646<Class7616> field32820 = method25117("two_layers_feature_size", Class7616.field32668);

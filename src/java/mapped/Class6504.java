@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 public interface Class6504<T extends IRecipe<?>> {
    Class6504<Class4852> field28470 = method19702("crafting_shaped", new Class6507());

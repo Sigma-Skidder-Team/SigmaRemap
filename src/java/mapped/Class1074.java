@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -105,7 +106,7 @@ public class Class1074 extends AbstractHorseEntity {
          if (this.method4900(var1)) {
             int var4 = ((Class3275)var1.getItem()).method11798();
             if (var4 != 0) {
-               this.getAttribute(Attributes.field42113).method38667(new AttributeModifier(field5916, "Horse armor bonus", (double)var4, AttributeModifierOperation.ADDITION));
+               this.getAttribute(Attributes.field42113).method38667(new AttributeModifier(field5916, "Horse armor bonus", (double)var4, AttributeModifier.Operation.ADDITION));
             }
          }
       }

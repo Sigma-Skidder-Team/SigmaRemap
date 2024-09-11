@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.registry.Registry;
 
 public class Class9654<P extends Class6698> {
    public static final Class9654<Class6700> field45131 = method37703("simple_state_provider", Class6700.field29333);

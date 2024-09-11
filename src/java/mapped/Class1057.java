@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.nbt.CompoundNBT;
@@ -25,7 +26,7 @@ import java.util.UUID;
 
 public class Class1057 extends Class1056 implements Class1008 {
    private static final UUID field5839 = UUID.fromString("7E0292F2-9434-48D5-A29F-9583AF7DF27F");
-   private static final AttributeModifier field5840 = new AttributeModifier(field5839, "Covered armor bonus", 20.0, AttributeModifierOperation.ADDITION);
+   private static final AttributeModifier field5840 = new AttributeModifier(field5839, "Covered armor bonus", 20.0, AttributeModifier.Operation.ADDITION);
    public static final DataParameter<Direction> field5841 = EntityDataManager.<Direction>createKey(Class1057.class, DataSerializers.field33403);
    public static final DataParameter<Optional<BlockPos>> field5842 = EntityDataManager.<Optional<BlockPos>>createKey(Class1057.class, DataSerializers.field33402);
    public static final DataParameter<Byte> field5843 = EntityDataManager.<Byte>createKey(Class1057.class, DataSerializers.field33390);

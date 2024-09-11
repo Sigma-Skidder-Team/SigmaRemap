@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.registry.Registry;
+
 import javax.annotation.Nullable;
 
 public final class Class9305<E> {

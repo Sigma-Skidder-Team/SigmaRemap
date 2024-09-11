@@ -1,68 +1,74 @@
 package net.minecraft.network.play.server;
 
 import com.google.common.collect.Lists;
-import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
+import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
 public class SEntityPropertiesPacket implements Packet<IClientPlayNetHandler> {
-   private int field24646;
-   private final List<Class7919> field24647 = Lists.newArrayList();
+   private int entityId;
+   private final List<Snapshot> snapshots = Lists.newArrayList();
 
    public SEntityPropertiesPacket() {
    }
 
    public SEntityPropertiesPacket(int var1, Collection<ModifiableAttributeInstance> var2) {
-      this.field24646 = var1;
+      this.entityId = var1;
 
-      for (ModifiableAttributeInstance var6 : var2) {
-         this.field24647.add(new Class7919(var6.method38659(), var6.method38660(), var6.method38663()));
+      for (ModifiableAttributeInstance modifiableattributeinstance : var2) {
+         this.snapshots.add(new Snapshot(modifiableattributeinstance.getAttribute(), modifiableattributeinstance.getBaseValue(), modifiableattributeinstance.getModifierListCopy()));
       }
    }
 
    @Override
-   public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24646 = var1.readVarInt();
-      int var4 = var1.readInt();
+   public void readPacketData(PacketBuffer buf) throws IOException {
+      this.entityId = buf.readVarInt();
+      int i = buf.readInt();
 
-      for (int var5 = 0; var5 < var4; var5++) {
-         ResourceLocation var6 = var1.readResourceLocation();
-         Attribute var7 = Registry.field16087.method9184(var6);
-         double var8 = var1.readDouble();
-         ArrayList var10 = Lists.newArrayList();
-         int var11 = var1.readVarInt();
+      for (int j = 0; j < i; ++j)
+      {
+         ResourceLocation resourcelocation = buf.readResourceLocation();
+         Attribute attribute = Registry.ATTRIBUTE.getOrDefault(resourcelocation);
+         double d0 = buf.readDouble();
+         List<AttributeModifier> list = Lists.newArrayList();
+         int k = buf.readVarInt();
 
-         for (int var12 = 0; var12 < var11; var12++) {
-            UUID var13 = var1.readUniqueId();
-            var10.add(new AttributeModifier(var13, "Unknown synced attribute modifier", var1.readDouble(), AttributeModifierOperation.method8686(var1.readByte())));
+         for (int l = 0; l < k; ++l)
+         {
+            UUID uuid = buf.readUniqueId();
+            list.add(new AttributeModifier(uuid, "Unknown synced attribute modifier", buf.readDouble(), AttributeModifier.Operation.byId(buf.readByte())));
          }
 
-         this.field24647.add(new Class7919(var7, var8, var10));
+         this.snapshots.add(new Snapshot(attribute, d0, list));
       }
    }
 
    @Override
-   public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeVarInt(this.field24646);
-      var1.writeInt(this.field24647.size());
+   public void writePacketData(PacketBuffer buf) throws IOException {
+      buf.writeVarInt(this.entityId);
+      buf.writeInt(this.snapshots.size());
 
-      for (Class7919 var5 : this.field24647) {
-         var1.writeResourceLocation(Registry.field16087.getKey(var5.method26560()));
-         var1.writeDouble(var5.method26561());
-         var1.writeVarInt(var5.method26562().size());
+      for (SEntityPropertiesPacket.Snapshot sentitypropertiespacket$snapshot : this.snapshots)
+      {
+         buf.writeResourceLocation(Registry.ATTRIBUTE.getKey(sentitypropertiespacket$snapshot.func_240834_a_()));
+         buf.writeDouble(sentitypropertiespacket$snapshot.getBaseValue());
+         buf.writeVarInt(sentitypropertiespacket$snapshot.getModifiers().size());
 
-         for (AttributeModifier var7 : var5.method26562()) {
-            var1.writeUniqueId(var7.method37930());
-            var1.writeDouble(var7.method37933());
-            var1.writeByte(var7.method37932().method8685());
+         for (AttributeModifier attributemodifier : sentitypropertiespacket$snapshot.getModifiers())
+         {
+            buf.writeUniqueId(attributemodifier.getID());
+            buf.writeDouble(attributemodifier.getAmount());
+            buf.writeByte(attributemodifier.getOperation().getId());
          }
       }
    }
@@ -72,10 +78,34 @@ public class SEntityPropertiesPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public int method17463() {
-      return this.field24646;
+      return this.entityId;
    }
 
-   public List<Class7919> method17464() {
-      return this.field24647;
+   public List<Snapshot> method17464() {
+      return this.snapshots;
+   }
+
+   public static class Snapshot {
+      private final Attribute field_240833_b_;
+      private final double baseValue;
+      private final Collection<AttributeModifier> modifiers;
+
+      public Snapshot(Attribute var1, double var2, Collection<AttributeModifier> param4) {
+           this.field_240833_b_ = var1;
+           this.baseValue = var2;
+           this.modifiers = param4;
+      }
+
+      public Attribute func_240834_a_() {
+         return this.field_240833_b_;
+      }
+
+      public double getBaseValue() {
+         return this.baseValue;
+      }
+
+      public Collection<AttributeModifier> getModifiers() {
+         return this.modifiers;
+      }
    }
 }

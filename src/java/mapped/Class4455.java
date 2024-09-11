@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 import java.nio.file.Path;
 import java.util.function.Function;

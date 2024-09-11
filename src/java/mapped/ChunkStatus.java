@@ -7,6 +7,7 @@ import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.ArrayList;
@@ -243,7 +244,7 @@ public class ChunkStatus {
    }
 
    public static ChunkStatus method34304(String var0) {
-      return Registry.field16081.method9184(ResourceLocation.method8289(var0));
+      return Registry.field16081.getOrDefault(ResourceLocation.method8289(var0));
    }
 
    public EnumSet<Class101> method34305() {

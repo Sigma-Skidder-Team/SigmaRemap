@@ -7,19 +7,22 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSyntaxException;
+import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 import java.util.UUID;
 
 public class Class6884 {
    private final String field29832;
    private final Attribute field29833;
-   private final AttributeModifierOperation field29834;
+   private final AttributeModifier.Operation field29834;
    private final Class6872 field29835;
    private final UUID field29836;
    private final EquipmentSlotType[] field29837;
 
-   private Class6884(String var1, Attribute var2, AttributeModifierOperation var3, Class6872 var4, EquipmentSlotType[] var5, UUID var6) {
+   private Class6884(String var1, Attribute var2, AttributeModifier.Operation var3, Class6872 var4, EquipmentSlotType[] var5, UUID var6) {
       this.field29832 = var1;
       this.field29833 = var2;
       this.field29834 = var3;
@@ -31,7 +34,7 @@ public class Class6884 {
    public JsonObject method20960(JsonSerializationContext var1) {
       JsonObject var4 = new JsonObject();
       var4.addProperty("name", this.field29832);
-      var4.addProperty("attribute", Registry.field16087.getKey(this.field29833).toString());
+      var4.addProperty("attribute", Registry.ATTRIBUTE.getKey(this.field29833).toString());
       var4.addProperty("operation", method20962(this.field29834));
       var4.add("amount", var1.serialize(this.field29835));
       if (this.field29836 != null) {
@@ -56,11 +59,11 @@ public class Class6884 {
    public static Class6884 method20961(JsonObject var0, JsonDeserializationContext var1) {
       String var4 = JSONUtils.getString(var0, "name");
       ResourceLocation var5 = new ResourceLocation(JSONUtils.getString(var0, "attribute"));
-      Attribute var6 = Registry.field16087.method9184(var5);
+      Attribute var6 = Registry.ATTRIBUTE.getOrDefault(var5);
       if (var6 == null) {
          throw new JsonSyntaxException("Unknown attribute: " + var5);
       } else {
-         AttributeModifierOperation var7 = method20963(JSONUtils.getString(var0, "operation"));
+         AttributeModifier.Operation var7 = method20963(JSONUtils.getString(var0, "operation"));
          Class6872 var8 = JSONUtils.<Class6872>method32788(var0, "amount", var1, Class6872.class);
          UUID var9 = null;
          EquipmentSlotType[] var10;
@@ -98,7 +101,7 @@ public class Class6884 {
       }
    }
 
-   private static String method20962(AttributeModifierOperation var0) {
+   private static String method20962(AttributeModifier.Operation var0) {
       switch (Class8163.field35137[var0.ordinal()]) {
          case 1:
             return "addition";
@@ -111,14 +114,14 @@ public class Class6884 {
       }
    }
 
-   private static AttributeModifierOperation method20963(String var0) {
+   private static AttributeModifier.Operation method20963(String var0) {
       switch (var0) {
          case "addition":
-            return AttributeModifierOperation.ADDITION;
+            return AttributeModifier.Operation.ADDITION;
          case "multiply_base":
-            return AttributeModifierOperation.field13353;
+            return AttributeModifier.Operation.field13353;
          case "multiply_total":
-            return AttributeModifierOperation.MULTIPLY_TOTAL;
+            return AttributeModifier.Operation.MULTIPLY_TOTAL;
          default:
             throw new JsonSyntaxException("Unknown attribute modifier operation " + var0);
       }
@@ -150,7 +153,7 @@ public class Class6884 {
    }
 
    // $VF: synthetic method
-   public static AttributeModifierOperation method20969(Class6884 var0) {
+   public static AttributeModifier.Operation method20969(Class6884 var0) {
       return var0.field29834;
    }
 }

@@ -17,6 +17,7 @@ import java.io.StringReader;
 import javax.annotation.Nullable;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import org.apache.commons.lang3.StringUtils;
 
 public class JSONUtils {

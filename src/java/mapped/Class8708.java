@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
@@ -53,7 +54,7 @@ public class Class8708 {
    }
 
    public static Biome method31410(ResourceLocation var0) {
-      return method31405().method9184(var0);
+      return method31405().getOrDefault(var0);
    }
 
    public static Set<ResourceLocation> method31411() {

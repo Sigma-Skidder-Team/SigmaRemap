@@ -1,9 +1,11 @@
-package mapped;
+package net.minecraft.util.registry;
 
 import com.google.common.collect.Maps;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.*;
+import mapped.*;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
@@ -79,7 +81,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<ContainerType<?>> field16084 = method9175(field16051, () -> ContainerType.field35655);
    public static final Registry<Class7207<?>> field16085 = method9175(field16052, () -> Class7207.field30935);
    public static final Registry<Class6504<?>> field16086 = method9175(field16053, () -> Class6504.field28471);
-   public static final Registry<Attribute> field16087 = method9175(field16054, () -> Attributes.LUCK);
+   public static final Registry<Attribute> ATTRIBUTE = method9175(field16054, () -> Attributes.LUCK);
    public static final Registry<Class49<?>> field16088 = method9175(field16055, () -> Stats.field40098);
    public static final Class2351<Class9564> field16089 = method9176(field16056, "plains", () -> Class9564.field44542);
    public static final Class2351<Class8395> field16090 = method9176(field16057, "none", () -> Class8395.field36011);
@@ -149,7 +151,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
 
          if (var1 instanceof Class2351) {
             ResourceLocation var4 = ((Class2351)var1).method9267();
-            Validate.notNull(var1.method9184(var4), "Missing default of DefaultedMappedRegistry: " + var4, new Object[0]);
+            Validate.notNull(var1.getOrDefault(var4), "Missing default of DefaultedMappedRegistry: " + var4, new Object[0]);
          }
       });
    }
@@ -197,7 +199,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
             .decode(var1, var2)
             .flatMap(
                var1x -> {
-                  T var4 = this.method9184(var1x.getFirst());
+                  T var4 = this.getOrDefault(var1x.getFirst());
                   return var4 != null
                      ? DataResult.success(Pair.of(var4, var1x.getSecond()), this.method9185((T)var4))
                      : DataResult.error("Unknown registry key: " + var1x.getFirst());
@@ -236,14 +238,14 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public abstract T method9183(RegistryKey<T> var1);
 
    @Nullable
-   public abstract T method9184(ResourceLocation var1);
+   public abstract T getOrDefault(ResourceLocation var1);
 
    public abstract Lifecycle method9185(T var1);
 
    public abstract Lifecycle method9186();
 
    public Optional<T> method9187(ResourceLocation var1) {
-      return Optional.<T>ofNullable(this.method9184(var1));
+      return Optional.<T>ofNullable(this.getOrDefault(var1));
    }
 
    public Optional<T> method9188(RegistryKey<T> var1) {

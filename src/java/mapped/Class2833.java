@@ -6,6 +6,7 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class2833 implements Consumer<Consumer<Advancement>> {

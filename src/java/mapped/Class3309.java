@@ -3,6 +3,7 @@ package mapped;
 import java.util.List;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 

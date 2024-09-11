@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -344,7 +345,7 @@ public class Class7992 {
 
       for (ResourceLocation var5 : Registry.EFFECTS.method9190()) {
          if (Registry.EFFECTS.method9193(var5)) {
-            Effect var6 = Registry.EFFECTS.method9184(var5);
+            Effect var6 = Registry.EFFECTS.getOrDefault(var5);
             String var7 = var6.method22294();
             if (var3.equals(var7)) {
                return Effect.method22288(var6);

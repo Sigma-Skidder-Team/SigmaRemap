@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.registry.Registry;
 
 public class Class9542<P extends Class7139> {
    public static final Class9542<Class7143> field44428 = method36923("trunk_vine", Class7143.field30705);

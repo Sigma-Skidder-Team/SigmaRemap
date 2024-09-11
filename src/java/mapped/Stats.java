@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.Registry;
 
 public class Stats {
    public static final Class49<Block> field40096 = method32295("mined", Registry.BLOCK);

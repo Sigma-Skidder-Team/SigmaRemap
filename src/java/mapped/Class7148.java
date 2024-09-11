@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+
 public class Class7148 extends Effect {
    private static String[] field30714;
    public final double field30715;

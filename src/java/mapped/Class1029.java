@@ -116,7 +116,7 @@ public class Class1029 extends Class1026 {
       if (this.isAlive()) {
          if (!this.isMovementBlocked()) {
             double var3 = this.method4232() == null ? 0.3 : 0.35;
-            double var5 = this.getAttribute(Attributes.MOVEMENT_SPEED).method38660();
+            double var5 = this.getAttribute(Attributes.MOVEMENT_SPEED).getBaseValue();
             this.getAttribute(Attributes.MOVEMENT_SPEED).method38661(MathHelper.lerp(0.1, var5, var3));
          } else {
             this.getAttribute(Attributes.MOVEMENT_SPEED).method38661(0.0);

@@ -33,6 +33,8 @@ import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
@@ -53,6 +55,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -417,9 +420,9 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleEntityMetadata(SEntityMetadataPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.getEntityByID(var1.method17470());
-      if (var4 != null && var1.method17469() != null) {
-         var4.getDataManager().method35454(var1.method17469());
+      Entity var4 = this.field23273.getEntityByID(var1.getEntityId());
+      if (var4 != null && var1.getDataManagerEntries() != null) {
+         var4.getDataManager().method35454(var1.getDataManagerEntries());
       }
    }
 
@@ -445,17 +448,17 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleEntityTeleport(SEntityTeleportPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.getEntityByID(var1.method17585());
+      Entity var4 = this.field23273.getEntityByID(var1.getEntityId());
       if (var4 != null) {
-         double var5 = var1.method17586();
-         double var7 = var1.method17587();
-         double var9 = var1.method17588();
+         double var5 = var1.getX();
+         double var7 = var1.getY();
+         double var9 = var1.getZ();
          var4.setPacketCoordinates(var5, var7, var9);
          if (!var4.canPassengerSteer()) {
-            float var11 = (float)(var1.method17589() * 360) / 256.0F;
-            float var12 = (float)(var1.method17590() * 360) / 256.0F;
+            float var11 = (float)(var1.getYaw() * 360) / 256.0F;
+            float var12 = (float)(var1.getPitch() * 360) / 256.0F;
             var4.setPositionAndRotationDirect(var5, var7, var9, var11, var12, 3, true);
-            var4.setOnGround(var1.method17591());
+            var4.setOnGround(var1.isOnGround());
          }
       }
    }
@@ -494,9 +497,9 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleEntityHeadLook(SEntityHeadLookPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = var1.method17346(this.field23273);
+      Entity var4 = var1.getEntity(this.field23273);
       if (var4 != null) {
-         float var5 = (float)(var1.method17347() * 360) / 256.0F;
+         float var5 = (float)(var1.getYaw() * 360) / 256.0F;
          var4.setHeadRotation(var5, 3);
       }
    }
@@ -918,7 +921,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       }
 
       this.field23272.renderViewEntity = var13;
-      var13.getDataManager().method35454(var6.getDataManager().method35450());
+      var13.getDataManager().method35454(var6.getDataManager().getAll());
       if (var1.method17439()) {
          var13.getAttributeManager().method33388(var6.getAttributeManager());
       }
@@ -1089,9 +1092,9 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleEntityEquipment(SEntityEquipmentPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Entity var4 = this.field23273.getEntityByID(var1.method17561());
+      Entity var4 = this.field23273.getEntityByID(var1.getEntityID());
       if (var4 != null) {
-         var1.method17562().forEach(var1x -> var4.setItemStackToSlot((EquipmentSlotType)var1x.getFirst(), (ItemStack)var1x.getSecond()));
+         var1.func_241790_c_().forEach(var1x -> var4.setItemStackToSlot((EquipmentSlotType)var1x.getFirst(), (ItemStack)var1x.getSecond()));
       }
    }
 
@@ -1746,7 +1749,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
             this.field23272.debugRenderer.field34472.method15868(var42, var63, var11);
          } else if (SCustomPayloadPlayPacket.field24541.equals(var4)) {
-            DimensionType var43 = this.field23287.method32454().method9184(var5.readResourceLocation());
+            DimensionType var43 = this.field23287.method32454().getOrDefault(var5.readResourceLocation());
             Class9764 var53 = new Class9764(var5.readInt(), var5.readInt(), var5.readInt(), var5.readInt(), var5.readInt(), var5.readInt());
             int var64 = var5.readInt();
             ArrayList var73 = Lists.newArrayList();
@@ -2089,17 +2092,17 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
          AttributeModifierManager var5 = ((LivingEntity)var4).getAttributeManager();
 
-         for (Class7919 var7 : var1.method17464()) {
-            ModifiableAttributeInstance var8 = var5.createInstanceIfAbsent(var7.method26560());
+         for (SEntityPropertiesPacket.Snapshot var7 : var1.method17464()) {
+            ModifiableAttributeInstance var8 = var5.createInstanceIfAbsent(var7.func_240834_a_());
             if (var8 != null) {
-               var8.method38661(var7.method26561());
+               var8.method38661(var7.getBaseValue());
                var8.method38673();
 
-               for (AttributeModifier var10 : var7.method26562()) {
+               for (AttributeModifier var10 : var7.getModifiers()) {
                   var8.method38667(var10);
                }
             } else {
-               field23267.warn("Entity {} does not have attribute {}", var4, Registry.field16087.getKey(var7.method26560()));
+               field23267.warn("Entity {} does not have attribute {}", var4, Registry.ATTRIBUTE.getKey(var7.func_240834_a_()));
             }
          }
       }

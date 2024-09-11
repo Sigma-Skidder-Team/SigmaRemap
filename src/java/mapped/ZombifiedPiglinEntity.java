@@ -3,6 +3,8 @@ package mapped;
 import net.minecraft.entity.IAngerable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -19,7 +21,7 @@ import java.util.UUID;
 
 public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
    private static final UUID field5860 = UUID.fromString("49455A49-7EC5-45BA-B886-3B90B23A1718");
-   private static final AttributeModifier field5861 = new AttributeModifier(field5860, "Attacking speed boost", 0.05, AttributeModifierOperation.ADDITION);
+   private static final AttributeModifier field5861 = new AttributeModifier(field5860, "Attacking speed boost", 0.05, AttributeModifier.Operation.ADDITION);
    private static final RangedInteger field5862 = TickRangeConverter.convertRange(0, 1);
    private int field5863;
    private static final RangedInteger field5864 = TickRangeConverter.convertRange(20, 39);
