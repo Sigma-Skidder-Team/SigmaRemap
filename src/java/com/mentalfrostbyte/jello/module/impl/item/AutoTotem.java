@@ -11,21 +11,21 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 
 public class AutoTotem extends Module {
-    public int field23503 = -1;
+    public int previousSlot = -1;
 
     public AutoTotem() {
         super(ModuleCategory.ITEM, "AutoTotem", "Automatically equips a totem in your second hand");
     }
 
     @EventTarget
-    private void method16175(TickEvent var1) {
-        this.method16177();
+    private void onTick(TickEvent var1) {
+        this.equipTotem();
     }
 
     @EventTarget
-    private void method16176(EventUpdate var1) {
+    private void onUpdate(EventUpdate var1) {
         if (!var1.isPre()) {
-            this.method16177();
+            this.equipTotem();
         }
     }
 
@@ -34,15 +34,15 @@ public class AutoTotem extends Module {
         return this.getName();
     }
 
-    private void method16177() {
+    private void equipTotem() {
         if (this.isEnabled() && mc.player != null && !mc.player.abilities.isCreativeMode) {
-            ItemStack var3 = mc.player.getItemStackFromSlot(EquipmentSlotType.field13732);
-            if (var3.getItem() != Items.field38126) {
-                int var4 = InvManagerUtils.method25822(Items.field38126);
-                if (var4 != -1) {
-                    mc.playerController.windowClickFixed(0, var4 >= 9 ? var4 : var4 + 36, 0, ClickType.field14694, mc.player);
-                    mc.playerController.windowClickFixed(0, 45, 0, ClickType.field14694, mc.player);
-                    mc.playerController.windowClickFixed(0, var4 >= 9 ? var4 : var4 + 36, 0, ClickType.field14694, mc.player);
+            ItemStack offHandItem = mc.player.getItemStackFromSlot(EquipmentSlotType.OFFHAND);
+            if (offHandItem.getItem() != Items.TOTEM_OF_UNDYING) {
+                int totemSlot = InvManagerUtils.findItemSlot(Items.TOTEM_OF_UNDYING);
+                if (totemSlot != -1) {
+                    mc.playerController.windowClickFixed(0, totemSlot >= 9 ? totemSlot : totemSlot + 36, 0, ClickType.PICKUP, mc.player);
+                    mc.playerController.windowClickFixed(0, 45, 0, ClickType.PICKUP, mc.player);
+                    mc.playerController.windowClickFixed(0, totemSlot >= 9 ? totemSlot : totemSlot + 36, 0, ClickType.PICKUP, mc.player);
                 }
             }
         }

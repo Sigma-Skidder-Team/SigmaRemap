@@ -129,7 +129,7 @@ public class Class8563 {
    public <T> void method30560(Class4750<T> var1, T var2) {
       if (var2 != null && !var1.method14898().isAssignableFrom(var2.getClass())) {
          if (!(var1 instanceof Class4755)) {
-            ViaVersion3.method27613().method27366().warning("Possible type mismatch: " + var2.getClass().getName() + " -> " + var1.method14898());
+            ViaVersion3.method27613().getLogger().warning("Possible type mismatch: " + var2.getClass().getName() + " -> " + var1.method14898());
          } else {
             var2 = (T) ((Class4755)var1).method14904(var2);
          }
@@ -172,7 +172,7 @@ public class Class8563 {
                   var7 = ((Class4755)var6.method35008()).method14904(var7);
                } else {
                   ViaVersion3.method27613()
-                     .method27366()
+                     .getLogger()
                      .warning("Possible type mismatch: " + var7.getClass().getName() + " -> " + ((Class4750)var6.method35008()).method14898());
                }
             }

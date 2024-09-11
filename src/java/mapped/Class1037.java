@@ -51,9 +51,9 @@ public class Class1037 extends ZombieEntity implements Class1022 {
    @Override
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       var4 = super.method4276(var1, var2, var3, var4, var5);
-      if (this.getItemStackFromSlot(EquipmentSlotType.field13732).isEmpty() && this.rand.nextFloat() < 0.03F) {
-         this.setItemStackToSlot(EquipmentSlotType.field13732, new ItemStack(Items.field38146));
-         this.field5605[EquipmentSlotType.field13732.method8773()] = 2.0F;
+      if (this.getItemStackFromSlot(EquipmentSlotType.OFFHAND).isEmpty() && this.rand.nextFloat() < 0.03F) {
+         this.setItemStackToSlot(EquipmentSlotType.OFFHAND, new ItemStack(Items.field38146));
+         this.field5605[EquipmentSlotType.OFFHAND.method8773()] = 2.0F;
       }
 
       return var4;

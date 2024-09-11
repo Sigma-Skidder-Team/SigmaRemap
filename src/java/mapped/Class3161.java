@@ -12,7 +12,7 @@ public class Class3161 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      Class5413 var4 = ViaVersion3.method27614().method34424().<Class5413>method31084(Class5413.class);
+      Class5413 var4 = ViaVersion3.getInstance().method34424().<Class5413>method31084(Class5413.class);
       Class9695 var5 = var1.<Class9695>method30555(Class4750.field22551, 0);
       Optional var6 = var4.method17002(var1.method30580(), var5);
       if (var6.isPresent()) {

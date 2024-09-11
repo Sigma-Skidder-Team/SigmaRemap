@@ -13,7 +13,7 @@ public class Class3105 implements Class2982 {
       Class9695 var4 = var1.<Class9695>method30555(Class4750.field22551, 0);
       short var5 = var1.<Short>method30555(Class4750.field22522, 0);
       Class72 var6 = var1.<Class72>method30555(Class4750.field22555, 0);
-      Class5412 var7 = ViaVersion3.method27614().method34424().<Class5412>method31084(Class5412.class);
+      Class5412 var7 = ViaVersion3.getInstance().method34424().<Class5412>method31084(Class5412.class);
       int var8 = var7.method16999(var1.method30580(), var4, var6, true);
       if (var8 != -1) {
          Class6039 var9 = var1.method30580().<Class6039>method22438(Class6039.class);

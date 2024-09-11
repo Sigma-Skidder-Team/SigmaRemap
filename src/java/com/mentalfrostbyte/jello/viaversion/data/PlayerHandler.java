@@ -1,10 +1,14 @@
-package mapped;
+package com.mentalfrostbyte.jello.viaversion.data;
 
 import io.netty.buffer.ByteBuf;
+import mapped.Class2080;
+import mapped.Class2326;
+import mapped.Class6852;
+
 import java.util.SortedSet;
 import java.util.UUID;
 
-public interface Class9027<T> {
+public interface PlayerHandler<T> {
    int method33426(T var1);
 
    int method33415(UUID var1);

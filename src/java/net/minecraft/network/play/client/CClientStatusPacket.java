@@ -1,6 +1,5 @@
 package net.minecraft.network.play.client;
 
-import mapped.CClientStatusPacketState;
 import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
@@ -9,18 +8,18 @@ import java.io.IOException;
 
 public class CClientStatusPacket implements Packet<IServerPlayNetHandler> {
    private static String[] field24690;
-   private CClientStatusPacketState field24691;
+   private State field24691;
 
    public CClientStatusPacket() {
    }
 
-   public CClientStatusPacket(CClientStatusPacketState var1) {
+   public CClientStatusPacket(State var1) {
       this.field24691 = var1;
    }
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24691 = var1.<CClientStatusPacketState>readEnumValue(CClientStatusPacketState.class);
+      this.field24691 = var1.<State>readEnumValue(State.class);
    }
 
    @Override
@@ -32,7 +31,15 @@ public class CClientStatusPacket implements Packet<IServerPlayNetHandler> {
       var1.processClientStatus(this);
    }
 
-   public CClientStatusPacketState getStatus() {
+   public State getStatus() {
       return this.field24691;
    }
+
+    public enum State {
+       field14277,
+       field14278,
+        OPEN_INVENTORY;
+
+       private static final State[] field14280 = new State[]{field14277, field14278, OPEN_INVENTORY};
+    }
 }

@@ -1376,7 +1376,7 @@ public class Items {
    public static final Item field38125 = method30157(
       "dark_oak_boat", new Class3305(Class2099.field13685, new Class5643().method17775(1).method17779(ItemGroup.field31668))
    );
-   public static final Item field38126 = method30157(
+   public static final Item TOTEM_OF_UNDYING = method30157(
       "totem_of_undying", new Item(new Class5643().method17775(1).method17779(ItemGroup.field31673).method17780(Class1978.field12886))
    );
    public static final Item field38127 = method30157("shulker_shell", new Item(new Class5643().method17779(ItemGroup.field31675)));

@@ -1050,7 +1050,7 @@ public abstract class LivingEntity extends Entity {
 
          for (Hand var8 : Hand.values()) {
             ItemStack var9 = this.getHeldItem(var8);
-            if (var9.getItem() == Items.field38126) {
+            if (var9.getItem() == Items.TOTEM_OF_UNDYING) {
                var4 = var9.copy();
                var9.method32182(1);
                break;
@@ -1060,7 +1060,7 @@ public abstract class LivingEntity extends Entity {
          if (var4 != null) {
             if (this instanceof ServerPlayerEntity) {
                ServerPlayerEntity var10 = (ServerPlayerEntity)this;
-               var10.addStat(Stats.field40098.method172(Items.field38126));
+               var10.addStat(Stats.field40098.method172(Items.TOTEM_OF_UNDYING));
                CriteriaTriggers.field44492.method15068(var10, var4);
             }
 
@@ -1635,7 +1635,7 @@ public abstract class LivingEntity extends Entity {
             this.renderBrokenItemStack(this.getItemStackFromSlot(EquipmentSlotType.field13731));
             break;
          case 48:
-            this.renderBrokenItemStack(this.getItemStackFromSlot(EquipmentSlotType.field13732));
+            this.renderBrokenItemStack(this.getItemStackFromSlot(EquipmentSlotType.OFFHAND));
             break;
          case 49:
             this.renderBrokenItemStack(this.getItemStackFromSlot(EquipmentSlotType.field13736));
@@ -1658,8 +1658,8 @@ public abstract class LivingEntity extends Entity {
    }
 
    private void swapHands() {
-      ItemStack var3 = this.getItemStackFromSlot(EquipmentSlotType.field13732);
-      this.setItemStackToSlot(EquipmentSlotType.field13732, this.getItemStackFromSlot(EquipmentSlotType.field13731));
+      ItemStack var3 = this.getItemStackFromSlot(EquipmentSlotType.OFFHAND);
+      this.setItemStackToSlot(EquipmentSlotType.OFFHAND, this.getItemStackFromSlot(EquipmentSlotType.field13731));
       this.setItemStackToSlot(EquipmentSlotType.field13731, var3);
    }
 
@@ -1709,7 +1709,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public ItemStack method3091() {
-      return this.getItemStackFromSlot(EquipmentSlotType.field13732);
+      return this.getItemStackFromSlot(EquipmentSlotType.OFFHAND);
    }
 
    public boolean method3092(Item var1) {
@@ -1725,7 +1725,7 @@ public abstract class LivingEntity extends Entity {
          if (var1 != Hand.field183) {
             throw new IllegalArgumentException("Invalid hand " + var1);
          } else {
-            return this.getItemStackFromSlot(EquipmentSlotType.field13732);
+            return this.getItemStackFromSlot(EquipmentSlotType.OFFHAND);
          }
       } else {
          return this.getItemStackFromSlot(EquipmentSlotType.field13731);
@@ -1738,7 +1738,7 @@ public abstract class LivingEntity extends Entity {
             throw new IllegalArgumentException("Invalid hand " + var1);
          }
 
-         this.setItemStackToSlot(EquipmentSlotType.field13732, var2);
+         this.setItemStackToSlot(EquipmentSlotType.OFFHAND, var2);
       } else {
          this.setItemStackToSlot(EquipmentSlotType.field13731, var2);
       }
@@ -2253,16 +2253,16 @@ public abstract class LivingEntity extends Entity {
 
    private void method3117(Map<EquipmentSlotType, ItemStack> var1) {
       ItemStack var4 = (ItemStack)var1.get(EquipmentSlotType.field13731);
-      ItemStack var5 = (ItemStack)var1.get(EquipmentSlotType.field13732);
+      ItemStack var5 = (ItemStack)var1.get(EquipmentSlotType.OFFHAND);
       if (var4 != null
          && var5 != null
-         && ItemStack.method32128(var4, this.getItemInHand(EquipmentSlotType.field13732))
+         && ItemStack.method32128(var4, this.getItemInHand(EquipmentSlotType.OFFHAND))
          && ItemStack.method32128(var5, this.getItemInHand(EquipmentSlotType.field13731))) {
          ((ServerWorld)this.world).getChunkProvider().sendToTrackingAndSelf(this, new SEntityStatusPacket(this, (byte)55));
          var1.remove(EquipmentSlotType.field13731);
-         var1.remove(EquipmentSlotType.field13732);
+         var1.remove(EquipmentSlotType.OFFHAND);
          this.setItemInHand(EquipmentSlotType.field13731, var4.copy());
-         this.setItemInHand(EquipmentSlotType.field13732, var5.copy());
+         this.setItemInHand(EquipmentSlotType.OFFHAND, var5.copy());
       }
    }
 
@@ -3102,7 +3102,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void sendBreakAnimation(Hand var1) {
-      this.sendBreakAnimation(var1 != Hand.MAIN_HAND ? EquipmentSlotType.field13732 : EquipmentSlotType.field13731);
+      this.sendBreakAnimation(var1 != Hand.MAIN_HAND ? EquipmentSlotType.OFFHAND : EquipmentSlotType.field13731);
    }
 
    @Override

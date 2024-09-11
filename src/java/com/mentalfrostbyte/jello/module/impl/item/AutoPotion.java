@@ -172,7 +172,7 @@ public class AutoPotion extends Module {
         int var6 = this.method16632(var3);
         if (var6 != -1) {
             if (var6 < 36) {
-                if (Client.getInstance().getPlayerTracker().method31333() > 2) {
+                if (Client.getInstance().getPlayerTracker().getMode() > 2) {
                     InvManagerUtils.moveItemToHotbar(var6, var2);
                 }
             } else {

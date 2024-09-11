@@ -31,7 +31,7 @@ public class Class6363 extends ViaVersion7<Class1933, Class1935, Class1923, Clas
             return method19382(var0);
          } else {
             ViaVersion3.method27613()
-               .method27366()
+               .getLogger()
                .warning("Invalid JSON String: \"" + var0 + "\" Please report this issue to the ViaVersion Github: " + var4.getMessage());
             return (JsonElement)Class9610.method37357().fromJson("{\"text\":\"\"}", JsonObject.class);
          }
@@ -45,7 +45,7 @@ public class Class6363 extends ViaVersion7<Class1933, Class1935, Class1923, Clas
    }
 
    public static Class9738 method19383(Class7161 var0) {
-      return ViaVersion3.method27614().method34424().<Class5408>method31084(Class5408.class).method16994(var0);
+      return ViaVersion3.getInstance().method34424().<Class5408>method31084(Class5408.class).method16994(var0);
    }
 
    public static boolean method19384(int var0) {
@@ -88,7 +88,7 @@ public class Class6363 extends ViaVersion7<Class1933, Class1935, Class1923, Clas
 
    @Override
    public boolean method19345(Class var1) {
-      return ViaVersion3.method27614().method34424().<Class5419>method31084(Class5419.class).method17014(var1);
+      return ViaVersion3.getInstance().method34424().<Class5419>method31084(Class5419.class).method17014(var1);
    }
 
    @Override

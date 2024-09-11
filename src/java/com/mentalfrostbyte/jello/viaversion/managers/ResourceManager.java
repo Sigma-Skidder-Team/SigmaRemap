@@ -1,7 +1,11 @@
-package mapped;
+package com.mentalfrostbyte.jello.viaversion.managers;
 
 import it.unimi.dsi.fastutil.ints.IntSet;
 import it.unimi.dsi.fastutil.ints.IntSets;
+import com.mentalfrostbyte.jello.viaversion.commands.CustomCommandExecutor;
+import mapped.Class7039;
+import mapped.ViaVerList;
+
 import java.io.File;
 import java.net.URL;
 import java.util.Arrays;
@@ -11,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-public class Class7040 extends Class7039 implements Class7041 {
+public class ResourceManager extends Class7039 implements AbstractResourceManager {
    private static List<String> field30379 = Arrays.<String>asList(
       "nms-player-ticking",
       "item-cache",
@@ -25,7 +29,7 @@ public class Class7040 extends Class7039 implements Class7041 {
       "change-1_14-hitbox"
    );
 
-   public Class7040(File var1) {
+   public ResourceManager(File var1) {
       super(new File(var1, "config.yml"));
       this.method21881();
    }
@@ -49,7 +53,7 @@ public class Class7040 extends Class7039 implements Class7041 {
             if (var6.getValue() instanceof String) {
                ViaVerList var7 = ViaVerList.method18572((String)var6.getValue());
                if (var7 != null) {
-                  var4.put(var6.getKey(), var7.method18582());
+                  var4.put(var6.getKey(), var7.getFakeInvThreshold());
                } else {
                   var4.remove(var6.getKey());
                }
@@ -61,7 +65,7 @@ public class Class7040 extends Class7039 implements Class7041 {
 
       if (!var4.containsKey("default")) {
          try {
-            var4.put("default", Class6750.method20579());
+            var4.put("default", CustomCommandExecutor.method20579());
          } catch (Exception var8) {
             var8.printStackTrace();
          }

@@ -1,8 +1,8 @@
-package mapped;
+package com.mentalfrostbyte.jello.viaversion.managers;
 
 import java.util.Map;
 
-public interface Class7043 {
+public interface SmallResourceManager {
    void method21879(String var1, Object var2);
 
    void method21880();

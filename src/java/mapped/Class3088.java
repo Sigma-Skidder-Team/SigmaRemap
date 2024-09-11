@@ -67,7 +67,7 @@ public class Class3088 implements Class2982 {
          }
 
          if (var11 == -1) {
-            ViaVersion3.method27613().method27366().warning("Can't open inventory for 1.14 player! Type: " + var5 + " Size: " + var7);
+            ViaVersion3.method27613().getLogger().warning("Can't open inventory for 1.14 player! Type: " + var5 + " Size: " + var7);
          }
 
          var1.method30560(Class4750.field22544, var11);

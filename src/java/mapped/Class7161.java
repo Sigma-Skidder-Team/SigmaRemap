@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.viaversion.managers.AbstractResourceManager;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelFuture;
@@ -58,9 +59,9 @@ public class Class7161 {
    public void method22442(ByteBuf var1, boolean var2) {
       Runnable var5;
       if (this.field30797) {
-         var5 = () -> this.method22464().pipeline().context(ViaVersion3.method27614().method34427().method20576()).fireChannelRead(var1);
+         var5 = () -> this.method22464().pipeline().context(ViaVersion3.getInstance().method34427().method20576()).fireChannelRead(var1);
       } else {
-         var5 = () -> this.field30796.pipeline().context(ViaVersion3.method27614().method34427().method20575()).writeAndFlush(var1);
+         var5 = () -> this.field30796.pipeline().context(ViaVersion3.getInstance().method34427().method20575()).writeAndFlush(var1);
       }
 
       if (var2) {
@@ -80,11 +81,11 @@ public class Class7161 {
    }
 
    private ChannelFuture method22444(ByteBuf var1) {
-      return this.field30796.pipeline().context(ViaVersion3.method27614().method34427().method20575()).writeAndFlush(var1);
+      return this.field30796.pipeline().context(ViaVersion3.getInstance().method34427().method20575()).writeAndFlush(var1);
    }
 
    private ChannelFuture method22445(ByteBuf var1) {
-      this.method22464().pipeline().context(ViaVersion3.method27614().method34427().method20576()).fireChannelRead(var1);
+      this.method22464().pipeline().context(ViaVersion3.getInstance().method34427().method20576()).fireChannelRead(var1);
       return this.method22464().newSucceededFuture();
    }
 
@@ -112,7 +113,7 @@ public class Class7161 {
 
    public boolean method22449() {
       if (!this.field30797) {
-         Class7041 var3 = ViaVersion3.method27612();
+         AbstractResourceManager var3 = ViaVersion3.method27612();
          if (var3.method21901() > 0 && this.field30807 >= (long)var3.method21901()) {
             this.method22450(var3.method21902().replace("%pps", Long.toString(this.field30807)));
             return true;
@@ -144,7 +145,7 @@ public class Class7161 {
    public void method22450(String var1) {
       if (this.field30796.isOpen() && !this.field30801) {
          this.field30801 = true;
-         ViaVersion3.method27613().method27354(() -> {
+         ViaVersion3.method27613().scheduleTaskWithDelay(() -> {
             if (!ViaVersion3.method27613().method27375(this, Class2307.method9078('&', var1))) {
                this.field30796.close();
             }
@@ -164,12 +165,12 @@ public class Class7161 {
       ByteBuf var5 = var1.alloc().buffer();
 
       try {
-         ChannelHandlerContext var6 = Class8190.method28488(ViaVersion3.method27614().method34427().method20576(), this.field30796.pipeline());
+         ChannelHandlerContext var6 = Class8190.method28488(ViaVersion3.getInstance().method34427().method20576(), this.field30796.pipeline());
 
          try {
             Class4750.field22544.method14908(var5, 1000);
          } catch (Exception var14) {
-            ViaVersion3.method27613().method27366().warning("Type.VAR_INT.write thrown an exception: " + var14);
+            ViaVersion3.method27613().getLogger().warning("Type.VAR_INT.write thrown an exception: " + var14);
          }
 
          var5.writeBytes(var1);
@@ -196,7 +197,7 @@ public class Class7161 {
    }
 
    private void method22453(ByteBuf var1, boolean var2) {
-      Runnable var5 = () -> this.method22464().pipeline().context(ViaVersion3.method27614().method34427().method20575()).writeAndFlush(var1);
+      Runnable var5 = () -> this.method22464().pipeline().context(ViaVersion3.getInstance().method34427().method20575()).writeAndFlush(var1);
       if (var2) {
          var5.run();
       } else {

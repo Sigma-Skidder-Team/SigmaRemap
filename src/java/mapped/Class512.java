@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.viaversion.managers.ResourceManager;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -13,7 +15,7 @@ public class Class512 implements Runnable {
    }
 
    public static Integer method1892(String var0) {
-      Map var3 = ((Class7040) ViaVersion3.method27612()).method21922();
+      Map var3 = ((ResourceManager) ViaVersion3.method27612()).method21922();
       Integer var4 = (Integer)var3.get(var0);
       if (var4 != null) {
          return var4;
@@ -27,10 +29,10 @@ public class Class512 implements Runnable {
                return var6;
             } else {
                try {
-                  return ViaVersion3.method27614().method34427().method20574();
+                  return ViaVersion3.getInstance().method34427().method20574();
                } catch (Exception var8) {
                   var8.printStackTrace();
-                  return ViaVerList.field26129.method18582();
+                  return ViaVerList._1_8_x.getFakeInvThreshold();
                }
             }
          }

@@ -72,7 +72,7 @@ public abstract class Class6853<T> extends Class6852<T> {
 
    @Override
    public Class6852 method20870(UUID var1) {
-      return this.method20871(ViaVersion3.method27614().method34431(var1));
+      return this.method20871(ViaVersion3.getInstance().method34431(var1));
    }
 
    @Override
@@ -86,7 +86,7 @@ public abstract class Class6853<T> extends Class6852<T> {
 
    @Override
    public Class6852 method20874(UUID var1) {
-      return this.method20875(ViaVersion3.method27614().method34431(var1));
+      return this.method20875(ViaVersion3.getInstance().method34431(var1));
    }
 
    @Override
@@ -128,7 +128,7 @@ public abstract class Class6853<T> extends Class6852<T> {
 
    @Override
    public Set<UUID> method20879() {
-      return this.field29770.stream().<UUID>map(var0 -> ViaVersion3.method27614().method34420(var0)).filter(Objects::nonNull).collect(Collectors.<UUID>toSet());
+      return this.field29770.stream().<UUID>map(var0 -> ViaVersion3.getInstance().method34420(var0)).filter(Objects::nonNull).collect(Collectors.<UUID>toSet());
    }
 
    @Override

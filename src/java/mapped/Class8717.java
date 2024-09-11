@@ -13,7 +13,7 @@ public class Class8717 {
       }
 
       try {
-         field39334[EquipmentSlotType.field13732.ordinal()] = 2;
+         field39334[EquipmentSlotType.OFFHAND.ordinal()] = 2;
       } catch (NoSuchFieldError var9) {
       }
 

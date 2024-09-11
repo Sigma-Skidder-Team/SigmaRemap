@@ -850,12 +850,12 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    private static ItemStack method15785(PlayerEntity var0) {
       for (Hand var6 : Hand.values()) {
          ItemStack var7 = var0.getHeldItem(var6);
-         if (var7.getItem() == Items.field38126) {
+         if (var7.getItem() == Items.TOTEM_OF_UNDYING) {
             return var7;
          }
       }
 
-      return new ItemStack(Items.field38126);
+      return new ItemStack(Items.TOTEM_OF_UNDYING);
    }
 
    @Override
@@ -1222,10 +1222,10 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                   } else if (var7 != 0) {
                      if (var7 == 1) {
                         this.field23272
-                           .displayGuiScreen(new WinGameScreen(true, () -> this.field23272.player.connection.sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14277))));
+                           .displayGuiScreen(new WinGameScreen(true, () -> this.field23272.player.connection.sendPacket(new CClientStatusPacket(CClientStatusPacket.State.field14277))));
                      }
                   } else {
-                     this.field23272.player.connection.sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14277));
+                     this.field23272.player.connection.sendPacket(new CClientStatusPacket(CClientStatusPacket.State.field14277));
                      this.field23272.displayGuiScreen(new Class1312());
                   }
                } else {

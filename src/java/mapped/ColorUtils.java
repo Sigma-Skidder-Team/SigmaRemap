@@ -665,7 +665,7 @@ public class ColorUtils {
    }
 
    public static void method17735(Entity var0, boolean var1) {
-      boolean var4 = JelloPortal.method27372().equals(ViaVerList.field26129);
+      boolean var4 = JelloPortal.getCurrentVersion().equals(ViaVerList._1_8_x);
       EventRayTraceResult var5 = new EventRayTraceResult(var0, true);
       Client.getInstance().getEventManager().call(var5);
       if (!var5.isCancelled()) {

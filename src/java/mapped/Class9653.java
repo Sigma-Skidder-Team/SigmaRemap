@@ -94,7 +94,7 @@ public class Class9653 {
                                                    var1x,
                                                    Class8303.method29036(var1x, "loot_table"),
                                                    Class6849.method20827(var1x, "pos"),
-                                                   method37671((Class6619)var1x.getSource(), EquipmentSlotType.field13732),
+                                                   method37671((Class6619)var1x.getSource(), EquipmentSlotType.OFFHAND),
                                                    var1
                                                 )
                                           )
@@ -145,7 +145,7 @@ public class Class9653 {
                                  Class6099.method18839("offhand")
                                     .executes(
                                        var1x -> method37672(
-                                             var1x, Class6849.method20827(var1x, "pos"), method37671((Class6619)var1x.getSource(), EquipmentSlotType.field13732), var1
+                                             var1x, Class6849.method20827(var1x, "pos"), method37671((Class6619)var1x.getSource(), EquipmentSlotType.OFFHAND), var1
                                           )
                                     )
                               )

@@ -2,7 +2,7 @@ package mapped;
 
 public enum EquipmentSlotType {
    field13731(Class1969.field12836, 0, 0, "mainhand"),
-   field13732(Class1969.field12836, 1, 5, "offhand"),
+   OFFHAND(Class1969.field12836, 1, 5, "offhand"),
    field13733(Class1969.field12837, 0, 1, "feet"),
    field13734(Class1969.field12837, 1, 2, "legs"),
    field13735(Class1969.field12837, 2, 3, "chest"),
@@ -12,7 +12,7 @@ public enum EquipmentSlotType {
    private final int field13738;
    private final int field13739;
    private final String field13740;
-   private static final EquipmentSlotType[] field13741 = new EquipmentSlotType[]{field13731, field13732, field13733, field13734, field13735, field13736};
+   private static final EquipmentSlotType[] field13741 = new EquipmentSlotType[]{field13731, OFFHAND, field13733, field13734, field13735, field13736};
 
    private EquipmentSlotType(Class1969 var3, int var4, int var5, String var6) {
       this.field13737 = var3;

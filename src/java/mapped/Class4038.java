@@ -23,7 +23,7 @@ public final class Class4038 extends Class3758 {
                var8 = "minecraft:" + var7;
                if (!Class5980.method18544(var8)) {
                   if (!ViaVersion3.method27612().method21941()) {
-                     ViaVersion3.method27613().method27366().warning("Invalid attribute: " + var7);
+                     ViaVersion3.method27613().getLogger().warning("Invalid attribute: " + var7);
                   }
 
                   var5--;

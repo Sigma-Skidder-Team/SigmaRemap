@@ -34,7 +34,7 @@ public class Cubecraft2Fly extends PremiumModule {
             this.field23699 = true;
         }
 
-        if (ColorUtils.method17718() && JelloPortal.method27349() == ViaVerList.field26129.method18582()) {
+        if (ColorUtils.method17718() && JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getFakeInvThreshold()) {
             Client.getInstance().getNotificationManager().post(new Notification("Cubecraft2 fly", "This fly was made for 1.9+ only"));
         }
 
@@ -75,7 +75,7 @@ public class Cubecraft2Fly extends PremiumModule {
     @EventTarget
     private void method16484(MouseHoverEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13973() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
                 var1.setCancelled(true);
                 this.field23699 = false;
             }

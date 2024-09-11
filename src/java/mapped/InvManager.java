@@ -208,10 +208,10 @@ public class InvManager extends PremiumModule {
                     this.field23659 = false;
                 }
 
-                if (this.field23660 && (long) Client.getInstance().getPlayerTracker().method31333() >= delayValue) {
+                if (this.field23660 && (long) Client.getInstance().getPlayerTracker().getMode() >= delayValue) {
                     this.field23660 = !this.field23660;
                     this.method16446(this.field23659);
-                    InvManagerUtils.fixedClick(mc.player.container.field25471, 45, 0, ClickType.field14694, mc.player, true);
+                    InvManagerUtils.fixedClick(mc.player.container.field25471, 45, 0, ClickType.PICKUP, mc.player, true);
                     this.field23658.method27120();
                 } else {
                     if (mc.currentScreen == null || mc.currentScreen instanceof InventoryScreen || mc.currentScreen instanceof ChatScreen) {
@@ -226,23 +226,23 @@ public class InvManager extends PremiumModule {
                         }
 
                         boolean var7 = this.getStringSettingValueByName("Tools").equals("Organize");
-                        if ((long) Client.getInstance().getPlayerTracker().method31333() >= delayValue && field23655 >= 36 && var7) {
+                        if ((long) Client.getInstance().getPlayerTracker().getMode() >= delayValue && field23655 >= 36 && var7) {
                             this.method16438(field23655, mode.equals("FakeInv"));
                         }
 
-                        if ((long) Client.getInstance().getPlayerTracker().method31333() >= delayValue && field23657 >= 36 && var7) {
+                        if ((long) Client.getInstance().getPlayerTracker().getMode() >= delayValue && field23657 >= 36 && var7) {
                             this.method16439(field23657, mode.equals("FakeInv"));
                         }
 
-                        if ((long) Client.getInstance().getPlayerTracker().method31333() >= delayValue && field23656 >= 36 && var7) {
+                        if ((long) Client.getInstance().getPlayerTracker().getMode() >= delayValue && field23656 >= 36 && var7) {
                             this.method16440(field23656, mode.equals("FakeInv"));
                         }
 
-                        if ((long) Client.getInstance().getPlayerTracker().method31333() >= delayValue && this.getBooleanValueFromSetttingName("Auto Shield")) {
+                        if ((long) Client.getInstance().getPlayerTracker().getMode() >= delayValue && this.getBooleanValueFromSetttingName("Auto Shield")) {
                             this.method16441(mode.equals("FakeInv"));
                         }
 
-                        if ((long) Client.getInstance().getPlayerTracker().method31333() >= delayValue && this.getBooleanValueFromSetttingName("Cleaner")) {
+                        if ((long) Client.getInstance().getPlayerTracker().getMode() >= delayValue && this.getBooleanValueFromSetttingName("Cleaner")) {
                             for (int var8 = 9; var8 < 45; var8++) {
                                 if (mc.player.container.getSlot(var8).getHasStack()) {
                                     ItemStack var9 = mc.player.container.getSlot(var8).getStack();
@@ -483,7 +483,7 @@ public class InvManager extends PremiumModule {
                 if (var5.getItem() instanceof Class3334) {
                     this.method16446(var1);
                     this.field23658.method27120();
-                    InvManagerUtils.fixedClick(mc.player.container.field25471, var4, 0, ClickType.field14694, mc.player, true);
+                    InvManagerUtils.fixedClick(mc.player.container.field25471, var4, 0, ClickType.PICKUP, mc.player, true);
                     this.field23660 = true;
                     return;
                 }
@@ -492,8 +492,8 @@ public class InvManager extends PremiumModule {
     }
 
     private void method16446(boolean var1) {
-        if (var1 && this.field23659 && !(mc.currentScreen instanceof InventoryScreen) && JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
-            mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
+        if (var1 && this.field23659 && !(mc.currentScreen instanceof InventoryScreen) && JelloPortal.getFakeInvStatus() <= ViaVerList._1_11_1_or_2.getFakeInvThreshold()) {
+            mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
             this.field23659 = false;
         }
     }

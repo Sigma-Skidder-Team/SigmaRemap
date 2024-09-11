@@ -42,7 +42,7 @@ public class MainmenuScreen2 extends IconPanel {
       String var20 = "© Sigma Prod";
       StringBuilder var10000 = new StringBuilder().append("Jello for Sigma ");
       Client.getInstance();
-      String var21 = var10000.append(Client.VERSION).append("  -  1.8 to ").append(JelloPortal.field34418.method18580()).toString();
+      String var21 = var10000.append(Client.VERSION).append("  -  1.8 to ").append(JelloPortal.defaultVersion.method18580()).toString();
       this.addToList(
          this.field21123 = new Class4236(
             this,
@@ -169,7 +169,7 @@ public class MainmenuScreen2 extends IconPanel {
    }
 
    public void method13443() {
-      JelloPortal.field34417 = JelloPortal.field34418;
+      JelloPortal.currentVersion = JelloPortal.defaultVersion;
       Class810 var3 = new Class810();
       var3.method2209(Minecraft.getInstance().currentScreen);
       this.method13444();

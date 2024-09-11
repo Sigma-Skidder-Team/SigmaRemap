@@ -62,7 +62,7 @@ public class VanillaFly extends Module {
     @EventTarget
     private void method16917(MouseHoverEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13973() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
                 var1.setCancelled(true);
                 this.field23995 = false;
             }
@@ -74,7 +74,7 @@ public class VanillaFly extends Module {
         if (this.isEnabled()) {
             if (!mc.player.onGround && this.getBooleanValueFromSetttingName("Kick bypass")) {
                 if (this.field23996 > 0 && this.field23996 % 30 == 0 && !ColorUtils.method17730(mc.player, 0.01F)) {
-                    if (JelloPortal.method27349() != ViaVerList.field26129.method18582()) {
+                    if (JelloPortal.getFakeInvStatus() != ViaVerList._1_8_x.getFakeInvThreshold()) {
                         var1.setY(var1.getY() - 0.04);
                     } else {
                         double var4 = this.method16920();

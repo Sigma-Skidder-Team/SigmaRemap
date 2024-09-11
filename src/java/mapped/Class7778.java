@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.base.Preconditions;
+import com.mentalfrostbyte.jello.viaversion.data.PlayerData;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -42,7 +44,7 @@ public abstract class Class7778 implements Class7779 {
    }
 
    @Override
-   public boolean method25769(Class9150 var1, String[] var2) {
+   public boolean method25769(PlayerData var1, String[] var2) {
       if (var2.length != 0) {
          if (this.method25767(var2[0])) {
             Class6255 var5 = this.method25768(var2[0]);
@@ -70,7 +72,7 @@ public abstract class Class7778 implements Class7779 {
    }
 
    @Override
-   public List<String> method25770(Class9150 var1, String[] var2) {
+   public List<String> method25770(PlayerData var1, String[] var2) {
       Set<Class6255> var5 = this.method25772(var1);
       ArrayList var6 = new ArrayList();
       if (var2.length != 1) {
@@ -100,7 +102,7 @@ public abstract class Class7778 implements Class7779 {
       return var6;
    }
 
-   public void method25771(Class9150 var1) {
+   public void method25771(PlayerData var1) {
       Set<Class6255> var4 = this.method25772(var1);
       if (var4.isEmpty()) {
          var1.method34169(method25775("&cYou are not allowed to use these commands!"));
@@ -116,7 +118,7 @@ public abstract class Class7778 implements Class7779 {
       }
    }
 
-   private Set<Class6255> method25772(Class9150 var1) {
+   private Set<Class6255> method25772(PlayerData var1) {
       HashSet var4 = new HashSet();
 
       for (Class6255 var6 : this.field33364.values()) {
@@ -128,7 +130,7 @@ public abstract class Class7778 implements Class7779 {
       return var4;
    }
 
-   private boolean method25773(Class9150 var1, String var2) {
+   private boolean method25773(PlayerData var1, String var2) {
       return var2 == null || var1.method34168(var2);
    }
 
@@ -153,7 +155,7 @@ public abstract class Class7778 implements Class7779 {
       return var0;
    }
 
-   public static void method25776(Class9150 var0, String var1, Object... var2) {
+   public static void method25776(PlayerData var0, String var1, Object... var2) {
       var0.method34169(method25775(var2 != null ? String.format(var1, var2) : var1));
    }
 }

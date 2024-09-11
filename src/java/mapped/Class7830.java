@@ -13,7 +13,7 @@ public abstract class Class7830 {
 
    @Nullable
    public Class7161 method26209(UUID var1) {
-      return ViaVersion3.method27614().method34431(var1);
+      return ViaVersion3.getInstance().method34431(var1);
    }
 
    public boolean method26210(UUID var1) {

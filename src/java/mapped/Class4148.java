@@ -52,7 +52,7 @@ public abstract class Class4148 extends Class4147 {
 
    public byte method12843(Class7161 var1, Class9695 var2, int var3) {
       byte var6 = 0;
-      boolean var7 = var1.method22465().method18677() < ViaVerList.field26137.method18573();
+      boolean var7 = var1.method22465().method18677() < ViaVerList._1_12.method18573();
       if (this.method12844(Class1983.field12946, this.method12840(var1, var2.method37961(Class1983.field12946)), var7)) {
          var6 = (byte)(var6 | 1);
       }

@@ -162,7 +162,7 @@ public abstract class Container {
       if (var3 != ClickType.field14699) {
          if (this.field25474 != 0) {
             this.resetDrag();
-         } else if ((var3 == ClickType.field14694 || var3 == ClickType.field14695) && (var2 == 0 || var2 == 1)) {
+         } else if ((var3 == ClickType.PICKUP || var3 == ClickType.field14695) && (var2 == 0 || var2 == 1)) {
             if (var1 != -999) {
                if (var3 != ClickType.field14695) {
                   if (var1 < 0) {

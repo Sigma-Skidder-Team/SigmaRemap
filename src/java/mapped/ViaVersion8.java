@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.io.CharStreams;
 import com.google.gson.JsonObject;
+import com.mentalfrostbyte.jello.viaversion.data.PlayerData;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,12 +14,12 @@ import java.nio.charset.StandardCharsets;
 import java.util.logging.Level;
 
 public class ViaVersion8 implements Runnable {
-   public final Class9150 field1396;
+   public final PlayerData field1396;
    public final Class7133 field1397;
    public final Class7801 field1398;
    public final ServerDump field1399;
 
-   public ViaVersion8(ServerDump var1, Class9150 var2, Class7133 var3, Class7801 var4) {
+   public ViaVersion8(ServerDump var1, PlayerData var2, Class7133 var3, Class7801 var4) {
       this.field1399 = var1;
       this.field1396 = var2;
       this.field1397 = var3;
@@ -33,7 +34,7 @@ public class ViaVersion8 implements Runnable {
          var3 = (HttpURLConnection)new URL("https://dump.viaversion.com/documents").openConnection();
       } catch (IOException var7) {
          this.field1396.method34169(Class2307.field15779 + "Failed to dump, please check the console for more information");
-         ViaVersion3.method27613().method27366().log(Level.WARNING, "Could not paste ViaVersion dump to ViaVersion Dump", (Throwable)var7);
+         ViaVersion3.method27613().getLogger().log(Level.WARNING, "Could not paste ViaVersion dump to ViaVersion Dump", (Throwable)var7);
          return;
       }
 
@@ -65,16 +66,16 @@ public class ViaVersion8 implements Runnable {
             );
       } catch (Exception var9) {
          this.field1396.method34169(Class2307.field15779 + "Failed to dump, please check the console for more information");
-         ViaVersion3.method27613().method27366().log(Level.WARNING, "Could not paste ViaVersion dump to Hastebin", (Throwable)var9);
+         ViaVersion3.method27613().getLogger().log(Level.WARNING, "Could not paste ViaVersion dump to Hastebin", (Throwable)var9);
 
          try {
             if (var3.getResponseCode() < 200 || var3.getResponseCode() > 400) {
                String var5 = CharStreams.toString(new InputStreamReader(var3.getErrorStream()));
                var3.getErrorStream().close();
-               ViaVersion3.method27613().method27366().log(Level.WARNING, "Page returned: " + var5);
+               ViaVersion3.method27613().getLogger().log(Level.WARNING, "Page returned: " + var5);
             }
          } catch (IOException var8) {
-            ViaVersion3.method27613().method27366().log(Level.WARNING, "Failed to capture further info", (Throwable)var8);
+            ViaVersion3.method27613().getLogger().log(Level.WARNING, "Failed to capture further info", (Throwable)var8);
          }
       }
    }

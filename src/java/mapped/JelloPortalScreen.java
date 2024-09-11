@@ -34,7 +34,7 @@ public class JelloPortalScreen extends MultiplayerScreen {
          (double)(this.method6251().size() - 1),
          1.0F,
          var1 -> (double)this.method6250(),
-         (var1, var2) -> JelloPortal.field34417 = this.method6252(var2.intValue()),
+         (var1, var2) -> JelloPortal.currentVersion = this.method6252(var2.intValue()),
          (var1, var2) -> {
             int var5 = (int)var2.method18090(var1);
             return new StringTextComponent(this.method6252(var5).method18580());
@@ -60,7 +60,7 @@ public class JelloPortalScreen extends MultiplayerScreen {
       field6960 = 0;
 
       for (ViaVerList var4 : this.method6251()) {
-         if (this.method6252(field6960).equals(JelloPortal.method27372())) {
+         if (this.method6252(field6960).equals(JelloPortal.getCurrentVersion())) {
             break;
          }
 
@@ -74,7 +74,7 @@ public class JelloPortalScreen extends MultiplayerScreen {
       ArrayList var3 = new ArrayList();
 
       for (ViaVerList var5 : ViaVerList.field26128) {
-         if (var5.method18582() >= ViaVerList.field26129.method18582()) {
+         if (var5.getFakeInvThreshold() >= ViaVerList._1_8_x.getFakeInvThreshold()) {
             var3.add(var5);
          }
       }

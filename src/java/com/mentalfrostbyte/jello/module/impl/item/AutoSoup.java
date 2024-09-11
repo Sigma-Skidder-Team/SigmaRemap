@@ -82,7 +82,7 @@ public class AutoSoup extends Module {
         if (this.isEnabled()) {
             if (this.field23433 && var1.getPacket() instanceof CClientStatusPacket) {
                 CClientStatusPacket var4 = (CClientStatusPacket) var1.getPacket();
-                if (var4.getStatus() == CClientStatusPacketState.field14279) {
+                if (var4.getStatus() == CClientStatusPacket.State.OPEN_INVENTORY) {
                     var1.setCancelled(true);
                 }
             }
@@ -93,8 +93,8 @@ public class AutoSoup extends Module {
         this.field23432 = true;
         if (this.getStringSettingValueByName("Refill mode").equals("FakeInv")
                 && !(mc.currentScreen instanceof InventoryScreen)
-                && JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
-            mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
+                && JelloPortal.getFakeInvStatus() <= ViaVerList._1_11_1_or_2.getFakeInvThreshold()) {
+            mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
             this.field23433 = true;
         }
 
@@ -103,9 +103,9 @@ public class AutoSoup extends Module {
             if (var3 > 0) {
                 int var4 = this.method16062(var3);
                 if (var4 > 0) {
-                    InvManagerUtils.fixedClick(mc.player.container.field25471, var4, 0, ClickType.field14694, mc.player, true);
+                    InvManagerUtils.fixedClick(mc.player.container.field25471, var4, 0, ClickType.PICKUP, mc.player, true);
                     InvManagerUtils.fixedClick(mc.player.container.field25471, var4, 0, ClickType.field14700, mc.player, true);
-                    InvManagerUtils.fixedClick(mc.player.container.field25471, var4, 0, ClickType.field14694, mc.player, true);
+                    InvManagerUtils.fixedClick(mc.player.container.field25471, var4, 0, ClickType.PICKUP, mc.player, true);
                     this.field23431 = -5;
                 }
             }
@@ -116,7 +116,7 @@ public class AutoSoup extends Module {
 
     private void method16060() {
         int var3 = (int) this.getNumberValueBySettingName("Refill delay");
-        if (this.field23431 >= var3 && Client.getInstance().getPlayerTracker().method31333() >= var3) {
+        if (this.field23431 >= var3 && Client.getInstance().getPlayerTracker().getMode() >= var3) {
             while (this.field23429 < 36) {
                 boolean var4 = false;
                 if (InvManagerUtils.method25866(this.field23429).getItem() == Items.field37837

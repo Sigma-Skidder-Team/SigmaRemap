@@ -20,7 +20,7 @@ public class Class3188 implements Class2982 {
             short var7 = var1.<Short>method30555(Class4750.field22522, 0);
             short var8 = var1.<Short>method30555(Class4750.field22534, 0);
             short var9 = var1.<Short>method30555(Class4750.field22534, 1);
-            Class5414 var10 = ViaVersion3.method27614().method34424().<Class5414>method31084(Class5414.class);
+            Class5414 var10 = ViaVersion3.getInstance().method34424().<Class5414>method31084(Class5414.class);
             boolean var11 = var10.method17009(var7, var8, var9, var1.method30580());
             if (var11) {
                var1.method30578();

@@ -108,7 +108,7 @@ public class PlayerContainer extends Class5828<Class926> {
                if (!this.mergeItemStack(var7, var9, var9 + 1, false)) {
                   return ItemStack.EMPTY;
                }
-            } else if (var8 == EquipmentSlotType.field13732 && !this.field25468.get(45).getHasStack()) {
+            } else if (var8 == EquipmentSlotType.OFFHAND && !this.field25468.get(45).getHasStack()) {
                if (!this.mergeItemStack(var7, 45, 46, false)) {
                   return ItemStack.EMPTY;
                }

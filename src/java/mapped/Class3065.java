@@ -20,8 +20,8 @@ public class Class3065 implements Class2982 {
          if (!var4.equalsIgnoreCase("MC|TrList")) {
             var4 = Class9687.method37924(var4);
             if (var4 == null) {
-               if (!ViaVersion3.method27612().method21941() || ViaVersion3.method27614().method34425()) {
-                  ViaVersion3.method27613().method27366().warning("Ignoring outgoing plugin message with channel: " + var4);
+               if (!ViaVersion3.method27612().method21941() || ViaVersion3.getInstance().method34425()) {
+                  ViaVersion3.method27613().getLogger().warning("Ignoring outgoing plugin message with channel: " + var4);
                }
 
                var1.method30578();
@@ -35,8 +35,8 @@ public class Class3065 implements Class2982 {
                for (int var18 = 0; var18 < var14.length; var18++) {
                   String var9 = Class9687.method37924(var14[var18]);
                   if (var9 == null) {
-                     if (!ViaVersion3.method27612().method21941() || ViaVersion3.method27614().method34425()) {
-                        ViaVersion3.method27613().method27366().warning("Ignoring plugin channel in outgoing REGISTER: " + var14[var18]);
+                     if (!ViaVersion3.method27612().method21941() || ViaVersion3.getInstance().method34425()) {
+                        ViaVersion3.method27613().getLogger().warning("Ignoring plugin channel in outgoing REGISTER: " + var14[var18]);
                      }
                   } else {
                      var16.add(var9);
@@ -87,8 +87,8 @@ public class Class3065 implements Class2982 {
             var7 = (byte)(var7 | 1);
             Optional var8 = Class2299.method9064(var5);
             if (!var8.isPresent()) {
-               if (!ViaVersion3.method27612().method21941() || ViaVersion3.method27614().method34425()) {
-                  ViaVersion3.method27613().method27366().info("Could not handle unknown sound source " + var5 + " falling back to default: master");
+               if (!ViaVersion3.method27612().method21941() || ViaVersion3.getInstance().method34425()) {
+                  ViaVersion3.method27613().getLogger().info("Could not handle unknown sound source " + var5 + " falling back to default: master");
                }
 
                var8 = Optional.<Class2299>of(Class2299.field15690);

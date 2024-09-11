@@ -88,7 +88,7 @@ public class Class6380 extends ViaVersion7<Class1914, Class1932, Class1924, Clas
       }
 
       var1.method22440(new Class6039(var1));
-      if (ViaVersion3.method27612().method21925() && ViaVersion3.method27614().method34424().<Class5404>method31084(Class5404.class) instanceof Class5406) {
+      if (ViaVersion3.method27612().method21925() && ViaVersion3.getInstance().method34424().<Class5404>method31084(Class5404.class) instanceof Class5406) {
          var1.method22440(new Class6041(var1));
       }
    }

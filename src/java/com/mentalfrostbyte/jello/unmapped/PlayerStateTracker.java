@@ -89,7 +89,7 @@ public class PlayerStateTracker {
       return this.focusGameTicks;
    }
 
-   public int method31333() {
+   public int getMode() {
       return this.field39251;
    }
 

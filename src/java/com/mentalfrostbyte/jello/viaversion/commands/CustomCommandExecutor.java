@@ -1,11 +1,13 @@
-package mapped;
+package com.mentalfrostbyte.jello.viaversion.commands;
 
 import com.google.gson.JsonObject;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import io.netty.channel.ChannelInitializer;
+import mapped.Class6749;
+
 import java.lang.reflect.Method;
 
-public class Class6750 implements Class6749 {
+public class CustomCommandExecutor implements Class6749 {
    public static Method field29458;
 
    private ChannelInitializer method20578() throws Exception {
@@ -26,7 +28,7 @@ public class Class6750 implements Class6749 {
    }
 
    public static int method20579() {
-      return JelloPortal.method27349();
+      return JelloPortal.getFakeInvStatus();
    }
 
    @Override

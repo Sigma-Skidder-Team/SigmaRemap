@@ -12,9 +12,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentSkipListMap;
+
+import com.mentalfrostbyte.jello.viaversion.managers.SmallResourceManager;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class Class7039 implements Class7043 {
+public abstract class Class7039 implements SmallResourceManager {
    private static final ThreadLocal<Class9134> field30375 = ThreadLocal.<Class9134>withInitial(() -> {
       Class8324 var2 = new Class8324();
       var2.method29171(Class2214.field14476);

@@ -1194,7 +1194,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void processClientStatus(CClientStatusPacket packetIn) {
       PacketThreadUtil.checkThreadAndEnqueue(packetIn, this, this.player.getServerWorld());
       this.player.markPlayerActive();
-      CClientStatusPacketState var4 = packetIn.getStatus();
+      CClientStatusPacket.State var4 = packetIn.getStatus();
       switch (Class9703.state[var4.ordinal()]) {
          case 1:
             if (this.player.queuedEndExit) {

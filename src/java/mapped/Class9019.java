@@ -59,10 +59,10 @@ public class Class9019 {
          var7.put(var2, var0);
       }
 
-      if (!ViaVersion3.method27613().method27361()) {
+      if (!ViaVersion3.method27613().isMultiplayer()) {
          field41265.add(var0);
       } else {
-         var0.method19349(ViaVersion3.method27614().method34424());
+         var0.method19349(ViaVersion3.getInstance().method34424());
          method33358();
       }
 
@@ -77,10 +77,10 @@ public class Class9019 {
 
    public static void method33357(ViaVersion7 var0, Range<Integer> var1) {
       field41264.add(new Class9284<Range<Integer>, ViaVersion7>(var1, var0));
-      if (!ViaVersion3.method27613().method27361()) {
+      if (!ViaVersion3.method27613().isMultiplayer()) {
          field41265.add(var0);
       } else {
-         var0.method19349(ViaVersion3.method27614().method34424());
+         var0.method19349(ViaVersion3.getInstance().method34424());
          method33358();
       }
    }
@@ -120,7 +120,7 @@ public class Class9019 {
 
    public static void method33361() {
       for (ViaVersion7 var3 : field41265) {
-         var3.method19349(ViaVersion3.method27614().method34424());
+         var3.method19349(ViaVersion3.getInstance().method34424());
       }
    }
 
@@ -232,7 +232,7 @@ public class Class9019 {
    }
 
    private static void method33369() {
-      ViaVersion3.method27613().method27366().info("Shutting down mapping loader executor!");
+      ViaVersion3.method27613().getLogger().info("Shutting down mapping loader executor!");
       field41269 = true;
       field41268.shutdown();
       field41268 = null;
@@ -246,7 +246,7 @@ public class Class9019 {
    public static void method33370(Class<? extends ViaVersion7> var0, Runnable var1) {
       synchronized (field41266) {
          CompletableFuture var5 = CompletableFuture.runAsync(var1, field41268).exceptionally(var1x -> {
-            ViaVersion3.method27613().method27366().severe("Error during mapping loading of " + var0.getSimpleName());
+            ViaVersion3.method27613().getLogger().severe("Error during mapping loading of " + var0.getSimpleName());
             var1x.printStackTrace();
             return null;
          });
@@ -257,7 +257,7 @@ public class Class9019 {
    public static void method33371(Class<? extends ViaVersion7> var0, Class<? extends ViaVersion7> var1, Runnable var2) {
       synchronized (field41266) {
          CompletableFuture var6 = method33372(var1).whenCompleteAsync((var1x, var2x) -> var2.run(), field41268).exceptionally(var1x -> {
-            ViaVersion3.method27613().method27366().severe("Error during mapping loading of " + var0.getSimpleName());
+            ViaVersion3.method27613().getLogger().severe("Error during mapping loading of " + var0.getSimpleName());
             var1x.printStackTrace();
             return null;
          });
@@ -277,38 +277,38 @@ public class Class9019 {
       field41268 = new ThreadPoolExecutor(5, 16, 45L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), var4);
       field41268.allowCoreThreadTimeOut(true);
       method33357(field41257, Range.lessThan(Integer.MIN_VALUE));
-      method33357(new Class6374(), Range.lessThan(ViaVerList.field26151.method18573()));
-      method33357(new Class6375(), Range.atLeast(ViaVerList.field26151.method18573()));
-      method33355(new Class6363(), ViaVerList.field26130, ViaVerList.field26129);
+      method33357(new Class6374(), Range.lessThan(ViaVerList._1_16.method18573()));
+      method33357(new Class6375(), Range.atLeast(ViaVerList._1_16.method18573()));
+      method33355(new Class6363(), ViaVerList._1_9, ViaVerList._1_8_x);
       method33356(
-         new Class6359(), Arrays.<Integer>asList(ViaVerList.field26131.method18573(), ViaVerList.field26132.method18573()), ViaVerList.field26130.method18573()
+         new Class6359(), Arrays.<Integer>asList(ViaVerList._1_9_1.method18573(), ViaVerList._1_9_2.method18573()), ViaVerList._1_9.method18573()
       );
-      method33355(new Class6354(), ViaVerList.field26133, ViaVerList.field26132);
-      method33355(new Class6370(), ViaVerList.field26130, ViaVerList.field26132);
+      method33355(new Class6354(), ViaVerList._1_9_3_or_4, ViaVerList._1_9_2);
+      method33355(new Class6370(), ViaVerList._1_9, ViaVerList._1_9_2);
       method33356(
-         new Class6366(), Arrays.<Integer>asList(ViaVerList.field26131.method18573(), ViaVerList.field26132.method18573()), ViaVerList.field26133.method18573()
+         new Class6366(), Arrays.<Integer>asList(ViaVerList._1_9_1.method18573(), ViaVerList._1_9_2.method18573()), ViaVerList._1_9_3_or_4.method18573()
       );
-      method33355(new Class6362(), ViaVerList.field26134, ViaVerList.field26133);
-      method33355(new Class6386(), ViaVerList.field26135, ViaVerList.field26134);
-      method33355(new Class6383(), ViaVerList.field26136, ViaVerList.field26135);
-      method33355(new Class6372(), ViaVerList.field26137, ViaVerList.field26136);
-      method33355(new Class6364(), ViaVerList.field26138, ViaVerList.field26137);
-      method33355(new Class6360(), ViaVerList.field26139, ViaVerList.field26138);
-      method33355(new Class6380(), ViaVerList.field26140, ViaVerList.field26139);
-      method33355(new Class6379(), ViaVerList.field26141, ViaVerList.field26140);
-      method33355(new Class6365(), ViaVerList.field26142, ViaVerList.field26141);
-      method33355(new Class6371(), ViaVerList.field26143, ViaVerList.field26142);
-      method33355(new Class6369(), ViaVerList.field26144, ViaVerList.field26143);
-      method33355(new Class6367(), ViaVerList.field26145, ViaVerList.field26144);
-      method33355(new Class6382(), ViaVerList.field26146, ViaVerList.field26145);
-      method33355(new Class6368(), ViaVerList.field26147, ViaVerList.field26146);
-      method33355(new Class6384(), ViaVerList.field26148, ViaVerList.field26147);
-      method33355(new Class6385(), ViaVerList.field26149, ViaVerList.field26148);
-      method33355(new Class6361(), ViaVerList.field26150, ViaVerList.field26149);
-      method33355(new Class6356(), ViaVerList.field26151, ViaVerList.field26150);
-      method33355(new Class6378(), ViaVerList.field26152, ViaVerList.field26151);
-      method33355(new Class6357(), ViaVerList.field26153, ViaVerList.field26152);
-      method33355(new Class6381(), ViaVerList.field26154, ViaVerList.field26153);
-      method33355(new Class6358(), ViaVerList.field26155, ViaVerList.field26154);
+      method33355(new Class6362(), ViaVerList._1_10_X, ViaVerList._1_9_3_or_4);
+      method33355(new Class6386(), ViaVerList._1_11, ViaVerList._1_10_X);
+      method33355(new Class6383(), ViaVerList._1_11_1_or_2, ViaVerList._1_11);
+      method33355(new Class6372(), ViaVerList._1_12, ViaVerList._1_11_1_or_2);
+      method33355(new Class6364(), ViaVerList._1_12_1, ViaVerList._1_12);
+      method33355(new Class6360(), ViaVerList._1_12_2, ViaVerList._1_12_1);
+      method33355(new Class6380(), ViaVerList._1_13, ViaVerList._1_12_2);
+      method33355(new Class6379(), ViaVerList._1_13_1, ViaVerList._1_13);
+      method33355(new Class6365(), ViaVerList._1_13_2, ViaVerList._1_13_1);
+      method33355(new Class6371(), ViaVerList._1_14, ViaVerList._1_13_2);
+      method33355(new Class6369(), ViaVerList._1_14_1, ViaVerList._1_14);
+      method33355(new Class6367(), ViaVerList._1_14_2, ViaVerList._1_14_1);
+      method33355(new Class6382(), ViaVerList._1_14_3, ViaVerList._1_14_2);
+      method33355(new Class6368(), ViaVerList._1_14_4, ViaVerList._1_14_3);
+      method33355(new Class6384(), ViaVerList._1_15, ViaVerList._1_14_4);
+      method33355(new Class6385(), ViaVerList._1_15_1, ViaVerList._1_15);
+      method33355(new Class6361(), ViaVerList._1_15_2, ViaVerList._1_15_1);
+      method33355(new Class6356(), ViaVerList._1_16, ViaVerList._1_15_2);
+      method33355(new Class6378(), ViaVerList._1_16_1, ViaVerList._1_16);
+      method33355(new Class6357(), ViaVerList._1_16_2, ViaVerList._1_16_1);
+      method33355(new Class6381(), ViaVerList._1_16_3, ViaVerList._1_16_2);
+      method33355(new Class6358(), ViaVerList._1_16_4, ViaVerList._1_16_3);
    }
 }

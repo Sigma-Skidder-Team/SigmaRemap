@@ -70,7 +70,7 @@ public class Class6057 extends Class6036 {
       Class6852 var4 = this.field26281.remove(var1);
       if (var4 != null) {
          var4.method20882();
-         ViaVersion3.method27614().method34424().<Class5415>method31084(Class5415.class).method17011(this.method18672(), var4.method20884());
+         ViaVersion3.getInstance().method34424().<Class5415>method31084(Class5415.class).method17011(this.method18672(), var4.method20884());
       }
    }
 
@@ -157,7 +157,7 @@ public class Class6057 extends Class6036 {
                      this.field26281.put(var1, var14);
                      var14.method20871(this.method18672());
                      var14.method20881();
-                     ViaVersion3.method27614().method34424().<Class5415>method31084(Class5415.class).method17010(this.method18672(), var14.method20884());
+                     ViaVersion3.getInstance().method34424().<Class5415>method31084(Class5415.class).method17010(this.method18672(), var14.method20884());
                   } else {
                      var14.method20862(var19);
                   }
@@ -171,7 +171,7 @@ public class Class6057 extends Class6036 {
                      this.field26281.put(var1, var16);
                      var16.method20871(this.method18672());
                      var16.method20881();
-                     ViaVersion3.method27614().method34424().<Class5415>method31084(Class5415.class).method17010(this.method18672(), var16.method20884());
+                     ViaVersion3.getInstance().method34424().<Class5415>method31084(Class5415.class).method17010(this.method18672(), var16.method20884());
                   } else {
                      var16.method20864(var22);
                   }
@@ -258,7 +258,7 @@ public class Class6057 extends Class6036 {
 
    public int method18753() {
       try {
-         return ViaVersion3.method27614().method34424().<Class5401>method31084(Class5401.class).method16982(this.method18672());
+         return ViaVersion3.getInstance().method34424().<Class5401>method31084(Class5401.class).method16982(this.method18672());
       } catch (Exception var4) {
          return this.method18670();
       }

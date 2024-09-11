@@ -63,7 +63,7 @@ public class CreativeScreen extends Class860<Class5820> {
       }
 
       boolean var7 = var4 == ClickType.field14695;
-      var4 = var2 == -999 && var4 == ClickType.field14694 ? ClickType.field14698 : var4;
+      var4 = var2 == -999 && var4 == ClickType.PICKUP ? ClickType.field14698 : var4;
       if (var1 == null && field4776 != ItemGroup.field31677.method23641() && var4 != ClickType.field14699) {
          PlayerInventory var16 = this.mc.player.inventory;
          if (!var16.method4057().isEmpty() && this.field4784) {

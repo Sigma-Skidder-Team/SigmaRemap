@@ -7,6 +7,6 @@ public class Class5418 extends Class5417 {
 
    @Override
    public int method17012(Class7161 var1) throws Exception {
-      return JelloPortal.method27349();
+      return JelloPortal.getFakeInvStatus();
    }
 }

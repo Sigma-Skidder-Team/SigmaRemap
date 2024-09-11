@@ -23,6 +23,6 @@ public class ViaVersion4 extends Exception {
    }
 
    public static ViaVersion4 method10461() {
-      return !ViaVersion3.method27614().method34425() ? field16532 : new ViaVersion4();
+      return !ViaVersion3.getInstance().method34425() ? field16532 : new ViaVersion4();
    }
 }

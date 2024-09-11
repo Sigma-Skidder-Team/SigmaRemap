@@ -133,7 +133,7 @@ public class Class6041 extends Class6037 {
    static {
       try {
          field26251 = Class.forName("it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap").getConstructor();
-         ViaVersion3.method27613().method27366().info("Using FastUtil Long2ObjectOpenHashMap for block connections");
+         ViaVersion3.method27613().getLogger().info("Using FastUtil Long2ObjectOpenHashMap for block connections");
       } catch (NoSuchMethodException | ClassNotFoundException var8) {
       }
 

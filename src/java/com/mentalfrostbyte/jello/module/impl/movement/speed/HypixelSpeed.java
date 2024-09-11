@@ -231,7 +231,7 @@ public class HypixelSpeed extends Module {
         if (var2 != 0) {
             if (var2 != 1) {
                 if (var2 != 2) {
-                    if (var2 == 3 && Math.abs(var1.getY()) < 0.1 && JelloPortal.method27349() == ViaVerList.field26129.method18582()) {
+                    if (var2 == 3 && Math.abs(var1.getY()) < 0.1 && JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getFakeInvThreshold()) {
                         var1.setY(0.0300011120129438);
                     }
                 } else {

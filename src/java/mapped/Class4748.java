@@ -91,7 +91,7 @@ public class Class4748 extends Class4747<Class8173, Class6051> {
             }
 
             if (var24 > 0) {
-               ViaVersion3.method27613().method27366().log(Level.WARNING, var24 + " Bytes left after reading chunks! (" + var11 + ")");
+               ViaVersion3.method27613().getLogger().log(Level.WARNING, var24 + " Bytes left after reading chunks! (" + var11 + ")");
             }
 
             return new Class8172(var7, var8, var11, var12, var15, var16, new ArrayList<Class72>());

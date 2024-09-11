@@ -78,7 +78,7 @@ public class AutoArmor extends Module {
 
                 if ((mc.currentScreen == null || mc.currentScreen instanceof InventoryScreen || mc.currentScreen instanceof ChatScreen)
                         && this.timer.method27121() > var4
-                        && (float) Client.getInstance().getPlayerTracker().method31333() > (float) var4 / 50.0F) {
+                        && (float) Client.getInstance().getPlayerTracker().getMode() > (float) var4 / 50.0F) {
                     field23798 = false;
                     this.method16616(this.getStringSettingValueByName("Mode").equalsIgnoreCase("FakeInv"));
                 }
@@ -172,8 +172,8 @@ public class AutoArmor extends Module {
     }
 
     private void method16617(boolean var1) {
-        if (var1 && this.isInventoryOpen && !(mc.currentScreen instanceof InventoryScreen) && JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
-            mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
+        if (var1 && this.isInventoryOpen && !(mc.currentScreen instanceof InventoryScreen) && JelloPortal.getFakeInvStatus() <= ViaVerList._1_11_1_or_2.getFakeInvThreshold()) {
+            mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
             this.isInventoryOpen = false;
         }
     }

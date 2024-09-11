@@ -37,7 +37,7 @@ public class OldHitting extends Module {
     @HigherPriority
     @Class5631
     private void method16020(EventUpdate var1) {
-        if (this.isEnabled() || JelloPortal.method27372() == ViaVerList.field26129) {
+        if (this.isEnabled() || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x) {
             if (var1.isPre()) {
                 boolean var4 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof ItemSword;
                 boolean var5 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988();
@@ -104,13 +104,13 @@ public class OldHitting extends Module {
     @LowerPriority
     @Class5631
     private void method16021(RecievePacketEvent var1) {
-        if (this.isEnabled() || JelloPortal.method27372() == ViaVerList.field26129) {
+        if (this.isEnabled() || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x) {
             if (mc.player != null) {
                 if (var1.getPacket() instanceof SEntityEquipmentPacket) {
                     SEntityEquipmentPacket var4 = (SEntityEquipmentPacket) var1.getPacket();
 
                     var4.func_241790_c_().removeIf(var6 -> var4.getEntityID() == mc.player.getEntityId()
-                            && var6.getFirst() == EquipmentSlotType.field13732
+                            && var6.getFirst() == EquipmentSlotType.OFFHAND
                             && var6.getSecond() != null
                             && var6.getSecond().getItem() == Items.field38119);
                 }
@@ -122,7 +122,7 @@ public class OldHitting extends Module {
     @LowerPriority
     @Class5631
     private void method16022(EventHandAnimation var1) {
-        if (this.isEnabled() || JelloPortal.method27372() == ViaVerList.field26129) {
+        if (this.isEnabled() || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x) {
             float var4 = var1.method13924();
             if (var1.method13926() && var1.getHand() == HandSide.field14417 && var1.getItemStack().getItem() instanceof Class3334) {
                 var1.method13931(false);

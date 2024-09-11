@@ -15,7 +15,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 
 public class AutoTools extends Module {
-    public int field23511 = -1;
+    public int previousSlot = -1;
 
     public AutoTools() {
         super(ModuleCategory.ITEM, "AutoTools", "Picks the best tool when breaking blocks");
@@ -23,54 +23,55 @@ public class AutoTools extends Module {
     }
 
     @EventTarget
-    public void method16189(MouseHoverEvent var1) {
-        if (this.isEnabled() && mc.player != null && var1.method13973() == 0) {
-            if (this.field23511 != -1) {
-                mc.player.inventory.currentItem = this.field23511;
-                this.field23511 = -1;
+    public void onMouseHover(MouseHoverEvent event) {
+        if (this.isEnabled() && mc.player != null && event.getMouseButton() == 0) {
+            if (this.previousSlot != -1) {
+                mc.player.inventory.currentItem = this.previousSlot;
+                this.previousSlot = -1;
             }
         }
     }
 
     @EventTarget
-    private void method16190(EventKeyPress var1) {
-        if (this.isEnabled() && mc.player != null && var1.getKey() == 0) {
-            this.method16192(var1.getBlockPos());
+    private void onKeyPress(EventKeyPress event) {
+        if (this.isEnabled() && mc.player != null && event.getKey() == 0) {
+            this.selectBestTool(event.getBlockPos());
         }
     }
 
     @EventTarget
-    private void method16191(TickEvent var1) {
+    private void onTick(TickEvent event) {
         if (this.isEnabled() && mc.player != null && mc.gameSettings.keyBindAttack.isKeyDown()) {
-            this.method16192(null);
+            this.selectBestTool(null);
         }
     }
 
-    public void method16192(BlockPos var1) {
-        BlockPos var4 = var1 == null
+    public void selectBestTool(BlockPos blockPos) {
+        BlockPos targetBlockPos = blockPos == null
                 ? (mc.objectMouseOver.getType() != RayTraceResult.Type.BLOCK ? null : ((BlockRayTraceResult) mc.objectMouseOver).getPos())
-                : var1;
-        if (var4 != null) {
-            int var5 = InvManagerUtils.method25837(mc.world.getBlockState(var4));
-            if (var5 != -1) {
-                if (mc.player.inventory.currentItem != var5 % 9 && this.field23511 == -1) {
-                    this.field23511 = mc.player.inventory.currentItem;
+                : blockPos;
+
+        if (targetBlockPos != null) {
+            int bestToolSlot = InvManagerUtils.findBestToolForBlock(mc.world.getBlockState(targetBlockPos));
+            if (bestToolSlot != -1) {
+                if (mc.player.inventory.currentItem != bestToolSlot % 9 && this.previousSlot == -1) {
+                    this.previousSlot = mc.player.inventory.currentItem;
                 }
 
-                if (var5 >= 36 && var5 <= 44) {
-                    mc.player.inventory.currentItem = var5 % 9;
-                } else if (Client.getInstance().getPlayerTracker().method31333() > 1) {
-                    String var6 = this.getStringSettingValueByName("Inv Mode");
-                    if (var6.equals("OpenInv") && !(mc.currentScreen instanceof InventoryScreen)) {
+                if (bestToolSlot >= 36 && bestToolSlot <= 44) {
+                    mc.player.inventory.currentItem = bestToolSlot % 9;
+                } else if (Client.getInstance().getPlayerTracker().getMode() > 1) {
+                    String invMode = this.getStringSettingValueByName("Inv Mode");
+                    if (invMode.equals("OpenInv") && !(mc.currentScreen instanceof InventoryScreen)) {
                         return;
                     }
 
-                    if (var6.equals("FakeInv") && JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
-                        mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
+                    if (invMode.equals("FakeInv") && JelloPortal.getFakeInvStatus() <= ViaVerList._1_11_1_or_2.getFakeInvThreshold()) {
+                        mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
                     }
 
-                    mc.player.inventory.currentItem = InvManagerUtils.method25857(var5);
-                    if (var6.equals("FakeInv")) {
+                    mc.player.inventory.currentItem = InvManagerUtils.swapToolToHotbar(bestToolSlot);
+                    if (invMode.equals("FakeInv")) {
                         mc.getConnection().sendPacket(new CCloseWindowPacket(-1));
                     }
                 }

@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.viaversion.task.TaskScheduler;
+
 import java.util.concurrent.TimeUnit;
 
 public class Class8880 implements Class8881 {
@@ -8,16 +10,16 @@ public class Class8880 implements Class8881 {
    private final Runnable field40194;
    private long field40195;
    private long field40196;
-   public final Class7289 field40197;
+   public final TaskScheduler field40197;
 
-   public Class8880(Class7289 var1, Object var2, Runnable var3) {
+   public Class8880(TaskScheduler var1, Object var2, Runnable var3) {
       this.field40197 = var1;
       this.field40193 = var2;
       this.field40194 = var3;
    }
 
    @Override
-   public Class8881 method32315(long var1, TimeUnit var3) {
+   public Class8881 setDelay(long var1, TimeUnit var3) {
       this.field40195 = var3.toMillis(var1);
       return this;
    }
@@ -41,9 +43,9 @@ public class Class8880 implements Class8881 {
    }
 
    @Override
-   public Class763 method32319() {
+   public Class763 start() {
       Class762 var3 = new Class762(this.field40197, this.field40193, this.field40194, this.field40195, this.field40196);
-      Class7289.method23047(this.field40197).put(this.field40193, var3);
+      TaskScheduler.method23047(this.field40197).put(this.field40193, var3);
       var3.method1898();
       return var3;
    }

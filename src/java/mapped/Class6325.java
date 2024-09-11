@@ -18,7 +18,7 @@ public class Class6325 implements Class6326 {
 
          return var7;
       } else {
-         ViaVersion3.method27613().method27366().warning("Received an bed color update packet, but there is no bed! O_o " + var2);
+         ViaVersion3.method27613().getLogger().warning("Received an bed color update packet, but there is no bed! O_o " + var2);
          return -1;
       }
    }

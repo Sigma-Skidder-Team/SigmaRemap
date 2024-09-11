@@ -114,7 +114,7 @@ public class Class6906 extends Class6904 {
    public static Class1868 method21112(int var0, List<Class8656> var1) {
       Optional var4 = Class1868.method8129(var0);
       if (!var4.isPresent()) {
-         ViaVersion3.method27614().method34423().method27366().severe("Error: could not find Entity type " + var0 + " with metadata: " + var1);
+         ViaVersion3.getInstance().method34423().getLogger().severe("Error: could not find Entity type " + var0 + " with metadata: " + var1);
          return null;
       } else {
          Class1868 var5 = (Class1868)var4.get();
@@ -180,9 +180,9 @@ public class Class6906 extends Class6904 {
                }
             }
          } catch (Exception var8) {
-            if (!ViaVersion3.method27612().method21894() || ViaVersion3.method27614().method34425()) {
-               ViaVersion3.method27613().method27366().warning("An error occurred with entity type rewriter");
-               ViaVersion3.method27613().method27366().warning("Metadata: " + var1);
+            if (!ViaVersion3.method27612().method21894() || ViaVersion3.getInstance().method34425()) {
+               ViaVersion3.method27613().getLogger().warning("An error occurred with entity type rewriter");
+               ViaVersion3.method27613().getLogger().warning("Metadata: " + var1);
                var8.printStackTrace();
             }
          }

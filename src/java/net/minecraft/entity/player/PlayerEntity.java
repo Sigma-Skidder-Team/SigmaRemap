@@ -609,7 +609,7 @@ public abstract class PlayerEntity extends LivingEntity {
    @Nullable
    public ItemEntity method2836(ItemStack var1, boolean var2, boolean var3) {
       if (!var1.isEmpty()) {
-         if (this.world.isRemote && JelloPortal.method27372().method18582() >= ViaVerList.field26151.method18582()) {
+         if (this.world.isRemote && JelloPortal.getCurrentVersion().getFakeInvThreshold() >= ViaVerList._1_16.getFakeInvThreshold()) {
             this.swingArm(Hand.MAIN_HAND);
          }
 
@@ -837,7 +837,7 @@ public abstract class PlayerEntity extends LivingEntity {
             this.activeItemStack.method32121(var4, this, var1x -> var1x.sendBreakAnimation(var5));
             if (this.activeItemStack.isEmpty()) {
                if (var5 != Hand.MAIN_HAND) {
-                  this.setItemStackToSlot(EquipmentSlotType.field13732, ItemStack.EMPTY);
+                  this.setItemStackToSlot(EquipmentSlotType.OFFHAND, ItemStack.EMPTY);
                } else {
                   this.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
                }
@@ -1689,7 +1689,7 @@ public abstract class PlayerEntity extends LivingEntity {
    @Override
    public ItemStack getItemStackFromSlot(EquipmentSlotType var1) {
       if (var1 != EquipmentSlotType.field13731) {
-         if (var1 != EquipmentSlotType.field13732) {
+         if (var1 != EquipmentSlotType.OFFHAND) {
             return var1.method8772() != Class1969.field12837 ? ItemStack.EMPTY : this.inventory.field5440.get(var1.method8773());
          } else {
             return this.inventory.field5441.get(0);
@@ -1702,7 +1702,7 @@ public abstract class PlayerEntity extends LivingEntity {
    @Override
    public void setItemStackToSlot(EquipmentSlotType var1, ItemStack var2) {
       if (var1 != EquipmentSlotType.field13731) {
-         if (var1 != EquipmentSlotType.field13732) {
+         if (var1 != EquipmentSlotType.OFFHAND) {
             if (var1.method8772() == Class1969.field12837) {
                this.playEquipSound(var2);
                this.inventory.field5440.set(var1.method8773(), var2);
@@ -1906,7 +1906,7 @@ public abstract class PlayerEntity extends LivingEntity {
                return true;
             }
          } else {
-            this.setItemStackToSlot(EquipmentSlotType.field13732, var2);
+            this.setItemStackToSlot(EquipmentSlotType.OFFHAND, var2);
             return true;
          }
       }

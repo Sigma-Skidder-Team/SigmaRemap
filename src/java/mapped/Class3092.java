@@ -20,14 +20,14 @@ public class Class3092 implements Class2982 {
       var4.method18682(var5);
       String var6 = var1.<String>method30561(Class4750.field22539);
       var4.method18680(var6);
-      ViaVersion3.method27614().method34422(var1.method30580());
+      ViaVersion3.getInstance().method34422(var1.method30580());
       if (var4.method18683().method19393().stream().allMatch(Class9019::method33366)) {
          var1.method30580().method22469(false);
       }
 
-      if (ViaVersion3.method27614().method34425()) {
+      if (ViaVersion3.getInstance().method34425()) {
          ViaVersion3.method27613()
-            .method27366()
+            .getLogger()
             .log(
                Level.INFO,
                "{0} logged in with protocol {1}, Route: {2}",

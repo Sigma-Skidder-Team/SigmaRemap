@@ -54,7 +54,7 @@ public class Class5980 extends Class5979 {
             String var9 = (String)var8.getKey();
             String var10 = ((JsonElement)var8.getValue()).getAsString();
             if (!method18544(var10)) {
-               ViaVersion3.method27613().method27366().warning("Channel '" + var10 + "' is not a valid 1.13 plugin channel, please check your configuration!");
+               ViaVersion3.method27613().getLogger().warning("Channel '" + var10 + "' is not a valid 1.13 plugin channel, please check your configuration!");
             } else {
                this.field26054.put(var9, var10);
             }

@@ -37,8 +37,8 @@ public class Class4770 extends Class4750<Class8173> {
       ArrayList var14 = new ArrayList<Class72>(Arrays.asList(Class4750.field22556.method14894(var1)));
       if (var1.readableBytes() > 0) {
          byte[] var15 = Class4750.field22521.method14894(var1);
-         if (ViaVersion3.method27614().method34425()) {
-            ViaVersion3.method27613().method27366().warning("Found " + var15.length + " more bytes than expected while reading the chunk: " + var4 + "/" + var5);
+         if (ViaVersion3.getInstance().method34425()) {
+            ViaVersion3.method27613().getLogger().warning("Found " + var15.length + " more bytes than expected while reading the chunk: " + var4 + "/" + var5);
          }
       }
 

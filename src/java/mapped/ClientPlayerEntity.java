@@ -197,7 +197,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                   this.connection.sendPacket(new CPlayerPacket.PositionRotationPacket(var8, var10, var12, var15, var14, var16));
                } else if (!var27) {
                   if (!var28) {
-                     if (this.field6124 != this.onGround || JelloPortal.method27372() == ViaVerList.field26129) {
+                     if (this.field6124 != this.onGround || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x) {
                         this.connection.sendPacket(new CPlayerPacket(var16));
                      }
                   } else {
@@ -258,7 +258,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void respawnPlayer() {
-      this.connection.sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14277));
+      this.connection.sendPacket(new CClientStatusPacket(CClientStatusPacket.State.field14277));
    }
 
    @Override

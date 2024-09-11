@@ -221,7 +221,7 @@ public class Test extends Module {
                                                 }
                                             } else {
                                                 CClientStatusPacket var12 = (CClientStatusPacket) var4;
-                                                if (var12.getStatus() != CClientStatusPacketState.field14279) {
+                                                if (var12.getStatus() != CClientStatusPacket.State.OPEN_INVENTORY) {
                                                 }
                                             }
                                         }

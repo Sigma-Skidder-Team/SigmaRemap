@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CEntityActionPacket;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.tileentity.CommandBlockTileEntity;
@@ -10,16 +11,16 @@ public class Class9703 {
    public static final int[] field45356;
    public static final int[] field45357;
    public static final int[] field45358;
-   public static final int[] state = new int[CClientStatusPacketState.values().length];
+   public static final int[] state = new int[CClientStatusPacket.State.values().length];
 
    static {
       try {
-         state[CClientStatusPacketState.field14277.ordinal()] = 1;
+         state[CClientStatusPacket.State.field14277.ordinal()] = 1;
       } catch (NoSuchFieldError var23) {
       }
 
       try {
-         state[CClientStatusPacketState.field14278.ordinal()] = 2;
+         state[CClientStatusPacket.State.field14278.ordinal()] = 2;
       } catch (NoSuchFieldError var22) {
       }
 

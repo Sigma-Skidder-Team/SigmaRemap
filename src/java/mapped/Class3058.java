@@ -44,7 +44,7 @@ public class Class3058 implements Class2982 {
             Class9019.field41258 = ViaVerList.method18569(var7).method18573();
          }
 
-         Class5417 var9 = ViaVersion3.method27614().method34424().<Class5417>method31084(Class5417.class);
+         Class5417 var9 = ViaVersion3.getInstance().method34424().<Class5417>method31084(Class5417.class);
          if (var9 == null) {
             var1.method30580().method22469(false);
             return;
@@ -52,7 +52,7 @@ public class Class3058 implements Class2982 {
 
          int var10 = var9.method17012(var1.method30580());
          List var11 = null;
-         if (var4.method18675() >= var10 || ViaVersion3.method27613().method27365()) {
+         if (var4.method18675() >= var10 || ViaVersion3.method27613().isConnectionSecure()) {
             var11 = Class9019.method33363(var4.method18675(), var10);
          }
 

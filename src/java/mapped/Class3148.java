@@ -17,6 +17,6 @@ public class Class3148 implements Class2982 {
 
       var1.method30583(Class6363.class, true, true);
       var1.method30578();
-      ViaVersion3.method27614().method34424().<Class5407>method31084(Class5407.class).method16993(var1.method30580(), var4);
+      ViaVersion3.getInstance().method34424().<Class5407>method31084(Class5407.class).method16993(var1.method30580(), var4);
    }
 }

@@ -263,7 +263,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11033(
          EntityType.field41027,
          Class7318.method23188()
-            .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4695.method14724(Items.field38126)))
+            .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4695.method14724(Items.TOTEM_OF_UNDYING)))
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))

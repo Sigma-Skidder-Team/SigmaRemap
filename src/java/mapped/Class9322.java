@@ -176,7 +176,7 @@ public class Class9322 {
 
    public static void method35229() {
       if (ViaVersion3.method27612().method21925()) {
-         ViaVersion3.method27613().method27366().info("Loading block connection mappings ...");
+         ViaVersion3.method27613().getLogger().info("Loading block connection mappings ...");
          JsonObject var2 = Class8159.method28359("mapping-1.13.json", true);
          JsonObject var3 = var2.getAsJsonObject("blockstates");
 
@@ -255,7 +255,7 @@ public class Class9322 {
 
          if (ViaVersion3.method27612().method21926().equalsIgnoreCase("packet")) {
             field43273 = new Class5406();
-            ViaVersion3.method27614().method34424().method31082(Class5404.class, field43273);
+            ViaVersion3.getInstance().method34424().method31082(Class5404.class, field43273);
          }
       }
    }

@@ -27,7 +27,7 @@ public class Class3783 extends Class3758 {
                         var5.add(var9);
                      } else if (!ViaVersion3.method27612().method21941()) {
                         ViaVersion3.method27613()
-                           .method27366()
+                           .getLogger()
                            .warning("Ignoring incoming plugin channel register of '" + var9 + "', as it is longer than 32 characters");
                      }
                   }
@@ -41,7 +41,7 @@ public class Class3783 extends Class3758 {
                }
             } else {
                if (!ViaVersion3.method27612().method21941()) {
-                  ViaVersion3.method27613().method27366().warning("Ignoring incoming plugin channel, as it is longer than 32 characters: " + var3);
+                  ViaVersion3.method27613().getLogger().warning("Ignoring incoming plugin channel, as it is longer than 32 characters: " + var3);
                }
 
                var0.method30578();

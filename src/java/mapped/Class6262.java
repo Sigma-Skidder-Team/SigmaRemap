@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.viaversion.data.PlayerData;
+
 public class Class6262 extends Class6255 {
    @Override
    public String method19220() {
@@ -12,9 +14,9 @@ public class Class6262 extends Class6255 {
    }
 
    @Override
-   public boolean method19222(Class9150 var1, String[] var2) {
-      ViaVersion3.method27614().method34426(!ViaVersion3.method27614().method34425());
-      this.method19227(var1, "&6Debug mode is now %s", new Object[]{!ViaVersion3.method27614().method34425() ? "&cdisabled" : "&aenabled"});
+   public boolean method19222(PlayerData var1, String[] var2) {
+      ViaVersion3.getInstance().method34426(!ViaVersion3.getInstance().method34425());
+      this.method19227(var1, "&6Debug mode is now %s", new Object[]{!ViaVersion3.getInstance().method34425() ? "&cdisabled" : "&aenabled"});
       return true;
    }
 }

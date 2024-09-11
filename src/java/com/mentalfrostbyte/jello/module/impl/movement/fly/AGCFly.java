@@ -48,7 +48,7 @@ public class AGCFly extends Module {
     @EventTarget
     private void method16781(MouseHoverEvent var1) {
         if (this.isEnabled()) {
-            if (var1.method13973() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
                 var1.setCancelled(true);
                 this.field23904 = false;
             }

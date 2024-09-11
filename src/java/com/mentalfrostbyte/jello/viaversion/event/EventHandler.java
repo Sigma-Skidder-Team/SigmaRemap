@@ -1,16 +1,19 @@
-package mapped;
+package com.mentalfrostbyte.jello.viaversion.event;
 
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
+import com.mentalfrostbyte.jello.viaversion.data.PlayerHandler;
 import io.netty.buffer.ByteBuf;
+import mapped.*;
+
 import java.util.Map;
 import java.util.SortedSet;
 import java.util.TreeSet;
 import java.util.UUID;
 
-public class Class9026 implements Class9027<ClientPlayerEntity> {
+public class EventHandler implements PlayerHandler<ClientPlayerEntity> {
    public int method33426(ClientPlayerEntity var1) {
       if (var1 != null) {
-         return JelloPortal.method27348();
+         return JelloPortal.getFakeInventoryThreshold();
       } else {
          throw new NullPointerException("player is marked non-null but is null");
       }
@@ -19,7 +22,7 @@ public class Class9026 implements Class9027<ClientPlayerEntity> {
    @Override
    public int method33415(UUID var1) {
       if (var1 != null) {
-         return JelloPortal.method27348();
+         return JelloPortal.getFakeInventoryThreshold();
       } else {
          throw new NullPointerException("uuid is marked non-null but is null");
       }
@@ -63,16 +66,18 @@ public class Class9026 implements Class9027<ClientPlayerEntity> {
    @Override
    public SortedSet<Integer> method33422() {
       TreeSet var3 = new TreeSet<Integer>(Class9019.method33359());
-      var3.removeAll(ViaVersion3.method27613().method27368().method21942());
+      var3.removeAll(ViaVersion3.method27613().getResourceManager().method21942());
       return var3;
    }
 
    public Map<UUID, Class7161> method33423() {
-      return ViaVersion3.method27614().method34418();
+      return ViaVersion3.getInstance().method34418();
    }
 
    @Override
    public boolean method33424(UUID var1) {
       return false;
    }
+
+
 }

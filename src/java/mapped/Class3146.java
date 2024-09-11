@@ -27,7 +27,7 @@ public class Class3146 implements Class2982 {
       }
 
       if (var4 == 2) {
-         Class5413 var8 = ViaVersion3.method27614().method34424().<Class5413>method31084(Class5413.class);
+         Class5413 var8 = ViaVersion3.getInstance().method34424().<Class5413>method31084(Class5413.class);
          var8.method17001(var1.method30580(), var1.<Class9695>method30555(Class4750.field22551, 0), var1.<Class72>method30555(Class4750.field22555, 0));
          var1.method30578();
       }

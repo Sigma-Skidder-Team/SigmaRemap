@@ -26,8 +26,8 @@ public abstract class Class6904 {
             this.method21088(var1, var6, var8, var2, var3);
          } catch (Exception var11) {
             var2.remove(var8);
-            if (!ViaVersion3.method27612().method21894() || ViaVersion3.method27614().method34425()) {
-               Logger var10 = ViaVersion3.method27613().method27366();
+            if (!ViaVersion3.method27612().method21894() || ViaVersion3.getInstance().method34425()) {
+               Logger var10 = ViaVersion3.method27613().getLogger();
                var10.warning("An error occurred with entity metadata handler");
                var10.warning(
                   "This is most likely down to one of your plugins sending bad datawatchers. Please test if this occurs without any plugins except ViaVersion before reporting it on GitHub"
@@ -91,7 +91,7 @@ public abstract class Class6904 {
          }
          catch (IllegalArgumentException | NullPointerException runtimeException) {
             if (this.field29903.containsKey(class1867.method8121())) continue;
-            ViaVersion3.method27613().method27366().warning("Could not find new entity type for " + class1867 + "! Old type: " + class1867.getClass().getEnclosingClass().getSimpleName() + ", new type: " + clazz.getEnclosingClass().getSimpleName());
+            ViaVersion3.method27613().getLogger().warning("Could not find new entity type for " + class1867 + "! Old type: " + class1867.getClass().getEnclosingClass().getSimpleName() + ", new type: " + clazz.getEnclosingClass().getSimpleName());
          }
       }
    }

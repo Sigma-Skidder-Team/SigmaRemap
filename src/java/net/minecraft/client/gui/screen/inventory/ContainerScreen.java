@@ -319,7 +319,7 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
                                  InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 340)
                                     || InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 344)
                               );
-                           ClickType var17 = ClickType.field14694;
+                           ClickType var17 = ClickType.PICKUP;
                            if (!var16) {
                               if (var15 == -999) {
                                  var17 = ClickType.field14698;
@@ -384,9 +384,9 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
                      this.field4732 = var12;
                      this.field4742 = var14;
                   } else if (var14 - this.field4742 > 500L) {
-                     this.method2626(this.field4730, this.field4730.field25579, 0, ClickType.field14694);
-                     this.method2626(var12, var12.field25579, 1, ClickType.field14694);
-                     this.method2626(this.field4730, this.field4730.field25579, 0, ClickType.field14694);
+                     this.method2626(this.field4730, this.field4730.field25579, 0, ClickType.PICKUP);
+                     this.method2626(var12, var12.field25579, 1, ClickType.PICKUP);
+                     this.method2626(this.field4730, this.field4730.field25579, 0, ClickType.PICKUP);
                      this.field4742 = var14 + 750L;
                      this.field4737.method32182(1);
                   }
@@ -462,10 +462,10 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
 
                boolean var16 = Container.canAddItemToSlot(var8, this.field4737, false);
                if (var12 != -1 && !this.field4737.isEmpty() && var16) {
-                  this.method2626(this.field4730, this.field4730.field25579, var5, ClickType.field14694);
-                  this.method2626(var8, var12, 0, ClickType.field14694);
+                  this.method2626(this.field4730, this.field4730.field25579, var5, ClickType.PICKUP);
+                  this.method2626(var8, var12, 0, ClickType.PICKUP);
                   if (!this.mc.player.inventory.method4057().isEmpty()) {
-                     this.method2626(this.field4730, this.field4730.field25579, var5, ClickType.field14694);
+                     this.method2626(this.field4730, this.field4730.field25579, var5, ClickType.PICKUP);
                      this.field4738 = MathHelper.floor(var1 - (double)var9);
                      this.field4739 = MathHelper.floor(var3 - (double)var10);
                      this.field4731 = this.field4730;
@@ -504,7 +504,7 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
                   this.field4752 = var8 != null && var8.getHasStack() ? var8.getStack().copy() : ItemStack.EMPTY;
                }
 
-               this.method2626(var8, var12, var5, !var13 ? ClickType.field14694 : ClickType.field14695);
+               this.method2626(var8, var12, var5, !var13 ? ClickType.PICKUP : ClickType.field14695);
             } else {
                this.method2626(var8, var12, var5, ClickType.field14697);
             }

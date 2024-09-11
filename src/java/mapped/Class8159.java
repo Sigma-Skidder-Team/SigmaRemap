@@ -35,14 +35,14 @@ public class Class8159 {
 
    @Nullable
    public static JsonObject method28357(String var0) {
-      File var3 = new File(ViaVersion3.method27613().method27370(), var0);
+      File var3 = new File(ViaVersion3.method27613().getConfigFile(), var0);
       if (!var3.exists()) {
          return method28358(var0);
       } else {
          try (FileReader var4 = new FileReader(var3)) {
             return (JsonObject)Class9610.method37357().fromJson(var4, JsonObject.class);
          } catch (JsonSyntaxException var19) {
-            ViaVersion3.method27613().method27366().warning(var0 + " is badly formatted!");
+            ViaVersion3.method27613().getLogger().warning(var0 + " is badly formatted!");
             var19.printStackTrace();
          } catch (JsonIOException | IOException var20) {
             var20.printStackTrace();
@@ -128,8 +128,8 @@ public class Class8159 {
          }
 
          if (var5 == -1) {
-            if (!ViaVersion3.method27612().method21941() || ViaVersion3.method27614().method34425()) {
-               ViaVersion3.method27613().method27366().warning("No key for " + var0.getValue() + " :( ");
+            if (!ViaVersion3.method27612().method21941() || ViaVersion3.getInstance().method34425()) {
+               ViaVersion3.method27613().getLogger().warning("No key for " + var0.getValue() + " :( ");
             }
 
             return -1;
@@ -163,8 +163,8 @@ public class Class8159 {
             }
 
             if (var10 == -1) {
-               if (var4 && !ViaVersion3.method27612().method21941() || ViaVersion3.method27614().method34425()) {
-                  ViaVersion3.method27613().method27366().warning("No key for " + var9 + " :( ");
+               if (var4 && !ViaVersion3.method27612().method21941() || ViaVersion3.getInstance().method34425()) {
+                  ViaVersion3.method27613().getLogger().warning("No key for " + var9 + " :( ");
                }
                continue;
             }

@@ -55,13 +55,13 @@ public class BoatFly extends PremiumModule {
     @EventTarget
     private void method16418(MouseHoverEvent var1) {
         if (this.isEnabled()) {
-            if (this.field23643 && var1.method13973() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (this.field23643 && var1.getMouseButton() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
                 this.field23643 = false;
             }
 
             if (mc.player.getRidingEntity() != null) {
                 if (!mc.player.getRidingEntity().onGround) {
-                    if (var1.method13973() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+                    if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
                         var1.setCancelled(true);
                         this.field23643 = false;
                     }

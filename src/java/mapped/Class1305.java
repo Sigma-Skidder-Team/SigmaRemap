@@ -31,7 +31,7 @@ public class Class1305 extends Screen implements Class1306 {
    @Override
    public void init() {
       this.field6906 = true;
-      this.mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14278));
+      this.mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.field14278));
    }
 
    public void method6179() {

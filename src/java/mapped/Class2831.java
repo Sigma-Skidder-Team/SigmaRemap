@@ -273,7 +273,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
       Class7999.method27304()
          .method27305(var7)
          .method27308(
-            Items.field38126,
+            Items.TOTEM_OF_UNDYING,
             new TranslationTextComponent("advancements.adventure.totem_of_undying.title"),
             new TranslationTextComponent("advancements.adventure.totem_of_undying.description"),
             (ResourceLocation)null,
@@ -282,7 +282,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("used_totem", Class4472.method14126(Items.field38126))
+         .method27312("used_totem", Class4472.method14126(Items.TOTEM_OF_UNDYING))
          .method27317(var1, "adventure/totem_of_undying");
       Advancement var10 = Class7999.method27304()
          .method27305(var4)

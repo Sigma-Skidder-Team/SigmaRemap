@@ -147,7 +147,7 @@ public class ArmorStandEntity extends LivingEntity {
                var5 = EquipmentSlotType.field13736;
             }
          } else {
-            var5 = EquipmentSlotType.field13732;
+            var5 = EquipmentSlotType.OFFHAND;
          }
       } else {
          var5 = EquipmentSlotType.field13731;
@@ -349,8 +349,8 @@ public class ArmorStandEntity extends LivingEntity {
          var4 = EquipmentSlotType.field13734;
       } else if (var6 >= 1.6 && this.hasItemInSlot(EquipmentSlotType.field13736)) {
          var4 = EquipmentSlotType.field13736;
-      } else if (!this.hasItemInSlot(EquipmentSlotType.field13731) && this.hasItemInSlot(EquipmentSlotType.field13732)) {
-         var4 = EquipmentSlotType.field13732;
+      } else if (!this.hasItemInSlot(EquipmentSlotType.field13731) && this.hasItemInSlot(EquipmentSlotType.OFFHAND)) {
+         var4 = EquipmentSlotType.OFFHAND;
       }
 
       return var4;

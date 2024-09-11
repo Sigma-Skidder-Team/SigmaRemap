@@ -7,27 +7,27 @@ public final class ViaVersion5 {
    private Class7778 field45788;
    private Class9213 field45789;
 
-   public ViaVersion5 method38598(Class8006<?> var1) {
+   public ViaVersion5 create(Class8006<?> var1) {
       this.field45786 = var1;
       return this;
    }
 
-   public ViaVersion5 method38599(Class6749 var1) {
+   public ViaVersion5 register(Class6749 var1) {
       this.field45787 = var1;
       return this;
    }
 
-   public ViaVersion5 method38600(Class9213 var1) {
+   public ViaVersion5 register(Class9213 var1) {
       this.field45789 = var1;
       return this;
    }
 
-   public ViaVersion5 method38601(Class7778 var1) {
+   public ViaVersion5 register(Class7778 var1) {
       this.field45788 = var1;
       return this;
    }
 
-   public ViaVersion1 method38602() {
+   public ViaVersion1 initialize() {
       return new ViaVersion1(this.field45786, this.field45787, this.field45788, this.field45789);
    }
 }

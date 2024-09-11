@@ -27,7 +27,7 @@ public class Class7081 extends Class7080 {
                try {
                   var7 = Class8401.method29508(var6);
                } catch (Exception var17) {
-                  ViaVersion3.method27613().method27366().warning("Error reading NBT in show_item:" + var6);
+                  ViaVersion3.method27613().getLogger().warning("Error reading NBT in show_item:" + var6);
                   throw new RuntimeException(var17);
                }
 
@@ -55,7 +55,7 @@ public class Class7081 extends Class7080 {
                   var13.addProperty("text", var14);
                   var1.add("value", var12);
                } catch (IOException var16) {
-                  ViaVersion3.method27613().method27366().warning("Error writing NBT in show_item:" + var6);
+                  ViaVersion3.method27613().getLogger().warning("Error writing NBT in show_item:" + var6);
                   var16.printStackTrace();
                }
             }

@@ -38,8 +38,8 @@ public class Class7080 {
          this.method21999(var4);
          return var4;
       } catch (JsonSyntaxException var5) {
-         if (ViaVersion3.method27614().method34425()) {
-            ViaVersion3.method27613().method27366().severe("Error when trying to parse json: " + var1);
+         if (ViaVersion3.getInstance().method34425()) {
+            ViaVersion3.method27613().getLogger().severe("Error when trying to parse json: " + var1);
             throw var5;
          } else {
             return new JsonPrimitive(var1);

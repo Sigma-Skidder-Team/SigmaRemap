@@ -28,8 +28,8 @@ public class Class5412 implements Class5402 {
 
             return var10;
          } else {
-            if (ViaVersion3.method27614().method34425()) {
-               ViaVersion3.method27613().method27366().warning("Unhandled BlockEntity " + var8 + " full tag: " + var3);
+            if (ViaVersion3.getInstance().method34425()) {
+               ViaVersion3.method27613().getLogger().warning("Unhandled BlockEntity " + var8 + " full tag: " + var3);
             }
 
             return -1;

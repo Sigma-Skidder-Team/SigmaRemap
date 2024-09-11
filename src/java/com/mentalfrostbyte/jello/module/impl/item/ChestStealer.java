@@ -142,7 +142,7 @@ public class ChestStealer extends Module {
                     this.field23623.start();
                 }
 
-                if (!((float) Client.getInstance().getPlayerTracker().method31333() < this.getNumberValueBySettingName("Delay") * 20.0F)) {
+                if (!((float) Client.getInstance().getPlayerTracker().getMode() < this.getNumberValueBySettingName("Delay") * 20.0F)) {
                     if (InvManagerUtils.method25875()) {
                         if (this.getBooleanValueFromSetttingName("Close")) {
                             mc.player.method2772();

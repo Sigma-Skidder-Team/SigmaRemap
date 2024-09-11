@@ -128,13 +128,13 @@ public class AutoMLG extends PremiumModule {
             }
         }
 
-        if (Client.getInstance().getPlayerTracker().method31333() > 1) {
+        if (Client.getInstance().getPlayerTracker().getMode() > 1) {
             for (int var5 = 9; var5 < 36; var5++) {
                 if (mc.player.container.getSlot(var5).getHasStack()) {
                     ItemStack var6 = mc.player.container.getSlot(var5).getStack();
                     if (var6.getItem() == Items.field37883) {
-                        if (JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
-                            mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
+                        if (JelloPortal.getFakeInvStatus() <= ViaVerList._1_11_1_or_2.getFakeInvThreshold()) {
+                            mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
                         }
 
                         InvManagerUtils.moveItemToHotbar(var5, 6);

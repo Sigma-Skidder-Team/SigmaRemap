@@ -8,7 +8,7 @@ public class Class8769 {
       if (var3.isPresent()) {
          return (Class1874)var3.get();
       } else {
-         ViaVersion3.method27613().method27366().severe("Could not find 1.16.2 type id " + var0);
+         ViaVersion3.method27613().getLogger().severe("Could not find 1.16.2 type id " + var0);
          return Class1874.field10873;
       }
    }

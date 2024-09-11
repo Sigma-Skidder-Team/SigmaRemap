@@ -1,12 +1,13 @@
-package mapped;
+package com.mentalfrostbyte.jello.viaversion.managers;
 
 import io.netty.channel.Channel;
+import mapped.*;
 
-public class Class9144 {
+public class PacketManager {
    public Class8374 field42018;
    public Class8370 field42019;
 
-   public Class9144(Channel var1) {
+   public PacketManager(Channel var1) {
       Class7161 var4 = new Class7161(var1);
       new Class6376(var4);
       var4.method22440(new Class6046(var4));
@@ -29,7 +30,7 @@ public class Class9144 {
       }*/
    }
 
-   public Class9144(Class8374 var1, Class8370 var2) {
+   public PacketManager(Class8374 var1, Class8370 var2) {
       this.field42018 = var1;
       this.field42019 = var2;
    }

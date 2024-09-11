@@ -1,8 +1,8 @@
-package mapped;
+package com.mentalfrostbyte.jello.viaversion.managers;
 
 import it.unimi.dsi.fastutil.ints.IntSet;
 
-public interface Class7041 {
+public interface AbstractResourceManager {
    boolean method21890();
 
    void method21944(boolean var1);

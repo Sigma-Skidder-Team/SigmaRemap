@@ -5,5 +5,5 @@ public interface Class763 {
 
    Class1898 method1900();
 
-   void method1901();
+   void cancel();
 }

@@ -21,6 +21,6 @@ public class Class7807 extends DecoderException implements Class7804 {
    }
 
    public static Class7807 method26073(Throwable var0) {
-      return !ViaVersion3.method27614().method34425() ? field33503 : new Class7807(var0);
+      return !ViaVersion3.getInstance().method34425() ? field33503 : new Class7807(var0);
    }
 }

@@ -55,7 +55,7 @@ public class Class6376 extends Class6373 {
       int var6 = var3.method30586();
       var3.method30575(var1, var2, 0, this.field27941, var1 == Class2302.field15717);
       super.method19369(var1, var2, var3);
-      if (ViaVersion3.method27614().method34425()) {
+      if (ViaVersion3.getInstance().method34425()) {
          this.method19389(var1, var2, var3, var6);
       }
    }
@@ -65,7 +65,7 @@ public class Class6376 extends Class6373 {
       Class8006 var8 = ViaVersion3.method27613();
       String var9 = var3.method30580().method22465().method18679();
       String var10 = var9 == null ? "" : var9 + " ";
-      var8.method27366()
+      var8.getLogger()
          .log(
             Level.INFO,
             "{0}{1} {2}: {3} (0x{4}) -> {5} (0x{6}) [{7}] {8}",

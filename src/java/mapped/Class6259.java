@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.viaversion.data.PlayerData;
+
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -23,10 +25,10 @@ public class Class6259 extends Class6255 {
    }
 
    @Override
-   public boolean method19222(Class9150 var1, String[] var2) {
+   public boolean method19222(PlayerData var1, String[] var2) {
       Map<ViaVerList, HashSet<?>> var5 = new TreeMap(new Class3594(this));
 
-      for (Class9150 var9 : ViaVersion3.method27613().method27358()) {
+      for (PlayerData var9 : ViaVersion3.method27613().getPlayerData()) {
          int var10 = ViaVersion3.method27611().method33415(var9.method34170());
          ViaVerList var11 = ViaVerList.method18569(var10);
          if (!var5.containsKey(var11)) {

@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.viaversion.data.PlayerData;
 import io.netty.util.ResourceLeakDetector;
 import io.netty.util.ResourceLeakDetector.Level;
 
@@ -15,7 +16,7 @@ public class Class6256 extends Class6255 {
    }
 
    @Override
-   public boolean method19222(Class9150 var1, String[] var2) {
+   public boolean method19222(PlayerData var1, String[] var2) {
       if (ResourceLeakDetector.getLevel() == Level.ADVANCED) {
          ResourceLeakDetector.setLevel(Level.DISABLED);
       } else {

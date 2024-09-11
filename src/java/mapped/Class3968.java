@@ -19,13 +19,13 @@ public class Class3968 extends Class3758 {
          int var4 = var0.<Integer>method30561(Class4750.field22544);
          Class6038 var5 = var0.method30580().method22465();
          var5.method18676(var3);
-         if (ViaVersion3.method27614().method34424().<Class5417>method31084(Class5417.class) == null) {
+         if (ViaVersion3.getInstance().method34424().<Class5417>method31084(Class5417.class) == null) {
             var0.method30580().method22469(false);
          } else {
-            int var6 = ViaVersion3.method27614().method34424().<Class5417>method31084(Class5417.class).method17012(var0.method30580());
+            int var6 = ViaVersion3.getInstance().method34424().<Class5417>method31084(Class5417.class).method17012(var0.method30580());
             var5.method18678(var6);
             List<Class9284<Integer, ViaVersion7>> var7 = null;
-            if (var5.method18675() >= var6 || ViaVersion3.method27613().method27365()) {
+            if (var5.method18675() >= var6 || ViaVersion3.method27613().isConnectionSecure()) {
                var7 = Class9019.method33363(var5.method18675(), var6);
             }
 

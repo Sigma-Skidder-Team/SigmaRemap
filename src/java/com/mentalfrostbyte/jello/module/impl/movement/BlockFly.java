@@ -176,7 +176,7 @@ public class BlockFly extends ModuleWithModuleSettings {
 
                     if (var5 >= 0) {
                         if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv")) {
-                            mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
+                            mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
                         }
 
                         this.method16740(var5, var4 - 36);
@@ -211,8 +211,8 @@ public class BlockFly extends ModuleWithModuleSettings {
                 }
 
                 if (var4 >= 0 && mc.player.container.getSlot(var4).field25579 != var8) {
-                    if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv") && JelloPortal.method27349() <= ViaVerList.field26136.method18582()) {
-                        mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
+                    if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv") && JelloPortal.getFakeInvStatus() <= ViaVerList._1_11_1_or_2.getFakeInvThreshold()) {
+                        mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
                     }
 
                     this.method16740(var8, var4 - 36);

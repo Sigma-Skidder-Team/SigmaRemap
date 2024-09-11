@@ -27,7 +27,7 @@ public class Class3171 implements Class2982 {
             if (var12 != null) {
                var10 = var12;
             } else {
-               ViaVersion3.method27613().method27366().warning("Could not find 1.13 -> 1.12.2 statistic mapping for " + var7);
+               ViaVersion3.method27613().getLogger().warning("Could not find 1.13 -> 1.12.2 statistic mapping for " + var7);
             }
          } else {
             String var17 = var8[1];

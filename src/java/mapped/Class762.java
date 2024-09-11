@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.viaversion.task.TaskScheduler;
+
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
@@ -10,9 +12,9 @@ public class Class762 implements Runnable, Class763 {
    private final long field3962;
    private ScheduledFuture<?> field3963;
    private volatile Thread field3964;
-   public final Class7289 field3965;
+   public final TaskScheduler field3965;
 
-   public Class762(Class7289 var1, Object var2, Runnable var3, long var4, long var6) {
+   public Class762(TaskScheduler var1, Object var2, Runnable var3, long var4, long var6) {
       this.field3965 = var1;
       this.field3959 = var2;
       this.field3960 = var3;
@@ -22,9 +24,9 @@ public class Class762 implements Runnable, Class763 {
 
    public void method1898() {
       if (this.field3962 != 0L) {
-         this.field3963 = Class7289.method23048(this.field3965).scheduleAtFixedRate(this, this.field3961, this.field3962, TimeUnit.MILLISECONDS);
+         this.field3963 = TaskScheduler.method23048(this.field3965).scheduleAtFixedRate(this, this.field3961, this.field3962, TimeUnit.MILLISECONDS);
       } else {
-         this.field3963 = Class7289.method23048(this.field3965).schedule(this, this.field3961, TimeUnit.MILLISECONDS);
+         this.field3963 = TaskScheduler.method23048(this.field3965).schedule(this, this.field3961, TimeUnit.MILLISECONDS);
       }
    }
 
@@ -47,7 +49,7 @@ public class Class762 implements Runnable, Class763 {
    }
 
    @Override
-   public void method1901() {
+   public void cancel() {
       if (this.field3963 != null) {
          this.field3963.cancel(false);
          Thread var3 = this.field3964;
@@ -61,7 +63,7 @@ public class Class762 implements Runnable, Class763 {
 
    @Override
    public void run() {
-      Class7289.method23049(this.field3965).execute(() -> {
+      TaskScheduler.method23049(this.field3965).execute(() -> {
          this.field3964 = Thread.currentThread();
 
          try {
@@ -75,6 +77,6 @@ public class Class762 implements Runnable, Class763 {
    }
 
    private void method1902() {
-      Class7289.method23047(this.field3965).remove(this.field3959, this);
+      TaskScheduler.method23047(this.field3965).remove(this.field3959, this);
    }
 }

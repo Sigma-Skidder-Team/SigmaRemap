@@ -877,7 +877,7 @@ public abstract class MobEntity extends LivingEntity {
          if (var4 instanceof ArmorItem) {
             return ((ArmorItem)var4).method11805();
          } else if (var4 != Items.field38120) {
-            return !Class9561.method37052(var0, (PlayerEntity)null) ? EquipmentSlotType.field13731 : EquipmentSlotType.field13732;
+            return !Class9561.method37052(var0, (PlayerEntity)null) ? EquipmentSlotType.field13731 : EquipmentSlotType.OFFHAND;
          } else {
             return EquipmentSlotType.field13735;
          }
@@ -1264,7 +1264,7 @@ public abstract class MobEntity extends LivingEntity {
                var5 = EquipmentSlotType.field13736;
             }
          } else {
-            var5 = EquipmentSlotType.field13732;
+            var5 = EquipmentSlotType.OFFHAND;
          }
       } else {
          var5 = EquipmentSlotType.field13731;
@@ -1285,7 +1285,7 @@ public abstract class MobEntity extends LivingEntity {
 
    public static boolean method4301(EquipmentSlotType var0, ItemStack var1) {
       EquipmentSlotType var4 = method4271(var1);
-      return var4 == var0 || var4 == EquipmentSlotType.field13731 && var0 == EquipmentSlotType.field13732 || var4 == EquipmentSlotType.field13732 && var0 == EquipmentSlotType.field13731;
+      return var4 == var0 || var4 == EquipmentSlotType.field13731 && var0 == EquipmentSlotType.OFFHAND || var4 == EquipmentSlotType.OFFHAND && var0 == EquipmentSlotType.field13731;
    }
 
    @Override

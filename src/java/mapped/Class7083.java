@@ -64,7 +64,7 @@ public final class Class7083 extends Class7080 {
                var1.addProperty("action", "show_text");
                var1.add("value", var14);
             } catch (Exception var12) {
-               ViaVersion3.method27613().method27366().warning("Error rewriting show_achievement: " + var1);
+               ViaVersion3.method27613().getLogger().warning("Error rewriting show_achievement: " + var1);
                var12.printStackTrace();
                JsonObject var8 = new JsonObject();
                var8.addProperty("text", "Invalid statistic/achievement!");

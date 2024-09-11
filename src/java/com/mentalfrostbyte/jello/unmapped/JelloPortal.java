@@ -1,6 +1,16 @@
 package com.mentalfrostbyte.jello.unmapped;
 
 import com.google.gson.JsonObject;
+import com.mentalfrostbyte.jello.viaversion.commands.CommandRegistrar;
+import com.mentalfrostbyte.jello.viaversion.commands.CustomCommandExecutor;
+import com.mentalfrostbyte.jello.viaversion.data.PlayerData;
+import com.mentalfrostbyte.jello.viaversion.data.PlayerHandler;
+import com.mentalfrostbyte.jello.viaversion.event.EventHandler;
+import com.mentalfrostbyte.jello.viaversion.managers.*;
+import com.mentalfrostbyte.jello.viaversion.commands.CustomCommandManager;
+import com.mentalfrostbyte.jello.viaversion.task.AbstractScheduledTask;
+import com.mentalfrostbyte.jello.viaversion.task.ScheduledTask;
+import com.mentalfrostbyte.jello.viaversion.task.TaskScheduler;
 import io.netty.channel.Channel;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -14,47 +24,47 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
 public class JelloPortal implements Class8006<ClientPlayerEntity> {
-   public static Channel field34416;
-   public static ViaVerList field34417 = JelloPortal.field34418;
-   public static final ViaVerList field34418 = ViaVerList.field26155;
-   private Logger field34419;
-   private Logger field34420;
-   private Path field34421;
-   private Class9026 field34422;
-   private Class7040 field34423;
-   private Class9144 field34424;
-   private Class7289 field34425;
-   private Class9313 field34426;
-   private List<Class8410> field34427 = new ArrayList<Class8410>();
+   public static Channel clientChannel;
+   public static ViaVerList currentVersion = JelloPortal.defaultVersion;
+   public static final ViaVerList defaultVersion = ViaVerList._1_16_4;
+   private Logger logger;
+   private Logger customLogger;
+   private Path configPath;
+   private EventHandler eventHandler;
+   private ResourceManager resourceManager;
+   private PacketManager packetManager;
+   private TaskScheduler taskScheduler;
+   private CustomCommandManager commandManager;
+   private List<ScheduledTask> scheduledTasks = new ArrayList<>();
 
-   public JelloPortal(Channel var1) {
-      if (var1 != null) {
-         field34416 = var1;
+   public JelloPortal(Channel channel) {
+      if (channel != null) {
+         clientChannel = channel;
       }
 
-      if (ViaVersion3.method27614() != null) {
-         ViaVersion3.method27614().method34416();
+      if (ViaVersion3.getInstance() != null) {
+         ViaVersion3.getInstance().initialize();
       }
 
-      this.field34425 = new Class7289();
+      this.taskScheduler = new TaskScheduler();
       Class7777 var4 = new Class7777();
-      this.field34422 = new Class9026();
-      this.field34423 = new Class7040(new File("assets/viaversion/"));
-      this.field34420 = new JelloPortalLogger(this.field34419);
-      this.field34426 = new Class9313();
-      ViaVersion3.method27610(ViaVersion1.method34413().method38598(this).method38601(var4).method38600(new Class9212()).method38599(new Class6750()).method38602());
-      ViaVersion3.method27614().method34414();
-      if (var1 != null) {
-         this.field34424 = new Class9144(var1);
+      this.eventHandler = new com.mentalfrostbyte.jello.viaversion.event.EventHandler();
+      this.resourceManager = new ResourceManager(new File("assets/viaversion/"));
+      this.customLogger = new JelloPortalLogger(this.logger);
+      this.commandManager = new CustomCommandManager();
+      ViaVersion3.initialize(ViaVersion1.getInstance().create(this).register(var4).register(new CommandRegistrar()).register(new CustomCommandExecutor()).initialize());
+      ViaVersion3.getInstance().start();
+      if (channel != null) {
+         this.packetManager = new PacketManager(channel);
       }
    }
 
-   public static int method27348() {
-      return field34418.method18582();
+   public static int getFakeInventoryThreshold() {
+      return defaultVersion.getFakeInvThreshold();
    }
 
-   public static int method27349() {
-      return field34417 == null ? ViaVerList.field26129.method18582() : field34417.method18582();
+   public static int getFakeInvStatus() {
+      return currentVersion == null ? ViaVerList._1_8_x.getFakeInvThreshold() : currentVersion.getFakeInvThreshold();
    }
 
    @Override
@@ -73,120 +83,120 @@ public class JelloPortal implements Class8006<ClientPlayerEntity> {
    }
 
    @Override
-   public Class8411 method27353(Runnable var1) {
-      return this.method27354(var1);
+   public AbstractScheduledTask scheduleTask(Runnable task) {
+      return this.scheduleTaskWithDelay(task);
    }
 
    @Override
-   public Class8411 method27354(Runnable var1) {
-      return this.method27355(var1, 0L);
+   public AbstractScheduledTask scheduleTaskWithDelay(Runnable task) {
+      return this.scheduleTaskWithDelay(task, 0L);
    }
 
    @Override
-   public Class8411 method27355(Runnable var1, Long var2) {
+   public AbstractScheduledTask scheduleTaskWithDelay(Runnable task, Long delay) {
       if (Minecraft.getInstance().world != null) {
-         Class8410 var5 = new Class8410(this.field34425.method23045(this, var1).method32315(var2 * 50L, TimeUnit.MILLISECONDS).method32319());
-         this.field34427.add(var5);
-         return var5;
+         ScheduledTask scheduledTask = new ScheduledTask(this.taskScheduler.scheduleTask(this, task).setDelay(delay * 50L, TimeUnit.MILLISECONDS).start());
+         this.scheduledTasks.add(scheduledTask);
+         return scheduledTask;
       } else {
-         var1.run();
+         task.run();
          return null;
       }
    }
 
    @Override
-   public Class8411 method27356(Runnable var1, Long var2) {
-      Class8410 var5 = new Class8410(this.field34425.method23045(this, var1).method32315(var2 * 50L, TimeUnit.MILLISECONDS).method32319());
-      this.field34427.add(var5);
-      return var5;
+   public AbstractScheduledTask scheduleTaskImmediately(Runnable task, Long delay) {
+      ScheduledTask scheduledTask = new ScheduledTask(this.taskScheduler.scheduleTask(this, task).setDelay(delay * 50L, TimeUnit.MILLISECONDS).start());
+      this.scheduledTasks.add(scheduledTask);
+      return scheduledTask;
    }
 
    @Override
-   public void method27357(Class8411 var1) {
-      if (var1 instanceof Class8410) {
-         ((Class8410)var1).method29528().method1901();
+   public void cancelTask(AbstractScheduledTask var1) {
+      if (var1 instanceof ScheduledTask) {
+         ((ScheduledTask)var1).getTaskHandle().cancel();
       }
    }
 
    @Override
-   public Class9150[] method27358() {
+   public PlayerData[] getPlayerData() {
       return null;
    }
 
    @Override
-   public void method27359(UUID var1, String var2) {
+   public void updatePlayerData(UUID var1, String var2) {
    }
 
    @Override
-   public boolean method27360(UUID var1, String var2) {
+   public boolean validatePlayerData(UUID var1, String var2) {
       return false;
    }
 
    @Override
-   public boolean method27361() {
+   public boolean isMultiplayer() {
       return false;
    }
 
    @Override
-   public Class7043 method27362() {
-      return this.field34423;
+   public SmallResourceManager getResourceManager2() {
+      return this.resourceManager;
    }
 
    @Override
-   public void method27363() {
-      for (Class8410 var4 : this.field34427) {
-         var4.method29528().method1901();
+   public void cancelAllTasks() {
+      for (ScheduledTask var4 : this.scheduledTasks) {
+         var4.getTaskHandle().cancel();
       }
    }
 
    @Override
-   public JsonObject method27364() {
+   public JsonObject getPlayerStatus() {
       return new JsonObject();
    }
 
    @Override
-   public boolean method27365() {
+   public boolean isConnectionSecure() {
       return true;
    }
 
    @Override
-   public Logger method27366() {
-      return this.field34420;
+   public Logger getLogger() {
+      return this.customLogger;
    }
 
    @Override
-   public Class9027<ClientPlayerEntity> method27367() {
-      return this.field34422;
+   public PlayerHandler<ClientPlayerEntity> getEventHandler() {
+      return this.eventHandler;
    }
 
    @Override
-   public Class7041 method27368() {
-      return this.field34423;
+   public AbstractResourceManager getResourceManager() {
+      return this.resourceManager;
    }
 
-   public void method27369() {
+   public void shutdownPortal() {
       try {
-         this.field34425.method23046();
-         field34416.close();
+         this.taskScheduler.shutdown();
+         clientChannel.close();
       } catch (InterruptedException var4) {
       }
    }
 
    @Override
-   public File method27370() {
+   public File getConfigFile() {
       return null;
    }
 
    @Override
-   public Class9313 method27371() {
-      return this.field34426;
+   public CustomCommandManager getCustomCommandManager() {
+      return this.commandManager;
    }
 
-   public static ViaVerList method27372() {
-      return /*!Minecraft.getInstance().method1530() ? field34417 : field34418;*/ ViaVerList.field26129;
+   public static ViaVerList getCurrentVersion() {
+      return !Minecraft.getInstance().isSingleplayer() ? currentVersion : defaultVersion;
    }
 
-   public Class9144 method27373() {
-      return this.field34424;
+   public PacketManager method2getPacketManager373() {
+      return this.packetManager;
    }
 }

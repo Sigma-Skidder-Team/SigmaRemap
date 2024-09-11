@@ -35,7 +35,7 @@ public class Class5978 extends Class5979 {
          if (var13 != null) {
             this.field26036.add(var13);
          } else {
-            ViaVersion3.method27613().method27366().warning("Unknown blockstate " + var12 + " :(");
+            ViaVersion3.method27613().getLogger().warning("Unknown blockstate " + var12 + " :(");
          }
       }
 

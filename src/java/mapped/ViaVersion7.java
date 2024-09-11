@@ -125,7 +125,7 @@ public abstract class ViaVersion7<C1 extends Class1913, C2 extends Class1913, S1
       Class8545 var9 = new Class8545(var1, var3);
       if (!var5 && this.field27910.containsKey(var9)) {
          ViaVersion3.method27613()
-            .method27366()
+            .getLogger()
             .log(Level.WARNING, var9 + " already registered! If this override is intentional, set override to true. Stacktrace: ", (Throwable)(new Exception()));
       }
 
@@ -161,7 +161,7 @@ public abstract class ViaVersion7<C1 extends Class1913, C2 extends Class1913, S1
       Class8545 var9 = new Class8545(var1, var2);
       if (!var5 && this.field27911.containsKey(var9)) {
          ViaVersion3.method27613()
-            .method27366()
+            .getLogger()
             .log(Level.WARNING, var9 + " already registered! If override is intentional, set override to true. Stacktrace: ", (Throwable)(new Exception()));
       }
 
@@ -254,13 +254,13 @@ public abstract class ViaVersion7<C1 extends Class1913, C2 extends Class1913, S1
          Class var8 = var2 != Class187.field702 ? null : (var1 != Class2302.field15717 ? this.field27916 : this.field27913);
          if (var8 == null) {
             ViaVersion3.method27613()
-               .method27366()
+               .getLogger()
                .warning("ERROR IN " + this.getClass().getSimpleName() + " IN REMAP OF " + this.method19371(var3) + "->" + this.method19371(var4));
          } else {
             Class1918[] var9 = (Class1918[])var8.getEnumConstants();
             Class1918 var10 = var3 < var9.length && var3 >= 0 ? var9[var3] : null;
             ViaVersion3.method27613()
-               .method27366()
+               .getLogger()
                .warning("ERROR IN " + this.getClass().getSimpleName() + " IN REMAP OF " + var10 + " (" + this.method19371(var3) + ")");
          }
 

@@ -19,19 +19,19 @@ public class ViaVersion2 {
    private static final String field26170 = "/versions/latest";
 
    public static void method18596(UUID var0) {
-      ViaVersion3.method27613().method27353(() -> {
+      ViaVersion3.method27613().scheduleTask(() -> {
          String var3 = method18598(false);
          if (var3 != null) {
-            ViaVersion3.method27613().method27354(() -> ViaVersion3.method27613().method27359(var0, field26167 + var3));
+            ViaVersion3.method27613().scheduleTaskWithDelay(() -> ViaVersion3.method27613().updatePlayerData(var0, field26167 + var3));
          }
       });
    }
 
    public static void method18597() {
-      ViaVersion3.method27613().method27353(() -> {
+      ViaVersion3.method27613().scheduleTask(() -> {
          String var2 = method18598(true);
          if (var2 != null) {
-            ViaVersion3.method27613().method27354(() -> ViaVersion3.method27613().method27366().warning(var2));
+            ViaVersion3.method27613().scheduleTaskWithDelay(() -> ViaVersion3.method27613().getLogger().warning(var2));
          }
       });
    }

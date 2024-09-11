@@ -64,7 +64,7 @@ public class InvManagerUtils {
       return var4;
    }
 
-   public static int method25822(Item var0) {
+   public static int findItemSlot(Item var0) {
       int var3 = 0;
       int var4 = -1;
 
@@ -192,20 +192,20 @@ public class InvManagerUtils {
 
    public static int method25834() {
       BlockState var2 = Block.method11536(1);
-      return method25837(var2);
+      return findBestToolForBlock(var2);
    }
 
    public static int method25835() {
       BlockState var2 = Block.method11536(5);
-      return method25837(var2);
+      return findBestToolForBlock(var2);
    }
 
    public static int method25836() {
       BlockState var2 = Block.method11536(3);
-      return method25837(var2);
+      return findBestToolForBlock(var2);
    }
 
-   public static int method25837(BlockState var0) {
+   public static int findBestToolForBlock(BlockState var0) {
       int var3 = -1;
       float var4 = 1.0F;
 
@@ -527,7 +527,7 @@ public class InvManagerUtils {
       return var4.getKey();
    }
 
-   public static int method25857(int var0) {
+   public static int swapToolToHotbar(int var0) {
       int var3 = method25856();
       method25869(field33419.player.container.field25471, var0, var3, ClickType.field14696, field33419.player);
       return var3;
@@ -685,7 +685,7 @@ public class InvManagerUtils {
 
       short var9 = var4.field4905.getNextTransactionID(field33419.player.inventory);
       ItemStack var10 = var4.field4905.slotClick(var1, var2, var3, var4);
-      if (var8 == null || JelloPortal.method27372().method18582() > ViaVerList.field26137.method18582() && !var5 || var3 == ClickType.field14696) {
+      if (var8 == null || JelloPortal.getCurrentVersion().getFakeInvThreshold() > ViaVerList._1_12.getFakeInvThreshold() && !var5 || var3 == ClickType.field14696) {
          var8 = var10;
       }
 

@@ -13,7 +13,7 @@ public class Class8374 extends MessageToMessageEncoder<ByteBuf> {
 
    public void encode(ChannelHandlerContext var1, ByteBuf var2, List<Object> var3) throws Exception {
       if (var2.readableBytes() == 0) {
-         throw ViaVersion3.method27614().method34425() ? new ViaVersion4() : ViaVersion4.field16532;
+         throw ViaVersion3.getInstance().method34425() ? new ViaVersion4() : ViaVersion4.field16532;
       } else {
          var2.retain();
          this.field35936.method22447();

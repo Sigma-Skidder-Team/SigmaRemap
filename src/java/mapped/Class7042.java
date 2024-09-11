@@ -1,10 +1,11 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.viaversion.managers.AbstractResourceManager;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import java.io.File;
 
-public abstract class Class7042 extends Class7039 implements Class7041 {
+public abstract class Class7042 extends Class7039 implements AbstractResourceManager {
    private boolean field30380;
    private boolean field30381;
    private boolean field30382;

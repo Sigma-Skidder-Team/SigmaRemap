@@ -44,7 +44,7 @@ public class Class6597 {
                   if (this.field29031.method31016(var4.getItemStackFromSlot(EquipmentSlotType.field13734))) {
                      if (this.field29032.method31016(var4.getItemStackFromSlot(EquipmentSlotType.field13733))) {
                         return this.field29033.method31016(var4.getItemStackFromSlot(EquipmentSlotType.field13731))
-                           ? this.field29034.method31016(var4.getItemStackFromSlot(EquipmentSlotType.field13732))
+                           ? this.field29034.method31016(var4.getItemStackFromSlot(EquipmentSlotType.OFFHAND))
                            : false;
                      } else {
                         return false;

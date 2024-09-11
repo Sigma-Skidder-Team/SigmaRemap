@@ -1,4 +1,4 @@
-package mapped;
+package com.mentalfrostbyte.jello.viaversion.commands;
 
 import io.netty.channel.ChannelFutureListener;
 import java.util.Collections;
@@ -7,9 +7,12 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
+
+import mapped.Class7161;
+import mapped.ViaVersion3;
 import org.jetbrains.annotations.Nullable;
 
-public class Class9313 {
+public class CustomCommandManager {
    public final Map<UUID, Class7161> field43248 = new ConcurrentHashMap<UUID, Class7161>();
    public final Set<Class7161> field43249 = Collections.<Class7161>newSetFromMap(new ConcurrentHashMap<Class7161, Boolean>());
 
@@ -19,7 +22,7 @@ public class Class9313 {
       if (this.method35199(var1)) {
          UUID var4 = var1.method22465().method18681();
          if (this.field43248.put(var4, var1) != null) {
-            ViaVersion3.method27613().method27366().warning("Duplicate UUID on frontend connection! (" + var4 + ")");
+            ViaVersion3.method27613().getLogger().warning("Duplicate UUID on frontend connection! (" + var4 + ")");
          }
       }
 

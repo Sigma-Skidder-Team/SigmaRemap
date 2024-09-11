@@ -24,8 +24,8 @@ public class Class2988 implements Class2982 {
             for (int var8 = 0; var8 < var6.length; var8++) {
                String var9 = Class9687.method37926(var6[var8]);
                if (var9 == null) {
-                  if (!ViaVersion3.method27612().method21941() || ViaVersion3.method27614().method34425()) {
-                     ViaVersion3.method27613().method27366().warning("Ignoring plugin channel in incoming REGISTER: " + var6[var8]);
+                  if (!ViaVersion3.method27612().method21941() || ViaVersion3.getInstance().method34425()) {
+                     ViaVersion3.method27613().getLogger().warning("Ignoring plugin channel in incoming REGISTER: " + var6[var8]);
                   }
                } else {
                   var7.add(var9);
@@ -37,8 +37,8 @@ public class Class2988 implements Class2982 {
 
          var1.method30558(Class4750.field22539, 0, var4);
       } else {
-         if (!ViaVersion3.method27612().method21941() || ViaVersion3.method27614().method34425()) {
-            ViaVersion3.method27613().method27366().warning("Ignoring incoming plugin message with channel: " + var4);
+         if (!ViaVersion3.method27612().method21941() || ViaVersion3.getInstance().method34425()) {
+            ViaVersion3.method27613().getLogger().warning("Ignoring incoming plugin message with channel: " + var4);
          }
 
          var1.method30578();

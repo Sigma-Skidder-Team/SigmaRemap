@@ -1,8 +1,8 @@
-package mapped;
+package com.mentalfrostbyte.jello.viaversion.data;
 
 import java.util.UUID;
 
-public interface Class9150 {
+public interface PlayerData {
    boolean method34168(String var1);
 
    void method34169(String var1);

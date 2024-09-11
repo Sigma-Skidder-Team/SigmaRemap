@@ -29,7 +29,7 @@ public class Class9678 {
    public static Class9678 method37756(int var0) {
       String var3 = Class9322.method35235(var0);
       if (var3 == null) {
-         ViaVersion3.method27613().method27366().info("Unable to get blockdata from " + var0);
+         ViaVersion3.method27613().getLogger().info("Unable to get blockdata from " + var0);
          return method37755("minecraft:air");
       } else {
          return method37755(var3);

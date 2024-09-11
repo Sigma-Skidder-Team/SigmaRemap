@@ -30,14 +30,14 @@ public class Class7795 {
       } else {
          var3 = Class6380.field27947.method18535().method22147(var0 & -16);
          if (var3 == -1) {
-            if (!ViaVersion3.method27612().method21941() || ViaVersion3.method27614().method34425()) {
-               ViaVersion3.method27613().method27366().warning("Missing block completely " + var0);
+            if (!ViaVersion3.method27612().method21941() || ViaVersion3.getInstance().method34425()) {
+               ViaVersion3.method27613().getLogger().warning("Missing block completely " + var0);
             }
 
             return 1;
          } else {
-            if (!ViaVersion3.method27612().method21941() || ViaVersion3.method27614().method34425()) {
-               ViaVersion3.method27613().method27366().warning("Missing block " + var0);
+            if (!ViaVersion3.method27612().method21941() || ViaVersion3.getInstance().method34425()) {
+               ViaVersion3.method27613().getLogger().warning("Missing block " + var0);
             }
 
             return var3;

@@ -10,7 +10,7 @@ public class MouseHoverEvent extends CancellableEvent {
         this.field21563 = var1;
     }
 
-    public int method13973() {
+    public int getMouseButton() {
         return this.field21563;
     }
 }

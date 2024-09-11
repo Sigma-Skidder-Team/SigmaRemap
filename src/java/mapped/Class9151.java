@@ -1,8 +1,10 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.viaversion.data.PlayerData;
+
 import java.util.UUID;
 
-public class Class9151 implements Class9150 {
+public class Class9151 implements PlayerData {
    private static String[] field42028;
 
    @Override

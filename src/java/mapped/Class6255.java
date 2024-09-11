@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.viaversion.data.PlayerData;
+
 import java.util.Collections;
 import java.util.List;
 
@@ -16,9 +18,9 @@ public abstract class Class6255 {
       return "viaversion.admin";
    }
 
-   public abstract boolean method19222(Class9150 var1, String[] var2);
+   public abstract boolean method19222(PlayerData var1, String[] var2);
 
-   public List<String> method19225(Class9150 var1, String[] var2) {
+   public List<String> method19225(PlayerData var1, String[] var2) {
       return Collections.<String>emptyList();
    }
 
@@ -26,7 +28,7 @@ public abstract class Class6255 {
       return Class7778.method25775(var1);
    }
 
-   public void method19227(Class9150 var1, String var2, Object... var3) {
+   public void method19227(PlayerData var1, String var2, Object... var3) {
       Class7778.method25776(var1, var2, var3);
    }
 }

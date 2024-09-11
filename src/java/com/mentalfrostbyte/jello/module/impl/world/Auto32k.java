@@ -75,12 +75,12 @@ public class Auto32k extends Module {
         );
         this.field23871 = InvManagerUtils.method25843(Items.field37545);
         if (this.field23871 == -1) {
-            this.field23871 = InvManagerUtils.method25822(Items.field37545);
+            this.field23871 = InvManagerUtils.findItemSlot(Items.field37545);
             if (this.field23871 != -1) {
                 if (this.field23871 >= 36 && this.field23871 <= 44) {
                     this.field23871 %= 9;
                 } else {
-                    this.field23871 = InvManagerUtils.method25857(this.field23871);
+                    this.field23871 = InvManagerUtils.swapToolToHotbar(this.field23871);
                 }
             }
         }
@@ -109,7 +109,7 @@ public class Auto32k extends Module {
                 if (this.field23872 >= 36 && this.field23872 <= 44) {
                     this.field23872 %= 9;
                 } else {
-                    this.field23872 = InvManagerUtils.method25857(this.field23872);
+                    this.field23872 = InvManagerUtils.swapToolToHotbar(this.field23872);
                 }
             }
         }

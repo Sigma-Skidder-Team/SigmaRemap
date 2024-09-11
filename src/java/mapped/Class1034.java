@@ -353,10 +353,10 @@ public class Class1034 extends Class1035 implements Class1023 {
 
    public void method4626(ItemStack var1) {
       if (var1.getItem() != Class4388.field21458) {
-         this.method4248(EquipmentSlotType.field13732, var1);
+         this.method4248(EquipmentSlotType.OFFHAND, var1);
       } else {
-         this.setItemStackToSlot(EquipmentSlotType.field13732, var1);
-         this.method4249(EquipmentSlotType.field13732);
+         this.setItemStackToSlot(EquipmentSlotType.OFFHAND, var1);
+         this.method4249(EquipmentSlotType.OFFHAND);
       }
    }
 

@@ -1,12 +1,19 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import com.mentalfrostbyte.jello.viaversion.commands.CustomCommandManager;
+import com.mentalfrostbyte.jello.viaversion.data.PlayerData;
+import com.mentalfrostbyte.jello.viaversion.data.PlayerHandler;
+import com.mentalfrostbyte.jello.viaversion.managers.AbstractResourceManager;
+import com.mentalfrostbyte.jello.viaversion.managers.SmallResourceManager;
+import com.mentalfrostbyte.jello.viaversion.task.AbstractScheduledTask;
+
 import java.io.File;
 import java.util.UUID;
 import java.util.logging.Logger;
 
 public interface Class8006<T> {
-   Logger method27366();
+   Logger getLogger();
 
    String getClientName();
 
@@ -18,46 +25,46 @@ public interface Class8006<T> {
 
    String getVersion();
 
-   Class8411 method27353(Runnable var1);
+   AbstractScheduledTask scheduleTask(Runnable var1);
 
-   Class8411 method27354(Runnable var1);
+   AbstractScheduledTask scheduleTaskWithDelay(Runnable var1);
 
-   Class8411 method27355(Runnable var1, Long var2);
+   AbstractScheduledTask scheduleTaskWithDelay(Runnable var1, Long var2);
 
-   Class8411 method27356(Runnable var1, Long var2);
+   AbstractScheduledTask scheduleTaskImmediately(Runnable var1, Long var2);
 
-   void method27357(Class8411 var1);
+   void cancelTask(AbstractScheduledTask var1);
 
-   Class9150[] method27358();
+   PlayerData[] getPlayerData();
 
-   void method27359(UUID var1, String var2);
+   void updatePlayerData(UUID var1, String var2);
 
-   boolean method27360(UUID var1, String var2);
+   boolean validatePlayerData(UUID var1, String var2);
 
    default boolean method27375(Class7161 var1, String var2) {
       if (!var1.method22488()) {
          UUID var5 = var1.<Class6038>method22438(Class6038.class).method18681();
-         return var5 != null ? this.method27360(var5, var2) : false;
+         return var5 != null ? this.validatePlayerData(var5, var2) : false;
       } else {
          return false;
       }
    }
 
-   boolean method27361();
+   boolean isMultiplayer();
 
-   Class9027<T> method27367();
+   PlayerHandler<T> getEventHandler();
 
-   Class7041 method27368();
+   AbstractResourceManager getResourceManager();
 
-   Class7043 method27362();
+   SmallResourceManager getResourceManager2();
 
-   File method27370();
+   File getConfigFile();
 
-   void method27363();
+   void cancelAllTasks();
 
-   JsonObject method27364();
+   JsonObject getPlayerStatus();
 
-   boolean method27365();
+   boolean isConnectionSecure();
 
-   Class9313 method27371();
+   CustomCommandManager getCustomCommandManager();
 }
