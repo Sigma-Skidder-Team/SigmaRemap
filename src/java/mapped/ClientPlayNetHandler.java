@@ -1398,7 +1398,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23273.getEntityByID(var1.method17407());
       if (var4 instanceof LivingEntity) {
-         Effect var5 = Effect.method22287(var1.method17408());
+         Effect var5 = Effect.get(var1.method17408());
          if (var5 != null) {
             EffectInstance var6 = new EffectInstance(var5, var1.method17410(), var1.method17409(), var1.method17412(), var1.method17411(), var1.method17413());
             var6.method8641(var1.method17406());

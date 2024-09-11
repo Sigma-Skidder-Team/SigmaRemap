@@ -186,7 +186,7 @@ public class Class1086 extends Class1087 implements Class1020 {
       super.writeAdditional(var1);
       var1.method109("Type", Class2210.method8936(this.method5037()));
       if (this.field5952 != null) {
-         var1.method100("EffectId", (byte) Effect.method22288(this.field5952));
+         var1.method100("EffectId", (byte) Effect.getId(this.field5952));
          var1.putInt("EffectDuration", this.field5953);
       }
    }
@@ -196,7 +196,7 @@ public class Class1086 extends Class1087 implements Class1020 {
       super.readAdditional(var1);
       this.method5036(Class2210.method8938(var1.getString("Type")));
       if (var1.contains("EffectId", 1)) {
-         this.field5952 = Effect.method22287(var1.getByte("EffectId"));
+         this.field5952 = Effect.get(var1.getByte("EffectId"));
       }
 
       if (var1.contains("EffectDuration", 3)) {

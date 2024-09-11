@@ -401,7 +401,7 @@ public class IngameGui extends AbstractGui {
                         var13 += 15;
                     }
 
-                    if (!var11.method22303()) {
+                    if (!var11.isBeneficial()) {
                         var6++;
                         var12 -= 25 * var6;
                         var13 += 26;

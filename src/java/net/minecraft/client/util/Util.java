@@ -52,7 +52,7 @@ public class Util {
       return var0.method30475((T)var1);
    }
 
-   public static String method38486(String var0, ResourceLocation var1) {
+   public static String makeTranslationKey(String var0, ResourceLocation var1) {
       return var1 != null ? var0 + '.' + var1.getNamespace() + '.' + var1.getPath().replace('/', '.') : var0 + ".unregistered_sadface";
    }
 

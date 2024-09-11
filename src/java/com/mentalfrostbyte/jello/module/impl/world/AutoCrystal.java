@@ -87,7 +87,7 @@ public class AutoCrystal extends PremiumModule {
             int var7 = EnchantmentHelper.method26317(var5.getArmorInventoryList(), var6);
             float var8 = MathHelper.clamp((float) var7, 0.0F, 20.0F);
             var1 *= 1.0F - var8 / 25.0F;
-            if (var0.isPotionActive(Effect.method22287(11))) {
+            if (var0.isPotionActive(Effect.get(11))) {
                 var1 -= var1 / 4.0F;
             }
 

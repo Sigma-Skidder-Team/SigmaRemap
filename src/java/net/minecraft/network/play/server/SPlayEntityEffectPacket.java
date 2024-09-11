@@ -21,7 +21,7 @@ public class SPlayEntityEffectPacket implements Packet<IClientPlayNetHandler> {
 
    public SPlayEntityEffectPacket(int var1, EffectInstance var2) {
       this.field24584 = var1;
-      this.field24585 = (byte)(Effect.method22288(var2.getPotion()) & 0xFF);
+      this.field24585 = (byte)(Effect.getId(var2.getPotion()) & 0xFF);
       this.field24586 = (byte)(var2.method8629() & 0xFF);
       if (var2.method8628() <= 32767) {
          this.field24587 = var2.method8628();

@@ -55,7 +55,7 @@ public class Block extends Class3390 implements IItemProvider {
    }
 
    public static BlockState method11536(int var0) {
-      BlockState var3 = field18610.method9172(var0);
+      BlockState var3 = field18610.getByValue(var0);
       return var3 != null ? var3 : Blocks.AIR.method11579();
    }
 
@@ -298,7 +298,7 @@ public class Block extends Class3390 implements IItemProvider {
 
    public String getTranslationKey() {
       if (this.field18614 == null) {
-         this.field18614 = Util.method38486("block", Registry.BLOCK.getKey(this));
+         this.field18614 = Util.makeTranslationKey("block", Registry.BLOCK.getKey(this));
       }
 
       return this.field18614;

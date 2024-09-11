@@ -50,7 +50,7 @@ public class SMultiBlockChangePacket implements Packet<IClientPlayNetHandler> {
       for (int var5 = 0; var5 < this.field24643.length; var5++) {
          long var6 = var1.method35715();
          this.field24643[var5] = (short)((int)(var6 & 4095L));
-         this.field24644[var5] = Block.field18610.method9172((int)(var6 >>> 12));
+         this.field24644[var5] = Block.field18610.getByValue((int)(var6 >>> 12));
       }
    }
 

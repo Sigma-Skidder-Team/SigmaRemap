@@ -8,12 +8,12 @@ public class Class7146 extends Effect {
    }
 
    @Override
-   public boolean method22292() {
+   public boolean isInstant() {
       return true;
    }
 
    @Override
-   public boolean method22291(int var1, int var2) {
+   public boolean isReady(int var1, int var2) {
       return var1 >= 1;
    }
 }

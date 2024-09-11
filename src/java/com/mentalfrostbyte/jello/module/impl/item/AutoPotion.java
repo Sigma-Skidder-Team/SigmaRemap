@@ -77,7 +77,7 @@ public class AutoPotion extends Module {
                                         this.method16634(var1, var4, var5[var6]);
                                     }
                                 } else if (this.field23808 > 18
-                                        && !mc.player.isPotionActive(Effect.method22287(var5[var6]))
+                                        && !mc.player.isPotionActive(Effect.get(var5[var6]))
                                         && mc.player.getHealth() < this.getNumberValueBySettingName("Health") * 2.0F) {
                                     this.method16634(var1, var4, var5[var6]);
                                 }
@@ -126,7 +126,7 @@ public class AutoPotion extends Module {
                     int var11 = this.method16633(var10);
                     if (var10 != null && !var10.isEmpty() && (this.getBooleanValueFromSetttingName("Custom potion") || var11 == 1)) {
                         for (EffectInstance var13 : var10) {
-                            int var14 = Effect.method22288(var13.getPotion());
+                            int var14 = Effect.getId(var13.getPotion());
                             int var15 = var13.method8629();
                             int var16 = var13.method8628();
                             if (var14 == var1 && InvManagerUtils.method25859(var9)) {
@@ -148,7 +148,7 @@ public class AutoPotion extends Module {
             }
         }
 
-        return mc.player.isPotionActive(Effect.method22287(var1)) && mc.player.getActivePotionEffect(Effect.method22287(var1)).method8629() >= var4
+        return mc.player.isPotionActive(Effect.get(var1)) && mc.player.getActivePotionEffect(Effect.get(var1)).method8629() >= var4
                 ? -1
                 : var6;
     }
@@ -158,7 +158,7 @@ public class AutoPotion extends Module {
         int var5 = 0;
 
         for (EffectInstance var7 : var1) {
-            int var8 = Effect.method22288(var7.getPotion());
+            int var8 = Effect.getId(var7.getPotion());
             if (!var4.contains(var8)) {
                 var5++;
                 var4.add(var8);

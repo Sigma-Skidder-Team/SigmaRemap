@@ -1221,7 +1221,7 @@ public class Class9680 {
 
       for (ResourceLocation var4 : Registry.EFFECTS.method9190()) {
          Effect var5 = Class9056.method33703(var4);
-         int var6 = Effect.method22288(var5);
+         int var6 = Effect.getId(var5);
          if (var6 > var2) {
             var2 = var6;
          }
@@ -1238,8 +1238,8 @@ public class Class9680 {
 
          for (ResourceLocation var4 : Registry.EFFECTS.method9190()) {
             Effect var5 = Class9056.method33703(var4);
-            if (var5.method22294().equals(var0)) {
-               return Effect.method22288(var5);
+            if (var5.getName().equals(var0)) {
+               return Effect.getId(var5);
             }
          }
 
@@ -1250,7 +1250,7 @@ public class Class9680 {
    public static int method37891(Effect var0, int var1) {
       int var4 = 0;
       if (var0 != null) {
-         var4 = Effect.method22288(var0);
+         var4 = Effect.getId(var0);
       }
 
       return method37892(var4, var1);

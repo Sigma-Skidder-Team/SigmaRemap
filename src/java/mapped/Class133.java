@@ -31,7 +31,7 @@ public class Class133 extends Class128 {
          Entry var7 = (Entry)Iterables.get(this.field453.entrySet(), var6);
          Effect var8 = (Effect)var7.getKey();
          int var9 = ((Class6872)var7.getValue()).method20914(var5);
-         if (!var8.method22292()) {
+         if (!var8.isInstant()) {
             var9 *= 20;
          }
 

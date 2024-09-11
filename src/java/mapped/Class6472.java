@@ -13,7 +13,7 @@ public final class Class6472 implements Class6466<Class7921> {
    }
 
    public Class7921 method19645(PacketBuffer var1) {
-      return new Class7921(Registry.field16089.method9172(var1.readVarInt()), Registry.field16090.method9172(var1.readVarInt()), var1.readVarInt());
+      return new Class7921(Registry.field16089.getByValue(var1.readVarInt()), Registry.field16090.getByValue(var1.readVarInt()), var1.readVarInt());
    }
 
    public Class7921 method19644(Class7921 var1) {

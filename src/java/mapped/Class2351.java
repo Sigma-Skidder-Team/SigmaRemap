@@ -54,8 +54,8 @@ public class Class2351<T> extends SimpleRegistry<T> {
 
    @Nonnull
    @Override
-   public T method9172(int var1) {
-      Object var4 = super.method9172(var1);
+   public T getByValue(int var1) {
+      Object var4 = super.getByValue(var1);
       return (T)(var4 != null ? var4 : this.field16152);
    }
 

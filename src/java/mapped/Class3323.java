@@ -32,10 +32,10 @@ public class Class3323 extends Item {
 
       if (!var2.isRemote) {
          for (EffectInstance var8 : Class9741.method38176(var1)) {
-            if (!var8.getPotion().method22292()) {
+            if (!var8.getPotion().isInstant()) {
                var3.addPotionEffect(new EffectInstance(var8));
             } else {
-               var8.getPotion().method22290(var6, var6, var3, var8.method8629(), 1.0);
+               var8.getPotion().affectEntity(var6, var6, var3, var8.method8629(), 1.0);
             }
          }
       }

@@ -47,7 +47,7 @@ public class HypixelAutoGapple extends PremiumModule {
                     }
                 }
 
-                if (this.currentTickCounter == -1 && this.getBooleanValueFromSetttingName("Fire resistance potions") && !mc.player.isPotionActive(Effect.method22287(12))) {
+                if (this.currentTickCounter == -1 && this.getBooleanValueFromSetttingName("Fire resistance potions") && !mc.player.isPotionActive(Effect.get(12))) {
                     this.firePotionSlot = ((AutoGapple) this.access()).findGappleSlot(true);
                     if (this.firePotionSlot >= 0) {
                         this.currentTickCounter = 0;

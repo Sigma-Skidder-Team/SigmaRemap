@@ -49,7 +49,7 @@ public class Class2352<T> implements Class2347<T> {
 
    @Nullable
    @Override
-   public final T method9172(int var1) {
+   public final T getByValue(int var1) {
       return var1 >= 0 && var1 < this.field16156.size() ? this.field16156.get(var1) : null;
    }
 

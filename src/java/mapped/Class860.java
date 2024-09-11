@@ -86,7 +86,7 @@ public abstract class Class860<T extends Container> extends ContainerScreen<T> {
       int var7 = this.field4735;
 
       for (EffectInstance var9 : var4) {
-         String var10 = I18n.format(var9.getPotion().method22294());
+         String var10 = I18n.format(var9.getPotion().getName());
          if (var9.method8629() >= 1 && var9.method8629() <= 9) {
             var10 = var10 + ' ' + I18n.format("enchantment.level." + (var9.method8629() + 1));
          }

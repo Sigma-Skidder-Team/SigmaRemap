@@ -516,7 +516,7 @@ public class EntityType<T extends Entity> {
 
    public String method33210() {
       if (this.field41122 == null) {
-         this.field41122 = Util.method38486("entity", Registry.ENTITY_TYPE.getKey(this));
+         this.field41122 = Util.makeTranslationKey("entity", Registry.ENTITY_TYPE.getKey(this));
       }
 
       return this.field41122;
@@ -559,7 +559,7 @@ public class EntityType<T extends Entity> {
 
    @Nullable
    public static Entity method33216(int var0, World var1) {
-      return method33218(var1, Registry.ENTITY_TYPE.method9172(var0));
+      return method33218(var1, Registry.ENTITY_TYPE.getByValue(var0));
    }
 
    public static Optional<Entity> method33217(CompoundNBT var0, World var1) {

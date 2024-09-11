@@ -35,7 +35,7 @@ public class SPlaySoundEffectPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24776 = Registry.field16069.method9172(var1.readVarInt());
+      this.field24776 = Registry.field16069.getByValue(var1.readVarInt());
       this.field24777 = var1.<Class2266>readEnumValue(Class2266.class);
       this.field24778 = var1.readInt();
       this.field24779 = var1.readInt();

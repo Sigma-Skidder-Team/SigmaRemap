@@ -44,7 +44,7 @@ public class DataSerializers {
 
    @Nullable
    public static Class6466<?> method25805(int var0) {
-      return field33389.method9172(var0);
+      return field33389.getByValue(var0);
    }
 
    public static int method25806(Class6466<?> var0) {

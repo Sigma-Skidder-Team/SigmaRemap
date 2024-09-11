@@ -20,25 +20,25 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 public class Effect {
    private final Map<Attribute, AttributeModifier> field30707 = Maps.newHashMap();
-   private final EffectType field30708;
-   private final int field30709;
-   private String field30710;
+   private final EffectType type;
+   private final int liquidColor;
+   private String name;
 
    @Nullable
-   public static Effect method22287(int var0) {
-      return Registry.EFFECTS.method9172(var0);
+   public static Effect get(int var0) {
+      return Registry.EFFECTS.getByValue(var0);
    }
 
-   public static int method22288(Effect var0) {
+   public static int getId(Effect var0) {
       return Registry.EFFECTS.getId(var0);
    }
 
    public Effect(EffectType var1, int var2) {
-      this.field30708 = var1;
-      this.field30709 = var2;
+      this.type = var1;
+      this.liquidColor = var2;
    }
 
-   public void method22289(LivingEntity var1, int var2) {
+   public void performEffect(LivingEntity var1, int var2) {
       if (this != Effects.REGENERATION) {
          if (this != Effects.POISON) {
             if (this != Effects.WITHER) {
@@ -66,7 +66,7 @@ public class Effect {
       }
    }
 
-   public void method22290(Entity var1, Entity var2, LivingEntity var3, int var4, double var5) {
+   public void affectEntity(Entity var1, Entity var2, LivingEntity var3, int var4, double var5) {
       if ((this != Effects.INSTANT_HEALTH || var3.isEntityUndead()) && (this != Effects.INSTANT_DAMAGE || !var3.isEntityUndead())) {
          if (this == Effects.INSTANT_DAMAGE && !var3.isEntityUndead() || this == Effects.INSTANT_HEALTH && var3.isEntityUndead()) {
             int var10 = (int)(var5 * (double)(6 << var4) + 0.5);
@@ -76,7 +76,7 @@ public class Effect {
                var3.attackEntityFrom(DamageSource.field39006, (float)var10);
             }
          } else {
-            this.method22289(var3, var4);
+            this.performEffect(var3, var4);
          }
       } else {
          int var9 = (int)(var5 * (double)(4 << var4) + 0.5);
@@ -84,7 +84,7 @@ public class Effect {
       }
    }
 
-   public boolean method22291(int var1, int var2) {
+   public boolean isReady(int var1, int var2) {
       if (this != Effects.REGENERATION) {
          if (this != Effects.POISON) {
             if (this != Effects.WITHER) {
@@ -103,36 +103,36 @@ public class Effect {
       }
    }
 
-   public boolean method22292() {
+   public boolean isInstant() {
       return false;
    }
 
-   public String method22293() {
-      if (this.field30710 == null) {
-         this.field30710 = Util.method38486("effect", Registry.EFFECTS.getKey(this));
+   public String getOrCreateDescriptionId() {
+      if (this.name == null) {
+         this.name = Util.makeTranslationKey("effect", Registry.EFFECTS.getKey(this));
       }
 
-      return this.field30710;
+      return this.name;
    }
 
-   public String method22294() {
-      return this.method22293();
+   public String getName() {
+      return this.getOrCreateDescriptionId();
    }
 
-   public ITextComponent method22295() {
-      return new TranslationTextComponent(this.method22294());
+   public ITextComponent getDisplayName() {
+      return new TranslationTextComponent(this.getName());
    }
 
-   public EffectType method22296() {
-      return this.field30708;
+   public EffectType getEffectType() {
+      return this.type;
    }
 
-   public int method22297() {
-      return this.field30709;
+   public int getLiquidColor() {
+      return this.liquidColor;
    }
 
    public Effect addAttributesModifier(Attribute var1, String var2, double var3, AttributeModifier.Operation var5) {
-      AttributeModifier var8 = new AttributeModifier(UUID.fromString(var2), this::method22294, var3, var5);
+      AttributeModifier var8 = new AttributeModifier(UUID.fromString(var2), this::getName, var3, var5);
       this.field30707.put(var1, var8);
       return this;
    }
@@ -156,16 +156,16 @@ public class Effect {
          if (var8 != null) {
             AttributeModifier var9 = (AttributeModifier)var7.getValue();
             var8.method38670(var9);
-            var8.method38668(new AttributeModifier(var9.getID(), this.method22294() + " " + var3, this.method22302(var3, var9), var9.getOperation()));
+            var8.method38668(new AttributeModifier(var9.getID(), this.getName() + " " + var3, this.getAttributeModifierAmount(var3, var9), var9.getOperation()));
          }
       }
    }
 
-   public double method22302(int var1, AttributeModifier var2) {
+   public double getAttributeModifierAmount(int var1, AttributeModifier var2) {
       return var2.getAmount() * (double)(var1 + 1);
    }
 
-   public boolean method22303() {
-      return this.field30708 == EffectType.BENEFICIAL;
+   public boolean isBeneficial() {
+      return this.type == EffectType.BENEFICIAL;
    }
 }

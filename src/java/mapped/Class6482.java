@@ -13,7 +13,7 @@ public final class Class6482 implements Class6466<IParticleData> {
    }
 
    public IParticleData method19645(PacketBuffer var1) {
-      return this.<IParticleData>method19648(var1, (ParticleType<IParticleData>) Registry.PARTICLE_TYPE.method9172(var1.readVarInt()));
+      return this.<IParticleData>method19648(var1, (ParticleType<IParticleData>) Registry.PARTICLE_TYPE.getByValue(var1.readVarInt()));
    }
 
    private <T extends IParticleData> T method19648(PacketBuffer var1, ParticleType<T> var2) {

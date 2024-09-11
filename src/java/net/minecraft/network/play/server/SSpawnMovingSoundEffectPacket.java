@@ -32,7 +32,7 @@ public class SSpawnMovingSoundEffectPacket implements Packet<IClientPlayNetHandl
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24623 = Registry.field16069.method9172(var1.readVarInt());
+      this.field24623 = Registry.field16069.getByValue(var1.readVarInt());
       this.field24624 = var1.<Class2266>readEnumValue(Class2266.class);
       this.field24625 = var1.readVarInt();
       this.field24626 = var1.readFloat();

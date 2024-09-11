@@ -41,7 +41,7 @@ public class Class7834<T> implements Class7833<T> {
    @Override
    public boolean method26241(Predicate<T> var1) {
       for (int var4 = 0; var4 < this.method26247(); var4++) {
-         if (var1.test(this.field33627.method9172(var4))) {
+         if (var1.test(this.field33627.getByValue(var4))) {
             return true;
          }
       }
@@ -52,7 +52,7 @@ public class Class7834<T> implements Class7833<T> {
    @Nullable
    @Override
    public T method26242(int var1) {
-      return this.field33627.method9172(var1);
+      return this.field33627.getByValue(var1);
    }
 
    @Override
@@ -61,7 +61,7 @@ public class Class7834<T> implements Class7833<T> {
       int var4 = var1.readVarInt();
 
       for (int var5 = 0; var5 < var4; var5++) {
-         this.field33627.method9272(this.field33626.method9172(var1.readVarInt()));
+         this.field33627.method9272(this.field33626.getByValue(var1.readVarInt()));
       }
    }
 
@@ -71,7 +71,7 @@ public class Class7834<T> implements Class7833<T> {
       var1.writeVarInt(var4);
 
       for (int var5 = 0; var5 < var4; var5++) {
-         var1.writeVarInt(this.field33626.getId(this.field33627.method9172(var5)));
+         var1.writeVarInt(this.field33626.getId(this.field33627.getByValue(var5)));
       }
    }
 
@@ -80,7 +80,7 @@ public class Class7834<T> implements Class7833<T> {
       int var3 = PacketBuffer.method35695(this.method26247());
 
       for (int var4 = 0; var4 < this.method26247(); var4++) {
-         var3 += PacketBuffer.method35695(this.field33626.getId(this.field33627.method9172(var4)));
+         var3 += PacketBuffer.method35695(this.field33626.getId(this.field33627.getByValue(var4)));
       }
 
       return var3;
@@ -101,7 +101,7 @@ public class Class7834<T> implements Class7833<T> {
 
    public void method26248(ListNBT var1) {
       for (int var4 = 0; var4 < this.method26247(); var4++) {
-         var1.add(this.field33630.apply(this.field33627.method9172(var4)));
+         var1.add(this.field33630.apply(this.field33627.getByValue(var4)));
       }
    }
 }

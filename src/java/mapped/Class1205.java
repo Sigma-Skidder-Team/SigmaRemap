@@ -22,7 +22,7 @@ public class Class1205 extends Class1201 {
    }
 
    private ITextComponent method5763(Effect var1, boolean var2) {
-      TranslationTextComponent var5 = new TranslationTextComponent(var1.method22294());
+      TranslationTextComponent var5 = new TranslationTextComponent(var1.getName());
       if (!var2 && var1 != Effects.REGENERATION) {
          var5.appendString(" II");
       }

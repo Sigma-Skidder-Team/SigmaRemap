@@ -16,9 +16,9 @@ public class Class8201 implements Class8202 {
          case 0:
             return Class950.method3827(this.field35233);
          case 1:
-            return Effect.method22288(Class950.method3828(this.field35233));
+            return Effect.getId(Class950.method3828(this.field35233));
          case 2:
-            return Effect.method22288(Class950.method3829(this.field35233));
+            return Effect.getId(Class950.method3829(this.field35233));
          default:
             return 0;
       }

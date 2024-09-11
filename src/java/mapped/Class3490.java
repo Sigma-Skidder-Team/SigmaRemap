@@ -14,7 +14,7 @@ public class Class3490 extends Class3194 {
    public Class3490(Effect var1, int var2, AbstractBlock var3) {
       super(var3);
       this.field19358 = var1;
-      if (!var1.method22292()) {
+      if (!var1.isInstant()) {
          this.field19359 = var2 * 20;
       } else {
          this.field19359 = var2;

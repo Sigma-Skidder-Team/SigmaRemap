@@ -89,7 +89,7 @@ public class Class9741 {
 
          for (EffectInstance var9 : var0) {
             if (var9.method8631()) {
-               int var10 = var9.getPotion().method22297();
+               int var10 = var9.getPotion().getLiquidColor();
                if (Class7944.method26911()) {
                   var10 = Class9680.method37891(var9.getPotion(), var10);
                }
@@ -161,7 +161,7 @@ public class Class9741 {
             if (!var11.isEmpty()) {
                for (Entry var13 : var11.entrySet()) {
                   AttributeModifier var14 = (AttributeModifier)var13.getValue();
-                  AttributeModifier var15 = new AttributeModifier(var14.method37931(), var10.method22302(var8.method8629(), var14), var14.getOperation());
+                  AttributeModifier var15 = new AttributeModifier(var14.method37931(), var10.getAttributeModifierAmount(var8.method8629(), var14), var14.getOperation());
                   var6.add(new Pair(var13.getKey(), var15));
                }
             }
@@ -174,7 +174,7 @@ public class Class9741 {
                var9 = new TranslationTextComponent("potion.withDuration", var9, Class7182.method22535(var8, var2));
             }
 
-            var1.add(var9.mergeStyle(var10.method22296().method8849()));
+            var1.add(var9.mergeStyle(var10.getEffectType().method8849()));
          }
       } else {
          var1.add(field45485);

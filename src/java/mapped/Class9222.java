@@ -30,7 +30,7 @@ public class Class9222 {
             Registry.ENTITY_TYPE.method9192().filter(EntityType::method33206),
             var1,
             EntityType::method33198,
-            var0x -> new TranslationTextComponent(Util.method38486("entity", EntityType.method33198(var0x)))
+            var0x -> new TranslationTextComponent(Util.makeTranslationKey("entity", EntityType.method33198(var0x)))
          )
    );
 

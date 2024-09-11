@@ -346,9 +346,9 @@ public class Class7992 {
       for (ResourceLocation var5 : Registry.EFFECTS.method9190()) {
          if (Registry.EFFECTS.method9193(var5)) {
             Effect var6 = Registry.EFFECTS.getOrDefault(var5);
-            String var7 = var6.method22294();
+            String var7 = var6.getName();
             if (var3.equals(var7)) {
-               return Effect.method22288(var6);
+               return Effect.getId(var6);
             }
          }
       }
@@ -417,7 +417,7 @@ public class Class7992 {
       int var2 = 0;
 
       while (true) {
-         Class6069 var3 = Registry.field16073.method9172(var2);
+         Class6069 var3 = Registry.field16073.getByValue(var2);
          if (var3 == null) {
             return var2;
          }

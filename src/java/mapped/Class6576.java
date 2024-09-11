@@ -33,7 +33,7 @@ public class Class6576 {
 
    public Dynamic<?> method19906(int var1) {
       if (var1 >= 0 && var1 <= 4095) {
-         Dynamic var4 = this.field28946.method9172(this.field28954[var1]);
+         Dynamic var4 = this.field28946.getByValue(this.field28954[var1]);
          return var4 != null ? var4 : Class8782.method31680();
       } else {
          return Class8782.method31680();

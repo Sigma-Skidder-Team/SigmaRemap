@@ -194,10 +194,10 @@ public class Class999 extends Entity {
                            this.field5504.put(var10, this.ticksExisted + this.field5507);
 
                            for (EffectInstance var23 : var27) {
-                              if (!var23.getPotion().method22292()) {
+                              if (!var23.getPotion().isInstant()) {
                                  var10.addPotionEffect(new EffectInstance(var23));
                               } else {
-                                 var23.getPotion().method22290(this, this.method4114(), var10, var23.method8629(), 0.5);
+                                 var23.getPotion().affectEntity(this, this.method4114(), var10, var23.method8629(), 0.5);
                               }
                            }
 

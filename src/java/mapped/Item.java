@@ -47,7 +47,7 @@ public class Item implements IItemProvider {
    }
 
    public static Item method11702(int var0) {
-      return Registry.ITEM.method9172(var0);
+      return Registry.ITEM.getByValue(var0);
    }
 
    @Deprecated
@@ -146,7 +146,7 @@ public class Item implements IItemProvider {
 
    public String method11718() {
       if (this.field18742 == null) {
-         this.field18742 = Util.method38486("item", Registry.ITEM.getKey(this));
+         this.field18742 = Util.makeTranslationKey("item", Registry.ITEM.getKey(this));
       }
 
       return this.field18742;

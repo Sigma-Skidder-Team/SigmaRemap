@@ -221,7 +221,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
 
    @Nullable
    private static Effect method3825(int var0) {
-      Effect var3 = Effect.method22287(var0);
+      Effect var3 = Effect.get(var0);
       return !field5339.contains(var3) ? null : var3;
    }
 
@@ -240,8 +240,8 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
    @Override
    public CompoundNBT write(CompoundNBT var1) {
       super.write(var1);
-      var1.putInt("Primary", Effect.method22288(this.field5344));
-      var1.putInt("Secondary", Effect.method22288(this.field5345));
+      var1.putInt("Primary", Effect.getId(this.field5344));
+      var1.putInt("Secondary", Effect.getId(this.field5345));
       var1.putInt("Levels", this.field5342);
       if (this.field5346 != null) {
          var1.method109("CustomName", ITextComponent$Serializer.toJson(this.field5346));

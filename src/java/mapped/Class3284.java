@@ -17,7 +17,7 @@ public class Class3284 extends Item {
       CompoundNBT var5 = var0.getOrCreateTag();
       ListNBT var6 = var5.method131("Effects", 9);
       CompoundNBT var7 = new CompoundNBT();
-      var7.method100("EffectId", (byte) Effect.method22288(var1));
+      var7.method100("EffectId", (byte) Effect.getId(var1));
       var7.putInt("EffectDuration", var2);
       var6.add(var7);
       var5.put("Effects", var6);
@@ -37,7 +37,7 @@ public class Class3284 extends Item {
                var10 = var11.getInt("EffectDuration");
             }
 
-            Effect var12 = Effect.method22287(var11.getByte("EffectId"));
+            Effect var12 = Effect.get(var11.getByte("EffectId"));
             if (var12 != null) {
                var3.addPotionEffect(new EffectInstance(var12, var10));
             }

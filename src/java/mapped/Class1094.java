@@ -304,7 +304,7 @@ public class Class1094 extends Class1018 {
          this.field5601.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, true));
          this.field5601.addGoal(2, new NearestAttackableTargetGoal<WolfEntity>(this, WolfEntity.class, true));
          if (!this.method3381()) {
-            this.method3379(new TranslationTextComponent(Util.method38486("entity", field5987)));
+            this.method3379(new TranslationTextComponent(Util.makeTranslationKey("entity", field5987)));
          }
       }
 

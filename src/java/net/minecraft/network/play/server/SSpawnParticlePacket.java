@@ -41,7 +41,7 @@ public class SSpawnParticlePacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer buf) throws IOException {
-      ParticleType<?> particletype = Registry.PARTICLE_TYPE.method9172(buf.readInt());
+      ParticleType<?> particletype = Registry.PARTICLE_TYPE.getByValue(buf.readInt());
       if (particletype == null) {
          particletype = ParticleTypes.BARRIER;
       }

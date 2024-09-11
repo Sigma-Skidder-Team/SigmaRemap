@@ -40,7 +40,7 @@ public class Class8812 {
 
          while (var3.hasNext()) {
             EffectInstance var4 = (EffectInstance)var3.next();
-            if (var4.getPotion().method22292()) {
+            if (var4.getPotion().isInstant()) {
                return true;
             }
          }

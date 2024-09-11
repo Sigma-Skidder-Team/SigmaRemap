@@ -31,7 +31,7 @@ public class SBlockActionPacket implements Packet<IClientPlayNetHandler> {
       this.field24392 = var1.readBlockPos();
       this.field24393 = var1.readUnsignedByte();
       this.field24394 = var1.readUnsignedByte();
-      this.field24395 = Registry.BLOCK.method9172(var1.readVarInt());
+      this.field24395 = Registry.BLOCK.getByValue(var1.readVarInt());
    }
 
    @Override

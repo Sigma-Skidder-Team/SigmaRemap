@@ -78,7 +78,7 @@ public interface Class7984<T> {
          Builder var9 = ImmutableSet.builder();
 
          for (int var10 = 0; var10 < var8; var10++) {
-            var9.add(var1.method9172(var0.readVarInt()));
+            var9.add(var1.getByValue(var0.readVarInt()));
          }
 
          var4.put(var7, ITag.method24920(var9.build()));

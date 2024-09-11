@@ -49,7 +49,7 @@ public class SOpenWindowPacket implements Packet<IClientPlayNetHandler> {
 
    @Nullable
    public ContainerType<?> method17285() {
-      return Registry.field16084.method9172(this.field24403);
+      return Registry.field16084.getByValue(this.field24403);
    }
 
    public ITextComponent method17286() {

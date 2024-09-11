@@ -35,14 +35,14 @@ public class SStatisticsPacket implements Packet<IClientPlayNetHandler> {
       this.field24640 = new Object2IntOpenHashMap(var4);
 
       for (int var5 = 0; var5 < var4; var5++) {
-         this.method17457(Registry.field16088.method9172(var1.readVarInt()), var1);
+         this.method17457(Registry.field16088.getByValue(var1.readVarInt()), var1);
       }
    }
 
    private <T> void method17457(Class49<T> var1, PacketBuffer var2) {
       int var5 = var2.readVarInt();
       int var6 = var2.readVarInt();
-      this.field24640.put(var1.method172(var1.method171().method9172(var5)), var6);
+      this.field24640.put(var1.method172(var1.method171().getByValue(var5)), var6);
    }
 
    @Override

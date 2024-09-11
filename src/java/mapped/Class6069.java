@@ -23,7 +23,7 @@ public abstract class Class6069 {
 
    @Nullable
    public static Class6069 method18810(int var0) {
-      return Registry.field16073.method9172(var0);
+      return Registry.field16073.getByValue(var0);
    }
 
    public Class6069(Class1937 var1, Class2242 var2, EquipmentSlotType[] var3) {
@@ -83,7 +83,7 @@ public abstract class Class6069 {
 
    public String method18818() {
       if (this.field27309 == null) {
-         this.field27309 = Util.method38486("enchantment", Registry.field16073.getKey(this));
+         this.field27309 = Util.makeTranslationKey("enchantment", Registry.field16073.getKey(this));
       }
 
       return this.field27309;

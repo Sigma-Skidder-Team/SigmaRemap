@@ -69,6 +69,6 @@ public class SSpawnPaintingPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public Class9078 method17198() {
-      return Registry.field16079.method9172(this.field24280);
+      return Registry.field16079.getByValue(this.field24280);
    }
 }

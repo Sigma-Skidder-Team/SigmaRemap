@@ -29,7 +29,7 @@ public class Class2353<K> implements Class2347<K> {
 
    @Nullable
    @Override
-   public K method9172(int var1) {
+   public K getByValue(int var1) {
       return var1 >= 0 && var1 < this.field16160.length ? this.field16160[var1] : null;
    }
 

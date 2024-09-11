@@ -133,7 +133,7 @@ public class SimpleRegistry<T> extends MutableRegistry<T> {
 
    @Nullable
    @Override
-   public T method9172(int var1) {
+   public T getByValue(int var1) {
       return (T)(var1 >= 0 && var1 < this.field16142.size() ? this.field16142.get(var1) : null);
    }
 

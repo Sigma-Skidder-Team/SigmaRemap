@@ -27,12 +27,12 @@ public class Class1684 implements Class1683 {
 
       for (int var5 = 0; var5 < this.field9158.length; var5++) {
          int var6 = var2[var5];
-         Biome var7 = (Biome)var1.method9172(var6);
+         Biome var7 = (Biome)var1.getByValue(var6);
          if (var7 != null) {
             this.field9158[var5] = var7;
          } else {
             field9151.warn("Received invalid biome id: " + var6);
-            this.field9158[var5] = (Biome)var1.method9172(0);
+            this.field9158[var5] = (Biome)var1.getByValue(0);
          }
       }
    }
@@ -63,7 +63,7 @@ public class Class1684 implements Class1683 {
          }
       } else {
          for (int var13 = 0; var13 < var4.length; var13++) {
-            this.field9158[var13] = (Biome)var1.method9172(var4[var13]);
+            this.field9158[var13] = (Biome)var1.getByValue(var4[var13]);
             if (this.field9158[var13] == null) {
                int var14 = var13 & field9155;
                int var15 = var13 >> field9152 + field9152 & field9156;

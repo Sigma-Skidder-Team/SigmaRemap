@@ -108,12 +108,12 @@ public class Class9548 {
       int var8 = 0;
       int var9;
       if (var3 == null) {
-         if (!var2.method22292()) {
+         if (!var2.isInstant()) {
             var9 = 600;
          } else {
             var9 = 1;
          }
-      } else if (!var2.method22292()) {
+      } else if (!var2.isInstant()) {
          var9 = var3 * 20;
       } else {
          var9 = var3;
@@ -130,11 +130,11 @@ public class Class9548 {
 
       if (var8 != 0) {
          if (var1.size() != 1) {
-            var0.method20179(new TranslationTextComponent("commands.effect.give.success.multiple", var2.method22295(), var1.size(), var9 / 20), true);
+            var0.method20179(new TranslationTextComponent("commands.effect.give.success.multiple", var2.getDisplayName(), var1.size(), var9 / 20), true);
          } else {
             var0.method20179(
                new TranslationTextComponent(
-                  "commands.effect.give.success.single", var2.method22295(), ((Entity)var1.iterator().next()).getDisplayName(), var9 / 20
+                  "commands.effect.give.success.single", var2.getDisplayName(), ((Entity)var1.iterator().next()).getDisplayName(), var9 / 20
                ),
                true
             );
@@ -181,11 +181,11 @@ public class Class9548 {
 
       if (var5 != 0) {
          if (var1.size() != 1) {
-            var0.method20179(new TranslationTextComponent("commands.effect.clear.specific.success.multiple", var2.method22295(), var1.size()), true);
+            var0.method20179(new TranslationTextComponent("commands.effect.clear.specific.success.multiple", var2.getDisplayName(), var1.size()), true);
          } else {
             var0.method20179(
                new TranslationTextComponent(
-                  "commands.effect.clear.specific.success.single", var2.method22295(), ((Entity)var1.iterator().next()).getDisplayName()
+                  "commands.effect.clear.specific.success.single", var2.getDisplayName(), ((Entity)var1.iterator().next()).getDisplayName()
                ),
                true
             );

@@ -137,7 +137,7 @@ public class EffectInstance implements Comparable<EffectInstance> {
 
    public boolean method8633(LivingEntity var1, Runnable var2) {
       if (this.field13135 > 0) {
-         if (this.field13134.method22291(this.field13135, this.field13136)) {
+         if (this.field13134.isReady(this.field13135, this.field13136)) {
             this.method8635(var1);
          }
 
@@ -162,12 +162,12 @@ public class EffectInstance implements Comparable<EffectInstance> {
 
    public void method8635(LivingEntity var1) {
       if (this.field13135 > 0) {
-         this.field13134.method22289(var1, this.field13136);
+         this.field13134.performEffect(var1, this.field13136);
       }
    }
 
    public String method8636() {
-      return this.field13134.method22294();
+      return this.field13134.getName();
    }
 
    @Override
@@ -222,7 +222,7 @@ public class EffectInstance implements Comparable<EffectInstance> {
    }
 
    public CompoundNBT method8637(CompoundNBT var1) {
-      var1.method100("Id", (byte) Effect.method22288(this.getPotion()));
+      var1.method100("Id", (byte) Effect.getId(this.getPotion()));
       this.method8638(var1);
       return var1;
    }
@@ -242,7 +242,7 @@ public class EffectInstance implements Comparable<EffectInstance> {
 
    public static EffectInstance method8639(CompoundNBT var0) {
       byte var3 = var0.getByte("Id");
-      Effect var4 = Effect.method22287(var3);
+      Effect var4 = Effect.get(var3);
       return var4 != null ? method8640(var4, var0) : null;
    }
 
@@ -281,12 +281,12 @@ public class EffectInstance implements Comparable<EffectInstance> {
       return this.method8628() > 32147 && var1.method8628() > 32147 || this.isAmbient() && var1.isAmbient()
          ? ComparisonChain.start()
             .compare(this.isAmbient(), var1.isAmbient())
-            .compare(this.getPotion().method22297(), var1.getPotion().method22297())
+            .compare(this.getPotion().getLiquidColor(), var1.getPotion().getLiquidColor())
             .result()
          : ComparisonChain.start()
             .compare(this.isAmbient(), var1.isAmbient())
             .compare(this.method8628(), var1.method8628())
-            .compare(this.getPotion().method22297(), var1.getPotion().method22297())
+            .compare(this.getPotion().getLiquidColor(), var1.getPotion().getLiquidColor())
             .result();
    }
 }

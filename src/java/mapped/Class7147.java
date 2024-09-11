@@ -13,12 +13,12 @@ public final class Class7147 extends Effect {
    }
 
    @Override
-   public boolean method22291(int var1, int var2) {
+   public boolean isReady(int var1, int var2) {
       return true;
    }
 
    @Override
-   public void method22289(LivingEntity var1, int var2) {
+   public void performEffect(LivingEntity var1, int var2) {
       if (var1 instanceof ServerPlayerEntity && !var1.isSpectator()) {
          ServerPlayerEntity var5 = (ServerPlayerEntity)var1;
          ServerWorld var6 = var5.getServerWorld();

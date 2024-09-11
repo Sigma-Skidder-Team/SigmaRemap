@@ -113,12 +113,12 @@ public class Class5821 extends Container {
 
    @Nullable
    public Effect method18179() {
-      return Effect.method22287(this.field25503.method28505(1));
+      return Effect.get(this.field25503.method28505(1));
    }
 
    @Nullable
    public Effect method18180() {
-      return Effect.method22287(this.field25503.method28505(2));
+      return Effect.get(this.field25503.method28505(2));
    }
 
    public void method18181(int var1, int var2) {

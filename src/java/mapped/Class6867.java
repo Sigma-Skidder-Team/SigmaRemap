@@ -14,6 +14,6 @@ public final class Class6867 implements IParticleData.IDeserializer<BlockParticl
    }
 
    public BlockParticleData read(ParticleType<BlockParticleData> var1, PacketBuffer var2) {
-      return new BlockParticleData(var1, Block.field18610.method9172(var2.readVarInt()));
+      return new BlockParticleData(var1, Block.field18610.getByValue(var2.readVarInt()));
    }
 }

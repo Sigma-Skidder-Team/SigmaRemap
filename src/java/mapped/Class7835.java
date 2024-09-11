@@ -64,7 +64,7 @@ public class Class7835<T> implements Class7833<T> {
       this.field33638 = var1.readVarInt();
 
       for (int var4 = 0; var4 < this.field33638; var4++) {
-         this.field33634[var4] = this.field33633.method9172(var1.readVarInt());
+         this.field33634[var4] = this.field33633.getByValue(var1.readVarInt());
       }
    }
 

@@ -84,7 +84,7 @@ public class SSpawnObjectPacket implements Packet<IClientPlayNetHandler> {
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24360 = var1.readVarInt();
       this.field24361 = var1.readUniqueId();
-      this.field24370 = Registry.ENTITY_TYPE.method9172(var1.readVarInt());
+      this.field24370 = Registry.ENTITY_TYPE.getByValue(var1.readVarInt());
       this.field24362 = var1.readDouble();
       this.field24363 = var1.readDouble();
       this.field24364 = var1.readDouble();

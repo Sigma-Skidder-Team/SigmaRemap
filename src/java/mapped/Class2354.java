@@ -26,7 +26,7 @@ public class Class2354 implements Iterable<BlockState> {
 
    @Nullable
    public BlockState method9282(int var1) {
-      BlockState var4 = this.field16165.method9172(var1);
+      BlockState var4 = this.field16165.getByValue(var1);
       return var4 != null ? var4 : field16164;
    }
 

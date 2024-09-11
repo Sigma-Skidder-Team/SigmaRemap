@@ -206,7 +206,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
                }
             )
          : var1.getNumberValue(var2).flatMap(var1x -> {
-            Object var4 = this.method9172(var1x.intValue());
+            Object var4 = this.getByValue(var1x.intValue());
             return var4 != null ? DataResult.success(var4, this.method9185((T)var4)) : DataResult.error("Unknown registry id: " + var1x);
          }).map(var1x -> Pair.of((T) var1x, var1.empty()));
    }

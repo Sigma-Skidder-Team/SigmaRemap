@@ -67,7 +67,7 @@ public class Class8896 {
          if (var5.length == 1) {
             Class9727 var6 = var5[0];
             int var7 = var6.method38103();
-            Block var8 = Registry.BLOCK.method9172(var7);
+            Block var8 = Registry.BLOCK.getByValue(var7);
             return var8.method11579();
          } else {
             return var2;

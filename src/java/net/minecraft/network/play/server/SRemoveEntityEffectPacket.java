@@ -26,13 +26,13 @@ public class SRemoveEntityEffectPacket implements Packet<IClientPlayNetHandler> 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24482 = var1.readVarInt();
-      this.field24483 = Effect.method22287(var1.readUnsignedByte());
+      this.field24483 = Effect.get(var1.readUnsignedByte());
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeVarInt(this.field24482);
-      var1.writeByte(Effect.method22288(this.field24483));
+      var1.writeByte(Effect.getId(this.field24483));
    }
 
    public void processPacket(IClientPlayNetHandler var1) {
