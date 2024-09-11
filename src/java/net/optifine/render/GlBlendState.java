@@ -1,21 +1,23 @@
-package mapped;
+package net.optifine.render;
 
-public class Class8069 {
+import mapped.GlStateManager;
+
+public class GlBlendState {
    private boolean field34645;
    private int field34646;
    private int field34647;
    private int field34648;
    private int field34649;
 
-   public Class8069() {
+   public GlBlendState() {
       this(false, 1, 0);
    }
 
-   public Class8069(boolean var1) {
+   public GlBlendState(boolean var1) {
       this(var1, 1, 0);
    }
 
-   public Class8069(boolean var1, int var2, int var3, int var4, int var5) {
+   public GlBlendState(boolean var1, int var2, int var3, int var4, int var5) {
       this.field34645 = var1;
       this.field34646 = var2;
       this.field34647 = var3;
@@ -23,7 +25,7 @@ public class Class8069 {
       this.field34649 = var5;
    }
 
-   public Class8069(boolean var1, int var2, int var3) {
+   public GlBlendState(boolean var1, int var2, int var3) {
       this(var1, var2, var3, var2, var3);
    }
 
@@ -35,7 +37,7 @@ public class Class8069 {
       this.field34649 = var5;
    }
 
-   public void method27774(Class8069 var1) {
+   public void method27774(GlBlendState var1) {
       this.field34645 = var1.field34645;
       this.field34646 = var1.field34646;
       this.field34647 = var1.field34647;

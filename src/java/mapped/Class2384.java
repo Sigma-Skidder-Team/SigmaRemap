@@ -1,26 +1,16 @@
 package mapped;
 
 import org.apache.commons.lang3.SerializationException;
+import sun.misc.Cleaner;
 
 import java.io.*;
-import java.lang.ref.Cleaner;
 
 public class Class2384 extends Class2373 {
-   private static final long field16264 = -4096759496772248522L;
-   private static final Cleaner cleaner = Cleaner.create();
    private Object[] field16265;
    private Class2383 field16266;
    private int field16267;
    private long field16268;
    private byte[] field16269;
-
-   public Class2384(long var1) {
-      this(var1, 1024);
-   }
-
-   public Class2384(long var1, int var3) {
-      this(var1, var3, true);
-   }
 
    public Class2384(long var1, int var3, boolean var4) {
       this.field16233 = Class2178.field14306;
@@ -38,7 +28,7 @@ public class Class2384 extends Class2373 {
                   this.method9694(this.field16268);
                }
 
-               cleaner.register(this, new ResourceCleaner(this.field16238, this.field16268, this.field16235));
+               Cleaner.create(this, new ResourceCleaner(this.field16238, this.field16268, this.field16235));
                Class8065.method27706(this.field16268 * this.field16235);
                this.field16266 = new Class2383(var1);
                this.field16269 = new byte[var3];

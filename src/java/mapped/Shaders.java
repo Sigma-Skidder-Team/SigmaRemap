@@ -4,6 +4,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
@@ -13,6 +14,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
+import net.optifine.render.GlAlphaState;
+import net.optifine.render.GlBlendState;
 import org.apache.commons.io.IOUtils;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.*;
@@ -1070,7 +1073,7 @@ public class Shaders {
             } else {
                 byte[] var12 = Class7944.method26927(var11);
                 IOUtils.closeQuietly(var11);
-                ByteBuffer var13 = Class7137.method22266(var12.length);
+                ByteBuffer var13 = GLAllocation.method22266(var12.length);
                 var13.put(var12);
                 ((Buffer) var13).flip();
                 Class9620 var14 = Class292.method1144(var10, new Class9620(true, true));
@@ -2781,12 +2784,12 @@ public class Shaders {
             GlStateManager.method23875();
         }
 
-        Class7675 var2 = var1.method26492();
+        GlAlphaState var2 = var1.method26492();
         if (var2 != null) {
             GlStateManager.method23870(var2);
         }
 
-        Class8069 var3 = var1.method26493();
+        GlBlendState var3 = var1.method26493();
         if (var3 != null) {
             GlStateManager.method23874(var3);
         }
@@ -3762,7 +3765,7 @@ public class Shaders {
             GL32.glOrtho(0.0, 1.0, 0.0, 1.0, 0.0, 1.0);
             GL32.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
             GlStateManager.method23804();
-            GlStateManager.method23695();
+            GlStateManager.disableAlphaTest();
             GlStateManager.method23714();
             GlStateManager.method23711();
             GlStateManager.method23712(519);
@@ -3892,7 +3895,7 @@ public class Shaders {
         GL32.glClear(16640);
         GL32.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         GlStateManager.method23804();
-        GlStateManager.method23695();
+        GlStateManager.disableAlphaTest();
         GlStateManager.method23714();
         GlStateManager.method23711();
         GlStateManager.method23712(519);
@@ -4090,7 +4093,7 @@ public class Shaders {
     public static void method33082() {
         if (field40605 && field40834.method26485() != field40813.method26485()) {
             method33021(field40831);
-            GlStateManager.method23695();
+            GlStateManager.disableAlphaTest();
         }
     }
 

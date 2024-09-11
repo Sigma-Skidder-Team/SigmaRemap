@@ -1,19 +1,21 @@
-package mapped;
+package net.optifine.render;
 
-public class Class7675 {
+import mapped.GlStateManager;
+
+public class GlAlphaState {
    private boolean field32881;
    private int field32882;
    private float field32883;
 
-   public Class7675() {
+   public GlAlphaState() {
       this(false, 519, 0.0F);
    }
 
-   public Class7675(boolean var1) {
+   public GlAlphaState(boolean var1) {
       this(var1, 519, 0.0F);
    }
 
-   public Class7675(boolean var1, int var2, float var3) {
+   public GlAlphaState(boolean var1, int var2, float var3) {
       this.field32881 = var1;
       this.field32882 = var2;
       this.field32883 = var3;
@@ -25,7 +27,7 @@ public class Class7675 {
       this.field32883 = var3;
    }
 
-   public void method25208(Class7675 var1) {
+   public void method25208(GlAlphaState var1) {
       this.field32881 = var1.field32881;
       this.field32882 = var1.field32882;
       this.field32883 = var1.field32883;
@@ -65,7 +67,7 @@ public class Class7675 {
          GlStateManager.method23696();
          GlStateManager.method23697(this.field32882, this.field32883);
       } else {
-         GlStateManager.method23695();
+         GlStateManager.disableAlphaTest();
       }
    }
 

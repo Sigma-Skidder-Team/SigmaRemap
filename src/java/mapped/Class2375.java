@@ -1,10 +1,8 @@
 package mapped;
 
-import java.lang.ref.Cleaner;
+import sun.misc.Cleaner;
 
 public class Class2375 extends Class2373 {
-   private static final long field16232 = 3135411647668758832L;
-   private static final Cleaner cleaner = Cleaner.create();
    private byte[] field16242;
 
    public Class2375(long var1) {
@@ -24,7 +22,7 @@ public class Class2375 extends Class2373 {
                this.method9694(var1);
             }
 
-            cleaner.register(this, new ResourceCleaner(this.field16238, this.field16234, this.field16235));
+            Cleaner.create(this, new ResourceCleaner(this.field16238, this.field16234, this.field16235));
             Class8065.method27706(this.field16234 * this.field16235);
          }
       } else {

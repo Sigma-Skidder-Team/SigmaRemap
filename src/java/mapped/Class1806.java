@@ -17,6 +17,8 @@ import java.nio.file.StandardOpenOption;
 import java.util.Base64;
 import java.util.EnumSet;
 import java.util.Set;
+
+import net.minecraft.client.util.LWJGLMemoryUntracker;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -479,7 +481,7 @@ public final class Class1806 implements AutoCloseable {
    }
 
    public void method7908() {
-      Class8317.method29100(this.field9728);
+      LWJGLMemoryUntracker.untrack(this.field9728);
    }
 
    public static Class1806 method7909(String var0) throws IOException {

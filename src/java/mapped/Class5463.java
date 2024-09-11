@@ -3,6 +3,7 @@ package mapped;
 import java.nio.IntBuffer;
 import java.util.List;
 
+import com.mojang.blaze3d.platform.GLX;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.LivingEntity;
@@ -14,6 +15,8 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector3i;
+import net.optifine.render.GlBlendState;
+import net.optifine.render.GlCullState;
 import org.lwjgl.opengl.EXTFramebufferObject;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
@@ -182,8 +185,8 @@ public class Class5463 {
          GlStateManager.method23712(515);
          GlStateManager.method23713(true);
          GlStateManager.method23822(true, true, true, true);
-         GlStateManager.method23878(new Class9816(false));
-         GlStateManager.method23874(new Class8069(false));
+         GlStateManager.method23878(new GlCullState(false));
+         GlStateManager.method23874(new GlBlendState(false));
          var8.getProfiler().endStartSection("shadow prepareterrain");
          var8.getTextureManager().bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
          var8.getProfiler().endStartSection("shadow setupterrain");
@@ -196,7 +199,7 @@ public class Class5463 {
          double var18 = var12.getZ();
          GlStateManager.method23830(5888);
          GlStateManager.method23832();
-         GlStateManager.method23695();
+         GlStateManager.disableAlphaTest();
          var9.method880(Class9025.field41288, var10, var14, var16, var18);
          Shaders.method32984("shadow terrain solid");
          GlStateManager.method23696();
@@ -404,7 +407,7 @@ public class Class5463 {
          GlStateManager.method23788();
       }
 
-      if (Class8157.method28310()) {
+      if (GLX.method28310()) {
          GL20.glEnableVertexAttribArray(Shaders.field40671);
          GL20.glEnableVertexAttribArray(Shaders.field40672);
          GL20.glEnableVertexAttribArray(Shaders.field40670);
@@ -412,7 +415,7 @@ public class Class5463 {
    }
 
    public static void method17163(RenderType var0) {
-      if (Class8157.method28310()) {
+      if (GLX.method28310()) {
          GL20.glDisableVertexAttribArray(Shaders.field40671);
          GL20.glDisableVertexAttribArray(Shaders.field40672);
          GL20.glDisableVertexAttribArray(Shaders.field40670);

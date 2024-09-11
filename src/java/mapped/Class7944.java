@@ -23,8 +23,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.imageio.ImageIO;
 
+import com.mojang.blaze3d.platform.GLX;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.client.util.Util;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
@@ -1636,11 +1638,11 @@ public class Class7944 {
    }
 
    public static boolean method26977() {
-      return field34156.field44685 && GlStateManager.field31759;
+      return field34156.field44685 && GlStateManager.vboRegions;
    }
 
    public static boolean method26978() {
-      return Class8157.method28310();
+      return GLX.method28310();
    }
 
    public static boolean method26979() {
@@ -1682,7 +1684,7 @@ public class Class7944 {
    }
 
    public static IntBuffer method26984(int var0) {
-      return Class7137.method22266(var0 << 2).asIntBuffer();
+      return GLAllocation.method22266(var0 << 2).asIntBuffer();
    }
 
    public static String method26985(int var0) {

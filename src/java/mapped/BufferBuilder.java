@@ -14,6 +14,7 @@ import java.util.BitSet;
 import java.util.List;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -53,7 +54,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    private Class7735 field24142;
 
    public BufferBuilder(int var1) {
-      this.field24113 = Class7137.method22266(var1 * 4);
+      this.field24113 = GLAllocation.method22266(var1 * 4);
       this.field24140 = this.field24113.asIntBuffer();
       this.field24141 = this.field24113.asFloatBuffer();
       Class7698.method25373(this);
@@ -68,7 +69,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
          int var4 = this.field24113.capacity();
          int var5 = var4 + method17057(var1);
          field24103.debug("Needed to grow BufferBuilder buffer: Old size {} bytes, new size {} bytes.", var4, var5);
-         ByteBuffer var6 = Class7137.method22266(var5);
+         ByteBuffer var6 = GLAllocation.method22266(var5);
          ((Buffer)this.field24113).position(0);
          var6.put(this.field24113);
          ((Buffer)var6).rewind();
@@ -119,7 +120,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
 
       IntArrays.mergeSort(var17, (var1x, var2x) -> Floats.compare(var9[var2x], var9[var1x]));
       BitSet var18 = new BitSet();
-      FloatBuffer var12 = Class7137.method22267(this.field24123.method26215() * 4);
+      FloatBuffer var12 = GLAllocation.createDirectFloatBuffer(this.field24123.method26215() * 4);
 
       for (int var13 = var18.nextClearBit(0); var13 < var17.length; var13 = var18.nextClearBit(var13 + 1)) {
          int var14 = var17[var13];
@@ -431,11 +432,11 @@ public class BufferBuilder extends Class5424 implements Class5426 {
       ((Buffer)this.field24113).clear();
       if (Class9105.method33954(var3) == 7 && Class7944.method26989()) {
          if (this.field24136 == null) {
-            this.field24136 = Class7137.method22266(this.field24113.capacity() * 2);
+            this.field24136 = GLAllocation.method22266(this.field24113.capacity() * 2);
          }
 
          if (this.field24136.capacity() < this.field24113.capacity() * 2) {
-            this.field24136 = Class7137.method22266(this.field24113.capacity() * 2);
+            this.field24136 = GLAllocation.method22266(this.field24113.capacity() * 2);
          }
 
          Class7831 var5 = var3.method33951();

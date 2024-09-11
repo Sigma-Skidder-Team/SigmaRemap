@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.render.GlBlendState;
 
 import java.io.InputStream;
 import java.util.Optional;
@@ -24,7 +25,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
    private int field6446 = field6437;
    private int field6447 = 16777215;
    private int field6448 = 16777215;
-   private Class8069 field6449 = null;
+   private GlBlendState field6449 = null;
    private boolean field6450 = false;
 
    public ResourceLoadProgressGui(Minecraft var1, Class8335 var2, Consumer<Optional<Throwable>> var3, boolean var4) {

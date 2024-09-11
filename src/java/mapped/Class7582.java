@@ -10,7 +10,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import com.mojang.blaze3d.platform.GLX;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GLAllocation;
+import net.minecraft.client.util.LWJGLMemoryUntracker;
 import net.minecraft.util.text.StringTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,7 +29,7 @@ import org.lwjgl.opengl.KHRDebug;
 
 public class Class7582 {
    private static final Logger field32552 = LogManager.getLogger();
-   public static final ByteBuffer field32553 = Class7137.method22266(64);
+   public static final ByteBuffer field32553 = GLAllocation.method22266(64);
    public static final FloatBuffer field32554 = field32553.asFloatBuffer();
    public static final IntBuffer field32555 = field32553.asIntBuffer();
    private static final Joiner field32556 = Joiner.on('\n');
@@ -148,7 +151,7 @@ public class Class7582 {
                }
 
                ARBDebugOutput.glDebugMessageCallbackARB(
-                  Class8157.<GLDebugMessageARBCallbackI>method28308(GLDebugMessageARBCallback.create(Class7582::method24818), Class8317::method29101), 0L
+                  GLX.<GLDebugMessageARBCallbackI>make(GLDebugMessageARBCallback.create(Class7582::method24818), LWJGLMemoryUntracker::method29101), 0L
                );
             }
          } else {
@@ -163,7 +166,7 @@ public class Class7582 {
             }
 
             KHRDebug.glDebugMessageCallback(
-               Class8157.<GLDebugMessageCallbackI>method28308(GLDebugMessageCallback.create(Class7582::method24818), Class8317::method29101), 0L
+               GLX.<GLDebugMessageCallbackI>make(GLDebugMessageCallback.create(Class7582::method24818), LWJGLMemoryUntracker::method29101), 0L
             );
          }
       }

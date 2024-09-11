@@ -1,26 +1,15 @@
 package mapped;
 
+import sun.misc.Cleaner;
+
 import java.io.UnsupportedEncodingException;
-import java.lang.ref.Cleaner;
 
 public class Class2379 extends Class2373 {
-   private static final long field16248 = -4096759496772248522L;
-   private static final Cleaner cleaner = Cleaner.create();
    private String[] field16249;
    private Class2383 field16250;
    private int field16251;
    private long field16252;
    private byte[] field16253;
-   private static final String field16254 = "UTF-8";
-   private static final int field16255 = 4;
-
-   public Class2379(long var1) {
-      this(var1, 100);
-   }
-
-   public Class2379(long var1, int var3) {
-      this(var1, var3, true);
-   }
 
    public Class2379(long var1, int var3, boolean var4) {
       this.field16233 = Class2178.field14305;
@@ -38,7 +27,7 @@ public class Class2379 extends Class2373 {
                   this.method9694(this.field16252);
                }
 
-               cleaner.register(this, new ResourceCleaner(this.field16238, this.field16252, this.field16235));
+               Cleaner.create(this, new ResourceCleaner(this.field16238, this.field16252, this.field16235));
                Class8065.method27706(this.field16252 * this.field16235);
                this.field16250 = new Class2383(var1);
                this.field16253 = new byte[var3 * 4];

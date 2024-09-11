@@ -1,5 +1,8 @@
 package mapped;
 
+import net.optifine.render.GlAlphaState;
+import net.optifine.render.GlBlendState;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.CharArrayReader;
@@ -628,7 +631,7 @@ public class Class8440 {
                Class7906 var8 = Shaders.method33146(var7);
                if (var8 != null) {
                   String var9 = var0.getProperty(var4).trim();
-                  Class7675 var10 = method29679(var9);
+                  GlAlphaState var10 = method29679(var9);
                   if (var10 != null) {
                      var8.method26503(var10);
                   }
@@ -640,7 +643,7 @@ public class Class8440 {
       }
    }
 
-   public static Class7675 method29679(String var0) {
+   public static GlAlphaState method29679(String var0) {
       if (var0 == null) {
          return null;
       } else {
@@ -652,13 +655,13 @@ public class Class8440 {
                Integer var6 = field36160.get(var8);
                float var7 = Class7944.method26900(var5, -1.0F);
                if (var6 != null && var7 >= 0.0F) {
-                  return new Class7675(true, var6, var7);
+                  return new GlAlphaState(true, var6, var7);
                }
             }
          } else {
             String var4 = var3[0];
             if (var4.equals("off") || var4.equals("false")) {
-               return new Class7675(false);
+               return new GlAlphaState(false);
             }
          }
 
@@ -677,7 +680,7 @@ public class Class8440 {
                Class7906 var8 = Shaders.method33146(var7);
                if (var8 != null) {
                   String var9 = var0.getProperty(var4).trim();
-                  Class8069 var10 = method29681(var9);
+                  GlBlendState var10 = method29681(var9);
                   if (var10 != null) {
                      var8.method26504(var10);
                   }
@@ -689,7 +692,7 @@ public class Class8440 {
       }
    }
 
-   public static Class8069 method29681(String var0) {
+   public static GlBlendState method29681(String var0) {
       if (var0 == null) {
          return null;
       } else {
@@ -710,13 +713,13 @@ public class Class8440 {
                Integer var10 = field36161.get(var6);
                Integer var11 = field36161.get(var7);
                if (var8 != null && var9 != null && var10 != null && var11 != null) {
-                  return new Class8069(true, var8, var9, var10, var11);
+                  return new GlBlendState(true, var8, var9, var10, var11);
                }
             }
          } else {
             String var4 = var3[0];
             if (var4.equals("off") || var4.equals("false")) {
-               return new Class8069(false);
+               return new GlBlendState(false);
             }
          }
 

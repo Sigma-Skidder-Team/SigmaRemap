@@ -1,4 +1,4 @@
-package mapped;
+package com.mojang.blaze3d.platform;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.LongSupplier;
 import java.util.function.Supplier;
+
+import mapped.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.Version;
@@ -21,11 +23,11 @@ import org.lwjgl.opengl.GLCapabilities;
 import oshi.SystemInfo;
 import oshi.hardware.Processor;
 
-public class Class8157 {
+public class GLX {
    private static final Logger field35101 = LogManager.getLogger();
    private static String field35102 = "";
    private static String field35103;
-   private static final Map<Integer, String> field35104 = method28308(Maps.newHashMap(), var0 -> {
+   private static final Map<Integer, String> field35104 = make(Maps.newHashMap(), var0 -> {
       var0.put(0, "No error");
       var0.put(1280, "Enum parameter is invalid for this function");
       var0.put(1281, "Parameter is invalid for this function");
@@ -183,7 +185,7 @@ public class Class8157 {
       return (T)var0.get();
    }
 
-   public static <T> T method28308(T var0, Consumer<T> var1) {
+   public static <T> T make(T var0, Consumer<T> var1) {
       var1.accept(var0);
       return (T)var0;
    }

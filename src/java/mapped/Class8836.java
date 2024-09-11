@@ -22,7 +22,7 @@ public class Class8836 {
       this.field39905 = var1;
       this.method31984();
       long var4 = this.method31989(this.field39907);
-      GlStateManager.method23885(GlStateManager.field31762, var4, GlStateManager.field31763);
+      GlStateManager.method23885(GlStateManager.GL_ARRAY_BUFFER, var4, GlStateManager.GL_STATIC_DRAW);
       this.method31987();
    }
 
@@ -48,7 +48,7 @@ public class Class8836 {
             this.method31981(var2.method31337());
             long var8 = this.method31989(var2.method31335());
             this.method31984();
-            GlStateManager.method23886(GlStateManager.field31762, var8, var1);
+            GlStateManager.method23886(GlStateManager.GL_ARRAY_BUFFER, var8, var1);
             this.method31987();
             if (this.field39908 > this.field39909 * 11 / 10) {
                this.method31979(1);
@@ -151,12 +151,12 @@ public class Class8836 {
       long var6 = this.method31989(var1);
       long var8 = this.method31989(var2);
       long var10 = this.method31989(var3);
-      GlStateManager.method23747(GlStateManager.field31760, this.field39906);
-      GlStateManager.method23747(GlStateManager.field31761, this.field39906);
-      GlStateManager.method23887(GlStateManager.field31760, GlStateManager.field31761, var6, var8, var10);
+      GlStateManager.method23747(GlStateManager.GL_COPY_READ_BUFFER, this.field39906);
+      GlStateManager.method23747(GlStateManager.GL_COPY_WRITE_BUFFER, this.field39906);
+      GlStateManager.method23887(GlStateManager.GL_COPY_READ_BUFFER, GlStateManager.GL_COPY_WRITE_BUFFER, var6, var8, var10);
       Class7944.method26908("Copy VBO range");
-      GlStateManager.method23747(GlStateManager.field31760, 0);
-      GlStateManager.method23747(GlStateManager.field31761, 0);
+      GlStateManager.method23747(GlStateManager.GL_COPY_READ_BUFFER, 0);
+      GlStateManager.method23747(GlStateManager.GL_COPY_WRITE_BUFFER, 0);
    }
 
    private void method31983(int var1) {
@@ -169,16 +169,16 @@ public class Class8836 {
       long var5 = this.method31989(this.field39907);
       long var7 = this.method31989(var4);
       int var9 = GlStateManager.method23746();
-      GlStateManager.method23747(GlStateManager.field31762, var9);
-      GlStateManager.method23885(GlStateManager.field31762, var7, GlStateManager.field31763);
+      GlStateManager.method23747(GlStateManager.GL_ARRAY_BUFFER, var9);
+      GlStateManager.method23885(GlStateManager.GL_ARRAY_BUFFER, var7, GlStateManager.GL_STATIC_DRAW);
       Class7944.method26908("Expand VBO");
-      GlStateManager.method23747(GlStateManager.field31762, 0);
-      GlStateManager.method23747(GlStateManager.field31760, this.field39906);
-      GlStateManager.method23747(GlStateManager.field31761, var9);
-      GlStateManager.method23887(GlStateManager.field31760, GlStateManager.field31761, 0L, 0L, var5);
+      GlStateManager.method23747(GlStateManager.GL_ARRAY_BUFFER, 0);
+      GlStateManager.method23747(GlStateManager.GL_COPY_READ_BUFFER, this.field39906);
+      GlStateManager.method23747(GlStateManager.GL_COPY_WRITE_BUFFER, var9);
+      GlStateManager.method23887(GlStateManager.GL_COPY_READ_BUFFER, GlStateManager.GL_COPY_WRITE_BUFFER, 0L, 0L, var5);
       Class7944.method26908("Copy VBO: " + var7);
-      GlStateManager.method23747(GlStateManager.field31760, 0);
-      GlStateManager.method23747(GlStateManager.field31761, 0);
+      GlStateManager.method23747(GlStateManager.GL_COPY_READ_BUFFER, 0);
+      GlStateManager.method23747(GlStateManager.GL_COPY_WRITE_BUFFER, 0);
       GlStateManager.method23749(this.field39906);
       this.field39912 = Class7944.method26984(var4);
       this.field39913 = Class7944.method26984(var4);
@@ -187,7 +187,7 @@ public class Class8836 {
    }
 
    public void method31984() {
-      GlStateManager.method23747(GlStateManager.field31762, this.field39906);
+      GlStateManager.method23747(GlStateManager.GL_ARRAY_BUFFER, this.field39906);
    }
 
    public void method31985(int var1, Class8697 var2) {
@@ -221,7 +221,7 @@ public class Class8836 {
    }
 
    public void method31987() {
-      GlStateManager.method23747(GlStateManager.field31762, 0);
+      GlStateManager.method23747(GlStateManager.GL_ARRAY_BUFFER, 0);
    }
 
    public void method31988() {

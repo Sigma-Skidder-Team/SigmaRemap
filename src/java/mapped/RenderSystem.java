@@ -10,6 +10,7 @@ import java.util.function.IntSupplier;
 import java.util.function.LongSupplier;
 import java.util.function.Supplier;
 
+import com.mojang.blaze3d.platform.GLX;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import org.apache.logging.log4j.LogManager;
@@ -110,25 +111,25 @@ public class RenderSystem {
    @Deprecated
    public static void method27814() {
       assertThread(RenderSystem::method27806);
-      GlStateManager.method23692();
+      GlStateManager.pushLightingAttributes();
    }
 
    @Deprecated
    public static void method27815() {
       assertThread(RenderSystem::method27806);
-      GlStateManager.method23693();
+      GlStateManager.pushTextureAttributes();
    }
 
    @Deprecated
    public static void method27816() {
       assertThread(RenderSystem::method27806);
-      GlStateManager.method23694();
+      GlStateManager.popAttributes();
    }
 
    @Deprecated
    public static void method27817() {
       assertThread(RenderSystem::method27806);
-      GlStateManager.method23695();
+      GlStateManager.disableAlphaTest();
    }
 
    @Deprecated
@@ -565,37 +566,37 @@ public class RenderSystem {
 
    public static String getBackendDescription() {
       assertThread(RenderSystem::isInInitPhase);
-      return String.format("LWJGL version %s", Class8157.method28297());
+      return String.format("LWJGL version %s", GLX.method28297());
    }
 
    public static String getApiDescription() {
       assertThread(RenderSystem::isInInitPhase);
-      return Class8157.method28295();
+      return GLX.method28295();
    }
 
    public static LongSupplier initBackendSystem() {
       assertThread(RenderSystem::isInInitPhase);
-      return Class8157.method28298();
+      return GLX.method28298();
    }
 
    public static void initRenderer(int var0, boolean var1) {
       assertThread(RenderSystem::isInInitPhase);
-      Class8157.method28302(var0, var1);
+      GLX.method28302(var0, var1);
    }
 
    public static void setErrorCallback(GLFWErrorCallbackI var0) {
       assertThread(RenderSystem::isInInitPhase);
-      Class8157.method28299(var0);
+      GLX.method28299(var0);
    }
 
    public static void method27903(int var0) {
       assertThread(RenderSystem::method27806);
-      Class8157.method28305(var0, true, true, true);
+      GLX.method28305(var0, true, true, true);
    }
 
    public static void method27904() {
       assertThread(RenderSystem::method27806);
-      Class8157.method28301();
+      GLX.method28301();
    }
 
    @Deprecated
@@ -606,7 +607,7 @@ public class RenderSystem {
 
    public static String getCapsString() {
       assertThread(RenderSystem::method27806);
-      return Class8157.method28303();
+      return GLX.method28303();
    }
 
    public static void setupDefaultState(int var0, int var1, int var2, int var3) {
@@ -756,17 +757,17 @@ public class RenderSystem {
 
    public static void method27931() {
       assertThread(RenderSystem::method27806);
-      GlStateManager.method23778();
+      GlStateManager.mulTextureByProjModelView();
    }
 
    public static void method27932() {
       assertThread(RenderSystem::method27806);
-      GlStateManager.method23776();
+      GlStateManager.setupEndPortalTexGen();
    }
 
    public static void method27933() {
       assertThread(RenderSystem::method27806);
-      GlStateManager.method23777();
+      GlStateManager.clearTexGen();
    }
 
    public static void method27934() {

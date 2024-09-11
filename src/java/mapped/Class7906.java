@@ -1,5 +1,8 @@
 package mapped;
 
+import net.optifine.render.GlAlphaState;
+import net.optifine.render.GlBlendState;
+
 import java.nio.IntBuffer;
 import java.util.Arrays;
 
@@ -8,8 +11,8 @@ public class Class7906 {
    private final String field33863;
    private final Class2140 field33864;
    private final Class7906 field33865;
-   private Class7675 field33866;
-   private Class8069 field33867;
+   private GlAlphaState field33866;
+   private GlBlendState field33867;
    private Class7125 field33868;
    private final Boolean[] field33869 = new Boolean[8];
    private int field33870;
@@ -113,11 +116,11 @@ public class Class7906 {
       return this.field33876;
    }
 
-   public Class7675 method26492() {
+   public GlAlphaState method26492() {
       return this.field33866;
    }
 
-   public Class8069 method26493() {
+   public GlBlendState method26493() {
       return this.field33867;
    }
 
@@ -157,11 +160,11 @@ public class Class7906 {
       this.field33876 = var1;
    }
 
-   public void method26503(Class7675 var1) {
+   public void method26503(GlAlphaState var1) {
       this.field33866 = var1;
    }
 
-   public void method26504(Class8069 var1) {
+   public void method26504(GlBlendState var1) {
       this.field33867 = var1;
    }
 

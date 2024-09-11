@@ -6,6 +6,14 @@ import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.stream.IntStream;
+
+import com.mojang.blaze3d.platform.GLX;
+import net.minecraft.client.renderer.GLAllocation;
+import net.minecraft.client.util.LWJGLMemoryUntracker;
+import net.optifine.render.GlAlphaState;
+import net.optifine.render.GlBlendState;
+import net.optifine.render.GlCullState;
+import net.optifine.util.LockCounter;
 import org.lwjgl.opengl.ARBCopyBuffer;
 import org.lwjgl.opengl.ARBFramebufferObject;
 import org.lwjgl.opengl.EXTFramebufferBlit;
@@ -21,145 +29,145 @@ import org.lwjgl.opengl.GLCapabilities;
 import org.lwjgl.system.MemoryUtil;
 
 public class GlStateManager {
-   private static final FloatBuffer field31724 = Class8157.<FloatBuffer>method28308(
-      MemoryUtil.memAllocFloat(16), var0 -> Class8317.method29100(MemoryUtil.memAddress(var0))
+   private static final FloatBuffer MATRIX_BUFFER = GLX.make(
+      MemoryUtil.memAllocFloat(16), var0 -> LWJGLMemoryUntracker.untrack(MemoryUtil.memAddress(var0))
    );
-   private static final Class8764 field31725 = new Class8764();
-   private static final Class9368 field31726 = new Class9368(2896);
-   private static final Class9368[] field31727 = IntStream.range(0, 8)
-      .<Class9368>mapToObj(var0 -> new Class9368(16384 + var0))
-      .<Class9368>toArray(Class9368[]::new);
-   private static final Class8997 field31728 = new Class8997();
-   private static final Class8970 field31729 = new Class8970();
-   private static final Class7556 field31730 = new Class7556();
-   private static final Class9582 field31731 = new Class9582();
-   private static final Class6028 field31732 = new Class6028();
-   private static final Class7134 field31733 = new Class7134();
-   private static final Class7838 field31734 = new Class7838();
-   private static final Class4535 field31735 = new Class4535();
-   private static final Class9004 field31736 = new Class9004();
-   private static final Class8865 field31737 = new Class8865();
-   private static final FloatBuffer field31738 = Class7137.method22267(4);
-   private static int field31739;
-   private static final Class8938[] field31740 = IntStream.range(0, 32).<Class8938>mapToObj(var0 -> new Class8938()).<Class8938>toArray(Class8938[]::new);
+   private static final AlphaState ALPHA_TEST = new AlphaState();
+   private static final BooleanState LIGHTING = new BooleanState(2896);
+   private static final BooleanState[] LIGHT_ENABLE = IntStream.range(0, 8)
+      .mapToObj(var0 -> new BooleanState(16384 + var0))
+      .toArray(BooleanState[]::new);
+   private static final ColorMaterialState COLOR_MATERIAL = new ColorMaterialState();
+   private static final BlendState BLEND = new BlendState();
+   private static final DepthState DEPTH = new DepthState();
+   private static final FogState FOG = new FogState();
+   private static final CullState CULL = new CullState();
+   private static final PolygonOffsetState POLY_OFFSET = new PolygonOffsetState();
+   private static final ColorLogicState COLOR_LOGIC = new ColorLogicState();
+   private static final TexGenState TEX_GEN = new TexGenState();
+   private static final StencilState STENCIL = new StencilState();
+   private static final ScissorState field_244591_n = new ScissorState();
+   private static final FloatBuffer FLOAT_4_BUFFER = GLAllocation.createDirectFloatBuffer(4);
+   private static int activeTexture;
+   private static final TextureState[] TEXTURES = IntStream.range(0, 32).mapToObj(var0 -> new TextureState()).toArray(TextureState[]::new);
    private static int field31741 = 7425;
-   private static final Class9368 field31742 = new Class9368(32826);
-   private static final Class8479 field31743 = new Class8479();
-   private static final Class9377 field31744 = new Class9377();
-   private static Class2065 field31745;
-   private static Class2337 field31746;
-   private static Class6893 field31747 = new Class6893();
-   private static Class7675 field31748 = new Class7675();
-   private static Class6893 field31749 = new Class6893();
-   private static Class8069 field31750 = new Class8069();
-   private static Class6893 field31751 = new Class6893();
-   private static Class9816 field31752 = new Class9816();
-   private static boolean field31753 = false;
-   private static int field31754 = 0;
-   private static boolean field31755 = false;
-   public static float field31756 = 0.0F;
-   public static float field31757 = 0.0F;
-   public static boolean field31758;
-   public static boolean field31759;
-   public static int field31760;
-   public static int field31761;
-   public static int field31762;
-   public static int field31763;
-   private static boolean field31764 = true;
-   public static final int field31765 = 7;
-   public static final int field31766 = 4;
-   public static final int field31767 = 33984;
-   public static final int field31768 = 33985;
-   public static final int field31769 = 33986;
+   private static final BooleanState RESCALE_NORMAL = new BooleanState(32826);
+   private static final GlStateManager.ColorMask COLOR_MASK = new ColorMask();
+   private static final Color COLOR = new Color();
+   private static FramebufferExtension fboMode;
+   private static SupportType supportType;
+   private static LockCounter alphaLock = new LockCounter();
+   private static GlAlphaState alphaLockState = new GlAlphaState();
+   private static LockCounter blendLock = new LockCounter();
+   private static GlBlendState blendLockState = new GlBlendState();
+   private static LockCounter cullLock = new LockCounter();
+   private static GlCullState cullLockState = new GlCullState();
+   private static boolean clientStateLocked = false;
+   private static int clientActiveTexture = 0;
+   private static boolean creatingDisplayList = false;
+   public static float lastBrightnessX = 0.0F;
+   public static float lastBrightnessY = 0.0F;
+   public static boolean openGL31;
+   public static boolean vboRegions;
+   public static int GL_COPY_READ_BUFFER;
+   public static int GL_COPY_WRITE_BUFFER;
+   public static int GL_ARRAY_BUFFER;
+   public static int GL_STATIC_DRAW;
+   private static boolean fogAllowed = true;
+   public static final int GL_QUADS = 7;
+   public static final int GL_TRIANGLES = 4;
+   public static final int GL_TEXTURE0 = 33984;
+   public static final int GL_TEXTURE1 = 33985;
+   public static final int GL_TEXTURE2 = 33986;
 
    @Deprecated
-   public static void method23692() {
+   public static void pushLightingAttributes() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glPushAttrib(8256);
    }
 
    @Deprecated
-   public static void method23693() {
+   public static void pushTextureAttributes() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glPushAttrib(270336);
    }
 
    @Deprecated
-   public static void method23694() {
+   public static void popAttributes() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glPopAttrib();
    }
 
    @Deprecated
-   public static void method23695() {
+   public static void disableAlphaTest() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (!field31747.method21055()) {
-         field31725.field39453.method35529();
+      if (!alphaLock.method21055()) {
+         ALPHA_TEST.test.method35529();
       } else {
-         field31748.method25212();
+         alphaLockState.method25212();
       }
    }
 
    @Deprecated
    public static void method23696() {
       RenderSystem.assertThread(RenderSystem::method27804);
-      if (!field31747.method21055()) {
-         field31725.field39453.method35530();
+      if (!alphaLock.method21055()) {
+         ALPHA_TEST.test.method35530();
       } else {
-         field31748.method25211();
+         alphaLockState.method25211();
       }
    }
 
    @Deprecated
    public static void method23697(int var0, float var1) {
       RenderSystem.assertThread(RenderSystem::method27804);
-      if (!field31747.method21055()) {
-         if (var0 != field31725.field39454 || var1 != field31725.field39455) {
-            field31725.field39454 = var0;
-            field31725.field39455 = var1;
+      if (!alphaLock.method21055()) {
+         if (var0 != ALPHA_TEST.field39454 || var1 != ALPHA_TEST.field39455) {
+            ALPHA_TEST.field39454 = var0;
+            ALPHA_TEST.field39455 = var1;
             GL11.glAlphaFunc(var0, var1);
          }
       } else {
-         field31748.method25209(var0, var1);
+         alphaLockState.method25209(var0, var1);
       }
    }
 
    @Deprecated
    public static void method23698() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31726.method35530();
+      LIGHTING.method35530();
    }
 
    @Deprecated
    public static void method23699() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31726.method35529();
+      LIGHTING.method35529();
    }
 
    @Deprecated
    public static void method23700(int var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31727[var0].method35530();
+      LIGHT_ENABLE[var0].method35530();
    }
 
    @Deprecated
    public static void method23701() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31728.field41143.method35530();
+      COLOR_MATERIAL.field41143.method35530();
    }
 
    @Deprecated
    public static void method23702() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31728.field41143.method35529();
+      COLOR_MATERIAL.field41143.method35529();
    }
 
    @Deprecated
    public static void method23703(int var0, int var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (var0 != field31728.field41144 || var1 != field31728.field41145) {
-         field31728.field41144 = var0;
-         field31728.field41145 = var1;
+      if (var0 != COLOR_MATERIAL.field41144 || var1 != COLOR_MATERIAL.field41145) {
+         COLOR_MATERIAL.field41144 = var0;
+         COLOR_MATERIAL.field41145 = var1;
          GL11.glColorMaterial(var0, var1);
       }
    }
@@ -184,12 +192,12 @@ public class GlStateManager {
 
    public static void method23707() {
       RenderSystem.assertThread(RenderSystem::method27804);
-      field31737.field40056.method35529();
+      field_244591_n.field40056.method35529();
    }
 
    public static void method23708() {
       RenderSystem.assertThread(RenderSystem::method27804);
-      field31737.field40056.method35530();
+      field_244591_n.field40056.method35530();
    }
 
    public static void method23709(int var0, int var1, int var2, int var3) {
@@ -199,56 +207,56 @@ public class GlStateManager {
 
    public static void method23710() {
       RenderSystem.assertThread(RenderSystem::method27804);
-      field31730.field32405.method35529();
+      DEPTH.field32405.method35529();
    }
 
    public static void method23711() {
       RenderSystem.assertThread(RenderSystem::method27804);
-      field31730.field32405.method35530();
+      DEPTH.field32405.method35530();
    }
 
    public static void method23712(int var0) {
       RenderSystem.assertThread(RenderSystem::method27804);
-      if (var0 != field31730.field32407) {
-         field31730.field32407 = var0;
+      if (var0 != DEPTH.field32407) {
+         DEPTH.field32407 = var0;
          GL11.glDepthFunc(var0);
       }
    }
 
    public static void method23713(boolean var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (var0 != field31730.field32406) {
-         field31730.field32406 = var0;
+      if (var0 != DEPTH.field32406) {
+         DEPTH.field32406 = var0;
          GL11.glDepthMask(var0);
       }
    }
 
    public static void method23714() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (!field31749.method21055()) {
-         field31729.field40550.method35529();
+      if (!blendLock.method21055()) {
+         BLEND.field40550.method35529();
       } else {
-         field31750.method27777();
+         blendLockState.method27777();
       }
    }
 
    public static void method23715() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (!field31749.method21055()) {
-         field31729.field40550.method35530();
+      if (!blendLock.method21055()) {
+         BLEND.field40550.method35530();
       } else {
-         field31750.method27776();
+         blendLockState.method27776();
       }
    }
 
    public static void method23716(int var0, int var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (!field31749.method21055()) {
-         if (var0 != field31729.field40551 || var1 != field31729.field40552 || var0 != field31729.field40553 || var1 != field31729.field40554) {
-            field31729.field40551 = var0;
-            field31729.field40552 = var1;
-            field31729.field40553 = var0;
-            field31729.field40554 = var1;
+      if (!blendLock.method21055()) {
+         if (var0 != BLEND.field40551 || var1 != BLEND.field40552 || var0 != BLEND.field40553 || var1 != BLEND.field40554) {
+            BLEND.field40551 = var0;
+            BLEND.field40552 = var1;
+            BLEND.field40553 = var0;
+            BLEND.field40554 = var1;
             if (Class7944.method26921()) {
                Shaders.field40772.method12249(var0, var1, var0, var1);
             }
@@ -256,18 +264,18 @@ public class GlStateManager {
             GL11.glBlendFunc(var0, var1);
          }
       } else {
-         field31750.method27778(var0, var1);
+         blendLockState.method27778(var0, var1);
       }
    }
 
    public static void method23717(int var0, int var1, int var2, int var3) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (!field31749.method21055()) {
-         if (var0 != field31729.field40551 || var1 != field31729.field40552 || var2 != field31729.field40553 || var3 != field31729.field40554) {
-            field31729.field40551 = var0;
-            field31729.field40552 = var1;
-            field31729.field40553 = var2;
-            field31729.field40554 = var3;
+      if (!blendLock.method21055()) {
+         if (var0 != BLEND.field40551 || var1 != BLEND.field40552 || var2 != BLEND.field40553 || var3 != BLEND.field40554) {
+            BLEND.field40551 = var0;
+            BLEND.field40552 = var1;
+            BLEND.field40553 = var2;
+            BLEND.field40554 = var3;
             if (Class7944.method26921()) {
                Shaders.field40772.method12249(var0, var1, var2, var3);
             }
@@ -275,7 +283,7 @@ public class GlStateManager {
             method23762(var0, var1, var2, var3);
          }
       } else {
-         field31750.method27779(var0, var1, var2, var3);
+         blendLockState.method27779(var0, var1, var2, var3);
       }
    }
 
@@ -291,27 +299,27 @@ public class GlStateManager {
    public static String method23720(GLCapabilities var0) {
       RenderSystem.assertThread(RenderSystem::isInInitPhase);
       Class7944.method26780();
-      field31758 = var0.OpenGL31;
-      if (!field31758) {
-         field31760 = 36662;
-         field31761 = 36663;
+      openGL31 = var0.OpenGL31;
+      if (!openGL31) {
+         GL_COPY_READ_BUFFER = 36662;
+         GL_COPY_WRITE_BUFFER = 36663;
       } else {
-         field31760 = 36662;
-         field31761 = 36663;
+         GL_COPY_READ_BUFFER = 36662;
+         GL_COPY_WRITE_BUFFER = 36663;
       }
 
       if (!var0.OpenGL15) {
-         field31762 = 34962;
-         field31763 = 35044;
+         GL_ARRAY_BUFFER = 34962;
+         GL_STATIC_DRAW = 35044;
       } else {
-         field31762 = 34962;
-         field31763 = 35044;
+         GL_ARRAY_BUFFER = 34962;
+         GL_STATIC_DRAW = 35044;
       }
 
-      boolean var3 = field31758 || var0.GL_ARB_copy_buffer;
+      boolean var3 = openGL31 || var0.GL_ARB_copy_buffer;
       boolean var4 = var0.OpenGL14;
-      field31759 = var3 && var4;
-      if (!field31759) {
+      vboRegions = var3 && var4;
+      if (!vboRegions) {
          ArrayList var5 = new ArrayList();
          if (!var3) {
             var5.add("OpenGL 1.3, ARB_copy_buffer");
@@ -328,12 +336,12 @@ public class GlStateManager {
 
       if (!var0.OpenGL30) {
          if (!var0.GL_EXT_framebuffer_blit) {
-            field31746 = Class2337.field15980;
+            supportType = SupportType.field15980;
          } else {
-            field31746 = Class2337.field15979;
+            supportType = SupportType.field15979;
          }
       } else {
-         field31746 = Class2337.field15978;
+         supportType = SupportType.field15978;
       }
 
       if (!var0.OpenGL30) {
@@ -341,7 +349,7 @@ public class GlStateManager {
             if (!var0.GL_EXT_framebuffer_object) {
                throw new IllegalStateException("Could not initialize framebuffer support.");
             } else {
-               field31745 = Class2065.field13462;
+               fboMode = FramebufferExtension.field13462;
                Class8821.field39775 = 36160;
                Class8821.field39776 = 36161;
                Class8821.field39777 = 36064;
@@ -354,7 +362,7 @@ public class GlStateManager {
                return "EXT_framebuffer_object extension";
             }
          } else {
-            field31745 = Class2065.field13461;
+            fboMode = FramebufferExtension.field13461;
             Class8821.field39775 = 36160;
             Class8821.field39776 = 36161;
             Class8821.field39777 = 36064;
@@ -367,7 +375,7 @@ public class GlStateManager {
             return "ARB_framebuffer_object extension";
          }
       } else {
-         field31745 = Class2065.field13460;
+         fboMode = FramebufferExtension.field13460;
          Class8821.field39775 = 36160;
          Class8821.field39776 = 36161;
          Class8821.field39777 = 36064;
@@ -533,7 +541,7 @@ public class GlStateManager {
 
    public static void method23751(int var0, int var1) {
       RenderSystem.assertThread(RenderSystem::method27804);
-      switch (Class9579.field44781[field31745.ordinal()]) {
+      switch (Class9579.field44781[fboMode.ordinal()]) {
          case 1:
             GL30.glBindFramebuffer(var0, var1);
             break;
@@ -547,7 +555,7 @@ public class GlStateManager {
 
    public static int method23752() {
       RenderSystem.assertThread(RenderSystem::method27804);
-      switch (Class9579.field44781[field31745.ordinal()]) {
+      switch (Class9579.field44781[fboMode.ordinal()]) {
          case 1:
             if (GL30.glGetFramebufferAttachmentParameteri(36160, 36096, 36048) == 5890) {
                return GL30.glGetFramebufferAttachmentParameteri(36160, 36096, 36049);
@@ -569,7 +577,7 @@ public class GlStateManager {
 
    public static void method23753(int var0, int var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9) {
       RenderSystem.assertThread(RenderSystem::method27804);
-      switch (Class9579.field44782[field31746.ordinal()]) {
+      switch (Class9579.field44782[supportType.ordinal()]) {
          case 1:
             GL30.glBlitFramebuffer(var0, var1, var2, var3, var4, var5, var6, var7, var8, var9);
             break;
@@ -581,7 +589,7 @@ public class GlStateManager {
 
    public static void method23754(int var0) {
       RenderSystem.assertThread(RenderSystem::method27804);
-      switch (Class9579.field44781[field31745.ordinal()]) {
+      switch (Class9579.field44781[fboMode.ordinal()]) {
          case 1:
             GL30.glDeleteFramebuffers(var0);
             break;
@@ -595,7 +603,7 @@ public class GlStateManager {
 
    public static int method23755() {
       RenderSystem.assertThread(RenderSystem::method27804);
-      switch (Class9579.field44781[field31745.ordinal()]) {
+      switch (Class9579.field44781[fboMode.ordinal()]) {
          case 1:
             return GL30.glGenFramebuffers();
          case 2:
@@ -609,7 +617,7 @@ public class GlStateManager {
 
    public static int method23756(int var0) {
       RenderSystem.assertThread(RenderSystem::method27804);
-      switch (Class9579.field44781[field31745.ordinal()]) {
+      switch (Class9579.field44781[fboMode.ordinal()]) {
          case 1:
             return GL30.glCheckFramebufferStatus(var0);
          case 2:
@@ -623,7 +631,7 @@ public class GlStateManager {
 
    public static void method23757(int var0, int var1, int var2, int var3, int var4) {
       RenderSystem.assertThread(RenderSystem::method27804);
-      switch (Class9579.field44781[field31745.ordinal()]) {
+      switch (Class9579.field44781[fboMode.ordinal()]) {
          case 1:
             GL30.glFramebufferTexture2D(var0, var1, var2, var3, var4);
             break;
@@ -637,7 +645,7 @@ public class GlStateManager {
 
    @Deprecated
    public static int method23758() {
-      return field31740[field31739].field40430;
+      return TEXTURES[activeTexture].field40430;
    }
 
    public static void method23759(int var0) {
@@ -647,10 +655,10 @@ public class GlStateManager {
 
    @Deprecated
    public static void method23760(int var0) {
-      if (var0 != field31754) {
+      if (var0 != clientActiveTexture) {
          RenderSystem.assertThread(RenderSystem::isOnRenderThread);
          GL13.glClientActiveTexture(var0);
-         field31754 = var0;
+         clientActiveTexture = var0;
       }
    }
 
@@ -659,8 +667,8 @@ public class GlStateManager {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL13.glMultiTexCoord2f(var0, var1, var2);
       if (var0 == 33986) {
-         field31756 = var1;
-         field31757 = var2;
+         lastBrightnessX = var1;
+         lastBrightnessY = var2;
       }
    }
 
@@ -748,20 +756,20 @@ public class GlStateManager {
       method23700(1);
       Class7755 var5 = new Class7755(var0);
       var5.method25709(var2);
-      method23704(16384, 4611, method23775(var5.method25701(), var5.method25702(), var5.method25703(), 0.0F));
+      method23704(16384, 4611, getBuffer(var5.method25701(), var5.method25702(), var5.method25703(), 0.0F));
       float var6 = 0.6F;
-      method23704(16384, 4609, method23775(0.6F, 0.6F, 0.6F, 1.0F));
-      method23704(16384, 4608, method23775(0.0F, 0.0F, 0.0F, 1.0F));
-      method23704(16384, 4610, method23775(0.0F, 0.0F, 0.0F, 1.0F));
+      method23704(16384, 4609, getBuffer(0.6F, 0.6F, 0.6F, 1.0F));
+      method23704(16384, 4608, getBuffer(0.0F, 0.0F, 0.0F, 1.0F));
+      method23704(16384, 4610, getBuffer(0.0F, 0.0F, 0.0F, 1.0F));
       Class7755 var7 = new Class7755(var1);
       var7.method25709(var2);
-      method23704(16385, 4611, method23775(var7.method25701(), var7.method25702(), var7.method25703(), 0.0F));
-      method23704(16385, 4609, method23775(0.6F, 0.6F, 0.6F, 1.0F));
-      method23704(16385, 4608, method23775(0.0F, 0.0F, 0.0F, 1.0F));
-      method23704(16385, 4610, method23775(0.0F, 0.0F, 0.0F, 1.0F));
+      method23704(16385, 4611, getBuffer(var7.method25701(), var7.method25702(), var7.method25703(), 0.0F));
+      method23704(16385, 4609, getBuffer(0.6F, 0.6F, 0.6F, 1.0F));
+      method23704(16385, 4608, getBuffer(0.0F, 0.0F, 0.0F, 1.0F));
+      method23704(16385, 4610, getBuffer(0.0F, 0.0F, 0.0F, 1.0F));
       method23818(7424);
       float var8 = 0.4F;
-      method23705(2899, method23775(0.4F, 0.4F, 0.4F, 1.0F));
+      method23705(2899, getBuffer(0.4F, 0.4F, 0.4F, 1.0F));
       method23833();
    }
 
@@ -787,57 +795,57 @@ public class GlStateManager {
       method23772(var0, var1, var4);
    }
 
-   private static FloatBuffer method23775(float var0, float var1, float var2, float var3) {
-      ((Buffer)field31738).clear();
-      field31738.put(var0).put(var1).put(var2).put(var3);
-      ((Buffer)field31738).flip();
-      return field31738;
+   private static FloatBuffer getBuffer(float var0, float var1, float var2, float var3) {
+      ((Buffer) FLOAT_4_BUFFER).clear();
+      FLOAT_4_BUFFER.put(var0).put(var1).put(var2).put(var3);
+      ((Buffer) FLOAT_4_BUFFER).flip();
+      return FLOAT_4_BUFFER;
    }
 
-   public static void method23776() {
-      method23800(Class2164.field14210, 9216);
-      method23800(Class2164.field14211, 9216);
-      method23800(Class2164.field14212, 9216);
-      method23801(Class2164.field14210, 9474, method23775(1.0F, 0.0F, 0.0F, 0.0F));
-      method23801(Class2164.field14211, 9474, method23775(0.0F, 1.0F, 0.0F, 0.0F));
-      method23801(Class2164.field14212, 9474, method23775(0.0F, 0.0F, 1.0F, 0.0F));
-      method23798(Class2164.field14210);
-      method23798(Class2164.field14211);
-      method23798(Class2164.field14212);
+   public static void setupEndPortalTexGen() {
+      texGenMode(TexGen.S, 9216);
+      texGenMode(TexGen.T, 9216);
+      texGenMode(TexGen.R, 9216);
+      texGenParam(TexGen.S, 9474, getBuffer(1.0F, 0.0F, 0.0F, 0.0F));
+      texGenParam(TexGen.T, 9474, getBuffer(0.0F, 1.0F, 0.0F, 0.0F));
+      texGenParam(TexGen.R, 9474, getBuffer(0.0F, 0.0F, 1.0F, 0.0F));
+      enableTexGen(TexGen.S);
+      enableTexGen(TexGen.T);
+      enableTexGen(TexGen.R);
    }
 
-   public static void method23777() {
-      method23799(Class2164.field14210);
-      method23799(Class2164.field14211);
-      method23799(Class2164.field14212);
+   public static void clearTexGen() {
+      disableTexGen(TexGen.S);
+      disableTexGen(TexGen.T);
+      disableTexGen(TexGen.R);
    }
 
-   public static void method23778() {
-      method23834(2983, field31724);
-      method23841(field31724);
-      method23834(2982, field31724);
-      method23841(field31724);
+   public static void mulTextureByProjModelView() {
+      getMatrix(2983, MATRIX_BUFFER);
+      multMatrix(MATRIX_BUFFER);
+      getMatrix(2982, MATRIX_BUFFER);
+      multMatrix(MATRIX_BUFFER);
    }
 
    @Deprecated
    public static void method23779() {
-      if (field31764) {
+      if (fogAllowed) {
          RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-         field31731.field44792.method35530();
+         FOG.field44792.method35530();
       }
    }
 
    @Deprecated
    public static void method23780() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31731.field44792.method35529();
+      FOG.field44792.method35529();
    }
 
    @Deprecated
    public static void method23781(int var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (var0 != field31731.field44793) {
-         field31731.field44793 = var0;
+      if (var0 != FOG.field44793) {
+         FOG.field44793 = var0;
          method23786(2917, var0);
          if (Class7944.method26921()) {
             Shaders.method33046(var0);
@@ -852,8 +860,8 @@ public class GlStateManager {
          var0 = 0.0F;
       }
 
-      if (var0 != field31731.field44794) {
-         field31731.field44794 = var0;
+      if (var0 != FOG.field44794) {
+         FOG.field44794 = var0;
          GL11.glFogf(2914, var0);
          if (Class7944.method26921()) {
             Shaders.method33124(var0);
@@ -864,8 +872,8 @@ public class GlStateManager {
    @Deprecated
    public static void method23783(float var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (var0 != field31731.field44795) {
-         field31731.field44795 = var0;
+      if (var0 != FOG.field44795) {
+         FOG.field44795 = var0;
          GL11.glFogf(2915, var0);
       }
    }
@@ -873,8 +881,8 @@ public class GlStateManager {
    @Deprecated
    public static void method23784(float var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (var0 != field31731.field44796) {
-         field31731.field44796 = var0;
+      if (var0 != FOG.field44796) {
+         FOG.field44796 = var0;
          GL11.glFogf(2916, var0);
       }
    }
@@ -893,19 +901,19 @@ public class GlStateManager {
 
    public static void method23787() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (!field31751.method21055()) {
-         field31732.field26226.method35530();
+      if (!cullLock.method21055()) {
+         CULL.field26226.method35530();
       } else {
-         field31752.method38748();
+         cullLockState.method38748();
       }
    }
 
    public static void method23788() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (!field31751.method21055()) {
-         field31732.field26226.method35529();
+      if (!cullLock.method21055()) {
+         CULL.field26226.method35529();
       } else {
-         field31752.method38749();
+         cullLockState.method38749();
       }
    }
 
@@ -916,65 +924,65 @@ public class GlStateManager {
 
    public static void method23790() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31733.field30682.method35530();
+      POLY_OFFSET.field30682.method35530();
    }
 
    public static void method23791() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31733.field30682.method35529();
+      POLY_OFFSET.field30682.method35529();
    }
 
    public static void method23792() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31733.field30683.method35530();
+      POLY_OFFSET.field30683.method35530();
    }
 
    public static void method23793() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31733.field30683.method35529();
+      POLY_OFFSET.field30683.method35529();
    }
 
    public static void method23794(float var0, float var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (var0 != field31733.field30684 || var1 != field31733.field30685) {
-         field31733.field30684 = var0;
-         field31733.field30685 = var1;
+      if (var0 != POLY_OFFSET.field30684 || var1 != POLY_OFFSET.field30685) {
+         POLY_OFFSET.field30684 = var0;
+         POLY_OFFSET.field30685 = var1;
          GL11.glPolygonOffset(var0, var1);
       }
    }
 
    public static void method23795() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31734.field33643.method35530();
+      COLOR_LOGIC.field33643.method35530();
    }
 
    public static void method23796() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31734.field33643.method35529();
+      COLOR_LOGIC.field33643.method35529();
    }
 
    public static void method23797(int var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (var0 != field31734.field33644) {
-         field31734.field33644 = var0;
+      if (var0 != COLOR_LOGIC.field33644) {
+         COLOR_LOGIC.field33644 = var0;
          GL11.glLogicOp(var0);
       }
    }
 
    @Deprecated
-   public static void method23798(Class2164 var0) {
+   public static void enableTexGen(TexGen var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       method23802(var0).field45814.method35530();
    }
 
    @Deprecated
-   public static void method23799(Class2164 var0) {
+   public static void disableTexGen(TexGen var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       method23802(var0).field45814.method35529();
    }
 
    @Deprecated
-   public static void method23800(Class2164 var0, int var1) {
+   public static void texGenMode(TexGen var0, int var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       Class9796 var4 = method23802(var0);
       if (var1 != var4.field45816) {
@@ -984,44 +992,44 @@ public class GlStateManager {
    }
 
    @Deprecated
-   public static void method23801(Class2164 var0, int var1, FloatBuffer var2) {
+   public static void texGenParam(TexGen var0, int var1, FloatBuffer var2) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glTexGenfv(method23802(var0).field45815, var1, var2);
    }
 
    @Deprecated
-   private static Class9796 method23802(Class2164 var0) {
+   private static Class9796 method23802(TexGen var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       switch (Class9579.field44783[var0.ordinal()]) {
          case 1:
-            return field31735.field21851;
+            return TEX_GEN.field21851;
          case 2:
-            return field31735.field21852;
+            return TEX_GEN.field21852;
          case 3:
-            return field31735.field21853;
+            return TEX_GEN.field21853;
          case 4:
-            return field31735.field21854;
+            return TEX_GEN.field21854;
          default:
-            return field31735.field21851;
+            return TEX_GEN.field21851;
       }
    }
 
    public static void method23803(int var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (field31739 != var0 - 33984) {
-         field31739 = var0 - 33984;
+      if (activeTexture != var0 - 33984) {
+         activeTexture = var0 - 33984;
          method23759(var0);
       }
    }
 
    public static void method23804() {
       RenderSystem.assertThread(RenderSystem::method27804);
-      field31740[field31739].field40429.method35530();
+      TEXTURES[activeTexture].field40429.method35530();
    }
 
    public static void method23805() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31740[field31739].field40429.method35529();
+      TEXTURES[activeTexture].field40429.method35529();
    }
 
    @Deprecated
@@ -1060,7 +1068,7 @@ public class GlStateManager {
       if (var0 != 0) {
          GL11.glDeleteTextures(var0);
 
-         for (Class8938 var6 : field31740) {
+         for (TextureState var6 : TEXTURES) {
             if (var6.field40430 == var0) {
                var6.field40430 = 0;
             }
@@ -1071,7 +1079,7 @@ public class GlStateManager {
    public static void method23813(int[] var0) {
       RenderSystem.assertThread(RenderSystem::method27804);
 
-      for (Class8938 var6 : field31740) {
+      for (TextureState var6 : TEXTURES) {
          for (int var10 : var0) {
             if (var6.field40430 == var10) {
                var6.field40430 = -1;
@@ -1084,8 +1092,8 @@ public class GlStateManager {
 
    public static void method23814(int var0) {
       RenderSystem.assertThread(RenderSystem::method27804);
-      if (var0 != field31740[field31739].field40430) {
-         field31740[field31739].field40430 = var0;
+      if (var0 != TEXTURES[activeTexture].field40430) {
+         TEXTURES[activeTexture].field40430 = var0;
          GL11.glBindTexture(3553, var0);
          if (SmartAnimations.isActive()) {
             SmartAnimations.textureRendered(var0);
@@ -1120,13 +1128,13 @@ public class GlStateManager {
    @Deprecated
    public static void method23819() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31742.method35530();
+      RESCALE_NORMAL.method35530();
    }
 
    @Deprecated
    public static void method23820() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31742.method35529();
+      RESCALE_NORMAL.method35529();
    }
 
    public static void method23821(int var0, int var1, int var2, int var3) {
@@ -1140,39 +1148,39 @@ public class GlStateManager {
 
    public static void method23822(boolean var0, boolean var1, boolean var2, boolean var3) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (var0 != field31743.field36346 || var1 != field31743.field36347 || var2 != field31743.field36348 || var3 != field31743.field36349) {
-         field31743.field36346 = var0;
-         field31743.field36347 = var1;
-         field31743.field36348 = var2;
-         field31743.field36349 = var3;
+      if (var0 != COLOR_MASK.field36346 || var1 != COLOR_MASK.field36347 || var2 != COLOR_MASK.field36348 || var3 != COLOR_MASK.field36349) {
+         COLOR_MASK.field36346 = var0;
+         COLOR_MASK.field36347 = var1;
+         COLOR_MASK.field36348 = var2;
+         COLOR_MASK.field36349 = var3;
          GL11.glColorMask(var0, var1, var2, var3);
       }
    }
 
    public static void method23823(int var0, int var1, int var2) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (var0 != field31736.field41162.field35856 || var0 != field31736.field41162.field35857 || var0 != field31736.field41162.field35858) {
-         field31736.field41162.field35856 = var0;
-         field31736.field41162.field35857 = var1;
-         field31736.field41162.field35858 = var2;
+      if (var0 != STENCIL.field41162.field35856 || var0 != STENCIL.field41162.field35857 || var0 != STENCIL.field41162.field35858) {
+         STENCIL.field41162.field35856 = var0;
+         STENCIL.field41162.field35857 = var1;
+         STENCIL.field41162.field35858 = var2;
          GL11.glStencilFunc(var0, var1, var2);
       }
    }
 
    public static void method23824(int var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (var0 != field31736.field41163) {
-         field31736.field41163 = var0;
+      if (var0 != STENCIL.field41163) {
+         STENCIL.field41163 = var0;
          GL11.glStencilMask(var0);
       }
    }
 
    public static void method23825(int var0, int var1, int var2) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (var0 != field31736.field41164 || var1 != field31736.field41165 || var2 != field31736.field41166) {
-         field31736.field41164 = var0;
-         field31736.field41165 = var1;
-         field31736.field41166 = var2;
+      if (var0 != STENCIL.field41164 || var1 != STENCIL.field41165 || var2 != STENCIL.field41166) {
+         STENCIL.field41164 = var0;
+         STENCIL.field41165 = var1;
+         STENCIL.field41166 = var2;
          GL11.glStencilOp(var0, var1, var2);
       }
    }
@@ -1225,7 +1233,7 @@ public class GlStateManager {
    }
 
    @Deprecated
-   public static void method23834(int var0, FloatBuffer var1) {
+   public static void getMatrix(int var0, FloatBuffer var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glGetFloatv(var0, var1);
    }
@@ -1267,7 +1275,7 @@ public class GlStateManager {
    }
 
    @Deprecated
-   public static void method23841(FloatBuffer var0) {
+   public static void multMatrix(FloatBuffer var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glMultMatrixf(var0);
    }
@@ -1275,19 +1283,19 @@ public class GlStateManager {
    @Deprecated
    public static void method23842(Matrix4f var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      var0.method35502(field31724);
-      ((Buffer)field31724).rewind();
-      method23841(field31724);
+      var0.method35502(MATRIX_BUFFER);
+      ((Buffer) MATRIX_BUFFER).rewind();
+      multMatrix(MATRIX_BUFFER);
    }
 
    @Deprecated
    public static void method23843(float var0, float var1, float var2, float var3) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (var0 != field31744.field43518 || var1 != field31744.field43519 || var2 != field31744.field43520 || var3 != field31744.field43521) {
-         field31744.field43518 = var0;
-         field31744.field43519 = var1;
-         field31744.field43520 = var2;
-         field31744.field43521 = var3;
+      if (var0 != COLOR.field43518 || var1 != COLOR.field43519 || var2 != COLOR.field43520 || var3 != COLOR.field43521) {
+         COLOR.field43518 = var0;
+         COLOR.field43519 = var1;
+         COLOR.field43520 = var2;
+         COLOR.field43521 = var3;
          GL11.glColor4f(var0, var1, var2, var3);
       }
    }
@@ -1295,10 +1303,10 @@ public class GlStateManager {
    @Deprecated
    public static void method23844() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      field31744.field43518 = -1.0F;
-      field31744.field43519 = -1.0F;
-      field31744.field43520 = -1.0F;
-      field31744.field43521 = -1.0F;
+      COLOR.field43518 = -1.0F;
+      COLOR.field43519 = -1.0F;
+      COLOR.field43520 = -1.0F;
+      COLOR.field43521 = -1.0F;
    }
 
    @Deprecated
@@ -1332,7 +1340,7 @@ public class GlStateManager {
 
    @Deprecated
    public static void method23850(int var0) {
-      if (!field31753) {
+      if (!clientStateLocked) {
          RenderSystem.assertThread(RenderSystem::isOnRenderThread);
          GL11.glEnableClientState(var0);
       }
@@ -1340,7 +1348,7 @@ public class GlStateManager {
 
    @Deprecated
    public static void method23851(int var0) {
-      if (!field31753) {
+      if (!clientStateLocked) {
          RenderSystem.assertThread(RenderSystem::isOnRenderThread);
          GL11.glDisableClientState(var0);
       }
@@ -1359,7 +1367,7 @@ public class GlStateManager {
    public static void method23854(int var0, int var1, int var2) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glDrawArrays(var0, var1, var2);
-      if (Class7944.method26921() && !field31755) {
+      if (Class7944.method26921() && !creatingDisplayList) {
          int var5 = Shaders.field40848.method26491();
          if (var5 > 1) {
             for (int var6 = 1; var6 < var5; var6++) {
@@ -1408,19 +1416,19 @@ public class GlStateManager {
    }
 
    public static boolean method23862() {
-      return field31746 != Class2337.field15980;
+      return supportType != SupportType.field15980;
    }
 
    public static int method23863() {
-      return 33984 + field31739;
+      return 33984 + activeTexture;
    }
 
    public static void method23864() {
-      GL11.glBindTexture(3553, field31740[field31739].field40430);
+      GL11.glBindTexture(3553, TEXTURES[activeTexture].field40430);
    }
 
    public static int method23865() {
-      return field31740[field31739].field40430;
+      return TEXTURES[activeTexture].field40430;
    }
 
    public static void method23866() {
@@ -1447,115 +1455,115 @@ public class GlStateManager {
    }
 
    public static boolean method23868() {
-      return Class9368.method35532(field31731.field44792);
+      return BooleanState.method35532(FOG.field44792);
    }
 
    public static void method23869(boolean var0) {
-      field31731.field44792.method35531(var0);
+      FOG.field44792.method35531(var0);
    }
 
-   public static void method23870(Class7675 var0) {
-      if (!field31747.method21055()) {
-         method23872(field31748);
+   public static void method23870(GlAlphaState var0) {
+      if (!alphaLock.method21055()) {
+         method23872(alphaLockState);
          method23873(var0);
-         field31747.method21053();
+         alphaLock.method21053();
       }
    }
 
    public static void method23871() {
-      if (field31747.method21054()) {
-         method23873(field31748);
+      if (alphaLock.method21054()) {
+         method23873(alphaLockState);
       }
    }
 
-   public static void method23872(Class7675 var0) {
-      if (!field31747.method21055()) {
-         var0.method25207(Class9368.method35532(field31725.field39453), field31725.field39454, field31725.field39455);
+   public static void method23872(GlAlphaState var0) {
+      if (!alphaLock.method21055()) {
+         var0.method25207(BooleanState.method35532(ALPHA_TEST.test), ALPHA_TEST.field39454, ALPHA_TEST.field39455);
       } else {
-         var0.method25208(field31748);
+         var0.method25208(alphaLockState);
       }
    }
 
-   public static void method23873(Class7675 var0) {
-      if (!field31747.method21055()) {
-         field31725.field39453.method35531(var0.method25213());
+   public static void method23873(GlAlphaState var0) {
+      if (!alphaLock.method21055()) {
+         ALPHA_TEST.test.method35531(var0.method25213());
          method23697(var0.method25214(), var0.method25215());
       } else {
-         field31748.method25208(var0);
+         alphaLockState.method25208(var0);
       }
    }
 
-   public static void method23874(Class8069 var0) {
-      if (!field31749.method21055()) {
-         method23876(field31750);
+   public static void method23874(GlBlendState var0) {
+      if (!blendLock.method21055()) {
+         method23876(blendLockState);
          method23877(var0);
-         field31749.method21053();
+         blendLock.method21053();
       }
    }
 
    public static void method23875() {
-      if (field31749.method21054()) {
-         method23877(field31750);
+      if (blendLock.method21054()) {
+         method23877(blendLockState);
       }
    }
 
-   public static void method23876(Class8069 var0) {
-      if (!field31749.method21055()) {
+   public static void method23876(GlBlendState var0) {
+      if (!blendLock.method21055()) {
          var0.method27773(
-            Class9368.method35532(field31729.field40550), field31729.field40551, field31729.field40552, field31729.field40553, field31729.field40554
+            BooleanState.method35532(BLEND.field40550), BLEND.field40551, BLEND.field40552, BLEND.field40553, BLEND.field40554
          );
       } else {
-         var0.method27774(field31750);
+         var0.method27774(blendLockState);
       }
    }
 
-   public static void method23877(Class8069 var0) {
-      if (!field31749.method21055()) {
-         field31729.field40550.method35531(var0.method27780());
+   public static void method23877(GlBlendState var0) {
+      if (!blendLock.method21055()) {
+         BLEND.field40550.method35531(var0.method27780());
          if (var0.method27785()) {
             method23717(var0.method27781(), var0.method27782(), var0.method27783(), var0.method27784());
          } else {
             method23716(var0.method27781(), var0.method27782());
          }
       } else {
-         field31750.method27774(var0);
+         blendLockState.method27774(var0);
       }
    }
 
-   public static void method23878(Class9816 var0) {
-      if (!field31751.method21055()) {
-         method23880(field31752);
+   public static void method23878(GlCullState var0) {
+      if (!cullLock.method21055()) {
+         method23880(cullLockState);
          method23881(var0);
-         field31751.method21053();
+         cullLock.method21053();
       }
    }
 
    public static void method23879() {
-      if (field31751.method21054()) {
-         method23881(field31752);
+      if (cullLock.method21054()) {
+         method23881(cullLockState);
       }
    }
 
-   public static void method23880(Class9816 var0) {
-      if (!field31751.method21055()) {
-         var0.method38744(Class9368.method35532(field31732.field26226), field31732.field26227);
+   public static void method23880(GlCullState var0) {
+      if (!cullLock.method21055()) {
+         var0.method38744(BooleanState.method35532(CULL.field26226), CULL.field26227);
       } else {
-         var0.method38745(field31752);
+         var0.method38745(cullLockState);
       }
    }
 
-   public static void method23881(Class9816 var0) {
-      if (!field31751.method21055()) {
-         field31732.field26226.method35531(var0.method38750());
-         field31732.field26227 = var0.method38751();
+   public static void method23881(GlCullState var0) {
+      if (!cullLock.method21055()) {
+         CULL.field26226.method35531(var0.method38750());
+         CULL.field26227 = var0.method38751();
       } else {
-         field31752.method38745(var0);
+         cullLockState.method38745(var0);
       }
    }
 
    public static void method23882(int var0, IntBuffer var1, IntBuffer var2) {
       GL14.glMultiDrawArrays(var0, var1, var2);
-      if (Class7944.method26921() && !field31755) {
+      if (Class7944.method26921() && !creatingDisplayList) {
          int var5 = Shaders.field40848.method26491();
          if (var5 > 1) {
             for (int var6 = 1; var6 < var5; var6++) {
@@ -1574,7 +1582,7 @@ public class GlStateManager {
 
    public static void method23884(IntBuffer var0) {
       GL11.glCallLists(var0);
-      if (Class7944.method26921() && !field31755) {
+      if (Class7944.method26921() && !creatingDisplayList) {
          int var3 = Shaders.field40848.method26491();
          if (var3 > 1) {
             for (int var4 = 1; var4 < var3; var4++) {
@@ -1596,7 +1604,7 @@ public class GlStateManager {
    }
 
    public static void method23887(int var0, int var1, long var2, long var4, long var6) {
-      if (!field31758) {
+      if (!openGL31) {
          ARBCopyBuffer.glCopyBufferSubData(var0, var1, var2, var4, var6);
       } else {
          GL31.glCopyBufferSubData(var0, var1, var2, var4, var6);
@@ -1604,19 +1612,19 @@ public class GlStateManager {
    }
 
    public static boolean method23888() {
-      return field31764;
+      return fogAllowed;
    }
 
    public static void method23889(boolean var0) {
-      field31764 = var0;
+      fogAllowed = var0;
    }
 
    public static void method23890() {
-      field31753 = true;
+      clientStateLocked = true;
    }
 
    public static void method23891() {
-      field31753 = false;
+      clientStateLocked = false;
    }
 
    public enum SourceFactor {
@@ -1658,5 +1666,222 @@ public class GlStateManager {
       private SourceFactor(int var3) {
          this.field16001 = var3;
       }
+   }
+
+   @Deprecated
+   public enum TexGen {
+      S,
+      T,
+      R,
+      field14213
+   }
+
+   @Deprecated
+   public static class AlphaState {
+      private static String[] field39452;
+      public final BooleanState test = new BooleanState(3008);
+      public int field39454 = 519;
+      public float field39455 = -1.0F;
+
+      public AlphaState() {
+      }
+   }
+
+   public static class BooleanState {
+      private static String[] field43487;
+      private final int field43488;
+      private boolean field43489;
+
+      public BooleanState(int var1) {
+         this.field43488 = var1;
+      }
+
+      public void method35529() {
+         this.method35531(false);
+      }
+
+      public void method35530() {
+         this.method35531(true);
+      }
+
+      public void method35531(boolean var1) {
+         RenderSystem.assertThread(RenderSystem::method27804);
+         if (var1 != this.field43489) {
+            this.field43489 = var1;
+            if (!var1) {
+               GL11.glDisable(this.field43488);
+            } else {
+               GL11.glEnable(this.field43488);
+            }
+         }
+      }
+
+      // $VF: synthetic method
+      public static boolean method35532(BooleanState var0) {
+         return var0.field43489;
+      }
+   }
+
+   @Deprecated
+   public static class ColorMaterialState {
+      private static String[] field41142;
+      public final BooleanState field41143 = new BooleanState(2903);
+      public int field41144 = 1032;
+      public int field41145 = 5634;
+
+      public ColorMaterialState() {
+      }
+   }
+
+   public static class BlendState {
+      private static String[] field40549;
+      public final BooleanState field40550 = new BooleanState(3042);
+      public int field40551 = 1;
+      public int field40552 = 0;
+      public int field40553 = 1;
+      public int field40554 = 0;
+
+      public BlendState() {
+      }
+   }
+
+   public static class ScissorState {
+      private static String[] field40055;
+      public final BooleanState field40056 = new BooleanState(3089);
+
+      public ScissorState() {
+      }
+   }
+
+   public static class StencilState {
+      private static String[] field41161;
+      public final Class8339 field41162 = new Class8339();
+      public int field41163 = -1;
+      public int field41164 = 7680;
+      public int field41165 = 7680;
+      public int field41166 = 7680;
+
+      public StencilState() {
+      }
+   }
+
+   @Deprecated
+   public static class TexGenState {
+      private static String[] field21850;
+      public final Class9796 field21851 = new Class9796(8192, 3168);
+      public final Class9796 field21852 = new Class9796(8193, 3169);
+      public final Class9796 field21853 = new Class9796(8194, 3170);
+      public final Class9796 field21854 = new Class9796(8195, 3171);
+
+      public TexGenState() {
+      }
+   }
+
+   public static class ColorLogicState {
+      private static String[] field33642;
+      public final BooleanState field33643 = new BooleanState(3058);
+      public int field33644 = 5379;
+
+      public ColorLogicState() {
+      }
+   }
+
+   public static class PolygonOffsetState {
+      private static String[] field30681;
+      public final BooleanState field30682 = new BooleanState(32823);
+      public final BooleanState field30683 = new BooleanState(10754);
+      public float field30684;
+      public float field30685;
+
+      public PolygonOffsetState() {
+      }
+   }
+
+   public static class CullState {
+      private static String[] field26225;
+      public final BooleanState field26226 = new BooleanState(2884);
+      public int field26227 = 1029;
+
+      public CullState() {
+      }
+   }
+
+   @Deprecated
+   public static class FogState {
+      private static String[] field44791;
+      public final BooleanState field44792 = new BooleanState(2912);
+      public int field44793 = 2048;
+      public float field44794 = 1.0F;
+      public float field44795;
+      public float field44796 = 1.0F;
+
+      public FogState() {
+      }
+   }
+
+   public static class DepthState {
+      private static String[] field32404;
+      public final BooleanState field32405 = new BooleanState(2929);
+      public boolean field32406 = true;
+      public int field32407 = 513;
+
+      public DepthState() {
+      }
+   }
+
+   public static class TextureState {
+      private static String[] field40428;
+      public final BooleanState field40429 = new BooleanState(3553);
+      public int field40430;
+
+      public TextureState() {
+      }
+   }
+
+   public static class ColorMask {
+      private static String[] field36345;
+      public boolean field36346 = true;
+      public boolean field36347 = true;
+      public boolean field36348 = true;
+      public boolean field36349 = true;
+
+      public ColorMask() {
+      }
+   }
+
+   @Deprecated
+   public static class Color {
+      private static String[] field43517;
+      public float field43518 = 1.0F;
+      public float field43519 = 1.0F;
+      public float field43520 = 1.0F;
+      public float field43521 = 1.0F;
+
+      public Color() {
+         this(1.0F, 1.0F, 1.0F, 1.0F);
+      }
+
+      public Color(float var1, float var2, float var3, float var4) {
+         this.field43518 = var1;
+         this.field43519 = var2;
+         this.field43520 = var3;
+         this.field43521 = var4;
+      }
+   }
+
+   public enum FramebufferExtension {
+      field13460,
+      field13461,
+      field13462;
+
+      private static final FramebufferExtension[] field13463 = new FramebufferExtension[]{field13460, field13461, field13462};
+   }
+
+   public enum SupportType {
+      field15978,
+      field15979,
+      field15980;
+
+      private static final SupportType[] field15981 = new SupportType[]{field15978, field15979, field15980};
    }
 }

@@ -15,6 +15,7 @@ import net.minecraft.util.text.ITextProperties;
 import net.minecraft.util.text.LanguageMap;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextProcessing;
+import net.optifine.render.GlBlendState;
 
 public class FontRenderer {
    private static String[] field45926;
@@ -24,7 +25,7 @@ public class FontRenderer {
    private final Function<ResourceLocation, Class1807> field45930;
    private final CharacterManager field45931;
    private boolean field45932 = false;
-   private Class8069 field45933 = new Class8069();
+   private GlBlendState field45933 = new GlBlendState();
    private Class2052 field45934 = new Class2053(4.0F);
 
    public FontRenderer(Function<ResourceLocation, Class1807> var1) {

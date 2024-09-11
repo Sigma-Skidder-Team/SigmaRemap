@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.blaze3d.platform.GLX;
+
 public class PlatformDescriptors {
    private static String[] field41358;
 
@@ -8,7 +10,7 @@ public class PlatformDescriptors {
    }
 
    public static String getCpuInfo() {
-      return Class8157.method28304();
+      return GLX.method28304();
    }
 
    public static String method33487() {

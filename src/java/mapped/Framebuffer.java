@@ -225,7 +225,7 @@ public class Framebuffer {
       GlStateManager.method23821(0, 0, var1, var2);
       GlStateManager.method23804();
       GlStateManager.method23699();
-      GlStateManager.method23695();
+      GlStateManager.disableAlphaTest();
       if (var3) {
          GlStateManager.method23714();
          GlStateManager.method23701();

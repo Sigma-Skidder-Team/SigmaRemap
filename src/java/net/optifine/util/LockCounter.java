@@ -1,6 +1,6 @@
-package mapped;
+package net.optifine.util;
 
-public class Class6893 {
+public class LockCounter {
    private int field29870;
 
    public boolean method21053() {

@@ -4,6 +4,7 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.util.Properties;
 
+import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
@@ -63,7 +64,7 @@ public class Class9200 {
       this.field42257 = Class7944.method26901(var9.getProperty("interpolate"), false);
       this.field42258 = Class7944.method26899(var9.getProperty("skip"), 0);
       if (this.field42257) {
-         this.field42259 = Class7137.method22266(var12);
+         this.field42259 = GLAllocation.method22266(var12);
       }
    }
 
@@ -120,7 +121,7 @@ public class Class9200 {
          }
 
          if (this.field42261 == null) {
-            this.field42261 = Class7137.method22266(this.field42260.length);
+            this.field42261 = GLAllocation.method22266(this.field42260.length);
             this.field42261.put(this.field42260);
             ((Buffer)this.field42261).flip();
             this.field42260 = null;

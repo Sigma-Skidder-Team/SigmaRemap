@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventRenderShulker;
 import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
 import com.mentalfrostbyte.jello.event.impl.RenderFireEvent;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mojang.blaze3d.platform.GLX;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
@@ -162,7 +163,7 @@ public class GameRenderer implements Class215, AutoCloseable {
    }
 
    public void method736(ResourceLocation var1) {
-      if (Class8157.method28309()) {
+      if (GLX.method28309()) {
          if (this.field828 != null) {
             this.field828.close();
          }
@@ -996,7 +997,7 @@ public class GameRenderer implements Class215, AutoCloseable {
    }
 
    public boolean method761(int var1) {
-      if (Class8157.method28309()) {
+      if (GLX.method28309()) {
          if (this.field828 != null && this.field828 != this.field843[2] && this.field828 != this.field843[4]) {
             return true;
          } else if (var1 != 2 && var1 != 4) {

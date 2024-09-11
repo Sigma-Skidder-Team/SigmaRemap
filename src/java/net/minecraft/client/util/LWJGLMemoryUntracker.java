@@ -1,14 +1,16 @@
-package mapped;
+package net.minecraft.client.util;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodHandles.Lookup;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+
+import com.mojang.blaze3d.platform.GLX;
 import org.lwjgl.system.Pointer;
 
-public class Class8317 {
-   private static final MethodHandle field35729 = Class8157.<MethodHandle>method28307(() -> {
+public class LWJGLMemoryUntracker {
+   private static final MethodHandle field35729 = GLX.<MethodHandle>method28307(() -> {
       try {
          Lookup var2 = MethodHandles.lookup();
          Class var3 = Class.forName("org.lwjgl.system.MemoryManage$DebugAllocator");
@@ -23,7 +25,7 @@ public class Class8317 {
       }
    });
 
-   public static void method29100(long var0) {
+   public static void untrack(long var0) {
       if (field35729 != null) {
          try {
             field35729.invoke((long)var0);
@@ -34,6 +36,6 @@ public class Class8317 {
    }
 
    public static void method29101(Pointer var0) {
-      method29100(var0.address());
+      untrack(var0.address());
    }
 }
