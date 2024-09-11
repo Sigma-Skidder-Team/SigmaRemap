@@ -86,7 +86,7 @@ public class AntiVoid extends Module {
 
     @EventTarget
     private void method16665(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921() && this.field23839 != 0) {
+        if (this.isEnabled() && var1.isPre() && this.field23839 != 0) {
             var1.setCancelled(true);
         }
     }

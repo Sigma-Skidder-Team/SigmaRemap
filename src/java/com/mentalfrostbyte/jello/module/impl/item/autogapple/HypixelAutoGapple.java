@@ -11,69 +11,69 @@ import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
 import net.minecraft.util.Hand;
 
 public class HypixelAutoGapple extends PremiumModule {
-    private int field23678;
-    private int field23679;
-    private int field23680;
-    private int field23681;
+    private int currentTickCounter;
+    private int currentGappleSlot;
+    private int gappleCooldown;
+    private int firePotionSlot;
 
     public HypixelAutoGapple() {
         super("Hypixel", "Hypixel bypass", ModuleCategory.PLAYER);
         this.registerSetting(new BooleanSetting("Fire resistance potions", "Automatically drink fire pots", true));
-        this.field23678 = -1;
-        this.field23681 = -1;
+        this.currentTickCounter = -1;
+        this.firePotionSlot = -1;
     }
 
     @Override
     public void onEnable() {
-        this.field23678 = -1;
-        this.field23680 = 20;
-        this.field23681 = -1;
+        this.currentTickCounter = -1;
+        this.gappleCooldown = 20;
+        this.firePotionSlot = -1;
     }
 
     @EventTarget
-    public void method16472(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921() && !(mc.currentScreen instanceof Class868)) {
-            if (this.field23680 < 20) {
-                this.field23680++;
+    public void onUpdate(EventUpdate var1) {
+        if (this.isEnabled() && var1.isPre() && !(mc.currentScreen instanceof Class868)) {
+            if (this.gappleCooldown < 20) {
+                this.gappleCooldown++;
             }
 
-            if (this.field23681 == -1 && this.field23680 >= 20 && this.field23678 == -1) {
+            if (this.firePotionSlot == -1 && this.gappleCooldown >= 20 && this.currentTickCounter == -1) {
                 if (mc.player.getHealth() <= this.access().getNumberValueBySettingName("Health") * 2.0F && mc.player.getAbsorptionAmount() == 0.0F) {
-                    this.field23681 = ((AutoGapple) this.access()).findGappleSlot(false);
-                    if (this.field23681 >= 0) {
-                        this.field23678 = 0;
-                        this.field23680 = 0;
+                    this.firePotionSlot = ((AutoGapple) this.access()).findGappleSlot(false);
+                    if (this.firePotionSlot >= 0) {
+                        this.currentTickCounter = 0;
+                        this.gappleCooldown = 0;
                     }
                 }
 
-                if (this.field23678 == -1 && this.getBooleanValueFromSetttingName("Fire resistance potions") && !mc.player.isPotionActive(Effect.method22287(12))) {
-                    this.field23681 = ((AutoGapple) this.access()).findGappleSlot(true);
-                    if (this.field23681 >= 0) {
-                        this.field23678 = 0;
-                        this.field23680 = 0;
+                if (this.currentTickCounter == -1 && this.getBooleanValueFromSetttingName("Fire resistance potions") && !mc.player.isPotionActive(Effect.method22287(12))) {
+                    this.firePotionSlot = ((AutoGapple) this.access()).findGappleSlot(true);
+                    if (this.firePotionSlot >= 0) {
+                        this.currentTickCounter = 0;
+                        this.gappleCooldown = 0;
                     }
                 }
             }
 
-            if (this.field23681 >= 0 && this.field23678 >= 0) {
-                this.field23678++;
-                if (this.field23678 == 2) {
+            if (this.firePotionSlot >= 0 && this.currentTickCounter >= 0) {
+                this.currentTickCounter++;
+                if (this.currentTickCounter == 2) {
                     var1.setYaw(var1.getYaw() + 1.0F);
                 }
 
-                if (this.field23678 != 1) {
-                    if (this.field23678 >= 3) {
+                if (this.currentTickCounter != 1) {
+                    if (this.currentTickCounter >= 3) {
                         mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
-                        mc.getConnection().sendPacket(new CHeldItemChangePacket(this.field23681 + (this.field23681 != 8 ? 1 : -1)));
-                        mc.getConnection().sendPacket(new CHeldItemChangePacket(this.field23681));
-                        mc.player.inventory.currentItem = this.field23679;
-                        this.field23679 = -1;
-                        this.field23678 = -1;
-                        this.field23681 = -1;
+                        mc.getConnection().sendPacket(new CHeldItemChangePacket(this.firePotionSlot + (this.firePotionSlot != 8 ? 1 : -1)));
+                        mc.getConnection().sendPacket(new CHeldItemChangePacket(this.firePotionSlot));
+                        mc.player.inventory.currentItem = this.currentGappleSlot;
+                        this.currentGappleSlot = -1;
+                        this.currentTickCounter = -1;
+                        this.firePotionSlot = -1;
                     }
                 } else {
-                    this.field23679 = mc.player.inventory.currentItem;
-                    mc.player.inventory.currentItem = this.field23681;
+                    this.currentGappleSlot = mc.player.inventory.currentItem;
+                    mc.player.inventory.currentItem = this.firePotionSlot;
                 }
             }
         }

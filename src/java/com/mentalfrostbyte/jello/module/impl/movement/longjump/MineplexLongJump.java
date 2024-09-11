@@ -40,7 +40,7 @@ public class MineplexLongJump extends Module {
 
     @EventTarget
     public void method16621(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921() && this.field23804 >= 0) {
+        if (this.isEnabled() && var1.isPre() && this.field23804 >= 0) {
             var1.method13908(true);
         }
     }

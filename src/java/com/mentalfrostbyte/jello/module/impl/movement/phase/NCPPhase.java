@@ -40,7 +40,7 @@ public class NCPPhase extends PremiumModule {
 
     @EventTarget
     private void method16426(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             if (mc.gameSettings.keyBindSneak.isKeyDown()) {
                 double var4 = mc.player.getPosX();
                 double var6 = mc.player.getPosY();

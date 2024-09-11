@@ -37,7 +37,7 @@ public class OldHitting extends Module {
     @Class5631
     private void method16020(EventUpdate var1) {
         if (this.isEnabled() || JelloPortal.method27372() == ViaVerList.field26129) {
-            if (var1.method13921()) {
+            if (var1.isPre()) {
                 boolean var4 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof ItemSword;
                 boolean var5 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988();
                 boolean var6 = true;

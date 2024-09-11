@@ -31,7 +31,7 @@ public class NoSlow extends Module {
         if (this.isEnabled()) {
             boolean var4 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988();
             boolean var5 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof ItemSword;
-            if (!var1.method13921()) {
+            if (!var1.isPre()) {
                 if (var5 && mc.gameSettings.keyBindUseItem.isKeyDown() && !this.field23540 && !var4 && this.getStringSettingValueByName("Mode").equals("NCP")) {
                     ColorUtils.method17733();
                     this.field23540 = true;

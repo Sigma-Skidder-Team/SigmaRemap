@@ -37,7 +37,7 @@ public class HoverCriticals extends Module {
     @EventTarget
     @HigherPriority
     private void method16922(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             boolean var4 = mc.objectMouseOver != null && mc.objectMouseOver.getType() == RayTraceResult.Type.BLOCK;
             boolean var5 = mc.playerController.getIsHittingBlock() || mc.gameSettings.keyBindAttack.isKeyDown() && var4;
             if (Client.getInstance().getPlayerTracker().getgroundTicks() > 0 && !var5) {

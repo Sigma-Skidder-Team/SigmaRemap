@@ -12,7 +12,7 @@ public class EventUpdate extends CancellableEvent {
     public static float field21499;
     public static float field21500;
     private static String[] field21488;
-    public boolean field21502;
+    public boolean pre;
     private double x;
     private double y;
     private double z;
@@ -29,7 +29,7 @@ public class EventUpdate extends CancellableEvent {
         this.yaw = var7;
         this.pitch = var8;
         this.ground = var9;
-        this.field21502 = true;
+        this.pre = true;
         this.field21495 = false;
     }
 
@@ -38,7 +38,7 @@ public class EventUpdate extends CancellableEvent {
         field21499 = prevYaw;
         prevPitch = this.pitch;
         prevYaw = this.yaw;
-        this.field21502 = false;
+        this.pre = false;
     }
 
     public boolean method13907() {
@@ -97,8 +97,8 @@ public class EventUpdate extends CancellableEvent {
         this.ground = var1;
     }
 
-    public boolean method13921() {
-        return this.field21502;
+    public boolean isPre() {
+        return this.pre;
     }
 
     public void method13922(Runnable var1) {

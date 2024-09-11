@@ -166,7 +166,7 @@ public class CubecraftFly extends Module {
 
     @EventTarget
     public void method16689(EventUpdate var1) {
-        if (var1.method13921() && ColorUtils.method17718()) {
+        if (var1.isPre() && ColorUtils.method17718()) {
             var1.method13908(true);
             if (JelloPortal.method27349() == ViaVerList.field26129.method18582() && this.field23845 == 0 && ColorUtils.method17730(mc.player, 0.001F)) {
                 var1.setCancelled(true);

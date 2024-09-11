@@ -235,7 +235,7 @@ public class KillAura extends Module {
     @LowestPriority
     public void method16821(EventUpdate var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (!var1.method13921()) {
+            if (!var1.isPre()) {
                 this.field23943 = mc.player.inventory.currentItem;
                 if (field23948 != null && this.field23938.method36817() && this.field23952 != null) {
                     this.field23938.method36815(field23948, this.field23952.field32084, this.field23952.field32085);

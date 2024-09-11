@@ -48,7 +48,7 @@ public class AutoSoup extends Module {
 
     @EventTarget
     private void method16057(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             this.field23428++;
             this.field23431++;
             String var4 = this.getStringSettingValueByName("Refill mode");

@@ -230,7 +230,7 @@ public class Freecam extends Module {
 
     @EventTarget
     public void method16646(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             var1.setPitch(this.field23821 % 360.0F);
             var1.setYaw(this.field23822);
             mc.player.field6122 = this.field23821;

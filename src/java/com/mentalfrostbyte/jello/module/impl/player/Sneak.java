@@ -19,7 +19,7 @@ public class Sneak extends Module {
     @EventTarget
     public void method16229(EventUpdate var1) {
         if (this.isEnabled()) {
-            if (!var1.method13921()) {
+            if (!var1.isPre()) {
                 mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.RELEASE_SHIFT_KEY));
                 mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.PRESS_SHIFT_KEY));
             } else {

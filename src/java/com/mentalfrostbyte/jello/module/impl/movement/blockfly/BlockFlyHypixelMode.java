@@ -167,7 +167,7 @@ public class BlockFlyHypixelMode extends Module {
         if (this.isEnabled() && this.field23473.method16735() != 0) {
             ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Fly.class);
             if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("Hypixel") || !var4.method16726().getStringSettingValueByName("Bypass").equals("Blink")) {
-                if (!var1.method13921()) {
+                if (!var1.isPre()) {
                     this.field23473.method16736();
                     if (this.field23468 != null) {
                         BlockRayTraceResult var20 = new BlockRayTraceResult(

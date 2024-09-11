@@ -27,7 +27,7 @@ public class MinemenAntiKB extends Module {
 
     @EventTarget
     public void method16697(EventUpdate var1) {
-        if (var1.method13921()) {
+        if (var1.isPre()) {
             if (ColorUtils.method17730(mc.player, 1.0E-5F)) {
                 this.field23852 = true;
                 var1.setY(var1.getY() - 5.0E-7);

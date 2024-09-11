@@ -105,7 +105,7 @@ public class ViperMCFly extends Module {
 
     @EventTarget
     public void method16332(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             this.field23594++;
             if (this.field23594 != 2) {
                 if (this.field23594 > 2) {

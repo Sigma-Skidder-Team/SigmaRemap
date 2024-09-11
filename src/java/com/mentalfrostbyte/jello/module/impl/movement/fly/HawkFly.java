@@ -61,7 +61,7 @@ public class HawkFly extends Module {
 
     @EventTarget
     public void method16053(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             this.field23424++;
             if (this.field23424 == 1) {
                 var1.setY(0.1);

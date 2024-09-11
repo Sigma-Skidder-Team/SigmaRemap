@@ -62,7 +62,7 @@ public class HorizonFly extends Module {
 
     @EventTarget
     public void method16159(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             this.field23497++;
             if (this.field23497 != 11) {
                 if (this.field23497 > 11 && this.field23497 >= 20 && this.field23497 % 20 == 0) {

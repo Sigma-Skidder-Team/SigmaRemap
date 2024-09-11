@@ -73,7 +73,7 @@ public class CakeEater extends Module {
                 }
             }
 
-            if (!var1.method13921()) {
+            if (!var1.isPre()) {
                 if (field23588 != null) {
                     if (this.getBooleanValueFromSetttingName("No Swing") && !this.getBooleanValueFromSetttingName("Mineplex")) {
                         mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));

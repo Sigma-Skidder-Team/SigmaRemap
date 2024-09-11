@@ -167,7 +167,7 @@ public class AutoCrystal extends PremiumModule {
 
     @EventTarget
     public void method16374(EventUpdate var1) {
-        if (!var1.method13921()) {
+        if (!var1.isPre()) {
             if (this.field23635 != null) {
                 this.field23635.run();
                 this.field23635 = null;

@@ -120,7 +120,7 @@ public class HypixelFly extends Module {
 
     @EventTarget
     public void method16261(EventUpdate var1) {
-        if (var1.method13921()) {
+        if (var1.isPre()) {
             for (double var7 : ColorUtils.method17747()) {
                 if ((double) ((int) var1.getY()) - var1.getY() + var7 == 0.0) {
                     var1.setGround(true);

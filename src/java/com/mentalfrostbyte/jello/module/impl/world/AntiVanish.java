@@ -26,7 +26,7 @@ public class AntiVanish extends Module {
     @EventTarget
     private void method16862(EventUpdate var1) {
         if (this.isEnabled()) {
-            if (var1.method13921() && mc.getCurrentServerData() != null) {
+            if (var1.isPre() && mc.getCurrentServerData() != null) {
                 if (!this.field23967.isEmpty()) {
                     if (this.field23968 > 3200) {
                         this.field23967.clear();

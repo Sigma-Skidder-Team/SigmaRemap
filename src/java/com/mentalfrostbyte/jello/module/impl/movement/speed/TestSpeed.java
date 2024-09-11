@@ -34,7 +34,7 @@ public class TestSpeed extends Module {
     @EventTarget
     public void method16796(EventUpdate var1) {
         if (this.isEnabled() && mc.player != null && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
-            if (mc.player.onGround && var1.method13921()) {
+            if (mc.player.onGround && var1.isPre()) {
                 var1.setY(var1.getY() + 1.0E-14);
             }
         }

@@ -42,7 +42,7 @@ public class Nuker extends Module {
 
     @EventTarget
     private void method16263(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             this.field23567 = this.method16267(this.getNumberValueBySettingName("Range") / 2.0F);
             if (this.field23567.isEmpty()) {
                 this.field23566 = null;

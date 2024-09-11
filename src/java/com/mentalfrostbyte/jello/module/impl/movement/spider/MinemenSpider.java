@@ -93,7 +93,7 @@ public class MinemenSpider extends Module {
 
     @EventTarget
     private void method16637(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             Class9629 var4 = ColorUtils.method17760(1.0E-4);
             if (this.getBooleanValueFromSetttingName("Ceiling")
                     && !mc.player.onGround

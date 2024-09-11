@@ -139,7 +139,7 @@ public class Test extends Module {
 
     @EventTarget
     public void method16548(EventUpdate var1) {
-        if (!this.isEnabled() || !var1.method13921()) {
+        if (!this.isEnabled() || !var1.isPre()) {
         }
     }
 

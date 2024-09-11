@@ -165,7 +165,7 @@ public class BlockFlyNCPMode extends Module {
     @LowerPriority
     public void method16808(EventUpdate var1) {
         if (this.isEnabled() && this.field23928.method16735() != 0) {
-            if (!var1.method13921()) {
+            if (!var1.isPre()) {
                 this.field23928.method16736();
                 if (this.field23923 != null) {
                     BlockRayTraceResult var13 = new BlockRayTraceResult(

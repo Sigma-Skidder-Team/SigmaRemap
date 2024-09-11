@@ -90,7 +90,7 @@ public class NoFall extends Module {
 
                 switch (var4) {
                     case "OldHypixel":
-                        if (var1.method13921()) {
+                        if (var1.isPre()) {
                             if (ColorUtils.method17730(mc.player, 1.0E-4F)) {
                                 this.field23509 = 0.0;
                                 return;
@@ -110,7 +110,7 @@ public class NoFall extends Module {
                         }
                         break;
                     case "Hypixel":
-                        if (var1.method13921() && mc.player.getMotion().y < 0.0 && !mc.player.onGround && ColorUtils.method17716()) {
+                        if (var1.isPre() && mc.player.getMotion().y < 0.0 && !mc.player.onGround && ColorUtils.method17716()) {
                             for (double var10 : ColorUtils.method17747()) {
                                 if ((double) ((int) var1.getY()) - var1.getY() + var10 == 0.0) {
                                     var1.setGround(true);
@@ -120,7 +120,7 @@ public class NoFall extends Module {
                         }
                         break;
                     case "Hypixel2":
-                        if (var1.method13921()) {
+                        if (var1.isPre()) {
                             if (ColorUtils.method17730(mc.player, 1.0E-4F)) {
                                 this.field23509 = 0.0;
                                 return;
@@ -137,7 +137,7 @@ public class NoFall extends Module {
                         }
                         break;
                     case "AAC":
-                        if (var1.method13921()) {
+                        if (var1.isPre()) {
                             if (mc.player.ticksExisted == 1) {
                                 this.field23507 = false;
                             }
@@ -150,7 +150,7 @@ public class NoFall extends Module {
                         }
                         break;
                     case "Vanilla":
-                        if (var1.method13921() && mc.player.getMotion().y < -0.1) {
+                        if (var1.isPre() && mc.player.getMotion().y < -0.1) {
                             var1.setGround(true);
                         }
                         break;
@@ -175,7 +175,7 @@ public class NoFall extends Module {
                         }
                         break;
                     case "NCPSpigot":
-                        if (var1.method13921()) {
+                        if (var1.isPre()) {
                             if (mc.player.fallDistance > 3.0F) {
                                 this.field23508 = true;
                             }

@@ -65,7 +65,7 @@ public class Jesus extends Module {
 
    @EventTarget
    public void method16946(EventUpdate var1) {
-      if (this.isEnabled() && mc.world != null && var1.method13921() && mc.getCurrentServerData() != null) {
+      if (this.isEnabled() && mc.world != null && var1.isPre() && mc.getCurrentServerData() != null) {
          if (method16953() && !this.method16951(mc.player.boundingBox)) {
             this.field24017++;
          } else {

@@ -135,7 +135,7 @@ public class Cubecraft2Fly extends PremiumModule {
             var1.setCancelled(true);
         }
 
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             var1.method13908(true);
             var1.setGround(true);
             if (this.field23696 != 3) {

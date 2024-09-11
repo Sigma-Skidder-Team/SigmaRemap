@@ -69,7 +69,7 @@ public class BowAimbot extends Module {
 
     @EventTarget
     private void method16569(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             if (!(mc.player.getActiveItemStack().getItem() instanceof BowItem)) {
                 this.field23754.clear();
             } else {

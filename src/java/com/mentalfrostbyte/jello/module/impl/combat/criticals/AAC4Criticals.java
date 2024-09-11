@@ -50,7 +50,7 @@ public class AAC4Criticals extends Module {
     private void method16707(EventUpdate var1) {
         if (!this.isEnabled() || Client.getInstance().getModuleManager().getModuleByClass(Speed.class).isEnabled()) {
             field23862 = 0;
-        } else if (var1.method13921()) {
+        } else if (var1.isPre()) {
             if (mc.playerController.getIsHittingBlock()) {
                 field23862 = 0;
             }

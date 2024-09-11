@@ -41,7 +41,7 @@ public class NCPSpeed extends Module {
                 && mc.player != null
                 && !Jesus.method16953()
                 && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
-            if (var1.method13921() && Speed.field23893 > 1) {
+            if (var1.isPre() && Speed.field23893 > 1) {
                 double var4 = mc.player.getPosX() - mc.player.field6119;
                 double var6 = mc.player.getPosZ() - mc.player.field6121;
                 if (this.field23607 != 0) {

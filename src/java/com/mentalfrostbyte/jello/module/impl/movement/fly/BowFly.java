@@ -73,7 +73,7 @@ public class BowFly extends Module {
 
     @EventTarget
     public void method16180(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             if (!this.field23505.isEnabled()) {
                 this.field23505.start();
             }

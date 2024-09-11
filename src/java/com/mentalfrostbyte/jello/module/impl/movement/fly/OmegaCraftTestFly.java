@@ -74,7 +74,7 @@ public class OmegaCraftTestFly extends Module {
 
     @EventTarget
     public void method16701(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             this.field23854++;
             if (this.field23854 != 3) {
                 if (this.field23854 > 3) {

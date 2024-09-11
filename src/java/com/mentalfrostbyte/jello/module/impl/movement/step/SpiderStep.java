@@ -58,7 +58,7 @@ public class SpiderStep extends Module {
 
     @EventTarget
     private void method16587(EventUpdate var1) {
-        if (this.isEnabled() && mc.player != null && var1.method13921()) {
+        if (this.isEnabled() && mc.player != null && var1.isPre()) {
             if (this.field23758 != 1) {
                 if (this.field23758 == 3) {
                     Module var4 = Client.getInstance().getModuleManager().getModuleByClass(Criticals.class);

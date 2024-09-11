@@ -56,7 +56,7 @@ public class ChestStealer extends Module {
 
     @EventTarget
     public void method16365(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             if (this.getBooleanValueFromSetttingName("Aura")) {
                 if (this.field23624.method27121() > 2000L && this.field23621) {
                     this.field23624.method27120();

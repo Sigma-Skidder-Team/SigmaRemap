@@ -60,7 +60,7 @@ public class SpartanFly extends Module {
 
     @EventTarget
     public void method16270(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921() && this.getBooleanValueFromSetttingName("Ground Spoof")) {
+        if (this.isEnabled() && var1.isPre() && this.getBooleanValueFromSetttingName("Ground Spoof")) {
             if (this.field23570) {
                 this.field23570 = !this.field23570;
                 var1.setGround(true);

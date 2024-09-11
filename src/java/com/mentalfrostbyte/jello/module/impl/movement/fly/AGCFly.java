@@ -85,7 +85,7 @@ public class AGCFly extends Module {
 
     @EventTarget
     public void method16783(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             this.field23902++;
             if (this.field23902 != (this.field23903 != 3 ? this.field23903 : 1)) {
                 if (this.field23902 > (this.field23903 != 3 ? this.field23903 : 1)) {

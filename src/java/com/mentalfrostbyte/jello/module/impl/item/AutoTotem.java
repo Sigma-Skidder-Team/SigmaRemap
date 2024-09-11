@@ -24,7 +24,7 @@ public class AutoTotem extends Module {
 
     @EventTarget
     private void method16176(EventUpdate var1) {
-        if (!var1.method13921()) {
+        if (!var1.isPre()) {
             this.method16177();
         }
     }

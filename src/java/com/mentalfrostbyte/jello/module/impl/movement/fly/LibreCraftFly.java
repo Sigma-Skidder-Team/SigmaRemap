@@ -84,7 +84,7 @@ public class LibreCraftFly extends Module {
 
     @EventTarget
     public void method16794(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             this.field23910++;
             if (this.field23910 != 2) {
                 if (this.field23910 > 2) {

@@ -133,7 +133,7 @@ public class BlockFlySmoothMode extends Module {
     @LowerPriority
     public void method16886(EventUpdate var1) {
         if (this.isEnabled() && this.field23976.method16735() != 0) {
-            if (!var1.method13921()) {
+            if (!var1.isPre()) {
                 if (this.field23970 != 999.0F) {
                     this.field23976.method16736();
                     if (this.field23971 != null) {

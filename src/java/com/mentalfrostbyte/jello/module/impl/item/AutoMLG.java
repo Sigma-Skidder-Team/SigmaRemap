@@ -63,7 +63,7 @@ public class AutoMLG extends PremiumModule {
     @LowerPriority
     private void method16423(EventUpdate var1) {
         if (this.isEnabled() && mc.playerController.gameIsSurvivalOrAdventure()) {
-            if (var1.method13921() && field23649 >= 0) {
+            if (var1.isPre() && field23649 >= 0) {
                 field23649++;
                 float[] var4 = RotationHelper.method34144(
                         (double) this.field23650.getX() + 0.5, (double) this.field23650.getZ() + 0.5, (double) this.field23650.getY() + 0.5
@@ -93,7 +93,7 @@ public class AutoMLG extends PremiumModule {
                     && mc.player.fallDistance > 3.0F) {
                 BlockPos var5 = this.method16425();
                 if (var5 != null) {
-                    if (var1.method13921() && field23649 == -1) {
+                    if (var1.isPre() && field23649 == -1) {
                         float[] var6 = RotationHelper.method34144((double) var5.getX() + 0.5, (double) var5.getZ() + 0.5, (double) var5.getY() + 0.5);
                         var1.setPitch(var6[0]);
                         var1.setYaw(var6[1]);

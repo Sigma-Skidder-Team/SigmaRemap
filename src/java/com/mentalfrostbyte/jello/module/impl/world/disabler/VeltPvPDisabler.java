@@ -20,7 +20,7 @@ public class VeltPvPDisabler extends Module {
 
     @EventTarget
     public void method16619(EventUpdate var1) {
-        if (this.isEnabled() && mc.player != null && var1.method13921()) {
+        if (this.isEnabled() && mc.player != null && var1.isPre()) {
             this.field23801++;
             double var4 = -0.1;
             if (this.field23801 >= 20) {

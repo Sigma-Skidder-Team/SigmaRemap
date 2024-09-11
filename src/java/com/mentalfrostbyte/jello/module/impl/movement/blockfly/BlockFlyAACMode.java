@@ -216,7 +216,7 @@ public class BlockFlyAACMode extends Module {
     @LowestPriority
     private void method16210(EventUpdate var1) {
         if (this.isEnabled()) {
-            if (!var1.method13921()) {
+            if (!var1.isPre()) {
                 if (MovementUtils.isMoving() && mc.player.onGround && this.getBooleanValueFromSetttingName("Haphe (AACAP)") && !mc.player.isJumping) {
                     mc.player.jump();
                 }

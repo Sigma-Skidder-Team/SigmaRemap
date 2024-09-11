@@ -58,7 +58,7 @@ public class MineplexFly extends PremiumModule {
 
     @EventTarget
     public void method16454(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             var1.method13908(true);
         }
     }

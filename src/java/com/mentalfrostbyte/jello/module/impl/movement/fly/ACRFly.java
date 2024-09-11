@@ -96,7 +96,7 @@ public class ACRFly extends Module {
 
     @EventTarget
     public void method16905(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             this.field23986++;
             if (this.field23986 != 2) {
                 if (this.field23986 > 2 && this.field23986 >= 20 && this.field23986 % 20 == 0) {

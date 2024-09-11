@@ -62,7 +62,7 @@ public class NCPFly extends Module {
 
     @EventTarget
     public void method16801(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             this.field23919++;
             if (this.field23919 != 3) {
                 if (this.field23919 > 3 && this.field23919 >= 20 && this.field23919 % 20 == 0) {

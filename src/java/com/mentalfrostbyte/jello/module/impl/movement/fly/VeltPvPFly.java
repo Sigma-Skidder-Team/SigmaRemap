@@ -101,7 +101,7 @@ public class VeltPvPFly extends Module {
 
     @EventTarget
     public void method16048(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             this.field23419++;
             if (this.field23419 != 2) {
                 if (this.field23419 > 2) {

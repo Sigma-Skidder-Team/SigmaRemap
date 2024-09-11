@@ -25,7 +25,7 @@ public class Derp extends Module {
 
     @EventTarget
     public void method16065(EventUpdate var1) {
-        if (this.isEnabled() && var1.method13921()) {
+        if (this.isEnabled() && var1.isPre()) {
             if (this.getBooleanValueFromSetttingName("Sneak")) {
                 if (this.field23435) {
                     mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.RELEASE_SHIFT_KEY));

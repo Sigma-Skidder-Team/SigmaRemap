@@ -242,7 +242,7 @@ public class Class8795 {
 
    @EventTarget
    private void method31747(EventUpdate var1) {
-      if (var1.method13921()) {
+      if (var1.isPre()) {
          if (this.method31743()) {
             ArrayList var4 = new ArrayList();
             int var5 = this.field39613.size() - 1;

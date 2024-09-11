@@ -63,7 +63,7 @@ public class HypixelSpeed extends Module {
                     || KillAura.field23948 == null && KillAura.field23949 == null
                     || this.field23418 != Class2094.field13641) {
                 this.field23417 = 0.0;
-            } else if (var1.method13921()) {
+            } else if (var1.isPre()) {
                 if (this.field23417 > 3.0) {
                     this.field23417 = 0.0;
                     mc.getConnection().sendPacket(new CPlayerPacket(true));

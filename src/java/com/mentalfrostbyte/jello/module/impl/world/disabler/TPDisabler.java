@@ -28,7 +28,7 @@ public class TPDisabler extends Module {
 
     @EventTarget
     public void method16197(EventUpdate var1) {
-        if (this.isEnabled() && mc.player != null && var1.method13921() && mc.getCurrentServerData() != null) {
+        if (this.isEnabled() && mc.player != null && var1.isPre() && mc.getCurrentServerData() != null) {
             this.field23517++;
             double var4 = -4.503599627370497E15;
             String var6 = this.getStringSettingValueByName("Mode");

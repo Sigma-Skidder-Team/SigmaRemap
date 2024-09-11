@@ -44,7 +44,7 @@ public class Step extends ModuleWithModuleSettings {
     @EventTarget
     @Class5631
     private void method16747(EventUpdate var1) {
-        if (var1.method13921()) {
+        if (var1.isPre()) {
             field23887++;
         }
     }
