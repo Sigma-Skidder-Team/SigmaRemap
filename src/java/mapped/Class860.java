@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Ordering;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.Collection;

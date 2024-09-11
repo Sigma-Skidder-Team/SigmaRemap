@@ -74,7 +74,7 @@ public class EntityDataManager {
    }
 
    public <T> void register(DataParameter<T> var1, T var2) {
-      int var5 = var1.method35015();
+      int var5 = var1.getId();
       if (var5 <= 254) {
          if (!this.field43433.containsKey(var5)) {
             if (DataSerializers.method25806(var1.method35016()) >= 0) {
@@ -93,7 +93,7 @@ public class EntityDataManager {
    private <T> void method35443(DataParameter<T> var1, T var2) {
       DataEntry<T> var5 = new DataEntry<>(var1, var2);
       this.field43434.writeLock().lock();
-      this.field43433.put(var1.method35015(), var5);
+      this.field43433.put(var1.getId(), var5);
       this.field43435 = false;
       this.field43434.writeLock().unlock();
    }
@@ -103,7 +103,7 @@ public class EntityDataManager {
 
       DataEntry var4;
       try {
-         var4 = this.field43433.get(var1.method35015());
+         var4 = this.field43433.get(var1.getId());
       } catch (Throwable var11) {
          CrashReport var6 = CrashReport.makeCrashReport(var11, "Getting synched entity data");
          CrashReportCategory var7 = var6.makeCategory("Synched entity data");
@@ -188,10 +188,10 @@ public class EntityDataManager {
    }
 
    private static <T> void method35451(PacketBuffer var0, DataEntry<T> var1) throws IOException {
-      DataParameter var4 = var1.method38447();
+      DataParameter var4 = var1.getKey();
       int var5 = DataSerializers.method25806(var4.method35016());
       if (var5 >= 0) {
-         var0.writeByte(var4.method35015());
+         var0.writeByte(var4.getId());
          var0.writeVarInt(var5);
          var4.method35016().method19646(var0, var1.method38449());
       } else {
@@ -229,10 +229,10 @@ public class EntityDataManager {
       this.field43434.writeLock().lock();
 
       for (DataEntry var5 : var1) {
-         DataEntry var6 = this.field43433.get(var5.method38447().method35015());
+         DataEntry var6 = this.field43433.get(var5.getKey().getId());
          if (var6 != null) {
             this.method35455(var6, var5);
-            this.field43432.notifyDataManagerChange(var5.method38447());
+            this.field43432.notifyDataManagerChange(var5.getKey());
          }
       }
 
@@ -247,7 +247,7 @@ public class EntityDataManager {
          throw new IllegalStateException(
             String.format(
                "Invalid entity data item type for field %d on entity %s: old=%s(%s), new=%s(%s)",
-               DataEntry.method38453(var1).method35015(),
+               DataEntry.method38453(var1).getId(),
                this.field43432,
                DataEntry.method38454(var1),
                DataEntry.method38454(var1).getClass(),
@@ -285,7 +285,7 @@ public class EntityDataManager {
          this.field45712 = true;
       }
 
-      public DataParameter<T> method38447() {
+      public DataParameter<T> getKey() {
          return this.field45710;
       }
 

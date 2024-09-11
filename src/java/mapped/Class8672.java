@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.potion.EffectInstance;
+
 public class Class8672 {
    private static String[] field39057;
    public static final Class9427 field39058 = new Class8141().method28229(4).method28230(0.3F).method28235();

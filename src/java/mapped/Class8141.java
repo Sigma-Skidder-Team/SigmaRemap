@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.potion.EffectInstance;
+
 import java.util.List;
 
 public class Class8141 {

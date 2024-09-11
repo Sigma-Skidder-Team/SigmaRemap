@@ -17,9 +17,9 @@ import net.minecraft.network.play.server.SEntityMetadataPacket;
 import net.minecraft.util.Hand;
 
 public class BasicAutoGapple extends Module {
-    private int field23549 = -1;
-    private int field23550;
-    private int field23551;
+    private int currentGappleSlot = -1;
+    private int hotbarSwitchDelay;
+    private int tickCounter;
 
     public BasicAutoGapple() {
         super(ModuleCategory.PLAYER, "Basic", "Basic AutoGapple");
@@ -27,66 +27,66 @@ public class BasicAutoGapple extends Module {
 
     @Override
     public void onEnable() {
-        this.field23549 = -1;
-        this.field23551 = 20;
+        this.currentGappleSlot = -1;
+        this.tickCounter = 20;
     }
 
     @EventTarget
-    public void method16246(StopUseItemEvent var1) {
+    public void onStopUseItem(StopUseItemEvent event) {
         if (this.isEnabled()) {
-            if (this.field23549 >= 0) {
-                var1.setCancelled(true);
+            if (this.currentGappleSlot >= 0) {
+                event.setCancelled(true);
             }
         }
     }
 
     @EventTarget
-    public void method16247(EventKeyPress var1) {
+    public void onKeyPress(EventKeyPress event) {
         if (this.isEnabled()) {
-            int var4 = mc.gameSettings.keyBindsHotbar.length;
+            int hotbarLength = mc.gameSettings.keyBindsHotbar.length;
 
-            for (int var5 = 0; var5 < var4; var5++) {
-                KeyBinding var6 = mc.gameSettings.keyBindsHotbar[var5];
-                String var7 = var6.getKeyDescription();
-                int var8 = Integer.parseInt(String.valueOf(var7.charAt(var7.length() - 1)));
-                if (var1.getKey() == var6.keycode.keyCode && var8 - 1 != mc.player.inventory.currentItem) {
-                    this.field23549 = -1;
-                    this.field23551 = 0;
+            for (int i = 0; i < hotbarLength; i++) {
+                KeyBinding hotbarKey = mc.gameSettings.keyBindsHotbar[i];
+                String keyDescription = hotbarKey.getKeyDescription();
+                int keyIndex = Integer.parseInt(String.valueOf(keyDescription.charAt(keyDescription.length() - 1)));
+                if (event.getKey() == hotbarKey.keycode.keyCode && keyIndex - 1 != mc.player.inventory.currentItem) {
+                    this.currentGappleSlot = -1;
+                    this.tickCounter = 0;
                 }
             }
         }
     }
 
     @EventTarget
-    public void method16248(TickEvent var1) {
+    public void onTick(TickEvent event) {
         if (this.isEnabled()) {
-            if (this.field23551 < 20) {
-                this.field23551++;
+            if (this.tickCounter < 20) {
+                this.tickCounter++;
             }
 
-            int var4 = -1;
+            int gappleSlot = -1;
             if (mc.player.getHealth() <= this.access().getNumberValueBySettingName("Health") * 2.0F) {
-                var4 = ((AutoGapple) this.access()).method16749(false);
-                if (this.field23549 == -1 && this.field23551 >= 20 && var4 != -1) {
-                    this.field23549 = 0;
-                    this.field23551 = 0;
+                gappleSlot = ((AutoGapple) this.access()).findGappleSlot(false);
+                if (this.currentGappleSlot == -1 && this.tickCounter >= 20 && gappleSlot != -1) {
+                    this.currentGappleSlot = 0;
+                    this.tickCounter = 0;
                 }
             }
 
-            if (var4 >= 0 || this.field23549 != -1) {
-                if (this.field23549 >= 0) {
-                    this.field23549++;
-                    if (this.field23549 != 1) {
-                        if (this.field23549 > 1
+            if (gappleSlot >= 0 || this.currentGappleSlot != -1) {
+                if (this.currentGappleSlot >= 0) {
+                    this.currentGappleSlot++;
+                    if (this.currentGappleSlot != 1) {
+                        if (this.currentGappleSlot > 1
                                 && mc.player.getHeldItem(Hand.MAIN_HAND).getItem() != Items.GOLDEN_APPLE
                                 && mc.player.getHeldItem(Hand.MAIN_HAND).getItem() != Items.ENCHANTED_GOLDEN_APPLE) {
-                            mc.player.inventory.currentItem = this.field23550;
-                            this.field23550 = -1;
-                            this.field23549 = -1;
+                            mc.player.inventory.currentItem = this.hotbarSwitchDelay;
+                            this.hotbarSwitchDelay = -1;
+                            this.currentGappleSlot = -1;
                         }
                     } else {
-                        this.field23550 = mc.player.inventory.currentItem;
-                        mc.player.inventory.currentItem = var4;
+                        this.hotbarSwitchDelay = mc.player.inventory.currentItem;
+                        mc.player.inventory.currentItem = gappleSlot;
                         mc.playerController.syncCurrentPlayItem();
                         mc.playerController.processRightClick(mc.player, mc.world, Hand.MAIN_HAND);
                     }
@@ -96,18 +96,18 @@ public class BasicAutoGapple extends Module {
     }
 
     @EventTarget
-    public void method16249(RecievePacketEvent var1) {
-        if (this.isEnabled() && this.field23549 > 1) {
-            Packet var4 = var1.getPacket();
-            if (var4 instanceof SEntityMetadataPacket) {
-                SEntityMetadataPacket var5 = (SEntityMetadataPacket) var4;
-                if (var5.getEntityId() == mc.player.getEntityId()) {
-                    for (EntityDataManager.DataEntry var7 : var5.getDataManagerEntries()) {
-                        DataParameter var8 = var7.method38447();
-                        if (var8.method35015() == 14) {
-                            mc.player.inventory.currentItem = this.field23550;
-                            this.field23550 = -1;
-                            this.field23549 = -1;
+    public void onReceivePacket(RecievePacketEvent event) {
+        if (this.isEnabled() && this.currentGappleSlot > 1) {
+            Packet packet = event.getPacket();
+            if (packet instanceof SEntityMetadataPacket) {
+                SEntityMetadataPacket metadataPacket = (SEntityMetadataPacket) packet;
+                if (metadataPacket.getEntityId() == mc.player.getEntityId()) {
+                    for (EntityDataManager.DataEntry<?> dataEntry : metadataPacket.getDataManagerEntries()) {
+                        DataParameter<?> parameter = dataEntry.getKey();
+                        if (parameter.getId() == 14) {
+                            mc.player.inventory.currentItem = this.hotbarSwitchDelay;
+                            this.hotbarSwitchDelay = -1;
+                            this.currentGappleSlot = -1;
                         }
                     }
                 }

@@ -1,6 +1,7 @@
-package mapped;
+package net.minecraft.potion;
 
 import com.google.common.collect.ComparisonChain;
+import mapped.Effect;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.nbt.CompoundNBT;
 import org.apache.logging.log4j.LogManager;

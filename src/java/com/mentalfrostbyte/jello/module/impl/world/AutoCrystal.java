@@ -382,7 +382,7 @@ public class AutoCrystal extends PremiumModule {
                         mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacketState.field14279));
                     }
 
-                    InvManagerUtils.method25873(var5, 8);
+                    InvManagerUtils.moveItemToHotbar(var5, 8);
                     mc.getConnection().sendPacket(new CCloseWindowPacket(-1));
                     return 5;
                 }

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.registry.Registry;
 
 public class Class8137 {

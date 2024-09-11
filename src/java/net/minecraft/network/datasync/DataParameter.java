@@ -11,7 +11,7 @@ public class DataParameter<T> {
       this.field42713 = var2;
    }
 
-   public int method35015() {
+   public int getId() {
       return this.field42712;
    }
 

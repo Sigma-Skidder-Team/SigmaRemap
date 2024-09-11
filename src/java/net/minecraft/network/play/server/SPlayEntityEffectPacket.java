@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.EffectInstance;
+import net.minecraft.potion.EffectInstance;
 import mapped.Effect;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;

@@ -12,6 +12,7 @@ import mapped.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.Hand;
 
 import java.util.ArrayList;
@@ -121,7 +122,7 @@ public class AutoPotion extends Module {
             if (mc.player.container.getSlot(var8).getHasStack()) {
                 ItemStack var9 = mc.player.container.getSlot(var8).getStack();
                 if (var9.getItem() instanceof Class3323) {
-                    List<EffectInstance> var10 = InvManagerUtils.method25858(var9);
+                    List<EffectInstance> var10 = InvManagerUtils.getPotionEffects(var9);
                     int var11 = this.method16633(var10);
                     if (var10 != null && !var10.isEmpty() && (this.getBooleanValueFromSetttingName("Custom potion") || var11 == 1)) {
                         for (EffectInstance var13 : var10) {
@@ -172,7 +173,7 @@ public class AutoPotion extends Module {
         if (var6 != -1) {
             if (var6 < 36) {
                 if (Client.getInstance().getPlayerTracker().method31333() > 2) {
-                    InvManagerUtils.method25873(var6, var2);
+                    InvManagerUtils.moveItemToHotbar(var6, var2);
                 }
             } else {
                 this.field23808 = 0;

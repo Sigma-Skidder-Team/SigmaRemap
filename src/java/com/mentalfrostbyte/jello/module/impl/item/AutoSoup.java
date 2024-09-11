@@ -222,7 +222,7 @@ public class AutoSoup extends Module {
                 if (var4.getItem() == Items.field37222) {
                     for (int var13 = 36; var13 < 45; var13++) {
                         if (mc.player.container.getSlot(var13).getStack().getItem() == Items.field37836) {
-                            InvManagerUtils.method25873(13, var13 - 36);
+                            InvManagerUtils.moveItemToHotbar(13, var13 - 36);
                             return 13;
                         }
                     }
@@ -233,7 +233,7 @@ public class AutoSoup extends Module {
                     if (var4.getItem() == Items.field37222) {
                         for (int var6 = 36; var6 < 45; var6++) {
                             if (mc.player.container.getSlot(var6).getStack().getItem() == Items.field37836) {
-                                InvManagerUtils.method25873(var14, var6 - 36);
+                                InvManagerUtils.moveItemToHotbar(var14, var6 - 36);
                                 return -1;
                             }
                         }
@@ -242,7 +242,7 @@ public class AutoSoup extends Module {
 
                 for (int var15 = 36; var15 < 45; var15++) {
                     if (mc.player.container.getSlot(var15).getStack().getItem() == Items.field37836) {
-                        InvManagerUtils.method25873(13, var15 - 36);
+                        InvManagerUtils.moveItemToHotbar(13, var15 - 36);
                         return -1;
                     }
                 }

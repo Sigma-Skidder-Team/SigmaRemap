@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.EffectInstance;
 
 public class Class6076 extends Class6069 {
    private static final String[] field27316 = new String[]{"all", "undead", "arthropods"};

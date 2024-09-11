@@ -39,7 +39,7 @@ public class HypixelAutoGapple extends PremiumModule {
 
             if (this.field23681 == -1 && this.field23680 >= 20 && this.field23678 == -1) {
                 if (mc.player.getHealth() <= this.access().getNumberValueBySettingName("Health") * 2.0F && mc.player.getAbsorptionAmount() == 0.0F) {
-                    this.field23681 = ((AutoGapple) this.access()).method16749(false);
+                    this.field23681 = ((AutoGapple) this.access()).findGappleSlot(false);
                     if (this.field23681 >= 0) {
                         this.field23678 = 0;
                         this.field23680 = 0;
@@ -47,7 +47,7 @@ public class HypixelAutoGapple extends PremiumModule {
                 }
 
                 if (this.field23678 == -1 && this.getBooleanValueFromSetttingName("Fire resistance potions") && !mc.player.isPotionActive(Effect.method22287(12))) {
-                    this.field23681 = ((AutoGapple) this.access()).method16749(true);
+                    this.field23681 = ((AutoGapple) this.access()).findGappleSlot(true);
                     if (this.field23681 >= 0) {
                         this.field23678 = 0;
                         this.field23680 = 0;

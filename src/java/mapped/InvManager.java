@@ -274,7 +274,7 @@ public class InvManager extends PremiumModule {
                 ItemStack var6 = mc.player.container.getSlot(var5).getStack();
                 if (method16431(var6) && method16433(var6) > 0.0F && (var6.getItem() instanceof ItemSword || !this.getBooleanValueFromSetttingName("Sword"))) {
                     this.method16446(var2);
-                    InvManagerUtils.method25873(var5, var1 - 36);
+                    InvManagerUtils.moveItemToHotbar(var5, var1 - 36);
                     this.field23658.method27120();
                     break;
                 }
@@ -403,7 +403,7 @@ public class InvManager extends PremiumModule {
                     if (mc.player.container.getSlot(field23655).getHasStack()) {
                         if (!method16442(mc.player.container.getSlot(field23655).getStack())) {
                             this.method16446(var2);
-                            InvManagerUtils.method25873(var5, field23655 - 36);
+                            InvManagerUtils.moveItemToHotbar(var5, field23655 - 36);
                             this.field23658.method27120();
                             if (this.getNumberValueBySettingName("Delay") > 0.0F) {
                                 return;
@@ -411,7 +411,7 @@ public class InvManager extends PremiumModule {
                         }
                     } else {
                         this.method16446(var2);
-                        InvManagerUtils.method25873(var5, field23655 - 36);
+                        InvManagerUtils.moveItemToHotbar(var5, field23655 - 36);
                         this.field23658.method27120();
                         if (this.getNumberValueBySettingName("Delay") > 0.0F) {
                             return;
@@ -430,7 +430,7 @@ public class InvManager extends PremiumModule {
                     if (mc.player.container.getSlot(field23657).getHasStack()) {
                         if (!method16443(mc.player.container.getSlot(field23657).getStack())) {
                             this.method16446(var2);
-                            InvManagerUtils.method25873(var5, field23657 - 36);
+                            InvManagerUtils.moveItemToHotbar(var5, field23657 - 36);
                             this.field23658.method27120();
                             if (this.getNumberValueBySettingName("Delay") > 0.0F) {
                                 return;
@@ -438,7 +438,7 @@ public class InvManager extends PremiumModule {
                         }
                     } else {
                         this.method16446(var2);
-                        InvManagerUtils.method25873(var5, field23657 - 36);
+                        InvManagerUtils.moveItemToHotbar(var5, field23657 - 36);
                         this.field23658.method27120();
                         if (this.getNumberValueBySettingName("Delay") > 0.0F) {
                             return;
@@ -457,7 +457,7 @@ public class InvManager extends PremiumModule {
                     if (mc.player.container.getSlot(field23656).getHasStack()) {
                         if (!method16444(mc.player.container.getSlot(field23656).getStack())) {
                             this.method16446(var2);
-                            InvManagerUtils.method25873(var5, field23656 - 36);
+                            InvManagerUtils.moveItemToHotbar(var5, field23656 - 36);
                             this.field23658.method27120();
                             if (this.getNumberValueBySettingName("Delay") > 0.0F) {
                                 return;
@@ -465,7 +465,7 @@ public class InvManager extends PremiumModule {
                         }
                     } else {
                         this.method16446(var2);
-                        InvManagerUtils.method25873(var5, field23656 - 36);
+                        InvManagerUtils.moveItemToHotbar(var5, field23656 - 36);
                         this.field23658.method27120();
                         if (this.getNumberValueBySettingName("Delay") > 0.0F) {
                             return;

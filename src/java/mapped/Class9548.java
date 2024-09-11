@@ -12,6 +12,7 @@ import java.util.Collection;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class9548 {

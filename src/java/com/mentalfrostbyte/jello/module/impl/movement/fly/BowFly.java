@@ -148,7 +148,7 @@ public class BowFly extends Module {
             if (mc.player.container.getSlot(var5).getHasStack()) {
                 ItemStack var6 = mc.player.container.getSlot(var5).getStack();
                 if (var6.getItem() == Items.BOW) {
-                    InvManagerUtils.method25873(var5, 7);
+                    InvManagerUtils.moveItemToHotbar(var5, 7);
                     return 7;
                 }
             }

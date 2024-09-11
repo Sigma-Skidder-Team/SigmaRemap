@@ -16,96 +16,82 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 
 public class PacketDumper extends Module {
-    public FileWriter field23460;
+    public FileWriter packetWriter;
 
     public PacketDumper() {
         super(ModuleCategory.MISC, "Packet dumper", "Dumps packets sent to and fro from the client and server");
 
         try {
-            File var3 = new File(Client.getInstance().getFile() + "/latest_packets.txt");
-            if (!var3.exists()) {
-                var3.createNewFile();
+            File packetLog = new File(Client.getInstance().getFile() + "/latest_packets.txt");
+            if (!packetLog.exists()) {
+                packetLog.createNewFile();
             }
 
-            this.field23460 = new FileWriter(var3);
-        } catch (IOException var4) {
-            var4.printStackTrace();
+            this.packetWriter = new FileWriter(packetLog);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    private String method16095(Field var1, Object var2) throws IllegalArgumentException, IllegalAccessException {
-        var1.setAccessible(true);
-        if (var1.getType() != int.class) {
-            if (var1.getType() != boolean.class) {
-                if (var1.getType() != float.class) {
-                    if (var1.getType() != double.class) {
-                        if (var1.getType() != long.class) {
-                            if (var1.getType() != char.class) {
-                                if (var1.getType() != byte.class) {
-                                    if (var1.getType() != short.class) {
-                                        return var1.get(var2) != null ? var1.get(var2).toString() : "null";
-                                    } else {
-                                        return Short.toString(var1.getShort(var2));
-                                    }
-                                } else {
-                                    return Byte.toString(var1.getByte(var2));
-                                }
-                            } else {
-                                return Character.toString(var1.getChar(var2));
-                            }
-                        } else {
-                            return Long.toString(var1.getLong(var2));
-                        }
-                    } else {
-                        return Double.toString(var1.getDouble(var2));
-                    }
-                } else {
-                    return Float.toString(var1.getFloat(var2));
-                }
-            } else {
-                return Boolean.toString(var1.getBoolean(var2));
-            }
+    private String extractFieldValue(Field field, Object packetInstance) throws IllegalArgumentException, IllegalAccessException {
+        field.setAccessible(true);
+        if (field.getType() == int.class) {
+            return Integer.toString(field.getInt(packetInstance));
+        } else if (field.getType() == boolean.class) {
+            return Boolean.toString(field.getBoolean(packetInstance));
+        } else if (field.getType() == float.class) {
+            return Float.toString(field.getFloat(packetInstance));
+        } else if (field.getType() == double.class) {
+            return Double.toString(field.getDouble(packetInstance));
+        } else if (field.getType() == long.class) {
+            return Long.toString(field.getLong(packetInstance));
+        } else if (field.getType() == char.class) {
+            return Character.toString(field.getChar(packetInstance));
+        } else if (field.getType() == byte.class) {
+            return Byte.toString(field.getByte(packetInstance));
+        } else if (field.getType() == short.class) {
+            return Short.toString(field.getShort(packetInstance));
         } else {
-            return Integer.toString(var1.getInt(var2));
+            return field.get(packetInstance) != null ? field.get(packetInstance).toString() : "null";
         }
     }
 
-    private void method16096(Packet var1, boolean var2) {
+    private void logPacket(Packet packet, boolean isSent) {
         try {
-            this.field23460.write((var2 ? "-->" : "<--") + "\t" + var1.getClass().getSimpleName() + "\n");
+            packetWriter.write((isSent ? "-->" : "<--") + "\t" + packet.getClass().getSimpleName() + "\n");
 
-            for (Field var8 : FieldUtils.getAllFields(var1.getClass())) {
+            for (Field field : FieldUtils.getAllFields(packet.getClass())) {
                 try {
-                    this.field23460.write("\t\t" + var8.getName() + "=" + this.method16095(var8, var1) + "\n");
-                } catch (Exception var10) {
-                    var10.printStackTrace();
+                    packetWriter.write("\t\t" + field.getName() + "=" + extractFieldValue(field, packet) + "\n");
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
                 }
             }
-        } catch (IOException var11) {
-            var11.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
     @EventTarget
-    private void method16097(SendPacketEvent var1) {
+    private void onPacketSend(SendPacketEvent event) {
         if (this.isEnabled()) {
-            this.method16096(var1.getPacket(), true);
+            logPacket(event.getPacket(), true);
         }
     }
 
     @EventTarget
-    private void method16098(RecievePacketEvent var1) {
+    private void onPacketReceive(RecievePacketEvent event) {
         if (this.isEnabled()) {
-            this.method16096(var1.getPacket(), false);
+            logPacket(event.getPacket(), false);
         }
     }
 
     @EventTarget
-    private void method16099(EventWritter var1) {
+    private void onShutdown(EventWritter event) {
         try {
-            this.field23460.close();
-        } catch (IOException var5) {
-            var5.printStackTrace();
+            packetWriter.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

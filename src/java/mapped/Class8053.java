@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import net.minecraft.potion.EffectInstance;
 
 public class Class8053 {
    private final Class8840 field34583;

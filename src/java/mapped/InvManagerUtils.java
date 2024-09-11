@@ -8,6 +8,7 @@ import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.network.play.client.CClickWindowPacket;
+import net.minecraft.potion.EffectInstance;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -532,7 +533,7 @@ public class InvManagerUtils {
       return var3;
    }
 
-   public static List<EffectInstance> method25858(ItemStack var0) {
+   public static List<EffectInstance> getPotionEffects(ItemStack var0) {
       if (var0 != null) {
          return var0.getItem() instanceof Class3323 ? Class9741.method38176(var0) : null;
       } else {
@@ -545,7 +546,7 @@ public class InvManagerUtils {
    }
 
    public static float method25860(ItemStack var0) {
-      List<EffectInstance> var3 = method25858(var0);
+      List<EffectInstance> var3 = getPotionEffects(var0);
       if (var3 != null) {
          float var4 = 0.0F;
 
@@ -570,7 +571,7 @@ public class InvManagerUtils {
    }
 
    public static float method25861(ItemStack var0) {
-      List<EffectInstance> var3 = method25858(var0);
+      List<EffectInstance> var3 = getPotionEffects(var0);
       if (var3 != null) {
          float var4 = 0.0F;
 
@@ -719,13 +720,13 @@ public class InvManagerUtils {
       }
    }
 
-   public static void method25873(int var0, int var1) {
+   public static void moveItemToHotbar(int var0, int var1) {
       field33419.playerController.windowClickFixed(field33419.player.container.field25471, var0, var1, ClickType.field14696, field33419.player);
    }
 
    public static boolean method25874(ItemStack var0) {
       if (var0 != null && var0.getItem() instanceof Class3323) {
-         for (EffectInstance var4 : method25858(var0)) {
+         for (EffectInstance var4 : getPotionEffects(var0)) {
             if (var4.getPotion() == Effects.POISON
                || var4.getPotion() == Effects.INSTANT_DAMAGE
                || var4.getPotion() == Effects.SLOWNESS
