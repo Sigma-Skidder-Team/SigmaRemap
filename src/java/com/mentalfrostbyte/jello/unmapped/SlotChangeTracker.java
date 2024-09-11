@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.unmapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.client.Minecraft;
 
@@ -19,7 +19,7 @@ public class SlotChangeTracker {
    }
 
    @EventTarget
-   private void method33237(RecievePacketEvent var1) {
+   private void method33237(ReceivePacketEvent var1) {
       if (var1.getPacket() instanceof SSetSlotPacket) {
          SSetSlotPacket var4 = (SSetSlotPacket)var1.getPacket();
          if (var4.method17303() != 0) {

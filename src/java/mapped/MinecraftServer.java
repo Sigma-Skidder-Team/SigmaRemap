@@ -299,7 +299,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
 
             for (int var18 = 0; var18 < 1024; var18++) {
                if (var20 > -16 && var20 <= 16 && var21 > -16 && var21 <= 16) {
-                  BlockPos var19 = Class6878.method20941(var0, new ChunkPos(var11.field32174 + var20, var11.field32175 + var21), var12);
+                  BlockPos var19 = Class6878.method20941(var0, new ChunkPos(var11.x + var20, var11.z + var21), var12);
                   if (var19 != null) {
                      var1.method20041(var19, 0.0F);
                      break;

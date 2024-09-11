@@ -95,9 +95,9 @@ public abstract class ChunkGenerator {
       Class2420 var9 = new Class2420();
       byte var10 = 8;
       ChunkPos var11 = var4.method7072();
-      int var12 = var11.field32174;
-      int var13 = var11.field32175;
-      Class7478 var14 = this.field24985.method7005(var11.field32174 << 2, 0, var11.field32175 << 2).method32507();
+      int var12 = var11.x;
+      int var13 = var11.z;
+      Class7478 var14 = this.field24985.method7005(var11.x << 2, 0, var11.z << 2).method32507();
       BitSet var15 = ((Class1672)var4).method7117(var5);
 
       for (int var16 = var12 - 8; var16 <= var12 + 8; var16++) {
@@ -130,7 +130,7 @@ public abstract class ChunkGenerator {
             BlockPos.Mutable var11 = new BlockPos.Mutable();
 
             for (ChunkPos var13 : this.field24989) {
-               var11.method8372((var13.field32174 << 4) + 8, 32, (var13.field32175 << 4) + 8);
+               var11.method8372((var13.x << 4) + 8, 32, (var13.z << 4) + 8);
                double var14 = var11.method8318(var3);
                if (var8 != null) {
                   if (var14 < var9) {
@@ -196,7 +196,7 @@ public abstract class ChunkGenerator {
 
    public void method17825(DynamicRegistries var1, Class7480 var2, IChunk var3, TemplateManager var4, long var5) {
       ChunkPos var9 = var3.method7072();
-      Biome var10 = this.field24985.method7005((var9.field32174 << 2) + 2, 0, (var9.field32175 << 2) + 2);
+      Biome var10 = this.field24985.method7005((var9.x << 2) + 2, 0, (var9.z << 2) + 2);
       this.method17826(Class9438.field43844, var1, var2, var3, var4, var5, var9, var10);
 
       for (Supplier var12 : var10.method32507().method24278()) {
@@ -216,15 +216,15 @@ public abstract class ChunkGenerator {
 
    public void method17827(ISeedReader var1, Class7480 var2, IChunk var3) {
       byte var6 = 8;
-      int var7 = var3.method7072().field32174;
-      int var8 = var3.method7072().field32175;
+      int var7 = var3.method7072().x;
+      int var8 = var3.method7072().z;
       int var9 = var7 << 4;
       int var10 = var8 << 4;
       Class2002 var11 = Class2002.method8391(var3.method7072(), 0);
 
       for (int var12 = var7 - 8; var12 <= var7 + 8; var12++) {
          for (int var13 = var8 - 8; var13 <= var8 + 8; var13++) {
-            long var14 = ChunkPos.method24353(var12, var13);
+            long var14 = ChunkPos.asLong(var12, var13);
 
             for (Class5444 var17 : var1.getChunk(var12, var13).method7074().values()) {
                try {

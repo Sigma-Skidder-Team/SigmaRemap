@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.unmapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import net.minecraft.network.play.server.SKeepAlivePacket;
@@ -57,7 +57,7 @@ public class PlayerStateTracker {
    }
 
    @EventTarget
-   private void method31326(RecievePacketEvent var1) {
+   private void method31326(ReceivePacketEvent var1) {
       if (var1.getPacket() instanceof SKeepAlivePacket) {
          long var4 = System.currentTimeMillis() - this.lastMilis;
          this.ping = Math.min(1.05F, Math.max(0.0F, 15000.0F / (float)var4));

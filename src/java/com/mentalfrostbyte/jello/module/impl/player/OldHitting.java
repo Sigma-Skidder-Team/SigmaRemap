@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.player;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventHandAnimation;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
@@ -104,7 +104,7 @@ public class OldHitting extends Module {
     @EventTarget
     @LowerPriority
     @Class5631
-    private void method16021(RecievePacketEvent var1) {
+    private void method16021(ReceivePacketEvent var1) {
         if (this.isEnabled() || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x) {
             if (mc.player != null) {
                 if (var1.getPacket() instanceof SEntityEquipmentPacket) {

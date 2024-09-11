@@ -11,38 +11,43 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.entity.Entity;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class FightBot extends PremiumModule {
-    public ArrayList<Thread> field23644 = new ArrayList<Thread>();
-    public Entity field23645;
-    public Vector3d field23646;
+    public Entity targetEntity;
+    public Vector3d targetPosition;
 
     public FightBot() {
         super("FightBot", "Jello AI Fight Bot", ModuleCategory.WORLD);
     }
 
     @EventTarget
-    public void method16419(TickEvent var1) {
-        if (!this.isEnabled()) {
+    public void onTick(TickEvent var1) {
+        if (this.isEnabled()) {
+            this.updateTarget();
+            if (this.targetEntity != null) {
+
+            }
         }
     }
 
-    public List<Entity> method16420() {
-        ArrayList var3 = Lists.newArrayList(mc.world.method6835());
-        var3.remove(mc.player);
-        Iterator var4 = var3.iterator();
-
-        while (var4.hasNext()) {
-            Entity var5 = (Entity) var4.next();
-            if (!(var5 instanceof PlayerEntity) || Client.getInstance().getCombatManager().method29346(var5)) {
-                var4.remove();
-            }
+    private void updateTarget() {
+        List<Entity> potentialTargets = this.findEntities();
+        if (!potentialTargets.isEmpty()) {
+            this.targetEntity = potentialTargets.get(0);
+            this.targetPosition = this.targetEntity.getPositionVec();
+        } else {
+            this.targetEntity = null;
         }
+    }
 
-        List var6 = BlockUtil.method34548(var3);
-        return var6.size() <= 1 ? var6 : var6.subList(0, Math.min(3, var6.size() - 1));
+    private List<Entity> findEntities() {
+        List<Entity> entities = Lists.newArrayList(mc.world.getEntities());
+        entities.remove(mc.player);
+
+        entities.removeIf(entity -> !(entity instanceof PlayerEntity) || !Client.getInstance().getCombatManager().isValidTarget(entity));
+
+        List<Entity> validTargets = BlockUtil.getVisibleEntities(entities);
+        return validTargets.size() <= 1 ? validTargets : validTargets.subList(0, Math.min(3, validTargets.size() - 1));
     }
 }

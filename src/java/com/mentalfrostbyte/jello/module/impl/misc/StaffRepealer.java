@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.misc;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -29,7 +29,7 @@ public class StaffRepealer extends Module {
     }
 
     @EventTarget
-    private void method16184(RecievePacketEvent var1) {
+    private void method16184(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SEntityPacket) {
                 SEntityPacket var4 = (SEntityPacket) var1.getPacket();

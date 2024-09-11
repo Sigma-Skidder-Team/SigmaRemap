@@ -94,7 +94,7 @@ public class OmegaCraftTestFly extends Module {
     }
 
     @EventTarget
-    public void method16702(RecievePacketEvent event) {
+    public void method16702(ReceivePacketEvent event) {
         if (this.isEnabled()) {
             Packet<?> packet = event.getPacket();
             if (packet instanceof SPlayerPositionLookPacket) {

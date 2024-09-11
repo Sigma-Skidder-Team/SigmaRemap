@@ -22,7 +22,7 @@ public class Class5405 extends Class5404 {
    }
 
    public Chunk method16992(World var1, int var2, int var3) {
-      return this.field24089 != null && this.field24089.method7072().field32174 == var2 && this.field24089.method7072().field32175 == var3
+      return this.field24089 != null && this.field24089.method7072().x == var2 && this.field24089.method7072().z == var3
          ? this.field24089
          : (this.field24089 = var1.getChunk(var2, var3));
    }

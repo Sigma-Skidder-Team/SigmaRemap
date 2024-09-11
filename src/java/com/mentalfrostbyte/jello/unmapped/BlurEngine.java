@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.gui.GuiManager;
@@ -39,7 +39,7 @@ public class BlurEngine {
    }
 
    @EventTarget
-   public void method29972(RecievePacketEvent var1) {
+   public void method29972(ReceivePacketEvent var1) {
       if (var1.getPacket() instanceof SCloseWindowPacket) {
          ColorUtils.method17742();
       }

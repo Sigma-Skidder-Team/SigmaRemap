@@ -105,7 +105,7 @@ public class ServerChunkProvider extends Class1702 {
       } else {
          IProfiler var7 = this.field9275.getProfiler();
          var7.func_230035_c_("getChunk");
-         long var8 = ChunkPos.method24353(var1, var2);
+         long var8 = ChunkPos.asLong(var1, var2);
 
          for (int var10 = 0; var10 < 4; var10++) {
             if (var8 == this.field9284[var10] && var3 == this.field9285[var10]) {
@@ -136,7 +136,7 @@ public class ServerChunkProvider extends Class1702 {
    public Chunk method7343(int var1, int var2) {
       if (Thread.currentThread() == this.field9276) {
          this.field9275.getProfiler().func_230035_c_("getChunkNow");
-         long var5 = ChunkPos.method24353(var1, var2);
+         long var5 = ChunkPos.asLong(var1, var2);
 
          for (int var7 = 0; var7 < 4; var7++) {
             if (var5 == this.field9284[var7] && this.field9285[var7] == ChunkStatus.FULL) {
@@ -170,7 +170,7 @@ public class ServerChunkProvider extends Class1702 {
    }
 
    private void method7357() {
-      Arrays.fill(this.field9284, ChunkPos.field32173);
+      Arrays.fill(this.field9284, ChunkPos.SENTINEL);
       Arrays.fill(this.field9285, null);
       Arrays.fill(this.field9286, null);
    }
@@ -224,7 +224,7 @@ public class ServerChunkProvider extends Class1702 {
 
    @Override
    public IBlockReader method7344(int var1, int var2) {
-      long var5 = ChunkPos.method24353(var1, var2);
+      long var5 = ChunkPos.asLong(var1, var2);
       Class8641 var7 = this.method7354(var5);
       if (var7 != null) {
          int var8 = field9272.size() - 1;
@@ -268,7 +268,7 @@ public class ServerChunkProvider extends Class1702 {
 
    @Override
    public boolean method7351(Entity var1) {
-      long var4 = ChunkPos.method24353(MathHelper.floor(var1.getPosX()) >> 4, MathHelper.floor(var1.getPosZ()) >> 4);
+      long var4 = ChunkPos.asLong(MathHelper.floor(var1.getPosX()) >> 4, MathHelper.floor(var1.getPosZ()) >> 4);
       return this.method7364(var4, Class8641::method31041);
    }
 
@@ -279,7 +279,7 @@ public class ServerChunkProvider extends Class1702 {
 
    @Override
    public boolean method7353(BlockPos var1) {
-      long var4 = ChunkPos.method24353(var1.getX() >> 4, var1.getZ() >> 4);
+      long var4 = ChunkPos.asLong(var1.getX() >> 4, var1.getZ() >> 4);
       return this.method7364(var4, Class8641::method31040);
    }
 
@@ -396,7 +396,7 @@ public class ServerChunkProvider extends Class1702 {
    public void method7372(BlockPos var1) {
       int var4 = var1.getX() >> 4;
       int var5 = var1.getZ() >> 4;
-      Class8641 var6 = this.method7354(ChunkPos.method24353(var4, var5));
+      Class8641 var6 = this.method7354(ChunkPos.asLong(var4, var5));
       if (var6 != null) {
          var6.method31047(var1);
       }

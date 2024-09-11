@@ -96,9 +96,9 @@ public class Class6805<T> implements Class6802<T> {
    }
 
    public List<Class8269<T>> method20729(ChunkPos var1, boolean var2, boolean var3) {
-      int var6 = (var1.field32174 << 4) - 2;
+      int var6 = (var1.x << 4) - 2;
       int var7 = var6 + 16 + 2;
-      int var8 = (var1.field32175 << 4) - 2;
+      int var8 = (var1.z << 4) - 2;
       int var9 = var8 + 16 + 2;
       return this.method20730(new Class9764(var6, 0, var8, var7, 256, var9), var2, var3);
    }

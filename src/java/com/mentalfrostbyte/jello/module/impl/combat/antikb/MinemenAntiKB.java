@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.combat.antikb;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
@@ -58,7 +58,7 @@ public class MinemenAntiKB extends Module {
     }
 
     @EventTarget
-    private void method16699(RecievePacketEvent var1) {
+    private void method16699(ReceivePacketEvent var1) {
         if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
             SEntityVelocityPacket var5 = (SEntityVelocityPacket) var1.getPacket();
             if (var5.getEntityID() == mc.player.getEntityId() && var5.motionY < 0 && mc.player.onGround) {

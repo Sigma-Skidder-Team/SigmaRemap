@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.render;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.server.SUpdateBossInfoPacket;
@@ -13,7 +13,7 @@ public class NoServerInfo extends Module {
     }
 
     @EventTarget
-    private void method16245(RecievePacketEvent var1) {
+    private void method16245(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SUpdateBossInfoPacket) {
                 SUpdateBossInfoPacket var4 = (SUpdateBossInfoPacket) var1.getPacket();

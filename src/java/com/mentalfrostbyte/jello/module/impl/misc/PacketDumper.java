@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.misc;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventWritter;
 import com.mentalfrostbyte.jello.module.Module;
@@ -80,7 +80,7 @@ public class PacketDumper extends Module {
     }
 
     @EventTarget
-    private void onPacketReceive(RecievePacketEvent event) {
+    private void onPacketReceive(ReceivePacketEvent event) {
         if (this.isEnabled()) {
             logPacket(event.getPacket(), false);
         }

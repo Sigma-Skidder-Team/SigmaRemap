@@ -37,8 +37,8 @@ public class Class5130 implements Class5119 {
 
                for (int var23 = 0; var23 < 16; var23++) {
                   for (int var24 = 0; var24 < 16; var24++) {
-                     int var25 = var21.field32174 * 16 + var23;
-                     int var26 = var21.field32175 * 16 + var24;
+                     int var25 = var21.x * 16 + var23;
+                     int var26 = var21.z * 16 + var24;
                      float var27 = (float)((double)((float)var11.method6736(var20, var25, var26) + (float)var20.ordinal() * 0.09375F) - var5);
                      WorldRenderer.method900(
                         var14,

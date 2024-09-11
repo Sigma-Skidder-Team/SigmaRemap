@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.movement.phase;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventPushBlock;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
@@ -117,7 +117,7 @@ public class NCPPhase extends PremiumModule {
     }
 
     @EventTarget
-    private void method16429(RecievePacketEvent var1) {
+    private void method16429(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SPlayerPositionLookPacket) {

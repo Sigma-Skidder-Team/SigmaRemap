@@ -268,7 +268,7 @@ public class Test extends Module {
     }
 
     @EventTarget
-    public void method16559(RecievePacketEvent var1) {
+    public void method16559(ReceivePacketEvent var1) {
         Packet var4 = var1.getPacket();
         if (this.isEnabled()) {
             if (!(var4 instanceof SEntityPacket)) {
@@ -349,7 +349,7 @@ public class Test extends Module {
                             if (!(mc.player.getDistance(var6) > var1)) {
                                 if (mc.player.canAttack((LivingEntity) var6)) {
                                     if (!(var6 instanceof ArmorStandEntity) && !(var6 instanceof PlayerEntity)) {
-                                        if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var6)) {
+                                        if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(var6)) {
                                             var5.remove();
                                         } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var6)) {
                                             var5.remove();
@@ -401,7 +401,7 @@ public class Test extends Module {
                             if (!(mc.player.getDistance(var7) > var1)) {
                                 if (mc.player.canAttack((LivingEntity) var7)) {
                                     if (!(var7 instanceof ArmorStandEntity)) {
-                                        if (var7 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var7)) {
+                                        if (var7 instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(var7)) {
                                             var6.remove();
                                         } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var7)) {
                                             var6.remove();

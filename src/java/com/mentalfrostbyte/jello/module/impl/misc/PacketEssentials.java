@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.misc;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
@@ -15,7 +15,7 @@ public class PacketEssentials extends Module {
     }
 
     @EventTarget
-    private void method16709(RecievePacketEvent var1) {
+    private void method16709(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (!(var1.getPacket() instanceof SSpawnObjectPacket)) {
                 if (!(var1.getPacket() instanceof SSpawnMobPacket)) {

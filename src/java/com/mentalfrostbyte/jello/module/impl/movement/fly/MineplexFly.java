@@ -181,7 +181,7 @@ public class MineplexFly extends PremiumModule {
     }
 
     @EventTarget
-    public void method16459(RecievePacketEvent var1) {
+    public void method16459(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23675 = true;

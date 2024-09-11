@@ -271,7 +271,7 @@ public class Class1108 extends MobEntity implements Class1008 {
          }
 
          ChunkPos var7 = new ChunkPos(var3);
-         boolean var8 = Class2420.method10375(var7.field32174, var7.field32175, ((ISeedReader)var1).method6967(), 987234911L).nextInt(10) == 0;
+         boolean var8 = Class2420.method10375(var7.x, var7.z, ((ISeedReader)var1).method6967(), 987234911L).nextInt(10) == 0;
          if (var4.nextInt(10) == 0 && var8 && var3.getY() < 40) {
             return method4264(var0, var1, var2, var3, var4);
          }

@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.world;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -67,7 +67,7 @@ public class AntiVanish extends Module {
     }
 
     @EventTarget
-    private void method16863(RecievePacketEvent var1) {
+    private void method16863(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (mc.getConnection() != null && var1.getPacket() instanceof SPlayerListItemPacket) {
                 SPlayerListItemPacket var4 = (SPlayerListItemPacket) var1.getPacket();

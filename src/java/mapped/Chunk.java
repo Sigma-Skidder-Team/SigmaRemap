@@ -307,8 +307,8 @@ public class Chunk implements IChunk {
       this.field9126 = true;
       int var4 = MathHelper.floor(var1.getPosX() / 16.0);
       int var5 = MathHelper.floor(var1.getPosZ() / 16.0);
-      if (var4 != this.field9132.field32174 || var5 != this.field9132.field32175) {
-         field9110.warn("Wrong location! ({}, {}) should be ({}, {}), {}", var4, var5, this.field9132.field32174, this.field9132.field32175, var1);
+      if (var4 != this.field9132.x || var5 != this.field9132.z) {
+         field9110.warn("Wrong location! ({}, {}) should be ({}, {}), {}", var4, var5, this.field9132.x, this.field9132.z, var1);
          var1.removed = true;
       }
 
@@ -322,9 +322,9 @@ public class Chunk implements IChunk {
       }
 
       var1.addedToChunk = true;
-      var1.chunkCoordX = this.field9132.field32174;
+      var1.chunkCoordX = this.field9132.x;
       var1.chunkCoordY = var6;
-      var1.chunkCoordZ = this.field9132.field32175;
+      var1.chunkCoordZ = this.field9132.z;
       this.field9120[var6].add(var1);
    }
 
@@ -595,7 +595,7 @@ public class Chunk implements IChunk {
    @Override
    public Stream<BlockPos> method7088() {
       return StreamSupport.<BlockPos>stream(
-            BlockPos.method8364(this.field9132.method24356(), 0, this.field9132.method24357(), this.field9132.method24358(), 255, this.field9132.method24359())
+            BlockPos.method8364(this.field9132.getX(), 0, this.field9132.getZ(), this.field9132.method24358(), 255, this.field9132.method24359())
                .spliterator(),
             false
          )

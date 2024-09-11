@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.combat.criticals;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
@@ -25,7 +25,7 @@ public class HoverCriticals extends Module {
     }
 
     @EventTarget
-    public void method16921(RecievePacketEvent var1) {
+    public void method16921(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SPlayerPositionLookPacket) {

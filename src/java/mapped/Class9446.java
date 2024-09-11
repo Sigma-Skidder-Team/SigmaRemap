@@ -141,7 +141,7 @@ public class Class9446 {
    private static void method36313(WorldRenderer var0) {
       ClientWorld var3 = var0.method930();
       if (var3 != null) {
-         for (Entity var5 : var3.method6835()) {
+         for (Entity var5 : var3.getEntities()) {
             int var6 = method36319(var5);
             if (var6 <= 0) {
                int var7 = var5.getEntityId();

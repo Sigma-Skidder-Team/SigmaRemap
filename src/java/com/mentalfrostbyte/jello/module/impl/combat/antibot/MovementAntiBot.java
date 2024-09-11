@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.combat.antibot;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
@@ -55,7 +55,7 @@ public class MovementAntiBot extends Class7249 {
    }
 
    @EventTarget
-   private void method22753(RecievePacketEvent var1) {
+   private void method22753(ReceivePacketEvent var1) {
       if (field31119.player != null && this.field31116 != null) {
          if (field31119.player.ticksExisted < 10) {
             this.field31116.clear();

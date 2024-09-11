@@ -29,9 +29,9 @@ public class WorldBorder {
 
    public boolean method24524(ChunkPos var1) {
       return (double)var1.method24358() > this.method24530()
-         && (double)var1.method24356() < this.method24532()
+         && (double)var1.getX() < this.method24532()
          && (double)var1.method24359() > this.method24531()
-         && (double)var1.method24357() < this.method24533();
+         && (double)var1.getZ() < this.method24533();
    }
 
    public boolean method24525(AxisAlignedBB var1) {

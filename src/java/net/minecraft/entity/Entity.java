@@ -2260,7 +2260,7 @@ public abstract class Entity implements INameable, ICommandSource {
       if (this.world instanceof ServerWorld) {
          ChunkPos var9 = new ChunkPos(new BlockPos(var1, var3, var5));
          ((ServerWorld)this.world).getChunkProvider().registerTicket(Class8561.field38486, var9, 0, this.getEntityId());
-         this.world.getChunk(var9.field32174, var9.field32175);
+         this.world.getChunk(var9.x, var9.z);
          this.setPositionAndUpdate(var1, var3, var5);
       }
    }

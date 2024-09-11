@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.misc;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
@@ -70,7 +70,7 @@ public class Unstuck extends Module {
     }
 
     @EventTarget
-    public void method16288(RecievePacketEvent var1) {
+    public void method16288(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (mc.player != null) {
                 if (var1.getPacket() instanceof SPlayerPositionLookPacket && !ColorUtils.method17730(mc.player, 0.3F) && mc.player.ticksExisted > 10) {

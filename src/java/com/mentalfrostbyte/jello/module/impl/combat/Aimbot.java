@@ -42,7 +42,7 @@ public class Aimbot extends ModuleWithModuleSettings {
                                     if (!(var7 instanceof ArmorStandEntity)) {
                                         if (!this.getBooleanValueFromSetttingName("Players") && var7 instanceof PlayerEntity) {
                                             var6.remove();
-                                        } else if (var7 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var7)) {
+                                        } else if (var7 instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(var7)) {
                                             var6.remove();
                                         } else if (!this.getBooleanValueFromSetttingName("Invisible") && var7.isInvisible()) {
                                             var6.remove();

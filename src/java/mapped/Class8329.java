@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
@@ -66,7 +66,7 @@ public class Class8329 {
 
    @EventTarget
    @Class5631
-   public void method29203(RecievePacketEvent var1) {
+   public void method29203(ReceivePacketEvent var1) {
       if (!ColorUtils.method17720() && ColorUtils.method17718()) {
          Packet var4 = var1.getPacket();
          if (!(var4 instanceof SKeepAlivePacket) && var4 instanceof SConfirmTransactionPacket) {

@@ -22,7 +22,7 @@ public final class Class1696 implements AutoCloseable {
    }
 
    private Class1692 method7295(ChunkPos var1) throws IOException {
-      long var4 = ChunkPos.method24353(var1.method24360(), var1.method24361());
+      long var4 = ChunkPos.asLong(var1.method24360(), var1.method24361());
       Class1692 var6 = (Class1692)this.field9235.getAndMoveToFirst(var4);
       if (var6 == null) {
          if (this.field9235.size() >= 256) {

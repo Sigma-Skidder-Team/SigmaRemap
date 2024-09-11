@@ -1362,7 +1362,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
    public void method2831(ChunkPos var1) {
       if (this.isAlive()) {
-         this.field4855.sendPacket(new SUnloadChunkPacket(var1.field32174, var1.field32175));
+         this.field4855.sendPacket(new SUnloadChunkPacket(var1.x, var1.z));
       }
    }
 

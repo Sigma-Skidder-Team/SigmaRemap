@@ -104,7 +104,7 @@ public class ShadowESP extends Module {
             GL11.glEnable(2896);
         }
 
-        for (Entity var10 : mc.world.method6835()) {
+        for (Entity var10 : mc.world.getEntities()) {
             if (this.method16611(var10)) {
                 GL11.glPushMatrix();
                 Vector3d var11 = mc.gameRenderer.getActiveRenderInfo().getPos();
@@ -173,7 +173,7 @@ public class ShadowESP extends Module {
         if (var1 instanceof LivingEntity) {
             if (var1 instanceof PlayerEntity) {
                 if (!(var1 instanceof ClientPlayerEntity)) {
-                    return !var1.isInvisible() && !Client.getInstance().getCombatManager().method29346(var1);
+                    return !var1.isInvisible() && !Client.getInstance().getCombatManager().isValidTarget(var1);
                 } else {
                     return false;
                 }

@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.movement.fly;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
@@ -73,7 +73,7 @@ public class HawkFly extends Module {
     }
 
     @EventTarget
-    public void method16054(RecievePacketEvent var1) {
+    public void method16054(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SPlayerPositionLookPacket) {

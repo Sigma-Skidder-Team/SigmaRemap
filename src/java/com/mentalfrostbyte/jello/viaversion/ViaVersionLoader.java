@@ -189,7 +189,7 @@ public class ViaVersionLoader {
 
    @EventTarget
    @HigestPriority
-   public void method23349(RecievePacketEvent var1) {
+   public void method23349(ReceivePacketEvent var1) {
       if (!Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).isEnabled() && JelloPortal.getFakeInvStatus() != ViaVerList._1_8_x.getVersionNumber()) {
          if (!field31493.isEmpty()) {
             field31493.clear();

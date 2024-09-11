@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.render.jello;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
@@ -42,7 +42,7 @@ public class Waypoints extends Module {
     }
 
     @EventTarget
-    public void method16275(RecievePacketEvent var1) {
+    public void method16275(ReceivePacketEvent var1) {
         if (mc.world != null) {
             if (!(var1.getPacket() instanceof SDestroyEntitiesPacket)) {
                 if (!(var1.getPacket() instanceof SSpawnObjectPacket)) {

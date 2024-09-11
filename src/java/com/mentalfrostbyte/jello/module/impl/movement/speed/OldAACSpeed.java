@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.movement.speed;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.event.impl.JumpEvent;
 import com.mentalfrostbyte.jello.module.Module;
@@ -93,7 +93,7 @@ public class OldAACSpeed extends Module {
     }
 
     @EventTarget
-    public void method16228(RecievePacketEvent var1) {
+    public void method16228(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23537 = 0;

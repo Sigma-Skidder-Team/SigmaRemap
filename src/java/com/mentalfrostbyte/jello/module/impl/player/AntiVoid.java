@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.player;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
@@ -93,7 +93,7 @@ public class AntiVoid extends Module {
     }
 
     @EventTarget
-    private void method16666(RecievePacketEvent var1) {
+    private void method16666(ReceivePacketEvent var1) {
         if (this.isEnabled() && this.field23839 != 0) {
             if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23839 = 0;

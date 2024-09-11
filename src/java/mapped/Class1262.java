@@ -467,7 +467,7 @@ public class Class1262 extends AbstractGui {
          ServerWorld var3 = this.method5883();
          if (var3 != null) {
             this.field6671 = var3.getChunkProvider()
-               .method7358(this.field6669.field32174, this.field6669.field32175, ChunkStatus.FULL, false)
+               .method7358(this.field6669.x, this.field6669.z, ChunkStatus.FULL, false)
                .<Chunk>thenApply(var0 -> (Chunk)var0.map(var0x -> (Chunk)var0x, var0x -> null));
          }
 
@@ -481,7 +481,7 @@ public class Class1262 extends AbstractGui {
 
    private Chunk method5887() {
       if (this.field6670 == null) {
-         this.field6670 = this.field6665.world.getChunk(this.field6669.field32174, this.field6669.field32175);
+         this.field6670 = this.field6665.world.getChunk(this.field6669.x, this.field6669.z);
       }
 
       return this.field6670;

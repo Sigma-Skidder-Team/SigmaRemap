@@ -602,13 +602,13 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleChunkData(SChunkDataPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      int var4 = var1.method17378();
-      int var5 = var1.method17379();
+      int var4 = var1.getChunkX();
+      int var5 = var1.getChunkZ();
       Class1684 var6 = var1.method17384() != null ? new Class1684(this.field23287.<Biome>getRegistry(Registry.BIOME_KEY), var1.method17384()) : null;
       Chunk var7 = this.field23273
          .getChunkProvider()
-         .method7400(var4, var5, var6, var1.method17374(), var1.method17382(), var1.method17380(), var1.method17381());
-      if (var7 != null && var1.method17381()) {
+         .method7400(var4, var5, var6, var1.method17374(), var1.method17382(), var1.method17380(), var1.isFullChunk());
+      if (var7 != null && var1.isFullChunk()) {
          this.field23273.method6850(var7);
       }
 

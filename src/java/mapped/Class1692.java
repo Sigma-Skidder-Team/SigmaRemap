@@ -91,7 +91,7 @@ public class Class1692 implements AutoCloseable {
    }
 
    private Path method7246(ChunkPos var1) {
-      String var4 = "c." + var1.field32174 + "." + var1.field32175 + ".mcc";
+      String var4 = "c." + var1.x + "." + var1.z + ".mcc";
       return this.field9219.resolve(var4);
    }
 

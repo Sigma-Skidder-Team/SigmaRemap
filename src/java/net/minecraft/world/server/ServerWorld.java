@@ -359,8 +359,8 @@ public class ServerWorld extends World implements ISeedReader {
    public void method6899(Chunk var1, int var2) {
       ChunkPos var5 = var1.method7072();
       boolean var6 = this.method6795();
-      int var7 = var5.method24356();
-      int var8 = var5.method24357();
+      int var7 = var5.getX();
+      int var8 = var5.getZ();
       IProfiler var9 = this.getProfiler();
       var9.startSection("thunder");
       if (var6 && this.method6794() && this.rand.nextInt(100000) == 0) {

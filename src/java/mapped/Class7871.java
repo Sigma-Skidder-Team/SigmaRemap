@@ -17,14 +17,14 @@ public class Class7871 {
    }
 
    public boolean method26390(ChunkPos var1) {
-      return var1.field32174 == this.field33730 && var1.field32175 == this.field33731;
+      return var1.x == this.field33730 && var1.z == this.field33731;
    }
 
    public int method26391(ChunkPos var1) {
       return (int)Math.sqrt(
          (double)(
-            (var1.field32174 - this.field33730) * (var1.field32174 - this.field33730)
-               + (var1.field32175 - this.field33731) * (var1.field32175 - this.field33731)
+            (var1.x - this.field33730) * (var1.x - this.field33730)
+               + (var1.z - this.field33731) * (var1.z - this.field33731)
          )
       );
    }

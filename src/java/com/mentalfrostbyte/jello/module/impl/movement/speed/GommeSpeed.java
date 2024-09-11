@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.movement.speed;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -36,7 +36,7 @@ public class GommeSpeed extends Module {
     }
 
     @EventTarget
-    public void method16301(RecievePacketEvent var1) {
+    public void method16301(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23582 = 0;

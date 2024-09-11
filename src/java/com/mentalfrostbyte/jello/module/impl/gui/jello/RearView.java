@@ -53,7 +53,7 @@ public class RearView extends PremiumModule {
                                 var1x -> var1x.getDistance(mc.player) < 12.0F
                                         && !this.method16448(var1x)
                                         && mc.player != var1x
-                                        && !Client.getInstance().getCombatManager().method29346(var1x)
+                                        && !Client.getInstance().getCombatManager().isValidTarget(var1x)
                         );
                 if (var4.isEmpty()) {
                     if (this.field23667 > 0) {

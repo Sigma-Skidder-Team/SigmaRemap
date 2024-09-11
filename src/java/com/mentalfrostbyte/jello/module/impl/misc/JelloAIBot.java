@@ -35,18 +35,18 @@ public class JelloAIBot extends Module {
     }
 
     public Entity method16193() {
-        ArrayList var3 = Lists.newArrayList(mc.world.method6835());
+        ArrayList var3 = Lists.newArrayList(mc.world.getEntities());
         var3.remove(mc.player);
         Iterator var4 = var3.iterator();
 
         while (var4.hasNext()) {
             Entity var5 = (Entity) var4.next();
-            if (!(var5 instanceof PlayerEntity) || Client.getInstance().getCombatManager().method29346(var5) || !ColorUtils.method17730(var5, 2.0F)) {
+            if (!(var5 instanceof PlayerEntity) || Client.getInstance().getCombatManager().isValidTarget(var5) || !ColorUtils.method17730(var5, 2.0F)) {
                 var4.remove();
             }
         }
 
-        List var6 = BlockUtil.method34548(var3);
+        List var6 = BlockUtil.getVisibleEntities(var3);
         return var6.size() != 0 ? (Entity) var6.get(0) : null;
     }
 

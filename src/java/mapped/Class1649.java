@@ -103,8 +103,8 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    private static double method6534(ChunkPos var0, Entity var1) {
-      double var4 = (double)(var0.field32174 * 16 + 8);
-      double var6 = (double)(var0.field32175 * 16 + 8);
+      double var4 = (double)(var0.x * 16 + 8);
+      double var6 = (double)(var0.z * 16 + 8);
       double var8 = var4 - var1.getPosX();
       double var10 = var6 - var1.getPosZ();
       return var8 * var8 + var10 * var10;
@@ -126,8 +126,8 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    private static int method6536(ChunkPos var0, int var1, int var2) {
-      int var5 = var0.field32174 - var1;
-      int var6 = var0.field32175 - var2;
+      int var5 = var0.x - var1;
+      int var6 = var0.z - var2;
       return Math.max(Math.abs(var5), Math.abs(var6));
    }
 
@@ -176,8 +176,8 @@ public class Class1649 extends Class1648 implements Class1650 {
 
    private CompletableFuture<Either<List<IChunk>, Class7022>> method6542(ChunkPos var1, int var2, IntFunction<ChunkStatus> var3) {
       List<CompletableFuture<Either<IChunk, Class7022>>> var6 = Lists.newArrayList();
-      int var7 = var1.field32174;
-      int var8 = var1.field32175;
+      int var7 = var1.x;
+      int var8 = var1.z;
 
       for (int var9 = -var2; var9 <= var2; var9++) {
          for (int var10 = -var2; var10 <= var2; var10++) {
@@ -461,8 +461,8 @@ public class Class1649 extends Class1648 implements Class1650 {
                   } catch (Exception var10) {
                      CrashReport var8 = CrashReport.makeCrashReport(var10, "Exception generating new chunk");
                      CrashReportCategory var9 = var8.makeCategory("Chunk to be generated");
-                     var9.addDetail("Location", String.format("%d,%d", var5.field32174, var5.field32175));
-                     var9.addDetail("Position hash", ChunkPos.method24353(var5.field32174, var5.field32175));
+                     var9.addDetail("Location", String.format("%d,%d", var5.x, var5.z));
+                     var9.addDetail("Position hash", ChunkPos.asLong(var5.x, var5.z));
                      var9.addDetail("Generator", this.field8959);
                      throw new ReportedException(var8);
                   }
@@ -607,7 +607,7 @@ public class Class1649 extends Class1648 implements Class1650 {
             this.method6553(var4, var5.method34303());
             return true;
          } catch (Exception var8) {
-            field8950.error("Failed to save chunk {},{}", var4.field32174, var4.field32175, var8);
+            field8950.error("Failed to save chunk {},{}", var4.x, var4.z, var8);
             return false;
          }
       }
@@ -717,8 +717,8 @@ public class Class1649 extends Class1648 implements Class1650 {
            Optional<IChunk> var9 = Optional.ofNullable(var8.method31045());
            Optional<Chunk> var10 = var9.flatMap(var0 -> !(var0 instanceof Chunk) ? Optional.empty() : Optional.of((Chunk) var0));
            var4.method33938(
-                   var7.field32174,
-                   var7.field32175,
+                   var7.x,
+                   var7.z,
                    var8.method31057(),
                    var9.isPresent(),
                    var9.map(IChunk::method7080).orElse(null),
@@ -774,7 +774,7 @@ public class Class1649 extends Class1648 implements Class1650 {
             this.field8968.method35135(var9, var1);
          }
       } else {
-         this.field8972.method20897(ChunkPos.method24353(var7, var8), var1, var5);
+         this.field8972.method20897(ChunkPos.asLong(var7, var8), var1, var5);
          this.method6574(var1);
          if (!var5) {
             this.field8968.method35134(Class2002.method8392(var1), var1);
@@ -989,7 +989,7 @@ public class Class1649 extends Class1648 implements Class1650 {
 
        for (Class8998 var9 : this.field8973.values()) {
            Entity var10 = Class8998.method33247(var9);
-           if (var10 != var1 && var10.chunkCoordX == var3.method7072().field32174 && var10.chunkCoordZ == var3.method7072().field32175) {
+           if (var10 != var1 && var10.chunkCoordX == var3.method7072().x && var10.chunkCoordZ == var3.method7072().z) {
                var9.method33243(var1);
                if (var10 instanceof MobEntity && ((MobEntity) var10).method4297() != null) {
                    var6.add(var10);

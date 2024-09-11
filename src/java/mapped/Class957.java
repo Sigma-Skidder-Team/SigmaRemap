@@ -233,7 +233,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
    @Nullable
    private static BlockPos method3882(Chunk var0) {
       ChunkPos var3 = var0.method7072();
-      BlockPos var4 = new BlockPos(var3.method24356(), 30, var3.method24357());
+      BlockPos var4 = new BlockPos(var3.getX(), 30, var3.getZ());
       int var5 = var0.method7065() + 16 - 1;
       BlockPos var6 = new BlockPos(var3.method24358(), var5, var3.method24359());
       BlockPos var7 = null;

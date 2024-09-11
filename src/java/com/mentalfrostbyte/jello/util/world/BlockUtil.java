@@ -244,7 +244,7 @@ public class BlockUtil {
       return var0;
    }
 
-   public static List<Entity> method34548(List<Entity> var0) {
+   public static List<Entity> getVisibleEntities(List<Entity> var0) {
       Collections.sort(var0, new Class3576());
       return var0;
    }

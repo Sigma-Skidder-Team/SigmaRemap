@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.misc;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -31,7 +31,7 @@ public class Murderer extends Module {
     }
 
     @EventTarget
-    private void method16654(RecievePacketEvent var1) throws IOException {
+    private void method16654(ReceivePacketEvent var1) throws IOException {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SEntityEquipmentPacket) {
                 SEntityEquipmentPacket var4 = (SEntityEquipmentPacket) var1.getPacket();

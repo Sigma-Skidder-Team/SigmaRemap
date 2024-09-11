@@ -22,16 +22,16 @@ public final class Class8182 extends AbstractSpliterator<ChunkPos> {
    @Override
    public boolean tryAdvance(Consumer<? super ChunkPos> var1) {
       if (this.field35196 != null) {
-         int var4 = this.field35196.field32174;
-         int var5 = this.field35196.field32175;
-         if (var4 != this.field35198.field32174) {
+         int var4 = this.field35196.x;
+         int var5 = this.field35196.z;
+         if (var4 != this.field35198.x) {
             this.field35196 = new ChunkPos(var4 + this.field35200, var5);
          } else {
-            if (var5 == this.field35198.field32175) {
+            if (var5 == this.field35198.z) {
                return false;
             }
 
-            this.field35196 = new ChunkPos(this.field35197.field32174, var5 + this.field35199);
+            this.field35196 = new ChunkPos(this.field35197.x, var5 + this.field35199);
          }
       } else {
          this.field35196 = this.field35197;

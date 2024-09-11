@@ -80,8 +80,8 @@ public abstract class Class4178 {
    }
 
    public boolean method12917(ChunkPos var1, int var2) {
-      int var5 = var1.field32174 << 4;
-      int var6 = var1.field32175 << 4;
+      int var5 = var1.x << 4;
+      int var6 = var1.z << 4;
       return this.field20444.method38391(var5 - var2, var6 - var2, var5 + 15 + var2, var6 + 15 + var2);
    }
 

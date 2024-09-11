@@ -114,7 +114,7 @@ public class ClientWorld extends World {
       this.field9028.method20040(var1);
    }
 
-   public Iterable<Entity> method6835() {
+   public Iterable<Entity> getEntities() {
       return this.field9025.values();
    }
 
@@ -307,7 +307,7 @@ public class ClientWorld extends World {
          Entity var6 = (Entity)var5.getValue();
          int var7 = MathHelper.floor(var6.getPosX() / 16.0);
          int var8 = MathHelper.floor(var6.getPosZ() / 16.0);
-         if (var7 == var1.method7072().field32174 && var8 == var1.method7072().field32175) {
+         if (var7 == var1.method7072().x && var8 == var1.method7072().z) {
             var1.method7063(var6);
          }
       }

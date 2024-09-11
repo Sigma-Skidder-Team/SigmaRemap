@@ -42,7 +42,7 @@ public class Class8960 {
 
          for (int var5 = -1; var5 <= 1; var5++) {
             for (int var6 = -1; var6 <= 1; var6++) {
-               long var7 = ChunkPos.method24353(var1 + var5, var2 + var6);
+               long var7 = ChunkPos.asLong(var1 + var5, var2 + var6);
                this.field40482.remove(var7);
             }
          }
@@ -61,7 +61,7 @@ public class Class8960 {
    }
 
    private int[] method32734(int var1, int var2) {
-      long var5 = ChunkPos.method24353(var1, var2);
+      long var5 = ChunkPos.asLong(var1, var2);
       this.field40483.readLock().lock();
 
       int[] var7;

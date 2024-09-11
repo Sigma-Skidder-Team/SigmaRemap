@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.world.disabler;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
@@ -128,7 +128,7 @@ public class HypixelDisabler extends Module {
     }
 
     @EventTarget
-    public void method16901(RecievePacketEvent var1) {
+    public void method16901(ReceivePacketEvent var1) {
         if (mc.player != null && this.field23984) {
             if (this.isEnabled() || this.getBooleanValueFromSetttingName("Instant")) {
                 if (var1.getPacket() instanceof SPlayerPositionLookPacket) {

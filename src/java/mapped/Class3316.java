@@ -114,7 +114,7 @@ public class Class3316 extends Class3314 {
                                     var38 = Blocks.BEDROCK.method11579();
                                  } else {
                                     do {
-                                       var31.method8372(var25.method24356() + var33 + var26, --var37, var25.method24357() + var36 + var27);
+                                       var31.method8372(var25.getX() + var33 + var26, --var37, var25.getZ() + var36 + var27);
                                        var38 = var24.getBlockState(var31);
                                     } while (var38.method23394(var1, var31) == Class7210.field30947 && var37 > 0);
 
@@ -133,7 +133,7 @@ public class Class3316 extends Class3314 {
                                     }
                                  }
 
-                                 var3.method24601(var1, var25.method24356() + var33 + var26, var25.method24357() + var36 + var27);
+                                 var3.method24601(var1, var25.getX() + var33 + var26, var25.getZ() + var36 + var27);
                                  var29 += (double)var37 / (double)(var6 * var6);
                                  var23.add(var38.method23394(var1, var31));
                               }

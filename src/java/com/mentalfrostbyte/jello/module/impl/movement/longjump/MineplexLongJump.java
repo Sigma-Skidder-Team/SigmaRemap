@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.movement.longjump;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.event.impl.JumpEvent;
@@ -137,7 +137,7 @@ public class MineplexLongJump extends Module {
     }
 
     @EventTarget
-    public void method16624(RecievePacketEvent var1) {
+    public void method16624(ReceivePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
             if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23804 = -1;

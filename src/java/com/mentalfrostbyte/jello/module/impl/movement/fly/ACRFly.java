@@ -116,7 +116,7 @@ public class ACRFly extends Module {
     }
 
     @EventTarget
-    public void method16906(RecievePacketEvent var1) {
+    public void method16906(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SPlayerPositionLookPacket) {

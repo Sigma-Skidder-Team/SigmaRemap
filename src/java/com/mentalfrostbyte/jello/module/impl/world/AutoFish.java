@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.world;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
@@ -20,7 +20,7 @@ public class AutoFish extends Module {
     }
 
     @EventTarget
-    public void method16364(RecievePacketEvent var1) {
+    public void method16364(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SPlaySoundEffectPacket || var1.getPacket() instanceof SPlaySoundPacket) {
                 if (mc.player.getHeldItemMainhand() != null) {

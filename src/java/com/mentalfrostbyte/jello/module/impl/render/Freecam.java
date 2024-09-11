@@ -258,7 +258,7 @@ public class Freecam extends Module {
     }
 
     @EventTarget
-    private void method16647(RecievePacketEvent var1) {
+    private void method16647(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (mc.player != null) {
                 if (var1.getPacket() instanceof SPlayerPositionLookPacket) {

@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.movement.clicktp;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.ClickEvent;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
@@ -67,7 +67,7 @@ public class SpartanClickTP extends Module {
     }
 
     @EventTarget
-    public void method16105(RecievePacketEvent var1) {
+    public void method16105(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 SPlayerPositionLookPacket var4 = (SPlayerPositionLookPacket) var1.getPacket();

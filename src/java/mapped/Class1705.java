@@ -36,7 +36,7 @@ public class Class1705 extends Class1702 {
          return false;
       } else {
          ChunkPos var5 = var0.method7072();
-         return var5.field32174 == var1 && var5.field32175 == var2;
+         return var5.x == var1 && var5.z == var2;
       }
    }
 
@@ -151,8 +151,8 @@ public class Class1705 extends Class1702 {
             Chunk var8 = this.field9291.field39654.get(var7);
             if (var8 != null) {
                ChunkPos var9 = var8.method7072();
-               if (Class8815.method31828(var6, var9.field32174, var9.field32175)) {
-                  var6.method31824(var6.method31823(var9.field32174, var9.field32175), var8);
+               if (Class8815.method31828(var6, var9.x, var9.z)) {
+                  var6.method31824(var6.method31823(var9.x, var9.z), var8);
                }
             }
          }
@@ -186,7 +186,7 @@ public class Class1705 extends Class1702 {
 
    @Override
    public boolean method7352(ChunkPos var1) {
-      return this.method7345(var1.field32174, var1.field32175);
+      return this.method7345(var1.x, var1.z);
    }
 
    @Override

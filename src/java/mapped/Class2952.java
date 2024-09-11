@@ -19,9 +19,9 @@ public class Class2952 extends Class2898<Class4712> {
 
    public boolean method11213(ISeedReader var1, ChunkGenerator var2, Random var3, BlockPos var4, Class4712 var5) {
       ChunkPos var8 = new ChunkPos(var4);
-      List<Integer> var9 = IntStream.rangeClosed(var8.method24356(), var8.method24358()).boxed().collect(Collectors.toList());
+      List<Integer> var9 = IntStream.rangeClosed(var8.getX(), var8.method24358()).boxed().collect(Collectors.toList());
       Collections.shuffle(var9, var3);
-      List<Integer> var10 = IntStream.rangeClosed(var8.method24357(), var8.method24359()).boxed().collect(Collectors.toList());
+      List<Integer> var10 = IntStream.rangeClosed(var8.getZ(), var8.method24359()).boxed().collect(Collectors.toList());
       Collections.shuffle(var10, var3);
       BlockPos.Mutable var11 = new BlockPos.Mutable();
 

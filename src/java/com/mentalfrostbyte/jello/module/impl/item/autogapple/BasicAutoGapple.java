@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.item.autogapple;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.StopUseItemEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
@@ -96,7 +96,7 @@ public class BasicAutoGapple extends Module {
     }
 
     @EventTarget
-    public void onReceivePacket(RecievePacketEvent event) {
+    public void onReceivePacket(ReceivePacketEvent event) {
         if (this.isEnabled() && this.currentGappleSlot > 1) {
             Packet packet = event.getPacket();
             if (packet instanceof SEntityMetadataPacket) {

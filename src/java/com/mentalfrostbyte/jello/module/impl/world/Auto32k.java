@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.world;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
@@ -262,7 +262,7 @@ public class Auto32k extends Module {
     }
 
     @EventTarget
-    private void method16721(RecievePacketEvent var1) {
+    private void method16721(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SOpenWindowPacket) {
                 this.field23876 = (SOpenWindowPacket) var1.getPacket();

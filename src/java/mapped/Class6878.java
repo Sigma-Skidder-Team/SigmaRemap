@@ -47,8 +47,8 @@ public class Class6878 {
 
    @Nullable
    public static BlockPos method20941(ServerWorld var0, ChunkPos var1, boolean var2) {
-      for (int var5 = var1.method24356(); var5 <= var1.method24358(); var5++) {
-         for (int var6 = var1.method24357(); var6 <= var1.method24359(); var6++) {
+      for (int var5 = var1.getX(); var5 <= var1.method24358(); var5++) {
+         for (int var6 = var1.getZ(); var6 <= var1.method24359(); var6++) {
             BlockPos var7 = method20940(var0, var5, var6, var2);
             if (var7 != null) {
                return var7;

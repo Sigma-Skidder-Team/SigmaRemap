@@ -47,8 +47,8 @@ public class Class1691 implements ISeedReader {
       if (var5 * var5 == var2.size()) {
          ChunkPos var6 = ((IChunk)var2.get(var2.size() / 2)).method7072();
          this.field9201 = var2;
-         this.field9202 = var6.field32174;
-         this.field9203 = var6.field32175;
+         this.field9202 = var6.x;
+         this.field9203 = var6.z;
          this.field9204 = var5;
          this.field9205 = var1;
          this.field9206 = var1.method6967();
@@ -84,8 +84,8 @@ public class Class1691 implements ISeedReader {
       if (!this.method6843(var1, var2)) {
          var7 = null;
       } else {
-         int var8 = var1 - this.field9213.field32174;
-         int var9 = var2 - this.field9213.field32175;
+         int var8 = var1 - this.field9213.x;
+         int var9 = var2 - this.field9213.z;
          var7 = this.field9201.get(var8 + var9 * this.field9204);
          if (var7.method7080().method34306(var3)) {
             return var7;
@@ -95,7 +95,7 @@ public class Class1691 implements ISeedReader {
       if (var4) {
          field9200.error("Requested chunk : {} {}", var1, var2);
          field9200.error(
-            "Region bounds : {} {} | {} {}", this.field9213.field32174, this.field9213.field32175, this.field9214.field32174, this.field9214.field32175
+            "Region bounds : {} {} | {} {}", this.field9213.x, this.field9213.z, this.field9214.x, this.field9214.z
          );
          if (var7 == null) {
             throw (RuntimeException) Util.method38516(
@@ -113,7 +113,7 @@ public class Class1691 implements ISeedReader {
 
    @Override
    public boolean method6843(int var1, int var2) {
-      return var1 >= this.field9213.field32174 && var1 <= this.field9214.field32174 && var2 >= this.field9213.field32175 && var2 <= this.field9214.field32175;
+      return var1 >= this.field9213.x && var1 <= this.field9214.x && var2 >= this.field9213.z && var2 <= this.field9214.z;
    }
 
    @Override

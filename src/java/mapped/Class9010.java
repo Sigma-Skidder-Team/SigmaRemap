@@ -29,7 +29,7 @@ public class Class9010 {
    }
 
    public BitSet method33299(ChunkPos var1, Class97 var2) {
-      return ((Class1672)this.field41215.getChunk(var1.field32174, var1.field32175)).method7117(var2);
+      return ((Class1672)this.field41215.getChunk(var1.x, var1.z)).method7117(var2);
    }
 
    public BlockState method33300(BlockPos var1) {

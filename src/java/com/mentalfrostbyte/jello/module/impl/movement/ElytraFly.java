@@ -91,7 +91,7 @@ public class ElytraFly extends Module {
     }
 
     @EventTarget
-    private void method16222(RecievePacketEvent var1) {
+    private void method16222(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (mc.player != null && var1.getPacket() instanceof SEntityVelocityPacket) {
                 SEntityVelocityPacket var4 = (SEntityVelocityPacket) var1.getPacket();

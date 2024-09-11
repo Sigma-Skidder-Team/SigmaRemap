@@ -20,7 +20,7 @@ public class Class6271 extends Class6272<Class4724> {
          int var4x = var1x & 15;
          int var5 = var1x >> 4 & 15;
          int var6 = var1x >> 8;
-         return new BlockPos(var7.method24356() + var4x, var6, var7.method24357() + var5);
+         return new BlockPos(var7.getX() + var4x, var6, var7.getZ() + var5);
       });
    }
 }

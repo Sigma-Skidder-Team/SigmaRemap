@@ -161,7 +161,7 @@ public class YPortSpeed extends Module {
     }
 
     @EventTarget
-    private void method16239(RecievePacketEvent var1) {
+    private void method16239(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23544 = 0.0;

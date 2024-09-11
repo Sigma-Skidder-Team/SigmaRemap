@@ -124,7 +124,7 @@ public class Class1672 implements IChunk {
             return var2;
          } else {
             if (var2.getLightValue() > 0) {
-               this.field9099.add(new BlockPos((var6 & 15) + this.method7072().method24356(), var7, (var8 & 15) + this.method7072().method24357()));
+               this.field9099.add(new BlockPos((var6 & 15) + this.method7072().getX(), var7, (var8 & 15) + this.method7072().getZ()));
             }
 
             Class7038 var9 = this.method7106(var7 >> 4);
@@ -351,9 +351,9 @@ public class Class1672 implements IChunk {
    }
 
    public static BlockPos method7114(short var0, int var1, ChunkPos var2) {
-      int var5 = (var0 & 15) + (var2.field32174 << 4);
+      int var5 = (var0 & 15) + (var2.x << 4);
       int var6 = (var0 >>> 4 & 15) + (var1 << 4);
-      int var7 = (var0 >>> 8 & 15) + (var2.field32175 << 4);
+      int var7 = (var0 >>> 8 & 15) + (var2.z << 4);
       return new BlockPos(var5, var6, var7);
    }
 

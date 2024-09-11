@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.world.disabler;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
@@ -82,7 +82,7 @@ public class PingSpoofDisabler extends Module {
     }
 
     @EventTarget
-    public void method16103(RecievePacketEvent var1) {
+    public void method16103(ReceivePacketEvent var1) {
         if (!this.isEnabled()) {
             ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Disabler.class);
             if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSetttingName("Ping spoof")) {

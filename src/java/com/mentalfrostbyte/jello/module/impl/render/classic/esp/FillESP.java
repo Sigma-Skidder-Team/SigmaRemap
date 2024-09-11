@@ -56,7 +56,7 @@ public class FillESP extends Module {
         GL11.glEnable(2896);
         GL11.glPolygonOffset(-30000.0F, 1.0F);
 
-        for (Entity var9 : mc.world.method6835()) {
+        for (Entity var9 : mc.world.getEntities()) {
             if (this.method16138(var9)) {
                 GL11.glPushMatrix();
                 Vector3d var10 = mc.gameRenderer.getActiveRenderInfo().getPos();
@@ -115,7 +115,7 @@ public class FillESP extends Module {
     private boolean method16138(Entity var1) {
         if (var1 instanceof LivingEntity) {
             if (var1 instanceof PlayerEntity) {
-                return !(var1 instanceof ClientPlayerEntity) && !Client.getInstance().getCombatManager().method29346(var1);
+                return !(var1 instanceof ClientPlayerEntity) && !Client.getInstance().getCombatManager().isValidTarget(var1);
             } else {
                 return false;
             }

@@ -78,7 +78,7 @@ public class NCPFly extends Module {
     }
 
     @EventTarget
-    public void method16802(RecievePacketEvent var1) {
+    public void method16802(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SPlayerPositionLookPacket) {

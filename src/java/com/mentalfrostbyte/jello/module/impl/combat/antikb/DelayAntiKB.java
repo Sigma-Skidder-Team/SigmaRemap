@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.combat.antikb;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
@@ -27,7 +27,7 @@ public class DelayAntiKB extends Module {
     }
 
     @EventTarget
-    private void method16198(RecievePacketEvent var1) {
+    private void method16198(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SExplosionPacket) {
                 SExplosionPacket var4 = (SExplosionPacket) var1.getPacket();

@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.movement;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUseLess;
 import com.mentalfrostbyte.jello.event.impl.EventMoveRideable;
@@ -76,7 +76,7 @@ public class EntitySpeed extends Module {
     }
 
     @EventTarget
-    public void method16241(RecievePacketEvent var1) {
+    public void method16241(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (!(var1.getPacket() instanceof SMoveVehiclePacket)) {
             }

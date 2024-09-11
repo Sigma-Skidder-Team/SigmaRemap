@@ -14,8 +14,8 @@ public class Class5457 extends Class5455<Class4712> {
 
    public void method17109(DynamicRegistries var1, ChunkGenerator var2, TemplateManager var3, int var4, int var5, Biome var6, Class4712 var7) {
       ChunkPos var10 = new ChunkPos(var4, var5);
-      int var11 = var10.method24356() + this.field24201.nextInt(16);
-      int var12 = var10.method24357() + this.field24201.nextInt(16);
+      int var11 = var10.getX() + this.field24201.nextInt(16);
+      int var12 = var10.getZ() + this.field24201.nextInt(16);
       int var13 = var2.method17807();
       int var14 = var13 + this.field24201.nextInt(var2.method17806() - 2 - var13);
       IBlockReader var15 = var2.method17798(var11, var12);

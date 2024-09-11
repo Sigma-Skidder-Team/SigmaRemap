@@ -50,7 +50,7 @@ public class Class5126 implements Class5119 {
             byte var21 = 0;
 
             for (String var25 : var20) {
-               DebugRenderer.method27461(var25, (double)((var18.field32174 << 4) + 8), var14 + (double)var21, (double)((var18.field32175 << 4) + 8), -1, 0.15F);
+               DebugRenderer.method27461(var25, (double)((var18.x << 4) + 8), var14 + (double)var21, (double)((var18.z << 4) + 8), -1, 0.15F);
                var21 -= 2;
             }
          }

@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.world;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
@@ -39,7 +39,7 @@ public class AutoMiner extends Module {
    }
 
    @EventTarget
-   public void method16075(RecievePacketEvent var1) {
+   public void method16075(ReceivePacketEvent var1) {
       if (this.isEnabled()) {
          if (var1.getPacket() instanceof SChangeBlockPacket) {
             SChangeBlockPacket var4 = (SChangeBlockPacket)var1.getPacket();
@@ -53,7 +53,7 @@ public class AutoMiner extends Module {
 
          if (var1.getPacket() instanceof SChunkDataPacket && Minecraft.getInstance().world != null) {
             SChunkDataPacket var6 = (SChunkDataPacket)var1.getPacket();
-            this.method16076(new ChunkPos(var6.method17378(), var6.method17379()));
+            this.method16076(new ChunkPos(var6.getChunkX(), var6.getChunkZ()));
          }
       }
    }
@@ -74,8 +74,8 @@ public class AutoMiner extends Module {
 
    public List<BlockPos> method16078(ChunkPos var1) {
       ArrayList var4 = new ArrayList();
-      int var5 = var1.field32174 * 16;
-      int var6 = var1.field32175 * 16;
+      int var5 = var1.x * 16;
+      int var6 = var1.z * 16;
       byte var7 = 1;
       int var8 = var5 + 15;
       int var9 = var6 + 15;
@@ -131,7 +131,7 @@ public class AutoMiner extends Module {
                   }
                }
 
-               this.field23451.add(new Class6203(var9.field32174, var9.field32175, this.method16078(var9)));
+               this.field23451.add(new Class6203(var9.x, var9.z, this.method16078(var9)));
                var14 = true;
                break;
             }

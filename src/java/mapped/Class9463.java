@@ -157,8 +157,8 @@ public class Class9463 {
    @Nullable
    private Class9764 method36447(ChunkPos var1) {
       if (var1 != null) {
-         int var4 = var1.field32174 * 16;
-         int var5 = var1.field32175 * 16;
+         int var4 = var1.x * 16;
+         int var5 = var1.z * 16;
          return new Class9764(var4, 0, var5, var4 + 16 - 1, 255, var5 + 16 - 1);
       } else {
          return this.field43967;

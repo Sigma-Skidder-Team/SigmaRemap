@@ -22,8 +22,8 @@ public class Class8444 {
 
    public void method29695() {
       this.field36185 = BufferUtils.createByteBuffer(768);
-      int var3 = this.field36184.method7072().field32174 * 16;
-      int var4 = this.field36184.method7072().field32175 * 16;
+      int var3 = this.field36184.method7072().x * 16;
+      int var4 = this.field36184.method7072().z * 16;
 
       for (int var5 = 0; var5 < 16; var5++) {
          for (int var6 = 0; var6 < 16; var6++) {
@@ -50,12 +50,12 @@ public class Class8444 {
    }
 
    private boolean method29697() {
-      Chunk var3 = MiniMap.getMC().world.getChunk(this.field36184.method7072().field32174, this.field36184.method7072().field32175 + 1);
-      Chunk var4 = MiniMap.getMC2().world.getChunk(this.field36184.method7072().field32174, this.field36184.method7072().field32175 - 1);
+      Chunk var3 = MiniMap.getMC().world.getChunk(this.field36184.method7072().x, this.field36184.method7072().z + 1);
+      Chunk var4 = MiniMap.getMC2().world.getChunk(this.field36184.method7072().x, this.field36184.method7072().z - 1);
       return var3 != null && var3.field9115 && var4 != null && var4.field9115;
    }
 
    public boolean method29698(Chunk var1) {
-      return var1.method7072().field32174 == this.field36184.method7072().field32174 && var1.method7072().field32175 == this.field36184.method7072().field32175;
+      return var1.method7072().x == this.field36184.method7072().x && var1.method7072().z == this.field36184.method7072().z;
    }
 }

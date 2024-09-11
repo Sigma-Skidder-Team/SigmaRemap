@@ -67,6 +67,6 @@ public class TrackingChunkStatusListener implements Class7243 {
    @Nullable
    public ChunkStatus method22746(int var1, int var2) {
       return (ChunkStatus)this.field31103
-         .get(ChunkPos.method24353(var1 + this.field31104.field32174 - this.field31106, var2 + this.field31104.field32175 - this.field31106));
+         .get(ChunkPos.asLong(var1 + this.field31104.x - this.field31106, var2 + this.field31104.z - this.field31106));
    }
 }

@@ -94,7 +94,7 @@ public class Class9725 {
          }
 
          if (!var15 && var26.method7080().method34306(ChunkStatus.field42142)) {
-            for (BlockPos var29 : BlockPos.method8364(var3.method24356(), 0, var3.method24357(), var3.method24358(), 255, var3.method24359())) {
+            for (BlockPos var29 : BlockPos.method8364(var3.getX(), 0, var3.getZ(), var3.method24358(), 255, var3.method24359())) {
                if (((IChunk)var43).getBlockState(var29).getLightValue() != 0) {
                   var26.method7105(var29);
                }
@@ -195,8 +195,8 @@ public class Class9725 {
       CompoundNBT var6 = new CompoundNBT();
       var5.putInt("DataVersion", SharedConstants.getVersion().getWorldVersion());
       var5.put("Level", var6);
-      var6.putInt("xPos", var4.field32174);
-      var6.putInt("zPos", var4.field32175);
+      var6.putInt("xPos", var4.x);
+      var6.putInt("zPos", var4.z);
       var6.method103("LastUpdate", var0.getGameTime());
       var6.method103("InhabitedTime", var1.method7093());
       var6.method109("Status", var1.method7080().method34298());
@@ -370,7 +370,7 @@ public class Class9725 {
       CompoundNBT var6 = new CompoundNBT();
 
       for (Entry var8 : var1.entrySet()) {
-         var6.put(((Structure)var8.getKey()).method11373(), ((Class5444)var8.getValue()).method17114(var0.field32174, var0.field32175));
+         var6.put(((Structure)var8.getKey()).method11373(), ((Class5444)var8.getValue()).method17114(var0.x, var0.z));
       }
 
       var5.put("Starts", var6);

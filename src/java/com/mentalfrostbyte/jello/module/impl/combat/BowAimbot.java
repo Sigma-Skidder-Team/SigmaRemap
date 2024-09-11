@@ -118,7 +118,7 @@ public class BowAimbot extends Module {
                 var5.remove();
             } else if (!this.getBooleanValueFromSetttingName("Players") && var6 instanceof PlayerEntity) {
                 var5.remove();
-            } else if (this.getBooleanValueFromSetttingName("Anti-Bot") && var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var6)) {
+            } else if (this.getBooleanValueFromSetttingName("Anti-Bot") && var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(var6)) {
                 var5.remove();
             } else if (!this.getBooleanValueFromSetttingName("Invisible") && var6.isInvisible()) {
                 var5.remove();

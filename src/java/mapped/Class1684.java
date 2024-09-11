@@ -39,8 +39,8 @@ public class Class1684 implements Class1683 {
 
    public Class1684(Class2347<Biome> var1, ChunkPos var2, Class1685 var3) {
       this(var1);
-      int var6 = var2.method24356() >> 2;
-      int var7 = var2.method24357() >> 2;
+      int var6 = var2.getX() >> 2;
+      int var7 = var2.getZ() >> 2;
 
       for (int var8 = 0; var8 < this.field9158.length; var8++) {
          int var9 = var8 & field9155;
@@ -52,8 +52,8 @@ public class Class1684 implements Class1683 {
 
    public Class1684(Class2347<Biome> var1, ChunkPos var2, Class1685 var3, int[] var4) {
       this(var1);
-      int var7 = var2.method24356() >> 2;
-      int var8 = var2.method24357() >> 2;
+      int var7 = var2.getX() >> 2;
+      int var8 = var2.getZ() >> 2;
       if (var4 == null) {
          for (int var9 = 0; var9 < this.field9158.length; var9++) {
             int var10 = var9 & field9155;

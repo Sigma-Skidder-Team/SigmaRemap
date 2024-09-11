@@ -104,7 +104,7 @@ public class LibreCraftFly extends Module {
     }
 
     @EventTarget
-    public void method16795(RecievePacketEvent var1) {
+    public void method16795(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.getPacket();
             if (mc.player != null && var4 instanceof SPlayerPositionLookPacket) {

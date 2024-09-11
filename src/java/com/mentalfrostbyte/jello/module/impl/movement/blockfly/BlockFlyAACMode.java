@@ -75,7 +75,7 @@ public class BlockFlyAACMode extends Module {
     }
 
     @EventTarget
-    public void method16203(RecievePacketEvent var1) {
+    public void method16203(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SPlayerPositionLookPacket) {

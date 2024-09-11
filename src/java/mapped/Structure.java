@@ -135,7 +135,7 @@ public abstract class Structure<C extends Class4698> {
                   int var20 = var12 + var11 * var16;
                   int var21 = var13 + var11 * var18;
                   ChunkPos var22 = this.method11370(var8, var6, var15, var20, var21);
-                  IChunk var23 = var1.getChunk(var22.field32174, var22.field32175, ChunkStatus.field42134);
+                  IChunk var23 = var1.getChunk(var22.x, var22.z, ChunkStatus.field42134);
                   Class5444 var24 = var2.method24341(Class2002.method8391(var23.method7072(), 0), this, var23);
                   if (var24 != null && var24.method17117()) {
                      if (var5 && var24.method17121()) {
@@ -207,12 +207,12 @@ public abstract class Structure<C extends Class4698> {
       Class8483 var11,
       C var12
    ) {
-      ChunkPos var15 = this.method11370(var11, var5, var10, var7.field32174, var7.field32175);
-      if (var7.field32174 == var15.field32174
-         && var7.field32175 == var15.field32175
-         && this.method11361(var2, var3, var5, var10, var7.field32174, var7.field32175, var8, var15, (C)var12)) {
-         Class5444 var16 = this.method11371(var7.field32174, var7.field32175, Class9764.method38386(), var9, var5);
-         var16.method17109(var1, var2, var4, var7.field32174, var7.field32175, var8, var12);
+      ChunkPos var15 = this.method11370(var11, var5, var10, var7.x, var7.z);
+      if (var7.x == var15.x
+         && var7.z == var15.z
+         && this.method11361(var2, var3, var5, var10, var7.x, var7.z, var8, var15, (C)var12)) {
+         Class5444 var16 = this.method11371(var7.x, var7.z, Class9764.method38386(), var9, var5);
+         var16.method17109(var1, var2, var4, var7.x, var7.z, var8, var12);
          if (var16.method17117()) {
             return var16;
          }

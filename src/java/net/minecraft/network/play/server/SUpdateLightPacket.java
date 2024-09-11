@@ -25,8 +25,8 @@ public class SUpdateLightPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public SUpdateLightPacket(ChunkPos var1, Class196 var2, boolean var3) {
-      this.field24498 = var1.field32174;
-      this.field24499 = var1.field32175;
+      this.field24498 = var1.x;
+      this.field24499 = var1.z;
       this.field24506 = var3;
       this.field24504 = Lists.newArrayList();
       this.field24505 = Lists.newArrayList();
@@ -55,8 +55,8 @@ public class SUpdateLightPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public SUpdateLightPacket(ChunkPos var1, Class196 var2, int var3, int var4, boolean var5) {
-      this.field24498 = var1.field32174;
-      this.field24499 = var1.field32175;
+      this.field24498 = var1.x;
+      this.field24499 = var1.z;
       this.field24506 = var5;
       this.field24500 = var3;
       this.field24501 = var4;

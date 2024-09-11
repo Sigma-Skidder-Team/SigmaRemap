@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.misc;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.client.CConfirmTeleportPacket;
@@ -12,7 +12,7 @@ public class PortalGodMode extends Module {
    }
 
    @EventTarget
-   private void method16069(RecievePacketEvent var1) {
+   private void method16069(ReceivePacketEvent var1) {
       if (this.isEnabled()) {
          if (var1.getPacket() instanceof CConfirmTeleportPacket) {
             var1.setCancelled(true);

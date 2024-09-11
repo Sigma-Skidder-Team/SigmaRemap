@@ -305,7 +305,7 @@ public class WaypointsManager {
 
       for (int var6 = -var2 / 2; var6 < var2 / 2; var6++) {
          for (int var7 = -var2 / 2; var7 < var2 / 2; var7++) {
-            var5.add(new ChunkPos(var1.field32174 + var6, var1.field32175 + var7));
+            var5.add(new ChunkPos(var1.x + var6, var1.z + var7));
          }
       }
 
@@ -316,7 +316,7 @@ public class WaypointsManager {
 
       for (ChunkPos var11 : var5) {
          ByteBuffer var12 = this.field36376.duplicate();
-         Long var13 = ChunkPos.method24353(var11.field32174, var11.field32175);
+         Long var13 = ChunkPos.asLong(var11.x, var11.z);
          ((Buffer)var12).position(0);
          Class2531 var14 = Class7927.method26605(var11);
          Class7927 var15 = this.field36372.get(var14.method10678());
@@ -376,15 +376,15 @@ public class WaypointsManager {
    }
 
    private boolean method30004(Chunk var1) {
-      Chunk var4 = this.field36365.world.getChunk(var1.method7072().field32174, var1.method7072().field32175 + 1);
-      Chunk var5 = this.field36365.world.getChunk(var1.method7072().field32174, var1.method7072().field32175 - 1);
+      Chunk var4 = this.field36365.world.getChunk(var1.method7072().x, var1.method7072().z + 1);
+      Chunk var5 = this.field36365.world.getChunk(var1.method7072().x, var1.method7072().z - 1);
       return var4 != null && !var4.method7141() && var5 != null && !var5.method7141();
    }
 
    public ByteBuffer method30005(Chunk var1, boolean var2) {
       ByteBuffer var5 = BufferUtils.createByteBuffer(768);
-      int var6 = var1.method7072().field32174 * 16;
-      int var7 = var1.method7072().field32175 * 16;
+      int var6 = var1.method7072().x * 16;
+      int var7 = var1.method7072().z * 16;
 
       for (int var8 = 0; var8 < 16; var8++) {
          for (int var9 = 0; var9 < 16; var9++) {

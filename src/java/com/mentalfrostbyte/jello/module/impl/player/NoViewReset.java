@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.player;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
@@ -12,7 +12,7 @@ public class NoViewReset extends Module {
     }
 
     @EventTarget
-    private void method16723(RecievePacketEvent var1) {
+    private void method16723(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (mc.player != null) {
                 if (mc.player.ticksExisted >= 10) {

@@ -44,7 +44,7 @@ public final class Class8170 {
          Class179 var11 = var8.getType().method33209();
          if (var11 != Class179.field628) {
             BlockPos var12 = var8.getPosition();
-            long var13 = ChunkPos.method24353(var12.getX() >> 4, var12.getZ() >> 4);
+            long var13 = ChunkPos.asLong(var12.getX() >> 4, var12.getZ() >> 4);
             var2.method30928(var13, var5x -> {
                Class7763 var8x = method28416(var12, var5x).method32499().method31969(var8.getType());
                if (var8x != null) {
@@ -235,8 +235,8 @@ public final class Class8170 {
 
    private static BlockPos method28427(World var0, Chunk var1) {
       ChunkPos var4 = var1.method7072();
-      int var5 = var4.method24356() + var0.rand.nextInt(16);
-      int var6 = var4.method24357() + var0.rand.nextInt(16);
+      int var5 = var4.getX() + var0.rand.nextInt(16);
+      int var6 = var4.getZ() + var0.rand.nextInt(16);
       int var7 = var1.method7071(Class101.field296, var5, var6) + 1;
       int var8 = var0.rand.nextInt(var7 + 1);
       return new BlockPos(var5, var8, var6);

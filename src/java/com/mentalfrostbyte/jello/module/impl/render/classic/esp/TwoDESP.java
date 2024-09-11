@@ -216,7 +216,7 @@ public class TwoDESP extends Module {
         field23729.clear();
         float var9 = mc.timer.renderPartialTicks;
 
-        for (Object var11 : mc.world.method6835()) {
+        for (Object var11 : mc.world.getEntities()) {
             if (var11 instanceof PlayerEntity && !(var11 instanceof ClientPlayerEntity)) {
                 PlayerEntity var12 = (PlayerEntity) var11;
                 double var13 = var12.lastTickPosY + (var12.getPosY() - var12.lastTickPosY) * (double) var9 - var5;

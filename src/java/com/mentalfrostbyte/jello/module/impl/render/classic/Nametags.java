@@ -111,7 +111,7 @@ public class Nametags extends Module {
         if (this.isEnabled()) {
             this.field23493.clear();
 
-            for (Entity var5 : mc.world.method6835()) {
+            for (Entity var5 : mc.world.getEntities()) {
                 if (var5 instanceof PlayerEntity && !(var5 instanceof ClientPlayerEntity)) {
                     PlayerEntity var6 = (PlayerEntity) var5;
                     Class9425 var7 = Class9647.method37623(var6);

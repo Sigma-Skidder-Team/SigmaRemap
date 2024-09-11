@@ -35,8 +35,8 @@ public class SChunkDataPacket implements Packet<IClientPlayNetHandler> {
 
    public SChunkDataPacket(Chunk var1, int var2) {
       ChunkPos var5 = var1.method7072();
-      this.field24514 = var5.field32174;
-      this.field24515 = var5.field32175;
+      this.field24514 = var5.x;
+      this.field24515 = var5.z;
       this.field24521 = var2 == 65535;
       this.field24517 = new CompoundNBT();
 
@@ -58,7 +58,7 @@ public class SChunkDataPacket implements Packet<IClientPlayNetHandler> {
          BlockPos var8 = (BlockPos)var14.getKey();
          TileEntity var9 = (TileEntity)var14.getValue();
          int var10 = var8.getY() >> 4;
-         if (this.method17381() || (var2 & 1 << var10) != 0) {
+         if (this.isFullChunk() || (var2 & 1 << var10) != 0) {
             CompoundNBT var11 = var9.method3777();
             this.field24520.add(var11);
          }
@@ -136,7 +136,7 @@ public class SChunkDataPacket implements Packet<IClientPlayNetHandler> {
 
       for (int var9 = var7.length; var8 < var9; var8++) {
          Class7038 var10 = var7[var8];
-         if (var10 != Chunk.field9111 && (!this.method17381() || !var10.method21858()) && (var3 & 1 << var8) != 0) {
+         if (var10 != Chunk.field9111 && (!this.isFullChunk() || !var10.method21858()) && (var3 & 1 << var8) != 0) {
             var6 |= 1 << var8;
             var10.method21867(var1);
          }
@@ -152,7 +152,7 @@ public class SChunkDataPacket implements Packet<IClientPlayNetHandler> {
 
       for (int var8 = var6.length; var7 < var8; var7++) {
          Class7038 var9 = var6[var7];
-         if (var9 != Chunk.field9111 && (!this.method17381() || !var9.method21858()) && (var2 & 1 << var7) != 0) {
+         if (var9 != Chunk.field9111 && (!this.isFullChunk() || !var9.method21858()) && (var2 & 1 << var7) != 0) {
             var5 += var9.method21868();
          }
       }
@@ -160,11 +160,11 @@ public class SChunkDataPacket implements Packet<IClientPlayNetHandler> {
       return var5;
    }
 
-   public int method17378() {
+   public int getChunkX() {
       return this.field24514;
    }
 
-   public int method17379() {
+   public int getChunkZ() {
       return this.field24515;
    }
 
@@ -172,7 +172,7 @@ public class SChunkDataPacket implements Packet<IClientPlayNetHandler> {
       return this.field24516;
    }
 
-   public boolean method17381() {
+   public boolean isFullChunk() {
       return this.field24521;
    }
 

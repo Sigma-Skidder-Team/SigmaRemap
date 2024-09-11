@@ -177,7 +177,7 @@ public class InteractAutoBlock {
             var24.remove();
          } else if (!this.parent.getBooleanValueFromSetttingName("Players") && var9 instanceof PlayerEntity) {
             var24.remove();
-         } else if (var9 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var9)) {
+         } else if (var9 instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(var9)) {
             var24.remove();
          } else if (!this.parent.getBooleanValueFromSetttingName("Invisible") && var9.isInvisible()) {
             var24.remove();

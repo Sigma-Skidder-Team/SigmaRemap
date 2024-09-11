@@ -329,13 +329,13 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    @Override
    public void method17801(Class1691 var1, IChunk var2) {
       ChunkPos var5 = var2.method7072();
-      int var6 = var5.field32174;
-      int var7 = var5.field32175;
+      int var6 = var5.x;
+      int var7 = var5.z;
       Class2420 var8 = new Class2420();
       var8.method10370(var6, var7);
       ChunkPos var9 = var2.method7072();
-      int var10 = var9.method24356();
-      int var11 = var9.method24357();
+      int var10 = var9.getX();
+      int var11 = var9.getZ();
       double var12 = 0.0625;
       BlockPos.Mutable var14 = new BlockPos.Mutable();
 
@@ -355,8 +355,8 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
 
    private void method17802(IChunk var1, Random var2) {
       BlockPos.Mutable var5 = new BlockPos.Mutable();
-      int var6 = var1.method7072().method24356();
-      int var7 = var1.method7072().method24357();
+      int var6 = var1.method7072().getX();
+      int var7 = var1.method7072().getZ();
       DimensionSettings var8 = this.field24982.get();
       int var9 = var8.method35165();
       int var10 = this.field24983 - 1 - var8.method35164();
@@ -389,8 +389,8 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
       ObjectArrayList var6 = new ObjectArrayList(10);
       ObjectArrayList var7 = new ObjectArrayList(32);
       ChunkPos var8 = var3.method7072();
-      int var9 = var8.field32174;
-      int var10 = var8.field32175;
+      int var9 = var8.x;
+      int var10 = var8.z;
       int var11 = var9 << 4;
       int var12 = var10 << 4;
 

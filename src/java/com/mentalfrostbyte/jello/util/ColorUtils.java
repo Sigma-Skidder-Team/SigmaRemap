@@ -1009,7 +1009,7 @@ public class ColorUtils {
                return false;
             } else if (!var1 && var0 instanceof PlayerEntity) {
                return false;
-            } else if (var0 instanceof PlayerEntity && Client.getInstance().getCombatManager().method29346(var0)) {
+            } else if (var0 instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(var0)) {
                return false;
             } else if (!var3 && var0.isInvisible()) {
                return false;

@@ -103,7 +103,7 @@ public class HypixelFly extends Module {
     @EventTarget
     @Class5631
     @HigestPriority
-    public void method16259(RecievePacketEvent var1) {
+    public void method16259(ReceivePacketEvent var1) {
         if (mc.getConnection() != null && ColorUtils.method17716()) {
             Packet var4 = var1.getPacket();
             if (this.isEnabled()) {

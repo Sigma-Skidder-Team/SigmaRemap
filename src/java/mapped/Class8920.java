@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.PacketBuffer;
@@ -13,7 +13,7 @@ import net.minecraft.util.registry.Registry;
 public class Class8920 {
    private static String[] field40380;
 
-   public static void method32597(RecievePacketEvent var0, Class8982 var1) {
+   public static void method32597(ReceivePacketEvent var0, Class8982 var1) {
       if (var0.getPacket() instanceof SChangeBlockPacket) {
          SChangeBlockPacket var4 = (SChangeBlockPacket)var0.getPacket();
          var1.method33183(var4.method17632(), var4.method17631());
@@ -53,7 +53,7 @@ public class Class8920 {
          Class1684 var19 = var18.method17384() == null
             ? null
             : new Class1684(Minecraft.getInstance().getConnection().field23287.<Biome>getRegistry(Registry.BIOME_KEY), var18.method17384());
-         Chunk var20 = new Chunk(Minecraft.getInstance().world, new ChunkPos(var18.method17378(), var18.method17379()), null);
+         Chunk var20 = new Chunk(Minecraft.getInstance().world, new ChunkPos(var18.getChunkX(), var18.getChunkZ()), null);
          var20.method7142(var19, new PacketBuffer(var18.method17374().copy()), var18.method17382(), var18.method17380());
          if (var20 != null) {
             int var7 = 0;
@@ -67,9 +67,9 @@ public class Class8920 {
                            if (var1.method33182(var15)) {
                               var1.method33183(
                                  new BlockPos(
-                                    (double)((float)(var20.method7072().field32174 * 16) + var13),
+                                    (double)((float)(var20.method7072().x * 16) + var13),
                                     (double)((float)(var7 * 16) + var12),
-                                    (double)((float)(var20.method7072().field32175 * 16) + var14)
+                                    (double)((float)(var20.method7072().z * 16) + var14)
                                  ),
                                  var15
                               );
@@ -89,7 +89,7 @@ public class Class8920 {
             }
 
             SChunkDataPacket var21 = new SChunkDataPacket(var20, var20.method7077() == null ? '\ufffe' : '\uffff');
-            var21.field24521 = var18.method17381();
+            var21.field24521 = var18.isFullChunk();
             var21.field24520 = var18.method17383();
             var0.method13899(var21);
          }

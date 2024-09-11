@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.combat.antikb;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -68,7 +68,7 @@ public class AACAntiKB extends Module {
     }
 
     @EventTarget
-    private void method16789(RecievePacketEvent var1) {
+    private void method16789(ReceivePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SEntityVelocityPacket) {

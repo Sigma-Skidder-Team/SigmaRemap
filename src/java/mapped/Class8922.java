@@ -71,10 +71,10 @@ public class Class8922 {
          boolean var11 = var5.contains(Direction.NORTH);
          boolean var12 = var5.size() == 1;
          ChunkPos var13 = var0.method7072();
-         int var14 = var13.method24356() + (!var12 || !var11 && !var10 ? (!var9 ? 15 : 0) : 1);
-         int var15 = var13.method24356() + (!var12 || !var11 && !var10 ? (!var9 ? 15 : 0) : 14);
-         int var16 = var13.method24357() + (!var12 || !var8 && !var9 ? (!var11 ? 15 : 0) : 1);
-         int var17 = var13.method24357() + (!var12 || !var8 && !var9 ? (!var11 ? 15 : 0) : 14);
+         int var14 = var13.getX() + (!var12 || !var11 && !var10 ? (!var9 ? 15 : 0) : 1);
+         int var15 = var13.getX() + (!var12 || !var11 && !var10 ? (!var9 ? 15 : 0) : 14);
+         int var16 = var13.getZ() + (!var12 || !var8 && !var9 ? (!var11 ? 15 : 0) : 1);
+         int var17 = var13.getZ() + (!var12 || !var8 && !var9 ? (!var11 ? 15 : 0) : 14);
          Direction[] var18 = Direction.values();
          BlockPos.Mutable var19 = new BlockPos.Mutable();
 
@@ -114,13 +114,13 @@ public class Class8922 {
                int var17 = var16 & 15;
                int var18 = var16 >> 8 & 15;
                int var19 = var16 >> 4 & 15;
-               var4.method8372(var6.method24356() + var17, (var8 << 4) + var18, var6.method24357() + var19);
+               var4.method8372(var6.getX() + var17, (var8 << 4) + var18, var6.getZ() + var19);
                BlockState var20 = (BlockState)var12.method30499(var16);
                BlockState var21 = var20;
 
                for (Direction var25 : var11) {
                   var5.method8377(var4, var25);
-                  if (var4.getX() >> 4 == var6.field32174 && var4.getZ() >> 4 == var6.field32175) {
+                  if (var4.getX() >> 4 == var6.x && var4.getZ() >> 4 == var6.z) {
                      var21 = method32605(var21, var25, var7, var4, var5);
                   }
                }
@@ -132,7 +132,7 @@ public class Class8922 {
 
       for (int var26 = 0; var26 < this.field40391.length; var26++) {
          if (this.field40391[var26] != null) {
-            field40387.warn("Discarding update data for section {} for chunk ({} {})", var26, var6.field32174, var6.field32175);
+            field40387.warn("Discarding update data for section {} for chunk ({} {})", var26, var6.x, var6.z);
          }
 
          this.field40391[var26] = null;

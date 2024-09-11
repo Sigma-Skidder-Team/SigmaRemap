@@ -112,7 +112,7 @@ public class AGCFly extends Module {
     }
 
     @EventTarget
-    public void method16784(RecievePacketEvent var1) {
+    public void method16784(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SPlayerPositionLookPacket) {

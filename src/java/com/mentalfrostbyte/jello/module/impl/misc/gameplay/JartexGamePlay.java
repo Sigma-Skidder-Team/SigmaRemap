@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.misc.gameplay;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.misc.GamePlay;
@@ -27,7 +27,7 @@ public class JartexGamePlay extends Module {
     }
 
     @EventTarget
-    private void method16219(RecievePacketEvent var1) {
+    private void method16219(ReceivePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SChatPacket) {

@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.movement.fly;
 
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
@@ -115,7 +115,7 @@ public class OmegaCraftFly extends Module {
     }
 
     @EventTarget
-    public void method16497(RecievePacketEvent var1) {
+    public void method16497(ReceivePacketEvent var1) {
         if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
             SPlayerPositionLookPacket var4 = (SPlayerPositionLookPacket) var1.getPacket();
             double var5 = this.field23703[0];

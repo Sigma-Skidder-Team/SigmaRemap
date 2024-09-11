@@ -114,7 +114,7 @@ public class NameTags extends Module {
                         && var7 != Freecam.field23814
                         && var7 != Blink.field23863
                         && !var7.isInvisible()
-                        && !Client.getInstance().getCombatManager().method29346(var7)) {
+                        && !Client.getInstance().getCombatManager().isValidTarget(var7)) {
                     this.field24005.add(var7);
                 }
             }
@@ -150,7 +150,7 @@ public class NameTags extends Module {
     }
 
     @EventTarget
-    private void method16928(RecievePacketEvent var1) {
+    private void method16928(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SOpenWindowPacket) {
                 SOpenWindowPacket var4 = (SOpenWindowPacket) var1.getPacket();
@@ -247,7 +247,7 @@ public class NameTags extends Module {
             }
 
             if (this.getBooleanValueFromSetttingName("Mob Owners")) {
-                for (Entity var12 : mc.world.method6835()) {
+                for (Entity var12 : mc.world.getEntities()) {
                     if (var12 == mc.player && (var12 instanceof TameableEntity || var12 instanceof Class1074)) {
                         UUID var14 = !(var12 instanceof TameableEntity) ? ((Class1074) var12).method4933() : ((TameableEntity) var12).method4397();
                         if (var14 != null) {

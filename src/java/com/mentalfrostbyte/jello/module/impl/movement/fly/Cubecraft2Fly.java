@@ -156,7 +156,7 @@ public class Cubecraft2Fly extends PremiumModule {
     }
 
     @EventTarget
-    public void method16487(RecievePacketEvent var1) {
+    public void method16487(ReceivePacketEvent var1) {
         if (this.isEnabled() || this.field23696 < 0) {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SPlayerPositionLookPacket) {

@@ -116,8 +116,8 @@ public class Class7803 {
 
       for (int var5 = -1; var5 < 4; var5++) {
          for (int var6 = -1; var6 < 4; var6++) {
-            int var7 = var4.field32174 + var5;
-            int var8 = var4.field32175 + var6;
+            int var7 = var4.x + var5;
+            int var8 = var4.z + var6;
             var1.method6950(var7, var8, true);
          }
       }

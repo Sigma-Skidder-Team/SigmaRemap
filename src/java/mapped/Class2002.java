@@ -24,7 +24,7 @@ public class Class2002 extends Vector3i {
    }
 
    public static Class2002 method8391(ChunkPos var0, int var1) {
-      return new Class2002(var0.field32174, var1, var0.field32175);
+      return new Class2002(var0.x, var1, var0.z);
    }
 
    public static Class2002 method8392(Entity var0) {
@@ -185,8 +185,8 @@ public class Class2002 extends Vector3i {
    }
 
    public static Stream<Class2002> method8428(ChunkPos var0, int var1) {
-      int var4 = var0.field32174;
-      int var5 = var0.field32175;
+      int var4 = var0.x;
+      int var5 = var0.z;
       return method8429(var4 - var1, 0, var5 - var1, var4 + var1, 15, var5 + var1);
    }
 

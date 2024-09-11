@@ -23,8 +23,8 @@ public class Class3600 implements Comparator<ChunkPos> {
    }
 
    private int method12201(ChunkPos var1) {
-      int var4 = var1.field32174 - this.field19554;
-      int var5 = var1.field32175 - this.field19555;
+      int var4 = var1.x - this.field19554;
+      int var5 = var1.z - this.field19555;
       int var6 = var4 * var4 + var5 * var5;
       double var7 = MathHelper.method37814((double)var5, (double)var4);
       double var9 = Math.abs(var7 - this.field19556);

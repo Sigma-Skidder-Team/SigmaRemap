@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.Queues;
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import io.netty.bootstrap.Bootstrap;
@@ -128,7 +128,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<Packet<?>> {
    @Override
    public void channelRead0(ChannelHandlerContext var1, Packet<?> var2) throws Exception {
       if (this.field38648.isOpen()) {
-         RecievePacketEvent var5 = new RecievePacketEvent(var2);
+         ReceivePacketEvent var5 = new ReceivePacketEvent(var2);
          Client.getInstance().getEventManager().call(var5);
          if (var5.isCancelled()) {
             return;

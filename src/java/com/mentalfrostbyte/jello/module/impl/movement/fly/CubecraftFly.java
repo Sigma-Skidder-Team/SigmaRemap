@@ -180,7 +180,7 @@ public class CubecraftFly extends Module {
     }
 
     @EventTarget
-    public void method16690(RecievePacketEvent var1) {
+    public void method16690(ReceivePacketEvent var1) {
         if (mc.world != null && mc.getConnection() != null && ColorUtils.method17718()) {
             Packet var4 = var1.getPacket();
             if (!(var4 instanceof SPlayerPositionLookPacket)) {

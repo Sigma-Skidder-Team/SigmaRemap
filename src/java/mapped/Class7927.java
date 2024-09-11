@@ -39,8 +39,8 @@ public class Class7927 {
    }
 
    public int method26601(ChunkPos var1) {
-      int var4 = Math.abs(var1.field32174) % 32;
-      int var5 = Math.abs(var1.field32175) % 32;
+      int var4 = Math.abs(var1.x) % 32;
+      int var5 = Math.abs(var1.z) % 32;
       int var6 = var4 * 32 + var5;
       return Math.max(0, Math.min(var6, 1024));
    }
@@ -66,8 +66,8 @@ public class Class7927 {
    }
 
    public static Class2531 method26605(ChunkPos var0) {
-      int var3 = (int)Math.floor((double)var0.field32174 / 32.0);
-      int var4 = (int)Math.floor((double)var0.field32175 / 32.0);
+      int var3 = (int)Math.floor((double)var0.x / 32.0);
+      int var4 = (int)Math.floor((double)var0.z / 32.0);
       return new Class2531(var3, var4);
    }
 }

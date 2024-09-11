@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.misc;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
-import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
+import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
@@ -212,7 +212,7 @@ public class NoteblockPlayer extends PremiumModule {
     }
 
     @EventTarget
-    private void method16412(RecievePacketEvent var1) {
+    private void method16412(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (this.field23641 != null) {
                 if (var1.getPacket() instanceof SPlaySoundEffectPacket) {

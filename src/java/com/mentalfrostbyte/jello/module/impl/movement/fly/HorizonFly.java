@@ -78,7 +78,7 @@ public class HorizonFly extends Module {
     }
 
     @EventTarget
-    public void method16160(RecievePacketEvent var1) {
+    public void method16160(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             Packet var4 = var1.getPacket();
             if (var4 instanceof SPlayerPositionLookPacket) {

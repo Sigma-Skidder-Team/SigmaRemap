@@ -34,7 +34,7 @@ public class Class2968 extends Class2967 {
          for (int var10 = var5 - 10; var10 <= var5 + 10; var10++) {
             for (int var11 = var6 - 10; var11 <= var6 + 10; var11++) {
                ChunkPos var12 = Structure.field18073.method11370(var9, var2, var4, var10, var11);
-               if (var10 == var12.field32174 && var11 == var12.field32175) {
+               if (var10 == var12.x && var11 == var12.z) {
                   return true;
                }
             }
