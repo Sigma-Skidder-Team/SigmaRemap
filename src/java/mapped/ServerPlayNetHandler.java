@@ -25,6 +25,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ChatVisibility;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -53,6 +54,7 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.filter.IChatFilter;
+import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.commons.lang3.StringUtils;
@@ -767,8 +769,8 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                      if (!this.player.method2821()
                         && var29 > 0.0625
                         && !this.player.isSleeping()
-                        && !this.player.field4857.method33866()
-                        && this.player.field4857.method33863() != GameType.SPECTATOR) {
+                        && !this.player.interactionManager.method33866()
+                        && this.player.interactionManager.getGameType() != GameType.SPECTATOR) {
                         var34 = true;
                         LOGGER.warn("{} moved wrongly!", this.player.getName().getString());
                      }
@@ -778,7 +780,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                         || this.player.isSleeping()
                         || (!var34 || !var4.hasNoCollisions(this.player, var42)) && !this.method15667(var4, var42)) {
                         this.field23250 = var23 >= -0.03125
-                           && this.player.field4857.method33863() != GameType.SPECTATOR
+                           && this.player.interactionManager.getGameType() != GameType.SPECTATOR
                            && !this.server.method1359()
                            && !this.player.abilities.allowFlying
                            && !this.player.isPotionActive(Effects.LEVITATION)
@@ -891,7 +893,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          case 5:
          case 6:
          case 7:
-            this.player.field4857.method33858(var4, var5, var1.getFacing(), this.server.method1364());
+            this.player.interactionManager.method33858(var4, var5, var1.getFacing(), this.server.method1364());
             return;
          default:
             throw new IllegalArgumentException("Invalid player action");
@@ -923,7 +925,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       } else if (this.targetPos == null
          && this.player.getDistanceNearest((double)var8.getX() + 0.5, (double)var8.getY() + 0.5, (double)var8.getZ() + 0.5) < 64.0
          && var4.method6785(this.player, var8)) {
-         ActionResultType var12 = this.player.field4857.method33860(this.player, var4, var6, var5, var7);
+         ActionResultType var12 = this.player.interactionManager.method33860(this.player, var4, var6, var5, var7);
          if (var9 == Direction.field673 && !var12.isSuccessOrConsume() && var8.getY() >= this.server.method1364() - 1 && method15670(this.player, var6)) {
             IFormattableTextComponent var11 = new TranslationTextComponent("build.tooHigh", this.server.method1364()).mergeStyle(TextFormatting.RED);
             this.player.field4855.sendPacket(new SChatPacket(var11, ChatType.GAME_INFO, Util.DUMMY_UUID));
@@ -944,7 +946,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       ItemStack var6 = this.player.getHeldItem(var5);
       this.player.markPlayerActive();
       if (!var6.isEmpty()) {
-         ActionResultType var7 = this.player.field4857.method33859(this.player, var4, var6, var5);
+         ActionResultType var7 = this.player.interactionManager.method33859(this.player, var4, var6, var5);
          if (var7.isSuccess()) {
             this.player.swing(var5, true);
          }
@@ -1289,7 +1291,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    @Override
    public void processCreativeInventoryAction(CCreativeInventoryActionPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
-      if (this.player.field4857.method33866()) {
+      if (this.player.interactionManager.method33866()) {
          boolean var4 = var1.getSlotId() < 0;
          ItemStack var5 = var1.getStack();
          CompoundNBT var6 = var5.method32145("BlockEntityTag");
@@ -1371,7 +1373,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void processKeepAlive(CKeepAlivePacket var1) {
       if (this.field23229 && var1.getKey() == this.field23230) {
          int var4 = (int)(Util.milliTime() - this.field23228);
-         this.player.field4891 = (this.player.field4891 * 3 + var4) / 4;
+         this.player.ping = (this.player.ping * 3 + var4) / 4;
          this.field23229 = false;
       } else if (!this.method15657()) {
          this.disconnect(new TranslationTextComponent("disconnect.timeout"));

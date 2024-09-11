@@ -29,7 +29,7 @@ public class SOpenWindowPacket implements Packet<IClientPlayNetHandler> {
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24402 = var1.readVarInt();
       this.field24403 = var1.readVarInt();
-      this.field24404 = var1.method35710();
+      this.field24404 = var1.readTextComponent();
    }
 
    @Override

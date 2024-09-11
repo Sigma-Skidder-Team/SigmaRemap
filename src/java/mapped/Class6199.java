@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.GameType;
 
 public class Class6199 implements Class6196 {
    private static final ITextComponent field27665 = new TranslationTextComponent("tutorial.punch_tree.title");

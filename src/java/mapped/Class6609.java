@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameType;
 
 import java.util.UUID;
 

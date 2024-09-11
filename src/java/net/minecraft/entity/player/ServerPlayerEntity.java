@@ -1,15 +1,14 @@
-package mapped;
+package net.minecraft.entity.player;
 
 import com.google.common.collect.Lists;
 import com.mojang.authlib.GameProfile;
 import com.mojang.datafixers.util.Either;
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.IAngerable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.ChatVisibility;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -18,6 +17,8 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CClientSettingsPacket;
 import net.minecraft.network.play.server.*;
+import net.minecraft.scoreboard.ScorePlayerTeam;
+import net.minecraft.scoreboard.Team;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
@@ -28,6 +29,7 @@ import net.minecraft.util.text.*;
 import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.event.HoverEvent$Action;
 import net.minecraft.util.text.filter.IChatFilter;
+import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
@@ -40,7 +42,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    private static final Logger field4854 = LogManager.getLogger();
    public ServerPlayNetHandler field4855;
    public final MinecraftServer field4856;
-   public final Class9081 field4857;
+   public final Class9081 interactionManager;
    private final List<Integer> field4858 = Lists.newLinkedList();
    private final Class8019 field4859;
    private final Class8287 field4860;
@@ -74,13 +76,13 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    private final IChatFilter field4888;
    private int field4889;
    public boolean field4890;
-   public int field4891;
+   public int ping;
    public boolean queuedEndExit;
 
    public ServerPlayerEntity(MinecraftServer var1, ServerWorld var2, GameProfile var3, Class9081 var4) {
       super(var2, var2.method6947(), var2.method6948(), var3);
       var4.field41571 = this;
-      this.field4857 = var4;
+      this.interactionManager = var4;
       this.field4856 = var1;
       this.field4860 = var1.getPlayerList().method19485(this);
       this.field4859 = var1.getPlayerList().method19486(this);
@@ -138,13 +140,13 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       super.readAdditional(var1);
       if (var1.contains("playerGameType", 99)) {
          if (!this.method3396().method1380()) {
-            this.field4857
+            this.interactionManager
                .method33862(
-                  GameType.method8159(var1.getInt("playerGameType")),
-                  !var1.contains("previousPlayerGameType", 3) ? GameType.field11101 : GameType.method8159(var1.getInt("previousPlayerGameType"))
+                  GameType.getByID(var1.getInt("playerGameType")),
+                  !var1.contains("previousPlayerGameType", 3) ? GameType.field11101 : GameType.getByID(var1.getInt("previousPlayerGameType"))
                );
          } else {
-            this.field4857.method33862(this.method3396().method1286(), GameType.field11101);
+            this.interactionManager.method33862(this.method3396().method1286(), GameType.field11101);
          }
       }
 
@@ -178,8 +180,8 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    @Override
    public void writeAdditional(CompoundNBT var1) {
       super.writeAdditional(var1);
-      var1.putInt("playerGameType", this.field4857.method33863().method8152());
-      var1.putInt("previousPlayerGameType", this.field4857.method33864().method8152());
+      var1.putInt("playerGameType", this.interactionManager.getGameType().getID());
+      var1.putInt("previousPlayerGameType", this.interactionManager.method33864().getID());
       var1.putBoolean("seenCredits", this.field4877);
       if (this.field4882 != null) {
          CompoundNBT var4 = new CompoundNBT();
@@ -267,7 +269,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
    @Override
    public void tick() {
-      this.field4857.method33856();
+      this.interactionManager.method33856();
       this.field4871--;
       if (this.hurtResistantTime > 0) {
          this.hurtResistantTime--;
@@ -411,10 +413,10 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
                }
             );
          Team var6 = this.getTeam();
-         if (var6 == null || var6.method28583() == Class2225.field14554) {
+         if (var6 == null || var6.method28583() == Team.Visible.ALWAYS) {
             this.field4856.getPlayerList().method19484(var5, ChatType.SYSTEM, Util.DUMMY_UUID);
-         } else if (var6.method28583() != Class2225.field14556) {
-            if (var6.method28583() == Class2225.field14557) {
+         } else if (var6.method28583() != Team.Visible.HIDE_FOR_OTHER_TEAMS) {
+            if (var6.method28583() == Team.Visible.HIDE_FOR_OWN_TEAM) {
                this.field4856.getPlayerList().method19459(this, var5);
             }
          } else {
@@ -479,7 +481,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    private void method2740(String var1, String var2, Class9008[] var3) {
-      Class8218 var6 = this.method2953().method20998(var2);
+      ScorePlayerTeam var6 = this.method2953().method20998(var2);
       if (var6 != null) {
          int var7 = var6.getColor().getColorIndex();
          if (var7 >= 0 && var7 < var3.length) {
@@ -562,8 +564,8 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
                   var1.method6812(),
                   var1.getDimensionKey(),
                   BiomeManager.method20321(var1.method6967()),
-                  this.field4857.method33863(),
-                  this.field4857.method33864(),
+                  this.interactionManager.getGameType(),
+                  this.interactionManager.method33864(),
                   var1.isDebug(),
                   var1.method6966(),
                   true
@@ -591,7 +593,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
             this.moveForced(var8.field45665.x, var8.field45665.y, var8.field45665.z);
             var4.getProfiler().endSection();
             this.method2748(var4);
-            this.field4857.method33871(var1);
+            this.interactionManager.method33871(var1);
             this.field4855.sendPacket(new SPlayerAbilitiesPacket(this.abilities));
             var7.method19472(this, var1);
             var7.method19473(this);
@@ -627,7 +629,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    public Optional<TeleportationRepositioner> method2747(ServerWorld var1, BlockPos var2, boolean var3) {
       Optional var6 = super.method2747(var1, var2, var3);
       if (!var6.isPresent()) {
-         Direction var7 = this.world.getBlockState(this.field_242271_ac).<Direction>method23464(Class3401.field19060).orElse(Direction.field413);
+         mapped.Direction var7 = this.world.getBlockState(this.field_242271_ac).<mapped.Direction>method23464(Class3401.field19060).orElse(mapped.Direction.field413);
          Optional var8 = var1.method6937().method12332(var2, var7);
          if (!var8.isPresent()) {
             field4854.error("Unable to create a portal, likely target out of worldborder");
@@ -1116,8 +1118,8 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
    @Override
    public void method2799(GameType var1) {
-      this.field4857.method33861(var1);
-      this.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24563, (float)var1.method8152()));
+      this.interactionManager.method33861(var1);
+      this.field4855.sendPacket(new SChangeGameStatePacket(SChangeGameStatePacket.field24563, (float)var1.getID()));
       if (var1 != GameType.SPECTATOR) {
          this.method2815(this);
       } else {
@@ -1131,12 +1133,12 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
    @Override
    public boolean isSpectator() {
-      return this.field4857.method33863() == GameType.SPECTATOR;
+      return this.interactionManager.getGameType() == GameType.SPECTATOR;
    }
 
    @Override
    public boolean isCreative() {
-      return this.field4857.method33863() == GameType.field11103;
+      return this.interactionManager.getGameType() == GameType.field11103;
    }
 
    @Override
@@ -1246,7 +1248,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
    @Override
    public void method2817(Entity var1) {
-      if (this.field4857.method33863() != GameType.SPECTATOR) {
+      if (this.interactionManager.getGameType() != GameType.SPECTATOR) {
          super.method2817(var1);
       } else {
          this.method2815(var1);
@@ -1258,7 +1260,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Nullable
-   public ITextComponent method2819() {
+   public ITextComponent getTabListDisplayName() {
       return null;
    }
 
@@ -1292,8 +1294,8 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
                   var1.method6812(),
                   var1.getDimensionKey(),
                   BiomeManager.method20321(var1.method6967()),
-                  this.field4857.method33863(),
-                  this.field4857.method33864(),
+                  this.interactionManager.getGameType(),
+                  this.interactionManager.method33864(),
                   var1.isDebug(),
                   var1.method6966(),
                   true
@@ -1308,7 +1310,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          var1.method6919(this);
          this.method2748(var12);
          this.field4855.method15668(var2, var4, var6, var8, var9);
-         this.field4857.method33871(var1);
+         this.interactionManager.method33871(var1);
          this.field4856.getPlayerList().method19472(this, var1);
          this.field4856.getPlayerList().method19473(this);
       } else {

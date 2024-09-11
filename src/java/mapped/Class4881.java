@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.ResourceLocation;
 
 public class Class4881 extends Class4874<Class4456> {

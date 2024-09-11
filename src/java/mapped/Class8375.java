@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextComponentUtils;
@@ -8,14 +9,14 @@ import net.minecraft.util.text.event.HoverEvent$Action;
 
 public class Class8375 {
    private static String[] field35938;
-   private final Class6886 field35939;
+   private final Scoreboard field35939;
    private final String field35940;
    private final Class9008 field35941;
    private ITextComponent field35942;
    private ITextComponent field35943;
    private Class2316 field35944;
 
-   public Class8375(Class6886 var1, String var2, Class9008 var3, ITextComponent var4, Class2316 var5) {
+   public Class8375(Scoreboard var1, String var2, Class9008 var3, ITextComponent var4, Class2316 var5) {
       this.field35939 = var1;
       this.field35940 = var2;
       this.field35941 = var3;
@@ -24,7 +25,7 @@ public class Class8375 {
       this.field35944 = var5;
    }
 
-   public Class6886 method29335() {
+   public Scoreboard method29335() {
       return this.field35939;
    }
 

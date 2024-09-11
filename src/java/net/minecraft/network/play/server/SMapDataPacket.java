@@ -55,7 +55,7 @@ public class SMapDataPacket implements Packet<IClientPlayNetHandler> {
       for (int var4 = 0; var4 < this.field24895.length; var4++) {
          MapDecorationType var5 = var1.<MapDecorationType>readEnumValue(MapDecorationType.class);
          this.field24895[var4] = new Class7982(
-            var5, var1.readByte(), var1.readByte(), (byte)(var1.readByte() & 15), !var1.readBoolean() ? null : var1.method35710()
+            var5, var1.readByte(), var1.readByte(), (byte)(var1.readByte() & 15), !var1.readBoolean() ? null : var1.readTextComponent()
          );
       }
 

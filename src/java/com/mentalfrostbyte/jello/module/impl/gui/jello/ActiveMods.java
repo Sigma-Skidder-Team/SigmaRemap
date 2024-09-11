@@ -13,6 +13,8 @@ import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.scoreboard.ScorePlayerTeam;
+import net.minecraft.scoreboard.Scoreboard;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.Color;
@@ -78,9 +80,9 @@ public class ActiveMods extends Module {
             if (!var1.method13939()) {
                 GlStateManager.method23839(0.0F, (float) (-this.field23614), 0.0F);
             } else {
-                Class6886 var4 = mc.world.method6805();
+                Scoreboard var4 = mc.world.method6805();
                 Class8375 var5 = null;
-                Class8218 var6 = var4.method20998(mc.player.method2956());
+                ScorePlayerTeam var6 = var4.method20998(mc.player.method2956());
                 if (var6 != null) {
                     int var7 = var6.getColor().getColorIndex();
                     if (var7 >= 0) {

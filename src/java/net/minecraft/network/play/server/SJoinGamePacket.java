@@ -6,6 +6,7 @@ import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 
 import java.io.IOException;
@@ -71,8 +72,8 @@ public class SJoinGamePacket implements Packet<IClientPlayNetHandler> {
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24406 = var1.readInt();
       this.field24408 = var1.readBoolean();
-      this.field24409 = GameType.method8159(var1.readByte());
-      this.field24410 = GameType.method8159(var1.readByte());
+      this.field24409 = GameType.getByID(var1.readByte());
+      this.field24410 = GameType.getByID(var1.readByte());
       int var4 = var1.readVarInt();
       this.field24411 = Sets.newHashSet();
 
@@ -96,8 +97,8 @@ public class SJoinGamePacket implements Packet<IClientPlayNetHandler> {
    public void writePacketData(PacketBuffer var1) throws IOException {
       var1.writeInt(this.field24406);
       var1.writeBoolean(this.field24408);
-      var1.writeByte(this.field24409.method8152());
-      var1.writeByte(this.field24410.method8152());
+      var1.writeByte(this.field24409.getID());
+      var1.writeByte(this.field24410.getID());
       var1.writeVarInt(this.field24411.size());
 
       for (RegistryKey var5 : this.field24411) {

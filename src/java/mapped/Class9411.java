@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.scoreboard.Scoreboard;
+
 import java.util.Comparator;
 import javax.annotation.Nullable;
 
@@ -11,14 +13,14 @@ public class Class9411 {
          return 1;
       }
    };
-   private final Class6886 field43669;
+   private final Scoreboard field43669;
    private final Class8375 field43670;
    private final String field43671;
    private int field43672;
    private boolean field43673;
    private boolean field43674;
 
-   public Class9411(Class6886 var1, Class8375 var2, String var3) {
+   public Class9411(Scoreboard var1, Class8375 var2, String var3) {
       this.field43669 = var1;
       this.field43670 = var2;
       this.field43671 = var3;
@@ -64,7 +66,7 @@ public class Class9411 {
       return this.field43671;
    }
 
-   public Class6886 method36055() {
+   public Scoreboard method36055() {
       return this.field43669;
    }
 

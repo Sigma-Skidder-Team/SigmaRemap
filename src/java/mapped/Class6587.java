@@ -7,7 +7,9 @@ import java.util.Collection;
 import java.util.Collections;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.GameType;
 
 public class Class6587 {
    public static void method19960(CommandDispatcher<Class6619> var0) {
@@ -45,7 +47,7 @@ public class Class6587 {
       int var5 = 0;
 
       for (ServerPlayerEntity var7 : var1) {
-         if (var7.field4857.method33863() != var2) {
+         if (var7.interactionManager.getGameType() != var2) {
             var7.method2799(var2);
             method19961((Class6619)var0.getSource(), var7, var2);
             var5++;

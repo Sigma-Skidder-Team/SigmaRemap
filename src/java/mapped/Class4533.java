@@ -7,7 +7,9 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.GameType;
 
 public class Class4533 {
    private static final SimpleCommandExceptionType field21847 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.spectate.self"));
@@ -36,7 +38,7 @@ public class Class4533 {
 
    private static int method14454(Class6619 var0, Entity var1, ServerPlayerEntity var2) throws CommandSyntaxException {
       if (var2 != var1) {
-         if (var2.field4857.method33863() == GameType.SPECTATOR) {
+         if (var2.interactionManager.getGameType() == GameType.SPECTATOR) {
             var2.method2815(var1);
             if (var1 == null) {
                var0.method20179(new TranslationTextComponent("commands.spectate.success.stopped"), false);

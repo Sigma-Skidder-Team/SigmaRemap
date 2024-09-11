@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.util.Hand;
 import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;
@@ -112,7 +113,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
       double var8 = this.field25097.method32228(var1);
       var3.push();
       if (var8 < 100.0) {
-         Class6886 var10 = var1.method2953();
+         Scoreboard var10 = var1.method2953();
          Class8375 var11 = var10.method20989(2);
          if (var11 != null) {
             Class9411 var12 = var10.method20980(var1.method2956(), var11);

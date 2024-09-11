@@ -8,6 +8,8 @@ import com.mojang.brigadier.tree.LiteralCommandNode;
 import java.util.List;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
@@ -36,7 +38,7 @@ public class Class9175 {
 
    private static int method34286(Class6619 var0, ITextComponent var1) throws CommandSyntaxException {
       Entity var4 = var0.method20174();
-      Class8218 var5 = (Class8218)var4.getTeam();
+      ScorePlayerTeam var5 = (ScorePlayerTeam)var4.getTeam();
       if (var5 != null) {
          IFormattableTextComponent var6 = var5.method28569().mergeStyle(field42128);
          List<ServerPlayerEntity> var7 = var0.method20177().getPlayerList().method19488();

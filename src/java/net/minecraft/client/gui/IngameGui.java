@@ -16,11 +16,14 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.scoreboard.ScorePlayerTeam;
+import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.text.*;
+import net.minecraft.world.GameType;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
@@ -256,9 +259,9 @@ public class IngameGui extends AbstractGui {
             }
 
             this.field6727.method5999(var1);
-            Class6886 var17 = this.field6716.world.method6805();
+            Scoreboard var17 = this.field6716.world.method6805();
             Class8375 var21 = null;
-            Class8218 var25 = var17.method20998(this.field6716.player.method2956());
+            ScorePlayerTeam var25 = var17.method20998(this.field6716.player.method2956());
             if (var25 != null) {
                 int var27 = var25.getColor().getColorIndex();
                 if (var27 >= 0) {
@@ -619,7 +622,7 @@ public class IngameGui extends AbstractGui {
     }
 
     private void method5971(MatrixStack var1, Class8375 var2) {
-        Class6886 var5 = var2.method29335();
+        Scoreboard var5 = var2.method29335();
         Collection<Class9411> var6 = var5.method20981(var2);
         List var7 = var6.stream().filter(var0 -> var0.method36054() != null && !var0.method36054().startsWith("#")).collect(Collectors.toList());
         if (var7.size() <= 15) {
@@ -635,8 +638,8 @@ public class IngameGui extends AbstractGui {
         int var12 = this.method5991().getStringWidth(": ");
 
         for (Class9411 var14 : var6) {
-            Class8218 var15 = var5.method20998(var14.method36054());
-            IFormattableTextComponent var16 = Class8218.method28577(var15, new StringTextComponent(var14.method36054()));
+            ScorePlayerTeam var15 = var5.method20998(var14.method36054());
+            IFormattableTextComponent var16 = ScorePlayerTeam.method28577(var15, new StringTextComponent(var14.method36054()));
             var8.add(Pair.of(var14, var16));
             var11 = Math.max(var11, this.method5991().method38821(var16) + var12 + this.method5991().getStringWidth(Integer.toString(var14.method36050())));
         }

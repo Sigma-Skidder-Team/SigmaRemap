@@ -17,6 +17,7 @@ import net.minecraft.nbt.INBT;
 import net.minecraft.util.UUIDCodec;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -226,7 +227,7 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
          .encodeStart(var8, this.field29065)
          .resultOrPartial(Util.func_240982_a_("WorldGenSettings: ", field29063::error))
          .ifPresent(var1x -> var2.put("WorldGenSettings", var1x));
-      var2.putInt("GameType", this.field29064.method32427().method8152());
+      var2.putInt("GameType", this.field29064.method32427().getID());
       var2.putInt("SpawnX", this.field29067);
       var2.putInt("SpawnY", this.field29068);
       var2.putInt("SpawnZ", this.field29069);

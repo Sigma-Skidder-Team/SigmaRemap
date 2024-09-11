@@ -8,8 +8,11 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.network.play.server.SPlayerListItemPacket;
+import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.GameType;
 
 public class Class6589 {
    private final GameProfile field29003;
@@ -25,11 +28,11 @@ public class Class6589 {
    private long field29013;
    private long field29014;
 
-   public Class6589(Class8790 var1) {
-      this.field29003 = var1.method31726();
-      this.field29005 = var1.method31728();
-      this.field29006 = var1.method31727();
-      this.field29009 = var1.method31729();
+   public Class6589(SPlayerListItemPacket.AddPlayerData var1) {
+      this.field29003 = var1.getProfile();
+      this.field29005 = var1.getGameMode();
+      this.field29006 = var1.getPing();
+      this.field29009 = var1.getDisplayName();
    }
 
    public GameProfile method19966() {
@@ -79,7 +82,7 @@ public class Class6589 {
    }
 
    @Nullable
-   public Class8218 method19976() {
+   public ScorePlayerTeam method19976() {
       return Minecraft.getInstance().world.method6805().method20998(this.method19966().getName());
    }
 

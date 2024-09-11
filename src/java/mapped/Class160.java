@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.entity.Entity;
+import net.minecraft.scoreboard.Scoreboard;
 
 import java.util.Map;
 import java.util.Map.Entry;
@@ -33,7 +34,7 @@ public class Class160 implements ILootCondition {
       if (var4 == null) {
          return false;
       } else {
-         Class6886 var5 = var4.world.method6805();
+         Scoreboard var5 = var4.world.method6805();
 
          for (Entry var7 : this.field520.entrySet()) {
             if (!this.method483(var4, var5, (String)var7.getKey(), (Class6872)var7.getValue())) {
@@ -45,7 +46,7 @@ public class Class160 implements ILootCondition {
       }
    }
 
-   public boolean method483(Entity var1, Class6886 var2, String var3, Class6872 var4) {
+   public boolean method483(Entity var1, Scoreboard var2, String var3, Class6872 var4) {
       Class8375 var7 = var2.method20976(var3);
       if (var7 != null) {
          String var8 = var1.method2956();

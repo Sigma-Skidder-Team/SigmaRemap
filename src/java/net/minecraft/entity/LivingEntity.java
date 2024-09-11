@@ -18,6 +18,7 @@ import com.mojang.serialization.Dynamic;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -28,6 +29,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.*;
+import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -589,7 +591,7 @@ public abstract class LivingEntity extends Entity {
       this.field4995 = var1.getInt("HurtByTimestamp");
       if (var1.contains("Team", 8)) {
          String var8 = var1.getString("Team");
-         Class8218 var10 = this.world.method6805().method20990(var8);
+         ScorePlayerTeam var10 = this.world.method6805().method20990(var8);
          boolean var11 = var10 != null && this.world.method6805().method20993(this.method3376(), var10);
          if (!var11) {
             LOGGER.warn("Unable to add mob to team \"{}\" (that team probably doesn't exist)", var8);

@@ -7,10 +7,8 @@ import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
-import mapped.Class2176;
 import net.minecraft.network.play.server.SPlayerListItemPacket;
 import mapped.Class6589;
-import mapped.Class8790;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
@@ -73,11 +71,11 @@ public class AntiVanish extends Module {
         if (this.isEnabled()) {
             if (mc.getConnection() != null && var1.getPacket() instanceof SPlayerListItemPacket) {
                 SPlayerListItemPacket var4 = (SPlayerListItemPacket) var1.getPacket();
-                if (var4.method17308() == Class2176.field14283) {
-                    for (Class8790 var6 : var4.method17307()) {
-                        Class6589 var7 = mc.getConnection().method15792(var6.method31726().getId());
-                        if (var7 == null && !this.method16864(var6.method31726().getId())) {
-                            System.out.println(var6.method31726().getId());
+                if (var4.getAction() == SPlayerListItemPacket.Action.UPDATE_LATENCY) {
+                    for (SPlayerListItemPacket.AddPlayerData var6 : var4.getEntries()) {
+                        Class6589 var7 = mc.getConnection().method15792(var6.getProfile().getId());
+                        if (var7 == null && !this.method16864(var6.getProfile().getId())) {
+                            System.out.println(var6.getProfile().getId());
                             Client.getInstance().getNotificationManager().post(new Notification("Vanished Warning", "A player is vanished ! ", 5500));
                             this.field23968 = -3200;
                         }

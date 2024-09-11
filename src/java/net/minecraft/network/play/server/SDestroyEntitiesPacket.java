@@ -7,31 +7,32 @@ import net.minecraft.network.Packet;
 import java.io.IOException;
 
 public class SDestroyEntitiesPacket implements Packet<IClientPlayNetHandler> {
-   private static String[] field24351;
-   private int[] field24352;
+    private int[] entityIDs;
 
    public SDestroyEntitiesPacket() {
    }
 
    public SDestroyEntitiesPacket(int... var1) {
-      this.field24352 = var1;
+      this.entityIDs = var1;
    }
 
    @Override
-   public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24352 = new int[var1.readVarInt()];
+   public void readPacketData(PacketBuffer buf) throws IOException {
+      this.entityIDs = new int[buf.readVarInt()];
 
-      for (int var4 = 0; var4 < this.field24352.length; var4++) {
-         this.field24352[var4] = var1.readVarInt();
+      for (int i = 0; i < this.entityIDs.length; ++i)
+      {
+         this.entityIDs[i] = buf.readVarInt();
       }
    }
 
    @Override
-   public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeVarInt(this.field24352.length);
+   public void writePacketData(PacketBuffer buf) throws IOException {
+      buf.writeVarInt(this.entityIDs.length);
 
-      for (int var7 : this.field24352) {
-         var1.writeVarInt(var7);
+      for (int i : this.entityIDs)
+      {
+         buf.writeVarInt(i);
       }
    }
 
@@ -39,7 +40,7 @@ public class SDestroyEntitiesPacket implements Packet<IClientPlayNetHandler> {
       var1.handleDestroyEntities(this);
    }
 
-   public int[] method17251() {
-      return this.field24352;
+   public int[] getEntityIDs() {
+      return this.entityIDs;
    }
 }

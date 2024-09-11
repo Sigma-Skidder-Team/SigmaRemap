@@ -3,6 +3,7 @@ package mapped;
 import java.util.Objects;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.network.play.server.SPlayerListItemPacket;
@@ -13,6 +14,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
@@ -46,11 +48,11 @@ public class Class9081 {
       this.field41572 = var1;
       var1.method8155(this.field41571.abilities);
       this.field41571.method2797();
-      this.field41571.field4856.getPlayerList().method19456(new SPlayerListItemPacket(Class2176.field14282, this.field41571));
+      this.field41571.field4856.getPlayerList().method19456(new SPlayerListItemPacket(SPlayerListItemPacket.Action.UPDATE_GAME_MODE, this.field41571));
       this.field41570.method6902();
    }
 
-   public GameType method33863() {
+   public GameType getGameType() {
       return this.field41572;
    }
 

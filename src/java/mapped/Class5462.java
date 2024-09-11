@@ -7,6 +7,7 @@ import java.util.Comparator;
 import java.util.Map;
 import java.util.Map.Entry;
 
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SEntityStatusPacket;
 import net.minecraft.network.play.server.SChangeGameStatePacket;

@@ -18,7 +18,7 @@ public final class Class6484 implements Class6466<Optional<ITextComponent>> {
    }
 
    public Optional<ITextComponent> method19645(PacketBuffer var1) {
-      return !var1.readBoolean() ? Optional.<ITextComponent>empty() : Optional.<ITextComponent>of(var1.method35710());
+      return !var1.readBoolean() ? Optional.<ITextComponent>empty() : Optional.<ITextComponent>of(var1.readTextComponent());
    }
 
    public Optional<ITextComponent> method19644(Optional<ITextComponent> var1) {

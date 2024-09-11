@@ -5,6 +5,7 @@ import java.util.List;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -16,7 +17,7 @@ public class Class7227 implements Class7226, Class7222 {
    public Class7227() {
       Minecraft var3 = Minecraft.getInstance();
 
-      for (Class8218 var5 : var3.world.method6805().method20997()) {
+      for (ScorePlayerTeam var5 : var3.world.method6805().method20997()) {
          this.field31066.add(new Class7224(this, var5));
       }
    }

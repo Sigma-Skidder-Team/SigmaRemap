@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.entity.player.ServerPlayerEntity;
 
 import java.util.Iterator;
 

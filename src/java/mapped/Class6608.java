@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.GameType;
+
 import java.util.UUID;
 
 public interface Class6608 extends ISpawnWorldInfo {
@@ -24,7 +26,7 @@ public interface Class6608 extends ISpawnWorldInfo {
          () -> String.format(
                "Game mode: %s (ID %d). Hardcore: %b. Cheats: %b",
                this.method20067().method8153(),
-               this.method20067().method8152(),
+               this.method20067().getID(),
                this.isHardcore(),
                this.method20072()
             )

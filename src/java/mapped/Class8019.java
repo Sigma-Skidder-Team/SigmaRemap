@@ -33,6 +33,7 @@ import java.util.stream.Stream;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SSelectAdvancementsTabPacket;
 import net.minecraft.network.play.server.SAdvancementInfoPacket;
 import net.minecraft.util.ResourceLocation;

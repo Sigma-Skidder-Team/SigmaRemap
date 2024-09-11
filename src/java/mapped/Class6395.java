@@ -22,10 +22,13 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.server.*;
+import net.minecraft.scoreboard.ScorePlayerTeam;
+import net.minecraft.scoreboard.Team;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -33,6 +36,7 @@ import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
@@ -90,7 +94,7 @@ public abstract class Class6395 {
       }
 
       var2.method3268(var12);
-      var2.field4857.method33871((ServerWorld)var2.world);
+      var2.interactionManager.method33871((ServerWorld)var2.world);
       String var13 = "local";
       if (var1.method30700() != null) {
          var13 = var1.method30700().toString();
@@ -114,8 +118,8 @@ public abstract class Class6395 {
       var15.sendPacket(
          new SJoinGamePacket(
             var2.getEntityId(),
-            var2.field4857.method33863(),
-            var2.field4857.method33864(),
+            var2.interactionManager.getGameType(),
+            var2.interactionManager.method33864(),
             BiomeManager.method20321(var12.method6967()),
             var14.isHardcore(),
             this.field27990.method1319(),
@@ -152,10 +156,10 @@ public abstract class Class6395 {
       var15.method15668(var2.getPosX(), var2.getPosY(), var2.getPosZ(), var2.rotationYaw, var2.rotationPitch);
       this.field27991.add(var2);
       this.field27992.put(var2.getUniqueID(), var2);
-      this.method19456(new SPlayerListItemPacket(Class2176.field14281, var2));
+      this.method19456(new SPlayerListItemPacket(SPlayerListItemPacket.Action.ADD_PLAYER, var2));
 
       for (int var20 = 0; var20 < this.field27991.size(); var20++) {
-         var2.field4855.sendPacket(new SPlayerListItemPacket(Class2176.field14281, this.field27991.get(var20)));
+         var2.field4855.sendPacket(new SPlayerListItemPacket(SPlayerListItemPacket.Action.ADD_PLAYER, this.field27991.get(var20)));
       }
 
       var12.method6921(var2);
@@ -208,7 +212,7 @@ public abstract class Class6395 {
    public void method19446(Class6887 var1, ServerPlayerEntity var2) {
       HashSet var5 = Sets.newHashSet();
 
-      for (Class8218 var7 : var1.method20997()) {
+      for (ScorePlayerTeam var7 : var1.method20997()) {
          var2.field4855.sendPacket(new STeamsPacket(var7, 0));
       }
 
@@ -290,7 +294,7 @@ public abstract class Class6395 {
          this.field27998.remove(var8);
       }
 
-      this.method19456(new SPlayerListItemPacket(Class2176.field14285, var1));
+      this.method19456(new SPlayerListItemPacket(SPlayerListItemPacket.Action.REMOVE_PLAYER, var1));
    }
 
    @Nullable
@@ -419,8 +423,8 @@ public abstract class Class6395 {
                var12.world.method6812(),
                var12.world.getDimensionKey(),
                BiomeManager.method20321(var12.getServerWorld().method6967()),
-               var12.field4857.method33863(),
-               var12.field4857.method33864(),
+               var12.interactionManager.getGameType(),
+               var12.interactionManager.method33864(),
                var12.getServerWorld().isDebug(),
                var12.getServerWorld().method6966(),
                var2
@@ -457,7 +461,7 @@ public abstract class Class6395 {
 
    public void method19455() {
       if (++this.field28006 > 600) {
-         this.method19456(new SPlayerListItemPacket(Class2176.field14283, this.field27991));
+         this.method19456(new SPlayerListItemPacket(SPlayerListItemPacket.Action.UPDATE_LATENCY, this.field27991));
          this.field28006 = 0;
       }
    }
@@ -679,13 +683,13 @@ public abstract class Class6395 {
    private void method19481(ServerPlayerEntity var1, ServerPlayerEntity var2, ServerWorld var3) {
       if (var2 == null) {
          if (this.field28004 != null) {
-            var1.field4857.method33862(this.field28004, GameType.field11101);
+            var1.interactionManager.method33862(this.field28004, GameType.field11101);
          }
       } else {
-         var1.field4857.method33862(var2.field4857.method33863(), var2.field4857.method33864());
+         var1.interactionManager.method33862(var2.interactionManager.getGameType(), var2.interactionManager.method33864());
       }
 
-      var1.field4857.method33867(var3.getServer().method1436().method20067());
+      var1.interactionManager.method33867(var3.getServer().method1436().method20067());
    }
 
    public void method19482(boolean var1) {

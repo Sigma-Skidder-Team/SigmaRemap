@@ -6,7 +6,9 @@ import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.network.play.server.SPlayerListItemPacket;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import org.lwjgl.opengl.GL11;
 
@@ -66,7 +68,7 @@ public class Class4298 extends Class4278 {
          GameProfile var20 = new GameProfile(var8, this.account.getKnownName());
          if (this.field20828 == null || !this.field20828.getDisplayName().getString().equals(this.account.getKnownName())) {
             this.field20828 = new Class1118(field20825, new GameProfile(var8, this.account.getKnownName()));
-            this.field20828.field6096 = new Class6589(new Class8790(var20, 0, GameType.field11103, this.field20828.getDisplayName()));
+            this.field20828.field6096 = new Class6589(new SPlayerListItemPacket.AddPlayerData(var20, 0, GameType.field11103, this.field20828.getDisplayName()));
          }
 
          this.field20828.setUniqueId(var8);

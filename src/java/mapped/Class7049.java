@@ -5,6 +5,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import java.util.Collection;
 
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SStopSoundPacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;

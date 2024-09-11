@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.GameType;
+
 // $VF: synthetic class
 public class Class9243 {
    private static String[] field42530;

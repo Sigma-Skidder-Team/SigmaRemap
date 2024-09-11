@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class2786 extends Class2785 {

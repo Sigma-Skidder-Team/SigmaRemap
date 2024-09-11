@@ -1,6 +1,9 @@
 package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.scoreboard.ScorePlayerTeam;
+import net.minecraft.scoreboard.Scoreboard;
+import net.minecraft.scoreboard.Team;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.TextFormatting;
@@ -9,14 +12,14 @@ import org.apache.logging.log4j.Logger;
 
 public class Class7535 extends Class7530 {
    private static final Logger field32340 = LogManager.getLogger();
-   private Class6886 field32341;
+   private Scoreboard field32341;
    private CompoundNBT field32342;
 
    public Class7535() {
       super("scoreboard");
    }
 
-   public void method24629(Class6886 var1) {
+   public void method24629(Scoreboard var1) {
       this.field32341 = var1;
       if (this.field32342 != null) {
          this.method24591(this.field32342);
@@ -48,7 +51,7 @@ public class Class7535 extends Class7530 {
             var6 = var6.substring(0, 16);
          }
 
-         Class8218 var7 = this.field32341.method20991(var6);
+         ScorePlayerTeam var7 = this.field32341.method20991(var6);
          IFormattableTextComponent var8 = ITextComponent$Serializer.func_240643_a_(var5.getString("DisplayName"));
          if (var8 != null) {
             var7.method28570(var8);
@@ -81,21 +84,21 @@ public class Class7535 extends Class7530 {
          }
 
          if (var5.contains("NameTagVisibility", 8)) {
-            Class2225 var11 = Class2225.method8958(var5.getString("NameTagVisibility"));
+            Team.Visible var11 = Team.Visible.getByName(var5.getString("NameTagVisibility"));
             if (var11 != null) {
                var7.method28584(var11);
             }
          }
 
          if (var5.contains("DeathMessageVisibility", 8)) {
-            Class2225 var12 = Class2225.method8958(var5.getString("DeathMessageVisibility"));
+            Team.Visible var12 = Team.Visible.getByName(var5.getString("DeathMessageVisibility"));
             if (var12 != null) {
                var7.method28585(var12);
             }
          }
 
          if (var5.contains("CollisionRule", 8)) {
-            Class2212 var13 = Class2212.method8939(var5.getString("CollisionRule"));
+            Team.CollisionRule var13 = Team.CollisionRule.getByName(var5.getString("CollisionRule"));
             if (var13 != null) {
                var7.method28587(var13);
             }
@@ -105,7 +108,7 @@ public class Class7535 extends Class7530 {
       }
    }
 
-   public void method24631(Class8218 var1, ListNBT var2) {
+   public void method24631(ScorePlayerTeam var1, ListNBT var2) {
       for (int var5 = 0; var5 < var2.size(); var5++) {
          this.field32341.method20993(var2.method160(var5), var1);
       }
@@ -154,7 +157,7 @@ public class Class7535 extends Class7530 {
    public ListNBT method24634() {
       ListNBT var3 = new ListNBT();
 
-      for (Class8218 var5 : this.field32341.method20997()) {
+      for (ScorePlayerTeam var5 : this.field32341.method20997()) {
          CompoundNBT var6 = new CompoundNBT();
          var6.method109("Name", var5.method28567());
          var6.method109("DisplayName", ITextComponent$Serializer.toJson(var5.method28568()));
@@ -166,9 +169,9 @@ public class Class7535 extends Class7530 {
          var6.putBoolean("SeeFriendlyInvisibles", var5.method28580());
          var6.method109("MemberNamePrefix", ITextComponent$Serializer.toJson(var5.method28572()));
          var6.method109("MemberNameSuffix", ITextComponent$Serializer.toJson(var5.method28574()));
-         var6.method109("NameTagVisibility", var5.method28582().field14559);
-         var6.method109("DeathMessageVisibility", var5.method28583().field14559);
-         var6.method109("CollisionRule", var5.method28586().field14467);
+         var6.method109("NameTagVisibility", var5.method28582().internalName);
+         var6.method109("DeathMessageVisibility", var5.method28583().internalName);
+         var6.method109("CollisionRule", var5.method28586().name);
          ListNBT var7 = new ListNBT();
 
          for (String var9 : var5.method28575()) {

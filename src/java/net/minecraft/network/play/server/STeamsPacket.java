@@ -4,9 +4,8 @@ import com.google.common.collect.Lists;
 import java.io.IOException;
 import java.util.Collection;
 
-import mapped.Class2212;
-import mapped.Class2225;
-import mapped.Class8218;
+import net.minecraft.scoreboard.Team;
+import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
@@ -15,45 +14,45 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 
 public class STeamsPacket implements Packet<IClientPlayNetHandler> {
-   private String field24749 = "";
-   private ITextComponent field24750 = StringTextComponent.EMPTY;
-   private ITextComponent field24751 = StringTextComponent.EMPTY;
-   private ITextComponent field24752 = StringTextComponent.EMPTY;
-   private String field24753 = Class2225.field14554.field14559;
-   private String field24754 = Class2212.field14462.field14467;
-   private TextFormatting field24755 = TextFormatting.RESET;
-   private final Collection<String> field24756 = Lists.newArrayList();
-   private int field24757;
-   private int field24758;
+   private String name = "";
+   private ITextComponent displayName = StringTextComponent.EMPTY;
+   private ITextComponent prefix = StringTextComponent.EMPTY;
+   private ITextComponent suffix = StringTextComponent.EMPTY;
+   private String nameTagVisibility = Team.Visible.ALWAYS.internalName;
+   private String collisionRule = Team.CollisionRule.ALWAYS.name;
+   private TextFormatting color = TextFormatting.RESET;
+   private final Collection<String> players = Lists.newArrayList();
+   private int action;
+   private int friendlyFlags;
 
    public STeamsPacket() {
    }
 
-   public STeamsPacket(Class8218 var1, int var2) {
-      this.field24749 = var1.method28567();
-      this.field24757 = var2;
+   public STeamsPacket(ScorePlayerTeam var1, int var2) {
+      this.name = var1.method28567();
+      this.action = var2;
       if (var2 == 0 || var2 == 2) {
-         this.field24750 = var1.method28568();
-         this.field24758 = var1.method28588();
-         this.field24753 = var1.method28582().field14559;
-         this.field24754 = var1.method28586().field14467;
-         this.field24755 = var1.getColor();
-         this.field24751 = var1.method28572();
-         this.field24752 = var1.method28574();
+         this.displayName = var1.method28568();
+         this.friendlyFlags = var1.method28588();
+         this.nameTagVisibility = var1.method28582().internalName;
+         this.collisionRule = var1.method28586().name;
+         this.color = var1.getColor();
+         this.prefix = var1.method28572();
+         this.suffix = var1.method28574();
       }
 
       if (var2 == 0) {
-         this.field24756.addAll(var1.method28575());
+         this.players.addAll(var1.method28575());
       }
    }
 
-   public STeamsPacket(Class8218 var1, Collection<String> var2, int var3) {
+   public STeamsPacket(ScorePlayerTeam var1, Collection<String> var2, int var3) {
       if (var3 != 3 && var3 != 4) {
          throw new IllegalArgumentException("Method must be join or leave for player constructor");
       } else if (var2 != null && !var2.isEmpty()) {
-         this.field24757 = var3;
-         this.field24749 = var1.method28567();
-         this.field24756.addAll(var2);
+         this.action = var3;
+         this.name = var1.method28567();
+         this.players.addAll(var2);
       } else {
          throw new IllegalArgumentException("Players cannot be null/empty");
       }
@@ -61,45 +60,45 @@ public class STeamsPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24749 = var1.readString(16);
-      this.field24757 = var1.readByte();
-      if (this.field24757 == 0 || this.field24757 == 2) {
-         this.field24750 = var1.method35710();
-         this.field24758 = var1.readByte();
-         this.field24753 = var1.readString(40);
-         this.field24754 = var1.readString(40);
-         this.field24755 = var1.<TextFormatting>readEnumValue(TextFormatting.class);
-         this.field24751 = var1.method35710();
-         this.field24752 = var1.method35710();
+      this.name = var1.readString(16);
+      this.action = var1.readByte();
+      if (this.action == 0 || this.action == 2) {
+         this.displayName = var1.readTextComponent();
+         this.friendlyFlags = var1.readByte();
+         this.nameTagVisibility = var1.readString(40);
+         this.collisionRule = var1.readString(40);
+         this.color = var1.<TextFormatting>readEnumValue(TextFormatting.class);
+         this.prefix = var1.readTextComponent();
+         this.suffix = var1.readTextComponent();
       }
 
-      if (this.field24757 == 0 || this.field24757 == 3 || this.field24757 == 4) {
+      if (this.action == 0 || this.action == 3 || this.action == 4) {
          int var4 = var1.readVarInt();
 
          for (int var5 = 0; var5 < var4; var5++) {
-            this.field24756.add(var1.readString(40));
+            this.players.add(var1.readString(40));
          }
       }
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeString(this.field24749);
-      var1.writeByte(this.field24757);
-      if (this.field24757 == 0 || this.field24757 == 2) {
-         var1.writeTextComponent(this.field24750);
-         var1.writeByte(this.field24758);
-         var1.writeString(this.field24753);
-         var1.writeString(this.field24754);
-         var1.writeEnumValue(this.field24755);
-         var1.writeTextComponent(this.field24751);
-         var1.writeTextComponent(this.field24752);
+      var1.writeString(this.name);
+      var1.writeByte(this.action);
+      if (this.action == 0 || this.action == 2) {
+         var1.writeTextComponent(this.displayName);
+         var1.writeByte(this.friendlyFlags);
+         var1.writeString(this.nameTagVisibility);
+         var1.writeString(this.collisionRule);
+         var1.writeEnumValue(this.color);
+         var1.writeTextComponent(this.prefix);
+         var1.writeTextComponent(this.suffix);
       }
 
-      if (this.field24757 == 0 || this.field24757 == 3 || this.field24757 == 4) {
-         var1.writeVarInt(this.field24756.size());
+      if (this.action == 0 || this.action == 3 || this.action == 4) {
+         var1.writeVarInt(this.players.size());
 
-         for (String var5 : this.field24756) {
+         for (String var5 : this.players) {
             var1.writeString(var5);
          }
       }
@@ -109,43 +108,43 @@ public class STeamsPacket implements Packet<IClientPlayNetHandler> {
       var1.handleTeams(this);
    }
 
-   public String method17525() {
-      return this.field24749;
+   public String getName() {
+      return this.name;
    }
 
-   public ITextComponent method17526() {
-      return this.field24750;
+   public ITextComponent getDisplayName() {
+      return this.displayName;
    }
 
-   public Collection<String> method17527() {
-      return this.field24756;
+   public Collection<String> getPlayers() {
+      return this.players;
    }
 
-   public int method17528() {
-      return this.field24757;
+   public int getAction() {
+      return this.action;
    }
 
-   public int method17529() {
-      return this.field24758;
+   public int getFriendlyFlags() {
+      return this.friendlyFlags;
    }
 
-   public TextFormatting method17530() {
-      return this.field24755;
+   public TextFormatting getColor() {
+      return this.color;
    }
 
-   public String method17531() {
-      return this.field24753;
+   public String getNameTagVisibility() {
+      return this.nameTagVisibility;
    }
 
-   public String method17532() {
-      return this.field24754;
+   public String getCollisionRule() {
+      return this.collisionRule;
    }
 
-   public ITextComponent method17533() {
-      return this.field24751;
+   public ITextComponent getPrefix() {
+      return this.prefix;
    }
 
-   public ITextComponent method17534() {
-      return this.field24752;
+   public ITextComponent getSuffix() {
+      return this.suffix;
    }
 }

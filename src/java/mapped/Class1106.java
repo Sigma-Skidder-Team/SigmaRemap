@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SChangeGameStatePacket;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
@@ -57,7 +58,7 @@ public class Class1106 extends Class1105 {
       short var3 = 1200;
       if ((this.ticksExisted + this.getEntityId()) % 1200 == 0) {
          Effect var4 = Effects.MINING_FATIGUE;
-         List<ServerPlayerEntity> var5 = ((ServerWorld)this.world).method6914(var1 -> this.getDistanceSq(var1) < 2500.0 && var1.field4857.method33865());
+         List<ServerPlayerEntity> var5 = ((ServerWorld)this.world).method6914(var1 -> this.getDistanceSq(var1) < 2500.0 && var1.interactionManager.method33865());
 
          for (ServerPlayerEntity var10 : var5) {
             if (!var10.isPotionActive(var4) || var10.getActivePotionEffect(var4).method8629() < 2 || var10.getActivePotionEffect(var4).method8628() < 1200) {

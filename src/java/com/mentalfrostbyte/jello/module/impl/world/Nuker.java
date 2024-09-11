@@ -15,6 +15,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.GameType;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;

@@ -16,6 +16,8 @@ import java.util.Collection;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.CompletableFuture;
+
+import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextComponentUtils;
@@ -514,7 +516,7 @@ public class Class9601 {
       Class6887 var4 = var0.method20177().method1409();
       if (var4.method20989(var1) != null) {
          var4.method20988(var1, (Class8375)null);
-         var0.method20179(new TranslationTextComponent("commands.scoreboard.objectives.display.cleared", Class6886.method21010()[var1]), true);
+         var0.method20179(new TranslationTextComponent("commands.scoreboard.objectives.display.cleared", Scoreboard.method21010()[var1]), true);
          return 0;
       } else {
          throw field44913.create();
@@ -525,7 +527,7 @@ public class Class9601 {
       Class6887 var5 = var0.method20177().method1409();
       if (var5.method20989(var1) != var2) {
          var5.method20988(var1, var2);
-         var0.method20179(new TranslationTextComponent("commands.scoreboard.objectives.display.set", Class6886.method21010()[var1], var2.method29338()), true);
+         var0.method20179(new TranslationTextComponent("commands.scoreboard.objectives.display.set", Scoreboard.method21010()[var1], var2.method29338()), true);
          return 0;
       } else {
          throw field44914.create();

@@ -1,8 +1,9 @@
-package mapped;
+package net.minecraft.scoreboard;
 
 import com.google.common.collect.Sets;
 import java.util.Collection;
 import java.util.Set;
+
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -12,8 +13,8 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.event.HoverEvent$Action;
 
-public class Class8218 extends Team {
-   private final Class6886 field35295;
+public class ScorePlayerTeam extends Team {
+   private final Scoreboard field35295;
    private final String field35296;
    private final Set<String> field35297 = Sets.newHashSet();
    private ITextComponent field35298;
@@ -21,13 +22,13 @@ public class Class8218 extends Team {
    private ITextComponent field35300 = StringTextComponent.EMPTY;
    private boolean field35301 = true;
    private boolean field35302 = true;
-   private Class2225 field35303 = Class2225.field14554;
-   private Class2225 field35304 = Class2225.field14554;
+   private Visible field35303 = Visible.ALWAYS;
+   private Visible field35304 = Visible.ALWAYS;
    private TextFormatting field35305 = TextFormatting.RESET;
-   private Class2212 field35306 = Class2212.field14462;
+   private CollisionRule field35306 = CollisionRule.ALWAYS;
    private final Style field35307;
 
-   public Class8218(Class6886 var1, String var2) {
+   public ScorePlayerTeam(Scoreboard var1, String var2) {
       this.field35295 = var1;
       this.field35296 = var2;
       this.field35298 = new StringTextComponent(var2);
@@ -121,31 +122,31 @@ public class Class8218 extends Team {
    }
 
    @Override
-   public Class2225 method28582() {
+   public Visible method28582() {
       return this.field35303;
    }
 
    @Override
-   public Class2225 method28583() {
+   public Visible method28583() {
       return this.field35304;
    }
 
-   public void method28584(Class2225 var1) {
+   public void method28584(Visible var1) {
       this.field35303 = var1;
       this.field35295.method21006(this);
    }
 
-   public void method28585(Class2225 var1) {
+   public void method28585(Visible var1) {
       this.field35304 = var1;
       this.field35295.method21006(this);
    }
 
    @Override
-   public Class2212 method28586() {
+   public CollisionRule method28586() {
       return this.field35306;
    }
 
-   public void method28587(Class2212 var1) {
+   public void method28587(CollisionRule var1) {
       this.field35306 = var1;
       this.field35295.method21006(this);
    }
@@ -165,7 +166,7 @@ public class Class8218 extends Team {
 
    public void method28589(int var1) {
       int var2 = 2146857813;
-      Class8218 var10000 = this;
+      ScorePlayerTeam var10000 = this;
 
       do {
          if ((var2 & 262144) != 0) {

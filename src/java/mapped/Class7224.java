@@ -6,17 +6,18 @@ import java.util.Random;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class7224 implements Class7222 {
    private static String[] field31055;
-   private final Class8218 field31056;
+   private final ScorePlayerTeam field31056;
    private final ResourceLocation field31057;
    private final List<Class6589> field31058;
    public final Class7227 field31059;
 
-   public Class7224(Class7227 var1, Class8218 var2) {
+   public Class7224(Class7227 var1, ScorePlayerTeam var2) {
       this.field31059 = var1;
       this.field31056 = var2;
       this.field31058 = Lists.newArrayList();

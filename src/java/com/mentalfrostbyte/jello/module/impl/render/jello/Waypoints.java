@@ -61,7 +61,7 @@ public class Waypoints extends Module {
             } else {
                 SDestroyEntitiesPacket var12 = (SDestroyEntitiesPacket) var1.getPacket();
 
-                for (int var8 : var12.method17251()) {
+                for (int var8 : var12.getEntityIDs()) {
                     Entity var9 = mc.world.getEntityByID(var8);
                     if (var9 != null && var9 instanceof PlayerEntity) {
                         this.field23572.remove(var9.getUniqueID());

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonObject;
+import net.minecraft.entity.player.ServerPlayerEntity;
 
 public class Class4459 extends Class4457 {
    private final Class9415 field21638;

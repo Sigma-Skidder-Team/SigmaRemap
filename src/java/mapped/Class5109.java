@@ -11,6 +11,7 @@ import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.login.server.SDisconnectLoginPacket;
 import net.minecraft.network.login.server.SEnableCompressionPacket;
 import net.minecraft.network.login.server.SEncryptionRequestPacket;

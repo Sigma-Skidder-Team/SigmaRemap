@@ -15,12 +15,15 @@ import java.util.function.Predicate;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.scoreboard.Team;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.GameType;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class9748 {
@@ -208,7 +211,7 @@ public class Class9748 {
                   var0.method30301(false);
                   var0.method30278(var2 -> {
                      if (var2 instanceof ServerPlayerEntity) {
-                        GameType var5x = ((ServerPlayerEntity)var2).field4857.method33863();
+                        GameType var5x = ((ServerPlayerEntity)var2).interactionManager.getGameType();
                         return !var4 ? var5x == var6 : var5x != var6;
                      } else {
                         return false;

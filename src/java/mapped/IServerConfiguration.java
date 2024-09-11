@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Lifecycle;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameType;
 
 import java.util.Set;
 import javax.annotation.Nullable;

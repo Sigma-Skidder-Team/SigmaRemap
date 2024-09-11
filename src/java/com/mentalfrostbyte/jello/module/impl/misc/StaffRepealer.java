@@ -46,12 +46,12 @@ public class StaffRepealer extends Module {
 
                     int var3 = 0;
 
-                    for (Class8790 var5x : var5.method17307()) {
-                        PlayerEntity var6 = mc.world.method7196(var5x.method31726().getId());
-                        if (var6 == null && var5x.method31728() != null) {
-                            ColorUtils.addChatMessage("Detected an anomaly " + var5x + var5x.method31726());
+                    for (SPlayerListItemPacket.AddPlayerData var5x : var5.getEntries()) {
+                        PlayerEntity var6 = mc.world.method7196(var5x.getProfile().getId());
+                        if (var6 == null && var5x.getGameMode() != null) {
+                            ColorUtils.addChatMessage("Detected an anomaly " + var5x + var5x.getProfile());
                         } else {
-                            System.out.println("all seems good " + var5x + var5x.method31726());
+                            System.out.println("all seems good " + var5x + var5x.getProfile());
                         }
 
                         boolean var7 = false;

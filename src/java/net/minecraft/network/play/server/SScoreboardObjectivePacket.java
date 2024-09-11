@@ -31,7 +31,7 @@ public class SScoreboardObjectivePacket implements Packet<IClientPlayNetHandler>
       this.field24730 = var1.readString(16);
       this.field24733 = var1.readByte();
       if (this.field24733 == 0 || this.field24733 == 2) {
-         this.field24731 = var1.method35710();
+         this.field24731 = var1.readTextComponent();
          this.field24732 = var1.<Class2316>readEnumValue(Class2316.class);
       }
    }

@@ -7,6 +7,7 @@ import com.mojang.authlib.GameProfile;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.GameType;
 
 import javax.annotation.Nullable;
 import java.io.File;

@@ -14,6 +14,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import net.minecraft.scoreboard.ScorePlayerTeam;
+import net.minecraft.scoreboard.Team;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextComponentUtils;
@@ -192,7 +194,7 @@ public class Class7697 {
                                                       Class6099.method18839("never")
                                                          .executes(
                                                             var0x -> method25329(
-                                                                  (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Class2225.field14555
+                                                                  (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Team.Visible.NEVER
                                                                )
                                                          )
                                                    ))
@@ -200,7 +202,7 @@ public class Class7697 {
                                                    Class6099.method18839("hideForOtherTeams")
                                                       .executes(
                                                          var0x -> method25329(
-                                                               (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Class2225.field14556
+                                                               (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Team.Visible.HIDE_FOR_OTHER_TEAMS
                                                             )
                                                       )
                                                 ))
@@ -208,7 +210,7 @@ public class Class7697 {
                                                 Class6099.method18839("hideForOwnTeam")
                                                    .executes(
                                                       var0x -> method25329(
-                                                            (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Class2225.field14557
+                                                            (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Team.Visible.HIDE_FOR_OWN_TEAM
                                                          )
                                                    )
                                              ))
@@ -216,7 +218,7 @@ public class Class7697 {
                                              Class6099.method18839("always")
                                                 .executes(
                                                    var0x -> method25329(
-                                                         (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Class2225.field14554
+                                                         (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Team.Visible.ALWAYS
                                                       )
                                                 )
                                           )
@@ -227,7 +229,7 @@ public class Class7697 {
                                                    Class6099.method18839("never")
                                                       .executes(
                                                          var0x -> method25330(
-                                                               (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Class2225.field14555
+                                                               (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Team.Visible.NEVER
                                                             )
                                                       )
                                                 ))
@@ -235,7 +237,7 @@ public class Class7697 {
                                                 Class6099.method18839("hideForOtherTeams")
                                                    .executes(
                                                       var0x -> method25330(
-                                                            (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Class2225.field14556
+                                                            (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Team.Visible.HIDE_FOR_OTHER_TEAMS
                                                          )
                                                    )
                                              ))
@@ -243,14 +245,14 @@ public class Class7697 {
                                              Class6099.method18839("hideForOwnTeam")
                                                 .executes(
                                                    var0x -> method25330(
-                                                         (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Class2225.field14557
+                                                         (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Team.Visible.HIDE_FOR_OWN_TEAM
                                                       )
                                                 )
                                           ))
                                        .then(
                                           Class6099.method18839("always")
                                              .executes(
-                                                var0x -> method25330((Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Class2225.field14554)
+                                                var0x -> method25330((Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Team.Visible.ALWAYS)
                                              )
                                        )
                                  ))
@@ -260,7 +262,7 @@ public class Class7697 {
                                                 Class6099.method18839("never")
                                                    .executes(
                                                       var0x -> method25331(
-                                                            (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Class2212.field14463
+                                                            (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Team.CollisionRule.NEVER
                                                          )
                                                    )
                                              ))
@@ -268,20 +270,20 @@ public class Class7697 {
                                              Class6099.method18839("pushOwnTeam")
                                                 .executes(
                                                    var0x -> method25331(
-                                                         (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Class2212.field14465
+                                                         (Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Team.CollisionRule.PUSH_OWN_TEAM
                                                       )
                                                 )
                                           ))
                                        .then(
                                           Class6099.method18839("pushOtherTeams")
                                              .executes(
-                                                var0x -> method25331((Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Class2212.field14464)
+                                                var0x -> method25331((Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Team.CollisionRule.PUSH_OTHER_TEAMS)
                                              )
                                        ))
                                     .then(
                                        Class6099.method18839("always")
                                           .executes(
-                                             var0x -> method25331((Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Class2212.field14462)
+                                             var0x -> method25331((Class6619)var0x.getSource(), Class9062.method33747(var0x, "team"), Team.CollisionRule.ALWAYS)
                                           )
                                     )
                               ))
@@ -328,7 +330,7 @@ public class Class7697 {
       return var1.size();
    }
 
-   private static int method25328(Class6619 var0, Class8218 var1, Collection<String> var2) {
+   private static int method25328(Class6619 var0, ScorePlayerTeam var1, Collection<String> var2) {
       Class6887 var5 = var0.method20177().method1409();
 
       for (String var7 : var2) {
@@ -344,37 +346,37 @@ public class Class7697 {
       return var2.size();
    }
 
-   private static int method25329(Class6619 var0, Class8218 var1, Class2225 var2) throws CommandSyntaxException {
+   private static int method25329(Class6619 var0, ScorePlayerTeam var1, Team.Visible var2) throws CommandSyntaxException {
       if (var1.method28582() != var2) {
          var1.method28584(var2);
-         var0.method20179(new TranslationTextComponent("commands.team.option.nametagVisibility.success", var1.method28569(), var2.method8959()), true);
+         var0.method20179(new TranslationTextComponent("commands.team.option.nametagVisibility.success", var1.method28569(), var2.getDisplayName()), true);
          return 0;
       } else {
          throw field32954.create();
       }
    }
 
-   private static int method25330(Class6619 var0, Class8218 var1, Class2225 var2) throws CommandSyntaxException {
+   private static int method25330(Class6619 var0, ScorePlayerTeam var1, Team.Visible var2) throws CommandSyntaxException {
       if (var1.method28583() != var2) {
          var1.method28585(var2);
-         var0.method20179(new TranslationTextComponent("commands.team.option.deathMessageVisibility.success", var1.method28569(), var2.method8959()), true);
+         var0.method20179(new TranslationTextComponent("commands.team.option.deathMessageVisibility.success", var1.method28569(), var2.getDisplayName()), true);
          return 0;
       } else {
          throw field32955.create();
       }
    }
 
-   private static int method25331(Class6619 var0, Class8218 var1, Class2212 var2) throws CommandSyntaxException {
+   private static int method25331(Class6619 var0, ScorePlayerTeam var1, Team.CollisionRule var2) throws CommandSyntaxException {
       if (var1.method28586() != var2) {
          var1.method28587(var2);
-         var0.method20179(new TranslationTextComponent("commands.team.option.collisionRule.success", var1.method28569(), var2.method8940()), true);
+         var0.method20179(new TranslationTextComponent("commands.team.option.collisionRule.success", var1.method28569(), var2.getDisplayName()), true);
          return 0;
       } else {
          throw field32956.create();
       }
    }
 
-   private static int method25332(Class6619 var0, Class8218 var1, boolean var2) throws CommandSyntaxException {
+   private static int method25332(Class6619 var0, ScorePlayerTeam var1, boolean var2) throws CommandSyntaxException {
       if (var1.method28580() != var2) {
          var1.method28581(var2);
          var0.method20179(
@@ -388,7 +390,7 @@ public class Class7697 {
       }
    }
 
-   private static int method25333(Class6619 var0, Class8218 var1, boolean var2) throws CommandSyntaxException {
+   private static int method25333(Class6619 var0, ScorePlayerTeam var1, boolean var2) throws CommandSyntaxException {
       if (var1.method28578() != var2) {
          var1.method28579(var2);
          var0.method20179(new TranslationTextComponent("commands.team.option.friendlyfire." + (!var2 ? "disabled" : "enabled"), var1.method28569()), true);
@@ -400,7 +402,7 @@ public class Class7697 {
       }
    }
 
-   private static int method25334(Class6619 var0, Class8218 var1, ITextComponent var2) throws CommandSyntaxException {
+   private static int method25334(Class6619 var0, ScorePlayerTeam var1, ITextComponent var2) throws CommandSyntaxException {
       if (!var1.method28568().equals(var2)) {
          var1.method28570(var2);
          var0.method20179(new TranslationTextComponent("commands.team.option.name.success", var1.method28569()), true);
@@ -410,7 +412,7 @@ public class Class7697 {
       }
    }
 
-   private static int method25335(Class6619 var0, Class8218 var1, TextFormatting var2) throws CommandSyntaxException {
+   private static int method25335(Class6619 var0, ScorePlayerTeam var1, TextFormatting var2) throws CommandSyntaxException {
       if (var1.getColor() != var2) {
          var1.method28590(var2);
          var0.method20179(new TranslationTextComponent("commands.team.option.color.success", var1.method28569(), var2.getFriendlyName()), true);
@@ -420,7 +422,7 @@ public class Class7697 {
       }
    }
 
-   private static int method25336(Class6619 var0, Class8218 var1) throws CommandSyntaxException {
+   private static int method25336(Class6619 var0, ScorePlayerTeam var1) throws CommandSyntaxException {
       Class6887 var4 = var0.method20177().method1409();
       List<String> var5 = Lists.newArrayList(var1.method28575());
       if (var5.isEmpty()) {
@@ -435,7 +437,7 @@ public class Class7697 {
       }
    }
 
-   private static int method25337(Class6619 var0, Class8218 var1) {
+   private static int method25337(Class6619 var0, ScorePlayerTeam var1) {
       Class6887 var4 = var0.method20177().method1409();
       var4.method20992(var1);
       var0.method20179(new TranslationTextComponent("commands.team.remove.success", var1.method28569()), true);
@@ -450,7 +452,7 @@ public class Class7697 {
       Class6887 var5 = var0.method20177().method1409();
       if (var5.method20990(var1) == null) {
          if (var1.length() <= 16) {
-            Class8218 var6 = var5.method20991(var1);
+            ScorePlayerTeam var6 = var5.method20991(var1);
             var6.method28570(var2);
             var0.method20179(new TranslationTextComponent("commands.team.add.success", var6.method28569()), true);
             return var5.method20997().size();
@@ -462,7 +464,7 @@ public class Class7697 {
       }
    }
 
-   private static int method25340(Class6619 var0, Class8218 var1) {
+   private static int method25340(Class6619 var0, ScorePlayerTeam var1) {
       Collection var4 = var1.method28575();
       if (!var4.isEmpty()) {
          var0.method20179(
@@ -480,7 +482,7 @@ public class Class7697 {
       Collection var3 = var0.method20177().method1409().method20997();
       if (!var3.isEmpty()) {
          var0.method20179(
-            new TranslationTextComponent("commands.team.list.teams.success", var3.size(), TextComponentUtils.func_240649_b_(var3, Class8218::method28569)),
+            new TranslationTextComponent("commands.team.list.teams.success", var3.size(), TextComponentUtils.func_240649_b_(var3, ScorePlayerTeam::method28569)),
             false
          );
       } else {
@@ -490,13 +492,13 @@ public class Class7697 {
       return var3.size();
    }
 
-   private static int method25342(Class6619 var0, Class8218 var1, ITextComponent var2) {
+   private static int method25342(Class6619 var0, ScorePlayerTeam var1, ITextComponent var2) {
       var1.method28571(var2);
       var0.method20179(new TranslationTextComponent("commands.team.option.prefix.success", var2), false);
       return 1;
    }
 
-   private static int method25343(Class6619 var0, Class8218 var1, ITextComponent var2) {
+   private static int method25343(Class6619 var0, ScorePlayerTeam var1, ITextComponent var2) {
       var1.method28573(var2);
       var0.method20179(new TranslationTextComponent("commands.team.option.suffix.success", var2), false);
       return 1;

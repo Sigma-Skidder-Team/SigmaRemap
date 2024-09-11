@@ -5,6 +5,7 @@ import javax.annotation.Nullable;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SChatPacket;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;

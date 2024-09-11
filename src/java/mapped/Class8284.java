@@ -10,6 +10,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.function.Predicate;
 
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TranslationTextComponent;
 

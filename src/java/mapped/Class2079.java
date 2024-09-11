@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.GameType;
+
 public enum Class2079 {
    field13539("survival", GameType.field11102),
    field13540("hardcore", GameType.field11102),

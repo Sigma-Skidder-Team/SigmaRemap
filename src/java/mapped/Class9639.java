@@ -10,6 +10,8 @@ import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
+
+import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class9639 implements ArgumentType<Integer> {
@@ -31,7 +33,7 @@ public class Class9639 implements ArgumentType<Integer> {
 
    public Integer parse(StringReader var1) throws CommandSyntaxException {
       String var4 = var1.readUnquotedString();
-      int var5 = Class6886.method21009(var4);
+      int var5 = Scoreboard.method21009(var4);
       if (var5 != -1) {
          return var5;
       } else {
@@ -40,7 +42,7 @@ public class Class9639 implements ArgumentType<Integer> {
    }
 
    public <S> CompletableFuture<Suggestions> listSuggestions(CommandContext<S> var1, SuggestionsBuilder var2) {
-      return Class6618.method20149(Class6886.method21010(), var2);
+      return Class6618.method20149(Scoreboard.method21010(), var2);
    }
 
    public Collection<String> getExamples() {

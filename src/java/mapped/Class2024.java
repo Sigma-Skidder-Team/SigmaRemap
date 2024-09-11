@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.text.*;
+import net.minecraft.world.GameType;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.File;

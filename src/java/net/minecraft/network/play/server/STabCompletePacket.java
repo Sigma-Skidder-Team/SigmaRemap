@@ -37,7 +37,7 @@ public class STabCompletePacket implements Packet<IClientPlayNetHandler> {
 
       for (int var9 = 0; var9 < var7; var9++) {
          String var10 = var1.readString(32767);
-         ITextComponent var11 = !var1.readBoolean() ? null : var1.method35710();
+         ITextComponent var11 = !var1.readBoolean() ? null : var1.readTextComponent();
          var8.add(new Suggestion(var6, var10, var11));
       }
 

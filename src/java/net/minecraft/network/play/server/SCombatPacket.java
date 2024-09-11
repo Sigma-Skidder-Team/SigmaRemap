@@ -49,7 +49,7 @@ public class SCombatPacket implements Packet<IClientPlayNetHandler> {
          if (this.field24693 == Class1900.field11157) {
             this.field24694 = var1.readVarInt();
             this.field24695 = var1.readInt();
-            this.field24697 = var1.method35710();
+            this.field24697 = var1.readTextComponent();
          }
       } else {
          this.field24696 = var1.readVarInt();

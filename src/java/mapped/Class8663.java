@@ -1,31 +1,32 @@
 package mapped;
 
+import net.minecraft.scoreboard.Team;
 import net.minecraft.util.Direction;
 
 // $VF: synthetic class
 public class Class8663 {
    private static String[] field39037;
    public static final int[] field39038;
-   public static final int[] field39039 = new int[Class2225.values().length];
+   public static final int[] field39039 = new int[Team.Visible.values().length];
 
    static {
       try {
-         field39039[Class2225.field14554.ordinal()] = 1;
+         field39039[Team.Visible.ALWAYS.ordinal()] = 1;
       } catch (NoSuchFieldError var10) {
       }
 
       try {
-         field39039[Class2225.field14555.ordinal()] = 2;
+         field39039[Team.Visible.NEVER.ordinal()] = 2;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field39039[Class2225.field14556.ordinal()] = 3;
+         field39039[Team.Visible.HIDE_FOR_OTHER_TEAMS.ordinal()] = 3;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field39039[Class2225.field14557.ordinal()] = 4;
+         field39039[Team.Visible.HIDE_FOR_OWN_TEAM.ordinal()] = 4;
       } catch (NoSuchFieldError var7) {
       }
 

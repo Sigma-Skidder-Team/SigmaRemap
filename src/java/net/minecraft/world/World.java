@@ -11,6 +11,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
@@ -921,7 +922,7 @@ public abstract class World implements Class1660, AutoCloseable {
    public void method6804(double var1, double var3, double var5, double var7, double var9, double var11, CompoundNBT var13) {
    }
 
-   public abstract Class6886 method6805();
+   public abstract Scoreboard method6805();
 
    public void updateComparatorOutputLevel(BlockPos var1, Block var2) {
       for (Direction var6 : Class76.field161) {

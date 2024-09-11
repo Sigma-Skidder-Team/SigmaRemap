@@ -20,7 +20,7 @@ public class SDisconnectPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24533 = var1.method35710();
+      this.field24533 = var1.readTextComponent();
    }
 
    @Override

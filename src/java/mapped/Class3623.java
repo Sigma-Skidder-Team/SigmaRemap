@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Set;
 import java.util.UUID;
 
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;

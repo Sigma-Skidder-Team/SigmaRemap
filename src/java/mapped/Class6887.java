@@ -2,18 +2,21 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.SUpdateScorePacket;
 import net.minecraft.network.play.server.STeamsPacket;
 import net.minecraft.network.play.server.SDisplayObjectivePacket;
 import net.minecraft.network.play.server.SScoreboardObjectivePacket;
+import net.minecraft.scoreboard.ScorePlayerTeam;
+import net.minecraft.scoreboard.Scoreboard;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
-public class Class6887 extends Class6886 {
+public class Class6887 extends Scoreboard {
    private static String[] field29847;
    private final MinecraftServer field29848;
    private final Set<Class8375> field29849 = Sets.newHashSet();
@@ -76,7 +79,7 @@ public class Class6887 extends Class6886 {
    }
 
    @Override
-   public boolean method20993(String var1, Class8218 var2) {
+   public boolean method20993(String var1, ScorePlayerTeam var2) {
       if (!super.method20993(var1, var2)) {
          return false;
       } else {
@@ -87,7 +90,7 @@ public class Class6887 extends Class6886 {
    }
 
    @Override
-   public void method20995(String var1, Class8218 var2) {
+   public void method20995(String var1, ScorePlayerTeam var2) {
       super.method20995(var1, var2);
       this.field29848.getPlayerList().method19456(new STeamsPacket(var2, Arrays.<String>asList(var1), 4));
       this.method21022();
@@ -120,21 +123,21 @@ public class Class6887 extends Class6886 {
    }
 
    @Override
-   public void method21005(Class8218 var1) {
+   public void method21005(ScorePlayerTeam var1) {
       super.method21005(var1);
       this.field29848.getPlayerList().method19456(new STeamsPacket(var1, 0));
       this.method21022();
    }
 
    @Override
-   public void method21006(Class8218 var1) {
+   public void method21006(ScorePlayerTeam var1) {
       super.method21006(var1);
       this.field29848.getPlayerList().method19456(new STeamsPacket(var1, 2));
       this.method21022();
    }
 
    @Override
-   public void method21007(Class8218 var1) {
+   public void method21007(ScorePlayerTeam var1) {
       super.method21007(var1);
       this.field29848.getPlayerList().method19456(new STeamsPacket(var1, 1));
       this.method21022();

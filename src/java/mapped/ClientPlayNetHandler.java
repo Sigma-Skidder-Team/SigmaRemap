@@ -46,6 +46,9 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.*;
 import net.minecraft.realms.RealmsScreen;
+import net.minecraft.scoreboard.ScorePlayerTeam;
+import net.minecraft.scoreboard.Scoreboard;
+import net.minecraft.scoreboard.Team;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -60,6 +63,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -508,8 +512,8 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handleDestroyEntities(SDestroyEntitiesPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
 
-      for (int var4 = 0; var4 < var1.method17251().length; var4++) {
-         int var5 = var1.method17251()[var4];
+      for (int var4 = 0; var4 < var1.getEntityIDs().length; var4++) {
+         int var5 = var1.getEntityIDs()[var4];
          this.field23273.method6848(var5);
       }
    }
@@ -800,8 +804,8 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleTimeUpdate(SUpdateTimePacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      this.field23272.world.method6833(var1.method17514());
-      this.field23272.world.method6834(var1.method17515());
+      this.field23272.world.method6833(var1.getTotalWorldTime());
+      this.field23272.world.method6834(var1.getWorldTime());
    }
 
    @Override
@@ -897,7 +901,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       int var7 = var6.getEntityId();
       this.field23275 = false;
       if (var4 != var6.world.getDimensionKey()) {
-         Class6886 var8 = this.field23273.method6805();
+         Scoreboard var8 = this.field23273.method6805();
          boolean var9 = var1.method17437();
          boolean var10 = var1.method17438();
          Class6606 var11 = new Class6606(this.field23274.method20047(), this.field23274.isHardcore(), var10);
@@ -1223,7 +1227,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                      this.field23272.displayGuiScreen(new Class1312());
                   }
                } else {
-                  this.field23272.playerController.setGameType(GameType.method8159(var7));
+                  this.field23272.playerController.setGameType(GameType.getByID(var7));
                }
             } else {
                this.field23273.getWorldInfo().method20044(false);
@@ -1484,8 +1488,8 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handlePlayerListHeaderFooter(SPlayerListHeaderFooterPacket var1) {
-      this.field23272.ingameGUI.method5993().method5924(!var1.method17391().getString().isEmpty() ? var1.method17391() : null);
-      this.field23272.ingameGUI.method5993().method5923(!var1.method17392().getString().isEmpty() ? var1.method17392() : null);
+      this.field23272.ingameGUI.method5993().method5924(!var1.getHeader().getString().isEmpty() ? var1.getHeader() : null);
+      this.field23272.ingameGUI.method5993().method5923(!var1.getFooter().getString().isEmpty() ? var1.getFooter() : null);
    }
 
    @Override
@@ -1501,33 +1505,33 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handlePlayerListItem(SPlayerListItemPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
 
-      for (Class8790 var5 : var1.method17307()) {
-         if (var1.method17308() == Class2176.field14285) {
-            this.field23272.func_244599_aA().method37612(var5.method31726().getId());
-            this.field23276.remove(var5.method31726().getId());
+      for (SPlayerListItemPacket.AddPlayerData var5 : var1.getEntries()) {
+         if (var1.getAction() == SPlayerListItemPacket.Action.REMOVE_PLAYER) {
+            this.field23272.func_244599_aA().method37612(var5.getProfile().getId());
+            this.field23276.remove(var5.getProfile().getId());
          } else {
-            Class6589 var6 = this.field23276.get(var5.method31726().getId());
-            if (var1.method17308() == Class2176.field14281) {
+            Class6589 var6 = this.field23276.get(var5.getProfile().getId());
+            if (var1.getAction() == SPlayerListItemPacket.Action.ADD_PLAYER) {
                var6 = new Class6589(var5);
                this.field23276.put(var6.method19966().getId(), var6);
                this.field23272.func_244599_aA().method37611(var6);
             }
 
             if (var6 != null) {
-               switch (Class8047.field34566[var1.method17308().ordinal()]) {
+               switch (Class8047.field34566[var1.getAction().ordinal()]) {
                   case 1:
-                     var6.method19968(var5.method31728());
-                     var6.method19970(var5.method31727());
-                     var6.method19978(var5.method31729());
+                     var6.method19968(var5.getGameMode());
+                     var6.method19970(var5.getPing());
+                     var6.method19978(var5.getDisplayName());
                      break;
                   case 2:
-                     var6.method19968(var5.method31728());
+                     var6.method19968(var5.getGameMode());
                      break;
                   case 3:
-                     var6.method19970(var5.method31727());
+                     var6.method19970(var5.getPing());
                      break;
                   case 4:
-                     var6.method19978(var5.method31729());
+                     var6.method19978(var5.getDisplayName());
                }
             }
          }
@@ -1949,7 +1953,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleScoreboardObjective(SScoreboardObjectivePacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Class6886 var4 = this.field23273.method6805();
+      Scoreboard var4 = this.field23273.method6805();
       String var5 = var1.method17510();
       if (var1.method17512() != 0) {
          if (var4.method20974(var5)) {
@@ -1971,7 +1975,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleUpdateScore(SUpdateScorePacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Class6886 var4 = this.field23273.method6805();
+      Scoreboard var4 = this.field23273.method6805();
       String var5 = var1.method17474();
       switch (Class8047.field34567[var1.method17476().ordinal()]) {
          case 1:
@@ -1987,7 +1991,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleDisplayObjective(SDisplayObjectivePacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Class6886 var4 = this.field23273.method6805();
+      Scoreboard var4 = this.field23273.method6805();
       String var5 = var1.method17647();
       Class8375 var6 = var5 != null ? var4.method20975(var5) : null;
       var4.method20988(var1.method17646(), var6);
@@ -1996,45 +2000,45 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    @Override
    public void handleTeams(STeamsPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
-      Class6886 var4 = this.field23273.method6805();
-      Class8218 var5;
-      if (var1.method17528() != 0) {
-         var5 = var4.method20990(var1.method17525());
+      Scoreboard var4 = this.field23273.method6805();
+      ScorePlayerTeam var5;
+      if (var1.getAction() != 0) {
+         var5 = var4.method20990(var1.getName());
       } else {
-         var5 = var4.method20991(var1.method17525());
+         var5 = var4.method20991(var1.getName());
       }
 
-      if (var1.method17528() == 0 || var1.method17528() == 2) {
-         var5.method28570(var1.method17526());
-         var5.method28590(var1.method17530());
-         var5.method28589(var1.method17529());
-         Class2225 var6 = Class2225.method8958(var1.method17531());
+      if (var1.getAction() == 0 || var1.getAction() == 2) {
+         var5.method28570(var1.getDisplayName());
+         var5.method28590(var1.getColor());
+         var5.method28589(var1.getFriendlyFlags());
+         Team.Visible var6 = Team.Visible.getByName(var1.getNameTagVisibility());
          if (var6 != null) {
             var5.method28584(var6);
          }
 
-         Class2212 var7 = Class2212.method8939(var1.method17532());
+         Team.CollisionRule var7 = Team.CollisionRule.getByName(var1.getCollisionRule());
          if (var7 != null) {
             var5.method28587(var7);
          }
 
-         var5.method28571(var1.method17533());
-         var5.method28573(var1.method17534());
+         var5.method28571(var1.getPrefix());
+         var5.method28573(var1.getSuffix());
       }
 
-      if (var1.method17528() == 0 || var1.method17528() == 3) {
-         for (String var10 : var1.method17527()) {
+      if (var1.getAction() == 0 || var1.getAction() == 3) {
+         for (String var10 : var1.getPlayers()) {
             var4.method20993(var10, var5);
          }
       }
 
-      if (var1.method17528() == 4) {
-         for (String var11 : var1.method17527()) {
+      if (var1.getAction() == 4) {
+         for (String var11 : var1.getPlayers()) {
             var4.method20995(var11, var5);
          }
       }
 
-      if (var1.method17528() == 1) {
+      if (var1.getAction() == 1) {
          var4.method20992(var5);
       }
    }

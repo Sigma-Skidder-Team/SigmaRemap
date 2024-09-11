@@ -5,6 +5,7 @@ import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 
 import java.io.IOException;
@@ -44,8 +45,8 @@ public class SRespawnPacket implements Packet<IClientPlayNetHandler> {
       this.field24615 = var1.<Supplier<DimensionType>>method35696(DimensionType.DIMENSION_TYPE_CODEC).get();
       this.field24616 = RegistryKey.<World>getOrCreateKey(Registry.WORLD_KEY, var1.readResourceLocation());
       this.field24617 = var1.readLong();
-      this.field24618 = GameType.method8159(var1.readUnsignedByte());
-      this.field24619 = GameType.method8159(var1.readUnsignedByte());
+      this.field24618 = GameType.getByID(var1.readUnsignedByte());
+      this.field24619 = GameType.getByID(var1.readUnsignedByte());
       this.field24620 = var1.readBoolean();
       this.field24621 = var1.readBoolean();
       this.field24622 = var1.readBoolean();
@@ -56,8 +57,8 @@ public class SRespawnPacket implements Packet<IClientPlayNetHandler> {
       var1.method35697(DimensionType.DIMENSION_TYPE_CODEC, () -> this.field24615);
       var1.writeResourceLocation(this.field24616.getLocation());
       var1.writeLong(this.field24617);
-      var1.writeByte(this.field24618.method8152());
-      var1.writeByte(this.field24619.method8152());
+      var1.writeByte(this.field24618.getID());
+      var1.writeByte(this.field24619.getID());
       var1.writeBoolean(this.field24620);
       var1.writeBoolean(this.field24621);
       var1.writeBoolean(this.field24622);

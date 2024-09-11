@@ -2,7 +2,9 @@ package mapped;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.GameType;
 
 public class Class9145 {
    public static void method34158(CommandDispatcher<Class6619> var0) {
@@ -23,7 +25,7 @@ public class Class9145 {
       var5.method1370(var1);
       if (var5.method1380()) {
          for (ServerPlayerEntity var7 : var5.getPlayerList().method19488()) {
-            if (var7.field4857.method33863() != var1) {
+            if (var7.interactionManager.getGameType() != var1) {
                var7.method2799(var1);
                var4++;
             }

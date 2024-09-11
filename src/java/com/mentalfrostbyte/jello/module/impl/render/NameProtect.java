@@ -46,20 +46,20 @@ public class NameProtect extends Module {
 
             if (var4 instanceof SPlayerListItemPacket) {
                 SPlayerListItemPacket var11 = (SPlayerListItemPacket) var4;
-                List var15 = var11.method17307();
+                List var15 = var11.getEntries();
 
                 for (int var7 = 0; var7 < var15.size(); var7++) {
-                    Class8790 var8 = (Class8790) var15.get(var7);
-                    if (var8.method31729() != null) {
-                        String var9 = var8.method31729().getString();
+                    SPlayerListItemPacket.AddPlayerData var8 = (SPlayerListItemPacket.AddPlayerData) var15.get(var7);
+                    if (var8.getDisplayName() != null) {
+                        String var9 = var8.getDisplayName().getString();
                         if (var9.contains(mc.getSession().getUsername())) {
                             var9 = var9.replaceAll(mc.getSession().getUsername(), this.getStringSettingValueByName("Username"));
-                            var8.field39530 = new StringTextComponent(var9);
+                            var8.displayName = new StringTextComponent(var9);
                         }
                     }
                 }
 
-                var11.field24430 = var15;
+                var11.players = var15;
             }
 
             if (var4 instanceof SUpdateBossInfoPacket) {

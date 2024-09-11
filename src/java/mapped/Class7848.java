@@ -11,6 +11,7 @@ import java.util.Collection;
 import java.util.List;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class7848 {

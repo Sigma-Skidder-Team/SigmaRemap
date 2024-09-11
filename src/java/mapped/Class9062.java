@@ -10,6 +10,8 @@ import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.concurrent.CompletableFuture;
+
+import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class9062 implements ArgumentType<String> {
@@ -20,10 +22,10 @@ public class Class9062 implements ArgumentType<String> {
       return new Class9062();
    }
 
-   public static Class8218 method33747(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
+   public static ScorePlayerTeam method33747(CommandContext<Class6619> var0, String var1) throws CommandSyntaxException {
       String var4 = (String)var0.getArgument(var1, String.class);
       Class6887 var5 = ((Class6619)var0.getSource()).method20177().method1409();
-      Class8218 var6 = var5.method20990(var4);
+      ScorePlayerTeam var6 = var5.method20990(var4);
       if (var6 != null) {
          return var6;
       } else {

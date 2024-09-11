@@ -290,10 +290,10 @@ public class Test extends Module {
                                     }
                                 } else {
                                     STeamsPacket var9 = (STeamsPacket) var4;
-                                    if (var9.method17525().startsWith("team_")) {
+                                    if (var9.getName().startsWith("team_")) {
                                     }
 
-                                    for (String var7 : var9.method17527()) {
+                                    for (String var7 : var9.getPlayers()) {
                                         if (!var7.contains("§") && var7.length() < 2) {
                                         }
                                     }

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.authlib.GameProfile;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.entity.player.ServerPlayerEntity;
 
 import java.util.Collection;
 import java.util.List;

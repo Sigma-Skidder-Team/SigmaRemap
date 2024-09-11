@@ -16,12 +16,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -39,7 +41,7 @@ public class ClientWorld extends World {
    private Class6349 field9029;
    private final Minecraft field9030 = Minecraft.getInstance();
    private final List<AbstractClientPlayerEntity> field9031 = Lists.newArrayList();
-   private Class6886 field9032 = new Class6886();
+   private Scoreboard field9032 = new Scoreboard();
    private final Map<String, Class7529> field9033 = Maps.newHashMap();
    private int field9034;
    private final Object2ObjectArrayMap<Class8980, Class8960> field9035 = Util.<Object2ObjectArrayMap<Class8980, Class8960>>make(
@@ -533,7 +535,7 @@ public class ClientWorld extends World {
       return this.field9026.method15783();
    }
 
-   public void method6859(Class6886 var1) {
+   public void method6859(Scoreboard var1) {
       this.field9032 = var1;
    }
 
@@ -603,7 +605,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public Class6886 method6805() {
+   public Scoreboard method6805() {
       return this.field9032;
    }
 

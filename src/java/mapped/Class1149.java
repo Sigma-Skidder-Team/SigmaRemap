@@ -6,6 +6,7 @@ import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.GameType;
 
 public class Class1149 extends Screen {
    private static final ITextComponent field6280 = new TranslationTextComponent("selectWorld.allowCommands");

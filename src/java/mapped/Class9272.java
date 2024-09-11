@@ -152,8 +152,8 @@ public class Class9272 {
    }
 
    public static Class9272 method34947(PacketBuffer var0) {
-      ITextComponent var3 = var0.method35710();
-      ITextComponent var4 = var0.method35710();
+      ITextComponent var3 = var0.readTextComponent();
+      ITextComponent var4 = var0.readTextComponent();
       ItemStack var5 = var0.readItemStack();
       Class1965 var6 = var0.<Class1965>readEnumValue(Class1965.class);
       int var7 = var0.readInt();

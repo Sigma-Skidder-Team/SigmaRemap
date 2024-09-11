@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SCommandListPacket;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.StringTextComponent;

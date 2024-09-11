@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.GameType;
 
 public class Class6201 implements Class6196 {
    private static final ITextComponent field27673 = new TranslationTextComponent("tutorial.craft_planks.title");

@@ -2,6 +2,8 @@ package mapped;
 
 import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
+import net.minecraft.entity.player.ServerPlayerEntity;
+
 import java.util.stream.Stream;
 
 public final class Class6858 {

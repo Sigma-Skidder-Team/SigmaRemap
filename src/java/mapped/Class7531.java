@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SEntityStatusPacket;
 import net.minecraft.util.math.BlockPos;

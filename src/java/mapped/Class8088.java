@@ -4,6 +4,7 @@ import com.google.common.base.Predicates;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.scoreboard.Team;
 import net.minecraft.world.Difficulty;
 
 import java.util.function.Predicate;
@@ -26,22 +27,22 @@ public final class Class8088 {
 
    public static Predicate<Entity> method27981(Entity var0) {
       Team var3 = var0.getTeam();
-      Class2212 var4 = var3 != null ? var3.method28586() : Class2212.field14462;
-      return (Predicate<Entity>)(var4 != Class2212.field14463
+      Team.CollisionRule var4 = var3 != null ? var3.method28586() : Team.CollisionRule.ALWAYS;
+      return (Predicate<Entity>)(var4 != Team.CollisionRule.NEVER
          ? field34763.and(
             var3x -> {
                if (!var3x.canBePushed()) {
                   return false;
                } else if (!var0.world.isRemote || var3x instanceof PlayerEntity && ((PlayerEntity)var3x).method2905()) {
                   Team var6 = var3x.getTeam();
-                  Class2212 var7 = var6 != null ? var6.method28586() : Class2212.field14462;
-                  if (var7 == Class2212.field14463) {
+                  Team.CollisionRule var7 = var6 != null ? var6.method28586() : Team.CollisionRule.ALWAYS;
+                  if (var7 == Team.CollisionRule.NEVER) {
                      return false;
                   } else {
                      boolean var8 = var3 != null && var3.method28592(var6);
-                     return (var4 == Class2212.field14465 || var7 == Class2212.field14465) && var8
+                     return (var4 == Team.CollisionRule.PUSH_OWN_TEAM || var7 == Team.CollisionRule.PUSH_OWN_TEAM) && var8
                         ? false
-                        : var4 != Class2212.field14464 && var7 != Class2212.field14464 || var8;
+                        : var4 != Team.CollisionRule.PUSH_OTHER_TEAMS && var7 != Team.CollisionRule.PUSH_OTHER_TEAMS || var8;
                   }
                } else {
                   return false;

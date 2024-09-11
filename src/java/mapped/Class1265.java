@@ -7,10 +7,13 @@ import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.IngameGui;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.scoreboard.ScorePlayerTeam;
+import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.GameType;
 
 import java.util.List;
 
@@ -30,7 +33,7 @@ public class Class1265 extends AbstractGui {
 
    public ITextComponent method5917(Class6589 var1) {
       return var1.method19979() == null
-         ? this.method5918(var1, Class8218.method28577(var1.method19976(), new StringTextComponent(var1.method19966().getName())))
+         ? this.method5918(var1, ScorePlayerTeam.method28577(var1.method19976(), new StringTextComponent(var1.method19966().getName())))
          : this.method5918(var1, var1.method19979().deepCopy());
    }
 
@@ -46,7 +49,7 @@ public class Class1265 extends AbstractGui {
       this.field6697 = var1;
    }
 
-   public void method5920(MatrixStack var1, int var2, Class6886 var3, Class8375 var4) {
+   public void method5920(MatrixStack var1, int var2, Scoreboard var3, Class8375 var4) {
       ClientPlayNetHandler var7 = this.field6692.player.connection;
       List<Class6589> var8 = field6691.sortedCopy(var7.method15790());
       int var9 = 0;

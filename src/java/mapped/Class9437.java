@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameType;
 
 import java.nio.file.Path;
 import java.util.Properties;
@@ -22,7 +23,7 @@ public class Class9437 extends Class9436<Class9437> {
       "difficulty", method36249(Difficulty::method8907, Difficulty::method8908), Difficulty::method8909, Difficulty.field14352
    );
    public final GameType field43797 = this.<GameType>method36252(
-      "gamemode", method36249(GameType::method8159, GameType::method8161), GameType::method8153, GameType.field11102
+      "gamemode", method36249(GameType::getByID, GameType::method8161), GameType::method8153, GameType.field11102
    );
    public final String field43798 = this.method36257("level-name", "world");
    public final int field43799 = this.method36259("server-port", 25565);

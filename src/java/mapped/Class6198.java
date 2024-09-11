@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.GameType;
 
 public class Class6198 implements Class6196 {
    private static final ITextComponent field27651 = new TranslationTextComponent(

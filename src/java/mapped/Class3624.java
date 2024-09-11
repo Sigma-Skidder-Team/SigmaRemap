@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Set;
 
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SUpdateBossInfoPacket;
 import net.minecraft.util.text.ITextComponent;
 

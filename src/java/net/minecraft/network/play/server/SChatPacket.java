@@ -26,7 +26,7 @@ public class SChatPacket implements Packet<IClientPlayNetHandler> {
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24919 = var1.method35710();
+      this.field24919 = var1.readTextComponent();
       this.field24920 = ChatType.byId(var1.readByte());
       this.field24921 = var1.readUniqueId();
    }

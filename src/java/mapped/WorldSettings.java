@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Dynamic;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameType;
 
 public final class WorldSettings {
    private final String field40268;
@@ -23,7 +24,7 @@ public final class WorldSettings {
    }
 
    public static WorldSettings method32425(Dynamic<?> var0, DatapackCodec var1) {
-      GameType var4 = GameType.method8159(var0.get("GameType").asInt(0));
+      GameType var4 = GameType.getByID(var0.get("GameType").asInt(0));
       return new WorldSettings(
          var0.get("LevelName").asString(""),
          var4,

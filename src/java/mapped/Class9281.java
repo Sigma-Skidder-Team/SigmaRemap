@@ -11,8 +11,10 @@ import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.GameType;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -58,7 +60,7 @@ public class Class9281 {
          ServerPlayerEntity var4 = (ServerPlayerEntity)var1;
          if (!this.field42698.method32015(var4.field4920)) {
             return false;
-         } else if (this.field42699 != GameType.field11101 && this.field42699 != var4.field4857.method33863()) {
+         } else if (this.field42699 != GameType.field11101 && this.field42699 != var4.interactionManager.getGameType()) {
             return false;
          } else {
             Class8287 var5 = var4.method2809();

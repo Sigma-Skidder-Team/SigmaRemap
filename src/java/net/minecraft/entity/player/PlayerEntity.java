@@ -22,6 +22,9 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.client.PlayerAbilities;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
 import net.minecraft.particles.IParticleData;
+import net.minecraft.scoreboard.ScorePlayerTeam;
+import net.minecraft.scoreboard.Scoreboard;
+import net.minecraft.scoreboard.Team;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.util.*;
@@ -34,6 +37,7 @@ import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -1780,13 +1784,13 @@ public abstract class PlayerEntity extends LivingEntity {
       return !this.abilities.isFlying;
    }
 
-   public Class6886 method2953() {
+   public Scoreboard method2953() {
       return this.world.method6805();
    }
 
    @Override
    public ITextComponent getDisplayName() {
-      IFormattableTextComponent var3 = Class8218.method28577(this.getTeam(), this.getName());
+      IFormattableTextComponent var3 = ScorePlayerTeam.method28577(this.getTeam(), this.getName());
       return this.method2955(var3);
    }
 

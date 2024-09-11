@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.world;
 
 import net.minecraft.network.play.client.PlayerAbilities;
 import net.minecraft.util.text.ITextComponent;
@@ -20,7 +20,7 @@ public enum GameType {
       this.field11107 = var4;
    }
 
-   public int method8152() {
+   public int getID() {
       return this.field11106;
    }
 
@@ -66,7 +66,7 @@ public enum GameType {
       return this == field11102 || this == field11104;
    }
 
-   public static GameType method8159(int var0) {
+   public static GameType getByID(int var0) {
       return method8160(var0, field11102);
    }
 

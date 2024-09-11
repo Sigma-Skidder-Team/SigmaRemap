@@ -13,12 +13,15 @@ import mapped.Direction;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.scoreboard.ScorePlayerTeam;
+import net.minecraft.scoreboard.Team;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -2226,7 +2229,7 @@ public abstract class Entity implements INameable, ICommandSource {
 
    @Override
    public ITextComponent getDisplayName() {
-      return Class8218.method28577(this.getTeam(), this.getName())
+      return ScorePlayerTeam.method28577(this.getTeam(), this.getName())
          .modifyStyle(var1 -> var1.setHoverEvent(this.method3388()).setInsertion(this.method3376()));
    }
 

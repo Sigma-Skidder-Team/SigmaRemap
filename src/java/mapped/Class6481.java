@@ -11,7 +11,7 @@ public final class Class6481 implements Class6466<ITextComponent> {
    }
 
    public ITextComponent method19645(PacketBuffer var1) {
-      return var1.method35710();
+      return var1.readTextComponent();
    }
 
    public ITextComponent method19644(ITextComponent var1) {

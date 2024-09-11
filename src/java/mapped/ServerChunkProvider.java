@@ -6,6 +6,7 @@ import com.mojang.datafixers.DataFixer;
 import com.mojang.datafixers.util.Either;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.Packet;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;

@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.scoreboard;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -10,19 +10,20 @@ import java.util.Map;
 import java.util.function.Consumer;
 import javax.annotation.Nullable;
 
+import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 
-public class Class6886 {
+public class Scoreboard {
    private final Map<String, Class8375> field29840 = Maps.newHashMap();
    private final Map<Class9008, List<Class8375>> field29841 = Maps.newHashMap();
    private final Map<String, Map<Class8375, Class9411>> field29842 = Maps.newHashMap();
    private final Class8375[] field29843 = new Class8375[19];
-   private final Map<String, Class8218> field29844 = Maps.newHashMap();
-   private final Map<String, Class8218> field29845 = Maps.newHashMap();
+   private final Map<String, ScorePlayerTeam> field29844 = Maps.newHashMap();
+   private final Map<String, ScorePlayerTeam> field29845 = Maps.newHashMap();
    private static String[] field29846;
 
    public boolean method20974(String var1) {
@@ -170,15 +171,15 @@ public class Class6886 {
       return this.field29843[var1];
    }
 
-   public Class8218 method20990(String var1) {
+   public ScorePlayerTeam method20990(String var1) {
       return this.field29844.get(var1);
    }
 
-   public Class8218 method20991(String var1) {
+   public ScorePlayerTeam method20991(String var1) {
       if (var1.length() <= 16) {
-         Class8218 var4 = this.method20990(var1);
+         ScorePlayerTeam var4 = this.method20990(var1);
          if (var4 == null) {
-            var4 = new Class8218(this, var1);
+            var4 = new ScorePlayerTeam(this, var1);
             this.field29844.put(var1, var4);
             this.method21005(var4);
             return var4;
@@ -190,7 +191,7 @@ public class Class6886 {
       }
    }
 
-   public void method20992(Class8218 var1) {
+   public void method20992(ScorePlayerTeam var1) {
       this.field29844.remove(var1.method28567());
 
       for (String var5 : var1.method28575()) {
@@ -200,7 +201,7 @@ public class Class6886 {
       this.method21007(var1);
    }
 
-   public boolean method20993(String var1, Class8218 var2) {
+   public boolean method20993(String var1, ScorePlayerTeam var2) {
       if (var1.length() <= 40) {
          if (this.method20998(var1) != null) {
             this.method20994(var1);
@@ -214,7 +215,7 @@ public class Class6886 {
    }
 
    public boolean method20994(String var1) {
-      Class8218 var4 = this.method20998(var1);
+      ScorePlayerTeam var4 = this.method20998(var1);
       if (var4 == null) {
          return false;
       } else {
@@ -223,7 +224,7 @@ public class Class6886 {
       }
    }
 
-   public void method20995(String var1, Class8218 var2) {
+   public void method20995(String var1, ScorePlayerTeam var2) {
       if (this.method20998(var1) == var2) {
          this.field29845.remove(var1);
          var2.method28575().remove(var1);
@@ -236,12 +237,12 @@ public class Class6886 {
       return this.field29844.keySet();
    }
 
-   public Collection<Class8218> method20997() {
+   public Collection<ScorePlayerTeam> method20997() {
       return this.field29844.values();
    }
 
    @Nullable
-   public Class8218 method20998(String var1) {
+   public ScorePlayerTeam method20998(String var1) {
       return this.field29845.get(var1);
    }
 
@@ -263,13 +264,13 @@ public class Class6886 {
    public void method21004(String var1, Class8375 var2) {
    }
 
-   public void method21005(Class8218 var1) {
+   public void method21005(ScorePlayerTeam var1) {
    }
 
-   public void method21006(Class8218 var1) {
+   public void method21006(ScorePlayerTeam var1) {
    }
 
-   public void method21007(Class8218 var1) {
+   public void method21007(ScorePlayerTeam var1) {
    }
 
    public static String method21008(int var0) {

@@ -8,6 +8,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.scoreboard.Team;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TextFormatting;
@@ -314,7 +315,7 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
                Team var11 = var1.getTeam();
                Team var12 = var9.getTeam();
                if (var11 != null) {
-                  Class2225 var13 = var11.method28582();
+                  Team.Visible var13 = var11.method28582();
                   switch (Class8663.field39039[var13.ordinal()]) {
                      case 1:
                         return var10;

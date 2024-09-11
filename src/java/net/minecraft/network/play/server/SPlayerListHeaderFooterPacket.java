@@ -8,31 +8,30 @@ import net.minecraft.network.Packet;
 import net.minecraft.util.text.ITextComponent;
 
 public class SPlayerListHeaderFooterPacket implements Packet<IClientPlayNetHandler> {
-   private static String[] field24534;
-   private ITextComponent field24535;
-   private ITextComponent field24536;
+    private ITextComponent header;
+   private ITextComponent footer;
 
    @Override
    public void readPacketData(PacketBuffer var1) throws IOException {
-      this.field24535 = var1.method35710();
-      this.field24536 = var1.method35710();
+      this.header = var1.readTextComponent();
+      this.footer = var1.readTextComponent();
    }
 
    @Override
    public void writePacketData(PacketBuffer var1) throws IOException {
-      var1.writeTextComponent(this.field24535);
-      var1.writeTextComponent(this.field24536);
+      var1.writeTextComponent(this.header);
+      var1.writeTextComponent(this.footer);
    }
 
    public void processPacket(IClientPlayNetHandler var1) {
       var1.handlePlayerListHeaderFooter(this);
    }
 
-   public ITextComponent method17391() {
-      return this.field24535;
+   public ITextComponent getHeader() {
+      return this.header;
    }
 
-   public ITextComponent method17392() {
-      return this.field24536;
+   public ITextComponent getFooter() {
+      return this.footer;
    }
 }

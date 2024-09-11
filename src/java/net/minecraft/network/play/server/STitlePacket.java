@@ -39,7 +39,7 @@ public class STitlePacket implements Packet<IClientPlayNetHandler> {
    public void readPacketData(PacketBuffer var1) throws IOException {
       this.field24805 = var1.<Class2301>readEnumValue(Class2301.class);
       if (this.field24805 == Class2301.field15710 || this.field24805 == Class2301.field15711 || this.field24805 == Class2301.field15712) {
-         this.field24806 = var1.method35710();
+         this.field24806 = var1.readTextComponent();
       }
 
       if (this.field24805 == Class2301.field15713) {

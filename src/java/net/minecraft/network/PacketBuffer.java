@@ -174,7 +174,7 @@ public class PacketBuffer extends ByteBuf {
       return Class2002.method8393(this.readLong());
    }
 
-   public ITextComponent method35710() {
+   public ITextComponent readTextComponent() {
       return ITextComponent$Serializer.func_240643_a_(this.readString(262144));
    }
 

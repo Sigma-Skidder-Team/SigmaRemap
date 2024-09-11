@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class8322 {
@@ -101,7 +103,7 @@ public class Class8322 {
 
    private static Class9411 method29147(ServerPlayerEntity var0, Class8375 var1) throws CommandSyntaxException {
       if (var1.method29337() == Class9008.field41190) {
-         Class6886 var4 = var0.method2953();
+         Scoreboard var4 = var0.method2953();
          String var5 = var0.method2956();
          if (var4.method20979(var5, var1)) {
             Class9411 var6 = var4.method20980(var5, var1);

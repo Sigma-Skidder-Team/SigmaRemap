@@ -11,6 +11,8 @@ import mapped.*;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.STeamsPacket;
 import net.minecraft.network.play.server.SChatPacket;
+import net.minecraft.scoreboard.ScorePlayerTeam;
+import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -74,9 +76,9 @@ public class HypixelGamePlay extends Module {
                             || var6.toLowerCase().contains("was thrown off a cliff by " + var7 + ".")
                             || var6.toLowerCase().contains("was struck down by " + var7 + ".")
                             || var6.toLowerCase().contains("be sent to davy jones' locker by " + var7 + ".")) {
-                        Class6886 var34 = mc.world.method6805();
+                        Scoreboard var34 = mc.world.method6805();
                         Class8375 var11 = null;
-                        Class8218 var12 = var34.method20998(mc.player.method2956());
+                        ScorePlayerTeam var12 = var34.method20998(mc.player.method2956());
                         if (var12 != null) {
                             int var13 = var12.getColor().getColorIndex();
                             if (var13 >= 0) {
@@ -90,8 +92,8 @@ public class HypixelGamePlay extends Module {
 
                         label155:
                         for (Class9411 var17 : var14) {
-                            Class8218 var18 = var34.method20998(var17.method36054());
-                            String var19 = Class8218.method28577(var18, new StringTextComponent(var17.method36054())).getString().replaceAll("§t", "");
+                            ScorePlayerTeam var18 = var34.method20998(var17.method36054());
+                            String var19 = ScorePlayerTeam.method28577(var18, new StringTextComponent(var17.method36054())).getString().replaceAll("§t", "");
 
                             for (String var22 : new ArrayList<String>(Arrays.asList("players left", "joueurs restants", "spieler verbleibend"))) {
                                 if (var19.toLowerCase().contains(var22 + ":")) {
@@ -139,8 +141,8 @@ public class HypixelGamePlay extends Module {
                 }
             } else if (var4 instanceof STeamsPacket && this.getBooleanValueFromSetttingName("Hide infos")) {
                 STeamsPacket var26 = (STeamsPacket) var4;
-                if (var26.method17528() == 2 && var26.method17525().startsWith("team_")) {
-                    String var27 = var26.method17533().getString() + var26.method17534().getString();
+                if (var26.getAction() == 2 && var26.getName().startsWith("team_")) {
+                    String var27 = var26.getPrefix().getString() + var26.getSuffix().getString();
                     String[] var28 = var27.split(" ");
                     if (var28 != null && var28.length > 1 && StringUtils.countMatches(var28[0], "/") == 2) {
                         var1.setCancelled(true);

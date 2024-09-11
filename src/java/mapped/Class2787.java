@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.entity.player.ServerPlayerEntity;
+
 import java.util.Random;
 
 public class Class2787 extends Class2785 {

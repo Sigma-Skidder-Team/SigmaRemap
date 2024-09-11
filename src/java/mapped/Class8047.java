@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.play.server.SPlayerListItemPacket;
+
 // $VF: synthetic class
 public class Class8047 {
    private static String[] field34563;
@@ -19,25 +21,25 @@ public class Class8047 {
       } catch (NoSuchFieldError var14) {
       }
 
-      field34566 = new int[Class2176.values().length];
+      field34566 = new int[SPlayerListItemPacket.Action.values().length];
 
       try {
-         field34566[Class2176.field14281.ordinal()] = 1;
+         field34566[SPlayerListItemPacket.Action.ADD_PLAYER.ordinal()] = 1;
       } catch (NoSuchFieldError var13) {
       }
 
       try {
-         field34566[Class2176.field14282.ordinal()] = 2;
+         field34566[SPlayerListItemPacket.Action.UPDATE_GAME_MODE.ordinal()] = 2;
       } catch (NoSuchFieldError var12) {
       }
 
       try {
-         field34566[Class2176.field14283.ordinal()] = 3;
+         field34566[SPlayerListItemPacket.Action.UPDATE_LATENCY.ordinal()] = 3;
       } catch (NoSuchFieldError var11) {
       }
 
       try {
-         field34566[Class2176.field14284.ordinal()] = 4;
+         field34566[SPlayerListItemPacket.Action.UPDATE_DISPLAY_NAME.ordinal()] = 4;
       } catch (NoSuchFieldError var10) {
       }
 

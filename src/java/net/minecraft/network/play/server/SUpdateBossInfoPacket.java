@@ -41,7 +41,7 @@ public class SUpdateBossInfoPacket implements Packet<IClientPlayNetHandler> {
       this.field24288 = var1.<Class2151>readEnumValue(Class2151.class);
       switch (Class9255.field42562[this.field24288.ordinal()]) {
          case 1:
-            this.field24289 = var1.method35710();
+            this.field24289 = var1.readTextComponent();
             this.field24290 = var1.readFloat();
             this.field24291 = var1.<Class2303>readEnumValue(Class2303.class);
             this.field24292 = var1.<Class2300>readEnumValue(Class2300.class);
@@ -53,7 +53,7 @@ public class SUpdateBossInfoPacket implements Packet<IClientPlayNetHandler> {
             this.field24290 = var1.readFloat();
             break;
          case 4:
-            this.field24289 = var1.method35710();
+            this.field24289 = var1.readTextComponent();
             break;
          case 5:
             this.field24291 = var1.<Class2303>readEnumValue(Class2303.class);
