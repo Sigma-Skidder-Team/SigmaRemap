@@ -2,13 +2,13 @@ package mapped;
 
 import com.google.common.base.Preconditions;
 
-public class Class8664 {
+public class VersionRange {
    private static String[] field39040;
    private final String field39041;
    private final int field39042;
    private final int field39043;
 
-   public Class8664(String var1, int var2, int var3) {
+   public VersionRange(String var1, int var2, int var3) {
       Preconditions.checkNotNull(var1);
       Preconditions.checkArgument(var2 >= 0);
       Preconditions.checkArgument(var3 > var2);
@@ -17,15 +17,15 @@ public class Class8664 {
       this.field39043 = var3;
    }
 
-   public String method31197() {
+   public String getBaseVersion() {
       return this.field39041;
    }
 
-   public int method31198() {
+   public int getMinVersion() {
       return this.field39042;
    }
 
-   public int method31199() {
+   public int getMaxVersion() {
       return this.field39043;
    }
 }

@@ -1351,7 +1351,7 @@ public class GameSettings {
       }
 
       if (var1 == AbstractOption.field25333) {
-         int var12 = (int) AbstractOption.field25333.method18090(this);
+         int var12 = (int) AbstractOption.field25333.getValue(this);
          String var13 = I18n.format("of.options.renderDistance.tiny");
          int var5 = 2;
          if (var12 >= 4) {
@@ -1643,7 +1643,7 @@ public class GameSettings {
       } else if (var1 == AbstractOption.field25438) {
          return this.field44588 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
       } else if (var1 == AbstractOption.FRAMERATE_LIMIT) {
-         double var8 = AbstractOption.FRAMERATE_LIMIT.method18090(this);
+         double var8 = AbstractOption.FRAMERATE_LIMIT.getValue(this);
          if (var8 == 0.0) {
             return var2 + Class8043.method27619("of.options.framerateLimit.vsync");
          } else {
@@ -1659,7 +1659,7 @@ public class GameSettings {
          return this.field44730 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
       } else if (var1 instanceof Class5807) {
          Class5807 var3 = (Class5807)var1;
-         double var4 = var3.method18090(this);
+         double var4 = var3.getValue(this);
          return var4 == 0.0 ? var2 + I18n.format("options.off") : var2 + (int)(var4 * 100.0) + "%";
       } else {
          return null;

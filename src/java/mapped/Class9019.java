@@ -44,7 +44,7 @@ public class Class9019 {
    }
 
    public static void method33355(ViaVersion7 var0, ViaVerList var1, ViaVerList var2) {
-      method33356(var0, Collections.<Integer>singletonList(var1.method18573()), var2.method18573());
+      method33356(var0, Collections.<Integer>singletonList(var1.getVersionNumber()), var2.getVersionNumber());
    }
 
    public static void method33356(ViaVersion7 var0, List<Integer> var1, int var2) {
@@ -89,10 +89,10 @@ public class Class9019 {
       field41263.clear();
       field41263.add(field41258);
 
-      for (ViaVerList var3 : ViaVerList.method18571()) {
-         List<Class9284<Integer, ViaVersion7>> var4 = method33363(var3.method18573(), field41258);
+      for (ViaVerList var3 : ViaVerList.getUnmodifiableVersionList()) {
+         List<Class9284<Integer, ViaVersion7>> var4 = method33363(var3.getVersionNumber(), field41258);
          if (var4 != null) {
-            field41263.add(var3.method18573());
+            field41263.add(var3.getVersionNumber());
 
             for (Class9284 var6 : var4) {
                field41263.add((Integer)var6.method35008());
@@ -277,16 +277,16 @@ public class Class9019 {
       field41268 = new ThreadPoolExecutor(5, 16, 45L, TimeUnit.SECONDS, new SynchronousQueue<Runnable>(), var4);
       field41268.allowCoreThreadTimeOut(true);
       method33357(field41257, Range.lessThan(Integer.MIN_VALUE));
-      method33357(new Class6374(), Range.lessThan(ViaVerList._1_16.method18573()));
-      method33357(new Class6375(), Range.atLeast(ViaVerList._1_16.method18573()));
+      method33357(new Class6374(), Range.lessThan(ViaVerList._1_16.getVersionNumber()));
+      method33357(new Class6375(), Range.atLeast(ViaVerList._1_16.getVersionNumber()));
       method33355(new Class6363(), ViaVerList._1_9, ViaVerList._1_8_x);
       method33356(
-         new Class6359(), Arrays.<Integer>asList(ViaVerList._1_9_1.method18573(), ViaVerList._1_9_2.method18573()), ViaVerList._1_9.method18573()
+         new Class6359(), Arrays.<Integer>asList(ViaVerList._1_9_1.getVersionNumber(), ViaVerList._1_9_2.getVersionNumber()), ViaVerList._1_9.getVersionNumber()
       );
       method33355(new Class6354(), ViaVerList._1_9_3_or_4, ViaVerList._1_9_2);
       method33355(new Class6370(), ViaVerList._1_9, ViaVerList._1_9_2);
       method33356(
-         new Class6366(), Arrays.<Integer>asList(ViaVerList._1_9_1.method18573(), ViaVerList._1_9_2.method18573()), ViaVerList._1_9_3_or_4.method18573()
+         new Class6366(), Arrays.<Integer>asList(ViaVerList._1_9_1.getVersionNumber(), ViaVerList._1_9_2.getVersionNumber()), ViaVerList._1_9_3_or_4.getVersionNumber()
       );
       method33355(new Class6362(), ViaVerList._1_10_X, ViaVerList._1_9_3_or_4);
       method33355(new Class6386(), ViaVerList._1_11, ViaVerList._1_10_X);

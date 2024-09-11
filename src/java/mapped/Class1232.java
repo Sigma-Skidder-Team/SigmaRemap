@@ -12,7 +12,7 @@ public class Class1232 extends Class1234 implements Class1233 {
    private final Class5807 field6581;
 
    public Class1232(GameSettings var1, int var2, int var3, int var4, int var5, Class5807 var6) {
-      super(var1, var2, var3, var4, var5, (double)((float)var6.method18083(var6.method18090(var1))));
+      super(var1, var2, var3, var4, var5, (double)((float)var6.method18083(var6.getValue(var1))));
       this.field6581 = var6;
       this.method5813();
    }

@@ -32,7 +32,7 @@ public class Class512 implements Runnable {
                   return ViaVersion3.getInstance().method34427().method20574();
                } catch (Exception var8) {
                   var8.printStackTrace();
-                  return ViaVerList._1_8_x.getFakeInvThreshold();
+                  return ViaVerList._1_8_x.getVersionNumber();
                }
             }
          }

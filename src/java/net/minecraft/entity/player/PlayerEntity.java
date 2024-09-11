@@ -609,7 +609,7 @@ public abstract class PlayerEntity extends LivingEntity {
    @Nullable
    public ItemEntity method2836(ItemStack var1, boolean var2, boolean var3) {
       if (!var1.isEmpty()) {
-         if (this.world.isRemote && JelloPortal.getCurrentVersion().getFakeInvThreshold() >= ViaVerList._1_16.getFakeInvThreshold()) {
+         if (this.world.isRemote && JelloPortal.getCurrentVersion().getVersionNumber() >= ViaVerList._1_16.getVersionNumber()) {
             this.swingArm(Hand.MAIN_HAND);
          }
 

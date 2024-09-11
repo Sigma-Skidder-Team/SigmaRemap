@@ -20,7 +20,7 @@ public class VanillaPhase extends Module {
         if (this.isEnabled()) {
             if (mc.player.collidedHorizontally) {
                 Class9629 var4 = ColorUtils.method17760(1.0E-4);
-                double var5 = JelloPortal.getFakeInvStatus() != ViaVerList._1_8_x.getFakeInvThreshold() ? 1.0E-6 : 0.0625;
+                double var5 = JelloPortal.getFakeInvStatus() != ViaVerList._1_8_x.getVersionNumber() ? 1.0E-6 : 0.0625;
                 if (((net.minecraft.util.Direction) var4.method37538()).getAxis() != Direction.field413) {
                     var1.setZ(
                             (double) Math.round((((Vector3d) var4.method37539()).z + 1.1921022E-8) * 10000.0) / 10000.0

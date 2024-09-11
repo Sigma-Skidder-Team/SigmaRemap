@@ -50,7 +50,7 @@ public class ViaVersionLoader {
 
    @EventTarget
    public void method23342(StopUseItemEvent var1) {
-      if (JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getFakeInvThreshold()) {
+      if (JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getVersionNumber()) {
          if (this.mc.player.getItemInUseMaxCount() <= 1) {
             var1.setCancelled(true);
          }
@@ -59,11 +59,11 @@ public class ViaVersionLoader {
 
    @EventTarget
    public void method23343(EventKeyPress var1) {
-      if (var1.getKey() == this.mc.gameSettings.keyBindInventory.keycode.getKeyCode() && JelloPortal.getFakeInvStatus() <= ViaVerList._1_11_1_or_2.getFakeInvThreshold()) {
+      if (var1.getKey() == this.mc.gameSettings.keyBindInventory.keycode.getKeyCode() && JelloPortal.getFakeInvStatus() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
          this.mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
       }
 
-      if (JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getFakeInvThreshold()
+      if (JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getVersionNumber()
          && var1.getKey() == 258
          && this.field31496 != null
          && this.mc.currentScreen instanceof ChatScreen) {
@@ -84,7 +84,7 @@ public class ViaVersionLoader {
    public void method23345(EventRender var1) {
       if (this.mc.player != null
          && this.mc.player.getPose() == Pose.field13622
-         && (JelloPortal.getFakeInvStatus() < ViaVerList._1_13.getFakeInvThreshold() || ColorUtils.method17716())) {
+         && (JelloPortal.getFakeInvStatus() < ViaVerList._1_13.getVersionNumber() || ColorUtils.method17716())) {
          this.mc.player.setPose(Pose.STANDING);
       }
    }
@@ -94,12 +94,12 @@ public class ViaVersionLoader {
    public void method23346(EventBlockCollision var1) {
       if (this.mc.world != null && this.mc.player != null) {
          Block var4 = this.mc.world.getBlockState(var1.getBlockPos()).getBlock();
-         if (JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getFakeInvThreshold() && var4 instanceof Class3411) {
+         if (JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getVersionNumber() && var4 instanceof Class3411) {
             VoxelShape var5 = VoxelShapes.create(0.0, 0.0, 0.0, 1.0, 1.0, 1.0);
             var1.setBoxelShape(var5);
          }
 
-         if (JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getFakeInvThreshold()) {
+         if (JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getVersionNumber()) {
             if (this.mc.player.boundingBox.maxY - this.mc.player.boundingBox.minY == 1.5) {
                this.mc.player.boundingBox = this.mc.player.boundingBox.method19662(0.0, 0.29999995F, 0.0);
             }
@@ -189,7 +189,7 @@ public class ViaVersionLoader {
    @EventTarget
    @HigestPriority
    public void method23349(RecievePacketEvent var1) {
-      if (!Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).isEnabled() && JelloPortal.getFakeInvStatus() != ViaVerList._1_8_x.getFakeInvThreshold()) {
+      if (!Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).isEnabled() && JelloPortal.getFakeInvStatus() != ViaVerList._1_8_x.getVersionNumber()) {
          if (!field31493.isEmpty()) {
             field31493.clear();
          }
@@ -201,7 +201,7 @@ public class ViaVersionLoader {
                && var6.getSecond() != null
                && (
                   Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).isEnabled()
-                     || JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getFakeInvThreshold()
+                     || JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getVersionNumber()
                )) {
                if (!(((ItemStack)var6.getSecond()).getItem() instanceof Class3334)) {
                   Entity var7 = this.mc.world.getEntityByID(var4.getEntityID());
@@ -253,7 +253,7 @@ public class ViaVersionLoader {
             } else {
                SAnimateHandPacket var11 = (SAnimateHandPacket)var1.getPacket();
                Entity var13 = this.mc.world.getEntityByID(var11.method17192());
-               if (var13 != null && var11.method17193() == 3 && JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getFakeInvThreshold()) {
+               if (var13 != null && var11.method17193() == 3 && JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getVersionNumber()) {
                   var1.setCancelled(true);
                }
             }
@@ -269,7 +269,7 @@ public class ViaVersionLoader {
    @EventTarget
    @HigestPriority
    public void method23350(EventMove var1) {
-      if (JelloPortal.getFakeInvStatus() < ViaVerList._1_13.getFakeInvThreshold() || ColorUtils.method17716()) {
+      if (JelloPortal.getFakeInvStatus() < ViaVerList._1_13.getVersionNumber() || ColorUtils.method17716()) {
          if (this.mc.player.isInWater()) {
             this.field31498 = true;
             double var4 = this.mc.player.getPosY();
@@ -334,7 +334,7 @@ public class ViaVersionLoader {
          }
       }
 
-      if (JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getFakeInvThreshold()) {
+      if (JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getVersionNumber()) {
          if (Math.abs(var1.getX()) < 0.005) {
             var1.setX(0.0);
             ColorUtils.method17724(var1.getX());
@@ -353,7 +353,7 @@ public class ViaVersionLoader {
    }
 
    public boolean method23351() {
-      return JelloPortal.getFakeInvStatus() <= ViaVerList._1_12_2.getFakeInvThreshold();
+      return JelloPortal.getFakeInvStatus() <= ViaVerList._1_12_2.getVersionNumber();
    }
 
    @EventTarget

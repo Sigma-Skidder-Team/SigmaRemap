@@ -167,7 +167,7 @@ public class MiniMap extends Module {
                             GL11.glTranslatef((float) (-this.field23710 / 2), (float) (-this.field23709 / 2), 0.0F);
                             float var11 = (float) this.field23710 * var7;
                             float var12 = (float) this.field23709 * var7;
-                            RenderUtil.method11420(this.field23711, this.field23712, this.field23711 + this.field23710, this.field23712 + this.field23709);
+                            RenderUtil.drawPortalBackground(this.field23711, this.field23712, this.field23711 + this.field23710, this.field23712 + this.field23709);
                             RenderUtil.method11455(0.0F, 0.0F, 0.0F, 0.0F, ResourcesDecrypter.shoutIconPNG);
                             float var13 = -var11 / 2.0F + (float) (this.field23710 / 2) + var9;
                             float var14 = -var12 / 2.0F + (float) (this.field23709 / 2) + var10;

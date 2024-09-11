@@ -51,9 +51,9 @@ public class ResourceManager extends Class7039 implements AbstractResourceManage
       for (Entry<String, Object> var6 : new HashSet<>(var4.entrySet())) {
          if (!(var6.getValue() instanceof Integer)) {
             if (var6.getValue() instanceof String) {
-               ViaVerList var7 = ViaVerList.method18572((String)var6.getValue());
+               ViaVerList var7 = ViaVerList.getVersionByName((String)var6.getValue());
                if (var7 != null) {
-                  var4.put(var6.getKey(), var7.getFakeInvThreshold());
+                  var4.put(var6.getKey(), var7.getVersionNumber());
                } else {
                   var4.remove(var6.getKey());
                }

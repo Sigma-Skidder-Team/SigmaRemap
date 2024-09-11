@@ -27,8 +27,8 @@ public class Class6038 extends Class6037 {
    }
 
    public void method18676(int var1) {
-      ViaVerList var4 = ViaVerList.method18569(var1);
-      this.field26242 = var4.method18573();
+      ViaVerList var4 = ViaVerList.getVersionByNumber(var1);
+      this.field26242 = var4.getVersionNumber();
    }
 
    public int method18677() {
@@ -36,8 +36,8 @@ public class Class6038 extends Class6037 {
    }
 
    public void method18678(int var1) {
-      ViaVerList var4 = ViaVerList.method18569(var1);
-      this.field26243 = var4.method18573();
+      ViaVerList var4 = ViaVerList.getVersionByNumber(var1);
+      this.field26243 = var4.getVersionNumber();
    }
 
    public String method18679() {

@@ -13,81 +13,86 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JelloPortalScreen extends MultiplayerScreen {
-   private Button field6959;
-   public static int field6960 = 0;
-   private Widget field6961;
+    private Button portalButton;
+    public static int currentVersionIndex = 0;
+    private Widget versionSelectorWidget;
 
-   public JelloPortalScreen() {
-      super(new VanillaMainMenuScreen());
-   }
+    public JelloPortalScreen() {
+        super(new VanillaMainMenuScreen());
+    }
 
-   public JelloPortalScreen(Screen var1) {
-      super(var1);
-   }
+    public JelloPortalScreen(Screen parentScreen) {
+        super(parentScreen);
+    }
 
-  @Override
-   public void init() {
-      super.init();
-      Class5807 var3 = new Class5807(
-         "jello.portaloption",
-         0.0,
-         (double)(this.method6251().size() - 1),
-         1.0F,
-         var1 -> (double)this.method6250(),
-         (var1, var2) -> JelloPortal.currentVersion = this.method6252(var2.intValue()),
-         (var1, var2) -> {
-            int var5 = (int)var2.method18090(var1);
-            return new StringTextComponent(this.method6252(var5).method18580());
-         }
-      );
-      this.field6961 = this.addButton(var3.createWidget(this.mc.gameSettings, this.width / 2 + 40, 7, 114));
-   }
+    @Override
+    public void init() {
+        super.init();
+        Class5807 versionSelector = new Class5807(
+                "jello.portaloption",
+                0.0,
+                (double)(this.getAvailableVersions().size() - 1),
+                1.0F,
+                (var1) -> (double)this.getCurrentVersionIndex(),
+                (var1, var2) -> JelloPortal.currentVersion = this.getVersion(var2.intValue()),
+                (var1, var2) -> {
+                    int versionIndex = (int)var2.getValue(var1);
+                    return new StringTextComponent(this.getVersion(versionIndex).getVersionName());
+                }
+        );
+        this.versionSelectorWidget = this.addButton(versionSelector.createWidget(this.mc.gameSettings, this.width / 2 + 40, 7, 114));
+    }
 
-   @Override
-   public void render(MatrixStack var1, int var2, int var3, float var4) {
-      super.render(var1, var2, var3, var4);
-      RenderUtil.method11420(
-         0, 0, Minecraft.getInstance().mainWindow.getWidth(), (int)(30.0 * Minecraft.getInstance().mainWindow.getGuiScaleFactor() / (double) GuiManager.field41348)
-      );
-      this.renderBackground(var1);
-      RenderUtil.endScissor();
-      this.field6961.render(var1, var2, var3, var4);
-      drawString(var1, this.fontRenderer, this.getTextComponent().getString(), this.width / 2 - 146, 13, 16777215);
-      drawString(var1, this.fontRenderer, "Jello Portal:", this.width / 2 - 30, 13, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
-   }
+    @Override
+    public void render(MatrixStack matrixStack, int mouseX, int mouseY, float partialTicks) {
+        super.render(matrixStack, mouseX, mouseY, partialTicks);
+        RenderUtil.drawPortalBackground(
+                0, 0, Minecraft.getInstance().mainWindow.getWidth(), (int)(30.0 * Minecraft.getInstance().mainWindow.getGuiScaleFactor() / (double) GuiManager.portalScaleFactor)
+        );
+        this.renderBackground(matrixStack);
+        RenderUtil.endScissor();
+        this.versionSelectorWidget.render(matrixStack, mouseX, mouseY, partialTicks);
+        drawString(matrixStack, this.fontRenderer, this.getTextComponent().getString(), this.width / 2 - 146, 13, 16777215);
+        drawString(matrixStack, this.fontRenderer, "Jello Portal:", this.width / 2 - 30, 13, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
+    }
 
-   private int method6250() {
-      field6960 = 0;
+    private int getCurrentVersionIndex() {
+        currentVersionIndex = 0;
 
-      for (ViaVerList var4 : this.method6251()) {
-         if (this.method6252(field6960).equals(JelloPortal.getCurrentVersion())) {
-            break;
-         }
+        for (ViaVerList version : this.getAvailableVersions()) {
+            if (this.getVersion(currentVersionIndex).equals(JelloPortal.getCurrentVersion())) {
+                break;
+            }
 
-         field6960++;
-      }
+            currentVersionIndex++;
+        }
 
-      return field6960;
-   }
+        return currentVersionIndex;
+    }
 
-   private List<ViaVerList> method6251() {
-      ArrayList var3 = new ArrayList();
+    private List<ViaVerList> getAvailableVersions() {
+        ArrayList<ViaVerList> availableVersions = new ArrayList<>();
 
-      for (ViaVerList var5 : ViaVerList.field26128) {
-         if (var5.getFakeInvThreshold() >= ViaVerList._1_8_x.getFakeInvThreshold()) {
-            var3.add(var5);
-         }
-      }
+        for (ViaVerList version : ViaVerList.versionList) {
+            if (version.getVersionNumber() >= ViaVerList._1_8_x.getVersionNumber()) {
+                availableVersions.add(version);
+            }
+        }
 
-      return var3;
-   }
+        return availableVersions;
+    }
 
-   private ViaVerList method6252(int var1) {
-      return this.method6251().get(var1);
-   }
+    private ViaVerList getVersion(int index) {
+        List<ViaVerList> availableVersions = this.getAvailableVersions();
+        if (index < 0 || index >= availableVersions.size()) {
+            return ViaVerList._1_16_4;
+        }
+        return availableVersions.get(index);
+    }
 
-   @Override
-   public boolean isPauseScreen() {
-      return false;
-   }
+
+    @Override
+    public boolean isPauseScreen() {
+        return false;
+    }
 }

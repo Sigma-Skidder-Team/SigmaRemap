@@ -172,7 +172,7 @@ public class AutoArmor extends Module {
     }
 
     private void method16617(boolean var1) {
-        if (var1 && this.isInventoryOpen && !(mc.currentScreen instanceof InventoryScreen) && JelloPortal.getFakeInvStatus() <= ViaVerList._1_11_1_or_2.getFakeInvThreshold()) {
+        if (var1 && this.isInventoryOpen && !(mc.currentScreen instanceof InventoryScreen) && JelloPortal.getFakeInvStatus() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
             mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
             this.isInventoryOpen = false;
         }

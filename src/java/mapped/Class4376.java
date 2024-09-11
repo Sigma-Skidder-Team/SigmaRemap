@@ -45,7 +45,7 @@ public class Class4376 extends Class4235 implements Class4238 {
       int var8 = this.method13263() - (var6 - this.method13267()) / 2;
       int var9 = (int)((float)(this.method13265() - (var7 - this.method13269()) / 2) - (float)(this.method13269() / 2) * (var4 - 1.0F));
       float[] var10 = ColorUtils.method17701(this.method13025().getWidth(), this.method13025().getHeight(), (float)var6, (float)var7);
-      RenderUtil.method11420(
+      RenderUtil.drawPortalBackground(
          this.method13271() + var8 - this.field20895,
          this.method13272() + var9 - this.field20896,
          this.method13271() + var8 - this.field20895 + var6,

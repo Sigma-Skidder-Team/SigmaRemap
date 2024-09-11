@@ -685,7 +685,7 @@ public class InvManagerUtils {
 
       short var9 = var4.field4905.getNextTransactionID(field33419.player.inventory);
       ItemStack var10 = var4.field4905.slotClick(var1, var2, var3, var4);
-      if (var8 == null || JelloPortal.getCurrentVersion().getFakeInvThreshold() > ViaVerList._1_12.getFakeInvThreshold() && !var5 || var3 == ClickType.field14696) {
+      if (var8 == null || JelloPortal.getCurrentVersion().getVersionNumber() > ViaVerList._1_12.getVersionNumber() && !var5 || var3 == ClickType.field14696) {
          var8 = var10;
       }
 

@@ -41,7 +41,7 @@ public class Class3058 implements Class2982 {
          }
 
          if (Class9019.field41258 == -1) {
-            Class9019.field41258 = ViaVerList.method18569(var7).method18573();
+            Class9019.field41258 = ViaVerList.getVersionByNumber(var7).getVersionNumber();
          }
 
          Class5417 var9 = ViaVersion3.getInstance().method34424().<Class5417>method31084(Class5417.class);
@@ -58,8 +58,8 @@ public class Class3058 implements Class2982 {
 
          if (var11 != null) {
             if (var7 == var10 || var7 == 0) {
-               ViaVerList var12 = ViaVerList.method18569(var4.method18675());
-               var8.addProperty("protocol", var12.method18576());
+               ViaVerList var12 = ViaVerList.getVersionByNumber(var4.method18675());
+               var8.addProperty("protocol", var12.getCombinedVersionNumber());
             }
          } else {
             var1.method30580().method22469(false);

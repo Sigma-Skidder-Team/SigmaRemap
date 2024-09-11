@@ -239,7 +239,7 @@ public class Class4363 extends Class4247 {
 
       boolean var8 = this.field21330.calcPercent() < 1.0F;
       if (var8) {
-         RenderUtil.method11420(
+         RenderUtil.drawPortalBackground(
             this.method13271(), this.method13272(), this.method13271() + this.method13267() + 140, this.method13272() + this.method13269() + this.method13647()
          );
       }

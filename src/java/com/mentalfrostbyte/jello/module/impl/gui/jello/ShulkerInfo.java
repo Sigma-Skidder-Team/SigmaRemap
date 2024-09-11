@@ -179,8 +179,8 @@ public class ShulkerInfo extends Module {
                     byte var10 = 1;
                     byte var11 = 12;
                     int var12 = ResourceRegistry.JelloLightFont25.method23952();
-                    int var13 = (int) (mc.mouseHelper.method36738() * (double) GuiManager.field41348 - (double) (9 * (var9 + var10)) - (double) (var11 * 3));
-                    int var14 = (int) (mc.mouseHelper.method36739() * (double) GuiManager.field41348 - 33.0);
+                    int var13 = (int) (mc.mouseHelper.method36738() * (double) GuiManager.portalScaleFactor - (double) (9 * (var9 + var10)) - (double) (var11 * 3));
+                    int var14 = (int) (mc.mouseHelper.method36739() * (double) GuiManager.portalScaleFactor - 33.0);
                     this.method16676(var13, var14, var7, var6.method32149().getString(), true);
                     GL11.glPopMatrix();
                     RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);

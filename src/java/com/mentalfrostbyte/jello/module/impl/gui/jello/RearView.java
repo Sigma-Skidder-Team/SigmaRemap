@@ -110,10 +110,10 @@ public class RearView extends PremiumModule {
                             14.0F,
                             this.field23662.calcPercent()
                     );
-                    var5 = (int) ((float) var5 * GuiManager.field41348);
-                    var6 = (int) ((float) var6 * GuiManager.field41348);
-                    var7 = (int) ((float) var7 * GuiManager.field41348);
-                    var8 = (int) ((float) var8 * GuiManager.field41348);
+                    var5 = (int) ((float) var5 * GuiManager.portalScaleFactor);
+                    var6 = (int) ((float) var6 * GuiManager.portalScaleFactor);
+                    var7 = (int) ((float) var7 * GuiManager.portalScaleFactor);
+                    var8 = (int) ((float) var8 * GuiManager.portalScaleFactor);
                     RenderSystem.pushMatrix();
                     this.method16451(
                             field23663, var5, var6, mc.mainWindow.getFramebufferWidth() - var7 - var5, mc.mainWindow.getFramebufferHeight() + var8
@@ -134,8 +134,8 @@ public class RearView extends PremiumModule {
                     RenderSystem.loadIdentity();
                     RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
                     GL11.glScaled(
-                            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.field41348,
-                            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.field41348,
+                            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor,
+                            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor,
                             1.0
                     );
                     field23663.unbindFramebuffer();

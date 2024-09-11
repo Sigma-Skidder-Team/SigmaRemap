@@ -95,7 +95,7 @@ public class CubecraftFly extends Module {
                         MovementUtils.method37088(var1, MovementUtils.method37075());
                         if (this.field23845 != -4) {
                             if (this.field23845 != -1) {
-                                if (JelloPortal.getFakeInvStatus() > ViaVerList._1_8_x.getFakeInvThreshold()) {
+                                if (JelloPortal.getFakeInvStatus() > ViaVerList._1_8_x.getVersionNumber()) {
                                     if (mc.gameSettings.keyBindJump.isKeyDown() && !this.field23846) {
                                         var1.setY(0.0625);
                                         MovementUtils.method37088(var1, 0.0);
@@ -118,7 +118,7 @@ public class CubecraftFly extends Module {
                             var1.setY(0.0625);
                         }
                     }
-                } else if (JelloPortal.getFakeInvStatus() != ViaVerList._1_8_x.getFakeInvThreshold()) {
+                } else if (JelloPortal.getFakeInvStatus() != ViaVerList._1_8_x.getVersionNumber()) {
                     if (!ColorUtils.method17730(mc.player, 0.001F)) {
                         var1.setY(0.0);
                         MovementUtils.method37088(var1, 0.0);
@@ -168,7 +168,7 @@ public class CubecraftFly extends Module {
     public void method16689(EventUpdate var1) {
         if (var1.isPre() && ColorUtils.method17718()) {
             var1.method13908(true);
-            if (JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getFakeInvThreshold() && this.field23845 == 0 && ColorUtils.method17730(mc.player, 0.001F)) {
+            if (JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getVersionNumber() && this.field23845 == 0 && ColorUtils.method17730(mc.player, 0.001F)) {
                 var1.setCancelled(true);
             }
 
@@ -191,7 +191,7 @@ public class CubecraftFly extends Module {
                 }
             } else {
                 SPlayerPositionLookPacket var20 = (SPlayerPositionLookPacket) var4;
-                if (JelloPortal.getFakeInvStatus() != ViaVerList._1_8_x.getFakeInvThreshold()) {
+                if (JelloPortal.getFakeInvStatus() != ViaVerList._1_8_x.getVersionNumber()) {
                     float[] var6 = MovementUtils.lenientStrafe();
                     float var7 = var6[1];
                     float var8 = var6[2];

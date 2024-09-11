@@ -11,6 +11,6 @@ public class Class3594 implements Comparator<ViaVerList> {
    }
 
    public int compare(ViaVerList var1, ViaVerList var2) {
-      return ViaVerList.method18570(var2) - ViaVerList.method18570(var1);
+      return ViaVerList.getVersionIndex(var2) - ViaVerList.getVersionIndex(var1);
    }
 }

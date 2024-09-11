@@ -28,7 +28,7 @@ public class GuiManager {
     public static long field41344;
     public static long field41345;
     public static long field41346;
-    public static float field41348 = 1.0F;
+    public static float portalScaleFactor = 1.0F;
     private static boolean field41351 = true;
 
     static {
@@ -71,7 +71,7 @@ public class GuiManager {
         field41345 = GLFW.glfwCreateStandardCursor(221188);
         field41346 = GLFW.glfwCreateStandardCursor(221186);
         GLFW.glfwSetCursor(Minecraft.getInstance().mainWindow.getHandle(), field41344);
-        field41348 = (float) (Minecraft.getInstance().mainWindow.getFramebufferHeight() / Minecraft.getInstance().mainWindow.getHeight());
+        portalScaleFactor = (float) (Minecraft.getInstance().mainWindow.getFramebufferHeight() / Minecraft.getInstance().mainWindow.getHeight());
     }
 
     public static boolean method33457(net.minecraft.client.gui.screen.Screen var0) {
@@ -254,7 +254,7 @@ public class GuiManager {
                 RenderUtil.drawString(ClassicDecryption.bold14, 72.0F, 1.0F, "5.0.0", ColorUtils.applyAlpha(var8, Math.min(1.0F, var7 * 1.4F)));
             } else {
                 GL11.glAlphaFunc(519, 0.0F);
-                RenderUtil.method11455((float) var3, var4, 170.0F, 104.0F, !(field41348 > 1.0F) ? ResourcesDecrypter.jelloWatermarkPNG : ResourcesDecrypter.jelloWatermark2xPNG);
+                RenderUtil.method11455((float) var3, var4, 170.0F, 104.0F, !(portalScaleFactor > 1.0F) ? ResourcesDecrypter.jelloWatermarkPNG : ResourcesDecrypter.jelloWatermark2xPNG);
             }
 
             Client.getInstance().getEventManager().call(new EventRender());
@@ -381,7 +381,7 @@ public class GuiManager {
         }
 
         if (Minecraft.getInstance().mainWindow.getWidth() != 0 && Minecraft.getInstance().mainWindow.getHeight() != 0) {
-            field41348 = (float) Math.max(
+            portalScaleFactor = (float) Math.max(
                     Minecraft.getInstance().mainWindow.getFramebufferWidth() / Minecraft.getInstance().mainWindow.getWidth(),
                     Minecraft.getInstance().mainWindow.getFramebufferHeight() / Minecraft.getInstance().mainWindow.getHeight()
             );

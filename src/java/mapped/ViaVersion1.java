@@ -63,21 +63,21 @@ public class ViaVersion1 {
 
    public void method34415() {
       try {
-         Class9019.field41258 = ViaVerList.method18569(this.field42215.method20574()).method18573();
+         Class9019.field41258 = ViaVerList.getVersionByNumber(this.field42215.method20574()).getVersionNumber();
       } catch (Exception var4) {
          this.field42213.getLogger().severe("ViaVersion failed to get the server protocol!");
          var4.printStackTrace();
       }
 
       if (Class9019.field41258 != -1) {
-         this.field42213.getLogger().info("ViaVersion detected server version: " + ViaVerList.method18569(Class9019.field41258));
+         this.field42213.getLogger().info("ViaVersion detected server version: " + ViaVerList.getVersionByNumber(Class9019.field41258));
          if (!Class9019.method33360() && !this.field42213.method27374()) {
             this.field42213.getLogger().warning("ViaVersion does not have any compatible versions for this server version!");
             this.field42213.getLogger().warning("Please remember that ViaVersion only adds support for versions newer than the server version.");
             this.field42213.getLogger().warning("If you need support for older versions you may need to use one or more ViaVersion addons too.");
             this.field42213.getLogger().warning("In that case please read the ViaVersion resource page carefully or use https://jo0001.github.io/ViaSetup");
             this.field42213.getLogger().warning("and if you're still unsure, feel free to join our Discord-Server for further assistance.");
-         } else if (Class9019.field41258 == ViaVerList._1_8_x.method18573() && !this.field42213.method27374()) {
+         } else if (Class9019.field41258 == ViaVerList._1_8_x.getVersionNumber() && !this.field42213.method27374()) {
             this.field42213
                .getLogger()
                .warning(
@@ -94,11 +94,11 @@ public class ViaVersion1 {
             this.field42220 = null;
          }
       }, 10L);
-      if (Class9019.field41258 < ViaVerList._1_9.method18573() && ViaVersion3.method27612().method21940()) {
+      if (Class9019.field41258 < ViaVerList._1_9.getVersionNumber() && ViaVersion3.method27612().method21940()) {
          ViaVersion3.method27613().scheduleTaskImmediately(new Class697(), 1L);
       }
 
-      if (Class9019.field41258 < ViaVerList._1_13.method18573() && ViaVersion3.method27612().method21930() > 0) {
+      if (Class9019.field41258 < ViaVerList._1_13.getVersionNumber() && ViaVersion3.method27612().method21930() > 0) {
          ViaVersion3.method27613().scheduleTaskImmediately(new Class1579(), 1L);
       }
 

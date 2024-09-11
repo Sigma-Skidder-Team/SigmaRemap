@@ -72,7 +72,7 @@ public class Class5807 extends AbstractOption {
       this.field25453.accept(var1, var2);
    }
 
-   public double method18090(GameSettings var1) {
+   public double getValue(GameSettings var1) {
       return this.field25452.apply(var1);
    }
 

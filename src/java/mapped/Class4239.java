@@ -39,7 +39,7 @@ public class Class4239 extends Class4240 implements Class4238 {
       int var6 = (int)((float)this.method13269() * this.field20581);
       int var7 = this.method13263() - (var5 - this.method13267()) / 2;
       int var8 = this.method13265() - (var6 - this.method13269()) / 2;
-      RenderUtil.method11420(
+      RenderUtil.drawPortalBackground(
          this.method13271() + var7 - this.field20895,
          this.method13272() + var8 - this.field20896,
          this.method13271() + var7 - this.field20895 + var5,

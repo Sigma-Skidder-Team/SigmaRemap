@@ -42,7 +42,7 @@ public class MainmenuScreen2 extends IconPanel {
       String var20 = "© Sigma Prod";
       StringBuilder var10000 = new StringBuilder().append("Jello for Sigma ");
       Client.getInstance();
-      String var21 = var10000.append(Client.VERSION).append("  -  1.8 to ").append(JelloPortal.defaultVersion.method18580()).toString();
+      String var21 = var10000.append(Client.VERSION).append("  -  1.8 to ").append(JelloPortal.defaultVersion.getVersionName()).toString();
       this.addToList(
          this.field21123 = new Class4236(
             this,
@@ -181,7 +181,7 @@ public class MainmenuScreen2 extends IconPanel {
       Texture var4 = ResourcesDecrypter.logoLargePNG;
       int var5 = var4.getImageWidth();
       int var6 = var4.getImageHeight();
-      if (GuiManager.field41348 > 1.0F) {
+      if (GuiManager.portalScaleFactor > 1.0F) {
          var4 = ResourcesDecrypter.logoLarge2xPNG;
       }
 

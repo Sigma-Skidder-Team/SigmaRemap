@@ -34,7 +34,7 @@ public class Class5810 extends Class5807 {
          },
          (var1x, var2x) -> {
             if (var2 != null) {
-               double var5 = var2x.method18090(var1x);
+               double var5 = var2x.getValue(var1x);
                return var5 != -1.0
                   ? var2x.method17955(new StringTextComponent(var2.method24491((int)var5).toString()))
                   : var2x.method17955(new TranslationTextComponent("options.fullscreen.current"));

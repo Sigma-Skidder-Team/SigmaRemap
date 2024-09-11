@@ -212,7 +212,7 @@ public class JelloMainMenuScreen extends Screen {
          Texture var26 = ResourcesDecrypter.logoLargePNG;
          int var28 = var26.getImageWidth();
          int var22 = var26.getImageHeight();
-         if (GuiManager.field41348 > 1.0F) {
+         if (GuiManager.portalScaleFactor > 1.0F) {
             var26 = ResourcesDecrypter.logoLarge2xPNG;
          }
 

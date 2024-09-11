@@ -188,7 +188,7 @@ public class Projectiles extends Module {
                     }
 
                     GL11.glEnd();
-                    GL11.glLineWidth(2.0F * GuiManager.field41348);
+                    GL11.glLineWidth(2.0F * GuiManager.portalScaleFactor);
                     GL11.glColor4d(1.0, 1.0, 1.0, 0.75);
                     GL11.glBegin(3);
 

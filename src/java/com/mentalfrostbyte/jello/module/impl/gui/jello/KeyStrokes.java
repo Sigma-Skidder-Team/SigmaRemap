@@ -119,7 +119,7 @@ public class KeyStrokes extends Module {
                         for (Class2132 var7 : Class2132.values()) {
                             Class9268 var8 = var7.method8814();
                             Class9268 var9 = var7.method8815();
-                            RenderUtil.method11420(
+                            RenderUtil.drawPortalBackground(
                                     this.field23585 + var8.field42635,
                                     this.field23586 + var8.field42636,
                                     this.field23585 + var8.field42635 + var9.field42635,
@@ -181,7 +181,7 @@ public class KeyStrokes extends Module {
                         Class2132 var18 = var16.field33987;
                         Class9268 var20 = var18.method8814();
                         Class9268 var22 = var18.method8815();
-                        RenderUtil.method11420(
+                        RenderUtil.drawPortalBackground(
                                 this.field23585 + var20.field42635,
                                 this.field23586 + var20.field42636,
                                 this.field23585 + var20.field42635 + var22.field42635,

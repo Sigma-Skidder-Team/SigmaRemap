@@ -134,10 +134,10 @@ public class Class4312 extends Screen {
          (float)var7, (float)var8, (float)(var7 + this.field21002), (float)(var8 + 80), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.14F)
       );
       RenderUtil.method11478();
-      RenderUtil.method11420(var7 + this.field21002, var8 - this.field20998, var7 + var9 + this.field20998, var8 + var10 + this.field20998);
+      RenderUtil.drawPortalBackground(var7 + this.field21002, var8 - this.field20998, var7 + var9 + this.field20998, var8 + var10 + this.field20998);
       RenderUtil.method11467(var7, var8, var9, var10, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
       RenderUtil.endScissor();
-      RenderUtil.method11420(var7 - this.field20998, var8 - this.field20998, var7 + this.field21002, var8 + var10 + this.field20998);
+      RenderUtil.drawPortalBackground(var7 - this.field20998, var8 - this.field20998, var7 + this.field21002, var8 + var10 + this.field20998);
       RenderUtil.method11467(var7, var8, var9, var10, ColorUtils.applyAlpha(-2236963, var1 * 0.75F));
       RenderUtil.method11426(
          (float)(var7 + this.field21002 - 1),

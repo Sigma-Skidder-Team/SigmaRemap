@@ -266,7 +266,7 @@ public class TabGUI extends Module {
                 this.field23791
         );
         RenderUtil.method11449((float) var1, var10 >= 0 ? (float) (var10 + var2) : (float) var2, (float) var4, 14.0F, ResourcesDecrypter.shadowBottomPNG, this.field23791);
-        RenderUtil.method11420(
+        RenderUtil.drawPortalBackground(
                 var1,
                 var10 >= 0 ? var10 + var2 : var2,
                 var1 + var4,

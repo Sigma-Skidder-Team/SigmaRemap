@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.base.Preconditions;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
-import it.unimi.dsi.fastutil.objects.ObjectIterator;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -13,16 +13,16 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class ViaVerList {
-   private static final Int2ObjectMap<ViaVerList> field26127 = new Int2ObjectOpenHashMap();
-   public static final List<ViaVerList> field26128 = new ArrayList<ViaVerList>();
+   private static final Int2ObjectMap<ViaVerList> versionMap = new Int2ObjectOpenHashMap();
+   public static final List<ViaVerList> versionList = new ArrayList<ViaVerList>();
    public static final ViaVerList _1_8_x = register(47, "1.8.x");
    public static final ViaVerList _1_9 = register(107, "1.9");
    public static final ViaVerList _1_9_1 = register(108, "1.9.1");
    public static final ViaVerList _1_9_2 = register(109, "1.9.2");
-   public static final ViaVerList _1_9_3_or_4 = register(110, "1.9.3/4", new Class8664("1.9", 3, 4));
+   public static final ViaVerList _1_9_3_or_4 = register(110, "1.9.3/4", new VersionRange("1.9", 3, 4));
    public static final ViaVerList _1_10_X = register(210, "1.10.x");
    public static final ViaVerList _1_11 = register(315, "1.11");
-   public static final ViaVerList _1_11_1_or_2 = register(316, "1.11.1/2", new Class8664("1.11", 1, 2));
+   public static final ViaVerList _1_11_1_or_2 = register(316, "1.11.1/2", new VersionRange("1.11", 1, 2));
    public static final ViaVerList _1_12 = register(335, "1.12");
    public static final ViaVerList _1_12_1 = register(338, "1.12.1");
    public static final ViaVerList _1_12_2 = register(340, "1.12.2");
@@ -42,169 +42,147 @@ public class ViaVerList {
    public static final ViaVerList _1_16_2 = register(751, "1.16.2");
    public static final ViaVerList _1_16_3 = register(753, "1.16.3");
    public static final ViaVerList _1_16_4 = register(754, "1.16.4");
-   public static final ViaVerList UNKNOWN_VER = register(-1, "UNKNOWN");
-   private final int field26157;
-   private final int field26158;
-   private final String field26159;
-   private final boolean field26160;
-   private final Set<String> field26161;
+   private final int versionNumber;
+   private final int alternateVersionNumber;
+   private final String versionName;
+   private final boolean isWildcard;
+   private final Set<String> supportedVersions;
 
-   public static ViaVerList register(int var0, String var1) {
-      return register(var0, -1, var1);
+   public static ViaVerList register(int version, String name) {
+      return register(version, -1, name);
    }
 
-   public static ViaVerList register(int var0, int var1, String var2) {
-      return populate(var0, var1, var2, null);
+   public static ViaVerList register(int version, int alternateVersion, String name) {
+      return populate(version, alternateVersion, name, null);
    }
 
-   public static ViaVerList register(int var0, String var1, Class8664 var2) {
-      return populate(var0, -1, var1, var2);
+   public static ViaVerList register(int version, String name, VersionRange range) {
+      return populate(version, -1, name, range);
    }
 
-   public static ViaVerList populate(int var0, int var1, String var2, Class8664 var3) {
-      ViaVerList var6 = new ViaVerList(var0, var1, var2, var3);
-      field26128.add(var6);
-      field26127.put(var6.method18573(), var6);
-      if (var6.method18581()) {
-         field26127.put(var6.method18575(), var6);
+   public static ViaVerList populate(int version, int alternateVersion, String name, VersionRange range) {
+      ViaVerList versionEntry = new ViaVerList(version, alternateVersion, name, range);
+      versionList.add(versionEntry);
+      versionMap.put(versionEntry.getVersionNumber(), versionEntry);
+      if (versionEntry.hasAlternateVersion()) {
+         versionMap.put(versionEntry.getAlternateVersionNumber(), versionEntry);
       }
 
-      return var6;
+      return versionEntry;
    }
 
-   public static boolean method18568(int var0) {
-      return field26127.containsKey(var0);
+   public static boolean containsVersion(int version) {
+      return versionMap.containsKey(version);
    }
 
    @NotNull
-   public static ViaVerList method18569(int var0) {
-      ViaVerList var3 = (ViaVerList)field26127.get(var0);
-      return var3 == null ? new ViaVerList(var0, "Unknown (" + var0 + ")") : var3;
+   public static ViaVerList getVersionByNumber(int version) {
+      ViaVerList foundVersion = versionMap.get(version);
+      return foundVersion == null ? new ViaVerList(version, "Unknown (" + version + ")") : foundVersion;
    }
 
-   public static int method18570(ViaVerList var0) {
-      return field26128.indexOf(var0);
+   public static int getVersionIndex(ViaVerList version) {
+      return versionList.indexOf(version);
    }
 
-   public static List<ViaVerList> method18571() {
-      return Collections.<ViaVerList>unmodifiableList(new ArrayList(field26127.values()));
+   public static List<ViaVerList> getUnmodifiableVersionList() {
+      return Collections.unmodifiableList(new ArrayList<>(versionMap.values()));
    }
 
    @Nullable
-   public static ViaVerList method18572(String var0) {
-      ObjectIterator var3 = field26127.values().iterator();
-
-      while (var3.hasNext()) {
-         ViaVerList var4 = (ViaVerList)var3.next();
-         String var5 = var4.method18580();
-         if (var5.equals(var0)) {
-            return var4;
+   public static ViaVerList getVersionByName(String name) {
+      for (ViaVerList versionEntry : versionMap.values()) {
+         String versionName = versionEntry.getVersionName();
+         if (versionName.equals(name)) {
+            return versionEntry;
          }
 
-         if (!var4.method18579()) {
-            if (var4.method18577() && var4.method18578().contains(var0)) {
-               return var4;
+         if (!versionEntry.isWildcardVersion()) {
+            if (versionEntry.isVersionRange() && versionEntry.getSupportedVersions().contains(name)) {
+               return versionEntry;
             }
          } else {
-            String var6 = var5.substring(0, var5.length() - 2);
-            if (var6.equals(var0) || var0.startsWith(var5.substring(0, var5.length() - 1))) {
-               return var4;
+            String baseVersion = versionName.substring(0, versionName.length() - 2);
+            if (baseVersion.equals(name) || name.startsWith(versionName.substring(0, versionName.length() - 1))) {
+               return versionEntry;
             }
          }
       }
-
       return null;
    }
 
-   public ViaVerList(int var1, String var2) {
-      this(var1, -1, var2, null);
+   public ViaVerList(int version, String name) {
+      this(version, -1, name, null);
    }
 
-   public ViaVerList(int var1, int var2, String var3, Class8664 var4) {
-      this.field26157 = var1;
-      this.field26158 = var2;
-      this.field26159 = var3;
-      this.field26160 = var3.endsWith(".x");
-      Preconditions.checkArgument(!this.field26160 || var4 == null, "A version cannot be a wildcard and a range at the same time!");
-      if (var4 == null) {
-         this.field26161 = Collections.<String>singleton(var3);
+   public ViaVerList(int version, int alternateVersion, String name, VersionRange range) {
+      this.versionNumber = version;
+      this.alternateVersionNumber = alternateVersion;
+      this.versionName = name;
+      this.isWildcard = name.endsWith(".x");
+
+      Preconditions.checkArgument(!this.isWildcard || range == null, "A version cannot be a wildcard and a range at the same time!");
+
+      if (range == null) {
+         this.supportedVersions = Collections.singleton(name);
       } else {
-         this.field26161 = new HashSet<String>();
-
-         for (int var7 = var4.method31198(); var7 <= var4.method31199(); var7++) {
-            if (var7 == 0) {
-               this.field26161.add(var4.method31197());
+         this.supportedVersions = new HashSet<>();
+         for (int i = range.getMinVersion(); i <= range.getMaxVersion(); i++) {
+            if (i == 0) {
+               this.supportedVersions.add(range.getBaseVersion());
             }
-
-            this.field26161.add(var4.method31197() + "." + var7);
+            this.supportedVersions.add(range.getBaseVersion() + "." + i);
          }
       }
    }
 
-   public int method18573() {
-      return this.field26157;
+   public int getAlternateVersionNumber() {
+      return this.alternateVersionNumber != -1 ? 1073741824 | this.alternateVersionNumber : this.versionNumber;
    }
 
-   public int method18574() {
-      Preconditions.checkArgument(this.method18581());
-      return this.field26158;
+   public int getCombinedVersionNumber() {
+      return this.alternateVersionNumber != -1 ? 1073741824 | this.alternateVersionNumber : this.versionNumber;
    }
 
-   public int method18575() {
-      Preconditions.checkArgument(this.method18581());
-      return 1073741824 | this.field26158;
+   public boolean isVersionRange() {
+      return this.supportedVersions.size() != 1;
    }
 
-   public int method18576() {
-      return this.field26158 != -1 ? 1073741824 | this.field26158 : this.field26157;
+   public Set<String> getSupportedVersions() {
+      return Collections.unmodifiableSet(this.supportedVersions);
    }
 
-   public boolean method18577() {
-      return this.field26161.size() != 1;
+   public boolean isWildcardVersion() {
+      return this.isWildcard;
    }
 
-   public Set<String> method18578() {
-      return Collections.<String>unmodifiableSet(this.field26161);
+   public String getVersionName() {
+      return this.versionName;
    }
 
-   public boolean method18579() {
-      return this.field26160;
+   public boolean hasAlternateVersion() {
+      return this.alternateVersionNumber != -1;
    }
 
-   public String method18580() {
-      return this.field26159;
-   }
-
-   public boolean method18581() {
-      return this.field26158 != -1;
-   }
-
-   @Deprecated
-   public int getFakeInvThreshold() {
-      return this.field26157;
+   public int getVersionNumber() {
+      return this.versionNumber;
    }
 
    @Override
-   public boolean equals(Object var1) {
-      if (this != var1) {
-         if (var1 != null && this.getClass() == var1.getClass()) {
-            ViaVerList var4 = (ViaVerList)var1;
-            return this.field26157 == var4.field26157;
-         } else {
-            return false;
-         }
-      } else {
-         return true;
-      }
+   public boolean equals(Object obj) {
+      if (this == obj) return true;
+      if (obj == null || getClass() != obj.getClass()) return false;
+      ViaVerList that = (ViaVerList) obj;
+      return versionNumber == that.versionNumber;
    }
 
    @Override
    public int hashCode() {
-      return this.field26157;
+      return this.versionNumber;
    }
 
    @Override
    public String toString() {
-      return String.format("%s(%d)", this.field26159, this.field26157);
+      return String.format("%s(%d)", this.versionName, this.versionNumber);
    }
 }

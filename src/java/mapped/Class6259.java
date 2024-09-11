@@ -30,7 +30,7 @@ public class Class6259 extends Class6255 {
 
       for (PlayerData var9 : ViaVersion3.method27613().getPlayerData()) {
          int var10 = ViaVersion3.method27611().method33415(var9.method34170());
-         ViaVerList var11 = ViaVerList.method18569(var10);
+         ViaVerList var11 = ViaVerList.getVersionByNumber(var10);
          if (!var5.containsKey(var11)) {
             var5.put(var11, new HashSet());
          }
@@ -40,7 +40,7 @@ public class Class6259 extends Class6255 {
 
       for (Entry var13 : var5.entrySet()) {
          this.method19227(
-            var1, "&8[&6%s&8] (&7%d&8): &b%s", ((ViaVerList)var13.getKey()).method18580(), ((Set)var13.getValue()).size(), var13.getValue());
+            var1, "&8[&6%s&8] (&7%d&8): &b%s", ((ViaVerList)var13.getKey()).getVersionName(), ((Set)var13.getValue()).size(), var13.getValue());
       }
 
       var5.clear();

@@ -87,10 +87,10 @@ public class BlurEngine {
          RenderSystem.loadIdentity();
          RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
-            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.field41348, 1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.field41348, 1.0
+            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor, 1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor, 1.0
          );
          int var4 = 35;
-         RenderUtil.method11420(field36354, field36355 - var4, field36356, field36357 + var4);
+         RenderUtil.drawPortalBackground(field36354, field36355 - var4, field36356, field36357 + var4);
          field36351.method6526(mc.timer.renderPartialTicks);
          RenderUtil.endScissor();
          GL11.glEnable(3008);
@@ -125,7 +125,7 @@ public class BlurEngine {
          RenderSystem.loadIdentity();
          RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
          GL11.glScaled(
-            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.field41348, 1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.field41348, 1.0
+            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor, 1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor, 1.0
          );
          mc.framebuffer.bindFramebuffer(true);
       }

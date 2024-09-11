@@ -194,7 +194,7 @@ public class Client {
         GL11.glPushMatrix();
         double var3 = mc.mainWindow.getGuiScaleFactor() / (double) ((float) Math.pow(mc.mainWindow.getGuiScaleFactor(), 2.0));
         GL11.glScaled(var3, var3, var3);
-        GL11.glScaled(GuiManager.field41348, GuiManager.field41348, GuiManager.field41348);
+        GL11.glScaled(GuiManager.portalScaleFactor, GuiManager.portalScaleFactor, GuiManager.portalScaleFactor);
         GL11.glDisable(2912);
         RenderSystem.disableDepthTest();
         RenderSystem.translatef(0.0F, 0.0F, 1000.0F);
@@ -232,7 +232,7 @@ public class Client {
         if (getInstance().getClientMode() != ClientMode.NOADDONS) {
             double var5 = mc.mainWindow.getGuiScaleFactor() / (double) ((float) Math.pow(mc.mainWindow.getGuiScaleFactor(), 2.0));
             GL11.glScaled(var5, var5, 1.0);
-            GL11.glScaled(GuiManager.field41348, GuiManager.field41348, 1.0);
+            GL11.glScaled(GuiManager.portalScaleFactor, GuiManager.portalScaleFactor, 1.0);
             RenderSystem.disableDepthTest();
             RenderSystem.pushMatrix();
             RenderSystem.translatef(0.0F, 0.0F, 1000.0F);

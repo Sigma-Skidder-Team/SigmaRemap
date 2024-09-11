@@ -99,7 +99,7 @@ public class Class4271 extends Class4247 {
          RenderUtil.endScissor();
       }
 
-      RenderUtil.method11420(
+      RenderUtil.drawPortalBackground(
          this.method13271(), this.method13272(), this.method13271() + this.method13267(), this.method13272() + this.method13269() + this.method13108()
       );
       GL11.glPushMatrix();
