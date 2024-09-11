@@ -1,4 +1,4 @@
-package mapped;
+package com.mentalfrostbyte.jello.util;
 
 import com.mentalfrostbyte.jello.event.impl.EventRayTraceResult;
 import com.mentalfrostbyte.jello.module.impl.combat.Teams;
@@ -37,6 +37,7 @@ import java.util.stream.Stream;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ClientResource;
+import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;

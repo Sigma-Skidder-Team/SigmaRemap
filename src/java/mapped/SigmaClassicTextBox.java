@@ -3,6 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 
 public class SigmaClassicTextBox extends Class4281 {
    private static String[] field20759;

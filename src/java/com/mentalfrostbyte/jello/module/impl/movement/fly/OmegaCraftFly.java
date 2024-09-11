@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
-import mapped.ColorUtils;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.MovementUtils;
 
 public class OmegaCraftFly extends Module {

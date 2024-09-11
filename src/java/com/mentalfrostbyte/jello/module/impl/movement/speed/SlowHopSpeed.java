@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.JumpEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.BooleanSetting;
-import mapped.ColorUtils;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.MovementUtils;
 
 public class SlowHopSpeed extends Module {

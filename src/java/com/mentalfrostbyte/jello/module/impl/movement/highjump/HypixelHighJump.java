@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.ColorUtils;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.MovementUtils;
 import mapped.NumberSetting;
 

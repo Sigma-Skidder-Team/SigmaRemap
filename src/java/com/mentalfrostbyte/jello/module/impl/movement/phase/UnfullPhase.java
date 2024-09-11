@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventWalkingUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventPushBlock;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
 
 public class UnfullPhase extends Module {

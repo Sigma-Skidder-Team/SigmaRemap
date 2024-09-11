@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Hand;
 

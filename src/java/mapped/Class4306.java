@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import net.minecraft.client.Minecraft;
 
 public class Class4306 extends IconPanel {

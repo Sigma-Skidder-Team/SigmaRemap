@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import org.lwjgl.opengl.GL11;
 
 public class Class4244 extends Class4240 {

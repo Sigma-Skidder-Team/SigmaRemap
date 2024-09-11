@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 
 import java.awt.Color;

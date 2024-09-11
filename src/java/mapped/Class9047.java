@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 

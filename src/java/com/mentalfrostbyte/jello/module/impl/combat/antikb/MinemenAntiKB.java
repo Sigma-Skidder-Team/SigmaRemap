@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
 import mapped.MovementUtils;
-import mapped.ColorUtils;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 
 public class MinemenAntiKB extends Module {
     private boolean field23852 = false;

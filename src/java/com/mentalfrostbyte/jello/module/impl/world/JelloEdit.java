@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import com.mentalfrostbyte.jello.util.world.schematics.SchematicFile;
 import mapped.*;
@@ -17,7 +18,6 @@ import java.util.Arrays;
 import java.util.List;
 
 public class JelloEdit extends Module {
-    //private List<PositionFacing> positionFacingList;
     private SchematicFile schematicFile;
     private BlockPos pos;
     private BlockPos currentPosition;
@@ -28,23 +28,31 @@ public class JelloEdit extends Module {
         super(ModuleCategory.WORLD, "JelloEdit", "Client side world edit");
 
         File schematicsFolder = new File(Client.getInstance().getFile() + "/shematics");
-        if (schematicsFolder.exists()) {
-            this.schematicNameList = new ArrayList<>(Arrays.asList(schematicsFolder.list()));
+        if (schematicsFolder.exists() && schematicsFolder.isDirectory()) {
+            String[] files = schematicsFolder.list();
+            if (files != null) {
+                this.schematicNameList = new ArrayList<>(Arrays.asList(files));
 
-            for (int i = 0; i < this.schematicNameList.size(); i++) {
-                if (this.schematicNameList.get(i).startsWith(".")) {
-                    this.schematicNameList.remove(i);
-                    break;
+                this.schematicNameList.removeIf(name -> name.startsWith("."));
+
+                if (!this.schematicNameList.isEmpty()) {
+                    String[] schematicNames = this.schematicNameList.toArray(new String[0]);
+                    this.registerSetting(new ModeSetting("Shematics", "shematics", 0, schematicNames));
+                } else {
+                    ColorUtils.addChatMessage("No valid schematic files found.");
                 }
+            } else {
+                ColorUtils.addChatMessage("Unable to list files in schematics folder.");
             }
-
-            String[] schematicNames = new String[this.schematicNameList.size()];
-            schematicNames = this.schematicNameList.toArray(schematicNames);
-            this.registerSetting(new ModeSetting("Shematics", "shematics", 0, schematicNames));
+        } else {
+            ColorUtils.addChatMessage("Schematics folder does not exist or is not a directory.");
         }
     }
 
     private BlockPos getAdjustedPosition(int packetIndex) {
+        if (this.schematicFile == null || this.schematicFile.getDataPackets().isEmpty()) {
+            return null;
+        }
         return new BlockPos(
                 this.pos.getX() + this.schematicFile.getDataPackets().get(packetIndex).getIntegerVector().getRoundedX(),
                 this.pos.getY() + this.schematicFile.getDataPackets().get(packetIndex).getIntegerVector().getRoundedY(),
@@ -53,18 +61,24 @@ public class JelloEdit extends Module {
     }
 
     private BlockPos updateAndGetNextPosition() {
+        if (this.schematicFile == null || this.schematicFile.getDataPackets().isEmpty()) {
+            return null; // Or handle accordingly
+        }
         this.currentPosition = this.getAdjustedPosition(this.currentIndex++);
         return this.currentPosition;
     }
 
     @Override
     public void onEnable() {
-        if (this.getSettingValueBySettingName("Shematics") == null) {
+        Object schematicSetting = this.getSettingValueBySettingName("Shematics");
+        if (schematicSetting == null) {
+            ColorUtils.addChatMessage("No schematic selected.");
             return;
         }
-        File var3 = new File(Client.getInstance().getFile() + "/shematics/" + (String) this.getSettingValueBySettingName("Shematics"));
-        if (var3.exists()) {
-            this.schematicFile = new SchematicFile(var3);
+
+        File schematicFile = new File(Client.getInstance().getFile() + "/shematics/" + schematicSetting);
+        if (schematicFile.exists() && schematicFile.isFile()) {
+            this.schematicFile = new SchematicFile(schematicFile);
             if (this.schematicFile.method31836() && !this.schematicFile.getDataPackets().isEmpty()) {
                 ColorUtils.addChatMessage(this.schematicFile.getDataPackets().size() + " blocks loaded from schematic");
                 this.pos = new BlockPos(
@@ -74,52 +88,37 @@ public class JelloEdit extends Module {
                 );
                 this.updateAndGetNextPosition();
             } else {
-                ColorUtils.addChatMessage("Unable to load schematic");
+                ColorUtils.addChatMessage("Unable to load schematic or schematic data is empty.");
                 this.method16000();
             }
         } else {
-            ColorUtils.addChatMessage("Schematic does not exist");
+            ColorUtils.addChatMessage("Schematic file does not exist.");
             this.method16000();
         }
     }
 
     @EventTarget
     private void onRender(Render3DEvent event) {
-        if (this.isEnabled()) {
+        if (this.isEnabled() && this.schematicFile != null && !this.schematicFile.getDataPackets().isEmpty()) {
             GL11.glAlphaFunc(516, 0.0F);
 
             for (DataPacket data : this.schematicFile.getDataPackets()) {
                 BlockPos block = new BlockPos(
-                        (double) this.pos.getX() + data.getIntegerVector().getX(),
-                        (double) this.pos.getY() + data.getIntegerVector().getY(),
-                        (double) this.pos.getZ() + data.getIntegerVector().getZ()
+                        this.pos.getX() + data.getIntegerVector().getX(),
+                        this.pos.getY() + data.getIntegerVector().getY(),
+                        this.pos.getZ() + data.getIntegerVector().getZ()
                 );
                 if (BlockUtil.getBlockFromPosition(block) == Blocks.AIR) {
-                    double x = (double) block.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
-                    double y = (double) block.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
-                    double z = (double) block.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
+                    double x = block.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+                    double y = block.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
+                    double z = block.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
                     Box3D box3D = new Box3D(x, y, z, x + 1.0, y + 1.0, z + 1.0);
                     RenderUtil.render3DColoredBox(box3D, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.02F));
-                    GL11.glEnable(2848);
+                    GL11.glEnable(GL11.GL_LINE_SMOOTH);
                     RenderUtil.renderWireframeBox(box3D, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.03F));
                     GL11.glColor3f(1.0F, 1.0F, 1.0F);
                 }
             }
-
-            /*
-            Commented out because positionFacingList is never filled with data
-            for (PositionFacing facing : this.positionFacingList) {
-                BlockPos blockPos = facing.blockPos;
-                double x = (double) blockPos.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
-                double y = (double) blockPos.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
-                double z = (double) blockPos.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
-                Box3D box3D = new Box3D(x, y, z, x + 1.0, y + 1.0, z + 1.0);
-                RenderUtil.render3DColoredBox(box3D, ColorUtils.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
-                RenderUtil.renderWireframeBox(box3D, ColorUtils.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, 0.2F));
-                GL11.glColor3f(1.0F, 1.0F, 1.0F);
-            }
-
-             */
         }
     }
 }

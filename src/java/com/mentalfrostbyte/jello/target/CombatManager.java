@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
-import mapped.ColorUtils;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.Class7249;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.Entity;

@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.world.Timer;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
 
 public class CubecraftSpeed extends Module {

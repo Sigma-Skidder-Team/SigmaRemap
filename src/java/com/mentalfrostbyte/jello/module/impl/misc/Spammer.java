@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.ColorUtils;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.InputSetting;
 import mapped.NumberSetting;
 

@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.util.ColorUtils;
+
 public class ColorHelper {
    private static String[] field27960;
    public static final ColorHelper field27961 = new ColorHelper(-12871171);

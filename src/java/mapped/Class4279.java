@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.util.ColorUtils;
+
 public class Class4279 extends Class4278 {
    public Class4250 field20737;
 

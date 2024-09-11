@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.impl.gui.classic.TabGUI;
 import com.mentalfrostbyte.jello.unmapped.*;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mentalfrostbyte.jello.util.FileUtil;
 import mapped.*;
 import net.minecraft.client.Minecraft;

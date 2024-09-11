@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.BlurEngine;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 

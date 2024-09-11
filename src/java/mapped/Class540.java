@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.module.impl.world.AutoCrystal;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 
 public class Class540 implements Runnable {
    private static String[] field2585;

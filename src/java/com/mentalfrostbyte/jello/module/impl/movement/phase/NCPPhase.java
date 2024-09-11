@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.EventPushBlock;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CPlayerPacket;

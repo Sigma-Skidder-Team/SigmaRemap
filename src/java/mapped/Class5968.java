@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import com.mentalfrostbyte.jello.module.impl.gui.jello.MusicParticles;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import org.lwjgl.opengl.GL11;
 
 public class Class5968 {

@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.module.impl.player.Blink;
 import com.mentalfrostbyte.jello.module.impl.player.OldHitting;
 import com.mentalfrostbyte.jello.module.impl.render.Freecam;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mojang.datafixers.util.Pair;
 import com.mentalfrostbyte.jello.Client;
 import mapped.*;

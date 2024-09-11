@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.event.impl.RecievePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.gui.GuiManager;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.play.server.SCloseWindowPacket;

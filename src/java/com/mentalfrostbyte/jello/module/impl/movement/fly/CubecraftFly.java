@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CPlayerPacket;

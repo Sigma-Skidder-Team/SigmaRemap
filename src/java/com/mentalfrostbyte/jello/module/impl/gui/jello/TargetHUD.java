@@ -1,5 +1,6 @@
 package com.mentalfrostbyte.jello.module.impl.gui.jello;
 
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.entity.passive.WolfEntity;
 import com.mentalfrostbyte.jello.event.EventTarget;

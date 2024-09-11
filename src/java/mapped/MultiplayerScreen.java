@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;

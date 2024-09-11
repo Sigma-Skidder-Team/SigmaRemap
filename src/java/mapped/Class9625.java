@@ -1,6 +1,8 @@
 package mapped;
 
 import java.awt.Color;
+
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import org.lwjgl.opengl.GL11;
 
 public class Class9625 {

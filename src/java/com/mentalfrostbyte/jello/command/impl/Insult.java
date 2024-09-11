@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 import mapped.Class6669;
 import mapped.Class8623;
-import mapped.ColorUtils;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 
 
 public class Insult extends Command {

@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.SpeedRampSetting;
 import com.mentalfrostbyte.jello.unmapped.Setting;
 import com.mentalfrostbyte.jello.unmapped.TextBoxSetting;
+import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import org.lwjgl.opengl.GL11;

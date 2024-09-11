@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.util.ColorUtils;
+
 import java.awt.Color;
 
 public class Class8854 {
