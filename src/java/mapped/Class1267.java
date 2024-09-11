@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.network.play.server.SUpdateBossInfoPacket;
@@ -43,16 +44,16 @@ public class Class1267 extends AbstractGui {
    }
 
    private void method5954(MatrixStack var1, int var2, int var3, Class3625 var4) {
-      this.method5696(var1, var2, var3, 0, var4.method12292().ordinal() * 5 * 2, 182, 5);
+      this.blit(var1, var2, var3, 0, var4.method12292().ordinal() * 5 * 2, 182, 5);
       if (var4.method12293() != Class2300.field15703) {
-         this.method5696(var1, var2, var3, 0, 80 + (var4.method12293().ordinal() - 1) * 5 * 2, 182, 5);
+         this.blit(var1, var2, var3, 0, 80 + (var4.method12293().ordinal() - 1) * 5 * 2, 182, 5);
       }
 
       int var7 = (int)(var4.method12291() * 183.0F);
       if (var7 > 0) {
-         this.method5696(var1, var2, var3, 0, var4.method12292().ordinal() * 5 * 2 + 5, var7, 5);
+         this.blit(var1, var2, var3, 0, var4.method12292().ordinal() * 5 * 2 + 5, var7, 5);
          if (var4.method12293() != Class2300.field15703) {
-            this.method5696(var1, var2, var3, 0, 80 + (var4.method12293().ordinal() - 1) * 5 * 2 + 5, var7, 5);
+            this.blit(var1, var2, var3, 0, 80 + (var4.method12293().ordinal() - 1) * 5 * 2 + 5, var7, 5);
          }
       }
    }

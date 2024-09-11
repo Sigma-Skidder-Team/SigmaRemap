@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import java.util.List;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.util.text.ITextComponent;
@@ -56,7 +57,7 @@ public class SystemToast implements Class7601 {
       int var7 = this.method24898();
       byte var8 = 12;
       if (var7 == 160 && this.field32639.size() <= 1) {
-         var2.method5696(var1, 0, 0, 0, 64, var7, this.method24899());
+         var2.blit(var1, 0, 0, 0, 64, var7, this.method24899());
       } else {
          int var9 = this.method24899() + Math.max(0, this.field32639.size() - 1) * 12;
          byte var10 = 28;
@@ -86,13 +87,13 @@ public class SystemToast implements Class7601 {
    private void method24904(MatrixStack var1, ToastGui var2, int var3, int var4, int var5, int var6) {
       int var9 = var4 != 0 ? 5 : 20;
       int var10 = Math.min(60, var3 - var9);
-      var2.method5696(var1, 0, var5, 0, 64 + var4, var9, var6);
+      var2.blit(var1, 0, var5, 0, 64 + var4, var9, var6);
 
       for (int var11 = var9; var11 < var3 - var10; var11 += 64) {
-         var2.method5696(var1, var11, var5, 32, 64 + var4, Math.min(64, var3 - var11 - var10), var6);
+         var2.blit(var1, var11, var5, 32, 64 + var4, Math.min(64, var3 - var11 - var10), var6);
       }
 
-      var2.method5696(var1, var3 - var10, var5, 160 - var10, 64 + var4, var10, var6);
+      var2.blit(var1, var3 - var10, var5, 160 - var10, 64 + var4, var10, var6);
    }
 
    public void method24905(ITextComponent var1, ITextComponent var2) {

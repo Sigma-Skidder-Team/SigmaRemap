@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.entity.LivingEntity;
 
 public class Class247<T extends LivingEntity> extends Class219<T, Class2826<T>> {

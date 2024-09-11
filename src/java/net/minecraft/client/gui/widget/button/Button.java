@@ -3,7 +3,7 @@ package net.minecraft.client.gui.widget.button;
 import mapped.Class1200;
 import mapped.Class7192;
 import mapped.Class8103;
-import mapped.MatrixStack;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.text.ITextComponent;
 
 public class Button extends Class1200 {

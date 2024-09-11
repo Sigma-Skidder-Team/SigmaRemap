@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.DialogTexts;
@@ -370,7 +371,7 @@ public class Class828 extends Screen {
       this.mc.getTextureManager().bindTexture(Class870.field4820);
       int var7 = (this.width - 192) / 2;
       byte var8 = 2;
-      this.method5696(var1, var7, 2, 0, 0, 192, 192);
+      this.blit(var1, var7, 2, 0, 0, 192, 192);
       if (!this.field4581) {
          int var9 = this.fontRenderer.method38821(this.field4598);
          this.fontRenderer.func_243248_b(var1, this.field4598, (float)(var7 - var9 + 192 - 44), 18.0F, 0);

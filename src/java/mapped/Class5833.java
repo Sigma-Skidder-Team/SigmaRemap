@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.crafting.RecipeBookCategory;
 
 public class Class5833 extends Class5831 {

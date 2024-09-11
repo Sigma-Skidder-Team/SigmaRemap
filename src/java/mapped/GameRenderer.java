@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventRenderShulker;
 import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
 import com.mentalfrostbyte.jello.event.impl.RenderFireEvent;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GLX;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;

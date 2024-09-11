@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
+
 public abstract class Class1202 extends Class1201 {
    private final int field6500;
    private final int field6501;
@@ -12,6 +14,6 @@ public abstract class Class1202 extends Class1201 {
 
    @Override
    public void method5760(MatrixStack var1) {
-      this.method5696(var1, this.field6477 + 2, this.field6478 + 2, this.field6500, this.field6501, 18, 18);
+      this.blit(var1, this.field6477 + 2, this.field6478 + 2, this.field6500, this.field6501, 18, 18);
    }
 }

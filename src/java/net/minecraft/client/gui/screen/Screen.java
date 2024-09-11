@@ -2,6 +2,7 @@ package net.minecraft.client.gui.screen;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
@@ -33,7 +34,7 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
    public int width;
    public int height;
    public final List<Widget> field4566 = Lists.newArrayList();
-   public boolean field4567;
+   public boolean passEvents;
    public FontRenderer fontRenderer;
    private URI field4569;
 

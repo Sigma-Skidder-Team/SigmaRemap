@@ -3,7 +3,7 @@ package net.minecraft.client.gui.screen;
 import mapped.Class1135;
 import mapped.Class1235;
 import mapped.Class2266;
-import mapped.MatrixStack;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.AbstractOption;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.gui.DialogTexts;

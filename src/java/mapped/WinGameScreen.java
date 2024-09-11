@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import net.minecraft.client.gui.AbstractGui;
@@ -188,8 +189,8 @@ public class WinGameScreen extends Screen {
       RenderSystem.disableAlphaTest();
       RenderSystem.enableBlend();
       this.method5694(var8, var9, (var2x, var3x) -> {
-         this.method5696(var1, var2x + 0, var3x, 0, 0, 155, 44);
-         this.method5696(var1, var2x + 155, var3x, 0, 45, 155, 44);
+         this.blit(var1, var2x + 0, var3x, 0, 0, 155, 44);
+         this.blit(var1, var2x + 155, var3x, 0, 45, 155, 44);
       });
       RenderSystem.disableBlend();
       this.mc.getTextureManager().bindTexture(field7122);

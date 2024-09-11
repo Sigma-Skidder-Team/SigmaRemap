@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Ordering;
 import com.mojang.authlib.GameProfile;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.IngameGui;
@@ -206,7 +207,7 @@ public class Class1265 extends AbstractGui {
       }
 
       this.method5703(this.method5702() + 100);
-      this.method5696(var1, var3 + var2 - 11, var4, 0, 176 + var9 * 8, 10, 8);
+      this.blit(var1, var3 + var2 - 11, var4, 0, 176 + var9 * 8, 10, 8);
       this.method5703(this.method5702() - 100);
    }
 
@@ -256,27 +257,27 @@ public class Class1265 extends AbstractGui {
                   .drawStringWithShadow(var7, var20, (float)((var5 + var4) / 2 - this.field6692.fontRenderer.getStringWidth(var20) / 2), (float)var2, var19);
             } else {
                for (int var21 = var14; var21 < var15; var21++) {
-                  this.method5696(var7, var4 + var21 * var17, var2, !var16 ? 16 : 25, 0, 9, 9);
+                  this.blit(var7, var4 + var21 * var17, var2, !var16 ? 16 : 25, 0, 9, 9);
                }
 
                for (int var22 = 0; var22 < var14; var22++) {
-                  this.method5696(var7, var4 + var22 * var17, var2, !var16 ? 16 : 25, 0, 9, 9);
+                  this.blit(var7, var4 + var22 * var17, var2, !var16 ? 16 : 25, 0, 9, 9);
                   if (var16) {
                      if (var22 * 2 + 1 < var6.method19982()) {
-                        this.method5696(var7, var4 + var22 * var17, var2, 70, 0, 9, 9);
+                        this.blit(var7, var4 + var22 * var17, var2, 70, 0, 9, 9);
                      }
 
                      if (var22 * 2 + 1 == var6.method19982()) {
-                        this.method5696(var7, var4 + var22 * var17, var2, 79, 0, 9, 9);
+                        this.blit(var7, var4 + var22 * var17, var2, 79, 0, 9, 9);
                      }
                   }
 
                   if (var22 * 2 + 1 < var10) {
-                     this.method5696(var7, var4 + var22 * var17, var2, var22 < 10 ? 52 : 160, 0, 9, 9);
+                     this.blit(var7, var4 + var22 * var17, var2, var22 < 10 ? 52 : 160, 0, 9, 9);
                   }
 
                   if (var22 * 2 + 1 == var10) {
-                     this.method5696(var7, var4 + var22 * var17, var2, var22 < 10 ? 61 : 169, 0, 9, 9);
+                     this.blit(var7, var4 + var22 * var17, var2, var22 < 10 ? 61 : 169, 0, 9, 9);
                   }
                }
             }

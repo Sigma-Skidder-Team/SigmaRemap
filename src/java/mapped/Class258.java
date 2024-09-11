@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.item.ItemStack;
 
 public class Class258 extends Class219<Class1074, Class2856<Class1074>> {

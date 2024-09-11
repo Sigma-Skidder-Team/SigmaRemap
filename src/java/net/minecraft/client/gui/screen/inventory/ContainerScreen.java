@@ -1,10 +1,14 @@
-package mapped;
+package net.minecraft.client.gui.screen.inventory;
 
 import com.google.common.collect.Sets;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.datafixers.util.Pair;
+import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.IHasContainer;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.Util;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -14,14 +18,14 @@ import net.minecraft.util.text.TextFormatting;
 import javax.annotation.Nullable;
 import java.util.Set;
 
-public abstract class Class851<T extends Container> extends Screen implements Class867<T> {
+public abstract class ContainerScreen<T extends Container> extends Screen implements IHasContainer<T> {
    public static final ResourceLocation field4720 = new ResourceLocation("textures/gui/container/inventory.png");
-   public int field4721 = 176;
-   public int field4722 = 166;
+   public int xSize = 176;
+   public int ySize = 166;
    public int field4723;
    public int field4724;
    public int field4725;
-   public int field4726;
+   public int playerInventoryTitleY;
    public final T field4727;
    public final PlayerInventory field4728;
    public Slot field4729;
@@ -49,7 +53,7 @@ public abstract class Class851<T extends Container> extends Screen implements Cl
    private boolean field4751;
    private ItemStack field4752 = ItemStack.EMPTY;
 
-   public Class851(T var1, PlayerInventory var2, ITextComponent var3) {
+   public ContainerScreen(T var1, PlayerInventory var2, ITextComponent var3) {
       super(var3);
       this.field4727 = (T)var1;
       this.field4728 = var2;
@@ -57,14 +61,14 @@ public abstract class Class851<T extends Container> extends Screen implements Cl
       this.field4723 = 8;
       this.field4724 = 6;
       this.field4725 = 8;
-      this.field4726 = this.field4722 - 94;
+      this.playerInventoryTitleY = this.ySize - 94;
    }
 
    @Override
    public void init() {
       super.init();
-      this.field4734 = (this.width - this.field4721) / 2;
-      this.field4735 = (this.height - this.field4722) / 2;
+      this.field4734 = (this.width - this.xSize) / 2;
+      this.field4735 = (this.height - this.ySize) / 2;
    }
 
    @Override
@@ -142,7 +146,7 @@ public abstract class Class851<T extends Container> extends Screen implements Cl
       RenderSystem.enableDepthTest();
    }
 
-   public void method2615(MatrixStack var1, int var2, int var3) {
+   public void renderHoveredTooltip(MatrixStack var1, int var2, int var3) {
       if (this.mc.player.inventory.method4057().isEmpty() && this.field4729 != null && this.field4729.getHasStack()) {
          this.method2457(var1, this.field4729.getStack(), var2, var3);
       }
@@ -160,7 +164,7 @@ public abstract class Class851<T extends Container> extends Screen implements Cl
 
    public void method2617(MatrixStack var1, int var2, int var3) {
       this.fontRenderer.func_243248_b(var1, this.title, (float)this.field4723, (float)this.field4724, 4210752);
-      this.fontRenderer.func_243248_b(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.field4726, 4210752);
+      this.fontRenderer.func_243248_b(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.playerInventoryTitleY, 4210752);
    }
 
    public abstract void method2618(MatrixStack var1, float var2, int var3, int var4);
@@ -364,7 +368,7 @@ public abstract class Class851<T extends Container> extends Screen implements Cl
    }
 
    public boolean method2623(double var1, double var3, int var5, int var6, int var7) {
-      return var1 < (double)var5 || var3 < (double)var6 || var1 >= (double)(var5 + this.field4721) || var3 >= (double)(var6 + this.field4722);
+      return var1 < (double)var5 || var3 < (double)var6 || var1 >= (double)(var5 + this.xSize) || var3 >= (double)(var6 + this.ySize);
    }
 
    @Override

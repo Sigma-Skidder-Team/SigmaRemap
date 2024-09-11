@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.ChestContainer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
@@ -118,8 +120,8 @@ public class Class941 extends Class939 implements Class942, ITickableTileEntity 
             (double)((float)(var4 + 1) + 5.0F)
          )
       )) {
-         if (var10.field4905 instanceof Class5813) {
-            IInventory var11 = ((Class5813)var10.field4905).method18164();
+         if (var10.field4905 instanceof ChestContainer) {
+            IInventory var11 = ((ChestContainer)var10.field4905).method18164();
             if (var11 == var1 || var11 instanceof Class990 && ((Class990)var11).method4070(var1)) {
                var7++;
             }
@@ -218,7 +220,7 @@ public class Class941 extends Class939 implements Class942, ITickableTileEntity 
 
    @Override
    public Container method3690(int var1, PlayerInventory var2) {
-      return Class5813.method18162(var1, var2, this);
+      return ChestContainer.method18162(var1, var2, this);
    }
 
    @Override

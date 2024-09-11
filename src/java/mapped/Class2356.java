@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ForwardingList;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 

@@ -3,9 +3,11 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -37,9 +39,9 @@ public class CreativeScreen extends Class860<Class5820> {
    public CreativeScreen(PlayerEntity var1) {
       super(new Class5820(var1), var1.inventory, StringTextComponent.EMPTY);
       var1.field4905 = this.field4727;
-      this.field4567 = true;
-      this.field4722 = 136;
-      this.field4721 = 195;
+      this.passEvents = true;
+      this.ySize = 136;
+      this.xSize = 195;
    }
 
    @Override
@@ -523,7 +525,7 @@ public class CreativeScreen extends Class860<Class5820> {
 
    @Override
    public boolean method2623(double var1, double var3, int var5, int var6, int var7) {
-      boolean var10 = var1 < (double)var5 || var3 < (double)var6 || var1 >= (double)(var5 + this.field4721) || var3 >= (double)(var6 + this.field4722);
+      boolean var10 = var1 < (double)var5 || var3 < (double)var6 || var1 >= (double)(var5 + this.xSize) || var3 >= (double)(var6 + this.ySize);
       this.field4784 = var10 && !this.method2651(ItemGroup.field31664[field4776], var1, var3);
       return this.field4784;
    }
@@ -570,7 +572,7 @@ public class CreativeScreen extends Class860<Class5820> {
       }
 
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-      this.method2615(var1, var2, var3);
+      this.renderHoveredTooltip(var1, var2, var3);
    }
 
    @Override
@@ -622,7 +624,7 @@ public class CreativeScreen extends Class860<Class5820> {
       }
 
       this.mc.getTextureManager().bindTexture(new ResourceLocation("textures/gui/container/creative_inventory/tab_" + var7.method23645()));
-      this.method5696(var1, this.field4734, this.field4735, 0, 0, this.field4721, this.field4722);
+      this.blit(var1, this.field4734, this.field4735, 0, 0, this.xSize, this.ySize);
       this.field4779.render(var1, var3, var4, var2);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       int var12 = this.field4734 + 175;
@@ -630,7 +632,7 @@ public class CreativeScreen extends Class860<Class5820> {
       int var14 = var13 + 112;
       this.mc.getTextureManager().bindTexture(field4773);
       if (var7.method23650()) {
-         this.method5696(var1, var12, var13 + (int)((float)(var14 - var13 - 17) * this.field4777), 232 + (!this.method2647() ? 12 : 0), 0, 12, 15);
+         this.blit(var1, var12, var13 + (int)((float)(var14 - var13 - 17) * this.field4777), 232 + (!this.method2647() ? 12 : 0), 0, 12, 15);
       }
 
       this.method2653(var1, var7);
@@ -655,11 +657,11 @@ public class CreativeScreen extends Class860<Class5820> {
             var9 += var8;
          }
       } else {
-         var9 = this.field4721 - 28 * (6 - var8) + 2;
+         var9 = this.xSize - 28 * (6 - var8) + 2;
       }
 
       if (!var1.method23653()) {
-         var10 += this.field4722;
+         var10 += this.ySize;
       } else {
          var10 -= 32;
       }
@@ -676,11 +678,11 @@ public class CreativeScreen extends Class860<Class5820> {
             var8 += var7;
          }
       } else {
-         var8 = this.field4721 - 28 * (6 - var7) + 2;
+         var8 = this.xSize - 28 * (6 - var7) + 2;
       }
 
       if (!var2.method23653()) {
-         var9 += this.field4722;
+         var9 += this.ySize;
       } else {
          var9 -= 32;
       }
@@ -711,17 +713,17 @@ public class CreativeScreen extends Class860<Class5820> {
             var10 += var7;
          }
       } else {
-         var10 = this.field4734 + this.field4721 - 28 * (6 - var7);
+         var10 = this.field4734 + this.xSize - 28 * (6 - var7);
       }
 
       if (!var6) {
          var9 += 64;
-         var11 += this.field4722 - 4;
+         var11 += this.ySize - 4;
       } else {
          var11 -= 28;
       }
 
-      this.method5696(var1, var10, var11, var8, var9, 28, 32);
+      this.blit(var1, var10, var11, var8, var9, 28, 32);
       this.field4563.field847 = 100.0F;
       var10 += 6;
       var11 = var11 + 8 + (!var6 ? -1 : 1);

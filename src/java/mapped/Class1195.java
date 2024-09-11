@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.util.Util;
@@ -54,9 +55,9 @@ public class Class1195 extends AbstractGui implements Class1196 {
       RenderSystem.defaultBlendFunc();
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, var2);
       this.field6471.getTextureManager().bindTexture(field6469);
-      this.method5696(var1, var3 - 91, var4, 0, 0, 182, 22);
+      this.blit(var1, var3 - 91, var4, 0, 0, 182, 22);
       if (var5.method30462() >= 0) {
-         this.method5696(var1, var3 - 91 - 1 + var5.method30462() * 20, var4 - 1, 0, 22, 24, 22);
+         this.blit(var1, var3 - 91 - 1 + var5.method30462() * 20, var4 - 1, 0, 22, 24, 22);
       }
 
       for (int var8 = 0; var8 < 9; var8++) {

@@ -1,9 +1,8 @@
-package mapped;
+package net.minecraft.entity.player;
 
 import com.google.common.collect.ImmutableList;
+import mapped.*;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SSetSlotPacket;

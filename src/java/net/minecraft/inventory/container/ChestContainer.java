@@ -1,50 +1,52 @@
-package mapped;
+package net.minecraft.inventory.container;
 
+import mapped.*;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 
-public class Class5813 extends Container {
+public class ChestContainer extends Container {
    private static String[] field25478;
    private final IInventory field25479;
    private final int field25480;
 
-   private Class5813(ContainerType<?> var1, int var2, PlayerInventory var3, int var4) {
+   private ChestContainer(ContainerType<?> var1, int var2, PlayerInventory var3, int var4) {
       this(var1, var2, var3, new Class927(9 * var4), var4);
    }
 
-   public static Class5813 method18156(int var0, PlayerInventory var1) {
-      return new Class5813(ContainerType.field35648, var0, var1, 1);
+   public static ChestContainer method18156(int var0, PlayerInventory var1) {
+      return new ChestContainer(ContainerType.field35648, var0, var1, 1);
    }
 
-   public static Class5813 method18157(int var0, PlayerInventory var1) {
-      return new Class5813(ContainerType.field35649, var0, var1, 2);
+   public static ChestContainer method18157(int var0, PlayerInventory var1) {
+      return new ChestContainer(ContainerType.field35649, var0, var1, 2);
    }
 
-   public static Class5813 method18158(int var0, PlayerInventory var1) {
-      return new Class5813(ContainerType.field35650, var0, var1, 3);
+   public static ChestContainer method18158(int var0, PlayerInventory var1) {
+      return new ChestContainer(ContainerType.field35650, var0, var1, 3);
    }
 
-   public static Class5813 method18159(int var0, PlayerInventory var1) {
-      return new Class5813(ContainerType.field35651, var0, var1, 4);
+   public static ChestContainer method18159(int var0, PlayerInventory var1) {
+      return new ChestContainer(ContainerType.field35651, var0, var1, 4);
    }
 
-   public static Class5813 method18160(int var0, PlayerInventory var1) {
-      return new Class5813(ContainerType.field35652, var0, var1, 5);
+   public static ChestContainer method18160(int var0, PlayerInventory var1) {
+      return new ChestContainer(ContainerType.field35652, var0, var1, 5);
    }
 
-   public static Class5813 method18161(int var0, PlayerInventory var1) {
-      return new Class5813(ContainerType.field35653, var0, var1, 6);
+   public static ChestContainer method18161(int var0, PlayerInventory var1) {
+      return new ChestContainer(ContainerType.field35653, var0, var1, 6);
    }
 
-   public static Class5813 method18162(int var0, PlayerInventory var1, IInventory var2) {
-      return new Class5813(ContainerType.field35650, var0, var1, var2, 3);
+   public static ChestContainer method18162(int var0, PlayerInventory var1, IInventory var2) {
+      return new ChestContainer(ContainerType.field35650, var0, var1, var2, 3);
    }
 
-   public static Class5813 method18163(int var0, PlayerInventory var1, IInventory var2) {
-      return new Class5813(ContainerType.field35653, var0, var1, var2, 6);
+   public static ChestContainer method18163(int var0, PlayerInventory var1, IInventory var2) {
+      return new ChestContainer(ContainerType.field35653, var0, var1, var2, 6);
    }
 
-   public Class5813(ContainerType<?> var1, int var2, PlayerInventory var3, IInventory var4, int var5) {
+   public ChestContainer(ContainerType<?> var1, int var2, PlayerInventory var3, IInventory var4, int var5) {
       super(var1, var2);
       assertInventorySize(var4, var5 * 9);
       this.field25479 = var4;

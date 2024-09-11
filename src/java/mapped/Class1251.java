@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
@@ -53,7 +54,7 @@ public class Class1251 extends Widget implements Class1253<Class120> {
          var8 += 26;
       }
 
-      this.method5696(var1, this.field6477, this.field6478, var7, var8, this.field6475, this.field6476);
+      this.blit(var1, this.field6477, this.field6478, var7, var8, this.field6475, this.field6476);
 
       for (Class8834 var10 : this.field6626) {
          RenderSystem.pushMatrix();

@@ -12,7 +12,9 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import mapped.*;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -156,8 +158,8 @@ public class ShulkerInfo extends Module {
     @EventTarget
     private void method16675(EventRenderShulker var1) {
         if (this.isEnabled()) {
-            if (mc.currentScreen instanceof Class851) {
-                Class851 var4 = (Class851) mc.currentScreen;
+            if (mc.currentScreen instanceof ContainerScreen) {
+                ContainerScreen var4 = (ContainerScreen) mc.currentScreen;
                 Slot var5 = var4.field4729;
                 if (var5 != null
                         && var5.getHasStack()

@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
+
 public class Class252 extends Class219<AbstractClientPlayerEntity, Class2894<AbstractClientPlayerEntity>> {
    public Class252(Class5714<AbstractClientPlayerEntity, Class2894<AbstractClientPlayerEntity>> var1) {
       super(var1);

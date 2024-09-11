@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
+import com.mojang.blaze3d.matrix.MatrixStack;
 
 public class Class2873<T extends Class1088> extends Class2866<T> {
    private static String[] field17771;

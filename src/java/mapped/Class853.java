@@ -1,10 +1,13 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class853 extends Class851<Class5829> implements Class854 {
+public class Class853 extends ContainerScreen<Class5829> implements Class854 {
    private static final ResourceLocation field4754 = new ResourceLocation("textures/gui/container/crafting_table.png");
    private static final ResourceLocation field4755 = new ResourceLocation("textures/gui/recipe_button.png");
    private final Class1254 field4756 = new Class1254();
@@ -19,13 +22,13 @@ public class Class853 extends Class851<Class5829> implements Class854 {
       super.init();
       this.field4757 = this.width < 379;
       this.field4756.method5833(this.width, this.height, this.mc, this.field4757, this.field4727);
-      this.field4734 = this.field4756.method5837(this.field4757, this.width, this.field4721);
+      this.field4734 = this.field4756.method5837(this.field4757, this.width, this.xSize);
       this.field4561.add(this.field4756);
       this.setFocusedDefault(this.field4756);
       this.<Class1243>addButton(new Class1243(this.field4734 + 5, this.height / 2 - 49, 20, 18, 0, 0, 19, field4755, var1 -> {
          this.field4756.method5834(this.field4757);
          this.field4756.method5838();
-         this.field4734 = this.field4756.method5837(this.field4757, this.width, this.field4721);
+         this.field4734 = this.field4756.method5837(this.field4757, this.width, this.xSize);
          ((Class1243)var1).method5819(this.field4734 + 5, this.height / 2 - 49);
       }));
       this.field4723 = 29;
@@ -49,7 +52,7 @@ public class Class853 extends Class851<Class5829> implements Class854 {
          this.field4756.method5850(var1, this.field4734, this.field4735, true, var4);
       }
 
-      this.method2615(var1, var2, var3);
+      this.renderHoveredTooltip(var1, var2, var3);
       this.field4756.method5846(var1, this.field4734, this.field4735, var2, var3);
    }
 
@@ -58,8 +61,8 @@ public class Class853 extends Class851<Class5829> implements Class854 {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4754);
       int var7 = this.field4734;
-      int var8 = (this.height - this.field4722) / 2;
-      this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
+      int var8 = (this.height - this.ySize) / 2;
+      this.blit(var1, var7, var8, 0, 0, this.xSize, this.ySize);
    }
 
    @Override
@@ -79,8 +82,8 @@ public class Class853 extends Class851<Class5829> implements Class854 {
 
    @Override
    public boolean method2623(double var1, double var3, int var5, int var6, int var7) {
-      boolean var10 = var1 < (double)var5 || var3 < (double)var6 || var1 >= (double)(var5 + this.field4721) || var3 >= (double)(var6 + this.field4722);
-      return this.field4756.method5852(var1, var3, this.field4734, this.field4735, this.field4721, this.field4722, var7) && var10;
+      boolean var10 = var1 < (double)var5 || var3 < (double)var6 || var1 >= (double)(var5 + this.xSize) || var3 >= (double)(var6 + this.ySize);
+      return this.field4756.method5852(var1, var3, this.field4734, this.field4735, this.xSize, this.ySize, var7) && var10;
    }
 
    @Override

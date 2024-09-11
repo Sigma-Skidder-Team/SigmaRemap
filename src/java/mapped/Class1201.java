@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.StringTextComponent;
 
@@ -28,7 +29,7 @@ public abstract class Class1201 extends Class1200 {
          var8 += this.field6475 * 2;
       }
 
-      this.method5696(var1, this.field6477, this.field6478, var8, 219, this.field6475, this.field6476);
+      this.blit(var1, this.field6477, this.field6478, var8, 219, this.field6475, this.field6476);
       this.method5760(var1);
    }
 

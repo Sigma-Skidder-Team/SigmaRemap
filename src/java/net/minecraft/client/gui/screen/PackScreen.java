@@ -2,6 +2,7 @@ package net.minecraft.client.gui.screen;
 
 import com.google.common.collect.Maps;
 import com.google.common.hash.Hashing;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;

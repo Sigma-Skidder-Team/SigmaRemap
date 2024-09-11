@@ -1,10 +1,13 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class875<T extends Class5823> extends Class851<T> implements Class876 {
+public class Class875<T extends Class5823> extends ContainerScreen<T> implements Class876 {
    private static String[] field4850;
    private ResourceLocation field4851;
 
@@ -35,7 +38,7 @@ public class Class875<T extends Class5823> extends Class851<T> implements Class8
       super.render(var1, var2, var3, var4);
       RenderSystem.disableBlend();
       this.method2717(var1, var2, var3, var4);
-      this.method2615(var1, var2, var3);
+      this.renderHoveredTooltip(var1, var2, var3);
    }
 
    public void method2717(MatrixStack var1, int var2, int var3, float var4) {
@@ -45,12 +48,12 @@ public class Class875<T extends Class5823> extends Class851<T> implements Class8
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(this.field4851);
-      int var7 = (this.width - this.field4721) / 2;
-      int var8 = (this.height - this.field4722) / 2;
-      this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
-      this.method5696(var1, var7 + 59, var8 + 20, 0, this.field4722 + (!this.field4727.getSlot(0).getHasStack() ? 16 : 0), 110, 16);
+      int var7 = (this.width - this.xSize) / 2;
+      int var8 = (this.height - this.ySize) / 2;
+      this.blit(var1, var7, var8, 0, 0, this.xSize, this.ySize);
+      this.blit(var1, var7 + 59, var8 + 20, 0, this.ySize + (!this.field4727.getSlot(0).getHasStack() ? 16 : 0), 110, 16);
       if ((this.field4727.getSlot(0).getHasStack() || this.field4727.getSlot(1).getHasStack()) && !this.field4727.getSlot(2).getHasStack()) {
-         this.method5696(var1, var7 + 99, var8 + 45, this.field4721, 0, 28, 21);
+         this.blit(var1, var7 + 99, var8 + 45, this.xSize, 0, 28, 21);
       }
    }
 

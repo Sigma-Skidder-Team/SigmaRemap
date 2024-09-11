@@ -2,7 +2,7 @@ package net.minecraft.client.gui.widget.button;
 
 import mapped.Class2105;
 import mapped.Class7192;
-import mapped.MatrixStack;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import mapped.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.text.IFormattableTextComponent;
@@ -49,6 +49,6 @@ public class LockIconButton extends Button {
          var7 = !this.field6575 ? Class2105.field13727 : Class2105.field13724;
       }
 
-      this.method5696(var1, this.field6477, this.field6478, var7.method8770(), var7.method8771(), this.field6475, this.field6476);
+      this.blit(var1, this.field6477, this.field6478, var7.method8770(), var7.method8771(), this.field6475, this.field6476);
    }
 }

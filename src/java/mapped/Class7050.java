@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.inventory.ChestScreen;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -22,7 +24,7 @@ public class Class7050 {
    public static ResourceLocation method21963(ResourceLocation var0) {
       if (field30440 != null) {
          Screen var3 = field30438.currentScreen;
-         if (var3 instanceof Class851) {
+         if (var3 instanceof ContainerScreen) {
             if (!var0.getNamespace().equals("minecraft") || !var0.getPath().startsWith("textures/gui/")) {
                return var0;
             } else if (field30439 != null) {
@@ -46,7 +48,7 @@ public class Class7050 {
                         return method21964(Class2295.field15255, var5, var4, var0, var3);
                      }
 
-                     if (var3 instanceof Class868) {
+                     if (var3 instanceof ChestScreen) {
                         return method21964(Class2295.field15256, var5, var4, var0, var3);
                      }
 

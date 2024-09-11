@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.item.ItemStack;
 
@@ -39,7 +40,7 @@ public enum Class2166 {
       }
 
       int var10 = !var5 ? this.field14225 : this.field14225 + this.field14227;
-      var2.method5696(var1, var3 + this.method8888(var6), var4 + this.method8889(var6), var9, var10, this.field14226, this.field14227);
+      var2.blit(var1, var3 + this.method8888(var6), var4 + this.method8889(var6), var9, var10, this.field14226, this.field14227);
    }
 
    public void method8887(int var1, int var2, int var3, ItemRenderer var4, ItemStack var5) {

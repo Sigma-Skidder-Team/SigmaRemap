@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.ChestContainer;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -25,7 +27,7 @@ public class Class952 implements Class949 {
       if (this.field5349.method3696(var3) && this.field5350.method3696(var3)) {
          this.field5349.method3743(var2.field5444);
          this.field5350.method3743(var2.field5444);
-         return Class5813.method18163(var1, var2, this.field5351);
+         return ChestContainer.method18163(var1, var2, this.field5351);
       } else {
          return null;
       }

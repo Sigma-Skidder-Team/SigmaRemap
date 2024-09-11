@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableList.Builder;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
@@ -130,7 +131,7 @@ public class Class870 extends Screen {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4820);
       int var7 = (this.width - 192) / 2;
-      this.method5696(var1, var7, 2, 0, 0, 192, 192);
+      this.blit(var1, var7, 2, 0, 0, 192, 192);
       if (this.field4824 != this.field4822) {
          ITextProperties var9 = this.field4821.method24461(this.field4822);
          this.field4823 = this.fontRenderer.method38828(var9, 114);

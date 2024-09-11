@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.util.SoundEvents;
 
@@ -19,7 +20,7 @@ public class Class7604 implements Class7601 {
       var2.method5915().getTextureManager().bindTexture(field32630);
       RenderSystem.method27890(1.0F, 1.0F, 1.0F);
       Class9272 var7 = this.field32644.method27027();
-      var2.method5696(var1, 0, 0, 0, 0, this.method24898(), this.method24899());
+      var2.blit(var1, 0, 0, 0, 0, this.method24898(), this.method24899());
       if (var7 == null) {
          return Class2139.field14004;
       } else {

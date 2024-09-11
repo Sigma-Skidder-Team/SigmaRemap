@@ -1,5 +1,7 @@
-package mapped;
+package net.minecraft.client.gui;
 
-public interface Class867<T extends Container> {
+import mapped.Container;
+
+public interface IHasContainer<T extends Container> {
    T method2628();
 }

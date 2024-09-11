@@ -6,10 +6,12 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Ordering;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.EventRenderGUI;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.datafixers.util.Pair;
 import mapped.*;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
@@ -329,7 +331,7 @@ public class IngameGui extends AbstractGui {
             } else {
                 RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15994, DestFactor.field12933, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
                 byte var5 = 15;
-                this.method5696(var1, (this.field6741 - 15) / 2, (this.field6742 - 15) / 2, 0, 0, 15, 15);
+                this.blit(var1, (this.field6741 - 15) / 2, (this.field6742 - 15) / 2, 0, 0, 15, 15);
                 if (this.field6716.gameSettings.field44603 == Class2207.field14426) {
                     float var6 = this.field6716.player.method2974(0.0F);
                     boolean var7 = false;
@@ -343,11 +345,11 @@ public class IngameGui extends AbstractGui {
                     if (!var7) {
                         if (var6 < 1.0F) {
                             int var10 = (int) (var6 * 17.0F);
-                            this.method5696(var1, var9, var8, 36, 94, 16, 4);
-                            this.method5696(var1, var9, var8, 52, 94, var10, 4);
+                            this.blit(var1, var9, var8, 36, 94, 16, 4);
+                            this.blit(var1, var9, var8, 52, 94, var10, 4);
                         }
                     } else {
-                        this.method5696(var1, var9, var8, 68, 94, 16, 16);
+                        this.blit(var1, var9, var8, 68, 94, 16, 16);
                     }
                 }
             }
@@ -380,7 +382,7 @@ public class IngameGui extends AbstractGui {
             int var6 = 0;
             PotionSpriteUploader var7 = this.field6716.getPotionSpriteUploader();
             List<Runnable> var8 = Lists.newArrayListWithExpectedSize(var4.size());
-            this.field6716.getTextureManager().bindTexture(Class851.field4720);
+            this.field6716.getTextureManager().bindTexture(ContainerScreen.field4720);
 
             for (EffectInstance var10 : Ordering.natural().reverse().sortedCopy(var4)) {
                 Effect var11 = var10.getPotion();
@@ -389,7 +391,7 @@ public class IngameGui extends AbstractGui {
                         continue;
                     }
 
-                    this.field6716.getTextureManager().bindTexture(Class851.field4720);
+                    this.field6716.getTextureManager().bindTexture(ContainerScreen.field4720);
                 }
 
                 if (var10.method8632()) {
@@ -411,7 +413,7 @@ public class IngameGui extends AbstractGui {
                     RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
                     float var14 = 1.0F;
                     if (!var10.isAmbient()) {
-                        this.method5696(var1, var12, var13, 141, 166, 24, 24);
+                        this.blit(var1, var12, var13, 141, 166, 24, 24);
                         if (var10.method8628() <= 200) {
                             int var15 = 10 - var10.method8628() / 20;
                             var14 = MathHelper.clamp((float) var10.method8628() / 10.0F / 5.0F * 0.5F, 0.0F, 0.5F)
@@ -419,7 +421,7 @@ public class IngameGui extends AbstractGui {
                                     * MathHelper.clamp((float) var15 / 10.0F * 0.25F, 0.0F, 0.25F);
                         }
                     } else {
-                        this.method5696(var1, var12, var13, 165, 166, 24, 24);
+                        this.blit(var1, var12, var13, 165, 166, 24, 24);
                     }
 
                     TextureAtlasSprite var20 = var7.method1022(var11);
@@ -453,13 +455,13 @@ public class IngameGui extends AbstractGui {
             short var10 = 182;
             byte var11 = 91;
             this.method5703(-90);
-            this.method5696(var2, var8 - 91, this.field6742 - 22, 0, 0, 182, 22);
-            this.method5696(var2, var8 - 91 - 1 + var5.inventory.currentItem * 20, this.field6742 - 22 - 1, 0, 22, 24, 22);
+            this.blit(var2, var8 - 91, this.field6742 - 22, 0, 0, 182, 22);
+            this.blit(var2, var8 - 91 - 1 + var5.inventory.currentItem * 20, this.field6742 - 22 - 1, 0, 22, 24, 22);
             if (!var6.isEmpty()) {
                 if (var7 != HandSide.field14417) {
-                    this.method5696(var2, var8 + 91, this.field6742 - 23, 53, 22, 29, 24);
+                    this.blit(var2, var8 + 91, this.field6742 - 23, 53, 22, 29, 24);
                 } else {
-                    this.method5696(var2, var8 - 91 - 29, this.field6742 - 23, 24, 22, 29, 24);
+                    this.blit(var2, var8 - 91 - 29, this.field6742 - 23, 24, 22, 29, 24);
                 }
             }
 
@@ -499,8 +501,8 @@ public class IngameGui extends AbstractGui {
                     this.field6716.getTextureManager().bindTexture(AbstractGui.field6453);
                     int var15 = (int) (var17 * 19.0F);
                     RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-                    this.method5696(var2, var19, var18, 0, 94, 18, 18);
-                    this.method5696(var2, var19, var18 + 18 - var15, 18, 112 - var15, 18, var15);
+                    this.blit(var2, var19, var18, 0, 94, 18, 18);
+                    this.blit(var2, var19, var18 + 18 - var15, 18, 112 - var15, 18, var15);
                 }
             }
 
@@ -516,9 +518,9 @@ public class IngameGui extends AbstractGui {
         short var6 = 182;
         int var7 = (int) (var5 * 183.0F);
         int var8 = this.field6742 - 32 + 3;
-        this.method5696(var1, var2, var8, 0, 84, 182, 5);
+        this.blit(var1, var2, var8, 0, 84, 182, 5);
         if (var7 > 0) {
-            this.method5696(var1, var2, var8, 0, 89, var7, 5);
+            this.blit(var1, var2, var8, 0, 89, var7, 5);
         }
 
         this.field6716.getProfiler().endSection();
@@ -532,9 +534,9 @@ public class IngameGui extends AbstractGui {
             short var6 = 182;
             int var7 = (int) (this.field6716.player.field4922 * 183.0F);
             int var8 = this.field6742 - 32 + 3;
-            this.method5696(var1, var2, var8, 0, 64, 182, 5);
+            this.blit(var1, var2, var8, 0, 64, 182, 5);
             if (var7 > 0) {
-                this.method5696(var1, var2, var8, 0, 69, var7, 5);
+                this.blit(var1, var2, var8, 0, 69, var7, 5);
             }
         }
 
@@ -756,15 +758,15 @@ public class IngameGui extends AbstractGui {
                 if (var22 > 0) {
                     int var25 = var12 + var24 * 8;
                     if (var24 * 2 + 1 < var22) {
-                        this.method5696(var1, var25, var19, 34, 9, 9, 9);
+                        this.blit(var1, var25, var19, 34, 9, 9, 9);
                     }
 
                     if (var24 * 2 + 1 == var22) {
-                        this.method5696(var1, var25, var19, 25, 9, 9, 9);
+                        this.blit(var1, var25, var19, 25, 9, 9, 9);
                     }
 
                     if (var24 * 2 + 1 > var22) {
-                        this.method5696(var1, var25, var19, 16, 9, 9, 9);
+                        this.blit(var1, var25, var19, 16, 9, 9, 9);
                     }
                 }
             }
@@ -802,30 +804,30 @@ public class IngameGui extends AbstractGui {
                     var30 = 5;
                 }
 
-                this.method5696(var1, var28, var29, 16 + var26 * 9, 9 * var30, 9, 9);
+                this.blit(var1, var28, var29, 16 + var26 * 9, 9 * var30, 9, 9);
                 if (var6) {
                     if (var33 * 2 + 1 < var9) {
-                        this.method5696(var1, var28, var29, var35 + 54, 9 * var30, 9, 9);
+                        this.blit(var1, var28, var29, var35 + 54, 9 * var30, 9, 9);
                     }
 
                     if (var33 * 2 + 1 == var9) {
-                        this.method5696(var1, var28, var29, var35 + 63, 9 * var30, 9, 9);
+                        this.blit(var1, var28, var29, var35 + 63, 9 * var30, 9, 9);
                     }
                 }
 
                 if (var21 <= 0) {
                     if (var33 * 2 + 1 < var5) {
-                        this.method5696(var1, var28, var29, var35 + 36, 9 * var30, 9, 9);
+                        this.blit(var1, var28, var29, var35 + 36, 9 * var30, 9, 9);
                     }
 
                     if (var33 * 2 + 1 == var5) {
-                        this.method5696(var1, var28, var29, var35 + 45, 9 * var30, 9, 9);
+                        this.blit(var1, var28, var29, var35 + 45, 9 * var30, 9, 9);
                     }
                 } else if (var21 == var16 && var16 % 2 == 1) {
-                    this.method5696(var1, var28, var29, var35 + 153, 9 * var30, 9, 9);
+                    this.blit(var1, var28, var29, var35 + 153, 9 * var30, 9, 9);
                     var21--;
                 } else {
-                    this.method5696(var1, var28, var29, var35 + 144, 9 * var30, 9, 9);
+                    this.blit(var1, var28, var29, var35 + 144, 9 * var30, 9, 9);
                     var21 -= 2;
                 }
             }
@@ -849,13 +851,13 @@ public class IngameGui extends AbstractGui {
                     }
 
                     int var45 = var13 - var37 * 8 - 9;
-                    this.method5696(var1, var45, var39, 16 + var43 * 9, 27, 9, 9);
+                    this.blit(var1, var45, var39, 16 + var43 * 9, 27, 9, 9);
                     if (var37 * 2 + 1 < var11) {
-                        this.method5696(var1, var45, var39, var41 + 36, 27, 9, 9);
+                        this.blit(var1, var45, var39, var41 + 36, 27, 9, 9);
                     }
 
                     if (var37 * 2 + 1 == var11) {
-                        this.method5696(var1, var45, var39, var41 + 45, 27, 9, 9);
+                        this.blit(var1, var45, var39, var41 + 45, 27, 9, 9);
                     }
                 }
 
@@ -873,9 +875,9 @@ public class IngameGui extends AbstractGui {
 
                 for (int var31 = 0; var31 < var44 + var46; var31++) {
                     if (var31 >= var44) {
-                        this.method5696(var1, var13 - var31 * 8 - 9, var20, 25, 18, 9, 9);
+                        this.blit(var1, var13 - var31 * 8 - 9, var20, 25, 18, 9, 9);
                     } else {
-                        this.method5696(var1, var13 - var31 * 8 - 9, var20, 16, 18, 9, 9);
+                        this.blit(var1, var13 - var31 * 8 - 9, var20, 16, 18, 9, 9);
                     }
                 }
             }
@@ -904,13 +906,13 @@ public class IngameGui extends AbstractGui {
                         byte var14 = 52;
                         byte var15 = 0;
                         int var16 = var8 - var13 * 8 - 9;
-                        this.method5696(var1, var16, var9, 52 + var15 * 9, 9, 9, 9);
+                        this.blit(var1, var16, var9, 52 + var15 * 9, 9, 9, 9);
                         if (var13 * 2 + 1 + var10 < var6) {
-                            this.method5696(var1, var16, var9, 88, 9, 9, 9);
+                            this.blit(var1, var16, var9, 88, 9, 9, 9);
                         }
 
                         if (var13 * 2 + 1 + var10 == var6) {
-                            this.method5696(var1, var16, var9, 97, 9, 9, 9);
+                            this.blit(var1, var16, var9, 97, 9, 9, 9);
                         }
                     }
 

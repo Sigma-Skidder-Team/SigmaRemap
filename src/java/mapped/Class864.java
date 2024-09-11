@@ -1,13 +1,16 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
-public class Class864 extends Class851<Class5811> {
+public class Class864 extends ContainerScreen<Class5811> {
    private static final ResourceLocation field4796 = new ResourceLocation("textures/gui/container/stonecutter.png");
    private float field4797;
    private boolean field4798;
@@ -23,7 +26,7 @@ public class Class864 extends Class851<Class5811> {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       super.render(var1, var2, var3, var4);
-      this.method2615(var1, var2, var3);
+      this.renderHoveredTooltip(var1, var2, var3);
    }
 
    @Override
@@ -33,9 +36,9 @@ public class Class864 extends Class851<Class5811> {
       this.mc.getTextureManager().bindTexture(field4796);
       int var7 = this.field4734;
       int var8 = this.field4735;
-      this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
+      this.blit(var1, var7, var8, 0, 0, this.xSize, this.ySize);
       int var9 = (int)(41.0F * this.field4797);
-      this.method5696(var1, var7 + 119, var8 + 15 + var9, 176 + (!this.method2674() ? 12 : 0), 0, 12, 15);
+      this.blit(var1, var7 + 119, var8 + 15 + var9, 176 + (!this.method2674() ? 12 : 0), 0, 12, 15);
       int var10 = this.field4734 + 52;
       int var11 = this.field4735 + 14;
       int var12 = this.field4799 + 12;
@@ -44,8 +47,8 @@ public class Class864 extends Class851<Class5811> {
    }
 
    @Override
-   public void method2615(MatrixStack var1, int var2, int var3) {
-      super.method2615(var1, var2, var3);
+   public void renderHoveredTooltip(MatrixStack var1, int var2, int var3) {
+      super.renderHoveredTooltip(var1, var2, var3);
       if (this.field4800) {
          int var6 = this.field4734 + 52;
          int var7 = this.field4735 + 14;
@@ -69,7 +72,7 @@ public class Class864 extends Class851<Class5811> {
          int var11 = var4 + var10 % 4 * 16;
          int var12 = var10 / 4;
          int var13 = var5 + var12 * 18 + 2;
-         int var14 = this.field4722;
+         int var14 = this.ySize;
          if (var9 != this.field4727.method18099()) {
             if (var2 >= var11 && var3 >= var13 && var2 < var11 + 16 && var3 < var13 + 18) {
                var14 += 36;
@@ -78,7 +81,7 @@ public class Class864 extends Class851<Class5811> {
             var14 += 18;
          }
 
-         this.method5696(var1, var11, var13 - 1, 0, var14, 16, 18);
+         this.blit(var1, var11, var13 - 1, 0, var14, 16, 18);
       }
    }
 

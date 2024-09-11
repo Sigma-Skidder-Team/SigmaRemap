@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.ChestContainer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
@@ -64,7 +66,7 @@ public class Class973 extends Class939 {
 
    @Override
    public Container method3690(int var1, PlayerInventory var2) {
-      return Class5813.method18162(var1, var2, this);
+      return ChestContainer.method18162(var1, var2, this);
    }
 
    @Override

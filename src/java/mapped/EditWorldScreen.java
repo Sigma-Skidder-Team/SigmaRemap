@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonIOException;
 import com.google.gson.stream.JsonWriter;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.DataResult.PartialResult;
 import com.mojang.serialization.JsonOps;

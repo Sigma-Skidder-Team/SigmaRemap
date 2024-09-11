@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.item.crafting.IRecipe;
@@ -136,27 +137,27 @@ public class Class1263 extends AbstractGui implements Class1190, IGuiEventListen
    }
 
    private void method5904(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7) {
-      this.method5696(var1, this.field6680, this.field6681, var6, var7, var5, var5);
-      this.method5696(var1, this.field6680 + var5 * 2 + var2 * var4, this.field6681, var6 + var4 + var5, var7, var5, var5);
-      this.method5696(var1, this.field6680, this.field6681 + var5 * 2 + var3 * var4, var6, var7 + var4 + var5, var5, var5);
-      this.method5696(
+      this.blit(var1, this.field6680, this.field6681, var6, var7, var5, var5);
+      this.blit(var1, this.field6680 + var5 * 2 + var2 * var4, this.field6681, var6 + var4 + var5, var7, var5, var5);
+      this.blit(var1, this.field6680, this.field6681 + var5 * 2 + var3 * var4, var6, var7 + var4 + var5, var5, var5);
+      this.blit(
          var1, this.field6680 + var5 * 2 + var2 * var4, this.field6681 + var5 * 2 + var3 * var4, var6 + var4 + var5, var7 + var4 + var5, var5, var5
       );
 
       for (int var10 = 0; var10 < var2; var10++) {
-         this.method5696(var1, this.field6680 + var5 + var10 * var4, this.field6681, var6 + var5, var7, var4, var5);
-         this.method5696(var1, this.field6680 + var5 + (var10 + 1) * var4, this.field6681, var6 + var5, var7, var5, var5);
+         this.blit(var1, this.field6680 + var5 + var10 * var4, this.field6681, var6 + var5, var7, var4, var5);
+         this.blit(var1, this.field6680 + var5 + (var10 + 1) * var4, this.field6681, var6 + var5, var7, var5, var5);
 
          for (int var11 = 0; var11 < var3; var11++) {
             if (var10 == 0) {
-               this.method5696(var1, this.field6680, this.field6681 + var5 + var11 * var4, var6, var7 + var5, var5, var4);
-               this.method5696(var1, this.field6680, this.field6681 + var5 + (var11 + 1) * var4, var6, var7 + var5, var5, var5);
+               this.blit(var1, this.field6680, this.field6681 + var5 + var11 * var4, var6, var7 + var5, var5, var4);
+               this.blit(var1, this.field6680, this.field6681 + var5 + (var11 + 1) * var4, var6, var7 + var5, var5, var5);
             }
 
-            this.method5696(var1, this.field6680 + var5 + var10 * var4, this.field6681 + var5 + var11 * var4, var6 + var5, var7 + var5, var4, var4);
-            this.method5696(var1, this.field6680 + var5 + (var10 + 1) * var4, this.field6681 + var5 + var11 * var4, var6 + var5, var7 + var5, var5, var4);
-            this.method5696(var1, this.field6680 + var5 + var10 * var4, this.field6681 + var5 + (var11 + 1) * var4, var6 + var5, var7 + var5, var4, var5);
-            this.method5696(
+            this.blit(var1, this.field6680 + var5 + var10 * var4, this.field6681 + var5 + var11 * var4, var6 + var5, var7 + var5, var4, var4);
+            this.blit(var1, this.field6680 + var5 + (var10 + 1) * var4, this.field6681 + var5 + var11 * var4, var6 + var5, var7 + var5, var5, var4);
+            this.blit(var1, this.field6680 + var5 + var10 * var4, this.field6681 + var5 + (var11 + 1) * var4, var6 + var5, var7 + var5, var4, var5);
+            this.blit(
                var1,
                this.field6680 + var5 + (var10 + 1) * var4 - 1,
                this.field6681 + var5 + (var11 + 1) * var4 - 1,
@@ -166,15 +167,15 @@ public class Class1263 extends AbstractGui implements Class1190, IGuiEventListen
                var5 + 1
             );
             if (var10 == var2 - 1) {
-               this.method5696(var1, this.field6680 + var5 * 2 + var2 * var4, this.field6681 + var5 + var11 * var4, var6 + var4 + var5, var7 + var5, var5, var4);
-               this.method5696(
+               this.blit(var1, this.field6680 + var5 * 2 + var2 * var4, this.field6681 + var5 + var11 * var4, var6 + var4 + var5, var7 + var5, var5, var4);
+               this.blit(
                   var1, this.field6680 + var5 * 2 + var2 * var4, this.field6681 + var5 + (var11 + 1) * var4, var6 + var4 + var5, var7 + var5, var5, var5
                );
             }
          }
 
-         this.method5696(var1, this.field6680 + var5 + var10 * var4, this.field6681 + var5 * 2 + var3 * var4, var6 + var5, var7 + var4 + var5, var4, var5);
-         this.method5696(var1, this.field6680 + var5 + (var10 + 1) * var4, this.field6681 + var5 * 2 + var3 * var4, var6 + var5, var7 + var4 + var5, var5, var5);
+         this.blit(var1, this.field6680 + var5 + var10 * var4, this.field6681 + var5 * 2 + var3 * var4, var6 + var5, var7 + var4 + var5, var4, var5);
+         this.blit(var1, this.field6680 + var5 + (var10 + 1) * var4, this.field6681 + var5 * 2 + var3 * var4, var6 + var5, var7 + var4 + var5, var5, var5);
       }
    }
 

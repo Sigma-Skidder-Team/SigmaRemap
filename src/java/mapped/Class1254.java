@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import it.unimi.dsi.fastutil.objects.ObjectLinkedOpenHashSet;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
@@ -214,7 +215,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          int var7 = (this.field6635 - 147) / 2 - this.field6634;
          int var8 = (this.field6636 - 166) / 2;
-         this.method5696(var1, var7, var8, 1, 1, 147, 166);
+         this.blit(var1, var7, var8, 1, 1, 147, 166);
          if (!this.field6643.method5746() && this.field6643.getText().isEmpty()) {
             method5693(var1, this.field6642.fontRenderer, field6631, var7 + 25, var8 + 14, -1);
          } else {

@@ -1,5 +1,6 @@
 package net.minecraft.client.gui;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import mapped.*;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
@@ -142,7 +143,7 @@ public abstract class AbstractGui {
       );
    }
 
-   public void method5696(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7) {
+   public void blit(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7) {
       method5697(var1, var2, var3, this.field6454, (float)var4, (float)var5, var6, var7, 256, 256);
    }
 

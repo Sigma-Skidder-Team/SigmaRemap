@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
@@ -51,7 +52,7 @@ public class Class1308 extends Screen {
       this.mc.getTextureManager().bindTexture(field6913);
       int var4 = (this.width - 248) / 2;
       int var5 = (this.height - 166) / 2;
-      this.method5696(var1, var4, var5, 0, 0, 248, 166);
+      this.blit(var1, var4, var5, 0, 0, 248, 166);
    }
 
    @Override

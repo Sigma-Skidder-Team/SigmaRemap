@@ -1,13 +1,16 @@
 package mapped;
 
 import com.google.common.collect.Ordering;
+import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.text.ITextComponent;
 
 import java.util.Collection;
 import java.util.List;
 
-public abstract class Class860<T extends Container> extends Class851<T> {
+public abstract class Class860<T extends Container> extends ContainerScreen<T> {
    public boolean field4772;
 
    public Class860(T var1, PlayerInventory var2, ITextComponent var3) {
@@ -22,10 +25,10 @@ public abstract class Class860<T extends Container> extends Class851<T> {
 
    public void method2638() {
       if (!this.mc.player.getActivePotionEffects().isEmpty()) {
-         this.field4734 = 160 + (this.width - this.field4721 - 200) / 2;
+         this.field4734 = 160 + (this.width - this.xSize - 200) / 2;
          this.field4772 = true;
       } else {
-         this.field4734 = (this.width - this.field4721) / 2;
+         this.field4734 = (this.width - this.xSize) / 2;
          this.field4772 = false;
       }
    }
@@ -61,7 +64,7 @@ public abstract class Class860<T extends Container> extends Class851<T> {
 
       for (EffectInstance var9 : var4) {
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-         this.method5696(var1, var2, var7, 0, 166, 140, 32);
+         this.blit(var1, var2, var7, 0, 166, 140, 32);
          var7 += var3;
       }
    }

@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.ChestContainer;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.text.ITextComponent;
@@ -48,7 +50,7 @@ public class Class991 extends Class919 {
 
    @Override
    public Container method3628(int var1, PlayerInventory var2) {
-      return Class5813.method18162(var1, var2, this);
+      return ChestContainer.method18162(var1, var2, this);
    }
 
    @Override

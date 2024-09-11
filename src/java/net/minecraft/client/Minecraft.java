@@ -16,6 +16,7 @@ import com.mojang.authlib.minecraft.OfflineSocialInteractions;
 import com.mojang.authlib.minecraft.SocialInteractionsService;
 import com.mojang.authlib.properties.PropertyMap;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.datafixers.DataFixer;
 import com.mojang.datafixers.util.Function4;
 import com.mojang.serialization.DataResult;
@@ -28,6 +29,7 @@ import net.minecraft.client.resources.DownloadingPackFinder;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -1283,7 +1285,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
          this.ingameGUI.reset();
       }
 
-      if (this.loadingGui == null && (this.currentScreen == null || this.currentScreen.field4567)) {
+      if (this.loadingGui == null && (this.currentScreen == null || this.currentScreen.passEvents)) {
          this.profiler.endStartSection("Keybindings");
          this.processKeyBinds();
          if (this.leftClickCounter > 0) {

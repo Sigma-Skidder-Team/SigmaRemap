@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.entity.Entity;
 
 public abstract class Class226<T extends Entity, M extends Class2827<T>> extends Class219<T, M> {

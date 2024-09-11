@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.ResourceLocation;
@@ -55,7 +56,7 @@ public class Class1249 extends Widget {
          var9 += this.field6620;
       }
 
-      this.method5696(var1, this.field6477, this.field6478, var8, var9, this.field6475, this.field6476);
+      this.blit(var1, this.field6477, this.field6478, var8, var9, this.field6475, this.field6476);
       RenderSystem.enableDepthTest();
    }
 }

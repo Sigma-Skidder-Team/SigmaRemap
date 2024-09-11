@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
+
 public class Class1164 extends Class1155<Class1164> {
    private static String[] field6320;
    private final Class2019 field6321;

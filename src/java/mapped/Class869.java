@@ -1,13 +1,15 @@
 package mapped;
 
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.IHasContainer;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class869 extends Class870 implements Class867<Class5818> {
+public class Class869 extends Class870 implements IHasContainer<Class5818> {
    private final Class5818 field4817;
    private final Class876 field4818 = new Class1121(this);
 

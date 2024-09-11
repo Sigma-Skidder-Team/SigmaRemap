@@ -1,7 +1,10 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
@@ -10,7 +13,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 
 import java.util.List;
 
-public class Class872 extends Class851<Class5821> {
+public class Class872 extends ContainerScreen<Class5821> {
    private static final ResourceLocation field4841 = new ResourceLocation("textures/gui/container/beacon.png");
    private static final ITextComponent field4842 = new TranslationTextComponent("block.minecraft.beacon.primary");
    private static final ITextComponent field4843 = new TranslationTextComponent("block.minecraft.beacon.secondary");
@@ -21,8 +24,8 @@ public class Class872 extends Class851<Class5821> {
 
    public Class872(Class5821 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
-      this.field4721 = 230;
-      this.field4722 = 219;
+      this.xSize = 230;
+      this.ySize = 219;
       var1.addListener(new Class1122(this, var1));
    }
 
@@ -110,9 +113,9 @@ public class Class872 extends Class851<Class5821> {
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4841);
-      int var7 = (this.width - this.field4721) / 2;
-      int var8 = (this.height - this.field4722) / 2;
-      this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
+      int var7 = (this.width - this.xSize) / 2;
+      int var8 = (this.height - this.ySize) / 2;
+      this.blit(var1, var7, var8, 0, 0, this.xSize, this.ySize);
       this.field4563.field847 = 100.0F;
       this.field4563.method793(new ItemStack(Items.field37803), var7 + 20, var8 + 109);
       this.field4563.method793(new ItemStack(Items.field38049), var7 + 41, var8 + 109);
@@ -126,7 +129,7 @@ public class Class872 extends Class851<Class5821> {
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
       super.render(var1, var2, var3, var4);
-      this.method2615(var1, var2, var3);
+      this.renderHoveredTooltip(var1, var2, var3);
    }
 
    // $VF: synthetic method

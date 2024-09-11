@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.network.play.client.CSeenAdvancementsPacket;
@@ -125,7 +126,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.enableBlend();
       this.mc.getTextureManager().bindTexture(field6179);
-      this.method5696(var1, var2, var3, 0, 0, 252, 140);
+      this.blit(var1, var2, var3, 0, 0, 252, 140);
       if (this.field6185.size() > 1) {
          this.mc.getTextureManager().bindTexture(field6180);
 

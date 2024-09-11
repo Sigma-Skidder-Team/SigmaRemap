@@ -4,6 +4,7 @@ import java.util.Random;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.container.ChestContainer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
@@ -60,7 +61,7 @@ public class Class3347 extends Class3346<Class943> implements Class3207 {
          } else if (!var2.isRemote) {
             Class943 var12 = (Class943)var10;
             var9.method4064(var12);
-            var4.method2766(new Class953((var1x, var2x, var3x) -> Class5813.method18162(var1x, var2x, var9), field18863));
+            var4.method2766(new Class953((var1x, var2x, var3x) -> ChestContainer.method18162(var1x, var2x, var9), field18863));
             var4.method2911(Stats.field40156);
             Class4388.method13832(var4, true);
             return ActionResultType.field14819;

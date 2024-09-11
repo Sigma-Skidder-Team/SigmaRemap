@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.text.IFormattableTextComponent;
@@ -29,8 +30,8 @@ public abstract class Class1236 extends Widget {
       var2.getTextureManager().bindTexture(field6474);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       int var7 = (!this.method5737() ? 1 : 2) * 20;
-      this.method5696(var1, this.field6477 + (int)(this.field6584 * (double)(this.field6475 - 8)), this.field6478, 0, 46 + var7, 4, 20);
-      this.method5696(var1, this.field6477 + (int)(this.field6584 * (double)(this.field6475 - 8)) + 4, this.field6478, 196, 46 + var7, 4, 20);
+      this.blit(var1, this.field6477 + (int)(this.field6584 * (double)(this.field6475 - 8)), this.field6478, 0, 46 + var7, 4, 20);
+      this.blit(var1, this.field6477 + (int)(this.field6584 * (double)(this.field6475 - 8)) + 4, this.field6478, 196, 46 + var7, 4, 20);
    }
 
    @Override

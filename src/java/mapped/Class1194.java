@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
@@ -124,7 +125,7 @@ public class Class1194 extends AbstractGui {
          }
 
          this.field6463.getTextureManager().bindTexture(field6455);
-         this.method5696(
+         this.blit(
             var1, var2 + this.field6467 + 3, var3 + this.field6468, this.field6459.method34938().method8242(), 128 + var7.method8737() * 26, 26, 26
          );
          this.field6463.getItemRenderer().method794(this.field6459.method34936(), var2 + this.field6467 + 8, var3 + this.field6468 + 5);
@@ -199,9 +200,9 @@ public class Class1194 extends AbstractGui {
          }
       }
 
-      this.method5696(var1, var20, var19, 0, var15.method8737() * 26, var14, 26);
-      this.method5696(var1, var20 + var14, var19, 200 - var18, var16.method8737() * 26, var18, 26);
-      this.method5696(var1, var2 + this.field6467 + 3, var3 + this.field6468, this.field6459.method34938().method8242(), 128 + var17.method8737() * 26, 26, 26);
+      this.blit(var1, var20, var19, 0, var15.method8737() * 26, var14, 26);
+      this.blit(var1, var20 + var14, var19, 200 - var18, var16.method8737() * 26, var18, 26);
+      this.blit(var1, var2 + this.field6467 + 3, var3 + this.field6468, this.field6459.method34938().method8242(), 128 + var17.method8737() * 26, 26, 26);
       if (!var9) {
          this.field6463.fontRenderer.method38802(var1, this.field6460, (float)(var2 + this.field6467 + 32), (float)(var3 + this.field6468 + 9), -1);
          if (var10 != null) {
@@ -232,12 +233,12 @@ public class Class1194 extends AbstractGui {
    }
 
    public void method5712(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, int var9, int var10) {
-      this.method5696(var1, var2, var3, var9, var10, var6, var6);
+      this.blit(var1, var2, var3, var9, var10, var6, var6);
       this.method5713(var1, var2 + var6, var3, var4 - var6 - var6, var6, var9 + var6, var10, var7 - var6 - var6, var8);
-      this.method5696(var1, var2 + var4 - var6, var3, var9 + var7 - var6, var10, var6, var6);
-      this.method5696(var1, var2, var3 + var5 - var6, var9, var10 + var8 - var6, var6, var6);
+      this.blit(var1, var2 + var4 - var6, var3, var9 + var7 - var6, var10, var6, var6);
+      this.blit(var1, var2, var3 + var5 - var6, var9, var10 + var8 - var6, var6, var6);
       this.method5713(var1, var2 + var6, var3 + var5 - var6, var4 - var6 - var6, var6, var9 + var6, var10 + var8 - var6, var7 - var6 - var6, var8);
-      this.method5696(var1, var2 + var4 - var6, var3 + var5 - var6, var9 + var7 - var6, var10 + var8 - var6, var6, var6);
+      this.blit(var1, var2 + var4 - var6, var3 + var5 - var6, var9 + var7 - var6, var10 + var8 - var6, var6, var6);
       this.method5713(var1, var2, var3 + var6, var6, var5 - var6 - var6, var9, var10 + var6, var7, var8 - var6 - var6);
       this.method5713(var1, var2 + var6, var3 + var6, var4 - var6 - var6, var5 - var6 - var6, var9 + var6, var10 + var6, var7 - var6 - var6, var8 - var6 - var6);
       this.method5713(var1, var2 + var4 - var6, var3 + var6, var6, var5 - var6 - var6, var9 + var7 - var6, var10 + var6, var7, var8 - var6 - var6);
@@ -254,7 +255,7 @@ public class Class1194 extends AbstractGui {
          while (var15 < var5) {
             int var16 = var3 + var15;
             int var17 = Math.min(var9, var5 - var15);
-            this.method5696(var1, var13, var16, var6, var7, var14, var17);
+            this.blit(var1, var13, var16, var6, var7, var14, var17);
             var15 += var9;
          }
 

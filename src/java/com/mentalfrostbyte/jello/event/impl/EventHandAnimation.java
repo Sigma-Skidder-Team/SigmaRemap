@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.event.impl;
 import com.mentalfrostbyte.jello.event.CancellableEvent;
 import net.minecraft.util.HandSide;
 import net.minecraft.item.ItemStack;
-import mapped.MatrixStack;
+import com.mojang.blaze3d.matrix.MatrixStack;
 
 public class EventHandAnimation extends CancellableEvent {
     private static String[] field21503;

@@ -393,7 +393,7 @@ public class KeyboardListener {
             }
          }
 
-         if (this.field43915.currentScreen == null || this.field43915.currentScreen.field4567) {
+         if (this.field43915.currentScreen == null || this.field43915.currentScreen.passEvents) {
             InputMappingsInput var16 = InputMappings.method38637(var3, var4);
             if (var5 != 0) {
                if (var3 == 293 && this.field43915.gameRenderer != null) {

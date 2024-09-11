@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.util.concurrent.Runnables;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.AccessibilityScreen;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.LanguageScreen;
@@ -276,16 +277,16 @@ public class VanillaMainMenuScreen extends Screen {
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, var11);
          if (!this.field4707) {
             this.method5694(var9, 30, (var2x, var3x) -> {
-               this.method5696(var1, var2x + 0, var3x, 0, 0, 155, 44);
-               this.method5696(var1, var2x + 155, var3x, 0, 45, 155, 44);
+               this.blit(var1, var2x + 0, var3x, 0, 0, 155, 44);
+               this.blit(var1, var2x + 155, var3x, 0, 45, 155, 44);
             });
          } else {
             this.method5694(var9, 30, (var2x, var3x) -> {
-               this.method5696(var1, var2x + 0, var3x, 0, 0, 99, 44);
-               this.method5696(var1, var2x + 99, var3x, 129, 0, 27, 44);
-               this.method5696(var1, var2x + 99 + 26, var3x, 126, 0, 3, 44);
-               this.method5696(var1, var2x + 99 + 26 + 3, var3x, 99, 0, 26, 44);
-               this.method5696(var1, var2x + 155, var3x, 0, 45, 155, 44);
+               this.blit(var1, var2x + 0, var3x, 0, 0, 99, 44);
+               this.blit(var1, var2x + 99, var3x, 129, 0, 27, 44);
+               this.blit(var1, var2x + 99 + 26, var3x, 126, 0, 3, 44);
+               this.blit(var1, var2x + 99 + 26 + 3, var3x, 99, 0, 26, 44);
+               this.blit(var1, var2x + 155, var3x, 0, 45, 155, 44);
             });
          }
 

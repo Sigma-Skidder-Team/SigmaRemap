@@ -1,11 +1,14 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class852 extends Class851<Class5836> {
+public class Class852 extends ContainerScreen<Class5836> {
    private static final ResourceLocation field4753 = new ResourceLocation("textures/gui/container/cartography_table.png");
 
    public Class852(Class5836 var1, PlayerInventory var2, ITextComponent var3) {
@@ -16,7 +19,7 @@ public class Class852 extends Class851<Class5836> {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       super.render(var1, var2, var3, var4);
-      this.method2615(var1, var2, var3);
+      this.renderHoveredTooltip(var1, var2, var3);
    }
 
    @Override
@@ -26,7 +29,7 @@ public class Class852 extends Class851<Class5836> {
       this.mc.getTextureManager().bindTexture(field4753);
       int var7 = this.field4734;
       int var8 = this.field4735;
-      this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
+      this.blit(var1, var7, var8, 0, 0, this.xSize, this.ySize);
       Item var9 = this.field4727.getSlot(1).getStack().getItem();
       boolean var10 = var9 == Items.field38056;
       boolean var11 = var9 == Items.field37899;
@@ -42,13 +45,13 @@ public class Class852 extends Class851<Class5836> {
             if (var15.field32323) {
                var14 = true;
                if (var11 || var12) {
-                  this.method5696(var1, var7 + 35, var8 + 31, this.field4721 + 50, 132, 28, 21);
+                  this.blit(var1, var7 + 35, var8 + 31, this.xSize + 50, 132, 28, 21);
                }
             }
 
             if (var11 && var15.field32321 >= 4) {
                var14 = true;
-               this.method5696(var1, var7 + 35, var8 + 31, this.field4721 + 50, 132, 28, 21);
+               this.blit(var1, var7 + 35, var8 + 31, this.xSize + 50, 132, 28, 21);
             }
          }
       }
@@ -60,28 +63,28 @@ public class Class852 extends Class851<Class5836> {
       int var9 = this.field4734;
       int var10 = this.field4735;
       if (var4 && !var6) {
-         this.method5696(var1, var9 + 67, var10 + 13, this.field4721, 66, 66, 66);
+         this.blit(var1, var9 + 67, var10 + 13, this.xSize, 66, 66, 66);
          this.method2630(var2, var9 + 85, var10 + 31, 0.226F);
       } else if (!var3) {
          if (!var5) {
-            this.method5696(var1, var9 + 67, var10 + 13, this.field4721, 0, 66, 66);
+            this.blit(var1, var9 + 67, var10 + 13, this.xSize, 0, 66, 66);
             this.method2630(var2, var9 + 71, var10 + 17, 0.45F);
          } else {
-            this.method5696(var1, var9 + 67, var10 + 13, this.field4721, 0, 66, 66);
+            this.blit(var1, var9 + 67, var10 + 13, this.xSize, 0, 66, 66);
             this.method2630(var2, var9 + 71, var10 + 17, 0.45F);
             this.mc.getTextureManager().bindTexture(field4753);
             RenderSystem.pushMatrix();
             RenderSystem.translatef(0.0F, 0.0F, 1.0F);
-            this.method5696(var1, var9 + 66, var10 + 12, 0, this.field4722, 66, 66);
+            this.blit(var1, var9 + 66, var10 + 12, 0, this.ySize, 66, 66);
             RenderSystem.popMatrix();
          }
       } else {
-         this.method5696(var1, var9 + 67 + 16, var10 + 13, this.field4721, 132, 50, 66);
+         this.blit(var1, var9 + 67 + 16, var10 + 13, this.xSize, 132, 50, 66);
          this.method2630(var2, var9 + 86, var10 + 16, 0.34F);
          this.mc.getTextureManager().bindTexture(field4753);
          RenderSystem.pushMatrix();
          RenderSystem.translatef(0.0F, 0.0F, 1.0F);
-         this.method5696(var1, var9 + 67, var10 + 13 + 16, this.field4721, 132, 50, 66);
+         this.blit(var1, var9 + 67, var10 + 13 + 16, this.xSize, 132, 50, 66);
          this.method2630(var2, var9 + 70, var10 + 32, 0.34F);
          RenderSystem.popMatrix();
       }

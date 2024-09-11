@@ -5,7 +5,9 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.IHasContainer;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.inventory.ChestScreen;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -33,7 +35,7 @@ public class ScreenManager {
       return (Class8457<T, ?>)field32354.get(var0);
    }
 
-   private static <M extends Container, U extends Screen & Class867<M>> void method24655(ContainerType<? extends M> var0, Class8457<M, U> var1) {
+   private static <M extends Container, U extends Screen & IHasContainer<M>> void method24655(ContainerType<? extends M> var0, Class8457<M, U> var1) {
       Class8457 var4 = field32354.put(var0, var1);
       if (var4 != null) {
          throw new IllegalStateException("Duplicate registration for " + Registry.field16084.getKey(var0));
@@ -54,12 +56,12 @@ public class ScreenManager {
    }
 
    static {
-      method24655(ContainerType.field35648, Class868::new);
-      method24655(ContainerType.field35649, Class868::new);
-      method24655(ContainerType.field35650, Class868::new);
-      method24655(ContainerType.field35651, Class868::new);
-      method24655(ContainerType.field35652, Class868::new);
-      method24655(ContainerType.field35653, Class868::new);
+      method24655(ContainerType.field35648, ChestScreen::new);
+      method24655(ContainerType.field35649, ChestScreen::new);
+      method24655(ContainerType.field35650, ChestScreen::new);
+      method24655(ContainerType.field35651, ChestScreen::new);
+      method24655(ContainerType.field35652, ChestScreen::new);
+      method24655(ContainerType.field35653, ChestScreen::new);
       method24655(ContainerType.field35654, Class874::new);
       method24655(ContainerType.field35655, Class1124::new);
       method24655(ContainerType.field35656, Class872::new);

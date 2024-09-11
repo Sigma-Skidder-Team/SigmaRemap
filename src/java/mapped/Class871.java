@@ -1,6 +1,9 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.*;
@@ -8,7 +11,7 @@ import net.minecraft.util.text.*;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Class871 extends Class851<Class5822> {
+public class Class871 extends ContainerScreen<Class5822> {
    private static final ResourceLocation field4829 = new ResourceLocation("textures/gui/container/enchanting_table.png");
    private static final ResourceLocation field4830 = new ResourceLocation("textures/entity/enchanting_table_book.png");
    private static final Class2850 field4831 = new Class2850();
@@ -34,8 +37,8 @@ public class Class871 extends Class851<Class5822> {
 
    @Override
    public boolean mouseClicked(double var1, double var3, int var5) {
-      int var8 = (this.width - this.field4721) / 2;
-      int var9 = (this.height - this.field4722) / 2;
+      int var8 = (this.width - this.xSize) / 2;
+      int var9 = (this.height - this.ySize) / 2;
 
       for (int var10 = 0; var10 < 3; var10++) {
          double var11 = var1 - (double)(var8 + 60);
@@ -54,9 +57,9 @@ public class Class871 extends Class851<Class5822> {
       Class7516.method24502();
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4829);
-      int var7 = (this.width - this.field4721) / 2;
-      int var8 = (this.height - this.field4722) / 2;
-      this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
+      int var7 = (this.width - this.xSize) / 2;
+      int var8 = (this.height - this.ySize) / 2;
+      this.blit(var1, var7, var8, 0, 0, this.xSize, this.ySize);
       RenderSystem.matrixMode(5889);
       RenderSystem.pushMatrix();
       RenderSystem.loadIdentity();
@@ -128,28 +131,28 @@ public class Class871 extends Class851<Class5822> {
             ITextProperties var25 = Class6577.method19915().method19916(this.fontRenderer, var24);
             int var26 = 6839882;
             if ((var18 < var19 + 1 || this.mc.player.field4920 < var22) && !this.mc.player.abilities.isCreativeMode) {
-               this.method5696(var1, var20, var8 + 14 + 19 * var19, 0, 185, 108, 19);
-               this.method5696(var1, var20 + 1, var8 + 15 + 19 * var19, 16 * var19, 239, 16, 16);
+               this.blit(var1, var20, var8 + 14 + 19 * var19, 0, 185, 108, 19);
+               this.blit(var1, var20 + 1, var8 + 15 + 19 * var19, 16 * var19, 239, 16, 16);
                this.fontRenderer.method38826(var25, var21, var8 + 16 + 19 * var19, var24, (var26 & 16711422) >> 1);
                var26 = 4226832;
             } else {
                int var27 = var3 - (var7 + 60);
                int var28 = var4 - (var8 + 14 + 19 * var19);
                if (var27 >= 0 && var28 >= 0 && var27 < 108 && var28 < 19) {
-                  this.method5696(var1, var20, var8 + 14 + 19 * var19, 0, 204, 108, 19);
+                  this.blit(var1, var20, var8 + 14 + 19 * var19, 0, 204, 108, 19);
                   var26 = 16777088;
                } else {
-                  this.method5696(var1, var20, var8 + 14 + 19 * var19, 0, 166, 108, 19);
+                  this.blit(var1, var20, var8 + 14 + 19 * var19, 0, 166, 108, 19);
                }
 
-               this.method5696(var1, var20 + 1, var8 + 15 + 19 * var19, 16 * var19, 223, 16, 16);
+               this.blit(var1, var20 + 1, var8 + 15 + 19 * var19, 16 * var19, 223, 16, 16);
                this.fontRenderer.method38826(var25, var21, var8 + 16 + 19 * var19, var24, var26);
                var26 = 8453920;
             }
 
             this.fontRenderer.drawStringWithShadow(var1, var23, (float)(var21 + 86 - this.fontRenderer.getStringWidth(var23)), (float)(var8 + 16 + 19 * var19 + 7), var26);
          } else {
-            this.method5696(var1, var20, var8 + 14 + 19 * var19, 0, 185, 108, 19);
+            this.blit(var1, var20, var8 + 14 + 19 * var19, 0, 185, 108, 19);
          }
       }
    }
@@ -159,7 +162,7 @@ public class Class871 extends Class851<Class5822> {
       var4 = this.mc.getRenderPartialTicks();
       this.renderBackground(var1);
       super.render(var1, var2, var3, var4);
-      this.method2615(var1, var2, var3);
+      this.renderHoveredTooltip(var1, var2, var3);
       boolean var7 = this.mc.player.abilities.isCreativeMode;
       int var8 = this.field4727.method18184();
 

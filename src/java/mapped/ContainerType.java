@@ -1,14 +1,16 @@
 package mapped;
 
+import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.ChestContainer;
 import net.minecraft.util.registry.Registry;
 
 public class ContainerType<T extends Container> {
-   public static final ContainerType<Class5813> field35648 = method29012("generic_9x1", Class5813::method18156);
-   public static final ContainerType<Class5813> field35649 = method29012("generic_9x2", Class5813::method18157);
-   public static final ContainerType<Class5813> field35650 = method29012("generic_9x3", Class5813::method18158);
-   public static final ContainerType<Class5813> field35651 = method29012("generic_9x4", Class5813::method18159);
-   public static final ContainerType<Class5813> field35652 = method29012("generic_9x5", Class5813::method18160);
-   public static final ContainerType<Class5813> field35653 = method29012("generic_9x6", Class5813::method18161);
+   public static final ContainerType<ChestContainer> field35648 = method29012("generic_9x1", ChestContainer::method18156);
+   public static final ContainerType<ChestContainer> field35649 = method29012("generic_9x2", ChestContainer::method18157);
+   public static final ContainerType<ChestContainer> field35650 = method29012("generic_9x3", ChestContainer::method18158);
+   public static final ContainerType<ChestContainer> field35651 = method29012("generic_9x4", ChestContainer::method18159);
+   public static final ContainerType<ChestContainer> field35652 = method29012("generic_9x5", ChestContainer::method18160);
+   public static final ContainerType<ChestContainer> field35653 = method29012("generic_9x6", ChestContainer::method18161);
    public static final ContainerType<Class5817> field35654 = method29012("generic_3x3", Class5817::new);
    public static final ContainerType<Class5824> field35655 = method29012("anvil", Class5824::new);
    public static final ContainerType<Class5821> field35656 = method29012("beacon", Class5821::new);

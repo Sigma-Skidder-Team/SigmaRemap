@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.util.text.ITextComponent;
 
@@ -25,7 +26,7 @@ public class TutorialToast implements Class7601 {
    public Class2139 method24894(MatrixStack var1, ToastGui var2, long var3) {
       var2.method5915().getTextureManager().bindTexture(field32630);
       RenderSystem.method27890(1.0F, 1.0F, 1.0F);
-      var2.method5696(var1, 0, 0, 0, 96, this.method24898(), this.method24899());
+      var2.blit(var1, 0, 0, 0, 96, this.method24898(), this.method24899());
       this.field32622.method8813(var1, var2, 6, 6);
       if (this.field32624 != null) {
          var2.method5915().fontRenderer.func_243248_b(var1, this.field32623, 30.0F, 7.0F, -11534256);
@@ -79,7 +80,7 @@ public class TutorialToast implements Class7601 {
 
        public void method8813(MatrixStack var1, AbstractGui var2, int var3, int var4) {
           RenderSystem.enableBlend();
-          var2.method5696(var1, var3, var4, 176 + this.field13901 * 20, this.field13902 * 20, 20, 20);
+          var2.blit(var1, var3, var4, 176 + this.field13901 * 20, this.field13902 * 20, 20, 20);
           RenderSystem.enableBlend();
        }
     }

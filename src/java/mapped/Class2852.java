@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
+
 public class Class2852 extends Class2828 {
    public Class7219 field17670;
    public Class7219 field17671;

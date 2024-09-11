@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
@@ -164,15 +165,15 @@ public class SocialInteractionsScreen extends Screen {
       int var4 = this.method5485() + 3;
       super.renderBackground(var1);
       this.mc.getTextureManager().bindTexture(field6215);
-      this.method5696(var1, var4, 64, 1, 1, 236, 8);
+      this.blit(var1, var4, 64, 1, 1, 236, 8);
       int var5 = this.method5483();
 
       for (int var6 = 0; var6 < var5; var6++) {
-         this.method5696(var1, var4, 72 + 16 * var6, 1, 10, 236, 16);
+         this.blit(var1, var4, 72 + 16 * var6, 1, 10, 236, 16);
       }
 
-      this.method5696(var1, var4, 72 + 16 * var5, 1, 27, 236, 8);
-      this.method5696(var1, var4 + 10, 76, 243, 1, 12, 12);
+      this.blit(var1, var4, 72 + 16 * var5, 1, 27, 236, 8);
+      this.blit(var1, var4 + 10, 76, 243, 1, 12, 12);
    }
 
    @Override

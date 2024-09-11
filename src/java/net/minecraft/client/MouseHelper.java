@@ -118,7 +118,7 @@ public class MouseHelper {
                }
             }
 
-            if (!var10[0] && (this.field44285.currentScreen == null || this.field44285.currentScreen.field4567) && this.field44285.loadingGui == null) {
+            if (!var10[0] && (this.field44285.currentScreen == null || this.field44285.currentScreen.passEvents) && this.field44285.loadingGui == null) {
                if (var9 != 0) {
                   if (var9 != 2) {
                      if (var9 == 1) {

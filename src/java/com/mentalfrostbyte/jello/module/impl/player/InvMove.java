@@ -9,6 +9,8 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.inventory.ChestScreen;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.network.play.client.CEntityActionPacket;
 import org.lwjgl.glfw.GLFW;
 
@@ -46,7 +48,7 @@ public class InvMove extends Module {
     private void method16585(TickEvent var1) {
         if (this.isEnabled()) {
             if (this.getBooleanValueFromSetttingName("AACP")) {
-                boolean var4 = !(mc.currentScreen instanceof InventoryScreen) || !(mc.currentScreen instanceof Class868);
+                boolean var4 = !(mc.currentScreen instanceof InventoryScreen) || !(mc.currentScreen instanceof ChestScreen);
                 if (this.field23757 && !var4) {
                     this.field23757 = !this.field23757;
                     if (mc.player.isSprinting()) {
@@ -60,7 +62,7 @@ public class InvMove extends Module {
                 }
             }
 
-            if (mc.currentScreen instanceof Class851 || Client.getInstance().getPlayerTracker().focusGameTicks() <= 1) {
+            if (mc.currentScreen instanceof ContainerScreen || Client.getInstance().getPlayerTracker().focusGameTicks() <= 1) {
                 if (mc.currentScreen instanceof ChatScreen) {
                     return;
                 }

@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.SoundEvents;
@@ -30,7 +31,7 @@ public class Class1209 extends Button {
          var8 += 13;
       }
 
-      this.method5696(var1, this.field6477, this.field6478, var7, var8, 23, 13);
+      this.blit(var1, this.field6477, this.field6478, var7, var8, 23, 13);
    }
 
    @Override

@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,7 +20,7 @@ public class InventoryScreen extends Class860<PlayerContainer> implements Class8
 
    public InventoryScreen(PlayerEntity var1) {
       super(var1.container, var1.inventory, new TranslationTextComponent("container.crafting"));
-      this.field4567 = true;
+      this.passEvents = true;
       this.field4723 = 97;
    }
 
@@ -39,13 +40,13 @@ public class InventoryScreen extends Class860<PlayerContainer> implements Class8
          this.field4770 = this.width < 379;
          this.field4768.method5833(this.width, this.height, this.mc, this.field4770, this.field4727);
          this.field4769 = true;
-         this.field4734 = this.field4768.method5837(this.field4770, this.width, this.field4721);
+         this.field4734 = this.field4768.method5837(this.field4770, this.width, this.xSize);
          this.field4561.add(this.field4768);
          this.setFocusedDefault(this.field4768);
          this.<Class1243>addButton(new Class1243(this.field4734 + 104, this.height / 2 - 22, 20, 18, 0, 0, 19, field4765, var1 -> {
             this.field4768.method5834(this.field4770);
             this.field4768.method5838();
-            this.field4734 = this.field4768.method5837(this.field4770, this.width, this.field4721);
+            this.field4734 = this.field4768.method5837(this.field4770, this.width, this.xSize);
             ((Class1243)var1).method5819(this.field4734 + 104, this.height / 2 - 22);
             this.field4771 = true;
          }));
@@ -72,7 +73,7 @@ public class InventoryScreen extends Class860<PlayerContainer> implements Class8
          this.field4768.method5850(var1, this.field4734, this.field4735, false, var4);
       }
 
-      this.method2615(var1, var2, var3);
+      this.renderHoveredTooltip(var1, var2, var3);
       this.field4768.method5846(var1, this.field4734, this.field4735, var2, var3);
       this.field4766 = (float)var2;
       this.field4767 = (float)var3;
@@ -84,7 +85,7 @@ public class InventoryScreen extends Class860<PlayerContainer> implements Class8
       this.mc.getTextureManager().bindTexture(field4720);
       int var7 = this.field4734;
       int var8 = this.field4735;
-      this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
+      this.blit(var1, var7, var8, 0, 0, this.xSize, this.ySize);
       method2635(var7 + 51, var8 + 75, 30, (float)(var7 + 51) - this.field4766, (float)(var8 + 75 - 50) - this.field4767, this.mc.player);
    }
 
@@ -154,8 +155,8 @@ public class InventoryScreen extends Class860<PlayerContainer> implements Class8
 
    @Override
    public boolean method2623(double var1, double var3, int var5, int var6, int var7) {
-      boolean var10 = var1 < (double)var5 || var3 < (double)var6 || var1 >= (double)(var5 + this.field4721) || var3 >= (double)(var6 + this.field4722);
-      return this.field4768.method5852(var1, var3, this.field4734, this.field4735, this.field4721, this.field4722, var7) && var10;
+      boolean var10 = var1 < (double)var5 || var3 < (double)var6 || var1 >= (double)(var5 + this.xSize) || var3 >= (double)(var6 + this.ySize);
+      return this.field4768.method5852(var1, var3, this.field4734, this.field4735, this.xSize, this.ySize, var7) && var10;
    }
 
    @Override

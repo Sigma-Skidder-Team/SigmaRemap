@@ -1,7 +1,9 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CRenameItemPacket;
 import net.minecraft.util.ResourceLocation;
@@ -28,8 +30,8 @@ public class Class1124 extends Class875<Class5824> {
    @Override
    public void method2716() {
       this.mc.keyboardListener.enableRepeatEvents(true);
-      int var3 = (this.width - this.field4721) / 2;
-      int var4 = (this.height - this.field4722) / 2;
+      int var3 = (this.width - this.xSize) / 2;
+      int var4 = (this.height - this.ySize) / 2;
       this.field6160 = new TextFieldWidget(this.fontRenderer, var3 + 62, var4 + 24, 103, 12, new TranslationTextComponent("container.repair"));
       this.field6160.method5669(false);
       this.field6160.method5662(-1);
@@ -97,9 +99,9 @@ public class Class1124 extends Class875<Class5824> {
          }
 
          if (var8 != null) {
-            int var9 = this.field4721 - 8 - this.fontRenderer.method38821((ITextProperties)var8) - 2;
+            int var9 = this.xSize - 8 - this.fontRenderer.method38821((ITextProperties)var8) - 2;
             byte var10 = 69;
-            method5686(var1, var9 - 2, 67, this.field4721 - 8, 79, 1325400064);
+            method5686(var1, var9 - 2, 67, this.xSize - 8, 79, 1325400064);
             this.fontRenderer.method38803(var1, (ITextComponent)var8, (float)var9, 69.0F, var7);
          }
       }

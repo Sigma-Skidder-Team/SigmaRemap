@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.Widget;
@@ -80,7 +81,7 @@ public class Class1199 extends Widget {
          this.field6497 -= var4;
       }
 
-      this.method5696(var1, this.field6477, this.field6478, var8, var9, this.field6475, this.field6476);
+      this.blit(var1, this.field6477, this.field6478, var8, var9, this.field6475, this.field6476);
       List var14 = this.method5755();
       this.field6498 = MathHelper.method37767(this.field6496 / 30.0F) % var14.size();
       ItemStack var12 = ((IRecipe)var14.get(this.field6498)).getRecipeOutput();

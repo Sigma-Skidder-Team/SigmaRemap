@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
+import net.minecraft.client.gui.screen.inventory.ChestScreen;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -129,7 +130,7 @@ public class ChestStealer extends Module {
     @EventTarget
     public void method16367(EventRender var1) {
         if (this.isEnabled()) {
-            if (!(mc.currentScreen instanceof Class868)) {
+            if (!(mc.currentScreen instanceof ChestScreen)) {
                 this.field23621 = false;
                 this.field23623.stop();
                 this.field23623.method27120();
@@ -147,7 +148,7 @@ public class ChestStealer extends Module {
                             mc.player.method2772();
                         }
                     } else {
-                        Class868 var4 = (Class868) mc.currentScreen;
+                        ChestScreen var4 = (ChestScreen) mc.currentScreen;
                         if (!this.method16368(var4)) {
                             if (this.field23625 != null) {
                                 this.field23622.put(this.field23625, true);
@@ -205,7 +206,7 @@ public class ChestStealer extends Module {
         }
     }
 
-    private boolean method16368(Class868 var1) {
+    private boolean method16368(ChestScreen var1) {
         List<String> var4 = new ArrayList<>(
                 Arrays.asList(
                         "menu",

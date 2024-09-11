@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
 
 public class Class1212 extends Class1210 {
@@ -14,7 +15,7 @@ public class Class1212 extends Class1210 {
          ResourceLocation var7 = new ResourceLocation("optifine/textures/icons.png");
          Class7944.method26861().bindTexture(var7);
          GlStateManager.method23843(1.0F, 1.0F, 1.0F, 1.0F);
-         this.method5696(var1, this.field6477 + 3, this.field6478 + 2, 0, 0, 16, 16);
+         this.blit(var1, this.field6477 + 3, this.field6478 + 2, 0, 0, 16, 16);
       }
    }
 }

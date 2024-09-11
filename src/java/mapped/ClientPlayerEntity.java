@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
 import net.minecraft.item.ItemStack;
@@ -791,7 +792,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          }
       } else {
          if (this.field6132.currentScreen != null && !this.field6132.currentScreen.isPauseScreen()) {
-            if (this.field6132.currentScreen instanceof Class851) {
+            if (this.field6132.currentScreen instanceof ContainerScreen) {
                this.method2772();
             }
 

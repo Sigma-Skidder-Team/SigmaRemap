@@ -1,7 +1,10 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -11,7 +14,7 @@ import net.minecraft.util.text.ITextComponent;
 
 import java.util.List;
 
-public class Class865 extends Class851<Class5837> {
+public class Class865 extends ContainerScreen<Class5837> {
    private static final ResourceLocation field4801 = new ResourceLocation("textures/gui/container/loom.png");
    private static final int field4802 = (Class2154.field14124 - Class2154.field14125 - 1 + 4 - 1) / 4;
    private final Class7219 field4803;
@@ -36,7 +39,7 @@ public class Class865 extends Class851<Class5837> {
    @Override
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       super.render(var1, var2, var3, var4);
-      this.method2615(var1, var2, var3);
+      this.renderHoveredTooltip(var1, var2, var3);
    }
 
    @Override
@@ -45,25 +48,25 @@ public class Class865 extends Class851<Class5837> {
       this.mc.getTextureManager().bindTexture(field4801);
       int var7 = this.field4734;
       int var8 = this.field4735;
-      this.method5696(var1, var7, var8, 0, 0, this.field4721, this.field4722);
+      this.blit(var1, var7, var8, 0, 0, this.xSize, this.ySize);
       Slot var9 = this.field4727.method18247();
       Slot var10 = this.field4727.method18248();
       Slot var11 = this.field4727.method18249();
       Slot var12 = this.field4727.method18250();
       if (!var9.getHasStack()) {
-         this.method5696(var1, var7 + var9.field25580, var8 + var9.field25581, this.field4721, 0, 16, 16);
+         this.blit(var1, var7 + var9.field25580, var8 + var9.field25581, this.xSize, 0, 16, 16);
       }
 
       if (!var10.getHasStack()) {
-         this.method5696(var1, var7 + var10.field25580, var8 + var10.field25581, this.field4721 + 16, 0, 16, 16);
+         this.blit(var1, var7 + var10.field25580, var8 + var10.field25581, this.xSize + 16, 0, 16, 16);
       }
 
       if (!var11.getHasStack()) {
-         this.method5696(var1, var7 + var11.field25580, var8 + var11.field25581, this.field4721 + 32, 0, 16, 16);
+         this.blit(var1, var7 + var11.field25580, var8 + var11.field25581, this.xSize + 32, 0, 16, 16);
       }
 
       int var13 = (int)(41.0F * this.field4811);
-      this.method5696(var1, var7 + 119, var8 + 13 + var13, 232 + (!this.field4808 ? 12 : 0), 0, 12, 15);
+      this.blit(var1, var7 + 119, var8 + 13 + var13, 232 + (!this.field4808 ? 12 : 0), 0, 12, 15);
       Class7516.method24502();
       if (this.field4804 != null && !this.field4810) {
          Class7735 var14 = this.mc.getRenderTypeBuffers().method26536();
@@ -79,7 +82,7 @@ public class Class865 extends Class851<Class5837> {
          var1.pop();
          var14.method25602();
       } else if (this.field4810) {
-         this.method5696(var1, var7 + var12.field25580 - 2, var8 + var12.field25581 - 2, this.field4721, 17, 17, 16);
+         this.blit(var1, var7 + var12.field25580 - 2, var8 + var12.field25581 - 2, this.xSize, 17, 17, 16);
       }
 
       if (!this.field4808) {
@@ -87,7 +90,7 @@ public class Class865 extends Class851<Class5837> {
             int var22 = var7 + 60;
             int var24 = var8 + 13;
             this.mc.getTextureManager().bindTexture(field4801);
-            this.method5696(var1, var22, var24, 0, this.field4722, 14, 14);
+            this.blit(var1, var22, var24, 0, this.ySize, 14, 14);
             int var16 = this.field4727.method18244();
             this.method2677(var16, var22, var24);
          }
@@ -101,7 +104,7 @@ public class Class865 extends Class851<Class5837> {
             int var19 = var23 + var18 % 4 * 14;
             int var20 = var25 + var18 / 4 * 14;
             this.mc.getTextureManager().bindTexture(field4801);
-            int var21 = this.field4722;
+            int var21 = this.ySize;
             if (var17 != this.field4727.method18244()) {
                if (var3 >= var19 && var4 >= var20 && var3 < var19 + 14 && var4 < var20 + 14) {
                   var21 += 28;
@@ -110,7 +113,7 @@ public class Class865 extends Class851<Class5837> {
                var21 += 14;
             }
 
-            this.method5696(var1, var19, var20, 0, var21, 14, 14);
+            this.blit(var1, var19, var20, 0, var21, 14, 14);
             this.method2677(var17, var19, var20);
          }
       }
@@ -206,7 +209,7 @@ public class Class865 extends Class851<Class5837> {
 
    @Override
    public boolean method2623(double var1, double var3, int var5, int var6, int var7) {
-      return var1 < (double)var5 || var3 < (double)var6 || var1 >= (double)(var5 + this.field4721) || var3 >= (double)(var6 + this.field4722);
+      return var1 < (double)var5 || var3 < (double)var6 || var1 >= (double)(var5 + this.xSize) || var3 >= (double)(var6 + this.ySize);
    }
 
    private void method2678() {

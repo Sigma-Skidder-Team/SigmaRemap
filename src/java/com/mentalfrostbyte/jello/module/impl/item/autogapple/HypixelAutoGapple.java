@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.item.AutoGapple;
 import mapped.*;
+import net.minecraft.client.gui.screen.inventory.ChestScreen;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemPacket;
 import net.minecraft.util.Hand;
@@ -32,7 +33,7 @@ public class HypixelAutoGapple extends PremiumModule {
 
     @EventTarget
     public void onUpdate(EventUpdate var1) {
-        if (this.isEnabled() && var1.isPre() && !(mc.currentScreen instanceof Class868)) {
+        if (this.isEnabled() && var1.isPre() && !(mc.currentScreen instanceof ChestScreen)) {
             if (this.gappleCooldown < 20) {
                 this.gappleCooldown++;
             }

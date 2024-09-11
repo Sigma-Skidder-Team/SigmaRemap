@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.HandSide;
 
 public class Class2823<T extends Class1025> extends Class2803<T> implements Class2825, Class2824 {

@@ -1,5 +1,8 @@
 package mapped;
 
+import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CSelectTradePacket;
 import net.minecraft.util.ResourceLocation;
@@ -8,7 +11,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class862 extends Class851<Class5826> {
+public class Class862 extends ContainerScreen<Class5826> {
    private static final ResourceLocation field4786 = new ResourceLocation("textures/gui/container/villager2.png");
    private static final ITextComponent field4787 = new TranslationTextComponent("merchant.trades");
    private static final ITextComponent field4788 = new StringTextComponent(" - ");
@@ -20,7 +23,7 @@ public class Class862 extends Class851<Class5826> {
 
    public Class862(Class5826 var1, PlayerInventory var2, ITextComponent var3) {
       super(var1, var2, var3);
-      this.field4721 = 276;
+      this.xSize = 276;
       this.field4725 = 107;
    }
 
@@ -33,8 +36,8 @@ public class Class862 extends Class851<Class5826> {
    @Override
    public void init() {
       super.init();
-      int var3 = (this.width - this.field4721) / 2;
-      int var4 = (this.height - this.field4722) / 2;
+      int var3 = (this.width - this.xSize) / 2;
+      int var4 = (this.height - this.ySize) / 2;
       int var5 = var4 + 16 + 2;
 
       for (int var6 = 0; var6 < 7; var6++) {
@@ -54,13 +57,13 @@ public class Class862 extends Class851<Class5826> {
       if (var6 > 0 && var6 <= 5 && this.field4727.method18218()) {
          IFormattableTextComponent var7 = this.title.deepCopy().append(field4788).append(new TranslationTextComponent("merchant.level." + var6));
          int var8 = this.fontRenderer.method38821(var7);
-         int var9 = 49 + this.field4721 / 2 - var8 / 2;
+         int var9 = 49 + this.xSize / 2 - var8 / 2;
          this.fontRenderer.func_243248_b(var1, var7, (float)var9, 6.0F, 4210752);
       } else {
-         this.fontRenderer.func_243248_b(var1, this.title, (float)(49 + this.field4721 / 2 - this.fontRenderer.method38821(this.title) / 2), 6.0F, 4210752);
+         this.fontRenderer.func_243248_b(var1, this.title, (float)(49 + this.xSize / 2 - this.fontRenderer.method38821(this.title) / 2), 6.0F, 4210752);
       }
 
-      this.fontRenderer.func_243248_b(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.field4726, 4210752);
+      this.fontRenderer.func_243248_b(var1, this.field4728.getDisplayName(), (float)this.field4725, (float)this.playerInventoryTitleY, 4210752);
       int var10 = this.fontRenderer.method38821(field4787);
       this.fontRenderer.func_243248_b(var1, field4787, (float)(5 - var10 / 2 + 48), 6.0F, 4210752);
    }
@@ -69,9 +72,9 @@ public class Class862 extends Class851<Class5826> {
    public void method2618(MatrixStack var1, float var2, int var3, int var4) {
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       this.mc.getTextureManager().bindTexture(field4786);
-      int var7 = (this.width - this.field4721) / 2;
-      int var8 = (this.height - this.field4722) / 2;
-      method5697(var1, var7, var8, this.method5702(), 0.0F, 0.0F, this.field4721, this.field4722, 256, 512);
+      int var7 = (this.width - this.xSize) / 2;
+      int var8 = (this.height - this.ySize) / 2;
+      method5697(var1, var7, var8, this.method5702(), 0.0F, 0.0F, this.xSize, this.ySize, 256, 512);
       Class46 var9 = this.field4727.method18217();
       if (!var9.isEmpty()) {
          int var10 = this.field4790;
@@ -132,8 +135,8 @@ public class Class862 extends Class851<Class5826> {
       super.render(var1, var2, var3, var4);
       Class46 var7 = this.field4727.method18217();
       if (!var7.isEmpty()) {
-         int var8 = (this.width - this.field4721) / 2;
-         int var9 = (this.height - this.field4722) / 2;
+         int var8 = (this.width - this.xSize) / 2;
+         int var9 = (this.height - this.ySize) / 2;
          int var10 = var9 + 16 + 1;
          int var11 = var8 + 5 + 5;
          RenderSystem.pushMatrix();
@@ -189,7 +192,7 @@ public class Class862 extends Class851<Class5826> {
          RenderSystem.enableDepthTest();
       }
 
-      this.method2615(var1, var2, var3);
+      this.renderHoveredTooltip(var1, var2, var3);
    }
 
    private void method2664(MatrixStack var1, Class9346 var2, int var3, int var4) {
@@ -251,8 +254,8 @@ public class Class862 extends Class851<Class5826> {
    @Override
    public boolean mouseClicked(double var1, double var3, int var5) {
       this.field4793 = false;
-      int var8 = (this.width - this.field4721) / 2;
-      int var9 = (this.height - this.field4722) / 2;
+      int var8 = (this.width - this.xSize) / 2;
+      int var9 = (this.height - this.ySize) / 2;
       if (this.method2666(this.field4727.method18217().size())
          && var1 > (double)(var8 + 94)
          && var1 < (double)(var8 + 94 + 6)
