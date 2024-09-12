@@ -93,7 +93,7 @@ public class AutoSoup extends Module {
         this.field23432 = true;
         if (this.getStringSettingValueByName("Refill mode").equals("FakeInv")
                 && !(mc.currentScreen instanceof InventoryScreen)
-                && JelloPortal.getFakeInvStatus() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
+                && JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
             mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
             this.field23433 = true;
         }

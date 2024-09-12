@@ -75,7 +75,7 @@ public class VanillaFly extends Module {
         if (this.isEnabled()) {
             if (!mc.player.onGround && this.getBooleanValueFromSetttingName("Kick bypass")) {
                 if (this.field23996 > 0 && this.field23996 % 30 == 0 && !ColorUtils.method17730(mc.player, 0.01F)) {
-                    if (JelloPortal.getFakeInvStatus() != ViaVerList._1_8_x.getVersionNumber()) {
+                    if (JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber()) {
                         var1.setY(var1.getY() - 0.04);
                     } else {
                         double var4 = this.method16920();

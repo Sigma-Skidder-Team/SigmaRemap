@@ -35,7 +35,7 @@ public class Cubecraft2Fly extends PremiumModule {
             this.field23699 = true;
         }
 
-        if (ColorUtils.method17718() && JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getVersionNumber()) {
+        if (ColorUtils.method17718() && JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber()) {
             Client.getInstance().getNotificationManager().post(new Notification("Cubecraft2 fly", "This fly was made for 1.9+ only"));
         }
 

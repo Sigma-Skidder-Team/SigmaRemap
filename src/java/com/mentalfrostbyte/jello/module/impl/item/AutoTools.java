@@ -66,7 +66,7 @@ public class AutoTools extends Module {
                         return;
                     }
 
-                    if (invMode.equals("FakeInv") && JelloPortal.getFakeInvStatus() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
+                    if (invMode.equals("FakeInv") && JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
                         mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
                     }
 

@@ -379,7 +379,7 @@ public class AutoCrystal extends PremiumModule {
             if (mc.player.container.getSlot(var5).getHasStack()) {
                 ItemStack var6 = mc.player.container.getSlot(var5).getStack();
                 if (var6.getItem() == Items.END_CRYSTAL) {
-                    if (JelloPortal.getFakeInvStatus() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
+                    if (JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
                         mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
                     }
 

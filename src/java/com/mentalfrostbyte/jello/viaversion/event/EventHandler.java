@@ -13,7 +13,7 @@ import java.util.UUID;
 public class EventHandler implements PlayerHandler<ClientPlayerEntity> {
    public int method33426(ClientPlayerEntity var1) {
       if (var1 != null) {
-         return JelloPortal.getFakeInventoryThreshold();
+         return JelloPortal.getDefaultVersionNumber();
       } else {
          throw new NullPointerException("player is marked non-null but is null");
       }
@@ -22,7 +22,7 @@ public class EventHandler implements PlayerHandler<ClientPlayerEntity> {
    @Override
    public int method33415(UUID var1) {
       if (var1 != null) {
-         return JelloPortal.getFakeInventoryThreshold();
+         return JelloPortal.getDefaultVersionNumber();
       } else {
          throw new NullPointerException("uuid is marked non-null but is null");
       }

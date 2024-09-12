@@ -492,7 +492,7 @@ public class InvManager extends PremiumModule {
     }
 
     private void method16446(boolean var1) {
-        if (var1 && this.field23659 && !(mc.currentScreen instanceof InventoryScreen) && JelloPortal.getFakeInvStatus() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
+        if (var1 && this.field23659 && !(mc.currentScreen instanceof InventoryScreen) && JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
             mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
             this.field23659 = false;
         }

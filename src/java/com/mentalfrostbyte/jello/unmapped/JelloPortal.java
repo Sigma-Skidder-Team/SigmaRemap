@@ -59,12 +59,12 @@ public class JelloPortal implements Class8006<ClientPlayerEntity> {
       }
    }
 
-   public static int getFakeInventoryThreshold() {
+   public static int getDefaultVersionNumber() {
       return defaultVersion.getVersionNumber();
    }
 
-   public static int getFakeInvStatus() {
-      return currentVersion == null ? ViaVerList._1_8_x.getVersionNumber() : currentVersion.getVersionNumber();
+   public static int getCurrentVersionApplied() {
+      return currentVersion == null ? ViaVerList._1_16_4.getVersionNumber() : currentVersion.getVersionNumber();
    }
 
    @Override

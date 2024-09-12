@@ -232,7 +232,7 @@ public class Class1262 extends AbstractGui {
       BlockPos var8 = this.field6665.getRenderViewEntity().getPosition();
       String var9 = SharedConstants.getVersion().getName();
       if (!this.field6665.isSingleplayer()) {
-         var9 = ViaVerList.getVersionByNumber(JelloPortal.getFakeInvStatus()).getVersionName();
+         var9 = ViaVerList.getVersionByNumber(JelloPortal.getCurrentVersionApplied()).getVersionName();
       }
 
       if (this.field6665.isReducedDebug()) {

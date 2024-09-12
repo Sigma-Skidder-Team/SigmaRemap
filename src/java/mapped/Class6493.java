@@ -16,7 +16,7 @@ public class Class6493 extends Class6490 {
    @Override
    public Set<Class8189> method19687(BlockPos var1, BlockState var2, Class8982 var3) {
       HashSet var6 = new HashSet();
-      if (JelloPortal.getFakeInvStatus() == ViaVerList._1_8_x.getVersionNumber() && this.field28457.getCurrentServerData() != null) {
+      if (JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber() && this.field28457.getCurrentServerData() != null) {
          var6.add(new Class8189(var1, Blocks.AIR.method11579()));
          return var6;
       } else {

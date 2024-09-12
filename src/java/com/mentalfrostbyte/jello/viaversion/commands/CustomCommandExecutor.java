@@ -28,7 +28,7 @@ public class CustomCommandExecutor implements Class6749 {
    }
 
    public static int method20579() {
-      return JelloPortal.getFakeInvStatus();
+      return JelloPortal.getCurrentVersionApplied();
    }
 
    @Override
