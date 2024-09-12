@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.CreateWorldScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
@@ -54,7 +55,7 @@ public class Class1276 extends Class1274<Class1173> {
       }
 
       if (this.field6815.isEmpty()) {
-         this.field6782.displayGuiScreen(Class1335.method6353((Screen)null));
+         this.field6782.displayGuiScreen(CreateWorldScreen.func_243425_a((Screen)null));
       } else {
          String var6 = ((String)var1.get()).toLowerCase(Locale.ROOT);
 

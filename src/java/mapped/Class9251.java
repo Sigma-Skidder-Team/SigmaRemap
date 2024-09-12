@@ -11,6 +11,7 @@ import java.util.Collections;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
+import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import org.apache.logging.log4j.LogManager;
@@ -41,7 +42,7 @@ public class Class9251 {
       field42556.info("Total conversion count is {}", var10);
       DynamicRegistriesImpl var11 = DynamicRegistries.func_239770_b_();
       WorldSettingsImport var12 = WorldSettingsImport.create(NBTDynamicOps.INSTANCE, Class190.field721, var11);
-      IServerConfiguration var13 = var0.readServerConfiguration(var12, DatapackCodec.field33531);
+      IServerConfiguration var13 = var0.readServerConfiguration(var12, DatapackCodec.VANILLA_CODEC);
       long var14 = var13 == null ? 0L : var13.getDimensionGeneratorSettings().method26259();
       MutableRegistry<Biome> var16 = var11.getRegistry(Registry.BIOME_KEY);
       Object var17;

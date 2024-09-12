@@ -21,7 +21,7 @@ public class Class4322 extends Screen {
    private float field21086 = 0.0F;
    private Texture field21087;
    private LoginScreen field21088;
-   private Class4275 field21089;
+   private AccountSignUpScreen field21089;
    private AlertPanel field21090;
    private UIButton field21091;
    private boolean field21092 = false;
@@ -42,13 +42,13 @@ public class Class4322 extends Screen {
          )
       );
       this.addToList(
-         this.field21089 = new Class4275(
+         this.field21089 = new AccountSignUpScreen(
             this,
             "register",
-            (this.field20897 - Class4275.field20722) / 2,
-            (this.field20898 - Class4275.field20721) / 2,
-            Class4275.field20722,
-            Class4275.field20721
+            (this.field20897 - AccountSignUpScreen.field20722) / 2,
+            (this.field20898 - AccountSignUpScreen.field20721) / 2,
+            AccountSignUpScreen.field20722,
+            AccountSignUpScreen.field20721
          )
       );
       this.method13423();

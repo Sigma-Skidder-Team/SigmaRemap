@@ -98,7 +98,6 @@ public class Class4341 extends Class4339 implements Class4342 {
    public void method13028(int var1, int var2) {
       super.method13028(var1, var2);
       JelloClickGUIPanels var5 = (JelloClickGUIPanels)this.field20892;
-      Minecraft.getInstance();
       float var6 = (float)(0.07F * (60.0 / (double) Minecraft.getFps()));
       this.field21218 = this.field21218 + (!this.method13525() ? 0.0F : (!this.field21217 ? var6 : -var6));
       this.field21218 = Math.max(0.0F, Math.min(1.0F, this.field21218));

@@ -1,17 +1,17 @@
-package mapped;
+package net.minecraft.client.gui.screen;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.datafixers.util.Pair;
+import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
-import net.minecraft.client.gui.screen.PackScreen;
-import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
 import net.minecraft.resources.ResourcePackList;
+import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -33,7 +33,7 @@ import java.util.Optional;
 import java.util.OptionalLong;
 import java.util.stream.Stream;
 
-public class Class1335 extends Screen {
+public class CreateWorldScreen extends Screen {
    private static final Logger field7060 = LogManager.getLogger();
    private static final ITextComponent field7061 = new TranslationTextComponent("selectWorld.gameMode");
    private static final ITextComponent field7062 = new TranslationTextComponent("selectWorld.enterSeed");
@@ -66,10 +66,10 @@ public class Class1335 extends Screen {
    private ITextComponent field7089;
    private String field7090;
    private Class5462 field7091 = new Class5462();
-   public final Class1221 field7092;
+   public final WorldOptionsScreen field7092;
 
-   public Class1335(Screen var1, WorldSettings var2, DimensionGeneratorSettings var3, Path var4, DatapackCodec var5, DynamicRegistriesImpl var6) {
-      this(var1, var5, new Class1221(var6, var3, Class5970.method18504(var3), OptionalLong.of(var3.method26259())));
+   public CreateWorldScreen(Screen var1, WorldSettings var2, DimensionGeneratorSettings var3, Path var4, DatapackCodec var5, DynamicRegistriesImpl var6) {
+      this(var1, var5, new WorldOptionsScreen(var6, var3, BiomeGeneratorTypeScreens.method18504(var3), OptionalLong.of(var3.method26259())));
       this.field7090 = var2.method32426();
       this.field7074 = var2.method32430();
       this.field7075 = true;
@@ -91,25 +91,25 @@ public class Class1335 extends Screen {
       this.field7078 = var4;
    }
 
-   public static Class1335 method6353(Screen var0) {
-      DynamicRegistriesImpl var3 = DynamicRegistries.func_239770_b_();
-      return new Class1335(
-         var0,
-         DatapackCodec.field33531,
-         new Class1221(
-            var3,
+   public static CreateWorldScreen func_243425_a(Screen p_243425_0_) {
+      DynamicRegistriesImpl dynamicregistries$impl = DynamicRegistries.func_239770_b_();
+      return new CreateWorldScreen(
+         p_243425_0_,
+         DatapackCodec.VANILLA_CODEC,
+         new WorldOptionsScreen(
+            dynamicregistries$impl,
             DimensionGeneratorSettings.method26257(
-               var3.<DimensionType>getRegistry(Registry.DIMENSION_TYPE_KEY),
-               var3.<Biome>getRegistry(Registry.BIOME_KEY),
-               var3.<DimensionSettings>getRegistry(Registry.field16099)
+               dynamicregistries$impl.getRegistry(Registry.DIMENSION_TYPE_KEY),
+               dynamicregistries$impl.getRegistry(Registry.BIOME_KEY),
+               dynamicregistries$impl.getRegistry(Registry.NOISE_SETTINGS_KEY)
             ),
-            Optional.<Class5970>of(Class5970.field26025),
+            Optional.of(BiomeGeneratorTypeScreens.field_239066_a_),
             OptionalLong.empty()
          )
       );
    }
 
-   private Class1335(Screen var1, DatapackCodec var2, Class1221 var3) {
+   private CreateWorldScreen(Screen var1, DatapackCodec var2, WorldOptionsScreen var3) {
       super(new TranslationTextComponent("selectWorld.create"));
       this.field7067 = var1;
       this.field7090 = I18n.format("selectWorld.newWorld");
@@ -229,7 +229,7 @@ public class Class1335 extends Screen {
          if (var3.method26267()) {
             Class5462 var4 = new Class5462();
             var4.<Class7466>method17128(Class5462.field24232).method24175(false, (MinecraftServer)null);
-            var5 = new WorldSettings(this.field7068.getText().trim(), GameType.SPECTATOR, false, Difficulty.field14351, true, var4, DatapackCodec.field33531);
+            var5 = new WorldSettings(this.field7068.getText().trim(), GameType.SPECTATOR, false, Difficulty.field14351, true, var4, DatapackCodec.VANILLA_CODEC);
          } else {
             var5 = new WorldSettings(
                this.field7068.getText().trim(),
@@ -436,7 +436,7 @@ public class Class1335 extends Screen {
                                     new ConfirmScreen(
                                        var1xx -> {
                                           if (!var1xx) {
-                                             this.field7077 = DatapackCodec.field33531;
+                                             this.field7077 = DatapackCodec.VANILLA_CODEC;
                                              this.mc.displayGuiScreen(this);
                                           } else {
                                              this.method6364();
@@ -553,7 +553,7 @@ public class Class1335 extends Screen {
    }
 
    // $VF: synthetic method
-   public static String method6393(Class1335 var0) {
+   public static String method6393(CreateWorldScreen var0) {
       return var0.field7069;
    }
 
@@ -563,27 +563,27 @@ public class Class1335 extends Screen {
    }
 
    // $VF: synthetic method
-   public static Class2079 method6395(Class1335 var0) {
+   public static Class2079 method6395(CreateWorldScreen var0) {
       return var0.field7070;
    }
 
    // $VF: synthetic method
-   public static ITextComponent method6396(Class1335 var0) {
+   public static ITextComponent method6396(CreateWorldScreen var0) {
       return var0.field7089;
    }
 
    // $VF: synthetic method
-   public static ITextComponent method6397(Class1335 var0) {
+   public static ITextComponent method6397(CreateWorldScreen var0) {
       return var0.field7088;
    }
 
    // $VF: synthetic method
-   public static Difficulty method6398(Class1335 var0) {
+   public static Difficulty method6398(CreateWorldScreen var0) {
       return var0.field7073;
    }
 
    // $VF: synthetic method
-   public static boolean method6399(Class1335 var0) {
+   public static boolean method6399(CreateWorldScreen var0) {
       return var0.field7074;
    }
 }

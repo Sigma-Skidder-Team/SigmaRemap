@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.util.datafix.codec;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
@@ -6,7 +6,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import java.util.List;
 
 public class DatapackCodec {
-   public static final DatapackCodec field33531 = new DatapackCodec(ImmutableList.of("vanilla"), ImmutableList.of());
+   public static final DatapackCodec VANILLA_CODEC = new DatapackCodec(ImmutableList.of("vanilla"), ImmutableList.of());
    public static final Codec<DatapackCodec> field33532 = RecordCodecBuilder.create(
       var0 -> var0.group(
                Codec.STRING.listOf().fieldOf("Enabled").forGetter(var0x -> var0x.field33533),

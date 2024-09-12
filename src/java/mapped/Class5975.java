@@ -1,8 +1,9 @@
 package mapped;
 
+import net.minecraft.client.gui.screen.BiomeGeneratorTypeScreens;
 import net.minecraft.util.registry.Registry;
 
-public final class Class5975 extends Class5970 {
+public final class Class5975 extends BiomeGeneratorTypeScreens {
    public Class5975(String var1) {
       super(var1, null);
    }
@@ -11,7 +12,7 @@ public final class Class5975 extends Class5970 {
    public DimensionGeneratorSettings method18506(DynamicRegistriesImpl var1, long var2, boolean var4, boolean var5) {
       MutableRegistry<Biome> var8 = var1.getRegistry(Registry.BIOME_KEY);
       MutableRegistry<DimensionType> var9 = var1.getRegistry(Registry.DIMENSION_TYPE_KEY);
-      MutableRegistry<DimensionSettings> var10 = var1.getRegistry(Registry.field16099);
+      MutableRegistry<DimensionSettings> var10 = var1.getRegistry(Registry.NOISE_SETTINGS_KEY);
       return new DimensionGeneratorSettings(
          var2,
          var4,

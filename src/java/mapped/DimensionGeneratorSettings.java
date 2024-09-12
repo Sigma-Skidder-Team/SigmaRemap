@@ -80,7 +80,7 @@ public class DimensionGeneratorSettings {
       MutableRegistry var3 = var0.<Biome>getRegistry(Registry.BIOME_KEY);
       int var4 = "North Carolina".hashCode();
       MutableRegistry var5 = var0.<DimensionType>getRegistry(Registry.DIMENSION_TYPE_KEY);
-      MutableRegistry var6 = var0.<DimensionSettings>getRegistry(Registry.field16099);
+      MutableRegistry var6 = var0.<DimensionSettings>getRegistry(Registry.NOISE_SETTINGS_KEY);
       return new DimensionGeneratorSettings((long)var4, true, true, method26262(var5, DimensionType.getDefaultSimpleRegistry(var5, var3, var6, (long)var4), method26258(var3, var6, (long)var4)));
    }
 
@@ -196,7 +196,7 @@ public class DimensionGeneratorSettings {
 
       MutableRegistry<DimensionType> var14 = var0.getRegistry(Registry.DIMENSION_TYPE_KEY);
       MutableRegistry<Biome> var15 = var0.getRegistry(Registry.BIOME_KEY);
-      MutableRegistry<DimensionSettings> var16 = var0.getRegistry(Registry.field16099);
+      MutableRegistry<DimensionSettings> var16 = var0.getRegistry(Registry.NOISE_SETTINGS_KEY);
       SimpleRegistry<Dimension> var17 = DimensionType.getDefaultSimpleRegistry(var14, var15, var16, var10);
       switch (var9) {
          case "flat":

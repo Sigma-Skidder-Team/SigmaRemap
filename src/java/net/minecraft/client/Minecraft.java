@@ -47,6 +47,7 @@ import net.minecraft.client.util.Splashes;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.Timer;
+import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.registry.Registry;

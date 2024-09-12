@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.client.gui.screen;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonIOException;
@@ -9,9 +9,9 @@ import com.mojang.serialization.DataResult;
 import com.mojang.serialization.JsonOps;
 import com.mojang.serialization.Lifecycle;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
+import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
@@ -34,7 +34,7 @@ import java.util.OptionalLong;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
-public class Class1221 implements IScreen, Class1190 {
+public class WorldOptionsScreen implements IScreen, Class1190 {
    private static final Logger field6549 = LogManager.getLogger();
    private static final ITextComponent field6550 = new TranslationTextComponent("generator.custom");
    private static final ITextComponent field6551 = new TranslationTextComponent("generator.amplified.info");
@@ -50,17 +50,17 @@ public class Class1221 implements IScreen, Class1190 {
    private Button field6561;
    private DynamicRegistriesImpl field6562;
    private DimensionGeneratorSettings field6563;
-   private Optional<Class5970> field6564;
+   private Optional<BiomeGeneratorTypeScreens> field6564;
    private OptionalLong field6565;
 
-   public Class1221(DynamicRegistriesImpl var1, DimensionGeneratorSettings var2, Optional<Class5970> var3, OptionalLong var4) {
+   public WorldOptionsScreen(DynamicRegistriesImpl var1, DimensionGeneratorSettings var2, Optional<BiomeGeneratorTypeScreens> var3, OptionalLong var4) {
       this.field6562 = var1;
       this.field6563 = var2;
       this.field6564 = var3;
       this.field6565 = var4;
    }
 
-   public void method5780(Class1335 var1, Minecraft var2, FontRenderer var3) {
+   public void method5780(CreateWorldScreen var1, Minecraft var2, FontRenderer var3) {
       this.field6554 = var3;
       this.field6555 = var1.width;
       this.field6556 = new TextFieldWidget(this.field6554, this.field6555 / 2 - 100, 60, 200, 20, new TranslationTextComponent("selectWorld.enterSeed"));
@@ -76,13 +76,13 @@ public class Class1221 implements IScreen, Class1190 {
       this.field6557.field6483 = false;
       this.field6559 = var1.<Button>addButton(new Class1227(this, var7, 100, 150, 20, new TranslationTextComponent("selectWorld.mapType"), var2x -> {
          while (this.field6564.isPresent()) {
-            int var5 = Class5970.field26033.indexOf(this.field6564.get()) + 1;
-            if (var5 >= Class5970.field26033.size()) {
+            int var5 = BiomeGeneratorTypeScreens.field26033.indexOf(this.field6564.get()) + 1;
+            if (var5 >= BiomeGeneratorTypeScreens.field26033.size()) {
                var5 = 0;
             }
 
-            Class5970 var6x = Class5970.field26033.get(var5);
-            this.field6564 = Optional.<Class5970>of(var6x);
+            BiomeGeneratorTypeScreens var6x = BiomeGeneratorTypeScreens.field26033.get(var5);
+            this.field6564 = Optional.<BiomeGeneratorTypeScreens>of(var6x);
             this.field6563 = var6x.method18506(this.field6562, this.field6563.method26259(), this.field6563.method26260(), this.field6563.method26261());
             if (!this.field6563.method26267() || Screen.method2476()) {
                break;
@@ -95,7 +95,7 @@ public class Class1221 implements IScreen, Class1190 {
       this.field6559.field6483 = false;
       this.field6559.active = this.field6564.isPresent();
       this.field6560 = var1.<Button>addButton(new Button(var7, 120, 150, 20, new TranslationTextComponent("selectWorld.customizeType"), var3x -> {
-         Class7837 var6x = Class5970.field26034.get(this.field6564);
+         Class7837 var6x = BiomeGeneratorTypeScreens.field26034.get(this.field6564);
          if (var6x != null) {
             var2.displayGuiScreen(var6x.method26250(var1, this.field6563));
          }
@@ -199,7 +199,7 @@ public class Class1221 implements IScreen, Class1190 {
    private void method5781(DynamicRegistriesImpl var1, DimensionGeneratorSettings var2) {
       this.field6562 = var1;
       this.field6563 = var2;
-      this.field6564 = Class5970.method18504(var2);
+      this.field6564 = BiomeGeneratorTypeScreens.method18504(var2);
       this.field6565 = OptionalLong.of(var2.method26259());
       this.field6556.method5635(method5783(this.field6565));
       this.field6559.active = this.field6564.isPresent();
@@ -217,7 +217,7 @@ public class Class1221 implements IScreen, Class1190 {
       }
 
       this.field6556.render(var1, var2, var3, var4);
-      if (this.field6564.equals(Optional.<Class5970>of(Class5970.field26028))) {
+      if (this.field6564.equals(Optional.<BiomeGeneratorTypeScreens>of(BiomeGeneratorTypeScreens.field26028))) {
          this.field6553.method18590(var1, this.field6559.field6477 + 2, this.field6559.field6478 + 22, 9, 10526880);
       }
    }
@@ -269,7 +269,7 @@ public class Class1221 implements IScreen, Class1190 {
       if (!this.field6563.method26267()) {
          this.field6557.field6483 = var1;
          this.field6558.field6483 = var1;
-         this.field6560.field6483 = var1 && Class5970.field26034.containsKey(this.field6564);
+         this.field6560.field6483 = var1 && BiomeGeneratorTypeScreens.field26034.containsKey(this.field6564);
          this.field6561.field6483 = var1;
       } else {
          this.field6557.field6483 = false;
@@ -297,7 +297,7 @@ public class Class1221 implements IScreen, Class1190 {
    }
 
    // $VF: synthetic method
-   public static DimensionGeneratorSettings method5801(Class1221 var0) {
+   public static DimensionGeneratorSettings method5801(WorldOptionsScreen var0) {
       return var0.field6563;
    }
 
@@ -307,7 +307,7 @@ public class Class1221 implements IScreen, Class1190 {
    }
 
    // $VF: synthetic method
-   public static Optional<Class5970> method5803(Class1221 var0) {
+   public static Optional<BiomeGeneratorTypeScreens> method5803(WorldOptionsScreen var0) {
       return var0.field6564;
    }
 

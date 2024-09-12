@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.GameType;
 

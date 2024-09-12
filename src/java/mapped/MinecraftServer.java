@@ -24,6 +24,7 @@ import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.CryptException;
 import net.minecraft.util.CryptManager;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
@@ -69,7 +70,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
    private static final Logger LOGGER = LogManager.getLogger();
    public static final File USER_CACHE_FILE = new File("usercache.json");
    public static final WorldSettings field1210 = new WorldSettings(
-      "Demo World", GameType.field11102, false, Difficulty.field14353, false, new Class5462(), DatapackCodec.field33531
+      "Demo World", GameType.field11102, false, Difficulty.field14353, false, new Class5462(), DatapackCodec.VANILLA_CODEC
    );
    public final SaveFormat.LevelSave field1211;
    public final Class8716 field1212;
@@ -216,7 +217,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       if (var13 == null) {
          var14 = this.field1224.method32454().getOrThrow(DimensionType.OVERWORLD);
          var15 = DimensionGeneratorSettings.method26258(
-            this.field1224.<Biome>getRegistry(Registry.BIOME_KEY), this.field1224.<DimensionSettings>getRegistry(Registry.field16099), new Random().nextLong()
+            this.field1224.<Biome>getRegistry(Registry.BIOME_KEY), this.field1224.<DimensionSettings>getRegistry(Registry.NOISE_SETTINGS_KEY), new Random().nextLong()
          );
       } else {
          var14 = var13.method36412();

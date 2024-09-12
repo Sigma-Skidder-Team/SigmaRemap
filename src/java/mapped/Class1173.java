@@ -6,10 +6,12 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.CreateWorldScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.lang3.StringUtils;
@@ -250,12 +252,12 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
          WorldSettings var8 = var6.getServerConfiguration().method20099();
          DatapackCodec var9 = var8.getDatapackCodec();
          DimensionGeneratorSettings var10 = var6.getServerConfiguration().getDimensionGeneratorSettings();
-         Path var11 = Class1335.method6369(var4.resolveFilePath(FolderName.DATAPACKS), this.field6351);
+         Path var11 = CreateWorldScreen.method6369(var4.resolveFilePath(FolderName.DATAPACKS), this.field6351);
          if (var10.func_236229_j_()) {
             this.field6351
                .displayGuiScreen(
                   new ConfirmScreen(
-                     var6x -> this.field6351.displayGuiScreen((Screen)(!var6x ? this.field6352 : new Class1335(this.field6352, var8, var10, var11, var9, var3))),
+                     var6x -> this.field6351.displayGuiScreen((Screen)(!var6x ? this.field6352 : new CreateWorldScreen(this.field6352, var8, var10, var11, var9, var3))),
                      new TranslationTextComponent("selectWorld.recreate.customized.title"),
                      new TranslationTextComponent("selectWorld.recreate.customized.text"),
                      DialogTexts.GUI_PROCEED,
@@ -263,7 +265,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
                   )
                );
          } else {
-            this.field6351.displayGuiScreen(new Class1335(this.field6352, var8, var10, var11, var9, var3));
+            this.field6351.displayGuiScreen(new CreateWorldScreen(this.field6352, var8, var10, var11, var9, var3));
          }
       } catch (Exception var39) {
          Class1276.method6078().error("Unable to recreate world", var39);

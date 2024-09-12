@@ -27,7 +27,7 @@ public abstract class DynamicRegistries {
          method32455(var2, Registry.field16103, Class9300.field43171);
          method32455(var2, Registry.field16104, Class7525.field32305);
          method32455(var2, Registry.field16105, Class9369.field43491);
-         method32455(var2, Registry.field16099, DimensionSettings.field43220);
+         method32455(var2, Registry.NOISE_SETTINGS_KEY, DimensionSettings.field43220);
          return var2.build();
       }
    );
@@ -77,7 +77,7 @@ public abstract class DynamicRegistries {
 
    private static <E> void method32458(DynamicRegistriesImpl var0, Class4382 var1, Class9305<E> var2) {
       RegistryKey<? extends Registry<E>> var5 = var2.method35116();
-      boolean var6 = !var5.equals(Registry.field16099) && !var5.equals(Registry.DIMENSION_TYPE_KEY);
+      boolean var6 = !var5.equals(Registry.NOISE_SETTINGS_KEY) && !var5.equals(Registry.DIMENSION_TYPE_KEY);
       MutableRegistry<E> var7 = field40300.getRegistry(var5);
       MutableRegistry<E> var8 = var0.getRegistry(var5);
 

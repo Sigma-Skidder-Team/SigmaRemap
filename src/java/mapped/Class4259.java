@@ -82,7 +82,6 @@ public class Class4259 extends Class4247 {
          float var13 = (float)(this.field20648.z * 16) - this.field20650 * 16.0F;
          float var14 = var12 + var9 / var11 * 16.0F;
          float var15 = var13 - var10 / var11 * 16.0F;
-         System.out.println(var10 / var11 + " : " + var9 / var11);
          this.method13081(var1, var2, new Vector3i(Math.round(var14), 0, Math.round(var15)));
          return false;
       } else {

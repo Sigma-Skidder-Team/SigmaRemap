@@ -1,8 +1,9 @@
 package mapped;
 
+import net.minecraft.client.gui.screen.BiomeGeneratorTypeScreens;
 import net.minecraft.util.registry.Registry;
 
-public final class Class5971 extends Class5970 {
+public final class Class5971 extends BiomeGeneratorTypeScreens {
    public Class5971(String var1) {
       super(var1, null);
    }

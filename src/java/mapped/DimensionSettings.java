@@ -26,7 +26,7 @@ public final class DimensionSettings {
             )
             .apply(var0, DimensionSettings::new)
    );
-   public static final Codec<Supplier<DimensionSettings>> field43221 = RegistryKeyCodec.create(Registry.field16099, field43220);
+   public static final Codec<Supplier<DimensionSettings>> field43221 = RegistryKeyCodec.create(Registry.NOISE_SETTINGS_KEY, field43220);
    private final Class9763 field43222;
    private final Class9556 field43223;
    private final BlockState field43224;
@@ -35,12 +35,12 @@ public final class DimensionSettings {
    private final int field43227;
    private final int field43228;
    private final boolean field43229;
-   public static final RegistryKey<DimensionSettings> field43230 = RegistryKey.<DimensionSettings>getOrCreateKey(Registry.field16099, new ResourceLocation("overworld"));
-   public static final RegistryKey<DimensionSettings> field43231 = RegistryKey.<DimensionSettings>getOrCreateKey(Registry.field16099, new ResourceLocation("amplified"));
-   public static final RegistryKey<DimensionSettings> field_242736_e = RegistryKey.<DimensionSettings>getOrCreateKey(Registry.field16099, new ResourceLocation("nether"));
-   public static final RegistryKey<DimensionSettings> field_242737_f = RegistryKey.<DimensionSettings>getOrCreateKey(Registry.field16099, new ResourceLocation("end"));
-   public static final RegistryKey<DimensionSettings> field43234 = RegistryKey.<DimensionSettings>getOrCreateKey(Registry.field16099, new ResourceLocation("caves"));
-   public static final RegistryKey<DimensionSettings> field43235 = RegistryKey.<DimensionSettings>getOrCreateKey(Registry.field16099, new ResourceLocation("floating_islands"));
+   public static final RegistryKey<DimensionSettings> field43230 = RegistryKey.<DimensionSettings>getOrCreateKey(Registry.NOISE_SETTINGS_KEY, new ResourceLocation("overworld"));
+   public static final RegistryKey<DimensionSettings> field43231 = RegistryKey.<DimensionSettings>getOrCreateKey(Registry.NOISE_SETTINGS_KEY, new ResourceLocation("amplified"));
+   public static final RegistryKey<DimensionSettings> field_242736_e = RegistryKey.<DimensionSettings>getOrCreateKey(Registry.NOISE_SETTINGS_KEY, new ResourceLocation("nether"));
+   public static final RegistryKey<DimensionSettings> field_242737_f = RegistryKey.<DimensionSettings>getOrCreateKey(Registry.NOISE_SETTINGS_KEY, new ResourceLocation("end"));
+   public static final RegistryKey<DimensionSettings> field43234 = RegistryKey.<DimensionSettings>getOrCreateKey(Registry.NOISE_SETTINGS_KEY, new ResourceLocation("caves"));
+   public static final RegistryKey<DimensionSettings> field43235 = RegistryKey.<DimensionSettings>getOrCreateKey(Registry.NOISE_SETTINGS_KEY, new ResourceLocation("floating_islands"));
    private static final DimensionSettings field43236 = method35169(field43230, method35173(new Class9763(true), false, field43230.getLocation()));
 
    private DimensionSettings(Class9763 var1, Class9556 var2, BlockState var3, BlockState var4, int var5, int var6, int var7, boolean var8) {

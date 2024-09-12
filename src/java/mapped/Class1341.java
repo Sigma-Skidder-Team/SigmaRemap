@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.CreateWorldScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.button.Button;
@@ -54,14 +55,17 @@ public class Class1341 extends Screen {
             var1 -> this.field7120.method6067().ifPresent(Class1173::method5578)
          )
       );
-      this.<Button>addButton(
+      this.addButton(
          new Button(
             this.width / 2 + 4,
             this.height - 52,
             150,
             20,
             new TranslationTextComponent("selectWorld.create"),
-            var1 -> this.mc.displayGuiScreen(Class1335.method6353(this))
+            var1 -> {
+               System.out.println("Creating new world");
+               this.mc.displayGuiScreen(CreateWorldScreen.func_243425_a(this));
+            }
          )
       );
       this.field7117 = this.<Button>addButton(

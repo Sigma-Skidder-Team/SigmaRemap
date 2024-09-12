@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 
-public class Class4275 extends Class4247 {
+public class AccountSignUpScreen extends Class4247 {
    private StringPanel field20712;
    private Class4281 field20713;
    private Class4281 field20714;
@@ -20,7 +20,7 @@ public class Class4275 extends Class4247 {
    public static int field20721 = 390;
    public static int field20722 = 590;
 
-   public Class4275(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+   public AccountSignUpScreen(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.addToList(
          this.field20712 = new StringPanel(

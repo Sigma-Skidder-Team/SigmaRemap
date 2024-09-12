@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.CreateWorldScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class Class1324 extends Screen {
-   public final Class1335 field7000;
+   public final CreateWorldScreen field7000;
    private final Consumer<Class9733> field7001;
    private Class9733 field7002;
    private ITextComponent field7003;
@@ -19,7 +20,7 @@ public class Class1324 extends Screen {
    private Class1285 field7005;
    private Button field7006;
 
-   public Class1324(Class1335 var1, Consumer<Class9733> var2, Class9733 var3) {
+   public Class1324(CreateWorldScreen var1, Consumer<Class9733> var2, Class9733 var3) {
       super(new TranslationTextComponent("createWorld.customize.flat.title"));
       this.field7000 = var1;
       this.field7001 = var2;

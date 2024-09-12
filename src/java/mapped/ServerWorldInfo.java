@@ -15,6 +15,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.util.UUIDCodec;
+import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.GameType;

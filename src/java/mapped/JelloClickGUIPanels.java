@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JelloClickGUIPanels extends Class4304 {
-   public final ModuleCategory field21193;
+   public final ModuleCategory category;
    public Class4341 field21194;
    public float field21195;
    public static final int field21196 = 60;
@@ -26,19 +26,19 @@ public class JelloClickGUIPanels extends Class4304 {
       this.method13268(200);
       this.method13270(350);
       this.field20886 = true;
-      this.field21193 = var5;
+      this.category = var5;
       this.method13505();
    }
 
    public void method13504() {
       this.method13222(() -> {
          this.method13236(this.field21194);
-         this.addToList(this.field21194 = new Class4341(this, "modListView", 0, 60, this.method13267(), this.method13269() - 60, this.field21193));
+         this.addToList(this.field21194 = new Class4341(this, "modListView", 0, 60, this.method13267(), this.method13269() - 60, this.category));
       });
    }
 
    private void method13505() {
-      this.addToList(this.field21194 = new Class4341(this, "modListView", 0, 60, this.method13267(), this.method13269() - 60, this.field21193));
+      this.addToList(this.field21194 = new Class4341(this, "modListView", 0, 60, this.method13267(), this.method13269() - 60, this.category));
       this.field21194.method13261(new Class6666());
       this.field21194.method13261((var0, var1) -> {
          var0.method13266(60);
@@ -147,7 +147,7 @@ public class JelloClickGUIPanels extends Class4304 {
    }
 
    public ModuleCategory method13506() {
-      return this.field21193;
+      return this.category;
    }
 
    public final void method13507(Class9476 var1) {

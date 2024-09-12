@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Lifecycle;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.GameType;
 

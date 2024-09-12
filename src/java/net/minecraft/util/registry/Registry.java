@@ -93,7 +93,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Class7131> field16096 = method9175(field16063, () -> Class8695.field39239);
    public static final Registry<LootFunctionType> LOOT_FUNCTION_TYPE = method9175(field16064, () -> LootFunctionManager.SET_COUNT);
    public static final Registry<Class7130> field16098 = method9175(field16065, () -> Class8582.field38595);
-   public static final RegistryKey<Registry<DimensionSettings>> field16099 = createKey("worldgen/noise_settings");
+   public static final RegistryKey<Registry<DimensionSettings>> NOISE_SETTINGS_KEY = createKey("worldgen/noise_settings");
    public static final RegistryKey<Registry<Class9319<?>>> field16100 = createKey("worldgen/configured_surface_builder");
    public static final RegistryKey<Registry<Class6815<?>>> field16101 = createKey("worldgen/configured_carver");
    public static final RegistryKey<Registry<Class7909<?, ?>>> field16102 = createKey("worldgen/configured_feature");

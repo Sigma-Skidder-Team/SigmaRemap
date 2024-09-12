@@ -34,6 +34,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.nbt.INBT;
+import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
@@ -107,7 +108,7 @@ public class SaveFormat {
                      .parse(var9)
                      .resultOrPartial(Util.func_240982_a_("Biome registry: ", field45713::error))
                      .orElseThrow(() -> new IllegalStateException("Failed to get biome registry"));
-                  Registry<DimensionSettings> var5x = Class8611.method30859(Registry.field16099)
+                  Registry<DimensionSettings> var5x = Class8611.method30859(Registry.NOISE_SETTINGS_KEY)
                      .codec()
                      .parse(var9)
                      .resultOrPartial(Util.func_240982_a_("Noise settings registry: ", field45713::error))
@@ -120,7 +121,7 @@ public class SaveFormat {
    }
 
    private static DatapackCodec method38457(Dynamic<?> var0) {
-      return DatapackCodec.field33532.parse(var0).resultOrPartial(field45713::error).orElse(DatapackCodec.field33531);
+      return DatapackCodec.field33532.parse(var0).resultOrPartial(field45713::error).orElse(DatapackCodec.VANILLA_CODEC);
    }
 
    public List<Class2024> method38458() throws Class2428 {
@@ -181,7 +182,7 @@ public class SaveFormat {
          var5.method133("Player");
          int var6 = var5.contains("DataVersion", 99) ? var5.getInt("DataVersion") : -1;
          Dynamic<INBT> var7 = var1.update(Class2108.field13748.method8778(), new Dynamic(NBTDynamicOps.INSTANCE, var5), var6, SharedConstants.getVersion().getWorldVersion());
-         return var7.get("DataPacks").result().map(SaveFormat::method38457).orElse(DatapackCodec.field33531);
+         return var7.get("DataPacks").result().map(SaveFormat::method38457).orElse(DatapackCodec.VANILLA_CODEC);
       } catch (Exception var8) {
          field45713.error("Exception reading {}", var0, var8);
          return null;
@@ -225,7 +226,7 @@ public class SaveFormat {
             } else {
                boolean var13 = var12 != this.method38459();
                File var14 = new File(var1, "icon.png");
-               DatapackCodec var15 = var10.get("DataPacks").result().map(SaveFormat::method38457).orElse(DatapackCodec.field33531);
+               DatapackCodec var15 = var10.get("DataPacks").result().map(SaveFormat::method38457).orElse(DatapackCodec.VANILLA_CODEC);
                WorldSettings var16 = WorldSettings.method32425(var10, var15);
                return new Class2024(var16, var11, var1.getName(), var13, var2, var14);
             }

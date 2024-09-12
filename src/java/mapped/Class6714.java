@@ -24,7 +24,7 @@ public class Class6714 {
    public static final Registry<Class3622> field29428 = method20493(Registry.field16104, () -> Class8523.field38251);
    public static final Registry<Class9369> field29429 = method20493(Registry.field16105, Class9837::method38885);
    public static final Registry<Biome> field29430 = method20493(Registry.BIOME_KEY, () -> Class8900.field40281);
-   public static final Registry<DimensionSettings> field29431 = method20493(Registry.field16099, DimensionSettings::method35170);
+   public static final Registry<DimensionSettings> field29431 = method20493(Registry.NOISE_SETTINGS_KEY, DimensionSettings::method35170);
 
    private static <T> Registry<T> method20493(RegistryKey<? extends Registry<T>> var0, Supplier<T> var1) {
       return method20494(var0, Lifecycle.stable(), var1);
