@@ -37,10 +37,10 @@ public class ModListViewPanel extends Class4339 implements Class4342 {
             .setTextColor(!module.isEnabled() ? ClientColors.DEEP_TEAL.getColor : ClientColors.LIGHT_GREYISH_BLUE.getColor);
          var12.method19412(Class2218.field14488);
          ButtonPanel moduleButton;
-         this.method13517()
+         this.getButtons()
             .addToList(
                moduleButton = new ButtonPanel(
-                  this.method13517(), module.getName() + "Button", 0, offset * 30, this.getWidth(), 30, var12, module.getName(), ResourceRegistry.JelloLightFont20
+                  this.getButtons(), module.getName() + "Button", 0, offset * 30, this.getWidth(), 30, var12, module.getName(), ResourceRegistry.JelloLightFont20
                )
             );
          if (!module.isEnabled()) {
@@ -77,7 +77,7 @@ public class ModListViewPanel extends Class4339 implements Class4342 {
          offset++;
       }
 
-      this.method13517().method13246(new Class7262(1));
+      this.getButtons().method13246(new Class7262(1));
    }
 
    private float method13523() {

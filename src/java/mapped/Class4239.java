@@ -59,7 +59,7 @@ public class Class4239 extends ButtonPanel implements Class4238 {
             (float)(var7 + var5 / 2),
             (float)(var8 + var6 / 2),
             this.method13303(),
-            ColorUtils.applyAlpha(this.field20914.method19409(), var1),
+            ColorUtils.applyAlpha(this.field20914.getTextColor(), var1),
             this.field20914.method19411(),
             this.field20914.method19413()
          );

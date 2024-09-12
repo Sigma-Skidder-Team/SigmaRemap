@@ -46,7 +46,7 @@ public class StringPanel extends Class4278 {
             (float)this.getX(),
             (float)this.getY(),
             this.method13303(),
-            ColorUtils.applyAlpha(this.field20914.method19409(), var1 * ColorUtils.method17710(this.field20914.method19409()))
+            ColorUtils.applyAlpha(this.field20914.getTextColor(), var1 * ColorUtils.method17710(this.field20914.getTextColor()))
          );
       }
    }

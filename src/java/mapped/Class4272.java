@@ -72,7 +72,7 @@ public class Class4272 extends Class4247 {
                });
             }
 
-            this.field20705.method13517().method13246(new Class7262(1));
+            this.field20705.getButtons().method13246(new Class7262(1));
          }
       );
       this.field20704 = var6;

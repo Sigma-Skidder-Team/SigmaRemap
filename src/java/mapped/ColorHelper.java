@@ -8,7 +8,7 @@ public class ColorHelper {
    public int field27962;
    public int field27963;
    public int field27964;
-   public int field27965;
+   public int textColor;
    public Class2218 field27966;
    public Class2218 field27967;
 
@@ -32,13 +32,13 @@ public class ColorHelper {
       this.field27962 = var1;
       this.field27963 = var2;
       this.field27964 = var3;
-      this.field27965 = var4;
+      this.textColor = var4;
       this.field27966 = var5;
       this.field27967 = var6;
    }
 
    public ColorHelper(ColorHelper var1) {
-      this(var1.field27962, var1.field27963, var1.field27964, var1.field27965, var1.field27966, var1.field27967);
+      this(var1.field27962, var1.field27963, var1.field27964, var1.textColor, var1.field27966, var1.field27967);
    }
 
    public int method19403() {
@@ -68,12 +68,12 @@ public class ColorHelper {
       return this;
    }
 
-   public int method19409() {
-      return this.field27965;
+   public int getTextColor() {
+      return this.textColor;
    }
 
-   public ColorHelper setTextColor(int var1) {
-      this.field27965 = var1;
+   public ColorHelper setTextColor(int color) {
+      this.textColor = color;
       return this;
    }
 
@@ -96,6 +96,6 @@ public class ColorHelper {
    }
 
    public ColorHelper method19415() {
-      return new ColorHelper(this.field27962, this.field27963, this.field27964, this.field27965, this.field27966, this.field27967);
+      return new ColorHelper(this.field27962, this.field27963, this.field27964, this.textColor, this.field27966, this.field27967);
    }
 }
