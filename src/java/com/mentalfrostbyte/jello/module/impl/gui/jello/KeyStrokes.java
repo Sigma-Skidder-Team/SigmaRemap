@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.BlurEngine;
 import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.animation.Animation;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 
@@ -24,66 +25,6 @@ public class KeyStrokes extends Module {
     public KeyStrokes() {
         super(ModuleCategory.GUI, "KeyStrokes", "Shows what keybind you are pressing");
         this.method16005(false);
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16307() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16308() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16309() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16310() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16311() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16312() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16313() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16314() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16315() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16316() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16317() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16318() {
-        return mc;
     }
 
     public Class2132 method16303(int var1) {
@@ -238,5 +179,81 @@ public class KeyStrokes extends Module {
     private void method16306(ClickEvent var1) {
         if (!this.isEnabled() || mc.player == null) {
         }
+    }
+
+    public enum Class2132 {
+       field13908(0.0F, 1.0F, mc.gameSettings.keyBindLeft),
+       field13909(2.0F, 1.0F, mc.gameSettings.keyBindRight),
+       field13910(1.0F, 0.0F, mc.gameSettings.keyBindForward),
+       field13911(1.0F, 1.0F, mc.gameSettings.keyBindBack),
+       field13912(0.0F, 2.0F, 74, mc.gameSettings.keyBindAttack),
+       field13913(1.02F, 2.0F, 73, mc.gameSettings.keyBindUseItem);
+
+       public float field13914;
+       public float field13915;
+       public int field13916 = 48;
+       public int field13917 = 48;
+       public int field13918 = 3;
+       public KeyBinding field13919;
+       private static final Class2132[] field13920 = new Class2132[]{field13908, field13909, field13910, field13911, field13912, field13913};
+
+       private Class2132(float var3, float var4, KeyBinding var5) {
+          this.field13914 = var3;
+          this.field13915 = var4;
+          this.field13919 = var5;
+       }
+
+       private Class2132(float var3, float var4, int var5, KeyBinding var6) {
+          this.field13914 = var3;
+          this.field13915 = var4;
+          this.field13919 = var6;
+          this.field13916 = var5;
+       }
+
+       public Class9268 method8814() {
+          return new Class9268(
+             this, (int)(this.field13914 * (float)(this.field13916 + this.field13918)), (int)(this.field13915 * (float)(this.field13917 + this.field13918))
+          );
+       }
+
+       public Class9268 method8815() {
+          return new Class9268(this, this.field13916, this.field13917);
+       }
+
+       public KeyBinding method8816() {
+          if (this != field13908) {
+             if (this != field13909) {
+                if (this != field13910) {
+                   if (this != field13911) {
+                      if (this != field13912) {
+                         return this != field13913 ? null : mc.gameSettings.keyBindUseItem;
+                      } else {
+                         return mc.gameSettings.keyBindAttack;
+                      }
+                   } else {
+                      return mc.gameSettings.keyBindBack;
+                   }
+                } else {
+                   return mc.gameSettings.keyBindForward;
+                }
+             } else {
+                return mc.gameSettings.keyBindRight;
+             }
+          } else {
+             return mc.gameSettings.keyBindLeft;
+          }
+       }
+    }
+
+    public static class Class7930 {
+        public Class2132 field33987;
+       public Animation field33988;
+       public final KeyStrokes field33989;
+
+       public Class7930(KeyStrokes var1, Class2132 var2) {
+          this.field33989 = var1;
+          this.field33988 = new Animation(300, 0);
+          this.field33987 = var2;
+       }
     }
 }
