@@ -32,7 +32,7 @@ public class Class4333 extends IconPanel {
             (float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, ColorUtils.applyAlpha(-2500135, 0.9F)
          );
       } else {
-         RenderUtil.method11475(
+         RenderUtil.drawRect(
             (float)this.field20895,
             (float)this.field20896,
             (float)(this.field20897 - 1),

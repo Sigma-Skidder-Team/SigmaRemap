@@ -69,7 +69,7 @@ public class Class4346 extends Class4339 {
 
          while (var10 >= new Date().getTime() && var12 == this.field21237) {
             float var10x = 1.0F - (float)(var10 - new Date().getTime()) / var9;
-            var10x = Class9782.method38557((float)Math.sqrt((double)var10x), 0.0F, 1.0F, 1.0F);
+            var10x = QuadraticEasing.easeOutQuad((float)Math.sqrt((double)var10x), 0.0F, 1.0F, 1.0F);
             this.method13512((int)((float)var6 + (float)var9x * var10x));
          }
       }).start();

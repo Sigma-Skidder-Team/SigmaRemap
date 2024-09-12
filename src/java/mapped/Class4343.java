@@ -157,7 +157,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             }
 
             new Class6665().method20320(var17, var1);
-            var17.method13261((var1x, var2x) -> var1x.method13268(var2x.method13267() - var5));
+            var17.method13261((var1x, var2x) -> var1x.setWidth(var2x.method13267() - var5));
             var1.addToList(var17);
             var4 += var17.method13269() + var5;
             break;
@@ -271,7 +271,7 @@ public class Class4343 extends Class4339 implements Class4342 {
          for (Module var10 : var18.moduleArray) {
             int var11 = 0;
             IconPanel var12 = new IconPanel(this, var10.getName() + "SubView", 0, var17, this.field20897, this.field20898 - var4);
-            var12.method13261((var0, var1) -> var0.method13268(var1.method13267()));
+            var12.method13261((var0, var1) -> var0.setWidth(var1.method13267()));
 
             for (Setting var14 : var10.getSettingMap().values()) {
                var11 = this.method13531(var12, var14, 20, var11, 20);
@@ -287,7 +287,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                }
             }
 
-            var12.method13270(var11);
+            var12.setHeight(var11);
             this.addToList(var12);
             this.field21224.put(var10, var12);
          }

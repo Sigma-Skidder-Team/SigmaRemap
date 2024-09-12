@@ -47,7 +47,7 @@ public class Class4273 extends Class4247 {
          }
 
          if (var10) {
-            RenderUtil.method11426(
+            RenderUtil.drawRect(
                (float)this.field20895,
                (float)this.field20896,
                (float)(this.field20895 + this.field20897),

@@ -116,10 +116,10 @@ public class Class4322 extends Screen {
       }
 
       this.method13425();
-      float var4 = (float)Math.sin((double)Class9782.method38557(this.field21085, 0.0F, 1.0F, 1.0F) * Math.PI / 2.0);
+      float var4 = (float)Math.sin((double) QuadraticEasing.easeOutQuad(this.field21085, 0.0F, 1.0F, 1.0F) * Math.PI / 2.0);
       if (this.field21092) {
          var4 = 1.0F
-            - (float)Math.sin((Math.PI / 2) + (double)Class9782.method38558(1.0F - this.field21093.calcPercent(), 0.0F, 1.0F, 1.0F) * (Math.PI / 2)) * 0.2F;
+            - (float)Math.sin((Math.PI / 2) + (double) QuadraticEasing.easeInOutQuad(1.0F - this.field21093.calcPercent(), 0.0F, 1.0F, 1.0F) * (Math.PI / 2)) * 0.2F;
       }
 
       this.field21088.method13277(var4);
@@ -153,7 +153,7 @@ public class Class4322 extends Screen {
          int var10 = var8 + Math.max(ResourceRegistry.JelloMediumFont40.method23942(welcomeBackSign), ResourceRegistry.JelloLightFont36.method23942(username)) + var9 * 10;
          int var11 = (this.field20897 - var10) / 2;
          int var12 = (this.field20898 - var8 * 2) / 2;
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             0.0F,
             0.0F,
             (float)this.field20897,
@@ -187,7 +187,7 @@ public class Class4322 extends Screen {
 
       float var5 = var4 - (float)this.field21082;
       float var6 = (float)(var3 - this.field21083);
-      float var7 = (float)Math.sin((double)Class9782.method38557(this.field21086, 0.0F, 1.0F, 1.0F) * Math.PI / 2.0);
+      float var7 = (float)Math.sin((double) QuadraticEasing.easeOutQuad(this.field21086, 0.0F, 1.0F, 1.0F) * Math.PI / 2.0);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)this.field20897 / 2.0F, (float)this.field20897 / 2.0F, 0.0F);
       GL11.glScalef(1.0F + var7 * 0.2F, 1.0F + var7 * 0.2F, 0.0F);

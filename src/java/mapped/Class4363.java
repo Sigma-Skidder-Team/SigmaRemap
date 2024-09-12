@@ -88,8 +88,8 @@ public class Class4363 extends Class4247 {
       var3.method13261((var1, var2) -> {
          var1.method13264(0);
          var1.method13266(0);
-         var1.method13268(this.method13267());
-         var1.method13270(this.method13269());
+         var1.setWidth(this.method13267());
+         var1.setHeight(this.method13269());
       });
       var3.doThis((var1, var2) -> this.method13658(!this.method13657()));
 
@@ -148,7 +148,7 @@ public class Class4363 extends Class4247 {
    private int method13648() {
       float var3 = Class8056.method27664(this.field21330.calcPercent(), 0.0F, 1.0F, 1.0F);
       if (this.field21330.getDirection() != Direction.FORWARDS) {
-         var3 = Class9782.method38556(this.field21330.calcPercent(), 0.0F, 1.0F, 1.0F);
+         var3 = QuadraticEasing.easeInQuad(this.field21330.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
       return (int)((float)(this.method13269() * this.field21326.size() + 1) * var3);
@@ -195,7 +195,7 @@ public class Class4363 extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),

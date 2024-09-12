@@ -32,7 +32,7 @@ public class Class4253 extends Class4247 {
    }
 
    public void method13056() {
-      this.method13270(0);
+      this.setHeight(0);
       this.field20627 = new Date();
    }
 
@@ -40,8 +40,8 @@ public class Class4253 extends Class4247 {
    public void draw(float var1) {
       if (this.field20627 != null) {
          float var4 = Animation.method25322(this.field20627, 150.0F);
-         var4 = Class9782.method38557(var4, 0.0F, 1.0F, 1.0F);
-         this.method13270((int)(55.0F * var4));
+         var4 = QuadraticEasing.easeOutQuad(var4, 0.0F, 1.0F, 1.0F);
+         this.setHeight((int)(55.0F * var4));
          if (var4 == 1.0F) {
             this.field20627 = null;
          }
@@ -49,8 +49,8 @@ public class Class4253 extends Class4247 {
 
       if (this.field20625 != null) {
          float var6 = Animation.method25322(this.field20625, 180.0F);
-         var6 = Class9782.method38557(var6, 0.0F, 1.0F, 1.0F);
-         this.method13270((int)(55.0F * (1.0F - var6)));
+         var6 = QuadraticEasing.easeOutQuad(var6, 0.0F, 1.0F, 1.0F);
+         this.setHeight((int)(55.0F * (1.0F - var6)));
          if (var6 == 1.0F) {
             this.field20625 = null;
          }

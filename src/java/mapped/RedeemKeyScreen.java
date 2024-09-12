@@ -71,7 +71,7 @@ public class RedeemKeyScreen extends IconPanel {
       if (var5 != null) {
          this.field21138.method13288(var5.method36702());
          if (var5.method36701() != null) {
-            RenderUtil.method11419((float)(this.field20895 + 295), (float)(this.field20896 + 280), 190.0F, 50.0F);
+            RenderUtil.startScissor((float)(this.field20895 + 295), (float)(this.field20896 + 280), 190.0F, 50.0F);
             RenderUtil.method11449(
                (float)(this.field20895 + 316),
                (float)(this.field20896 + 280),

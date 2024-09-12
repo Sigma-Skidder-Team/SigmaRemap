@@ -56,8 +56,8 @@ public class Class4348 extends Class4278 {
    @Override
    public void draw(float var1) {
       this.method13225();
-      float var4 = Class9747.method38214(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
-      float var5 = Class9782.method38556(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
+      float var4 = EasingFunctions.easeOutBack(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
+      float var5 = QuadraticEasing.easeInQuad(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
       if (this.method13298()) {
          this.field21248.changeDirection(Direction.FORWARDS);
       } else if ((double)Math.abs(var4 - var5) < 0.7) {
@@ -80,7 +80,7 @@ public class Class4348 extends Class4278 {
          }
 
          RenderUtil.method11415(this);
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)this.field20895,
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),
@@ -92,7 +92,7 @@ public class Class4348 extends Class4278 {
          int var9 = this.field20897 / 2;
          int var7 = this.field20898 / 2;
          if (this.field21248.getDirection() == Direction.BACKWARDS) {
-            var4 = Class9782.method38556(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
+            var4 = QuadraticEasing.easeInQuad(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
          }
 
          GL11.glTranslatef((float)(this.method13263() + var9), (float)(this.method13265() + var7), 0.0F);
@@ -111,7 +111,7 @@ public class Class4348 extends Class4278 {
 
          GL11.glPopMatrix();
          RenderUtil.endScissor();
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)this.field20895,
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),
@@ -135,9 +135,9 @@ public class Class4348 extends Class4278 {
       GL11.glPushMatrix();
       byte var3 = 44;
       byte var4 = 44;
-      float var5 = Class9747.method38214(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
+      float var5 = EasingFunctions.easeOutBack(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
       if (this.field21248.getDirection() == Direction.BACKWARDS) {
-         var5 = Class9782.method38556(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
+         var5 = QuadraticEasing.easeInQuad(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
       GL11.glTranslatef((float)(this.method13263() + 44), (float)(this.method13265() + 44), 0.0F);
@@ -174,9 +174,9 @@ public class Class4348 extends Class4278 {
       GL11.glPushMatrix();
       byte var9 = 76;
       byte var10 = 44;
-      float var11 = Class9747.method38214(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
+      float var11 = EasingFunctions.easeOutBack(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
       if (this.field21248.getDirection() == Direction.BACKWARDS) {
-         var11 = Class9782.method38556(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
+         var11 = QuadraticEasing.easeInQuad(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
       GL11.glTranslatef((float)(this.method13263() + 76), (float)(this.method13265() + 44), 0.0F);

@@ -46,7 +46,7 @@ public class Class4239 extends Class4240 implements Class4238 {
          this.method13271() + var7 - this.field20895 + var5,
          this.method13272() + var8 - this.field20896 + var6
       );
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)var7,
          (float)var8,
          (float)(var7 + var5),

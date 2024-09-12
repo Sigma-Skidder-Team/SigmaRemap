@@ -68,7 +68,7 @@ public class Class4362 extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),

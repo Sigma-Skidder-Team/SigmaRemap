@@ -48,8 +48,8 @@ public class Class4314 extends Screen {
    @Override
    public void draw(float var1) {
       RenderUtil.method11455(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ClassicDecryption.mainmenubackground);
-      RenderUtil.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.PALE_RED.getColor, 0.1F));
-      RenderUtil.method11426(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.95F));
+      RenderUtil.drawRect(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.PALE_RED.getColor, 0.1F));
+      RenderUtil.drawRect(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.95F));
       RenderUtil.method11440(
          ResourceRegistry.field38868, (float)(this.method13267() / 2), 20.0F, "Edit Alt", ClientColors.LIGHT_GREYISH_BLUE.getColor, Class2218.field14492, Class2218.field14488
       );

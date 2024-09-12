@@ -40,10 +40,10 @@ public class Class4325 extends Screen {
 
    @Override
    public void draw(float var1) {
-      float var4 = 1.3F - Class9747.method38214(field21112.calcPercent(), 0.0F, 1.0F, 1.0F) * 0.3F;
+      float var4 = 1.3F - EasingFunctions.easeOutBack(field21112.calcPercent(), 0.0F, 1.0F, 1.0F) * 0.3F;
       float var5 = 1.0F;
       if (field21112.getDirection() == Direction.BACKWARDS) {
-         var4 = 0.7F + Class9782.method38557(field21112.calcPercent(), 0.0F, 1.0F, 1.0F) * 0.3F;
+         var4 = 0.7F + QuadraticEasing.easeOutQuad(field21112.calcPercent(), 0.0F, 1.0F, 1.0F) * 0.3F;
          var5 = field21112.calcPercent();
       }
 

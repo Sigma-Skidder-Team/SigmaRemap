@@ -109,7 +109,7 @@ public class Compass extends Module {
                 );
             }
         } else {
-            RenderUtil.method11426(
+            RenderUtil.drawRect(
                     (float) (var1 + var3 / 2 - 1),
                     (float) (var2 + 28),
                     (float) (var1 + var3 / 2 + 1),

@@ -91,7 +91,7 @@ public class TabGUI extends Module {
                     this.field23787 = this.field23787 + Math.min(var4, var4 * 0.14F * this.field23780) * (float) (!var5 ? 1 : -1);
                     this.field23769 = var1.method13960();
                     this.method16600(this.field23768, this.field23769, this.field23770, this.field23771, this.field23763, null, this.field23764, 1.0F);
-                    RenderUtil.method11419((float) this.field23768, (float) this.field23769, (float) this.field23770, (float) this.field23771);
+                    RenderUtil.startScissor((float) this.field23768, (float) this.field23769, (float) this.field23770, (float) this.field23771);
                     this.method16596(
                             this.field23768,
                             this.field23769 - Math.round(this.field23787),
@@ -251,7 +251,7 @@ public class TabGUI extends Module {
             this.field23776 = Math.max(this.field23776, 120 + Math.round(this.field23787));
         }
 
-        RenderUtil.method11426(
+        RenderUtil.drawRect(
                 (float) var1,
                 var10 >= 0 ? (float) (var10 + var2) : (float) var2,
                 (float) (var1 + var4),
@@ -285,7 +285,7 @@ public class TabGUI extends Module {
                 }
 
                 RenderUtil.method11436(
-                        (float) var1, var10 >= 0 ? (float) (var10 + var2 + 14) : (float) var2, (float) var4 * Class9782.method38557(var13, 0.0F, 1.0F, 1.0F) + 4.0F, var14
+                        (float) var1, var10 >= 0 ? (float) (var10 + var2 + 14) : (float) var2, (float) var4 * QuadraticEasing.easeOutQuad(var13, 0.0F, 1.0F, 1.0F) + 4.0F, var14
                 );
                 if (var12.field35323.calcPercent() == 1.0F) {
                     var16.remove();
@@ -391,10 +391,10 @@ public class TabGUI extends Module {
         if (!var11) {
             RenderUtil.method11431(var1, var2, var1 + var3, var2 + var4, var14, var15);
         } else {
-            RenderUtil.method11419((float) var1, (float) var2, (float) var3, (float) var4);
+            RenderUtil.startScissor((float) var1, (float) var2, (float) var3, (float) var4);
             BlurEngine.method29974();
             RenderUtil.endScissor();
-            RenderUtil.method11426((float) var1, (float) var2, (float) (var1 + var3), (float) (var2 + var4), this.field23793);
+            RenderUtil.drawRect((float) var1, (float) var2, (float) (var1 + var3), (float) (var2 + var4), this.field23793);
         }
 
         RenderUtil.method11463((float) var1, (float) var2, (float) var3, (float) var4, 8.0F, 0.7F * var8);

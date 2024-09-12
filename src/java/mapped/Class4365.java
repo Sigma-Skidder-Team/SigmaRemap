@@ -38,14 +38,14 @@ public class Class4365 extends Class4247 {
          var4 = this.account.username;
       }
 
-      this.method13268(this.field20913.method23942(var4) + 50 + 60);
+      this.setWidth(this.field20913.method23942(var4) + 50 + 60);
       this.method13264(Minecraft.getInstance().mainWindow.getWidth() - this.field20897 - 20);
       boolean var6 = this.field21337 >= this.field20895 && this.field21338 <= this.field20896 + this.method13269();
       this.field21334 = Math.max(0.0F, Math.min(1.0F, this.field21334 + (!var6 ? -0.1F : 0.1F)));
       RenderUtil.method11463(
          (float)this.field20895, (float)this.field20896, (float)this.method13267(), (float)this.method13269(), 20.0F, this.field21334 * 0.2F * var1
       );
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)this.field20895,
          (float)this.field20896,
          (float)(this.field20895 + this.method13267()),

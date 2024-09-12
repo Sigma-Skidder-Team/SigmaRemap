@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import mapped.RenderUtil;
-import mapped.Class9782;
+import mapped.QuadraticEasing;
 import net.minecraft.client.Minecraft;
 
 import java.awt.*;
@@ -50,9 +50,9 @@ public class NotificationManager {
         if (!(var4 < (float) this.field39922 * 1.4F)) {
             return !(var4 > (float) var1.field43606 - (float) this.field39922)
                     ? 1.0F
-                    : Class9782.method38556(((float) var1.field43606 - var4) / (float) this.field39922, 0.0F, 1.0F, 1.0F);
+                    : QuadraticEasing.easeInQuad(((float) var1.field43606 - var4) / (float) this.field39922, 0.0F, 1.0F, 1.0F);
         } else {
-            return Class9782.method38557(var4 / ((float) this.field39922 * 1.4F), 0.0F, 1.0F, 1.0F);
+            return QuadraticEasing.easeOutQuad(var4 / ((float) this.field39922 * 1.4F), 0.0F, 1.0F, 1.0F);
         }
     }
 
@@ -84,11 +84,11 @@ public class NotificationManager {
                 int var11 = new Color(0.0F, 0.0F, 0.0F, Math.min(var6 * 0.075F, 1.0F)).getRGB();
                 int var12 = new Color(1.0F, 1.0F, 1.0F, var9).getRGB();
                 RenderUtil.method11463((float) var7, (float) var8, (float) this.field39923, (float) this.field39924, 10.0F, var9);
-                RenderUtil.method11426((float) var7, (float) var8, (float) (var7 + this.field39923), (float) (var8 + this.field39924), var10);
-                RenderUtil.method11426((float) var7, (float) var8, (float) (var7 + this.field39923), (float) (var8 + 1), var11);
-                RenderUtil.method11426((float) var7, (float) (var8 + this.field39924 - 1), (float) (var7 + this.field39923), (float) (var8 + this.field39924), var11);
-                RenderUtil.method11426((float) var7, (float) (var8 + 1), (float) (var7 + 1), (float) (var8 + this.field39924 - 1), var11);
-                RenderUtil.method11426(
+                RenderUtil.drawRect((float) var7, (float) var8, (float) (var7 + this.field39923), (float) (var8 + this.field39924), var10);
+                RenderUtil.drawRect((float) var7, (float) var8, (float) (var7 + this.field39923), (float) (var8 + 1), var11);
+                RenderUtil.drawRect((float) var7, (float) (var8 + this.field39924 - 1), (float) (var7 + this.field39923), (float) (var8 + this.field39924), var11);
+                RenderUtil.drawRect((float) var7, (float) (var8 + 1), (float) (var7 + 1), (float) (var8 + this.field39924 - 1), var11);
+                RenderUtil.drawRect(
                         (float) (var7 + this.field39923 - 1), (float) (var8 + 1), (float) (var7 + this.field39923), (float) (var8 + this.field39924 - 1), var11
                 );
                 RenderUtil.drawPortalBackground(var7, var8, var7 + this.field39923 - this.field39927, var8 + this.field39924);

@@ -61,7 +61,7 @@ public class Class4335 extends Class4333 {
             if (var5 instanceof Class4368 && this.field21149.calcPercent() == 1.0F && var5.method13114(this.method13309(), this.method13310())) {
                Class4368 var6 = (Class4368)var5;
                RenderUtil.drawString(ClassicDecryption.regular17, 20.0F, (float)(this.method13269() - 26), var6.field21351.getDescription(), -14540254);
-               RenderUtil.method11419(5.0F, (float)(this.method13269() - 27), 12.0F, 24.0F);
+               RenderUtil.startScissor(5.0F, (float)(this.method13269() - 27), 12.0F, 24.0F);
                RenderUtil.method11455(5.0F, (float)(this.method13269() - 27), 24.0F, 24.0F, Class4334.field21177);
                RenderUtil.endScissor();
                break;

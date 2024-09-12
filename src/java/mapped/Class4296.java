@@ -52,7 +52,7 @@ public class Class4296 extends Class4278 {
             }
          }
 
-         this.method13270(var13 * (var14 + var7) + 116);
+         this.setHeight(var13 * (var14 + var7) + 116);
       }
    }
 

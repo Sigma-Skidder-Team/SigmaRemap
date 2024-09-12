@@ -20,7 +20,7 @@ public class Class6665 implements Class6664 {
          }
       }
 
-      var1.method13268(var5);
-      var1.method13270(var6);
+      var1.setWidth(var5);
+      var1.setHeight(var6);
    }
 }

@@ -23,7 +23,7 @@ public class Class4249 extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      RenderUtil.method11419((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898);
+      RenderUtil.startScissor((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898);
       RenderUtil.method11449(
          (float)(this.field20895 - this.field20607.field719 * this.field20897),
          (float)this.field20896,

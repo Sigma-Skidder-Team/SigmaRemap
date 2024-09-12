@@ -181,7 +181,7 @@ public class ActiveMods extends Module {
                     );
                     GL11.glPopMatrix();
                     var10 -= 100;
-                    var7 = (int) ((float) var7 + (float) (var8.method23952() + var21) * Class9782.method38558(var15, 0.0F, 1.0F, 1.0F));
+                    var7 = (int) ((float) var7 + (float) (var8.method23952() + var21) * QuadraticEasing.easeInOutQuad(var15, 0.0F, 1.0F, 1.0F));
                 }
 
                 this.field23613 = var7;

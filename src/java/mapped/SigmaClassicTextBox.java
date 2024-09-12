@@ -17,7 +17,7 @@ public class SigmaClassicTextBox extends Class4281 {
    @Override
    public void draw(float var1) {
       this.method13306(ResourceRegistry.field38868);
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)this.field20895,
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),

@@ -134,7 +134,7 @@ public class Class4266 extends Class4247 {
             }
 
             RenderUtil.method11478();
-            RenderUtil.method11475(
+            RenderUtil.drawRect(
                (float)this.field20895,
                (float)this.field20896,
                (float)this.field20897,

@@ -67,10 +67,10 @@ public class Class4351 extends Class4278 {
       });
       var13.method13306(ResourceRegistry.JelloLightFont18);
       var14.method13306(ResourceRegistry.JelloLightFont18);
-      var13.method13261((var0, var1x) -> var0.method13268(Math.round((float)var1x.method13267() / 2.0F)));
+      var13.method13261((var0, var1x) -> var0.setWidth(Math.round((float)var1x.method13267() / 2.0F)));
       var14.method13261((var0, var1x) -> {
          var0.method13264(Math.round((float)var1x.method13267() / 2.0F));
-         var0.method13268(Math.round((float)var1x.method13267() / 2.0F));
+         var0.setWidth(Math.round((float)var1x.method13267() / 2.0F));
       });
       var14.doThis((var1x, var2x) -> this.field21266.changeDirection(Direction.FORWARDS));
       var13.doThis((var1x, var2x) -> {
@@ -78,7 +78,7 @@ public class Class4351 extends Class4278 {
          this.field21268.method13288(true);
          this.field21268.method13148();
       });
-      this.field21263.method13268(0);
+      this.field21263.setWidth(0);
       this.field21263.method13284(this.field21270);
       this.field21264 = new Animation(100, 100, Direction.BACKWARDS);
       this.field21265 = new Animation(290, 290, Direction.BACKWARDS);
@@ -135,7 +135,7 @@ public class Class4351 extends Class4278 {
       }
 
       float var8 = MathUtils.lerp(this.field21266.calcPercent(), 0.1, 0.81, 0.14, 1.0);
-      this.method13270(Math.round((1.0F - var8) * (float)this.field21271));
+      this.setHeight(Math.round((1.0F - var8) * (float)this.field21271));
       var1 *= 1.0F - this.field21266.calcPercent();
       float var5 = MathUtils.lerp(this.field21265.calcPercent(), 0.28, 1.26, 0.33, 1.04);
       if (this.field21265.getDirection().equals(Direction.BACKWARDS)) {
@@ -143,7 +143,7 @@ public class Class4351 extends Class4278 {
       }
 
       this.field21263.method13296(this.field21265.calcPercent() == 1.0F);
-      this.field21263.method13268(Math.max(0, (int)((float)this.field21270 * var5)));
+      this.field21263.setWidth(Math.max(0, (int)((float)this.field21270 * var5)));
       this.field21263.method13284((int)((float)this.field21270 * (1.0F - var5)));
       RenderUtil.method11415(this);
       float var6 = this.method13212() && this.field21265.getDirection().equals(Direction.BACKWARDS) ? 0.03F : 0.0F;

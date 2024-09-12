@@ -55,7 +55,7 @@ public class Class4251 extends Class4247 {
          var5 = 0.95F;
       }
 
-      RenderUtil.method11475(
+      RenderUtil.drawRect(
          (float)this.field20895,
          (float)this.field20896,
          (float)this.field20897,

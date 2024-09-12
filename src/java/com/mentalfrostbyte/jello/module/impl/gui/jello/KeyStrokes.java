@@ -151,7 +151,7 @@ public class KeyStrokes extends Module {
                             var12 = "L";
                         }
 
-                        RenderUtil.method11426(
+                        RenderUtil.drawRect(
                                 (float) (this.field23585 + var21.field42635),
                                 (float) (this.field23586 + var21.field42636),
                                 (float) (this.field23585 + var21.field42635 + var23.field42635),

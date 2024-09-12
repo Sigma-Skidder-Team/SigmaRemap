@@ -403,7 +403,7 @@ public class Class8795 {
       ClientResource var10 = ResourceRegistry.JelloLightFont25;
       GL11.glPushMatrix();
       GL11.glScalef(-0.01F, -0.01F, -0.01F);
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)(-var10.method23942(var7) / 2 - 10),
          0.0F,
          (float)(var10.method23942(var7) / 2 + 10),

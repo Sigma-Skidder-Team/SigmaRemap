@@ -27,10 +27,10 @@ public class CreditsScreen extends Screen {
       var4 = Math.min(var4, (int)((float) Minecraft.getInstance().mainWindow.getHeight() / 1.65F));
       var5 = Math.min(var5, (int)((float) Minecraft.getInstance().mainWindow.getHeight() / 1.65F));
       this.method13416();
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * this.field21072)
       );
-      float var6 = Class9747.method38214(!((double)this.field21072 < 0.5) ? (float)((double)this.field21072 - 0.5) * 2.0F : 0.0F, 0.0F, 1.0F, 1.0F);
+      float var6 = EasingFunctions.easeOutBack(!((double)this.field21072 < 0.5) ? (float)((double)this.field21072 - 0.5) * 2.0F : 0.0F, 0.0F, 1.0F, 1.0F);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(this.method13267() / 2), (float)(this.method13269() / 2), 0.0F);
       GL11.glScaled((double)var6, (double)var6, 0.0);

@@ -85,7 +85,7 @@ public class Class4268 extends Class4247 {
                      (float)(var6 + 3),
                      ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
                   );
-                  RenderUtil.method11426(
+                  RenderUtil.drawRect(
                      (float)var5,
                      (float)(var6 + 4),
                      (float)(var5 + 14),
@@ -126,7 +126,7 @@ public class Class4268 extends Class4247 {
                (float)(var11 + 3),
                ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
             );
-            RenderUtil.method11426(
+            RenderUtil.drawRect(
                (float)(var8 + 6),
                (float)(var11 - 1),
                (float)(var8 + 27),
@@ -146,14 +146,14 @@ public class Class4268 extends Class4247 {
             (float)(var12 + 3),
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
          );
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)(var9 + 6),
             (float)(var12 - 1),
             (float)(var9 + 27),
             (float)(var12 + 1),
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + (!this.field20693 ? 0.0F : 0.2F))
          );
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)(var9 + 25),
             (float)(var12 - 8),
             (float)(var9 + 27),

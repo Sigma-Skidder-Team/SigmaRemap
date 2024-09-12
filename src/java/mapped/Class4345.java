@@ -162,7 +162,7 @@ public class Class4345 extends Class4339 {
          for (Module var11 : var16.moduleArray) {
             int var12 = 10;
             IconPanel var13 = new IconPanel(this, var11.getName() + "SubView", 0, var6, this.field20897, this.field20898 - var6);
-            var13.method13261((var0, var1) -> var0.method13268(var1.method13267()));
+            var13.method13261((var0, var1) -> var0.setWidth(var1.method13267()));
 
             for (Setting var15 : var11.getSettingMap().values()) {
                var12 = this.method13555(var13, var15, 30, var12, 20);
@@ -199,7 +199,7 @@ public class Class4345 extends Class4339 {
          var4 = Math.round((float)this.method13269() * Class8056.method27663(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
       }
 
-      RenderUtil.method11419((float)this.field20895, (float)(70 + this.method13269() - var4), (float)this.method13267(), (float)var4);
+      RenderUtil.startScissor((float)this.field20895, (float)(70 + this.method13269() - var4), (float)this.method13267(), (float)var4);
       RenderUtil.method11424((float)this.field20895, (float)(70 + this.method13269() - var4), (float)this.method13267(), (float)var4, -2631721);
       super.draw(var1);
       RenderUtil.endScissor();

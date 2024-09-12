@@ -54,7 +54,7 @@ public class Class7554 {
          var4 = Class8056.method27663(this.field32398.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
-      RenderUtil.method11419((float)this.method24720(), (float)this.method24721(), (float)this.method24719() * var4, (float)this.method24725());
+      RenderUtil.startScissor((float)this.method24720(), (float)this.method24721(), (float)this.method24719() * var4, (float)this.method24725());
       this.method24718(var1);
       RenderUtil.endScissor();
    }

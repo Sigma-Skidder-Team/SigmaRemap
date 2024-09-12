@@ -30,8 +30,8 @@ public class Class4271 extends Class4247 {
       var3.method13261((var1, var2) -> {
          var1.method13264(0);
          var1.method13266(0);
-         var1.method13268(this.method13267());
-         var1.method13270(this.method13269());
+         var1.setWidth(this.method13267());
+         var1.setHeight(this.method13269());
       });
       var3.doThis((var1, var2) -> this.method13113(!this.method13112()));
       int var4 = this.field20897;
@@ -78,7 +78,7 @@ public class Class4271 extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),

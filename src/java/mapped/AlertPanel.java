@@ -198,7 +198,7 @@ public class AlertPanel extends Class4247 {
    public float method13602(float var1, float var2) {
       return this.field21282.getDirection() != Direction.BACKWARDS
          ? (float)(Math.pow(2.0, (double)(-10.0F * var1)) * Math.sin((double)(var1 - var2 / 4.0F) * (Math.PI * 2) / (double)var2) + 1.0)
-         : 0.5F + Class9782.method38557(var1, 0.0F, 1.0F, 1.0F) * 0.5F;
+         : 0.5F + QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F) * 0.5F;
    }
 
    @Override
@@ -219,7 +219,7 @@ public class AlertPanel extends Class4247 {
             this.field21281,
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
          );
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F * var7)
          );
          if (var4 > 0) {

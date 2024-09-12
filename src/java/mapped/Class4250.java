@@ -60,7 +60,7 @@ public class Class4250 extends Class4247 {
       float var8 = var4[1];
       float var9 = var4[2];
       float var10 = var4[3];
-      RenderUtil.method11475(
+      RenderUtil.drawRect(
          (float)(this.field20895 + var5),
          (float)(this.field20896 + var5),
          (float)(this.field20897 - var5 * 2),

@@ -55,7 +55,7 @@ public class UIButton extends Class4247 {
             this.field20914.method19411(),
             this.field20914.method19413()
          );
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)var5 - (float)(var7 / 2) * var9,
             (float)(var6 + var8),
             (float)var5 + (float)(var7 / 2) * var9,

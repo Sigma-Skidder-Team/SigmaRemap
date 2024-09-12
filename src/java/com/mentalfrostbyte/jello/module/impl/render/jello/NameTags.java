@@ -350,7 +350,7 @@ public class NameTags extends Module {
         int var18 = 85 + var13 * 2;
         GL11.glTranslated(-var17 / 2, -var18 / 2, 0.0);
         byte var19 = 40;
-        RenderUtil.method11426(0.0F, 0.0F, (float) var17, (float) var18, this.field24008);
+        RenderUtil.drawRect(0.0F, 0.0F, (float) var17, (float) var18, this.field24008);
         RenderUtil.method11463(0.0F, 0.0F, (float) var17, (float) var18, 20.0F, 0.5F);
         RenderUtil.drawString(var6, var13, (float) (var13 - 5), "Furnace", ClientColors.LIGHT_GREYISH_BLUE.getColor);
         if (var16 == null) {
@@ -366,8 +366,8 @@ public class NameTags extends Module {
             RenderUtil.drawString(ResourceRegistry.JelloLightFont14, (float) (var13 + 51), 62.0F, "Count: " + var20.field39976, ClientColors.LIGHT_GREYISH_BLUE.getColor);
         }
 
-        RenderUtil.method11426(0.0F, (float) var18 - 12.0F, Math.min((float) var17 * var12, (float) var17), (float) var18 - 6.0F, ColorUtils.applyAlpha(-106750, 0.3F));
-        RenderUtil.method11426(
+        RenderUtil.drawRect(0.0F, (float) var18 - 12.0F, Math.min((float) var17 * var12, (float) var17), (float) var18 - 6.0F, ColorUtils.applyAlpha(-106750, 0.3F));
+        RenderUtil.drawRect(
                 0.0F, (float) var18 - 6.0F, Math.min((float) var17 * var11, (float) var17), (float) var18, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.75F)
         );
         GL11.glPopMatrix();
@@ -442,8 +442,8 @@ public class NameTags extends Module {
                 GL11.glTranslatef(27.0F, 0.0F, 0.0F);
             }
 
-            RenderUtil.method11426((float) (-var21 - 10), -25.0F, (float) (var21 + 10), (float) (var12.method23952() + 2), var19);
-            RenderUtil.method11426(
+            RenderUtil.drawRect((float) (-var21 - 10), -25.0F, (float) (var21 + 10), (float) (var12.method23952() + 2), var19);
+            RenderUtil.drawRect(
                     (float) (-var21 - 10),
                     (float) (var12.method23952() - 1) - (float) ((LivingEntity) var7).hurtTime / 3.0F,
                     Math.min((float) (var21 * 2 + 20) * (var18 - 0.5F), (float) (var21 + 10)),

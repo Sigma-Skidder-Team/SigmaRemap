@@ -134,10 +134,10 @@ public class JelloKeyboardScreen extends Screen {
    @Override
    public void draw(float var1) {
       var1 = (float)Math.min(200L, new Date().getTime() - this.field20955.getTime()) / 200.0F;
-      float var4 = Class9747.method38214(var1, 0.0F, 1.0F, 1.0F);
+      float var4 = EasingFunctions.easeOutBack(var1, 0.0F, 1.0F, 1.0F);
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
       float var5 = 0.25F * var1;
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)this.field20895,
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),

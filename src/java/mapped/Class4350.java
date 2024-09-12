@@ -28,7 +28,7 @@ public class Class4350 extends Class4278 {
    @Override
    public void draw(float var1) {
       if (this.field20912 != null) {
-         RenderUtil.method11426((float)this.method13263(), (float)this.method13265(), (float)this.field20897, (float)this.field20898, -14144460);
+         RenderUtil.drawRect((float)this.method13263(), (float)this.method13265(), (float)this.field20897, (float)this.field20898, -14144460);
          RenderUtil.method11464(
             (float)this.method13263(), (float)this.method13265(), (float)this.field20897, (float)(this.field20898 - this.method13265()), 114.0F, var1
          );
@@ -69,7 +69,7 @@ public class Class4350 extends Class4278 {
             }
          }
 
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)var4 + var10,
             (float)(this.method13265() + var4 + var9 * var5.method23952()),
             (float)var4 + var10 + 1.0F,

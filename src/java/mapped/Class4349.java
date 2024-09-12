@@ -49,7 +49,7 @@ public class Class4349 extends Class4278 {
       this.field21252 = Math.min(1.0F, Math.max(0.0F, this.field21252));
       this.field21258 = ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 2.0F);
       if (this.field21254 || this.method13212() || this.method13298()) {
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)this.field20895,
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),

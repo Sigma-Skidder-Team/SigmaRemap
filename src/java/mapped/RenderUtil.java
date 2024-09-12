@@ -82,7 +82,7 @@ public class RenderUtil {
       method11421((int)var0, (int)var1, (int)var2, (int)var3, true);
    }
 
-   public static void method11419(float var0, float var1, float var2, float var3) {
+   public static void startScissor(float var0, float var1, float var2, float var3) {
       method11421((int)var0, (int)var1, (int)var0 + (int)var2, (int)var1 + (int)var3, true);
    }
 
@@ -164,14 +164,14 @@ public class RenderUtil {
    }
 
    public static void method11424(float var0, float var1, float var2, float var3, int var4) {
-      method11426(var0, var1, var0 + var2, var1 + var3, var4);
+      drawRect(var0, var1, var0 + var2, var1 + var3, var4);
    }
 
    public static void method11425(double var0, double var2, double var4, double var6, int var8) {
-      method11426((float)var0, (float)var2, (float)var4, (float)var6, var8);
+      drawRect((float)var0, (float)var2, (float)var4, (float)var6, var8);
    }
 
-   public static void method11426(float var0, float var1, float var2, float var3, int var4) {
+   public static void drawRect(float var0, float var1, float var2, float var3, int var4) {
       if (var0 < var2) {
          int var7 = (int)var0;
          var0 = var2;
@@ -231,10 +231,10 @@ public class RenderUtil {
    }
 
    public static void method11429(float var0, float var1, float var2, float var3, int var4, int var5) {
-      method11426(var0, var3 - (float)var4, var2 - (float)var4, var3, var5);
-      method11426(var0, var1, var2 - (float)var4, var1 + (float)var4, var5);
-      method11426(var0, var1 + (float)var4, var0 + (float)var4, var3 - (float)var4, var5);
-      method11426(var2 - (float)var4, var1, var2, var3, var5);
+      drawRect(var0, var3 - (float)var4, var2 - (float)var4, var3, var5);
+      drawRect(var0, var1, var2 - (float)var4, var1 + (float)var4, var5);
+      drawRect(var0, var1 + (float)var4, var0 + (float)var4, var3 - (float)var4, var5);
+      drawRect(var2 - (float)var4, var1, var2, var3, var5);
    }
 
    public static void method11430(double var0, double var2, double var4, double var6, double var8, int var10, int var11) {
@@ -1011,7 +1011,7 @@ public class RenderUtil {
       byte var9 = 36;
       byte var10 = 10;
       int var11 = var9 - var10;
-      method11426((float)(var0 + var10), (float)(var1 + var10), (float)(var0 + var2 - var10), (float)(var1 + var3 - var10), var4);
+      drawRect((float)(var0 + var10), (float)(var1 + var10), (float)(var0 + var2 - var10), (float)(var1 + var3 - var10), var4);
       method11449((float)(var0 - var11), (float)(var1 - var11), (float)var9, (float)var9, ResourcesDecrypter.floatingCornerPNG, var4);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 + var2 - var9 / 2), (float)(var1 + var9 / 2), 0.0F);
@@ -1080,7 +1080,7 @@ public class RenderUtil {
       byte var7 = 36;
       byte var8 = 10;
       int var9 = var7 - var8;
-      method11426((float)(var0 + var8), (float)(var1 + var8), (float)(var0 + var2 - var8), (float)(var1 + var3 - var8), var4);
+      drawRect((float)(var0 + var8), (float)(var1 + var8), (float)(var0 + var2 - var8), (float)(var1 + var3 - var8), var4);
       method11449((float)(var0 - var9), (float)(var1 - var9), (float)var7, (float)var7, ResourcesDecrypter.floatingCornerPNG, var4);
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(var0 + var2 - var7 / 2), (float)(var1 + var7 / 2), 0.0F);
@@ -1179,14 +1179,14 @@ public class RenderUtil {
       method11436(var0 - var4 + var2, var1 + var4, var4, var5);
       method11436(var0 + var4, var1 - var4 + var3, var4, var5);
       method11436(var0 - var4 + var2, var1 - var4 + var3, var4, var5);
-      method11426(var0, var1 + var4, var0 + var2, var1 + var3 - var4, var5);
-      method11426(var0 + var4, var1, var0 + var2 - var4, var1 + var3, var5);
+      drawRect(var0, var1 + var4, var0 + var2, var1 + var3 - var4, var5);
+      drawRect(var0 + var4, var1, var0 + var2 - var4, var1 + var3, var5);
    }
 
    public static void method11473(float var0, float var1, float var2, float var3, float var4, int var5) {
-      method11426(var0, var1 + var4, var0 + var2, var1 + var3 - var4, var5);
-      method11426(var0 + var4, var1, var0 + var2 - var4, var1 + var4, var5);
-      method11426(var0 + var4, var1 + var3 - var4, var0 + var2 - var4, var1 + var3, var5);
+      drawRect(var0, var1 + var4, var0 + var2, var1 + var3 - var4, var5);
+      drawRect(var0 + var4, var1, var0 + var2 - var4, var1 + var4, var5);
+      drawRect(var0 + var4, var1 + var3 - var4, var0 + var2 - var4, var1 + var3, var5);
       float var8 = var4 * GuiManager.portalScaleFactor;
       method11418(var0, var1, var0 + var4, var1 + var4);
       method11436(var0 + var4, var1 + var4, var4, var5);
@@ -1203,8 +1203,8 @@ public class RenderUtil {
    }
 
    public static void method11474(float var0, float var1, float var2, float var3, float var4, int var5) {
-      method11426(var0, var1 + var4, var0 + var2, var1 + var3 - var4, var5);
-      method11426(var0 + var4, var1, var0 + var2 - var4, var1 + var3, var5);
+      drawRect(var0, var1 + var4, var0 + var2, var1 + var3 - var4, var5);
+      drawRect(var0 + var4, var1, var0 + var2 - var4, var1 + var3, var5);
       FloatBuffer var8 = BufferUtils.createFloatBuffer(16);
       GL11.glGetFloatv(2982, var8);
       float var9 = 1.0F;
@@ -1214,10 +1214,10 @@ public class RenderUtil {
       method11438(var0 - var4 + var2, var1 - var4 + var3, var4 * 2.0F * var9, var5);
    }
 
-   public static void method11475(float var0, float var1, float var2, float var3, float var4, int var5) {
-      method11426(var0, var1 + var4, var0 + var2, var1 + var3 - var4, var5);
-      method11426(var0 + var4, var1, var0 + var2 - var4, var1 + var4, var5);
-      method11426(var0 + var4, var1 + var3 - var4, var0 + var2 - var4, var1 + var3, var5);
+   public static void drawRect(float var0, float var1, float var2, float var3, float var4, int var5) {
+      drawRect(var0, var1 + var4, var0 + var2, var1 + var3 - var4, var5);
+      drawRect(var0 + var4, var1, var0 + var2 - var4, var1 + var4, var5);
+      drawRect(var0 + var4, var1 + var3 - var4, var0 + var2 - var4, var1 + var3, var5);
       method11418(var0, var1, var0 + var4, var1 + var4);
       method11438(var0 + var4, var1 + var4, var4 * 2.0F, var5);
       endScissor();

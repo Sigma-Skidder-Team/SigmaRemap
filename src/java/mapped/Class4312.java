@@ -80,7 +80,7 @@ public class Class4312 extends Screen {
       super.method13028(var1, var2);
       this.method13300(false);
       this.field20999 = 642;
-      this.field20995.method13268(this.field20999);
+      this.field20995.setWidth(this.field20999);
    }
 
    @Override
@@ -103,7 +103,7 @@ public class Class4312 extends Screen {
    @Override
    public void draw(float var1) {
       this.field20994 = Math.min(1.0F, this.field20994 + 0.1F);
-      float var6 = Class9747.method38214(this.field20994, 0.0F, 1.0F, 1.0F);
+      float var6 = EasingFunctions.easeOutBack(this.field20994, 0.0F, 1.0F, 1.0F);
       this.field20995.drawBackground(this.field21001 + this.field20998 - (int)(var6 * (float)(this.field21001 + this.field20998)));
       this.drawBackground((int)((1.0F - this.field20994) * 10.0F));
       this.method13225();
@@ -122,7 +122,7 @@ public class Class4312 extends Screen {
       }
 
       this.field21003 = !this.field21003;
-      var1 = Class9782.method38558(this.field20994, 0.0F, 1.0F, 1.0F);
+      var1 = QuadraticEasing.easeInOutQuad(this.field20994, 0.0F, 1.0F, 1.0F);
       RenderUtil.method11463((float)(var7 + 5), (float)(var8 + 5), (float)(this.field21002 - 10), (float)(var10 - 10), 25.0F, var1 * 0.4F);
       RenderUtil.method11471((float)var7, (float)var8, (float)var9, (float)var10, 10.0F);
       if (this.field21004 != null) {
@@ -131,7 +131,7 @@ public class Class4312 extends Screen {
          );
       }
 
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)var7, (float)var8, (float)(var7 + this.field21002), (float)(var8 + 80), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.14F)
       );
       RenderUtil.method11478();
@@ -140,7 +140,7 @@ public class Class4312 extends Screen {
       RenderUtil.endScissor();
       RenderUtil.drawPortalBackground(var7 - this.field20998, var8 - this.field20998, var7 + this.field21002, var8 + var10 + this.field20998);
       RenderUtil.method11467(var7, var8, var9, var10, ColorUtils.applyAlpha(-2236963, var1 * 0.75F));
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)(var7 + this.field21002 - 1),
          (float)var8,
          (float)(var7 + this.field21002),

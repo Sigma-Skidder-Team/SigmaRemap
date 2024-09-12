@@ -79,7 +79,7 @@ public class ActiveMods extends Module {
                     var10 = java.awt.Color.HSBtoRGB(var12, 1.0F, 1.0F);
                     int var19 = this.method16857(var16);
                     int var20 = this.field23963.method23941(var16.getSuffix()) + var8;
-                    float var21 = 1.0F - Class9782.method38557(var15.calcPercent(), 0.0F, 1.0F, 1.0F);
+                    float var21 = 1.0F - QuadraticEasing.easeOutQuad(var15.calcPercent(), 0.0F, 1.0F, 1.0F);
                     if (var4.equalsIgnoreCase("Smooth") || var4.equalsIgnoreCase("Both")) {
                         var20 = (int) ((float) var20 * var21);
                     }
@@ -89,35 +89,35 @@ public class ActiveMods extends Module {
                         GL11.glTranslated(-3.0, 0.0, 0.0);
                     }
 
-                    RenderUtil.method11426(
+                    RenderUtil.drawRect(
                             (float) (var7 - var19 - 3), (float) (var6 + 1), (float) (var7 + 2), (float) (var6 + var20 + 1), new java.awt.Color(0, 0, 0, 150).getRGB()
                     );
                     if (!var5.equalsIgnoreCase("None")) {
                         if (!var5.equalsIgnoreCase("All")) {
                             if (!var5.equalsIgnoreCase("Left")) {
                                 if (var5.equalsIgnoreCase("Right")) {
-                                    RenderUtil.method11426((float) (var7 + 2), (float) (var6 + 1), (float) (var7 + 7), (float) (var6 + 1 + var20), var10);
+                                    RenderUtil.drawRect((float) (var7 + 2), (float) (var6 + 1), (float) (var7 + 7), (float) (var6 + 1 + var20), var10);
                                 }
                             } else {
-                                RenderUtil.method11426((float) (var7 - var19 - 6), (float) (var6 + 1), (float) (var7 - var19 - 3), (float) (var6 + 1 + var20), var10);
+                                RenderUtil.drawRect((float) (var7 - var19 - 6), (float) (var6 + 1), (float) (var7 - var19 - 3), (float) (var6 + 1 + var20), var10);
                             }
                         } else {
-                            RenderUtil.method11426((float) (var7 - var19 - 5), (float) (var6 + 1), (float) (var7 - var19 - 3), (float) (var6 + 1 + var20), var10);
-                            RenderUtil.method11426((float) (var7 - var19 - 3), (float) (var6 + 1), (float) (var7 - var11 - 5), (float) (var6 + 3), var10);
+                            RenderUtil.drawRect((float) (var7 - var19 - 5), (float) (var6 + 1), (float) (var7 - var19 - 3), (float) (var6 + 1 + var20), var10);
+                            RenderUtil.drawRect((float) (var7 - var19 - 3), (float) (var6 + 1), (float) (var7 - var11 - 5), (float) (var6 + 3), var10);
                         }
                     }
 
                     RenderSystem.method27891();
                     RenderSystem.enableBlend();
                     if (var4.equalsIgnoreCase("Slide") || var4.equalsIgnoreCase("Both")) {
-                        GL11.glTranslated((float) var19 * Class9782.method38557(var15.calcPercent(), 0.0F, 1.0F, 1.0F), 0.0, 0.0);
+                        GL11.glTranslated((float) var19 * QuadraticEasing.easeOutQuad(var15.calcPercent(), 0.0F, 1.0F, 1.0F), 0.0, 0.0);
                     }
 
                     RenderUtil.method11418(
                             (float) (var7 - var19 - 3),
                             (float) (var6 + 1),
                             (float) var7,
-                            (float) (var6 + var20) - Class9782.method38557(var15.calcPercent(), 0.0F, 1.0F, 1.0F)
+                            (float) (var6 + var20) - QuadraticEasing.easeOutQuad(var15.calcPercent(), 0.0F, 1.0F, 1.0F)
                     );
                     this.field23963.method23937((float) (var7 - var19), (float) var6, var16.getSuffix(), new Color(var9));
                     this.field23964
@@ -140,7 +140,7 @@ public class ActiveMods extends Module {
             }
 
             if (var5.equalsIgnoreCase("All") && var11 > 0) {
-                RenderUtil.method11426((float) (var7 - var11 - 5), (float) (var6 + 1), (float) (var7 + 2), (float) (var6 + 3), var10);
+                RenderUtil.drawRect((float) (var7 - var11 - 5), (float) (var6 + 1), (float) (var7 + 2), (float) (var6 + 3), var10);
             }
         }
     }

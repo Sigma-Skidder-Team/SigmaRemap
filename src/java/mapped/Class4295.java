@@ -34,7 +34,7 @@ public class Class4295 extends Class4278 {
    @Override
    public void draw(float var1) {
       if (!this.field20809) {
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)this.field20895,
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),
@@ -42,7 +42,7 @@ public class Class4295 extends Class4278 {
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
       } else {
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)this.field20895,
             (float)this.field20896,
             (float)(this.field20895 + this.field20897),

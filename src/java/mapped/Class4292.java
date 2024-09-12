@@ -20,8 +20,8 @@ public class Class4292 extends Class4278 implements Class4293 {
       this.method13261((var1x, var2x) -> {
          var1x.method13264(var2x.method13267() - var2 - 5);
          var1x.method13266(5);
-         var1x.method13268(var2);
-         var1x.method13270(var2x.method13269() - 10);
+         var1x.setWidth(var2);
+         var1x.setHeight(var2x.method13269() - 10);
       });
       this.addToList(this.field20796 = new Class4288(this, this, var2));
    }
@@ -84,7 +84,7 @@ public class Class4292 extends Class4278 implements Class4293 {
          var4 = 0;
          var7 -= 8;
          var6 += 8;
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)var6,
             (float)(this.field20896 + var4),
             (float)(var6 + var7),
@@ -94,7 +94,7 @@ public class Class4292 extends Class4278 implements Class4293 {
       } else {
          RenderUtil.method11454((float)var6, (float)this.field20896, (float)var7, 5.0F, ResourcesDecrypter.verticalScrollBarTopPNG, 0.45F * var1);
          RenderUtil.method11454((float)var6, (float)(this.field20896 + this.field20898 - var4), (float)var7, 5.0F, ResourcesDecrypter.verticalScrollBarBottomPNG, 0.45F * var1);
-         RenderUtil.method11426((float)var6, (float)(this.field20896 + var4), (float)(var6 + var7), (float)(this.field20896 + this.field20898 - var4), var5);
+         RenderUtil.drawRect((float)var6, (float)(this.field20896 + var4), (float)(var6 + var7), (float)(this.field20896 + this.field20898 - var4), var5);
       }
 
       super.draw(var1);

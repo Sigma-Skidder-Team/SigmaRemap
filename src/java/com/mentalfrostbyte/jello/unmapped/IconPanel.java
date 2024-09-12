@@ -670,7 +670,7 @@ public class IconPanel implements IGuiEventListener {
         return this.field20897;
     }
 
-    public void method13268(int var1) {
+    public void setWidth(int var1) {
         this.field20897 = var1;
     }
 
@@ -678,7 +678,7 @@ public class IconPanel implements IGuiEventListener {
         return this.field20898;
     }
 
-    public void method13270(int var1) {
+    public void setHeight(int var1) {
         this.field20898 = var1;
     }
 

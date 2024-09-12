@@ -34,7 +34,7 @@ public class Class4288 extends Class4278 {
          var9 = 20.0F;
       }
 
-      this.method13270((int)var9);
+      this.setHeight((int)var9);
       if (!this.field20877 && this.method13269() != this.field20892.method13269()) {
          if (this.field20781.field20793 >= 0) {
             if (this.field20781.field20793 + this.field20892.method13258().method13269() > this.field20780.method13517().method13269()) {
@@ -75,7 +75,7 @@ public class Class4288 extends Class4278 {
          var4 = 0;
          var6 -= 7;
          var5 += 7;
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)var5,
             (float)(this.field20896 + var4),
             (float)(var5 + var6),
@@ -85,7 +85,7 @@ public class Class4288 extends Class4278 {
       } else {
          RenderUtil.method11454((float)var5, (float)this.field20896, (float)var6, (float)var4, ResourcesDecrypter.verticalScrollBarTopPNG, var1);
          RenderUtil.method11454((float)var5, (float)(this.field20896 + this.field20898 - var4), (float)var6, (float)var4, ResourcesDecrypter.verticalScrollBarBottomPNG, var1);
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)var5,
             (float)(this.field20896 + var4),
             (float)(var5 + var6),

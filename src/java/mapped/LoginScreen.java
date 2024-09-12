@@ -97,7 +97,7 @@ public class LoginScreen extends Class4247 {
          }
 
          if (var5.method36701() != null) {
-            RenderUtil.method11419((float)(this.field20895 + 316), (float)(this.field20896 + 255), 190.0F, 50.0F);
+            RenderUtil.startScissor((float)(this.field20895 + 316), (float)(this.field20896 + 255), 190.0F, 50.0F);
             RenderUtil.method11455((float)(this.field20895 + 316), (float)(this.field20896 + 255), 190.0F, 190.0F, var5.method36701());
             RenderUtil.endScissor();
          }

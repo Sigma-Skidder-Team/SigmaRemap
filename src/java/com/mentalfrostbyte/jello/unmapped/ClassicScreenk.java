@@ -75,7 +75,7 @@ public class ClassicScreenk extends Screen {
     @Override
     public void draw(float var1) {
         float var4 = field21079.calcPercent();
-        RenderUtil.method11426(
+        RenderUtil.drawRect(
                 (float) this.field20895,
                 (float) this.field20896,
                 (float) (this.field20895 + this.field20897),

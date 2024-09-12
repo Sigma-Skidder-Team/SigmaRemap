@@ -37,7 +37,7 @@ public class Class4355 extends Class4247 {
       this.method13215(var5);
       if (this.field21290.getDirection() == Direction.FORWARDS) {
          this.method13215(false);
-         this.method13264(Math.round((float)this.method13267() * Class9782.method38556(this.field21290.calcPercent(), 0.0F, 1.0F, 1.0F)));
+         this.method13264(Math.round((float)this.method13267() * QuadraticEasing.easeInQuad(this.field21290.calcPercent(), 0.0F, 1.0F, 1.0F)));
          if (this.field21290.calcPercent() == 1.0F) {
             this.method13037();
          }

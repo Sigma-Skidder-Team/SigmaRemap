@@ -56,8 +56,8 @@ public class MusicPlayer extends Class4278 {
    public MusicPlayer(IconPanel var1, String var2) {
       super(var1, var2, 875, 55, 800, 600, false);
       field20870 = System.nanoTime();
-      this.method13268(800);
-      this.method13270(600);
+      this.setWidth(800);
+      this.setHeight(600);
       this.method13264(Math.abs(this.method13263()));
       this.method13266(Math.abs(this.method13265()));
       this.addToList(this.field20851 = new Class4339(this, "musictabs", 0, this.field20847 + 14, this.field20845, this.method13269() - 64 - this.field20848));
@@ -266,7 +266,7 @@ public class MusicPlayer extends Class4278 {
    public void draw(float var1) {
       super.method13224();
       super.method13225();
-      this.field20865.method13268(this.method13263() + this.method13267() <= this.field20892.method13267() ? 0 : 41);
+      this.field20865.setWidth(this.method13263() + this.method13267() <= this.field20892.method13267() ? 0 : 41);
       this.field20873
          .changeDirection(this.method13263() + this.method13267() > this.field20892.method13267() && !this.field20874 ? Direction.FORWARDS : Direction.BACKWARDS);
       var1 *= 0.5F + (1.0F - this.field20873.calcPercent()) * 0.5F;
@@ -278,14 +278,14 @@ public class MusicPlayer extends Class4278 {
          this.field20859.method13288(false);
       }
 
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)(this.method13263() + this.field20845),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
          (float)(this.method13265() + this.method13269() - this.field20848),
          ColorUtils.applyAlpha(-14277082, var1 * 0.8F)
       );
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.field20845),
@@ -348,14 +348,14 @@ public class MusicPlayer extends Class4278 {
             var5,
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
          );
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)this.method13263(),
             (float)(this.method13265() + this.method13269() - this.field20848),
             (float)(this.method13263() + this.method13267()),
             (float)(this.method13265() + this.method13269() - 5),
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)this.method13263(),
             (float)(this.method13265() + this.method13269() - 5),
             (float)(this.method13263() + this.field20845),
@@ -382,14 +382,14 @@ public class MusicPlayer extends Class4278 {
             ResourcesDecrypter.bgPNG,
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
          );
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)this.method13263(),
             (float)(this.method13265() + this.method13269() - this.field20848),
             (float)(this.method13263() + this.method13267()),
             (float)(this.method13265() + this.method13269() - 5),
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)this.method13263(),
             (float)(this.method13265() + this.method13269() - 5),
             (float)(this.method13263() + this.field20845),
@@ -433,7 +433,7 @@ public class MusicPlayer extends Class4278 {
          var9 = 0.0F;
       }
 
-      var9 = Class9782.method38558(var9, 0.0F, 1.0F, 1.0F);
+      var9 = QuadraticEasing.easeInOutQuad(var9, 0.0F, 1.0F, 1.0F);
       int var10 = ResourceRegistry.JelloLightFont14.method23942(var2);
       int var11 = Math.min(var3, var10);
       int var12 = ResourceRegistry.JelloLightFont14.method23952();
@@ -494,7 +494,7 @@ public class MusicPlayer extends Class4278 {
          );
       }
 
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)this.field20845,
          0.0F,
          (float)this.method13267(),

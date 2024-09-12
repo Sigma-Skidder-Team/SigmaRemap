@@ -103,7 +103,7 @@ public class Class4272 extends Class4247 {
          var4 = MathUtils.lerp(this.field20703.calcPercent(), 0.61, 0.01, 0.87, 0.16);
       }
 
-      this.method13270((int)((float)this.field20704 * var4));
+      this.setHeight((int)((float)this.field20704 * var4));
       if (this.field20703.calcPercent() != 0.0F) {
          RenderUtil.method11449(
             (float)this.field20895,

@@ -15,18 +15,17 @@ public class JelloClickGUIPanels extends Class4304 {
    public final ModuleCategory category;
    public Class4341 field21194;
    public float field21195;
-   public static final int field21196 = 60;
    public int field21197;
    public int field21198;
    private int field21199;
-   private final List<Class9476> field21200 = new ArrayList<Class9476>();
+   private final List<Class9476> field21200 = new ArrayList<>();
 
-   public JelloClickGUIPanels(IconPanel var1, String var2, int var3, int var4, ModuleCategory var5) {
+   public JelloClickGUIPanels(IconPanel var1, String var2, int var3, int var4, ModuleCategory category) {
       super(var1, var2, var3, var4, 200, 350, true);
-      this.method13268(200);
-      this.method13270(350);
+      this.setWidth(200);
+      this.setHeight(350);
       this.field20886 = true;
-      this.category = var5;
+      this.category = category;
       this.method13505();
    }
 
@@ -42,7 +41,7 @@ public class JelloClickGUIPanels extends Class4304 {
       this.field21194.method13261(new Class6666());
       this.field21194.method13261((var0, var1) -> {
          var0.method13266(60);
-         var0.method13270(var1.method13269() - 60);
+         var0.setHeight(var1.method13269() - 60);
       });
    }
 
@@ -79,8 +78,8 @@ public class JelloClickGUIPanels extends Class4304 {
          }
       }
 
-      this.method13268(var9);
-      this.method13270(var10);
+      this.setWidth(var9);
+      this.setHeight(var10);
       this.method13264(var12);
       this.method13266(var11);
       super.method13028(var1, var2);
@@ -99,7 +98,7 @@ public class JelloClickGUIPanels extends Class4304 {
          (float)this.field21199 + (1.0F - this.field21195) * (float)var4,
          var1
       );
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)this.method13263(),
          (float)this.method13265(),
          (float)(this.method13263() + this.method13267()),
@@ -121,12 +120,12 @@ public class JelloClickGUIPanels extends Class4304 {
          this.field21199 = 20;
       }
 
-      String var5 = this.method13506().getName();
+      String categoryName = this.getCategory().getName();
       RenderUtil.method11440(
          ResourceRegistry.JelloLightFont25,
          (float)(this.method13263() + 20),
          (float)(this.method13265() + 30),
-         var5,
+         categoryName,
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.5F * this.field21195),
          Class2218.field14488,
          Class2218.field14492
@@ -146,7 +145,7 @@ public class JelloClickGUIPanels extends Class4304 {
       }
    }
 
-   public ModuleCategory method13506() {
+   public ModuleCategory getCategory() {
       return this.category;
    }
 

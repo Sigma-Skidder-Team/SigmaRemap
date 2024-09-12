@@ -31,7 +31,7 @@ public class Class4290 extends Class4278 {
       int var5 = 20;
       if (this.field20788 == Class2059.field13418
          && Math.abs(Minecraft.getInstance().mainWindow.getHeight() - var2) < var5
-         && !this.field20892.method13239(((JelloClickGUI)this.field20892).field20940)) {
+         && !this.field20892.method13239(((JelloClickGUI)this.field20892).blurOverlay)) {
          this.field20788 = Class2059.field13416;
       }
 
@@ -51,9 +51,9 @@ public class Class4290 extends Class4278 {
          this.field20788 = Class2059.field13417;
       }
 
-      float var7 = Class9747.method38214(this.field20787, 0.0F, 1.0F, 1.0F);
+      float var7 = EasingFunctions.easeOutBack(this.field20787, 0.0F, 1.0F, 1.0F);
       if (this.field20788 == Class2059.field13417) {
-         var7 = Class9747.method38212(this.field20787, 0.0F, 1.0F, 1.0F);
+         var7 = EasingFunctions.easeInBack(this.field20787, 0.0F, 1.0F, 1.0F);
       }
 
       this.method13266(Minecraft.getInstance().mainWindow.getHeight() - (int)((float)this.method13269() * var7));

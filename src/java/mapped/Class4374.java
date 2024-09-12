@@ -18,14 +18,14 @@ public class Class4374 extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)this.field20895,
          (float)this.field20896,
          (float)(this.field20895 + this.field20897),
          (float)this.field20896 + (float)this.field20898 * this.field21372,
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.2F)
       );
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)this.field20895,
          (float)(this.field20896 + this.field20898),
          (float)(this.field20895 + this.field20897),

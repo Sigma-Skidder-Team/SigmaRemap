@@ -125,7 +125,7 @@ public class ClassicMainScreen extends Screen {
 
     @Override
     public void draw(float var1) {
-        int var4 = Math.round((1.0F - Class9782.method38557(this.field21100.calcPercent(), 0.0F, 1.0F, 1.0F)) * 5.0F);
+        int var4 = Math.round((1.0F - QuadraticEasing.easeOutQuad(this.field21100.calcPercent(), 0.0F, 1.0F, 1.0F)) * 5.0F);
         this.drawBackground(var4);
         this.method13225();
         GL11.glPushMatrix();

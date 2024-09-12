@@ -63,9 +63,9 @@ public class Cords extends Module {
                         float var9 = (float) ResourceRegistry.JelloLightFont18.method23942(var5);
                         float var10 = Math.min(1.0F, (float) var8 / var9);
                         if (this.field23756.getDirection() != Direction.FORWARDS) {
-                            var10 *= 0.9F + Class9782.method38556(Math.min(1.0F, this.field23756.calcPercent() * 8.0F), 0.0F, 1.0F, 1.0F) * 0.1F;
+                            var10 *= 0.9F + QuadraticEasing.easeInQuad(Math.min(1.0F, this.field23756.calcPercent() * 8.0F), 0.0F, 1.0F, 1.0F) * 0.1F;
                         } else {
-                            var10 *= 0.9F + Class9747.method38214(Math.min(1.0F, this.field23756.calcPercent() * 7.0F), 0.0F, 1.0F, 1.0F) * 0.1F;
+                            var10 *= 0.9F + EasingFunctions.easeOutBack(Math.min(1.0F, this.field23756.calcPercent() * 7.0F), 0.0F, 1.0F, 1.0F) * 0.1F;
                         }
 
                         GL11.glPushMatrix();

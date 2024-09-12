@@ -114,10 +114,10 @@ public class CustomResourceLoadProgressGui extends LoadingGui {
       float var10 = 1.0F - var0;
       byte var11 = 80;
       if (var0 == 1.0F) {
-         RenderUtil.method11475(
+         RenderUtil.drawRect(
             (float)var6, (float)(var7 + var5 + var11), (float)var4, 20.0F, 10.0F, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F * var0)
          );
-         RenderUtil.method11475(
+         RenderUtil.drawRect(
             (float)(var6 + 1),
             (float)(var7 + var5 + var11 + 1),
             (float)(var4 - 2),
@@ -127,7 +127,7 @@ public class CustomResourceLoadProgressGui extends LoadingGui {
          );
       }
 
-      RenderUtil.method11475(
+      RenderUtil.drawRect(
          (float)(var6 + 2),
          (float)(var7 + var5 + var11 + 2),
          (float)((int)((float)(var4 - 4) * var9)),

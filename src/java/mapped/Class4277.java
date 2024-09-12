@@ -70,10 +70,10 @@ public class Class4277 extends Class4247 {
       int var8 = this.method13263() + this.field20734.method13267() / 4 + 3;
       int var9 = this.method13265() + this.method13269() / 2 - var6 / 2;
       int var10 = this.field20734.method13263() + this.field20734.method13267() / 2 - 6;
-      RenderUtil.method11475(
+      RenderUtil.drawRect(
          (float)var8, (float)var9, (float)var10, (float)var6, (float)(var6 / 2), ColorUtils.applyAlpha(this.field20914.method19405(), var1 * var1 * var1)
       );
-      RenderUtil.method11475(
+      RenderUtil.drawRect(
          (float)(var8 + var10),
          (float)var9,
          (float)(var7 - var10),

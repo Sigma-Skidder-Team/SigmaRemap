@@ -345,7 +345,7 @@ public class Class4281 extends Class4278 {
       int var8 = this.field20897 - 4;
       float var9 = (float)var7 + this.field20746 + (float)this.field20913.method23942(var6.substring(0, this.field20749));
       if (this.method13297()) {
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             var9 + (float)(var6.isEmpty() ? 0 : -1),
             (float)(this.field20896 + this.field20898 / 2 - this.field20913.method23941(var6) / 2 + 2),
             var9 + (float)(var6.isEmpty() ? 1 : 0),
@@ -368,7 +368,7 @@ public class Class4281 extends Class4278 {
       this.field20751 = Math.min(Math.max(0, this.field20751), var6.length());
       float var14 = (float)var7 + this.field20746 + (float)this.field20913.method23942(var6.substring(0, this.field20750));
       float var11 = (float)var7 + this.field20746 + (float)this.field20913.method23942(var6.substring(0, this.field20751));
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          var14,
          (float)(this.field20896 + this.field20898 / 2 - this.field20913.method23941(var6) / 2),
          var11,
@@ -388,7 +388,7 @@ public class Class4281 extends Class4278 {
       );
       RenderUtil.endScissor();
       if (this.field20758) {
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)this.field20895,
             (float)(this.field20896 + this.field20898 - 2),
             (float)(this.field20895 + this.field20897),

@@ -45,7 +45,7 @@ public class Class4240 extends Class4247 {
       int var8 = var5 >> 8 & 0xFF;
       int var9 = var5 & 0xFF;
       if (this.field20586 <= 0) {
-         RenderUtil.method11426(
+         RenderUtil.drawRect(
             (float)this.method13263(),
             (float)this.method13265(),
             (float)(this.method13263() + this.method13267()),

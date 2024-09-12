@@ -10,9 +10,9 @@ public class Class6667 implements Class6664 {
    public void method20320(IconPanel var1, IconPanel var2) {
       var1.method13266(0);
       if (var2 == null) {
-         var1.method13270(Minecraft.getInstance().mainWindow.getHeight());
+         var1.setHeight(Minecraft.getInstance().mainWindow.getHeight());
       } else {
-         var1.method13270(var2.method13269());
+         var1.setHeight(var2.method13269());
       }
    }
 }

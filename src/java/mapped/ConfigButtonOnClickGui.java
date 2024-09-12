@@ -148,7 +148,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
       super.method13224();
       super.method13225();
       byte var5 = 10;
-      int var6 = ColorUtils.applyAlpha(-723724, Class9782.method38557(var1, 0.0F, 1.0F, 1.0F));
+      int var6 = ColorUtils.applyAlpha(-723724, QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F));
       RenderUtil.method11463(
          (float)(this.field20895 + var5 / 2),
          (float)(this.field20896 + var5 / 2),
@@ -157,14 +157,14 @@ public class ConfigButtonOnClickGui extends Class4247 {
          35.0F,
          var1
       );
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)(this.field20895 + var5 / 2),
          (float)(this.field20896 + var5 / 2),
          (float)(this.field20895 - var5 / 2 + this.field20897),
          (float)(this.field20896 - var5 / 2 + this.field20898),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
       );
-      RenderUtil.method11475((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, (float)var5, var6);
+      RenderUtil.drawRect((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, (float)var5, var6);
       float var7 = 0.9F + (1.0F - MathUtils.lerp(this.field21300.field20703.calcPercent(), 0.0, 0.96, 0.69, 0.99)) * 0.1F;
       if (this.field21300.field20703.getDirection() == Direction.BACKWARDS) {
          var7 = 0.9F + (1.0F - MathUtils.lerp(this.field21300.field20703.calcPercent(), 0.61, 0.01, 0.87, 0.16)) * 0.1F;
@@ -178,7 +178,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
          "Profiles",
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F * var1)
       );
-      RenderUtil.method11426(
+      RenderUtil.drawRect(
          (float)(this.field20895 + 25),
          (float)(this.field20896 + 69),
          (float)(this.field20895 + this.field20897 - 25),

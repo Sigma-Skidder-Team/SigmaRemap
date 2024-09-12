@@ -25,7 +25,7 @@ public class Class4245 extends Class4240 {
          this.field20599.changeDirection(Direction.FORWARDS);
       }
 
-      int var4 = (int)(Class9747.method38217(this.field20599.calcPercent(), 0.0F, 1.0F, 1.0F, 7.0F) * 3.0F);
+      int var4 = (int)(EasingFunctions.easeInOutCustomBack(this.field20599.calcPercent(), 0.0F, 1.0F, 1.0F, 7.0F) * 3.0F);
       RenderUtil.method11438(
          (float)(this.field20895 + this.field20897 / 2),
          (float)(this.field20896 + this.field20898 / 2),

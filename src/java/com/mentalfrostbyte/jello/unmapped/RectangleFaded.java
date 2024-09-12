@@ -32,7 +32,7 @@ public class RectangleFaded extends Class4240 {
             var4 = MathUtils.lerp(this.field20592.calcPercent(), 0.71, 0.18, 0.95, 0.57);
         }
 
-        RenderUtil.method11419((float) this.method13263(), (float) this.method13265() - var4 * 3.0F, (float) this.method13267(), (float) this.method13269());
+        RenderUtil.startScissor((float) this.method13263(), (float) this.method13265() - var4 * 3.0F, (float) this.method13267(), (float) this.method13269());
         int var5 = 40;
         float var6 = - GuiSwitch.field21070 / (float) Minecraft.getInstance().mainWindow.getWidth();
         float var7 = - GuiSwitch.field21071 / (float) Minecraft.getInstance().mainWindow.getHeight();

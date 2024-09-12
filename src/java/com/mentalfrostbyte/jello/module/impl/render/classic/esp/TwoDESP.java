@@ -186,7 +186,7 @@ public class TwoDESP extends Module {
                             float var19 = var16 * 5.0F * 0.01F;
                             Color var20 = method16516(var17, var18, var19).brighter();
                             float var21 = var11 + (var10 - var11) * var16 * 5.0F * 0.01F;
-                            RenderUtil.method11426(var13 - 4.0F, var11 - 1.0F, var13 - 2.0F, var21, var20.getRGB());
+                            RenderUtil.drawRect(var13 - 4.0F, var11 - 1.0F, var13 - 2.0F, var21, var20.getRGB());
                             if ((int) Class9784.method38568(var16 * 5.0F, 1.0) != 100 && var5) {
                                 RenderSystem.pushMatrix();
                                 RenderSystem.scalef(2.0F, 2.0F, 2.0F);
