@@ -12,6 +12,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class ResourcesDecrypter {
@@ -219,8 +220,9 @@ public class ResourcesDecrypter {
             InputStream resourceStream = Client.getInstance().getClass().getClassLoader().getResourceAsStream(encryptedFileName);
 
             if (resourceStream != null) {
-                if (!Files.exists(Paths.get("lol"))) {
-                    Files.createDirectory(Paths.get("lol"));
+                Path lol = Paths.get("lol");
+                if (!Files.exists(lol)) {
+                    Files.createDirectory(lol);
                 }
 
                 File outputFile = new File("lol", fileName);
@@ -240,10 +242,8 @@ public class ResourcesDecrypter {
                         decryptedOutputStream.write(buffer, 0, bytesRead);
                     }
 
-                    if (!Files.exists(outputFile.toPath())) {
-                        decryptedOutputStream.writeTo(fileOutputStream);
-                        System.out.println("Decrypted file saved to: " + outputFile.getAbsolutePath());
-                    }
+                    decryptedOutputStream.writeTo(fileOutputStream);
+                    System.out.println("Decrypted file saved to: " + outputFile.getAbsolutePath());
                     return new ByteArrayInputStream(decryptedOutputStream.toByteArray());
                 }
             } else {
