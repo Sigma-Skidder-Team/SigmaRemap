@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Class4366 extends Class4247 {
-   public static final ColorHelper field21342 = new ColorHelper(1250067, -15329770).method19410(ClientColors.DEEP_TEAL.getColor).method19414(Class2218.field14492);
+   public static final ColorHelper field21342 = new ColorHelper(1250067, -15329770).setTextColor(ClientColors.DEEP_TEAL.getColor).method19414(Class2218.field14492);
    public List<String> field21343 = new ArrayList<String>();
    public int field21344 = 0;
    public boolean field21345;
@@ -22,26 +22,26 @@ public class Class4366 extends Class4247 {
 
    private void method13663() {
       this.method13241().clear();
-      this.field20913 = ClassicDecryption.regular15;
-      Class4240 var3;
-      this.addToList(var3 = new Class4240(this, "dropdownButton", 0, 0, this.method13269(), this.method13269(), this.field20914));
+      this.font = ClassicDecryption.regular15;
+      ButtonPanel var3;
+      this.addToList(var3 = new ButtonPanel(this, "dropdownButton", 0, 0, this.getHeight(), this.getHeight(), this.field20914));
       var3.method13261((var1, var2) -> {
-         var1.method13264(0);
-         var1.method13266(0);
-         var1.setWidth(this.method13267());
-         var1.setHeight(this.method13269());
+         var1.setX(0);
+         var1.setY(0);
+         var1.setWidth(this.getWidth());
+         var1.setHeight(this.getHeight());
       });
       var3.doThis((var1, var2) -> this.method13674(!this.method13673()));
 
       for (String var5 : this.field21343) {
-         Class4240 var6;
+         ButtonPanel var6;
          this.addToList(
-            var6 = new Class4240(
+            var6 = new ButtonPanel(
                this,
                var5,
                0,
-               this.method13269(),
-               this.method13267(),
+               this.getHeight(),
+               this.getWidth(),
                17,
                new ColorHelper(
                   -14540254,
@@ -55,7 +55,7 @@ public class Class4366 extends Class4247 {
                ClassicDecryption.regular12
             )
          );
-         var6.method13034(8);
+         var6.setX(8);
          var6.doThis((var2, var3x) -> {
             int var6x = this.method13671();
             this.method13672(this.field21343.indexOf(var5));
@@ -74,7 +74,7 @@ public class Class4366 extends Class4247 {
    }
 
    private int method13665() {
-      return this.method13673() ? this.method13269() * (this.field21343.size() + 1) : this.method13269();
+      return this.method13673() ? this.getHeight() * (this.field21343.size() + 1) : this.getHeight();
    }
 
    private int method13666() {
@@ -93,31 +93,31 @@ public class Class4366 extends Class4247 {
    @Override
    public void draw(float var1) {
       RenderUtil.drawRect(
-         (float)this.method13263(),
-         (float)this.method13265(),
-         (float)(this.method13263() + this.method13267()),
-         (float)(this.method13265() + this.method13269()),
+         (float)this.getX(),
+         (float)this.getY(),
+         (float)(this.getX() + this.getWidth()),
+         (float)(this.getY() + this.getHeight()),
          -14540254
       );
       RenderUtil.method11428(
-         (float)this.method13263(),
-         (float)this.method13265(),
-         (float)(this.method13263() + this.method13267()),
-         (float)(this.method13265() + this.method13269()),
+         (float)this.getX(),
+         (float)this.getY(),
+         (float)(this.getX() + this.getWidth()),
+         (float)(this.getY() + this.getHeight()),
          ClientColors.DEEP_TEAL.getColor
       );
-      if (this.method13114(this.method13309(), this.method13310()) && this.method13310() - this.method13272() < this.method13269()) {
+      if (this.method13114(this.method13309(), this.method13310()) && this.method13310() - this.method13272() < this.getHeight()) {
          RenderUtil.method11428(
-            (float)(this.method13263() + 1),
-            (float)(this.method13265() + 1),
-            (float)(this.method13263() + this.method13267() - 1),
-            (float)(this.method13265() + this.method13269() - 1),
+            (float)(this.getX() + 1),
+            (float)(this.getY() + 1),
+            (float)(this.getX() + this.getWidth() - 1),
+            (float)(this.getY() + this.getHeight() - 1),
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.25F)
          );
       }
 
-      int var4 = this.method13263() + this.method13267() - 11;
-      int var5 = this.method13265() + this.method13269() - 12;
+      int var4 = this.getX() + this.getWidth() - 11;
+      int var5 = this.getY() + this.getHeight() - 12;
       if (!this.method13673()) {
          RenderUtil.method11434((float)var4, (float)var5, (float)(var4 + 6), (float)var5, (float)(var4 + 3), (float)(var5 + 3), ClientColors.MID_GREY.getColor);
       } else {
@@ -136,8 +136,8 @@ public class Class4366 extends Class4247 {
          RenderUtil.method11415(this);
          RenderUtil.drawString(
             this.method13305(),
-            (float)(this.method13263() + 7),
-            (float)(this.method13265() + (this.method13269() - this.method13305().method23952()) / 2),
+            (float)(this.getX() + 7),
+            (float)(this.getY() + (this.getHeight() - this.method13305().method23952()) / 2),
             this.method13303(),
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * 0.5F)
          );
@@ -201,6 +201,6 @@ public class Class4366 extends Class4247 {
    public boolean method13114(int var1, int var2) {
       var1 -= this.method13271();
       var2 -= this.method13272();
-      return var1 >= 0 && var1 <= this.method13267() && var2 >= 0 && var2 <= this.method13665();
+      return var1 >= 0 && var1 <= this.getWidth() && var2 >= 0 && var2 <= this.method13665();
    }
 }

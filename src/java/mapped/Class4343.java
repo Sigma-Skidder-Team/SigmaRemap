@@ -39,7 +39,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             byte var21 = 24;
             byte var29 = 24;
             StringPanel var37 = new StringPanel(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, StringPanel.field20778, var2.getName());
-            UICheckBox var45 = new UICheckBox(var1, var2.getName() + "checkbox", var1.method13267() - 24 - var5, var4 + 6, 24, 24);
+            UICheckBox var45 = new UICheckBox(var1, var2.getName() + "checkbox", var1.getWidth() - 24 - var5, var4 + 6, 24, 24);
             this.field21223.put(var37, var2);
             var45.method13705((Boolean)var2.getCurrentValue(), false);
             var2.method18616(var1x -> {
@@ -48,7 +48,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                }
             });
             var45.method13036(var1x -> var2.method18620(((UICheckBox)var1x).method13703()));
-            var45.method13261((var1x, var2x) -> var1x.method13264(var2x.method13267() - 24 - var5));
+            var45.method13261((var1x, var2x) -> var1x.setX(var2x.getWidth() - 24 - var5));
             var1.addToList(var37);
             var1.addToList(var45);
             var4 += 24 + var5;
@@ -59,7 +59,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             StringPanel var36 = new StringPanel(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, StringPanel.field20778, var2.getName());
             this.field21223.put(var36, var2);
             NumberSetting var44 = (NumberSetting)var2;
-            Class4277 var47 = new Class4277(var1, var2.getName() + "slider", var1.method13267() - 126 - var5, var4 + 6, 126, 24);
+            Class4277 var47 = new Class4277(var1, var2.getName() + "slider", var1.getWidth() - 126 - var5, var4 + 6, 126, 24);
             var47.method13137().method13306(ResourceRegistry.JelloLightFont14);
             var47.method13304(Float.toString((Float)var2.getCurrentValue()));
             var47.method13140(Class4277.method13134(var44.getMin(), var44.getMax(), (Float)var44.getCurrentValue()), false);
@@ -82,7 +82,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                   var2.method18620(var8x);
                }
             });
-            var47.method13261((var1x, var2x) -> var1x.method13264(var2x.method13267() - 126 - var5));
+            var47.method13261((var1x, var2x) -> var1x.setX(var2x.getWidth() - 126 - var5));
             var1.addToList(var36);
             var1.addToList(var47);
             var4 += 24 + var5;
@@ -100,7 +100,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                var35 = new Class4281(
                   var1,
                   var2.getName() + "txt",
-                  var1.method13267() - var5 - var19,
+                  var1.getWidth() - var5 - var19,
                   var4 + var27 / 4 - 1,
                   var19,
                   var27,
@@ -124,7 +124,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             Class4363 var42 = new Class4363(
                var1,
                var2.getName() + "btn",
-               var1.method13267() - var5,
+               var1.getWidth() - var5,
                var4 + 6 - 1,
                123,
                27,
@@ -141,7 +141,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                ((ModeSetting)var2).method18633(((Class4363)var2x).method13655());
                var42.method13656(((ModeSetting)var2).method18632());
             });
-            var42.method13261((var2x, var3x) -> var2x.method13264(var1.method13267() - 123 - var5));
+            var42.method13261((var2x, var3x) -> var2x.setX(var1.getWidth() - 123 - var5));
             var1.addToList(var34);
             var1.addToList(var42);
             var4 += 27 + var5;
@@ -149,7 +149,7 @@ public class Class4343 extends Class4339 implements Class4342 {
          default:
             break;
          case 6:
-            IconPanel var17 = new IconPanel(var1, var2.getName() + "view", var3, var4, var1.method13267(), 0);
+            IconPanel var17 = new IconPanel(var1, var2.getName() + "view", var3, var4, var1.getWidth(), 0);
             int var25 = 0;
 
             for (Setting var41 : ((SubOptionSetting)var2).method18635()) {
@@ -157,16 +157,16 @@ public class Class4343 extends Class4339 implements Class4342 {
             }
 
             new Class6665().method20320(var17, var1);
-            var17.method13261((var1x, var2x) -> var1x.setWidth(var2x.method13267() - var5));
+            var17.method13261((var1x, var2x) -> var1x.setWidth(var2x.getWidth() - var5));
             var1.addToList(var17);
-            var4 += var17.method13269() + var5;
+            var4 += var17.getHeight() + var5;
             break;
          case 7:
             byte var16 = 123;
             byte var24 = 27;
             StringPanel var32 = new StringPanel(var1, var2.getName() + "lbl", var3, var4, this.field21222, 27, StringPanel.field20778, var2.getName());
             Class4377 var40 = new Class4377(
-               var1, var2.getName() + "btn", var1.method13267() - var5, var4 + 6, 123, 27, ((TextBoxSetting)var2).method18627(), (Integer)var2.getCurrentValue()
+               var1, var2.getName() + "btn", var1.getWidth() - var5, var4 + 6, 123, 27, ((TextBoxSetting)var2).method18627(), (Integer)var2.getCurrentValue()
             );
             this.field21223.put(var32, var2);
             var2.method18616(var1x -> {
@@ -175,7 +175,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                }
             });
             var40.method13036(var1x -> var2.method18620(((Class4377)var1x).method13720()));
-            var40.method13261((var2x, var3x) -> var2x.method13264(var1.method13267() - 123 - var5));
+            var40.method13261((var2x, var3x) -> var2x.setX(var1.getWidth() - 123 - var5));
             var1.addToList(var32);
             var1.addToList(var40);
             var4 += 27 + var5;
@@ -187,7 +187,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             Class4258 var39 = new Class4258(
                var1,
                var2.getName() + "picker",
-               var1.method13267() - var5,
+               var1.getWidth() - var5,
                var4 + 5,
                175,
                200,
@@ -196,7 +196,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             );
             this.field21223.put(var31, var2);
             var39.method13036(var2x -> var2.method18620(var39.method13072()));
-            var39.method13261((var2x, var3x) -> var2x.method13264(var1.method13267() - 175 - var5));
+            var39.method13261((var2x, var3x) -> var2x.setX(var1.getWidth() - 175 - var5));
             var1.addToList(var31);
             var1.addToList(var39);
             var4 += 200 + var5;
@@ -207,7 +207,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             ColorSetting var30 = (ColorSetting)var2;
             StringPanel var38 = new StringPanel(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, StringPanel.field20778, var2.getName());
             Class4252 var46 = new Class4252(
-               var1, var2.getName() + "color", var1.method13267() - 160 - var5 + 10, var4, 160, 114, (Integer)var2.getCurrentValue(), var30.method18643()
+               var1, var2.getName() + "color", var1.getWidth() - 160 - var5 + 10, var4, 160, 114, (Integer)var2.getCurrentValue(), var30.method18643()
             );
             this.field21223.put(var38, var2);
             var2.method18616(var3x -> {
@@ -230,7 +230,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             Class4250 var12 = new Class4250(
                var1,
                var2.getName() + "color",
-               var1.method13267() - 150 - var5 + 10,
+               var1.getWidth() - 150 - var5 + 10,
                var4,
                150,
                150,
@@ -270,8 +270,8 @@ public class Class4343 extends Class4339 implements Class4342 {
 
          for (Module var10 : var18.moduleArray) {
             int var11 = 0;
-            IconPanel var12 = new IconPanel(this, var10.getName() + "SubView", 0, var17, this.field20897, this.field20898 - var4);
-            var12.method13261((var0, var1) -> var0.setWidth(var1.method13267()));
+            IconPanel var12 = new IconPanel(this, var10.getName() + "SubView", 0, var17, this.width, this.height - var4);
+            var12.method13261((var0, var1) -> var0.setWidth(var1.getWidth()));
 
             for (Setting var14 : var10.getSettingMap().values()) {
                var11 = this.method13531(var12, var14, 20, var11, 20);
@@ -282,7 +282,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             for (IconPanel var20 : var12.method13241()) {
                if (var20 instanceof Class4363) {
                   Class4363 var15 = (Class4363)var20;
-                  int var16 = var15.method13649() + var15.method13265() + var15.method13269() + 14;
+                  int var16 = var15.method13649() + var15.getY() + var15.getHeight() + 14;
                   var11 = Math.max(var11, var16);
                }
             }
@@ -325,22 +325,22 @@ public class Class4343 extends Class4339 implements Class4342 {
       this.field21225.changeDirection(!var4 ? Direction.BACKWARDS : Direction.FORWARDS);
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
-         (float)(this.method13263() + 10),
-         (float)(this.method13265() + this.method13269() + 24),
+         (float)(this.getX() + 10),
+         (float)(this.getY() + this.getHeight() + 24),
          this.field21227,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
-         (float)(this.method13263() + 11),
-         (float)(this.method13265() + this.method13269() + 24),
+         (float)(this.getX() + 11),
+         (float)(this.getY() + this.getHeight() + 24),
          this.field21227,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
-         (float)(this.method13263() + 14 + ResourceRegistry.JelloLightFont14.method23942(this.field21227) + 2),
-         (float)(this.method13265() + this.method13269() + 24),
+         (float)(this.getX() + 14 + ResourceRegistry.JelloLightFont14.method23942(this.field21227) + 2),
+         (float)(this.getY() + this.getHeight() + 24),
          this.field21226,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * this.field21225.calcPercent())
       );

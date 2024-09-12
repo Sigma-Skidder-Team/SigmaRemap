@@ -29,25 +29,25 @@ public class Class4306 extends IconPanel {
    @Override
    public void method13028(int var1, int var2) {
       if (this.field20932 == -9999.0F || this.field20933 == -9999.0F) {
-         this.field20932 = (float)this.field20895;
-         this.field20933 = (float)this.field20896;
+         this.field20932 = (float)this.x;
+         this.field20933 = (float)this.y;
       }
 
       this.field20932 = this.field20932 + this.field20928 * JelloMainMenuScreen.field20982;
       this.field20933 = this.field20933 + this.field20929 * JelloMainMenuScreen.field20982;
-      this.field20895 = Math.round(this.field20932);
-      this.field20896 = Math.round(this.field20933);
-      if (!(this.field20932 + (float)this.field20897 < 0.0F)) {
+      this.x = Math.round(this.field20932);
+      this.y = Math.round(this.field20933);
+      if (!(this.field20932 + (float)this.width < 0.0F)) {
          if (this.field20932 > (float) Minecraft.getInstance().mainWindow.getWidth()) {
-            this.field20932 = (float)(0 - this.field20897);
+            this.field20932 = (float)(0 - this.width);
          }
       } else {
          this.field20932 = (float) Minecraft.getInstance().mainWindow.getWidth();
       }
 
-      if (!(this.field20933 + (float)this.field20898 < 0.0F)) {
+      if (!(this.field20933 + (float)this.height < 0.0F)) {
          if (this.field20933 > (float) Minecraft.getInstance().mainWindow.getHeight()) {
-            this.field20933 = (float)(0 - this.field20898);
+            this.field20933 = (float)(0 - this.height);
          }
       } else {
          this.field20933 = (float) Minecraft.getInstance().mainWindow.getHeight();
@@ -79,9 +79,9 @@ public class Class4306 extends IconPanel {
       float var4 = 0.07F;
       float var5 = 0.3F;
       RenderUtil.method11436(
-         (float)this.field20895,
-         (float)this.field20896,
-         (float)this.method13267(),
+         (float)this.x,
+         (float)this.y,
+         (float)this.getWidth(),
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.07F + (!(this.field20934 > 0.0F) ? 0.0F : this.field20934 * 0.3F))
       );
       float var6 = (float)(this.field20936 - this.method13271());

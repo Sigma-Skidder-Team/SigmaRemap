@@ -10,8 +10,8 @@ public class SearchBar extends Screen {
    public SearchBar() {
       super("Spotlight");
       this.method13300(false);
-      int var3 = (this.method13267() - 675) / 2;
-      this.addToList(this.field21108 = new Class4257(this, "search", var3, (int)((float)this.field20898 * 0.25F), 675, 60, true));
+      int var3 = (this.getWidth() - 675) / 2;
+      this.addToList(this.field21108 = new Class4257(this, "search", var3, (int)((float)this.height * 0.25F), 675, 60, true));
    }
 
    @Override

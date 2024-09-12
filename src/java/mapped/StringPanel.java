@@ -32,8 +32,8 @@ public class StringPanel extends Class4278 {
          GL11.glAlphaFunc(518, 0.01F);
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont18_1,
-            (float)this.method13263(),
-            (float)this.method13265(),
+            (float)this.getX(),
+            (float)this.getY(),
             this.method13303(),
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1)
          );
@@ -43,8 +43,8 @@ public class StringPanel extends Class4278 {
       if (this.field20912 != null) {
          RenderUtil.drawString(
             this.method13305(),
-            (float)this.method13263(),
-            (float)this.method13265(),
+            (float)this.getX(),
+            (float)this.getY(),
             this.method13303(),
             ColorUtils.applyAlpha(this.field20914.method19409(), var1 * ColorUtils.method17710(this.field20914.method19409()))
          );

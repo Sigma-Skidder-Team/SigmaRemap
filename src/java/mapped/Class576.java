@@ -25,8 +25,8 @@ public class Class576 implements Runnable {
          }
 
          this.field2813.field21184.method13517().method13233(var6 = new Class4330(this.field2813.field21184, "changelog" + var4, var5));
-         var6.method13266(var3);
-         var3 += var6.method13269();
+         var6.setY(var3);
+         var3 += var6.getHeight();
       }
    }
 }

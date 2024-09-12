@@ -27,16 +27,16 @@ public class Class4250 extends Class4247 {
 
    public float[] method13040() {
       int var3 = this.field20610;
-      float var4 = (float)(this.field20897 - var3 * 2);
-      float var5 = (float)(this.field20608.method13263() - var3) / var4;
-      float var6 = 1.0F - (float)(this.field20608.method13265() - var3) / var4;
-      float var7 = (float)(this.field20609.method13263() - var3) / var4;
-      float var8 = 1.0F - (float)(this.field20609.method13265() - var3) / var4;
+      float var4 = (float)(this.width - var3 * 2);
+      float var5 = (float)(this.field20608.getX() - var3) / var4;
+      float var6 = 1.0F - (float)(this.field20608.getY() - var3) / var4;
+      float var7 = (float)(this.field20609.getX() - var3) / var4;
+      float var8 = 1.0F - (float)(this.field20609.getY() - var3) / var4;
       return new float[]{var5, var6, var7, var8};
    }
 
    public void method13041(float var1, float var2, float var3, float var4) {
-      float var7 = (float)(this.field20897 - this.field20610 * 2);
+      float var7 = (float)(this.width - this.field20610 * 2);
       this.field20608.method13144((float)this.field20610 + var7 * var1, (float)this.field20610 + var7 * (1.0F - var2));
       this.field20609.method13144((float)this.field20610 + var7 * var3, (float)this.field20610 + var7 * (1.0F - var4));
    }
@@ -55,16 +55,16 @@ public class Class4250 extends Class4247 {
 
       float[] var4 = this.method13040();
       int var5 = this.field20610;
-      float var6 = (float)(this.field20897 - var5 * 2);
+      float var6 = (float)(this.width - var5 * 2);
       float var7 = var4[0];
       float var8 = var4[1];
       float var9 = var4[2];
       float var10 = var4[3];
       RenderUtil.drawRect(
-         (float)(this.field20895 + var5),
-         (float)(this.field20896 + var5),
-         (float)(this.field20897 - var5 * 2),
-         (float)(this.field20898 - var5 * 2),
+         (float)(this.x + var5),
+         (float)(this.y + var5),
+         (float)(this.width - var5 * 2),
+         (float)(this.height - var5 * 2),
          3.0F,
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
       );
@@ -76,14 +76,14 @@ public class Class4250 extends Class4247 {
       MathUtils var12 = new MathUtils((double)(1.0F / var6 * 2.0F));
       double var13 = var12.method30789(var11, Math.min(0.8F, this.field20611.calcPercent()) * 1.25F);
       RenderUtil.method11438(
-         (float)((double)this.field20895 + (double)var6 * var13 + (double)var5),
-         (float)(this.field20896 - var5 / 2 + this.field20898),
+         (float)((double)this.x + (double)var6 * var13 + (double)var5),
+         (float)(this.y - var5 / 2 + this.height),
          14.0F,
          ColorUtils.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, var1)
       );
       List<Class9778> var15 = var12.method30790(var11);
       GL11.glPushMatrix();
-      GL11.glTranslatef((float)(this.field20895 + var5), (float)(this.field20896 + var5), 0.0F);
+      GL11.glTranslatef((float)(this.x + var5), (float)(this.y + var5), 0.0F);
       GL11.glLineWidth(1.0F);
       GL11.glColor4d(0.0, 0.0, 0.0, (double)(0.6F * var1));
       GL11.glAlphaFunc(519, 0.0F);
@@ -104,11 +104,11 @@ public class Class4250 extends Class4247 {
       GL11.glColor4d(0.0, 0.2F, 0.4F, 0.2F);
       GL11.glBegin(3);
       GL11.glVertex2f(0.0F, var6);
-      GL11.glVertex2f((float)(this.field20608.method13263() - var5 + 5), (float)(this.field20608.method13265() - var5 + 5));
+      GL11.glVertex2f((float)(this.field20608.getX() - var5 + 5), (float)(this.field20608.getY() - var5 + 5));
       GL11.glEnd();
       GL11.glBegin(3);
       GL11.glVertex2f(var6, 0.0F);
-      GL11.glVertex2f((float)(this.field20609.method13263() - var5 + 5), (float)(this.field20609.method13265() - var5 + 5));
+      GL11.glVertex2f((float)(this.field20609.getX() - var5 + 5), (float)(this.field20609.getY() - var5 + 5));
       GL11.glEnd();
       RenderSystem.disableBlend();
       RenderSystem.enableTexture();

@@ -18,16 +18,16 @@ public class Class4372 extends Class4247 {
       byte var4 = 5;
       if (this.method13700() || this.method13298()) {
          RenderUtil.method11464(
-            (float)this.field20895,
-            (float)this.field20896,
-            (float)this.field20897,
-            (float)this.field20898,
+            (float)this.x,
+            (float)this.y,
+            (float)this.width,
+            (float)this.height,
             14.0F,
             !this.method13700() ? 0.3F * var1 : 0.8F * var1
          );
       }
 
-      RenderUtil.method11479(this.field21366, this.field20895 + var4, this.field20896 + var4, this.field20897 - var4 * 2, this.field20898 - var4 * 2);
+      RenderUtil.method11479(this.field21366, this.x + var4, this.y + var4, this.width - var4 * 2, this.height - var4 * 2);
       super.draw(var1);
    }
 

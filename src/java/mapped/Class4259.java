@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Class4259 extends Class4247 {
-   private List<Class4240> field20645 = new ArrayList<Class4240>();
+   private List<ButtonPanel> field20645 = new ArrayList<ButtonPanel>();
    public int field20646;
    public Class4266 field20647;
    public ChunkPos field20648;
@@ -53,7 +53,7 @@ public class Class4259 extends Class4247 {
          int var5 = var1 - this.field20652;
          int var6 = var2 - this.field20653;
          float var7 = ((float)this.field20649 - 1.0F) / (float)this.field20649;
-         float var8 = (float)this.field20897 / ((float)this.field20649 * 2.0F * var7);
+         float var8 = (float)this.width / ((float)this.field20649 * 2.0F * var7);
          this.field20651 += (float)var5 / var8;
          this.field20650 += (float)var6 / var8;
       }
@@ -72,9 +72,9 @@ public class Class4259 extends Class4247 {
    @Override
    public boolean method13078(int var1, int var2, int var3) {
       if (this.method13298() && var3 == 1) {
-         int var6 = Math.max(this.field20897, this.field20898);
-         float var7 = (float)(this.field20897 - var6) / 2.0F;
-         float var8 = (float)(this.field20898 - var6) / 2.0F;
+         int var6 = Math.max(this.width, this.height);
+         float var7 = (float)(this.width - var6) / 2.0F;
+         float var8 = (float)(this.height - var6) / 2.0F;
          float var9 = (float)var1 - ((float)this.method13271() + var8 + (float)(var6 / 2));
          float var10 = (float)(Minecraft.getInstance().mainWindow.getHeight() - var2) - ((float)this.method13272() + var7 + (float)(var6 / 2));
          float var11 = (float)var6 / ((float)(this.field20649 - 1) * 2.0F);
@@ -117,9 +117,9 @@ public class Class4259 extends Class4247 {
          this.field20647.field20687 = true;
       }
 
-      int var6 = Math.max(this.field20897, this.field20898);
-      int var7 = (this.field20897 - var6) / 2;
-      int var8 = (this.field20898 - var6) / 2;
+      int var6 = Math.max(this.width, this.height);
+      int var7 = (this.width - var6) / 2;
+      int var8 = (this.height - var6) / 2;
       float var9 = (float)this.field20649 / ((float)this.field20649 - 1.0F);
       float var10 = (float)var6 / ((float)this.field20649 * 2.0F);
       double var11 = ((double)this.field20650 - Math.floor((double)this.field20650)) * (double)var10;
@@ -127,16 +127,16 @@ public class Class4259 extends Class4247 {
       TextureManager var10000 = var4.getTextureManager();
       var4.getTextureManager();
       var10000.bindTexture(TextureManager.field1094);
-      RenderUtil.method11421(this.field20895, this.field20896, this.field20895 + this.field20897, this.field20896 + this.field20898, true);
+      RenderUtil.method11421(this.x, this.y, this.x + this.width, this.y + this.height, true);
       GL11.glPushMatrix();
-      GL11.glTranslatef((float)(this.field20895 + this.field20897 / 2), (float)(this.field20896 + this.field20898 / 2), 0.0F);
+      GL11.glTranslatef((float)(this.x + this.width / 2), (float)(this.y + this.height / 2), 0.0F);
       GL11.glScalef(var9, var9, 0.0F);
       GL11.glRotatef(-90.0F, 0.0F, 0.0F, 1.0F);
-      GL11.glTranslatef((float)(-this.field20895 - this.field20897 / 2), (float)(-this.field20896 - this.field20898 / 2), 0.0F);
+      GL11.glTranslatef((float)(-this.x - this.width / 2), (float)(-this.y - this.height / 2), 0.0F);
       GL11.glTranslated(-var11, var13, 0.0);
       RenderUtil.method11453(
-         (float)(this.field20895 + var7),
-         (float)(this.field20896 + var8),
+         (float)(this.x + var7),
+         (float)(this.y + var8),
          (float)var6,
          (float)var6,
          this.field20654.field30546,
@@ -157,8 +157,8 @@ public class Class4259 extends Class4247 {
          float var20 = (float)var16.field35891 - var18 + 1.0F;
          float var21 = (float)var6 / ((float)(this.field20649 - 1) * 2.0F);
          RenderUtil.method11449(
-            (float)(this.field20895 + Math.round(var19 * var21 / 16.0F) + this.field20897 / 2 - 16),
-            (float)(this.field20896 + Math.round(var20 * var21 / 16.0F) + this.field20898 / 2 - 42),
+            (float)(this.x + Math.round(var19 * var21 / 16.0F) + this.width / 2 - 16),
+            (float)(this.y + Math.round(var20 * var21 / 16.0F) + this.height / 2 - 42),
             32.0F,
             46.0F,
             ResourcesDecrypter.waypointPNG,
@@ -172,8 +172,8 @@ public class Class4259 extends Class4247 {
       String var24 = var22 + "  " + var23;
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
-         (float)(this.field20895 - ResourceRegistry.JelloLightFont14.method23942(var24) - 23),
-         (float)(this.field20896 + 35),
+         (float)(this.x - ResourceRegistry.JelloLightFont14.method23942(var24) - 23),
+         (float)(this.y + 35),
          var24,
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F)
       );

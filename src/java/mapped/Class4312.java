@@ -31,7 +31,7 @@ public class Class4312 extends Screen {
       super("JelloChat");
       this.addToList(
          this.field20995 = new Class4269(
-            this, "input", this.field20998, this.method13269() - this.field21001 - this.field20998, this.field20999, this.field21001
+            this, "input", this.field20998, this.getHeight() - this.field21001 - this.field20998, this.field20999, this.field21001
          )
       );
       this.addToList(
@@ -39,7 +39,7 @@ public class Class4312 extends Screen {
             this,
             "navbar",
             this.field20998,
-            this.method13269() - this.field21001 - this.field20998 * 2 - this.field21000 + 80,
+            this.getHeight() - this.field21001 - this.field20998 * 2 - this.field21000 + 80,
             this.field21002,
             this.field21000 - 90
          )
@@ -49,7 +49,7 @@ public class Class4312 extends Screen {
             this,
             "chatView",
             this.field20998 + this.field21002,
-            this.method13269() - this.field21001 - this.field20998 * 2 - this.field21000,
+            this.getHeight() - this.field21001 - this.field20998 * 2 - this.field21000,
             this.field20999 - this.field21002,
             this.field21000
          )
@@ -66,7 +66,7 @@ public class Class4312 extends Screen {
                   ((Class8433)var5.getValue()).field36142 + "_" + this.field20996.method13241().size(),
                   0,
                   0,
-                  this.field20996.method13267(),
+                  this.field20996.getWidth(),
                   var3,
                   ((Class8433)var5.getValue()).field36141,
                   ((Class8433)var5.getValue()).field36144
@@ -108,7 +108,7 @@ public class Class4312 extends Screen {
       this.drawBackground((int)((1.0F - this.field20994) * 10.0F));
       this.method13225();
       int var7 = this.field20998;
-      int var8 = this.method13269() - this.field21001 - this.field20998 * 2 - 410;
+      int var8 = this.getHeight() - this.field21001 - this.field20998 * 2 - 410;
       int var9 = this.field20999;
       int var10 = this.field21000;
 
@@ -123,7 +123,7 @@ public class Class4312 extends Screen {
 
       this.field21003 = !this.field21003;
       var1 = QuadraticEasing.easeInOutQuad(this.field20994, 0.0F, 1.0F, 1.0F);
-      RenderUtil.method11463((float)(var7 + 5), (float)(var8 + 5), (float)(this.field21002 - 10), (float)(var10 - 10), 25.0F, var1 * 0.4F);
+      RenderUtil.drawRoundedRect((float)(var7 + 5), (float)(var8 + 5), (float)(this.field21002 - 10), (float)(var10 - 10), 25.0F, var1 * 0.4F);
       RenderUtil.method11471((float)var7, (float)var8, (float)var9, (float)var10, 10.0F);
       if (this.field21004 != null) {
          RenderUtil.method11449(

@@ -8,11 +8,11 @@ public class Class6667 implements Class6664 {
 
    @Override
    public void method20320(IconPanel var1, IconPanel var2) {
-      var1.method13266(0);
+      var1.setY(0);
       if (var2 == null) {
          var1.setHeight(Minecraft.getInstance().mainWindow.getHeight());
       } else {
-         var1.setHeight(var2.method13269());
+         var1.setHeight(var2.getHeight());
       }
    }
 }

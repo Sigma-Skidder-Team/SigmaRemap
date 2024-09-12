@@ -19,11 +19,11 @@ public class Class4325 extends Screen {
    public Class4325() {
       super("options");
       this.method13300(false);
-      int var3 = Math.max((int)((float)this.field20898 * 0.8F), 420);
-      int var4 = (int)((float)this.field20897 * 0.8F);
+      int var3 = Math.max((int)((float)this.height * 0.8F), 420);
+      int var4 = (int)((float)this.width * 0.8F);
       this.addToList(
          this.field21114 = new JelloOptionsMainMenu(
-            this, "centerBlock", this.method13267() - var4, this.method13269() - var3, var4 - (this.method13267() - var4), var3 - (this.method13269() - var3)
+            this, "centerBlock", this.getWidth() - var4, this.getHeight() - var3, var4 - (this.getWidth() - var4), var3 - (this.getHeight() - var3)
          )
       );
       field21112 = new Animation(300, 100);
@@ -49,7 +49,7 @@ public class Class4325 extends Screen {
 
       int var6 = ColorUtils.method17690(-1072689136, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F), var5);
       int var7 = ColorUtils.method17690(-804253680, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F), var5);
-      RenderUtil.method11431(0, 0, this.method13267(), this.method13269(), var6, var7);
+      RenderUtil.method11431(0, 0, this.getWidth(), this.getHeight(), var6, var7);
       this.method13279(var4, var4);
       this.method13224();
       super.draw(field21112.calcPercent());
@@ -57,7 +57,7 @@ public class Class4325 extends Screen {
 
    private void method13437(float var1) {
       int var4 = this.method13309() * -1;
-      float var5 = (float)this.method13310() / (float)this.method13267() * -114.0F;
+      float var5 = (float)this.method13310() / (float)this.getWidth() * -114.0F;
       if (this.field21111) {
          this.field21109 = (int)var5;
          this.field21110 = var4;
@@ -71,8 +71,8 @@ public class Class4325 extends Screen {
          RenderUtil.method11448(
                  (float)this.field21110,
                  (float)this.field21109,
-                 (float)(this.method13267() * 2),
-                 (float)(this.method13269() + 114),
+                 (float)(this.getWidth() * 2),
+                 (float)(this.getHeight() + 114),
                  this.field21113,
                  ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );

@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import org.lwjgl.opengl.GL11;
 
-public class Class4244 extends Class4240 {
+public class Class4244 extends ButtonPanel {
    private static String[] field20594;
    public static final ColorHelper field20595 = new ColorHelper(ClientColors.DARK_BLUE_GREY.getColor, ColorUtils.method17691(ClientColors.DARK_BLUE_GREY.getColor, 0.1F));
 
@@ -28,18 +28,18 @@ public class Class4244 extends Class4240 {
          }
 
          RenderUtil.method11474(
-            (float)this.method13263(),
-            (float)this.method13265(),
-            (float)this.method13267(),
-            (float)this.method13269(),
+            (float)this.getX(),
+            (float)this.getY(),
+            (float)this.getWidth(),
+            (float)this.getHeight(),
             5.0F,
             ColorUtils.applyAlpha(this.field20914.method19405(), var1)
          );
          if (this.method13303() != null) {
             RenderUtil.method11440(
                this.method13305(),
-               (float)(this.method13263() + this.method13267() / 2),
-               (float)(this.method13265() + this.method13269() / 2),
+               (float)(this.getX() + this.getWidth() / 2),
+               (float)(this.getY() + this.getHeight() / 2),
                this.method13303(),
                ColorUtils.applyAlpha(this.field20914.method19409(), var1),
                this.field20914.method19411(),

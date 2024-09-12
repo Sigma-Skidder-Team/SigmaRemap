@@ -38,31 +38,31 @@ public class UICheckBox extends Class4247 {
    public void draw(float var1) {
       float var4 = !this.method13212() ? 0.43F : 0.6F;
       RenderUtil.drawRect(
-         (float)this.field20895,
-         (float)this.field20896,
-         (float)this.field20897,
-         (float)this.field20898,
+         (float)this.x,
+         (float)this.y,
+         (float)this.width,
+         (float)this.height,
          10.0F,
          ColorUtils.applyAlpha(-4144960, var4 * this.field21370.calcPercent() * var1)
       );
       float var5 = (1.0F - this.field21370.calcPercent()) * var1;
       RenderUtil.drawRect(
-         (float)this.field20895,
-         (float)this.field20896,
-         (float)this.field20897,
-         (float)this.field20898,
+         (float)this.x,
+         (float)this.y,
+         (float)this.width,
+         (float)this.height,
          10.0F,
          ColorUtils.applyAlpha(ColorUtils.method17690(-14047489, ClientColors.DEEP_TEAL.getColor, !this.method13212() ? 1.0F : 0.9F), var5)
       );
       GL11.glPushMatrix();
-      GL11.glTranslatef((float)(this.method13263() + this.method13267() / 2), (float)(this.method13265() + this.method13269() / 2), 0.0F);
+      GL11.glTranslatef((float)(this.getX() + this.getWidth() / 2), (float)(this.getY() + this.getHeight() / 2), 0.0F);
       GL11.glScalef(1.5F - 0.5F * var5, 1.5F - 0.5F * var5, 0.0F);
-      GL11.glTranslatef((float)(-this.method13263() - this.method13267() / 2), (float)(-this.method13265() - this.method13269() / 2), 0.0F);
+      GL11.glTranslatef((float)(-this.getX() - this.getWidth() / 2), (float)(-this.getY() - this.getHeight() / 2), 0.0F);
       RenderUtil.method11449(
-         (float)this.field20895,
-         (float)this.field20896,
-         (float)this.field20897,
-         (float)this.field20898,
+         (float)this.x,
+         (float)this.y,
+         (float)this.width,
+         (float)this.height,
          ResourcesDecrypter.checkPNG,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
       );

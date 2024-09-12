@@ -36,9 +36,9 @@ public class Class4254 extends Class4247 {
 
       this.drawBackground((int)(-25.0F * var4));
       this.method13225();
-      RenderUtil.method11455((float)(this.field20895 + 20), (float)this.field20896, 100.0F, 100.0F, this.field20631);
-      int var5 = this.field20895 + 12 - (ClassicDecryption.regular20.method23942(this.field20891) - this.field20897) / 2;
-      int var6 = this.field20896 + 102;
+      RenderUtil.method11455((float)(this.x + 20), (float)this.y, 100.0F, 100.0F, this.field20631);
+      int var5 = this.x + 12 - (ClassicDecryption.regular20.method23942(this.field20891) - this.width) / 2;
+      int var6 = this.y + 102;
       GL11.glAlphaFunc(516, 0.1F);
       RenderUtil.drawString(ClassicDecryption.regular20, (float)var5, (float)(var6 + 1), this.field20891, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
       RenderUtil.drawString(ClassicDecryption.regular20, (float)var5, (float)var6, this.field20891, ClientColors.LIGHT_GREYISH_BLUE.getColor);

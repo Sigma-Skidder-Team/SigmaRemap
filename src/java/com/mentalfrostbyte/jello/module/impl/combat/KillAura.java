@@ -199,7 +199,7 @@ public class KillAura extends Module {
     public void method16818(WorldLoadEvent var1) {
         if (this.isEnabled() && this.getBooleanValueFromSetttingName("Disable on death")) {
             Client.getInstance().getNotificationManager().post(new Notification("Aura", "Aura disabled due to respawn"));
-            this.method16000();
+            this.toggle();
         }
     }
 
@@ -212,7 +212,7 @@ public class KillAura extends Module {
 
             if (this.getBooleanValueFromSetttingName("Disable on death")) {
                 if (!mc.player.isAlive()) {
-                    this.method16000();
+                    this.toggle();
                     Client.getInstance().getNotificationManager().post(new Notification("Aura", "Aura disabled due to death"));
                 }
             }

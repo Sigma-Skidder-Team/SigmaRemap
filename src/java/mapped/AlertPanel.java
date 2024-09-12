@@ -44,7 +44,7 @@ public class AlertPanel extends Class4247 {
       this.field21285 -= 10;
       this.addToList(
          this.field21279 = new IconPanel(
-            this, "modalContent", (this.field20897 - this.field21284) / 2, (this.field20898 - this.field21285) / 2, this.field21284, this.field21285
+            this, "modalContent", (this.width - this.field21284) / 2, (this.height - this.field21285) / 2, this.field21284, this.field21285
          )
       );
       int var17 = 0;
@@ -77,10 +77,10 @@ public class AlertPanel extends Class4247 {
                         );
                   }
                } else {
-                  Class4240 var16;
+                  ButtonPanel var16;
                   this.field21279
                      .addToList(
-                        var16 = new Class4240(
+                        var16 = new ButtonPanel(
                            this.field21279, "Item" + var17, 0, var18, this.field21284, var15.field44773, ColorHelper.field27961, var15.field44772
                         )
                      );
@@ -214,17 +214,17 @@ public class AlertPanel extends Class4247 {
          RenderUtil.method11448(
             -5.0F,
             -5.0F,
-            (float)(this.method13267() + 10),
-            (float)(this.method13269() + 10),
+            (float)(this.getWidth() + 10),
+            (float)(this.getHeight() + 10),
             this.field21281,
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
          );
          RenderUtil.drawRect(
-            0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F * var7)
+            0.0F, 0.0F, (float)this.getWidth(), (float)this.getHeight(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F * var7)
          );
          if (var4 > 0) {
             RenderUtil.method11465(
-               (this.field20897 - var4) / 2, (this.field20898 - var5) / 2, var4, var5, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
+               (this.width - var4) / 2, (this.height - var5) / 2, var4, var5, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
             );
          }
 
@@ -245,10 +245,10 @@ public class AlertPanel extends Class4247 {
       if (!super.method13078(var1, var2, var3)) {
          int var6 = this.field21284 + 60;
          int var7 = this.field21285 + 60;
-         if (var1 > (this.field20897 - var6) / 2
-            && var1 < (this.field20897 - var6) / 2 + var6
-            && var2 > (this.field20898 - var7) / 2
-            && var2 < (this.field20898 - var7) / 2 + var7) {
+         if (var1 > (this.width - var6) / 2
+            && var1 < (this.width - var6) / 2 + var6
+            && var2 > (this.height - var7) / 2
+            && var2 < (this.height - var7) / 2 + var7) {
             return false;
          } else {
             this.method13603(false);
@@ -267,7 +267,7 @@ public class AlertPanel extends Class4247 {
             }
 
             this.field21281 = TextureUtil.method32933(
-               "blur", ImageUtil.method35036(0, 0, this.method13267(), this.method13269(), 5, 10, ClientColors.LIGHT_GREYISH_BLUE.getColor, true)
+               "blur", ImageUtil.method35036(0, 0, this.getWidth(), this.getHeight(), 5, 10, ClientColors.LIGHT_GREYISH_BLUE.getColor, true)
             );
          } catch (IOException var5) {
             Client.getInstance().getLogger().error(var5.getMessage());

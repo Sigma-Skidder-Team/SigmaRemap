@@ -44,7 +44,7 @@ public class Class4301 extends Class4278 {
                      () -> {
                         this.method13236(this.field20840);
                         this.addToList(
-                           this.field20840 = new Class4339(this, "albumView", 0, 0, this.field20897, this.field20898, ColorHelper.field27961, "View")
+                           this.field20840 = new Class4339(this, "albumView", 0, 0, this.width, this.height, ColorHelper.field27961, "View")
                         );
                         if (this.field20842 != null) {
                            for (int var3x = 0; var3x < this.field20842.size(); var3x++) {

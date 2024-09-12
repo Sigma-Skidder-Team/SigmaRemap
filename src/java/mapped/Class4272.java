@@ -23,7 +23,7 @@ public class Class4272 extends Class4247 {
          var9 = new UIButton(this, "blankButton", 25, 0, ResourceRegistry.JelloLightFont20.method23942("Blank"), 30, ColorHelper.field27961, "Blank", ResourceRegistry.JelloLightFont20)
       );
       var9.doThis((var1x, var2x) -> {
-         ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.method13258();
+         ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getIconPanel();
          var5x.method13612();
       });
       UIButton var10;
@@ -41,7 +41,7 @@ public class Class4272 extends Class4247 {
          )
       );
       var10.doThis((var1x, var2x) -> {
-         ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.method13258();
+         ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getIconPanel();
          var5x.method13610();
       });
       this.addToList(this.field20707 = new Class4285(this, "loading", (var5 - 30) / 2, 100, 30, 30));
@@ -49,13 +49,13 @@ public class Class4272 extends Class4247 {
       field20706 = new Class8233(
          var2x -> {
             this.field20707.method13288(false);
-            ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.method13258();
+            ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getIconPanel();
 
             for (String var7 : var2x) {
-               Class4240 var8;
+               ButtonPanel var8;
                this.field20705
                   .addToList(
-                     var8 = new Class4240(
+                     var8 = new ButtonPanel(
                         this.field20705, "p_" + var7, 0, 0, var5, 30, new ColorHelper(-723724, -2039584, 0, -14671840), var7, ResourceRegistry.JelloLightFont18
                      )
                   );
@@ -106,22 +106,22 @@ public class Class4272 extends Class4247 {
       this.setHeight((int)((float)this.field20704 * var4));
       if (this.field20703.calcPercent() != 0.0F) {
          RenderUtil.method11449(
-            (float)this.field20895,
-            (float)(this.field20896 + this.field20898),
-            (float)this.field20897,
+            (float)this.x,
+            (float)(this.y + this.height),
+            (float)this.width,
             50.0F,
             ResourcesDecrypter.shadowBottomPNG,
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20703.calcPercent() * var1 * 0.3F)
          );
          RenderUtil.method11415(this);
          RenderUtil.method11424(
-            (float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, ColorUtils.applyAlpha(-723724, var1)
+            (float)this.x, (float)this.y, (float)this.width, (float)this.height, ColorUtils.applyAlpha(-723724, var1)
          );
          if (field20706 != null && Class8233.field35347 != null && Class8233.field35347.isEmpty()) {
             RenderUtil.drawString(
                ResourceRegistry.JelloLightFont14,
-               (float)(this.field20895 + 40),
-               (float)(this.field20896 + 110),
+               (float)(this.x + 40),
+               (float)(this.y + 110),
                "No Default Profiles Available",
                ClientColors.MID_GREY.getColor
             );

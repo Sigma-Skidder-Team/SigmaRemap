@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 
-public class Class4239 extends Class4240 implements Class4238 {
+public class Class4239 extends ButtonPanel implements Class4238 {
    private static String[] field20580;
    public float field20581;
    public boolean field20582 = false;
@@ -36,15 +36,15 @@ public class Class4239 extends Class4240 implements Class4238 {
    @Override
    public void draw(float var1) {
       float var4 = !this.isHovered() ? 0.3F : (!this.field20582 ? (!this.method13212() ? Math.max(var1 * this.field20584, 0.0F) : 1.5F) : 0.0F);
-      int var5 = (int)((float)this.method13267() * this.field20581);
-      int var6 = (int)((float)this.method13269() * this.field20581);
-      int var7 = this.method13263() - (var5 - this.method13267()) / 2;
-      int var8 = this.method13265() - (var6 - this.method13269()) / 2;
+      int var5 = (int)((float)this.getWidth() * this.field20581);
+      int var6 = (int)((float)this.getHeight() * this.field20581);
+      int var7 = this.getX() - (var5 - this.getWidth()) / 2;
+      int var8 = this.getY() - (var6 - this.getHeight()) / 2;
       RenderUtil.drawPortalBackground(
-         this.method13271() + var7 - this.field20895,
-         this.method13272() + var8 - this.field20896,
-         this.method13271() + var7 - this.field20895 + var5,
-         this.method13272() + var8 - this.field20896 + var6
+         this.method13271() + var7 - this.x,
+         this.method13272() + var8 - this.y,
+         this.method13271() + var7 - this.x + var5,
+         this.method13272() + var8 - this.y + var6
       );
       RenderUtil.drawRect(
          (float)var7,

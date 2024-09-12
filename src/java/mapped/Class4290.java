@@ -12,7 +12,7 @@ public class Class4290 extends Class4278 {
    public float field20787 = 0.0F;
    public Class2059 field20788 = Class2059.field13418;
    public final int field20789 = 0;
-   public final List<Class4240> field20790 = new ArrayList<Class4240>();
+   public final List<ButtonPanel> field20790 = new ArrayList<ButtonPanel>();
    private Texture field20791;
 
    public Class4290(IconPanel var1, String var2) {
@@ -31,7 +31,7 @@ public class Class4290 extends Class4278 {
       int var5 = 20;
       if (this.field20788 == Class2059.field13418
          && Math.abs(Minecraft.getInstance().mainWindow.getHeight() - var2) < var5
-         && !this.field20892.method13239(((JelloClickGUI)this.field20892).blurOverlay)) {
+         && !this.iconPanel.method13239(((JelloClickGUI)this.iconPanel).blurOverlay)) {
          this.field20788 = Class2059.field13416;
       }
 
@@ -47,7 +47,7 @@ public class Class4290 extends Class4278 {
          this.field20788 = Class2059.field13418;
       }
 
-      if (Minecraft.getInstance().mainWindow.getHeight() - var2 > this.method13269()) {
+      if (Minecraft.getInstance().mainWindow.getHeight() - var2 > this.getHeight()) {
          this.field20788 = Class2059.field13417;
       }
 
@@ -56,7 +56,7 @@ public class Class4290 extends Class4278 {
          var7 = EasingFunctions.easeInBack(this.field20787, 0.0F, 1.0F, 1.0F);
       }
 
-      this.method13266(Minecraft.getInstance().mainWindow.getHeight() - (int)((float)this.method13269() * var7));
+      this.setY(Minecraft.getInstance().mainWindow.getHeight() - (int)((float)this.getHeight() * var7));
    }
 
    @Override
@@ -64,10 +64,10 @@ public class Class4290 extends Class4278 {
       int var4 = 20;
       if (!((double)var1 < 0.6)) {
          RenderUtil.method11465(
-            this.field20895 + var4,
-            this.field20896 + var4,
-            this.field20897 - var4 * 2,
-            this.field20898 - var4 * 2,
+            this.x + var4,
+            this.y + var4,
+            this.width - var4 * 2,
+            this.height - var4 * 2,
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * var1)
          );
          super.draw(var1);

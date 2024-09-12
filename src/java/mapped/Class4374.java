@@ -19,17 +19,17 @@ public class Class4374 extends Class4247 {
    @Override
    public void draw(float var1) {
       RenderUtil.drawRect(
-         (float)this.field20895,
-         (float)this.field20896,
-         (float)(this.field20895 + this.field20897),
-         (float)this.field20896 + (float)this.field20898 * this.field21372,
+         (float)this.x,
+         (float)this.y,
+         (float)(this.x + this.width),
+         (float)this.y + (float)this.height * this.field21372,
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.2F)
       );
       RenderUtil.drawRect(
-         (float)this.field20895,
-         (float)(this.field20896 + this.field20898),
-         (float)(this.field20895 + this.field20897),
-         (float)this.field20896 + (float)this.field20898 * this.field21372,
+         (float)this.x,
+         (float)(this.y + this.height),
+         (float)(this.x + this.width),
+         (float)this.y + (float)this.height * this.field21372,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.2F)
       );
       super.draw(var1);
@@ -37,7 +37,7 @@ public class Class4374 extends Class4247 {
 
    @Override
    public boolean method13078(int var1, int var2, int var3) {
-      if (!super.method13078(this.field20895, this.field20896, var3)) {
+      if (!super.method13078(this.x, this.y, var3)) {
          this.field21373 = true;
          return false;
       } else {
@@ -46,7 +46,7 @@ public class Class4374 extends Class4247 {
    }
 
    public float method13706(int var1) {
-      return (float)(var1 - this.method13272()) / (float)this.field20898;
+      return (float)(var1 - this.method13272()) / (float)this.height;
    }
 
    @Override

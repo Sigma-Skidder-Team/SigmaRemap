@@ -42,12 +42,12 @@ public class CubecraftLongJump extends Module {
 
                 MovementUtils.method37090(this.field23502);
                 if (this.field23501 > 5) {
-                    this.access().method16000();
+                    this.access().toggle();
                 }
             } else {
                 if (this.field23501 > 0) {
                     MovementUtils.method37090(0.0);
-                    this.access().method16000();
+                    this.access().toggle();
                     this.field23501 = 0;
                 }
 

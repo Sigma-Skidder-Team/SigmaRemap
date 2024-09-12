@@ -158,7 +158,7 @@ public class KeyStrokes extends Module {
                                 (float) (this.field23586 + var21.field42636 + var23.field42636),
                                 ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * var10)
                         );
-                        RenderUtil.method11463(
+                        RenderUtil.drawRoundedRect(
                                 (float) (this.field23585 + var21.field42635),
                                 (float) (this.field23586 + var21.field42636),
                                 (float) var23.field42635,

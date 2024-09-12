@@ -351,7 +351,7 @@ public class NameTags extends Module {
         GL11.glTranslated(-var17 / 2, -var18 / 2, 0.0);
         byte var19 = 40;
         RenderUtil.drawRect(0.0F, 0.0F, (float) var17, (float) var18, this.field24008);
-        RenderUtil.method11463(0.0F, 0.0F, (float) var17, (float) var18, 20.0F, 0.5F);
+        RenderUtil.drawRoundedRect(0.0F, 0.0F, (float) var17, (float) var18, 20.0F, 0.5F);
         RenderUtil.drawString(var6, var13, (float) (var13 - 5), "Furnace", ClientColors.LIGHT_GREYISH_BLUE.getColor);
         if (var16 == null) {
             RenderUtil.drawString(
@@ -419,7 +419,7 @@ public class NameTags extends Module {
             );
             int var21 = var12.method23942(var13) / 2;
             if (!field24003.containsKey(var13)) {
-                RenderUtil.method11463((float) (-var21 - 10), -25.0F, (float) (var21 * 2 + 20), (float) (var12.method23952() + 27), 20.0F, 0.5F);
+                RenderUtil.drawRoundedRect((float) (-var21 - 10), -25.0F, (float) (var21 * 2 + 20), (float) (var12.method23952() + 27), 20.0F, 0.5F);
             } else {
                 int var22 = Color.getHSBColor((float) (System.currentTimeMillis() % 10000L) / 10000.0F, 0.5F, 1.0F).getRGB();
                 RenderUtil.method11449(
@@ -438,7 +438,7 @@ public class NameTags extends Module {
                         ResourcesDecrypter.shadowRightPNG,
                         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F)
                 );
-                RenderUtil.method11463((float) (-var21 - 10 - 31), -25.0F, (float) (var21 * 2 + 20 + 31 + 27), (float) (var12.method23952() + 27), 20.0F, 0.5F);
+                RenderUtil.drawRoundedRect((float) (-var21 - 10 - 31), -25.0F, (float) (var21 * 2 + 20 + 31 + 27), (float) (var12.method23952() + 27), 20.0F, 0.5F);
                 GL11.glTranslatef(27.0F, 0.0F, 0.0F);
             }
 

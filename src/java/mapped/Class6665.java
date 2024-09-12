@@ -11,12 +11,12 @@ public class Class6665 implements Class6664 {
       int var6 = 0;
 
       for (IconPanel var8 : var1.method13241()) {
-         if (var8.method13263() + var8.method13267() > var5) {
-            var5 = var8.method13263() + var8.method13267();
+         if (var8.getX() + var8.getWidth() > var5) {
+            var5 = var8.getX() + var8.getWidth();
          }
 
-         if (var8.method13265() + var8.method13269() > var6) {
-            var6 = var8.method13265() + var8.method13269();
+         if (var8.getY() + var8.getHeight() > var6) {
+            var6 = var8.getY() + var8.getHeight();
          }
       }
 

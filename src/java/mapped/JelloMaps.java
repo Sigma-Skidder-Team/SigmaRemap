@@ -26,7 +26,7 @@ public class JelloMaps extends Screen {
       this.field21035 = new Date();
       int var3 = Math.max(300, Math.min(850, Minecraft.getInstance().mainWindow.getWidth() - 40));
       int var4 = Math.max(200, Math.min(550, Minecraft.getInstance().mainWindow.getHeight() - 80));
-      this.addToList(this.field21036 = new Class4251(this, "mapView", (this.field20897 - var3) / 2, (this.field20898 - var4) / 2, var3, var4));
+      this.addToList(this.field21036 = new Class4251(this, "mapView", (this.width - var3) / 2, (this.height - var4) / 2, var3, var4));
       this.field21036.field20614.method13080((var2, var3x, var4x, var5) -> this.method13222(new Class774(this, this, var3x, var4x, var5)));
       this.field21036.field20614.method13082(var1 -> this.method13390());
       ColorUtils.method17739();
@@ -78,10 +78,10 @@ public class JelloMaps extends Screen {
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
       float var5 = 0.25F * var1;
       RenderUtil.drawRect(
-         (float)this.field20895,
-         (float)this.field20896,
-         (float)(this.field20895 + this.field20897),
-         (float)(this.field20896 + this.field20898),
+         (float)this.x,
+         (float)this.y,
+         (float)(this.x + this.width),
+         (float)(this.y + this.height),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
       );
       super.method13224();

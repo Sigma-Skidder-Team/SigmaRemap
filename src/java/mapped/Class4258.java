@@ -33,7 +33,7 @@ public class Class4258 extends Class4247 {
             this.method13236(this.field20642);
          }
 
-         this.addToList(this.field20642 = new Class4339(this, "scrollview", 0, 40, this.field20897, this.field20898 - 40));
+         this.addToList(this.field20642 = new Class4339(this, "scrollview", 0, 40, this.width, this.height - 40));
          byte var4 = 40;
          ArrayList<Item> var5 = new ArrayList();
 

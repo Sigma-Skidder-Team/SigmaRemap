@@ -34,7 +34,7 @@ public class Class4339 extends Class4304 {
    }
 
    private final void method13511() {
-      this.method13241().add(this.field21204 = new IconPanel(this, "content", 0, 0, this.field20897, this.field20898));
+      this.method13241().add(this.field21204 = new IconPanel(this, "content", 0, 0, this.width, this.height));
       this.field21204.method13261(new Class6665());
       this.method13241().add(this.field21205 = new Class4292(this, 11));
       this.field21205.method13292(true);
@@ -56,7 +56,7 @@ public class Class4339 extends Class4304 {
    public void method13028(int var1, int var2) {
       if (!this.field21203 || this.method13287()) {
          super.method13028(var1, var2);
-         this.field21204.method13266(-1 * this.field21205.method13162());
+         this.field21204.setY(-1 * this.field21205.method13162());
 
          for (IconPanel var6 : this.method13517().method13241()) {
             for (Class6664 var8 : var6.method13260()) {

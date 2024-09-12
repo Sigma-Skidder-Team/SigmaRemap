@@ -35,42 +35,42 @@ public class Class4359 extends Class4247 {
       float var9 = Math.max(0.0F, Math.min((float)var5 / (float)var7, 1.0F));
       if (this.method13212() && this.method13298() && var5 != 0.0) {
          int var10 = this.method13309() - this.method13271();
-         this.field21315 = Math.min(Math.max((float)var10 / (float)this.method13267(), 0.0F), var9);
+         this.field21315 = Math.min(Math.max((float)var10 / (float)this.getWidth(), 0.0F), var9);
          var8 = this.field21315;
       }
 
       if (var4 == 0 && !this.field21314.method24319()) {
          RenderUtil.method11424(
-            (float)this.method13263(),
-            (float)this.method13265(),
-            (float)this.method13267(),
-            (float)this.method13269(),
+            (float)this.getX(),
+            (float)this.getY(),
+            (float)this.getWidth(),
+            (float)this.getHeight(),
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
       } else {
          RenderUtil.method11424(
-            (float)this.method13263(),
-            (float)this.method13265(),
-            (float)this.method13267(),
-            (float)this.method13269(),
+            (float)this.getX(),
+            (float)this.getY(),
+            (float)this.getWidth(),
+            (float)this.getHeight(),
             ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.075F)
          );
          RenderUtil.method11424(
-            (float)this.method13263() + (float)this.method13267() * var9,
-            (float)this.method13265(),
-            (float)this.method13267() * (1.0F - var9),
-            (float)this.method13269(),
+            (float)this.getX() + (float)this.getWidth() * var9,
+            (float)this.getY(),
+            (float)this.getWidth() * (1.0F - var9),
+            (float)this.getHeight(),
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
          RenderUtil.method11424(
-            (float)this.method13263(),
-            (float)this.method13265(),
-            (float)this.method13267() * var8,
-            (float)this.method13269(),
+            (float)this.getX(),
+            (float)this.getY(),
+            (float)this.getWidth() * var8,
+            (float)this.getHeight(),
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
          );
          if (var8 != 0.0F) {
-            RenderUtil.method11455((float)this.method13263() + (float)this.method13267() * var8, (float)this.method13265(), 5.0F, 5.0F, ResourcesDecrypter.shadowRightPNG);
+            RenderUtil.method11455((float)this.getX() + (float)this.getWidth() * var8, (float)this.getY(), 5.0F, 5.0F, ResourcesDecrypter.shadowRightPNG);
          }
       }
    }

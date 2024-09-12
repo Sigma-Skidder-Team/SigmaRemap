@@ -32,11 +32,11 @@ public class Class4266 extends Class4247 {
    public void method13028(int var1, int var2) {
       super.method13028(var1, var2);
       if (this.field20909 && this.field20686 <= 0) {
-         if (var2 >= this.method13272() + this.method13269() / 2) {
-            ((Class4259)this.field20892).method13076(false);
+         if (var2 >= this.method13272() + this.getHeight() / 2) {
+            ((Class4259)this.iconPanel).method13076(false);
             this.field20685.add(new Class7086(this, false));
          } else {
-            ((Class4259)this.field20892).method13076(true);
+            ((Class4259)this.iconPanel).method13076(true);
             this.field20685.add(new Class7086(this, true));
          }
 
@@ -71,7 +71,7 @@ public class Class4266 extends Class4247 {
 
       try {
          if (this.field20687) {
-            BufferedImage var6 = ImageUtil.method35039(this.method13271(), this.method13272(), this.field20897, this.field20898, 3, 10, true);
+            BufferedImage var6 = ImageUtil.method35039(this.method13271(), this.method13272(), this.width, this.height, 3, 10, true);
             this.field20684 = ColorUtils.method17682(new Color(var6.getRGB(6, 7)), new Color(var6.getRGB(6, 22))).getRGB();
             this.field20684 = ColorUtils.method17691(this.field20684, 0.25F);
             if (this.field20688 != null) {
@@ -83,46 +83,46 @@ public class Class4266 extends Class4247 {
          }
 
          if (this.field20688 != null) {
-            RenderUtil.method11463(
-               (float)(this.field20895 + var5),
-               (float)(this.field20896 + var5),
-               (float)(this.field20897 - var5 * 2),
-               (float)(this.field20898 - var5 * 2),
+            RenderUtil.drawRoundedRect(
+               (float)(this.x + var5),
+               (float)(this.y + var5),
+               (float)(this.width - var5 * 2),
+               (float)(this.height - var5 * 2),
                20.0F,
                var1 * 0.5F
             );
-            RenderUtil.method11463(
-               (float)(this.field20895 + var5),
-               (float)(this.field20896 + var5),
-               (float)(this.field20897 - var5 * 2),
-               (float)(this.field20898 - var5 * 2),
+            RenderUtil.drawRoundedRect(
+               (float)(this.x + var5),
+               (float)(this.y + var5),
+               (float)(this.width - var5 * 2),
+               (float)(this.height - var5 * 2),
                14.0F,
                var1
             );
             GL11.glPushMatrix();
             RenderUtil.method11476();
             RenderUtil.method11474(
-               (float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, 8.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor
+               (float)this.x, (float)this.y, (float)this.width, (float)this.height, 8.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor
             );
             RenderUtil.method11477(Class2329.field15940);
             RenderUtil.method11448(
-               (float)(this.field20895 - 1),
-               (float)(this.field20896 - 1),
-               (float)(this.field20897 + 2),
-               (float)(this.field20898 + 2),
+               (float)(this.x - 1),
+               (float)(this.y - 1),
+               (float)(this.width + 2),
+               (float)(this.height + 2),
                this.field20688,
                ClientColors.LIGHT_GREYISH_BLUE.getColor
             );
 
             while (var4.hasNext()) {
                Class7086 var11 = (Class7086)var4.next();
-               int var7 = this.field20898 / 2;
-               int var8 = this.field20896 + (var11.field30491 ? 0 : var7);
-               int var9 = this.field20897 / 2;
-               RenderUtil.method11421(this.field20895, var8, this.field20895 + this.field20897, var8 + var7, true);
+               int var7 = this.height / 2;
+               int var8 = this.y + (var11.field30491 ? 0 : var7);
+               int var9 = this.width / 2;
+               RenderUtil.method11421(this.x, var8, this.x + this.width, var8 + var7, true);
                RenderUtil.method11436(
-                  (float)(this.field20895 + var9),
-                  (float)(var8 + this.field20898 / 4),
+                  (float)(this.x + var9),
+                  (float)(var8 + this.height / 4),
                   (float)(var9 * 2 - 4) * var11.field30490 + 4.0F,
                   ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (1.0F - var11.field30490 * (0.5F + var11.field30490 * 0.5F)) * 0.4F)
                );
@@ -135,23 +135,23 @@ public class Class4266 extends Class4247 {
 
             RenderUtil.method11478();
             RenderUtil.drawRect(
-               (float)this.field20895,
-               (float)this.field20896,
-               (float)this.field20897,
-               (float)this.field20898,
+               (float)this.x,
+               (float)this.y,
+               (float)this.width,
+               (float)this.height,
                6.0F,
                ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F)
             );
             GL11.glPopMatrix();
             RenderUtil.drawString(
                ResourceRegistry.JelloMediumFont20,
-               (float)(this.field20895 + 14),
-               (float)(this.field20896 + 8),
+               (float)(this.x + 14),
+               (float)(this.y + 8),
                "+",
                ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
             );
             RenderUtil.method11424(
-               (float)(this.field20895 + 16), (float)(this.field20896 + 65), 8.0F, 2.0F, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
+               (float)(this.x + 16), (float)(this.y + 65), 8.0F, 2.0F, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
             );
          }
       } catch (IOException var10) {

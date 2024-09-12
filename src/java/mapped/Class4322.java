@@ -35,8 +35,8 @@ public class Class4322 extends Screen {
          this.field21088 = new LoginScreen(
             this,
             "login",
-            (this.field20897 - LoginScreen.field21361) / 2,
-            (this.field20898 - LoginScreen.field21360) / 2,
+            (this.width - LoginScreen.field21361) / 2,
+            (this.height - LoginScreen.field21360) / 2,
             LoginScreen.field21361,
             LoginScreen.field21360
          )
@@ -45,8 +45,8 @@ public class Class4322 extends Screen {
          this.field21089 = new AccountSignUpScreen(
             this,
             "register",
-            (this.field20897 - AccountSignUpScreen.field20722) / 2,
-            (this.field20898 - AccountSignUpScreen.field20721) / 2,
+            (this.width - AccountSignUpScreen.field20722) / 2,
+            (this.height - AccountSignUpScreen.field20721) / 2,
             AccountSignUpScreen.field20722,
             AccountSignUpScreen.field20721
          )
@@ -56,8 +56,8 @@ public class Class4322 extends Screen {
          this.field21091 = new UIButton(
             this,
             "continue",
-            this.field20897 / 2 - 120,
-            this.field20898 / 2 + 120,
+            this.width / 2 - 120,
+            this.height / 2 + 120,
             240,
             60,
             new ColorHelper(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F)),
@@ -133,8 +133,8 @@ public class Class4322 extends Screen {
 
       if ((double)var4 > 0.1) {
          RenderUtil.method11465(
-            (int)((double)this.field20897 - var5.getWidth()) / 2,
-            (int)((double)this.field20898 - var5.getHeight()) / 2,
+            (int)((double)this.width - var5.getWidth()) / 2,
+            (int)((double)this.height - var5.getHeight()) / 2,
             (int)var5.getWidth(),
             (int)var5.getHeight(),
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 1.0F - this.field21093.calcPercent())
@@ -151,13 +151,13 @@ public class Class4322 extends Screen {
          byte var8 = 100;
          byte var9 = 10;
          int var10 = var8 + Math.max(ResourceRegistry.JelloMediumFont40.method23942(welcomeBackSign), ResourceRegistry.JelloLightFont36.method23942(username)) + var9 * 10;
-         int var11 = (this.field20897 - var10) / 2;
-         int var12 = (this.field20898 - var8 * 2) / 2;
+         int var11 = (this.width - var10) / 2;
+         int var12 = (this.height - var8 * 2) / 2;
          RenderUtil.drawRect(
             0.0F,
             0.0F,
-            (float)this.field20897,
-            (float)this.field20898,
+            (float)this.width,
+            (float)this.height,
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.45F * this.field21093.calcPercent())
          );
          RenderUtil.method11454(
@@ -178,7 +178,7 @@ public class Class4322 extends Screen {
    private void method13425() {
       this.field21086 = Math.max(0.0F, Math.min(this.field21086 + 0.01F, 1.0F));
       int var3 = this.method13309() * -1;
-      float var4 = (float)this.method13310() / (float)this.method13267() * -114.0F;
+      float var4 = (float)this.method13310() / (float)this.getWidth() * -114.0F;
       if (this.field21084) {
          this.field21082 = (int)var4;
          this.field21083 = var3;
@@ -189,14 +189,14 @@ public class Class4322 extends Screen {
       float var6 = (float)(var3 - this.field21083);
       float var7 = (float)Math.sin((double) QuadraticEasing.easeOutQuad(this.field21086, 0.0F, 1.0F, 1.0F) * Math.PI / 2.0);
       GL11.glPushMatrix();
-      GL11.glTranslatef((float)this.field20897 / 2.0F, (float)this.field20897 / 2.0F, 0.0F);
+      GL11.glTranslatef((float)this.width / 2.0F, (float)this.width / 2.0F, 0.0F);
       GL11.glScalef(1.0F + var7 * 0.2F, 1.0F + var7 * 0.2F, 0.0F);
-      GL11.glTranslatef((float)(-this.field20897) / 2.0F, (float)(-this.field20897) / 2.0F, 0.0F);
+      GL11.glTranslatef((float)(-this.width) / 2.0F, (float)(-this.width) / 2.0F, 0.0F);
       RenderUtil.method11448(
          (float)this.field21083,
          (float)this.field21082,
-         (float)(this.method13267() * 2),
-         (float)(this.method13269() + 114),
+         (float)(this.getWidth() * 2),
+         (float)(this.getHeight() + 114),
          this.field21087,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field21085)
       );

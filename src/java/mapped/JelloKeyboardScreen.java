@@ -30,7 +30,7 @@ public class JelloKeyboardScreen extends Screen {
    public JelloKeyboardScreen() {
       super("KeybindManager");
       this.field20955 = new Date();
-      this.addToList(this.field20957 = new Class4270(this, "keyboard", (this.field20897 - 1060) / 2, (this.field20898 - 357) / 2));
+      this.addToList(this.field20957 = new Class4270(this, "keyboard", (this.width - 1060) / 2, (this.height - 357) / 2));
       this.field20957.method13279(0.4F, 0.4F);
       this.field20957
          .method13036(
@@ -49,7 +49,7 @@ public class JelloKeyboardScreen extends Screen {
                   int[] var8 = this.field20957.method13105(this.field20957.field20696);
                   String var9 = ColorUtils.method17736(this.field20957.field20696);
                   this.field20956 = new Class4375(
-                     this, "popover", this.field20957.method13263() + var8[0], this.field20957.method13265() + var8[1], this.field20957.field20696, var9
+                     this, "popover", this.field20957.getX() + var8[0], this.field20957.getY() + var8[1], this.field20957.field20696, var9
                   );
                   this.field20956.method13036(var1x -> this.method13329(this.field20957));
                   this.field20956.method13713(var1x -> {
@@ -138,17 +138,17 @@ public class JelloKeyboardScreen extends Screen {
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
       float var5 = 0.25F * var1;
       RenderUtil.drawRect(
-         (float)this.field20895,
-         (float)this.field20896,
-         (float)(this.field20895 + this.field20897),
-         (float)(this.field20896 + this.field20898),
+         (float)this.x,
+         (float)this.y,
+         (float)(this.x + this.width),
+         (float)(this.y + this.height),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
       );
       super.method13224();
       RenderUtil.drawString(
          ResourceRegistry.JelloMediumFont40,
-         (float)((this.field20897 - 1060) / 2),
-         (float)((this.field20898 - 357) / 2 - 90),
+         (float)((this.width - 1060) / 2),
+         (float)((this.height - 357) / 2 - 90),
          "Keybind Manager",
          ClientColors.LIGHT_GREYISH_BLUE.getColor
       );
@@ -157,12 +157,12 @@ public class JelloKeyboardScreen extends Screen {
 
    // $VF: synthetic method
    public static int method13337(JelloKeyboardScreen var0) {
-      return var0.field20897;
+      return var0.width;
    }
 
    // $VF: synthetic method
    public static int method13338(JelloKeyboardScreen var0) {
-      return var0.field20898;
+      return var0.height;
    }
 
    // $VF: synthetic method

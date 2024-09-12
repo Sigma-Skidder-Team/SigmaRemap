@@ -64,7 +64,7 @@ public class AccountSignUpScreen extends Class4247 {
       this.field20716.method13288(false);
       this.registerButton.doThis((var1x, var2x) -> this.method13126());
       this.loginButton.doThis((var1x, var2x) -> {
-         Class4322 var5x = (Class4322)this.method13258();
+         Class4322 var5x = (Class4322)this.getIconPanel();
          var5x.method13423();
       });
    }
@@ -74,7 +74,7 @@ public class AccountSignUpScreen extends Class4247 {
       super.method13224();
       super.method13225();
       byte var4 = 28;
-      RenderUtil.method11454((float)(this.field20895 + var4), (float)(this.field20896 + var4 + 10), 160.0F, 160.0F, ResourcesDecrypter.sigmaPNG, var1);
+      RenderUtil.method11454((float)(this.x + var4), (float)(this.y + var4 + 10), 160.0F, 160.0F, ResourcesDecrypter.sigmaPNG, var1);
       short var5 = 305;
       short var6 = 316;
       Class9507 var7 = Client.getInstance().getNetworkManager().method30452();
@@ -82,13 +82,13 @@ public class AccountSignUpScreen extends Class4247 {
          this.field20716.method13288(var7.method36702());
          if (var7.method36702()) {
             RenderUtil.method11424(
-               (float)(this.field20895 + var6), (float)(this.field20896 + var5), 114.0F, 40.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
+               (float)(this.x + var6), (float)(this.y + var5), 114.0F, 40.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
             );
          }
 
          if (var7.method36701() != null) {
-            RenderUtil.startScissor((float)(this.field20895 + var6), (float)(this.field20896 + var5), 190.0F, 50.0F);
-            RenderUtil.method11455((float)(this.field20895 + var6), (float)(this.field20896 + var5), 190.0F, 190.0F, var7.method36701());
+            RenderUtil.startScissor((float)(this.x + var6), (float)(this.y + var5), 190.0F, 50.0F);
+            RenderUtil.method11455((float)(this.x + var6), (float)(this.y + var5), 190.0F, 190.0F, var7.method36701());
             RenderUtil.endScissor();
          }
       }
@@ -109,7 +109,7 @@ public class AccountSignUpScreen extends Class4247 {
                String var4 = Client.getInstance()
                   .getNetworkManager()
                   .method30448(this.field20713.method13303(), this.field20715.method13303(), this.field20714.method13303(), var3);
-               Class4322 var5 = (Class4322)this.method13258();
+               Class4322 var5 = (Class4322)this.getIconPanel();
                var5.method13424("Success", "You can now login.");
                var5.method13423();
 

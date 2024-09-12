@@ -20,7 +20,7 @@ public class Class7262 implements Class7261 {
       IconPanel var4 = var1[0];
 
       for (IconPanel var8 : var1) {
-         if (var8.method13269() > var4.method13269()) {
+         if (var8.getHeight() > var4.getHeight()) {
             var4 = var8;
          }
       }
@@ -43,7 +43,7 @@ public class Class7262 implements Class7261 {
                }
 
                IconPanel var9 = this.method22797(var6);
-               var5.method13261((var2, var3) -> var2.method13266(var9.method13265() + var2.method13269() + this.field31152));
+               var5.method13261((var2, var3) -> var2.setY(var9.getY() + var2.getHeight() + this.field31152));
             }
 
             IconPanel[] var8 = new IconPanel[this.field31151];
@@ -51,7 +51,7 @@ public class Class7262 implements Class7261 {
 
             for (int var10 = 1; var10 < this.field31151; var10++) {
                var8[var10] = var1.method13241().get(var4 + var10);
-               this.method22797(var8).method13261((var1x, var2) -> var1x.method13266(var5.method13265() + var5.method13269() / 2));
+               this.method22797(var8).method13261((var1x, var2) -> var1x.setY(var5.getY() + var5.getHeight() / 2));
             }
 
             var4 += this.field31151;

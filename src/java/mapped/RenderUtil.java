@@ -56,11 +56,11 @@ public class RenderUtil {
    }
 
    public static Rectangle method11414(IconPanel var0) {
-      return new Rectangle(var0.method13263(), var0.method13265(), var0.method13267(), var0.method13269());
+      return new Rectangle(var0.getX(), var0.getY(), var0.getWidth(), var0.getHeight());
    }
 
    public static void method11415(IconPanel var0) {
-      method11421(var0.method13263(), var0.method13265(), var0.method13267() + var0.method13263(), var0.method13269() + var0.method13265(), true);
+      method11421(var0.getX(), var0.getY(), var0.getWidth() + var0.getX(), var0.getHeight() + var0.getY(), true);
    }
 
    public static float[] method11416(int var0, int var1) {
@@ -982,7 +982,7 @@ public class RenderUtil {
       }
    }
 
-   public static void method11463(float var0, float var1, float var2, float var3, float var4, float var5) {
+   public static void drawRoundedRect(float var0, float var1, float var2, float var3, float var4, float var5) {
       GL11.glAlphaFunc(519, 0.0F);
       int var8 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
       method11449(var0 - var4, var1 - var4, var4, var4, ResourcesDecrypter.shadowCorner1PNG, var8);

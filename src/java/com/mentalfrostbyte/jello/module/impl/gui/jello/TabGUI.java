@@ -322,7 +322,7 @@ public class TabGUI extends Module {
             switch (var1.getKey()) {
                 case 257:
                     if (this.field23781) {
-                        this.field23785.method16000();
+                        this.field23785.toggle();
                         this.field23789.add(new Class8224(this, this.field23781));
                     }
                     break;
@@ -335,7 +335,7 @@ public class TabGUI extends Module {
                 case 262:
                     this.field23789.add(new Class8224(this, this.field23781));
                     if (this.field23781) {
-                        this.field23785.method16000();
+                        this.field23785.toggle();
                     }
 
                     this.field23781 = true;
@@ -397,7 +397,7 @@ public class TabGUI extends Module {
             RenderUtil.drawRect((float) var1, (float) var2, (float) (var1 + var3), (float) (var2 + var4), this.field23793);
         }
 
-        RenderUtil.method11463((float) var1, (float) var2, (float) var3, (float) var4, 8.0F, 0.7F * var8);
+        RenderUtil.drawRoundedRect((float) var1, (float) var2, (float) var3, (float) var4, 8.0F, 0.7F * var8);
     }
 
     private void method16601() {

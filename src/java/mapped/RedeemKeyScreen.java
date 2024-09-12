@@ -50,7 +50,7 @@ public class RedeemKeyScreen extends IconPanel {
             }
 
             if (Client.getInstance().getNetworkManager().isPremium()) {
-               this.method13222(() -> ((JelloMainMenuScreen)this.method13258()).method13340());
+               this.method13222(() -> ((JelloMainMenuScreen)this.getIconPanel()).method13340());
             }
          }).start());
    }
@@ -71,10 +71,10 @@ public class RedeemKeyScreen extends IconPanel {
       if (var5 != null) {
          this.field21138.method13288(var5.method36702());
          if (var5.method36701() != null) {
-            RenderUtil.startScissor((float)(this.field20895 + 295), (float)(this.field20896 + 280), 190.0F, 50.0F);
+            RenderUtil.startScissor((float)(this.x + 295), (float)(this.y + 280), 190.0F, 50.0F);
             RenderUtil.method11449(
-               (float)(this.field20895 + 316),
-               (float)(this.field20896 + 280),
+               (float)(this.x + 316),
+               (float)(this.y + 280),
                190.0F,
                190.0F,
                var5.method36701(),
