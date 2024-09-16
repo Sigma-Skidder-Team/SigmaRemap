@@ -75,7 +75,7 @@ public class LoginScreen extends Class4247 {
       this.field21355.method13288(false);
       this.field21356.doThis((var1x, var2x) -> this.method13688());
       this.field21357.doThis((var1x, var2x) -> {
-         Class4322 var5x = (Class4322)this.getIconPanel();
+         Class4322 var5x = (Class4322)this.method13258();
          var5x.method13422();
       });
       this.field21358.doThis((var0, var1x) -> Util.getOSType().method8181("https://sigma-web-alpha.vercel.app/"));
@@ -86,19 +86,19 @@ public class LoginScreen extends Class4247 {
       super.method13224();
       super.method13225();
       byte var4 = 28;
-      RenderUtil.method11454((float)(this.x + var4), (float)(this.y + var4 + 10), 160.0F, 160.0F, ResourcesDecrypter.sigmaPNG, var1);
+      RenderUtil.method11454((float)(this.field20895 + var4), (float)(this.field20896 + var4 + 10), 160.0F, 160.0F, ResourcesDecrypter.sigmaPNG, var1);
       Class9507 var5 = Client.getInstance().getNetworkManager().method30452();
       if (var5 != null) {
          this.field21355.method13288(var5.method36702());
          if (var5.method36702()) {
             RenderUtil.method11424(
-               (float)(this.x + 330), (float)(this.y + 255), 114.0F, 40.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
+               (float)(this.field20895 + 330), (float)(this.field20896 + 255), 114.0F, 40.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
             );
          }
 
          if (var5.method36701() != null) {
-            RenderUtil.startScissor((float)(this.x + 316), (float)(this.y + 255), 190.0F, 50.0F);
-            RenderUtil.method11455((float)(this.x + 316), (float)(this.y + 255), 190.0F, 190.0F, var5.method36701());
+            RenderUtil.startScissor((float)(this.field20895 + 316), (float)(this.field20896 + 255), 190.0F, 50.0F);
+            RenderUtil.method11455((float)(this.field20895 + 316), (float)(this.field20896 + 255), 190.0F, 190.0F, var5.method36701());
             RenderUtil.endScissor();
          }
       }
@@ -117,7 +117,7 @@ public class LoginScreen extends Class4247 {
 
          String var4 = Client.getInstance().getNetworkManager().method30447(this.field21353.method13303(), this.field21354.method13303(), var3);
          if (var4 != null) {
-            Class4322 var5 = (Class4322)this.getIconPanel();
+            Class4322 var5 = (Class4322)this.method13258();
             var5.method13424("Error", var4);
             this.field21355.method13304("");
          } else {

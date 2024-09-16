@@ -15,32 +15,32 @@ public class Class4279 extends Class4278 {
    @Override
    public void method13028(int var1, int var2) {
       super.method13028(var1, var2);
-      int var5 = this.field20737.getWidth() - this.field20737.field20610;
-      int var6 = this.field20737.getHeight() - this.getHeight();
+      int var5 = this.field20737.method13267() - this.field20737.field20610;
+      int var6 = this.field20737.method13269() - this.method13269();
       int var7 = this.field20737.field20610;
-      if (this.getX() > var5) {
-         this.setX(var5);
+      if (this.method13263() > var5) {
+         this.method13264(var5);
       }
 
-      if (this.getY() > var6) {
-         this.setY(var6);
+      if (this.method13265() > var6) {
+         this.method13266(var6);
       }
 
-      if (this.getX() < var7) {
-         this.setX(var7);
+      if (this.method13263() < var7) {
+         this.method13264(var7);
       }
    }
 
    public void method13144(float var1, float var2) {
-      this.x = (int)var1;
-      this.y = (int)var2;
+      this.field20895 = (int)var1;
+      this.field20896 = (int)var2;
    }
 
    @Override
    public void draw(float var1) {
       RenderUtil.method11438(
-         (float)(this.x + 5),
-         (float)(this.y + 5),
+         (float)(this.field20895 + 5),
+         (float)(this.field20896 + 5),
          10.0F,
          ColorUtils.applyAlpha(!this.method13216() ? ClientColors.DARK_GREEN.getColor : ClientColors.DARK_BLUE_GREY.getColor, var1)
       );

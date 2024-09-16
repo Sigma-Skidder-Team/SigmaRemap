@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Class4334 extends Class4333 {
-   private List<ButtonPanel> field21150 = new ArrayList<ButtonPanel>();
+   private List<Class4240> field21150 = new ArrayList<Class4240>();
    public int field21151;
    public Class4255 field21152;
    public Class4255 field21153;
@@ -52,9 +52,9 @@ public class Class4334 extends Class4333 {
       this.addToList(this.field21156 = new Class4255(this, "visuals", 201, 208, 170, 130, "Visuals", field21175, field21176));
       this.addToList(this.field21154 = new Class4255(this, "other", 201, 358, 170, 130, "Others", field21169, field21170));
       Class4361 var7;
-      this.addToList(var7 = new Class4361(this, "exit", this.getWidth() - 41, 9));
+      this.addToList(var7 = new Class4361(this, "exit", this.method13267() - 41, 9));
       var7.doThis((var0, var1x) -> Minecraft.getInstance().displayGuiScreen(null));
-      ClassicScreenk var8 = (ClassicScreenk)this.getIconPanel();
+      ClassicScreenk var8 = (ClassicScreenk)this.method13258();
       this.field21152.doThis((var1x, var2x) -> var8.method13418("Combat", ModuleCategory.COMBAT));
       this.field21153.doThis((var1x, var2x) -> var8.method13418("Movement", ModuleCategory.MOVEMENT));
       this.field21157.doThis((var1x, var2x) -> var8.method13418("World", ModuleCategory.WORLD));

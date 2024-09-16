@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 
-public class Class4246 extends ButtonPanel {
+public class Class4246 extends Class4240 {
    private Class4277 field20600;
    private Animation field20601 = new Animation(125, 125);
 
@@ -22,7 +22,7 @@ public class Class4246 extends ButtonPanel {
    public void method13028(int var1, int var2) {
       super.method13028(var1, var2);
       float var5 = this.field20600.method13138();
-      float var6 = (float)this.getX() / (float)(this.iconPanel.getWidth() - this.getWidth());
+      float var6 = (float)this.method13263() / (float)(this.field20892.method13267() - this.method13267());
       if (!this.method13212() && !this.method13298() && !this.method13216()) {
          this.field20601.changeDirection(Direction.BACKWARDS);
       } else {
@@ -47,18 +47,18 @@ public class Class4246 extends ButtonPanel {
       }
 
       byte var5 = 5;
-      float var6 = (float)this.getWidth();
-      RenderUtil.drawRoundedRect(
-         (float)(this.getX() + var5),
-         (float)(this.getY() + var5),
-         (float)(this.getWidth() - var5 * 2),
-         (float)(this.getHeight() - var5 * 2),
+      float var6 = (float)this.method13267();
+      RenderUtil.method11463(
+         (float)(this.method13263() + var5),
+         (float)(this.method13265() + var5),
+         (float)(this.method13267() - var5 * 2),
+         (float)(this.method13269() - var5 * 2),
          10.0F,
          var1 * 0.8F
       );
       RenderUtil.method11438(
-         (float)(this.getX() + this.getWidth() / 2),
-         (float)(this.getY() + this.getWidth() / 2),
+         (float)(this.method13263() + this.method13267() / 2),
+         (float)(this.method13265() + this.method13267() / 2),
          var6,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );

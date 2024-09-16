@@ -170,10 +170,10 @@ public class ColorUtils {
          mc.player.rotationPitch + MathHelper.method37792(var17 - mc.player.rotationPitch)
       };
    }
+
    public static int applyAlpha(int color, float alpha) {
       return (int)(alpha * 255.0F) << 24 | color & 16777215;
    }
-
 
    public static int method17689(int var0) {
       Color var3 = new Color(var0);

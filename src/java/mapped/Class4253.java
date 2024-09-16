@@ -56,22 +56,22 @@ public class Class4253 extends Class4247 {
          }
       }
 
-      RenderUtil.method11421(this.x, this.y, this.x + this.width, this.y + this.height, true);
+      RenderUtil.method11421(this.field20895, this.field20896, this.field20895 + this.field20897, this.field20896 + this.field20898, true);
       RenderUtil.drawString(
          ResourceRegistry.RegularFont20,
-         (float)(this.x + 25),
-         (float)this.y + (float)this.height / 2.0F - 17.5F,
+         (float)(this.field20895 + 25),
+         (float)this.field20896 + (float)this.field20898 / 2.0F - 17.5F,
          this.field20624.method21596(),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F * var1)
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont12,
-         (float)(this.x + 25),
-         (float)this.y + (float)this.height / 2.0F + 7.5F,
+         (float)(this.field20895 + 25),
+         (float)this.field20896 + (float)this.field20898 / 2.0F + 7.5F,
          this.field20624.method21597(),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F * var1)
       );
-      this.field20628.setY((int)((float)this.height / 2.0F - 7.5F));
+      this.field20628.method13266((int)((float)this.field20898 / 2.0F - 7.5F));
       super.draw(var1);
       RenderUtil.endScissor();
    }

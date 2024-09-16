@@ -72,7 +72,7 @@ public class ColorHelper {
       return this.field27965;
    }
 
-   public ColorHelper setTextColor(int var1) {
+   public ColorHelper method19410(int var1) {
       this.field27965 = var1;
       return this;
    }

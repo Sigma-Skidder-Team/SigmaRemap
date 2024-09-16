@@ -15,7 +15,7 @@ public class Class4330 extends IconPanel {
 
    public Class4330(IconPanel var1, String var2, JSONObject var3) {
       super(var1, var2);
-      this.setWidth(this.getIconPanel().getWidth());
+      this.setWidth(this.method13258().method13267());
       int var6 = 0;
       if (var3.has("deprecated")) {
          GL11.glTexEnvi(8960, 8704, 260);

@@ -93,9 +93,9 @@ public class JelloMainMenuScreen extends Screen {
          this.field20977.add(new Class4306(this, Integer.toString(var5), var6, var7, var8, var9, var10));
       }
 
-      this.addToList(this.field20969 = new MainmenuScreen2(this, "main", 0, 0, this.width, this.height));
-      this.addToList(this.field20970 = new ChangelogScreen(this, "changelog", 0, 0, this.width, this.height));
-      this.addToList(this.field20971 = new RedeemKeyScreen(this, "redeem", 0, 0, this.width, this.height));
+      this.addToList(this.field20969 = new MainmenuScreen2(this, "main", 0, 0, this.field20897, this.field20898));
+      this.addToList(this.field20970 = new ChangelogScreen(this, "changelog", 0, 0, this.field20897, this.field20898));
+      this.addToList(this.field20971 = new RedeemKeyScreen(this, "redeem", 0, 0, this.field20897, this.field20898));
       this.field20970.method13296(false);
       this.field20970.method13294(true);
       this.field20971.method13296(false);
@@ -150,7 +150,7 @@ public class JelloMainMenuScreen extends Screen {
       field20982 = Math.min(10.0F, Math.max(0.0F, (float)var6 / 1.810361E7F / 2.0F));
       field20965 = System.nanoTime();
       int var8 = -this.method13309();
-      float var9 = (float)this.method13310() / (float)this.getWidth() * -114.0F;
+      float var9 = (float)this.method13310() / (float)this.method13267() * -114.0F;
       if (this.field20968) {
          this.field20966 = (int)var9;
          this.field20967 = var8;
@@ -178,22 +178,22 @@ public class JelloMainMenuScreen extends Screen {
             var15 = 0.0F;
          }
 
-         float var16 = (float)this.getWidth() / 1920.0F;
+         float var16 = (float)this.method13267() / 1920.0F;
          int var17 = (int)(600.0F * var16);
          int var18 = (int)(450.0F * var16);
          byte var19 = 0;
          RenderUtil.method11455(
             (float)this.field20967 - (float)var17 * var12,
             (float)this.field20966,
-            (float)(this.getWidth() * 2 + var17),
-            (float)(this.getHeight() + 114),
+            (float)(this.method13267() * 2 + var17),
+            (float)(this.method13269() + 114),
             ResourcesDecrypter.backgroundPNG
          );
          RenderUtil.method11455(
             (float)this.field20967 - (float)var18 * var12,
             (float)this.field20966,
-            (float)(this.getWidth() * 2 + var18),
-            (float)(this.getHeight() + 114),
+            (float)(this.method13267() * 2 + var18),
+            (float)(this.method13269() + 114),
             ResourcesDecrypter.middlePNG
          );
 
@@ -206,8 +206,8 @@ public class JelloMainMenuScreen extends Screen {
          RenderUtil.method11455(
             (float)this.field20967 - (float)var19 * var12,
             (float)this.field20966,
-            (float)(this.getWidth() * 2 + var19),
-            (float)(this.getHeight() + 114),
+            (float)(this.method13267() * 2 + var19),
+            (float)(this.method13269() + 114),
             ResourcesDecrypter.foregroundPNG
          );
          Texture var26 = ResourcesDecrypter.logoLargePNG;
@@ -220,14 +220,14 @@ public class JelloMainMenuScreen extends Screen {
          RenderUtil.method11450(
             (float)this.field20967,
             (float)(this.field20966 - 50),
-            (float)(this.getWidth() * 2),
-            (float)(this.getHeight() + 200),
+            (float)(this.method13267() * 2),
+            (float)(this.method13269() + 200),
             field20976,
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4),
             false
          );
          RenderUtil.method11424(
-            0.0F, 0.0F, (float)this.getWidth(), (float)this.getHeight(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var4 * 0.3F)
+            0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var4 * 0.3F)
          );
 
          for (IconPanel var24 : this.method13241()) {
@@ -265,8 +265,8 @@ public class JelloMainMenuScreen extends Screen {
          if (this.field20973.getDirection() == Direction.FORWARDS) {
             RenderUtil.method11440(
                ResourceRegistry.JelloMediumFont50,
-               (float)(this.width / 2),
-               (float)(this.height / 2 - 30),
+               (float)(this.field20897 / 2),
+               (float)(this.field20898 / 2 - 30),
                field20980,
                ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent()),
                Class2218.field14492,
@@ -274,8 +274,8 @@ public class JelloMainMenuScreen extends Screen {
             );
             RenderUtil.method11440(
                ResourceRegistry.JelloLightFont18,
-               (float)(this.width / 2),
-               (float)(this.height / 2 + 30),
+               (float)(this.field20897 / 2),
+               (float)(this.field20898 / 2 + 30),
                "\"" + field20981 + "\"",
                ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent() * 0.5F),
                Class2218.field14492,

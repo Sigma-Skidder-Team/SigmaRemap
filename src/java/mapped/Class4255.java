@@ -18,19 +18,19 @@ public class Class4255 extends Class4247 {
    public void draw(float var1) {
       GL11.glAlphaFunc(518, 0.1F);
       RenderUtil.method11449(
-         (float)(this.x + (this.width - 64) / 2),
-         (float)(this.y + 10),
+         (float)(this.field20895 + (this.field20897 - 64) / 2),
+         (float)(this.field20896 + 10),
          64.0F,
          64.0F,
          !this.method13298() ? this.field20633 : this.field20634,
          ClientColors.LIGHT_GREYISH_BLUE.getColor
       );
-      int var4 = this.getWidth() / 2 + this.x;
-      int var5 = this.getHeight() / 2 + this.y;
+      int var4 = this.method13267() / 2 + this.field20895;
+      int var5 = this.method13269() / 2 + this.field20896;
       RenderUtil.drawString(
          ClassicDecryption.regular25,
-         (float)(this.x + (this.getWidth() - ClassicDecryption.regular25.method23942(this.field20912)) / 2),
-         (float)(this.y + this.getHeight() - 50),
+         (float)(this.field20895 + (this.method13267() - ClassicDecryption.regular25.method23942(this.field20912)) / 2),
+         (float)(this.field20896 + this.method13269() - 50),
          this.field20912,
          !this.method13298() ? -14869219 : -319475
       );

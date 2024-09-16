@@ -21,24 +21,24 @@ public class Class4300 extends Class4278 {
    public void draw(float var1) {
       this.method13306(ResourceRegistry.field38868);
       RenderUtil.drawRect(
-         (float)this.x,
-         (float)this.y,
-         (float)(this.x + this.width),
-         (float)(this.y + this.height),
+         (float)this.field20895,
+         (float)this.field20896,
+         (float)(this.field20895 + this.field20897),
+         (float)(this.field20896 + this.field20898),
          ColorUtils.applyAlpha(this.field20839, !this.isHovered() ? 0.25F : (!this.method13298() ? 0.4F : (!this.method13212() ? 0.5F : 0.6F)))
       );
       RenderUtil.method11429(
-         (float)this.x,
-         (float)this.y,
-         (float)(this.x + this.width),
-         (float)(this.y + this.height),
+         (float)this.field20895,
+         (float)this.field20896,
+         (float)(this.field20895 + this.field20897),
+         (float)(this.field20896 + this.field20898),
          2,
          ColorUtils.applyAlpha(this.field20839, 0.2F)
       );
       RenderUtil.method11440(
          ResourceRegistry.field38868,
-         (float)(this.getX() + this.getWidth() / 2),
-         (float)(this.getY() + this.getHeight() / 2),
+         (float)(this.method13263() + this.method13267() / 2),
+         (float)(this.method13265() + this.method13269() / 2),
          this.field20912,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, !this.isHovered() ? 0.5F : 1.0F),
          Class2218.field14492,

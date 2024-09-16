@@ -19,7 +19,7 @@ public class Class4264 extends Class4247 {
    public void method13028(int var1, int var2) {
       int var5 = this.method13309() - this.method13271();
       if (this.field20680) {
-         this.method13097((float)var5 / (float)this.getWidth());
+         this.method13097((float)var5 / (float)this.method13267());
       }
 
       super.method13028(var1, var2);
@@ -27,26 +27,26 @@ public class Class4264 extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      for (int var4 = 0; var4 < this.width; var4++) {
-         float var5 = (float)var4 / (float)this.width;
+      for (int var4 = 0; var4 < this.field20897; var4++) {
+         float var5 = (float)var4 / (float)this.field20897;
          RenderUtil.method11424(
-            (float)(this.x + var4),
-            (float)this.y,
+            (float)(this.field20895 + var4),
+            (float)this.field20896,
             1.0F,
-            (float)this.height,
+            (float)this.field20898,
             ColorUtils.applyAlpha(Color.HSBtoRGB(var5, 1.0F, 1.0F), var1)
          );
       }
 
       RenderUtil.method11428(
-         (float)this.getX(),
-         (float)this.getY(),
-         (float)(this.getX() + this.getWidth()),
-         (float)(this.getY() + this.getHeight()),
+         (float)this.method13263(),
+         (float)this.method13265(),
+         (float)(this.method13263() + this.method13267()),
+         (float)(this.method13265() + this.method13269()),
          ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.5F * var1)
       );
       Class4252.method13052(
-         this.x + Math.round((float)this.width * this.field20679) + 1, this.y + 4, Color.HSBtoRGB(this.field20679, 1.0F, 1.0F), var1
+         this.field20895 + Math.round((float)this.field20897 * this.field20679) + 1, this.field20896 + 4, Color.HSBtoRGB(this.field20679, 1.0F, 1.0F), var1
       );
       super.draw(var1);
    }

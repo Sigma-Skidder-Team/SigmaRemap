@@ -4,26 +4,26 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 
-public class ButtonPanel extends Class4247 {
+public class Class4240 extends Class4247 {
    private static String[] field20583;
    public float field20584;
    private int field20585 = 0;
    public int field20586 = 0;
 
-   public ButtonPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+   public Class4240(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
    }
 
-   public ButtonPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
+   public Class4240(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
       super(var1, var2, var3, var4, var5, var6, var7, false);
    }
 
-   public ButtonPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
+   public Class4240(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
    }
 
-   public ButtonPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource font) {
-      super(var1, var2, var3, var4, var5, var6, var7, var8, font, false);
+   public Class4240(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9) {
+      super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
    }
 
    @Override
@@ -46,29 +46,29 @@ public class ButtonPanel extends Class4247 {
       int var9 = var5 & 0xFF;
       if (this.field20586 <= 0) {
          RenderUtil.drawRect(
-            (float)this.getX(),
-            (float)this.getY(),
-            (float)(this.getX() + this.getWidth()),
-            (float)(this.getY() + this.getHeight()),
+            (float)this.method13263(),
+            (float)this.method13265(),
+            (float)(this.method13263() + this.method13267()),
+            (float)(this.method13265() + this.method13269()),
             var5
          );
       } else {
          RenderUtil.method11474(
-            (float)this.getX(), (float)this.getY(), (float)this.getWidth(), (float)this.getHeight(), (float)this.field20586, var5
+            (float)this.method13263(), (float)this.method13265(), (float)this.method13267(), (float)this.method13269(), (float)this.field20586, var5
          );
       }
 
-      int var10 = this.getX()
+      int var10 = this.method13263()
          + (
             this.field20914.method19411() != Class2218.field14492
                ? 0
-               : (this.field20914.method19411() != Class2218.field14490 ? this.getWidth() / 2 : this.getWidth())
+               : (this.field20914.method19411() != Class2218.field14490 ? this.method13267() / 2 : this.method13267())
          );
-      int var11 = this.getY()
+      int var11 = this.method13265()
          + (
             this.field20914.method19413() != Class2218.field14492
                ? 0
-               : (this.field20914.method19413() != Class2218.field14491 ? this.getHeight() / 2 : this.getHeight())
+               : (this.field20914.method19413() != Class2218.field14491 ? this.method13269() / 2 : this.method13269())
          );
       if (this.method13303() != null) {
          RenderUtil.method11440(
@@ -85,7 +85,7 @@ public class ButtonPanel extends Class4247 {
       super.draw(var1);
    }
 
-   public void setX(int var1) {
+   public void method13034(int var1) {
       this.field20585 = var1;
    }
 

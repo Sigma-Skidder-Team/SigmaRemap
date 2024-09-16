@@ -7,7 +7,7 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
-public class RectangleFaded extends ButtonPanel {
+public class RectangleFaded extends Class4240 {
     private static String[] field20583;
     private final Texture field20590;
     private final Animation field20592 = new Animation(150, 190, Direction.BACKWARDS);
@@ -32,7 +32,7 @@ public class RectangleFaded extends ButtonPanel {
             var4 = MathUtils.lerp(this.field20592.calcPercent(), 0.71, 0.18, 0.95, 0.57);
         }
 
-        RenderUtil.startScissor((float) this.getX(), (float) this.getY() - var4 * 3.0F, (float) this.getWidth(), (float) this.getHeight());
+        RenderUtil.startScissor((float) this.method13263(), (float) this.method13265() - var4 * 3.0F, (float) this.method13267(), (float) this.method13269());
         int var5 = 40;
         float var6 = - GuiSwitch.field21070 / (float) Minecraft.getInstance().mainWindow.getWidth();
         float var7 = - GuiSwitch.field21071 / (float) Minecraft.getInstance().mainWindow.getHeight();
@@ -46,19 +46,19 @@ public class RectangleFaded extends ButtonPanel {
         RenderUtil.endScissor();
         if (this.field20591) {
             RenderUtil.method11424(
-                    (float) this.getX(),
-                    (float) this.getY() - var4 * 3.0F,
-                    (float) this.getWidth(),
-                    (float) this.getHeight(),
+                    (float) this.method13263(),
+                    (float) this.method13265() - var4 * 3.0F,
+                    (float) this.method13267(),
+                    (float) this.method13269(),
                     ColorUtils.applyAlpha(-12319668, 0.5F)
             );
         }
 
         RenderUtil.method11449(
-                (float) this.getX(),
-                (float) this.getY() - var4 * 3.0F,
-                (float) this.getWidth(),
-                (float) this.getHeight(),
+                (float) this.method13263(),
+                (float) this.method13265() - var4 * 3.0F,
+                (float) this.method13267(),
+                (float) this.method13269(),
                 this.field20590,
                 ClientColors.LIGHT_GREYISH_BLUE.getColor
         );

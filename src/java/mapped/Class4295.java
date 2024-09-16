@@ -35,27 +35,27 @@ public class Class4295 extends Class4278 {
    public void draw(float var1) {
       if (!this.field20809) {
          RenderUtil.drawRect(
-            (float)this.x,
-            (float)this.y,
-            (float)(this.x + this.width),
-            (float)(this.y + this.height),
+            (float)this.field20895,
+            (float)this.field20896,
+            (float)(this.field20895 + this.field20897),
+            (float)(this.field20896 + this.field20898),
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
       } else {
          RenderUtil.drawRect(
-            (float)this.x,
-            (float)this.y,
-            (float)(this.x + this.width),
-            (float)(this.y + this.height),
+            (float)this.field20895,
+            (float)this.field20896,
+            (float)(this.field20895 + this.field20897),
+            (float)(this.field20896 + this.field20898),
             ColorUtils.applyAlpha(-3487030, var1 * 0.5F)
          );
       }
 
       RenderUtil.method11428(
-         (float)(this.x - 1),
-         (float)(this.y - 1),
-         (float)(this.x + this.width),
-         (float)(this.y + this.height),
+         (float)(this.field20895 - 1),
+         (float)(this.field20896 - 1),
+         (float)(this.field20895 + this.field20897),
+         (float)(this.field20896 + this.field20898),
          ColorUtils.applyAlpha(-921103, var1)
       );
       if (this.field20810.getItem() != null) {
@@ -66,14 +66,14 @@ public class Class4295 extends Class4278 {
    private void method13177() {
       GL11.glPushMatrix();
       float var3 = 0.062F;
-      GL11.glTranslatef((float)this.x, (float)this.y, 0.0F);
+      GL11.glTranslatef((float)this.field20895, (float)this.field20896, 0.0F);
       GL11.glScalef(
-         (float)this.width * var3 - 0.25F * (float)this.width / 40.0F, (float)this.height * var3 - 0.25F * (float)this.height / 40.0F, 1.0F
+         (float)this.field20897 * var3 - 0.25F * (float)this.field20897 / 40.0F, (float)this.field20898 * var3 - 0.25F * (float)this.field20898 / 40.0F, 1.0F
       );
-      GL11.glTranslatef((float)(-this.x), (float)(-this.y), 0.0F);
+      GL11.glTranslatef((float)(-this.field20895), (float)(-this.field20896), 0.0F);
       GL11.glEnable(2929);
       Class7516.method24498();
-      this.field20811.getItemRenderer().method791(this.field20810, this.x + 1, this.y + 1);
+      this.field20811.getItemRenderer().method791(this.field20810, this.field20895 + 1, this.field20896 + 1);
       Class7516.method24499();
       GL11.glDisable(2929);
       GL11.glPopMatrix();

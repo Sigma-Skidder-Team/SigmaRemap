@@ -98,7 +98,7 @@ public class MineplexLongJump extends Module {
                 if (this.field23804 > 0) {
                     this.field23804 = -1;
                     if (this.access().getBooleanValueFromSetttingName("Auto Disable")) {
-                        this.access().toggle();
+                        this.access().method16000();
                         return;
                     }
                 }

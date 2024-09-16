@@ -34,7 +34,7 @@ public class ChangelogScreen extends IconPanel {
 
    public void method13490(JSONArray var1) {
       if (var1 != null) {
-         this.getIconPanel().method13222(new Class576(this, var1));
+         this.method13258().method13222(new Class576(this, var1));
       }
    }
 

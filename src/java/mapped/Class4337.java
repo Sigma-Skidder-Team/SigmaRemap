@@ -67,20 +67,20 @@ public class Class4337 extends IconPanel {
       byte var7 = -6;
       int var8 = 122 * var6 + var6 * var7;
       if (var1 < var6) {
-         return this.getWidth() / 2 - var8 / 2 + var1 * 122 + var1 * var7 - 12;
+         return this.method13267() / 2 - var8 / 2 + var1 * 122 + var1 * var7 - 12;
       } else {
          var1 -= var6;
          var6 = 3;
          var7 = 6;
          var8 = 122 * var6 + var6 * var7;
-         return this.getWidth() / 2 - var8 / 2 + var1 * 122 + var1 * var7 - 12;
+         return this.method13267() / 2 - var8 / 2 + var1 * 122 + var1 * var7 - 12;
       }
    }
 
    @Override
    public void draw(float var1) {
       this.method13225();
-      RenderUtil.method11455((float)(this.x + (this.getWidth() - 300) / 2), (float)(this.y + 30), 300.0F, 97.0F, ClassicDecryption.big);
+      RenderUtil.method11455((float)(this.field20895 + (this.method13267() - 300) / 2), (float)(this.field20896 + 30), 300.0F, 97.0F, ClassicDecryption.big);
       super.draw(var1);
    }
 }

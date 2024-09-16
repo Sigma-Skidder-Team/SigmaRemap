@@ -15,15 +15,15 @@ public class Class4284 extends Class4278 {
 
    @Override
    public void draw(float var1) {
-      if (this.getWidth() != 0) {
+      if (this.method13267() != 0) {
          this.method13225();
-         float var4 = 1.0F - Math.min(1.0F, Math.max((float)this.getWidth() / (float)this.field20768, 0.0F));
+         float var4 = 1.0F - Math.min(1.0F, Math.max((float)this.method13267() / (float)this.field20768, 0.0F));
          RenderUtil.method11424(
-            (float)this.x, (float)this.y, (float)this.field20768, (float)this.height, ColorUtils.applyAlpha(-3254955, var1)
+            (float)this.field20895, (float)this.field20896, (float)this.field20768, (float)this.field20898, ColorUtils.applyAlpha(-3254955, var1)
          );
          super.draw(var1 * (1.0F - var4));
          RenderUtil.method11449(
-            0.0F, 0.0F, 20.0F, (float)this.height, ResourcesDecrypter.shadowRightPNG, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
+            0.0F, 0.0F, 20.0F, (float)this.field20898, ResourcesDecrypter.shadowRightPNG, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
          );
       }
    }

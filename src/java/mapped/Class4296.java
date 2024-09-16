@@ -44,7 +44,7 @@ public class Class4296 extends Class4278 {
          for (Ban var9 : var11) {
             if (var9.method31736() != null && var9.method31736().method25580() != null) {
                Class4348 var10 = new Class4348(
-                  this, ((Ban)var11.get(var13)).getServerIP(), 40, 100 + var13 * (var14 + var7), this.width - 90, var14, var9
+                  this, ((Ban)var11.get(var13)).getServerIP(), 40, 100 + var13 * (var14 + var7), this.field20897 - 90, var14, var9
                );
                this.addToList(var10);
                this.field20814.add(var10);
@@ -62,8 +62,8 @@ public class Class4296 extends Class4278 {
       this.field20815 = (float)((double)this.field20815 + (this.method13287() ? 0.33 : -0.33));
       this.field20815 = Math.min(1.0F, Math.max(0.0F, this.field20815));
       if (this.field20813 == null) {
-         int var4 = this.width - 30;
-         int var5 = this.x + 5;
+         int var4 = this.field20897 - 30;
+         int var5 = this.field20895 + 5;
          RenderUtil.method11455(
             (float)var5,
             (float)((Minecraft.getInstance().mainWindow.getHeight() - var4 * 342 / 460) / 2 - 60),
@@ -78,8 +78,8 @@ public class Class4296 extends Class4278 {
          int var7 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.7F);
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont36,
-            (float)(this.x + (this.width - ResourceRegistry.JelloLightFont36.method23942(this.field20813.getKnownName())) / 2),
-            (float)this.y,
+            (float)(this.field20895 + (this.field20897 - ResourceRegistry.JelloLightFont36.method23942(this.field20813.getKnownName())) / 2),
+            (float)this.field20896,
             this.field20813.getKnownName(),
             var7
          );

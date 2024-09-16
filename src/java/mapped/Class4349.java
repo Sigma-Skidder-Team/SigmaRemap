@@ -50,10 +50,10 @@ public class Class4349 extends Class4278 {
       this.field21258 = ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 2.0F);
       if (this.field21254 || this.method13212() || this.method13298()) {
          RenderUtil.drawRect(
-            (float)this.x,
-            (float)this.y,
-            (float)(this.x + this.width),
-            (float)(this.y + this.height),
+            (float)this.field20895,
+            (float)this.field20896,
+            (float)(this.field20895 + this.field20897),
+            (float)(this.field20896 + this.field20898),
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.05F)
          );
       }
@@ -61,55 +61,55 @@ public class Class4349 extends Class4278 {
       if (!this.method13212()) {
          if (this.method13298() && this.field21254) {
             RenderUtil.method11429(
-               (float)this.x,
-               (float)this.y,
-               (float)(this.x + this.width),
-               (float)(this.y + this.height),
+               (float)this.field20895,
+               (float)this.field20896,
+               (float)(this.field20895 + this.field20897),
+               (float)(this.field20896 + this.field20898),
                2,
                ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.5F)
             );
          } else if (!this.method13298()) {
             if (this.field21254) {
                RenderUtil.method11429(
-                  (float)this.x,
-                  (float)this.y,
-                  (float)(this.x + this.width),
-                  (float)(this.y + this.height),
+                  (float)this.field20895,
+                  (float)this.field20896,
+                  (float)(this.field20895 + this.field20897),
+                  (float)(this.field20896 + this.field20898),
                   2,
                   ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.3F)
                );
             }
          } else {
             RenderUtil.method11429(
-               (float)this.x,
-               (float)this.y,
-               (float)(this.x + this.width),
-               (float)(this.y + this.height),
+               (float)this.field20895,
+               (float)this.field20896,
+               (float)(this.field20895 + this.field20897),
+               (float)(this.field20896 + this.field20898),
                2,
                ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F)
             );
          }
       } else {
          RenderUtil.method11429(
-            (float)this.x,
-            (float)this.y,
-            (float)(this.x + this.width),
-            (float)(this.y + this.height),
+            (float)this.field20895,
+            (float)this.field20896,
+            (float)(this.field20895 + this.field20897),
+            (float)(this.field20896 + this.field20898),
             2,
             ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.65F)
          );
       }
 
-      RenderUtil.method11421(this.x, this.y, this.x + this.width, this.y + this.height, true);
+      RenderUtil.method11421(this.field20895, this.field20896, this.field20895 + this.field20897, this.field20896 + this.field20898, true);
       if (this.field21249 != null) {
          this.method13584();
          RenderUtil.endScissor();
-         if (this.field21252 > 0.0F && this.height > 55) {
+         if (this.field21252 > 0.0F && this.field20898 > 55) {
             RenderUtil.method11449(
-               (float)(this.x + this.getWidth()),
-               (float)this.y + (float)(26 * this.height) / 100.0F,
-               18.0F * this.field21252 * (float)this.height / 100.0F,
-               (float)(47 * this.height) / 100.0F,
+               (float)(this.field20895 + this.method13267()),
+               (float)this.field20896 + (float)(26 * this.field20898) / 100.0F,
+               18.0F * this.field21252 * (float)this.field20898 / 100.0F,
+               (float)(47 * this.field20898) / 100.0F,
                ResourcesDecrypter.selectPNG,
                !this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field21258
             );
@@ -121,12 +121,12 @@ public class Class4349 extends Class4278 {
 
    public void method13583() {
       RenderUtil.method11450(
-         (float)(this.x + 13), (float)(this.y + 13), 75.0F, 75.0F, this.field21249.setSkinTexture(), ClientColors.LIGHT_GREYISH_BLUE.getColor, true
+         (float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, this.field21249.setSkinTexture(), ClientColors.LIGHT_GREYISH_BLUE.getColor, true
       );
-      RenderUtil.method11464((float)(this.x + 13), (float)(this.y + 13), 75.0F, 75.0F, 20.0F, 1.0F);
+      RenderUtil.method11464((float)(this.field20895 + 13), (float)(this.field20896 + 13), 75.0F, 75.0F, 20.0F, 1.0F);
       RenderUtil.method11449(
-         (float)(this.x + 1),
-         (float)this.y,
+         (float)(this.field20895 + 1),
+         (float)this.field20896,
          100.0F,
          100.0F,
          ResourcesDecrypter.cerclePNG,
@@ -142,8 +142,8 @@ public class Class4349 extends Class4278 {
 
       RenderUtil.method11440(
          ResourceRegistry.field38868,
-         (float)(this.x + this.width / 2),
-         (float)(this.y + 20),
+         (float)(this.field20895 + this.field20897 / 2),
+         (float)(this.field20896 + 20),
          var3,
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F),
          Class2218.field14492,
@@ -151,8 +151,8 @@ public class Class4349 extends Class4278 {
       );
       RenderUtil.method11440(
          ResourceRegistry.field38868,
-         (float)(this.x + this.width / 2),
-         (float)(this.y + 18),
+         (float)(this.field20895 + this.field20897 / 2),
+         (float)(this.field20896 + 18),
          var3,
          ClientColors.LIGHT_GREYISH_BLUE.getColor,
          Class2218.field14492,
@@ -161,8 +161,8 @@ public class Class4349 extends Class4278 {
       if (!this.field21249.isEmailAValidEmailFormat()) {
          RenderUtil.method11441(
             ResourceRegistry.field38868,
-            (float)(this.x + this.width / 2),
-            (float)(this.y + 32),
+            (float)(this.field20895 + this.field20897 / 2),
+            (float)(this.field20896 + 32),
             this.field21249.getPassword().replaceAll(".", "*"),
             -8355712,
             Class2218.field14492,
@@ -172,8 +172,8 @@ public class Class4349 extends Class4278 {
       } else {
          RenderUtil.method11441(
             ResourceRegistry.field38868,
-            (float)(this.x + this.width / 2),
-            (float)(this.y + 29),
+            (float)(this.field20895 + this.field20897 / 2),
+            (float)(this.field20896 + 29),
             "Cracked",
             ClientColors.PALE_YELLOW.getColor,
             Class2218.field14492,

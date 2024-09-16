@@ -23,12 +23,12 @@ public class Class4249 extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      RenderUtil.startScissor((float)this.x, (float)this.y, (float)this.width, (float)this.height);
+      RenderUtil.startScissor((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898);
       RenderUtil.method11449(
-         (float)(this.x - this.field20607.field719 * this.width),
-         (float)this.y,
-         (float)(this.width * 3),
-         (float)this.height,
+         (float)(this.field20895 - this.field20607.field719 * this.field20897),
+         (float)this.field20896,
+         (float)(this.field20897 * 3),
+         (float)this.field20898,
          ResourcesDecrypter.repeatPNG,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.35F)
       );

@@ -38,7 +38,7 @@ public class RedeskyLongJump extends Module {
             if (this.field23981 > 0) {
                 this.field23981 = 0;
                 if (this.access().getBooleanValueFromSetttingName("Auto Disable")) {
-                    this.access().toggle();
+                    this.access().method16000();
                     return;
                 }
             } else {

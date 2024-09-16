@@ -15,12 +15,12 @@ public class Class4248 extends Class4247 {
    @Override
    public void draw(float var1) {
       RenderUtil.drawRect(
-         (float)this.getX(),
-         (float)this.getY(),
-         (float)(this.getX() + this.getWidth()),
-         (float)(this.getY() + this.getHeight()),
+         (float)this.method13263(),
+         (float)this.method13265(),
+         (float)(this.method13263() + this.method13267()),
+         (float)(this.method13265() + this.method13269()),
          -3618616
       );
-      RenderUtil.drawString(ClassicDecryption.regular17, (float)(this.getX() + 5), (float)(this.getY() - 2), this.field20605.method18626(), -14540254);
+      RenderUtil.drawString(ClassicDecryption.regular17, (float)(this.method13263() + 5), (float)(this.method13265() - 2), this.field20605.method18626(), -14540254);
    }
 }

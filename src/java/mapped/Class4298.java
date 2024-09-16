@@ -50,7 +50,7 @@ public class Class4298 extends Class4278 {
          Class7516.method24498();
          RenderSystem.disableDepthTest();
          RenderSystem.pushMatrix();
-         RenderSystem.translatef((float)(this.x + this.width / 2), (float)(this.y - this.height / 4), -200.0F);
+         RenderSystem.translatef((float)(this.field20895 + this.field20897 / 2), (float)(this.field20896 - this.field20898 / 4), -200.0F);
          GL11.glColor3f(1.0F, 1.0F, 1.0F);
          RenderSystem.method27883(180.0F, 1.0F, 0.0F, 0.0F);
          RenderSystem.method27883(180.0F, 0.0F, 0.0F, 1.0F);

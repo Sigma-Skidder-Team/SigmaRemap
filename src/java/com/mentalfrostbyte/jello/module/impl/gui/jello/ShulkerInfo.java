@@ -214,7 +214,7 @@ public class ShulkerInfo extends Module {
                     (float) var12,
                     ColorUtils.applyAlpha(ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 75.0F), 0.7F)
             );
-            RenderUtil.drawRoundedRect((float) var1, (float) var2, (float) var13, (float) var12, 10.0F, 0.5F);
+            RenderUtil.method11463((float) var1, (float) var2, (float) var13, (float) var12, 10.0F, 0.5F);
         } else {
             RenderUtil.method11467(var1, var2, var13, var12, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.94F));
         }

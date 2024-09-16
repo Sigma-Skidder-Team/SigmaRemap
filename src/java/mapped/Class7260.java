@@ -19,15 +19,15 @@ public class Class7260 implements Class7261 {
 
          for (int var7 = 0; var7 < var1.method13241().size(); var7++) {
             IconPanel var8 = var1.method13241().get(var7);
-            if (var4 + var8.getWidth() + this.field31149 > var1.getWidth()) {
+            if (var4 + var8.method13267() + this.field31149 > var1.method13267()) {
                var4 = 0;
                var5 += var6;
             }
 
-            var8.setY(var5);
-            var8.setX(var4);
-            var4 += var8.getWidth() + this.field31149;
-            var6 = Math.max(var8.getHeight(), var6);
+            var8.method13266(var5);
+            var8.method13264(var4);
+            var4 += var8.method13267() + this.field31149;
+            var6 = Math.max(var8.method13269(), var6);
          }
       }
    }

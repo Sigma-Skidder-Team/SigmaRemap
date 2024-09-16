@@ -88,7 +88,7 @@ public class BasicClickTP extends Module {
                 this.field23590.method27120();
                 this.field23590.start();
                 if (this.access().getBooleanValueFromSetttingName("Auto Disable")) {
-                    this.access().toggle();
+                    this.access().method16000();
                 }
             }
         }

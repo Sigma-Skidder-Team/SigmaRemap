@@ -41,16 +41,16 @@ public class Class4376 extends Class4235 implements Class4238 {
    public void draw(float var1) {
       float var4 = 1.0F + this.field21383.calcPercent() * 0.2F;
       float var5 = !this.method13212() ? 0.0F : 0.1F;
-      int var6 = (int)((float)this.getWidth() * var4);
-      int var7 = (int)((float)this.getHeight() * var4);
-      int var8 = this.getX() - (var6 - this.getWidth()) / 2;
-      int var9 = (int)((float)(this.getY() - (var7 - this.getHeight()) / 2) - (float)(this.getHeight() / 2) * (var4 - 1.0F));
+      int var6 = (int)((float)this.method13267() * var4);
+      int var7 = (int)((float)this.method13269() * var4);
+      int var8 = this.method13263() - (var6 - this.method13267()) / 2;
+      int var9 = (int)((float)(this.method13265() - (var7 - this.method13269()) / 2) - (float)(this.method13269() / 2) * (var4 - 1.0F));
       float[] var10 = ColorUtils.method17701(this.method13025().getWidth(), this.method13025().getHeight(), (float)var6, (float)var7);
       RenderUtil.drawPortalBackground(
-         this.method13271() + var8 - this.x,
-         this.method13272() + var9 - this.y,
-         this.method13271() + var8 - this.x + var6,
-         this.method13272() + var9 - this.y + var7
+         this.method13271() + var8 - this.field20895,
+         this.method13272() + var9 - this.field20896,
+         this.method13271() + var8 - this.field20895 + var6,
+         this.method13272() + var9 - this.field20896 + var7
       );
       RenderUtil.method11449(
          (float)var8 + var10[0],
@@ -79,7 +79,7 @@ public class Class4376 extends Class4235 implements Class4238 {
          GL11.glPushMatrix();
          String var13 = this.method13303() != null ? this.method13303() : this.field20891;
          GL11.glTranslatef(
-            (float)(this.getX() + this.getWidth() / 2 - var11.method23942(var13) / 2), (float)(this.getY() + this.getHeight() - 40), 0.0F
+            (float)(this.method13263() + this.method13267() / 2 - var11.method23942(var13) / 2), (float)(this.method13265() + this.method13269() - 40), 0.0F
          );
          GL11.glScalef(var4 / this.method13032(), var4 / this.method13032(), var4 / this.method13032());
          GL11.glAlphaFunc(519, 0.0F);

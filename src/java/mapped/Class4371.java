@@ -15,22 +15,22 @@ public class Class4371 extends Class4247 {
    @Override
    public void draw(float var1) {
       RenderUtil.method11438(
-         (float)this.x + (float)this.width / 2.0F,
-         (float)this.y + (float)this.width / 2.0F,
-         (float)this.width,
+         (float)this.field20895 + (float)this.field20897 / 2.0F,
+         (float)this.field20896 + (float)this.field20897 / 2.0F,
+         (float)this.field20897,
          ColorUtils.applyAlpha(ColorUtils.method17690(this.field21365, ClientColors.DEEP_TEAL.getColor, 0.8F), var1)
       );
       RenderUtil.method11438(
-         (float)this.x + (float)this.width / 2.0F,
-         (float)this.y + (float)this.width / 2.0F,
-         (float)(this.width - 2),
+         (float)this.field20895 + (float)this.field20897 / 2.0F,
+         (float)this.field20896 + (float)this.field20897 / 2.0F,
+         (float)(this.field20897 - 2),
          ColorUtils.applyAlpha(this.field21365, var1)
       );
       if (this.method13212()) {
          RenderUtil.method11438(
-            (float)this.x + (float)this.width / 2.0F,
-            (float)this.y + (float)this.width / 2.0F,
-            (float)(this.width - 2),
+            (float)this.field20895 + (float)this.field20897 / 2.0F,
+            (float)this.field20896 + (float)this.field20897 / 2.0F,
+            (float)(this.field20897 - 2),
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.2F)
          );
       }

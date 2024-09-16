@@ -50,7 +50,7 @@ public class NCPLongJump extends Module {
                 this.field23478 = 0;
                 this.field23477++;
                 if (this.field23479 && var1.getY() != 0.599 && this.access().getBooleanValueFromSetttingName("Auto Disable")) {
-                    this.access().toggle();
+                    this.access().method16000();
                     MovementUtils.method37088(var1, MovementUtils.method37076() * 0.8);
                     return;
                 }

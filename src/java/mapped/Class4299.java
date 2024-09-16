@@ -66,7 +66,7 @@ public class Class4299 extends Class4278 {
       RenderUtil.method11415(this);
 
       for (int var4 = 0; var4 < 3; var4++) {
-         RenderUtil.method11455((float)(this.x + 288 * var4), (float)this.y, 288.0F, 512.0F, this.field20829);
+         RenderUtil.method11455((float)(this.field20895 + 288 * var4), (float)this.field20896, 288.0F, 512.0F, this.field20829);
       }
 
       float var16 = 60.0F / (float) Minecraft.getFps();
@@ -75,23 +75,23 @@ public class Class4299 extends Class4278 {
       this.field20836 = Math.max(-var5, this.field20836 * 0.965F);
       byte var6 = 100;
       short var7 = 2200;
-      int var8 = this.height - 112;
+      int var8 = this.field20898 - 112;
 
       for (Entry var10 : this.field20834.entrySet()) {
          int var11 = (int)((Long)var10.getKey() - System.currentTimeMillis());
          float var12 = (float)var11 / 12.0F;
          float var13 = (float)var7 / 12.0F;
          RenderUtil.method11449(
-            (float)this.x + var13 + var12,
-            (float)(this.y - 320 + (int)((double)var8 * (Double)var10.getValue()) - var6 / 2),
+            (float)this.field20895 + var13 + var12,
+            (float)(this.field20896 - 320 + (int)((double)var8 * (Double)var10.getValue()) - var6 / 2),
             52.0F,
             320.0F,
             this.field20831,
             ClientColors.LIGHT_GREYISH_BLUE.getColor
          );
          RenderUtil.method11449(
-            (float)this.x + var13 + var12,
-            (float)(this.y + (int)((double)var8 * (Double)var10.getValue()) + var6 / 2),
+            (float)this.field20895 + var13 + var12,
+            (float)(this.field20896 + (int)((double)var8 * (Double)var10.getValue()) + var6 / 2),
             52.0F,
             320.0F,
             this.field20832,
@@ -110,11 +110,11 @@ public class Class4299 extends Class4278 {
       float var18 = (float)(System.currentTimeMillis() % (long)var17) / (float)var17;
 
       for (int var19 = 0; var19 < 4; var19++) {
-         RenderUtil.method11455((float)(this.x + 288 * var19) - 288.0F * var18, (float)(this.y + var8), 288.0F, 112.0F, this.field20830);
+         RenderUtil.method11455((float)(this.field20895 + 288 * var19) - 288.0F * var18, (float)(this.field20896 + var8), 288.0F, 112.0F, this.field20830);
       }
 
       RenderUtil.method11436(
-         (float)this.x + (float)var7 / 12.0F, (float)this.y + (float)var8 * (1.0F - this.field20835), 10.0F, ClientColors.PALE_YELLOW.getColor
+         (float)this.field20895 + (float)var7 / 12.0F, (float)this.field20896 + (float)var8 * (1.0F - this.field20835), 10.0F, ClientColors.PALE_YELLOW.getColor
       );
       RenderUtil.endScissor();
       this.field20837 = System.currentTimeMillis();

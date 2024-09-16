@@ -24,8 +24,8 @@ public class GuiSwitch extends Screen {
         int var4 = 264;
         int var5 = 93;
         int var6 = 61;
-        int var7 = (this.getWidth() - var3) / 2;
-        int var8 = (this.getHeight() - var5) / 2 + 14;
+        int var7 = (this.method13267() - var3) / 2;
+        int var8 = (this.method13269() - var5) / 2 + 14;
         RectangleFaded var9 = null;
         RectangleFaded var10 = null;
         RectangleFaded var11 = null;
@@ -44,7 +44,7 @@ public class GuiSwitch extends Screen {
             Client.getInstance().setupClient(ClientMode.CLASSIC);
             Minecraft.getInstance().displayGuiScreen(new VanillaMainMenuScreen());
         });
-        IconPanel var12 = new IconPanel(this, "socialbtns", (this.getWidth() - 174) / 2, this.getHeight() - 70, 174, 34);
+        IconPanel var12 = new IconPanel(this, "socialbtns", (this.method13267() - 174) / 2, this.method13269() - 70, 174, 34);
         ImageQ var13;
         var12.addToList(var13 = new ImageQ(var12, "youtube", 0, 0, 65, 34, ResourcesDecrypter.youtubePNG));
         ImageQ var14;

@@ -89,11 +89,11 @@ public class JelloEdit extends Module {
                 this.updateAndGetNextPosition();
             } else {
                 ColorUtils.addChatMessage("Unable to load schematic or schematic data is empty.");
-                this.toggle();
+                this.method16000();
             }
         } else {
             ColorUtils.addChatMessage("Schematic file does not exist.");
-            this.toggle();
+            this.method16000();
         }
     }
 

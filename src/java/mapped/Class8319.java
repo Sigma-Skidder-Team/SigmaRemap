@@ -22,7 +22,7 @@ public class Class8319 {
                if (var5 != null && var5.method27052()) {
                   switch (Class8614.field38740[var5.method27055().ordinal()]) {
                      case 1:
-                        var5.method27058().toggle();
+                        var5.method27058().method16000();
                         break;
                      case 2:
                         try {

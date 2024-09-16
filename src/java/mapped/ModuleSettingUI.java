@@ -67,10 +67,10 @@ public class ModuleSettingUI extends Class4247 {
 
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
       RenderUtil.drawRect(
-         (float) this.x,
-         (float) this.y,
-         (float) this.width,
-         (float) this.height,
+         (float)this.field20895,
+         (float)this.field20896,
+         (float)this.field20897,
+         (float)this.field20898,
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.45F * var1)
       );
       super.method13224();

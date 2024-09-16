@@ -15,8 +15,8 @@ public class Class4302 extends Class4278 {
    public void draw(float var1) {
       if (this.method13287()) {
          RenderUtil.method11449(
-            (float)(this.x + 30),
-            (float)(this.y + 30),
+            (float)(this.field20895 + 30),
+            (float)(this.field20896 + 30),
             187.0F,
             36.0F,
             ResourcesDecrypter.gemPNG,

@@ -83,7 +83,7 @@ public class SpartanClickTP extends Module {
                         MovementUtils.method37090(var5);
                         mc.timer.timerSpeed = 1.0F;
                     } else {
-                        this.access().toggle();
+                        this.access().method16000();
                     }
                 }
             }

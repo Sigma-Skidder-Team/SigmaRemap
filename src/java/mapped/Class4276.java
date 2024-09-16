@@ -14,7 +14,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Class4276 extends Class4247 {
-   private List<ButtonPanel> field20723 = new ArrayList<ButtonPanel>();
+   private List<Class4240> field20723 = new ArrayList<Class4240>();
    private final Date field20724;
    private boolean field20725 = false;
    private Date field20726;
@@ -27,10 +27,10 @@ public class Class4276 extends Class4247 {
    public Class4276(IconPanel var1, String var2, int var3, int var4, Vector3i var5) {
       super(var1, var2, var3 - 107, var4 + 10, 214, 170, ColorHelper.field27961, "", false);
       this.field20727 = var5;
-      if (this.y + this.height <= Minecraft.getInstance().mainWindow.getHeight()) {
-         this.y += 10;
+      if (this.field20896 + this.field20898 <= Minecraft.getInstance().mainWindow.getHeight()) {
+         this.field20896 += 10;
       } else {
-         this.y = this.y - (this.height + 27);
+         this.field20896 = this.field20896 - (this.field20898 + 27);
          this.field20725 = true;
       }
 
@@ -42,8 +42,8 @@ public class Class4276 extends Class4247 {
          var8 = new UIButton(
             this,
             "addButton",
-            this.width - 66,
-            this.height - 60,
+            this.field20897 - 66,
+            this.field20898 - 60,
             ResourceRegistry.JelloLightFont25.method23942("Add"),
             50,
             ColorHelper.field27961,
@@ -52,7 +52,7 @@ public class Class4276 extends Class4247 {
          )
       );
       var8.doThis((var1x, var2x) -> this.method13132(this.field20729.method13303(), this.method13130(), this.field20730.field21296));
-      this.addToList(this.field20729 = new Class4281(this, "Name", 20, 7, this.width - 40, 60, Class4281.field20741, "My waypoint", "My waypoint"));
+      this.addToList(this.field20729 = new Class4281(this, "Name", 20, 7, this.field20897 - 40, 60, Class4281.field20741, "My waypoint", "My waypoint"));
       this.field20729.method13148();
       this.field20729.method13156(false);
       this.addToList(this.field20730 = new Class4356(this, "badgeSelect", 0, 86));
@@ -61,8 +61,8 @@ public class Class4276 extends Class4247 {
             this,
             "Cords",
             20,
-            this.height - 44,
-            this.width - 100,
+            this.field20898 - 44,
+            this.field20897 - 100,
             20,
             Class4281.field20741,
             var5.getX() + " " + var5.getZ(),
@@ -91,33 +91,33 @@ public class Class4276 extends Class4247 {
       var1 = Animation.method25321(this.field20724, this.field20726, 250.0F, 120.0F);
       float var4 = EasingFunctions.easeOutBack(var1, 0.0F, 1.0F, 1.0F);
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
-      this.method13284((int)((float)this.width * 0.2F * (1.0F - var4)) * (!this.field20725 ? 1 : -1));
+      this.method13284((int)((float)this.field20897 * 0.2F * (1.0F - var4)) * (!this.field20725 ? 1 : -1));
       super.method13224();
       byte var5 = 10;
       int var6 = ColorUtils.applyAlpha(-723724, QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F));
-      RenderUtil.drawRoundedRect(
-         (float)(this.x + var5 / 2),
-         (float)(this.y + var5 / 2),
-         (float)(this.width - var5),
-         (float)(this.height - var5),
+      RenderUtil.method11463(
+         (float)(this.field20895 + var5 / 2),
+         (float)(this.field20896 + var5 / 2),
+         (float)(this.field20897 - var5),
+         (float)(this.field20898 - var5),
          35.0F,
          var1
       );
       RenderUtil.drawRect(
-         (float)(this.x + var5 / 2),
-         (float)(this.y + var5 / 2),
-         (float)(this.x - var5 / 2 + this.width),
-         (float)(this.y - var5 / 2 + this.height),
+         (float)(this.field20895 + var5 / 2),
+         (float)(this.field20896 + var5 / 2),
+         (float)(this.field20895 - var5 / 2 + this.field20897),
+         (float)(this.field20896 - var5 / 2 + this.field20898),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
       );
-      RenderUtil.drawRect((float)this.x, (float)this.y, (float)this.width, (float)this.height, (float)var5, var6);
+      RenderUtil.drawRect((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, (float)var5, var6);
       GL11.glPushMatrix();
-      GL11.glTranslatef((float)this.x, (float)this.y, 0.0F);
+      GL11.glTranslatef((float)this.field20895, (float)this.field20896, 0.0F);
       GL11.glRotatef(!this.field20725 ? -90.0F : 90.0F, 0.0F, 0.0F, 1.0F);
-      GL11.glTranslatef((float)(-this.x), (float)(-this.y), 0.0F);
+      GL11.glTranslatef((float)(-this.field20895), (float)(-this.field20896), 0.0F);
       RenderUtil.method11449(
-         (float)(this.x + (!this.field20725 ? 0 : this.height)),
-         (float)this.y + (float)((this.width - 47) / 2) * (!this.field20725 ? 1.0F : -1.58F),
+         (float)(this.field20895 + (!this.field20725 ? 0 : this.field20898)),
+         (float)this.field20896 + (float)((this.field20897 - 47) / 2) * (!this.field20725 ? 1.0F : -1.58F),
          18.0F,
          47.0F,
          ResourcesDecrypter.selectPNG,
@@ -125,10 +125,10 @@ public class Class4276 extends Class4247 {
       );
       GL11.glPopMatrix();
       RenderUtil.drawRect(
-         (float)(this.x + 25),
-         (float)(this.y + 68),
-         (float)(this.x + this.width - 25),
-         (float)(this.y + 69),
+         (float)(this.field20895 + 25),
+         (float)(this.field20896 + 68),
+         (float)(this.field20895 + this.field20897 - 25),
+         (float)(this.field20896 + 69),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
       );
       super.draw(var1);

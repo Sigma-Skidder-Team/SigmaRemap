@@ -21,10 +21,10 @@ public class Class511 implements Runnable {
    @Override
    public void run() {
       if (!MusicPlayer.method13206(this.field2427).method13231(this.field2424.field44776)) {
-         ButtonPanel var3;
+         Class4240 var3;
          MusicPlayer.method13206(this.field2427)
             .addToList(
-               var3 = new ButtonPanel(
+               var3 = new Class4240(
                   MusicPlayer.method13206(this.field2427),
                   this.field2424.field44776,
                   0,
@@ -44,8 +44,8 @@ public class Class511 implements Runnable {
                   this.field2424.field44776,
                   MusicPlayer.method13208(this.field2427),
                   0,
-                  this.field2426.getWidth() - MusicPlayer.method13208(this.field2427),
-                  this.field2426.getHeight() - MusicPlayer.method13209(this.field2427),
+                  this.field2426.method13267() - MusicPlayer.method13208(this.field2427),
+                  this.field2426.method13269() - MusicPlayer.method13209(this.field2427),
                   ColorHelper.field27961,
                   this.field2424.field44775
                )

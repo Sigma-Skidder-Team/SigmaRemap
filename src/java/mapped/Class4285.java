@@ -23,14 +23,14 @@ public class Class4285 extends Class4278 {
       float var4 = (float)(this.field20769.method27121() / 75L % 12L);
       if (this.field20770 != 0.0F) {
          GL11.glPushMatrix();
-         GL11.glTranslatef((float)(this.x + this.width / 2), (float)(this.y + this.height / 2), 0.0F);
+         GL11.glTranslatef((float)(this.field20895 + this.field20897 / 2), (float)(this.field20896 + this.field20898 / 2), 0.0F);
          GL11.glRotatef(var4 * 30.0F, 0.0F, 0.0F, 1.0F);
-         GL11.glTranslatef((float)(-this.x - this.width / 2), (float)(-this.y - this.height / 2), 0.0F);
+         GL11.glTranslatef((float)(-this.field20895 - this.field20897 / 2), (float)(-this.field20896 - this.field20898 / 2), 0.0F);
          RenderUtil.method11449(
-            (float)this.x,
-            (float)this.y,
-            (float)this.width,
-            (float)this.height,
+            (float)this.field20895,
+            (float)this.field20896,
+            (float)this.field20897,
+            (float)this.field20898,
             ResourcesDecrypter.loadingIndicatorPNG,
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, this.field20770 * var1)
          );

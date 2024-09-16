@@ -165,7 +165,7 @@ public class Class4313 extends Screen {
       );
       this.field21026.method13306(ResourceRegistry.JelloLightFont18);
       this.field21026.method13151(var1 -> this.method13372(false));
-      this.addToList(this.field21022 = new UIButton(this, "btnt", this.getWidth() - 90, 43, 70, 30, ColorHelper.field27961, "Add +", ResourceRegistry.JelloLightFont25));
+      this.addToList(this.field21022 = new UIButton(this, "btnt", this.method13267() - 90, 43, 70, 30, ColorHelper.field27961, "Add +", ResourceRegistry.JelloLightFont25));
       this.field21010.method13242();
       this.field21022.doThis((var1, var2) -> {
          if (this.method13369()) {
@@ -183,7 +183,7 @@ public class Class4313 extends Screen {
                var1.getEmail(),
                this.field21016,
                (100 + this.field21016 / 2) * this.method13370(),
-               this.field21010.getWidth() - this.field21016 * 2 + 4,
+               this.field21010.method13267() - this.field21016 * 2 + 4,
                100,
                var1
             )
@@ -341,8 +341,8 @@ public class Class4313 extends Screen {
    }
 
    private void method13366() {
-      int var3 = this.x + this.field21016;
-      int var4 = this.y + this.field21016;
+      int var3 = this.field20895 + this.field21016;
+      int var4 = this.field20896 + this.field21016;
       int var5 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F);
       RenderUtil.drawString(ResourceRegistry.JelloLightFont40, (float)var3, (float)var4, "Jello", var5);
       RenderUtil.drawString(ResourceRegistry.JelloLightFont25, (float)(var3 + 87), (float)(var4 + 15), "Alt Manager", var5);
@@ -356,13 +356,13 @@ public class Class4313 extends Screen {
             for (IconPanel var7 : var5.method13241()) {
                if (var7 instanceof Class4294) {
                   Class4294 var8 = (Class4294)var7;
-                  if (var7.getY() <= Minecraft.getInstance().mainWindow.getHeight() && this.field21010.method13513() == 0) {
+                  if (var7.method13265() <= Minecraft.getInstance().mainWindow.getHeight() && this.field21010.method13513() == 0) {
                      if (var3 > 0.2F) {
                         var8.field20805.changeDirection(Direction.FORWARDS);
                      }
 
                      float var9 = MathUtils.lerp(var8.field20805.calcPercent(), 0.51, 0.82, 0.0, 0.99);
-                     var8.method13284((int)(-((1.0F - var9) * (float)(var7.getWidth() + 30))));
+                     var8.method13284((int)(-((1.0F - var9) * (float)(var7.method13267() + 30))));
                      var3 = var8.field20805.calcPercent();
                   } else {
                      var8.method13284(0);
@@ -393,7 +393,7 @@ public class Class4313 extends Screen {
       for (IconPanel var5 : this.field21010.method13241()) {
          if (!(var5 instanceof Class4292)) {
             for (IconPanel var7 : var5.method13241()) {
-               if (var7.method13280() != 0 && var7.getX() > this.width) {
+               if (var7.method13280() != 0 && var7.method13263() > this.field20897) {
                   return false;
                }
             }
@@ -419,7 +419,7 @@ public class Class4313 extends Screen {
 
    private void method13371() {
       int var3 = this.method13309() * -1;
-      float var4 = (float)this.method13310() / (float)this.getWidth() * -114.0F;
+      float var4 = (float)this.method13310() / (float)this.method13267() * -114.0F;
       if (this.field21008) {
          this.field21006 = (float)((int)var4);
          this.field21005 = var3;
@@ -428,7 +428,7 @@ public class Class4313 extends Screen {
 
       float var5 = var4 - this.field21006;
       float var6 = (float)(var3 - this.field21005);
-      RenderUtil.method11455((float)this.field21005, this.field21006, (float)(this.getWidth() * 2), (float)(this.getHeight() + 114), ResourcesDecrypter.panoramaPNG);
+      RenderUtil.method11455((float)this.field21005, this.field21006, (float)(this.method13267() * 2), (float)(this.method13269() + 114), ResourcesDecrypter.panoramaPNG);
       float var7 = 0.5F;
       if (var4 != this.field21006) {
          this.field21006 += var5 * var7;
@@ -438,7 +438,7 @@ public class Class4313 extends Screen {
          this.field21005 = (int)((float)this.field21005 + var6 * var7);
       }
 
-      RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidth(), (float)this.getHeight(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.95F));
+      RenderUtil.drawRect(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.95F));
    }
 
    @Override

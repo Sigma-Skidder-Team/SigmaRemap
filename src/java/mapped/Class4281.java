@@ -77,7 +77,7 @@ public class Class4281 extends Class4278 {
       this.field20744 = this.field20744 + ((!this.field20905 ? 0.0F : 1.0F) - this.field20744) / 2.0F;
       if (this.field20905) {
          if (this.field20752) {
-            this.field20749 = Class8906.method32494(var5, this.font, (float)this.method13271(), var1, this.field20746);
+            this.field20749 = Class8906.method32494(var5, this.field20913, (float)this.method13271(), var1, this.field20746);
          }
       } else {
          this.field20749 = 0;
@@ -106,7 +106,7 @@ public class Class4281 extends Class4278 {
          }
 
          this.field20752 = true;
-         this.field20749 = Class8906.method32494(var6, this.font, (float)this.method13271(), var1, this.field20746);
+         this.field20749 = Class8906.method32494(var6, this.field20913, (float)this.method13271(), var1, this.field20746);
          if (!InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 340)
             && !InputMappings.isKeyDown(Minecraft.getInstance().mainWindow.getHandle(), 344)) {
             this.field20750 = this.field20749;
@@ -340,19 +340,19 @@ public class Class4281 extends Class4278 {
          var6 = this.field20912.replaceAll(".", this.field20755);
       }
 
-      RenderUtil.method11421(this.getX(), this.getY(), this.getX() + this.width, this.getY() + this.height, true);
-      int var7 = this.x + 4;
-      int var8 = this.width - 4;
-      float var9 = (float)var7 + this.field20746 + (float)this.font.method23942(var6.substring(0, this.field20749));
+      RenderUtil.method11421(this.method13263(), this.method13265(), this.method13263() + this.field20897, this.method13265() + this.field20898, true);
+      int var7 = this.field20895 + 4;
+      int var8 = this.field20897 - 4;
+      float var9 = (float)var7 + this.field20746 + (float)this.field20913.method23942(var6.substring(0, this.field20749));
       if (this.method13297()) {
          RenderUtil.drawRect(
             var9 + (float)(var6.isEmpty() ? 0 : -1),
-            (float)(this.y + this.height / 2 - this.font.method23941(var6) / 2 + 2),
+            (float)(this.field20896 + this.field20898 / 2 - this.field20913.method23941(var6) / 2 + 2),
             var9 + (float)(var6.isEmpty() ? 1 : 0),
-            (float)(this.y + this.height / 2 + this.font.method23941(var6) / 2 - 1),
+            (float)(this.field20896 + this.field20898 / 2 + this.field20913.method23941(var6) / 2 - 1),
             ColorUtils.applyAlpha(this.field20914.method19409(), !var5 ? 0.1F * var1 : 0.8F)
          );
-         float var10 = (float)(var7 + this.font.method23942(var6.substring(0, this.field20749))) + this.field20747;
+         float var10 = (float)(var7 + this.field20913.method23942(var6.substring(0, this.field20749))) + this.field20747;
          if (var10 < (float)var7) {
             this.field20747 += (float)var7 - var10;
             this.field20747 = this.field20747 - Math.min((float)var8, this.field20747);
@@ -366,21 +366,21 @@ public class Class4281 extends Class4278 {
       this.field20746 = this.field20746 + (this.field20747 - this.field20746) / 2.0F;
       this.field20750 = Math.min(Math.max(0, this.field20750), var6.length());
       this.field20751 = Math.min(Math.max(0, this.field20751), var6.length());
-      float var14 = (float)var7 + this.field20746 + (float)this.font.method23942(var6.substring(0, this.field20750));
-      float var11 = (float)var7 + this.field20746 + (float)this.font.method23942(var6.substring(0, this.field20751));
+      float var14 = (float)var7 + this.field20746 + (float)this.field20913.method23942(var6.substring(0, this.field20750));
+      float var11 = (float)var7 + this.field20746 + (float)this.field20913.method23942(var6.substring(0, this.field20751));
       RenderUtil.drawRect(
          var14,
-         (float)(this.y + this.height / 2 - this.font.method23941(var6) / 2),
+         (float)(this.field20896 + this.field20898 / 2 - this.field20913.method23941(var6) / 2),
          var11,
-         (float)(this.y + this.height / 2 + this.font.method23941(var6) / 2),
+         (float)(this.field20896 + this.field20898 / 2 + this.field20913.method23941(var6) / 2),
          ColorUtils.applyAlpha(-5516546, var1)
       );
       Class2218 var12 = this.field20914.method19411();
       Class2218 var13 = this.field20914.method19413();
       RenderUtil.method11440(
-         this.font,
+         this.field20913,
          (float)var7 + this.field20746,
-         (float)(this.y + this.height / 2),
+         (float)(this.field20896 + this.field20898 / 2),
          var6.length() == 0 && (!this.field20905 || var6.length() <= 0) ? this.field20743 : var6,
          ColorUtils.applyAlpha(this.field20914.method19409(), (this.field20744 / 2.0F + 0.4F) * var1 * (this.field20905 && var6.length() > 0 ? 1.0F : 0.5F)),
          var12,
@@ -389,10 +389,10 @@ public class Class4281 extends Class4278 {
       RenderUtil.endScissor();
       if (this.field20758) {
          RenderUtil.drawRect(
-            (float)this.x,
-            (float)(this.y + this.height - 2),
-            (float)(this.x + this.width),
-            (float)(this.y + this.height),
+            (float)this.field20895,
+            (float)(this.field20896 + this.field20898 - 2),
+            (float)(this.field20895 + this.field20897),
+            (float)(this.field20896 + this.field20898),
             ColorUtils.applyAlpha(this.field20914.method19405(), (this.field20744 / 2.0F + 0.5F) * var1)
          );
       }

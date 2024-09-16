@@ -210,7 +210,7 @@ public class MiniMap extends Module {
                             );
                             GL11.glPopMatrix();
                             RenderUtil.method11464((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, 23.0F, 0.75F);
-                            RenderUtil.drawRoundedRect((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, 8.0F, 0.7F);
+                            RenderUtil.method11463((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, 8.0F, 0.7F);
                         }
 
                         var1.method13962(this.field23709 + 10);

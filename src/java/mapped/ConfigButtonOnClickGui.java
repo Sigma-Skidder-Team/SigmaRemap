@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConfigButtonOnClickGui extends Class4247 {
-   private List<ButtonPanel> field21297 = new ArrayList<ButtonPanel>();
+   private List<Class4240> field21297 = new ArrayList<Class4240>();
    public final Animation field21298;
    public Class4339 field21299;
    public Class4272 field21300;
@@ -27,11 +27,11 @@ public class ConfigButtonOnClickGui extends Class4247 {
       UIButton var7;
       this.addToList(
          var7 = new UIButton(
-            this, "addButton", this.width - 55, 0, ResourceRegistry.JelloLightFont25.method23942("Add"), 69, ColorHelper.field27961, "+", ResourceRegistry.JelloLightFont25
+            this, "addButton", this.field20897 - 55, 0, ResourceRegistry.JelloLightFont25.method23942("Add"), 69, ColorHelper.field27961, "+", ResourceRegistry.JelloLightFont25
          )
       );
       var7.doThis((var1x, var2x) -> this.field21300.method13119(true));
-      this.addToList(this.field21300 = new Class4272(this, "profile", 0, 69, this.width, 200));
+      this.addToList(this.field21300 = new Class4272(this, "profile", 0, 69, this.field20897, 200));
       this.field21300.method13292(true);
       this.method13615();
    }
@@ -93,7 +93,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
 
    @Override
    public void method13028(int var1, int var2) {
-      if (var2 > this.field21300.method13272() + this.field21300.getHeight()) {
+      if (var2 > this.field21300.method13272() + this.field21300.method13269()) {
          this.field21300.method13119(false);
       }
 
@@ -107,20 +107,20 @@ public class ConfigButtonOnClickGui extends Class4247 {
          this.method13236(this.field21299);
       }
 
-      this.addToList(this.field21299 = new Class4339(this, "profileScrollView", 10, 80, this.width - 20, this.height - 80 - 10));
+      this.addToList(this.field21299 = new Class4339(this, "profileScrollView", 10, 80, this.field20897 - 20, this.field20898 - 80 - 10));
       this.field21299.method13512(var3);
       this.field21301.clear();
       int var4 = 0;
       byte var5 = 70;
 
       for (Class7286 var7 : Client.getInstance().getModuleManager().method14667().method20772()) {
-         Class4351 var8 = new Class4351(this, "profile" + var4, 0, var5 * var4, this.field21299.getWidth(), var5, var7, var4);
+         Class4351 var8 = new Class4351(this, "profile" + var4, 0, var5 * var4, this.field21299.method13267(), var5, var7, var4);
          this.field21299.addToList(var8);
          this.field21301.add(var8);
          var4++;
       }
 
-      JelloClickGUI var9 = (JelloClickGUI)this.getIconPanel();
+      JelloClickGUI var9 = (JelloClickGUI)this.method13258();
       var9.method13315();
    }
 
@@ -128,8 +128,8 @@ public class ConfigButtonOnClickGui extends Class4247 {
       int var3 = 0;
 
       for (Class4351 var5 : this.field21301) {
-         var5.setY(var3);
-         var3 += var5.getHeight();
+         var5.method13266(var3);
+         var3 += var5.method13269();
       }
    }
 
@@ -143,28 +143,28 @@ public class ConfigButtonOnClickGui extends Class4247 {
       }
 
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
-      this.drawBackground((int)((float)this.width * 0.25F * (1.0F - var4)));
-      this.method13284((int)((float)this.width * 0.14F * (1.0F - var4)));
+      this.drawBackground((int)((float)this.field20897 * 0.25F * (1.0F - var4)));
+      this.method13284((int)((float)this.field20897 * 0.14F * (1.0F - var4)));
       super.method13224();
       super.method13225();
       byte var5 = 10;
       int var6 = ColorUtils.applyAlpha(-723724, QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F));
-      RenderUtil.drawRoundedRect(
-         (float)(this.x + var5 / 2),
-         (float)(this.y + var5 / 2),
-         (float)(this.width - var5),
-         (float)(this.height - var5),
+      RenderUtil.method11463(
+         (float)(this.field20895 + var5 / 2),
+         (float)(this.field20896 + var5 / 2),
+         (float)(this.field20897 - var5),
+         (float)(this.field20898 - var5),
          35.0F,
          var1
       );
       RenderUtil.drawRect(
-         (float)(this.x + var5 / 2),
-         (float)(this.y + var5 / 2),
-         (float)(this.x - var5 / 2 + this.width),
-         (float)(this.y - var5 / 2 + this.height),
+         (float)(this.field20895 + var5 / 2),
+         (float)(this.field20896 + var5 / 2),
+         (float)(this.field20895 - var5 / 2 + this.field20897),
+         (float)(this.field20896 - var5 / 2 + this.field20898),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
       );
-      RenderUtil.drawRect((float)this.x, (float)this.y, (float)this.width, (float)this.height, (float)var5, var6);
+      RenderUtil.drawRect((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, (float)var5, var6);
       float var7 = 0.9F + (1.0F - MathUtils.lerp(this.field21300.field20703.calcPercent(), 0.0, 0.96, 0.69, 0.99)) * 0.1F;
       if (this.field21300.field20703.getDirection() == Direction.BACKWARDS) {
          var7 = 0.9F + (1.0F - MathUtils.lerp(this.field21300.field20703.calcPercent(), 0.61, 0.01, 0.87, 0.16)) * 0.1F;
@@ -173,16 +173,16 @@ public class ConfigButtonOnClickGui extends Class4247 {
       this.field21299.method13279(var7, var7);
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont25,
-         (float)(this.x + 25),
-         (float)(this.y + 20),
+         (float)(this.field20895 + 25),
+         (float)(this.field20896 + 20),
          "Profiles",
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F * var1)
       );
       RenderUtil.drawRect(
-         (float)(this.x + 25),
-         (float)(this.y + 69),
-         (float)(this.x + this.width - 25),
-         (float)(this.y + 70),
+         (float)(this.field20895 + 25),
+         (float)(this.field20896 + 69),
+         (float)(this.field20895 + this.field20897 - 25),
+         (float)(this.field20896 + 70),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
       );
       super.draw(var1);

@@ -269,7 +269,7 @@ public class Waypoints extends Module {
         RenderUtil.drawRect(
                 (float) (-var9.method23942(var4) / 2 - 14), -5.0F, (float) var9.method23942(var4) / 2.0F + 14.0F, (float) (var9.method23952() + 7), var11
         );
-        RenderUtil.drawRoundedRect(
+        RenderUtil.method11463(
                 (float) (-var9.method23942(var4) / 2 - 14), -5.0F, (float) (var9.method23942(var4) + 28), (float) (var9.method23952() + 12), 20.0F, 0.5F
         );
         GL11.glTranslated(-var9.method23942(var4) / 2, 0.0, 0.0);

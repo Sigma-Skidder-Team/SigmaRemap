@@ -67,10 +67,10 @@ public class Class4236 extends Class4235 implements Class4238 {
          var5 = this.method13031();
       }
 
-      int var6 = (int)((double)this.getWidth() * (1.0 + (double)var5 * 0.2));
-      int var7 = (int)((double)this.getHeight() * (1.0 + (double)var5 * 0.2));
-      int var8 = this.getX() - (var6 - this.getWidth()) / 2;
-      int var9 = (int)((double)(this.getY() - (var7 - this.getHeight()) / 2) - (double)((float)(this.getHeight() / 2) * var5) * 0.2);
+      int var6 = (int)((double)this.method13267() * (1.0 + (double)var5 * 0.2));
+      int var7 = (int)((double)this.method13269() * (1.0 + (double)var5 * 0.2));
+      int var8 = this.method13263() - (var6 - this.method13267()) / 2;
+      int var9 = (int)((double)(this.method13265() - (var7 - this.method13269()) / 2) - (double)((float)(this.method13269() / 2) * var5) * 0.2);
       float[] var10 = ColorUtils.method17701(this.method13025().getWidth(), this.method13025().getHeight(), (float)var6, (float)var7);
       byte var11 = 85;
       RenderUtil.method11449(
@@ -107,7 +107,7 @@ public class Class4236 extends Class4235 implements Class4238 {
          GL11.glPushMatrix();
          String var14 = this.method13303() != null ? this.method13303() : this.field20891;
          GL11.glTranslatef(
-            (float)(this.getX() + this.getWidth() / 2 - var12.method23942(var14) / 2), (float)(this.getY() + this.getHeight() - 40), 0.0F
+            (float)(this.method13263() + this.method13267() / 2 - var12.method23942(var14) / 2), (float)(this.method13265() + this.method13269() - 40), 0.0F
          );
          GL11.glScalef(var13, var13, var13);
          GL11.glAlphaFunc(519, 0.0F);

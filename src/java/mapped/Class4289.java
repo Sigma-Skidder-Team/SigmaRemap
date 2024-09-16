@@ -17,10 +17,10 @@ public class Class4289 extends Class4278 {
 
    @Override
    public void draw(float var1) {
-      int var4 = this.x + 20;
-      int var5 = this.y + 5;
+      int var4 = this.field20895 + 20;
+      int var5 = this.field20896 + 5;
       int var6 = this.field20783.method34193();
-      int var7 = this.height - 10 - Class4346.method13575();
+      int var7 = this.field20898 - 10 - Class4346.method13575();
       int var8 = ColorUtils.applyAlpha(this.field20784, var1);
       int var9 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1);
       if (this.field20783.field42046) {

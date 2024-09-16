@@ -26,17 +26,17 @@ public class Class4273 extends Class4247 {
       if (this.method13303() != null) {
          this.method13225();
          int var4 = this.field20914.method19405();
-         int var5 = this.getX()
+         int var5 = this.method13263()
             + (
                this.field20914.method19411() != Class2218.field14492
                   ? 0
-                  : (this.field20914.method19411() != Class2218.field14490 ? this.getWidth() / 2 : this.getWidth())
+                  : (this.field20914.method19411() != Class2218.field14490 ? this.method13267() / 2 : this.method13267())
             );
-         int var6 = this.getY()
+         int var6 = this.method13265()
             + (
                this.field20914.method19413() != Class2218.field14492
                   ? 0
-                  : (this.field20914.method19413() != Class2218.field14491 ? this.getHeight() / 2 : this.getHeight())
+                  : (this.field20914.method19413() != Class2218.field14491 ? this.method13269() / 2 : this.method13269())
             );
          int var7 = this.method13305().method23942(this.method13303());
          byte var8 = 18;
@@ -48,10 +48,10 @@ public class Class4273 extends Class4247 {
 
          if (var10) {
             RenderUtil.drawRect(
-               (float)this.x,
-               (float)this.y,
-               (float)(this.x + this.width),
-               (float)(this.y + this.height),
+               (float)this.field20895,
+               (float)this.field20896,
+               (float)(this.field20895 + this.field20897),
+               (float)(this.field20896 + this.field20898),
                ColorUtils.applyAlpha(-11890462, 1.0F)
             );
          }
@@ -65,15 +65,15 @@ public class Class4273 extends Class4247 {
 
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
-            (float)(this.x + var11 + 50),
-            (float)(this.y + var12 + 5),
+            (float)(this.field20895 + var11 + 50),
+            (float)(this.field20896 + var12 + 5),
             this.field20912,
             ColorUtils.applyAlpha(var13, var1)
          );
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont12,
-            (float)(this.x + var11 + 50),
-            (float)(this.y + var12 + 19),
+            (float)(this.field20895 + var11 + 50),
+            (float)(this.field20896 + var12 + 19),
             this.field20710,
             ColorUtils.applyAlpha(var13, var1 * 0.5F)
          );

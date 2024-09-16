@@ -130,7 +130,7 @@ public class MineplexFly extends PremiumModule {
                 } else {
                     if (this.field23669 > 0) {
                         MovementUtils.method37088(var1, 0.0);
-                        this.access().toggle();
+                        this.access().method16000();
                         return;
                     }
 

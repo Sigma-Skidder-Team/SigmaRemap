@@ -45,7 +45,7 @@ public class Class4277 extends Class4247 {
    }
 
    private void method13136() {
-      this.addToList(this.field20734 = new Class4246(this, this.getHeight()));
+      this.addToList(this.field20734 = new Class4246(this, this.method13269()));
       this.field20732 = -1.0F;
       this.field20735 = new Animation(114, 114, Direction.BACKWARDS);
    }
@@ -65,11 +65,11 @@ public class Class4277 extends Class4247 {
    public void draw(float var1) {
       byte var4 = 3;
       byte var5 = 6;
-      int var6 = this.getHeight() / 4;
-      int var7 = this.getWidth() - this.field20734.getWidth() / 2 - 3;
-      int var8 = this.getX() + this.field20734.getWidth() / 4 + 3;
-      int var9 = this.getY() + this.getHeight() / 2 - var6 / 2;
-      int var10 = this.field20734.getX() + this.field20734.getWidth() / 2 - 6;
+      int var6 = this.method13269() / 4;
+      int var7 = this.method13267() - this.field20734.method13267() / 2 - 3;
+      int var8 = this.method13263() + this.field20734.method13267() / 4 + 3;
+      int var9 = this.method13265() + this.method13269() / 2 - var6 / 2;
+      int var10 = this.field20734.method13263() + this.field20734.method13267() / 2 - 6;
       RenderUtil.drawRect(
          (float)var8, (float)var9, (float)var10, (float)var6, (float)(var6 / 2), ColorUtils.applyAlpha(this.field20914.method19405(), var1 * var1 * var1)
       );
@@ -82,7 +82,7 @@ public class Class4277 extends Class4247 {
          ColorUtils.applyAlpha(ColorUtils.method17692(this.field20914.method19405(), 0.8F), var1 * var1 * var1)
       );
       if (this.method13303() != null) {
-         int var11 = Math.max(0, 9 - this.field20734.getX());
+         int var11 = Math.max(0, 9 - this.field20734.method13263());
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
             (float)(var8 - ResourceRegistry.JelloLightFont14.method23942(this.method13303()) - 10 - var11),
@@ -129,7 +129,7 @@ public class Class4277 extends Class4247 {
       var1 = Math.min(Math.max(var1, 0.0F), 1.0F);
       float var5 = this.field20733;
       this.field20733 = var1;
-      this.field20734.setX((int)((float)(this.getWidth() - this.field20734.getWidth()) * var1 + 0.5F));
+      this.field20734.method13264((int)((float)(this.method13267() - this.field20734.method13267()) * var1 + 0.5F));
       if (var2 && var5 != var1) {
          this.method13037();
       }

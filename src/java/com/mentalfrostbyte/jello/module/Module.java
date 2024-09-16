@@ -293,7 +293,7 @@ public abstract class Module {
         Client.getInstance().getModuleManager().method14668().method13737(this);
     }
 
-    public void toggle() {
+    public void method16000() {
         this.method15999(!this.isEnabled());
     }
 

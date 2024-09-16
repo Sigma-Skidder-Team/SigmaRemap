@@ -40,7 +40,7 @@ public class Class4261 extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      this.method13086().method23109(this.getX(), this.getY(), this.getWidth(), this.getHeight(), var1);
+      this.method13086().method23109(this.method13263(), this.method13265(), this.method13267(), this.method13269(), var1);
       super.draw(var1);
    }
 

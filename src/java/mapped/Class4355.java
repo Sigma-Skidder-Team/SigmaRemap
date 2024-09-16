@@ -33,11 +33,11 @@ public class Class4355 extends Class4247 {
    public void method13028(int var1, int var2) {
       super.method13028(var1, var2);
       this.field21289.changeDirection(!this.method13216() ? Direction.BACKWARDS : Direction.FORWARDS);
-      boolean var5 = this.method13216() || var1 > this.method13271() + this.getWidth() - 62;
+      boolean var5 = this.method13216() || var1 > this.method13271() + this.method13267() - 62;
       this.method13215(var5);
       if (this.field21290.getDirection() == Direction.FORWARDS) {
          this.method13215(false);
-         this.setX(Math.round((float)this.getWidth() * QuadraticEasing.easeInQuad(this.field21290.calcPercent(), 0.0F, 1.0F, 1.0F)));
+         this.method13264(Math.round((float)this.method13267() * QuadraticEasing.easeInQuad(this.field21290.calcPercent(), 0.0F, 1.0F, 1.0F)));
          if (this.field21290.calcPercent() == 1.0F) {
             this.method13037();
          }
@@ -51,47 +51,47 @@ public class Class4355 extends Class4247 {
    @Override
    public void draw(float var1) {
       RenderUtil.method11424(
-         (float)this.x,
-         (float)this.y,
-         (float)this.width,
-         (float)this.height,
+         (float)this.field20895,
+         (float)this.field20896,
+         (float)this.field20897,
+         (float)this.field20898,
          ColorUtils.applyAlpha(ColorUtils.method17691(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.03F), this.field21289.calcPercent())
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont20,
-         (float)(this.x + 68),
-         (float)(this.y + 14),
+         (float)(this.field20895 + 68),
+         (float)(this.field20896 + 14),
          this.field21291,
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F)
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
-         (float)(this.x + 68),
-         (float)(this.y + 38),
+         (float)(this.field20895 + 68),
+         (float)(this.field20896 + 38),
          "x:" + this.field21292.getX() + " z:" + this.field21292.getZ(),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F)
       );
       byte var4 = 27;
-      int var5 = this.width - 43;
+      int var5 = this.field20897 - 43;
       float var6 = !this.method13216() ? 0.2F : 0.4F;
       RenderUtil.method11424(
-         (float)(this.x + var5), (float)(this.y + var4), 20.0F, 2.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var6)
+         (float)(this.field20895 + var5), (float)(this.field20896 + var4), 20.0F, 2.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var6)
       );
       RenderUtil.method11424(
-         (float)(this.x + var5), (float)(this.y + var4 + 5), 20.0F, 2.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var6)
+         (float)(this.field20895 + var5), (float)(this.field20896 + var4 + 5), 20.0F, 2.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var6)
       );
       RenderUtil.method11424(
-         (float)(this.x + var5), (float)(this.y + var4 + 10), 20.0F, 2.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var6)
+         (float)(this.field20895 + var5), (float)(this.field20896 + var4 + 10), 20.0F, 2.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var6)
       );
       RenderUtil.method11438(
-         (float)(this.x + 35),
-         (float)(this.y + this.height / 2),
+         (float)(this.field20895 + 35),
+         (float)(this.field20896 + this.field20898 / 2),
          20.0F,
          ColorUtils.method17690(this.field21293, ClientColors.DEEP_TEAL.getColor, 0.9F)
       );
-      RenderUtil.method11438((float)(this.x + 35), (float)(this.y + this.height / 2), 17.0F, this.field21293);
-      RenderUtil.drawRoundedRect(
-         (float)this.x, (float)this.y, (float)this.width, (float)this.height, 14.0F, var1 * 0.2F * this.field21289.calcPercent()
+      RenderUtil.method11438((float)(this.field20895 + 35), (float)(this.field20896 + this.field20898 / 2), 17.0F, this.field21293);
+      RenderUtil.method11463(
+         (float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, 14.0F, var1 * 0.2F * this.field21289.calcPercent()
       );
       super.draw(var1);
    }

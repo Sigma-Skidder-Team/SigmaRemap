@@ -31,17 +31,17 @@ public class UIButton extends Class4247 {
    public void draw(float var1) {
       if (this.method13303() != null) {
          int var4 = this.field20914.method19405();
-         int var5 = this.getX()
+         int var5 = this.method13263()
             + (
                this.field20914.method19411() != Class2218.field14492
                   ? 0
-                  : (this.field20914.method19411() != Class2218.field14490 ? this.getWidth() / 2 : this.getWidth())
+                  : (this.field20914.method19411() != Class2218.field14490 ? this.method13267() / 2 : this.method13267())
             );
-         int var6 = this.getY()
+         int var6 = this.method13265()
             + (
                this.field20914.method19413() != Class2218.field14492
                   ? 0
-                  : (this.field20914.method19413() != Class2218.field14491 ? this.getHeight() / 2 : this.getHeight())
+                  : (this.field20914.method19413() != Class2218.field14491 ? this.method13269() / 2 : this.method13269())
             );
          int var7 = this.method13305().method23942(this.method13303());
          byte var8 = 18;

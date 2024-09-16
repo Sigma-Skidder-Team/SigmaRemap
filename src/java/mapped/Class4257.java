@@ -24,33 +24,33 @@ public class Class4257 extends Class4247 {
    public void draw(float var1) {
       this.field20639.method13145(true);
       byte var4 = 10;
-      RenderUtil.drawRoundedRect(
-         (float)(this.x + var4 / 2),
-         (float)(this.y + var4 / 2),
-         (float)(this.width - var4),
-         (float)(this.height - var4),
+      RenderUtil.method11463(
+         (float)(this.field20895 + var4 / 2),
+         (float)(this.field20896 + var4 / 2),
+         (float)(this.field20897 - var4),
+         (float)(this.field20898 - var4),
          9.0F,
          var1 * 0.9F
       );
-      RenderUtil.drawRoundedRect(
-         (float)(this.x + var4 / 2),
-         (float)(this.y + var4 / 2),
-         (float)(this.width - var4),
-         (float)(this.height - var4),
+      RenderUtil.method11463(
+         (float)(this.field20895 + var4 / 2),
+         (float)(this.field20896 + var4 / 2),
+         (float)(this.field20897 - var4),
+         (float)(this.field20898 - var4),
          30.0F,
          var1 * 0.4F
       );
       RenderUtil.drawRect(
-         (float)this.x,
-         (float)this.y,
-         (float)this.width,
-         (float)this.height,
+         (float)this.field20895,
+         (float)this.field20896,
+         (float)this.field20897,
+         (float)this.field20898,
          (float)var4,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.97F)
       );
       RenderUtil.method11449(
-         (float)(this.x + 20),
-         (float)(this.y + 20),
+         (float)(this.field20895 + 20),
+         (float)(this.field20896 + 20),
          20.0F,
          20.0F,
          ResourcesDecrypter.searchPNG,
@@ -64,8 +64,8 @@ public class Class4257 extends Class4247 {
             + (!((Module)var5.get(0)).isEnabled() ? " - Disabled" : " - Enabled");
          RenderUtil.drawString(
             this.field20639.method13305(),
-            (float)(this.x + 54),
-            (float)(this.y + 14),
+            (float)(this.field20895 + 54),
+            (float)(this.field20896 + 14),
             var7,
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.25F)
          );
@@ -95,7 +95,7 @@ public class Class4257 extends Class4247 {
       if (var1 == 257) {
          ArrayList var4 = this.method13064();
          if (var4.size() > 0) {
-            ((Module)var4.get(0)).toggle();
+            ((Module)var4.get(0)).method16000();
          }
 
          Minecraft.getInstance().displayGuiScreen(null);

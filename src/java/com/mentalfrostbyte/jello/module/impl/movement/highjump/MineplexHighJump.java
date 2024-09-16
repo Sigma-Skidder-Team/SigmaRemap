@@ -40,7 +40,7 @@ public class MineplexHighJump extends Module {
    public void method16971(EventMove var1) {
       if (this.isEnabled()) {
          if (this.field24023 && mc.player.getPosY() + 0.42 < this.field24026) {
-            this.access().toggle();
+            this.access().method16000();
          }
 
          if (!mc.player.onGround && this.field24023) {
@@ -71,7 +71,7 @@ public class MineplexHighJump extends Module {
                this.field24023 = !this.field24023;
                MovementUtils.method37090(0.0);
                if (this.getBooleanValueFromSetttingName("Disable")) {
-                  this.access().toggle();
+                  this.access().method16000();
                }
 
                return;
@@ -113,7 +113,7 @@ public class MineplexHighJump extends Module {
       if (this.isEnabled()) {
          Packet var4 = var1.getPacket();
          if (var4 instanceof SPlayerPositionLookPacket) {
-            this.access().toggle();
+            this.access().method16000();
          }
       }
    }

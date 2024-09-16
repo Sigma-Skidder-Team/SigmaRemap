@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Class4356 extends Class4247 {
-   private List<ButtonPanel> field21295 = new ArrayList<ButtonPanel>();
+   private List<Class4240> field21295 = new ArrayList<Class4240>();
    public int field21296;
 
    public Class4356(IconPanel var1, String var2, int var3, int var4) {
@@ -26,7 +26,7 @@ public class Class4356 extends Class4247 {
          }
 
          var12.doThis((var1x, var2x) -> {
-            for (IconPanel var6 : var1x.getIconPanel().method13241()) {
+            for (IconPanel var6 : var1x.method13258().method13241()) {
                if (var6 instanceof Class4245) {
                   ((Class4245)var6).field20598 = false;
                   ((Class4245)var6).field20599.changeDirection(Direction.BACKWARDS);

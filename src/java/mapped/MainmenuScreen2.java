@@ -13,11 +13,11 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.OptionsScreen;
 
 public class MainmenuScreen2 extends IconPanel {
-   private final ButtonPanel field21123;
-   private final ButtonPanel field21124;
-   private final ButtonPanel field21125;
-   private final ButtonPanel field21126;
-   private final ButtonPanel field21127;
+   private final Class4240 field21123;
+   private final Class4240 field21124;
+   private final Class4240 field21125;
+   private final Class4240 field21126;
+   private final Class4240 field21127;
    private final Class4302 field21128;
    private final StringPanel field21129;
    private final StringPanel field21130;
@@ -106,15 +106,15 @@ public class MainmenuScreen2 extends IconPanel {
       );
       this.addToList(
          this.field21130 = new StringPanel(
-            this, "Copyright", 10, this.getHeight() - 31, var15.method23942(var20), 128, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), var20, var15
+            this, "Copyright", 10, this.method13269() - 31, var15.method23942(var20), 128, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), var20, var15
          )
       );
       this.addToList(
          this.field21129 = new StringPanel(
             this,
             "Version",
-            this.getWidth() - var15.method23942(var21) - 9,
-            this.getHeight() - 31,
+            this.method13267() - var15.method23942(var21) - 9,
+            this.method13269() - 31,
             128,
             128,
             new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor),
@@ -135,7 +135,7 @@ public class MainmenuScreen2 extends IconPanel {
          )
       );
       this.field21133.doThis((var1x, var2x) -> {
-         ((JelloMainMenuScreen)this.getIconPanel()).method13341();
+         ((JelloMainMenuScreen)this.method13258()).method13341();
          new Thread(() -> {
             Minecraft.getInstance().shutdown();
          }).start();
@@ -144,12 +144,12 @@ public class MainmenuScreen2 extends IconPanel {
       this.addToList(this.field21128 = new Class4302(this, "pre", 0, 0, 240, 100));
       this.field21128.method13247((var1x, var2x) -> {
          if (Client.getInstance().getNetworkManager().account != null) {
-            ((JelloMainMenuScreen)this.getIconPanel()).method13343();
+            ((JelloMainMenuScreen)this.method13258()).method13343();
          } else {
             this.method13446(new Class4322());
          }
       });
-      this.field21132.doThis((var1x, var2x) -> ((JelloMainMenuScreen)this.getIconPanel()).method13342());
+      this.field21132.doThis((var1x, var2x) -> ((JelloMainMenuScreen)this.method13258()).method13342());
       this.field21123.doThis((var1x, var2x) -> this.method13445(new Class1341(Minecraft.getInstance().currentScreen)));
       this.field21124.doThis((var1x, var2x) -> this.method13445(new JelloPortalScreen(Minecraft.getInstance().currentScreen)));
       this.field21126.doThis((var1x, var2x) -> this.method13445(new OptionsScreen(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
@@ -157,7 +157,7 @@ public class MainmenuScreen2 extends IconPanel {
       this.field21125.doThis((var1x, var2x) -> this.method13443());
       this.field21131.doThis((var1x, var2x) -> {
          if (Client.getInstance().getNetworkManager().account != null) {
-            ((JelloMainMenuScreen)this.getIconPanel()).method13345();
+            ((JelloMainMenuScreen)this.method13258()).method13345();
          } else {
             this.method13446(new Class4322());
          }
@@ -187,8 +187,8 @@ public class MainmenuScreen2 extends IconPanel {
       }
 
       RenderUtil.method11449(
-         (float)(this.getWidth() / 2 - var5 / 2),
-         (float)(this.getHeight() / 2 - var6),
+         (float)(this.method13267() / 2 - var5 / 2),
+         (float)(this.method13269() / 2 - var6),
          (float)var5,
          (float)var6,
          ResourcesDecrypter.logoLargePNG,
@@ -202,8 +202,8 @@ public class MainmenuScreen2 extends IconPanel {
       this.field21128.method13288(!Client.getInstance().getNetworkManager().isPremium());
       byte var5 = 30;
       byte var6 = 90;
-      this.field21132.setX(var6 + (!Client.getInstance().getNetworkManager().isPremium() ? 202 : 0));
-      this.field21133.setX(var5 + (!Client.getInstance().getNetworkManager().isPremium() ? 202 : 0));
+      this.field21132.method13264(var6 + (!Client.getInstance().getNetworkManager().isPremium() ? 202 : 0));
+      this.field21133.method13264(var5 + (!Client.getInstance().getNetworkManager().isPremium() ? 202 : 0));
       super.method13028(var1, var2);
    }
 
@@ -227,10 +227,10 @@ public class MainmenuScreen2 extends IconPanel {
       byte var6 = 5;
       byte var7 = -6;
       short var8 = 610;
-      return this.getWidth() / 2 - 305 + var1 * 128 + var1 * -6;
+      return this.method13267() / 2 - 305 + var1 * 128 + var1 * -6;
    }
 
    private int method13448() {
-      return this.getHeight() / 2 + 14;
+      return this.method13269() / 2 + 14;
    }
 }

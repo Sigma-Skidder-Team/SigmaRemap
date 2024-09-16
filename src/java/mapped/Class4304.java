@@ -41,8 +41,8 @@ public class Class4304 extends IconPanel implements Class4347 {
       this.field20876 = var9;
    }
 
-   public Class4304(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource font, boolean var10) {
-      super(var1, var2, var3, var4, var5, var6, var7, var8, font);
+   public Class4304(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9, boolean var10) {
+      super(var1, var2, var3, var4, var5, var6, var7, var8, var9);
       this.field20876 = var10;
    }
 
@@ -56,8 +56,8 @@ public class Class4304 extends IconPanel implements Class4347 {
       super.method13028(var1, var2);
       if (this.method13214()) {
          if (!this.field20909 && !this.field20877) {
-            this.field20880 = this.getWidth() / 2;
-            this.field20881 = this.getHeight() / 2;
+            this.field20880 = this.method13267() / 2;
+            this.field20881 = this.method13269() / 2;
          }
 
          this.method13213(var1, var2);
@@ -105,40 +105,40 @@ public class Class4304 extends IconPanel implements Class4347 {
             this.method13217(true);
          }
       } else if (this.method13216()) {
-         this.setX(var1 - this.field20880 - (this.iconPanel == null ? 0 : this.iconPanel.method13271()));
-         this.setY(var2 - this.field20881 - (this.iconPanel == null ? 0 : this.iconPanel.method13272()));
+         this.method13264(var1 - this.field20880 - (this.field20892 == null ? 0 : this.field20892.method13271()));
+         this.method13266(var2 - this.field20881 - (this.field20892 == null ? 0 : this.field20892.method13272()));
          if (this.field20882) {
-            if (this.iconPanel == null) {
-               if (this.getX() < 0) {
-                  this.setX(0);
+            if (this.field20892 == null) {
+               if (this.method13263() < 0) {
+                  this.method13264(0);
                }
 
-               if (this.getX() + this.getWidth() > Minecraft.getInstance().mainWindow.getWidth()) {
-                  this.setX(Minecraft.getInstance().mainWindow.getWidth() - this.getWidth());
+               if (this.method13263() + this.method13267() > Minecraft.getInstance().mainWindow.getWidth()) {
+                  this.method13264(Minecraft.getInstance().mainWindow.getWidth() - this.method13267());
                }
 
-               if (this.getY() < 0) {
-                  this.setY(0);
+               if (this.method13265() < 0) {
+                  this.method13266(0);
                }
 
-               if (this.getY() + this.getHeight() > Minecraft.getInstance().mainWindow.getHeight()) {
-                  this.setY(Minecraft.getInstance().mainWindow.getHeight() - this.getHeight());
+               if (this.method13265() + this.method13269() > Minecraft.getInstance().mainWindow.getHeight()) {
+                  this.method13266(Minecraft.getInstance().mainWindow.getHeight() - this.method13269());
                }
             } else {
-               if (this.getX() < 0) {
-                  this.setX(0);
+               if (this.method13263() < 0) {
+                  this.method13264(0);
                }
 
-               if (this.getX() + this.getWidth() > this.iconPanel.getWidth()) {
-                  this.setX(this.iconPanel.getWidth() - this.getWidth());
+               if (this.method13263() + this.method13267() > this.field20892.method13267()) {
+                  this.method13264(this.field20892.method13267() - this.method13267());
                }
 
-               if (this.getY() < 0) {
-                  this.setY(0);
+               if (this.method13265() < 0) {
+                  this.method13266(0);
                }
 
-               if (this.getY() + this.getHeight() > this.iconPanel.getHeight() && !this.field20883) {
-                  this.setY(this.iconPanel.getHeight() - this.getHeight());
+               if (this.method13265() + this.method13269() > this.field20892.method13269() && !this.field20883) {
+                  this.method13266(this.field20892.method13269() - this.method13269());
                }
             }
          }

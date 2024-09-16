@@ -102,7 +102,7 @@ public class RearView extends PremiumModule {
                         var8 = (int) ((float) var8 * MathUtils.lerp(this.field23662.calcPercent(), 0.3, 0.88, 0.47, 1.0));
                     }
 
-                    RenderUtil.drawRoundedRect(
+                    RenderUtil.method11463(
                             (float) (mc.mainWindow.getWidth() - var7 - var5),
                             (float) (mc.mainWindow.getHeight() + var8),
                             (float) var5,
