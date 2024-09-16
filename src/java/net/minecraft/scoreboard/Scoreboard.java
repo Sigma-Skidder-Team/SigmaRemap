@@ -229,7 +229,7 @@ public class Scoreboard {
          this.field29845.remove(var1);
          var2.method28575().remove(var1);
       } else {
-         throw new IllegalStateException("Player is either on another team or not on any team. Cannot remove from team '" + var2.method28567() + "'.");
+         System.out.println("Player is either on another team or not on any team. Cannot remove from team '" + var2.method28567() + "'.");
       }
    }
 
