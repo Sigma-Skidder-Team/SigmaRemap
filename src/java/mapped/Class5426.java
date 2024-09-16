@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public interface Class5426 extends Class5422 {
    Class8209 method17073();
 

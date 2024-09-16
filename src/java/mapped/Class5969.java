@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.gui.screen.BiomeGeneratorTypeScreens;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
 
 public final class Class5969 extends BiomeGeneratorTypeScreens {
    public Class5969(String var1) {

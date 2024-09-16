@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class7648 extends Class7647 {
    private static String[] field32823;
    private static Class7648 field32829 = new Class7648();

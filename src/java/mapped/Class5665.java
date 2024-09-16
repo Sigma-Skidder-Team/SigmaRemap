@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5665 extends Class5662<Class1037, Class2793<Class1037>> {
    private static final ResourceLocation field25029 = new ResourceLocation("textures/entity/zombie/drowned.png");

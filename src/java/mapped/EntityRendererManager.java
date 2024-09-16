@@ -15,9 +15,11 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import java.util.Collections;
@@ -398,7 +400,7 @@ public class EntityRendererManager {
          .endVertex();
    }
 
-   private static void method32224(MatrixStack var0, Class7733 var1, Entity var2, float var3, float var4, Class1662 var5, float var6) {
+   private static void method32224(MatrixStack var0, Class7733 var1, Entity var2, float var3, float var4, IWorldReader var5, float var6) {
       if (!Class7944.method26921() || ! Shaders.field40794) {
          float var9 = var6;
          if (var2 instanceof MobEntity) {
@@ -427,7 +429,7 @@ public class EntityRendererManager {
    }
 
    private static void method32225(
-           Class8892 var0, Class5422 var1, Class1662 var2, BlockPos var3, double var4, double var6, double var8, float var10, float var11
+           Class8892 var0, Class5422 var1, IWorldReader var2, BlockPos var3, double var4, double var6, double var8, float var10, float var11
    ) {
       BlockPos var14 = var3.down();
       BlockState var15 = var2.getBlockState(var14);

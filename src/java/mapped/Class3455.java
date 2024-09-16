@@ -7,6 +7,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 
 import javax.annotation.Nullable;
 
@@ -49,7 +50,7 @@ public class Class3455 extends Class3456 implements Class3449 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       if (var1.<Class84>method23463(field19274) != Class84.field209) {
          FluidState var7 = var2.getFluidState(var3);
          return super.method11492(var1, var2, var3) && var7.method23486(FluidTags.field40469) && var7.method23477() == 8;

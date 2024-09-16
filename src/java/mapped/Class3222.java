@@ -13,7 +13,9 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import java.util.Map;
@@ -240,7 +242,7 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockPos var6 = var3.down();
       BlockState var7 = var2.getBlockState(var6);
       return this.method11621(var2, var6, var7);

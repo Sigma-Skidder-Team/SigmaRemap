@@ -19,6 +19,8 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.*;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.feature.structure.StructureStart;
@@ -435,7 +437,7 @@ public class Class1649 extends Class1648 implements Class1650 {
          }
 
          this.method6552(var1);
-         return Either.left(new Class1672(var1, Class8922.field40388));
+         return Either.left(new Class1672(var1, UpgradeData.field40388));
       }, this.field8958);
    }
 

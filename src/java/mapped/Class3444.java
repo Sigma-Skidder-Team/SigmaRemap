@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Random;
@@ -36,7 +37,7 @@ public abstract class Class3444 extends Block {
    }
 
    @Override
-   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockPos var6 = var3.method8349(this.field19256.method536());
       BlockState var7 = var2.getBlockState(var6);
       Block var8 = var7.getBlock();

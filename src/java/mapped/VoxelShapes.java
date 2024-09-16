@@ -11,6 +11,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.IWorldReader;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -215,11 +217,11 @@ public final class VoxelShapes {
       return var3;
    }
 
-   public static double method27438(Direction var0, AxisAlignedBB var1, Class1662 var2, double var3, ISelectionContext var5, Stream<VoxelShape> var6, boolean var7) {
+   public static double method27438(Direction var0, AxisAlignedBB var1, IWorldReader var2, double var3, ISelectionContext var5, Stream<VoxelShape> var6, boolean var7) {
       return method27439(var1, var2, var3, var5, Class2321.method9101(var0, Direction.field415), var6, var7);
    }
 
-   private static double method27439(AxisAlignedBB var0, Class1662 var1, double var2, ISelectionContext var4, Class2321 var5, Stream<VoxelShape> var6, boolean var7) {
+   private static double method27439(AxisAlignedBB var0, IWorldReader var1, double var2, ISelectionContext var4, Class2321 var5, Stream<VoxelShape> var6, boolean var7) {
       if (var0.method19676() < 1.0E-6 || var0.method19677() < 1.0E-6 || var0.method19678() < 1.0E-6) {
          return var2;
       } else if (Math.abs(var2) < 1.0E-7) {

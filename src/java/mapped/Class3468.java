@@ -7,6 +7,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -43,7 +44,7 @@ public abstract class Class3468 extends Block {
    }
 
    @Override
-   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockPos var6 = var3.down();
       return method11547(var2, var6) || method11548(var2, var6, Direction.field673);
    }

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.biome.Biome;
+
 import java.util.*;
 import java.util.stream.Collectors;
 

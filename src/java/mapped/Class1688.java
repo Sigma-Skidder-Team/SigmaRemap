@@ -4,6 +4,8 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.provider.BiomeProvider;
 
 import java.util.Random;
 import java.util.Set;
@@ -11,7 +13,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 import javax.annotation.Nullable;
 
-public class Class1688 extends Class1685 {
+public class Class1688 extends BiomeProvider {
    public static final Codec<Class1688> field9182 = Biome.field40309.fieldOf("biome").xmap(Class1688::new, var0 -> var0.field9183).stable().codec();
    private final Supplier<Biome> field9183;
 
@@ -25,17 +27,17 @@ public class Class1688 extends Class1685 {
    }
 
    @Override
-   public Codec<? extends Class1685> method7199() {
+   public Codec<? extends BiomeProvider> method7199() {
       return field9182;
    }
 
    @Override
-   public Class1685 method7200(long var1) {
+   public BiomeProvider method7200(long var1) {
       return this;
    }
 
    @Override
-   public Biome method7005(int var1, int var2, int var3) {
+   public Biome getNoiseBiome(int var1, int var2, int var3) {
       return this.field9183.get();
    }
 

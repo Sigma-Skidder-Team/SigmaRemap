@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
 
 public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
    private static String[] field17691;

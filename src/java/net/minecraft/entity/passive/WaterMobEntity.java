@@ -1,7 +1,7 @@
 package net.minecraft.entity.passive;
 
 import mapped.Class1046;
-import mapped.Class1662;
+import net.minecraft.world.IWorldReader;
 import mapped.Class2163;
 import mapped.CreatureAttribute;
 import net.minecraft.entity.EntityType;
@@ -26,7 +26,7 @@ public abstract class WaterMobEntity extends Class1046 {
    }
 
    @Override
-   public boolean method4266(Class1662 var1) {
+   public boolean method4266(IWorldReader var1) {
       return var1.checkNoEntityCollision(this);
    }
 

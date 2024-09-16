@@ -8,6 +8,7 @@ import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.server.ServerWorld;
 
@@ -177,7 +178,7 @@ public class ChunkStatus {
    }
 
    private static boolean method34293(ChunkStatus var0, IChunk var1) {
-      return var1.getStatus().method34306(var0) && var1.method7095();
+      return var1.getStatus().method34306(var0) && var1.hasLight();
    }
 
    public static ChunkStatus method34294(int var0) {

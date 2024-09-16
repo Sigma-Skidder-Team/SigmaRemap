@@ -10,9 +10,12 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 
 import java.util.Objects;
 import java.util.Optional;
@@ -140,7 +143,7 @@ public class Class1037 extends ZombieEntity implements Class1022 {
    }
 
    @Override
-   public boolean method4266(Class1662 var1) {
+   public boolean method4266(IWorldReader var1) {
       return var1.checkNoEntityCollision(this);
    }
 

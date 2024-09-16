@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.event.impl.EventMouse;
 import mapped.*;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.util.math.MathHelper;
 import org.lwjgl.glfw.GLFWDropCallback;
 
 public class MouseHelper {

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.ai.attributes.Attribute;
+import net.minecraft.util.math.MathHelper;
 
 public class Class4870 extends Attribute {
    private final double field22697;

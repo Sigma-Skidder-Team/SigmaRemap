@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.biome.Biome;
 
 import java.util.ArrayList;
 import java.util.Collection;

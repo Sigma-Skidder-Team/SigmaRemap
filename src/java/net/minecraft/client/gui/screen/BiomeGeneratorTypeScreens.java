@@ -11,6 +11,7 @@ import mapped.*;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.biome.Biome;
 
 public abstract class BiomeGeneratorTypeScreens {
    public static final BiomeGeneratorTypeScreens field_239066_a_ = new Class5974("default");

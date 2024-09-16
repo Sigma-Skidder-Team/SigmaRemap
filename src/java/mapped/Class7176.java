@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 
 public class Class7176 {
    public final int field30847;

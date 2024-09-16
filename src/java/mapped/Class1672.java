@@ -14,6 +14,7 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.chunk.ChunkSection;
@@ -43,14 +44,14 @@ public class Class1672 implements IChunk {
    private final ShortList[] field9100 = new ShortList[16];
    private final Map<Structure<?>, StructureStart<?>> field9101 = Maps.newHashMap();
    private final Map<Structure<?>, LongSet> field9102 = Maps.newHashMap();
-   private final Class8922 field9103;
+   private final UpgradeData field9103;
    private final Class6806<Block> field9104;
    private final Class6806<Fluid> field9105;
    private long field9106;
    private final Map<Class97, BitSet> field9107 = new Object2ObjectArrayMap();
    private volatile boolean field9108;
 
-   public Class1672(ChunkPos var1, Class8922 var2) {
+   public Class1672(ChunkPos var1, UpgradeData var2) {
       this(
          var1,
          var2,
@@ -60,7 +61,7 @@ public class Class1672 implements IChunk {
       );
    }
 
-   public Class1672(ChunkPos var1, Class8922 var2, ChunkSection[] var3, Class6806<Block> var4, Class6806<Fluid> var5) {
+   public Class1672(ChunkPos var1, UpgradeData var2, ChunkSection[] var3, Class6806<Block> var4, Class6806<Fluid> var5) {
       this.field9089 = var1;
       this.field9103 = var2;
       this.field9104 = var4;
@@ -389,17 +390,17 @@ public class Class1672 implements IChunk {
    }
 
    @Override
-   public Class8922 method7091() {
+   public UpgradeData getUpgradeData() {
       return this.field9103;
    }
 
    @Override
-   public void method7092(long var1) {
+   public void setInhabitedTime(long var1) {
       this.field9106 = var1;
    }
 
    @Override
-   public long method7093() {
+   public long getInhabitedTime() {
       return this.field9106;
    }
 
@@ -448,12 +449,12 @@ public class Class1672 implements IChunk {
    }
 
    @Override
-   public boolean method7095() {
+   public boolean hasLight() {
       return this.field9108;
    }
 
    @Override
-   public void method7096(boolean var1) {
+   public void setLight(boolean var1) {
       this.field9108 = var1;
       this.setModified(true);
    }

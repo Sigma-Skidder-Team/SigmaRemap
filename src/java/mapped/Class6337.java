@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.MathHelper;
 
 public class Class6337 extends Class6333 {
    private static String[] field27850;

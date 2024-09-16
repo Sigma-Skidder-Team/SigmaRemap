@@ -31,12 +31,14 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.feature.structure.StructureStart;
@@ -146,7 +148,7 @@ public class ServerWorld extends World implements ISeedReader {
 
    @Override
    public Biome method6871(int var1, int var2, int var3) {
-      return this.getChunkProvider().method7370().method17824().method7005(var1, var2, var3);
+      return this.getChunkProvider().method7370().method17824().getNoiseBiome(var1, var2, var3);
    }
 
    public Class7480 method6893() {

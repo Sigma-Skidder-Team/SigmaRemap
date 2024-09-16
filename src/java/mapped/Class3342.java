@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import java.util.function.Predicate;
@@ -31,7 +32,7 @@ public class Class3342 extends Class3198 implements Class3255 {
       }
    }
 
-   public boolean method11891(Class1662 var1, BlockPos var2) {
+   public boolean method11891(IWorldReader var1, BlockPos var2) {
       return this.method11893().method38656(var1, var2) != null || this.method11895().method38656(var1, var2) != null;
    }
 

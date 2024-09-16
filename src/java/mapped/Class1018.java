@@ -10,6 +10,7 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -65,7 +66,7 @@ public abstract class Class1018 extends Class1045 {
    }
 
    @Override
-   public float method4339(BlockPos var1, Class1662 var2) {
+   public float method4339(BlockPos var1, IWorldReader var2) {
       return !var2.getBlockState(var1.down()).isIn(Blocks.field36395) ? var2.method7009(var1) - 0.5F : 10.0F;
    }
 

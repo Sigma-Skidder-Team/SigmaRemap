@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.Direction;
+import net.minecraft.util.math.MathHelper;
 
 import java.util.IdentityHashMap;
 import java.util.Map;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class8891 {
    public static void main(String[] var0) throws Exception {
       Class2334[] var3 = Class2334.values();

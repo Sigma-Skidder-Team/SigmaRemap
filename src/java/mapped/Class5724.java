@@ -5,6 +5,7 @@ import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
 

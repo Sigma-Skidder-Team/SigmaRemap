@@ -4,7 +4,7 @@ import com.google.common.base.MoreObjects;
 import com.mojang.serialization.Codec;
 import mapped.Direction;
 import mapped.Class2955;
-import mapped.MathHelper;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.client.util.Util;
 
 import javax.annotation.concurrent.Immutable;

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.passive.WolfEntity;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.util.math.MathHelper;
 
 public class Class2859<T extends WolfEntity> extends Class2858<T> {
    private static String[] field17711;

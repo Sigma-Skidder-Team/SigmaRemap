@@ -14,7 +14,9 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -289,7 +291,7 @@ public class Class1058 extends Class1056 implements IAngerable {
    }
 
    @Override
-   public boolean method4266(Class1662 var1) {
+   public boolean method4266(IWorldReader var1) {
       BlockPos var4 = this.getPosition();
       BlockPos var5 = var4.down();
       BlockState var6 = var1.getBlockState(var5);

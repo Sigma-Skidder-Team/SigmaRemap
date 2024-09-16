@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 
 public class Class2637 extends Class2628 {
    private static String[] field16958;
@@ -36,7 +37,7 @@ public class Class2637 extends Class2628 {
    }
 
    @Override
-   public boolean method10840(Class1662 var1, BlockPos var2) {
+   public boolean method10840(IWorldReader var1, BlockPos var2) {
       if (var1.method7007(var2.up())) {
          BlockState var5 = var1.getBlockState(var2);
          if (var5.isIn(Blocks.CHEST)) {

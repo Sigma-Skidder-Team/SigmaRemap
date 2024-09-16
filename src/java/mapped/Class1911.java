@@ -2,6 +2,8 @@ package mapped;
 
 import java.util.Arrays;
 import java.util.Comparator;
+
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 

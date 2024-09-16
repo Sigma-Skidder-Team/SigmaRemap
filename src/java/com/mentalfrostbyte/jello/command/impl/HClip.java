@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 import mapped.*;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
+import net.minecraft.util.math.MathHelper;
 
 import java.util.Collections;
 

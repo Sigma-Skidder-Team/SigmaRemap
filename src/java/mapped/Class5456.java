@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.biome.Biome;
 
 public class Class5456 extends Class5455<Class4700> {
    private static String[] field24214;

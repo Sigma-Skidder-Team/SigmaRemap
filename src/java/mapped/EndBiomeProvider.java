@@ -3,9 +3,12 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.provider.BiomeProvider;
 
-public class EndBiomeProvider extends Class1685 {
+public class EndBiomeProvider extends BiomeProvider {
    public static final Codec<EndBiomeProvider> field9191 = RecordCodecBuilder.create(
       var0 -> var0.group(
                Class8611.<Biome>method30859(Registry.BIOME_KEY).forGetter(var0x -> var0x.field9193),
@@ -49,17 +52,17 @@ public class EndBiomeProvider extends Class1685 {
    }
 
    @Override
-   public Codec<? extends Class1685> method7199() {
+   public Codec<? extends BiomeProvider> method7199() {
       return field9191;
    }
 
    @Override
-   public Class1685 method7200(long var1) {
+   public BiomeProvider method7200(long var1) {
       return new EndBiomeProvider(this.field9193, var1, this.field9195, this.field9196, this.field9197, this.field9198, this.field9199);
    }
 
    @Override
-   public Biome method7005(int var1, int var2, int var3) {
+   public Biome getNoiseBiome(int var1, int var2, int var3) {
       int var6 = var1 >> 2;
       int var7 = var3 >> 2;
       if ((long)var6 * (long)var6 + (long)var7 * (long)var7 > 4096L) {

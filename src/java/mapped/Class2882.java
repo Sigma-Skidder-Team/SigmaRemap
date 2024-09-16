@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableList.Builder;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Arrays;
 
 public class Class2882<T extends Class1108> extends Class2803<T> {

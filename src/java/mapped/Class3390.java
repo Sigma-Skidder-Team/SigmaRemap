@@ -13,8 +13,10 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -210,7 +212,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       return true;
    }
 

@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 
 public class Class3398 extends AbstractFireBlock {
    private static String[] field19036;
@@ -18,7 +19,7 @@ public class Class3398 extends AbstractFireBlock {
    }
 
    @Override
-   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       return method12014(var2.getBlockState(var3.down()).getBlock());
    }
 

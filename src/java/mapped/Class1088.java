@@ -16,6 +16,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -241,7 +242,7 @@ public class Class1088 extends Class1018 {
    }
 
    @Override
-   public float method4339(BlockPos var1, Class1662 var2) {
+   public float method4339(BlockPos var1, IWorldReader var2) {
       if (!this.method5049() && var2.getFluidState(var1).method23486(FluidTags.field40469)) {
          return 10.0F;
       } else {

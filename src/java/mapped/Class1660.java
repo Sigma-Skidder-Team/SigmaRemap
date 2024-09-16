@@ -7,6 +7,7 @@ import net.minecraft.particles.IParticleData;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.ITickList;
 
 import java.util.Random;
 
@@ -16,9 +17,9 @@ public interface Class1660 extends Class1678, Class1661 {
       return this.getWorldInfo().method20034();
    }
 
-   Class6802<Block> method6860();
+   ITickList<Block> method6860();
 
-   Class6802<Fluid> method6861();
+   ITickList<Fluid> method6861();
 
    Class6612 getWorldInfo();
 

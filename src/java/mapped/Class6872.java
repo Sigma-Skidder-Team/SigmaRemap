@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
 

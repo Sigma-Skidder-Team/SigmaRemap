@@ -3,6 +3,7 @@ package mapped;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
+import net.minecraft.util.math.MathHelper;
 
 public class Class8884 {
    public static final Class8884 field40200 = new Class8884(

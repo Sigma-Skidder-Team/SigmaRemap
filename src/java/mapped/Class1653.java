@@ -7,6 +7,7 @@ import it.unimi.dsi.fastutil.longs.LongSet;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.chunk.ChunkSection;
 
 import java.io.File;
@@ -164,7 +165,7 @@ public class Class1653 extends Class1652<Class8377> {
          );
    }
 
-   public void method6682(Class1662 var1, BlockPos var2, int var3) {
+   public void method6682(IWorldReader var1, BlockPos var2, int var3) {
       Class2002.method8428(new ChunkPos(var2), Math.floorDiv(var3, 16))
          .map(var1x -> Pair.of(var1x, this.method6643(var1x.method8425())))
          .filter(var0 -> var0.getSecond().map(Class8377::method29360).orElse(false))

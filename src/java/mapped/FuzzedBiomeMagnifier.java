@@ -1,5 +1,9 @@
 package mapped;
 
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeManager;
+import net.minecraft.world.biome.IBiomeMagnifier;
+
 public enum FuzzedBiomeMagnifier implements IBiomeMagnifier {
    INSTANCE;
 
@@ -7,7 +11,7 @@ public enum FuzzedBiomeMagnifier implements IBiomeMagnifier {
    private static final FuzzedBiomeMagnifier[] field12767 = new FuzzedBiomeMagnifier[]{INSTANCE};
 
    @Override
-   public Biome method8225(long var1, int var3, int var4, int var5, Class1683 var6) {
+   public Biome getBiome(long var1, int var3, int var4, int var5, BiomeManager.IBiomeReader var6) {
       int var9 = var3 - 2;
       int var10 = var4 - 2;
       int var11 = var5 - 2;
@@ -45,7 +49,7 @@ public enum FuzzedBiomeMagnifier implements IBiomeMagnifier {
       int var39 = (var37 & 4) != 0 ? var12 + 1 : var12;
       int var40 = (var37 & 2) != 0 ? var13 + 1 : var13;
       int var41 = (var37 & 1) != 0 ? var14 + 1 : var14;
-      return var6.method7005(var39, var40, var41);
+      return var6.getNoiseBiome(var39, var40, var41);
    }
 
    private static double method8226(long var0, int var2, int var3, int var4, double var5, double var7, double var9) {

@@ -9,8 +9,11 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class7019 implements Class7016 {
@@ -121,7 +124,7 @@ public class Class7019 implements Class7016 {
    }
 
    @Nullable
-   private BlockPos method21752(Class1662 var1, BlockPos var2, int var3) {
+   private BlockPos method21752(IWorldReader var1, BlockPos var2, int var3) {
       BlockPos var6 = null;
 
       for (int var7 = 0; var7 < 10; var7++) {

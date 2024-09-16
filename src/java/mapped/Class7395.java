@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class7395 {
    private static String[] field31656;
    private final MobEntity field31657;

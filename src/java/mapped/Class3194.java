@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 
 public class Class3194 extends Block {
    private static String[] field18470;
@@ -27,7 +28,7 @@ public class Class3194 extends Block {
    }
 
    @Override
-   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockPos var6 = var3.down();
       return this.method11490(var2.getBlockState(var6), var2, var6);
    }

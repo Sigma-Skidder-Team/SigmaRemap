@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
 
 public class Class7880 {
@@ -21,7 +22,7 @@ public class Class7880 {
       return Blocks.SNOW.method11579();
    }
 
-   public static boolean method26421(Class1663 var0, BlockState var1, BlockPos var2) {
+   public static boolean method26421(IBlockDisplayReader var0, BlockState var1, BlockPos var2) {
       if (var0 instanceof IBlockReader) {
          return method26423(var0, var1, var2) ? method26422(var0, var2) : false;
       } else {

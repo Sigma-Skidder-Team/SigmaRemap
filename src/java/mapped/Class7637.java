@@ -8,6 +8,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -96,7 +97,7 @@ public abstract class Class7637 extends Class7633 {
       }
    }
 
-   private boolean method25102(Class1662 var1, BlockPos var2) {
+   private boolean method25102(IWorldReader var1, BlockPos var2) {
       for (Direction var8 : Direction.values()) {
          if (this.method25103(var1, var2.method8349(var8))) {
             return true;
@@ -106,7 +107,7 @@ public abstract class Class7637 extends Class7633 {
       return false;
    }
 
-   private boolean method25103(Class1662 var1, BlockPos var2) {
+   private boolean method25103(IWorldReader var1, BlockPos var2) {
       return var2.getY() >= 0 && var2.getY() < 256 && !var1.method7017(var2) ? false : var1.getBlockState(var2).getMaterial().method31088();
    }
 
@@ -122,7 +123,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public int method25087(Class1662 var1) {
+   public int method25087(IWorldReader var1) {
       return !var1.method6812().isUltrawarm() ? 2 : 4;
    }
 
@@ -137,7 +138,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public int method25092(Class1662 var1) {
+   public int method25092(IWorldReader var1) {
       return !var1.method6812().isUltrawarm() ? 2 : 1;
    }
 
@@ -147,7 +148,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    @Override
-   public int method25057(Class1662 var1) {
+   public int method25057(IWorldReader var1) {
       return !var1.method6812().isUltrawarm() ? 30 : 10;
    }
 

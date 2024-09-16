@@ -5,7 +5,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockDisplayReader;
 
 import java.util.BitSet;
 import java.util.List;
@@ -21,7 +23,7 @@ public class Class7551 {
    private boolean field32375 = Class9299.field42864.method20245();
 
    private void method24676(
-      Class1663 var1,
+      IBlockDisplayReader var1,
       BlockState var2,
       BlockPos var3,
       MatrixStack var4,
@@ -56,7 +58,7 @@ public class Class7551 {
    }
 
    private void method24677(
-      Class1663 var1,
+      IBlockDisplayReader var1,
       BlockState var2,
       BlockPos var3,
       Class5422 var4,
@@ -90,7 +92,7 @@ public class Class7551 {
    }
 
    private void method24678(
-           Class1663 var1, BlockState var2, BlockPos var3, int var4, int var5, boolean var6, MatrixStack var7, Class5422 var8, List<Class8557> var9, BitSet var10
+           IBlockDisplayReader var1, BlockState var2, BlockPos var3, int var4, int var5, boolean var6, MatrixStack var7, Class5422 var8, List<Class8557> var9, BitSet var10
    ) {
       for (Class8557 var14 : var9) {
          if (var6) {
@@ -109,13 +111,13 @@ public class Class7551 {
    }
 
    public boolean method24679(
-           Class1663 var1, IBakedModel var2, BlockState var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
+           IBlockDisplayReader var1, IBakedModel var2, BlockState var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
    ) {
       return this.method24680(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, Class7181.field30863);
    }
 
    public boolean method24680(
-      Class1663 var1,
+      IBlockDisplayReader var1,
       IBakedModel var2,
       BlockState var3,
       BlockPos var4,
@@ -168,13 +170,13 @@ public class Class7551 {
    }
 
    public boolean method24681(
-           Class1663 var1, IBakedModel var2, BlockState var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
+           IBlockDisplayReader var1, IBakedModel var2, BlockState var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
    ) {
       return this.method24682(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, Class7181.field30863);
    }
 
    public boolean method24682(
-      Class1663 var1,
+      IBlockDisplayReader var1,
       IBakedModel var2,
       BlockState var3,
       BlockPos var4,
@@ -212,13 +214,13 @@ public class Class7551 {
    }
 
    public boolean method24683(
-           Class1663 var1, IBakedModel var2, BlockState var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
+           IBlockDisplayReader var1, IBakedModel var2, BlockState var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
    ) {
       return this.method24684(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, Class7181.field30863);
    }
 
    public boolean method24684(
-      Class1663 var1,
+      IBlockDisplayReader var1,
       IBakedModel var2,
       BlockState var3,
       BlockPos var4,
@@ -256,7 +258,7 @@ public class Class7551 {
       return var15;
    }
 
-   private void method24685(Class1663 var1, BlockState var2, BlockPos var3, MatrixStack var4, Class5422 var5, List<Class8557> var6, int var7, Class8391 var8) {
+   private void method24685(IBlockDisplayReader var1, BlockState var2, BlockPos var3, MatrixStack var4, Class5422 var5, List<Class8557> var6, int var7, Class8391 var8) {
       float[] var11 = var8.method29414();
       BitSet var12 = var8.method29415();
       Class9529 var13 = var8.method29416();
@@ -292,7 +294,7 @@ public class Class7551 {
    }
 
    private void method24686(
-      Class1663 var1,
+      IBlockDisplayReader var1,
       BlockState var2,
       BlockPos var3,
       Class5422 var4,
@@ -327,7 +329,7 @@ public class Class7551 {
       var4.method17038(var5, var6, var4.method17047(var7, var8, var9, var10), var20, var21, var22, var4.method17048(var11, var12, var13, var14), var15, true);
    }
 
-   private void method24687(Class1663 var1, BlockState var2, BlockPos var3, int[] var4, Direction var5, float[] var6, BitSet var7) {
+   private void method24687(IBlockDisplayReader var1, BlockState var2, BlockPos var3, int[] var4, Direction var5, float[] var6, BitSet var7) {
       float var10 = 32.0F;
       float var11 = 32.0F;
       float var12 = 32.0F;
@@ -394,7 +396,7 @@ public class Class7551 {
    }
 
    private void method24688(
-           Class1663 var1, BlockState var2, BlockPos var3, int var4, int var5, boolean var6, MatrixStack var7, Class5422 var8, List<Class8557> var9, Class8391 var10
+           IBlockDisplayReader var1, BlockState var2, BlockPos var3, int var4, int var5, boolean var6, MatrixStack var7, Class5422 var8, List<Class8557> var9, Class8391 var10
    ) {
       BitSet var13 = var10.method29415();
       int var14 = var9.size();
@@ -493,7 +495,7 @@ public class Class7551 {
    }
 
    private void method24697(
-      Class1663 var1,
+      IBlockDisplayReader var1,
       IBakedModel var2,
       BlockState var3,
       BlockPos var4,

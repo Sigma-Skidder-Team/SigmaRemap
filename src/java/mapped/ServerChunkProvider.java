@@ -9,6 +9,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.Packet;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunk;
@@ -347,7 +348,7 @@ public class ServerChunkProvider extends Class1702 {
                   Chunk var12x = var11x.get();
                   ChunkPos var13x = var7x.method31056();
                   if (!this.field9279.method6571(var13x)) {
-                     var12x.method7092(var12x.method7093() + var5);
+                     var12x.setInhabitedTime(var12x.getInhabitedTime() + var5);
                      if (var9 && (this.field9282 || this.field9283) && this.field9275.getWorldBorder().method24524(var12x.getPos())) {
                         Class8170.method28417(this.field9275, var12x, var13, this.field9283, this.field9282, var11);
                      }

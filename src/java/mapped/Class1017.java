@@ -13,8 +13,10 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -61,7 +63,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    }
 
    @Override
-   public float method4339(BlockPos var1, Class1662 var2) {
+   public float method4339(BlockPos var1, IWorldReader var2) {
       return !var2.getBlockState(var1).isAir() ? 0.0F : 10.0F;
    }
 

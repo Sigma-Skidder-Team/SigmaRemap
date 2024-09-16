@@ -14,6 +14,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import java.util.EnumMap;
@@ -143,7 +144,7 @@ public abstract class Class7633 extends Fluid {
       }
    }
 
-   public FluidState method25073(Class1662 var1, BlockPos var2, BlockState var3) {
+   public FluidState method25073(IWorldReader var1, BlockPos var2, BlockState var3) {
       int var6 = 0;
       int var7 = 0;
 
@@ -247,7 +248,7 @@ public abstract class Class7633 extends Fluid {
    }
 
    public int method25083(
-      Class1662 var1,
+      IWorldReader var1,
       BlockPos var2,
       int var3,
       Direction var4,
@@ -307,9 +308,9 @@ public abstract class Class7633 extends Fluid {
       return var1.method23472().method25066(this) && var1.method23473();
    }
 
-   public abstract int method25087(Class1662 var1);
+   public abstract int method25087(IWorldReader var1);
 
-   private int method25088(Class1662 var1, BlockPos var2) {
+   private int method25088(IWorldReader var1, BlockPos var2) {
       int var5 = 0;
 
       for (Direction var7 : Class76.field161) {
@@ -323,7 +324,7 @@ public abstract class Class7633 extends Fluid {
       return var5;
    }
 
-   public Map<Direction, FluidState> method25089(Class1662 var1, BlockPos var2, BlockState var3) {
+   public Map<Direction, FluidState> method25089(IWorldReader var1, BlockPos var2, BlockState var3) {
       int var6 = 1000;
       EnumMap var7 = Maps.newEnumMap(Direction.class);
       Short2ObjectOpenHashMap var8 = new Short2ObjectOpenHashMap();
@@ -390,7 +391,7 @@ public abstract class Class7633 extends Fluid {
       return var7.method23488(var1, var5, var8, var4) && this.method25074(var4, var1, var2, var3, var5, var6) && this.method25090(var1, var5, var6, var8);
    }
 
-   public abstract int method25092(Class1662 var1);
+   public abstract int method25092(IWorldReader var1);
 
    public int method25093(World var1, BlockPos var2, FluidState var3, FluidState var4) {
       return this.method25057(var1);

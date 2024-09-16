@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.HandSide;
+import net.minecraft.util.math.MathHelper;
 
 public class Class7972 {
    private static String[] field34265;

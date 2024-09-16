@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 public class Class2634 extends Class2628 {
@@ -72,7 +73,7 @@ public class Class2634 extends Class2628 {
    }
 
    @Override
-   public boolean method10840(Class1662 var1, BlockPos var2) {
+   public boolean method10840(IWorldReader var1, BlockPos var2) {
       Block var5 = var1.getBlockState(var2).getBlock();
       if (var5 == Blocks.FARMLAND && this.field16951 && !this.field16952) {
          var2 = var2.up();

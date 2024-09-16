@@ -10,6 +10,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -77,7 +78,7 @@ public abstract class Class7634 extends Class7633 {
    }
 
    @Override
-   public int method25087(Class1662 var1) {
+   public int method25087(IWorldReader var1) {
       return 4;
    }
 
@@ -92,12 +93,12 @@ public abstract class Class7634 extends Class7633 {
    }
 
    @Override
-   public int method25092(Class1662 var1) {
+   public int method25092(IWorldReader var1) {
       return 1;
    }
 
    @Override
-   public int method25057(Class1662 var1) {
+   public int method25057(IWorldReader var1) {
       return 5;
    }
 

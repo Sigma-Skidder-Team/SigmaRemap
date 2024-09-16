@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.MathHelper;
 
 public class Class6835 extends Class6829 {
    private static String[] field29706;

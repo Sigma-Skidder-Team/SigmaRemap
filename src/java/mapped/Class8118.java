@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.util.math.MathHelper;
 
 public class Class8118 implements WorldBorderIBorderInfo {
    private static String[] field34886;

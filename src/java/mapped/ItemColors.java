@@ -6,6 +6,7 @@ import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.IBlockDisplayReader;
 
 public class ItemColors {
    private final Class2352<Class7216> field41160 = new Class2352<Class7216>(32);
@@ -60,7 +61,7 @@ public class ItemColors {
       var3.method33259(
          (var1, var2) -> {
             BlockState var5x = ((Class3292)var1.getItem()).method11845().method11579();
-            return var0.method29465(var5x, (Class1663)null, (BlockPos)null, var2);
+            return var0.method29465(var5x, (IBlockDisplayReader)null, (BlockPos)null, var2);
          },
          Blocks.field36395,
          Blocks.GRASS,

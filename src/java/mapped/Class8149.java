@@ -12,6 +12,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.IBlockDisplayReader;
+import net.minecraft.world.IWorldReader;
+import net.minecraft.world.biome.Biome;
 
 public class Class8149 {
    private String field35046 = null;
@@ -232,7 +235,7 @@ public class Class8149 {
       Class7944.method26811("[CustomGuis] " + var0);
    }
 
-   private boolean method28261(Class2295 var1, BlockPos var2, Class1662 var3) {
+   private boolean method28261(Class2295 var1, BlockPos var2, IWorldReader var3) {
       if (this.field35048 == var1) {
          if (this.field35051 != null) {
             Biome var6 = var3.getBiome(var2);
@@ -247,7 +250,7 @@ public class Class8149 {
       }
    }
 
-   public boolean method28262(Class2295 var1, BlockPos var2, Class1662 var3, Screen var4) {
+   public boolean method28262(Class2295 var1, BlockPos var2, IWorldReader var3, Screen var4) {
       if (!this.method28261(var1, var2, var3)) {
          return false;
       } else {
@@ -278,7 +281,7 @@ public class Class8149 {
       return var3 != null ? var3.getUnformattedComponentText() : null;
    }
 
-   private boolean method28264(BlockPos var1, Class1663 var2) {
+   private boolean method28264(BlockPos var1, IBlockDisplayReader var2) {
       TileEntity var5 = var2.getTileEntity(var1);
       if (var5 instanceof Class950) {
          Class950 var6 = (Class950)var5;
@@ -295,7 +298,7 @@ public class Class8149 {
       }
    }
 
-   private boolean method28265(BlockPos var1, Class1663 var2) {
+   private boolean method28265(BlockPos var1, IBlockDisplayReader var2) {
       TileEntity var5 = var2.getTileEntity(var1);
       if (!(var5 instanceof Class941)) {
          if (!(var5 instanceof Class943)) {
@@ -310,7 +313,7 @@ public class Class8149 {
       }
    }
 
-   private boolean method28266(Class941 var1, BlockPos var2, Class1663 var3) {
+   private boolean method28266(Class941 var1, BlockPos var2, IBlockDisplayReader var3) {
       BlockState var6 = var3.getBlockState(var2);
       Class111 var7 = !var6.method23462(Class3348.field18866) ? Class111.field379 : var6.<Class111>method23463(Class3348.field18866);
       boolean var8 = var7 == Class111.field379;
@@ -320,7 +323,7 @@ public class Class8149 {
       return this.method28268(var8, var9, var10, var11);
    }
 
-   private boolean method28267(Class943 var1, BlockPos var2, Class1663 var3) {
+   private boolean method28267(Class943 var1, BlockPos var2, IBlockDisplayReader var3) {
       return this.method28268(false, false, false, true);
    }
 
@@ -334,7 +337,7 @@ public class Class8149 {
       }
    }
 
-   private boolean method28269(BlockPos var1, Class1663 var2) {
+   private boolean method28269(BlockPos var1, IBlockDisplayReader var2) {
       TileEntity var5 = var2.getTileEntity(var1);
       if (var5 instanceof Class971) {
          Class971 var6 = (Class971)var5;
@@ -355,7 +358,7 @@ public class Class8149 {
       return !(var1 instanceof Class972) ? Class2224.field14551 : Class2224.field14552;
    }
 
-   private boolean method28271(BlockPos var1, Class1663 var2) {
+   private boolean method28271(BlockPos var1, IBlockDisplayReader var2) {
       TileEntity var5 = var2.getTileEntity(var1);
       if (var5 instanceof Class940) {
          Class940 var6 = (Class940)var5;
@@ -372,7 +375,7 @@ public class Class8149 {
       }
    }
 
-   public boolean method28272(Class2295 var1, Entity var2, Class1662 var3) {
+   public boolean method28272(Class2295 var1, Entity var2, IWorldReader var3) {
       if (!this.method28261(var1, var2.getPosition(), var3)) {
          return false;
       } else {
@@ -394,7 +397,7 @@ public class Class8149 {
       }
    }
 
-   private boolean method28273(Entity var1, Class1663 var2) {
+   private boolean method28273(Entity var1, IBlockDisplayReader var2) {
       if (var1 instanceof Class1042) {
          Class1042 var5 = (Class1042)var1;
          if (this.field35058 != null) {
@@ -412,7 +415,7 @@ public class Class8149 {
       }
    }
 
-   private boolean method28274(Entity var1, Class1663 var2) {
+   private boolean method28274(Entity var1, IBlockDisplayReader var2) {
       if (var1 instanceof AbstractHorseEntity) {
          AbstractHorseEntity var5 = (AbstractHorseEntity)var1;
          if (this.field35059 != null) {

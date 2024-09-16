@@ -7,6 +7,7 @@ import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.biome.Biome;
 
 import java.util.Objects;
 import java.util.function.Consumer;

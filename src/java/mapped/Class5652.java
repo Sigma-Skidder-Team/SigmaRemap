@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5652 extends Class5651<Class1109, Class2882<Class1109>> {
    private static final ResourceLocation field25004 = new ResourceLocation("textures/entity/slime/magmacube.png");

@@ -5,7 +5,9 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.biome.Biome;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -53,7 +55,7 @@ public class Class9619 {
    public static final TextureAtlasSprite field44990 = new TextureAtlasSprite(new ResourceLocation("default"));
    private static final Random field44991 = new Random(0L);
 
-   public static Class8557[] method37442(Class1663 var0, BlockState var1, BlockPos var2, Class8557 var3, Class8391 var4) {
+   public static Class8557[] method37442(IBlockDisplayReader var0, BlockState var1, BlockPos var2, Class8557 var3, Class8391 var4) {
       TextureAtlasSprite var5 = var3.method30516();
       if (var5 == null) {
          return var4.method29429(var3);
@@ -209,7 +211,7 @@ public class Class9619 {
       var0[var5 + 4 + 1] = Float.floatToRawIntBits(var3.method7464(var10));
    }
 
-   private static Class8557[] method37449(Class1663 var0, BlockState var1, BlockPos var2, net.minecraft.util.Direction var3, Class8557 var4, Class8391 var5) {
+   private static Class8557[] method37449(IBlockDisplayReader var0, BlockState var1, BlockPos var2, net.minecraft.util.Direction var3, Class8557 var4, Class8391 var5) {
       Class8557[] var6 = method37450(var0, var1, var2, var3, var4, true, 0, var5);
       if (!field44964) {
          return var6;
@@ -242,7 +244,7 @@ public class Class9619 {
       }
    }
 
-   public static Class8557[] method37450(Class1663 var0, BlockState var1, BlockPos var2, net.minecraft.util.Direction var3, Class8557 var4, boolean var5, int var6, Class8391 var7) {
+   public static Class8557[] method37450(IBlockDisplayReader var0, BlockState var1, BlockPos var2, net.minecraft.util.Direction var3, Class8557 var4, boolean var5, int var6, Class8391 var7) {
       Block var8 = var1.getBlock();
       TextureAtlasSprite var9 = var4.method30516();
       if (field44963 != null) {
@@ -330,7 +332,7 @@ public class Class9619 {
       }
    }
 
-   private static Class8557[] method37453(Class7104 var0, Class1663 var1, BlockState var2, BlockPos var3, int var4, Class8557 var5, int var6, Class8391 var7) {
+   private static Class8557[] method37453(Class7104 var0, IBlockDisplayReader var1, BlockState var2, BlockPos var3, int var4, Class8557 var5, int var6, Class8391 var7) {
       int var8 = 0;
       int var9 = var2.method23491();
       Block var10 = var2.getBlock();

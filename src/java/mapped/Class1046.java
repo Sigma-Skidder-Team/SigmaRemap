@@ -5,6 +5,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 public abstract class Class1046 extends MobEntity {
@@ -16,7 +17,7 @@ public abstract class Class1046 extends MobEntity {
       return this.method4339(var1, this.world);
    }
 
-   public float method4339(BlockPos var1, Class1662 var2) {
+   public float method4339(BlockPos var1, IWorldReader var2) {
       return 0.0F;
    }
 

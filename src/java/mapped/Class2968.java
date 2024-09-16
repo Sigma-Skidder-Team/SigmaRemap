@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import net.minecraft.entity.EntityType;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.provider.BiomeProvider;
 
 import java.util.List;
 
@@ -18,7 +20,7 @@ public class Class2968 extends Class2967 {
       return field18084;
    }
 
-   public boolean method11361(ChunkGenerator var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Biome var8, ChunkPos var9, Class4700 var10) {
+   public boolean method11361(ChunkGenerator var1, BiomeProvider var2, long var3, Class2420 var5, int var6, int var7, Biome var8, ChunkPos var9, Class4700 var10) {
       int var13 = var6 >> 4;
       int var14 = var7 >> 4;
       var5.setSeed((long)(var13 ^ var14 << 4) ^ var3);

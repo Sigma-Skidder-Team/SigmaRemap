@@ -5,11 +5,13 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.Lifecycle;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.provider.BiomeProvider;
 
 import java.util.List;
 import java.util.function.Supplier;
 
-public class Class1689 extends Class1685 {
+public class Class1689 extends BiomeProvider {
    public static final Codec<Class1689> field9184 = RecordCodecBuilder.create(
       var0 -> var0.group(
                Codec.LONG.fieldOf("seed").stable().forGetter(var0x -> var0x.field9187),
@@ -105,17 +107,17 @@ public class Class1689 extends Class1685 {
    }
 
    @Override
-   public Codec<? extends Class1685> method7199() {
+   public Codec<? extends BiomeProvider> method7199() {
       return field9184;
    }
 
    @Override
-   public Class1685 method7200(long var1) {
+   public BiomeProvider method7200(long var1) {
       return new Class1689(var1, this.field9188, this.field9189, this.field9190);
    }
 
    @Override
-   public Biome method7005(int var1, int var2, int var3) {
+   public Biome getNoiseBiome(int var1, int var2, int var3) {
       return this.field9185.method23287(this.field9190, var1, var3);
    }
 }

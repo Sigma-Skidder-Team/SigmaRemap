@@ -4,6 +4,7 @@ import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 public class Class1099 extends Class1009 {
@@ -23,7 +24,7 @@ public class Class1099 extends Class1009 {
    }
 
    @Override
-   public float method4339(BlockPos var1, Class1662 var2) {
+   public float method4339(BlockPos var1, IWorldReader var2) {
       return var2.method7009(var1) - 0.5F;
    }
 }

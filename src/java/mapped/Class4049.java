@@ -2,16 +2,17 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockDisplayReader;
 
 public class Class4049 {
    private static String[] field20385;
 
-   public static final float method12820(BlockState var0, Class1663 var1, BlockPos var2) {
+   public static final float method12820(BlockState var0, IBlockDisplayReader var1, BlockPos var2) {
       float var5 = var0.method23399(var1, var2);
       return Class7551.method24694(var5);
    }
 
-   public static final int method12821(BlockState var0, Class1663 var1, BlockPos var2) {
+   public static final int method12821(BlockState var0, IBlockDisplayReader var1, BlockPos var2) {
       if (!(var1 instanceof Class1664)) {
          return WorldRenderer.method945(var1, var0, var2);
       } else {

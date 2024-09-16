@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -56,7 +57,7 @@ public class Class3197 extends Class3198 implements Class3196 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       Block var6 = var2.getBlockState(var3.method8349(var1.<Direction>method23463(field18484))).getBlock();
       return var6.isIn(BlockTags.field32756);
    }

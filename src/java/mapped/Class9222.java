@@ -9,6 +9,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.biome.Biome;
 
 public class Class9222 {
    private static final Map<ResourceLocation, SuggestionProvider<Class6618>> field42451 = Maps.newHashMap();

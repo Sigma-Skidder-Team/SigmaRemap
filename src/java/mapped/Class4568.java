@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.util.math.MathHelper;
 
 public class Class4568 extends Class4566 {
    private static String[] field22006;

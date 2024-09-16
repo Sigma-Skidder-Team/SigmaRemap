@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.nbt.NumberNBT;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;

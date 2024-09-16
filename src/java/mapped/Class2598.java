@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.MathHelper;
 
 import java.util.EnumSet;
 

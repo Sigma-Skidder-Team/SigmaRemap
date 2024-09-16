@@ -1,8 +1,9 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ITickList;
 
-public class Class6804<T> implements Class6802<T> {
+public class Class6804<T> implements ITickList<T> {
    private static final Class6804<Object> field29618 = new Class6804<Object>();
 
    public static <T> Class6804<T> method20727() {

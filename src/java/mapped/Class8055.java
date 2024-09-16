@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.MathHelper;
 
 public class Class8055 {
    private static String[] field34587;

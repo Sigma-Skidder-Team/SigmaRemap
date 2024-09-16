@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 
 import javax.annotation.Nullable;
 
@@ -14,11 +15,11 @@ public class Class3200 extends Class3198 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       return method11508(var2, var3, method11509(var1).method536());
    }
 
-   public static boolean method11508(Class1662 var0, BlockPos var1, net.minecraft.util.Direction var2) {
+   public static boolean method11508(IWorldReader var0, BlockPos var1, net.minecraft.util.Direction var2) {
       BlockPos var5 = var1.method8349(var2);
       return var0.getBlockState(var5).method23454(var0, var5, var2.method536());
    }

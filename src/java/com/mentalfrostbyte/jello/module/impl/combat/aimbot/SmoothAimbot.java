@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.Aimbot;
-import mapped.MathHelper;
+import net.minecraft.util.math.MathHelper;
 import mapped.NumberSetting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;

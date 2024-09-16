@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.util.math.MathHelper;
 
 public abstract class Class5727<T extends AbstractArrowEntity> extends Class5715<T> {
    public Class5727(EntityRendererManager var1) {

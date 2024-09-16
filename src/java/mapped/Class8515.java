@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.util.math.MathHelper;
 
 public class Class8515 {
    private static String[] field38198;

@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.IStringSerializable;
+import net.minecraft.world.biome.Biome;
 
 import java.util.Arrays;
 import java.util.Map;

@@ -9,6 +9,7 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -97,7 +98,7 @@ public class Class1107 extends Class1009 {
    }
 
    @Override
-   public float method4339(BlockPos var1, Class1662 var2) {
+   public float method4339(BlockPos var1, IWorldReader var2) {
       return !Class3442.method12119(var2.getBlockState(var1.down())) ? super.method4339(var1, var2) : 10.0F;
    }
 

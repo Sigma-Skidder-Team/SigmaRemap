@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5653 extends Class5651<Class1114, Class2811> {
    private static final ResourceLocation field25005 = new ResourceLocation("textures/entity/bat.png");

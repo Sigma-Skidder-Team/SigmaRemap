@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.util.math.MathHelper;
 
 public class Class2895<T extends MobEntity> extends Class2894<T> {
    private static String[] field17927;

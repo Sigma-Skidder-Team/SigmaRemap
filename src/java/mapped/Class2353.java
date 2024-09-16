@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.base.Predicates;
 import com.google.common.collect.Iterators;
+import net.minecraft.util.math.MathHelper;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;

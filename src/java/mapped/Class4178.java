@@ -11,6 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.IWorldReader;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -217,7 +218,7 @@ public abstract class Class4178 {
       return var5.method38396(var11) ? var1.getBlockState(var11) : Blocks.AIR.method11579();
    }
 
-   public boolean method12925(Class1662 var1, int var2, int var3, int var4, Class9764 var5) {
+   public boolean method12925(IWorldReader var1, int var2, int var3, int var4, Class9764 var5) {
       int var8 = this.method12920(var2, var4);
       int var9 = this.method12921(var3 + 1);
       int var10 = this.method12922(var2, var4);

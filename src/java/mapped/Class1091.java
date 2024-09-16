@@ -16,6 +16,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -170,7 +171,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public float method4339(BlockPos var1, Class1662 var2) {
+   public float method4339(BlockPos var1, IWorldReader var2) {
       if (!Class9069.method33790(this, var1)) {
          return !var2.getBlockState(var1.down()).isIn(Blocks.field37083) ? 0.0F : 10.0F;
       } else {

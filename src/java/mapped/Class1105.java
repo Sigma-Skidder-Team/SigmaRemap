@@ -9,8 +9,10 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -166,7 +168,7 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public float method4339(BlockPos var1, Class1662 var2) {
+   public float method4339(BlockPos var1, IWorldReader var2) {
       return !var2.getFluidState(var1).method23486(FluidTags.field40469) ? super.method4339(var1, var2) : 10.0F + var2.method7009(var1) - 0.5F;
    }
 
@@ -297,7 +299,7 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public boolean method4266(Class1662 var1) {
+   public boolean method4266(IWorldReader var1) {
       return var1.checkNoEntityCollision(this);
    }
 

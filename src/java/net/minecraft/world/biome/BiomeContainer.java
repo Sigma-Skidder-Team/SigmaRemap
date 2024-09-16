@@ -1,10 +1,12 @@
 package net.minecraft.world.biome;
 
 import mapped.*;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.biome.provider.BiomeProvider;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class BiomeContainer implements Class1683 {
+public class BiomeContainer implements BiomeManager.IBiomeReader {
    private static final Logger field9151 = LogManager.getLogger();
    private static final int field9152 = (int)Math.round(Math.log(16.0) / Math.log(2.0)) - 2;
    private static final int field9153 = (int)Math.round(Math.log(256.0) / Math.log(2.0)) - 2;
@@ -38,7 +40,7 @@ public class BiomeContainer implements Class1683 {
       }
    }
 
-   public BiomeContainer(Class2347<Biome> var1, ChunkPos var2, Class1685 var3) {
+   public BiomeContainer(Class2347<Biome> var1, ChunkPos var2, BiomeProvider var3) {
       this(var1);
       int var6 = var2.getX() >> 2;
       int var7 = var2.getZ() >> 2;
@@ -47,11 +49,11 @@ public class BiomeContainer implements Class1683 {
          int var9 = var8 & field9155;
          int var10 = var8 >> field9152 + field9152 & field9156;
          int var11 = var8 >> field9152 & field9155;
-         this.field9158[var8] = var3.method7005(var6 + var9, var10, var7 + var11);
+         this.field9158[var8] = var3.getNoiseBiome(var6 + var9, var10, var7 + var11);
       }
    }
 
-   public BiomeContainer(Class2347<Biome> var1, ChunkPos var2, Class1685 var3, int[] var4) {
+   public BiomeContainer(Class2347<Biome> var1, ChunkPos var2, BiomeProvider var3, int[] var4) {
       this(var1);
       int var7 = var2.getX() >> 2;
       int var8 = var2.getZ() >> 2;
@@ -60,7 +62,7 @@ public class BiomeContainer implements Class1683 {
             int var10 = var9 & field9155;
             int var11 = var9 >> field9152 + field9152 & field9156;
             int var12 = var9 >> field9152 & field9155;
-            this.field9158[var9] = var3.method7005(var7 + var10, var11, var8 + var12);
+            this.field9158[var9] = var3.getNoiseBiome(var7 + var10, var11, var8 + var12);
          }
       } else {
          for (int var13 = 0; var13 < var4.length; var13++) {
@@ -69,7 +71,7 @@ public class BiomeContainer implements Class1683 {
                int var14 = var13 & field9155;
                int var15 = var13 >> field9152 + field9152 & field9156;
                int var16 = var13 >> field9152 & field9155;
-               this.field9158[var13] = var3.method7005(var7 + var14, var15, var8 + var16);
+               this.field9158[var13] = var3.getNoiseBiome(var7 + var14, var15, var8 + var16);
             }
          }
       }
@@ -86,7 +88,7 @@ public class BiomeContainer implements Class1683 {
    }
 
    @Override
-   public Biome method7005(int var1, int var2, int var3) {
+   public Biome getNoiseBiome(int var1, int var2, int var3) {
       int var6 = var1 & field9155;
       int var7 = MathHelper.method37775(var2, 0, field9156);
       int var8 = var3 & field9155;

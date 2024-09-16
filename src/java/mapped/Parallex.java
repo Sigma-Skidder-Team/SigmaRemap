@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.MathHelper;
 
 public class Parallex {
    private static String[] field21396;

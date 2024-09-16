@@ -7,6 +7,8 @@ import it.unimi.dsi.fastutil.doubles.DoubleList;
 import it.unimi.dsi.fastutil.ints.IntBidirectionalIterator;
 import it.unimi.dsi.fastutil.ints.IntRBTreeSet;
 import it.unimi.dsi.fastutil.ints.IntSortedSet;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 import java.util.stream.IntStream;
 import javax.annotation.Nullable;

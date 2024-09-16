@@ -17,8 +17,10 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -334,7 +336,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11650(this.method23457(), var1);
    }
 
-   public boolean method23443(Class1662 var1, BlockPos var2) {
+   public boolean method23443(IWorldReader var1, BlockPos var2) {
       return this.getBlock().method11492(this.method23457(), var1, var2);
    }
 

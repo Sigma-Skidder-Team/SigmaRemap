@@ -25,6 +25,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.*;
 import net.minecraft.util.text.event.HoverEvent;
@@ -32,6 +33,7 @@ import net.minecraft.util.text.event.HoverEvent$Action;
 import net.minecraft.util.text.filter.IChatFilter;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -564,7 +566,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
                new SRespawnPacket(
                   var1.method6812(),
                   var1.getDimensionKey(),
-                  BiomeManager.method20321(var1.method6967()),
+                  BiomeManager.getHashedSeed(var1.method6967()),
                   this.interactionManager.getGameType(),
                   this.interactionManager.method33864(),
                   var1.isDebug(),
@@ -1294,7 +1296,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
                new SRespawnPacket(
                   var1.method6812(),
                   var1.getDimensionKey(),
-                  BiomeManager.method20321(var1.method6967()),
+                  BiomeManager.getHashedSeed(var1.method6967()),
                   this.interactionManager.getGameType(),
                   this.interactionManager.method33864(),
                   var1.isDebug(),

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.biome.Biome;
 
 public interface Class7458 {
    int method24123();

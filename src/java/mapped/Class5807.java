@@ -7,6 +7,7 @@ import java.util.function.Function;
 import net.minecraft.client.AbstractOption;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class5807 extends AbstractOption {

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 
 import java.util.EnumSet;
 
@@ -123,5 +124,5 @@ public abstract class Class2628 extends Class2595 {
       return false;
    }
 
-   public abstract boolean method10840(Class1662 var1, BlockPos var2);
+   public abstract boolean method10840(IWorldReader var1, BlockPos var2);
 }

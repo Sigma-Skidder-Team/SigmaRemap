@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 public class Class232<T extends LivingEntity, M extends Class2894<T>> extends Class231<T, M> {
    private static String[] field876;

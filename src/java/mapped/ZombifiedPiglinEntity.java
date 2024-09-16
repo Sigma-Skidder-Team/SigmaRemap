@@ -13,6 +13,7 @@ import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -153,7 +154,7 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
    }
 
    @Override
-   public boolean method4266(Class1662 var1) {
+   public boolean method4266(IWorldReader var1) {
       return var1.checkNoEntityCollision(this) && !var1.method7014(this.getBoundingBox());
    }
 

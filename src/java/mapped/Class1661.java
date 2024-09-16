@@ -1,6 +1,8 @@
 package mapped;
 
-public interface Class1661 extends Class1662 {
+import net.minecraft.world.IWorldReader;
+
+public interface Class1661 extends IWorldReader {
    long method6996();
 
    default float method7000() {

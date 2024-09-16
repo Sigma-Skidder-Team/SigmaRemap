@@ -1,7 +1,7 @@
 package net.minecraft.network.play.server;
 
 import com.google.common.collect.Lists;
-import mapped.MathHelper;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.client.network.play.IClientPlayNetHandler;

@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.world.biome;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
@@ -12,12 +12,15 @@ import java.util.Random;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.chunk.IChunk;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -120,11 +123,11 @@ public final class Biome {
       }
    }
 
-   public boolean method32504(Class1662 var1, BlockPos var2) {
+   public boolean method32504(IWorldReader var1, BlockPos var2) {
       return this.method32505(var1, var2, true);
    }
 
-   public boolean method32505(Class1662 var1, BlockPos var2, boolean var3) {
+   public boolean method32505(IWorldReader var1, BlockPos var2, boolean var3) {
       if (this.method32503(var2) >= 0.15F) {
          return false;
       } else {
@@ -150,7 +153,7 @@ public final class Biome {
       }
    }
 
-   public boolean method32506(Class1662 var1, BlockPos var2) {
+   public boolean method32506(IWorldReader var1, BlockPos var2) {
       if (!(this.method32503(var2) >= 0.15F)) {
          if (var2.getY() >= 0 && var2.getY() < 256 && var1.method7020(Class1977.field12882, var2) < 10) {
             BlockState var5 = var1.getBlockState(var2);

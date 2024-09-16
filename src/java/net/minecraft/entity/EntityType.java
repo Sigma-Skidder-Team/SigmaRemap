@@ -20,9 +20,11 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
@@ -472,7 +474,7 @@ public class EntityType<T extends Entity> {
       }
    }
 
-   public static double method33203(Class1662 var0, BlockPos var1, boolean var2, AxisAlignedBB var3) {
+   public static double method33203(IWorldReader var0, BlockPos var1, boolean var2, AxisAlignedBB var3) {
       AxisAlignedBB var6 = new AxisAlignedBB(var1);
       if (var2) {
          var6 = var6.method19662(0.0, -1.0, 0.0);

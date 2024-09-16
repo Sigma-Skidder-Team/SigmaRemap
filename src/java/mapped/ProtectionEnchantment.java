@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.math.MathHelper;
 
 public class ProtectionEnchantment extends Class6069 {
    private static String[] field27340;

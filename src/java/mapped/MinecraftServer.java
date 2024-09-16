@@ -27,6 +27,7 @@ import net.minecraft.util.CryptManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
@@ -36,6 +37,9 @@ import net.minecraft.util.text.filter.IChatFilter;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeManager;
+import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
@@ -209,7 +213,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       DimensionGeneratorSettings var5 = this.field_240768_i_.getDimensionGeneratorSettings();
       boolean var6 = var5.method26267();
       long var7 = var5.method26259();
-      long var9 = BiomeManager.method20321(var7);
+      long var9 = BiomeManager.getHashedSeed(var7);
       ImmutableList var11 = ImmutableList.of(new Class7020(), new Class7018(), new Class7017(), new Class7015(), new Class7019(var4));
       SimpleRegistry<Dimension> var12 = var5.method26264();
       Dimension var13 = var12.method9183(Dimension.field43952);
@@ -276,7 +280,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       ChunkGenerator var7 = var0.getChunkProvider().method7370();
       if (var4) {
          if (!var3) {
-            Class1685 var8 = var7.method17824();
+            BiomeProvider var8 = var7.method17824();
             Random var9 = new Random(var0.method6967());
             BlockPos var10 = var8.method7203(0, var0.method6776(), 0, 256, var0x -> var0x.method32499().method31971(), var9);
             ChunkPos var11 = var10 != null ? new ChunkPos(var10) : new ChunkPos(0, 0);

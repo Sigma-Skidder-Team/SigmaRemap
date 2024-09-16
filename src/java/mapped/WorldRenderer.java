@@ -31,11 +31,14 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.opengl.GL11;
@@ -3653,11 +3656,11 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       }
    }
 
-   public static int method944(Class1663 var0, BlockPos var1) {
+   public static int method944(IBlockDisplayReader var0, BlockPos var1) {
       return method945(var0, var0.getBlockState(var1), var1);
    }
 
-   public static int method945(Class1663 var0, BlockState var1, BlockPos var2) {
+   public static int method945(IBlockDisplayReader var0, BlockState var1, BlockPos var2) {
       if (var1.method23398(var0, var2)) {
          return 15728880;
       } else {

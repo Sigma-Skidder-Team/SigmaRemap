@@ -3,6 +3,7 @@ package mapped;
 import it.unimi.dsi.fastutil.longs.Long2ByteMap;
 import it.unimi.dsi.fastutil.longs.LongArrayList;
 import it.unimi.dsi.fastutil.longs.LongLinkedOpenHashSet;
+import net.minecraft.util.math.MathHelper;
 
 import java.util.function.LongConsumer;
 import java.util.function.LongPredicate;

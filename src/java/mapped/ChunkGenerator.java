@@ -6,7 +6,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeContainer;
+import net.minecraft.world.biome.BiomeManager;
+import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.server.ServerWorld;
@@ -22,17 +25,17 @@ import javax.annotation.Nullable;
 
 public abstract class ChunkGenerator {
    public static final Codec<ChunkGenerator> field24984 = Registry.field16136.dispatchStable(ChunkGenerator::method17790, Function.identity());
-   public final Class1685 field24985;
-   public final Class1685 field24986;
+   public final BiomeProvider field24985;
+   public final BiomeProvider field24986;
    private final Class9763 field24987;
    private final long field24988;
    private final List<ChunkPos> field24989 = Lists.newArrayList();
 
-   public ChunkGenerator(Class1685 var1, Class9763 var2) {
+   public ChunkGenerator(BiomeProvider var1, Class9763 var2) {
       this(var1, var1, var2, 0L);
    }
 
-   public ChunkGenerator(Class1685 var1, Class1685 var2, Class9763 var3, long var4) {
+   public ChunkGenerator(BiomeProvider var1, BiomeProvider var2, Class9763 var3, long var4) {
       this.field24985 = var1;
       this.field24986 = var2;
       this.field24987 = var3;
@@ -94,13 +97,13 @@ public abstract class ChunkGenerator {
    }
 
    public void method17819(long var1, BiomeManager var3, IChunk var4, Class97 var5) {
-      BiomeManager var8 = var3.method20322(this.field24985);
+      BiomeManager var8 = var3.copyWithProvider(this.field24985);
       Class2420 var9 = new Class2420();
       byte var10 = 8;
       ChunkPos var11 = var4.getPos();
       int var12 = var11.x;
       int var13 = var11.z;
-      Class7478 var14 = this.field24985.method7005(var11.x << 2, 0, var11.z << 2).method32507();
+      Class7478 var14 = this.field24985.getNoiseBiome(var11.x << 2, 0, var11.z << 2).method32507();
       BitSet var15 = ((Class1672)var4).method7117(var5);
 
       for (int var16 = var12 - 8; var16 <= var12 + 8; var16++) {
@@ -113,7 +116,7 @@ public abstract class ChunkGenerator {
                Class6815<?> var21 = var19.next().get();
                var9.method10373(var1 + (long)var20, var16, var17);
                if (var21.method20776(var9, var16, var17)) {
-                  var21.method20777(var4, var8::method20323, var9, this.method17807(), var16, var17, var12, var13, var15);
+                  var21.method20777(var4, var8::getBiome, var9, this.method17807(), var16, var17, var12, var13, var15);
                }
             }
          }
@@ -159,7 +162,7 @@ public abstract class ChunkGenerator {
       int var7 = var5 * 16;
       int var8 = var6 * 16;
       BlockPos var9 = new BlockPos(var7, 0, var8);
-      Biome var10 = this.field24985.method7005((var5 << 2) + 2, 2, (var6 << 2) + 2);
+      Biome var10 = this.field24985.getNoiseBiome((var5 << 2) + 2, 2, (var6 << 2) + 2);
       Class2420 var11 = new Class2420();
       long var12 = var11.method10371(var1.method6967(), var7, var8);
 
@@ -185,7 +188,7 @@ public abstract class ChunkGenerator {
       return 64;
    }
 
-   public Class1685 method17824() {
+   public BiomeProvider method17824() {
       return this.field24986;
    }
 
@@ -199,7 +202,7 @@ public abstract class ChunkGenerator {
 
    public void method17825(DynamicRegistries var1, Class7480 var2, IChunk var3, TemplateManager var4, long var5) {
       ChunkPos var9 = var3.getPos();
-      Biome var10 = this.field24985.method7005((var9.x << 2) + 2, 0, (var9.z << 2) + 2);
+      Biome var10 = this.field24985.getNoiseBiome((var9.x << 2) + 2, 0, (var9.z << 2) + 2);
       this.method17826(Class9438.field43844, var1, var2, var3, var4, var5, var9, var10);
 
       for (Supplier var12 : var10.method32507().method24278()) {

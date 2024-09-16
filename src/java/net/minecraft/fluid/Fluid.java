@@ -7,6 +7,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -59,7 +60,7 @@ public abstract class Fluid {
 
    public abstract Vector3d method25056(IBlockReader var1, BlockPos var2, FluidState var3);
 
-   public abstract int method25057(Class1662 var1);
+   public abstract int method25057(IWorldReader var1);
 
    public boolean method25058() {
       return false;

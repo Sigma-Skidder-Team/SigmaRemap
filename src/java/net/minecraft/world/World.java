@@ -20,7 +20,10 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.chunk.IChunk;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -952,7 +955,7 @@ public abstract class World implements Class1660, AutoCloseable {
       float var6 = 0.0F;
       if (this.method7017(var1)) {
          var6 = this.method7000();
-         var4 = this.getChunkAt(var1).method7093();
+         var4 = this.getChunkAt(var1).getInhabitedTime();
       }
 
       return new Class9755(this.method6997(), this.method6784(), var4, var6);

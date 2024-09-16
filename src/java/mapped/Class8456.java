@@ -14,6 +14,8 @@ import java.nio.file.spi.FileSystemProvider;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

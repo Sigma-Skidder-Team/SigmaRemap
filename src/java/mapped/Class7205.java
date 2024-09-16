@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockDisplayReader;
 
 import java.util.List;
 import java.util.Random;
@@ -25,7 +26,7 @@ public interface Class7205 {
       return (IBakedModel)Class9299.field42871.method20217(this.method22627(), var1, var2);
    }
 
-   default Class7180 method22631(Class1663 var1, BlockPos var2, BlockState var3, Class7180 var4) {
+   default Class7180 method22631(IBlockDisplayReader var1, BlockPos var2, BlockState var3, Class7180 var4) {
       return var4;
    }
 

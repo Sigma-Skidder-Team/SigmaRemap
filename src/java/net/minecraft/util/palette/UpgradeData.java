@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.util.palette;
 
 import com.google.common.collect.Sets;
 import java.util.EnumSet;
@@ -6,6 +6,7 @@ import java.util.IdentityHashMap;
 import java.util.Map;
 import java.util.Set;
 
+import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
@@ -16,19 +17,19 @@ import net.minecraft.world.chunk.ChunkSection;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class8922 {
+public class UpgradeData {
    private static final Logger field40387 = LogManager.getLogger();
-   public static final Class8922 field40388 = new Class8922();
+   public static final UpgradeData field40388 = new UpgradeData();
    private static final Class1976[] field40389 = Class1976.values();
    private final EnumSet<Class1976> field40390 = EnumSet.<Class1976>noneOf(Class1976.class);
    private final int[][] field40391 = new int[16][];
    private static final Map<Block, Class2234> field40392 = new IdentityHashMap<Block, Class2234>();
    private static final Set<Class2234> field40393 = Sets.newHashSet();
 
-   private Class8922() {
+   private UpgradeData() {
    }
 
-   public Class8922(CompoundNBT var1) {
+   public UpgradeData(CompoundNBT var1) {
       this();
       if (var1.contains("Indices", 10)) {
          CompoundNBT var4 = var1.getCompound("Indices");
@@ -63,7 +64,7 @@ public class Class8922 {
 
    private static void method32604(Chunk var0, Class1976 var1) {
       World var4 = var0.method7144();
-      if (var0.method7091().field40390.remove(var1)) {
+      if (var0.getUpgradeData().field40390.remove(var1)) {
          Set var5 = var1.method8262();
          boolean var6 = false;
          byte var7 = 15;

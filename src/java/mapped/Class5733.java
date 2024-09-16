@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5733 extends Class5732<Class993> {
    private static String[] field25145;

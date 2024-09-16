@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import net.minecraft.util.HandSide;
+import net.minecraft.util.math.MathHelper;
 
 public class Class2896 extends Class2797<Class1100> {
    private static String[] field17431;

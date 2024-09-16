@@ -10,6 +10,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.biome.Biome;
 
 public class Class2831 implements Consumer<Consumer<Advancement>> {
    private static final List<RegistryKey<Biome>> field17610 = ImmutableList.of(

@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.math.MathHelper;
 
 import java.util.List;
 

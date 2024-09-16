@@ -2,6 +2,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.ints.Int2ObjectArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
+import net.minecraft.world.biome.Biome;
 
 public abstract class Class8900 {
    private static final Int2ObjectMap<RegistryKey<Biome>> field40280 = new Int2ObjectArrayMap();

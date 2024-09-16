@@ -1,9 +1,10 @@
-package mapped;
+package net.minecraft.util.math;
 
 import java.util.Random;
 import java.util.UUID;
 import java.util.function.IntPredicate;
 
+import mapped.Class7317;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.vector.Vector3i;
 import org.apache.commons.lang3.math.NumberUtils;

@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
 
 public class Class1167 extends Class1155<Class1167> {
    private static String[] field6331;

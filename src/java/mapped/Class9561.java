@@ -15,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
@@ -60,7 +61,7 @@ public class Class9561 {
       return Class9299.field42919.method20214() ? Class9299.method35064(var0.getItem(), Class9299.field42919, var0) : var0.method32116();
    }
 
-   public static int method37047(BlockState var0, Class1663 var1, BlockPos var2) {
+   public static int method37047(BlockState var0, IBlockDisplayReader var1, BlockPos var2) {
       return !Class9299.field42826.method20214() ? var0.getLightValue() : Class9299.method35065(var0, Class9299.field42826, var1, var2);
    }
 

@@ -9,6 +9,7 @@ import java.util.Set;
 
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.network.play.server.SUpdateBossInfoPacket;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class3624 extends Class3625 {

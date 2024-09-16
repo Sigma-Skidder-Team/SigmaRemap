@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5698 extends Class5651<Class1081, Class2890<Class1081>> {
    private static final ResourceLocation field25068 = new ResourceLocation("textures/entity/creeper/creeper.png");

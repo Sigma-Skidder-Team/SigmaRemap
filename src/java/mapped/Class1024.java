@@ -18,6 +18,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -124,7 +125,7 @@ public class Class1024 extends Class1025 implements Class1023 {
    }
 
    @Override
-   public float method4339(BlockPos var1, Class1662 var2) {
+   public float method4339(BlockPos var1, IWorldReader var2) {
       BlockState var5 = var2.getBlockState(var1.down());
       return !var5.isIn(Blocks.field36395) && !var5.isIn(Blocks.SAND) ? 0.5F - var2.method7009(var1) : 10.0F;
    }

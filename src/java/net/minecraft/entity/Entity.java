@@ -27,6 +27,7 @@ import net.minecraft.scoreboard.Team;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
@@ -36,6 +37,7 @@ import net.minecraft.util.text.event.HoverEvent;
 import net.minecraft.util.text.event.HoverEvent$Action;
 import net.minecraft.util.text.event.HoverEvent$EntityHover;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
@@ -723,7 +725,7 @@ public abstract class Entity implements INameable, ICommandSource {
       return new Vector3d(var5, var7, var9);
    }
 
-   public static Vector3d collideBoundingBox(Vector3d var0, AxisAlignedBB var1, Class1662 var2, ISelectionContext var3, Class8544<VoxelShape> var4, boolean var5) {
+   public static Vector3d collideBoundingBox(Vector3d var0, AxisAlignedBB var1, IWorldReader var2, ISelectionContext var3, Class8544<VoxelShape> var4, boolean var5) {
       double var8 = var0.x;
       double var10 = var0.y;
       double var12 = var0.z;

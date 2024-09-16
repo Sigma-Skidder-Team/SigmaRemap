@@ -4,7 +4,10 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.IBlockDisplayReader;
+import net.minecraft.world.biome.Biome;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -276,11 +279,11 @@ public class Class7448 implements Class7443 {
    }
 
    @Override
-   public int method24053(BlockState var1, Class1663 var2, BlockPos var3) {
+   public int method24053(BlockState var1, IBlockDisplayReader var2, BlockPos var3) {
       return this.method24069(var2, var3);
    }
 
-   public int method24069(Class1663 var1, BlockPos var2) {
+   public int method24069(IBlockDisplayReader var1, BlockPos var2) {
       Biome var5 = Class9680.method37851(var1, var2);
       return this.method24070(var5, var2);
    }
@@ -298,7 +301,7 @@ public class Class7448 implements Class7443 {
       }
    }
 
-   public int method24071(Class1663 var1, double var2, double var4, double var6, int var8) {
+   public int method24071(IBlockDisplayReader var1, double var2, double var4, double var6, int var8) {
       if (this.field32024 == 2) {
          return this.field32027;
       } else {

@@ -8,6 +8,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -33,7 +34,7 @@ public class Class3221 extends Block {
    }
 
    @Override
-   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.up());
       return !var6.getMaterial().method31086() || var6.getBlock() instanceof Class3199 || var6.getBlock() instanceof Class3356;
    }
@@ -98,7 +99,7 @@ public class Class3221 extends Block {
       return var4 instanceof Class3480 || var4 instanceof Class3486 || var4 instanceof Class3493;
    }
 
-   private static boolean method11612(Class1662 var0, BlockPos var1) {
+   private static boolean method11612(IWorldReader var0, BlockPos var1) {
       for (BlockPos var5 : BlockPos.method8359(var1.method8336(-4, 0, -4), var1.method8336(4, 1, 4))) {
          if (var0.getFluidState(var5).method23486(FluidTags.field40469)) {
             return true;

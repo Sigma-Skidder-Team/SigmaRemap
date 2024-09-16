@@ -9,6 +9,8 @@ import com.mojang.datafixers.schemas.Schema;
 import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.types.templates.List.ListType;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Optional;
 
 public class Class9760 extends DataFix {

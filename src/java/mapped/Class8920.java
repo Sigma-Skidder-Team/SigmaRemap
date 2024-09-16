@@ -9,6 +9,7 @@ import net.minecraft.network.play.server.SChunkDataPacket;
 import net.minecraft.network.play.server.SMultiBlockChangePacket;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.chunk.ChunkSection;
 

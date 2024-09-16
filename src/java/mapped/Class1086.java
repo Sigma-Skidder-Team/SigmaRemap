@@ -14,6 +14,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.commons.lang3.tuple.Pair;
@@ -33,7 +34,7 @@ public class Class1086 extends Class1087 implements Class1020 {
    }
 
    @Override
-   public float method4339(BlockPos var1, Class1662 var2) {
+   public float method4339(BlockPos var1, IWorldReader var2) {
       return !var2.getBlockState(var1.down()).isIn(Blocks.MYCELIUM) ? var2.method7009(var1) - 0.5F : 10.0F;
    }
 

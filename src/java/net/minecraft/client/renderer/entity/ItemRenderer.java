@@ -13,6 +13,7 @@ import net.minecraft.item.Items;
 import net.minecraft.resources.IResourceManagerReloadListener;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 

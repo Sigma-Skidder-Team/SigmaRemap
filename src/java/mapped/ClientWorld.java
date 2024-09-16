@@ -22,11 +22,14 @@ import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.GameType;
+import net.minecraft.world.ITickList;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -542,12 +545,12 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public Class6802<Block> method6860() {
+   public ITickList<Block> method6860() {
       return Class6804.<Block>method20727();
    }
 
    @Override
-   public Class6802<Fluid> method6861() {
+   public ITickList<Fluid> method6861() {
       return Class6804.<Fluid>method20727();
    }
 

@@ -18,7 +18,9 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -150,7 +152,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public boolean method4266(Class1662 var1) {
+   public boolean method4266(IWorldReader var1) {
       return var1.checkNoEntityCollision(this);
    }
 
@@ -332,7 +334,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
    }
 
    @Override
-   public float method4339(BlockPos var1, Class1662 var2) {
+   public float method4339(BlockPos var1, IWorldReader var2) {
       if (!var2.getBlockState(var1).method23449().method23486(FluidTags.field40470)) {
          return !this.isInLava() ? 0.0F : Float.NEGATIVE_INFINITY;
       } else {

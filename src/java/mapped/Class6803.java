@@ -1,14 +1,15 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ITickList;
 
 import java.util.function.Function;
 
-public class Class6803<T> implements Class6802<T> {
+public class Class6803<T> implements ITickList<T> {
    private static String[] field29615;
-   private final Function<BlockPos, Class6802<T>> field29616;
+   private final Function<BlockPos, ITickList<T>> field29616;
 
-   public Class6803(Function<BlockPos, Class6802<T>> var1) {
+   public Class6803(Function<BlockPos, ITickList<T>> var1) {
       this.field29616 = var1;
    }
 

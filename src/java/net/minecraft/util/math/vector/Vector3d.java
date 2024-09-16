@@ -1,6 +1,7 @@
 package net.minecraft.util.math.vector;
 
 import mapped.*;
+import net.minecraft.util.math.MathHelper;
 
 import java.util.EnumSet;
 

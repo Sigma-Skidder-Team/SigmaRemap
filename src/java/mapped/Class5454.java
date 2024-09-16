@@ -4,6 +4,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3i;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 
 public class Class5454 extends StructureStart<Class4726> {

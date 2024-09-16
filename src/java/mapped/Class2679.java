@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.passive.SquidEntity;
+import net.minecraft.util.math.MathHelper;
 
 public class Class2679 extends Class2595 {
    private static String[] field17075;

@@ -7,6 +7,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ITickList;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Collection;
@@ -21,7 +22,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
-public class Class6805<T> implements Class6802<T> {
+public class Class6805<T> implements ITickList<T> {
    public final Predicate<T> field29619;
    private final Function<T, ResourceLocation> field29620;
    private final Set<Class8269<T>> field29621 = Sets.newHashSet();

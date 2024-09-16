@@ -5,7 +5,10 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeManager;
 
 public class FogRenderer {
    private static String[] field40347;
@@ -32,7 +35,7 @@ public class FogRenderer {
             BiomeManager var14 = var2.getBiomeManager();
             Vector3d var15 = var0.getPos().method11337(2.0, 2.0, 2.0).scale(0.25);
             Vector3d var16 = Class8430.method29626(
-               var15, (var3x, var4x, var5) -> var2.method6830().method19299(Vector3d.unpack(var14.method20326(var3x, var4x, var5).method32509()), var13)
+               var15, (var3x, var4x, var5) -> var2.method6830().method19299(Vector3d.unpack(var14.getBiomeAtPosition(var3x, var4x, var5).method32509()), var13)
             );
             var16 = Class9680.method37876(var16, var2, var0.getRenderViewEntity(), var1);
             field40348 = (float)var16.getX();

@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 public class Class2810<T extends Entity> extends Class2808<T> {
    private static String[] field17486;

@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.scoreboard.Team;
+import net.minecraft.util.math.MathHelper;
 
 public abstract class Class2699 extends Class2595 {
    public final MobEntity field17153;

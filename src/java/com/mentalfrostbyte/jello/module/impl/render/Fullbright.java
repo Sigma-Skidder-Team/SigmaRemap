@@ -40,7 +40,7 @@ public class Fullbright extends Module {
                     BlockPos var5 = new BlockPos(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ())
                             .up();
                     IChunk var6 = mc.world.method7011(var5);
-                    if (var6 != null && var5.getY() >= 0 && var5.getY() < 256 && !var6.method7095()) {
+                    if (var6 != null && var5.getY() >= 0 && var5.getY() < 256 && !var6.hasLight()) {
                         var4 -= var6.getLightValue(var5);
                     }
 

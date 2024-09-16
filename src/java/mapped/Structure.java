@@ -6,6 +6,9 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.IWorldReader;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import org.apache.logging.log4j.LogManager;
@@ -121,7 +124,7 @@ public abstract class Structure<C extends Class4698> {
    }
 
    @Nullable
-   public BlockPos method11369(Class1662 var1, Class7480 var2, BlockPos var3, int var4, boolean var5, long var6, Class8483 var8) {
+   public BlockPos method11369(IWorldReader var1, Class7480 var2, BlockPos var3, int var4, boolean var5, long var6, Class8483 var8) {
       int var11 = var8.method29980();
       int var12 = var3.getX() >> 4;
       int var13 = var3.getZ() >> 4;
@@ -188,7 +191,7 @@ public abstract class Structure<C extends Class4698> {
       return new ChunkPos(var11 * var9 + var13, var12 * var9 + var14);
    }
 
-   public boolean method11361(ChunkGenerator var1, Class1685 var2, long var3, Class2420 var5, int var6, int var7, Biome var8, ChunkPos var9, C var10) {
+   public boolean method11361(ChunkGenerator var1, BiomeProvider var2, long var3, Class2420 var5, int var6, int var7, Biome var8, ChunkPos var9, C var10) {
       return true;
    }
 
@@ -199,7 +202,7 @@ public abstract class Structure<C extends Class4698> {
    public StructureStart<?> method11372(
       DynamicRegistries var1,
       ChunkGenerator var2,
-      Class1685 var3,
+      BiomeProvider var3,
       TemplateManager var4,
       long var5,
       ChunkPos var7,

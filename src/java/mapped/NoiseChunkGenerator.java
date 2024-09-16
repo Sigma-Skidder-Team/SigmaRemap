@@ -7,7 +7,10 @@ import it.unimi.dsi.fastutil.objects.ObjectListIterator;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
 
@@ -20,7 +23,7 @@ import java.util.stream.IntStream;
 public final class NoiseChunkGenerator extends ChunkGenerator {
    public static final Codec<NoiseChunkGenerator> field24963 = RecordCodecBuilder.create(
       var0 -> var0.group(
-               Class1685.field9159.fieldOf("biome_source").forGetter(var0x -> var0x.field24985),
+               BiomeProvider.field9159.fieldOf("biome_source").forGetter(var0x -> var0x.field24985),
                Codec.LONG.fieldOf("seed").stable().forGetter(var0x -> var0x.field24981),
                DimensionSettings.field43221.fieldOf("settings").forGetter(var0x -> var0x.field24982)
             )
@@ -62,11 +65,11 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    public final Supplier<DimensionSettings> field24982;
    private final int field24983;
 
-   public NoiseChunkGenerator(Class1685 var1, long var2, Supplier<DimensionSettings> var4) {
+   public NoiseChunkGenerator(BiomeProvider var1, long var2, Supplier<DimensionSettings> var4) {
       this(var1, var1, var2, var4);
    }
 
-   private NoiseChunkGenerator(Class1685 var1, Class1685 var2, long var3, Supplier<DimensionSettings> var5) {
+   private NoiseChunkGenerator(BiomeProvider var1, BiomeProvider var2, long var3, Supplier<DimensionSettings> var5) {
       super(var1, var2, ((DimensionSettings)var5.get()).method35160(), var3);
       this.field24981 = var3;
       DimensionSettings var8 = (DimensionSettings)var5.get();
@@ -170,11 +173,11 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
          float var9 = 0.0F;
          int var10 = 2;
          int var11 = this.method17807();
-         float var12 = this.field24985.method7005(var2, var11, var3).method32515();
+         float var12 = this.field24985.getNoiseBiome(var2, var11, var3).method32515();
 
          for (int var13 = -2; var13 <= 2; var13++) {
             for (int var18 = -2; var18 <= 2; var18++) {
-               Biome var23 = this.field24985.method7005(var2 + var13, var11, var3 + var18);
+               Biome var23 = this.field24985.getNoiseBiome(var2 + var13, var11, var3 + var18);
                float var24 = var23.method32515();
                float var25 = var23.method32517();
                float var26;

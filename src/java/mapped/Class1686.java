@@ -7,6 +7,8 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.provider.BiomeProvider;
 
 import java.util.Comparator;
 import java.util.List;
@@ -15,7 +17,7 @@ import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-public class Class1686 extends Class1685 {
+public class Class1686 extends BiomeProvider {
    private static final Class6813 field9163 = new Class6813(-7, ImmutableList.of(1.0, 1.0));
    public static final MapCodec<Class1686> field9164 = RecordCodecBuilder.mapCodec(
       var0 -> var0.group(
@@ -89,12 +91,12 @@ public class Class1686 extends Class1685 {
    }
 
    @Override
-   public Codec<? extends Class1685> method7199() {
+   public Codec<? extends BiomeProvider> method7199() {
       return field9165;
    }
 
    @Override
-   public Class1685 method7200(long var1) {
+   public BiomeProvider method7200(long var1) {
       return new Class1686(var1, this.field9174, this.field9166, this.field9167, this.field9168, this.field9169, this.field9177);
    }
 
@@ -103,7 +105,7 @@ public class Class1686 extends Class1685 {
    }
 
    @Override
-   public Biome method7005(int var1, int var2, int var3) {
+   public Biome getNoiseBiome(int var1, int var2, int var3) {
       int var6 = !this.field9175 ? 0 : var2;
       Class7150 var7 = new Class7150(
          (float)this.field9170.method35046((double)var1, (double)var6, (double)var3),

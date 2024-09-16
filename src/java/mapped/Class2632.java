@@ -6,6 +6,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.server.ServerWorld;
@@ -152,7 +153,7 @@ public class Class2632 extends Class2628 {
    }
 
    @Override
-   public boolean method10840(Class1662 var1, BlockPos var2) {
+   public boolean method10840(IWorldReader var1, BlockPos var2) {
       IChunk var5 = var1.getChunk(var2.getX() >> 4, var2.getZ() >> 4, ChunkStatus.FULL, false);
       return var5 == null
          ? false

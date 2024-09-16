@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 
 public class Class5445 extends StructureStart<Class4737> {

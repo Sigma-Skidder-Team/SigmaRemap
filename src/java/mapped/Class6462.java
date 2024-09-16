@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;

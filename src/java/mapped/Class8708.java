@@ -5,7 +5,10 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.IBlockDisplayReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -82,11 +85,11 @@ public class Class8708 {
       return var3;
    }
 
-   public static Biome method31415(Class1663 var0, BlockPos var1) {
+   public static Biome method31415(IBlockDisplayReader var0, BlockPos var1) {
       Biome var4 = field39311;
       if (!(var0 instanceof Class1664)) {
-         if (var0 instanceof Class1662) {
-            var4 = ((Class1662)var0).getBiome(var1);
+         if (var0 instanceof IWorldReader) {
+            var4 = ((IWorldReader)var0).getBiome(var1);
          }
       } else {
          var4 = ((Class1664)var0).method7028(var1);

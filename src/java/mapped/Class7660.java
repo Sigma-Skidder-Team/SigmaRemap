@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeContainer;
+import net.minecraft.world.biome.provider.BiomeProvider;
 
 public class Class7660 {
    public static Class9028 method25180(CompoundNBT var0) {
@@ -28,7 +30,7 @@ public class Class7660 {
       return var5;
    }
 
-   public static void method25181(DynamicRegistriesImpl var0, Class9028 var1, CompoundNBT var2, Class1685 var3) {
+   public static void method25181(DynamicRegistriesImpl var0, Class9028 var1, CompoundNBT var2, BiomeProvider var3) {
       var2.putInt("xPos", var1.field41310);
       var2.putInt("zPos", var1.field41311);
       var2.method103("LastUpdate", var1.field41300);

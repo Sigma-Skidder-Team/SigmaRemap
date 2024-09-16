@@ -14,6 +14,8 @@ import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.provider.BiomeProvider;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -52,7 +54,7 @@ public class Class9251 {
          var17 = new Class1689(var14, false, false, var16);
       }
 
-      method34800(var11, new File(var7, "region"), var4, (Class1685)var17, 0, var10, var1);
+      method34800(var11, new File(var7, "region"), var4, (BiomeProvider)var17, 0, var10, var1);
       method34800(var11, new File(var8, "region"), var5, new Class1688(var16.getOrThrow(Class9495.field44129)), var4.size(), var10, var1);
       method34800(var11, new File(var9, "region"), var6, new Class1688(var16.getOrThrow(Class9495.field44130)), var4.size() + var5.size(), var10, var1);
       method34799(var0);
@@ -72,7 +74,7 @@ public class Class9251 {
       }
    }
 
-   private static void method34800(DynamicRegistriesImpl var0, File var1, Iterable<File> var2, Class1685 var3, int var4, int var5, Class1339 var6) {
+   private static void method34800(DynamicRegistriesImpl var0, File var1, Iterable<File> var2, BiomeProvider var3, int var4, int var5, Class1339 var6) {
       for (File var10 : var2) {
          method34801(var0, var1, var10, var3, var4, var5, var6);
          var4++;
@@ -81,7 +83,7 @@ public class Class9251 {
       }
    }
 
-   private static void method34801(DynamicRegistriesImpl var0, File var1, File var2, Class1685 var3, int var4, int var5, Class1339 var6) {
+   private static void method34801(DynamicRegistriesImpl var0, File var1, File var2, BiomeProvider var3, int var4, int var5, Class1339 var6) {
       String var9 = var2.getName();
 
       try (

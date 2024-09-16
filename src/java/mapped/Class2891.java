@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 public class Class2891<T extends Entity> extends Class2802<T> {
    private static String[] field17446;

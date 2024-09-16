@@ -6,6 +6,7 @@ import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -112,7 +113,7 @@ public class Class3211 extends Block {
       var1.playEvent(1034, var2, 0);
    }
 
-   private static boolean method11592(Class1662 var0, BlockPos var1, Direction var2) {
+   private static boolean method11592(IWorldReader var0, BlockPos var1, Direction var2) {
       for (Direction var6 : Class76.field161) {
          if (var6 != var2 && !var0.method7007(var1.method8349(var6))) {
             return false;
@@ -132,7 +133,7 @@ public class Class3211 extends Block {
    }
 
    @Override
-   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.down());
       if (var6.getBlock() != this.field18620 && !var6.isIn(Blocks.field36651)) {
          if (var6.isAir()) {

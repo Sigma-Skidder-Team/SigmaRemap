@@ -13,6 +13,7 @@ import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.movement.Step;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
+import net.minecraft.util.math.MathHelper;
 
 public class SpiderStep extends Module {
     private int field23758;

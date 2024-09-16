@@ -22,9 +22,13 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.LongArrayNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.ITickList;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeContainer;
+import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.feature.structure.StructureStart;
@@ -37,7 +41,7 @@ public class Class9725 {
 
    public static Class1672 method38087(ServerWorld var0, TemplateManager var1, Class1653 var2, ChunkPos var3, CompoundNBT var4) {
       ChunkGenerator var7 = var0.getChunkProvider().method7370();
-      Class1685 var8 = var7.method17824();
+      BiomeProvider var8 = var7.method17824();
       CompoundNBT var9 = var4.getCompound("Level");
       ChunkPos var10 = new ChunkPos(var9.getInt("xPos"), var9.getInt("zPos"));
       if (!Objects.equals(var3, var10)) {
@@ -47,7 +51,7 @@ public class Class9725 {
       BiomeContainer var11 = new BiomeContainer(
          var0.method6867().<Biome>getRegistry(Registry.BIOME_KEY), var3, var8, !var9.contains("Biomes", 11) ? null : var9.getIntArray("Biomes")
       );
-      Class8922 var12 = !var9.contains("UpgradeData", 10) ? Class8922.field40388 : new Class8922(var9.getCompound("UpgradeData"));
+      UpgradeData var12 = !var9.contains("UpgradeData", 10) ? UpgradeData.field40388 : new UpgradeData(var9.getCompound("UpgradeData"));
       Class6806 var13 = new Class6806<Block>(var0x -> var0x == null || var0x.method11579().isAir(), var3, var9.method131("ToBeTicked", 9));
       Class6806 var14 = new Class6806<Fluid>(var0x -> var0x == null || var0x == Class9479.field44064, var3, var9.method131("LiquidsToBeTicked", 9));
       boolean var15 = var9.getBoolean("isLightOn");
@@ -93,7 +97,7 @@ public class Class9725 {
          Class1672 var26 = new Class1672(var3, var12, var18, var13, var14);
          var26.method7110(var11);
          var43 = var26;
-         var26.method7092(var23);
+         var26.setInhabitedTime(var23);
          var26.method7111(ChunkStatus.method34304(var9.getString("Status")));
          if (var26.getStatus().method34306(ChunkStatus.field42141)) {
             var26.method7119(var21);
@@ -122,11 +126,11 @@ public class Class9725 {
          }
 
          var43 = new Chunk(
-            var0.method6970(), var3, var11, var12, (Class6802<Block>)var41, (Class6802<Fluid>)var44, var23, var18, var1x -> method38090(var9, var1x)
+            var0.method6970(), var3, var11, var12, (ITickList<Block>)var41, (ITickList<Fluid>)var44, var23, var18, var1x -> method38090(var9, var1x)
          );
       }
 
-      ((IChunk)var43).method7096(var15);
+      ((IChunk)var43).setLight(var15);
       CompoundNBT var42 = var9.getCompound("Heightmaps");
       EnumSet var45 = EnumSet.<Heightmap.Type>noneOf(Heightmap.Type.class);
 
@@ -204,9 +208,9 @@ public class Class9725 {
       var6.putInt("xPos", var4.x);
       var6.putInt("zPos", var4.z);
       var6.method103("LastUpdate", var0.getGameTime());
-      var6.method103("InhabitedTime", var1.method7093());
+      var6.method103("InhabitedTime", var1.getInhabitedTime());
       var6.method109("Status", var1.getStatus().method34298());
-      Class8922 var7 = var1.method7091();
+      UpgradeData var7 = var1.getUpgradeData();
       if (!var7.method32607()) {
          var6.put("UpgradeData", var7.method32608());
       }
@@ -214,7 +218,7 @@ public class Class9725 {
       ChunkSection[] var8 = var1.getSections();
       ListNBT var9 = new ListNBT();
       Class195 var10 = var0.getChunkProvider().getLightManager();
-      boolean var11 = var1.method7095();
+      boolean var11 = var1.hasLight();
 
       for (int var12 = -1; var12 < 17; var12++) {
          int var13 = var12;
@@ -294,7 +298,7 @@ public class Class9725 {
       }
 
       var6.put("Entities", var25);
-      Class6802 var29 = var1.getBlocksToBeTicked();
+      ITickList var29 = var1.getBlocksToBeTicked();
       if (!(var29 instanceof Class6806)) {
          if (!(var29 instanceof Class6801)) {
             var6.put("TileTicks", var0.method6860().method20733(var4));
@@ -305,7 +309,7 @@ public class Class9725 {
          var6.put("ToBeTicked", ((Class6806)var29).method20737());
       }
 
-      Class6802 var33 = var1.getFluidsToBeTicked();
+      ITickList var33 = var1.getFluidsToBeTicked();
       if (!(var33 instanceof Class6806)) {
          if (!(var33 instanceof Class6801)) {
             var6.put("LiquidTicks", var0.method6861().method20733(var4));

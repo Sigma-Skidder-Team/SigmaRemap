@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5958 extends Class5957<Class957> {
    private static final ResourceLocation field25982 = new ResourceLocation("textures/entity/end_gateway_beam.png");

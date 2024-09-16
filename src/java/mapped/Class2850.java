@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.util.math.MathHelper;
 
 import java.util.List;
 

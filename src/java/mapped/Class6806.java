@@ -2,12 +2,13 @@ package mapped;
 
 import it.unimi.dsi.fastutil.shorts.ShortList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ITickList;
 import net.minecraft.world.chunk.IChunk;
 
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-public class Class6806<T> implements Class6802<T> {
+public class Class6806<T> implements ITickList<T> {
    private static String[] field29627;
    public final Predicate<T> field29628;
    private final ChunkPos field29629;
@@ -34,7 +35,7 @@ public class Class6806<T> implements Class6802<T> {
       return Class9725.method38094(this.field29630);
    }
 
-   public void method20738(Class6802<T> var1, Function<BlockPos, T> var2) {
+   public void method20738(ITickList<T> var1, Function<BlockPos, T> var2) {
       for (int var5 = 0; var5 < this.field29630.length; var5++) {
          if (this.field29630[var5] != null) {
 

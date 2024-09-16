@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 
 public class Class2629 extends Class2628 {
    private static String[] field16938;
@@ -25,7 +26,7 @@ public class Class2629 extends Class2628 {
    }
 
    @Override
-   public boolean method10840(Class1662 var1, BlockPos var2) {
+   public boolean method10840(IWorldReader var1, BlockPos var2) {
       BlockPos var5 = var2.up();
       return var1.method7007(var5) && var1.method7007(var5.up()) ? var1.getBlockState(var2).method23419(var1, var2, this.field16939) : false;
    }

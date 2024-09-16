@@ -32,6 +32,7 @@ import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Team;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
@@ -39,6 +40,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -121,7 +123,7 @@ public abstract class Class6395 {
             var2.getEntityId(),
             var2.interactionManager.getGameType(),
             var2.interactionManager.method33864(),
-            BiomeManager.method20321(var12.method6967()),
+            BiomeManager.getHashedSeed(var12.method6967()),
             var14.isHardcore(),
             this.field27990.method1319(),
             this.field28001,
@@ -423,7 +425,7 @@ public abstract class Class6395 {
             new SRespawnPacket(
                var12.world.method6812(),
                var12.world.getDimensionKey(),
-               BiomeManager.method20321(var12.getServerWorld().method6967()),
+               BiomeManager.getHashedSeed(var12.getServerWorld().method6967()),
                var12.interactionManager.getGameType(),
                var12.interactionManager.method33864(),
                var12.getServerWorld().isDebug(),

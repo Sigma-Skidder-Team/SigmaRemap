@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.network.play.server.SUpdateBossInfoPacket;
+import net.minecraft.util.math.MathHelper;
 
 public class Class3626 extends Class3625 {
    private static String[] field19641;

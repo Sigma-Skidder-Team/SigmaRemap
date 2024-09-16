@@ -4,13 +4,14 @@ import com.google.common.collect.Lists;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.ITickList;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class Class6801<T> implements Class6802<T> {
+public class Class6801<T> implements ITickList<T> {
    private final List<Class6575<T>> field29613;
    private final Function<T, ResourceLocation> field29614;
 
@@ -75,7 +76,7 @@ public class Class6801<T> implements Class6802<T> {
       return new Class6801<T>(var1, var5);
    }
 
-   public void method20723(Class6802<T> var1) {
+   public void method20723(ITickList<T> var1) {
       this.field29613.forEach(var1x -> var1.method20719(var1x.field28943, (T) Class6575.method19905(var1x), var1x.field28944, var1x.field28945));
    }
 }

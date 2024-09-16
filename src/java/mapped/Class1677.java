@@ -4,11 +4,13 @@ import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 
 import javax.annotation.Nullable;
 
-public class Class1677 implements Class1663 {
+public class Class1677 implements IBlockDisplayReader {
    private static String[] field9140;
    public final int field9141;
    public final int field9142;

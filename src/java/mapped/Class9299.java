@@ -24,7 +24,9 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.server.ServerWorld;
@@ -101,7 +103,7 @@ public class Class9299 {
    public static Class6631 field42824 = new Class6631(field42823, "addDestroyEffects");
    public static Class6631 field42825 = new Class6631(field42823, "addHitEffects");
    public static Class6631 field42826 = new Class6631(field42823, "getLightValue", new Class[]{IBlockReader.class, BlockPos.class});
-   public static Class6631 field42827 = new Class6631(field42823, "getSoundType", new Class[]{Class1662.class, BlockPos.class, Entity.class});
+   public static Class6631 field42827 = new Class6631(field42823, "getSoundType", new Class[]{IWorldReader.class, BlockPos.class, Entity.class});
    public static Class6631 field42828 = new Class6631(field42823, "getStateAtViewpoint");
    public static Class6631 field42829 = new Class6631(field42823, "hasTileEntity");
    public static Class6631 field42830 = new Class6631(field42823, "isAir", new Class[]{IBlockReader.class, BlockPos.class});
@@ -114,7 +116,7 @@ public class Class9299 {
    public static Class6631 field42837 = new Class6631(field42834, "onRemovedFromWorld");
    public static Class6631 field42838 = new Class6631(field42834, "shouldRiderSit");
    public static Class6636 field42839 = new Class6636("net.minecraftforge.fluids.FluidAttributes");
-   public static Class6631 field42840 = new Class6631(field42839, "getColor", new Class[]{Class1663.class, BlockPos.class});
+   public static Class6631 field42840 = new Class6631(field42839, "getColor", new Class[]{IBlockDisplayReader.class, BlockPos.class});
    public static Class6636 field42841 = new Class6636(EntityType.class);
    public static Class6631 field42842 = new Class6631(field42841, "getTags");
    public static Class6636 field42843 = new Class6636("net.minecraftforge.event.ForgeEventFactory");

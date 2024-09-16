@@ -6,6 +6,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 
 public class Class2636 extends Class2628 {
    private static String[] field16955;
@@ -28,7 +29,7 @@ public class Class2636 extends Class2628 {
    }
 
    @Override
-   public boolean method10840(Class1662 var1, BlockPos var2) {
+   public boolean method10840(IWorldReader var1, BlockPos var2) {
       BlockState var5 = var1.getBlockState(var2);
       return var5.isIn(Blocks.field37069) && var5.<Integer>method23463(Class3484.field19342) >= 2;
    }

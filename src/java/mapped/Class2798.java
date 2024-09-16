@@ -5,6 +5,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
 import net.minecraft.util.HandSide;
+import net.minecraft.util.math.MathHelper;
 
 public class Class2798<T extends MobEntity & Class1022> extends Class2797<T> {
    private static String[] field17431;

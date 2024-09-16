@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.world.biome.Biome;
 
 public class Class7542 {
    private static String[] field32355;

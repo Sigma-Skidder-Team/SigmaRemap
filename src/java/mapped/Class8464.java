@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockDisplayReader;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class Class8464 {
    }
 
    public static List<Class8557> method29766(
-           List<Class8557> var0, Class1663 var1, BlockState var2, BlockPos var3, Direction var4, RenderType var5, long var6, Class8391 var8
+           List<Class8557> var0, IBlockDisplayReader var1, BlockState var2, BlockPos var3, Direction var4, RenderType var5, long var6, Class8391 var8
    ) {
       if (var4 != null) {
          if (var8.method29427() && Class9753.method38322(var1.getBlockState(var3.method8349(var4)), var2)) {
@@ -59,7 +60,7 @@ public class Class8464 {
       return var0 != null && var0 != Class9025.field41288 ? var0 : Class9025.field41289;
    }
 
-   private static Class8557[] method29768(Class8557 var0, Class1663 var1, BlockState var2, BlockPos var3, Direction var4, long var5, Class8391 var7) {
+   private static Class8557[] method29768(Class8557 var0, IBlockDisplayReader var1, BlockState var2, BlockPos var3, Direction var4, long var5, Class8391 var7) {
       if (var7.method29418(var0)) {
          return var7.method29429(var0);
       } else {

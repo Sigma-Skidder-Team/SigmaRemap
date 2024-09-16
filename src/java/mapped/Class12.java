@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.function.IntUnaryOperator;
 
 public class Class12 implements IntUnaryOperator {

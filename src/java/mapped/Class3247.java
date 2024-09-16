@@ -8,6 +8,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -27,7 +28,7 @@ public abstract class Class3247 extends Class3198 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       return method11547(var2, var3.down());
    }
 
@@ -95,7 +96,7 @@ public abstract class Class3247 extends Class3198 {
       }
    }
 
-   public boolean method11667(Class1662 var1, BlockPos var2, BlockState var3) {
+   public boolean method11667(IWorldReader var1, BlockPos var2, BlockState var3) {
       return false;
    }
 
@@ -115,14 +116,14 @@ public abstract class Class3247 extends Class3198 {
       }
    }
 
-   public int method11668(Class1662 var1, BlockPos var2, BlockState var3) {
+   public int method11668(IWorldReader var1, BlockPos var2, BlockState var3) {
       Direction var6 = var3.<Direction>method23463(field18484);
       Direction var7 = var6.method537();
       Direction var8 = var6.method538();
       return Math.max(this.method11669(var1, var2.method8349(var7), var7), this.method11669(var1, var2.method8349(var8), var8));
    }
 
-   public int method11669(Class1662 var1, BlockPos var2, Direction var3) {
+   public int method11669(IWorldReader var1, BlockPos var2, Direction var3) {
       BlockState var6 = var1.getBlockState(var2);
       if (!this.method11671(var6)) {
          return 0;

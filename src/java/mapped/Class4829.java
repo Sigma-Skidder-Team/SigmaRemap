@@ -6,7 +6,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
 
 public class Class4829 {
@@ -49,11 +51,11 @@ public class Class4829 {
       return method14921(var0, var3.method536(), 1.0F, var1, var2);
    }
 
-   public static boolean method14924(Class1663 var0, BlockPos var1, FluidState var2, BlockState var3, Direction var4) {
+   public static boolean method14924(IBlockDisplayReader var0, BlockPos var1, FluidState var2, BlockState var3, Direction var4) {
       return !method14923(var0, var1, var3, var4) && !method14920(var0, var1, var4, var2);
    }
 
-   public boolean method14925(Class1663 var1, BlockPos var2, Class5422 var3, FluidState var4) {
+   public boolean method14925(IBlockDisplayReader var1, BlockPos var2, Class5422 var3, FluidState var4) {
       BlockState var7 = var4.getBlockState();
 
       boolean var23;
@@ -371,7 +373,7 @@ public class Class4829 {
          .endVertex();
    }
 
-   private int method14928(Class1663 var1, BlockPos var2) {
+   private int method14928(IBlockDisplayReader var1, BlockPos var2) {
       int var5 = WorldRenderer.method944(var1, var2);
       int var6 = WorldRenderer.method944(var1, var2.up());
       int var7 = var5 & 0xFF;

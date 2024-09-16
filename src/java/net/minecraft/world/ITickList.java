@@ -1,8 +1,9 @@
-package mapped;
+package net.minecraft.world;
 
+import mapped.Class2199;
 import net.minecraft.util.math.BlockPos;
 
-public interface Class6802<T> {
+public interface ITickList<T> {
    boolean method20718(BlockPos var1, T var2);
 
    default void method20726(BlockPos var1, T var2, int var3) {

@@ -1,10 +1,10 @@
-package mapped;
+package net.minecraft.world;
 
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
 
 import javax.annotation.Nullable;
 import java.util.function.BiPredicate;

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class Class7365 extends Class7362 {

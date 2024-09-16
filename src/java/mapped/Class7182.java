@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.util.math.MathHelper;
 
 public final class Class7182 {
    public static String method22535(EffectInstance var0, float var1) {

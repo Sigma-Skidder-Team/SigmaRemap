@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import org.apache.commons.lang3.Validate;
 
 public class Class8321 {

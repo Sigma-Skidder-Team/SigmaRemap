@@ -5,6 +5,7 @@ import net.minecraft.client.GameSettings;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class848 extends Class838 {

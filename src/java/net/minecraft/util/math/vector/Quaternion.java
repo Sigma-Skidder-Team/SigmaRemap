@@ -1,6 +1,6 @@
 package net.minecraft.util.math.vector;
 
-import mapped.MathHelper;
+import net.minecraft.util.math.MathHelper;
 import mapped.Vector3f;
 
 public final class Quaternion {

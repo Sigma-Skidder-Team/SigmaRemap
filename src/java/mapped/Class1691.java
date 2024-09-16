@@ -21,7 +21,11 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.ITickList;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.server.ServerWorld;
@@ -39,8 +43,8 @@ public class Class1691 implements ISeedReader {
    private final Class6612 field9207;
    private final Random field9208;
    private final DimensionType field9209;
-   private final Class6802<Block> field9210 = new Class6803<Block>(var1x -> this.method7011(var1x).getBlocksToBeTicked());
-   private final Class6802<Fluid> field9211 = new Class6803<Fluid>(var1x -> this.method7011(var1x).getFluidsToBeTicked());
+   private final ITickList<Block> field9210 = new Class6803<Block>(var1x -> this.method7011(var1x).getBlocksToBeTicked());
+   private final ITickList<Fluid> field9211 = new Class6803<Fluid>(var1x -> this.method7011(var1x).getFluidsToBeTicked());
    private final BiomeManager field9212;
    private final ChunkPos field9213;
    private final ChunkPos field9214;
@@ -59,7 +63,7 @@ public class Class1691 implements ISeedReader {
          this.field9207 = var1.getWorldInfo();
          this.field9208 = var1.method6814();
          this.field9209 = var1.method6812();
-         this.field9212 = new BiomeManager(this, BiomeManager.method20321(this.field9206), var1.method6812().getMagnifier());
+         this.field9212 = new BiomeManager(this, BiomeManager.getHashedSeed(this.field9206), var1.method6812().getMagnifier());
          this.field9213 = ((IChunk)var2.get(0)).getPos();
          this.field9214 = ((IChunk)var2.get(var2.size() - 1)).getPos();
          this.field9215 = var1.method6893().method24339(this);
@@ -306,12 +310,12 @@ public class Class1691 implements ISeedReader {
    }
 
    @Override
-   public Class6802<Block> method6860() {
+   public ITickList<Block> method6860() {
       return this.field9210;
    }
 
    @Override
-   public Class6802<Fluid> method6861() {
+   public ITickList<Fluid> method6861() {
       return this.field9211;
    }
 

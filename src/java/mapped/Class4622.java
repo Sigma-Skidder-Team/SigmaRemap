@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public class Class4622 extends Class4566 {
    private static String[] field22138;
    private boolean field22139;

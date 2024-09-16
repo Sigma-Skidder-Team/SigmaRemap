@@ -7,6 +7,8 @@ import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import java.nio.charset.StandardCharsets;
+
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.StringTextComponent;
 
 public class Class7967 extends SimpleChannelInboundHandler<ByteBuf> {

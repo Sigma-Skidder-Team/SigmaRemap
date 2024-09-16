@@ -19,9 +19,11 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
@@ -390,7 +392,7 @@ public class Class1262 extends AbstractGui {
                      float var39 = 0.0F;
                      if (var22 != null) {
                         var39 = var14.method7000();
-                        var28 = var22.method7093();
+                        var28 = var22.getInhabitedTime();
                      }
 
                      Class9755 var41 = new Class9755(var14.method6997(), var14.method6784(), var28, var39);

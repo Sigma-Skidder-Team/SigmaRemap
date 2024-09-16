@@ -2,10 +2,13 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.provider.BiomeProvider;
+
 import java.util.List;
 import java.util.function.Supplier;
 
-public class Class1687 extends Class1685 {
+public class Class1687 extends BiomeProvider {
    public static final Codec<Class1687> field9178 = RecordCodecBuilder.create(
       var0 -> var0.group(
                Biome.field40310.fieldOf("biomes").forGetter(var0x -> var0x.field9179),
@@ -25,17 +28,17 @@ public class Class1687 extends Class1685 {
    }
 
    @Override
-   public Codec<? extends Class1685> method7199() {
+   public Codec<? extends BiomeProvider> method7199() {
       return field9178;
    }
 
    @Override
-   public Class1685 method7200(long var1) {
+   public BiomeProvider method7200(long var1) {
       return this;
    }
 
    @Override
-   public Biome method7005(int var1, int var2, int var3) {
+   public Biome getNoiseBiome(int var1, int var2, int var3) {
       return this.field9179.get(Math.floorMod((var1 >> this.field9180) + (var3 >> this.field9180), this.field9179.size())).get();
    }
 }

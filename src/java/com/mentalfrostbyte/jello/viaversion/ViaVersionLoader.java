@@ -22,6 +22,7 @@ import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CTabCompletePacket;
 import net.minecraft.network.play.server.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;

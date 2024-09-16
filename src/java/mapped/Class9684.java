@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.biome.Biome;
+
 public class Class9684 {
    private Class87 field45277;
    private Class100 field45278;

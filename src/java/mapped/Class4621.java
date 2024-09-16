@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.particles.RedstoneParticleData;
+import net.minecraft.util.math.MathHelper;
 
 public class Class4621 extends Class4566 {
    private static String[] field22136;

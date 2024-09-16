@@ -7,6 +7,7 @@ import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -103,7 +104,7 @@ public class Class7050 {
       }
    }
 
-   private static ResourceLocation method21964(Class2295 var0, BlockPos var1, Class1662 var2, ResourceLocation var3, Screen var4) {
+   private static ResourceLocation method21964(Class2295 var0, BlockPos var1, IWorldReader var2, ResourceLocation var3, Screen var4) {
       Class8149[] var7 = field30440[var0.ordinal()];
       if (var7 == null) {
          return var3;
@@ -119,7 +120,7 @@ public class Class7050 {
       }
    }
 
-   private static ResourceLocation method21965(Class2295 var0, Entity var1, Class1662 var2, ResourceLocation var3) {
+   private static ResourceLocation method21965(Class2295 var0, Entity var1, IWorldReader var2, ResourceLocation var3) {
       Class8149[] var6 = field30440[var0.ordinal()];
       if (var6 == null) {
          return var3;

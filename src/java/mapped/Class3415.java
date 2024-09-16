@@ -7,6 +7,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import java.util.Map;
@@ -163,7 +164,7 @@ public class Class3415 extends Block implements Class3207 {
       return ! VoxelShapes.compare(var1, var0, IBooleanFunction.ONLY_FIRST);
    }
 
-   private BlockState method12058(Class1662 var1, BlockState var2, BlockPos var3, BlockState var4) {
+   private BlockState method12058(IWorldReader var1, BlockState var2, BlockPos var3, BlockState var4) {
       boolean var7 = method12056(var2, field19108);
       boolean var8 = method12056(var2, field19107);
       boolean var9 = method12056(var2, field19109);
@@ -171,7 +172,7 @@ public class Class3415 extends Block implements Class3207 {
       return this.method12060(var1, var2, var3, var4, var7, var8, var9, var10);
    }
 
-   private BlockState method12059(Class1662 var1, BlockPos var2, BlockState var3, BlockPos var4, BlockState var5, Direction var6) {
+   private BlockState method12059(IWorldReader var1, BlockPos var2, BlockState var3, BlockPos var4, BlockState var5, Direction var6) {
       Direction var9 = var6.method536();
       boolean var10 = var6 != Direction.NORTH ? method12056(var3, field19108) : this.method12055(var5, var5.method23454(var1, var4, var9), var9);
       boolean var11 = var6 != Direction.EAST ? method12056(var3, field19107) : this.method12055(var5, var5.method23454(var1, var4, var9), var9);
@@ -182,7 +183,7 @@ public class Class3415 extends Block implements Class3207 {
       return this.method12060(var1, var3, var14, var15, var10, var11, var12, var13);
    }
 
-   private BlockState method12060(Class1662 var1, BlockState var2, BlockPos var3, BlockState var4, boolean var5, boolean var6, boolean var7, boolean var8) {
+   private BlockState method12060(IWorldReader var1, BlockState var2, BlockPos var3, BlockState var4, boolean var5, boolean var6, boolean var7, boolean var8) {
       VoxelShape var11 = var4.method23414(var1, var3).method19526(Direction.DOWN);
       BlockState var12 = this.method12062(var2, var5, var6, var7, var8, var11);
       return var12.method23465(field19106, Boolean.valueOf(this.method12061(var12, var4, var11)));

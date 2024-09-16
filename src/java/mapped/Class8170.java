@@ -14,10 +14,13 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
@@ -61,7 +64,7 @@ public final class Class8170 {
    }
 
    private static Biome method28416(BlockPos var0, IChunk var1) {
-      return Class1962.field12770.method8225(0L, var0.getX(), var0.getY(), var0.getZ(), var1.getBiomes());
+      return Class1962.field12770.getBiome(0L, var0.getX(), var0.getY(), var0.getZ(), var1.getBiomes());
    }
 
    public static void method28417(ServerWorld var0, Chunk var1, Class7307 var2, boolean var3, boolean var4, boolean var5) {
@@ -259,7 +262,7 @@ public final class Class8170 {
       }
    }
 
-   public static boolean method28429(Class2068 var0, Class1662 var1, BlockPos var2, EntityType<?> var3) {
+   public static boolean method28429(Class2068 var0, IWorldReader var1, BlockPos var2, EntityType<?> var3) {
       if (var0 == Class2068.field13474) {
          return true;
       } else if (var3 != null && var1.getWorldBorder().contains(var2)) {
@@ -351,7 +354,7 @@ public final class Class8170 {
       }
    }
 
-   private static BlockPos method28431(Class1662 var0, EntityType<?> var1, int var2, int var3) {
+   private static BlockPos method28431(IWorldReader var0, EntityType<?> var1, int var2, int var3) {
       int var6 = var0.method6736(Class6914.method21121(var1), var2, var3);
       BlockPos.Mutable var7 = new BlockPos.Mutable(var2, var6, var3);
       if (var0.method6812().getHasCeiling()) {

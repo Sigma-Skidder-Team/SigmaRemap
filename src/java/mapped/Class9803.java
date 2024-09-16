@@ -5,6 +5,7 @@ import com.google.common.cache.LoadingCache;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3i;
+import net.minecraft.world.IWorldReader;
 
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
@@ -59,7 +60,7 @@ public class Class9803 {
    }
 
    @Nullable
-   public Class9086 method38656(Class1662 var1, BlockPos var2) {
+   public Class9086 method38656(IWorldReader var1, BlockPos var2) {
       LoadingCache var5 = method38657(var1, false);
       int var6 = Math.max(Math.max(this.field45826, this.field45825), this.field45824);
 
@@ -79,7 +80,7 @@ public class Class9803 {
       return null;
    }
 
-   public static LoadingCache<BlockPos, Class9632> method38657(Class1662 var0, boolean var1) {
+   public static LoadingCache<BlockPos, Class9632> method38657(IWorldReader var0, boolean var1) {
       return CacheBuilder.newBuilder().build(new Class4564(var0, var1));
    }
 

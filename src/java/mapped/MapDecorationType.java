@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public enum MapDecorationType {
    field14516(false),
    field14517(true),

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.math.MathHelper;
 
 import java.util.Iterator;
 

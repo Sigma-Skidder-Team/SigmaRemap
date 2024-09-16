@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.EnumSet;
 
 public class Class2732 extends Class2595 {

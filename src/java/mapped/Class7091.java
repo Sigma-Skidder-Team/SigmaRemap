@@ -7,6 +7,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 
 import java.util.Map;
 
@@ -44,7 +45,7 @@ public class Class7091 extends Class7092 {
    }
 
    @Override
-   public Class8266 method22068(Class1662 var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
+   public Class8266 method22068(IWorldReader var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
       Block var9 = this.field30520.get(var5.field35531.getBlock());
       if (var9 != null) {
          BlockState var10 = var5.field35531;

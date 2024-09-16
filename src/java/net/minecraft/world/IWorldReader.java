@@ -1,16 +1,19 @@
-package mapped;
+package net.minecraft.world;
 
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.chunk.IChunk;
 
 import javax.annotation.Nullable;
 import java.util.stream.Stream;
 
-public interface Class1662 extends Class1663, ICollisionReader, Class1683 {
+public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, BiomeManager.IBiomeReader {
    @Nullable
    IChunk getChunk(int var1, int var2, ChunkStatus var3, boolean var4);
 
@@ -24,7 +27,7 @@ public interface Class1662 extends Class1663, ICollisionReader, Class1683 {
    BiomeManager getBiomeManager();
 
    default Biome getBiome(BlockPos var1) {
-      return this.getBiomeManager().method20323(var1);
+      return this.getBiomeManager().getBiome(var1);
    }
 
    default Stream<BlockState> method7004(AxisAlignedBB var1) {
@@ -43,9 +46,9 @@ public interface Class1662 extends Class1663, ICollisionReader, Class1683 {
    }
 
    @Override
-   default Biome method7005(int var1, int var2, int var3) {
+   default Biome getNoiseBiome(int var1, int var2, int var3) {
       IChunk var6 = this.getChunk(var1 >> 2, var3 >> 2, ChunkStatus.field42136, false);
-      return var6 != null && var6.getBiomes() != null ? var6.getBiomes().method7005(var1, var2, var3) : this.method6871(var1, var2, var3);
+      return var6 != null && var6.getBiomes() != null ? var6.getBiomes().getNoiseBiome(var1, var2, var3) : this.method6871(var1, var2, var3);
    }
 
    Biome method6871(int var1, int var2, int var3);

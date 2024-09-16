@@ -9,6 +9,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -59,7 +60,7 @@ public class Class3248 extends Class3247 {
    }
 
    @Override
-   public boolean method11667(Class1662 var1, BlockPos var2, BlockState var3) {
+   public boolean method11667(IWorldReader var1, BlockPos var2, BlockState var3) {
       return this.method11668(var1, var2, var3) > 0;
    }
 

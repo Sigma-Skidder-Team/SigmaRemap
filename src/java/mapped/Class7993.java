@@ -3,6 +3,8 @@ package mapped;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;
 import javax.annotation.Nullable;
+
+import net.minecraft.util.math.MathHelper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.openal.AL;

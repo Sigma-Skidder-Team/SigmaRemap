@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Random;
 
 public class Class8972 {

@@ -16,7 +16,9 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SMountEntityPacket;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.Difficulty;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -730,7 +732,7 @@ public abstract class MobEntity extends LivingEntity {
       return true;
    }
 
-   public boolean method4266(Class1662 var1) {
+   public boolean method4266(IWorldReader var1) {
       return !var1.method7014(this.getBoundingBox()) && var1.checkNoEntityCollision(this);
    }
 

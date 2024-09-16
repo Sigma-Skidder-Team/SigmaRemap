@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockDisplayReader;
 
 import java.util.BitSet;
 
@@ -31,7 +32,7 @@ public class Class9529 {
       this.field44351[3] = 1.0F;
    }
 
-   public void method36827(Class1663 var1, BlockState var2, BlockPos var3, Direction var4, float[] var5, BitSet var6, boolean var7) {
+   public void method36827(IBlockDisplayReader var1, BlockState var2, BlockPos var3, Direction var4, float[] var5, BitSet var6, boolean var7) {
       BlockPos var10 = !var6.get(0) ? var3 : var3.method8349(var4);
       Class2208 var11 = Class2208.method8926(var4);
       Class2001 var12 = this.field44353;

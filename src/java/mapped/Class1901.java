@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Quaternion;
 
 import java.util.Arrays;

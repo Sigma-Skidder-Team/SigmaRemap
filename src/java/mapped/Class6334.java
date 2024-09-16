@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.SoundEvent;
+import net.minecraft.util.math.MathHelper;
 
 public abstract class Class6334 extends Class6333 {
    public final Class1017 field27846;

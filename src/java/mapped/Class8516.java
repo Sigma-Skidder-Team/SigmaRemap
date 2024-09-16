@@ -4,6 +4,8 @@ import com.google.common.collect.Lists;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.util.List;
+
+import net.minecraft.util.math.MathHelper;
 import org.lwjgl.BufferUtils;
 
 public class Class8516 {

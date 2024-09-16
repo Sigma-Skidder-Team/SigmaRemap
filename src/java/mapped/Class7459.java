@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.biome.Biome;
 
 public class Class7459 implements Class7458 {
    private static String[] field32079;

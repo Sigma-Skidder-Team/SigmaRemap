@@ -5,6 +5,7 @@ import it.unimi.dsi.fastutil.longs.Long2IntLinkedOpenHashMap;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockDisplayReader;
 
 public class Class7217 {
    private static String[] field31024;
@@ -33,7 +34,7 @@ public class Class7217 {
       this.field31027.clear();
    }
 
-   public int method22664(BlockState var1, Class1663 var2, BlockPos var3) {
+   public int method22664(BlockState var1, IBlockDisplayReader var2, BlockPos var3) {
       long var6 = var3.method8332();
       if (this.field31025) {
          int var8 = this.field31026.get(var6);
@@ -54,7 +55,7 @@ public class Class7217 {
       return var9;
    }
 
-   public float method22665(BlockState var1, Class1663 var2, BlockPos var3) {
+   public float method22665(BlockState var1, IBlockDisplayReader var2, BlockPos var3) {
       long var6 = var3.method8332();
       if (this.field31025) {
          float var8 = this.field31027.get(var6);

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 
 public class Class8912 {
    private static String[] field40335;

@@ -8,6 +8,7 @@ import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
 import javax.annotation.Nullable;

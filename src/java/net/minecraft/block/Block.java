@@ -19,6 +19,7 @@ import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
@@ -178,7 +179,7 @@ public class Block extends Class3390 implements IItemProvider {
       return var0.getBlockState(var1).method23455(var0, var1, net.minecraft.util.Direction.field673, Class2156.field14142);
    }
 
-   public static boolean method11548(Class1662 var0, BlockPos var1, net.minecraft.util.Direction var2) {
+   public static boolean method11548(IWorldReader var0, BlockPos var1, net.minecraft.util.Direction var2) {
       BlockState var5 = var0.getBlockState(var1);
       return var2 == net.minecraft.util.Direction.DOWN && var5.method23446(BlockTags.field32813) ? false : var5.method23455(var0, var1, var2, Class2156.field14141);
    }

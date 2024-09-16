@@ -8,6 +8,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.palette.UpgradeData;
 
 import java.util.List;
 
@@ -163,11 +164,11 @@ public enum Class2230 implements Class2234 {
 
    private Class2230(boolean var3, Block... var4) {
       for (Block var10 : var4) {
-         Class8922.method32610().put(var10, this);
+         UpgradeData.method32610().put(var10, this);
       }
 
       if (var3) {
-         Class8922.method32611().add(this);
+         UpgradeData.method32611().add(this);
       }
    }
 }

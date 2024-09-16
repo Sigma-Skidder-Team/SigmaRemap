@@ -14,6 +14,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -217,7 +218,7 @@ public class Class1090 extends Class1018 {
    }
 
    @Override
-   public boolean method4266(Class1662 var1) {
+   public boolean method4266(IWorldReader var1) {
       if (var1.checkNoEntityCollision(this) && !var1.method7014(this.getBoundingBox())) {
          BlockPos var4 = this.getPosition();
          if (var4.getY() < var1.method6776()) {

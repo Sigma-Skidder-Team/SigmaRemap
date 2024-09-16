@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.World;
 
 import java.util.Map;
@@ -71,11 +72,11 @@ public class BlockColors {
          Class7210 var7 = var1.method23394(var2, var3);
          return var7 == null ? -1 : var7.field31006;
       } else {
-         return var6.method27608(var1, (Class1663)null, (BlockPos)null, 0);
+         return var6.method27608(var1, (IBlockDisplayReader)null, (BlockPos)null, 0);
       }
    }
 
-   public int method29465(BlockState var1, Class1663 var2, BlockPos var3, int var4) {
+   public int method29465(BlockState var1, IBlockDisplayReader var2, BlockPos var3, int var4) {
       Class8040 var7 = this.field36032.getByValue(Registry.BLOCK.getId(var1.getBlock()));
       return var7 != null ? var7.method27608(var1, var2, var3, var4) : -1;
    }

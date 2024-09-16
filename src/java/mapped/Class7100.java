@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 
 import javax.annotation.Nullable;
 
@@ -15,7 +16,7 @@ public class Class7100 extends Class7092 {
 
    @Nullable
    @Override
-   public Class8266 method22068(Class1662 var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
+   public Class8266 method22068(IWorldReader var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
       return var5;
    }
 

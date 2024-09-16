@@ -123,7 +123,7 @@ public class Class195 extends Class196 implements AutoCloseable {
 
    public CompletableFuture<IChunk> method610(IChunk var1, boolean var2) {
       ChunkPos var5 = var1.getPos();
-      var1.method7096(false);
+      var1.setLight(false);
       this.method607(var5.x, var5.z, Class2044.field13349, Util.method38515(() -> {
          ChunkSection[] var6 = var1.getSections();
 
@@ -142,7 +142,7 @@ public class Class195 extends Class196 implements AutoCloseable {
          this.field737.method6555(var5);
       }, () -> "lightChunk " + var5 + " " + var2));
       return CompletableFuture.<IChunk>supplyAsync(() -> {
-         var1.method7096(true);
+         var1.setLight(true);
          super.method609(var5, false);
          return var1;
       }, var2x -> this.method607(var5.x, var5.z, Class2044.field13350, var2x));

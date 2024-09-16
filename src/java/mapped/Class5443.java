@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 
 public final class Class5443 extends StructureStart<Class4735> {

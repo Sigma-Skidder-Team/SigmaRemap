@@ -13,6 +13,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.provider.BiomeProvider;
 import org.apache.commons.lang3.Validate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -121,7 +123,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final RegistryKey<Registry<Class9107<?>>> field16122 = createKey("worldgen/trunk_placer_type");
    public static final RegistryKey<Registry<Class9542<?>>> field16123 = createKey("worldgen/tree_decorator_type");
    public static final RegistryKey<Registry<Class7646<?>>> field16124 = createKey("worldgen/feature_size_type");
-   public static final RegistryKey<Registry<Codec<? extends Class1685>>> field16125 = createKey("worldgen/biome_source");
+   public static final RegistryKey<Registry<Codec<? extends BiomeProvider>>> field16125 = createKey("worldgen/biome_source");
    public static final RegistryKey<Registry<Codec<? extends ChunkGenerator>>> field16126 = createKey("worldgen/chunk_generator");
    public static final RegistryKey<Registry<Class7525<?>>> field16127 = createKey("worldgen/structure_processor");
    public static final RegistryKey<Registry<Class8325<?>>> field16128 = createKey("worldgen/structure_pool_element");
@@ -131,7 +133,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Registry<Class9107<?>> field16132 = method9175(field16122, () -> Class9107.field41831);
    public static final Registry<Class9542<?>> field16133 = method9175(field16123, () -> Class9542.field44429);
    public static final Registry<Class7646<?>> field16134 = method9175(field16124, () -> Class7646.field32820);
-   public static final Registry<Codec<? extends Class1685>> field16135 = method9177(field16125, Lifecycle.stable(), () -> Class1685.field9159);
+   public static final Registry<Codec<? extends BiomeProvider>> field16135 = method9177(field16125, Lifecycle.stable(), () -> BiomeProvider.field9159);
    public static final Registry<Codec<? extends ChunkGenerator>> field16136 = method9177(field16126, Lifecycle.stable(), () -> ChunkGenerator.field24984);
    public static final Registry<Class7525<?>> field16137 = method9175(field16127, () -> Class7525.field32294);
    public static final Registry<Class8325<?>> field16138 = method9175(field16128, () -> Class8325.field35773);

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.math.MathHelper;
 
 public class Class6345 extends Class6333 {
    private static String[] field27876;

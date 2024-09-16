@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.util.math.MathHelper;
 
 public class Class2876<T extends Class1094> extends Class2827<T> {
    private static String[] field17819;

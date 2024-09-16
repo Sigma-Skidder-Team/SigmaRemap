@@ -10,6 +10,7 @@ import java.util.function.Function;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import mapped.*;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.CharacterManager;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextProperties;

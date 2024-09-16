@@ -5,6 +5,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 
 import java.util.Random;
 import javax.annotation.Nullable;
@@ -19,7 +20,7 @@ public class Class7097 extends Class7092 {
 
    @Nullable
    @Override
-   public Class8266 method22068(Class1662 var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
+   public Class8266 method22068(IWorldReader var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
       Random var9 = var6.method36439(var5.field35530);
       BlockState var10 = var5.field35531;
       BlockPos var11 = var5.field35530;

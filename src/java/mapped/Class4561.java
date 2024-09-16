@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.cache.CacheLoader;
 import com.google.common.collect.Lists;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

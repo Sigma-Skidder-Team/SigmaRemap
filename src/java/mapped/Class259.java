@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.HandSide;
+import net.minecraft.util.math.MathHelper;
 
 public class Class259 extends Class219<Class1048, Class2805<Class1048>> {
    private static String[] field919;

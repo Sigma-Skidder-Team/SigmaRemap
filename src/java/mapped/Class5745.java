@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5745 extends Class5651<Class1089, Class2874<Class1089>> {
    private static final ResourceLocation field25169 = new ResourceLocation("textures/entity/chicken.png");

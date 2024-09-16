@@ -1,12 +1,15 @@
-package mapped;
+package net.minecraft.world.biome.provider;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeManager;
 
 import java.util.HashSet;
 import java.util.List;
@@ -19,23 +22,23 @@ import java.util.function.Supplier;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
-public abstract class Class1685 implements Class1683 {
-   public static final Codec<Class1685> field9159 = Registry.field16135.dispatchStable(Class1685::method7199, Function.identity());
+public abstract class BiomeProvider implements BiomeManager.IBiomeReader {
+   public static final Codec<BiomeProvider> field9159 = Registry.field16135.dispatchStable(BiomeProvider::method7199, Function.identity());
    public final Map<Structure<?>, Boolean> field9160 = Maps.newHashMap();
    public final Set<BlockState> field9161 = Sets.newHashSet();
    public final List<Biome> field9162;
 
-   public Class1685(Stream<Supplier<Biome>> var1) {
+   public BiomeProvider(Stream<Supplier<Biome>> var1) {
       this(var1.map(Supplier::get).collect(ImmutableList.toImmutableList()));
    }
 
-   public Class1685(List<Biome> var1) {
+   public BiomeProvider(List<Biome> var1) {
       this.field9162 = var1;
    }
 
-   public abstract Codec<? extends Class1685> method7199();
+   public abstract Codec<? extends BiomeProvider> method7199();
 
-   public abstract Class1685 method7200(long var1);
+   public abstract BiomeProvider method7200(long var1);
 
    public List<Biome> method7201() {
       return this.field9162;
@@ -59,7 +62,7 @@ public abstract class Class1685 implements Class1683 {
                int var20 = var7 + var18;
                int var21 = var8 + var19;
                int var22 = var9 + var17;
-               var16.add(this.method7005(var20, var21, var22));
+               var16.add(this.getNoiseBiome(var20, var21, var22));
             }
          }
       }
@@ -97,7 +100,7 @@ public abstract class Class1685 implements Class1683 {
 
                int var24 = var11 + var21;
                int var23 = var12 + var19;
-               if (var6.test(this.method7005(var24, var14, var23))) {
+               if (var6.test(this.getNoiseBiome(var24, var14, var23))) {
                   if (var15 == null || var7.nextInt(var16 + 1) == 0) {
                      var15 = new BlockPos(var24 << 2, var2, var23 << 2);
                      if (var8) {
@@ -131,10 +134,10 @@ public abstract class Class1685 implements Class1683 {
    }
 
    static {
-      Registry.<Codec<? extends Class1685>>method9194(Registry.field16135, "fixed", Class1688.field9182);
-      Registry.<Codec<? extends Class1685>>method9194(Registry.field16135, "multi_noise", Class1686.field9165);
-      Registry.<Codec<? extends Class1685>>method9194(Registry.field16135, "checkerboard", Class1687.field9178);
-      Registry.<Codec<? extends Class1685>>method9194(Registry.field16135, "vanilla_layered", Class1689.field9184);
-      Registry.<Codec<? extends Class1685>>method9194(Registry.field16135, "the_end", EndBiomeProvider.field9191);
+      Registry.<Codec<? extends BiomeProvider>>method9194(Registry.field16135, "fixed", Class1688.field9182);
+      Registry.<Codec<? extends BiomeProvider>>method9194(Registry.field16135, "multi_noise", Class1686.field9165);
+      Registry.<Codec<? extends BiomeProvider>>method9194(Registry.field16135, "checkerboard", Class1687.field9178);
+      Registry.<Codec<? extends BiomeProvider>>method9194(Registry.field16135, "vanilla_layered", Class1689.field9184);
+      Registry.<Codec<? extends BiomeProvider>>method9194(Registry.field16135, "the_end", EndBiomeProvider.field9191);
    }
 }

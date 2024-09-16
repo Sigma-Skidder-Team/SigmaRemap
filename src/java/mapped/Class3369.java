@@ -12,6 +12,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -219,7 +220,7 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       net.minecraft.util.Direction var6 = method11964(var1).method536();
       return var6 != net.minecraft.util.Direction.field673 ? Class3200.method11508(var2, var3, var6) : Block.method11548(var2, var3.up(), net.minecraft.util.Direction.DOWN);
    }

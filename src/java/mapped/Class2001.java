@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 
 public class Class2001 extends BlockPos {
    private int field13042;

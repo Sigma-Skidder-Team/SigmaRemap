@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.minecraft.world.IWorldReader;
 
 import java.util.EnumSet;
 
@@ -67,7 +69,7 @@ public class Class2727 extends Class2595 {
       this.field17234.move(MoverType.SELF, this.field17234.getMotion());
    }
 
-   private boolean method10939(Class1662 var1, BlockPos var2) {
+   private boolean method10939(IWorldReader var1, BlockPos var2) {
       BlockState var5 = var1.getBlockState(var2);
       return (var1.getFluidState(var2).method23474() || var5.isIn(Blocks.field37013)) && var5.method23440(var1, var2, Class1947.field12614);
    }

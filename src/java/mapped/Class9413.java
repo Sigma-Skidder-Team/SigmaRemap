@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.biome.Biome;
 
 public class Class9413 {
    private static String[] field43675;

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3d;
 

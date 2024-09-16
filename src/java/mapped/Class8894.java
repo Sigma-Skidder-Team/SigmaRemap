@@ -9,6 +9,7 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.MathHelper;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 public class Class8894 {

@@ -2,7 +2,10 @@ package mapped;
 
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeManager;
 
 import java.util.Optional;
 import java.util.Random;
@@ -33,7 +36,7 @@ public class Class8079 implements IAmbientSoundHandler {
    @Override
    public void tick() {
       this.field34724.values().removeIf(Class6333::method19270);
-      Biome var3 = this.field34722.method20324(this.field34720.getPosX(), this.field34720.getPosY(), this.field34720.getPosZ());
+      Biome var3 = this.field34722.getBiomeAtPosition(this.field34720.getPosX(), this.field34720.getPosY(), this.field34720.getPosZ());
       if (var3 != this.field34728) {
          this.field34728 = var3;
          this.field34725 = var3.method32524();

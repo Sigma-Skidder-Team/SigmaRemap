@@ -1,6 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.longs.Long2FloatLinkedOpenHashMap;
+import net.minecraft.world.biome.Biome;
 
 public class Class14 extends Long2FloatLinkedOpenHashMap {
    private static String[] field26;

@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.filter.ChatFilterClient;
 import net.minecraft.util.text.filter.IChatFilter;
 import net.minecraft.world.GameType;

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IWorldReader;
 
 public class Class2638 extends Class2628 {
    private static String[] field16960;
@@ -32,7 +33,7 @@ public class Class2638 extends Class2628 {
    }
 
    @Override
-   public boolean method10840(Class1662 var1, BlockPos var2) {
+   public boolean method10840(IWorldReader var1, BlockPos var2) {
       return var1.getBlockState(var2).isIn(Blocks.LAVA) && var1.getBlockState(var2.up()).method23440(var1, var2, Class1947.field12614);
    }
 }

@@ -9,6 +9,7 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.chunk.ChunkSection;
 import net.minecraft.world.gen.feature.structure.StructureStart;
@@ -22,7 +23,7 @@ public class Class1673 extends Class1672 {
    private final Chunk field9109;
 
    public Class1673(Chunk var1) {
-      super(var1.getPos(), Class8922.field40388);
+      super(var1.getPos(), UpgradeData.field40388);
       this.field9109 = var1;
    }
 
@@ -217,12 +218,12 @@ public class Class1673 extends Class1672 {
    }
 
    @Override
-   public boolean method7095() {
-      return this.field9109.method7095();
+   public boolean hasLight() {
+      return this.field9109.hasLight();
    }
 
    @Override
-   public void method7096(boolean var1) {
-      this.field9109.method7096(var1);
+   public void setLight(boolean var1) {
+      this.field9109.setLight(var1);
    }
 }

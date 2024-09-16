@@ -7,6 +7,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -63,7 +64,7 @@ public class Class3229 extends Class3227 {
    }
 
    @Override
-   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       Direction var6 = var1.<Direction>method23463(field18669);
       BlockPos var7 = var3.method8349(var6.method536());
       BlockState var8 = var2.getBlockState(var7);

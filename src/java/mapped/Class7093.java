@@ -5,6 +5,8 @@ import com.google.common.collect.UnmodifiableIterator;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.IWorldReader;
 
 import java.util.List;
 import java.util.Random;
@@ -20,7 +22,7 @@ public class Class7093 extends Class7092 {
 
    @Nullable
    @Override
-   public Class8266 method22068(Class1662 var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
+   public Class8266 method22068(IWorldReader var1, BlockPos var2, BlockPos var3, Class8266 var4, Class8266 var5, Class9463 var6) {
       Random var9 = new Random(MathHelper.method37809(var5.field35530));
       BlockState var10 = var1.getBlockState(var5.field35530);
       UnmodifiableIterator var11 = this.field30522.iterator();

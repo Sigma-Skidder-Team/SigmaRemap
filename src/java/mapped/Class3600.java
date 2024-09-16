@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 import java.util.Comparator;
 
 public class Class3600 implements Comparator<ChunkPos> {

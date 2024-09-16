@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.util.math.MathHelper;
 
 import java.util.function.BiConsumer;
 import java.util.function.BiPredicate;

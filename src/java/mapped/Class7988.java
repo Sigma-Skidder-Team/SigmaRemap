@@ -11,6 +11,8 @@ import com.mojang.datafixers.types.Type;
 import com.mojang.datafixers.types.templates.List.ListType;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.util.math.MathHelper;
+
 import java.util.List;
 import java.util.stream.LongStream;
 

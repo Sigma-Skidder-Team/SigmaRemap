@@ -15,10 +15,13 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -542,7 +545,7 @@ public class Class9680 {
       field45249 = field45226 == null && field45225 == null && field45228 == null && field45227 == null && Class7944.method26906();
    }
 
-   public static int method37850(Class8557 var0, BlockState var1, Class1663 var2, BlockPos var3, Class8391 var4) {
+   public static int method37850(Class8557 var0, BlockState var1, IBlockDisplayReader var2, BlockPos var3, Class8391 var4) {
       Block var7 = var1.getBlock();
       BlockState var8 = var1;
       if (field45230 != null) {
@@ -622,7 +625,7 @@ public class Class9680 {
       }
    }
 
-   public static Biome method37851(Class1663 var0, BlockPos var1) {
+   public static Biome method37851(IBlockDisplayReader var0, BlockPos var1) {
       Biome var4 = Class8708.method31415(var0, var1);
       if ((var4 == Class8708.field39312 || var4 == Class8708.field39313) && !Class7944.method26906()) {
          var4 = Class8708.field39311;
@@ -661,7 +664,7 @@ public class Class9680 {
       }
    }
 
-   private static int method37853(BlockState var0, Class1663 var1, BlockPos var2, Class7443 var3, Class2001 var4) {
+   private static int method37853(BlockState var0, IBlockDisplayReader var1, BlockPos var2, Class7443 var3, Class2001 var4) {
       int var7 = 0;
       int var8 = 0;
       int var9 = 0;
@@ -689,7 +692,7 @@ public class Class9680 {
       return var20 << 16 | var21 << 8 | var22;
    }
 
-   public static int method37854(Class1663 var0, BlockState var1, BlockPos var2, Class8391 var3) {
+   public static int method37854(IBlockDisplayReader var0, BlockState var1, BlockPos var2, Class8391 var3) {
       Block var6 = var1.getBlock();
       Object var7 = method37852(var1);
       if (var7 == null && var1.getMaterial() == Class8649.field38941) {
@@ -744,7 +747,7 @@ public class Class9680 {
       }
    }
 
-   public static void method37859(Class4587 var0, Class1663 var1, double var2, double var4, double var6) {
+   public static void method37859(Class4587 var0, IBlockDisplayReader var1, double var2, double var4, double var6) {
       if (field45241 != null) {
          BlockState var10 = var1.getBlockState(new BlockPos(var2, var4, var6));
          int var11 = method37860(var10, 15);
@@ -801,7 +804,7 @@ public class Class9680 {
       }
    }
 
-   public static void method37864(Class4587 var0, Class1663 var1, double var2, double var4, double var6, Class8391 var8) {
+   public static void method37864(Class4587 var0, IBlockDisplayReader var1, double var2, double var4, double var6, Class8391 var8) {
       if (field45224 != null || field45230 != null || field45250 >= 0) {
          BlockPos var11 = new BlockPos(var2, var4, var6);
          var8.method29411(field45267, var11);
@@ -825,7 +828,7 @@ public class Class9680 {
       }
    }
 
-   private static int method37865(Class1663 var0, BlockPos var1) {
+   private static int method37865(IBlockDisplayReader var0, BlockPos var1) {
       return field45252 >= 0 ? field45252 : method37855().method29465(Blocks.LILY_PAD.method11579(), var0, var1, 0);
    }
 
@@ -841,7 +844,7 @@ public class Class9680 {
       return field45258 != null ? field45258 : var0;
    }
 
-   public static Vector3d method37869(Vector3d var0, Class1663 var1, double var2, double var4, double var6) {
+   public static Vector3d method37869(Vector3d var0, IBlockDisplayReader var1, double var2, double var4, double var6) {
       if (field45231 != null) {
          int var10 = field45231.method24071(var1, var2, var4, var6, 3);
          int var11 = var10 >> 16 & 0xFF;
@@ -862,7 +865,7 @@ public class Class9680 {
       }
    }
 
-   private static Vector3d method37870(Vector3d var0, Class1663 var1, double var2, double var4, double var6) {
+   private static Vector3d method37870(Vector3d var0, IBlockDisplayReader var1, double var2, double var4, double var6) {
       if (field45233 != null) {
          int var10 = field45233.method24071(var1, var2, var4, var6, 3);
          int var11 = var10 >> 16 & 0xFF;
@@ -883,15 +886,15 @@ public class Class9680 {
       }
    }
 
-   public static Vector3d method37871(Class1663 var0, double var1, double var3, double var5) {
+   public static Vector3d method37871(IBlockDisplayReader var0, double var1, double var3, double var5) {
       return method37873(var0, var1, var3, var5, field45235, field45236);
    }
 
-   public static Vector3d method37872(Class1663 var0, double var1, double var3, double var5) {
+   public static Vector3d method37872(IBlockDisplayReader var0, double var1, double var3, double var5) {
       return method37873(var0, var1, var3, var5, field45237, field45238);
    }
 
-   public static Vector3d method37873(Class1663 var0, double var1, double var3, double var5, Class7448 var7, Class8816 var8) {
+   public static Vector3d method37873(IBlockDisplayReader var0, double var1, double var3, double var5, Class7448 var7, Class8816 var8) {
       if (var7 != null) {
          int var11 = var7.method24071(var0, var1, var3, var5, 3);
          int var12 = var11 >> 16 & 0xFF;

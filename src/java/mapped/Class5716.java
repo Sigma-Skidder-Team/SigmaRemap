@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 
 public class Class5716 extends Class5715<Class886> {
    public static final ResourceLocation field25102 = new ResourceLocation("textures/entity/trident.png");

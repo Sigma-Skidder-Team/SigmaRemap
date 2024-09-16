@@ -9,6 +9,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -120,7 +121,7 @@ public class Class3399 extends AbstractFireBlock {
    }
 
    @Override
-   public boolean method11492(BlockState var1, Class1662 var2, BlockPos var3) {
+   public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockPos var6 = var3.down();
       return var2.getBlockState(var6).method23454(var2, var6, Direction.field673) || this.method12022(var2, var3);
    }
@@ -251,7 +252,7 @@ public class Class3399 extends AbstractFireBlock {
       return false;
    }
 
-   private int method12023(Class1662 var1, BlockPos var2) {
+   private int method12023(IWorldReader var1, BlockPos var2) {
       if (!var1.method7007(var2)) {
          return 0;
       } else {

@@ -56,6 +56,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.filter.IChatFilter;
 import net.minecraft.world.GameType;
+import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.commons.lang3.StringUtils;
@@ -834,7 +835,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       }
    }
 
-   private boolean method15667(Class1662 var1, AxisAlignedBB var2) {
+   private boolean method15667(IWorldReader var1, AxisAlignedBB var2) {
       Stream<VoxelShape> var5 = var1.method7047(this.player, this.player.getBoundingBox().shrink(1.0E-5F), var0 -> true);
       VoxelShape var6 = VoxelShapes.create(var2.shrink(1.0E-5F));
       return var5.anyMatch(var1x -> ! VoxelShapes.compare(var1x, var6, IBooleanFunction.AND));

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.MathHelper;
 
 public class Class224 extends Class223<WitherEntity, Class2881<WitherEntity>> {
    private static final ResourceLocation field868 = new ResourceLocation("textures/entity/wither/wither_armor.png");

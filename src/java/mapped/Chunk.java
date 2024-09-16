@@ -16,7 +16,10 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.ITickList;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.chunk.ChunkSection;
@@ -44,14 +47,14 @@ public class Chunk implements IChunk {
    public boolean field9115;
    private final World field9116;
    private final Map<Heightmap.Type, Heightmap> field9117 = Maps.newEnumMap(Heightmap.Type.class);
-   private final Class8922 field9118;
+   private final UpgradeData field9118;
    private final Map<BlockPos, TileEntity> field9119 = Maps.newHashMap();
    private final Class51<Entity>[] field9120;
    private final Map<Structure<?>, StructureStart<?>> field9121 = Maps.newHashMap();
    private final Map<Structure<?>, LongSet> field9122 = Maps.newHashMap();
    private final ShortList[] field9123 = new ShortList[16];
-   private Class6802<Block> field9124;
-   private Class6802<Fluid> field9125;
+   private ITickList<Block> field9124;
+   private ITickList<Fluid> field9125;
    private boolean field9126;
    private long field9127;
    private volatile boolean field9128;
@@ -66,7 +69,7 @@ public class Chunk implements IChunk {
          var1,
          var2,
          var3,
-         Class8922.field40388,
+         UpgradeData.field40388,
          Class6804.<Block>method20727(),
          Class6804.<Fluid>method20727(),
          0L,
@@ -79,9 +82,9 @@ public class Chunk implements IChunk {
       World var1,
       ChunkPos var2,
       BiomeContainer var3,
-      Class8922 var4,
-      Class6802<Block> var5,
-      Class6802<Fluid> var6,
+      UpgradeData var4,
+      ITickList<Block> var5,
+      ITickList<Fluid> var6,
       long var7,
       ChunkSection[] var9,
       Consumer<Chunk> var10
@@ -120,10 +123,10 @@ public class Chunk implements IChunk {
          var1,
          var2.getPos(),
          var2.getBiomes(),
-         var2.method7091(),
+         var2.getUpgradeData(),
          var2.getBlocksToBeTicked(),
          var2.getFluidsToBeTicked(),
-         var2.method7093(),
+         var2.getInhabitedTime(),
          var2.getSections(),
          (Consumer<Chunk>)null
       );
@@ -154,7 +157,7 @@ public class Chunk implements IChunk {
          }
       }
 
-      this.method7096(var2.method7095());
+      this.setLight(var2.hasLight());
       this.field9128 = true;
    }
 
@@ -609,12 +612,12 @@ public class Chunk implements IChunk {
    }
 
    @Override
-   public Class6802<Block> getBlocksToBeTicked() {
+   public ITickList<Block> getBlocksToBeTicked() {
       return this.field9124;
    }
 
    @Override
-   public Class6802<Fluid> getFluidsToBeTicked() {
+   public ITickList<Fluid> getFluidsToBeTicked() {
       return this.field9125;
    }
 
@@ -681,12 +684,12 @@ public class Chunk implements IChunk {
    }
 
    @Override
-   public long method7093() {
+   public long getInhabitedTime() {
       return this.field9129;
    }
 
    @Override
-   public void method7092(long var1) {
+   public void setInhabitedTime(long var1) {
       this.field9129 = var1;
    }
 
@@ -746,7 +749,7 @@ public class Chunk implements IChunk {
    }
 
    @Override
-   public Class8922 method7091() {
+   public UpgradeData getUpgradeData() {
       return this.field9118;
    }
 
@@ -807,12 +810,12 @@ public class Chunk implements IChunk {
    }
 
    @Override
-   public boolean method7095() {
+   public boolean hasLight() {
       return this.field9133;
    }
 
    @Override
-   public void method7096(boolean var1) {
+   public void setLight(boolean var1) {
       this.field9133 = var1;
       this.setModified(true);
    }

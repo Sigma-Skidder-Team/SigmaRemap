@@ -34,6 +34,7 @@ import net.minecraft.resources.ResourcePackList;
 import net.minecraft.resources.VanillaPack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.StringTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

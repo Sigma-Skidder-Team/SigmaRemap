@@ -10,8 +10,10 @@ import net.minecraft.fluid.Fluid;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.palette.UpgradeData;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IStructureReader;
+import net.minecraft.world.ITickList;
 import net.minecraft.world.biome.BiomeContainer;
 import net.minecraft.world.gen.feature.structure.StructureStart;
 import org.apache.logging.log4j.LogManager;
@@ -121,15 +123,15 @@ public interface IChunk extends IBlockReader, IStructureReader {
 
    Stream<BlockPos> getLightSources();
 
-   Class6802<Block> getBlocksToBeTicked();
+   ITickList<Block> getBlocksToBeTicked();
 
-   Class6802<Fluid> getFluidsToBeTicked();
+   ITickList<Fluid> getFluidsToBeTicked();
 
-   Class8922 method7091();
+   UpgradeData getUpgradeData();
 
-   void method7092(long var1);
+   void setInhabitedTime(long var1);
 
-   long method7093();
+   long getInhabitedTime();
 
    static ShortList getList(ShortList[] var0, int var1) {
       if (var0[var1] == null) {
@@ -139,7 +141,7 @@ public interface IChunk extends IBlockReader, IStructureReader {
       return var0[var1];
    }
 
-   boolean method7095();
+   boolean hasLight();
 
-   void method7096(boolean var1);
+   void setLight(boolean var1);
 }

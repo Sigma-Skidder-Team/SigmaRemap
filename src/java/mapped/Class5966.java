@@ -4,6 +4,7 @@ import java.util.function.Function;
 
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
+import net.minecraft.world.biome.Biome;
 
 public class Class5966 {
    private static String[] field26005;

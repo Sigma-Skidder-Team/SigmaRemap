@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.math.MathHelper;
 
 public class Class943 extends TileEntity implements Class942, ITickableTileEntity {
    private static String[] field5317;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.math.MathHelper;
+
 public abstract class Class6548 implements Class6549 {
    public final Class4686 field28906;
 
