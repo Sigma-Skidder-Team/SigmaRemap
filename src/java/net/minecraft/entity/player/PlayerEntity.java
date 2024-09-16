@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mojang.authlib.GameProfile;
 import com.mojang.datafixers.util.Either;
 import mapped.*;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.TameableEntity;

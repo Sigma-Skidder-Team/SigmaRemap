@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.Block;
+
 public class Class7520 implements Class7519 {
    private static String[] field32252;
    private final Block field32253;

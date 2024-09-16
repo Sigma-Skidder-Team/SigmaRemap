@@ -2,7 +2,9 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.realmsclient.RealmsMainScreen;
+import com.mojang.realmsclient.client.RealmsClient;
 import com.mojang.realmsclient.dto.RealmsServer;
+import com.mojang.realmsclient.exception.RealmsServiceException;
 import com.mojang.realmsclient.gui.screens.RealmsLongRunningMcoTaskScreen;
 import com.mojang.realmsclient.gui.screens.RealmsResetWorldScreen;
 import net.minecraft.client.gui.AbstractGui;
@@ -268,7 +270,7 @@ public class Class815 extends Class813 {
 
    private void method2276(long var1) {
       new Thread(() -> {
-         Class4624 var5 = Class4624.method14543();
+         RealmsClient var5 = RealmsClient.method14543();
 
          try {
             this.field4422 = var5.method14548(var1);
@@ -280,7 +282,7 @@ public class Class815 extends Class813 {
                this.method2291(this.field4430);
                this.method2291(this.field4431);
             }
-         } catch (Class2435 var7) {
+         } catch (RealmsServiceException var7) {
             field4407.error("Couldn't get own world");
             this.mc.execute(() -> this.mc.displayGuiScreen(new Class821(ITextComponent.func_244388_a(var7.getMessage()), this.field4421)));
          }
@@ -464,12 +466,12 @@ public class Class815 extends Class813 {
       Class6125 var4 = this.field4422.field27451.get(this.field4422.field27456);
       var1.field27431 = var4.field27431;
       var1.field27432 = var4.field27432;
-      Class4624 var5 = Class4624.method14543();
+      RealmsClient var5 = RealmsClient.method14543();
 
       try {
          var5.method14560(this.field4422.field27443, this.field4422.field27456, var1);
          this.field4422.field27451.put(this.field4422.field27456, var1);
-      } catch (Class2435 var7) {
+      } catch (RealmsServiceException var7) {
          field4407.error("Couldn't save slot settings");
          this.mc.displayGuiScreen(new Class821(var7, this));
          return;
@@ -480,13 +482,13 @@ public class Class815 extends Class813 {
 
    public void method2294(String var1, String var2) {
       String var5 = var2.trim().isEmpty() ? null : var2;
-      Class4624 var6 = Class4624.method14543();
+      RealmsClient var6 = RealmsClient.method14543();
 
       try {
          var6.method14559(this.field4422.field27443, var1, var5);
          this.field4422.method18909(var1);
          this.field4422.method18910(var5);
-      } catch (Class2435 var8) {
+      } catch (RealmsServiceException var8) {
          field4407.error("Couldn't save settings");
          this.mc.displayGuiScreen(new Class821(var8, this));
          return;

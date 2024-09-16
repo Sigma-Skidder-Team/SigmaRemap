@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.ResourceLocation;
 

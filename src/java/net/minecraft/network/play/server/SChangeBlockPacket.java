@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.Block;
+import net.minecraft.block.Block;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.block.BlockState;

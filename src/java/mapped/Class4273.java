@@ -25,18 +25,18 @@ public class Class4273 extends Class4247 {
    public void draw(float var1) {
       if (this.method13303() != null) {
          this.method13225();
-         int var4 = this.field20914.method19405();
-         int var5 = this.method13263()
+         int var4 = this.textColor.method19405();
+         int var5 = this.getXA()
             + (
-               this.field20914.method19411() != Class2218.field14492
+               this.textColor.method19411() != Class2218.field14492
                   ? 0
-                  : (this.field20914.method19411() != Class2218.field14490 ? this.method13267() / 2 : this.method13267())
+                  : (this.textColor.method19411() != Class2218.field14490 ? this.getWidthA() / 2 : this.getWidthA())
             );
-         int var6 = this.method13265()
+         int var6 = this.getYA()
             + (
-               this.field20914.method19413() != Class2218.field14492
+               this.textColor.method19413() != Class2218.field14492
                   ? 0
-                  : (this.field20914.method19413() != Class2218.field14491 ? this.method13269() / 2 : this.method13269())
+                  : (this.textColor.method19413() != Class2218.field14491 ? this.getHeightA() / 2 : this.getHeightA())
             );
          int var7 = this.method13305().method23942(this.method13303());
          byte var8 = 18;
@@ -48,10 +48,10 @@ public class Class4273 extends Class4247 {
 
          if (var10) {
             RenderUtil.drawRect(
-               (float)this.field20895,
-               (float)this.field20896,
-               (float)(this.field20895 + this.field20897),
-               (float)(this.field20896 + this.field20898),
+               (float)this.xA,
+               (float)this.yA,
+               (float)(this.xA + this.widthA),
+               (float)(this.yA + this.heightA),
                ColorUtils.applyAlpha(-11890462, 1.0F)
             );
          }
@@ -65,15 +65,15 @@ public class Class4273 extends Class4247 {
 
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont14,
-            (float)(this.field20895 + var11 + 50),
-            (float)(this.field20896 + var12 + 5),
+            (float)(this.xA + var11 + 50),
+            (float)(this.yA + var12 + 5),
             this.field20912,
             ColorUtils.applyAlpha(var13, var1)
          );
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont12,
-            (float)(this.field20895 + var11 + 50),
-            (float)(this.field20896 + var12 + 19),
+            (float)(this.xA + var11 + 50),
+            (float)(this.yA + var12 + 19),
             this.field20710,
             ColorUtils.applyAlpha(var13, var1 * 0.5F)
          );

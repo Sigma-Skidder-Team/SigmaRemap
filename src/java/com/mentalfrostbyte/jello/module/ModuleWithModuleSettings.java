@@ -161,7 +161,7 @@ public class ModuleWithModuleSettings extends Module {
     @Override
     public void onDisable() {
         for (Module var6 : this.moduleArray) {
-            var6.method15999(false);
+            var6.setEnabled(false);
         }
     }
 

@@ -15,7 +15,7 @@ public class Class4733 implements Class4698 {
                Class7139.field30696.listOf().fieldOf("decorators").forGetter(var0x -> var0x.field22413),
                Codec.INT.fieldOf("max_water_depth").orElse(0).forGetter(var0x -> var0x.field22418),
                Codec.BOOL.fieldOf("ignore_vines").orElse(false).forGetter(var0x -> var0x.field22419),
-               Class101.field301.fieldOf("heightmap").forGetter(var0x -> var0x.field22420)
+               Heightmap.Type.field301.fieldOf("heightmap").forGetter(var0x -> var0x.field22420)
             )
             .apply(var0, Class4733::new)
    );
@@ -28,9 +28,9 @@ public class Class4733 implements Class4698 {
    public final Class7617 field22417;
    public final int field22418;
    public final boolean field22419;
-   public final Class101 field22420;
+   public final Heightmap.Type field22420;
 
-   public Class4733(Class6698 var1, Class6698 var2, Class6819 var3, Class6896 var4, Class7617 var5, List<Class7139> var6, int var7, boolean var8, Class101 var9) {
+   public Class4733(Class6698 var1, Class6698 var2, Class6819 var3, Class6896 var4, Class7617 var5, List<Class7139> var6, int var7, boolean var8, Heightmap.Type var9) {
       this.field22411 = var1;
       this.field22412 = var2;
       this.field22413 = var6;

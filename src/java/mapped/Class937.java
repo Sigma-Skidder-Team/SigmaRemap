@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.Block;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;

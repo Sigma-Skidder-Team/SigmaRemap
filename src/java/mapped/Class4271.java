@@ -25,22 +25,22 @@ public class Class4271 extends Class4247 {
    private void method13107() {
       this.method13241().clear();
       this.field20913 = ResourceRegistry.JelloLightFont18;
-      Class4240 var3;
-      this.addToList(var3 = new Class4240(this, "dropdownButton", 0, 0, this.method13269(), this.method13269(), this.field20914));
+      ButtonPanel var3;
+      this.addToList(var3 = new ButtonPanel(this, "dropdownButton", 0, 0, this.getHeightA(), this.getHeightA(), this.textColor));
       var3.method13261((var1, var2) -> {
-         var1.method13264(0);
-         var1.method13266(0);
-         var1.setWidth(this.method13267());
-         var1.setHeight(this.method13269());
+         var1.setXA(0);
+         var1.setYA(0);
+         var1.setWidthA(this.getWidthA());
+         var1.setHeightA(this.getHeightA());
       });
       var3.doThis((var1, var2) -> this.method13113(!this.method13112()));
-      int var4 = this.field20897;
+      int var4 = this.widthA;
       int var5 = 0;
 
       for (int var7 : this.field20698) {
          Class4295 var8;
          this.addToList(
-            var8 = new Class4295(this, var7 + "item", var5 % (this.field20897 / 50) * 50, this.field20898 + var5 / (this.field20897 / 50) * 50, 50, 50, var7)
+            var8 = new Class4295(this, var7 + "item", var5 % (this.widthA / 50) * 50, this.heightA + var5 / (this.widthA / 50) * 50, 50, 50, var7)
          );
          var8.method13176(this.field20699.contains(this.field20698.indexOf(var7)));
          var8.doThis((var1, var2) -> this.method13037());
@@ -49,7 +49,7 @@ public class Class4271 extends Class4247 {
    }
 
    private int method13108() {
-      return (int)((float)(50 * (this.field20698.size() / (this.field20897 / 50)) + 1 + 50) * this.field20702 * this.field20702);
+      return (int)((float)(50 * (this.field20698.size() / (this.widthA / 50)) + 1 + 50) * this.field20702 * this.field20702);
    }
 
    @Override
@@ -79,29 +79,29 @@ public class Class4271 extends Class4247 {
    @Override
    public void draw(float var1) {
       RenderUtil.drawRect(
-         (float)this.method13263(),
-         (float)this.method13265(),
-         (float)(this.method13263() + this.method13267()),
-         (float)(this.method13265() + this.method13269() + this.method13108()),
+         (float)this.getXA(),
+         (float)this.getYA(),
+         (float)(this.getXA() + this.getWidthA()),
+         (float)(this.getYA() + this.getHeightA() + this.method13108()),
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
-      RenderUtil.method11463(
-         (float)this.method13263(), (float)this.method13265(), (float)this.method13267(), (float)(this.method13269() + this.method13108()), 6.0F, var1 * 0.21F
+      RenderUtil.drawRoundedRect(
+         (float)this.getXA(), (float)this.getYA(), (float)this.getWidthA(), (float)(this.getHeightA() + this.method13108()), 6.0F, var1 * 0.21F
       );
       if (this.method13303() != null) {
          RenderUtil.method11415(this);
          RenderUtil.drawString(
             this.method13305(),
-            (float)(this.method13263() + 10),
-            (float)(this.method13265() + (this.method13269() - this.method13305().method23952()) / 2 + 1),
+            (float)(this.getXA() + 10),
+            (float)(this.getYA() + (this.getHeightA() - this.method13305().method23952()) / 2 + 1),
             this.field20912,
-            ColorUtils.applyAlpha(this.field20914.method19405(), var1 * 0.7F)
+            ColorUtils.applyAlpha(this.textColor.method19405(), var1 * 0.7F)
          );
          RenderUtil.endScissor();
       }
 
       RenderUtil.drawPortalBackground(
-         this.method13271(), this.method13272(), this.method13271() + this.method13267(), this.method13272() + this.method13269() + this.method13108()
+         this.method13271(), this.method13272(), this.method13271() + this.getWidthA(), this.method13272() + this.getHeightA() + this.method13108()
       );
       GL11.glPushMatrix();
       if (this.field20702 > 0.0F) {
@@ -111,24 +111,24 @@ public class Class4271 extends Class4247 {
       GL11.glPopMatrix();
       RenderUtil.endScissor();
       RenderUtil.method11428(
-         (float)this.method13263(),
-         (float)this.method13265(),
-         (float)(this.method13263() + this.method13267()),
-         (float)(this.method13265() + this.method13269() + this.method13108()),
-         ColorUtils.applyAlpha(this.field20914.method19407(), var1 * 0.08F)
+         (float)this.getXA(),
+         (float)this.getYA(),
+         (float)(this.getXA() + this.getWidthA()),
+         (float)(this.getYA() + this.getHeightA() + this.method13108()),
+         ColorUtils.applyAlpha(this.textColor.method19407(), var1 * 0.08F)
       );
-      int var4 = this.method13267() - (int)((float)this.method13269() / 2.0F + 0.5F);
-      int var5 = (int)((float)this.method13269() / 2.0F + 0.5F) + 1;
-      int var6 = (int)((float)this.method13269() / 6.0F + 0.5F);
-      GL11.glTranslatef((float)(this.method13263() + var4), (float)(this.method13265() + var5), 0.0F);
+      int var4 = this.getWidthA() - (int)((float)this.getHeightA() / 2.0F + 0.5F);
+      int var5 = (int)((float)this.getHeightA() / 2.0F + 0.5F) + 1;
+      int var6 = (int)((float)this.getHeightA() / 6.0F + 0.5F);
+      GL11.glTranslatef((float)(this.getXA() + var4), (float)(this.getYA() + var5), 0.0F);
       GL11.glRotatef(90.0F * this.field20702, 0.0F, 0.0F, 1.0F);
-      GL11.glTranslatef((float)(-this.method13263() - var4), (float)(-this.method13265() - var5), 0.0F);
+      GL11.glTranslatef((float)(-this.getXA() - var4), (float)(-this.getYA() - var5), 0.0F);
       RenderUtil.drawString(
          this.field20913,
-         (float)(this.method13263() + var4 - 6),
-         (float)(this.method13265() + var5 - 14),
+         (float)(this.getXA() + var4 - 6),
+         (float)(this.getYA() + var5 - 14),
          ">",
-         ColorUtils.applyAlpha(this.field20914.method19405(), var1 * 0.7F * (!this.method13114(this.method13309(), this.method13310()) ? 0.5F : 1.0F))
+         ColorUtils.applyAlpha(this.textColor.method19405(), var1 * 0.7F * (!this.method13114(this.method13309(), this.method13310()) ? 0.5F : 1.0F))
       );
    }
 
@@ -159,6 +159,6 @@ public class Class4271 extends Class4247 {
    public boolean method13114(int var1, int var2) {
       var1 -= this.method13271();
       var2 -= this.method13272();
-      return var1 >= 0 && var1 <= this.method13267() && var2 >= 0 && var2 <= this.method13269() + this.method13108();
+      return var1 >= 0 && var1 <= this.getWidthA() && var2 >= 0 && var2 <= this.getHeightA() + this.method13108();
    }
 }

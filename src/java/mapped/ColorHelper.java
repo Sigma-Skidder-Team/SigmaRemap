@@ -68,7 +68,7 @@ public class ColorHelper {
       return this;
    }
 
-   public int method19409() {
+   public int getTextColor() {
       return this.field27965;
    }
 

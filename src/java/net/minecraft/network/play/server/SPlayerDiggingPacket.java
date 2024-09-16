@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import java.io.IOException;
 
-import mapped.Block;
+import net.minecraft.block.Block;
 import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.block.BlockState;

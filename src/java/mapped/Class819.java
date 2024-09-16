@@ -3,7 +3,9 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.realmsclient.RealmsMainScreen;
+import com.mojang.realmsclient.client.RealmsClient;
 import com.mojang.realmsclient.dto.RealmsServer;
+import com.mojang.realmsclient.exception.RealmsServiceException;
 import com.mojang.realmsclient.gui.screens.RealmsLongRunningMcoTaskScreen;
 import com.mojang.realmsclient.gui.screens.RealmsResetWorldScreen;
 import net.minecraft.client.gui.AbstractGui;
@@ -208,12 +210,12 @@ public class Class819 extends RealmsScreen {
 
    private void method2337(long var1) {
       new Thread(() -> {
-         Class4624 var5 = Class4624.method14543();
+         RealmsClient var5 = RealmsClient.method14543();
 
          try {
             this.field4465 = var5.method14548(var1);
             this.method2334();
-         } catch (Class2435 var7) {
+         } catch (RealmsServiceException var7) {
             field4462.error("Couldn't get own world");
             this.mc.displayGuiScreen(new Class821(ITextComponent.func_244388_a(var7.getMessage()), this.field4463));
          }
@@ -222,13 +224,13 @@ public class Class819 extends RealmsScreen {
 
    public void method2338() {
       new Thread(() -> {
-         Class4624 var3 = Class4624.method14543();
+         RealmsClient var3 = RealmsClient.method14543();
          if (this.field4465.field27447 == Class2261.field14706) {
             this.mc.execute(() -> this.mc.displayGuiScreen(new RealmsLongRunningMcoTaskScreen(this, new Class794(this.field4465, this, this.field4464, true))));
          } else {
             try {
                this.field4464.func_223942_f().method2046(var3.method14548(this.field4466), this);
-            } catch (Class2435 var5) {
+            } catch (RealmsServiceException var5) {
                field4462.error("Couldn't get own world");
                this.mc.execute(() -> this.mc.displayGuiScreen(this.field4463));
             }
@@ -237,7 +239,7 @@ public class Class819 extends RealmsScreen {
    }
 
    private void method2339(int var1) {
-      Class4624 var4 = Class4624.method14543();
+      RealmsClient var4 = RealmsClient.method14543();
 
       try {
          Class6120 var5 = var4.method14576(this.field4465.field27443, var1);
@@ -251,7 +253,7 @@ public class Class819 extends RealmsScreen {
             }
          });
          this.mc.displayGuiScreen(var6);
-      } catch (Class2435 var7) {
+      } catch (RealmsServiceException var7) {
          field4462.error("Couldn't download world data");
          this.mc.displayGuiScreen(new Class821(var7, this));
       }

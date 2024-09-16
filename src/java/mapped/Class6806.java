@@ -2,6 +2,7 @@ package mapped;
 
 import it.unimi.dsi.fastutil.shorts.ShortList;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.chunk.IChunk;
 
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -24,7 +25,7 @@ public class Class6806<T> implements Class6802<T> {
          ListNBT var7 = var3.method154(var6);
 
          for (int var8 = 0; var8 < var7.size(); var8++) {
-            IChunk.method7094(this.field29630, var6).add(var7.method155(var8));
+            IChunk.getList(this.field29630, var6).add(var7.method155(var8));
          }
       }
    }
@@ -54,7 +55,7 @@ public class Class6806<T> implements Class6802<T> {
 
    @Override
    public void method20719(BlockPos var1, T var2, int var3, Class2199 var4) {
-      IChunk.method7094(this.field29630, var1.getY() >> 4).add(Class1672.method7113(var1));
+      IChunk.getList(this.field29630, var1.getY() >> 4).add(Class1672.method7113(var1));
    }
 
    @Override

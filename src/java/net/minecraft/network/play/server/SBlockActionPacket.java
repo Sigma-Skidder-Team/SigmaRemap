@@ -1,6 +1,6 @@
 package net.minecraft.network.play.server;
 
-import mapped.Block;
+import net.minecraft.block.Block;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.client.network.play.IClientPlayNetHandler;

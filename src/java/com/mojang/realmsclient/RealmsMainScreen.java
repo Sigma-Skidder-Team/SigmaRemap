@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.RateLimiter;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.realmsclient.client.RealmsClient;
 import com.mojang.realmsclient.dto.RealmsServer;
 import com.mojang.realmsclient.gui.screens.RealmsLongRunningMcoTaskScreen;
 import mapped.*;
@@ -152,14 +153,14 @@ public class RealmsMainScreen extends RealmsScreen {
          new Class9370[]{
             new Class9370(new char[]{'3', '2', '1', '4', '5', '6'}, () -> field4263 = !field4263),
             new Class9370(new char[]{'9', '8', '7', '1', '2', '3'}, () -> {
-               if (Class4624.field22142 != Class2174.field14272) {
+               if (RealmsClient.field22142 != Class2174.field14272) {
                   this.method2027();
                } else {
                   this.method2029();
                }
             }),
             new Class9370(new char[]{'9', '8', '7', '4', '5', '6'}, () -> {
-               if (Class4624.field22142 != Class2174.field14273) {
+               if (RealmsClient.field22142 != Class2174.field14273) {
                   this.method2028();
                } else {
                   this.method2029();
@@ -408,7 +409,7 @@ public class RealmsMainScreen extends RealmsScreen {
    private void method2021() {
       new Thread(() -> {
          List var3 = Class8458.method29753();
-         Class4624 var4 = Class4624.method14543();
+         RealmsClient var4 = RealmsClient.method14543();
          Class6116 var5 = new Class6116();
          var5.field27390 = var3;
          var5.field27391 = this.method2022();
@@ -468,19 +469,19 @@ public class RealmsMainScreen extends RealmsScreen {
    }
 
    private void method2027() {
-      if (Class4624.field22142 != Class2174.field14272) {
+      if (RealmsClient.field22142 != Class2174.field14272) {
          new Class387(this, "MCO Stage Availability Checker #1").start();
       }
    }
 
    private void method2028() {
-      if (Class4624.field22142 != Class2174.field14273) {
+      if (RealmsClient.field22142 != Class2174.field14273) {
          new Class364(this, "MCO Local Availability Checker #1").start();
       }
    }
 
    private void method2029() {
-      Class4624.method14545();
+      RealmsClient.method14545();
       field4262.method36019();
    }
 
@@ -573,11 +574,11 @@ public class RealmsMainScreen extends RealmsScreen {
       this.renderBackground(var1);
       this.field4273.render(var1, var2, var3, var4);
       this.method2039(var1, this.width / 2 - 50, 7);
-      if (Class4624.field22142 == Class2174.field14272) {
+      if (RealmsClient.field22142 == Class2174.field14272) {
          this.method2059(var1);
       }
 
-      if (Class4624.field22142 == Class2174.field14273) {
+      if (RealmsClient.field22142 == Class2174.field14273) {
          this.method2058(var1);
       }
 

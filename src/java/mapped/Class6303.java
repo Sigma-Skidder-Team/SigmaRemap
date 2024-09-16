@@ -15,7 +15,7 @@ public class Class6303 extends Class6272<Class4718> {
       if (var2.nextInt(700) == 0) {
          int var7 = var2.nextInt(16) + var4.getX();
          int var8 = var2.nextInt(16) + var4.getZ();
-         int var9 = var1.method33296(Class101.field299, var7, var8);
+         int var9 = var1.method33296(Heightmap.Type.field299, var7, var8);
          if (var9 > 0) {
             int var10 = var9 + 3 + var2.nextInt(7);
             return Stream.<BlockPos>of(new BlockPos(var7, var10, var8));

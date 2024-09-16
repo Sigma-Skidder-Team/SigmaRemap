@@ -4,8 +4,9 @@ import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3i;
+import net.minecraft.world.gen.feature.structure.StructureStart;
 
-public class Class5454 extends Class5444<Class4726> {
+public class Class5454 extends StructureStart<Class4726> {
    private static String[] field24213;
 
    public Class5454(Structure<Class4726> var1, int var2, int var3, Class9764 var4, int var5, long var6) {

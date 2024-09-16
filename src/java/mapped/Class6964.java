@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.datafixers.util.Either;
+import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.List;
@@ -19,7 +20,7 @@ public interface Class6964 extends Class6965 {
       List<IChunk> var7,
       IChunk var8
    ) {
-      if (!var8.method7080().method34306(var1)) {
+      if (!var8.getStatus().method34306(var1)) {
          this.method21488(var2, var3, var7, var8);
          if (var8 instanceof Class1672) {
             ((Class1672)var8).method7111(var1);

@@ -30,7 +30,7 @@ public class Class2933 extends Class2898<Class4734> {
 
       for (int var29 = var24; var29 <= var24 + var27; var29++) {
          for (int var30 = var26; var30 <= var26 + var27; var30++) {
-            if (var25 <= var1.method6736(Class101.field297, var29, var30)) {
+            if (var25 <= var1.method6736(Heightmap.Type.field297, var29, var30)) {
                return this.method11270(var1, var3, var5, var11, var13, var15, var17, var20, var22, var24, var25, var26, var27, var28);
             }
          }

@@ -11,6 +11,7 @@ import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import it.unimi.dsi.fastutil.objects.ObjectLinkedOpenHashSet;
 import mapped.*;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
@@ -19,6 +20,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.WaterMobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.*;
 import net.minecraft.particles.IParticleData;
@@ -35,6 +37,9 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.ChunkSection;
+import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.feature.structure.StructureStart;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -357,7 +362,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public void method6899(Chunk var1, int var2) {
-      ChunkPos var5 = var1.method7072();
+      ChunkPos var5 = var1.getPos();
       boolean var6 = this.method6795();
       int var7 = var5.getX();
       int var8 = var5.getZ();
@@ -385,7 +390,7 @@ public class ServerWorld extends World implements ISeedReader {
 
       var9.endStartSection("iceandsnow");
       if (this.rand.nextInt(16) == 0) {
-         BlockPos var19 = this.method7006(Class101.field299, this.method6818(var7, 0, var8, 15));
+         BlockPos var19 = this.method7006(Heightmap.Type.field299, this.method6818(var7, 0, var8, 15));
          BlockPos var21 = var19.down();
          Biome var23 = this.getBiome(var19);
          if (var23.method32504(this, var21)) {
@@ -403,9 +408,9 @@ public class ServerWorld extends World implements ISeedReader {
 
       var9.endStartSection("tickBlocks");
       if (var2 > 0) {
-         for (Class7038 var26 : var1.method7067()) {
+         for (ChunkSection var26 : var1.getSections()) {
             if (var26 != Chunk.field9111 && var26.method21860()) {
-               int var14 = var26.method21863();
+               int var14 = var26.getYLocation();
 
                for (int var15 = 0; var15 < var2; var15++) {
                   BlockPos var16 = this.method6818(var7, var14, var8, 15);
@@ -430,7 +435,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    public BlockPos method6900(BlockPos var1) {
-      BlockPos var4 = this.method7006(Class101.field299, var1);
+      BlockPos var4 = this.method7006(Heightmap.Type.field299, var1);
       AxisAlignedBB var5 = new AxisAlignedBB(var4, new BlockPos(var4.getX(), this.method7034(), var4.getZ())).method19664(3.0);
       List var6 = this.<LivingEntity>method6772(LivingEntity.class, var5, var1x -> var1x != null && var1x.isAlive() && this.method7022(var1x.getPosition()));
       if (var6.isEmpty()) {
@@ -565,7 +570,7 @@ public class ServerWorld extends World implements ISeedReader {
 
                var1.addedToChunk = false;
             } else {
-               this.getChunk(var4, var6).method7063(var1);
+               this.getChunk(var4, var6).addEntity(var1);
             }
          }
 
@@ -700,7 +705,7 @@ public class ServerWorld extends World implements ISeedReader {
          MathHelper.floor(var1.getPosX() / 16.0), MathHelper.floor(var1.getPosZ() / 16.0), ChunkStatus.FULL, true
       );
       if (var5 instanceof Chunk) {
-         var5.method7063(var1);
+         var5.addEntity(var1);
       }
 
       this.method6931(var1);
@@ -713,7 +718,7 @@ public class ServerWorld extends World implements ISeedReader {
                MathHelper.floor(var1.getPosX() / 16.0), MathHelper.floor(var1.getPosZ() / 16.0), ChunkStatus.FULL, var1.forceSpawn
             );
             if (var4 instanceof Chunk) {
-               var4.method7063(var1);
+               var4.addEntity(var1);
                this.method6931(var1);
                return true;
             } else {
@@ -1131,7 +1136,7 @@ public class ServerWorld extends World implements ISeedReader {
    public BlockPos method6947() {
       BlockPos var3 = new BlockPos(this.worldInfo.method20029(), this.worldInfo.method20030(), this.worldInfo.method20031());
       if (!this.getWorldBorder().contains(var3)) {
-         var3 = this.method7006(Class101.field299, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
+         var3 = this.method7006(Heightmap.Type.field299, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
       }
 
       return var3;
@@ -1354,7 +1359,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Override
-   public Stream<? extends Class5444<?>> method6969(Class2002 var1, Structure<?> var2) {
+   public Stream<? extends StructureStart<?>> method6969(Class2002 var1, Structure<?> var2) {
       return this.method6893().method24340(var1, var2);
    }
 

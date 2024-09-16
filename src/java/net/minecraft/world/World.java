@@ -3,6 +3,7 @@ package net.minecraft.world;
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
 import mapped.*;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -20,6 +21,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.chunk.IChunk;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -301,13 +303,13 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    @Override
-   public int method6736(Class101 var1, int var2, int var3) {
+   public int method6736(Heightmap.Type var1, int var2, int var3) {
       int var6;
       if (var2 >= -30000000 && var3 >= -30000000 && var2 < 30000000 && var3 < 30000000) {
          if (!this.method6843(var2 >> 4, var3 >> 4)) {
             var6 = 0;
          } else {
-            var6 = this.getChunk(var2 >> 4, var3 >> 4).method7071(var1, var2 & 15, var3 & 15) + 1;
+            var6 = this.getChunk(var2 >> 4, var3 >> 4).getTopBlockY(var1, var2 & 15, var3 & 15) + 1;
          }
       } else {
          var6 = this.method6776() + 1;
@@ -450,7 +452,7 @@ public abstract class World implements Class1660, AutoCloseable {
             var4.remove();
             this.loadedTileEntityList.remove(var5);
             if (this.method7017(var5.getPos())) {
-               this.getChunkAt(var5.getPos()).method7081(var5.getPos());
+               this.getChunkAt(var5.getPos()).removeTileEntity(var5.getPos());
             }
          }
       }
@@ -468,7 +470,7 @@ public abstract class World implements Class1660, AutoCloseable {
                if (this.method7017(var12.getPos())) {
                   Chunk var7 = this.getChunkAt(var12.getPos());
                   BlockState var13 = var7.getBlockState(var12.getPos());
-                  var7.method7062(var12.getPos(), var12);
+                  var7.addTileEntity(var12.getPos(), var12);
                   this.notifyBlockUpdate(var12.getPos(), var13, var13, 3);
                }
             }
@@ -554,7 +556,7 @@ public abstract class World implements Class1660, AutoCloseable {
    public void method6761(BlockPos var1, TileEntity var2) {
       if (!isOutsideBuildHeight(var1) && var2 != null && !var2.method3778()) {
          if (!this.processingLoadedTiles) {
-            this.getChunkAt(var1).method7062(var1, var2);
+            this.getChunkAt(var1).addTileEntity(var1, var2);
             this.method6751(var2);
          } else {
             var2.method3769(this, var1);
@@ -585,7 +587,7 @@ public abstract class World implements Class1660, AutoCloseable {
             this.tickableTileEntities.remove(var4);
          }
 
-         this.getChunkAt(var1).method7081(var1);
+         this.getChunkAt(var1).removeTileEntity(var1);
       }
    }
 
@@ -876,7 +878,7 @@ public abstract class World implements Class1660, AutoCloseable {
       if (!this.method6795()) {
          return false;
       } else if (this.method7022(var1)) {
-         if (this.method7006(Class101.field299, var1).getY() > var1.getY()) {
+         if (this.method7006(Heightmap.Type.field299, var1).getY() > var1.getY()) {
             return false;
          } else {
             Biome var4 = this.getBiome(var1);

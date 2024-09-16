@@ -35,10 +35,10 @@ public class MusicPlayer extends Class4278 {
    public static Map<String, MusicPlayerTrumnaheil> field20855 = new LinkedHashMap<String, MusicPlayerTrumnaheil>();
    public static String field20856;
    public static MusicPlayerTrumnaheil field20857;
-   private Class4240 field20858;
-   private Class4240 field20859;
-   private Class4240 field20860;
-   private Class4240 field20861;
+   private ButtonPanel field20858;
+   private ButtonPanel field20859;
+   private ButtonPanel field20860;
+   private ButtonPanel field20861;
    private Class4374 field20862;
    private int field20863;
    private Texture field20864;
@@ -56,19 +56,19 @@ public class MusicPlayer extends Class4278 {
    public MusicPlayer(IconPanel var1, String var2) {
       super(var1, var2, 875, 55, 800, 600, false);
       field20870 = System.nanoTime();
-      this.setWidth(800);
-      this.setHeight(600);
-      this.method13264(Math.abs(this.method13263()));
-      this.method13266(Math.abs(this.method13265()));
-      this.addToList(this.field20851 = new Class4339(this, "musictabs", 0, this.field20847 + 14, this.field20845, this.method13269() - 64 - this.field20848));
+      this.setWidthA(800);
+      this.setHeightA(600);
+      this.setXA(Math.abs(this.getXA()));
+      this.setYA(Math.abs(this.getYA()));
+      this.addToList(this.field20851 = new Class4339(this, "musictabs", 0, this.field20847 + 14, this.field20845, this.getHeightA() - 64 - this.field20848));
       this.addToList(
          this.field20853 = new Class4339(
-            this, "musiccontrols", this.field20845, this.method13269() - this.field20848, this.method13267() - this.field20845, this.field20848
+            this, "musiccontrols", this.field20845, this.getHeightA() - this.field20848, this.getWidthA() - this.field20845, this.field20848
          )
       );
-      this.addToList(this.field20865 = new IconPanel(this, "reShowView", 0, 0, 1, this.method13269()));
+      this.addToList(this.field20865 = new IconPanel(this, "reShowView", 0, 0, 1, this.getHeightA()));
       Class4265 var5;
-      this.addToList(var5 = new Class4265(this, "spectrumButton", 15, this.field20898 - 140, 40, 40, this.field20854.method24313()));
+      this.addToList(var5 = new Class4265(this, "spectrumButton", 15, this.heightA - 140, 40, 40, this.field20854.method24313()));
       var5.method13292(true);
       var5.doThis((var1x, var2x) -> {
          this.field20854.method24312(!this.field20854.method24313());
@@ -102,7 +102,7 @@ public class MusicPlayer extends Class4278 {
          ((Thread)var7.get(var7.size() - 1)).start();
       }
 
-      int var15 = (this.method13267() - this.field20845 - 38) / 2;
+      int var15 = (this.getWidthA() - this.field20845 - 38) / 2;
       this.field20853
          .addToList(
             this.field20858 = new Class4235(
@@ -127,18 +127,18 @@ public class MusicPlayer extends Class4278 {
                this.field20853, "backwards", var15 - 114, 23, 46, 46, ResourcesDecrypter.backwardsPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
-      this.field20853.addToList(this.field20862 = new Class4374(this.field20853, "volume", this.method13267() - this.field20845 - 19, 14, 4, 40));
+      this.field20853.addToList(this.field20862 = new Class4374(this.field20853, "volume", this.getWidthA() - this.field20845 - 19, 14, 4, 40));
       Class4249 var16;
       this.field20853.addToList(var16 = new Class4249(this.field20853, "repeat", 14, 34, 27, 20, this.field20854.method24304()));
       var16.method13036(var2x -> this.field20854.method24303(var16.method13038()));
-      this.addToList(this.field20867 = new Class4359(this, "progress", this.field20845, this.method13269() - 5, this.method13267() - this.field20845, 5));
+      this.addToList(this.field20867 = new Class4359(this, "progress", this.field20845, this.getHeightA() - 5, this.getWidthA() - this.field20845, 5));
       this.field20867.method13292(true);
       this.field20867.method13300(false);
       this.field20865.method13292(true);
       this.field20865.method13247((var1x, var2x) -> {
          this.field20874 = true;
-         this.field20871 = (float)this.method13263();
-         this.field20872 = (float)this.method13265();
+         this.field20871 = (float)this.getXA();
+         this.field20872 = (float)this.getYA();
       });
       this.field20859.method13288(false);
       this.field20858.method13288(false);
@@ -150,7 +150,7 @@ public class MusicPlayer extends Class4278 {
       this.field20862.method13708(1.0F - (float)this.field20854.method24314() / 100.0F);
       this.addToList(
          this.field20866 = new Class4301(
-            this, "search", this.field20845, 0, this.method13267() - this.field20845, this.method13269() - this.field20848, "Search..."
+            this, "search", this.field20845, 0, this.getWidthA() - this.field20845, this.getHeightA() - this.field20848, "Search..."
          )
       );
       this.field20866.method13288(true);
@@ -170,7 +170,7 @@ public class MusicPlayer extends Class4278 {
    }
 
    private void method13190(MusicPlayerTrumnaheil var1, Class9133 var2) {
-      if (!((JelloClickGUI)this.method13258()).method13314()) {
+      if (!((JelloClickGUI)this.getIcoPanel()).method13314()) {
          this.field20854.method24317(var1, var2);
          field20857 = var1;
       }
@@ -188,12 +188,12 @@ public class MusicPlayer extends Class4278 {
       float var7 = Math.min(10.0F, Math.max(0.0F, (float)var5 / 1.810361E7F));
       field20870 = System.nanoTime();
       super.method13028(var1, var2);
-      if (this.field20892 instanceof JelloClickGUI) {
+      if (this.icoPanel instanceof JelloClickGUI) {
          if (!this.method13216()) {
             if ((this.field20909 || this.field20874) && !this.method13214() && !this.method13216()) {
                this.field20874 = true;
-               int var11 = this.field20892.method13267() - 20 - this.method13267();
-               int var13 = (this.field20892.method13269() - this.method13269()) / 2;
+               int var11 = this.icoPanel.getWidthA() - 20 - this.getWidthA();
+               int var13 = (this.icoPanel.getHeightA() - this.getHeightA()) / 2;
                float var10 = this.field20871 - (float)var11;
                this.field20871 = Math.max(this.field20871 - (this.field20871 - (float)var11) * 0.25F * var7, (float)var11);
                if (!(this.field20872 - (float)var13 > 0.0F)) {
@@ -203,27 +203,27 @@ public class MusicPlayer extends Class4278 {
                }
 
                if (!(this.field20871 - (float)var11 < 0.0F)) {
-                  if (this.field20871 - (float)var11 - (float)this.method13267() > 0.0F) {
+                  if (this.field20871 - (float)var11 - (float)this.getWidthA() > 0.0F) {
                      this.field20871 = (float)var11;
                   }
                } else {
                   this.field20871 = (float)var11;
                }
 
-               this.method13264((int)this.field20871);
-               this.method13266((int)this.field20872);
+               this.setXA((int)this.field20871);
+               this.setYA((int)this.field20872);
                if (Math.abs(this.field20871 - (float)var11) < 2.0F && Math.abs(this.field20872 - (float)var13) < 2.0F) {
                   this.method13215(true);
                   this.field20874 = false;
                }
-            } else if (this.method13263() + this.method13267() > this.field20892.method13267() || this.method13263() < 0 || this.method13265() < 0) {
+            } else if (this.getXA() + this.getWidthA() > this.icoPanel.getWidthA() || this.getXA() < 0 || this.getYA() < 0) {
                if (this.field20871 == 0.0F || this.field20872 == 0.0F) {
-                  this.field20871 = (float)this.method13263();
-                  this.field20872 = (float)this.method13265();
+                  this.field20871 = (float)this.getXA();
+                  this.field20872 = (float)this.getYA();
                }
 
-               int var8 = this.field20892.method13267() - 40;
-               int var9 = (this.field20892.method13269() - this.method13269()) / 2;
+               int var8 = this.icoPanel.getWidthA() - 40;
+               int var9 = (this.icoPanel.getHeightA() - this.getHeightA()) / 2;
                this.field20871 = Math.min(this.field20871 - (this.field20871 - (float)var8) * 0.25F * var7, (float)var8);
                if (!(this.field20872 - (float)var9 > 0.0F)) {
                   Math.min(this.field20872 = this.field20872 - (this.field20872 - (float)var9) * 0.2F * var7, (float)var9);
@@ -232,7 +232,7 @@ public class MusicPlayer extends Class4278 {
                }
 
                if (!(this.field20871 - (float)var8 > 0.0F)) {
-                  if (this.field20871 - (float)var8 + (float)this.method13267() < 0.0F) {
+                  if (this.field20871 - (float)var8 + (float)this.getWidthA() < 0.0F) {
                      this.field20871 = (float)var8;
                   }
                } else {
@@ -240,23 +240,23 @@ public class MusicPlayer extends Class4278 {
                }
 
                if (Math.abs(this.field20871 - (float)var8) < 2.0F && Math.abs(this.field20872 - (float)var9) < 2.0F) {
-                  this.field20871 = (float)this.method13263();
-                  this.field20872 = (float)this.method13265();
+                  this.field20871 = (float)this.getXA();
+                  this.field20872 = (float)this.getYA();
                }
 
-               this.method13264((int)this.field20871);
-               this.method13266((int)this.field20872);
+               this.setXA((int)this.field20871);
+               this.setYA((int)this.field20872);
                this.method13215(false);
                this.method13217(false);
             }
          } else {
-            int var12 = var1 - this.field20880 - (this.field20892 == null ? 0 : this.field20892.method13271());
+            int var12 = var1 - this.field20880 - (this.icoPanel == null ? 0 : this.icoPanel.method13271());
             short var14 = 200;
-            if (var12 + this.method13267() > this.field20892.method13267() + var14 && var1 - this.field20878 > 70) {
-               int var15 = var12 - this.method13263() - var14;
-               this.method13264((int)((float)this.method13263() + (float)var15 * 0.5F));
-               this.field20871 = (float)this.method13263();
-               this.field20872 = (float)this.method13265();
+            if (var12 + this.getWidthA() > this.icoPanel.getWidthA() + var14 && var1 - this.field20878 > 70) {
+               int var15 = var12 - this.getXA() - var14;
+               this.setXA((int)((float)this.getXA() + (float)var15 * 0.5F));
+               this.field20871 = (float)this.getXA();
+               this.field20872 = (float)this.getYA();
             }
          }
       }
@@ -266,9 +266,9 @@ public class MusicPlayer extends Class4278 {
    public void draw(float var1) {
       super.method13224();
       super.method13225();
-      this.field20865.setWidth(this.method13263() + this.method13267() <= this.field20892.method13267() ? 0 : 41);
+      this.field20865.setWidthA(this.getXA() + this.getWidthA() <= this.icoPanel.getWidthA() ? 0 : 41);
       this.field20873
-         .changeDirection(this.method13263() + this.method13267() > this.field20892.method13267() && !this.field20874 ? Direction.FORWARDS : Direction.BACKWARDS);
+         .changeDirection(this.getXA() + this.getWidthA() > this.icoPanel.getWidthA() && !this.field20874 ? Direction.FORWARDS : Direction.BACKWARDS);
       var1 *= 0.5F + (1.0F - this.field20873.calcPercent()) * 0.5F;
       if (this.field20854.method24319()) {
          this.field20858.method13288(false);
@@ -279,17 +279,17 @@ public class MusicPlayer extends Class4278 {
       }
 
       RenderUtil.drawRect(
-         (float)(this.method13263() + this.field20845),
-         (float)this.method13265(),
-         (float)(this.method13263() + this.method13267()),
-         (float)(this.method13265() + this.method13269() - this.field20848),
+         (float)(this.getXA() + this.field20845),
+         (float)this.getYA(),
+         (float)(this.getXA() + this.getWidthA()),
+         (float)(this.getYA() + this.getHeightA() - this.field20848),
          ColorUtils.applyAlpha(-14277082, var1 * 0.8F)
       );
       RenderUtil.drawRect(
-         (float)this.method13263(),
-         (float)this.method13265(),
-         (float)(this.method13263() + this.field20845),
-         (float)(this.method13265() + this.method13269() - this.field20848),
+         (float)this.getXA(),
+         (float)this.getYA(),
+         (float)(this.getXA() + this.field20845),
+         (float)(this.getYA() + this.getHeightA() - this.field20848),
          ColorUtils.applyAlpha(-16777216, var1 * 0.95F)
       );
       this.method13193(var1);
@@ -298,19 +298,19 @@ public class MusicPlayer extends Class4278 {
       byte var4 = 55;
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont40,
-         (float)(var4 + this.method13263()),
-         (float)(this.method13265() + 20),
+         (float)(var4 + this.getXA()),
+         (float)(this.getYA() + 20),
          "Jello",
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont20,
-         (float)(var4 + this.method13263() + 80),
-         (float)(this.method13265() + 40),
+         (float)(var4 + this.getXA() + 80),
+         (float)(this.getYA() + 40),
          "music",
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
-      RenderUtil.method11463((float)this.method13263(), (float)this.method13265(), (float)this.method13267(), (float)this.method13269(), 14.0F, var1);
+      RenderUtil.drawRoundedRect((float)this.getXA(), (float)this.getYA(), (float)this.getWidthA(), (float)this.getHeightA(), 14.0F, var1);
       super.draw(var1);
       if (this.field20852 != null) {
          this.method13196(var1);
@@ -322,15 +322,15 @@ public class MusicPlayer extends Class4278 {
       int var5 = this.field20854.method24327();
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
-         (float)(this.method13263() + this.field20845 + 14),
-         (float)(this.method13265() + this.method13269() - 10) - 22.0F * var1,
+         (float)(this.getXA() + this.field20845 + 14),
+         (float)(this.getYA() + this.getHeightA() - 10) - 22.0F * var1,
          Class9275.method34955(var4),
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont14,
-         (float)(this.method13263() + this.method13267() - 14 - ResourceRegistry.JelloLightFont14.method23942(Class9275.method34955(var5))),
-         (float)(this.method13265() + this.method13269() - 10) - 22.0F * var1,
+         (float)(this.getXA() + this.getWidthA() - 14 - ResourceRegistry.JelloLightFont14.method23942(Class9275.method34955(var5))),
+         (float)(this.getYA() + this.getHeightA() - 10) - 22.0F * var1,
          Class9275.method34955(var5),
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
       );
@@ -340,72 +340,72 @@ public class MusicPlayer extends Class4278 {
       Texture var4 = this.field20854.method24326();
       Texture var5 = this.field20854.method24325();
       if (var4 != null && var5 != null) {
-         RenderUtil.method11449(
-            (float)this.method13263(),
-            (float)(this.method13265() + this.method13269() - this.field20848),
-            (float)this.method13267(),
+         RenderUtil.drawImage(
+            (float)this.getXA(),
+            (float)(this.getYA() + this.getHeightA() - this.field20848),
+            (float)this.getWidthA(),
             (float)this.field20848,
             var5,
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
          );
          RenderUtil.drawRect(
-            (float)this.method13263(),
-            (float)(this.method13265() + this.method13269() - this.field20848),
-            (float)(this.method13263() + this.method13267()),
-            (float)(this.method13265() + this.method13269() - 5),
+            (float)this.getXA(),
+            (float)(this.getYA() + this.getHeightA() - this.field20848),
+            (float)(this.getXA() + this.getWidthA()),
+            (float)(this.getYA() + this.getHeightA() - 5),
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
          RenderUtil.drawRect(
-            (float)this.method13263(),
-            (float)(this.method13265() + this.method13269() - 5),
-            (float)(this.method13263() + this.field20845),
-            (float)(this.method13265() + this.method13269()),
+            (float)this.getXA(),
+            (float)(this.getYA() + this.getHeightA() - 5),
+            (float)(this.getXA() + this.field20845),
+            (float)(this.getYA() + this.getHeightA()),
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
-         RenderUtil.method11449(
-            (float)(this.method13263() + (this.field20845 - 114) / 2),
-            (float)(this.method13265() + this.method13269() - 170),
+         RenderUtil.drawImage(
+            (float)(this.getXA() + (this.field20845 - 114) / 2),
+            (float)(this.getYA() + this.getHeightA() - 170),
             114.0F,
             114.0F,
             var4,
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
-         RenderUtil.method11463(
-            (float)(this.method13263() + (this.field20845 - 114) / 2), (float)(this.method13265() + this.method13269() - 170), 114.0F, 114.0F, 14.0F, var1
+         RenderUtil.drawRoundedRect(
+            (float)(this.getXA() + (this.field20845 - 114) / 2), (float)(this.getYA() + this.getHeightA() - 170), 114.0F, 114.0F, 14.0F, var1
          );
       } else {
-         RenderUtil.method11449(
-            (float)this.method13263(),
-            (float)(this.method13265() + this.method13269() - this.field20848),
-            (float)this.method13267(),
+         RenderUtil.drawImage(
+            (float)this.getXA(),
+            (float)(this.getYA() + this.getHeightA() - this.field20848),
+            (float)this.getWidthA(),
             (float)this.field20848,
             ResourcesDecrypter.bgPNG,
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * var1)
          );
          RenderUtil.drawRect(
-            (float)this.method13263(),
-            (float)(this.method13265() + this.method13269() - this.field20848),
-            (float)(this.method13263() + this.method13267()),
-            (float)(this.method13265() + this.method13269() - 5),
+            (float)this.getXA(),
+            (float)(this.getYA() + this.getHeightA() - this.field20848),
+            (float)(this.getXA() + this.getWidthA()),
+            (float)(this.getYA() + this.getHeightA() - 5),
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
          RenderUtil.drawRect(
-            (float)this.method13263(),
-            (float)(this.method13265() + this.method13269() - 5),
-            (float)(this.method13263() + this.field20845),
-            (float)(this.method13265() + this.method13269()),
+            (float)this.getXA(),
+            (float)(this.getYA() + this.getHeightA() - 5),
+            (float)(this.getXA() + this.field20845),
+            (float)(this.getYA() + this.getHeightA()),
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.43F * var1)
          );
-         RenderUtil.method11449(
-            (float)(this.method13263() + (this.field20845 - 114) / 2),
-            (float)(this.method13265() + this.method13269() - 170),
+         RenderUtil.drawImage(
+            (float)(this.getXA() + (this.field20845 - 114) / 2),
+            (float)(this.getYA() + this.getHeightA() - 170),
             114.0F,
             114.0F,
             ResourcesDecrypter.artworkPNG,
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
-         RenderUtil.method11463(
-            (float)(this.method13263() + (this.field20845 - 114) / 2), (float)(this.method13265() + this.method13269() - 170), 114.0F, 114.0F, 14.0F, var1
+         RenderUtil.drawRoundedRect(
+            (float)(this.getXA() + (this.field20845 - 114) / 2), (float)(this.getYA() + this.getHeightA() - 170), 114.0F, 114.0F, 14.0F, var1
          );
       }
    }
@@ -437,8 +437,8 @@ public class MusicPlayer extends Class4278 {
       int var10 = ResourceRegistry.JelloLightFont14.method23942(var2);
       int var11 = Math.min(var3, var10);
       int var12 = ResourceRegistry.JelloLightFont14.method23952();
-      int var13 = this.method13263() + (this.field20845 - var11) / 2;
-      int var14 = this.method13265() + this.method13269() - 50 + var4;
+      int var13 = this.getXA() + (this.field20845 - var11) / 2;
+      int var14 = this.getYA() + this.getHeightA() - 50 + var4;
       int var15 = Math.max(0, var10 - var11) * 2;
       if (var10 <= var3) {
          var9 = 0.0F;
@@ -475,7 +475,7 @@ public class MusicPlayer extends Class4278 {
 
             this.field20864 = TextureUtil.method32933(
                "blur",
-               ImageUtil.method35037(this.method13263() + this.field20845, this.method13265(), this.method13267() - this.field20845, this.field20847, 10, 10)
+               ImageUtil.method35037(this.getXA() + this.field20845, this.getYA(), this.getWidthA() - this.field20845, this.field20847, 10, 10)
             );
          } catch (IOException var5) {
             var5.printStackTrace();
@@ -487,7 +487,7 @@ public class MusicPlayer extends Class4278 {
          RenderUtil.method11448(
             (float)this.field20845,
             0.0F,
-            (float)(this.method13267() - this.field20845),
+            (float)(this.getWidthA() - this.field20845),
             (float)this.field20847,
             this.field20864,
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
@@ -497,28 +497,28 @@ public class MusicPlayer extends Class4278 {
       RenderUtil.drawRect(
          (float)this.field20845,
          0.0F,
-         (float)this.method13267(),
+         (float)this.getWidthA(),
          (float)this.field20847,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1 * 0.2F)
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont25,
-         (float)((this.method13267() - ResourceRegistry.JelloLightFont25.method23942(this.field20849) + this.field20845) / 2),
+         (float)((this.getWidthA() - ResourceRegistry.JelloLightFont25.method23942(this.field20849) + this.field20845) / 2),
          16.0F + (1.0F - var4) * 14.0F,
          this.field20849,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4)
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloMediumFont25,
-         (float)((this.method13267() - ResourceRegistry.JelloMediumFont25.method23942(this.field20849) + this.field20845) / 2),
+         (float)((this.getWidthA() - ResourceRegistry.JelloMediumFont25.method23942(this.field20849) + this.field20845) / 2),
          16.0F + (1.0F - var4) * 14.0F,
          this.field20849,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 1.0F - var4)
       );
-      RenderUtil.method11449(
+      RenderUtil.drawImage(
          (float)this.field20845,
          (float)this.field20847,
-         (float)(this.method13267() - this.field20845),
+         (float)(this.getWidthA() - this.field20845),
          20.0F,
          ResourcesDecrypter.shadowBottomPNG,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1 * 0.5F)

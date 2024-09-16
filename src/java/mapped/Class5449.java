@@ -1,8 +1,10 @@
 package mapped;
 
+import net.minecraft.world.gen.feature.structure.StructureStart;
+
 import java.util.List;
 
-public class Class5449 extends Class5444<Class4712> {
+public class Class5449 extends StructureStart<Class4712> {
    private static String[] field24207;
 
    public Class5449(Structure<Class4712> var1, int var2, int var3, Class9764 var4, int var5, long var6) {

@@ -6,6 +6,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.biome.BiomeContainer;
+import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.ArrayList;
@@ -86,15 +89,15 @@ public abstract class ChunkGenerator {
    public abstract ChunkGenerator method17791(long var1);
 
    public void method17818(Registry<Biome> var1, IChunk var2) {
-      ChunkPos var5 = var2.method7072();
-      ((Class1672)var2).method7110(new Class1684(var1, var5, this.field24986));
+      ChunkPos var5 = var2.getPos();
+      ((Class1672)var2).method7110(new BiomeContainer(var1, var5, this.field24986));
    }
 
    public void method17819(long var1, BiomeManager var3, IChunk var4, Class97 var5) {
       BiomeManager var8 = var3.method20322(this.field24985);
       Class2420 var9 = new Class2420();
       byte var10 = 8;
-      ChunkPos var11 = var4.method7072();
+      ChunkPos var11 = var4.getPos();
       int var12 = var11.x;
       int var13 = var11.z;
       Class7478 var14 = this.field24985.method7005(var11.x << 2, 0, var11.z << 2).method32507();
@@ -195,7 +198,7 @@ public abstract class ChunkGenerator {
    }
 
    public void method17825(DynamicRegistries var1, Class7480 var2, IChunk var3, TemplateManager var4, long var5) {
-      ChunkPos var9 = var3.method7072();
+      ChunkPos var9 = var3.getPos();
       Biome var10 = this.field24985.method7005((var9.x << 2) + 2, 0, (var9.z << 2) + 2);
       this.method17826(Class9438.field43844, var1, var2, var3, var4, var5, var9, var10);
 
@@ -205,30 +208,30 @@ public abstract class ChunkGenerator {
    }
 
    private void method17826(Class9300<?, ?> var1, DynamicRegistries var2, Class7480 var3, IChunk var4, TemplateManager var5, long var6, ChunkPos var8, Biome var9) {
-      Class5444 var12 = var3.method24341(Class2002.method8391(var4.method7072(), 0), var1.field43174, var4);
+      StructureStart var12 = var3.method24341(Class2002.method8391(var4.getPos(), 0), var1.field43174, var4);
       int var13 = var12 == null ? 0 : var12.method17123();
       Class8483 var14 = this.field24987.method38381(var1.field43174);
       if (var14 != null) {
-         Class5444 var15 = var1.method35098(var2, this, this.field24985, var5, var6, var8, var9, var13, var14);
-         var3.method24342(Class2002.method8391(var4.method7072(), 0), var1.field43174, var15, var4);
+         StructureStart var15 = var1.method35098(var2, this, this.field24985, var5, var6, var8, var9, var13, var14);
+         var3.method24342(Class2002.method8391(var4.getPos(), 0), var1.field43174, var15, var4);
       }
    }
 
    public void method17827(ISeedReader var1, Class7480 var2, IChunk var3) {
       byte var6 = 8;
-      int var7 = var3.method7072().x;
-      int var8 = var3.method7072().z;
+      int var7 = var3.getPos().x;
+      int var8 = var3.getPos().z;
       int var9 = var7 << 4;
       int var10 = var8 << 4;
-      Class2002 var11 = Class2002.method8391(var3.method7072(), 0);
+      Class2002 var11 = Class2002.method8391(var3.getPos(), 0);
 
       for (int var12 = var7 - 8; var12 <= var7 + 8; var12++) {
          for (int var13 = var8 - 8; var13 <= var8 + 8; var13++) {
             long var14 = ChunkPos.asLong(var12, var13);
 
-            for (Class5444 var17 : var1.getChunk(var12, var13).method7074().values()) {
+            for (StructureStart var17 : var1.getChunk(var12, var13).getStructureStarts().values()) {
                try {
-                  if (var17 != Class5444.field24194 && var17.method17110().method38391(var9, var10, var9 + 15, var10 + 15)) {
+                  if (var17 != StructureStart.field24194 && var17.method17110().method38391(var9, var10, var9 + 15, var10 + 15)) {
                      var2.method24343(var11, var17.method17125(), var14, var3);
                      Class7393.method23619(var1, var17);
                   }
@@ -251,15 +254,15 @@ public abstract class ChunkGenerator {
       return 63;
    }
 
-   public abstract int method17797(int var1, int var2, Class101 var3);
+   public abstract int method17797(int var1, int var2, Heightmap.Type var3);
 
    public abstract IBlockReader method17798(int var1, int var2);
 
-   public int method17828(int var1, int var2, Class101 var3) {
+   public int method17828(int var1, int var2, Heightmap.Type var3) {
       return this.method17797(var1, var2, var3);
    }
 
-   public int method17829(int var1, int var2, Class101 var3) {
+   public int method17829(int var1, int var2, Heightmap.Type var3) {
       return this.method17797(var1, var2, var3) - 1;
    }
 

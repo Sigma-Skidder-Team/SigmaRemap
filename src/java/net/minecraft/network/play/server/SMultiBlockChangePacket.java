@@ -3,11 +3,13 @@ package net.minecraft.network.play.server;
 import it.unimi.dsi.fastutil.shorts.ShortIterator;
 import it.unimi.dsi.fastutil.shorts.ShortSet;
 import mapped.*;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.chunk.ChunkSection;
 
 import java.io.IOException;
 import java.util.function.BiConsumer;
@@ -22,7 +24,7 @@ public class SMultiBlockChangePacket implements Packet<IClientPlayNetHandler> {
    public SMultiBlockChangePacket() {
    }
 
-   public SMultiBlockChangePacket(Class2002 var1, ShortSet var2, Class7038 var3, boolean var4) {
+   public SMultiBlockChangePacket(Class2002 var1, ShortSet var2, ChunkSection var3, boolean var4) {
       this.field24642 = var1;
       this.field24645 = var4;
       this.method17460(var2.size());

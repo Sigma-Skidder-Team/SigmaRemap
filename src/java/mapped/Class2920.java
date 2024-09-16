@@ -18,7 +18,7 @@ public class Class2920 extends Class2898<Class4703> {
       if (!var5.field22315) {
          var9 = var4;
       } else {
-         var9 = var1.method7006(Class101.field295, var4);
+         var9 = var1.method7006(Heightmap.Type.field295, var4);
       }
 
       int var10 = 0;

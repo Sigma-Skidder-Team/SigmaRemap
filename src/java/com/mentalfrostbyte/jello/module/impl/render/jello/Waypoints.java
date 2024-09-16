@@ -130,7 +130,7 @@ public class Waypoints extends Module {
                             var9 += 16;
                         }
 
-                        int var11 = mc.world.method7011(var6).method7070(Class101.field296).method24579(var9, var10);
+                        int var11 = mc.world.method7011(var6).getHeightmap(Heightmap.Type.field296).method24579(var9, var10);
                         if (var11 == 0) {
                             var11 = 64;
                         }
@@ -269,7 +269,7 @@ public class Waypoints extends Module {
         RenderUtil.drawRect(
                 (float) (-var9.method23942(var4) / 2 - 14), -5.0F, (float) var9.method23942(var4) / 2.0F + 14.0F, (float) (var9.method23952() + 7), var11
         );
-        RenderUtil.method11463(
+        RenderUtil.drawRoundedRect(
                 (float) (-var9.method23942(var4) / 2 - 14), -5.0F, (float) (var9.method23942(var4) + 28), (float) (var9.method23952() + 12), 20.0F, 0.5F
         );
         GL11.glTranslated(-var9.method23942(var4) / 2, 0.0, 0.0);

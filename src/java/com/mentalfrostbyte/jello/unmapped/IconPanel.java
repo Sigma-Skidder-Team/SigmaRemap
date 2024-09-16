@@ -24,11 +24,11 @@ public class IconPanel implements IGuiEventListener {
     private final List<Class8446> field20923 = new ArrayList<Class8446>();
     private final List<Class7381> field20924 = new ArrayList<Class7381>();
     public String field20891;
-    public IconPanel field20892;
-    public int field20895;
-    public int field20896;
-    public int field20897;
-    public int field20898;
+    public IconPanel icoPanel;
+    public int xA;
+    public int yA;
+    public int widthA;
+    public int heightA;
     public float field20899 = 1.0F;
     public float field20900 = 1.0F;
     public int field20901 = 0;
@@ -44,7 +44,7 @@ public class IconPanel implements IGuiEventListener {
     public boolean field20911;
     public String field20912;
     public ClientResource field20913;
-    public ColorHelper field20914;
+    public ColorHelper textColor;
     private final ArrayList<Runnable> field20915 = new ArrayList<Runnable>();
     private boolean field20917;
     private IconPanel field20919;
@@ -69,13 +69,13 @@ public class IconPanel implements IGuiEventListener {
 
     public IconPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9) {
         this.field20891 = var2;
-        this.field20892 = var1;
-        this.field20895 = var3;
-        this.field20896 = var4;
-        this.field20897 = var5;
-        this.field20898 = var6;
+        this.icoPanel = var1;
+        this.xA = var3;
+        this.yA = var4;
+        this.widthA = var5;
+        this.heightA = var6;
         this.field20912 = var8;
-        this.field20914 = var7;
+        this.textColor = var7;
         this.field20913 = var9;
         this.field20903 = true;
         this.field20904 = true;
@@ -166,7 +166,7 @@ public class IconPanel implements IGuiEventListener {
 
         for (Class6664 var11 : this.method13260()) {
             if (this.field20903) {
-                var11.method20320(this, this.method13258());
+                var11.method20320(this, this.getIcoPanel());
             }
         }
 
@@ -175,9 +175,9 @@ public class IconPanel implements IGuiEventListener {
     }
 
     public void method13224() {
-        GL11.glTranslatef((float) (this.method13263() + this.method13267() / 2), (float) (this.method13265() + this.method13269() / 2), 0.0F);
+        GL11.glTranslatef((float) (this.getXA() + this.getWidthA() / 2), (float) (this.getYA() + this.getHeightA() / 2), 0.0F);
         GL11.glScalef(this.method13273(), this.method13275(), 0.0F);
-        GL11.glTranslatef((float) (-this.method13263() - this.method13267() / 2), (float) (-this.method13265() - this.method13269() / 2), 0.0F);
+        GL11.glTranslatef((float) (-this.getXA() - this.getWidthA() / 2), (float) (-this.getYA() - this.getHeightA() / 2), 0.0F);
     }
 
     public void method13225() {
@@ -191,7 +191,7 @@ public class IconPanel implements IGuiEventListener {
     public final void method13226(float var1) {
         GlStateManager.method23696();
         GL11.glAlphaFunc(519, 0.0F);
-        GL11.glTranslatef((float) this.method13263(), (float) this.method13265(), 0.0F);
+        GL11.glTranslatef((float) this.getXA(), (float) this.getYA(), 0.0F);
 
         for (IconPanel var5 : this.field20893) {
             if (var5.method13287()) {
@@ -204,7 +204,7 @@ public class IconPanel implements IGuiEventListener {
 
     public boolean method13227() {
         for (IconPanel var4 : this.method13241()) {
-            if (var4 instanceof Class4281 && var4.field20905) {
+            if (var4 instanceof UIInput && var4.field20905) {
                 return true;
             }
 
@@ -252,11 +252,11 @@ public class IconPanel implements IGuiEventListener {
 
         for (int var7 = this.field20893.size() - 1; var7 >= 0; var7--) {
             IconPanel var8 = this.field20893.get(var7);
-            boolean var9 = var8.method13258() != null
-                    && var8.method13258() instanceof Class4339
-                    && var8.method13258().method13114(var1, var2)
-                    && var8.method13258().method13287()
-                    && var8.method13258().isHovered();
+            boolean var9 = var8.getIcoPanel() != null
+                    && var8.getIcoPanel() instanceof Class4339
+                    && var8.getIcoPanel().method13114(var1, var2)
+                    && var8.getIcoPanel().method13287()
+                    && var8.getIcoPanel().isHovered();
             if (var6 || !var8.isHovered() || !var8.method13287() || !var8.method13114(var1, var2) && !var9) {
                 var8.method13145(false);
                 if (var8 != null) {
@@ -315,12 +315,12 @@ public class IconPanel implements IGuiEventListener {
     public boolean method13114(int var1, int var2) {
         var1 -= this.method13271();
         var2 -= this.method13272();
-        return var1 >= 0 && var1 <= this.field20897 && var2 >= 0 && var2 <= this.field20898;
+        return var1 >= 0 && var1 <= this.widthA && var2 >= 0 && var2 <= this.heightA;
     }
 
     public boolean method13228(int var1, int var2, boolean var3) {
         boolean var6 = this.method13114(var1, var2);
-        if (var6 && this.field20892 != null) {
+        if (var6 && this.icoPanel != null) {
             if (var3) {
                 for (IconPanel var8 : this.method13241()) {
                     if (var8.method13287() && var8.method13114(var1, var2)) {
@@ -331,7 +331,7 @@ public class IconPanel implements IGuiEventListener {
 
             IconPanel var11 = this;
 
-            for (IconPanel var12 = this.method13258(); var12 != null; var12 = var12.method13258()) {
+            for (IconPanel var12 = this.getIcoPanel(); var12 != null; var12 = var12.getIcoPanel()) {
                 for (int var9 = var12.method13240(var11) + 1; var9 < var12.method13241().size(); var9++) {
                     IconPanel var10 = var12.method13241().get(var9);
                     if (var10 != var11 && var10.method13287() && var10.method13114(var1, var2)) {
@@ -360,7 +360,7 @@ public class IconPanel implements IGuiEventListener {
                 }
             }
 
-            var1.method13259(this);
+            var1.setIcoPanel(this);
             if (this.field20917) {
                 this.field20916.add(var1);
             } else {
@@ -391,7 +391,7 @@ public class IconPanel implements IGuiEventListener {
                 }
             }
 
-            var1.method13259(this);
+            var1.setIcoPanel(this);
             this.field20916.add(var1);
         }
     }
@@ -404,7 +404,7 @@ public class IconPanel implements IGuiEventListener {
                 }
             }
 
-            var1.method13259(this);
+            var1.setIcoPanel(this);
 
             try {
                 this.field20893.add(var1);
@@ -460,14 +460,14 @@ public class IconPanel implements IGuiEventListener {
 
     public void method13242() {
         this.method13145(true);
-        if (this.field20892 != null) {
-            this.field20892.field20919 = this;
-            this.field20892.method13242();
+        if (this.icoPanel != null) {
+            this.icoPanel.field20919 = this;
+            this.icoPanel.method13242();
         }
     }
 
     public void method13243() {
-        for (IconPanel var4 : this.field20892.method13241()) {
+        for (IconPanel var4 : this.icoPanel.method13241()) {
             if (var4 == this) {
                 return;
             }
@@ -483,14 +483,14 @@ public class IconPanel implements IGuiEventListener {
     public JSONObject method13160(JSONObject var1) {
         if (this.method13299()) {
             var1.put("id", this.method13257());
-            var1.put("x", this.method13263());
-            var1.put("y", this.method13265());
+            var1.put("x", this.getXA());
+            var1.put("y", this.getYA());
             if (this.method13301()) {
-                var1.put("width", this.method13267());
-                var1.put("height", this.method13269());
+                var1.put("width", this.getWidthA());
+                var1.put("height", this.getHeightA());
             }
 
-            var1.put("index", this.field20892 == null ? 0 : this.field20892.method13240(this));
+            var1.put("index", this.icoPanel == null ? 0 : this.icoPanel.method13240(this));
             return this.method13245(var1);
         } else {
             return var1;
@@ -515,11 +515,11 @@ public class IconPanel implements IGuiEventListener {
 
     public void method13161(JSONObject var1) {
         if (this.method13299()) {
-            this.field20895 = Class8000.method27326(var1, "x", this.field20895);
-            this.field20896 = Class8000.method27326(var1, "y", this.field20896);
+            this.xA = Class8000.method27326(var1, "x", this.xA);
+            this.yA = Class8000.method27326(var1, "y", this.yA);
             if (this.method13301()) {
-                this.field20897 = Class8000.method27326(var1, "width", this.field20897);
-                this.field20898 = Class8000.method27326(var1, "height", this.field20898);
+                this.widthA = Class8000.method27326(var1, "width", this.widthA);
+                this.heightA = Class8000.method27326(var1, "height", this.heightA);
             }
 
             JSONArray var4 = Class8000.method27332(var1, "children");
@@ -557,7 +557,7 @@ public class IconPanel implements IGuiEventListener {
                 return false;
             } else {
                 IconPanel var4 = (IconPanel) var1;
-                return this.field20891.equals(var4.field20891) && (this.method13258() == null || this.method13258().equals(var4.method13258()));
+                return this.field20891.equals(var4.field20891) && (this.getIcoPanel() == null || this.getIcoPanel().equals(var4.getIcoPanel()));
             }
         } else {
             return true;
@@ -630,12 +630,12 @@ public class IconPanel implements IGuiEventListener {
         return this.field20891;
     }
 
-    public IconPanel method13258() {
-        return this.field20892;
+    public IconPanel getIcoPanel() {
+        return this.icoPanel;
     }
 
-    public void method13259(IconPanel var1) {
-        this.field20892 = var1;
+    public void setIcoPanel(IconPanel var1) {
+        this.icoPanel = var1;
     }
 
     public List<Class6664> method13260() {
@@ -650,44 +650,44 @@ public class IconPanel implements IGuiEventListener {
         this.field20894.remove(var1);
     }
 
-    public int method13263() {
-        return this.field20895;
+    public int getXA() {
+        return this.xA;
     }
 
-    public void method13264(int var1) {
-        this.field20895 = var1;
+    public void setXA(int var1) {
+        this.xA = var1;
     }
 
-    public int method13265() {
-        return this.field20896;
+    public int getYA() {
+        return this.yA;
     }
 
-    public void method13266(int var1) {
-        this.field20896 = var1;
+    public void setYA(int var1) {
+        this.yA = var1;
     }
 
-    public int method13267() {
-        return this.field20897;
+    public int getWidthA() {
+        return this.widthA;
     }
 
-    public void setWidth(int var1) {
-        this.field20897 = var1;
+    public void setWidthA(int var1) {
+        this.widthA = var1;
     }
 
-    public int method13269() {
-        return this.field20898;
+    public int getHeightA() {
+        return this.heightA;
     }
 
-    public void setHeight(int var1) {
-        this.field20898 = var1;
+    public void setHeightA(int var1) {
+        this.heightA = var1;
     }
 
     public int method13271() {
-        return this.field20892 == null ? this.field20895 : this.field20892.method13271() + this.field20895;
+        return this.icoPanel == null ? this.xA : this.icoPanel.method13271() + this.xA;
     }
 
     public int method13272() {
-        return this.field20892 == null ? this.field20896 : this.field20892.method13272() + this.field20896;
+        return this.icoPanel == null ? this.yA : this.icoPanel.method13272() + this.yA;
     }
 
     public float method13273() {
@@ -695,7 +695,7 @@ public class IconPanel implements IGuiEventListener {
     }
 
     public float method13274() {
-        return this.method13258() == null ? this.method13273() : this.method13258().method13274() * this.method13273();
+        return this.getIcoPanel() == null ? this.method13273() : this.getIcoPanel().method13274() * this.method13273();
     }
 
     public float method13275() {
@@ -703,7 +703,7 @@ public class IconPanel implements IGuiEventListener {
     }
 
     public float method13276() {
-        return this.method13258() == null ? this.method13275() : this.method13258().method13276() * this.method13275();
+        return this.getIcoPanel() == null ? this.method13275() : this.getIcoPanel().method13276() * this.method13275();
     }
 
     public void method13277(float var1) {
@@ -724,7 +724,7 @@ public class IconPanel implements IGuiEventListener {
     }
 
     public int method13281() {
-        return this.method13258() == null ? this.method13280() : this.method13258().method13281() * this.method13280();
+        return this.getIcoPanel() == null ? this.method13280() : this.getIcoPanel().method13281() * this.method13280();
     }
 
     public int method13282() {
@@ -732,7 +732,7 @@ public class IconPanel implements IGuiEventListener {
     }
 
     public int method13283() {
-        return this.method13258() == null ? this.method13282() : this.method13258().method13283() * this.method13282();
+        return this.getIcoPanel() == null ? this.method13282() : this.getIcoPanel().method13283() * this.method13282();
     }
 
     public void method13284(int var1) {
@@ -757,13 +757,13 @@ public class IconPanel implements IGuiEventListener {
     }
 
     public boolean method13289() {
-        return this.field20892 == null ? this.field20903 : this.field20903 && this.field20892.method13289();
+        return this.icoPanel == null ? this.field20903 : this.field20903 && this.icoPanel.method13289();
     }
 
     public void method13290(boolean var1) {
         this.field20903 = var1;
-        if (this.field20892 != null) {
-            this.field20892.method13290(var1);
+        if (this.icoPanel != null) {
+            this.icoPanel.method13290(var1);
         }
     }
 
@@ -840,11 +840,11 @@ public class IconPanel implements IGuiEventListener {
     }
 
     public ColorHelper method13307() {
-        return this.field20914;
+        return this.textColor;
     }
 
     public void method13308(ColorHelper var1) {
-        this.field20914 = var1;
+        this.textColor = var1;
     }
 
     public int method13309() {

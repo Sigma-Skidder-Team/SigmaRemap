@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.authlib.GameProfile;
 import java.util.UUID;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;

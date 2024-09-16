@@ -16,6 +16,7 @@ import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
+import net.minecraft.block.Block;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CClientStatusPacket;
@@ -436,7 +437,7 @@ public class BlockFly extends ModuleWithModuleSettings {
         GL11.glTranslatef((float) var1, (float) var2, 0.0F);
         GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
         GL11.glTranslatef((float) (-var1), (float) (-var2), 0.0F);
-        RenderUtil.method11449((float) var1, (float) var2, 9.0F, 23.0F, ResourcesDecrypter.selectPNG, ColorUtils.applyAlpha(-15461356, 0.8F * var3));
+        RenderUtil.drawImage((float) var1, (float) var2, 9.0F, 23.0F, ResourcesDecrypter.selectPNG, ColorUtils.applyAlpha(-15461356, 0.8F * var3));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
     }

@@ -1,6 +1,8 @@
 package mapped;
 
-public class Class2436 extends Class2435 {
+import com.mojang.realmsclient.exception.RealmsServiceException;
+
+public class Class2436 extends RealmsServiceException {
    public final int field16476;
 
    public Class2436(int var1, int var2) {

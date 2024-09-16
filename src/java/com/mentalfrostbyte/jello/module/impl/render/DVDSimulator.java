@@ -63,7 +63,7 @@ public class DVDSimulator extends Module {
 
             this.field23721 = this.field23721 + this.field23723 * (float) var6;
             this.field23722 = this.field23722 + this.field23724 * (float) var6;
-            RenderUtil.method11449(
+            RenderUtil.drawImage(
                     this.field23721,
                     this.field23722,
                     (float) this.field23725.field41839,

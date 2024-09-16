@@ -13,7 +13,7 @@ import org.lwjgl.glfw.GLFW;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4281 extends Class4278 {
+public class UIInput extends Class4278 {
    public static final ColorHelper field20741 = new ColorHelper(
       -892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor, Class2218.field14488, Class2218.field14492
    );
@@ -35,28 +35,28 @@ public class Class4281 extends Class4278 {
    private final List<Class7902> field20757 = new ArrayList<Class7902>();
    private boolean field20758 = true;
 
-   public Class4281(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+   public UIInput(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, field20741, "", false);
       this.field20756.start();
    }
 
-   public Class4281(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
+   public UIInput(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
       super(var1, var2, var3, var4, var5, var6, var7, "", false);
       this.field20756.start();
    }
 
-   public Class4281(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
+   public UIInput(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
       this.field20756.start();
    }
 
-   public Class4281(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, String var9) {
+   public UIInput(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, String var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, ResourceRegistry.JelloLightFont25, false);
       this.field20743 = var9;
       this.field20756.start();
    }
 
-   public Class4281(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, String var9, ClientResource var10) {
+   public UIInput(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, String var9, ClientResource var10) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
       this.field20743 = var9;
       this.field20756.start();
@@ -340,17 +340,17 @@ public class Class4281 extends Class4278 {
          var6 = this.field20912.replaceAll(".", this.field20755);
       }
 
-      RenderUtil.method11421(this.method13263(), this.method13265(), this.method13263() + this.field20897, this.method13265() + this.field20898, true);
-      int var7 = this.field20895 + 4;
-      int var8 = this.field20897 - 4;
+      RenderUtil.method11421(this.getXA(), this.getYA(), this.getXA() + this.widthA, this.getYA() + this.heightA, true);
+      int var7 = this.xA + 4;
+      int var8 = this.widthA - 4;
       float var9 = (float)var7 + this.field20746 + (float)this.field20913.method23942(var6.substring(0, this.field20749));
       if (this.method13297()) {
          RenderUtil.drawRect(
             var9 + (float)(var6.isEmpty() ? 0 : -1),
-            (float)(this.field20896 + this.field20898 / 2 - this.field20913.method23941(var6) / 2 + 2),
+            (float)(this.yA + this.heightA / 2 - this.field20913.method23941(var6) / 2 + 2),
             var9 + (float)(var6.isEmpty() ? 1 : 0),
-            (float)(this.field20896 + this.field20898 / 2 + this.field20913.method23941(var6) / 2 - 1),
-            ColorUtils.applyAlpha(this.field20914.method19409(), !var5 ? 0.1F * var1 : 0.8F)
+            (float)(this.yA + this.heightA / 2 + this.field20913.method23941(var6) / 2 - 1),
+            ColorUtils.applyAlpha(this.textColor.getTextColor(), !var5 ? 0.1F * var1 : 0.8F)
          );
          float var10 = (float)(var7 + this.field20913.method23942(var6.substring(0, this.field20749))) + this.field20747;
          if (var10 < (float)var7) {
@@ -370,30 +370,30 @@ public class Class4281 extends Class4278 {
       float var11 = (float)var7 + this.field20746 + (float)this.field20913.method23942(var6.substring(0, this.field20751));
       RenderUtil.drawRect(
          var14,
-         (float)(this.field20896 + this.field20898 / 2 - this.field20913.method23941(var6) / 2),
+         (float)(this.yA + this.heightA / 2 - this.field20913.method23941(var6) / 2),
          var11,
-         (float)(this.field20896 + this.field20898 / 2 + this.field20913.method23941(var6) / 2),
+         (float)(this.yA + this.heightA / 2 + this.field20913.method23941(var6) / 2),
          ColorUtils.applyAlpha(-5516546, var1)
       );
-      Class2218 var12 = this.field20914.method19411();
-      Class2218 var13 = this.field20914.method19413();
+      Class2218 var12 = this.textColor.method19411();
+      Class2218 var13 = this.textColor.method19413();
       RenderUtil.method11440(
          this.field20913,
          (float)var7 + this.field20746,
-         (float)(this.field20896 + this.field20898 / 2),
+         (float)(this.yA + this.heightA / 2),
          var6.length() == 0 && (!this.field20905 || var6.length() <= 0) ? this.field20743 : var6,
-         ColorUtils.applyAlpha(this.field20914.method19409(), (this.field20744 / 2.0F + 0.4F) * var1 * (this.field20905 && var6.length() > 0 ? 1.0F : 0.5F)),
+         ColorUtils.applyAlpha(this.textColor.getTextColor(), (this.field20744 / 2.0F + 0.4F) * var1 * (this.field20905 && var6.length() > 0 ? 1.0F : 0.5F)),
          var12,
          var13
       );
       RenderUtil.endScissor();
       if (this.field20758) {
          RenderUtil.drawRect(
-            (float)this.field20895,
-            (float)(this.field20896 + this.field20898 - 2),
-            (float)(this.field20895 + this.field20897),
-            (float)(this.field20896 + this.field20898),
-            ColorUtils.applyAlpha(this.field20914.method19405(), (this.field20744 / 2.0F + 0.5F) * var1)
+            (float)this.xA,
+            (float)(this.yA + this.heightA - 2),
+            (float)(this.xA + this.widthA),
+            (float)(this.yA + this.heightA),
+            ColorUtils.applyAlpha(this.textColor.method19405(), (this.field20744 / 2.0F + 0.5F) * var1)
          );
       }
 

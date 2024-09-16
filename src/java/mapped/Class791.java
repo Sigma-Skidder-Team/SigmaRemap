@@ -1,7 +1,9 @@
 package mapped;
 
 import com.mojang.realmsclient.RealmsMainScreen;
+import com.mojang.realmsclient.client.RealmsClient;
 import com.mojang.realmsclient.dto.RealmsServer;
+import com.mojang.realmsclient.exception.RealmsServiceException;
 import com.mojang.realmsclient.gui.screens.RealmsLongRunningMcoTaskScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
@@ -27,7 +29,7 @@ public class Class791 extends Class789 {
    @Override
    public void run() {
       this.method1908(new TranslationTextComponent("mco.connect.connecting"));
-      Class4624 var3 = Class4624.method14543();
+      RealmsClient var3 = RealmsClient.method14543();
       boolean var4 = false;
       boolean var5 = false;
       int var6 = 5;
@@ -41,7 +43,7 @@ public class Class791 extends Class789 {
             var4 = true;
          } catch (Class2436 var13) {
             var6 = var13.field16476;
-         } catch (Class2435 var14) {
+         } catch (RealmsServiceException var14) {
             if (var14.field16474 == 6002) {
                var8 = true;
             } else if (var14.field16474 == 6006) {

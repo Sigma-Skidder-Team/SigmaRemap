@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.datafixers.types.Type;
+import net.minecraft.block.Block;
 import net.minecraft.client.util.Util;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.JigsawTileEntity;

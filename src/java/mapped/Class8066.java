@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Sets;
 import com.mentalfrostbyte.jello.Client;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
@@ -390,7 +391,7 @@ public class Class8066 {
    private boolean method27743(BlockPos var1) {
       int var4 = var1.getY();
       int var5 = var4 + 15;
-      return this.method27741(var1).method7076(var4, var5);
+      return this.method27741(var1).isEmptyBetween(var4, var5);
    }
 
    public void method27744(Direction var1, Class8066 var2) {

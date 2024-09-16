@@ -17,20 +17,20 @@ public class Class4255 extends Class4247 {
    @Override
    public void draw(float var1) {
       GL11.glAlphaFunc(518, 0.1F);
-      RenderUtil.method11449(
-         (float)(this.field20895 + (this.field20897 - 64) / 2),
-         (float)(this.field20896 + 10),
+      RenderUtil.drawImage(
+         (float)(this.xA + (this.widthA - 64) / 2),
+         (float)(this.yA + 10),
          64.0F,
          64.0F,
          !this.method13298() ? this.field20633 : this.field20634,
          ClientColors.LIGHT_GREYISH_BLUE.getColor
       );
-      int var4 = this.method13267() / 2 + this.field20895;
-      int var5 = this.method13269() / 2 + this.field20896;
+      int var4 = this.getWidthA() / 2 + this.xA;
+      int var5 = this.getHeightA() / 2 + this.yA;
       RenderUtil.drawString(
          ClassicDecryption.regular25,
-         (float)(this.field20895 + (this.method13267() - ClassicDecryption.regular25.method23942(this.field20912)) / 2),
-         (float)(this.field20896 + this.method13269() - 50),
+         (float)(this.xA + (this.getWidthA() - ClassicDecryption.regular25.method23942(this.field20912)) / 2),
+         (float)(this.yA + this.getHeightA() - 50),
          this.field20912,
          !this.method13298() ? -14869219 : -319475
       );

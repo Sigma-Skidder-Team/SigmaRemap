@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.realmsclient.RealmsMainScreen;
+import com.mojang.realmsclient.client.RealmsClient;
+import com.mojang.realmsclient.exception.RealmsServiceException;
 
 public class Class380 extends Thread {
    public final RealmsMainScreen field1638;
@@ -12,7 +14,7 @@ public class Class380 extends Thread {
 
    @Override
    public void run() {
-      Class4624 var3 = Class4624.method14543();
+      RealmsClient var3 = RealmsClient.method14543();
 
       try {
          Boolean var4 = var3.method14552();
@@ -27,7 +29,7 @@ public class Class380 extends Thread {
          }
 
          RealmsMainScreen.method2093(true);
-      } catch (Class2435 var5) {
+      } catch (RealmsServiceException var5) {
          RealmsMainScreen.method2084().error("Couldn't connect to realms", var5);
          RealmsMainScreen.method2094(this.field1638)
             .execute(() -> RealmsMainScreen.method2095(this.field1638).displayGuiScreen(new Class821(var5, RealmsMainScreen.method2079(this.field1638))));

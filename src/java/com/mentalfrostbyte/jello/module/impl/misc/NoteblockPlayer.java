@@ -95,7 +95,7 @@ public class NoteblockPlayer extends PremiumModule {
             if (this.field23639 != null) {
                 if (mc.playerController.isInCreativeMode()) {
                     ColorUtils.addChatMessage("§cNoteBlockPlayer isn't available in creative mode!");
-                    this.method15999(false);
+                    this.setEnabled(false);
                 } else {
                     if (!this.method16407(this.field23641) && mc.player.ticksExisted % 4 == 0) {
                         this.method16408(this.field23641);
@@ -288,7 +288,7 @@ public class NoteblockPlayer extends PremiumModule {
                 this.field23639 = Class8471.method29870(ResourcesDecrypter.readInputStream("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
                 if (this.field23639 == null) {
                     ColorUtils.addChatMessage("§cError loading included song, wtf!");
-                    this.method15999(false);
+                    this.setEnabled(false);
                     return;
                 }
             } else {
@@ -296,7 +296,7 @@ public class NoteblockPlayer extends PremiumModule {
                 this.field23639 = Class8471.method29869(var3);
                 if (this.field23639 == null) {
                     ColorUtils.addChatMessage("§cError loading song! Make sure song is saved as <= V3 format");
-                    this.method15999(false);
+                    this.setEnabled(false);
                     return;
                 }
             }
@@ -324,7 +324,7 @@ public class NoteblockPlayer extends PremiumModule {
             this.method16408(this.field23641);
         } else {
             ColorUtils.addChatMessage("§cNoteBlockPlayer isn't available in creative mode!");
-            this.method15999(false);
+            this.setEnabled(false);
         }
     }
 

@@ -135,7 +135,7 @@ public class AntiVoid extends Module {
             case "Cubecraft":
                 double var13 = 3.2E7;
                 mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var5, var13, var9, false));
-                Client.getInstance().getModuleManager().getModuleByClass(Fly.class).method15999(false);
+                Client.getInstance().getModuleManager().getModuleByClass(Fly.class).setEnabled(false);
                 break;
             case "Legit":
                 this.field23839 = 200;

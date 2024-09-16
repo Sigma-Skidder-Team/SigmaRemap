@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.BiomeContainer;
 
 public class Class7660 {
    public static Class9028 method25180(CompoundNBT var0) {
@@ -88,7 +89,7 @@ public class Class7660 {
 
       var2.put("Sections", var19);
       var2.method111(
-         "Biomes", new Class1684(var0.<Biome>getRegistry(Registry.BIOME_KEY), new ChunkPos(var1.field41310, var1.field41311), var3).method7198()
+         "Biomes", new BiomeContainer(var0.<Biome>getRegistry(Registry.BIOME_KEY), new ChunkPos(var1.field41310, var1.field41311), var3).method7198()
       );
       var2.put("Entities", var1.field41307);
       var2.put("TileEntities", var1.field41308);

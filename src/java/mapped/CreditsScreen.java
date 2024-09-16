@@ -28,24 +28,24 @@ public class CreditsScreen extends Screen {
       var5 = Math.min(var5, (int)((float) Minecraft.getInstance().mainWindow.getHeight() / 1.65F));
       this.method13416();
       RenderUtil.drawRect(
-         0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * this.field21072)
+         0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * this.field21072)
       );
       float var6 = EasingFunctions.easeOutBack(!((double)this.field21072 < 0.5) ? (float)((double)this.field21072 - 0.5) * 2.0F : 0.0F, 0.0F, 1.0F, 1.0F);
       GL11.glPushMatrix();
-      GL11.glTranslatef((float)(this.method13267() / 2), (float)(this.method13269() / 2), 0.0F);
+      GL11.glTranslatef((float)(this.getWidthA() / 2), (float)(this.getHeightA() / 2), 0.0F);
       GL11.glScaled((double)var6, (double)var6, 0.0);
-      GL11.glTranslatef((float)(-this.method13267() / 2), (float)(-this.method13269() / 2), 0.0F);
+      GL11.glTranslatef((float)(-this.getWidthA() / 2), (float)(-this.getHeightA() / 2), 0.0F);
       String var7 = "##Jello \n";
       String var8 = "Jello by MF";
       ClientResource var9 = ResourceRegistry.JelloLightFont25;
       RenderUtil.drawString(
-         var9, (float)((this.method13267() - var9.method23942(var8)) / 2), (float)(this.method13269() - 110), var8, ClientColors.DEEP_TEAL.getColor
+         var9, (float)((this.getWidthA() - var9.method23942(var8)) / 2), (float)(this.getHeightA() - 110), var8, ClientColors.DEEP_TEAL.getColor
       );
       GL11.glPopMatrix();
-      RenderUtil.method11449(
-         (float)(this.method13267() / 2) - ((float)var4 - (float)var4 * (this.field21072 - 1.0F) * this.field21072) / 2.0F,
+      RenderUtil.drawImage(
+         (float)(this.getWidthA() / 2) - ((float)var4 - (float)var4 * (this.field21072 - 1.0F) * this.field21072) / 2.0F,
          (float)(
-            (double)(Math.max((float)var5 * 1.2F, (float)(this.method13269() / 2)) - (float)var5)
+            (double)(Math.max((float)var5 * 1.2F, (float)(this.getHeightA() / 2)) - (float)var5)
                - (double)var5
                   * Math.sin((double)(this.field21072 * this.field21072) * Math.PI)
                   * Math.sin((double)(this.field21072 * this.field21072) * Math.PI)
@@ -72,7 +72,7 @@ public class CreditsScreen extends Screen {
 
    private void method13416() {
       int var3 = this.method13309() * -1;
-      float var4 = (float)this.method13310() / (float)this.method13267() * -114.0F;
+      float var4 = (float)this.method13310() / (float)this.getWidthA() * -114.0F;
       if (this.field21075) {
          this.field21073 = (int)var4;
          this.field21074 = var3;
@@ -82,7 +82,7 @@ public class CreditsScreen extends Screen {
       float var5 = var4 - (float)this.field21073;
       float var6 = (float)(var3 - this.field21074);
       RenderUtil.method11455(
-         (float)this.field21074, (float)this.field21073, (float)(this.method13267() * 2), (float)(this.method13269() + 114), ResourcesDecrypter.panoramaPNG
+         (float)this.field21074, (float)this.field21073, (float)(this.getWidthA() * 2), (float)(this.getHeightA() + 114), ResourcesDecrypter.panoramaPNG
       );
       float var7 = 0.5F;
       if (var4 != (float)this.field21073) {

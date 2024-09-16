@@ -34,8 +34,8 @@ public class AlertPanel extends Class4247 {
       this.method13296(false);
       this.method13292(false);
       this.method13243();
-      Class4281 var8 = null;
-      Class4281 var9 = null;
+      UIInput var8 = null;
+      UIInput var9 = null;
 
       for (MiniAlert var13 : var5) {
          this.field21285 = this.field21285 + var13.field44773 + 10;
@@ -44,7 +44,7 @@ public class AlertPanel extends Class4247 {
       this.field21285 -= 10;
       this.addToList(
          this.field21279 = new IconPanel(
-            this, "modalContent", (this.field20897 - this.field21284) / 2, (this.field20898 - this.field21285) / 2, this.field21284, this.field21285
+            this, "modalContent", (this.widthA - this.field21284) / 2, (this.heightA - this.field21285) / 2, this.field21284, this.field21285
          )
       );
       int var17 = 0;
@@ -58,7 +58,7 @@ public class AlertPanel extends Class4247 {
                   if (var15.field44771 == AlertType.HEADER) {
                      this.field21279
                         .addToList(
-                           new StringPanel(
+                           new UITextDisplay(
                               this.field21279,
                               "Item" + var17,
                               0,
@@ -77,10 +77,10 @@ public class AlertPanel extends Class4247 {
                         );
                   }
                } else {
-                  Class4240 var16;
+                  ButtonPanel var16;
                   this.field21279
                      .addToList(
-                        var16 = new Class4240(
+                        var16 = new ButtonPanel(
                            this.field21279, "Item" + var17, 0, var18, this.field21284, var15.field44773, ColorHelper.field27961, var15.field44772
                         )
                      );
@@ -88,11 +88,11 @@ public class AlertPanel extends Class4247 {
                   var16.doThis((var1x, var2x) -> this.method13601());
                }
             } else {
-               Class4281 var22;
+               UIInput var22;
                this.field21279
                   .addToList(
-                     var22 = new Class4281(
-                        this.field21279, "Item" + var17, 0, var18, this.field21284, var15.field44773, Class4281.field20741, "", var15.field44772
+                     var22 = new UIInput(
+                        this.field21279, "Item" + var17, 0, var18, this.field21284, var15.field44773, UIInput.field20741, "", var15.field44772
                      )
                   );
                if (!var15.field44772.contains("Password")) {
@@ -107,7 +107,7 @@ public class AlertPanel extends Class4247 {
          } else {
             this.field21279
                .addToList(
-                  new StringPanel(
+                  new UITextDisplay(
                      this.field21279,
                      "Item" + var17,
                      0,
@@ -127,7 +127,7 @@ public class AlertPanel extends Class4247 {
       }
 
       if (var8 != null && var9 != null) {
-         Class4281 var20 = var9;
+         UIInput var20 = var9;
          var8.method13151(var2x -> {
             String var5x = var2x.method13303();
             if (var5x != null && var5x.contains(":")) {
@@ -151,9 +151,9 @@ public class AlertPanel extends Class4247 {
    public void method13296(boolean var1) {
       if (var1) {
          for (IconPanel var5 : this.field21279.method13241()) {
-            if (var5 instanceof Class4281) {
-               ((Class4281)var5).method13304("");
-               ((Class4281)var5).method13146();
+            if (var5 instanceof UIInput) {
+               ((UIInput)var5).method13304("");
+               ((UIInput)var5).method13146();
             }
          }
       }
@@ -171,8 +171,8 @@ public class AlertPanel extends Class4247 {
 
       for (IconPanel var5 : this.field21279.method13241()) {
          Class4278 var6 = (Class4278)var5;
-         if (var6 instanceof Class4281) {
-            Class4281 var7 = (Class4281)var6;
+         if (var6 instanceof UIInput) {
+            UIInput var7 = (UIInput)var6;
             var3.put(var7.method13153(), var7.method13303());
          }
       }
@@ -214,17 +214,17 @@ public class AlertPanel extends Class4247 {
          RenderUtil.method11448(
             -5.0F,
             -5.0F,
-            (float)(this.method13267() + 10),
-            (float)(this.method13269() + 10),
+            (float)(this.getWidthA() + 10),
+            (float)(this.getHeightA() + 10),
             this.field21281,
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
          );
          RenderUtil.drawRect(
-            0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F * var7)
+            0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F * var7)
          );
          if (var4 > 0) {
             RenderUtil.method11465(
-               (this.field20897 - var4) / 2, (this.field20898 - var5) / 2, var4, var5, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
+               (this.widthA - var4) / 2, (this.heightA - var5) / 2, var4, var5, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
             );
          }
 
@@ -245,10 +245,10 @@ public class AlertPanel extends Class4247 {
       if (!super.method13078(var1, var2, var3)) {
          int var6 = this.field21284 + 60;
          int var7 = this.field21285 + 60;
-         if (var1 > (this.field20897 - var6) / 2
-            && var1 < (this.field20897 - var6) / 2 + var6
-            && var2 > (this.field20898 - var7) / 2
-            && var2 < (this.field20898 - var7) / 2 + var7) {
+         if (var1 > (this.widthA - var6) / 2
+            && var1 < (this.widthA - var6) / 2 + var6
+            && var2 > (this.heightA - var7) / 2
+            && var2 < (this.heightA - var7) / 2 + var7) {
             return false;
          } else {
             this.method13603(false);
@@ -267,7 +267,7 @@ public class AlertPanel extends Class4247 {
             }
 
             this.field21281 = TextureUtil.method32933(
-               "blur", ImageUtil.method35036(0, 0, this.method13267(), this.method13269(), 5, 10, ClientColors.LIGHT_GREYISH_BLUE.getColor, true)
+               "blur", ImageUtil.method35036(0, 0, this.getWidthA(), this.getHeightA(), 5, 10, ClientColors.LIGHT_GREYISH_BLUE.getColor, true)
             );
          } catch (IOException var5) {
             Client.getInstance().getLogger().error(var5.getMessage());

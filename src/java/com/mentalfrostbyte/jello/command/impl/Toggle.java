@@ -21,7 +21,7 @@ public class Toggle extends Command {
       } else {
          Module var6 = this.method18336(var2[0].method30899());
          if (var6 != null) {
-            var6.method15999(!var6.isEnabled());
+            var6.setEnabled(!var6.isEnabled());
             var3.method20327(var6.getName() + " was " + (!var6.isEnabled() ? "disabled" : "enabled"));
          } else {
             throw new CommandException("Module \"" + var2[0].method30899() + "\" not found");

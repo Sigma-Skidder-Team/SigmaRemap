@@ -7,10 +7,12 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.particles.IParticleData;
@@ -20,6 +22,8 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -35,8 +39,8 @@ public class Class1691 implements ISeedReader {
    private final Class6612 field9207;
    private final Random field9208;
    private final DimensionType field9209;
-   private final Class6802<Block> field9210 = new Class6803<Block>(var1x -> this.method7011(var1x).method7089());
-   private final Class6802<Fluid> field9211 = new Class6803<Fluid>(var1x -> this.method7011(var1x).method7090());
+   private final Class6802<Block> field9210 = new Class6803<Block>(var1x -> this.method7011(var1x).getBlocksToBeTicked());
+   private final Class6802<Fluid> field9211 = new Class6803<Fluid>(var1x -> this.method7011(var1x).getFluidsToBeTicked());
    private final BiomeManager field9212;
    private final ChunkPos field9213;
    private final ChunkPos field9214;
@@ -45,7 +49,7 @@ public class Class1691 implements ISeedReader {
    public Class1691(ServerWorld var1, List<IChunk> var2) {
       int var5 = MathHelper.floor(Math.sqrt((double)var2.size()));
       if (var5 * var5 == var2.size()) {
-         ChunkPos var6 = ((IChunk)var2.get(var2.size() / 2)).method7072();
+         ChunkPos var6 = ((IChunk)var2.get(var2.size() / 2)).getPos();
          this.field9201 = var2;
          this.field9202 = var6.x;
          this.field9203 = var6.z;
@@ -56,8 +60,8 @@ public class Class1691 implements ISeedReader {
          this.field9208 = var1.method6814();
          this.field9209 = var1.method6812();
          this.field9212 = new BiomeManager(this, BiomeManager.method20321(this.field9206), var1.method6812().getMagnifier());
-         this.field9213 = ((IChunk)var2.get(0)).method7072();
-         this.field9214 = ((IChunk)var2.get(var2.size() - 1)).method7072();
+         this.field9213 = ((IChunk)var2.get(0)).getPos();
+         this.field9214 = ((IChunk)var2.get(var2.size() - 1)).getPos();
          this.field9215 = var1.method6893().method24339(this);
       } else {
          throw (IllegalStateException) Util.method38516(new IllegalStateException("Cache size is not a square."));
@@ -87,7 +91,7 @@ public class Class1691 implements ISeedReader {
          int var8 = var1 - this.field9213.x;
          int var9 = var2 - this.field9213.z;
          var7 = this.field9201.get(var8 + var9 * this.field9204);
-         if (var7.method7080().method34306(var3)) {
+         if (var7.getStatus().method34306(var3)) {
             return var7;
          }
       }
@@ -103,7 +107,7 @@ public class Class1691 implements ISeedReader {
             );
          } else {
             throw (RuntimeException) Util.method38516(
-               new RuntimeException(String.format("Chunk is not of correct status. Expecting %s, got %s | %s %s", var3, var7.method7080(), var1, var2))
+               new RuntimeException(String.format("Chunk is not of correct status. Expecting %s, got %s | %s %s", var3, var7.getStatus(), var1, var2))
             );
          }
       } else {
@@ -178,7 +182,7 @@ public class Class1691 implements ISeedReader {
       IChunk var4 = this.method7011(var1);
       TileEntity var5 = var4.getTileEntity(var1);
       if (var5 == null) {
-         CompoundNBT var6 = var4.method7086(var1);
+         CompoundNBT var6 = var4.getDeferredTileEntity(var1);
          BlockState var7 = var4.getBlockState(var1);
          if (var6 != null) {
             if (!"DUMMY".equals(var6.getString("id"))) {
@@ -193,7 +197,7 @@ public class Class1691 implements ISeedReader {
             }
 
             if (var5 != null) {
-               var4.method7062(var1, var5);
+               var4.addTileEntity(var1, var5);
                return var5;
             }
          }
@@ -219,17 +223,17 @@ public class Class1691 implements ISeedReader {
       Block var9 = var2.getBlock();
       if (!var9.isTileEntityProvider()) {
          if (var8 != null && var8.getBlock().isTileEntityProvider()) {
-            var7.method7081(var1);
+            var7.removeTileEntity(var1);
          }
-      } else if (var7.method7080().method34303() != Class2076.field13525) {
+      } else if (var7.getStatus().method34303() != Class2076.field13525) {
          CompoundNBT var10 = new CompoundNBT();
          var10.putInt("x", var1.getX());
          var10.putInt("y", var1.getY());
          var10.putInt("z", var1.getZ());
          var10.method109("id", "DUMMY");
-         var7.method7085(var10);
+         var7.addTileEntity(var10);
       } else {
-         var7.method7062(var1, ((Class3245)var9).method11646(this));
+         var7.addTileEntity(var1, ((Class3245)var9).method11646(this));
       }
 
       if (var2.method23444(this, var1)) {
@@ -240,14 +244,14 @@ public class Class1691 implements ISeedReader {
    }
 
    private void method7243(BlockPos var1) {
-      this.method7011(var1).method7082(var1);
+      this.method7011(var1).markBlockForPostprocessing(var1);
    }
 
    @Override
    public boolean addEntity(Entity var1) {
       int var4 = MathHelper.floor(var1.getPosX() / 16.0);
       int var5 = MathHelper.floor(var1.getPosZ() / 16.0);
-      this.getChunk(var4, var5).method7063(var1);
+      this.getChunk(var4, var5).addEntity(var1);
       return true;
    }
 
@@ -322,8 +326,8 @@ public class Class1691 implements ISeedReader {
    }
 
    @Override
-   public int method6736(Class101 var1, int var2, int var3) {
-      return this.getChunk(var2 >> 4, var3 >> 4).method7071(var1, var2 & 15, var3 & 15) + 1;
+   public int method6736(Heightmap.Type var1, int var2, int var3) {
+      return this.getChunk(var2 >> 4, var3 >> 4).getTopBlockY(var1, var2 & 15, var3 & 15) + 1;
    }
 
    @Override
@@ -364,7 +368,7 @@ public class Class1691 implements ISeedReader {
    }
 
    @Override
-   public Stream<? extends Class5444<?>> method6969(Class2002 var1, Structure<?> var2) {
+   public Stream<? extends StructureStart<?>> method6969(Class2002 var1, Structure<?> var2) {
       return this.field9215.method24340(var1, var2);
    }
 }

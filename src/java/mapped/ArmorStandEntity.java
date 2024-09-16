@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;

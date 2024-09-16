@@ -5,6 +5,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.ChunkSection;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
@@ -67,10 +68,10 @@ public class Class8597 {
          for (int var15 = var11; var15 < var12; var15++) {
             Chunk var16 = var0.getChunk(var14, var15);
             if (!var16.method7141()) {
-               Class7038[] var17 = var16.method7067();
+               ChunkSection[] var17 = var16.getSections();
 
                for (int var18 = var17.length - 1; var18 > var13; var18--) {
-                  Class7038 var19 = var17[var18];
+                  ChunkSection var19 = var17[var18];
                   if (var19 != null && !var19.method21858()) {
                      if (var18 > var13) {
                         var13 = var18;

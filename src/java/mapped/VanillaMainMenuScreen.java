@@ -7,6 +7,7 @@ import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.LanguageScreen;
 import net.minecraft.client.gui.screen.OptionsScreen;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.WorldSelectionScreen;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
@@ -162,7 +163,7 @@ public class VanillaMainMenuScreen extends Screen {
    private void method2596(int var1, int var2) {
       this.<Button>addButton(
          new Button(
-            this.width / 2 - 100, var1, 200, 20, new TranslationTextComponent("menu.singleplayer"), var1x -> this.mc.displayGuiScreen(new Class1341(this))
+            this.width / 2 - 100, var1, 200, 20, new TranslationTextComponent("menu.singleplayer"), var1x -> this.mc.displayGuiScreen(new WorldSelectionScreen(this))
          )
       );
       boolean var5 = true;

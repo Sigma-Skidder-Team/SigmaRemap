@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.realmsclient.client.RealmsClient;
+
 public class Class756 implements Runnable {
    public final Class9408 field3922;
 
@@ -16,7 +18,7 @@ public class Class756 implements Runnable {
 
    private void method1897() {
       try {
-         Class4624 var3 = Class4624.method14543();
+         RealmsClient var3 = RealmsClient.method14543();
          Class6131 var4 = null;
 
          try {

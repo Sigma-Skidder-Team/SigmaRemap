@@ -11,6 +11,8 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.biome.BiomeContainer;
+import net.minecraft.world.chunk.ChunkSection;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -34,20 +36,20 @@ public class SChunkDataPacket implements Packet<IClientPlayNetHandler> {
    }
 
    public SChunkDataPacket(Chunk var1, int var2) {
-      ChunkPos var5 = var1.method7072();
+      ChunkPos var5 = var1.getPos();
       this.field24514 = var5.x;
       this.field24515 = var5.z;
       this.field24521 = var2 == 65535;
       this.field24517 = new CompoundNBT();
 
-      for (Entry var7 : var1.method7068()) {
-         if (((Class101)var7.getKey()).method284()) {
-            this.field24517.put(((Class101)var7.getKey()).method283(), new LongArrayNBT(((Class7527)var7.getValue()).method24583()));
+      for (Entry var7 : var1.getHeightmaps()) {
+         if (((Heightmap.Type)var7.getKey()).method284()) {
+            this.field24517.put(((Heightmap.Type)var7.getKey()).method283(), new LongArrayNBT(((Heightmap)var7.getValue()).method24583()));
          }
       }
 
       if (this.field24521) {
-         this.field24518 = var1.method7077().method7198();
+         this.field24518 = var1.getBiomes().method7198();
       }
 
       this.field24519 = new byte[this.method17377(var1, var2)];
@@ -77,7 +79,7 @@ public class SChunkDataPacket implements Packet<IClientPlayNetHandler> {
       this.field24516 = var1.readVarInt();
       this.field24517 = var1.method35721();
       if (this.field24521) {
-         this.field24518 = var1.method35703(Class1684.field9154);
+         this.field24518 = var1.method35703(BiomeContainer.field9154);
       }
 
       int var4 = var1.readVarInt();
@@ -131,11 +133,11 @@ public class SChunkDataPacket implements Packet<IClientPlayNetHandler> {
 
    public int method17376(PacketBuffer var1, Chunk var2, int var3) {
       int var6 = 0;
-      Class7038[] var7 = var2.method7067();
+      ChunkSection[] var7 = var2.getSections();
       int var8 = 0;
 
       for (int var9 = var7.length; var8 < var9; var8++) {
-         Class7038 var10 = var7[var8];
+         ChunkSection var10 = var7[var8];
          if (var10 != Chunk.field9111 && (!this.isFullChunk() || !var10.method21858()) && (var3 & 1 << var8) != 0) {
             var6 |= 1 << var8;
             var10.method21867(var1);
@@ -147,11 +149,11 @@ public class SChunkDataPacket implements Packet<IClientPlayNetHandler> {
 
    public int method17377(Chunk var1, int var2) {
       int var5 = 0;
-      Class7038[] var6 = var1.method7067();
+      ChunkSection[] var6 = var1.getSections();
       int var7 = 0;
 
       for (int var8 = var6.length; var7 < var8; var7++) {
-         Class7038 var9 = var6[var7];
+         ChunkSection var9 = var6[var7];
          if (var9 != Chunk.field9111 && (!this.isFullChunk() || !var9.method21858()) && (var2 & 1 << var7) != 0) {
             var5 += var9.method21868();
          }

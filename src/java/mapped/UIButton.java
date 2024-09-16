@@ -30,18 +30,18 @@ public class UIButton extends Class4247 {
    @Override
    public void draw(float var1) {
       if (this.method13303() != null) {
-         int var4 = this.field20914.method19405();
-         int var5 = this.method13263()
+         int var4 = this.textColor.method19405();
+         int var5 = this.getXA()
             + (
-               this.field20914.method19411() != Class2218.field14492
+               this.textColor.method19411() != Class2218.field14492
                   ? 0
-                  : (this.field20914.method19411() != Class2218.field14490 ? this.method13267() / 2 : this.method13267())
+                  : (this.textColor.method19411() != Class2218.field14490 ? this.getWidthA() / 2 : this.getWidthA())
             );
-         int var6 = this.method13265()
+         int var6 = this.getYA()
             + (
-               this.field20914.method19413() != Class2218.field14492
+               this.textColor.method19413() != Class2218.field14492
                   ? 0
-                  : (this.field20914.method19413() != Class2218.field14491 ? this.method13269() / 2 : this.method13269())
+                  : (this.textColor.method19413() != Class2218.field14491 ? this.getHeightA() / 2 : this.getHeightA())
             );
          int var7 = this.method13305().method23942(this.method13303());
          byte var8 = 18;
@@ -52,8 +52,8 @@ public class UIButton extends Class4247 {
             (float)var6,
             this.method13303(),
             ColorUtils.applyAlpha(var4, var1 * ColorUtils.method17710(var4)),
-            this.field20914.method19411(),
-            this.field20914.method19413()
+            this.textColor.method19411(),
+            this.textColor.method19413()
          );
          RenderUtil.drawRect(
             (float)var5 - (float)(var7 / 2) * var9,

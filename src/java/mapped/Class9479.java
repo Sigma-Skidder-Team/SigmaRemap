@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.UnmodifiableIterator;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.util.registry.Registry;
 
 public class Class9479 {

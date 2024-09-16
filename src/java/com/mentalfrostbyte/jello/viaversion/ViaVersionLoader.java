@@ -11,6 +11,7 @@ import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mojang.datafixers.util.Pair;
 import com.mentalfrostbyte.jello.Client;
 import mapped.*;
+import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
@@ -159,7 +160,7 @@ public class ViaVersionLoader {
                   Chunk var15 = new Chunk(
                      this.mc.world,
                      new ChunkPos(this.mc.player.chunkCoordX + var11, this.mc.player.chunkCoordZ + var12),
-                     var13.method7077()
+                     var13.getBiomes()
                   );
                   this.mc.world.getChunkProvider().field9291.method31824(var14, var15);
                }

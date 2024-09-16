@@ -6,6 +6,8 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.feature.structure.StructureStart;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -64,10 +66,10 @@ public abstract class Structure<C extends Class4698> {
    }
 
    @Nullable
-   public static Class5444<?> method11366(TemplateManager var0, CompoundNBT var1, long var2) {
+   public static StructureStart<?> method11366(TemplateManager var0, CompoundNBT var1, long var2) {
       String var6 = var1.getString("id");
       if ("INVALID".equals(var6)) {
-         return Class5444.field24194;
+         return StructureStart.field24194;
       } else {
          Structure var7 = Registry.field16114.getOrDefault(new ResourceLocation(var6.toLowerCase(Locale.ROOT)));
          if (var7 == null) {
@@ -81,7 +83,7 @@ public abstract class Structure<C extends Class4698> {
             ListNBT var12 = var1.method131("Children", 10);
 
             try {
-               Class5444 var13 = var7.method11371(var8, var9, var11, var10, var2);
+               StructureStart var13 = var7.method11371(var8, var9, var11, var10, var2);
 
                for (int var14 = 0; var14 < var12.size(); var14++) {
                   CompoundNBT var15 = var12.method153(var14);
@@ -136,7 +138,7 @@ public abstract class Structure<C extends Class4698> {
                   int var21 = var13 + var11 * var18;
                   ChunkPos var22 = this.method11370(var8, var6, var15, var20, var21);
                   IChunk var23 = var1.getChunk(var22.x, var22.z, ChunkStatus.field42134);
-                  Class5444 var24 = var2.method24341(Class2002.method8391(var23.method7072(), 0), this, var23);
+                  StructureStart var24 = var2.method24341(Class2002.method8391(var23.getPos(), 0), this, var23);
                   if (var24 != null && var24.method17117()) {
                      if (var5 && var24.method17121()) {
                         var24.method17122();
@@ -190,11 +192,11 @@ public abstract class Structure<C extends Class4698> {
       return true;
    }
 
-   private Class5444<C> method11371(int var1, int var2, Class9764 var3, int var4, long var5) {
+   private StructureStart<C> method11371(int var1, int var2, Class9764 var3, int var4, long var5) {
       return this.method11359().method21988(this, var1, var2, var3, var4, var5);
    }
 
-   public Class5444<?> method11372(
+   public StructureStart<?> method11372(
       DynamicRegistries var1,
       ChunkGenerator var2,
       Class1685 var3,
@@ -211,14 +213,14 @@ public abstract class Structure<C extends Class4698> {
       if (var7.x == var15.x
          && var7.z == var15.z
          && this.method11361(var2, var3, var5, var10, var7.x, var7.z, var8, var15, (C)var12)) {
-         Class5444 var16 = this.method11371(var7.x, var7.z, Class9764.method38386(), var9, var5);
+         StructureStart var16 = this.method11371(var7.x, var7.z, Class9764.method38386(), var9, var5);
          var16.method17109(var1, var2, var4, var7.x, var7.z, var8, var12);
          if (var16.method17117()) {
             return var16;
          }
       }
 
-      return Class5444.field24194;
+      return StructureStart.field24194;
    }
 
    public abstract Class7072<C> method11359();

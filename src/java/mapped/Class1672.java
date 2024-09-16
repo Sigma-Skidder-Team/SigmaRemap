@@ -7,12 +7,18 @@ import it.unimi.dsi.fastutil.longs.LongOpenHashSet;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import it.unimi.dsi.fastutil.shorts.ShortList;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeContainer;
+import net.minecraft.world.chunk.ChunkSection;
+import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.feature.structure.StructureStart;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,17 +31,17 @@ public class Class1672 implements IChunk {
    private static final Logger field9088 = LogManager.getLogger();
    private final ChunkPos field9089;
    private volatile boolean field9090;
-   private Class1684 field9091;
+   private BiomeContainer field9091;
    private volatile Class196 field9092;
-   private final Map<Class101, Class7527> field9093 = Maps.newEnumMap(Class101.class);
+   private final Map<Heightmap.Type, Heightmap> field9093 = Maps.newEnumMap(Heightmap.Type.class);
    private volatile ChunkStatus field9094 = ChunkStatus.field42133;
    private final Map<BlockPos, TileEntity> field9095 = Maps.newHashMap();
    private final Map<BlockPos, CompoundNBT> field9096 = Maps.newHashMap();
-   private final Class7038[] field9097 = new Class7038[16];
+   private final ChunkSection[] field9097 = new ChunkSection[16];
    private final List<CompoundNBT> field9098 = Lists.newArrayList();
    private final List<BlockPos> field9099 = Lists.newArrayList();
    private final ShortList[] field9100 = new ShortList[16];
-   private final Map<Structure<?>, Class5444<?>> field9101 = Maps.newHashMap();
+   private final Map<Structure<?>, StructureStart<?>> field9101 = Maps.newHashMap();
    private final Map<Structure<?>, LongSet> field9102 = Maps.newHashMap();
    private final Class8922 field9103;
    private final Class6806<Block> field9104;
@@ -48,13 +54,13 @@ public class Class1672 implements IChunk {
       this(
          var1,
          var2,
-         (Class7038[])null,
+         (ChunkSection[])null,
          new Class6806<Block>(var0 -> var0 == null || var0.method11579().isAir(), var1),
          new Class6806<Fluid>(var0 -> var0 == null || var0 == Class9479.field44064, var1)
       );
    }
 
-   public Class1672(ChunkPos var1, Class8922 var2, Class7038[] var3, Class6806<Block> var4, Class6806<Fluid> var5) {
+   public Class1672(ChunkPos var1, Class8922 var2, ChunkSection[] var3, Class6806<Block> var4, Class6806<Fluid> var5) {
       this.field9089 = var1;
       this.field9103 = var2;
       this.field9104 = var4;
@@ -72,8 +78,8 @@ public class Class1672 implements IChunk {
    public BlockState getBlockState(BlockPos var1) {
       int var4 = var1.getY();
       if (!World.isYOutOfBounds(var4)) {
-         Class7038 var5 = this.method7067()[var4 >> 4];
-         return !Class7038.method21859(var5) ? var5.method21852(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Blocks.AIR.method11579();
+         ChunkSection var5 = this.getSections()[var4 >> 4];
+         return !ChunkSection.method21859(var5) ? var5.method21852(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Blocks.AIR.method11579();
       } else {
          return Blocks.field37011.method11579();
       }
@@ -83,15 +89,15 @@ public class Class1672 implements IChunk {
    public FluidState getFluidState(BlockPos var1) {
       int var4 = var1.getY();
       if (!World.isYOutOfBounds(var4)) {
-         Class7038 var5 = this.method7067()[var4 >> 4];
-         return !Class7038.method21859(var5) ? var5.method21853(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Class9479.field44064.method25049();
+         ChunkSection var5 = this.getSections()[var4 >> 4];
+         return !ChunkSection.method21859(var5) ? var5.method21853(var1.getX() & 15, var4 & 15, var1.getZ() & 15) : Class9479.field44064.method25049();
       } else {
          return Class9479.field44064.method25049();
       }
    }
 
    @Override
-   public Stream<BlockPos> method7088() {
+   public Stream<BlockPos> getLightSources() {
       return this.field9099.stream();
    }
 
@@ -99,7 +105,7 @@ public class Class1672 implements IChunk {
       ShortList[] var3 = new ShortList[16];
 
       for (BlockPos var5 : this.field9099) {
-         IChunk.method7094(var3, var5.getY() >> 4).add(method7113(var5));
+         IChunk.getList(var3, var5.getY() >> 4).add(method7113(var5));
       }
 
       return var3;
@@ -124,10 +130,10 @@ public class Class1672 implements IChunk {
             return var2;
          } else {
             if (var2.getLightValue() > 0) {
-               this.field9099.add(new BlockPos((var6 & 15) + this.method7072().getX(), var7, (var8 & 15) + this.method7072().getZ()));
+               this.field9099.add(new BlockPos((var6 & 15) + this.getPos().getX(), var7, (var8 & 15) + this.getPos().getZ()));
             }
 
-            Class7038 var9 = this.method7106(var7 >> 4);
+            ChunkSection var9 = this.method7106(var7 >> 4);
             BlockState var10 = var9.method21856(var6 & 15, var7 & 15, var8 & 15, var2);
             if (this.field9094.method34306(ChunkStatus.field42141)
                && var2 != var10
@@ -141,14 +147,14 @@ public class Class1672 implements IChunk {
                var11.checkBlock(var1);
             }
 
-            EnumSet<Class101> var16 = this.method7080().method34305();
+            EnumSet<Heightmap.Type> var16 = this.getStatus().method34305();
             EnumSet var12 = null;
 
-            for (Class101 var14 : var16) {
-               Class7527 var15 = this.field9093.get(var14);
+            for (Heightmap.Type var14 : var16) {
+               Heightmap var15 = this.field9093.get(var14);
                if (var15 == null) {
                   if (var12 == null) {
-                     var12 = EnumSet.<Class101>noneOf(Class101.class);
+                     var12 = EnumSet.<Heightmap.Type>noneOf(Heightmap.Type.class);
                   }
 
                   var12.add(var14);
@@ -156,10 +162,10 @@ public class Class1672 implements IChunk {
             }
 
             if (var12 != null) {
-               Class7527.method24577(this, var12);
+               Heightmap.method24577(this, var12);
             }
 
-            for (Class101 var18 : var16) {
+            for (Heightmap.Type var18 : var16) {
                this.field9093.get(var18).method24578(var6 & 15, var7, var8 & 15, var2);
             }
 
@@ -170,22 +176,22 @@ public class Class1672 implements IChunk {
       }
    }
 
-   public Class7038 method7106(int var1) {
+   public ChunkSection method7106(int var1) {
       if (this.field9097[var1] == Chunk.field9111) {
-         this.field9097[var1] = new Class7038(var1 << 4);
+         this.field9097[var1] = new ChunkSection(var1 << 4);
       }
 
       return this.field9097[var1];
    }
 
    @Override
-   public void method7062(BlockPos var1, TileEntity var2) {
+   public void addTileEntity(BlockPos var1, TileEntity var2) {
       var2.method3782(var1);
       this.field9095.put(var1, var2);
    }
 
    @Override
-   public Set<BlockPos> method7066() {
+   public Set<BlockPos> getTileEntitiesPos() {
       HashSet var3 = Sets.newHashSet(this.field9096.keySet());
       var3.addAll(this.field9095.keySet());
       return var3;
@@ -206,7 +212,7 @@ public class Class1672 implements IChunk {
    }
 
    @Override
-   public void method7063(Entity var1) {
+   public void addEntity(Entity var1) {
       if (!var1.isPassenger()) {
          CompoundNBT var4 = new CompoundNBT();
          var1.writeUnlessPassenger(var4);
@@ -218,38 +224,38 @@ public class Class1672 implements IChunk {
       return this.field9098;
    }
 
-   public void method7110(Class1684 var1) {
+   public void method7110(BiomeContainer var1) {
       this.field9091 = var1;
    }
 
    @Nullable
    @Override
-   public Class1684 method7077() {
+   public BiomeContainer getBiomes() {
       return this.field9091;
    }
 
    @Override
-   public void method7078(boolean var1) {
+   public void setModified(boolean var1) {
       this.field9090 = var1;
    }
 
    @Override
-   public boolean method7079() {
+   public boolean isModified() {
       return this.field9090;
    }
 
    @Override
-   public ChunkStatus method7080() {
+   public ChunkStatus getStatus() {
       return this.field9094;
    }
 
    public void method7111(ChunkStatus var1) {
       this.field9094 = var1;
-      this.method7078(true);
+      this.setModified(true);
    }
 
    @Override
-   public Class7038[] method7067() {
+   public ChunkSection[] getSections() {
       return this.field9097;
    }
 
@@ -259,25 +265,25 @@ public class Class1672 implements IChunk {
    }
 
    @Override
-   public Collection<Entry<Class101, Class7527>> method7068() {
-      return Collections.<Entry<Class101, Class7527>>unmodifiableSet(this.field9093.entrySet());
+   public Collection<Entry<Heightmap.Type, Heightmap>> getHeightmaps() {
+      return Collections.<Entry<Heightmap.Type, Heightmap>>unmodifiableSet(this.field9093.entrySet());
    }
 
    @Override
-   public void method7069(Class101 var1, long[] var2) {
-      this.method7070(var1).method24582(var2);
+   public void setHeightmap(Heightmap.Type var1, long[] var2) {
+      this.getHeightmap(var1).method24582(var2);
    }
 
    @Override
-   public Class7527 method7070(Class101 var1) {
-      return this.field9093.computeIfAbsent(var1, var1x -> new Class7527(this, var1x));
+   public Heightmap getHeightmap(Heightmap.Type var1) {
+      return this.field9093.computeIfAbsent(var1, var1x -> new Heightmap(this, var1x));
    }
 
    @Override
-   public int method7071(Class101 var1, int var2, int var3) {
-      Class7527 var6 = this.field9093.get(var1);
+   public int getTopBlockY(Heightmap.Type var1, int var2, int var3) {
+      Heightmap var6 = this.field9093.get(var1);
       if (var6 == null) {
-         Class7527.method24577(this, EnumSet.<Class101>of(var1));
+         Heightmap.method24577(this, EnumSet.<Heightmap.Type>of(var1));
          var6 = this.field9093.get(var1);
       }
 
@@ -285,33 +291,33 @@ public class Class1672 implements IChunk {
    }
 
    @Override
-   public ChunkPos method7072() {
+   public ChunkPos getPos() {
       return this.field9089;
    }
 
    @Override
-   public void method7073(long var1) {
+   public void setLastSaveTime(long var1) {
    }
 
    @Nullable
    @Override
-   public Class5444<?> method7097(Structure<?> var1) {
+   public StructureStart<?> method7097(Structure<?> var1) {
       return this.field9101.get(var1);
    }
 
    @Override
-   public void method7098(Structure<?> var1, Class5444<?> var2) {
+   public void method7098(Structure<?> var1, StructureStart<?> var2) {
       this.field9101.put(var1, var2);
       this.field9090 = true;
    }
 
    @Override
-   public Map<Structure<?>, Class5444<?>> method7074() {
-      return Collections.<Structure<?>, Class5444<?>>unmodifiableMap(this.field9101);
+   public Map<Structure<?>, StructureStart<?>> getStructureStarts() {
+      return Collections.<Structure<?>, StructureStart<?>>unmodifiableMap(this.field9101);
    }
 
    @Override
-   public void method7075(Map<Structure<?>, Class5444<?>> var1) {
+   public void setStructureStarts(Map<Structure<?>, StructureStart<?>> var1) {
       this.field9101.clear();
       this.field9101.putAll(var1);
       this.field9090 = true;
@@ -358,27 +364,27 @@ public class Class1672 implements IChunk {
    }
 
    @Override
-   public void method7082(BlockPos var1) {
+   public void markBlockForPostprocessing(BlockPos var1) {
       if (!World.isOutsideBuildHeight(var1)) {
-         IChunk.method7094(this.field9100, var1.getY() >> 4).add(method7113(var1));
+         IChunk.getList(this.field9100, var1.getY() >> 4).add(method7113(var1));
       }
    }
 
    @Override
-   public ShortList[] method7083() {
+   public ShortList[] getPackedPositions() {
       return this.field9100;
    }
 
    @Override
-   public void method7084(short var1, int var2) {
-      IChunk.method7094(this.field9100, var2).add(var1);
+   public void addPackedPosition(short var1, int var2) {
+      IChunk.getList(this.field9100, var2).add(var1);
    }
 
-   public Class6806<Block> method7089() {
+   public Class6806<Block> getBlocksToBeTicked() {
       return this.field9104;
    }
 
-   public Class6806<Fluid> method7090() {
+   public Class6806<Fluid> getFluidsToBeTicked() {
       return this.field9105;
    }
 
@@ -398,7 +404,7 @@ public class Class1672 implements IChunk {
    }
 
    @Override
-   public void method7085(CompoundNBT var1) {
+   public void addTileEntity(CompoundNBT var1) {
       this.field9096.put(new BlockPos(var1.getInt("x"), var1.getInt("y"), var1.getInt("z")), var1);
    }
 
@@ -407,19 +413,19 @@ public class Class1672 implements IChunk {
    }
 
    @Override
-   public CompoundNBT method7086(BlockPos var1) {
+   public CompoundNBT getDeferredTileEntity(BlockPos var1) {
       return this.field9096.get(var1);
    }
 
    @Nullable
    @Override
-   public CompoundNBT method7087(BlockPos var1) {
+   public CompoundNBT getTileEntityNBT(BlockPos var1) {
       TileEntity var4 = this.getTileEntity(var1);
       return var4 == null ? this.field9096.get(var1) : var4.write(new CompoundNBT());
    }
 
    @Override
-   public void method7081(BlockPos var1) {
+   public void removeTileEntity(BlockPos var1) {
       this.field9095.remove(var1);
       this.field9096.remove(var1);
    }
@@ -449,6 +455,6 @@ public class Class1672 implements IChunk {
    @Override
    public void method7096(boolean var1) {
       this.field9108 = var1;
-      this.method7078(true);
+      this.setModified(true);
    }
 }

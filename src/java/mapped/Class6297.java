@@ -12,8 +12,8 @@ public class Class6297 extends Class6291<Class4718> {
       super(var1);
    }
 
-   public Class101 method19255(Class4718 var1) {
-      return Class101.field299;
+   public Heightmap.Type method19255(Class4718 var1) {
+      return Heightmap.Type.field299;
    }
 
    public Stream<BlockPos> method19240(Class9010 var1, Random var2, Class4718 var3, BlockPos var4) {

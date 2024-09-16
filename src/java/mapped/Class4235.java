@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import org.lwjgl.opengl.GL11;
 
-public class Class4235 extends Class4240 {
+public class Class4235 extends ButtonPanel {
    private static String[] field20573;
    public static final ColorHelper field20574 = new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor, ColorUtils.method17691(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.1F));
    public Texture field20575;
@@ -41,26 +41,26 @@ public class Class4235 extends Class4240 {
    @Override
    public void draw(float var1) {
       float var4 = !this.isHovered() ? 0.3F : (!this.method13216() ? (!this.method13212() ? Math.max(var1 * this.field20584, 0.0F) : 1.5F) : 0.0F);
-      RenderUtil.method11449(
-         (float)this.method13263(),
-         (float)this.method13265(),
-         (float)this.method13267(),
-         (float)this.method13269(),
+      RenderUtil.drawImage(
+         (float)this.getXA(),
+         (float)this.getYA(),
+         (float)this.getWidthA(),
+         (float)this.getHeightA(),
          this.method13025(),
          ColorUtils.applyAlpha(
-            ColorUtils.method17690(this.field20914.method19405(), this.field20914.method19403(), 1.0F - var4),
-            (float)(this.field20914.method19405() >> 24 & 0xFF) / 255.0F * var1
+            ColorUtils.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4),
+            (float)(this.textColor.method19405() >> 24 & 0xFF) / 255.0F * var1
          )
       );
       if (this.method13303() != null) {
          RenderUtil.method11440(
             this.method13305(),
-            (float)(this.method13263() + this.method13267() / 2),
-            (float)(this.method13265() + this.method13269() / 2),
+            (float)(this.getXA() + this.getWidthA() / 2),
+            (float)(this.getYA() + this.getHeightA() / 2),
             this.method13303(),
-            ColorUtils.applyAlpha(this.field20914.method19409(), var1),
-            this.field20914.method19411(),
-            this.field20914.method19413()
+            ColorUtils.applyAlpha(this.textColor.getTextColor(), var1),
+            this.textColor.method19411(),
+            this.textColor.method19413()
          );
       }
 

@@ -140,7 +140,7 @@ public class WaypointsManager {
             boolean var4 = false;
             if (!var4) {
                if (this.field36365.player.ticksExisted % 140 == 0) {
-                  Class2531 var5 = Class7927.method26605(this.field36365.world.method7011(this.field36365.player.getPosition()).method7072());
+                  Class2531 var5 = Class7927.method26605(this.field36365.world.method7011(this.field36365.player.getPosition()).getPos());
                   Iterator var6 = this.field36372.entrySet().iterator();
 
                   while (var6.hasNext()) {
@@ -173,21 +173,21 @@ public class WaypointsManager {
                for (int var25 = 0; var25 < this.field36365.world.getChunkProvider().field9291.field39654.length(); var25++) {
                   Chunk var17 = this.field36365.world.getChunkProvider().field9291.field39654.get(var25);
                   if (var17 != null) {
-                     boolean var18 = this.field36366.contains(var17.method7072());
-                     boolean var19 = this.field36367.contains(var17.method7072());
+                     boolean var18 = this.field36366.contains(var17.getPos());
+                     boolean var19 = this.field36367.contains(var17.getPos());
                      if ((!var18 || var19)
                         && !var17.method7141()
-                        && this.field36365.world.getChunkProvider().method7352(var17.method7072())
+                        && this.field36365.world.getChunkProvider().method7352(var17.getPos())
                         && this.field36365.world.getDimensionKey() == World.OVERWORLD) {
                         if (!var18) {
-                           this.field36366.add(var17.method7072());
+                           this.field36366.add(var17.getPos());
                         }
 
                         boolean var20 = this.method30004(var17);
                         if (!var20 && !var19) {
-                           this.field36367.add(var17.method7072());
+                           this.field36367.add(var17.getPos());
                         } else if (var20 && var19) {
-                           this.field36367.remove(var17.method7072());
+                           this.field36367.remove(var17.getPos());
                         } else if (!var20 && var19) {
                            continue;
                         }
@@ -196,19 +196,19 @@ public class WaypointsManager {
                            try {
                               new File(var23).mkdirs();
                               File var5x = new File(this.method30002(var23, var17));
-                              Class2531 var6x = Class7927.method26605(var17.method7072());
+                              Class2531 var6x = Class7927.method26605(var17.getPos());
                               Class7927 var7x = this.field36372.get(var6x.method10678());
                               ByteBuffer var8x = this.method30005(var17, this.method30004(var17));
                               if (var7x != null) {
-                                 var7x.method26599(var8x, var17.method7072());
+                                 var7x.method26599(var8x, var17.getPos());
                               } else if (!var5x.exists()) {
                                  var7x = new Class7927(var6x.field16734, var6x.field16735);
-                                 var7x.method26599(var8x, var17.method7072());
+                                 var7x.method26599(var8x, var17.getPos());
                                  this.field36372.put(var6x.method10678(), var7x);
                                  this.field36374.clear();
                               } else if (this.method29996(var6x)) {
                                  var7x = this.field36372.get(var6x.method10678());
-                                 var7x.method26599(var8x, var17.method7072());
+                                 var7x.method26599(var8x, var17.getPos());
                               }
 
                               this.field36373++;
@@ -296,7 +296,7 @@ public class WaypointsManager {
    }
 
    public String method30002(String var1, Chunk var2) throws FileNotFoundException {
-      Class2531 var5 = Class7927.method26605(var2.method7072());
+      Class2531 var5 = Class7927.method26605(var2.getPos());
       return var1 + "/" + var5.field16734 + "c" + var5.field16735 + ".jmap";
    }
 
@@ -376,21 +376,21 @@ public class WaypointsManager {
    }
 
    private boolean method30004(Chunk var1) {
-      Chunk var4 = this.field36365.world.getChunk(var1.method7072().x, var1.method7072().z + 1);
-      Chunk var5 = this.field36365.world.getChunk(var1.method7072().x, var1.method7072().z - 1);
+      Chunk var4 = this.field36365.world.getChunk(var1.getPos().x, var1.getPos().z + 1);
+      Chunk var5 = this.field36365.world.getChunk(var1.getPos().x, var1.getPos().z - 1);
       return var4 != null && !var4.method7141() && var5 != null && !var5.method7141();
    }
 
    public ByteBuffer method30005(Chunk var1, boolean var2) {
       ByteBuffer var5 = BufferUtils.createByteBuffer(768);
-      int var6 = var1.method7072().x * 16;
-      int var7 = var1.method7072().z * 16;
+      int var6 = var1.getPos().x * 16;
+      int var7 = var1.getPos().z * 16;
 
       for (int var8 = 0; var8 < 16; var8++) {
          for (int var9 = 0; var9 < 16; var9++) {
             BlockPos var10 = new BlockPos(var6 + var8, 64, var7 + var9);
             int var11 = this.method30006(
-               new BlockPos(var10.getX(), var1.method7070(Class101.field296).method24579(var8, var9) - 1, var10.getZ()), var2
+               new BlockPos(var10.getX(), var1.getHeightmap(Heightmap.Type.field296).method24579(var8, var9) - 1, var10.getZ()), var2
             );
             var5.put((byte)(var11 >> 16 & 0xFF));
             var5.put((byte)(var11 >> 8 & 0xFF));

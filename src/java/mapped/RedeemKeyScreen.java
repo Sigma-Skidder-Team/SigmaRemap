@@ -14,13 +14,13 @@ public class RedeemKeyScreen extends IconPanel {
    public String field21135 = "";
    public Animation field21136 = new Animation(380, 200, Direction.BACKWARDS);
    private static JSONArray field21137;
-   private Class4281 field21138;
+   private UIInput field21138;
 
    public RedeemKeyScreen(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6);
       this.method13300(false);
-      Class4281 var9;
-      this.addToList(var9 = new Class4281(this, "redeemBox", 100, 200, 350, 50, Class4281.field20742, "", "Premium Code"));
+      UIInput var9;
+      this.addToList(var9 = new UIInput(this, "redeemBox", 100, 200, 350, 50, UIInput.field20742, "", "Premium Code"));
       UIButton var10;
       this.addToList(
          var10 = new UIButton(
@@ -35,7 +35,7 @@ public class RedeemKeyScreen extends IconPanel {
             ResourceRegistry.JelloLightFont20
          )
       );
-      this.addToList(this.field21138 = new Class4281(this, "captcha", 195, 290, 75, 35, Class4281.field20742, "", "Captcha"));
+      this.addToList(this.field21138 = new UIInput(this, "captcha", 195, 290, 75, 35, UIInput.field20742, "", "Captcha"));
       this.field21138.method13306(ResourceRegistry.JelloLightFont18);
       this.field21138.method13288(false);
       var10.doThis((var2x, var3x) -> new Thread(() -> {
@@ -50,7 +50,7 @@ public class RedeemKeyScreen extends IconPanel {
             }
 
             if (Client.getInstance().getNetworkManager().isPremium()) {
-               this.method13222(() -> ((JelloMainMenuScreen)this.method13258()).method13340());
+               this.method13222(() -> ((JelloMainMenuScreen)this.getIcoPanel()).method13340());
             }
          }).start());
    }
@@ -71,10 +71,10 @@ public class RedeemKeyScreen extends IconPanel {
       if (var5 != null) {
          this.field21138.method13288(var5.method36702());
          if (var5.method36701() != null) {
-            RenderUtil.startScissor((float)(this.field20895 + 295), (float)(this.field20896 + 280), 190.0F, 50.0F);
-            RenderUtil.method11449(
-               (float)(this.field20895 + 316),
-               (float)(this.field20896 + 280),
+            RenderUtil.startScissor((float)(this.xA + 295), (float)(this.yA + 280), 190.0F, 50.0F);
+            RenderUtil.drawImage(
+               (float)(this.xA + 316),
+               (float)(this.yA + 280),
                190.0F,
                190.0F,
                var5.method36701(),

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Streams;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 
 import java.util.List;

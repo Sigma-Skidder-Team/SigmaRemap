@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.chunk.IChunk;
 
 import java.util.Arrays;
 
@@ -40,7 +41,7 @@ public class Class5648 extends ChunkGenerator {
 
       for (int var4 = 0; var4 < var3.length; var4++) {
          BlockState var5 = var3[var4] != null ? var3[var4] : Blocks.AIR.method11579();
-         if (!Class101.field299.method287().test(var5)) {
+         if (!Heightmap.Type.field299.method287().test(var5)) {
             return var4 - 1;
          }
       }
@@ -52,8 +53,8 @@ public class Class5648 extends ChunkGenerator {
    public void method17803(Class1660 var1, Class7480 var2, IChunk var3) {
       BlockState[] var6 = this.field24999.method38130();
       BlockPos.Mutable var7 = new BlockPos.Mutable();
-      Class7527 var8 = var3.method7070(Class101.field297);
-      Class7527 var9 = var3.method7070(Class101.field295);
+      Heightmap var8 = var3.getHeightmap(Heightmap.Type.field297);
+      Heightmap var9 = var3.getHeightmap(Heightmap.Type.field295);
 
       for (int var10 = 0; var10 < var6.length; var10++) {
          BlockState var11 = var6[var10];
@@ -70,7 +71,7 @@ public class Class5648 extends ChunkGenerator {
    }
 
    @Override
-   public int method17797(int var1, int var2, Class101 var3) {
+   public int method17797(int var1, int var2, Heightmap.Type var3) {
       BlockState[] var6 = this.field24999.method38130();
 
       for (int var7 = var6.length - 1; var7 >= 0; var7--) {

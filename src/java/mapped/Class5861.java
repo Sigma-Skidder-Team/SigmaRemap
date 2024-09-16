@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 
 public class Class5861 extends Slot {

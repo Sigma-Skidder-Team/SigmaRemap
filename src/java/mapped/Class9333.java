@@ -1,13 +1,15 @@
 package mapped;
 
+import net.minecraft.world.chunk.ChunkSection;
+
 public class Class9333 {
    private static String[] field43312;
 
    public static int method35299(Class8066 var0) {
-      Class7038[] var3 = var0.method27740().method7067();
+      ChunkSection[] var3 = var0.method27740().getSections();
       if (var3 != null) {
          int var4 = var0.method27718().getY() >> 4;
-         Class7038 var5 = var3[var4];
+         ChunkSection var5 = var3[var4];
          return var5 != null ? var5.method21870() : 0;
       } else {
          return 0;

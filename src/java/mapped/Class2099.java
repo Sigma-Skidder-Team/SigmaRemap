@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.Block;
+
 public enum Class2099 {
    field13680(Blocks.field36400, "oak"),
    field13681(Blocks.field36401, "spruce"),

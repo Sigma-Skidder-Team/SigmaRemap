@@ -23,7 +23,7 @@ public class Class4326 extends Screen {
       this.method13300(false);
       short var3 = 400;
       int var4 = 114;
-      int var5 = (this.method13267() - var3) / 2;
+      int var5 = (this.getWidthA() - var3) / 2;
       this.addToList(
          this.field21116 = new SigmaClassicTextBox(this, "username", var5, var4, var3, 45, SigmaClassicTextBox.field20741, "", "Username / E-Mail", ResourceRegistry.field38868)
       );
@@ -70,15 +70,15 @@ public class Class4326 extends Screen {
 
    @Override
    public void draw(float var1) {
-      RenderUtil.method11455(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ClassicDecryption.mainmenubackground);
-      RenderUtil.drawRect(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.PALE_RED.getColor, 0.1F));
-      RenderUtil.drawRect(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.95F));
+      RenderUtil.method11455(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ClassicDecryption.mainmenubackground);
+      RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ColorUtils.applyAlpha(ClientColors.PALE_RED.getColor, 0.1F));
+      RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.95F));
       RenderUtil.method11440(
-         ResourceRegistry.field38868, (float)(this.method13267() / 2), 38.0F, "Add Alt", ClientColors.LIGHT_GREYISH_BLUE.getColor, Class2218.field14492, Class2218.field14488
+         ResourceRegistry.field38868, (float)(this.getWidthA() / 2), 38.0F, "Add Alt", ClientColors.LIGHT_GREYISH_BLUE.getColor, Class2218.field14492, Class2218.field14488
       );
       RenderUtil.method11441(
          ResourceRegistry.field38868,
-         (float)(this.method13267() / 2),
+         (float)(this.getWidthA() / 2),
          58.0F,
          this.field21122,
          ClientColors.LIGHT_GREYISH_BLUE.getColor,

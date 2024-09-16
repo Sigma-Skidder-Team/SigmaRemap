@@ -7,10 +7,13 @@ import java.util.Random;
 import java.util.Set;
 import java.util.function.Function;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.chunk.IChunk;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 
 public abstract class Class7195<C extends Class4729> {

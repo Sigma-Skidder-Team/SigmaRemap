@@ -2,6 +2,7 @@ package mapped;
 
 import java.util.Collection;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;

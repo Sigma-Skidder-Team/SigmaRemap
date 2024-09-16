@@ -235,7 +235,7 @@ public class MusicManager {
                     GL11.glScalef(var18, var18, 0.0F);
                     GL11.glTranslated(-60.0, -(field32143.mainWindow.getHeight() - 55), 0.0);
                     RenderUtil.method11455(10.0F, (float) (field32143.mainWindow.getHeight() - 110), 100.0F, 100.0F, this.field32151);
-                    RenderUtil.method11463(10.0F, (float) (field32143.mainWindow.getHeight() - 110), 100.0F, 100.0F, 14.0F, 0.3F);
+                    RenderUtil.drawRoundedRect(10.0F, (float) (field32143.mainWindow.getHeight() - 110), 100.0F, 100.0F, 14.0F, 0.3F);
                     GL11.glPopMatrix();
                     String[] var11 = this.field32150.split(" - ");
                     int var12 = 30;

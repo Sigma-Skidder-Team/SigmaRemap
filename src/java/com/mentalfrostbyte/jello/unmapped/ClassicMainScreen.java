@@ -45,9 +45,9 @@ public class ClassicMainScreen extends Screen {
         this.addToList(this.field21102 = new ClassicParticleEngine(this, "particles"));
         short var13 = 480;
         short var14 = 480;
-        this.addToList(this.field21103 = new Class4337(this, "group", (this.method13267() - var13) / 2, this.method13269() / 2 - 230, var13, var14));
+        this.addToList(this.field21103 = new Class4337(this, "group", (this.getWidthA() - var13) / 2, this.getHeightA() / 2 - 230, var13, var14));
         this.addToList(
-                this.field21095 = new StringPanel(
+                this.field21095 = new UITextDisplay(
                         this, "Copyright", 10, 8, var9.method23942(var11), 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), var11, ResourceRegistry.JelloLightFont18
                 )
         );
@@ -58,13 +58,13 @@ public class ClassicMainScreen extends Screen {
         var16.add("Omikron");
         Collections.shuffle(var16);
         String var17 = "by " + var16.get(0) + ", " + var16.get(1);
-        this.addToList(new StringPanel(this, "names", 130, 9, var9.method23942(var11), 140, var15, var17, ClassicDecryption.regular17));
+        this.addToList(new UITextDisplay(this, "names", 130, 9, var9.method23942(var11), 140, var15, var17, ClassicDecryption.regular17));
         this.addToList(
-                this.field21094 = new StringPanel(
+                this.field21094 = new UITextDisplay(
                         this,
                         "Version",
-                        this.method13267() - var9.method23942(var12) - 9,
-                        this.method13269() - 31,
+                        this.getWidthA() - var9.method23942(var12) - 9,
+                        this.getHeightA() - 31,
                         114,
                         140,
                         new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor),
@@ -72,14 +72,14 @@ public class ClassicMainScreen extends Screen {
                         var9
                 )
         );
-        this.addToList(new StringPanel(this, "Hello", 10, this.method13269() - 55, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), "Hello,", var9));
+        this.addToList(new UITextDisplay(this, "Hello", 10, this.getHeightA() - 55, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), "Hello,", var9));
         this.addToList(
-                new StringPanel(
-                        this, "Latest", 10, this.method13269() - 31, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), "You are using the latest version", var9
+                new UITextDisplay(
+                        this, "Latest", 10, this.getHeightA() - 31, 114, 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), "You are using the latest version", var9
                 )
         );
-        this.field21104 = (float) (this.method13267() / 2);
-        this.field21105 = (float) (this.method13269() / 2);
+        this.field21104 = (float) (this.getWidthA() / 2);
+        this.field21105 = (float) (this.getHeightA() / 2);
     }
 
     private int method13432(int var1) {
@@ -87,18 +87,18 @@ public class ClassicMainScreen extends Screen {
         int var7 = -6;
         int var8 = 122 * var6 + var6 * var7;
         if (var1 < var6) {
-            return this.method13267() / 2 - var8 / 2 + var1 * 122 + var1 * var7;
+            return this.getWidthA() / 2 - var8 / 2 + var1 * 122 + var1 * var7;
         } else {
             var1 -= var6;
             var6 = 3;
             var7 = 6;
             var8 = 122 * var6 + var6 * var7;
-            return this.method13267() / 2 - var8 / 2 + var1 * 122 + var1 * var7;
+            return this.getWidthA() / 2 - var8 / 2 + var1 * 122 + var1 * var7;
         }
     }
 
     private int method13433() {
-        return this.method13269() / 2 - 100;
+        return this.getHeightA() / 2 - 100;
     }
 
     public void method13434(net.minecraft.client.gui.screen.Screen var1) {
@@ -130,18 +130,18 @@ public class ClassicMainScreen extends Screen {
         this.method13225();
         GL11.glPushMatrix();
         GL11.glTranslated(
-                (int) ((float) (-this.method13267() / 200) + this.field21104 / 200.0F),
-                (int) ((float) (-this.method13269() / 100) + this.field21105 / 100.0F) - var4,
+                (int) ((float) (-this.getWidthA() / 200) + this.field21104 / 200.0F),
+                (int) ((float) (-this.getHeightA() / 100) + this.field21105 / 100.0F) - var4,
                 0.0
         );
-        RenderUtil.method11455(-10.0F, -10.0F, (float) (this.method13267() + 20), (float) (this.method13269() + 20), ClassicDecryption.mainmenubackground);
+        RenderUtil.method11455(-10.0F, -10.0F, (float) (this.getWidthA() + 20), (float) (this.getHeightA() + 20), ClassicDecryption.mainmenubackground);
         GL11.glPopMatrix();
         this.field21103
                 .method13286(
-                        (int) ((float) (-this.method13267() / 40) + this.field21104 / 40.0F), (int) ((float) (-this.method13269() / 40) + this.field21105 / 40.0F) + var4
+                        (int) ((float) (-this.getWidthA() / 40) + this.field21104 / 40.0F), (int) ((float) (-this.getHeightA() / 40) + this.field21105 / 40.0F) + var4
                 );
         this.field21102
-                .method13286((int) ((float) (-this.method13267() / 12) + this.field21104 / 12.0F), (int) ((float) (-this.method13269() / 12) + this.field21105 / 12.0F));
+                .method13286((int) ((float) (-this.getWidthA() / 12) + this.field21104 / 12.0F), (int) ((float) (-this.getHeightA() / 12) + this.field21105 / 12.0F));
         super.draw(var1);
     }
 }

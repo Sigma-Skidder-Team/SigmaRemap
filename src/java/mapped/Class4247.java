@@ -7,8 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Class4247 extends Class4278 {
-   private static String[] field20602;
-   private final List<Class8435> field20603 = new ArrayList<Class8435>();
+    private final List<Class8435> field20603 = new ArrayList<Class8435>();
 
    public Class4247(IconPanel var1, String var2, int var3, int var4, int var5, int var6, boolean var7) {
       super(var1, var2, var3, var4, var5, var6, var7);

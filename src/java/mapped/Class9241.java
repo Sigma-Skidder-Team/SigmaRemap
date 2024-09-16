@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.datafixers.util.Either;
+import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.concurrent.CompletableFuture;

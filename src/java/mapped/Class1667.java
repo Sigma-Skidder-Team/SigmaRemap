@@ -7,6 +7,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.IChunk;
 
 import javax.annotation.Nullable;
 import java.util.function.Predicate;
@@ -39,7 +40,7 @@ public class Class1667 implements IBlockReader, ICollisionReader {
       for (int var12 = var2.getX() >> 4; var12 <= var3.getX() >> 4; var12++) {
          for (int var13 = var2.getZ() >> 4; var13 <= var3.getZ() >> 4; var13++) {
             IChunk var11 = this.field9083[var12 - this.field9081][var13 - this.field9082];
-            if (var11 != null && !var11.method7076(var2.getY(), var3.getY())) {
+            if (var11 != null && !var11.isEmptyBetween(var2.getY(), var3.getY())) {
                this.field9084 = false;
                return;
             }

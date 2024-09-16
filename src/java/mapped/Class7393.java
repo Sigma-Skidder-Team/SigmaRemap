@@ -12,6 +12,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -58,7 +59,7 @@ public class Class7393 {
    public static void method23618(World var0, BlockPos var1) {
    }
 
-   public static void method23619(ISeedReader var0, Class5444<?> var1) {
+   public static void method23619(ISeedReader var0, StructureStart<?> var1) {
    }
 
    public static void method23620(World var0, MobEntity var1, Class6603 var2) {

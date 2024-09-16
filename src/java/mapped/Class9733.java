@@ -150,7 +150,7 @@ public class Class9733 {
 
       for (int var14 = 0; var14 < var13.length; var14++) {
          BlockState var15 = var13[var14];
-         if (var15 != null && !Class101.field299.method287().test(var15)) {
+         if (var15 != null && !Heightmap.Type.field299.method287().test(var15)) {
             this.field45449[var14] = null;
             var5.method26690(Class1993.field13007, Class2898.field17980.method11216(new Class4732(var14, var15)));
          }

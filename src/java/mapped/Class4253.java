@@ -32,7 +32,7 @@ public class Class4253 extends Class4247 {
    }
 
    public void method13056() {
-      this.setHeight(0);
+      this.setHeightA(0);
       this.field20627 = new Date();
    }
 
@@ -41,7 +41,7 @@ public class Class4253 extends Class4247 {
       if (this.field20627 != null) {
          float var4 = Animation.method25322(this.field20627, 150.0F);
          var4 = QuadraticEasing.easeOutQuad(var4, 0.0F, 1.0F, 1.0F);
-         this.setHeight((int)(55.0F * var4));
+         this.setHeightA((int)(55.0F * var4));
          if (var4 == 1.0F) {
             this.field20627 = null;
          }
@@ -50,28 +50,28 @@ public class Class4253 extends Class4247 {
       if (this.field20625 != null) {
          float var6 = Animation.method25322(this.field20625, 180.0F);
          var6 = QuadraticEasing.easeOutQuad(var6, 0.0F, 1.0F, 1.0F);
-         this.setHeight((int)(55.0F * (1.0F - var6)));
+         this.setHeightA((int)(55.0F * (1.0F - var6)));
          if (var6 == 1.0F) {
             this.field20625 = null;
          }
       }
 
-      RenderUtil.method11421(this.field20895, this.field20896, this.field20895 + this.field20897, this.field20896 + this.field20898, true);
+      RenderUtil.method11421(this.xA, this.yA, this.xA + this.widthA, this.yA + this.heightA, true);
       RenderUtil.drawString(
          ResourceRegistry.RegularFont20,
-         (float)(this.field20895 + 25),
-         (float)this.field20896 + (float)this.field20898 / 2.0F - 17.5F,
+         (float)(this.xA + 25),
+         (float)this.yA + (float)this.heightA / 2.0F - 17.5F,
          this.field20624.method21596(),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F * var1)
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont12,
-         (float)(this.field20895 + 25),
-         (float)this.field20896 + (float)this.field20898 / 2.0F + 7.5F,
+         (float)(this.xA + 25),
+         (float)this.yA + (float)this.heightA / 2.0F + 7.5F,
          this.field20624.method21597(),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F * var1)
       );
-      this.field20628.method13266((int)((float)this.field20898 / 2.0F - 7.5F));
+      this.field20628.setYA((int)((float)this.heightA / 2.0F - 7.5F));
       super.draw(var1);
       RenderUtil.endScissor();
    }

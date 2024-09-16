@@ -66,7 +66,7 @@ public class Class4185 extends Class4180 {
          .method36434(Class7095.field30526);
       BlockPos var11 = (BlockPos)Class3191.method11408().get(this.field20471);
       BlockPos var12 = this.field20455.method8337(Class8969.method32896(var10, new BlockPos(3 - var11.getX(), 0, 0 - var11.getZ())));
-      int var13 = var1.method6736(Class101.field295, var12.getX(), var12.getZ());
+      int var13 = var1.method6736(Heightmap.Type.field295, var12.getX(), var12.getZ());
       BlockPos var14 = this.field20455;
       this.field20455 = this.field20455.method8336(0, var13 - 90 - 1, 0);
       boolean var15 = super.method12896(var1, var2, var3, var4, var5, var6, var7);

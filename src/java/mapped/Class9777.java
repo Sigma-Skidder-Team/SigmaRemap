@@ -125,7 +125,7 @@ public final class Class9777 {
                               var48 = var15 + var47;
                            } else {
                               if (var22 == -1) {
-                                 var22 = this.field45736.method17828(var19.getX(), var19.getZ(), Class101.field295);
+                                 var22 = this.field45736.method17828(var19.getX(), var19.getZ(), Heightmap.Type.field295);
                               }
 
                               var48 = var22 - var46;
@@ -158,7 +158,7 @@ public final class Class9777 {
                               if (!var12) {
                                  if (!var45) {
                                     if (var22 == -1) {
-                                       var22 = this.field45736.method17828(var19.getX(), var19.getZ(), Class101.field295);
+                                       var22 = this.field45736.method17828(var19.getX(), var19.getZ(), Heightmap.Type.field295);
                                     }
 
                                     var55 = var22 + var47 / 2;

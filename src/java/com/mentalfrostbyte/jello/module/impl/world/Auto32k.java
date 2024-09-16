@@ -304,7 +304,7 @@ public class Auto32k extends Module {
             }
 
             if (var1.getPacket() instanceof SCloseWindowPacket) {
-                this.method15999(false);
+                this.setEnabled(false);
             }
         }
     }

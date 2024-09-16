@@ -6,9 +6,11 @@ import java.util.BitSet;
 import java.util.Random;
 import java.util.function.Function;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.chunk.IChunk;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 
 public class Class7198 extends Class7194 {
@@ -117,7 +119,7 @@ public class Class7198 extends Class7194 {
                   var1.setBlockState(var4, Blocks.field36527.method11579(), false);
                } else {
                   var1.setBlockState(var4, Blocks.field36890.method11579(), false);
-                  var1.method7089().method20726(var4, Blocks.field36890, 0);
+                  var1.getBlocksToBeTicked().method20726(var4, Blocks.field36890, 0);
                }
 
                return true;
@@ -132,7 +134,7 @@ public class Class7198 extends Class7194 {
                   int var21 = var9 + var19.method541();
                   if (var20 >> 4 != var6 || var21 >> 4 != var7 || var1.getBlockState(var4.method8372(var20, var11, var21)).isAir()) {
                      var1.setBlockState(var4, field30895.getBlockState(), false);
-                     var1.method7090().method20726(var4, field30895.method23472(), 0);
+                     var1.getFluidsToBeTicked().method20726(var4, field30895.method23472(), 0);
                      var17 = true;
                      break;
                   }

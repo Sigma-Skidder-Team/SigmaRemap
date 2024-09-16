@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Dynamic;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
@@ -221,8 +222,8 @@ public class Class4184 extends Class4180 {
       return var0.method6736(method12959(var3), var1, var2) - 1;
    }
 
-   public static Class101 method12959(Class2219 var0) {
-      return var0 != Class2219.field14496 ? Class101.field295 : Class101.field297;
+   public static Heightmap.Type method12959(Class2219 var0) {
+      return var0 != Class2219.field14496 ? Heightmap.Type.field295 : Heightmap.Type.field297;
    }
 
    private static Class7872 method12960(Block var0, float var1, Block var2) {

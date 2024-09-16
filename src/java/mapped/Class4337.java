@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.unmapped.Screen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.LanguageScreen;
 import net.minecraft.client.gui.screen.OptionsScreen;
+import net.minecraft.client.gui.screen.WorldSelectionScreen;
 import net.minecraft.util.SoundEvents;
 
 public class Class4337 extends IconPanel {
@@ -29,7 +30,7 @@ public class Class4337 extends IconPanel {
       );
       this.addToList(this.field21192 = new Class4254(this, "Agora", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ClassicDecryption.agora));
       this.addToList(this.field21187 = new Class4254(this, "Exit", this.method13497(var9++), this.method13496() + 140 + 10, 114, 140, ClassicDecryption.exit));
-      this.field21186.doThis((var1x, var2x) -> this.method13493(new Class1341(Minecraft.getInstance().currentScreen)));
+      this.field21186.doThis((var1x, var2x) -> this.method13493(new WorldSelectionScreen(Minecraft.getInstance().currentScreen)));
       this.field21191.doThis((var1x, var2x) -> this.method13493(new JelloPortalScreen(Minecraft.getInstance().currentScreen)));
       this.field21189.doThis((var1x, var2x) -> this.method13493(new OptionsScreen(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
       this.field21190.doThis((var1x, var2x) -> this.method13494(new SigmaClassicAltManager()));
@@ -67,20 +68,20 @@ public class Class4337 extends IconPanel {
       byte var7 = -6;
       int var8 = 122 * var6 + var6 * var7;
       if (var1 < var6) {
-         return this.method13267() / 2 - var8 / 2 + var1 * 122 + var1 * var7 - 12;
+         return this.getWidthA() / 2 - var8 / 2 + var1 * 122 + var1 * var7 - 12;
       } else {
          var1 -= var6;
          var6 = 3;
          var7 = 6;
          var8 = 122 * var6 + var6 * var7;
-         return this.method13267() / 2 - var8 / 2 + var1 * 122 + var1 * var7 - 12;
+         return this.getWidthA() / 2 - var8 / 2 + var1 * 122 + var1 * var7 - 12;
       }
    }
 
    @Override
    public void draw(float var1) {
       this.method13225();
-      RenderUtil.method11455((float)(this.field20895 + (this.method13267() - 300) / 2), (float)(this.field20896 + 30), 300.0F, 97.0F, ClassicDecryption.big);
+      RenderUtil.method11455((float)(this.xA + (this.getWidthA() - 300) / 2), (float)(this.yA + 30), 300.0F, 97.0F, ClassicDecryption.big);
       super.draw(var1);
    }
 }

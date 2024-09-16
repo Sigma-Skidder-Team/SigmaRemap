@@ -12,8 +12,8 @@ public class Class6296<DC extends Class4716> extends Class6291<DC> {
    }
 
    @Override
-   public Class101 method19255(DC var1) {
-      return Class101.field299;
+   public Heightmap.Type method19255(DC var1) {
+      return Heightmap.Type.field299;
    }
 
    @Override

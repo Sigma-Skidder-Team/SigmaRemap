@@ -10,10 +10,12 @@ import it.unimi.dsi.fastutil.objects.Object2DoubleArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2DoubleMap;
 import mapped.*;
 import mapped.Direction;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
@@ -2137,7 +2139,7 @@ public abstract class Entity implements INameable, ICommandSource {
       } else {
          BlockPos var6;
          if (!var5) {
-            var6 = var1.method7006(Class101.field300, var1.method6947());
+            var6 = var1.method7006(Heightmap.Type.field300, var1.method6947());
          } else {
             var6 = ServerWorld.field9038;
          }

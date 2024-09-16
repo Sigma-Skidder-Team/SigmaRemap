@@ -21,7 +21,7 @@ public class Class2938 extends Class2898<Class4712> {
          for (int var11 = 0; var11 < 16; var11++) {
             int var12 = var4.getX() + var10;
             int var13 = var4.getZ() + var11;
-            int var14 = var1.method6736(Class101.field299, var12, var13);
+            int var14 = var1.method6736(Heightmap.Type.field299, var12, var13);
             var8.method8372(var12, var14, var13);
             var9.method8374(var8).method8380(Direction.DOWN, 1);
             Biome var15 = var1.getBiome(var8);

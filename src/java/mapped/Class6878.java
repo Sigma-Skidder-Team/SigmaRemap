@@ -19,12 +19,12 @@ public class Class6878 {
          return null;
       } else {
          Chunk var10 = var0.getChunk(var1 >> 4, var2 >> 4);
-         int var11 = !var8 ? var10.method7071(Class101.field299, var1 & 15, var2 & 15) : var0.getChunkProvider().method7370().method17823();
+         int var11 = !var8 ? var10.getTopBlockY(Heightmap.Type.field299, var1 & 15, var2 & 15) : var0.getChunkProvider().method7370().method17823();
          if (var11 < 0) {
             return null;
          } else {
-            int var12 = var10.method7071(Class101.field296, var1 & 15, var2 & 15);
-            if (var12 <= var11 && var12 > var10.method7071(Class101.field298, var1 & 15, var2 & 15)) {
+            int var12 = var10.getTopBlockY(Heightmap.Type.field296, var1 & 15, var2 & 15);
+            if (var12 <= var11 && var12 > var10.getTopBlockY(Heightmap.Type.field298, var1 & 15, var2 & 15)) {
                return null;
             } else {
                for (int var13 = var11 + 1; var13 >= 0; var13--) {

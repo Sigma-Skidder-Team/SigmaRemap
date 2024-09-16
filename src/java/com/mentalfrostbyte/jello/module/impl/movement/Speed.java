@@ -50,7 +50,7 @@ public class Speed extends ModuleWithModuleSettings {
             field23893 = 0;
             if (this.getBooleanValueFromSetttingName("Lag back checker") && this.isEnabled() && mc.player.ticksExisted > 2) {
                 Client.getInstance().getNotificationManager().post(new Notification("Speed", "Disabled speed due to lagback."));
-                this.method16000();
+                this.toggle();
             }
         }
     }

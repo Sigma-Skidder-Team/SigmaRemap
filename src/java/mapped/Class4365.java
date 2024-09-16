@@ -38,25 +38,25 @@ public class Class4365 extends Class4247 {
          var4 = this.account.username;
       }
 
-      this.setWidth(this.field20913.method23942(var4) + 50 + 60);
-      this.method13264(Minecraft.getInstance().mainWindow.getWidth() - this.field20897 - 20);
-      boolean var6 = this.field21337 >= this.field20895 && this.field21338 <= this.field20896 + this.method13269();
+      this.setWidthA(this.field20913.method23942(var4) + 50 + 60);
+      this.setXA(Minecraft.getInstance().mainWindow.getWidth() - this.widthA - 20);
+      boolean var6 = this.field21337 >= this.xA && this.field21338 <= this.yA + this.getHeightA();
       this.field21334 = Math.max(0.0F, Math.min(1.0F, this.field21334 + (!var6 ? -0.1F : 0.1F)));
-      RenderUtil.method11463(
-         (float)this.field20895, (float)this.field20896, (float)this.method13267(), (float)this.method13269(), 20.0F, this.field21334 * 0.2F * var1
+      RenderUtil.drawRoundedRect(
+         (float)this.xA, (float)this.yA, (float)this.getWidthA(), (float)this.getHeightA(), 20.0F, this.field21334 * 0.2F * var1
       );
       RenderUtil.drawRect(
-         (float)this.field20895,
-         (float)this.field20896,
-         (float)(this.field20895 + this.method13267()),
-         (float)(this.field20896 + this.method13269()),
+         (float)this.xA,
+         (float)this.yA,
+         (float)(this.xA + this.getWidthA()),
+         (float)(this.yA + this.getHeightA()),
          ColorUtils.applyAlpha(ClientColors.DULL_GREEN.getColor, (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * var1)
       );
-      float var7 = (float)(this.field20895 + this.field20897 - 60 - 10);
-      float var8 = (float)(this.field20896 + 10);
-      RenderUtil.method11449(
-         (float)(this.field20895 + this.field20897 - 60 - 10),
-         (float)(this.field20896 + 10),
+      float var7 = (float)(this.xA + this.widthA - 60 - 10);
+      float var8 = (float)(this.yA + 10);
+      RenderUtil.drawImage(
+         (float)(this.xA + this.widthA - 60 - 10),
+         (float)(this.yA + 10),
          60.0F,
          60.0F,
          var5,
@@ -64,8 +64,8 @@ public class Class4365 extends Class4247 {
       );
       RenderUtil.drawString(
          this.field20913,
-         (float)(this.field20895 + this.field20897 - 90 - this.field20913.method23942(var4)),
-         (float)(this.field20896 + 27),
+         (float)(this.xA + this.widthA - 90 - this.field20913.method23942(var4)),
+         (float)(this.yA + 27),
          var4,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
       );

@@ -36,7 +36,7 @@ public class ElytraFly extends Module {
             if (!(mc.player.getMotion().y < 0.08) || mc.player.onGround) {
                 mc.player.setFlag(7, false);
                 if (mc.player.isSneaking()) {
-                    this.method15999(false);
+                    this.setEnabled(false);
                 }
             } else if (!mc.player.isElytraFlying()) {
                 mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.START_FALL_FLYING));

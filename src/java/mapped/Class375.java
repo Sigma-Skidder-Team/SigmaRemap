@@ -1,6 +1,8 @@
 package mapped;
 
 import com.mojang.realmsclient.RealmsMainScreen;
+import com.mojang.realmsclient.client.RealmsClient;
+import com.mojang.realmsclient.exception.RealmsServiceException;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class375 extends Thread {
@@ -13,7 +15,7 @@ public class Class375 extends Thread {
 
    @Override
    public void run() {
-      Class4624 var3 = Class4624.method14543();
+      RealmsClient var3 = RealmsClient.method14543();
 
       try {
          Class1992 var4 = var3.method14554();
@@ -30,7 +32,7 @@ public class Class375 extends Thread {
          }
 
          RealmsMainScreen.method2082(this.field1629);
-      } catch (Class2435 var5) {
+      } catch (RealmsServiceException var5) {
          RealmsMainScreen.method2083(false);
          RealmsMainScreen.method2084().error("Couldn't connect to realms", var5);
          if (var5.field16472 == 401) {

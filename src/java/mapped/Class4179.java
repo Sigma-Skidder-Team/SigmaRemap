@@ -26,7 +26,7 @@ public class Class4179 extends Class4178 {
 
    @Override
    public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
-      int var10 = var1.method6736(Class101.field297, this.field20444.field45678, this.field20444.field45680);
+      int var10 = var1.method6736(Heightmap.Type.field297, this.field20444.field45678, this.field20444.field45680);
       BlockPos.Mutable var11 = new BlockPos.Mutable(this.field20444.field45678, var10, this.field20444.field45680);
 
       while (var11.getY() > 0) {

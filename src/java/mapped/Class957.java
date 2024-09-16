@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -179,11 +180,11 @@ public class Class957 extends Class956 implements ITickableTileEntity {
       Vector3d var4 = new Vector3d((double)this.getPos().getX(), 0.0, (double)this.getPos().getZ()).method11333();
       Vector3d var5 = var4.scale(1024.0);
 
-      for (int var6 = 16; method3881(var1, var5).method7065() > 0 && var6-- > 0; var5 = var5.add(var4.scale(-16.0))) {
+      for (int var6 = 16; method3881(var1, var5).getTopFilledSegment() > 0 && var6-- > 0; var5 = var5.add(var4.scale(-16.0))) {
          field5371.debug("Skipping backwards past nonempty chunk at {}", var5);
       }
 
-      for (int var7 = 16; method3881(var1, var5).method7065() == 0 && var7-- > 0; var5 = var5.add(var4.scale(16.0))) {
+      for (int var7 = 16; method3881(var1, var5).getTopFilledSegment() == 0 && var7-- > 0; var5 = var5.add(var4.scale(16.0))) {
          field5371.debug("Skipping forward past empty chunk at {}", var5);
       }
 
@@ -232,9 +233,9 @@ public class Class957 extends Class956 implements ITickableTileEntity {
 
    @Nullable
    private static BlockPos method3882(Chunk var0) {
-      ChunkPos var3 = var0.method7072();
+      ChunkPos var3 = var0.getPos();
       BlockPos var4 = new BlockPos(var3.getX(), 30, var3.getZ());
-      int var5 = var0.method7065() + 16 - 1;
+      int var5 = var0.getTopFilledSegment() + 16 - 1;
       BlockPos var6 = new BlockPos(var3.method24358(), var5, var3.method24359());
       BlockPos var7 = null;
       double var8 = 0.0;

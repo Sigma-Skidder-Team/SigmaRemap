@@ -13,6 +13,8 @@ import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.ChunkSection;
+import net.minecraft.world.chunk.IChunk;
 
 import java.util.List;
 import java.util.Optional;
@@ -137,7 +139,7 @@ public class Class8641 {
    public void method31048(Class1977 var1, int var2) {
       Chunk var5 = this.method31043();
       if (var5 != null) {
-         var5.method7078(true);
+         var5.setModified(true);
          if (var1 != Class1977.field12881) {
             this.field38910 |= 1 << var2 - -1;
          } else {
@@ -157,7 +159,7 @@ public class Class8641 {
 
          this.field38916 |= var5 >= 64;
          if (this.field38911 != 0 || this.field38910 != 0) {
-            this.method31052(new SUpdateLightPacket(var1.method7072(), this.field38912, this.field38911, this.field38910, true), !this.field38916);
+            this.method31052(new SUpdateLightPacket(var1.getPos(), this.field38912, this.field38911, this.field38910, true), !this.field38916);
             this.field38911 = 0;
             this.field38910 = 0;
          }
@@ -165,9 +167,9 @@ public class Class8641 {
          for (int var11 = 0; var11 < this.field38909.length; var11++) {
             ShortSet var7 = this.field38909[var11];
             if (var7 != null) {
-               Class2002 var8 = Class2002.method8391(var1.method7072(), var11);
+               Class2002 var8 = Class2002.method8391(var1.getPos(), var11);
                if (var7.size() != 1) {
-                  Class7038 var9 = var1.method7067()[var8.getY()];
+                  ChunkSection var9 = var1.getSections()[var8.getY()];
                   SMultiBlockChangePacket var10 = new SMultiBlockChangePacket(var8, var7, var9, this.field38916);
                   this.method31052(var10, false);
                   var10.method17461((var2, var3) -> this.method31050(var4, var2, var3));

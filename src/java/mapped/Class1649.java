@@ -20,6 +20,8 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.*;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 import org.apache.logging.log4j.LogManager;
@@ -163,7 +165,7 @@ public class Class1649 extends Class1648 implements Class1650 {
          }
 
          if (var7 != null) {
-            var5 = var5 + "Ch: §" + var7.method7080().method34297() + var7.method7080() + '§' + "r\n";
+            var5 = var5 + "Ch: §" + var7.getStatus().method34297() + var7.getStatus() + '§' + "r\n";
          }
 
          ChunkHolderLocationType var8 = var4.method31055();
@@ -346,9 +348,9 @@ public class Class1649 extends Class1648 implements Class1650 {
                   this.field8956.method6929(var9);
                }
 
-               this.field8957.method603(var5.method7072());
+               this.field8957.method603(var5.getPos());
                this.field8957.method611();
-               this.field8967.method22737(var5.method7072(), (ChunkStatus)null);
+               this.field8967.method22737(var5.getPos(), (ChunkStatus)null);
             }
          } else {
             this.method6548(var1, var3);
@@ -382,7 +384,7 @@ public class Class1649 extends Class1648 implements Class1650 {
                }
 
                IChunk var8 = (IChunk)var7.get();
-               if (!var8.method7080().method34306(var2)) {
+               if (!var8.getStatus().method34306(var2)) {
                   return this.method6554(var1, var2);
                } else {
                   CompletableFuture var9;
@@ -413,8 +415,8 @@ public class Class1649 extends Class1648 implements Class1650 {
                boolean var9 = var4.contains("Level", 10) && var4.getCompound("Level").contains("Status", 8);
                if (var9) {
                   Class1672 var6 = Class9725.method38087(this.field8956, this.field8970, this.field8961, var1, var4);
-                  var6.method7073(this.field8956.getGameTime());
-                  this.method6553(var1, var6.method7080().method34303());
+                  var6.setLastSaveTime(this.field8956.getGameTime());
+                  this.method6553(var1, var6.getStatus().method34303());
                   return Either.left(var6);
                }
 
@@ -576,22 +578,22 @@ public class Class1649 extends Class1648 implements Class1650 {
    }
 
    private boolean method6561(IChunk var1) {
-      this.field8961.method6654(var1.method7072());
-      if (!var1.method7079()) {
+      this.field8961.method6654(var1.getPos());
+      if (!var1.isModified()) {
          return false;
       } else {
-         var1.method7073(this.field8956.getGameTime());
-         var1.method7078(false);
-         ChunkPos var4 = var1.method7072();
+         var1.setLastSaveTime(this.field8956.getGameTime());
+         var1.setModified(false);
+         ChunkPos var4 = var1.getPos();
 
          try {
-            ChunkStatus var5 = var1.method7080();
+            ChunkStatus var5 = var1.getStatus();
             if (var5.method34303() != Class2076.field13525) {
                if (this.method6562(var4)) {
                   return false;
                }
 
-               if (var5 == ChunkStatus.field42133 && var1.method7074().values().stream().noneMatch(Class5444::method17117)) {
+               if (var5 == ChunkStatus.field42133 && var1.getStructureStarts().values().stream().noneMatch(StructureStart::method17117)) {
                   return false;
                }
             }
@@ -721,7 +723,7 @@ public class Class1649 extends Class1648 implements Class1650 {
                    var7.z,
                    var8.method31057(),
                    var9.isPresent(),
-                   var9.map(IChunk::method7080).orElse(null),
+                   var9.map(IChunk::getStatus).orElse(null),
                    var10.map(Chunk::getLocationType).orElse(null),
                    method6569(var8.method31042()),
                    method6569(var8.method31040()),
@@ -979,17 +981,17 @@ public class Class1649 extends Class1648 implements Class1650 {
    private void method6582(ServerPlayerEntity var1, Packet<?>[] var2, Chunk var3) {
       if (var2[0] == null) {
          var2[0] = new SChunkDataPacket(var3, 65535);
-         var2[1] = new SUpdateLightPacket(var3.method7072(), this.field8957, true);
+         var2[1] = new SUpdateLightPacket(var3.getPos(), this.field8957, true);
       }
 
-      var1.method2830(var3.method7072(), var2[0], var2[1]);
-      Class7393.method23612(this.field8956, var3.method7072());
+      var1.method2830(var3.getPos(), var2[0], var2[1]);
+      Class7393.method23612(this.field8956, var3.getPos());
       List<Entity> var6 = Lists.newArrayList();
       List<Entity> var7 = Lists.newArrayList();
 
        for (Class8998 var9 : this.field8973.values()) {
            Entity var10 = Class8998.method33247(var9);
-           if (var10 != var1 && var10.chunkCoordX == var3.method7072().x && var10.chunkCoordZ == var3.method7072().z) {
+           if (var10 != var1 && var10.chunkCoordX == var3.getPos().x && var10.chunkCoordZ == var3.getPos().z) {
                var9.method33243(var1);
                if (var10 instanceof MobEntity && ((MobEntity) var10).method4297() != null) {
                    var6.add(var10);

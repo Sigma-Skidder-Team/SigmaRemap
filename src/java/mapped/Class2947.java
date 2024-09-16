@@ -51,7 +51,7 @@ public class Class2947 extends Class2898<Class4712> {
 
       for (int var20 = 0; var20 < var16.getX(); var20++) {
          for (int var21 = 0; var21 < var16.getZ(); var21++) {
-            var19 = Math.min(var19, var1.method6736(Class101.field297, var4.getX() + var20 + var17, var4.getZ() + var21 + var18));
+            var19 = Math.min(var19, var1.method6736(Heightmap.Type.field297, var4.getX() + var20 + var17, var4.getZ() + var21 + var18));
          }
       }
 

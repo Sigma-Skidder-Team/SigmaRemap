@@ -105,7 +105,7 @@ public class MiniMap extends Module {
 
                 while (var11.hasNext()) {
                     Class8444 var12 = (Class8444) var11.next();
-                    int var7 = var12.field36184.method7072().method24365(new ChunkPos(mc.player.chunkCoordX, mc.player.chunkCoordZ));
+                    int var7 = var12.field36184.getPos().method24365(new ChunkPos(mc.player.chunkCoordX, mc.player.chunkCoordZ));
                     if (var7 > 7) {
                         var11.remove();
                     }
@@ -210,7 +210,7 @@ public class MiniMap extends Module {
                             );
                             GL11.glPopMatrix();
                             RenderUtil.method11464((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, 23.0F, 0.75F);
-                            RenderUtil.method11463((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, 8.0F, 0.7F);
+                            RenderUtil.drawRoundedRect((float) this.field23711, (float) this.field23712, (float) this.field23710, (float) this.field23709, 8.0F, 0.7F);
                         }
 
                         var1.method13962(this.field23709 + 10);

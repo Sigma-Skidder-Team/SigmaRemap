@@ -25,7 +25,7 @@ public class Class6290 extends Class6272<Class4715> {
          for (int var10 = 0; var10 < var3.method14807().method27633(var2); var10++) {
             int var11 = var2.nextInt(16) + var4.getX();
             int var12 = var2.nextInt(16) + var4.getZ();
-            int var13 = var1.method33296(Class101.field299, var11, var12);
+            int var13 = var1.method33296(Heightmap.Type.field299, var11, var12);
             int var14 = method19253(var1, var11, var13, var12, var8);
             if (var14 != Integer.MAX_VALUE) {
                var7.add(new BlockPos(var11, var14, var12));

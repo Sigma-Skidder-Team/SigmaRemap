@@ -5,6 +5,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.chunk.IChunk;
 
 import javax.annotation.Nullable;
 import java.util.stream.Stream;
@@ -16,7 +17,7 @@ public interface Class1662 extends Class1663, ICollisionReader, Class1683 {
    @Deprecated
    boolean method6843(int var1, int var2);
 
-   int method6736(Class101 var1, int var2, int var3);
+   int method6736(Heightmap.Type var1, int var2, int var3);
 
    int method6808();
 
@@ -44,7 +45,7 @@ public interface Class1662 extends Class1663, ICollisionReader, Class1683 {
    @Override
    default Biome method7005(int var1, int var2, int var3) {
       IChunk var6 = this.getChunk(var1 >> 2, var3 >> 2, ChunkStatus.field42136, false);
-      return var6 != null && var6.method7077() != null ? var6.method7077().method7005(var1, var2, var3) : this.method6871(var1, var2, var3);
+      return var6 != null && var6.getBiomes() != null ? var6.getBiomes().method7005(var1, var2, var3) : this.method6871(var1, var2, var3);
    }
 
    Biome method6871(int var1, int var2, int var3);
@@ -56,7 +57,7 @@ public interface Class1662 extends Class1663, ICollisionReader, Class1683 {
 
    DimensionType method6812();
 
-   default BlockPos method7006(Class101 var1, BlockPos var2) {
+   default BlockPos method7006(Heightmap.Type var1, BlockPos var2) {
       return new BlockPos(var2.getX(), this.method6736(var1, var2.getX(), var2.getZ()), var2.getZ());
    }
 

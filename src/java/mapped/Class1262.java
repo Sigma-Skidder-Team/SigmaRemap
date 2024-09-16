@@ -32,14 +32,14 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Class1262 extends AbstractGui {
-   private static final Map<Class101, String> field6664 = Util.make(
-      new EnumMap<Class101, String>(Class101.class), var0 -> {
-         var0.put(Class101.field295, "SW");
-         var0.put(Class101.field296, "S");
-         var0.put(Class101.field297, "OW");
-         var0.put(Class101.field298, "O");
-         var0.put(Class101.field299, "M");
-         var0.put(Class101.field300, "ML");
+   private static final Map<Heightmap.Type, String> field6664 = Util.make(
+      new EnumMap<Heightmap.Type, String>(Heightmap.Type.class), var0 -> {
+         var0.put(Heightmap.Type.field295, "SW");
+         var0.put(Heightmap.Type.field296, "S");
+         var0.put(Heightmap.Type.field297, "OW");
+         var0.put(Heightmap.Type.field298, "O");
+         var0.put(Heightmap.Type.field299, "M");
+         var0.put(Heightmap.Type.field300, "ML");
       }
    );
    private final Minecraft field6665;
@@ -355,9 +355,9 @@ public class Class1262 extends AbstractGui {
 
                   StringBuilder var35 = new StringBuilder("CH");
 
-                  for (Class101 var27 : Class101.values()) {
+                  for (Heightmap.Type var27 : Heightmap.Type.values()) {
                      if (var27.method284()) {
-                        var35.append(" ").append(field6664.get(var27)).append(": ").append(var18.method7071(var27, var8.getX(), var8.getZ()));
+                        var35.append(" ").append(field6664.get(var27)).append(": ").append(var18.getTopBlockY(var27, var8.getX(), var8.getZ()));
                      }
                   }
 
@@ -365,11 +365,11 @@ public class Class1262 extends AbstractGui {
                   var35.setLength(0);
                   var35.append("SH");
 
-                  for (Class101 var40 : Class101.values()) {
+                  for (Heightmap.Type var40 : Heightmap.Type.values()) {
                      if (var40.method285()) {
                         var35.append(" ").append(field6664.get(var40)).append(": ");
                         if (var22 != null) {
-                           var35.append(var22.method7071(var40, var8.getX(), var8.getZ()));
+                           var35.append(var22.getTopBlockY(var40, var8.getX(), var8.getZ()));
                         } else {
                            var35.append("??");
                         }

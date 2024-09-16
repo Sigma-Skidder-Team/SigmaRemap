@@ -22,7 +22,7 @@ public class Class4360 extends Class4247 {
    public void method13028(int var1, int var2) {
       int var5 = this.method13309() - this.method13271();
       if (this.field21319) {
-         this.method13632((int)((float)var5 / (float)this.method13267() * 255.0F));
+         this.method13632((int)((float)var5 / (float)this.getWidthA() * 255.0F));
       }
 
       super.method13028(var1, var2);
@@ -30,7 +30,7 @@ public class Class4360 extends Class4247 {
 
    @Override
    public void draw(float var1) {
-      RenderUtil.method11424((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, this.field21317);
+      RenderUtil.method11424((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, this.field21317);
       super.draw(var1);
    }
 

@@ -6,6 +6,8 @@ import it.unimi.dsi.fastutil.objects.ObjectList;
 import it.unimi.dsi.fastutil.objects.ObjectListIterator;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.chunk.ChunkSection;
+import net.minecraft.world.chunk.IChunk;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -120,21 +122,21 @@ public class Class195 extends Class196 implements AutoCloseable {
    }
 
    public CompletableFuture<IChunk> method610(IChunk var1, boolean var2) {
-      ChunkPos var5 = var1.method7072();
+      ChunkPos var5 = var1.getPos();
       var1.method7096(false);
       this.method607(var5.x, var5.z, Class2044.field13349, Util.method38515(() -> {
-         Class7038[] var6 = var1.method7067();
+         ChunkSection[] var6 = var1.getSections();
 
          for (int var7 = 0; var7 < 16; var7++) {
-            Class7038 var8 = var6[var7];
-            if (!Class7038.method21859(var8)) {
+            ChunkSection var8 = var6[var7];
+            if (!ChunkSection.method21859(var8)) {
                super.method604(Class2002.method8391(var5, var7), false);
             }
          }
 
          super.method605(var5, true);
          if (!var2) {
-            var1.method7088().forEach(var2xx -> super.method601(var2xx, var1.getLightValue(var2xx)));
+            var1.getLightSources().forEach(var2xx -> super.method601(var2xx, var1.getLightValue(var2xx)));
          }
 
          this.field737.method6555(var5);

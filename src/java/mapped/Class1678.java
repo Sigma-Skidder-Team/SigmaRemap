@@ -21,7 +21,7 @@ public interface Class1678 extends Class1682, Class1662, Class1679 {
    }
 
    @Override
-   default BlockPos method7006(Class101 var1, BlockPos var2) {
+   default BlockPos method7006(Heightmap.Type var1, BlockPos var2) {
       return Class1662.super.method7006(var1, var2);
    }
 

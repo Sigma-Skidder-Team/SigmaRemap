@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.fluid.Fluid;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.List;

@@ -24,9 +24,9 @@ public class Class576 implements Runnable {
             Util.getOSType().method8181(var5.getString("url"));
          }
 
-         this.field2813.field21184.method13517().method13233(var6 = new Class4330(this.field2813.field21184, "changelog" + var4, var5));
-         var6.method13266(var3);
-         var3 += var6.method13269();
+         this.field2813.field21184.getButton().method13233(var6 = new Class4330(this.field2813.field21184, "changelog" + var4, var5));
+         var6.setYA(var3);
+         var3 += var6.getHeightA();
       }
    }
 }

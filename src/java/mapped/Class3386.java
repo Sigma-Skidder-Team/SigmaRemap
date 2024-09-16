@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 
 public class Class3386 extends Block {

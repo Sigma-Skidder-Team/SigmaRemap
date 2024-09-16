@@ -7,7 +7,7 @@ public class Class6293 extends Class6292<Class4718> {
       super(var1);
    }
 
-   public Class101 method19255(Class4718 var1) {
-      return Class101.field295;
+   public Heightmap.Type method19255(Class4718 var1) {
+      return Heightmap.Type.field295;
    }
 }

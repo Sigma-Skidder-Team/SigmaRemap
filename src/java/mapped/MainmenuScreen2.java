@@ -11,18 +11,19 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.OptionsScreen;
+import net.minecraft.client.gui.screen.WorldSelectionScreen;
 
 public class MainmenuScreen2 extends IconPanel {
-   private final Class4240 field21123;
-   private final Class4240 field21124;
-   private final Class4240 field21125;
-   private final Class4240 field21126;
-   private final Class4240 field21127;
+   private final ButtonPanel singleplayerButton;
+   private final ButtonPanel multiplayerButton;
+   private final ButtonPanel realmsButton;
+   private final ButtonPanel optionsButton;
+   private final ButtonPanel altManagerButton;
    private final Class4302 field21128;
-   private final StringPanel field21129;
-   private final StringPanel field21130;
-   private final Class4365 field21131;
-   private final UIButton field21132;
+   private final UITextDisplay field21129;
+   private final UITextDisplay field21130;
+   private final Class4365 loginButton;
+   private final UIButton changelogButton;
    private final UIButton field21133;
    public int field21134 = 0;
 
@@ -45,7 +46,7 @@ public class MainmenuScreen2 extends IconPanel {
       Client.getInstance();
       String var21 = var10000.append(Client.VERSION).append("  -  1.8 to ").append(JelloPortal.defaultVersion.getVersionName()).toString();
       this.addToList(
-         this.field21123 = new Class4236(
+         this.singleplayerButton = new Class4236(
             this,
             "Singleplayer",
             this.method13447(var17++),
@@ -57,7 +58,7 @@ public class MainmenuScreen2 extends IconPanel {
          )
       );
       this.addToList(
-         this.field21124 = new Class4236(
+         this.multiplayerButton = new Class4236(
             this,
             "Multiplayer",
             this.method13447(var17++),
@@ -69,7 +70,7 @@ public class MainmenuScreen2 extends IconPanel {
          )
       );
       this.addToList(
-         this.field21125 = new Class4236(
+         this.realmsButton = new Class4236(
             this,
             "Realms",
             this.method13447(var17++),
@@ -81,7 +82,7 @@ public class MainmenuScreen2 extends IconPanel {
          )
       );
       this.addToList(
-         this.field21126 = new Class4236(
+         this.optionsButton = new Class4236(
             this,
             "Options",
             this.method13447(var17++),
@@ -93,7 +94,7 @@ public class MainmenuScreen2 extends IconPanel {
          )
       );
       this.addToList(
-         this.field21127 = new Class4236(
+         this.altManagerButton = new Class4236(
             this,
             "Alt Manager",
             this.method13447(var17++),
@@ -105,16 +106,16 @@ public class MainmenuScreen2 extends IconPanel {
          )
       );
       this.addToList(
-         this.field21130 = new StringPanel(
-            this, "Copyright", 10, this.method13269() - 31, var15.method23942(var20), 128, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), var20, var15
+         this.field21130 = new UITextDisplay(
+            this, "Copyright", 10, this.getHeightA() - 31, var15.method23942(var20), 128, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), var20, var15
          )
       );
       this.addToList(
-         this.field21129 = new StringPanel(
+         this.field21129 = new UITextDisplay(
             this,
             "Version",
-            this.method13267() - var15.method23942(var21) - 9,
-            this.method13269() - 31,
+            this.getWidthA() - var15.method23942(var21) - 9,
+            this.getHeightA() - 31,
             128,
             128,
             new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor),
@@ -125,7 +126,7 @@ public class MainmenuScreen2 extends IconPanel {
       this.field21130.field20779 = true;
       this.field21129.field20779 = true;
       this.addToList(
-         this.field21132 = new UIButton(
+         this.changelogButton = new UIButton(
             this, "changelog", 432, 24, 110, 50, new ColorHelper(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)), "Changelog", ResourceRegistry.JelloLightFont20
          )
       );
@@ -135,36 +136,36 @@ public class MainmenuScreen2 extends IconPanel {
          )
       );
       this.field21133.doThis((var1x, var2x) -> {
-         ((JelloMainMenuScreen)this.method13258()).method13341();
+         ((JelloMainMenuScreen)this.getIcoPanel()).method13341();
          new Thread(() -> {
             Minecraft.getInstance().shutdown();
          }).start();
       });
-      this.addToList(this.field21131 = new Class4365(this, "Account", 0, var19, 0, var18, "Log in"));
+      this.addToList(this.loginButton = new Class4365(this, "Account", 0, var19, 0, var18, "Log in"));
       this.addToList(this.field21128 = new Class4302(this, "pre", 0, 0, 240, 100));
       this.field21128.method13247((var1x, var2x) -> {
          if (Client.getInstance().getNetworkManager().account != null) {
-            ((JelloMainMenuScreen)this.method13258()).method13343();
+            ((JelloMainMenuScreen)this.getIcoPanel()).method13343();
          } else {
-            this.method13446(new Class4322());
+            this.displayScreen(new LoginAndOutScreen());
          }
       });
-      this.field21132.doThis((var1x, var2x) -> ((JelloMainMenuScreen)this.method13258()).method13342());
-      this.field21123.doThis((var1x, var2x) -> this.method13445(new Class1341(Minecraft.getInstance().currentScreen)));
-      this.field21124.doThis((var1x, var2x) -> this.method13445(new JelloPortalScreen(Minecraft.getInstance().currentScreen)));
-      this.field21126.doThis((var1x, var2x) -> this.method13445(new OptionsScreen(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
-      this.field21127.doThis((var1x, var2x) -> this.method13446(new Class4313()));
-      this.field21125.doThis((var1x, var2x) -> this.method13443());
-      this.field21131.doThis((var1x, var2x) -> {
+      this.changelogButton.doThis((var1x, var2x) -> ((JelloMainMenuScreen)this.getIcoPanel()).animateIn());
+      this.singleplayerButton.doThis((var1x, var2x) -> this.displayGUI(new WorldSelectionScreen(Minecraft.getInstance().currentScreen)));
+      this.multiplayerButton.doThis((var1x, var2x) -> this.displayGUI(new JelloPortalScreen(Minecraft.getInstance().currentScreen)));
+      this.optionsButton.doThis((var1x, var2x) -> this.displayGUI(new OptionsScreen(Minecraft.getInstance().currentScreen, Minecraft.getInstance().gameSettings)));
+      this.altManagerButton.doThis((var1x, var2x) -> this.displayScreen(new AltManagerScreen()));
+      this.realmsButton.doThis((var1x, var2x) -> this.method13443());
+      this.loginButton.doThis((var1x, var2x) -> {
          if (Client.getInstance().getNetworkManager().account != null) {
-            ((JelloMainMenuScreen)this.method13258()).method13345();
+            ((JelloMainMenuScreen)this.getIcoPanel()).logout();
          } else {
-            this.method13446(new Class4322());
+            this.displayScreen(new LoginAndOutScreen());
          }
       });
       this.field21130.doThis((var1x, var2x) -> {
          if (this.field21134++ > 8) {
-            Client.getInstance().getGuiManager().method33482(new CreditsScreen());
+            Client.getInstance().getGuiManager().method33482(new LoginAndOutScreen());
          }
       });
    }
@@ -173,24 +174,24 @@ public class MainmenuScreen2 extends IconPanel {
       JelloPortal.currentVersion = JelloPortal.defaultVersion;
       Class810 var3 = new Class810();
       var3.method2209(Minecraft.getInstance().currentScreen);
-      this.method13444();
+      this.playClickSound();
    }
 
    @Override
    public void draw(float var1) {
       this.method13224();
-      Texture var4 = ResourcesDecrypter.logoLargePNG;
-      int var5 = var4.getImageWidth();
-      int var6 = var4.getImageHeight();
+      Texture largeLogo = ResourcesDecrypter.logoLargePNG;
+      int imageWidth = largeLogo.getImageWidth();
+      int imageHeight = largeLogo.getImageHeight();
       if (GuiManager.portalScaleFactor > 1.0F) {
-         var4 = ResourcesDecrypter.logoLarge2xPNG;
+         largeLogo = ResourcesDecrypter.logoLarge2xPNG;
       }
 
-      RenderUtil.method11449(
-         (float)(this.method13267() / 2 - var5 / 2),
-         (float)(this.method13269() / 2 - var6),
-         (float)var5,
-         (float)var6,
+      RenderUtil.drawImage(
+         (float)(this.getWidthA() / 2 - imageWidth / 2),
+         (float)(this.getHeightA() / 2 - imageHeight),
+         (float)imageWidth,
+         (float)imageHeight,
          ResourcesDecrypter.logoLargePNG,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
@@ -202,23 +203,23 @@ public class MainmenuScreen2 extends IconPanel {
       this.field21128.method13288(!Client.getInstance().getNetworkManager().isPremium());
       byte var5 = 30;
       byte var6 = 90;
-      this.field21132.method13264(var6 + (!Client.getInstance().getNetworkManager().isPremium() ? 202 : 0));
-      this.field21133.method13264(var5 + (!Client.getInstance().getNetworkManager().isPremium() ? 202 : 0));
+      this.changelogButton.setXA(var6 + (!Client.getInstance().getNetworkManager().isPremium() ? 202 : 0));
+      this.field21133.setXA(var5 + (!Client.getInstance().getNetworkManager().isPremium() ? 202 : 0));
       super.method13028(var1, var2);
    }
 
-   public void method13444() {
+   public void playClickSound() {
       Client.getInstance().getSoundManager().play("clicksound");
    }
 
-   public void method13445(net.minecraft.client.gui.screen.Screen var1) {
+   public void displayGUI(net.minecraft.client.gui.screen.Screen var1) {
       Minecraft.getInstance().displayGuiScreen(var1);
-      this.method13444();
+      this.playClickSound();
    }
 
-   public void method13446(Screen var1) {
+   public void displayScreen(Screen var1) {
       Client.getInstance().getGuiManager().method33482(var1);
-      this.method13444();
+      this.playClickSound();
    }
 
    private int method13447(int var1) {
@@ -227,10 +228,10 @@ public class MainmenuScreen2 extends IconPanel {
       byte var6 = 5;
       byte var7 = -6;
       short var8 = 610;
-      return this.method13267() / 2 - 305 + var1 * 128 + var1 * -6;
+      return this.getWidthA() / 2 - 305 + var1 * 128 + var1 * -6;
    }
 
    private int method13448() {
-      return this.method13269() / 2 + 14;
+      return this.getHeightA() / 2 + 14;
    }
 }

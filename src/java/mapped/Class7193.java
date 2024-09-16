@@ -6,8 +6,10 @@ import java.util.BitSet;
 import java.util.Random;
 import java.util.function.Function;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.chunk.IChunk;
 import org.apache.commons.lang3.mutable.MutableBoolean;
 
 public class Class7193 extends Class7194 {

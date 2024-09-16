@@ -1,7 +1,9 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.realmsclient.client.RealmsClient;
 import com.mojang.realmsclient.dto.RealmsServer;
+import com.mojang.realmsclient.exception.RealmsServiceException;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.FontRenderer;
@@ -137,24 +139,24 @@ public class RealmGUI extends RealmsScreen {
 
    private void method2411(int var1) {
       this.method2408();
-      Class4624 var4 = Class4624.method14543();
+      RealmsClient var4 = RealmsClient.method14543();
       String var5 = this.field4528.field27450.get(var1).method18877();
 
       try {
          this.method2413(var4.method14565(this.field4528.field27443, var5));
-      } catch (Class2435 var7) {
+      } catch (RealmsServiceException var7) {
          field4517.error("Couldn't op the user");
       }
    }
 
    private void method2412(int var1) {
       this.method2408();
-      Class4624 var4 = Class4624.method14543();
+      RealmsClient var4 = RealmsClient.method14543();
       String var5 = this.field4528.field27450.get(var1).method18877();
 
       try {
          this.method2413(var4.method14566(this.field4528.field27443, var5));
-      } catch (Class2435 var7) {
+      } catch (RealmsServiceException var7) {
          field4517.error("Couldn't deop the user");
       }
    }
@@ -174,11 +176,11 @@ public class RealmGUI extends RealmsScreen {
          Class802 var5 = new Class802(
             var1x -> {
                if (var1x) {
-                  Class4624 var4x = Class4624.method14543();
+                  RealmsClient var4x = RealmsClient.method14543();
 
                   try {
                      var4x.method14555(this.field4528.field27443, this.field4536);
-                  } catch (Class2435 var6) {
+                  } catch (RealmsServiceException var6) {
                      field4517.error("Couldn't uninvite user");
                   }
 

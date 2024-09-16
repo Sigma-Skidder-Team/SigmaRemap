@@ -36,10 +36,10 @@ public class Class4358 extends Class4247 {
       this.field21304 = (var5 - this.field21305) / 2;
       this.field21303 = (var6 - this.field21306) / 2;
       byte var9 = 30;
-      Class4281 var10;
+      UIInput var10;
       this.addToList(
-         var10 = new Class4281(
-            this, "search", this.field21304 + var9, this.field21303 + var9 + 50, this.field21305 - var9 * 2, 60, Class4281.field20741, "", "Search..."
+         var10 = new UIInput(
+            this, "search", this.field21304 + var9, this.field21303 + var9 + 50, this.field21305 - var9 * 2, 60, UIInput.field20741, "", "Search..."
          )
       );
       var10.method13151(var2x -> {
@@ -59,10 +59,10 @@ public class Class4358 extends Class4247 {
          ColorHelper var15 = new ColorHelper(ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.02F), -986896)
             .method19410(ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F))
             .method19412(Class2218.field14492);
-         Class4240 var16;
+         ButtonPanel var16;
          this.field21308
             .addToList(
-               var16 = new Class4240(this.field21308, var14.method21596(), 0, var11++ * 55, this.field21308.method13267(), 55, var15, var14.method21596())
+               var16 = new ButtonPanel(this.field21308, var14.method21596(), 0, var11++ * 55, this.field21308.getWidthA(), 55, var15, var14.method21596())
             );
          var16.doThis((var2x, var3x) -> {
             for (Entry var7 : GuiManager.field41338.entrySet()) {
@@ -80,11 +80,11 @@ public class Class4358 extends Class4247 {
 
       for (Module var19 : Client.getInstance().getModuleManager().getModuleMap().values()) {
          ColorHelper var20 = new ColorHelper(16777215, -986896).method19410(ClientColors.DEEP_TEAL.getColor).method19412(Class2218.field14488);
-         Class4240 var21;
+         ButtonPanel var21;
          this.field21308
             .addToList(
-               var21 = new Class4240(
-                  this.field21308, var19.getName(), 0, var11++ * 40, this.field21308.method13267(), 40, var20, new Class6984(var19).method21596()
+               var21 = new ButtonPanel(
+                  this.field21308, var19.getName(), 0, var11++ * 40, this.field21308.getWidthA(), 40, var20, new Class6984(var19).method21596()
                )
             );
          var21.method13034(10);
@@ -111,17 +111,17 @@ public class Class4358 extends Class4247 {
       }
 
       this.field21302.changeDirection(this.field21311 ? Direction.BACKWARDS : Direction.FORWARDS);
-      Map<String, Class4240> var5 = new TreeMap();
-      Map<String, Class4240> var6 = new TreeMap();
-      Map<String, Class4240> var7 = new TreeMap();
-      List<Class4240> var8 = new ArrayList();
+      Map<String, ButtonPanel> var5 = new TreeMap();
+      Map<String, ButtonPanel> var6 = new TreeMap();
+      Map<String, ButtonPanel> var7 = new TreeMap();
+      List<ButtonPanel> var8 = new ArrayList();
 
       for (IconPanel var10 : this.field21308.method13241()) {
          if (!(var10 instanceof Class4292)) {
             for (IconPanel var12 : var10.method13241()) {
-               if (var12 instanceof Class4240) {
-                  Class4240 var13 = (Class4240)var12;
-                  boolean var14 = var13.method13269() != 40;
+               if (var12 instanceof ButtonPanel) {
+                  ButtonPanel var13 = (ButtonPanel)var12;
+                  boolean var14 = var13.getHeightA() != 40;
                   if (!var14 || this.field21307 != null && (this.field21307 == null || this.field21307.length() != 0)) {
                      if (!var14 && this.method13622(this.field21307, var13.method13303())) {
                         var6.put(var13.method13303(), var13);
@@ -140,29 +140,29 @@ public class Class4358 extends Class4247 {
 
       int var15 = var5.size() <= 0 ? 0 : 10;
 
-      for (Class4240 var20 : var5.values()) {
+      for (ButtonPanel var20 : var5.values()) {
          var20.method13288(true);
-         var20.method13266(var15);
-         var15 += var20.method13269();
+         var20.setYA(var15);
+         var15 += var20.getHeightA();
       }
 
       if (var5.size() > 0) {
          var15 += 10;
       }
 
-      for (Class4240 var21 : var6.values()) {
+      for (ButtonPanel var21 : var6.values()) {
          var21.method13288(true);
-         var21.method13266(var15);
-         var15 += var21.method13269();
+         var21.setYA(var15);
+         var15 += var21.getHeightA();
       }
 
-      for (Class4240 var22 : var7.values()) {
+      for (ButtonPanel var22 : var7.values()) {
          var22.method13288(true);
-         var22.method13266(var15);
-         var15 += var22.method13269();
+         var22.setYA(var15);
+         var15 += var22.getHeightA();
       }
 
-      for (Class4240 var23 : var8) {
+      for (ButtonPanel var23 : var8) {
          var23.method13288(false);
       }
 
@@ -191,10 +191,10 @@ public class Class4358 extends Class4247 {
       }
 
       RenderUtil.drawRect(
-         (float)this.field20895,
-         (float)this.field20896,
-         (float)this.field20897,
-         (float)this.field20898,
+         (float)this.xA,
+         (float)this.yA,
+         (float)this.widthA,
+         (float)this.heightA,
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F * var1)
       );
       super.method13224();

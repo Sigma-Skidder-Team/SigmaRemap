@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 
-public class Class4239 extends Class4240 implements Class4238 {
+public class Class4239 extends ButtonPanel implements Class4238 {
    private static String[] field20580;
    public float field20581;
    public boolean field20582 = false;
@@ -36,22 +36,22 @@ public class Class4239 extends Class4240 implements Class4238 {
    @Override
    public void draw(float var1) {
       float var4 = !this.isHovered() ? 0.3F : (!this.field20582 ? (!this.method13212() ? Math.max(var1 * this.field20584, 0.0F) : 1.5F) : 0.0F);
-      int var5 = (int)((float)this.method13267() * this.field20581);
-      int var6 = (int)((float)this.method13269() * this.field20581);
-      int var7 = this.method13263() - (var5 - this.method13267()) / 2;
-      int var8 = this.method13265() - (var6 - this.method13269()) / 2;
+      int var5 = (int)((float)this.getWidthA() * this.field20581);
+      int var6 = (int)((float)this.getHeightA() * this.field20581);
+      int var7 = this.getXA() - (var5 - this.getWidthA()) / 2;
+      int var8 = this.getYA() - (var6 - this.getHeightA()) / 2;
       RenderUtil.drawPortalBackground(
-         this.method13271() + var7 - this.field20895,
-         this.method13272() + var8 - this.field20896,
-         this.method13271() + var7 - this.field20895 + var5,
-         this.method13272() + var8 - this.field20896 + var6
+         this.method13271() + var7 - this.xA,
+         this.method13272() + var8 - this.yA,
+         this.method13271() + var7 - this.xA + var5,
+         this.method13272() + var8 - this.yA + var6
       );
       RenderUtil.drawRect(
          (float)var7,
          (float)var8,
          (float)(var7 + var5),
          (float)(var8 + var6),
-         ColorUtils.applyAlpha(ColorUtils.method17690(this.field20914.method19405(), this.field20914.method19403(), 1.0F - var4), var1)
+         ColorUtils.applyAlpha(ColorUtils.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4), var1)
       );
       if (this.method13303() != null) {
          RenderUtil.method11440(
@@ -59,9 +59,9 @@ public class Class4239 extends Class4240 implements Class4238 {
             (float)(var7 + var5 / 2),
             (float)(var8 + var6 / 2),
             this.method13303(),
-            ColorUtils.applyAlpha(this.field20914.method19409(), var1),
-            this.field20914.method19411(),
-            this.field20914.method19413()
+            ColorUtils.applyAlpha(this.textColor.getTextColor(), var1),
+            this.textColor.method19411(),
+            this.textColor.method19413()
          );
       }
 

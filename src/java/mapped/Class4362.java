@@ -26,20 +26,20 @@ public class Class4362 extends Class4247 {
       this.field20913 = ResourceRegistry.JelloLightFont18;
 
       for (String var4 : this.field21323) {
-         Class4240 var5;
+         ButtonPanel var5;
          this.addToList(
-            var5 = new Class4240(
+            var5 = new ButtonPanel(
                this,
                var4,
                0,
                0,
-               this.method13267(),
-               this.method13269(),
+               this.getWidthA(),
+               this.getHeightA(),
                new ColorHelper(
                   ClientColors.LIGHT_GREYISH_BLUE.getColor,
                   -1381654,
-                  this.field20914.method19405(),
-                  this.field20914.method19405(),
+                  this.textColor.method19405(),
+                  this.textColor.method19405(),
                   Class2218.field14488,
                   Class2218.field14492
                ),
@@ -58,7 +58,7 @@ public class Class4362 extends Class4247 {
    }
 
    private int method13635() {
-      return this.method13269() * (this.field21323.size() - 1);
+      return this.getHeightA() * (this.field21323.size() - 1);
    }
 
    @Override
@@ -69,25 +69,25 @@ public class Class4362 extends Class4247 {
    @Override
    public void draw(float var1) {
       RenderUtil.drawRect(
-         (float)this.method13263(),
-         (float)this.method13265(),
-         (float)(this.method13263() + this.method13267()),
-         (float)(this.method13265() + this.method13269() + this.method13635()),
+         (float)this.getXA(),
+         (float)this.getYA(),
+         (float)(this.getXA() + this.getWidthA()),
+         (float)(this.getYA() + this.getHeightA() + this.method13635()),
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
-      RenderUtil.method11463(
-         (float)this.method13263(),
-         (float)this.method13265(),
-         (float)this.method13267(),
-         (float)(this.method13269() + this.method13635() - 1),
+      RenderUtil.drawRoundedRect(
+         (float)this.getXA(),
+         (float)this.getYA(),
+         (float)this.getWidthA(),
+         (float)(this.getHeightA() + this.method13635() - 1),
          6.0F,
          var1 * 0.1F
       );
-      RenderUtil.method11463(
-         (float)this.method13263(),
-         (float)this.method13265(),
-         (float)this.method13267(),
-         (float)(this.method13269() + this.method13635() - 1),
+      RenderUtil.drawRoundedRect(
+         (float)this.getXA(),
+         (float)this.getYA(),
+         (float)this.getWidthA(),
+         (float)(this.getHeightA() + this.method13635() - 1),
          20.0F,
          var1 * 0.2F
       );
@@ -135,6 +135,6 @@ public class Class4362 extends Class4247 {
    public boolean method13114(int var1, int var2) {
       var1 -= this.method13271();
       var2 -= this.method13272();
-      return var1 >= -10 && var1 <= this.method13267() && var2 >= 0 && var2 <= this.method13269() + this.method13635();
+      return var1 >= -10 && var1 <= this.getWidthA() && var2 >= 0 && var2 <= this.getHeightA() + this.method13635();
    }
 }

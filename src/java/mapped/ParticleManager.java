@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.base.Charsets;
 import com.google.common.collect.*;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.Entity;

@@ -1,8 +1,9 @@
 package mapped;
 
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.gen.feature.structure.StructureStart;
 
-public class Class5445 extends Class5444<Class4737> {
+public class Class5445 extends StructureStart<Class4737> {
    private static String[] field24202;
 
    public Class5445(Structure<Class4737> var1, int var2, int var3, Class9764 var4, int var5, long var6) {

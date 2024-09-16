@@ -9,6 +9,8 @@ import net.minecraft.network.play.server.SChunkDataPacket;
 import net.minecraft.network.play.server.SMultiBlockChangePacket;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.biome.BiomeContainer;
+import net.minecraft.world.chunk.ChunkSection;
 
 public class Class8920 {
    private static String[] field40380;
@@ -50,15 +52,15 @@ public class Class8920 {
          } catch (InterruptedException var16) {
          }
 
-         Class1684 var19 = var18.method17384() == null
+         BiomeContainer var19 = var18.method17384() == null
             ? null
-            : new Class1684(Minecraft.getInstance().getConnection().field23287.<Biome>getRegistry(Registry.BIOME_KEY), var18.method17384());
+            : new BiomeContainer(Minecraft.getInstance().getConnection().field23287.<Biome>getRegistry(Registry.BIOME_KEY), var18.method17384());
          Chunk var20 = new Chunk(Minecraft.getInstance().world, new ChunkPos(var18.getChunkX(), var18.getChunkZ()), null);
          var20.method7142(var19, new PacketBuffer(var18.method17374().copy()), var18.method17382(), var18.method17380());
          if (var20 != null) {
             int var7 = 0;
 
-            for (Class7038 var11 : var20.method7067()) {
+            for (ChunkSection var11 : var20.getSections()) {
                if (var11 != null && !var11.method21858()) {
                   for (float var12 = 0.0F; var12 <= 15.0F; var12++) {
                      for (float var13 = 0.0F; var13 <= 15.0F; var13++) {
@@ -67,9 +69,9 @@ public class Class8920 {
                            if (var1.method33182(var15)) {
                               var1.method33183(
                                  new BlockPos(
-                                    (double)((float)(var20.method7072().x * 16) + var13),
+                                    (double)((float)(var20.getPos().x * 16) + var13),
                                     (double)((float)(var7 * 16) + var12),
-                                    (double)((float)(var20.method7072().z * 16) + var14)
+                                    (double)((float)(var20.getPos().z * 16) + var14)
                                  ),
                                  var15
                               );
@@ -88,7 +90,7 @@ public class Class8920 {
                return;
             }
 
-            SChunkDataPacket var21 = new SChunkDataPacket(var20, var20.method7077() == null ? '\ufffe' : '\uffff');
+            SChunkDataPacket var21 = new SChunkDataPacket(var20, var20.getBiomes() == null ? '\ufffe' : '\uffff');
             var21.field24521 = var18.isFullChunk();
             var21.field24520 = var18.method17383();
             var0.method13899(var21);

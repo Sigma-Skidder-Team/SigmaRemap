@@ -11,6 +11,7 @@ import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap.Entry;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.*;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.AbstractOption;
 import net.minecraft.client.Minecraft;
@@ -224,7 +225,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                var19.method8372(var21, 0, var20);
                Biome var27 = var10.getBiome(var19);
                if (var27.method32500() != Class87.field223) {
-                  int var28 = var10.method7006(Class101.field299, var19).getY();
+                  int var28 = var10.method7006(Heightmap.Type.field299, var19).getY();
                   int var29 = var12 - var16;
                   int var30 = var12 + var16;
                   if (var29 < var28) {
@@ -361,7 +362,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          for (int var8 = 0; var8 < var7; var8++) {
             int var9 = var3.nextInt(21) - 10;
             int var10 = var3.nextInt(21) - 10;
-            BlockPos var11 = var4.method7006(Class101.field299, var5.method8336(var9, 0, var10)).down();
+            BlockPos var11 = var4.method7006(Heightmap.Type.field299, var5.method8336(var9, 0, var10)).down();
             Biome var12 = var4.getBiome(var11);
             if (var11.getY() > 0
                && var11.getY() <= var5.getY() + 10
@@ -393,7 +394,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          if (var6 != null && var3.nextInt(3) < this.field997++) {
             this.field997 = 0;
             if (var6.getY() > var5.getY() + 1
-               && var4.method7006(Class101.field299, var5).getY() > MathHelper.method37767((float)var5.getY())) {
+               && var4.method7006(Heightmap.Type.field299, var5).getY() > MathHelper.method37767((float)var5.getY())) {
                this.field939.world.method6858(var6, SoundEvents.field27227, Class2266.field14731, 0.1F, 0.5F, false);
             } else {
                this.field939.world.method6858(var6, SoundEvents.field27226, Class2266.field14731, 0.2F, 1.0F, false);

@@ -43,7 +43,7 @@ public class AutoMiner extends Module {
       if (this.isEnabled()) {
          if (var1.getPacket() instanceof SChangeBlockPacket) {
             SChangeBlockPacket var4 = (SChangeBlockPacket)var1.getPacket();
-            this.method16076(mc.world.getChunkAt(var4.method17632()).method7072());
+            this.method16076(mc.world.getChunkAt(var4.method17632()).getPos());
          }
 
          if (var1.getPacket() instanceof SMultiBlockChangePacket) {

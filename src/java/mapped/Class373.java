@@ -1,5 +1,8 @@
 package mapped;
 
+import com.mojang.realmsclient.client.RealmsClient;
+import com.mojang.realmsclient.exception.RealmsServiceException;
+
 import java.util.List;
 
 public class Class373 extends Thread {
@@ -12,7 +15,7 @@ public class Class373 extends Thread {
 
    @Override
    public void run() {
-      Class4624 var3 = Class4624.method14543();
+      RealmsClient var3 = RealmsClient.method14543();
 
       try {
          List<Class6122> var4 = var3.method14558(Class807.method2184(this.field1626).field27443).field27437;
@@ -27,7 +30,7 @@ public class Class373 extends Thread {
 
             Class807.method2191(this.field1626);
          });
-      } catch (Class2435 var5) {
+      } catch (RealmsServiceException var5) {
          Class807.method2186().error("Couldn't request backups", var5);
       }
    }

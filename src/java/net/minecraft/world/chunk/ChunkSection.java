@@ -1,11 +1,13 @@
-package mapped;
+package net.minecraft.world.chunk;
 
+import mapped.*;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.network.PacketBuffer;
 
 import java.util.function.Predicate;
 
-public class Class7038 {
+public class ChunkSection {
    private static String[] field30367;
    private static final Class7833<BlockState> field30368 = new Class7836<BlockState>(Block.field18610, Blocks.AIR.method11579());
    private final int field30369;
@@ -15,11 +17,11 @@ public class Class7038 {
    private final Class8556<BlockState> field30373;
    public static final ThreadLocal<Class8870> field30374 = new ThreadLocal<Class8870>();
 
-   public Class7038(int var1) {
+   public ChunkSection(int var1) {
       this(var1, (short)0, (short)0, (short)0);
    }
 
-   public Class7038(int var1, short var2, short var3, short var4) {
+   public ChunkSection(int var1, short var2, short var3, short var4) {
       this.field30369 = var1;
       this.field30370 = var2;
       this.field30371 = var3;
@@ -88,7 +90,7 @@ public class Class7038 {
       return this.field30370 == 0;
    }
 
-   public static boolean method21859(Class7038 var0) {
+   public static boolean method21859(ChunkSection var0) {
       return var0 == Chunk.field9111 || var0.method21858();
    }
 
@@ -104,7 +106,7 @@ public class Class7038 {
       return this.field30372 > 0;
    }
 
-   public int method21863() {
+   public int getYLocation() {
       return this.field30369;
    }
 

@@ -18,8 +18,8 @@ public abstract class Screen
     @Override
     public void method13161(JSONObject var1) {
         super.method13161(var1);
-        this.setWidth(Minecraft.getInstance().mainWindow.getWidth());
-        this.setHeight(Minecraft.getInstance().mainWindow.getHeight());
+        this.setWidthA(Minecraft.getInstance().mainWindow.getWidth());
+        this.setHeightA(Minecraft.getInstance().mainWindow.getHeight());
     }
 
     @Override

@@ -1,6 +1,7 @@
 package net.minecraft.item;
 
 import mapped.*;
+import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;

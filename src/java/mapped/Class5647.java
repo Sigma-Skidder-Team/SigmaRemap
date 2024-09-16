@@ -1,10 +1,12 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.chunk.IChunk;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -76,7 +78,7 @@ public class Class5647 extends ChunkGenerator {
    }
 
    @Override
-   public int method17797(int var1, int var2, Class101 var3) {
+   public int method17797(int var1, int var2, Heightmap.Type var3) {
       return 0;
    }
 

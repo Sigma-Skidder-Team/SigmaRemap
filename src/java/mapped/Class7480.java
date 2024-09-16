@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.datafixers.DataFixUtils;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IStructureReader;
+import net.minecraft.world.gen.feature.structure.StructureStart;
 
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
@@ -23,26 +25,26 @@ public class Class7480 {
       }
    }
 
-   public Stream<? extends Class5444<?>> method24340(Class2002 var1, Structure<?> var2) {
+   public Stream<? extends StructureStart<?>> method24340(Class2002 var1, Structure<?> var2) {
       return this.field32171
          .getChunk(var1.method8410(), var1.method8412(), ChunkStatus.field42135)
          .method7099(var2)
          .stream()
          .<Class2002>map(var0 -> Class2002.method8391(new ChunkPos(var0), 0))
-         .<Class5444<?>>map(var2x -> this.method24341(var2x, var2, this.field32171.getChunk(var2x.method8410(), var2x.method8412(), ChunkStatus.field42134)))
+         .<StructureStart<?>>map(var2x -> this.method24341(var2x, var2, this.field32171.getChunk(var2x.method8410(), var2x.method8412(), ChunkStatus.field42134)))
          .filter(var0 -> var0 != null && var0.method17117());
    }
 
    @Nullable
-   public Class5444<?> method24341(Class2002 var1, Structure<?> var2, Class1671 var3) {
+   public StructureStart<?> method24341(Class2002 var1, Structure<?> var2, IStructureReader var3) {
       return var3.method7097(var2);
    }
 
-   public void method24342(Class2002 var1, Structure<?> var2, Class5444<?> var3, Class1671 var4) {
+   public void method24342(Class2002 var1, Structure<?> var2, StructureStart<?> var3, IStructureReader var4) {
       var4.method7098(var2, var3);
    }
 
-   public void method24343(Class2002 var1, Structure<?> var2, long var3, Class1671 var5) {
+   public void method24343(Class2002 var1, Structure<?> var2, long var3, IStructureReader var5) {
       var5.method7100(var2, var3);
    }
 
@@ -50,13 +52,13 @@ public class Class7480 {
       return this.field32172.method26260();
    }
 
-   public Class5444<?> method24345(BlockPos var1, boolean var2, Structure<?> var3) {
-      return (Class5444<?>)DataFixUtils.orElse(
+   public StructureStart<?> method24345(BlockPos var1, boolean var2, Structure<?> var3) {
+      return (StructureStart<?>)DataFixUtils.orElse(
          this.method24340(Class2002.method8390(var1), var3)
             .filter(var1x -> var1x.method17110().method38396(var1))
             .filter(var2x -> !var2 || var2x.method17111().stream().anyMatch(var1xx -> var1xx.method12915().method38396(var1)))
             .findFirst(),
-         Class5444.field24194
+         StructureStart.field24194
       );
    }
 }

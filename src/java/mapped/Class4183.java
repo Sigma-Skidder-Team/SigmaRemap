@@ -86,7 +86,7 @@ public class Class4183 extends Class4180 {
    @Override
    public boolean method12896(ISeedReader var1, Class7480 var2, ChunkGenerator var3, Random var4, Class9764 var5, ChunkPos var6, BlockPos var7) {
       this.field20454.method36433().method36434(new Class7094(this.field20461)).method36434(Class7095.field30528);
-      int var10 = var1.method6736(Class101.field297, this.field20455.getX(), this.field20455.getZ());
+      int var10 = var1.method6736(Heightmap.Type.field297, this.field20455.getX(), this.field20455.getZ());
       this.field20455 = new BlockPos(this.field20455.getX(), var10, this.field20455.getZ());
       BlockPos var11 = Class8969.method32905(
             new BlockPos(this.field20453.method32886().getX() - 1, 0, this.field20453.method32886().getZ() - 1),

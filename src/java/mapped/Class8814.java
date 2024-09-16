@@ -39,7 +39,7 @@ public class Class8814 {
       if (!var9) {
          var20 = var5.getY();
       } else {
-         var20 = var5.getY() + var3.method17828(var18, var19, Class101.field295);
+         var20 = var5.getY() + var3.method17828(var18, var19, Heightmap.Type.field295);
       }
 
       int var21 = var17.field45679 + var16.method12979();

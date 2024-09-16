@@ -9,6 +9,8 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.biome.BiomeContainer;
+import net.minecraft.world.chunk.ChunkSection;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -35,7 +37,7 @@ public class Class1705 extends Class1702 {
       if (var0 == null) {
          return false;
       } else {
-         ChunkPos var5 = var0.method7072();
+         ChunkPos var5 = var0.getPos();
          return var5.x == var1 && var5.z == var2;
       }
    }
@@ -73,7 +75,7 @@ public class Class1705 extends Class1702 {
    }
 
    @Nullable
-   public Chunk method7400(int var1, int var2, Class1684 var3, PacketBuffer var4, CompoundNBT var5, int var6, boolean var7) {
+   public Chunk method7400(int var1, int var2, BiomeContainer var3, PacketBuffer var4, CompoundNBT var5, int var6, boolean var7) {
       if (!Class8815.method31828(this.field9291, var1, var2)) {
          field9288.warn("Ignoring chunk since it's not in the view range: {}, {}", var1, var2);
          return null;
@@ -88,14 +90,14 @@ public class Class1705 extends Class1702 {
                if (var14 instanceof Class8870) {
                   Class8870 var15 = (Class8870)var14;
                   var13.method7167(var15);
-                  Class7038.field30374.set(var15);
+                  ChunkSection.field30374.set(var15);
                   var12 = true;
                }
             }
 
             ((Chunk)var11).method7142(var3, var4, var5, var6);
             if (var12) {
-               Class7038.field30374.set((Class8870)null);
+               ChunkSection.field30374.set((Class8870)null);
             }
          } else {
             if (var3 == null) {
@@ -112,13 +114,13 @@ public class Class1705 extends Class1702 {
             this.field9291.method31824(var10, (Chunk)var11);
          }
 
-         Class7038[] var16 = ((Chunk)var11).method7067();
+         ChunkSection[] var16 = ((Chunk)var11).getSections();
          Class196 var17 = this.getLightManager();
          var17.method605(new ChunkPos(var1, var2), true);
 
          for (int var18 = 0; var18 < var16.length; var18++) {
-            Class7038 var19 = var16[var18];
-            var17.method604(Class2002.method8389(var1, var18, var2), Class7038.method21859(var19));
+            ChunkSection var19 = var16[var18];
+            var17.method604(Class2002.method8389(var1, var18, var2), ChunkSection.method21859(var19));
          }
 
          this.field9292.method6841(var1, var2);
@@ -150,7 +152,7 @@ public class Class1705 extends Class1702 {
          for (int var7 = 0; var7 < this.field9291.field39654.length(); var7++) {
             Chunk var8 = this.field9291.field39654.get(var7);
             if (var8 != null) {
-               ChunkPos var9 = var8.method7072();
+               ChunkPos var9 = var8.getPos();
                if (Class8815.method31828(var6, var9.x, var9.z)) {
                   var6.method31824(var6.method31823(var9.x, var9.z), var8);
                }

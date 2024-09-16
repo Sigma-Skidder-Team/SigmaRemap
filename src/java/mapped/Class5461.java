@@ -1,6 +1,8 @@
 package mapped;
 
-public class Class5461 extends Class5444<Class4712> {
+import net.minecraft.world.gen.feature.structure.StructureStart;
+
+public class Class5461 extends StructureStart<Class4712> {
    private static String[] field24220;
 
    public Class5461(Structure<Class4712> var1, int var2, int var3, Class9764 var4, int var5, long var6) {

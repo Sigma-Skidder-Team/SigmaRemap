@@ -1,9 +1,11 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 
 import java.util.Map;

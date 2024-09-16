@@ -168,7 +168,7 @@ public class ActiveMods extends Module {
                     GL11.glScalef(var14, var14, 1.0F);
                     GL11.glTranslatef((float) (-var17), (float) (-var18), 0.0F);
                     float var19 = (float) Math.sqrt(Math.min(1.2F, (float) var8.method23942(var22) / 63.0F));
-                    RenderUtil.method11449(
+                    RenderUtil.drawImage(
                             (float) var6 - (float) var8.method23942(var22) * 1.5F - (float) var20 - 20.0F,
                             (float) (var7 - 20),
                             (float) var8.method23942(var22) * 3.0F,

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.datafixers.util.Either;
+import com.mojang.realmsclient.client.RealmsClient;
 
 public class Realm extends Thread {
    public final Class6108 field1577;
@@ -15,7 +16,7 @@ public class Realm extends Thread {
    @Override
    public void run() {
       Class6108 var3 = this.field1577;
-      Class4624 var4 = Class4624.method14543();
+      RealmsClient var4 = RealmsClient.method14543();
 
       while (var3 != null) {
          Either var5 = Class804.method1978(this.field1578, var3, var4);

@@ -32,7 +32,7 @@ public class Class2768 extends Class2595 {
          this.field17345,
          this.field17345
             .world
-            .method7006(Class101.field299, Class1110.method5349(this.field17345))
+            .method7006(Heightmap.Type.field299, Class1110.method5349(this.field17345))
             .method8339(10 + Class1110.method5353(this.field17345).nextInt(20))
       );
    }

@@ -3,6 +3,7 @@ package com.mentalfrostbyte.jello.util.world;
 import com.google.common.collect.ImmutableList;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import mapped.*;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;

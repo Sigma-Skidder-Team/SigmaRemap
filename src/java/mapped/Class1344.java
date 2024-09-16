@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.realmsclient.client.RealmsClient;
+import com.mojang.realmsclient.exception.RealmsServiceException;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class1344 extends Class789 {
@@ -16,7 +18,7 @@ public class Class1344 extends Class789 {
    @Override
    public void run() {
       this.method1908(new TranslationTextComponent("mco.backup.restoring"));
-      Class4624 var3 = Class4624.method14543();
+      RealmsClient var3 = RealmsClient.method14543();
       int var4 = 0;
 
       while (var4 < 25) {
@@ -40,7 +42,7 @@ public class Class1344 extends Class789 {
 
             method1904(var6.field16476);
             var4++;
-         } catch (Class2435 var7) {
+         } catch (RealmsServiceException var7) {
             if (this.method1909()) {
                return;
             }

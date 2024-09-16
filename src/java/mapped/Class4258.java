@@ -14,13 +14,13 @@ import java.util.List;
 public class Class4258 extends Class4247 {
    private List<String> field20641 = new ArrayList<String>();
    private Class4339 field20642;
-   private Class4281 field20643;
+   private UIInput field20643;
    private boolean field20644;
 
    public Class4258(IconPanel var1, String var2, int var3, int var4, int var5, int var6, boolean var7, String... var8) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20644 = var7;
-      this.addToList(this.field20643 = new Class4281(this, "textbox", 0, 0, var5, 32, Class4281.field20741, "", "Search...", ResourceRegistry.JelloLightFont14));
+      this.addToList(this.field20643 = new UIInput(this, "textbox", 0, 0, var5, 32, UIInput.field20741, "", "Search...", ResourceRegistry.JelloLightFont14));
       this.field20643.method13306(ResourceRegistry.JelloLightFont18);
       this.field20643.method13151(var1x -> this.method13069(this.field20643.method13303()));
       this.method13071(var8);
@@ -33,7 +33,7 @@ public class Class4258 extends Class4247 {
             this.method13236(this.field20642);
          }
 
-         this.addToList(this.field20642 = new Class4339(this, "scrollview", 0, 40, this.field20897, this.field20898 - 40));
+         this.addToList(this.field20642 = new Class4339(this, "scrollview", 0, 40, this.widthA, this.heightA - 40));
          byte var4 = 40;
          ArrayList<Item> var5 = new ArrayList();
 
@@ -71,7 +71,7 @@ public class Class4258 extends Class4247 {
             }
          }
 
-         this.field20642.method13517().method13246(new Class7260(0));
+         this.field20642.getButton().method13246(new Class7260(0));
       });
    }
 

@@ -1,16 +1,17 @@
-package mapped;
+package net.minecraft.client.gui.screen;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import mapped.Class1173;
+import mapped.Class1276;
+import mapped.Class9125;
 import net.minecraft.client.gui.DialogTexts;
-import net.minecraft.client.gui.screen.CreateWorldScreen;
-import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.TranslationTextComponent;
 
 import java.util.List;
 
-public class Class1341 extends Screen {
+public class WorldSelectionScreen extends Screen {
    public final Screen field7113;
    private List<Class9125> field7114;
    private Button field7115;
@@ -20,7 +21,7 @@ public class Class1341 extends Screen {
    public TextFieldWidget field7119;
    private Class1276 field7120;
 
-   public Class1341(Screen var1) {
+   public WorldSelectionScreen(Screen var1) {
       super(new TranslationTextComponent("selectWorld.title"));
       this.field7113 = var1;
    }

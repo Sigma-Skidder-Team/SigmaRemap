@@ -3,11 +3,12 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.feature.structure.StructureStart;
 
 import java.util.LinkedList;
 import java.util.Random;
 
-public class Class5450 extends Class5444<Class4712> {
+public class Class5450 extends StructureStart<Class4712> {
    private static String[] field24208;
 
    public Class5450(Structure<Class4712> var1, int var2, int var3, Class9764 var4, int var5, long var6) {
@@ -33,10 +34,10 @@ public class Class5450 extends Class5444<Class4712> {
 
       int var13 = (var4 << 4) + 7;
       int var14 = (var5 << 4) + 7;
-      int var15 = var2.method17829(var13, var14, Class101.field295);
-      int var16 = var2.method17829(var13, var14 + var12, Class101.field295);
-      int var17 = var2.method17829(var13 + var11, var14, Class101.field295);
-      int var18 = var2.method17829(var13 + var11, var14 + var12, Class101.field295);
+      int var15 = var2.method17829(var13, var14, Heightmap.Type.field295);
+      int var16 = var2.method17829(var13, var14 + var12, Heightmap.Type.field295);
+      int var17 = var2.method17829(var13 + var11, var14, Heightmap.Type.field295);
+      int var18 = var2.method17829(var13 + var11, var14 + var12, Heightmap.Type.field295);
       int var19 = Math.min(Math.min(var15, var16), Math.min(var17, var18));
       if (var19 >= 60) {
          BlockPos var20 = new BlockPos(var4 * 16 + 8, var19 + 1, var5 * 16 + 8);

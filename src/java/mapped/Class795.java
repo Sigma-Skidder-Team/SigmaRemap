@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.realmsclient.client.RealmsClient;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class795 extends Class789 {
@@ -15,7 +16,7 @@ public class Class795 extends Class789 {
 
    @Override
    public void run() {
-      Class4624 var3 = Class4624.method14543();
+      RealmsClient var3 = RealmsClient.method14543();
       this.method1908(new TranslationTextComponent("mco.minigame.world.starting.screen.title"));
 
       for (int var4 = 0; var4 < 25; var4++) {

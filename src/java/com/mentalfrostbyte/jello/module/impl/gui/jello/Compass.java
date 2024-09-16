@@ -35,7 +35,7 @@ public class Compass extends Module {
 
                 float var9 = 7.0F + this.method16662(mc.player.rotationYaw) - (float) var8;
                 double var10 = var9 / 15.0F * (float) var5;
-                RenderUtil.method11449(
+                RenderUtil.drawImage(
                         (float) (mc.mainWindow.getWidth() / 2) - (float) (var4 * var5) * 1.5F,
                         -40.0F,
                         (float) (var4 * var5 * 2) * 1.5F,

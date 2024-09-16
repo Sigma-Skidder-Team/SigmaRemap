@@ -27,7 +27,7 @@ public class Class4345 extends Class4339 {
    }
 
    private int method13555(IconPanel var1, Setting var2, int var3, int var4, int var5) {
-      StringPanel var8 = new StringPanel(var1, var2.getName() + "lbl", var3, var4, 0, 0, StringPanel.field20778, var2.getName(), this.field21230);
+      UITextDisplay var8 = new UITextDisplay(var1, var2.getName() + "lbl", var3, var4, 0, 0, UITextDisplay.field20778, var2.getName(), this.field21230);
       Class4248 var9 = new Class4248(var1, var2.getName() + "desc", var3 + 195, var4 + 4, 330, 18, var2);
       var1.addToList(var8);
       var1.addToList(var9);
@@ -88,7 +88,7 @@ public class Class4345 extends Class4339 {
                   var4 + 27,
                   var16,
                   var20,
-                  Class4281.field20741,
+                  UIInput.field20741,
                   (String)var2.getCurrentValue(),
                   var2.getName(),
                   ResourceRegistry.field38868
@@ -122,7 +122,7 @@ public class Class4345 extends Class4339 {
             byte var10 = 123;
             byte var11 = 27;
             Class4377 var12 = new Class4377(
-               var1, var2.getName() + "btn", var1.method13267() - var5, var4 + 6, 123, 27, ((TextBoxSetting)var2).method18627(), (Integer)var2.getCurrentValue()
+               var1, var2.getName() + "btn", var1.getWidthA() - var5, var4 + 6, 123, 27, ((TextBoxSetting)var2).method18627(), (Integer)var2.getCurrentValue()
             );
             var2.method18616(var1x -> {
                if (var12.method13720() != (Integer)var1x.getCurrentValue()) {
@@ -130,7 +130,7 @@ public class Class4345 extends Class4339 {
                }
             });
             var12.method13036(var1x -> var2.method18620(((Class4377)var1x).method13720()));
-            var12.method13261((var2x, var3x) -> var2x.method13264(var1.method13267() - 123 - var5));
+            var12.method13261((var2x, var3x) -> var2x.setXA(var1.getWidthA() - 123 - var5));
             var1.addToList(var12);
             var4 += 27 + var5;
          case 6:
@@ -142,8 +142,8 @@ public class Class4345 extends Class4339 {
    }
 
    private void method13511() {
-      StringPanel var3 = new StringPanel(
-         this, "settingsname", 12, 2, this.field20897, 20, StringPanel.field20778, this.field21229.getSuffix() + " Settings", this.field21230
+      UITextDisplay var3 = new UITextDisplay(
+         this, "settingsname", 12, 2, this.widthA, 20, UITextDisplay.field20778, this.field21229.getSuffix() + " Settings", this.field21230
       );
       this.addToList(var3);
       byte var4 = 20;
@@ -161,8 +161,8 @@ public class Class4345 extends Class4339 {
 
          for (Module var11 : var16.moduleArray) {
             int var12 = 10;
-            IconPanel var13 = new IconPanel(this, var11.getName() + "SubView", 0, var6, this.field20897, this.field20898 - var6);
-            var13.method13261((var0, var1) -> var0.setWidth(var1.method13267()));
+            IconPanel var13 = new IconPanel(this, var11.getName() + "SubView", 0, var6, this.widthA, this.heightA - var6);
+            var13.method13261((var0, var1) -> var0.setWidthA(var1.getWidthA()));
 
             for (Setting var15 : var11.getSettingMap().values()) {
                var12 = this.method13555(var13, var15, 30, var12, 20);
@@ -176,7 +176,7 @@ public class Class4345 extends Class4339 {
          var16.method16724();
       }
 
-      this.addToList(new StringPanel(this, "lbl", 5, 200, 0, 33, StringPanel.field20778, this.field20912));
+      this.addToList(new UITextDisplay(this, "lbl", 5, 200, 0, 33, UITextDisplay.field20778, this.field20912));
    }
 
    public void method13556() {
@@ -194,13 +194,13 @@ public class Class4345 extends Class4339 {
 
    @Override
    public void draw(float var1) {
-      int var4 = Math.round((float)this.method13269() * Class8056.method27664(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
+      int var4 = Math.round((float)this.getHeightA() * Class8056.method27664(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
       if (this.field21231.getDirection() == Direction.BACKWARDS) {
-         var4 = Math.round((float)this.method13269() * Class8056.method27663(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
+         var4 = Math.round((float)this.getHeightA() * Class8056.method27663(this.field21231.calcPercent(), 0.0F, 1.0F, 1.0F));
       }
 
-      RenderUtil.startScissor((float)this.field20895, (float)(70 + this.method13269() - var4), (float)this.method13267(), (float)var4);
-      RenderUtil.method11424((float)this.field20895, (float)(70 + this.method13269() - var4), (float)this.method13267(), (float)var4, -2631721);
+      RenderUtil.startScissor((float)this.xA, (float)(70 + this.getHeightA() - var4), (float)this.getWidthA(), (float)var4);
+      RenderUtil.method11424((float)this.xA, (float)(70 + this.getHeightA() - var4), (float)this.getWidthA(), (float)var4, -2631721);
       super.draw(var1);
       RenderUtil.endScissor();
    }

@@ -1,6 +1,8 @@
 package mapped;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
+import net.minecraft.fluid.Fluid;
 
 public final class Class8934 implements Class8933 {
    private static String[] field40419;

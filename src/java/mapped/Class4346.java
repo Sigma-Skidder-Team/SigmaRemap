@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Class4346 extends Class4339 {
-   private List<Class4240> field21233 = new ArrayList<Class4240>();
+   private List<ButtonPanel> field21233 = new ArrayList<ButtonPanel>();
    private boolean field21234;
    private boolean field21235;
    private float field21236 = 1.0F;
@@ -32,15 +32,15 @@ public class Class4346 extends Class4339 {
 
    public void method13571(Class9159 var1) {
       boolean var4 = this.field21241 == var1.field42046 && this.field21237 != 0;
-      boolean var5 = this.method13513() + this.method13269() >= this.method13517().method13269() - field21240;
+      boolean var5 = this.method13513() + this.getHeightA() >= this.getButton().getHeightA() - field21240;
       if (var4) {
          this.field21238 -= 7;
       }
 
-      int var6 = this.method13517().method13269() - this.method13269();
-      this.method13517()
+      int var6 = this.getButton().getHeightA() - this.getHeightA();
+      this.getButton()
          .addToList(
-            new Class4289(this.method13517(), "message" + this.field21237, 0, this.field21238, this.method13267(), var1.method34192() + field21240, var1)
+            new Class4289(this.getButton(), "message" + this.field21237, 0, this.field21238, this.getWidthA(), var1.method34192() + field21240, var1)
          );
       this.field21238 = this.field21238 + var1.method34192();
       this.field21237++;

@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -63,15 +64,15 @@ public class Class2903 extends Class2898<Class4733> {
       if (var7.field22414) {
          var14 = var3;
       } else {
-         int var15 = var1.method7006(Class101.field298, var3).getY();
-         int var16 = var1.method7006(Class101.field296, var3).getY();
+         int var15 = var1.method7006(Heightmap.Type.field298, var3).getY();
+         int var16 = var1.method7006(Heightmap.Type.field296, var3).getY();
          if (var16 - var15 > var7.field22418) {
             return false;
          }
 
          int var17;
-         if (var7.field22420 != Class101.field298) {
-            if (var7.field22420 != Class101.field296) {
+         if (var7.field22420 != Heightmap.Type.field298) {
+            if (var7.field22420 != Heightmap.Type.field296) {
                var17 = var1.method7006(var7.field22420, var3).getY();
             } else {
                var17 = var16;

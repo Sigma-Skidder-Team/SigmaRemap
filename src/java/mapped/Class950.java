@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -60,7 +61,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
       }
 
       Class7934 var7 = !this.field5341.isEmpty() ? this.field5341.get(this.field5341.size() - 1) : null;
-      int var8 = this.field5324.method6736(Class101.field296, var3, var5);
+      int var8 = this.field5324.method6736(Heightmap.Type.field296, var3, var5);
 
       for (int var9 = 0; var9 < 10 && var6.getY() <= var8; var9++) {
          BlockState var10 = this.field5324.getBlockState(var6);

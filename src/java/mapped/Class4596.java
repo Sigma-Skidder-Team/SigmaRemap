@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.fluid.Fluid;
 import net.minecraft.particles.IParticleData;
 
 public class Class4596 extends Class4595 {

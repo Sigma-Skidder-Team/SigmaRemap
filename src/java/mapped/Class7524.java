@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.gson.JsonElement;
+import net.minecraft.block.Block;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.function.BiConsumer;

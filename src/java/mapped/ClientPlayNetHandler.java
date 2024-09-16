@@ -26,6 +26,7 @@ import java.util.concurrent.CompletableFuture;
 import javax.annotation.Nullable;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.block.Block;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
@@ -67,6 +68,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeContainer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -604,7 +606,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       int var4 = var1.getChunkX();
       int var5 = var1.getChunkZ();
-      Class1684 var6 = var1.method17384() != null ? new Class1684(this.field23287.<Biome>getRegistry(Registry.BIOME_KEY), var1.method17384()) : null;
+      BiomeContainer var6 = var1.method17384() != null ? new BiomeContainer(this.field23287.<Biome>getRegistry(Registry.BIOME_KEY), var1.method17384()) : null;
       Chunk var7 = this.field23273
          .getChunkProvider()
          .method7400(var4, var5, var6, var1.method17374(), var1.method17382(), var1.method17380(), var1.isFullChunk());

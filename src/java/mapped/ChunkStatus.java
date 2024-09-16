@@ -8,6 +8,7 @@ import it.unimi.dsi.fastutil.ints.IntList;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.ArrayList;
@@ -18,10 +19,10 @@ import java.util.concurrent.CompletableFuture;
 import java.util.function.Function;
 
 public class ChunkStatus {
-   private static final EnumSet<Class101> field42130 = EnumSet.<Class101>of(Class101.field297, Class101.field295);
-   private static final EnumSet<Class101> field42131 = EnumSet.<Class101>of(Class101.field298, Class101.field296, Class101.field299, Class101.field300);
+   private static final EnumSet<Heightmap.Type> field42130 = EnumSet.<Heightmap.Type>of(Heightmap.Type.field297, Heightmap.Type.field295);
+   private static final EnumSet<Heightmap.Type> field42131 = EnumSet.<Heightmap.Type>of(Heightmap.Type.field298, Heightmap.Type.field296, Heightmap.Type.field299, Heightmap.Type.field300);
    private static final Class9241 field42132 = (var0, var1, var2, var3, var4, var5) -> {
-      if (var5 instanceof Class1672 && !var5.method7080().method34306(var0)) {
+      if (var5 instanceof Class1672 && !var5.getStatus().method34306(var0)) {
          ((Class1672)var5).method7111(var0);
       }
 
@@ -31,7 +32,7 @@ public class ChunkStatus {
    });
    public static final ChunkStatus field42134 = method34290(
       "structure_starts", field42133, 0, field42130, Class2076.field13524, (var0, var1, var2, var3, var4, var5, var6, var7) -> {
-         if (!var7.method7080().method34306(var0)) {
+         if (!var7.getStatus().method34306(var0)) {
             if (var1.getServer().method1436().getDimensionGeneratorSettings().method26260()) {
                var2.method17825(var1.method6867(), var1.method6893(), var7, var3, var1.method6967());
             }
@@ -85,8 +86,8 @@ public class ChunkStatus {
       "features", field42140, 8, field42131, Class2076.field13524, (var0, var1, var2, var3, var4, var5, var6, var7) -> {
          Class1672 var10 = (Class1672)var7;
          var10.method7119(var4);
-         if (!var7.method7080().method34306(var0)) {
-            Class7527.method24577(var7, EnumSet.<Class101>of(Class101.field299, Class101.field300, Class101.field298, Class101.field296));
+         if (!var7.getStatus().method34306(var0)) {
+            Heightmap.method24577(var7, EnumSet.<Heightmap.Type>of(Heightmap.Type.field299, Heightmap.Type.field300, Heightmap.Type.field298, Heightmap.Type.field296));
             Class1691 var11 = new Class1691(var1, var6);
             var2.method17821(var11, var1.method6893().method24339(var11));
             var10.method7111(var0);
@@ -139,26 +140,26 @@ public class ChunkStatus {
    private final Class9241 field42152;
    private final int field42153;
    private final Class2076 field42154;
-   private final EnumSet<Class101> field42155;
+   private final EnumSet<Heightmap.Type> field42155;
 
    private static CompletableFuture<Either<IChunk, Class7022>> method34288(ChunkStatus var0, Class195 var1, IChunk var2) {
       boolean var5 = method34293(var0, var2);
-      if (!var2.method7080().method34306(var0)) {
+      if (!var2.getStatus().method34306(var0)) {
          ((Class1672)var2).method7111(var0);
       }
 
       return var1.method610(var2, var5).thenApply(Either::left);
    }
 
-   private static ChunkStatus method34289(String var0, ChunkStatus var1, int var2, EnumSet<Class101> var3, Class2076 var4, Class6964 var5) {
+   private static ChunkStatus method34289(String var0, ChunkStatus var1, int var2, EnumSet<Heightmap.Type> var3, Class2076 var4, Class6964 var5) {
       return method34290(var0, var1, var2, var3, var4, var5);
    }
 
-   private static ChunkStatus method34290(String var0, ChunkStatus var1, int var2, EnumSet<Class101> var3, Class2076 var4, Class6965 var5) {
+   private static ChunkStatus method34290(String var0, ChunkStatus var1, int var2, EnumSet<Heightmap.Type> var3, Class2076 var4, Class6965 var5) {
       return method34291(var0, var1, var2, var3, var4, var5, field42132);
    }
 
-   private static ChunkStatus method34291(String var0, ChunkStatus var1, int var2, EnumSet<Class101> var3, Class2076 var4, Class6965 var5, Class9241 var6) {
+   private static ChunkStatus method34291(String var0, ChunkStatus var1, int var2, EnumSet<Heightmap.Type> var3, Class2076 var4, Class6965 var5, Class9241 var6) {
       return Registry.<ChunkStatus>method9194(Registry.field16081, var0, new ChunkStatus(var0, var1, var2, var3, var4, var5, var6));
    }
 
@@ -176,7 +177,7 @@ public class ChunkStatus {
    }
 
    private static boolean method34293(ChunkStatus var0, IChunk var1) {
-      return var1.method7080().method34306(var0) && var1.method7095();
+      return var1.getStatus().method34306(var0) && var1.method7095();
    }
 
    public static ChunkStatus method34294(int var0) {
@@ -195,7 +196,7 @@ public class ChunkStatus {
       return field42147.getInt(var0.method34297());
    }
 
-   public ChunkStatus(String var1, ChunkStatus var2, int var3, EnumSet<Class101> var4, Class2076 var5, Class6965 var6, Class9241 var7) {
+   public ChunkStatus(String var1, ChunkStatus var2, int var3, EnumSet<Heightmap.Type> var4, Class2076 var5, Class6965 var6, Class9241 var7) {
       this.field42148 = var1;
       this.field42150 = var2 != null ? var2 : this;
       this.field42151 = var6;
@@ -247,7 +248,7 @@ public class ChunkStatus {
       return Registry.field16081.getOrDefault(ResourceLocation.method8289(var0));
    }
 
-   public EnumSet<Class101> method34305() {
+   public EnumSet<Heightmap.Type> method34305() {
       return this.field42155;
    }
 

@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.CreateWorldScreen;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.WorldSelectionScreen;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -26,10 +27,10 @@ public class Class1276 extends Class1274<Class1173> {
    private static final ITextComponent field6811 = new TranslationTextComponent("selectWorld.tooltip.snapshot1").mergeStyle(TextFormatting.GOLD);
    private static final ITextComponent field6812 = new TranslationTextComponent("selectWorld.tooltip.snapshot2").mergeStyle(TextFormatting.GOLD);
    private static final ITextComponent field6813 = new TranslationTextComponent("selectWorld.locked").mergeStyle(TextFormatting.RED);
-   private final Class1341 field6814;
+   private final WorldSelectionScreen field6814;
    private List<Class2024> field6815;
 
-   public Class1276(Class1341 var1, Minecraft var2, int var3, int var4, int var5, int var6, int var7, Supplier<String> var8, Class1276 var9) {
+   public Class1276(WorldSelectionScreen var1, Minecraft var2, int var3, int var4, int var5, int var6, int var7, Supplier<String> var8, Class1276 var9) {
       super(var2, var3, var4, var5, var6, var7);
       this.field6814 = var1;
       if (var9 != null) {
@@ -117,7 +118,7 @@ public class Class1276 extends Class1274<Class1173> {
       return Optional.<Class1173>ofNullable(this.method6023());
    }
 
-   public Class1341 method6068() {
+   public WorldSelectionScreen method6068() {
       return this.field6814;
    }
 

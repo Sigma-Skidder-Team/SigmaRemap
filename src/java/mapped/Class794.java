@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.realmsclient.RealmsMainScreen;
+import com.mojang.realmsclient.client.RealmsClient;
 import com.mojang.realmsclient.dto.RealmsServer;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -21,7 +22,7 @@ public class Class794 extends Class789 {
    @Override
    public void run() {
       this.method1908(new TranslationTextComponent("mco.configure.world.opening"));
-      Class4624 var3 = Class4624.method14543();
+      RealmsClient var3 = RealmsClient.method14543();
 
       for (int var4 = 0; var4 < 25; var4++) {
          if (this.method1909()) {

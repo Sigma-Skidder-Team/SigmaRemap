@@ -31,7 +31,7 @@ public class ClassicScreenk extends Screen {
                 this.method13236(this.field21081);
             }
 
-            this.addToList(this.field21081 = new Class4335(this, var1, this.method13267() / 2, this.method13269() / 2, var2));
+            this.addToList(this.field21081 = new Class4335(this, var1, this.getWidthA() / 2, this.getHeightA() / 2, var2));
         });
     }
 
@@ -40,7 +40,7 @@ public class ClassicScreenk extends Screen {
             this.method13236(this.field21081);
         }
 
-        this.addToList(this.field21081 = new Class4334(this, "Sigma", this.method13267() / 2, this.method13269() / 2));
+        this.addToList(this.field21081 = new Class4334(this, "Sigma", this.getWidthA() / 2, this.getHeightA() / 2));
     }
 
     @Override
@@ -76,10 +76,10 @@ public class ClassicScreenk extends Screen {
     public void draw(float var1) {
         float var4 = field21079.calcPercent();
         RenderUtil.drawRect(
-                (float) this.field20895,
-                (float) this.field20896,
-                (float) (this.field20895 + this.field20897),
-                (float) (this.field20896 + this.field20898),
+                (float) this.xA,
+                (float) this.yA,
+                (float) (this.xA + this.widthA),
+                (float) (this.yA + this.heightA),
                 ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var4 * 0.35F)
         );
         super.draw(var1);

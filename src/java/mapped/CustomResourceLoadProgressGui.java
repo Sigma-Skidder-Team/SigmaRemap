@@ -109,7 +109,7 @@ public class CustomResourceLoadProgressGui extends LoadingGui {
       GL11.glTranslatef((float)(Minecraft.getInstance().mainWindow.getWidth() / 2), (float)(Minecraft.getInstance().mainWindow.getHeight() / 2), 0.0F);
       GL11.glScalef(var8, var8, 0.0F);
       GL11.glTranslatef((float)(-Minecraft.getInstance().mainWindow.getWidth() / 2), (float)(-Minecraft.getInstance().mainWindow.getHeight() / 2), 0.0F);
-      RenderUtil.method11449((float)var6, (float)var7, (float)var4, (float)var5, field6778, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var0));
+      RenderUtil.drawImage((float)var6, (float)var7, (float)var4, (float)var5, field6778, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var0));
       float var9 = Math.min(1.0F, var1 * 1.02F);
       float var10 = 1.0F - var0;
       byte var11 = 80;

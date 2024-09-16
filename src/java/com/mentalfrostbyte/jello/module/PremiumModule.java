@@ -38,9 +38,9 @@ public class PremiumModule extends Module {
    }
 
    @Override
-   public void method15999(boolean newEnabled) {
+   public void setEnabled(boolean newEnabled) {
       if (Client.getInstance().getNetworkManager().isPremium()) {
-         super.method15999(newEnabled);
+         super.setEnabled(newEnabled);
       } else {
          if (this.isEnabled() != newEnabled) {
             Client.getInstance().getNotificationManager().post(new Notification("Premium", this.getName() + " Not yet available for free version"));

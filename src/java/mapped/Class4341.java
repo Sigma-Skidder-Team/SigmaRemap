@@ -13,7 +13,7 @@ import java.util.List;
 
 public class Class4341 extends Class4339 implements Class4342 {
    public final ModuleCategory field21214;
-   private List<Class4240> field21215 = new ArrayList<Class4240>();
+   private List<ButtonPanel> field21215 = new ArrayList<ButtonPanel>();
    private boolean field21216;
    private boolean field21217;
    private float field21218 = 1.0F;
@@ -36,11 +36,11 @@ public class Class4341 extends Class4339 implements Class4342 {
          ColorHelper var12 = new ColorHelper(!var5.isEnabled() ? 1895167477 : -14047489, !var5.isEnabled() ? var9 : -14042881)
             .method19410(!var5.isEnabled() ? ClientColors.DEEP_TEAL.getColor : ClientColors.LIGHT_GREYISH_BLUE.getColor);
          var12.method19412(Class2218.field14488);
-         Class4240 var13;
-         this.method13517()
+         ButtonPanel var13;
+         this.getButton()
             .addToList(
-               var13 = new Class4240(
-                  this.method13517(), var5.getName() + "Button", 0, var3 * 30, this.method13267(), 30, var12, var5.getName(), ResourceRegistry.JelloLightFont20
+               var13 = new ButtonPanel(
+                  this.getButton(), var5.getName() + "Button", 0, var3 * 30, this.getWidthA(), 30, var12, var5.getName(), ResourceRegistry.JelloLightFont20
                )
             );
          if (!var5.isEnabled()) {
@@ -52,14 +52,14 @@ public class Class4341 extends Class4339 implements Class4342 {
          this.field21215.add(var13);
          var13.doThis(
             (var3x, var4) -> {
-               Class4240 var7 = (Class4240)var3x;
+               ButtonPanel var7 = (ButtonPanel)var3x;
                if (var4 != 0) {
                   if (var4 == 1) {
-                     JelloClickGUIPanels var8 = (JelloClickGUIPanels)this.method13258();
+                     JelloClickGUIPanels var8 = (JelloClickGUIPanels)this.getIcoPanel();
                      var8.method13508(var5);
                   }
                } else {
-                  var5.method16000();
+                  var5.toggle();
                   ColorHelper var9x = new ColorHelper(!var5.isEnabled() ? 1895167477 : -14047489, !var5.isEnabled() ? var9 : -14042881)
                      .method19410(!var5.isEnabled() ? ClientColors.DEEP_TEAL.getColor : ClientColors.LIGHT_GREYISH_BLUE.getColor);
                   if (!var5.isEnabled()) {
@@ -77,7 +77,7 @@ public class Class4341 extends Class4339 implements Class4342 {
          var3++;
       }
 
-      this.method13517().method13246(new Class7262(1));
+      this.getButton().method13246(new Class7262(1));
    }
 
    private float method13523() {
@@ -97,7 +97,7 @@ public class Class4341 extends Class4339 implements Class4342 {
    @Override
    public void method13028(int var1, int var2) {
       super.method13028(var1, var2);
-      JelloClickGUIPanels var5 = (JelloClickGUIPanels)this.field20892;
+      JelloClickGUIPanels var5 = (JelloClickGUIPanels)this.icoPanel;
       float var6 = (float)(0.07F * (60.0 / (double) Minecraft.getFps()));
       this.field21218 = this.field21218 + (!this.method13525() ? 0.0F : (!this.field21217 ? var6 : -var6));
       this.field21218 = Math.max(0.0F, Math.min(1.0F, this.field21218));
@@ -127,7 +127,7 @@ public class Class4341 extends Class4339 implements Class4342 {
    @Override
    public void draw(float var1) {
       this.method13225();
-      super.draw(var1 * ((JelloClickGUIPanels)this.field20892).field21195);
+      super.draw(var1 * ((JelloClickGUIPanels)this.icoPanel).field21195);
    }
 
    @Override
@@ -155,7 +155,7 @@ public class Class4341 extends Class4339 implements Class4342 {
    public int method13529(Module var1) {
       int var4 = 0;
 
-      for (Class4240 var6 : this.field21215) {
+      for (ButtonPanel var6 : this.field21215) {
          var4++;
          if (var6.method13257().equals(var1.getName() + "Button")) {
             break;

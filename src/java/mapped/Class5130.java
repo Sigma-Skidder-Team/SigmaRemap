@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.chunk.IChunk;
 
 import java.util.Map.Entry;
 
@@ -30,9 +31,9 @@ public class Class5130 implements Class5119 {
          for (int var16 = -32; var16 <= 32; var16 += 16) {
             IChunk var17 = var11.method7011(var12.method8336(var15, 0, var16));
 
-            for (Entry var19 : var17.method7068()) {
-               Class101 var20 = (Class101)var19.getKey();
-               ChunkPos var21 = var17.method7072();
+            for (Entry var19 : var17.getHeightmaps()) {
+               Heightmap.Type var20 = (Heightmap.Type)var19.getKey();
+               ChunkPos var21 = var17.getPos();
                Vector3f var22 = this.method15867(var20);
 
                for (int var23 = 0; var23 < 16; var23++) {
@@ -64,7 +65,7 @@ public class Class5130 implements Class5119 {
       RenderSystem.popMatrix();
    }
 
-   private Vector3f method15867(Class101 var1) {
+   private Vector3f method15867(Heightmap.Type var1) {
       switch (Class7913.field33895[var1.ordinal()]) {
          case 1:
             return new Vector3f(1.0F, 1.0F, 0.0F);

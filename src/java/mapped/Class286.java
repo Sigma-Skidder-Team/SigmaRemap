@@ -1,7 +1,9 @@
 package mapped;
 
 import com.google.common.collect.Multimap;
+import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 

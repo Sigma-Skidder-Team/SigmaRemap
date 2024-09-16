@@ -53,7 +53,7 @@ public class Class1677 implements Class1663 {
       for (int var7 = var0.getX() >> 4; var7 <= var1.getX() >> 4; var7++) {
          for (int var8 = var0.getZ() >> 4; var8 <= var1.getZ() >> 4; var8++) {
             Chunk var9 = var4[var7 - var2][var8 - var3];
-            if (!var9.method7076(var0.getY(), var1.getY())) {
+            if (!var9.isEmptyBetween(var0.getY(), var1.getY())) {
                return false;
             }
          }

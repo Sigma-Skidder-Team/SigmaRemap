@@ -22,8 +22,8 @@ public class JelloClickGUIPanels extends Class4304 {
 
    public JelloClickGUIPanels(IconPanel var1, String var2, int var3, int var4, ModuleCategory category) {
       super(var1, var2, var3, var4, 200, 350, true);
-      this.setWidth(200);
-      this.setHeight(350);
+      this.setWidthA(200);
+      this.setHeightA(350);
       this.field20886 = true;
       this.category = category;
       this.method13505();
@@ -32,16 +32,16 @@ public class JelloClickGUIPanels extends Class4304 {
    public void method13504() {
       this.method13222(() -> {
          this.method13236(this.field21194);
-         this.addToList(this.field21194 = new Class4341(this, "modListView", 0, 60, this.method13267(), this.method13269() - 60, this.category));
+         this.addToList(this.field21194 = new Class4341(this, "modListView", 0, 60, this.getWidthA(), this.getHeightA() - 60, this.category));
       });
    }
 
    private void method13505() {
-      this.addToList(this.field21194 = new Class4341(this, "modListView", 0, 60, this.method13267(), this.method13269() - 60, this.category));
+      this.addToList(this.field21194 = new Class4341(this, "modListView", 0, 60, this.getWidthA(), this.getHeightA() - 60, this.category));
       this.field21194.method13261(new Class6666());
       this.field21194.method13261((var0, var1) -> {
-         var0.method13266(60);
-         var0.setHeight(var1.method13269() - 60);
+         var0.setYA(60);
+         var0.setHeightA(var1.getHeightA() - 60);
       });
    }
 
@@ -51,8 +51,8 @@ public class JelloClickGUIPanels extends Class4304 {
          this.method13215(false);
          this.field20909 = false;
       } else {
-         this.field21197 = this.method13263();
-         this.field21198 = this.method13265();
+         this.field21197 = this.getXA();
+         this.field21198 = this.getYA();
          this.method13215(true);
       }
 
@@ -69,19 +69,19 @@ public class JelloClickGUIPanels extends Class4304 {
             var12 = 0;
          }
 
-         if (var12 + var9 > this.field20892.method13267()) {
-            var12 = this.field20892.method13267() - var9;
+         if (var12 + var9 > this.icoPanel.getWidthA()) {
+            var12 = this.icoPanel.getWidthA() - var9;
          }
 
-         if (var11 + var10 > this.field20892.method13269()) {
-            var11 = this.field20892.method13269() - var10;
+         if (var11 + var10 > this.icoPanel.getHeightA()) {
+            var11 = this.icoPanel.getHeightA() - var10;
          }
       }
 
-      this.setWidth(var9);
-      this.setHeight(var10);
-      this.method13264(var12);
-      this.method13266(var11);
+      this.setWidthA(var9);
+      this.setHeightA(var10);
+      this.setXA(var12);
+      this.setYA(var11);
       super.method13028(var1, var2);
    }
 
@@ -90,26 +90,26 @@ public class JelloClickGUIPanels extends Class4304 {
       super.method13224();
       super.method13225();
       int var4 = (int)(1.0F + 10.0F * (1.0F - this.field21195));
-      RenderUtil.method11463(
-         (float)(this.method13263() + (var4 - 1)),
-         (float)(this.method13265() + (var4 - 1)),
-         (float)(this.method13267() - (var4 - 1) * 2),
-         (float)(this.method13269() - (var4 - 1) * 2),
+      RenderUtil.drawRoundedRect(
+         (float)(this.getXA() + (var4 - 1)),
+         (float)(this.getYA() + (var4 - 1)),
+         (float)(this.getWidthA() - (var4 - 1) * 2),
+         (float)(this.getHeightA() - (var4 - 1) * 2),
          (float)this.field21199 + (1.0F - this.field21195) * (float)var4,
          var1
       );
       RenderUtil.drawRect(
-         (float)this.method13263(),
-         (float)this.method13265(),
-         (float)(this.method13263() + this.method13267()),
-         (float)(this.method13265() + 60),
+         (float)this.getXA(),
+         (float)this.getYA(),
+         (float)(this.getXA() + this.getWidthA()),
+         (float)(this.getYA() + 60),
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 0.9F * this.field21195))
       );
       RenderUtil.method11424(
-         (float)this.method13263(),
-         (float)this.method13265() + 60.0F * this.field21195,
-         (float)this.method13267(),
-         (float)this.method13269() - 60.0F * this.field21195,
+         (float)this.getXA(),
+         (float)this.getYA() + 60.0F * this.field21195,
+         (float)this.getWidthA(),
+         (float)this.getHeightA() - 60.0F * this.field21195,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       if (!(this.field21195 > 0.8F)) {
@@ -123,8 +123,8 @@ public class JelloClickGUIPanels extends Class4304 {
       String categoryName = this.getCategory().getName();
       RenderUtil.method11440(
          ResourceRegistry.JelloLightFont25,
-         (float)(this.method13263() + 20),
-         (float)(this.method13265() + 30),
+         (float)(this.getXA() + 20),
+         (float)(this.getYA() + 30),
          categoryName,
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.5F * this.field21195),
          Class2218.field14488,
@@ -134,10 +134,10 @@ public class JelloClickGUIPanels extends Class4304 {
       super.draw(var1 * var1);
       GL11.glPopMatrix();
       if (this.field21194.method13513() > 0) {
-         RenderUtil.method11449(
-            (float)this.method13263(),
-            (float)(this.method13265() + 60),
-            (float)this.method13267(),
+         RenderUtil.drawImage(
+            (float)this.getXA(),
+            (float)(this.getYA() + 60),
+            (float)this.getWidthA(),
             18.0F,
             ResourcesDecrypter.shadowBottomPNG,
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field21195 * 0.5F)

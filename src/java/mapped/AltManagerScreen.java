@@ -21,7 +21,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4313 extends Screen {
+public class AltManagerScreen extends Screen {
    private int field21005;
    private float field21006;
    private float field21007 = 0.75F;
@@ -43,9 +43,9 @@ public class Class4313 extends Screen {
    private Class2209 field21023 = Class2209.field14448;
    private String field21024 = "";
    private boolean field21025 = false;
-   private Class4281 field21026;
+   private UIInput field21026;
 
-   public Class4313() {
+   public AltManagerScreen() {
       super("Alt Manager");
       this.method13300(false);
       ArrayList var3 = new ArrayList();
@@ -150,14 +150,14 @@ public class Class4313 extends Screen {
          this.method13372(false);
       });
       this.addToList(
-         this.field21026 = new Class4281(
+         this.field21026 = new UIInput(
             this,
             "textbox",
             (int)((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21014),
             44,
             150,
             32,
-            Class4281.field20741,
+            UIInput.field20741,
             "",
             "Search...",
             ResourceRegistry.JelloLightFont18
@@ -165,7 +165,7 @@ public class Class4313 extends Screen {
       );
       this.field21026.method13306(ResourceRegistry.JelloLightFont18);
       this.field21026.method13151(var1 -> this.method13372(false));
-      this.addToList(this.field21022 = new UIButton(this, "btnt", this.method13267() - 90, 43, 70, 30, ColorHelper.field27961, "Add +", ResourceRegistry.JelloLightFont25));
+      this.addToList(this.field21022 = new UIButton(this, "btnt", this.getWidthA() - 90, 43, 70, 30, ColorHelper.field27961, "Add +", ResourceRegistry.JelloLightFont25));
       this.field21010.method13242();
       this.field21022.doThis((var1, var2) -> {
          if (this.method13369()) {
@@ -183,7 +183,7 @@ public class Class4313 extends Screen {
                var1.getEmail(),
                this.field21016,
                (100 + this.field21016 / 2) * this.method13370(),
-               this.field21010.method13267() - this.field21016 * 2 + 4,
+               this.field21010.getWidthA() - this.field21016 * 2 + 4,
                100,
                var1
             )
@@ -324,7 +324,7 @@ public class Class4313 extends Screen {
       float var3 = this.field21021 < 25.0F ? this.field21021 / 25.0F : 1.0F;
       GL11.glTexParameteri(3553, 10241, 9728);
       if (this.field21020 != null) {
-         RenderUtil.method11449(
+         RenderUtil.drawImage(
             0.0F,
             0.0F,
             (float)((int)((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21014) - 15),
@@ -341,8 +341,8 @@ public class Class4313 extends Screen {
    }
 
    private void method13366() {
-      int var3 = this.field20895 + this.field21016;
-      int var4 = this.field20896 + this.field21016;
+      int var3 = this.xA + this.field21016;
+      int var4 = this.yA + this.field21016;
       int var5 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F);
       RenderUtil.drawString(ResourceRegistry.JelloLightFont40, (float)var3, (float)var4, "Jello", var5);
       RenderUtil.drawString(ResourceRegistry.JelloLightFont25, (float)(var3 + 87), (float)(var4 + 15), "Alt Manager", var5);
@@ -356,13 +356,13 @@ public class Class4313 extends Screen {
             for (IconPanel var7 : var5.method13241()) {
                if (var7 instanceof Class4294) {
                   Class4294 var8 = (Class4294)var7;
-                  if (var7.method13265() <= Minecraft.getInstance().mainWindow.getHeight() && this.field21010.method13513() == 0) {
+                  if (var7.getYA() <= Minecraft.getInstance().mainWindow.getHeight() && this.field21010.method13513() == 0) {
                      if (var3 > 0.2F) {
                         var8.field20805.changeDirection(Direction.FORWARDS);
                      }
 
                      float var9 = MathUtils.lerp(var8.field20805.calcPercent(), 0.51, 0.82, 0.0, 0.99);
-                     var8.method13284((int)(-((1.0F - var9) * (float)(var7.method13267() + 30))));
+                     var8.method13284((int)(-((1.0F - var9) * (float)(var7.getWidthA() + 30))));
                      var3 = var8.field20805.calcPercent();
                   } else {
                      var8.method13284(0);
@@ -393,7 +393,7 @@ public class Class4313 extends Screen {
       for (IconPanel var5 : this.field21010.method13241()) {
          if (!(var5 instanceof Class4292)) {
             for (IconPanel var7 : var5.method13241()) {
-               if (var7.method13280() != 0 && var7.method13263() > this.field20897) {
+               if (var7.method13280() != 0 && var7.getXA() > this.widthA) {
                   return false;
                }
             }
@@ -419,7 +419,7 @@ public class Class4313 extends Screen {
 
    private void method13371() {
       int var3 = this.method13309() * -1;
-      float var4 = (float)this.method13310() / (float)this.method13267() * -114.0F;
+      float var4 = (float)this.method13310() / (float)this.getWidthA() * -114.0F;
       if (this.field21008) {
          this.field21006 = (float)((int)var4);
          this.field21005 = var3;
@@ -428,7 +428,7 @@ public class Class4313 extends Screen {
 
       float var5 = var4 - this.field21006;
       float var6 = (float)(var3 - this.field21005);
-      RenderUtil.method11455((float)this.field21005, this.field21006, (float)(this.method13267() * 2), (float)(this.method13269() + 114), ResourcesDecrypter.panoramaPNG);
+      RenderUtil.method11455((float)this.field21005, this.field21006, (float)(this.getWidthA() * 2), (float)(this.getHeightA() + 114), ResourcesDecrypter.panoramaPNG);
       float var7 = 0.5F;
       if (var4 != this.field21006) {
          this.field21006 += var5 * var7;
@@ -438,7 +438,7 @@ public class Class4313 extends Screen {
          this.field21005 = (int)((float)this.field21005 + var6 * var7);
       }
 
-      RenderUtil.drawRect(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.95F));
+      RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.95F));
    }
 
    @Override
@@ -481,27 +481,27 @@ public class Class4313 extends Screen {
    }
 
    // $VF: synthetic method
-   public static Class4339 method13382(Class4313 var0) {
+   public static Class4339 method13382(AltManagerScreen var0) {
       return var0.field21010;
    }
 
    // $VF: synthetic method
-   public static Class4339 method13383(Class4313 var0, Class4339 var1) {
+   public static Class4339 method13383(AltManagerScreen var0, Class4339 var1) {
       return var0.field21010 = var1;
    }
 
    // $VF: synthetic method
-   public static float method13384(Class4313 var0) {
+   public static float method13384(AltManagerScreen var0) {
       return var0.field21014;
    }
 
    // $VF: synthetic method
-   public static int method13385(Class4313 var0) {
+   public static int method13385(AltManagerScreen var0) {
       return var0.field21016;
    }
 
    // $VF: synthetic method
-   public static void method13386(Class4313 var0, Account var1, boolean var2) {
+   public static void method13386(AltManagerScreen var0, Account var1, boolean var2) {
       var0.method13360(var1, var2);
    }
 }

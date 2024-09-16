@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.realmsclient.exception.RealmsServiceException;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.realms.RealmsScreen;
@@ -13,7 +14,7 @@ public class Class821 extends RealmsScreen {
    private ITextComponent field4477;
    private ITextComponent field4478;
 
-   public Class821(Class2435 var1, Screen var2) {
+   public Class821(RealmsServiceException var1, Screen var2) {
       this.field4476 = var2;
       this.method2357(var1);
    }
@@ -28,7 +29,7 @@ public class Class821 extends RealmsScreen {
       this.method2359(var1, var2);
    }
 
-   private void method2357(Class2435 var1) {
+   private void method2357(RealmsServiceException var1) {
       if (var1.field16474 != -1) {
          this.field4477 = new StringTextComponent("Realms (" + var1.field16474 + "):");
          String var4 = "mco.errorMessage." + var1.field16474;

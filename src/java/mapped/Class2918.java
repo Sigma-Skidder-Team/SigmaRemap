@@ -19,7 +19,7 @@ public class Class2918 extends Class2898<Class4715> {
       for (int var10 = 0; var10 < var9; var10++) {
          int var11 = var3.nextInt(8) - var3.nextInt(8);
          int var12 = var3.nextInt(8) - var3.nextInt(8);
-         int var13 = var1.method6736(Class101.field298, var4.getX() + var11, var4.getZ() + var12);
+         int var13 = var1.method6736(Heightmap.Type.field298, var4.getX() + var11, var4.getZ() + var12);
          BlockPos var14 = new BlockPos(var4.getX() + var11, var13, var4.getZ() + var12);
          BlockState var15 = Blocks.field37005.method11579().method23465(Class3195.field18472, Integer.valueOf(var3.nextInt(4) + 1));
          if (var1.getBlockState(var14).isIn(Blocks.WATER) && var15.method23443(var1, var14)) {

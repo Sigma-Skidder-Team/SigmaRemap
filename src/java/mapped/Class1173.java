@@ -8,6 +8,7 @@ import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.CreateWorldScreen;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.gui.screen.WorldSelectionScreen;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
@@ -26,7 +27,7 @@ import java.util.Date;
 
 public final class Class1173 extends Class1155<Class1173> implements AutoCloseable {
    private final Minecraft field6351;
-   private final Class1341 field6352;
+   private final WorldSelectionScreen field6352;
    private final Class2024 field6353;
    private final ResourceLocation field6354;
    private File field6355;

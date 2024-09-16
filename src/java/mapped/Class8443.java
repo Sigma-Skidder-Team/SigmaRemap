@@ -13,7 +13,7 @@ public class Class8443 {
    private List<Class7139> field36179 = ImmutableList.of();
    private int field36180;
    private boolean field36181;
-   private Class101 field36182 = Class101.field298;
+   private Heightmap.Type field36182 = Heightmap.Type.field298;
 
    public Class8443(Class6698 var1, Class6698 var2, Class6819 var3, Class6896 var4, Class7617 var5) {
       this.field36174 = var1;
@@ -38,7 +38,7 @@ public class Class8443 {
       return this;
    }
 
-   public Class8443 method29693(Class101 var1) {
+   public Class8443 method29693(Heightmap.Type var1) {
       this.field36182 = var1;
       return this;
    }

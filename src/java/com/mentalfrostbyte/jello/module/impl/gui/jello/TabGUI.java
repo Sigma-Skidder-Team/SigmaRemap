@@ -258,7 +258,7 @@ public class TabGUI extends Module {
                 var10 + this.field23779 + this.field23778 <= var3 ? (float) (var10 + var2 + this.field23778 + this.field23779) : (float) (var2 + var3 + this.field23779),
                 this.field23790
         );
-        RenderUtil.method11449(
+        RenderUtil.drawImage(
                 (float) var1,
                 var10 + this.field23779 + this.field23778 <= var3 ? (float) (var10 + var2 + this.field23778 - 10) : (float) (var2 + var3 - 10),
                 (float) var4,
@@ -266,7 +266,7 @@ public class TabGUI extends Module {
                 ResourcesDecrypter.shadowTopPNG,
                 this.field23791
         );
-        RenderUtil.method11449((float) var1, var10 >= 0 ? (float) (var10 + var2) : (float) var2, (float) var4, 14.0F, ResourcesDecrypter.shadowBottomPNG, this.field23791);
+        RenderUtil.drawImage((float) var1, var10 >= 0 ? (float) (var10 + var2) : (float) var2, (float) var4, 14.0F, ResourcesDecrypter.shadowBottomPNG, this.field23791);
         RenderUtil.drawPortalBackground(
                 var1,
                 var10 >= 0 ? var10 + var2 : var2,
@@ -322,7 +322,7 @@ public class TabGUI extends Module {
             switch (var1.getKey()) {
                 case 257:
                     if (this.field23781) {
-                        this.field23785.method16000();
+                        this.field23785.toggle();
                         this.field23789.add(new Class8224(this, this.field23781));
                     }
                     break;
@@ -335,7 +335,7 @@ public class TabGUI extends Module {
                 case 262:
                     this.field23789.add(new Class8224(this, this.field23781));
                     if (this.field23781) {
-                        this.field23785.method16000();
+                        this.field23785.toggle();
                     }
 
                     this.field23781 = true;
@@ -397,7 +397,7 @@ public class TabGUI extends Module {
             RenderUtil.drawRect((float) var1, (float) var2, (float) (var1 + var3), (float) (var2 + var4), this.field23793);
         }
 
-        RenderUtil.method11463((float) var1, (float) var2, (float) var3, (float) var4, 8.0F, 0.7F * var8);
+        RenderUtil.drawRoundedRect((float) var1, (float) var2, (float) var3, (float) var4, 8.0F, 0.7F * var8);
     }
 
     private void method16601() {

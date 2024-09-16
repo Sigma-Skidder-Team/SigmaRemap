@@ -16,7 +16,7 @@ public class Class9010 {
       this.field41216 = var2;
    }
 
-   public int method33296(Class101 var1, int var2, int var3) {
+   public int method33296(Heightmap.Type var1, int var2, int var3) {
       return this.field41215.method6736(var1, var2, var3);
    }
 

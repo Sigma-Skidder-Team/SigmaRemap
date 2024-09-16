@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.realmsclient.client.RealmsClient;
 import com.mojang.realmsclient.dto.RealmsServer;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -15,7 +16,7 @@ public class Class1345 extends Class789 {
    @Override
    public void run() {
       this.method1908(new TranslationTextComponent("mco.configure.world.closing"));
-      Class4624 var3 = Class4624.method14543();
+      RealmsClient var3 = RealmsClient.method14543();
 
       for (int var4 = 0; var4 < 25; var4++) {
          if (this.method1909()) {

@@ -49,14 +49,14 @@ public class JelloClickGUI extends Screen {
             this.categoryPanel.put(module.getAdjustedCategoryBasedOnClientMode(), clickGUIPanels);
             this.addToList(clickGUIPanels);
 
-            x += clickGUIPanels.method13267() + 10;
+            x += clickGUIPanels.getWidthA() + 10;
             if (this.categoryPanel.size() == 4) {
                x = 30;
-               y += clickGUIPanels.method13269() - 20;
+               y += clickGUIPanels.getHeightA() - 20;
             }
 
             clickGUIPanels.method13507(var2 -> var5.method13222(() -> {
-                  var5.addToList(this.field20949 = new ModuleSettingUI(var5, "settings", 0, 0, this.field20897, this.field20898, var2));
+                  var5.addToList(this.field20949 = new ModuleSettingUI(var5, "settings", 0, 0, this.widthA, this.heightA, var2));
                   this.field20949.method13292(true);
             }));
          }
@@ -65,7 +65,7 @@ public class JelloClickGUI extends Screen {
       this.addToList(this.musicPlayer = new MusicPlayer(this, "musicPlayer"));
       this.musicPlayer.method13215(true);
       Class4235 var9;
-      this.addToList(var9 = new Class4235(this, "more", this.method13267() - 69, this.method13269() - 55, 55, 41, ResourcesDecrypter.optionsPNG1));
+      this.addToList(var9 = new Class4235(this, "more", this.getWidthA() - 69, this.getHeightA() - 55, 55, 41, ResourcesDecrypter.optionsPNG1));
       var9.method13307().method19406(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
       var9.method13300(false);
       this.musicPlayer.method13288(field20951);
@@ -73,7 +73,7 @@ public class JelloClickGUI extends Screen {
             if (this.configButton != null && this.method13239(this.configButton)) {
                this.method13234(this.configButton);
             } else {
-               this.addToList(this.configButton = new ConfigButtonOnClickGui(this, "morepopover", this.method13267() - 14, this.method13269() - 14));
+               this.addToList(this.configButton = new ConfigButtonOnClickGui(this, "morepopover", this.getWidthA() - 14, this.getHeightA() - 14));
                this.configButton.method13292(true);
             }
          }));
@@ -132,7 +132,7 @@ public class JelloClickGUI extends Screen {
 
    @Override
    public void method13028(int var1, int var2) {
-      this.musicPlayer.method13288(this.musicPlayer.method13267() < this.method13267() && this.musicPlayer.method13269() < this.method13269());
+      this.musicPlayer.method13288(this.musicPlayer.getWidthA() < this.getWidthA() && this.musicPlayer.getHeightA() < this.getHeightA());
       super.method13028(var1, var2);
       ColorUtils.method17740(Math.min(1.0F, field20942.calcPercent() * 4.0F));
       this.brainFreeze.method13288(Client.getInstance().getModuleManager().getModuleByClass(BrainFreeze.class).isEnabled());
@@ -239,10 +239,10 @@ public class JelloClickGUI extends Screen {
          : (!field20944 ? 1.0F : this.method13317(field20942.calcPercent(), 1.0F));
       float var5 = 0.2F * var1 * var4;
       RenderUtil.drawRect(
-         (float)this.field20895,
-         (float)this.field20896,
-         (float)(this.field20895 + this.field20897),
-         (float)(this.field20896 + this.field20898),
+         (float)this.xA,
+         (float)this.yA,
+         (float)(this.xA + this.widthA),
+         (float)(this.yA + this.heightA),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
       );
       Object var6 = null;
@@ -261,16 +261,16 @@ public class JelloClickGUI extends Screen {
          String var12 = Client.getInstance().getModuleManager().method14667().method20770().field31263;
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont20,
-            (float)(this.field20897 - ResourceRegistry.JelloLightFont20.method23942(var12) - 80),
-            (float)(this.field20898 - 47),
+            (float)(this.widthA - ResourceRegistry.JelloLightFont20.method23942(var12) - 80),
+            (float)(this.heightA - 47),
             var12,
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * Math.max(0.0F, Math.min(1.0F, var4)))
          );
       }
 
       for (IconPanel var9 : this.method13241()) {
-         float var10 = (float)(var9.method13265() + var9.method13269() / 2 - mc.mainWindow.getHeight() / 2) * (1.0F - var4) * 0.5F;
-         float var11 = (float)(var9.method13263() + var9.method13267() / 2 - mc.mainWindow.getWidth() / 2) * (1.0F - var4) * 0.5F;
+         float var10 = (float)(var9.getYA() + var9.getHeightA() / 2 - mc.mainWindow.getHeight() / 2) * (1.0F - var4) * 0.5F;
+         float var11 = (float)(var9.getXA() + var9.getWidthA() / 2 - mc.mainWindow.getWidth() / 2) * (1.0F - var4) * 0.5F;
          var9.method13286((int)var11, (int)var10);
          var9.method13279(1.5F - var4 * 0.5F, 1.5F - var4 * 0.5F);
       }

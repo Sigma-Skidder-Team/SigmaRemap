@@ -18,6 +18,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -60,7 +61,7 @@ public final class Class8170 {
    }
 
    private static Biome method28416(BlockPos var0, IChunk var1) {
-      return Class1962.field12770.method8225(0L, var0.getX(), var0.getY(), var0.getZ(), var1.method7077());
+      return Class1962.field12770.method8225(0L, var0.getX(), var0.getY(), var0.getZ(), var1.getBiomes());
    }
 
    public static void method28417(ServerWorld var0, Chunk var1, Class7307 var2, boolean var3, boolean var4, boolean var5) {
@@ -160,7 +161,7 @@ public final class Class8170 {
             return false;
          } else {
             ChunkPos var7 = new ChunkPos(var2);
-            return Objects.equals(var7, var1.method7072()) || var0.getChunkProvider().method7352(var7);
+            return Objects.equals(var7, var1.getPos()) || var0.getChunkProvider().method7352(var7);
          }
       } else {
          return false;
@@ -234,10 +235,10 @@ public final class Class8170 {
    }
 
    private static BlockPos method28427(World var0, Chunk var1) {
-      ChunkPos var4 = var1.method7072();
+      ChunkPos var4 = var1.getPos();
       int var5 = var4.getX() + var0.rand.nextInt(16);
       int var6 = var4.getZ() + var0.rand.nextInt(16);
-      int var7 = var1.method7071(Class101.field296, var5, var6) + 1;
+      int var7 = var1.getTopBlockY(Heightmap.Type.field296, var5, var6) + 1;
       int var8 = var0.rand.nextInt(var7 + 1);
       return new BlockPos(var5, var8, var6);
    }

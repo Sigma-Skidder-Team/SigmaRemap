@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.gen.feature.structure.StructureStart;
 
 import java.util.List;
 import java.util.function.Supplier;
@@ -18,7 +19,7 @@ public class Class9300<FC extends Class4698, F extends Structure<FC>> {
       this.field43175 = (FC)var2;
    }
 
-   public Class5444<?> method35098(
+   public StructureStart<?> method35098(
            DynamicRegistries var1, ChunkGenerator var2, Class1685 var3, TemplateManager var4, long var5, ChunkPos var7, Biome var8, int var9, Class8483 var10
    ) {
       return this.field43174.method11372(var1, var2, var3, var4, var5, var7, var8, var9, new Class2420(), var10, this.field43175);

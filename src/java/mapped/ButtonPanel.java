@@ -4,25 +4,25 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 
-public class Class4240 extends Class4247 {
+public class ButtonPanel extends Class4247 {
    private static String[] field20583;
    public float field20584;
    private int field20585 = 0;
    public int field20586 = 0;
 
-   public Class4240(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+   public ButtonPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
    }
 
-   public Class4240(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
+   public ButtonPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7) {
       super(var1, var2, var3, var4, var5, var6, var7, false);
    }
 
-   public Class4240(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
+   public ButtonPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, false);
    }
 
-   public Class4240(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9) {
+   public ButtonPanel(IconPanel var1, String var2, int var3, int var4, int var5, int var6, ColorHelper var7, String var8, ClientResource var9) {
       super(var1, var2, var3, var4, var5, var6, var7, var8, var9, false);
    }
 
@@ -37,8 +37,8 @@ public class Class4240 extends Class4247 {
    public void draw(float var1) {
       float var4 = !this.isHovered() ? 0.3F : (!this.method13216() ? (!this.method13212() ? Math.max(var1 * this.field20584, 0.0F) : 1.5F) : 0.0F);
       int var5 = ColorUtils.applyAlpha(
-         ColorUtils.method17690(this.field20914.method19405(), this.field20914.method19403(), 1.0F - var4),
-         (float)(this.field20914.method19405() >> 24 & 0xFF) / 255.0F * var1
+         ColorUtils.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4),
+         (float)(this.textColor.method19405() >> 24 & 0xFF) / 255.0F * var1
       );
       int var6 = var5 >> 24 & 0xFF;
       int var7 = var5 >> 16 & 0xFF;
@@ -46,29 +46,29 @@ public class Class4240 extends Class4247 {
       int var9 = var5 & 0xFF;
       if (this.field20586 <= 0) {
          RenderUtil.drawRect(
-            (float)this.method13263(),
-            (float)this.method13265(),
-            (float)(this.method13263() + this.method13267()),
-            (float)(this.method13265() + this.method13269()),
+            (float)this.getXA(),
+            (float)this.getYA(),
+            (float)(this.getXA() + this.getWidthA()),
+            (float)(this.getYA() + this.getHeightA()),
             var5
          );
       } else {
          RenderUtil.method11474(
-            (float)this.method13263(), (float)this.method13265(), (float)this.method13267(), (float)this.method13269(), (float)this.field20586, var5
+            (float)this.getXA(), (float)this.getYA(), (float)this.getWidthA(), (float)this.getHeightA(), (float)this.field20586, var5
          );
       }
 
-      int var10 = this.method13263()
+      int var10 = this.getXA()
          + (
-            this.field20914.method19411() != Class2218.field14492
+            this.textColor.method19411() != Class2218.field14492
                ? 0
-               : (this.field20914.method19411() != Class2218.field14490 ? this.method13267() / 2 : this.method13267())
+               : (this.textColor.method19411() != Class2218.field14490 ? this.getWidthA() / 2 : this.getWidthA())
          );
-      int var11 = this.method13265()
+      int var11 = this.getYA()
          + (
-            this.field20914.method19413() != Class2218.field14492
+            this.textColor.method19413() != Class2218.field14492
                ? 0
-               : (this.field20914.method19413() != Class2218.field14491 ? this.method13269() / 2 : this.method13269())
+               : (this.textColor.method19413() != Class2218.field14491 ? this.getHeightA() / 2 : this.getHeightA())
          );
       if (this.method13303() != null) {
          RenderUtil.method11440(
@@ -76,9 +76,9 @@ public class Class4240 extends Class4247 {
             (float)(this.field20585 + var10),
             (float)var11,
             this.method13303(),
-            ColorUtils.applyAlpha(this.field20914.method19409(), var1),
-            this.field20914.method19411(),
-            this.field20914.method19413()
+            ColorUtils.applyAlpha(this.textColor.getTextColor(), var1),
+            this.textColor.method19411(),
+            this.textColor.method19413()
          );
       }
 

@@ -110,7 +110,7 @@ public class TabGUI extends Module {
                      Class7555 var8 = (Class7555)var6;
                      ModuleCategory var9 = this.field23383.get(var7.field32402);
                      Module var10 = Client.getInstance().getModuleManager().getModulesByCategory(var9).get(var8.field32402);
-                     var10.method15999(!var10.isEnabled());
+                     var10.setEnabled(!var10.isEnabled());
                   }
             }
          }

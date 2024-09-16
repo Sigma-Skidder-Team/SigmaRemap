@@ -2,10 +2,11 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.feature.structure.StructureStart;
 
 import java.util.Random;
 
-public class Class5451 extends Class5444<Class4712> {
+public class Class5451 extends StructureStart<Class4712> {
    private static String[] field24209;
    private boolean field24210;
 

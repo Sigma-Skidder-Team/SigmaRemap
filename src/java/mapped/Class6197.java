@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Sets;
 import java.util.Set;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockRayTraceResult;

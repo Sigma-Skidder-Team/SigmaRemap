@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.util.concurrent.RateLimiter;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.realmsclient.client.RealmsClient;
+import com.mojang.realmsclient.exception.RealmsServiceException;
 import com.mojang.realmsclient.gui.screens.RealmsResetWorldScreen;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.widget.button.Button;
@@ -223,7 +225,7 @@ public class Class822 extends RealmsScreen {
       new Thread(
             () -> {
                File var3 = null;
-               Class4624 var4 = Class4624.method14543();
+               RealmsClient var4 = RealmsClient.method14543();
                long var5 = this.field4485;
 
                try {
@@ -312,7 +314,7 @@ public class Class822 extends RealmsScreen {
                   }
                } catch (IOException var25) {
                   this.method2368(new TranslationTextComponent("mco.upload.failed", var25.getMessage()));
-               } catch (Class2435 var26) {
+               } catch (RealmsServiceException var26) {
                   this.method2368(new TranslationTextComponent("mco.upload.failed", var26.toString()));
                } catch (InterruptedException var27) {
                   field4479.error("Could not acquire upload lock");

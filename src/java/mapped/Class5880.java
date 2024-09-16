@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.block.Block;
+
 import java.util.Set;
 
 public class Class5880 extends Class5876<Class5880> {

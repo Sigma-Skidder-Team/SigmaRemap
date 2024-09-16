@@ -43,10 +43,10 @@ public class Class2960 extends Structure<Class4712> {
 
       int var9 = (var0 << 4) + 7;
       int var10 = (var1 << 4) + 7;
-      int var11 = var2.method17829(var9, var10, Class101.field295);
-      int var12 = var2.method17829(var9, var10 + var8, Class101.field295);
-      int var13 = var2.method17829(var9 + var7, var10, Class101.field295);
-      int var14 = var2.method17829(var9 + var7, var10 + var8, Class101.field295);
+      int var11 = var2.method17829(var9, var10, Heightmap.Type.field295);
+      int var12 = var2.method17829(var9, var10 + var8, Heightmap.Type.field295);
+      int var13 = var2.method17829(var9 + var7, var10, Heightmap.Type.field295);
+      int var14 = var2.method17829(var9 + var7, var10 + var8, Heightmap.Type.field295);
       return Math.min(Math.min(var11, var12), Math.min(var13, var14));
    }
 

@@ -1,9 +1,10 @@
-package mapped;
+package net.minecraft.world.biome;
 
+import mapped.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class1684 implements Class1683 {
+public class BiomeContainer implements Class1683 {
    private static final Logger field9151 = LogManager.getLogger();
    private static final int field9152 = (int)Math.round(Math.log(16.0) / Math.log(2.0)) - 2;
    private static final int field9153 = (int)Math.round(Math.log(256.0) / Math.log(2.0)) - 2;
@@ -13,16 +14,16 @@ public class Class1684 implements Class1683 {
    private final Class2347<Biome> field9157;
    private final Biome[] field9158;
 
-   public Class1684(Class2347<Biome> var1, Biome[] var2) {
+   public BiomeContainer(Class2347<Biome> var1, Biome[] var2) {
       this.field9157 = var1;
       this.field9158 = var2;
    }
 
-   private Class1684(Class2347<Biome> var1) {
+   private BiomeContainer(Class2347<Biome> var1) {
       this(var1, new Biome[field9154]);
    }
 
-   public Class1684(Class2347<Biome> var1, int[] var2) {
+   public BiomeContainer(Class2347<Biome> var1, int[] var2) {
       this(var1);
 
       for (int var5 = 0; var5 < this.field9158.length; var5++) {
@@ -37,7 +38,7 @@ public class Class1684 implements Class1683 {
       }
    }
 
-   public Class1684(Class2347<Biome> var1, ChunkPos var2, Class1685 var3) {
+   public BiomeContainer(Class2347<Biome> var1, ChunkPos var2, Class1685 var3) {
       this(var1);
       int var6 = var2.getX() >> 2;
       int var7 = var2.getZ() >> 2;
@@ -50,7 +51,7 @@ public class Class1684 implements Class1683 {
       }
    }
 
-   public Class1684(Class2347<Biome> var1, ChunkPos var2, Class1685 var3, int[] var4) {
+   public BiomeContainer(Class2347<Biome> var1, ChunkPos var2, Class1685 var3, int[] var4) {
       this(var1);
       int var7 = var2.getX() >> 2;
       int var8 = var2.getZ() >> 2;

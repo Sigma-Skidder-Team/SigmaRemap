@@ -15,6 +15,7 @@ import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import mapped.*;
+import net.minecraft.block.Block;
 import net.minecraft.item.Items;
 import net.minecraft.network.play.server.SEntityEquipmentPacket;
 import net.minecraft.util.HandSide;

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.UnmodifiableIterator;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.tileentity.TileEntity;

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.Block;
+
 public enum Class2242 {
    field14670 {
       @Override

@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.realmsclient.client.RealmsClient;
 import net.minecraft.client.Minecraft;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public class Class603 implements Runnable {
 
    private void method1896() {
       try {
-         Class4624 var3 = Class4624.method14543();
+         RealmsClient var3 = RealmsClient.method14543();
          List var4 = var3.method14547().field27398;
          if (var4 != null) {
             var4.sort(new Class3575(Minecraft.getInstance().getSession().getUsername()));

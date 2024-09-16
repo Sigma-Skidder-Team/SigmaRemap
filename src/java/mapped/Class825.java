@@ -1,7 +1,9 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.realmsclient.client.RealmsClient;
 import com.mojang.realmsclient.dto.RealmsServer;
+import com.mojang.realmsclient.exception.RealmsServiceException;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
@@ -88,14 +90,14 @@ public class Class825 extends RealmsScreen {
    }
 
    private void method2442(long var1) {
-      Class4624 var5 = Class4624.method14543();
+      RealmsClient var5 = RealmsClient.method14543();
 
       try {
          Class6121 var6 = var5.method14571(var1);
          this.field4555 = this.method2444(var6.field27407);
          this.field4556 = method2443(var6.field27406);
          this.field4557 = var6.field27408;
-      } catch (Class2435 var7) {
+      } catch (RealmsServiceException var7) {
          field4541.error("Couldn't get subscription");
          this.mc.displayGuiScreen(new Class821(var7, this.field4552));
       }

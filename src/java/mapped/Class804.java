@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.datafixers.util.Either;
+import com.mojang.realmsclient.client.RealmsClient;
+import com.mojang.realmsclient.exception.RealmsServiceException;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.FontRenderer;
@@ -196,10 +198,10 @@ public class Class804 extends RealmsScreen {
       new Realm(this, "realms-template-fetcher", var1).start();
    }
 
-   private Either<Class6108, String> method1970(Class6108 var1, Class4624 var2) {
+   private Either<Class6108, String> method1970(Class6108 var1, RealmsClient var2) {
       try {
          return Either.left(var2.method14563(var1.field27366 + 1, var1.field27367, this.field4209));
-      } catch (Class2435 var6) {
+      } catch (RealmsServiceException var6) {
          return Either.right(var6.getMessage());
       }
    }
@@ -279,7 +281,7 @@ public class Class804 extends RealmsScreen {
    }
 
    // $VF: synthetic method
-   public static Either method1978(Class804 var0, Class6108 var1, Class4624 var2) {
+   public static Either method1978(Class804 var0, Class6108 var1, RealmsClient var2) {
       return var0.method1970(var1, var2);
    }
 

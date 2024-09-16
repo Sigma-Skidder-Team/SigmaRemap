@@ -20,6 +20,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -254,7 +255,7 @@ public class Class7819 {
          }
       }
 
-      int var10 = this.field33538.method7006(Class101.field299, Class2909.field17994).getY();
+      int var10 = this.field33538.method7006(Heightmap.Type.field299, Class2909.field17994).getY();
 
       for (int var11 = var10; var11 >= 0; var11--) {
          Class9086 var12 = this.field33540
@@ -323,7 +324,7 @@ public class Class7819 {
          this.method26122(true);
          this.method26120();
          if (!this.field33546) {
-            this.field33538.setBlockState(this.field33538.method7006(Class101.field299, Class2909.field17994), Blocks.field36652.method11579());
+            this.field33538.setBlockState(this.field33538.method7006(Heightmap.Type.field299, Class2909.field17994), Blocks.field36652.method11579());
          }
 
          this.field33546 = true;
@@ -348,7 +349,7 @@ public class Class7819 {
    private void method26122(boolean var1) {
       Class2909 var4 = new Class2909(var1);
       if (this.field33549 == null) {
-         this.field33549 = this.field33538.method7006(Class101.field300, Class2909.field17994).down();
+         this.field33549 = this.field33538.method7006(Heightmap.Type.field300, Class2909.field17994).down();
 
          while (this.field33538.getBlockState(this.field33549).isIn(Blocks.BEDROCK) && this.field33549.getY() > this.field33538.method6776()) {
             this.field33549 = this.field33549.down();

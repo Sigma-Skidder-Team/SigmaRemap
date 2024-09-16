@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
@@ -203,7 +204,7 @@ public abstract class Class4178 {
          }
 
          if (field20450.contains(var2.getBlock())) {
-            var1.method7011(var9).method7082(var9);
+            var1.method7011(var9).markBlockForPostprocessing(var9);
          }
       }
    }
@@ -221,7 +222,7 @@ public abstract class Class4178 {
       int var9 = this.method12921(var3 + 1);
       int var10 = this.method12922(var2, var4);
       BlockPos var11 = new BlockPos(var8, var9, var10);
-      return var5.method38396(var11) ? var9 < var1.method6736(Class101.field297, var8, var10) : false;
+      return var5.method38396(var11) ? var9 < var1.method6736(Heightmap.Type.field297, var8, var10) : false;
    }
 
    public void method12926(ISeedReader var1, Class9764 var2, int var3, int var4, int var5, int var6, int var7, int var8) {

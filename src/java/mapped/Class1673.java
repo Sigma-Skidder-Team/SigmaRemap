@@ -1,12 +1,17 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.longs.LongSet;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.biome.BiomeContainer;
+import net.minecraft.world.chunk.ChunkSection;
+import net.minecraft.world.gen.feature.structure.StructureStart;
 
 import javax.annotation.Nullable;
 import java.util.BitSet;
@@ -17,7 +22,7 @@ public class Class1673 extends Class1672 {
    private final Chunk field9109;
 
    public Class1673(Chunk var1) {
-      super(var1.method7072(), Class8922.field40388);
+      super(var1.getPos(), Class8922.field40388);
       this.field9109 = var1;
    }
 
@@ -50,11 +55,11 @@ public class Class1673 extends Class1672 {
    }
 
    @Override
-   public void method7062(BlockPos var1, TileEntity var2) {
+   public void addTileEntity(BlockPos var1, TileEntity var2) {
    }
 
    @Override
-   public void method7063(Entity var1) {
+   public void addEntity(Entity var1) {
    }
 
    @Override
@@ -62,8 +67,8 @@ public class Class1673 extends Class1672 {
    }
 
    @Override
-   public Class7038[] method7067() {
-      return this.field9109.method7067();
+   public ChunkSection[] getSections() {
+      return this.field9109.getSections();
    }
 
    @Nullable
@@ -73,48 +78,48 @@ public class Class1673 extends Class1672 {
    }
 
    @Override
-   public void method7069(Class101 var1, long[] var2) {
+   public void setHeightmap(Heightmap.Type var1, long[] var2) {
    }
 
-   private Class101 method7126(Class101 var1) {
-      if (var1 != Class101.field295) {
-         return var1 != Class101.field297 ? var1 : Class101.field298;
+   private Heightmap.Type method7126(Heightmap.Type var1) {
+      if (var1 != Heightmap.Type.field295) {
+         return var1 != Heightmap.Type.field297 ? var1 : Heightmap.Type.field298;
       } else {
-         return Class101.field296;
+         return Heightmap.Type.field296;
       }
    }
 
    @Override
-   public int method7071(Class101 var1, int var2, int var3) {
-      return this.field9109.method7071(this.method7126(var1), var2, var3);
+   public int getTopBlockY(Heightmap.Type var1, int var2, int var3) {
+      return this.field9109.getTopBlockY(this.method7126(var1), var2, var3);
    }
 
    @Override
-   public ChunkPos method7072() {
-      return this.field9109.method7072();
+   public ChunkPos getPos() {
+      return this.field9109.getPos();
    }
 
    @Override
-   public void method7073(long var1) {
+   public void setLastSaveTime(long var1) {
    }
 
    @Nullable
    @Override
-   public Class5444<?> method7097(Structure<?> var1) {
+   public StructureStart<?> method7097(Structure<?> var1) {
       return this.field9109.method7097(var1);
    }
 
    @Override
-   public void method7098(Structure<?> var1, Class5444<?> var2) {
+   public void method7098(Structure<?> var1, StructureStart<?> var2) {
    }
 
    @Override
-   public Map<Structure<?>, Class5444<?>> method7074() {
-      return this.field9109.method7074();
+   public Map<Structure<?>, StructureStart<?>> getStructureStarts() {
+      return this.field9109.getStructureStarts();
    }
 
    @Override
-   public void method7075(Map<Structure<?>, Class5444<?>> var1) {
+   public void setStructureStarts(Map<Structure<?>, StructureStart<?>> var1) {
    }
 
    @Override
@@ -136,65 +141,65 @@ public class Class1673 extends Class1672 {
    }
 
    @Override
-   public Class1684 method7077() {
-      return this.field9109.method7077();
+   public BiomeContainer getBiomes() {
+      return this.field9109.getBiomes();
    }
 
    @Override
-   public void method7078(boolean var1) {
+   public void setModified(boolean var1) {
    }
 
    @Override
-   public boolean method7079() {
+   public boolean isModified() {
       return false;
    }
 
    @Override
-   public ChunkStatus method7080() {
-      return this.field9109.method7080();
+   public ChunkStatus getStatus() {
+      return this.field9109.getStatus();
    }
 
    @Override
-   public void method7081(BlockPos var1) {
+   public void removeTileEntity(BlockPos var1) {
    }
 
    @Override
-   public void method7082(BlockPos var1) {
+   public void markBlockForPostprocessing(BlockPos var1) {
    }
 
    @Override
-   public void method7085(CompoundNBT var1) {
-   }
-
-   @Nullable
-   @Override
-   public CompoundNBT method7086(BlockPos var1) {
-      return this.field9109.method7086(var1);
+   public void addTileEntity(CompoundNBT var1) {
    }
 
    @Nullable
    @Override
-   public CompoundNBT method7087(BlockPos var1) {
-      return this.field9109.method7087(var1);
+   public CompoundNBT getDeferredTileEntity(BlockPos var1) {
+      return this.field9109.getDeferredTileEntity(var1);
+   }
+
+   @Nullable
+   @Override
+   public CompoundNBT getTileEntityNBT(BlockPos var1) {
+      return this.field9109.getTileEntityNBT(var1);
    }
 
    @Override
-   public void method7110(Class1684 var1) {
+   public void method7110(BiomeContainer var1) {
    }
 
    @Override
-   public Stream<BlockPos> method7088() {
-      return this.field9109.method7088();
+   public Stream<BlockPos> getLightSources() {
+      return this.field9109.getLightSources();
    }
 
    @Override
-   public Class6806<Block> method7089() {
-      return new Class6806<Block>(var0 -> var0.method11579().isAir(), this.method7072());
+   public Class6806<Block> getBlocksToBeTicked() {
+      return new Class6806<Block>(var0 -> var0.method11579().isAir(), this.getPos());
    }
 
    @Override
-   public Class6806<Fluid> method7090() {
-      return new Class6806<Fluid>(var0 -> var0 == Class9479.field44064, this.method7072());
+   public Class6806<Fluid> getFluidsToBeTicked() {
+      return new Class6806<Fluid>(var0 -> var0 == Class9479.field44064, this.getPos());
    }
 
    @Override

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.realmsclient.client.RealmsClient;
 import com.mojang.realmsclient.dto.RealmsServer;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
@@ -63,7 +64,7 @@ public class Class805 extends RealmsScreen {
    }
 
    private void method2007() {
-      Class4624 var3 = Class4624.method14543();
+      RealmsClient var3 = RealmsClient.method14543();
       if (this.field4219.getText() != null && !this.field4219.getText().isEmpty()) {
          try {
             RealmsServer var4 = var3.method14557(this.field4220.field27443, this.field4219.getText().trim());

@@ -7,11 +7,13 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap.Entry;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.Packet;
@@ -212,7 +214,7 @@ public class ClientWorld extends World {
 
                var1.addedToChunk = false;
             } else {
-               this.getChunk(var4, var6).method7063(var1);
+               this.getChunk(var4, var6).addEntity(var1);
             }
          }
 
@@ -229,7 +231,7 @@ public class ClientWorld extends World {
       }
 
       var4.addAll(var1.method7145().values());
-      this.field9036.getLightManager().method605(var1.method7072(), false);
+      this.field9036.getLightManager().method605(var1.getPos(), false);
    }
 
    public void method6841(int var1, int var2) {
@@ -264,7 +266,7 @@ public class ClientWorld extends World {
          this.field9025.put(var1, var2);
          this.getChunkProvider()
             .method7346(MathHelper.floor(var2.getPosX() / 16.0), MathHelper.floor(var2.getPosZ() / 16.0), ChunkStatus.FULL, true)
-            .method7063(var2);
+            .addEntity(var2);
          if (Class9299.field42836.method20214()) {
             Class9299.method35070(var2, Class9299.field42836);
          }
@@ -307,8 +309,8 @@ public class ClientWorld extends World {
          Entity var6 = (Entity)var5.getValue();
          int var7 = MathHelper.floor(var6.getPosX() / 16.0);
          int var8 = MathHelper.floor(var6.getPosZ() / 16.0);
-         if (var7 == var1.method7072().x && var8 == var1.method7072().z) {
-            var1.method7063(var6);
+         if (var7 == var1.getPos().x && var8 == var1.getPos().z) {
+            var1.addEntity(var6);
          }
       }
    }
@@ -857,7 +859,7 @@ public class ClientWorld extends World {
    public BlockPos method6880() {
       BlockPos var3 = new BlockPos(this.worldInfo.method20029(), this.worldInfo.method20030(), this.worldInfo.method20031());
       if (!this.getWorldBorder().contains(var3)) {
-         var3 = this.method7006(Class101.field299, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
+         var3 = this.method7006(Heightmap.Type.field299, new BlockPos(this.getWorldBorder().getCenterX(), 0.0, this.getWorldBorder().getCenterZ()));
       }
 
       return var3;

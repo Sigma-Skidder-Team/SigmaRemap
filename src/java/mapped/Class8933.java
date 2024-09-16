@@ -1,6 +1,8 @@
 package mapped;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
+import net.minecraft.fluid.Fluid;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.registry.Registry;
 

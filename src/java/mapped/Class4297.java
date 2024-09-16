@@ -15,8 +15,8 @@ public class Class4297 extends Class4278 {
    public Class4297(IconPanel var1, String var2, int var3, int var4, int var5, int var6, int var7) {
       super(var1, var2, var3, var4, 100, 100, false);
       this.field20818 = new Class8455(var5, var6);
-      this.field20897 = var5 * var7;
-      this.field20898 = var6 * var7;
+      this.widthA = var5 * var7;
+      this.heightA = var6 * var7;
       this.field20820 = var7;
       this.field20819.start();
    }
@@ -29,8 +29,8 @@ public class Class4297 extends Class4278 {
       }
 
       GL11.glPushMatrix();
-      GL11.glTranslatef((float)this.field20895, (float)this.field20896, 0.0F);
-      RenderUtil.method11424(0.0F, 0.0F, (float)this.method13267(), (float)this.method13269(), ClientColors.DEEP_TEAL.getColor);
+      GL11.glTranslatef((float)this.xA, (float)this.yA, 0.0F);
+      RenderUtil.method11424(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ClientColors.DEEP_TEAL.getColor);
       RenderUtil.method11474(
          (float)(this.field20818.method29736().field41839 * this.field20820),
          (float)(this.field20818.method29736().field41840 * this.field20820),

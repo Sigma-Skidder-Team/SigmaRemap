@@ -108,7 +108,7 @@ public class HypixelFly extends Module {
             Packet var4 = var1.getPacket();
             if (this.isEnabled()) {
                 if (var4 instanceof SPlayerPositionLookPacket) {
-                    this.access().method16000();
+                    this.access().toggle();
                 }
             }
         }

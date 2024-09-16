@@ -9,8 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Class4304 extends IconPanel implements Class4347 {
-   private static String[] field20875;
-   public boolean field20876;
+    public boolean field20876;
    public boolean field20877;
    public int field20878;
    public int field20879;
@@ -56,8 +55,8 @@ public class Class4304 extends IconPanel implements Class4347 {
       super.method13028(var1, var2);
       if (this.method13214()) {
          if (!this.field20909 && !this.field20877) {
-            this.field20880 = this.method13267() / 2;
-            this.field20881 = this.method13269() / 2;
+            this.field20880 = this.getWidthA() / 2;
+            this.field20881 = this.getHeightA() / 2;
          }
 
          this.method13213(var1, var2);
@@ -105,40 +104,40 @@ public class Class4304 extends IconPanel implements Class4347 {
             this.method13217(true);
          }
       } else if (this.method13216()) {
-         this.method13264(var1 - this.field20880 - (this.field20892 == null ? 0 : this.field20892.method13271()));
-         this.method13266(var2 - this.field20881 - (this.field20892 == null ? 0 : this.field20892.method13272()));
+         this.setXA(var1 - this.field20880 - (this.icoPanel == null ? 0 : this.icoPanel.method13271()));
+         this.setYA(var2 - this.field20881 - (this.icoPanel == null ? 0 : this.icoPanel.method13272()));
          if (this.field20882) {
-            if (this.field20892 == null) {
-               if (this.method13263() < 0) {
-                  this.method13264(0);
+            if (this.icoPanel == null) {
+               if (this.getXA() < 0) {
+                  this.setXA(0);
                }
 
-               if (this.method13263() + this.method13267() > Minecraft.getInstance().mainWindow.getWidth()) {
-                  this.method13264(Minecraft.getInstance().mainWindow.getWidth() - this.method13267());
+               if (this.getXA() + this.getWidthA() > Minecraft.getInstance().mainWindow.getWidth()) {
+                  this.setXA(Minecraft.getInstance().mainWindow.getWidth() - this.getWidthA());
                }
 
-               if (this.method13265() < 0) {
-                  this.method13266(0);
+               if (this.getYA() < 0) {
+                  this.setYA(0);
                }
 
-               if (this.method13265() + this.method13269() > Minecraft.getInstance().mainWindow.getHeight()) {
-                  this.method13266(Minecraft.getInstance().mainWindow.getHeight() - this.method13269());
+               if (this.getYA() + this.getHeightA() > Minecraft.getInstance().mainWindow.getHeight()) {
+                  this.setYA(Minecraft.getInstance().mainWindow.getHeight() - this.getHeightA());
                }
             } else {
-               if (this.method13263() < 0) {
-                  this.method13264(0);
+               if (this.getXA() < 0) {
+                  this.setXA(0);
                }
 
-               if (this.method13263() + this.method13267() > this.field20892.method13267()) {
-                  this.method13264(this.field20892.method13267() - this.method13267());
+               if (this.getXA() + this.getWidthA() > this.icoPanel.getWidthA()) {
+                  this.setXA(this.icoPanel.getWidthA() - this.getWidthA());
                }
 
-               if (this.method13265() < 0) {
-                  this.method13266(0);
+               if (this.getYA() < 0) {
+                  this.setYA(0);
                }
 
-               if (this.method13265() + this.method13269() > this.field20892.method13269() && !this.field20883) {
-                  this.method13266(this.field20892.method13269() - this.method13269());
+               if (this.getYA() + this.getHeightA() > this.icoPanel.getHeightA() && !this.field20883) {
+                  this.setYA(this.icoPanel.getHeightA() - this.getHeightA());
                }
             }
          }

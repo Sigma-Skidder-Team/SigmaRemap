@@ -81,29 +81,29 @@ public class Class4348 extends Class4278 {
 
          RenderUtil.method11415(this);
          RenderUtil.drawRect(
-            (float)this.field20895,
-            (float)this.field20896,
-            (float)(this.field20895 + this.field20897),
-            (float)(this.field20896 + this.field20898),
+            (float)this.xA,
+            (float)this.yA,
+            (float)(this.xA + this.widthA),
+            (float)(this.yA + this.heightA),
             ClientColors.LIGHT_GREYISH_BLUE.getColor
          );
          GL11.glTexParameteri(3553, 10241, 9728);
          GL11.glPushMatrix();
-         int var9 = this.field20897 / 2;
-         int var7 = this.field20898 / 2;
+         int var9 = this.widthA / 2;
+         int var7 = this.heightA / 2;
          if (this.field21248.getDirection() == Direction.BACKWARDS) {
             var4 = QuadraticEasing.easeInQuad(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
          }
 
-         GL11.glTranslatef((float)(this.method13263() + var9), (float)(this.method13265() + var7), 0.0F);
+         GL11.glTranslatef((float)(this.getXA() + var9), (float)(this.getYA() + var7), 0.0F);
          GL11.glScaled(1.0 + 0.4 * (double)var4, 1.0 + 0.4 * (double)var4, 0.0);
-         GL11.glTranslatef((float)(-this.method13263() - var9), (float)(-this.method13265() - var7), 0.0F);
+         GL11.glTranslatef((float)(-this.getXA() - var9), (float)(-this.getYA() - var7), 0.0F);
          if (this.field21246 != null) {
-            RenderUtil.method11449(
-               (float)this.field20895,
-               (float)(this.field20896 - (this.field20897 - this.field20898) / 2),
-               (float)this.field20897,
-               (float)this.field20897,
+            RenderUtil.drawImage(
+               (float)this.xA,
+               (float)(this.yA - (this.widthA - this.heightA) / 2),
+               (float)this.widthA,
+               (float)this.widthA,
                this.field21246,
                ColorUtils.applyAlpha(ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 0.7F), 0.8F)
             );
@@ -112,10 +112,10 @@ public class Class4348 extends Class4278 {
          GL11.glPopMatrix();
          RenderUtil.endScissor();
          RenderUtil.drawRect(
-            (float)this.field20895,
-            (float)this.field20896,
-            (float)(this.field20895 + this.field20897),
-            (float)(this.field20896 + this.field20898),
+            (float)this.xA,
+            (float)this.yA,
+            (float)(this.xA + this.widthA),
+            (float)(this.yA + this.heightA),
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + 0.3F * this.field21248.calcPercent())
          );
       }
@@ -140,17 +140,17 @@ public class Class4348 extends Class4278 {
          var5 = QuadraticEasing.easeInQuad(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
-      GL11.glTranslatef((float)(this.method13263() + 44), (float)(this.method13265() + 44), 0.0F);
+      GL11.glTranslatef((float)(this.getXA() + 44), (float)(this.getYA() + 44), 0.0F);
       GL11.glScaled(1.0 + 0.1 * (double)var5, 1.0 + 0.1 * (double)var5, 0.0);
-      GL11.glTranslatef((float)(-this.method13263() - 44), (float)(-this.method13265() - 44), 0.0F);
+      GL11.glTranslatef((float)(-this.getXA() - 44), (float)(-this.getYA() - 44), 0.0F);
       if (this.field21245 == null) {
          Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("textures/misc/unknown_server.png"));
          RenderUtil.method11457(
-            (float)(this.field20895 + 12), (float)(this.field20896 + 12), 64.0F, 64.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.0F, 0.0F, 64.0F, 64.0F
+            (float)(this.xA + 12), (float)(this.yA + 12), 64.0F, 64.0F, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.0F, 0.0F, 64.0F, 64.0F
          );
       } else {
          RenderUtil.method11450(
-            (float)(this.field20895 + 12), (float)(this.field20896 + 12), 64.0F, 64.0F, this.field21245, ClientColors.LIGHT_GREYISH_BLUE.getColor, true
+            (float)(this.xA + 12), (float)(this.yA + 12), 64.0F, 64.0F, this.field21245, ClientColors.LIGHT_GREYISH_BLUE.getColor, true
          );
       }
 
@@ -168,8 +168,8 @@ public class Class4348 extends Class4278 {
       RenderUtil.drawPortalBackground(
          this.method13271() + this.method13280(),
          this.method13272() + this.method13282(),
-         this.method13271() + this.method13280() + this.field20897,
-         this.method13272() + this.method13282() + this.field20898
+         this.method13271() + this.method13280() + this.widthA,
+         this.method13272() + this.method13282() + this.heightA
       );
       GL11.glPushMatrix();
       byte var9 = 76;
@@ -179,13 +179,13 @@ public class Class4348 extends Class4278 {
          var11 = QuadraticEasing.easeInQuad(this.field21248.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
-      GL11.glTranslatef((float)(this.method13263() + 76), (float)(this.method13265() + 44), 0.0F);
+      GL11.glTranslatef((float)(this.getXA() + 76), (float)(this.getYA() + 44), 0.0F);
       GL11.glScaled(1.0 - 0.1 * (double)var11, 1.0 - 0.1 * (double)var11, 0.0);
-      GL11.glTranslatef((float)(-this.method13263() - 76), (float)(-this.method13265() - 44), 0.0F);
+      GL11.glTranslatef((float)(-this.getXA() - 76), (float)(-this.getYA() - 44), 0.0F);
       RenderUtil.drawString(
          ResourceRegistry.JelloMediumFont25,
-         (float)(this.field20895 + 94),
-         (float)(this.field20896 + 16),
+         (float)(this.xA + 94),
+         (float)(this.yA + 16),
          !this.field21244.field33188.equals("Minecraft Server")
             ? this.field21244.field33188
             : this.field21244.field33189.substring(0, 1).toUpperCase() + this.field21244.field33189.substring(1, this.field21244.field33189.length()),
@@ -197,24 +197,24 @@ public class Class4348 extends Class4278 {
          if (var3 > 0L && this.field21243.method31735().getTime() != Long.MAX_VALUE) {
             RenderUtil.drawString(
                ResourceRegistry.JelloLightFont18,
-               (float)(this.field20895 + var12),
-               (float)(this.field20896 + var13),
+               (float)(this.xA + var12),
+               (float)(this.yA + var13),
                "Unban: " + var8 + " days, " + var7 + "h " + var6 + "m " + var5 + "s",
                ColorUtils.method17690(ClientColors.DEEP_TEAL.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.2F)
             );
          } else if (this.field21243.method31735().getTime() != Long.MAX_VALUE) {
             RenderUtil.drawString(
                ResourceRegistry.JelloLightFont18,
-               (float)(this.field20895 + var12),
-               (float)(this.field20896 + var13),
+               (float)(this.xA + var12),
+               (float)(this.yA + var13),
                "Unbanned!",
                ColorUtils.method17690(ClientColors.DARK_SLATE_GREY.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
             );
          } else {
             RenderUtil.drawString(
                ResourceRegistry.JelloLightFont18,
-               (float)(this.field20895 + var12),
-               (float)(this.field20896 + var13),
+               (float)(this.xA + var12),
+               (float)(this.yA + var13),
                "Permanently banned!",
                ColorUtils.method17690(ClientColors.PALE_YELLOW.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
             );
@@ -222,8 +222,8 @@ public class Class4348 extends Class4278 {
       } else {
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont18,
-            (float)(this.field20895 + var12),
-            (float)(this.field20896 + var13),
+            (float)(this.xA + var12),
+            (float)(this.yA + var13),
             "Compromised ban (unbannable)!",
             ColorUtils.method17690(ClientColors.DARK_OLIVE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
          );

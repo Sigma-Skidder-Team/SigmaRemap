@@ -67,7 +67,7 @@ public class Class4181 extends Class4180 {
       int var10 = 256;
       int var11 = 0;
       BlockPos var12 = this.field20453.method32886();
-      Class101 var13 = !this.field20457 ? Class101.field297 : Class101.field295;
+      Heightmap.Type var13 = !this.field20457 ? Heightmap.Type.field297 : Heightmap.Type.field295;
       int var14 = var12.getX() * var12.getZ();
       if (var14 != 0) {
          BlockPos var15 = this.field20455.method8336(var12.getX() - 1, 0, var12.getZ() - 1);

@@ -1,5 +1,6 @@
-package mapped;
+package net.minecraft.fluid;
 
+import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.Direction;

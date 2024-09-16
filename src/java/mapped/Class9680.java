@@ -7,6 +7,7 @@ import java.io.InputStream;
 import java.util.*;
 import javax.imageio.ImageIO;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;

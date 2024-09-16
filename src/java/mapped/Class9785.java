@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableSet;
 import com.mojang.datafixers.types.Type;
+import net.minecraft.block.Block;
 import net.minecraft.tileentity.TileEntity;
 
 import java.util.Set;

@@ -1,15 +1,17 @@
-package mapped;
+package net.minecraft.world;
 
 import it.unimi.dsi.fastutil.longs.LongSet;
+import net.minecraft.world.gen.feature.structure.StructureStart;
+import mapped.Structure;
 
 import javax.annotation.Nullable;
 import java.util.Map;
 
-public interface Class1671 {
+public interface IStructureReader {
    @Nullable
-   Class5444<?> method7097(Structure<?> var1);
+   StructureStart<?> method7097(Structure<?> var1);
 
-   void method7098(Structure<?> var1, Class5444<?> var2);
+   void method7098(Structure<?> var1, StructureStart<?> var2);
 
    LongSet method7099(Structure<?> var1);
 

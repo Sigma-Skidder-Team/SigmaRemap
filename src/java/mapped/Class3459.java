@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.base.MoreObjects;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;

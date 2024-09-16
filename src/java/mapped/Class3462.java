@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.Block;
+
 public abstract class Class3462 extends Block {
    public Class3462(AbstractBlock var1) {
       super(var1);

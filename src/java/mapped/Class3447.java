@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.Block;
 import net.minecraft.util.Direction;
 
 public class Class3447 extends Class3445 {

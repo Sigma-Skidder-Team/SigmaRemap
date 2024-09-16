@@ -22,8 +22,8 @@ public class Class8444 {
 
    public void method29695() {
       this.field36185 = BufferUtils.createByteBuffer(768);
-      int var3 = this.field36184.method7072().x * 16;
-      int var4 = this.field36184.method7072().z * 16;
+      int var3 = this.field36184.getPos().x * 16;
+      int var4 = this.field36184.getPos().z * 16;
 
       for (int var5 = 0; var5 < 16; var5++) {
          for (int var6 = 0; var6 < 16; var6++) {
@@ -31,7 +31,7 @@ public class Class8444 {
             int var8 = Client.getInstance()
                .getWaypointsManager()
                .method30006(
-                  new BlockPos(var7.getX(), this.field36184.method7070(Class101.field296).method24579(var5, var6) - 1, var7.getZ()), true
+                  new BlockPos(var7.getX(), this.field36184.getHeightmap(Heightmap.Type.field296).method24579(var5, var6) - 1, var7.getZ()), true
                );
             this.field36185.put((byte)(var8 >> 16 & 0xFF));
             this.field36185.put((byte)(var8 >> 8 & 0xFF));
@@ -50,12 +50,12 @@ public class Class8444 {
    }
 
    private boolean method29697() {
-      Chunk var3 = MiniMap.getMC().world.getChunk(this.field36184.method7072().x, this.field36184.method7072().z + 1);
-      Chunk var4 = MiniMap.getMC2().world.getChunk(this.field36184.method7072().x, this.field36184.method7072().z - 1);
+      Chunk var3 = MiniMap.getMC().world.getChunk(this.field36184.getPos().x, this.field36184.getPos().z + 1);
+      Chunk var4 = MiniMap.getMC2().world.getChunk(this.field36184.getPos().x, this.field36184.getPos().z - 1);
       return var3 != null && var3.field9115 && var4 != null && var4.field9115;
    }
 
    public boolean method29698(Chunk var1) {
-      return var1.method7072().x == this.field36184.method7072().x && var1.method7072().z == this.field36184.method7072().z;
+      return var1.getPos().x == this.field36184.getPos().x && var1.getPos().z == this.field36184.getPos().z;
    }
 }

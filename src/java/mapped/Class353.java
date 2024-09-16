@@ -1,5 +1,8 @@
 package mapped;
 
+import com.mojang.realmsclient.client.RealmsClient;
+import com.mojang.realmsclient.exception.RealmsServiceException;
+
 public class Class353 extends Thread {
    private static String[] field1575;
    public final Class816 field1576;
@@ -11,14 +14,14 @@ public class Class353 extends Thread {
 
    @Override
    public void run() {
-      Class4624 var3 = Class4624.method14543();
+      RealmsClient var3 = RealmsClient.method14543();
 
       try {
          Class1992 var4 = var3.method14554();
          if (var4 != Class1992.field12994) {
             return;
          }
-      } catch (Class2435 var5) {
+      } catch (RealmsServiceException var5) {
          if (var5.field16472 != 401) {
             Class816.method2323(false);
          }

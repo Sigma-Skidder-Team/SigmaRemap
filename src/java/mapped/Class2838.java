@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import net.minecraft.block.Block;
 import net.minecraft.item.Items;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;

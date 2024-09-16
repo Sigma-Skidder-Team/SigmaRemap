@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.realmsclient.client.RealmsClient;
+import com.mojang.realmsclient.exception.RealmsServiceException;
 import com.mojang.realmsclient.gui.screens.RealmsResetWorldScreen;
 
 public class Class356 extends Thread {
@@ -12,7 +14,7 @@ public class Class356 extends Thread {
 
    @Override
    public void run() {
-      Class4624 var3 = Class4624.method14543();
+      RealmsClient var3 = RealmsClient.method14543();
 
       try {
          Class6108 var4 = var3.method14563(1, 10, Class2049.field13369);
@@ -25,7 +27,7 @@ public class Class356 extends Thread {
             RealmsResetWorldScreen.method2268(this.field1584, var6);
             RealmsResetWorldScreen.method2269(this.field1584, var7);
          });
-      } catch (Class2435 var8) {
+      } catch (RealmsServiceException var8) {
          RealmsResetWorldScreen.method2265().error("Couldn't fetch templates in reset world", var8);
       }
    }

@@ -15,7 +15,7 @@ public class Class4330 extends IconPanel {
 
    public Class4330(IconPanel var1, String var2, JSONObject var3) {
       super(var1, var2);
-      this.setWidth(this.method13258().method13267());
+      this.setWidthA(this.getIcoPanel().getWidthA());
       int var6 = 0;
       if (var3.has("deprecated")) {
          GL11.glTexEnvi(8960, 8704, 260);
@@ -23,13 +23,13 @@ public class Class4330 extends IconPanel {
 
       String var7 = var3.getString("title");
       JSONArray var8 = var3.getJSONArray("changes");
-      this.addToList(new StringPanel(this, "title", 0, var6, 0, 0, ColorHelper.field27961, var7, ResourceRegistry.JelloMediumFont40));
+      this.addToList(new UITextDisplay(this, "title", 0, var6, 0, 0, ColorHelper.field27961, var7, ResourceRegistry.JelloMediumFont40));
       var6 += 55;
 
       for (int var9 = 0; var9 < var8.length(); var9++) {
          String var10 = " - " + var8.getString(var9);
          this.addToList(
-            new StringPanel(
+            new UITextDisplay(
                this,
                "change" + var9,
                0,
@@ -45,7 +45,7 @@ public class Class4330 extends IconPanel {
       }
 
       var6 += 75;
-      this.setHeight(var6);
+      this.setHeightA(var6);
    }
 
    @Override

@@ -73,7 +73,7 @@ public class Class2978 extends Structure<Class4726> {
          new BlockPos(var6.field45681, 0, var6.field45683)
       );
       List<IBlockReader> var11 = var20.stream().map(var1x -> var1.method17798(var1x.getX(), var1x.getZ())).collect(Collectors.toList());
-      Class101 var12 = var2 != Class2219.field14496 ? Class101.field295 : Class101.field297;
+      Heightmap.Type var12 = var2 != Class2219.field14496 ? Heightmap.Type.field295 : Heightmap.Type.field297;
       BlockPos.Mutable var13 = new BlockPos.Mutable();
 
       int var14;

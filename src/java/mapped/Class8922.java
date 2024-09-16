@@ -6,11 +6,13 @@ import java.util.IdentityHashMap;
 import java.util.Map;
 import java.util.Set;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.chunk.ChunkSection;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -70,7 +72,7 @@ public class Class8922 {
          boolean var10 = var5.contains(Direction.SOUTH);
          boolean var11 = var5.contains(Direction.NORTH);
          boolean var12 = var5.size() == 1;
-         ChunkPos var13 = var0.method7072();
+         ChunkPos var13 = var0.getPos();
          int var14 = var13.getX() + (!var12 || !var11 && !var10 ? (!var9 ? 15 : 0) : 1);
          int var15 = var13.getX() + (!var12 || !var11 && !var10 ? (!var9 ? 15 : 0) : 14);
          int var16 = var13.getZ() + (!var12 || !var8 && !var9 ? (!var11 ? 15 : 0) : 1);
@@ -99,11 +101,11 @@ public class Class8922 {
    private void method32606(Chunk var1) {
       BlockPos.Mutable var4 = new BlockPos.Mutable();
       BlockPos.Mutable var5 = new BlockPos.Mutable();
-      ChunkPos var6 = var1.method7072();
+      ChunkPos var6 = var1.getPos();
       World var7 = var1.method7144();
 
       for (int var8 = 0; var8 < 16; var8++) {
-         Class7038 var9 = var1.method7067()[var8];
+         ChunkSection var9 = var1.getSections()[var8];
          int[] var10 = this.field40391[var8];
          this.field40391[var8] = null;
          if (var9 != null && var10 != null && var10.length > 0) {

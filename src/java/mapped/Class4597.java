@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.fluid.Fluid;
+
 public class Class4597 extends Class4594 {
    private static String[] field22091;
 

@@ -8,22 +8,21 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 
 public class AccountSignUpScreen extends Class4247 {
-   private StringPanel field20712;
-   private Class4281 field20713;
-   private Class4281 field20714;
-   private Class4281 field20715;
-   private Class4281 field20716;
+   private UITextDisplay stringPanel;
+   private UIInput usernameInputBox;
+   private UIInput emailInputBox;
+   private UIInput passwordInputBox;
+   private UIInput captchaBox;
    private UIButton registerButton;
    private UIButton loginButton;
-   private UIButton field20719;
-   private Class4285 field20720;
-   public static int field20721 = 390;
-   public static int field20722 = 590;
+   private UILoadingCircle loadingBox;
+   public static int widthy = 390;
+   public static int height = 590;
 
    public AccountSignUpScreen(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.addToList(
-         this.field20712 = new StringPanel(
+         this.stringPanel = new UITextDisplay(
             this,
             "Register",
             228,
@@ -45,26 +44,26 @@ public class AccountSignUpScreen extends Class4247 {
             this, "LoginButton", 98, 333, ResourceRegistry.JelloLightFont14.method23942("Login"), 14, ColorHelper.field27961, "Login", ResourceRegistry.JelloLightFont14
          )
       );
-      this.addToList(this.field20720 = new Class4285(this, "loading", 530, 314, 30, 30));
-      this.field20720.method13296(false);
-      this.field20720.method13294(true);
+      this.addToList(this.loadingBox = new UILoadingCircle(this, "loading", 530, 314, 30, 30));
+      this.loadingBox.method13296(false);
+      this.loadingBox.method13294(true);
       byte var9 = 50;
       short var10 = 320;
       byte var11 = 106;
       ColorHelper var12 = new ColorHelper(-892679478, -892679478, -892679478, ClientColors.MID_GREY.getColor, Class2218.field14488, Class2218.field14492);
-      this.addToList(this.field20713 = new Class4281(this, "Username", 228, var11, var10, var9, var12, "", "Username"));
-      this.field20713.method13306(ResourceRegistry.JelloLightFont20);
-      this.addToList(this.field20714 = new Class4281(this, "Email", 228, var11 + 53, var10, var9, var12, "", "Email"));
-      this.field20714.method13306(ResourceRegistry.JelloLightFont20);
-      this.addToList(this.field20715 = new Class4281(this, "Password", 228, var11 + 106, var10, var9, var12, "", "Password"));
-      this.field20715.method13306(ResourceRegistry.JelloLightFont20);
-      this.field20715.method13155(true);
-      this.addToList(this.field20716 = new Class4281(this, "CaptchaBox", 228, var11 + 53 + 135, 80, var9, var12, "", "Captcha"));
-      this.field20716.method13306(ResourceRegistry.JelloLightFont20);
-      this.field20716.method13288(false);
+      this.addToList(this.usernameInputBox = new UIInput(this, "Username", 228, var11, var10, var9, var12, "", "Username"));
+      this.usernameInputBox.method13306(ResourceRegistry.JelloLightFont20);
+      this.addToList(this.emailInputBox = new UIInput(this, "Email", 228, var11 + 53, var10, var9, var12, "", "Email"));
+      this.emailInputBox.method13306(ResourceRegistry.JelloLightFont20);
+      this.addToList(this.passwordInputBox = new UIInput(this, "Password", 228, var11 + 106, var10, var9, var12, "", "Password"));
+      this.passwordInputBox.method13306(ResourceRegistry.JelloLightFont20);
+      this.passwordInputBox.method13155(true);
+      this.addToList(this.captchaBox = new UIInput(this, "CaptchaBox", 228, var11 + 53 + 135, 80, var9, var12, "", "Captcha"));
+      this.captchaBox.method13306(ResourceRegistry.JelloLightFont20);
+      this.captchaBox.method13288(false);
       this.registerButton.doThis((var1x, var2x) -> this.method13126());
       this.loginButton.doThis((var1x, var2x) -> {
-         Class4322 var5x = (Class4322)this.method13258();
+         LoginAndOutScreen var5x = (LoginAndOutScreen)this.getIcoPanel();
          var5x.method13423();
       });
    }
@@ -74,21 +73,21 @@ public class AccountSignUpScreen extends Class4247 {
       super.method13224();
       super.method13225();
       byte var4 = 28;
-      RenderUtil.method11454((float)(this.field20895 + var4), (float)(this.field20896 + var4 + 10), 160.0F, 160.0F, ResourcesDecrypter.sigmaPNG, var1);
+      RenderUtil.method11454((float)(this.xA + var4), (float)(this.yA + var4 + 10), 160.0F, 160.0F, ResourcesDecrypter.sigmaPNG, var1);
       short var5 = 305;
       short var6 = 316;
       Class9507 var7 = Client.getInstance().getNetworkManager().method30452();
       if (var7 != null) {
-         this.field20716.method13288(var7.method36702());
+         this.captchaBox.method13288(var7.method36702());
          if (var7.method36702()) {
             RenderUtil.method11424(
-               (float)(this.field20895 + var6), (float)(this.field20896 + var5), 114.0F, 40.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
+               (float)(this.xA + var6), (float)(this.yA + var5), 114.0F, 40.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
             );
          }
 
          if (var7.method36701() != null) {
-            RenderUtil.startScissor((float)(this.field20895 + var6), (float)(this.field20896 + var5), 190.0F, 50.0F);
-            RenderUtil.method11455((float)(this.field20895 + var6), (float)(this.field20896 + var5), 190.0F, 190.0F, var7.method36701());
+            RenderUtil.startScissor((float)(this.xA + var6), (float)(this.yA + var5), 190.0F, 50.0F);
+            RenderUtil.method11455((float)(this.xA + var6), (float)(this.yA + var5), 190.0F, 190.0F, var7.method36701());
             RenderUtil.endScissor();
          }
       }
@@ -99,21 +98,21 @@ public class AccountSignUpScreen extends Class4247 {
    public void method13126() {
       new Thread(
             () -> {
-               this.field20720.method13296(true);
+               this.loadingBox.method13296(true);
                this.registerButton.method13288(false);
                Class9507 var3 = Client.getInstance().getNetworkManager().method30452();
                if (var3 != null) {
-                  var3.method36706(this.field20716.method13303());
+                  var3.method36706(this.captchaBox.method13303());
                }
 
                String var4 = Client.getInstance()
                   .getNetworkManager()
-                  .method30448(this.field20713.method13303(), this.field20715.method13303(), this.field20714.method13303(), var3);
-               Class4322 var5 = (Class4322)this.method13258();
+                  .method30448(this.usernameInputBox.method13303(), this.passwordInputBox.method13303(), this.emailInputBox.method13303(), var3);
+               LoginAndOutScreen var5 = (LoginAndOutScreen)this.getIcoPanel();
                var5.method13424("Success", "You can now login.");
                var5.method13423();
 
-               this.field20720.method13296(false);
+               this.loadingBox.method13296(false);
                this.registerButton.method13288(true);
             }
          )

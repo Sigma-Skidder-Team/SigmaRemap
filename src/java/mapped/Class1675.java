@@ -8,6 +8,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeContainer;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -17,11 +18,11 @@ import java.util.function.Predicate;
 public class Class1675 extends Chunk {
    private static String[] field9134;
    private static final Biome[] field9135 = Util.<Biome[]>make(
-      new Biome[Class1684.field9154], var0 -> Arrays.fill(var0, Class8900.field40281)
+      new Biome[BiomeContainer.field9154], var0 -> Arrays.fill(var0, Class8900.field40281)
    );
 
    public Class1675(World var1, ChunkPos var2) {
-      super(var1, var2, new Class1684(var1.method6867().<Biome>getRegistry(Registry.BIOME_KEY), field9135));
+      super(var1, var2, new BiomeContainer(var1.method6867().<Biome>getRegistry(Registry.BIOME_KEY), field9135));
    }
 
    @Override
@@ -52,7 +53,7 @@ public class Class1675 extends Chunk {
    }
 
    @Override
-   public void method7063(Entity var1) {
+   public void addEntity(Entity var1) {
    }
 
    @Override
@@ -74,11 +75,11 @@ public class Class1675 extends Chunk {
    }
 
    @Override
-   public void method7062(BlockPos var1, TileEntity var2) {
+   public void addTileEntity(BlockPos var1, TileEntity var2) {
    }
 
    @Override
-   public void method7081(BlockPos var1) {
+   public void removeTileEntity(BlockPos var1) {
    }
 
    @Override
@@ -99,7 +100,7 @@ public class Class1675 extends Chunk {
    }
 
    @Override
-   public boolean method7076(int var1, int var2) {
+   public boolean isEmptyBetween(int var1, int var2) {
       return true;
    }
 

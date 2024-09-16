@@ -14,9 +14,9 @@ public class Class4302 extends Class4278 {
    @Override
    public void draw(float var1) {
       if (this.method13287()) {
-         RenderUtil.method11449(
-            (float)(this.field20895 + 30),
-            (float)(this.field20896 + 30),
+         RenderUtil.drawImage(
+            (float)(this.xA + 30),
+            (float)(this.yA + 30),
             187.0F,
             36.0F,
             ResourcesDecrypter.gemPNG,

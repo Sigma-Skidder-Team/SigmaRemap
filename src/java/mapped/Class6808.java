@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.Block;
 import net.minecraft.util.math.BlockPos;
 
 public class Class6808 {

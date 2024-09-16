@@ -8,6 +8,8 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.chunk.ChunkSection;
+import net.minecraft.world.chunk.IChunk;
 
 import java.util.List;
 import java.util.Random;
@@ -261,7 +263,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    }
 
    @Override
-   public int method17797(int var1, int var2, Class101 var3) {
+   public int method17797(int var1, int var2, Heightmap.Type var3) {
       return this.method17799(var1, var2, (BlockState[])null, var3.method287());
    }
 
@@ -328,12 +330,12 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
 
    @Override
    public void method17801(Class1691 var1, IChunk var2) {
-      ChunkPos var5 = var2.method7072();
+      ChunkPos var5 = var2.getPos();
       int var6 = var5.x;
       int var7 = var5.z;
       Class2420 var8 = new Class2420();
       var8.method10370(var6, var7);
-      ChunkPos var9 = var2.method7072();
+      ChunkPos var9 = var2.getPos();
       int var10 = var9.getX();
       int var11 = var9.getZ();
       double var12 = 0.0625;
@@ -343,7 +345,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
          for (int var16 = 0; var16 < 16; var16++) {
             int var17 = var10 + var15;
             int var18 = var11 + var16;
-            int var19 = var2.method7071(Class101.field295, var15, var16) + 1;
+            int var19 = var2.getTopBlockY(Heightmap.Type.field295, var15, var16) + 1;
             double var20 = this.field24976.method25314((double)var17 * 0.0625, (double)var18 * 0.0625, 0.0625, (double)var15 * 0.0625) * 15.0;
             var1.getBiome(var14.method8372(var10 + var15, var19, var11 + var16))
                .method32514(var8, var2, var17, var18, var19, var20, this.field24979, this.field24980, this.method17807(), var1.method6967());
@@ -355,8 +357,8 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
 
    private void method17802(IChunk var1, Random var2) {
       BlockPos.Mutable var5 = new BlockPos.Mutable();
-      int var6 = var1.method7072().getX();
-      int var7 = var1.method7072().getZ();
+      int var6 = var1.getPos().getX();
+      int var7 = var1.getPos().getZ();
       DimensionSettings var8 = this.field24982.get();
       int var9 = var8.method35165();
       int var10 = this.field24983 - 1 - var8.method35164();
@@ -388,7 +390,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
    public void method17803(Class1660 var1, Class7480 var2, IChunk var3) {
       ObjectArrayList var6 = new ObjectArrayList(10);
       ObjectArrayList var7 = new ObjectArrayList(32);
-      ChunkPos var8 = var3.method7072();
+      ChunkPos var8 = var3.getPos();
       int var9 = var8.x;
       int var10 = var8.z;
       int var11 = var9 << 4;
@@ -429,8 +431,8 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
       }
 
       Class1672 var79 = (Class1672)var3;
-      Class7527 var15 = var79.method7070(Class101.field297);
-      Class7527 var16 = var79.method7070(Class101.field295);
+      Heightmap var15 = var79.getHeightmap(Heightmap.Type.field297);
+      Heightmap var16 = var79.getHeightmap(Heightmap.Type.field295);
       BlockPos.Mutable var17 = new BlockPos.Mutable();
       ObjectListIterator var18 = var6.iterator();
       ObjectListIterator var19 = var7.iterator();
@@ -441,7 +443,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
          }
 
          for (int var80 = 0; var80 < this.field24971; var80++) {
-            Class7038 var22 = var79.method7106(15);
+            ChunkSection var22 = var79.method7106(15);
             var22.method21854();
 
             for (int var23 = this.field24970 - 1; var23 >= 0; var23--) {
@@ -458,7 +460,7 @@ public final class NoiseChunkGenerator extends ChunkGenerator {
                   int var41 = var23 * this.field24967 + var40;
                   int var42 = var41 & 15;
                   int var43 = var41 >> 4;
-                  if (var22.method21863() >> 4 != var43) {
+                  if (var22.getYLocation() >> 4 != var43) {
                      var22.method21855();
                      var22 = var79.method7106(var43);
                      var22.method21854();

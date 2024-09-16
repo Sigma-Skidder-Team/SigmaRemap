@@ -19,7 +19,7 @@ public class Class4351 extends Class4278 {
    public Animation field21265;
    public Animation field21266;
    public Class7286 field21267;
-   public Class4281 field21268;
+   public UIInput field21268;
    public int field21269;
    public final int field21270;
    public final int field21271;
@@ -45,7 +45,7 @@ public class Class4351 extends Class4278 {
       this.field21263.addToList(var14 = new Class4243(this.field21263, "remove", this.field21270 / 2, 0, this.field21270 / 2, var6, var12, "Delete"));
       this.field21263.method13296(false);
       ColorHelper var15 = new ColorHelper(-892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor, Class2218.field14488, Class2218.field14492);
-      this.addToList(this.field21268 = new Class4281(this, "profileName", 16, 8, this.method13267() - 60, 50, var15, var7.field31263));
+      this.addToList(this.field21268 = new UIInput(this, "profileName", 16, 8, this.getWidthA() - 60, 50, var15, var7.field31263));
       this.field21268.method13156(false);
       this.field21268.method13306(ResourceRegistry.JelloLightFont24);
       this.field21268.method13288(false);
@@ -67,10 +67,10 @@ public class Class4351 extends Class4278 {
       });
       var13.method13306(ResourceRegistry.JelloLightFont18);
       var14.method13306(ResourceRegistry.JelloLightFont18);
-      var13.method13261((var0, var1x) -> var0.setWidth(Math.round((float)var1x.method13267() / 2.0F)));
+      var13.method13261((var0, var1x) -> var0.setWidthA(Math.round((float)var1x.getWidthA() / 2.0F)));
       var14.method13261((var0, var1x) -> {
-         var0.method13264(Math.round((float)var1x.method13267() / 2.0F));
-         var0.setWidth(Math.round((float)var1x.method13267() / 2.0F));
+         var0.setXA(Math.round((float)var1x.getWidthA() / 2.0F));
+         var0.setWidthA(Math.round((float)var1x.getWidthA() / 2.0F));
       });
       var14.doThis((var1x, var2x) -> this.field21266.changeDirection(Direction.FORWARDS));
       var13.doThis((var1x, var2x) -> {
@@ -78,7 +78,7 @@ public class Class4351 extends Class4278 {
          this.field21268.method13288(true);
          this.field21268.method13148();
       });
-      this.field21263.setWidth(0);
+      this.field21263.setWidthA(0);
       this.field21263.method13284(this.field21270);
       this.field21264 = new Animation(100, 100, Direction.BACKWARDS);
       this.field21265 = new Animation(290, 290, Direction.BACKWARDS);
@@ -89,7 +89,7 @@ public class Class4351 extends Class4278 {
             if (this.field21265.calcPercent() == 0.0F) {
                Client.getInstance().getModuleManager().method14667().method20771(this.field21267);
                Client.getInstance().getSoundManager().play("switch");
-               ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.method13258().method13258().method13258();
+               ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getIcoPanel().getIcoPanel().getIcoPanel();
                var5x.method13222(() -> var5x.method13615());
 
                for (Module var7x : Client.getInstance().getModuleManager().getModuleMap().values()) {
@@ -129,13 +129,13 @@ public class Class4351 extends Class4278 {
    public void draw(float var1) {
       if (this.field21266.calcPercent() == 1.0F && !this.field21272) {
          this.field21272 = true;
-         ConfigButtonOnClickGui var4 = (ConfigButtonOnClickGui)this.method13258().method13258().method13258();
+         ConfigButtonOnClickGui var4 = (ConfigButtonOnClickGui)this.getIcoPanel().getIcoPanel().getIcoPanel();
          Client.getInstance().getModuleManager().method14667().method20764(this.field21267);
          var4.method13222(() -> var4.method13615());
       }
 
       float var8 = MathUtils.lerp(this.field21266.calcPercent(), 0.1, 0.81, 0.14, 1.0);
-      this.setHeight(Math.round((1.0F - var8) * (float)this.field21271));
+      this.setHeightA(Math.round((1.0F - var8) * (float)this.field21271));
       var1 *= 1.0F - this.field21266.calcPercent();
       float var5 = MathUtils.lerp(this.field21265.calcPercent(), 0.28, 1.26, 0.33, 1.04);
       if (this.field21265.getDirection().equals(Direction.BACKWARDS)) {
@@ -143,32 +143,32 @@ public class Class4351 extends Class4278 {
       }
 
       this.field21263.method13296(this.field21265.calcPercent() == 1.0F);
-      this.field21263.setWidth(Math.max(0, (int)((float)this.field21270 * var5)));
+      this.field21263.setWidthA(Math.max(0, (int)((float)this.field21270 * var5)));
       this.field21263.method13284((int)((float)this.field21270 * (1.0F - var5)));
       RenderUtil.method11415(this);
       float var6 = this.method13212() && this.field21265.getDirection().equals(Direction.BACKWARDS) ? 0.03F : 0.0F;
       RenderUtil.method11424(
-         (float)this.field20895,
-         (float)this.field20896,
-         (float)this.field20897,
-         (float)this.field20898,
+         (float)this.xA,
+         (float)this.yA,
+         (float)this.widthA,
+         (float)this.heightA,
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F * this.field21264.calcPercent() + var6)
       );
       if (!this.field21268.method13297()) {
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont24,
-            (float)(this.field20895 + 20) - var5 * (float)this.field20897,
-            (float)(this.field20896 + 18),
+            (float)(this.xA + 20) - var5 * (float)this.widthA,
+            (float)(this.yA + 18),
             this.field21267.field31263,
             ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.9F * var1)
          );
       }
 
-      this.field21268.method13284(Math.round(-var5 * (float)this.field20897));
+      this.field21268.method13284(Math.round(-var5 * (float)this.widthA));
       if (Client.getInstance().getModuleManager().method14667().method20770() == this.field21267) {
-         RenderUtil.method11449(
-            (float)(this.method13263() + this.method13267() - 35) - var5 * (float)this.field20897,
-            (float)(this.method13265() + 27),
+         RenderUtil.drawImage(
+            (float)(this.getXA() + this.getWidthA() - 35) - var5 * (float)this.widthA,
+            (float)(this.getYA() + 27),
             17.0F,
             13.0F,
             ResourcesDecrypter.activePNG,

@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.realmsclient.client.RealmsClient;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -27,7 +28,7 @@ public class Class1346 extends Class789 {
 
    @Override
    public void run() {
-      Class4624 var3 = Class4624.method14543();
+      RealmsClient var3 = RealmsClient.method14543();
       this.method1908(this.field7174);
       int var4 = 0;
 

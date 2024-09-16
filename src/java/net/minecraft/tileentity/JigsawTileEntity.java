@@ -2,6 +2,7 @@ package net.minecraft.tileentity;
 
 import com.google.common.collect.Lists;
 import mapped.*;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;

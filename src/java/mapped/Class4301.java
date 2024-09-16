@@ -11,14 +11,14 @@ import java.util.ArrayList;
 
 public class Class4301 extends Class4278 {
    public Class4339 field20840;
-   public Class4281 field20841;
+   public UIInput field20841;
    private ArrayList<Class9133> field20842;
    private MusicManager field20843 = Client.getInstance().getMusicManager();
 
    public Class4301(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String var7) {
       super(var1, var2, var3, var4, var5, var6, ColorHelper.field27961, var7, false);
       this.addToList(this.field20840 = new Class4339(this, "albumView", 0, 0, var5, var6, ColorHelper.field27961, "View"));
-      this.addToList(this.field20841 = new Class4281(this, "searchInput", 30, 14, var5 - 60, 70, Class4281.field20742, "", "Search..."));
+      this.addToList(this.field20841 = new UIInput(this, "searchInput", 30, 14, var5 - 60, 70, UIInput.field20742, "", "Search..."));
       this.field20841.method13292(true);
    }
 
@@ -44,7 +44,7 @@ public class Class4301 extends Class4278 {
                      () -> {
                         this.method13236(this.field20840);
                         this.addToList(
-                           this.field20840 = new Class4339(this, "albumView", 0, 0, this.field20897, this.field20898, ColorHelper.field27961, "View")
+                           this.field20840 = new Class4339(this, "albumView", 0, 0, this.widthA, this.heightA, ColorHelper.field27961, "View")
                         );
                         if (this.field20842 != null) {
                            for (int var3x = 0; var3x < this.field20842.size(); var3x++) {

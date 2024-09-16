@@ -9,44 +9,43 @@ import com.mentalfrostbyte.jello.util.ColorUtils;
 import net.minecraft.client.util.Util;
 
 public class LoginScreen extends Class4247 {
-   private StringPanel field21352;
-   private Class4281 field21353;
-   private Class4281 field21354;
-   private Class4281 field21355;
-   private UIButton field21356;
-   private UIButton field21357;
-   private UIButton field21358;
-   private Class4285 field21359;
-   public static int field21360 = 334;
-   public static int field21361 = 571;
+    private UIInput inputUsername;
+   private UIInput inputPassword;
+   private UIInput field21355;
+   private UIButton loginButton;
+   private UIButton registerButton;
+   private UIButton forgotButton;
+   private UILoadingCircle loadingThingy;
+   public static int widthy = 334;
+   public static int heighty = 571;
 
    public LoginScreen(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
-      this.addToList(
-         this.field21352 = new StringPanel(
-            this,
-            "Login",
-            228,
-            43,
-            ResourceRegistry.JelloMediumFont40.method23942("Login"),
-            50,
-            new ColorHelper(ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, -7631989),
-            "Login",
-            ResourceRegistry.JelloMediumFont40
-         )
+       this.addToList(
+               new UITextDisplay(
+                  this,
+                  "Login",
+                  228,
+                  43,
+                  ResourceRegistry.JelloMediumFont40.method23942("Login"),
+                  50,
+                  new ColorHelper(ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, ClientColors.DEEP_TEAL.getColor, -7631989),
+                  "Login",
+                  ResourceRegistry.JelloMediumFont40
+               )
       );
       this.addToList(
-         this.field21356 = new UIButton(
+         this.loginButton = new UIButton(
             this, "LoginButton", 468, 238, ResourceRegistry.JelloLightFont25.method23942("Login"), 70, ColorHelper.field27961, "Login", ResourceRegistry.JelloLightFont25
          )
       );
       this.addToList(
-         this.field21357 = new UIButton(
+         this.registerButton = new UIButton(
             this, "RegisterButton", 88, 250, ResourceRegistry.JelloLightFont14.method23942("Register"), 14, ColorHelper.field27961, "Register", ResourceRegistry.JelloLightFont14
          )
       );
       this.addToList(
-         this.field21358 = new UIButton(
+         this.forgotButton = new UIButton(
             this,
             "ForgotButton",
             60,
@@ -58,27 +57,27 @@ public class LoginScreen extends Class4247 {
             ResourceRegistry.JelloLightFont14
          )
       );
-      this.addToList(this.field21359 = new Class4285(this, "loading", 511, 260, 30, 30));
-      this.field21359.method13296(false);
-      this.field21359.method13294(true);
+      this.addToList(this.loadingThingy = new UILoadingCircle(this, "loading", 511, 260, 30, 30));
+      this.loadingThingy.method13296(false);
+      this.loadingThingy.method13294(true);
       int var9 = 50;
       int var10 = 300;
       int var11 = 106;
       ColorHelper var12 = new ColorHelper(-892679478, -892679478, -892679478, ClientColors.MID_GREY.getColor, Class2218.field14488, Class2218.field14492);
-      this.addToList(this.field21353 = new Class4281(this, "Username", 228, var11, var10, var9, var12, "", "Username"));
-      this.addToList(this.field21354 = new Class4281(this, "Password", 228, var11 + 53, var10, var9, var12, "", "Password"));
-      this.field21353.method13306(ResourceRegistry.JelloLightFont20);
-      this.field21354.method13306(ResourceRegistry.JelloLightFont20);
-      this.field21354.method13155(true);
-      this.addToList(this.field21355 = new Class4281(this, "CaptchaBox", 228, var11 + 135, 84, var9, var12, "", "Captcha"));
+      this.addToList(this.inputUsername = new UIInput(this, "Username", 228, var11, var10, var9, var12, "", "Username"));
+      this.addToList(this.inputPassword = new UIInput(this, "Password", 228, var11 + 53, var10, var9, var12, "", "Password"));
+      this.inputUsername.method13306(ResourceRegistry.JelloLightFont20);
+      this.inputPassword.method13306(ResourceRegistry.JelloLightFont20);
+      this.inputPassword.method13155(true);
+      this.addToList(this.field21355 = new UIInput(this, "CaptchaBox", 228, var11 + 135, 84, var9, var12, "", "Captcha"));
       this.field21355.method13306(ResourceRegistry.JelloLightFont20);
       this.field21355.method13288(false);
-      this.field21356.doThis((var1x, var2x) -> this.method13688());
-      this.field21357.doThis((var1x, var2x) -> {
-         Class4322 var5x = (Class4322)this.method13258();
+      this.loginButton.doThis((var1x, var2x) -> this.method13688());
+      this.registerButton.doThis((var1x, var2x) -> {
+         LoginAndOutScreen var5x = (LoginAndOutScreen)this.getIcoPanel();
          var5x.method13422();
       });
-      this.field21358.doThis((var0, var1x) -> Util.getOSType().method8181("https://sigma-web-alpha.vercel.app/"));
+      this.forgotButton.doThis((var0, var1x) -> Util.getOSType().method8181("https://sigma-web-alpha.vercel.app/"));
    }
 
    @Override
@@ -86,19 +85,19 @@ public class LoginScreen extends Class4247 {
       super.method13224();
       super.method13225();
       byte var4 = 28;
-      RenderUtil.method11454((float)(this.field20895 + var4), (float)(this.field20896 + var4 + 10), 160.0F, 160.0F, ResourcesDecrypter.sigmaPNG, var1);
+      RenderUtil.method11454((float)(this.xA + var4), (float)(this.yA + var4 + 10), 160.0F, 160.0F, ResourcesDecrypter.sigmaPNG, var1);
       Class9507 var5 = Client.getInstance().getNetworkManager().method30452();
       if (var5 != null) {
          this.field21355.method13288(var5.method36702());
          if (var5.method36702()) {
             RenderUtil.method11424(
-               (float)(this.field20895 + 330), (float)(this.field20896 + 255), 114.0F, 40.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
+               (float)(this.xA + 330), (float)(this.yA + 255), 114.0F, 40.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
             );
          }
 
          if (var5.method36701() != null) {
-            RenderUtil.startScissor((float)(this.field20895 + 316), (float)(this.field20896 + 255), 190.0F, 50.0F);
-            RenderUtil.method11455((float)(this.field20895 + 316), (float)(this.field20896 + 255), 190.0F, 190.0F, var5.method36701());
+            RenderUtil.startScissor((float)(this.xA + 316), (float)(this.yA + 255), 190.0F, 50.0F);
+            RenderUtil.method11455((float)(this.xA + 316), (float)(this.yA + 255), 190.0F, 190.0F, var5.method36701());
             RenderUtil.endScissor();
          }
       }
@@ -108,24 +107,24 @@ public class LoginScreen extends Class4247 {
 
    public void method13688() {
       new Thread(() -> {
-         this.field21359.method13296(true);
-         this.field21356.method13288(false);
+         this.loadingThingy.method13296(true);
+         this.loginButton.method13288(false);
          Class9507 var3 = Client.getInstance().getNetworkManager().method30452();
          if (var3 != null) {
             var3.method36706(this.field21355.method13303());
          }
 
-         String var4 = Client.getInstance().getNetworkManager().method30447(this.field21353.method13303(), this.field21354.method13303(), var3);
+         String var4 = Client.getInstance().getNetworkManager().method30447(this.inputUsername.method13303(), this.inputPassword.method13303(), var3);
          if (var4 != null) {
-            Class4322 var5 = (Class4322)this.method13258();
+            LoginAndOutScreen var5 = (LoginAndOutScreen)this.getIcoPanel();
             var5.method13424("Error", var4);
             this.field21355.method13304("");
          } else {
             this.method13037();
          }
 
-         this.field21359.method13296(false);
-         this.field21356.method13288(true);
+         this.loadingThingy.method13296(false);
+         this.loginButton.method13288(true);
       }).start();
    }
 }

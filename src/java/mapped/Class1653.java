@@ -7,6 +7,7 @@ import it.unimi.dsi.fastutil.longs.LongSet;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.chunk.ChunkSection;
 
 import java.io.File;
 import java.util.*;
@@ -133,8 +134,8 @@ public class Class1653 extends Class1652<Class8377> {
       this.field8988.method697(var1, this.field8988.method696(var1), false);
    }
 
-   public void method6679(ChunkPos var1, Class7038 var2) {
-      Class2002 var5 = Class2002.method8391(var1, var2.method21863() >> 4);
+   public void method6679(ChunkPos var1, ChunkSection var2) {
+      Class2002 var5 = Class2002.method8391(var1, var2.getYLocation() >> 4);
       Util.<Class8377>acceptOrElse(this.method6643(var5.method8425()), var3 -> var3.method29358(var3x -> {
             if (method6680(var2)) {
                this.method6681(var2, var5, var3x);
@@ -147,11 +148,11 @@ public class Class1653 extends Class1652<Class8377> {
       });
    }
 
-   private static boolean method6680(Class7038 var0) {
+   private static boolean method6680(ChunkSection var0) {
       return var0.method21869(Class4913.field22772::contains);
    }
 
-   private void method6681(Class7038 var1, Class2002 var2, BiConsumer<BlockPos, Class4913> var3) {
+   private void method6681(ChunkSection var1, Class2002 var2, BiConsumer<BlockPos, Class4913> var3) {
       var2.method8426()
          .forEach(
             var2x -> {

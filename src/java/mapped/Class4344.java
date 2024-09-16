@@ -13,17 +13,17 @@ public class Class4344 extends Class4339 {
    @Override
    public void draw(float var1) {
       RenderUtil.drawRect(
-         (float)this.field20895,
-         (float)this.field20896,
-         (float)(this.field20895 + this.field20897),
-         (float)(this.field20896 + this.field20898),
+         (float)this.xA,
+         (float)this.yA,
+         (float)(this.xA + this.widthA),
+         (float)(this.yA + this.heightA),
          ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.35F)
       );
       RenderUtil.method11429(
-         (float)this.field20895,
-         (float)this.field20896,
-         (float)(this.field20895 + this.field20897),
-         (float)(this.field20896 + this.field20898),
+         (float)this.xA,
+         (float)this.yA,
+         (float)(this.xA + this.widthA),
+         (float)(this.yA + this.heightA),
          2,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.14F)
       );

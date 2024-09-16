@@ -1,5 +1,8 @@
 package mapped;
 
+import com.mojang.realmsclient.client.RealmsClient;
+import com.mojang.realmsclient.exception.RealmsServiceException;
+
 public class Class378 extends Thread {
    public final Class825 field1634;
 
@@ -11,9 +14,9 @@ public class Class378 extends Thread {
    @Override
    public void run() {
       try {
-         Class4624 var3 = Class4624.method14543();
+         RealmsClient var3 = RealmsClient.method14543();
          var3.method14583(Class825.method2448(this.field1634).field27443);
-      } catch (Class2435 var4) {
+      } catch (RealmsServiceException var4) {
          Class825.method2449().error("Couldn't delete world");
          Class825.method2449().error(var4);
       }

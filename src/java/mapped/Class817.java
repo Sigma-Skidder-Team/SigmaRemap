@@ -2,7 +2,9 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.realmsclient.RealmsMainScreen;
+import com.mojang.realmsclient.client.RealmsClient;
 import com.mojang.realmsclient.dto.RealmsServer;
+import com.mojang.realmsclient.exception.RealmsServiceException;
 import com.mojang.realmsclient.gui.screens.RealmsLongRunningMcoTaskScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
@@ -70,12 +72,12 @@ public class Class817 extends RealmsScreen {
    }
 
    private void method2325() {
-      Class4624 var3 = Class4624.method14543();
+      RealmsClient var3 = RealmsClient.method14543();
 
       try {
          var3.method14579();
          this.mc.displayGuiScreen(new RealmsLongRunningMcoTaskScreen(this.field4449, new Class791(this.field4450, this.field4449, this.field4451, new ReentrantLock())));
-      } catch (Class2435 var5) {
+      } catch (RealmsServiceException var5) {
          field4445.error("Couldn't agree to TOS");
       }
    }

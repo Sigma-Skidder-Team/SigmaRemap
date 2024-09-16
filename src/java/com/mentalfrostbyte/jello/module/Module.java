@@ -256,7 +256,7 @@ public abstract class Module {
         }
     }
 
-    public void method15999(boolean newEnabled) {
+    public void setEnabled(boolean newEnabled) {
         if (this.enabled != newEnabled) {
             if (!(this.enabled = newEnabled)) {
                 Client.getInstance().getEventManager().unsubscribe(this);
@@ -293,8 +293,8 @@ public abstract class Module {
         Client.getInstance().getModuleManager().method14668().method13737(this);
     }
 
-    public void method16000() {
-        this.method15999(!this.isEnabled());
+    public void toggle() {
+        this.setEnabled(!this.isEnabled());
     }
 
     public boolean method16001() {

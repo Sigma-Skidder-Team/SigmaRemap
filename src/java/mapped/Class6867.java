@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.block.Block;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.IParticleData;
 

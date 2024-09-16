@@ -1,6 +1,7 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.floats.Float2FloatFunction;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;

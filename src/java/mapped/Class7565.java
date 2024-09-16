@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Splitter;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 
 import java.util.List;

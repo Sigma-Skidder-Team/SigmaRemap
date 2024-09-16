@@ -1,5 +1,8 @@
 package mapped;
 
+import com.mojang.realmsclient.client.RealmsClient;
+import com.mojang.realmsclient.exception.RealmsServiceException;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,7 +16,7 @@ public class Class376 extends Thread {
 
    @Override
    public void run() {
-      Class4624 var3 = Class4624.method14543();
+      RealmsClient var3 = RealmsClient.method14543();
 
       try {
          List<Class6110> var4 = var3.method14573().field27476;
@@ -23,7 +26,7 @@ public class Class376 extends Thread {
             return new Class1160(var10002, var1);
          }).collect(Collectors.toList());
          Class823.method2387(this.field1630).execute(() -> Class823.method2390(this.field1630).method6028(var5));
-      } catch (Class2435 var9) {
+      } catch (RealmsServiceException var9) {
          Class823.method2388().error("Couldn't list invites");
       } finally {
          Class823.method2389(this.field1630, true);

@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 public class Class4375 extends Class4247 {
-   private List<Class4240> field21375 = new ArrayList<Class4240>();
+   private List<ButtonPanel> field21375 = new ArrayList<ButtonPanel>();
    private final int field21376;
    private final Animation field21377;
    private boolean field21378 = false;
@@ -24,10 +24,10 @@ public class Class4375 extends Class4247 {
 
    public Class4375(IconPanel var1, String var2, int var3, int var4, int var5, String var6) {
       super(var1, var2, var3 - 125, var4, 250, 330, ColorHelper.field27961, var6, false);
-      if (this.field20896 + this.field20898 <= Minecraft.getInstance().mainWindow.getHeight()) {
-         this.field20896 += 10;
+      if (this.yA + this.heightA <= Minecraft.getInstance().mainWindow.getHeight()) {
+         this.yA += 10;
       } else {
-         this.field20896 -= 400;
+         this.yA -= 400;
          this.field21378 = true;
       }
 
@@ -41,8 +41,8 @@ public class Class4375 extends Class4247 {
          var9 = new UIButton(
             this,
             "addButton",
-            this.field20897 - 70,
-            this.field20898 - 70,
+            this.widthA - 70,
+            this.heightA - 70,
             ResourceRegistry.JelloLightFont25.method23942("Add"),
             70,
             ColorHelper.field27961,
@@ -62,7 +62,7 @@ public class Class4375 extends Class4247 {
       ArrayList var4 = new ArrayList();
 
       for (IconPanel var6 : this.method13241()) {
-         if (var6.method13269() != 0) {
+         if (var6.getHeightA() != 0) {
             var4.add(var6.method13257());
          }
       }
@@ -75,7 +75,7 @@ public class Class4375 extends Class4247 {
          int var7 = var10.method21599();
          if (var7 == this.field21376) {
             Class4253 var8;
-            this.addToList(var8 = new Class4253(this, var10.method21596(), 0, 20 + 55 * var3, this.field20897, 55, var10, var3++));
+            this.addToList(var8 = new Class4253(this, var10.method21596(), 0, 20 + 55 * var3, this.widthA, 55, var10, var3++));
             var8.method13036(var2 -> {
                var10.method21598(0);
                this.method13037();
@@ -100,8 +100,8 @@ public class Class4375 extends Class4247 {
       int var9 = 75;
 
       for (Entry<Integer, Class4253> var11 : var5.entrySet()) {
-         var11.getValue().method13266(var9);
-         var9 += var11.getValue().method13269();
+         var11.getValue().setYA(var9);
+         var9 += var11.getValue().getHeightA();
       }
 
       super.method13028(var1, var2);
@@ -112,33 +112,33 @@ public class Class4375 extends Class4247 {
       var1 = this.field21377.calcPercent();
       float var4 = EasingFunctions.easeOutBack(var1, 0.0F, 1.0F, 1.0F);
       this.method13279(0.8F + var4 * 0.2F, 0.8F + var4 * 0.2F);
-      this.method13284((int)((float)this.field20897 * 0.2F * (1.0F - var4)) * (!this.field21378 ? 1 : -1));
+      this.method13284((int)((float)this.widthA * 0.2F * (1.0F - var4)) * (!this.field21378 ? 1 : -1));
       super.method13224();
       byte var5 = 10;
       int var6 = ColorUtils.applyAlpha(-723724, QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F));
-      RenderUtil.method11463(
-         (float)(this.field20895 + var5 / 2),
-         (float)(this.field20896 + var5 / 2),
-         (float)(this.field20897 - var5),
-         (float)(this.field20898 - var5),
+      RenderUtil.drawRoundedRect(
+         (float)(this.xA + var5 / 2),
+         (float)(this.yA + var5 / 2),
+         (float)(this.widthA - var5),
+         (float)(this.heightA - var5),
          35.0F,
          var1
       );
       RenderUtil.drawRect(
-         (float)(this.field20895 + var5 / 2),
-         (float)(this.field20896 + var5 / 2),
-         (float)(this.field20895 - var5 / 2 + this.field20897),
-         (float)(this.field20896 - var5 / 2 + this.field20898),
+         (float)(this.xA + var5 / 2),
+         (float)(this.yA + var5 / 2),
+         (float)(this.xA - var5 / 2 + this.widthA),
+         (float)(this.yA - var5 / 2 + this.heightA),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
       );
-      RenderUtil.drawRect((float)this.field20895, (float)this.field20896, (float)this.field20897, (float)this.field20898, (float)var5, var6);
+      RenderUtil.drawRect((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, (float)var5, var6);
       GL11.glPushMatrix();
-      GL11.glTranslatef((float)this.field20895, (float)this.field20896, 0.0F);
+      GL11.glTranslatef((float)this.xA, (float)this.yA, 0.0F);
       GL11.glRotatef(!this.field21378 ? -90.0F : 90.0F, 0.0F, 0.0F, 1.0F);
-      GL11.glTranslatef((float)(-this.field20895), (float)(-this.field20896), 0.0F);
-      RenderUtil.method11449(
-         (float)(this.field20895 + (!this.field21378 ? 0 : this.field20898)),
-         (float)this.field20896 + (float)((this.field20897 - 47) / 2) * (!this.field21378 ? 1.0F : -1.5F),
+      GL11.glTranslatef((float)(-this.xA), (float)(-this.yA), 0.0F);
+      RenderUtil.drawImage(
+         (float)(this.xA + (!this.field21378 ? 0 : this.heightA)),
+         (float)this.yA + (float)((this.widthA - 47) / 2) * (!this.field21378 ? 1.0F : -1.5F),
          18.0F,
          47.0F,
          ResourcesDecrypter.selectPNG,
@@ -147,16 +147,16 @@ public class Class4375 extends Class4247 {
       GL11.glPopMatrix();
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont25,
-         (float)(this.field20895 + 25),
-         (float)(this.field20896 + 20),
+         (float)(this.xA + 25),
+         (float)(this.yA + 20),
          this.field20912 + " Key",
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F * var1)
       );
       RenderUtil.drawRect(
-         (float)(this.field20895 + 25),
-         (float)(this.field20896 + 68),
-         (float)(this.field20895 + this.field20897 - 25),
-         (float)(this.field20896 + 69),
+         (float)(this.xA + 25),
+         (float)(this.yA + 68),
+         (float)(this.xA + this.widthA - 25),
+         (float)(this.yA + 69),
          ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
       );
       super.draw(var1);
