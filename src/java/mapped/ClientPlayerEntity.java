@@ -271,7 +271,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void method2772() {
-      this.connection.sendPacket(new CCloseWindowPacket(this.field4905.field25471));
+      this.connection.sendPacket(new CCloseWindowPacket(this.openContainer.field25471));
       this.method5390();
    }
 

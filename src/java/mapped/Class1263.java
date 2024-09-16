@@ -26,11 +26,11 @@ public class Class1263 extends AbstractGui implements Class1190, IGuiEventListen
    public void method5901(Minecraft var1, RecipeList var2, int var3, int var4, int var5, int var6, float var7) {
       this.field6682 = var1;
       this.field6683 = var2;
-      if (var1.player.field4905 instanceof Class5831) {
+      if (var1.player.openContainer instanceof Class5831) {
          this.field6686 = true;
       }
 
-      boolean var10 = var1.player.method5397().method21370((Class5828<?>)var1.player.field4905);
+      boolean var10 = var1.player.method5397().method21370((Class5828<?>)var1.player.openContainer);
       List var11 = var2.method34894(true);
       List var12 = !var10 ? var2.method34894(false) : Collections.emptyList();
       int var13 = var11.size();

@@ -495,8 +495,8 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    @Override
    public void processRenameItem(CRenameItemPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
-      if (this.player.field4905 instanceof Class5824) {
-         Class5824 var4 = (Class5824)this.player.field4905;
+      if (this.player.openContainer instanceof Class5824) {
+         Class5824 var4 = (Class5824)this.player.openContainer;
          String var5 = SharedConstants.method34772(var1.method17477());
          if (var5.length() <= 35) {
             var4.method18197(var5);
@@ -507,8 +507,8 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    @Override
    public void processUpdateBeacon(CUpdateBeaconPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
-      if (this.player.field4905 instanceof Class5821) {
-         ((Class5821)this.player.field4905).method18181(var1.method17599(), var1.method17600());
+      if (this.player.openContainer instanceof Class5821) {
+         ((Class5821)this.player.openContainer).method18181(var1.method17599(), var1.method17600());
       }
    }
 
@@ -605,7 +605,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void processSelectTrade(CSelectTradePacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       int var4 = var1.method17420();
-      Container var5 = this.player.field4905;
+      Container var5 = this.player.openContainer;
       if (var5 instanceof Class5826) {
          Class5826 var6 = (Class5826)var5;
          var6.method18204(var4);
@@ -1229,36 +1229,36 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void processClickWindow(CClickWindowPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.markPlayerActive();
-      if (this.player.field4905.field25471 == var1.getWindowId() && this.player.field4905.getCanCraft(this.player)) {
+      if (this.player.openContainer.field25471 == var1.getWindowId() && this.player.openContainer.getCanCraft(this.player)) {
          if (!this.player.isSpectator()) {
-            ItemStack var4 = this.player.field4905.slotClick(var1.getSlotId(), var1.getUsedButton(), var1.getClickType(), this.player);
+            ItemStack var4 = this.player.openContainer.slotClick(var1.getSlotId(), var1.getUsedButton(), var1.getClickType(), this.player);
             if (!ItemStack.method32128(var1.getClickedItem(), var4)) {
-               this.field23233.put(this.player.field4905.field25471, var1.getActionNumber());
+               this.field23233.put(this.player.openContainer.field25471, var1.getActionNumber());
                this.player.field4855.sendPacket(new SConfirmTransactionPacket(var1.getWindowId(), var1.getActionNumber(), false));
-               this.player.field4905.setCanCraft(this.player, false);
+               this.player.openContainer.setCanCraft(this.player, false);
                NonNullList var5 = NonNullList.create();
 
-               for (int var6 = 0; var6 < this.player.field4905.field25468.size(); var6++) {
-                  ItemStack var7 = this.player.field4905.field25468.get(var6).getStack();
+               for (int var6 = 0; var6 < this.player.openContainer.field25468.size(); var6++) {
+                  ItemStack var7 = this.player.openContainer.field25468.get(var6).getStack();
                   var5.add(!var7.isEmpty() ? var7 : ItemStack.EMPTY);
                }
 
-               this.player.method2718(this.player.field4905, var5);
+               this.player.method2718(this.player.openContainer, var5);
             } else {
                this.player.field4855.sendPacket(new SConfirmTransactionPacket(var1.getWindowId(), var1.getActionNumber(), true));
                this.player.field4890 = true;
-               this.player.field4905.detectAndSendChanges();
+               this.player.openContainer.detectAndSendChanges();
                this.player.method2773();
                this.player.field4890 = false;
             }
          } else {
             NonNullList var8 = NonNullList.create();
 
-            for (int var9 = 0; var9 < this.player.field4905.field25468.size(); var9++) {
-               var8.add(this.player.field4905.field25468.get(var9).getStack());
+            for (int var9 = 0; var9 < this.player.openContainer.field25468.size(); var9++) {
+               var8.add(this.player.openContainer.field25468.get(var9).getStack());
             }
 
-            this.player.method2718(this.player.field4905, var8);
+            this.player.method2718(this.player.openContainer, var8);
          }
       }
    }
@@ -1268,13 +1268,13 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.markPlayerActive();
       if (!this.player.isSpectator()
-         && this.player.field4905.field25471 == var1.getWindowId()
-         && this.player.field4905.getCanCraft(this.player)
-         && this.player.field4905 instanceof Class5828) {
+         && this.player.openContainer.field25471 == var1.getWindowId()
+         && this.player.openContainer.getCanCraft(this.player)
+         && this.player.openContainer instanceof Class5828) {
          this.server
             .method1407()
             .method1035(var1.getRecipeId())
-            .ifPresent(var2 -> ((Class5828)this.player.field4905).method18219(var1.shouldPlaceAll(), (IRecipe<?>)var2, this.player));
+            .ifPresent(var2 -> ((Class5828)this.player.openContainer).method18219(var1.shouldPlaceAll(), (IRecipe<?>)var2, this.player));
       }
    }
 
@@ -1282,11 +1282,11 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void processEnchantItem(CEnchantItemPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.markPlayerActive();
-      if (this.player.field4905.field25471 == var1.getWindowId() && this.player.field4905.getCanCraft(this.player) && !this.player.isSpectator()
+      if (this.player.openContainer.field25471 == var1.getWindowId() && this.player.openContainer.getCanCraft(this.player) && !this.player.isSpectator()
          )
        {
-         this.player.field4905.enchantItem(this.player, var1.getButton());
-         this.player.field4905.detectAndSendChanges();
+         this.player.openContainer.enchantItem(this.player, var1.getButton());
+         this.player.openContainer.detectAndSendChanges();
       }
    }
 
@@ -1330,12 +1330,12 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    @Override
    public void processConfirmTransaction(CConfirmTransactionPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
-      int var4 = this.player.field4905.field25471;
+      int var4 = this.player.openContainer.field25471;
       if (var4 == var1.getWindowId()
          && this.field23233.getOrDefault(var4, (short)(var1.getUid() + 1)) == var1.getUid()
-         && !this.player.field4905.getCanCraft(this.player)
+         && !this.player.openContainer.getCanCraft(this.player)
          && !this.player.isSpectator()) {
-         this.player.field4905.setCanCraft(this.player, true);
+         this.player.openContainer.setCanCraft(this.player, true);
       }
    }
 

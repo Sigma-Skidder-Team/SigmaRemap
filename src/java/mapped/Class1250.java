@@ -22,9 +22,9 @@ public class Class1250 extends Class1249 {
    public void method5825(Minecraft var1) {
       Class6943 var4 = var1.player.method5397();
       List<RecipeList> var5 = var4.method21387(this.field6621);
-      if (var1.player.field4905 instanceof Class5828) {
+      if (var1.player.openContainer instanceof Class5828) {
          for (RecipeList var7 : var5) {
-            for (IRecipe var9 : var7.method34893(var4.method21370((Class5828<?>)var1.player.field4905))) {
+            for (IRecipe var9 : var7.method34893(var4.method21370((Class5828<?>)var1.player.openContainer))) {
                if (var4.method21364(var9)) {
                   this.field6622 = 15.0F;
                   return;

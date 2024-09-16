@@ -245,7 +245,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    public void method2729() {
-      this.field4905.addListener(this);
+      this.openContainer.addListener(this);
    }
 
    @Override
@@ -278,10 +278,10 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          this.hurtResistantTime--;
       }
 
-      this.field4905.detectAndSendChanges();
-      if (!this.world.isRemote && !this.field4905.canInteractWith(this)) {
+      this.openContainer.detectAndSendChanges();
+      if (!this.world.isRemote && !this.openContainer.canInteractWith(this)) {
          this.method2772();
-         this.field4905 = this.container;
+         this.openContainer = this.container;
       }
 
       while (!this.field4858.isEmpty()) {
@@ -678,7 +678,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    @Override
    public void onItemPickup(Entity var1, int var2) {
       super.onItemPickup(var1, var2);
-      this.field4905.detectAndSendChanges();
+      this.openContainer.detectAndSendChanges();
    }
 
    @Override
@@ -824,7 +824,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    @Override
    public OptionalInt method2766(Class949 var1) {
       if (var1 != null) {
-         if (this.field4905 != this.container) {
+         if (this.openContainer != this.container) {
             this.method2772();
          }
 
@@ -833,7 +833,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          if (var4 != null) {
             this.field4855.sendPacket(new SOpenWindowPacket(var4.field25471, var4.getType(), var1.method2954()));
             var4.addListener(this);
-            this.field4905 = var4;
+            this.openContainer = var4;
             return OptionalInt.of(this.field4889);
          } else {
             if (this.isSpectator()) {
@@ -854,14 +854,14 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
    @Override
    public void method2768(AbstractHorseEntity var1, IInventory var2) {
-      if (this.field4905 != this.container) {
+      if (this.openContainer != this.container) {
          this.method2772();
       }
 
       this.method2765();
       this.field4855.sendPacket(new SOpenHorseWindowPacket(this.field4889, var2.getSizeInventory(), var1.getEntityId()));
-      this.field4905 = new Class5827(this.field4889, this.inventory, var2, var1);
-      this.field4905.addListener(this);
+      this.openContainer = new Class5827(this.field4889, this.inventory, var2, var1);
+      this.openContainer.addListener(this);
    }
 
    @Override
@@ -869,7 +869,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       Item var5 = var1.getItem();
       if (var5 == Items.field38048) {
          if (Class3285.method11820(var1, this.getCommandSource(), this)) {
-            this.field4905.detectAndSendChanges();
+            this.openContainer.detectAndSendChanges();
          }
 
          this.field4855.sendPacket(new SOpenBookWindowPacket(var2));
@@ -912,7 +912,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
    @Override
    public void method2772() {
-      this.field4855.sendPacket(new SCloseWindowPacket(this.field4905.field25471));
+      this.field4855.sendPacket(new SCloseWindowPacket(this.openContainer.field25471));
       this.method2774();
    }
 
@@ -923,8 +923,8 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    public void method2774() {
-      this.field4905.onContainerClosed(this);
-      this.field4905 = this.container;
+      this.openContainer.onContainerClosed(this);
+      this.openContainer = this.container;
    }
 
    public void method2775(float var1, float var2, boolean var3, boolean var4) {

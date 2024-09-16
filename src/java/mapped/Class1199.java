@@ -32,7 +32,7 @@ public class Class1199 extends Widget {
 
    public void method5752(RecipeList var1, Class2954 var2) {
       this.field6495 = var1;
-      this.field6493 = (Class5828<?>)var2.method11318().player.field4905;
+      this.field6493 = (Class5828<?>)var2.method11318().player.openContainer;
       this.field6494 = var2.method11319();
       List<IRecipe<?>> var5 = var1.method34893(this.field6494.method21370(this.field6493));
 

@@ -50,7 +50,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
       this.field6635 = var1;
       this.field6636 = var2;
       this.field6641 = var5;
-      var3.player.field4905 = var5;
+      var3.player.openContainer = var5;
       this.field6645 = var3.player.method5397();
       this.field6648 = var3.player.inventory.method4055();
       if (this.method5839()) {
@@ -287,7 +287,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
                }
 
                this.field6637.method34733();
-               this.field6642.playerController.sendPlaceRecipePacket(this.field6642.player.field4905.field25471, var11, Screen.method2476());
+               this.field6642.playerController.sendPlaceRecipePacket(this.field6642.player.openContainer.field25471, var11, Screen.method2476());
                if (!this.method5855()) {
                   this.method5840(false);
                }

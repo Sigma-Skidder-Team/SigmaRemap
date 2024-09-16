@@ -40,9 +40,9 @@ public class AutoTotem extends Module {
             if (offHandItem.getItem() != Items.TOTEM_OF_UNDYING) {
                 int totemSlot = InvManagerUtils.findItemSlot(Items.TOTEM_OF_UNDYING);
                 if (totemSlot != -1) {
-                    mc.playerController.windowClickFixed(0, totemSlot >= 9 ? totemSlot : totemSlot + 36, 0, ClickType.PICKUP, mc.player);
-                    mc.playerController.windowClickFixed(0, 45, 0, ClickType.PICKUP, mc.player);
-                    mc.playerController.windowClickFixed(0, totemSlot >= 9 ? totemSlot : totemSlot + 36, 0, ClickType.PICKUP, mc.player);
+                    mc.playerController.windowClick(0, totemSlot >= 9 ? totemSlot : totemSlot + 36, 0, ClickType.PICKUP, mc.player);
+                    mc.playerController.windowClick(0, 45, 0, ClickType.PICKUP, mc.player);
+                    mc.playerController.windowClick(0, totemSlot >= 9 ? totemSlot : totemSlot + 36, 0, ClickType.PICKUP, mc.player);
                 }
             }
         }

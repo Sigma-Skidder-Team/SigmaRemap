@@ -20,7 +20,7 @@ public class Class1203 extends Class1202 {
       Class872.method2710(this.field6503)
          .getConnection()
          .sendPacket(new CUpdateBeaconPacket(Effect.getId(Class872.method2708(this.field6503)), Effect.getId(Class872.method2709(this.field6503))));
-      Class872.method2712(this.field6503).player.connection.sendPacket(new CCloseWindowPacket(Class872.method2711(this.field6503).player.field4905.field25471));
+      Class872.method2712(this.field6503).player.connection.sendPacket(new CCloseWindowPacket(Class872.method2711(this.field6503).player.openContainer.field25471));
       Class872.method2713(this.field6503).displayGuiScreen((Screen)null);
    }
 

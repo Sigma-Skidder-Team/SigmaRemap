@@ -122,8 +122,8 @@ public class Class941 extends Class939 implements Class942, ITickableTileEntity 
             (double)((float)(var4 + 1) + 5.0F)
          )
       )) {
-         if (var10.field4905 instanceof ChestContainer) {
-            IInventory var11 = ((ChestContainer)var10.field4905).method18164();
+         if (var10.openContainer instanceof ChestContainer) {
+            IInventory var11 = ((ChestContainer)var10.openContainer).method18164();
             if (var11 == var1 || var11 instanceof Class990 && ((Class990)var11).method4070(var1)) {
                var7++;
             }

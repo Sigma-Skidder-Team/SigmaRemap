@@ -268,7 +268,7 @@ public class BlockFly extends ModuleWithModuleSettings {
     }
 
     public void method16740(int var1, int var2) {
-        mc.playerController.windowClickFixed(mc.player.container.field25471, var1, var2, ClickType.field14696, mc.player);
+        mc.playerController.windowClick(mc.player.container.field25471, var1, var2, ClickType.field14696, mc.player);
     }
 
     public void method16741(EventMove var1) {

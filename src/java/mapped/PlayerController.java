@@ -322,8 +322,11 @@ public class PlayerController {
       return this.currentGameType != GameType.SPECTATOR ? var2.applyPlayerInteraction(var1, var7, var4) : ActionResultType.field14820;
    }
 
-   public ItemStack windowClickFixed(int var1, int var2, int var3, ClickType var4, PlayerEntity var5) {
-      return InvManagerUtils.method25869(var1, var2, var3, var4, var5);
+   public ItemStack windowClick(int windowId, int slotId, int mouseButton, ClickType type, PlayerEntity player) {
+      short short1 = player.openContainer.getNextTransactionID(player.inventory);
+      ItemStack itemstack = player.openContainer.slotClick(slotId, mouseButton, type, player);
+      this.connection.sendPacket(new CClickWindowPacket(windowId, slotId, mouseButton, type, itemstack, short1));
+      return itemstack;
    }
 
    public void sendPlaceRecipePacket(int var1, IRecipe<?> var2, boolean var3) {

@@ -15,7 +15,7 @@ public class Class3710 extends Class3676<Class1042> {
 
    public boolean method12508(ServerWorld var1, Class1042 var2) {
       PlayerEntity var5 = var2.method4740();
-      return var2.isAlive() && var5 != null && !var2.isInWater() && !var2.velocityChanged && var2.getDistanceSq(var5) <= 16.0 && var5.field4905 != null;
+      return var2.isAlive() && var5 != null && !var2.isInWater() && !var2.velocityChanged && var2.getDistanceSq(var5) <= 16.0 && var5.openContainer != null;
    }
 
    public boolean method12499(ServerWorld var1, Class1042 var2, long var3) {

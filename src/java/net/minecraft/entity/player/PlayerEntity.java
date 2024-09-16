@@ -70,7 +70,7 @@ public abstract class PlayerEntity extends LivingEntity {
    public PlayerInventory inventory = new PlayerInventory(this);
    public Class980 field4903 = new Class980();
    public final PlayerContainer container;
-   public Container field4905;
+   public Container openContainer;
    public FoodStats foodStats = new FoodStats();
    public int field4907;
    public float field4908;
@@ -102,7 +102,7 @@ public abstract class PlayerEntity extends LivingEntity {
       this.setUniqueId(method2960(var4));
       this.field4926 = var4;
       this.container = new PlayerContainer(this.inventory, !var1.isRemote, this);
-      this.field4905 = this.container;
+      this.openContainer = this.container;
       this.setLocationAndAngles((double)var2.getX() + 0.5, (double)(var2.getY() + 1), (double)var2.getZ() + 0.5, var3, 0.0F);
       this.field4978 = 180.0F;
    }
@@ -172,9 +172,9 @@ public abstract class PlayerEntity extends LivingEntity {
 
       this.method2854();
       super.tick();
-      if (!this.world.isRemote && this.field4905 != null && !this.field4905.canInteractWith(this)) {
+      if (!this.world.isRemote && this.openContainer != null && !this.openContainer.canInteractWith(this)) {
          this.method2772();
-         this.field4905 = this.container;
+         this.openContainer = this.container;
       }
 
       this.method2856();
@@ -398,7 +398,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    public void method2772() {
-      this.field4905 = this.container;
+      this.openContainer = this.container;
    }
 
    @Override
@@ -1250,8 +1250,8 @@ public abstract class PlayerEntity extends LivingEntity {
    public void remove() {
       super.remove();
       this.container.onContainerClosed(this);
-      if (this.field4905 != null) {
-         this.field4905.onContainerClosed(this);
+      if (this.openContainer != null) {
+         this.openContainer.onContainerClosed(this);
       }
    }
 

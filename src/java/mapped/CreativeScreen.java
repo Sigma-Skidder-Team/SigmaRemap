@@ -39,7 +39,7 @@ public class CreativeScreen extends Class860<Class5820> {
 
    public CreativeScreen(PlayerEntity var1) {
       super(new Class5820(var1), var1.inventory, StringTextComponent.EMPTY);
-      var1.field4905 = this.field4727;
+      var1.openContainer = this.field4727;
       this.passEvents = true;
       this.ySize = 136;
       this.xSize = 195;

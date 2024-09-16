@@ -537,7 +537,7 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
          var2 = var1.field25579;
       }
 
-      this.mc.playerController.windowClickFixed(this.field4727.field25471, var2, var3, var4, this.mc.player);
+      this.mc.playerController.windowClick(this.field4727.field25471, var2, var3, var4, this.mc.player);
    }
 
    @Override

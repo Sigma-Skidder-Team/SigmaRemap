@@ -34,7 +34,7 @@ public class Class1260<C extends IInventory> implements Class1253<Integer> {
             this.field6661.method18220(this.field6659);
             if (!this.field6659.method19123(var2, (IntList)null)) {
                this.method5869();
-               var1.field4855.sendPacket(new SPlaceGhostRecipePacket(var1.field4905.field25471, var2));
+               var1.field4855.sendPacket(new SPlaceGhostRecipePacket(var1.openContainer.field25471, var2));
             } else {
                this.method5871(var2, var3);
             }

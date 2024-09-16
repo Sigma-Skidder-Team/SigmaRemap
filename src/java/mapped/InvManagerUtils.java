@@ -144,11 +144,11 @@ public class InvManagerUtils {
 
    public static void method25826(int var0, int var1, boolean var2) {
       field33419.playerController
-         .windowClickFixed(field33419.player.container.field25471, var0, var1, !var2 ? ClickType.field14698 : ClickType.field14695, field33419.player);
+         .windowClick(field33419.player.container.field25471, var0, var1, !var2 ? ClickType.field14698 : ClickType.field14695, field33419.player);
    }
 
    public static void method25827(int var0) {
-      field33419.playerController.windowClickFixed(field33419.player.container.field25471, var0, 1, ClickType.field14696, field33419.player);
+      field33419.playerController.windowClick(field33419.player.container.field25471, var0, 1, ClickType.field14696, field33419.player);
    }
 
    public static boolean method25828(ArmorItem var0, byte var1) {
@@ -681,11 +681,14 @@ public class InvManagerUtils {
    public static ItemStack fixedClick(int var0, int var1, int var2, ClickType var3, PlayerEntity var4, boolean var5) {
       ItemStack var8 = null;
       if (var1 >= 0) {
-         var8 = var4.field4905.getSlot(var1).getStack().copy();
+         var8 = var4.openContainer.getSlot(var1).getStack().copy();
       }
 
-      short var9 = var4.field4905.getNextTransactionID(field33419.player.inventory);
-      ItemStack var10 = var4.field4905.slotClick(var1, var2, var3, var4);
+      short var9 = var4.openContainer.getNextTransactionID(field33419.player.inventory);
+      ItemStack var10 = var4.openContainer.slotClick(var1, var2, var3, var4);
+      if (var3 == null) {
+         return var10;
+      }
       if (var8 == null || JelloPortal.getCurrentVersion().getVersionNumber() > ViaVerList._1_12.getVersionNumber() && !var5 || var3 == ClickType.field14696) {
          var8 = var10;
       }
@@ -695,7 +698,7 @@ public class InvManagerUtils {
    }
 
    public static void method25871(int var0) {
-      field33419.playerController.windowClickFixed(field33419.player.container.field25471, var0, 1, ClickType.field14698, field33419.player);
+      field33419.playerController.windowClick(field33419.player.container.field25471, var0, 1, ClickType.field14698, field33419.player);
    }
 
    public static boolean method25872(ItemStack var0) {
@@ -722,7 +725,7 @@ public class InvManagerUtils {
    }
 
    public static void moveItemToHotbar(int var0, int var1) {
-      field33419.playerController.windowClickFixed(field33419.player.container.field25471, var0, var1, ClickType.field14696, field33419.player);
+      field33419.playerController.windowClick(field33419.player.container.field25471, var0, var1, ClickType.field14696, field33419.player);
    }
 
    public static boolean method25874(ItemStack var0) {

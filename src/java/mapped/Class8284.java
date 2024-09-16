@@ -61,7 +61,7 @@ public class Class8284 {
 
       for (ServerPlayerEntity var8 : var1) {
          var6 += var8.inventory.method4040(var2, var3, var8.container.method18232());
-         var8.field4905.detectAndSendChanges();
+         var8.openContainer.detectAndSendChanges();
          var8.container.onCraftMatrixChanged(var8.inventory);
          var8.method2773();
       }
