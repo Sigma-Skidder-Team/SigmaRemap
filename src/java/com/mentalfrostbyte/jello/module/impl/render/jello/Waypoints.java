@@ -119,7 +119,7 @@ public class Waypoints extends Module {
                 );
                 double var7 = Math.sqrt(Class9647.method37621(var6));
                 if (!(var7 > 300.0)) {
-                    if (mc.world.method7011(var6) != null && var5.field35894) {
+                    if (mc.world.getChunk(var6) != null && var5.field35894) {
                         int var9 = var6.getX() % 16;
                         int var10 = var6.getZ() % 16;
                         if (var10 < 0) {
@@ -130,7 +130,7 @@ public class Waypoints extends Module {
                             var9 += 16;
                         }
 
-                        int var11 = mc.world.method7011(var6).getHeightmap(Heightmap.Type.field296).method24579(var9, var10);
+                        int var11 = mc.world.getChunk(var6).getHeightmap(Heightmap.Type.field296).method24579(var9, var10);
                         if (var11 == 0) {
                             var11 = 64;
                         }

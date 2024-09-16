@@ -205,7 +205,7 @@ public abstract class Class4178 {
          }
 
          if (field20450.contains(var2.getBlock())) {
-            var1.method7011(var9).markBlockForPostprocessing(var9);
+            var1.getChunk(var9).markBlockForPostprocessing(var9);
          }
       }
    }

@@ -43,8 +43,8 @@ public class Class1691 implements ISeedReader {
    private final Class6612 field9207;
    private final Random field9208;
    private final DimensionType field9209;
-   private final ITickList<Block> field9210 = new Class6803<Block>(var1x -> this.method7011(var1x).getBlocksToBeTicked());
-   private final ITickList<Fluid> field9211 = new Class6803<Fluid>(var1x -> this.method7011(var1x).getFluidsToBeTicked());
+   private final ITickList<Block> field9210 = new Class6803<Block>(var1x -> this.getChunk(var1x).getBlocksToBeTicked());
+   private final ITickList<Fluid> field9211 = new Class6803<Fluid>(var1x -> this.getChunk(var1x).getFluidsToBeTicked());
    private final BiomeManager field9212;
    private final ChunkPos field9213;
    private final ChunkPos field9214;
@@ -131,7 +131,7 @@ public class Class1691 implements ISeedReader {
 
    @Override
    public FluidState getFluidState(BlockPos var1) {
-      return this.method7011(var1).getFluidState(var1);
+      return this.getChunk(var1).getFluidState(var1);
    }
 
    @Nullable
@@ -183,7 +183,7 @@ public class Class1691 implements ISeedReader {
    @Nullable
    @Override
    public TileEntity getTileEntity(BlockPos var1) {
-      IChunk var4 = this.method7011(var1);
+      IChunk var4 = this.getChunk(var1);
       TileEntity var5 = var4.getTileEntity(var1);
       if (var5 == null) {
          CompoundNBT var6 = var4.getDeferredTileEntity(var1);
@@ -218,7 +218,7 @@ public class Class1691 implements ISeedReader {
 
    @Override
    public boolean setBlockState(BlockPos var1, BlockState var2, int var3, int var4) {
-      IChunk var7 = this.method7011(var1);
+      IChunk var7 = this.getChunk(var1);
       BlockState var8 = var7.setBlockState(var1, var2, false);
       if (var8 != null) {
          this.field9205.onBlockStateChange(var1, var8, var2);
@@ -248,7 +248,7 @@ public class Class1691 implements ISeedReader {
    }
 
    private void method7243(BlockPos var1) {
-      this.method7011(var1).markBlockForPostprocessing(var1);
+      this.getChunk(var1).markBlockForPostprocessing(var1);
    }
 
    @Override

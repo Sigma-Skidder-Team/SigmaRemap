@@ -29,7 +29,7 @@ public class Class5130 implements Class5119 {
 
       for (int var15 = -32; var15 <= 32; var15 += 16) {
          for (int var16 = -32; var16 <= 32; var16 += 16) {
-            IChunk var17 = var11.method7011(var12.method8336(var15, 0, var16));
+            IChunk var17 = var11.getChunk(var12.method8336(var15, 0, var16));
 
             for (Entry var19 : var17.getHeightmaps()) {
                Heightmap.Type var20 = (Heightmap.Type)var19.getKey();

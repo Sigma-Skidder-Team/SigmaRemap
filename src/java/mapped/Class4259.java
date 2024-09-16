@@ -13,9 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Class4259 extends Class4247 {
-   private List<ButtonPanel> field20645 = new ArrayList<ButtonPanel>();
-   public int field20646;
-   public Class4266 field20647;
+    public Class4266 field20647;
    public ChunkPos chunkPos;
    public int field20649 = 8;
    public float field20650 = 0.0F;
@@ -27,8 +25,8 @@ public class Class4259 extends Class4247 {
    public float field20656;
    public float field20657;
    public ChunkPos field20658;
-   private final List<Class8041> field20659 = new ArrayList<Class8041>();
-   private final List<Class9693> field20660 = new ArrayList<Class9693>();
+   private final List<Class8041> field20659 = new ArrayList<>();
+   private final List<Class9693> field20660 = new ArrayList<>();
 
    public Class4259(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
@@ -37,7 +35,7 @@ public class Class4259 extends Class4247 {
       int var11 = var5 - var10 - 10;
       int var12 = var6 - var9 - 10;
       this.addToList(this.field20647 = new Class4266(this, "zoom", var11, var12, var10, var9));
-      this.chunkPos = Minecraft.getInstance().world.method7011(Minecraft.getInstance().player.getPosition()).getPos();
+      this.chunkPos = Minecraft.getInstance().world.getChunk(Minecraft.getInstance().player.getPosition()).getPos();
       this.method13300(false);
    }
 

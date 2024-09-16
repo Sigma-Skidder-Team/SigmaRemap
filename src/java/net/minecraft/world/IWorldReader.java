@@ -97,7 +97,7 @@ public interface IWorldReader extends IBlockDisplayReader, ICollisionReader, Bio
       return this.getBlockState(var1).method23407(this, var1, var2);
    }
 
-   default IChunk method7011(BlockPos var1) {
+   default IChunk getChunk(BlockPos var1) {
       return this.getChunk(var1.getX() >> 4, var1.getZ() >> 4);
    }
 
