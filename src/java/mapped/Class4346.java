@@ -32,15 +32,15 @@ public class Class4346 extends Class4339 {
 
    public void method13571(Class9159 var1) {
       boolean var4 = this.field21241 == var1.field42046 && this.field21237 != 0;
-      boolean var5 = this.method13513() + this.getHeight() >= this.getButtons().getHeight() - field21240;
+      boolean var5 = this.method13513() + this.getHeight() >= this.method13517().getHeight() - field21240;
       if (var4) {
          this.field21238 -= 7;
       }
 
-      int var6 = this.getButtons().getHeight() - this.getHeight();
-      this.getButtons()
+      int var6 = this.method13517().getHeight() - this.getHeight();
+      this.method13517()
          .addToList(
-            new Class4289(this.getButtons(), "message" + this.field21237, 0, this.field21238, this.getWidth(), var1.method34192() + field21240, var1)
+            new Class4289(this.method13517(), "message" + this.field21237, 0, this.field21238, this.getWidth(), var1.method34192() + field21240, var1)
          );
       this.field21238 = this.field21238 + var1.method34192();
       this.field21237++;

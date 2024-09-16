@@ -95,7 +95,7 @@ public class Class4236 extends Class4235 implements Class4238 {
             (float)(var8 + var6 / 2),
             (float)(var9 + var7 / 2),
             this.method13303(),
-            ColorUtils.applyAlpha(this.field20914.getTextColor(), var1),
+            ColorUtils.applyAlpha(this.field20914.method19409(), var1),
             this.field20914.method19411(),
             this.field20914.method19413()
          );

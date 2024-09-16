@@ -35,7 +35,7 @@ public class Class4340 extends Class4339 {
 
    public void method13519(String var1, Vector3i var2, int var3) {
       String var6 = "waypoint x" + var2.getX() + " z" + var2.getZ();
-      if (this.buttonList.method13221(var6) == null) {
+      if (this.field21204.method13221(var6) == null) {
          Class4355 var7 = new Class4355(
             this, var6, this.x, this.method13241().get(0).method13241().size() * this.field21210, this.width, this.field21210, var1, var2, var3
          );
@@ -51,7 +51,7 @@ public class Class4340 extends Class4339 {
                Client.getInstance()
                   .getWaypointsManager()
                   .method29993(new Class8351(var7.field21291, var7.field21292.getX(), var7.field21292.getZ(), var7.field21293));
-               this.buttonList.method13237(var7);
+               this.field21204.method13237(var7);
                this.field21209.remove(var3x);
             }
          );

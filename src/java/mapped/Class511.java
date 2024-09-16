@@ -28,7 +28,7 @@ public class Class511 implements Runnable {
                   MusicPlayer.method13206(this.field2427),
                   this.field2424.field44776,
                   0,
-                  MusicPlayer.method13206(this.field2427).getButtons().method13241().size() * MusicPlayer.method13207(this.field2427),
+                  MusicPlayer.method13206(this.field2427).method13517().method13241().size() * MusicPlayer.method13207(this.field2427),
                   MusicPlayer.method13208(this.field2427),
                   MusicPlayer.method13207(this.field2427),
                   this.field2425,

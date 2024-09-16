@@ -30,7 +30,7 @@ public class Class4292 extends Class4278 implements Class4293 {
    public void method13079(float var1) {
       super.method13079(var1);
       if (this.iconPanel != null && this.iconPanel.method13228(this.method13309(), this.method13310(), false) || ((Class4339)this.iconPanel).field21208) {
-         float var4 = (float)((Class4339)this.getIconPanel()).getButtons().getHeight();
+         float var4 = (float)((Class4339)this.getIconPanel()).method13517().getHeight();
          float var5 = (float)this.getIconPanel().getHeight();
          float var6 = (float)this.getHeight();
          if (var4 == 0.0F) {
@@ -64,7 +64,7 @@ public class Class4292 extends Class4278 implements Class4293 {
                )
          );
       this.field20794 = Math.min(Math.max(0.0F, this.field20794), 1.0F);
-      float var5 = (float)((Class4339)this.getIconPanel()).getButtons().getHeight();
+      float var5 = (float)((Class4339)this.getIconPanel()).method13517().getHeight();
       float var6 = (float)this.getIconPanel().getHeight();
       float var7 = (float)this.getHeight();
       float var8 = var6 / var5;
@@ -108,10 +108,10 @@ public class Class4292 extends Class4278 implements Class4293 {
             int var6 = var2 - this.method13272();
             if (var6 <= this.field20796.getY() + this.field20796.getHeight()) {
                if (var6 < this.field20796.getY()) {
-                  this.field20793 = this.field20793 - (int)((float)((Class4339)this.iconPanel).getButtons().getHeight() / 4.0F);
+                  this.field20793 = this.field20793 - (int)((float)((Class4339)this.iconPanel).method13517().getHeight() / 4.0F);
                }
             } else {
-               this.field20793 = this.field20793 + (int)((float)((Class4339)this.iconPanel).getButtons().getHeight() / 4.0F);
+               this.field20793 = this.field20793 + (int)((float)((Class4339)this.iconPanel).method13517().getHeight() / 4.0F);
             }
          }
 

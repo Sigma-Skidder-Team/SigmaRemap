@@ -41,7 +41,7 @@ public class Class4244 extends ButtonPanel {
                (float)(this.getX() + this.getWidth() / 2),
                (float)(this.getY() + this.getHeight() / 2),
                this.method13303(),
-               ColorUtils.applyAlpha(this.field20914.getTextColor(), var1),
+               ColorUtils.applyAlpha(this.field20914.method19409(), var1),
                this.field20914.method19411(),
                this.field20914.method19413()
             );

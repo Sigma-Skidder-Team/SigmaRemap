@@ -350,7 +350,7 @@ public class Class4281 extends Class4278 {
             (float)(this.y + this.height / 2 - this.font.method23941(var6) / 2 + 2),
             var9 + (float)(var6.isEmpty() ? 1 : 0),
             (float)(this.y + this.height / 2 + this.font.method23941(var6) / 2 - 1),
-            ColorUtils.applyAlpha(this.field20914.getTextColor(), !var5 ? 0.1F * var1 : 0.8F)
+            ColorUtils.applyAlpha(this.field20914.method19409(), !var5 ? 0.1F * var1 : 0.8F)
          );
          float var10 = (float)(var7 + this.font.method23942(var6.substring(0, this.field20749))) + this.field20747;
          if (var10 < (float)var7) {
@@ -382,7 +382,7 @@ public class Class4281 extends Class4278 {
          (float)var7 + this.field20746,
          (float)(this.y + this.height / 2),
          var6.length() == 0 && (!this.field20905 || var6.length() <= 0) ? this.field20743 : var6,
-         ColorUtils.applyAlpha(this.field20914.getTextColor(), (this.field20744 / 2.0F + 0.4F) * var1 * (this.field20905 && var6.length() > 0 ? 1.0F : 0.5F)),
+         ColorUtils.applyAlpha(this.field20914.method19409(), (this.field20744 / 2.0F + 0.4F) * var1 * (this.field20905 && var6.length() > 0 ? 1.0F : 0.5F)),
          var12,
          var13
       );

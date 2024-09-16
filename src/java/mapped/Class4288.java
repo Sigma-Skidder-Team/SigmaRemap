@@ -20,7 +20,7 @@ public class Class4288 extends Class4278 {
    @Override
    public void method13028(int var1, int var2) {
       super.method13028(var1, var2);
-      float var5 = (float)this.field20780.getButtons().getHeight();
+      float var5 = (float)this.field20780.method13517().getHeight();
       float var6 = (float)this.iconPanel.getIconPanel().getHeight();
       float var7 = (float)this.iconPanel.getHeight();
       float var8 = var6 / var5;
@@ -37,8 +37,8 @@ public class Class4288 extends Class4278 {
       this.setHeight((int)var9);
       if (!this.field20877 && this.getHeight() != this.iconPanel.getHeight()) {
          if (this.field20781.field20793 >= 0) {
-            if (this.field20781.field20793 + this.iconPanel.getIconPanel().getHeight() > this.field20780.getButtons().getHeight()) {
-               this.field20781.field20793 = this.field20780.getButtons().getHeight() - this.iconPanel.getIconPanel().getHeight();
+            if (this.field20781.field20793 + this.iconPanel.getIconPanel().getHeight() > this.field20780.method13517().getHeight()) {
+               this.field20781.field20793 = this.field20780.method13517().getHeight() - this.iconPanel.getIconPanel().getHeight();
             }
          } else {
             this.field20781.field20793 = 0;
@@ -51,10 +51,10 @@ public class Class4288 extends Class4278 {
          this.setY((int)var15);
       } else if (this.method13216()) {
          float var12 = (float)this.getY() / (float)this.iconPanel.getHeight();
-         this.field20781.field20793 = (int)(var12 * (float)this.field20780.getButtons().getHeight());
+         this.field20781.field20793 = (int)(var12 * (float)this.field20780.method13517().getHeight());
          if (this.field20781.field20793 >= 0) {
-            if (this.field20781.field20793 + this.iconPanel.getIconPanel().getHeight() > this.field20780.getButtons().getHeight()) {
-               this.field20781.field20793 = this.field20780.getButtons().getHeight() - this.iconPanel.getIconPanel().getHeight();
+            if (this.field20781.field20793 + this.iconPanel.getIconPanel().getHeight() > this.field20780.method13517().getHeight()) {
+               this.field20781.field20793 = this.field20780.method13517().getHeight() - this.iconPanel.getIconPanel().getHeight();
             }
          } else {
             this.field20781.field20793 = 0;

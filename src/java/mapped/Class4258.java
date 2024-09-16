@@ -71,7 +71,7 @@ public class Class4258 extends Class4247 {
             }
          }
 
-         this.field20642.getButtons().method13246(new Class7260(0));
+         this.field20642.method13517().method13246(new Class7260(0));
       });
    }
 
