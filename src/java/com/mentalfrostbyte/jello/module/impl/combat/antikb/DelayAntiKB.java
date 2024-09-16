@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.*;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CUseEntityPacket;
 import net.minecraft.network.play.server.SExplosionPacket;

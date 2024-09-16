@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.render.chestesp.BoxChestESP;
 import com.mentalfrostbyte.jello.module.impl.render.chestesp.OutlineChestESP;
+import com.mentalfrostbyte.jello.settings.ColorSetting;
 import mapped.*;
 
 public class ChestESP extends ModuleWithModuleSettings {

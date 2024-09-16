@@ -7,6 +7,8 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
+import com.mentalfrostbyte.jello.settings.ModeSetting;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;

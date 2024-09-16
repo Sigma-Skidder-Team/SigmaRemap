@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.ItemSword;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
-import mapped.ModeSetting;
+import com.mentalfrostbyte.jello.settings.ModeSetting;
 
 public class NoSlow extends Module {
     private boolean field23540;

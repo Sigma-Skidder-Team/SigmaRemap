@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.BooleanSetting;
 import net.minecraft.network.play.server.SExplosionPacket;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
-import mapped.NumberSetting;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 
 public class BasicAntiKB extends Module {
    public BasicAntiKB() {

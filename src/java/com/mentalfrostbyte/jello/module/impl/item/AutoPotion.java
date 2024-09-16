@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 import mapped.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CPlayerPacket;

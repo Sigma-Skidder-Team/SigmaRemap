@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.MovementUtils;
-import mapped.NumberSetting;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 
 public class VanillaSpeed extends Module {
     public VanillaSpeed() {

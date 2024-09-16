@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.misc;
 
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.InputSetting;
+import com.mentalfrostbyte.jello.settings.InputSetting;
 
 public class FakeForge extends Module {
    public FakeForge() {

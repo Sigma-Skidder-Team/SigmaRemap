@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.Event;
 import com.mentalfrostbyte.jello.event.MethodWrapper;
 import com.mentalfrostbyte.jello.event.priority.Priority;
 import com.mentalfrostbyte.jello.module.Module;
-import com.mentalfrostbyte.jello.unmapped.Setting;
+import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import mapped.Class6715;
 import mapped.Handler;

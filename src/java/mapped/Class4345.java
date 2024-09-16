@@ -4,10 +4,9 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
+import com.mentalfrostbyte.jello.settings.*;
 import com.mentalfrostbyte.jello.unmapped.SettingType;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.unmapped.Setting;
-import com.mentalfrostbyte.jello.unmapped.TextBoxSetting;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 

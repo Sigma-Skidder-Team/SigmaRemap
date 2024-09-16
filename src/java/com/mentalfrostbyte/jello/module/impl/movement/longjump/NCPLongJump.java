@@ -10,6 +10,8 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.Step;
 import com.mentalfrostbyte.jello.module.impl.movement.LongJump;
 import com.mentalfrostbyte.jello.module.impl.player.NoFall;
+import com.mentalfrostbyte.jello.settings.ModeSetting;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;

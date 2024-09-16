@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.movement.blockfly.*;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
+import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.ColorUtils;

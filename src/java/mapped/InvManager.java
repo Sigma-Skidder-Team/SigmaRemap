@@ -9,6 +9,8 @@ import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.item.AutoArmor;
 import com.mentalfrostbyte.jello.module.impl.item.AutoMLG;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
+import com.mentalfrostbyte.jello.settings.ModeSetting;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.inventory.container.ClickType;

@@ -7,6 +7,8 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.combat.Teams;
+import com.mentalfrostbyte.jello.settings.ModeSetting;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;

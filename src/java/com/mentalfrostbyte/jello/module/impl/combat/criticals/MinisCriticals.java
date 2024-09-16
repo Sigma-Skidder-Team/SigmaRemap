@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import mapped.BooleanSetting;
-import mapped.ModeSetting;
+import com.mentalfrostbyte.jello.settings.ModeSetting;
 import net.minecraft.network.play.client.CPlayerPacket;
 
 public class MinisCriticals extends Module {

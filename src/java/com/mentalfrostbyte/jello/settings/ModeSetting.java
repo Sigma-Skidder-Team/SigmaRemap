@@ -1,9 +1,9 @@
-package mapped;
+package com.mentalfrostbyte.jello.settings;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.SettingType;
-import com.mentalfrostbyte.jello.unmapped.Setting;
+import mapped.Class8000;
 import net.minecraft.client.Minecraft;
 import totalcross.json.JSONObject;
 

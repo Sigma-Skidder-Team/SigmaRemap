@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
 import mapped.MovementUtils;
-import mapped.NumberSetting;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 
 public class GommeAntiKB extends Module {
     private int field23610;

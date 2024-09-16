@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.misc;
 
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.ModeSetting;
+import com.mentalfrostbyte.jello.settings.ModeSetting;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Random;

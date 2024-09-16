@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.unmapped.Setting;
+import com.mentalfrostbyte.jello.settings.Setting;
 
 public class Class4248 extends Class4247 {
    private static String[] field20604;

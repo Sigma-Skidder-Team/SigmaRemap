@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.SafeWalkEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.NumberSetting;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 
 public class VanillaStep extends Module {
     public VanillaStep() {

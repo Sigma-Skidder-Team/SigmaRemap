@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import mapped.MovementUtils;
-import mapped.NumberSetting;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 import net.minecraft.entity.Entity;
 
 public class BoatFly extends PremiumModule {

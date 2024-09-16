@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
+import com.mentalfrostbyte.jello.settings.ModeSetting;
 import mapped.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;

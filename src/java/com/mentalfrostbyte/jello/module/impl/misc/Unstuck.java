@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.notification.Notification;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.MovementUtils;
-import mapped.NumberSetting;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 
 public class Unstuck extends Module {
     private int field23574;

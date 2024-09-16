@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.Aimbot;
 import mapped.RotationHelper;
-import mapped.NumberSetting;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 import net.minecraft.entity.Entity;
 
 public class BasicAimbot extends Module {

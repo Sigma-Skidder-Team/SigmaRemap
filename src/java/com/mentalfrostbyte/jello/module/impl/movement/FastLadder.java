@@ -6,8 +6,8 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import mapped.ViaVerList;
-import mapped.ModeSetting;
-import mapped.NumberSetting;
+import com.mentalfrostbyte.jello.settings.ModeSetting;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 
 public class FastLadder extends Module {
     public FastLadder() {

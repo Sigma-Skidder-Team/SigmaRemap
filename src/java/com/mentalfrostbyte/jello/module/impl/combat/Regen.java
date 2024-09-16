@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import mapped.BooleanSetting;
 import net.minecraft.network.play.client.CPlayerPacket;
-import mapped.NumberSetting;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 
 public class Regen extends Module {
    public Regen() {

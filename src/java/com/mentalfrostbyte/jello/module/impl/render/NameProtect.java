@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TextReplaceEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.settings.InputSetting;
 import mapped.*;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.*;

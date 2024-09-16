@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.world.Disabler;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 import mapped.*;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.client.CClickWindowPacket;

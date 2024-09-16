@@ -22,7 +22,7 @@ import com.mentalfrostbyte.jello.module.impl.render.classic.*;
 import com.mentalfrostbyte.jello.module.impl.render.jello.*;
 import com.mentalfrostbyte.jello.module.impl.render.jello.ESP;
 import com.mentalfrostbyte.jello.module.impl.world.*;
-import com.mentalfrostbyte.jello.unmapped.Setting;
+import com.mentalfrostbyte.jello.settings.Setting;
 import mapped.*;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONException2;
@@ -63,6 +63,7 @@ public class ModuleManager {
 
     public void register(ClientMode var1) {
         this.createModules();
+        this.register(new Test());
         this.register(new BlockFly());
         this.register(new Fly());
         this.register(new Speed());

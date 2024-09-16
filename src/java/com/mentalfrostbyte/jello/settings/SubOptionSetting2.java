@@ -1,22 +1,22 @@
-package mapped;
+package com.mentalfrostbyte.jello.settings;
 
 import com.mentalfrostbyte.jello.unmapped.SettingType;
-import com.mentalfrostbyte.jello.unmapped.Setting;
+import mapped.Class8000;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class Class6006 extends Setting<Boolean> {
+public abstract class SubOptionSetting2 extends Setting<Boolean> {
    public List<Setting> field26189;
 
-   public Class6006(String var1, String var2, SettingType var3, boolean var4, List<Setting> var5) {
+   public SubOptionSetting2(String var1, String var2, SettingType var3, boolean var4, List<Setting> var5) {
       super(var1, var2, var3, var4);
       this.field26189 = var5;
    }
 
-   public Class6006(String var1, String var2, SettingType var3, boolean var4, Setting... var5) {
+   public SubOptionSetting2(String var1, String var2, SettingType var3, boolean var4, Setting... var5) {
       this(var1, var2, var3, var4, Arrays.<Setting>asList(var5));
    }
 

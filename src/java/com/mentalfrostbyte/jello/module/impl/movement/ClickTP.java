@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.movement.clicktp.BasicClickTP;
 import com.mentalfrostbyte.jello.module.impl.movement.clicktp.SpartanClickTP;
+import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.client.Minecraft;

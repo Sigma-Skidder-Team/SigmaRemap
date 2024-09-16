@@ -1,5 +1,6 @@
-package com.mentalfrostbyte.jello.unmapped;
+package com.mentalfrostbyte.jello.settings;
 
+import com.mentalfrostbyte.jello.unmapped.SettingType;
 import mapped.Class8000;
 import totalcross.json.JSONObject;
 

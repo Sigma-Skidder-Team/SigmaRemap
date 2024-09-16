@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.SettingType;
-import com.mentalfrostbyte.jello.unmapped.Setting;
+import com.mentalfrostbyte.jello.settings.Setting;
 import totalcross.json.JSONObject;
 
 public class BooleanSetting extends Setting<Boolean> {

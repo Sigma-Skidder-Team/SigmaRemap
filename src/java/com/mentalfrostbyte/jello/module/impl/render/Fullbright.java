@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import net.minecraft.world.chunk.IChunk;
-import mapped.ModeSetting;
+import com.mentalfrostbyte.jello.settings.ModeSetting;
 import net.minecraft.util.math.BlockPos;
 
 public class Fullbright extends Module {
