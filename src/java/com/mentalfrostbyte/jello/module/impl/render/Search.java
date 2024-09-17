@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.settings.BooleanSetting2;
+import com.mentalfrostbyte.jello.settings.BooleanListSetting;
 import com.mentalfrostbyte.jello.settings.ColorSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.ColorUtils;
@@ -34,11 +34,11 @@ public class Search extends Module {
         BooleanSetting var4;
         this.registerSetting(var4 = new BooleanSetting("Holes", "Shows 1x1 explosion protection holes", false));
         this.registerSetting(new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.getColor, true));
-        BooleanSetting2 var5;
-        this.registerSetting(var5 = new BooleanSetting2("Blocks", "Blocks to render", true));
-        var5.method18616(var1 -> this.field23499.clear());
-        var3.method18616(var1 -> this.field23499.clear());
-        var4.method18616(var1 -> this.field23499.clear());
+        BooleanListSetting var5;
+        this.registerSetting(var5 = new BooleanListSetting("Blocks", "Blocks to render", true));
+        var5.addObserver(var1 -> this.field23499.clear());
+        var3.addObserver(var1 -> this.field23499.clear());
+        var4.addObserver(var1 -> this.field23499.clear());
     }
 
     @EventTarget

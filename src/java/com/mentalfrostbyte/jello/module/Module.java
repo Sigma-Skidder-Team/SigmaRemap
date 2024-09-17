@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.module.impl.gui.classic.ActiveMods;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
 import com.mentalfrostbyte.jello.settings.SpeedRampSetting;
 import com.mentalfrostbyte.jello.settings.Setting;
+import com.mentalfrostbyte.jello.settings.SubOptionSetting2;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.SoundEvents;
@@ -57,7 +58,7 @@ public abstract class Module {
 
     public float[] method15975(String settingName) {
         Setting settingNameValue = (Setting) this.getSettingValueBySettingName(settingName);
-        return !(settingNameValue instanceof SpeedRampSetting) ? null : ((SpeedRampSetting) settingNameValue).method18613();
+        return !(settingNameValue instanceof SpeedRampSetting) ? null : ((SpeedRampSetting) settingNameValue).getValues();
     }
 
     public int parseSettingValueToIntBySettingName(String settingName) {
@@ -86,30 +87,30 @@ public abstract class Module {
 
     public List<Setting> method15979(String var1) {
         try {
-            return ((Class6008) this.settingMap.get(var1)).method18635();
+            return ((SubOptionSetting2.CustomSubOptionSetting) this.settingMap.get(var1)).getSubSettings();
         } catch (Exception var5) {
             return null;
         }
     }
 
     public void method15980(String var1, Object var2) {
-        this.settingMap.get(var1).method18620(var2);
+        this.settingMap.get(var1).setCurrentValue(var2);
     }
 
     public void method15981(String var1, boolean var2) {
-        this.settingMap.get(var1).method18620(var2);
+        this.settingMap.get(var1).setCurrentValue(var2);
     }
 
     public void method15982(String var1, int var2) {
-        this.settingMap.get(var1).method18620(var2);
+        this.settingMap.get(var1).setCurrentValue(var2);
     }
 
     public void method15983(String var1, boolean var2) {
-        this.settingMap.get(var1).method18620(var2);
+        this.settingMap.get(var1).setCurrentValue(var2);
     }
 
     public void method15984(String var1, String var2) {
-        this.settingMap.get(var1).method18620(var2);
+        this.settingMap.get(var1).setCurrentValue(var2);
     }
 
     public void method15985() {
@@ -121,12 +122,12 @@ public abstract class Module {
         this.field23391 = true;
 
         for (Setting var4 : this.settingMap.values()) {
-            var4.method18615();
+            var4.resetToDefault();
         }
     }
 
     public JSONObject method15986(JSONObject var1) {
-        JSONArray var4 = Class8000.method27332(var1, "options");
+        JSONArray var4 = CJsonUtils.getJSONArrayOrNull(var1, "options");
 
         this.enabled = var1.method21763("enabled");
 
@@ -135,12 +136,12 @@ public abstract class Module {
         if (var4 != null) {
             for (int var5 = 0; var5 < var4.length(); var5++) {
                 JSONObject  var6 = var4.getJSONObject(var5);
-                String   var7 = Class8000.method27330(var6, "name", null);
+                String   var7 = CJsonUtils.getStringOrDefault(var6, "name", null);
 
                 for (Setting var9 : this.settingMap.values()) {
                     if (var9.getName().equals(var7)) {
                         try {
-                            var9.method18610(var6);
+                            var9.loadCurrentValueFromJSONObject(var6);
                         } catch (JSONException2 var11) {
                             Client.getInstance()
                                     .getLogger()

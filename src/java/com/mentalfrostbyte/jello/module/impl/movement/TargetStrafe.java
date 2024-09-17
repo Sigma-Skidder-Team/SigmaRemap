@@ -26,7 +26,7 @@ public class TargetStrafe extends Module {
         this.registerSetting(new NumberSetting<Float>("Radius", "Radius of the circle", 2.0F, Float.class, 1.0F, 6.0F, 0.01F));
         this.registerSetting(new BooleanSetting("Only speed", "Use target strafe only when speed is enabled", true));
         this.registerSetting(
-                new ModeSetting("AntiVoid", "The way you will avoid the void", 0, "Smart", "Halt", "Command", "None").method18616(var1 -> this.field23496 = false)
+                new ModeSetting("AntiVoid", "The way you will avoid the void", 0, "Smart", "Halt", "Command", "None").addObserver(var1 -> this.field23496 = false)
         );
     }
 

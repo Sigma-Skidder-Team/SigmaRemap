@@ -1,43 +1,88 @@
 package com.mentalfrostbyte.jello.settings;
 
 import com.mentalfrostbyte.jello.unmapped.SettingType;
-import mapped.Class8000;
-import mapped.Class9318;
+import mapped.CJsonUtils;
+import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
-public class SpeedRampSetting extends Setting<Class9318> {
-    public SpeedRampSetting(String var1, String var2, float var3, float var4, float var5, float var6) {
-        super(var1, var2, SettingType.SPEEDRAMP, new Class9318(var3, var4, var5, var6));
+public class SpeedRampSetting extends Setting<SpeedRampSetting.SpeedRamp> {
+    public SpeedRampSetting(String name, String description, float start, float middle, float end, float max) {
+        super(name, description, SettingType.SPEEDRAMP, new SpeedRamp(start, middle, end, max));
     }
 
     @Override
-    public JSONObject method18610(JSONObject var1) {
-        this.currentValue = new Class9318(Class8000.method27332(var1, "value"));
-        return var1;
+    public JSONObject loadCurrentValueFromJSONObject(JSONObject jsonObject) {
+        this.currentValue = new SpeedRamp(CJsonUtils.getJSONArrayOrNull(jsonObject, "value"));
+        return jsonObject;
     }
 
     @Override
     public JSONObject addDataToJSONObject(JSONObject jsonObject) {
         jsonObject.put("name", this.getName());
-        jsonObject.put("value", this.getCurrentValue().method35208());
+        jsonObject.put("value", this.getCurrentValue().toJSONArray());
         return jsonObject;
     }
 
-    public void method18612(float var1, float var2, float var3, float var4) {
-        this.method18614(var1, var2, var3, var4, true);
+    public void updateValues(float start, float middle, float end, float max) {
+        this.setValues(start, middle, end, max, true);
     }
 
-    public float[] method18613() {
-        Class9318 var3 = this.getCurrentValue();
-        return new float[]{var3.field43257, var3.field43258, var3.field43259, var3.field43260};
+    public float[] getValues() {
+        SpeedRamp ramp = this.getCurrentValue();
+        return new float[]{ramp.startValue, ramp.middleValue, ramp.endValue, ramp.maxValue};
     }
 
-    public void method18614(float var1, float var2, float var3, float var4, boolean var5) {
-        Class9318 var8 = new Class9318(var1, var2, var3, var4);
-        if (!this.currentValue.equals(var8)) {
-            this.currentValue = var8;
-            if (var5) {
-                this.method18617();
+    public void setValues(float start, float middle, float end, float max, boolean notify) {
+        SpeedRamp newRamp = new SpeedRamp(start, middle, end, max);
+        if (!this.currentValue.equals(newRamp)) {
+            this.currentValue = newRamp;
+            if (notify) {
+                this.notifyObservers();
+            }
+        }
+    }
+
+    public static class SpeedRamp {
+        public float startValue;
+        public float middleValue;
+        public float endValue;
+        public float maxValue;
+
+        public SpeedRamp(float start, float middle, float end, float max) {
+            this.startValue = start;
+            this.middleValue = middle;
+            this.endValue = end;
+            this.maxValue = max;
+        }
+
+        public SpeedRamp(JSONArray jsonArray) {
+            this.startValue = Float.parseFloat(jsonArray.getString(0));
+            this.middleValue = Float.parseFloat(jsonArray.getString(1));
+            this.endValue = Float.parseFloat(jsonArray.getString(2));
+            this.maxValue = Float.parseFloat(jsonArray.getString(3));
+        }
+
+        public JSONArray toJSONArray() {
+            JSONArray jsonArray = new JSONArray();
+            jsonArray.method9165(0, Float.toString(this.startValue));
+            jsonArray.method9165(1, Float.toString(this.middleValue));
+            jsonArray.method9165(2, Float.toString(this.endValue));
+            jsonArray.method9165(3, Float.toString(this.maxValue));
+            return jsonArray;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (obj == this) {
+                return true;
+            } else if (obj instanceof SpeedRamp) {
+                SpeedRamp other = (SpeedRamp) obj;
+                return this.startValue == other.startValue
+                        && this.middleValue == other.middleValue
+                        && this.endValue == other.endValue
+                        && this.maxValue == other.maxValue;
+            } else {
+                return false;
             }
         }
     }

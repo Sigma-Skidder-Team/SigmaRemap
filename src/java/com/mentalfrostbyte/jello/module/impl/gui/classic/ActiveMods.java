@@ -159,10 +159,10 @@ public class ActiveMods extends Module {
                     if (var6 == null) {
                         var6 = var4.getSettingMap().get("Mode");
                         if (var6 != null) {
-                            var6.method18616(var1 -> this.method16853());
+                            var6.addObserver(var1 -> this.method16853());
                         }
                     } else {
-                        var6.method18616(var1 -> this.method16853());
+                        var6.addObserver(var1 -> this.method16853());
                     }
                 }
             }

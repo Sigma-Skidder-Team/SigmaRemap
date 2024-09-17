@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.settings;
 
 import com.mentalfrostbyte.jello.unmapped.SettingType;
-import mapped.Class8000;
+import mapped.CJsonUtils;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
@@ -9,52 +9,58 @@ import java.util.Arrays;
 import java.util.List;
 
 public abstract class SubOptionSetting2 extends Setting<Boolean> {
-   public List<Setting> field26189;
+   public List<Setting> subSettings;
 
-   public SubOptionSetting2(String var1, String var2, SettingType var3, boolean var4, List<Setting> var5) {
-      super(var1, var2, var3, var4);
-      this.field26189 = var5;
+   public SubOptionSetting2(String name, String description, SettingType type, boolean defaultValue, List<Setting> subSettings) {
+      super(name, description, type, defaultValue);
+      this.subSettings = subSettings;
    }
 
-   public SubOptionSetting2(String var1, String var2, SettingType var3, boolean var4, Setting... var5) {
-      this(var1, var2, var3, var4, Arrays.<Setting>asList(var5));
+   public SubOptionSetting2(String name, String description, SettingType type, boolean defaultValue, Setting... subSettings) {
+      this(name, description, type, defaultValue, Arrays.asList(subSettings));
    }
 
    @Override
-   public JSONObject method18610(JSONObject var1) {
-      JSONArray var4 = Class8000.method27332(var1, this.getName());
-      if (var4 != null) {
-         for (int var5 = 0; var5 < var4.length(); var5++) {
-            JSONObject var6 = var4.getJSONObject(var5);
-            String var7 = Class8000.method27330(var1, "name", null);
+   public JSONObject loadCurrentValueFromJSONObject(JSONObject jsonObject) {
+      JSONArray array = CJsonUtils.getJSONArrayOrNull(jsonObject, this.getName());
+      if (array != null) {
+         for (int i = 0; i < array.length(); i++) {
+            JSONObject settingObject = array.getJSONObject(i);
+            String settingName = CJsonUtils.getStringOrDefault(settingObject, "name", null);
 
-            for (Setting var9 : this.method18635()) {
-               if (var9.getName().equals(var7)) {
-                  var9.method18610(var6);
+            for (Setting setting : this.getSubSettings()) {
+               if (setting.getName().equals(settingName)) {
+                  setting.loadCurrentValueFromJSONObject(settingObject);
                   break;
                }
             }
          }
       }
 
-      this.currentValue = Class8000.method27324(var1, "value", this.method18624());
-      return var1;
+      this.currentValue = CJsonUtils.getBooleanOrDefault(jsonObject, "value", this.getDefaultValue());
+      return jsonObject;
    }
 
    @Override
    public JSONObject addDataToJSONObject(JSONObject jsonObject) {
-      JSONArray var4 = new JSONArray();
+      JSONArray array = new JSONArray();
 
-      for (Setting var6 : this.method18635()) {
-         var4.put(var6.addDataToJSONObject(new JSONObject()));
+      for (Setting setting : this.getSubSettings()) {
+         array.put(setting.addDataToJSONObject(new JSONObject()));
       }
 
-      jsonObject.put("children", var4);
+      jsonObject.put("children", array);
       jsonObject.put("name", this.getName());
       return super.addDataToJSONObject(jsonObject);
    }
 
-   public List<Setting> method18635() {
-      return this.field26189;
+   public List<Setting> getSubSettings() {
+      return this.subSettings;
+   }
+
+   public static class CustomSubOptionSetting extends SubOptionSetting2 {
+      public CustomSubOptionSetting(String name, String description, boolean defaultValue, List<Setting> subSettings) {
+         super(name, description, SettingType.UNUSUED, defaultValue, subSettings);
+      }
    }
 }

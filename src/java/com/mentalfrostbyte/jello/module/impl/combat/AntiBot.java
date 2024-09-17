@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.settings.ModeSetting;
 public class AntiBot extends Module {
     public AntiBot() {
         super(ModuleCategory.COMBAT, "AntiBot", "Avoid the client to focus bots.");
-        this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Advanced", "Hypixel").method18616(var1 -> this.setup()));
+        this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Advanced", "Hypixel").addObserver(var1 -> this.setup()));
     }
 
     @Override

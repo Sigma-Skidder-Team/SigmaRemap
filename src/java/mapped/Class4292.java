@@ -130,7 +130,7 @@ public class Class4292 extends Class4278 implements Class4293 {
    @Override
    public void method13161(JSONObject var1) {
       super.method13161(var1);
-      this.field20793 = Class8000.method27326(var1, "offset", this.field20793);
+      this.field20793 = CJsonUtils.getIntOrDefault(var1, "offset", this.field20793);
    }
 
    @Override

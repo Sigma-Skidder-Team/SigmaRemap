@@ -30,16 +30,16 @@ public class Class4345 extends Class4339 {
       Class4248 var9 = new Class4248(var1, var2.getName() + "desc", var3 + 195, var4 + 4, 330, 18, var2);
       var1.addToList(var8);
       var1.addToList(var9);
-      switch (Class9820.field45882[var2.method18618().ordinal()]) {
+      switch (Class9820.field45882[var2.getSettingType().ordinal()]) {
          case 1:
             Class4262 var26 = new Class4262(var1, var2.getName() + "checkbox", var3 + 135, var4 + 4, 40, 18);
             var26.method13094((Boolean)var2.getCurrentValue(), false);
-            var2.method18616(var1x -> {
+            var2.addObserver(var1x -> {
                if (var26.method13092() != (Boolean)var1x.getCurrentValue()) {
                   var26.method13094((Boolean)var1x.getCurrentValue(), false);
                }
             });
-            var26.method13036(var1x -> var2.method18620(((Class4262)var1x).method13092()));
+            var26.method13036(var1x -> var2.setCurrentValue(((Class4262)var1x).method13092()));
             var1.addToList(var26);
             var4 += 18 + var5;
             break;
@@ -51,10 +51,10 @@ public class Class4345 extends Class4339 {
             var13.method13304(Float.toString((Float)var2.getCurrentValue()));
             var8.method13304(var2.getName() + ": " + Float.toString((Float)var2.getCurrentValue()));
             var13.method13699(Class4277.method13134(var25.getMin(), var25.getMax(), (Float)var25.getCurrentValue()), false);
-            int var14 = var25.method18636();
-            var25.method18616(
+            int var14 = var25.getDecimalPlaces();
+            var25.addObserver(
                var5x -> {
-                  if (Class4370.method13694(var13.method13697(), var25.getMin(), var25.getMax(), var25.getIncrement(), var14)
+                  if (Class4370.method13694(var13.method13697(), var25.getMin(), var25.getMax(), var25.getStep(), var14)
                      != (Float)var5x.getCurrentValue()) {
                      var13.method13304(Float.toString((Float)var5x.getCurrentValue()));
                      var13.method13699(Class4370.method13693(var25.getMin(), var25.getMax(), (Float)var5x.getCurrentValue()), false);
@@ -64,10 +64,10 @@ public class Class4345 extends Class4339 {
             );
             var13.method13036(var5x -> {
                float var8x = ((Class4370)var5x).method13697();
-               float var9x = Class4370.method13694(var8x, var25.getMin(), var25.getMax(), var25.getIncrement(), var14);
+               float var9x = Class4370.method13694(var8x, var25.getMin(), var25.getMax(), var25.getStep(), var14);
                if (var9x != (Float)var2.getCurrentValue()) {
                   var13.method13304(Float.toString(var9x));
-                  var2.method18620(var9x);
+                  var2.setCurrentValue(var9x);
                }
 
                var8.method13304(var2.getName() + ": " + Float.toString((Float)var2.getCurrentValue()));
@@ -94,8 +94,8 @@ public class Class4345 extends Class4339 {
                )
             );
             var24.method13306(ResourceRegistry.JelloLightFont18);
-            var24.method13151(var1x -> var2.method18620(var1x.method13303()));
-            var2.method18616(var2x -> {
+            var24.method13151(var1x -> var2.setCurrentValue(var1x.method13303()));
+            var2.addObserver(var2x -> {
                if (var24.method13303() != ((InputSetting)var2).getCurrentValue()) {
                   var24.method13304(((InputSetting)var2).getCurrentValue());
                }
@@ -106,14 +106,14 @@ public class Class4345 extends Class4339 {
             int var15 = 80;
             int var19 = 20;
             Class4366 var23 = new Class4366(
-               var1, var2.getName() + "btn", var3, var4 + 27, 80, 20, ((ModeSetting)var2).method18634(), ((ModeSetting)var2).method18632()
+               var1, var2.getName() + "btn", var3, var4 + 27, 80, 20, ((ModeSetting)var2).getAvailableModes(), ((ModeSetting)var2).getModeIndex()
             );
-            var2.method18616(var2x -> {
-               if (var23.method13671() != ((ModeSetting)var2).method18632()) {
-                  var23.method13672(((ModeSetting)var2).method18632());
+            var2.addObserver(var2x -> {
+               if (var23.method13671() != ((ModeSetting)var2).getModeIndex()) {
+                  var23.method13672(((ModeSetting)var2).getModeIndex());
                }
             });
-            var23.method13036(var1x -> ((ModeSetting)var2).method18633(((Class4366)var1x).method13671()));
+            var23.method13036(var1x -> ((ModeSetting)var2).setModeByIndex(((Class4366)var1x).method13671()));
             var1.addToList(var23);
             var4 += 65;
             break;
@@ -121,14 +121,14 @@ public class Class4345 extends Class4339 {
             byte var10 = 123;
             byte var11 = 27;
             Class4377 var12 = new Class4377(
-               var1, var2.getName() + "btn", var1.getWidthA() - var5, var4 + 6, 123, 27, ((TextBoxSetting)var2).method18627(), (Integer)var2.getCurrentValue()
+               var1, var2.getName() + "btn", var1.getWidthA() - var5, var4 + 6, 123, 27, ((TextBoxSetting)var2).getOptions(), (Integer)var2.getCurrentValue()
             );
-            var2.method18616(var1x -> {
+            var2.addObserver(var1x -> {
                if (var12.method13720() != (Integer)var1x.getCurrentValue()) {
                   var12.method13722((Integer)var1x.getCurrentValue(), false);
                }
             });
-            var12.method13036(var1x -> var2.method18620(((Class4377)var1x).method13720()));
+            var12.method13036(var1x -> var2.setCurrentValue(((Class4377)var1x).method13720()));
             var12.method13261((var2x, var3x) -> var2x.setXA(var1.getWidthA() - 123 - var5));
             var1.addToList(var12);
             var4 += 27 + var5;
@@ -150,7 +150,7 @@ public class Class4345 extends Class4339 {
       int var6 = 35;
 
       for (Setting var8 : this.field21229.getSettingMap().values()) {
-         if (var8.method18618() != SettingType.SPEEDRAMP && var8.method18618() != SettingType.COLOR) {
+         if (var8.getSettingType() != SettingType.SPEEDRAMP && var8.getSettingType() != SettingType.COLOR) {
             var6 = this.method13555(this, var8, 30, var6, 20);
          }
       }

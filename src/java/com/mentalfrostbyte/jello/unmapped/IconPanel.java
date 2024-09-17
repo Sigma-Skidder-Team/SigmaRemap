@@ -515,22 +515,22 @@ public class IconPanel implements IGuiEventListener {
 
     public void method13161(JSONObject var1) {
         if (this.method13299()) {
-            this.xA = Class8000.method27326(var1, "x", this.xA);
-            this.yA = Class8000.method27326(var1, "y", this.yA);
+            this.xA = CJsonUtils.getIntOrDefault(var1, "x", this.xA);
+            this.yA = CJsonUtils.getIntOrDefault(var1, "y", this.yA);
             if (this.method13301()) {
-                this.widthA = Class8000.method27326(var1, "width", this.widthA);
-                this.heightA = Class8000.method27326(var1, "height", this.heightA);
+                this.widthA = CJsonUtils.getIntOrDefault(var1, "width", this.widthA);
+                this.heightA = CJsonUtils.getIntOrDefault(var1, "height", this.heightA);
             }
 
-            JSONArray var4 = Class8000.method27332(var1, "children");
+            JSONArray var4 = CJsonUtils.getJSONArrayOrNull(var1, "children");
             Iterator<String> var5 = var1.method21778().iterator();
             if (var4 != null) {
                 List<IconPanel> var6 = new ArrayList<>(this.field20893);
 
                 for (int var7 = 0; var7 < var4.length(); var7++) {
                     JSONObject var8 = var4.getJSONObject(var7);
-                    String var9 = Class8000.method27330(var8, "id", null);
-                    int var10 = Class8000.method27326(var8, "index", -1);
+                    String var9 = CJsonUtils.getStringOrDefault(var8, "id", null);
+                    int var10 = CJsonUtils.getIntOrDefault(var8, "index", -1);
 
                     for (IconPanel var12 : var6) {
                         if (var12.method13257().equals(var9)) {

@@ -32,7 +32,7 @@ public class Class4343 extends Class4339 implements Class4342 {
    }
 
    private int method13531(IconPanel var1, Setting var2, int var3, int var4, int var5) {
-      switch (Class8666.field39049[var2.method18618().ordinal()]) {
+      switch (Class8666.field39049[var2.getSettingType().ordinal()]) {
          case 1:
             byte var21 = 24;
             byte var29 = 24;
@@ -40,12 +40,12 @@ public class Class4343 extends Class4339 implements Class4342 {
             UICheckBox var45 = new UICheckBox(var1, var2.getName() + "checkbox", var1.getWidthA() - 24 - var5, var4 + 6, 24, 24);
             this.field21223.put(var37, var2);
             var45.method13705((Boolean)var2.getCurrentValue(), false);
-            var2.method18616(var1x -> {
+            var2.addObserver(var1x -> {
                if (var45.method13703() != (Boolean)var1x.getCurrentValue()) {
                   var45.method13705((Boolean)var1x.getCurrentValue(), false);
                }
             });
-            var45.method13036(var1x -> var2.method18620(((UICheckBox)var1x).method13703()));
+            var45.method13036(var1x -> var2.setCurrentValue(((UICheckBox)var1x).method13703()));
             var45.method13261((var1x, var2x) -> var1x.setXA(var2x.getWidthA() - 24 - var5));
             var1.addToList(var37);
             var1.addToList(var45);
@@ -62,10 +62,10 @@ public class Class4343 extends Class4339 implements Class4342 {
             var47.method13304(Float.toString((Float)var2.getCurrentValue()));
             var47.method13140(Class4277.method13134(var44.getMin(), var44.getMax(), (Float)var44.getCurrentValue()), false);
             var47.method13143(-1.0F);
-            int var13 = var44.method18636();
-            var44.method18616(
+            int var13 = var44.getDecimalPlaces();
+            var44.addObserver(
                var3x -> {
-                  if (Class4277.method13135(var47.method13138(), var44.getMin(), var44.getMax(), var44.getIncrement(), var13)
+                  if (Class4277.method13135(var47.method13138(), var44.getMin(), var44.getMax(), var44.getStep(), var13)
                      != (Float)var3x.getCurrentValue()) {
                      var47.method13304(Float.toString((Float)var3x.getCurrentValue()));
                      var47.method13140(Class4277.method13134(var44.getMin(), var44.getMax(), (Float)var3x.getCurrentValue()), false);
@@ -74,10 +74,10 @@ public class Class4343 extends Class4339 implements Class4342 {
             );
             var47.method13036(var4x -> {
                float var7 = ((Class4277)var4x).method13138();
-               float var8x = Class4277.method13135(var7, var44.getMin(), var44.getMax(), var44.getIncrement(), var13);
+               float var8x = Class4277.method13135(var7, var44.getMin(), var44.getMax(), var44.getStep(), var13);
                if (var8x != (Float)var2.getCurrentValue()) {
                   var47.method13304(Float.toString(var8x));
-                  var2.method18620(var8x);
+                  var2.setCurrentValue(var8x);
                }
             });
             var47.method13261((var1x, var2x) -> var1x.setXA(var2x.getWidthA() - 126 - var5));
@@ -107,8 +107,8 @@ public class Class4343 extends Class4339 implements Class4342 {
                )
             );
             var35.method13306(ResourceRegistry.JelloLightFont18);
-            var35.method13151(var1x -> var2.method18620(var1x.method13303()));
-            var2.method18616(var2x -> {
+            var35.method13151(var1x -> var2.setCurrentValue(var1x.method13303()));
+            var2.addObserver(var2x -> {
                if (var35.method13303() != ((InputSetting)var2).getCurrentValue()) {
                   var35.method13304(((InputSetting)var2).getCurrentValue());
                }
@@ -126,18 +126,18 @@ public class Class4343 extends Class4339 implements Class4342 {
                var4 + 6 - 1,
                123,
                27,
-               ((ModeSetting)var2).method18634(),
-               ((ModeSetting)var2).method18632()
+               ((ModeSetting)var2).getAvailableModes(),
+               ((ModeSetting)var2).getModeIndex()
             );
             this.field21223.put(var34, var2);
-            var2.method18616(var2x -> {
-               if (var42.method13655() != ((ModeSetting)var2).method18632()) {
-                  var42.method13656(((ModeSetting)var2).method18632());
+            var2.addObserver(var2x -> {
+               if (var42.method13655() != ((ModeSetting)var2).getModeIndex()) {
+                  var42.method13656(((ModeSetting)var2).getModeIndex());
                }
             });
             var42.method13036(var2x -> {
-               ((ModeSetting)var2).method18633(((Class4363)var2x).method13655());
-               var42.method13656(((ModeSetting)var2).method18632());
+               ((ModeSetting)var2).setModeByIndex(((Class4363)var2x).method13655());
+               var42.method13656(((ModeSetting)var2).getModeIndex());
             });
             var42.method13261((var2x, var3x) -> var2x.setXA(var1.getWidthA() - 123 - var5));
             var1.addToList(var34);
@@ -150,7 +150,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             IconPanel var17 = new IconPanel(var1, var2.getName() + "view", var3, var4, var1.getWidthA(), 0);
             int var25 = 0;
 
-            for (Setting var41 : ((SubOptionSetting)var2).method18635()) {
+            for (Setting var41 : ((SubOptionSetting)var2).getSubSettings()) {
                var25 = this.method13531(var17, var41, 0, var25, var5);
             }
 
@@ -164,15 +164,15 @@ public class Class4343 extends Class4339 implements Class4342 {
             byte var24 = 27;
             UITextDisplay var32 = new UITextDisplay(var1, var2.getName() + "lbl", var3, var4, this.field21222, 27, UITextDisplay.field20778, var2.getName());
             Class4377 var40 = new Class4377(
-               var1, var2.getName() + "btn", var1.getWidthA() - var5, var4 + 6, 123, 27, ((TextBoxSetting)var2).method18627(), (Integer)var2.getCurrentValue()
+               var1, var2.getName() + "btn", var1.getWidthA() - var5, var4 + 6, 123, 27, ((TextBoxSetting)var2).getOptions(), (Integer)var2.getCurrentValue()
             );
             this.field21223.put(var32, var2);
-            var2.method18616(var1x -> {
+            var2.addObserver(var1x -> {
                if (var40.method13720() != (Integer)var1x.getCurrentValue()) {
                   var40.method13722((Integer)var1x.getCurrentValue(), false);
                }
             });
-            var40.method13036(var1x -> var2.method18620(((Class4377)var1x).method13720()));
+            var40.method13036(var1x -> var2.setCurrentValue(((Class4377)var1x).method13720()));
             var40.method13261((var2x, var3x) -> var2x.setXA(var1.getWidthA() - 123 - var5));
             var1.addToList(var32);
             var1.addToList(var40);
@@ -189,11 +189,11 @@ public class Class4343 extends Class4339 implements Class4342 {
                var4 + 5,
                175,
                200,
-               ((BooleanSetting2)var2).method18628(),
-               ((BooleanSetting2)var2).getCurrentValue().<String>toArray(new String[0])
+               ((BooleanListSetting)var2).isEnabled(),
+               ((BooleanListSetting)var2).getCurrentValue().<String>toArray(new String[0])
             );
             this.field21223.put(var31, var2);
-            var39.method13036(var2x -> var2.method18620(var39.method13072()));
+            var39.method13036(var2x -> var2.setCurrentValue(var39.method13072()));
             var39.method13261((var2x, var3x) -> var2x.setXA(var1.getWidthA() - 175 - var5));
             var1.addToList(var31);
             var1.addToList(var39);
@@ -205,16 +205,16 @@ public class Class4343 extends Class4339 implements Class4342 {
             ColorSetting var30 = (ColorSetting)var2;
             UITextDisplay var38 = new UITextDisplay(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, UITextDisplay.field20778, var2.getName());
             Class4252 var46 = new Class4252(
-               var1, var2.getName() + "color", var1.getWidthA() - 160 - var5 + 10, var4, 160, 114, (Integer)var2.getCurrentValue(), var30.method18643()
+               var1, var2.getName() + "color", var1.getWidthA() - 160 - var5 + 10, var4, 160, 114, (Integer)var2.getCurrentValue(), var30.isRainbowEnabled()
             );
             this.field21223.put(var38, var2);
-            var2.method18616(var3x -> {
+            var2.addObserver(var3x -> {
                var46.method13048((Integer)var2.getCurrentValue());
-               var46.method13046(var30.method18643());
+               var46.method13046(var30.isRainbowEnabled());
             });
             var46.method13036(var2x -> {
-               var2.isPremiumSetting(((Class4252)var2x).method13049(), false);
-               var30.method18644(((Class4252)var2x).method13047());
+               var2.updateCurrentValue(((Class4252)var2x).method13049(), false);
+               var30.setRainbowEnabled(((Class4252)var2x).method13047());
             });
             var1.addToList(var38);
             var1.addToList(var46);
@@ -223,7 +223,7 @@ public class Class4343 extends Class4339 implements Class4342 {
          case 10:
             short var8 = 150;
             short var9 = 150;
-            Class9318 var10 = (Class9318)var2.getCurrentValue();
+            SpeedRampSetting.SpeedRamp var10 = (SpeedRampSetting.SpeedRamp)var2.getCurrentValue();
             UITextDisplay var11 = new UITextDisplay(var1, var2.getName() + "lbl", var3, var4, this.field21222, 24, UITextDisplay.field20778, var2.getName());
             Class4250 var12 = new Class4250(
                var1,
@@ -233,18 +233,18 @@ public class Class4343 extends Class4339 implements Class4342 {
                150,
                150,
                20,
-               var10.field43257,
-               var10.field43258,
-               var10.field43259,
-               var10.field43260
+               var10.startValue,
+               var10.middleValue,
+               var10.endValue,
+               var10.maxValue
             );
             this.field21223.put(var11, var2);
-            var2.method18616(var2x -> {
-               Class9318 var5x = (Class9318)var2.getCurrentValue();
-               var12.method13041(var5x.field43257, var5x.field43258, var5x.field43259, var5x.field43260);
+            var2.addObserver(var2x -> {
+               SpeedRampSetting.SpeedRamp var5x = (SpeedRampSetting.SpeedRamp)var2.getCurrentValue();
+               var12.method13041(var5x.startValue, var5x.middleValue, var5x.endValue, var5x.maxValue);
             });
             var12.method13036(
-               var2x -> ((SpeedRampSetting)var2).method18612(var12.method13040()[0], var12.method13040()[1], var12.method13040()[2], var12.method13040()[3])
+               var2x -> ((SpeedRampSetting)var2).updateValues(var12.method13040()[0], var12.method13040()[1], var12.method13040()[2], var12.method13040()[3])
             );
             var1.addToList(var11);
             var1.addToList(var12);
@@ -311,7 +311,7 @@ public class Class4343 extends Class4339 implements Class4342 {
          Setting var8 = (Setting)var6.getValue();
          if (var7.method13298() && var7.method13289()) {
             var4 = true;
-            this.field21226 = var8.method18626();
+            this.field21226 = var8.getDescription();
             this.field21227 = var8.getName();
             break;
          }

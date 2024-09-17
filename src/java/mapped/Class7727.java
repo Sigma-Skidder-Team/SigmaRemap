@@ -90,7 +90,7 @@ public class Class7727 {
                this.field33180.write(44);
             }
 
-            this.field33180.write(JSONObject.method21809(var1));
+            this.field33180.write(JSONObject.formatKey(var1));
             this.field33180.write(58);
             this.field33176 = false;
             this.field33177 = 'o';

@@ -1,17 +1,17 @@
 package com.mentalfrostbyte.jello.settings;
 
 import com.mentalfrostbyte.jello.unmapped.SettingType;
-import mapped.Class8000;
+import mapped.CJsonUtils;
 import totalcross.json.JSONObject;
 
 public class InputSetting extends Setting<String> {
-   public InputSetting(String var1, String var2, String var3) {
-      super(var1, var2, SettingType.INPUT, var3);
+   public InputSetting(String name, String description, String defaultValue) {
+      super(name, description, SettingType.INPUT, defaultValue);
    }
 
    @Override
-   public JSONObject method18610(JSONObject var1) {
-      this.currentValue = Class8000.method27330(var1, "value", this.method18624());
-      return var1;
+   public JSONObject loadCurrentValueFromJSONObject(JSONObject jsonObject) {
+      this.currentValue = CJsonUtils.getStringOrDefault(jsonObject, "value", this.getDefaultValue());
+      return jsonObject;
    }
 }

@@ -67,13 +67,13 @@ public class PacketHandler {
 
                 for (Module var23 : Client.getInstance().getModuleManager().getModuleMap().values()) {
                     for (Setting var28 : var23.getSettingMap().values()) {
-                        var28.method18622();
+                        var28.clearPremiumModes();
                     }
 
                     if (var23 instanceof ModuleWithModuleSettings) {
                         for (Module var33 : ((ModuleWithModuleSettings) var23).moduleArray) {
                             for (Setting var37 : var33.getSettingMap().values()) {
-                                var37.method18622();
+                                var37.clearPremiumModes();
                             }
                         }
                     }

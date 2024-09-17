@@ -37,7 +37,7 @@ public class GamePlay extends ModuleWithModuleSettings {
                 new JartexGamePlay()
         );
         this.registerSetting(new BooleanSetting("AutoL", "Automatically says L when you kill a player", true));
-        this.registerSetting(new ModeSetting("AutoL Mode", "AutoL Mode", 0, "Basic", "Sigmeme", "Penshen").method18616(var1 -> this.field23888.clear()));
+        this.registerSetting(new ModeSetting("AutoL Mode", "AutoL Mode", 0, "Basic", "Sigmeme", "Penshen").addObserver(var1 -> this.field23888.clear()));
         this.registerSetting(new InputSetting("First character", "The characters your sentences will start with.", ""));
         this.registerSetting(new BooleanSetting("AutoGG", "Automatically say gg at the end of the game", true));
         this.registerSetting(new BooleanSetting("Auto Join", "Automatically joins another game", true));

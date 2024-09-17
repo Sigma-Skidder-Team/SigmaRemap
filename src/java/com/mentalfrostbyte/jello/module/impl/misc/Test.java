@@ -53,15 +53,15 @@ public class Test extends Module {
         this.registerSetting(new SpeedRampSetting("Bezier", "ey", 0.57F, -0.035F, 0.095F, -0.0F));
         this.registerSetting(
                 new BooleanSetting("Test Checkbox", "A test checkbox", true)
-                        .method18616(var0 -> Client.getInstance().getLogger().info("Changed checkbox: " + var0.getCurrentValue()))
+                        .addObserver(var0 -> Client.getInstance().getLogger().info("Changed checkbox: " + var0.getCurrentValue()))
         );
         this.registerSetting(
                 new NumberSetting<Float>("Test Slider", "A test slider", 0.5F, Float.class, 0.0F, 1.0F, 0.1F)
-                        .method18616(var0 -> Client.getInstance().getLogger().info("Changed slider: " + var0.getCurrentValue()))
+                        .addObserver(var0 -> Client.getInstance().getLogger().info("Changed slider: " + var0.getCurrentValue()))
         );
         this.registerSetting(
                 new TextBoxSetting("Test Type", "A test type button", 0, "hello", "goodbye")
-                        .method18616(var0 -> Client.getInstance().getLogger().info("Changed type: " + var0.getCurrentValue()))
+                        .addObserver(var0 -> Client.getInstance().getLogger().info("Changed type: " + var0.getCurrentValue()))
         );
         this.registerSetting(
                 new SubOptionSetting(

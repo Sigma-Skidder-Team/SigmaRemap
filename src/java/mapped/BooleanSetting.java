@@ -19,30 +19,30 @@ public class BooleanSetting extends Setting<Boolean> {
    }
 
    @Override
-   public void method18622() {
+   public void clearPremiumModes() {
       this.field26186 = false;
    }
 
    @Override
-   public boolean method18623() {
+   public boolean hasPremiumSettings() {
       return this.field26186;
    }
 
-   public void isPremiumSetting(Boolean var1, boolean var2) {
-      if (this.field26186 && var2) {
+   public void updateCurrentValue(Boolean value, boolean notify) {
+      if (this.field26186 && notify) {
          Client.getInstance().getNotificationManager().post(new Notification("Premium", "Not yet available for free version"));
       }
 
-      super.isPremiumSetting(var1, var2);
+      super.updateCurrentValue(value, notify);
    }
 
    public Boolean getCurrentValue() {
-      return !this.field26186 ? this.currentValue : this.field26180;
+      return !this.field26186 ? this.currentValue : this.defaultValue;
    }
 
    @Override
-   public JSONObject method18610(JSONObject var1) {
-      this.currentValue = Class8000.method27324(var1, "value", this.method18624());
-      return var1;
+   public JSONObject loadCurrentValueFromJSONObject(JSONObject jsonObject) {
+      this.currentValue = CJsonUtils.getBooleanOrDefault(jsonObject, "value", this.getDefaultValue());
+      return jsonObject;
    }
 }

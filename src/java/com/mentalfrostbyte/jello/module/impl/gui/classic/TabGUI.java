@@ -134,37 +134,37 @@ public class TabGUI extends Module {
                if (var11 instanceof Float) {
                   Float var12 = (Float)var10.getCurrentValue();
                   if (var1) {
-                     var12 = var12 - var10.getIncrement();
+                     var12 = var12 - var10.getStep();
                   } else {
-                     var12 = var12 + var10.getIncrement();
+                     var12 = var12 + var10.getStep();
                   }
 
                   var12 = Math.min(Math.max(var12, var10.getMin()), var10.getMax());
-                  var10.method18620(var12);
+                  var10.setCurrentValue(var12);
                }
             }
          } else {
             BooleanSetting var13 = (BooleanSetting)var9;
-            var13.method18620(Boolean.valueOf(!var13.getCurrentValue()));
+            var13.setCurrentValue(Boolean.valueOf(!var13.getCurrentValue()));
          }
       } else {
          ModeSetting var14 = (ModeSetting)var9;
-         int var15 = var14.method18632();
+         int var15 = var14.getModeIndex();
          if (!var1) {
             var15--;
          } else {
             var15++;
          }
 
-         if (var15 > var14.method18634().size() - 1) {
+         if (var15 > var14.getAvailableModes().size() - 1) {
             var15 = 0;
          }
 
          if (var15 < 0) {
-            var15 = var14.method18634().size() - 1;
+            var15 = var14.getAvailableModes().size() - 1;
          }
 
-         var14.method18633(var15);
+         var14.setModeByIndex(var15);
       }
 
       var6.method24728(this.method15967(var8));
@@ -238,7 +238,7 @@ public class TabGUI extends Module {
          String var11 = var10.getDescription();
          if (var4 == 3) {
             Setting var12 = this.method15968(var10).get(var7.field32402);
-            var11 = var12.method18626();
+            var11 = var12.getDescription();
          }
 
          float var17 = Class8056.method27664(this.field23382.calcPercent(), 0.0F, 1.0F, 1.0F) * field23380.calcPercent();

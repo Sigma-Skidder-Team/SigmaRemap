@@ -67,7 +67,7 @@ public class Class8020 {
             String var7 = (String)var6.next();
 
             try {
-               var4.put(var7, method27422(var5.method21761(var7), var1));
+               var4.put(var7, method27422(var5.getObjectOrThrow(var7), var1));
             } catch (JSONException2 var11) {
                field34460.log(Level.WARNING, "An error occured while putting data to JSONObject", (Throwable)var11);
                return null;
@@ -113,7 +113,7 @@ public class Class8020 {
                String var6 = (String)var5.next();
 
                try {
-                  var4.put(var6, method27424(var4.method21761(var6), var1));
+                  var4.put(var6, method27424(var4.getObjectOrThrow(var6), var1));
                } catch (JSONException2 var9) {
                   field34460.log(Level.WARNING, "An error occured while putting data to JSONObject", (Throwable)var9);
                   return null;

@@ -123,7 +123,7 @@ public class JSONArray implements Iterable<Object> {
          return (E)var5;
       } else {
          throw new JSONException2(
-            "JSONObject[" + JSONObject.method21809(Integer.toString(var2)) + "] is not an enum of type " + JSONObject.method21809(var1.getSimpleName()) + "."
+            "JSONObject[" + JSONObject.formatKey(Integer.toString(var2)) + "] is not an enum of type " + JSONObject.formatKey(var1.getSimpleName()) + "."
          );
       }
    }

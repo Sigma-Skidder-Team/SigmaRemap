@@ -36,7 +36,7 @@ public class ActiveMods extends Module {
         this.registerSetting(new ModeSetting("Size", "The font size", 0, "Normal", "Small", "Tiny"));
         this.registerSetting(new BooleanSetting("Animations", "Scale in animation", true));
         this.registerSetting(new BooleanSetting("Sound", "Toggle sound", true));
-        this.getSettingMap().get("Size").method18616(var1 -> this.setFontSize());
+        this.getSettingMap().get("Size").addObserver(var1 -> this.setFontSize());
         this.method16005(false);
     }
 

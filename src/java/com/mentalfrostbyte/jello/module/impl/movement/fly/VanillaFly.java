@@ -85,7 +85,7 @@ public class VanillaFly extends Module {
                         }
 
                         double yPosition = event.getY();
-                       List<Double> yPositions = new ArrayList();
+                       List<Double> yPositions = new ArrayList<>();
                         if (!(yPosition - collisionHeight > 9.0)) {
                             mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(event.getX(), collisionHeight, event.getZ(), true));
                         } else {

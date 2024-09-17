@@ -327,7 +327,7 @@ public class GuiManager {
             JSONObject var4 = null;
 
             try {
-                var4 = Client.getInstance().getConfig().method21769(this.field41352.method13257());
+                var4 = Client.getInstance().getConfig().getJsonObject(this.field41352.method13257());
             } catch (Exception var9) {
                 var4 = new JSONObject();
             } finally {

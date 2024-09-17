@@ -14,7 +14,7 @@ import net.minecraft.network.play.client.CPlayerPacket;
 public class FastEat extends Module {
    public FastEat() {
       super(ModuleCategory.PLAYER, "FastEat", "Allows you to eat faster");
-      this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Hypixel").setModeAsPremium("Hypixel"));
+      this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Basic", "Hypixel").setPremiumModes("Hypixel"));
       this.registerSetting(new NumberSetting<Float>("Speed", "Eating speed.", 0.55F, Float.class, 0.0F, 1.0F, 0.01F));
    }
 

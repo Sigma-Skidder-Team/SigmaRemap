@@ -218,7 +218,7 @@ public class ModuleManager {
         JSONArray var4 = null;
 
         try {
-            var4 = Class8000.method27332(var1, "mods");
+            var4 = CJsonUtils.getJSONArrayOrNull(var1, "mods");
         } catch (JSONException2 var14) {
         }
 
@@ -232,7 +232,7 @@ public class ModuleManager {
                 String var7 = null;
 
                 try {
-                    var7 = Class8000.method27330(var17, "name", null);
+                    var7 = CJsonUtils.getStringOrDefault(var17, "name", null);
                 } catch (JSONException2 var13) {
                     Client.getInstance().getLogger().warn("Invalid name in mod list config");
                 }
@@ -296,14 +296,14 @@ public class ModuleManager {
 
         for (Module var6 : this.moduleMap.values()) {
             for (Setting var8 : var6.getSettingMap().values()) {
-                if (var8.method18623()) {
+                if (var8.hasPremiumSettings()) {
                     var3++;
                 }
 
                 if (var6 instanceof ModuleWithModuleSettings) {
                     for (Module var12 : ((ModuleWithModuleSettings) var6).moduleArray) {
                         for (Setting var14 : var12.getSettingMap().values()) {
-                            if (var14.method18623()) {
+                            if (var14.hasPremiumSettings()) {
                                 var3++;
                             }
                         }
@@ -356,7 +356,7 @@ public class ModuleManager {
     public int method14661() {
         Setting var3 = this.getModuleByClass(Jesus.class).getSettingMap().get("Mode");
         String var4 = (String) var3.currentValue;
-        var3.method18620("Dolphin");
+        var3.setCurrentValue("Dolphin");
         var3.currentValue = var4;
         return 0;
     }

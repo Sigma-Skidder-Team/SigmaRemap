@@ -1,24 +1,24 @@
 package com.mentalfrostbyte.jello.settings;
 
 import com.mentalfrostbyte.jello.unmapped.SettingType;
-import mapped.Class8000;
+import mapped.CJsonUtils;
 import totalcross.json.JSONObject;
 
 public class TextBoxSetting extends Setting<Integer> {
-    private final String[] field26184;
+    private final String[] options;
 
-    public TextBoxSetting(String var1, String var2, Integer var3, String... var4) {
-        super(var1, var2, SettingType.TEXTBOX, var3);
-        this.field26184 = var4;
+    public TextBoxSetting(String name, String description, Integer defaultValue, String... options) {
+        super(name, description, SettingType.TEXTBOX, defaultValue);
+        this.options = options;
     }
 
     @Override
-    public JSONObject method18610(JSONObject var1) {
-        this.currentValue = Class8000.method27326(var1, "value", this.method18624());
-        return var1;
+    public JSONObject loadCurrentValueFromJSONObject(JSONObject jsonObject) {
+        this.currentValue = CJsonUtils.getIntOrDefault(jsonObject, "value", this.getDefaultValue());
+        return jsonObject;
     }
 
-    public String[] method18627() {
-        return this.field26184;
+    public String[] getOptions() {
+        return this.options;
     }
 }

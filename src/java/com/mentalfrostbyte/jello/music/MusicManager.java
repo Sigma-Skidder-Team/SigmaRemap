@@ -134,7 +134,7 @@ public class MusicManager {
 
     private void method24295() {
         if (Client.getInstance().getConfig().has("music")) {
-            JSONObject var3 = Client.getInstance().getConfig().method21769("music");
+            JSONObject var3 = Client.getInstance().getConfig().getJsonObject("music");
             if (var3 != null) {
                 if (var3.has("volume")) {
                     this.field32146 = Math.max(0, Math.min(100, var3.method21767("volume")));

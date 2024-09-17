@@ -23,7 +23,7 @@ public class NoFall extends Module {
         super(ModuleCategory.PLAYER, "NoFall", "Avoid you from getting fall damages");
         this.registerSetting(
                 new ModeSetting("Mode", "Nofall mode", 0, "Vanilla", "Hypixel", "Hypixel2", "AAC", "NCPSpigot", "OldHypixel", "Vanilla Legit")
-                        .setModeAsPremium("Hypixel", "Hypixel2")
+                        .setPremiumModes("Hypixel", "Hypixel2")
         );
     }
 

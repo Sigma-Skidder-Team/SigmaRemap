@@ -17,7 +17,7 @@ public class Weather extends Module {
     public Weather() {
         super(ModuleCategory.WORLD, "Weather", "Removes rain and changes the world's time");
         this.registerSetting(new BooleanSetting("Custom time", "Set the world time", true));
-        this.registerSetting(new NumberSetting<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).method18616(var1 -> {
+        this.registerSetting(new NumberSetting<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).addObserver(var1 -> {
             if (this.getBooleanValueFromSetttingName("Custom time") && this.isEnabled()) {
                 mc.world.method6834(-((long) this.getNumberValueBySettingName("Time")));
             }

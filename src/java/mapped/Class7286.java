@@ -27,7 +27,7 @@ public class Class7286 {
    }
 
    public Class7286 method22984(JSONObject var1) throws JSONException {
-      this.field31262 = var1.method21769("modConfig");
+      this.field31262 = var1.getJsonObject("modConfig");
       this.field31263 = var1.getString("name");
       return this;
    }
@@ -50,7 +50,7 @@ public class Class7286 {
       JSONArray var3 = null;
 
       try {
-         var3 = Class8000.method27332(this.field31262, "mods");
+         var3 = CJsonUtils.getJSONArrayOrNull(this.field31262, "mods");
       } catch (JSONException2 var10) {
       }
 
@@ -60,7 +60,7 @@ public class Class7286 {
             String var6 = null;
 
             try {
-               var6 = Class8000.method27330(var5, "name", null);
+               var6 = CJsonUtils.getStringOrDefault(var5, "name", null);
             } catch (JSONException2 var9) {
                Client.getInstance().getLogger().warn("Invalid name in mod list config");
             }
@@ -78,7 +78,7 @@ public class Class7286 {
       JSONArray var5 = null;
 
       try {
-         var5 = Class8000.method27332(this.field31262, "mods");
+         var5 = CJsonUtils.getJSONArrayOrNull(this.field31262, "mods");
       } catch (JSONException2 var12) {
       }
 
@@ -89,7 +89,7 @@ public class Class7286 {
             String var9 = null;
 
             try {
-               var9 = Class8000.method27330(var8, "name", null);
+               var9 = CJsonUtils.getStringOrDefault(var8, "name", null);
             } catch (JSONException2 var11) {
                Client.getInstance().getLogger().warn("Invalid name in mod list config");
             }
@@ -113,7 +113,7 @@ public class Class7286 {
       JSONArray var4 = null;
 
       try {
-         var4 = Class8000.method27332(this.field31262, "mods");
+         var4 = CJsonUtils.getJSONArrayOrNull(this.field31262, "mods");
       } catch (JSONException2 var10) {
       }
 
@@ -123,7 +123,7 @@ public class Class7286 {
             String var7 = null;
 
             try {
-               var7 = Class8000.method27330(var6, "name", null);
+               var7 = CJsonUtils.getStringOrDefault(var6, "name", null);
             } catch (JSONException2 var9) {
                Client.getInstance().getLogger().warn("Invalid name in mod list config");
             }

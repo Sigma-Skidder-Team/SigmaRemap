@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.util.InDevelopment;
 import com.mentalfrostbyte.jello.settings.Setting;
 import mapped.Class6547;
-import mapped.Class8000;
+import mapped.CJsonUtils;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONException2;
@@ -35,7 +35,7 @@ public class ModuleWithModuleSettings extends Module {
         }
 
         this.registerSetting(this.modeSetting = new ModeSetting("Type", type + " mode", 0, this.stringList.toArray(new String[0])));
-        this.modeSetting.method18616(var1x -> this.method16724());
+        this.modeSetting.addObserver(var1x -> this.method16724());
         this.method16724();
     }
 
@@ -94,19 +94,19 @@ public class ModuleWithModuleSettings extends Module {
 
     @Override
     public JSONObject method15986(JSONObject var1) {
-        JSONObject var4 = Class8000.method27331(var1, "sub-options");
+        JSONObject var4 = CJsonUtils.getJSONObjectOrNull(var1, "sub-options");
         if (var4 != null) {
             for (Module var8 : this.moduleArray) {
-                JSONArray var9 = Class8000.method27332(var4, var8.getName());
+                JSONArray var9 = CJsonUtils.getJSONArrayOrNull(var4, var8.getName());
                 if (var9 != null) {
                     for (int var10 = 0; var10 < var9.length(); var10++) {
                         JSONObject var11 = var9.getJSONObject(var10);
-                        String var12 = Class8000.method27330(var11, "name", null);
+                        String var12 = CJsonUtils.getStringOrDefault(var11, "name", null);
 
                         for (Setting var14 : var8.settingMap.values()) {
                             if (var14.getName().equals(var12)) {
                                 try {
-                                    var14.method18610(var11);
+                                    var14.loadCurrentValueFromJSONObject(var11);
                                 } catch (JSONException2 var16) {
                                     Client.getInstance()
                                             .getLogger()

@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.settings.BooleanSetting2;
+import com.mentalfrostbyte.jello.settings.BooleanListSetting;
 import com.mentalfrostbyte.jello.settings.ColorSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
@@ -36,7 +36,7 @@ public class Nuker extends Module {
         this.registerSetting(new NumberSetting<Float>("Range", "Range value for nuker", 6.0F, Float.class, 2.0F, 10.0F, 1.0F));
         this.registerSetting(new ModeSetting("Mode", "Mode", 0, "All", "One hit", "Bed", "Egg"));
         this.registerSetting(new BooleanSetting("NoSwing", "Removes the swing animation.", false));
-        this.registerSetting(new BooleanSetting2("Blocks", "Blocks to destroy", true));
+        this.registerSetting(new BooleanListSetting("Blocks", "Blocks to destroy", true));
         this.registerSetting(new ColorSetting("Color", "The rendered block color", ClientColors.MID_GREY.getColor, true));
     }
 

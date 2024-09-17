@@ -37,7 +37,7 @@ public class Class6972 {
         if (var0.startsWith("[")) {
             try {
                 JSONArray var3 = new JSONArray(var0);
-                var0 = var3.getJSONObject(1).method21769("body").getString("content");
+                var0 = var3.getJSONObject(1).getJsonObject("body").getString("content");
             } catch (Exception var9) {
             }
         }
@@ -65,7 +65,7 @@ public class Class6972 {
         if (var0.startsWith("[")) {
             try {
                 JSONArray var3 = new JSONArray(var0);
-                var0 = var3.getJSONObject(1).method21769("body").getString("content");
+                var0 = var3.getJSONObject(1).getJsonObject("body").getString("content");
             } catch (Exception var9) {
             }
         }

@@ -20,10 +20,10 @@ public class Ban {
     public Ban(JSONObject var1) {
         Calendar var4 = Calendar.getInstance();
         long var5 = 0L;
-        if (!(var1.method21761("until") instanceof Integer)) {
-            var5 = (Long) var1.method21761("until");
+        if (!(var1.getObjectOrThrow("until") instanceof Integer)) {
+            var5 = (Long) var1.getObjectOrThrow("until");
         } else {
-            var5 = ((Integer) var1.method21761("until")).longValue();
+            var5 = ((Integer) var1.getObjectOrThrow("until")).longValue();
         }
 
         if (var5 == 1L) {

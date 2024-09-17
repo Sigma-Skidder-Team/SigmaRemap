@@ -1,60 +1,60 @@
 package com.mentalfrostbyte.jello.settings;
 
 import com.mentalfrostbyte.jello.unmapped.SettingType;
-import mapped.Class8000;
+import mapped.CJsonUtils;
 import totalcross.json.JSONObject;
 
 public class NumberSetting<T extends Number> extends Setting<Float> {
-   private Class<? extends T> type;
-   private float minimum;
-   private float maximum;
-   private float increment;
+   private Class<? extends T> numberType;
+   private float minValue;
+   private float maxValue;
+   private float step;
 
    public NumberSetting(String name, String description, float defaultValue, Class<? extends T> type, float minimum, float maximum, float increment) {
       super(name, description, SettingType.NUMBER, defaultValue);
-      this.type = type;
-      this.minimum = minimum;
-      this.maximum = maximum;
-      this.increment = increment;
+      this.numberType = type;
+      this.minValue = minimum;
+      this.maxValue = maximum;
+      this.step = increment;
    }
 
-   public int method18636() {
-      if (this.increment != 1.0F) {
-         String var3 = Float.toString(Math.abs(this.getIncrement()));
-         int var4 = var3.indexOf(46);
-         return var3.length() - var4 - 1;
+   public int getDecimalPlaces() {
+      if (this.step != 1.0F) {
+         String stepString = Float.toString(Math.abs(this.step));
+         int decimalPointIndex = stepString.indexOf('.');
+         return stepString.length() - decimalPointIndex - 1;
       } else {
          return 0;
       }
    }
 
    @Override
-   public JSONObject method18610(JSONObject var1) {
-      this.currentValue = Class8000.method27328(var1, "value", this.method18624());
-      return var1;
+   public JSONObject loadCurrentValueFromJSONObject(JSONObject jsonObject) {
+      this.currentValue = CJsonUtils.getFloatOrDefault(jsonObject, "value", this.getDefaultValue());
+      return jsonObject;
    }
 
    public float getMin() {
-      return this.minimum;
+      return this.minValue;
    }
 
    public void setMin(float var1) {
-      this.minimum = var1;
+      this.minValue = var1;
    }
 
    public float getMax() {
-      return this.maximum;
+      return this.maxValue;
    }
 
    public void setMax(float var1) {
-      this.maximum = var1;
+      this.maxValue = var1;
    }
 
-   public float getIncrement() {
-      return this.increment;
+   public float getStep() {
+      return this.step;
    }
 
-   public void setIncrement(float var1) {
-      this.increment = var1;
+   public void setStep(float var1) {
+      this.step = var1;
    }
 }

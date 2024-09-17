@@ -8,21 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Setting<T> {
-    public final SettingType field26178;
+    public final SettingType settingType;
     public final String name;
-    public final String field26182;
-    private final List<Class9792> field26183 = new ArrayList<Class9792>();
+    public final String description;
+    private final List<Class9792> observers = new ArrayList<Class9792>();
     public T currentValue;
-    public T field26180;
+    public T defaultValue;
 
-    public Setting(String var1, String var2, SettingType var3, T var4) {
-        this.field26178 = var3;
-        this.currentValue = this.field26180 = var4;
-        this.name = var1;
-        this.field26182 = var2;
+    public Setting(String name, String description, SettingType settingType, T defaultValue) {
+        this.settingType = settingType;
+        this.currentValue = this.defaultValue = defaultValue;
+        this.name = name;
+        this.description = description;
     }
 
-    public abstract JSONObject method18610(JSONObject var1);
+    public abstract JSONObject loadCurrentValueFromJSONObject(JSONObject jsonObject);
 
     public JSONObject addDataToJSONObject(JSONObject jsonObject) {
         jsonObject.put("name", this.getName());
@@ -30,59 +30,59 @@ public abstract class Setting<T> {
         return jsonObject;
     }
 
-    public void method18615() {
-        this.currentValue = this.field26180;
+    public void resetToDefault() {
+        this.currentValue = this.defaultValue;
     }
 
-    public final Setting<T> method18616(Class9792 var1) {
-        this.field26183.add(var1);
+    public final Setting<T> addObserver(Class9792 observer) {
+        this.observers.add(observer);
         return this;
     }
 
-    public final void method18617() {
-        for (Class9792 var4 : this.field26183) {
-            var4.method38603(this);
+    public final void notifyObservers() {
+        for (Class9792 observer : this.observers) {
+            observer.method38603(this);
         }
     }
 
-    public SettingType method18618() {
-        return this.field26178;
+    public SettingType getSettingType() {
+        return this.settingType;
     }
 
     public T getCurrentValue() {
         return this.currentValue;
     }
 
-    public void method18620(T var1) {
-        this.isPremiumSetting(var1, true);
+    public void setCurrentValue(T value) {
+        this.updateCurrentValue(value, true);
     }
 
-    public void isPremiumSetting(T var1, boolean var2) {
-        if (this.currentValue != var1) {
-            this.currentValue = var1;
-            if (var2) {
-                this.method18617();
+    public void updateCurrentValue(T value, boolean notify) {
+        if (this.currentValue != value) {
+            this.currentValue = value;
+            if (notify) {
+                this.notifyObservers();
             }
         }
     }
 
-    public void method18622() {
+    public void clearPremiumModes() {
     }
 
-    public boolean method18623() {
+    public boolean hasPremiumSettings() {
         return false;
     }
 
-    public T method18624() {
-        return this.field26180;
+    public T getDefaultValue() {
+        return this.defaultValue;
     }
 
     public String getName() {
         return this.name;
     }
 
-    public String method18626() {
-        return this.field26182;
+    public String getDescription() {
+        return this.description;
     }
 
     @Override

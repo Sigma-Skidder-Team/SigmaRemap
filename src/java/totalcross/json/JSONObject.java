@@ -233,13 +233,13 @@ public class JSONObject {
       }
    }
 
-   public Object method21761(String var1) {
-      if (var1 != null) {
-         Object var4 = this.opt(var1);
-         if (var4 != null) {
-            return var4;
+   public Object getObjectOrThrow(String key) {
+      if (key != null) {
+         Object value = this.opt(key);
+         if (value != null) {
+            return value;
          } else {
-            throw new JSONException2("JSONObject[" + method21809(var1) + "] not found.");
+            throw new JSONException2("JSONObject[" + formatKey(key) + "] not found.");
          }
       } else {
          throw new JSONException2("Null key.");
@@ -251,15 +251,15 @@ public class JSONObject {
       if (var5 != null) {
          return (E)var5;
       } else {
-         throw new JSONException2("JSONObject[" + method21809(var2) + "] is not an enum of type " + method21809(var1.getSimpleName()) + ".");
+         throw new JSONException2("JSONObject[" + formatKey(var2) + "] is not an enum of type " + formatKey(var1.getSimpleName()) + ".");
       }
    }
 
    public boolean method21763(String var1) throws JSONException2 {
-      Object var4 = this.method21761(var1);
+      Object var4 = this.getObjectOrThrow(var1);
       if (!var4.equals(Boolean.FALSE) && (!(var4 instanceof String) || !((String)var4).equalsIgnoreCase("false"))) {
          if (!var4.equals(Boolean.TRUE) && (!(var4 instanceof String) || !((String)var4).equalsIgnoreCase("true"))) {
-            throw new JSONException2("JSONObject[" + method21809(var1) + "] is not a Boolean.");
+            throw new JSONException2("JSONObject[" + formatKey(var1) + "] is not a Boolean.");
          } else {
             return true;
          }
@@ -269,70 +269,70 @@ public class JSONObject {
    }
 
    public BigInteger method21764(String var1) throws JSONException2 {
-      Object var4 = this.method21761(var1);
+      Object var4 = this.getObjectOrThrow(var1);
 
       try {
          return new BigInteger(var4.toString());
       } catch (Exception var6) {
-         throw new JSONException2("JSONObject[" + method21809(var1) + "] could not be converted to BigInteger.");
+         throw new JSONException2("JSONObject[" + formatKey(var1) + "] could not be converted to BigInteger.");
       }
    }
 
    public BigDecimal method21765(String var1) throws JSONException2 {
-      Object var4 = this.method21761(var1);
+      Object var4 = this.getObjectOrThrow(var1);
 
       try {
          return new BigDecimal(var4.toString());
       } catch (Exception var6) {
-         throw new JSONException2("JSONObject[" + method21809(var1) + "] could not be converted to BigDecimal.");
+         throw new JSONException2("JSONObject[" + formatKey(var1) + "] could not be converted to BigDecimal.");
       }
    }
 
    public double method21766(String var1) throws JSONException2 {
-      Object var4 = this.method21761(var1);
+      Object var4 = this.getObjectOrThrow(var1);
 
       try {
          return var4 instanceof Number ? ((Number)var4).doubleValue() : Double.parseDouble((String)var4);
       } catch (Exception var6) {
-         throw new JSONException2("JSONObject[" + method21809(var1) + "] is not a number.");
+         throw new JSONException2("JSONObject[" + formatKey(var1) + "] is not a number.");
       }
    }
 
    public int method21767(String var1) throws JSONException2 {
-      Object var4 = this.method21761(var1);
+      Object var4 = this.getObjectOrThrow(var1);
 
       try {
          return var4 instanceof Number ? ((Number)var4).intValue() : Integer.parseInt((String)var4);
       } catch (Exception var6) {
-         throw new JSONException2("JSONObject[" + method21809(var1) + "] is not an int.");
+         throw new JSONException2("JSONObject[" + formatKey(var1) + "] is not an int.");
       }
    }
 
    public JSONArray getJSONArray(String var1) throws JSONException2 {
-      Object var4 = this.method21761(var1);
+      Object var4 = this.getObjectOrThrow(var1);
       if (!(var4 instanceof JSONArray)) {
-         throw new JSONException2("JSONObject[" + method21809(var1) + "] is not a JSONArray.");
+         throw new JSONException2("JSONObject[" + formatKey(var1) + "] is not a JSONArray.");
       } else {
          return (JSONArray)var4;
       }
    }
 
-   public JSONObject method21769(String var1) throws JSONException2 {
-      Object var4 = this.method21761(var1);
-      if (!(var4 instanceof JSONObject)) {
-         throw new JSONException2("JSONObject[" + method21809(var1) + "] is not a JSONObject.");
+   public JSONObject getJsonObject(String key) throws JSONException2 {
+      Object value = this.getObjectOrThrow(key);
+      if (!(value instanceof JSONObject)) {
+         throw new JSONException2("JSONObject[" + formatKey(key) + "] is not a JSONObject.");
       } else {
-         return (JSONObject)var4;
+         return (JSONObject) value;
       }
    }
 
    public long method21770(String var1) throws JSONException2 {
-      Object var4 = this.method21761(var1);
+      Object var4 = this.getObjectOrThrow(var1);
 
       try {
          return var4 instanceof Number ? ((Number)var4).longValue() : Long.parseLong((String)var4);
       } catch (Exception var6) {
-         throw new JSONException2("JSONObject[" + method21809(var1) + "] is not a long.");
+         throw new JSONException2("JSONObject[" + formatKey(var1) + "] is not a long.");
       }
    }
 
@@ -374,9 +374,9 @@ public class JSONObject {
    }
 
    public String getString(String var1) throws JSONException2 {
-      Object var4 = this.method21761(var1);
+      Object var4 = this.getObjectOrThrow(var1);
       if (!(var4 instanceof String)) {
-         throw new JSONException2("JSONObject[" + method21809(var1) + "] not a string.");
+         throw new JSONException2("JSONObject[" + formatKey(var1) + "] not a string.");
       } else {
          return (String)var4;
       }
@@ -395,7 +395,7 @@ public class JSONObject {
                   if (!(var4 instanceof Long)) {
                      if (!(var4 instanceof Double)) {
                         if (!(var4 instanceof Float)) {
-                           throw new JSONException2("Unable to increment [" + method21809(var1) + "].");
+                           throw new JSONException2("Unable to increment [" + formatKey(var1) + "].");
                         }
 
                         this.method21802(var1, (double)((Float)var4 + 1.0F));
@@ -676,74 +676,70 @@ public class JSONObject {
       return this;
    }
 
-   public static String method21809(String var0) {
-      StringWriter var3 = new StringWriter();
-      synchronized (var3.getBuffer()) {
-         String var10000;
+   public static String formatKey(String key) {
+      StringWriter writer = new StringWriter();
+      synchronized (writer.getBuffer()) {
          try {
-            var10000 = method21810(var0, var3).toString();
-         } catch (IOException var7) {
+            return writeJsonString(key, writer).toString();
+         } catch (IOException e) {
             return "";
          }
-
-         return var10000;
       }
    }
 
-   public static Writer method21810(String var0, Writer var1) throws IOException {
-      if (var0 != null && var0.length() != 0) {
-         char var4 = 0;
-         int var5 = var0.length();
-         var1.write(34);
+   public static Writer writeJsonString(String input, Writer writer) throws IOException {
+      if (input != null && !input.isEmpty()) {
+         char previousChar = 0;
+         int length = input.length();
+         writer.write(34); // Write the opening quote
 
-         for (int var6 = 0; var6 < var5; var6++) {
-            char var7 = var4;
-            var4 = var0.charAt(var6);
-            switch (var4) {
+         for (int i = 0; i < length; i++) {
+            char currentChar = previousChar;
+            previousChar = input.charAt(i);
+            switch (previousChar) {
                case '\b':
-                  var1.write("\\b");
+                  writer.write("\\b");
                   break;
                case '\t':
-                  var1.write("\\t");
+                  writer.write("\\t");
                   break;
                case '\n':
-                  var1.write("\\n");
+                  writer.write("\\n");
                   break;
                case '\f':
-                  var1.write("\\f");
+                  writer.write("\\f");
                   break;
                case '\r':
-                  var1.write("\\r");
+                  writer.write("\\r");
                   break;
                case '"':
                case '\\':
-                  var1.write(92);
-                  var1.write(var4);
+                  writer.write(92); // Write backslash
+                  writer.write(previousChar);
                   break;
                case '/':
-                  if (var7 == '<') {
-                     var1.write(92);
+                  if (currentChar == '<') {
+                     writer.write(92); // Write backslash
                   }
-
-                  var1.write(var4);
+                  writer.write(previousChar);
                   break;
                default:
-                  if (var4 >= ' ' && (var4 < 128 || var4 >= 160) && (var4 < 8192 || var4 >= 8448)) {
-                     var1.write(var4);
+                  if (previousChar >= ' ' && (previousChar < 128 || previousChar >= 160) && (previousChar < 8192 || previousChar >= 8448)) {
+                     writer.write(previousChar);
                   } else {
-                     var1.write("\\u");
-                     String var8 = Integer.toHexString(var4);
-                     var1.write("0000", 0, 4 - var8.length());
-                     var1.write(var8);
+                     writer.write("\\u");
+                     String hex = Integer.toHexString(previousChar);
+                     writer.write("0000", 0, 4 - hex.length());
+                     writer.write(hex);
                   }
             }
          }
 
-         var1.write(34);
-         return var1;
+         writer.write(34); // Write the closing quote
+         return writer;
       } else {
-         var1.write("\"\"");
-         return var1;
+         writer.write("\"\""); // Write empty string if input is null or empty
+         return writer;
       }
    }
 
@@ -761,8 +757,8 @@ public class JSONObject {
                return false;
             } else {
                for (String var6 : var4) {
-                  Object var7 = this.method21761(var6);
-                  Object var8 = ((JSONObject)var1).method21761(var6);
+                  Object var7 = this.getObjectOrThrow(var6);
+                  Object var8 = ((JSONObject)var1).getObjectOrThrow(var6);
                   if (var7 instanceof JSONObject) {
                      if (!((JSONObject)var7).method21812(var8)) {
                         return false;
@@ -889,7 +885,7 @@ public class JSONObject {
          Collection var3 = (Collection)var0;
          return new JSONArray(var3).toString();
       } else {
-         return var0.getClass().isArray() ? new JSONArray(var0).toString() : method21809(var0.toString());
+         return var0.getClass().isArray() ? new JSONArray(var0).toString() : formatKey(var0.toString());
       }
    }
 
@@ -898,20 +894,20 @@ public class JSONObject {
          if (var0 == null) {
             return NULL;
          } else if (var0 instanceof JSONObject
-            || var0 instanceof JSONArray
-            || NULL.equals(var0)
-            || var0 instanceof Class9093
-            || var0 instanceof Byte
-            || var0 instanceof Character
-            || var0 instanceof Short
-            || var0 instanceof Integer
-            || var0 instanceof Long
-            || var0 instanceof Boolean
-            || var0 instanceof Float
-            || var0 instanceof Double
-            || var0 instanceof String
-            || var0 instanceof BigInteger
-            || var0 instanceof BigDecimal) {
+                 || var0 instanceof JSONArray
+                 || NULL.equals(var0)
+                 || var0 instanceof Class9093
+                 || var0 instanceof Byte
+                 || var0 instanceof Character
+                 || var0 instanceof Short
+                 || var0 instanceof Integer
+                 || var0 instanceof Long
+                 || var0 instanceof Boolean
+                 || var0 instanceof Float
+                 || var0 instanceof Double
+                 || var0 instanceof String
+                 || var0 instanceof BigInteger
+                 || var0 instanceof BigDecimal) {
             return var0;
          } else if (var0 instanceof Collection) {
             Collection var7 = (Collection)var0;
@@ -962,9 +958,9 @@ public class JSONObject {
             throw new JSONException2(var8);
          }
 
-         var0.write(var10 != null ? var10.toString() : method21809(var1.toString()));
+         var0.write(var10 != null ? var10.toString() : formatKey(var1.toString()));
       } else {
-         method21810(var1.toString(), var0);
+         writeJsonString(var1.toString(), var0);
       }
 
       return var0;
@@ -984,7 +980,7 @@ public class JSONObject {
          var1.write(123);
          if (var7 == 1) {
             Object var9 = var8.next();
-            var1.write(method21809(var9.toString()));
+            var1.write(formatKey(var9.toString()));
             var1.write(58);
             if (var2 > 0) {
                var1.write(32);
@@ -1003,7 +999,7 @@ public class JSONObject {
                }
 
                method21820(var1, var12);
-               var1.write(method21809(var10.toString()));
+               var1.write(formatKey(var10.toString()));
                var1.write(58);
                if (var2 > 0) {
                   var1.write(32);
