@@ -83,7 +83,7 @@ public class Class3399 extends AbstractFireBlock {
          var3 = VoxelShapes.method27431(var3, field19046);
       }
 
-      return !var3.method19516() ? var3 : field19035;
+      return !var3.isEmpty() ? var3 : field19035;
    }
 
    @Override

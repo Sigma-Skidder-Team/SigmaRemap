@@ -26,7 +26,7 @@ public class Class3464 extends Class3462 {
       } else {
          if (!var2.isRemote) {
             net.minecraft.util.Direction var10 = var6.getFace();
-            net.minecraft.util.Direction var11 = var10.getAxis() != Direction.field414 ? var10 : var4.method3386().method536();
+            net.minecraft.util.Direction var11 = var10.getAxis() != Direction.Y ? var10 : var4.method3386().method536();
             var2.method6742((PlayerEntity)null, var3, SoundEvents.field26986, Class2266.field14732, 1.0F, 1.0F);
             var2.setBlockState(var3, Blocks.field36589.method11579().method23465(Class3342.field18848, var11), 11);
             ItemEntity var12 = new ItemEntity(

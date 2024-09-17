@@ -115,10 +115,10 @@ public class BlockFlyHypixelMode extends Module {
             ((BlockFly) this.access()).field23884 = -1;
         }
 
-        MovementUtils.method37090(MovementUtils.method37075() * 0.9);
+        MovementUtils.strafe(MovementUtils.getSpeed() * 0.9);
         mc.timer.timerSpeed = 1.0F;
         if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23471 == 0) {
-            ColorUtils.method17725(-0.0789);
+            ColorUtils.setPlayerYMotion(-0.0789);
         }
     }
 
@@ -129,7 +129,7 @@ public class BlockFlyHypixelMode extends Module {
                 if (mc.world
                         .getCollisionShapes(
                                 mc.player,
-                                mc.player.boundingBox.method19662(0.0, -1.5, 0.0).method19660(0.05, 0.0, 0.05).method19660(-0.05, 0.0, -0.05)
+                                mc.player.boundingBox.contract(0.0, -1.5, 0.0).method19660(0.05, 0.0, 0.05).method19660(-0.05, 0.0, -0.05)
                         )
                         .count()
                         == 0L
@@ -147,7 +147,7 @@ public class BlockFlyHypixelMode extends Module {
     @EventTarget
     private void method16109(EventKeyPress var1) {
         if (this.isEnabled() && this.getBooleanValueFromSetttingName("Downwards")) {
-            if (var1.getKey() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23474 = true;
             }
@@ -157,7 +157,7 @@ public class BlockFlyHypixelMode extends Module {
     @EventTarget
     private void method16110(MouseHoverEvent var1) {
         if (this.isEnabled() && this.getBooleanValueFromSetttingName("Downwards")) {
-            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23474 = false;
             }
@@ -273,7 +273,7 @@ public class BlockFlyHypixelMode extends Module {
     @HigherPriority
     public void method16112(EventMove var1) {
         if (this.isEnabled() && this.field23473.method16735() != 0) {
-            if (mc.player.onGround || ColorUtils.method17730(mc.player, 0.01F)) {
+            if (mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.01F)) {
                 this.field23476 = mc.player.getPosY();
             }
 
@@ -306,7 +306,7 @@ public class BlockFlyHypixelMode extends Module {
                     break;
                 case "AAC":
                     if (this.field23470 == 0 && mc.player.onGround) {
-                        MovementUtils.method37088(var1, MovementUtils.method37075() * 0.82);
+                        MovementUtils.setSpeed(var1, MovementUtils.getSpeed() * 0.82);
                     }
                     break;
                 case "Cubecraft":
@@ -351,7 +351,7 @@ public class BlockFlyHypixelMode extends Module {
                         MovementUtils.method37092(var1, var6, var8, var8, 360.0F);
                     }
 
-                    ColorUtils.method17725(var1.getY());
+                    ColorUtils.setPlayerYMotion(var1.getY());
                     break;
                 case "Slow":
                     if (mc.player.onGround) {

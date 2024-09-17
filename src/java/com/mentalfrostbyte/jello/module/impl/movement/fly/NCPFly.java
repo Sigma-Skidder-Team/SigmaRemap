@@ -27,9 +27,9 @@ public class NCPFly extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.method37090(0.0);
+        MovementUtils.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
-            ColorUtils.method17725(-0.0789);
+            ColorUtils.setPlayerYMotion(-0.0789);
         }
     }
 
@@ -42,21 +42,21 @@ public class NCPFly extends Module {
                     if (this.field23919 != 0) {
                         if (this.field23919 == 1) {
                             var1.setY(-1.0E-7);
-                            MovementUtils.method37088(var1, MovementUtils.method37075());
-                            ColorUtils.method17725(var1.getY());
+                            MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
+                            ColorUtils.setPlayerYMotion(var1.getY());
                         }
                     } else {
                         var1.setY(-1.0E-7);
-                        MovementUtils.method37088(var1, MovementUtils.method37075());
-                        ColorUtils.method17725(var1.getY());
+                        MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
+                        ColorUtils.setPlayerYMotion(var1.getY());
                     }
                 } else {
                     var1.setY(0.0);
-                    ColorUtils.method17725(var1.getY());
-                    MovementUtils.method37088(var1, MovementUtils.method37075());
+                    ColorUtils.setPlayerYMotion(var1.getY());
+                    MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
                 }
             } else {
-                MovementUtils.method37088(var1, 0.0);
+                MovementUtils.setSpeed(var1, 0.0);
             }
         }
     }

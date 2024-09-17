@@ -53,8 +53,8 @@ public class Class3395 extends Block {
       double var9 = Math.abs(MathHelper.frac(var1.z) - 0.5);
       Direction var11 = var4.getAxis();
       double var12;
-      if (var11 != Direction.field414) {
-         if (var11 != Direction.field415) {
+      if (var11 != Direction.Y) {
+         if (var11 != Direction.Z) {
             var12 = Math.max(var7, var9);
          } else {
             var12 = Math.max(var5, var7);

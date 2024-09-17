@@ -47,12 +47,12 @@ public class NCPPhase extends PremiumModule {
                 double var6 = mc.player.getPosY();
                 double var8 = mc.player.getPosZ();
                 if (!ColorUtils.method17686()) {
-                    if (ColorUtils.method17730(mc.player, 0.001F) && !ColorUtils.method17761()) {
+                    if (ColorUtils.isAboveBounds(mc.player, 0.001F) && !ColorUtils.method17761()) {
                         mc.player.setPosition(var4, var6 - 1.0, var8);
                         var1.setY(var6 - 1.0);
                         var1.method13908(true);
                         var1.setPitch(var1.getPitch() + 10.0F);
-                        ColorUtils.method17725(0.0);
+                        ColorUtils.setPlayerYMotion(0.0);
                     } else if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())) {
                         mc.player.setPosition(var4, var6 - 0.3, var8);
                     }
@@ -90,17 +90,17 @@ public class NCPPhase extends PremiumModule {
                 if (this.field23652 != 0) {
                     if (!ColorUtils.method17761()) {
                         this.field23651 = false;
-                        MovementUtils.method37088(var1, 0.0);
+                        MovementUtils.setSpeed(var1, 0.0);
                         return;
                     }
 
                     if (!this.field23651) {
-                        MovementUtils.method37088(var1, !this.getBooleanValueFromSetttingName("Hypixel") ? 0.0031 : 0.03);
+                        MovementUtils.setSpeed(var1, !this.getBooleanValueFromSetttingName("Hypixel") ? 0.0031 : 0.03);
                     } else {
-                        MovementUtils.method37088(var1, 0.617);
+                        MovementUtils.setSpeed(var1, 0.617);
                     }
                 } else {
-                    MovementUtils.method37088(var1, 0.0);
+                    MovementUtils.setSpeed(var1, 0.0);
                     MovementUtils.method37095(6.000000238415E-4);
                 }
 

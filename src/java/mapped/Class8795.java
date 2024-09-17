@@ -78,7 +78,7 @@ public class Class8795 {
                this.mc.player.getMotion().x * this.mc.player.getMotion().x
                   + this.mc.player.getMotion().z * this.mc.player.getMotion().z
             );
-            boolean var6 = ColorUtils.method17730(this.mc.player, 0.02F);
+            boolean var6 = ColorUtils.isAboveBounds(this.mc.player, 0.02F);
             int var7 = this.field39613.size() - 1;
             Class9510 var8 = this.field39613.get(var7);
             Class2317 var9 = var8.field44279;
@@ -126,8 +126,8 @@ public class Class8795 {
                this.field39618 = this.field39613.get(var7);
                this.field39613.remove(var7);
                if (this.field39613.size() == 0) {
-                  ColorUtils.method17724(this.mc.player.getMotion().x * 0.5);
-                  ColorUtils.method17726(this.mc.player.getMotion().z * 0.5);
+                  ColorUtils.setPlayerXMotion(this.mc.player.getMotion().x * 0.5);
+                  ColorUtils.setPlayerZMotion(this.mc.player.getMotion().z * 0.5);
                   this.method31738();
                   return;
                }
@@ -141,15 +141,15 @@ public class Class8795 {
                if (!this.mc.player.onGround && var20 > 60.0F
                   || !this.mc.player.onGround && var20 > 45.0F && this.mc.player.getMotion().length() > 0.24
                   || var20 > 110.0F) {
-                  ColorUtils.method17724(this.mc.player.getMotion().x * 0.25);
-                  ColorUtils.method17726(this.mc.player.getMotion().z * 0.25);
+                  ColorUtils.setPlayerXMotion(this.mc.player.getMotion().x * 0.25);
+                  ColorUtils.setPlayerZMotion(this.mc.player.getMotion().z * 0.25);
                }
             }
 
             if (var10 < var12
                && (var14 || var8.field44281.size() > 0 && (double)this.mc.player.position.field13028 > var8.field44271.method33970())) {
-               ColorUtils.method17724(this.mc.player.getMotion().x * 0.5);
-               ColorUtils.method17726(this.mc.player.getMotion().z * 0.5);
+               ColorUtils.setPlayerXMotion(this.mc.player.getMotion().x * 0.5);
+               ColorUtils.setPlayerZMotion(this.mc.player.getMotion().z * 0.5);
             }
 
             float var43 = RotationHelper.method34145(this.mc.player.getPositionVec(), var8.field44271.method33972())[0];
@@ -165,8 +165,8 @@ public class Class8795 {
                this.mc.player.moveStrafing = (float)(var23 * var26);
             } else {
                if (this.mc.player.isSprinting()) {
-                  ColorUtils.method17724(this.mc.player.getMotion().x * 0.9);
-                  ColorUtils.method17726(this.mc.player.getMotion().z * 0.9);
+                  ColorUtils.setPlayerXMotion(this.mc.player.getMotion().x * 0.9);
+                  ColorUtils.setPlayerZMotion(this.mc.player.getMotion().z * 0.9);
                }
 
                this.mc.player.moveForward = 0.0F;
@@ -222,10 +222,10 @@ public class Class8795 {
 
             this.mc.player.rotationYaw = var37;
             if (var36 && !this.mc.player.onGround && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
-               ColorUtils.method17724(0.0);
-               ColorUtils.method17726(0.0);
+               ColorUtils.setPlayerXMotion(0.0);
+               ColorUtils.setPlayerZMotion(0.0);
             } else {
-               if (Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled() && !ColorUtils.method17730(this.mc.player, 5.0F)) {
+               if (Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled() && !ColorUtils.isAboveBounds(this.mc.player, 5.0F)) {
                   var36 = true;
                }
 

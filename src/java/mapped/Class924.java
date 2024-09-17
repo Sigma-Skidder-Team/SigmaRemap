@@ -124,7 +124,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       if (!method3641(var5)) {
          var0.put(var5, var2);
       } else if (SharedConstants.developmentMode) {
-         throw (IllegalStateException) Util.method38516(
+         throw (IllegalStateException) Util.pauseDevMode(
             new IllegalStateException(
                "A developer tried to explicitly make fire resistant item "
                   + var5.method11731((ItemStack)null).getString()

@@ -62,7 +62,7 @@ public class ViaVersionLoader {
 
    @EventTarget
    public void method23343(EventKeyPress var1) {
-      if (var1.getKey() == this.mc.gameSettings.keyBindInventory.keycode.getKeyCode() && JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
+      if (var1.getKey() == this.mc.gameSettings.keyBindInventory.inputMappingsInput.getKeyCode() && JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
          this.mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
       }
 
@@ -104,7 +104,7 @@ public class ViaVersionLoader {
 
          if (JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber()) {
             if (this.mc.player.boundingBox.maxY - this.mc.player.boundingBox.minY == 1.5) {
-               this.mc.player.boundingBox = this.mc.player.boundingBox.method19662(0.0, 0.29999995F, 0.0);
+               this.mc.player.boundingBox = this.mc.player.boundingBox.contract(0.0, 0.29999995F, 0.0);
             }
 
             if (this.mc.player.eyeHeight == 1.27F) {
@@ -328,7 +328,7 @@ public class ViaVersionLoader {
             Class9140.field42006 = this.mc.player.getMotion().y;
             if (this.field31498 && Class9140.method34129()) {
                Class9140.field42006 = 0.2F;
-               ColorUtils.method17725(Class9140.field42006);
+               ColorUtils.setPlayerYMotion(Class9140.field42006);
             }
 
             Class9140.field42005 = this.mc.player.getMotion().x;
@@ -340,17 +340,17 @@ public class ViaVersionLoader {
       if (JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber()) {
          if (Math.abs(var1.getX()) < 0.005) {
             var1.setX(0.0);
-            ColorUtils.method17724(var1.getX());
+            ColorUtils.setPlayerXMotion(var1.getX());
          }
 
          if (Math.abs(var1.getY()) < 0.005) {
             var1.setY(0.0);
-            ColorUtils.method17725(var1.getY());
+            ColorUtils.setPlayerYMotion(var1.getY());
          }
 
          if (Math.abs(var1.getZ()) < 0.005) {
             var1.setZ(0.0);
-            ColorUtils.method17726(var1.getZ());
+            ColorUtils.setPlayerZMotion(var1.getZ());
          }
       }
    }

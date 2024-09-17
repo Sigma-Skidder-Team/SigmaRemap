@@ -302,7 +302,7 @@ public class ServerWorldInfo implements Class6608, IServerConfiguration {
       if (!this.field29075 && this.field29076 != null) {
          if (this.field29074 < SharedConstants.getVersion().getWorldVersion()) {
             if (this.field29073 == null) {
-               throw (NullPointerException) Util.method38516(
+               throw (NullPointerException) Util.pauseDevMode(
                   new NullPointerException("Fixer Upper not set inside LevelData, and the player tag is not upgraded.")
                );
             }

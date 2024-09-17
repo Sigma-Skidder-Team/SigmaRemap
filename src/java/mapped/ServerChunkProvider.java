@@ -125,7 +125,7 @@ public class ServerChunkProvider extends Class1702 {
             if (!var4) {
                return null;
             } else {
-               throw (IllegalStateException) Util.method38516(new IllegalStateException("Chunk not there when requested: " + var1x));
+               throw (IllegalStateException) Util.pauseDevMode(new IllegalStateException("Chunk not there when requested: " + var1x));
             }
          });
          this.method7356(var8, var13, var3);
@@ -205,7 +205,7 @@ public class ServerChunkProvider extends Class1702 {
             var11 = this.method7354(var8);
             var12.endSection();
             if (this.method7360(var11, var10)) {
-               throw (IllegalStateException) Util.method38516(new IllegalStateException("No chunk holder after ticket has been added"));
+               throw (IllegalStateException) Util.pauseDevMode(new IllegalStateException("No chunk holder after ticket has been added"));
             }
          }
       }

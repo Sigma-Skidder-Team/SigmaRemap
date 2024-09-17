@@ -93,8 +93,8 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
       net.minecraft.util.Direction var4 = this.method3860();
       double var5 = (double)(var1 - this.field5366);
       VoxelShape var7 = this.method3854().method23414(this.field5324, this.getPos());
-      if (!var7.method19516()) {
-         AxisAlignedBB var8 = this.method3862(var7.method19514());
+      if (!var7.isEmpty()) {
+         AxisAlignedBB var8 = this.method3862(var7.getBoundingBox());
          List var9 = this.field5324.method7181((Entity)null, Class7769.method25747(var8, var4, var5).method19666(var8));
          if (!var9.isEmpty()) {
             List<AxisAlignedBB> var10 = var7.method19521();
@@ -171,7 +171,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
       if (this.method3859()) {
          net.minecraft.util.Direction var4 = this.method3860();
          if (var4.getAxis().method324()) {
-            double var5 = this.field5361.method23414(this.field5324, this.field5325).method19513(Direction.field414);
+            double var5 = this.field5361.method23414(this.field5324, this.field5325).getEnd(Direction.Y);
             AxisAlignedBB var7 = this.method3862(new AxisAlignedBB(0.0, var5, 0.0, 1.0, 1.5000000999999998, 1.0));
             double var8 = (double)(var1 - this.field5366);
 
@@ -228,7 +228,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
 
    private void method3863(Entity var1, net.minecraft.util.Direction var2, double var3) {
       AxisAlignedBB var7 = var1.getBoundingBox();
-      AxisAlignedBB var8 = VoxelShapes.method27426().method19514().method19668(this.field5325);
+      AxisAlignedBB var8 = VoxelShapes.method27426().getBoundingBox().method19668(this.field5325);
       if (var7.method19670(var8)) {
          net.minecraft.util.Direction var9 = var2.method536();
          double var10 = method3861(var8, var9, var7) + 0.01;

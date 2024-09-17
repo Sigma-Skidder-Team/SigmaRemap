@@ -21,7 +21,7 @@ public class InvadedSpeed extends Module {
 
    @Override
    public void onDisable() {
-      MovementUtils.method37090(0.28F);
+      MovementUtils.strafe(0.28F);
       mc.timer.timerSpeed = 1.0F;
    }
 
@@ -34,15 +34,15 @@ public class InvadedSpeed extends Module {
                if (this.field24022 >= 3) {
                   this.field24022 = 0;
                   mc.timer.timerSpeed = 0.25F;
-                  MovementUtils.method37088(var1, (double)this.getNumberValueBySettingName("Speed"));
+                  MovementUtils.setSpeed(var1, (double)this.getNumberValueBySettingName("Speed"));
                }
             } else {
                mc.timer.timerSpeed = 2.0F;
-               MovementUtils.method37088(var1, MovementUtils.method37075() + 0.05);
+               MovementUtils.setSpeed(var1, MovementUtils.getSpeed() + 0.05);
             }
          } else {
             mc.timer.timerSpeed = 2.0F;
-            MovementUtils.method37088(var1, MovementUtils.method37075() + 0.05);
+            MovementUtils.setSpeed(var1, MovementUtils.getSpeed() + 0.05);
          }
       }
    }

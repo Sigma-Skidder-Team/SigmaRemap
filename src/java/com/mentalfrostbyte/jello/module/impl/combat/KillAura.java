@@ -504,7 +504,7 @@ public class KillAura extends Module {
             }
         }
 
-        boolean var9 = !Jesus.method16953() && (mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F));
+        boolean var9 = !Jesus.method16953() && (mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.001F));
         if (!var9) {
             this.field23941 = 0;
             this.field23940 = 0;

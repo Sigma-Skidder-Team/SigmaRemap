@@ -205,12 +205,12 @@ public class Class1673 extends Class1672 {
 
    @Override
    public BitSet method7116(Class97 var1) {
-      throw (UnsupportedOperationException) Util.method38516(new UnsupportedOperationException("Meaningless in this context"));
+      throw (UnsupportedOperationException) Util.pauseDevMode(new UnsupportedOperationException("Meaningless in this context"));
    }
 
    @Override
    public BitSet method7117(Class97 var1) {
-      throw (UnsupportedOperationException) Util.method38516(new UnsupportedOperationException("Meaningless in this context"));
+      throw (UnsupportedOperationException) Util.pauseDevMode(new UnsupportedOperationException("Meaningless in this context"));
    }
 
    public Chunk method7127() {

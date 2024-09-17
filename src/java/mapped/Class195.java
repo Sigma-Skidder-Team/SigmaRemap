@@ -37,12 +37,12 @@ public class Class195 extends Class196 implements AutoCloseable {
 
    @Override
    public int method600(int var1, boolean var2, boolean var3) {
-      throw (UnsupportedOperationException) Util.method38516(new UnsupportedOperationException("Ran authomatically on a different thread!"));
+      throw (UnsupportedOperationException) Util.pauseDevMode(new UnsupportedOperationException("Ran authomatically on a different thread!"));
    }
 
    @Override
    public void method601(BlockPos var1, int var2) {
-      throw (UnsupportedOperationException) Util.method38516(new UnsupportedOperationException("Ran authomatically on a different thread!"));
+      throw (UnsupportedOperationException) Util.pauseDevMode(new UnsupportedOperationException("Ran authomatically on a different thread!"));
    }
 
    @Override

@@ -149,12 +149,12 @@ public class Freecam extends Module {
     @EventTarget
     private void method16643(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.getKey() != mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                if (var1.getKey() != mc.gameSettings.keyBindJump.keycode.keyCode) {
-                    if (var1.getKey() != mc.gameSettings.keyBindForward.keycode.keyCode) {
-                        if (var1.getKey() != mc.gameSettings.keyBindBack.keycode.keyCode) {
-                            if (var1.getKey() != mc.gameSettings.keyBindLeft.keycode.keyCode) {
-                                if (var1.getKey() == mc.gameSettings.keyBindRight.keycode.keyCode) {
+            if (var1.getKey() != mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
+                if (var1.getKey() != mc.gameSettings.keyBindJump.inputMappingsInput.keyCode) {
+                    if (var1.getKey() != mc.gameSettings.keyBindForward.inputMappingsInput.keyCode) {
+                        if (var1.getKey() != mc.gameSettings.keyBindBack.inputMappingsInput.keyCode) {
+                            if (var1.getKey() != mc.gameSettings.keyBindLeft.inputMappingsInput.keyCode) {
+                                if (var1.getKey() == mc.gameSettings.keyBindRight.inputMappingsInput.keyCode) {
                                     var1.setCancelled(true);
                                     this.field23829 = true;
                                 }
@@ -187,12 +187,12 @@ public class Freecam extends Module {
     @EventTarget
     private void method16644(MouseHoverEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getMouseButton() != mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                if (var1.getMouseButton() != mc.gameSettings.keyBindJump.keycode.keyCode) {
-                    if (var1.getMouseButton() != mc.gameSettings.keyBindForward.keycode.keyCode) {
-                        if (var1.getMouseButton() != mc.gameSettings.keyBindBack.keycode.keyCode) {
-                            if (var1.getMouseButton() != mc.gameSettings.keyBindLeft.keycode.keyCode) {
-                                if (var1.getMouseButton() == mc.gameSettings.keyBindRight.keycode.keyCode) {
+            if (var1.getMouseButton() != mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
+                if (var1.getMouseButton() != mc.gameSettings.keyBindJump.inputMappingsInput.keyCode) {
+                    if (var1.getMouseButton() != mc.gameSettings.keyBindForward.inputMappingsInput.keyCode) {
+                        if (var1.getMouseButton() != mc.gameSettings.keyBindBack.inputMappingsInput.keyCode) {
+                            if (var1.getMouseButton() != mc.gameSettings.keyBindLeft.inputMappingsInput.keyCode) {
+                                if (var1.getMouseButton() == mc.gameSettings.keyBindRight.inputMappingsInput.keyCode) {
                                     var1.setCancelled(true);
                                     this.field23829 = false;
                                 }

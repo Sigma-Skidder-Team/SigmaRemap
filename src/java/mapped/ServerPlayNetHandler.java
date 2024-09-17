@@ -331,7 +331,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    private boolean method15664(Entity var1) {
-      return var1.world.method7035(var1.getBoundingBox().method19664(0.0625).method19662(0.0, -0.55, 0.0)).allMatch(Class7377::isAir);
+      return var1.world.method7035(var1.getBoundingBox().method19664(0.0625).contract(0.0, -0.55, 0.0)).allMatch(Class7377::isAir);
    }
 
    @Override
@@ -836,7 +836,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    private boolean method15667(IWorldReader var1, AxisAlignedBB var2) {
-      Stream<VoxelShape> var5 = var1.method7047(this.player, this.player.getBoundingBox().shrink(1.0E-5F), var0 -> true);
+      Stream<VoxelShape> var5 = var1.func_234867_d_(this.player, this.player.getBoundingBox().shrink(1.0E-5F), var0 -> true);
       VoxelShape var6 = VoxelShapes.create(var2.shrink(1.0E-5F));
       return var5.anyMatch(var1x -> ! VoxelShapes.compare(var1x, var6, IBooleanFunction.AND));
    }

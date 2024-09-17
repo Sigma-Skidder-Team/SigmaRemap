@@ -18,8 +18,8 @@ public class Class2719 extends NearestAttackableTargetGoal<LivingEntity> {
    @Override
    public AxisAlignedBB method10921(double var1) {
       net.minecraft.util.Direction var5 = ((Class1057)this.field17153).method4848();
-      if (var5.getAxis() != Direction.field413) {
-         return var5.getAxis() != Direction.field415
+      if (var5.getAxis() != Direction.X) {
+         return var5.getAxis() != Direction.Z
             ? this.field17153.getBoundingBox().method19663(var1, 4.0, var1)
             : this.field17153.getBoundingBox().method19663(var1, var1, 4.0);
       } else {

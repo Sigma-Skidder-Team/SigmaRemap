@@ -42,7 +42,7 @@ public class SpartanFly extends Module {
     @EventTarget
     private void method16268(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.getKey() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23571 = true;
             }
@@ -52,7 +52,7 @@ public class SpartanFly extends Module {
     @EventTarget
     private void method16269(MouseHoverEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23571 = false;
             }
@@ -72,7 +72,7 @@ public class SpartanFly extends Module {
     @EventTarget
     public void method16271(EventMove var1) {
         if (this.isEnabled()) {
-            boolean var4 = mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F);
+            boolean var4 = mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.001F);
             if (!var4) {
                 if (var1.getY() < 0.0) {
                     if (this.field23569 != mc.player.getPositionVec().y) {
@@ -107,21 +107,21 @@ public class SpartanFly extends Module {
                         this.field23569 = !mc.gameSettings.keyBindJump.isKeyDown()
                                 ? (!this.field23571 ? mc.player.getPositionVec().y : mc.player.getPositionVec().y - 1.0)
                                 : (!this.field23571 ? mc.player.getPositionVec().y + 1.0 : mc.player.getPositionVec().y);
-                        MovementUtils.method37088(var1, 0.35);
+                        MovementUtils.setSpeed(var1, 0.35);
                     }
                 }
             } else {
                 mc.player.jump();
                 var1.setY(mc.player.getMotion().y);
-                MovementUtils.method37088(var1, 0.35);
+                MovementUtils.setSpeed(var1, 0.35);
                 this.field23569 = !mc.gameSettings.keyBindJump.isKeyDown()
                         ? (!this.field23571 ? mc.player.getPositionVec().y : mc.player.getPositionVec().y - 1.0)
                         : (!this.field23571 ? mc.player.getPositionVec().y + 1.0 : mc.player.getPositionVec().y);
             }
 
-            ColorUtils.method17724(var1.getX());
-            ColorUtils.method17725(var1.getY());
-            ColorUtils.method17726(var1.getZ());
+            ColorUtils.setPlayerXMotion(var1.getX());
+            ColorUtils.setPlayerYMotion(var1.getY());
+            ColorUtils.setPlayerZMotion(var1.getZ());
         }
     }
 

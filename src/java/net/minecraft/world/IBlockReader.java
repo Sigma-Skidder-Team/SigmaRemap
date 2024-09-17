@@ -78,11 +78,11 @@ public interface IBlockReader {
    }
 
    default double method7038(VoxelShape var1, Supplier<VoxelShape> var2) {
-      if (var1.method19516()) {
-         double var5 = ((VoxelShape)var2.get()).method19513(Direction.field414);
+      if (var1.isEmpty()) {
+         double var5 = ((VoxelShape)var2.get()).getEnd(Direction.Y);
          return !(var5 >= 1.0) ? Double.NEGATIVE_INFINITY : var5 - 1.0;
       } else {
-         return var1.method19513(Direction.field414);
+         return var1.getEnd(Direction.Y);
       }
    }
 

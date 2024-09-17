@@ -30,13 +30,13 @@ public class Class9560 implements ArgumentType<EnumSet<Direction>> {
          Direction var6;
          switch (var5) {
             case 'x':
-               var6 = Direction.field413;
+               var6 = Direction.X;
                break;
             case 'y':
-               var6 = Direction.field414;
+               var6 = Direction.Y;
                break;
             case 'z':
-               var6 = Direction.field415;
+               var6 = Direction.Z;
                break;
             default:
                throw field44531.create();

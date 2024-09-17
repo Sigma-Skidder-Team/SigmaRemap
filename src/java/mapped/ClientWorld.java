@@ -400,15 +400,15 @@ public class ClientWorld extends World {
    private void method6854(BlockPos var1, BlockState var2, IParticleData var3, boolean var4) {
       if (var2.method23449().method23474()) {
          VoxelShape var7 = var2.method23414(this, var1);
-         double var8 = var7.method19513(Direction.field414);
+         double var8 = var7.getEnd(Direction.Y);
          if (!(var8 < 1.0)) {
             if (!var2.method23446(BlockTags.field32781)) {
-               double var10 = var7.method19512(Direction.field414);
+               double var10 = var7.getStart(Direction.Y);
                if (!(var10 > 0.0)) {
                   BlockPos var12 = var1.down();
                   BlockState var13 = this.getBlockState(var12);
                   VoxelShape var14 = var13.method23414(this, var12);
-                  double var15 = var14.method19513(Direction.field414);
+                  double var15 = var14.getEnd(Direction.Y);
                   if (var15 < 1.0 && var13.method23449().method23474()) {
                      this.method6855(var1, var3, var7, (double)var1.getY() - 0.05);
                   }
@@ -431,10 +431,10 @@ public class ClientWorld extends World {
 
    private void method6855(BlockPos var1, IParticleData var2, VoxelShape var3, double var4) {
       this.method6856(
-         (double)var1.getX() + var3.method19512(Direction.field413),
-         (double)var1.getX() + var3.method19513(Direction.field413),
-         (double)var1.getZ() + var3.method19512(Direction.field415),
-         (double)var1.getZ() + var3.method19513(Direction.field415),
+         (double)var1.getX() + var3.getStart(Direction.X),
+         (double)var1.getX() + var3.getEnd(Direction.X),
+         (double)var1.getZ() + var3.getStart(Direction.Z),
+         (double)var1.getZ() + var3.getEnd(Direction.Z),
          var4,
          var2
       );

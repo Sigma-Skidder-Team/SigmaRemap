@@ -38,7 +38,7 @@ public class MineplexFly extends PremiumModule {
     @Override
     public void onEnable() {
         this.field23668 = -1;
-        this.field23671 = MovementUtils.method37075();
+        this.field23671 = MovementUtils.getSpeed();
         this.field23669 = 0;
         this.field23675 = false;
         this.field23670 = -1;
@@ -48,8 +48,8 @@ public class MineplexFly extends PremiumModule {
 
     @Override
     public void onDisable() {
-        double var3 = MovementUtils.method37075() * 0.5;
-        MovementUtils.method37090(var3);
+        double var3 = MovementUtils.getSpeed() * 0.5;
+        MovementUtils.strafe(var3);
         if (this.field23670 != -1) {
             mc.getConnection().sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem));
             this.field23670 = mc.player.inventory.currentItem;
@@ -71,7 +71,7 @@ public class MineplexFly extends PremiumModule {
             this.field23673 = this.field23668 = this.field23670 = -1;
             this.field23669 = 0;
             this.field23675 = false;
-            this.field23671 = MovementUtils.method37075();
+            this.field23671 = MovementUtils.getSpeed();
         }
     }
 
@@ -79,7 +79,7 @@ public class MineplexFly extends PremiumModule {
         return this.isEnabled()
                 && this.field23670 != -1
                 && this.field23671 < (double) this.getNumberValueBySettingName("Boost")
-                && (mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F))
+                && (mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.001F))
                 && !this.field23675;
     }
 
@@ -96,10 +96,10 @@ public class MineplexFly extends PremiumModule {
     public void method16458(EventMove var1) {
         if (this.isEnabled()) {
             if (this.field23675) {
-                MovementUtils.method37088(var1, 0.01);
+                MovementUtils.setSpeed(var1, 0.01);
             } else {
                 float var4 = mc.player.rotationYaw + 90.0F;
-                if (!mc.player.onGround && !ColorUtils.method17730(mc.player, 0.001F)) {
+                if (!mc.player.onGround && !ColorUtils.isAboveBounds(mc.player, 0.001F)) {
                     if (this.field23668 != -1) {
                         if (this.field23674 && !ColorUtils.method17686()) {
                             this.field23674 = !this.field23674;
@@ -126,11 +126,11 @@ public class MineplexFly extends PremiumModule {
                             this.field23671 = 0.35;
                         }
 
-                        MovementUtils.method37088(var1, this.field23671);
+                        MovementUtils.setSpeed(var1, this.field23671);
                     }
                 } else {
                     if (this.field23669 > 0) {
-                        MovementUtils.method37088(var1, 0.0);
+                        MovementUtils.setSpeed(var1, 0.0);
                         this.access().toggle();
                         return;
                     }
@@ -153,7 +153,7 @@ public class MineplexFly extends PremiumModule {
                     CPlayerTryUseItemOnBlockPacket var9 = new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, var8);
                     mc.getConnection().sendPacket(var9);
                     if (!(this.field23671 < (double) this.getNumberValueBySettingName("Boost"))) {
-                        MovementUtils.method37088(var1, 0.0);
+                        MovementUtils.setSpeed(var1, 0.0);
                         mc.player.jump();
                         this.field23672 = 0.4299999;
                         this.field23669 = 0;
@@ -197,7 +197,7 @@ public class MineplexFly extends PremiumModule {
             if (var1.getPacket() instanceof CHeldItemChangePacket
                     && this.field23670 != -1
                     && this.field23671 < (double) this.getNumberValueBySettingName("Boost")
-                    && (mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F))
+                    && (mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.001F))
                     && !this.field23675) {
                 var1.setCancelled(true);
             }

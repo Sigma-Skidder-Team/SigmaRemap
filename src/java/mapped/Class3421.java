@@ -240,7 +240,7 @@ public class Class3421 extends Block implements Class3207 {
       Class106 var6 = var1.<Class106>method23463(field19133);
       switch (Class8332.field35835[var2.ordinal()]) {
          case 1:
-            if (var5.getAxis() == Direction.field415) {
+            if (var5.getAxis() == Direction.Z) {
                switch (Class8332.field35834[var6.ordinal()]) {
                   case 1:
                      return var1.method23395(Class80.field187).method23465(field19133, Class106.field331);
@@ -256,7 +256,7 @@ public class Class3421 extends Block implements Class3207 {
             }
             break;
          case 2:
-            if (var5.getAxis() == Direction.field413) {
+            if (var5.getAxis() == Direction.X) {
                switch (Class8332.field35834[var6.ordinal()]) {
                   case 1:
                      return var1.method23395(Class80.field187).method23465(field19133, Class106.field330);

@@ -48,9 +48,9 @@ public class Class3199 extends Class3198 {
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       if (!var1.<Boolean>method23463(field18488)) {
-         return var1.<net.minecraft.util.Direction>method23463(field18484).getAxis() != Direction.field413 ? field18489 : field18490;
+         return var1.<net.minecraft.util.Direction>method23463(field18484).getAxis() != Direction.X ? field18489 : field18490;
       } else {
-         return var1.<net.minecraft.util.Direction>method23463(field18484).getAxis() != Direction.field413 ? field18491 : field18492;
+         return var1.<net.minecraft.util.Direction>method23463(field18484).getAxis() != Direction.X ? field18491 : field18492;
       }
    }
 
@@ -68,7 +68,7 @@ public class Class3199 extends Class3198 {
    @Override
    public VoxelShape method11502(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       if (!var1.<Boolean>method23463(field18486)) {
-         return var1.<net.minecraft.util.Direction>method23463(field18484).getAxis() != Direction.field415 ? field18494 : field18493;
+         return var1.<net.minecraft.util.Direction>method23463(field18484).getAxis() != Direction.Z ? field18494 : field18493;
       } else {
          return VoxelShapes.method27425();
       }
@@ -77,9 +77,9 @@ public class Class3199 extends Class3198 {
    @Override
    public VoxelShape method11503(BlockState var1, IBlockReader var2, BlockPos var3) {
       if (!var1.<Boolean>method23463(field18488)) {
-         return var1.<net.minecraft.util.Direction>method23463(field18484).getAxis() != Direction.field413 ? field18495 : field18496;
+         return var1.<net.minecraft.util.Direction>method23463(field18484).getAxis() != Direction.X ? field18495 : field18496;
       } else {
-         return var1.<net.minecraft.util.Direction>method23463(field18484).getAxis() != Direction.field413 ? field18497 : field18498;
+         return var1.<net.minecraft.util.Direction>method23463(field18484).getAxis() != Direction.X ? field18497 : field18498;
       }
    }
 
@@ -104,9 +104,9 @@ public class Class3199 extends Class3198 {
       boolean var6 = var4.method6780(var5);
       net.minecraft.util.Direction var7 = var1.method18350();
       Direction var8 = var7.getAxis();
-      boolean var9 = var8 == Direction.field415
+      boolean var9 = var8 == Direction.Z
             && (this.method11504(var4.getBlockState(var5.west())) || this.method11504(var4.getBlockState(var5.east())))
-         || var8 == Direction.field413 && (this.method11504(var4.getBlockState(var5.north())) || this.method11504(var4.getBlockState(var5.south())));
+         || var8 == Direction.X && (this.method11504(var4.getBlockState(var5.north())) || this.method11504(var4.getBlockState(var5.south())));
       return this.method11579()
          .method23465(field18484, var7)
          .method23465(field18486, Boolean.valueOf(var6))

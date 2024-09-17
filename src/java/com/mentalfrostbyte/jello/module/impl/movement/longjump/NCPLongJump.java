@@ -36,7 +36,7 @@ public class NCPLongJump extends Module {
     public void onDisable() {
         this.field23479 = false;
         mc.timer.timerSpeed = 1.0F;
-        MovementUtils.method37090(MovementUtils.method37076() * 0.7);
+        MovementUtils.strafe(MovementUtils.method37076() * 0.7);
     }
 
     @Override
@@ -53,7 +53,7 @@ public class NCPLongJump extends Module {
                 this.field23477++;
                 if (this.field23479 && var1.getY() != 0.599 && this.access().getBooleanValueFromSetttingName("Auto Disable")) {
                     this.access().toggle();
-                    MovementUtils.method37088(var1, MovementUtils.method37076() * 0.8);
+                    MovementUtils.setSpeed(var1, MovementUtils.method37076() * 0.8);
                     return;
                 }
 
@@ -102,7 +102,7 @@ public class NCPLongJump extends Module {
                         this.field23480 = var5;
                     }
 
-                    MovementUtils.method37088(var1, this.field23480);
+                    MovementUtils.setSpeed(var1, this.field23480);
                     if (MovementUtils.method37079() == 0) {
                         String var13 = this.getStringSettingValueByName("Glide Mode");
                         switch (var13) {
@@ -130,11 +130,11 @@ public class NCPLongJump extends Module {
                 }
 
                 if (this.field23477 == 1 && mc.player.getMotion().y < 0.0 && this.access().getBooleanValueFromSetttingName("Auto Jump")) {
-                    MovementUtils.method37088(var1, MovementUtils.method37076() * 0.2);
+                    MovementUtils.setSpeed(var1, MovementUtils.method37076() * 0.2);
                 }
             }
 
-            ColorUtils.method17725(var1.getY());
+            ColorUtils.setPlayerYMotion(var1.getY());
         }
     }
 

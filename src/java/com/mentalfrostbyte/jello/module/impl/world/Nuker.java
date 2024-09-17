@@ -118,7 +118,7 @@ public class Nuker extends Module {
             double var5 = (double) this.field23566.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
             double var7 = (double) this.field23566.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
             double var9 = (double) this.field23566.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
-            AxisAlignedBB var11 = mc.world.getBlockState(this.field23566).method23414(mc.world, this.field23566).method19514();
+            AxisAlignedBB var11 = mc.world.getBlockState(this.field23566).method23414(mc.world, this.field23566).getBoundingBox();
             Box3D var12 = new Box3D(
                     var5 + var11.minX,
                     var7 + var11.minY,

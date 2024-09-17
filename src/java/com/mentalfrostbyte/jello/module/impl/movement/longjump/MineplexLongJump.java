@@ -27,7 +27,7 @@ public class MineplexLongJump extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.method37090(MovementUtils.method37075() * 0.7);
+        MovementUtils.strafe(MovementUtils.getSpeed() * 0.7);
     }
 
     @Override
@@ -85,7 +85,7 @@ public class MineplexLongJump extends Module {
                         this.field23802 = 0.3;
                     }
 
-                    MovementUtils.method37088(var1, this.field23802);
+                    MovementUtils.setSpeed(var1, this.field23802);
                     var1.setY(this.field23803);
                 }
             } else {
@@ -109,7 +109,7 @@ public class MineplexLongJump extends Module {
                         && (this.access().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var4) || this.access().getBooleanValueFromSetttingName("Auto Jump"))) {
                     mc.player.jump();
                     var1.setY(mc.player.getMotion().y);
-                    MovementUtils.method37088(var1, 0.0);
+                    MovementUtils.setSpeed(var1, 0.0);
                 }
             }
         }

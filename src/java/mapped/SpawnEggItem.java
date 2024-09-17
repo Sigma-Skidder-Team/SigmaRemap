@@ -61,7 +61,7 @@ public class SpawnEggItem extends Item {
          }
 
          BlockPos var12;
-         if (!var8.method23414(var4, var6).method19516()) {
+         if (!var8.method23414(var4, var6).isEmpty()) {
             var12 = var6.method8349(var7);
          } else {
             var12 = var6;

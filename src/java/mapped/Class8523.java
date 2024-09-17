@@ -487,7 +487,7 @@ public class Class8523 {
             ImmutableList.of(
                new Class7872(new Class6439(Blocks.field36521, 0.3F), Class6435.field28275, Blocks.field37136.method11579()),
                new Class7872(
-                  Class6435.field28275, Class6435.field28275, new Class8035(0.0F, 0.05F, 0, 100, Direction.field414), Blocks.AIR.method11579()
+                  Class6435.field28275, Class6435.field28275, new Class8035(0.0F, 0.05F, 0, 100, Direction.Y), Blocks.AIR.method11579()
                ),
                field38249
             )

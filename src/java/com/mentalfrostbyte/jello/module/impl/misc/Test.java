@@ -137,7 +137,7 @@ public class Test extends Module {
     public void method16547(EventMove var1) {
         if (this.isEnabled()) {
             double var4 = Math.sqrt(var1.getX() * var1.getX() + var1.getZ() * var1.getZ());
-            ColorUtils.method17725(var1.getY());
+            ColorUtils.setPlayerYMotion(var1.getY());
         }
     }
 

@@ -28,9 +28,9 @@ public class HorizonFly extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.method37090(0.0);
+        MovementUtils.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
-            ColorUtils.method17725(-0.0789);
+            ColorUtils.setPlayerYMotion(-0.0789);
         }
 
         mc.timer.timerSpeed = 1.0F;
@@ -45,18 +45,18 @@ public class HorizonFly extends Module {
                 if (this.field23497 != -1) {
                     if (this.field23497 != 0) {
                         if (this.field23497 >= 1) {
-                            MovementUtils.method37088(var1, var4 + 5.0E-4);
+                            MovementUtils.setSpeed(var1, var4 + 5.0E-4);
                         }
                     } else {
-                        MovementUtils.method37088(var1, var4 + 0.0015);
+                        MovementUtils.setSpeed(var1, var4 + 0.0015);
                     }
                 } else {
                     var1.setY(MovementUtils.method37080());
-                    ColorUtils.method17725(var1.getY());
-                    MovementUtils.method37088(var1, 0.125);
+                    ColorUtils.setPlayerYMotion(var1.getY());
+                    MovementUtils.setSpeed(var1, 0.125);
                 }
             } else {
-                MovementUtils.method37088(var1, 0.0);
+                MovementUtils.setSpeed(var1, 0.0);
             }
         }
     }

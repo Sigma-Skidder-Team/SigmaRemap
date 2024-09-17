@@ -19,7 +19,7 @@ public class Class4174 extends Class4167 {
    public Class4174(Random var1, int var2, int var3) {
       super(Class7792.field33429, 0);
       this.method12939(Class76.field161.method247(var1));
-      if (this.method12938().getAxis() != Direction.field415) {
+      if (this.method12938().getAxis() != Direction.Z) {
          this.field20444 = new Class9764(var2, 64, var3, var2 + 19 - 1, 73, var3 + 19 - 1);
       } else {
          this.field20444 = new Class9764(var2, 64, var3, var2 + 19 - 1, 73, var3 + 19 - 1);

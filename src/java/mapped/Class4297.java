@@ -61,10 +61,10 @@ public class Class4297 extends Class4278 {
    @Override
    public void keyPressed(int var1) {
       super.keyPressed(var1);
-      if (var1 != this.field20817.gameSettings.keyBindForward.keycode.keyCode) {
-         if (var1 != this.field20817.gameSettings.keyBindBack.keycode.keyCode) {
-            if (var1 != this.field20817.gameSettings.keyBindLeft.keycode.keyCode) {
-               if (var1 == this.field20817.gameSettings.keyBindRight.keycode.keyCode) {
+      if (var1 != this.field20817.gameSettings.keyBindForward.inputMappingsInput.keyCode) {
+         if (var1 != this.field20817.gameSettings.keyBindBack.inputMappingsInput.keyCode) {
+            if (var1 != this.field20817.gameSettings.keyBindLeft.inputMappingsInput.keyCode) {
+               if (var1 == this.field20817.gameSettings.keyBindRight.inputMappingsInput.keyCode) {
                   this.field20818.method29737().method29653(Class2097.field13664);
                }
             } else {

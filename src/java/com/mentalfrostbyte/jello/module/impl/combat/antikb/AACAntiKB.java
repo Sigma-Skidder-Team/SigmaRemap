@@ -34,7 +34,7 @@ public class AACAntiKB extends Module {
             if (this.method16790()) {
                 if (field23907 == 0 && !mc.player.onGround && mc.player.hurtTime > 0 && mc.player.fallDistance < 2.0F) {
                     mc.player.addVelocity(0.0, -1.0, 0.0);
-                    ColorUtils.method17725(mc.player.getMotion().getY());
+                    ColorUtils.setPlayerYMotion(mc.player.getMotion().getY());
                     mc.player.onGround = true;
                     field23907 = 20;
                 }
@@ -60,8 +60,8 @@ public class AACAntiKB extends Module {
                             var1.setZ(var1.getZ() * 0.8);
                         }
 
-                        ColorUtils.method17724(var1.getX());
-                        ColorUtils.method17726(var1.getZ());
+                        ColorUtils.setPlayerXMotion(var1.getX());
+                        ColorUtils.setPlayerZMotion(var1.getZ());
                     }
                 }
             }

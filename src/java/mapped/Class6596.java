@@ -48,12 +48,12 @@ public class Class6596 {
       field29024 = new int[Direction.values().length];
 
       try {
-         field29024[Direction.field413.ordinal()] = 1;
+         field29024[Direction.X.ordinal()] = 1;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field29024[Direction.field415.ordinal()] = 2;
+         field29024[Direction.Z.ordinal()] = 2;
       } catch (NoSuchFieldError var3) {
       }
    }

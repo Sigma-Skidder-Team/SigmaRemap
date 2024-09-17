@@ -24,7 +24,7 @@ public interface ICollisionReader extends IBlockReader {
 
    default boolean placedBlockCollides(BlockState var1, BlockPos var2, ISelectionContext var3) {
       VoxelShape var6 = var1.getCollisionShape(this, var2, var3);
-      return var6.method19516()
+      return var6.isEmpty()
          || this.checkNoEntityCollision((Entity)null, var6.withOffset((double)var2.getX(), (double)var2.getY(), (double)var2.getZ()));
    }
 
@@ -45,12 +45,12 @@ public interface ICollisionReader extends IBlockReader {
    }
 
    default boolean method7054(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
-      return this.method7047(var1, var2, var3).allMatch(VoxelShape::method19516);
+      return this.func_234867_d_(var1, var2, var3).allMatch(VoxelShape::isEmpty);
    }
 
    Stream<VoxelShape> func_230318_c_(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3);
 
-   default Stream<VoxelShape> method7047(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
+   default Stream<VoxelShape> func_234867_d_(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
       return Stream.<VoxelShape>concat(this.getCollisionShapes(var1, var2), this.func_230318_c_(var1, var2, var3));
    }
 
@@ -58,11 +58,11 @@ public interface ICollisionReader extends IBlockReader {
       return StreamSupport.<VoxelShape>stream(new Class8181(this, var1, var2), false);
    }
 
-   default boolean method7056(Entity var1, AxisAlignedBB var2, BiPredicate<BlockState, BlockPos> var3) {
-      return this.method7057(var1, var2, var3).allMatch(VoxelShape::method19516);
+   default boolean func_242405_a(Entity var1, AxisAlignedBB var2, BiPredicate<BlockState, BlockPos> var3) {
+      return this.func_241457_a_(var1, var2, var3).allMatch(VoxelShape::isEmpty);
    }
 
-   default Stream<VoxelShape> method7057(Entity var1, AxisAlignedBB var2, BiPredicate<BlockState, BlockPos> var3) {
+   default Stream<VoxelShape> func_241457_a_(Entity var1, AxisAlignedBB var2, BiPredicate<BlockState, BlockPos> var3) {
       return StreamSupport.<VoxelShape>stream(new Class8181(this, var1, var2, var3), false);
    }
 }

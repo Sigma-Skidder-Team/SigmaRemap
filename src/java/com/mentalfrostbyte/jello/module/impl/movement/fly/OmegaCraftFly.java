@@ -42,9 +42,9 @@ public class OmegaCraftFly extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.method37090(0.2);
+        MovementUtils.strafe(0.2);
         if (mc.player.getMotion().y > 0.03) {
-            ColorUtils.method17725(-0.0784);
+            ColorUtils.setPlayerYMotion(-0.0784);
         }
     }
 
@@ -94,7 +94,7 @@ public class OmegaCraftFly extends Module {
             if (this.field23700 > 1) {
                 mc.player.setPosition(mc.player.getPositionVec().x, this.field23702, mc.player.getPositionVec().z);
                 double var4 = !mc.gameSettings.keyBindSneak.isKeyDown() ? 0.405 + (double) MovementUtils.method37078() * 0.02 : 0.25;
-                MovementUtils.method37088(var1, var4);
+                MovementUtils.setSpeed(var1, var4);
                 this.field23700 = 0;
             }
         } else {
@@ -106,12 +106,12 @@ public class OmegaCraftFly extends Module {
             }
 
             double var6 = !mc.gameSettings.keyBindSneak.isKeyDown() ? 0.6 : 0.25;
-            MovementUtils.method37088(var1, var6);
+            MovementUtils.setSpeed(var1, var6);
         }
 
-        ColorUtils.method17724(var1.getX());
-        ColorUtils.method17725(var1.getY());
-        ColorUtils.method17726(var1.getZ());
+        ColorUtils.setPlayerXMotion(var1.getX());
+        ColorUtils.setPlayerYMotion(var1.getY());
+        ColorUtils.setPlayerZMotion(var1.getZ());
     }
 
     @EventTarget

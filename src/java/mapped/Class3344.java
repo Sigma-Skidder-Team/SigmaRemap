@@ -51,10 +51,10 @@ public class Class3344 extends Class3343 {
                   (double)var14.getX() + 0.5,
                   (double)var14.getY() + 0.55,
                   (double)var14.getZ() + 0.5,
-                  var8.method33879().getAxis() != Direction.field413 ? 90.0F : 0.0F,
+                  var8.method33879().getAxis() != Direction.X ? 90.0F : 0.0F,
                   0.0F
                );
-               var13.renderYawOffset = var8.method33879().getAxis() != Direction.field413 ? 90.0F : 0.0F;
+               var13.renderYawOffset = var8.method33879().getAxis() != Direction.X ? 90.0F : 0.0F;
                var13.method5003();
 
                for (ServerPlayerEntity var12 : var0.<ServerPlayerEntity>method7182(ServerPlayerEntity.class, var13.getBoundingBox().method19664(50.0))) {

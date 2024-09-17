@@ -62,7 +62,7 @@ public class NoFall extends Module {
                         if (mc.world.getCollisionShapes(mc.player, var19).count() != 0L) {
                             var13 -= 1.0E-5;
                             var1.setY(var1.getY() + var13);
-                            ColorUtils.method17725(var1.getY());
+                            ColorUtils.setPlayerYMotion(var1.getY());
                             var6 = Double.MAX_VALUE;
                             break;
                         }
@@ -75,7 +75,7 @@ public class NoFall extends Module {
 
                 if (Math.abs(var6) < 0.1) {
                     var1.setY(var1.getY() + var6);
-                    ColorUtils.method17725(var1.getY());
+                    ColorUtils.setPlayerYMotion(var1.getY());
                 }
             }
         }
@@ -93,7 +93,7 @@ public class NoFall extends Module {
                 switch (var4) {
                     case "OldHypixel":
                         if (var1.isPre()) {
-                            if (ColorUtils.method17730(mc.player, 1.0E-4F)) {
+                            if (ColorUtils.isAboveBounds(mc.player, 1.0E-4F)) {
                                 this.field23509 = 0.0;
                                 return;
                             }
@@ -123,7 +123,7 @@ public class NoFall extends Module {
                         break;
                     case "Hypixel2":
                         if (var1.isPre()) {
-                            if (ColorUtils.method17730(mc.player, 1.0E-4F)) {
+                            if (ColorUtils.isAboveBounds(mc.player, 1.0E-4F)) {
                                 this.field23509 = 0.0;
                                 return;
                             }

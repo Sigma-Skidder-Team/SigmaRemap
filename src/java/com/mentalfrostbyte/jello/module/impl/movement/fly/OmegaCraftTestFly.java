@@ -37,9 +37,9 @@ public class OmegaCraftTestFly extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.method37090(0.0);
+        MovementUtils.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
-            ColorUtils.method17725(-0.0789);
+            ColorUtils.setPlayerYMotion(-0.0789);
         }
 
         mc.timer.timerSpeed = 1.0F;
@@ -56,19 +56,19 @@ public class OmegaCraftTestFly extends Module {
                         if (this.field23854 < 1) {
                         }
                     } else {
-                        MovementUtils.method37088(var1, 0.1);
+                        MovementUtils.setSpeed(var1, 0.1);
                     }
                 } else {
                     this.field23855++;
                     if (this.field23855 != 1 && this.field23855 % 3 != 0 && this.field23855 % 3 != 1) {
                     }
 
-                    ColorUtils.method17725(var1.getY());
-                    MovementUtils.method37088(var1, 1.0);
+                    ColorUtils.setPlayerYMotion(var1.getY());
+                    MovementUtils.setSpeed(var1, 1.0);
                 }
             } else {
                 var1.setY(0.0);
-                MovementUtils.method37088(var1, 0.0);
+                MovementUtils.setSpeed(var1, 0.0);
             }
         }
     }

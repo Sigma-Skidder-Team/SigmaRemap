@@ -68,7 +68,7 @@ public class Class1691 implements ISeedReader {
          this.field9214 = ((IChunk)var2.get(var2.size() - 1)).getPos();
          this.field9215 = var1.method6893().method24339(this);
       } else {
-         throw (IllegalStateException) Util.method38516(new IllegalStateException("Cache size is not a square."));
+         throw (IllegalStateException) Util.pauseDevMode(new IllegalStateException("Cache size is not a square."));
       }
    }
 
@@ -106,11 +106,11 @@ public class Class1691 implements ISeedReader {
             "Region bounds : {} {} | {} {}", this.field9213.x, this.field9213.z, this.field9214.x, this.field9214.z
          );
          if (var7 == null) {
-            throw (RuntimeException) Util.method38516(
+            throw (RuntimeException) Util.pauseDevMode(
                new RuntimeException(String.format("We are asking a region for a chunk out of bound | %s %s", var1, var2))
             );
          } else {
-            throw (RuntimeException) Util.method38516(
+            throw (RuntimeException) Util.pauseDevMode(
                new RuntimeException(String.format("Chunk is not of correct status. Expecting %s, got %s | %s %s", var3, var7.getStatus(), var1, var2))
             );
          }

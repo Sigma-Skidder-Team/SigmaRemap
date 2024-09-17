@@ -16,7 +16,7 @@ public class Class3387 extends Class3386 implements Class3207 {
 
    public Class3387(AbstractBlock var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field18995, Boolean.valueOf(false)).method23465(field18994, Direction.field414));
+      this.method11578(this.field18612.method35393().method23465(field18995, Boolean.valueOf(false)).method23465(field18994, Direction.Y));
    }
 
    @Override

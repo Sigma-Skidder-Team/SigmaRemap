@@ -28,12 +28,12 @@ public class KeyStrokes extends Module {
     }
 
     public Class2132 method16303(int var1) {
-        if (var1 != mc.gameSettings.keyBindLeft.keycode.keyCode) {
-            if (var1 != mc.gameSettings.keyBindRight.keycode.keyCode) {
-                if (var1 != mc.gameSettings.keyBindForward.keycode.keyCode) {
-                    if (var1 != mc.gameSettings.keyBindBack.keycode.keyCode) {
-                        if (var1 != mc.gameSettings.keyBindAttack.keycode.keyCode) {
-                            return var1 != mc.gameSettings.keyBindUseItem.keycode.keyCode ? null : Class2132.field13913;
+        if (var1 != mc.gameSettings.keyBindLeft.inputMappingsInput.keyCode) {
+            if (var1 != mc.gameSettings.keyBindRight.inputMappingsInput.keyCode) {
+                if (var1 != mc.gameSettings.keyBindForward.inputMappingsInput.keyCode) {
+                    if (var1 != mc.gameSettings.keyBindBack.inputMappingsInput.keyCode) {
+                        if (var1 != mc.gameSettings.keyBindAttack.inputMappingsInput.keyCode) {
+                            return var1 != mc.gameSettings.keyBindUseItem.inputMappingsInput.keyCode ? null : Class2132.field13913;
                         } else {
                             return Class2132.field13912;
                         }
@@ -83,7 +83,7 @@ public class KeyStrokes extends Module {
                             var10 = 0.5F;
                         }
 
-                        String var12 = ColorUtils.method17736(var19.field13919.keycode.keyCode);
+                        String var12 = ColorUtils.method17736(var19.field13919.inputMappingsInput.keyCode);
                         if (var19.field13919 != mc.gameSettings.keyBindAttack) {
                             if (var19.field13919 == mc.gameSettings.keyBindUseItem) {
                                 var12 = "R";

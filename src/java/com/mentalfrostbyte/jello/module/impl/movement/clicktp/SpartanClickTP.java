@@ -32,9 +32,9 @@ public class SpartanClickTP extends Module {
 
     @Override
     public void onDisable() {
-        ColorUtils.method17725(-0.08);
-        double var3 = MovementUtils.method37075();
-        MovementUtils.method37090(var3);
+        ColorUtils.setPlayerYMotion(-0.08);
+        double var3 = MovementUtils.getSpeed();
+        MovementUtils.strafe(var3);
         mc.timer.timerSpeed = 1.0F;
     }
 
@@ -78,9 +78,9 @@ public class SpartanClickTP extends Module {
                     if (!this.access().getBooleanValueFromSetttingName("Auto Disable")) {
                         this.field23464 = -1;
                         this.field23465 = null;
-                        ColorUtils.method17725(-0.08);
-                        double var5 = MovementUtils.method37075();
-                        MovementUtils.method37090(var5);
+                        ColorUtils.setPlayerYMotion(-0.08);
+                        double var5 = MovementUtils.getSpeed();
+                        MovementUtils.strafe(var5);
                         mc.timer.timerSpeed = 1.0F;
                     } else {
                         this.access().toggle();

@@ -87,7 +87,7 @@ public class Class3369 extends Class3241 {
    }
 
    private boolean method11961(BlockState var1, net.minecraft.util.Direction var2, double var3) {
-      if (var2.getAxis() != Direction.field414 && !(var3 > 0.8124F)) {
+      if (var2.getAxis() != Direction.Y && !(var3 > 0.8124F)) {
          net.minecraft.util.Direction var7 = var1.<net.minecraft.util.Direction>method23463(field18943);
          Class85 var8 = var1.<Class85>method23463(field18944);
          switch (Class7106.field30622[var8.ordinal()]) {
@@ -169,11 +169,11 @@ public class Class3369 extends Class3241 {
       BlockPos var5 = var1.method18345();
       World var6 = var1.method18360();
       Direction var7 = var4.getAxis();
-      if (var7 != Direction.field414) {
-         boolean var8 = var7 == Direction.field413
+      if (var7 != Direction.Y) {
+         boolean var8 = var7 == Direction.X
                && var6.getBlockState(var5.west()).method23454(var6, var5.west(), net.minecraft.util.Direction.EAST)
                && var6.getBlockState(var5.east()).method23454(var6, var5.east(), net.minecraft.util.Direction.WEST)
-            || var7 == Direction.field415
+            || var7 == Direction.Z
                && var6.getBlockState(var5.north()).method23454(var6, var5.north(), net.minecraft.util.Direction.SOUTH)
                && var6.getBlockState(var5.south()).method23454(var6, var5.south(), net.minecraft.util.Direction.NORTH);
          BlockState var9 = this.method11579().method23465(field18943, var4.method536()).method23465(field18944, !var8 ? Class85.field214 : Class85.field215);

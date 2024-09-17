@@ -10,10 +10,9 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 
 public class MovementUtils {
-   private static String[] field44553;
-   public static Minecraft mc = Minecraft.getInstance();
+    public static Minecraft mc = Minecraft.getInstance();
 
-   public static double method37075() {
+   public static double getSpeed() {
       double var2 = 0.2873;
       float var4 = 1.0F;
       ModifiableAttributeInstance var5 = mc.player.getAttribute(Attributes.MOVEMENT_SPEED);
@@ -30,7 +29,7 @@ public class MovementUtils {
          var2 *= 0.25;
       }
 
-      if (method37081()) {
+      if (isInWater()) {
          var2 *= 0.3;
       }
 
@@ -52,7 +51,7 @@ public class MovementUtils {
          var2 *= 0.25;
       }
 
-      if (method37081()) {
+      if (isInWater()) {
          var2 *= 0.3;
       }
 
@@ -71,19 +70,19 @@ public class MovementUtils {
       return 0.42F + (double)method37079() * 0.1;
    }
 
-   public static boolean method37081() {
+   public static boolean isInWater() {
       return mc.player.isInWater();
    }
 
    public static float[] lenientStrafe() {
-      MovementInput var2 = mc.player.field6131;
+      MovementInput var2 = mc.player.movementInput;
       float var3 = var2.field43908;
       float var4 = var2.field43907;
       return method37084(var3, var4);
    }
 
    public static float[] method37083() {
-      MovementInput var2 = mc.player.field6131;
+      MovementInput var2 = mc.player.movementInput;
       float var3 = var2.field43908;
       float var4 = var2.field43907;
       return method37085(var3, var4);
@@ -192,24 +191,24 @@ public class MovementUtils {
       return var2 || var3 || var4 || var5;
    }
 
-   public static void method37088(EventMove var0, double var1) {
+   public static void setSpeed(EventMove moveEvent, double motionSpeed) {
       float[] var5 = lenientStrafe();
       float var6 = var5[1];
       float var7 = var5[2];
       float var8 = var5[0];
       if (var6 == 0.0F && var7 == 0.0F) {
-         var0.setX(0.0);
-         var0.setZ(0.0);
+         moveEvent.setX(0.0);
+         moveEvent.setZ(0.0);
       }
 
       double var9 = Math.cos(Math.toRadians((double)var8));
       double var11 = Math.sin(Math.toRadians((double)var8));
-      double var13 = ((double)var6 * var9 + (double)var7 * var11) * var1;
-      double var15 = ((double)var6 * var11 - (double)var7 * var9) * var1;
-      var0.setX(var13);
-      var0.setZ(var15);
-      ColorUtils.method17724(var0.getX());
-      ColorUtils.method17726(var0.getZ());
+      double var13 = ((double)var6 * var9 + (double)var7 * var11) * motionSpeed;
+      double var15 = ((double)var6 * var11 - (double)var7 * var9) * motionSpeed;
+      moveEvent.setX(var13);
+      moveEvent.setZ(var15);
+      ColorUtils.setPlayerXMotion(moveEvent.getX());
+      ColorUtils.setPlayerZMotion(moveEvent.getZ());
    }
 
    public static void method37089(EventMove var0, double var1, float var3) {
@@ -227,26 +226,26 @@ public class MovementUtils {
       double var15 = var11 * var1;
       var0.setX(var13);
       var0.setZ(var15);
-      ColorUtils.method17724(var0.getX());
-      ColorUtils.method17726(var0.getZ());
+      ColorUtils.setPlayerXMotion(var0.getX());
+      ColorUtils.setPlayerZMotion(var0.getZ());
    }
 
-   public static void method37090(double var0) {
+   public static void strafe(double speed) {
       float[] var4 = lenientStrafe();
       float var5 = var4[1];
       float var6 = var4[2];
       float var7 = var4[0];
       if (var5 == 0.0F && var6 == 0.0F) {
-         ColorUtils.method17724(0.0);
-         ColorUtils.method17726(0.0);
+         ColorUtils.setPlayerXMotion(0.0);
+         ColorUtils.setPlayerZMotion(0.0);
       }
 
       double var8 = Math.cos(Math.toRadians((double)var7));
       double var10 = Math.sin(Math.toRadians((double)var7));
-      double var12 = ((double)var5 * var8 + (double)var6 * var10) * var0;
-      double var14 = ((double)var5 * var10 - (double)var6 * var8) * var0;
-      ColorUtils.method17724(var12);
-      ColorUtils.method17726(var14);
+      double var12 = ((double)var5 * var8 + (double)var6 * var10) * speed;
+      double var14 = ((double)var5 * var10 - (double)var6 * var8) * speed;
+      ColorUtils.setPlayerXMotion(var12);
+      ColorUtils.setPlayerZMotion(var14);
    }
 
    public static void method37091() {
@@ -273,8 +272,8 @@ public class MovementUtils {
       float var9 = (var4 - 90.0F) * (float) (Math.PI / 180.0);
       var0.setX((double)(-MathHelper.sin(var9)) * var1);
       var0.setZ((double) MathHelper.cos(var9) * var1);
-      ColorUtils.method17724(var0.getX());
-      ColorUtils.method17726(var0.getZ());
+      ColorUtils.setPlayerXMotion(var0.getX());
+      ColorUtils.setPlayerZMotion(var0.getZ());
       return var4;
    }
 
@@ -287,8 +286,8 @@ public class MovementUtils {
       }
 
       float var8 = (var3 - 90.0F) * (float) (Math.PI / 180.0);
-      ColorUtils.method17724((double)(-MathHelper.sin(var8)) * var0);
-      ColorUtils.method17726((double) MathHelper.cos(var8) * var0);
+      ColorUtils.setPlayerXMotion((double)(-MathHelper.sin(var8)) * var0);
+      ColorUtils.setPlayerZMotion((double) MathHelper.cos(var8) * var0);
       return var3;
    }
 
@@ -308,8 +307,8 @@ public class MovementUtils {
    }
 
    public static void method37095(double var0) {
-      double var4 = (double) mc.player.field6131.field43908;
-      double var6 = (double) mc.player.field6131.field43907;
+      double var4 = (double) mc.player.movementInput.field43908;
+      double var6 = (double) mc.player.movementInput.field43907;
       float var8 = mc.player.rotationYaw;
       if (var4 != 0.0) {
          if (!(var6 > 0.0)) {

@@ -188,7 +188,7 @@ public class AutoCrystal extends PremiumModule {
             if ((float) this.field23636 >= 20.0F / this.getNumberValueBySettingName("CPS")) {
                 EnderCrystalEntity var5 = mc.world
                         .method6772(
-                                Entity.class, this.field23633.boundingBox.method19662(2.0, 4.0, 2.0).method19662(-2.0, -3.0, -2.0), var0 -> var0 instanceof EnderCrystalEntity
+                                Entity.class, this.field23633.boundingBox.contract(2.0, 4.0, 2.0).contract(-2.0, -3.0, -2.0), var0 -> var0 instanceof EnderCrystalEntity
                         )
                         .stream()
                         .map(var0 -> (EnderCrystalEntity) var0)

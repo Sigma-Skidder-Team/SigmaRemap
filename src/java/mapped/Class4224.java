@@ -20,7 +20,7 @@ public class Class4224 extends Class4213 {
       super(Class7792.field33463, 0);
       this.method12939(var4);
       net.minecraft.util.Direction var7 = this.method12938();
-      if (var7.getAxis() != Direction.field415) {
+      if (var7.getAxis() != Direction.Z) {
          this.field20444 = new Class9764(var2, 39, var3, var2 + 58 - 1, 61, var3 + 58 - 1);
       } else {
          this.field20444 = new Class9764(var2, 39, var3, var2 + 58 - 1, 61, var3 + 58 - 1);

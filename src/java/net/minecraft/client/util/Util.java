@@ -137,7 +137,7 @@ public class Util {
    }
 
    private static void method38499(Thread var0, Throwable var1) {
-      method38516(var1);
+      pauseDevMode(var1);
       if (var1 instanceof CompletionException) {
          var1 = var1.getCause();
       }
@@ -302,7 +302,7 @@ public class Util {
       return var0;
    }
 
-   public static <T extends Throwable> T method38516(T var0) {
+   public static <T extends Throwable> T pauseDevMode(T var0) {
       if (SharedConstants.developmentMode) {
          field45725.error("Trying to throw a fatal exception, pausing in IDE", var0);
 

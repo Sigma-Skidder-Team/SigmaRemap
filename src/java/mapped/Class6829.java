@@ -75,8 +75,8 @@ public class Class6829 {
             Block var22 = var21.getBlock();
             VoxelShape var23 = var21.method23414(this.field29707.world, var20);
             if (var16 > (double)this.field29707.stepHeight && var12 * var12 + var14 * var14 < (double)Math.max(1.0F, this.field29707.getWidth())
-               || !var23.method19516()
-                  && this.field29707.getPosY() < var23.method19513(Direction.field414) + (double)var20.getY()
+               || !var23.isEmpty()
+                  && this.field29707.getPosY() < var23.getEnd(Direction.Y) + (double)var20.getY()
                   && !var22.isIn(BlockTags.field32748)
                   && !var22.isIn(BlockTags.field32771)) {
                this.field29707.method4229().method27049();

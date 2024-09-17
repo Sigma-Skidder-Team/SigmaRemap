@@ -10,8 +10,8 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 
 public enum Class76 implements Iterable<net.minecraft.util.Direction>, Predicate<net.minecraft.util.Direction> {
-   field161(new net.minecraft.util.Direction[]{net.minecraft.util.Direction.NORTH, net.minecraft.util.Direction.EAST, net.minecraft.util.Direction.SOUTH, net.minecraft.util.Direction.WEST}, new Direction[]{Direction.field413, Direction.field415}),
-   field162(new net.minecraft.util.Direction[]{net.minecraft.util.Direction.field673, net.minecraft.util.Direction.DOWN}, new Direction[]{Direction.field414});
+   field161(new net.minecraft.util.Direction[]{net.minecraft.util.Direction.NORTH, net.minecraft.util.Direction.EAST, net.minecraft.util.Direction.SOUTH, net.minecraft.util.Direction.WEST}, new Direction[]{Direction.X, Direction.Z}),
+   field162(new net.minecraft.util.Direction[]{net.minecraft.util.Direction.field673, net.minecraft.util.Direction.DOWN}, new Direction[]{Direction.Y});
 
    private final net.minecraft.util.Direction[] field163;
    private final Direction[] field164;

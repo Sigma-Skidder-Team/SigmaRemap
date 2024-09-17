@@ -32,7 +32,7 @@ public class Unstuck extends Module {
     public void method16285(EventMove var1) {
         if (this.isEnabled()) {
             if ((float) this.field23574 >= this.getNumberValueBySettingName("Flags")) {
-                MovementUtils.method37088(var1, 0.0);
+                MovementUtils.setSpeed(var1, 0.0);
                 var1.setY(0.0);
                 mc.player.setMotion(0.0, 0.0, 0.0);
             }
@@ -49,7 +49,7 @@ public class Unstuck extends Module {
     @EventTarget
     public void method16287(EventUpdate var1) {
         if (this.isEnabled() && var1.isPre()) {
-            if (!mc.player.onGround && !ColorUtils.method17730(mc.player, 0.001F)) {
+            if (!mc.player.onGround && !ColorUtils.isAboveBounds(mc.player, 0.001F)) {
                 if ((float) this.field23574 >= this.getNumberValueBySettingName("Flags") && this.field23575 == 0) {
                     this.field23575 = 60;
                     Client.getInstance().getNotificationManager().post(new Notification("Unstuck", "Trying to unstuck you.."));
@@ -73,7 +73,7 @@ public class Unstuck extends Module {
     public void method16288(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (mc.player != null) {
-                if (var1.getPacket() instanceof SPlayerPositionLookPacket && !ColorUtils.method17730(mc.player, 0.3F) && mc.player.ticksExisted > 10) {
+                if (var1.getPacket() instanceof SPlayerPositionLookPacket && !ColorUtils.isAboveBounds(mc.player, 0.3F) && mc.player.ticksExisted > 10) {
                     this.field23574++;
                     if ((float) this.field23574 > this.getNumberValueBySettingName("Flags")) {
                         var1.setCancelled(true);

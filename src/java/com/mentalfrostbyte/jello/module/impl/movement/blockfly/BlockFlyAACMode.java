@@ -127,7 +127,7 @@ public class BlockFlyAACMode extends Module {
 
                 this.field23526 = AACSpeed.method16016(this.field23524, this.field23525, () -> this.field23525 = 0);
                 if (this.field23524 >= 0) {
-                    MovementUtils.method37088(var1, this.field23526);
+                    MovementUtils.setSpeed(var1, this.field23526);
                 }
             }
         }

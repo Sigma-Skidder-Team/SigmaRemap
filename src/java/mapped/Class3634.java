@@ -30,7 +30,7 @@ public class Class3634 {
             this.field19668.getChunkProvider().registerTicket(Class8561.field38485, new ChunkPos(var4), 3, var4);
             BlockState var5x = this.field19668.getBlockState(var4);
             return Class7215.method22658(
-               var4, var5x.<Direction>method23463(Class8820.field39712), 21, Direction.field414, 21, var2x -> this.field19668.getBlockState(var2x) == var5x
+               var4, var5x.<Direction>method23463(Class8820.field39712), 21, Direction.Y, 21, var2x -> this.field19668.getBlockState(var2x) == var5x
             );
          }
       );

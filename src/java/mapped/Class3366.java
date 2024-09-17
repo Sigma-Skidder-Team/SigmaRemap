@@ -158,14 +158,14 @@ public class Class3366 extends Class3241 {
    private void method11948(World var1, BlockPos var2, BlockState var3) {
       if (var3.method23449().method23474() && !(var1.rand.nextFloat() < 0.3F)) {
          VoxelShape var6 = var3.method23414(var1, var2);
-         double var7 = var6.method19513(Direction.field414);
+         double var7 = var6.getEnd(Direction.Y);
          if (var7 >= 1.0 && !var3.method23446(BlockTags.field32781)) {
-            double var9 = var6.method19512(Direction.field414);
+            double var9 = var6.getStart(Direction.Y);
             if (!(var9 > 0.0)) {
                BlockPos var11 = var2.down();
                BlockState var12 = var1.getBlockState(var11);
                VoxelShape var13 = var12.method23414(var1, var11);
-               double var14 = var13.method19513(Direction.field414);
+               double var14 = var13.getEnd(Direction.Y);
                if ((var14 < 1.0 || !var12.method23456(var1, var11)) && var12.method23449().method23474()) {
                   this.method11949(var1, var2, var6, (double)var2.getY() - 0.05);
                }
@@ -179,10 +179,10 @@ public class Class3366 extends Class3241 {
    private void method11949(World var1, BlockPos var2, VoxelShape var3, double var4) {
       this.method11950(
          var1,
-         (double)var2.getX() + var3.method19512(Direction.field413),
-         (double)var2.getX() + var3.method19513(Direction.field413),
-         (double)var2.getZ() + var3.method19512(Direction.field415),
-         (double)var2.getZ() + var3.method19513(Direction.field415),
+         (double)var2.getX() + var3.getStart(Direction.X),
+         (double)var2.getX() + var3.getEnd(Direction.X),
+         (double)var2.getZ() + var3.getStart(Direction.Z),
+         (double)var2.getZ() + var3.getEnd(Direction.Z),
          var4
       );
    }

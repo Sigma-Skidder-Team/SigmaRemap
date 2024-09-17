@@ -20,10 +20,10 @@ public class AACStep extends Module {
     private void method16145(EventStep var1) {
         if (this.isEnabled() && !var1.isCancelled()) {
             double var4 = var1.getHeight();
-            if (!ColorUtils.method17730(mc.player, 1.0E-4F)) {
+            if (!ColorUtils.isAboveBounds(mc.player, 1.0E-4F)) {
                 var1.setCancelled(true);
             } else {
-                if (!MovementUtils.method37081() && var4 >= 0.625) {
+                if (!MovementUtils.isInWater() && var4 >= 0.625) {
                     double var6 = mc.player.getPosX();
                     double var8 = mc.player.getPosY();
                     double var10 = mc.player.getPosZ();

@@ -26,7 +26,7 @@ public class Class6218 implements Class6226 {
       double var7 = var4.getX();
       double var9 = var4.getY();
       double var11 = var4.getZ();
-      if (var3.getAxis() != Direction.field414) {
+      if (var3.getAxis() != Direction.Y) {
          var9 -= 0.15625;
       } else {
          var9 -= 0.125;

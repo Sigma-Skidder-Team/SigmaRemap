@@ -15,7 +15,7 @@ public class Class4195 extends Class4194 {
       this.field20496 = true;
       this.method12939(Class76.field161.method247(var3));
       this.field20495 = Class2213.field14470;
-      if (this.method12938().getAxis() != Direction.field415) {
+      if (this.method12938().getAxis() != Direction.Z) {
          this.field20444 = new Class9764(var4, 64, var5, var4 + 5 - 1, 74, var5 + 5 - 1);
       } else {
          this.field20444 = new Class9764(var4, 64, var5, var4 + 5 - 1, 74, var5 + 5 - 1);

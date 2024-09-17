@@ -146,7 +146,7 @@ public class Class3475 extends Block implements Class3476 {
          1.0F,
          false
       );
-      double var6 = var5.method23412(var0, var1).method19522(Direction.field414, 0.5, 0.5) + 0.03125;
+      double var6 = var5.method23412(var0, var1).method19522(Direction.Y, 0.5, 0.5) + 0.03125;
       double var8 = 0.13125F;
       double var10 = 0.7375F;
       Random var12 = var0.method6814();

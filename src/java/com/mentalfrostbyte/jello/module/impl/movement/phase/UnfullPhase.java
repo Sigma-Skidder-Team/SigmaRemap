@@ -21,7 +21,7 @@ public class UnfullPhase extends Module {
     private void method16680(EventWalkingUpdate var1) {
         if (this.isEnabled()) {
             if ((int) mc.player.getPosY() == this.field23843 && !mc.player.isJumping) {
-                ColorUtils.method17725(-2.0);
+                ColorUtils.setPlayerYMotion(-2.0);
             }
 
             if (mc.player.getPosY() > (double) this.field23843 && mc.player.isJumping && !mc.player.isSneaking()) {

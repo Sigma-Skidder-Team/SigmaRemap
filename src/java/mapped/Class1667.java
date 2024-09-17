@@ -97,7 +97,7 @@ public class Class1667 implements IBlockReader, ICollisionReader {
    }
 
    @Override
-   public Stream<VoxelShape> method7047(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
+   public Stream<VoxelShape> func_234867_d_(Entity var1, AxisAlignedBB var2, Predicate<Entity> var3) {
       return this.getCollisionShapes(var1, var2);
    }
 

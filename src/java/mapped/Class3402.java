@@ -105,7 +105,7 @@ public class Class3402 extends Block {
       } else {
          BlockPos var6 = var2.method8349(var3);
          if (!method12034(var1, var6, var3)) {
-            if (var3.getAxis() == Direction.field414) {
+            if (var3.getAxis() == Direction.Y) {
                return false;
             } else {
                Class8551 var7 = field19069.get(var3);

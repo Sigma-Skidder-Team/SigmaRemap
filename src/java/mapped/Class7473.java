@@ -29,7 +29,7 @@ public class Class7473 {
    public static Optional<Class7473> method24195(Class1660 var0, BlockPos var1, Predicate<Class7473> var2, Direction var3) {
       Optional var6 = Optional.<Class7473>of(new Class7473(var0, var1, var3)).filter(var2);
       if (!var6.isPresent()) {
-         Direction var7 = var3 != Direction.field413 ? Direction.field413 : Direction.field415;
+         Direction var7 = var3 != Direction.X ? Direction.X : Direction.Z;
          return Optional.<Class7473>of(new Class7473(var0, var1, var7)).filter(var2);
       } else {
          return var6;
@@ -39,7 +39,7 @@ public class Class7473 {
    public Class7473(Class1660 var1, BlockPos var2, Direction var3) {
       this.field32112 = var1;
       this.field32113 = var3;
-      this.field32114 = var3 != Direction.field413 ? net.minecraft.util.Direction.SOUTH : net.minecraft.util.Direction.WEST;
+      this.field32114 = var3 != Direction.X ? net.minecraft.util.Direction.SOUTH : net.minecraft.util.Direction.WEST;
       this.field32116 = this.method24196(var2);
       if (this.field32116 != null) {
          this.field32118 = this.method24197();
@@ -172,11 +172,11 @@ public class Class7473 {
       if (!(var8 > 0.0)) {
          var14 = 0.0;
       } else {
-         Direction var16 = Direction.field414;
+         Direction var16 = Direction.Y;
          var14 = MathHelper.clamp(MathHelper.method37813(var2.getCoordinate(var16) - (double)var10.method8322(var16), 0.0, var8), 0.0, 1.0);
       }
 
-      Direction var19 = var1 != Direction.field413 ? Direction.field413 : Direction.field415;
+      Direction var19 = var1 != Direction.X ? Direction.X : Direction.Z;
       double var17 = var2.getCoordinate(var19) - ((double)var10.method8322(var19) + 0.5);
       return new Vector3d(var11, var14, var17);
    }
@@ -192,7 +192,7 @@ public class Class7473 {
       double var19 = (double)var4.field39968 / 2.0 + (var13 - (double)var4.field39968) * var3.getX();
       double var21 = (var15 - (double)var4.field39969) * var3.getY();
       double var23 = 0.5 + var3.getZ();
-      boolean var25 = var12 == Direction.field413;
+      boolean var25 = var12 == Direction.X;
       Vector3d var26 = new Vector3d(
          (double)var10.getX() + (!var25 ? var23 : var19), (double)var10.getY() + var21, (double)var10.getZ() + (!var25 ? var19 : var23)
       );

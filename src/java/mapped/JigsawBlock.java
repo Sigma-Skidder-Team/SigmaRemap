@@ -41,7 +41,7 @@ public class JigsawBlock extends Block implements Class3245 {
    public BlockState method11495(Class5909 var1) {
       net.minecraft.util.Direction var4 = var1.method18354();
       net.minecraft.util.Direction var5;
-      if (var4.getAxis() != Direction.field414) {
+      if (var4.getAxis() != Direction.Y) {
          var5 = net.minecraft.util.Direction.field673;
       } else {
          var5 = var1.method18350().method536();

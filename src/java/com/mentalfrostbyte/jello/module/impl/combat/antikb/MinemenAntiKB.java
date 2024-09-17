@@ -28,7 +28,7 @@ public class MinemenAntiKB extends Module {
     @EventTarget
     public void method16697(EventUpdate var1) {
         if (var1.isPre()) {
-            if (ColorUtils.method17730(mc.player, 1.0E-5F)) {
+            if (ColorUtils.isAboveBounds(mc.player, 1.0E-5F)) {
                 this.field23852 = true;
                 var1.setY(var1.getY() - 5.0E-7);
                 var1.setGround(false);
@@ -54,7 +54,7 @@ public class MinemenAntiKB extends Module {
             }
         }
 
-        ColorUtils.method17725(var1.getY());
+        ColorUtils.setPlayerYMotion(var1.getY());
     }
 
     @EventTarget

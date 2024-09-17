@@ -45,18 +45,18 @@ public class Cubecraft2Fly extends PremiumModule {
 
     @Override
     public void onDisable() {
-        MovementUtils.method37090(0.2);
-        ColorUtils.method17725(-0.0789);
-        if (ColorUtils.method17730(mc.player, 0.001F)) {
-            MovementUtils.method37090(0.0);
-            ColorUtils.method17725(-0.0789);
+        MovementUtils.strafe(0.2);
+        ColorUtils.setPlayerYMotion(-0.0789);
+        if (ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+            MovementUtils.strafe(0.0);
+            ColorUtils.setPlayerYMotion(-0.0789);
         } else {
             double var3 = mc.player.getPosX();
             double var5 = mc.player.getPosY();
             double var7 = mc.player.getPosZ();
             mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3, -150.0, var7, false));
-            MovementUtils.method37090(0.0);
-            ColorUtils.method17725(0.0);
+            MovementUtils.strafe(0.0);
+            ColorUtils.setPlayerYMotion(0.0);
             this.field23696 = -3;
             this.field23697.method27120();
             this.field23697.start();
@@ -66,7 +66,7 @@ public class Cubecraft2Fly extends PremiumModule {
     @EventTarget
     private void method16483(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.getKey() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23699 = true;
             }
@@ -76,7 +76,7 @@ public class Cubecraft2Fly extends PremiumModule {
     @EventTarget
     private void method16484(MouseHoverEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23699 = false;
             }
@@ -91,17 +91,17 @@ public class Cubecraft2Fly extends PremiumModule {
             if (this.field23696 != 1) {
                 if (this.field23696 != 2) {
                     var1.setY(0.0);
-                    MovementUtils.method37088(var1, 0.0);
+                    MovementUtils.setSpeed(var1, 0.0);
                 } else {
                     var1.setY(-9.999999999E-5);
-                    MovementUtils.method37088(var1, 0.28);
+                    MovementUtils.setSpeed(var1, 0.28);
                 }
             } else {
                 var1.setY(!mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 1.0E-4 : -0.99) : (!this.field23699 ? 0.99 : 1.0E-4));
-                MovementUtils.method37088(var1, !mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 3.7 : 2.8) : (!this.field23699 ? 2.8 : 3.7));
+                MovementUtils.setSpeed(var1, !mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 3.7 : 2.8) : (!this.field23699 ? 2.8 : 3.7));
             }
 
-            ColorUtils.method17725(var1.getY());
+            ColorUtils.setPlayerYMotion(var1.getY());
         } else {
             if (this.field23696 < 0) {
                 if (this.field23696 != -3) {
@@ -109,12 +109,12 @@ public class Cubecraft2Fly extends PremiumModule {
                         if (this.field23696 == -1) {
                             this.field23696++;
                             var1.setY(-0.4);
-                            MovementUtils.method37088(var1, 0.0);
+                            MovementUtils.setSpeed(var1, 0.0);
                         }
                     } else {
                         var1.setY(0.4);
                         this.field23696++;
-                        MovementUtils.method37088(var1, 0.0);
+                        MovementUtils.setSpeed(var1, 0.0);
                     }
                 } else {
                     if (this.field23697.method27121() > 1000L) {
@@ -124,7 +124,7 @@ public class Cubecraft2Fly extends PremiumModule {
                     }
 
                     var1.setY(0.0);
-                    MovementUtils.method37088(var1, 0.0);
+                    MovementUtils.setSpeed(var1, 0.0);
                 }
             }
         }

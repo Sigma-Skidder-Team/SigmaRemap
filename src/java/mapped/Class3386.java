@@ -9,7 +9,7 @@ public class Class3386 extends Block {
 
    public Class3386(AbstractBlock var1) {
       super(var1);
-      this.method11578(this.method11579().method23465(field18994, Direction.field414));
+      this.method11578(this.method11579().method23465(field18994, Direction.Y));
    }
 
    @Override
@@ -19,9 +19,9 @@ public class Class3386 extends Block {
          case 2:
             switch (Class9779.field45745[var1.<Direction>method23463(field18994).ordinal()]) {
                case 1:
-                  return var1.method23465(field18994, Direction.field415);
+                  return var1.method23465(field18994, Direction.Z);
                case 2:
-                  return var1.method23465(field18994, Direction.field413);
+                  return var1.method23465(field18994, Direction.X);
                default:
                   return var1;
             }

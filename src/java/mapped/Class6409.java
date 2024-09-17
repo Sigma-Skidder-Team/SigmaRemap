@@ -30,7 +30,7 @@ public final class Class6409 extends VoxelShape {
          this.field28036 = var3;
          this.field28037 = var4;
       } else {
-         throw (IllegalArgumentException) Util.method38516(
+         throw (IllegalArgumentException) Util.pauseDevMode(
             new IllegalArgumentException("Lengths of point arrays must be consistent with the size of the VoxelShape.")
          );
       }

@@ -44,7 +44,7 @@ public class NCPStep extends Module {
     private void method16913(EventStep var1) {
         if (this.isEnabled() && !var1.isCancelled()) {
             double var4 = var1.getHeight();
-            if (ColorUtils.method17730(mc.player, 1.0E-4F) && !MovementUtils.method37081()) {
+            if (ColorUtils.isAboveBounds(mc.player, 1.0E-4F) && !MovementUtils.isInWater()) {
                 if (var4 >= 0.625) {
                     double var6 = mc.player.getPosX();
                     double var8 = mc.player.getPosY();

@@ -31,7 +31,7 @@ public class Class3305 extends Item {
       } else {
          Vector3d var8 = var2.getLook(1.0F);
          double var9 = 5.0;
-         List<Entity> var11 = var1.getEntitiesInAABBexcluding(var2, var2.getBoundingBox().method19661(var8.scale(5.0)).method19664(1.0), field18811);
+         List<Entity> var11 = var1.getEntitiesInAABBexcluding(var2, var2.getBoundingBox().contract(var8.scale(5.0)).method19664(1.0), field18811);
          if (!var11.isEmpty()) {
             Vector3d var12 = var2.getEyePosition(1.0F);
 

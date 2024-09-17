@@ -21,7 +21,7 @@ public class MinemenSpeed extends Module {
                 var4 = 0.679 + (double) MovementUtils.method37078() * 0.12;
             }
 
-            MovementUtils.method37088(var1, var4);
+            MovementUtils.setSpeed(var1, var4);
         }
     }
 }

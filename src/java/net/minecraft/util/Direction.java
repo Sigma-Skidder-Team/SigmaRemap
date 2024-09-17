@@ -15,12 +15,12 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 public enum Direction implements IStringSerializable {
-   DOWN(0, 1, -1, "down", Class1892.field11093, mapped.Direction.field414, new Vector3i(0, -1, 0)),
-   field673(1, 0, -1, "up", Class1892.field11092, mapped.Direction.field414, new Vector3i(0, 1, 0)),
-   NORTH(2, 3, 2, "north", Class1892.field11093, mapped.Direction.field415, new Vector3i(0, 0, -1)),
-   SOUTH(3, 2, 0, "south", Class1892.field11092, mapped.Direction.field415, new Vector3i(0, 0, 1)),
-   WEST(4, 5, 1, "west", Class1892.field11093, mapped.Direction.field413, new Vector3i(-1, 0, 0)),
-   EAST(5, 4, 3, "east", Class1892.field11092, mapped.Direction.field413, new Vector3i(1, 0, 0));
+   DOWN(0, 1, -1, "down", Class1892.field11093, mapped.Direction.Y, new Vector3i(0, -1, 0)),
+   field673(1, 0, -1, "up", Class1892.field11092, mapped.Direction.Y, new Vector3i(0, 1, 0)),
+   NORTH(2, 3, 2, "north", Class1892.field11093, mapped.Direction.Z, new Vector3i(0, 0, -1)),
+   SOUTH(3, 2, 0, "south", Class1892.field11092, mapped.Direction.Z, new Vector3i(0, 0, 1)),
+   WEST(4, 5, 1, "west", Class1892.field11093, mapped.Direction.X, new Vector3i(-1, 0, 0)),
+   EAST(5, 4, 3, "east", Class1892.field11092, mapped.Direction.X, new Vector3i(1, 0, 0));
 
    private final int field678;
    private final int field679;

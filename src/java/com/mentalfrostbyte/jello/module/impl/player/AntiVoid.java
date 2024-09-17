@@ -38,7 +38,7 @@ public class AntiVoid extends Module {
         this.field23837 = 0.0;
         this.field23839 = 0;
         this.field23838 = 0;
-        if (mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F)) {
+        if (mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.001F)) {
             this.field23840 = new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
         }
     }
@@ -46,7 +46,7 @@ public class AntiVoid extends Module {
     @EventTarget
     private void method16664(EventMove var1) {
         if (this.isEnabled()) {
-            if (mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F)) {
+            if (mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.001F)) {
                 this.field23840 = new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
             }
 
@@ -70,7 +70,7 @@ public class AntiVoid extends Module {
                     this.field23837 = 0.0;
                 }
             } else {
-                MovementUtils.method37088(var1, 0.0);
+                MovementUtils.setSpeed(var1, 0.0);
                 var1.setY(0.0);
                 this.field23839--;
             }
@@ -82,7 +82,7 @@ public class AntiVoid extends Module {
 
             if (this.field23838 > 0) {
                 this.field23838--;
-                MovementUtils.method37088(var1, 0.1);
+                MovementUtils.setSpeed(var1, 0.1);
             }
         }
     }
@@ -108,7 +108,7 @@ public class AntiVoid extends Module {
         if (!(mc.player.getPositionVec().y < 1.0)) {
             if (!mc.player.onGround) {
                 AxisAlignedBB var3 = mc.player.boundingBox;
-                var3 = var3.method19662(0.0, -mc.player.getPositionVec().y, 0.0);
+                var3 = var3.contract(0.0, -mc.player.getPositionVec().y, 0.0);
                 return mc.world.getCollisionShapes(mc.player, var3).count() == 0L;
             } else {
                 return false;
@@ -132,7 +132,7 @@ public class AntiVoid extends Module {
                 break;
             case "Motion":
                 var2.setY(0.1);
-                ColorUtils.method17725(var2.getY());
+                ColorUtils.setPlayerYMotion(var2.getY());
                 break;
             case "Cubecraft":
                 double var13 = 3.2E7;

@@ -26,7 +26,7 @@ public class NoGroundCriticals extends Module {
 
     @Override
     public void onEnable() {
-        if (ColorUtils.method17730(mc.player, 0.001F)) {
+        if (ColorUtils.isAboveBounds(mc.player, 0.001F)) {
             this.field23411 = this.getStringSettingValueByName("Offset").equals("OldHypixel");
             this.field23410 = !this.field23411 ? 1 : 2;
         }

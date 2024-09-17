@@ -121,7 +121,7 @@ public class Class4913 {
       var0.field22774.forEach(var1 -> {
          Class4913 var4 = field22750.put(var1, var0);
          if (var4 != null) {
-            throw (IllegalStateException) Util.method38516(new IllegalStateException(String.format("%s is defined in too many tags", var1)));
+            throw (IllegalStateException) Util.pauseDevMode(new IllegalStateException(String.format("%s is defined in too many tags", var1)));
          }
       });
       return var0;

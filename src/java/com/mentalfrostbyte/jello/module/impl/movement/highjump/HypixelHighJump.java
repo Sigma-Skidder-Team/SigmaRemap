@@ -43,18 +43,18 @@ public class HypixelHighJump extends Module {
          if (this.field23405 >= 0) {
             this.field23405++;
             var1.setY(0.0);
-            MovementUtils.method37088(var1, 0.0);
+            MovementUtils.setSpeed(var1, 0.0);
             var1.setY((double)this.getNumberValueBySettingName("Motion"));
             this.field23406 = true;
             this.field23407 = mc.player.getPosY();
             this.field23405 = -1;
          }
 
-         if (this.field23406 && ColorUtils.method17730(mc.player, 0.001F)) {
+         if (this.field23406 && ColorUtils.isAboveBounds(mc.player, 0.001F)) {
             this.field23406 = !this.field23406;
          }
 
-         ColorUtils.method17725(var1.getY());
+         ColorUtils.setPlayerYMotion(var1.getY());
       }
    }
 

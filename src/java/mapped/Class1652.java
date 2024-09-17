@@ -62,7 +62,7 @@ public class Class1652<R> implements AutoCloseable {
             if (var6 != null) {
                return var6;
             } else {
-               throw (IllegalStateException) Util.method38516(new IllegalStateException());
+               throw (IllegalStateException) Util.pauseDevMode(new IllegalStateException());
             }
          } else {
             return var6;

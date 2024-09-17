@@ -149,7 +149,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    @Override
    public Vector3d method3420(LivingEntity var1) {
       net.minecraft.util.Direction var4 = this.method3387();
-      if (var4.getAxis() == Direction.field414) {
+      if (var4.getAxis() == Direction.Y) {
          return super.method3420(var1);
       } else {
          int[][] var5 = Class4527.method14422(var4);

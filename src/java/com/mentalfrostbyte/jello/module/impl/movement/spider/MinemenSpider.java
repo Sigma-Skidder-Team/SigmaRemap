@@ -30,7 +30,7 @@ public class MinemenSpider extends Module {
     private void method16636(EventMove var1) {
         double var4 = 1.0E-5;
         boolean var6 = mc.world
-                .getCollisionShapes(mc.player, mc.player.boundingBox.method19662(var4, 0.0, var4).method19662(-var4, 0.0, -var4))
+                .getCollisionShapes(mc.player, mc.player.boundingBox.contract(var4, 0.0, var4).contract(-var4, 0.0, -var4))
                 .count()
                 > 0L;
         if (var6) {
@@ -44,10 +44,10 @@ public class MinemenSpider extends Module {
                 var1.setY(0.6);
             }
 
-            MovementUtils.method37088(var1, 0.689 + (double) MovementUtils.method37078() * 0.06);
+            MovementUtils.setSpeed(var1, 0.689 + (double) MovementUtils.method37078() * 0.06);
         }
 
-        if (ColorUtils.method17730(mc.player, 0.001F) && this.getBooleanValueFromSetttingName("SneakVClip")) {
+        if (ColorUtils.isAboveBounds(mc.player, 0.001F) && this.getBooleanValueFromSetttingName("SneakVClip")) {
             if (mc.gameSettings.keyBindSneak.isKeyDown()
                     && !this.field23813
                     && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, -2.8, 0.0)).count() == 0L) {
@@ -78,18 +78,18 @@ public class MinemenSpider extends Module {
                     && !mc.gameSettings.keyBindSneak.isKeyDown()
                     && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, 0.01, 0.0)).count() > 0L) {
                 var1.setY(1.0E-14);
-                MovementUtils.method37088(var1, 0.689 + (double) MovementUtils.method37078() * 0.06);
+                MovementUtils.setSpeed(var1, 0.689 + (double) MovementUtils.method37078() * 0.06);
             }
 
             if (this.field23813) {
                 mc.timer.timerSpeed = 1.0F;
                 this.field23813 = false;
                 var1.setY(1.0E-14);
-                MovementUtils.method37088(var1, 0.28);
+                MovementUtils.setSpeed(var1, 0.28);
             }
         }
 
-        ColorUtils.method17725(var1.getY());
+        ColorUtils.setPlayerYMotion(var1.getY());
     }
 
     @EventTarget
@@ -105,15 +105,15 @@ public class MinemenSpider extends Module {
             double var5 = 1.0E-5;
             if (var4 != null
                     && mc.world
-                    .getCollisionShapes(mc.player, mc.player.boundingBox.method19662(var5, 0.0, var5).method19662(-var5, 0.0, -var5))
+                    .getCollisionShapes(mc.player, mc.player.boundingBox.contract(var5, 0.0, var5).contract(-var5, 0.0, -var5))
                     .count()
                     > 0L) {
-                if (!ColorUtils.method17730(mc.player, 1.0E-4F)) {
+                if (!ColorUtils.isAboveBounds(mc.player, 1.0E-4F)) {
                     var1.setGround(true);
                 }
 
                 double var7 = 4.88E-7;
-                if (((net.minecraft.util.Direction) var4.method37538()).getAxis() != Direction.field413) {
+                if (((net.minecraft.util.Direction) var4.method37538()).getAxis() != Direction.X) {
                     var1.setZ(
                             (double) Math.round((((Vector3d) var4.method37539()).z + 1.1921022E-8) * 10000.0) / 10000.0
                                     + (double) ((net.minecraft.util.Direction) var4.method37538()).method541() * var7
@@ -132,8 +132,8 @@ public class MinemenSpider extends Module {
     private void method16638(EventBlockCollision var1) {
         if (this.isEnabled() && mc.player != null) {
             if (var1.getVoxelShape() != null
-                    && !var1.getVoxelShape().method19516()
-                    && var1.getVoxelShape().method19514().minY > mc.player.boundingBox.minY + 1.0) {
+                    && !var1.getVoxelShape().isEmpty()
+                    && var1.getVoxelShape().getBoundingBox().minY > mc.player.boundingBox.minY + 1.0) {
                 var1.setCancelled(true);
             }
         }

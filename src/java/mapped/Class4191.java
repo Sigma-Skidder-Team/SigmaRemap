@@ -40,7 +40,7 @@ public class Class4191 extends Class4188 {
       this.field20444 = var3;
       this.field20483 = var2.nextInt(3) == 0;
       this.field20484 = !this.field20483 && var2.nextInt(23) == 0;
-      if (this.method12938().getAxis() != Direction.field415) {
+      if (this.method12938().getAxis() != Direction.Z) {
          this.field20486 = var3.method38398() / 5;
       } else {
          this.field20486 = var3.method38400() / 5;

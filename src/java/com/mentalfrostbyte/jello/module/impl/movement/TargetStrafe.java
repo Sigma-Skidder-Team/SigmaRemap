@@ -125,7 +125,7 @@ public class TargetStrafe extends Module {
 
         if (this.field23496 && mc.player.getDistance(var1) > this.getNumberValueBySettingName("Radius")) {
             if (!var27.equals("Halt")) {
-                MovementUtils.method37088(var6, var2);
+                MovementUtils.setSpeed(var6, var2);
                 if (var27.equals("Smart")) {
                     var26 = new Vector3d(
                             mc.player.getPositionVec().x + var6.getX(),
@@ -133,11 +133,11 @@ public class TargetStrafe extends Module {
                             mc.player.getPositionVec().z + var6.getZ()
                     );
                     if (this.method16153(var26) && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
-                        MovementUtils.method37088(var6, 0.0);
+                        MovementUtils.setSpeed(var6, 0.0);
                     }
                 }
             } else {
-                MovementUtils.method37088(var6, 0.0);
+                MovementUtils.setSpeed(var6, 0.0);
             }
         }
     }
@@ -145,7 +145,7 @@ public class TargetStrafe extends Module {
     private boolean method16153(Vector3d var1) {
         if (!(mc.player.getPositionVec().y < 1.0)) {
             AxisAlignedBB var4 = new AxisAlignedBB(var1.add(-0.15, 0.0, -0.15), var1.add(0.15, (double) mc.player.getHeight(), 0.15));
-            var4 = var4.method19662(0.0, -mc.player.getPositionVec().y, 0.0);
+            var4 = var4.contract(0.0, -mc.player.getPositionVec().y, 0.0);
             return mc.world.getCollisionShapes(mc.player, var4).count() == 0L;
         } else {
             return true;

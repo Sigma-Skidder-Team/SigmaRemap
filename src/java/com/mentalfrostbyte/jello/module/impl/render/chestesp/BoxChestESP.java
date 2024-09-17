@@ -50,7 +50,7 @@ public class BoxChestESP extends Module {
                 }
 
                 Box3D var18 = new Box3D(
-                        var7.method3775().method23412(mc.world, var7.getPos()).method19514().offset(var11, var13, var15)
+                        var7.method3775().method23412(mc.world, var7.getPos()).getBoundingBox().offset(var11, var13, var15)
                 );
                 GL11.glAlphaFunc(519, 0.0F);
                 RenderUtil.render3DColoredBox(var18, var17);

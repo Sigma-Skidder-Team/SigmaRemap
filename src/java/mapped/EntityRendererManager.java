@@ -435,14 +435,14 @@ public class EntityRendererManager {
       BlockState var15 = var2.getBlockState(var14);
       if (var15.getRenderType() != BlockRenderType.field9885 && var2.method7015(var3) > 3 && var15.method23456(var2, var14)) {
          VoxelShape var16 = var15.method23412(var2, var3.down());
-         if (!var16.method19516()) {
+         if (!var16.isEmpty()) {
             float var17 = (float)(((double)var11 - (var6 - (double)var3.getY()) / 2.0) * 0.5 * (double)var2.method7009(var3));
             if (var17 >= 0.0F) {
                if (var17 > 1.0F) {
                   var17 = 1.0F;
                }
 
-               AxisAlignedBB var18 = var16.method19514();
+               AxisAlignedBB var18 = var16.getBoundingBox();
                double var19 = (double)var3.getX() + var18.minX;
                double var21 = (double)var3.getX() + var18.maxX;
                double var23 = (double)var3.getY() + var18.minY;

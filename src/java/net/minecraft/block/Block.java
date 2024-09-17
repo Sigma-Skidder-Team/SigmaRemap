@@ -68,8 +68,8 @@ public class Block extends Class3390 implements IItemProvider {
       VoxelShape var6 = VoxelShapes.method27434(var0.method23414(var2, var3), var1.method23414(var2, var3), IBooleanFunction.field44039)
          .withOffset((double)var3.getX(), (double)var3.getY(), (double)var3.getZ());
 
-      for (Entity var8 : var2.method7181((Entity)null, var6.method19514())) {
-         double var9 = VoxelShapes.method27437(Direction.field414, var8.getBoundingBox().offset(0.0, 1.0, 0.0), Stream.<VoxelShape>of(var6), -1.0);
+      for (Entity var8 : var2.method7181((Entity)null, var6.getBoundingBox())) {
+         double var9 = VoxelShapes.method27437(Direction.Y, var8.getBoundingBox().offset(0.0, 1.0, 0.0), Stream.<VoxelShape>of(var6), -1.0);
          var8.setPositionAndUpdate(var8.getPosX(), var8.getPosY() + 1.0 + var9, var8.getPosZ());
       }
 

@@ -58,7 +58,7 @@ public class Class5910 extends Class5909 {
 
    @Override
    public net.minecraft.util.Direction method18350() {
-      return this.field25719.getAxis() != Direction.field414 ? this.field25719 : net.minecraft.util.Direction.NORTH;
+      return this.field25719.getAxis() != Direction.Y ? this.field25719 : net.minecraft.util.Direction.NORTH;
    }
 
    @Override

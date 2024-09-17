@@ -151,7 +151,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       this.field23272.player.preparePlayerToSpawn();
       int var10 = var1.method17287();
       this.field23273.method6845(var10, this.field23272.player);
-      this.field23272.player.field6131 = new Class9451(this.field23272.gameSettings);
+      this.field23272.player.movementInput = new Class9451(this.field23272.gameSettings);
       this.field23272.playerController.setPlayerCapabilities(this.field23272.player);
       this.field23272.renderViewEntity = this.field23272.player;
       this.field23272.displayGuiScreen(new Class1312());
@@ -940,7 +940,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       var13.method5394(var12);
       this.field23273.method6845(var7, var13);
       var13.rotationYaw = -180.0F;
-      var13.field6131 = new Class9451(this.field23272.gameSettings);
+      var13.movementInput = new Class9451(this.field23272.gameSettings);
       this.field23272.playerController.setPlayerCapabilities(var13);
       var13.method2965(var6.hasReducedDebug());
       var13.method5403(var6.isShowDeathScreen());

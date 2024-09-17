@@ -45,12 +45,12 @@ public final class Class7937 extends Class7938 {
          this.field34029 = (BitSet)((Class7937)var1).field34029.clone();
       }
 
-      this.field34030 = var1.method26720(Direction.field413);
-      this.field34031 = var1.method26720(Direction.field414);
-      this.field34032 = var1.method26720(Direction.field415);
-      this.field34033 = var1.method26721(Direction.field413);
-      this.field34034 = var1.method26721(Direction.field414);
-      this.field34035 = var1.method26721(Direction.field415);
+      this.field34030 = var1.method26720(Direction.X);
+      this.field34031 = var1.method26720(Direction.Y);
+      this.field34032 = var1.method26720(Direction.Z);
+      this.field34033 = var1.method26721(Direction.X);
+      this.field34034 = var1.method26721(Direction.Y);
+      this.field34035 = var1.method26721(Direction.Z);
    }
 
    public int method26716(int var1, int var2, int var3) {

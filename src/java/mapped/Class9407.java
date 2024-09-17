@@ -902,10 +902,10 @@ public class Class9407 {
 
    private static Class3629 method35830() {
       return Class3629.<Direction>method12310(Class8820.field39713)
-         .method12320(Direction.field414, Class5138.method15912())
-         .method12320(Direction.field415, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
+         .method12320(Direction.Y, Class5138.method15912())
+         .method12320(Direction.Z, Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817))
          .method12320(
-            Direction.field413,
+            Direction.X,
             Class5138.method15912().method15911(Class6891.field29862, Class2120.field13817).method15911(Class6891.field29863, Class2120.field13817)
          );
    }
@@ -932,12 +932,12 @@ public class Class9407 {
       return Class5148.method15941(var0)
          .method15939(
             Class3629.<Direction>method12310(Class8820.field39713)
-               .method12320(Direction.field414, Class5138.method15912().method15911(Class6891.field29864, var1))
+               .method12320(Direction.Y, Class5138.method15912().method15911(Class6891.field29864, var1))
                .method12320(
-                  Direction.field415, Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29862, Class2120.field13817)
+                  Direction.Z, Class5138.method15912().method15911(Class6891.field29864, var2).method15911(Class6891.field29862, Class2120.field13817)
                )
                .method12320(
-                  Direction.field413,
+                  Direction.X,
                   Class5138.method15912()
                      .method15911(Class6891.field29864, var2)
                      .method15911(Class6891.field29862, Class2120.field13817)
@@ -2509,10 +2509,10 @@ public class Class9407 {
                .method15939(
                   Class3629.<Direction>method12310(Class8820.field39712)
                      .method12320(
-                        Direction.field413, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36588, "_ns"))
+                        Direction.X, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36588, "_ns"))
                      )
                      .method12320(
-                        Direction.field415, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36588, "_ew"))
+                        Direction.Z, Class5138.method15912().method15911(Class6891.field29864, Class9060.method33722(Blocks.field36588, "_ew"))
                      )
                )
          );

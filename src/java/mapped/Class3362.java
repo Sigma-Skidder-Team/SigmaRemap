@@ -78,7 +78,7 @@ public class Class3362 extends Class3241 {
    public BlockState method11495(Class5909 var1) {
       net.minecraft.util.Direction var4 = var1.method18354().method536();
       return this.method11579()
-         .method23465(field18913, var4.getAxis() != Direction.field414 ? var4 : net.minecraft.util.Direction.DOWN)
+         .method23465(field18913, var4.getAxis() != Direction.Y ? var4 : net.minecraft.util.Direction.DOWN)
          .method23465(field18914, Boolean.valueOf(true));
    }
 

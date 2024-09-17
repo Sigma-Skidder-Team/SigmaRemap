@@ -49,7 +49,7 @@ public class BasicAutoGapple extends Module {
                 KeyBinding hotbarKey = mc.gameSettings.keyBindsHotbar[i];
                 String keyDescription = hotbarKey.getKeyDescription();
                 int keyIndex = Integer.parseInt(String.valueOf(keyDescription.charAt(keyDescription.length() - 1)));
-                if (event.getKey() == hotbarKey.keycode.keyCode && keyIndex - 1 != mc.player.inventory.currentItem) {
+                if (event.getKey() == hotbarKey.inputMappingsInput.keyCode && keyIndex - 1 != mc.player.inventory.currentItem) {
                     this.currentGappleSlot = -1;
                     this.tickCounter = 0;
                 }

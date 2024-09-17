@@ -38,7 +38,7 @@ public class MineplexSpeed extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.method37090(MovementUtils.method37075() * 0.7);
+        MovementUtils.strafe(MovementUtils.getSpeed() * 0.7);
         if (mc.player.inventory.currentItem != this.field23554) {
             mc.getConnection().sendPacket(new CHeldItemChangePacket(mc.player.inventory.currentItem));
             this.field23554 = mc.player.inventory.currentItem;
@@ -75,7 +75,7 @@ public class MineplexSpeed extends Module {
                     this.field23555 = 0.3;
                 }
 
-                MovementUtils.method37088(var1, this.field23555);
+                MovementUtils.setSpeed(var1, this.field23555);
             } else {
                 if (this.field23552 > 1) {
                     this.field23553 = 0;
@@ -89,7 +89,7 @@ public class MineplexSpeed extends Module {
                 }
 
                 if (var1.getY() == 0.4199998) {
-                    MovementUtils.method37088(var1, 0.0);
+                    MovementUtils.setSpeed(var1, 0.0);
                     return;
                 }
 
@@ -99,7 +99,7 @@ public class MineplexSpeed extends Module {
 
                 int var6 = this.method16254();
                 if (var6 == -1) {
-                    MovementUtils.method37088(var1, 0.2);
+                    MovementUtils.setSpeed(var1, 0.2);
                     return;
                 }
 
@@ -121,7 +121,7 @@ public class MineplexSpeed extends Module {
                     this.field23555 = 0.3;
                 }
 
-                MovementUtils.method37088(var1, this.field23555);
+                MovementUtils.setSpeed(var1, this.field23555);
             }
         }
     }

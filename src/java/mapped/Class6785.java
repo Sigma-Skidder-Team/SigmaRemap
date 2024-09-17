@@ -11,7 +11,7 @@ public class Class6785 {
    public Class6785(byte[] var1) {
       this.field29578 = var1;
       if (var1.length != 2048) {
-         throw (IllegalArgumentException) Util.method38516(new IllegalArgumentException("ChunkNibbleArrays should be 2048 bytes not: " + var1.length));
+         throw (IllegalArgumentException) Util.pauseDevMode(new IllegalArgumentException("ChunkNibbleArrays should be 2048 bytes not: " + var1.length));
       }
    }
 

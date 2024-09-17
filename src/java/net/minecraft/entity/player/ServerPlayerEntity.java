@@ -632,7 +632,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    public Optional<TeleportationRepositioner> method2747(ServerWorld var1, BlockPos var2, boolean var3) {
       Optional var6 = super.method2747(var1, var2, var3);
       if (!var6.isPresent()) {
-         mapped.Direction var7 = this.world.getBlockState(this.field_242271_ac).<mapped.Direction>method23464(Class3401.field19060).orElse(mapped.Direction.field413);
+         mapped.Direction var7 = this.world.getBlockState(this.field_242271_ac).<mapped.Direction>method23464(Class3401.field19060).orElse(mapped.Direction.X);
          Optional var8 = var1.method6937().method12332(var2, var7);
          if (!var8.isPresent()) {
             field4854.error("Unable to create a portal, likely target out of worldborder");

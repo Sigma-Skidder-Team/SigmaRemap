@@ -126,7 +126,7 @@ public class Class3336 extends Item {
          double var8;
          if (!var5.isIn(Blocks.WATER)) {
             if (!var5.method23409(var0, var1)) {
-               var8 = var5.method23412(var0, var1).method19513(Direction.field414);
+               var8 = var5.method23412(var0, var1).getEnd(Direction.Y);
             } else {
                var1 = var1.up();
                var2 *= 3;

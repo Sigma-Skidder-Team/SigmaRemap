@@ -307,7 +307,7 @@ public class Class8641 {
       boolean var15 = var9.isAtLeast(ChunkHolderLocationType.field169);
       if (!var14 && var15) {
          if (this.field38902 != field38896) {
-            throw (IllegalStateException) Util.method38516(new IllegalStateException());
+            throw (IllegalStateException) Util.pauseDevMode(new IllegalStateException());
          }
 
          this.field38902 = var1.method6543(this.field38907);

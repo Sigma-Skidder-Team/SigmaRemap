@@ -20,7 +20,7 @@ public class ViperMCSpeed extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.method37090(0.28F);
+        MovementUtils.strafe(0.28F);
         mc.timer.timerSpeed = 1.0F;
     }
 
@@ -38,7 +38,7 @@ public class ViperMCSpeed extends Module {
                 var4 /= 1.3F;
             }
 
-            MovementUtils.method37088(var1, var4);
+            MovementUtils.setSpeed(var1, var4);
         }
     }
 }

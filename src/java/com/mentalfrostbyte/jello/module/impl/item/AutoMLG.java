@@ -54,7 +54,7 @@ public class AutoMLG extends PremiumModule {
     private void method16422(EventMove var1) {
         if (this.isEnabled()) {
             if (field23649 > 0 && !mc.player.onGround) {
-                MovementUtils.method37088(var1, 0.0);
+                MovementUtils.setSpeed(var1, 0.0);
             }
         }
     }
@@ -154,14 +154,14 @@ public class AutoMLG extends PremiumModule {
         double var3 = mc.player.getMotion().x;
         double var5 = mc.player.getMotion().y;
         double var7 = mc.player.getMotion().z;
-        AxisAlignedBB var9 = mc.player.boundingBox.method19662(var3, 0.0, var7).offset(0.0, var5, 0.0);
+        AxisAlignedBB var9 = mc.player.boundingBox.contract(var3, 0.0, var7).offset(0.0, var5, 0.0);
         Stream var10 = mc.world.getCollisionShapes(mc.player, var9);
         Iterator var11 = var10.iterator();
         BlockPos var12 = null;
 
         while (var11.hasNext()) {
             VoxelShape var13 = (VoxelShape) var11.next();
-            AxisAlignedBB var14 = var13.method19514();
+            AxisAlignedBB var14 = var13.getBoundingBox();
             BlockPos var15 = new BlockPos(var14.method19685());
             if (BlockUtil.method34578(var15)
                     && (double) (var15.getY() + 1) < mc.player.getPosY()
@@ -180,13 +180,13 @@ public class AutoMLG extends PremiumModule {
             return var12;
         } else {
             var5 = mc.player.getMotion().y - 1.0;
-            var9 = mc.player.boundingBox.method19662(var3, 0.0, var7).offset(0.0, var5, 0.0);
+            var9 = mc.player.boundingBox.contract(var3, 0.0, var7).offset(0.0, var5, 0.0);
             var10 = mc.world.getCollisionShapes(mc.player, var9);
             var11 = var10.iterator();
 
             while (var11.hasNext()) {
                 VoxelShape var20 = (VoxelShape) var11.next();
-                AxisAlignedBB var21 = var20.method19514();
+                AxisAlignedBB var21 = var20.getBoundingBox();
                 BlockPos var22 = new BlockPos(var21.method19685());
                 if (BlockUtil.method34578(var22)
                         && (double) (var22.getY() + 1) < mc.player.getPosY()

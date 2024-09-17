@@ -173,9 +173,9 @@ public class BlockPos extends Vector3i {
 
    public BlockPos method8351(Direction var1, int var2) {
       if (var2 != 0) {
-         int var5 = var1 != Direction.field413 ? 0 : var2;
-         int var6 = var1 != Direction.field414 ? 0 : var2;
-         int var7 = var1 != Direction.field415 ? 0 : var2;
+         int var5 = var1 != Direction.X ? 0 : var2;
+         int var6 = var1 != Direction.Y ? 0 : var2;
+         int var7 = var1 != Direction.Z ? 0 : var2;
          return new BlockPos(this.getX() + var5, this.getY() + var6, this.getZ() + var7);
       } else {
          return this;
@@ -348,9 +348,9 @@ public class BlockPos extends Vector3i {
 
       public Mutable method8376(Class2321 var1, int var2, int var3, int var4) {
          return this.method8372(
-            var1.method9098(var2, var3, var4, Direction.field413),
-            var1.method9098(var2, var3, var4, Direction.field414),
-            var1.method9098(var2, var3, var4, Direction.field415)
+            var1.method9098(var2, var3, var4, Direction.X),
+            var1.method9098(var2, var3, var4, Direction.Y),
+            var1.method9098(var2, var3, var4, Direction.Z)
          );
       }
 

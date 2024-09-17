@@ -798,7 +798,7 @@ public class ServerWorld extends World implements ISeedReader {
          for (Entity var8 : var4[var6]) {
             if (!(var8 instanceof ServerPlayerEntity)) {
                if (this.field9044) {
-                  throw (IllegalStateException) Util.method38516(new IllegalStateException("Removing entity while ticking!"));
+                  throw (IllegalStateException) Util.pauseDevMode(new IllegalStateException("Removing entity while ticking!"));
                }
 
                this.field9039.remove(var8.getEntityId());
@@ -853,7 +853,7 @@ public class ServerWorld extends World implements ISeedReader {
          this.field9039.remove(var1.getEntityId());
          this.method6930(var1);
       } else {
-         throw (IllegalStateException) Util.method38516(new IllegalStateException("Removing entity while ticking!"));
+         throw (IllegalStateException) Util.pauseDevMode(new IllegalStateException("Removing entity while ticking!"));
       }
    }
 

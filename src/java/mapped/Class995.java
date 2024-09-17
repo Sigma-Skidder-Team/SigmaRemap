@@ -63,7 +63,7 @@ public abstract class Class995 extends Entity {
          double var16 = (double)this.method4081();
          double var18 = (double)this.method4082();
          double var20 = (double)this.method4081();
-         if (this.field5489.getAxis() != Direction.field415) {
+         if (this.field5489.getAxis() != Direction.Z) {
             var16 = 1.0;
          } else {
             var20 = 1.0;
@@ -227,7 +227,7 @@ public abstract class Class995 extends Entity {
 
    @Override
    public float getRotatedYaw(Class80 var1) {
-      if (this.field5489.getAxis() != Direction.field414) {
+      if (this.field5489.getAxis() != Direction.Y) {
          switch (Class9399.field43617[var1.ordinal()]) {
             case 1:
                this.field5489 = this.field5489.method536();

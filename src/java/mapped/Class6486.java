@@ -37,7 +37,7 @@ public final class Class6486 {
 
       this.field28442 = var4.method11502(var1, Class1666.field9078, BlockPos.ZERO, ISelectionContext.method14947());
       this.field28443 = Arrays.<Direction>stream(Direction.values())
-         .anyMatch(var1x -> this.field28442.method19512(var1x) < 0.0 || this.field28442.method19513(var1x) > 1.0);
+         .anyMatch(var1x -> this.field28442.getStart(var1x) < 0.0 || this.field28442.getEnd(var1x) > 1.0);
       this.field28444 = new boolean[field28436.length * field28437];
 
       for (net.minecraft.util.Direction var16 : field28436) {

@@ -33,9 +33,9 @@ public class HawkFly extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.method37090(0.0);
+        MovementUtils.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
-            ColorUtils.method17725(-0.0789);
+            ColorUtils.setPlayerYMotion(-0.0789);
         }
     }
 
@@ -46,16 +46,16 @@ public class HawkFly extends Module {
             double var4 = 0.125;
             if (this.field23424 != -1) {
                 if (this.field23424 == 0) {
-                    MovementUtils.method37088(var1, 0.18);
+                    MovementUtils.setSpeed(var1, 0.18);
                 }
             } else {
                 var1.setY(0.015);
-                MovementUtils.method37088(var1, var4);
+                MovementUtils.setSpeed(var1, var4);
             }
 
-            ColorUtils.method17725(var1.getY());
-            ColorUtils.method17724(var1.getX());
-            ColorUtils.method17726(var1.getZ());
+            ColorUtils.setPlayerYMotion(var1.getY());
+            ColorUtils.setPlayerXMotion(var1.getX());
+            ColorUtils.setPlayerZMotion(var1.getZ());
         }
     }
 

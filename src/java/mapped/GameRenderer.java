@@ -276,7 +276,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          Vector3d var12 = var4.getLook(1.0F);
          Vector3d var13 = var7.add(var12.x * var5, var12.y * var5, var12.z * var5);
          float var14 = 1.0F;
-         AxisAlignedBB var15 = var4.getBoundingBox().method19661(var12.scale(var5)).method19663(1.0, 1.0, 1.0);
+         AxisAlignedBB var15 = var4.getBoundingBox().contract(var12.scale(var5)).method19663(1.0, 1.0, 1.0);
          EntityRayTraceResult var16 = Class9456.method36386(var4, var7, var13, var15, var0 -> !var0.isSpectator() && var0.canBeCollidedWith(), var10);
          if (var16 != null) {
             Entity var17 = var16.getEntity();

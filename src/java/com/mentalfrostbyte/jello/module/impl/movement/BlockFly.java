@@ -295,11 +295,11 @@ public class BlockFly extends ModuleWithModuleSettings {
                         }
 
                         if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())
-                                && ColorUtils.method17730(mc.player, 0.001F)) {
+                                && ColorUtils.isAboveBounds(mc.player, 0.001F)) {
                             if (mc.gameSettings.keyBindJump.pressed) {
                                 if (!ColorUtils.method17686()) {
-                                    MovementUtils.method37090(0.0);
-                                    MovementUtils.method37088(var1, 0.0);
+                                    MovementUtils.strafe(0.0);
+                                    MovementUtils.setSpeed(var1, 0.0);
                                 }
 
                                 var1.setY(MovementUtils.method37080());
@@ -312,32 +312,32 @@ public class BlockFly extends ModuleWithModuleSettings {
                         if (var1.getY() > 0.247 && var1.getY() < 0.249) {
                             var1.setY((double) ((int) (mc.player.getPosY() + var1.getY())) - mc.player.getPosY());
                             if (mc.gameSettings.keyBindJump.pressed && !ColorUtils.method17686()) {
-                                MovementUtils.method37090(0.0);
-                                MovementUtils.method37088(var1, 0.0);
+                                MovementUtils.strafe(0.0);
+                                MovementUtils.setSpeed(var1, 0.0);
                             }
                         } else if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())
-                                && ColorUtils.method17730(mc.player, 0.001F)) {
+                                && ColorUtils.isAboveBounds(mc.player, 0.001F)) {
                             var1.setY(-1.0E-10);
                         }
                         break;
                     case "Vanilla":
                         if (mc.gameSettings.keyBindJump.pressed
-                                && ColorUtils.method17730(mc.player, 0.001F)
+                                && ColorUtils.isAboveBounds(mc.player, 0.001F)
                                 && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, 1.0, 0.0)).count() == 0L) {
                             mc.player
                                     .setPosition(mc.player.getPosX(), mc.player.getPosY() + 1.0, mc.player.getPosZ());
                             var1.setY(0.0);
-                            MovementUtils.method37088(var1, 0.0);
+                            MovementUtils.setSpeed(var1, 0.0);
                             mc.timer.timerSpeed = 0.8038576F;
                         }
                 }
             }
         } else if (!this.getStringSettingValueByName("Tower Mode").equals("AAC")
-                || !ColorUtils.method17730(mc.player, 0.001F)
+                || !ColorUtils.isAboveBounds(mc.player, 0.001F)
                 || !mc.gameSettings.keyBindJump.pressed) {
             if (!this.getStringSettingValueByName("Tower Mode").equals("NCP")
                     && !this.getStringSettingValueByName("Tower Mode").equals("Vanilla")
-                    && ColorUtils.method17730(mc.player, 0.001F)
+                    && ColorUtils.isAboveBounds(mc.player, 0.001F)
                     && mc.gameSettings.keyBindJump.pressed) {
                 mc.player.jumpTicks = 20;
                 var1.setY(MovementUtils.method37080());
@@ -345,12 +345,12 @@ public class BlockFly extends ModuleWithModuleSettings {
         } else if (!ColorUtils.method17686() || this.getBooleanValueFromSetttingName("Tower while moving")) {
             mc.player.jumpTicks = 0;
             mc.player.jump();
-            MovementUtils.method37088(var1, MovementUtils.method37075());
-            MovementUtils.method37090(MovementUtils.method37075());
+            MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
+            MovementUtils.strafe(MovementUtils.getSpeed());
         }
 
         if (!this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")) {
-            ColorUtils.method17725(var1.getY());
+            ColorUtils.setPlayerYMotion(var1.getY());
         }
     }
 

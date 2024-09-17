@@ -65,12 +65,12 @@ public class Step extends ModuleWithModuleSettings {
 
         for (int var19 = 0; var19 < var14; var19++) {
             VoxelShape var20 = (VoxelShape) var13[var19];
-            BlockPos var21 = new BlockPos(var20.method19512(Direction.field413), var20.method19512(Direction.field414), var20.method19512(Direction.field415));
+            BlockPos var21 = new BlockPos(var20.getStart(Direction.X), var20.getStart(Direction.Y), var20.getStart(Direction.Z));
             BlockState var22 = mc.world.getBlockState(var21);
-            if (var15 == null || var20.method19514().maxY > var17) {
+            if (var15 == null || var20.getBoundingBox().maxY > var17) {
                 var15 = var22;
                 var16 = var21;
-                var17 = var20.method19514().maxY;
+                var17 = var20.getBoundingBox().maxY;
             }
         }
 
@@ -79,7 +79,7 @@ public class Step extends ModuleWithModuleSettings {
                 if (!mc.player.onGround) {
                     if (var15.getBlock() instanceof Class3208) {
                         VoxelShape var24 = var15.method23412(mc.world, var16);
-                        if (var24.method19514().maxY == 1.0) {
+                        if (var24.getBoundingBox().maxY == 1.0) {
                             return Class2131.field13904;
                         }
                     }
@@ -98,7 +98,7 @@ public class Step extends ModuleWithModuleSettings {
                         }
                     } else {
                         VoxelShape var23 = var15.method23412(mc.world, var16);
-                        if (var23.method19514().maxY == 1.0) {
+                        if (var23.getBoundingBox().maxY == 1.0) {
                             return Class2131.field13906;
                         }
                     }

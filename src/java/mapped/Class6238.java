@@ -18,7 +18,7 @@ public final class Class6238 extends Class6230 {
             var7,
             Blocks.field36703
                .method11579()
-               .method23465(Class3343.field18855, Integer.valueOf(var6.getAxis() != Direction.field414 ? var6.method536().method534() * 4 : 0)),
+               .method23465(Class3343.field18855, Integer.valueOf(var6.getAxis() != Direction.Y ? var6.method536().method534() * 4 : 0)),
             3
          );
          TileEntity var8 = var5.getTileEntity(var7);

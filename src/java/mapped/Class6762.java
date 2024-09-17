@@ -201,7 +201,7 @@ public class Class6762 extends Class6764 {
    public static double method20626(IBlockReader var0, BlockPos var1) {
       BlockPos var4 = var1.down();
       VoxelShape var5 = var0.getBlockState(var4).method23414(var0, var4);
-      return (double)var4.getY() + (!var5.method19516() ? var5.method19513(Direction.field414) : 0.0);
+      return (double)var4.getY() + (!var5.isEmpty() ? var5.getEnd(Direction.Y) : 0.0);
    }
 
    @Nullable

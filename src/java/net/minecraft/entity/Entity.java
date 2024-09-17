@@ -604,15 +604,15 @@ public abstract class Entity implements INameable, ICommandSource {
                if (var1.z == 0.0) {
                   return Vector3d.ZERO;
                } else {
-                  double var9 = this.calculatePistonDeltas(Direction.field415, var1.z);
+                  double var9 = this.calculatePistonDeltas(Direction.Z, var1.z);
                   return !(Math.abs(var9) <= 1.0E-5F) ? new Vector3d(0.0, 0.0, var9) : Vector3d.ZERO;
                }
             } else {
-               double var8 = this.calculatePistonDeltas(Direction.field414, var1.y);
+               double var8 = this.calculatePistonDeltas(Direction.Y, var1.y);
                return !(Math.abs(var8) <= 1.0E-5F) ? new Vector3d(0.0, var8, 0.0) : Vector3d.ZERO;
             }
          } else {
-            double var6 = this.calculatePistonDeltas(Direction.field413, var1.x);
+            double var6 = this.calculatePistonDeltas(Direction.X, var1.x);
             return !(Math.abs(var6) <= 1.0E-5F) ? new Vector3d(var6, 0.0, 0.0) : Vector3d.ZERO;
          }
       } else {
@@ -635,7 +635,7 @@ public abstract class Entity implements INameable, ICommandSource {
       Stream var7 = ! VoxelShapes.compare(var6, VoxelShapes.create(var4.shrink(1.0E-7)), IBooleanFunction.AND)
          ? Stream.<VoxelShape>of(var6)
          : Stream.empty();
-      Stream var8 = this.world.func_230318_c_(this, var4.method19661(var1), var0 -> true);
+      Stream var8 = this.world.func_230318_c_(this, var4.contract(var1), var0 -> true);
       Class8544 var9 = new Class8544(Stream.concat(var8, var7));
       Vector3d var10 = var1.lengthSquared() != 0.0 ? collideBoundingBoxHeuristically(this, var1, var4, this.world, var5, var9) : var1;
       boolean var11 = var1.x != var10.x;
@@ -645,7 +645,7 @@ public abstract class Entity implements INameable, ICommandSource {
       if (this.stepHeight > 0.0F && var14 && (var11 || var13)) {
          Vector3d var15 = collideBoundingBoxHeuristically(this, new Vector3d(var1.x, (double)this.stepHeight, var1.z), var4, this.world, var5, var9);
          Vector3d var16 = collideBoundingBoxHeuristically(
-            this, new Vector3d(0.0, (double)this.stepHeight, 0.0), var4.method19662(var1.x, 0.0, var1.z), this.world, var5, var9
+            this, new Vector3d(0.0, (double)this.stepHeight, 0.0), var4.contract(var1.x, 0.0, var1.z), this.world, var5, var9
          );
          if (var16.y < (double)this.stepHeight) {
             Vector3d var17 = collideBoundingBoxHeuristically(this, new Vector3d(var1.x, 0.0, var1.z), var4.offset(var16), this.world, var5, var9)
@@ -687,7 +687,7 @@ public abstract class Entity implements INameable, ICommandSource {
          boolean var12 = var0 != null && var0 instanceof ClientPlayerEntity;
          return collideBoundingBox(var1, var2, var3, var4, var5, var12);
       } else {
-         Class8544 var11 = new Class8544<VoxelShape>(Stream.<VoxelShape>concat(var5.method30440(), var3.getCollisionShapes(var0, var2.method19661(var1))));
+         Class8544 var11 = new Class8544<VoxelShape>(Stream.<VoxelShape>concat(var5.method30440(), var3.getCollisionShapes(var0, var2.contract(var1))));
          return getAllowedMovement(var1, var2, var11);
       }
    }
@@ -697,7 +697,7 @@ public abstract class Entity implements INameable, ICommandSource {
       double var7 = var0.y;
       double var9 = var0.z;
       if (var7 != 0.0) {
-         var7 = VoxelShapes.method27437(Direction.field414, var1, var2.method30440(), var7);
+         var7 = VoxelShapes.method27437(Direction.Y, var1, var2.method30440(), var7);
          if (var7 != 0.0) {
             var1 = var1.offset(0.0, var7, 0.0);
          }
@@ -705,21 +705,21 @@ public abstract class Entity implements INameable, ICommandSource {
 
       boolean var11 = Math.abs(var5) < Math.abs(var9);
       if (var11 && var9 != 0.0) {
-         var9 = VoxelShapes.method27437(Direction.field415, var1, var2.method30440(), var9);
+         var9 = VoxelShapes.method27437(Direction.Z, var1, var2.method30440(), var9);
          if (var9 != 0.0) {
             var1 = var1.offset(0.0, 0.0, var9);
          }
       }
 
       if (var5 != 0.0) {
-         var5 = VoxelShapes.method27437(Direction.field413, var1, var2.method30440(), var5);
+         var5 = VoxelShapes.method27437(Direction.X, var1, var2.method30440(), var5);
          if (!var11 && var5 != 0.0) {
             var1 = var1.offset(var5, 0.0, 0.0);
          }
       }
 
       if (!var11 && var9 != 0.0) {
-         var9 = VoxelShapes.method27437(Direction.field415, var1, var2.method30440(), var9);
+         var9 = VoxelShapes.method27437(Direction.Z, var1, var2.method30440(), var9);
       }
 
       return new Vector3d(var5, var7, var9);
@@ -730,7 +730,7 @@ public abstract class Entity implements INameable, ICommandSource {
       double var10 = var0.y;
       double var12 = var0.z;
       if (var10 != 0.0) {
-         var10 = VoxelShapes.method27438(Direction.field414, var1, var2, var10, var3, var4.method30440(), var5);
+         var10 = VoxelShapes.method27438(Direction.Y, var1, var2, var10, var3, var4.method30440(), var5);
          if (var10 != 0.0) {
             var1 = var1.offset(0.0, var10, 0.0);
          }
@@ -738,21 +738,21 @@ public abstract class Entity implements INameable, ICommandSource {
 
       boolean var14 = Math.abs(var8) < Math.abs(var12);
       if (var14 && var12 != 0.0) {
-         var12 = VoxelShapes.method27438(Direction.field415, var1, var2, var12, var3, var4.method30440(), var5);
+         var12 = VoxelShapes.method27438(Direction.Z, var1, var2, var12, var3, var4.method30440(), var5);
          if (var12 != 0.0) {
             var1 = var1.offset(0.0, 0.0, var12);
          }
       }
 
       if (var8 != 0.0) {
-         var8 = VoxelShapes.method27438(Direction.field413, var1, var2, var8, var3, var4.method30440(), var5);
+         var8 = VoxelShapes.method27438(Direction.X, var1, var2, var8, var3, var4.method30440(), var5);
          if (!var14 && var8 != 0.0) {
             var1 = var1.offset(var8, 0.0, 0.0);
          }
       }
 
       if (!var14 && var12 != 0.0) {
-         var12 = VoxelShapes.method27438(Direction.field415, var1, var2, var12, var3, var4.method30440(), var5);
+         var12 = VoxelShapes.method27438(Direction.Z, var1, var2, var12, var3, var4.method30440(), var5);
       }
 
       return new Vector3d(var8, var10, var12);
@@ -1544,7 +1544,7 @@ public abstract class Entity implements INameable, ICommandSource {
          float var3 = 0.1F;
          float var4 = this.size.field39968 * 0.8F;
          AxisAlignedBB var5 = AxisAlignedBB.method19686((double)var4, 0.1F, (double)var4).offset(this.getPosX(), this.getPosYEye(), this.getPosZ());
-         return this.world.method7057(this, var5, (var1, var2) -> var1.method23437(this.world, var2)).findAny().isPresent();
+         return this.world.func_241457_a_(this, var5, (var1, var2) -> var1.method23437(this.world, var2)).findAny().isPresent();
       } else {
          return false;
       }
@@ -1967,9 +1967,9 @@ public abstract class Entity implements INameable, ICommandSource {
       float var23 = this.rand.nextFloat() * 0.2F + 0.1F;
       float var24 = (float)var12.getAxisDirection().getOffset();
       Vector3d var25 = this.getMotion().scale(0.75);
-      if (var12.getAxis() != Direction.field413) {
-         if (var12.getAxis() != Direction.field414) {
-            if (var12.getAxis() == Direction.field415) {
+      if (var12.getAxis() != Direction.X) {
+         if (var12.getAxis() != Direction.Y) {
+            if (var12.getAxis() == Direction.Z) {
                this.setMotion(var25.x, var25.y, (double)(var24 * var23));
             }
          } else {
@@ -2127,11 +2127,11 @@ public abstract class Entity implements INameable, ICommandSource {
                Direction var6x;
                Vector3d var7x;
                if (!var5x.method23462(Class8820.field39712)) {
-                  var6x = Direction.field413;
+                  var6x = Direction.X;
                   var7x = new Vector3d(0.5, 0.0, 0.0);
                } else {
                   var6x = var5x.<Direction>method23463(Class8820.field39712);
-                  TeleportationRepositioner var8x = Class7215.method22658(this.field_242271_ac, var6x, 21, Direction.field414, 21, var2x -> this.world.getBlockState(var2x) == var5x);
+                  TeleportationRepositioner var8x = Class7215.method22658(this.field_242271_ac, var6x, 21, Direction.Y, 21, var2x -> this.world.getBlockState(var2x) == var5x);
                   var7x = this.func_241839_a(var6x, var8x);
                }
 

@@ -26,7 +26,7 @@ public class InvMove extends Module {
     @EventTarget
     private void method16583(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.getKey() == mc.gameSettings.keyBindInventory.keycode.keyCode && mc.player.isSprinting()) {
+            if (var1.getKey() == mc.gameSettings.keyBindInventory.inputMappingsInput.keyCode && mc.player.isSprinting()) {
                 mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.STOP_SPRINTING));
             }
         }
@@ -91,10 +91,10 @@ public class InvMove extends Module {
                 }
 
                 for (KeyBinding var7 : mc.gameSettings.field44658) {
-                    if (var7.keycode.keyCode > 0
-                            && mc.gameSettings.keyBindSneak.keycode.keyCode != var7.keycode.keyCode
-                            && var7.keycode.keyCode > 4) {
-                        int var8 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), var7.keycode.keyCode);
+                    if (var7.inputMappingsInput.keyCode > 0
+                            && mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode != var7.inputMappingsInput.keyCode
+                            && var7.inputMappingsInput.keyCode > 4) {
+                        int var8 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), var7.inputMappingsInput.keyCode);
                         var7.pressed = var8 == 1;
                     }
                 }

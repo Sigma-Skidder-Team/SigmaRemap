@@ -130,7 +130,7 @@ public abstract class AbstractFireBlock extends Block {
    public void method11589(BlockState var1, World var2, BlockPos var3, BlockState var4, boolean var5) {
       if (!var4.isIn(var1.getBlock())) {
          if (method12011(var2)) {
-            Optional var8 = Class7473.method24194(var2, var3, Direction.field413);
+            Optional var8 = Class7473.method24194(var2, var3, Direction.X);
             if (var8.isPresent()) {
                ((Class7473)var8.get()).method24204();
                return;

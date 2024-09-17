@@ -20,7 +20,7 @@ public class Strafe extends Module {
     @EventTarget
     public void method16817(EventMove var1) {
         if (this.isEnabled()) {
-            this.field23932 = MovementUtils.method37075();
+            this.field23932 = MovementUtils.getSpeed();
             float var4 = MovementUtils.lenientStrafe()[1];
             float var5 = MovementUtils.lenientStrafe()[2];
             float var6 = MovementUtils.method37086();
@@ -35,7 +35,7 @@ public class Strafe extends Module {
             if (!(var11 > this.field23936 + 0.1F)) {
                 this.field23936 = var11;
                 if (var11 != 0.0) {
-                    var11 = Math.max(var11, MovementUtils.method37075());
+                    var11 = Math.max(var11, MovementUtils.getSpeed());
                 }
 
                 var1.setX(var1.getX() * (double) (1.0F - var13) + var11 * var7 * (double) var13);

@@ -25,7 +25,7 @@ public class Class3456 extends Class3194 {
    @Override
    public BlockState method11491(BlockState var1, net.minecraft.util.Direction var2, BlockState var3, Class1660 var4, BlockPos var5, BlockPos var6) {
       Class84 var9 = var1.<Class84>method23463(field19276);
-      if (var2.getAxis() != Direction.field414
+      if (var2.getAxis() != Direction.Y
          || var9 == Class84.field210 != (var2 == net.minecraft.util.Direction.field673)
          || var3.isIn(this) && var3.<Class84>method23463(field19276) != var9) {
          return var9 == Class84.field210 && var2 == net.minecraft.util.Direction.DOWN && !var1.method23443(var4, var5)

@@ -66,7 +66,7 @@ public enum Class80 {
    }
 
    public net.minecraft.util.Direction method252(net.minecraft.util.Direction var1) {
-      if (var1.getAxis() == Direction.field414) {
+      if (var1.getAxis() == Direction.Y) {
          return var1;
       } else {
          switch (Class8568.field38525[this.ordinal()]) {

@@ -41,16 +41,16 @@ public class VeltPvPFly extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.method37090(0.0);
+        MovementUtils.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
-            ColorUtils.method17725(-0.0789);
+            ColorUtils.setPlayerYMotion(-0.0789);
         }
     }
 
     @EventTarget
     private void method16045(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.getKey() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23423 = true;
             }
@@ -60,7 +60,7 @@ public class VeltPvPFly extends Module {
     @EventTarget
     private void method16046(MouseHoverEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23423 = false;
             }
@@ -79,8 +79,8 @@ public class VeltPvPFly extends Module {
                             var1.setY(-MovementUtils.method37080());
                         }
 
-                        ColorUtils.method17725(var1.getY());
-                        MovementUtils.method37088(var1, var4 - 0.1);
+                        ColorUtils.setPlayerYMotion(var1.getY());
+                        MovementUtils.setSpeed(var1, var4 - 0.1);
                     }
                 } else {
                     if (!mc.gameSettings.keyBindJump.isKeyDown()) {
@@ -91,12 +91,12 @@ public class VeltPvPFly extends Module {
                         this.field23421 = !this.field23423 ? mc.player.getPosY() + var1.getY() : this.field23421;
                     }
 
-                    ColorUtils.method17725(var1.getY());
-                    MovementUtils.method37088(var1, var4);
+                    ColorUtils.setPlayerYMotion(var1.getY());
+                    MovementUtils.setSpeed(var1, var4);
                 }
             } else {
                 var1.setY(0.0);
-                MovementUtils.method37088(var1, 0.0);
+                MovementUtils.setSpeed(var1, 0.0);
             }
         }
     }

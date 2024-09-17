@@ -8,17 +8,17 @@ public class Class4503 {
 
    static {
       try {
-         field21731[Direction.field413.ordinal()] = 1;
+         field21731[Direction.X.ordinal()] = 1;
       } catch (NoSuchFieldError var9) {
       }
 
       try {
-         field21731[Direction.field414.ordinal()] = 2;
+         field21731[Direction.Y.ordinal()] = 2;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field21731[Direction.field415.ordinal()] = 3;
+         field21731[Direction.Z.ordinal()] = 3;
       } catch (NoSuchFieldError var7) {
       }
 

@@ -20,7 +20,7 @@ public class CubecraftLongJump extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.method37090(MovementUtils.method37075() * 0.8);
+        MovementUtils.strafe(MovementUtils.getSpeed() * 0.8);
         mc.timer.timerSpeed = 1.0F;
     }
 
@@ -33,20 +33,20 @@ public class CubecraftLongJump extends Module {
     @EventTarget
     public void method16174(TickEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            if (!ColorUtils.method17730(mc.player, 0.001F)) {
+            if (!ColorUtils.isAboveBounds(mc.player, 0.001F)) {
                 this.field23501++;
                 this.field23502 -= 0.005;
                 if (this.field23502 < 0.26 || this.field23501 > 6) {
                     this.field23502 = 0.26;
                 }
 
-                MovementUtils.method37090(this.field23502);
+                MovementUtils.strafe(this.field23502);
                 if (this.field23501 > 5) {
                     this.access().toggle();
                 }
             } else {
                 if (this.field23501 > 0) {
-                    MovementUtils.method37090(0.0);
+                    MovementUtils.strafe(0.0);
                     this.access().toggle();
                     this.field23501 = 0;
                 }
@@ -62,10 +62,10 @@ public class CubecraftLongJump extends Module {
                 }
 
                 mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var4, var6, var8, true));
-                ColorUtils.method17725(MovementUtils.method37080());
+                ColorUtils.setPlayerYMotion(MovementUtils.method37080());
                 this.field23501 = 0;
                 this.field23502 = this.getNumberValueBySettingName("Boost") / 2.0F;
-                MovementUtils.method37090(this.field23502);
+                MovementUtils.strafe(this.field23502);
             }
         }
     }

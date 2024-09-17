@@ -77,7 +77,7 @@ public class Class8377 {
          this.field35950.computeIfAbsent(var5, var0 -> Sets.newHashSet()).add(var1);
          return true;
       } else if (!var5.equals(var7.method35356())) {
-         throw (IllegalStateException) Util.method38516(new IllegalStateException("POI data mismatch: already registered at " + var4));
+         throw (IllegalStateException) Util.pauseDevMode(new IllegalStateException("POI data mismatch: already registered at " + var4));
       } else {
          return false;
       }
@@ -101,7 +101,7 @@ public class Class8377 {
          this.field35951.run();
          return var5;
       } else {
-         throw (IllegalStateException) Util.method38516(new IllegalStateException("POI never registered at " + var1));
+         throw (IllegalStateException) Util.pauseDevMode(new IllegalStateException("POI never registered at " + var1));
       }
    }
 

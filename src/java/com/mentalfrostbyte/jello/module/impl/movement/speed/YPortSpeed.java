@@ -37,7 +37,7 @@ public class YPortSpeed extends Module {
     public void onEnable() {
         this.field23541 = false;
         this.field23545 = 0;
-        this.field23543 = mc.player != null ? MovementUtils.method37075() : 0.2873;
+        this.field23543 = mc.player != null ? MovementUtils.getSpeed() : 0.2873;
         this.field23542 = mc.player.getPosY();
     }
 
@@ -45,8 +45,8 @@ public class YPortSpeed extends Module {
     public void onDisable() {
         this.field23541 = false;
         if (mc.player.getMotion().y > 0.33) {
-            ColorUtils.method17725(-0.43 + (double) MovementUtils.method37079() * 0.1);
-            MovementUtils.method37090(MovementUtils.method37075());
+            ColorUtils.setPlayerYMotion(-0.43 + (double) MovementUtils.method37079() * 0.1);
+            MovementUtils.strafe(MovementUtils.getSpeed());
         }
     }
 
@@ -60,15 +60,15 @@ public class YPortSpeed extends Module {
                         if (MovementUtils.isMoving() && mc.player.onGround) {
                             mc.player.jump();
                             var1.setY(mc.player.getMotion().y);
-                            MovementUtils.method37088(var1, 0.461);
+                            MovementUtils.setSpeed(var1, 0.461);
                             this.field23541 = true;
                             mc.player.stepHeight = 0.5F;
                         } else if (this.field23541
-                                && ColorUtils.method17730(mc.player, (float) (MovementUtils.method37080() + (double) MovementUtils.method37079() * 0.1 + 0.001F))) {
+                                && ColorUtils.isAboveBounds(mc.player, (float) (MovementUtils.method37080() + (double) MovementUtils.method37079() * 0.1 + 0.001F))) {
                             this.field23541 = !this.field23541;
-                            MovementUtils.method37088(var1, 0.312);
+                            MovementUtils.setSpeed(var1, 0.312);
                             var1.setY(-0.43 + (double) MovementUtils.method37079() * 0.1);
-                            ColorUtils.method17725(var1.getY());
+                            ColorUtils.setPlayerYMotion(var1.getY());
                             mc.player.stepHeight = 0.0F;
                         } else if (this.field23541) {
                             var1.setY(-0.1);
@@ -82,7 +82,7 @@ public class YPortSpeed extends Module {
 
                         if (this.field23545 == 1 && ColorUtils.method17686()) {
                             this.field23545 = 2;
-                            this.field23543 = 1.38 * MovementUtils.method37075() - 0.01;
+                            this.field23543 = 1.38 * MovementUtils.getSpeed() - 0.01;
                         } else if (this.field23545 == 2) {
                             this.field23545 = 3;
                             double var8 = 0.401448482 + 0.002 * Math.random();
@@ -91,7 +91,7 @@ public class YPortSpeed extends Module {
                             this.field23543 *= 2.149;
                         } else if (this.field23545 == 3) {
                             this.field23545 = 4;
-                            double var6 = 0.66 * (this.field23544 - MovementUtils.method37075());
+                            double var6 = 0.66 * (this.field23544 - MovementUtils.getSpeed());
                             this.field23543 = this.field23544 - var6;
                         } else {
                             if (mc.world
@@ -107,10 +107,10 @@ public class YPortSpeed extends Module {
                             this.field23543 = this.field23544 - this.field23544 / 159.0;
                         }
 
-                        this.field23543 = Math.max(this.field23543, MovementUtils.method37075());
-                        MovementUtils.method37088(var1, this.field23543);
+                        this.field23543 = Math.max(this.field23543, MovementUtils.getSpeed());
+                        MovementUtils.setSpeed(var1, this.field23543);
                         mc.player.stepHeight = 0.6F;
-                        ColorUtils.method17725(var1.getY());
+                        ColorUtils.setPlayerYMotion(var1.getY());
                 }
             }
         }
@@ -124,12 +124,12 @@ public class YPortSpeed extends Module {
             if (!mc.player.isInWater() && !mc.player.isInLava() && !mc.player.isOnLadder()) {
                 if (!mc.gameSettings.keyBindJump.pressed
                         && !mc.player.isOnLadder()
-                        && !MovementUtils.method37081()
+                        && !MovementUtils.isInWater()
                         && !mc.player.isInWater()
-                        && ColorUtils.method17730(mc.player, 1.0F)
+                        && ColorUtils.isAboveBounds(mc.player, 1.0F)
                         && !mc.player.onGround
                         && this.field23545 == 3) {
-                    ColorUtils.method17725(-0.3994);
+                    ColorUtils.setPlayerYMotion(-0.3994);
                 }
 
                 double var4 = mc.player.getPosX() - mc.player.prevPosX;
@@ -142,12 +142,12 @@ public class YPortSpeed extends Module {
     @EventTarget
     public void method16238(Render2DEvent var1) {
         if (this.isEnabled()
-                && ColorUtils.method17730(mc.player, 0.43F)
+                && ColorUtils.isAboveBounds(mc.player, 0.43F)
                 && !((double) mc.player.fallDistance > 0.09)
                 && this.getBooleanValueFromSetttingName("OnGround")
                 && !mc.gameSettings.keyBindJump.pressed
                 && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
-            if (mc.player.onGround && ColorUtils.method17730(mc.player, 0.001F)) {
+            if (mc.player.onGround && ColorUtils.isAboveBounds(mc.player, 0.001F)) {
                 this.field23542 = mc.player.getPosY();
             }
 

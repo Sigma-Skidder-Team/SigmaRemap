@@ -86,8 +86,8 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
    public AxisAlignedBB method3748(Direction var1) {
       float var4 = this.method3755(1.0F);
       return VoxelShapes.method27426()
-         .method19514()
-         .method19662(
+         .getBoundingBox()
+         .contract(
             (double)(0.5F * var4 * (float)var1.method539()), (double)(0.5F * var4 * (float)var1.method540()), (double)(0.5F * var4 * (float)var1.method541())
          );
    }

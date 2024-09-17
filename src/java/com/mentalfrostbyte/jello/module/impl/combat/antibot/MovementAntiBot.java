@@ -40,7 +40,7 @@ public class MovementAntiBot extends Class7249 {
       for (PlayerEntity var5 : ColorUtils.method17680()) {
          if (var5 != field31119.player) {
             if (var5 == null
-               || !ColorUtils.method17730(var5, 0.01F)
+               || !ColorUtils.isAboveBounds(var5, 0.01F)
                || var5.isInvisible()
                || !(var5.getDistance(field31119.player) > 5.0F)
                   && (var5.getPosX() != var5.lastTickPosX || var5.getPosZ() != var5.lastTickPosZ || var5.getPosY() != var5.lastTickPosY)) {
@@ -68,7 +68,7 @@ public class MovementAntiBot extends Class7249 {
             }
 
             Entity var5 = var4.getEntity(field31119.world);
-            boolean var6 = ColorUtils.method17730(var5, 0.5F);
+            boolean var6 = ColorUtils.isAboveBounds(var5, 0.5F);
             short var7 = var4.posY;
             if (!this.field31117.containsKey(var5)) {
                this.field31117.put(var5, new ArrayList<Integer>());
@@ -138,7 +138,7 @@ public class MovementAntiBot extends Class7249 {
 
          for (BlockPos var6 : method22757(var1)) {
             VoxelShape var7 = field31119.world.getBlockState(var6).method23412(field31119.world, var6);
-            if (!var7.method19516() && var4.method19670(var7.method19514().method19668(var6))) {
+            if (!var7.isEmpty() && var4.method19670(var7.getBoundingBox().method19668(var6))) {
                return true;
             }
          }

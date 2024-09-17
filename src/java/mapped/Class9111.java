@@ -20,12 +20,12 @@ public class Class9111 {
       field41872 = new int[Direction.values().length];
 
       try {
-         field41872[Direction.field415.ordinal()] = 1;
+         field41872[Direction.Z.ordinal()] = 1;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field41872[Direction.field413.ordinal()] = 2;
+         field41872[Direction.X.ordinal()] = 2;
       } catch (NoSuchFieldError var3) {
       }
    }

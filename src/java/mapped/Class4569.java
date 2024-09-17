@@ -45,7 +45,7 @@ public class Class4569 extends Class4566 {
             this.field22037
                .getBlockState(var3)
                .method23414(this.field22037, var3)
-               .method19522(Direction.field414, this.field22041 - (double)var3.getX(), this.field22043 - (double)var3.getZ()),
+               .method19522(Direction.Y, this.field22041 - (double)var3.getX(), this.field22043 - (double)var3.getZ()),
             (double)this.field22037.getFluidState(var3).method23475(this.field22037, var3)
          );
          if (var4 > 0.0 && this.field22042 < (double)var3.getY() + var4) {

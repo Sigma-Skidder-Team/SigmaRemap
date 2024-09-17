@@ -38,7 +38,7 @@ public class Class4527 {
    }
 
    public static boolean method14424(ICollisionReader var0, LivingEntity var1, AxisAlignedBB var2) {
-      return var0.getCollisionShapes(var1, var2).allMatch(VoxelShape::method19516);
+      return var0.getCollisionShapes(var1, var2).allMatch(VoxelShape::isEmpty);
    }
 
    @Nullable
@@ -66,8 +66,8 @@ public class Class4527 {
 
       while (var6 < var1) {
          VoxelShape var7 = (VoxelShape)var2.apply(var5);
-         if (!var7.method19516()) {
-            return (double)(var0.getY() + var6) + var7.method19512(Direction.field414);
+         if (!var7.isEmpty()) {
+            return (double)(var0.getY() + var6) + var7.getStart(Direction.Y);
          }
 
          var6++;
@@ -88,7 +88,7 @@ public class Class4527 {
                return null;
             } else {
                Vector3d var8 = Vector3d.method11331(var2, var6);
-               return !var1.getCollisionShapes((Entity)null, var0.getSize().method32097(var8)).allMatch(VoxelShape::method19516) ? null : var8;
+               return !var1.getCollisionShapes((Entity)null, var0.getSize().method32097(var8)).allMatch(VoxelShape::isEmpty) ? null : var8;
             }
          } else {
             return null;

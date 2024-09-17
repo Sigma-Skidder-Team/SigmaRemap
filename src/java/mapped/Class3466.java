@@ -30,7 +30,7 @@ public class Class3466 extends Block implements Class3207 {
       FluidState var4 = var1.method18360().getFluidState(var1.method18345());
 
       for (net.minecraft.util.Direction var8 : var1.method18349()) {
-         if (var8.getAxis() == Direction.field414) {
+         if (var8.getAxis() == Direction.Y) {
             BlockState var9 = this.method11579().method23465(field19308, Boolean.valueOf(var8 == net.minecraft.util.Direction.field673));
             if (var9.method23443(var1.method18360(), var1.method18345())) {
                return var9.method23465(field19309, Boolean.valueOf(var4.method23472() == Class9479.field44066));

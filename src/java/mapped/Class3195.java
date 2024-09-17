@@ -45,7 +45,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
 
    @Override
    public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
-      return !var1.method23414(var2, var3).method19526(Direction.field673).method19516() || var1.method23454(var2, var3, Direction.field673);
+      return !var1.method23414(var2, var3).method19526(Direction.field673).isEmpty() || var1.method23454(var2, var3, Direction.field673);
    }
 
    @Override

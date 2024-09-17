@@ -57,7 +57,7 @@ public class Class3218 extends Class3213 {
    @Override
    public VoxelShape method11483(BlockState var1, IBlockReader var2, BlockPos var3, ISelectionContext var4) {
       net.minecraft.util.Direction var7 = var1.<net.minecraft.util.Direction>method23463(field18627);
-      return var7.getAxis() != Direction.field413 ? field18636 : field18635;
+      return var7.getAxis() != Direction.X ? field18636 : field18635;
    }
 
    @Override

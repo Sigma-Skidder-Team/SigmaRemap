@@ -49,8 +49,8 @@ public class CubecraftFly extends Module {
 
     @Override
     public void onDisable() {
-        ColorUtils.method17725(-0.078);
-        MovementUtils.method37090(0.2);
+        ColorUtils.setPlayerYMotion(-0.078);
+        MovementUtils.strafe(0.2);
         mc.timer.timerSpeed = 1.0F;
         if (this.field23846) {
             mc.gameSettings.keyBindSneak.pressed = true;
@@ -60,7 +60,7 @@ public class CubecraftFly extends Module {
     @EventTarget
     private void method16686(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.getKey() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23846 = true;
             }
@@ -70,7 +70,7 @@ public class CubecraftFly extends Module {
     @EventTarget
     private void method16687(MouseHoverEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23846 = false;
             }
@@ -87,23 +87,23 @@ public class CubecraftFly extends Module {
         } else if (ColorUtils.method17718()) {
             if (this.field23845 > 0) {
                 var1.setY(0.0);
-                MovementUtils.method37088(var1, 0.0);
+                MovementUtils.setSpeed(var1, 0.0);
                 this.field23845++;
             } else {
                 if (this.field23845 != 0) {
                     if (this.field23847) {
                         var1.setY(0.0);
-                        MovementUtils.method37088(var1, MovementUtils.method37075());
+                        MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
                         if (this.field23845 != -4) {
                             if (this.field23845 != -1) {
                                 if (JelloPortal.getCurrentVersionApplied() > ViaVerList._1_8_x.getVersionNumber()) {
                                     if (mc.gameSettings.keyBindJump.isKeyDown() && !this.field23846) {
                                         var1.setY(0.0625);
-                                        MovementUtils.method37088(var1, 0.0);
+                                        MovementUtils.setSpeed(var1, 0.0);
                                         this.field23845 = 1;
                                     } else if (this.field23846 && !mc.gameSettings.keyBindJump.isKeyDown()) {
                                         var1.setY(-0.225);
-                                        MovementUtils.method37088(var1, 0.0);
+                                        MovementUtils.setSpeed(var1, 0.0);
                                         this.field23845 = 1;
                                     }
                                 }
@@ -120,25 +120,25 @@ public class CubecraftFly extends Module {
                         }
                     }
                 } else if (JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber()) {
-                    if (!ColorUtils.method17730(mc.player, 0.001F)) {
+                    if (!ColorUtils.isAboveBounds(mc.player, 0.001F)) {
                         var1.setY(0.0);
-                        MovementUtils.method37088(var1, 0.0);
+                        MovementUtils.setSpeed(var1, 0.0);
                         if (mc.player.fallDistance > 4.0F) {
                             mc.getConnection().sendPacket(new CPlayerPacket(true));
                             this.field23848 = true;
                         }
                     } else {
                         var1.setY(MovementUtils.method37080());
-                        MovementUtils.method37088(var1, 0.615);
+                        MovementUtils.setSpeed(var1, 0.615);
                     }
 
                     this.field23845 = 1;
-                } else if (!ColorUtils.method17730(mc.player, 0.001F)) {
+                } else if (!ColorUtils.isAboveBounds(mc.player, 0.001F)) {
                     var1.setY(0.0);
                     this.field23845 = -2;
                     Client.getInstance().getNotificationManager().post(new Notification("Cubecraft Fly", "Please start on the ground."));
                 } else {
-                    MovementUtils.method37088(var1, 0.0);
+                    MovementUtils.setSpeed(var1, 0.0);
                     var1.setY(0.0);
                     long var14 = ColorUtils.method17762() % 90L;
                     double var15 = 0.016 + (double) var14 / 10000.0;
@@ -151,10 +151,10 @@ public class CubecraftFly extends Module {
                     mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var16, var10 + 3.0, var12, false));
                 }
 
-                ColorUtils.method17725(var1.getY());
+                ColorUtils.setPlayerYMotion(var1.getY());
             }
         } else {
-            MovementUtils.method37088(var1, MovementUtils.method37075());
+            MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
             var1.setY(0.0);
             if (mc.player.ticksExisted % 2 == 0) {
                 double var4 = mc.player.getPosX();
@@ -169,7 +169,7 @@ public class CubecraftFly extends Module {
     public void method16689(EventUpdate var1) {
         if (var1.isPre() && ColorUtils.method17718()) {
             var1.method13908(true);
-            if (JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber() && this.field23845 == 0 && ColorUtils.method17730(mc.player, 0.001F)) {
+            if (JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber() && this.field23845 == 0 && ColorUtils.isAboveBounds(mc.player, 0.001F)) {
                 var1.setCancelled(true);
             }
 
@@ -199,7 +199,7 @@ public class CubecraftFly extends Module {
                     float var9 = var6[0];
                     double var10 = Math.cos(Math.toRadians(var9));
                     double var12 = Math.sin(Math.toRadians(var9));
-                    double var14 = MovementUtils.method37075();
+                    double var14 = MovementUtils.getSpeed();
                     double var16 = ((double) var7 * var10 + (double) var8 * var12) * var14;
                     double var18 = ((double) var7 * var12 - (double) var8 * var10) * var14;
                     this.field23849 = var20.y;

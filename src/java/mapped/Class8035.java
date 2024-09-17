@@ -14,7 +14,7 @@ public class Class8035 extends Class8033 {
                Codec.FLOAT.fieldOf("max_chance").orElse(0.0F).forGetter(var0x -> var0x.field34525),
                Codec.INT.fieldOf("min_dist").orElse(0).forGetter(var0x -> var0x.field34526),
                Codec.INT.fieldOf("max_dist").orElse(0).forGetter(var0x -> var0x.field34527),
-               Direction.field417.fieldOf("axis").orElse(Direction.field414).forGetter(var0x -> var0x.field34528)
+               Direction.field417.fieldOf("axis").orElse(Direction.Y).forGetter(var0x -> var0x.field34528)
             )
             .apply(var0, Class8035::new)
    );

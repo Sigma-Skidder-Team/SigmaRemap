@@ -40,7 +40,7 @@ public class AGCFly extends Module {
     @EventTarget
     private void method16780(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.getKey() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23904 = true;
             }
@@ -50,7 +50,7 @@ public class AGCFly extends Module {
     @EventTarget
     private void method16781(MouseHoverEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23904 = false;
             }
@@ -59,9 +59,9 @@ public class AGCFly extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.method37090(0.0);
+        MovementUtils.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
-            ColorUtils.method17725(-0.0789);
+            ColorUtils.setPlayerYMotion(-0.0789);
         }
     }
 
@@ -73,14 +73,14 @@ public class AGCFly extends Module {
                 if (this.field23902 == -1) {
                     var1.setY(this.field23903 != 3 ? 0.001 : 0.095);
                     if (this.field23903 != 3) {
-                        MovementUtils.method37088(var1, 0.32);
+                        MovementUtils.setSpeed(var1, 0.32);
                     }
 
-                    ColorUtils.method17725(var1.getY());
+                    ColorUtils.setPlayerYMotion(var1.getY());
                 }
             } else {
                 var1.setY(0.0);
-                MovementUtils.method37088(var1, 0.0);
+                MovementUtils.setSpeed(var1, 0.0);
             }
         }
     }
@@ -131,16 +131,16 @@ public class AGCFly extends Module {
     private double method16785() {
         if (!(mc.player.getPositionVec().y < 1.0)) {
             if (!mc.player.onGround) {
-                AxisAlignedBB var3 = mc.player.boundingBox.method19662(0.0, -mc.player.getPositionVec().y, 0.0);
+                AxisAlignedBB var3 = mc.player.boundingBox.contract(0.0, -mc.player.getPositionVec().y, 0.0);
                 Iterator var4 = mc.world.getCollisionShapes(mc.player, var3).iterator();
                 double var5 = -1.0;
                 BlockPos var7 = null;
 
                 while (var4.hasNext()) {
                     VoxelShape var8 = (VoxelShape) var4.next();
-                    if (var8.method19514().maxY > var5) {
-                        var5 = var8.method19514().maxY;
-                        var7 = new BlockPos(var8.method19514().minX, var8.method19514().minY, var8.method19514().minZ);
+                    if (var8.getBoundingBox().maxY > var5) {
+                        var5 = var8.getBoundingBox().maxY;
+                        var7 = new BlockPos(var8.getBoundingBox().minX, var8.getBoundingBox().minY, var8.getBoundingBox().minZ);
                     }
                 }
 

@@ -130,16 +130,16 @@ public final class VoxelShapes {
          } else {
             boolean var5 = var2.method36569(true, false);
             boolean var6 = var2.method36569(false, true);
-            if (!var0.method19516()) {
-               if (var1.method19516()) {
+            if (!var0.isEmpty()) {
+               if (var1.isEmpty()) {
                   return !var5 ? method27425() : var0;
                } else {
-                  Class56 var7 = method27445(1, var0.method19511(Direction.field413), var1.method19511(Direction.field413), var5, var6);
-                  Class56 var8 = method27445(var7.method194().size() - 1, var0.method19511(Direction.field414), var1.method19511(Direction.field414), var5, var6);
+                  Class56 var7 = method27445(1, var0.method19511(Direction.X), var1.method19511(Direction.X), var5, var6);
+                  Class56 var8 = method27445(var7.method194().size() - 1, var0.method19511(Direction.Y), var1.method19511(Direction.Y), var5, var6);
                   Class56 var9 = method27445(
                      (var7.method194().size() - 1) * (var8.method194().size() - 1),
-                     var0.method19511(Direction.field415),
-                     var1.method19511(Direction.field415),
+                     var0.method19511(Direction.Z),
+                     var1.method19511(Direction.Z),
                      var5,
                      var6
                   );
@@ -153,39 +153,39 @@ public final class VoxelShapes {
             }
          }
       } else {
-         throw (IllegalArgumentException) Util.method38516(new IllegalArgumentException());
+         throw (IllegalArgumentException) Util.pauseDevMode(new IllegalArgumentException());
       }
    }
 
    public static boolean compare(VoxelShape var0, VoxelShape var1, IBooleanFunction var2) {
       if (var2.method36569(false, false)) {
-         throw (IllegalArgumentException) Util.method38516(new IllegalArgumentException());
+         throw (IllegalArgumentException) Util.pauseDevMode(new IllegalArgumentException());
       } else if (var0 == var1) {
          return var2.method36569(true, true);
-      } else if (var0.method19516()) {
-         return var2.method36569(false, !var1.method19516());
-      } else if (var1.method19516()) {
-         return var2.method36569(!var0.method19516(), false);
+      } else if (var0.isEmpty()) {
+         return var2.method36569(false, !var1.isEmpty());
+      } else if (var1.isEmpty()) {
+         return var2.method36569(!var0.isEmpty(), false);
       } else {
          boolean var5 = var2.method36569(true, false);
          boolean var6 = var2.method36569(false, true);
 
          for (Direction var10 : Class2321.field15907) {
-            if (var0.method19513(var10) < var1.method19512(var10) - 1.0E-7) {
+            if (var0.getEnd(var10) < var1.getStart(var10) - 1.0E-7) {
                return var5 || var6;
             }
 
-            if (var1.method19513(var10) < var0.method19512(var10) - 1.0E-7) {
+            if (var1.getEnd(var10) < var0.getStart(var10) - 1.0E-7) {
                return var5 || var6;
             }
          }
 
-         Class56 var11 = method27445(1, var0.method19511(Direction.field413), var1.method19511(Direction.field413), var5, var6);
-         Class56 var12 = method27445(var11.method194().size() - 1, var0.method19511(Direction.field414), var1.method19511(Direction.field414), var5, var6);
+         Class56 var11 = method27445(1, var0.method19511(Direction.X), var1.method19511(Direction.X), var5, var6);
+         Class56 var12 = method27445(var11.method194().size() - 1, var0.method19511(Direction.Y), var1.method19511(Direction.Y), var5, var6);
          Class56 var13 = method27445(
             (var11.method194().size() - 1) * (var12.method194().size() - 1),
-            var0.method19511(Direction.field415),
-            var1.method19511(Direction.field415),
+            var0.method19511(Direction.Z),
+            var1.method19511(Direction.Z),
             var5,
             var6
          );
@@ -218,7 +218,7 @@ public final class VoxelShapes {
    }
 
    public static double method27438(Direction var0, AxisAlignedBB var1, IWorldReader var2, double var3, ISelectionContext var5, Stream<VoxelShape> var6, boolean var7) {
-      return method27439(var1, var2, var3, var5, Class2321.method9101(var0, Direction.field415), var6, var7);
+      return method27439(var1, var2, var3, var5, Class2321.method9101(var0, Direction.Z), var6, var7);
    }
 
    private static double method27439(AxisAlignedBB var0, IWorldReader var1, double var2, ISelectionContext var4, Class2321 var5, Stream<VoxelShape> var6, boolean var7) {
@@ -228,9 +228,9 @@ public final class VoxelShapes {
          return 0.0;
       } else {
          Class2321 var10 = var5.method9100();
-         Direction var11 = var10.method9099(Direction.field413);
-         Direction var12 = var10.method9099(Direction.field414);
-         Direction var13 = var10.method9099(Direction.field415);
+         Direction var11 = var10.method9099(Direction.X);
+         Direction var12 = var10.method9099(Direction.Y);
+         Direction var13 = var10.method9099(Direction.Z);
          BlockPos.Mutable var14 = new BlockPos.Mutable();
          int var15 = MathHelper.floor(var0.method19658(var11) - 1.0E-7) - 1;
          int var16 = MathHelper.floor(var0.method19659(var11) + 1.0E-7) + 1;
@@ -297,14 +297,14 @@ public final class VoxelShapes {
    public static boolean method27441(VoxelShape var0, VoxelShape var1, net.minecraft.util.Direction var2) {
       if (var0 == method27426() && var1 == method27426()) {
          return true;
-      } else if (!var1.method19516()) {
+      } else if (!var1.isEmpty()) {
          Direction var5 = var2.getAxis();
          Class1892 var6 = var2.getAxisDirection();
          VoxelShape var7 = var6 != Class1892.field11092 ? var1 : var0;
          VoxelShape var8 = var6 != Class1892.field11092 ? var0 : var1;
          IBooleanFunction var9 = var6 != Class1892.field11092 ? IBooleanFunction.field44039 : IBooleanFunction.ONLY_FIRST;
-         return DoubleMath.fuzzyEquals(var7.method19513(var5), 1.0, 1.0E-7)
-            && DoubleMath.fuzzyEquals(var8.method19512(var5), 0.0, 1.0E-7)
+         return DoubleMath.fuzzyEquals(var7.getEnd(var5), 1.0, 1.0E-7)
+            && DoubleMath.fuzzyEquals(var8.getStart(var5), 0.0, 1.0E-7)
             && ! compare(new Class6407(var7, var5, var7.field28033.method26732(var5) - 1), new Class6407(var8, var5, 0), var9);
       } else {
          return false;
@@ -317,10 +317,10 @@ public final class VoxelShapes {
          boolean var5;
          int var6;
          if (var1.getAxisDirection() != Class1892.field11092) {
-            var5 = DoubleMath.fuzzyEquals(var0.method19512(var4), 0.0, 1.0E-7);
+            var5 = DoubleMath.fuzzyEquals(var0.getStart(var4), 0.0, 1.0E-7);
             var6 = 0;
          } else {
-            var5 = DoubleMath.fuzzyEquals(var0.method19513(var4), 1.0, 1.0E-7);
+            var5 = DoubleMath.fuzzyEquals(var0.getEnd(var4), 1.0, 1.0E-7);
             var6 = var0.field28033.method26732(var4) - 1;
          }
 
@@ -336,11 +336,11 @@ public final class VoxelShapes {
          Class1892 var6 = var2.getAxisDirection();
          VoxelShape var7 = var6 != Class1892.field11092 ? var1 : var0;
          VoxelShape var8 = var6 != Class1892.field11092 ? var0 : var1;
-         if (!DoubleMath.fuzzyEquals(var7.method19513(var5), 1.0, 1.0E-7)) {
+         if (!DoubleMath.fuzzyEquals(var7.getEnd(var5), 1.0, 1.0E-7)) {
             var7 = method27425();
          }
 
-         if (!DoubleMath.fuzzyEquals(var8.method19512(var5), 0.0, 1.0E-7)) {
+         if (!DoubleMath.fuzzyEquals(var8.getStart(var5), 0.0, 1.0E-7)) {
             var8 = method27425();
          }
 
@@ -358,7 +358,7 @@ public final class VoxelShapes {
       if (var0 == method27426() || var1 == method27426()) {
          return true;
       } else {
-         return var0.method19516() && var1.method19516()
+         return var0.isEmpty() && var1.isEmpty()
             ? false
             : ! compare(method27426(), method27434(var0, var1, IBooleanFunction.field44051), IBooleanFunction.ONLY_FIRST);
       }

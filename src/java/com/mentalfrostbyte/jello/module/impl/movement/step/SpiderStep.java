@@ -41,7 +41,7 @@ public class SpiderStep extends Module {
             if (var6 == Class2131.field13904) {
                 var1.setCancelled(true);
             } else if (var6 != Class2131.field13905) {
-                if (!MovementUtils.method37081() && var4 >= 0.625) {
+                if (!MovementUtils.isInWater() && var4 >= 0.625) {
                     this.field23760 = var4;
                     double var7 = MovementUtils.method37080();
                     if (var4 < 1.1) {
@@ -88,35 +88,35 @@ public class SpiderStep extends Module {
 
                 var4 = var4 > 0.42 ? 0.4199998 : var4;
                 var1.setY(var4 * 0.797);
-                MovementUtils.method37088(var1, 0.0);
+                MovementUtils.setSpeed(var1, 0.0);
                 this.field23758++;
             } else if (this.field23758 == 2) {
                 var1.setY(this.field23759 + this.field23760 - mc.player.getPosY());
-                double var10 = this.getStringSettingValueByName("Mode").equals("AAC") ? 0.301 : MovementUtils.method37075();
+                double var10 = this.getStringSettingValueByName("Mode").equals("AAC") ? 0.301 : MovementUtils.getSpeed();
                 float var6 = this.field23761 * (float) (Math.PI / 180.0);
                 var1.setX((double) (-MathHelper.sin(var6)) * var10);
                 var1.setZ((double) MathHelper.cos(var6) * var10);
                 this.field23758++;
             } else if (this.field23758 == 3) {
-                if (ColorUtils.method17730(mc.player, 0.001F)) {
+                if (ColorUtils.isAboveBounds(mc.player, 0.001F)) {
                     var1.setY(-0.078);
                     String var7 = this.getStringSettingValueByName("Mode");
                     switch (var7) {
                         case "NCP":
-                            MovementUtils.method37088(var1, MovementUtils.method37075());
+                            MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
                             break;
                         case "AAC":
-                            MovementUtils.method37088(var1, 0.301);
+                            MovementUtils.setSpeed(var1, 0.301);
                             break;
                         case "Gomme":
-                            MovementUtils.method37088(var1, 0.175);
+                            MovementUtils.setSpeed(var1, 0.175);
                     }
                 } else {
-                    MovementUtils.method37088(var1, 0.25);
+                    MovementUtils.setSpeed(var1, 0.25);
                 }
 
                 if (!ColorUtils.method17686()) {
-                    MovementUtils.method37088(var1, 0.0);
+                    MovementUtils.setSpeed(var1, 0.0);
                 }
 
                 this.field23758 = 0;

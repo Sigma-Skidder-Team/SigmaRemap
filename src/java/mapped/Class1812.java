@@ -127,7 +127,7 @@ public class Class1812 implements AutoCloseable, Class1813 {
       if (var4 != null) {
          return var4;
       } else {
-         throw (IllegalArgumentException) Util.method38516(new IllegalArgumentException("No queue for: " + var1));
+         throw (IllegalArgumentException) Util.pauseDevMode(new IllegalArgumentException("No queue for: " + var1));
       }
    }
 

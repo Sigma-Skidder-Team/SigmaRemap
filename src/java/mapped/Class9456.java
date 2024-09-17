@@ -28,7 +28,7 @@ public final class Class9456 {
          var7 = ((RayTraceResult)var8).method31419();
       }
 
-      EntityRayTraceResult var9 = method36387(var5, var0, var6, var7, var0.getBoundingBox().method19661(var0.getMotion()).method19664(1.0), var1);
+      EntityRayTraceResult var9 = method36387(var5, var0, var6, var7, var0.getBoundingBox().contract(var0.getMotion()).method19664(1.0), var1);
       if (var9 != null) {
          var8 = var9;
       }

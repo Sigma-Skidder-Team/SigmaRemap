@@ -8,12 +8,12 @@ public class Class9621 {
 
    static {
       try {
-         field44998[Direction.field413.ordinal()] = 1;
+         field44998[Direction.X.ordinal()] = 1;
       } catch (NoSuchFieldError var10) {
       }
 
       try {
-         field44998[Direction.field415.ordinal()] = 2;
+         field44998[Direction.Z.ordinal()] = 2;
       } catch (NoSuchFieldError var9) {
       }
 

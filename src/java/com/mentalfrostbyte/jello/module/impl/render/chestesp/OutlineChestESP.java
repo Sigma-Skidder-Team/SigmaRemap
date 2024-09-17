@@ -62,7 +62,7 @@ public class OutlineChestESP extends Module {
             }
 
             Box3D var19 = new Box3D(
-               var8.method3775().method23412(mc.world, var8.getPos()).method19514().offset(var12, var14, var16)
+               var8.method3775().method23412(mc.world, var8.getPos()).getBoundingBox().offset(var12, var14, var16)
             );
             if (var1) {
                RenderUtil.renderWireframeBox(var19, 3.0F, var18);

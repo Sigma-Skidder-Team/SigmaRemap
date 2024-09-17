@@ -45,7 +45,7 @@ public class HypixelFly extends Module {
         String var3 = this.getStringSettingValueByName("Mode");
         this.field23561 = 1.0F;
         this.field23563 = -1;
-        if (mc.player.onGround || ColorUtils.method17730(mc.player, 0.001F)) {
+        if (mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.001F)) {
             this.field23561 = this.getNumberValueBySettingName("Timer Boost");
         }
 
@@ -75,8 +75,8 @@ public class HypixelFly extends Module {
 
     @Override
     public void onDisable() {
-        double var3 = MovementUtils.method37075();
-        MovementUtils.method37090(var3 * 0.7);
+        double var3 = MovementUtils.getSpeed();
+        MovementUtils.strafe(var3 * 0.7);
         this.field23561 = 1.0F;
         mc.timer.timerSpeed = 1.0F;
         this.field23563 = -1;
@@ -161,19 +161,19 @@ public class HypixelFly extends Module {
                     break;
                 case "Fast":
                     var1.setY(MovementUtils.method37080());
-                    MovementUtils.method37088(var1, var28);
+                    MovementUtils.setSpeed(var1, var28);
                     this.field23562 = !this.field23562;
                     this.field23560 = 0.51 + (double) this.getNumberValueBySettingName("Speed") + 0.015 * (double) MovementUtils.method37078();
                     break;
                 case "NoDmg":
                     var1.setY(MovementUtils.method37080());
-                    MovementUtils.method37088(var1, var28);
+                    MovementUtils.setSpeed(var1, var28);
                     this.field23562 = !this.field23562;
                     this.field23560 = var28 * 0.987;
                     break;
                 case "Funcraft":
                     var1.setY(MovementUtils.method37080());
-                    MovementUtils.method37088(var1, var28);
+                    MovementUtils.setSpeed(var1, var28);
                     this.field23562 = !this.field23562;
                     this.field23560 = 0.51 + (double) this.getNumberValueBySettingName("Speed");
             }
@@ -195,11 +195,11 @@ public class HypixelFly extends Module {
                 this.field23560 = var10;
             }
 
-            MovementUtils.method37088(var1, this.field23560);
-            if (!mc.player.onGround || !ColorUtils.method17730(mc.player, 0.001F)) {
+            MovementUtils.setSpeed(var1, this.field23560);
+            if (!mc.player.onGround || !ColorUtils.isAboveBounds(mc.player, 0.001F)) {
                 this.field23563++;
                 var1.setY(0.0);
-                ColorUtils.method17725(0.0);
+                ColorUtils.setPlayerYMotion(0.0);
                 if (this.field23563 % 5 < 4) {
                     double var12 = mc.player.getPosX();
                     double var14 = mc.player.getPosY();

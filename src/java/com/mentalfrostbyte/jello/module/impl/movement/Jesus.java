@@ -119,7 +119,7 @@ public class Jesus extends Module {
 
             if (this.getStringSettingValueByName("Mode").equals("Dolphin")) {
                if (this.field24016 > 0) {
-                  if (ColorUtils.method17730(mc.player, 0.001F)) {
+                  if (ColorUtils.isAboveBounds(mc.player, 0.001F)) {
                      this.field24016 = 0;
                   } else {
                      if (mc.player.isSneaking() || mc.player.collidedVertically) {
@@ -128,7 +128,7 @@ public class Jesus extends Module {
                      }
 
                      if (this.field24016 > 0) {
-                        MovementUtils.method37088(var1, 0.25 + (double) MovementUtils.method37078() * 0.05);
+                        MovementUtils.setSpeed(var1, 0.25 + (double) MovementUtils.method37078() * 0.05);
                         this.field24016++;
                      }
 
@@ -141,14 +141,14 @@ public class Jesus extends Module {
                } else if (method16953() && this.field24015 % 2 == 0) {
                   this.field24016++;
                   double var12 = this.method16954((double)this.field24016);
-                  MovementUtils.method37088(var1, 0.25);
+                  MovementUtils.setSpeed(var1, 0.25);
                   if (var12 != -999.0) {
                      var1.setY(var12);
                   }
                }
             }
 
-            ColorUtils.method17725(var1.getY());
+            ColorUtils.setPlayerYMotion(var1.getY());
          }
       }
    }
@@ -181,7 +181,7 @@ public class Jesus extends Module {
    }
 
    public boolean method16950() {
-      return MovementUtils.method37081();
+      return MovementUtils.isInWater();
    }
 
    public boolean method16951(AxisAlignedBB var1) {
@@ -207,7 +207,7 @@ public class Jesus extends Module {
       if (var4.hasNext()) {
          while (var4.hasNext()) {
             VoxelShape var6 = (VoxelShape)var4.next();
-            AxisAlignedBB var7 = var6.method19514();
+            AxisAlignedBB var7 = var6.getBoundingBox();
             BlockPos var8 = new BlockPos(var7.method19685());
             Block var9 = mc.world.getBlockState(var8).getBlock();
             if (var9 != Blocks.WATER

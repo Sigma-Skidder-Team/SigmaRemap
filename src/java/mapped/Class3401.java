@@ -24,7 +24,7 @@ public class Class3401 extends Block {
 
    public Class3401(AbstractBlock var1) {
       super(var1);
-      this.method11578(this.field18612.method35393().method23465(field19060, Direction.field413));
+      this.method11578(this.field18612.method35393().method23465(field19060, Direction.X));
    }
 
    @Override
@@ -119,9 +119,9 @@ public class Class3401 extends Block {
          case 2:
             switch (Class9111.field41872[var1.<Direction>method23463(field19060).ordinal()]) {
                case 1:
-                  return var1.method23465(field19060, Direction.field413);
+                  return var1.method23465(field19060, Direction.X);
                case 2:
-                  return var1.method23465(field19060, Direction.field415);
+                  return var1.method23465(field19060, Direction.Z);
                default:
                   return var1;
             }

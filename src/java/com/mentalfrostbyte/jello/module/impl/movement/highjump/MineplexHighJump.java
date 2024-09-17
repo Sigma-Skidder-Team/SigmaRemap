@@ -46,7 +46,7 @@ public class MineplexHighJump extends Module {
 
          if (!mc.player.onGround && this.field24023) {
             this.field24024 = Math.max(this.field24024, 0.499);
-            MovementUtils.method37088(var1, this.field24024);
+            MovementUtils.setSpeed(var1, this.field24024);
             this.field24024 -= 0.007;
             double var4 = 0.5;
             if (this.getNumberValueBySettingName("Motion") > 3.0F) {
@@ -56,7 +56,7 @@ public class MineplexHighJump extends Module {
             if (Math.abs(var1.getY()) < var4 && Math.abs(this.field24025) < var4) {
                this.field24025 -= 0.04000000000001;
                var1.setY(this.field24025);
-               ColorUtils.method17725(var1.getY());
+               ColorUtils.setPlayerYMotion(var1.getY());
             } else {
                this.field24025 = var1.getY();
             }
@@ -70,7 +70,7 @@ public class MineplexHighJump extends Module {
          if (mc.player.onGround) {
             if (this.field24023) {
                this.field24023 = !this.field24023;
-               MovementUtils.method37090(0.0);
+               MovementUtils.strafe(0.0);
                if (this.getBooleanValueFromSetttingName("Disable")) {
                   this.access().toggle();
                }
@@ -81,8 +81,8 @@ public class MineplexHighJump extends Module {
             double var4 = mc.player.getPosX();
             double var6 = mc.player.getPosZ();
             double var8 = mc.player.getPosY();
-            double var10 = (double) mc.player.field6131.field43908;
-            double var12 = (double) mc.player.field6131.field43907;
+            double var10 = (double) mc.player.movementInput.field43908;
+            double var12 = (double) mc.player.movementInput.field43907;
             float var14 = mc.player.rotationYaw;
             double var15 = 0.1;
             double var17 = var4

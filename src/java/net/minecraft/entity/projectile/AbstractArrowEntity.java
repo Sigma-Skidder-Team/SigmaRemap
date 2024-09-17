@@ -119,7 +119,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
       BlockState var6 = this.world.getBlockState(var32);
       if (!var6.isAir() && !var3) {
          VoxelShape var7 = var6.method23414(this.world, var32);
-         if (!var7.method19516()) {
+         if (!var7.isEmpty()) {
             Vector3d var8 = this.getPositionVec();
 
             for (AxisAlignedBB var23 : var7.method19521()) {
@@ -412,7 +412,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
 
    @Nullable
    public EntityRayTraceResult method3479(Vector3d var1, Vector3d var2) {
-      return Class9456.method36387(this.world, this, var1, var2, this.getBoundingBox().method19661(this.getMotion()).method19664(1.0), this::method3467);
+      return Class9456.method36387(this.world, this, var1, var2, this.getBoundingBox().contract(this.getMotion()).method19664(1.0), this::method3467);
    }
 
    @Override

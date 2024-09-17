@@ -22,7 +22,7 @@ public class VanillaPhase extends Module {
             if (mc.player.collidedHorizontally) {
                 Class9629 var4 = ColorUtils.method17760(1.0E-4);
                 double var5 = JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber() ? 1.0E-6 : 0.0625;
-                if (((net.minecraft.util.Direction) var4.method37538()).getAxis() != Direction.field413) {
+                if (((net.minecraft.util.Direction) var4.method37538()).getAxis() != Direction.X) {
                     var1.setZ(
                             (double) Math.round((((Vector3d) var4.method37539()).z + 1.1921022E-8) * 10000.0) / 10000.0
                                     + (double) ((net.minecraft.util.Direction) var4.method37538()).method541() * var5
@@ -41,7 +41,7 @@ public class VanillaPhase extends Module {
     private void method16712(EventMove var1) {
         if (this.isEnabled()) {
             if (mc.player.collidedHorizontally || ColorUtils.method17761()) {
-                MovementUtils.method37088(var1, 0.0);
+                MovementUtils.setSpeed(var1, 0.0);
                 MovementUtils.method37095(1.7);
             }
         }

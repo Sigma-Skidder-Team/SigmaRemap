@@ -13,7 +13,7 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public enum Direction implements IStringSerializable, Predicate<net.minecraft.util.Direction> {
-   field413("x") {
+   X("x") {
       @Override
       public int method327(int var1, int var2, int var3) {
          return var1;
@@ -24,7 +24,7 @@ public enum Direction implements IStringSerializable, Predicate<net.minecraft.ut
          return var1;
       }
    },
-   field414("y") {
+   Y("y") {
       @Override
       public int method327(int var1, int var2, int var3) {
          return var2;
@@ -35,7 +35,7 @@ public enum Direction implements IStringSerializable, Predicate<net.minecraft.ut
          return var3;
       }
    },
-   field415("z") {
+   Z("z") {
       @Override
       public int method327(int var1, int var2, int var3) {
          return var3;
@@ -52,7 +52,7 @@ public enum Direction implements IStringSerializable, Predicate<net.minecraft.ut
    private static final Map<String, Direction> field418 = Arrays.<Direction>stream(field416)
       .collect(Collectors.toMap(Direction::method322, var0 -> (Direction)var0));
    private final String field419;
-   private static final Direction[] field420 = new Direction[]{field413, field414, field415};
+   private static final Direction[] field420 = new Direction[]{X, Y, Z};
 
    private Direction(String var3) {
       this.field419 = var3;
@@ -68,11 +68,11 @@ public enum Direction implements IStringSerializable, Predicate<net.minecraft.ut
    }
 
    public boolean method323() {
-      return this == field414;
+      return this == Y;
    }
 
    public boolean method324() {
-      return this == field413 || this == field415;
+      return this == X || this == Z;
    }
 
    @Override

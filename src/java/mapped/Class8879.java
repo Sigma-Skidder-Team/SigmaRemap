@@ -25,7 +25,7 @@ public class Class8879 {
          int var5 = var0.nextInt(var2);
          return method32313(var1, var5);
       } else {
-         throw (IllegalArgumentException) Util.method38516(new IllegalArgumentException());
+         throw (IllegalArgumentException) Util.pauseDevMode(new IllegalArgumentException());
       }
    }
 

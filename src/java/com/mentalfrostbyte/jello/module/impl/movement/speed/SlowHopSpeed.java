@@ -21,20 +21,20 @@ public class SlowHopSpeed extends Module {
 
     @Override
     public void onEnable() {
-        this.field23600 = MovementUtils.method37075();
+        this.field23600 = MovementUtils.getSpeed();
         this.field23599 = 2;
     }
 
     @Override
     public void onDisable() {
-        MovementUtils.method37090(MovementUtils.method37075());
+        MovementUtils.strafe(MovementUtils.getSpeed());
     }
 
     @EventTarget
     public void method16338(EventMove var1) {
         if (this.isEnabled()) {
             boolean var4 = this.getBooleanValueFromSetttingName("AutoJump");
-            double var5 = MovementUtils.method37075();
+            double var5 = MovementUtils.getSpeed();
             boolean var7 = ColorUtils.method17686();
             if (!mc.player.onGround) {
                 this.field23599++;
@@ -43,7 +43,7 @@ public class SlowHopSpeed extends Module {
                     this.field23600 = var5;
                 }
 
-                MovementUtils.method37088(var1, this.field23600);
+                MovementUtils.setSpeed(var1, this.field23600);
             } else {
                 this.field23599 = 0;
                 mc.player.jump();

@@ -69,7 +69,7 @@ public class NCPSpeed extends Module {
                             var4 = Math.max(MovementUtils.method37076(), this.field23609 - (0.004 - MovementUtils.method37076() * 0.003) - Math.random() * 1.0E-10);
                         }
 
-                        MovementUtils.method37088(var1, var4);
+                        MovementUtils.setSpeed(var1, var4);
                         if (var1.getY() >= -0.008744698139753596 && var1.getY() <= -0.008724698139753597) {
                             var1.setY(0.001);
                         } else if (var1.getY() >= -0.07743000150680542 && var1.getY() <= -0.07741000150680542) {

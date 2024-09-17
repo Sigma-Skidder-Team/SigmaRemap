@@ -477,11 +477,11 @@ public class EntityType<T extends Entity> {
    public static double method33203(IWorldReader var0, BlockPos var1, boolean var2, AxisAlignedBB var3) {
       AxisAlignedBB var6 = new AxisAlignedBB(var1);
       if (var2) {
-         var6 = var6.method19662(0.0, -1.0, 0.0);
+         var6 = var6.contract(0.0, -1.0, 0.0);
       }
 
-      Stream var7 = var0.method7047((Entity)null, var6, var0x -> true);
-      return 1.0 + VoxelShapes.method27437(Direction.field414, var3, var7, !var2 ? -1.0 : -2.0);
+      Stream var7 = var0.func_234867_d_((Entity)null, var6, var0x -> true);
+      return 1.0 + VoxelShapes.method27437(Direction.Y, var3, var7, !var2 ? -1.0 : -2.0);
    }
 
    public static void method33204(World var0, PlayerEntity var1, Entity var2, CompoundNBT var3) {

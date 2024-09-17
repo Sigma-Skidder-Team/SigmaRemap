@@ -190,7 +190,7 @@ public class Class9110 {
 
    public boolean method33988(BlockPos var1) {
       return !this.field41869.field44283.contains(var1.method8332())
-         ? Minecraft.getInstance().world.getBlockState(var1).method23414(field41868.world, var1).method19516()
+         ? Minecraft.getInstance().world.getBlockState(var1).method23414(field41868.world, var1).isEmpty()
          : true;
    }
 
@@ -201,10 +201,10 @@ public class Class9110 {
    public boolean method33990(BlockPos var1) {
       if (!this.field41869.field44283.contains(this.method33979().method8332())) {
          VoxelShape var4 = Minecraft.getInstance().world.getBlockState(var1).method23414(field41868.world, var1);
-         if (var4.method19516()) {
+         if (var4.isEmpty()) {
             return false;
          } else {
-            AxisAlignedBB var5 = var4.method19514();
+            AxisAlignedBB var5 = var4.getBoundingBox();
             return var5.method19677() >= 0.9 && var5.method19677() <= 1.0;
          }
       } else {

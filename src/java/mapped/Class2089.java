@@ -27,14 +27,14 @@ public enum Class2089 {
 
    public Class80 method8749(net.minecraft.util.Direction var1) {
       Direction var4 = var1.getAxis();
-      return this == field13615 && var4 == Direction.field415 || this == field13616 && var4 == Direction.field413 ? Class80.field187 : Class80.field185;
+      return this == field13615 && var4 == Direction.Z || this == field13616 && var4 == Direction.X ? Class80.field187 : Class80.field185;
    }
 
    public net.minecraft.util.Direction method8750(net.minecraft.util.Direction var1) {
-      if (this == field13616 && var1.getAxis() == Direction.field413) {
+      if (this == field13616 && var1.getAxis() == Direction.X) {
          return var1.method536();
       } else {
-         return this == field13615 && var1.getAxis() == Direction.field415 ? var1.method536() : var1;
+         return this == field13615 && var1.getAxis() == Direction.Z ? var1.method536() : var1;
       }
    }
 

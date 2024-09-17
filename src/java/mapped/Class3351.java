@@ -45,9 +45,9 @@ public class Class3351 extends Class3350 {
          Direction var14 = var13.getAxis();
          double var15 = 0.52;
          double var17 = var4.nextDouble() * 0.6 - 0.3;
-         double var19 = var14 != Direction.field413 ? var17 : (double)var13.method539() * 0.52;
+         double var19 = var14 != Direction.X ? var17 : (double)var13.method539() * 0.52;
          double var21 = var4.nextDouble() * 9.0 / 16.0;
-         double var23 = var14 != Direction.field415 ? var17 : (double)var13.method541() * 0.52;
+         double var23 = var14 != Direction.Z ? var17 : (double)var13.method541() * 0.52;
          var2.addParticle(ParticleTypes.field34092, var7 + var19, var9 + var21, var11 + var23, 0.0, 0.0, 0.0);
       }
    }

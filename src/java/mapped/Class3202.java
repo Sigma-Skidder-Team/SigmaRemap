@@ -59,7 +59,7 @@ public abstract class Class3202 extends Class3200 {
       boolean var8 = var1.<Boolean>method23463(field18510);
       switch (Class6392.field27980[var1.<Class103>method23463(field18500).ordinal()]) {
          case 1:
-            if (var7.getAxis() == Direction.field413) {
+            if (var7.getAxis() == Direction.X) {
                return var8 ? field18521 : field18513;
             }
 
@@ -78,7 +78,7 @@ public abstract class Class3202 extends Class3200 {
             }
          case 3:
          default:
-            if (var7.getAxis() == Direction.field413) {
+            if (var7.getAxis() == Direction.X) {
                return var8 ? field18519 : field18511;
             } else {
                return var8 ? field18520 : field18512;
@@ -156,7 +156,7 @@ public abstract class Class3202 extends Class3200 {
    }
 
    private void method11524(BlockState var1, World var2, BlockPos var3) {
-      List var6 = var2.<AbstractArrowEntity>method7182(AbstractArrowEntity.class, var1.method23412(var2, var3).method19514().method19668(var3));
+      List var6 = var2.<AbstractArrowEntity>method7182(AbstractArrowEntity.class, var1.method23412(var2, var3).getBoundingBox().method19668(var3));
       boolean var7 = !var6.isEmpty();
       boolean var8 = var1.<Boolean>method23463(field18510);
       if (var7 != var8) {

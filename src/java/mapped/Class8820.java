@@ -31,7 +31,7 @@ public class Class8820 {
    public static final Class8551 field39709 = Class8551.method30480("unstable");
    public static final Class8551 field39710 = Class8551.method30480("waterlogged");
    public static final Class8551 field39711 = Class8551.method30480("vine_end");
-   public static final Class8552<Direction> field39712 = Class8552.<Direction>method30483("axis", Direction.class, Direction.field413, Direction.field415);
+   public static final Class8552<Direction> field39712 = Class8552.<Direction>method30483("axis", Direction.class, Direction.X, Direction.Z);
    public static final Class8552<Direction> field39713 = Class8552.<Direction>method30481("axis", Direction.class);
    public static final Class8551 field39714 = Class8551.method30480("up");
    public static final Class8551 field39715 = Class8551.method30480("down");

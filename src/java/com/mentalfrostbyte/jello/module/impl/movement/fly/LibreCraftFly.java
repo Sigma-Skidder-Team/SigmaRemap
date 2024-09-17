@@ -35,16 +35,16 @@ public class LibreCraftFly extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.method37090(0.0);
+        MovementUtils.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
-            ColorUtils.method17725(-0.0789);
+            ColorUtils.setPlayerYMotion(-0.0789);
         }
     }
 
     @EventTarget
     private void method16791(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.getKey() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23911 = true;
             }
@@ -54,7 +54,7 @@ public class LibreCraftFly extends Module {
     @EventTarget
     private void method16792(MouseHoverEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23911 = false;
             }
@@ -69,17 +69,17 @@ public class LibreCraftFly extends Module {
                 if (this.field23910 != -1) {
                     if (this.field23910 == 0) {
                         var1.setY(0.0);
-                        ColorUtils.method17725(var1.getY());
-                        MovementUtils.method37088(var1, 0.35);
+                        ColorUtils.setPlayerYMotion(var1.getY());
+                        MovementUtils.setSpeed(var1, 0.35);
                     }
                 } else {
                     var1.setY(0.299);
-                    ColorUtils.method17725(var1.getY());
-                    MovementUtils.method37088(var1, this.getNumberValueBySettingName("Speed"));
+                    ColorUtils.setPlayerYMotion(var1.getY());
+                    MovementUtils.setSpeed(var1, this.getNumberValueBySettingName("Speed"));
                 }
             } else {
                 var1.setY(0.0);
-                MovementUtils.method37088(var1, 0.0);
+                MovementUtils.setSpeed(var1, 0.0);
             }
         }
     }

@@ -439,7 +439,7 @@ public class ParticleManager implements Class268 {
          int var7 = var1.getY();
          int var8 = var1.getZ();
          float var9 = 0.1F;
-         AxisAlignedBB var10 = var5.method23412(this.field1168, var1).method19514();
+         AxisAlignedBB var10 = var5.method23412(this.field1168, var1).getBoundingBox();
          double var11 = (double)var6 + this.field1172.nextDouble() * (var10.maxX - var10.minX - 0.2F) + 0.1F + var10.minX;
          double var13 = (double)var7 + this.field1172.nextDouble() * (var10.maxY - var10.minY - 0.2F) + 0.1F + var10.minY;
          double var15 = (double)var8 + this.field1172.nextDouble() * (var10.maxZ - var10.minZ - 0.2F) + 0.1F + var10.minZ;

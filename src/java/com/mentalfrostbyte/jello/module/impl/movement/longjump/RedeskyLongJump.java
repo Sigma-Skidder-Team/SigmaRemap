@@ -49,7 +49,7 @@ public class RedeskyLongJump extends Module {
                         || var1.getY() == MovementUtils.method37080()) {
                     this.field23981 = 1;
                     var1.setY(MovementUtils.method37080());
-                    MovementUtils.method37088(var1, 0.55);
+                    MovementUtils.setSpeed(var1, 0.55);
                 }
             }
         } else if (this.field23981 > 0) {
@@ -82,7 +82,7 @@ public class RedeskyLongJump extends Module {
                         var7 = 1.32;
                 }
 
-                MovementUtils.method37088(var1, (double) this.getNumberValueBySettingName("Boost") * var7);
+                MovementUtils.setSpeed(var1, (double) this.getNumberValueBySettingName("Boost") * var7);
                 var1.setY((double) this.getNumberValueBySettingName("Heigh") * MovementUtils.method37080());
                 this.field23982 = 1.0;
             } else if (var1.getY() < 0.0 && mc.player.fallDistance < 3.0F) {
@@ -90,7 +90,7 @@ public class RedeskyLongJump extends Module {
             }
         }
 
-        ColorUtils.method17725(var1.getY());
+        ColorUtils.setPlayerYMotion(var1.getY());
     }
 
     @EventTarget

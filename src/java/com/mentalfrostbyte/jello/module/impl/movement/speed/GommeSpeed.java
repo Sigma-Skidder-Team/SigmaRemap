@@ -31,7 +31,7 @@ public class GommeSpeed extends Module {
         if (ColorUtils.method17686()) {
             MovementUtils.method37093(0.27, MovementUtils.method37083()[0], this.field23584, 45.0F);
         } else {
-            MovementUtils.method37090(0.0);
+            MovementUtils.strafe(0.0);
         }
     }
 
@@ -81,7 +81,7 @@ public class GommeSpeed extends Module {
                         this.field23584 = MovementUtils.method37092(var1, Math.max(this.field23583, 0.23), MovementUtils.method37083()[0], this.field23584, 45.0F);
                     } else {
                         this.field23583 = 0.1;
-                        MovementUtils.method37088(var1, 0.0);
+                        MovementUtils.setSpeed(var1, 0.0);
                     }
                 }
             } else if (ColorUtils.method17686()) {
@@ -93,7 +93,7 @@ public class GommeSpeed extends Module {
                     this.field23582++;
                 }
 
-                MovementUtils.method37088(var1, this.field23583);
+                MovementUtils.setSpeed(var1, this.field23583);
                 this.field23584 = MovementUtils.method37083()[0];
             }
         }

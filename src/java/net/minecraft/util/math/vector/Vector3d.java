@@ -203,9 +203,9 @@ public class Vector3d implements Class2955 {
    }
 
    public Vector3d method11355(EnumSet<Direction> var1) {
-      double var4 = !var1.contains(Direction.field413) ? this.x : (double) MathHelper.floor(this.x);
-      double var6 = !var1.contains(Direction.field414) ? this.y : (double) MathHelper.floor(this.y);
-      double var8 = !var1.contains(Direction.field415) ? this.z : (double) MathHelper.floor(this.z);
+      double var4 = !var1.contains(Direction.X) ? this.x : (double) MathHelper.floor(this.x);
+      double var6 = !var1.contains(Direction.Y) ? this.y : (double) MathHelper.floor(this.y);
+      double var8 = !var1.contains(Direction.Z) ? this.z : (double) MathHelper.floor(this.z);
       return new Vector3d(var4, var6, var8);
    }
 

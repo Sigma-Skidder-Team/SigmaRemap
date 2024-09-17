@@ -30,7 +30,7 @@ public class OldAACSpeed extends Module {
     @Override
     public void onEnable() {
         this.field23537 = Client.getInstance().getPlayerTracker().getgroundTicks() <= 0 ? 1 : 0;
-        this.field23534 = MovementUtils.method37075();
+        this.field23534 = MovementUtils.getSpeed();
         this.field23535 = MovementUtils.method37083()[0];
     }
 
@@ -51,7 +51,7 @@ public class OldAACSpeed extends Module {
                     }
 
                     if (mc.player.collidedHorizontally) {
-                        this.field23534 = MovementUtils.method37075();
+                        this.field23534 = MovementUtils.getSpeed();
                     }
 
                     this.field23535 = MovementUtils.method37092(var1, this.field23534, MovementUtils.method37083()[0], this.field23535, 45.0F);
@@ -65,7 +65,7 @@ public class OldAACSpeed extends Module {
             } else if (var1.getY() != 0.4 + (double) MovementUtils.method37079() * 0.1) {
                 this.field23537 = 0;
             } else {
-                MovementUtils.method37088(var1, this.field23534);
+                MovementUtils.setSpeed(var1, this.field23534);
             }
         }
     }
@@ -97,7 +97,7 @@ public class OldAACSpeed extends Module {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23537 = 0;
-                this.field23534 = MovementUtils.method37075();
+                this.field23534 = MovementUtils.getSpeed();
             }
         }
     }

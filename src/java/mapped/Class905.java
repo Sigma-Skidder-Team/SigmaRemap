@@ -119,7 +119,7 @@ public class Class905 extends ProjectileEntity {
       if (!var6.method8317(this.getPositionVec(), 2.0)) {
          BlockPos var22 = this.getPosition();
          ArrayList var23 = Lists.newArrayList();
-         if (var1 != Direction.field413) {
+         if (var1 != Direction.X) {
             if (var22.getX() < var6.getX() && this.world.method7007(var22.east())) {
                var23.add(net.minecraft.util.Direction.EAST);
             } else if (var22.getX() > var6.getX() && this.world.method7007(var22.west())) {
@@ -127,7 +127,7 @@ public class Class905 extends ProjectileEntity {
             }
          }
 
-         if (var1 != Direction.field414) {
+         if (var1 != Direction.Y) {
             if (var22.getY() < var6.getY() && this.world.method7007(var22.up())) {
                var23.add(net.minecraft.util.Direction.field673);
             } else if (var22.getY() > var6.getY() && this.world.method7007(var22.down())) {
@@ -135,7 +135,7 @@ public class Class905 extends ProjectileEntity {
             }
          }
 
-         if (var1 != Direction.field415) {
+         if (var1 != Direction.Z) {
             if (var22.getZ() < var6.getZ() && this.world.method7007(var22.south())) {
                var23.add(net.minecraft.util.Direction.SOUTH);
             } else if (var22.getZ() > var6.getZ() && this.world.method7007(var22.north())) {
@@ -232,9 +232,9 @@ public class Class905 extends ProjectileEntity {
                Direction var5 = this.field5164.getAxis();
                if (!this.world.method6765(var4.method8349(this.field5164), this)) {
                   BlockPos var6 = this.field5163.getPosition();
-                  if (var5 == Direction.field413 && var4.getX() == var6.getX()
-                     || var5 == Direction.field415 && var4.getZ() == var6.getZ()
-                     || var5 == Direction.field414 && var4.getY() == var6.getY()) {
+                  if (var5 == Direction.X && var4.getX() == var6.getX()
+                     || var5 == Direction.Z && var4.getZ() == var6.getZ()
+                     || var5 == Direction.Y && var4.getY() == var6.getY()) {
                      this.method3548(var5);
                   }
                } else {

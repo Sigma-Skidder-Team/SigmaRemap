@@ -37,7 +37,7 @@ public class Class3417 extends Block {
             double var14 = (double)var3.getZ();
             if (var7 != net.minecraft.util.Direction.DOWN) {
                var12 += var4.nextDouble() * 0.8;
-               if (var7.getAxis() != Direction.field413) {
+               if (var7.getAxis() != Direction.X) {
                   var10 += var4.nextDouble();
                   if (var7 != net.minecraft.util.Direction.SOUTH) {
                      var14 += 0.05;

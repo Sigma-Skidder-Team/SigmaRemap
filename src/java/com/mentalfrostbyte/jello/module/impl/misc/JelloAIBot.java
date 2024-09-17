@@ -41,7 +41,7 @@ public class JelloAIBot extends Module {
 
         while (var4.hasNext()) {
             Entity var5 = (Entity) var4.next();
-            if (!(var5 instanceof PlayerEntity) || Client.getInstance().getCombatManager().isValidTarget(var5) || !ColorUtils.method17730(var5, 2.0F)) {
+            if (!(var5 instanceof PlayerEntity) || Client.getInstance().getCombatManager().isValidTarget(var5) || !ColorUtils.isAboveBounds(var5, 2.0F)) {
                 var4.remove();
             }
         }

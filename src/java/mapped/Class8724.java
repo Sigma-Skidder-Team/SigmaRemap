@@ -7,17 +7,17 @@ public class Class8724 {
 
    static {
       try {
-         field39363[Direction.field413.ordinal()] = 1;
+         field39363[Direction.X.ordinal()] = 1;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field39363[Direction.field414.ordinal()] = 2;
+         field39363[Direction.Y.ordinal()] = 2;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field39363[Direction.field415.ordinal()] = 3;
+         field39363[Direction.Z.ordinal()] = 3;
       } catch (NoSuchFieldError var3) {
       }
    }

@@ -91,9 +91,9 @@ public class Class3403 extends Block {
          BlockPos var11 = var1.method8349(var10);
          if (!var0.getBlockState(var11).method23409(var0, var11)) {
             Direction var12 = var10.getAxis();
-            double var13 = var12 != Direction.field413 ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method539();
-            double var15 = var12 != Direction.field414 ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method540();
-            double var17 = var12 != Direction.field415 ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method541();
+            double var13 = var12 != Direction.X ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method539();
+            double var15 = var12 != Direction.Y ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method540();
+            double var17 = var12 != Direction.Z ? (double)var6.nextFloat() : 0.5 + 0.5625 * (double)var10.method541();
             var0.addParticle(
                RedstoneParticleData.REDSTONE_DUST, (double)var1.getX() + var13, (double)var1.getY() + var15, (double)var1.getZ() + var17, 0.0, 0.0, 0.0
             );

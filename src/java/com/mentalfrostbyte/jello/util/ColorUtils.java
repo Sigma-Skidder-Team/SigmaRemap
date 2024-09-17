@@ -458,7 +458,7 @@ public class ColorUtils {
          Vector3d var11 = method17721(var1, var0);
          Vector3d var12 = var7.add(var11.x * var9, var11.y * var9, var11.z * var9);
          float var13 = 1.0F;
-         AxisAlignedBB var14 = var8.getBoundingBox().method19661(var11.scale(var9)).method19663(1.0, 1.0, 1.0);
+         AxisAlignedBB var14 = var8.getBoundingBox().contract(var11.scale(var9)).method19663(1.0, 1.0, 1.0);
          return method17713(
             mc.world, var8, var7, var12, var14, var0x -> var0x instanceof LivingEntity || var0x instanceof Class907, (double)(var2 * var2), var3
          );
@@ -504,7 +504,7 @@ public class ColorUtils {
       Vector3d var14 = var12.add(var13.x * var8, var13.y * var8, var13.z * var8);
 
       for (Entity var16 : mc.world
-         .getEntitiesInAABBexcluding(mc.player, mc.player.getBoundingBox().method19661(var13.scale(var8)).method19663(1.0, 1.0, 1.0), var3)) {
+         .getEntitiesInAABBexcluding(mc.player, mc.player.getBoundingBox().contract(var13.scale(var8)).method19663(1.0, 1.0, 1.0), var3)) {
          AxisAlignedBB var17 = var16.getBoundingBox();
          Optional var18 = var17.method19680(var12, var14);
          if (var18.isPresent()) {
@@ -571,17 +571,17 @@ public class ColorUtils {
       return var4 <= 180 ? var4 : 360 - var4;
    }
 
-   public static double method17724(double var0) {
+   public static double setPlayerXMotion(double var0) {
       mc.player.setMotion(var0, mc.player.getMotion().y, mc.player.getMotion().z);
       return var0;
    }
 
-   public static double method17725(double var0) {
+   public static double setPlayerYMotion(double var0) {
       mc.player.setMotion(mc.player.getMotion().x, var0, mc.player.getMotion().z);
       return var0;
    }
 
-   public static double method17726(double var0) {
+   public static double setPlayerZMotion(double var0) {
       mc.player.setMotion(mc.player.getMotion().x, mc.player.getMotion().y, var0);
       return var0;
    }
@@ -608,14 +608,14 @@ public class ColorUtils {
       if (mc.player.getRidingEntity() != null) {
          double var4 = mc.player.getRidingEntity().prevPosX - mc.player.getRidingEntity().getPosX();
          double var6 = mc.player.getRidingEntity().prevPosZ - mc.player.getRidingEntity().getPosZ();
-         var2 = mc.player.getRidingEntity().boundingBox.method19662(Math.abs(var4), 1.0, Math.abs(var6));
+         var2 = mc.player.getRidingEntity().boundingBox.contract(Math.abs(var4), 1.0, Math.abs(var6));
       }
 
       Stream var3 = mc.world.getCollisionShapes(mc.player, var2);
       return var3.count() != 0L;
    }
 
-   public static boolean method17730(Entity var0, float var1) {
+   public static boolean isAboveBounds(Entity var0, float var1) {
       AxisAlignedBB var4 = new AxisAlignedBB(
          var0.boundingBox.minX,
          var0.boundingBox.minY - (double)var1,
@@ -624,8 +624,8 @@ public class ColorUtils {
          var0.boundingBox.maxY,
          var0.boundingBox.maxZ
       );
-      Stream var5 = mc.world.getCollisionShapes(mc.player, var4);
-      return var5.count() != 0L;
+      Stream<VoxelShape> var5 = mc.world.getCollisionShapes(mc.player, var4);
+      return var5.findAny().isPresent();
    }
 
    public static List<BlockPos> method17731(Entity var0) {
@@ -1077,7 +1077,7 @@ public class ColorUtils {
       float var3 = MathHelper.method37792(mc.player.rotationYaw);
       float var4 = 180.0F;
       float var5 = 0.0F;
-      MovementInput var6 = mc.player.field6131;
+      MovementInput var6 = mc.player.movementInput;
       float var7 = var6.field43908;
       float var8 = var6.field43907;
       if (var7 == 0.0F) {
@@ -1175,7 +1175,7 @@ public class ColorUtils {
 
       for (Direction var9 : var5) {
          if (mc.world
-               .getCollisionShapes(mc.player, var4.method19662(var0 * (double)var9.method539(), 0.0, var0 * (double)var9.method541()))
+               .getCollisionShapes(mc.player, var4.contract(var0 * (double)var9.method539(), 0.0, var0 * (double)var9.method541()))
                .count()
             > 0L) {
             return var9;
@@ -1191,7 +1191,7 @@ public class ColorUtils {
 
       for (Direction var9 : var5) {
          Iterator var10 = mc.world
-            .getCollisionShapes(mc.player, var4.method19662(var0 * (double)var9.method539(), 0.0, var0 * (double)var9.method541()))
+            .getCollisionShapes(mc.player, var4.contract(var0 * (double)var9.method539(), 0.0, var0 * (double)var9.method541()))
             .iterator();
          if (var10.hasNext()) {
             Vector3d var11 = mc.player
@@ -1207,7 +1207,7 @@ public class ColorUtils {
    public static boolean method17761() {
       double var2 = 1.0E-7;
       return mc.world
-            .getCollisionShapes(mc.player, mc.player.boundingBox.method19662(var2, 0.0, var2).method19662(-var2, 0.0, -var2))
+            .getCollisionShapes(mc.player, mc.player.boundingBox.contract(var2, 0.0, var2).contract(-var2, 0.0, -var2))
             .count()
          > 0L;
    }
@@ -1223,7 +1223,7 @@ public class ColorUtils {
       if (!(var0.getPosY() < 1.0)) {
          if (!var0.onGround) {
             AxisAlignedBB var3 = var0.getBoundingBox();
-            var3 = var3.method19662(0.0, -var0.getPosY(), 0.0);
+            var3 = var3.contract(0.0, -var0.getPosY(), 0.0);
             return mc.world.getCollisionShapes(mc.player, var3).count() == 0L;
          } else {
             return false;

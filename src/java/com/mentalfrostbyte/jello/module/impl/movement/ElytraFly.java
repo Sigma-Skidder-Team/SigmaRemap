@@ -48,22 +48,22 @@ public class ElytraFly extends Module {
     @EventTarget
     public void method16221(EventMove var1) {
         if (this.isEnabled()) {
-            double var4 = MovementUtils.method37075();
+            double var4 = MovementUtils.getSpeed();
             boolean var6 = ColorUtils.method17686();
             if (!this.getBooleanValueFromSetttingName("NCP") && mc.player.isSneaking()) {
                 var4 *= 2.5;
             }
 
-            MovementUtils.method37088(var1, 0.0);
+            MovementUtils.setSpeed(var1, 0.0);
             if (!mc.player.isElytraFlying()) {
                 this.field23528 = 0;
             } else {
                 if (this.field23528 > 0) {
                     if (this.field23528 > 7) {
-                        MovementUtils.method37088(var1, var4 * 6.3F);
+                        MovementUtils.setSpeed(var1, var4 * 6.3F);
                     }
 
-                    ColorUtils.method17725(-0.071);
+                    ColorUtils.setPlayerYMotion(-0.071);
                     var1.setY(-1.0001E-4F);
                 }
 
@@ -71,11 +71,11 @@ public class ElytraFly extends Module {
             }
 
             if (this.field23530 > 1.0001E-4F && mc.player.isJumping) {
-                MovementUtils.method37088(var1, var4 * 6.3F);
+                MovementUtils.setSpeed(var1, var4 * 6.3F);
                 var1.setY(this.field23530);
             }
 
-            int var7 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.keyBindSneak.keycode.keyCode);
+            int var7 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode);
             if (var7 == 1 && this.getBooleanValueFromSetttingName("NCP")) {
                 var1.setY(-0.9F);
             } else if (!mc.player.isSneaking()) {
@@ -159,15 +159,15 @@ public class ElytraFly extends Module {
     @Override
     public void onEnable() {
         if (mc.player.onGround) {
-            ColorUtils.method17725(0.3994F);
+            ColorUtils.setPlayerYMotion(0.3994F);
         }
     }
 
     @Override
     public void onDisable() {
         if (!MovementUtils.isMoving()) {
-            ColorUtils.method17724(0.0);
-            ColorUtils.method17726(0.0);
+            ColorUtils.setPlayerXMotion(0.0);
+            ColorUtils.setPlayerZMotion(0.0);
         }
     }
 }

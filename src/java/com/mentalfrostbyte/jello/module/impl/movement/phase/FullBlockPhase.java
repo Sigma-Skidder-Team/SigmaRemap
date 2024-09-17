@@ -26,7 +26,7 @@ public class FullBlockPhase extends Module {
         if (this.isEnabled()) {
             if (!ColorUtils.method17761()) {
                 if (mc.player.collidedHorizontally) {
-                    MovementUtils.method37088(var1, 0.0);
+                    MovementUtils.setSpeed(var1, 0.0);
                     MovementUtils.method37095(1.1920931E-8);
                 }
             } else {

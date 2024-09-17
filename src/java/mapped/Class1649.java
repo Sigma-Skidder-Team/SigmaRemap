@@ -895,7 +895,7 @@ public class Class1649 extends Class1648 implements Class1650 {
          int var5 = var4.method33225() * 16;
          int var6 = var4.method33226();
          if (this.field8973.containsKey(var1.getEntityId())) {
-            throw (IllegalStateException) Util.method38516(new IllegalStateException("Entity is already tracked!"));
+            throw (IllegalStateException) Util.pauseDevMode(new IllegalStateException("Entity is already tracked!"));
          }
 
          Class8998 var7 = new Class8998(this, var1, var5, var6, var4.method33227());

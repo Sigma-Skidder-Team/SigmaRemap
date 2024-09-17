@@ -40,16 +40,16 @@ public class ACRFly extends Module {
 
     @Override
     public void onDisable() {
-        MovementUtils.method37090(0.0);
+        MovementUtils.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
-            ColorUtils.method17725(-0.0789);
+            ColorUtils.setPlayerYMotion(-0.0789);
         }
     }
 
     @EventTarget
     private void method16902(EventKeyPress var1) {
         if (this.isEnabled()) {
-            if (var1.getKey() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getKey() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23988 = true;
             }
@@ -59,7 +59,7 @@ public class ACRFly extends Module {
     @EventTarget
     private void method16903(MouseHoverEvent var1) {
         if (this.isEnabled()) {
-            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
+            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23988 = false;
             }
@@ -76,8 +76,8 @@ public class ACRFly extends Module {
                         var1.setY(!this.getBooleanValueFromSetttingName("Offset") ? 0.0 : -0.01);
                     }
 
-                    ColorUtils.method17725(var1.getY());
-                    MovementUtils.method37088(var1, 0.35);
+                    ColorUtils.setPlayerYMotion(var1.getY());
+                    MovementUtils.setSpeed(var1, 0.35);
                 }
             } else {
                 double var4 = !this.getBooleanValueFromSetttingName("Offset") ? 0.0 : 0.01;
@@ -90,8 +90,8 @@ public class ACRFly extends Module {
                 }
 
                 var1.setY(var4);
-                ColorUtils.method17725(var1.getY());
-                MovementUtils.method37088(var1, this.getNumberValueBySettingName("Speed"));
+                ColorUtils.setPlayerYMotion(var1.getY());
+                MovementUtils.setSpeed(var1, this.getNumberValueBySettingName("Speed"));
             }
         }
     }

@@ -29,10 +29,10 @@ public interface Class1682 {
    }
 
    default boolean method7048(Entity var1, VoxelShape var2) {
-      if (var2.method19516()) {
+      if (var2.isEmpty()) {
          return true;
       } else {
-         for (Entity var6 : this.method7181(var1, var2.method19514())) {
+         for (Entity var6 : this.method7181(var1, var2.getBoundingBox())) {
             if (!var6.removed
                && var6.preventEntitySpawning
                && (var1 == null || !var6.method3416(var1))

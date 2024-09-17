@@ -40,17 +40,17 @@ public class Class8024 {
       field34486 = new int[Direction.values().length];
 
       try {
-         field34486[Direction.field413.ordinal()] = 1;
+         field34486[Direction.X.ordinal()] = 1;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field34486[Direction.field414.ordinal()] = 2;
+         field34486[Direction.Y.ordinal()] = 2;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field34486[Direction.field415.ordinal()] = 3;
+         field34486[Direction.Z.ordinal()] = 3;
       } catch (NoSuchFieldError var3) {
       }
    }

@@ -40,7 +40,7 @@ public class JumpSpider extends Module {
                 mc.player.jump();
                 var1.setY(mc.player.getMotion().y);
             } else if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
-                MovementUtils.method37088(var1, 0.28 + (double) MovementUtils.method37078() * 0.05);
+                MovementUtils.setSpeed(var1, 0.28 + (double) MovementUtils.method37078() * 0.05);
                 var1.setY(0.0);
             } else {
                 var1.setY(-0.0784);
@@ -50,7 +50,7 @@ public class JumpSpider extends Module {
             var1.setY(mc.player.getMotion().y);
         }
 
-        ColorUtils.method17725(var1.getY());
+        ColorUtils.setPlayerYMotion(var1.getY());
     }
 
     @EventTarget
@@ -90,7 +90,7 @@ public class JumpSpider extends Module {
                     }
                 }
 
-                if (((net.minecraft.util.Direction) var4.method37538()).getAxis() == Direction.field413) {
+                if (((net.minecraft.util.Direction) var4.method37538()).getAxis() == Direction.X) {
                     var1.setX(
                             (double) Math.round((((Vector3d) var4.method37539()).x + 1.1921022E-8) * 10000.0) / 10000.0
                                     + (double) ((net.minecraft.util.Direction) var4.method37538()).method539() * var6
@@ -109,8 +109,8 @@ public class JumpSpider extends Module {
     private void method16653(EventBlockCollision var1) {
         if (this.isEnabled() && mc.player != null) {
             if (var1.getVoxelShape() != null
-                    && !var1.getVoxelShape().method19516()
-                    && var1.getVoxelShape().method19514().minY > mc.player.boundingBox.minY + 1.0) {
+                    && !var1.getVoxelShape().isEmpty()
+                    && var1.getVoxelShape().getBoundingBox().minY > mc.player.boundingBox.minY + 1.0) {
                 var1.setCancelled(true);
             }
         }

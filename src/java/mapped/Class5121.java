@@ -25,7 +25,7 @@ public class Class5121 implements Class5119 {
       if (var11 - this.field23297 > 1.0E8) {
          this.field23297 = var11;
          Entity var13 = this.field23296.gameRenderer.getActiveRenderInfo().getRenderViewEntity();
-         this.field23298 = var13.world.method7047(var13, var13.getBoundingBox().method19664(6.0), var0 -> true).collect(Collectors.<VoxelShape>toList());
+         this.field23298 = var13.world.func_234867_d_(var13, var13.getBoundingBox().method19664(6.0), var0 -> true).collect(Collectors.<VoxelShape>toList());
       }
 
       Class5422 var16 = var2.method25597(RenderType.method14345());

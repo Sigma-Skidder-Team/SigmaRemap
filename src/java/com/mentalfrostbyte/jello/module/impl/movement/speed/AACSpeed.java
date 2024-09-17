@@ -55,7 +55,7 @@ public class AACSpeed extends Module {
    public void method16009(EventMove var1) {
       if (this.isEnabled()) {
          String var4 = this.getStringSettingValueByName("Mode");
-         if (ColorUtils.method17730(mc.player, 0.01F)) {
+         if (ColorUtils.isAboveBounds(mc.player, 0.01F)) {
             if (this.field23400 <= 1) {
                this.field23400++;
             } else {
@@ -106,7 +106,7 @@ public class AACSpeed extends Module {
             this.field23404 = MovementUtils.method37092(var1, this.field23401, MovementUtils.method37083()[0], this.field23404, 45.0F);
          }
 
-         ColorUtils.method17725(var1.getY());
+         ColorUtils.setPlayerYMotion(var1.getY());
       }
    }
 
@@ -169,7 +169,7 @@ public class AACSpeed extends Module {
 
    private double method16012(int var1) {
       double var4 = mc.player.getMotion().y;
-      boolean var6 = ColorUtils.method17730(mc.player, 0.37F);
+      boolean var6 = ColorUtils.isAboveBounds(mc.player, 0.37F);
       double[] var7 = new double[]{0.41, 0.309, 0.21, 0.113, 0.03, -0.05, -0.12, -0.192, -0.26, -0.33, !var6 ? -0.4 : -0.0, !var6 ? -0.47 : -0.13};
       if (var1 >= 0 && var1 < var7.length) {
          var4 = var7[var1];
@@ -179,7 +179,7 @@ public class AACSpeed extends Module {
    }
 
    private double method16013(int var1, int var2) {
-      boolean var5 = ColorUtils.method17730(mc.player, 0.37F);
+      boolean var5 = ColorUtils.isAboveBounds(mc.player, 0.37F);
       double[] var6 = new double[]{0.497, 0.671, 0.719, 0.733, 0.738};
       double[] var7 = new double[]{0.303, 0.407, 0.436, 0.444, 0.447};
       double[] var8 = new double[]{0.0, 0.003, 0.004, 0.004, 0.004};
@@ -216,7 +216,7 @@ public class AACSpeed extends Module {
 
    private double method16014(int var1) {
       double var4 = mc.player.getMotion().y;
-      boolean var6 = ColorUtils.method17730(mc.player, 0.37F);
+      boolean var6 = ColorUtils.isAboveBounds(mc.player, 0.37F);
       double[] var7 = new double[]{0.41, 0.309, 0.21, 0.113, 0.03, -0.06, -0.14, -0.22, -0.29, 0.0, -0.082, -0.11, 0.0, -0.18};
       if (var1 >= 0 && var1 < var7.length) {
          var4 = var7[var1];
@@ -234,7 +234,7 @@ public class AACSpeed extends Module {
    }
 
    private double method16015(int var1, int var2) {
-      boolean var5 = ColorUtils.method17730(mc.player, 0.37F);
+      boolean var5 = ColorUtils.isAboveBounds(mc.player, 0.37F);
       double[] var6 = new double[]{0.497, 0.709, 0.746, 0.753};
       double[] var7 = new double[]{0.303, 0.43, 0.4525, 0.456};
       double[] var8 = new double[]{0.0, 0.0036, 0.0041, 0.0042};

@@ -30,12 +30,12 @@ public class EntitySpeed extends Module {
             if (mc.gameSettings.keyBindJump.isKeyDown() && !mc.player.getRidingEntity().onGround) {
             }
 
-            MovementInput var4 = mc.player.field6131;
+            MovementInput var4 = mc.player.movementInput;
             float var5 = var4.field43908;
             float var6 = var4.field43907;
             if (!mc.player.getRidingEntity().collidedHorizontally
                     && !mc.player.getRidingEntity().onGround
-                    && ColorUtils.method17730(mc.player.getRidingEntity(), 5.0F)
+                    && ColorUtils.isAboveBounds(mc.player.getRidingEntity(), 5.0F)
                     && !mc.player.getRidingEntity().isInWater()
                     && mc.world.getBlockState(mc.player.getRidingEntity().getPosition()).getBlock() != Blocks.WATER) {
                 var1.setY(-2.0);

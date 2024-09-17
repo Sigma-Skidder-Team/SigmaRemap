@@ -20,8 +20,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class VanillaFly extends Module {
-    private boolean field23995;
-    private int field23996;
+    private boolean sneakCancelled;
+    private int ticksInAir;
 
     public VanillaFly() {
         super(ModuleCategory.MOVEMENT, "Vanilla", "Regular vanilla fly");
@@ -33,83 +33,83 @@ public class VanillaFly extends Module {
     public void onEnable() {
         if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
             if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
-                this.field23995 = false;
+                this.sneakCancelled = false;
             }
         } else {
             mc.gameSettings.keyBindSneak.pressed = false;
-            this.field23995 = true;
+            this.sneakCancelled = true;
         }
     }
 
     @Override
     public void onDisable() {
-        ColorUtils.method17725(-0.08);
-        double var3 = MovementUtils.method37075();
-        MovementUtils.method37090(var3);
-        if (this.field23995) {
+        ColorUtils.setPlayerYMotion(-0.08);
+        double plrSpeed = MovementUtils.getSpeed();
+        MovementUtils.strafe(plrSpeed);
+        if (this.sneakCancelled) {
             mc.gameSettings.keyBindSneak.pressed = true;
         }
     }
 
     @EventTarget
-    private void method16916(EventKeyPress var1) {
+    private void onKeyPress(EventKeyPress event) {
         if (this.isEnabled()) {
-            if (var1.getKey() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                var1.setCancelled(true);
-                this.field23995 = true;
+            if (event.getKey() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
+                event.setCancelled(true);
+                this.sneakCancelled = true;
             }
         }
     }
 
     @EventTarget
-    private void method16917(MouseHoverEvent var1) {
+    private void onMouseHover(MouseHoverEvent event) {
         if (this.isEnabled()) {
-            if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.keycode.keyCode) {
-                var1.setCancelled(true);
-                this.field23995 = false;
+            if (event.getMouseButton() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
+                event.setCancelled(true);
+                this.sneakCancelled = false;
             }
         }
     }
 
     @EventTarget
-    public void method16918(EventUpdate var1) {
+    public void onUpdate(EventUpdate event) {
         if (this.isEnabled()) {
             if (!mc.player.onGround && this.getBooleanValueFromSetttingName("Kick bypass")) {
-                if (this.field23996 > 0 && this.field23996 % 30 == 0 && !ColorUtils.method17730(mc.player, 0.01F)) {
+                if (this.ticksInAir > 0 && this.ticksInAir % 30 == 0 && !ColorUtils.isAboveBounds(mc.player, 0.01F)) {
                     if (JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber()) {
-                        var1.setY(var1.getY() - 0.04);
+                        event.setY(event.getY() - 0.04);
                     } else {
-                        double var4 = this.method16920();
-                        if (var4 < 0.0) {
+                        double collisionHeight = this.getGroundCollisionHeight();
+                        if (collisionHeight < 0.0) {
                             return;
                         }
 
-                        double var6 = var1.getY();
-                       List<Double> var8 = new ArrayList();
-                        if (!(var6 - var4 > 9.0)) {
-                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.getX(), var4, var1.getZ(), true));
+                        double yPosition = event.getY();
+                       List<Double> yPositions = new ArrayList();
+                        if (!(yPosition - collisionHeight > 9.0)) {
+                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(event.getX(), collisionHeight, event.getZ(), true));
                         } else {
-                            while (var6 > var4 + 9.0) {
-                                var6 -= 9.0;
-                                var8.add(var6);
-                                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.getX(), var6, var1.getZ(), true));
+                            while (yPosition > collisionHeight + 9.0) {
+                                yPosition -= 9.0;
+                                yPositions.add(yPosition);
+                                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(event.getX(), yPosition, event.getZ(), true));
                             }
 
-                            for (Double var10 : var8) {
-                                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.getX(), var10, var1.getZ(), true));
+                            for (Double intermediateY : yPositions) {
+                                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(event.getX(), intermediateY, event.getZ(), true));
                             }
 
-                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.getX(), var4, var1.getZ(), true));
-                            Collections.reverse(var8);
+                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(event.getX(), collisionHeight, event.getZ(), true));
+                            Collections.reverse(yPositions);
 
-                            for (Double var12 : var8) {
-                                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.getX(), var12, var1.getZ(), true));
+                            for (Double intermediateYReversed : yPositions) {
+                                mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(event.getX(), intermediateYReversed, event.getZ(), true));
                             }
 
-                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var1.getX(), var1.getY(), var1.getZ(), true));
+                            mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(event.getX(), event.getY(), event.getZ(), true));
                         }
 
-                        this.field23996 = 0;
+                        this.ticksInAir = 0;
                     }
                 }
             }
@@ -117,47 +117,47 @@ public class VanillaFly extends Module {
     }
 
     @EventTarget
-    public void method16919(EventMove var1) {
+    public void onMove(EventMove event) {
         if (this.isEnabled()) {
-            if (!ColorUtils.method17730(mc.player, 0.01F)) {
-                this.field23996++;
+            if (!ColorUtils.isAboveBounds(mc.player, 0.01F)) {
+                this.ticksInAir++;
             } else {
-                this.field23996 = 0;
+                this.ticksInAir = 0;
             }
 
-            double var4 = this.getNumberValueBySettingName("Speed");
-            double var6 = !mc.gameSettings.keyBindJump.pressed ? 0.0 : var4 / 2.0;
+            double speed = this.getNumberValueBySettingName("Speed");
+            double verticalSpeed = !mc.gameSettings.keyBindJump.pressed ? 0.0 : speed / 2.0;
             if (mc.gameSettings.keyBindJump.pressed && mc.gameSettings.keyBindSneak.pressed) {
-                var6 = 0.0;
-            } else if (!this.field23995) {
+                verticalSpeed = 0.0;
+            } else if (!this.sneakCancelled) {
                 if (mc.gameSettings.keyBindJump.pressed) {
-                    var6 = var4 / 2.0;
+                    verticalSpeed = speed / 2.0;
                 }
             } else {
-                var6 = -var4 / 2.0;
+                verticalSpeed = -speed / 2.0;
             }
 
-            MovementUtils.method37088(var1, var4);
-            var1.setY(var6);
-            ColorUtils.method17725(var1.getY());
+            MovementUtils.setSpeed(event, speed);
+            event.setY(verticalSpeed);
+            ColorUtils.setPlayerYMotion(event.getY());
         }
     }
 
-    private double method16920() {
+    private double getGroundCollisionHeight() {
         if (!(mc.player.getPositionVec().y < 1.0)) {
             if (!mc.player.onGround) {
-                AxisAlignedBB var3 = mc.player.boundingBox.method19662(0.0, -mc.player.getPositionVec().y, 0.0);
-                Iterator var4 = mc.world.getCollisionShapes(mc.player, var3).iterator();
-                double var5 = -1.0;
+                AxisAlignedBB alignedBB = mc.player.boundingBox.contract(0.0, -mc.player.getPositionVec().y, 0.0);
+                Iterator<VoxelShape> shapeIterator = mc.world.getCollisionShapes(mc.player, alignedBB).iterator();
+                double maxCollisionHeight = -1.0;
 
-                while (var4.hasNext()) {
-                    VoxelShape var7 = (VoxelShape) var4.next();
-                    if (var7.method19514().maxY > var5) {
-                        var5 = var7.method19514().maxY;
+                while (shapeIterator.hasNext()) {
+                    VoxelShape voxelShape = shapeIterator.next();
+                    if (voxelShape.getBoundingBox().maxY > maxCollisionHeight) {
+                        maxCollisionHeight = voxelShape.getBoundingBox().maxY;
                     }
                 }
 
-                return var5;
+                return maxCollisionHeight;
             } else {
                 return mc.player.getPosY();
             }

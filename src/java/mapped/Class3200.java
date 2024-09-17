@@ -29,7 +29,7 @@ public class Class3200 extends Class3198 {
    public BlockState method11495(Class5909 var1) {
       for (net.minecraft.util.Direction var7 : var1.method18349()) {
          BlockState var8;
-         if (var7.getAxis() != Direction.field414) {
+         if (var7.getAxis() != Direction.Y) {
             var8 = this.method11579().method23465(field18500, Class103.field314).method23465(field18484, var7.method536());
          } else {
             var8 = this.method11579()

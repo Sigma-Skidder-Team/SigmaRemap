@@ -2894,7 +2894,7 @@ public class Blocks {
 
    private static Class3386 method30016(Class7210 var0, Class7210 var1) {
       return new Class3386(
-         AbstractBlock.method26612(Class8649.field38956, var2 -> var2.method23463(Class3386.field18994) != Direction.field414 ? var1 : var0)
+         AbstractBlock.method26612(Class8649.field38956, var2 -> var2.method23463(Class3386.field18994) != Direction.Y ? var1 : var0)
             .method26623(2.0F)
             .method26619(SoundType.field36200)
       );

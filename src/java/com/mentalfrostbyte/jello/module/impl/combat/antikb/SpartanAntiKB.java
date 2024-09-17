@@ -23,7 +23,7 @@ public class SpartanAntiKB extends Module {
             if (this.field23617 < 10) {
                 this.field23617++;
                 if (this.field23617 == (int) this.getNumberValueBySettingName("Ticks")) {
-                    MovementUtils.method37090(0.0);
+                    MovementUtils.strafe(0.0);
                 }
             }
         }
