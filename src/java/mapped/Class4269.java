@@ -10,7 +10,7 @@ public class Class4269 extends Class4247 {
 
    public Class4269(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, ColorHelper.field27961, "", false);
-      this.field20913 = ResourceRegistry.JelloLightFont20;
+      this.font = ResourceRegistry.JelloLightFont20;
       this.addToList(this.field20694 = new UIInput(this, "chat", 14, 0, var5 - 28, var6, UIInput.field20741, "", "Chat..."));
       this.field20694.method13156(false);
       this.field20694.method13306(ResourceRegistry.JelloLightFont20);

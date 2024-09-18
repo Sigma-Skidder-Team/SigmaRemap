@@ -27,7 +27,7 @@ public class Class4241 extends ButtonPanel {
       this.method13278(1.0F + this.field20589.calcPercent());
       this.method13224();
       RenderUtil.drawString(
-         this.method13305(), (float)this.getXA(), (float)this.getYA(), "" + this.field20589.calcPercent(), ClientColors.DEEP_TEAL.getColor
+         this.getFont(), (float)this.getXA(), (float)this.getYA(), "" + this.field20589.calcPercent(), ClientColors.DEEP_TEAL.getColor
       );
       GL11.glPushMatrix();
       super.method13226(var1);

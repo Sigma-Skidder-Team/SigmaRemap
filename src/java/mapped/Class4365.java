@@ -20,7 +20,7 @@ public class Class4365 extends Class4247 {
 
    public Class4365(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String var7) {
       super(var1, var2, var3, var4, var5, var6, ColorHelper.field27961, var7, false);
-      this.field20913 = ResourceRegistry.JelloLightFont20;
+      this.font = ResourceRegistry.JelloLightFont20;
    }
 
    @Override
@@ -38,7 +38,7 @@ public class Class4365 extends Class4247 {
          var4 = this.account.username;
       }
 
-      this.setWidthA(this.field20913.method23942(var4) + 50 + 60);
+      this.setWidthA(this.font.method23942(var4) + 50 + 60);
       this.setXA(Minecraft.getInstance().mainWindow.getWidth() - this.widthA - 20);
       boolean var6 = this.field21337 >= this.xA && this.field21338 <= this.yA + this.getHeightA();
       this.field21334 = Math.max(0.0F, Math.min(1.0F, this.field21334 + (!var6 ? -0.1F : 0.1F)));
@@ -63,8 +63,8 @@ public class Class4365 extends Class4247 {
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
       );
       RenderUtil.drawString(
-         this.field20913,
-         (float)(this.xA + this.widthA - 90 - this.field20913.method23942(var4)),
+         this.font,
+         (float)(this.xA + this.widthA - 90 - this.font.method23942(var4)),
          (float)(this.yA + 27),
          var4,
          ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)

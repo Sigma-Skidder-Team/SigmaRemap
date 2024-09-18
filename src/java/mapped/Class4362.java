@@ -23,7 +23,7 @@ public class Class4362 extends Class4247 {
 
    private void method13634() {
       this.method13241().clear();
-      this.field20913 = ResourceRegistry.JelloLightFont18;
+      this.font = ResourceRegistry.JelloLightFont18;
 
       for (String var4 : this.field21323) {
          ButtonPanel var5;
@@ -44,7 +44,7 @@ public class Class4362 extends Class4247 {
                   Class2218.field14492
                ),
                var4,
-               this.method13305()
+               this.getFont()
             )
          );
          var5.method13034(10);

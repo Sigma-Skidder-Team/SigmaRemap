@@ -44,7 +44,7 @@ public class IconPanel implements IGuiEventListener {
     public boolean field20910;
     public boolean field20911;
     public String field20912;
-    public ClientResource field20913;
+    public ClientResource font;
     public ColorHelper textColor;
     private final ArrayList<Runnable> field20915 = new ArrayList<Runnable>();
     private boolean field20917;
@@ -77,7 +77,7 @@ public class IconPanel implements IGuiEventListener {
         this.heightA = var6;
         this.field20912 = var8;
         this.textColor = var7;
-        this.field20913 = var9;
+        this.font = var9;
         this.field20903 = true;
         this.field20904 = true;
         this.field20910 = true;
@@ -643,7 +643,7 @@ public class IconPanel implements IGuiEventListener {
         return this.field20894;
     }
 
-    public void method13261(Class6664 var1) {
+    public void setSize(Class6664 var1) {
         this.field20894.add(var1);
     }
 
@@ -832,12 +832,12 @@ public class IconPanel implements IGuiEventListener {
         this.field20912 = var1;
     }
 
-    public ClientResource method13305() {
-        return this.field20913;
+    public ClientResource getFont() {
+        return this.font;
     }
 
     public void method13306(ClientResource var1) {
-        this.field20913 = var1;
+        this.font = var1;
     }
 
     public ColorHelper method13307() {

@@ -54,7 +54,7 @@ public class Class4235 extends ButtonPanel {
       );
       if (this.method13303() != null) {
          RenderUtil.method11440(
-            this.method13305(),
+            this.getFont(),
             (float)(this.getXA() + this.getWidthA() / 2),
             (float)(this.getYA() + this.getHeightA() / 2),
             this.method13303(),

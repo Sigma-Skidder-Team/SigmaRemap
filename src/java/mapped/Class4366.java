@@ -22,10 +22,10 @@ public class Class4366 extends Class4247 {
 
    private void method13663() {
       this.method13241().clear();
-      this.field20913 = ClassicDecryption.regular15;
+      this.font = ClassicDecryption.regular15;
       ButtonPanel var3;
       this.addToList(var3 = new ButtonPanel(this, "dropdownButton", 0, 0, this.getHeightA(), this.getHeightA(), this.textColor));
-      var3.method13261((var1, var2) -> {
+      var3.setSize((var1, var2) -> {
          var1.setXA(0);
          var1.setYA(0);
          var1.setWidthA(this.getWidthA());
@@ -135,9 +135,9 @@ public class Class4366 extends Class4247 {
       if (this.method13303() != null) {
          RenderUtil.method11415(this);
          RenderUtil.drawString(
-            this.method13305(),
+            this.getFont(),
             (float)(this.getXA() + 7),
-            (float)(this.getYA() + (this.getHeightA() - this.method13305().method23952()) / 2),
+            (float)(this.getYA() + (this.getHeightA() - this.getFont().method23952()) / 2),
             this.method13303(),
             ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * 0.5F)
          );

@@ -38,7 +38,7 @@ public class Class4273 extends Class4247 {
                   ? 0
                   : (this.textColor.method19413() != Class2218.field14491 ? this.getHeightA() / 2 : this.getHeightA())
             );
-         int var7 = this.method13305().method23942(this.method13303());
+         int var7 = this.getFont().method23942(this.method13303());
          byte var8 = 18;
          float var9 = this.field20709 * this.field20709 * this.field20709;
          boolean var10 = false;

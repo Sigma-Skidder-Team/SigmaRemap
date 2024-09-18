@@ -17,7 +17,7 @@ public class Class4292 extends Class4278 implements Class4293 {
 
    public Class4292(IconPanel var1, int var2) {
       super(var1, "verticalScrollBar", var1.getWidthA() - var2 - 5, 5, var2, var1.getHeightA() - 10, false);
-      this.method13261((var1x, var2x) -> {
+      this.setSize((var1x, var2x) -> {
          var1x.setXA(var2x.getWidthA() - var2 - 5);
          var1x.setYA(5);
          var1x.setWidthA(var2);

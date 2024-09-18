@@ -72,7 +72,7 @@ public class ButtonPanel extends Class4247 {
          );
       if (this.method13303() != null) {
          RenderUtil.method11440(
-            this.method13305(),
+            this.getFont(),
             (float)(this.field20585 + var10),
             (float)var11,
             this.method13303(),

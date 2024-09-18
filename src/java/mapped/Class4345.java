@@ -129,7 +129,7 @@ public class Class4345 extends Class4339 {
                }
             });
             var12.method13036(var1x -> var2.setCurrentValue(((Class4377)var1x).method13720()));
-            var12.method13261((var2x, var3x) -> var2x.setXA(var1.getWidthA() - 123 - var5));
+            var12.setSize((var2x, var3x) -> var2x.setXA(var1.getWidthA() - 123 - var5));
             var1.addToList(var12);
             var4 += 27 + var5;
          case 6:
@@ -161,7 +161,7 @@ public class Class4345 extends Class4339 {
          for (Module var11 : var16.moduleArray) {
             int var12 = 10;
             IconPanel var13 = new IconPanel(this, var11.getName() + "SubView", 0, var6, this.widthA, this.heightA - var6);
-            var13.method13261((var0, var1) -> var0.setWidthA(var1.getWidthA()));
+            var13.setSize((var0, var1) -> var0.setWidthA(var1.getWidthA()));
 
             for (Setting var15 : var11.getSettingMap().values()) {
                var12 = this.method13555(var13, var15, 30, var12, 20);

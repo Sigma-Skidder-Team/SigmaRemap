@@ -55,7 +55,7 @@ public class Class4239 extends ButtonPanel implements Class4238 {
       );
       if (this.method13303() != null) {
          RenderUtil.method11440(
-            this.method13305(),
+            this.getFont(),
             (float)(var7 + var5 / 2),
             (float)(var8 + var6 / 2),
             this.method13303(),

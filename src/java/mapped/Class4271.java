@@ -24,10 +24,10 @@ public class Class4271 extends Class4247 {
 
    private void method13107() {
       this.method13241().clear();
-      this.field20913 = ResourceRegistry.JelloLightFont18;
+      this.font = ResourceRegistry.JelloLightFont18;
       ButtonPanel var3;
       this.addToList(var3 = new ButtonPanel(this, "dropdownButton", 0, 0, this.getHeightA(), this.getHeightA(), this.textColor));
-      var3.method13261((var1, var2) -> {
+      var3.setSize((var1, var2) -> {
          var1.setXA(0);
          var1.setYA(0);
          var1.setWidthA(this.getWidthA());
@@ -91,9 +91,9 @@ public class Class4271 extends Class4247 {
       if (this.method13303() != null) {
          RenderUtil.method11415(this);
          RenderUtil.drawString(
-            this.method13305(),
+            this.getFont(),
             (float)(this.getXA() + 10),
-            (float)(this.getYA() + (this.getHeightA() - this.method13305().method23952()) / 2 + 1),
+            (float)(this.getYA() + (this.getHeightA() - this.getFont().method23952()) / 2 + 1),
             this.field20912,
             ColorUtils.applyAlpha(this.textColor.method19405(), var1 * 0.7F)
          );
@@ -124,7 +124,7 @@ public class Class4271 extends Class4247 {
       GL11.glRotatef(90.0F * this.field20702, 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-this.getXA() - var4), (float)(-this.getYA() - var5), 0.0F);
       RenderUtil.drawString(
-         this.field20913,
+         this.font,
          (float)(this.getXA() + var4 - 6),
          (float)(this.getYA() + var5 - 14),
          ">",

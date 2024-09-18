@@ -38,8 +38,8 @@ public class JelloClickGUIPanels extends Class4304 {
 
    private void method13505() {
       this.addToList(this.field21194 = new Class4341(this, "modListView", 0, 60, this.getWidthA(), this.getHeightA() - 60, this.category));
-      this.field21194.method13261(new Class6666());
-      this.field21194.method13261((var0, var1) -> {
+      this.field21194.setSize(new Class6666());
+      this.field21194.setSize((var0, var1) -> {
          var0.setYA(60);
          var0.setHeightA(var1.getHeightA() - 60);
       });

@@ -8,7 +8,6 @@ import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import org.lwjgl.opengl.GL11;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,7 +15,7 @@ import java.util.Map.Entry;
 
 public class Class4363 extends Class4247 {
    public static final ColorHelper field21325 = new ColorHelper(1250067, -15329770).method19410(ClientColors.DEEP_TEAL.getColor).method19414(Class2218.field14492);
-   public List<String> field21326 = new ArrayList<String>();
+   public List<String> values;
    public int field21327 = 0;
    public boolean field21328;
    public boolean field21329;
@@ -25,21 +24,21 @@ public class Class4363 extends Class4247 {
 
    public Class4363(IconPanel var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8) {
       super(var1, var2, var3, var4, var5, var6, field21325, false);
-      this.field21326 = var7;
+      this.values = var7;
       this.field21327 = var8;
       this.method13646();
    }
 
    public Class4363(IconPanel var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8, ColorHelper var9) {
       super(var1, var2, var3, var4, var5, var6, var9, false);
-      this.field21326 = var7;
+      this.values = var7;
       this.field21327 = var8;
       this.method13646();
    }
 
    public Class4363(IconPanel var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8, ColorHelper var9, String var10) {
       super(var1, var2, var3, var4, var5, var6, var9, var10, false);
-      this.field21326 = var7;
+      this.values = var7;
       this.field21327 = var8;
       this.method13646();
    }
@@ -48,7 +47,7 @@ public class Class4363 extends Class4247 {
            IconPanel var1, String var2, int var3, int var4, int var5, int var6, List<String> var7, int var8, ColorHelper var9, String var10, ClientResource var11
    ) {
       super(var1, var2, var3, var4, var5, var6, var9, var10, var11, false);
-      this.field21326 = var7;
+      this.values = var7;
       this.field21327 = var8;
       this.method13646();
    }
@@ -82,23 +81,23 @@ public class Class4363 extends Class4247 {
 
    private void method13646() {
       this.method13241().clear();
-      this.field20913 = ResourceRegistry.JelloLightFont18;
-      ButtonPanel var3;
-      this.addToList(var3 = new ButtonPanel(this, "dropdownButton", 0, 0, this.getHeightA(), this.getHeightA(), this.textColor));
-      var3.method13261((var1, var2) -> {
+      this.font = ResourceRegistry.JelloLightFont18;
+      ButtonPanel dropdownButton;
+      this.addToList(dropdownButton = new ButtonPanel(this, "dropdownButton", 0, 0, this.getHeightA(), this.getHeightA(), this.textColor));
+      dropdownButton.setSize((var1, var2) -> {
          var1.setXA(0);
          var1.setYA(0);
          var1.setWidthA(this.getWidthA());
          var1.setHeightA(this.getHeightA());
       });
-      var3.doThis((var1, var2) -> this.method13658(!this.method13657()));
+      dropdownButton.doThis((var1, var2) -> this.method13658(!this.method13657()));
 
-      for (String var5 : this.field21326) {
-         ButtonPanel var6;
+      for (String mode : this.values) {
+         ButtonPanel buttonPanel;
          this.addToList(
-            var6 = new ButtonPanel(
+            buttonPanel = new ButtonPanel(
                this,
-               var5,
+               mode,
                0,
                this.getHeightA(),
                this.getWidthA(),
@@ -111,14 +110,14 @@ public class Class4363 extends Class4247 {
                   Class2218.field14488,
                   Class2218.field14492
                ),
-               var5,
-               this.method13305()
+               mode,
+               this.getFont()
             )
          );
-         var6.method13034(10);
-         var6.doThis((var2, var3x) -> {
+         buttonPanel.method13034(10);
+         buttonPanel.doThis((var2, var3x) -> {
             int var6x = this.method13655();
-            this.method13656(this.field21326.indexOf(var5));
+            this.method13656(this.values.indexOf(mode));
             this.method13658(false);
             if (var6x != this.method13655()) {
                this.method13037();
@@ -151,11 +150,11 @@ public class Class4363 extends Class4247 {
          var3 = QuadraticEasing.easeInQuad(this.field21330.calcPercent(), 0.0F, 1.0F, 1.0F);
       }
 
-      return (int)((float)(this.getHeightA() * this.field21326.size() + 1) * var3);
+      return (int)((float)(this.getHeightA() * this.values.size() + 1) * var3);
    }
 
    public int method13649() {
-      return (int)((float)(this.getHeightA() * this.field21326.size() + 1));
+      return (int)((float)(this.getHeightA() * this.values.size() + 1));
    }
 
    private int method13650() {
@@ -179,7 +178,7 @@ public class Class4363 extends Class4247 {
 
       int var5 = (var2 - this.method13272()) / this.getHeightA() - 1;
       if (var5 >= 0
-         && var5 < this.field21326.size()
+         && var5 < this.values.size()
          && this.field21330.getDirection() == Direction.FORWARDS
          && this.field21330.calcPercent() == 1.0F
          && var1 - this.method13271() < this.getWidthA()) {
@@ -229,9 +228,9 @@ public class Class4363 extends Class4247 {
          }
 
          RenderUtil.drawString(
-            this.method13305(),
+            this.getFont(),
             (float)(this.getXA() + 10),
-            (float)(this.getYA() + (this.getHeightA() - this.method13305().method23952()) / 2 + 1),
+            (float)(this.getYA() + (this.getHeightA() - this.getFont().method23952()) / 2 + 1),
             this.method13303() + var4,
             ColorUtils.applyAlpha(this.textColor.method19405(), var1 * 0.7F)
          );
@@ -262,7 +261,7 @@ public class Class4363 extends Class4247 {
       GL11.glRotatef(90.0F * this.field21330.calcPercent(), 0.0F, 0.0F, 1.0F);
       GL11.glTranslatef((float)(-this.getXA() - var9), (float)(-this.getYA() - var10), 0.0F);
       RenderUtil.drawString(
-         this.field20913,
+         this.font,
          (float)(this.getXA() + var9 - 6),
          (float)(this.getYA() + var10 - 14),
          ">",
@@ -271,7 +270,7 @@ public class Class4363 extends Class4247 {
    }
 
    public List<String> method13651() {
-      return this.field21326;
+      return this.values;
    }
 
    public void method13652(String var1, int var2) {
@@ -280,11 +279,11 @@ public class Class4363 extends Class4247 {
    }
 
    public void method13653(String var1) {
-      this.method13652(var1, this.field21326.size());
+      this.method13652(var1, this.values.size());
    }
 
    public <E extends Enum<E>> void method13654(Class<E> var1) {
-      this.field21326.clear();
+      this.values.clear();
 
       for (Enum var7 : (Enum[])var1.getEnumConstants()) {
          String var8 = var7.toString().substring(0, 1).toUpperCase() + var7.toString().substring(1, var7.toString().length()).toLowerCase();

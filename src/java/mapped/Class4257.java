@@ -63,7 +63,7 @@ public class Class4257 extends Class4247 {
             + ((Module)var5.get(0)).getName().substring(this.field20640.length(), var6.length())
             + (!((Module)var5.get(0)).isEnabled() ? " - Disabled" : " - Enabled");
          RenderUtil.drawString(
-            this.field20639.method13305(),
+            this.field20639.getFont(),
             (float)(this.xA + 54),
             (float)(this.yA + 14),
             var7,

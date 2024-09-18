@@ -62,7 +62,7 @@ public class Class4376 extends Class4235 implements Class4238 {
       );
       if (this.method13303() != null) {
          RenderUtil.method11440(
-            this.method13305(),
+            this.getFont(),
             (float)(var8 + var6 / 2),
             (float)(var9 + var7 / 2),
             this.method13303(),
@@ -73,7 +73,7 @@ public class Class4376 extends Class4235 implements Class4238 {
       }
 
       RenderUtil.endScissor();
-      ClientResource var11 = this.method13305();
+      ClientResource var11 = this.getFont();
       if (var4 > 1.0F) {
          float var12 = (var4 - 1.0F) / (this.method13032() - 1.0F);
          GL11.glPushMatrix();

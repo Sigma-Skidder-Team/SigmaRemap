@@ -35,7 +35,7 @@ public class Class4339 extends Class4304 {
 
    private final void method13511() {
       this.method13241().add(this.buttonList = new IconPanel(this, "content", 0, 0, this.widthA, this.heightA));
-      this.buttonList.method13261(new Class6665());
+      this.buttonList.setSize(new Class6665());
       this.method13241().add(this.field21205 = new Class4292(this, 11));
       this.field21205.method13292(true);
    }

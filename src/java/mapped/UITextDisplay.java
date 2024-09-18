@@ -42,7 +42,7 @@ public class UITextDisplay extends Class4278 {
 
       if (this.field20912 != null) {
          RenderUtil.drawString(
-            this.method13305(),
+            this.getFont(),
             (float)this.getXA(),
             (float)this.getYA(),
             this.method13303(),

@@ -73,7 +73,7 @@ public class Class4341 extends Class4339 implements Class4342 {
                }
             }
          );
-         var13.method13261(new Class6666());
+         var13.setSize(new Class6666());
          var3++;
       }
 
