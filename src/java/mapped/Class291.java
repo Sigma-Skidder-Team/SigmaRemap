@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.renderer.texture.TextureUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,14 +14,14 @@ public class Class291 extends Class290 {
    public Class291(Class1806 var1) {
       this.field1133 = var1;
       if (RenderSystem.isOnRenderThread()) {
-         Class8535.method30368(this.getGlTextureId(), this.field1133.method7886(), this.field1133.method7887());
+         TextureUtil.method30368(this.getGlTextureId(), this.field1133.method7886(), this.field1133.method7887());
          this.method1140();
          if (Class7944.method26921()) {
             Class9336.method35317(this);
          }
       } else {
-         RenderSystem.method27810(() -> {
-            Class8535.method30368(this.getGlTextureId(), this.field1133.method7886(), this.field1133.method7887());
+         RenderSystem.recordRenderCall(() -> {
+            TextureUtil.method30368(this.getGlTextureId(), this.field1133.method7886(), this.field1133.method7887());
             this.method1140();
             if (Class7944.method26921()) {
                Class9336.method35317(this);
@@ -31,7 +33,7 @@ public class Class291 extends Class290 {
    public Class291(int var1, int var2, boolean var3) {
       RenderSystem.assertThread(RenderSystem::method27807);
       this.field1133 = new Class1806(var1, var2, var3);
-      Class8535.method30368(this.getGlTextureId(), this.field1133.method7886(), this.field1133.method7887());
+      TextureUtil.method30368(this.getGlTextureId(), this.field1133.method7886(), this.field1133.method7887());
       if (Class7944.method26921()) {
          Class9336.method35317(this);
       }

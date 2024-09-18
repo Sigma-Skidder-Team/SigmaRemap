@@ -1,6 +1,8 @@
 package mapped;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.concurrent.CompletableFuture;
@@ -45,7 +47,7 @@ public class RenderSkyboxCube {
 
          for (int var14 = 0; var14 < 6; var14++) {
             var1.getTextureManager().bindTexture(this.field32058[var14]);
-            var8.begin(7, DefaultVertexFormats.field43346);
+            var8.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
             int var15 = Math.round(255.0F * var4) / (var10 + 1);
             if (var14 == 0) {
                var8.pos(-1.0, -1.0, 1.0).tex(0.0F, 0.0F).color(255, 255, 255, var15).endVertex();

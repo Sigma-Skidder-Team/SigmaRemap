@@ -23,7 +23,7 @@ public enum Class190 implements IResourceManager {
    }
 
    @Override
-   public Class1783 method580(ResourceLocation var1) throws IOException {
+   public JSonShader getShader(ResourceLocation var1) throws IOException {
       throw new FileNotFoundException(var1.toString());
    }
 
@@ -33,7 +33,7 @@ public enum Class190 implements IResourceManager {
    }
 
    @Override
-   public List<Class1783> method582(ResourceLocation var1) {
+   public List<JSonShader> method582(ResourceLocation var1) {
       return ImmutableList.of();
    }
 

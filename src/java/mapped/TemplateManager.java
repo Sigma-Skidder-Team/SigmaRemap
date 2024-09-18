@@ -59,8 +59,8 @@ public class TemplateManager {
    private Class8969 method31606(ResourceLocation var1) {
       ResourceLocation var4 = new ResourceLocation(var1.getNamespace(), "structures/" + var1.getPath() + ".nbt");
 
-      try (Class1783 var5 = this.field39444.method580(var4)) {
-         return this.method31608(var5.method7763());
+      try (JSonShader var5 = this.field39444.getShader(var4)) {
+         return this.method31608(var5.getFile());
       } catch (FileNotFoundException var20) {
          return null;
       } catch (Throwable var21) {

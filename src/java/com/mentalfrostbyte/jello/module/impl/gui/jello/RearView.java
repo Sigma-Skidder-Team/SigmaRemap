@@ -13,8 +13,10 @@ import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -42,7 +44,7 @@ public class RearView extends PremiumModule {
     @EventTarget
     public void method16447(TickEvent var1) {
         if (this.isEnabled()) {
-            if (field23663 != null && (field23663.field35732 != mc.mainWindow.getFramebufferWidth() || field23663.field35733 != mc.mainWindow.getFramebufferHeight())) {
+            if (field23663 != null && (field23663.framebufferWidth != mc.mainWindow.getFramebufferWidth() || field23663.framebufferHeight != mc.mainWindow.getFramebufferHeight())) {
                 this.onEnable();
             }
 
@@ -164,20 +166,20 @@ public class RearView extends PremiumModule {
         RenderSystem.disableBlend();
         RenderSystem.method27822();
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-        var1.method29110();
+        var1.bindFramebufferTexture();
         float var10 = (float) var2;
         float var11 = (float) var3;
-        float var12 = (float) var1.field35732 / (float) var1.field35730;
-        float var13 = (float) var1.field35733 / (float) var1.field35731;
-        Tessellator var14 = RenderSystem.method27937();
+        float var12 = (float) var1.framebufferWidth / (float) var1.framebufferTextureWidth;
+        float var13 = (float) var1.framebufferHeight / (float) var1.framebufferTextureHeight;
+        Tessellator var14 = RenderSystem.renderThreadTesselator();
         BufferBuilder var15 = var14.getBuffer();
-        var15.begin(7, DefaultVertexFormats.field43346);
+        var15.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
         var15.pos(var4, (double) var11 + var6, 0.0).tex(0.0F, 0.0F).color(255, 255, 255, 255).endVertex();
         var15.pos((double) var10 + var4, (double) var11 + var6, 0.0).tex(var12, 0.0F).color(255, 255, 255, 255).endVertex();
         var15.pos((double) var10 + var4, var6, 0.0).tex(var12, var13).color(255, 255, 255, 255).endVertex();
         var15.pos(var4, var6, 0.0).tex(0.0F, var13).color(255, 255, 255, 255).endVertex();
         var14.draw();
-        var1.method29111();
+        var1.unbindFramebufferTexture();
         RenderSystem.depthMask(true);
         RenderSystem.method27870(true, true, true, true);
     }

@@ -24,8 +24,8 @@ public class Class1805 implements Closeable {
    }
 
    public static Class1805 method7875(IResourceManager var0, ResourceLocation var1) {
-      try (Class1783 var4 = var0.method580(var1)) {
-         Class1806 var6 = Class1806.method7879(var4.method7763());
+      try (JSonShader var4 = var0.getShader(var1)) {
+         Class1806 var6 = Class1806.method7879(var4.getFile());
          Class9620 var7 = null;
 
          try {

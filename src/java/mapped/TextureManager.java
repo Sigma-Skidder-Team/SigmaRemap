@@ -12,9 +12,11 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Executor;
 import javax.annotation.Nullable;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.realmsclient.RealmsMainScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -37,7 +39,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
       if (RenderSystem.isOnRenderThread()) {
          this.method1072(var1);
       } else {
-         RenderSystem.method27810(() -> this.method1072(var1));
+         RenderSystem.recordRenderCall(() -> this.method1072(var1));
       }
    }
 
@@ -138,7 +140,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
    }
 
    private static void method1079(Runnable var0) {
-      Minecraft.getInstance().execute(() -> RenderSystem.method27810(var0::run));
+      Minecraft.getInstance().execute(() -> RenderSystem.recordRenderCall(var0::run));
    }
 
    @Override
@@ -152,7 +154,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
       Class290 var4 = this.getTexture(var1);
       if (var4 != null) {
          this.field1095.remove(var1);
-         Class8535.method30367(var4.getGlTextureId());
+         TextureUtil.releaseTextureId(var4.getGlTextureId());
       }
    }
 
@@ -202,7 +204,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
                   var10x.method1134(this, var2, var9x, var6);
                }
             }
-         }, var0 -> RenderSystem.method27810(var0::run));
+         }, var0 -> RenderSystem.recordRenderCall(var0::run));
    }
 
    public Class290 method1082() {

@@ -18,6 +18,9 @@ import java.util.Base64;
 import java.util.EnumSet;
 import java.util.Set;
 
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.util.LWJGLMemoryUntracker;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
@@ -85,7 +88,7 @@ public final class Class1806 implements AutoCloseable {
 
       Class1806 var5;
       try {
-         var4 = Class8535.method30373(var1);
+         var4 = TextureUtil.method30373(var1);
          ((Buffer)var4).rewind();
          var5 = method7882(var0, var4);
       } finally {
@@ -143,25 +146,25 @@ public final class Class1806 implements AutoCloseable {
    }
 
    public static void method7883(boolean var0) {
-      RenderSystem.assertThread(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       if (!var0) {
-         GlStateManager.method23808(3553, 10242, 10497);
-         GlStateManager.method23808(3553, 10243, 10497);
+         GlStateManager.texParameter(3553, 10242, 10497);
+         GlStateManager.texParameter(3553, 10243, 10497);
       } else {
-         GlStateManager.method23808(3553, 10242, 33071);
-         GlStateManager.method23808(3553, 10243, 33071);
+         GlStateManager.texParameter(3553, 10242, 33071);
+         GlStateManager.texParameter(3553, 10243, 33071);
       }
    }
 
    public static void method7884(boolean var0, boolean var1) {
-      RenderSystem.assertThread(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       if (!var0) {
          int var4 = Class7944.method26801();
-         GlStateManager.method23808(3553, 10241, !var1 ? 9728 : var4);
-         GlStateManager.method23808(3553, 10240, 9728);
+         GlStateManager.texParameter(3553, 10241, !var1 ? 9728 : var4);
+         GlStateManager.texParameter(3553, 10240, 9728);
       } else {
-         GlStateManager.method23808(3553, 10241, !var1 ? 9729 : 9987);
-         GlStateManager.method23808(3553, 10240, 9729);
+         GlStateManager.texParameter(3553, 10241, !var1 ? 9729 : 9987);
+         GlStateManager.texParameter(3553, 10240, 9729);
       }
    }
 
@@ -272,15 +275,15 @@ public final class Class1806 implements AutoCloseable {
    }
 
    public void method7895(int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8, boolean var9, boolean var10, boolean var11) {
-      if (RenderSystem.method27804()) {
+      if (RenderSystem.isOnRenderThreadOrInit()) {
          this.method7896(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11);
       } else {
-         RenderSystem.method27810(() -> this.method7896(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11));
+         RenderSystem.recordRenderCall(() -> this.method7896(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11));
       }
    }
 
    private void method7896(int var1, int var2, int var3, int var4, int var5, int var6, int var7, boolean var8, boolean var9, boolean var10, boolean var11) {
-      RenderSystem.assertThread(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       this.method7885();
       method7884(var8, var10);
       method7883(var9);

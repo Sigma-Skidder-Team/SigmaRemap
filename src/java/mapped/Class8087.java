@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.util.UUIDTypeAdapter;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -14,6 +16,7 @@ import java.util.UUID;
 import javax.imageio.ImageIO;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.util.ResourceLocation;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.IOUtils;
@@ -116,7 +119,7 @@ public class Class8087 {
 
       RenderSystem.method27860(33984);
       RenderSystem.method27865(var5);
-      Class8535.method30375(var15, var6, var7);
+      TextureUtil.method30375(var15, var6, var7);
       field34751.put(var0, new Class7275(var1, var5));
       return var5;
    }

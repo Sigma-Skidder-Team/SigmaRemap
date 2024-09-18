@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.util.concurrent.Runnables;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.AccessibilityScreen;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.LanguageScreen;
@@ -261,7 +263,7 @@ public class VanillaMainMenuScreen extends Screen {
       }
 
       float var7 = !this.field4717 ? 1.0F : (float)(Util.milliTime() - this.field4718) / 1000.0F;
-      GlStateManager.method23710();
+      GlStateManager.disableDepthTest();
       method5686(var1, 0, 0, this.width, this.height, -1);
       this.field4716.method13754(var4, MathHelper.clamp(var7, 0.0F, 1.0F));
       short var8 = 274;

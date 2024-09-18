@@ -1,7 +1,9 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 
 import java.io.IOException;
 import java.util.List;
@@ -41,24 +43,24 @@ public class Class1706 implements AutoCloseable {
 
    public void method7409(float var1) {
       this.field9294.unbindFramebuffer();
-      float var4 = (float)this.field9295.field35730;
-      float var5 = (float)this.field9295.field35731;
+      float var4 = (float)this.field9295.framebufferTextureWidth;
+      float var5 = (float)this.field9295.framebufferTextureHeight;
       RenderSystem.method27869(0, 0, (int)var4, (int)var5);
-      this.field9293.method7940("DiffuseSampler", this.field9294::method29120);
+      this.field9293.method7940("DiffuseSampler", this.field9294::getFramebufferTexture);
 
       for (int var6 = 0; var6 < this.field9296.size(); var6++) {
          this.field9293.method7940(this.field9297.get(var6), this.field9296.get(var6));
-         this.field9293.method7937("AuxSize" + var6).method7438((float)this.field9298.get(var6).intValue(), (float)this.field9299.get(var6).intValue());
+         this.field9293.getFromName("AuxSize" + var6).method7438((float)this.field9298.get(var6).intValue(), (float)this.field9299.get(var6).intValue());
       }
 
-      this.field9293.method7937("ProjMat").method7444(this.field9300);
-      this.field9293.method7937("InSize").method7438((float)this.field9294.field35730, (float)this.field9294.field35731);
-      this.field9293.method7937("OutSize").method7438(var4, var5);
-      this.field9293.method7937("Time").method7437(var1);
+      this.field9293.getFromName("ProjMat").method7444(this.field9300);
+      this.field9293.getFromName("InSize").method7438((float)this.field9294.framebufferTextureWidth, (float)this.field9294.framebufferTextureHeight);
+      this.field9293.getFromName("OutSize").method7438(var4, var5);
+      this.field9293.getFromName("Time").getValue(var1);
       Minecraft var10 = Minecraft.getInstance();
-      this.field9293.method7937("ScreenSize").method7438((float)var10.getMainWindow().getFramebufferWidth(), (float)var10.getMainWindow().getFramebufferHeight());
+      this.field9293.getFromName("ScreenSize").method7438((float)var10.getMainWindow().getFramebufferWidth(), (float)var10.getMainWindow().getFramebufferHeight());
       this.field9293.method7934();
-      this.field9295.method29119(Minecraft.IS_RUNNING_ON_MAC);
+      this.field9295.framebufferClear(Minecraft.IS_RUNNING_ON_MAC);
       this.field9295.bindFramebuffer(false);
       RenderSystem.depthFunc(519);
       BufferBuilder var7 = Tessellator.getInstance().getBuffer();
@@ -72,11 +74,11 @@ public class Class1706 implements AutoCloseable {
       RenderSystem.depthFunc(515);
       this.field9293.method7933();
       this.field9295.unbindFramebuffer();
-      this.field9294.method29111();
+      this.field9294.unbindFramebufferTexture();
 
       for (Object var9 : this.field9296) {
          if (var9 instanceof Framebuffer) {
-            ((Framebuffer)var9).method29111();
+            ((Framebuffer)var9).unbindFramebufferTexture();
          }
       }
    }

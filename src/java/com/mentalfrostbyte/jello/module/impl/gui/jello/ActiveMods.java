@@ -13,6 +13,7 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import com.mojang.blaze3d.platform.GlStateManager;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.scoreboard.ScorePlayerTeam;
@@ -80,7 +81,7 @@ public class ActiveMods extends Module {
     private void method16354(EventRenderGUI var1) {
         if (this.isEnabled() && mc.player != null) {
             if (!var1.method13939()) {
-                GlStateManager.method23839(0.0F, (float) (-this.field23614), 0.0F);
+                GlStateManager.translatef(0.0F, (float) (-this.field23614), 0.0F);
             } else {
                 Scoreboard var4 = mc.world.method6805();
                 Class8375 var5 = null;
@@ -110,7 +111,7 @@ public class ActiveMods extends Module {
                     this.field23614 = 0;
                 } else {
                     this.field23614 = (var15 - var13) / 2;
-                    GlStateManager.method23839(0.0F, (float) this.field23614, 0.0F);
+                    GlStateManager.translatef(0.0F, (float) this.field23614, 0.0F);
                 }
             }
         }

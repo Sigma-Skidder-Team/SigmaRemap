@@ -38,7 +38,7 @@ public class Class1817 implements IResourceManager {
    }
 
    @Override
-   public Class1783 method580(ResourceLocation var1) throws IOException {
+   public JSonShader getShader(ResourceLocation var1) throws IOException {
       this.method8064(var1);
       IResourcePack var4 = null;
       ResourceLocation var5 = method8066(var1);
@@ -94,7 +94,7 @@ public class Class1817 implements IResourceManager {
    }
 
    @Override
-   public List<Class1783> method582(ResourceLocation var1) throws IOException {
+   public List<JSonShader> method582(ResourceLocation var1) throws IOException {
       this.method8064(var1);
       ArrayList var4 = Lists.newArrayList();
       ResourceLocation var5 = method8066(var1);

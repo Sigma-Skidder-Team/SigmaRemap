@@ -11,7 +11,9 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.imageio.ImageIO;
 
+import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
@@ -218,9 +220,9 @@ public class Class9336 {
    public static void method35311(int var0, int var1) {
       if (Shaders.field40605 && GlStateManager.method23863() == 33984) {
          GlStateManager.method23803(33985);
-         GlStateManager.method23814(var0);
+         GlStateManager.bindTexture(var0);
          GlStateManager.method23803(33987);
-         GlStateManager.method23814(var1);
+         GlStateManager.bindTexture(var1);
          GlStateManager.method23803(33984);
       }
    }
@@ -232,31 +234,31 @@ public class Class9336 {
    public static void method35313(int var0, int var1, int var2) {
       if (Shaders.field40605 && GlStateManager.method23863() == 33984) {
          GlStateManager.method23803(33985);
-         GlStateManager.method23814(var1);
+         GlStateManager.bindTexture(var1);
          GlStateManager.method23803(33987);
-         GlStateManager.method23814(var2);
+         GlStateManager.bindTexture(var2);
          GlStateManager.method23803(33984);
       }
 
-      GlStateManager.method23814(var0);
+      GlStateManager.bindTexture(var0);
    }
 
    public static void method35314(Class9732 var0) {
       if (Shaders.field40605 && GlStateManager.method23863() == 33984) {
          if (Shaders.field40874) {
             GlStateManager.method23803(33985);
-            GlStateManager.method23814(var0.field45440);
+            GlStateManager.bindTexture(var0.field45440);
          }
 
          if (Shaders.field40875) {
             GlStateManager.method23803(33987);
-            GlStateManager.method23814(var0.field45441);
+            GlStateManager.bindTexture(var0.field45441);
          }
 
          GlStateManager.method23803(33984);
       }
 
-      GlStateManager.method23814(var0.field45439);
+      GlStateManager.bindTexture(var0.field45439);
    }
 
    public static void method35315(Class290 var0) {
@@ -292,12 +294,12 @@ public class Class9336 {
       int var5 = var4.method7886();
       int var6 = var4.method7887();
       Class1806 var7 = method35334(var5, var6, -8421377);
-      Class8535.method30368(var3.field45440, var5, var6);
+      TextureUtil.method30368(var3.field45440, var5, var6);
       var7.method7895(0, 0, 0, 0, 0, var5, var6, false, false, false, true);
       Class1806 var8 = method35334(var5, var6, 0);
-      Class8535.method30368(var3.field45441, var5, var6);
+      TextureUtil.method30368(var3.field45441, var5, var6);
       var8.method7895(0, 0, 0, 0, 0, var5, var6, false, false, false, true);
-      GlStateManager.method23814(var3.field45439);
+      GlStateManager.bindTexture(var3.field45439);
    }
 
    public static void method35318(int[] var0, int var1, int var2, int var3, int var4, int var5) {
@@ -324,15 +326,15 @@ public class Class9336 {
       Class9732 var6 = method35309(var3);
       if (Shaders.field40874) {
          Class7399.method23634("Allocate texture map normal: " + var1 + "x" + var2 + ", mipmaps: " + var0);
-         Class8535.method30370(var6.field45440, var0, var1, var2);
+         TextureUtil.method30370(var6.field45440, var0, var1, var2);
       }
 
       if (Shaders.field40875) {
          Class7399.method23634("Allocate texture map specular: " + var1 + "x" + var2 + ", mipmaps: " + var0);
-         Class8535.method30370(var6.field45441, var0, var1, var2);
+         TextureUtil.method30370(var6.field45441, var0, var1, var2);
       }
 
-      GlStateManager.method23814(var6.field45439);
+      GlStateManager.bindTexture(var6.field45439);
    }
 
    private static Class1806[] method35321(Class1806 var0, int var1) {
@@ -612,7 +614,7 @@ public class Class9336 {
       ((Buffer)var11).clear();
       var11.put(var1, 0, var10);
       ((Buffer)var11).position(0).limit(var10);
-      GlStateManager.method23814(var0.field45439);
+      GlStateManager.bindTexture(var0.field45439);
       GL11.glTexParameteri(3553, 10241, 9728);
       GL11.glTexParameteri(3553, 10240, 9728);
       GL11.glTexParameteri(3553, 10242, 10497);
@@ -624,7 +626,7 @@ public class Class9336 {
          ((Buffer)var11).position(0).limit(var10);
       }
 
-      GlStateManager.method23814(var0.field45440);
+      GlStateManager.bindTexture(var0.field45440);
       GL11.glTexParameteri(3553, 10241, 9728);
       GL11.glTexParameteri(3553, 10240, 9728);
       GL11.glTexParameteri(3553, 10242, 10497);
@@ -636,7 +638,7 @@ public class Class9336 {
          ((Buffer)var11).position(0).limit(var10);
       }
 
-      GlStateManager.method23814(var0.field45441);
+      GlStateManager.bindTexture(var0.field45441);
       GL11.glTexParameteri(3553, 10241, 9728);
       GL11.glTexParameteri(3553, 10240, 9728);
       GL11.glTexParameteri(3553, 10242, 10497);
@@ -679,8 +681,8 @@ public class Class9336 {
          return null;
       } else {
          try {
-            Class1783 var6 = var0.method580(var1);
-            Class1806 var7 = Class1806.method7879(var6.method7763());
+            JSonShader var6 = var0.getShader(var1);
+            Class1806 var7 = Class1806.method7879(var6.getFile());
             if (var7 == null) {
                return null;
             } else if (var7.method7886() == var2 && var7.method7887() == var3) {
@@ -700,13 +702,13 @@ public class Class9336 {
       int var10 = var1.method7887();
       ResourceLocation var11 = method35332(var5, "n");
       Class1806 var12 = method35333(var4, var11, var9, var10, -8421377);
-      Class8535.method30370(var6.field45440, 0, var9, var10);
+      TextureUtil.method30370(var6.field45440, 0, var9, var10);
       var12.method7895(0, 0, 0, 0, 0, var9, var10, var2, var3, false, true);
       ResourceLocation var13 = method35332(var5, "s");
       Class1806 var14 = method35333(var4, var13, var9, var10, 0);
-      Class8535.method30370(var6.field45441, 0, var9, var10);
+      TextureUtil.method30370(var6.field45441, 0, var9, var10);
       var14.method7895(0, 0, 0, 0, 0, var9, var10, var2, var3, false, true);
-      GlStateManager.method23814(var6.field45439);
+      GlStateManager.bindTexture(var6.field45439);
    }
 
    public static void method35337(int[] var0, int var1, int var2, int var3) {
@@ -725,16 +727,16 @@ public class Class9336 {
       Class290 var3 = var2.getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
       if (var3 != null) {
          Class9732 var4 = var3.method1135();
-         GlStateManager.method23814(var4.field45439);
+         GlStateManager.bindTexture(var4.field45439);
          GL11.glTexParameteri(3553, 10241, Shaders.field40883[Shaders.field40867]);
          GL11.glTexParameteri(3553, 10240, Shaders.field40884[Shaders.field40870]);
-         GlStateManager.method23814(var4.field45440);
+         GlStateManager.bindTexture(var4.field45440);
          GL11.glTexParameteri(3553, 10241, Shaders.field40883[Shaders.field40868]);
          GL11.glTexParameteri(3553, 10240, Shaders.field40884[Shaders.field40871]);
-         GlStateManager.method23814(var4.field45441);
+         GlStateManager.bindTexture(var4.field45441);
          GL11.glTexParameteri(3553, 10241, Shaders.field40883[Shaders.field40869]);
          GL11.glTexParameteri(3553, 10240, Shaders.field40884[Shaders.field40872]);
-         GlStateManager.method23814(0);
+         GlStateManager.bindTexture(0);
       }
    }
 

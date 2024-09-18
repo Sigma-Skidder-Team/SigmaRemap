@@ -1,5 +1,8 @@
 package mapped;
 
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
+
 public enum Class2237 {
    field14626(4, 6408, true, true, true, false, true, 0, 8, 16, 255, 24, true),
    field14627(3, 6407, true, true, true, false, false, 0, 8, 16, 255, 255, true),
@@ -61,7 +64,7 @@ public enum Class2237 {
    }
 
    public void method8975() {
-      RenderSystem.assertThread(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       GlStateManager.method23856(3317, this.method8973());
    }
 

@@ -1,5 +1,8 @@
 package mapped;
 
+import com.mojang.blaze3d.platform.GlStateManager;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.IntBuffer;

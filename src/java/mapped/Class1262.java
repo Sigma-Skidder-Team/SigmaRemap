@@ -5,6 +5,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.UnmodifiableIterator;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.datafixers.DataFixUtils;
 import it.unimi.dsi.fastutil.longs.LongSet;
 import it.unimi.dsi.fastutil.longs.LongSets;
@@ -13,6 +14,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
@@ -433,7 +435,7 @@ public class Class1262 extends AbstractGui {
             }
          }
 
-         Class1647 var32 = this.field6665.gameRenderer.getShaderGroup();
+         Shader var32 = this.field6665.gameRenderer.getShaderGroup();
          if (var32 != null) {
             var16.add("Shader: " + var32.method6527());
          }

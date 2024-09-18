@@ -778,8 +778,8 @@ public class ColorUtils {
 
    public static void method17741(int var0) {
       if (mc.gameRenderer.field828 != null) {
-         mc.gameRenderer.field828.field8939.get(0).method7410().method7937("Radius").method7437((float)var0);
-         mc.gameRenderer.field828.field8939.get(1).method7410().method7937("Radius").method7437((float)var0);
+         mc.gameRenderer.field828.elements.get(0).method7410().getFromName("Radius").getValue((float)var0);
+         mc.gameRenderer.field828.elements.get(1).method7410().getFromName("Radius").getValue((float)var0);
       }
    }
 

@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.Setting;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
+import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;

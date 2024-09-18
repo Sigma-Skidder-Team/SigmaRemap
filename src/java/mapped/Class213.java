@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.blaze3d.systems.RenderSystem;
+
 public class Class213 implements AutoCloseable {
    private static String[] field797;
    public static final int field798 = method730(0, 10);

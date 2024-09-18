@@ -11,8 +11,8 @@ public class Class4230 {
    public static int[] method13022(IResourceManager var0, ResourceLocation var1) throws IOException {
       int[] var8;
       try (
-         Class1783 var4 = var0.method580(var1);
-         Class1806 var6 = Class1806.method7879(var4.method7763());
+              JSonShader var4 = var0.getShader(var1);
+              Class1806 var6 = Class1806.method7879(var4.getFile());
       ) {
          var8 = var6.method7892();
       }

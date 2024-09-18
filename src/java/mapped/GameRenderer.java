@@ -8,9 +8,12 @@ import com.mentalfrostbyte.jello.event.impl.RenderFireEvent;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GLX;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -69,7 +72,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    private int field825;
    private float field826;
    private float field827;
-   public Class1647 field828;
+   public Shader field828;
    public static final ResourceLocation[] field829 = new ResourceLocation[]{
       new ResourceLocation("shaders/post/notch.json"),
       new ResourceLocation("shaders/post/fxaa.json"),
@@ -109,7 +112,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    private int field840 = 0;
    private float field841 = 0.0F;
    private float field842 = 0.0F;
-   private Class1647[] field843 = new Class1647[10];
+   private Shader[] field843 = new Shader[10];
    private boolean field844 = false;
 
    public GameRenderer(Minecraft var1, IResourceManager var2, RenderTypeBuffers var3) {
@@ -173,7 +176,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          }
 
          try {
-            this.field828 = new Class1647(this.mc.getTextureManager(), this.field803, this.mc.getFramebuffer(), var1);
+            this.field828 = new Shader(this.mc.getTextureManager(), this.field803, this.mc.getFramebuffer(), var1);
             this.field828.method6525(this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight());
             this.field832 = true;
          } catch (IOException var5) {
@@ -234,7 +237,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    }
 
    @Nullable
-   public Class1647 getShaderGroup() {
+   public Shader getShaderGroup() {
       return this.field828;
    }
 

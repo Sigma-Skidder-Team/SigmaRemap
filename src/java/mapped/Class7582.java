@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.mojang.blaze3d.platform.GLX;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.client.util.LWJGLMemoryUntracker;

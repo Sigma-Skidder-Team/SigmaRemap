@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import java.util.List;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.text.ITextComponent;

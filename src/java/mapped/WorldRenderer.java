@@ -5,6 +5,8 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import com.google.gson.JsonSyntaxException;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
@@ -16,6 +18,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.AbstractOption;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -78,13 +81,13 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    private final Long2ObjectMap<SortedSet<Class1995>> field957 = new Long2ObjectOpenHashMap();
    private final Map<BlockPos, Class6340> field958 = Maps.newHashMap();
    public Framebuffer field959;
-   private Class1647 field960;
+   private Shader field960;
    private Framebuffer field961;
    private Framebuffer field962;
    private Framebuffer field963;
    private Framebuffer field964;
    private Framebuffer field965;
-   private Class1647 field966;
+   private Shader field966;
    private double field967 = Double.MIN_VALUE;
    private double field968 = Double.MIN_VALUE;
    private double field969 = Double.MIN_VALUE;
@@ -437,7 +440,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       ResourceLocation var1 = new ResourceLocation("shaders/post/entity_outline.json");
 
       try {
-         this.field960 = new Class1647(this.field939.getTextureManager(), this.field939.getResourceManager(), this.field939.getFramebuffer(), var1);
+         this.field960 = new Shader(this.field939.getTextureManager(), this.field939.getResourceManager(), this.field939.getFramebuffer(), var1);
          this.field960.method6525(this.field939.getMainWindow().getFramebufferWidth(), this.field939.getMainWindow().getFramebufferHeight());
          this.field959 = this.field960.method6521("final");
       } catch (IOException var3) {
@@ -456,7 +459,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       ResourceLocation var1 = new ResourceLocation("shaders/post/transparency.json");
 
       try {
-         Class1647 var2 = new Class1647(this.field939.getTextureManager(), this.field939.getResourceManager(), this.field939.getFramebuffer(), var1);
+         Shader var2 = new Shader(this.field939.getTextureManager(), this.field939.getResourceManager(), this.field939.getFramebuffer(), var1);
          var2.method6525(this.field939.getMainWindow().getFramebufferWidth(), this.field939.getMainWindow().getFramebufferHeight());
          Framebuffer var10 = var2.method6521("translucent");
          Framebuffer var11 = var2.method6521("itemEntity");
@@ -476,7 +479,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          if (this.field939.getResourcePackList().func_232621_d_().size() > 1) {
             StringTextComponent var6;
             try {
-               var6 = new StringTextComponent(this.field939.getResourceManager().method580(var1).method7765());
+               var6 = new StringTextComponent(this.field939.getResourceManager().getShader(var1).method7765());
             } catch (IOException var8) {
                var6 = null;
             }
@@ -497,11 +500,11 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    private void method859() {
       if (this.field966 != null) {
          this.field966.close();
-         this.field961.method29105();
-         this.field962.method29105();
-         this.field963.method29105();
-         this.field964.method29105();
-         this.field965.method29105();
+         this.field961.deleteFramebuffer();
+         this.field962.deleteFramebuffer();
+         this.field963.deleteFramebuffer();
+         this.field964.deleteFramebuffer();
+         this.field965.deleteFramebuffer();
          this.field966 = null;
          this.field961 = null;
          this.field962 = null;
@@ -515,7 +518,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       if (this.method861()) {
          RenderSystem.enableBlend();
          RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field16000, DestFactor.field12927);
-         this.field959.method29117(this.field939.getMainWindow().getFramebufferWidth(), this.field939.getMainWindow().getFramebufferHeight(), false);
+         this.field959.framebufferRenderExt(this.field939.getMainWindow().getFramebufferWidth(), this.field939.getMainWindow().getFramebufferHeight(), false);
          RenderSystem.disableBlend();
       }
    }
@@ -1136,7 +1139,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             Shaders.method33072();
          }
       } else {
-         GlStateManager.method23714();
+         GlStateManager.disableBlend();
       }
 
       var10.endStartSection("fog");
@@ -1201,17 +1204,17 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       this.field987 = 0;
       this.field1016 = 0;
       if (this.field962 != null) {
-         this.field962.method29119(Minecraft.IS_RUNNING_ON_MAC);
-         this.field962.method29106(this.field939.getFramebuffer());
+         this.field962.framebufferClear(Minecraft.IS_RUNNING_ON_MAC);
+         this.field962.func_237506_a_(this.field939.getFramebuffer());
          this.field939.getFramebuffer().bindFramebuffer(false);
       }
 
       if (this.field964 != null) {
-         this.field964.method29119(Minecraft.IS_RUNNING_ON_MAC);
+         this.field964.framebufferClear(Minecraft.IS_RUNNING_ON_MAC);
       }
 
       if (this.method861()) {
-         this.field959.method29119(Minecraft.IS_RUNNING_ON_MAC);
+         this.field959.framebufferClear(Minecraft.IS_RUNNING_ON_MAC);
          this.field939.getFramebuffer().bindFramebuffer(false);
       }
 
@@ -1465,14 +1468,14 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       if (this.field966 != null) {
          irendertypebuffer$impl.finish(RenderType.method14345());
          irendertypebuffer$impl.method25602();
-         this.field961.method29119(Minecraft.IS_RUNNING_ON_MAC);
-         this.field961.method29106(this.field939.getFramebuffer());
+         this.field961.framebufferClear(Minecraft.IS_RUNNING_ON_MAC);
+         this.field961.func_237506_a_(this.field939.getFramebuffer());
          var10.endStartSection("translucent");
          this.method880(RenderType.method14304(), matrixStackIn, var12, var14, var16);
          var10.endStartSection("string");
          this.method880(RenderType.method14343(), matrixStackIn, var12, var14, var16);
-         this.field963.method29119(Minecraft.IS_RUNNING_ON_MAC);
-         this.field963.method29106(this.field939.getFramebuffer());
+         this.field963.framebufferClear(Minecraft.IS_RUNNING_ON_MAC);
+         this.field963.func_237506_a_(this.field939.getFramebuffer());
          Class4510.field21779.method14231();
          var10.endStartSection("particles");
          this.field939.particles.method1204(matrixStackIn, irendertypebuffer$impl, var8, var6, var2, var20);
@@ -1508,7 +1511,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       RenderSystem.method27888(matrixStackIn.getLast().getMatrix());
       if (this.field939.gameSettings.method37153() != CloudOption.OFF) {
          if (this.field966 != null) {
-            this.field965.method29119(Minecraft.IS_RUNNING_ON_MAC);
+            this.field965.framebufferClear(Minecraft.IS_RUNNING_ON_MAC);
             Class4510.field21781.method14231();
             var10.endStartSection("clouds");
             this.method889(matrixStackIn, var2, var12, var14, var16);
@@ -1530,7 +1533,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       } else {
          RenderSystem.depthMask(false);
          if (Class7944.method26921()) {
-            GlStateManager.method23713(Shaders.method33002());
+            GlStateManager.depthMask(Shaders.method33002());
          }
 
          var10.endStartSection("weather");
@@ -1951,7 +1954,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             }
 
             Matrix4f var5 = var1.getLast().getMatrix();
-            var3.begin(7, DefaultVertexFormats.field43346);
+            var3.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
             int var6 = 40;
             int var7 = 40;
             int var8 = 40;

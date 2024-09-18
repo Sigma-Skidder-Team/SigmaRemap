@@ -48,9 +48,9 @@ public class Class2580 extends LanguageMap {
       return new Class2580(ImmutableMap.copyOf(var4), var5);
    }
 
-   private static void method10783(List<Class1783> var0, Map<String, String> var1) {
-      for (Class1783 var5 : var0) {
-         try (InputStream var6 = var5.method7763()) {
+   private static void method10783(List<JSonShader> var0, Map<String, String> var1) {
+      for (JSonShader var5 : var0) {
+         try (InputStream var6 = var5.getFile()) {
             LanguageMap.func_240593_a_(var6, var1::put);
          } catch (IOException var19) {
             field16800.warn("Failed to load translations from {}", var5, var19);

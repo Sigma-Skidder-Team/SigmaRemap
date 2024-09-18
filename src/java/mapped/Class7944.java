@@ -25,6 +25,7 @@ import javax.imageio.ImageIO;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GLX;
+import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GLAllocation;
@@ -563,7 +564,7 @@ public class Class7944 {
       IResourceManager var2 = method26862();
       if (var2 != null) {
          try {
-            InputStream var3 = var2.method580(new ResourceLocation("optifine/color.properties")).method7763();
+            InputStream var3 = var2.getShader(new ResourceLocation("optifine/color.properties")).getFile();
             if (var3 == null) {
                return;
             }
@@ -831,12 +832,12 @@ public class Class7944 {
    }
 
    public static InputStream method26864(IResourceManager var0, ResourceLocation var1) throws IOException {
-      Class1783 var4 = var0.method580(var1);
-      return var4 != null ? var4.method7763() : null;
+      JSonShader var4 = var0.getShader(var1);
+      return var4 != null ? var4.getFile() : null;
    }
 
-   public static Class1783 method26865(ResourceLocation var0) throws IOException {
-      return field34157.getResourceManager().method580(var0);
+   public static JSonShader method26865(ResourceLocation var0) throws IOException {
+      return field34157.getResourceManager().getShader(var0);
    }
 
    public static boolean method26866(ResourceLocation var0) {
@@ -850,7 +851,7 @@ public class Class7944 {
 
    public static boolean method26867(IResourceManager var0, ResourceLocation var1) {
       try {
-         Class1783 var4 = var0.method580(var1);
+         JSonShader var4 = var0.getShader(var1);
          return var4 != null;
       } catch (IOException var5) {
          return false;

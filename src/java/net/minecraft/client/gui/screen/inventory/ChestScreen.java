@@ -1,7 +1,7 @@
 package net.minecraft.client.gui.screen.inventory;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
-import mapped.*;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.IHasContainer;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ChestContainer;

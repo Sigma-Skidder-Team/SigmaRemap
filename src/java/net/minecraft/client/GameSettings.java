@@ -2122,7 +2122,7 @@ public class GameSettings {
          if (var1 != null) {
             Framebuffer var2 = var1.method951();
             if (var2 != null) {
-               var2.method29119(Minecraft.IS_RUNNING_ON_MAC);
+               var2.framebufferClear(Minecraft.IS_RUNNING_ON_MAC);
             }
          }
       }

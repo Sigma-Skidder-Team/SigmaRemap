@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.realmsclient.client.RealmsClient;
 import com.mojang.realmsclient.dto.RealmsServer;
 import com.mojang.realmsclient.exception.RealmsServiceException;
@@ -8,6 +9,7 @@ import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.realms.RealmsLabel;
 import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.ResourceLocation;
@@ -218,7 +220,7 @@ public class RealmGUI extends RealmsScreen {
       this.mc.getTextureManager().bindTexture(field4521);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var10 = 32.0F;
-      var9.begin(7, DefaultVertexFormats.field43346);
+      var9.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
       var9.pos(0.0, (double)this.height, 0.0)
          .tex(0.0F, (float)(this.height - var7) / 32.0F + 0.0F)
          .color(64, 64, 64, 255)

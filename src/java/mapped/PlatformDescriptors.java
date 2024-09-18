@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.platform.GLX;
+import com.mojang.blaze3d.platform.GlStateManager;
 
 public class PlatformDescriptors {
    private static String[] field41358;

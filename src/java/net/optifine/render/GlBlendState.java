@@ -1,6 +1,6 @@
 package net.optifine.render;
 
-import mapped.GlStateManager;
+import com.mojang.blaze3d.platform.GlStateManager;
 
 public class GlBlendState {
    private boolean field34645;
@@ -114,7 +114,7 @@ public class GlBlendState {
          GlStateManager.method23715();
          GlStateManager.method23717(this.field34646, this.field34647, this.field34648, this.field34649);
       } else {
-         GlStateManager.method23714();
+         GlStateManager.disableBlend();
       }
    }
 }

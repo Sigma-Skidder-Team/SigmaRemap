@@ -6,6 +6,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.IOUtils;
@@ -18,11 +19,11 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Map;
 
-public class Class1647 implements AutoCloseable {
+public class Shader implements AutoCloseable {
    private final Framebuffer field8936;
    private final IResourceManager field8937;
    private final String field8938;
-   public final List<Class1706> field8939 = Lists.newArrayList();
+   public final List<Class1706> elements = Lists.newArrayList();
    private final Map<String, Framebuffer> field8940 = Maps.newHashMap();
    private final List<Framebuffer> field8941 = Lists.newArrayList();
    private Matrix4f field8942;
@@ -31,24 +32,24 @@ public class Class1647 implements AutoCloseable {
    private float field8945;
    private float field8946;
 
-   public Class1647(TextureManager var1, IResourceManager var2, Framebuffer var3, ResourceLocation var4) throws IOException, JsonSyntaxException {
+   public Shader(TextureManager var1, IResourceManager var2, Framebuffer var3, ResourceLocation var4) throws IOException, JsonSyntaxException {
       this.field8937 = var2;
       this.field8936 = var3;
       this.field8945 = 0.0F;
       this.field8946 = 0.0F;
-      this.field8943 = var3.field35732;
-      this.field8944 = var3.field35733;
+      this.field8943 = var3.framebufferWidth;
+      this.field8944 = var3.framebufferHeight;
       this.field8938 = var4.toString();
       this.method6524();
       this.method6517(var1, var4);
    }
 
    private void method6517(TextureManager var1, ResourceLocation var2) throws IOException, JsonSyntaxException {
-      Class1783 var5 = null;
+      JSonShader var5 = null;
 
       try {
-         var5 = this.field8937.method580(var2);
-         JsonObject var6 = JSONUtils.fromJson(new InputStreamReader(var5.method7763(), StandardCharsets.UTF_8));
+         var5 = this.field8937.getShader(var2);
+         JsonObject var6 = JSONUtils.fromJson(new InputStreamReader(var5.getFile(), StandardCharsets.UTF_8));
          if (JSONUtils.method32759(var6, "targets")) {
             JsonArray var22 = var6.getAsJsonArray("targets");
             int var24 = 0;
@@ -153,10 +154,10 @@ public class Class1647 implements AutoCloseable {
                      }
 
                      ResourceLocation var22 = new ResourceLocation("textures/effect/" + var20 + ".png");
-                     Class1783 var23 = null;
+                     JSonShader var23 = null;
 
                      try {
-                        var23 = this.field8937.method580(var22);
+                        var23 = this.field8937.getShader(var22);
                      } catch (FileNotFoundException var33) {
                         throw new JSONException("Render target or texture '" + var20 + "' does not exist");
                      } finally {
@@ -178,9 +179,9 @@ public class Class1647 implements AutoCloseable {
 
                      var11.method7407(var40, var24::getGlTextureId, var25, var26);
                   } else if (var19) {
-                     var11.method7407(var40, var21::method29121, var21.field35730, var21.field35731);
+                     var11.method7407(var40, var21::getDepthBuffer, var21.framebufferTextureWidth, var21.framebufferTextureHeight);
                   } else {
-                     var11.method7407(var40, var21::method29120, var21.field35730, var21.field35731);
+                     var11.method7407(var40, var21::getFramebufferTexture, var21.framebufferTextureWidth, var21.framebufferTextureHeight);
                   }
                } catch (Exception var35) {
                   JSONException var17 = JSONException.method10464(var35);
@@ -214,7 +215,7 @@ public class Class1647 implements AutoCloseable {
    private void method6520(JsonElement var1) throws JSONException {
       JsonObject var4 = JSONUtils.method32781(var1, "uniform");
       String var5 = JSONUtils.getString(var4, "name");
-      Class1708 var6 = this.field8939.get(this.field8939.size() - 1).method7410().method7936(var5);
+      Class1708 var6 = this.elements.get(this.elements.size() - 1).method7410().method7936(var5);
       if (var6 == null) {
          throw new JSONException("Uniform '" + var5 + "' does not exist");
       } else {
@@ -238,7 +239,7 @@ public class Class1647 implements AutoCloseable {
             default:
                break;
             case 1:
-               var6.method7437(var7[0]);
+               var6.getValue(var7[0]);
                break;
             case 2:
                var6.method7438(var7[0], var7[1]);
@@ -268,32 +269,32 @@ public class Class1647 implements AutoCloseable {
    @Override
    public void close() {
       for (Framebuffer var4 : this.field8940.values()) {
-         var4.method29105();
+         var4.deleteFramebuffer();
       }
 
-      for (Class1706 var6 : this.field8939) {
+      for (Class1706 var6 : this.elements) {
          var6.close();
       }
 
-      this.field8939.clear();
+      this.elements.clear();
    }
 
    public Class1706 method6523(String var1, Framebuffer var2, Framebuffer var3) throws IOException {
       Class1706 var6 = new Class1706(this.field8937, var1, var2, var3);
-      this.field8939.add(this.field8939.size(), var6);
+      this.elements.add(this.elements.size(), var6);
       return var6;
    }
 
    private void method6524() {
-      this.field8942 = Matrix4f.method35512((float)this.field8936.field35730, (float)this.field8936.field35731, 0.1F, 1000.0F);
+      this.field8942 = Matrix4f.method35512((float)this.field8936.framebufferTextureWidth, (float)this.field8936.framebufferTextureHeight, 0.1F, 1000.0F);
    }
 
    public void method6525(int var1, int var2) {
-      this.field8943 = this.field8936.field35730;
-      this.field8944 = this.field8936.field35731;
+      this.field8943 = this.field8936.framebufferTextureWidth;
+      this.field8944 = this.field8936.framebufferTextureHeight;
       this.method6524();
 
-      for (Class1706 var6 : this.field8939) {
+      for (Class1706 var6 : this.elements) {
          var6.method7408(this.field8942);
       }
 
@@ -316,7 +317,7 @@ public class Class1647 implements AutoCloseable {
          this.field8945 -= 20.0F;
       }
 
-      for (Class1706 var5 : this.field8939) {
+      for (Class1706 var5 : this.elements) {
          var5.method7409(this.field8945 / 20.0F);
       }
    }

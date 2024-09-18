@@ -24,9 +24,9 @@ public class Class6672 {
    public CompletableFuture<Class9216> method20333(ResourceLocation var1) {
       return this.field29258.computeIfAbsent(var1, var1x -> CompletableFuture.<Class9216>supplyAsync(() -> {
             try (
-               Class1783 var4 = this.field29257.method580(var1x);
-               InputStream var6 = var4.method7763();
-               Class1799 var8 = new Class1799(var6);
+                    JSonShader var4 = this.field29257.getShader(var1x);
+                    InputStream var6 = var4.getFile();
+                    Class1799 var8 = new Class1799(var6);
             ) {
                ByteBuffer var10 = var8.method7872();
                return new Class9216(var10, var8.method7865());
@@ -39,8 +39,8 @@ public class Class6672 {
    public CompletableFuture<Class1798> method20334(ResourceLocation var1, boolean var2) {
       return CompletableFuture.<Class1798>supplyAsync(() -> {
          try {
-            Class1783 var5 = this.field29257.method580(var1);
-            InputStream var6 = var5.method7763();
+            JSonShader var5 = this.field29257.getShader(var1);
+            InputStream var6 = var5.getFile();
             return (Class1798)(var2 ? new Class1800(Class1799::new, var6) : new Class1799(var6));
          } catch (IOException var7) {
             throw new CompletionException(var7);

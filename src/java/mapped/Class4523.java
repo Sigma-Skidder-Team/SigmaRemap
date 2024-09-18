@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.blaze3d.systems.RenderSystem;
+
 public class Class4523 extends Class4510 {
    private final boolean field21828;
    private final boolean field21829;

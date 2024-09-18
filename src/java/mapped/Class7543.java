@@ -9,6 +9,7 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import javax.annotation.Nullable;
 
+import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -77,10 +78,10 @@ public class Class7543 implements Class7544 {
       STBTTFontinfo var4 = null;
       ByteBuffer var5 = null;
 
-      try (Class1783 var6 = var1.method580(new ResourceLocation(this.field32357.getNamespace(), "font/" + this.field32357.getPath()))) {
+      try (JSonShader var6 = var1.getShader(new ResourceLocation(this.field32357.getNamespace(), "font/" + this.field32357.getPath()))) {
          field32356.debug("Loading font {}", this.field32357);
          var4 = STBTTFontinfo.malloc();
-         var5 = Class8535.method30373(var6.method7763());
+         var5 = TextureUtil.method30373(var6.getFile());
          ((Buffer)var5).flip();
          field32356.debug("Reading font {}", this.field32357);
          if (!STBTruetype.stbtt_InitFont(var4, var5)) {

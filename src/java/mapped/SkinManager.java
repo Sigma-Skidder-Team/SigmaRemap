@@ -13,6 +13,7 @@ import com.mojang.authlib.minecraft.MinecraftProfileTexture;
 import com.mojang.authlib.minecraft.MinecraftSessionService;
 import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 import com.mojang.authlib.properties.Property;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
@@ -83,7 +84,7 @@ public class SkinManager {
             }
          }
 
-         Minecraft.getInstance().execute(() -> RenderSystem.method27810(() -> ImmutableList.of(Type.SKIN, Type.CAPE).forEach(var3xx -> {
+         Minecraft.getInstance().execute(() -> RenderSystem.recordRenderCall(() -> ImmutableList.of(Type.SKIN, Type.CAPE).forEach(var3xx -> {
                   if (var6x.containsKey(var3xx)) {
                      this.method38345((MinecraftProfileTexture)var6x.get(var3xx), var3xx, var2);
                   }

@@ -1,5 +1,8 @@
 package mapped;
 
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
@@ -15,7 +18,7 @@ public abstract class Class290 implements AutoCloseable {
    private boolean field1131;
 
    public void method1130(boolean var1, boolean var2) {
-      RenderSystem.assertThread(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       if (!this.field1129 || this.field1126 != var1 || this.field1127 != var2) {
          this.field1129 = true;
          this.field1126 = var1;
@@ -31,16 +34,16 @@ public abstract class Class290 implements AutoCloseable {
             var7 = 9729;
          }
 
-         GlStateManager.method23814(this.getGlTextureId());
-         GlStateManager.method23808(3553, 10241, var6);
-         GlStateManager.method23808(3553, 10240, var7);
+         GlStateManager.bindTexture(this.getGlTextureId());
+         GlStateManager.texParameter(3553, 10241, var6);
+         GlStateManager.texParameter(3553, 10240, var7);
       }
    }
 
    public int getGlTextureId() {
-      RenderSystem.assertThread(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       if (this.field1125 == -1) {
-         this.field1125 = Class8535.method30366();
+         this.field1125 = TextureUtil.generateTextureId();
       }
 
       return this.field1125;
@@ -51,15 +54,15 @@ public abstract class Class290 implements AutoCloseable {
          if (this.field1125 != -1) {
             Class9336.method35310(this, this.field1125);
             this.field1129 = false;
-            Class8535.method30367(this.field1125);
+            TextureUtil.releaseTextureId(this.field1125);
             this.field1125 = -1;
          }
       } else {
-         RenderSystem.method27810(() -> {
+         RenderSystem.recordRenderCall(() -> {
             Class9336.method35310(this, this.field1125);
             this.field1129 = false;
             if (this.field1125 != -1) {
-               Class8535.method30367(this.field1125);
+               TextureUtil.releaseTextureId(this.field1125);
                this.field1125 = -1;
             }
          });
@@ -69,10 +72,10 @@ public abstract class Class290 implements AutoCloseable {
    public abstract void method1090(IResourceManager var1) throws IOException;
 
    public void method1133() {
-      if (RenderSystem.method27804()) {
-         GlStateManager.method23814(this.getGlTextureId());
+      if (RenderSystem.isOnRenderThreadOrInit()) {
+         GlStateManager.bindTexture(this.getGlTextureId());
       } else {
-         RenderSystem.method27810(() -> GlStateManager.method23814(this.getGlTextureId()));
+         RenderSystem.recordRenderCall(() -> GlStateManager.bindTexture(this.getGlTextureId()));
       }
    }
 

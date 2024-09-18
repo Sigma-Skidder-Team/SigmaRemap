@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.blaze3d.platform.GlStateManager;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
 
 import java.util.Properties;
@@ -77,12 +79,12 @@ public class Class7156 {
    }
 
    public void method22328(int var1, int var2) {
-      GlStateManager.method23699();
+      GlStateManager.disableLighting();
       GlStateManager.method23780();
       Tessellator var5 = Tessellator.getInstance();
       BufferBuilder var6 = var5.getBuffer();
       Class7944.method26861().bindTexture(this.field30738);
-      GlStateManager.method23843(1.0F, 1.0F, 1.0F, 1.0F);
+      GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var7 = (float)(16 * this.field30740);
       float var8 = (float)var1 / var7;
       float var9 = (float)var2 / var7;
@@ -110,7 +112,7 @@ public class Class7156 {
             var11 = 0.0F;
       }
 
-      var6.begin(7, DefaultVertexFormats.field43346);
+      var6.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
       var6.pos(0.0, (double)var2, 0.0).tex(var10, var11 + var9).color(255, 255, 255, 255).endVertex();
       var6.pos((double)var1, (double)var2, 0.0).tex(var10 + var8, var11 + var9).color(255, 255, 255, 255).endVertex();
       var6.pos((double)var1, 0.0, 0.0).tex(var10 + var8, var11).color(255, 255, 255, 255).endVertex();

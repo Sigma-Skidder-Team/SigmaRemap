@@ -1,9 +1,11 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.IngameGui;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import org.lwjgl.opengl.GL11;
 
 public class Class8578 {
@@ -75,17 +77,17 @@ public class Class8578 {
       if (field38571 != null && (field38571.field44697 || field38571.field44666)) {
          long var4 = System.nanoTime();
          GlStateManager.method23883(256);
-         GlStateManager.method23830(5889);
+         GlStateManager.matrixMode(5889);
          GlStateManager.method23832();
          int var6 = field38570.getMainWindow().getFramebufferWidth();
          int var7 = field38570.getMainWindow().getFramebufferHeight();
-         GlStateManager.method23701();
-         GlStateManager.method23831();
-         GlStateManager.method23835(0.0, (double)var6, (double)var7, 0.0, 1000.0, 3000.0);
-         GlStateManager.method23830(5888);
+         GlStateManager.enableColorMaterial();
+         GlStateManager.loadIdentity();
+         GlStateManager.ortho(0.0, (double)var6, (double)var7, 0.0, 1000.0, 3000.0);
+         GlStateManager.matrixMode(5888);
          GlStateManager.method23832();
-         GlStateManager.method23831();
-         GlStateManager.method23839(0.0F, 0.0F, -2000.0F);
+         GlStateManager.loadIdentity();
+         GlStateManager.translatef(0.0F, 0.0F, -2000.0F);
          GL11.glLineWidth(1.0F);
          GlStateManager.method23805();
          Tessellator var8 = Tessellator.getInstance();
@@ -114,18 +116,18 @@ public class Class8578 {
          method30659(0, field38581.length, 33333333L, 196, 196, 196, (float)var7, var9);
          method30659(0, field38581.length, 16666666L, 196, 196, 196, (float)var7, var9);
          var8.draw();
-         GlStateManager.method23804();
+         GlStateManager.enableTexture();
          int var22 = var7 - 80;
          int var24 = var7 - 160;
          field38570.fontRenderer.method38801(var0, "30", 2.0F, (float)(var24 + 1), -8947849);
          field38570.fontRenderer.method38801(var0, "30", 1.0F, (float)var24, -3881788);
          field38570.fontRenderer.method38801(var0, "60", 2.0F, (float)(var22 + 1), -8947849);
          field38570.fontRenderer.method38801(var0, "60", 1.0F, (float)var22, -3881788);
-         GlStateManager.method23830(5889);
+         GlStateManager.matrixMode(5889);
          GlStateManager.method23833();
-         GlStateManager.method23830(5888);
+         GlStateManager.matrixMode(5888);
          GlStateManager.method23833();
-         GlStateManager.method23804();
+         GlStateManager.enableTexture();
          float var31 = 1.0F - (float)((double)(System.currentTimeMillis() - Class8777.method31652()) / 1000.0);
          var31 = Class7944.method26832(var31, 0.0F, 1.0F);
          int var13 = (int)(170.0F + var31 * 85.0F);

@@ -102,8 +102,8 @@ public class Class301 implements Class268 {
    }
 
    private static List<String> method1181(IResourceManager var0, ResourceLocation var1) {
-      try (Class1783 var4 = var0.method580(var1)) {
-         return IOUtils.readLines(var4.method7763(), StandardCharsets.UTF_8);
+      try (JSonShader var4 = var0.getShader(var1)) {
+         return IOUtils.readLines(var4.getFile(), StandardCharsets.UTF_8);
       } catch (IOException var18) {
          throw new CompletionException(var18);
       }

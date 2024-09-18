@@ -63,7 +63,7 @@ public class Class218<T extends LivingEntity & Class1041, M extends Class2827<T>
 
    public <K> Class1984 method819(Object2ObjectMap<K, Class1984> var1, String var2, Class2351<K> var3, K var4) {
       return (Class1984)var1.computeIfAbsent(var4, var4x -> {
-         try (Class1783 var7 = this.field861.method580(this.method818(var2, var3.getKey(var4)))) {
+         try (JSonShader var7 = this.field861.getShader(this.method818(var2, var3.getKey(var4)))) {
             Class7469 var9 = var7.<Class7469>method7764(Class7469.field32108);
             if (var9 != null) {
                return var9.method24191();

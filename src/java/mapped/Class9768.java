@@ -48,10 +48,10 @@ public class Class9768<T> {
                ResourceLocation var8 = new ResourceLocation(var6.getNamespace(), var7.substring(this.field45706.length() + 1, var7.length() - field45704));
 
                try {
-                  for (Class1783 var10 : var1.method582(var6)) {
+                  for (JSonShader var10 : var1.method582(var6)) {
                      try (
-                        InputStream var11 = var10.method7763();
-                        BufferedReader var13 = new BufferedReader(new InputStreamReader(var11, StandardCharsets.UTF_8));
+                             InputStream var11 = var10.getFile();
+                             BufferedReader var13 = new BufferedReader(new InputStreamReader(var11, StandardCharsets.UTF_8));
                      ) {
                         JsonObject var15 = JSONUtils.<JsonObject>method32796(field45703, var13, JsonObject.class);
                         if (var15 == null) {

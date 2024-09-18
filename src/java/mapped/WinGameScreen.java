@@ -2,10 +2,13 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import it.unimi.dsi.fastutil.ints.IntSet;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -68,13 +71,13 @@ public class WinGameScreen extends Screen {
       if (this.field7128 == null) {
          this.field7128 = Lists.newArrayList();
          this.field7129 = new IntOpenHashSet();
-         Class1783 var3 = null;
+         JSonShader var3 = null;
 
          try {
             short var4 = 274;
             if (this.field7125) {
-               var3 = this.mc.getResourceManager().method580(new ResourceLocation("texts/end.txt"));
-               InputStream var5 = var3.method7763();
+               var3 = this.mc.getResourceManager().getShader(new ResourceLocation("texts/end.txt"));
+               InputStream var5 = var3.getFile();
                BufferedReader var6 = new BufferedReader(new InputStreamReader(var5, StandardCharsets.UTF_8));
                Random var7 = new Random(8124371L);
 
@@ -100,7 +103,7 @@ public class WinGameScreen extends Screen {
                }
             }
 
-            InputStream var17 = this.mc.getResourceManager().method580(new ResourceLocation("texts/credits.txt")).method7763();
+            InputStream var17 = this.mc.getResourceManager().getShader(new ResourceLocation("texts/credits.txt")).getFile();
             BufferedReader var18 = new BufferedReader(new InputStreamReader(var17, StandardCharsets.UTF_8));
 
             String var19;
@@ -157,7 +160,7 @@ public class WinGameScreen extends Screen {
       var10 = var10 * 96.0F / 255.0F;
       Tessellator var13 = Tessellator.getInstance();
       BufferBuilder var14 = var13.getBuffer();
-      var14.begin(7, DefaultVertexFormats.field43346);
+      var14.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
       var14.pos(0.0, (double)this.height, (double)this.method5702())
          .tex(0.0F, var7 * 0.015625F)
          .color(var10, var10, var10, 1.0F)
@@ -227,7 +230,7 @@ public class WinGameScreen extends Screen {
       int var18 = this.height;
       Tessellator var14 = Tessellator.getInstance();
       BufferBuilder var15 = var14.getBuffer();
-      var15.begin(7, DefaultVertexFormats.field43346);
+      var15.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
       var15.pos(0.0, (double)var18, (double)this.method5702()).tex(0.0F, 1.0F).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
       var15.pos((double)var16, (double)var18, (double)this.method5702()).tex(1.0F, 1.0F).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();
       var15.pos((double)var16, 0.0, (double)this.method5702()).tex(1.0F, 0.0F).color(1.0F, 1.0F, 1.0F, 1.0F).endVertex();

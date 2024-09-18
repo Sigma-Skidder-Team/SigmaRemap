@@ -6,9 +6,12 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.item.ItemStack;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.EXTFramebufferObject;
@@ -1146,14 +1149,14 @@ public class RenderUtil {
 
    public static void method11468() {
       Framebuffer var2 = Minecraft.getInstance().getFramebuffer();
-      if (var2 != null && var2.field35737 > -1) {
+      if (var2 != null && var2.depthBuffer > -1) {
          method11469(var2);
-         var2.field35737 = -1;
+         var2.depthBuffer = -1;
       }
    }
 
    public static void method11469(Framebuffer var0) {
-      EXTFramebufferObject.glDeleteRenderbuffersEXT(var0.field35737);
+      EXTFramebufferObject.glDeleteRenderbuffersEXT(var0.depthBuffer);
       int var3 = EXTFramebufferObject.glGenRenderbuffersEXT();
       EXTFramebufferObject.glBindRenderbufferEXT(36161, var3);
       EXTFramebufferObject.glRenderbufferStorageEXT(36161, 34041, Minecraft.getInstance().mainWindow.getFramebufferWidth(), Minecraft.getInstance().mainWindow.getFramebufferHeight());
@@ -1334,7 +1337,7 @@ public class RenderUtil {
          ? null
          : new double[]{
             (double)(var8.get(0) / GuiManager.portalScaleFactor),
-            (double)(((float) mc.framebuffer.field35733 - var8.get(1)) / GuiManager.portalScaleFactor),
+            (double)(((float) mc.framebuffer.framebufferHeight - var8.get(1)) / GuiManager.portalScaleFactor),
             (double)var8.get(2)
          };
    }

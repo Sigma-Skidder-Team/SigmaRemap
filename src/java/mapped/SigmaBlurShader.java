@@ -10,15 +10,15 @@ import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public class Class1818 implements IResourceManager {
+public class SigmaBlurShader implements IResourceManager {
    @Override
    public Set<String> method579() {
       return BlurEngine.method29975().getResourceManager().method579();
    }
 
    @Override
-   public Class1783 method580(ResourceLocation var1) throws IOException {
-      return (Class1783)(!var1.getPath().equals("jelloblur") ? BlurEngine.method29975().getResourceManager().method580(var1) : new Class1784());
+   public JSonShader getShader(ResourceLocation var1) throws IOException {
+      return (JSonShader)(!var1.getPath().equals("jelloblur") ? BlurEngine.method29975().getResourceManager().getShader(var1) : new JelloBlurJSON());
    }
 
    @Override
@@ -27,7 +27,7 @@ public class Class1818 implements IResourceManager {
    }
 
    @Override
-   public List<Class1783> method582(ResourceLocation var1) throws IOException {
+   public List<JSonShader> method582(ResourceLocation var1) throws IOException {
       return BlurEngine.method29975().getResourceManager().method582(var1);
    }
 

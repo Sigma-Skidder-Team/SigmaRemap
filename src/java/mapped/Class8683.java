@@ -7,6 +7,8 @@ import java.util.Date;
 import java.util.function.Consumer;
 
 import com.mojang.blaze3d.platform.GLX;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
@@ -32,7 +34,7 @@ public class Class8683 {
       if (RenderSystem.isOnRenderThread()) {
          method31253(var0, var1, var2, var3, var4, var5);
       } else {
-         RenderSystem.method27810(() -> method31253(var0, var1, var2, var3, var4, var5));
+         RenderSystem.recordRenderCall(() -> method31253(var0, var1, var2, var3, var4, var5));
       }
    }
 
@@ -52,7 +54,7 @@ public class Class8683 {
          GlStateManager.method23832();
          GlStateManager.method23883(16640);
          var8.getFramebuffer().bindFramebuffer(true);
-         GlStateManager.method23804();
+         GlStateManager.enableTexture();
          var8.gameRenderer.updateCameraAndRender(var8.getRenderPartialTicks(), System.nanoTime(), true);
       }
 
@@ -111,10 +113,10 @@ public class Class8683 {
    }
 
    public static Class1806 method31254(int var0, int var1, Framebuffer var2) {
-      var0 = var2.field35730;
-      var1 = var2.field35731;
+      var0 = var2.framebufferTextureWidth;
+      var1 = var2.framebufferTextureHeight;
       Class1806 var5 = new Class1806(var0, var1, false);
-      RenderSystem.method27865(var2.method29120());
+      RenderSystem.method27865(var2.getFramebufferTexture());
       var5.method7897(0, true);
       var5.method7906();
       return var5;

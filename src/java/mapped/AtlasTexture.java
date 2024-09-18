@@ -3,7 +3,10 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
@@ -68,7 +71,7 @@ public class AtlasTexture extends Class290 implements Class288 {
       this.field1105.clear();
       this.field1105.addAll(var1.field35334);
       field1101.info("Created: {}x{}x{} {}-atlas", var1.field35335, var1.field35336, var1.field35337, this.field1107);
-      Class8535.method30370(this.getGlTextureId(), var1.field35337, var1.field35335, var1.field35336);
+      TextureUtil.method30370(this.getGlTextureId(), var1.field35337, var1.field35335, var1.field35336);
       this.field1118 = var1.field35335;
       this.field1119 = var1.field35336;
       if (this.field1123) {
@@ -114,13 +117,13 @@ public class AtlasTexture extends Class290 implements Class288 {
             }
          }
 
-         GlStateManager.method23814(this.getGlTextureId());
+         GlStateManager.bindTexture(this.getGlTextureId());
       }
 
       if (Class7944.method26921()) {
          List<TextureAtlasSprite> var12 = var1.field35338;
          if (Shaders.field40874) {
-            GlStateManager.method23814(this.method1135().field45440);
+            GlStateManager.bindTexture(this.method1135().field45440);
 
             for (TextureAtlasSprite var16 : var12) {
                TextureAtlasSprite var18 = var16.field9349;
@@ -131,7 +134,7 @@ public class AtlasTexture extends Class290 implements Class288 {
          }
 
          if (Shaders.field40875) {
-            GlStateManager.method23814(this.method1135().field45441);
+            GlStateManager.bindTexture(this.method1135().field45441);
 
             for (TextureAtlasSprite var17 : var12) {
                TextureAtlasSprite var19 = var17.field9350;
@@ -141,7 +144,7 @@ public class AtlasTexture extends Class290 implements Class288 {
             }
          }
 
-         GlStateManager.method23814(this.getGlTextureId());
+         GlStateManager.bindTexture(this.getGlTextureId());
       }
 
       Class9299.method35055(Class9299.field42892, this);
@@ -172,7 +175,7 @@ public class AtlasTexture extends Class290 implements Class288 {
                );
             }
 
-            GlStateManager.method23814(this.getGlTextureId());
+            GlStateManager.bindTexture(this.getGlTextureId());
          }
       }
    }
@@ -302,8 +305,8 @@ public class AtlasTexture extends Class290 implements Class288 {
                ResourceLocation var6x = this.method1096(var8);
 
                Class9431 var12;
-               try (Class1783 var7 = var1.method580(var6x)) {
-                  Class7756 var9 = new Class7756(var7.toString(), var7.method7763());
+               try (JSonShader var7 = var1.getShader(var6x)) {
+                  Class7756 var9 = new Class7756(var7.toString(), var7.getFile());
                   Class7788 var10 = var7.<Class7788>method7764(Class7788.field33411);
                   if (var10 == null) {
                      var10 = Class7788.field33412;
@@ -355,8 +358,8 @@ public class AtlasTexture extends Class290 implements Class288 {
    private TextureAtlasSprite method1095(IResourceManager var1, Class9431 var2, int var3, int var4, int var5, int var6, int var7) {
       ResourceLocation var10 = this.method1096(var2.method36195());
 
-      try (Class1783 var11 = var1.method580(var10)) {
-         Class1806 var13 = Class1806.method7879(var11.method7763());
+      try (JSonShader var11 = var1.getShader(var10)) {
+         Class1806 var13 = Class1806.method7879(var11.getFile());
          TextureAtlasSprite var14 = new TextureAtlasSprite(this, var2, var5, var3, var4, var6, var7, var13);
          var14.method7498(var1);
          return var14;
@@ -415,12 +418,12 @@ public class AtlasTexture extends Class290 implements Class288 {
             }
          }
 
-         GlStateManager.method23814(this.getGlTextureId());
+         GlStateManager.bindTexture(this.getGlTextureId());
       }
 
       if (Class7944.method26921()) {
          if (var3) {
-            GlStateManager.method23814(this.method1135().field45440);
+            GlStateManager.bindTexture(this.method1135().field45440);
 
             for (TextureAtlasSprite var14 : this.field1104) {
                if (var14.field9349 != null && this.method1108(var14) && var14.method7479()) {
@@ -433,7 +436,7 @@ public class AtlasTexture extends Class290 implements Class288 {
          }
 
          if (var4) {
-            GlStateManager.method23814(this.method1135().field45441);
+            GlStateManager.bindTexture(this.method1135().field45441);
 
             for (TextureAtlasSprite var15 : this.field1104) {
                if (var15.field9350 != null && this.method1108(var15) && var15.method7479()) {
@@ -446,7 +449,7 @@ public class AtlasTexture extends Class290 implements Class288 {
          }
 
          if (var3 || var4) {
-            GlStateManager.method23814(this.getGlTextureId());
+            GlStateManager.bindTexture(this.getGlTextureId());
          }
       }
 
@@ -468,7 +471,7 @@ public class AtlasTexture extends Class290 implements Class288 {
       if (RenderSystem.isOnRenderThread()) {
          this.method1097();
       } else {
-         RenderSystem.method27810(this::method1097);
+         RenderSystem.recordRenderCall(this::method1097);
       }
    }
 
@@ -580,9 +583,9 @@ public class AtlasTexture extends Class290 implements Class288 {
          ResourceLocation var9 = this.method1096(var8);
 
          try {
-            Class1783 var10 = var2.method580(var9);
+            JSonShader var10 = var2.getShader(var9);
             if (var10 != null) {
-               InputStream var11 = var10.method7763();
+               InputStream var11 = var10.getFile();
                if (var11 != null) {
                   Dimension var12 = Class8684.method31285(var11, "png");
                   var11.close();

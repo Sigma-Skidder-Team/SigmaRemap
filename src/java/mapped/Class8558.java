@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+
 import java.util.Arrays;
 
 public class Class8558 extends Class8557 {

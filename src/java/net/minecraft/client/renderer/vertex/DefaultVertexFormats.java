@@ -1,6 +1,7 @@
-package mapped;
+package net.minecraft.client.renderer.vertex;
 
 import com.google.common.collect.ImmutableList;
+import mapped.*;
 
 public class DefaultVertexFormats {
    private static String[] field43326;
@@ -29,7 +30,7 @@ public class DefaultVertexFormats {
    public static final Class7831 field43344 = new Class7831(ImmutableList.<Class8209>builder().add(field43327).add(field43329).build());
    public static final Class7831 POSITION_COLOR_TEX = new Class7831(ImmutableList.<Class8209>builder().add(field43327).add(field43328).add(field43329).build());
    /** @deprecated */
-   public static final Class7831 field43346 = new Class7831(ImmutableList.<Class8209>builder().add(field43327).add(field43329).add(field43328).build());
+   public static final Class7831 POSITION_TEX_COLOR = new Class7831(ImmutableList.<Class8209>builder().add(field43327).add(field43329).add(field43328).build());
    public static final Class7831 field43347 = new Class7831(ImmutableList.<Class8209>builder().add(field43327).add(field43328).add(field43329).add(field43331).build());
    /** @deprecated */
    public static final Class7831 field43348 = new Class7831(ImmutableList.<Class8209>builder().add(field43327).add(field43329).add(field43331).add(field43328).build());

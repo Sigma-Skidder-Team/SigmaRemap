@@ -116,8 +116,8 @@ public class GPUWarning extends Class269<Class4678> {
       JsonObject var4 = null;
 
       try (
-         Class1783 var5 = var0.method580(field1040);
-         BufferedReader var7 = new BufferedReader(new InputStreamReader(var5.method7763(), StandardCharsets.UTF_8));
+              JSonShader var5 = var0.getShader(field1040);
+              BufferedReader var7 = new BufferedReader(new InputStreamReader(var5.getFile(), StandardCharsets.UTF_8));
       ) {
          var4 = new JsonParser().parse(var7).getAsJsonObject();
       } catch (IOException | JsonSyntaxException var37) {

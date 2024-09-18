@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.datafixers.util.Pair;
 import org.lwjgl.system.MemoryUtil;
 
@@ -15,7 +17,7 @@ public class WorldVertexBufferUploader {
          Class9105 var4 = (Class9105)var3.getFirst();
          method13896((ByteBuffer)var3.getSecond(), var4.method33953(), var4.method33951(), var4.method33952());
       } else {
-         RenderSystem.method27810(() -> {
+         RenderSystem.recordRenderCall(() -> {
             Pair var3x = var0.method17070();
             Class9105 var4x = (Class9105)var3x.getFirst();
             method13896((ByteBuffer)var3x.getSecond(), var4x.method33953(), var4x.method33951(), var4x.method33952());

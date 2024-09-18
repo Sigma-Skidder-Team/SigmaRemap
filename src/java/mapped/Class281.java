@@ -36,9 +36,9 @@ public abstract class Class281 extends Class269<Map<ResourceLocation, JsonElemen
          ResourceLocation var10 = new ResourceLocation(var8.getNamespace(), var9.substring(var6, var9.length() - field1071));
 
          try (
-            Class1783 var11 = var1.method580(var8);
-            InputStream var13 = var11.method7763();
-            BufferedReader var15 = new BufferedReader(new InputStreamReader(var13, StandardCharsets.UTF_8));
+                 JSonShader var11 = var1.getShader(var8);
+                 InputStream var13 = var11.getFile();
+                 BufferedReader var15 = new BufferedReader(new InputStreamReader(var13, StandardCharsets.UTF_8));
          ) {
             JsonElement var17 = JSONUtils.method32796(this.field1072, var15, JsonElement.class);
             if (var17 != null) {

@@ -12,7 +12,7 @@ import net.minecraft.resources.data.IMetadataSectionSerializer;
 import net.minecraft.util.ResourceLocation;
 import org.apache.commons.io.IOUtils;
 
-public class Class1785 implements Class1783 {
+public class Class1785 implements JSonShader {
    private static String[] field9623;
    private final String field9624;
    private final ResourceLocation field9625;
@@ -34,7 +34,7 @@ public class Class1785 implements Class1783 {
    }
 
    @Override
-   public InputStream method7763() {
+   public InputStream getFile() {
       return this.field9626;
    }
 

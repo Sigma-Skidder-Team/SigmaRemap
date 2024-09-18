@@ -1,7 +1,9 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -237,7 +239,7 @@ public class Class7720 {
       float var12 = var9 * var10 * var11;
       var12 = Class7944.method26832(var12, 0.0F, 1.0F);
       if (!(var12 < 1.0E-4F)) {
-         GlStateManager.method23814(this.field33147);
+         GlStateManager.bindTexture(this.field33147);
          Class6988.method21638(this.field33134, var12);
          GlStateManager.method23832();
          GlStateManager.method23842(var2.getLast().getMatrix());

@@ -9,7 +9,9 @@ import java.util.function.Consumer;
 import java.util.function.LongSupplier;
 import java.util.function.Supplier;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.Version;
@@ -133,8 +135,8 @@ public class GLX {
    public static void method28305(int var0, boolean var1, boolean var2, boolean var3) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GlStateManager.method23805();
-      GlStateManager.method23713(false);
-      Tessellator var6 = RenderSystem.method27937();
+      GlStateManager.depthMask(false);
+      Tessellator var6 = RenderSystem.renderThreadTesselator();
       BufferBuilder var7 = var6.getBuffer();
       GL11.glLineWidth(4.0F);
       var7.begin(1, DefaultVertexFormats.POSITION_COLOR);
@@ -173,8 +175,8 @@ public class GLX {
 
       var6.draw();
       GL11.glLineWidth(1.0F);
-      GlStateManager.method23713(true);
-      GlStateManager.method23804();
+      GlStateManager.depthMask(true);
+      GlStateManager.enableTexture();
    }
 
    public static String method28306(int var0) {

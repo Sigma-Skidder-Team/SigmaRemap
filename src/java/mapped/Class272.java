@@ -36,12 +36,12 @@ public class Class272 extends Class269<Map<ResourceLocation, List<Class1768>>> {
          var2.method22504(var10::toString);
 
          try {
-            for (Class1783 var13 : var1.method582(var8)) {
+            for (JSonShader var13 : var1.method582(var8)) {
                var2.method22504(var13::method7765);
 
                try (
-                  InputStream var14 = var13.method7763();
-                  BufferedReader var16 = new BufferedReader(new InputStreamReader(var14, StandardCharsets.UTF_8));
+                       InputStream var14 = var13.getFile();
+                       BufferedReader var16 = new BufferedReader(new InputStreamReader(var14, StandardCharsets.UTF_8));
                ) {
                   var2.startSection("reading");
                   JsonArray var18 = JSONUtils.method32785(JSONUtils.<JsonObject>method32796(var5, var16, JsonObject.class), "providers");

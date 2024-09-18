@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 
@@ -37,6 +38,6 @@ public class Class295 extends Class293 {
    }
 
    private static Executor method1166(Executor var0) {
-      return var1 -> var0.execute(() -> RenderSystem.method27810(var1::run));
+      return var1 -> var0.execute(() -> RenderSystem.recordRenderCall(var1::run));
    }
 }

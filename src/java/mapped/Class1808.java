@@ -5,6 +5,8 @@ import com.google.common.collect.Maps;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -43,11 +45,11 @@ public class Class1808 implements Class1809, AutoCloseable {
    public Class1808(IResourceManager var1, String var2) throws IOException {
       ResourceLocation var5 = new ResourceLocation("shaders/program/" + var2 + ".json");
       this.field9753 = var2;
-      Class1783 var6 = null;
+      JSonShader var6 = null;
 
       try {
-         var6 = var1.method580(var5);
-         JsonObject var7 = JSONUtils.fromJson(new InputStreamReader(var6.method7763(), StandardCharsets.UTF_8));
+         var6 = var1.getShader(var5);
+         JsonObject var7 = JSONUtils.fromJson(new InputStreamReader(var6.getFile(), StandardCharsets.UTF_8));
          String var29 = JSONUtils.getString(var7, "vertex");
          String var30 = JSONUtils.getString(var7, "fragment");
          JsonArray var10 = JSONUtils.method32786(var7, "samplers", (JsonArray)null);
@@ -140,10 +142,10 @@ public class Class1808 implements Class1809, AutoCloseable {
       Class8144 var5 = var1.method8097().get(var2);
       if (var5 == null) {
          ResourceLocation var6 = new ResourceLocation("shaders/program/" + var2 + var1.method8095());
-         Class1783 var7 = var0.method580(var6);
+         JSonShader var7 = var0.getShader(var6);
 
          try {
-            var5 = Class8144.method28250(var1, var2, var7.method7763(), var7.method7765());
+            var5 = Class8144.method28250(var1, var2, var7.getFile(), var7.method7765());
          } finally {
             IOUtils.closeQuietly(var7);
          }
@@ -229,7 +231,7 @@ public class Class1808 implements Class1809, AutoCloseable {
          if (this.field9746.get(this.field9747.get(var3)) != null) {
             GlStateManager.method23803(33984 + var3);
             GlStateManager.method23805();
-            GlStateManager.method23814(0);
+            GlStateManager.bindTexture(0);
          }
       }
    }
@@ -274,7 +276,7 @@ public class Class1808 implements Class1809, AutoCloseable {
       return this.field9751.get(var1);
    }
 
-   public Class1709 method7937(String var1) {
+   public Class1709 getFromName(String var1) {
       RenderSystem.assertThread(RenderSystem::method27806);
       Class1708 var4 = this.method7936(var1);
       return (Class1709)(var4 != null ? var4 : field9743);

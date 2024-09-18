@@ -6,6 +6,7 @@ import com.mojang.authlib.minecraft.MinecraftProfileTexture.Type;
 import java.util.Map;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.entity.player.PlayerEntity;

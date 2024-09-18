@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.client.renderer.texture.TextureUtil;
+
 public class Class6630 implements Class6627 {
    private int field29164 = -1;
    private String field29165 = null;
@@ -31,7 +33,7 @@ public class Class6630 implements Class6627 {
 
    @Override
    public void method20203() {
-      Class8535.method30367(this.field29166.getGlTextureId());
+      TextureUtil.releaseTextureId(this.field29166.getGlTextureId());
    }
 
    @Override

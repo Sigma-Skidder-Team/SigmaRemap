@@ -3,11 +3,13 @@ package net.minecraft.client.gui.screen;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.renderer.entity.ItemRenderer;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.util.Util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
@@ -316,7 +318,7 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
       this.mc.getTextureManager().bindTexture(field6451);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var6 = 32.0F;
-      var5.begin(7, DefaultVertexFormats.field43346);
+      var5.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
       var5.pos(0.0, (double)this.height, 0.0)
          .tex(0.0F, (float)this.height / 32.0F + (float)var1)
          .color(64, 64, 64, 255)

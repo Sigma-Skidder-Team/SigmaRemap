@@ -3,6 +3,7 @@ package net.minecraft.client;
 import java.util.List;
 import java.util.Optional;
 
+import com.mojang.blaze3d.platform.GlStateManager;
 import mapped.*;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.widget.Widget;
@@ -236,7 +237,7 @@ public abstract class AbstractOption {
          var5.method976();
       } else {
          var0.graphicFanciness = var0.graphicFanciness.method8745();
-         if (var0.graphicFanciness == GraphicsFanciness.FABULOUS && (Class7944.method26921() || !GlStateManager.method23862() || var5.method980())) {
+         if (var0.graphicFanciness == GraphicsFanciness.FABULOUS && (Class7944.method26921() || !GlStateManager.isFabulous() || var5.method980())) {
             var0.graphicFanciness = GraphicsFanciness.field13603;
          }
 
@@ -293,7 +294,7 @@ public abstract class AbstractOption {
       if (Minecraft.isFabulousGraphicsEnabled()) {
          Framebuffer var4 = Minecraft.getInstance().worldRenderer.method951();
          if (var4 != null) {
-            var4.method29119(Minecraft.IS_RUNNING_ON_MAC);
+            var4.framebufferClear(Minecraft.IS_RUNNING_ON_MAC);
          }
       }
    }, (var0, var1) -> var1.method17955(new TranslationTextComponent(var0.cloudOption.method8174())));

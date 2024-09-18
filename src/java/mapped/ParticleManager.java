@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.base.Charsets;
 import com.google.common.collect.*;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.ActiveRenderInfo;
@@ -179,8 +180,8 @@ public class ParticleManager implements Class268 {
       ResourceLocation var6 = new ResourceLocation(var2.getNamespace(), "particles/" + var2.getPath() + ".json");
 
       try (
-         Class1783 var7 = var1.method580(var6);
-         InputStreamReader var9 = new InputStreamReader(var7.method7763(), Charsets.UTF_8);
+              JSonShader var7 = var1.getShader(var6);
+              InputStreamReader var9 = new InputStreamReader(var7.getFile(), Charsets.UTF_8);
       ) {
          Class8532 var11 = Class8532.method30266(JSONUtils.fromJson(var9));
          List<ResourceLocation> var12 = var11.method30265();

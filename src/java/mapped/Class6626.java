@@ -2,6 +2,8 @@ package mapped;
 
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
+
+import com.mojang.blaze3d.platform.GlStateManager;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 
@@ -15,14 +17,14 @@ public class Class6626 implements Class6627 {
       ByteBuffer var6 = BufferUtils.createByteBuffer(var5.length);
       var6.put(var5);
       ((Buffer)var6).flip();
-      GlStateManager.method23814(this.field29151);
+      GlStateManager.bindTexture(this.field29151);
       Class8684.method31292();
       GL11.glTexImage2D(3553, 0, 6407, var1, var2, 0, 6407, 5121, var6);
       GL11.glTexParameteri(3553, 10242, 10497);
       GL11.glTexParameteri(3553, 10243, 10497);
       GL11.glTexParameteri(3553, 10240, 9729);
       GL11.glTexParameteri(3553, 10241, 9729);
-      GlStateManager.method23814(0);
+      GlStateManager.bindTexture(0);
    }
 
    public int method20202() {

@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import net.minecraft.client.renderer.texture.TextureUtil;
 import org.apache.commons.io.IOUtils;
 
 import java.io.*;
@@ -23,7 +24,7 @@ public class Class292 extends Class290 {
          try {
             Class1806 var5 = Class1806.method7879(var4);
             Class9620 var6 = method1144(this.field1134, new Class9620(false, false));
-            Class8535.method30368(this.getGlTextureId(), var5.method7886(), var5.method7887());
+            TextureUtil.method30368(this.getGlTextureId(), var5.method7886(), var5.method7887());
             var5.method7895(0, 0, 0, 0, 0, var5.method7886(), var5.method7887(), var6.method37495(), var6.method37496(), false, true);
          } finally {
             IOUtils.closeQuietly(var4);

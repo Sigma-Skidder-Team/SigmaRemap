@@ -63,8 +63,8 @@ public class Class7546 implements Class7544 {
    @Nullable
    @Override
    public Class1768 method24664(IResourceManager var1) {
-      try (Class1783 var4 = var1.method580(this.field32365)) {
-         Class1806 var6 = Class1806.method7880(Class2237.field14626, var4.method7763());
+      try (JSonShader var4 = var1.getShader(this.field32365)) {
+         Class1806 var6 = Class1806.method7880(Class2237.field14626, var4.getFile());
          int var7 = var6.method7886();
          int var8 = var6.method7887();
          int var9 = var7 / this.field32366.get(0).length;

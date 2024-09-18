@@ -15,6 +15,7 @@ import java.util.List;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.GLAllocation;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

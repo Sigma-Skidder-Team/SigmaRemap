@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.blaze3d.systems.RenderSystem;
+
 import java.util.Locale;
 
 public class Class5869 {

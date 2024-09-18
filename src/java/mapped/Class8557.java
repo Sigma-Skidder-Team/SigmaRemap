@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.Direction;
 
 public class Class8557 {

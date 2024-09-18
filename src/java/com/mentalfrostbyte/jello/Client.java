@@ -21,6 +21,8 @@ import com.mentalfrostbyte.jello.target.FriendManager;
 import com.mentalfrostbyte.jello.unmapped.*;
 import com.mentalfrostbyte.jello.util.FileUtil;
 import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
@@ -123,7 +125,7 @@ public class Client {
         this.waypointsManager = new WaypointsManager();
         this.waypointsManager.register();
         this.field28981 = new BlurEngine();
-        this.field28981.method29970();
+        this.field28981.init();
         this.field28989 = new Class8795();
         this.field28989.method31737();
         GLFW.glfwSetWindowTitle(mc.mainWindow.getHandle(), "Sigma 5.0");

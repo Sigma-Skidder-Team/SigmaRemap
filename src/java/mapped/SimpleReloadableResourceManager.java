@@ -51,12 +51,12 @@ public class SimpleReloadableResourceManager implements IReloadableResourceManag
    }
 
    @Override
-   public Class1783 method580(ResourceLocation var1) throws IOException {
+   public JSonShader getShader(ResourceLocation var1) throws IOException {
       IResourceManager var4 = this.field724.get(var1.getNamespace());
       if (var4 == null) {
          throw new FileNotFoundException(var1.toString());
       } else {
-         return var4.method580(var1);
+         return var4.getShader(var1);
       }
    }
 
@@ -67,7 +67,7 @@ public class SimpleReloadableResourceManager implements IReloadableResourceManag
    }
 
    @Override
-   public List<Class1783> method582(ResourceLocation var1) throws IOException {
+   public List<JSonShader> method582(ResourceLocation var1) throws IOException {
       IResourceManager var4 = this.field724.get(var1.getNamespace());
       if (var4 == null) {
          throw new FileNotFoundException(var1.toString());

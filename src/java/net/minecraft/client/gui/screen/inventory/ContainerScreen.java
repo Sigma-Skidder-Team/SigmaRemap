@@ -2,6 +2,7 @@ package net.minecraft.client.gui.screen.inventory;
 
 import com.google.common.collect.Sets;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.datafixers.util.Pair;
 import mapped.*;
 import net.minecraft.client.Minecraft;

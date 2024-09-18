@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.blaze3d.platform.GlStateManager;
+
 // $VF: synthetic class
 public class Class9579 {
    private static String[] field44780;

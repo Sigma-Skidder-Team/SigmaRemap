@@ -11,6 +11,8 @@ import com.mentalfrostbyte.jello.settings.ColorSetting;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;

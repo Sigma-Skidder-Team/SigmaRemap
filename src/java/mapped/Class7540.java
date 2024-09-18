@@ -1,6 +1,8 @@
 package mapped;
 
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 
 public class Class7540 {
    private static String[] field32352;

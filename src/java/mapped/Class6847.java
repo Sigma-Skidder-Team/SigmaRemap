@@ -1,5 +1,8 @@
 package mapped;
 
+import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+
 public final class Class6847 implements Class6843 {
    @Override
    public void method20824(BufferBuilder var1, TextureManager var2) {

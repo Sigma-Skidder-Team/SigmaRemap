@@ -14,6 +14,7 @@ import com.mentalfrostbyte.jello.unmapped.Class8433;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
+import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;

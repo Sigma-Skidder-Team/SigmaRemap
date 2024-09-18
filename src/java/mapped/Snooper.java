@@ -1,7 +1,6 @@
 package mapped;
 
 import com.google.common.collect.Maps;
-import com.mentalfrostbyte.jello.Client;
 import net.minecraft.client.Minecraft;
 
 import java.net.MalformedURLException;
@@ -46,7 +45,7 @@ public class Snooper {
       this.field34386.fillSnooper(this);
       long var3 = System.currentTimeMillis() - field34391;
       if (var3 > 992120L) {
-         Minecraft.getInstance().framebuffer.method29105();
+         Minecraft.getInstance().framebuffer.deleteFramebuffer();
          Minecraft.getInstance().gameSettings.field44727 = false;
       }
    }

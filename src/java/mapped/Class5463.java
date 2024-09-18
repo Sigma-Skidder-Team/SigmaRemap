@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GLX;
+import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.LivingEntity;
@@ -99,7 +100,7 @@ public class Class5463 {
    }
 
    public static void method17156(FirstPersonRenderer var0, float var1, MatrixStack var2, Class7735 var3, ClientPlayerEntity var4, int var5, boolean var6) {
-      GlStateManager.method23713(true);
+      GlStateManager.depthMask(true);
       if (var6) {
          GlStateManager.method23712(519);
          var2.push();
@@ -130,14 +131,14 @@ public class Class5463 {
          Shaders.method33021(Shaders.field40827);
          if (Shaders.field40827.method26485() == Shaders.field40823.method26485()) {
             Shaders.method33020(Shaders.field40979);
-            GlStateManager.method23713(false);
+            GlStateManager.depthMask(false);
          }
       }
    }
 
    public static void method17159() {
       if (Shaders.field40605) {
-         GlStateManager.method23713(true);
+         GlStateManager.depthMask(true);
          Shaders.method33021(Shaders.field40819);
       }
    }
@@ -182,10 +183,10 @@ public class Class5463 {
          Vector3d var12 = var1.getPos();
          var11.method25119(var12.x, var12.y, var12.z);
          GlStateManager.method23818(7425);
-         GlStateManager.method23711();
+         GlStateManager.enableDepthTest();
          GlStateManager.method23712(515);
-         GlStateManager.method23713(true);
-         GlStateManager.method23822(true, true, true, true);
+         GlStateManager.depthMask(true);
+         GlStateManager.colorMask(true, true, true, true);
          GlStateManager.method23878(new GlCullState(false));
          GlStateManager.method23874(new GlBlendState(false));
          var8.getProfiler().endStartSection("shadow prepareterrain");
@@ -198,7 +199,7 @@ public class Class5463 {
          double var14 = var12.getX();
          double var16 = var12.getY();
          double var18 = var12.getZ();
-         GlStateManager.method23830(5888);
+         GlStateManager.matrixMode(5888);
          GlStateManager.method23832();
          GlStateManager.disableAlphaTest();
          var9.method880(Class9025.field41288, var10, var14, var16, var18);
@@ -212,7 +213,7 @@ public class Class5463 {
          var8.getTextureManager().getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1137();
          GlStateManager.method23818(7424);
          GlStateManager.method23697(516, 0.1F);
-         GlStateManager.method23830(5888);
+         GlStateManager.matrixMode(5888);
          GlStateManager.method23833();
          GlStateManager.method23832();
          var8.getProfiler().endStartSection("shadow entities");
@@ -285,10 +286,10 @@ public class Class5463 {
          var22.method25602();
          Shaders.method33093();
          Shaders.method32984("shadow entities");
-         GlStateManager.method23830(5888);
+         GlStateManager.matrixMode(5888);
          GlStateManager.method23833();
-         GlStateManager.method23713(true);
-         GlStateManager.method23714();
+         GlStateManager.depthMask(true);
+         GlStateManager.disableBlend();
          GlStateManager.method23879();
          GlStateManager.method23787();
          GlStateManager.method23717(770, 771, 1, 0);
@@ -301,8 +302,8 @@ public class Class5463 {
             GlStateManager.method23803(33984);
          }
 
-         GlStateManager.method23714();
-         GlStateManager.method23713(true);
+         GlStateManager.disableBlend();
+         GlStateManager.depthMask(true);
          var8.getTextureManager().bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
          GlStateManager.method23818(7425);
          Shaders.method32984("shadow pre-translucent");
@@ -317,9 +318,9 @@ public class Class5463 {
 
          GlStateManager.method23875();
          GlStateManager.method23818(7424);
-         GlStateManager.method23713(true);
+         GlStateManager.depthMask(true);
          GlStateManager.method23787();
-         GlStateManager.method23714();
+         GlStateManager.disableBlend();
          GL30.glFlush();
          Shaders.method32984("shadow flush");
          Shaders.field40609 = false;
@@ -328,14 +329,14 @@ public class Class5463 {
             if (Shaders.field40804 >= 1) {
                if (Shaders.field40858[0]) {
                   GlStateManager.method23803(33988);
-                  GlStateManager.method23814(Shaders.field40975.get(0));
+                  GlStateManager.bindTexture(Shaders.field40975.get(0));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, ! Shaders.field40859[0] ? 9987 : 9984);
                }
 
                if (Shaders.field40804 >= 2 && Shaders.field40858[1]) {
                   GlStateManager.method23803(33989);
-                  GlStateManager.method23814(Shaders.field40975.get(1));
+                  GlStateManager.bindTexture(Shaders.field40975.get(1));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, ! Shaders.field40859[1] ? 9987 : 9984);
                }
@@ -346,14 +347,14 @@ public class Class5463 {
             if (Shaders.field40803 >= 1) {
                if (Shaders.field40860[0]) {
                   GlStateManager.method23803(33997);
-                  GlStateManager.method23814(Shaders.field40974.get(0));
+                  GlStateManager.bindTexture(Shaders.field40974.get(0));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, ! Shaders.field40861[0] ? 9987 : 9984);
                }
 
                if (Shaders.field40803 >= 2 && Shaders.field40860[1]) {
                   GlStateManager.method23803(33998);
-                  GlStateManager.method23814(Shaders.field40974.get(1));
+                  GlStateManager.bindTexture(Shaders.field40974.get(1));
                   GL30.glGenerateMipmap(3553);
                   GL30.glTexParameteri(3553, 10241, ! Shaders.field40861[1] ? 9987 : 9984);
                }
@@ -488,7 +489,7 @@ public class Class5463 {
    }
 
    public static void method17171() {
-      GlStateManager.method23714();
+      GlStateManager.disableBlend();
    }
 
    public static void method17172() {
@@ -509,7 +510,7 @@ public class Class5463 {
       if (! Shaders.field40609 && Shaders.field40848.method26485() == 0) {
          return false;
       } else {
-         GlStateManager.method23699();
+         GlStateManager.disableLighting();
          Class8892 var9 = var3.getLast();
          Matrix4f var10 = var9.getMatrix();
          Class8967 var11 = var9.method32362();

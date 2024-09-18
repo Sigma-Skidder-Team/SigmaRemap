@@ -1,5 +1,6 @@
 package mapped;
 
+import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
@@ -756,17 +757,17 @@ public class Class7992 {
                            float var14 = var13.method28030(var8);
                            if (!var7) {
                               var7 = true;
-                              GlStateManager.method23713(false);
+                              GlStateManager.depthMask(false);
                               GlStateManager.method23712(514);
-                              GlStateManager.method23699();
-                              GlStateManager.method23830(5890);
+                              GlStateManager.disableLighting();
+                              GlStateManager.matrixMode(5890);
                            }
 
                            Class6988.method21638(var13.field34784, 1.0F);
                            GlStateManager.method23832();
                            GlStateManager.method23837(var14, var14, var14);
                            float var15 = var13.field34785 * (float)(Util.milliTime() % 3000L) / 3000.0F / 8.0F;
-                           GlStateManager.method23839(var15, 0.0F, 0.0F);
+                           GlStateManager.translatef(var15, 0.0F, 0.0F);
                            GlStateManager.method23836(var13.field34786, 0.0F, 0.0F, 1.0F);
                            GlStateManager.method23833();
                         }
@@ -779,11 +780,11 @@ public class Class7992 {
                GlStateManager.method23696();
                GlStateManager.method23715();
                GlStateManager.method23716(770, 771);
-               GlStateManager.method23843(1.0F, 1.0F, 1.0F, 1.0F);
-               GlStateManager.method23830(5888);
+               GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+               GlStateManager.matrixMode(5888);
                GlStateManager.method23698();
                GlStateManager.method23712(515);
-               GlStateManager.method23713(true);
+               GlStateManager.depthMask(true);
                var8.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
             }
 
@@ -832,19 +833,19 @@ public class Class7992 {
 
                               GlStateManager.method23715();
                               GlStateManager.method23712(514);
-                              GlStateManager.method23713(false);
+                              GlStateManager.depthMask(false);
                            }
 
                            Class6988.method21638(var20.field34784, 1.0F);
-                           GlStateManager.method23699();
-                           GlStateManager.method23830(5890);
-                           GlStateManager.method23831();
+                           GlStateManager.disableLighting();
+                           GlStateManager.matrixMode(5890);
+                           GlStateManager.loadIdentity();
                            GlStateManager.method23836(var20.field34786, 0.0F, 0.0F, 1.0F);
                            float var22 = var21 / 8.0F;
                            GlStateManager.method23837(var22, var22 / 2.0F, var22);
                            float var23 = var20.field34785 * (float)(Util.milliTime() % 3000L) / 3000.0F / 8.0F;
-                           GlStateManager.method23839(0.0F, var23, 0.0F);
-                           GlStateManager.method23830(5888);
+                           GlStateManager.translatef(0.0F, var23, 0.0F);
+                           GlStateManager.matrixMode(5888);
                         }
                      }
                   }
@@ -855,14 +856,14 @@ public class Class7992 {
                GlStateManager.method23696();
                GlStateManager.method23715();
                GlStateManager.method23716(770, 771);
-               GlStateManager.method23843(1.0F, 1.0F, 1.0F, 1.0F);
-               GlStateManager.method23830(5890);
-               GlStateManager.method23831();
-               GlStateManager.method23830(5888);
+               GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+               GlStateManager.matrixMode(5890);
+               GlStateManager.loadIdentity();
+               GlStateManager.matrixMode(5888);
                GlStateManager.method23698();
-               GlStateManager.method23713(true);
+               GlStateManager.depthMask(true);
                GlStateManager.method23712(515);
-               GlStateManager.method23714();
+               GlStateManager.disableBlend();
                if (Class7944.method26921()) {
                   Class5463.method17173();
                }

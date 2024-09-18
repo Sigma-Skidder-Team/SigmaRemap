@@ -1,6 +1,6 @@
 package net.optifine.render;
 
-import mapped.GlStateManager;
+import com.mojang.blaze3d.platform.GlStateManager;
 
 public class GlAlphaState {
    private boolean field32881;

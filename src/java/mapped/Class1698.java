@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.datafixers.util.Pair;
 import java.nio.ByteBuffer;
 import java.util.concurrent.CompletableFuture;
@@ -26,7 +28,7 @@ public class Class1698 implements AutoCloseable {
       if (RenderSystem.isOnRenderThread()) {
          this.method7305(var1);
       } else {
-         RenderSystem.method27810(() -> this.method7305(var1));
+         RenderSystem.recordRenderCall(() -> this.method7305(var1));
       }
    }
 
@@ -35,7 +37,7 @@ public class Class1698 implements AutoCloseable {
          this.method7305(var1);
          return CompletableFuture.<Void>completedFuture((Void)null);
       } else {
-         return CompletableFuture.runAsync(() -> this.method7305(var1), var0 -> RenderSystem.method27810(var0::run));
+         return CompletableFuture.runAsync(() -> this.method7305(var1), var0 -> RenderSystem.recordRenderCall(var0::run));
       }
    }
 

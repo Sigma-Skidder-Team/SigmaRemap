@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.client.renderer.texture;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -10,17 +10,22 @@ import java.nio.channels.Channels;
 import java.nio.channels.FileChannel;
 import java.nio.channels.ReadableByteChannel;
 import java.util.concurrent.ThreadLocalRandom;
+
+import mapped.Class2083;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
+import mapped.SharedConstants;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.system.MemoryUtil;
 
-public class Class8535 {
+public class TextureUtil {
    private static String[] field38381;
    private static final Logger field38382 = LogManager.getLogger();
 
-   public static int method30366() {
-      RenderSystem.assertThread(RenderSystem::method27804);
+   public static int generateTextureId() {
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       if (!SharedConstants.developmentMode) {
          return GlStateManager.method23810();
       } else {
@@ -32,8 +37,8 @@ public class Class8535 {
       }
    }
 
-   public static void method30367(int var0) {
-      RenderSystem.assertThread(RenderSystem::method27804);
+   public static void releaseTextureId(int var0) {
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       GlStateManager.method23812(var0);
    }
 
@@ -50,23 +55,23 @@ public class Class8535 {
    }
 
    public static void method30371(Class2083 var0, int var1, int var2, int var3, int var4) {
-      RenderSystem.assertThread(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       method30372(var1);
       if (var2 >= 0) {
-         GlStateManager.method23808(3553, 33085, var2);
-         GlStateManager.method23808(3553, 33082, 0);
-         GlStateManager.method23808(3553, 33083, var2);
+         GlStateManager.texParameter(3553, 33085, var2);
+         GlStateManager.texParameter(3553, 33082, 0);
+         GlStateManager.texParameter(3553, 33083, var2);
          GlStateManager.method23807(3553, 34049, 0.0F);
       }
 
       for (int var7 = 0; var7 <= var2; var7++) {
-         GlStateManager.method23815(3553, var7, var0.method8738(), var3 >> var7, var4 >> var7, 0, 6408, 5121, (IntBuffer)null);
+         GlStateManager.texImage2D(3553, var7, var0.method8738(), var3 >> var7, var4 >> var7, 0, 6408, 5121, (IntBuffer)null);
       }
    }
 
    private static void method30372(int var0) {
-      RenderSystem.assertThread(RenderSystem::method27804);
-      GlStateManager.method23814(var0);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
+      GlStateManager.bindTexture(var0);
    }
 
    public static ByteBuffer method30373(InputStream var0) throws IOException {

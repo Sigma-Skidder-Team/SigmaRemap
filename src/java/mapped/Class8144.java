@@ -2,6 +2,10 @@ package mapped;
 
 import java.io.IOException;
 import java.io.InputStream;
+
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.renderer.texture.TextureUtil;
 import org.apache.commons.lang3.StringUtils;
 
 public class Class8144 {
@@ -37,7 +41,7 @@ public class Class8144 {
 
    public static Class8144 method28250(Class1853 var0, String var1, InputStream var2, String var3) throws IOException {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      String var6 = Class8535.method30374(var2);
+      String var6 = TextureUtil.method30374(var2);
       if (var6 != null) {
          int var7 = GlStateManager.method23724(Class1853.method8098(var0));
          GlStateManager.method23725(var7, var6);

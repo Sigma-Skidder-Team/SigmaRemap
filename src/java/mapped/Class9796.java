@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.blaze3d.platform.GlStateManager;
+
 @Deprecated
 public class Class9796 {
    private static String[] field45813;

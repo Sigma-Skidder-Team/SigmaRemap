@@ -1,5 +1,7 @@
 package mapped;
 
+import com.mojang.blaze3d.platform.GlStateManager;
+
 import java.util.function.IntConsumer;
 
 public enum Class2142 {

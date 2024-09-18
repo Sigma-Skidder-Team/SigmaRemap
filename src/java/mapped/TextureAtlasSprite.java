@@ -1,7 +1,9 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.datafixers.util.Pair;
+import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
@@ -373,7 +375,7 @@ public class TextureAtlasSprite implements AutoCloseable {
                if (RenderSystem.isOnRenderThread()) {
                   Class1816.method8061(this.field9330);
                } else {
-                  RenderSystem.method27810(() -> Class1816.method8061(this.field9330));
+                  RenderSystem.recordRenderCall(() -> Class1816.method8061(this.field9330));
                }
             }
          } else {
@@ -507,8 +509,8 @@ public class TextureAtlasSprite implements AutoCloseable {
 
    public void method7484() {
       if (this.field9344 < 0) {
-         this.field9344 = Class8535.method30366();
-         Class8535.method30370(this.field9344, this.field9348, this.method7457(), this.method7458());
+         this.field9344 = TextureUtil.generateTextureId();
+         TextureUtil.method30370(this.field9344, this.field9348, this.method7457(), this.method7458());
          Class8684.method31276();
       }
 
@@ -517,7 +519,7 @@ public class TextureAtlasSprite implements AutoCloseable {
 
    public void method7485() {
       if (this.field9344 >= 0) {
-         Class8535.method30367(this.field9344);
+         TextureUtil.releaseTextureId(this.field9344);
          this.field9344 = -1;
       }
    }
@@ -571,9 +573,9 @@ public class TextureAtlasSprite implements AutoCloseable {
       ResourceLocation var6 = this.field9324.method1096(var5);
       TextureAtlasSprite var7 = null;
       if (this.field9359.method581(var6)) {
-         try (Class1783 var8 = this.field9359.method580(var6)) {
-            Class1783 var10 = this.field9359.method580(var6);
-            Class7756 var11 = new Class7756(var6.toString(), var10.method7763());
+         try (JSonShader var8 = this.field9359.getShader(var6)) {
+            JSonShader var10 = this.field9359.getShader(var6);
+            Class7756 var11 = new Class7756(var6.toString(), var10.getFile());
             Class7788 var12 = var8.<Class7788>method7764(Class7788.field33411);
             if (var12 == null) {
                var12 = Class7788.field33412;
@@ -581,7 +583,7 @@ public class TextureAtlasSprite implements AutoCloseable {
 
             Pair var13 = var12.method25807(var11.field33321, var11.field33322);
             Class9431 var14 = new Class9431(var5, (Integer)var13.getFirst(), (Integer)var13.getSecond(), var12);
-            Class1806 var15 = Class1806.method7879(var8.method7763());
+            Class1806 var15 = Class1806.method7879(var8.getFile());
             if (var15.method7886() != this.method7457()) {
                Class1806 var16 = Class8684.method31279(var15, this.method7457());
                if (var16 != var15) {

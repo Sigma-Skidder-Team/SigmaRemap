@@ -15,6 +15,8 @@ import javax.annotation.Nullable;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mojang.blaze3d.platform.GLX;
+import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.renderer.texture.TextureUtil;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.PointerBuffer;
@@ -236,7 +238,7 @@ public final class MainWindow implements AutoCloseable {
 
       ByteBuffer var8;
       try {
-         var7 = Class8535.method30373(var1);
+         var7 = TextureUtil.method30373(var1);
          ((java.nio.Buffer)var7).rewind();
          var8 = STBImage.stbi_load_from_memory(var7, var2, var3, var4, 0);
       } finally {
@@ -287,7 +289,7 @@ public final class MainWindow implements AutoCloseable {
    }
 
    public void setVsync(boolean var1) {
-      RenderSystem.assertThread(RenderSystem::method27804);
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       this.vsync = var1;
       GLFW.glfwSwapInterval(!var1 ? 0 : 1);
    }

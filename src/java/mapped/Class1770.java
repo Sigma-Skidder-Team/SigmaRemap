@@ -29,8 +29,8 @@ public class Class1770 implements Class1768 {
          ResourceLocation var8 = this.method7743(var7);
 
          try (
-            Class1783 var9 = this.field9587.method580(var8);
-            Class1806 var11 = Class1806.method7880(Class2237.field14626, var9.method7763());
+                 JSonShader var9 = this.field9587.getShader(var8);
+                 Class1806 var11 = Class1806.method7880(Class2237.field14626, var9.getFile());
          ) {
             if (var11.method7886() == 256 && var11.method7887() == 256) {
                for (int var13 = 0; var13 < 256; var13++) {
@@ -92,8 +92,8 @@ public class Class1770 implements Class1768 {
 
    @Nullable
    private Class1806 method7744(ResourceLocation var1) {
-      try (Class1783 var4 = this.field9587.method580(var1)) {
-         return Class1806.method7880(Class2237.field14626, var4.method7763());
+      try (JSonShader var4 = this.field9587.getShader(var1)) {
+         return Class1806.method7880(Class2237.field14626, var4.getFile());
       } catch (IOException var18) {
          field9586.error("Couldn't load texture {}", var1, var18);
          return null;

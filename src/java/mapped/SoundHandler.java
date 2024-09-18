@@ -46,12 +46,12 @@ public class SoundHandler extends Class269<Class8657> {
          var2.startSection(var7);
 
          try {
-            for (Class1783 var9 : var1.method582(new ResourceLocation(var7, "sounds.json"))) {
+            for (JSonShader var9 : var1.method582(new ResourceLocation(var7, "sounds.json"))) {
                var2.startSection(var9.method7765());
 
                try (
-                  InputStream var10 = var9.method7763();
-                  InputStreamReader var12 = new InputStreamReader(var10, StandardCharsets.UTF_8);
+                       InputStream var10 = var9.getFile();
+                       InputStreamReader var12 = new InputStreamReader(var10, StandardCharsets.UTF_8);
                ) {
                   var2.startSection("parse");
                   Map<String, Class9304> var14 = JSONUtils.method32794(field1053, var12, field1054);

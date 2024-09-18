@@ -1,146 +1,152 @@
 package mapped;
 
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.renderer.texture.TextureUtil;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.client.shader.FramebufferConstants;
+
 import java.nio.IntBuffer;
 
 public class Framebuffer {
-   public int field35730;
-   public int field35731;
-   public int field35732;
-   public int field35733;
-   public final boolean field35734;
-   public int field35735;
-   private int field35736;
-   public int field35737;
-   public final float[] field35738;
-   public int field35739;
+   public int framebufferTextureWidth;
+   public int framebufferTextureHeight;
+   public int framebufferWidth;
+   public int framebufferHeight;
+   public final boolean useDepth;
+   public int framebufferObject;
+   private int framebufferTexture;
+   public int depthBuffer;
+   public final float[] framebufferColor;
+   public int framebufferFilter;
 
    public Framebuffer(int var1, int var2, boolean var3, boolean var4) {
-      RenderSystem.assertThread(RenderSystem::method27804);
-      this.field35734 = var3;
-      this.field35735 = -1;
-      this.field35736 = -1;
-      this.field35737 = -1;
-      this.field35738 = new float[4];
-      this.field35738[0] = 1.0F;
-      this.field35738[1] = 1.0F;
-      this.field35738[2] = 1.0F;
-      this.field35738[3] = 0.0F;
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
+      this.useDepth = var3;
+      this.framebufferObject = -1;
+      this.framebufferTexture = -1;
+      this.depthBuffer = -1;
+      this.framebufferColor = new float[4];
+      this.framebufferColor[0] = 1.0F;
+      this.framebufferColor[1] = 1.0F;
+      this.framebufferColor[2] = 1.0F;
+      this.framebufferColor[3] = 0.0F;
       this.resize(var1, var2, var4);
    }
 
    public void resize(int var1, int var2, boolean var3) {
       if (RenderSystem.isOnRenderThread()) {
-         this.method29104(var1, var2, var3);
+         this.resizeRaw(var1, var2, var3);
       } else {
-         RenderSystem.method27810(() -> this.method29104(var1, var2, var3));
+         RenderSystem.recordRenderCall(() -> this.resizeRaw(var1, var2, var3));
       }
    }
 
-   private void method29104(int var1, int var2, boolean var3) {
-      RenderSystem.assertThread(RenderSystem::method27804);
-      GlStateManager.method23711();
-      if (this.field35735 >= 0) {
-         this.method29105();
+   private void resizeRaw(int var1, int var2, boolean var3) {
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
+      GlStateManager.enableDepthTest();
+      if (this.framebufferObject >= 0) {
+         this.deleteFramebuffer();
       }
 
-      this.method29107(var1, var2, var3);
-      GlStateManager.method23751(Class8821.field39775, 0);
+      this.createBuffers(var1, var2, var3);
+      GlStateManager.bindFramebuffer(FramebufferConstants.GL_FRAMEBUFFER, 0);
    }
 
-   public void method29105() {
-      RenderSystem.assertThread(RenderSystem::method27804);
-      this.method29111();
+   public void deleteFramebuffer() {
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
+      this.unbindFramebufferTexture();
       this.unbindFramebuffer();
-      if (this.field35737 > -1) {
-         Class8535.method30367(this.field35737);
-         this.field35737 = -1;
+      if (this.depthBuffer > -1) {
+         TextureUtil.releaseTextureId(this.depthBuffer);
+         this.depthBuffer = -1;
       }
 
-      if (this.field35736 > -1) {
-         Class8535.method30367(this.field35736);
-         this.field35736 = -1;
+      if (this.framebufferTexture > -1) {
+         TextureUtil.releaseTextureId(this.framebufferTexture);
+         this.framebufferTexture = -1;
       }
 
-      if (this.field35735 > -1) {
-         GlStateManager.method23751(Class8821.field39775, 0);
-         GlStateManager.method23754(this.field35735);
-         this.field35735 = -1;
+      if (this.framebufferObject > -1) {
+         GlStateManager.bindFramebuffer(FramebufferConstants.GL_FRAMEBUFFER, 0);
+         GlStateManager.deleteFramebuffers(this.framebufferObject);
+         this.framebufferObject = -1;
       }
    }
 
-   public void method29106(Framebuffer var1) {
-      RenderSystem.assertThread(RenderSystem::method27804);
-      if (!GlStateManager.method23862()) {
-         GlStateManager.method23751(Class8821.field39775, this.field35735);
-         int var4 = GlStateManager.method23752();
+   public void func_237506_a_(Framebuffer var1) {
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
+      if (!GlStateManager.isFabulous()) {
+         GlStateManager.bindFramebuffer(FramebufferConstants.GL_FRAMEBUFFER, this.framebufferObject);
+         int var4 = GlStateManager.getFrameBufferAttachmentParam();
          if (var4 != 0) {
-            int var5 = GlStateManager.method23758();
-            GlStateManager.method23814(var4);
-            GlStateManager.method23751(Class8821.field39775, var1.field35735);
-            GlStateManager.method23750(3553, 0, 0, 0, 0, 0, Math.min(this.field35730, var1.field35730), Math.min(this.field35731, var1.field35731));
-            GlStateManager.method23814(var5);
+            int var5 = GlStateManager.getActiveTextureId();
+            GlStateManager.bindTexture(var4);
+            GlStateManager.bindFramebuffer(FramebufferConstants.GL_FRAMEBUFFER, var1.framebufferObject);
+            GlStateManager.copySubImage(3553, 0, 0, 0, 0, 0, Math.min(this.framebufferTextureWidth, var1.framebufferTextureWidth), Math.min(this.framebufferTextureHeight, var1.framebufferTextureHeight));
+            GlStateManager.bindTexture(var5);
          }
       } else {
-         GlStateManager.method23751(36008, var1.field35735);
-         GlStateManager.method23751(36009, this.field35735);
-         GlStateManager.method23753(0, 0, var1.field35730, var1.field35731, 0, 0, this.field35730, this.field35731, 256, 9728);
+         GlStateManager.bindFramebuffer(36008, var1.framebufferObject);
+         GlStateManager.bindFramebuffer(36009, this.framebufferObject);
+         GlStateManager.blitFramebuffer(0, 0, var1.framebufferTextureWidth, var1.framebufferTextureHeight, 0, 0, this.framebufferTextureWidth, this.framebufferTextureHeight, 256, 9728);
       }
 
-      GlStateManager.method23751(Class8821.field39775, 0);
+      GlStateManager.bindFramebuffer(FramebufferConstants.GL_FRAMEBUFFER, 0);
    }
 
-   public void method29107(int var1, int var2, boolean var3) {
-      RenderSystem.assertThread(RenderSystem::method27804);
-      this.field35732 = var1;
-      this.field35733 = var2;
-      this.field35730 = var1;
-      this.field35731 = var2;
-      this.field35735 = GlStateManager.method23755();
-      this.field35736 = Class8535.method30366();
-      if (this.field35734) {
-         this.field35737 = Class8535.method30366();
-         GlStateManager.method23814(this.field35737);
-         GlStateManager.method23808(3553, 10241, 9728);
-         GlStateManager.method23808(3553, 10240, 9728);
-         GlStateManager.method23808(3553, 10242, 10496);
-         GlStateManager.method23808(3553, 10243, 10496);
-         GlStateManager.method23808(3553, 34892, 0);
-         GlStateManager.method23815(3553, 0, 6402, this.field35730, this.field35731, 0, 6402, 5126, (IntBuffer)null);
+   public void createBuffers(int var1, int var2, boolean var3) {
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
+      this.framebufferWidth = var1;
+      this.framebufferHeight = var2;
+      this.framebufferTextureWidth = var1;
+      this.framebufferTextureHeight = var2;
+      this.framebufferObject = GlStateManager.method23755();
+      this.framebufferTexture = TextureUtil.generateTextureId();
+      if (this.useDepth) {
+         this.depthBuffer = TextureUtil.generateTextureId();
+         GlStateManager.bindTexture(this.depthBuffer);
+         GlStateManager.texParameter(3553, 10241, 9728);
+         GlStateManager.texParameter(3553, 10240, 9728);
+         GlStateManager.texParameter(3553, 10242, 10496);
+         GlStateManager.texParameter(3553, 10243, 10496);
+         GlStateManager.texParameter(3553, 34892, 0);
+         GlStateManager.texImage2D(3553, 0, 6402, this.framebufferTextureWidth, this.framebufferTextureHeight, 0, 6402, 5126, (IntBuffer)null);
       }
 
-      this.method29108(9728);
-      GlStateManager.method23814(this.field35736);
-      GlStateManager.method23815(3553, 0, 32856, this.field35730, this.field35731, 0, 6408, 5121, (IntBuffer)null);
-      GlStateManager.method23751(Class8821.field39775, this.field35735);
-      GlStateManager.method23757(Class8821.field39775, Class8821.field39777, 3553, this.field35736, 0);
-      if (this.field35734) {
-         GlStateManager.method23757(Class8821.field39775, Class8821.field39778, 3553, this.field35737, 0);
+      this.setFramebufferFilter(9728);
+      GlStateManager.bindTexture(this.framebufferTexture);
+      GlStateManager.texImage2D(3553, 0, 32856, this.framebufferTextureWidth, this.framebufferTextureHeight, 0, 6408, 5121, (IntBuffer)null);
+      GlStateManager.bindFramebuffer(FramebufferConstants.GL_FRAMEBUFFER, this.framebufferObject);
+      GlStateManager.framebufferTexture2D(FramebufferConstants.GL_FRAMEBUFFER, FramebufferConstants.GL_COLOR_ATTACHMENT0, 3553, this.framebufferTexture, 0);
+      if (this.useDepth) {
+         GlStateManager.framebufferTexture2D(FramebufferConstants.GL_FRAMEBUFFER, FramebufferConstants.GL_DEPTH_ATTACHMENT, 3553, this.depthBuffer, 0);
       }
 
-      this.method29109();
-      this.method29119(var3);
-      this.method29111();
+      this.checkFramebufferComplete();
+      this.framebufferClear(var3);
+      this.unbindFramebufferTexture();
    }
 
-   public void method29108(int var1) {
-      RenderSystem.assertThread(RenderSystem::method27804);
-      this.field35739 = var1;
-      GlStateManager.method23814(this.field35736);
-      GlStateManager.method23808(3553, 10241, var1);
-      GlStateManager.method23808(3553, 10240, var1);
-      GlStateManager.method23808(3553, 10242, 10496);
-      GlStateManager.method23808(3553, 10243, 10496);
-      GlStateManager.method23814(0);
+   public void setFramebufferFilter(int var1) {
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
+      this.framebufferFilter = var1;
+      GlStateManager.bindTexture(this.framebufferTexture);
+      GlStateManager.texParameter(3553, 10241, var1);
+      GlStateManager.texParameter(3553, 10240, var1);
+      GlStateManager.texParameter(3553, 10242, 10496);
+      GlStateManager.texParameter(3553, 10243, 10496);
+      GlStateManager.bindTexture(0);
    }
 
-   public void method29109() {
-      RenderSystem.assertThread(RenderSystem::method27804);
-      int var3 = GlStateManager.method23756(Class8821.field39775);
-      if (var3 != Class8821.field39779) {
-         if (var3 != Class8821.field39780) {
-            if (var3 != Class8821.field39781) {
-               if (var3 != Class8821.field39782) {
-                  if (var3 != Class8821.field39783) {
+   public void checkFramebufferComplete() {
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
+      int var3 = GlStateManager.setFramebufferFilter(FramebufferConstants.GL_FRAMEBUFFER);
+      if (var3 != FramebufferConstants.GL_FRAMEBUFFER_COMPLETE) {
+         if (var3 != FramebufferConstants.GL_FRAMEBUFFER_INCOMPLETE_ATTACHMENT) {
+            if (var3 != FramebufferConstants.GL_FRAMEBUFFER_INCOMPLETE_MISSING_ATTACHMENT) {
+               if (var3 != FramebufferConstants.GL_FRAMEBUFFER_INCOMPLETE_DRAW_BUFFER) {
+                  if (var3 != FramebufferConstants.GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER) {
                      throw new RuntimeException("glCheckFramebufferStatus returned unknown status:" + var3);
                   } else {
                      throw new RuntimeException("GL_FRAMEBUFFER_INCOMPLETE_READ_BUFFER");
@@ -157,118 +163,118 @@ public class Framebuffer {
       }
    }
 
-   public void method29110() {
+   public void bindFramebufferTexture() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      GlStateManager.method23814(this.field35736);
+      GlStateManager.bindTexture(this.framebufferTexture);
    }
 
-   public void method29111() {
-      RenderSystem.assertThread(RenderSystem::method27804);
-      GlStateManager.method23814(0);
+   public void unbindFramebufferTexture() {
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
+      GlStateManager.bindTexture(0);
    }
 
    public void bindFramebuffer(boolean var1) {
       if (RenderSystem.isOnRenderThread()) {
-         this.method29113(var1);
+         this.bindFramebufferRaw(var1);
       } else {
-         RenderSystem.method27810(() -> this.method29113(var1));
+         RenderSystem.recordRenderCall(() -> this.bindFramebufferRaw(var1));
       }
    }
 
-   private void method29113(boolean var1) {
-      RenderSystem.assertThread(RenderSystem::method27804);
-      GlStateManager.method23751(Class8821.field39775, this.field35735);
+   private void bindFramebufferRaw(boolean var1) {
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
+      GlStateManager.bindFramebuffer(FramebufferConstants.GL_FRAMEBUFFER, this.framebufferObject);
       if (var1) {
-         GlStateManager.method23821(0, 0, this.field35732, this.field35733);
+         GlStateManager.viewport(0, 0, this.framebufferWidth, this.framebufferHeight);
       }
    }
 
    public void unbindFramebuffer() {
       if (RenderSystem.isOnRenderThread()) {
-         GlStateManager.method23751(Class8821.field39775, 0);
+         GlStateManager.bindFramebuffer(FramebufferConstants.GL_FRAMEBUFFER, 0);
       } else {
-         RenderSystem.method27810(() -> GlStateManager.method23751(Class8821.field39775, 0));
+         RenderSystem.recordRenderCall(() -> GlStateManager.bindFramebuffer(FramebufferConstants.GL_FRAMEBUFFER, 0));
       }
    }
 
    public void setFramebufferColor(float var1, float var2, float var3, float var4) {
-      this.field35738[0] = var1;
-      this.field35738[1] = var2;
-      this.field35738[2] = var3;
-      this.field35738[3] = var4;
+      this.framebufferColor[0] = var1;
+      this.framebufferColor[1] = var2;
+      this.framebufferColor[2] = var3;
+      this.framebufferColor[3] = var4;
    }
 
    public void framebufferRender(int var1, int var2) {
-      this.method29117(var1, var2, true);
+      this.framebufferRenderExt(var1, var2, true);
    }
 
-   public void method29117(int var1, int var2, boolean var3) {
+   public void framebufferRenderExt(int var1, int var2, boolean var3) {
       RenderSystem.assertThread(RenderSystem::method27807);
       if (RenderSystem.isInInitPhase()) {
-         this.method29118(var1, var2, var3);
+         this.framebufferRenderExtRaw(var1, var2, var3);
       } else {
-         RenderSystem.method27810(() -> this.method29118(var1, var2, var3));
+         RenderSystem.recordRenderCall(() -> this.framebufferRenderExtRaw(var1, var2, var3));
       }
    }
 
-   private void method29118(int var1, int var2, boolean var3) {
+   private void framebufferRenderExtRaw(int var1, int var2, boolean var3) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      GlStateManager.method23822(true, true, true, false);
-      GlStateManager.method23710();
-      GlStateManager.method23713(false);
-      GlStateManager.method23830(5889);
-      GlStateManager.method23831();
-      GlStateManager.method23835(0.0, (double)var1, (double)var2, 0.0, 1000.0, 3000.0);
-      GlStateManager.method23830(5888);
-      GlStateManager.method23831();
-      GlStateManager.method23839(0.0F, 0.0F, -2000.0F);
-      GlStateManager.method23821(0, 0, var1, var2);
-      GlStateManager.method23804();
-      GlStateManager.method23699();
+      GlStateManager.colorMask(true, true, true, false);
+      GlStateManager.disableDepthTest();
+      GlStateManager.depthMask(false);
+      GlStateManager.matrixMode(5889);
+      GlStateManager.loadIdentity();
+      GlStateManager.ortho(0.0, (double)var1, (double)var2, 0.0, 1000.0, 3000.0);
+      GlStateManager.matrixMode(5888);
+      GlStateManager.loadIdentity();
+      GlStateManager.translatef(0.0F, 0.0F, -2000.0F);
+      GlStateManager.viewport(0, 0, var1, var2);
+      GlStateManager.enableTexture();
+      GlStateManager.disableLighting();
       GlStateManager.disableAlphaTest();
       if (var3) {
-         GlStateManager.method23714();
-         GlStateManager.method23701();
+         GlStateManager.disableBlend();
+         GlStateManager.enableColorMaterial();
       }
 
-      GlStateManager.method23843(1.0F, 1.0F, 1.0F, 1.0F);
-      this.method29110();
+      GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
+      this.bindFramebufferTexture();
       float var6 = (float)var1;
       float var7 = (float)var2;
-      float var8 = (float)this.field35732 / (float)this.field35730;
-      float var9 = (float)this.field35733 / (float)this.field35731;
-      Tessellator var10 = RenderSystem.method27937();
-      BufferBuilder var11 = var10.getBuffer();
-      var11.begin(7, DefaultVertexFormats.field43346);
-      var11.pos(0.0, (double)var7, 0.0).tex(0.0F, 0.0F).color(255, 255, 255, 255).endVertex();
-      var11.pos((double)var6, (double)var7, 0.0).tex(var8, 0.0F).color(255, 255, 255, 255).endVertex();
-      var11.pos((double)var6, 0.0, 0.0).tex(var8, var9).color(255, 255, 255, 255).endVertex();
-      var11.pos(0.0, 0.0, 0.0).tex(0.0F, var9).color(255, 255, 255, 255).endVertex();
-      var10.draw();
-      this.method29111();
-      GlStateManager.method23713(true);
-      GlStateManager.method23822(true, true, true, true);
+      float var8 = (float)this.framebufferWidth / (float)this.framebufferTextureWidth;
+      float var9 = (float)this.framebufferHeight / (float)this.framebufferTextureHeight;
+      Tessellator tessellator = RenderSystem.renderThreadTesselator();
+      BufferBuilder bufferbuilder = tessellator.getBuffer();
+      bufferbuilder.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
+      bufferbuilder.pos(0.0, (double)var7, 0.0).tex(0.0F, 0.0F).color(255, 255, 255, 255).endVertex();
+      bufferbuilder.pos((double)var6, (double)var7, 0.0).tex(var8, 0.0F).color(255, 255, 255, 255).endVertex();
+      bufferbuilder.pos((double)var6, 0.0, 0.0).tex(var8, var9).color(255, 255, 255, 255).endVertex();
+      bufferbuilder.pos(0.0, 0.0, 0.0).tex(0.0F, var9).color(255, 255, 255, 255).endVertex();
+      tessellator.draw();
+      this.unbindFramebufferTexture();
+      GlStateManager.depthMask(true);
+      GlStateManager.colorMask(true, true, true, true);
    }
 
-   public void method29119(boolean var1) {
-      RenderSystem.assertThread(RenderSystem::method27804);
+   public void framebufferClear(boolean var1) {
+      RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       this.bindFramebuffer(true);
-      GlStateManager.method23827(this.field35738[0], this.field35738[1], this.field35738[2], this.field35738[3]);
+      GlStateManager.clearColor(this.framebufferColor[0], this.framebufferColor[1], this.framebufferColor[2], this.framebufferColor[3]);
       short var4 = 16384;
-      if (this.field35734) {
-         GlStateManager.method23826(1.0);
+      if (this.useDepth) {
+         GlStateManager.clearDepth(1.0);
          var4 |= 256;
       }
 
-      GlStateManager.method23829(var4, var1);
+      GlStateManager.clear(var4, var1);
       this.unbindFramebuffer();
    }
 
-   public int method29120() {
-      return this.field35736;
+   public int getFramebufferTexture() {
+      return this.framebufferTexture;
    }
 
-   public int method29121() {
-      return this.field35737;
+   public int getDepthBuffer() {
+      return this.depthBuffer;
    }
 }

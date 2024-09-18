@@ -1,12 +1,15 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.GLAllocation;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.minecraft.client.shader.FramebufferConstants;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
@@ -1262,7 +1265,7 @@ public class Shaders {
                 int var3 = var2.method20207();
                 int var4 = var2.method20209();
                 if (var4 == 3553) {
-                    GlStateManager.method23814(var3);
+                    GlStateManager.bindTexture(var3);
                 } else {
                     GL11.glBindTexture(var4, var3);
                 }
@@ -3033,7 +3036,7 @@ public class Shaders {
         GL32.glReadBuffer(0);
 
         for (int var0 = 0; var0 < field40802; var0++) {
-            GlStateManager.method23814(field40973.get(var0));
+            GlStateManager.bindTexture(field40973.get(var0));
             GL32.glTexParameteri(3553, 10242, 33071);
             GL32.glTexParameteri(3553, 10243, 33071);
             GL32.glTexParameteri(3553, 10241, 9728);
@@ -3048,7 +3051,7 @@ public class Shaders {
         method32984("FT d");
 
         for (int var2 = 0; var2 < field40801; var2++) {
-            GlStateManager.method23814(field40980.method38905(var2));
+            GlStateManager.bindTexture(field40980.method38905(var2));
             GL32.glTexParameteri(3553, 10242, 33071);
             GL32.glTexParameteri(3553, 10243, 33071);
             GL32.glTexParameteri(3553, 10241, 9729);
@@ -3059,7 +3062,7 @@ public class Shaders {
         }
 
         for (int var3 = 0; var3 < field40801; var3++) {
-            GlStateManager.method23814(field40980.method38906(var3));
+            GlStateManager.bindTexture(field40980.method38906(var3));
             GL32.glTexParameteri(3553, 10242, 33071);
             GL32.glTexParameteri(3553, 10243, 33071);
             GL32.glTexParameteri(3553, 10241, 9729);
@@ -3073,7 +3076,7 @@ public class Shaders {
             method32989("[Shaders] Error: Failed framebuffer incomplete formats");
 
             for (int var1 = 0; var1 < field40801; var1++) {
-                GlStateManager.method23814(field40980.method38905(var1));
+                GlStateManager.bindTexture(field40980.method38905(var1));
                 GL32.glTexImage2D(3553, 0, 6408, field40603, field40604, 0, 32993, 33639, (ByteBuffer) null);
                 EXTFramebufferObject.glFramebufferTexture2DEXT(36160, 36064 + var1, 3553, field40980.method38905(var1), 0);
                 method32984("FT c");
@@ -3085,7 +3088,7 @@ public class Shaders {
             }
         }
 
-        GlStateManager.method23814(0);
+        GlStateManager.bindTexture(0);
         if (var4 != 36053) {
             method32989("[Shaders] Error: Failed creating framebuffer! (Status " + var4 + ")");
         } else {
@@ -3127,7 +3130,7 @@ public class Shaders {
             ((Buffer) field40974).position(0);
 
             for (int var0 = 0; var0 < field40804; var0++) {
-                GlStateManager.method23814(field40975.get(var0));
+                GlStateManager.bindTexture(field40975.get(var0));
                 GL32.glTexParameterf(3553, 10242, 33071.0F);
                 GL32.glTexParameterf(3553, 10243, 33071.0F);
                 int var1 = field40859[var0] ? 9728 : 9729;
@@ -3144,7 +3147,7 @@ public class Shaders {
             method32984("FT sd");
 
             for (int var2 = 0; var2 < field40803; var2++) {
-                GlStateManager.method23814(field40974.get(var2));
+                GlStateManager.bindTexture(field40974.get(var2));
                 GL32.glTexParameterf(3553, 10242, 33071.0F);
                 GL32.glTexParameterf(3553, 10243, 33071.0F);
                 int var4 = field40861[var2] ? 9728 : 9729;
@@ -3155,7 +3158,7 @@ public class Shaders {
                 method32984("FT sc");
             }
 
-            GlStateManager.method23814(0);
+            GlStateManager.bindTexture(0);
             if (field40803 > 0) {
                 GL32.glDrawBuffers(field40977);
             }
@@ -3305,50 +3308,50 @@ public class Shaders {
     private static void method33042() {
         if (field40804 >= 1) {
             GlStateManager.method23803(33988);
-            GlStateManager.method23814(field40975.get(0));
+            GlStateManager.bindTexture(field40975.get(0));
             if (field40804 >= 2) {
                 GlStateManager.method23803(33989);
-                GlStateManager.method23814(field40975.get(1));
+                GlStateManager.bindTexture(field40975.get(1));
             }
         }
 
         GlStateManager.method23803(33984);
 
         for (int var0 = 0; var0 < field40801; var0++) {
-            GlStateManager.method23814(field40980.method38905(var0));
+            GlStateManager.bindTexture(field40980.method38905(var0));
             GL11.glTexParameteri(3553, 10240, 9729);
             GL11.glTexParameteri(3553, 10241, 9729);
-            GlStateManager.method23814(field40980.method38906(var0));
+            GlStateManager.bindTexture(field40980.method38906(var0));
             GL11.glTexParameteri(3553, 10240, 9729);
             GL11.glTexParameteri(3553, 10241, 9729);
         }
 
-        GlStateManager.method23814(0);
+        GlStateManager.bindTexture(0);
 
         for (int var1 = 0; var1 < 4 && 4 + var1 < field40801; var1++) {
             GlStateManager.method23803(33991 + var1);
-            GlStateManager.method23814(field40980.method38905(4 + var1));
+            GlStateManager.bindTexture(field40980.method38905(4 + var1));
         }
 
         GlStateManager.method23803(33990);
-        GlStateManager.method23814(field40973.get(0));
+        GlStateManager.bindTexture(field40973.get(0));
         if (field40802 >= 2) {
             GlStateManager.method23803(33995);
-            GlStateManager.method23814(field40973.get(1));
+            GlStateManager.bindTexture(field40973.get(1));
             if (field40802 >= 3) {
                 GlStateManager.method23803(33996);
-                GlStateManager.method23814(field40973.get(2));
+                GlStateManager.bindTexture(field40973.get(2));
             }
         }
 
         for (int var2 = 0; var2 < field40803; var2++) {
             GlStateManager.method23803(33997 + var2);
-            GlStateManager.method23814(field40974.get(var2));
+            GlStateManager.bindTexture(field40974.get(var2));
         }
 
         if (field40947) {
             GlStateManager.method23803(33984 + field40946.method20208());
-            GlStateManager.method23814(field40946.method20207());
+            GlStateManager.bindTexture(field40946.method20207());
         }
 
         method32965(field40920);
@@ -3386,7 +3389,7 @@ public class Shaders {
     }
 
     public static void method33045(int var0, int var1, int var2, int var3) {
-        GlStateManager.method23822(true, true, true, true);
+        GlStateManager.colorMask(true, true, true, true);
         if (field40609) {
             GL11.glViewport(0, 0, field40785, field40786);
         } else {
@@ -3394,7 +3397,7 @@ public class Shaders {
             EXTFramebufferObject.glBindFramebufferEXT(36160, field40807);
             field40608 = true;
             GlStateManager.method23787();
-            GlStateManager.method23711();
+            GlStateManager.enableDepthTest();
             method33020(field40978);
             method33021(field40818);
             method32984("beginRenderPass");
@@ -3767,46 +3770,46 @@ public class Shaders {
             GL32.glLoadIdentity();
             GL32.glOrtho(0.0, 1.0, 0.0, 1.0, 0.0, 1.0);
             GL32.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-            GlStateManager.method23804();
+            GlStateManager.enableTexture();
             GlStateManager.disableAlphaTest();
-            GlStateManager.method23714();
-            GlStateManager.method23711();
+            GlStateManager.disableBlend();
+            GlStateManager.enableDepthTest();
             GlStateManager.method23712(519);
-            GlStateManager.method23713(false);
-            GlStateManager.method23699();
+            GlStateManager.depthMask(false);
+            GlStateManager.disableLighting();
             if (field40804 >= 1) {
                 GlStateManager.method23803(33988);
-                GlStateManager.method23814(field40975.get(0));
+                GlStateManager.bindTexture(field40975.get(0));
                 if (field40804 >= 2) {
                     GlStateManager.method23803(33989);
-                    GlStateManager.method23814(field40975.get(1));
+                    GlStateManager.bindTexture(field40975.get(1));
                 }
             }
 
             for (int var2 = 0; var2 < field40801; var2++) {
                 GlStateManager.method23803(33984 + field40949[var2]);
-                GlStateManager.method23814(field40980.method38905(var2));
+                GlStateManager.bindTexture(field40980.method38905(var2));
             }
 
             GlStateManager.method23803(33990);
-            GlStateManager.method23814(field40973.get(0));
+            GlStateManager.bindTexture(field40973.get(0));
             if (field40802 >= 2) {
                 GlStateManager.method23803(33995);
-                GlStateManager.method23814(field40973.get(1));
+                GlStateManager.bindTexture(field40973.get(1));
                 if (field40802 >= 3) {
                     GlStateManager.method23803(33996);
-                    GlStateManager.method23814(field40973.get(2));
+                    GlStateManager.bindTexture(field40973.get(2));
                 }
             }
 
             for (int var5 = 0; var5 < field40803; var5++) {
                 GlStateManager.method23803(33997 + var5);
-                GlStateManager.method23814(field40974.get(var5));
+                GlStateManager.bindTexture(field40974.get(var5));
             }
 
             if (field40947) {
                 GlStateManager.method23803(33984 + field40946.method20208());
-                GlStateManager.method23814(field40946.method20207());
+                GlStateManager.bindTexture(field40946.method20207());
             }
 
             if (var1) {
@@ -3842,7 +3845,7 @@ public class Shaders {
                         if (var3.method26496()[var4]) {
                             field40980.method38908(var4);
                             GlStateManager.method23803(33984 + field40949[var4]);
-                            GlStateManager.method23814(field40980.method38905(var4));
+                            GlStateManager.bindTexture(field40980.method38905(var4));
                             EXTFramebufferObject.glFramebufferTexture2DEXT(36160, 36064 + var4, 3553, field40980.method38906(var4), 0);
                         }
                     }
@@ -3858,11 +3861,11 @@ public class Shaders {
             }
 
             GlStateManager.method23698();
-            GlStateManager.method23804();
+            GlStateManager.enableTexture();
             GlStateManager.method23696();
             GlStateManager.method23715();
             GlStateManager.method23712(515);
-            GlStateManager.method23713(true);
+            GlStateManager.depthMask(true);
             GL32.glPopMatrix();
             GL32.glMatrixMode(5888);
             GL32.glPopMatrix();
@@ -3891,18 +3894,18 @@ public class Shaders {
     private static void method33066() {
         field40608 = false;
         field40591.getFramebuffer().bindFramebuffer(true);
-        GlStateManager.method23757(Class8821.field39775, Class8821.field39777, 3553, field40591.getFramebuffer().method29120(), 0);
+        GlStateManager.framebufferTexture2D(FramebufferConstants.GL_FRAMEBUFFER, FramebufferConstants.GL_COLOR_ATTACHMENT0, 3553, field40591.getFramebuffer().getFramebufferTexture(), 0);
         GL32.glViewport(0, 0, field40591.getMainWindow().getFramebufferWidth(), field40591.getMainWindow().getFramebufferHeight());
-        GlStateManager.method23713(true);
+        GlStateManager.depthMask(true);
         GL32.glClearColor(field40629, field40630, field40631, 1.0F);
         GL32.glClear(16640);
         GL32.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        GlStateManager.method23804();
+        GlStateManager.enableTexture();
         GlStateManager.disableAlphaTest();
-        GlStateManager.method23714();
-        GlStateManager.method23711();
+        GlStateManager.disableBlend();
+        GlStateManager.enableDepthTest();
         GlStateManager.method23712(519);
-        GlStateManager.method23713(false);
+        GlStateManager.depthMask(false);
         method32984("pre-final");
         method33021(field40845);
         method32984("final");
@@ -3923,7 +3926,7 @@ public class Shaders {
             }
 
             field40605 = false;
-            GlStateManager.method23822(true, true, true, true);
+            GlStateManager.colorMask(true, true, true, true);
             method33021(field40813);
             Class7516.method24499();
             method32984("endRender end");
@@ -4205,7 +4208,7 @@ public class Shaders {
 
     public static void method33098() {
         if (!field40609) {
-            GlStateManager.method23711();
+            GlStateManager.enableDepthTest();
             GlStateManager.method23715();
             GlStateManager.method23716(770, 771);
             GlStateManager.method23696();
@@ -4214,7 +4217,7 @@ public class Shaders {
     }
 
     public static void method33099() {
-        GlStateManager.method23714();
+        GlStateManager.disableBlend();
         method33021(field40819);
     }
 
@@ -4244,9 +4247,9 @@ public class Shaders {
                 method33060();
                 method33021(field40840);
                 GlStateManager.method23715();
-                GlStateManager.method23713(true);
+                GlStateManager.depthMask(true);
             } else {
-                GlStateManager.method23713(true);
+                GlStateManager.depthMask(true);
             }
         }
     }
@@ -4296,8 +4299,8 @@ public class Shaders {
     }
 
     public static void method33107() {
-        GlStateManager.method23699();
-        GlStateManager.method23714();
+        GlStateManager.disableLighting();
+        GlStateManager.disableBlend();
     }
 
     public static void method33108() {

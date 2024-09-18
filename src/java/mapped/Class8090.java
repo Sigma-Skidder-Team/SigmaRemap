@@ -8,6 +8,7 @@ import java.util.Properties;
 import java.util.Set;
 import java.util.TreeSet;
 
+import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.Items;
 import net.minecraft.util.Direction;
@@ -814,9 +815,9 @@ public class Class8090 {
             Class290 var4 = var1.getTexture(this.field34790);
             int var5 = var4.getGlTextureId();
             int var6 = GlStateManager.method23865();
-            GlStateManager.method23814(var5);
+            GlStateManager.bindTexture(var5);
             this.field34798 = GL11.glGetTexLevelParameteri(3553, 0, 4096);
-            GlStateManager.method23814(var6);
+            GlStateManager.bindTexture(var6);
          }
 
          if (this.field34798 <= 0) {
@@ -833,9 +834,9 @@ public class Class8090 {
             Class290 var4 = var1.getTexture(this.field34790);
             int var5 = var4.getGlTextureId();
             int var6 = GlStateManager.method23865();
-            GlStateManager.method23814(var5);
+            GlStateManager.bindTexture(var5);
             this.field34799 = GL11.glGetTexLevelParameteri(3553, 0, 4097);
-            GlStateManager.method23814(var6);
+            GlStateManager.bindTexture(var6);
          }
 
          if (this.field34799 <= 0) {

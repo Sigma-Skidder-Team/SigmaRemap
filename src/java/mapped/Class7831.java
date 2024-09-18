@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.UnmodifiableIterator;
+import com.mojang.blaze3d.systems.RenderSystem;
 import it.unimi.dsi.fastutil.ints.Int2IntArrayMap;
 import it.unimi.dsi.fastutil.ints.Int2IntMap;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
@@ -96,7 +97,7 @@ public class Class7831 {
             ((Class8209)var6.get(var7)).method28520(var1 + (long)this.field33617.getInt(var7), var5);
          }
       } else {
-         RenderSystem.method27810(() -> this.method26218(var1));
+         RenderSystem.recordRenderCall(() -> this.method26218(var1));
       }
    }
 
@@ -109,7 +110,7 @@ public class Class7831 {
             var4.method28521();
          }
       } else {
-         RenderSystem.method27810(this::method26219);
+         RenderSystem.recordRenderCall(this::method26219);
       }
    }
 

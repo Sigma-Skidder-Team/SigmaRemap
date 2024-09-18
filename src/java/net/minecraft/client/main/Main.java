@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.mojang.authlib.properties.PropertyMap;
 import com.mojang.authlib.properties.PropertyMap.Serializer;
+import com.mojang.blaze3d.systems.RenderSystem;
 import joptsimple.*;
 import mapped.*;
 import net.minecraft.client.GameSettings;

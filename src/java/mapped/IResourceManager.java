@@ -12,11 +12,11 @@ import java.util.stream.Stream;
 public interface IResourceManager {
    Set<String> method579();
 
-   Class1783 method580(ResourceLocation var1) throws IOException;
+   JSonShader getShader(ResourceLocation var1) throws IOException;
 
    boolean method581(ResourceLocation var1);
 
-   List<Class1783> method582(ResourceLocation var1) throws IOException;
+   List<JSonShader> method582(ResourceLocation var1) throws IOException;
 
    Collection<ResourceLocation> method583(String var1, Predicate<String> var2);
 

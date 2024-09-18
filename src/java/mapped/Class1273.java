@@ -1,8 +1,11 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
+import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.math.MathHelper;
 
 import javax.annotation.Nullable;
@@ -165,7 +168,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
          this.field6782.getTextureManager().bindTexture(AbstractGui.field6451);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          float var11 = 32.0F;
-         var10.begin(7, DefaultVertexFormats.field43346);
+         var10.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
          var10.pos((double)this.field6790, (double)this.field6788, 0.0)
             .tex((float)this.field6790 / 32.0F, (float)(this.field6788 + (int)this.method6044()) / 32.0F)
             .color(32, 32, 32, 255)
@@ -198,7 +201,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
          RenderSystem.depthFunc(519);
          float var13 = 32.0F;
          byte var14 = -100;
-         var10.begin(7, DefaultVertexFormats.field43346);
+         var10.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
          var10.pos((double)this.field6790, (double)this.field6787, -100.0)
             .tex(0.0F, (float)this.field6787 / 32.0F)
             .color(64, 64, 64, 255)
@@ -237,7 +240,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
          RenderSystem.method27866(7425);
          RenderSystem.disableTexture();
          byte var15 = 4;
-         var10.begin(7, DefaultVertexFormats.field43346);
+         var10.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
          var10.pos((double)this.field6790, (double)(this.field6787 + 4), 0.0).tex(0.0F, 1.0F).color(0, 0, 0, 0).endVertex();
          var10.pos((double)this.field6789, (double)(this.field6787 + 4), 0.0).tex(1.0F, 1.0F).color(0, 0, 0, 0).endVertex();
          var10.pos((double)this.field6789, (double)this.field6787, 0.0).tex(1.0F, 0.0F).color(0, 0, 0, 255).endVertex();
@@ -259,7 +262,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
             var20 = this.field6787;
          }
 
-         var10.begin(7, DefaultVertexFormats.field43346);
+         var10.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
          var10.pos((double)var7, (double)this.field6788, 0.0).tex(0.0F, 1.0F).color(0, 0, 0, 255).endVertex();
          var10.pos((double)var8, (double)this.field6788, 0.0).tex(1.0F, 1.0F).color(0, 0, 0, 255).endVertex();
          var10.pos((double)var8, (double)this.field6787, 0.0).tex(1.0F, 0.0F).color(0, 0, 0, 255).endVertex();
