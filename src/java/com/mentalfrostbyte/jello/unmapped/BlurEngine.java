@@ -32,7 +32,7 @@ public class BlurEngine {
       Client.getInstance().getEventManager().register(this);
    }
 
-   public static void method29971(int var0, int var1, int var2, int var3) {
+   public static void drawBlur(int var0, int var1, int var2, int var3) {
       frameBuffWidth = Math.min(var0, frameBuffWidth);
       frameBuffHeight = Math.min(var1, frameBuffHeight);
       screenWidth = Math.max(var0 + var2, screenWidth);
@@ -106,7 +106,7 @@ public class BlurEngine {
       screenHeight = 0;
    }
 
-   public static void method29974() {
+   public static void endBlur() {
       if (frameBuff != null) {
          GL11.glPushMatrix();
          frameBuff.bindFramebufferTexture();

@@ -69,9 +69,9 @@ public class TabGUI extends Module {
             if (Client.getInstance().getGuiManager().method33472()) {
                 if (! Minecraft.getInstance().gameSettings.showDebugInfo) {
                     if (!Minecraft.getInstance().gameSettings.hideGUI) {
-                        BlurEngine.method29971(this.field23768, this.field23769, this.field23770, this.field23771);
+                        BlurEngine.drawBlur(this.field23768, this.field23769, this.field23770, this.field23771);
                         if (this.field23781) {
-                            BlurEngine.method29971(170, this.field23769, this.field23786, this.field23783);
+                            BlurEngine.drawBlur(170, this.field23769, this.field23786, this.field23783);
                         }
                     }
                 }
@@ -392,7 +392,7 @@ public class TabGUI extends Module {
             RenderUtil.method11431(var1, var2, var1 + var3, var2 + var4, var14, var15);
         } else {
             RenderUtil.startScissor((float) var1, (float) var2, (float) var3, (float) var4);
-            BlurEngine.method29974();
+            BlurEngine.endBlur();
             RenderUtil.endScissor();
             RenderUtil.drawRect((float) var1, (float) var2, (float) (var1 + var3), (float) (var2 + var4), this.field23793);
         }

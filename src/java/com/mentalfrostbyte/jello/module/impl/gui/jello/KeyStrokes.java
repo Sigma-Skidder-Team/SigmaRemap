@@ -67,8 +67,8 @@ public class KeyStrokes extends Module {
                                     this.field23585 + var8.field42635 + var9.field42635,
                                     this.field23586 + var8.field42636 + var9.field42636
                             );
-                            BlurEngine.method29971(this.field23585 + var8.field42635, this.field23586 + var8.field42636, var9.field42635, var9.field42636);
-                            BlurEngine.method29974();
+                            BlurEngine.drawBlur(this.field23585 + var8.field42635, this.field23586 + var8.field42636, var9.field42635, var9.field42636);
+                            BlurEngine.endBlur();
                             RenderUtil.endScissor();
                         }
                     }
