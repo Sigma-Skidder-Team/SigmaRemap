@@ -31,7 +31,7 @@ public class Class196 implements Class197 {
       return this.field742 != null && this.field742.method656() ? true : this.field741 != null && this.field741.method656();
    }
 
-   public int method600(int var1, boolean var2, boolean var3) {
+   public int tick(int var1, boolean var2, boolean var3) {
       if (this.field741 != null && this.field742 != null) {
          int var6 = var1 / 2;
          int var7 = this.field741.method657(var6, var2, var3);

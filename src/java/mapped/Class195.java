@@ -36,7 +36,7 @@ public class Class195 extends Class196 implements AutoCloseable {
    }
 
    @Override
-   public int method600(int var1, boolean var2, boolean var3) {
+   public int tick(int var1, boolean var2, boolean var3) {
       throw (UnsupportedOperationException) Util.pauseDevMode(new UnsupportedOperationException("Ran authomatically on a different thread!"));
    }
 
@@ -170,7 +170,7 @@ public class Class195 extends Class196 implements AutoCloseable {
       }
 
       var4.back(var5);
-      super.method600(Integer.MAX_VALUE, true, true);
+      super.tick(Integer.MAX_VALUE, true, true);
 
       for (int var8 = 0; var4.hasNext() && var8 < var3; ++var8) {
          Pair<Class2044, Runnable> var7 = var4.next();
