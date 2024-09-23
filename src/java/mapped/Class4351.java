@@ -47,7 +47,7 @@ public class Class4351 extends Class4278 {
       ColorHelper var15 = new ColorHelper(-892679478, -892679478, -892679478, ClientColors.DEEP_TEAL.getColor, Class2218.field14488, Class2218.field14492);
       this.addToList(this.field21268 = new UIInput(this, "profileName", 16, 8, this.getWidthA() - 60, 50, var15, var7.field31263));
       this.field21268.method13156(false);
-      this.field21268.method13306(ResourceRegistry.JelloLightFont24);
+      this.field21268.setFont(ResourceRegistry.JelloLightFont24);
       this.field21268.method13288(false);
       this.field21268.method13253((var2x, var3x) -> {
          if (this.field21268.method13297() && var3x == 257) {
@@ -65,8 +65,8 @@ public class Class4351 extends Class4278 {
             }
          }
       });
-      var13.method13306(ResourceRegistry.JelloLightFont18);
-      var14.method13306(ResourceRegistry.JelloLightFont18);
+      var13.setFont(ResourceRegistry.JelloLightFont18);
+      var14.setFont(ResourceRegistry.JelloLightFont18);
       var13.setSize((var0, var1x) -> var0.setWidthA(Math.round((float)var1x.getWidthA() / 2.0F)));
       var14.setSize((var0, var1x) -> {
          var0.setXA(Math.round((float)var1x.getWidthA() / 2.0F));

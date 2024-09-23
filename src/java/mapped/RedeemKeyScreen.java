@@ -36,7 +36,7 @@ public class RedeemKeyScreen extends IconPanel {
          )
       );
       this.addToList(this.field21138 = new UIInput(this, "captcha", 195, 290, 75, 35, UIInput.field20742, "", "Captcha"));
-      this.field21138.method13306(ResourceRegistry.JelloLightFont18);
+      this.field21138.setFont(ResourceRegistry.JelloLightFont18);
       this.field21138.method13288(false);
       var10.doThis((var2x, var3x) -> new Thread(() -> {
             Class9507 var4x = Client.getInstance().getNetworkManager().method30452();

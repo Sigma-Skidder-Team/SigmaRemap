@@ -163,7 +163,7 @@ public class AltManagerScreen extends Screen {
             ResourceRegistry.JelloLightFont18
          )
       );
-      this.field21026.method13306(ResourceRegistry.JelloLightFont18);
+      this.field21026.setFont(ResourceRegistry.JelloLightFont18);
       this.field21026.method13151(var1 -> this.method13372(false));
       this.addToList(this.field21022 = new UIButton(this, "btnt", this.getWidthA() - 90, 43, 70, 30, ColorHelper.field27961, "Add +", ResourceRegistry.JelloLightFont25));
       this.field21010.method13242();

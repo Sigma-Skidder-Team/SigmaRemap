@@ -93,7 +93,7 @@ public class Class4345 extends Class4339 {
                   ResourceRegistry.field38868
                )
             );
-            var24.method13306(ResourceRegistry.JelloLightFont18);
+            var24.setFont(ResourceRegistry.JelloLightFont18);
             var24.method13151(var1x -> var2.setCurrentValue(var1x.method13303()));
             var2.addObserver(var2x -> {
                if (var24.method13303() != ((InputSetting)var2).getCurrentValue()) {

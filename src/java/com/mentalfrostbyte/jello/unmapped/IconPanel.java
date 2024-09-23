@@ -836,7 +836,7 @@ public class IconPanel implements IGuiEventListener {
         return this.font;
     }
 
-    public void method13306(ClientResource var1) {
+    public void setFont(ClientResource var1) {
         this.font = var1;
     }
 

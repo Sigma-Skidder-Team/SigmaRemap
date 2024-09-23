@@ -39,7 +39,7 @@ public class Class4377 extends Class4235 {
 
    private void method13719() {
       if (this.field21385 >= 0 && this.field21385 < this.field21384.length) {
-         this.method13306(ResourceRegistry.JelloLightFont20);
+         this.setFont(ResourceRegistry.JelloLightFont20);
          this.method13304(this.field21384[this.field21385]);
       } else {
          throw new RuntimeException("Invalid index for TypeButton");

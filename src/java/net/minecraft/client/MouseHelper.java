@@ -53,7 +53,7 @@ public class MouseHelper {
                }
             } else {
                if (var3 > 1) {
-                  Class8319.method29126(var3);
+                  ModuleKeyPress.press(var3);
                }
 
                EventKeyPress var8 = new EventKeyPress(var3, var4 == 2, null);

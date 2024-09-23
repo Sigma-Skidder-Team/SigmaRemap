@@ -70,7 +70,7 @@ public class Class4276 extends Class4247 {
          )
       );
       this.field20728.method13156(false);
-      this.field20728.method13306(ResourceRegistry.JelloLightFont18);
+      this.field20728.setFont(ResourceRegistry.JelloLightFont18);
    }
 
    public Vector3i method13130() {

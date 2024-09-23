@@ -25,7 +25,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class KeyboardListener {
-   private final Minecraft field43915;
+   private final Minecraft mc;
    private boolean field43916;
    private final Class7124 field43917 = new Class7124();
    private long field43918 = -1L;
@@ -34,11 +34,11 @@ public class KeyboardListener {
    private boolean field43921;
 
    public KeyboardListener(Minecraft var1) {
-      this.field43915 = var1;
+      this.mc = var1;
    }
 
    private void method36339(String var1, Object... var2) {
-      this.field43915
+      this.mc
          .ingameGUI
          .getChatGUI()
          .sendChatMessage(
@@ -50,7 +50,7 @@ public class KeyboardListener {
    }
 
    private void method36340(String var1, Object... var2) {
-      this.field43915
+      this.mc
          .ingameGUI
          .getChatGUI()
          .sendChatMessage(
@@ -67,19 +67,19 @@ public class KeyboardListener {
       } else {
          switch (var1) {
             case 65:
-               this.field43915.worldRenderer.loadRenderers();
+               this.mc.worldRenderer.loadRenderers();
                this.method36339("debug.reload_chunks.message");
                return true;
             case 66:
-               boolean var4 = !this.field43915.getRenderManager().method32217();
-               this.field43915.getRenderManager().method32216(var4);
+               boolean var4 = !this.mc.getRenderManager().method32217();
+               this.mc.getRenderManager().method32216(var4);
                this.method36339(var4 ? "debug.show_hitboxes.on" : "debug.show_hitboxes.off");
                return true;
             case 67:
-               if (this.field43915.player.hasReducedDebug()) {
+               if (this.mc.player.hasReducedDebug()) {
                   return false;
                } else {
-                  ClientPlayNetHandler var9 = this.field43915.player.connection;
+                  ClientPlayNetHandler var9 = this.mc.player.connection;
                   if (var9 == null) {
                      return false;
                   }
@@ -89,46 +89,46 @@ public class KeyboardListener {
                      String.format(
                         Locale.ROOT,
                         "/execute in %s run tp @s %.2f %.2f %.2f %.2f %.2f",
-                        this.field43915.player.world.getDimensionKey().getLocation(),
-                        this.field43915.player.getPosX(),
-                        this.field43915.player.getPosY(),
-                        this.field43915.player.getPosZ(),
-                        this.field43915.player.rotationYaw,
-                        this.field43915.player.rotationPitch
+                        this.mc.player.world.getDimensionKey().getLocation(),
+                        this.mc.player.getPosX(),
+                        this.mc.player.getPosY(),
+                        this.mc.player.getPosZ(),
+                        this.mc.player.rotationYaw,
+                        this.mc.player.rotationPitch
                      )
                   );
                   return true;
                }
             case 68:
-               if (this.field43915.ingameGUI != null) {
-                  this.field43915.ingameGUI.getChatGUI().clearChatMessages(false);
+               if (this.mc.ingameGUI != null) {
+                  this.mc.ingameGUI.getChatGUI().clearChatMessages(false);
                }
 
                return true;
             case 70:
                AbstractOption.field25333
                   .method18089(
-                     this.field43915.gameSettings,
+                     this.mc.gameSettings,
                      MathHelper.clamp(
-                        (double)(this.field43915.gameSettings.field44574 + (Screen.method2476() ? -1 : 1)),
+                        (double)(this.mc.gameSettings.field44574 + (Screen.method2476() ? -1 : 1)),
                         AbstractOption.field25333.method18086(),
                         AbstractOption.field25333.getMaxValue()
                      )
                   );
-               this.method36339("debug.cycle_renderdistance.message", this.field43915.gameSettings.field44574);
+               this.method36339("debug.cycle_renderdistance.message", this.mc.gameSettings.field44574);
                return true;
             case 71:
-               boolean var5 = this.field43915.debugRenderer.method27452();
+               boolean var5 = this.mc.debugRenderer.method27452();
                this.method36339(var5 ? "debug.chunk_boundaries.on" : "debug.chunk_boundaries.off");
                return true;
             case 72:
-               this.field43915.gameSettings.field44588 = !this.field43915.gameSettings.field44588;
-               this.method36339(this.field43915.gameSettings.field44588 ? "debug.advanced_tooltips.on" : "debug.advanced_tooltips.off");
-               this.field43915.gameSettings.saveOptions();
+               this.mc.gameSettings.field44588 = !this.mc.gameSettings.field44588;
+               this.method36339(this.mc.gameSettings.field44588 ? "debug.advanced_tooltips.on" : "debug.advanced_tooltips.off");
+               this.mc.gameSettings.saveOptions();
                return true;
             case 73:
-               if (!this.field43915.player.hasReducedDebug()) {
-                  this.method36342(this.field43915.player.method3424(2), !Screen.method2476());
+               if (!this.mc.player.hasReducedDebug()) {
+                  this.method36342(this.mc.player.method3424(2), !Screen.method2476());
                }
 
                return true;
@@ -139,12 +139,12 @@ public class KeyboardListener {
                var6.ingameGUI.getChatGUI().method5931(var7, 201435902);
                return true;
             case 78:
-               if (!this.field43915.player.method3424(2)) {
+               if (!this.mc.player.method3424(2)) {
                   this.method36339("debug.creative_spectator.error");
-               } else if (!this.field43915.player.isSpectator()) {
-                  this.field43915.player.method5389("/gamemode spectator");
+               } else if (!this.mc.player.isSpectator()) {
+                  this.mc.player.method5389("/gamemode spectator");
                } else {
-                  this.field43915.player.method5389("/gamemode " + this.field43915.playerController.method23156().method8153());
+                  this.mc.player.method5389("/gamemode " + this.mc.playerController.method23156().method8153());
                }
 
                return true;
@@ -156,13 +156,13 @@ public class KeyboardListener {
 
                return true;
             case 80:
-               this.field43915.gameSettings.field44589 = !this.field43915.gameSettings.field44589;
-               this.field43915.gameSettings.saveOptions();
-               this.method36339(this.field43915.gameSettings.field44589 ? "debug.pause_focus.on" : "debug.pause_focus.off");
+               this.mc.gameSettings.field44589 = !this.mc.gameSettings.field44589;
+               this.mc.gameSettings.saveOptions();
+               this.method36339(this.mc.gameSettings.field44589 ? "debug.pause_focus.on" : "debug.pause_focus.off");
                return true;
             case 81:
                this.method36339("debug.help.message");
-               Class1266 var8 = this.field43915.ingameGUI.getChatGUI();
+               Class1266 var8 = this.mc.ingameGUI.getChatGUI();
                var8.sendChatMessage(new TranslationTextComponent("debug.reload_chunks.help"));
                var8.sendChatMessage(new TranslationTextComponent("debug.show_hitboxes.help"));
                var8.sendChatMessage(new TranslationTextComponent("debug.copy_location.help"));
@@ -187,13 +187,13 @@ public class KeyboardListener {
                return true;
             case 84:
                this.method36339("debug.reload_resourcepacks.message");
-               this.field43915.reloadResources();
+               this.mc.reloadResources();
                return true;
             case 293:
-               if (!this.field43915.player.method3424(2)) {
+               if (!this.mc.player.method3424(2)) {
                   this.method36339("debug.gamemodes.error");
                } else {
-                  this.field43915.displayGuiScreen(new Class1318());
+                  this.mc.displayGuiScreen(new Class1318());
                }
 
                return true;
@@ -204,20 +204,20 @@ public class KeyboardListener {
    }
 
    private void method36342(boolean var1, boolean var2) {
-      RayTraceResult var5 = this.field43915.objectMouseOver;
+      RayTraceResult var5 = this.mc.objectMouseOver;
       if (var5 != null) {
          switch (Class8869.field40061[var5.getType().ordinal()]) {
             case 1:
                BlockPos var6 = ((BlockRayTraceResult)var5).getPos();
-               BlockState var7 = this.field43915.player.world.getBlockState(var6);
+               BlockState var7 = this.mc.player.world.getBlockState(var6);
                if (var1) {
                   if (var2) {
-                     this.field43915.player.connection.method15799().method14179(var6, var3 -> {
+                     this.mc.player.connection.method15799().method14179(var6, var3 -> {
                         this.method36343(var7, var6, var3);
                         this.method36339("debug.inspect.server.block");
                      });
                   } else {
-                     TileEntity var11 = this.field43915.player.world.getTileEntity(var6);
+                     TileEntity var11 = this.mc.player.world.getTileEntity(var6);
                      CompoundNBT var12 = var11 != null ? var11.write(new CompoundNBT()) : null;
                      this.method36343(var7, var6, var12);
                      this.method36339("debug.inspect.client.block");
@@ -232,7 +232,7 @@ public class KeyboardListener {
                ResourceLocation var9 = Registry.ENTITY_TYPE.getKey(var8.getType());
                if (var1) {
                   if (var2) {
-                     this.field43915.player.connection.method15799().method14178(var8.getEntityId(), var3 -> {
+                     this.mc.player.connection.method15799().method14178(var8.getEntityId(), var3 -> {
                         this.method36344(var9, var8.getPositionVec(), var3);
                         this.method36339("debug.inspect.server.entity");
                      });
@@ -281,30 +281,30 @@ public class KeyboardListener {
       this.method36350(var6);
    }
 
-   public void onKeyEvent(long var1, int var3, int var4, int var5, int var6) {
-      if (var1 == this.field43915.getMainWindow().getHandle()) {
+   public void onKeyEvent(long windowPointer, int key, int scanCode, int action, int modifiers) {
+      if (windowPointer == this.mc.getMainWindow().getHandle()) {
          if (Client.getInstance().getGuiManager().method33480() != null) {
-            Client.getInstance().getGuiManager().method33453(var3, var5);
+            Client.getInstance().getGuiManager().method33453(key, action);
             return;
          }
 
-         if (this.field43915.currentScreen != null) {
-            if (this.field43915.currentScreen instanceof ChatScreen && var3 == 258) {
-               EventKeyPress var14 = new EventKeyPress(var3, var5 == 2, null);
-               Client.getInstance().getEventManager().call(var14);
-               if (var14.isCancelled()) {
+         if (this.mc.currentScreen != null) {
+            if (this.mc.currentScreen instanceof ChatScreen && key == 258) { //TAB KEY
+               EventKeyPress keyPress = new EventKeyPress(key, action == 2, null);
+               Client.getInstance().getEventManager().call(keyPress);
+               if (keyPress.isCancelled()) {
                   return;
                }
             }
-         } else if (var5 == 1 || var5 == 2) {
-            Class8319.method29126(var3);
-            EventKeyPress var9 = new EventKeyPress(var3, var5 == 2, null);
-            Client.getInstance().getEventManager().call(var9);
-            if (var9.isCancelled()) {
+         } else if (action == 1 || action == 2) {
+            ModuleKeyPress.press(key);
+            EventKeyPress eventKeyPress = new EventKeyPress(key, action == 2, null);
+            Client.getInstance().getEventManager().call(eventKeyPress);
+            if (eventKeyPress.isCancelled()) {
                return;
             }
-         } else if (var5 == 0) {
-            Class8319.method29127(var3);
+         } else if (action == 0) {
+            ModuleKeyPress.method29127(key);
          }
 
          if (this.field43918 <= 0L) {
@@ -320,30 +320,30 @@ public class KeyboardListener {
             this.field43918 = -1L;
          }
 
-         Screen var15 = this.field43915.currentScreen;
-         if (!(this.field43915.currentScreen instanceof ControlsScreen) || ((ControlsScreen)var15).field6200 <= Util.milliTime() - 20L) {
-            if (var5 != 1) {
-               if (var5 == 0 && this.field43915.currentScreen instanceof ControlsScreen) {
-                  ((ControlsScreen)this.field43915.currentScreen).field6199 = null;
+         Screen var15 = this.mc.currentScreen;
+         if (!(this.mc.currentScreen instanceof ControlsScreen) || ((ControlsScreen)var15).field6200 <= Util.milliTime() - 20L) {
+            if (action != 1) {
+               if (action == 0 && this.mc.currentScreen instanceof ControlsScreen) {
+                  ((ControlsScreen)this.mc.currentScreen).field6199 = null;
                }
             } else {
-               if (this.field43915.gameSettings.keyBindFullscreen.matchesKey(var3, var4)) {
-                  this.field43915.getMainWindow().toggleFullscreen();
-                  this.field43915.gameSettings.fullscreen = this.field43915.getMainWindow().isFullscreen();
-                  this.field43915.gameSettings.saveOptions();
+               if (this.mc.gameSettings.keyBindFullscreen.matchesKey(key, scanCode)) {
+                  this.mc.getMainWindow().toggleFullscreen();
+                  this.mc.gameSettings.fullscreen = this.mc.getMainWindow().isFullscreen();
+                  this.mc.gameSettings.saveOptions();
                   return;
                }
 
-               if (this.field43915.gameSettings.keyBindScreenshot.matchesKey(var3, var4)) {
+               if (this.mc.gameSettings.keyBindScreenshot.matchesKey(key, scanCode)) {
                   if (!Screen.hasControlDown()) {
                   }
 
                   Class8683.method31251(
-                     this.field43915.gameDir,
-                     this.field43915.getMainWindow().getFramebufferWidth(),
-                     this.field43915.getMainWindow().getFramebufferHeight(),
-                     this.field43915.getFramebuffer(),
-                     var1x -> this.field43915.execute(() -> this.field43915.ingameGUI.getChatGUI().sendChatMessage(var1x))
+                     this.mc.gameDir,
+                     this.mc.getMainWindow().getFramebufferWidth(),
+                     this.mc.getMainWindow().getFramebufferHeight(),
+                     this.mc.getFramebuffer(),
+                     var1x -> this.mc.execute(() -> this.mc.ingameGUI.getChatGUI().sendChatMessage(var1x))
                   );
                   return;
                }
@@ -351,8 +351,8 @@ public class KeyboardListener {
          }
 
          boolean var10 = var15 == null || !(var15.getListener() instanceof TextFieldWidget) || !((TextFieldWidget)var15.getListener()).method5653();
-         if (var5 != 0 && var3 == 66 && Screen.hasControlDown() && var10) {
-            AbstractOption.field25346.method17945(this.field43915.gameSettings, 1);
+         if (action != 0 && key == 66 && Screen.hasControlDown() && var10) {
+            AbstractOption.field25346.method17945(this.mc.gameSettings, 1);
             if (var15 instanceof Class1140) {
                ((Class1140)var15).method5473();
             }
@@ -361,31 +361,31 @@ public class KeyboardListener {
          if (var15 != null) {
             boolean[] var11 = new boolean[]{false};
             Screen.wrapScreenError(() -> {
-               if (var5 != 1 && (var5 != 2 || !this.field43916)) {
-                  if (var5 == 0) {
+               if (action != 1 && (action != 2 || !this.field43916)) {
+                  if (action == 0) {
                      if (Class9299.field42888.method20214()) {
-                        var11[0] = Class9299.method35056(Class9299.field42888, this.field43915.currentScreen, var3, var4, var6);
+                        var11[0] = Class9299.method35056(Class9299.field42888, this.mc.currentScreen, key, scanCode, modifiers);
                         if (var11[0]) {
                            return;
                         }
                      }
 
-                     var11[0] = var15.keyReleased(var3, var4, var6);
+                     var11[0] = var15.keyReleased(key, scanCode, modifiers);
                      if (Class9299.field42889.method20214() && !var11[0]) {
-                        var11[0] = Class9299.method35056(Class9299.field42889, this.field43915.currentScreen, var3, var4, var6);
+                        var11[0] = Class9299.method35056(Class9299.field42889, this.mc.currentScreen, key, scanCode, modifiers);
                      }
                   }
                } else {
                   if (Class9299.field42886.method20214()) {
-                     var11[0] = Class9299.method35056(Class9299.field42886, this.field43915.currentScreen, var3, var4, var6);
+                     var11[0] = Class9299.method35056(Class9299.field42886, this.mc.currentScreen, key, scanCode, modifiers);
                      if (var11[0]) {
                         return;
                      }
                   }
 
-                  var11[0] = var15.keyPressed(var3, var4, var6);
+                  var11[0] = var15.keyPressed(key, scanCode, modifiers);
                   if (Class9299.field42887.method20214() && !var11[0]) {
-                     var11[0] = Class9299.method35056(Class9299.field42887, this.field43915.currentScreen, var3, var4, var6);
+                     var11[0] = Class9299.method35056(Class9299.field42887, this.mc.currentScreen, key, scanCode, modifiers);
                   }
                }
             }, "keyPressed event handler", var15.getClass().getCanonicalName());
@@ -394,24 +394,24 @@ public class KeyboardListener {
             }
          }
 
-         if (this.field43915.currentScreen == null || this.field43915.currentScreen.passEvents) {
-            InputMappingsInput var16 = InputMappings.method38637(var3, var4);
-            if (var5 != 0) {
-               if (var3 == 293 && this.field43915.gameRenderer != null) {
-                  this.field43915.gameRenderer.method734();
+         if (this.mc.currentScreen == null || this.mc.currentScreen.passEvents) {
+            InputMappingsInput var16 = InputMappings.method38637(key, scanCode);
+            if (action != 0) {
+               if (key == 293 && this.mc.gameRenderer != null) {
+                  this.mc.gameRenderer.method734();
                }
 
                boolean var12 = false;
-               if (this.field43915.currentScreen == null) {
-                  if (var3 == 256) {
+               if (this.mc.currentScreen == null) {
+                  if (key == 256) {
                      boolean var13 = InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 292);
-                     this.field43915.displayInGameMenu(var13);
+                     this.mc.displayInGameMenu(var13);
                   }
 
-                  var12 = InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 292) && this.method36341(var3);
+                  var12 = InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), 292) && this.method36341(key);
                   this.field43921 |= var12;
-                  if (var3 == 290) {
-                     this.field43915.gameSettings.hideGUI = !this.field43915.gameSettings.hideGUI;
+                  if (key == 290) {
+                     this.mc.gameSettings.hideGUI = !this.mc.gameSettings.hideGUI;
                   }
                }
 
@@ -422,23 +422,23 @@ public class KeyboardListener {
                   KeyBinding.setKeyBindState(var16, false);
                }
 
-               if (this.field43915.gameSettings.showDebugProfilerChart && var3 >= 48 && var3 <= 57) {
-                  this.field43915.updateDebugProfilerName(var3 - 48);
+               if (this.mc.gameSettings.showDebugProfilerChart && key >= 48 && key <= 57) {
+                  this.mc.updateDebugProfilerName(key - 48);
                }
             } else {
                KeyBinding.setKeyBindState(var16, false);
-               if (var3 == 292) {
+               if (key == 292) {
                   if (!this.field43921) {
-                     this.field43915.gameSettings.showDebugInfo = !this.field43915.gameSettings.showDebugInfo;
-                     this.field43915.gameSettings.showDebugProfilerChart = this.field43915.gameSettings.showDebugInfo && Screen.method2476();
-                     this.field43915.gameSettings.field44666 = this.field43915.gameSettings.showDebugInfo && Screen.method2477();
-                     if (this.field43915.gameSettings.showDebugInfo) {
-                        if (this.field43915.gameSettings.field44697) {
-                           this.field43915.gameSettings.field44666 = true;
+                     this.mc.gameSettings.showDebugInfo = !this.mc.gameSettings.showDebugInfo;
+                     this.mc.gameSettings.showDebugProfilerChart = this.mc.gameSettings.showDebugInfo && Screen.method2476();
+                     this.mc.gameSettings.field44666 = this.mc.gameSettings.showDebugInfo && Screen.method2477();
+                     if (this.mc.gameSettings.showDebugInfo) {
+                        if (this.mc.gameSettings.field44697) {
+                           this.mc.gameSettings.field44666 = true;
                         }
 
-                        if (this.field43915.gameSettings.field44698) {
-                           this.field43915.gameSettings.showDebugProfilerChart = true;
+                        if (this.mc.gameSettings.field44698) {
+                           this.mc.gameSettings.showDebugProfilerChart = true;
                         }
                      }
                   } else {
@@ -448,36 +448,36 @@ public class KeyboardListener {
             }
          }
 
-         Class9299.field42869.method20217(var3, var4, var5, var6);
+         Class9299.field42869.method20217(key, scanCode, action, modifiers);
       }
    }
 
    private void method36346(long var1, int var3, int var4) {
-      if (var1 == this.field43915.getMainWindow().getHandle()) {
+      if (var1 == this.mc.getMainWindow().getHandle()) {
          if (Client.getInstance().getGuiManager().method33480() != null) {
             Client.getInstance().getGuiManager().method33454(var3, var4);
             return;
          }
 
-         Screen var7 = this.field43915.currentScreen;
-         if (var7 != null && this.field43915.getLoadingGui() == null) {
+         Screen var7 = this.mc.currentScreen;
+         if (var7 != null && this.mc.getLoadingGui() == null) {
             if (Character.charCount(var3) != 1) {
                for (char var11 : Character.toChars(var3)) {
                   Screen.wrapScreenError(() -> {
-                     if (!Class9299.field42884.method20214() || !Class9299.method35056(Class9299.field42884, this.field43915.currentScreen, var11, var4)) {
+                     if (!Class9299.field42884.method20214() || !Class9299.method35056(Class9299.field42884, this.mc.currentScreen, var11, var4)) {
                         boolean var6 = var7.charTyped(var11, var4);
                         if (Class9299.field42885.method20214() && !var6) {
-                           Class9299.method35056(Class9299.field42885, this.field43915.currentScreen, var11, var4);
+                           Class9299.method35056(Class9299.field42885, this.mc.currentScreen, var11, var4);
                         }
                      }
                   }, "charTyped event handler", var7.getClass().getCanonicalName());
                }
             } else {
                Screen.wrapScreenError(() -> {
-                  if (!Class9299.field42884.method20214() || !Class9299.method35056(Class9299.field42884, this.field43915.currentScreen, (char)var3, var4)) {
+                  if (!Class9299.field42884.method20214() || !Class9299.method35056(Class9299.field42884, this.mc.currentScreen, (char)var3, var4)) {
                      boolean var6 = var7.charTyped((char)var3, var4);
                      if (Class9299.field42885.method20214() && !var6) {
-                        Class9299.method35056(Class9299.field42885, this.field43915.currentScreen, (char)var3, var4);
+                        Class9299.method35056(Class9299.field42885, this.mc.currentScreen, (char)var3, var4);
                      }
                   }
                }, "charTyped event handler", var7.getClass().getCanonicalName());
@@ -493,21 +493,21 @@ public class KeyboardListener {
    public void setupCallbacks(long var1) {
       InputMappings.method38640(
          var1,
-         (var1x, var3, var4, var5, var6) -> this.field43915.execute(() -> this.onKeyEvent(var1x, var3, var4, var5, var6)),
-         (var1x, var3, var4) -> this.field43915.execute(() -> this.method36346(var1x, var3, var4))
+         (var1x, var3, var4, var5, var6) -> this.mc.execute(() -> this.onKeyEvent(var1x, var3, var4, var5, var6)),
+         (var1x, var3, var4) -> this.mc.execute(() -> this.method36346(var1x, var3, var4))
       );
    }
 
    public String method36349() {
-      return this.field43917.method22228(this.field43915.getMainWindow().getHandle(), (var1, var2) -> {
+      return this.field43917.method22228(this.mc.getMainWindow().getHandle(), (var1, var2) -> {
          if (var1 != 65545) {
-            this.field43915.getMainWindow().method8018(var1, var2);
+            this.mc.getMainWindow().method8018(var1, var2);
          }
       });
    }
 
    public void method36350(String var1) {
-      this.field43917.method22230(this.field43915.getMainWindow().getHandle(), var1);
+      this.field43917.method22230(this.mc.getMainWindow().getHandle(), var1);
    }
 
    public void tick() {

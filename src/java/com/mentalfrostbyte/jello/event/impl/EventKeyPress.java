@@ -4,22 +4,22 @@ import com.mentalfrostbyte.jello.event.CancellableEvent;
 import net.minecraft.util.math.BlockPos;
 
 public class EventKeyPress extends CancellableEvent {
-    private final int field21570;
-    private final boolean field21571;
+    private final int key;
+    private final boolean pressed;
     private final BlockPos field21572;
 
     public EventKeyPress(int var1, boolean var2, BlockPos var3) {
-        this.field21570 = var1;
-        this.field21571 = var2;
+        this.key = var1;
+        this.pressed = var2;
         this.field21572 = var3;
     }
 
     public int getKey() {
-        return this.field21570;
+        return this.key;
     }
 
     public boolean isPressed() {
-        return this.field21571;
+        return this.pressed;
     }
 
     public BlockPos getBlockPos() {

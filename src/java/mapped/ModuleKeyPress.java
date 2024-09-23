@@ -11,14 +11,14 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
-public class Class8319 {
+public class ModuleKeyPress {
    private static String[] field35740;
    private static final Minecraft field35741 = Minecraft.getInstance();
 
-   public static void method29126(int var0) {
+   public static void press(int key) {
       if (Client.getInstance().getClientMode() != ClientMode.NOADDONS) {
-         if (var0 != -1) {
-            for (Class7957 var5 : Client.getInstance().getModuleManager().method14668().method13733(var0)) {
+         if (key != -1) {
+            for (Class7957 var5 : Client.getInstance().getModuleManager().method14668().method13733(key)) {
                if (var5 != null && var5.method27052()) {
                   switch (Class8614.field38740[var5.method27055().ordinal()]) {
                      case 1:

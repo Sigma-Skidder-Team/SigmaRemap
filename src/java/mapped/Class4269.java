@@ -13,7 +13,7 @@ public class Class4269 extends Class4247 {
       this.font = ResourceRegistry.JelloLightFont20;
       this.addToList(this.field20694 = new UIInput(this, "chat", 14, 0, var5 - 28, var6, UIInput.field20741, "", "Chat..."));
       this.field20694.method13156(false);
-      this.field20694.method13306(ResourceRegistry.JelloLightFont20);
+      this.field20694.setFont(ResourceRegistry.JelloLightFont20);
       this.field20694.method13145(true);
    }
 

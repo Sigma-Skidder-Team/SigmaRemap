@@ -67,7 +67,7 @@ public class SigmaClassicAltManager extends Screen {
             ResourceRegistry.JelloLightFont18
          )
       );
-      this.field21066.method13306(ResourceRegistry.field38868);
+      this.field21066.setFont(ResourceRegistry.field38868);
       this.field21066.method13151(var1 -> this.method13402());
       this.method13403();
       this.addToList(

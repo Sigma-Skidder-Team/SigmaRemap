@@ -66,11 +66,11 @@ public class LoginScreen extends Class4247 {
       ColorHelper var12 = new ColorHelper(-892679478, -892679478, -892679478, ClientColors.MID_GREY.getColor, Class2218.field14488, Class2218.field14492);
       this.addToList(this.inputUsername = new UIInput(this, "Username", 228, var11, var10, var9, var12, "", "Username"));
       this.addToList(this.inputPassword = new UIInput(this, "Password", 228, var11 + 53, var10, var9, var12, "", "Password"));
-      this.inputUsername.method13306(ResourceRegistry.JelloLightFont20);
-      this.inputPassword.method13306(ResourceRegistry.JelloLightFont20);
+      this.inputUsername.setFont(ResourceRegistry.JelloLightFont20);
+      this.inputPassword.setFont(ResourceRegistry.JelloLightFont20);
       this.inputPassword.method13155(true);
       this.addToList(this.field21355 = new UIInput(this, "CaptchaBox", 228, var11 + 135, 84, var9, var12, "", "Captcha"));
-      this.field21355.method13306(ResourceRegistry.JelloLightFont20);
+      this.field21355.setFont(ResourceRegistry.JelloLightFont20);
       this.field21355.method13288(false);
       this.loginButton.doThis((var1x, var2x) -> this.method13688());
       this.registerButton.doThis((var1x, var2x) -> {

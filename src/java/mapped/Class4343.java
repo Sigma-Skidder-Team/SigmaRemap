@@ -58,7 +58,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             this.field21223.put(var36, setting);
             NumberSetting numbaSetting = (NumberSetting)setting;
             Class4277 var47 = new Class4277(panel, setting.getName() + "slider", panel.getWidthA() - 126 - var5, var4 + 6, 126, 24);
-            var47.method13137().method13306(ResourceRegistry.JelloLightFont14);
+            var47.method13137().setFont(ResourceRegistry.JelloLightFont14);
             var47.method13304(Float.toString((Float)setting.getCurrentValue()));
             var47.method13140(Class4277.method13134(numbaSetting.getMin(), numbaSetting.getMax(), (Float)numbaSetting.getCurrentValue()), false);
             var47.method13143(-1.0F);
@@ -106,7 +106,7 @@ public class Class4343 extends Class4339 implements Class4342 {
                   (String)setting.getCurrentValue()
                )
             );
-            var35.method13306(ResourceRegistry.JelloLightFont18);
+            var35.setFont(ResourceRegistry.JelloLightFont18);
             var35.method13151(var1x -> setting.setCurrentValue(var1x.method13303()));
             setting.addObserver(var2x -> {
                if (var35.method13303() != ((InputSetting)setting).getCurrentValue()) {

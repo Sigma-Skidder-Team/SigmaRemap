@@ -52,14 +52,14 @@ public class AccountSignUpScreen extends Class4247 {
       byte var11 = 106;
       ColorHelper var12 = new ColorHelper(-892679478, -892679478, -892679478, ClientColors.MID_GREY.getColor, Class2218.field14488, Class2218.field14492);
       this.addToList(this.usernameInputBox = new UIInput(this, "Username", 228, var11, var10, var9, var12, "", "Username"));
-      this.usernameInputBox.method13306(ResourceRegistry.JelloLightFont20);
+      this.usernameInputBox.setFont(ResourceRegistry.JelloLightFont20);
       this.addToList(this.emailInputBox = new UIInput(this, "Email", 228, var11 + 53, var10, var9, var12, "", "Email"));
-      this.emailInputBox.method13306(ResourceRegistry.JelloLightFont20);
+      this.emailInputBox.setFont(ResourceRegistry.JelloLightFont20);
       this.addToList(this.passwordInputBox = new UIInput(this, "Password", 228, var11 + 106, var10, var9, var12, "", "Password"));
-      this.passwordInputBox.method13306(ResourceRegistry.JelloLightFont20);
+      this.passwordInputBox.setFont(ResourceRegistry.JelloLightFont20);
       this.passwordInputBox.method13155(true);
       this.addToList(this.captchaBox = new UIInput(this, "CaptchaBox", 228, var11 + 53 + 135, 80, var9, var12, "", "Captcha"));
-      this.captchaBox.method13306(ResourceRegistry.JelloLightFont20);
+      this.captchaBox.setFont(ResourceRegistry.JelloLightFont20);
       this.captchaBox.method13288(false);
       this.registerButton.doThis((var1x, var2x) -> this.method13126());
       this.loginButton.doThis((var1x, var2x) -> {
