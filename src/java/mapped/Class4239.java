@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class Class4239 extends ButtonPanel implements Class4238 {
    private static String[] field20580;
@@ -51,7 +51,7 @@ public class Class4239 extends ButtonPanel implements Class4238 {
          (float)var8,
          (float)(var7 + var5),
          (float)(var8 + var6),
-         ColorUtils.applyAlpha(ColorUtils.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4), var1)
+         MultiUtilities.applyAlpha(MultiUtilities.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4), var1)
       );
       if (this.method13303() != null) {
          RenderUtil.method11440(
@@ -59,7 +59,7 @@ public class Class4239 extends ButtonPanel implements Class4238 {
             (float)(var7 + var5 / 2),
             (float)(var8 + var6 / 2),
             this.method13303(),
-            ColorUtils.applyAlpha(this.textColor.getTextColor(), var1),
+            MultiUtilities.applyAlpha(this.textColor.getTextColor(), var1),
             this.textColor.method19411(),
             this.textColor.method19413()
          );

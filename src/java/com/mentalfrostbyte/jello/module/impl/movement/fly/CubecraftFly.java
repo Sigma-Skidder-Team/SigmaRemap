@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -50,7 +50,7 @@ public class CubecraftFly extends Module {
 
     @Override
     public void onDisable() {
-        ColorUtils.setPlayerYMotion(-0.078);
+        MultiUtilities.setPlayerYMotion(-0.078);
         MovementUtils.strafe(0.2);
         mc.timer.timerSpeed = 1.0F;
         if (this.field23846) {
@@ -85,7 +85,7 @@ public class CubecraftFly extends Module {
             if (mc.player.onGround) {
                 this.field23847 = this.field23848 = false;
             }
-        } else if (ColorUtils.method17718()) {
+        } else if (MultiUtilities.method17718()) {
             if (this.field23845 > 0) {
                 var1.setY(0.0);
                 MovementUtils.setSpeed(var1, 0.0);
@@ -110,7 +110,7 @@ public class CubecraftFly extends Module {
                                 }
                             } else {
                                 if (!this.field23848) {
-                                    ColorUtils.method17749(false);
+                                    MultiUtilities.method17749(false);
                                     this.field23848 = true;
                                 }
 
@@ -121,7 +121,7 @@ public class CubecraftFly extends Module {
                         }
                     }
                 } else if (JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber()) {
-                    if (!ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+                    if (!MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                         var1.setY(0.0);
                         MovementUtils.setSpeed(var1, 0.0);
                         if (mc.player.fallDistance > 4.0F) {
@@ -134,14 +134,14 @@ public class CubecraftFly extends Module {
                     }
 
                     this.field23845 = 1;
-                } else if (!ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+                } else if (!MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                     var1.setY(0.0);
                     this.field23845 = -2;
                     Client.getInstance().getNotificationManager().send(new Notification("Cubecraft Fly", "Please start on the ground."));
                 } else {
                     MovementUtils.setSpeed(var1, 0.0);
                     var1.setY(0.0);
-                    long var14 = ColorUtils.method17762() % 90L;
+                    long var14 = MultiUtilities.method17762() % 90L;
                     double var15 = 0.016 + (double) var14 / 10000.0;
                     double var16 = mc.player.getPosX();
                     double var10 = mc.player.getPosY() + 0.022;
@@ -152,7 +152,7 @@ public class CubecraftFly extends Module {
                     mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var16, var10 + 3.0, var12, false));
                 }
 
-                ColorUtils.setPlayerYMotion(var1.getY());
+                MultiUtilities.setPlayerYMotion(var1.getY());
             }
         } else {
             MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
@@ -168,9 +168,9 @@ public class CubecraftFly extends Module {
 
     @EventTarget
     public void method16689(EventUpdate var1) {
-        if (var1.isPre() && ColorUtils.method17718()) {
+        if (var1.isPre() && MultiUtilities.method17718()) {
             var1.method13908(true);
-            if (JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber() && this.field23845 == 0 && ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+            if (JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber() && this.field23845 == 0 && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                 var1.setCancelled(true);
             }
 
@@ -182,7 +182,7 @@ public class CubecraftFly extends Module {
 
     @EventTarget
     public void method16690(ReceivePacketEvent var1) {
-        if (mc.world != null && mc.getConnection() != null && ColorUtils.method17718()) {
+        if (mc.world != null && mc.getConnection() != null && MultiUtilities.method17718()) {
             IPacket var4 = var1.getPacket();
             if (!(var4 instanceof SPlayerPositionLookPacket)) {
                 if (var4 instanceof SEntityVelocityPacket) {

@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.impl.EventRenderNameTag;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -45,9 +45,9 @@ public class Nametags extends Module {
                     int var13 = Math.round(var9.field37221);
                     GL11.glPushMatrix();
                     GL11.glTranslatef((float) (-var11 / 2), (float) (-var4), 0.0F);
-                    RenderUtil.method11424((float) var12, (float) var13, (float) var11, 20.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
+                    RenderUtil.method11424((float) var12, (float) var13, (float) var11, 20.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
                     RenderUtil.drawString(
-                            ClassicDecryption.bold16, (float) (var12 + 3), (float) var13, var10, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F)
+                            ClassicDecryption.bold16, (float) (var12 + 3), (float) var13, var10, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F)
                     );
                     RenderUtil.drawString(ClassicDecryption.bold16, (float) (var12 + 3), (float) (var13 - 1), var10, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                     GL11.glPopMatrix();

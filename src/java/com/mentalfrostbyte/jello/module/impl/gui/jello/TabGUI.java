@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.BlurEngine;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 
@@ -30,10 +30,10 @@ public class TabGUI extends Module {
     public HashMap<Module, Float> field23774 = new HashMap<Module, Float>();
     public boolean field23781 = false;
     public ArrayList<Class8224> field23789 = new ArrayList<Class8224>();
-    public int field23790 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.0625F);
-    public int field23791 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F);
+    public int field23790 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.0625F);
+    public int field23791 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F);
     public List<ModuleCategory> field23792 = this.method16597();
-    public int field23793 = ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.05F);
+    public int field23793 = MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor, 0.05F);
     private final Color[] field23763 = new Color[3];
     private final Color[] field23764 = new Color[3];
     private final Color[] field23765 = new Color[3];
@@ -279,9 +279,9 @@ public class TabGUI extends Module {
             Class8224 var12 = (Class8224) var16.next();
             if (var12.field35322 == var6) {
                 float var13 = var12.field35323.calcPercent();
-                int var14 = ColorUtils.applyAlpha(-5658199, (1.0F - var13 * (0.5F + var13 * 0.5F)) * 0.8F);
+                int var14 = MultiUtilities.applyAlpha(-5658199, (1.0F - var13 * (0.5F + var13 * 0.5F)) * 0.8F);
                 if (Client.getInstance().getGuiManager().method33472()) {
-                    var14 = ColorUtils.applyAlpha(-1, (1.0F - var13) * 0.14F);
+                    var14 = MultiUtilities.applyAlpha(-1, (1.0F - var13) * 0.14F);
                 }
 
                 RenderUtil.method11436(
@@ -380,12 +380,12 @@ public class TabGUI extends Module {
         boolean var11 = Client.getInstance().getGuiManager().method33472();
         Object var12 = null;
         byte var13 = 20;
-        int var14 = ColorUtils.method17682(var5).getRGB();
-        int var15 = ColorUtils.method17682(var7).getRGB();
+        int var14 = MultiUtilities.method17682(var5).getRGB();
+        int var15 = MultiUtilities.method17682(var7).getRGB();
         if (var6 != null) {
-            int var16 = ColorUtils.method17682(var6).getRGB();
-            var14 = ColorUtils.method17690(var14, var16, 0.75F);
-            var15 = ColorUtils.method17690(var15, var16, 0.75F);
+            int var16 = MultiUtilities.method17682(var6).getRGB();
+            var14 = MultiUtilities.method17690(var14, var16, 0.75F);
+            var15 = MultiUtilities.method17690(var15, var16, 0.75F);
         }
 
         if (!var11) {
@@ -426,7 +426,7 @@ public class TabGUI extends Module {
     private Color method16602(int var1, int var2, Color var3) {
         Color var6 = RenderUtil.method11481(var1, var2, var3);
         if (var3 != null) {
-            var6 = ColorUtils.method17681(var6, var3, 0.08F * this.field23780);
+            var6 = MultiUtilities.method17681(var6, var3, 0.08F * this.field23780);
         }
 
         return var6;

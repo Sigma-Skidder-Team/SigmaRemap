@@ -177,7 +177,7 @@ public class AutoSoup extends Module {
                 this.field23430 = mc.player.inventory.currentItem;
                 mc.player.inventory.currentItem = var3;
                 mc.playerController.syncCurrentPlayItem();
-                mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.field183));
+                mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.OFF_HAND));
                 mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
             }
         } else {
@@ -186,7 +186,7 @@ public class AutoSoup extends Module {
             }
 
             mc.getConnection().sendPacket(new CHeldItemChangePacket(var3));
-            mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.field183));
+            mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.OFF_HAND));
             mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
             if (var5) {
                 mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.DROP_ITEM, BlockPos.ZERO, Direction.DOWN));

@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
@@ -28,7 +28,7 @@ public class YPortSpeed extends Module {
     @EventTarget
     public void method16235(EventUpdate var1) {
         if (this.isEnabled() && mc.player != null && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
-            if (mc.player.onGround && var1.isPre() && ColorUtils.method17716()) {
+            if (mc.player.onGround && var1.isPre() && MultiUtilities.method17716()) {
                 var1.setY(var1.getY() + 1.0E-14);
             }
         }
@@ -46,7 +46,7 @@ public class YPortSpeed extends Module {
     public void onDisable() {
         this.field23541 = false;
         if (mc.player.getMotion().y > 0.33) {
-            ColorUtils.setPlayerYMotion(-0.43 + (double) MovementUtils.method37079() * 0.1);
+            MultiUtilities.setPlayerYMotion(-0.43 + (double) MovementUtils.method37079() * 0.1);
             MovementUtils.strafe(MovementUtils.getSpeed());
         }
     }
@@ -65,11 +65,11 @@ public class YPortSpeed extends Module {
                             this.field23541 = true;
                             mc.player.stepHeight = 0.5F;
                         } else if (this.field23541
-                                && ColorUtils.isAboveBounds(mc.player, (float) (MovementUtils.method37080() + (double) MovementUtils.method37079() * 0.1 + 0.001F))) {
+                                && MultiUtilities.isAboveBounds(mc.player, (float) (MovementUtils.method37080() + (double) MovementUtils.method37079() * 0.1 + 0.001F))) {
                             this.field23541 = !this.field23541;
                             MovementUtils.setSpeed(var1, 0.312);
                             var1.setY(-0.43 + (double) MovementUtils.method37079() * 0.1);
-                            ColorUtils.setPlayerYMotion(var1.getY());
+                            MultiUtilities.setPlayerYMotion(var1.getY());
                             mc.player.stepHeight = 0.0F;
                         } else if (this.field23541) {
                             var1.setY(-0.1);
@@ -77,11 +77,11 @@ public class YPortSpeed extends Module {
                         }
                         break;
                     case "OldNCP":
-                        if (mc.player.onGround && ColorUtils.method17686()) {
+                        if (mc.player.onGround && MultiUtilities.method17686()) {
                             this.field23545 = 2;
                         }
 
-                        if (this.field23545 == 1 && ColorUtils.method17686()) {
+                        if (this.field23545 == 1 && MultiUtilities.method17686()) {
                             this.field23545 = 2;
                             this.field23543 = 1.38 * MovementUtils.getSpeed() - 0.01;
                         } else if (this.field23545 == 2) {
@@ -111,7 +111,7 @@ public class YPortSpeed extends Module {
                         this.field23543 = Math.max(this.field23543, MovementUtils.getSpeed());
                         MovementUtils.setSpeed(var1, this.field23543);
                         mc.player.stepHeight = 0.6F;
-                        ColorUtils.setPlayerYMotion(var1.getY());
+                        MultiUtilities.setPlayerYMotion(var1.getY());
                 }
             }
         }
@@ -127,10 +127,10 @@ public class YPortSpeed extends Module {
                         && !mc.player.isOnLadder()
                         && !MovementUtils.isInWater()
                         && !mc.player.isInWater()
-                        && ColorUtils.isAboveBounds(mc.player, 1.0F)
+                        && MultiUtilities.isAboveBounds(mc.player, 1.0F)
                         && !mc.player.onGround
                         && this.field23545 == 3) {
-                    ColorUtils.setPlayerYMotion(-0.3994);
+                    MultiUtilities.setPlayerYMotion(-0.3994);
                 }
 
                 double var4 = mc.player.getPosX() - mc.player.prevPosX;
@@ -143,12 +143,12 @@ public class YPortSpeed extends Module {
     @EventTarget
     public void method16238(Render2DEvent var1) {
         if (this.isEnabled()
-                && ColorUtils.isAboveBounds(mc.player, 0.43F)
+                && MultiUtilities.isAboveBounds(mc.player, 0.43F)
                 && !((double) mc.player.fallDistance > 0.09)
                 && this.getBooleanValueFromSetttingName("OnGround")
                 && !mc.gameSettings.keyBindJump.pressed
                 && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
-            if (mc.player.onGround && ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+            if (mc.player.onGround && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                 this.field23542 = mc.player.getPosY();
             }
 

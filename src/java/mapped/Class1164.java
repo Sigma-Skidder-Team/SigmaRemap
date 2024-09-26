@@ -13,7 +13,7 @@ public class Class1164 extends Class1155<Class1164> {
    }
 
    @Override
-   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void render(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       String var13 = this.field6321.toString();
       this.field6322
          .field6848

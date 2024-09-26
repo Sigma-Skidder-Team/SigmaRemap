@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -51,13 +51,13 @@ public class JumpSpider extends Module {
             var1.setY(mc.player.getMotion().y);
         }
 
-        ColorUtils.setPlayerYMotion(var1.getY());
+        MultiUtilities.setPlayerYMotion(var1.getY());
     }
 
     @EventTarget
     private void method16652(EventUpdate var1) {
         if (this.isEnabled() && var1.isPre()) {
-            Class9629 var4 = ColorUtils.method17760(1.0E-4);
+            Class9629 var4 = MultiUtilities.method17760(1.0E-4);
             String var5 = this.getStringSettingValueByName("Mode");
             if (this.getBooleanValueFromSetttingName("Ceiling")
                     && !mc.player.onGround

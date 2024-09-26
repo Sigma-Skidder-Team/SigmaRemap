@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import net.minecraft.client.Minecraft;
@@ -223,11 +223,11 @@ public class JelloMainMenuScreen extends Screen {
             (float)(this.getWidthA() * 2),
             (float)(this.getHeightA() + 200),
             field20976,
-            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4),
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4),
             false
          );
          RenderUtil.method11424(
-            0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var4 * 0.3F)
+            0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var4 * 0.3F)
          );
 
          for (IconPanel var24 : this.method13241()) {
@@ -268,7 +268,7 @@ public class JelloMainMenuScreen extends Screen {
                (float)(this.widthA / 2),
                (float)(this.heightA / 2 - 30),
                field20980,
-               ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent()),
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent()),
                Class2218.field14492,
                Class2218.field14492
             );
@@ -277,7 +277,7 @@ public class JelloMainMenuScreen extends Screen {
                (float)(this.widthA / 2),
                (float)(this.heightA / 2 + 30),
                "\"" + field20981 + "\"",
-               ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent() * 0.5F),
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20973.calcPercent() * 0.5F),
                Class2218.field14492,
                Class2218.field14492
             );

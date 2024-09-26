@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.LongJump;
 import com.mentalfrostbyte.jello.module.impl.player.NoFall;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -59,12 +59,12 @@ public class NCPLongJump extends Module {
 
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
                 if (Step.field23887 > 1) {
-                    if (this.access().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var4) && this.field23477 > 0 && ColorUtils.method17686()) {
+                    if (this.access().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var4) && this.field23477 > 0 && MultiUtilities.method17686()) {
                         mc.player.jump();
                         var1.setX(mc.player.getMotion().x);
                         var1.setY(mc.player.getMotion().y);
                         var1.setZ(mc.player.getMotion().z);
-                    } else if (this.access().getBooleanValueFromSetttingName("Auto Jump") && this.field23477 > (this.field23479 ? 1 : 0) && ColorUtils.method17686()) {
+                    } else if (this.access().getBooleanValueFromSetttingName("Auto Jump") && this.field23477 > (this.field23479 ? 1 : 0) && MultiUtilities.method17686()) {
                         mc.player.jump();
                         var1.setX(mc.player.getMotion().x);
                         var1.setY(mc.player.getMotion().y);
@@ -98,7 +98,7 @@ public class NCPLongJump extends Module {
                         }
                     }
 
-                    if (mc.player.collidedHorizontally || !ColorUtils.method17686()) {
+                    if (mc.player.collidedHorizontally || !MultiUtilities.method17686()) {
                         this.field23480 = var5;
                     }
 
@@ -111,7 +111,7 @@ public class NCPLongJump extends Module {
                                 break;
                             case "High":
                                 var1.setY(((LongJump) this.access()).method16731(this.field23478));
-                                if (ColorUtils.method17716()
+                                if (MultiUtilities.method17716()
                                         && Client.getInstance().getModuleManager().getModuleByClass(NoFall.class).isEnabled()
                                         && (this.field23478 == 8 || this.field23478 == 21)) {
                                     double var9 = mc.player.getPosY() + var1.getY();
@@ -134,7 +134,7 @@ public class NCPLongJump extends Module {
                 }
             }
 
-            ColorUtils.setPlayerYMotion(var1.getY());
+            MultiUtilities.setPlayerYMotion(var1.getY());
         }
     }
 
@@ -153,7 +153,7 @@ public class NCPLongJump extends Module {
                 }
 
                 if (this.getStringSettingValueByName("Speed Mode").equals("Hypixel") && (double) this.getNumberValueBySettingName("Boost") > 1.75) {
-                    ColorUtils.method17749(true);
+                    MultiUtilities.method17749(true);
                 }
 
                 mc.getConnection()

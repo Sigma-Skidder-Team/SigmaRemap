@@ -178,7 +178,7 @@ public class EditWorldScreen extends Screen {
       this.field7034 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 100, 38, 200, 20, new TranslationTextComponent("selectWorld.enterName"));
       this.field7034.method5635(var5);
       this.field7034.method5631(var1 -> this.field7032.active = !var1.trim().isEmpty());
-      this.field4561.add(this.field7034);
+      this.children.add(this.field7034);
       this.setFocusedDefault(this.field7034);
    }
 

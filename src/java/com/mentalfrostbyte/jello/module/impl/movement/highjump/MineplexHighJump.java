@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -57,7 +57,7 @@ public class MineplexHighJump extends Module {
             if (Math.abs(var1.getY()) < var4 && Math.abs(this.field24025) < var4) {
                this.field24025 -= 0.04000000000001;
                var1.setY(this.field24025);
-               ColorUtils.setPlayerYMotion(var1.getY());
+               MultiUtilities.setPlayerYMotion(var1.getY());
             } else {
                this.field24025 = var1.getY();
             }

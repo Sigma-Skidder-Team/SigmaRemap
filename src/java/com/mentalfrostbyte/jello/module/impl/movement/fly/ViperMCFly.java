@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -43,7 +43,7 @@ public class ViperMCFly extends Module {
     public void onDisable() {
         MovementUtils.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
-            ColorUtils.setPlayerYMotion(-0.0789);
+            MultiUtilities.setPlayerYMotion(-0.0789);
         }
     }
 
@@ -79,7 +79,7 @@ public class ViperMCFly extends Module {
                             var1.setY(-MovementUtils.method37080());
                         }
 
-                        ColorUtils.setPlayerYMotion(var1.getY());
+                        MultiUtilities.setPlayerYMotion(var1.getY());
                         MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
                     }
                 } else {
@@ -88,14 +88,14 @@ public class ViperMCFly extends Module {
                         this.field23597 = this.field23596;
                         this.field23596 = !this.field23598 ? mc.player.getPosY() + var1.getY() : this.field23596;
                     } else {
-                        var1.setY(this.field23598 && !ColorUtils.isAboveBounds(mc.player, 0.01F) ? -var4 / 2.0 : MovementUtils.method37080());
+                        var1.setY(this.field23598 && !MultiUtilities.isAboveBounds(mc.player, 0.01F) ? -var4 / 2.0 : MovementUtils.method37080());
                         this.field23597 = this.field23596;
-                        this.field23596 = this.field23598 && !ColorUtils.isAboveBounds(mc.player, 0.01F)
+                        this.field23596 = this.field23598 && !MultiUtilities.isAboveBounds(mc.player, 0.01F)
                                 ? mc.player.getPosY() + var1.getY()
                                 : this.field23596;
                     }
 
-                    ColorUtils.setPlayerYMotion(var1.getY());
+                    MultiUtilities.setPlayerYMotion(var1.getY());
                     MovementUtils.setSpeed(var1, var4);
                 }
             } else {

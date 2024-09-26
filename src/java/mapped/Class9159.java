@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 import java.util.Date;
 
@@ -13,7 +13,7 @@ public class Class9159 {
 
    public Class9159(String var1, boolean var2) {
       this.field42046 = var2;
-      this.field42047 = ColorUtils.method17745(var1, 200, ResourceRegistry.JelloLightFont18);
+      this.field42047 = MultiUtilities.method17745(var1, 200, ResourceRegistry.JelloLightFont18);
    }
 
    public int method34192() {

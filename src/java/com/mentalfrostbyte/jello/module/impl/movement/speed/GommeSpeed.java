@@ -5,8 +5,8 @@ import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
-import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.MovementUtils;
 
 public class GommeSpeed extends Module {
@@ -28,7 +28,7 @@ public class GommeSpeed extends Module {
 
     @Override
     public void onDisable() {
-        if (ColorUtils.method17686()) {
+        if (MultiUtilities.method17686()) {
             MovementUtils.method37093(0.27, MovementUtils.method37083()[0], this.field23584, 45.0F);
         } else {
             MovementUtils.strafe(0.0);
@@ -77,14 +77,14 @@ public class GommeSpeed extends Module {
                         }
                     }
 
-                    if (ColorUtils.method17686()) {
+                    if (MultiUtilities.method17686()) {
                         this.field23584 = MovementUtils.method37092(var1, Math.max(this.field23583, 0.23), MovementUtils.method37083()[0], this.field23584, 45.0F);
                     } else {
                         this.field23583 = 0.1;
                         MovementUtils.setSpeed(var1, 0.0);
                     }
                 }
-            } else if (ColorUtils.method17686()) {
+            } else if (MultiUtilities.method17686()) {
                 this.field23581 = 0;
                 var1.setY(MovementUtils.method37080());
                 double[] var9 = new double[]{0.549, 0.625};

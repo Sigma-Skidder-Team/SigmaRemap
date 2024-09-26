@@ -6,10 +6,10 @@ import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
 import mapped.MovementUtils;
-import com.mentalfrostbyte.jello.util.ColorUtils;
 
 public class MinemenAntiKB extends Module {
     private boolean field23852 = false;
@@ -28,7 +28,7 @@ public class MinemenAntiKB extends Module {
     @EventTarget
     public void method16697(EventUpdate var1) {
         if (var1.isPre()) {
-            if (ColorUtils.isAboveBounds(mc.player, 1.0E-5F)) {
+            if (MultiUtilities.isAboveBounds(mc.player, 1.0E-5F)) {
                 this.field23852 = true;
                 var1.setY(var1.getY() - 5.0E-7);
                 var1.setGround(false);
@@ -54,7 +54,7 @@ public class MinemenAntiKB extends Module {
             }
         }
 
-        ColorUtils.setPlayerYMotion(var1.getY());
+        MultiUtilities.setPlayerYMotion(var1.getY());
     }
 
     @EventTarget

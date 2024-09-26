@@ -54,14 +54,14 @@ public abstract class Class1325 extends Screen {
       this.field7010 = new Class1300(this, this.fontRenderer, this.width / 2 - 150, 50, 300, 20, new TranslationTextComponent("advMode.command"));
       this.field7010.method5657(32500);
       this.field7010.method5631(this::method6309);
-      this.field4561.add(this.field7010);
+      this.children.add(this.field7010);
       this.field7011 = new TextFieldWidget(
          this.fontRenderer, this.width / 2 - 150, this.method6305(), 276, 20, new TranslationTextComponent("advMode.previousOutput")
       );
       this.field7011.method5657(32500);
       this.field7011.method5666(false);
       this.field7011.method5635("-");
-      this.field4561.add(this.field7011);
+      this.children.add(this.field7011);
       this.setFocusedDefault(this.field7010);
       this.field7010.method5654(true);
       this.field7016 = new Class6850(this.mc, this, this.field7010, this.fontRenderer, true, true, 0, 7, false, Integer.MIN_VALUE);

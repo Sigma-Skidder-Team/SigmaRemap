@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.SoundEvents;
 
@@ -25,7 +25,7 @@ public class Class4300 extends Class4278 {
          (float)this.yA,
          (float)(this.xA + this.widthA),
          (float)(this.yA + this.heightA),
-         ColorUtils.applyAlpha(this.field20839, !this.isHovered() ? 0.25F : (!this.method13298() ? 0.4F : (!this.method13212() ? 0.5F : 0.6F)))
+         MultiUtilities.applyAlpha(this.field20839, !this.isHovered() ? 0.25F : (!this.method13298() ? 0.4F : (!this.method13212() ? 0.5F : 0.6F)))
       );
       RenderUtil.method11429(
          (float)this.xA,
@@ -33,14 +33,14 @@ public class Class4300 extends Class4278 {
          (float)(this.xA + this.widthA),
          (float)(this.yA + this.heightA),
          2,
-         ColorUtils.applyAlpha(this.field20839, 0.2F)
+         MultiUtilities.applyAlpha(this.field20839, 0.2F)
       );
       RenderUtil.method11440(
          ResourceRegistry.field38868,
          (float)(this.getXA() + this.getWidthA() / 2),
          (float)(this.getYA() + this.getHeightA() / 2),
          this.field20912,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, !this.isHovered() ? 0.5F : 1.0F),
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, !this.isHovered() ? 0.5F : 1.0F),
          Class2218.field14492,
          Class2218.field14492
       );

@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.module.impl.world.AutoCrystal;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class Class540 implements Runnable {
    private static String[] field2585;
@@ -15,7 +15,7 @@ public class Class540 implements Runnable {
 
    @Override
    public void run() {
-      ColorUtils.method17735(this.field2586, true);
+      MultiUtilities.swing(this.field2586, true);
 
       for (int var3 = 0; var3 < 10; var3++) {
          AutoCrystal.method16394().particles.method1195(this.field2586, ParticleTypes.field34054);

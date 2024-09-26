@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.module.impl.world.Timer;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 
 public class CubecraftSpeed extends Module {
@@ -38,7 +38,7 @@ public class CubecraftSpeed extends Module {
         mc.timer.timerSpeed = 1.0F;
         MovementUtils.strafe(0.2);
         if (mc.player.getMotion().y > 0.0) {
-            ColorUtils.setPlayerYMotion(-0.078);
+            MultiUtilities.setPlayerYMotion(-0.078);
         }
     }
 
@@ -46,14 +46,14 @@ public class CubecraftSpeed extends Module {
     public void method16361(EventMove var1) {
         if (this.isEnabled()
                 && !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()
-                && !ColorUtils.method17684(mc.player)) {
+                && !MultiUtilities.method17684(mc.player)) {
             String var4 = this.getStringSettingValueByName("Mode");
             switch (var4) {
                 case "Basic":
                     this.field23618++;
                     this.field23619 = 0.27;
                     mc.timer.timerSpeed = 0.7F;
-                    if (ColorUtils.isAboveBounds(mc.player, 0.01F)) {
+                    if (MultiUtilities.isAboveBounds(mc.player, 0.01F)) {
                         if (this.getBooleanValueFromSetttingName("AutoJump")) {
                             mc.player.jump();
                             var1.setY(mc.player.getMotion().y);
@@ -87,7 +87,7 @@ public class CubecraftSpeed extends Module {
                     MovementUtils.setSpeed(var1, this.field23619);
                     break;
                 case "Hop":
-                    if (!mc.player.collidedVertically || !ColorUtils.isAboveBounds(mc.player, 0.001F) || !MovementUtils.isMoving()) {
+                    if (!mc.player.collidedVertically || !MultiUtilities.isAboveBounds(mc.player, 0.001F) || !MovementUtils.isMoving()) {
                         this.field23618++;
                         if (this.field23618 == 1) {
                             this.field23619 = 0.4 + (double) MovementUtils.method37078() * 0.1;
@@ -108,7 +108,7 @@ public class CubecraftSpeed extends Module {
                     break;
                 case "YPort":
                     if (mc.player.onGround) {
-                        if (ColorUtils.method17686()) {
+                        if (MultiUtilities.method17686()) {
                             var1.setY(0.53000000000001);
                             MovementUtils.setSpeed(var1, 3.67 * (double) this.getNumberValueBySettingName("Speed"));
                             this.field23618 = 0;
@@ -124,7 +124,7 @@ public class CubecraftSpeed extends Module {
                             this.field23618 = 1;
                             MovementUtils.setSpeed(var1, 0.286);
                             var1.setY(-0.265);
-                            ColorUtils.setPlayerYMotion(var1.getY());
+                            MultiUtilities.setPlayerYMotion(var1.getY());
                         } else if (this.field23618 == 1) {
                             this.field23618 = -1;
                             MovementUtils.setSpeed(var1, 0.285);
@@ -137,7 +137,7 @@ public class CubecraftSpeed extends Module {
     @EventTarget
     public void method16362(Render2DEvent var1) {
         if (this.isEnabled() && !(this.field23620 < 0.0) && this.getStringSettingValueByName("Mode").equals("YPort")) {
-            if (mc.player.onGround && ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+            if (mc.player.onGround && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                 this.field23620 = mc.player.getPosY();
             }
 

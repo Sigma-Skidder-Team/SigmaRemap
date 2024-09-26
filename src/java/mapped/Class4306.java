@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 
 public class Class4306 extends IconPanel {
@@ -82,7 +82,7 @@ public class Class4306 extends IconPanel {
          (float)this.xA,
          (float)this.yA,
          (float)this.getWidthA(),
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.07F + (!(this.field20934 > 0.0F) ? 0.0F : this.field20934 * 0.3F))
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.07F + (!(this.field20934 > 0.0F) ? 0.0F : this.field20934 * 0.3F))
       );
       float var6 = (float)(this.field20936 - this.method13271());
       float var7 = (float)(this.field20937 - this.method13272());

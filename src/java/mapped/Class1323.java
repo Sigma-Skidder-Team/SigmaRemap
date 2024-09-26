@@ -38,7 +38,7 @@ public class Class1323 extends Screen {
    public void init() {
       this.mc.keyboardListener.enableRepeatEvents(true);
       this.field6997 = new Class1283(this);
-      this.field4561.add(this.field6997);
+      this.children.add(this.field6997);
       this.field6999 = this.<Button>addButton(new Button(this.width / 2 - 155, this.height - 28, 150, 20, DialogTexts.field30658, var1 -> {
          this.field6995.accept(this.field6998);
          this.mc.displayGuiScreen(this.field6994);
@@ -53,7 +53,7 @@ public class Class1323 extends Screen {
    }
 
    private void method6287() {
-      this.field6999.active = this.field6997.method6023() != null;
+      this.field6999.active = this.field6997.getSelected() != null;
    }
 
    @Override

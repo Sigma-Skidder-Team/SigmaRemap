@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
@@ -59,7 +59,7 @@ public class MineplexSpeed extends Module {
     public void method16250(EventMove var1) {
         if (this.isEnabled()
                 && !Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class).isEnabled()
-                && !ColorUtils.method17684(mc.player)) {
+                && !MultiUtilities.method17684(mc.player)) {
             double var4 = this.getNumberValueBySettingName("OnGround Speed");
             if (!mc.player.onGround) {
                 if (mc.player.collidedHorizontally) {
@@ -67,7 +67,7 @@ public class MineplexSpeed extends Module {
                     this.field23553 = 1;
                 }
 
-                if (!ColorUtils.method17686()) {
+                if (!MultiUtilities.method17686()) {
                     this.field23555 = 0.3;
                 }
 
@@ -84,7 +84,7 @@ public class MineplexSpeed extends Module {
                     this.field23552++;
                 }
 
-                if (this.getBooleanValueFromSetttingName("AutoJump") && ColorUtils.method17686()) {
+                if (this.getBooleanValueFromSetttingName("AutoJump") && MultiUtilities.method17686()) {
                     mc.player.jump();
                     var1.setY(mc.player.getMotion().y);
                 }

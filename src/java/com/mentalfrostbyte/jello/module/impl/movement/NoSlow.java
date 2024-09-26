@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventSlowDown;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.ItemSword;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
@@ -33,7 +33,7 @@ public class NoSlow extends Module {
             boolean var5 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof ItemSword;
             if (!var1.isPre()) {
                 if (var5 && mc.gameSettings.keyBindUseItem.isKeyDown() && !this.field23540 && !var4 && this.getStringSettingValueByName("Mode").equals("NCP")) {
-                    ColorUtils.method17733();
+                    MultiUtilities.block();
                     this.field23540 = true;
                 } else if (!var5 && this.field23540) {
                     this.field23540 = false;
@@ -44,7 +44,7 @@ public class NoSlow extends Module {
                 }
             } else if (this.field23540 && mc.gameSettings.keyBindUseItem.isKeyDown() && !var4) {
                 if (var5) {
-                    ColorUtils.method17734();
+                    MultiUtilities.unblock();
                 }
 
                 this.field23540 = false;

@@ -238,11 +238,11 @@ public class FirstPersonRenderer {
       }
 
       if (var12) {
-         float var22 = var9 != Hand.field183 ? 0.0F : var8;
+         float var22 = var9 != Hand.OFF_HAND ? 0.0F : var8;
          float var23 = 1.0F - MathHelper.lerp(var1, this.field45084, this.field45083);
          if (!Reflector.field42894.exists()
-            || !Reflector.method35056(Reflector.field42894, Hand.field183, var2, var3, var5, var1, var10, var22, var23, this.field45080)) {
-            this.method37591(var4, var1, var10, Hand.field183, var22, this.field45080, var23, var2, var3, var5);
+            || !Reflector.method35056(Reflector.field42894, Hand.OFF_HAND, var2, var3, var5, var1, var10, var22, var23, this.field45080)) {
+            this.method37591(var4, var1, var10, Hand.OFF_HAND, var22, this.field45080, var23, var2, var3, var5);
          }
       }
 

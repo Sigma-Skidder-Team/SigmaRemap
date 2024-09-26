@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
@@ -73,7 +73,7 @@ public class SpartanFly extends Module {
     @EventTarget
     public void method16271(EventMove var1) {
         if (this.isEnabled()) {
-            boolean var4 = mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.001F);
+            boolean var4 = mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.001F);
             if (!var4) {
                 if (var1.getY() < 0.0) {
                     if (this.field23569 != mc.player.getPositionVec().y) {
@@ -120,9 +120,9 @@ public class SpartanFly extends Module {
                         : (!this.field23571 ? mc.player.getPositionVec().y + 1.0 : mc.player.getPositionVec().y);
             }
 
-            ColorUtils.setPlayerXMotion(var1.getX());
-            ColorUtils.setPlayerYMotion(var1.getY());
-            ColorUtils.setPlayerZMotion(var1.getZ());
+            MultiUtilities.setPlayerXMotion(var1.getX());
+            MultiUtilities.setPlayerYMotion(var1.getY());
+            MultiUtilities.setPlayerZMotion(var1.getZ());
         }
     }
 

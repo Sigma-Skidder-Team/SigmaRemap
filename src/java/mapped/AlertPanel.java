@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mentalfrostbyte.jello.util.animation.Animation;
@@ -217,14 +217,14 @@ public class AlertPanel extends Class4247 {
             (float)(this.getWidthA() + 10),
             (float)(this.getHeightA() + 10),
             this.field21281,
-            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
          );
          RenderUtil.drawRect(
-            0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F * var7)
+            0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F * var7)
          );
          if (var4 > 0) {
             RenderUtil.method11465(
-               (this.widthA - var4) / 2, (this.heightA - var5) / 2, var4, var5, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
+               (this.widthA - var4) / 2, (this.heightA - var5) / 2, var4, var5, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var7)
             );
          }
 

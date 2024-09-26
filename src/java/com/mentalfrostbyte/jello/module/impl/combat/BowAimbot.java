@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
@@ -100,7 +100,7 @@ public class BowAimbot extends Module {
     }
 
     public List<Entity> method16571(float var1) {
-        List var4 = ColorUtils.getEntitesInWorld();
+        List var4 = MultiUtilities.getEntitesInWorld();
         Iterator var5 = var4.iterator();
 
         while (var5.hasNext()) {

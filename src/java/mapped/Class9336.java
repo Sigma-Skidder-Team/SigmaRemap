@@ -13,6 +13,7 @@ import javax.imageio.ImageIO;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.util.ResourceLocation;
 import org.lwjgl.BufferUtils;
@@ -288,7 +289,7 @@ public class Class9336 {
       method35314(var3);
    }
 
-   public static void method35317(Class291 var0) {
+   public static void method35317(DynamicTexture var0) {
       Class9732 var3 = var0.method1135();
       Class1806 var4 = var0.method1141();
       int var5 = var4.method7886();
@@ -316,7 +317,7 @@ public class Class9336 {
    }
 
    public static Class290 method35319() {
-      Class291 var2 = new Class291(1, 1, true);
+      DynamicTexture var2 = new DynamicTexture(1, 1, true);
       var2.method1141().method7890(0, 0, -1);
       var2.method1140();
       return var2;

@@ -6,8 +6,10 @@ import com.mentalfrostbyte.jello.account.AccountManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Screen;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ServerData;
+import net.minecraft.client.multiplayer.ServerList;
 import totalcross.json.JSONObject;
 
 import java.util.ArrayList;
@@ -41,14 +43,14 @@ public class SigmaClassicAltManager extends Screen {
       this.addToList(var3 = new ClassicParticleEngine(this, "particles"));
       var3.method13294(true);
       ArrayList var4 = new ArrayList();
-      Class7970 var5 = new Class7970(Minecraft.getInstance());
-      var5.method27094();
-      int var6 = var5.method27099();
+      ServerList var5 = new ServerList(Minecraft.getInstance());
+      var5.loadServerList();
+      int var6 = var5.countServers();
 
       for (int var7 = 0; var7 < var6; var7++) {
-         ServerData var8 = var5.method27096(var7);
-         if (!var4.contains(var8.field33189)) {
-            var4.add(var8.field33189);
+         ServerData var8 = var5.getServerData(var7);
+         if (!var4.contains(var8.serverIP)) {
+            var4.add(var8.serverIP);
          }
       }
 
@@ -172,7 +174,7 @@ public class SigmaClassicAltManager extends Screen {
 
    private void method13401() {
       RenderUtil.method11455(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ClassicDecryption.mainmenubackground);
-      RenderUtil.method11424(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.23F));
+      RenderUtil.method11424(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.23F));
    }
 
    @Override

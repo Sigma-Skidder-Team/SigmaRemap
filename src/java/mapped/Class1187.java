@@ -19,7 +19,7 @@ public class Class1187 extends Class1186 {
    }
 
    @Override
-   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void render(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       this.field6412
          .field6782
          .fontRenderer

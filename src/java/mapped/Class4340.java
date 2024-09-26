@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import net.minecraft.client.Minecraft;
@@ -138,7 +138,7 @@ public class Class4340 extends Class4339 {
          22.0F,
          26.0F,
          ResourcesDecrypter.trashcanPNG,
-         ColorUtils.applyAlpha(!this.field21212 ? ClientColors.DEEP_TEAL.getColor : ClientColors.PALE_YELLOW.getColor, this.field21211.calcPercent() * 0.5F),
+         MultiUtilities.applyAlpha(!this.field21212 ? ClientColors.DEEP_TEAL.getColor : ClientColors.PALE_YELLOW.getColor, this.field21211.calcPercent() * 0.5F),
          false
       );
    }

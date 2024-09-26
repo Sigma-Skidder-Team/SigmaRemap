@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 import java.awt.Color;
 
@@ -48,7 +48,7 @@ public class Class8854 {
 
    public void method32235(float var1) {
       RenderUtil.method11438(
-         this.field40027 * 2.0F, this.field40028 * 2.0F, this.field40029 * 2.0F, ColorUtils.applyAlpha(this.field40037.getRGB(), var1 * 0.7F)
+         this.field40027 * 2.0F, this.field40028 * 2.0F, this.field40029 * 2.0F, MultiUtilities.applyAlpha(this.field40037.getRGB(), var1 * 0.7F)
       );
    }
 

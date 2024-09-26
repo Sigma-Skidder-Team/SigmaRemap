@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.Jesus;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 
 public class NoGroundCriticals extends Module {
@@ -27,7 +27,7 @@ public class NoGroundCriticals extends Module {
 
     @Override
     public void onEnable() {
-        if (ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+        if (MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
             this.field23411 = this.getStringSettingValueByName("Offset").equals("OldHypixel");
             this.field23410 = !this.field23411 ? 1 : 2;
         }

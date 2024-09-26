@@ -34,7 +34,7 @@ public class Class1165 extends Class1155<Class1165> {
    }
 
    @Override
-   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void render(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       this.method5566(var1, this.field6323, var2, var4, var3);
    }
 

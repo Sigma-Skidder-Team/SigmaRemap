@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class ColorHelper {
    private static String[] field27960;
@@ -13,7 +13,7 @@ public class ColorHelper {
    public Class2218 field27967;
 
    public ColorHelper(int var1) {
-      this(var1, ColorUtils.method17691(var1, 0.05F));
+      this(var1, MultiUtilities.method17691(var1, 0.05F));
    }
 
    public ColorHelper(int var1, int var2) {

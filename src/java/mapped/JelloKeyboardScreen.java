@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Screen;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
@@ -47,7 +47,7 @@ public class JelloKeyboardScreen extends Screen {
                   this.method13333();
                } else {
                   int[] var8 = this.field20957.method13105(this.field20957.field20696);
-                  String var9 = ColorUtils.method17736(this.field20957.field20696);
+                  String var9 = MultiUtilities.method17736(this.field20957.field20696);
                   this.field20956 = new Class4375(
                      this, "popover", this.field20957.getXA() + var8[0], this.field20957.getYA() + var8[1], this.field20957.field20696, var9
                   );
@@ -60,7 +60,7 @@ public class JelloKeyboardScreen extends Screen {
                }
             }
          );
-      ColorUtils.method17739();
+      MultiUtilities.method17739();
    }
 
    public static ArrayList<Class6984> method13328() {
@@ -126,7 +126,7 @@ public class JelloKeyboardScreen extends Screen {
    public void keyPressed(int var1) {
       super.keyPressed(var1);
       if (var1 == 256) {
-         ColorUtils.method17742();
+         MultiUtilities.method17742();
          field20953.displayGuiScreen(null);
       }
    }
@@ -142,7 +142,7 @@ public class JelloKeyboardScreen extends Screen {
          (float)this.yA,
          (float)(this.xA + this.widthA),
          (float)(this.yA + this.heightA),
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
       );
       super.method13224();
       RenderUtil.drawString(

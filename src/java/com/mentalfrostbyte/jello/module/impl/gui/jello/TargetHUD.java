@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.module.impl.gui.jello;
 
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
@@ -36,7 +36,7 @@ public class TargetHUD extends PremiumModule {
     public int field23683;
     public int field23684;
     public int field23685 = 100;
-    public int field23694 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F);
+    public int field23694 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F);
     private final float field23686 = 1.0F;
     private float field23687 = 0.0F;
     private float field23688 = 0.0F;
@@ -194,7 +194,7 @@ public class TargetHUD extends PremiumModule {
     private Color method16476(int var1, int var2, Color var3) {
         Color var6 = RenderUtil.method11481(var1, var2, var3);
         if (var3 != null) {
-            var6 = ColorUtils.method17681(var6, var3, 0.08F * this.field23686);
+            var6 = MultiUtilities.method17681(var6, var3, 0.08F * this.field23686);
         }
 
         return var6;
@@ -233,7 +233,7 @@ public class TargetHUD extends PremiumModule {
                 float var10 = var8[1] - var8[0];
                 float var11 = var3 - var8[0];
                 float var12 = var11 / var10;
-                return ColorUtils.method17681(var9[0], var9[1], 1.0F - var12);
+                return MultiUtilities.method17681(var9[0], var9[1], 1.0F - var12);
             } else {
                 return var2[0];
             }

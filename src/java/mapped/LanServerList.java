@@ -5,7 +5,7 @@ import java.net.InetAddress;
 import java.util.Collections;
 import java.util.List;
 
-public class Class9635 {
+public class LanServerList {
    private final List<Class9162> field45060 = Lists.newArrayList();
    private boolean field45061;
 

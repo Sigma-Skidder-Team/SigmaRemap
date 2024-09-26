@@ -8,6 +8,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import java.nio.charset.StandardCharsets;
 
+import net.minecraft.client.network.ServerPinger;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.StringTextComponent;
 
@@ -53,7 +54,7 @@ public class Class7967 extends SimpleChannelInboundHandler<ByteBuf> {
       short var5 = var2.readUnsignedByte();
       if (var5 == 255) {
          String var6 = new String(var2.readBytes(var2.readShort() * 2).array(), StandardCharsets.UTF_16BE);
-         String[] var7 = (String[])Iterables.toArray(Class9118.method34011().split(var6), String.class);
+         String[] var7 = (String[])Iterables.toArray(ServerPinger.method34011().split(var6), String.class);
          if ("§1".equals(var7[0])) {
             int var8 = MathHelper.method37799(var7[1], 0);
             String var9 = var7[2];
@@ -62,8 +63,8 @@ public class Class7967 extends SimpleChannelInboundHandler<ByteBuf> {
             int var12 = MathHelper.method37799(var7[5], -1);
             this.field34256.field31196.field33193 = -1;
             this.field34256.field31196.field33194 = new StringTextComponent(var9);
-            this.field34256.field31196.field33191 = new StringTextComponent(var10);
-            this.field34256.field31196.field33190 = Class9118.method34008(var11, var12);
+            this.field34256.field31196.serverMOTD = new StringTextComponent(var10);
+            this.field34256.field31196.populationInfo = ServerPinger.method34008(var11, var12);
          }
       }
 

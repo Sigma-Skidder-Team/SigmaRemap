@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import totalcross.json.JSONArray;
@@ -36,7 +36,7 @@ public class Class4330 extends IconPanel {
                var6,
                0,
                0,
-               new ColorHelper(0, 0, 0, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)),
+               new ColorHelper(0, 0, 0, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)),
                var10,
                ResourceRegistry.JelloLightFont20
             )

@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class Class4371 extends Class4247 {
    private static String[] field20602;
@@ -18,20 +18,20 @@ public class Class4371 extends Class4247 {
          (float)this.xA + (float)this.widthA / 2.0F,
          (float)this.yA + (float)this.widthA / 2.0F,
          (float)this.widthA,
-         ColorUtils.applyAlpha(ColorUtils.method17690(this.field21365, ClientColors.DEEP_TEAL.getColor, 0.8F), var1)
+         MultiUtilities.applyAlpha(MultiUtilities.method17690(this.field21365, ClientColors.DEEP_TEAL.getColor, 0.8F), var1)
       );
       RenderUtil.method11438(
          (float)this.xA + (float)this.widthA / 2.0F,
          (float)this.yA + (float)this.widthA / 2.0F,
          (float)(this.widthA - 2),
-         ColorUtils.applyAlpha(this.field21365, var1)
+         MultiUtilities.applyAlpha(this.field21365, var1)
       );
       if (this.method13212()) {
          RenderUtil.method11438(
             (float)this.xA + (float)this.widthA / 2.0F,
             (float)this.yA + (float)this.widthA / 2.0F,
             (float)(this.widthA - 2),
-            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.2F)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.2F)
          );
       }
 

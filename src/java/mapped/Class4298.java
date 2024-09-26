@@ -9,6 +9,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.network.play.server.SPlayerListItemPacket;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.GameType;
@@ -32,7 +33,7 @@ public class Class4298 extends Class4278 {
    private Minecraft field20824 = Minecraft.getInstance();
    private static ClientWorld field20825;
    public Account account;
-   private Class291 field20827;
+   private DynamicTexture field20827;
    private Class1118 field20828;
 
    public Class4298(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String var7) {

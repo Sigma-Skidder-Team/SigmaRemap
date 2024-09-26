@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -42,8 +42,8 @@ public class NoFall extends Module {
                     && (double) mc.player.fallDistance > 2.0 + (double) MovementUtils.method37079() * 0.5
                     && !mc.player.onGround
                     && this.getStringSettingValueByName("Mode").equals("Hypixel")
-                    && ColorUtils.method17716()) {
-                double[] var4 = ColorUtils.method17747();
+                    && MultiUtilities.method17716()) {
+                double[] var4 = MultiUtilities.method17747();
                 int var5 = var4.length;
                 double var6 = Double.MAX_VALUE;
 
@@ -62,7 +62,7 @@ public class NoFall extends Module {
                         if (mc.world.getCollisionShapes(mc.player, var19).count() != 0L) {
                             var13 -= 1.0E-5;
                             var1.setY(var1.getY() + var13);
-                            ColorUtils.setPlayerYMotion(var1.getY());
+                            MultiUtilities.setPlayerYMotion(var1.getY());
                             var6 = Double.MAX_VALUE;
                             break;
                         }
@@ -75,7 +75,7 @@ public class NoFall extends Module {
 
                 if (Math.abs(var6) < 0.1) {
                     var1.setY(var1.getY() + var6);
-                    ColorUtils.setPlayerYMotion(var1.getY());
+                    MultiUtilities.setPlayerYMotion(var1.getY());
                 }
             }
         }
@@ -86,14 +86,14 @@ public class NoFall extends Module {
         if (this.isEnabled() && mc.player != null) {
             if (!(mc.player.getPosY() < 2.0)) {
                 String var4 = this.getStringSettingValueByName("Mode");
-                if (!ColorUtils.method17716() && var4.equals("Hypixel")) {
+                if (!MultiUtilities.method17716() && var4.equals("Hypixel")) {
                     var4 = "OldHypixel";
                 }
 
                 switch (var4) {
                     case "OldHypixel":
                         if (var1.isPre()) {
-                            if (ColorUtils.isAboveBounds(mc.player, 1.0E-4F)) {
+                            if (MultiUtilities.isAboveBounds(mc.player, 1.0E-4F)) {
                                 this.field23509 = 0.0;
                                 return;
                             }
@@ -112,8 +112,8 @@ public class NoFall extends Module {
                         }
                         break;
                     case "Hypixel":
-                        if (var1.isPre() && mc.player.getMotion().y < 0.0 && !mc.player.onGround && ColorUtils.method17716()) {
-                            for (double var10 : ColorUtils.method17747()) {
+                        if (var1.isPre() && mc.player.getMotion().y < 0.0 && !mc.player.onGround && MultiUtilities.method17716()) {
+                            for (double var10 : MultiUtilities.method17747()) {
                                 if ((double) ((int) var1.getY()) - var1.getY() + var10 == 0.0) {
                                     var1.setGround(true);
                                     break;
@@ -123,7 +123,7 @@ public class NoFall extends Module {
                         break;
                     case "Hypixel2":
                         if (var1.isPre()) {
-                            if (ColorUtils.isAboveBounds(mc.player, 1.0E-4F)) {
+                            if (MultiUtilities.isAboveBounds(mc.player, 1.0E-4F)) {
                                 this.field23509 = 0.0;
                                 return;
                             }

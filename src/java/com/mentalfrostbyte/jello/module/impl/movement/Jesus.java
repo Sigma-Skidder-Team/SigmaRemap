@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.item.AutoMLG;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -120,7 +120,7 @@ public class Jesus extends Module {
 
             if (this.getStringSettingValueByName("Mode").equals("Dolphin")) {
                if (this.field24016 > 0) {
-                  if (ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+                  if (MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                      this.field24016 = 0;
                   } else {
                      if (mc.player.isSneaking() || mc.player.collidedVertically) {
@@ -149,7 +149,7 @@ public class Jesus extends Module {
                }
             }
 
-            ColorUtils.setPlayerYMotion(var1.getY());
+            MultiUtilities.setPlayerYMotion(var1.getY());
          }
       }
    }

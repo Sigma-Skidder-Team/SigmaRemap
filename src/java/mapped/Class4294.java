@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.account.Account;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 
@@ -21,7 +21,7 @@ public class Class4294 extends Class4278 {
    public Animation field20805 = new Animation(300, 300, Direction.BACKWARDS);
    private int field20806 = 0;
    private int field20807 = 0;
-   private int field20808 = ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 20.0F);
+   private int field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 20.0F);
 
    public Class4294(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Account var7) {
       super(var1, var2, var3, var4, var5, var6, false);
@@ -48,7 +48,7 @@ public class Class4294 extends Class4278 {
    @Override
    public void draw(float var1) {
       this.method13225();
-      this.field20808 = ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 2.0F);
+      this.field20808 = MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 2.0F);
       int var4 = ((Class4339)this.icoPanel.getIcoPanel()).method13513();
       int var5 = Math.max(0, this.yA - var4);
       int var6 = Math.max(0, this.heightA + Math.min(100, this.yA - var4 - var5));
@@ -63,7 +63,7 @@ public class Class4294 extends Class4278 {
                var5,
                this.widthA,
                Math.max(20, var6),
-               ColorUtils.applyAlpha(!this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808, var7)
+               MultiUtilities.applyAlpha(!this.method13212() ? ClientColors.LIGHT_GREYISH_BLUE.getColor : this.field20808, var7)
             );
             RenderUtil.method11421(this.xA, var5, this.xA + this.widthA + 20, var5 + var6, true);
             if (this.selectedAccount != null) {
@@ -153,7 +153,7 @@ public class Class4294 extends Class4278 {
          17.0F,
          17.0F,
          ResourcesDecrypter.errorsPNG,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5 * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5 * var1)
       );
       RenderUtil.drawImage(
          (float)(this.xA + this.widthA - 45),
@@ -161,7 +161,7 @@ public class Class4294 extends Class4278 {
          17.0F,
          13.0F,
          ResourcesDecrypter.activePNG,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20804 * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20804 * var1)
       );
    }
 

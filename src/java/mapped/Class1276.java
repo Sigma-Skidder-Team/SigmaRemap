@@ -115,7 +115,7 @@ public class Class1276 extends Class1274<Class1173> {
    }
 
    public Optional<Class1173> method6067() {
-      return Optional.<Class1173>ofNullable(this.method6023());
+      return Optional.<Class1173>ofNullable(this.getSelected());
    }
 
    public WorldSelectionScreen method6068() {

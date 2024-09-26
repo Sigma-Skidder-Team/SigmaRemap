@@ -38,8 +38,8 @@ public class Class1281 extends Class1274<Class1167> {
       if (super.keyPressed(var1, var2, var3)) {
          return true;
       } else {
-         if ((var1 == 257 || var1 == 335) && this.method6023() != null) {
-            Class1167.method5572(this.method6023());
+         if ((var1 == 257 || var1 == 335) && this.getSelected() != null) {
+            Class1167.method5572(this.getSelected());
          }
 
          return false;

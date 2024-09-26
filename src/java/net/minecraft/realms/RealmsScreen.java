@@ -26,7 +26,7 @@ public abstract class RealmsScreen extends Screen {
    }
 
    public void func_231411_u_() {
-      List var3 = this.field4561
+      List var3 = this.children
          .stream()
          .filter(RealmsLabel.class::isInstance)
          .<RealmsLabel>map(RealmsLabel.class::cast)

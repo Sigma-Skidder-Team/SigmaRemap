@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.BlurEngine;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -83,7 +83,7 @@ public class KeyStrokes extends Module {
                             var10 = 0.5F;
                         }
 
-                        String var12 = ColorUtils.method17736(var19.field13919.inputMappingsInput.keyCode);
+                        String var12 = MultiUtilities.method17736(var19.field13919.inputMappingsInput.keyCode);
                         if (var19.field13919 != mc.gameSettings.keyBindAttack) {
                             if (var19.field13919 == mc.gameSettings.keyBindUseItem) {
                                 var12 = "R";
@@ -97,7 +97,7 @@ public class KeyStrokes extends Module {
                                 (float) (this.field23586 + var21.field42636),
                                 (float) (this.field23585 + var21.field42635 + var23.field42635),
                                 (float) (this.field23586 + var21.field42636 + var23.field42636),
-                                ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * var10)
+                                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * var10)
                         );
                         RenderUtil.drawRoundedRect(
                                 (float) (this.field23585 + var21.field42635),
@@ -143,9 +143,9 @@ public class KeyStrokes extends Module {
                         }
 
                         float var27 = var16.field33988.calcPercent();
-                        int var29 = ColorUtils.applyAlpha(-5658199, (1.0F - var27 * (0.5F + var27 * 0.5F)) * 0.8F);
+                        int var29 = MultiUtilities.applyAlpha(-5658199, (1.0F - var27 * (0.5F + var27 * 0.5F)) * 0.8F);
                         if (Client.getInstance().getGuiManager().method33472()) {
-                            var29 = ColorUtils.applyAlpha(-1, (1.0F - var27 * (0.5F + var27 * 0.5F)) * 0.8F);
+                            var29 = MultiUtilities.applyAlpha(-1, (1.0F - var27 * (0.5F + var27 * 0.5F)) * 0.8F);
                         }
 
                         RenderUtil.method11436(

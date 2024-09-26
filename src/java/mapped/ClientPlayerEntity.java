@@ -501,7 +501,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       super.notifyDataManagerChange(var1);
       if (LIVING_FLAGS.equals(var1)) {
          boolean var4 = (this.dataManager.<Byte>method35445(LIVING_FLAGS) & 1) > 0;
-         Hand var5 = (this.dataManager.<Byte>method35445(LIVING_FLAGS) & 2) <= 0 ? Hand.MAIN_HAND : Hand.field183;
+         Hand var5 = (this.dataManager.<Byte>method35445(LIVING_FLAGS) & 2) <= 0 ? Hand.MAIN_HAND : Hand.OFF_HAND;
          if (var4 && !this.field6143) {
             this.setActiveHand(var5);
          } else if (!var4 && this.field6143) {

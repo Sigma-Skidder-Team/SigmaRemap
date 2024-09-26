@@ -5,12 +5,13 @@ import com.mentalfrostbyte.jello.account.Ban;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.util.ResourceLocation;
 import org.apache.commons.codec.binary.Base64;
 import org.lwjgl.opengl.GL11;
@@ -105,7 +106,7 @@ public class Class4348 extends Class4278 {
                (float)this.widthA,
                (float)this.widthA,
                this.field21246,
-               ColorUtils.applyAlpha(ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 0.7F), 0.8F)
+               MultiUtilities.applyAlpha(MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 0.7F), 0.8F)
             );
          }
 
@@ -116,7 +117,7 @@ public class Class4348 extends Class4278 {
             (float)this.yA,
             (float)(this.xA + this.widthA),
             (float)(this.yA + this.heightA),
-            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + 0.3F * this.field21248.calcPercent())
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F + 0.3F * this.field21248.calcPercent())
          );
       }
 
@@ -186,10 +187,10 @@ public class Class4348 extends Class4278 {
          ResourceRegistry.JelloMediumFont25,
          (float)(this.xA + 94),
          (float)(this.yA + 16),
-         !this.field21244.field33188.equals("Minecraft Server")
-            ? this.field21244.field33188
-            : this.field21244.field33189.substring(0, 1).toUpperCase() + this.field21244.field33189.substring(1, this.field21244.field33189.length()),
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F)
+         !this.field21244.serverName.equals("Minecraft Server")
+            ? this.field21244.serverName
+            : this.field21244.serverIP.substring(0, 1).toUpperCase() + this.field21244.serverIP.substring(1, this.field21244.serverIP.length()),
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F)
       );
       byte var12 = 94;
       byte var13 = 46;
@@ -200,7 +201,7 @@ public class Class4348 extends Class4278 {
                (float)(this.xA + var12),
                (float)(this.yA + var13),
                "Unban: " + var8 + " days, " + var7 + "h " + var6 + "m " + var5 + "s",
-               ColorUtils.method17690(ClientColors.DEEP_TEAL.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.2F)
+               MultiUtilities.method17690(ClientColors.DEEP_TEAL.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.2F)
             );
          } else if (this.field21243.method31735().getTime() != Long.MAX_VALUE) {
             RenderUtil.drawString(
@@ -208,7 +209,7 @@ public class Class4348 extends Class4278 {
                (float)(this.xA + var12),
                (float)(this.yA + var13),
                "Unbanned!",
-               ColorUtils.method17690(ClientColors.DARK_SLATE_GREY.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
+               MultiUtilities.method17690(ClientColors.DARK_SLATE_GREY.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
             );
          } else {
             RenderUtil.drawString(
@@ -216,7 +217,7 @@ public class Class4348 extends Class4278 {
                (float)(this.xA + var12),
                (float)(this.yA + var13),
                "Permanently banned!",
-               ColorUtils.method17690(ClientColors.PALE_YELLOW.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
+               MultiUtilities.method17690(ClientColors.PALE_YELLOW.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
             );
          }
       } else {
@@ -225,7 +226,7 @@ public class Class4348 extends Class4278 {
             (float)(this.xA + var12),
             (float)(this.yA + var13),
             "Compromised ban (unbannable)!",
-            ColorUtils.method17690(ClientColors.DARK_OLIVE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
+            MultiUtilities.method17690(ClientColors.DARK_OLIVE.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F)
          );
       }
 

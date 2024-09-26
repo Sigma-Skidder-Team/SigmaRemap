@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.util.math.vector.Vector3d;
 
 import java.io.FileWriter;
@@ -48,7 +48,7 @@ public class DebugSpeed extends Module {
                     var15 = var15 + "0";
                 }
 
-                ColorUtils.addChatMessage(
+                MultiUtilities.addChatMessage(
                         Client.getInstance().getCommandManager().getPrefix() + "(" + var15 + "x faster " + (!var7 ? "jumping" : "walking") + ")  Speed: " + var5
                 );
             }

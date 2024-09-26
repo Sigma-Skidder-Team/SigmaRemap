@@ -1,9 +1,9 @@
-package mapped;
+package net.minecraft.client.gui.screen;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
+import mapped.Class5991;
 import net.minecraft.client.gui.DialogTexts;
-import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;

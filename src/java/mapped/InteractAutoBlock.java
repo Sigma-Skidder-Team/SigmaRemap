@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.combat.Teams;
 import com.mentalfrostbyte.jello.module.impl.player.Blink;
 import com.mentalfrostbyte.jello.module.impl.world.Disabler;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -26,7 +26,7 @@ public class InteractAutoBlock {
    public final int field44345 = 3;
    private Module parent;
    public Minecraft mc = Minecraft.getInstance();
-   public boolean field44348;
+   public boolean blocking;
    public HashMap<Entity, List<Class9629<Vector3d, Long>>> field44349 = new HashMap<Entity, List<Class9629<Vector3d, Long>>>();
 
    public InteractAutoBlock(Module parent) {
@@ -34,17 +34,17 @@ public class InteractAutoBlock {
       this.method36818();
    }
 
-   public boolean method36813() {
-      return this.field44348;
+   public boolean isBlocking() {
+      return this.blocking;
    }
 
-   public void method36814(boolean var1) {
-      this.field44348 = var1;
+   public void setBlocking(boolean blocking) {
+      this.blocking = blocking;
    }
 
-   public void method36815(Entity var1, float var2, float var3) {
+   public void block(Entity var1, float var2, float var3) {
       if (this.parent.getBooleanValueFromSetttingName("Interact autoblock")) {
-         EntityRayTraceResult var6 = ColorUtils.method17714(
+         EntityRayTraceResult var6 = MultiUtilities.method17714(
             !this.parent.getBooleanValueFromSetttingName("Raytrace") ? var1 : null, var2, var3, var0 -> true, (double)this.parent.getNumberValueBySettingName("Range")
          );
          if (var6 != null) {
@@ -55,19 +55,19 @@ public class InteractAutoBlock {
          }
       }
 
-      ColorUtils.method17733();
-      this.method36814(true);
+      MultiUtilities.block();
+      this.setBlocking(true);
    }
 
    public void method36816() {
-      ColorUtils.method17734();
-      this.method36814(false);
+      MultiUtilities.unblock();
+      this.setBlocking(false);
    }
 
    public boolean method36817() {
       return !this.parent.getStringSettingValueByName("Autoblock Mode").equals("None")
          && this.mc.player.getHeldItemMainhand().getItem() instanceof ItemSword
-         && !this.method36813();
+         && !this.isBlocking();
    }
 
    public void method36818() {
@@ -127,7 +127,7 @@ public class InteractAutoBlock {
       return var1 >= (int)this.field44344[0];
    }
 
-   public void method36822() {
+   public void setupDelay() {
       float var3 = 20.0F / this.parent.getNumberValueBySettingName("Min CPS");
       float var4 = 20.0F / this.parent.getNumberValueBySettingName("Max CPS");
       if (var3 > var4) {
@@ -148,7 +148,7 @@ public class InteractAutoBlock {
    public List<TimedEntity> method36823(float var1) {
       ArrayList<TimedEntity> timedEntityList = new ArrayList<>();
 
-      for (Entity ent : ColorUtils.getEntitesInWorld()) {
+      for (Entity ent : MultiUtilities.getEntitesInWorld()) {
          timedEntityList.add(new TimedEntity(ent));
       }
 
@@ -191,7 +191,7 @@ public class InteractAutoBlock {
          } else if (!(ent instanceof PlayerEntity)
             || !Class8781.method31662((PlayerEntity)ent)
             || !Client.getInstance().getModuleManager().getModuleByClass(Teams.class).isEnabled()) {
-            Vector3d var10 = ColorUtils.method17751(ent);
+            Vector3d var10 = MultiUtilities.method17751(ent);
             if (!(this.mc.player.getDistance(ent) < 40.0F)) {
                if (this.field44349.containsKey(ent)) {
                   this.field44349.remove(ent);
@@ -216,7 +216,7 @@ public class InteractAutoBlock {
                }
             }
 
-            if (!(ColorUtils.method17754(var10) > 8.0)) {
+            if (!(MultiUtilities.method17754(var10) > 8.0)) {
                boolean var26 = true;
                if (this.parent.getBooleanValueFromSetttingName("Smart Reach")) {
                   List<Class9629<Vector3d, Long>> var27 = this.field44349.get(ent);
@@ -232,7 +232,7 @@ public class InteractAutoBlock {
                            var31.y + this.mc.player.boundingBox.method19677(),
                            var31.z + var19
                         );
-                        double var22 = ColorUtils.method17755(var21);
+                        double var22 = MultiUtilities.method17755(var21);
                         if (var22 < (double)var1) {
                            var26 = false;
                         }
@@ -240,7 +240,7 @@ public class InteractAutoBlock {
                   }
                }
 
-               if (var26 && ColorUtils.method17754(var10) > (double)var1) {
+               if (var26 && MultiUtilities.method17754(var10) > (double)var1) {
                   entities.remove();
                } else if (!this.parent.getBooleanValueFromSetttingName("Through walls")) {
                   Rotations rotations = RotationHelper.getRotations(ent, true);

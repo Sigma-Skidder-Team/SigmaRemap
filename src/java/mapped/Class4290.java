@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
@@ -68,7 +68,7 @@ public class Class4290 extends Class4278 {
             this.yA + var4,
             this.widthA - var4 * 2,
             this.heightA - var4 * 2,
-            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * var1)
          );
          super.draw(var1);
       }

@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -207,8 +207,8 @@ public class MovementUtils {
       double var15 = ((double)var6 * var11 - (double)var7 * var9) * motionSpeed;
       moveEvent.setX(var13);
       moveEvent.setZ(var15);
-      ColorUtils.setPlayerXMotion(moveEvent.getX());
-      ColorUtils.setPlayerZMotion(moveEvent.getZ());
+      MultiUtilities.setPlayerXMotion(moveEvent.getX());
+      MultiUtilities.setPlayerZMotion(moveEvent.getZ());
    }
 
    public static void method37089(EventMove var0, double var1, float var3) {
@@ -226,8 +226,8 @@ public class MovementUtils {
       double var15 = var11 * var1;
       var0.setX(var13);
       var0.setZ(var15);
-      ColorUtils.setPlayerXMotion(var0.getX());
-      ColorUtils.setPlayerZMotion(var0.getZ());
+      MultiUtilities.setPlayerXMotion(var0.getX());
+      MultiUtilities.setPlayerZMotion(var0.getZ());
    }
 
    public static void strafe(double speed) {
@@ -236,16 +236,16 @@ public class MovementUtils {
       float var6 = var4[2];
       float var7 = var4[0];
       if (var5 == 0.0F && var6 == 0.0F) {
-         ColorUtils.setPlayerXMotion(0.0);
-         ColorUtils.setPlayerZMotion(0.0);
+         MultiUtilities.setPlayerXMotion(0.0);
+         MultiUtilities.setPlayerZMotion(0.0);
       }
 
       double var8 = Math.cos(Math.toRadians((double)var7));
       double var10 = Math.sin(Math.toRadians((double)var7));
       double var12 = ((double)var5 * var8 + (double)var6 * var10) * speed;
       double var14 = ((double)var5 * var10 - (double)var6 * var8) * speed;
-      ColorUtils.setPlayerXMotion(var12);
-      ColorUtils.setPlayerZMotion(var14);
+      MultiUtilities.setPlayerXMotion(var12);
+      MultiUtilities.setPlayerZMotion(var14);
    }
 
    public static void method37091() {
@@ -272,8 +272,8 @@ public class MovementUtils {
       float var9 = (var4 - 90.0F) * (float) (Math.PI / 180.0);
       var0.setX((double)(-MathHelper.sin(var9)) * var1);
       var0.setZ((double) MathHelper.cos(var9) * var1);
-      ColorUtils.setPlayerXMotion(var0.getX());
-      ColorUtils.setPlayerZMotion(var0.getZ());
+      MultiUtilities.setPlayerXMotion(var0.getX());
+      MultiUtilities.setPlayerZMotion(var0.getZ());
       return var4;
    }
 
@@ -286,8 +286,8 @@ public class MovementUtils {
       }
 
       float var8 = (var3 - 90.0F) * (float) (Math.PI / 180.0);
-      ColorUtils.setPlayerXMotion((double)(-MathHelper.sin(var8)) * var0);
-      ColorUtils.setPlayerZMotion((double) MathHelper.cos(var8) * var0);
+      MultiUtilities.setPlayerXMotion((double)(-MathHelper.sin(var8)) * var0);
+      MultiUtilities.setPlayerZMotion((double) MathHelper.cos(var8) * var0);
       return var3;
    }
 

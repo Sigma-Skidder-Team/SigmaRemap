@@ -30,7 +30,7 @@ public class Class1143 extends Class1135 {
          this.field6209.method6131(Stream.<AbstractOption>concat(Arrays.stream(field6210), Stream.of(AbstractOption.field25332)).<AbstractOption>toArray(AbstractOption[]::new));
       }
 
-      this.field4561.add(this.field6209);
+      this.children.add(this.field6209);
       this.<Button>addButton(new Button(this.width / 2 - 100, this.height - 27, 200, 20, DialogTexts.field30658, var1 -> {
          this.field6193.saveOptions();
          this.mc.displayGuiScreen(this.field6192);

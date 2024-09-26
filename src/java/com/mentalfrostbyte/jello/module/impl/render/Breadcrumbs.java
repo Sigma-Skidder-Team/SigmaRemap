@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ColorSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.vector.Vector3d;
@@ -72,7 +72,7 @@ public class Breadcrumbs extends Module {
             GL11.glDisable(3553);
             GL11.glDisable(2929);
             GL11.glDepthMask(false);
-            GL11.glColor4fv(ColorUtils.method17709(ColorUtils.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), 0.5F)));
+            GL11.glColor4fv(MultiUtilities.method17709(MultiUtilities.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), 0.5F)));
             GL11.glBegin(3);
 
             for (Vector3d var6 : this.field23896) {
@@ -80,7 +80,7 @@ public class Breadcrumbs extends Module {
                 double var8 = var6.method11341(var4);
                 double var10 = !this.getBooleanValueFromSetttingName("Fade Out") ? 0.6F : 1.0 - Math.min(1.0, var8 / 14.0);
                 if (!(var8 > 24.0)) {
-                    GL11.glColor4fv(ColorUtils.method17709(ColorUtils.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), (float) var10)));
+                    GL11.glColor4fv(MultiUtilities.method17709(MultiUtilities.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), (float) var10)));
                     GL11.glVertex3d(var7.x, var7.y, var7.z);
                 }
             }

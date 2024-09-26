@@ -84,21 +84,21 @@ public class Class1321 extends Screen {
       this.field6986.method5657(128);
       this.field6986.method5635(this.field6983.method3980().toString());
       this.field6986.method5631(var1 -> this.method6272());
-      this.field4561.add(this.field6986);
+      this.children.add(this.field6986);
       this.field6984 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 152, 55, 300, 20, new TranslationTextComponent("jigsaw_block.name"));
       this.field6984.method5657(128);
       this.field6984.method5635(this.field6983.method3978().toString());
       this.field6984.method5631(var1 -> this.method6272());
-      this.field4561.add(this.field6984);
+      this.children.add(this.field6984);
       this.field6985 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 152, 90, 300, 20, new TranslationTextComponent("jigsaw_block.target"));
       this.field6985.method5657(128);
       this.field6985.method5635(this.field6983.method3979().toString());
       this.field6985.method5631(var1 -> this.method6272());
-      this.field4561.add(this.field6985);
+      this.children.add(this.field6985);
       this.field6987 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 152, 125, 300, 20, new TranslationTextComponent("jigsaw_block.final_state"));
       this.field6987.method5657(256);
       this.field6987.method5635(this.field6983.method3981());
-      this.field4561.add(this.field6987);
+      this.children.add(this.field6987);
       this.field6992 = this.field6983.method3982();
       int var3 = this.fontRenderer.method38821(field6978) + 10;
       this.field6990 = this.<Button>addButton(new Button(this.width / 2 - 152 + var3, 150, 300 - var3, 20, this.method6273(), var1 -> {

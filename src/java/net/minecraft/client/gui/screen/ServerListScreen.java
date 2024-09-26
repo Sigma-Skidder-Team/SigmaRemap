@@ -1,16 +1,16 @@
-package mapped;
+package net.minecraft.client.gui.screen;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
-import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public class Class1320 extends Screen {
+public class ServerListScreen extends Screen {
    private static final ITextComponent field6972 = new TranslationTextComponent("addServer.enterIp");
    private Button field6973;
    private final ServerData field6974;
@@ -18,7 +18,7 @@ public class Class1320 extends Screen {
    private final BooleanConsumer field6976;
    private final Screen field6977;
 
-   public Class1320(Screen var1, BooleanConsumer var2, ServerData var3) {
+   public ServerListScreen(Screen var1, BooleanConsumer var2, ServerData var3) {
       super(new TranslationTextComponent("selectServer.direct"));
       this.field6977 = var1;
       this.field6974 = var3;
@@ -56,7 +56,7 @@ public class Class1320 extends Screen {
       this.field6975.method5654(true);
       this.field6975.method5635(this.mc.gameSettings.field44667);
       this.field6975.method5631(var1 -> this.method6264());
-      this.field4561.add(this.field6975);
+      this.children.add(this.field6975);
       this.setFocusedDefault(this.field6975);
       this.method6264();
    }
@@ -69,7 +69,7 @@ public class Class1320 extends Screen {
    }
 
    private void method6263() {
-      this.field6974.field33189 = this.field6975.getText();
+      this.field6974.serverIP = this.field6975.getText();
       this.field6976.accept(true);
    }
 

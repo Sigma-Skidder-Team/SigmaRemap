@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class SigmaClassicTextBox extends UIInput {
    private static String[] field20759;
@@ -30,7 +30,7 @@ public class SigmaClassicTextBox extends UIInput {
          (float)(this.xA + this.widthA + 2),
          (float)(this.yA + this.heightA),
          2,
-         ColorUtils.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 625.0F)
+         MultiUtilities.method17690(ClientColors.LIGHT_GREYISH_BLUE.getColor, ClientColors.DEEP_TEAL.getColor, 625.0F)
       );
       super.draw(var1);
    }

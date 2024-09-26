@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.Client;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 
 import java.awt.Color;
@@ -19,7 +19,7 @@ public class Class9112 {
             for (int var7 = 0; var7 < var4.getWidth(); var7++) {
                Color var8 = new Color(var4.getRGB(var7, var6), true);
                System.out.println(var8.getAlpha());
-               int var9 = ColorUtils.applyAlpha(var1.getRGB(var7, var6), (float)var8.getAlpha() / 255.0F);
+               int var9 = MultiUtilities.applyAlpha(var1.getRGB(var7, var6), (float)var8.getAlpha() / 255.0F);
                var5.setRGB(var7, var6, var9);
             }
          }

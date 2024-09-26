@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 
@@ -71,7 +71,7 @@ public class ModuleSettingUI extends Class4247 {
          (float)this.yA,
          (float)this.widthA,
          (float)this.heightA,
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.45F * var1)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.45F * var1)
       );
       super.method13224();
       RenderUtil.drawRect(
@@ -80,14 +80,14 @@ public class ModuleSettingUI extends Class4247 {
          (float)this.width,
          (float)this.height,
          10.0F,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       RenderUtil.drawString(
          ResourceRegistry.JelloMediumFont40,
          (float)this.x,
          (float)(this.y - 60),
          this.module.getName(),
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       byte var5 = 30;
       RenderUtil.startScissor((float)this.x, (float)this.y, (float)(this.width - 30), (float)this.height);
@@ -96,7 +96,7 @@ public class ModuleSettingUI extends Class4247 {
          (float)(var5 + this.x),
          (float)(var5 + this.y),
          this.module.getDescription(),
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.7F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.7F)
       );
       RenderUtil.endScissor();
       super.draw(var1);

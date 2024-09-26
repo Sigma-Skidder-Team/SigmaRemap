@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 
@@ -71,7 +71,7 @@ public class Class4277 extends Class4247 {
       int var9 = this.getYA() + this.getHeightA() / 2 - var6 / 2;
       int var10 = this.field20734.getXA() + this.field20734.getWidthA() / 2 - 6;
       RenderUtil.drawRect(
-         (float)var8, (float)var9, (float)var10, (float)var6, (float)(var6 / 2), ColorUtils.applyAlpha(this.textColor.method19405(), var1 * var1 * var1)
+         (float)var8, (float)var9, (float)var10, (float)var6, (float)(var6 / 2), MultiUtilities.applyAlpha(this.textColor.method19405(), var1 * var1 * var1)
       );
       RenderUtil.drawRect(
          (float)(var8 + var10),
@@ -79,7 +79,7 @@ public class Class4277 extends Class4247 {
          (float)(var7 - var10),
          (float)var6,
          (float)(var6 / 2),
-         ColorUtils.applyAlpha(ColorUtils.method17692(this.textColor.method19405(), 0.8F), var1 * var1 * var1)
+         MultiUtilities.applyAlpha(MultiUtilities.method17692(this.textColor.method19405(), 0.8F), var1 * var1 * var1)
       );
       if (this.method13303() != null) {
          int var11 = Math.max(0, 9 - this.field20734.getXA());
@@ -88,7 +88,7 @@ public class Class4277 extends Class4247 {
             (float)(var8 - ResourceRegistry.JelloLightFont14.method23942(this.method13303()) - 10 - var11),
             (float)(var9 - 5),
             this.method13303(),
-            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * this.field20735.calcPercent() * var1)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * this.field20735.calcPercent() * var1)
          );
       }
 

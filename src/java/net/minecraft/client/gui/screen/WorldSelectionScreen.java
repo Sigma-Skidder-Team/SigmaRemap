@@ -44,8 +44,8 @@ public class WorldSelectionScreen extends Screen {
       this.field7120 = new Class1276(
          this, this.mc, this.width, this.height, 48, this.height - 64, 36, () -> this.field7119.getText(), this.field7120
       );
-      this.field4561.add(this.field7119);
-      this.field4561.add(this.field7120);
+      this.children.add(this.field7119);
+      this.children.add(this.field7120);
       this.field7116 = this.<Button>addButton(
          new Button(
             this.width / 2 - 154,

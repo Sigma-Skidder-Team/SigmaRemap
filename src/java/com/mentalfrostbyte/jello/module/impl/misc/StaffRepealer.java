@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.play.server.SEntityPacket;
 import net.minecraft.network.play.server.SPlayerListItemPacket;
@@ -22,7 +22,7 @@ public class StaffRepealer extends Module {
     @EventTarget
     private void method16183(TickEvent var1) {
         if (this.isEnabled()) {
-            if (ColorUtils.method17716()) {
+            if (MultiUtilities.method17716()) {
                 mc.gameSettings.method37149();
             }
         }
@@ -49,7 +49,7 @@ public class StaffRepealer extends Module {
                     for (SPlayerListItemPacket.AddPlayerData var5x : var5.getEntries()) {
                         PlayerEntity var6 = mc.world.method7196(var5x.getProfile().getId());
                         if (var6 == null && var5x.getGameMode() != null) {
-                            ColorUtils.addChatMessage("Detected an anomaly " + var5x + var5x.getProfile());
+                            MultiUtilities.addChatMessage("Detected an anomaly " + var5x + var5x.getProfile());
                         } else {
                             System.out.println("all seems good " + var5x + var5x.getProfile());
                         }

@@ -4,7 +4,7 @@ import java.awt.Color;
 
 import com.mentalfrostbyte.jello.module.impl.gui.jello.MusicParticles;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import org.lwjgl.opengl.GL11;
 
 public class Class5968 {
@@ -37,7 +37,7 @@ public class Class5968 {
       int var5 = Color.getHSBColor((float)(System.currentTimeMillis() % 4000L) / 4000.0F, 0.3F, 1.0F).getRGB();
       float var6 = 60.0F * this.field26021;
       RenderUtil.drawImage(
-         (float)this.field26022 - var6 / 2.0F, (float)this.field26023 - var6 / 2.0F, var6, var6, ResourcesDecrypter.particlePNG, ColorUtils.applyAlpha(var5, var4 * 0.9F)
+         (float)this.field26022 - var6 / 2.0F, (float)this.field26023 - var6 / 2.0F, var6, var6, ResourcesDecrypter.particlePNG, MultiUtilities.applyAlpha(var5, var4 * 0.9F)
       );
       GL11.glPopMatrix();
    }

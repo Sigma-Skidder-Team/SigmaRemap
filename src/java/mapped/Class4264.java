@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 import java.awt.Color;
 
@@ -34,7 +34,7 @@ public class Class4264 extends Class4247 {
             (float)this.yA,
             1.0F,
             (float)this.heightA,
-            ColorUtils.applyAlpha(Color.HSBtoRGB(var5, 1.0F, 1.0F), var1)
+            MultiUtilities.applyAlpha(Color.HSBtoRGB(var5, 1.0F, 1.0F), var1)
          );
       }
 
@@ -43,7 +43,7 @@ public class Class4264 extends Class4247 {
          (float)this.getYA(),
          (float)(this.getXA() + this.getWidthA()),
          (float)(this.getYA() + this.getHeightA()),
-         ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 0.5F * var1)
+         MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor, 0.5F * var1)
       );
       Class4252.method13052(
          this.xA + Math.round((float)this.widthA * this.field20679) + 1, this.yA + 4, Color.HSBtoRGB(this.field20679, 1.0F, 1.0F), var1

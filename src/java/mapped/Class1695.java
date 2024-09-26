@@ -3,20 +3,21 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 
 public class Class1695 implements AutoCloseable {
    private final Class7529 field9231;
-   private final Class291 field9232;
+   private final DynamicTexture field9232;
    private final RenderType field9233;
    public final Class194 field9234;
 
    public Class1695(Class194 var1, Class7529 var2) {
       this.field9234 = var1;
       this.field9231 = var2;
-      this.field9232 = new Class291(128, 128, true);
+      this.field9232 = new DynamicTexture(128, 128, true);
       ResourceLocation var5 = Class194.method598(var1).method1077("map/" + var2.method24608(), this.field9232);
       this.field9233 = RenderType.method14339(var5);
    }

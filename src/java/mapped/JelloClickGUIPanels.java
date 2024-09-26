@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
@@ -103,14 +103,14 @@ public class JelloClickGUIPanels extends Class4304 {
          (float)this.getYA(),
          (float)(this.getXA() + this.getWidthA()),
          (float)(this.getYA() + 60),
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 0.9F * this.field21195))
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 0.9F * this.field21195))
       );
       RenderUtil.method11424(
          (float)this.getXA(),
          (float)this.getYA() + 60.0F * this.field21195,
          (float)this.getWidthA(),
          (float)this.getHeightA() - 60.0F * this.field21195,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       if (!(this.field21195 > 0.8F)) {
          if (this.field21195 < 0.2F) {
@@ -126,7 +126,7 @@ public class JelloClickGUIPanels extends Class4304 {
          (float)(this.getXA() + 20),
          (float)(this.getYA() + 30),
          categoryName,
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.5F * this.field21195),
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.5F * this.field21195),
          Class2218.field14488,
          Class2218.field14492
       );
@@ -140,7 +140,7 @@ public class JelloClickGUIPanels extends Class4304 {
             (float)this.getWidthA(),
             18.0F,
             ResourcesDecrypter.shadowBottomPNG,
-            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field21195 * 0.5F)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field21195 * 0.5F)
          );
       }
    }

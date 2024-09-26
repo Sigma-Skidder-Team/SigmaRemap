@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventStep;
 import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.MovementUtils;
 import net.minecraft.network.play.client.CPlayerPacket;
 
@@ -20,7 +20,7 @@ public class AACStep extends Module {
     private void method16145(EventStep var1) {
         if (this.isEnabled() && !var1.isCancelled()) {
             double var4 = var1.getHeight();
-            if (!ColorUtils.isAboveBounds(mc.player, 1.0E-4F)) {
+            if (!MultiUtilities.isAboveBounds(mc.player, 1.0E-4F)) {
                 var1.setCancelled(true);
             } else {
                 if (!MovementUtils.isInWater() && var4 >= 0.625) {

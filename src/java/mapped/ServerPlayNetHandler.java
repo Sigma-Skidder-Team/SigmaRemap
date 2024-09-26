@@ -871,8 +871,8 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       switch (Class9703.field45357[var5.ordinal()]) {
          case 1:
             if (!this.player.isSpectator()) {
-               ItemStack var6 = this.player.getHeldItem(Hand.field183);
-               this.player.setHeldItem(Hand.field183, this.player.getHeldItem(Hand.MAIN_HAND));
+               ItemStack var6 = this.player.getHeldItem(Hand.OFF_HAND);
+               this.player.setHeldItem(Hand.OFF_HAND, this.player.getHeldItem(Hand.MAIN_HAND));
                this.player.setHeldItem(Hand.MAIN_HAND, var6);
                this.player.resetActiveHand();
             }

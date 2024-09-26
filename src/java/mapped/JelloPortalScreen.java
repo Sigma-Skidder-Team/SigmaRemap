@@ -2,9 +2,10 @@ package mapped;
 
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.MultiplayerScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.gui.widget.button.Button;
@@ -54,7 +55,7 @@ public class JelloPortalScreen extends MultiplayerScreen {
         RenderUtil.endScissor();
         this.versionSelectorWidget.render(matrixStack, mouseX, mouseY, partialTicks);
         drawString(matrixStack, this.fontRenderer, this.getTextComponent().getString(), this.width / 2 - 146, 13, 16777215);
-        drawString(matrixStack, this.fontRenderer, "Jello Portal:", this.width / 2 - 30, 13, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
+        drawString(matrixStack, this.fontRenderer, "Jello Portal:", this.width / 2 - 30, 13, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
     }
 
     private int getCurrentVersionIndex() {

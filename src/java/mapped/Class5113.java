@@ -5,6 +5,8 @@ import com.mojang.authlib.GameProfile;
 import java.util.ArrayList;
 import java.util.Objects;
 
+import net.minecraft.client.multiplayer.ServerData;
+import net.minecraft.client.network.ServerPinger;
 import net.minecraft.client.util.Util;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.util.text.ITextComponent;
@@ -20,9 +22,9 @@ public class Class5113 implements Class5112 {
    public final NetworkManager field23259;
    public final ServerData field23260;
    public final Runnable field23261;
-   public final Class9118 field23262;
+   public final ServerPinger field23262;
 
-   public Class5113(Class9118 var1, NetworkManager var2, ServerData var3, Runnable var4) {
+   public Class5113(ServerPinger var1, NetworkManager var2, ServerData var3, Runnable var4) {
       this.field23262 = var1;
       this.field23259 = var2;
       this.field23260 = var3;
@@ -35,9 +37,9 @@ public class Class5113 implements Class5112 {
          this.field23257 = true;
          Class8783 var4 = var1.method17468();
          if (var4.method31700() == null) {
-            this.field23260.field33191 = StringTextComponent.EMPTY;
+            this.field23260.serverMOTD = StringTextComponent.EMPTY;
          } else {
-            this.field23260.field33191 = var4.method31700();
+            this.field23260.serverMOTD = var4.method31700();
          }
 
          if (var4.method31704() == null) {
@@ -49,9 +51,9 @@ public class Class5113 implements Class5112 {
          }
 
          if (var4.method31702() == null) {
-            this.field23260.field33190 = new TranslationTextComponent("multiplayer.status.unknown").mergeStyle(TextFormatting.DARK_GRAY);
+            this.field23260.populationInfo = new TranslationTextComponent("multiplayer.status.unknown").mergeStyle(TextFormatting.DARK_GRAY);
          } else {
-            this.field23260.field33190 = Class9118.method34008(var4.method31702().method38377(), var4.method31702().method38376());
+            this.field23260.populationInfo = ServerPinger.method34008(var4.method31702().method38377(), var4.method31702().method38376());
             ArrayList var5 = Lists.newArrayList();
             if (ArrayUtils.isNotEmpty(var4.method31702().method38378())) {
                for (GameProfile var9 : var4.method31702().method38378()) {
@@ -72,7 +74,7 @@ public class Class5113 implements Class5112 {
          if (var4.method31707() != null) {
             String var11 = var4.method31707();
             if (!var11.startsWith("data:image/png;base64,")) {
-               Class9118.method34009().error("Invalid server icon (unknown format)");
+               ServerPinger.method34009().error("Invalid server icon (unknown format)");
             } else {
                var10 = var11.substring("data:image/png;base64,".length());
             }
@@ -95,17 +97,17 @@ public class Class5113 implements Class5112 {
    public void method15689(Class5489 var1) {
       long var4 = this.field23258;
       long var6 = Util.milliTime();
-      this.field23260.field33192 = var6 - var4;
+      this.field23260.pingToServer = var6 - var4;
       this.field23259.closeChannel(new TranslationTextComponent("multiplayer.status.finished"));
    }
 
    @Override
    public void onDisconnect(ITextComponent var1) {
       if (!this.field23256) {
-         Class9118.method34009().error("Can't ping {}: {}", this.field23260.field33189, var1.getString());
-         this.field23260.field33191 = new TranslationTextComponent("multiplayer.status.cannot_connect").mergeStyle(TextFormatting.DARK_RED);
-         this.field23260.field33190 = StringTextComponent.EMPTY;
-         Class9118.method34010(this.field23262, this.field23260);
+         ServerPinger.method34009().error("Can't ping {}: {}", this.field23260.serverIP, var1.getString());
+         this.field23260.serverMOTD = new TranslationTextComponent("multiplayer.status.cannot_connect").mergeStyle(TextFormatting.DARK_RED);
+         this.field23260.populationInfo = StringTextComponent.EMPTY;
+         ServerPinger.method34010(this.field23262, this.field23260);
       }
    }
 

@@ -13,7 +13,7 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.settings.Setting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
@@ -251,17 +251,17 @@ public class TabGUI extends Module {
             (float)var8.method24720() + (float)var8.method24719() + 14.0F * var17,
             (float)var8.method24721() + 16.0F + (float)(25 * var8.field32402),
             24.0F * var17,
-            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F),
-            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F),
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F)
          );
          int var13 = var8.method24720() + var8.method24719() + 4 + Math.round(var17 * 28.0F);
          int var14 = var8.method24721() + 25 * var8.field32402 + 4;
          int var15 = var8.field32394.method23942(var11) + 8;
          float var16 = Class8056.method27664(this.field23381.calcPercent(), 0.0F, 1.0F, 1.0F);
-         RenderUtil.method11424((float)var13, (float)var14, (float)var15 * var16, 25.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F));
+         RenderUtil.method11424((float)var13, (float)var14, (float)var15 * var16, 25.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F));
          RenderUtil.startScissor((float)var13, (float)var14, (float)var15 * var16, 25.0F);
          RenderUtil.drawString(
-            var8.field32394, (float)(var13 + 4), (float)(var14 + 2), var11, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 1.7F))
+            var8.field32394, (float)(var13 + 4), (float)(var14 + 2), var11, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var1 * 1.7F))
          );
          RenderUtil.endScissor();
       }

@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.ColorSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
@@ -33,7 +33,7 @@ public class Tracers extends Module {
             GL11.glDepthMask(false);
             GL11.glShadeModel(7425);
 
-            for (Entity var5 : ColorUtils.method17680()) {
+            for (Entity var5 : MultiUtilities.method17680()) {
                 if (var5 != mc.player
                         && var5.isAlive()
                         && var5.boundingBox.getAverageEdgeLength() > 0.8
@@ -60,9 +60,9 @@ public class Tracers extends Module {
                 .method11351(-((float) Math.toRadians(Minecraft.getInstance().player.rotationYaw)));
         int var11 = this.parseSettingValueToIntBySettingName("Color");
         GL11.glBegin(1);
-        GL11.glColor4fv(ColorUtils.method17709(ColorUtils.applyAlpha(var11, 0.45F)));
+        GL11.glColor4fv(MultiUtilities.method17709(MultiUtilities.applyAlpha(var11, 0.45F)));
         GL11.glVertex3d(var10.x, var10.y, var10.z);
-        GL11.glColor4fv(ColorUtils.method17709(ColorUtils.applyAlpha(var11, 0.0F)));
+        GL11.glColor4fv(MultiUtilities.method17709(MultiUtilities.applyAlpha(var11, 0.0F)));
         GL11.glVertex3d(var4, var6, var8);
         GL11.glEnd();
     }

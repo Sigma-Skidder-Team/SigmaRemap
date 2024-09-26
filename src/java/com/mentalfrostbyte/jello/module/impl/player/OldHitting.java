@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mojang.blaze3d.matrix.MatrixStack;
@@ -95,7 +95,7 @@ public class OldHitting extends Module {
                 if (field23408 && !this.field23409) {
                     this.field23409 = !this.field23409;
                     if (!var5) {
-                        ColorUtils.method17733();
+                        MultiUtilities.block();
                     }
                 } else if (!field23408 && this.field23409) {
                     this.field23409 = !this.field23409;

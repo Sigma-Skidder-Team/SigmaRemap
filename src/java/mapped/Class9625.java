@@ -2,7 +2,7 @@ package mapped;
 
 import java.awt.Color;
 
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import org.lwjgl.opengl.GL11;
 
 public class Class9625 {
@@ -35,7 +35,7 @@ public class Class9625 {
 
    public void method37519(float var1) {
       method37520(
-         this.field45023 * 2.0F, this.field45024 * 2.0F, this.field45025 * 2.0F, ColorUtils.applyAlpha(this.field45034.getRGB(), var1 * this.field45032)
+         this.field45023 * 2.0F, this.field45024 * 2.0F, this.field45025 * 2.0F, MultiUtilities.applyAlpha(this.field45034.getRGB(), var1 * this.field45032)
       );
    }
 
@@ -53,7 +53,7 @@ public class Class9625 {
       GL11.glPushMatrix();
       GL11.glScalef(0.5F, 0.5F, 0.5F);
       GL11.glBegin(2);
-      GL11.glColor4fv(ColorUtils.method17709(var3));
+      GL11.glColor4fv(MultiUtilities.method17709(var3));
 
       for (int var11 = 0; var11 < 32; var11++) {
          GL11.glVertex2f(var9 + var0, var10 + var1);

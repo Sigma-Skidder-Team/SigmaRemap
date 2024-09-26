@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.account;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthResult;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticationException;
@@ -254,7 +254,7 @@ public class Account {
         if (!this.getKnownUUID().contains("steve") && this.skinUpdateThread == null) {
             this.skinUpdateThread = new Thread(() -> {
                 try {
-                    this.skin = ImageIO.read(new URL(ColorUtils.method17699(this.getKnownUUID().replaceAll("-", ""))));
+                    this.skin = ImageIO.read(new URL(MultiUtilities.method17699(this.getKnownUUID().replaceAll("-", ""))));
                 } catch (Exception var4) {
                     var4.printStackTrace();
                 }

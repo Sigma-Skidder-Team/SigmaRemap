@@ -74,7 +74,7 @@ public class Class1185 extends Class1178<Class1185> {
    }
 
    @Override
-   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void render(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       int var13 = var4 + 4;
       int var14 = var3 + (var6 - 24) / 2;
       int var15 = var13 + 24 + 4;

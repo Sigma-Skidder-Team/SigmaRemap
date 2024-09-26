@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.vector.Vector3i;
 import org.lwjgl.opengl.GL11;
@@ -173,7 +173,7 @@ public class Class4259 extends Class4247 {
          (float)(this.xA - ResourceRegistry.JelloLightFont14.method23942(var24) - 23),
          (float)(this.yA + 35),
          var24,
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F)
       );
       this.field20656 = this.field20650;
       this.field20657 = this.field20651;

@@ -21,7 +21,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.FileUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
@@ -275,7 +275,7 @@ public class WaypointsManager {
    public String method29998() {
       String var3 = "local/local";
       if (this.field36365.getIntegratedServer() == null && this.field36365.getCurrentServerData() != null) {
-         var3 = "server/" + this.field36365.getCurrentServerData().field33189.replace("/", ":");
+         var3 = "server/" + this.field36365.getCurrentServerData().serverIP.replace("/", ":");
       } else if (this.field36365.getIntegratedServer() != null) {
          var3 = "local/" + this.field36365.getIntegratedServer().method1436().method20054();
       }
@@ -435,9 +435,9 @@ public class WaypointsManager {
          Class8649 var12 = this.field36365.world.getBlockState(var1.north()).getMaterial();
          Class8649 var13 = this.field36365.world.getBlockState(var1.south()).getMaterial();
          if (var12 == Class8649.field38932 || var12 == Class8649.field38944) {
-            var6 = ColorUtils.method17681(new Color(var6, true), Color.BLACK, 0.6F).getRGB();
+            var6 = MultiUtilities.method17681(new Color(var6, true), Color.BLACK, 0.6F).getRGB();
          } else if (var13 == Class8649.field38932 || var13 == Class8649.field38944) {
-            var6 = ColorUtils.method17681(new Color(var6, true), Color.WHITE, 0.6F).getRGB();
+            var6 = MultiUtilities.method17681(new Color(var6, true), Color.WHITE, 0.6F).getRGB();
          }
       }
 

@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.unmapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
@@ -51,8 +51,8 @@ public class ClassicMainScreen extends Screen {
                         this, "Copyright", 10, 8, var9.method23942(var11), 140, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), var11, ResourceRegistry.JelloLightFont18
                 )
         );
-        ColorHelper var15 = new ColorHelper(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
-        var15.method19410(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
+        ColorHelper var15 = new ColorHelper(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
+        var15.method19410(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F));
         ArrayList var16 = new ArrayList();
         var16.add("LeakedPvP");
         var16.add("Omikron");

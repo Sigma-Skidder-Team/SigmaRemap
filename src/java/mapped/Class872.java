@@ -205,6 +205,6 @@ public class Class872 extends ContainerScreen<Class5821> {
 
    // $VF: synthetic method
    public static List method2715(Class872 var0) {
-      return var0.field4561;
+      return var0.children;
    }
 }

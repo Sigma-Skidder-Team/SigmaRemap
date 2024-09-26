@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 
@@ -25,9 +25,9 @@ public class Class9047 {
          double var5 = 0.0;
          double var7 = var0.getPosZ() - var0.lastTickPosZ;
          return new double[]{
-            var0.getPosX() + var3 * (double) ColorUtils.method17705() / 50.0,
-            var0.getPosY() + 0.0 * (double) ColorUtils.method17705() / 50.0,
-            var0.getPosZ() + var7 * (double) ColorUtils.method17705() / 50.0
+            var0.getPosX() + var3 * (double) MultiUtilities.method17705() / 50.0,
+            var0.getPosY() + 0.0 * (double) MultiUtilities.method17705() / 50.0,
+            var0.getPosZ() + var7 * (double) MultiUtilities.method17705() / 50.0
          };
       } else {
          return new double[]{0.0, 0.0, 0.0};

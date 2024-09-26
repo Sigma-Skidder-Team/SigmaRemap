@@ -14,7 +14,7 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
@@ -278,7 +278,7 @@ public class BlockFly extends ModuleWithModuleSettings {
         }
 
         if (this.method16735() != 0 && (!mc.player.collidedVertically || this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
-            if (!ColorUtils.method17686() || this.getBooleanValueFromSetttingName("Tower while moving")) {
+            if (!MultiUtilities.method17686() || this.getBooleanValueFromSetttingName("Tower while moving")) {
                 String var4 = this.getStringSettingValueByName("Tower Mode");
                 switch (var4) {
                     case "NCP":
@@ -296,9 +296,9 @@ public class BlockFly extends ModuleWithModuleSettings {
                         }
 
                         if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())
-                                && ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+                                && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                             if (mc.gameSettings.keyBindJump.pressed) {
-                                if (!ColorUtils.method17686()) {
+                                if (!MultiUtilities.method17686()) {
                                     MovementUtils.strafe(0.0);
                                     MovementUtils.setSpeed(var1, 0.0);
                                 }
@@ -312,18 +312,18 @@ public class BlockFly extends ModuleWithModuleSettings {
                     case "AAC":
                         if (var1.getY() > 0.247 && var1.getY() < 0.249) {
                             var1.setY((double) ((int) (mc.player.getPosY() + var1.getY())) - mc.player.getPosY());
-                            if (mc.gameSettings.keyBindJump.pressed && !ColorUtils.method17686()) {
+                            if (mc.gameSettings.keyBindJump.pressed && !MultiUtilities.method17686()) {
                                 MovementUtils.strafe(0.0);
                                 MovementUtils.setSpeed(var1, 0.0);
                             }
                         } else if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())
-                                && ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+                                && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                             var1.setY(-1.0E-10);
                         }
                         break;
                     case "Vanilla":
                         if (mc.gameSettings.keyBindJump.pressed
-                                && ColorUtils.isAboveBounds(mc.player, 0.001F)
+                                && MultiUtilities.isAboveBounds(mc.player, 0.001F)
                                 && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, 1.0, 0.0)).count() == 0L) {
                             mc.player
                                     .setPosition(mc.player.getPosX(), mc.player.getPosY() + 1.0, mc.player.getPosZ());
@@ -334,16 +334,16 @@ public class BlockFly extends ModuleWithModuleSettings {
                 }
             }
         } else if (!this.getStringSettingValueByName("Tower Mode").equals("AAC")
-                || !ColorUtils.isAboveBounds(mc.player, 0.001F)
+                || !MultiUtilities.isAboveBounds(mc.player, 0.001F)
                 || !mc.gameSettings.keyBindJump.pressed) {
             if (!this.getStringSettingValueByName("Tower Mode").equals("NCP")
                     && !this.getStringSettingValueByName("Tower Mode").equals("Vanilla")
-                    && ColorUtils.isAboveBounds(mc.player, 0.001F)
+                    && MultiUtilities.isAboveBounds(mc.player, 0.001F)
                     && mc.gameSettings.keyBindJump.pressed) {
                 mc.player.jumpTicks = 20;
                 var1.setY(MovementUtils.method37080());
             }
-        } else if (!ColorUtils.method17686() || this.getBooleanValueFromSetttingName("Tower while moving")) {
+        } else if (!MultiUtilities.method17686() || this.getBooleanValueFromSetttingName("Tower while moving")) {
             mc.player.jumpTicks = 0;
             mc.player.jump();
             MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
@@ -351,7 +351,7 @@ public class BlockFly extends ModuleWithModuleSettings {
         }
 
         if (!this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")) {
-            ColorUtils.setPlayerYMotion(var1.getY());
+            MultiUtilities.setPlayerYMotion(var1.getY());
         }
     }
 
@@ -405,14 +405,14 @@ public class BlockFly extends ModuleWithModuleSettings {
                 (float) (var1 + 10),
                 (float) (var2 + 5),
                 this.field23886 + " Blocks",
-                ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var3 * 0.3F)
+                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var3 * 0.3F)
         );
         RenderUtil.drawString(
                 ClassicDecryption.medium17,
                 (float) (var1 + 10),
                 (float) (var2 + 4),
                 this.field23886 + " Blocks",
-                ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3 * 0.8F)
+                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3 * 0.8F)
         );
         GL11.glAlphaFunc(519, 0.0F);
     }
@@ -426,12 +426,12 @@ public class BlockFly extends ModuleWithModuleSettings {
         byte var9 = 32;
         var1 -= var8 / 2;
         GL11.glPushMatrix();
-        RenderUtil.method11465(var1, var2, var8, var9, ColorUtils.applyAlpha(-15461356, 0.8F * var3));
+        RenderUtil.method11465(var1, var2, var8, var9, MultiUtilities.applyAlpha(-15461356, 0.8F * var3));
         RenderUtil.drawString(
-                ResourceRegistry.JelloLightFont18, (float) (var1 + 10), (float) (var2 + 4), this.field23886 + "", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3)
+                ResourceRegistry.JelloLightFont18, (float) (var1 + 10), (float) (var2 + 4), this.field23886 + "", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3)
         );
         RenderUtil.drawString(
-                ResourceRegistry.JelloLightFont14, (float) (var1 + 10 + var7), (float) (var2 + 8), "Blocks", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var3)
+                ResourceRegistry.JelloLightFont14, (float) (var1 + 10 + var7), (float) (var2 + 8), "Blocks", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var3)
         );
         var1 += 11 + var8 / 2;
         var2 += var9;
@@ -439,7 +439,7 @@ public class BlockFly extends ModuleWithModuleSettings {
         GL11.glTranslatef((float) var1, (float) var2, 0.0F);
         GL11.glRotatef(90.0F, 0.0F, 0.0F, 1.0F);
         GL11.glTranslatef((float) (-var1), (float) (-var2), 0.0F);
-        RenderUtil.drawImage((float) var1, (float) var2, 9.0F, 23.0F, ResourcesDecrypter.selectPNG, ColorUtils.applyAlpha(-15461356, 0.8F * var3));
+        RenderUtil.drawImage((float) var1, (float) var2, 9.0F, 23.0F, ResourcesDecrypter.selectPNG, MultiUtilities.applyAlpha(-15461356, 0.8F * var3));
         GL11.glPopMatrix();
         GL11.glPopMatrix();
     }

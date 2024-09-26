@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
@@ -102,7 +102,7 @@ public class InfiniteAura extends Module {
                                 this.field23900.add(var11);
                                 Collections.reverse(var11);
                                 this.method16773(var11, Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled());
-                                ColorUtils.method17735(var8, !this.getBooleanValueFromSetttingName("No Swing"));
+                                MultiUtilities.swing(var8, !this.getBooleanValueFromSetttingName("No Swing"));
                                 Collections.reverse(var11);
                                 this.method16773(var11, false);
                             }
@@ -193,7 +193,7 @@ public class InfiniteAura extends Module {
     public List<TimedEntity> method16775(float var1) {
         ArrayList var4 = new ArrayList();
 
-        for (Entity var6 : ColorUtils.getEntitesInWorld()) {
+        for (Entity var6 : MultiUtilities.getEntitesInWorld()) {
             var4.add(new TimedEntity(var6));
         }
 

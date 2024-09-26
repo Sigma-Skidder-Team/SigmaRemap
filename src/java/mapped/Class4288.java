@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class Class4288 extends Class4278 {
    private final Class4339 field20780;
@@ -80,7 +80,7 @@ public class Class4288 extends Class4278 {
             (float)(this.yA + var4),
             (float)(var5 + var6),
             (float)(this.yA + this.getHeightA() - var4),
-            ColorUtils.applyAlpha(ClientColors.MID_GREY.getColor, 1.0F * var1)
+            MultiUtilities.applyAlpha(ClientColors.MID_GREY.getColor, 1.0F * var1)
          );
       } else {
          RenderUtil.method11454((float)var5, (float)this.yA, (float)var6, (float)var4, ResourcesDecrypter.verticalScrollBarTopPNG, var1);
@@ -90,7 +90,7 @@ public class Class4288 extends Class4278 {
             (float)(this.yA + var4),
             (float)(var5 + var6),
             (float)(this.yA + this.getHeightA() - var4),
-            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.45F * var1)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.45F * var1)
          );
       }
 

@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 
@@ -20,13 +20,13 @@ public class Class4265 extends Class4247 {
       this.field20683.changeDirection(!this.method13298() ? Direction.BACKWARDS : Direction.FORWARDS);
       var1 *= 0.09F + 0.25F * this.field20683.calcPercent() + (this.field20682 ? 0.0F : 0.2F);
       RenderUtil.method11424(
-         (float)(this.xA + 10), (float)(this.yA + 16), 5.0F, 14.0F, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         (float)(this.xA + 10), (float)(this.yA + 16), 5.0F, 14.0F, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       RenderUtil.method11424(
-         (float)(this.xA + 17), (float)(this.yA + 10), 5.0F, 20.0F, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         (float)(this.xA + 17), (float)(this.yA + 10), 5.0F, 20.0F, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       RenderUtil.method11424(
-         (float)(this.xA + 24), (float)(this.yA + 20), 5.0F, 10.0F, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         (float)(this.xA + 24), (float)(this.yA + 20), 5.0F, 10.0F, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       super.draw(var1);
    }

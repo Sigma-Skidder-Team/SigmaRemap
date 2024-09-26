@@ -7,6 +7,7 @@ import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.util.Util;
 import net.minecraft.resources.ResourcePackInfo;
 import net.minecraft.resources.ResourcePackList;
@@ -89,10 +90,10 @@ public class PackScreen extends Screen {
       );
       this.field7101 = new Class1275(this.mc, 200, this.height, new TranslationTextComponent("pack.available.title"));
       this.field7101.method6035(this.width / 2 - 4 - 200);
-      this.field4561.add(this.field7101);
+      this.children.add(this.field7101);
       this.field7102 = new Class1275(this.mc, 200, this.height, new TranslationTextComponent("pack.selected.title"));
       this.field7102.method6035(this.width / 2 + 4);
-      this.field4561.add(this.field7102);
+      this.children.add(this.field7102);
       this.method6403();
    }
 
@@ -187,7 +188,7 @@ public class PackScreen extends Screen {
             "minecraft", "pack/" + Util.method38533(var9, ResourceLocation::method8298) + "/" + Hashing.sha1().hashUnencodedChars(var9) + "/icon"
          );
          Class1806 var11 = Class1806.method7879(var7);
-         var1.method1073(var10, new Class291(var11));
+         var1.method1073(var10, new DynamicTexture(var11));
          return var10;
       } catch (FileNotFoundException var43) {
       } catch (Exception var44) {

@@ -133,7 +133,7 @@ public class CreateWorldScreen extends Screen {
          this.field7081.active = !this.field7068.getText().isEmpty();
          this.method6355();
       });
-      this.field4561.add(this.field7068);
+      this.children.add(this.field7068);
       int var3 = this.width / 2 - 155;
       int var4 = this.width / 2 + 5;
       this.field7082 = this.<Button>addButton(new Class1241(this, var3, 100, 150, 20, StringTextComponent.EMPTY, var1 -> {

@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.network.Class9507;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import totalcross.json.JSONArray;
@@ -78,21 +78,21 @@ public class RedeemKeyScreen extends IconPanel {
                190.0F,
                190.0F,
                var5.method36701(),
-               ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+               MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
             );
             RenderUtil.endScissor();
          }
       }
 
-      RenderUtil.drawString(ResourceRegistry.JelloLightFont36, 100.0F, 100.0F, "Redeem Premium", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
+      RenderUtil.drawString(ResourceRegistry.JelloLightFont36, 100.0F, 100.0F, "Redeem Premium", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont25,
          100.0F,
          150.0F,
          "Visit http://sigmaclient.info for more info",
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1)
       );
-      RenderUtil.drawString(ResourceRegistry.JelloLightFont18, 100.0F, 263.0F, this.field21135, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1));
+      RenderUtil.drawString(ResourceRegistry.JelloLightFont18, 100.0F, 263.0F, this.field21135, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1));
       super.draw(var1);
    }
 }

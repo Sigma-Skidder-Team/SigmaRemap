@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
@@ -83,7 +84,7 @@ public class SocialInteractionsScreen extends Screen {
       if (!this.field6237) {
          this.field6227 = new Class1297(this, this.mc, this.width, this.height, 88, this.method5484(), 36);
       } else {
-         this.field6227.method6034(this.width, this.height, 88, this.method5484());
+         this.field6227.updateSize(this.width, this.height, 88, this.method5484());
       }
 
       int var3 = this.field6227.method6022() / 3;
@@ -112,8 +113,8 @@ public class SocialInteractionsScreen extends Screen {
       this.field6228.method5662(16777215);
       this.field6228.method5635(var9);
       this.field6228.method5631(this::method5487);
-      this.field4561.add(this.field6228);
-      this.field4561.add(this.field6227);
+      this.children.add(this.field6228);
+      this.children.add(this.field6227);
       this.field6237 = true;
       this.method5486(this.field6230);
    }
@@ -251,7 +252,7 @@ public class SocialInteractionsScreen extends Screen {
          ServerData var6 = var1.getCurrentServerData();
          if (!var1.isIntegratedServerRunning()) {
             if (var6 != null) {
-               var5 = var6.field33188;
+               var5 = var6.serverName;
             }
          } else {
             var5 = var1.getIntegratedServer().method1362();

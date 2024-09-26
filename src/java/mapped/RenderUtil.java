@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.block.Block;
@@ -368,7 +368,7 @@ public class RenderUtil {
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
       RenderSystem.method27837(770, 771, 1, 0);
-      GL11.glColor4fv(ColorUtils.method17709(var3));
+      GL11.glColor4fv(MultiUtilities.method17709(var3));
       GL11.glEnable(2881);
       GL11.glBegin(4);
       GL11.glVertex2f(var0 + var2 / 2.0F, var1 + var2 / 2.0F);
@@ -376,7 +376,7 @@ public class RenderUtil {
       GL11.glVertex2f(var0 - var2 / 2.0F, var1);
       GL11.glEnd();
       GL11.glLineWidth(2.0F);
-      GL11.glColor4fv(ColorUtils.method17709(var4));
+      GL11.glColor4fv(MultiUtilities.method17709(var4));
       GL11.glBegin(3);
       GL11.glVertex2f(var0 + var2 / 2.0F, var1 + var2 / 2.0F);
       GL11.glVertex2f(var0 + var2 / 2.0F, var1 - var2 / 2.0F);
@@ -744,7 +744,7 @@ public class RenderUtil {
    }
 
    public static void method11454(float var0, float var1, float var2, float var3, Texture var4, float var5) {
-      drawImage(var0, var1, var2, var3, var4, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5));
+      drawImage(var0, var1, var2, var3, var4, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5));
    }
 
    public static void method11455(float var0, float var1, float var2, float var3, Texture var4) {
@@ -986,7 +986,7 @@ public class RenderUtil {
 
    public static void drawRoundedRect(float var0, float var1, float var2, float var3, float var4, float var5) {
       GL11.glAlphaFunc(519, 0.0F);
-      int var8 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
+      int var8 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
       drawImage(var0 - var4, var1 - var4, var4, var4, ResourcesDecrypter.shadowCorner1PNG, var8);
       drawImage(var0 + var2, var1 - var4, var4, var4, ResourcesDecrypter.shadowCorner2PNG, var8);
       drawImage(var0 - var4, var1 + var3, var4, var4, ResourcesDecrypter.shadowCorner3PNG, var8);
@@ -998,7 +998,7 @@ public class RenderUtil {
    }
 
    public static void method11464(float var0, float var1, float var2, float var3, float var4, float var5) {
-      int var8 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
+      int var8 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5);
       method11450(var0, var1, var4, var3, ResourcesDecrypter.shadowRightPNG, var8, false);
       method11450(var0 + var2 - var4, var1, var4, var3, ResourcesDecrypter.shadowLeftPNG, var8, false);
       method11450(var0, var1, var2, var4, ResourcesDecrypter.shadowBottomPNG, var8, false);
@@ -1332,7 +1332,7 @@ public class RenderUtil {
       GL11.glGetFloatv(2982, var10);
       GL11.glGetFloatv(2983, var11);
       GL11.glGetIntegerv(2978, var9);
-      boolean var12 = ColorUtils.method17737((float)var0, (float)var2, (float)var4, var10, var11, var9, var8);
+      boolean var12 = MultiUtilities.method17737((float)var0, (float)var2, (float)var4, var10, var11, var9, var8);
       return !var12
          ? null
          : new double[]{

@@ -24,7 +24,7 @@ public class Class853 extends ContainerScreen<Class5829> implements Class854 {
       this.field4757 = this.width < 379;
       this.field4756.method5833(this.width, this.height, this.mc, this.field4757, this.field4727);
       this.field4734 = this.field4756.method5837(this.field4757, this.width, this.xSize);
-      this.field4561.add(this.field4756);
+      this.children.add(this.field4756);
       this.setFocusedDefault(this.field4756);
       this.<Class1243>addButton(new Class1243(this.field4734 + 5, this.height / 2 - 49, 20, 18, 0, 0, 19, field4755, var1 -> {
          this.field4756.method5834(this.field4757);

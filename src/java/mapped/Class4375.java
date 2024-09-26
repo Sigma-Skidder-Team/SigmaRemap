@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
@@ -115,7 +115,7 @@ public class Class4375 extends Class4247 {
       this.method13284((int)((float)this.widthA * 0.2F * (1.0F - var4)) * (!this.field21378 ? 1 : -1));
       super.method13224();
       byte var5 = 10;
-      int var6 = ColorUtils.applyAlpha(-723724, QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F));
+      int var6 = MultiUtilities.applyAlpha(-723724, QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F));
       RenderUtil.drawRoundedRect(
          (float)(this.xA + var5 / 2),
          (float)(this.yA + var5 / 2),
@@ -129,7 +129,7 @@ public class Class4375 extends Class4247 {
          (float)(this.yA + var5 / 2),
          (float)(this.xA - var5 / 2 + this.widthA),
          (float)(this.yA - var5 / 2 + this.heightA),
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
       );
       RenderUtil.drawRect((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, (float)var5, var6);
       GL11.glPushMatrix();
@@ -150,14 +150,14 @@ public class Class4375 extends Class4247 {
          (float)(this.xA + 25),
          (float)(this.yA + 20),
          this.field20912 + " Key",
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F * var1)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F * var1)
       );
       RenderUtil.drawRect(
          (float)(this.xA + 25),
          (float)(this.yA + 68),
          (float)(this.xA + this.widthA - 25),
          (float)(this.yA + 69),
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
       );
       super.draw(var1);
    }

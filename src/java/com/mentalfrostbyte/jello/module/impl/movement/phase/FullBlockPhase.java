@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventPushBlock;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.MovementUtils;
 
 public class FullBlockPhase extends Module {
@@ -16,7 +16,7 @@ public class FullBlockPhase extends Module {
 
     @EventTarget
     private void method16491(EventUpdate var1) {
-        if (this.isEnabled() && ColorUtils.method17761()) {
+        if (this.isEnabled() && MultiUtilities.method17761()) {
             var1.method13908(true);
         }
     }
@@ -24,7 +24,7 @@ public class FullBlockPhase extends Module {
     @EventTarget
     private void method16492(EventMove var1) {
         if (this.isEnabled()) {
-            if (!ColorUtils.method17761()) {
+            if (!MultiUtilities.method17761()) {
                 if (mc.player.collidedHorizontally) {
                     MovementUtils.setSpeed(var1, 0.0);
                     MovementUtils.method37095(1.1920931E-8);

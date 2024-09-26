@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.Step;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -38,7 +38,7 @@ public class PacketCriticals extends Module {
                 double[] var5 = new double[]{0.2, 0.0};
                 if (this.getStringSettingValueByName("Mode").equals("Hypixel")) {
                     var5 = new double[]{
-                            0.0624 + ColorUtils.method17750(), 1.0E-14 + ColorUtils.method17750(), 0.0624 + ColorUtils.method17750(), 1.0E-14 + ColorUtils.method17750()
+                            0.0624 + MultiUtilities.method17750(), 1.0E-14 + MultiUtilities.method17750(), 0.0624 + MultiUtilities.method17750(), 1.0E-14 + MultiUtilities.method17750()
                     };
                 }
 

@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class ImageQ extends Class4278 {
    private static String[] field20736;
@@ -20,7 +20,7 @@ public class ImageQ extends Class4278 {
          (float)this.widthA,
          (float)this.heightA,
          this.field20792,
-         ColorUtils.method17690(
+         MultiUtilities.method17690(
             ClientColors.DEEP_TEAL.getColor, ClientColors.LIGHT_GREYISH_BLUE.getColor, !this.method13298() ? 0.0F : (!this.method13212() ? 0.15F : 0.3F)
          )
       );

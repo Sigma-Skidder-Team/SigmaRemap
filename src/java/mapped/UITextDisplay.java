@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import org.lwjgl.opengl.GL11;
 
 public class UITextDisplay extends Class4278 {
@@ -35,7 +35,7 @@ public class UITextDisplay extends Class4278 {
             (float)this.getXA(),
             (float)this.getYA(),
             this.method13303(),
-            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1)
          );
          GL11.glAlphaFunc(519, 0.0F);
       }
@@ -46,7 +46,7 @@ public class UITextDisplay extends Class4278 {
             (float)this.getXA(),
             (float)this.getYA(),
             this.method13303(),
-            ColorUtils.applyAlpha(this.textColor.getTextColor(), var1 * ColorUtils.method17710(this.textColor.getTextColor()))
+            MultiUtilities.applyAlpha(this.textColor.getTextColor(), var1 * MultiUtilities.method17710(this.textColor.getTextColor()))
          );
       }
    }

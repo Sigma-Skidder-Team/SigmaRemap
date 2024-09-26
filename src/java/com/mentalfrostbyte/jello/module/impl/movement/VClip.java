@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import net.minecraft.network.play.client.CChatMessagePacket;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.BlockPos;
@@ -101,7 +101,7 @@ public class VClip extends Module {
 
     private void method16294(int var1) {
         if (var1 == 0) {
-            ColorUtils.addChatMessage("§cCouldn't VClip");
+            MultiUtilities.addChatMessage("§cCouldn't VClip");
         } else {
             mc.getConnection()
                     .sendPacket(

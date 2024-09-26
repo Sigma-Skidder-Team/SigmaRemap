@@ -84,8 +84,13 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
 
       try {
          this.setConnectionState(ProtocolType.field9901);
+         /*
+         uncommenting this causes
+          - java.lang.NoClassDefFoundError: Could not initialize class mapped.Class9019
          this.jelloPortal = new JelloPortal(this.channel);
+          */
       } catch (Throwable var5) {
+         System.out.println("LINE 89 NetworkManager");
          LOGGER.fatal(var5);
       }
    }
@@ -401,7 +406,7 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
          }
       }
 
-     this.jelloPortal.getPacketManager().method34157(this.channel);
+     //this.jelloPortal.getPacketManager().method34157(this.channel);
    }
 
    public void handleDisconnection() {

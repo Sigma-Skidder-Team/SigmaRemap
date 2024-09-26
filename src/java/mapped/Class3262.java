@@ -22,10 +22,10 @@ public abstract class Class3262 extends Item {
    public abstract Predicate<ItemStack> method11752();
 
    public static ItemStack method11774(LivingEntity var0, Predicate<ItemStack> var1) {
-      if (!var1.test(var0.getHeldItem(Hand.field183))) {
+      if (!var1.test(var0.getHeldItem(Hand.OFF_HAND))) {
          return !var1.test(var0.getHeldItem(Hand.MAIN_HAND)) ? ItemStack.EMPTY : var0.getHeldItem(Hand.MAIN_HAND);
       } else {
-         return var0.getHeldItem(Hand.field183);
+         return var0.getHeldItem(Hand.OFF_HAND);
       }
    }
 

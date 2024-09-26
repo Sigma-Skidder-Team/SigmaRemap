@@ -42,7 +42,7 @@ public class InventoryScreen extends Class860<PlayerContainer> implements Class8
          this.field4768.method5833(this.width, this.height, this.mc, this.field4770, this.field4727);
          this.field4769 = true;
          this.field4734 = this.field4768.method5837(this.field4770, this.width, this.xSize);
-         this.field4561.add(this.field4768);
+         this.children.add(this.field4768);
          this.setFocusedDefault(this.field4768);
          this.<Class1243>addButton(new Class1243(this.field4734 + 104, this.height / 2 - 22, 20, 18, 0, 0, 19, field4765, var1 -> {
             this.field4768.method5834(this.field4770);

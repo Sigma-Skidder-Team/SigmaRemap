@@ -224,7 +224,7 @@ public class CreativeScreen extends Class860<Class5820> {
          this.field4779.method5661(false);
          this.field4779.method5671(false);
          this.field4779.method5662(16777215);
-         this.field4561.add(this.field4779);
+         this.children.add(this.field4779);
          int var3 = field4776;
          field4776 = -1;
          this.method2648(ItemGroup.field31664[var3]);

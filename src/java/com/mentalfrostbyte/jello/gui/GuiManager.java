@@ -5,10 +5,11 @@ import com.mentalfrostbyte.jello.ClientMode;
 import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.impl.gui.classic.TabGUI;
 import com.mentalfrostbyte.jello.unmapped.*;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.FileUtil;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.MultiplayerScreen;
 import org.lwjgl.glfw.GLFW;
 import org.lwjgl.glfw.GLFWKeyCallback;
 import org.lwjgl.opengl.GL11;
@@ -78,7 +79,7 @@ public class GuiManager {
     public static boolean method33457(net.minecraft.client.gui.screen.Screen var0) {
         if (var0 instanceof MultiplayerScreen && !(var0 instanceof JelloPortalScreen)) {
             Minecraft.getInstance().currentScreen = null;
-            Minecraft.getInstance().displayGuiScreen(new JelloPortalScreen(((MultiplayerScreen) var0).field6948));
+            Minecraft.getInstance().displayGuiScreen(new JelloPortalScreen(((MultiplayerScreen) var0).parentScreen));
             return true;
         } else if (var0 instanceof IngameMenuScreen && !(var0 instanceof JelloForSigmaOptions)) {
             Minecraft.getInstance().currentScreen = null;
@@ -245,14 +246,14 @@ public class GuiManager {
             if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
                 float var7 = 0.5F + TabGUI.field23380.calcPercent() * 0.5F;
                 GL11.glAlphaFunc(516, 0.1F);
-                RenderUtil.method11424(4.0F, 2.0F, 106.0F, 28.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F * var7));
-                RenderUtil.drawString(ClassicDecryption.bold22, 9.0F, 2.0F, "Sigma", ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * var7));
+                RenderUtil.method11424(4.0F, 2.0F, 106.0F, 28.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F * var7));
+                RenderUtil.drawString(ClassicDecryption.bold22, 9.0F, 2.0F, "Sigma", MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F * var7));
                 RenderUtil.drawString(
-                        ClassicDecryption.bold22, 8.0F, 1.0F, "Sigma", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var7 * 1.2F))
+                        ClassicDecryption.bold22, 8.0F, 1.0F, "Sigma", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, var7 * 1.2F))
                 );
                 int var8 = Color.getHSBColor((float) (System.currentTimeMillis() % 4000L) / 4000.0F, 1.0F, 1.0F).getRGB();
-                RenderUtil.drawString(ClassicDecryption.bold14, 73.0F, 2.0F, "5.0.0", ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
-                RenderUtil.drawString(ClassicDecryption.bold14, 72.0F, 1.0F, "5.0.0", ColorUtils.applyAlpha(var8, Math.min(1.0F, var7 * 1.4F)));
+                RenderUtil.drawString(ClassicDecryption.bold14, 73.0F, 2.0F, "5.0.0", MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
+                RenderUtil.drawString(ClassicDecryption.bold14, 72.0F, 1.0F, "5.0.0", MultiUtilities.applyAlpha(var8, Math.min(1.0F, var7 * 1.4F)));
             } else {
                 GL11.glAlphaFunc(519, 0.0F);
                 RenderUtil.method11455((float) var3, var4, 170.0F, 104.0F, !(portalScaleFactor > 1.0F) ? ResourcesDecrypter.jelloWatermarkPNG : ResourcesDecrypter.jelloWatermark2xPNG);

@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.*;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
@@ -134,7 +134,7 @@ public class Test extends Module {
     public void method16547(EventMove var1) {
         if (this.isEnabled()) {
             double var4 = Math.sqrt(var1.getX() * var1.getX() + var1.getZ() * var1.getZ());
-            ColorUtils.setPlayerYMotion(var1.getY());
+            MultiUtilities.setPlayerYMotion(var1.getY());
         }
     }
 
@@ -237,7 +237,7 @@ public class Test extends Module {
                             }
                         } else {
                             CPlayerTryUseItemPacket var15 = (CPlayerTryUseItemPacket) var4;
-                            if (var15.getHand() != Hand.field183) {
+                            if (var15.getHand() != Hand.OFF_HAND) {
                             }
                         }
                     } else {
@@ -337,7 +337,7 @@ public class Test extends Module {
     }
 
     public List<Entity> method16560(float var1) {
-        List var4 = ColorUtils.getEntitesInWorld();
+        List var4 = MultiUtilities.getEntitesInWorld();
         Iterator var5 = var4.iterator();
 
         while (var5.hasNext()) {
@@ -388,7 +388,7 @@ public class Test extends Module {
     }
 
     public Entity method16561(float var1) {
-        List var4 = ColorUtils.getEntitesInWorld();
+        List var4 = MultiUtilities.getEntitesInWorld();
         Entity var5 = null;
         Iterator var6 = var4.iterator();
 

@@ -15,9 +15,9 @@ public abstract class Class1274<E extends Class1154<E>> extends Class1273<E> {
          return false;
       } else {
          this.field6800 = !this.field6800;
-         if (this.field6800 && this.method6023() == null && this.method6031() > 0) {
+         if (this.field6800 && this.getSelected() == null && this.method6031() > 0) {
             this.method6049(Class2220.field14504);
-         } else if (this.field6800 && this.method6023() != null) {
+         } else if (this.field6800 && this.getSelected() != null) {
             this.method6050();
          }
 

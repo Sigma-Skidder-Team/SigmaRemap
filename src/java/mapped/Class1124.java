@@ -40,7 +40,7 @@ public class Class1124 extends Class875<Class5824> {
       this.field6160.method5661(false);
       this.field6160.method5657(35);
       this.field6160.method5631(this::method5420);
-      this.field4561.add(this.field6160);
+      this.children.add(this.field6160);
       this.setFocusedDefault(this.field6160);
    }
 

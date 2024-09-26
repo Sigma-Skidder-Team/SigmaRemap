@@ -55,7 +55,7 @@ public class Class3389 extends Block {
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
       ItemStack var9 = var4.getHeldItem(var5);
-      if (var5 == Hand.MAIN_HAND && !method11984(var9) && method11984(var4.getHeldItem(Hand.field183))) {
+      if (var5 == Hand.MAIN_HAND && !method11984(var9) && method11984(var4.getHeldItem(Hand.OFF_HAND))) {
          return ActionResultType.field14820;
       } else if (method11984(var9) && method11985(var1)) {
          method11989(var2, var3, var1);

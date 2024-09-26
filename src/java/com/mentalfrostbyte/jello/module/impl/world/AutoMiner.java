@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -296,7 +296,7 @@ public class AutoMiner extends Module {
          GL11.glRotatef((float)var7, 0.0F, 1.0F, 0.0F);
          GL11.glRotatef(180.0F, 1.0F, 0.0F, 0.0F);
          int var8 = var7 / 45;
-         Color var6 = new Color(ColorUtils.method17691(var3[var8].getRGB(), 0.2F), false);
+         Color var6 = new Color(MultiUtilities.method17691(var3[var8].getRGB(), 0.2F), false);
          this.method16083((float)var6.getRed() / 255.0F, (float)var6.getGreen() / 255.0F, (float)var6.getBlue() / 255.0F);
          GL11.glPopMatrix();
       }

@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -20,7 +20,7 @@ public class VanillaPhase extends Module {
     private void method16711(EventUpdate var1) {
         if (this.isEnabled()) {
             if (mc.player.collidedHorizontally) {
-                Class9629 var4 = ColorUtils.method17760(1.0E-4);
+                Class9629 var4 = MultiUtilities.method17760(1.0E-4);
                 double var5 = JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber() ? 1.0E-6 : 0.0625;
                 if (((net.minecraft.util.Direction) var4.method37538()).getAxis() != Direction.X) {
                     var1.setZ(
@@ -40,7 +40,7 @@ public class VanillaPhase extends Module {
     @EventTarget
     private void method16712(EventMove var1) {
         if (this.isEnabled()) {
-            if (mc.player.collidedHorizontally || ColorUtils.method17761()) {
+            if (mc.player.collidedHorizontally || MultiUtilities.method17761()) {
                 MovementUtils.setSpeed(var1, 0.0);
                 MovementUtils.method37095(1.7);
             }

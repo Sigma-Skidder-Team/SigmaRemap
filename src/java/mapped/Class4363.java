@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import org.lwjgl.opengl.GL11;
@@ -199,7 +199,7 @@ public class Class4363 extends Class4247 {
          (float)this.getYA(),
          (float)(this.getXA() + this.getWidthA()),
          (float)(this.getYA() + this.getHeightA()),
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field21330.calcPercent())
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * this.field21330.calcPercent())
       );
       RenderUtil.drawRoundedRect(
          (float)this.getXA(),
@@ -232,7 +232,7 @@ public class Class4363 extends Class4247 {
             (float)(this.getXA() + 10),
             (float)(this.getYA() + (this.getHeightA() - this.getFont().method23952()) / 2 + 1),
             this.method13303() + var4,
-            ColorUtils.applyAlpha(this.textColor.method19405(), var1 * 0.7F)
+            MultiUtilities.applyAlpha(this.textColor.method19405(), var1 * 0.7F)
          );
          RenderUtil.endScissor();
       }
@@ -265,7 +265,7 @@ public class Class4363 extends Class4247 {
          (float)(this.getXA() + var9 - 6),
          (float)(this.getYA() + var10 - 14),
          ">",
-         ColorUtils.applyAlpha(this.textColor.method19405(), var1 * 0.7F * (!this.method13114(this.method13309(), this.method13310()) ? 0.5F : 1.0F))
+         MultiUtilities.applyAlpha(this.textColor.method19405(), var1 * 0.7F * (!this.method13114(this.method13309(), this.method13310()) ? 0.5F : 1.0F))
       );
    }
 

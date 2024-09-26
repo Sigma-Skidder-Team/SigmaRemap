@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.account;
 
-import mapped.ServerData;
-import mapped.Class7970;
+import net.minecraft.client.multiplayer.ServerData;
+import net.minecraft.client.multiplayer.ServerList;
 import totalcross.json.JSONObject;
 import net.minecraft.client.Minecraft;
 
@@ -51,13 +51,13 @@ public class Ban {
     }
 
     public ServerData method31736() {
-        Class7970 var3 = new Class7970(Minecraft.getInstance());
-        var3.method27094();
-        int var4 = var3.method27099();
+        ServerList var3 = new ServerList(Minecraft.getInstance());
+        var3.loadServerList();
+        int var4 = var3.countServers();
 
         for (int var5 = 0; var5 < var4; var5++) {
-            ServerData var6 = var3.method27096(var5);
-            if (var6.field33189.equals(this.serverIP)) {
+            ServerData var6 = var3.getServerData(var5);
+            if (var6.serverIP.equals(this.serverIP)) {
                 return var6;
             }
         }

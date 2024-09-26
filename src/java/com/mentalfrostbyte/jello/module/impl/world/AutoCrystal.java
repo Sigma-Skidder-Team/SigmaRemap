@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 import net.minecraft.client.Minecraft;
@@ -238,7 +238,7 @@ public class AutoCrystal extends PremiumModule {
 
     @EventTarget
     public void method16375(Render3DEvent var1) {
-        int var4 = ColorUtils.applyAlpha(100000000, 0.2F);
+        int var4 = MultiUtilities.applyAlpha(100000000, 0.2F);
         GL11.glPushMatrix();
         GL11.glDisable(2929);
 
@@ -250,7 +250,7 @@ public class AutoCrystal extends PremiumModule {
             RenderUtil.render3DColoredBox(var13, var4);
         }
 
-        var4 = ColorUtils.applyAlpha(9000000, 1.0F);
+        var4 = MultiUtilities.applyAlpha(9000000, 1.0F);
         if (this.field23633 != null) {
             double var14 = this.field23633.getPosX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
             double var19 = this.field23633.getPosY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY() + 0.5;
@@ -311,7 +311,7 @@ public class AutoCrystal extends PremiumModule {
     }
 
     public List<Entity> method16385(float var1) {
-        List var4 = ColorUtils.getEntitesInWorld();
+        List var4 = MultiUtilities.getEntitesInWorld();
         Iterator var5 = var4.iterator();
 
         while (var5.hasNext()) {

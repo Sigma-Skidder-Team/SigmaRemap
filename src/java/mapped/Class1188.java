@@ -29,7 +29,7 @@ public class Class1188 extends Class1186 {
    }
 
    @Override
-   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void render(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       boolean var13 = Class1295.method6127(this.field6417).field6199 == this.field6413;
       this.field6417
          .field6782

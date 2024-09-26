@@ -12,7 +12,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.movement.Step;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.util.math.MathHelper;
 
@@ -98,7 +98,7 @@ public class SpiderStep extends Module {
                 var1.setZ((double) MathHelper.cos(var6) * var10);
                 this.field23758++;
             } else if (this.field23758 == 3) {
-                if (ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+                if (MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                     var1.setY(-0.078);
                     String var7 = this.getStringSettingValueByName("Mode");
                     switch (var7) {
@@ -115,7 +115,7 @@ public class SpiderStep extends Module {
                     MovementUtils.setSpeed(var1, 0.25);
                 }
 
-                if (!ColorUtils.method17686()) {
+                if (!MultiUtilities.method17686()) {
                     MovementUtils.setSpeed(var1, 0.0);
                 }
 

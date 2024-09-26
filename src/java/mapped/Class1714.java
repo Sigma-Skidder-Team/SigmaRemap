@@ -2,11 +2,12 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.util.ResourceLocation;
 
 public final class Class1714 extends TextureAtlasSprite {
    private static final ResourceLocation field9360 = new ResourceLocation("missingno");
-   private static Class291 field9361;
+   private static DynamicTexture field9361;
    private static final LazyValue<Class1806> field9362 = new LazyValue<Class1806>(() -> {
       Class1806 var2 = new Class1806(16, 16, false);
 
@@ -52,9 +53,9 @@ public final class Class1714 extends TextureAtlasSprite {
       super.close();
    }
 
-   public static Class291 method7515() {
+   public static DynamicTexture method7515() {
       if (field9361 == null) {
-         field9361 = new Class291(field9362.getValue());
+         field9361 = new DynamicTexture(field9362.getValue());
          Minecraft.getInstance().getTextureManager().method1073(field9360, field9361);
       }
 

@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -47,20 +47,20 @@ public class NCPPhase extends PremiumModule {
                 double var4 = mc.player.getPosX();
                 double var6 = mc.player.getPosY();
                 double var8 = mc.player.getPosZ();
-                if (!ColorUtils.method17686()) {
-                    if (ColorUtils.isAboveBounds(mc.player, 0.001F) && !ColorUtils.method17761()) {
+                if (!MultiUtilities.method17686()) {
+                    if (MultiUtilities.isAboveBounds(mc.player, 0.001F) && !MultiUtilities.method17761()) {
                         mc.player.setPosition(var4, var6 - 1.0, var8);
                         var1.setY(var6 - 1.0);
                         var1.method13908(true);
                         var1.setPitch(var1.getPitch() + 10.0F);
-                        ColorUtils.setPlayerYMotion(0.0);
+                        MultiUtilities.setPlayerYMotion(0.0);
                     } else if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())) {
                         mc.player.setPosition(var4, var6 - 0.3, var8);
                     }
                 }
             }
 
-            if (this.field23652 > 0 && this.field23651 && ColorUtils.method17761()) {
+            if (this.field23652 > 0 && this.field23651 && MultiUtilities.method17761()) {
                 this.field23653++;
                 float var10 = (float) Math.sin(this.field23653) * 5.0F;
                 float var11 = (float) Math.cos(this.field23653) * 5.0F;
@@ -89,7 +89,7 @@ public class NCPPhase extends PremiumModule {
 
             if (this.field23652 >= 0) {
                 if (this.field23652 != 0) {
-                    if (!ColorUtils.method17761()) {
+                    if (!MultiUtilities.method17761()) {
                         this.field23651 = false;
                         MovementUtils.setSpeed(var1, 0.0);
                         return;

@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import org.lwjgl.opengl.GL11;
 
@@ -32,7 +32,7 @@ public class UILoadingCircle extends Class4278 {
             (float)this.widthA,
             (float)this.heightA,
             ResourcesDecrypter.loadingIndicatorPNG,
-            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, this.field20770 * var1)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, this.field20770 * var1)
          );
          GL11.glPopMatrix();
       }

@@ -11,7 +11,7 @@ public class Class1171 extends Class1155<Class1171> {
    }
 
    @Override
-   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void render(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       Item var13 = Class1305.method6196(this.field6346.field6846).field6842.get(var2);
       Class1305.method6197(this.field6346.field6846, var1, var4 + 40, var3, var13);
 

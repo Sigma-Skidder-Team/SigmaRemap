@@ -35,7 +35,7 @@ public class Class1287 extends Class1286<Class1161> {
       if (var1 != 257 && var1 != 32 && var1 != 335) {
          return super.keyPressed(var1, var2, var3);
       } else {
-         Class1155 var6 = this.method6023();
+         Class1155 var6 = this.getSelected();
          return var6 != null ? var6.mouseClicked(0.0, 0.0, 0) : super.keyPressed(var1, var2, var3);
       }
    }

@@ -7,9 +7,11 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.ConfirmScreen;
 import net.minecraft.client.gui.screen.CreateWorldScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.WorldSelectionScreen;
+import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
@@ -32,7 +34,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
    private final Class2024 field6353;
    private final ResourceLocation field6354;
    private File field6355;
-   private final Class291 field6356;
+   private final DynamicTexture field6356;
    private long field6357;
    public final Class1276 field6358;
 
@@ -54,7 +56,7 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
    }
 
    @Override
-   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void render(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       String var13 = this.field6353.method8644();
       String var14 = this.field6353.method8643() + " (" + Class1276.method6070().format(new Date(this.field6353.method8647())) + ")";
       if (StringUtils.isEmpty(var13)) {
@@ -295,14 +297,14 @@ public final class Class1173 extends Class1155<Class1173> implements AutoCloseab
    }
 
    @Nullable
-   private Class291 method5584() {
+   private DynamicTexture method5584() {
       boolean var3 = this.field6355 != null && this.field6355.isFile();
       if (var3) {
          try (FileInputStream var4 = new FileInputStream(this.field6355)) {
             Class1806 var6 = Class1806.method7879(var4);
             Validate.validState(var6.method7886() == 64, "Must be 64 pixels wide", new Object[0]);
             Validate.validState(var6.method7887() == 64, "Must be 64 pixels high", new Object[0]);
-            Class291 var7 = new Class291(var6);
+            DynamicTexture var7 = new DynamicTexture(var6);
             this.field6351.getTextureManager().method1073(this.field6354, var7);
             return var7;
          } catch (Throwable var20) {

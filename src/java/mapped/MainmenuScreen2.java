@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.OptionsScreen;
 import net.minecraft.client.gui.screen.WorldSelectionScreen;
@@ -127,12 +127,12 @@ public class MainmenuScreen2 extends IconPanel {
       this.field21129.field20779 = true;
       this.addToList(
          this.changelogButton = new UIButton(
-            this, "changelog", 432, 24, 110, 50, new ColorHelper(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)), "Changelog", ResourceRegistry.JelloLightFont20
+            this, "changelog", 432, 24, 110, 50, new ColorHelper(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F)), "Changelog", ResourceRegistry.JelloLightFont20
          )
       );
       this.addToList(
          this.field21133 = new UIButton(
-            this, "quit", 30, 24, 50, 50, new ColorHelper(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.4F)), "Exit", ResourceRegistry.JelloLightFont20
+            this, "quit", 30, 24, 50, 50, new ColorHelper(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.4F)), "Exit", ResourceRegistry.JelloLightFont20
          )
       );
       this.field21133.doThis((var1x, var2x) -> {
@@ -193,7 +193,7 @@ public class MainmenuScreen2 extends IconPanel {
          (float)imageWidth,
          (float)imageHeight,
          ResourcesDecrypter.logoLargePNG,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       super.draw(var1);
    }

@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,7 +112,7 @@ public class Class4366 extends Class4247 {
             (float)(this.getYA() + 1),
             (float)(this.getXA() + this.getWidthA() - 1),
             (float)(this.getYA() + this.getHeightA() - 1),
-            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.25F)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.25F)
          );
       }
 
@@ -139,7 +139,7 @@ public class Class4366 extends Class4247 {
             (float)(this.getXA() + 7),
             (float)(this.getYA() + (this.getHeightA() - this.getFont().method23952()) / 2),
             this.method13303(),
-            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * 0.5F)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * 0.5F)
          );
          RenderUtil.endScissor();
       }

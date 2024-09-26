@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.account.Ban;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
@@ -74,8 +74,8 @@ public class Class4296 extends Class4278 {
       }
 
       if (this.field20813 != null) {
-         int var6 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.2F);
-         int var7 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.7F);
+         int var6 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.2F);
+         int var7 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.7F);
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont36,
             (float)(this.xA + (this.widthA - ResourceRegistry.JelloLightFont36.method23942(this.field20813.getKnownName())) / 2),

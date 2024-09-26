@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class Class4249 extends Class4247 {
    private static String[] field20606;
@@ -30,7 +30,7 @@ public class Class4249 extends Class4247 {
          (float)(this.widthA * 3),
          (float)this.heightA,
          ResourcesDecrypter.repeatPNG,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.35F)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.35F)
       );
       RenderUtil.endScissor();
       super.draw(var1);

@@ -7,12 +7,12 @@ import java.net.MulticastSocket;
 import java.net.SocketTimeoutException;
 import java.nio.charset.StandardCharsets;
 
-public class Class370 extends Thread {
-   private final Class9635 field1622;
+public class LanServerFindThread extends Thread {
+   private final LanServerList field1622;
    private final InetAddress field1623;
    private final MulticastSocket field1624;
 
-   public Class370(Class9635 var1) throws IOException {
+   public LanServerFindThread(LanServerList var1) throws IOException {
       super("LanServerDetector #" + Class6643.method20279().incrementAndGet());
       this.field1622 = var1;
       this.setDaemon(true);

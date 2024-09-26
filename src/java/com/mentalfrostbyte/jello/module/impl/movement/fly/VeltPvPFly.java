@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -43,7 +43,7 @@ public class VeltPvPFly extends Module {
     public void onDisable() {
         MovementUtils.strafe(0.0);
         if (mc.player.getMotion().y > 0.0) {
-            ColorUtils.setPlayerYMotion(-0.0789);
+            MultiUtilities.setPlayerYMotion(-0.0789);
         }
     }
 
@@ -79,7 +79,7 @@ public class VeltPvPFly extends Module {
                             var1.setY(-MovementUtils.method37080());
                         }
 
-                        ColorUtils.setPlayerYMotion(var1.getY());
+                        MultiUtilities.setPlayerYMotion(var1.getY());
                         MovementUtils.setSpeed(var1, var4 - 0.1);
                     }
                 } else {
@@ -91,7 +91,7 @@ public class VeltPvPFly extends Module {
                         this.field23421 = !this.field23423 ? mc.player.getPosY() + var1.getY() : this.field23421;
                     }
 
-                    ColorUtils.setPlayerYMotion(var1.getY());
+                    MultiUtilities.setPlayerYMotion(var1.getY());
                     MovementUtils.setSpeed(var1, var4);
                 }
             } else {

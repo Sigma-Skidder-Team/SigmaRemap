@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.Vector2f;
 import mapped.Class9108;
 import mapped.RenderUtil;
@@ -69,7 +69,7 @@ public class DVDSimulator extends Module {
                     (float) this.field23725.field41839,
                     (float) this.field23725.field41840,
                     ResourcesDecrypter.dvdPNG,
-                    ColorUtils.applyAlpha(this.field23726, 0.8F)
+                    MultiUtilities.applyAlpha(this.field23726, 0.8F)
             );
         }
     }

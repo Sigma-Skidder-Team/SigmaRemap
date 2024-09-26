@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Screen;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import net.minecraft.client.Minecraft;
 
@@ -48,7 +48,7 @@ public class CreditsToCreators extends Screen {
          0.0F,
          (float)this.widthA,
          (float)this.heightA,
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, this.field21076.calcPercent() * 0.95F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, this.field21076.calcPercent() * 0.95F)
       );
       RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, 40.0F, 40.0F, "Credits and third party licensing information", ClientColors.LIGHT_GREYISH_BLUE.getColor);
       byte var4 = 40;

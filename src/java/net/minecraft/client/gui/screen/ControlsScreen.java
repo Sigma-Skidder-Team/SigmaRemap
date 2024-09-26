@@ -34,7 +34,7 @@ public class ControlsScreen extends Class1135 {
       );
       this.<Widget>addButton(AbstractOption.field25351.createWidget(this.field6193, this.width / 2 - 155 + 160, 18, 150));
       this.field6201 = new Class1295(this, this.mc);
-      this.field4561.add(this.field6201);
+      this.children.add(this.field6201);
       this.field6202 = this.<Button>addButton(
          new Button(this.width / 2 - 155, this.height - 29, 150, 20, new TranslationTextComponent("controls.resetAll"), var1 -> {
             for (KeyBinding var7 : this.field6193.field44658) {

@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.misc.GamePlay;
 import com.mentalfrostbyte.jello.module.impl.render.NameProtect;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.STeamsPacket;
@@ -121,7 +121,7 @@ public class HypixelGamePlay extends Module {
                     for (ITextComponent var31 : var5.getChatComponent().getSiblings()) {
                         ClickEvent var35 = var31.getStyle().getClickEvent();
                         if (var35 != null && var35.getAction() == ClickEvent$Action.RUN_COMMAND && var35.getValue().contains("/f accept")) {
-                            ColorUtils.sendChatMessage(var35.getValue());
+                            MultiUtilities.sendChatMessage(var35.getValue());
                         }
                     }
                 }

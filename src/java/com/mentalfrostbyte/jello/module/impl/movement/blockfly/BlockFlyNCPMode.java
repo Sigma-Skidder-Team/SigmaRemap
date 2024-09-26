@@ -14,7 +14,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Speed;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.network.play.client.CAnimateHandPacket;
@@ -120,7 +120,7 @@ public class BlockFlyNCPMode extends Module {
         MovementUtils.strafe(MovementUtils.getSpeed() * 0.9);
         mc.timer.timerSpeed = 1.0F;
         if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23926 == 0) {
-            ColorUtils.setPlayerYMotion(-0.0789);
+            MultiUtilities.setPlayerYMotion(-0.0789);
         }
     }
 
@@ -196,12 +196,12 @@ public class BlockFlyNCPMode extends Module {
                 this.field23925++;
                 var1.method13908(true);
                 this.field23927 = Hand.MAIN_HAND;
-                if (BlockFly.method16733(mc.player.getHeldItem(Hand.field183).getItem())
+                if (BlockFly.method16733(mc.player.getHeldItem(Hand.OFF_HAND).getItem())
                         && (
                         mc.player.getHeldItem(this.field23927).isEmpty()
                                 || !BlockFly.method16733(mc.player.getHeldItem(this.field23927).getItem())
                 )) {
-                    this.field23927 = Hand.field183;
+                    this.field23927 = Hand.OFF_HAND;
                 }
 
                 double var4 = var1.getX();
@@ -266,7 +266,7 @@ public class BlockFlyNCPMode extends Module {
     @HigherPriority
     public void method16809(EventMove var1) {
         if (this.isEnabled() && this.field23928.method16735() != 0) {
-            if (mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.01F)) {
+            if (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.01F)) {
                 this.field23931 = mc.player.getPosY();
             }
 
@@ -287,7 +287,7 @@ public class BlockFlyNCPMode extends Module {
             String var4 = this.getStringSettingValueByName("Speed Mode");
             switch (var4) {
                 case "Jump":
-                    if (mc.player.onGround && ColorUtils.method17686() && !mc.player.isSneaking() && !this.field23929) {
+                    if (mc.player.onGround && MultiUtilities.method17686() && !mc.player.isSneaking() && !this.field23929) {
                         this.field23930 = false;
                         mc.player.jump();
                         ((Speed) Client.getInstance().getModuleManager().getModuleByClass(Speed.class)).method16764();
@@ -308,7 +308,7 @@ public class BlockFlyNCPMode extends Module {
                     if (mc.gameSettings.keyBindJump.isKeyDown()) {
                         mc.timer.timerSpeed = 1.0F;
                     } else if (mc.player.onGround) {
-                        if (ColorUtils.method17686() && !mc.player.isSneaking() && !this.field23929) {
+                        if (MultiUtilities.method17686() && !mc.player.isSneaking() && !this.field23929) {
                             var1.setY(1.01);
                         }
                     } else if (this.field23926 == 1) {
@@ -336,7 +336,7 @@ public class BlockFlyNCPMode extends Module {
                         var1.setY(-1.023456987345906);
                     }
 
-                    if (!ColorUtils.method17686()) {
+                    if (!MultiUtilities.method17686()) {
                         var6 = 0.0;
                     }
 
@@ -344,7 +344,7 @@ public class BlockFlyNCPMode extends Module {
                         MovementUtils.method37092(var1, var6, var8, var8, 360.0F);
                     }
 
-                    ColorUtils.setPlayerYMotion(var1.getY());
+                    MultiUtilities.setPlayerYMotion(var1.getY());
                     break;
                 case "Slow":
                     if (mc.player.onGround) {
@@ -383,7 +383,7 @@ public class BlockFlyNCPMode extends Module {
     public void method16811(JumpEvent var1) {
         if (this.isEnabled() && this.field23930) {
             if (this.access().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-                    && (!ColorUtils.method17686() || this.access().getBooleanValueFromSetttingName("Tower while moving"))) {
+                    && (!MultiUtilities.method17686() || this.access().getBooleanValueFromSetttingName("Tower while moving"))) {
                 var1.setCancelled(true);
             }
         }

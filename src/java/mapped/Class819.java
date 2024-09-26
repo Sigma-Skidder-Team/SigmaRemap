@@ -250,7 +250,7 @@ public class Class819 extends RealmsScreen {
                this.mc.displayGuiScreen(this);
             } else {
                this.field4471.add(var1);
-               this.field4561.clear();
+               this.children.clear();
                this.method2334();
             }
          });

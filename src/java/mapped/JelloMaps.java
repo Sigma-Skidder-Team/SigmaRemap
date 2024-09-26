@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Screen;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 
 import java.util.Date;
@@ -29,7 +29,7 @@ public class JelloMaps extends Screen {
       this.addToList(this.field21036 = new Class4251(this, "mapView", (this.widthA - var3) / 2, (this.heightA - var4) / 2, var3, var4));
       this.field21036.field20614.method13080((var2, var3x, var4x, var5) -> this.method13222(new Class774(this, this, var3x, var4x, var5)));
       this.field21036.field20614.method13082(var1 -> this.method13390());
-      ColorUtils.method17739();
+      MultiUtilities.method17739();
    }
 
    private void method13389(Class4276 var1) {
@@ -66,7 +66,7 @@ public class JelloMaps extends Screen {
    public void keyPressed(int var1) {
       super.keyPressed(var1);
       if (var1 == 256) {
-         ColorUtils.method17742();
+         MultiUtilities.method17742();
          field21033.displayGuiScreen(null);
       }
    }
@@ -82,7 +82,7 @@ public class JelloMaps extends Screen {
          (float)this.yA,
          (float)(this.xA + this.widthA),
          (float)(this.yA + this.heightA),
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
       );
       super.method13224();
       super.draw(var1);

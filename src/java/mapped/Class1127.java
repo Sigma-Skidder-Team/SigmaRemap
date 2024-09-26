@@ -31,7 +31,7 @@ public class Class1127 extends Screen {
       this.mc.keyboardListener.enableRepeatEvents(true);
       super.init();
       this.field6167 = new Class1294(this, this.field6171);
-      this.field4561.add(this.field6167);
+      this.children.add(this.field6167);
       this.<Button>addButton(
          new Button(
             this.width / 2 - 155 + 160, this.height - 29, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.field6166.accept(Optional.<Class5462>empty())

@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import net.minecraft.client.gui.screen.Screen;
@@ -56,8 +56,8 @@ public class Class4358 extends Class4247 {
 
       for (Entry var13 : GuiManager.field41338.entrySet()) {
          Class6984 var14 = new Class6984((Class<? extends Screen>)var13.getKey());
-         ColorHelper var15 = new ColorHelper(ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.02F), -986896)
-            .method19410(ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F))
+         ColorHelper var15 = new ColorHelper(MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.02F), -986896)
+            .method19410(MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F))
             .method19412(Class2218.field14492);
          ButtonPanel var16;
          this.field21308
@@ -195,7 +195,7 @@ public class Class4358 extends Class4247 {
          (float)this.yA,
          (float)this.widthA,
          (float)this.heightA,
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F * var1)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F * var1)
       );
       super.method13224();
       RenderUtil.drawRect(
@@ -204,7 +204,7 @@ public class Class4358 extends Class4247 {
          (float)this.field21305,
          (float)this.field21306,
          10.0F,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       byte var5 = 30;
       RenderUtil.drawString(
@@ -212,7 +212,7 @@ public class Class4358 extends Class4247 {
          (float)(var5 + this.field21304),
          (float)(var5 + this.field21303),
          "Select mod to bind",
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.7F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.7F)
       );
       super.draw(var1);
    }

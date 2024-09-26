@@ -16,6 +16,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.realmsclient.RealmsMainScreen;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.util.ResourceLocation;
 import org.apache.logging.log4j.LogManager;
@@ -115,7 +116,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
       return this.field1095.get(var1);
    }
 
-   public ResourceLocation method1077(String var1, Class291 var2) {
+   public ResourceLocation method1077(String var1, DynamicTexture var2) {
       Integer var5 = this.field1097.get(var1);
       if (var5 != null) {
          var5 = var5 + 1;

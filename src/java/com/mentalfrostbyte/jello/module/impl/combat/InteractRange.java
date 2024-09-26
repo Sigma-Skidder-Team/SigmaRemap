@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.ClickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.entity.Entity;
@@ -20,7 +20,7 @@ public class InteractRange extends Module {
     @EventTarget
     private void method16684(ClickEvent var1) {
         if (this.isEnabled()) {
-            Entity var4 = ColorUtils.method17711(mc.player.rotationYaw, mc.player.rotationPitch, this.getNumberValueBySettingName("Range"), 0.0);
+            Entity var4 = MultiUtilities.method17711(mc.player.rotationYaw, mc.player.rotationPitch, this.getNumberValueBySettingName("Range"), 0.0);
             BlockRayTraceResult var5 = BlockUtil.rayTrace(mc.player.rotationYaw, mc.player.rotationPitch, this.getNumberValueBySettingName("Range"));
             if (var4 != null && mc.objectMouseOver.getType() == RayTraceResult.Type.MISS) {
                 mc.objectMouseOver = new EntityRayTraceResult(var4);

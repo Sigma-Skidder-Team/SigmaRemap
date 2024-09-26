@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
@@ -28,7 +28,7 @@ public class CreditsScreen extends Screen {
       var5 = Math.min(var5, (int)((float) Minecraft.getInstance().mainWindow.getHeight() / 1.65F));
       this.method13416();
       RenderUtil.drawRect(
-         0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * this.field21072)
+         0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.9F * this.field21072)
       );
       float var6 = EasingFunctions.easeOutBack(!((double)this.field21072 < 0.5) ? (float)((double)this.field21072 - 0.5) * 2.0F : 0.0F, 0.0F, 1.0F, 1.0F);
       GL11.glPushMatrix();
@@ -53,7 +53,7 @@ public class CreditsScreen extends Screen {
          (float)var4 - (float)var4 * (this.field21072 - 1.0F) * this.field21072,
          (float)var5 - (float)var5 * (this.field21072 - 1.0F) * this.field21072,
          ResourcesDecrypter.mentalfrostbytePNG,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, this.field21072))
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, Math.min(1.0F, this.field21072))
       );
       if (!((double)this.field21072 < 0.986)) {
          this.field21072 = 1.0F;

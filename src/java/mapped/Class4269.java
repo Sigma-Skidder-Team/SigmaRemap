@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class Class4269 extends Class4247 {
    public UIInput field20694;
@@ -25,7 +25,7 @@ public class Class4269 extends Class4247 {
    @Override
    public void draw(float var1) {
       super.method13225();
-      RenderUtil.method11467(this.xA, this.yA, this.widthA, this.heightA, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
+      RenderUtil.method11467(this.xA, this.yA, this.widthA, this.heightA, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
       super.draw(var1);
    }
 

@@ -31,7 +31,7 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
    private static final Logger field4558 = LogManager.getLogger();
    private static final Set<String> field4559 = Sets.newHashSet(new String[]{"http", "https"});
    public final ITextComponent title;
-   public final List<IGuiEventListener2> field4561 = Lists.newArrayList();
+   public final List<IGuiEventListener2> children = Lists.newArrayList();
    public Minecraft mc;
    public ItemRenderer field4563;
    public int width;
@@ -91,7 +91,7 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
    }
 
    public <T extends IGuiEventListener2> T addListener(T var1) {
-      this.field4561.add(var1);
+      this.children.add(var1);
       return (T)var1;
    }
 
@@ -280,14 +280,14 @@ public abstract class Screen extends FocusableGui implements IScreen, Class1190 
       this.width = var2;
       this.height = var3;
       this.field4566.clear();
-      this.field4561.clear();
+      this.children.clear();
       this.setListener((IGuiEventListener2)null);
       this.init();
    }
 
    @Override
    public List<? extends IGuiEventListener2> getEventListeners() {
-      return this.field4561;
+      return this.children;
    }
 
    public void init() {

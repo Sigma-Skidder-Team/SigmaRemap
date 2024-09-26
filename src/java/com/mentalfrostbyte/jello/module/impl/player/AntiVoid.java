@@ -13,7 +13,7 @@ import com.mentalfrostbyte.jello.module.util.InDevelopment;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
@@ -39,7 +39,7 @@ public class AntiVoid extends Module {
         this.field23837 = 0.0;
         this.field23839 = 0;
         this.field23838 = 0;
-        if (mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+        if (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
             this.field23840 = new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
         }
     }
@@ -47,7 +47,7 @@ public class AntiVoid extends Module {
     @EventTarget
     private void method16664(EventMove var1) {
         if (this.isEnabled()) {
-            if (mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+            if (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                 this.field23840 = new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
             }
 
@@ -123,7 +123,7 @@ public class AntiVoid extends Module {
         double var5 = mc.player.getPositionVec().getX();
         double var7 = mc.player.getPositionVec().getY();
         double var9 = mc.player.getPositionVec().getZ();
-        if (var1.equals("Cubecraft") && !ColorUtils.method17718()) {
+        if (var1.equals("Cubecraft") && !MultiUtilities.method17718()) {
             var1 = "Motion";
         }
 
@@ -133,7 +133,7 @@ public class AntiVoid extends Module {
                 break;
             case "Motion":
                 var2.setY(0.1);
-                ColorUtils.setPlayerYMotion(var2.getY());
+                MultiUtilities.setPlayerYMotion(var2.getY());
                 break;
             case "Cubecraft":
                 double var13 = 3.2E7;

@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import org.lwjgl.opengl.GL11;
 
 import java.util.ArrayList;
@@ -83,7 +83,7 @@ public class Class4271 extends Class4247 {
          (float)this.getYA(),
          (float)(this.getXA() + this.getWidthA()),
          (float)(this.getYA() + this.getHeightA() + this.method13108()),
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
       );
       RenderUtil.drawRoundedRect(
          (float)this.getXA(), (float)this.getYA(), (float)this.getWidthA(), (float)(this.getHeightA() + this.method13108()), 6.0F, var1 * 0.21F
@@ -95,7 +95,7 @@ public class Class4271 extends Class4247 {
             (float)(this.getXA() + 10),
             (float)(this.getYA() + (this.getHeightA() - this.getFont().method23952()) / 2 + 1),
             this.field20912,
-            ColorUtils.applyAlpha(this.textColor.method19405(), var1 * 0.7F)
+            MultiUtilities.applyAlpha(this.textColor.method19405(), var1 * 0.7F)
          );
          RenderUtil.endScissor();
       }
@@ -115,7 +115,7 @@ public class Class4271 extends Class4247 {
          (float)this.getYA(),
          (float)(this.getXA() + this.getWidthA()),
          (float)(this.getYA() + this.getHeightA() + this.method13108()),
-         ColorUtils.applyAlpha(this.textColor.method19407(), var1 * 0.08F)
+         MultiUtilities.applyAlpha(this.textColor.method19407(), var1 * 0.08F)
       );
       int var4 = this.getWidthA() - (int)((float)this.getHeightA() / 2.0F + 0.5F);
       int var5 = (int)((float)this.getHeightA() / 2.0F + 0.5F) + 1;
@@ -128,7 +128,7 @@ public class Class4271 extends Class4247 {
          (float)(this.getXA() + var4 - 6),
          (float)(this.getYA() + var5 - 14),
          ">",
-         ColorUtils.applyAlpha(this.textColor.method19405(), var1 * 0.7F * (!this.method13114(this.method13309(), this.method13310()) ? 0.5F : 1.0F))
+         MultiUtilities.applyAlpha(this.textColor.method19405(), var1 * 0.7F * (!this.method13114(this.method13309(), this.method13310()) ? 0.5F : 1.0F))
       );
    }
 

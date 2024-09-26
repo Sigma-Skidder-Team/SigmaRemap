@@ -20,8 +20,8 @@ public class Class1284 extends Class1274<Class1164> {
          }
       }
 
-      if (this.method6023() != null) {
-         this.method6041(this.method6023());
+      if (this.getSelected() != null) {
+         this.method6041(this.getSelected());
       }
    }
 

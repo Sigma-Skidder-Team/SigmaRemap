@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class Class4289 extends Class4278 {
    private static String[] field20782;
@@ -21,12 +21,12 @@ public class Class4289 extends Class4278 {
       int var5 = this.yA + 5;
       int var6 = this.field20783.method34193();
       int var7 = this.heightA - 10 - Class4346.method13575();
-      int var8 = ColorUtils.applyAlpha(this.field20784, var1);
-      int var9 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1);
+      int var8 = MultiUtilities.applyAlpha(this.field20784, var1);
+      int var9 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1);
       if (this.field20783.field42046) {
-         var8 = ColorUtils.applyAlpha(-15038729, var1);
+         var8 = MultiUtilities.applyAlpha(-15038729, var1);
          var4 += 402 - var6;
-         var9 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1);
+         var9 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1);
       }
 
       RenderUtil.method11474((float)var4, (float)var5, (float)var6, (float)var7, 9.0F, var8);

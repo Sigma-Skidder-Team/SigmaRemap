@@ -14,7 +14,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.SafeWalk;
 import com.mentalfrostbyte.jello.module.impl.movement.Speed;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.network.play.client.CAnimateHandPacket;
@@ -119,7 +119,7 @@ public class BlockFlyHypixelMode extends Module {
         MovementUtils.strafe(MovementUtils.getSpeed() * 0.9);
         mc.timer.timerSpeed = 1.0F;
         if (this.getStringSettingValueByName("Speed Mode").equals("Cubecraft") && this.field23471 == 0) {
-            ColorUtils.setPlayerYMotion(-0.0789);
+            MultiUtilities.setPlayerYMotion(-0.0789);
         }
     }
 
@@ -197,12 +197,12 @@ public class BlockFlyHypixelMode extends Module {
                     this.field23470++;
                     var1.method13908(true);
                     this.field23472 = Hand.MAIN_HAND;
-                    if (BlockFly.method16733(mc.player.getHeldItem(Hand.field183).getItem())
+                    if (BlockFly.method16733(mc.player.getHeldItem(Hand.OFF_HAND).getItem())
                             && (
                             mc.player.getHeldItem(this.field23472).isEmpty()
                                     || !BlockFly.method16733(mc.player.getHeldItem(this.field23472).getItem())
                     )) {
-                        this.field23472 = Hand.field183;
+                        this.field23472 = Hand.OFF_HAND;
                     }
 
                     double var5 = var1.getX();
@@ -274,7 +274,7 @@ public class BlockFlyHypixelMode extends Module {
     @HigherPriority
     public void method16112(EventMove var1) {
         if (this.isEnabled() && this.field23473.method16735() != 0) {
-            if (mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.01F)) {
+            if (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.01F)) {
                 this.field23476 = mc.player.getPosY();
             }
 
@@ -295,7 +295,7 @@ public class BlockFlyHypixelMode extends Module {
             String var4 = this.getStringSettingValueByName("Speed Mode");
             switch (var4) {
                 case "Jump":
-                    if (mc.player.onGround && ColorUtils.method17686() && !mc.player.isSneaking() && !this.field23474) {
+                    if (mc.player.onGround && MultiUtilities.method17686() && !mc.player.isSneaking() && !this.field23474) {
                         this.field23475 = false;
                         mc.player.jump();
                         ((Speed) Client.getInstance().getModuleManager().getModuleByClass(Speed.class)).method16764();
@@ -316,7 +316,7 @@ public class BlockFlyHypixelMode extends Module {
                     if (mc.gameSettings.keyBindJump.isKeyDown()) {
                         mc.timer.timerSpeed = 1.0F;
                     } else if (mc.player.onGround) {
-                        if (ColorUtils.method17686() && !mc.player.isSneaking() && !this.field23474) {
+                        if (MultiUtilities.method17686() && !mc.player.isSneaking() && !this.field23474) {
                             var1.setY(1.00000000000001);
                         }
                     } else if (this.field23471 == 1) {
@@ -344,7 +344,7 @@ public class BlockFlyHypixelMode extends Module {
                         var1.setY(-1.023456987345906);
                     }
 
-                    if (!ColorUtils.method17686()) {
+                    if (!MultiUtilities.method17686()) {
                         var6 = 0.0;
                     }
 
@@ -352,7 +352,7 @@ public class BlockFlyHypixelMode extends Module {
                         MovementUtils.method37092(var1, var6, var8, var8, 360.0F);
                     }
 
-                    ColorUtils.setPlayerYMotion(var1.getY());
+                    MultiUtilities.setPlayerYMotion(var1.getY());
                     break;
                 case "Slow":
                     if (mc.player.onGround) {
@@ -391,7 +391,7 @@ public class BlockFlyHypixelMode extends Module {
     public void method16114(JumpEvent var1) {
         if (this.isEnabled() && this.field23475) {
             if (this.access().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-                    && (!ColorUtils.method17686() || this.access().getBooleanValueFromSetttingName("Tower while moving"))) {
+                    && (!MultiUtilities.method17686() || this.access().getBooleanValueFromSetttingName("Tower while moving"))) {
                 var1.setCancelled(true);
             }
         }

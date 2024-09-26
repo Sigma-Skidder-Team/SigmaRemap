@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.EventKeyPress;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.*;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.block.Block;
@@ -109,7 +109,7 @@ public class Nuker extends Module {
     @EventTarget
     public void method16264(Render3DEvent var1) {
         if (this.field23566 != null && !mc.world.getBlockState(this.field23566).isAir()) {
-            int var4 = ColorUtils.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), 0.4F);
+            int var4 = MultiUtilities.applyAlpha(this.parseSettingValueToIntBySettingName("Color"), 0.4F);
             GL11.glPushMatrix();
             GL11.glDisable(2929);
             double var5 = (double) this.field23566.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();

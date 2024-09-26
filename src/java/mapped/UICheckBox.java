@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import org.lwjgl.opengl.GL11;
@@ -43,7 +43,7 @@ public class UICheckBox extends Class4247 {
          (float)this.widthA,
          (float)this.heightA,
          10.0F,
-         ColorUtils.applyAlpha(-4144960, var4 * this.field21370.calcPercent() * var1)
+         MultiUtilities.applyAlpha(-4144960, var4 * this.field21370.calcPercent() * var1)
       );
       float var5 = (1.0F - this.field21370.calcPercent()) * var1;
       RenderUtil.drawRect(
@@ -52,7 +52,7 @@ public class UICheckBox extends Class4247 {
          (float)this.widthA,
          (float)this.heightA,
          10.0F,
-         ColorUtils.applyAlpha(ColorUtils.method17690(-14047489, ClientColors.DEEP_TEAL.getColor, !this.method13212() ? 1.0F : 0.9F), var5)
+         MultiUtilities.applyAlpha(MultiUtilities.method17690(-14047489, ClientColors.DEEP_TEAL.getColor, !this.method13212() ? 1.0F : 0.9F), var5)
       );
       GL11.glPushMatrix();
       GL11.glTranslatef((float)(this.getXA() + this.getWidthA() / 2), (float)(this.getYA() + this.getHeightA() / 2), 0.0F);
@@ -64,7 +64,7 @@ public class UICheckBox extends Class4247 {
          (float)this.widthA,
          (float)this.heightA,
          ResourcesDecrypter.checkPNG,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
       );
       GL11.glPopMatrix();
       var5 *= var5;

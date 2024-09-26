@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.unmapped.Class8433;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import net.minecraft.client.Minecraft;
@@ -127,25 +127,25 @@ public class Class4312 extends Screen {
       RenderUtil.method11471((float)var7, (float)var8, (float)var9, (float)var10, 10.0F);
       if (this.field21004 != null) {
          RenderUtil.drawImage(
-            (float)var7, (float)var8, (float)this.field21002, (float)var10, this.field21004, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+            (float)var7, (float)var8, (float)this.field21002, (float)var10, this.field21004, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
       }
 
       RenderUtil.drawRect(
-         (float)var7, (float)var8, (float)(var7 + this.field21002), (float)(var8 + 80), ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.14F)
+         (float)var7, (float)var8, (float)(var7 + this.field21002), (float)(var8 + 80), MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.14F)
       );
       RenderUtil.method11478();
       RenderUtil.drawPortalBackground(var7 + this.field21002, var8 - this.field20998, var7 + var9 + this.field20998, var8 + var10 + this.field20998);
-      RenderUtil.method11467(var7, var8, var9, var10, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
+      RenderUtil.method11467(var7, var8, var9, var10, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1));
       RenderUtil.endScissor();
       RenderUtil.drawPortalBackground(var7 - this.field20998, var8 - this.field20998, var7 + this.field21002, var8 + var10 + this.field20998);
-      RenderUtil.method11467(var7, var8, var9, var10, ColorUtils.applyAlpha(-2236963, var1 * 0.75F));
+      RenderUtil.method11467(var7, var8, var9, var10, MultiUtilities.applyAlpha(-2236963, var1 * 0.75F));
       RenderUtil.drawRect(
          (float)(var7 + this.field21002 - 1),
          (float)var8,
          (float)(var7 + this.field21002),
          (float)(var8 + var10),
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F)
       );
       RenderUtil.endScissor();
       super.draw(var1);

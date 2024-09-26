@@ -1,6 +1,6 @@
 package com.mentalfrostbyte.jello.unmapped;
 
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
@@ -49,7 +49,7 @@ public class RectangleFaded extends ButtonPanel {
                     (float) this.getYA() - var4 * 3.0F,
                     (float) this.getWidthA(),
                     (float) this.getHeightA(),
-                    ColorUtils.applyAlpha(-12319668, 0.5F)
+                    MultiUtilities.applyAlpha(-12319668, 0.5F)
             );
         }
 

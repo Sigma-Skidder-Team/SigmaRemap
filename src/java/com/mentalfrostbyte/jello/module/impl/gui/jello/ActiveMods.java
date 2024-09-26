@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import com.mojang.blaze3d.platform.GlStateManager;
@@ -143,7 +143,7 @@ public class ActiveMods extends Module {
                 }
 
                 byte var10 = 0;
-                int var11 = ColorUtils.applyAlpha(-1, 0.95F);
+                int var11 = MultiUtilities.applyAlpha(-1, 0.95F);
 
                 for (Module var13 : this.field23612) {
                     float var14 = 1.0F;
@@ -177,10 +177,10 @@ public class ActiveMods extends Module {
                             (float) var8.method23942(var22) * 3.0F,
                             (float) (var8.method23952() + var21 + 40),
                             ResourcesDecrypter.shadowPNG,
-                            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.36F * var15 * var19)
+                            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.36F * var15 * var19)
                     );
                     RenderUtil.drawString(
-                            var8, (float) (var6 - var20 - var8.method23942(var22)), (float) var7, var22, var15 != 1.0F ? ColorUtils.applyAlpha(-1, var15 * 0.95F) : var11
+                            var8, (float) (var6 - var20 - var8.method23942(var22)), (float) var7, var22, var15 != 1.0F ? MultiUtilities.applyAlpha(-1, var15 * 0.95F) : var11
                     );
                     GL11.glPopMatrix();
                     var10 -= 100;
@@ -202,7 +202,7 @@ public class ActiveMods extends Module {
         GL11.glReadPixels(var1, Minecraft.getInstance().mainWindow.getHeight() - var2, 1, 1, 6407, 5120, var6);
         Color var7 = new Color(var6.get(0) * 2, var6.get(1) * 2, var6.get(2) * 2, 1);
         if (var3 != null) {
-            var7 = ColorUtils.method17681(var7, var3, 0.08F);
+            var7 = MultiUtilities.method17681(var7, var3, 0.08F);
         }
 
         return var7;

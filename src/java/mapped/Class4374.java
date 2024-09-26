@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,14 +23,14 @@ public class Class4374 extends Class4247 {
          (float)this.yA,
          (float)(this.xA + this.widthA),
          (float)this.yA + (float)this.heightA * this.field21372,
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.2F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.2F)
       );
       RenderUtil.drawRect(
          (float)this.xA,
          (float)(this.yA + this.heightA),
          (float)(this.xA + this.widthA),
          (float)this.yA + (float)this.heightA * this.field21372,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.2F)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.2F)
       );
       super.draw(var1);
    }

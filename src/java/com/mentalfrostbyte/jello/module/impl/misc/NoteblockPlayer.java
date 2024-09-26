@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.block.BlockState;
@@ -95,7 +95,7 @@ public class NoteblockPlayer extends PremiumModule {
         if (this.isEnabled()) {
             if (this.field23639 != null) {
                 if (mc.playerController.isInCreativeMode()) {
-                    ColorUtils.addChatMessage("§cNoteBlockPlayer isn't available in creative mode!");
+                    MultiUtilities.addChatMessage("§cNoteBlockPlayer isn't available in creative mode!");
                     this.setEnabled(false);
                 } else {
                     if (!this.method16407(this.field23641) && mc.player.ticksExisted % 4 == 0) {
@@ -267,7 +267,7 @@ public class NoteblockPlayer extends PremiumModule {
                 0.0F,
                 (float) (var10.method23942(var7) / 2 + 10),
                 (float) (var10.method23952() + 2),
-                ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F)
+                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.4F)
         );
         GL11.glTranslated(-var10.method23942(var7) / 2, 0.0, 0.0);
         RenderUtil.drawString(var10, 0.0F, 0.0F, var7, ClientColors.LIGHT_GREYISH_BLUE.getColor);
@@ -284,11 +284,11 @@ public class NoteblockPlayer extends PremiumModule {
     public void onEnable() {
         if (!mc.playerController.isInCreativeMode()) {
             if (this.field23640.isEmpty()) {
-                ColorUtils.addChatMessage("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
-                ColorUtils.addChatMessage("§cPlaying the only integrated demo song!");
+                MultiUtilities.addChatMessage("§cNo Song available! Place NBS formated files in sigma5/nbs and restart the client to try again!");
+                MultiUtilities.addChatMessage("§cPlaying the only integrated demo song!");
                 this.field23639 = Class8471.method29870(ResourcesDecrypter.readInputStream("com/mentalfrostbyte/gui/resources/music/rememberthis.nbs"));
                 if (this.field23639 == null) {
-                    ColorUtils.addChatMessage("§cError loading included song, wtf!");
+                    MultiUtilities.addChatMessage("§cError loading included song, wtf!");
                     this.setEnabled(false);
                     return;
                 }
@@ -296,16 +296,16 @@ public class NoteblockPlayer extends PremiumModule {
                 File var3 = new File(Client.getInstance().getFile() + "/nbs/" + this.getStringSettingValueByName("Song"));
                 this.field23639 = Class8471.method29869(var3);
                 if (this.field23639 == null) {
-                    ColorUtils.addChatMessage("§cError loading song! Make sure song is saved as <= V3 format");
+                    MultiUtilities.addChatMessage("§cError loading song! Make sure song is saved as <= V3 format");
                     this.setEnabled(false);
                     return;
                 }
             }
 
             System.out.println(this.field23639.method9953());
-            ColorUtils.addChatMessage("Now Playing: " + this.field23639.method9953());
+            MultiUtilities.addChatMessage("Now Playing: " + this.field23639.method9953());
             if (Math.floor(20.0F / this.field23639.method9958()) != (double) (20.0F / this.field23639.method9958())) {
-                ColorUtils.addChatMessage("§cNBS Error! Invalid tempo! (" + this.field23639.method9958() + ") Unpredictable results!");
+                MultiUtilities.addChatMessage("§cNBS Error! Invalid tempo! (" + this.field23639.method9958() + ") Unpredictable results!");
             }
 
             this.field23638 = 0;
@@ -324,7 +324,7 @@ public class NoteblockPlayer extends PremiumModule {
             this.method16407(this.field23641);
             this.method16408(this.field23641);
         } else {
-            ColorUtils.addChatMessage("§cNoteBlockPlayer isn't available in creative mode!");
+            MultiUtilities.addChatMessage("§cNoteBlockPlayer isn't available in creative mode!");
             this.setEnabled(false);
         }
     }

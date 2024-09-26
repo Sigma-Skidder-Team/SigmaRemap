@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class ButtonPanel extends Class4247 {
    private static String[] field20583;
@@ -36,8 +36,8 @@ public class ButtonPanel extends Class4247 {
    @Override
    public void draw(float var1) {
       float var4 = !this.isHovered() ? 0.3F : (!this.method13216() ? (!this.method13212() ? Math.max(var1 * this.field20584, 0.0F) : 1.5F) : 0.0F);
-      int var5 = ColorUtils.applyAlpha(
-         ColorUtils.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4),
+      int var5 = MultiUtilities.applyAlpha(
+         MultiUtilities.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4),
          (float)(this.textColor.method19405() >> 24 & 0xFF) / 255.0F * var1
       );
       int var6 = var5 >> 24 & 0xFF;
@@ -76,7 +76,7 @@ public class ButtonPanel extends Class4247 {
             (float)(this.field20585 + var10),
             (float)var11,
             this.method13303(),
-            ColorUtils.applyAlpha(this.textColor.getTextColor(), var1),
+            MultiUtilities.applyAlpha(this.textColor.getTextColor(), var1),
             this.textColor.method19411(),
             this.textColor.method19413()
          );

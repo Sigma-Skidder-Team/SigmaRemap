@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.impl.player.Blink;
 import com.mentalfrostbyte.jello.module.impl.player.OldHitting;
 import com.mentalfrostbyte.jello.module.impl.render.Freecam;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.datafixers.util.Pair;
 import com.mentalfrostbyte.jello.Client;
 import mapped.*;
@@ -87,7 +87,7 @@ public class ViaVersionLoader {
    public void method23345(EventRender var1) {
       if (this.mc.player != null
          && this.mc.player.getPose() == Pose.field13622
-         && (JelloPortal.getCurrentVersionApplied() < ViaVerList._1_13.getVersionNumber() || ColorUtils.method17716())) {
+         && (JelloPortal.getCurrentVersionApplied() < ViaVerList._1_13.getVersionNumber() || MultiUtilities.method17716())) {
          this.mc.player.setPose(Pose.STANDING);
       }
    }
@@ -122,7 +122,7 @@ public class ViaVersionLoader {
 
          for (int var5 = 0; var5 < var4; var5++) {
             Entity var6 = field31493.get(var5);
-            if (!ColorUtils.getEntitesInWorld().contains(var6)) {
+            if (!MultiUtilities.getEntitesInWorld().contains(var6)) {
                field31493.remove(var6);
                var4--;
                var5--;
@@ -213,7 +213,7 @@ public class ViaVersionLoader {
                   }
                } else {
                   Entity var14 = this.mc.world.getEntityByID(var4.getEntityID());
-                  if (!field31493.contains(var14) && !ColorUtils.method17719()) {
+                  if (!field31493.contains(var14) && !MultiUtilities.method17719()) {
                      field31493.add(var14);
                   }
 
@@ -226,7 +226,7 @@ public class ViaVersionLoader {
       if (this.method23351()) {
          Class8920.method32597(var1, this.field31495);
          if (!(var1.getPacket() instanceof SHeldItemChangePacket)) {
-            if (var1.getPacket() instanceof SUnloadChunkPacket && ColorUtils.method17717()) {
+            if (var1.getPacket() instanceof SUnloadChunkPacket && MultiUtilities.method17717()) {
                var1.setCancelled(true);
             } else if (!(var1.getPacket() instanceof SAnimateHandPacket)) {
                if (var1.getPacket() instanceof SUpdateChunkPositionPacket && this.mc.player != null) {
@@ -272,7 +272,7 @@ public class ViaVersionLoader {
    @EventTarget
    @HigestPriority
    public void method23350(EventMove var1) {
-      if (JelloPortal.getCurrentVersionApplied() < ViaVerList._1_13.getVersionNumber() || ColorUtils.method17716()) {
+      if (JelloPortal.getCurrentVersionApplied() < ViaVerList._1_13.getVersionNumber() || MultiUtilities.method17716()) {
          if (this.mc.player.isInWater()) {
             this.field31498 = true;
             double var4 = this.mc.player.getPosY();
@@ -328,7 +328,7 @@ public class ViaVersionLoader {
             Class9140.field42006 = this.mc.player.getMotion().y;
             if (this.field31498 && Class9140.method34129()) {
                Class9140.field42006 = 0.2F;
-               ColorUtils.setPlayerYMotion(Class9140.field42006);
+               MultiUtilities.setPlayerYMotion(Class9140.field42006);
             }
 
             Class9140.field42005 = this.mc.player.getMotion().x;
@@ -340,17 +340,17 @@ public class ViaVersionLoader {
       if (JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber()) {
          if (Math.abs(var1.getX()) < 0.005) {
             var1.setX(0.0);
-            ColorUtils.setPlayerXMotion(var1.getX());
+            MultiUtilities.setPlayerXMotion(var1.getX());
          }
 
          if (Math.abs(var1.getY()) < 0.005) {
             var1.setY(0.0);
-            ColorUtils.setPlayerYMotion(var1.getY());
+            MultiUtilities.setPlayerYMotion(var1.getY());
          }
 
          if (Math.abs(var1.getZ()) < 0.005) {
             var1.setZ(0.0);
-            ColorUtils.setPlayerZMotion(var1.getZ());
+            MultiUtilities.setPlayerZMotion(var1.getZ());
          }
       }
    }

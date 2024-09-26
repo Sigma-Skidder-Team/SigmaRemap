@@ -1,11 +1,12 @@
 package mapped;
 
 import com.mojang.blaze3d.systems.RenderSystem;
+import net.minecraft.client.renderer.texture.DynamicTexture;
 
 public class Class213 implements AutoCloseable {
    private static String[] field797;
    public static final int field798 = method730(0, 10);
-   private final Class291 field799 = new Class291(16, 16, false);
+   private final DynamicTexture field799 = new DynamicTexture(16, 16, false);
 
    public Class213() {
       Class1806 var3 = this.field799.method1141();

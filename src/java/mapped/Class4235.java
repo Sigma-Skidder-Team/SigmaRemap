@@ -2,12 +2,12 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import org.lwjgl.opengl.GL11;
 
 public class Class4235 extends ButtonPanel {
    private static String[] field20573;
-   public static final ColorHelper field20574 = new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor, ColorUtils.method17691(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.1F));
+   public static final ColorHelper field20574 = new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor, MultiUtilities.method17691(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.1F));
    public Texture field20575;
 
    public Class4235(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Texture var7, ColorHelper var8, String var9, ClientResource var10) {
@@ -47,8 +47,8 @@ public class Class4235 extends ButtonPanel {
          (float)this.getWidthA(),
          (float)this.getHeightA(),
          this.method13025(),
-         ColorUtils.applyAlpha(
-            ColorUtils.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4),
+         MultiUtilities.applyAlpha(
+            MultiUtilities.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var4),
             (float)(this.textColor.method19405() >> 24 & 0xFF) / 255.0F * var1
          )
       );
@@ -58,7 +58,7 @@ public class Class4235 extends ButtonPanel {
             (float)(this.getXA() + this.getWidthA() / 2),
             (float)(this.getYA() + this.getHeightA() / 2),
             this.method13303(),
-            ColorUtils.applyAlpha(this.textColor.getTextColor(), var1),
+            MultiUtilities.applyAlpha(this.textColor.getTextColor(), var1),
             this.textColor.method19411(),
             this.textColor.method19413()
          );

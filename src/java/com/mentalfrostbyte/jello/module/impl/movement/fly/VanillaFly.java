@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -44,7 +44,7 @@ public class VanillaFly extends Module {
 
     @Override
     public void onDisable() {
-        ColorUtils.setPlayerYMotion(-0.08);
+        MultiUtilities.setPlayerYMotion(-0.08);
         double plrSpeed = MovementUtils.getSpeed();
         MovementUtils.strafe(plrSpeed);
         if (this.sneakCancelled) {
@@ -76,7 +76,7 @@ public class VanillaFly extends Module {
     public void onUpdate(EventUpdate event) {
         if (this.isEnabled()) {
             if (!mc.player.onGround && this.getBooleanValueFromSetttingName("Kick bypass")) {
-                if (this.ticksInAir > 0 && this.ticksInAir % 30 == 0 && !ColorUtils.isAboveBounds(mc.player, 0.01F)) {
+                if (this.ticksInAir > 0 && this.ticksInAir % 30 == 0 && !MultiUtilities.isAboveBounds(mc.player, 0.01F)) {
                     if (JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber()) {
                         event.setY(event.getY() - 0.04);
                     } else {
@@ -120,7 +120,7 @@ public class VanillaFly extends Module {
     @EventTarget
     public void onMove(EventMove event) {
         if (this.isEnabled()) {
-            if (!ColorUtils.isAboveBounds(mc.player, 0.01F)) {
+            if (!MultiUtilities.isAboveBounds(mc.player, 0.01F)) {
                 this.ticksInAir++;
             } else {
                 this.ticksInAir = 0;
@@ -140,7 +140,7 @@ public class VanillaFly extends Module {
 
             MovementUtils.setSpeed(event, speed);
             event.setY(verticalSpeed);
-            ColorUtils.setPlayerYMotion(event.getY());
+            MultiUtilities.setPlayerYMotion(event.getY());
         }
     }
 

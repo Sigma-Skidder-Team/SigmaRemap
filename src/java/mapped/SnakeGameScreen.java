@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.Screen;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
@@ -20,7 +20,7 @@ public class SnakeGameScreen extends Screen {
       this.method13300(false);
       this.field21045.start();
       this.field21047 = new Animation(200, 0);
-      ColorUtils.method17739();
+      MultiUtilities.method17739();
       byte var3 = 48;
       byte var4 = 27;
       byte var5 = 14;
@@ -40,7 +40,7 @@ public class SnakeGameScreen extends Screen {
          (float)this.yA,
          (float)(this.xA + this.widthA),
          (float)(this.yA + this.heightA),
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
       );
       super.method13224();
       RenderUtil.drawRoundedRect(
@@ -70,7 +70,7 @@ public class SnakeGameScreen extends Screen {
          (float)(var6 + this.field21046.getWidthA() - ResourceRegistry.JelloLightFont20.method23942(var8)),
          (float)(var7 - 50),
          var8,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
       );
    }
 
@@ -78,7 +78,7 @@ public class SnakeGameScreen extends Screen {
    public void keyPressed(int var1) {
       super.keyPressed(var1);
       if (var1 == 256) {
-         ColorUtils.method17742();
+         MultiUtilities.method17742();
          Minecraft.getInstance().displayGuiScreen(null);
       }
    }

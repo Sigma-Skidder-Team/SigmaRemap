@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.module.impl.world.Timer;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 import net.minecraft.network.IPacket;
@@ -46,7 +46,7 @@ public class HypixelFly extends Module {
         String var3 = this.getStringSettingValueByName("Mode");
         this.field23561 = 1.0F;
         this.field23563 = -1;
-        if (mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+        if (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
             this.field23561 = this.getNumberValueBySettingName("Timer Boost");
         }
 
@@ -57,7 +57,7 @@ public class HypixelFly extends Module {
                     this.field23562 = true;
                     break;
                 case "Fast":
-                    ColorUtils.method17749(false);
+                    MultiUtilities.method17749(false);
                     this.field23562 = true;
                     break;
                 case "NoDmg":
@@ -95,7 +95,7 @@ public class HypixelFly extends Module {
     @LowestPriority
     @Class5631
     public void method16258(SendPacketEvent var1) {
-        if (ColorUtils.method17716()) {
+        if (MultiUtilities.method17716()) {
             IPacket var4 = var1.getPacket();
             if (var4 instanceof CClickWindowPacket) {
                 CClickWindowPacket var5 = (CClickWindowPacket) var4;
@@ -108,7 +108,7 @@ public class HypixelFly extends Module {
     @Class5631
     @HigestPriority
     public void method16259(ReceivePacketEvent var1) {
-        if (mc.getConnection() != null && ColorUtils.method17716()) {
+        if (mc.getConnection() != null && MultiUtilities.method17716()) {
             IPacket var4 = var1.getPacket();
             if (this.isEnabled()) {
                 if (var4 instanceof SPlayerPositionLookPacket) {
@@ -126,7 +126,7 @@ public class HypixelFly extends Module {
     @EventTarget
     public void method16261(EventUpdate var1) {
         if (var1.isPre()) {
-            for (double var7 : ColorUtils.method17747()) {
+            for (double var7 : MultiUtilities.method17747()) {
                 if ((double) ((int) var1.getY()) - var1.getY() + var7 == 0.0) {
                     var1.setGround(true);
                     break;
@@ -192,15 +192,15 @@ public class HypixelFly extends Module {
             double var10 = var4.equals("Basic") ? MovementUtils.method37076() : MovementUtils.method37076() - 0.008;
             if (this.field23560 < var10) {
                 this.field23560 = var10;
-            } else if (!ColorUtils.method17686()) {
+            } else if (!MultiUtilities.method17686()) {
                 this.field23560 = var10;
             }
 
             MovementUtils.setSpeed(var1, this.field23560);
-            if (!mc.player.onGround || !ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+            if (!mc.player.onGround || !MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                 this.field23563++;
                 var1.setY(0.0);
-                ColorUtils.setPlayerYMotion(0.0);
+                MultiUtilities.setPlayerYMotion(0.0);
                 if (this.field23563 % 5 < 4) {
                     double var12 = mc.player.getPosX();
                     double var14 = mc.player.getPosY();

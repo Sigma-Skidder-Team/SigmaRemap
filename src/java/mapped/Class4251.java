@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.util.math.vector.Vector3i;
 import org.lwjgl.opengl.GL11;
 
@@ -61,7 +61,7 @@ public class Class4251 extends Class4247 {
          (float)this.widthA,
          (float)this.heightA,
          14.0F,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5)
       );
       RenderUtil.method11474(
          (float)(this.xA + this.field20616),
@@ -90,10 +90,10 @@ public class Class4251 extends Class4247 {
          (float)(this.yA + 0),
          1.0F,
          (float)this.heightA,
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.14F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.14F)
       );
-      int var6 = ColorUtils.applyAlpha(ColorUtils.method17691(-7687425, 0.2F), 0.8F);
-      var6 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F);
+      int var6 = MultiUtilities.applyAlpha(MultiUtilities.method17691(-7687425, 0.2F), 0.8F);
+      var6 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.6F);
       RenderUtil.drawString(ResourceRegistry.JelloLightFont25, (float)(this.xA + 30), (float)(this.yA + 25), "Waypoints", var6);
       RenderUtil.drawString(
          ResourceRegistry.JelloMediumFont40,
@@ -108,7 +108,7 @@ public class Class4251 extends Class4247 {
          (float)(this.xA + this.widthA - ResourceRegistry.JelloLightFont24.method23942(var7) - 10),
          (float)((this.icoPanel.getHeightA() - this.heightA) / 2 - 62),
          var7,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F)
       );
    }
 

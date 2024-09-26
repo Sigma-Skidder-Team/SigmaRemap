@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Class9133;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mentalfrostbyte.jello.util.animation.Animation;
@@ -136,9 +136,9 @@ public class Class4286 extends Class4278 {
             var1
          );
          if (this.field20775 == null && this.field20773 == null) {
-            RenderUtil.drawImage(var5, var6, var7, var8, ResourcesDecrypter.artworkPNG, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
+            RenderUtil.drawImage(var5, var6, var7, var8, ResourcesDecrypter.artworkPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
             if (this.field20776 != null) {
-               RenderUtil.drawImage(var5, var6, var7, var8, ResourcesDecrypter.artworkPNG, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
+               RenderUtil.drawImage(var5, var6, var7, var8, ResourcesDecrypter.artworkPNG, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
             }
          } else {
             if (this.field20775 == null) {
@@ -167,9 +167,9 @@ public class Class4286 extends Class4278 {
                this.field20776 = null;
             }
 
-            RenderUtil.drawImage(var5, var6, var7, var8, this.field20775, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
+            RenderUtil.drawImage(var5, var6, var7, var8, this.field20775, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1 * (1.0F - var4)));
             if (this.field20776 != null) {
-               RenderUtil.drawImage(var5, var6, var7, var8, this.field20776, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
+               RenderUtil.drawImage(var5, var6, var7, var8, this.field20776, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1));
             }
          }
 
@@ -185,7 +185,7 @@ public class Class4286 extends Class4278 {
             (float)var9 * var10,
             (float)var9 * var10,
             ResourcesDecrypter.playIconPNG,
-            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var4 * var1)
          );
          ClientResource var11 = ResourceRegistry.JelloLightFont12;
          if (this.field20912 != null) {
@@ -197,14 +197,14 @@ public class Class4286 extends Class4278 {
                   (float)(this.getXA() + (this.getWidthA() - var11.method23942(var12[1])) / 2),
                   (float)(this.getYA() + this.getWidthA() - 2),
                   var12[1],
-                  ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
                );
                RenderUtil.drawString(
                   var11,
                   (float)(this.getXA() + (this.getWidthA() - var11.method23942(var12[0])) / 2),
                   (float)(this.getYA() + this.getWidthA() - 2 + 13),
                   var12[0],
-                  ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
                );
             } else {
                RenderUtil.drawString(
@@ -212,7 +212,7 @@ public class Class4286 extends Class4278 {
                   (float)(this.getXA() + (this.getWidthA() - var11.method23942(var12[0])) / 2),
                   (float)(this.getYA() + this.getWidthA() - 2 + 6),
                   var12[0],
-                  ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+                  MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
                );
             }
 

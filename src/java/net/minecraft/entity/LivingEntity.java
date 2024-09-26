@@ -1725,7 +1725,7 @@ public abstract class LivingEntity extends Entity {
 
    public ItemStack getHeldItem(Hand var1) {
       if (var1 != Hand.MAIN_HAND) {
-         if (var1 != Hand.field183) {
+         if (var1 != Hand.OFF_HAND) {
             throw new IllegalArgumentException("Invalid hand " + var1);
          } else {
             return this.getItemStackFromSlot(EquipmentSlotType.OFFHAND);
@@ -1737,7 +1737,7 @@ public abstract class LivingEntity extends Entity {
 
    public void setHeldItem(Hand var1, ItemStack var2) {
       if (var1 != Hand.MAIN_HAND) {
-         if (var1 != Hand.field183) {
+         if (var1 != Hand.OFF_HAND) {
             throw new IllegalArgumentException("Invalid hand " + var1);
          }
 
@@ -2673,7 +2673,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public Hand getActiveHand() {
-      return (this.dataManager.<Byte>method35445(LIVING_FLAGS) & 2) <= 0 ? Hand.MAIN_HAND : Hand.field183;
+      return (this.dataManager.<Byte>method35445(LIVING_FLAGS) & 2) <= 0 ? Hand.MAIN_HAND : Hand.OFF_HAND;
    }
 
    private void updateActiveHand() {
@@ -2729,7 +2729,7 @@ public abstract class LivingEntity extends Entity {
          this.activeItemStackUseCount = var4.method32137();
          if (!this.world.isRemote) {
             this.setLivingFlag(1, true);
-            this.setLivingFlag(2, var1 == Hand.field183);
+            this.setLivingFlag(2, var1 == Hand.OFF_HAND);
          }
       }
    }

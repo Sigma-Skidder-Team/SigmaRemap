@@ -227,7 +227,7 @@ public class RearView extends PremiumModule {
 
     @Override
     public void onEnable() {
-        RenderUtil.method11469(mc.getFramebuffer());
+        //RenderUtil.method11469(mc.getFramebuffer());
         field23663 = new Framebuffer(mc.mainWindow.getFramebufferWidth(), mc.mainWindow.getFramebufferHeight(), true, Minecraft.IS_RUNNING_ON_MAC);
         field23663.setFramebufferColor(1.0F, 1.0F, 1.0F, 1.0F);
     }

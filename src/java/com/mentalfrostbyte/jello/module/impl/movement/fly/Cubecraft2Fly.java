@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 import net.minecraft.network.IPacket;
@@ -35,7 +35,7 @@ public class Cubecraft2Fly extends PremiumModule {
             this.field23699 = true;
         }
 
-        if (ColorUtils.method17718() && JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber()) {
+        if (MultiUtilities.method17718() && JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber()) {
             Client.getInstance().getNotificationManager().send(new Notification("Cubecraft2 fly", "This fly was made for 1.9+ only"));
         }
 
@@ -46,17 +46,17 @@ public class Cubecraft2Fly extends PremiumModule {
     @Override
     public void onDisable() {
         MovementUtils.strafe(0.2);
-        ColorUtils.setPlayerYMotion(-0.0789);
-        if (ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+        MultiUtilities.setPlayerYMotion(-0.0789);
+        if (MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
             MovementUtils.strafe(0.0);
-            ColorUtils.setPlayerYMotion(-0.0789);
+            MultiUtilities.setPlayerYMotion(-0.0789);
         } else {
             double var3 = mc.player.getPosX();
             double var5 = mc.player.getPosY();
             double var7 = mc.player.getPosZ();
             mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3, -150.0, var7, false));
             MovementUtils.strafe(0.0);
-            ColorUtils.setPlayerYMotion(0.0);
+            MultiUtilities.setPlayerYMotion(0.0);
             this.field23696 = -3;
             this.field23697.reset();
             this.field23697.start();
@@ -101,7 +101,7 @@ public class Cubecraft2Fly extends PremiumModule {
                 MovementUtils.setSpeed(var1, !mc.gameSettings.keyBindJump.isKeyDown() ? (!this.field23699 ? 3.7 : 2.8) : (!this.field23699 ? 2.8 : 3.7));
             }
 
-            ColorUtils.setPlayerYMotion(var1.getY());
+            MultiUtilities.setPlayerYMotion(var1.getY());
         } else {
             if (this.field23696 < 0) {
                 if (this.field23696 != -3) {

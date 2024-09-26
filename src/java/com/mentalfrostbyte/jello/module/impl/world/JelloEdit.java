@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import com.mentalfrostbyte.jello.util.world.schematics.SchematicFile;
 import mapped.*;
@@ -40,13 +40,13 @@ public class JelloEdit extends Module {
                     String[] schematicNames = this.schematicNameList.toArray(new String[0]);
                     this.registerSetting(new ModeSetting("Shematics", "shematics", 0, schematicNames));
                 } else {
-                    ColorUtils.addChatMessage("No valid schematic files found.");
+                    MultiUtilities.addChatMessage("No valid schematic files found.");
                 }
             } else {
-                ColorUtils.addChatMessage("Unable to list files in schematics folder.");
+                MultiUtilities.addChatMessage("Unable to list files in schematics folder.");
             }
         } else {
-            ColorUtils.addChatMessage("Schematics folder does not exist or is not a directory.");
+            MultiUtilities.addChatMessage("Schematics folder does not exist or is not a directory.");
         }
     }
 
@@ -73,7 +73,7 @@ public class JelloEdit extends Module {
     public void onEnable() {
         Object schematicSetting = this.getSettingValueBySettingName("Shematics");
         if (schematicSetting == null) {
-            ColorUtils.addChatMessage("No schematic selected.");
+            MultiUtilities.addChatMessage("No schematic selected.");
             return;
         }
 
@@ -81,7 +81,7 @@ public class JelloEdit extends Module {
         if (schematicFile.exists() && schematicFile.isFile()) {
             this.schematicFile = new SchematicFile(schematicFile);
             if (this.schematicFile.method31836() && !this.schematicFile.getDataPackets().isEmpty()) {
-                ColorUtils.addChatMessage(this.schematicFile.getDataPackets().size() + " blocks loaded from schematic");
+                MultiUtilities.addChatMessage(this.schematicFile.getDataPackets().size() + " blocks loaded from schematic");
                 this.pos = new BlockPos(
                         mc.player.getPosX() + this.schematicFile.getVectorCore().getX() * 0.0,
                         mc.player.getPosY() + this.schematicFile.getVectorCore().getY() * 0.0,
@@ -89,11 +89,11 @@ public class JelloEdit extends Module {
                 );
                 this.updateAndGetNextPosition();
             } else {
-                ColorUtils.addChatMessage("Unable to load schematic or schematic data is empty.");
+                MultiUtilities.addChatMessage("Unable to load schematic or schematic data is empty.");
                 this.toggle();
             }
         } else {
-            ColorUtils.addChatMessage("Schematic file does not exist.");
+            MultiUtilities.addChatMessage("Schematic file does not exist.");
             this.toggle();
         }
     }
@@ -114,9 +114,9 @@ public class JelloEdit extends Module {
                     double y = block.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY();
                     double z = block.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
                     Box3D box3D = new Box3D(x, y, z, x + 1.0, y + 1.0, z + 1.0);
-                    RenderUtil.render3DColoredBox(box3D, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.02F));
+                    RenderUtil.render3DColoredBox(box3D, MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.02F));
                     GL11.glEnable(GL11.GL_LINE_SMOOTH);
-                    RenderUtil.renderWireframeBox(box3D, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.03F));
+                    RenderUtil.renderWireframeBox(box3D, MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.03F));
                     GL11.glColor3f(1.0F, 1.0F, 1.0F);
                 }
             }

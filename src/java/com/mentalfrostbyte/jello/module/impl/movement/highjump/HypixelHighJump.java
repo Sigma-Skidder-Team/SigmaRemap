@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.MovementUtils;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 
@@ -50,11 +50,11 @@ public class HypixelHighJump extends Module {
             this.field23405 = -1;
          }
 
-         if (this.field23406 && ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+         if (this.field23406 && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
             this.field23406 = !this.field23406;
          }
 
-         ColorUtils.setPlayerYMotion(var1.getY());
+         MultiUtilities.setPlayerYMotion(var1.getY());
       }
    }
 

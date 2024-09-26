@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
@@ -71,7 +71,7 @@ public class InfoHUD extends Module {
                 (float) var1,
                 (float) (mc.mainWindow.getHeight() - var2),
                 var6,
-                ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
+                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F)
         );
         return Math.max(ResourceRegistry.JelloLightFont20.method23942(var5), ResourceRegistry.JelloMediumFont20.method23942(var6));
     }
@@ -88,13 +88,13 @@ public class InfoHUD extends Module {
                 GL11.glDisable(2896);
                 float var9 = 1.0F - (float) var7.method32117() / (float) var7.method32119();
                 if (var9 != 1.0F) {
-                    RenderUtil.method11424((float) (var1 + 2), (float) (var8 + 28), 28.0F, 5.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
+                    RenderUtil.method11424((float) (var1 + 2), (float) (var8 + 28), 28.0F, 5.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.5F));
                     RenderUtil.method11424(
                             (float) (var1 + 2),
                             (float) (var8 + 28),
                             28.0F * var9,
                             3.0F,
-                            ColorUtils.applyAlpha(!((double) var9 <= 0.2) ? ClientColors.DARK_SLATE_GREY.getColor : ClientColors.PALE_YELLOW.getColor, 0.9F)
+                            MultiUtilities.applyAlpha(!((double) var9 <= 0.2) ? ClientColors.DARK_SLATE_GREY.getColor : ClientColors.PALE_YELLOW.getColor, 0.9F)
                     );
                 }
             }

@@ -30,7 +30,7 @@ public class LanguageScreen extends Class1135 {
    @Override
    public void init() {
       this.field6195 = new Class1284(this, this.mc);
-      this.field4561.add(this.field6195);
+      this.children.add(this.field6195);
       this.field6197 = this.<OptionButton>addButton(
          new OptionButton(
             this.width / 2 - 155, this.height - 38, 150, 20, AbstractOption.field25360, AbstractOption.field25360.func_238152_c_(this.field6193), var1 -> {
@@ -42,7 +42,7 @@ public class LanguageScreen extends Class1135 {
          )
       );
       this.field6198 = this.<Button>addButton(new Button(this.width / 2 - 155 + 160, this.height - 38, 150, 20, DialogTexts.field30658, var1 -> {
-         Class1164 var4 = this.field6195.method6023();
+         Class1164 var4 = this.field6195.getSelected();
          if (var4 != null && !Class1164.method5565(var4).getCode().equals(this.field6196.getCurrentLanguage().getCode())) {
             this.field6196.method964(Class1164.method5565(var4));
             this.field6193.language = Class1164.method5565(var4).getCode();

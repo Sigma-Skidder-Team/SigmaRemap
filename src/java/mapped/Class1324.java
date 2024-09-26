@@ -40,13 +40,13 @@ public class Class1324 extends Screen {
       this.field7003 = new TranslationTextComponent("createWorld.customize.flat.tile");
       this.field7004 = new TranslationTextComponent("createWorld.customize.flat.height");
       this.field7005 = new Class1285(this);
-      this.field4561.add(this.field7005);
+      this.children.add(this.field7005);
       this.field7006 = this.<Button>addButton(
          new Button(
             this.width / 2 - 155, this.height - 52, 150, 20, new TranslationTextComponent("createWorld.customize.flat.removeLayer"), var1 -> {
                if (this.method6297()) {
                   List var4 = this.field7002.method38129();
-                  int var5 = this.field7005.getEventListeners().indexOf(this.field7005.method6023());
+                  int var5 = this.field7005.getEventListeners().indexOf(this.field7005.getSelected());
                   int var6 = var4.size() - var5 - 1;
                   var4.remove(var6);
                   this.field7005.method6024(!var4.isEmpty() ? this.field7005.getEventListeners().get(Math.min(var5, var4.size() - 1)) : null);
@@ -82,7 +82,7 @@ public class Class1324 extends Screen {
    }
 
    private boolean method6297() {
-      return this.field7005.method6023() != null;
+      return this.field7005.getSelected() != null;
    }
 
    @Override

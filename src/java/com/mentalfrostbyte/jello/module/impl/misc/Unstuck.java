@@ -9,8 +9,8 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
-import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.MovementUtils;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 
@@ -49,7 +49,7 @@ public class Unstuck extends Module {
     @EventTarget
     public void method16287(EventUpdate var1) {
         if (this.isEnabled() && var1.isPre()) {
-            if (!mc.player.onGround && !ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+            if (!mc.player.onGround && !MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                 if ((float) this.field23574 >= this.getNumberValueBySettingName("Flags") && this.field23575 == 0) {
                     this.field23575 = 60;
                     Client.getInstance().getNotificationManager().send(new Notification("Unstuck", "Trying to unstuck you.."));
@@ -73,7 +73,7 @@ public class Unstuck extends Module {
     public void method16288(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
             if (mc.player != null) {
-                if (var1.getPacket() instanceof SPlayerPositionLookPacket && !ColorUtils.isAboveBounds(mc.player, 0.3F) && mc.player.ticksExisted > 10) {
+                if (var1.getPacket() instanceof SPlayerPositionLookPacket && !MultiUtilities.isAboveBounds(mc.player, 0.3F) && mc.player.ticksExisted > 10) {
                     this.field23574++;
                     if ((float) this.field23574 > this.getNumberValueBySettingName("Flags")) {
                         var1.setCancelled(true);

@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.InputSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 
@@ -72,7 +72,7 @@ public class GamePlay extends ModuleWithModuleSettings {
                     this.method16759(null);
                     Client.getInstance().getNotificationManager().send(new Notification("Auto Join", "Auto join was canceled.", 2500));
                 } else if (this.field23890.method22616()) {
-                    ColorUtils.sendChatMessage(this.field23890.method22618());
+                    MultiUtilities.sendChatMessage(this.field23890.method22618());
                     this.method16759(null);
                 } else if ((int) (this.field23890.method22617() / 1000L) + 1 < this.field23892) {
                     this.field23892 = (int) (this.field23890.method22617() / 1000L) + 1;
@@ -116,7 +116,7 @@ public class GamePlay extends ModuleWithModuleSettings {
                     if (this.field23891.getElapsedTime() > var5 && !this.field23889.isEmpty()) {
                         this.field23891.reset();
                         String var7 = this.field23889.get(0);
-                        ColorUtils.sendChatMessage(var7);
+                        MultiUtilities.sendChatMessage(var7);
                         this.field23889.remove(0);
                     }
                 } catch (ConcurrentModificationException var9) {

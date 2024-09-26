@@ -5,6 +5,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.util.Util;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.util.text.ITextComponent;
@@ -27,7 +28,7 @@ public class ConnectingScreen extends Screen {
       super(NarratorChatListener.field29300);
       this.mc = var2;
       this.field6938 = var1;
-      Class9375 var6 = Class9375.method35574(var3.field33189);
+      Class9375 var6 = Class9375.method35574(var3.serverIP);
       var2.unloadWorld();
       var2.setServerData(var3);
       this.method6219(var6.method35572(), var6.method35573());

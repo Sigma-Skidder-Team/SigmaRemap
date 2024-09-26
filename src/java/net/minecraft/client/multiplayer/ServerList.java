@@ -1,9 +1,10 @@
-package mapped;
+package net.minecraft.client.multiplayer;
 
 import com.google.common.collect.Lists;
 import java.io.File;
 import java.util.List;
 
+import mapped.ListNBT;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
@@ -11,17 +12,17 @@ import net.minecraft.nbt.CompressedStreamTools;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class7970 {
+public class ServerList {
    private static final Logger field34261 = LogManager.getLogger();
    private final Minecraft field34262;
    private final List<ServerData> field34263 = Lists.newArrayList();
 
-   public Class7970(Minecraft var1) {
+   public ServerList(Minecraft var1) {
       this.field34262 = var1;
-      this.method27094();
+      this.loadServerList();
    }
 
-   public void method27094() {
+   public void loadServerList() {
       try {
          this.field34263.clear();
          CompoundNBT var3 = CompressedStreamTools.method31770(new File(this.field34262.gameDir, "servers.dat"));
@@ -59,7 +60,7 @@ public class Class7970 {
       }
    }
 
-   public ServerData method27096(int var1) {
+   public ServerData getServerData(int var1) {
       return this.field34263.get(var1);
    }
 
@@ -71,13 +72,13 @@ public class Class7970 {
       this.field34263.add(var1);
    }
 
-   public int method27099() {
+   public int countServers() {
       return this.field34263.size();
    }
 
    public void method27100(int var1, int var2) {
-      ServerData var5 = this.method27096(var1);
-      this.field34263.set(var1, this.method27096(var2));
+      ServerData var5 = this.getServerData(var1);
+      this.field34263.set(var1, this.getServerData(var2));
       this.field34263.set(var2, var5);
       this.method27095();
    }
@@ -87,12 +88,12 @@ public class Class7970 {
    }
 
    public static void method27102(ServerData var0) {
-      Class7970 var3 = new Class7970(Minecraft.getInstance());
-      var3.method27094();
+      ServerList var3 = new ServerList(Minecraft.getInstance());
+      var3.loadServerList();
 
-      for (int var4 = 0; var4 < var3.method27099(); var4++) {
-         ServerData var5 = var3.method27096(var4);
-         if (var5.field33188.equals(var0.field33188) && var5.field33189.equals(var0.field33189)) {
+      for (int var4 = 0; var4 < var3.countServers(); var4++) {
+         ServerData var5 = var3.getServerData(var4);
+         if (var5.serverName.equals(var0.serverName) && var5.serverIP.equals(var0.serverIP)) {
             var3.method27101(var4, var0);
             break;
          }

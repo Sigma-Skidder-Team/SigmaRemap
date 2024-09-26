@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.network.Account;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 
 public class Class4365 extends Class4247 {
@@ -50,7 +50,7 @@ public class Class4365 extends Class4247 {
          (float)this.yA,
          (float)(this.xA + this.getWidthA()),
          (float)(this.yA + this.getHeightA()),
-         ColorUtils.applyAlpha(ClientColors.DULL_GREEN.getColor, (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * var1)
+         MultiUtilities.applyAlpha(ClientColors.DULL_GREEN.getColor, (0.2F * this.field21334 + (!this.method13212() ? 0.0F : 0.2F)) * var1)
       );
       float var7 = (float)(this.xA + this.widthA - 60 - 10);
       float var8 = (float)(this.yA + 10);
@@ -60,14 +60,14 @@ public class Class4365 extends Class4247 {
          60.0F,
          60.0F,
          var5,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
       );
       RenderUtil.drawString(
          this.font,
          (float)(this.xA + this.widthA - 90 - this.font.method23942(var4)),
          (float)(this.yA + 27),
          var4,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (0.5F + 0.5F * this.field21334) * var1)
       );
       super.draw(var1);
    }

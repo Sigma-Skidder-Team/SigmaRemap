@@ -54,7 +54,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
          var4.field17920.field31039 = var1.method2962(Class2318.field15882);
          var4.field17441 = var1.method3336();
          Class2278 var5 = method17888(var1, Hand.MAIN_HAND);
-         Class2278 var6 = method17888(var1, Hand.field183);
+         Class2278 var6 = method17888(var1, Hand.OFF_HAND);
          if (var5.method9003()) {
             var6 = !var1.method3091().isEmpty() ? Class2278.field14837 : Class2278.field14836;
          }

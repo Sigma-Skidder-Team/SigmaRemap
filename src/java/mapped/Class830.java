@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.client.gui.screen.ConfirmScreen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -28,7 +29,7 @@ public class Class830 extends ConfirmScreen {
    public void init() {
       super.init();
       this.field4566.clear();
-      this.field4561.clear();
+      this.children.clear();
       this.<Button>addButton(
          new Button(this.width / 2 - 50 - 105, this.height / 6 + 96, 100, 20, this.field4602, var1 -> this.field4605.accept(true))
       );

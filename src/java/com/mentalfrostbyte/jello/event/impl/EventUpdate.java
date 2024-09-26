@@ -18,7 +18,7 @@ public class EventUpdate extends CancellableEvent {
     private float pitch;
     private boolean ground;
     private boolean field21495;
-    private final List<Runnable> field21501 = new ArrayList<>();
+    private final List<Runnable> runnables = new ArrayList<>();
 
     public EventUpdate(double var1, double var3, double var5, float var7, float var8, boolean var9) {
         this.x = var1;
@@ -99,11 +99,11 @@ public class EventUpdate extends CancellableEvent {
         return this.pre;
     }
 
-    public void method13922(Runnable var1) {
-        this.field21501.add(var1);
+    public void method13922(Runnable runnable) {
+        this.runnables.add(runnable);
     }
 
     public List<Runnable> getRunnableList() {
-        return this.field21501;
+        return this.runnables;
     }
 }

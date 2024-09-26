@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.gui.GuiManager;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
@@ -42,7 +42,7 @@ public class BlurEngine {
    @EventTarget
    public void method29972(ReceivePacketEvent var1) {
       if (var1.getPacket() instanceof SCloseWindowPacket) {
-         ColorUtils.method17742();
+         MultiUtilities.method17742();
       }
    }
 

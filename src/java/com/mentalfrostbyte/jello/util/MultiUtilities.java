@@ -39,6 +39,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import mapped.*;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -63,7 +64,7 @@ import org.apache.http.util.EntityUtils;
 import totalcross.json.JSONArray;
 import totalcross.json.JSONObject;
 
-public class ColorUtils {
+public class MultiUtilities {
    private static final Minecraft mc = Minecraft.getInstance();
    public static final float[] field24951 = new float[4];
    public static final float[] field24952 = new float[4];
@@ -533,23 +534,23 @@ public class ColorUtils {
       return !field24954
          && mc.getIntegratedServer() == null
          && mc.getCurrentServerData() != null
-         && mc.getCurrentServerData().field33189.toLowerCase().contains("hypixel.net");
+         && mc.getCurrentServerData().serverIP.toLowerCase().contains("hypixel.net");
    }
 
    public static boolean method17717() {
-      return mc.getIntegratedServer() == null && mc.getCurrentServerData() != null && mc.getCurrentServerData().field33189.toLowerCase().contains("minemen.club");
+      return mc.getIntegratedServer() == null && mc.getCurrentServerData() != null && mc.getCurrentServerData().serverIP.toLowerCase().contains("minemen.club");
    }
 
    public static boolean method17718() {
-      return mc.getIntegratedServer() == null && mc.getCurrentServerData() != null && mc.getCurrentServerData().field33189.toLowerCase().contains("cubecraft.net");
+      return mc.getIntegratedServer() == null && mc.getCurrentServerData() != null && mc.getCurrentServerData().serverIP.toLowerCase().contains("cubecraft.net");
    }
 
    public static boolean method17719() {
-      return mc.getIntegratedServer() == null && mc.getCurrentServerData() != null && mc.getCurrentServerData().field33189.toLowerCase().contains("mineplex.com");
+      return mc.getIntegratedServer() == null && mc.getCurrentServerData() != null && mc.getCurrentServerData().serverIP.toLowerCase().contains("mineplex.com");
    }
 
    public static boolean method17720() {
-      return mc.getCurrentServerData() == null || mc.getCurrentServerData().field33189.toLowerCase().contains("localhost");
+      return mc.getCurrentServerData() == null || mc.getCurrentServerData().serverIP.toLowerCase().contains("localhost");
    }
 
    public static Vector3d method17721(float var0, float var1) {
@@ -657,30 +658,30 @@ public class ColorUtils {
       }
    }
 
-   public static void method17733() {
+   public static void block() {
       mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
-      mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.field183));
+      mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.OFF_HAND));
    }
 
-   public static void method17734() {
+   public static void unblock() {
       mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.RELEASE_USE_ITEM, new BlockPos(0, 0, 0), Direction.DOWN));
    }
 
-   public static void method17735(Entity var0, boolean var1) {
-      boolean var4 = JelloPortal.getCurrentVersion().equals(ViaVerList._1_8_x);
-      EventRayTraceResult var5 = new EventRayTraceResult(var0, true);
-      Client.getInstance().getEventManager().call(var5);
-      if (!var5.isCancelled()) {
-         if (var4 && var1) {
+   public static void swing(Entity var0, boolean swing) {
+      boolean isOnePointEight = JelloPortal.getCurrentVersion().equals(ViaVerList._1_8_x);
+      EventRayTraceResult rayTrace = new EventRayTraceResult(var0, true);
+      Client.getInstance().getEventManager().call(rayTrace);
+      if (!rayTrace.isCancelled()) {
+         if (isOnePointEight && swing) {
             mc.player.swingArm(Hand.MAIN_HAND);
          }
 
-         mc.getConnection().sendPacket(new CUseEntityPacket(var5.getEntity(), mc.player.isSneaking()));
+         mc.getConnection().sendPacket(new CUseEntityPacket(rayTrace.getEntity(), mc.player.isSneaking()));
          if (EnchantmentHelper.method26311(Class6069.method18810(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
-            mc.particles.method1195(var5.getEntity(), ParticleTypes.field34065);
+            mc.particles.method1195(rayTrace.getEntity(), ParticleTypes.field34065);
          }
 
-         boolean var6 = (double) mc.player.method2974(0.5F) > 0.9 || var4;
+         boolean var6 = (double) mc.player.method2974(0.5F) > 0.9 || isOnePointEight;
          boolean var7 = var6
             && mc.player.fallDistance > 0.0F
             && !mc.player.onGround
@@ -689,16 +690,16 @@ public class ColorUtils {
             && !mc.player.isPotionActive(Effects.BLINDNESS)
             && !mc.player.isPassenger();
          if (var7 || mc.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled()) {
-            mc.particles.method1195(var5.getEntity(), ParticleTypes.field34054);
+            mc.particles.method1195(rayTrace.getEntity(), ParticleTypes.field34054);
          }
 
          mc.player.resetCooldown();
-         if (!var4 && var1) {
+         if (!isOnePointEight && swing) {
             mc.player.swingArm(Hand.MAIN_HAND);
          }
 
-         var5.method13938();
-         Client.getInstance().getEventManager().call(var5);
+         rayTrace.method13938();
+         Client.getInstance().getEventManager().call(rayTrace);
       }
    }
 
@@ -946,7 +947,7 @@ public class ColorUtils {
    }
 
    public static void method17746(ServerData var0) {
-      field24954 = var0.field33189.toLowerCase().contains("hypixel.net");
+      field24954 = var0.serverIP.toLowerCase().contains("hypixel.net");
       if (field24954) {
          new Thread(() -> {
             try {

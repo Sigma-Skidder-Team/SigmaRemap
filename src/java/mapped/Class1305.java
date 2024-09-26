@@ -110,11 +110,11 @@ public class Class1305 extends Screen implements Class1306 {
    }
 
    public void method6183(Class1274<?> var1) {
-      this.field4561.remove(this.field6901);
-      this.field4561.remove(this.field6902);
-      this.field4561.remove(this.field6903);
+      this.children.remove(this.field6901);
+      this.children.remove(this.field6902);
+      this.children.remove(this.field6903);
       if (var1 != null) {
-         this.field4561.add(0, var1);
+         this.children.add(0, var1);
          this.field6905 = var1;
       }
    }

@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventWalkingUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventPushBlock;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 
 public class UnfullPhase extends Module {
@@ -21,7 +21,7 @@ public class UnfullPhase extends Module {
     private void method16680(EventWalkingUpdate var1) {
         if (this.isEnabled()) {
             if ((int) mc.player.getPosY() == this.field23843 && !mc.player.isJumping) {
-                ColorUtils.setPlayerYMotion(-2.0);
+                MultiUtilities.setPlayerYMotion(-2.0);
             }
 
             if (mc.player.getPosY() > (double) this.field23843 && mc.player.isJumping && !mc.player.isSneaking()) {

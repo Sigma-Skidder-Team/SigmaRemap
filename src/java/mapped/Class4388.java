@@ -250,7 +250,7 @@ public class Class4388 {
 
    private static void method13815(Class1034 var0, ItemStack var1) {
       if (method13878(var0)) {
-         var0.method3302(var0.getHeldItem(Hand.field183));
+         var0.method3302(var0.getHeldItem(Hand.OFF_HAND));
       }
 
       var0.method4626(var1);
@@ -269,8 +269,8 @@ public class Class4388 {
    }
 
    public static void method13817(Class1034 var0, boolean var1) {
-      ItemStack var4 = var0.getHeldItem(Hand.field183);
-      var0.setHeldItem(Hand.field183, ItemStack.EMPTY);
+      ItemStack var4 = var0.getHeldItem(Hand.OFF_HAND);
+      var0.setHeldItem(Hand.OFF_HAND, ItemStack.EMPTY);
       if (!var0.method4635()) {
          boolean var5 = var0.method4247(var4);
          if (!var5) {
@@ -299,7 +299,7 @@ public class Class4388 {
    public static void method13818(Class1034 var0) {
       if (method13868(var0) && !var0.method3091().isEmpty()) {
          var0.method3302(var0.method3091());
-         var0.setHeldItem(Hand.field183, ItemStack.EMPTY);
+         var0.setHeldItem(Hand.OFF_HAND, ItemStack.EMPTY);
       }
    }
 
@@ -327,7 +327,7 @@ public class Class4388 {
 
    private static void method13823(Class1034 var0, List<ItemStack> var1, Vector3d var2) {
       if (!var1.isEmpty()) {
-         var0.swingArm(Hand.field183);
+         var0.swingArm(Hand.OFF_HAND);
 
          for (ItemStack var6 : var1) {
             Class6983.method21578(var0, var6, var2.add(0.0, 1.0, 0.0));

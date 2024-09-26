@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 
@@ -51,7 +51,7 @@ public class UIButton extends Class4247 {
             (float)var5,
             (float)var6,
             this.method13303(),
-            ColorUtils.applyAlpha(var4, var1 * ColorUtils.method17710(var4)),
+            MultiUtilities.applyAlpha(var4, var1 * MultiUtilities.method17710(var4)),
             this.textColor.method19411(),
             this.textColor.method19413()
          );
@@ -60,7 +60,7 @@ public class UIButton extends Class4247 {
             (float)(var6 + var8),
             (float)var5 + (float)(var7 / 2) * var9,
             (float)(var6 + var8 + 2),
-            ColorUtils.applyAlpha(var4, var1 * ColorUtils.method17710(var4))
+            MultiUtilities.applyAlpha(var4, var1 * MultiUtilities.method17710(var4))
          );
          super.draw(var1);
       }

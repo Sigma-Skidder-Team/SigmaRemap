@@ -1,7 +1,7 @@
 package com.mentalfrostbyte.jello.unmapped;
 
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
@@ -18,7 +18,7 @@ public class ClassicScreenk extends Screen {
         super("ClassicScreen");
         field21079 = new Animation(250, 200, Direction.FORWARDS);
         this.method13419();
-        ColorUtils.method17739();
+        MultiUtilities.method17739();
     }
 
     public void method13417() {
@@ -55,7 +55,7 @@ public class ClassicScreenk extends Screen {
 
     @Override
     public JSONObject method13160(JSONObject var1) {
-        ColorUtils.method17742();
+        MultiUtilities.method17742();
         return super.method13160(var1);
     }
 
@@ -80,7 +80,7 @@ public class ClassicScreenk extends Screen {
                 (float) this.yA,
                 (float) (this.xA + this.widthA),
                 (float) (this.yA + this.heightA),
-                ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var4 * 0.35F)
+                MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var4 * 0.35F)
         );
         super.draw(var1);
     }

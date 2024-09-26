@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
@@ -80,7 +80,7 @@ public class MineplexFly extends PremiumModule {
         return this.isEnabled()
                 && this.field23670 != -1
                 && this.field23671 < (double) this.getNumberValueBySettingName("Boost")
-                && (mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.001F))
+                && (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.001F))
                 && !this.field23675;
     }
 
@@ -100,9 +100,9 @@ public class MineplexFly extends PremiumModule {
                 MovementUtils.setSpeed(var1, 0.01);
             } else {
                 float var4 = mc.player.rotationYaw + 90.0F;
-                if (!mc.player.onGround && !ColorUtils.isAboveBounds(mc.player, 0.001F)) {
+                if (!mc.player.onGround && !MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                     if (this.field23668 != -1) {
-                        if (this.field23674 && !ColorUtils.method17686()) {
+                        if (this.field23674 && !MultiUtilities.method17686()) {
                             this.field23674 = !this.field23674;
                             this.field23671 = 0.5;
                         }
@@ -118,12 +118,12 @@ public class MineplexFly extends PremiumModule {
                             this.field23672 -= 0.02;
                         }
 
-                        if (this.field23669 > 6 && !ColorUtils.method17686()) {
+                        if (this.field23669 > 6 && !MultiUtilities.method17686()) {
                             this.field23672 -= 0.05;
                         }
 
                         var1.setY(this.field23672);
-                        if (mc.player.collidedHorizontally || !ColorUtils.method17686()) {
+                        if (mc.player.collidedHorizontally || !MultiUtilities.method17686()) {
                             this.field23671 = 0.35;
                         }
 
@@ -158,7 +158,7 @@ public class MineplexFly extends PremiumModule {
                         mc.player.jump();
                         this.field23672 = 0.4299999;
                         this.field23669 = 0;
-                        this.field23674 = ColorUtils.method17686();
+                        this.field23674 = MultiUtilities.method17686();
                         var1.setY(this.field23672);
                         this.field23673 = mc.player.getPosY();
                         this.field23668++;
@@ -198,7 +198,7 @@ public class MineplexFly extends PremiumModule {
             if (var1.getPacket() instanceof CHeldItemChangePacket
                     && this.field23670 != -1
                     && this.field23671 < (double) this.getNumberValueBySettingName("Boost")
-                    && (mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.001F))
+                    && (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.001F))
                     && !this.field23675) {
                 var1.setCancelled(true);
             }

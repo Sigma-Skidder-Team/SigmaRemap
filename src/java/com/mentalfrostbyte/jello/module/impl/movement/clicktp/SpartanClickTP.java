@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -32,7 +32,7 @@ public class SpartanClickTP extends Module {
 
     @Override
     public void onDisable() {
-        ColorUtils.setPlayerYMotion(-0.08);
+        MultiUtilities.setPlayerYMotion(-0.08);
         double var3 = MovementUtils.getSpeed();
         MovementUtils.strafe(var3);
         mc.timer.timerSpeed = 1.0F;
@@ -78,7 +78,7 @@ public class SpartanClickTP extends Module {
                     if (!this.access().getBooleanValueFromSetttingName("Auto Disable")) {
                         this.field23464 = -1;
                         this.field23465 = null;
-                        ColorUtils.setPlayerYMotion(-0.08);
+                        MultiUtilities.setPlayerYMotion(-0.08);
                         double var5 = MovementUtils.getSpeed();
                         MovementUtils.strafe(var5);
                         mc.timer.timerSpeed = 1.0F;

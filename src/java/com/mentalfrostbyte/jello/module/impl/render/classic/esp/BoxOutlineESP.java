@@ -8,14 +8,14 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.ColorSetting;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import org.lwjgl.opengl.GL11;
 
 public class BoxOutlineESP extends Module {
-    public int field23719 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F);
+    public int field23719 = MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F);
 
     public BoxOutlineESP() {
         super(ModuleCategory.RENDER, "Box Outline", "Draws a line arround players");
@@ -52,7 +52,7 @@ public class BoxOutlineESP extends Module {
                     .entitiesById
                     .forEach(
                             (var1, var2) -> {
-                                boolean var5 = ColorUtils.method17744(var2) == Class2258.field14690 && this.access().getBooleanValueFromSetttingName("Show Players");
+                                boolean var5 = MultiUtilities.method17744(var2) == Class2258.field14690 && this.access().getBooleanValueFromSetttingName("Show Players");
                                 boolean var6 = !var2.isInvisible() || this.access().getBooleanValueFromSetttingName("Show Invisibles");
                                 if (!Client.getInstance().getCombatManager().isValidTarget(var2) && var5 && var6 && var2 != mc.player) {
                                     double var7 = Class9647.method37623(var2).field43722;
@@ -85,9 +85,9 @@ public class BoxOutlineESP extends Module {
     private void method16508(boolean var1) {
         for (Entity var5 : mc.world.getEntities()) {
             if (!Client.getInstance().getCombatManager().isValidTarget(var5)) {
-                boolean var6 = ColorUtils.method17744(var5) == Class2258.field14690 && this.access().getBooleanValueFromSetttingName("Show Players");
-                boolean var7 = ColorUtils.method17744(var5) == Class2258.field14689 && this.access().getBooleanValueFromSetttingName("Show Mobs");
-                boolean var8 = ColorUtils.method17744(var5) == Class2258.field14691 && this.access().getBooleanValueFromSetttingName("Show Passives");
+                boolean var6 = MultiUtilities.method17744(var5) == Class2258.field14690 && this.access().getBooleanValueFromSetttingName("Show Players");
+                boolean var7 = MultiUtilities.method17744(var5) == Class2258.field14689 && this.access().getBooleanValueFromSetttingName("Show Mobs");
+                boolean var8 = MultiUtilities.method17744(var5) == Class2258.field14691 && this.access().getBooleanValueFromSetttingName("Show Passives");
                 boolean var9 = !var5.isInvisible() || this.access().getBooleanValueFromSetttingName("Show Invisibles");
                 if ((var7 || var6 || var8) && var9 && var5 != mc.player) {
                     GL11.glPushMatrix();
@@ -104,7 +104,7 @@ public class BoxOutlineESP extends Module {
                     double var15 = (var5.getPosZ() - var5.lastTickPosZ) * (double) mc.timer.renderPartialTicks - (var5.getPosZ() - var5.lastTickPosZ);
                     Box3D var17 = new Box3D(var5.getBoundingBox().offset(var11, var13, var15)).expand(0.1F);
                     if (var1) {
-                        RenderUtil.renderWireframeBox(var17, 3.0F, ColorUtils.applyAlpha(var10, Client.getInstance().getClientMode() != ClientMode.JELLO ? 0.8F : 0.35F));
+                        RenderUtil.renderWireframeBox(var17, 3.0F, MultiUtilities.applyAlpha(var10, Client.getInstance().getClientMode() != ClientMode.JELLO ? 0.8F : 0.35F));
                     } else {
                         RenderUtil.render3DColoredBox(var17, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                     }

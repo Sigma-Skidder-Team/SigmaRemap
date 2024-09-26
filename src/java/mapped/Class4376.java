@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import net.minecraft.client.Minecraft;
@@ -45,7 +45,7 @@ public class Class4376 extends Class4235 implements Class4238 {
       int var7 = (int)((float)this.getHeightA() * var4);
       int var8 = this.getXA() - (var6 - this.getWidthA()) / 2;
       int var9 = (int)((float)(this.getYA() - (var7 - this.getHeightA()) / 2) - (float)(this.getHeightA() / 2) * (var4 - 1.0F));
-      float[] var10 = ColorUtils.method17701(this.method13025().getWidth(), this.method13025().getHeight(), (float)var6, (float)var7);
+      float[] var10 = MultiUtilities.method17701(this.method13025().getWidth(), this.method13025().getHeight(), (float)var6, (float)var7);
       RenderUtil.drawPortalBackground(
          this.method13271() + var8 - this.xA,
          this.method13272() + var9 - this.yA,
@@ -58,7 +58,7 @@ public class Class4376 extends Class4235 implements Class4238 {
          var10[2],
          var10[3],
          this.method13025(),
-         ColorUtils.applyAlpha(ColorUtils.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var5), var1)
+         MultiUtilities.applyAlpha(MultiUtilities.method17690(this.textColor.method19405(), this.textColor.method19403(), 1.0F - var5), var1)
       );
       if (this.method13303() != null) {
          RenderUtil.method11440(
@@ -66,7 +66,7 @@ public class Class4376 extends Class4235 implements Class4238 {
             (float)(var8 + var6 / 2),
             (float)(var9 + var7 / 2),
             this.method13303(),
-            ColorUtils.applyAlpha(this.textColor.getTextColor(), var1),
+            MultiUtilities.applyAlpha(this.textColor.getTextColor(), var1),
             this.textColor.method19411(),
             this.textColor.method19413()
          );
@@ -96,7 +96,7 @@ public class Class4376 extends Class4235 implements Class4238 {
             (1.0F - var4 / this.method13032()) * (float)var11.method23942(var13) / 2.0F + 1.0F,
             40.0F,
             var13,
-            ColorUtils.applyAlpha(this.method13307().method19405(), var12 * 0.6F)
+            MultiUtilities.applyAlpha(this.method13307().method19405(), var12 * 0.6F)
          );
          GL11.glPopMatrix();
       }

@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
@@ -33,13 +33,13 @@ public class Class9819 {
       if (this.entity != null) {
          if (this.field45878 != 1) {
             if (this.field45878 == 2) {
-               boolean var4 = ColorUtils.method17716();
+               boolean var4 = MultiUtilities.method17716();
                if (var4) {
                   PlayerAbilities abilities = new PlayerAbilities();
                   abilities.isFlying = true;
                   Entity entity1 = null;
 
-                  for (Entity entity2 : ColorUtils.getEntitesInWorld()) {
+                  for (Entity entity2 : MultiUtilities.getEntitesInWorld()) {
                      if (entity2 instanceof PlayerEntity
                         && entity2 != this.mc.player
                         && (entity1 == null || entity1.getDistance(this.mc.player) > entity2.getDistance(this.mc.player))) {
@@ -122,13 +122,13 @@ public class Class9819 {
          event.setX(0.0);
          event.setY(0.0);
          event.setZ(0.0);
-         if (this.entity == null || !this.entity.isAlive() || !ColorUtils.getEntitesInWorld().contains(this.entity)) {
+         if (this.entity == null || !this.entity.isAlive() || !MultiUtilities.getEntitesInWorld().contains(this.entity)) {
             Client.getInstance().getNotificationManager().send(new Notification("Teleport", "Target lost"));
             this.field45878 = 0;
             this.entity = null;
          } else if (!this.mc.player.isSneaking()) {
             double posY = this.entity.getPosY() - this.entity.lastTickPosY;
-            if (posY < -2.0 && ColorUtils.method17763(this.entity) && this.entity.getPosY() - this.mc.player.getPosY() < -10.0) {
+            if (posY < -2.0 && MultiUtilities.method17763(this.entity) && this.entity.getPosY() - this.mc.player.getPosY() < -10.0) {
                this.field45878 = 0;
                this.entity = null;
                Client.getInstance().getNotificationManager().send(new Notification("Teleport", "Target seems to be falling in void"));

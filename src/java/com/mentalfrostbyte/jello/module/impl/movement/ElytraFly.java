@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.Items;
@@ -50,7 +50,7 @@ public class ElytraFly extends Module {
     public void method16221(EventMove var1) {
         if (this.isEnabled()) {
             double var4 = MovementUtils.getSpeed();
-            boolean var6 = ColorUtils.method17686();
+            boolean var6 = MultiUtilities.method17686();
             if (!this.getBooleanValueFromSetttingName("NCP") && mc.player.isSneaking()) {
                 var4 *= 2.5;
             }
@@ -64,7 +64,7 @@ public class ElytraFly extends Module {
                         MovementUtils.setSpeed(var1, var4 * 6.3F);
                     }
 
-                    ColorUtils.setPlayerYMotion(-0.071);
+                    MultiUtilities.setPlayerYMotion(-0.071);
                     var1.setY(-1.0001E-4F);
                 }
 
@@ -160,15 +160,15 @@ public class ElytraFly extends Module {
     @Override
     public void onEnable() {
         if (mc.player.onGround) {
-            ColorUtils.setPlayerYMotion(0.3994F);
+            MultiUtilities.setPlayerYMotion(0.3994F);
         }
     }
 
     @Override
     public void onDisable() {
         if (!MovementUtils.isMoving()) {
-            ColorUtils.setPlayerXMotion(0.0);
-            ColorUtils.setPlayerZMotion(0.0);
+            MultiUtilities.setPlayerXMotion(0.0);
+            MultiUtilities.setPlayerZMotion(0.0);
         }
     }
 }

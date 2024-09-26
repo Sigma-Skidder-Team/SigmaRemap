@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 
@@ -111,11 +111,11 @@ public class Class4272 extends Class4247 {
             (float)this.widthA,
             50.0F,
             ResourcesDecrypter.shadowBottomPNG,
-            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20703.calcPercent() * var1 * 0.3F)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, this.field20703.calcPercent() * var1 * 0.3F)
          );
          RenderUtil.method11415(this);
          RenderUtil.method11424(
-            (float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, ColorUtils.applyAlpha(-723724, var1)
+            (float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, MultiUtilities.applyAlpha(-723724, var1)
          );
          if (field20706 != null && Class8233.field35347 != null && Class8233.field35347.isEmpty()) {
             RenderUtil.drawString(

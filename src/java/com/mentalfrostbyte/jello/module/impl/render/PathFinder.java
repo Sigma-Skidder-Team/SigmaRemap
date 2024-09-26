@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.util.math.BlockPos;
@@ -38,7 +38,7 @@ public class PathFinder extends Module {
     public void onRender3D(Render3DEvent var1) {
         if (this.isEnabled()) {
             if (this.rayTraceResult != null) {
-                int color = ColorUtils.applyAlpha(ClientColors.PALE_YELLOW.getColor, 0.14F);
+                int color = MultiUtilities.applyAlpha(ClientColors.PALE_YELLOW.getColor, 0.14F);
                 GL11.glPushMatrix();
                 GL11.glDisable(GL11.GL_DEPTH_TEST);
                 BlockPos pos = this.rayTraceResult.getPos();

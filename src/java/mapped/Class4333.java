@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import org.lwjgl.opengl.GL11;
@@ -29,7 +29,7 @@ public class Class4333 extends IconPanel {
       );
       if (var4 != 0.0F) {
          RenderUtil.method11424(
-            (float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, ColorUtils.applyAlpha(-2500135, 0.9F)
+            (float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, MultiUtilities.applyAlpha(-2500135, 0.9F)
          );
       } else {
          RenderUtil.drawRect(
@@ -38,7 +38,7 @@ public class Class4333 extends IconPanel {
             (float)(this.widthA - 1),
             (float)(this.heightA - 1),
             3.0F,
-            ColorUtils.applyAlpha(-2500135, 0.9F)
+            MultiUtilities.applyAlpha(-2500135, 0.9F)
          );
       }
 

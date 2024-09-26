@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.unmapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.ClientMode;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
@@ -103,7 +103,7 @@ public class GuiSwitch extends Screen {
                     0.0F,
                     (float) Minecraft.getInstance().mainWindow.getWidth(),
                     (float) Minecraft.getInstance().mainWindow.getHeight(),
-                    ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F)
+                    MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.3F)
             );
             super.draw(var1);
             RenderUtil.drawImage(
@@ -112,14 +112,14 @@ public class GuiSwitch extends Screen {
                     (float) Minecraft.getInstance().mainWindow.getWidth(),
                     (float) Minecraft.getInstance().mainWindow.getHeight(),
                     CustomResourceLoadProgressGui.field6780,
-                    ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 1.0F - field21069.calcPercent())
+                    MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 1.0F - field21069.calcPercent())
             );
             RenderUtil.method11424(
                     0.0F,
                     0.0F,
                     (float) Minecraft.getInstance().mainWindow.getWidth(),
                     (float) Minecraft.getInstance().mainWindow.getHeight(),
-                    ColorUtils.applyAlpha(0, 0.75F * (1.0F - field21069.calcPercent()))
+                    MultiUtilities.applyAlpha(0, 0.75F * (1.0F - field21069.calcPercent()))
             );
             RenderUtil.method11455((float) var8, (float) var9, 455.0F, 78.0F, CustomResourceLoadProgressGui.field6778);
         }

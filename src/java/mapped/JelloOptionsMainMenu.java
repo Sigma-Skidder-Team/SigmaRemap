@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.util.text.StringTextComponent;
 
 public class JelloOptionsMainMenu extends IconPanel {
@@ -42,17 +42,17 @@ public class JelloOptionsMainMenu extends IconPanel {
          (float)(this.xA + (this.getWidthA() - ResourceRegistry.JelloLightFont20.method23942(var4)) / 2),
          (float)(this.yA + 70),
          var4,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.4F * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.4F * var1)
       );
       String var5 = "Click GUI is currently bound to: "
-         + ColorUtils.method17736(Client.getInstance().getModuleManager().method14668().method13728(ClickGui.class))
+         + MultiUtilities.method17736(Client.getInstance().getModuleManager().method14668().method13728(ClickGui.class))
          + " Key";
       RenderUtil.drawString(
          ResourceRegistry.JelloLightFont20,
          (float)(this.getXA() + (this.getWidthA() - ResourceRegistry.JelloLightFont20.method23942(var5)) / 2),
          (float)(this.getYA() + this.getHeightA() - 180),
          var5,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6F * var1)
       );
       String var6 = "Configure all your keybinds in the keybind manager!";
       RenderUtil.drawString(
@@ -60,7 +60,7 @@ public class JelloOptionsMainMenu extends IconPanel {
          (float)(this.getXA() + (this.getWidthA() - ResourceRegistry.JelloLightFont14.method23942(var6)) / 2),
          (float)(this.getYA() + this.getHeightA() - 150),
          var6,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.4F * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.4F * var1)
       );
       String var7 = "GUI Blur: ";
       RenderUtil.drawString(
@@ -68,7 +68,7 @@ public class JelloOptionsMainMenu extends IconPanel {
          (float)(this.getXA() + (this.getWidthA() - ResourceRegistry.JelloLightFont20.method23942(var7)) / 2 - 114),
          (float)(this.getYA() + this.getHeightA() - 221),
          var7,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * var1)
       );
       String var8 = "GPU Accelerated: ";
       RenderUtil.drawString(
@@ -76,15 +76,15 @@ public class JelloOptionsMainMenu extends IconPanel {
          (float)(this.getXA() + (this.getWidthA() - ResourceRegistry.JelloLightFont20.method23942(var8)) / 2 + 52),
          (float)(this.getYA() + this.getHeightA() - 221),
          var8,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * var1)
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * var1)
       );
       super.draw(var1);
    }
 
    private void method13463(int var1, int var2, float var3) {
-      RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, (float)var1, (float)(var2 + 1), "Jello", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3));
+      RenderUtil.drawString(ResourceRegistry.JelloMediumFont40, (float)var1, (float)(var2 + 1), "Jello", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3));
       RenderUtil.drawString(
-         ResourceRegistry.JelloLightFont25, (float)(var1 + 95), (float)(var2 + 14), "for Sigma", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.86F * var3)
+         ResourceRegistry.JelloLightFont25, (float)(var1 + 95), (float)(var2 + 14), "for Sigma", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.86F * var3)
       );
    }
 }

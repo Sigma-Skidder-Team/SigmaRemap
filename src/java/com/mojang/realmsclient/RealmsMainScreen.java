@@ -587,8 +587,8 @@ public class RealmsMainScreen extends RealmsScreen {
       if (!this.method2012()) {
          if (this.field4289) {
             this.method2015((RealmsServer)null);
-            if (!this.field4561.contains(this.field4273)) {
-               this.field4561.add(this.field4273);
+            if (!this.children.contains(this.field4273)) {
+               this.children.add(this.field4273);
             }
 
             RealmsServer var7 = this.method2034(this.field4274);
@@ -663,9 +663,9 @@ public class RealmsMainScreen extends RealmsScreen {
          this.field4293 = 0;
          this.field4294 = true;
          this.method2015((RealmsServer)null);
-         if (this.field4561.contains(this.field4273)) {
+         if (this.children.contains(this.field4273)) {
             Class1287 var8 = this.field4273;
-            if (!this.field4561.remove(var8)) {
+            if (!this.children.remove(var8)) {
                field4224.error("Unable to remove widget: " + var8);
             }
          }

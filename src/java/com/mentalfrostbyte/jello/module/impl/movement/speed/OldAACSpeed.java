@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.antikb.AACAntiKB;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
@@ -39,7 +39,7 @@ public class OldAACSpeed extends Module {
     public void method16226(EventMove var1) {
         if (this.isEnabled()) {
             if (!mc.player.onGround) {
-                if (ColorUtils.method17686() && AACAntiKB.field23907 >= 7) {
+                if (MultiUtilities.method17686() && AACAntiKB.field23907 >= 7) {
                     this.field23536++;
                     if (this.field23536 == 1) {
                         if (this.field23537 != 1) {
@@ -57,7 +57,7 @@ public class OldAACSpeed extends Module {
 
                     this.field23535 = MovementUtils.method37092(var1, this.field23534, MovementUtils.method37083()[0], this.field23535, 45.0F);
                 }
-            } else if (this.getBooleanValueFromSetttingName("Auto Jump") && ColorUtils.method17686()) {
+            } else if (this.getBooleanValueFromSetttingName("Auto Jump") && MultiUtilities.method17686()) {
                 this.field23536 = 0;
                 mc.player.jump();
                 var1.setX(mc.player.getMotion().x);

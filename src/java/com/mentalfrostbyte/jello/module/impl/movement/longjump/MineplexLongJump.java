@@ -7,10 +7,10 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.event.impl.JumpEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.MovementUtils;
-import com.mentalfrostbyte.jello.util.ColorUtils;
 import net.minecraft.util.math.BlockPos;
 
 public class MineplexLongJump extends Module {
@@ -50,7 +50,7 @@ public class MineplexLongJump extends Module {
         if (this.isEnabled() && mc.player != null) {
             if (!mc.player.onGround) {
                 if (this.field23804 >= 0) {
-                    if (this.field23807 && !ColorUtils.method17686()) {
+                    if (this.field23807 && !MultiUtilities.method17686()) {
                         this.field23807 = !this.field23807;
                         this.field23802 = 0.5;
                         this.field23805 = 1;
@@ -66,7 +66,7 @@ public class MineplexLongJump extends Module {
                         this.field23803 -= 0.02;
                     }
 
-                    if (this.field23804 > 6 && !ColorUtils.method17686()) {
+                    if (this.field23804 > 6 && !MultiUtilities.method17686()) {
                         this.field23803 -= 0.05;
                     }
 
@@ -103,9 +103,9 @@ public class MineplexLongJump extends Module {
                     }
                 }
 
-                this.field23807 = ColorUtils.method17686();
+                this.field23807 = MultiUtilities.method17686();
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
-                if (ColorUtils.method17686()
+                if (MultiUtilities.method17686()
                         && (this.access().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var4) || this.access().getBooleanValueFromSetttingName("Auto Jump"))) {
                     mc.player.jump();
                     var1.setY(mc.player.getMotion().y);

@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +50,7 @@ public class Class4350 extends Class4278 {
                   (float)(this.getXA() + var13 + var4),
                   (float)(this.getYA() + var4 + var11 * var5.method23952()),
                   var15,
-                  ColorUtils.applyAlpha(this.method13588(var15), var1)
+                  MultiUtilities.applyAlpha(this.method13588(var15), var1)
                );
                var13 += var5.method23942(var15);
                var8 -= var15.length();
@@ -74,7 +74,7 @@ public class Class4350 extends Class4278 {
             (float)(this.getYA() + var4 + var9 * var5.method23952()),
             (float)var4 + var10 + 1.0F,
             (float)(this.getYA() + var4 + var5.method23941(this.field20912) + var9 * var5.method23952()),
-            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
          super.draw(var1);
       }

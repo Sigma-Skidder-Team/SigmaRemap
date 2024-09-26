@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import com.mojang.blaze3d.platform.GlStateManager;
@@ -68,7 +68,7 @@ public class Class4250 extends Class4247 {
          (float)(this.widthA - var5 * 2),
          (float)(this.heightA - var5 * 2),
          3.0F,
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
       );
       ArrayList var11 = new ArrayList();
       var11.add(new Class9778(0.0, 0.0));
@@ -81,7 +81,7 @@ public class Class4250 extends Class4247 {
          (float)((double)this.xA + (double)var6 * var13 + (double)var5),
          (float)(this.yA - var5 / 2 + this.heightA),
          14.0F,
-         ColorUtils.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, var1)
+         MultiUtilities.applyAlpha(ClientColors.DARK_BLUE_GREY.getColor, var1)
       );
       List<Class9778> var15 = var12.method30790(var11);
       GL11.glPushMatrix();

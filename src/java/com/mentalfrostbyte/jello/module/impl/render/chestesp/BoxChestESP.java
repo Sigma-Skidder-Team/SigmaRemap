@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.tileentity.TileEntity;
@@ -27,9 +27,9 @@ public class BoxChestESP extends Module {
     }
 
     private void method16298() {
-        int var3 = ColorUtils.applyAlpha(this.access().parseSettingValueToIntBySettingName("Regular Color"), 0.14F);
-        int var4 = ColorUtils.applyAlpha(this.access().parseSettingValueToIntBySettingName("Ender Color"), 0.14F);
-        int var5 = ColorUtils.applyAlpha(this.access().parseSettingValueToIntBySettingName("Trapped Color"), 0.14F);
+        int var3 = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Regular Color"), 0.14F);
+        int var4 = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Ender Color"), 0.14F);
+        int var5 = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Trapped Color"), 0.14F);
 
         for (TileEntity var7 : mc.world.loadedTileEntityList) {
             boolean var8 = var7 instanceof Class941 && !(var7 instanceof Class970) && this.access().getBooleanValueFromSetttingName("Show Regular Chests");

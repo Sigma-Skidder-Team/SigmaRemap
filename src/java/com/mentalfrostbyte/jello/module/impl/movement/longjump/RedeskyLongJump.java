@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.util.math.BlockPos;
@@ -45,8 +45,8 @@ public class RedeskyLongJump extends Module {
                 }
             } else {
                 BlockPos var6 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
-                if (this.access().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var6) && ColorUtils.method17686()
-                        || this.access().getBooleanValueFromSetttingName("Auto Jump") && ColorUtils.method17686()
+                if (this.access().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var6) && MultiUtilities.method17686()
+                        || this.access().getBooleanValueFromSetttingName("Auto Jump") && MultiUtilities.method17686()
                         || var1.getY() == MovementUtils.method37080()) {
                     this.field23981 = 1;
                     var1.setY(MovementUtils.method37080());
@@ -91,7 +91,7 @@ public class RedeskyLongJump extends Module {
             }
         }
 
-        ColorUtils.setPlayerYMotion(var1.getY());
+        MultiUtilities.setPlayerYMotion(var1.getY());
     }
 
     @EventTarget

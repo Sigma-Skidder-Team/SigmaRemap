@@ -2,11 +2,12 @@ package mapped;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
 public class Class1699 implements AutoCloseable {
-   private final Class291 field9248;
+   private final DynamicTexture field9248;
    private final Class1806 field9249;
    private final ResourceLocation field9250;
    private boolean field9251;
@@ -21,7 +22,7 @@ public class Class1699 implements AutoCloseable {
    public Class1699(GameRenderer var1, Minecraft var2) {
       this.field9253 = var1;
       this.field9254 = var2;
-      this.field9248 = new Class291(16, 16, false);
+      this.field9248 = new DynamicTexture(16, 16, false);
       this.field9250 = this.field9254.getTextureManager().method1077("light_map", this.field9248);
       this.field9249 = this.field9248.method1141();
 

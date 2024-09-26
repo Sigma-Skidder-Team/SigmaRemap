@@ -1,7 +1,7 @@
 package mapped;
 
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import org.lwjgl.opengl.GL11;
@@ -39,7 +39,7 @@ public class Class4295 extends Class4278 {
             (float)this.yA,
             (float)(this.xA + this.widthA),
             (float)(this.yA + this.heightA),
-            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var1)
          );
       } else {
          RenderUtil.drawRect(
@@ -47,7 +47,7 @@ public class Class4295 extends Class4278 {
             (float)this.yA,
             (float)(this.xA + this.widthA),
             (float)(this.yA + this.heightA),
-            ColorUtils.applyAlpha(-3487030, var1 * 0.5F)
+            MultiUtilities.applyAlpha(-3487030, var1 * 0.5F)
          );
       }
 
@@ -56,7 +56,7 @@ public class Class4295 extends Class4278 {
          (float)(this.yA - 1),
          (float)(this.xA + this.widthA),
          (float)(this.yA + this.heightA),
-         ColorUtils.applyAlpha(-921103, var1)
+         MultiUtilities.applyAlpha(-921103, var1)
       );
       if (this.field20810.getItem() != null) {
          this.method13177();

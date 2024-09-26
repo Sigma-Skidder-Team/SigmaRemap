@@ -8,12 +8,14 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.TextureUtil;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ServerData;
+import net.minecraft.client.multiplayer.ServerList;
 import org.lwjgl.opengl.GL11;
 import totalcross.json.JSONObject;
 
@@ -55,14 +57,14 @@ public class AltManagerScreen extends Screen {
       var3.add("Last Used");
       var3.add("Use count");
       ArrayList<String> var4 = new ArrayList();
-      Class7970 var5 = new Class7970(Minecraft.getInstance());
-      var5.method27094();
-      int var6 = var5.method27099();
+      ServerList var5 = new ServerList(Minecraft.getInstance());
+      var5.loadServerList();
+      int var6 = var5.countServers();
 
       for (int var7 = 0; var7 < var6; var7++) {
-         ServerData var8 = var5.method27096(var7);
-         if (!var4.contains(var8.field33189)) {
-            var4.add(var8.field33189);
+         ServerData var8 = var5.getServerData(var7);
+         if (!var4.contains(var8.serverIP)) {
+            var4.add(var8.serverIP);
          }
       }
 
@@ -330,7 +332,7 @@ public class AltManagerScreen extends Screen {
             (float)((int)((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21014) - 15),
             114.0F,
             this.field21020,
-            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var3)
          );
       }
 
@@ -343,7 +345,7 @@ public class AltManagerScreen extends Screen {
    private void method13366() {
       int var3 = this.xA + this.field21016;
       int var4 = this.yA + this.field21016;
-      int var5 = ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F);
+      int var5 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F);
       RenderUtil.drawString(ResourceRegistry.JelloLightFont40, (float)var3, (float)var4, "Jello", var5);
       RenderUtil.drawString(ResourceRegistry.JelloLightFont25, (float)(var3 + 87), (float)(var4 + 15), "Alt Manager", var5);
    }
@@ -438,7 +440,7 @@ public class AltManagerScreen extends Screen {
          this.field21005 = (int)((float)this.field21005 + var6 * var7);
       }
 
-      RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.95F));
+      RenderUtil.drawRect(0.0F, 0.0F, (float)this.getWidthA(), (float)this.getHeightA(), MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.95F));
    }
 
    @Override

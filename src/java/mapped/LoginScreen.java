@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.network.Class9507;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.util.Util;
 
 public class LoginScreen extends Class4247 {
@@ -91,7 +91,7 @@ public class LoginScreen extends Class4247 {
          this.field21355.method13288(var5.method36702());
          if (var5.method36702()) {
             RenderUtil.method11424(
-               (float)(this.xA + 330), (float)(this.yA + 255), 114.0F, 40.0F, ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
+               (float)(this.xA + 330), (float)(this.yA + 255), 114.0F, 40.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
             );
          }
 

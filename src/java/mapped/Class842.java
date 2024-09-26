@@ -48,7 +48,7 @@ public class Class842 extends Class838 {
       byte var7 = 20;
       int var8 = this.width - var3 - 20;
       this.field4645 = new Class1299(this, var8, this.height, var6, this.height - 50, 16);
-      this.field4561.add(this.field4645);
+      this.children.add(this.field4645);
       this.<Class1215>addButton(new Class1215(Class2160.field14148, var5, 0 * var7 + var6, var3, var4));
       this.<Class1215>addButton(new Class1215(Class2160.field14149, var5, 1 * var7 + var6, var3, var4));
       this.<Class1215>addButton(new Class1215(Class2160.field14150, var5, 2 * var7 + var6, var3, var4));

@@ -148,9 +148,9 @@ public class Class1313 extends Screen {
       MutableRegistry var3 = this.field6927.field7000.field7092.method5789().<Biome>getRegistry(Registry.BIOME_KEY);
       this.field6932.method5635(method6204(var3, this.field6927.method6294()));
       this.field6933 = this.field6927.method6294();
-      this.field4561.add(this.field6932);
+      this.children.add(this.field6932);
       this.field6930 = new Class1281(this);
-      this.field4561.add(this.field6930);
+      this.children.add(this.field6930);
       this.field6931 = this.<Button>addButton(
          new Button(this.width / 2 - 155, this.height - 28, 150, 20, new TranslationTextComponent("createWorld.customize.presets.select"), var2 -> {
             Class9733 var5 = method6203(var3, this.field6932.getText(), this.field6933);
@@ -161,7 +161,7 @@ public class Class1313 extends Screen {
       this.<Button>addButton(
          new Button(this.width / 2 + 5, this.height - 28, 150, 20, DialogTexts.GUI_CANCEL, var1 -> this.mc.displayGuiScreen(this.field6927))
       );
-      this.method6205(this.field6930.method6023() != null);
+      this.method6205(this.field6930.getSelected() != null);
    }
 
    @Override

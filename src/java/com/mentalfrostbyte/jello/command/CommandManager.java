@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.command.impl.*;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.play.client.CChatMessagePacket;
 import net.minecraft.network.play.client.CTabCompletePacket;
@@ -74,8 +74,8 @@ public class CommandManager {
     }
 
     public void method30234(String var1) {
-        ColorUtils.addChatMessage(this.getPrefix() + " Invalid command \"" + "." + var1 + "\"");
-        ColorUtils.addChatMessage(this.getPrefix() + " Use \"" + "." + "help\" for a list of commands.");
+        MultiUtilities.addChatMessage(this.getPrefix() + " Invalid command \"" + "." + var1 + "\"");
+        MultiUtilities.addChatMessage(this.getPrefix() + " Use \"" + "." + "help\" for a list of commands.");
     }
 
     public String getPrefix() {
@@ -133,19 +133,19 @@ public class CommandManager {
                         var8.add(new Class8623(var6[var9]));
                     }
 
-                    ColorUtils.addChatMessage(" ");
+                    MultiUtilities.addChatMessage(" ");
 
                     try {
-                        var7.run(var5, (Class8623[]) var8.<Class8623>toArray(new Class8623[0]), var1x -> ColorUtils.addChatMessage(this.getPrefix() + " " + var1x));
+                        var7.run(var5, (Class8623[]) var8.<Class8623>toArray(new Class8623[0]), var1x -> MultiUtilities.addChatMessage(this.getPrefix() + " " + var1x));
                     } catch (CommandException var10) {
                         if (var10.field16621.length() > 0) {
-                            ColorUtils.addChatMessage(this.getPrefix() + " Error: " + var10.field16621);
+                            MultiUtilities.addChatMessage(this.getPrefix() + " Error: " + var10.field16621);
                         }
 
-                        ColorUtils.addChatMessage(this.getPrefix() + " Usage: " + "." + var7.getName() + " " + var7.method18326());
+                        MultiUtilities.addChatMessage(this.getPrefix() + " Usage: " + "." + var7.getName() + " " + var7.method18326());
                     }
 
-                    ColorUtils.addChatMessage(" ");
+                    MultiUtilities.addChatMessage(" ");
                 }
             }
 

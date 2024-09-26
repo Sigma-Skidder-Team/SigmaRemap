@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.util.math.vector.Vector3d;
@@ -48,7 +48,7 @@ public class MinemenSpider extends Module {
             MovementUtils.setSpeed(var1, 0.689 + (double) MovementUtils.method37078() * 0.06);
         }
 
-        if (ColorUtils.isAboveBounds(mc.player, 0.001F) && this.getBooleanValueFromSetttingName("SneakVClip")) {
+        if (MultiUtilities.isAboveBounds(mc.player, 0.001F) && this.getBooleanValueFromSetttingName("SneakVClip")) {
             if (mc.gameSettings.keyBindSneak.isKeyDown()
                     && !this.field23813
                     && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, -2.8, 0.0)).count() == 0L) {
@@ -90,13 +90,13 @@ public class MinemenSpider extends Module {
             }
         }
 
-        ColorUtils.setPlayerYMotion(var1.getY());
+        MultiUtilities.setPlayerYMotion(var1.getY());
     }
 
     @EventTarget
     private void method16637(EventUpdate var1) {
         if (this.isEnabled() && var1.isPre()) {
-            Class9629 var4 = ColorUtils.method17760(1.0E-4);
+            Class9629 var4 = MultiUtilities.method17760(1.0E-4);
             if (this.getBooleanValueFromSetttingName("Ceiling")
                     && !mc.player.onGround
                     && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, 1.0E-6, 0.0)).count() > 0L) {
@@ -109,7 +109,7 @@ public class MinemenSpider extends Module {
                     .getCollisionShapes(mc.player, mc.player.boundingBox.contract(var5, 0.0, var5).contract(-var5, 0.0, -var5))
                     .count()
                     > 0L) {
-                if (!ColorUtils.isAboveBounds(mc.player, 1.0E-4F)) {
+                if (!MultiUtilities.isAboveBounds(mc.player, 1.0E-4F)) {
                     var1.setGround(true);
                 }
 

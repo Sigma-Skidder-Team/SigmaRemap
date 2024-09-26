@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.combat.aimbot.*;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -28,7 +28,7 @@ public class Aimbot extends ModuleWithModuleSettings {
     }
 
     public Entity getTarget(float var1) {
-        List var4 = ColorUtils.getEntitesInWorld();
+        List var4 = MultiUtilities.getEntitesInWorld();
         Entity var5 = null;
         Iterator var6 = var4.iterator();
 

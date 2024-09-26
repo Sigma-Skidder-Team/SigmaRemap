@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.Direction;
@@ -78,7 +78,7 @@ public class Class8795 {
                this.mc.player.getMotion().x * this.mc.player.getMotion().x
                   + this.mc.player.getMotion().z * this.mc.player.getMotion().z
             );
-            boolean var6 = ColorUtils.isAboveBounds(this.mc.player, 0.02F);
+            boolean var6 = MultiUtilities.isAboveBounds(this.mc.player, 0.02F);
             int var7 = this.field39613.size() - 1;
             Class9510 var8 = this.field39613.get(var7);
             Class2317 var9 = var8.field44279;
@@ -126,8 +126,8 @@ public class Class8795 {
                this.field39618 = this.field39613.get(var7);
                this.field39613.remove(var7);
                if (this.field39613.size() == 0) {
-                  ColorUtils.setPlayerXMotion(this.mc.player.getMotion().x * 0.5);
-                  ColorUtils.setPlayerZMotion(this.mc.player.getMotion().z * 0.5);
+                  MultiUtilities.setPlayerXMotion(this.mc.player.getMotion().x * 0.5);
+                  MultiUtilities.setPlayerZMotion(this.mc.player.getMotion().z * 0.5);
                   this.method31738();
                   return;
                }
@@ -137,19 +137,19 @@ public class Class8795 {
                var9 = var8.field44279;
                float var18 = RotationHelper.method34145(this.mc.player.getPositionVec(), var8.field44271.method33972())[0];
                float var19 = RotationHelper.method34145(new Vector3d(0.0, 0.0, 0.0), this.mc.player.getMotion().method11333())[0];
-               float var20 = Math.abs(ColorUtils.method17756(var19, var18));
+               float var20 = Math.abs(MultiUtilities.method17756(var19, var18));
                if (!this.mc.player.onGround && var20 > 60.0F
                   || !this.mc.player.onGround && var20 > 45.0F && this.mc.player.getMotion().length() > 0.24
                   || var20 > 110.0F) {
-                  ColorUtils.setPlayerXMotion(this.mc.player.getMotion().x * 0.25);
-                  ColorUtils.setPlayerZMotion(this.mc.player.getMotion().z * 0.25);
+                  MultiUtilities.setPlayerXMotion(this.mc.player.getMotion().x * 0.25);
+                  MultiUtilities.setPlayerZMotion(this.mc.player.getMotion().z * 0.25);
                }
             }
 
             if (var10 < var12
                && (var14 || var8.field44281.size() > 0 && (double)this.mc.player.position.field13028 > var8.field44271.method33970())) {
-               ColorUtils.setPlayerXMotion(this.mc.player.getMotion().x * 0.5);
-               ColorUtils.setPlayerZMotion(this.mc.player.getMotion().z * 0.5);
+               MultiUtilities.setPlayerXMotion(this.mc.player.getMotion().x * 0.5);
+               MultiUtilities.setPlayerZMotion(this.mc.player.getMotion().z * 0.5);
             }
 
             float var43 = RotationHelper.method34145(this.mc.player.getPositionVec(), var8.field44271.method33972())[0];
@@ -165,8 +165,8 @@ public class Class8795 {
                this.mc.player.moveStrafing = (float)(var23 * var26);
             } else {
                if (this.mc.player.isSprinting()) {
-                  ColorUtils.setPlayerXMotion(this.mc.player.getMotion().x * 0.9);
-                  ColorUtils.setPlayerZMotion(this.mc.player.getMotion().z * 0.9);
+                  MultiUtilities.setPlayerXMotion(this.mc.player.getMotion().x * 0.9);
+                  MultiUtilities.setPlayerZMotion(this.mc.player.getMotion().z * 0.9);
                }
 
                this.mc.player.moveForward = 0.0F;
@@ -197,7 +197,7 @@ public class Class8795 {
 
                   if (var25 && var33 && var10 > 0.75 && var38) {
                      if (this.mc.world.getBlockState(var8.field44271.method33979().down()).getBlock() instanceof Class3421 && var10 < 1.1) {
-                        ColorUtils.addChatMessage("YA" + var10);
+                        MultiUtilities.addChatMessage("YA" + var10);
                      } else {
                         this.mc.player.jump();
                      }
@@ -222,10 +222,10 @@ public class Class8795 {
 
             this.mc.player.rotationYaw = var37;
             if (var36 && !this.mc.player.onGround && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
-               ColorUtils.setPlayerXMotion(0.0);
-               ColorUtils.setPlayerZMotion(0.0);
+               MultiUtilities.setPlayerXMotion(0.0);
+               MultiUtilities.setPlayerZMotion(0.0);
             } else {
-               if (Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled() && !ColorUtils.isAboveBounds(this.mc.player, 5.0F)) {
+               if (Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled() && !MultiUtilities.isAboveBounds(this.mc.player, 5.0F)) {
                   var36 = true;
                }
 
@@ -348,8 +348,8 @@ public class Class8795 {
          BlockPos var17 = BlockUtil.method34564(this.mc.player.rotationYaw, this.mc.player.rotationPitch, 100.0F);
          if (var17 != null) {
             if (this.field39613 != null && this.field39613.size() > 0) {
-               int var18 = ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.02F);
-               int var6 = ColorUtils.applyAlpha(ClientColors.DARK_SLATE_GREY.getColor, 0.02F);
+               int var18 = MultiUtilities.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.02F);
+               int var6 = MultiUtilities.applyAlpha(ClientColors.DARK_SLATE_GREY.getColor, 0.02F);
                GL11.glPushMatrix();
                GL11.glDisable(2929);
 
@@ -408,10 +408,10 @@ public class Class8795 {
          0.0F,
          (float)(var10.method23942(var7) / 2 + 10),
          (float)(var10.method23952() + 2),
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.1F)
       );
       GL11.glTranslated((double)(-var10.method23942(var7) / 2), 0.0, 0.0);
-      RenderUtil.drawString(var10, 0.0F, 0.0F, var7, ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
+      RenderUtil.drawString(var10, 0.0F, 0.0F, var7, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
       GL11.glPopMatrix();
       GL11.glPopMatrix();
       GL11.glEnable(3553);

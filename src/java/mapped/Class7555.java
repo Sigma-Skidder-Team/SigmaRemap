@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 
 import java.util.List;
@@ -51,7 +51,7 @@ public class Class7555 extends Class7554 {
          (float)this.method24721(),
          (float)this.method24719(),
          (float)this.method24725(),
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.6F)
       );
       this.field32403 = this.field32403 + this.method24733();
       int var4 = this.method24720() + 4;
@@ -75,7 +75,7 @@ public class Class7555 extends Class7554 {
             (float)(7 + this.method24720()),
             (float)(this.method24721() + var10),
             var12,
-            ColorUtils.applyAlpha(var13, Math.min(1.0F, var1 * 1.7F))
+            MultiUtilities.applyAlpha(var13, Math.min(1.0F, var1 * 1.7F))
          );
          var10 += 25;
       }

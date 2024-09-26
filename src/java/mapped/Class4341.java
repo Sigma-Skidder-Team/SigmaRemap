@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ public class Class4341 extends Class4339 implements Class4342 {
       int var3 = 0;
 
       for (Module var5 : Client.getInstance().getModuleManager().getModulesByCategory(this.field21214)) {
-         int var9 = ColorUtils.applyAlpha(-3487030, 0.0F);
+         int var9 = MultiUtilities.applyAlpha(-3487030, 0.0F);
          ColorHelper var12 = new ColorHelper(!var5.isEnabled() ? 1895167477 : -14047489, !var5.isEnabled() ? var9 : -14042881)
             .method19410(!var5.isEnabled() ? ClientColors.DEEP_TEAL.getColor : ClientColors.LIGHT_GREYISH_BLUE.getColor);
          var12.method19412(Class2218.field14488);

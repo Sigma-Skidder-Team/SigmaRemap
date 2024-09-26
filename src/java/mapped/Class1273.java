@@ -62,7 +62,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
    }
 
    @Nullable
-   public E method6023() {
+   public E getSelected() {
       return this.field6797;
    }
 
@@ -111,7 +111,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
    }
 
    public boolean method6032(int var1) {
-      return Objects.equals(this.method6023(), this.getEventListeners().get(var1));
+      return Objects.equals(this.getSelected(), this.getEventListeners().get(var1));
    }
 
    @Nullable
@@ -127,7 +127,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
          : null;
    }
 
-   public void method6034(int var1, int var2, int var3, int var4) {
+   public void updateSize(int var1, int var2, int var3, int var4) {
       this.field6785 = var1;
       this.field6786 = var2;
       this.field6787 = var3;
@@ -417,7 +417,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
    }
 
    public void method6050() {
-      Class1154 var3 = this.method6023();
+      Class1154 var3 = this.getSelected();
       if (var3 != null) {
          this.method6024((E)var3);
          this.method6042((E)var3);
@@ -427,7 +427,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
    public void method6051(Class2220 var1, Predicate<E> var2) {
       int var5 = var1 != Class2220.field14503 ? 1 : -1;
       if (!this.getEventListeners().isEmpty()) {
-         int var6 = this.getEventListeners().indexOf(this.method6023());
+         int var6 = this.getEventListeners().indexOf(this.getSelected());
 
          while (true) {
             int var7 = MathHelper.method37775(var6 + var5, 0, this.method6031() - 1);
@@ -488,7 +488,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
             }
 
             int var22 = this.method6053();
-            var17.method5544(
+            var17.render(
                var1,
                var12,
                var13,
@@ -531,7 +531,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
 
    public boolean method6059(E var1) {
       boolean var4 = this.field6784.remove(var1);
-      if (var4 && var1 == this.method6023()) {
+      if (var4 && var1 == this.getSelected()) {
          this.method6024(null);
       }
 

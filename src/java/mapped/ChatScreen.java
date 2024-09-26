@@ -29,7 +29,7 @@ public class ChatScreen extends Screen {
       this.field7048.method5661(false);
       this.field7048.method5635(this.field7049);
       this.field7048.method5631(this::method6344);
-      this.field4561.add(this.field7048);
+      this.children.add(this.field7048);
       this.field7050 = new Class6850(this.mc, this, this.field7048, this.fontRenderer, false, false, 1, 10, true, -805306368);
       this.field7050.method20835();
       this.setFocusedDefault(this.field7048);

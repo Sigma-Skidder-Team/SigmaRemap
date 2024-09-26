@@ -25,7 +25,7 @@ public abstract class Class1140 extends Class1135 {
    public void init() {
       this.field6205 = new Class1296(this.mc, this.width, this.height, 32, this.height - 32, 25);
       this.field6205.method6131(this.field6203);
-      this.field4561.add(this.field6205);
+      this.children.add(this.field6205);
       this.method5472();
       this.field6204 = this.field6205.method6132(AbstractOption.field25346);
       if (this.field6204 != null) {

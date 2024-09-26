@@ -2,7 +2,6 @@ package net.minecraft.util;
 
 public enum Hand {
     MAIN_HAND,
-   field183;
+    OFF_HAND;
 
-   private static final Hand[] field184 = new Hand[]{MAIN_HAND, field183};
 }

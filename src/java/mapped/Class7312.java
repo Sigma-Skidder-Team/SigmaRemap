@@ -1,6 +1,6 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -107,7 +107,7 @@ public class Class7312 {
          (float)var3,
          (float)var4,
          this.field31339,
-         ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5),
+         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, var5),
          (float)var8,
          (float)var9,
          (float)this.field31342,

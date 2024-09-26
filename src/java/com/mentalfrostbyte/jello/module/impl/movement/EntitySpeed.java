@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.EventUseLess;
 import com.mentalfrostbyte.jello.event.impl.EventMoveRideable;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.play.client.CMoveVehiclePacket;
 import net.minecraft.network.play.server.SMoveVehiclePacket;
@@ -35,7 +35,7 @@ public class EntitySpeed extends Module {
             float var6 = var4.field43907;
             if (!mc.player.getRidingEntity().collidedHorizontally
                     && !mc.player.getRidingEntity().onGround
-                    && ColorUtils.isAboveBounds(mc.player.getRidingEntity(), 5.0F)
+                    && MultiUtilities.isAboveBounds(mc.player.getRidingEntity(), 5.0F)
                     && !mc.player.getRidingEntity().isInWater()
                     && mc.world.getBlockState(mc.player.getRidingEntity().getPosition()).getBlock() != Blocks.WATER) {
                 var1.setY(-2.0);

@@ -45,7 +45,7 @@ public class Class1285 extends Class1274<Class1174> {
    }
 
    public void method6106() {
-      int var3 = this.getEventListeners().indexOf(this.method6023());
+      int var3 = this.getEventListeners().indexOf(this.getSelected());
       this.method6027();
 
       for (int var4 = 0; var4 < Class1324.method6302(this.field6849).method38129().size(); var4++) {

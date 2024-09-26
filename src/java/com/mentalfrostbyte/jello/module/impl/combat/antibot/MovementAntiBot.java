@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.module.impl.combat.antibot;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -37,10 +37,10 @@ public class MovementAntiBot extends Class7249 {
          this.field31116.clear();
       }
 
-      for (PlayerEntity var5 : ColorUtils.method17680()) {
+      for (PlayerEntity var5 : MultiUtilities.method17680()) {
          if (var5 != field31119.player) {
             if (var5 == null
-               || !ColorUtils.isAboveBounds(var5, 0.01F)
+               || !MultiUtilities.isAboveBounds(var5, 0.01F)
                || var5.isInvisible()
                || !(var5.getDistance(field31119.player) > 5.0F)
                   && (var5.getPosX() != var5.lastTickPosX || var5.getPosZ() != var5.lastTickPosZ || var5.getPosY() != var5.lastTickPosY)) {
@@ -68,7 +68,7 @@ public class MovementAntiBot extends Class7249 {
             }
 
             Entity var5 = var4.getEntity(field31119.world);
-            boolean var6 = ColorUtils.isAboveBounds(var5, 0.5F);
+            boolean var6 = MultiUtilities.isAboveBounds(var5, 0.5F);
             short var7 = var4.posY;
             if (!this.field31117.containsKey(var5)) {
                this.field31117.put(var5, new ArrayList<Integer>());

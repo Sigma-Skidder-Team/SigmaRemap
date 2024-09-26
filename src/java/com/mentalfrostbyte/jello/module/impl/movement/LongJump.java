@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.longjump.MineplexLongJump;
 import com.mentalfrostbyte.jello.module.impl.movement.longjump.RedeskyLongJump;
 import com.mentalfrostbyte.jello.module.impl.movement.longjump.CubecraftLongJump;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class LongJump extends ModuleWithModuleSettings {
     public LongJump() {
@@ -30,7 +30,7 @@ public class LongJump extends ModuleWithModuleSettings {
         if (var1 < 0 || var1 >= var4.length) {
             return mc.player.getMotion().y;
         } else {
-            return ColorUtils.method17686() && !mc.player.collidedHorizontally ? var4[var1] : var5[var1];
+            return MultiUtilities.method17686() && !mc.player.collidedHorizontally ? var4[var1] : var5[var1];
         }
     }
 

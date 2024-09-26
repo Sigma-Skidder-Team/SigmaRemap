@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SExplosionPacket;
@@ -34,7 +34,7 @@ public class AACAntiKB extends Module {
             if (this.method16790()) {
                 if (field23907 == 0 && !mc.player.onGround && mc.player.hurtTime > 0 && mc.player.fallDistance < 2.0F) {
                     mc.player.addVelocity(0.0, -1.0, 0.0);
-                    ColorUtils.setPlayerYMotion(mc.player.getMotion().getY());
+                    MultiUtilities.setPlayerYMotion(mc.player.getMotion().getY());
                     mc.player.onGround = true;
                     field23907 = 20;
                 }
@@ -52,7 +52,7 @@ public class AACAntiKB extends Module {
                         double var15 = ((double) var4 * var9 - (double) var5 * var7) * var11;
                         float var17 = (float) (Math.atan2(var13, var15) * 180.0 / Math.PI) - 90.0F;
                         float var18 = RotationHelper.angleDiff(this.field23908, var17);
-                        if (var18 > 100.0F && ColorUtils.method17686()) {
+                        if (var18 > 100.0F && MultiUtilities.method17686()) {
                             var1.setX(var1.getX() + var13);
                             var1.setZ(var1.getZ() + var15);
                         } else {
@@ -60,8 +60,8 @@ public class AACAntiKB extends Module {
                             var1.setZ(var1.getZ() * 0.8);
                         }
 
-                        ColorUtils.setPlayerXMotion(var1.getX());
-                        ColorUtils.setPlayerZMotion(var1.getZ());
+                        MultiUtilities.setPlayerXMotion(var1.getX());
+                        MultiUtilities.setPlayerZMotion(var1.getZ());
                     }
                 }
             }

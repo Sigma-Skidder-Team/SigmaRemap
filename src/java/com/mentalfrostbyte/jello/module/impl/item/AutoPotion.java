@@ -192,7 +192,7 @@ public class AutoPotion extends Module {
                 } else {
                     mc.getConnection().sendPacket(new CPlayerPacket.RotationPacket(var9[0], var9[1], !var8 && mc.player.onGround));
                     mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
-                    mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.field183));
+                    mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.OFF_HAND));
                     mc.player.inventory.currentItem = var7;
                     mc.playerController.syncCurrentPlayItem();
                     KillAura.field23954 = 1;

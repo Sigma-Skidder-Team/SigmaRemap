@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CClickWindowPacket;
@@ -46,7 +46,7 @@ public class Class8329 {
    @EventTarget
    @Class5631
    public void method29202(SendPacketEvent var1) {
-      if (!ColorUtils.method17720() && ColorUtils.method17718()) {
+      if (!MultiUtilities.method17720() && MultiUtilities.method17718()) {
          IPacket var4 = var1.getPacket();
          if (!(var4 instanceof CClickWindowPacket)) {
             if (var4 instanceof CConfirmTransactionPacket) {
@@ -67,7 +67,7 @@ public class Class8329 {
    @EventTarget
    @Class5631
    public void method29203(ReceivePacketEvent var1) {
-      if (!ColorUtils.method17720() && ColorUtils.method17718()) {
+      if (!MultiUtilities.method17720() && MultiUtilities.method17718()) {
          IPacket var4 = var1.getPacket();
          if (!(var4 instanceof SKeepAlivePacket) && var4 instanceof SConfirmTransactionPacket) {
             SConfirmTransactionPacket var5 = (SConfirmTransactionPacket)var4;

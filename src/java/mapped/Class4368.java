@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class Class4368 extends Class4247 {
    public Module field21351;
@@ -28,21 +28,21 @@ public class Class4368 extends Class4247 {
          (float)(this.xA + 10),
          (float)(this.yA + 8),
          this.field21351.getSuffix(),
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, !this.field21351.isEnabled() ? 0.5F : 0.9F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, !this.field21351.isEnabled() ? 0.5F : 0.9F)
       );
       RenderUtil.drawString(
          ClassicDecryption.regular15,
          (float)(this.xA + 15),
          (float)(this.yA + 33),
          "Bind",
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 1.0F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 1.0F)
       );
       RenderUtil.drawString(
          ClassicDecryption.regular15,
          (float)(this.xA + 15),
          (float)(this.yA + 52),
-         ColorUtils.method17736(this.field21351.parseSettingValueToIntBySettingName("Keybind")),
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.7F)
+         MultiUtilities.method17736(this.field21351.parseSettingValueToIntBySettingName("Keybind")),
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.7F)
       );
       if (this.field21351.getSettingMap().size() > 1) {
          RenderUtil.drawString(
@@ -50,7 +50,7 @@ public class Class4368 extends Class4247 {
             (float)(this.xA + 84),
             (float)(this.yA + 34),
             "Settings",
-            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 1.0F)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 1.0F)
          );
       }
 

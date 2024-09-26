@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import totalcross.json.JSONObject;
@@ -148,7 +148,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
       super.method13224();
       super.method13225();
       byte var5 = 10;
-      int var6 = ColorUtils.applyAlpha(-723724, QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F));
+      int var6 = MultiUtilities.applyAlpha(-723724, QuadraticEasing.easeOutQuad(var1, 0.0F, 1.0F, 1.0F));
       RenderUtil.drawRoundedRect(
          (float)(this.xA + var5 / 2),
          (float)(this.yA + var5 / 2),
@@ -162,7 +162,7 @@ public class ConfigButtonOnClickGui extends Class4247 {
          (float)(this.yA + var5 / 2),
          (float)(this.xA - var5 / 2 + this.widthA),
          (float)(this.yA - var5 / 2 + this.heightA),
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var1 * 0.25F)
       );
       RenderUtil.drawRect((float)this.xA, (float)this.yA, (float)this.widthA, (float)this.heightA, (float)var5, var6);
       float var7 = 0.9F + (1.0F - MathUtils.lerp(this.field21300.field20703.calcPercent(), 0.0, 0.96, 0.69, 0.99)) * 0.1F;
@@ -176,14 +176,14 @@ public class ConfigButtonOnClickGui extends Class4247 {
          (float)(this.xA + 25),
          (float)(this.yA + 20),
          "Profiles",
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F * var1)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F * var1)
       );
       RenderUtil.drawRect(
          (float)(this.xA + 25),
          (float)(this.yA + 69),
          (float)(this.xA + this.widthA - 25),
          (float)(this.yA + 70),
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.05F * var1)
       );
       super.draw(var1);
    }

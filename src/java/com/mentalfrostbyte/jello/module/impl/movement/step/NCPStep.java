@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -44,7 +44,7 @@ public class NCPStep extends Module {
     private void method16913(EventStep var1) {
         if (this.isEnabled() && !var1.isCancelled()) {
             double var4 = var1.getHeight();
-            if (ColorUtils.isAboveBounds(mc.player, 1.0E-4F) && !MovementUtils.isInWater()) {
+            if (MultiUtilities.isAboveBounds(mc.player, 1.0E-4F) && !MovementUtils.isInWater()) {
                 if (var4 >= 0.625) {
                     double var6 = mc.player.getPosX();
                     double var8 = mc.player.getPosY();

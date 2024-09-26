@@ -1,19 +1,21 @@
-package mapped;
+package net.minecraft.client.gui.screen;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
+import mapped.Class2168;
+import mapped.Class9001;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
-import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.button.Button;
+import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 import java.net.IDN;
 import java.util.function.Predicate;
 
-public class Class1330 extends Screen {
+public class AddServerScreen extends Screen {
     private static final ITextComponent field7036 = new TranslationTextComponent("addServer.enterName");
     private static final ITextComponent field7037 = new TranslationTextComponent("addServer.enterIp");
     private Button field7038;
@@ -41,7 +43,7 @@ public class Class1330 extends Screen {
         }
     };
 
-    public Class1330(Screen var1, BooleanConsumer var2, ServerData var3) {
+    public AddServerScreen(Screen var1, BooleanConsumer var2, ServerData var3) {
         super(new TranslationTextComponent("addServer.title"));
         this.field7044 = var1;
         this.field7039 = var2;
@@ -59,15 +61,15 @@ public class Class1330 extends Screen {
         this.mc.keyboardListener.enableRepeatEvents(true);
         this.field7042 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 100, 66, 200, 20, new TranslationTextComponent("addServer.enterName"));
         this.field7042.method5654(true);
-        this.field7042.method5635(this.field7040.field33188);
+        this.field7042.method5635(this.field7040.serverName);
         this.field7042.method5631(this::method6337);
-        this.field4561.add(this.field7042);
+        this.children.add(this.field7042);
         this.field7041 = new TextFieldWidget(this.fontRenderer, this.width / 2 - 100, 106, 200, 20, new TranslationTextComponent("addServer.enterIp"));
         this.field7041.method5657(128);
-        this.field7041.method5635(this.field7040.field33189);
+        this.field7041.method5635(this.field7040.serverIP);
         this.field7041.method5638(this.field7045);
         this.field7041.method5631(this::method6337);
-        this.field4561.add(this.field7041);
+        this.children.add(this.field7041);
         this.field7043 = this.<Button>addButton(
                 new Button(this.width / 2 - 100, this.height / 4 + 72, 200, 20, method6336(this.field7040.method25577()), var1 -> {
                     this.field7040.method25578(Class2168.values()[(this.field7040.method25577().ordinal() + 1) % Class2168.values().length]);
@@ -108,8 +110,8 @@ public class Class1330 extends Screen {
     }
 
     private void method6338() {
-        this.field7040.field33188 = this.field7042.getText();
-        this.field7040.field33189 = this.field7041.getText();
+        this.field7040.serverName = this.field7042.getText();
+        this.field7040.serverIP = this.field7041.getText();
         this.field7039.accept(true);
     }
 

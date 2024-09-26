@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import org.apache.commons.io.IOUtils;
@@ -72,14 +72,14 @@ public class ChangelogScreen extends IconPanel {
 
       this.drawBackground((int)(150.0f * (1.0f - fadeFactor)));
       this.method13225();
-      RenderUtil.drawString(ResourceRegistry.JelloLightFont36, 100.0F, 100.0F, "Changelog", ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, alpha));
+      RenderUtil.drawString(ResourceRegistry.JelloLightFont36, 100.0F, 100.0F, "Changelog", MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, alpha));
       ClientResource jelloLightFont25 = ResourceRegistry.JelloLightFont25;
       String versionText = "You're currently using Sigma " + Client.VERSION;
       RenderUtil.drawString(
               jelloLightFont25,
               100.0f, 150.0f,
               versionText,
-              ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6f * alpha)
+              MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.6f * alpha)
       );
       super.draw(alpha);
    }

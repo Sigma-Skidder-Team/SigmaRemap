@@ -4627,7 +4627,7 @@ public class Shaders {
     }
 
     public static boolean method33153(Hand var0) {
-        return var0 == Hand.MAIN_HAND && field40615 ? true : var0 == Hand.field183 && field40616;
+        return var0 == Hand.MAIN_HAND && field40615 ? true : var0 == Hand.OFF_HAND && field40616;
     }
 
     public static boolean method33154() {

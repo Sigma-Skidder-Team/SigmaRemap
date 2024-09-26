@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 
@@ -152,7 +152,7 @@ public class Class4351 extends Class4278 {
          (float)this.yA,
          (float)this.widthA,
          (float)this.heightA,
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F * this.field21264.calcPercent() + var6)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F * this.field21264.calcPercent() + var6)
       );
       if (!this.field21268.method13297()) {
          RenderUtil.drawString(
@@ -160,7 +160,7 @@ public class Class4351 extends Class4278 {
             (float)(this.xA + 20) - var5 * (float)this.widthA,
             (float)(this.yA + 18),
             this.field21267.field31263,
-            ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.9F * var1)
+            MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.9F * var1)
          );
       }
 
@@ -172,7 +172,7 @@ public class Class4351 extends Class4278 {
             17.0F,
             13.0F,
             ResourcesDecrypter.activePNG,
-            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (1.0F - this.field21265.calcPercent()) * var1)
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, (1.0F - this.field21265.calcPercent()) * var1)
          );
       }
 

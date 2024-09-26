@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
@@ -350,7 +350,7 @@ public class UIInput extends Class4278 {
             (float)(this.yA + this.heightA / 2 - this.font.method23941(var6) / 2 + 2),
             var9 + (float)(var6.isEmpty() ? 1 : 0),
             (float)(this.yA + this.heightA / 2 + this.font.method23941(var6) / 2 - 1),
-            ColorUtils.applyAlpha(this.textColor.getTextColor(), !var5 ? 0.1F * var1 : 0.8F)
+            MultiUtilities.applyAlpha(this.textColor.getTextColor(), !var5 ? 0.1F * var1 : 0.8F)
          );
          float var10 = (float)(var7 + this.font.method23942(var6.substring(0, this.field20749))) + this.field20747;
          if (var10 < (float)var7) {
@@ -373,7 +373,7 @@ public class UIInput extends Class4278 {
          (float)(this.yA + this.heightA / 2 - this.font.method23941(var6) / 2),
          var11,
          (float)(this.yA + this.heightA / 2 + this.font.method23941(var6) / 2),
-         ColorUtils.applyAlpha(-5516546, var1)
+         MultiUtilities.applyAlpha(-5516546, var1)
       );
       Class2218 var12 = this.textColor.method19411();
       Class2218 var13 = this.textColor.method19413();
@@ -382,7 +382,7 @@ public class UIInput extends Class4278 {
          (float)var7 + this.field20746,
          (float)(this.yA + this.heightA / 2),
          var6.length() == 0 && (!this.field20905 || var6.length() <= 0) ? this.field20743 : var6,
-         ColorUtils.applyAlpha(this.textColor.getTextColor(), (this.field20744 / 2.0F + 0.4F) * var1 * (this.field20905 && var6.length() > 0 ? 1.0F : 0.5F)),
+         MultiUtilities.applyAlpha(this.textColor.getTextColor(), (this.field20744 / 2.0F + 0.4F) * var1 * (this.field20905 && var6.length() > 0 ? 1.0F : 0.5F)),
          var12,
          var13
       );
@@ -393,7 +393,7 @@ public class UIInput extends Class4278 {
             (float)(this.yA + this.heightA - 2),
             (float)(this.xA + this.widthA),
             (float)(this.yA + this.heightA),
-            ColorUtils.applyAlpha(this.textColor.method19405(), (this.field20744 / 2.0F + 0.5F) * var1)
+            MultiUtilities.applyAlpha(this.textColor.method19405(), (this.field20744 / 2.0F + 0.5F) * var1)
          );
       }
 

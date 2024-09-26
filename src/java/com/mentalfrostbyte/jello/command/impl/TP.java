@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.notification.Notification;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -27,13 +27,13 @@ public class TP extends Command {
          throw new CommandException();
       } else if (var2.length > 1) {
          throw new CommandException("Too many arguments");
-      } else if (!mc.player.onGround && ColorUtils.method17716()) {
+      } else if (!mc.player.onGround && MultiUtilities.method17716()) {
          throw new CommandException("Use this command on ground");
       } else if (var2[0].method30899().equalsIgnoreCase(mc.getSession().username)) {
          throw new CommandException("You can not tp to yourself");
       } else {
          this.field25710.entity = null;
-         List<Entity> var6 = ColorUtils.getEntitesInWorld();
+         List<Entity> var6 = MultiUtilities.getEntitesInWorld();
          var6.sort(new Class3596(this));
 
          for (Entity var8 : var6) {
@@ -45,7 +45,7 @@ public class TP extends Command {
 
          if (this.field25710.entity != null) {
             this.field25710.timer.reset();
-            if (!ColorUtils.method17716()) {
+            if (!MultiUtilities.method17716()) {
                this.field25710.timer.stop();
                this.field25710.field45878 = 2;
             } else {

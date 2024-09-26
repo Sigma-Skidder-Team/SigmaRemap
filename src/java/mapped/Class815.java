@@ -450,7 +450,7 @@ public class Class815 extends Class813 {
 
    private void method2290(Button var1) {
       var1.field6483 = false;
-      this.field4561.remove(var1);
+      this.children.remove(var1);
       this.field4566.remove(var1);
    }
 

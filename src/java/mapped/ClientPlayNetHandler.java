@@ -30,7 +30,11 @@ import net.minecraft.block.Block;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.RemoteClientPlayerEntity;
+import net.minecraft.client.gui.screen.ConfirmScreen;
+import net.minecraft.client.gui.screen.MultiplayerScreen;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.client.multiplayer.ServerData;
+import net.minecraft.client.multiplayer.ServerList;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -756,7 +760,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                }
             } else {
                LivingEntity var6 = (LivingEntity)var4;
-               var6.swingArm(Hand.field183);
+               var6.swingArm(Hand.OFF_HAND);
             }
          } else {
             LivingEntity var7 = (LivingEntity)var4;
@@ -1657,7 +1661,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                         this.method15787(this.field23272.getPackFinder().downloadResourcePack(var4, var5));
                      }
 
-                     Class7970.method27102(var6x);
+                     ServerList.method27102(var6x);
                      this.field23272.displayGuiScreen((Screen)null);
                   }, new TranslationTextComponent("multiplayer.texturePrompt.line1"), new TranslationTextComponent("multiplayer.texturePrompt.line2"))));
             }

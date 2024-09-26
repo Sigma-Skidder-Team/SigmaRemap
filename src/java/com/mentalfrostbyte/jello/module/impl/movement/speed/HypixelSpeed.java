@@ -16,7 +16,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.world.Timer;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
@@ -48,7 +48,7 @@ public class HypixelSpeed extends Module {
     @Override
     public void onDisable() {
         if (this.field23418 == Class2094.field13641 && mc.player.getMotion().y > 0.0 && this.field23414 == 0) {
-            ColorUtils.setPlayerYMotion(-MovementUtils.method37080() - 1.0E-5 - 0.0625);
+            MultiUtilities.setPlayerYMotion(-MovementUtils.method37080() - 1.0E-5 - 0.0625);
         }
 
         if (Math.abs((double) mc.timer.timerSpeed - 1.4123) < 0.001
@@ -81,7 +81,7 @@ public class HypixelSpeed extends Module {
     @HigherPriority
     public void method16038(EventMove var1) {
         if (!this.isEnabled()) {
-            if (mc.player.onGround || ColorUtils.isAboveBounds(mc.player, 0.001F) || mc.player.getPosY() < this.field23416) {
+            if (mc.player.onGround || MultiUtilities.isAboveBounds(mc.player, 0.001F) || mc.player.getPosY() < this.field23416) {
                 this.field23416 = -1.0;
             }
         } else {
@@ -93,7 +93,7 @@ public class HypixelSpeed extends Module {
                 }
 
                 if (this.field23414 >= 0 && Step.field23887 >= 2) {
-                    if ((var1.getY() > 0.0 || this.getBooleanValueFromSetttingName("AutoJump") && ColorUtils.method17686()) && !ColorUtils.method17684(mc.player)) {
+                    if ((var1.getY() > 0.0 || this.getBooleanValueFromSetttingName("AutoJump") && MultiUtilities.method17686()) && !MultiUtilities.method17684(mc.player)) {
                         mc.player.jump();
                         var1.setY(MovementUtils.method37080());
                         MovementUtils.setSpeed(var1, 0.644348756324588 + Math.random() * 1.0E-6 + (double) MovementUtils.method37078() * 0.13);
@@ -103,7 +103,7 @@ public class HypixelSpeed extends Module {
 
                         this.field23414 = 0;
                         this.field23418 = Class2094.field13640;
-                    } else if (ColorUtils.method17686() && this.getBooleanValueFromSetttingName("GroundSpeed") && !ColorUtils.method17684(mc.player)) {
+                    } else if (MultiUtilities.method17686() && this.getBooleanValueFromSetttingName("GroundSpeed") && !MultiUtilities.method17684(mc.player)) {
                         mc.player.stepHeight = 0.5F;
                         mc.player.jump();
                         var1.setY(0.399 + (double) MovementUtils.method37079() * 0.1 + 1.0E-14);
@@ -167,7 +167,7 @@ public class HypixelSpeed extends Module {
                         }
                 }
 
-                if (this.field23415 < var4 || mc.player.collidedHorizontally || !ColorUtils.method17686() || ColorUtils.method17684(mc.player)) {
+                if (this.field23415 < var4 || mc.player.collidedHorizontally || !MultiUtilities.method17686() || MultiUtilities.method17684(mc.player)) {
                     this.field23415 = var4;
                 }
 
@@ -207,8 +207,8 @@ public class HypixelSpeed extends Module {
     @Class5631
     public void method16042(Render2DEvent var1) {
         if (!mc.player.onGround
-                && !ColorUtils.isAboveBounds(mc.player, 1.0E-4F)
-                && ColorUtils.isAboveBounds(mc.player, (float) (MovementUtils.method37080() + 1.0E-5 + 0.0625))
+                && !MultiUtilities.isAboveBounds(mc.player, 1.0E-4F)
+                && MultiUtilities.isAboveBounds(mc.player, (float) (MovementUtils.method37080() + 1.0E-5 + 0.0625))
                 && Step.field23887 >= 2
                 && !(this.field23416 < 0.0)
                 && this.field23418 == Class2094.field13641

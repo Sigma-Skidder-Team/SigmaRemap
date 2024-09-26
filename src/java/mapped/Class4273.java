@@ -2,7 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class Class4273 extends Class4247 {
    private static String[] field20708;
@@ -52,7 +52,7 @@ public class Class4273 extends Class4247 {
                (float)this.yA,
                (float)(this.xA + this.widthA),
                (float)(this.yA + this.heightA),
-               ColorUtils.applyAlpha(-11890462, 1.0F)
+               MultiUtilities.applyAlpha(-11890462, 1.0F)
             );
          }
 
@@ -68,14 +68,14 @@ public class Class4273 extends Class4247 {
             (float)(this.xA + var11 + 50),
             (float)(this.yA + var12 + 5),
             this.field20912,
-            ColorUtils.applyAlpha(var13, var1)
+            MultiUtilities.applyAlpha(var13, var1)
          );
          RenderUtil.drawString(
             ResourceRegistry.JelloLightFont12,
             (float)(this.xA + var11 + 50),
             (float)(this.yA + var12 + 19),
             this.field20710,
-            ColorUtils.applyAlpha(var13, var1 * 0.5F)
+            MultiUtilities.applyAlpha(var13, var1 * 0.5F)
          );
          super.draw(var1);
       }

@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
@@ -25,11 +25,11 @@ public class Cords extends Module {
     @EventTarget
     private void method16578(TickEvent var1) {
         if (this.isEnabled()) {
-            if (ColorUtils.method17705() > this.field23755 && mc.player.ticksExisted % 3 == 0) {
+            if (MultiUtilities.method17705() > this.field23755 && mc.player.ticksExisted % 3 == 0) {
                 this.field23755++;
             }
 
-            if (ColorUtils.method17705() < this.field23755 && mc.player.ticksExisted % 3 == 0) {
+            if (MultiUtilities.method17705() < this.field23755 && mc.player.ticksExisted % 3 == 0) {
                 this.field23755--;
             }
 
@@ -77,7 +77,7 @@ public class Cords extends Module {
                                 var6,
                                 (float) var7,
                                 var5,
-                                ColorUtils.applyAlpha(-16777216, 0.5F * var4),
+                                MultiUtilities.applyAlpha(-16777216, 0.5F * var4),
                                 Class2218.field14492,
                                 Class2218.field14488
                         );
@@ -86,7 +86,7 @@ public class Cords extends Module {
                                 var6,
                                 (float) var7,
                                 var5,
-                                ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F * var4),
+                                MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F * var4),
                                 Class2218.field14492,
                                 Class2218.field14488
                         );

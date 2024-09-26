@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.SafeWalk;
 import com.mentalfrostbyte.jello.module.impl.movement.speed.AACSpeed;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.block.Block;
@@ -263,7 +263,7 @@ public class BlockFlyAACMode extends Module {
     public void method16211(JumpEvent var1) {
         if (this.isEnabled()) {
             if (this.access().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-                    && (!ColorUtils.method17686() || this.access().getBooleanValueFromSetttingName("Tower while moving"))) {
+                    && (!MultiUtilities.method17686() || this.access().getBooleanValueFromSetttingName("Tower while moving"))) {
                 var1.setCancelled(true);
             }
         }

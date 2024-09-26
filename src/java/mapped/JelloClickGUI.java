@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Screen;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import net.minecraft.client.Minecraft;
@@ -66,7 +66,7 @@ public class JelloClickGUI extends Screen {
       this.musicPlayer.method13215(true);
       Class4235 var9;
       this.addToList(var9 = new Class4235(this, "more", this.getWidthA() - 69, this.getHeightA() - 55, 55, 41, ResourcesDecrypter.optionsPNG1));
-      var9.method13307().method19406(ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
+      var9.method13307().method19406(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
       var9.method13300(false);
       this.musicPlayer.method13288(field20951);
       var9.doThis((var1, var2) -> this.method13222(() -> {
@@ -79,8 +79,8 @@ public class JelloClickGUI extends Screen {
          }));
       field20942 = new Animation(450, 125);
       this.blurOverlay = new ClickGUIBlurOverlay(this, this, "overlay");
-      ColorUtils.method17739();
-      ColorUtils.method17740(field20942.calcPercent());
+      MultiUtilities.method17739();
+      MultiUtilities.method17740(field20942.calcPercent());
    }
 
    public boolean method13314() {
@@ -134,7 +134,7 @@ public class JelloClickGUI extends Screen {
    public void method13028(int var1, int var2) {
       this.musicPlayer.method13288(this.musicPlayer.getWidthA() < this.getWidthA() && this.musicPlayer.getHeightA() < this.getHeightA());
       super.method13028(var1, var2);
-      ColorUtils.method17740(Math.min(1.0F, field20942.calcPercent() * 4.0F));
+      MultiUtilities.method17740(Math.min(1.0F, field20942.calcPercent() * 4.0F));
       this.brainFreeze.method13288(Client.getInstance().getModuleManager().getModuleByClass(BrainFreeze.class).isEnabled());
       if (this.configButton != null) {
          int var5 = var1 - this.configButton.method13271();
@@ -175,7 +175,7 @@ public class JelloClickGUI extends Screen {
       }
 
       if (field20944 && field20943) {
-         ColorUtils.method17742();
+         MultiUtilities.method17742();
       }
    }
 
@@ -186,7 +186,7 @@ public class JelloClickGUI extends Screen {
 
    @Override
    public JSONObject method13160(JSONObject var1) {
-      ColorUtils.method17742();
+      MultiUtilities.method17742();
       this.method13234(this.blurOverlay);
       return super.method13160(var1);
    }
@@ -243,7 +243,7 @@ public class JelloClickGUI extends Screen {
          (float)this.yA,
          (float)(this.xA + this.widthA),
          (float)(this.yA + this.heightA),
-         ColorUtils.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
+         MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, var5)
       );
       Object var6 = null;
       float var7 = 1.0F;
@@ -264,7 +264,7 @@ public class JelloClickGUI extends Screen {
             (float)(this.widthA - ResourceRegistry.JelloLightFont20.method23942(var12) - 80),
             (float)(this.heightA - 47),
             var12,
-            ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * Math.max(0.0F, Math.min(1.0F, var4)))
+            MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.5F * Math.max(0.0F, Math.min(1.0F, var4)))
          );
       }
 

@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventWalkingUpdate;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.util.ColorUtils;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 
 public class Parkour extends Module {
     public Parkour() {
@@ -15,7 +15,7 @@ public class Parkour extends Module {
     public void method16656(EventWalkingUpdate var1) {
         if (this.isEnabled()) {
             if (mc.player.onGround) {
-                if (!ColorUtils.method17729()) {
+                if (!MultiUtilities.method17729()) {
                     mc.player.jump();
                 }
             }

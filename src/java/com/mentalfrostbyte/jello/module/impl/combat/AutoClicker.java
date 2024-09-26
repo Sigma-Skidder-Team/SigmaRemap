@@ -4,8 +4,8 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.network.play.client.CUseEntityPacket;
-import com.mentalfrostbyte.jello.util.ColorUtils;
 import net.minecraft.util.Hand;
 
 import java.util.Random;
@@ -28,11 +28,11 @@ public class AutoClicker extends Module {
             if (mc.gameSettings.keyBindAttack.isKeyDown() && this.field23548 >= var7) {
                 mc.player.swingArm(Hand.MAIN_HAND);
                 this.field23548 = 0;
-                if (ColorUtils.method17711(mc.player.rotationYaw, mc.player.rotationPitch, 4.6F, 0.0) != null) {
+                if (MultiUtilities.method17711(mc.player.rotationYaw, mc.player.rotationPitch, 4.6F, 0.0) != null) {
                     mc.getConnection()
                             .sendPacket(
                                     new CUseEntityPacket(
-                                            ColorUtils.method17711(mc.player.rotationYaw, mc.player.rotationPitch, 4.6F, 0.0), mc.player.isSneaking()
+                                            MultiUtilities.method17711(mc.player.rotationYaw, mc.player.rotationPitch, 4.6F, 0.0), mc.player.isSneaking()
                                     )
                             );
                     mc.player.swingArm(Hand.MAIN_HAND);

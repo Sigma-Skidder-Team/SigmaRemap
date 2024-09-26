@@ -2,20 +2,21 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screen.ServerSelectionList;
 import net.minecraft.client.util.Util;
 
-public class Class1159 extends Class1156 {
+public class Class1159 extends ServerSelectionList.Entry {
    private final Minecraft field6310 = Minecraft.getInstance();
 
    @Override
-   public void method5544(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
+   public void render(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8, boolean var9, float var10) {
       int var13 = var3 + var6 / 2 - 4;
       this.field6310
          .fontRenderer
          .func_243248_b(
             var1,
-            Class1279.method6084(),
-            (float)(this.field6310.currentScreen.width / 2 - this.field6310.fontRenderer.method38821(Class1279.method6084()) / 2),
+            ServerSelectionList.getfield_214358_b(),
+            (float)(this.field6310.currentScreen.width / 2 - this.field6310.fontRenderer.method38821(ServerSelectionList.getfield_214358_b()) / 2),
             (float)var13,
             16777215
          );
