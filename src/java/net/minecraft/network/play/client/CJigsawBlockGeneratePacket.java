@@ -1,13 +1,13 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
 
-public class CJigsawBlockGeneratePacket implements Packet<IServerPlayNetHandler> {
+public class CJigsawBlockGeneratePacket implements IPacket<IServerPlayNetHandler> {
     private BlockPos field_240841_a_;
    private int field_240842_b_;
    private boolean field_240843_c_;

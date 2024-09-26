@@ -2,7 +2,7 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SMapDataPacket;
 
 import javax.annotation.Nullable;
@@ -28,7 +28,7 @@ public class Class8541 {
    }
 
    @Nullable
-   public Packet<?> method30388(ItemStack var1) {
+   public IPacket<?> method30388(ItemStack var1) {
       if (!this.field38391) {
          return this.field38396++ % 5 != 0
             ? null

@@ -30,7 +30,7 @@ public class AntiVanish extends Module {
                 if (!this.field23967.isEmpty()) {
                     if (this.field23968 > 3200) {
                         this.field23967.clear();
-                        Client.getInstance().getNotificationManager().post(new Notification("Vanished Cleared", "Vanish List has been Cleared.", 5500));
+                        Client.getInstance().getNotificationManager().send(new Notification("Vanished Cleared", "Vanish List has been Cleared.", 5500));
                         this.field23968 = -3200;
                     } else {
                         this.field23968++;
@@ -46,20 +46,20 @@ public class AntiVanish extends Module {
                                 if (var7 == null) {
                                     Client.getInstance()
                                             .getNotificationManager()
-                                            .post(
+                                            .send(
                                                     new Notification("Vanished Warning", "A player is vanished !!" + var6.method19979().getUnformattedComponentText(), 5500)
                                             );
                                 } else {
                                     Client.getInstance()
                                             .getNotificationManager()
-                                            .post(new Notification("Vanish Warning", var6.method19979().getString() + " is no longer Vanished.", 5500));
+                                            .send(new Notification("Vanish Warning", var6.method19979().getString() + " is no longer Vanished.", 5500));
                                 }
                             }
 
                             this.field23967.remove(var5);
                         }
                     } catch (Exception var8) {
-                        Client.getInstance().getNotificationManager().post(new Notification("Vanished Error", "Something bad happened.", 5500));
+                        Client.getInstance().getNotificationManager().send(new Notification("Vanished Error", "Something bad happened.", 5500));
                     }
                 }
             }
@@ -76,7 +76,7 @@ public class AntiVanish extends Module {
                         Class6589 var7 = mc.getConnection().method15792(var6.getProfile().getId());
                         if (var7 == null && !this.method16864(var6.getProfile().getId())) {
                             System.out.println(var6.getProfile().getId());
-                            Client.getInstance().getNotificationManager().post(new Notification("Vanished Warning", "A player is vanished ! ", 5500));
+                            Client.getInstance().getNotificationManager().send(new Notification("Vanished Warning", "A player is vanished ! ", 5500));
                             this.field23968 = -3200;
                         }
                     }

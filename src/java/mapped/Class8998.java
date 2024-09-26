@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.Sets;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.Collection;
@@ -38,13 +38,13 @@ public class Class8998 {
       return this.field41148.getEntityId();
    }
 
-   public void method33239(Packet<?> var1) {
+   public void method33239(IPacket<?> var1) {
       for (ServerPlayerEntity var5 : this.field41151) {
          var5.field4855.sendPacket(var1);
       }
    }
 
-   public void method33240(Packet<?> var1) {
+   public void method33240(IPacket<?> var1) {
       this.method33239(var1);
       if (this.field41148 instanceof ServerPlayerEntity) {
          ((ServerPlayerEntity)this.field41148).field4855.sendPacket(var1);

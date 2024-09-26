@@ -15,9 +15,9 @@ public class Class4120 extends Class4117 {
          if (var5 == null) {
             Class2896 var6 = (Class2896)var1;
             if (!var2.equals("left_wing")) {
-               return !var2.equals("right_wing") ? null : (Class7219)Class9299.method35072(var6, Class9299.field43123);
+               return !var2.equals("right_wing") ? null : (Class7219) Reflector.method35072(var6, Reflector.field43123);
             } else {
-               return (Class7219)Class9299.method35072(var6, Class9299.field43122);
+               return (Class7219) Reflector.method35072(var6, Reflector.field43122);
             }
          } else {
             return var5;

@@ -85,7 +85,7 @@ public class Class4304 extends IconPanel implements Class4347 {
       super.method13095(var1, var2, var3);
       if (this.method13214()) {
          this.field20887.stop();
-         this.field20887.method27120();
+         this.field20887.reset();
       }
 
       this.method13217(false);
@@ -95,7 +95,7 @@ public class Class4304 extends IconPanel implements Class4347 {
    public void method13213(int var1, int var2) {
       boolean var5 = this.field20877;
       if (!this.method13216() && this.method13214()) {
-         boolean var6 = this.field20884 && this.field20887.method27121() >= (long)this.field20888;
+         boolean var6 = this.field20884 && this.field20887.getElapsedTime() >= (long)this.field20888;
          boolean var7 = this.field20885
             && this.field20909
             && (Math.abs(this.field20878 - var1) > this.field20889 || Math.abs(this.field20879 - var2) > this.field20889);
@@ -145,7 +145,7 @@ public class Class4304 extends IconPanel implements Class4347 {
 
       if (this.method13216() && !var5) {
          this.field20887.stop();
-         this.field20887.method27120();
+         this.field20887.reset();
       }
    }
 

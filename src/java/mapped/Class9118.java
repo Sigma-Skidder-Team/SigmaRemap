@@ -10,6 +10,9 @@ import java.net.UnknownHostException;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.ProtocolType;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -24,7 +27,7 @@ public class Class9118 {
 
    public void method34003(ServerData var1, Runnable var2) throws UnknownHostException {
       Class9375 var5 = Class9375.method35574(var1.field33189);
-      NetworkManager var6 = NetworkManager.method30703(InetAddress.getByName(var5.method35572()), var5.method35573(), false);
+      NetworkManager var6 = NetworkManager.createNetworkManagerAndConnect(InetAddress.getByName(var5.method35572()), var5.method35573(), false);
       this.field41917.add(var6);
       var1.field33191 = new TranslationTextComponent("multiplayer.status.pinging");
       var1.field33192 = -1L;
@@ -41,7 +44,7 @@ public class Class9118 {
 
    private void method34004(ServerData var1) {
       Class9375 var4 = Class9375.method35574(var1.field33189);
-      ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup) NetworkManager.field38643.getValue())).handler(new Class7272(this, var4, var1)))
+      ((Bootstrap)((Bootstrap)((Bootstrap)new Bootstrap().group((EventLoopGroup) NetworkManager.CLIENT_NIO_EVENTLOOP.getValue())).handler(new Class7272(this, var4, var1)))
             .channel(NioSocketChannel.class))
          .connect(var4.method35572(), var4.method35573());
    }
@@ -77,7 +80,7 @@ public class Class9118 {
             NetworkManager var5 = (NetworkManager)var4.next();
             if (var5.isChannelOpen()) {
                var4.remove();
-               var5.method30701(new TranslationTextComponent("multiplayer.status.cancelled"));
+               var5.closeChannel(new TranslationTextComponent("multiplayer.status.cancelled"));
             }
          }
       }

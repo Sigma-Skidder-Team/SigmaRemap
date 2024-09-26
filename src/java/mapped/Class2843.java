@@ -11,9 +11,9 @@ public class Class2843 extends Class2828 {
       super(RenderType::getEntityCutoutNoCull);
       TileEntityRendererDispatcher var3 = TileEntityRendererDispatcher.instance;
       Class5950 var4 = new Class5950(var3);
-      this.field17640 = (Class7219)Class9299.field43155.method20235(var4);
-      this.field17641 = (Class7219)Class9299.field43156.method20235(var4);
-      this.field17642 = (Class7219[])Class9299.field43157.method20235(var4);
+      this.field17640 = (Class7219) Reflector.field43155.method20235(var4);
+      this.field17641 = (Class7219) Reflector.field43156.method20235(var4);
+      this.field17642 = (Class7219[]) Reflector.field43157.method20235(var4);
    }
 
    @Override
@@ -21,12 +21,12 @@ public class Class2843 extends Class2828 {
    }
 
    public Class5942 method11173(Class5942 var1) {
-      if (Class9299.field43155.method20238()) {
-         if (Class9299.field43156.method20238()) {
-            if (Class9299.field43157.method20238()) {
-               Class9299.method35082(var1, Class9299.field43155, this.field17640);
-               Class9299.method35082(var1, Class9299.field43156, this.field17641);
-               Class9299.method35082(var1, Class9299.field43157, this.field17642);
+      if (Reflector.field43155.method20238()) {
+         if (Reflector.field43156.method20238()) {
+            if (Reflector.field43157.method20238()) {
+               Reflector.method35082(var1, Reflector.field43155, this.field17640);
+               Reflector.method35082(var1, Reflector.field43156, this.field17641);
+               Reflector.method35082(var1, Reflector.field43157, this.field17642);
                return var1;
             } else {
                Class7944.method26811("Field not found: TileEntityBedRenderer.legModels");

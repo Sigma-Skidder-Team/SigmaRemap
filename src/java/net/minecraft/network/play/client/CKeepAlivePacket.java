@@ -1,12 +1,12 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CKeepAlivePacket implements Packet<IServerPlayNetHandler> {
+public class CKeepAlivePacket implements IPacket<IServerPlayNetHandler> {
     private long key;
 
    public CKeepAlivePacket() {

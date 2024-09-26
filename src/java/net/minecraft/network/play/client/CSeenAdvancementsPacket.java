@@ -2,13 +2,13 @@ package net.minecraft.network.play.client;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
 
-public class CSeenAdvancementsPacket implements Packet<IServerPlayNetHandler> {
+public class CSeenAdvancementsPacket implements IPacket<IServerPlayNetHandler> {
    private Action action;
    private ResourceLocation tab;
 

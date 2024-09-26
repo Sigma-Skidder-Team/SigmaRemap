@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -11,7 +11,7 @@ import net.minecraft.util.registry.Registry;
 import java.io.IOException;
 import java.util.UUID;
 
-public class SSpawnPaintingPacket implements Packet<IClientPlayNetHandler> {
+public class SSpawnPaintingPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24275;
    private int field24276;
    private UUID field24277;

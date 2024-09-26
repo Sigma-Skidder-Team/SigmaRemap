@@ -58,7 +58,7 @@ public class Class1675 extends Chunk {
    }
 
    @Override
-   public void method7132(Entity var1) {
+   public void removeEntity(Entity var1) {
    }
 
    @Override

@@ -4,10 +4,11 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -112,7 +113,7 @@ public class MineplexHighJump extends Module {
    @EventTarget
    public void method16973(ReceivePacketEvent var1) {
       if (this.isEnabled()) {
-         Packet var4 = var1.getPacket();
+         IPacket var4 = var1.getPacket();
          if (var4 instanceof SPlayerPositionLookPacket) {
             this.access().toggle();
          }
@@ -127,7 +128,7 @@ public class MineplexHighJump extends Module {
          mc.player.field4915 = this.field24026;
          mc.player.prevPosY = this.field24026;
          if (MovementUtils.isMoving()) {
-            mc.player.field4909 = 0.099999994F;
+            mc.player.cameraYaw = 0.099999994F;
          }
       }
    }

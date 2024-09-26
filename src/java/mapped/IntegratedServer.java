@@ -61,12 +61,12 @@ public class IntegratedServer extends MinecraftServer {
       this.method1358(true);
       this.method1360(true);
       this.method1335();
-      if (Class9299.field43001.method20214() && !Class9299.method35056(Class9299.field43001, this)) {
+      if (Reflector.field43001.exists() && !Reflector.method35056(Reflector.field43001, this)) {
          return false;
       } else {
          this.method1279();
          this.method1363(this.method1332() + " - " + this.method1436().method20054());
-         return !Class9299.field43002.method20214() ? true : Class9299.method35056(Class9299.field43002, this);
+         return !Reflector.field43002.exists() ? true : Reflector.method35056(Reflector.field43002, this);
       }
    }
 
@@ -193,7 +193,7 @@ public class IntegratedServer extends MinecraftServer {
 
    @Override
    public void initiateShutdown(boolean var1) {
-      if (!Class9299.field42967.method20245() || this.method1295()) {
+      if (!Reflector.field42967.method20245() || this.method1295()) {
          this.method1635(() -> {
             for (ServerPlayerEntity var4 : Lists.newArrayList(this.getPlayerList().method19488())) {
                if (!var4.getUniqueID().equals(this.field8923)) {

@@ -82,7 +82,7 @@ public class Class8557 {
    }
 
    public void method30519(Class8462 var1) {
-      Class9299.method35055(Class9299.field42963, var1, this);
+      Reflector.method35055(Reflector.field42963, var1, this);
    }
 
    public TextureAtlasSprite method30520() {

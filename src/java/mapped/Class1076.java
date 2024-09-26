@@ -100,8 +100,8 @@ public class Class1076 extends AbstractHorseEntity {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       if (this.method5000() && this.field5921++ >= 18000) {
          this.remove();
       }

@@ -117,12 +117,12 @@ public class Class1110 extends Class1111 implements Class1008 {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       if (this.isAlive() && this.method4310()) {
          this.setFire(8);
       }
 
-      super.livingEntity();
+      super.livingTick();
    }
 
    @Override

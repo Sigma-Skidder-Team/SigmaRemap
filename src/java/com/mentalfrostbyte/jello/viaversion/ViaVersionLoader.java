@@ -37,7 +37,7 @@ public class ViaVersionLoader {
    public static List<Entity> field31493 = new ArrayList<Entity>();
    public static int field31494 = 0;
    public final Class8982 field31495;
-   public CTabCompletePacket field31496;
+   public CTabCompletePacket cTabCompletePacket;
    private UUID field31497;
    public boolean field31498 = false;
    public boolean field31499;
@@ -52,32 +52,32 @@ public class ViaVersionLoader {
    }
 
    @EventTarget
-   public void method23342(StopUseItemEvent var1) {
+   public void onStopUseItem(StopUseItemEvent event) {
       if (JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber()) {
          if (this.mc.player.getItemInUseMaxCount() <= 1) {
-            var1.setCancelled(true);
+            event.setCancelled(true);
          }
       }
    }
 
    @EventTarget
-   public void method23343(EventKeyPress var1) {
-      if (var1.getKey() == this.mc.gameSettings.keyBindInventory.inputMappingsInput.getKeyCode() && JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
+   public void onkeyPress(EventKeyPress event) {
+      if (event.getKey() == this.mc.gameSettings.keyBindInventory.inputMappingsInput.getKeyCode() && JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
          this.mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
       }
 
       if (JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber()
-         && var1.getKey() == 258
-         && this.field31496 != null
+         && event.getKey() == 258
+         && this.cTabCompletePacket != null
          && this.mc.currentScreen instanceof ChatScreen) {
-         this.mc.getConnection().getNetworkManager().method30695(this.field31496);
-         this.field31496 = null;
+         this.mc.getConnection().getNetworkManager().sendNoEventPacket(this.cTabCompletePacket);
+         this.cTabCompletePacket = null;
       }
    }
 
    @EventTarget
    @HigestPriority
-   public void method23344(WorldLoadEvent var1) {
+   public void onWorldLoad(WorldLoadEvent event) {
       field31494 = 0;
       this.field31495.method33176();
    }
@@ -122,7 +122,7 @@ public class ViaVersionLoader {
 
          for (int var5 = 0; var5 < var4; var5++) {
             Entity var6 = field31493.get(var5);
-            if (!ColorUtils.method17708().contains(var6)) {
+            if (!ColorUtils.getEntitesInWorld().contains(var6)) {
                field31493.remove(var6);
                var4--;
                var5--;
@@ -184,7 +184,7 @@ public class ViaVersionLoader {
             return;
          }
 
-         this.field31496 = (CTabCompletePacket)var1.getPacket();
+         this.cTabCompletePacket = (CTabCompletePacket)var1.getPacket();
          var1.setCancelled(true);
       }
    }
@@ -362,7 +362,7 @@ public class ViaVersionLoader {
    @EventTarget
    @HigestPriority
    public void method23352(EventRenderEntity var1) {
-      if (var1.method13953() == this.mc.player || var1.method13953() == Freecam.field23814 || var1.method13953() == Blink.field23863) {
+      if (var1.method13953() == this.mc.player || var1.method13953() == Freecam.field23814 || var1.method13953() == Blink.clientPlayerEntity) {
          if (var1.method13948() != 1.0F) {
             if (EventUpdate.prevPitch - this.mc.player.rotationYawHead == 0.0F) {
                if (this.field31499) {

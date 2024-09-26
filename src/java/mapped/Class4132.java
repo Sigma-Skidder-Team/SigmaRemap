@@ -16,12 +16,12 @@ public class Class4132 extends Class4057 {
          Class2887 var5 = (Class2887)var1;
          if (!var2.equals("base")) {
             if (!var2.equals("lid")) {
-               return !var2.equals("head") ? null : (Class7219)Class9299.field43096.method36565(var5, 2);
+               return !var2.equals("head") ? null : (Class7219) Reflector.field43096.method36565(var5, 2);
             } else {
-               return (Class7219)Class9299.field43096.method36565(var5, 1);
+               return (Class7219) Reflector.field43096.method36565(var5, 1);
             }
          } else {
-            return (Class7219)Class9299.field43096.method36565(var5, 0);
+            return (Class7219) Reflector.field43096.method36565(var5, 0);
          }
       } else {
          return null;
@@ -42,8 +42,8 @@ public class Class4132 extends Class4057 {
             var6 = new Class5954((Class2887<?>)var1, var5);
          }
 
-         if (Class9299.field43165.method20238()) {
-            Class9299.method35082(var6, Class9299.field43165, var1);
+         if (Reflector.field43165.method20238()) {
+            Reflector.method35082(var6, Reflector.field43165, var1);
             return (Class9492)var6;
          } else {
             Class7944.method26811("Field not found: TileEntityShulkerBoxRenderer.model");

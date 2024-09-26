@@ -76,15 +76,15 @@ public class Class8683 {
       }
 
       Object var20 = null;
-      if (Class9299.field42890.method20214()) {
-         var20 = Class9299.method35062(Class9299.field42890, var17, var19);
-         if (Class9299.method35064(var20, Class9299.field42809)) {
-            ITextComponent var23 = (ITextComponent)Class9299.method35070(var20, Class9299.field42997);
+      if (Reflector.field42890.exists()) {
+         var20 = Reflector.method35062(Reflector.field42890, var17, var19);
+         if (Reflector.method35064(var20, Reflector.field42809)) {
+            ITextComponent var23 = (ITextComponent) Reflector.call(var20, Reflector.field42997);
             var5.accept(var23);
             return;
          }
 
-         var19 = (File)Class9299.method35070(var20, Class9299.field42998);
+         var19 = (File) Reflector.call(var20, Reflector.field42998);
       }
 
       File var21 = var19;
@@ -97,8 +97,8 @@ public class Class8683 {
                   IFormattableTextComponent var6 = new StringTextComponent(var21.getName())
                      .mergeStyle(TextFormatting.UNDERLINE)
                      .modifyStyle(var1xx -> var1xx.setClickEvent(new ClickEvent(ClickEvent$Action.OPEN_FILE, var21.getAbsolutePath())));
-                  if (var22 != null && Class9299.method35070(var22, Class9299.field42999) != null) {
-                     var5.accept((ITextComponent)Class9299.method35070(var22, Class9299.field42999));
+                  if (var22 != null && Reflector.call(var22, Reflector.field42999) != null) {
+                     var5.accept((ITextComponent) Reflector.call(var22, Reflector.field42999));
                   } else {
                      var5.accept(new TranslationTextComponent("screenshot.success", var6));
                   }

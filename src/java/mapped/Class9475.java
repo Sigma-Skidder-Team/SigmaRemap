@@ -36,11 +36,11 @@ public class Class9475 {
    }
 
    public Object method36565(Object var1, int var2) {
-      return Class9299.method35075(var1, this, var2);
+      return Reflector.method35075(var1, this, var2);
    }
 
    public void method36566(Object var1, int var2, Object var3) {
-      Class9299.method35081(var1, this, var2, var3);
+      Reflector.method35081(var1, this, var2, var3);
    }
 
    public boolean method36567() {

@@ -5,7 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.DamageSource;
@@ -175,7 +175,7 @@ public abstract class Class901 extends ProjectileEntity {
    }
 
    @Override
-   public Packet<?> createSpawnPacket() {
+   public IPacket<?> createSpawnPacket() {
       Entity var3 = this.method3460();
       int var4 = var3 != null ? var3.getEntityId() : 0;
       return new SSpawnObjectPacket(

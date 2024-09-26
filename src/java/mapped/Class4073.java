@@ -21,9 +21,9 @@ public class Class4073 extends Class4071 {
       if (var1 instanceof Class2857) {
          Class2857 var5 = (Class2857)var1;
          if (!var2.equals("left_chest")) {
-            return !var2.equals("right_chest") ? super.method12823(var1, var2) : (Class7219)Class9299.field43057.method36565(var5, 1);
+            return !var2.equals("right_chest") ? super.method12823(var1, var2) : (Class7219) Reflector.field43057.method36565(var5, 1);
          } else {
-            return (Class7219)Class9299.field43057.method36565(var5, 0);
+            return (Class7219) Reflector.field43057.method36565(var5, 0);
          }
       } else {
          return null;

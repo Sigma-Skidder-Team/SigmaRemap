@@ -76,7 +76,7 @@ public class Class1265 extends AbstractGui {
          var40++;
       }
 
-      boolean var14 = this.field6692.isIntegratedServerRunning() || this.field6692.getConnection().getNetworkManager().method30706();
+      boolean var14 = this.field6692.isIntegratedServerRunning() || this.field6692.getConnection().getNetworkManager().isEncrypted();
       int var15;
       if (var4 == null) {
          var15 = 0;

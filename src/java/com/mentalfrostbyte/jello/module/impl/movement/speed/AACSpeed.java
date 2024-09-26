@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.EventMove;
 import com.mentalfrostbyte.jello.event.impl.JumpEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
@@ -128,7 +129,7 @@ public class AACSpeed extends Module {
                if (!((float)this.field23398 > var5) && this.field23398 >= 0) {
                   double var6 = Math.cos(Math.toRadians((double)((float)this.field23398 / var5 * 180.0F - 90.0F)));
                   mc.player.positionVec.y = this.field23403 + var6;
-                  mc.player.field4909 = 0.0F;
+                  mc.player.cameraYaw = 0.0F;
                }
             } else {
                mc.player.positionVec.y = mc.player.getBoundingBox().minY;

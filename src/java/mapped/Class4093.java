@@ -24,27 +24,27 @@ public class Class4093 extends Class4057 {
                      if (!var2.equals("leg3")) {
                         if (!var2.equals("leg4")) {
                            if (!var2.equals("chest_right")) {
-                              return !var2.equals("chest_left") ? null : (Class7219)Class9299.field43069.method36565(var5, 7);
+                              return !var2.equals("chest_left") ? null : (Class7219) Reflector.field43069.method36565(var5, 7);
                            } else {
-                              return (Class7219)Class9299.field43069.method36565(var5, 6);
+                              return (Class7219) Reflector.field43069.method36565(var5, 6);
                            }
                         } else {
-                           return (Class7219)Class9299.field43069.method36565(var5, 5);
+                           return (Class7219) Reflector.field43069.method36565(var5, 5);
                         }
                      } else {
-                        return (Class7219)Class9299.field43069.method36565(var5, 4);
+                        return (Class7219) Reflector.field43069.method36565(var5, 4);
                      }
                   } else {
-                     return (Class7219)Class9299.field43069.method36565(var5, 3);
+                     return (Class7219) Reflector.field43069.method36565(var5, 3);
                   }
                } else {
-                  return (Class7219)Class9299.field43069.method36565(var5, 2);
+                  return (Class7219) Reflector.field43069.method36565(var5, 2);
                }
             } else {
-               return (Class7219)Class9299.field43069.method36565(var5, 1);
+               return (Class7219) Reflector.field43069.method36565(var5, 1);
             }
          } else {
-            return (Class7219)Class9299.field43069.method36565(var5, 0);
+            return (Class7219) Reflector.field43069.method36565(var5, 0);
          }
       } else {
          return null;

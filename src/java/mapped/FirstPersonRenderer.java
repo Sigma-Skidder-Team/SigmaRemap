@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.EventHandAnimation;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
@@ -230,8 +231,8 @@ public class FirstPersonRenderer {
       if (var11) {
          float var21 = var9 != Hand.MAIN_HAND ? 0.0F : var8;
          float var16 = 1.0F - MathHelper.lerp(var1, this.field45082, this.field45081);
-         if (!Class9299.field42894.method20214()
-            || !Class9299.method35056(Class9299.field42894, Hand.MAIN_HAND, var2, var3, var5, var1, var10, var21, var16, this.field45079)) {
+         if (!Reflector.field42894.exists()
+            || !Reflector.method35056(Reflector.field42894, Hand.MAIN_HAND, var2, var3, var5, var1, var10, var21, var16, this.field45079)) {
             this.method37591(var4, var1, var10, Hand.MAIN_HAND, var21, this.field45079, var16, var2, var3, var5);
          }
       }
@@ -239,8 +240,8 @@ public class FirstPersonRenderer {
       if (var12) {
          float var22 = var9 != Hand.field183 ? 0.0F : var8;
          float var23 = 1.0F - MathHelper.lerp(var1, this.field45084, this.field45083);
-         if (!Class9299.field42894.method20214()
-            || !Class9299.method35056(Class9299.field42894, Hand.field183, var2, var3, var5, var1, var10, var22, var23, this.field45080)) {
+         if (!Reflector.field42894.exists()
+            || !Reflector.method35056(Reflector.field42894, Hand.field183, var2, var3, var5, var1, var10, var22, var23, this.field45080)) {
             this.method37591(var4, var1, var10, Hand.field183, var22, this.field45080, var23, var2, var3, var5);
          }
       }
@@ -418,9 +419,9 @@ public class FirstPersonRenderer {
 
       if (!var3.isRowingBoat()) {
          float var6 = var3.method2974(1.0F);
-         if (Class9299.field42896.method20214()) {
-            boolean var7 = Class9299.method35056(Class9299.field42896, this.field45079, var4, var3.inventory.currentItem);
-            boolean var8 = Class9299.method35056(Class9299.field42896, this.field45080, var5, -1);
+         if (Reflector.field42896.exists()) {
+            boolean var7 = Reflector.method35056(Reflector.field42896, this.field45079, var4, var3.inventory.currentItem);
+            boolean var8 = Reflector.method35056(Reflector.field42896, this.field45080, var5, -1);
             if (!var7 && !Objects.equals(this.field45079, var4)) {
                this.field45079 = var4;
             }

@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventBlockCollision;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.BooleanSetting;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import mapped.Class3220;
 import mapped.Class3399;
 import mapped.VoxelShapes;

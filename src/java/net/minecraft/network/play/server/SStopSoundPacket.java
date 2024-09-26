@@ -4,12 +4,12 @@ import mapped.Class2266;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 import javax.annotation.Nullable;
 
-public class SStopSoundPacket implements Packet<IClientPlayNetHandler> {
+public class SStopSoundPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24372;
    private ResourceLocation field24373;
    private Class2266 field24374;

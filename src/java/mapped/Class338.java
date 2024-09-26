@@ -17,11 +17,11 @@ public class Class338 implements Runnable {
    @Override
    public void run() {
       boolean var3 = (float)Math.round((float)Math.random() * 100.0F) <= this.field1478.getNumberValueBySettingName("Hit Chance");
-      float var4 = Math.max(KillAura.method16837().player.getDistance(KillAura.field23949.method27397()), this.field1478.getNumberValueBySettingName("Range"));
+      float var4 = Math.max(KillAura.method16837().player.getDistance(KillAura.field23949.getEntity()), this.field1478.getNumberValueBySettingName("Range"));
       EntityRayTraceResult var5;
       if (!this.field1478.getStringSettingValueByName("Attack Mode").equals("Pre")) {
          var5 = ColorUtils.method17712(
-            KillAura.method16843(this.field1478).field32084, KillAura.method16843(this.field1478).field32085, var4, (double)this.field1477
+            KillAura.method16843(this.field1478).yaw, KillAura.method16843(this.field1478).pitch, var4, (double)this.field1477
          );
       } else {
          double var6 = Math.sqrt(
@@ -29,10 +29,10 @@ public class Class338 implements Runnable {
                + KillAura.method16840().player.getMotion().z * KillAura.method16841().player.getMotion().z
          );
          double var10003 = (double)this.field1477;
-         var5 = ColorUtils.method17712(KillAura.method16842(this.field1478).field32084, KillAura.method16842(this.field1478).field32085, var4, var10003 + var6);
+         var5 = ColorUtils.method17712(KillAura.method16842(this.field1478).yaw, KillAura.method16842(this.field1478).pitch, var4, var10003 + var6);
       }
 
-      if (KillAura.field23948 != null
+      if (KillAura.target != null
          && KillAura.method16844(this.field1478).method36813()
          && !this.field1478.getStringSettingValueByName("Autoblock Mode").equals("Vanilla")) {
          KillAura.method16844(this.field1478).method36816();
@@ -40,8 +40,8 @@ public class Class338 implements Runnable {
 
       String var8 = this.field1478.getStringSettingValueByName("Mode");
       if (var3 && (var5 != null || !this.field1478.getBooleanValueFromSetttingName("Raytrace") || var8.equals("Multi"))) {
-         for (Class8012 var10 : KillAura.method16845(this.field1478)) {
-            Entity var11 = var10.method27397();
+         for (TimedEntity var10 : KillAura.method16845(this.field1478)) {
+            Entity var11 = var10.getEntity();
             if (var5 != null && this.field1478.getBooleanValueFromSetttingName("Raytrace") && !var8.equals("Multi")) {
                var11 = var5.getEntity();
             }
@@ -56,9 +56,9 @@ public class Class338 implements Runnable {
          KillAura.method16848().player.swingArm(Hand.MAIN_HAND);
       }
 
-      if (KillAura.field23948 != null && KillAura.method16844(this.field1478).method36817() && this.field1478.getStringSettingValueByName("Autoblock Mode").equals("Basic1")) {
+      if (KillAura.target != null && KillAura.method16844(this.field1478).method36817() && this.field1478.getStringSettingValueByName("Autoblock Mode").equals("Basic1")) {
          KillAura.method16844(this.field1478)
-            .method36815(KillAura.field23948, KillAura.method16843(this.field1478).field32084, KillAura.method16843(this.field1478).field32085);
+            .method36815(KillAura.target, KillAura.method16843(this.field1478).yaw, KillAura.method16843(this.field1478).pitch);
       }
    }
 }

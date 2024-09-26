@@ -179,7 +179,7 @@ public class ZombieEntity extends Class1009 {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       if (this.isAlive()) {
          boolean var3 = this.method4660() && this.method4310();
          if (var3) {
@@ -202,7 +202,7 @@ public class ZombieEntity extends Class1009 {
          }
       }
 
-      super.livingEntity();
+      super.livingTick();
    }
 
    private void method4657(int var1) {

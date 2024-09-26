@@ -5,10 +5,10 @@ import java.io.IOException;
 import mapped.Class2301;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.text.ITextComponent;
 
-public class STitlePacket implements Packet<IClientPlayNetHandler> {
+public class STitlePacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24804;
    private Class2301 field24805;
    private ITextComponent field24806;

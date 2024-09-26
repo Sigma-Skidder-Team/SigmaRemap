@@ -62,7 +62,7 @@ public abstract class Class1026 extends Class1028 {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       if (this.world instanceof ServerWorld && this.isAlive()) {
          Class7699 var3 = this.method4551();
          if (this.method4547()) {
@@ -80,7 +80,7 @@ public abstract class Class1026 extends Class1028 {
          }
       }
 
-      super.livingEntity();
+      super.livingTick();
    }
 
    @Override

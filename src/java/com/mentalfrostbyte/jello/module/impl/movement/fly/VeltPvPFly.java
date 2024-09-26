@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.network.play.server.SChatPacket;
@@ -130,7 +130,7 @@ public class VeltPvPFly extends Module {
     @EventTarget
     public void method16049(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
-            Packet var4 = var1.getPacket();
+            IPacket var4 = var1.getPacket();
             if (!(var4 instanceof SPlayerPositionLookPacket)) {
                 if (var4 instanceof SChatPacket) {
                     SChatPacket var5 = (SChatPacket) var4;
@@ -155,7 +155,7 @@ public class VeltPvPFly extends Module {
     @EventTarget
     public void method16050(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            Packet var4 = var1.getPacket();
+            IPacket var4 = var1.getPacket();
             if (var4 instanceof CPlayerPacket) {
                 CPlayerPacket var5 = (CPlayerPacket) var4;
                 if (this.field23419 == -1) {

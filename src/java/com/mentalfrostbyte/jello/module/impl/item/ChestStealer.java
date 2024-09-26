@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
@@ -60,8 +61,8 @@ public class ChestStealer extends Module {
     public void method16365(EventUpdate var1) {
         if (this.isEnabled() && var1.isPre()) {
             if (this.getBooleanValueFromSetttingName("Aura")) {
-                if (this.field23624.method27121() > 2000L && this.field23621) {
-                    this.field23624.method27120();
+                if (this.field23624.getElapsedTime() > 2000L && this.field23621) {
+                    this.field23624.reset();
                     this.field23621 = false;
                 }
 
@@ -70,7 +71,7 @@ public class ChestStealer extends Module {
                 }
 
                 this.method16370();
-                if (this.field23625 != null && mc.currentScreen == null && this.field23624.method27121() > 1000L) {
+                if (this.field23625 != null && mc.currentScreen == null && this.field23624.getElapsedTime() > 1000L) {
                     BlockRayTraceResult var4 = (BlockRayTraceResult) BlockUtil.method34570(this.field23625.getPos());
                     if (var4.getPos().getX() == this.field23625.getPos().getX()
                             && var4.getPos().getY() == this.field23625.getPos().getY()
@@ -78,7 +79,7 @@ public class ChestStealer extends Module {
                         this.field23621 = true;
                         mc.getConnection().sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, var4));
                         mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
-                        this.field23624.method27120();
+                        this.field23624.reset();
                     }
                 }
 
@@ -98,7 +99,7 @@ public class ChestStealer extends Module {
                     )
                             && !var8
                             && Math.sqrt(mc.player.getDistanceNearest(var9, var10, var11)) < 5.0
-                            && this.field23624.method27121() > 1000L
+                            && this.field23624.getElapsedTime() > 1000L
                             && mc.currentScreen == null) {
                         BlockRayTraceResult var12 = (BlockRayTraceResult) BlockUtil.method34570(var7.getPos());
                         if (var12.getPos().getX() == var7.getPos().getX()
@@ -134,9 +135,9 @@ public class ChestStealer extends Module {
             if (!(mc.currentScreen instanceof ChestScreen)) {
                 this.field23621 = false;
                 this.field23623.stop();
-                this.field23623.method27120();
+                this.field23623.reset();
                 if (mc.currentScreen == null && InvManagerUtils.method25875()) {
-                    this.field23624.method27120();
+                    this.field23624.reset();
                 }
             } else {
                 if (!this.field23623.isEnabled()) {
@@ -162,7 +163,7 @@ public class ChestStealer extends Module {
                                     ItemStack var8 = var7.getStack();
                                     if (!this.method16369(var8)) {
                                         if (!this.field23621) {
-                                            if ((float) this.field23623.method27121() < this.getNumberValueBySettingName("First Item") * 1000.0F) {
+                                            if ((float) this.field23623.getElapsedTime() < this.getNumberValueBySettingName("First Item") * 1000.0F) {
                                                 return;
                                             }
 
@@ -175,7 +176,7 @@ public class ChestStealer extends Module {
                                             InvManagerUtils.fixedClick(var4.field4727.field25471, var7.field25579, 0, ClickType.field14695, mc.player, true);
                                         }
 
-                                        this.field23623.method27120();
+                                        this.field23623.reset();
                                         var5 = false;
                                         if (this.getNumberValueBySettingName("Delay") > 0.0F) {
                                             break;

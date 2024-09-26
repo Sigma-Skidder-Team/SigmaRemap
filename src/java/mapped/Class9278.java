@@ -14,7 +14,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.*;
 import net.minecraft.potion.EffectInstance;
@@ -30,7 +30,7 @@ public class Class9278 {
    private final Entity field42668;
    private final int field42669;
    private final boolean field42670;
-   private final Consumer<Packet<?>> field42671;
+   private final Consumer<IPacket<?>> field42671;
    private long field42672;
    private long field42673;
    private long field42674;
@@ -44,7 +44,7 @@ public class Class9278 {
    private boolean field42682;
    private boolean field42683;
 
-   public Class9278(ServerWorld var1, Entity var2, int var3, boolean var4, Consumer<Packet<?>> var5) {
+   public Class9278(ServerWorld var1, Entity var2, int var3, boolean var4, Consumer<IPacket<?>> var5) {
       this.field42667 = var1;
       this.field42671 = var5;
       this.field42668 = var2;
@@ -72,7 +72,7 @@ public class Class9278 {
 
             for (ServerPlayerEntity var8 : this.field42667.method6870()) {
                var6.method24594(var8, var5);
-               Packet var9 = ((Class3316)var5.getItem()).method11858(var5, this.field42667, var8);
+               IPacket var9 = ((Class3316)var5.getItem()).method11858(var5, this.field42667, var8);
                if (var9 != null) {
                   var8.field4855.sendPacket(var9);
                }
@@ -135,7 +135,7 @@ public class Class9278 {
             }
 
             if (var29 != null) {
-               this.field42671.accept((Packet<?>)var29);
+               this.field42671.accept((IPacket<?>)var29);
             }
 
             this.method34973();
@@ -191,12 +191,12 @@ public class Class9278 {
       var1.method2812(this.field42668);
    }
 
-   public void method34972(Consumer<Packet<?>> var1) {
+   public void method34972(Consumer<IPacket<?>> var1) {
       if (this.field42668.removed) {
          field42666.warn("Fetching packet for removed entity " + this.field42668);
       }
 
-      Packet var4 = this.field42668.createSpawnPacket();
+      IPacket var4 = this.field42668.createSpawnPacket();
       this.field42677 = MathHelper.method37767(this.field42668.getRotationYawHead() * 256.0F / 360.0F);
       var1.accept(var4);
       if (!this.field42668.getDataManager().method35456()) {
@@ -285,7 +285,7 @@ public class Class9278 {
       return SEntityPacket.method17232(this.field42672, this.field42673, this.field42674);
    }
 
-   private void method34976(Packet<?> var1) {
+   private void method34976(IPacket<?> var1) {
       this.field42671.accept(var1);
       if (this.field42668 instanceof ServerPlayerEntity) {
          ((ServerPlayerEntity)this.field42668).field4855.sendPacket(var1);

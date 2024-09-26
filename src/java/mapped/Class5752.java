@@ -16,6 +16,6 @@ public class Class5752 implements Emitter.Listener {
    @Override
    public void call(Object... var1) {
       System.out.println("disconnect");
-      Client.getInstance().getNotificationManager().post(new Notification("Jello connect", "Connexion Failed. Try relogging.", ResourcesDecrypter.gingerbreadIconPNG));
+      Client.getInstance().getNotificationManager().send(new Notification("Jello connect", "Connexion Failed. Try relogging.", ResourcesDecrypter.gingerbreadIconPNG));
    }
 }

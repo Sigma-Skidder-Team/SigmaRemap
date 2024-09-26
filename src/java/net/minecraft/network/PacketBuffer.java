@@ -305,8 +305,8 @@ public class PacketBuffer extends ByteBuf {
          this.writeByte(var1.getCount());
          CompoundNBT var6 = null;
          if (Class9561.method37058(var5, var1) || var5.method11721()) {
-            if (var2 && Class9299.field42923.method20214()) {
-               var6 = (CompoundNBT)Class9299.method35070(var1, Class9299.field42923);
+            if (var2 && Reflector.field42923.exists()) {
+               var6 = (CompoundNBT) Reflector.call(var1, Reflector.field42923);
             } else {
                var6 = var1.method32142();
             }
@@ -325,10 +325,10 @@ public class PacketBuffer extends ByteBuf {
          int var3 = this.readVarInt();
          byte var4 = this.readByte();
          ItemStack var5 = new ItemStack(Item.method11702(var3), var4);
-         if (!Class9299.field42926.method20214()) {
+         if (!Reflector.field42926.exists()) {
             var5.method32148(this.method35721());
          } else {
-            Class9299.method35070(var5, Class9299.field42926, this.method35721());
+            Reflector.call(var5, Reflector.field42926, this.method35721());
          }
 
          return var5;

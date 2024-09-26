@@ -7,9 +7,10 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.misc.GamePlay;
 import com.mentalfrostbyte.jello.module.impl.render.NameProtect;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.STeamsPacket;
 import net.minecraft.network.play.server.SChatPacket;
 import net.minecraft.scoreboard.ScorePlayerTeam;
@@ -42,7 +43,7 @@ public class HypixelGamePlay extends Module {
     @EventTarget
     private void method16372(ReceivePacketEvent var1) {
         if (mc.player != null) {
-            Packet var4 = var1.getPacket();
+            IPacket var4 = var1.getPacket();
             if (var4 instanceof SChatPacket) {
                 SChatPacket var5 = (SChatPacket) var4;
                 String var6 = var5.getChatComponent().getString().replaceAll("§.", "");

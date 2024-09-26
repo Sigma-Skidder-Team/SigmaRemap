@@ -262,7 +262,7 @@ public class RenderUtil {
       RenderSystem.enableBlend();
       RenderSystem.method27817();
       RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
-      RenderSystem.method27866(7425);
+      RenderSystem.shadeModel(7425);
       Tessellator var16 = Tessellator.getInstance();
       BufferBuilder var17 = var16.getBuffer();
       var17.begin(7, DefaultVertexFormats.POSITION_COLOR);
@@ -271,7 +271,7 @@ public class RenderUtil {
       var17.pos((double)var0, (double)var3, 0.0).color(var13, var14, var15, var12).endVertex();
       var17.pos((double)var2, (double)var3, 0.0).color(var13, var14, var15, var12).endVertex();
       var16.draw();
-      RenderSystem.method27866(7424);
+      RenderSystem.shadeModel(7424);
       RenderSystem.disableBlend();
       RenderSystem.disableAlphaTest();
       RenderSystem.enableTexture();
@@ -298,7 +298,7 @@ public class RenderUtil {
       RenderSystem.enableBlend();
       RenderSystem.method27817();
       RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
-      RenderSystem.method27866(7425);
+      RenderSystem.shadeModel(7425);
       Tessellator var26 = Tessellator.getInstance();
       BufferBuilder var27 = var26.getBuffer();
       var27.begin(7, DefaultVertexFormats.POSITION_COLOR);
@@ -307,7 +307,7 @@ public class RenderUtil {
       var27.pos((double)var0, (double)var3, 0.0).color(var23, var24, var25, var22).endVertex();
       var27.pos((double)var2, (double)var3, 0.0).color(var19, var20, var21, var18).endVertex();
       var26.draw();
-      RenderSystem.method27866(7424);
+      RenderSystem.shadeModel(7424);
       RenderSystem.disableBlend();
       RenderSystem.disableAlphaTest();
       RenderSystem.enableTexture();

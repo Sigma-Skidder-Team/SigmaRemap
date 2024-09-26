@@ -7,11 +7,11 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.SoundEvent;
 import org.apache.commons.lang3.Validate;
 
-public class SSpawnMovingSoundEffectPacket implements Packet<IClientPlayNetHandler> {
+public class SSpawnMovingSoundEffectPacket implements IPacket<IClientPlayNetHandler> {
    private SoundEvent field24623;
    private Class2266 field24624;
    private int field24625;

@@ -7,13 +7,13 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
 import java.util.UUID;
 
-public class SSpawnObjectPacket implements Packet<IClientPlayNetHandler> {
+public class SSpawnObjectPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24359;
    private int field24360;
    private UUID field24361;

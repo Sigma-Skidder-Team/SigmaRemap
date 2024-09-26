@@ -3,12 +3,12 @@ package net.minecraft.network.play.client;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.Hand;
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CPlayerTryUseItemOnBlockPacket implements Packet<IServerPlayNetHandler> {
+public class CPlayerTryUseItemOnBlockPacket implements IPacket<IServerPlayNetHandler> {
     private BlockRayTraceResult field_218795_a;
    private Hand hand;
 

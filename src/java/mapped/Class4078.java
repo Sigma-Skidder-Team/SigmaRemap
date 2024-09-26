@@ -20,24 +20,24 @@ public class Class4078 extends Class4057 {
                   if (!var2.equals("pages_left")) {
                      if (!var2.equals("flipping_page_right")) {
                         if (!var2.equals("flipping_page_left")) {
-                           return !var2.equals("book_spine") ? null : (Class7219)Class9299.field43031.method36565(var5, 6);
+                           return !var2.equals("book_spine") ? null : (Class7219) Reflector.field43031.method36565(var5, 6);
                         } else {
-                           return (Class7219)Class9299.field43031.method36565(var5, 5);
+                           return (Class7219) Reflector.field43031.method36565(var5, 5);
                         }
                      } else {
-                        return (Class7219)Class9299.field43031.method36565(var5, 4);
+                        return (Class7219) Reflector.field43031.method36565(var5, 4);
                      }
                   } else {
-                     return (Class7219)Class9299.field43031.method36565(var5, 3);
+                     return (Class7219) Reflector.field43031.method36565(var5, 3);
                   }
                } else {
-                  return (Class7219)Class9299.field43031.method36565(var5, 2);
+                  return (Class7219) Reflector.field43031.method36565(var5, 2);
                }
             } else {
-               return (Class7219)Class9299.field43031.method36565(var5, 1);
+               return (Class7219) Reflector.field43031.method36565(var5, 1);
             }
          } else {
-            return (Class7219)Class9299.field43031.method36565(var5, 0);
+            return (Class7219) Reflector.field43031.method36565(var5, 0);
          }
       } else {
          return null;
@@ -58,8 +58,8 @@ public class Class4078 extends Class4057 {
             var6 = new Class5951(var5);
          }
 
-         if (Class9299.field43163.method20238()) {
-            Class9299.method35082(var6, Class9299.field43163, var1);
+         if (Reflector.field43163.method20238()) {
+            Reflector.method35082(var6, Reflector.field43163, var1);
             return (Class9492)var6;
          } else {
             Class7944.method26811("Field not found: TileEntityEnchantmentTableRenderer.modelBook");

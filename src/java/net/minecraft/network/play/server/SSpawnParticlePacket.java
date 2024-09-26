@@ -2,14 +2,14 @@ package net.minecraft.network.play.server;
 
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.registry.Registry;
 
 import java.io.IOException;
 
-public class SSpawnParticlePacket implements Packet<IClientPlayNetHandler> {
+public class SSpawnParticlePacket implements IPacket<IClientPlayNetHandler> {
    private double xCoord;
    private double yCoord;
    private double zCoord;

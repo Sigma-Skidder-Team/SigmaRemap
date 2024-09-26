@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.client.gui.DialogTexts;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.ProtocolType;
 import net.minecraft.util.text.TranslationTextComponent;
 
 import java.net.InetAddress;
@@ -28,7 +30,7 @@ public class Class381 extends Thread {
          }
 
          var3 = InetAddress.getByName(this.field1639);
-         ConnectingScreen.method6223(this.field1641, NetworkManager.method30703(var3, this.field1640, this.field1641.mc.gameSettings.method37154()));
+         ConnectingScreen.method6223(this.field1641, NetworkManager.createNetworkManagerAndConnect(var3, this.field1640, this.field1641.mc.gameSettings.method37154()));
          ConnectingScreen.method6224(this.field1641)
             .setNetHandler(
                new ClientLoginNetHandler(

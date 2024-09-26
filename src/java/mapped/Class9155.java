@@ -28,7 +28,7 @@ public class Class9155 {
       var12.field45939[2] = MathHelper.lerp(var14, var12.field45939[2], var15);
       var12.field45939[1] = MathHelper.lerp(var14, var12.field45939[1], var16);
       var12.field45939[3] = MathHelper.lerp(var14, var12.field45939[3], var16);
-      boolean var17 = !Class9299.field42868.method20214() ? var8 : false;
+      boolean var17 = !Reflector.field42868.exists() ? var8 : false;
       int[] var18 = this.method34177(var12, var4, var5, this.method34178(var1, var2), var6.method8166(), var7, var17);
       Direction var19 = method34184(var18);
       System.arraycopy(var13, 0, var12.field45939, 0, var13.length);
@@ -36,10 +36,10 @@ public class Class9155 {
          this.method34185(var18, var19);
       }
 
-      if (!Class9299.field42868.method20214()) {
+      if (!Reflector.field42868.exists()) {
          return new Class8557(var18, var3.field42067, var19, var4, var8);
       } else {
-         Class9299.method35062(Class9299.field42868, var18, var19);
+         Reflector.method35062(Reflector.field42868, var18, var19);
          return new Class8557(var18, var3.field42067, var19, var4, var8);
       }
    }

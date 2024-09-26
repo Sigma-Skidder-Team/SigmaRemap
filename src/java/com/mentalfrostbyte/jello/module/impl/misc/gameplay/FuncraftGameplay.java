@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.misc.GamePlay;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SChatPacket;
 
 public class FuncraftGameplay extends Module {
@@ -23,7 +23,7 @@ public class FuncraftGameplay extends Module {
     @EventTarget
     private void method16295(ReceivePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            Packet var4 = var1.getPacket();
+            IPacket var4 = var1.getPacket();
             if (var4 instanceof SChatPacket) {
                 SChatPacket var5 = (SChatPacket) var4;
                 String var6 = var5.getChatComponent().getString();

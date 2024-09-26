@@ -10,9 +10,10 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.world.Disabler;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import mapped.*;
-import net.minecraft.network.Packet;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CClickWindowPacket;
 import net.minecraft.network.play.server.*;
 
@@ -63,7 +64,7 @@ public class PingSpoofDisabler extends Module {
                     Class8772 var6 = this.field23461.get(var5);
                     if (var6.method31641()) {
                         mc.getConnection().getNetworkManager();
-                        NetworkManager.method30691(var6.method31642(), mc.getConnection().getNetworkManager().field38650);
+                        NetworkManager.processPacket(var6.method31642(), mc.getConnection().getNetworkManager().packetListener);
                         this.field23461.remove(var5);
                         var7--;
                         var5--;
@@ -75,7 +76,7 @@ public class PingSpoofDisabler extends Module {
 
     @EventTarget
     public void method16102(SendPacketEvent var1) {
-        Packet var4 = var1.getPacket();
+        IPacket var4 = var1.getPacket();
         if (var4 instanceof CClickWindowPacket) {
             CClickWindowPacket var5 = (CClickWindowPacket) var4;
             this.field23463 = var5.getActionNumber();
@@ -92,7 +93,7 @@ public class PingSpoofDisabler extends Module {
         }
 
         if (mc.getCurrentServerData() != null) {
-            Packet var7 = var1.getPacket();
+            IPacket var7 = var1.getPacket();
             if (!(var7 instanceof SKeepAlivePacket)) {
                 if (!(var7 instanceof SConfirmTransactionPacket)) {
                     if (var7 instanceof SPlayerPositionLookPacket && this.field23462 > 0) {
@@ -122,9 +123,9 @@ public class PingSpoofDisabler extends Module {
     public class Class8772 {
         public final PingSpoofDisabler field39475;
         private final long field39473;
-        private final Packet<?> field39474;
+        private final IPacket<?> field39474;
 
-        public Class8772(Packet<?> var1, PingSpoofDisabler var2, long param4) {
+        public Class8772(IPacket<?> var1, PingSpoofDisabler var2, long param4) {
             this.field39474 = var1;
             this.field39475 = var2;
             this.field39473 = System.currentTimeMillis() + param4;
@@ -134,7 +135,7 @@ public class PingSpoofDisabler extends Module {
             return this.field39473 - System.currentTimeMillis() < 0L;
         }
 
-        public Packet<?> method31642() {
+        public IPacket<?> method31642() {
             return this.field39474;
         }
     }

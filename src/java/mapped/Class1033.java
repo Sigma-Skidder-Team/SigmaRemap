@@ -70,8 +70,8 @@ public class Class1033 extends Class1031 implements Class1022 {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       if (this.world.isRemote && this.isInvisible()) {
          this.field5739--;
          if (this.field5739 < 0) {

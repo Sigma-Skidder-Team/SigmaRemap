@@ -2,7 +2,7 @@ package mapped;
 
 import net.minecraft.entity.*;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -120,7 +120,7 @@ public class Class1004 extends Entity {
    }
 
    @Override
-   public Packet<?> createSpawnPacket() {
+   public IPacket<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this);
    }
 }

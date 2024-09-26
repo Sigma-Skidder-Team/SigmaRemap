@@ -108,8 +108,8 @@ public class Class1104 extends Class1009 {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       if (!this.world.isRemote) {
          if (!this.method4282()) {
             this.field6063++;

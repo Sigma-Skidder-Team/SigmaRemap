@@ -21,7 +21,7 @@ import net.minecraft.entity.passive.WaterMobEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.fluid.Fluid;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.*;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.tileentity.TileEntity;
@@ -860,7 +860,7 @@ public class ServerWorld extends World implements ISeedReader {
    private void method6933(Entity var1) {
       IChunk var4 = this.getChunk(var1.chunkCoordX, var1.chunkCoordZ, ChunkStatus.FULL, false);
       if (var4 instanceof Chunk) {
-         ((Chunk)var4).method7132(var1);
+         ((Chunk)var4).removeEntity(var1);
       }
    }
 
@@ -1049,7 +1049,7 @@ public class ServerWorld extends World implements ISeedReader {
       return this.method6941(var1, var3, var4, var6, var8, var21);
    }
 
-   private boolean method6941(ServerPlayerEntity var1, boolean var2, double var3, double var5, double var7, Packet<?> var9) {
+   private boolean method6941(ServerPlayerEntity var1, boolean var2, double var3, double var5, double var7, IPacket<?> var9) {
       if (var1.getServerWorld() == this) {
          BlockPos var12 = var1.getPosition();
          if (!var12.method8317(new Vector3d(var3, var5, var7), !var2 ? 32.0 : 512.0)) {

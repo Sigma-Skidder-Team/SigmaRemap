@@ -9,6 +9,6 @@ public final class Class6635 implements Class6632 {
 
    @Override
    public void method20232() {
-      Class9299.method35097().info("[OptiFine] " + this.field29180);
+      Reflector.method35097().info("[OptiFine] " + this.field29180);
    }
 }

@@ -3,11 +3,11 @@ package net.minecraft.network.play.server;
 import net.minecraft.util.Hand;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SOpenBookWindowPacket implements Packet<IClientPlayNetHandler> {
+public class SOpenBookWindowPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24454;
    private Hand field24455;
 

@@ -173,7 +173,7 @@ public class Class1105 extends Class1009 {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       if (this.isAlive()) {
          if (this.world.isRemote) {
             this.field6069 = this.field6068;
@@ -279,7 +279,7 @@ public class Class1105 extends Class1009 {
          }
       }
 
-      super.livingEntity();
+      super.livingTick();
    }
 
    public SoundEvent method5307() {

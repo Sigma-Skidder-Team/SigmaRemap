@@ -3,11 +3,11 @@ package net.minecraft.network.play.server;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SEntityTeleportPacket implements Packet<IClientPlayNetHandler> {
+public class SEntityTeleportPacket implements IPacket<IClientPlayNetHandler> {
     private int entityId;
    private double posX;
    private double posY;

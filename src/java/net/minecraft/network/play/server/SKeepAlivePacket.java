@@ -2,11 +2,11 @@ package net.minecraft.network.play.server;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SKeepAlivePacket implements Packet<IClientPlayNetHandler> {
+public class SKeepAlivePacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24658;
    private long field24659;
 

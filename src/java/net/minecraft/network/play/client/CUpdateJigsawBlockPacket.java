@@ -1,7 +1,7 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.util.ResourceLocation;
@@ -9,7 +9,7 @@ import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
 
-public class CUpdateJigsawBlockPacket implements Packet<IServerPlayNetHandler> {
+public class CUpdateJigsawBlockPacket implements IPacket<IServerPlayNetHandler> {
    private BlockPos field_218790_a;
    private ResourceLocation field_240847_b_;
    private ResourceLocation field_240848_c_;

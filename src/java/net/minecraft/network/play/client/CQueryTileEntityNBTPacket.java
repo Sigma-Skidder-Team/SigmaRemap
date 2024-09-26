@@ -1,13 +1,13 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
 
-public class CQueryTileEntityNBTPacket implements Packet<IServerPlayNetHandler> {
+public class CQueryTileEntityNBTPacket implements IPacket<IServerPlayNetHandler> {
     private int transactionId;
    private BlockPos pos;
 

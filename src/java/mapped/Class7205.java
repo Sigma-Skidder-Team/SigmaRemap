@@ -23,7 +23,7 @@ public interface Class7205 {
    }
 
    default IBakedModel method22630(Class2327 var1, MatrixStack var2) {
-      return (IBakedModel)Class9299.field42871.method20217(this.method22627(), var1, var2);
+      return (IBakedModel) Reflector.field42871.method20217(this.method22627(), var1, var2);
    }
 
    default Class7180 method22631(IBlockDisplayReader var1, BlockPos var2, BlockState var3, Class7180 var4) {

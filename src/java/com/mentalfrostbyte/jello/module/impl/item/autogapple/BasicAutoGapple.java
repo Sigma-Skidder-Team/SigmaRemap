@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.item.AutoGapple;
 import mapped.*;
 import net.minecraft.item.Items;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SEntityMetadataPacket;
@@ -98,7 +98,7 @@ public class BasicAutoGapple extends Module {
     @EventTarget
     public void onReceivePacket(ReceivePacketEvent event) {
         if (this.isEnabled() && this.currentGappleSlot > 1) {
-            Packet packet = event.getPacket();
+            IPacket packet = event.getPacket();
             if (packet instanceof SEntityMetadataPacket) {
                 SEntityMetadataPacket metadataPacket = (SEntityMetadataPacket) packet;
                 if (metadataPacket.getEntityId() == mc.player.getEntityId()) {

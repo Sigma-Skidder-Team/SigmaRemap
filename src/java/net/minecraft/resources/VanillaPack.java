@@ -66,7 +66,7 @@ public class VanillaPack implements IResourcePack {
    });
    public final Set<String> resourceNamespaces;
    private static final boolean field1193 = Util.getOSType() == OS.WINDOWS;
-   private static final boolean field1194 = Class9299.field42864.method20245();
+   private static final boolean field1194 = Reflector.field42864.method20245();
 
    public VanillaPack(String... resourceNamespacesIn)
    {

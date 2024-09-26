@@ -6,7 +6,7 @@ public class Class4522 extends Class4510 {
    private final boolean field21827;
 
    public Class4522(boolean var1) {
-      super("shade_model", () -> RenderSystem.method27866(!var1 ? 7424 : 7425), () -> RenderSystem.method27866(7424));
+      super("shade_model", () -> RenderSystem.shadeModel(!var1 ? 7424 : 7425), () -> RenderSystem.shadeModel(7424));
       this.field21827 = var1;
    }
 

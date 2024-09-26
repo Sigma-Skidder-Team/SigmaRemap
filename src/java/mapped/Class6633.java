@@ -46,19 +46,19 @@ public class Class6633 implements Class6632 {
    }
 
    public Object method20234() {
-      return Class9299.method35072(null, this);
+      return Reflector.method35072(null, this);
    }
 
    public Object method20235(Object var1) {
-      return Class9299.method35072(var1, this);
+      return Reflector.method35072(var1, this);
    }
 
    public void method20236(Object var1) {
-      Class9299.method35082(null, this, var1);
+      Reflector.method35082(null, this, var1);
    }
 
    public void method20237(Object var1, Object var2) {
-      Class9299.method35082(var1, this, var2);
+      Reflector.method35082(var1, this, var2);
    }
 
    public boolean method20238() {

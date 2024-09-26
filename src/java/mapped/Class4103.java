@@ -17,7 +17,7 @@ public class Class4103 extends Class4057 {
    public Class7219 method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2889) {
          Class2889 var5 = (Class2889)var1;
-         return !var2.equals("knot") ? null : (Class7219)Class9299.field43065.method20235(var5);
+         return !var2.equals("knot") ? null : (Class7219) Reflector.field43065.method20235(var5);
       } else {
          return null;
       }
@@ -32,8 +32,8 @@ public class Class4103 extends Class4057 {
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5739 var6 = new Class5739(var5);
-      if (Class9299.field43067.method20238()) {
-         Class9299.method35082(var6, Class9299.field43067, var1);
+      if (Reflector.field43067.method20238()) {
+         Reflector.method35082(var6, Reflector.field43067, var1);
          var6.field25098 = var2;
          return (Class9492)var6;
       } else {

@@ -17,7 +17,9 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.network.login.IClientLoginNetHandler;
+import net.minecraft.network.NetworkManager;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.network.ProtocolType;
 import net.minecraft.network.login.server.*;
 import net.minecraft.realms.RealmsScreen;
 import net.minecraft.util.CryptException;
@@ -64,7 +66,7 @@ public class ClientLoginNetHandler implements IClientLoginNetHandler {
          ITextComponent var7x = this.method15585(var6);
          if (var7x != null) {
             if (this.field23200.getCurrentServerData() == null || !this.field23200.getCurrentServerData().isOnLAN()) {
-               this.field23203.method30701(var7x);
+               this.field23203.closeChannel(var7x);
                return;
             }
 
@@ -72,7 +74,7 @@ public class ClientLoginNetHandler implements IClientLoginNetHandler {
          }
 
          this.field23202.accept(new TranslationTextComponent("connect.encrypting"));
-         this.field23203.method30694(var9, var3x -> this.field23203.method30705(var7, var8));
+         this.field23203.sendPacket(var9, var3x -> this.field23203.func_244777_a(var7, var8));
       });
    }
 
@@ -100,12 +102,12 @@ public class ClientLoginNetHandler implements IClientLoginNetHandler {
    public void handleLoginSuccess(SLoginSuccessPacket var1) {
       this.field23202.accept(new TranslationTextComponent("connect.joining"));
       this.field23204 = var1.getProfile();
-      this.field23203.method30690(ProtocolType.field9902);
+      this.field23203.setConnectionState(ProtocolType.field9902);
       this.field23203.setNetHandler(new ClientPlayNetHandler(this.field23200, this.field23201, this.field23203, this.field23204));
    }
 
    @Override
-   public void method15588(ITextComponent var1) {
+   public void onDisconnect(ITextComponent var1) {
       if (this.field23201 != null && this.field23201 instanceof RealmsScreen) {
          this.field23200.displayGuiScreen(new Class801(this.field23201, DialogTexts.field30664, var1));
       } else {
@@ -120,13 +122,13 @@ public class ClientLoginNetHandler implements IClientLoginNetHandler {
 
    @Override
    public void handleDisconnect(SDisconnectLoginPacket var1) {
-      this.field23203.method30701(var1.getReason());
+      this.field23203.closeChannel(var1.getReason());
    }
 
    @Override
    public void handleEnableCompression(SEnableCompressionPacket var1) {
-      if (!this.field23203.method30702()) {
-         this.field23203.method30712(var1.getCompressionThreshold());
+      if (!this.field23203.isLocalChannel()) {
+         this.field23203.setCompressionThreshold(var1.getCompressionThreshold());
       }
    }
 

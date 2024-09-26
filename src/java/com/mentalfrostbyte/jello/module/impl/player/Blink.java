@@ -4,8 +4,8 @@ import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import mapped.*;
-import net.minecraft.network.Packet;
+import net.minecraft.client.entity.player.RemoteClientPlayerEntity;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.*;
 import net.minecraft.util.math.vector.Vector3d;
 
@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Blink extends Module {
-    public static Class1116 field23863;
-    public float field23866;
-    public float field23867;
-    private final List<Packet<?>> field23864 = new ArrayList<Packet<?>>();
-    private Vector3d field23865;
+    public static RemoteClientPlayerEntity clientPlayerEntity;
+    public float yaw;
+    public float pitch;
+    private final List<IPacket<?>> packets = new ArrayList<>();
+    private Vector3d vector;
 
     public Blink() {
         super(ModuleCategory.PLAYER, "Blink", "Stops your packets to blink");
@@ -25,26 +25,26 @@ public class Blink extends Module {
 
     @Override
     public void onEnable() {
-        this.field23865 = new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
-        this.field23866 = mc.player.rotationYaw;
-        this.field23867 = mc.player.rotationPitch;
-        field23863 = new Class1116(mc.world, mc.player.getGameProfile());
-        field23863.inventory = mc.player.inventory;
-        field23863.method3269(this.field23865.x, this.field23865.y, this.field23865.z, this.field23866, this.field23867);
-        field23863.rotationYawHead = mc.player.rotationYawHead;
-        mc.world.method6846(-1, field23863);
+        this.vector = new Vector3d(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
+        this.yaw = mc.player.rotationYaw;
+        this.pitch = mc.player.rotationPitch;
+        clientPlayerEntity = new RemoteClientPlayerEntity(mc.world, mc.player.getGameProfile());
+        clientPlayerEntity.inventory = mc.player.inventory;
+        clientPlayerEntity.setPositionAndRotation(this.vector.x, this.vector.y, this.vector.z, this.yaw, this.pitch);
+        clientPlayerEntity.rotationYawHead = mc.player.rotationYawHead;
+        mc.world.method6846(-1, clientPlayerEntity);
     }
 
     @Override
     public void onDisable() {
-        int var3 = this.field23864.size();
+        int packetAmount = this.packets.size();
 
-        for (int var4 = 0; var4 < var3; var4++) {
-            mc.getConnection().sendPacket(this.field23864.get(var4));
+        for (int i = 0; i < packetAmount; i++) {
+            mc.getConnection().sendPacket(this.packets.get(i));
         }
 
-        this.field23864.clear();
-        mc.world.method6848(-1);
+        this.packets.clear();
+        mc.world.removeEntityFromWorld(-1);
     }
 
     @EventTarget
@@ -55,7 +55,7 @@ public class Blink extends Module {
                     || var1.getPacket() instanceof CUseEntityPacket
                     || var1.getPacket() instanceof CAnimateHandPacket
                     || var1.getPacket() instanceof CPlayerTryUseItemPacket) {
-                this.field23864.add(var1.getPacket());
+                this.packets.add(var1.getPacket());
                 var1.setCancelled(true);
             }
         }

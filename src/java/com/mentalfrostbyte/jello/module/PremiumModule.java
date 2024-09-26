@@ -19,7 +19,7 @@ public class PremiumModule extends Module {
          super.setState(enabled);
       } else {
          if (this.enabled != enabled) {
-            Client.getInstance().getNotificationManager().post(new Notification("Premium", this.getName() + " Not yet available for free version"));
+            Client.getInstance().getNotificationManager().send(new Notification("Premium", this.getName() + " Not yet available for free version"));
             Client.getInstance().getSoundManager().play("error");
          }
       }
@@ -31,7 +31,7 @@ public class PremiumModule extends Module {
          super.method15998(var1);
       } else {
          if (this.enabled != var1 && var1) {
-            Client.getInstance().getNotificationManager().post(new Notification("Premium", this.getName() + " Not yet available for free version"));
+            Client.getInstance().getNotificationManager().send(new Notification("Premium", this.getName() + " Not yet available for free version"));
             Client.getInstance().getSoundManager().play("error");
          }
       }
@@ -43,7 +43,7 @@ public class PremiumModule extends Module {
          super.setEnabled(newEnabled);
       } else {
          if (this.isEnabled() != newEnabled) {
-            Client.getInstance().getNotificationManager().post(new Notification("Premium", this.getName() + " Not yet available for free version"));
+            Client.getInstance().getNotificationManager().send(new Notification("Premium", this.getName() + " Not yet available for free version"));
             Client.getInstance().getSoundManager().play("error");
          }
       }

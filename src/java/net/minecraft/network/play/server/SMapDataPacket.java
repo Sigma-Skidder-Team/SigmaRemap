@@ -5,12 +5,12 @@ import mapped.Class7982;
 import mapped.MapDecorationType;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 import java.util.Collection;
 
-public class SMapDataPacket implements Packet<IClientPlayNetHandler> {
+public class SMapDataPacket implements IPacket<IClientPlayNetHandler> {
    private int field24891;
    private byte field24892;
    private boolean field24893;

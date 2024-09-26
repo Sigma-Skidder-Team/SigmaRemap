@@ -17,6 +17,7 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
+import net.minecraft.network.NetworkManager;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -224,8 +225,8 @@ public class Class1262 extends AbstractGui {
    public List<String> method5882() {
       IntegratedServer var3 = this.field6665.getIntegratedServer();
       NetworkManager var4 = this.field6665.getConnection().getNetworkManager();
-      float var5 = var4.method30715();
-      float var6 = var4.method30714();
+      float var5 = var4.getPacketsSent();
+      float var6 = var4.getPacketsReceived();
       String var7;
       if (var3 != null) {
          var7 = String.format("Integrated server @ %.0f ms ticks, %.0f tx, %.0f rx", var3.method1417(), var5, var6);
@@ -517,10 +518,10 @@ public class Class1262 extends AbstractGui {
       String var18 = "Native: " + method5893(var12) + "/" + method5893(var14) + "+" + method5893(var16) + "MB";
       var11.add(3, var18);
       var11.set(4, "GC: " + Class8777.method31655() + "MB/s");
-      if (Class9299.field42763.method20214()) {
+      if (Reflector.field42763.exists()) {
          var11.add("");
 
-         for (String var20 : (Iterable<String>)Class9299.method35062(Class9299.field42763, true, false)) {
+         for (String var20 : (Iterable<String>) Reflector.method35062(Reflector.field42763, true, false)) {
             if (!var20.startsWith("Minecraft ")) {
                var11.add(var20);
             }
@@ -544,10 +545,10 @@ public class Class1262 extends AbstractGui {
             }
 
             Collection<ResourceLocation> var30;
-            if (!Class9299.field42818.method20214()) {
+            if (!Reflector.field42818.exists()) {
                var30 = this.field6665.getConnection().method15798().method32657().method27138(var27.getBlock());
             } else {
-               var30 = (Collection)Class9299.method35070(var27.getBlock(), Class9299.field42818);
+               var30 = (Collection) Reflector.call(var27.getBlock(), Reflector.field42818);
             }
 
             for (ResourceLocation var23 : var30) {
@@ -569,10 +570,10 @@ public class Class1262 extends AbstractGui {
             }
 
             Collection<ResourceLocation> var32;
-            if (!Class9299.field42853.method20214()) {
+            if (!Reflector.field42853.exists()) {
                var32 = this.field6665.getConnection().method15798().method32659().method27138(var28.method23472());
             } else {
-               var32 = (Collection)Class9299.method35070(var28.method23472(), Class9299.field42853);
+               var32 = (Collection) Reflector.call(var28.method23472(), Reflector.field42853);
             }
 
             for (ResourceLocation var36 : var32) {
@@ -585,8 +586,8 @@ public class Class1262 extends AbstractGui {
             var11.add("");
             var11.add(TextFormatting.UNDERLINE + "Targeted Entity");
             var11.add(String.valueOf(Registry.ENTITY_TYPE.getKey(var26.getType())));
-            if (Class9299.field42842.method20214()) {
-               Collection var29 = (Collection)Class9299.method35070(var26.getType(), Class9299.field42842);
+            if (Reflector.field42842.exists()) {
+               Collection var29 = (Collection) Reflector.call(var26.getType(), Reflector.field42842);
                var29.forEach(var1 -> var11.add("#" + var1));
             }
          }

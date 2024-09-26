@@ -3,12 +3,12 @@ package net.minecraft.network.play.server;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 import java.util.List;
 
-public class SSetPassengersPacket implements Packet<IClientPlayNetHandler> {
+public class SSetPassengersPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24353;
    private int field24354;
    private int[] field24355;

@@ -22,21 +22,21 @@ public class Class4065 extends Class4057 {
                if (!var2.equals("right_wing")) {
                   if (!var2.equals("left_wing")) {
                      if (!var2.equals("outer_right_wing")) {
-                        return !var2.equals("outer_left_wing") ? null : (Class7219)Class9299.method35075(var5, Class9299.field43026, 5);
+                        return !var2.equals("outer_left_wing") ? null : (Class7219) Reflector.method35075(var5, Reflector.field43026, 5);
                      } else {
-                        return (Class7219)Class9299.method35075(var5, Class9299.field43026, 4);
+                        return (Class7219) Reflector.method35075(var5, Reflector.field43026, 4);
                      }
                   } else {
-                     return (Class7219)Class9299.method35075(var5, Class9299.field43026, 3);
+                     return (Class7219) Reflector.method35075(var5, Reflector.field43026, 3);
                   }
                } else {
-                  return (Class7219)Class9299.method35075(var5, Class9299.field43026, 2);
+                  return (Class7219) Reflector.method35075(var5, Reflector.field43026, 2);
                }
             } else {
-               return (Class7219)Class9299.method35075(var5, Class9299.field43026, 1);
+               return (Class7219) Reflector.method35075(var5, Reflector.field43026, 1);
             }
          } else {
-            return (Class7219)Class9299.method35075(var5, Class9299.field43026, 0);
+            return (Class7219) Reflector.method35075(var5, Reflector.field43026, 0);
          }
       } else {
          return null;

@@ -1,12 +1,12 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CQueryEntityNBTPacket implements Packet<IServerPlayNetHandler> {
+public class CQueryEntityNBTPacket implements IPacket<IServerPlayNetHandler> {
    private static String[] field24670;
    private int field24671;
    private int field24672;

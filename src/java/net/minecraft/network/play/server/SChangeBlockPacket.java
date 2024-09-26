@@ -5,12 +5,12 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
 
-public class SChangeBlockPacket implements Packet<IClientPlayNetHandler> {
+public class SChangeBlockPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24886;
    private BlockPos field24887;
    private BlockState field24888;

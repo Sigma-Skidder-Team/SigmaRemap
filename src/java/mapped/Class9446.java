@@ -30,7 +30,7 @@ public class Class9446 {
    private static final int field43890 = 13;
    private static final int field43891 = 8;
    private static final int field43892 = 8;
-   private static final DataParameter<ItemStack> field43893 = (DataParameter<ItemStack>)Class9299.field43007.method20234();
+   private static final DataParameter<ItemStack> field43893 = (DataParameter<ItemStack>) Reflector.field43007.method20234();
    private static boolean field43894;
 
    public static void method36307(Entity var0, WorldRenderer var1) {

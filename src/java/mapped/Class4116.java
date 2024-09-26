@@ -64,8 +64,8 @@ public class Class4116 extends Class4057 {
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5725 var6 = new Class5725(var5);
-      if (Class9299.field43136.method20238()) {
-         Class9299.method35082(var6, Class9299.field43136, var1);
+      if (Reflector.field43136.method20238()) {
+         Reflector.method35082(var6, Reflector.field43136, var1);
          var6.field25098 = var2;
          return (Class9492)var6;
       } else {

@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
@@ -156,7 +157,7 @@ public class YPortSpeed extends Module {
             mc.player.field4915 = this.field23542;
             mc.player.prevPosY = this.field23542;
             if (MovementUtils.isMoving()) {
-                mc.player.field4909 = 0.099999994F;
+                mc.player.cameraYaw = 0.099999994F;
             }
         }
     }

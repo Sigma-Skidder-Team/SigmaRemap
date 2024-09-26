@@ -11,14 +11,14 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 
 import java.util.ArrayList;
 
 public class NCPStep extends Module {
     private float field23992;
-    private final ArrayList<Packet<?>> field23993 = new ArrayList<Packet<?>>();
+    private final ArrayList<IPacket<?>> field23993 = new ArrayList<IPacket<?>>();
     private int field23994;
 
     public NCPStep() {
@@ -123,8 +123,8 @@ public class NCPStep extends Module {
             this.field23993.add(var1.getPacket());
             var1.setCancelled(true);
             if (this.field23994 == 0) {
-                for (Packet var5 : this.field23993) {
-                    mc.getConnection().getNetworkManager().method30695(var5);
+                for (IPacket var5 : this.field23993) {
+                    mc.getConnection().getNetworkManager().sendNoEventPacket(var5);
                 }
 
                 this.field23993.clear();

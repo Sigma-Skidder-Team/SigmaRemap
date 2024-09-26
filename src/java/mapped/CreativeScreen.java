@@ -729,7 +729,7 @@ public class CreativeScreen extends Class860<Class5820> {
       this.field4563.field847 = 100.0F;
       var10 += 6;
       var11 = var11 + 8 + (!var6 ? -1 : 1);
-      RenderSystem.method27867();
+      RenderSystem.enableRescaleNormal();
       ItemStack var13 = var2.method23644();
       this.field4563.method793(var13, var10, var11);
       this.field4563.method797(this.fontRenderer, var13, var10, var11);

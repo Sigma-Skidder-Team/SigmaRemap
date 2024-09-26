@@ -13,9 +13,8 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class FriendManager {
-    public List<String> field34176 = new CopyOnWriteArrayList<String>();
-    public List<String> field34177 = new CopyOnWriteArrayList<String>();
-    public int field34178 = 0;
+    public List<String> field34176 = new CopyOnWriteArrayList<>();
+    public List<String> friends = new CopyOnWriteArrayList<>();
     private final Minecraft field34179 = Minecraft.getInstance();
 
     public void method26995() {
@@ -52,12 +51,12 @@ public class FriendManager {
         return this.field34176.contains(var1.toLowerCase());
     }
 
-    public boolean method26999(Entity var1) {
-        return this.field34177.contains(var1.getName().getUnformattedComponentText().toLowerCase());
+    public boolean isFriend(Entity var1) {
+        return this.friends.contains(var1.getName().getUnformattedComponentText().toLowerCase());
     }
 
     public boolean method27000(String var1) {
-        return this.field34177.contains(var1.toLowerCase());
+        return this.friends.contains(var1.toLowerCase());
     }
 
     public boolean method27001(String var1) {
@@ -74,7 +73,7 @@ public class FriendManager {
         if (this.method27000(var1)) {
             return false;
         } else {
-            this.field34177.add(var1.toLowerCase());
+            this.friends.add(var1.toLowerCase());
             this.method27010();
             return true;
         }
@@ -85,7 +84,7 @@ public class FriendManager {
     }
 
     public List<String> method27004() {
-        return this.field34177;
+        return this.friends;
     }
 
     public boolean method27005(String var1) {
@@ -98,7 +97,7 @@ public class FriendManager {
     }
 
     public boolean method27006(String var1) {
-        boolean var4 = this.field34177.remove(var1.toLowerCase());
+        boolean var4 = this.friends.remove(var1.toLowerCase());
         if (var4) {
             this.method27010();
         }
@@ -117,8 +116,8 @@ public class FriendManager {
     }
 
     public boolean method27008() {
-        if (!this.field34177.isEmpty()) {
-            this.field34177.clear();
+        if (!this.friends.isEmpty()) {
+            this.friends.clear();
             this.method27010();
             return true;
         } else {
@@ -131,7 +130,7 @@ public class FriendManager {
     }
 
     public void method27010() {
-        Client.getInstance().getConfig().method21801("enemies", this.field34177);
+        Client.getInstance().getConfig().method21801("enemies", this.friends);
     }
 
     private void method27011() {
@@ -145,7 +144,7 @@ public class FriendManager {
         if (Client.getInstance().getConfig().has("enemies")) {
             JSONArray var4 = Client.getInstance().getConfig().getJSONArray("enemies");
             if (var4 != null) {
-                var4.forEach(var1 -> this.field34177.add((String) var1));
+                var4.forEach(var1 -> this.friends.add((String) var1));
             }
         }
     }

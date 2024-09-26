@@ -4,7 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.Pose;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.DamageSource;
 
 public class Class908 extends Entity {
@@ -49,7 +49,7 @@ public class Class908 extends Entity {
    }
 
    @Override
-   public Packet<?> createSpawnPacket() {
+   public IPacket<?> createSpawnPacket() {
       throw new UnsupportedOperationException();
    }
 

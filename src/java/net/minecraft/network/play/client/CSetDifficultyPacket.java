@@ -1,13 +1,13 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.world.Difficulty;
 
 import java.io.IOException;
 
-public class CSetDifficultyPacket implements Packet<IServerPlayNetHandler> {
+public class CSetDifficultyPacket implements IPacket<IServerPlayNetHandler> {
     private Difficulty field_218774_a;
 
    public CSetDifficultyPacket() {

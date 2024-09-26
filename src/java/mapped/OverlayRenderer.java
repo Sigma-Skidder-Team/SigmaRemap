@@ -22,13 +22,13 @@ public class OverlayRenderer {
       RenderSystem.method27817();
       ClientPlayerEntity var4 = var0.player;
       if (!var4.noClip) {
-         if (Class9299.field42849.method20214() && Class9299.field42822.method20214()) {
+         if (Reflector.field42849.exists() && Reflector.field42822.exists()) {
             Pair var8 = method18791(var4);
             if (var8 != null) {
-               Object var6 = Class9299.method35071(Class9299.field42984);
-               if (!Class9299.field42849.method20218(var4, var1, var6, var8.getLeft(), var8.getRight())) {
-                  TextureAtlasSprite var7 = (TextureAtlasSprite)Class9299.method35070(
-                     var0.getBlockRendererDispatcher().getBlockModelShapes(), Class9299.field42822, var8.getLeft(), var0.world, var8.getRight()
+               Object var6 = Reflector.method35071(Reflector.field42984);
+               if (!Reflector.field42849.method20218(var4, var1, var6, var8.getLeft(), var8.getRight())) {
+                  TextureAtlasSprite var7 = (TextureAtlasSprite) Reflector.call(
+                     var0.getBlockRendererDispatcher().getBlockModelShapes(), Reflector.field42822, var8.getLeft(), var0.world, var8.getRight()
                   );
                   method18792(var0, var7, var1);
                }
@@ -42,11 +42,11 @@ public class OverlayRenderer {
       }
 
       if (!var0.player.isSpectator()) {
-         if (var0.player.areEyesInFluid(FluidTags.field40469) && !Class9299.field42851.method20218(var4, var1)) {
+         if (var0.player.areEyesInFluid(FluidTags.field40469) && !Reflector.field42851.method20218(var4, var1)) {
             renderUnderwater(var0, var1);
          }
 
-         if (var0.player.isBurning() && !Class9299.field42850.method20218(var4, var1)) {
+         if (var0.player.isBurning() && !Reflector.field42850.method20218(var4, var1)) {
             renderFire(var0, var1);
          }
       }

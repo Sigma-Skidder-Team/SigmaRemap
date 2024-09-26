@@ -5,11 +5,11 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SEntityVelocityPacket implements Packet<IClientPlayNetHandler> {
+public class SEntityVelocityPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24799;
    public int entityID;
    public int motionX;

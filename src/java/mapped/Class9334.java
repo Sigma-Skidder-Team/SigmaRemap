@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.network.ProtocolType;
+
 // $VF: synthetic class
 public class Class9334 {
    private static String[] field43313;

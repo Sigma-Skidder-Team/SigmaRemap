@@ -2,11 +2,11 @@ package net.minecraft.network.play.server;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SWindowPropertyPacket implements Packet<IClientPlayNetHandler> {
+public class SWindowPropertyPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24334;
    private int field24335;
    private int field24336;

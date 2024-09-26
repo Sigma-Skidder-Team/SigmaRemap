@@ -22,39 +22,39 @@ public class Class4112 extends Class4057 {
             if (!var2.equals("body_back")) {
                if (!var2.equals("head")) {
                   if (var2.equals("fin_back_1")) {
-                     Class7219 var6 = (Class7219)Class9299.field43094.method36565(var5, 0);
+                     Class7219 var6 = (Class7219) Reflector.field43094.method36565(var5, 0);
                      if (var6 != null) {
                         return var6.method22692(0);
                      }
                   }
 
                   if (var2.equals("fin_back_2")) {
-                     Class7219 var7 = (Class7219)Class9299.field43094.method36565(var5, 1);
+                     Class7219 var7 = (Class7219) Reflector.field43094.method36565(var5, 1);
                      if (var7 != null) {
                         return var7.method22692(1);
                      }
                   }
 
                   if (var2.equals("tail")) {
-                     Class7219 var8 = (Class7219)Class9299.field43094.method36565(var5, 1);
+                     Class7219 var8 = (Class7219) Reflector.field43094.method36565(var5, 1);
                      if (var8 != null) {
                         return var8.method22692(0);
                      }
                   }
 
                   if (!var2.equals("fin_right")) {
-                     return !var2.equals("fin_left") ? null : (Class7219)Class9299.field43094.method36565(var5, 4);
+                     return !var2.equals("fin_left") ? null : (Class7219) Reflector.field43094.method36565(var5, 4);
                   } else {
-                     return (Class7219)Class9299.field43094.method36565(var5, 3);
+                     return (Class7219) Reflector.field43094.method36565(var5, 3);
                   }
                } else {
-                  return (Class7219)Class9299.field43094.method36565(var5, 2);
+                  return (Class7219) Reflector.field43094.method36565(var5, 2);
                }
             } else {
-               return (Class7219)Class9299.field43094.method36565(var5, 1);
+               return (Class7219) Reflector.field43094.method36565(var5, 1);
             }
          } else {
-            return (Class7219)Class9299.field43094.method36565(var5, 0);
+            return (Class7219) Reflector.field43094.method36565(var5, 0);
          }
       } else {
          return null;

@@ -5,7 +5,7 @@ import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -15,7 +15,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
-public class SEntityPropertiesPacket implements Packet<IClientPlayNetHandler> {
+public class SEntityPropertiesPacket implements IPacket<IClientPlayNetHandler> {
    private int entityId;
    private final List<Snapshot> snapshots = Lists.newArrayList();
 

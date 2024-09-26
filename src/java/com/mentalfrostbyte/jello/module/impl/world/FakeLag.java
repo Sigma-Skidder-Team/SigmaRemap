@@ -5,18 +5,18 @@ import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
-import mapped.*;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.*;
 
 import java.util.ArrayList;
 
 public class FakeLag extends Module {
-    private final ArrayList<Packet<?>> field23989 = new ArrayList<Packet<?>>();
-    private final TimerUtil field23990 = new TimerUtil();
-    private boolean field23991;
+    private final ArrayList<IPacket<?>> packets = new ArrayList<>();
+    private final TimerUtil timerUtil = new TimerUtil();
+    private boolean isLagging;
 
     public FakeLag() {
         super(ModuleCategory.WORLD, "FakeLag", "Other players will see you lagging !");
@@ -25,72 +25,84 @@ public class FakeLag extends Module {
         this.registerSetting(new BooleanSetting("Combat", "Delay combat packets", true));
         this.registerSetting(new BooleanSetting("Blocks", "Delay blocks packets", true));
         this.registerSetting(new BooleanSetting("Ping", "Delay ping packets", true));
-        this.field23990.start();
+        this.timerUtil.start();
     }
 
     @Override
     public void onEnable() {
-        this.field23989.clear();
-        this.field23991 = false;
-        this.field23990.method27120();
+        this.packets.clear();
+        this.isLagging = false;
+        this.timerUtil.reset();
     }
 
     @Override
     public void onDisable() {
-        for (Packet var4 : this.field23989) {
-            mc.getConnection().getNetworkManager().method30695(var4);
+        for (IPacket<?> packet : this.packets) {
+            mc.getConnection().getNetworkManager().sendNoEventPacket(packet);
         }
     }
 
     @EventTarget
-    private void method16910(WorldLoadEvent var1) {
+    private void onWorldLoad(WorldLoadEvent var1) {
         if (this.isEnabled()) {
-            this.field23989.clear();
-            this.field23991 = false;
-            this.field23990.method27120();
+            this.packets.clear();
+            this.isLagging = false;
+            this.timerUtil.reset();
         }
     }
 
     @EventTarget
-    private void method16911(SendPacketEvent var1) {
-        if (this.isEnabled() && mc.getConnection() != null) {
-            if (!this.field23991) {
-                if ((float) this.field23990.method27121() > this.getNumberValueBySettingName("Delay") * 1000.0F) {
-                    this.field23991 = true;
-                    this.field23990.method27120();
-                }
-            } else if (!((float) this.field23990.method27121() > this.getNumberValueBySettingName("Lag duration") * 1000.0F)) {
-                if (!(var1.getPacket() instanceof CPlayerPacket)) {
-                    if (!(var1.getPacket() instanceof CKeepAlivePacket) && !(var1.getPacket() instanceof CConfirmTransactionPacket)) {
-                        if (!(var1.getPacket() instanceof CUseEntityPacket) && !(var1.getPacket() instanceof CAnimateHandPacket)) {
-                            if (!(var1.getPacket() instanceof CPlayerTryUseItemPacket) && !(var1.getPacket() instanceof CPlayerDiggingPacket) && !(var1.getPacket() instanceof CPlayerTryUseItemOnBlockPacket)
-                            ) {
-                                return;
-                            }
+    private void onSendPacket(SendPacketEvent event) {
+        if (!this.isEnabled() || mc.getConnection() == null) {
+            return;
+        }
 
-                            if (!this.getBooleanValueFromSetttingName("Blocks")) {
-                                return;
-                            }
-                        } else if (!this.getBooleanValueFromSetttingName("Combat")) {
-                            return;
-                        }
-                    } else if (!this.getBooleanValueFromSetttingName("Ping")) {
-                        return;
-                    }
-                }
+        if (!this.isLagging) {
+            // Check if delay period has passed, then start lagging
+            if (this.timerUtil.getElapsedTime() > this.getNumberValueBySettingName("Delay") * 1000.0F) {
+                this.isLagging = true;
+                this.timerUtil.reset();
+            }
+        } else {
+            // If lag duration has not ended, process packets
+            if (this.timerUtil.getElapsedTime() <= this.getNumberValueBySettingName("Lag duration") * 1000.0F) {
+                IPacket<?> packet = event.getPacket();
 
-                this.field23989.add(var1.getPacket());
-                var1.setCancelled(true);
+                // Check for packet types and module settings
+                if (shouldDelayPacket(packet)) {
+                    this.packets.add(packet);
+                    event.setCancelled(true);
+                }
             } else {
-                this.field23991 = false;
-                this.field23990.method27120();
+                // End lagging and send all delayed packets
+                this.isLagging = false;
+                this.timerUtil.reset();
 
-                for (Packet var5 : this.field23989) {
-                    mc.getConnection().getNetworkManager().method30695(var5);
+                for (IPacket<?> packet : this.packets) {
+                    mc.getConnection().getNetworkManager().sendNoEventPacket(packet);
                 }
-
-                this.field23989.clear();
+                this.packets.clear();
             }
         }
+    }
+
+    private boolean shouldDelayPacket(IPacket<?> packet) {
+        if (packet instanceof CPlayerPacket) {
+            return false;
+        }
+
+        if (packet instanceof CKeepAlivePacket || packet instanceof CConfirmTransactionPacket) {
+            return this.getBooleanValueFromSetttingName("Ping");
+        }
+
+        if (packet instanceof CUseEntityPacket || packet instanceof CAnimateHandPacket) {
+            return this.getBooleanValueFromSetttingName("Combat");
+        }
+
+        if (packet instanceof CPlayerTryUseItemPacket || packet instanceof CPlayerDiggingPacket || packet instanceof CPlayerTryUseItemOnBlockPacket) {
+            return this.getBooleanValueFromSetttingName("Blocks");
+        }
+
+        return false;
     }
 }

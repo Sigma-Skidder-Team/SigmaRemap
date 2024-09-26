@@ -2,12 +2,12 @@ package net.minecraft.network.play.server;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
 
-public class SWorldSpawnChangedPacket implements Packet<IClientPlayNetHandler> {
+public class SWorldSpawnChangedPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24511;
    private BlockPos field24512;
    private float field24513;

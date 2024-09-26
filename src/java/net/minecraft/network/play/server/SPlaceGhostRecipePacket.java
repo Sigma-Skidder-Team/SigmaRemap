@@ -4,11 +4,11 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SPlaceGhostRecipePacket implements Packet<IClientPlayNetHandler> {
+public class SPlaceGhostRecipePacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24796;
    private int field24797;
    private ResourceLocation field24798;

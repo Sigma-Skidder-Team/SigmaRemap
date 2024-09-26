@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.impl.render.Freecam;
 import com.mentalfrostbyte.jello.module.impl.render.NameProtect;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.unmapped.Class8433;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.ColorUtils;
@@ -113,7 +114,7 @@ public class NameTags extends Module {
             for (Entity var7 : BlockUtil.method34549(ColorUtils.method17680())) {
                 if (var7 != mc.player
                         && var7 != Freecam.field23814
-                        && var7 != Blink.field23863
+                        && var7 != Blink.clientPlayerEntity
                         && !var7.isInvisible()
                         && !Client.getInstance().getCombatManager().isValidTarget(var7)) {
                     this.field24005.add(var7);
@@ -408,7 +409,7 @@ public class NameTags extends Module {
             GL11.glScalef(-0.009F * var8, -0.009F * var8, -0.009F * var8);
             int var19 = this.field24008;
             if (!Client.getInstance().getFriendManager().method26997(var7)) {
-                if (Client.getInstance().getFriendManager().method26999(var7)) {
+                if (Client.getInstance().getFriendManager().isFriend(var7)) {
                     var19 = ColorUtils.applyAlpha(-6750208, 0.5F);
                 }
             } else {

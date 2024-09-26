@@ -14,12 +14,12 @@ public class TimerUtil {
         this.enabled = false;
     }
 
-    public void method27120() {
+    public void reset() {
         this.currentTime = 0L;
         this.systemCurrentTime = System.currentTimeMillis();
     }
 
-    public long method27121() {
+    public long getElapsedTime() {
         if (this.enabled) {
             this.currentTime = this.currentTime + (System.currentTimeMillis() - this.systemCurrentTime);
             this.systemCurrentTime = System.currentTimeMillis();
@@ -28,9 +28,9 @@ public class TimerUtil {
         return this.currentTime;
     }
 
-    public void method27122(long var1) {
-        this.systemCurrentTime = System.currentTimeMillis() - var1;
-        this.currentTime = var1;
+    public void setElapsedTime(long time) {
+        this.systemCurrentTime = System.currentTimeMillis() - time;
+        this.currentTime = time;
     }
 
     public boolean isEnabled() {

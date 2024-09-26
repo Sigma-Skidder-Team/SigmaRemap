@@ -791,9 +791,9 @@ public class Shaders {
         boolean var5 = method32995() != var1;
         if (var4 || var5) {
             DefaultVertexFormats.method35343();
-            if (Class9299.field42960.method20245()) {
-                Class9299.field42961.method20236(null);
-                Class9299.field42962.method20236(null);
+            if (Reflector.field42960.method20245()) {
+                Reflector.field42961.method20236(null);
+                Reflector.field42962.method20236(null);
             }
 
             method32992();

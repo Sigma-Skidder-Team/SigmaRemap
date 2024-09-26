@@ -2,12 +2,12 @@ package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.entity.Entity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CEntityActionPacket implements Packet<IServerPlayNetHandler> {
+public class CEntityActionPacket implements IPacket<IServerPlayNetHandler> {
     private int entityID;
    private Action action;
    private int auxData;

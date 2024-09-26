@@ -17,7 +17,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.vector.Vector3d;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -26,7 +25,7 @@ public class InteractAutoBlock {
    private float[] field44344;
    public final int field44345 = 3;
    private Module parent;
-   public Minecraft field44347 = Minecraft.getInstance();
+   public Minecraft mc = Minecraft.getInstance();
    public boolean field44348;
    public HashMap<Entity, List<Class9629<Vector3d, Long>>> field44349 = new HashMap<Entity, List<Class9629<Vector3d, Long>>>();
 
@@ -49,10 +48,10 @@ public class InteractAutoBlock {
             !this.parent.getBooleanValueFromSetttingName("Raytrace") ? var1 : null, var2, var3, var0 -> true, (double)this.parent.getNumberValueBySettingName("Range")
          );
          if (var6 != null) {
-            this.field44347
+            this.mc
                .getConnection()
-               .sendPacket(new CUseEntityPacket(var6.getEntity(), Hand.MAIN_HAND, var6.method31419(), this.field44347.player.isSneaking()));
-            this.field44347.getConnection().sendPacket(new CUseEntityPacket(var6.getEntity(), Hand.MAIN_HAND, this.field44347.player.isSneaking()));
+               .sendPacket(new CUseEntityPacket(var6.getEntity(), Hand.MAIN_HAND, var6.method31419(), this.mc.player.isSneaking()));
+            this.mc.getConnection().sendPacket(new CUseEntityPacket(var6.getEntity(), Hand.MAIN_HAND, this.mc.player.isSneaking()));
          }
       }
 
@@ -67,7 +66,7 @@ public class InteractAutoBlock {
 
    public boolean method36817() {
       return !this.parent.getStringSettingValueByName("Autoblock Mode").equals("None")
-         && this.field44347.player.getHeldItemMainhand().getItem() instanceof ItemSword
+         && this.mc.player.getHeldItemMainhand().getItem() instanceof ItemSword
          && !this.method36813();
    }
 
@@ -98,9 +97,9 @@ public class InteractAutoBlock {
          var4++;
       }
 
-      if (this.field44347.player.method2973() > 1.26F && this.parent.getBooleanValueFromSetttingName("Cooldown")) {
+      if (this.mc.player.method2973() > 1.26F && this.parent.getBooleanValueFromSetttingName("Cooldown")) {
          int var11 = !var5 ? 1 : 2;
-         float var12 = this.field44347.player.method2973() - (float)this.field44347.player.ticksSinceLastSwing - (float)var11;
+         float var12 = this.mc.player.method2973() - (float)this.mc.player.ticksSinceLastSwing - (float)var11;
          return var12 <= 0.0F && var12 > -1.0F;
       } else if (var4 != 2) {
          if (var4 < 2) {
@@ -146,59 +145,59 @@ public class InteractAutoBlock {
       }
    }
 
-   public List<Class8012> method36823(float var1) {
-      ArrayList var4 = new ArrayList();
+   public List<TimedEntity> method36823(float var1) {
+      ArrayList<TimedEntity> timedEntityList = new ArrayList<>();
 
-      for (Entity var6 : ColorUtils.method17708()) {
-         var4.add(new Class8012(var6));
+      for (Entity ent : ColorUtils.getEntitesInWorld()) {
+         timedEntityList.add(new TimedEntity(ent));
       }
 
-      Iterator var24 = var4.iterator();
-      ModuleWithModuleSettings var25 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Disabler.class);
-      float var7 = 150.0F;
-      if (var25.isEnabled() && var25.getStringSettingValueByName("Type").equalsIgnoreCase("PingSpoof")) {
-         var7 += var25.method16726().getNumberValueBySettingName("Lag");
+      Iterator<TimedEntity> entities = timedEntityList.iterator();
+      ModuleWithModuleSettings disabler = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Disabler.class);
+      float ping = 150.0F;
+      if (disabler.isEnabled() && disabler.getStringSettingValueByName("Type").equalsIgnoreCase("PingSpoof")) {
+         ping += disabler.method16726().getNumberValueBySettingName("Lag");
       }
 
-      while (var24.hasNext()) {
-         Class8012 var8 = (Class8012)var24.next();
-         Entity var9 = var8.method27397();
-         if (var9 == this.field44347.player || var9 == Blink.field23863) {
-            var24.remove();
-         } else if (Client.getInstance().getFriendManager().method26997(var9)) {
-            var24.remove();
-         } else if (!(var9 instanceof LivingEntity)) {
-            var24.remove();
-         } else if (((LivingEntity)var9).getHealth() == 0.0F) {
-            var24.remove();
-         } else if (!this.field44347.player.canAttack((LivingEntity)var9)) {
-            var24.remove();
-         } else if (var9 instanceof ArmorStandEntity) {
-            var24.remove();
-         } else if (!this.parent.getBooleanValueFromSetttingName("Players") && var9 instanceof PlayerEntity) {
-            var24.remove();
-         } else if (var9 instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(var9)) {
-            var24.remove();
-         } else if (!this.parent.getBooleanValueFromSetttingName("Invisible") && var9.isInvisible()) {
-            var24.remove();
-         } else if (!this.parent.getBooleanValueFromSetttingName("Animals") && (var9 instanceof Class1018 || var9 instanceof Class1042)) {
-            var24.remove();
-         } else if (!this.parent.getBooleanValueFromSetttingName("Monsters") && var9 instanceof Class1009) {
-            var24.remove();
-         } else if (this.field44347.player.getRidingEntity() != null && this.field44347.player.getRidingEntity().equals(var9)) {
-            var24.remove();
-         } else if (var9.method3362()) {
-            var24.remove();
-         } else if (!(var9 instanceof PlayerEntity)
-            || !Class8781.method31662((PlayerEntity)var9)
+      while (entities.hasNext()) {
+         TimedEntity timedEntity = entities.next();
+         Entity ent = timedEntity.getEntity();
+         if (ent == this.mc.player || ent == Blink.clientPlayerEntity) {
+            entities.remove();
+         } else if (Client.getInstance().getFriendManager().method26997(ent)) {
+            entities.remove();
+         } else if (!(ent instanceof LivingEntity)) {
+            entities.remove();
+         } else if (((LivingEntity)ent).getHealth() == 0.0F) {
+            entities.remove();
+         } else if (!this.mc.player.canAttack((LivingEntity)ent)) {
+            entities.remove();
+         } else if (ent instanceof ArmorStandEntity) {
+            entities.remove();
+         } else if (!this.parent.getBooleanValueFromSetttingName("Players") && ent instanceof PlayerEntity) {
+            entities.remove();
+         } else if (ent instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(ent)) {
+            entities.remove();
+         } else if (!this.parent.getBooleanValueFromSetttingName("Invisible") && ent.isInvisible()) {
+            entities.remove();
+         } else if (!this.parent.getBooleanValueFromSetttingName("Animals") && (ent instanceof Class1018 || ent instanceof Class1042)) {
+            entities.remove();
+         } else if (!this.parent.getBooleanValueFromSetttingName("Monsters") && ent instanceof Class1009) {
+            entities.remove();
+         } else if (this.mc.player.getRidingEntity() != null && this.mc.player.getRidingEntity().equals(ent)) {
+            entities.remove();
+         } else if (ent.method3362()) {
+            entities.remove();
+         } else if (!(ent instanceof PlayerEntity)
+            || !Class8781.method31662((PlayerEntity)ent)
             || !Client.getInstance().getModuleManager().getModuleByClass(Teams.class).isEnabled()) {
-            Vector3d var10 = ColorUtils.method17751(var9);
-            if (!(this.field44347.player.getDistance(var9) < 40.0F)) {
-               if (this.field44349.containsKey(var9)) {
-                  this.field44349.remove(var9);
+            Vector3d var10 = ColorUtils.method17751(ent);
+            if (!(this.mc.player.getDistance(ent) < 40.0F)) {
+               if (this.field44349.containsKey(ent)) {
+                  this.field44349.remove(ent);
                }
-            } else if (!this.field44349.containsKey(var9)) {
-               this.field44349.put(var9, new ArrayList<Class9629<Vector3d, Long>>());
+            } else if (!this.field44349.containsKey(ent)) {
+               this.field44349.put(ent, new ArrayList<Class9629<Vector3d, Long>>());
             } else {
                for (List var12 : this.field44349.values()) {
                   int var13 = var12.size();
@@ -208,7 +207,7 @@ public class InteractAutoBlock {
                      if (var15 != null) {
                         Long var16 = (Long)var15.method37539();
                         long var17 = System.currentTimeMillis() - var16;
-                        if ((float)var17 > var7) {
+                        if ((float)var17 > ping) {
                            var12.remove(var14);
                            var13--;
                         }
@@ -220,7 +219,7 @@ public class InteractAutoBlock {
             if (!(ColorUtils.method17754(var10) > 8.0)) {
                boolean var26 = true;
                if (this.parent.getBooleanValueFromSetttingName("Smart Reach")) {
-                  List<Class9629<Vector3d, Long>> var27 = this.field44349.get(var9);
+                  List<Class9629<Vector3d, Long>> var27 = this.field44349.get(ent);
                   if (var27 != null) {
                      for (Class9629<Vector3d, Long> var30 : var27) {
                         Vector3d var31 = var30.method37538();
@@ -230,7 +229,7 @@ public class InteractAutoBlock {
                            var31.y,
                            var31.z - var19,
                            var31.x + var19,
-                           var31.y + this.field44347.player.boundingBox.method19677(),
+                           var31.y + this.mc.player.boundingBox.method19677(),
                            var31.z + var19
                         );
                         double var22 = ColorUtils.method17755(var21);
@@ -242,45 +241,44 @@ public class InteractAutoBlock {
                }
 
                if (var26 && ColorUtils.method17754(var10) > (double)var1) {
-                  var24.remove();
+                  entities.remove();
                } else if (!this.parent.getBooleanValueFromSetttingName("Through walls")) {
-                  Class7461 var28 = RotationHelper.method34150(var9, true);
-                  if (var28 == null) {
-                     var24.remove();
+                  Rotations rotations = RotationHelper.getRotations(ent, true);
+                  if (rotations == null) {
+                     entities.remove();
                   }
                }
             } else {
-               var24.remove();
+               entities.remove();
             }
          } else {
-            var24.remove();
+            entities.remove();
          }
       }
 
-      Collections.sort(var4, new Class3589(this));
-      return var4;
+      timedEntityList.sort(new FriendSorter2(this));
+      return timedEntityList;
    }
 
-   public List<Class8012> method36824(List<Class8012> var1) {
-      String var4 = this.parent.getStringSettingValueByName("Sort Mode");
-      switch (var4) {
+   public List<TimedEntity> sortEntities(List<TimedEntity> timedEntities) {
+      switch (this.parent.getStringSettingValueByName("Sort Mode")) {
          case "Range":
-            Collections.sort(var1, new Class3607(this));
+            timedEntities.sort(new RangeSorter(this));
             break;
          case "Health":
-            Collections.sort(var1, new Class3606(this));
+            timedEntities.sort(new HealthSorter(this));
             break;
          case "Angle":
-            Collections.sort(var1, new Class3586(this));
+            timedEntities.sort(new AngleSorter(this));
             break;
          case "Prev Range":
-            Collections.sort(var1, new Class3599(this));
+            timedEntities.sort(new PrevRangeSorter(this));
             break;
          case "Armor":
-            Collections.sort(var1, new Class3581(this));
+            timedEntities.sort(new ArmorSorter(this));
       }
 
-      Collections.sort(var1, new Class3608(this));
-      return var1;
+      timedEntities.sort(new FriendSorter(this));
+      return timedEntities;
    }
 }

@@ -5,6 +5,7 @@ import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.item.AutoGapple;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import mapped.*;
 import net.minecraft.client.gui.screen.inventory.ChestScreen;
 import net.minecraft.network.play.client.CHeldItemChangePacket;

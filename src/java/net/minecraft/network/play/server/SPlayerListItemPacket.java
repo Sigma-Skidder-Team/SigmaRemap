@@ -9,7 +9,7 @@ import java.util.List;
 
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
@@ -17,7 +17,7 @@ import net.minecraft.world.GameType;
 
 import javax.annotation.Nullable;
 
-public class SPlayerListItemPacket implements Packet<IClientPlayNetHandler> {
+public class SPlayerListItemPacket implements IPacket<IClientPlayNetHandler> {
    private Action action;
    public List<AddPlayerData> players = Lists.newArrayList();
 

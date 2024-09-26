@@ -31,10 +31,10 @@ public class Class9016 {
    private int field41240;
    private List<Class7828> field41241 = new ArrayList<Class7828>();
    public static final RenderType[] field41242 = RenderType.method14349().<RenderType>toArray(new RenderType[0]);
-   private static final boolean field41243 = Class9299.field42864.method20245();
-   private static final boolean field41244 = Class9299.field42940.method20214();
-   private static final boolean field41245 = Class9299.field42940.method20214();
-   private static final boolean field41246 = Class9299.field42895.method20214();
+   private static final boolean field41243 = Reflector.field42864.method20245();
+   private static final boolean field41244 = Reflector.field42940.exists();
+   private static final boolean field41245 = Reflector.field42940.exists();
+   private static final boolean field41246 = Reflector.field42895.exists();
    public static int field41247;
 
    public Class9016(World var1, WorldRenderer var2, Executor var3, boolean var4, Class7828 var5) {

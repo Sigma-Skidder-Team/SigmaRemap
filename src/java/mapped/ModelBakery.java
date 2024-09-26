@@ -137,7 +137,7 @@ public class ModelBakery {
    }
 
    public void method32837(IProfiler var1, int var2) {
-      Class9299.field42974.method20229();
+      Reflector.field42974.method20229();
       var1.startSection("missing_model");
 
       try {
@@ -179,7 +179,7 @@ public class ModelBakery {
          .<Class7826>flatMap(var2x -> var2x.method24424(this::method32841, var15).stream())
          .collect(Collectors.toSet());
       var18.addAll(field40519);
-      Class9299.method35062(Class9299.field42872, var18);
+      Reflector.method35062(Reflector.field42872, var18);
       var15.stream()
          .filter(var0 -> !var0.getSecond().equals(field40522))
          .forEach(var0 -> field40520.warn("Unable to resolve texture reference: {} in {}", var0.getFirst(), var0.getSecond()));
@@ -490,7 +490,7 @@ public class ModelBakery {
             if (var7 instanceof Class7496) {
                Class7496 var8 = (Class7496)var7;
                if (var8.method24439() == field40527) {
-                  if (!Class9299.field42864.method20245()) {
+                  if (!Reflector.field42864.method20245()) {
                      return field40530.method29717(this.field40533::method7289, var8).method24433(this, var8, this.field40533::method7289, var2, var1, false);
                   }
 
@@ -499,7 +499,7 @@ public class ModelBakery {
             }
 
             IBakedModel var9 = var7.method24425(this, this.field40533::method7289, var2, var1);
-            if (Class9299.field42864.method20245()) {
+            if (Reflector.field42864.method20245()) {
                var9 = var7.method24425(this, var3, var2, var1);
             }
 

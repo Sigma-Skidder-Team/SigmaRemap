@@ -58,12 +58,12 @@ public class RenderSystem {
       }
    }
 
-   public static boolean method27806() {
+   public static boolean isOnGameThread() {
       return true;
    }
 
    public static boolean method27807() {
-      return field34663 || method27806();
+      return field34663 || isOnGameThread();
    }
 
    public static void assertThread(Supplier<Boolean> var0) {
@@ -112,78 +112,78 @@ public class RenderSystem {
 
    @Deprecated
    public static void method27814() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.pushLightingAttributes();
    }
 
    @Deprecated
    public static void method27815() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.pushTextureAttributes();
    }
 
    @Deprecated
    public static void method27816() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.popAttributes();
    }
 
    @Deprecated
    public static void method27817() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.disableAlphaTest();
    }
 
    @Deprecated
    public static void disableAlphaTest() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23696();
    }
 
    @Deprecated
    public static void method27819(int var0, float var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23697(var0, var1);
    }
 
    @Deprecated
    public static void method27820() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23698();
    }
 
    @Deprecated
    public static void method27821() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.disableLighting();
    }
 
    @Deprecated
    public static void method27822() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.enableColorMaterial();
    }
 
    @Deprecated
    public static void method27823() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23702();
    }
 
    @Deprecated
    public static void method27824(int var0, int var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23703(var0, var1);
    }
 
    @Deprecated
    public static void method27825(float var0, float var1, float var2) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23706(var0, var1, var2);
    }
 
    public static void disableDepthTest() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.disableDepthTest();
    }
 
@@ -204,176 +204,176 @@ public class RenderSystem {
    }
 
    public static void depthFunc(int var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23712(var0);
    }
 
    public static void depthMask(boolean var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.depthMask(var0);
    }
 
    public static void enableBlend() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23715();
    }
 
    public static void disableBlend() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.disableBlend();
    }
 
    public static void method27834(GlStateManager.SourceFactor var0, DestFactor var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23716(var0.field16001, var1.field12937);
    }
 
    public static void method27835(int var0, int var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23716(var0, var1);
    }
 
    public static void blendFuncSeparate(GlStateManager.SourceFactor var0, DestFactor var1, GlStateManager.SourceFactor var2, DestFactor var3) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23717(var0.field16001, var1.field12937, var2.field16001, var3.field12937);
    }
 
    public static void method27837(int var0, int var1, int var2, int var3) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23717(var0, var1, var2, var3);
    }
 
    public static void method27838(int var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23719(var0);
    }
 
    public static void method27839(float var0, float var1, float var2, float var3) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23718(var0, var1, var2, var3);
    }
 
    @Deprecated
    public static void method27840() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23779();
    }
 
    @Deprecated
    public static void method27841() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23780();
    }
 
    @Deprecated
    public static void method27842(Class2135 var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23781(var0.field13987);
    }
 
    @Deprecated
    public static void method27843(int var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23781(var0);
    }
 
    @Deprecated
    public static void method27844(float var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23782(var0);
    }
 
    @Deprecated
    public static void method27845(float var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23783(var0);
    }
 
    @Deprecated
    public static void method27846(float var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23784(var0);
    }
 
    @Deprecated
    public static void method27847(int var0, float var1, float var2, float var3, float var4) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23785(var0, new float[]{var1, var2, var3, var4});
    }
 
    @Deprecated
    public static void method27848(int var0, int var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23786(var0, var1);
    }
 
    public static void enableCull() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23787();
    }
 
    public static void method27850() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23788();
    }
 
    public static void method27851(int var0, int var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23789(var0, var1);
    }
 
    public static void method27852() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23790();
    }
 
    public static void method27853() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23791();
    }
 
    public static void method27854() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23792();
    }
 
    public static void method27855() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23793();
    }
 
    public static void method27856(float var0, float var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23794(var0, var1);
    }
 
    public static void method27857() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23795();
    }
 
    public static void method27858() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23796();
    }
 
    public static void method27859(Class2270 var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23797(var0.field14772);
    }
 
    public static void method27860(int var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23803(var0);
    }
 
    public static void enableTexture() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.enableTexture();
    }
 
    public static void disableTexture() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23805();
    }
 
@@ -391,20 +391,20 @@ public class RenderSystem {
    }
 
    @Deprecated
-   public static void method27866(int var0) {
-      assertThread(RenderSystem::method27806);
-      GlStateManager.method23818(var0);
+   public static void shadeModel(int var0) {
+      assertThread(RenderSystem::isOnGameThread);
+      GlStateManager.shadeModel(var0);
    }
 
    @Deprecated
-   public static void method27867() {
-      assertThread(RenderSystem::method27806);
-      GlStateManager.method23819();
+   public static void enableRescaleNormal() {
+      assertThread(RenderSystem::isOnGameThread);
+      GlStateManager.enableRescaleNormal();
    }
 
    @Deprecated
    public static void method27868() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23820();
    }
 
@@ -414,22 +414,22 @@ public class RenderSystem {
    }
 
    public static void method27870(boolean var0, boolean var1, boolean var2, boolean var3) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.colorMask(var0, var1, var2, var3);
    }
 
    public static void method27871(int var0, int var1, int var2) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23823(var0, var1, var2);
    }
 
    public static void method27872(int var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23824(var0);
    }
 
    public static void method27873(int var0, int var1, int var2) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23825(var0, var1, var2);
    }
 
@@ -444,7 +444,7 @@ public class RenderSystem {
    }
 
    public static void method27876(int var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23828(var0);
    }
 
@@ -455,95 +455,95 @@ public class RenderSystem {
 
    @Deprecated
    public static void matrixMode(int var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.matrixMode(var0);
    }
 
    @Deprecated
    public static void loadIdentity() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.loadIdentity();
    }
 
    @Deprecated
    public static void pushMatrix() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23832();
    }
 
    @Deprecated
    public static void popMatrix() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23833();
    }
 
    @Deprecated
    public static void ortho(double var0, double var2, double var4, double var6, double var8, double var10) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.ortho(var0, var2, var4, var6, var8, var10);
    }
 
    @Deprecated
    public static void method27883(float var0, float var1, float var2, float var3) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23836(var0, var1, var2, var3);
    }
 
    @Deprecated
    public static void scalef(float var0, float var1, float var2) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23837(var0, var1, var2);
    }
 
    @Deprecated
    public static void scaled(double var0, double var2, double var4) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23838(var0, var2, var4);
    }
 
    @Deprecated
    public static void translatef(float var0, float var1, float var2) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.translatef(var0, var1, var2);
    }
 
    @Deprecated
    public static void translated(double var0, double var2, double var4) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23840(var0, var2, var4);
    }
 
    @Deprecated
    public static void method27888(Matrix4f var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23842(var0);
    }
 
    @Deprecated
    public static void color4f(float var0, float var1, float var2, float var3) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.color4f(var0, var1, var2, var3);
    }
 
    @Deprecated
    public static void method27890(float var0, float var1, float var2) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.color4f(var0, var1, var2, 1.0F);
    }
 
    @Deprecated
    public static void method27891() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23844();
    }
 
    public static void method27892(int var0, int var1, int var2) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23854(var0, var1, var2);
    }
 
    public static void lineWidth(float var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23855(var0);
    }
 
@@ -557,12 +557,12 @@ public class RenderSystem {
    }
 
    public static void method27896(int var0, int var1, int var2, int var3, int var4, int var5, ByteBuffer var6) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23858(var0, var1, var2, var3, var4, var5, var6);
    }
 
    public static void method27897(int var0, Consumer<String> var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       var1.accept(GlStateManager.method23860(var0));
    }
 
@@ -592,30 +592,30 @@ public class RenderSystem {
    }
 
    public static void method27903(int var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GLX.method28305(var0, true, true, true);
    }
 
    public static void method27904() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GLX.method28301();
    }
 
    @Deprecated
    public static void method27905(int var0, float var1, float var2) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23761(var0, var1, var2);
    }
 
    public static String getCapsString() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       return GLX.method28303();
    }
 
    public static void setupDefaultState(int var0, int var1, int var2, int var3) {
       assertThread(RenderSystem::isInInitPhase);
       GlStateManager.enableTexture();
-      GlStateManager.method23818(7425);
+      GlStateManager.shadeModel(7425);
       GlStateManager.clearDepth(1.0);
       GlStateManager.enableDepthTest();
       GlStateManager.method23712(515);
@@ -658,117 +658,117 @@ public class RenderSystem {
    }
 
    public static void method27911(int var0) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23749(var0);
    }
 
    public static void method27912(int var0, int var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23734(var0, var1);
    }
 
    public static void method27913(int var0, IntBuffer var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23733(var0, var1);
    }
 
    public static void method27914(int var0, IntBuffer var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23736(var0, var1);
    }
 
    public static void method27915(int var0, IntBuffer var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23738(var0, var1);
    }
 
    public static void method27916(int var0, IntBuffer var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23740(var0, var1);
    }
 
    public static void method27917(int var0, FloatBuffer var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23735(var0, var1);
    }
 
    public static void method27918(int var0, FloatBuffer var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23737(var0, var1);
    }
 
    public static void method27919(int var0, FloatBuffer var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23739(var0, var1);
    }
 
    public static void method27920(int var0, FloatBuffer var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23741(var0, var1);
    }
 
    public static void method27921(int var0, boolean var1, FloatBuffer var2) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23742(var0, var1, var2);
    }
 
    public static void method27922(int var0, boolean var1, FloatBuffer var2) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23743(var0, var1, var2);
    }
 
    public static void method27923(int var0, boolean var1, FloatBuffer var2) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23744(var0, var1, var2);
    }
 
    public static void method27924() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23765();
    }
 
    public static void method27925() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23766();
    }
 
    public static void method27926(IntSupplier var0, int var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23767(var0.getAsInt(), var1);
    }
 
    public static void method27927() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23768();
    }
 
    public static void method27928(Vector3f var0, Vector3f var1, Matrix4f var2) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23772(var0, var1, var2);
    }
 
    public static void method27929(Vector3f var0, Vector3f var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23773(var0, var1);
    }
 
    public static void method27930(Vector3f var0, Vector3f var1) {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.method23774(var0, var1);
    }
 
    public static void method27931() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.mulTextureByProjModelView();
    }
 
    public static void method27932() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.setupEndPortalTexGen();
    }
 
    public static void method27933() {
-      assertThread(RenderSystem::method27806);
+      assertThread(RenderSystem::isOnGameThread);
       GlStateManager.clearTexGen();
    }
 

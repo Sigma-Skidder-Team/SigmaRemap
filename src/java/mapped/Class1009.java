@@ -27,10 +27,10 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       this.updateArmSwingProgress();
       this.method4338();
-      super.livingEntity();
+      super.livingTick();
    }
 
    public void method4338() {

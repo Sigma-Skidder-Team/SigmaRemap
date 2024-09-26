@@ -66,8 +66,8 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       if (!this.world.isRemote) {
          int var3 = MathHelper.floor(this.getPosX());
          int var4 = MathHelper.floor(this.getPosY());

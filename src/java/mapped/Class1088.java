@@ -251,8 +251,8 @@ public class Class1088 extends Class1018 {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       if (this.isAlive() && this.method5047() && this.field5962 >= 1 && this.field5962 % 5 == 0) {
          BlockPos var3 = this.getPosition();
          if (Class3441.method12114(this.world, var3)) {

@@ -48,8 +48,8 @@ public class Class1705 extends Class1702 {
          int var5 = this.field9291.method31823(var1, var2);
          Chunk var6 = this.field9291.method31827(var5);
          if (method7398(var6, var1, var2)) {
-            if (Class9299.field42777.method20241()) {
-               Class9299.method35085(Class9299.field42777, var6);
+            if (Reflector.field42777.exists()) {
+               Reflector.postForgeBusEvent(Reflector.field42777, var6);
             }
 
             var6.method7143(false);
@@ -125,8 +125,8 @@ public class Class1705 extends Class1702 {
          }
 
          this.field9292.method6841(var1, var2);
-         if (Class9299.field42775.method20241()) {
-            Class9299.method35085(Class9299.field42775, var11);
+         if (Reflector.field42775.exists()) {
+            Reflector.postForgeBusEvent(Reflector.field42775, var11);
          }
 
          ((Chunk)var11).method7143(true);

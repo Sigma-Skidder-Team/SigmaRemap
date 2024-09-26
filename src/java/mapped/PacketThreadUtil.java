@@ -2,7 +2,8 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.INetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
+import net.minecraft.network.ThreadQuickExitException;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.network.play.server.SJoinGamePacket;
 import net.minecraft.network.play.server.SRespawnPacket;
@@ -15,11 +16,11 @@ public class PacketThreadUtil {
    private static final Logger field39629 = LogManager.getLogger();
    public static RegistryKey<World> field39630 = null;
 
-   public static <T extends INetHandler> void checkThreadAndEnqueue(Packet<T> var0, T var1, ServerWorld var2) throws Class2466 {
+   public static <T extends INetHandler> void checkThreadAndEnqueue(IPacket<T> var0, T var1, ServerWorld var2) throws ThreadQuickExitException {
       method31780(var0, var1, var2.getServer());
    }
 
-   public static <T extends INetHandler> void method31780(Packet<T> var0, T var1, Class318<?> var2) throws Class2466 {
+   public static <T extends INetHandler> void method31780(IPacket<T> var0, T var1, Class318<?> var2) throws ThreadQuickExitException {
       if (var2.isOnExecutionThread()) {
          method31781(var0);
       } else {
@@ -31,11 +32,11 @@ public class PacketThreadUtil {
                var0.processPacket(var1);
             }
          });
-         throw Class2466.field16549;
+         throw ThreadQuickExitException.field16549;
       }
    }
 
-   public static void method31781(Packet var0) {
+   public static void method31781(IPacket var0) {
       if (var0 instanceof SPlayerPositionLookPacket) {
          Minecraft.getInstance().worldRenderer.method932();
       }

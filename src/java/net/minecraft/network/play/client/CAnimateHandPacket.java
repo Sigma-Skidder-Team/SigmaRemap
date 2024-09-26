@@ -2,12 +2,12 @@ package net.minecraft.network.play.client;
 
 import net.minecraft.util.Hand;
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CAnimateHandPacket implements Packet<IServerPlayNetHandler> {
+public class CAnimateHandPacket implements IPacket<IServerPlayNetHandler> {
     private Hand hand;
 
    public CAnimateHandPacket() {

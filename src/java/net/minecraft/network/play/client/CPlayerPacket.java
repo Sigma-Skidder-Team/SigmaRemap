@@ -1,12 +1,12 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CPlayerPacket implements Packet<IServerPlayNetHandler> {
+public class CPlayerPacket implements IPacket<IServerPlayNetHandler> {
    public double x;
    public double y;
    public double z;

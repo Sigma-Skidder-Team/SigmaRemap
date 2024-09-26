@@ -21,18 +21,18 @@ public class Class4111 extends Class4057 {
             if (!var2.equals("tail")) {
                if (!var2.equals("fin_right")) {
                   if (!var2.equals("fin_left")) {
-                     return !var2.equals("fin_top") ? null : (Class7219)Class9299.field43116.method36565(var5, 4);
+                     return !var2.equals("fin_top") ? null : (Class7219) Reflector.field43116.method36565(var5, 4);
                   } else {
-                     return (Class7219)Class9299.field43116.method36565(var5, 3);
+                     return (Class7219) Reflector.field43116.method36565(var5, 3);
                   }
                } else {
-                  return (Class7219)Class9299.field43116.method36565(var5, 2);
+                  return (Class7219) Reflector.field43116.method36565(var5, 2);
                }
             } else {
-               return (Class7219)Class9299.field43116.method36565(var5, 1);
+               return (Class7219) Reflector.field43116.method36565(var5, 1);
             }
          } else {
-            return (Class7219)Class9299.field43116.method36565(var5, 0);
+            return (Class7219) Reflector.field43116.method36565(var5, 0);
          }
       } else {
          return null;
@@ -56,8 +56,8 @@ public class Class4111 extends Class4057 {
          }
 
          Class5655 var8 = (Class5655)var6;
-         if (Class9299.field43148.method20238()) {
-            Class9299.field43148.method20237(var8, var1);
+         if (Reflector.field43148.method20238()) {
+            Reflector.field43148.method20237(var8, var1);
             return (Class9492)var8;
          } else {
             Class7944.method26811("Model field not found: RenderTropicalFish.modelA");

@@ -4,10 +4,10 @@ import java.io.IOException;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.text.ITextComponent;
 
-public class SPlayerListHeaderFooterPacket implements Packet<IClientPlayNetHandler> {
+public class SPlayerListHeaderFooterPacket implements IPacket<IClientPlayNetHandler> {
     private ITextComponent header;
    private ITextComponent footer;
 

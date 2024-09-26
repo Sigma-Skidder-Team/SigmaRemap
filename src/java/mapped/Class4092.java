@@ -38,63 +38,63 @@ public class Class4092 extends Class4057 {
                                                                if (!var2.equals("back_right_shin")) {
                                                                   return !var2.equals("back_right_foot")
                                                                      ? null
-                                                                     : (Class7219)Class9299.method35075(var5, Class9299.field43039, 19);
+                                                                     : (Class7219) Reflector.method35075(var5, Reflector.field43039, 19);
                                                                } else {
-                                                                  return (Class7219)Class9299.method35075(var5, Class9299.field43039, 18);
+                                                                  return (Class7219) Reflector.method35075(var5, Reflector.field43039, 18);
                                                                }
                                                             } else {
-                                                               return (Class7219)Class9299.method35075(var5, Class9299.field43039, 17);
+                                                               return (Class7219) Reflector.method35075(var5, Reflector.field43039, 17);
                                                             }
                                                          } else {
-                                                            return (Class7219)Class9299.method35075(var5, Class9299.field43039, 16);
+                                                            return (Class7219) Reflector.method35075(var5, Reflector.field43039, 16);
                                                          }
                                                       } else {
-                                                         return (Class7219)Class9299.method35075(var5, Class9299.field43039, 15);
+                                                         return (Class7219) Reflector.method35075(var5, Reflector.field43039, 15);
                                                       }
                                                    } else {
-                                                      return (Class7219)Class9299.method35075(var5, Class9299.field43039, 14);
+                                                      return (Class7219) Reflector.method35075(var5, Reflector.field43039, 14);
                                                    }
                                                 } else {
-                                                   return (Class7219)Class9299.method35075(var5, Class9299.field43039, 13);
+                                                   return (Class7219) Reflector.method35075(var5, Reflector.field43039, 13);
                                                 }
                                              } else {
-                                                return (Class7219)Class9299.method35075(var5, Class9299.field43039, 12);
+                                                return (Class7219) Reflector.method35075(var5, Reflector.field43039, 12);
                                              }
                                           } else {
-                                             return (Class7219)Class9299.method35075(var5, Class9299.field43039, 11);
+                                             return (Class7219) Reflector.method35075(var5, Reflector.field43039, 11);
                                           }
                                        } else {
-                                          return (Class7219)Class9299.method35075(var5, Class9299.field43039, 10);
+                                          return (Class7219) Reflector.method35075(var5, Reflector.field43039, 10);
                                        }
                                     } else {
-                                       return (Class7219)Class9299.method35075(var5, Class9299.field43039, 9);
+                                       return (Class7219) Reflector.method35075(var5, Reflector.field43039, 9);
                                     }
                                  } else {
-                                    return (Class7219)Class9299.method35075(var5, Class9299.field43039, 8);
+                                    return (Class7219) Reflector.method35075(var5, Reflector.field43039, 8);
                                  }
                               } else {
-                                 return (Class7219)Class9299.method35075(var5, Class9299.field43039, 7);
+                                 return (Class7219) Reflector.method35075(var5, Reflector.field43039, 7);
                               }
                            } else {
-                              return (Class7219)Class9299.method35075(var5, Class9299.field43039, 6);
+                              return (Class7219) Reflector.method35075(var5, Reflector.field43039, 6);
                            }
                         } else {
-                           return (Class7219)Class9299.method35075(var5, Class9299.field43039, 5);
+                           return (Class7219) Reflector.method35075(var5, Reflector.field43039, 5);
                         }
                      } else {
-                        return (Class7219)Class9299.method35075(var5, Class9299.field43039, 4);
+                        return (Class7219) Reflector.method35075(var5, Reflector.field43039, 4);
                      }
                   } else {
-                     return (Class7219)Class9299.method35075(var5, Class9299.field43039, 3);
+                     return (Class7219) Reflector.method35075(var5, Reflector.field43039, 3);
                   }
                } else {
-                  return (Class7219)Class9299.method35075(var5, Class9299.field43039, 2);
+                  return (Class7219) Reflector.method35075(var5, Reflector.field43039, 2);
                }
             } else {
-               return (Class7219)Class9299.method35075(var5, Class9299.field43039, 1);
+               return (Class7219) Reflector.method35075(var5, Reflector.field43039, 1);
             }
          } else {
-            return (Class7219)Class9299.method35075(var5, Class9299.field43039, 0);
+            return (Class7219) Reflector.method35075(var5, Reflector.field43039, 0);
          }
       } else {
          return null;
@@ -131,8 +131,8 @@ public class Class4092 extends Class4057 {
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5718 var6 = new Class5718(var5);
-      if (Class9299.field43009.method20238()) {
-         Class9299.method35082(var6, Class9299.field43009, var1);
+      if (Reflector.field43009.method20238()) {
+         Reflector.method35082(var6, Reflector.field43009, var1);
          var6.field25098 = var2;
          return (Class9492)var6;
       } else {

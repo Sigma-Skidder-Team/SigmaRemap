@@ -3,13 +3,13 @@ package net.minecraft.network.play.server;
 import mapped.Class8375;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 import java.util.Objects;
 import javax.annotation.Nullable;
 
-public class SDisplayObjectivePacket implements Packet<IClientPlayNetHandler> {
+public class SDisplayObjectivePacket implements IPacket<IClientPlayNetHandler> {
    private int field24916;
    private String field24917;
 

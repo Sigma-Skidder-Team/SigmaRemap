@@ -1,13 +1,13 @@
 package mapped;
 
 import com.mojang.authlib.GameProfile;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 import java.util.UUID;
 
-public class CLoginStartPacket implements Packet<Class5108> {
+public class CLoginStartPacket implements IPacket<Class5108> {
    private static String[] field24421;
    private GameProfile field24422;
 

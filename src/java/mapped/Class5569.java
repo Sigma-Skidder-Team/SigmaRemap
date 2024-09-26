@@ -1,6 +1,6 @@
 package mapped;
 
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.CryptException;
 import net.minecraft.util.CryptManager;
@@ -10,7 +10,7 @@ import java.security.PrivateKey;
 import java.security.PublicKey;
 import javax.crypto.SecretKey;
 
-public class Class5569 implements Packet<Class5108> {
+public class Class5569 implements IPacket<Class5108> {
    private static String[] field24704;
    private byte[] field24705 = new byte[0];
    private byte[] field24706 = new byte[0];

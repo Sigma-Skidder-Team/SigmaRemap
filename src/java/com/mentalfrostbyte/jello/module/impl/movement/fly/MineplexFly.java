@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.notification.Notification;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
@@ -186,7 +187,7 @@ public class MineplexFly extends PremiumModule {
         if (this.isEnabled()) {
             if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                 this.field23675 = true;
-                Client.getInstance().getNotificationManager().post(new Notification("Mineplex fly", "Please try again"));
+                Client.getInstance().getNotificationManager().send(new Notification("Mineplex fly", "Please try again"));
             }
         }
     }
@@ -223,7 +224,7 @@ public class MineplexFly extends PremiumModule {
 
             InvManagerUtils.fixedClick(mc.player.container.field25471, 42, 0, ClickType.field14695, mc.player, true);
             if (!mc.player.container.getSlot(42).getStack().isEmpty()) {
-                Client.getInstance().getNotificationManager().post(new Notification("Mineplex Fly", "Please empty a slot in your inventory"));
+                Client.getInstance().getNotificationManager().send(new Notification("Mineplex Fly", "Please empty a slot in your inventory"));
             } else if (mc.player.inventory.currentItem != 6 && this.field23670 != 6) {
                 mc.getConnection().sendPacket(new CHeldItemChangePacket(6));
                 this.field23670 = 6;
@@ -242,7 +243,7 @@ public class MineplexFly extends PremiumModule {
             mc.player.field4915 = this.field23673;
             mc.player.prevPosY = this.field23673;
             if (MovementUtils.isMoving()) {
-                mc.player.field4909 = 0.099999994F;
+                mc.player.cameraYaw = 0.099999994F;
             }
         }
     }

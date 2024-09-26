@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SExplosionPacket;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
 
@@ -71,7 +71,7 @@ public class AACAntiKB extends Module {
     @EventTarget
     private void method16789(ReceivePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            Packet var4 = var1.getPacket();
+            IPacket var4 = var1.getPacket();
             if (var4 instanceof SEntityVelocityPacket) {
                 if (this.method16790()) {
                     field23907 = 0;

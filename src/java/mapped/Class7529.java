@@ -11,7 +11,7 @@ import javax.annotation.Nullable;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -299,7 +299,7 @@ public class Class7529 extends Class7530 {
    }
 
    @Nullable
-   public Packet<?> method24597(ItemStack var1, IBlockReader var2, PlayerEntity var3) {
+   public IPacket<?> method24597(ItemStack var1, IBlockReader var2, PlayerEntity var3) {
       Class8541 var6 = this.field32325.get(var3);
       return var6 != null ? var6.method30388(var1) : null;
    }

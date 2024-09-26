@@ -2,7 +2,7 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.world.World;
 
 import javax.annotation.Nullable;
@@ -20,7 +20,7 @@ public class Class3314 extends Item {
    }
 
    @Nullable
-   public Packet<?> method11858(ItemStack var1, World var2, PlayerEntity var3) {
+   public IPacket<?> method11858(ItemStack var1, World var2, PlayerEntity var3) {
       return null;
    }
 }

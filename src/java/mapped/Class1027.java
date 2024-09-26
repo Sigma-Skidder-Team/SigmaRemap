@@ -87,7 +87,7 @@ public class Class1027 extends Class1026 implements Class1022 {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       if (!this.world.isRemote && this.isAlive()) {
          this.field5722.method10927();
          if (this.field5722.method10926() > 0) {
@@ -156,7 +156,7 @@ public class Class1027 extends Class1026 implements Class1022 {
          }
       }
 
-      super.livingEntity();
+      super.livingTick();
    }
 
    @Override

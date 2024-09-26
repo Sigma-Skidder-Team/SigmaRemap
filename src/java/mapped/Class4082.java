@@ -22,21 +22,21 @@ public class Class4082 extends Class4057 {
                if (!var2.equals("eye_left")) {
                   if (!var2.equals("fin_right")) {
                      if (!var2.equals("fin_left")) {
-                        return !var2.equals("tail") ? null : (Class7219)Class9299.field43086.method36565(var5, 5);
+                        return !var2.equals("tail") ? null : (Class7219) Reflector.field43086.method36565(var5, 5);
                      } else {
-                        return (Class7219)Class9299.field43086.method36565(var5, 4);
+                        return (Class7219) Reflector.field43086.method36565(var5, 4);
                      }
                   } else {
-                     return (Class7219)Class9299.field43086.method36565(var5, 3);
+                     return (Class7219) Reflector.field43086.method36565(var5, 3);
                   }
                } else {
-                  return (Class7219)Class9299.field43086.method36565(var5, 2);
+                  return (Class7219) Reflector.field43086.method36565(var5, 2);
                }
             } else {
-               return (Class7219)Class9299.field43086.method36565(var5, 1);
+               return (Class7219) Reflector.field43086.method36565(var5, 1);
             }
          } else {
-            return (Class7219)Class9299.field43086.method36565(var5, 0);
+            return (Class7219) Reflector.field43086.method36565(var5, 0);
          }
       } else {
          return null;
@@ -60,8 +60,8 @@ public class Class4082 extends Class4057 {
          }
 
          Class5748 var8 = (Class5748)var6;
-         if (Class9299.field43140.method20238()) {
-            Class9299.field43140.method20237(var8, var1);
+         if (Reflector.field43140.method20238()) {
+            Reflector.field43140.method20237(var8, var1);
             return (Class9492)var8;
          } else {
             Class7944.method26811("Model field not found: RenderPufferfish.modelSmall");

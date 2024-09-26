@@ -9,7 +9,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -360,7 +360,7 @@ public class ItemFrameEntity extends Class995 {
    }
 
    @Override
-   public Packet<?> createSpawnPacket() {
+   public IPacket<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this, this.getType(), this.field5489.getIndex(), this.method4085());
    }
 }

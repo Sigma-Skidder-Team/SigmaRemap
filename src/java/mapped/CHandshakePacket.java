@@ -1,11 +1,12 @@
 package mapped;
 
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
+import net.minecraft.network.ProtocolType;
 
 import java.io.IOException;
 
-public class CHandshakePacket implements Packet<Class5105> {
+public class CHandshakePacket implements IPacket<Class5105> {
    private int field24725;
    private String field24726;
    private int field24727;

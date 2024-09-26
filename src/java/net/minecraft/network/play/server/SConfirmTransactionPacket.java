@@ -2,11 +2,11 @@ package net.minecraft.network.play.server;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SConfirmTransactionPacket implements Packet<IClientPlayNetHandler> {
+public class SConfirmTransactionPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24600;
    private int field24601;
    private short field24602;

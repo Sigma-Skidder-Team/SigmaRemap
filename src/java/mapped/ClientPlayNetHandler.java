@@ -29,6 +29,7 @@ import net.minecraft.advancements.Advancement;
 import net.minecraft.block.Block;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.player.RemoteClientPlayerEntity;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.LivingEntity;
@@ -43,7 +44,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.*;
@@ -122,7 +124,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handleJoinGame(SJoinGamePacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       this.field23272.playerController = new Class7314(this.field23272, this);
-      if (!this.field23269.method30702()) {
+      if (!this.field23269.isLocalChannel()) {
          Class8384.method29379();
       }
 
@@ -446,11 +448,11 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       float var11 = (float)(var1.method17598() * 360) / 256.0F;
       if (this.method15792(var1.method17593()) != null) {
          int var12 = var1.method17592();
-         Class1116 var13 = new Class1116(this.field23272.world, this.method15792(var1.method17593()).method19966());
+         RemoteClientPlayerEntity var13 = new RemoteClientPlayerEntity(this.field23272.world, this.method15792(var1.method17593()).method19966());
          var13.setEntityId(var12);
          var13.setLocationAndAngles(var4, var6, var8);
          var13.setPacketCoordinates(var4, var6, var8);
-         var13.method3269(var4, var6, var8, var10, var11);
+         var13.setPositionAndRotation(var4, var6, var8, var10, var11);
          this.field23273.method6845(var12, var13);
       }
    }
@@ -520,7 +522,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
       for (int var4 = 0; var4 < var1.getEntityIDs().length; var4++) {
          int var5 = var1.getEntityIDs()[var4];
-         this.field23273.method6848(var5);
+         this.field23273.removeEntityFromWorld(var5);
       }
    }
 
@@ -587,7 +589,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          var21 += var4.rotationYaw;
       }
 
-      var4.method3269(var11, var15, var19, var21, var22);
+      var4.setPositionAndRotation(var11, var15, var19, var21, var22);
       this.field23269.sendPacket(new CConfirmTeleportPacket(var1.getTeleportI()));
       this.field23269.sendPacket(new CPlayerPacket.PositionRotationPacket(var4.getPosX(), var4.getPosY(), var4.getPosZ(), var4.rotationYaw, var4.rotationPitch, false));
       if (!this.field23275) {
@@ -613,7 +615,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          .getChunkProvider()
          .method7400(var4, var5, var6, var1.method17374(), var1.method17382(), var1.method17380(), var1.isFullChunk());
       if (var7 != null && var1.isFullChunk()) {
-         this.field23273.method6850(var7);
+         this.field23273.addEntitiesToChunk(var7);
       }
 
       for (int var8 = 0; var8 < 16; var8++) {
@@ -654,11 +656,11 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
    @Override
    public void handleDisconnect(SDisconnectPacket var1) {
-      this.field23269.method30701(var1.method17390());
+      this.field23269.closeChannel(var1.method17390());
    }
 
    @Override
-   public void method15588(ITextComponent var1) {
+   public void onDisconnect(ITextComponent var1) {
       this.field23272.unloadWorld();
       if (this.field23271 == null) {
          this.field23272.displayGuiScreen(new Class832(new MultiplayerScreen(new VanillaMainMenuScreen()), field23268, var1));
@@ -669,7 +671,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       }
    }
 
-   public void sendPacket(Packet<?> var1) {
+   public void sendPacket(IPacket<?> var1) {
       this.field23269.sendPacket(var1);
    }
 
@@ -711,13 +713,13 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
          this.field23272.particles.method1199(new Class4593(this.field23272.getRenderManager(), this.field23272.getRenderTypeBuffers(), this.field23273, var4, (Entity)var5));
          if (!(var4 instanceof ItemEntity)) {
-            this.field23273.method6848(var1.method17186());
+            this.field23273.removeEntityFromWorld(var1.method17186());
          } else {
             ItemEntity var6 = (ItemEntity)var4;
             ItemStack var7 = var6.method4124();
             var7.method32182(var1.method17188());
             if (var7.isEmpty()) {
-               this.field23273.method6848(var1.method17186());
+               this.field23273.removeEntityFromWorld(var1.method17186());
             }
          }
       }
@@ -788,7 +790,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
 
          var12.setEntityId(var1.method17535());
          var12.setUniqueId(var1.method17536());
-         var12.method3269(var4, var6, var8, var10, var11);
+         var12.setPositionAndRotation(var4, var6, var8, var10, var11);
          var12.setMotion(
             (double)((float)var1.method17541() / 8000.0F), (double)((float)var1.method17542() / 8000.0F), (double)((float)var1.method17543() / 8000.0F)
          );
@@ -1418,14 +1420,14 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       Multimap var5 = Class8384.method29380(var4);
       if (var5.isEmpty()) {
          this.field23279 = var4;
-         if (!this.field23269.method30702()) {
+         if (!this.field23269.isLocalChannel()) {
             var4.method32661();
          }
 
          this.field23272.<ItemStack>getSearchTree(SearchTreeManager.TAGS).method21736();
       } else {
          field23267.warn("Incomplete server tags, disconnecting. Missing: {}", var5);
-         this.field23269.method30701(new TranslationTextComponent("multiplayer.disconnect.missing_tags"));
+         this.field23269.closeChannel(new TranslationTextComponent("multiplayer.disconnect.missing_tags"));
       }
    }
 
@@ -1713,7 +1715,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Entity var4 = this.field23272.player.method3415();
       if (var4 != this.field23272.player && var4.canPassengerSteer()) {
-         var4.method3269(var1.method17401(), var1.method17402(), var1.method17403(), var1.method17404(), var1.method17405());
+         var4.setPositionAndRotation(var1.method17401(), var1.method17402(), var1.method17403(), var1.method17404(), var1.method17405());
          this.field23269.sendPacket(new CMoveVehiclePacket(var4));
       }
    }

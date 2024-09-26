@@ -91,12 +91,12 @@ public class Class1019 extends Class1018 implements Class1020 {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       if (this.world.isRemote) {
          this.field5707 = Math.max(0, this.field5707 - 1);
       }
 
-      super.livingEntity();
+      super.livingTick();
    }
 
    public static Class7037 method4512() {

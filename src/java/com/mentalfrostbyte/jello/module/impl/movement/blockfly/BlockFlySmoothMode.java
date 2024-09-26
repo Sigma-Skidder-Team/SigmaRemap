@@ -377,7 +377,7 @@ public class BlockFlySmoothMode extends Module {
                         mc.player.field4915 = this.field23979;
                         mc.player.prevPosY = this.field23979;
                         if (MovementUtils.isMoving()) {
-                            mc.player.field4909 = 0.099999994F;
+                            mc.player.cameraYaw = 0.099999994F;
                         }
                     }
                 }

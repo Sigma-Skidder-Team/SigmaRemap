@@ -2,12 +2,12 @@ package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CCreativeInventoryActionPacket implements Packet<IServerPlayNetHandler> {
+public class CCreativeInventoryActionPacket implements IPacket<IServerPlayNetHandler> {
     private int slotId;
    private ItemStack stack = ItemStack.EMPTY;
 

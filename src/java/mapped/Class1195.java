@@ -52,7 +52,7 @@ public class Class1195 extends AbstractGui implements Class1196 {
    }
 
    public void method5721(MatrixStack var1, float var2, int var3, int var4, Class8548 var5) {
-      RenderSystem.method27867();
+      RenderSystem.enableRescaleNormal();
       RenderSystem.enableBlend();
       RenderSystem.defaultBlendFunc();
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, var2);

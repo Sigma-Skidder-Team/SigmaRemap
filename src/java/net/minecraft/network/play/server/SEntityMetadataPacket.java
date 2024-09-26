@@ -2,13 +2,13 @@ package net.minecraft.network.play.server;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.EntityDataManager;
 
 import java.io.IOException;
 import java.util.List;
 
-public class SEntityMetadataPacket implements Packet<IClientPlayNetHandler> {
+public class SEntityMetadataPacket implements IPacket<IClientPlayNetHandler> {
    private int entityId;
    private List < EntityDataManager.DataEntry<? >> dataManagerEntries;
 

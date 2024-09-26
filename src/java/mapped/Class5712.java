@@ -50,7 +50,7 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
    }
 
    public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      if (!Class9299.field42990.method20241() || !Class9299.method35085(Class9299.field42990, var1, this, var3, var4, var5, var6)) {
+      if (!Reflector.field42990.exists() || !Reflector.postForgeBusEvent(Reflector.field42990, var1, this, var3, var4, var5, var6)) {
          if (field25095) {
             var1.field4960 = 1.0F;
          }
@@ -58,8 +58,8 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
          var4.push();
          this.field25086.field17600 = this.method17885((T)var1, var3);
          this.field25086.field17601 = var1.isPassenger();
-         if (Class9299.field42838.method20214()) {
-            this.field25086.field17601 = var1.isPassenger() && var1.getRidingEntity() != null && Class9299.method35064(var1.getRidingEntity(), Class9299.field42838);
+         if (Reflector.field42838.exists()) {
+            this.field25086.field17601 = var1.isPassenger() && var1.getRidingEntity() != null && Reflector.method35064(var1.getRidingEntity(), Reflector.field42838);
          }
 
          this.field25086.field17602 = var1.isChild();
@@ -181,8 +181,8 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
          Client.getInstance().getEventManager().call(var33);
          var4.pop();
          super.method17853((T)var1, var2, var3, var4, var5, var6);
-         if (Class9299.field42992.method20241()) {
-            Class9299.method35085(Class9299.field42992, var1, this, var3, var4, var5, var6);
+         if (Reflector.field42992.exists()) {
+            Reflector.postForgeBusEvent(Reflector.field42992, var1, this, var3, var4, var5, var6);
          }
       }
    }

@@ -26,7 +26,7 @@ public class Class4105 extends Class4057 {
          if (!var6.containsKey(var2)) {
             if (var2.equals("head")) {
                int var9 = (Integer)var6.get("body");
-               Class7219 var8 = (Class7219)Class9299.method35075(var5, Class9299.field43078, var9);
+               Class7219 var8 = (Class7219) Reflector.method35075(var5, Reflector.field43078, var9);
                if (var8 != null) {
                   return var8.method22692(1);
                }
@@ -35,7 +35,7 @@ public class Class4105 extends Class4057 {
             return null;
          } else {
             int var7 = (Integer)var6.get(var2);
-            return (Class7219)Class9299.method35075(var5, Class9299.field43078, var7);
+            return (Class7219) Reflector.method35075(var5, Reflector.field43078, var7);
          }
       } else {
          return null;

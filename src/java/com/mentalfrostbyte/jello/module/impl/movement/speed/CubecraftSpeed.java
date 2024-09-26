@@ -9,6 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.world.Timer;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.ColorUtils;
@@ -145,7 +146,7 @@ public class CubecraftSpeed extends Module {
             mc.player.field4915 = this.field23620;
             mc.player.prevPosY = this.field23620;
             if (MovementUtils.isMoving()) {
-                mc.player.field4909 = 0.099999994F;
+                mc.player.cameraYaw = 0.099999994F;
             }
         }
     }

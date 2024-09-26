@@ -200,8 +200,8 @@ public class Class1094 extends Class1018 {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       if (this.field5988 == this.field5989) {
          if (this.field5989 != 0) {
             this.field5988 = 0;

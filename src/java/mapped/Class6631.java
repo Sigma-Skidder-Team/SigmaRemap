@@ -68,7 +68,7 @@ public class Class6631 implements Class6632 {
       }
    }
 
-   public boolean method20214() {
+   public boolean exists() {
       return !this.field29170 ? this.method20213() != null : this.field29171 != null;
    }
 
@@ -83,55 +83,55 @@ public class Class6631 implements Class6632 {
    }
 
    public Object method20217(Object... var1) {
-      return Class9299.method35062(this, var1);
+      return Reflector.method35062(this, var1);
    }
 
    public boolean method20218(Object... var1) {
-      return Class9299.method35056(this, var1);
+      return Reflector.method35056(this, var1);
    }
 
    public int method20219(Object... var1) {
-      return Class9299.method35057(this, var1);
+      return Reflector.method35057(this, var1);
    }
 
    public float method20220(Object... var1) {
-      return Class9299.method35059(this, var1);
+      return Reflector.method35059(this, var1);
    }
 
    public double method20221(Object... var1) {
-      return Class9299.method35060(this, var1);
+      return Reflector.method35060(this, var1);
    }
 
    public String method20222(Object... var1) {
-      return Class9299.method35061(this, var1);
+      return Reflector.method35061(this, var1);
    }
 
    public Object method20223(Object var1) {
-      return Class9299.method35062(this, var1);
+      return Reflector.method35062(this, var1);
    }
 
    public boolean method20224(Object var1) {
-      return Class9299.method35056(this, var1);
+      return Reflector.method35056(this, var1);
    }
 
    public int method20225(Object var1) {
-      return Class9299.method35057(this, var1);
+      return Reflector.method35057(this, var1);
    }
 
    public float method20226(Object var1) {
-      return Class9299.method35059(this, var1);
+      return Reflector.method35059(this, var1);
    }
 
    public double method20227(Object var1) {
-      return Class9299.method35060(this, var1);
+      return Reflector.method35060(this, var1);
    }
 
    public String method20228(Object var1) {
-      return Class9299.method35061(this, var1);
+      return Reflector.method35061(this, var1);
    }
 
    public void method20229(Object... var1) {
-      Class9299.method35055(this, var1);
+      Reflector.method35055(this, var1);
    }
 
    public static Method method20230(Class var0, String var1, Class[] var2) {
@@ -141,7 +141,7 @@ public class Class6631 implements Class6632 {
          Method var7 = var5[var6];
          if (var7.getName().equals(var1)) {
             Class[] var8 = var7.getParameterTypes();
-            if (Class9299.method35088(var2, var8)) {
+            if (Reflector.method35088(var2, var8)) {
                return var7;
             }
          }

@@ -22,7 +22,7 @@ public class Class5127 implements Class5119 {
          }
 
          RenderSystem.enableDepthTest();
-         RenderSystem.method27866(7425);
+         RenderSystem.shadeModel(7425);
          RenderSystem.disableAlphaTest();
          RenderSystem.method27939();
          Entity var11 = this.field23315.gameRenderer.getActiveRenderInfo().getRenderViewEntity();
@@ -107,7 +107,7 @@ public class Class5127 implements Class5119 {
          RenderSystem.lineWidth(1.0F);
          RenderSystem.enableBlend();
          RenderSystem.enableTexture();
-         RenderSystem.method27866(7424);
+         RenderSystem.shadeModel(7424);
          if (Class7944.method26921()) {
             Shaders.method33120();
          }

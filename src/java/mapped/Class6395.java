@@ -24,7 +24,8 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.server.*;
 import net.minecraft.potion.EffectInstance;
@@ -96,11 +97,11 @@ public abstract class Class6395 {
          var12 = this.field27990.method1317();
       }
 
-      var2.method3268(var12);
+      var2.setWorld(var12);
       var2.interactionManager.method33871((ServerWorld)var2.world);
       String var13 = "local";
-      if (var1.method30700() != null) {
-         var13 = var1.method30700().toString();
+      if (var1.getRemoteAddress() != null) {
+         var13 = var1.getRemoteAddress().toString();
       }
 
       field27988.info(
@@ -222,7 +223,7 @@ public abstract class Class6395 {
       for (int var10 = 0; var10 < 19; var10++) {
          Class8375 var11 = var1.method20989(var10);
          if (var11 != null && !var5.contains(var11)) {
-            for (Packet var9 : var1.method21023(var11)) {
+            for (IPacket var9 : var1.method21023(var11)) {
                var2.field4855.sendPacket(var9);
             }
 
@@ -469,13 +470,13 @@ public abstract class Class6395 {
       }
    }
 
-   public void method19456(Packet<?> var1) {
+   public void method19456(IPacket<?> var1) {
       for (int var4 = 0; var4 < this.field27991.size(); var4++) {
          this.field27991.get(var4).field4855.sendPacket(var1);
       }
    }
 
-   public void method19457(Packet<?> var1, RegistryKey<World> var2) {
+   public void method19457(IPacket<?> var1, RegistryKey<World> var2) {
       for (int var5 = 0; var5 < this.field27991.size(); var5++) {
          ServerPlayerEntity var6 = this.field27991.get(var5);
          if (var6.world.getDimensionKey() == var2) {
@@ -582,7 +583,7 @@ public abstract class Class6395 {
       return null;
    }
 
-   public void method19466(PlayerEntity var1, double var2, double var4, double var6, double var8, RegistryKey<World> var10, Packet<?> var11) {
+   public void method19466(PlayerEntity var1, double var2, double var4, double var6, double var8, RegistryKey<World> var10, IPacket<?> var11) {
       for (int var14 = 0; var14 < this.field27991.size(); var14++) {
          ServerPlayerEntity var15 = this.field27991.get(var14);
          if (var15 != var1 && var15.world.getDimensionKey() == var10) {

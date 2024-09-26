@@ -20,6 +20,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SDisconnectPacket;
 import net.minecraft.util.text.StringTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -102,19 +103,19 @@ public class Class9021 {
 
          while (var4.hasNext()) {
             NetworkManager var5 = (NetworkManager)var4.next();
-            if (!var5.method30708()) {
+            if (!var5.hasNoChannel()) {
                if (var5.isChannelOpen()) {
                   try {
                      var5.tick();
                   } catch (Exception var9) {
-                     if (var5.method30702()) {
+                     if (var5.isLocalChannel()) {
                         throw new ReportedException(CrashReport.makeCrashReport(var9, "Ticking memory connection"));
                      }
 
-                     field41274.warn("Failed to handle packet for {}", var5.method30700(), var9);
+                     field41274.warn("Failed to handle packet for {}", var5.getRemoteAddress(), var9);
                      StringTextComponent var7 = new StringTextComponent("Internal server error");
-                     var5.method30694(new SDisconnectPacket(var7), var2 -> var5.method30701(var7));
-                     var5.method30711();
+                     var5.sendPacket(new SDisconnectPacket(var7), var2 -> var5.closeChannel(var7));
+                     var5.disableAutoRead();
                   }
                } else {
                   var4.remove();

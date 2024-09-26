@@ -7,7 +7,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.DamageSource;
@@ -321,7 +321,7 @@ public class Class905 extends ProjectileEntity {
    }
 
    @Override
-   public Packet<?> createSpawnPacket() {
+   public IPacket<?> createSpawnPacket() {
       return new SSpawnObjectPacket(this);
    }
 }

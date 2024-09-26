@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mojang.authlib.GameProfile;
 import mapped.*;
+import net.minecraft.client.entity.player.RemoteClientPlayerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CUseEntityPacket;
@@ -74,7 +75,7 @@ public class Freecam extends Module {
             mc.player.field4916 = var9;
             mc.player.prevPosZ = var9;
             if (MovementUtils.isMoving()) {
-                mc.player.field4909 = 0.099999994F;
+                mc.player.cameraYaw = 0.099999994F;
             }
         }
     }
@@ -96,9 +97,9 @@ public class Freecam extends Module {
         this.field23822 = mc.player.rotationPitch;
         String var3 = mc.player.getName().getString();
         GameProfile var4 = new GameProfile(mc.player.getGameProfile().getId(), var3);
-        field23814 = new Class1116(mc.world, var4);
+        field23814 = new RemoteClientPlayerEntity(mc.world, var4);
         field23814.inventory = mc.player.inventory;
-        field23814.method3269(this.field23815, this.field23816, this.field23817, this.field23821, this.field23822);
+        field23814.setPositionAndRotation(this.field23815, this.field23816, this.field23817, this.field23821, this.field23822);
         field23814.noClip = true;
         field23814.entityCollisionReduction = mc.player.entityCollisionReduction;
         field23814.rotationYawHead = this.field23821;
@@ -130,7 +131,7 @@ public class Freecam extends Module {
         mc.gameSettings.keyBindRight.pressed = this.field23829;
         mc.gameSettings.keyBindJump.pressed = this.field23830;
         mc.gameSettings.keyBindSneak.pressed = this.field23831;
-        mc.world.method6848(this.field23823);
+        mc.world.removeEntityFromWorld(this.field23823);
         mc.player.resetPositionToBB();
         if (field23814 != null) {
             mc.player.entityCollisionReduction = field23814.entityCollisionReduction;

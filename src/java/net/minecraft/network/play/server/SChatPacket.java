@@ -5,11 +5,11 @@ import java.util.UUID;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.text.ChatType;
 import net.minecraft.util.text.ITextComponent;
 
-public class SChatPacket implements Packet<IClientPlayNetHandler> {
+public class SChatPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24918;
    private ITextComponent field24919;
    private ChatType field24920;

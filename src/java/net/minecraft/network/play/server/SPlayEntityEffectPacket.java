@@ -4,11 +4,11 @@ import net.minecraft.potion.EffectInstance;
 import mapped.Effect;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SPlayEntityEffectPacket implements Packet<IClientPlayNetHandler> {
+public class SPlayEntityEffectPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24583;
    private int field24584;
    private byte field24585;

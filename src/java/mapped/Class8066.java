@@ -66,7 +66,7 @@ public class Class8066 {
          }
       });
       this.field34620 = Class7944.method26799();
-      this.field34621 = !Class9299.field42761.method20245();
+      this.field34621 = !Reflector.field42761.method20245();
       this.field34622 = false;
       this.field34623 = Class7944.method26977();
       this.field34629 = new Class8066[6];

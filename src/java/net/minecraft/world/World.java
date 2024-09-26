@@ -10,7 +10,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.tileentity.TileEntity;
@@ -974,7 +974,7 @@ public abstract class World implements Class1660, AutoCloseable {
       return this.worldBorder;
    }
 
-   public void method6811(Packet<?> var1) {
+   public void method6811(IPacket<?> var1) {
       throw new UnsupportedOperationException("Can't send packets to server unless you're on the client.");
    }
 

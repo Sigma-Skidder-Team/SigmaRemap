@@ -3,12 +3,12 @@ package net.minecraft.network.play.client;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.item.ItemStack;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CClickWindowPacket implements Packet<IServerPlayNetHandler> {
+public class CClickWindowPacket implements IPacket<IServerPlayNetHandler> {
    private int windowId;
    private int slotId;
    private int packedClickData;

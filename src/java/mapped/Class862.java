@@ -142,7 +142,7 @@ public class Class862 extends ContainerScreen<Class5826> {
          int var10 = var9 + 16 + 1;
          int var11 = var8 + 5 + 5;
          RenderSystem.pushMatrix();
-         RenderSystem.method27867();
+         RenderSystem.enableRescaleNormal();
          this.mc.getTextureManager().bindTexture(field4786);
          this.method2663(var1, var8, var9, var7);
          int var12 = 0;

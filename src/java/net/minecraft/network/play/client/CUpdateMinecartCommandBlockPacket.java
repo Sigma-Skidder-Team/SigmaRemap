@@ -5,13 +5,13 @@ import mapped.Class918;
 import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.world.World;
 import net.minecraft.entity.Entity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 import javax.annotation.Nullable;
 
-public class CUpdateMinecartCommandBlockPacket implements Packet<IServerPlayNetHandler> {
+public class CUpdateMinecartCommandBlockPacket implements IPacket<IServerPlayNetHandler> {
    private static String[] field24528;
    private int field24529;
    private String field24530;

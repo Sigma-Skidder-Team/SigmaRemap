@@ -55,11 +55,11 @@ public class Class7312 {
    }
 
    public void method23107() {
-      this.field31350.method27120();
+      this.field31350.reset();
    }
 
    public void method23108() {
-      long var3 = this.field31350.method27121();
+      long var3 = this.field31350.getElapsedTime();
       if (this.field31346) {
          this.field31351++;
       }

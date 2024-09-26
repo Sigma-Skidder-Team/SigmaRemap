@@ -9,12 +9,12 @@ import mapped.Class9007;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 import java.util.Map;
 
-public class SStatisticsPacket implements Packet<IClientPlayNetHandler> {
+public class SStatisticsPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24639;
    private Object2IntMap<Class9007<?>> field24640;
 

@@ -17,141 +17,141 @@ import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import java.util.List;
 
 public class Class9819 {
-   public TimerUtil field45877;
+   public TimerUtil timer;
    public int field45878;
-   public Entity field45879;
-   public Minecraft field45880 = Minecraft.getInstance();
+   public Entity entity;
+   public Minecraft mc = Minecraft.getInstance();
 
    public Class9819() {
-      this.field45877 = new TimerUtil();
+      this.timer = new TimerUtil();
       Client.getInstance().getEventManager().register(this);
    }
 
    @EventTarget
    @Class5631
-   public void method38763(EventUpdate var1) {
-      if (this.field45879 != null) {
+   public void onUpdate(EventUpdate event) {
+      if (this.entity != null) {
          if (this.field45878 != 1) {
             if (this.field45878 == 2) {
                boolean var4 = ColorUtils.method17716();
                if (var4) {
-                  PlayerAbilities var5 = new PlayerAbilities();
-                  var5.isFlying = true;
-                  Entity var6 = null;
+                  PlayerAbilities abilities = new PlayerAbilities();
+                  abilities.isFlying = true;
+                  Entity entity1 = null;
 
-                  for (Entity var8 : ColorUtils.method17708()) {
-                     if (var8 instanceof PlayerEntity
-                        && var8 != this.field45880.player
-                        && (var6 == null || var6.getDistance(this.field45880.player) > var8.getDistance(this.field45880.player))) {
-                        var6 = var8;
+                  for (Entity entity2 : ColorUtils.getEntitesInWorld()) {
+                     if (entity2 instanceof PlayerEntity
+                        && entity2 != this.mc.player
+                        && (entity1 == null || entity1.getDistance(this.mc.player) > entity2.getDistance(this.mc.player))) {
+                        entity1 = entity2;
                      }
                   }
 
-                  this.field45880.getConnection().sendPacket(new CConfirmTransactionPacket(0, (short)-1, false));
-                  this.field45880.getConnection().sendPacket(new CPlayerAbilitiesPacket(var5));
-                  if (var6 != null) {
-                     this.field45880.getConnection().sendPacket(new CSpectatePacket(var6.getUniqueID()));
+                  this.mc.getConnection().sendPacket(new CConfirmTransactionPacket(0, (short)-1, false));
+                  this.mc.getConnection().sendPacket(new CPlayerAbilitiesPacket(abilities));
+                  if (entity1 != null) {
+                     this.mc.getConnection().sendPacket(new CSpectatePacket(entity1.getUniqueID()));
                   }
 
-                  this.field45880.getConnection().sendPacket(new CInputPacket(0.98F, 0.98F, false, false));
+                  this.mc.getConnection().sendPacket(new CInputPacket(0.98F, 0.98F, false, false));
                }
 
-               Thread var9 = new Thread(
+               Thread thread = new Thread(
                   () -> {
                      try {
-                        Class8472 var4x = new Class8472(this.field45879.getPosX(), this.field45879.getPosY(), this.field45879.getPosZ());
-                        Class8472 var5x = new Class8472(
-                           this.field45880.player.getPosX(), this.field45880.player.getPosY(), this.field45880.player.getPosZ()
+                        Vector3d entityVec = new Vector3d(this.entity.getPosX(), this.entity.getPosY(), this.entity.getPosZ());
+                        Vector3d playerVec = new Vector3d(
+                           this.mc.player.getPosX(), this.mc.player.getPosY(), this.mc.player.getPosZ()
                         );
-                        List<Class8472> var6x = Class8901.method32447(var5x, var4x);
-                        Client.getInstance().getNotificationManager().post(new Notification("Teleport", "Successfully teleported !"));
-                        Entity var7 = this.field45880.player.getRidingEntity();
+                        List<Vector3d> vectors = Class8901.method32447(playerVec, entityVec);
+                        Client.getInstance().getNotificationManager().send(new Notification("Teleport", "Successfully teleported !"));
+                        Entity ridingEntity = this.mc.player.getRidingEntity();
 
-                        for (Class8472 var9x : var6x) {
-                           if (var7 != null) {
-                              var7.positionVec.x = var9x.method29876() + 0.5;
-                              var7.positionVec.y = var9x.method29877();
-                              var7.positionVec.z = var9x.method29878() + 0.5;
-                              this.field45880.getConnection().sendPacket(new CSteerBoatPacket(false, false));
-                              this.field45880
+                        for (Vector3d vec : vectors) {
+                           if (ridingEntity != null) {
+                              ridingEntity.positionVec.x = vec.getX() + 0.5;
+                              ridingEntity.positionVec.y = vec.getY();
+                              ridingEntity.positionVec.z = vec.getZ() + 0.5;
+                              this.mc.getConnection().sendPacket(new CSteerBoatPacket(false, false));
+                              this.mc
                                  .getConnection()
-                                 .sendPacket(new CPlayerPacket.RotationPacket(this.field45880.player.rotationYaw, this.field45880.player.rotationPitch, false));
-                              this.field45880.getConnection().sendPacket(new CInputPacket(0.0F, 1.0F, false, false));
+                                 .sendPacket(new CPlayerPacket.RotationPacket(this.mc.player.rotationYaw, this.mc.player.rotationPitch, false));
+                              this.mc.getConnection().sendPacket(new CInputPacket(0.0F, 1.0F, false, false));
                               BoatEntity var10 = new BoatEntity(
-                                 this.field45880.world, var9x.method29876() + 0.5, var9x.method29877(), var9x.method29878() + 0.5
+                                 this.mc.world, vec.getX() + 0.5, vec.getY(), vec.getZ() + 0.5
                               );
-                              var10.rotationYaw = var7.rotationYaw;
-                              var10.rotationPitch = var7.rotationPitch;
-                              this.field45880.getConnection().sendPacket(new CMoveVehiclePacket(var10));
+                              var10.rotationYaw = ridingEntity.rotationYaw;
+                              var10.rotationPitch = ridingEntity.rotationPitch;
+                              this.mc.getConnection().sendPacket(new CMoveVehiclePacket(var10));
                            } else if (var4) {
-                              this.field45880.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var9x.method29876(), var9x.method29877(), var9x.method29878(), false));
+                              this.mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(vec.getX(), vec.getY(), vec.getZ(), false));
                            } else {
-                              this.field45880.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var9x.method29876(), var9x.method29877(), var9x.method29878(), true));
+                              this.mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(vec.getX(), vec.getY(), vec.getZ(), true));
                            }
                         }
 
                         if (var4) {
-                           this.field45880.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var4x.field36296, var4x.field36297, var4x.field36298, false));
+                           this.mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(entityVec.x, entityVec.y, entityVec.z, false));
                         }
 
-                        this.field45880.player.setPosition(var4x.field36296, var4x.field36297, var4x.field36298);
-                        this.field45879 = null;
+                        this.mc.player.setPosition(entityVec.x, entityVec.y, entityVec.z);
+                        this.entity = null;
                         if (var4) {
                            PlayerAbilities var12 = new PlayerAbilities();
                            var12.isFlying = false;
-                           this.field45880.getConnection().sendPacket(new CPlayerAbilitiesPacket(var12));
+                           this.mc.getConnection().sendPacket(new CPlayerAbilitiesPacket(var12));
                         }
                      } catch (Exception var11) {
                         var11.printStackTrace();
                      }
                   }
                );
-               var9.start();
+               thread.start();
                this.field45878 = 0;
             }
          } else {
-            var1.setCancelled(true);
+            event.setCancelled(true);
          }
       }
    }
 
    @EventTarget
    @Class5631
-   public void method38764(EventMove var1) {
+   public void onMovement(EventMove event) {
       if (this.field45878 == 1) {
-         var1.setX(0.0);
-         var1.setY(0.0);
-         var1.setZ(0.0);
-         if (this.field45879 == null || !this.field45879.isAlive() || !ColorUtils.method17708().contains(this.field45879)) {
-            Client.getInstance().getNotificationManager().post(new Notification("Teleport", "Target lost"));
+         event.setX(0.0);
+         event.setY(0.0);
+         event.setZ(0.0);
+         if (this.entity == null || !this.entity.isAlive() || !ColorUtils.getEntitesInWorld().contains(this.entity)) {
+            Client.getInstance().getNotificationManager().send(new Notification("Teleport", "Target lost"));
             this.field45878 = 0;
-            this.field45879 = null;
-         } else if (!this.field45880.player.isSneaking()) {
-            double var4 = this.field45879.getPosY() - this.field45879.lastTickPosY;
-            if (var4 < -2.0 && ColorUtils.method17763(this.field45879) && this.field45879.getPosY() - this.field45880.player.getPosY() < -10.0) {
+            this.entity = null;
+         } else if (!this.mc.player.isSneaking()) {
+            double posY = this.entity.getPosY() - this.entity.lastTickPosY;
+            if (posY < -2.0 && ColorUtils.method17763(this.entity) && this.entity.getPosY() - this.mc.player.getPosY() < -10.0) {
                this.field45878 = 0;
-               this.field45879 = null;
-               Client.getInstance().getNotificationManager().post(new Notification("Teleport", "Target seems to be falling in void"));
+               this.entity = null;
+               Client.getInstance().getNotificationManager().send(new Notification("Teleport", "Target seems to be falling in void"));
             }
          } else {
             this.field45878 = 0;
-            this.field45879 = null;
-            Client.getInstance().getNotificationManager().post(new Notification("Teleport", "Teleport canceled"));
+            this.entity = null;
+            Client.getInstance().getNotificationManager().send(new Notification("Teleport", "Teleport canceled"));
          }
 
-         if (this.field45877.method27121() > 7000L) {
+         if (this.timer.getElapsedTime() > 7000L) {
             this.field45878 = 0;
-            this.field45879 = null;
-            Client.getInstance().getNotificationManager().post(new Notification("Teleport", "Failed teleport !"));
+            this.entity = null;
+            Client.getInstance().getNotificationManager().send(new Notification("Teleport", "Failed teleport !"));
          }
       }
    }
 
    @EventTarget
    @Class5631
-   public void method38765(ReceivePacketEvent var1) {
+   public void onReceivePacket(ReceivePacketEvent event) {
       if (this.field45878 == 1) {
-         if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
+         if (event.getPacket() instanceof SPlayerPositionLookPacket) {
             this.field45878 = 2;
          }
       }

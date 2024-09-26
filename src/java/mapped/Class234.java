@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.math.MathHelper;
@@ -45,7 +46,7 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
                var25 = -5.0F;
             }
 
-            float var28 = MathHelper.lerp(var7, var4.field4908, var4.field4909);
+            float var28 = MathHelper.lerp(var7, var4.prevCameraYaw, var4.cameraYaw);
             var25 += MathHelper.sin(MathHelper.lerp(var7, var4.prevDistanceWalkedModified, var4.distanceWalkedModified) * 6.0F) * 32.0F * var28;
             if (var4.method3336()) {
                var25 += 25.0F;

@@ -5,13 +5,13 @@ import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraft.entity.Entity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 import javax.annotation.Nullable;
 
-public class CUseEntityPacket implements Packet<IServerPlayNetHandler> {
+public class CUseEntityPacket implements IPacket<IServerPlayNetHandler> {
    private int entityId;
    private CUseEntityPacket.Action action;
    private Vector3d hitVec;

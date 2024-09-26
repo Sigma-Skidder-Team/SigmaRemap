@@ -3,7 +3,7 @@ package com.mentalfrostbyte.jello.module.impl.render.jello;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.render.classic.esp.*;
-import mapped.BooleanSetting;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.module.impl.render.jello.esp.*;
 
 public class ESP extends ModuleWithModuleSettings {

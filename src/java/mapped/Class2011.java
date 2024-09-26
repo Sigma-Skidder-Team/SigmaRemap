@@ -113,9 +113,9 @@ public class Class2011 extends Class2009 {
 
                   for (int var25 = 0; var25 < var24.length; var25++) {
                      RenderType var26 = var24[var25];
-                     if (!Class9016.method33348() || Class9299.method35056(Class9299.field42941, var37, var26)) {
+                     if (!Class9016.method33348() || Reflector.method35056(Reflector.field42941, var37, var26)) {
                         if (Class9016.method33350()) {
-                           Class9299.method35055(Class9299.field42895, var26);
+                           Reflector.method35055(Reflector.field42895, var26);
                         }
 
                         BufferBuilder var27 = var5.method26203(var26);
@@ -140,9 +140,9 @@ public class Class2011 extends Class2009 {
 
                   for (int var39 = 0; var39 < var38.length; var39++) {
                      RenderType var40 = var38[var39];
-                     if (!Class9016.method33349() || Class9299.method35056(Class9299.field42940, var20, var40)) {
+                     if (!Class9016.method33349() || Reflector.method35056(Reflector.field42940, var20, var40)) {
                         if (Class9016.method33350()) {
-                           Class9299.method35055(Class9299.field42895, var40);
+                           Reflector.method35055(Reflector.field42895, var40);
                         }
 
                         var40 = Class8066.method27760(this.field13078, var14, var20, var19, var40);
@@ -176,7 +176,7 @@ public class Class2011 extends Class2009 {
                }
 
                if (Class9016.method33350()) {
-                  Class9299.method35055(Class9299.field42895, (Object[])null);
+                  Reflector.method35055(Reflector.field42895, (Object[])null);
                }
             }
          }

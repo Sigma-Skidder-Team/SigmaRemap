@@ -1,12 +1,12 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CRenameItemPacket implements Packet<IServerPlayNetHandler> {
+public class CRenameItemPacket implements IPacket<IServerPlayNetHandler> {
    private static String[] field24668;
    private String field24669;
 

@@ -67,8 +67,8 @@ public class Class4829 {
          boolean var8 = var4.method23486(FluidTags.field40470);
          TextureAtlasSprite[] var9 = var8 ? this.field22602 : this.field22603;
          BlockState var10 = var1.getBlockState(var2);
-         if (Class9299.field42875.method20214()) {
-            TextureAtlasSprite[] var11 = (TextureAtlasSprite[])Class9299.method35062(Class9299.field42875, var1, var2, var4);
+         if (Reflector.field42875.exists()) {
+            TextureAtlasSprite[] var11 = (TextureAtlasSprite[]) Reflector.method35062(Reflector.field42875, var1, var2, var4);
             if (var11 != null) {
                var9 = var11;
             }
@@ -77,10 +77,10 @@ public class Class4829 {
          Class8391 var81 = var3.method17022(var7, var2);
          int var12 = -1;
          float var13 = 1.0F;
-         if (Class9299.field42833.method20214()) {
-            Object var14 = Class9299.method35070(var4.method23472(), Class9299.field42833);
-            if (var14 != null && Class9299.field42840.method20214()) {
-               var12 = Class9299.method35065(var14, Class9299.field42840, var1, var2);
+         if (Reflector.field42833.exists()) {
+            Object var14 = Reflector.call(var4.method23472(), Reflector.field42833);
+            if (var14 != null && Reflector.field42840.exists()) {
+               var12 = Reflector.method35065(var14, Reflector.field42840, var1, var2);
                var13 = (float)(var12 >> 24 & 0xFF) / 255.0F;
             }
          }
@@ -271,7 +271,7 @@ public class Class4829 {
                   float var123 = 0.0F;
                   float var125 = 0.0F;
                   boolean var127 = !var8;
-                  if (Class9299.field42831.method20214()) {
+                  if (Reflector.field42831.exists()) {
                      var127 = var9[2] != null;
                   }
 
@@ -279,8 +279,8 @@ public class Class4829 {
                      BlockState var66 = var1.getBlockState(var121);
                      Block var67 = var66.getBlock();
                      boolean var68 = false;
-                     if (Class9299.field42831.method20214()) {
-                        var68 = Class9299.method35064(var66, Class9299.field42831, var1, var121, var4);
+                     if (Reflector.field42831.exists()) {
+                        var68 = Reflector.method35064(var66, Reflector.field42831, var1, var121, var4);
                      }
 
                      if (var68 || var67 instanceof Class3231 || var67 instanceof Class3465 || var67 == Blocks.BEACON) {

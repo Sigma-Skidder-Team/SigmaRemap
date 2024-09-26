@@ -113,7 +113,7 @@ public abstract class Class1049 extends WaterMobEntity {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       if (!this.isInWater() && this.onGround && this.collidedVertically) {
          this.setMotion(
             this.getMotion()
@@ -124,7 +124,7 @@ public abstract class Class1049 extends WaterMobEntity {
          this.playSound(this.getFlopSound(), this.getSoundVolume(), this.getSoundPitch());
       }
 
-      super.livingEntity();
+      super.livingTick();
    }
 
    @Override

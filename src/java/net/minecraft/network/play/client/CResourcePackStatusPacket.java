@@ -1,12 +1,12 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CResourcePackStatusPacket implements Packet<IServerPlayNetHandler> {
+public class CResourcePackStatusPacket implements IPacket<IServerPlayNetHandler> {
     private Action action;
 
    public CResourcePackStatusPacket() {

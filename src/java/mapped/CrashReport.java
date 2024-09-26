@@ -60,8 +60,8 @@ public class CrashReport {
          List var2 = Util.method38503().collect(Collectors.toList());
          return String.format("%d total; %s", var2.size(), var2.stream().collect(Collectors.joining(" ")));
       });
-      if (Class9299.field42782 != null) {
-         Class9299.field42782.method20217(this, this.field21833);
+      if (Reflector.field42782 != null) {
+         Reflector.field42782.method20217(this, this.field21833);
       }
    }
 
@@ -81,7 +81,7 @@ public class CrashReport {
       if (this.field21837 != null && this.field21837.length > 0) {
          var1.append("-- Head --\n");
          var1.append("Thread: ").append(Thread.currentThread().getName()).append("\n");
-         if (!Class9299.field42785.method20214()) {
+         if (!Reflector.field42785.exists()) {
             var1.append("Stacktrace:\n");
 
             for (StackTraceElement var7 : this.field21837) {
@@ -92,7 +92,7 @@ public class CrashReport {
             var1.append("\n");
          } else {
             var1.append("Stacktrace:");
-            var1.append(Class9299.field42785.method20228(this.field21837));
+            var1.append(Reflector.field42785.method20228(this.field21837));
          }
       }
 
@@ -120,8 +120,8 @@ public class CrashReport {
          var5.setStackTrace(this.field21832.getStackTrace());
       }
 
-      if (Class9299.field42784.method20214()) {
-         return Class9299.field42784.method20222(var5);
+      if (Reflector.field42784.exists()) {
+         return Reflector.field42784.method20222(var5);
       } else {
          String var6;
          try {
@@ -146,8 +146,8 @@ public class CrashReport {
 
       StringBuilder var3 = new StringBuilder();
       var3.append("---- Minecraft Crash Report ----\n");
-      if (Class9299.field42783 != null && Class9299.field42783.method20214()) {
-         Class9299.field42783.method20217(var3, this);
+      if (Reflector.field42783 != null && Reflector.field42783.exists()) {
+         Reflector.field42783.method20217(var3, this);
       }
 
       var3.append("// ");

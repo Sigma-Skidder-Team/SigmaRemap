@@ -7,13 +7,13 @@ import mapped.Class9223;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 
-public class SRecipeBookPacket implements Packet<IClientPlayNetHandler> {
+public class SRecipeBookPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24712;
    private Class2338 field24713;
    private List<ResourceLocation> field24714;

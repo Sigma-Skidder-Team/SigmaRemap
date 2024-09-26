@@ -7,7 +7,7 @@ import com.mojang.datafixers.util.Either;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockReader;
@@ -439,11 +439,11 @@ public class ServerChunkProvider extends Class1702 {
       this.field9279.method6577(var1);
    }
 
-   public void sendToAllTracking(Entity var1, Packet<?> var2) {
+   public void sendToAllTracking(Entity var1, IPacket<?> var2) {
       this.field9279.method6581(var1, var2);
    }
 
-   public void sendToTrackingAndSelf(Entity var1, Packet<?> var2) {
+   public void sendToTrackingAndSelf(Entity var1, IPacket<?> var2) {
       this.field9279.method6580(var1, var2);
    }
 

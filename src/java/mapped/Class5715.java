@@ -64,12 +64,12 @@ public abstract class Class5715<T extends Entity> {
    }
 
    public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      if (Class9299.field42994.method20241()) {
-         Object var9 = Class9299.method35087(Class9299.field42994, var1, var1.getDisplayName(), this, var4, var5, var6, var3);
-         Class9299.method35086(var9);
-         Object var10 = Class9299.method35070(var9, Class9299.field42810);
+      if (Reflector.field42994.exists()) {
+         Object var9 = Reflector.method35087(Reflector.field42994, var1, var1.getDisplayName(), this, var4, var5, var6, var3);
+         Reflector.method35086(var9);
+         Object var10 = Reflector.call(var9, Reflector.field42810);
          if (var10 != Class9561.field44533 && (var10 == Class9561.field44532 || this.method17852((T)var1))) {
-            ITextComponent var11 = (ITextComponent)Class9299.method35070(var9, Class9299.field42995);
+            ITextComponent var11 = (ITextComponent) Reflector.call(var9, Reflector.field42995);
             this.method17893((T)var1, var11, var4, var5, var6);
          }
       } else if (this.method17852((T)var1)) {
@@ -90,8 +90,8 @@ public abstract class Class5715<T extends Entity> {
    public void method17893(T var1, ITextComponent var2, MatrixStack var3, Class7733 var4, int var5) {
       double var8 = this.field25097.method32228(var1);
       boolean var10 = !(var8 > 4096.0);
-      if (Class9299.field42879.method20214()) {
-         var10 = Class9299.field42879.method20218(var1, var8);
+      if (Reflector.field42879.exists()) {
+         var10 = Reflector.field42879.method20218(var1, var8);
       }
 
       if (var10) {

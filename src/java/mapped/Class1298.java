@@ -188,7 +188,7 @@ public abstract class Class1298 extends FocusableGui implements Class1190 {
          RenderSystem.enableBlend();
          RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field16000, DestFactor.field12927);
          RenderSystem.method27817();
-         RenderSystem.method27866(7425);
+         RenderSystem.shadeModel(7425);
          RenderSystem.disableTexture();
          byte var14 = 4;
          var10.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
@@ -234,7 +234,7 @@ public abstract class Class1298 extends FocusableGui implements Class1190 {
 
          this.method6156(var2, var3);
          RenderSystem.enableTexture();
-         RenderSystem.method27866(7424);
+         RenderSystem.shadeModel(7424);
          RenderSystem.disableAlphaTest();
          RenderSystem.disableBlend();
       }

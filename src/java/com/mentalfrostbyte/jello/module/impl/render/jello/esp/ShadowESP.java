@@ -58,7 +58,7 @@ public class ShadowESP extends Module {
     private void method16606() {
         int var3 = ColorUtils.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.8F);
         mc.world
-                .field9025
+                .entitiesById
                 .forEach(
                         (var2, var3x) -> {
                             if (this.method16611(var3x)) {

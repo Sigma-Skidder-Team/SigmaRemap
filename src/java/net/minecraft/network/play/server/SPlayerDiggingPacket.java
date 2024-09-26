@@ -7,12 +7,12 @@ import net.minecraft.network.play.client.CPlayerDiggingPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.math.BlockPos;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class SPlayerDiggingPacket implements Packet<IClientPlayNetHandler> {
+public class SPlayerDiggingPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24783;
    private static final Logger field24784 = LogManager.getLogger();
    private BlockPos field24785;

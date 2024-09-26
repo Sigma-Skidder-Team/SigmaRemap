@@ -131,8 +131,8 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       if (!this.world.isRemote && this.field5662 && !this.field5663 && !this.method4772() && this.onGround) {
          this.field5663 = true;
          this.field5664 = 0.0F;

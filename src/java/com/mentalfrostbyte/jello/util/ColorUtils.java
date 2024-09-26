@@ -81,7 +81,7 @@ public class ColorUtils {
 
    public static List<PlayerEntity> method17680() {
       ArrayList var2 = new ArrayList();
-      mc.world.field9025.forEach((var1, var2x) -> {
+      mc.world.entitiesById.forEach((var1, var2x) -> {
          if (var2x instanceof PlayerEntity) {
             var2.add((PlayerEntity)var2x);
          }
@@ -421,10 +421,10 @@ public class ColorUtils {
       return new Color((float)var5.getRed() / 255.0F, (float)var5.getGreen() / 255.0F, (float)var5.getBlue() / 255.0F, (float)var5.getAlpha() / 255.0F);
    }
 
-   public static List<Entity> method17708() {
-      ArrayList var2 = new ArrayList();
-      mc.world.field9025.forEach((var1, var2x) -> var2.add(var2x));
-      return var2;
+   public static List<Entity> getEntitesInWorld() {
+      ArrayList<Entity> entities = new ArrayList<>();
+      mc.world.entitiesById.forEach((entity1, entity2) -> entities.add(entity2));
+      return entities;
    }
 
    public static float[] method17709(int var0) {
@@ -998,7 +998,7 @@ public class ColorUtils {
    }
 
    public static boolean method17748(Entity var0, boolean var1, boolean var2, boolean var3) {
-      if (var0 != mc.player && var0 != Blink.field23863) {
+      if (var0 != mc.player && var0 != Blink.clientPlayerEntity) {
          if (Client.getInstance().getFriendManager().method26997(var0)) {
             return false;
          } else if (var0 instanceof LivingEntity) {

@@ -2,13 +2,13 @@ package net.minecraft.network.play.client;
 
 import net.minecraft.util.Direction;
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
 
-public class CPlayerDiggingPacket implements Packet<IServerPlayNetHandler> {
+public class CPlayerDiggingPacket implements IPacket<IServerPlayNetHandler> {
     private BlockPos position;
    private Direction facing;
    private Action action;

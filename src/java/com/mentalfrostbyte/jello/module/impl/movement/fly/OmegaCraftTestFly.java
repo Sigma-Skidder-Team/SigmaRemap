@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
@@ -96,7 +96,7 @@ public class OmegaCraftTestFly extends Module {
     @EventTarget
     public void method16702(ReceivePacketEvent event) {
         if (this.isEnabled()) {
-            Packet<?> packet = event.getPacket();
+            IPacket<?> packet = event.getPacket();
             if (packet instanceof SPlayerPositionLookPacket) {
                 SPlayerPositionLookPacket var5 = (SPlayerPositionLookPacket) packet;
                 if (this.field23854 >= 1) {
@@ -117,7 +117,7 @@ public class OmegaCraftTestFly extends Module {
     @EventTarget
     public void method16703(SendPacketEvent event) {
         if (this.isEnabled()) {
-            Packet<?> packet = event.getPacket();
+            IPacket<?> packet = event.getPacket();
             if (packet instanceof CPlayerPacket) {
                 CPlayerPacket var5 = (CPlayerPacket) packet;
                 if (this.field23854 == -1) {

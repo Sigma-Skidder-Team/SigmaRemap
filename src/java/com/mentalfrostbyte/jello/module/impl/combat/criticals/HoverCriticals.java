@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.Step;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import mapped.RayTraceResult;
 
 public class HoverCriticals extends Module {
@@ -27,7 +27,7 @@ public class HoverCriticals extends Module {
     @EventTarget
     public void method16921(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
-            Packet var4 = var1.getPacket();
+            IPacket var4 = var1.getPacket();
             if (var4 instanceof SPlayerPositionLookPacket) {
                 this.field23997 = 1.0E-11;
             }

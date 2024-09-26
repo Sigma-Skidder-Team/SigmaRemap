@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.hash.Hashing;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;

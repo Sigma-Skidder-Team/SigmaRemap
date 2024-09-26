@@ -78,8 +78,8 @@ public class SquidEntity extends WaterMobEntity {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       this.prevSquidPitch = this.squidPitch;
       this.prevSquidYaw = this.squidYaw;
       this.prevSquidRotation = this.squidRotation;

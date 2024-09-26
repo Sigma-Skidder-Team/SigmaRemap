@@ -51,7 +51,7 @@ public class Class7168 implements Class7166 {
 
    @Override
    public void startTick() {
-      TimeTracker var3 = (TimeTracker)Class9299.method35072(Minecraft.getInstance(), field30842);
+      TimeTracker var3 = (TimeTracker) Reflector.method35072(Minecraft.getInstance(), field30842);
       this.field30833 = var3 != null && var3.func_233508_d_() == this;
       this.field30834 = this.field30833 && Class8578.method30660();
       if (!this.field30830) {

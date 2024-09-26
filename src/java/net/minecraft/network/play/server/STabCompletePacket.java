@@ -9,11 +9,11 @@ import java.util.ArrayList;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentUtils;
 
-public class STabCompletePacket implements Packet<IClientPlayNetHandler> {
+public class STabCompletePacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24604;
    private int transactionId;
    private Suggestions sugestions;

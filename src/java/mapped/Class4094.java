@@ -29,30 +29,30 @@ public class Class4094 extends Class4057 {
                         if (!var2.equals("arms")) {
                            if (!var2.equals("right_leg")) {
                               if (!var2.equals("left_leg")) {
-                                 return !var2.equals("nose") ? null : (Class7219)Class9299.field43125.method36565(var5, 8);
+                                 return !var2.equals("nose") ? null : (Class7219) Reflector.field43125.method36565(var5, 8);
                               } else {
-                                 return (Class7219)Class9299.field43125.method36565(var5, 7);
+                                 return (Class7219) Reflector.field43125.method36565(var5, 7);
                               }
                            } else {
-                              return (Class7219)Class9299.field43125.method36565(var5, 6);
+                              return (Class7219) Reflector.field43125.method36565(var5, 6);
                            }
                         } else {
-                           return (Class7219)Class9299.field43125.method36565(var5, 5);
+                           return (Class7219) Reflector.field43125.method36565(var5, 5);
                         }
                      } else {
-                        return (Class7219)Class9299.field43125.method36565(var5, 4);
+                        return (Class7219) Reflector.field43125.method36565(var5, 4);
                      }
                   } else {
-                     return (Class7219)Class9299.field43125.method36565(var5, 3);
+                     return (Class7219) Reflector.field43125.method36565(var5, 3);
                   }
                } else {
-                  return (Class7219)Class9299.field43125.method36565(var5, 2);
+                  return (Class7219) Reflector.field43125.method36565(var5, 2);
                }
             } else {
-               return (Class7219)Class9299.field43125.method36565(var5, 1);
+               return (Class7219) Reflector.field43125.method36565(var5, 1);
             }
          } else {
-            return (Class7219)Class9299.field43125.method36565(var5, 0);
+            return (Class7219) Reflector.field43125.method36565(var5, 0);
          }
       } else {
          return null;

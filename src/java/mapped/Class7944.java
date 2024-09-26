@@ -1469,7 +1469,7 @@ public class Class7944 {
    }
 
    public static void method26954(MatrixStack var0) {
-      int var3 = Class9299.method35077(Class9299.field43019, -1);
+      int var3 = Reflector.method35077(Reflector.field43019, -1);
       int var4 = method26955();
       int var5 = method26956();
       int var6 = field34157.worldRenderer.method924();
@@ -1493,7 +1493,7 @@ public class Class7944 {
       int var4 = var2.method38595();
       int var5 = var2.method38594();
       if (var4 != var5) {
-         int var6 = Class9299.method35077(Class9299.field43019, -1);
+         int var6 = Reflector.method35077(Reflector.field43019, -1);
          if (var6 <= 0) {
             var6 = 1;
          }

@@ -5,11 +5,11 @@ import java.util.UUID;
 
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.text.ITextComponent;
 
-public class SUpdateBossInfoPacket implements Packet<IClientPlayNetHandler> {
+public class SUpdateBossInfoPacket implements IPacket<IClientPlayNetHandler> {
    private UUID field24287;
    private Class2151 field24288;
    public ITextComponent field24289;

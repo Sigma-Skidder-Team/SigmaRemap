@@ -177,8 +177,8 @@ public class ActiveRenderInfo {
    public BlockState method37515() {
       if (this.valid) {
          BlockState var3 = this.world.getBlockState(this.blockPos);
-         if (Class9299.field42828.method20214()) {
-            var3 = (BlockState)Class9299.method35070(var3, Class9299.field42828, this.world, this.blockPos, this.pos);
+         if (Reflector.field42828.exists()) {
+            var3 = (BlockState) Reflector.call(var3, Reflector.field42828, this.world, this.blockPos, this.pos);
          }
 
          return var3;

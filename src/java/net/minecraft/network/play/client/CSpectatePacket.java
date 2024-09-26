@@ -3,14 +3,14 @@ package net.minecraft.network.play.client;
 import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraft.entity.Entity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 import java.util.UUID;
 import javax.annotation.Nullable;
 
-public class CSpectatePacket implements Packet<IServerPlayNetHandler> {
+public class CSpectatePacket implements IPacket<IServerPlayNetHandler> {
     private UUID id;
 
    public CSpectatePacket() {

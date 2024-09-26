@@ -82,9 +82,9 @@ public class BowFly extends Module {
             if (var4 >= 0 || var4 <= 8) {
                 if (mc.player.getHeldItem(Hand.MAIN_HAND).getItem() == Items.BOW) {
                     if (InvManager.method16437(Items.field37797) == 0) {
-                        if (this.field23505.method27121() > 5000L) {
-                            Client.getInstance().getNotificationManager().post(new Notification("BowFly", "You have no arrows"));
-                            this.field23505.method27120();
+                        if (this.field23505.getElapsedTime() > 5000L) {
+                            Client.getInstance().getNotificationManager().send(new Notification("BowFly", "You have no arrows"));
+                            this.field23505.reset();
                         }
 
                         if (mc.timer.timerSpeed == 0.1F) {

@@ -44,7 +44,7 @@ public class Class4292 extends Class4278 implements Class4293 {
 
          this.field20793 = this.field20793
             - Math.round(!(var1 < 0.0F) ? (float)((Class4339)this.icoPanel).field21207 * var1 : 1.0F * (float)((Class4339)this.icoPanel).field21207 * var1);
-         this.field20797.method27120();
+         this.field20797.reset();
          this.field20797.start();
       }
    }
@@ -58,7 +58,7 @@ public class Class4292 extends Class4278 implements Class4293 {
             this.field20796.getHeightA() >= this.getHeightA()
                ? -1.0F
                : (
-                  !this.method13298() && !this.field20796.method13216() && (!this.field20797.isEnabled() || this.field20797.method27121() >= 500L)
+                  !this.method13298() && !this.field20796.method13216() && (!this.field20797.isEnabled() || this.field20797.getElapsedTime() >= 500L)
                      ? -0.05F
                      : 0.05F
                )

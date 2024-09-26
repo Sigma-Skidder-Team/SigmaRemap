@@ -44,7 +44,7 @@ public class Class4071 extends Class4057 {
             }
          } else {
             int var6 = field20391.get(var2);
-            return (Class7219)Class9299.method35075(var5, Class9299.field43055, var6);
+            return (Class7219) Reflector.method35075(var5, Reflector.field43055, var6);
          }
       } else {
          return null;

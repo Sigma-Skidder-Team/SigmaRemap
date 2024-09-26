@@ -237,7 +237,7 @@ public class Class1808 implements Class1809, AutoCloseable {
    }
 
    public void method7934() {
-      RenderSystem.assertThread(RenderSystem::method27806);
+      RenderSystem.assertThread(RenderSystem::isOnGameThread);
       this.field9754 = false;
       field9744 = this;
       this.field9755.method18285();
@@ -277,7 +277,7 @@ public class Class1808 implements Class1809, AutoCloseable {
    }
 
    public Class1709 getFromName(String var1) {
-      RenderSystem.assertThread(RenderSystem::method27806);
+      RenderSystem.assertThread(RenderSystem::isOnGameThread);
       Class1708 var4 = this.method7936(var1);
       return (Class1709)(var4 != null ? var4 : field9743);
    }

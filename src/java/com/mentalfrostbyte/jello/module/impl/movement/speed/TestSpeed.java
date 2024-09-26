@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
-import mapped.BooleanSetting;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
 import mapped.MovementUtils;
 import com.mentalfrostbyte.jello.module.impl.movement.Jesus;

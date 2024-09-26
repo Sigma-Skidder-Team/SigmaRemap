@@ -21,18 +21,18 @@ public class Class4113 extends Class4057 {
             if (!var2.equals("body_bottom")) {
                if (!var2.equals("head")) {
                   if (!var2.equals("right_hand")) {
-                     return !var2.equals("left_hand") ? null : (Class7219)Class9299.field43109.method36565(var5, 4);
+                     return !var2.equals("left_hand") ? null : (Class7219) Reflector.field43109.method36565(var5, 4);
                   } else {
-                     return (Class7219)Class9299.field43109.method36565(var5, 3);
+                     return (Class7219) Reflector.field43109.method36565(var5, 3);
                   }
                } else {
-                  return (Class7219)Class9299.field43109.method36565(var5, 2);
+                  return (Class7219) Reflector.field43109.method36565(var5, 2);
                }
             } else {
-               return (Class7219)Class9299.field43109.method36565(var5, 1);
+               return (Class7219) Reflector.field43109.method36565(var5, 1);
             }
          } else {
-            return (Class7219)Class9299.field43109.method36565(var5, 0);
+            return (Class7219) Reflector.field43109.method36565(var5, 0);
          }
       } else {
          return null;

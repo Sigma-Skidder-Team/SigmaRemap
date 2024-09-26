@@ -12,6 +12,7 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.util.Util;
@@ -155,8 +156,8 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       if (!(var1 instanceof Class1081)) {
          if (!(var1 instanceof Class1101)) {
             if (!(var1 instanceof Class1010)) {
-               if (Class9299.field42880.method20214()) {
-                  Class9299.method35062(Class9299.field42880, var1, this);
+               if (Reflector.field42880.exists()) {
+                  Reflector.method35062(Reflector.field42880, var1, this);
                }
             } else {
                this.method736(new ResourceLocation("shaders/post/invert.json"));
@@ -363,7 +364,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
             var6 = var6 * 60.0 / 70.0;
          }
 
-         return !Class9299.field42877.method20214() ? var6 : Class9299.method35060(Class9299.field42877, this, var1, var2, var6);
+         return !Reflector.field42877.exists() ? var6 : Reflector.method35060(Reflector.field42877, this, var1, var2, var6);
       } else {
          return 90.0;
       }
@@ -396,7 +397,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          PlayerEntity var5 = (PlayerEntity)this.mc.getRenderViewEntity();
          float var6 = var5.distanceWalkedModified - var5.prevDistanceWalkedModified;
          float var7 = -(var5.distanceWalkedModified + var6 * var2);
-         float var8 = MathHelper.lerp(var2, var5.field4908, var5.field4909);
+         float var8 = MathHelper.lerp(var2, var5.prevCameraYaw, var5.cameraYaw);
          var1.translate(
             (double)(MathHelper.sin(var7 * (float) Math.PI) * var8 * 0.5F),
             (double)(-Math.abs(MathHelper.cos(var7 * (float) Math.PI) * var8)),
@@ -631,8 +632,8 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
             }
          } else if (this.mc.currentScreen != null && Client.getInstance().getGuiManager().method33480() == null) {
             try {
-               if (Class9299.field42867.method20214()) {
-                  Class9299.method35055(Class9299.field42867, this.mc.currentScreen, var10, var7, var8, this.mc.getTickLength());
+               if (Reflector.field42867.exists()) {
+                  Reflector.method35055(Reflector.field42867, this.mc.currentScreen, var10, var7, var8, this.mc.getTickLength());
                } else {
                   this.mc.currentScreen.render(var10, var7, var8, this.mc.getTickLength());
                   Client.getInstance().getEventManager().call(new EventRenderShulker());
@@ -802,11 +803,11 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          this.mc.gameSettings.getPointOfView().method8247(),
          var1
       );
-      if (Class9299.field42881.method20214()) {
-         Object var20 = Class9299.field42881.method20217(this, var9, var1);
-         float var21 = Class9299.method35067(var20, Class9299.field42796);
-         float var22 = Class9299.method35067(var20, Class9299.field42797);
-         float var17 = Class9299.method35067(var20, Class9299.field42798);
+      if (Reflector.field42881.exists()) {
+         Object var20 = Reflector.field42881.method20217(this, var9, var1);
+         float var21 = Reflector.method35067(var20, Reflector.field42796);
+         float var22 = Reflector.method35067(var20, Reflector.field42797);
+         float var17 = Reflector.method35067(var20, Reflector.field42798);
          var9.method37514(var21, var22);
          var4.rotate(Vector3f.field32902.rotationDegrees(var17));
       }
@@ -814,9 +815,9 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       var4.rotate(Vector3f.field32898.rotationDegrees(var9.getPitch()));
       var4.rotate(Vector3f.YP.rotationDegrees(var9.getYaw() + 180.0F));
       this.mc.worldRenderer.updateCameraAndRender(var4, var1, var2, var8, var9, this, this.field818, var18);
-      if (Class9299.field42865.method20214()) {
+      if (Reflector.field42865.exists()) {
          this.mc.getProfiler().endStartSection("forge_render_last");
-         Class9299.method35055(Class9299.field42865, this.mc.worldRenderer, var4, var1, var18, var2);
+         Reflector.method35055(Reflector.field42865, this.mc.worldRenderer, var4, var1, var18, var2);
       }
 
       this.mc.getProfiler().endStartSection("hand");
@@ -998,7 +999,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
             return;
          }
 
-         Class9299.method35082(var1, Class9299.field43011, var4);
+         Reflector.method35082(var1, Reflector.field43011, var4);
       } catch (Throwable var8) {
       }
    }

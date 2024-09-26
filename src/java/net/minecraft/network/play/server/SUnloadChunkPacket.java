@@ -2,11 +2,11 @@ package net.minecraft.network.play.server;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SUnloadChunkPacket implements Packet<IClientPlayNetHandler> {
+public class SUnloadChunkPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24699;
    private int field24700;
    private int field24701;

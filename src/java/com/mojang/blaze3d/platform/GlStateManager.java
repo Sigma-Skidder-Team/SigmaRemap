@@ -52,7 +52,7 @@ public class GlStateManager {
    private static final FloatBuffer FLOAT_4_BUFFER = GLAllocation.createDirectFloatBuffer(4);
    private static int activeTexture;
    private static final TextureState[] TEXTURES = IntStream.range(0, 32).mapToObj(var0 -> new TextureState()).toArray(TextureState[]::new);
-   private static int field31741 = 7425;
+   private static int shadeModel = 7425;
    private static final BooleanState RESCALE_NORMAL = new BooleanState(32826);
    private static final GlStateManager.ColorMask COLOR_MASK = new ColorMask();
    private static final Color COLOR = new Color();
@@ -769,7 +769,7 @@ public class GlStateManager {
       method23704(16385, 4609, getBuffer(0.6F, 0.6F, 0.6F, 1.0F));
       method23704(16385, 4608, getBuffer(0.0F, 0.0F, 0.0F, 1.0F));
       method23704(16385, 4610, getBuffer(0.0F, 0.0F, 0.0F, 1.0F));
-      method23818(7424);
+      shadeModel(7424);
       float var8 = 0.4F;
       method23705(2899, getBuffer(0.4F, 0.4F, 0.4F, 1.0F));
       method23833();
@@ -1119,16 +1119,16 @@ public class GlStateManager {
    }
 
    @Deprecated
-   public static void method23818(int var0) {
+   public static void shadeModel(int mode) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
-      if (var0 != field31741) {
-         field31741 = var0;
-         GL11.glShadeModel(var0);
+      if (mode != shadeModel) {
+         shadeModel = mode;
+         GL11.glShadeModel(mode);
       }
    }
 
    @Deprecated
-   public static void method23819() {
+   public static void enableRescaleNormal() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       RESCALE_NORMAL.method35530();
    }

@@ -3,12 +3,12 @@ package net.minecraft.network.play.server;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 import javax.annotation.Nullable;
 
-public class SQueryNBTResponsePacket implements Packet<IClientPlayNetHandler> {
+public class SQueryNBTResponsePacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24456;
    private int field24457;
    private CompoundNBT field24458;

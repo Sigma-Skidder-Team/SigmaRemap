@@ -37,10 +37,10 @@ public class ItemRenderer implements IResourceManagerReloadListener {
    public ItemRenderer(TextureManager var1, ModelManager var2, ItemColors var3) {
       this.field849 = var1;
       this.field851 = var2;
-      if (!Class9299.field42952.method20241()) {
+      if (!Reflector.field42952.exists()) {
          this.field848 = new Class8400(var2);
       } else {
-         this.field848 = (Class8400)Class9299.method35087(Class9299.field42952, this.field851);
+         this.field848 = (Class8400) Reflector.method35087(Reflector.field42952, this.field851);
       }
 
       for (Item var7 : Registry.ITEM) {
@@ -87,10 +87,10 @@ public class ItemRenderer implements IResourceManagerReloadListener {
             var8 = this.field848.method29496().method1023(new Class1997("minecraft:trident#inventory"));
          }
 
-         if (!Class9299.field42870.method20214()) {
+         if (!Reflector.field42870.exists()) {
             var8.method22625().method34866(var2).method20691(var3, var4);
          } else {
-            var8 = (IBakedModel)Class9299.field42870.method20217(var4, var8, var2, var3);
+            var8 = (IBakedModel) Reflector.field42870.method20217(var4, var8, var2, var3);
          }
 
          var4.translate(-0.5, -0.5, -0.5);
@@ -104,7 +104,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
             }
 
             if (var8.method22633()) {
-               Class9299.field42866.method20217(this, var8, var1, var4, var5, var6, var7, var16);
+               Reflector.field42866.method20217(this, var8, var1, var4, var5, var6, var7, var16);
             } else {
                RenderType var17 = Class8928.method32633(var1, var16);
                Class5422 var14;
@@ -153,10 +153,10 @@ public class ItemRenderer implements IResourceManagerReloadListener {
                   Class8564.method30598();
                }
             }
-         } else if (!Class9299.field42913.method20214()) {
+         } else if (!Reflector.field42913.exists()) {
             Class9809.field45844.method38685(var1, var2, var4, var5, var6, var7);
          } else {
-            Class9809 var12 = (Class9809)Class9299.method35070(var1.getItem(), Class9299.field42913);
+            Class9809 var12 = (Class9809) Reflector.call(var1.getItem(), Reflector.field42913);
             var12.method38685(var1, var2, var4, var5, var6, var7);
          }
 
@@ -241,7 +241,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          float var16 = (float)(var15 >> 16 & 0xFF) / 255.0F;
          float var17 = (float)(var15 >> 8 & 0xFF) / 255.0F;
          float var18 = (float)(var15 & 0xFF) / 255.0F;
-         if (!Class9299.field42864.method20245()) {
+         if (!Reflector.field42864.method20245()) {
             var2.method17036(var10, var14, var16, var17, var18, var5, var6);
          } else {
             var2.method17021(var10, var14, var16, var17, var18, var5, var6, true);
@@ -288,7 +288,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       RenderSystem.pushMatrix();
       this.field849.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
       this.field849.getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1130(false, false);
-      RenderSystem.method27867();
+      RenderSystem.enableRescaleNormal();
       RenderSystem.disableAlphaTest();
       RenderSystem.method27939();
       RenderSystem.enableBlend();
@@ -340,7 +340,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
             CrashReport var8 = CrashReport.makeCrashReport(var10, "Rendering item");
             CrashReportCategory var9 = var8.makeCategory("Item being rendered");
             var9.addDetail("Item Type", () -> String.valueOf(var2.getItem()));
-            var9.addDetail("Registry Name", () -> String.valueOf(Class9299.method35070(var2.getItem(), Class9299.field42938)));
+            var9.addDetail("Registry Name", () -> String.valueOf(Reflector.call(var2.getItem(), Reflector.field42938)));
             var9.addDetail("Item Damage", () -> String.valueOf(var2.method32117()));
             var9.addDetail("Item NBT", () -> String.valueOf(var2.method32142()));
             var9.addDetail("Item Foil", () -> String.valueOf(var2.method32159()));
@@ -389,9 +389,9 @@ public class ItemRenderer implements IResourceManagerReloadListener {
             float var13 = Math.max(0.0F, (var12 - var11) / var12);
             int var14 = Math.round(13.0F - var11 * 13.0F / var12);
             int var15 = MathHelper.method37818(var13 / 3.0F, 1.0F, 1.0F);
-            if (Class9299.field42910.method20214() && Class9299.field42914.method20214()) {
-               double var16 = Class9299.method35068(var2.getItem(), Class9299.field42910, var2);
-               int var18 = Class9299.method35065(var2.getItem(), Class9299.field42914, var2);
+            if (Reflector.field42910.exists() && Reflector.field42914.exists()) {
+               double var16 = Reflector.method35068(var2.getItem(), Reflector.field42910, var2);
+               int var18 = Reflector.method35065(var2.getItem(), Reflector.field42914, var2);
                var14 = Math.round(13.0F - (float)var16 * 13.0F);
                var15 = var18;
             }

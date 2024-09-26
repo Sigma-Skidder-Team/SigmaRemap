@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.network.NetworkManager;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
@@ -15,7 +16,7 @@ public class Class5115 implements Class5114 {
    }
 
    @Override
-   public void method15588(ITextComponent var1) {
+   public void onDisconnect(ITextComponent var1) {
    }
 
    @Override
@@ -29,13 +30,13 @@ public class Class5115 implements Class5114 {
          this.field23266 = true;
          this.field23265.sendPacket(new Class5552(this.field23264.method1387()));
       } else {
-         this.field23265.method30701(field23263);
+         this.field23265.closeChannel(field23263);
       }
    }
 
    @Override
    public void method15690(Class5587 var1) {
       this.field23265.sendPacket(new Class5489(var1.method17560()));
-      this.field23265.method30701(field23263);
+      this.field23265.closeChannel(field23263);
    }
 }

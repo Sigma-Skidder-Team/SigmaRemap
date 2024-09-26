@@ -1,12 +1,12 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CSteerBoatPacket implements Packet<IServerPlayNetHandler> {
+public class CSteerBoatPacket implements IPacket<IServerPlayNetHandler> {
     private boolean left;
    private boolean right;
 

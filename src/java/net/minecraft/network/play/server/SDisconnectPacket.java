@@ -4,10 +4,10 @@ import java.io.IOException;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.text.ITextComponent;
 
-public class SDisconnectPacket implements Packet<IClientPlayNetHandler> {
+public class SDisconnectPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24532;
    private ITextComponent field24533;
 

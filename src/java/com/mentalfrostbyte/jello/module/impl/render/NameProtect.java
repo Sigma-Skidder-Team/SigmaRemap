@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.InputSetting;
 import mapped.*;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.*;
 import net.minecraft.util.text.StringTextComponent;
 
@@ -29,7 +29,7 @@ public class NameProtect extends Module {
     @EventTarget
     public void method16884(ReceivePacketEvent var1) {
         if (this.isEnabled()) {
-            Packet var4 = var1.getPacket();
+            IPacket var4 = var1.getPacket();
             if (var4 instanceof SUpdateScorePacket) {
                 SUpdateScorePacket var5 = (SUpdateScorePacket) var4;
                 if (var5.method17476() == Class2073.field13503) {

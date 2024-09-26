@@ -138,7 +138,7 @@ public class AutoMiner extends Module {
 
             if (!var14 && mc.player.onGround && !Client.getInstance().method19950().method31742() && this.field23454 == null) {
                List<BlockPos> var15 = this.method16081();
-               Client.getInstance().getNotificationManager().post(new Notification("AutoMiner", "Computing...", ResourcesDecrypter.directionIconPNG));
+               Client.getInstance().getNotificationManager().send(new Notification("AutoMiner", "Computing...", ResourcesDecrypter.directionIconPNG));
                this.field23454 = new Thread(
                   () -> {
                      boolean var4x = false;
@@ -160,7 +160,7 @@ public class AutoMiner extends Module {
                               Client.getInstance().method19950().method31739(var13x);
                               Client.getInstance()
                                  .getNotificationManager()
-                                 .post(
+                                 .send(
                                     new Notification(
                                        "AutoMiner",
                                        "Solved in " + var13x.size() + " steps! (" + this.field23453.field45900 + ":" + var11x + ")",
@@ -179,7 +179,7 @@ public class AutoMiner extends Module {
                         if (!var4x) {
                            Client.getInstance()
                               .getNotificationManager()
-                              .post(new Notification("AutoMiner", "Could not fin any safe path. (" + var15.size() + ")", ResourcesDecrypter.directionIconPNG));
+                              .send(new Notification("AutoMiner", "Could not fin any safe path. (" + var15.size() + ")", ResourcesDecrypter.directionIconPNG));
                            Thread.sleep(1000L);
                         }
                      } catch (InterruptedException var14x) {
@@ -199,7 +199,7 @@ public class AutoMiner extends Module {
 
                Client.getInstance()
                   .getNotificationManager()
-                  .post(new Notification("AutoMiner", "Computing... (" + this.field23453.field45900 + ")", ResourcesDecrypter.directionIconPNG));
+                  .send(new Notification("AutoMiner", "Computing... (" + this.field23453.field45900 + ")", ResourcesDecrypter.directionIconPNG));
             }
          }
       }
@@ -252,7 +252,7 @@ public class AutoMiner extends Module {
       this.field23451.clear();
       this.field23452.clear();
       Client.getInstance().method19950().method31738();
-      Client.getInstance().getNotificationManager().post(new Notification("AutoMiner", "Scanning Terrain..."));
+      Client.getInstance().getNotificationManager().send(new Notification("AutoMiner", "Scanning Terrain..."));
    }
 
    @Override

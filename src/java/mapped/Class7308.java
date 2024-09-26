@@ -6,6 +6,7 @@ import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelOption;
 import io.netty.handler.timeout.ReadTimeoutHandler;
+import net.minecraft.network.*;
 
 public class Class7308 extends ChannelInitializer<Channel> {
    public final Class9021 field31334;
@@ -23,12 +24,12 @@ public class Class7308 extends ChannelInitializer<Channel> {
       var1.pipeline()
          .addLast("timeout", new ReadTimeoutHandler(30))
          .addLast("legacy_query", new Class6393(this.field31334))
-         .addLast("splitter", new Class9573())
-         .addLast("decoder", new Class8399(Class1975.SERVERBOUND))
-         .addLast("prepender", new Class8577())
-         .addLast("encoder", new Class5623(Class1975.CLIENTBOUND));
+         .addLast("splitter", new NettyVarint21FrameDecoder())
+         .addLast("decoder", new NettyPacketDecoder(PacketDirection.SERVERBOUND))
+         .addLast("prepender", new NettyVarint21FrameEncoder())
+         .addLast("encoder", new NettyPacketEncoder(PacketDirection.CLIENTBOUND));
       int var4 = Class9021.method33406(this.field31334).method1349();
-      Object var5 = var4 > 0 ? new Class8587(var4) : new NetworkManager(Class1975.SERVERBOUND);
+      Object var5 = var4 > 0 ? new Class8587(var4) : new NetworkManager(PacketDirection.SERVERBOUND);
       Class9021.method33407(this.field31334).add(var5);
       var1.pipeline().addLast("packet_handler", (ChannelHandler)var5);
       ((NetworkManager)var5).setNetHandler(new Class5106(Class9021.method33406(this.field31334), (NetworkManager)var5));

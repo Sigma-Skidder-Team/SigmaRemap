@@ -1,7 +1,7 @@
 package net.minecraft.network.login.server;
 
 import net.minecraft.client.network.login.IClientLoginNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.CryptException;
 import net.minecraft.util.CryptManager;
@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.security.PublicKey;
 
 
-public class SEncryptionRequestPacket implements Packet<IClientLoginNetHandler> {
+public class SEncryptionRequestPacket implements IPacket<IClientLoginNetHandler> {
    private String hashedServerId;
    private byte[] publicKey;
    private byte[] verifyToken;

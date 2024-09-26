@@ -1,13 +1,13 @@
 package net.minecraft.network.login.server;
 
 import net.minecraft.client.network.login.IClientLoginNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
 
-public class SCustomPayloadLoginPacket implements Packet<IClientLoginNetHandler> {
+public class SCustomPayloadLoginPacket implements IPacket<IClientLoginNetHandler> {
    private int transaction;
    private ResourceLocation channel;
    private PacketBuffer payload;

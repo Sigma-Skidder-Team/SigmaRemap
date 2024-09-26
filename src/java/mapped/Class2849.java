@@ -11,16 +11,16 @@ public class Class2849 extends Class2828 {
    public Class2849() {
       super(RenderType::getEntityCutoutNoCull);
       Class5723 var3 = new Class5723(Minecraft.getInstance().getRenderManager());
-      this.field17652 = (Class7219)Class9299.field43041.method36565(var3, 0);
-      this.field17653 = (Class7219)Class9299.field43041.method36565(var3, 1);
-      this.field17654 = (Class7219)Class9299.field43041.method36565(var3, 2);
+      this.field17652 = (Class7219) Reflector.field43041.method36565(var3, 0);
+      this.field17653 = (Class7219) Reflector.field43041.method36565(var3, 1);
+      this.field17654 = (Class7219) Reflector.field43041.method36565(var3, 2);
    }
 
    public Class5723 method11175(Class5723 var1) {
-      if (Class9299.field43041.method36567()) {
-         Class9299.field43041.method36566(var1, 0, this.field17652);
-         Class9299.field43041.method36566(var1, 1, this.field17653);
-         Class9299.field43041.method36566(var1, 2, this.field17654);
+      if (Reflector.field43041.method36567()) {
+         Reflector.field43041.method36566(var1, 0, this.field17652);
+         Reflector.field43041.method36566(var1, 1, this.field17653);
+         Reflector.field43041.method36566(var1, 2, this.field17654);
          return var1;
       } else {
          Class7944.method26811("Field not found: RenderEnderCrystal.modelEnderCrystal");

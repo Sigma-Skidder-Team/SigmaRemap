@@ -495,12 +495,12 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       if (this.rand.nextInt(200) == 0) {
          this.method4954();
       }
 
-      super.livingEntity();
+      super.livingTick();
       if (!this.world.isRemote && this.isAlive()) {
          if (this.rand.nextInt(900) == 0 && this.deathTime == 0) {
             this.heal(1.0F);
@@ -714,7 +714,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
                this.method4937(false);
             }
 
-            this.method3108(this, false);
+            this.func_233629_a_(this, false);
          } else {
             this.jumpMovementFactor = 0.02F;
             super.travel(var1);

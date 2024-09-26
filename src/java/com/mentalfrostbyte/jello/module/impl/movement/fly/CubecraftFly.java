@@ -6,10 +6,11 @@ import com.mentalfrostbyte.jello.event.impl.*;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
@@ -136,7 +137,7 @@ public class CubecraftFly extends Module {
                 } else if (!ColorUtils.isAboveBounds(mc.player, 0.001F)) {
                     var1.setY(0.0);
                     this.field23845 = -2;
-                    Client.getInstance().getNotificationManager().post(new Notification("Cubecraft Fly", "Please start on the ground."));
+                    Client.getInstance().getNotificationManager().send(new Notification("Cubecraft Fly", "Please start on the ground."));
                 } else {
                     MovementUtils.setSpeed(var1, 0.0);
                     var1.setY(0.0);
@@ -182,7 +183,7 @@ public class CubecraftFly extends Module {
     @EventTarget
     public void method16690(ReceivePacketEvent var1) {
         if (mc.world != null && mc.getConnection() != null && ColorUtils.method17718()) {
-            Packet var4 = var1.getPacket();
+            IPacket var4 = var1.getPacket();
             if (!(var4 instanceof SPlayerPositionLookPacket)) {
                 if (var4 instanceof SEntityVelocityPacket) {
                     SEntityVelocityPacket var5 = (SEntityVelocityPacket) var4;

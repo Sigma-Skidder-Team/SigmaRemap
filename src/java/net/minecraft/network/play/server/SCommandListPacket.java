@@ -17,7 +17,7 @@ import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import it.unimi.dsi.fastutil.objects.Object2IntMap.Entry;
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
-public class SCommandListPacket implements Packet<IClientPlayNetHandler> {
+public class SCommandListPacket implements IPacket<IClientPlayNetHandler> {
    private RootCommandNode<Class6618> field24922;
 
    public SCommandListPacket() {

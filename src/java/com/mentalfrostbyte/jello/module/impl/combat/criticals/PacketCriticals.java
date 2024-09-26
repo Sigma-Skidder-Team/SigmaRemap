@@ -32,7 +32,7 @@ public class PacketCriticals extends Module {
             if (var4 instanceof LivingEntity
                     && var4.hurtResistantTime <= (int) this.getNumberValueBySettingName("HurtTime")
                     && Step.field23887 > 1
-                    && (this.timer.method27121() > 200L || var4.hurtResistantTime > 0)
+                    && (this.timer.getElapsedTime() > 200L || var4.hurtResistantTime > 0)
                     && mc.player.onGround
                     && mc.player.collidedVertically) {
                 double[] var5 = new double[]{0.2, 0.0};
@@ -50,7 +50,7 @@ public class PacketCriticals extends Module {
                 }
 
                 this.field23999 = true;
-                this.timer.method27120();
+                this.timer.reset();
             }
         }
     }

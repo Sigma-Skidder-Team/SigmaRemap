@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.movement.SafeWalk;
 import com.mentalfrostbyte.jello.module.impl.movement.Speed;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
@@ -407,7 +408,7 @@ public class BlockFlyHypixelMode extends Module {
                         mc.player.field4915 = this.field23476;
                         mc.player.prevPosY = this.field23476;
                         if (MovementUtils.isMoving()) {
-                            mc.player.field4909 = 0.099999994F;
+                            mc.player.cameraYaw = 0.099999994F;
                         }
                     }
                 }

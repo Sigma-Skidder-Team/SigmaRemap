@@ -1,12 +1,12 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CEnchantItemPacket implements Packet<IServerPlayNetHandler> {
+public class CEnchantItemPacket implements IPacket<IServerPlayNetHandler> {
     private int windowId;
    private int button;
 

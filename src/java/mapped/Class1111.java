@@ -51,7 +51,7 @@ public abstract class Class1111 extends MobEntity {
          this.setMotion(this.getMotion().scale(0.8F));
       }
 
-      this.method3108(this, false);
+      this.func_233629_a_(this, false);
    }
 
    @Override

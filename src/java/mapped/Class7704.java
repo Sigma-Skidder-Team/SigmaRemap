@@ -52,13 +52,13 @@ public class Class7704 {
    public static Class7704 method25460(List<Class7781> var0) {
       if (var0.isEmpty()) {
          return null;
-      } else if (!Class9299.field43013.method20238()) {
+      } else if (!Reflector.field43013.method20238()) {
          return null;
       } else {
          Map<ResourceLocation, Set<Float>> var3 = new LinkedHashMap();
 
          for (Class7781 var5 : var0) {
-            Map<ResourceLocation, Float> var6 = (Map<ResourceLocation, Float>) Class9299.method35072(var5, Class9299.field43013);
+            Map<ResourceLocation, Float> var6 = (Map<ResourceLocation, Float>) Reflector.method35072(var5, Reflector.field43013);
 
             for (ResourceLocation var8 : var6.keySet()) {
                Float var9 = var6.get(var8);

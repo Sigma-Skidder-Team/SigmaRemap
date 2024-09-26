@@ -111,7 +111,7 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       if (!this.world.isRemote && this.isAlive() && this.isServerWorld()) {
          this.field6008++;
          ItemStack var3 = this.getItemStackFromSlot(EquipmentSlotType.field13731);
@@ -144,7 +144,7 @@ public class Class1095 extends Class1018 {
          this.moveForward = 0.0F;
       }
 
-      super.livingEntity();
+      super.livingTick();
       if (this.method5133() && this.rand.nextFloat() < 0.05F) {
          this.playSound(SoundEvents.field26588, 1.0F, 1.0F);
       }

@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.module.impl.movement.Speed;
-import mapped.BooleanSetting;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 
 public class AAC4Criticals extends Module {
     private static int field23862;
@@ -55,7 +55,7 @@ public class AAC4Criticals extends Module {
                 field23862 = 0;
             }
 
-            boolean var4 = !this.getBooleanValueFromSetttingName("KillAura") || KillAura.field23948 != null || KillAura.field23949 != null;
+            boolean var4 = !this.getBooleanValueFromSetttingName("KillAura") || KillAura.target != null || KillAura.field23949 != null;
             if (mc.player.onGround && mc.player.collidedVertically && var4) {
                 field23862++;
                 mc.player.field6120 = 0.0;

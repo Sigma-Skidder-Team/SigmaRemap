@@ -6,11 +6,11 @@ import mapped.Class2266;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.SoundEvent;
 import org.apache.commons.lang3.Validate;
 
-public class SPlaySoundEffectPacket implements Packet<IClientPlayNetHandler> {
+public class SPlaySoundEffectPacket implements IPacket<IClientPlayNetHandler> {
    private SoundEvent field24776;
    private Class2266 field24777;
    private int field24778;

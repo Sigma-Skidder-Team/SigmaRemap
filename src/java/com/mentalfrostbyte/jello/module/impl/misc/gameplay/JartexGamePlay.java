@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.misc.GamePlay;
 import com.mentalfrostbyte.jello.notification.Notification;
 import mapped.Class7200;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SChatPacket;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.event.ClickEvent;
@@ -29,7 +29,7 @@ public class JartexGamePlay extends Module {
     @EventTarget
     private void method16219(ReceivePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            Packet var4 = var1.getPacket();
+            IPacket var4 = var1.getPacket();
             if (var4 instanceof SChatPacket) {
                 SChatPacket var5 = (SChatPacket) var4;
                 String var6 = var5.getChatComponent().getString();
@@ -56,7 +56,7 @@ public class JartexGamePlay extends Module {
                                 this.field23527.method16759(new Class7200(var11.getValue(), (long) this.field23527.getNumberValueBySettingName("Auto Join delay") * 1000L));
                                 Client.getInstance()
                                         .getNotificationManager()
-                                        .post(
+                                        .send(
                                                 new Notification(
                                                         "Auto Join", "Joining a new game in 3 seconds.", (int) (this.field23527.getNumberValueBySettingName("Auto Join delay") - 1.0F) * 1000
                                                 )

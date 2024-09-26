@@ -74,7 +74,7 @@ public class SpartanClickTP extends Module {
                 if (var4.x == (double) this.field23465.getX() + 0.5
                         && var4.y == (double) (this.field23465.getY() + 1)
                         && var4.z == (double) this.field23465.getZ() + 0.5) {
-                    Client.getInstance().getNotificationManager().post(new Notification("ClickTP", "Successfully teleported"));
+                    Client.getInstance().getNotificationManager().send(new Notification("ClickTP", "Successfully teleported"));
                     if (!this.access().getBooleanValueFromSetttingName("Auto Disable")) {
                         this.field23464 = -1;
                         this.field23465 = null;

@@ -20,15 +20,15 @@ public class Class4118 extends Class4117 {
          if (!var2.equals("right")) {
             if (!var2.equals("left")) {
                if (!var2.equals("waist")) {
-                  return !var2.equals("base") ? super.method12823(var5, var2) : (Class7219)Class9299.method35075(var5, Class9299.field43024, 3);
+                  return !var2.equals("base") ? super.method12823(var5, var2) : (Class7219) Reflector.method35075(var5, Reflector.field43024, 3);
                } else {
-                  return (Class7219)Class9299.method35075(var5, Class9299.field43024, 2);
+                  return (Class7219) Reflector.method35075(var5, Reflector.field43024, 2);
                }
             } else {
-               return (Class7219)Class9299.method35075(var5, Class9299.field43024, 1);
+               return (Class7219) Reflector.method35075(var5, Reflector.field43024, 1);
             }
          } else {
-            return (Class7219)Class9299.method35075(var5, Class9299.field43024, 0);
+            return (Class7219) Reflector.method35075(var5, Reflector.field43024, 0);
          }
       } else {
          return null;

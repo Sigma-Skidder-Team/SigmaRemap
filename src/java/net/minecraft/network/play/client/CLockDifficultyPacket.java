@@ -1,12 +1,12 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CLockDifficultyPacket implements Packet<IServerPlayNetHandler> {
+public class CLockDifficultyPacket implements IPacket<IServerPlayNetHandler> {
     private boolean field_218777_a;
 
    public CLockDifficultyPacket() {

@@ -4,11 +4,11 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.world.World;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SEntityHeadLookPacket implements Packet<IClientPlayNetHandler> {
+public class SEntityHeadLookPacket implements IPacket<IClientPlayNetHandler> {
     private int entityId;
    private byte yaw;
 

@@ -3,12 +3,12 @@ package net.minecraft.network.play.server;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
 
-public class SUpdateTileEntityPacket implements Packet<IClientPlayNetHandler> {
+public class SUpdateTileEntityPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24901;
    private BlockPos field24902;
    private int field24903;

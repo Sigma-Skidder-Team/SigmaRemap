@@ -2,12 +2,12 @@ package net.minecraft.network.play.server;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.world.Difficulty;
 
 import java.io.IOException;
 
-public class SServerDifficultyPacket implements Packet<IClientPlayNetHandler> {
+public class SServerDifficultyPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24574;
    private Difficulty field24575;
    private boolean field24576;

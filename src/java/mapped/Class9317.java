@@ -2,15 +2,16 @@ package mapped;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelInitializer;
+import net.minecraft.network.NetworkManager;
 
 public final class Class9317 extends ChannelInitializer<Channel> {
-   public final NetworkManager field43255;
+   public final NetworkManager networkmanager;
 
-   public Class9317(NetworkManager var1) {
-      this.field43255 = var1;
+   public Class9317(NetworkManager networkmanager) {
+      this.networkmanager = networkmanager;
    }
 
-   public void initChannel(Channel var1) throws Exception {
-      var1.pipeline().addLast("packet_handler", this.field43255);
+   public void initChannel(Channel p_initChannel_1_) {
+      p_initChannel_1_.pipeline().addLast("packet_handler", this.networkmanager);
    }
 }

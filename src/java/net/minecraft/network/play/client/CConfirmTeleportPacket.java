@@ -1,12 +1,12 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CConfirmTeleportPacket implements Packet<IServerPlayNetHandler> {
+public class CConfirmTeleportPacket implements IPacket<IServerPlayNetHandler> {
     private int telportId;
 
    public CConfirmTeleportPacket() {

@@ -25,7 +25,7 @@ public class Class4109 extends Class4057 {
             if (!var2.startsWith(var11)) {
                return null;
             } else {
-               Class7219[] var12 = (Class7219[])Class9299.method35072(var5, Class9299.field43130);
+               Class7219[] var12 = (Class7219[]) Reflector.method35072(var5, Reflector.field43130);
                if (var12 == null) {
                   return null;
                } else {
@@ -36,7 +36,7 @@ public class Class4109 extends Class4057 {
                }
             }
          } else {
-            Class7219[] var7 = (Class7219[])Class9299.method35072(var5, Class9299.field43129);
+            Class7219[] var7 = (Class7219[]) Reflector.method35072(var5, Reflector.field43129);
             if (var7 == null) {
                return null;
             } else {

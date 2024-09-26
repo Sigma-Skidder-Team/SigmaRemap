@@ -2,11 +2,11 @@ package net.minecraft.network.play.server;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SDestroyEntitiesPacket implements Packet<IClientPlayNetHandler> {
+public class SDestroyEntitiesPacket implements IPacket<IClientPlayNetHandler> {
     private int[] entityIDs;
 
    public SDestroyEntitiesPacket() {

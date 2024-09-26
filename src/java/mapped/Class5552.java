@@ -4,14 +4,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.IOException;
 
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.Style$Serializer;
 
-public class Class5552 implements Packet<Class5112> {
+public class Class5552 implements IPacket<Class5112> {
    private static String[] field24652;
    private static final Gson field24653 = new GsonBuilder()
       .registerTypeAdapter(Class9226.class, new Class2559())

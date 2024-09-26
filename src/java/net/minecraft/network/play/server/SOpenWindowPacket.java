@@ -7,10 +7,10 @@ import mapped.ContainerType;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.text.ITextComponent;
 
-public class SOpenWindowPacket implements Packet<IClientPlayNetHandler> {
+public class SOpenWindowPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24401;
    private int field24402;
    private int field24403;

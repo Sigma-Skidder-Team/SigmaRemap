@@ -38,8 +38,8 @@ public abstract class Class1018 extends Class1045 {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       if (this.method4767() != 0) {
          this.field5702 = 0;
       }

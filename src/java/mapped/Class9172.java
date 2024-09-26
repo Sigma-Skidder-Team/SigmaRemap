@@ -89,7 +89,7 @@ public class Class9172 {
    public static void method34265(Class4671 var0) {
       method34276();
       if (var0 != null && !(var0 instanceof Class4670)) {
-         if (Class9299.field42965.method20214() && Minecraft.getInstance().getResourceManager() == null) {
+         if (Reflector.field42965.exists() && Minecraft.getInstance().getResourceManager() == null) {
             Class7944.method26810("[Shaders] Delayed loading of block mappings after resources are loaded");
             field42104 = true;
          } else {

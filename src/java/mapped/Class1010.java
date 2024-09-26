@@ -179,7 +179,7 @@ public class Class1010 extends Class1009 implements IAngerable {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       if (this.world.isRemote) {
          for (int var3 = 0; var3 < 2; var3++) {
             this.world
@@ -200,7 +200,7 @@ public class Class1010 extends Class1009 implements IAngerable {
          this.method4366((ServerWorld)this.world, true);
       }
 
-      super.livingEntity();
+      super.livingTick();
    }
 
    @Override

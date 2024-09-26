@@ -17,7 +17,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.*;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.palette.UpgradeData;
@@ -339,8 +339,8 @@ public class Class1649 extends Class1648 implements Class1650 {
             if (this.field8954.remove(var1, var3) && var5 != null) {
                if (var5 instanceof Chunk) {
                   ((Chunk)var5).method7143(false);
-                  if (Class9299.field42777.method20241()) {
-                     Class9299.method35085(Class9299.field42777, var5);
+                  if (Reflector.field42777.exists()) {
+                     Reflector.postForgeBusEvent(Reflector.field42777, var5);
                   }
                }
 
@@ -537,11 +537,11 @@ public class Class1649 extends Class1648 implements Class1650 {
                }
 
                if (var7 != null) {
-                  var7.forEach(var6::method7132);
+                  var7.forEach(var6::removeEntity);
                }
 
-               if (Class9299.field42775.method20241()) {
-                  Class9299.method35085(Class9299.field42775, var6);
+               if (Reflector.field42775.exists()) {
+                  Reflector.postForgeBusEvent(Reflector.field42775, var6);
                }
             }
 
@@ -560,7 +560,7 @@ public class Class1649 extends Class1648 implements Class1650 {
          }), var2 -> this.field8966.method1641(Class1812.method7961(var1, var2)));
       var6.thenAcceptAsync(var2 -> var2.mapLeft(var2x -> {
             this.field8969.getAndIncrement();
-            Packet[] var5x = new Packet[2];
+            IPacket[] var5x = new IPacket[2];
             this.method6576(var4, false).forEach(var3 -> this.method6582(var3, var5x, var2x));
             return Either.left(var2x);
          }), var2 -> this.field8966.method1641(Class1812.method7961(var1, var2)));
@@ -602,9 +602,9 @@ public class Class1649 extends Class1648 implements Class1650 {
 
             this.field8956.getProfiler().func_230035_c_("chunkSave");
             CompoundNBT var6 = Class9725.method38088(this.field8956, var1);
-            if (Class9299.field42773.method20241()) {
-               World var7 = (World)Class9299.method35070(var1, Class9299.field42908);
-               Class9299.method35085(Class9299.field42773, var1, var7 != null ? var7 : this.field8956, var6);
+            if (Reflector.field42773.exists()) {
+               World var7 = (World) Reflector.call(var1, Reflector.field42908);
+               Reflector.postForgeBusEvent(Reflector.field42773, var1, var7 != null ? var7 : this.field8956, var6);
             }
 
             this.method6532(var4, var6);
@@ -651,7 +651,7 @@ public class Class1649 extends Class1648 implements Class1650 {
          while (var6.hasNext()) {
             Class8641 var7 = (Class8641)var6.next();
             ChunkPos var8 = var7.method31056();
-            Packet[] var9 = new Packet[2];
+            IPacket[] var9 = new IPacket[2];
             this.method6576(var8, false).forEach(var4x -> {
                int var7x = method6535(var8, var4x, true);
                boolean var8x = var7x <= var5;
@@ -662,10 +662,10 @@ public class Class1649 extends Class1648 implements Class1650 {
       }
    }
 
-   public void method6564(ServerPlayerEntity var1, ChunkPos var2, Packet<?>[] var3, boolean var4, boolean var5) {
+   public void method6564(ServerPlayerEntity var1, ChunkPos var2, IPacket<?>[] var3, boolean var4, boolean var5) {
       if (var1.world == this.field8956) {
-         if (Class9299.field42845.method20214()) {
-            Class9299.field42845.method20217(var4, var5, var1, var2, this.field8956);
+         if (Reflector.field42845.exists()) {
+            Reflector.field42845.method20217(var4, var5, var1, var2, this.field8956);
          }
 
          if (var5 && !var4) {
@@ -788,7 +788,7 @@ public class Class1649 extends Class1648 implements Class1650 {
       for (int var12 = var7 - this.field8976; var12 <= var7 + this.field8976; var12++) {
          for (int var10 = var8 - this.field8976; var10 <= var8 + this.field8976; var10++) {
             ChunkPos var11 = new ChunkPos(var12, var10);
-            this.method6564(var1, var11, new Packet[2], !var2, var2);
+            this.method6564(var1, var11, new IPacket[2], !var2, var2);
          }
       }
    }
@@ -857,7 +857,7 @@ public class Class1649 extends Class1648 implements Class1650 {
                ChunkPos var23 = new ChunkPos(var37, var22);
                boolean var24 = method6536(var23, var15, var16) <= this.field8976;
                boolean var25 = method6536(var23, var26, var27) <= this.field8976;
-               this.method6564(var1, var23, new Packet[2], var24, var25);
+               this.method6564(var1, var23, new IPacket[2], var24, var25);
             }
          }
       } else {
@@ -866,7 +866,7 @@ public class Class1649 extends Class1648 implements Class1650 {
                ChunkPos var19 = new ChunkPos(var17, var18);
                boolean var20 = true;
                boolean var21 = false;
-               this.method6564(var1, var19, new Packet[2], true, false);
+               this.method6564(var1, var19, new IPacket[2], true, false);
             }
          }
 
@@ -875,7 +875,7 @@ public class Class1649 extends Class1648 implements Class1650 {
                ChunkPos var32 = new ChunkPos(var28, var30);
                boolean var34 = false;
                boolean var36 = true;
-               this.method6564(var1, var32, new Packet[2], false, true);
+               this.method6564(var1, var32, new IPacket[2], false, true);
             }
          }
       }
@@ -966,21 +966,21 @@ public class Class1649 extends Class1648 implements Class1650 {
       }
    }
 
-   public void method6580(Entity var1, Packet<?> var2) {
+   public void method6580(Entity var1, IPacket<?> var2) {
       Class8998 var5 = (Class8998)this.field8973.get(var1.getEntityId());
       if (var5 != null) {
          var5.method33239(var2);
       }
    }
 
-   public void method6581(Entity var1, Packet<?> var2) {
+   public void method6581(Entity var1, IPacket<?> var2) {
       Class8998 var5 = (Class8998)this.field8973.get(var1.getEntityId());
       if (var5 != null) {
          var5.method33240(var2);
       }
    }
 
-   private void method6582(ServerPlayerEntity var1, Packet<?>[] var2, Chunk var3) {
+   private void method6582(ServerPlayerEntity var1, IPacket<?>[] var2, Chunk var3) {
       if (var2[0] == null) {
          var2[0] = new SChunkDataPacket(var3, 65535);
          var2[1] = new SUpdateLightPacket(var3.getPos(), this.field8957, true);

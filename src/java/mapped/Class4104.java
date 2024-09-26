@@ -17,9 +17,9 @@ public class Class4104 extends Class4057 {
       if (var1 instanceof Class2846) {
          Class2846 var5 = (Class2846)var1;
          if (!var2.equals("head")) {
-            return !var2.equals("jaw") ? null : (Class7219)Class9299.method35072(var5, Class9299.field43053);
+            return !var2.equals("jaw") ? null : (Class7219) Reflector.method35072(var5, Reflector.field43053);
          } else {
-            return (Class7219)Class9299.method35072(var5, Class9299.field43052);
+            return (Class7219) Reflector.method35072(var5, Reflector.field43052);
          }
       } else {
          return null;
@@ -40,7 +40,7 @@ public class Class4104 extends Class4057 {
             var6 = new Class5952(var5);
          }
 
-         Map var7 = (Map)Class9299.field43169.method20234();
+         Map var7 = (Map) Reflector.field43169.method20234();
          if (var7 != null) {
             var7.put(Class2136.field13994, var1);
             return (Class9492)var6;

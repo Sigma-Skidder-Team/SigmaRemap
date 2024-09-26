@@ -3,12 +3,12 @@ package net.minecraft.network.play.client;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.util.HandSide;
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CClientSettingsPacket implements Packet<IServerPlayNetHandler> {
+public class CClientSettingsPacket implements IPacket<IServerPlayNetHandler> {
    private String lang;
    private int view;
    private ChatVisibility chatVisibility;

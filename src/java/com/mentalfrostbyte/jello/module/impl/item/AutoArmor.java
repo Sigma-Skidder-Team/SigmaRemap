@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.event.priority.HigherPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
@@ -79,7 +80,7 @@ public class AutoArmor extends Module {
                 }
 
                 if ((mc.currentScreen == null || mc.currentScreen instanceof InventoryScreen || mc.currentScreen instanceof ChatScreen)
-                        && this.timer.method27121() > var4
+                        && this.timer.getElapsedTime() > var4
                         && (float) Client.getInstance().getPlayerTracker().getMode() > (float) var4 / 50.0F) {
                     field23798 = false;
                     this.method16616(this.getStringSettingValueByName("Mode").equalsIgnoreCase("FakeInv"));
@@ -95,7 +96,7 @@ public class AutoArmor extends Module {
                     }
                 }
 
-                if (!this.isInventoryOpen && !(mc.currentScreen instanceof InventoryScreen) && this.timer.method27121() > 0L) {
+                if (!this.isInventoryOpen && !(mc.currentScreen instanceof InventoryScreen) && this.timer.getElapsedTime() > 0L) {
                     this.isInventoryOpen = true;
                     mc.getConnection().sendPacket(new CCloseWindowPacket(-1));
                 }
@@ -130,7 +131,7 @@ public class AutoArmor extends Module {
                             }
 
                             InvManagerUtils.fixedClick(mc.player.container.field25471, var12, 0, ClickType.field14695, mc.player, true);
-                            this.timer.method27120();
+                            this.timer.reset();
                             field23798 = true;
                             if (this.getStringSettingValueByName("Elytra").equals("On Use")) {
                                 mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.START_FALL_FLYING));
@@ -161,7 +162,7 @@ public class AutoArmor extends Module {
                             }
 
                             InvManagerUtils.fixedClick(mc.player.container.field25471, var12, 0, ClickType.field14695, mc.player, true);
-                            this.timer.method27120();
+                            this.timer.reset();
                             field23798 = true;
                             if (Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getNumberValueBySettingName("Delay") > 0.0F) {
                                 return;

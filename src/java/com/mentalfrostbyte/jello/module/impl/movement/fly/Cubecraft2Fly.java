@@ -11,7 +11,7 @@ import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
@@ -36,11 +36,11 @@ public class Cubecraft2Fly extends PremiumModule {
         }
 
         if (ColorUtils.method17718() && JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber()) {
-            Client.getInstance().getNotificationManager().post(new Notification("Cubecraft2 fly", "This fly was made for 1.9+ only"));
+            Client.getInstance().getNotificationManager().send(new Notification("Cubecraft2 fly", "This fly was made for 1.9+ only"));
         }
 
         this.field23698.stop();
-        this.field23698.method27120();
+        this.field23698.reset();
     }
 
     @Override
@@ -58,7 +58,7 @@ public class Cubecraft2Fly extends PremiumModule {
             MovementUtils.strafe(0.0);
             ColorUtils.setPlayerYMotion(0.0);
             this.field23696 = -3;
-            this.field23697.method27120();
+            this.field23697.reset();
             this.field23697.start();
         }
     }
@@ -117,9 +117,9 @@ public class Cubecraft2Fly extends PremiumModule {
                         MovementUtils.setSpeed(var1, 0.0);
                     }
                 } else {
-                    if (this.field23697.method27121() > 1000L) {
+                    if (this.field23697.getElapsedTime() > 1000L) {
                         this.field23696++;
-                        this.field23697.method27120();
+                        this.field23697.reset();
                         this.field23697.stop();
                     }
 
@@ -141,9 +141,9 @@ public class Cubecraft2Fly extends PremiumModule {
             var1.setGround(true);
             if (this.field23696 != 3) {
                 if (this.field23696 > 3) {
-                    if (this.field23698.isEnabled() && this.field23698.method27121() > 2000L) {
+                    if (this.field23698.isEnabled() && this.field23698.getElapsedTime() > 2000L) {
                         var1.setY(-150.0);
-                        this.field23698.method27120();
+                        this.field23698.reset();
                     } else {
                         var1.setCancelled(true);
                     }
@@ -158,12 +158,12 @@ public class Cubecraft2Fly extends PremiumModule {
     @EventTarget
     public void method16487(ReceivePacketEvent var1) {
         if (this.isEnabled() || this.field23696 < 0) {
-            Packet var4 = var1.getPacket();
+            IPacket var4 = var1.getPacket();
             if (var4 instanceof SPlayerPositionLookPacket) {
                 SPlayerPositionLookPacket var5 = (SPlayerPositionLookPacket) var4;
                 var5.yaw = mc.player.rotationYaw;
                 var5.pitch = mc.player.rotationPitch;
-                this.field23698.method27120();
+                this.field23698.reset();
                 this.field23698.stop();
                 if (this.field23696 != -3) {
                     this.field23696 = 0;

@@ -112,7 +112,7 @@ public class Class1007 extends MobEntity implements Class1008 {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       if (this.world.isRemote) {
          this.setHealth(this.getHealth());
          if (!this.isSilent()) {

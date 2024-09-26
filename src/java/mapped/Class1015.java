@@ -134,7 +134,7 @@ public class Class1015 extends Class1014 implements Class1016 {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       if (this.field5683 == null
          || !this.field5683.method8317(this.getPositionVec(), 3.46)
          || !this.world.getBlockState(this.field5683).isIn(Blocks.JUKEBOX)) {
@@ -146,7 +146,7 @@ public class Class1015 extends Class1014 implements Class1016 {
          method4409(this.world, this);
       }
 
-      super.livingEntity();
+      super.livingTick();
       this.method4408();
    }
 

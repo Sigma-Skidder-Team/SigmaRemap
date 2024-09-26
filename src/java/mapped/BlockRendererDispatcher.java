@@ -19,10 +19,10 @@ public class BlockRendererDispatcher implements IResourceManagerReloadListener {
    public BlockRendererDispatcher(BlockModelShapes var1, BlockColors var2) {
       this.field853 = var1;
       this.field857 = var2;
-      if (!Class9299.field42820.method20241()) {
+      if (!Reflector.field42820.exists()) {
          this.field854 = new Class7551(this.field857);
       } else {
-         this.field854 = (Class7551)Class9299.method35087(Class9299.field42820, this.field857);
+         this.field854 = (Class7551) Reflector.method35087(Reflector.field42820, this.field857);
       }
 
       this.field855 = new Class4829();
@@ -99,9 +99,9 @@ public class BlockRendererDispatcher implements IResourceManagerReloadListener {
                   .method24690(var2.getLast(), var3.method25597(Class8928.method32632(var1, false)), var1, var10, var12, var13, var14, var4, var5, var6);
                break;
             case 2:
-               if (Class9299.field42913.method20214()) {
+               if (Reflector.field42913.exists()) {
                   ItemStack var15 = new ItemStack(var1.getBlock());
-                  Class9809 var16 = (Class9809)Class9299.method35070(var15.getItem(), Class9299.field42913);
+                  Class9809 var16 = (Class9809) Reflector.call(var15.getItem(), Reflector.field42913);
                   var16.method38685(var15, Class2327.field15924, var2, var3, var4, var5);
                } else {
                   Class9809.field45844.method38685(new ItemStack(var1.getBlock()), Class2327.field15924, var2, var3, var4, var5);

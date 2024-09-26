@@ -2,12 +2,12 @@ package net.minecraft.network.play.server;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
 
-public class SPlaySoundEventPacket implements Packet<IClientPlayNetHandler> {
+public class SPlaySoundEventPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24338;
    private int field24339;
    private BlockPos field24340;

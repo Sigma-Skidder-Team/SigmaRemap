@@ -1,6 +1,8 @@
 package mapped;
 
 
+import net.minecraft.network.ThreadQuickExitException;
+
 import java.math.BigInteger;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
@@ -304,7 +306,7 @@ public class Class8843 extends Class8844 {
    }
 
    // $VF: Irreducible bytecode was duplicated to produce valid code
-   private Class6454 method32045(ByteBuffer var1) throws Class2429, Class2466, Class2446 {
+   private Class6454 method32045(ByteBuffer var1) throws Class2429, ThreadQuickExitException, Class2446 {
       int var2 = -1590484692;
       if (var1 != null) {
          int var4 = var1.remaining();

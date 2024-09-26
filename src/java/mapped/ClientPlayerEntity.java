@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.EventSlowDown;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.Entity;
@@ -598,7 +599,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       this.field6134++;
       if (this.field6133 > 0) {
          this.field6133--;
@@ -767,7 +768,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
          }
       }
 
-      super.livingEntity();
+      super.livingTick();
       if (this.onGround && this.abilities.isFlying && !this.field6132.playerController.isSpectatorMode()) {
          this.abilities.isFlying = false;
          this.method2797();

@@ -104,7 +104,7 @@ public class Class871 extends ContainerScreen<Class5822> {
          var15 = 1.0F;
       }
 
-      RenderSystem.method27867();
+      RenderSystem.enableRescaleNormal();
       field4831.method11177(0.0F, var14, var15, var12);
       Class7735 var16 = Class7733.method25595(Tessellator.getInstance().getBuffer());
       Class5422 var17 = var16.method25597(field4831.method11028(field4830));

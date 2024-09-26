@@ -30,7 +30,7 @@ public class PathFinder extends Module {
         if (this.field23491 != null && this.field23492 != null) {
             Client.getInstance()
                     .getNotificationManager()
-                    .post(new Notification("AutoMiner", "Computing... (" + this.field23492.field45900 + ")", ResourcesDecrypter.directionIconPNG));
+                    .send(new Notification("AutoMiner", "Computing... (" + this.field23492.field45900 + ")", ResourcesDecrypter.directionIconPNG));
         }
     }
 

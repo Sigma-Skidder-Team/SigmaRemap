@@ -3,11 +3,11 @@ package net.minecraft.network.play.server;
 import mapped.Class46;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SMerchantOffersPacket implements Packet<IClientPlayNetHandler> {
+public class SMerchantOffersPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24431;
    private int field24432;
    private Class46 field24433;

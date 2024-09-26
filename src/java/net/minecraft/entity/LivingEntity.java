@@ -26,7 +26,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -2003,10 +2003,10 @@ public abstract class LivingEntity extends Entity {
          }
       }
 
-      this.method3108(this, this instanceof Class1016);
+      this.func_233629_a_(this, this instanceof Class1016);
    }
 
-   public void method3108(LivingEntity var1, boolean var2) {
+   public void func_233629_a_(LivingEntity var1, boolean var2) {
       var1.prevLimbSwingAmount = var1.field4960;
       double var5 = var1.getPosX() - var1.prevPosX;
       double var7 = !var2 ? 0.0 : var1.getPosY() - var1.prevPosY;
@@ -2128,7 +2128,7 @@ public abstract class LivingEntity extends Entity {
          }
       }
 
-      this.livingEntity();
+      this.livingTick();
       double var3 = this.getPosX() - this.prevPosX;
       double var5 = this.getPosZ() - this.prevPosZ;
       float var7 = (float)(var3 * var3 + var5 * var5);
@@ -2326,7 +2326,7 @@ public abstract class LivingEntity extends Entity {
       return var2;
    }
 
-   public void livingEntity() {
+   public void livingTick() {
       if (this.jumpTicks > 0) {
          this.jumpTicks--;
       }
@@ -2937,7 +2937,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    @Override
-   public Packet<?> createSpawnPacket() {
+   public IPacket<?> createSpawnPacket() {
       return new SSpawnMobPacket(this);
    }
 

@@ -25,27 +25,27 @@ public class Class4096 extends Class4057 {
                      if (!var2.equals("leg3")) {
                         if (!var2.equals("leg4")) {
                            if (!var2.equals("tail")) {
-                              return !var2.equals("mane") ? null : (Class7219)Class9299.field43132.method36565(var5, 9);
+                              return !var2.equals("mane") ? null : (Class7219) Reflector.field43132.method36565(var5, 9);
                            } else {
-                              return (Class7219)Class9299.field43132.method36565(var5, 7);
+                              return (Class7219) Reflector.field43132.method36565(var5, 7);
                            }
                         } else {
-                           return (Class7219)Class9299.field43132.method36565(var5, 6);
+                           return (Class7219) Reflector.field43132.method36565(var5, 6);
                         }
                      } else {
-                        return (Class7219)Class9299.field43132.method36565(var5, 5);
+                        return (Class7219) Reflector.field43132.method36565(var5, 5);
                      }
                   } else {
-                     return (Class7219)Class9299.field43132.method36565(var5, 4);
+                     return (Class7219) Reflector.field43132.method36565(var5, 4);
                   }
                } else {
-                  return (Class7219)Class9299.field43132.method36565(var5, 3);
+                  return (Class7219) Reflector.field43132.method36565(var5, 3);
                }
             } else {
-               return (Class7219)Class9299.field43132.method36565(var5, 2);
+               return (Class7219) Reflector.field43132.method36565(var5, 2);
             }
          } else {
-            return (Class7219)Class9299.field43132.method36565(var5, 0);
+            return (Class7219) Reflector.field43132.method36565(var5, 0);
          }
       } else {
          return null;

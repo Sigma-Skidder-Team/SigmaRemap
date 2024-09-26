@@ -15,9 +15,9 @@ public class Class4084 extends Class4057 {
       if (var1 instanceof Class2848) {
          Class2848 var5 = (Class2848)var1;
          if (!var2.equals("board")) {
-            return !var2.equals("stick") ? null : (Class7219)Class9299.field43100.method36565(var5, 1);
+            return !var2.equals("stick") ? null : (Class7219) Reflector.field43100.method36565(var5, 1);
          } else {
-            return (Class7219)Class9299.field43100.method36565(var5, 0);
+            return (Class7219) Reflector.field43100.method36565(var5, 0);
          }
       } else {
          return null;
@@ -38,8 +38,8 @@ public class Class4084 extends Class4057 {
             var6 = new Class5947(var5);
          }
 
-         if (Class9299.field43167.method20238()) {
-            Class9299.method35082(var6, Class9299.field43167, var1);
+         if (Reflector.field43167.method20238()) {
+            Reflector.method35082(var6, Reflector.field43167, var1);
             return (Class9492)var6;
          } else {
             Class7944.method26811("Field not found: TileEntitySignRenderer.model");

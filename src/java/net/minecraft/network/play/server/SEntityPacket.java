@@ -6,12 +6,12 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 import javax.annotation.Nullable;
 
-public class SEntityPacket implements Packet<IClientPlayNetHandler> {
+public class SEntityPacket implements IPacket<IClientPlayNetHandler> {
    public int entityId;
    public short posX;
    public short posY;

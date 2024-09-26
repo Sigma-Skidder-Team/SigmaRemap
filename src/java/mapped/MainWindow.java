@@ -91,13 +91,13 @@ public final class MainWindow implements AutoCloseable {
       GLFW.glfwWindowHint(139266, 2);
       GLFW.glfwWindowHint(139267, 0);
       GLFW.glfwWindowHint(139272, 0);
-      if (!Class9299.field42792.method20214()) {
+      if (!Reflector.field42792.exists()) {
          this.handle = GLFW.glfwCreateWindow(this.width, this.height, var5, this.fullscreen && var9 != null ? var9.getMonitorPointer() : 0L, 0L);
       } else {
-         Object var10 = Class9299.method35071(Class9299.field42791);
-         this.handle = Class9299.method35066(
+         Object var10 = Reflector.method35071(Reflector.field42791);
+         this.handle = Reflector.method35066(
             var10,
-            Class9299.field42792,
+            Reflector.field42792,
             (IntSupplier)() -> this.width,
             (IntSupplier)() -> this.height,
             (Supplier<String>)() -> var5,

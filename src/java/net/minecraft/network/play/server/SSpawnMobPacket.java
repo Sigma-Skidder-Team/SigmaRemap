@@ -6,12 +6,12 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 import java.util.UUID;
 
-public class SSpawnMobPacket implements Packet<IClientPlayNetHandler> {
+public class SSpawnMobPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24759;
    private int field24760;
    private UUID field24761;

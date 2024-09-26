@@ -14,7 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CClientSettingsPacket;
 import net.minecraft.network.play.server.*;
 import net.minecraft.potion.EffectInstance;
@@ -303,7 +303,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          if (!var7.isAlive()) {
             this.method2815(this);
          } else {
-            this.method3269(var7.getPosX(), var7.getPosY(), var7.getPosZ(), var7.rotationYaw, var7.rotationPitch);
+            this.setPositionAndRotation(var7.getPosX(), var7.getPosY(), var7.getPosZ(), var7.rotationYaw, var7.rotationPitch);
             this.getServerWorld().getChunkProvider().method7376(this);
             if (this.method2852()) {
                this.method2815(this);
@@ -328,7 +328,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          for (int var3 = 0; var3 < this.inventory.getSizeInventory(); var3++) {
             ItemStack var7 = this.inventory.getStackInSlot(var3);
             if (var7.getItem().method11726()) {
-               Packet var8 = ((Class3314)var7.getItem()).method11858(var7, this.world, this);
+               IPacket var8 = ((Class3314)var7.getItem()).method11858(var7, this.world, this);
                if (var8 != null) {
                   this.field4855.sendPacket(var8);
                }
@@ -590,7 +590,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
 
             var4.getProfiler().endSection();
             var4.getProfiler().startSection("placing");
-            this.method3268(var1);
+            this.setWorld(var1);
             var1.method6920(this);
             this.setRotation(var8.field45667, var8.field45668);
             this.moveForced(var8.field45665.x, var8.field45665.y, var8.field45665.z);
@@ -1170,7 +1170,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    public String method2803() {
-      String var3 = this.field4855.netManager.method30700().toString();
+      String var3 = this.field4855.netManager.getRemoteAddress().toString();
       var3 = var3.substring(var3.indexOf("/") + 1);
       return var3.substring(0, var3.indexOf(":"));
    }
@@ -1309,7 +1309,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          var12.method6934(this);
          this.removed = false;
          this.setLocationAndAngles(var2, var4, var6, var8, var9);
-         this.method3268(var1);
+         this.setWorld(var1);
          var1.method6919(this);
          this.method2748(var12);
          this.field4855.method15668(var2, var4, var6, var8, var9);
@@ -1357,7 +1357,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
       }
    }
 
-   public void method2830(ChunkPos var1, Packet<?> var2, Packet<?> var3) {
+   public void method2830(ChunkPos var1, IPacket<?> var2, IPacket<?> var3) {
       this.field4855.sendPacket(var3);
       this.field4855.sendPacket(var2);
    }
@@ -1382,7 +1382,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public Packet<?> createSpawnPacket() {
+   public IPacket<?> createSpawnPacket() {
       return new SSpawnPlayerPacket(this);
    }
 

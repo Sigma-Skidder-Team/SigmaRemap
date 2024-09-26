@@ -3,7 +3,7 @@ package mapped;
 import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SChangeBlockPacket;
 import net.minecraft.network.play.server.SMultiBlockChangePacket;
 import net.minecraft.util.math.BlockPos;
@@ -104,7 +104,7 @@ public class Class8982 {
       return null;
    }
 
-   public Packet method33180(Packet var1) {
+   public IPacket method33180(IPacket var1) {
       HashMap var4 = new HashMap();
       HashMap var5 = new HashMap();
       if (!(var1 instanceof SMultiBlockChangePacket)) {

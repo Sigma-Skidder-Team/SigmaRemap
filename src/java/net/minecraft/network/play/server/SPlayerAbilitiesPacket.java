@@ -3,11 +3,11 @@ package net.minecraft.network.play.server;
 import net.minecraft.network.play.client.PlayerAbilities;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SPlayerAbilitiesPacket implements Packet<IClientPlayNetHandler> {
+public class SPlayerAbilitiesPacket implements IPacket<IClientPlayNetHandler> {
    private boolean field24846;
    private boolean field24847;
    private boolean field24848;

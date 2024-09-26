@@ -60,7 +60,7 @@ public class Class4288 extends Class4278 {
             this.field20781.field20793 = 0;
          }
 
-         this.field20781.field20797.method27120();
+         this.field20781.field20797.reset();
          this.field20781.field20797.start();
       }
    }

@@ -23,8 +23,8 @@ public class Class4297 extends Class4278 {
 
    @Override
    public void draw(float var1) {
-      if (this.field20819.method27121() > 70L) {
-         this.field20819.method27120();
+      if (this.field20819.getElapsedTime() > 70L) {
+         this.field20819.reset();
          this.field20818.method29728();
       }
 

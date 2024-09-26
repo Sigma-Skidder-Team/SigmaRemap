@@ -3,13 +3,13 @@ package net.minecraft.network.play.server;
 import com.google.common.collect.Lists;
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 import java.util.List;
 
-public class SUpdateLightPacket implements Packet<IClientPlayNetHandler> {
+public class SUpdateLightPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24497;
    private int field24498;
    private int field24499;

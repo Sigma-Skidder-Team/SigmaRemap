@@ -147,7 +147,7 @@ public class AtlasTexture extends Class290 implements Class288 {
          GlStateManager.bindTexture(this.getGlTextureId());
       }
 
-      Class9299.method35055(Class9299.field42892, this);
+      Reflector.method35055(Reflector.field42892, this);
       this.method1115(var1.field35335, var1.field35336);
       if (Class7944.equals(System.getProperty("saveTextureMap"), "true")) {
          Class7944.method26810("Exporting texture map: " + this.field1107);
@@ -212,7 +212,7 @@ public class AtlasTexture extends Class290 implements Class288 {
       this.field1112 = var13;
       int var14 = 1 << var4;
       var3.endStartSection("extracting_frames");
-      Class9299.method35055(Class9299.field42891, this, var8);
+      Reflector.method35055(Reflector.field42891, this, var8);
 
       for (Class9431 var16 : this.method1093(var1, var8)) {
          int var17 = var16.method36196();

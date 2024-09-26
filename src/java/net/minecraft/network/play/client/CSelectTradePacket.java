@@ -1,12 +1,12 @@
 package net.minecraft.network.play.client;
 
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CSelectTradePacket implements Packet<IServerPlayNetHandler> {
+public class CSelectTradePacket implements IPacket<IServerPlayNetHandler> {
    private static String[] field24598;
    private int field24599;
 

@@ -12,7 +12,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -322,7 +322,7 @@ public class Class3316 extends Class3314 {
 
    @Nullable
    @Override
-   public Packet<?> method11858(ItemStack var1, World var2, PlayerEntity var3) {
+   public IPacket<?> method11858(ItemStack var1, World var2, PlayerEntity var3) {
       return method11861(var1, var2).method24597(var1, var2, var3);
    }
 

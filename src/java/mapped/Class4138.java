@@ -19,12 +19,12 @@ public class Class4138 extends Class4057 {
          Class2804 var5 = (Class2804)var1;
          if (!var2.equals("base")) {
             if (!var2.equals("upper_jaw")) {
-               return !var2.equals("lower_jaw") ? null : (Class7219)Class9299.method35075(var5, Class9299.field43045, 2);
+               return !var2.equals("lower_jaw") ? null : (Class7219) Reflector.method35075(var5, Reflector.field43045, 2);
             } else {
-               return (Class7219)Class9299.method35075(var5, Class9299.field43045, 1);
+               return (Class7219) Reflector.method35075(var5, Reflector.field43045, 1);
             }
          } else {
-            return (Class7219)Class9299.method35075(var5, Class9299.field43045, 0);
+            return (Class7219) Reflector.method35075(var5, Reflector.field43045, 0);
          }
       } else {
          return null;
@@ -40,8 +40,8 @@ public class Class4138 extends Class4057 {
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5722 var6 = new Class5722(var5);
-      if (Class9299.field43138.method20238()) {
-         Class9299.method35082(var6, Class9299.field43138, var1);
+      if (Reflector.field43138.method20238()) {
+         Reflector.method35082(var6, Reflector.field43138, var1);
          var6.field25098 = var2;
          return (Class9492)var6;
       } else {

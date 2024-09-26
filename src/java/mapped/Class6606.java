@@ -132,7 +132,7 @@ public class Class6606 implements ISpawnWorldInfo {
    }
 
    public void method20050(Difficulty var1) {
-      Class9299.field42855.method20229(var1, this.field29059);
+      Reflector.field42855.method20229(var1, this.field29059);
       this.field29059 = var1;
    }
 

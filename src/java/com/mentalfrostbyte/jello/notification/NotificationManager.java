@@ -31,10 +31,10 @@ public class NotificationManager {
     private ClientResource field39928 = ResourceRegistry.JelloLightFont14;
     private ClientResource field39929 = ResourceRegistry.JelloLightFont20;
 
-    public void post(Notification var1) {
+    public void send(Notification var1) {
         for (Notification var5 : this.field39919) {
             if (var5.equals(var1)) {
-                var5.field43607.method27122(Math.min(var5.field43607.method27121(), (long) (this.field39922 + 1)));
+                var5.field43607.setElapsedTime(Math.min(var5.field43607.getElapsedTime(), (long) (this.field39922 + 1)));
                 var5.field43604 = var1.field43604;
                 var5.field43610++;
                 var5.field43605 = var1.field43605;
@@ -46,7 +46,7 @@ public class NotificationManager {
     }
 
     public float method31993(Notification var1) {
-        float var4 = (float) Math.min(var1.field43607.method27121(), (long) var1.field43606);
+        float var4 = (float) Math.min(var1.field43607.getElapsedTime(), (long) var1.field43606);
         if (!(var4 < (float) this.field39922 * 1.4F)) {
             return !(var4 > (float) var1.field43606 - (float) this.field39922)
                     ? 1.0F
@@ -120,7 +120,7 @@ public class NotificationManager {
 
         while (var4.hasNext()) {
             Notification var5 = (Notification) var4.next();
-            if (var5.field43607.method27121() > (long) var5.field43606) {
+            if (var5.field43607.getElapsedTime() > (long) var5.field43606) {
                 var4.remove();
             }
         }

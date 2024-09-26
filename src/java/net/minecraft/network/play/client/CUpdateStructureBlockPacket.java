@@ -1,7 +1,7 @@
 package net.minecraft.network.play.client;
 
 import mapped.*;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.util.math.BlockPos;
@@ -9,7 +9,7 @@ import net.minecraft.util.math.MathHelper;
 
 import java.io.IOException;
 
-public class CUpdateStructureBlockPacket implements Packet<IServerPlayNetHandler> {
+public class CUpdateStructureBlockPacket implements IPacket<IServerPlayNetHandler> {
    private BlockPos pos;
    private Class1897 field_210392_b;
    private Class104 mode;

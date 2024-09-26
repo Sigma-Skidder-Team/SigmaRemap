@@ -23,7 +23,7 @@ public class Class4069 extends Class4057 {
          if (!var2.startsWith(var6)) {
             return null;
          } else {
-            Class7219[] var7 = (Class7219[])Class9299.method35072(var5, Class9299.field43043);
+            Class7219[] var7 = (Class7219[]) Reflector.method35072(var5, Reflector.field43043);
             if (var7 == null) {
                return null;
             } else {

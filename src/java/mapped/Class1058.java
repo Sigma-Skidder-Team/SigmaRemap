@@ -81,8 +81,8 @@ public class Class1058 extends Class1056 implements IAngerable {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       if (this.field5850 > 0) {
          this.field5850--;
       }

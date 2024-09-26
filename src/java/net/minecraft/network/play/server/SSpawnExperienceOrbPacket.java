@@ -3,11 +3,11 @@ package net.minecraft.network.play.server;
 import mapped.ExperienceOrbEntity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SSpawnExperienceOrbPacket implements Packet<IClientPlayNetHandler> {
+public class SSpawnExperienceOrbPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24487;
    private int field24488;
    private double field24489;

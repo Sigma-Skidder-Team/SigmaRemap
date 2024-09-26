@@ -7,10 +7,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.settings.SpeedRampSetting;
-import com.mentalfrostbyte.jello.settings.SubOptionSetting;
-import com.mentalfrostbyte.jello.settings.TextBoxSetting;
+import com.mentalfrostbyte.jello.settings.*;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -18,7 +15,7 @@ import mapped.*;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.*;
 import net.minecraft.util.Hand;
@@ -201,7 +198,7 @@ public class Test extends Module {
     @EventTarget
     @LowestPriority
     public void method16558(SendPacketEvent var1) {
-        Packet var4 = var1.getPacket();
+        IPacket var4 = var1.getPacket();
         if (this.isEnabled() && mc.player != null) {
             if (!(var4 instanceof CUseEntityPacket)) {
                 if (!(var4 instanceof CPlayerPacket)) {
@@ -272,7 +269,7 @@ public class Test extends Module {
 
     @EventTarget
     public void method16559(ReceivePacketEvent var1) {
-        Packet var4 = var1.getPacket();
+        IPacket var4 = var1.getPacket();
         if (this.isEnabled()) {
             if (!(var4 instanceof SEntityPacket)) {
             }
@@ -340,7 +337,7 @@ public class Test extends Module {
     }
 
     public List<Entity> method16560(float var1) {
-        List var4 = ColorUtils.method17708();
+        List var4 = ColorUtils.getEntitesInWorld();
         Iterator var5 = var4.iterator();
 
         while (var5.hasNext()) {
@@ -391,7 +388,7 @@ public class Test extends Module {
     }
 
     public Entity method16561(float var1) {
-        List var4 = ColorUtils.method17708();
+        List var4 = ColorUtils.getEntitesInWorld();
         Entity var5 = null;
         Iterator var6 = var4.iterator();
 

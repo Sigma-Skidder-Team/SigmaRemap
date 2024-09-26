@@ -182,7 +182,7 @@ public class Class5463 {
          var8.getProfiler().endStartSection("shadow culling");
          Vector3d var12 = var1.getPos();
          var11.method25119(var12.x, var12.y, var12.z);
-         GlStateManager.method23818(7425);
+         GlStateManager.shadeModel(7425);
          GlStateManager.enableDepthTest();
          GlStateManager.method23712(515);
          GlStateManager.depthMask(true);
@@ -211,7 +211,7 @@ public class Class5463 {
          var9.method880(Class9025.field41290, var10, var14, var16, var18);
          Shaders.method32984("shadow terrain cutout");
          var8.getTextureManager().getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1137();
-         GlStateManager.method23818(7424);
+         GlStateManager.shadeModel(7424);
          GlStateManager.method23697(516, 0.1F);
          GlStateManager.matrixMode(5888);
          GlStateManager.method23833();
@@ -251,7 +251,7 @@ public class Class5463 {
          Shaders.endEntities();
          Shaders.beginBlockEntities();
          Class5947.method18475();
-         boolean var33 = Class9299.field42943.method20214();
+         boolean var33 = Reflector.field42943.exists();
          Class7649 var34 = var11;
 
          for (Class7002 var36 : var20.method939()) {
@@ -259,7 +259,7 @@ public class Class5463 {
             if (!var37.isEmpty()) {
                for (TileEntity var30 : var37) {
                   if (var33) {
-                     AxisAlignedBB var31 = (AxisAlignedBB)Class9299.method35070(var30, Class9299.field42943);
+                     AxisAlignedBB var31 = (AxisAlignedBB) Reflector.call(var30, Reflector.field42943);
                      if (var31 != null && !var34.method25122(var31)) {
                         continue;
                      }
@@ -305,7 +305,7 @@ public class Class5463 {
          GlStateManager.disableBlend();
          GlStateManager.depthMask(true);
          var8.getTextureManager().bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
-         GlStateManager.method23818(7425);
+         GlStateManager.shadeModel(7425);
          Shaders.method32984("shadow pre-translucent");
          GL30.glDrawBuffers(Shaders.field40977);
          Shaders.method32984("shadow drawbuffers pre-translucent");
@@ -317,7 +317,7 @@ public class Class5463 {
          }
 
          GlStateManager.method23875();
-         GlStateManager.method23818(7424);
+         GlStateManager.shadeModel(7424);
          GlStateManager.depthMask(true);
          GlStateManager.method23787();
          GlStateManager.disableBlend();

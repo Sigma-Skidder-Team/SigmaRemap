@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.network.NetworkManager;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -86,7 +87,7 @@ public class Class5113 implements Class5112 {
          this.field23259.sendPacket(new Class5587(this.field23258));
          this.field23256 = true;
       } else {
-         this.field23259.method30701(new TranslationTextComponent("multiplayer.status.unrequested"));
+         this.field23259.closeChannel(new TranslationTextComponent("multiplayer.status.unrequested"));
       }
    }
 
@@ -95,11 +96,11 @@ public class Class5113 implements Class5112 {
       long var4 = this.field23258;
       long var6 = Util.milliTime();
       this.field23260.field33192 = var6 - var4;
-      this.field23259.method30701(new TranslationTextComponent("multiplayer.status.finished"));
+      this.field23259.closeChannel(new TranslationTextComponent("multiplayer.status.finished"));
    }
 
    @Override
-   public void method15588(ITextComponent var1) {
+   public void onDisconnect(ITextComponent var1) {
       if (!this.field23256) {
          Class9118.method34009().error("Can't ping {}: {}", this.field23260.field33189, var1.getString());
          this.field23260.field33191 = new TranslationTextComponent("multiplayer.status.cannot_connect").mergeStyle(TextFormatting.DARK_RED);

@@ -10,13 +10,14 @@ import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.scoreboard.Scoreboard;
 import net.minecraft.tileentity.TileEntity;
@@ -39,13 +40,13 @@ import java.util.function.BooleanSupplier;
 import java.util.function.Supplier;
 
 public class ClientWorld extends World {
-   public final Int2ObjectMap<Entity> field9025 = new Int2ObjectOpenHashMap();
-   private final ClientPlayNetHandler field9026;
+   public final Int2ObjectMap<Entity> entitiesById = new Int2ObjectOpenHashMap();
+   private final ClientPlayNetHandler connection;
    private final WorldRenderer field9027;
    private final Class6606 field9028;
    private Class6349 field9029;
    private final Minecraft field9030 = Minecraft.getInstance();
-   private final List<AbstractClientPlayerEntity> field9031 = Lists.newArrayList();
+   private final List<AbstractClientPlayerEntity> players = Lists.newArrayList();
    private Scoreboard field9032 = new Scoreboard();
    private final Map<String, Class7529> field9033 = Maps.newHashMap();
    private int field9034;
@@ -63,7 +64,7 @@ public class ClientWorld extends World {
            ClientPlayNetHandler var1, Class6606 var2, RegistryKey<World> var3, DimensionType var4, int var5, Supplier<IProfiler> var6, WorldRenderer var7, boolean var8, long var9
    ) {
       super(var2, var3, var4, var6, true, var8, var9);
-      this.field9026 = var1;
+      this.connection = var1;
       this.field9028 = var2;
       this.field9027 = var7;
       if (var1 != null && var4 != null) {
@@ -74,13 +75,13 @@ public class ClientWorld extends World {
       this.method6882(new BlockPos(8, 64, 8), 0.0F);
       this.method6766();
       this.method6768();
-      if (Class9299.field42768.method20214()) {
-         Class9299.method35070(this, Class9299.field42768);
+      if (Reflector.field42768.exists()) {
+         Reflector.call(this, Reflector.field42768);
       }
 
-      Class9299.method35085(Class9299.field43004, this);
+      Reflector.postForgeBusEvent(Reflector.field43004, this);
       if (this.field9030.playerController != null && this.field9030.playerController.getClass() == PlayerController.class) {
-         this.field9030.playerController = new Class7316(this.field9030, this.field9026);
+         this.field9030.playerController = new Class7316(this.field9030, this.connection);
          Class7050.method21971((Class7316)this.field9030.playerController);
       }
    }
@@ -120,13 +121,13 @@ public class ClientWorld extends World {
    }
 
    public Iterable<Entity> getEntities() {
-      return this.field9025.values();
+      return this.entitiesById.values();
    }
 
    public void tickEntities() {
       IProfiler var3 = this.getProfiler();
       var3.startSection("entities");
-      ObjectIterator var4 = this.field9025.int2ObjectEntrySet().iterator();
+      ObjectIterator var4 = this.entitiesById.int2ObjectEntrySet().iterator();
 
       while (var4.hasNext()) {
          Entry var5 = (Entry)var4.next();
@@ -141,7 +142,7 @@ public class ClientWorld extends World {
             var3.startSection("remove");
             if (var6.removed) {
                var4.remove();
-               this.method6849(var6);
+               this.removeEntity(var6);
             }
 
             var3.endSection();
@@ -227,10 +228,10 @@ public class ClientWorld extends World {
 
    public void method6840(Chunk var1) {
       List<TileEntity> var4;
-      if (!Class9299.field42944.method20238()) {
+      if (!Reflector.field42944.method20238()) {
          var4 = this.tileEntitiesToBeRemoved;
       } else {
-         var4 = (List<TileEntity>) Class9299.method35072(this, Class9299.field42944);
+         var4 = (List<TileEntity>) Reflector.method35072(this, Reflector.field42944);
       }
 
       var4.addAll(var1.method7145().values());
@@ -251,12 +252,12 @@ public class ClientWorld extends World {
    }
 
    public int method6844() {
-      return this.field9025.size();
+      return this.entitiesById.size();
    }
 
    public void method6845(int var1, AbstractClientPlayerEntity var2) {
       this.method6847(var1, var2);
-      this.field9031.add(var2);
+      this.players.add(var2);
    }
 
    public void method6846(int var1, Entity var2) {
@@ -264,73 +265,71 @@ public class ClientWorld extends World {
    }
 
    private void method6847(int var1, Entity var2) {
-      if (!Class9299.field42807.method20241() || !Class9299.method35085(Class9299.field42807, var2, this)) {
-         this.method6848(var1);
-         this.field9025.put(var1, var2);
+      if (!Reflector.field42807.exists() || !Reflector.postForgeBusEvent(Reflector.field42807, var2, this)) {
+         this.removeEntityFromWorld(var1);
+         this.entitiesById.put(var1, var2);
          this.getChunkProvider()
             .method7346(MathHelper.floor(var2.getPosX() / 16.0), MathHelper.floor(var2.getPosZ() / 16.0), ChunkStatus.FULL, true)
             .addEntity(var2);
-         if (Class9299.field42836.method20214()) {
-            Class9299.method35070(var2, Class9299.field42836);
+         if (Reflector.field42836.exists()) {
+            Reflector.call(var2, Reflector.field42836);
          }
 
          this.method6865(var2);
       }
    }
 
-   public void method6848(int var1) {
-      Entity var4 = (Entity)this.field9025.remove(var1);
-      if (var4 != null) {
-         var4.remove();
-         this.method6849(var4);
+   public void removeEntityFromWorld(int eid) {
+      Entity entity = this.entitiesById.remove(eid);
+      if (entity != null) {
+         entity.remove();
+         this.removeEntity(entity);
       }
    }
 
-   private void method6849(Entity var1) {
-      var1.detach();
-      if (var1.addedToChunk) {
-         this.getChunk(var1.chunkCoordX, var1.chunkCoordZ).method7132(var1);
+   private void removeEntity(Entity entityIn) {
+      entityIn.detach();
+      if (entityIn.addedToChunk) {
+         this.getChunk(entityIn.chunkCoordX, entityIn.chunkCoordZ).removeEntity(entityIn);
       }
 
-      this.field9031.remove(var1);
-      if (Class9299.field42837.method20214()) {
-         Class9299.method35070(var1, Class9299.field42837);
+      this.players.remove(entityIn);
+      if (Reflector.IForgeEntity_onRemovedFromWorld.exists()) {
+         Reflector.call(entityIn, Reflector.IForgeEntity_onRemovedFromWorld);
       }
 
-      if (Class9299.field42794.method20241()) {
-         Class9299.method35085(Class9299.field42794, var1, this);
+      if (Reflector.EntityLeaveWorldEvent_Constructor.exists()) {
+         Reflector.postForgeBusEvent(Reflector.EntityLeaveWorldEvent_Constructor, entityIn, this);
       }
 
-      this.method6866(var1);
+      this.onEntityRemoved(entityIn);
    }
 
-   public void method6850(Chunk var1) {
-      ObjectIterator var4 = this.field9025.int2ObjectEntrySet().iterator();
+   public void addEntitiesToChunk(Chunk chunkIn) {
+      for (Entry<Entity> entry : this.entitiesById.int2ObjectEntrySet())
+      {
+         Entity entity = entry.getValue();
+         int i = MathHelper.floor(entity.getPosX() / 16.0D);
+         int j = MathHelper.floor(entity.getPosZ() / 16.0D);
 
-      while (var4.hasNext()) {
-         Entry var5 = (Entry)var4.next();
-         Entity var6 = (Entity)var5.getValue();
-         int var7 = MathHelper.floor(var6.getPosX() / 16.0);
-         int var8 = MathHelper.floor(var6.getPosZ() / 16.0);
-         if (var7 == var1.getPos().x && var8 == var1.getPos().z) {
-            var1.addEntity(var6);
+         if (i == chunkIn.getPos().x && j == chunkIn.getPos().z)
+         {
+            chunkIn.addEntity(entity);
          }
       }
    }
 
    @Nullable
-   @Override
    public Entity getEntityByID(int var1) {
-      return (Entity)this.field9025.get(var1);
+      return (Entity)this.entitiesById.get(var1);
    }
 
    public void method6851(BlockPos var1, BlockState var2) {
       this.setBlockState(var1, var2, 19);
    }
 
-   @Override
    public void sendQuittingDisconnectingPacket() {
-      this.field9026.getNetworkManager().method30701(new TranslationTextComponent("multiplayer.status.quitting"));
+      this.connection.getNetworkManager().closeChannel(new TranslationTextComponent("multiplayer.status.quitting"));
    }
 
    public void method6852(int var1, int var2, int var3) {
@@ -453,14 +452,14 @@ public class ClientWorld extends World {
    }
 
    public void method6857() {
-      ObjectIterator var3 = this.field9025.int2ObjectEntrySet().iterator();
+      ObjectIterator var3 = this.entitiesById.int2ObjectEntrySet().iterator();
 
       while (var3.hasNext()) {
          Entry var4 = (Entry)var3.next();
          Entity var5 = (Entity)var4.getValue();
          if (var5.removed) {
             var3.remove();
-            this.method6849(var5);
+            this.removeEntity(var5);
          }
       }
    }
@@ -475,15 +474,15 @@ public class ClientWorld extends World {
 
    @Override
    public void method6743(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11) {
-      if (Class9299.field42848.method20214()) {
-         Object var14 = Class9299.field42848.method20217(var1, var8, var9, var10, var11);
-         if (Class9299.method35064(var14, Class9299.field42809) || Class9299.method35070(var14, Class9299.field42980) == null) {
+      if (Reflector.field42848.exists()) {
+         Object var14 = Reflector.field42848.method20217(var1, var8, var9, var10, var11);
+         if (Reflector.method35064(var14, Reflector.field42809) || Reflector.call(var14, Reflector.field42980) == null) {
             return;
          }
 
-         var8 = (SoundEvent)Class9299.method35070(var14, Class9299.field42980);
-         var9 = (Class2266)Class9299.method35070(var14, Class9299.field42981);
-         var10 = Class9299.method35067(var14, Class9299.field42982);
+         var8 = (SoundEvent) Reflector.call(var14, Reflector.field42980);
+         var9 = (Class2266) Reflector.call(var14, Reflector.field42981);
+         var10 = Reflector.method35067(var14, Reflector.field42982);
       }
 
       if (var1 == this.field9030.player) {
@@ -493,15 +492,15 @@ public class ClientWorld extends World {
 
    @Override
    public void method6744(PlayerEntity var1, Entity var2, SoundEvent var3, Class2266 var4, float var5, float var6) {
-      if (Class9299.field42848.method20214()) {
-         Object var9 = Class9299.field42848.method20217(var1, var3, var4, var5, var6);
-         if (Class9299.method35064(var9, Class9299.field42809) || Class9299.method35070(var9, Class9299.field42980) == null) {
+      if (Reflector.field42848.exists()) {
+         Object var9 = Reflector.field42848.method20217(var1, var3, var4, var5, var6);
+         if (Reflector.method35064(var9, Reflector.field42809) || Reflector.call(var9, Reflector.field42980) == null) {
             return;
          }
 
-         var3 = (SoundEvent)Class9299.method35070(var9, Class9299.field42980);
-         var4 = (Class2266)Class9299.method35070(var9, Class9299.field42981);
-         var5 = Class9299.method35067(var9, Class9299.field42982);
+         var3 = (SoundEvent) Reflector.call(var9, Reflector.field42980);
+         var4 = (Class2266) Reflector.call(var9, Reflector.field42981);
+         var5 = Reflector.method35067(var9, Reflector.field42982);
       }
 
       if (var1 == this.field9030.player) {
@@ -531,13 +530,13 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public void method6811(Packet<?> var1) {
-      this.field9026.sendPacket(var1);
+   public void method6811(IPacket<?> var1) {
+      this.connection.sendPacket(var1);
    }
 
    @Override
    public Class282 method6816() {
-      return this.field9026.method15783();
+      return this.connection.method15783();
    }
 
    public void method6859(Scoreboard var1) {
@@ -586,7 +585,7 @@ public class ClientWorld extends World {
       }
    }
 
-   public void method6866(Entity var1) {
+   public void onEntityRemoved(Entity var1) {
       Class9387.method35630(var1, this);
       if (Class7944.method26970()) {
          Class9446.method36308(var1, Class7944.method26874());
@@ -616,12 +615,12 @@ public class ClientWorld extends World {
 
    @Override
    public Class8933 method6817() {
-      return this.field9026.method15798();
+      return this.connection.method15798();
    }
 
    @Override
    public DynamicRegistries method6867() {
-      return this.field9026.method15802();
+      return this.connection.method15802();
    }
 
    @Override
@@ -685,7 +684,7 @@ public class ClientWorld extends World {
 
    @Override
    public List<AbstractClientPlayerEntity> method6870() {
-      return this.field9031;
+      return this.players;
    }
 
    @Override

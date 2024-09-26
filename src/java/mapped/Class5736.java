@@ -66,7 +66,7 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
 
          int var21 = !var20 ? var1.method4093() : var1.method4093() % 4 * 2;
          var4.rotate(Vector3f.field32902.rotationDegrees((float)var21 * 360.0F / 8.0F));
-         if (!Class9299.method35085(Class9299.field42988, var1, this, var4, var5, var6)) {
+         if (!Reflector.postForgeBusEvent(Reflector.field42988, var1, this, var4, var5, var6)) {
             if (!var20) {
                var4.method35292(0.5F, 0.5F, 0.5F);
                if (this.method17917(var1)) {

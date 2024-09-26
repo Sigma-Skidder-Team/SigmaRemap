@@ -32,7 +32,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.NetworkManager;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.IServerPlayNetHandler;
 import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.*;
@@ -110,13 +111,13 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       }
    }
 
-   public void method15655() {
+   public void tick() {
       this.method15656();
       this.player.prevPosX = this.player.getPosX();
       this.player.prevPosY = this.player.getPosY();
       this.player.prevPosZ = this.player.getPosZ();
       this.player.method2735();
-      this.player.method3269(this.field23234, this.field23235, this.field23236, this.player.rotationYaw, this.player.rotationPitch);
+      this.player.setPositionAndRotation(this.field23234, this.field23235, this.field23236, this.player.rotationYaw, this.player.rotationPitch);
       this.field23227++;
       this.field23255 = this.field23254;
       if (this.field23250 && !this.player.isSleeping()) {
@@ -202,8 +203,8 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    public void disconnect(ITextComponent var1) {
-      this.netManager.method30694(new SDisconnectPacket(var1), var2 -> this.netManager.method30701(var1));
-      this.netManager.method30711();
+      this.netManager.sendPacket(new SDisconnectPacket(var1), var2 -> this.netManager.closeChannel(var1));
+      this.netManager.disableAutoRead();
       this.server.method1635(this.netManager::handleDisconnection);
    }
 
@@ -310,10 +311,10 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                );
             }
 
-            var4.method3269(var12, var14, var16, var18, var19);
+            var4.setPositionAndRotation(var12, var14, var16, var18, var19);
             boolean var32 = var5.hasNoCollisions(var4, var4.getBoundingBox().shrink(0.0625));
             if (var30 && (var31 || !var32)) {
-               var4.method3269(var6, var8, var10, var18, var19);
+               var4.setPositionAndRotation(var6, var8, var10, var18, var19);
                this.netManager.sendPacket(new SMoveVehiclePacket(var4));
                return;
             }
@@ -339,7 +340,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       if (var1.getTeleportId() == this.field23248) {
          this.player
-            .method3269(
+            .setPositionAndRotation(
                this.targetPos.x, this.targetPos.y, this.targetPos.z, this.player.rotationYaw, this.player.rotationPitch
             );
          this.field23237 = this.targetPos.x;
@@ -777,7 +778,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                         LOGGER.warn("{} moved wrongly!", this.player.getName().getString());
                      }
 
-                     this.player.method3269(var13, var15, var17, var19, var20);
+                     this.player.setPositionAndRotation(var13, var15, var17, var19, var20);
                      if (this.player.noClip
                         || this.player.isSleeping()
                         || (!var34 || !var4.hasNoCollisions(this.player, var42)) && !this.method15667(var4, var42)) {
@@ -814,7 +815,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
                   }
                } else {
                   this.player
-                     .method3269(
+                     .setPositionAndRotation(
                         this.player.getPosX(),
                         this.player.getPosY(),
                         this.player.getPosZ(),
@@ -857,7 +858,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       }
 
       this.field23249 = this.field23227;
-      this.player.method3269(var1, var3, var5, var7, var8);
+      this.player.setPositionAndRotation(var1, var3, var5, var7, var8);
       this.player.field4855.sendPacket(new SPlayerPositionLookPacket(var1 - var12, var3 - var14, var5 - var16, var7 - var18, var8 - var19, var9, this.field23248));
    }
 
@@ -983,7 +984,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    }
 
    @Override
-   public void method15588(ITextComponent var1) {
+   public void onDisconnect(ITextComponent var1) {
       LOGGER.info("{} lost connection: {}", this.player.getName().getString(), var1.getString());
       this.server.method1388();
       this.server
@@ -1006,11 +1007,11 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       }
    }
 
-   public void sendPacket(Packet<?> var1) {
+   public void sendPacket(IPacket<?> var1) {
       this.method15672(var1, (GenericFutureListener<? extends Future<? super Void>>)null);
    }
 
-   public void method15672(Packet<?> var1, GenericFutureListener<? extends Future<? super Void>> var2) {
+   public void method15672(IPacket<?> var1, GenericFutureListener<? extends Future<? super Void>> var2) {
       if (var1 instanceof SChatPacket) {
          SChatPacket var5 = (SChatPacket)var1;
          ChatVisibility var6 = this.player.getChatVisibility();
@@ -1024,7 +1025,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       }
 
       try {
-         this.netManager.method30694(var1, var2);
+         this.netManager.sendPacket(var1, var2);
       } catch (Throwable var8) {
          CrashReport var9 = CrashReport.makeCrashReport(var8, "Sending packet");
          CrashReportCategory var7 = var9.makeCategory("Packet being sent");

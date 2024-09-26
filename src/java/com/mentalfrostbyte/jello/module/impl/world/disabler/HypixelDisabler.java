@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.*;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HypixelDisabler extends Module {
-    private final List<Packet<?>> field23983 = new ArrayList<Packet<?>>();
+    private final List<IPacket<?>> field23983 = new ArrayList<IPacket<?>>();
     private boolean field23984;
     private final TimerUtil field23985 = new TimerUtil();
 
@@ -38,19 +38,19 @@ public class HypixelDisabler extends Module {
             mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3, var5 + 0.2, var7, false));
             mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3, var5 + 0.1, var7, false));
             this.field23984 = true;
-            this.field23985.method27120();
+            this.field23985.reset();
             this.field23985.start();
             if (!this.getBooleanValueFromSetttingName("Instant")) {
-                Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "Wait 5s..."));
+                Client.getInstance().getNotificationManager().send(new Notification("Hypixel disabler", "Wait 5s..."));
             } else {
-                Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "Move where you want"));
+                Client.getInstance().getNotificationManager().send(new Notification("Hypixel disabler", "Move where you want"));
             }
         }
     }
 
     @Override
     public void onDisable() {
-        this.field23985.method27120();
+        this.field23985.reset();
         this.field23985.start();
         if (this.field23984) {
             int var3 = this.field23983.size();
@@ -59,7 +59,7 @@ public class HypixelDisabler extends Module {
                 mc.getConnection().sendPacket(this.field23983.get(var4));
             }
 
-            Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "Disabler canceled"));
+            Client.getInstance().getNotificationManager().send(new Notification("Hypixel disabler", "Disabler canceled"));
         }
 
         this.field23983.clear();
@@ -70,12 +70,12 @@ public class HypixelDisabler extends Module {
         if (mc.player != null) {
             if (!this.field23984 && mc.player.onGround) {
                 if (!this.getBooleanValueFromSetttingName("Instant")) {
-                    Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "Wait 5s..."));
+                    Client.getInstance().getNotificationManager().send(new Notification("Hypixel disabler", "Wait 5s..."));
                 } else {
-                    Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "Move where you want"));
+                    Client.getInstance().getNotificationManager().send(new Notification("Hypixel disabler", "Move where you want"));
                 }
 
-                this.field23985.method27120();
+                this.field23985.reset();
                 this.field23985.start();
                 this.field23984 = true;
             }
@@ -91,7 +91,7 @@ public class HypixelDisabler extends Module {
                 var1.setZ(0.0);
             }
 
-            if (this.field23985.method27121() > 10000L && this.field23984) {
+            if (this.field23985.getElapsedTime() > 10000L && this.field23984) {
                 this.field23984 = false;
                 int var4 = this.field23983.size();
 
@@ -100,10 +100,10 @@ public class HypixelDisabler extends Module {
                 }
 
                 this.field23983.clear();
-                this.field23985.method27120();
+                this.field23985.reset();
                 this.field23985.stop();
                 this.access().toggle();
-                Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "Disabler failed"));
+                Client.getInstance().getNotificationManager().send(new Notification("Hypixel disabler", "Disabler failed"));
             }
         }
     }
@@ -134,7 +134,7 @@ public class HypixelDisabler extends Module {
                 if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                     this.access().toggle();
                     if (!this.getBooleanValueFromSetttingName("Instant")) {
-                        Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "You can do what you want for 5s"));
+                        Client.getInstance().getNotificationManager().send(new Notification("Hypixel disabler", "You can do what you want for 5s"));
                     } else {
                         SPlayerPositionLookPacket var4 = (SPlayerPositionLookPacket) var1.getPacket();
                         var1.setCancelled(true);
@@ -147,7 +147,7 @@ public class HypixelDisabler extends Module {
                         }
 
                         this.field23983.clear();
-                        Client.getInstance().getNotificationManager().post(new Notification("Hypixel disabler", "Successfully sent packets"));
+                        Client.getInstance().getNotificationManager().send(new Notification("Hypixel disabler", "Successfully sent packets"));
                     }
 
                     this.field23984 = false;

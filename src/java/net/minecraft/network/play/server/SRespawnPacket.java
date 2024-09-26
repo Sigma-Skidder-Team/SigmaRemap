@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.GameType;
@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 import java.io.IOException;
 import java.util.function.Supplier;
 
-public class SRespawnPacket implements Packet<IClientPlayNetHandler> {
+public class SRespawnPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24614;
    private DimensionType field24615;
    private RegistryKey<World> field24616;

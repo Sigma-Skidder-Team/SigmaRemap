@@ -3,7 +3,7 @@ package net.minecraft.network.play.server;
 import com.google.common.collect.Sets;
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.GameType;
@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Set;
 import java.util.function.Supplier;
 
-public class SJoinGamePacket implements Packet<IClientPlayNetHandler> {
+public class SJoinGamePacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24405;
    private int field24406;
    private long field24407;

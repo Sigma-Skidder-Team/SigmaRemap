@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.movement.fly.MineplexFly;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.play.client.CAnimateHandPacket;

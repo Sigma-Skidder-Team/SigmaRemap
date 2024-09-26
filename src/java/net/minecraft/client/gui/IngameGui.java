@@ -391,8 +391,8 @@ public class IngameGui extends AbstractGui {
 
             for (EffectInstance var10 : Ordering.natural().reverse().sortedCopy(var4)) {
                 Effect var11 = var10.getPotion();
-                if (Class9299.field42935.method20214()) {
-                    if (!Class9299.method35064(var10, Class9299.field42935)) {
+                if (Reflector.field42935.exists()) {
+                    if (!Reflector.method35064(var10, Reflector.field42935)) {
                         continue;
                     }
 
@@ -438,8 +438,8 @@ public class IngameGui extends AbstractGui {
                         RenderSystem.color4f(1.0F, 1.0F, 1.0F, var18);
                         method5695(var1, var16 + 3, var17 + 3, this.method5702(), 18, 18, var20);
                     });
-                    if (Class9299.field42936.method20214()) {
-                        Class9299.method35070(var10, Class9299.field42936, this, var1, var12, Integer.valueOf(var13), this.method5702(), var14);
+                    if (Reflector.field42936.exists()) {
+                        Reflector.call(var10, Reflector.field42936, this, var1, var12, Integer.valueOf(var13), this.method5702(), var14);
                     }
                 }
             }
@@ -471,7 +471,7 @@ public class IngameGui extends AbstractGui {
             }
 
             this.method5703(var9);
-            RenderSystem.method27867();
+            RenderSystem.enableRescaleNormal();
             RenderSystem.enableBlend();
             RenderSystem.defaultBlendFunc();
             Class7992.method27282(false);
@@ -574,8 +574,8 @@ public class IngameGui extends AbstractGui {
             }
 
             Object var5 = var4;
-            if (Class9299.field42924.method20214()) {
-                var5 = (ITextComponent) Class9299.method35070(this.field6725, Class9299.field42924, var4);
+            if (Reflector.field42924.exists()) {
+                var5 = (ITextComponent) Reflector.call(this.field6725, Reflector.field42924, var4);
             }
 
             int var6 = this.method5991().method38821((ITextProperties) var5);
@@ -596,8 +596,8 @@ public class IngameGui extends AbstractGui {
                 RenderSystem.defaultBlendFunc();
                 method5686(var1, var7 - 2, var8 - 2, var7 + var6 + 2, var8 + 9 + 2, this.field6716.gameSettings.method37141(0));
                 FontRenderer var10 = null;
-                if (Class9299.field42912.method20214()) {
-                    var10 = (FontRenderer) Class9299.method35070(this.field6725.getItem(), Class9299.field42912, this.field6725);
+                if (Reflector.field42912.exists()) {
+                    var10 = (FontRenderer) Reflector.call(this.field6725.getItem(), Reflector.field42912, this.field6725);
                 }
 
                 if (var10 == null) {
@@ -1073,9 +1073,9 @@ public class IngameGui extends AbstractGui {
         if (this.field6716.player != null) {
             ItemStack var4 = this.field6716.player.inventory.method4028();
             boolean var5 = true;
-            if (Class9299.field42924.method20214()) {
-                ITextComponent var6 = (ITextComponent) Class9299.method35070(var4, Class9299.field42924, var4.method32149());
-                ITextComponent var7 = (ITextComponent) Class9299.method35070(this.field6725, Class9299.field42924, this.field6725.method32149());
+            if (Reflector.field42924.exists()) {
+                ITextComponent var6 = (ITextComponent) Reflector.call(var4, Reflector.field42924, var4.method32149());
+                ITextComponent var7 = (ITextComponent) Reflector.call(this.field6725, Reflector.field42924, this.field6725.method32149());
                 var5 = Class7944.equals(var6, var7);
             }
 

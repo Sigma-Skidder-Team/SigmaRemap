@@ -18,13 +18,13 @@ public class Class4139 extends Class4057 {
       if (var1 instanceof Class2882) {
          Class2882 var5 = (Class2882)var1;
          if (var2.equals("core")) {
-            return (Class7219)Class9299.method35072(var5, Class9299.field43073);
+            return (Class7219) Reflector.method35072(var5, Reflector.field43073);
          } else {
             String var6 = "segment";
             if (!var2.startsWith(var6)) {
                return null;
             } else {
-               Class7219[] var7 = (Class7219[])Class9299.method35072(var5, Class9299.field43074);
+               Class7219[] var7 = (Class7219[]) Reflector.method35072(var5, Reflector.field43074);
                if (var7 == null) {
                   return null;
                } else {

@@ -6,12 +6,12 @@ import mapped.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 import java.util.List;
 
-public class SEntityEquipmentPacket implements Packet<IClientPlayNetHandler> {
+public class SEntityEquipmentPacket implements IPacket<IClientPlayNetHandler> {
     private int entityID;
    private final List<Pair<EquipmentSlotType, ItemStack>> field_241789_b_;
 

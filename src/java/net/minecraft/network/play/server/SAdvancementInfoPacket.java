@@ -5,7 +5,7 @@ import com.google.common.collect.Sets;
 import mapped.*;
 import net.minecraft.advancements.Advancement;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 
@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 
-public class SAdvancementInfoPacket implements Packet<IClientPlayNetHandler> {
+public class SAdvancementInfoPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24685;
    private boolean field24686;
    private Map<ResourceLocation, Class7999> field24687;

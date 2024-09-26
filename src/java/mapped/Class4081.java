@@ -24,27 +24,27 @@ public class Class4081 extends Class4057 {
                      if (!var2.equals("right_wing")) {
                         if (!var2.equals("left_wing")) {
                            if (!var2.equals("bill")) {
-                              return !var2.equals("chin") ? null : (Class7219)Class9299.field43033.method36565(var5, 7);
+                              return !var2.equals("chin") ? null : (Class7219) Reflector.field43033.method36565(var5, 7);
                            } else {
-                              return (Class7219)Class9299.field43033.method36565(var5, 6);
+                              return (Class7219) Reflector.field43033.method36565(var5, 6);
                            }
                         } else {
-                           return (Class7219)Class9299.field43033.method36565(var5, 5);
+                           return (Class7219) Reflector.field43033.method36565(var5, 5);
                         }
                      } else {
-                        return (Class7219)Class9299.field43033.method36565(var5, 4);
+                        return (Class7219) Reflector.field43033.method36565(var5, 4);
                      }
                   } else {
-                     return (Class7219)Class9299.field43033.method36565(var5, 3);
+                     return (Class7219) Reflector.field43033.method36565(var5, 3);
                   }
                } else {
-                  return (Class7219)Class9299.field43033.method36565(var5, 2);
+                  return (Class7219) Reflector.field43033.method36565(var5, 2);
                }
             } else {
-               return (Class7219)Class9299.field43033.method36565(var5, 1);
+               return (Class7219) Reflector.field43033.method36565(var5, 1);
             }
          } else {
-            return (Class7219)Class9299.field43033.method36565(var5, 0);
+            return (Class7219) Reflector.field43033.method36565(var5, 0);
          }
       } else {
          return null;

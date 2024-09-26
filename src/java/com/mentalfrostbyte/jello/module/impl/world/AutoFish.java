@@ -35,7 +35,7 @@ public class AutoFish extends Module {
 
                         mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
                         mc.getConnection().sendPacket(new CPlayerTryUseItemPacket(Hand.MAIN_HAND));
-                        Client.getInstance().getNotificationManager().post(new Notification("AutoFish", "We catched something!", ResourcesDecrypter.doneIconPNG));
+                        Client.getInstance().getNotificationManager().send(new Notification("AutoFish", "We catched something!", ResourcesDecrypter.doneIconPNG));
                     }
                 }
             }

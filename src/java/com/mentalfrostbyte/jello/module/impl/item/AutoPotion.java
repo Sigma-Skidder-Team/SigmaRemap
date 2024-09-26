@@ -8,6 +8,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import mapped.*;
 import net.minecraft.item.ItemStack;
@@ -45,7 +46,7 @@ public class AutoPotion extends Module {
     @LowestPriority
     private void method16629(EventUpdate var1) {
         if (this.isEnabled() && var1.isPre()) {
-            if (this.getBooleanValueFromSetttingName("In fight") || KillAura.field23949 == null && KillAura.field23948 == null) {
+            if (this.getBooleanValueFromSetttingName("In fight") || KillAura.field23949 == null && KillAura.target == null) {
                 int var4 = this.method16631();
                 this.field23808++;
                 int[] var5 = new int[]{6, -1, -1};

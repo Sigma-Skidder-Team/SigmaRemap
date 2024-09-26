@@ -49,7 +49,7 @@ public class BoxOutlineESP extends Module {
     private void method16507() {
         if (Client.getInstance().getClientMode() == ClientMode.JELLO) {
             mc.world
-                    .field9025
+                    .entitiesById
                     .forEach(
                             (var1, var2) -> {
                                 boolean var5 = ColorUtils.method17744(var2) == Class2258.field14690 && this.access().getBooleanValueFromSetttingName("Show Players");

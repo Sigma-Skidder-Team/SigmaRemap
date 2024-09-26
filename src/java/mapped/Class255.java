@@ -33,7 +33,7 @@ public class Class255<T extends LivingEntity, M extends Class2797<T>, A extends 
       if (var9.getItem() instanceof ArmorItem) {
          ArmorItem var10 = (ArmorItem)var9.getItem();
          if (var10.method11805() == var4) {
-            if (Class9299.field42864.method20245()) {
+            if (Reflector.field42864.method20245()) {
                var6 = this.method850((T)var3, var9, var4, (A)var6);
             }
 
@@ -103,7 +103,7 @@ public class Class255<T extends LivingEntity, M extends Class2797<T>, A extends 
    }
 
    public A method850(T var1, ItemStack var2, EquipmentSlotType var3, A var4) {
-      return (A)(!Class9299.field42873.method20214() ? var4 : Class9299.field42873.method20217(var1, var2, var3, var4));
+      return (A)(!Reflector.field42873.exists() ? var4 : Reflector.field42873.method20217(var1, var2, var3, var4));
    }
 
    public ResourceLocation method851(Entity var1, ItemStack var2, EquipmentSlotType var3, String var4) {
@@ -119,8 +119,8 @@ public class Class255<T extends LivingEntity, M extends Class2797<T>, A extends 
       String var11 = String.format(
          "%s:textures/models/armor/%s_layer_%d%s.png", var9, var8, !this.method848(var3) ? 1 : 2, var4 != null ? String.format("_%s", var4) : ""
       );
-      if (Class9299.field42874.method20214()) {
-         var11 = Class9299.method35061(Class9299.field42874, var1, var2, var11, var3, var4);
+      if (Reflector.field42874.exists()) {
+         var11 = Reflector.method35061(Reflector.field42874, var1, var2, var11, var3, var4);
       }
 
       ResourceLocation var12 = field912.get(var11);

@@ -3,12 +3,12 @@ package net.minecraft.network.login.server;
 import java.io.IOException;
 
 import net.minecraft.client.network.login.IClientLoginNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.ITextComponent$Serializer;
 
-public class SDisconnectLoginPacket implements Packet<IClientLoginNetHandler> {
+public class SDisconnectLoginPacket implements IPacket<IClientLoginNetHandler> {
     private ITextComponent reason;
 
    public SDisconnectLoginPacket() {

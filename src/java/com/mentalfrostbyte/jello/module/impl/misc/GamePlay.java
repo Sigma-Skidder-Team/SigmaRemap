@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.ModuleWithModuleSettings;
 import com.mentalfrostbyte.jello.module.impl.misc.gameplay.*;
 import com.mentalfrostbyte.jello.notification.Notification;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.InputSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
@@ -58,7 +59,7 @@ public class GamePlay extends ModuleWithModuleSettings {
 
     @Override
     public void onDisable() {
-        this.field23891.method27120();
+        this.field23891.reset();
         this.field23891.stop();
         this.field23890 = null;
     }
@@ -69,7 +70,7 @@ public class GamePlay extends ModuleWithModuleSettings {
             if (this.field23890 != null) {
                 if (mc.currentScreen instanceof ChatScreen) {
                     this.method16759(null);
-                    Client.getInstance().getNotificationManager().post(new Notification("Auto Join", "Auto join was canceled.", 2500));
+                    Client.getInstance().getNotificationManager().send(new Notification("Auto Join", "Auto join was canceled.", 2500));
                 } else if (this.field23890.method22616()) {
                     ColorUtils.sendChatMessage(this.field23890.method22618());
                     this.method16759(null);
@@ -77,7 +78,7 @@ public class GamePlay extends ModuleWithModuleSettings {
                     this.field23892 = (int) (this.field23890.method22617() / 1000L) + 1;
                     Client.getInstance()
                             .getNotificationManager()
-                            .post(
+                            .send(
                                     new Notification("Auto Join", "Joining a new game in " + this.field23892 + " second" + (this.field23892 > 1 ? "s" : "") + ".", 2000)
                             );
                 }
@@ -112,8 +113,8 @@ public class GamePlay extends ModuleWithModuleSettings {
                         var5 = 3200L;
                     }
 
-                    if (this.field23891.method27121() > var5 && !this.field23889.isEmpty()) {
-                        this.field23891.method27120();
+                    if (this.field23891.getElapsedTime() > var5 && !this.field23889.isEmpty()) {
+                        this.field23891.reset();
                         String var7 = this.field23889.get(0);
                         ColorUtils.sendChatMessage(var7);
                         this.field23889.remove(0);

@@ -69,7 +69,7 @@ public class Class1103 extends Class1009 {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       if (!this.onGround && this.getMotion().y < 0.0) {
          this.setMotion(this.getMotion().method11347(1.0, 0.6, 1.0));
       }
@@ -94,7 +94,7 @@ public class Class1103 extends Class1009 {
          }
       }
 
-      super.livingEntity();
+      super.livingTick();
    }
 
    @Override

@@ -14,6 +14,7 @@ import com.mentalfrostbyte.jello.module.impl.movement.Jesus;
 import com.mentalfrostbyte.jello.module.impl.movement.Step;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.world.Timer;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
@@ -61,7 +62,7 @@ public class HypixelSpeed extends Module {
     public void method16037(EventUpdate var1) {
         if (mc.player.onGround) {
             if (!Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).method15988()
-                    || KillAura.field23948 == null && KillAura.field23949 == null
+                    || KillAura.target == null && KillAura.field23949 == null
                     || this.field23418 != Class2094.field13641) {
                 this.field23417 = 0.0;
             } else if (var1.isPre()) {
@@ -217,7 +218,7 @@ public class HypixelSpeed extends Module {
             mc.player.field4915 = this.field23416;
             mc.player.prevPosY = this.field23416;
             if (MovementUtils.isMoving()) {
-                mc.player.field4909 = 0.099999994F;
+                mc.player.cameraYaw = 0.099999994F;
             }
         }
     }

@@ -29,7 +29,7 @@ public interface Class1071 {
             }
 
             if (!var1.canPassengerSteer()) {
-               var1.method3108(var1, false);
+               var1.func_233629_a_(var1, false);
                var1.setMotion(Vector3d.ZERO);
             } else {
                float var7 = this.method4980();

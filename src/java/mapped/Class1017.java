@@ -361,8 +361,8 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       if (!this.world.isRemote) {
          if (this.field5692 > 0) {
             this.field5692--;

@@ -6,19 +6,18 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import mapped.*;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.play.client.CPlayerPacket;
 
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class TP extends Command {
-   private Class9819 field25710;
+   private final Class9819 field25710;
 
    public TP() {
       super("tp", "Teleports to a player", "teleport");
-      this.registerSubCommands(new String[]{"name"});
+      this.registerSubCommands("name");
       this.field25710 = new Class9819();
    }
 
@@ -33,21 +32,21 @@ public class TP extends Command {
       } else if (var2[0].method30899().equalsIgnoreCase(mc.getSession().username)) {
          throw new CommandException("You can not tp to yourself");
       } else {
-         this.field25710.field45879 = null;
-         List<Entity> var6 = ColorUtils.method17708();
-         Collections.sort(var6, new Class3596(this));
+         this.field25710.entity = null;
+         List<Entity> var6 = ColorUtils.getEntitesInWorld();
+         var6.sort(new Class3596(this));
 
          for (Entity var8 : var6) {
             if (var8.getName().getString().equalsIgnoreCase(var2[0].method30899())) {
-               this.field25710.field45879 = var8;
+               this.field25710.entity = var8;
                break;
             }
          }
 
-         if (this.field25710.field45879 != null) {
-            this.field25710.field45877.method27120();
+         if (this.field25710.entity != null) {
+            this.field25710.timer.reset();
             if (!ColorUtils.method17716()) {
-               this.field25710.field45877.stop();
+               this.field25710.timer.stop();
                this.field25710.field45878 = 2;
             } else {
                double var9 = mc.player.getPosX();
@@ -58,8 +57,8 @@ public class TP extends Command {
                this.field25710.field45878 = 1;
                Client.getInstance()
                   .getNotificationManager()
-                  .post(new Notification("Teleport", "Teleporting to \"" + this.field25710.field45879.getName().getString() + "\"...", 10000));
-               this.field25710.field45877.start();
+                  .send(new Notification("Teleport", "Teleporting to \"" + this.field25710.entity.getName().getString() + "\"...", 10000));
+               this.field25710.timer.start();
             }
          } else {
             throw new CommandException("Could not find entity with name \"" + var2[0].method30899() + "\"");
@@ -67,13 +66,17 @@ public class TP extends Command {
       }
    }
 
-   // $VF: synthetic method
-   public static Minecraft method18340() {
-      return mc;
-   }
+   public static class Class3596 implements Comparator<Entity> {
+       public final TP tp;
 
-   // $VF: synthetic method
-   public static Minecraft method18341() {
-      return mc;
+      public Class3596(TP tp) {
+         this.tp = tp;
+      }
+
+      public int compare(Entity ent1, Entity var2) {
+         float distToEnt1 = mc.player.getDistance(ent1);
+         float distToEnt2 = mc.player.getDistance(var2);
+         return (int)(distToEnt1 - distToEnt2);
+      }
    }
 }

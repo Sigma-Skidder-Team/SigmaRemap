@@ -4,12 +4,12 @@ import net.minecraft.item.ItemStack;
 import mapped.NonNullList;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 import java.util.List;
 
-public class SWindowItemsPacket implements Packet<IClientPlayNetHandler> {
+public class SWindowItemsPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24913;
    private int field24914;
    private List<ItemStack> field24915;

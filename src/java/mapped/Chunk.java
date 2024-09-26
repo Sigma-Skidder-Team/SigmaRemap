@@ -342,7 +342,7 @@ public class Chunk implements IChunk {
       this.field9117.get(var1).method24582(var2);
    }
 
-   public void method7132(Entity var1) {
+   public void removeEntity(Entity var1) {
       this.method7133(var1, var1.chunkCoordY);
    }
 

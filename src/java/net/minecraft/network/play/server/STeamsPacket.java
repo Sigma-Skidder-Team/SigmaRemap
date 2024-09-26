@@ -8,12 +8,12 @@ import net.minecraft.scoreboard.Team;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 
-public class STeamsPacket implements Packet<IClientPlayNetHandler> {
+public class STeamsPacket implements IPacket<IClientPlayNetHandler> {
    private String name = "";
    private ITextComponent displayName = StringTextComponent.EMPTY;
    private ITextComponent prefix = StringTextComponent.EMPTY;

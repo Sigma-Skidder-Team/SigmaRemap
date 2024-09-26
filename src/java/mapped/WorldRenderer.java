@@ -184,8 +184,8 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    }
 
    private void method855(Class1699 var1, float var2, double var3, double var5, double var7) {
-      if (Class9299.field42948.method20214()) {
-         Class8296 var9 = (Class8296)Class9299.method35070(this.field943.method6830(), Class9299.field42948);
+      if (Reflector.field42948.exists()) {
+         Class8296 var9 = (Class8296) Reflector.call(this.field943.method6830(), Reflector.field42948);
          if (var9 != null) {
             var9.method28999(this.field955, var2, this.field943, this.mc, var1, var3, var5, var7);
             return;
@@ -1294,7 +1294,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
       var10.endStartSection("blockentities");
       Class5947.method18475();
-      boolean var57 = Class9299.field42943.method20214();
+      boolean var57 = Reflector.field42943.exists();
       Class7647 var59 = var20;
 
       for (Class7002 var66 : this.renderInfosTileEntities) {
@@ -1302,7 +1302,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          if (!var72.isEmpty()) {
             for (TileEntity var82 : var72) {
                if (var57) {
-                  AxisAlignedBB var86 = (AxisAlignedBB)Class9299.method35070(var82, Class9299.field42943);
+                  AxisAlignedBB var86 = (AxisAlignedBB) Reflector.call(var82, Reflector.field42943);
                   if (var86 != null && !var59.method25122(var86)) {
                      continue;
                   }
@@ -1344,7 +1344,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       synchronized (this.field946) {
          for (TileEntity var73 : this.field946) {
             if (var57) {
-               AxisAlignedBB var78 = (AxisAlignedBB)Class9299.method35070(var73, Class9299.field42943);
+               AxisAlignedBB var78 = (AxisAlignedBB) Reflector.call(var73, Reflector.field42943);
                if (var78 != null && !var59.method25122(var78)) {
                   continue;
                }
@@ -1421,9 +1421,9 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          BlockPos var69 = ((BlockRayTraceResult)var64).getPos();
          BlockState var75 = this.field943.getBlockState(var69);
          boolean var80;
-         if (Class9299.field42830.method20214() && Class9299.field42882.method20214()) {
-            var80 = !Class9299.method35056(Class9299.field42882, this, var6, var64, var2, matrixStackIn, irendertypebuffer$impl)
-               && !Class9299.method35064(var75, Class9299.field42830, this.field943, var69)
+         if (Reflector.field42830.exists() && Reflector.field42882.exists()) {
+            var80 = !Reflector.method35056(Reflector.field42882, this, var6, var64, var2, matrixStackIn, irendertypebuffer$impl)
+               && !Reflector.method35064(var75, Reflector.field42830, this.field943, var69)
                && this.field943.getWorldBorder().contains(var69);
          } else {
             var80 = !var75.isAir() && this.field943.getWorldBorder().contains(var69);
@@ -1438,7 +1438,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             irendertypebuffer$impl.finish(RenderType.method14345());
          }
       } else if (var64 != null && var64.getType() == RayTraceResult.Type.ENTITY) {
-         Class9299.field42882.method20217(this, var6, var64, var2, matrixStackIn, irendertypebuffer$impl);
+         Reflector.field42882.method20217(this, var6, var64, var2, matrixStackIn, irendertypebuffer$impl);
       }
 
       RenderSystem.pushMatrix();
@@ -1553,7 +1553,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       }
 
       this.method882(var6);
-      RenderSystem.method27866(7424);
+      RenderSystem.shadeModel(7424);
       RenderSystem.depthMask(true);
       RenderSystem.disableBlend();
       RenderSystem.popMatrix();
@@ -1984,8 +1984,8 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    }
 
    public void method888(MatrixStack var1, float var2) {
-      if (Class9299.field42947.method20214()) {
-         Class9797 var3 = (Class9797)Class9299.method35070(this.field943.method6830(), Class9299.field42947);
+      if (Reflector.field42947.exists()) {
+         Class9797 var3 = (Class9797) Reflector.call(this.field943.method6830(), Reflector.field42947);
          if (var3 != null) {
             var3.method38636(this.field955, var2, var1, this.field943, this.mc);
             return;
@@ -2052,7 +2052,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                Shaders.method33116();
             }
 
-            RenderSystem.method27866(7425);
+            RenderSystem.shadeModel(7425);
             var1.push();
             var1.rotate(Vector3f.field32898.rotationDegrees(90.0F));
             float var10 = MathHelper.sin(this.field943.method6750(var2)) < 0.0F ? 180.0F : 0.0F;
@@ -2076,7 +2076,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             var8.finishDrawing();
             WorldVertexBufferUploader.draw(var8);
             var1.pop();
-            RenderSystem.method27866(7424);
+            RenderSystem.shadeModel(7424);
          }
 
          RenderSystem.enableTexture();
@@ -2189,8 +2189,8 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
    public void method889(MatrixStack var1, float var2, double var3, double var5, double var7) {
       if (!Class7944.method26823()) {
-         if (Class9299.field42946.method20214()) {
-            Class8098 var9 = (Class8098)Class9299.method35070(this.field943.method6830(), Class9299.field42946);
+         if (Reflector.field42946.exists()) {
+            Class8098 var9 = (Class8098) Reflector.call(this.field943.method6830(), Reflector.field42946);
             if (var9 != null) {
                var9.method28052(this.field955, var2, var1, this.field943, this.mc, var3, var5, var7);
                return;
@@ -2903,7 +2903,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
       if (var1 != null) {
          Class3283 var5 = Class3283.method11814(var1);
-         if (Class9299.field42969.method20245()) {
+         if (Reflector.field42969.method20245()) {
             var5 = var3;
          }
 
@@ -3122,7 +3122,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             break;
          case 1010:
             if (Item.method11702(var4) instanceof Class3283) {
-               if (Class9299.field42969.method20245()) {
+               if (Reflector.field42969.method20245()) {
                   this.method909(((Class3283) Item.method11702(var4)).method11815(), var3, (Class3283) Item.method11702(var4));
                } else {
                   this.method908(((Class3283) Item.method11702(var4)).method11815(), var3);
@@ -3287,8 +3287,8 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             BlockState var16 = Block.method11536(var4);
             if (!Class9561.method37050(var16, this.field943, var3)) {
                SoundType var47 = var16.getSoundType();
-               if (Class9299.field42827.method20214()) {
-                  var47 = (SoundType)Class9299.method35070(var16, Class9299.field42827, this.field943, var3, null);
+               if (Reflector.field42827.exists()) {
+                  var47 = (SoundType) Reflector.call(var16, Reflector.field42827, this.field943, var3, null);
                }
 
                this.field943

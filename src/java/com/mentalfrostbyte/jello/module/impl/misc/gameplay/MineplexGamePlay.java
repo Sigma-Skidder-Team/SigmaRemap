@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.misc.GamePlay;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SChatPacket;
 
 public class MineplexGamePlay extends Module {
@@ -33,7 +33,7 @@ public class MineplexGamePlay extends Module {
     @EventTarget
     private void method16340(ReceivePacketEvent var1) {
         if (this.isEnabled() && mc.player != null) {
-            Packet var4 = var1.getPacket();
+            IPacket var4 = var1.getPacket();
             if (var4 instanceof SChatPacket) {
                 SChatPacket var5 = (SChatPacket) var4;
                 String var6 = var5.getChatComponent().getString();
@@ -46,7 +46,7 @@ public class MineplexGamePlay extends Module {
 
                 for (int var9 = 0; var9 < var8.length; var9++) {
                     if (var6.equals(var8[var9] + " won the game!")) {
-                        this.field23604.method27120();
+                        this.field23604.reset();
                         this.field23603 = true;
                     }
                 }
@@ -64,9 +64,9 @@ public class MineplexGamePlay extends Module {
     @EventTarget
     private void method16342(TickEvent var1) {
         if (this.isEnabled()) {
-            if (this.getBooleanValueFromSetttingName("AutoGG") && this.field23604.method27121() > 5000L && this.field23603) {
+            if (this.getBooleanValueFromSetttingName("AutoGG") && this.field23604.getElapsedTime() > 5000L && this.field23603) {
                 this.field23603 = false;
-                this.field23604.method27120();
+                this.field23604.reset();
                 this.field23602.method16760();
             }
         }

@@ -5,13 +5,13 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
 import java.util.List;
 
-public class SExplosionPacket implements Packet<IClientPlayNetHandler> {
+public class SExplosionPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24467;
    public double posX;
    public double posY;

@@ -4,11 +4,11 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.world.World;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SEntityStatusPacket implements Packet<IClientPlayNetHandler> {
+public class SEntityStatusPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24258;
    private int field24259;
    private byte field24260;

@@ -47,7 +47,7 @@ public class Class6634 implements Class6632 {
       for (int var5 = 0; var5 < var4.length; var5++) {
          Constructor var6 = var4[var5];
          Class[] var7 = var6.getParameterTypes();
-         if (Class9299.method35088(var1, var7)) {
+         if (Reflector.method35088(var1, var7)) {
             return var6;
          }
       }
@@ -55,7 +55,7 @@ public class Class6634 implements Class6632 {
       return null;
    }
 
-   public boolean method20241() {
+   public boolean exists() {
       return !this.field29178 ? this.method20239() != null : this.field29179 != null;
    }
 
@@ -65,7 +65,7 @@ public class Class6634 implements Class6632 {
    }
 
    public Object method20243(Object... var1) {
-      return Class9299.method35087(this, var1);
+      return Reflector.method35087(this, var1);
    }
 
    @Override

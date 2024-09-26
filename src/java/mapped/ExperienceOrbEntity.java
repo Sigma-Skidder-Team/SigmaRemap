@@ -5,7 +5,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SSpawnExperienceOrbPacket;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvents;
@@ -281,7 +281,7 @@ public class ExperienceOrbEntity extends Entity {
    }
 
    @Override
-   public Packet<?> createSpawnPacket() {
+   public IPacket<?> createSpawnPacket() {
       return new SSpawnExperienceOrbPacket(this);
    }
 }

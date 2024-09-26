@@ -319,7 +319,7 @@ public class ParticleManager implements Class268 {
          RenderSystem.method27939();
          RenderSystem.enableDepthTest();
          RenderSystem.method27840();
-         if (Class9299.field42864.method20245()) {
+         if (Reflector.field42864.method20245()) {
             RenderSystem.method27860(33986);
             RenderSystem.enableTexture();
             RenderSystem.method27860(33984);
@@ -330,7 +330,7 @@ public class ParticleManager implements Class268 {
       RenderSystem.pushMatrix();
       RenderSystem.method27888(var1.getLast().getMatrix());
       Collection<Class6843> var12 = field1167;
-      if (Class9299.field42864.method20245()) {
+      if (Reflector.field42864.method20245()) {
          var12 = this.field1169.keySet();
       }
 
@@ -383,10 +383,10 @@ public class ParticleManager implements Class268 {
 
    public void method1206(BlockPos var1, BlockState var2) {
       boolean var6;
-      if (Class9299.field42824.method20214() && Class9299.field42830.method20214()) {
+      if (Reflector.field42824.exists() && Reflector.field42830.exists()) {
          Block var5 = var2.getBlock();
-         var6 = !Class9299.method35064(var2, Class9299.field42830, this.field1168, var1)
-            && !Class9299.method35064(var2, Class9299.field42824, this.field1168, var1, this);
+         var6 = !Reflector.method35064(var2, Reflector.field42830, this.field1168, var1)
+            && !Reflector.method35064(var2, Reflector.field42824, this.field1168, var1, this);
       } else {
          var6 = !var2.isAir();
       }
@@ -490,7 +490,7 @@ public class ParticleManager implements Class268 {
    public void method1210(BlockPos var1, BlockRayTraceResult var2) {
       BlockState var5 = this.field1168.getBlockState(var1);
       if (var5 != null) {
-         boolean var6 = Class9299.method35064(var5, Class9299.field42825, this.field1168, var2, this);
+         boolean var6 = Reflector.method35064(var5, Reflector.field42825, this.field1168, var2, this);
          if (!var6) {
             Direction var7 = var2.getFace();
             this.addBlockHitEffects(var1, var7);

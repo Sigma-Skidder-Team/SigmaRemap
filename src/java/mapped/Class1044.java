@@ -182,8 +182,8 @@ public class Class1044 extends Class1043 {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       if (!this.world.isRemote) {
          this.method4757();
       }

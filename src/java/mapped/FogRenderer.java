@@ -194,12 +194,12 @@ public class FogRenderer {
          }
       }
 
-      if (Class9299.field42800.method20241()) {
-         Object var31 = Class9299.method35087(Class9299.field42800, var0, var1, field40348, field40349, field40350);
-         Class9299.method35086(var31);
-         field40348 = Class9299.method35067(var31, Class9299.field42801);
-         field40349 = Class9299.method35067(var31, Class9299.field42802);
-         field40350 = Class9299.method35067(var31, Class9299.field42803);
+      if (Reflector.field42800.exists()) {
+         Object var31 = Reflector.method35087(Reflector.field42800, var0, var1, field40348, field40349, field40350);
+         Reflector.method35086(var31);
+         field40348 = Reflector.method35067(var31, Reflector.field42801);
+         field40349 = Reflector.method35067(var31, Reflector.field42802);
+         field40350 = Reflector.method35067(var31, Reflector.field42803);
       }
 
       Shaders.method33048(field40348, field40349, field40350, 0.0F);
@@ -220,8 +220,8 @@ public class FogRenderer {
       FluidState var7 = var0.method37512();
       Entity var8 = var0.getRenderViewEntity();
       float var9 = -1.0F;
-      if (Class9299.field42876.method20214()) {
-         var9 = Class9299.method35059(Class9299.field42876, var1, var0, var4, 0.1F);
+      if (Reflector.field42876.exists()) {
+         var9 = Reflector.method35059(Reflector.field42876, var1, var0, var4, 0.1F);
       }
 
       if (!(var9 >= 0.0F)) {
@@ -266,8 +266,8 @@ public class FogRenderer {
             RenderSystem.method27846(var11);
             RenderSystem.method27842(Class2135.field13984);
             RenderSystem.method27904();
-            if (Class9299.field42883.method20214()) {
-               Class9299.method35055(Class9299.field42883, var1, var0, var4, var11);
+            if (Reflector.field42883.exists()) {
+               Reflector.method35055(Reflector.field42883, var1, var0, var4, var11);
             }
          } else {
             float var14 = 1.0F;

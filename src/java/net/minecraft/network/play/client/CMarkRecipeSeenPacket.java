@@ -2,13 +2,13 @@ package net.minecraft.network.play.client;
 
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 
 import java.io.IOException;
 
-public class CMarkRecipeSeenPacket implements Packet<IServerPlayNetHandler> {
+public class CMarkRecipeSeenPacket implements IPacket<IServerPlayNetHandler> {
     private ResourceLocation field_244320_a;
 
    public CMarkRecipeSeenPacket() {

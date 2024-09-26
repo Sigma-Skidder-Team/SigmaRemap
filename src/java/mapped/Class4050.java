@@ -17,7 +17,7 @@ public class Class4050 extends Class4051 {
    public Class7219 method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2866) {
          Class2873 var5 = (Class2873)var1;
-         return !var2.equals("body2") ? super.method12823(var1, var2) : (Class7219)Class9299.field43120.method20235(var5);
+         return !var2.equals("body2") ? super.method12823(var1, var2) : (Class7219) Reflector.field43120.method20235(var5);
       } else {
          return null;
       }

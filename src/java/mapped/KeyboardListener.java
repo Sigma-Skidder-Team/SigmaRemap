@@ -363,29 +363,29 @@ public class KeyboardListener {
             Screen.wrapScreenError(() -> {
                if (action != 1 && (action != 2 || !this.field43916)) {
                   if (action == 0) {
-                     if (Class9299.field42888.method20214()) {
-                        var11[0] = Class9299.method35056(Class9299.field42888, this.mc.currentScreen, key, scanCode, modifiers);
+                     if (Reflector.field42888.exists()) {
+                        var11[0] = Reflector.method35056(Reflector.field42888, this.mc.currentScreen, key, scanCode, modifiers);
                         if (var11[0]) {
                            return;
                         }
                      }
 
                      var11[0] = var15.keyReleased(key, scanCode, modifiers);
-                     if (Class9299.field42889.method20214() && !var11[0]) {
-                        var11[0] = Class9299.method35056(Class9299.field42889, this.mc.currentScreen, key, scanCode, modifiers);
+                     if (Reflector.field42889.exists() && !var11[0]) {
+                        var11[0] = Reflector.method35056(Reflector.field42889, this.mc.currentScreen, key, scanCode, modifiers);
                      }
                   }
                } else {
-                  if (Class9299.field42886.method20214()) {
-                     var11[0] = Class9299.method35056(Class9299.field42886, this.mc.currentScreen, key, scanCode, modifiers);
+                  if (Reflector.field42886.exists()) {
+                     var11[0] = Reflector.method35056(Reflector.field42886, this.mc.currentScreen, key, scanCode, modifiers);
                      if (var11[0]) {
                         return;
                      }
                   }
 
                   var11[0] = var15.keyPressed(key, scanCode, modifiers);
-                  if (Class9299.field42887.method20214() && !var11[0]) {
-                     var11[0] = Class9299.method35056(Class9299.field42887, this.mc.currentScreen, key, scanCode, modifiers);
+                  if (Reflector.field42887.exists() && !var11[0]) {
+                     var11[0] = Reflector.method35056(Reflector.field42887, this.mc.currentScreen, key, scanCode, modifiers);
                   }
                }
             }, "keyPressed event handler", var15.getClass().getCanonicalName());
@@ -448,7 +448,7 @@ public class KeyboardListener {
             }
          }
 
-         Class9299.field42869.method20217(key, scanCode, action, modifiers);
+         Reflector.field42869.method20217(key, scanCode, action, modifiers);
       }
    }
 
@@ -464,20 +464,20 @@ public class KeyboardListener {
             if (Character.charCount(var3) != 1) {
                for (char var11 : Character.toChars(var3)) {
                   Screen.wrapScreenError(() -> {
-                     if (!Class9299.field42884.method20214() || !Class9299.method35056(Class9299.field42884, this.mc.currentScreen, var11, var4)) {
+                     if (!Reflector.field42884.exists() || !Reflector.method35056(Reflector.field42884, this.mc.currentScreen, var11, var4)) {
                         boolean var6 = var7.charTyped(var11, var4);
-                        if (Class9299.field42885.method20214() && !var6) {
-                           Class9299.method35056(Class9299.field42885, this.mc.currentScreen, var11, var4);
+                        if (Reflector.field42885.exists() && !var6) {
+                           Reflector.method35056(Reflector.field42885, this.mc.currentScreen, var11, var4);
                         }
                      }
                   }, "charTyped event handler", var7.getClass().getCanonicalName());
                }
             } else {
                Screen.wrapScreenError(() -> {
-                  if (!Class9299.field42884.method20214() || !Class9299.method35056(Class9299.field42884, this.mc.currentScreen, (char)var3, var4)) {
+                  if (!Reflector.field42884.exists() || !Reflector.method35056(Reflector.field42884, this.mc.currentScreen, (char)var3, var4)) {
                      boolean var6 = var7.charTyped((char)var3, var4);
-                     if (Class9299.field42885.method20214() && !var6) {
-                        Class9299.method35056(Class9299.field42885, this.mc.currentScreen, (char)var3, var4);
+                     if (Reflector.field42885.exists() && !var6) {
+                        Reflector.method35056(Reflector.field42885, this.mc.currentScreen, (char)var3, var4);
                      }
                   }
                }, "charTyped event handler", var7.getClass().getCanonicalName());

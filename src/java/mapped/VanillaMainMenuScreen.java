@@ -94,7 +94,7 @@ public class VanillaMainMenuScreen extends Screen {
       Button var5 = null;
       if (!this.mc.isDemo()) {
          this.method2596(var4, 24);
-         if (Class9299.field42976.method20241()) {
+         if (Reflector.field42976.exists()) {
             var5 = Class9561.addDemoButtons(this, var4, 24);
             this.<Button>addButton(var5);
          }
@@ -158,8 +158,8 @@ public class VanillaMainMenuScreen extends Screen {
          this.field4713.init(this.mc, this.width, this.height);
       }
 
-      if (Class9299.field42978.method20214()) {
-         this.field4719 = (Screen)Class9299.method35062(Class9299.field42978, this, var5);
+      if (Reflector.field42978.exists()) {
+         this.field4719 = (Screen) Reflector.method35062(Reflector.field42978, this, var5);
       }
    }
 
@@ -190,7 +190,7 @@ public class VanillaMainMenuScreen extends Screen {
             new Button(this.width / 2 - 100, var1 + var2 * 2, 200, 20, new TranslationTextComponent("menu.online"), var1x -> this.method2599(), var6)
          )
          .active = var5;
-      if (Class9299.field42976.method20241() && this.field4566.size() > 0) {
+      if (Reflector.field42976.exists() && this.field4566.size() > 0) {
          Widget var7 = this.field4566.get(this.field4566.size() - 1);
          var7.field6477 = this.width / 2 + 2;
          var7.method5741(98);
@@ -296,8 +296,8 @@ public class VanillaMainMenuScreen extends Screen {
 
          this.mc.getTextureManager().bindTexture(field4711);
          method5699(var1, var9 + 88, 67, 0.0F, 0.0F, 98, 14, 128, 16);
-         if (Class9299.field42893.method20214()) {
-            Class9299.method35055(Class9299.field42893, this, var1, this.fontRenderer, this.width, this.height);
+         if (Reflector.field42893.exists()) {
+            Reflector.method35055(Reflector.field42893, this, var1, this.fontRenderer, this.width, this.height);
          }
 
          if (this.field4708 != null) {
@@ -323,15 +323,15 @@ public class VanillaMainMenuScreen extends Screen {
             var17 = var17 + I18n.format("menu.modded");
          }
 
-         if (!Class9299.field42762.method20245()) {
+         if (!Reflector.field42762.method20245()) {
             drawString(var1, this.fontRenderer, var17, 2, this.height - 10, 16777215 | var12);
          } else {
-            if (Class9299.field42764.method20214()) {
+            if (Reflector.field42764.exists()) {
                BiConsumer<Integer, String> var14 = (var3x, var4x) -> drawString(var1, this.fontRenderer, var4x, 2, this.height - (10 + var3x * 10), 16777215 | var12);
-               Class9299.method35062(Class9299.field42764, true, true, var14);
+               Reflector.method35062(Reflector.field42764, true, true, var14);
             }
 
-            if (Class9299.field42765.method20214()) {
+            if (Reflector.field42765.exists()) {
                BiConsumer<Integer, String> var19 = (var3x, var4x) -> drawString(
                      var1,
                      this.fontRenderer,
@@ -340,7 +340,7 @@ public class VanillaMainMenuScreen extends Screen {
                      this.height - (10 + (var3x + 1) * 10),
                      16777215 | var12
                   );
-               Class9299.method35062(Class9299.field42765, var19);
+               Reflector.method35062(Reflector.field42765, var19);
             }
          }
 

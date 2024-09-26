@@ -52,8 +52,8 @@ public class Class1089 extends Class1018 {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       this.field5968 = this.field5965;
       this.field5967 = this.field5966;
       this.field5966 = (float)((double)this.field5966 + (double)(!this.onGround ? 4 : -1) * 0.3);

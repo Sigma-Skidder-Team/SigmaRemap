@@ -114,8 +114,8 @@ public abstract class Class1045 extends Class1046 {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       if (!this.world.isRemote) {
          if (this.isAlive()) {
             int var3 = this.method4767();

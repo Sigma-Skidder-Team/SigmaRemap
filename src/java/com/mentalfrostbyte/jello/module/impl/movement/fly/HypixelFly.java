@@ -8,12 +8,13 @@ import com.mentalfrostbyte.jello.event.priority.LowestPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.world.Timer;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.util.ColorUtils;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CClickWindowPacket;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 import net.minecraft.util.math.MathHelper;
@@ -95,7 +96,7 @@ public class HypixelFly extends Module {
     @Class5631
     public void method16258(SendPacketEvent var1) {
         if (ColorUtils.method17716()) {
-            Packet var4 = var1.getPacket();
+            IPacket var4 = var1.getPacket();
             if (var4 instanceof CClickWindowPacket) {
                 CClickWindowPacket var5 = (CClickWindowPacket) var4;
                 this.field23559 = var5.getActionNumber();
@@ -108,7 +109,7 @@ public class HypixelFly extends Module {
     @HigestPriority
     public void method16259(ReceivePacketEvent var1) {
         if (mc.getConnection() != null && ColorUtils.method17716()) {
-            Packet var4 = var1.getPacket();
+            IPacket var4 = var1.getPacket();
             if (this.isEnabled()) {
                 if (var4 instanceof SPlayerPositionLookPacket) {
                     this.access().toggle();

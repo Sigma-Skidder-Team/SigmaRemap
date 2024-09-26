@@ -2,12 +2,12 @@ package net.minecraft.network.play.server;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
 
-public class SAnimateBlockBreakPacket implements Packet<IClientPlayNetHandler> {
+public class SAnimateBlockBreakPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24507;
    private int field24508;
    private BlockPos field24509;

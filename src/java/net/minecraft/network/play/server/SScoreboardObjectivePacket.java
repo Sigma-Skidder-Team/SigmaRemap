@@ -6,10 +6,10 @@ import mapped.Class2316;
 import mapped.Class8375;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.text.ITextComponent;
 
-public class SScoreboardObjectivePacket implements Packet<IClientPlayNetHandler> {
+public class SScoreboardObjectivePacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24729;
    private String field24730;
    private ITextComponent field24731;

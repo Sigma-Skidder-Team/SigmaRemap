@@ -196,7 +196,7 @@ public class JelloPortal implements Class8006<ClientPlayerEntity> {
       return !Minecraft.getInstance().isSingleplayer() ? currentVersion : defaultVersion;
    }
 
-   public PacketManager method2getPacketManager373() {
+   public PacketManager getPacketManager() {
       return this.packetManager;
    }
 }

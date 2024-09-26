@@ -4,7 +4,7 @@ import com.google.common.collect.Lists;
 import mapped.*;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.item.crafting.IRecipe;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.List;
 
-public class SUpdateRecipesPacket implements Packet<IClientPlayNetHandler> {
+public class SUpdateRecipesPacket implements IPacket<IClientPlayNetHandler> {
    private List<IRecipe<?>> field24461;
 
    public SUpdateRecipesPacket() {

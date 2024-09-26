@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.event.priority.LowerPriority;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import mapped.*;
@@ -47,9 +48,9 @@ public class TargetStrafe extends Module {
             Entity var4 = null;
             if (Client.getInstance().getModuleManager().getModuleByClass(Speed.class).method15988() || !this.getBooleanValueFromSetttingName("Only speed")) {
                 if (KillAura.field23949 != null) {
-                    var4 = KillAura.field23949.method27397();
-                } else if (KillAura.field23948 != null) {
-                    var4 = KillAura.field23948;
+                    var4 = KillAura.field23949.getEntity();
+                } else if (KillAura.target != null) {
+                    var4 = KillAura.target;
                 }
             }
 

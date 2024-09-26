@@ -3,12 +3,12 @@ package net.minecraft.network.play.server;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 import java.util.UUID;
 
-public class SSpawnPlayerPacket implements Packet<IClientPlayNetHandler> {
+public class SSpawnPlayerPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24832;
    private int field24833;
    private UUID field24834;

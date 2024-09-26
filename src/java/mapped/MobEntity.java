@@ -146,7 +146,7 @@ public abstract class MobEntity extends LivingEntity {
 
    public void method4233(LivingEntity var1) {
       this.field5602 = var1;
-      Class9299.method35055(Class9299.field42862, this, var1);
+      Reflector.method35055(Reflector.field42862, this, var1);
    }
 
    @Override
@@ -458,12 +458,12 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       this.world.getProfiler().startSection("looting");
       boolean var3 = this.world.getGameRules().getBoolean(Class5462.field24224);
-      if (Class9299.field42847.method20214()) {
-         var3 = Class9299.method35056(Class9299.field42847, this.world, this);
+      if (Reflector.field42847.exists()) {
+         var3 = Reflector.method35056(Reflector.field42847, this.world, this);
       }
 
       if (!this.world.isRemote && this.method4280() && this.isAlive() && !this.dead && var3) {
@@ -609,8 +609,8 @@ public abstract class MobEntity extends LivingEntity {
          this.remove();
       } else if (!this.method4282() && !this.method4255()) {
          PlayerEntity var3 = this.world.method7185(this, -1.0);
-         if (Class9299.field42844.method20214()) {
-            Object var4 = Class9299.field42844.method20223(this);
+         if (Reflector.field42844.exists()) {
+            Object var4 = Reflector.field42844.method20223(this);
             if (var4 != Class9561.field44533) {
                if (var4 == Class9561.field44532) {
                   this.remove();
@@ -868,8 +868,8 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    public static EquipmentSlotType method4271(ItemStack var0) {
-      if (Class9299.field42922.method20214()) {
-         EquipmentSlotType var3 = (EquipmentSlotType)Class9299.method35070(var0, Class9299.field42922);
+      if (Reflector.field42922.exists()) {
+         EquipmentSlotType var3 = (EquipmentSlotType) Reflector.call(var0, Reflector.field42922);
          if (var3 != null) {
             return var3;
          }

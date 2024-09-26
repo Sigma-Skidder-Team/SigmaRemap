@@ -3,11 +3,11 @@ package net.minecraft.network.play.server;
 import mapped.Class9385;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SChangeGameStatePacket implements Packet<IClientPlayNetHandler> {
+public class SChangeGameStatePacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24559;
    public static final Class9385 field24560 = new Class9385(0);
    public static final Class9385 field24561 = new Class9385(1);

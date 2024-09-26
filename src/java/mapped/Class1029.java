@@ -114,8 +114,8 @@ public class Class1029 extends Class1026 {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       if (this.isAlive()) {
          if (!this.isMovementBlocked()) {
             double var3 = this.method4232() == null ? 0.3 : 0.35;

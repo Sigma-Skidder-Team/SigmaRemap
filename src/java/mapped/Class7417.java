@@ -10,19 +10,19 @@ import javax.annotation.Nullable;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.network.INetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import org.apache.logging.log4j.LogManager;
 
 public class Class7417<T extends INetHandler> {
-   private final Object2IntMap<Class<? extends Packet<T>>> field31779 = Util.<Object2IntMap<Class<? extends Packet<T>>>>make(
+   private final Object2IntMap<Class<? extends IPacket<T>>> field31779 = Util.<Object2IntMap<Class<? extends IPacket<T>>>>make(
       new Object2IntOpenHashMap(), var0 -> var0.defaultReturnValue(-1)
    );
-   private final List<Supplier<? extends Packet<T>>> field31780 = Lists.newArrayList();
+   private final List<Supplier<? extends IPacket<T>>> field31780 = Lists.newArrayList();
 
    public Class7417() {
    }
 
-   public <P extends Packet<T>> Class7417<T> method23905(Class<P> var1, Supplier<P> var2) {
+   public <P extends IPacket<T>> Class7417<T> method23905(Class<P> var1, Supplier<P> var2) {
       int var5 = this.field31780.size();
       int var6 = this.field31779.put(var1, var5);
       if (var6 == -1) {
@@ -42,12 +42,12 @@ public class Class7417<T extends INetHandler> {
    }
 
    @Nullable
-   public Packet<?> method23907(int var1) {
+   public IPacket<?> method23907(int var1) {
       Supplier var4 = this.field31780.get(var1);
-      return var4 == null ? null : (Packet)var4.get();
+      return var4 == null ? null : (IPacket)var4.get();
    }
 
-   public Iterable<Class<? extends Packet<?>>> method23908() {
+   public Iterable<Class<? extends IPacket<?>>> method23908() {
       return Iterables.unmodifiableIterable(this.field31779.keySet());
    }
 }

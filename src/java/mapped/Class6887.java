@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SUpdateScorePacket;
 import net.minecraft.network.play.server.STeamsPacket;
 import net.minecraft.network.play.server.SDisplayObjectivePacket;
@@ -154,7 +154,7 @@ public class Class6887 extends Scoreboard {
       }
    }
 
-   public List<Packet<?>> method21023(Class8375 var1) {
+   public List<IPacket<?>> method21023(Class8375 var1) {
       ArrayList var4 = Lists.newArrayList();
       var4.add(new SScoreboardObjectivePacket(var1, 0));
 
@@ -172,10 +172,10 @@ public class Class6887 extends Scoreboard {
    }
 
    public void method21024(Class8375 var1) {
-      List<Packet<?>> var4 = this.method21023(var1);
+      List<IPacket<?>> var4 = this.method21023(var1);
 
       for (ServerPlayerEntity var6 : this.field29848.getPlayerList().method19488()) {
-         for (Packet var8 : var4) {
+         for (IPacket var8 : var4) {
             var6.field4855.sendPacket(var8);
          }
       }
@@ -183,7 +183,7 @@ public class Class6887 extends Scoreboard {
       this.field29849.add(var1);
    }
 
-   public List<Packet<?>> method21025(Class8375 var1) {
+   public List<IPacket<?>> method21025(Class8375 var1) {
       ArrayList var4 = Lists.newArrayList();
       var4.add(new SScoreboardObjectivePacket(var1, 1));
 
@@ -197,10 +197,10 @@ public class Class6887 extends Scoreboard {
    }
 
    public void method21026(Class8375 var1) {
-      List<Packet<?>> var4 = this.method21025(var1);
+      List<IPacket<?>> var4 = this.method21025(var1);
 
       for (ServerPlayerEntity var6 : this.field29848.getPlayerList().method19488()) {
-         for (Packet var8 : var4) {
+         for (IPacket var8 : var4) {
             var6.field4855.sendPacket(var8);
          }
       }

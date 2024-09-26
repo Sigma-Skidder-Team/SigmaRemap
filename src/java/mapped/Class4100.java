@@ -16,7 +16,7 @@ public class Class4100 extends Class4057 {
    public Class7219 method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2844) {
          Class2844 var5 = (Class2844)var1;
-         return !var2.equals("head") ? null : (Class7219)Class9299.field43102.method20235(var5);
+         return !var2.equals("head") ? null : (Class7219) Reflector.field43102.method20235(var5);
       } else {
          return null;
       }
@@ -36,7 +36,7 @@ public class Class4100 extends Class4057 {
             var6 = new Class5952(var5);
          }
 
-         Map var7 = (Map)Class9299.field43169.method20234();
+         Map var7 = (Map) Reflector.field43169.method20234();
          if (var7 != null) {
             var7.put(Class2136.field13989, var1);
             return (Class9492)var6;

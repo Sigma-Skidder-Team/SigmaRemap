@@ -91,7 +91,7 @@ public class Class9810 {
    }
 
    private static Map<Class2137, Class2828> method38691() {
-      Object var2 = (Map)Class9299.field43169.method20234();
+      Object var2 = (Map) Reflector.field43169.method20234();
       if (var2 == null) {
          Class7944.method26811("Field not found: TileEntitySkullRenderer.MODELS");
          var2 = new HashMap();

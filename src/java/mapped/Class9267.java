@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.realmsclient.dto.RealmsServer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.network.NetworkManager;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -27,7 +28,7 @@ public class Class9267 {
    public void method34897() {
       this.field42632 = true;
       if (this.field42633 != null && this.field42633.isChannelOpen()) {
-         this.field42633.method30701(new TranslationTextComponent("disconnect.genericReason"));
+         this.field42633.closeChannel(new TranslationTextComponent("disconnect.genericReason"));
          this.field42633.handleDisconnection();
       }
    }

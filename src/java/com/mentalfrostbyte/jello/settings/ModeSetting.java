@@ -63,7 +63,7 @@ public class ModeSetting extends Setting<String> {
       if (index < this.modes.size()) {
          String mode = this.modes.get(index);
          if (this.premiumModes.contains(mode) && Minecraft.getInstance() != null) {
-            Client.getInstance().getNotificationManager().post(new Notification("Premium", "Not yet available for free version"));
+            Client.getInstance().getNotificationManager().send(new Notification("Premium", "Not yet available for free version"));
          } else {
             this.setCurrentValue(mode);
          }

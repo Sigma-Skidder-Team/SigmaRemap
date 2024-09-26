@@ -23,24 +23,24 @@ public class Class4107 extends Class4057 {
                   if (!var2.equals("leg1")) {
                      if (!var2.equals("leg2")) {
                         if (!var2.equals("leg3")) {
-                           return !var2.equals("leg4") ? null : (Class7219)Class9299.field43037.method36565(var5, 6);
+                           return !var2.equals("leg4") ? null : (Class7219) Reflector.field43037.method36565(var5, 6);
                         } else {
-                           return (Class7219)Class9299.field43037.method36565(var5, 5);
+                           return (Class7219) Reflector.field43037.method36565(var5, 5);
                         }
                      } else {
-                        return (Class7219)Class9299.field43037.method36565(var5, 4);
+                        return (Class7219) Reflector.field43037.method36565(var5, 4);
                      }
                   } else {
-                     return (Class7219)Class9299.field43037.method36565(var5, 3);
+                     return (Class7219) Reflector.field43037.method36565(var5, 3);
                   }
                } else {
-                  return (Class7219)Class9299.field43037.method36565(var5, 2);
+                  return (Class7219) Reflector.field43037.method36565(var5, 2);
                }
             } else {
-               return (Class7219)Class9299.field43037.method36565(var5, 1);
+               return (Class7219) Reflector.field43037.method36565(var5, 1);
             }
          } else {
-            return (Class7219)Class9299.field43037.method36565(var5, 0);
+            return (Class7219) Reflector.field43037.method36565(var5, 0);
          }
       } else {
          return null;

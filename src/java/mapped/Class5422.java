@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 public interface Class5422 extends Class5421 {
    Logger field24103 = LogManager.getLogger();
    ThreadLocal<Class8391> field24104 = ThreadLocal.<Class8391>withInitial(() -> new Class8391(Blocks.AIR.method11579(), new BlockPos(0, 0, 0)));
-   boolean field24105 = Class9299.field42864.method20245();
+   boolean field24105 = Reflector.field42864.method20245();
 
    default Class8391 method17022(BlockState var1, BlockPos var2) {
       Class8391 var5 = field24104.get();

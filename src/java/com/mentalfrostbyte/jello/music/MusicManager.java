@@ -308,7 +308,7 @@ public class MusicManager {
 
                 this.field32153 = TextureUtil.method32933("picture", this.field32152);
                 this.field32151 = TextureUtil.method32933("picture", this.field32149);
-                Client.getInstance().getNotificationManager().post(new Notification("Now Playing", this.field32150, 7000, this.field32151));
+                Client.getInstance().getNotificationManager().send(new Notification("Now Playing", this.field32150, 7000, this.field32151));
                 this.field32154 = false;
             }
         } catch (IOException var5) {
@@ -397,7 +397,7 @@ public class MusicManager {
                                     this.field32147 = (long) var11.method30680();
                                     if (this.field32147 > 1300L) {
                                         var9.close();
-                                        Client.getInstance().getNotificationManager().post(new Notification("Now Playing", "Music is too long."));
+                                        Client.getInstance().getNotificationManager().send(new Notification("Now Playing", "Music is too long."));
                                     }
 
                                     Class6542 var15 = new Class6542(var13.method23320());
@@ -622,7 +622,7 @@ public class MusicManager {
             if (var9.getMessage() != null
                     && var9.getMessage().contains("ERROR: This video contains content from")
                     && var9.getMessage().contains("who has blocked it in your country on copyright grounds")) {
-                Client.getInstance().getNotificationManager().post(new Notification("Now Playing", "Not available in your region."));
+                Client.getInstance().getNotificationManager().send(new Notification("Now Playing", "Not available in your region."));
             } else {
                 var9.printStackTrace();
                 this.method24332();

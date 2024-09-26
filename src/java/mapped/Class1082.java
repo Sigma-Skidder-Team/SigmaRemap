@@ -62,7 +62,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       boolean var3 = this.method4310();
       if (var3) {
          ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.field13736);
@@ -83,7 +83,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
          }
       }
 
-      super.livingEntity();
+      super.livingTick();
    }
 
    @Override

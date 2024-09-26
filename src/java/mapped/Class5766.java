@@ -33,7 +33,7 @@ public class Class5766 implements Emitter.Listener {
             var6.printStackTrace();
          }
 
-         Client.getInstance().getNotificationManager().post(new Notification("Jello connect", "Connected!", ResourcesDecrypter.gingerbreadIconPNG));
+         Client.getInstance().getNotificationManager().send(new Notification("Jello connect", "Connected!", ResourcesDecrypter.gingerbreadIconPNG));
       }
    }
 }

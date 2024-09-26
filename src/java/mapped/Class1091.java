@@ -132,12 +132,12 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       if (this.field5977 > 0) {
          this.field5977--;
       }
 
-      super.livingEntity();
+      super.livingTick();
    }
 
    @Override

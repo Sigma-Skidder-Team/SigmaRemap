@@ -135,7 +135,7 @@ public class AdvancementsScreen extends Screen implements Class1131 {
             var7.method6003(var1, var2, var3, var7 == this.field6186);
          }
 
-         RenderSystem.method27867();
+         RenderSystem.enableRescaleNormal();
          RenderSystem.defaultBlendFunc();
 
          for (Class1271 var9 : this.field6185.values()) {

@@ -7,6 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.combat.Teams;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
@@ -164,7 +165,7 @@ public class AutoCrystal extends PremiumModule {
 
     @Override
     public void onEnable() {
-        this.field23628.method27120();
+        this.field23628.reset();
         this.field23628.start();
         this.field23635 = null;
     }
@@ -197,9 +198,9 @@ public class AutoCrystal extends PremiumModule {
                         .min(Comparator.comparing(var1x -> method16380(var1x.getPosX(), var1x.getPosY(), var1x.getPosZ(), this.field23633)))
                         .orElse(null);
                 if (var5 != null) {
-                    Class7461 var9 = RotationHelper.method34148(var5.positionVec);
-                    var1.setPitch(var9.field32084);
-                    var1.setYaw(var9.field32085);
+                    Rotations var9 = RotationHelper.method34148(var5.positionVec);
+                    var1.setPitch(var9.yaw);
+                    var1.setYaw(var9.pitch);
                     this.field23636 = 0;
                     this.field23635 = new Class540(this, var5);
                     return;
@@ -224,11 +225,11 @@ public class AutoCrystal extends PremiumModule {
                         )
                         .orElse(null);
                 if (var6 != null) {
-                    Class7461 var7 = RotationHelper.method34148(
+                    Rotations var7 = RotationHelper.method34148(
                             new Vector3d((double) var6.field13027 + 0.5, (double) var6.field13028 + 0.5, (double) var6.field13029 + 0.5)
                     );
-                    var1.setPitch(var7.field32084);
-                    var1.setYaw(var7.field32085);
+                    var1.setPitch(var7.yaw);
+                    var1.setYaw(var7.pitch);
                     this.field23635 = new Class335(this, var6, var8);
                 }
             }
@@ -303,14 +304,14 @@ public class AutoCrystal extends PremiumModule {
     }
 
     private void method16384(Vector3d var1) {
-        Class7461 var4 = RotationHelper.method34148(var1);
-        field23629 = var4.field32084;
-        field23630 = var4.field32085;
+        Rotations var4 = RotationHelper.method34148(var1);
+        field23629 = var4.yaw;
+        field23630 = var4.pitch;
         field23631 = true;
     }
 
     public List<Entity> method16385(float var1) {
-        List var4 = ColorUtils.method17708();
+        List var4 = ColorUtils.getEntitesInWorld();
         Iterator var5 = var4.iterator();
 
         while (var5.hasNext()) {

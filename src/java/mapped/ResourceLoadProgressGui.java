@@ -107,7 +107,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
       int var23 = (int)((double)this.field6438.getMainWindow().getScaledHeight() * 0.8325);
       float var24 = this.field6439.method29224();
       this.field6442 = MathHelper.clamp(this.field6442 * 0.95F + var24 * 0.050000012F, 0.0F, 1.0F);
-      Class9299.field42771.method20217();
+      Reflector.field42771.method20217();
       if (var11 < 1.0F) {
          this.method5678(var1, var7 / 2 - var21, var23 - 5, var7 / 2 + var21, var23 + 5, 1.0F - MathHelper.clamp(var11, 0.0F, 1.0F));
       }

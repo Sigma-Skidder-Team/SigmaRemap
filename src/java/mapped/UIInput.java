@@ -330,9 +330,9 @@ public class UIInput extends Class4278 {
    public void draw(float var1) {
       this.method13225();
       float var4 = 1000.0F;
-      boolean var5 = !this.field20905 ? false : (float)this.field20756.method27121() > var4 / 2.0F;
-      if ((float)this.field20756.method27121() > var4) {
-         this.field20756.method27120();
+      boolean var5 = !this.field20905 ? false : (float)this.field20756.getElapsedTime() > var4 / 2.0F;
+      if ((float)this.field20756.getElapsedTime() > var4) {
+         this.field20756.reset();
       }
 
       String var6 = this.field20912;

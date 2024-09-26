@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.util.math.MathHelper;
 
 public class Class252 extends Class219<AbstractClientPlayerEntity, Class2894<AbstractClientPlayerEntity>> {

@@ -73,8 +73,8 @@ public abstract class PlayerEntity extends LivingEntity {
    public Container openContainer;
    public FoodStats foodStats = new FoodStats();
    public int field4907;
-   public float field4908;
-   public float field4909;
+   public float prevCameraYaw;
+   public float cameraYaw;
    public int field4910;
    public double field4911;
    public double field4912;
@@ -212,7 +212,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
       this.method2855();
       this.field4929.method19637();
-      this.method2857();
+      this.updatePose();
    }
 
    public boolean method2851() {
@@ -286,7 +286,7 @@ public abstract class PlayerEntity extends LivingEntity {
       this.field4915 += var5 * 0.25;
    }
 
-   public void method2857() {
+   public void updatePose() {
       if (this.isPoseClear(Pose.field13622)) {
          Pose var3;
          if (!this.isElytraFlying()) {
@@ -411,8 +411,8 @@ public abstract class PlayerEntity extends LivingEntity {
          double var5 = this.getPosY();
          double var7 = this.getPosZ();
          super.updateRidden();
-         this.field4908 = this.field4909;
-         this.field4909 = 0.0F;
+         this.prevCameraYaw = this.cameraYaw;
+         this.cameraYaw = 0.0F;
          this.method2920(this.getPosX() - var3, this.getPosY() - var5, this.getPosZ() - var7);
       }
    }
@@ -433,7 +433,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       if (this.field4907 > 0) {
          this.field4907--;
       }
@@ -449,8 +449,8 @@ public abstract class PlayerEntity extends LivingEntity {
       }
 
       this.inventory.method4044();
-      this.field4908 = this.field4909;
-      super.livingEntity();
+      this.prevCameraYaw = this.cameraYaw;
+      super.livingTick();
       this.jumpMovementFactor = 0.02F;
       if (this.isSprinting()) {
          this.jumpMovementFactor = (float)((double)this.jumpMovementFactor + 0.005999999865889549);
@@ -464,7 +464,7 @@ public abstract class PlayerEntity extends LivingEntity {
          var3 = 0.0F;
       }
 
-      this.field4909 = this.field4909 + (var3 - this.field4909) * 0.4F;
+      this.cameraYaw = this.cameraYaw + (var3 - this.cameraYaw) * 0.4F;
       if (this.getHealth() > 0.0F && !this.isSpectator()) {
          AxisAlignedBB var4;
          if (this.isPassenger() && !this.getRidingEntity().removed) {

@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BasicClickTP extends Module {
-    private final List<Class8472> field23589 = new ArrayList<Class8472>();
+    private final List<Vector3d> field23589 = new ArrayList<Vector3d>();
     private final TimerUtil field23590 = new TimerUtil();
 
     public BasicClickTP() {
@@ -68,7 +68,7 @@ public class BasicClickTP extends Module {
                 double var32 = mc.player.getPosZ();
                 double var34 = mc.player.getPosY();
                 this.field23589.clear();
-                this.field23589.add(new Class8472(var30, var34, var32));
+                this.field23589.add(new Vector3d(var30, var34, var32));
 
                 for (int var36 = 0; (double) var36 < var22 - 1.0; var36++) {
                     var30 -= var24;
@@ -80,12 +80,12 @@ public class BasicClickTP extends Module {
                         mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var30, var34, var32, true));
                     }
 
-                    this.field23589.add(new Class8472(var30, var34, var32));
+                    this.field23589.add(new Vector3d(var30, var34, var32));
                 }
 
-                this.field23589.add(new Class8472(var6, var8, var10));
+                this.field23589.add(new Vector3d(var6, var8, var10));
                 mc.player.setPosition(var6, var8, var10);
-                this.field23590.method27120();
+                this.field23590.reset();
                 this.field23590.start();
                 if (this.access().getBooleanValueFromSetttingName("Auto Disable")) {
                     this.access().toggle();
@@ -97,9 +97,9 @@ public class BasicClickTP extends Module {
     @EventTarget
     public void method16325(Render3DEvent var1) {
         if (this.isEnabled() && this.field23589 != null && this.field23589.size() != 0) {
-            if (this.field23590.method27121() > 4000L) {
+            if (this.field23590.getElapsedTime() > 4000L) {
                 this.field23590.stop();
-                this.field23590.method27120();
+                this.field23590.reset();
                 this.field23589.clear();
             }
 
@@ -114,25 +114,25 @@ public class BasicClickTP extends Module {
             GL11.glColor4d(1.0, 1.0, 1.0, 1.0);
             GL11.glBegin(3);
 
-            for (Class8472 var5 : this.field23589) {
+            for (Vector3d var5 : this.field23589) {
                 GL11.glVertex3d(
-                        var5.method29876() - mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
-                        var5.method29877() - mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
-                        var5.method29878() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
+                        var5.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX(),
+                        var5.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
+                        var5.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ()
                 );
             }
 
             GL11.glEnd();
 
-            for (Class8472 var12 : this.field23589) {
-                double var6 = var12.method29876() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
-                double var8 = var12.method29878() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
+            for (Vector3d var12 : this.field23589) {
+                double var6 = var12.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX();
+                double var8 = var12.getZ() - mc.gameRenderer.getActiveRenderInfo().getPos().getZ();
                 Box3D var10 = new Box3D(
                         var6 - 0.3F,
-                        var12.method29877() - mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
+                        var12.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY(),
                         var8 - 0.3F,
                         var6 + 0.3F,
-                        var12.method29877() - mc.gameRenderer.getActiveRenderInfo().getPos().getY() + 1.6F,
+                        var12.getY() - mc.gameRenderer.getActiveRenderInfo().getPos().getY() + 1.6F,
                         var8 + 0.3F
                 );
                 RenderUtil.render3DColoredBox(var10, ColorUtils.applyAlpha(ClientColors.PALE_ORANGE.getColor, 0.2F));

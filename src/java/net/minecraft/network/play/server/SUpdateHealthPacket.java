@@ -2,11 +2,11 @@ package net.minecraft.network.play.server;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SUpdateHealthPacket implements Packet<IClientPlayNetHandler> {
+public class SUpdateHealthPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24810;
    private float field24811;
    private int field24812;

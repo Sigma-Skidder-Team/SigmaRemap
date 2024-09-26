@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CUseEntityPacket;
 import net.minecraft.network.play.server.SExplosionPacket;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
@@ -17,7 +17,7 @@ import java.util.List;
 
 public class DelayAntiKB extends Module {
     public int field23519 = 0;
-    private final List<Packet<?>> field23518 = new ArrayList<Packet<?>>();
+    private final List<IPacket<?>> field23518 = new ArrayList<IPacket<?>>();
 
     public DelayAntiKB() {
         super(ModuleCategory.COMBAT, "Delay", "For anticheats with \"good\" velocity checks");
@@ -72,7 +72,7 @@ public class DelayAntiKB extends Module {
     }
 
     private void method16201() {
-        for (Packet var4 : this.field23518) {
+        for (IPacket var4 : this.field23518) {
             if (!(var4 instanceof SEntityVelocityPacket)) {
                 if (var4 instanceof SExplosionPacket) {
                     SExplosionPacket var5 = (SExplosionPacket) var4;

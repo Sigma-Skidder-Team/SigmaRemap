@@ -3,11 +3,11 @@ package net.minecraft.network.play.server;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SCustomPayloadPlayPacket implements Packet<IClientPlayNetHandler> {
+public class SCustomPayloadPlayPacket implements IPacket<IClientPlayNetHandler> {
    public static final ResourceLocation field24537 = new ResourceLocation("brand");
    public static final ResourceLocation field24538 = new ResourceLocation("debug/path");
    public static final ResourceLocation field24539 = new ResourceLocation("debug/neighbors_update");

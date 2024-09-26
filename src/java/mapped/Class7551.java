@@ -21,7 +21,7 @@ public class Class7551 {
    private static boolean field32372 = false;
    private static final Class4049 field32373 = new Class4049();
    private static final RenderType[] field32374 = new RenderType[]{Class9025.field41290, Class9025.field41289, Class9025.field41291};
-   private boolean field32375 = Class9299.field42864.method20245();
+   private boolean field32375 = Reflector.field42864.method20245();
 
    private void method24676(
       IBlockDisplayReader var1,

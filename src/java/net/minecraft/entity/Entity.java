@@ -18,7 +18,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
@@ -1091,11 +1091,11 @@ public abstract class Entity implements INameable, ICommandSource {
       }
    }
 
-   public void method3268(World var1) {
+   public void setWorld(World var1) {
       this.world = var1;
    }
 
-   public void method3269(double var1, double var3, double var5, float var7, float var8) {
+   public void setPositionAndRotation(double var1, double var3, double var5, float var7, float var8) {
       this.method3270(var1, var3, var5);
       this.rotationYaw = var7 % 360.0F;
       this.rotationPitch = MathHelper.clamp(var8, -90.0F, 90.0F) % 360.0F;
@@ -2719,7 +2719,7 @@ public abstract class Entity implements INameable, ICommandSource {
       return this.size.field39969;
    }
 
-   public abstract Packet<?> createSpawnPacket();
+   public abstract IPacket<?> createSpawnPacket();
 
    public EntitySize getSize(Pose var1) {
       return this.type.getSize();

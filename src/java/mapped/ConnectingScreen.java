@@ -6,6 +6,7 @@ import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.client.util.Util;
+import net.minecraft.network.NetworkManager;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -72,7 +73,7 @@ public class ConnectingScreen extends Screen {
       this.<Button>addButton(new Button(this.width / 2 - 100, this.height / 4 + 120 + 12, 200, 20, DialogTexts.GUI_CANCEL, var1 -> {
          this.field6937 = true;
          if (this.field6936 != null) {
-            this.field6936.method30701(new TranslationTextComponent("connect.aborted"));
+            this.field6936.closeChannel(new TranslationTextComponent("connect.aborted"));
          }
 
          this.mc.displayGuiScreen(this.field6938);

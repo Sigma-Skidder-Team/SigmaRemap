@@ -6,7 +6,7 @@ import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.chunk.ChunkSection;
@@ -14,7 +14,7 @@ import net.minecraft.world.chunk.ChunkSection;
 import java.io.IOException;
 import java.util.function.BiConsumer;
 
-public class SMultiBlockChangePacket implements Packet<IClientPlayNetHandler> {
+public class SMultiBlockChangePacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24641;
    public Class2002 field24642;
    public short[] field24643;

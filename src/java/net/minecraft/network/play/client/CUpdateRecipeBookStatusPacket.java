@@ -2,12 +2,12 @@ package net.minecraft.network.play.client;
 
 import net.minecraft.item.crafting.RecipeBookCategory;
 import net.minecraft.network.play.IServerPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class CUpdateRecipeBookStatusPacket implements Packet<IServerPlayNetHandler> {
+public class CUpdateRecipeBookStatusPacket implements IPacket<IServerPlayNetHandler> {
     private RecipeBookCategory field_244314_a;
    private boolean field_244315_b;
    private boolean field_244316_c;

@@ -5,7 +5,7 @@ import it.unimi.dsi.fastutil.shorts.ShortArraySet;
 import it.unimi.dsi.fastutil.shorts.ShortSet;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.play.server.SChangeBlockPacket;
 import net.minecraft.network.play.server.SMultiBlockChangePacket;
 import net.minecraft.network.play.server.SUpdateLightPacket;
@@ -205,7 +205,7 @@ public class Class8641 {
       }
    }
 
-   private void method31052(Packet<?> var1, boolean var2) {
+   private void method31052(IPacket<?> var1, boolean var2) {
       this.field38914.method6576(this.field38907, var2).forEach(var1x -> var1x.field4855.sendPacket(var1));
    }
 

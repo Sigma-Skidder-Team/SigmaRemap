@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
+import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ColorSetting;
 import mapped.*;
 import net.minecraft.entity.LivingEntity;
@@ -35,10 +36,10 @@ public class SkeletonESP extends Module {
                 GL11.glPushMatrix();
                 GL11.glLineWidth(2.0F);
                 GL11.glColor4f((float) (var5.getRed() / 255), (float) (var5.getGreen() / 255), (float) (var5.getBlue() / 255), 1.0F);
-                Class8472 var7 = this.method16090(var1, var2);
-                double var8 = var7.method29876() - mc.getRenderManager().field40017.getPos().x;
-                double var10 = var7.method29877() - mc.getRenderManager().field40017.getPos().y;
-                double var12 = var7.method29878() - mc.getRenderManager().field40017.getPos().z;
+                Vector3d var7 = this.method16090(var1, var2);
+                double var8 = var7.getX() - mc.getRenderManager().field40017.getPos().x;
+                double var10 = var7.getY() - mc.getRenderManager().field40017.getPos().y;
+                double var12 = var7.getZ() - mc.getRenderManager().field40017.getPos().z;
                 GL11.glTranslated(var8, var10, var12);
                 float var14 = var2.prevRenderYawOffset + (var2.renderYawOffset - var2.prevRenderYawOffset) * mc.getRenderPartialTicks();
                 GL11.glRotatef(-var14, 0.0F, 1.0F, 0.0F);
@@ -171,12 +172,12 @@ public class SkeletonESP extends Module {
         }
     }
 
-    private Class8472 method16090(Render3DEvent var1, PlayerEntity var2) {
+    private Vector3d method16090(Render3DEvent var1, PlayerEntity var2) {
         float var5 = mc.getRenderPartialTicks();
         double var6 = var2.lastTickPosX + (var2.getPosX() - var2.lastTickPosX) * (double) var5;
         double var8 = var2.lastTickPosY + (var2.getPosY() - var2.lastTickPosY) * (double) var5;
         double var10 = var2.lastTickPosZ + (var2.getPosZ() - var2.lastTickPosZ) * (double) var5;
-        return new Class8472(var6, var8, var10);
+        return new Vector3d(var6, var8, var10);
     }
 
     public static void method16091(PlayerEntity var0, Class2894<PlayerEntity> var1) {

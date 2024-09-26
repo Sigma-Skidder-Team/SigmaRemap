@@ -108,7 +108,7 @@ public class WitherEntity extends Class1009 implements Class1080, Class1022 {
    }
 
    @Override
-   public void livingEntity() {
+   public void livingTick() {
       Vector3d var3 = this.getMotion().method11347(1.0, 0.6, 1.0);
       if (!this.world.isRemote && this.method5014(0) > 0) {
          Entity var4 = this.world.getEntityByID(this.method5014(0));
@@ -133,7 +133,7 @@ public class WitherEntity extends Class1009 implements Class1080, Class1022 {
          this.rotationYaw = (float) MathHelper.method37814(var3.z, var3.x) * (180.0F / (float)Math.PI) - 90.0F;
       }
 
-      super.livingEntity();
+      super.livingTick();
 
       for (int var33 = 0; var33 < 2; var33++) {
          this.field5931[var33] = this.field5929[var33];

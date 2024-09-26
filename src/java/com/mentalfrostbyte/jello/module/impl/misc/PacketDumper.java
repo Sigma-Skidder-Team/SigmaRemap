@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
 import com.mentalfrostbyte.jello.event.impl.EventWritter;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import org.apache.commons.lang3.reflect.FieldUtils;
 
 import java.io.File;
@@ -56,7 +56,7 @@ public class PacketDumper extends Module {
         }
     }
 
-    private void logPacket(Packet packet, boolean isSent) {
+    private void logPacket(IPacket packet, boolean isSent) {
         try {
             packetWriter.write((isSent ? "-->" : "<--") + "\t" + packet.getClass().getSimpleName() + "\n");
 

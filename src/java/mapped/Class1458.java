@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.util.ResourceLocation;
 
 public class Class1458 implements Runnable {

@@ -84,7 +84,7 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
       RenderSystem.pushMatrix();
       RenderSystem.translatef((float)var7, (float)var8, 0.0F);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-      RenderSystem.method27867();
+      RenderSystem.enableRescaleNormal();
       this.field4729 = null;
       short var9 = 240;
       short var10 = 240;

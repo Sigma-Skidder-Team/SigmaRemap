@@ -4,12 +4,12 @@ import net.minecraft.network.PacketBuffer;
 import net.minecraft.world.World;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.Entity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 import javax.annotation.Nullable;
 
-public class SCameraPacket implements Packet<IClientPlayNetHandler> {
+public class SCameraPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24673;
    public int field24674;
 

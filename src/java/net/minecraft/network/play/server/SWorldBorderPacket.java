@@ -5,11 +5,11 @@ import mapped.Class6602;
 import net.minecraft.network.PacketBuffer;
 import mapped.WorldBorder;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 
-public class SWorldBorderPacket implements Packet<IClientPlayNetHandler> {
+public class SWorldBorderPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24304;
    private Class1864 field24305;
    private int field24306;

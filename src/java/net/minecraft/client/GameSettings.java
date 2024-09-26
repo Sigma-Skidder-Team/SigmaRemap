@@ -664,14 +664,14 @@ public class GameSettings {
 
                for (KeyBinding var9 : this.field44658) {
                   if (var4.equals("key_" + var9.getKeyDescription())) {
-                     if (Class9299.field42956.method20214()) {
+                     if (Reflector.field42956.exists()) {
                         if (var5.indexOf(58) != -1) {
                            String[] var10 = var5.split(":");
-                           Object var11 = Class9299.method35062(Class9299.field42956, var10[1]);
-                           Class9299.method35070(var9, Class9299.field42931, var11, InputMappings.method38638(var10[0]));
+                           Object var11 = Reflector.method35062(Reflector.field42956, var10[1]);
+                           Reflector.call(var9, Reflector.field42931, var11, InputMappings.method38638(var10[0]));
                         } else {
-                           Object var33 = Class9299.method35071(Class9299.field42957);
-                           Class9299.method35070(var9, Class9299.field42931, var33, InputMappings.method38638(var5));
+                           Object var33 = Reflector.method35071(Reflector.field42957);
+                           Reflector.call(var9, Reflector.field42931, var33, InputMappings.method38638(var5));
                         }
                      } else {
                         var9.bind(InputMappings.method38638(var5));
@@ -724,7 +724,7 @@ public class GameSettings {
    }
 
    public void saveOptions() {
-      if (!Class9299.field42770.method20214() || !Class9299.method35056(Class9299.field42770)) {
+      if (!Reflector.field42770.exists() || !Reflector.method35056(Reflector.field42770)) {
          try (PrintWriter var1 = new PrintWriter(new OutputStreamWriter(new FileOutputStream(this.field44660), StandardCharsets.UTF_8))) {
             var1.println("version:" + SharedConstants.getVersion().getWorldVersion());
             var1.println("autoJump:" + AbstractOption.field25351.method18080(this));
@@ -810,10 +810,10 @@ public class GameSettings {
             var1.println("syncChunkWrites:" + this.field44677);
 
             for (KeyBinding var6 : this.field44658) {
-               if (Class9299.field42932.method20214()) {
+               if (Reflector.field42932.exists()) {
                   String var7 = "key_" + var6.getKeyDescription() + ":" + var6.getTranslationKey();
-                  Object var8 = Class9299.method35070(var6, Class9299.field42932);
-                  Object var9 = Class9299.method35071(Class9299.field42957);
+                  Object var8 = Reflector.call(var6, Reflector.field42932);
+                  Object var9 = Reflector.method35071(Reflector.field42957);
                   var1.println(var8 != var9 ? var7 + ":" + var8 : var7);
                } else {
                   var1.println("key_" + var6.getKeyDescription() + ":" + var6.getTranslationKey());
@@ -2294,21 +2294,21 @@ public class GameSettings {
    }
 
    private void method37171() {
-      if (Class9299.field42954.method20238() && Class9299.field42930.method20214()) {
-         Object var1 = Class9299.method35071(Class9299.field42954);
-         Class9299.method35070(this.keyBindForward, Class9299.field42930, var1);
-         Class9299.method35070(this.keyBindLeft, Class9299.field42930, var1);
-         Class9299.method35070(this.keyBindBack, Class9299.field42930, var1);
-         Class9299.method35070(this.keyBindRight, Class9299.field42930, var1);
-         Class9299.method35070(this.keyBindJump, Class9299.field42930, var1);
-         Class9299.method35070(this.keyBindSneak, Class9299.field42930, var1);
-         Class9299.method35070(this.keyBindSprint, Class9299.field42930, var1);
-         Class9299.method35070(this.keyBindAttack, Class9299.field42930, var1);
-         Class9299.method35070(this.keyBindChat, Class9299.field42930, var1);
-         Class9299.method35070(this.keyBindTablist, Class9299.field42930, var1);
-         Class9299.method35070(this.keyBindCommand, Class9299.field42930, var1);
-         Class9299.method35070(this.keyBindTogglePerspective, Class9299.field42930, var1);
-         Class9299.method35070(this.keyBindSmoothCamera, Class9299.field42930, var1);
+      if (Reflector.field42954.method20238() && Reflector.field42930.exists()) {
+         Object var1 = Reflector.method35071(Reflector.field42954);
+         Reflector.call(this.keyBindForward, Reflector.field42930, var1);
+         Reflector.call(this.keyBindLeft, Reflector.field42930, var1);
+         Reflector.call(this.keyBindBack, Reflector.field42930, var1);
+         Reflector.call(this.keyBindRight, Reflector.field42930, var1);
+         Reflector.call(this.keyBindJump, Reflector.field42930, var1);
+         Reflector.call(this.keyBindSneak, Reflector.field42930, var1);
+         Reflector.call(this.keyBindSprint, Reflector.field42930, var1);
+         Reflector.call(this.keyBindAttack, Reflector.field42930, var1);
+         Reflector.call(this.keyBindChat, Reflector.field42930, var1);
+         Reflector.call(this.keyBindTablist, Reflector.field42930, var1);
+         Reflector.call(this.keyBindCommand, Reflector.field42930, var1);
+         Reflector.call(this.keyBindTogglePerspective, Reflector.field42930, var1);
+         Reflector.call(this.keyBindSmoothCamera, Reflector.field42930, var1);
       }
    }
 

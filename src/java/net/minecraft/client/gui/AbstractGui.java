@@ -77,13 +77,13 @@ public abstract class AbstractGui {
       RenderSystem.enableBlend();
       RenderSystem.method27817();
       RenderSystem.defaultBlendFunc();
-      RenderSystem.method27866(7425);
+      RenderSystem.shadeModel(7425);
       Tessellator var10 = Tessellator.getInstance();
       BufferBuilder var11 = var10.getBuffer();
       var11.begin(7, DefaultVertexFormats.POSITION_COLOR);
       method5689(var1.getLast().getMatrix(), var11, var2, var3, var4, var5, this.field6454, var6, var7);
       var10.draw();
-      RenderSystem.method27866(7424);
+      RenderSystem.shadeModel(7424);
       RenderSystem.disableBlend();
       RenderSystem.disableAlphaTest();
       RenderSystem.enableTexture();

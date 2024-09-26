@@ -1,11 +1,11 @@
 package mapped;
 
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 
 import java.io.IOException;
 
-public class Class5571 implements Packet<Class5108> {
+public class Class5571 implements IPacket<Class5108> {
    private int field24710;
    private PacketBuffer field24711;
 

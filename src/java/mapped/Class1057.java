@@ -307,8 +307,8 @@ public class Class1057 extends Class1056 implements Class1008 {
    }
 
    @Override
-   public void livingEntity() {
-      super.livingEntity();
+   public void livingTick() {
+      super.livingTick();
       this.setMotion(Vector3d.ZERO);
       if (!this.method4305()) {
          this.prevRenderYawOffset = 0.0F;

@@ -19,12 +19,12 @@ public class Class4085 extends Class4057 {
          Class2887 var5 = (Class2887)var1;
          if (!var2.equals("base")) {
             if (!var2.equals("lid")) {
-               return !var2.equals("head") ? null : (Class7219)Class9299.field43096.method36565(var5, 2);
+               return !var2.equals("head") ? null : (Class7219) Reflector.field43096.method36565(var5, 2);
             } else {
-               return (Class7219)Class9299.field43096.method36565(var5, 1);
+               return (Class7219) Reflector.field43096.method36565(var5, 1);
             }
          } else {
-            return (Class7219)Class9299.field43096.method36565(var5, 0);
+            return (Class7219) Reflector.field43096.method36565(var5, 0);
          }
       } else {
          return null;

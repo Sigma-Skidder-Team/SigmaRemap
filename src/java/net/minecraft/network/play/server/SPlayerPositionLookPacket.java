@@ -3,12 +3,12 @@ package net.minecraft.network.play.server;
 import mapped.Flags;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 
 import java.io.IOException;
 import java.util.Set;
 
-public class SPlayerPositionLookPacket implements Packet<IClientPlayNetHandler> {
+public class SPlayerPositionLookPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24296;
    public double x;
    public double y;

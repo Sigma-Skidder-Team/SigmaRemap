@@ -31,7 +31,7 @@ public class Class8715 {
    public static void method31435(Class4671 var0) {
       method31440();
       if (var0 != null) {
-         if (Class9299.field42965.method20214() && Minecraft.getInstance().getResourceManager() == null) {
+         if (Reflector.field42965.exists() && Minecraft.getInstance().getResourceManager() == null) {
             Class7944.method26810("[Shaders] Delayed loading of item mappings after resources are loaded");
             field39328 = true;
          } else {

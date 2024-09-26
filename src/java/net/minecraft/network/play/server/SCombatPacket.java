@@ -8,11 +8,11 @@ import mapped.CombatTracker;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 
-public class SCombatPacket implements Packet<IClientPlayNetHandler> {
+public class SCombatPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24692;
    public Class1900 field24693;
    public int field24694;

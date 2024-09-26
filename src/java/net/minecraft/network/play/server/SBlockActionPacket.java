@@ -4,12 +4,12 @@ import net.minecraft.block.Block;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
-import net.minecraft.network.Packet;
+import net.minecraft.network.IPacket;
 import net.minecraft.util.math.BlockPos;
 
 import java.io.IOException;
 
-public class SBlockActionPacket implements Packet<IClientPlayNetHandler> {
+public class SBlockActionPacket implements IPacket<IClientPlayNetHandler> {
    private static String[] field24391;
    private BlockPos field24392;
    private int field24393;

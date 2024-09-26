@@ -20,15 +20,15 @@ public class Class4088 extends Class4057 {
          if (!var2.equals("body")) {
             if (!var2.equals("left_eye")) {
                if (!var2.equals("right_eye")) {
-                  return !var2.equals("mouth") ? null : (Class7219)Class9299.method35075(var5, Class9299.field43107, 3);
+                  return !var2.equals("mouth") ? null : (Class7219) Reflector.method35075(var5, Reflector.field43107, 3);
                } else {
-                  return (Class7219)Class9299.method35075(var5, Class9299.field43107, 2);
+                  return (Class7219) Reflector.method35075(var5, Reflector.field43107, 2);
                }
             } else {
-               return (Class7219)Class9299.method35075(var5, Class9299.field43107, 1);
+               return (Class7219) Reflector.method35075(var5, Reflector.field43107, 1);
             }
          } else {
-            return (Class7219)Class9299.method35075(var5, Class9299.field43107, 0);
+            return (Class7219) Reflector.method35075(var5, Reflector.field43107, 0);
          }
       } else {
          return null;
