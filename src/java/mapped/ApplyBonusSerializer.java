@@ -21,7 +21,7 @@ public class ApplyBonusSerializer extends LootFunctionSerializer<Class138> {
 
    public Class138 deserialize(JsonObject var1, JsonDeserializationContext var2, ILootCondition[] var3) {
       ResourceLocation var6 = new ResourceLocation(JSONUtils.getString(var1, "enchantment"));
-      Class6069 var7 = Registry.field16073.method9187(var6).orElseThrow(() -> new JsonParseException("Invalid enchantment id: " + var6));
+      Enchantment var7 = Registry.field16073.method9187(var6).orElseThrow(() -> new JsonParseException("Invalid enchantment id: " + var6));
       ResourceLocation var8 = new ResourceLocation(JSONUtils.getString(var1, "formula"));
       Class8409 var9 = (Class8409)Class138.method416().get(var8);
       if (var9 != null) {

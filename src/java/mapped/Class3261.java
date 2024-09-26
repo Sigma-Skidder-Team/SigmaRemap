@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -88,7 +89,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    private static boolean method11753(LivingEntity var0, ItemStack var1) {
-      int var4 = EnchantmentHelper.method26311(Class8122.field34929, var1);
+      int var4 = EnchantmentHelper.getEnchantmentLevel(Class8122.field34929, var1);
       int var5 = var4 != 0 ? 3 : 1;
       boolean var6 = var0 instanceof PlayerEntity && ((PlayerEntity)var0).abilities.isCreativeMode;
       ItemStack var7 = var0.findAmmo(var1);
@@ -228,7 +229,7 @@ public class Class3261 extends Class3262 implements Class3260 {
 
       var7.setHitSound(SoundEvents.field26487);
       var7.method3494(true);
-      int var8 = EnchantmentHelper.method26311(Class8122.field34931, var2);
+      int var8 = EnchantmentHelper.getEnchantmentLevel(Class8122.field34931, var2);
       if (var8 > 0) {
          var7.method3485((byte)var8);
       }
@@ -287,7 +288,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    @Override
    public void method11704(World var1, LivingEntity var2, ItemStack var3, int var4) {
       if (!var1.isRemote) {
-         int var7 = EnchantmentHelper.method26311(Class8122.field34930, var3);
+         int var7 = EnchantmentHelper.getEnchantmentLevel(Class8122.field34930, var3);
          SoundEvent var8 = this.method11768(var7);
          SoundEvent var9 = var7 != 0 ? null : SoundEvents.field26489;
          float var10 = (float)(var3.method32137() - var4) / (float)method11767(var3);
@@ -314,7 +315,7 @@ public class Class3261 extends Class3262 implements Class3260 {
    }
 
    public static int method11767(ItemStack var0) {
-      int var3 = EnchantmentHelper.method26311(Class8122.field34930, var0);
+      int var3 = EnchantmentHelper.getEnchantmentLevel(Class8122.field34930, var0);
       return var3 != 0 ? 25 - 5 * var3 : 25;
    }
 

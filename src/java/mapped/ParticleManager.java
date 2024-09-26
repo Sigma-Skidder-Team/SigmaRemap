@@ -6,6 +6,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.particle.EmitterParticle;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.Entity;
 import net.minecraft.particles.IParticleData;
@@ -29,9 +30,9 @@ public class ParticleManager implements Class268 {
    private static final List<Class6843> field1167 = ImmutableList.of(
       Class6843.field29734, Class6843.field29735, Class6843.field29737, Class6843.field29736, Class6843.field29738
    );
-   public ClientWorld field1168;
+   public ClientWorld world;
    private final Map<Class6843, Queue<Class4587>> field1169 =  com.google.common.collect.Maps.newIdentityHashMap();
-   private final Queue<Class4589> field1170 = Queues.newArrayDeque();
+   private final Queue<EmitterParticle> particleEmitters = Queues.newArrayDeque();
    private final TextureManager field1171;
    private final Random field1172 = new Random();
    private final Map<ResourceLocation, Class3499<?>> field1173 = new HashMap<ResourceLocation, Class3499<?>>();
@@ -41,7 +42,7 @@ public class ParticleManager implements Class268 {
 
    public ParticleManager(ClientWorld var1, TextureManager var2) {
       var2.method1073(this.field1176.getTextureLocation(), this.field1176);
-      this.field1168 = var1;
+      this.world = var1;
       this.field1171 = var2;
       this.method1190();
    }
@@ -58,7 +59,7 @@ public class ParticleManager implements Class268 {
       this.method1192(ParticleTypes.field34107, Class3529::new);
       this.method1192(ParticleTypes.field34053, Class3550::new);
       this.method1192(ParticleTypes.field34079, Class3500::new);
-      this.method1192(ParticleTypes.field34054, Class3563::new);
+      this.method1192(ParticleTypes.CRIT, Class3563::new);
       this.method1192(ParticleTypes.field34102, Class3507::new);
       this.method1192(ParticleTypes.field34055, Class3543::new);
       this.method1192(ParticleTypes.field34056, Class3545::new);
@@ -204,12 +205,12 @@ public class ParticleManager implements Class268 {
       }
    }
 
-   public void method1195(Entity var1, IParticleData var2) {
-      this.field1170.add(new Class4589(this.field1168, var1, var2));
+   public void addParticleEmitter(Entity var1, IParticleData var2) {
+      this.particleEmitters.add(new EmitterParticle(this.world, var1, var2));
    }
 
    public void method1196(Entity var1, IParticleData var2, int var3) {
-      this.field1170.add(new Class4589(this.field1168, var1, var2, var3));
+      this.particleEmitters.add(new EmitterParticle(this.world, var1, var2, var3));
    }
 
    @Nullable
@@ -226,7 +227,7 @@ public class ParticleManager implements Class268 {
    @Nullable
    private <T extends IParticleData> Class4587 method1198(T var1, double var2, double var4, double var6, double var8, double var10, double var12) {
       Class3499 var16 = this.field1173.get(Registry.PARTICLE_TYPE.getKey(var1.getType()));
-      return var16 != null ? var16.method12199(var1, this.field1168, var2, var4, var6, var8, var10, var12) : null;
+      return var16 != null ? var16.method12199(var1, this.world, var2, var4, var6, var8, var10, var12) : null;
    }
 
    public void method1199(Class4587 var1) {
@@ -237,21 +238,21 @@ public class ParticleManager implements Class268 {
 
    public void tick() {
       this.field1169.forEach((var1, var2) -> {
-         this.field1168.getProfiler().startSection(var1.toString());
+         this.world.getProfiler().startSection(var1.toString());
          this.method1201(var2);
-         this.field1168.getProfiler().endSection();
+         this.world.getProfiler().endSection();
       });
-      if (!this.field1170.isEmpty()) {
+      if (!this.particleEmitters.isEmpty()) {
          ArrayList var3 = Lists.newArrayList();
 
-         for (Class4589 var5 : this.field1170) {
+         for (EmitterParticle var5 : this.particleEmitters) {
             var5.method14500();
             if (!var5.method14522()) {
                var3.add(var5);
             }
          }
 
-         this.field1170.removeAll(var3);
+         this.particleEmitters.removeAll(var3);
       }
 
       Class4587 var6;
@@ -376,23 +377,23 @@ public class ParticleManager implements Class268 {
    }
 
    public void clearEffects(ClientWorld var1) {
-      this.field1168 = var1;
+      this.world = var1;
       this.field1169.clear();
-      this.field1170.clear();
+      this.particleEmitters.clear();
    }
 
    public void method1206(BlockPos var1, BlockState var2) {
       boolean var6;
       if (Reflector.field42824.exists() && Reflector.field42830.exists()) {
          Block var5 = var2.getBlock();
-         var6 = !Reflector.method35064(var2, Reflector.field42830, this.field1168, var1)
-            && !Reflector.method35064(var2, Reflector.field42824, this.field1168, var1, this);
+         var6 = !Reflector.method35064(var2, Reflector.field42830, this.world, var1)
+            && !Reflector.method35064(var2, Reflector.field42824, this.world, var1, this);
       } else {
          var6 = !var2.isAir();
       }
 
       if (var6) {
-         VoxelShape var9 = var2.method23412(this.field1168, var1);
+         VoxelShape var9 = var2.method23412(this.world, var1);
          double var7 = 0.25;
          var9.method19520(
             (var3, var5x, var7x, var9x, var11, var13) -> {
@@ -414,7 +415,7 @@ public class ParticleManager implements Class268 {
                         double var39 = var33 * var21 + var7x;
                         this.method1199(
                            new Class4609(
-                                 this.field1168,
+                                 this.world,
                                  (double)var1.getX() + var35,
                                  (double)var1.getY() + var37,
                                  (double)var1.getZ() + var39,
@@ -434,13 +435,13 @@ public class ParticleManager implements Class268 {
    }
 
    public void addBlockHitEffects(BlockPos var1, Direction var2) {
-      BlockState var5 = this.field1168.getBlockState(var1);
+      BlockState var5 = this.world.getBlockState(var1);
       if (var5.getRenderType() != BlockRenderType.field9885) {
          int var6 = var1.getX();
          int var7 = var1.getY();
          int var8 = var1.getZ();
          float var9 = 0.1F;
-         AxisAlignedBB var10 = var5.method23412(this.field1168, var1).getBoundingBox();
+         AxisAlignedBB var10 = var5.method23412(this.world, var1).getBoundingBox();
          double var11 = (double)var6 + this.field1172.nextDouble() * (var10.maxX - var10.minX - 0.2F) + 0.1F + var10.minX;
          double var13 = (double)var7 + this.field1172.nextDouble() * (var10.maxY - var10.minY - 0.2F) + 0.1F + var10.minY;
          double var15 = (double)var8 + this.field1172.nextDouble() * (var10.maxZ - var10.minZ - 0.2F) + 0.1F + var10.minZ;
@@ -468,7 +469,7 @@ public class ParticleManager implements Class268 {
             var11 = (double)var6 + var10.maxX + 0.1F;
          }
 
-         this.method1199(new Class4609(this.field1168, var11, var13, var15, 0.0, 0.0, 0.0, var5).method14540(var1).method14513(0.2F).method14512(0.6F));
+         this.method1199(new Class4609(this.world, var11, var13, var15, 0.0, 0.0, 0.0, var5).method14540(var1).method14513(0.2F).method14512(0.6F));
       }
    }
 
@@ -488,9 +489,9 @@ public class ParticleManager implements Class268 {
    }
 
    public void method1210(BlockPos var1, BlockRayTraceResult var2) {
-      BlockState var5 = this.field1168.getBlockState(var1);
+      BlockState var5 = this.world.getBlockState(var1);
       if (var5 != null) {
-         boolean var6 = Reflector.method35064(var5, Reflector.field42825, this.field1168, var2, this);
+         boolean var6 = Reflector.method35064(var5, Reflector.field42825, this.world, var2, this);
          if (!var6) {
             Direction var7 = var2.getFace();
             this.addBlockHitEffects(var1, var7);

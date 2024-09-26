@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
@@ -8,7 +9,7 @@ import net.minecraft.util.DamageSource;
 import java.util.Random;
 import java.util.Map.Entry;
 
-public class Class6093 extends Class6069 {
+public class Class6093 extends Enchantment {
    private static String[] field27337;
 
    public Class6093(Class1937 var1, EquipmentSlotType... var2) {

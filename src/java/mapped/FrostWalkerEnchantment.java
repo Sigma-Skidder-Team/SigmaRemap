@@ -6,7 +6,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
-public class FrostWalkerEnchantment extends Class6069 {
+public class FrostWalkerEnchantment extends Enchantment {
    private static String[] field27333;
 
    public FrostWalkerEnchantment(Class1937 var1, EquipmentSlotType... var2) {
@@ -59,7 +59,7 @@ public class FrostWalkerEnchantment extends Class6069 {
    }
 
    @Override
-   public boolean method18817(Class6069 var1) {
+   public boolean method18817(Enchantment var1) {
       return super.method18817(var1) && var1 != Class8122.field34904;
    }
 }

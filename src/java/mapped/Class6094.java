@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class6094 extends Class6069 {
+public class Class6094 extends Enchantment {
    private static String[] field27338;
 
    public Class6094(Class1937 var1, EquipmentSlotType... var2) {

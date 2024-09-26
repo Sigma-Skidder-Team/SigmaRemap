@@ -11,6 +11,7 @@ import com.mojang.datafixers.util.Either;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.item.ItemStack;
@@ -1039,7 +1040,7 @@ public abstract class PlayerEntity extends LivingEntity {
             var5 = EnchantmentHelper.method26318(this.getHeldItemMainhand(), ((LivingEntity)var1).getCreatureAttribute());
          }
 
-         float var6 = this.method2974(0.5F);
+         float var6 = this.getCooledAttackStrength(0.5F);
          var4 *= 0.2F + var6 * var6 * 0.8F;
          var5 *= var6;
          this.resetCooldown();
@@ -1956,7 +1957,7 @@ public abstract class PlayerEntity extends LivingEntity {
       return (float)(1.0 / this.getAttributeValue(Attributes.ATTACK_SPEED) * 20.0);
    }
 
-   public float method2974(float var1) {
+   public float getCooledAttackStrength(float var1) {
       return MathHelper.clamp(((float)this.ticksSinceLastSwing + var1) / this.method2973(), 0.0F, 1.0F);
    }
 

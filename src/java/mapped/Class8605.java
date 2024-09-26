@@ -13,7 +13,7 @@ import java.util.Map;
 public class Class8605 {
    public static final Class8605 field38715 = new Class8605();
    public static final Class8605[] field38716 = new Class8605[0];
-   private final Class6069 field38717;
+   private final Enchantment field38717;
    private final Class8840 field38718;
 
    public Class8605() {
@@ -21,12 +21,12 @@ public class Class8605 {
       this.field38718 = Class8840.field39936;
    }
 
-   public Class8605(Class6069 var1, Class8840 var2) {
+   public Class8605(Enchantment var1, Class8840 var2) {
       this.field38717 = var1;
       this.field38718 = var2;
    }
 
-   public boolean method30835(Map<Class6069, Integer> var1) {
+   public boolean method30835(Map<Enchantment, Integer> var1) {
       if (this.field38717 == null) {
          if (this.field38718 != null) {
             for (Integer var5 : var1.values()) {
@@ -68,7 +68,7 @@ public class Class8605 {
    public static Class8605 method30837(JsonElement var0) {
       if (var0 != null && !var0.isJsonNull()) {
          JsonObject var3 = JSONUtils.method32781(var0, "enchantment");
-         Class6069 var4 = null;
+         Enchantment var4 = null;
          if (var3.has("enchantment")) {
             ResourceLocation var5 = new ResourceLocation(JSONUtils.getString(var3, "enchantment"));
             var4 = Registry.field16073.method9187(var5).orElseThrow(() -> new JsonSyntaxException("Unknown enchantment '" + var5 + "'"));

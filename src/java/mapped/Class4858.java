@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -69,9 +70,9 @@ public class Class4858 extends Class4837 {
             ItemStack var12 = new ItemStack(var16.getItem());
             var12.method32118(var11);
             HashMap var13 = Maps.newHashMap();
-            Map<Class6069, Integer> var14 = EnchantmentHelper.method26312(var16);
-            Map<Class6069, Integer> var15 = EnchantmentHelper.method26312(var17);
-            Registry.field16073.method9192().filter(Class6069::method18825).forEach(var3 -> {
+            Map<Enchantment, Integer> var14 = EnchantmentHelper.method26312(var16);
+            Map<Enchantment, Integer> var15 = EnchantmentHelper.method26312(var17);
+            Registry.field16073.method9192().filter(Enchantment::method18825).forEach(var3 -> {
                int var6x = Math.max(var14.getOrDefault(var3, 0), var15.getOrDefault(var3, 0));
                if (var6x > 0) {
                   var13.put(var3, var6x);

@@ -419,7 +419,7 @@ public class Class7992 {
       int var2 = 0;
 
       while (true) {
-         Class6069 var3 = Registry.field16073.getByValue(var2);
+         Enchantment var3 = Registry.field16073.getByValue(var2);
          if (var3 == null) {
             return var2;
          }
@@ -713,7 +713,7 @@ public class Class7992 {
             CompoundNBT var8 = var13.method153(var7);
             String var9 = var8.getString("id");
             int var10 = var8.getInt("lvl");
-            Class6069 var11 = Class7849.method26306(var9);
+            Enchantment var11 = Class7849.method26306(var9);
             if (var11 != null) {
                int var12 = Registry.field16073.getId(var11);
                var6[var7][0] = var12;

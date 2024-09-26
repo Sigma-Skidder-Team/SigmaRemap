@@ -61,7 +61,7 @@ public class Bootstrap {
       method25567(Registry.ENTITY_TYPE, EntityType::method33210, var2);
       method25567(Registry.EFFECTS, Effect::getName, var2);
       method25567(Registry.ITEM, Item::getTranslationKey, var2);
-      method25567(Registry.field16073, Class6069::method18819, var2);
+      method25567(Registry.field16073, Enchantment::method18819, var2);
       method25567(Registry.BLOCK, Block::getTranslationKey, var2);
       method25567(Registry.field16080, var0 -> "stat." + var0.toString().replace(':', '.'), var2);
       method25568(var2);

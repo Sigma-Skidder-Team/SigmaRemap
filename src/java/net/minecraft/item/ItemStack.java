@@ -21,6 +21,7 @@ import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.Attribute;
@@ -223,7 +224,7 @@ public final class ItemStack {
          return false;
       } else {
          if (var1 > 0) {
-            int var6 = EnchantmentHelper.method26311(Class8122.field34917, this);
+            int var6 = EnchantmentHelper.getEnchantmentLevel(Class8122.field34917, this);
             int var7 = 0;
 
             for (int var8 = 0; var6 > 0 && var8 < var1; var8++) {
@@ -716,7 +717,7 @@ public final class ItemStack {
       return this.getItem().method11734(this) ? !this.method32163() : false;
    }
 
-   public void method32162(Class6069 var1, int var2) {
+   public void method32162(Enchantment var1, int var2) {
       this.getOrCreateTag();
       if (!this.field39979.contains("Enchantments", 9)) {
          this.field39979.put("Enchantments", new ListNBT());

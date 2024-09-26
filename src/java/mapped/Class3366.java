@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -50,7 +51,7 @@ public class Class3366 extends Class3241 {
       super.method11562(var1, var2, var3, var4, var5, var6);
       if (!var1.isRemote && var5 instanceof BeehiveTileEntity) {
          BeehiveTileEntity var9 = (BeehiveTileEntity)var5;
-         if (EnchantmentHelper.method26311(Class8122.field34916, var6) == 0) {
+         if (EnchantmentHelper.getEnchantmentLevel(Class8122.field34916, var6) == 0) {
             var9.method3915(var2, var4, Class2084.field13573);
             var1.updateComparatorOutputLevel(var3, this);
             this.method11943(var1, var3);

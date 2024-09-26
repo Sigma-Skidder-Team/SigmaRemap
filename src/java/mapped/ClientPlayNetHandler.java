@@ -746,10 +746,10 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                   if (var1.method17193() != 2) {
                      if (var1.method17193() != 4) {
                         if (var1.method17193() == 5) {
-                           this.field23272.particles.method1195(var4, ParticleTypes.field34065);
+                           this.field23272.particles.addParticleEmitter(var4, ParticleTypes.field34065);
                         }
                      } else {
-                        this.field23272.particles.method1195(var4, ParticleTypes.field34054);
+                        this.field23272.particles.addParticleEmitter(var4, ParticleTypes.CRIT);
                      }
                   } else {
                      PlayerEntity var5 = (PlayerEntity)var4;

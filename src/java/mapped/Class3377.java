@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -20,7 +21,7 @@ public class Class3377 extends Class3231 {
    @Override
    public void method11562(World var1, PlayerEntity var2, BlockPos var3, BlockState var4, TileEntity var5, ItemStack var6) {
       super.method11562(var1, var2, var3, var4, var5, var6);
-      if (EnchantmentHelper.method26311(Class8122.field34916, var6) == 0) {
+      if (EnchantmentHelper.getEnchantmentLevel(Class8122.field34916, var6) == 0) {
          if (var1.method6812().isUltrawarm()) {
             var1.removeBlock(var3, false);
             return;

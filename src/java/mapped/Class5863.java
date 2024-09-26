@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -55,10 +56,10 @@ public class Class5863 extends Slot {
 
    private int method18280(ItemStack var1) {
       int var4 = 0;
-      Map<Class6069, Integer> var5 = EnchantmentHelper.method26312(var1);
+      Map<Enchantment, Integer> var5 = EnchantmentHelper.method26312(var1);
 
-      for (Entry<Class6069, Integer> var7 : var5.entrySet()) {
-         Class6069 var8 = var7.getKey();
+      for (Entry<Enchantment, Integer> var7 : var5.entrySet()) {
+         Enchantment var8 = var7.getKey();
          Integer var9 = var7.getValue();
          if (!var8.method18825()) {
             var4 += var8.method18807(var9);

@@ -1,10 +1,11 @@
 package mapped;
 
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.MathHelper;
 
-public class ProtectionEnchantment extends Class6069 {
+public class ProtectionEnchantment extends Enchantment {
    private static String[] field27340;
    public final Class1957 field27341;
 
@@ -48,7 +49,7 @@ public class ProtectionEnchantment extends Class6069 {
    }
 
    @Override
-   public boolean method18817(Class6069 var1) {
+   public boolean method18817(Enchantment var1) {
       if (!(var1 instanceof ProtectionEnchantment)) {
          return super.method18817(var1);
       } else {

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -99,11 +100,11 @@ public class Class5815 extends Container {
 
    private ItemStack method18167(ItemStack var1, ItemStack var2) {
       ItemStack var5 = var1.copy();
-      Map<Class6069, Integer> var6 = EnchantmentHelper.method26312(var2);
+      Map<Enchantment, Integer> var6 = EnchantmentHelper.method26312(var2);
 
-      for (Entry<Class6069, Integer> var8 : var6.entrySet()) {
-         Class6069 var9 = var8.getKey();
-         if (!var9.method18825() || EnchantmentHelper.method26311(var9, var5) == 0) {
+      for (Entry<Enchantment, Integer> var8 : var6.entrySet()) {
+         Enchantment var9 = var8.getKey();
+         if (!var9.method18825() || EnchantmentHelper.getEnchantmentLevel(var9, var5) == 0) {
             var5.method32162(var9, var8.getValue());
          }
       }

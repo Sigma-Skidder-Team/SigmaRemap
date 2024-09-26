@@ -7,6 +7,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ClickType;
@@ -589,7 +590,7 @@ public class CreativeScreen extends Class860<Class5820> {
          if (var10 == null && var9 == Items.field38070) {
             Map var11 = EnchantmentHelper.method26312(var2);
             if (var11.size() == 1) {
-               Class6069 var12 = (Class6069)var11.keySet().iterator().next();
+               Enchantment var12 = (Enchantment)var11.keySet().iterator().next();
 
                for (ItemGroup var16 : ItemGroup.field31664) {
                   if (var16.method23657(var12.field27308)) {

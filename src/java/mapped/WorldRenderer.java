@@ -2995,7 +2995,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          } else {
             if (!var2) {
                double var18 = 1024.0;
-               if (var1 == ParticleTypes.field34054) {
+               if (var1 == ParticleTypes.CRIT) {
                   var18 = 38416.0;
                }
 

@@ -3,7 +3,7 @@ package mapped;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 
-public class Class6072 extends Class6069 {
+public class Class6072 extends Enchantment {
    private static String[] field27312;
 
    public Class6072(Class1937 var1, EquipmentSlotType... var2) {

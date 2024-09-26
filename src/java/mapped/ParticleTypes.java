@@ -14,7 +14,7 @@ public class ParticleTypes {
    public static final ParticleType<BlockParticleData> field34051 = method26743("block", BlockParticleData.field32010, BlockParticleData::method24025);
    public static final Class7435 field34052 = method26742("bubble", false);
    public static final Class7435 field34053 = method26742("cloud", false);
-   public static final Class7435 field34054 = method26742("crit", false);
+   public static final Class7435 CRIT = method26742("crit", false);
    public static final Class7435 field34055 = method26742("damage_indicator", true);
    public static final Class7435 field34056 = method26742("dragon_breath", false);
    public static final Class7435 field34057 = method26742("dripping_lava", false);

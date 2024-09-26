@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
@@ -11,10 +12,10 @@ import java.util.Set;
 public class Class138 extends Class128 {
    private static String[] field463;
    private static final Map<ResourceLocation, Class8409> field464 = Maps.newHashMap();
-   private final Class6069 field465;
+   private final Enchantment field465;
    private final Class2582 field466;
 
-   public Class138(ILootCondition[] var1, Class6069 var2, Class2582 var3) {
+   public Class138(ILootCondition[] var1, Enchantment var2, Class2582 var3) {
       super(var1);
       this.field465 = var2;
       this.field466 = var3;
@@ -34,7 +35,7 @@ public class Class138 extends Class128 {
    public ItemStack method371(ItemStack var1, LootContext var2) {
       ItemStack var5 = var2.<ItemStack>method26081(Class9525.field44338);
       if (var5 != null) {
-         int var6 = EnchantmentHelper.method26311(this.field465, var5);
+         int var6 = EnchantmentHelper.getEnchantmentLevel(this.field465, var5);
          int var7 = this.field466.method10785(var2.method26088(), var1.getCount(), var6);
          var1.method32180(var7);
       }
@@ -42,24 +43,24 @@ public class Class138 extends Class128 {
       return var1;
    }
 
-   public static Class5876<?> method406(Class6069 var0, float var1, int var2) {
+   public static Class5876<?> method406(Enchantment var0, float var1, int var2) {
       return method372(var3 -> new Class138(var3, var0, new Class2583(var2, var1)));
    }
 
-   public static Class5876<?> method407(Class6069 var0) {
+   public static Class5876<?> method407(Enchantment var0) {
       return method372(var1 -> new Class138(var1, var0, new Class2584()));
    }
 
-   public static Class5876<?> method408(Class6069 var0) {
+   public static Class5876<?> method408(Enchantment var0) {
       return method372(var1 -> new Class138(var1, var0, new Class2581(1)));
    }
 
-   public static Class5876<?> method409(Class6069 var0, int var1) {
+   public static Class5876<?> method409(Enchantment var0, int var1) {
       return method372(var2 -> new Class138(var2, var0, new Class2581(var1)));
    }
 
    // $VF: synthetic method
-   public static Class6069 method414(Class138 var0) {
+   public static Enchantment method414(Class138 var0) {
       return var0.field465;
    }
 

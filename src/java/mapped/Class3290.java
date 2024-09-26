@@ -74,14 +74,14 @@ public class Class3290 extends Item {
    public void fillItemGroup(ItemGroup var1, NonNullList<ItemStack> var2) {
       if (var1 != ItemGroup.SEARCH) {
          if (var1.method23655().length != 0) {
-            for (Class6069 var6 : Registry.field16073) {
+            for (Enchantment var6 : Registry.field16073) {
                if (var1.method23657(var6.field27308)) {
                   var2.add(method11832(new Class6694(var6, var6.method18809())));
                }
             }
          }
       } else {
-         for (Class6069 var9 : Registry.field16073) {
+         for (Enchantment var9 : Registry.field16073) {
             if (var9.field27308 != null) {
                for (int var7 = var9.method18813(); var7 <= var9.method18809(); var7++) {
                   var2.add(method11832(new Class6694(var9, var7)));

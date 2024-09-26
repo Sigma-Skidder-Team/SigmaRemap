@@ -170,7 +170,7 @@ public class Class871 extends ContainerScreen<Class5822> {
 
       for (int var9 = 0; var9 < 3; var9++) {
          int var10 = this.field4727.field25509[var9];
-         Class6069 var11 = Class6069.method18810(this.field4727.field25510[var9]);
+         Enchantment var11 = Enchantment.method18810(this.field4727.field25510[var9]);
          int var12 = this.field4727.field25511[var9];
          int var13 = var9 + 1;
          if (this.method2625(60, 14 + 19 * var9, 108, 17, (double)var2, (double)var3) && var10 > 0 && var12 >= 0 && var11 != null) {

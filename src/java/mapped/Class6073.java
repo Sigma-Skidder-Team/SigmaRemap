@@ -1,6 +1,6 @@
 package mapped;
 
-public class Class6073 extends Class6069 {
+public class Class6073 extends Enchantment {
    private static String[] field27313;
 
    public Class6073(Class1937 var1, EquipmentSlotType... var2) {
@@ -23,7 +23,7 @@ public class Class6073 extends Class6069 {
    }
 
    @Override
-   public boolean method18817(Class6069 var1) {
+   public boolean method18817(Enchantment var1) {
       return super.method18817(var1) && var1 != Class8122.field34918;
    }
 }

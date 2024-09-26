@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
@@ -179,8 +180,8 @@ public class InvManagerUtils {
          ItemStack var5 = field33419.player.container.getSlot(var4).getStack();
          if (!method25819(var4) && var5.getItem() instanceof ItemSword) {
             float var6 = ((ItemSword)var5.getItem()).method11784()
-               + (float) EnchantmentHelper.method26311(Class8122.field34908, var5)
-               + (float) EnchantmentHelper.method26311(Class8122.field34912, var5);
+               + (float) EnchantmentHelper.getEnchantmentLevel(Class8122.field34908, var5)
+               + (float) EnchantmentHelper.getEnchantmentLevel(Class8122.field34912, var5);
             if (var6 > var3 || var6 == var3 && var4 == 36) {
                var2 = var4;
                var3 = var6;
@@ -280,7 +281,7 @@ public class InvManagerUtils {
       for (int var4 = 44; var4 >= 9; var4--) {
          ItemStack var5 = field33419.player.container.getSlot(var4).getStack();
          if (!method25819(var4) && var5.getItem() instanceof BowItem) {
-            float var6 = (float) EnchantmentHelper.method26311(Class8122.field34919, var5);
+            float var6 = (float) EnchantmentHelper.getEnchantmentLevel(Class8122.field34919, var5);
             if (var6 > var3) {
                var2 = var4;
                var3 = var6;
@@ -409,7 +410,7 @@ public class InvManagerUtils {
       if (field33419.player.container.getSlot(var0).getStack() != null) {
          if (field33419.player.container.getSlot(var0).getStack().getItem() instanceof ArmorItem) {
             ArmorItem var3 = (ArmorItem)field33419.player.container.getSlot(var0).getStack().getItem();
-            return var3.field18782 + EnchantmentHelper.method26311(Class6069.method18810(0), field33419.player.container.getSlot(var0).getStack());
+            return var3.field18782 + EnchantmentHelper.getEnchantmentLevel(Enchantment.method18810(0), field33419.player.container.getSlot(var0).getStack());
          } else {
             return 0;
          }
@@ -420,7 +421,7 @@ public class InvManagerUtils {
 
    public static int method25850(ItemStack var0) {
       if (var0 != null) {
-         return var0.getItem() instanceof ArmorItem ? ((ArmorItem)var0.getItem()).field18782 + EnchantmentHelper.method26311(Class8122.field34896, var0) : 0;
+         return var0.getItem() instanceof ArmorItem ? ((ArmorItem)var0.getItem()).field18782 + EnchantmentHelper.getEnchantmentLevel(Class8122.field34896, var0) : 0;
       } else {
          return 0;
       }
@@ -446,8 +447,8 @@ public class InvManagerUtils {
    public static float method25853(ItemStack var0) {
       return var0 != null && var0.getItem() instanceof ItemSword
          ? ((ItemSword)var0.getItem()).method11784()
-            + (float) EnchantmentHelper.method26311(Class8122.field34908, var0)
-            + (float) EnchantmentHelper.method26311(Class8122.field34912, var0)
+            + (float) EnchantmentHelper.getEnchantmentLevel(Class8122.field34908, var0)
+            + (float) EnchantmentHelper.getEnchantmentLevel(Class8122.field34912, var0)
          : 1.0F;
    }
 

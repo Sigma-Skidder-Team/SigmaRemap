@@ -1,8 +1,14 @@
 package mapped;
 
+import com.mentalfrostbyte.jello.Client;
+import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
+import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
+import net.minecraft.client.Minecraft;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.network.play.client.CUseEntityPacket;
 import net.minecraft.util.Hand;
 
 public class Class338 implements Runnable {
@@ -40,13 +46,47 @@ public class Class338 implements Runnable {
 
       String mode = this.killauraModule.getStringSettingValueByName("Mode");
       if (var3 && (var5 != null || !this.killauraModule.getBooleanValueFromSetttingName("Raytrace") || mode.equals("Multi"))) {
-         for (TimedEntity var10 : KillAura.method16845(this.killauraModule)) {
-            Entity var11 = var10.getEntity();
+         for (TimedEntity timedEnt : KillAura.getEntites(this.killauraModule)) {
+            Entity entity = timedEnt.getEntity();
             if (var5 != null && this.killauraModule.getBooleanValueFromSetttingName("Raytrace") && !mode.equals("Multi")) {
-               var11 = var5.getEntity();
+               entity = var5.getEntity();
             }
 
-            MultiUtilities.swing(var11, !this.killauraModule.getBooleanValueFromSetttingName("No swing"));
+            if (entity == null) {
+               return;
+            }
+
+            boolean noSwing = this.killauraModule.getBooleanValueFromSetttingName("No swing");
+            Minecraft mc = KillAura.mc;
+            boolean isOnePointEight = JelloPortal.getCurrentVersion().equals(ViaVerList._1_8_x);
+
+            if (isOnePointEight && !noSwing) {
+               mc.player.swingArm(Hand.MAIN_HAND);
+            }
+
+            mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
+            if (EnchantmentHelper.getEnchantmentLevel(Enchantment.method18810(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
+               mc.particles.addParticleEmitter(entity, ParticleTypes.field34065);
+            }
+
+            boolean canSwing = (double) mc.player.getCooledAttackStrength(0.5F) > 0.9 || isOnePointEight;
+            boolean attackable = canSwing
+                    && mc.player.fallDistance > 0.0F
+                    && !mc.player.onGround
+                    && !mc.player.isOnLadder()
+                    && !mc.player.isInWater()
+                    && !mc.player.isPotionActive(Effects.BLINDNESS)
+                    && !mc.player.isPassenger();
+            if (attackable || mc.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled()) {
+               mc.particles.addParticleEmitter(entity, ParticleTypes.CRIT);
+            }
+
+            mc.player.resetCooldown();
+            if (!isOnePointEight && !noSwing) {
+               mc.player.swingArm(Hand.MAIN_HAND);
+            }
+
+            mc.playerController.attackEntity(mc.player, entity);
          }
 
          if (mode.equals("Multi2")) {

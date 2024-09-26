@@ -19,7 +19,7 @@ public class Enchant extends Command {
       if (var2.length == 2) {
          if (var2[1].method30895() == Class2193.field14336) {
             if (!mc.playerController.isNotCreative()) {
-               Class6069 var6 = null;
+               Enchantment var6 = null;
                ItemStack var7 = mc.player.getHeldItemMainhand().copy();
 
                for (ResourceLocation var9 : Registry.field16073.method9190()) {

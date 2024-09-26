@@ -418,7 +418,7 @@ public class FirstPersonRenderer {
       }
 
       if (!var3.isRowingBoat()) {
-         float var6 = var3.method2974(1.0F);
+         float var6 = var3.getCooledAttackStrength(1.0F);
          if (Reflector.field42896.exists()) {
             boolean var7 = Reflector.method35056(Reflector.field42896, this.field45079, var4, var3.inventory.currentItem);
             boolean var8 = Reflector.method35056(Reflector.field42896, this.field45080, var5, -1);

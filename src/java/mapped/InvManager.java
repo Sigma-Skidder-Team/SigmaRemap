@@ -14,6 +14,7 @@ import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -77,7 +78,7 @@ public class InvManager extends PremiumModule {
             var3 += var6.method11784();
         }
 
-        return var3 + (float) EnchantmentHelper.method26311(Class8122.field34908, var0) * 1.25F + (float) EnchantmentHelper.method26311(Class8122.field34912, var0) * 0.01F;
+        return var3 + (float) EnchantmentHelper.getEnchantmentLevel(Class8122.field34908, var0) * 1.25F + (float) EnchantmentHelper.getEnchantmentLevel(Class8122.field34912, var0) * 0.01F;
     }
 
     public static int method16437(Item var0) {
@@ -184,8 +185,8 @@ public class InvManager extends PremiumModule {
                 }
             }
 
-            var6 = (float) ((double) var6 + (double) EnchantmentHelper.method26311(Class8122.field34915, var0) * 0.0075);
-            return (float) ((double) var6 + (double) EnchantmentHelper.method26311(Class8122.field34917, var0) / 100.0);
+            var6 = (float) ((double) var6 + (double) EnchantmentHelper.getEnchantmentLevel(Class8122.field34915, var0) * 0.0075);
+            return (float) ((double) var6 + (double) EnchantmentHelper.getEnchantmentLevel(Class8122.field34917, var0) / 100.0);
         } else {
             return 0.0F;
         }

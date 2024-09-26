@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
@@ -23,7 +24,7 @@ public class BowItem extends Class3262 implements Class3260 {
    public void method11729(ItemStack var1, World var2, LivingEntity var3, int var4) {
       if (var3 instanceof PlayerEntity) {
          PlayerEntity var7 = (PlayerEntity)var3;
-         boolean var8 = var7.abilities.isCreativeMode || EnchantmentHelper.method26311(Class8122.field34922, var1) > 0;
+         boolean var8 = var7.abilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Class8122.field34922, var1) > 0;
          ItemStack var9 = var7.findAmmo(var1);
          if (!var9.isEmpty() || var8) {
             if (var9.isEmpty()) {
@@ -42,17 +43,17 @@ public class BowItem extends Class3262 implements Class3260 {
                      var14.method3484(true);
                   }
 
-                  int var15 = EnchantmentHelper.method26311(Class8122.field34919, var1);
+                  int var15 = EnchantmentHelper.getEnchantmentLevel(Class8122.field34919, var1);
                   if (var15 > 0) {
                      var14.method3481(var14.method3482() + (double)var15 * 0.5 + 0.5);
                   }
 
-                  int var16 = EnchantmentHelper.method26311(Class8122.field34920, var1);
+                  int var16 = EnchantmentHelper.getEnchantmentLevel(Class8122.field34920, var1);
                   if (var16 > 0) {
                      var14.method3483(var16);
                   }
 
-                  if (EnchantmentHelper.method26311(Class8122.field34921, var1) > 0) {
+                  if (EnchantmentHelper.getEnchantmentLevel(Class8122.field34921, var1) > 0) {
                      var14.setFire(100);
                   }
 

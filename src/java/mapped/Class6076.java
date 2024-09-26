@@ -5,7 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.EffectInstance;
 
-public class Class6076 extends Class6069 {
+public class Class6076 extends Enchantment {
    private static final String[] field27316 = new String[]{"all", "undead", "arthropods"};
    private static final int[] field27317 = new int[]{1, 5, 5};
    private static final int[] field27318 = new int[]{11, 8, 8};
@@ -46,7 +46,7 @@ public class Class6076 extends Class6069 {
    }
 
    @Override
-   public boolean method18817(Class6069 var1) {
+   public boolean method18817(Enchantment var1) {
       return !(var1 instanceof Class6076);
    }
 

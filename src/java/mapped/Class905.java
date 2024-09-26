@@ -313,7 +313,7 @@ public class Class905 extends ProjectileEntity {
    public boolean attackEntityFrom(DamageSource var1, float var2) {
       if (!this.world.isRemote) {
          this.playSound(SoundEvents.field27047, 1.0F, 1.0F);
-         ((ServerWorld)this.world).spawnParticle(ParticleTypes.field34054, this.getPosX(), this.getPosY(), this.getPosZ(), 15, 0.2, 0.2, 0.2, 0.0);
+         ((ServerWorld)this.world).spawnParticle(ParticleTypes.CRIT, this.getPosX(), this.getPosY(), this.getPosZ(), 15, 0.2, 0.2, 0.2, 0.0);
          this.remove();
       }
 

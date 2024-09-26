@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import mapped.*;
 import net.minecraft.block.BlockState;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -191,7 +192,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
             for (int var26 = 0; var26 < 4; var26++) {
                this.world
                   .addParticle(
-                     ParticleTypes.field34054,
+                     ParticleTypes.CRIT,
                      this.getPosX() + var10 * (double)var26 / 4.0,
                      this.getPosY() + var12 * (double)var26 / 4.0,
                      this.getPosZ() + var14 * (double)var26 / 4.0,

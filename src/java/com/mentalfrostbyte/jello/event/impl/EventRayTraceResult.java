@@ -4,27 +4,27 @@ import com.mentalfrostbyte.jello.event.CancellableEvent;
 import net.minecraft.entity.Entity;
 
 public class EventRayTraceResult extends CancellableEvent {
-    private Entity field21516;
-    private boolean field21517;
+    private Entity entity;
+    private boolean hover;
 
-    public EventRayTraceResult(Entity var1, boolean var2) {
-        this.field21516 = var1;
-        this.field21517 = var2;
+    public EventRayTraceResult(Entity entity, boolean hover) {
+        this.entity = entity;
+        this.hover = hover;
     }
 
     public Entity getEntity() {
-        return this.field21516;
+        return this.entity;
     }
 
-    public void method13936(Entity var1) {
-        this.field21516 = var1;
+    public void setEntity(Entity entity) {
+        this.entity = entity;
     }
 
     public boolean isHovering() {
-        return this.field21517;
+        return this.hover;
     }
 
-    public void method13938() {
-        this.field21517 = false;
+    public void unhover() {
+        this.hover = false;
     }
 }

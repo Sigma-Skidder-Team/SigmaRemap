@@ -10,6 +10,7 @@ import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.Collection;
 
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
@@ -58,7 +59,7 @@ public class Class6795 {
       );
    }
 
-   private static int method20702(Class6619 var0, Collection<? extends Entity> var1, Class6069 var2, int var3) throws CommandSyntaxException {
+   private static int method20702(Class6619 var0, Collection<? extends Entity> var1, Enchantment var2, int var3) throws CommandSyntaxException {
       if (var3 > var2.method18809()) {
          throw field29601.create(var3, var2.method18809());
       } else {

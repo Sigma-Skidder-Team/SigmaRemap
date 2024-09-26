@@ -8,10 +8,10 @@ import java.util.Map;
 
 public class Class7849 {
    private static String[] field33658;
-   private static final Map<String, Class6069> field33659 = new HashMap<String, Class6069>();
+   private static final Map<String, Enchantment> field33659 = new HashMap<String, Enchantment>();
 
-   public static Class6069 method26306(String var0) {
-      Class6069 var3 = field33659.get(var0);
+   public static Enchantment method26306(String var0) {
+      Enchantment var3 = field33659.get(var0);
       if (var3 == null) {
          ResourceLocation var4 = new ResourceLocation(var0);
          if (Registry.field16073.method9193(var4)) {
@@ -24,7 +24,7 @@ public class Class7849 {
       return var3;
    }
 
-   public static Class6069 method26307(ResourceLocation var0) {
+   public static Enchantment method26307(ResourceLocation var0) {
       return Registry.field16073.method9193(var0) ? Registry.field16073.getOrDefault(var0) : null;
    }
 }

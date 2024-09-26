@@ -40,6 +40,7 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerData;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -668,39 +669,16 @@ public class MultiUtilities {
    }
 
    public static void swing(Entity var0, boolean swing) {
-      boolean isOnePointEight = JelloPortal.getCurrentVersion().equals(ViaVerList._1_8_x);
-      EventRayTraceResult rayTrace = new EventRayTraceResult(var0, true);
-      Client.getInstance().getEventManager().call(rayTrace);
-      if (!rayTrace.isCancelled()) {
-         if (isOnePointEight && swing) {
-            mc.player.swingArm(Hand.MAIN_HAND);
-         }
-
-         mc.getConnection().sendPacket(new CUseEntityPacket(rayTrace.getEntity(), mc.player.isSneaking()));
-         if (EnchantmentHelper.method26311(Class6069.method18810(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
-            mc.particles.method1195(rayTrace.getEntity(), ParticleTypes.field34065);
-         }
-
-         boolean var6 = (double) mc.player.method2974(0.5F) > 0.9 || isOnePointEight;
-         boolean var7 = var6
-            && mc.player.fallDistance > 0.0F
-            && !mc.player.onGround
-            && !mc.player.isOnLadder()
-            && !mc.player.isInWater()
-            && !mc.player.isPotionActive(Effects.BLINDNESS)
-            && !mc.player.isPassenger();
-         if (var7 || mc.player.onGround && Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled()) {
-            mc.particles.method1195(rayTrace.getEntity(), ParticleTypes.field34054);
-         }
-
-         mc.player.resetCooldown();
-         if (!isOnePointEight && swing) {
-            mc.player.swingArm(Hand.MAIN_HAND);
-         }
-
-         rayTrace.method13938();
-         Client.getInstance().getEventManager().call(rayTrace);
+      if (var0 == null) {
+         return;
       }
+
+      /*
+
+
+
+
+       */
    }
 
    public static String method17736(int var0) {

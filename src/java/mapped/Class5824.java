@@ -3,6 +3,7 @@ package mapped;
 import java.util.Map;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -89,7 +90,7 @@ public class Class5824 extends Class5823 {
       } else {
          ItemStack var7 = var3.copy();
          ItemStack var8 = this.field25513.getStackInSlot(1);
-         Map<Class6069, Integer> var9 = EnchantmentHelper.method26312(var7);
+         Map<Enchantment, Integer> var9 = EnchantmentHelper.method26312(var7);
          var5 = var5 + var3.method32169() + (var8.isEmpty() ? 0 : var8.method32169());
          this.field25518 = 0;
          if (!var8.isEmpty()) {
@@ -134,11 +135,11 @@ public class Class5824 extends Class5823 {
                   }
                }
 
-               Map<Class6069, Integer> var23 = EnchantmentHelper.method26312(var8);
+               Map<Enchantment, Integer> var23 = EnchantmentHelper.method26312(var8);
                boolean var25 = false;
                boolean var27 = false;
 
-               for (Class6069 var30 : var23.keySet()) {
+               for (Enchantment var30 : var23.keySet()) {
                   if (var30 != null) {
                      int var16 = var9.getOrDefault(var30, 0);
                      int var17 = (Integer)var23.get(var30);
@@ -148,7 +149,7 @@ public class Class5824 extends Class5823 {
                         var18 = true;
                      }
 
-                     for (Class6069 var20 : var9.keySet()) {
+                     for (Enchantment var20 : var9.keySet()) {
                         if (var20 != var30 && !var30.method18816(var20)) {
                            var18 = false;
                            var4++;

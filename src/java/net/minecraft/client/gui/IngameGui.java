@@ -338,7 +338,7 @@ public class IngameGui extends AbstractGui {
                 byte var5 = 15;
                 this.blit(var1, (this.field6741 - 15) / 2, (this.field6742 - 15) / 2, 0, 0, 15, 15);
                 if (this.field6716.gameSettings.field44603 == Class2207.field14426) {
-                    float var6 = this.field6716.player.method2974(0.0F);
+                    float var6 = this.field6716.player.getCooledAttackStrength(0.0F);
                     boolean var7 = false;
                     if (this.field6716.pointedEntity != null && this.field6716.pointedEntity instanceof LivingEntity && var6 >= 1.0F) {
                         var7 = this.field6716.player.method2973() > 5.0F;
@@ -495,7 +495,7 @@ public class IngameGui extends AbstractGui {
             }
 
             if (this.field6716.gameSettings.field44603 == Class2207.field14427) {
-                float var17 = this.field6716.player.method2974(0.0F);
+                float var17 = this.field6716.player.getCooledAttackStrength(0.0F);
                 if (var17 < 1.0F) {
                     int var18 = this.field6742 - 20;
                     int var19 = var8 + 91 + 6;

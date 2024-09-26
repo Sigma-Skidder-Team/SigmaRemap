@@ -15,18 +15,18 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 
-public abstract class Class6069 {
+public abstract class Enchantment {
    private final EquipmentSlotType[] field27306;
    private final Class1937 field27307;
    public final Class2242 field27308;
    public String field27309;
 
    @Nullable
-   public static Class6069 method18810(int var0) {
+   public static Enchantment method18810(int var0) {
       return Registry.field16073.getByValue(var0);
    }
 
-   public Class6069(Class1937 var1, Class2242 var2, EquipmentSlotType[] var3) {
+   public Enchantment(Class1937 var1, Class2242 var2, EquipmentSlotType[] var3) {
       this.field27307 = var1;
       this.field27308 = var2;
       this.field27306 = var3;
@@ -73,11 +73,11 @@ public abstract class Class6069 {
       return 0.0F;
    }
 
-   public final boolean method18816(Class6069 var1) {
+   public final boolean method18816(Enchantment var1) {
       return this.method18817(var1) && var1.method18817(this);
    }
 
-   public boolean method18817(Class6069 var1) {
+   public boolean method18817(Enchantment var1) {
       return this != var1;
    }
 

@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.enchantment;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
@@ -12,6 +12,7 @@ import java.util.Map.Entry;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
+import mapped.*;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -27,7 +28,7 @@ import org.apache.commons.lang3.mutable.MutableFloat;
 import org.apache.commons.lang3.mutable.MutableInt;
 
 public class EnchantmentHelper {
-   public static int method26311(Class6069 var0, ItemStack var1) {
+   public static int getEnchantmentLevel(Enchantment var0, ItemStack var1) {
       if (!var1.isEmpty()) {
          ResourceLocation var4 = Registry.field16073.getKey(var0);
          ListNBT var5 = var1.method32147();
@@ -46,13 +47,13 @@ public class EnchantmentHelper {
       }
    }
 
-   public static Map<Class6069, Integer> method26312(ItemStack var0) {
+   public static Map<Enchantment, Integer> method26312(ItemStack var0) {
       ListNBT var3 = var0.getItem() != Items.field38070 ? var0.method32147() : Class3290.method11830(var0);
       return method26313(var3);
    }
 
-   public static Map<Class6069, Integer> method26313(ListNBT var0) {
-      Map<Class6069, Integer> var3 = Maps.newLinkedHashMap();
+   public static Map<Enchantment, Integer> method26313(ListNBT var0) {
+      Map<Enchantment, Integer> var3 = Maps.newLinkedHashMap();
 
       for (int var4 = 0; var4 < var0.size(); var4++) {
          CompoundNBT var5 = var0.method153(var4);
@@ -64,11 +65,11 @@ public class EnchantmentHelper {
       return var3;
    }
 
-   public static void method26314(Map<Class6069, Integer> var0, ItemStack var1) {
+   public static void method26314(Map<Enchantment, Integer> var0, ItemStack var1) {
       ListNBT var4 = new ListNBT();
 
       for (Entry var6 : var0.entrySet()) {
-         Class6069 var7 = (Class6069)var6.getKey();
+         Enchantment var7 = (Enchantment)var6.getKey();
          if (var7 != null) {
             int var8 = (Integer)var6.getValue();
             CompoundNBT var9 = new CompoundNBT();
@@ -147,13 +148,13 @@ public class EnchantmentHelper {
       }
    }
 
-   public static int method26322(Class6069 var0, LivingEntity var1) {
+   public static int method26322(Enchantment var0, LivingEntity var1) {
       Collection<ItemStack> var4 = var0.method18811(var1).values();
       if (var4 != null) {
          int var5 = 0;
 
          for (ItemStack var7 : var4) {
-            int var8 = method26311(var0, var7);
+            int var8 = getEnchantmentLevel(var0, var7);
             if (var8 > var5) {
                var5 = var8;
             }
@@ -186,11 +187,11 @@ public class EnchantmentHelper {
    }
 
    public static int method26328(ItemStack var0) {
-      return method26311(Class8122.field34923, var0);
+      return getEnchantmentLevel(Class8122.field34923, var0);
    }
 
    public static int method26329(ItemStack var0) {
-      return method26311(Class8122.field34924, var0);
+      return getEnchantmentLevel(Class8122.field34924, var0);
    }
 
    public static int method26330(LivingEntity var0) {
@@ -210,39 +211,39 @@ public class EnchantmentHelper {
    }
 
    public static boolean method26334(ItemStack var0) {
-      return method26311(Class8122.field34906, var0) > 0;
+      return getEnchantmentLevel(Class8122.field34906, var0) > 0;
    }
 
    public static boolean method26335(ItemStack var0) {
-      return method26311(Class8122.field34933, var0) > 0;
+      return getEnchantmentLevel(Class8122.field34933, var0) > 0;
    }
 
    public static int method26336(ItemStack var0) {
-      return method26311(Class8122.field34925, var0);
+      return getEnchantmentLevel(Class8122.field34925, var0);
    }
 
    public static int method26337(ItemStack var0) {
-      return method26311(Class8122.field34927, var0);
+      return getEnchantmentLevel(Class8122.field34927, var0);
    }
 
    public static boolean method26338(ItemStack var0) {
-      return method26311(Class8122.field34928, var0) > 0;
+      return getEnchantmentLevel(Class8122.field34928, var0) > 0;
    }
 
    @Nullable
-   public static Entry<EquipmentSlotType, ItemStack> method26339(Class6069 var0, LivingEntity var1) {
+   public static Entry<EquipmentSlotType, ItemStack> method26339(Enchantment var0, LivingEntity var1) {
       return method26340(var0, var1, var0x -> true);
    }
 
    @Nullable
-   public static Entry<EquipmentSlotType, ItemStack> method26340(Class6069 var0, LivingEntity var1, Predicate<ItemStack> var2) {
+   public static Entry<EquipmentSlotType, ItemStack> method26340(Enchantment var0, LivingEntity var1, Predicate<ItemStack> var2) {
       Map<EquipmentSlotType, ItemStack> var5 = var0.method18811(var1);
       if (!var5.isEmpty()) {
          ArrayList var6 = Lists.newArrayList();
 
          for (Entry<EquipmentSlotType, ItemStack> var8 : var5.entrySet()) {
             ItemStack var9 = (ItemStack)var8.getValue();
-            if (!var9.isEmpty() && method26311(var0, var9) > 0 && var2.test(var9)) {
+            if (!var9.isEmpty() && getEnchantmentLevel(var0, var9) > 0 && var2.test(var9)) {
                var6.add(var8);
             }
          }
@@ -329,8 +330,8 @@ public class EnchantmentHelper {
       }
    }
 
-   public static boolean method26345(Collection<Class6069> var0, Class6069 var1) {
-      for (Class6069 var5 : var0) {
+   public static boolean method26345(Collection<Enchantment> var0, Enchantment var1) {
+      for (Enchantment var5 : var0) {
          if (!var5.method18816(var1)) {
             return false;
          }
@@ -344,7 +345,7 @@ public class EnchantmentHelper {
       Item var6 = var1.getItem();
       boolean var7 = var1.getItem() == Items.field37900;
 
-      for (Class6069 var9 : Registry.field16073) {
+      for (Enchantment var9 : Registry.field16073) {
          if ((!var9.method18824() || var2) && var9.method18827() && (var9.field27308.method8990(var6) || var7)) {
             for (int var10 = var9.method18809(); var10 > var9.method18813() - 1; var10--) {
                if (var0 >= var9.method18807(var10) && var0 <= var9.method18808(var10)) {

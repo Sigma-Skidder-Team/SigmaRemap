@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -43,7 +44,7 @@ public class Class3420 extends Block {
    @Override
    public void method11965(BlockState var1, ServerWorld var2, BlockPos var3, ItemStack var4) {
       super.method11965(var1, var2, var3, var4);
-      if (EnchantmentHelper.method26311(Class8122.field34916, var4) == 0) {
+      if (EnchantmentHelper.getEnchantmentLevel(Class8122.field34916, var4) == 0) {
          int var7 = this.method12068(var2.rand);
          if (var7 > 0) {
             this.method11558(var2, var3, var7);

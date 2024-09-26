@@ -1152,7 +1152,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
                   case 1:
                      this.playerController.attackEntity(this.player, ((EntityRayTraceResult)this.objectMouseOver).getEntity());
                      if (var2 != null) {
-                        var2.method13938();
+                        var2.unhover();
                         Client.getInstance().getEventManager().call(var2);
                      }
                      break;

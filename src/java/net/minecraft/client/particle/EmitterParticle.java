@@ -1,25 +1,27 @@
-package mapped;
+package net.minecraft.client.particle;
 
+import mapped.Class4588;
+import mapped.ClientWorld;
 import net.minecraft.entity.Entity;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.util.math.vector.Vector3d;
 
-public class Class4589 extends Class4588 {
+public class EmitterParticle extends Class4588 {
    private static String[] field22065;
    private final Entity field22066;
    private int field22067;
    private final int field22068;
    private final IParticleData field22069;
 
-   public Class4589(ClientWorld var1, Entity var2, IParticleData var3) {
+   public EmitterParticle(ClientWorld var1, Entity var2, IParticleData var3) {
       this(var1, var2, var3, 3);
    }
 
-   public Class4589(ClientWorld var1, Entity var2, IParticleData var3, int var4) {
+   public EmitterParticle(ClientWorld var1, Entity var2, IParticleData var3, int var4) {
       this(var1, var2, var3, var4, var2.getMotion());
    }
 
-   private Class4589(ClientWorld var1, Entity var2, IParticleData var3, int var4, Vector3d var5) {
+   private EmitterParticle(ClientWorld var1, Entity var2, IParticleData var3, int var4, Vector3d var5) {
       super(var1, var2.getPosX(), var2.getPosYHeight(0.5), var2.getPosZ(), var5.x, var5.y, var5.z);
       this.field22066 = var2;
       this.field22068 = var4;

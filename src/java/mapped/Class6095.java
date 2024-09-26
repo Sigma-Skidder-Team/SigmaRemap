@@ -4,7 +4,7 @@ import net.minecraft.item.ItemStack;
 
 import java.util.Random;
 
-public class Class6095 extends Class6069 {
+public class Class6095 extends Enchantment {
    private static String[] field27339;
 
    public Class6095(Class1937 var1, EquipmentSlotType... var2) {

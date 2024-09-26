@@ -140,7 +140,7 @@ public class KillAura extends Module {
     }
 
     // $VF: synthetic method
-    public static List<TimedEntity> method16845(KillAura var0) {
+    public static List<TimedEntity> getEntites(KillAura var0) {
         return var0.field23950;
     }
 
@@ -287,7 +287,7 @@ public class KillAura extends Module {
                     var1.setPitch(this.rotations.yaw);
                     var1.setYaw(this.rotations.pitch);
                     boolean var6 = this.interactAB.method36821(this.field23939);
-                    float cooldown19 = !((double) mc.player.method2973() < 1.26) && this.getBooleanValueFromSetttingName("Cooldown") ? mc.player.method2974(0.0F) : 1.0F;
+                    float cooldown19 = !((double) mc.player.method2973() < 1.26) && this.getBooleanValueFromSetttingName("Cooldown") ? mc.player.getCooledAttackStrength(0.0F) : 1.0F;
                     boolean var8 = field23954 == 0 && var6 && cooldown19 >= 1.0F;
                     if (var6) {
                         this.interactAB.setupDelay();
