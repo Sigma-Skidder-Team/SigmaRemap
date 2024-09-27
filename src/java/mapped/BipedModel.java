@@ -212,10 +212,12 @@ public class BipedModel<T extends LivingEntity> extends Class2855<T> implements 
          this.bipedRightLeg.rotateAngleX = MathHelper.lerp(this.field17442, this.bipedRightLeg.rotateAngleX, 0.3F * MathHelper.cos(var2 * 0.33333334F));
       }
 
-      if (var1 instanceof Entity) {
+      /* FUCK YOU VIAVERSION !!!! */
+
+      /*if (var1 instanceof Entity) {
          this.bipedRightArm.rotateAngleX = this.bipedRightArm.rotateAngleX * 0.5F - (float) (Math.PI * 3.0 / 10.0);
          this.bipedRightArm.rotateAngleY = (float) (-Math.PI / 6);
-      }
+      }*/
 
       this.field17433.copyModelAngles(this.bipedHead);
    }
