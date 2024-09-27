@@ -27,7 +27,7 @@ public class TP extends Command {
          throw new CommandException();
       } else if (var2.length > 1) {
          throw new CommandException("Too many arguments");
-      } else if (!mc.player.onGround && MultiUtilities.method17716()) {
+      } else if (!mc.player.onGround && MultiUtilities.isHypixel()) {
          throw new CommandException("Use this command on ground");
       } else if (var2[0].method30899().equalsIgnoreCase(mc.getSession().username)) {
          throw new CommandException("You can not tp to yourself");
@@ -45,7 +45,7 @@ public class TP extends Command {
 
          if (this.field25710.entity != null) {
             this.field25710.timer.reset();
-            if (!MultiUtilities.method17716()) {
+            if (!MultiUtilities.isHypixel()) {
                this.field25710.timer.stop();
                this.field25710.field45878 = 2;
             } else {

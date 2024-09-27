@@ -87,7 +87,7 @@ public class ViaVersionLoader {
    public void method23345(EventRender var1) {
       if (this.mc.player != null
          && this.mc.player.getPose() == Pose.field13622
-         && (JelloPortal.getCurrentVersionApplied() < ViaVerList._1_13.getVersionNumber() || MultiUtilities.method17716())) {
+         && (JelloPortal.getCurrentVersionApplied() < ViaVerList._1_13.getVersionNumber() || MultiUtilities.isHypixel())) {
          this.mc.player.setPose(Pose.STANDING);
       }
    }
@@ -192,7 +192,12 @@ public class ViaVersionLoader {
    @EventTarget
    @HigestPriority
    public void method23349(ReceivePacketEvent var1) {
-      if (!Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).isEnabled() && JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber()) {
+      if (Client.getInstance() != null
+              && Client.getInstance().getModuleManager() != null
+              && Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class) != null
+              && !Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).isEnabled()
+              && JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber()) {
+
          if (!entites.isEmpty()) {
             entites.clear();
          }
@@ -206,14 +211,17 @@ public class ViaVersionLoader {
                   Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).isEnabled()
                      || JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber()
                )) {
+
+               if (mc.world == null) {
+                  return;
+               }
+
                if (!(((ItemStack)var6.getSecond()).getItem() instanceof Class3334)) {
                   Entity var7 = this.mc.world.getEntityByID(var4.getEntityID());
-                  if (entites.contains(var7)) {
-                     entites.remove(var7);
-                  }
+                  entites.remove(var7);
                } else {
                   Entity var14 = this.mc.world.getEntityByID(var4.getEntityID());
-                  if (!entites.contains(var14) && !MultiUtilities.method17719()) {
+                  if (!entites.contains(var14) && !MultiUtilities.isMineplex()) {
                      entites.add(var14);
                   }
 
@@ -226,7 +234,7 @@ public class ViaVersionLoader {
       if (this.method23351()) {
          Class8920.method32597(var1, this.fixer);
          if (!(var1.getPacket() instanceof SHeldItemChangePacket)) {
-            if (var1.getPacket() instanceof SUnloadChunkPacket && MultiUtilities.method17717()) {
+            if (var1.getPacket() instanceof SUnloadChunkPacket && MultiUtilities.isMinemen()) {
                var1.setCancelled(true);
             } else if (!(var1.getPacket() instanceof SAnimateHandPacket)) {
                if (var1.getPacket() instanceof SUpdateChunkPositionPacket && this.mc.player != null) {
@@ -272,7 +280,7 @@ public class ViaVersionLoader {
    @EventTarget
    @HigestPriority
    public void method23350(EventMove var1) {
-      if (JelloPortal.getCurrentVersionApplied() < ViaVerList._1_13.getVersionNumber() || MultiUtilities.method17716()) {
+      if (JelloPortal.getCurrentVersionApplied() < ViaVerList._1_13.getVersionNumber() || MultiUtilities.isHypixel()) {
          if (this.mc.player.isInWater()) {
             this.field31498 = true;
             double var4 = this.mc.player.getPosY();

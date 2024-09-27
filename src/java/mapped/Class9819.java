@@ -33,7 +33,7 @@ public class Class9819 {
       if (this.entity != null) {
          if (this.field45878 != 1) {
             if (this.field45878 == 2) {
-               boolean var4 = MultiUtilities.method17716();
+               boolean var4 = MultiUtilities.isHypixel();
                if (var4) {
                   PlayerAbilities abilities = new PlayerAbilities();
                   abilities.isFlying = true;

@@ -28,7 +28,7 @@ public class YPortSpeed extends Module {
     @EventTarget
     public void method16235(EventUpdate var1) {
         if (this.isEnabled() && mc.player != null && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
-            if (mc.player.onGround && var1.isPre() && MultiUtilities.method17716()) {
+            if (mc.player.onGround && var1.isPre() && MultiUtilities.isHypixel()) {
                 var1.setY(var1.getY() + 1.0E-14);
             }
         }

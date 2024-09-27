@@ -111,7 +111,7 @@ public class NCPLongJump extends Module {
                                 break;
                             case "High":
                                 var1.setY(((LongJump) this.access()).method16731(this.field23478));
-                                if (MultiUtilities.method17716()
+                                if (MultiUtilities.isHypixel()
                                         && Client.getInstance().getModuleManager().getModuleByClass(NoFall.class).isEnabled()
                                         && (this.field23478 == 8 || this.field23478 == 21)) {
                                     double var9 = mc.player.getPosY() + var1.getY();

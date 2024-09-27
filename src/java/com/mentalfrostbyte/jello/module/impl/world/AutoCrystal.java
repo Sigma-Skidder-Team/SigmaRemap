@@ -4,6 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.EventTarget;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
+import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.combat.Teams;
@@ -35,7 +36,7 @@ import org.lwjgl.opengl.GL11;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class AutoCrystal extends PremiumModule {
+public class AutoCrystal extends Module {
     private static float field23629;
     private static float field23630;
     private static boolean field23631;
@@ -48,7 +49,7 @@ public class AutoCrystal extends PremiumModule {
     private List<BlockPos> field23637 = new ArrayList<BlockPos>();
 
     public AutoCrystal() {
-        super("AutoCrystal", "Automatically detonates crystals", ModuleCategory.WORLD);
+        super(ModuleCategory.WORLD, "AutoCrystal", "Automatically detonates crystals");
         this.registerSetting(new ModeSetting("Mode", "Mode", 0, "Single", "Switch"));
         this.registerSetting(new NumberSetting<Float>("Range", "Range value", 4.0F, Float.class, 2.8F, 8.0F, 0.01F));
         this.registerSetting(new NumberSetting<Float>("CPS", "Click per seconds", 9.0F, Float.class, 1.0F, 20.0F, 1.0F));

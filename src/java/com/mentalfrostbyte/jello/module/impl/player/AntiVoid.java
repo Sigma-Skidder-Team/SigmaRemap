@@ -123,7 +123,7 @@ public class AntiVoid extends Module {
         double var5 = mc.player.getPositionVec().getX();
         double var7 = mc.player.getPositionVec().getY();
         double var9 = mc.player.getPositionVec().getZ();
-        if (var1.equals("Cubecraft") && !MultiUtilities.method17718()) {
+        if (var1.equals("Cubecraft") && !MultiUtilities.isCubecraft()) {
             var1 = "Motion";
         }
 

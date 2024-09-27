@@ -95,7 +95,7 @@ public class HypixelFly extends Module {
     @LowestPriority
     @Class5631
     public void method16258(SendPacketEvent var1) {
-        if (MultiUtilities.method17716()) {
+        if (MultiUtilities.isHypixel()) {
             IPacket var4 = var1.getPacket();
             if (var4 instanceof CClickWindowPacket) {
                 CClickWindowPacket var5 = (CClickWindowPacket) var4;
@@ -108,7 +108,7 @@ public class HypixelFly extends Module {
     @Class5631
     @HigestPriority
     public void method16259(ReceivePacketEvent var1) {
-        if (mc.getConnection() != null && MultiUtilities.method17716()) {
+        if (mc.getConnection() != null && MultiUtilities.isHypixel()) {
             IPacket var4 = var1.getPacket();
             if (this.isEnabled()) {
                 if (var4 instanceof SPlayerPositionLookPacket) {

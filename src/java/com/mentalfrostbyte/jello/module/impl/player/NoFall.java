@@ -42,7 +42,7 @@ public class NoFall extends Module {
                     && (double) mc.player.fallDistance > 2.0 + (double) MovementUtils.method37079() * 0.5
                     && !mc.player.onGround
                     && this.getStringSettingValueByName("Mode").equals("Hypixel")
-                    && MultiUtilities.method17716()) {
+                    && MultiUtilities.isHypixel()) {
                 double[] var4 = MultiUtilities.method17747();
                 int var5 = var4.length;
                 double var6 = Double.MAX_VALUE;
@@ -86,7 +86,7 @@ public class NoFall extends Module {
         if (this.isEnabled() && mc.player != null) {
             if (!(mc.player.getPosY() < 2.0)) {
                 String var4 = this.getStringSettingValueByName("Mode");
-                if (!MultiUtilities.method17716() && var4.equals("Hypixel")) {
+                if (!MultiUtilities.isHypixel() && var4.equals("Hypixel")) {
                     var4 = "OldHypixel";
                 }
 
@@ -112,7 +112,7 @@ public class NoFall extends Module {
                         }
                         break;
                     case "Hypixel":
-                        if (var1.isPre() && mc.player.getMotion().y < 0.0 && !mc.player.onGround && MultiUtilities.method17716()) {
+                        if (var1.isPre() && mc.player.getMotion().y < 0.0 && !mc.player.onGround && MultiUtilities.isHypixel()) {
                             for (double var10 : MultiUtilities.method17747()) {
                                 if ((double) ((int) var1.getY()) - var1.getY() + var10 == 0.0) {
                                     var1.setGround(true);

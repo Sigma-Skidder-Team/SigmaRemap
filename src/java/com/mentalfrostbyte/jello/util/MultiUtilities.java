@@ -1,10 +1,7 @@
 package com.mentalfrostbyte.jello.util;
 
-import com.mentalfrostbyte.jello.event.impl.EventRayTraceResult;
 import com.mentalfrostbyte.jello.module.impl.combat.Teams;
-import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.player.Blink;
-import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mojang.authlib.Agent;
 import com.mojang.authlib.exceptions.AuthenticationException;
 import com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService;
@@ -40,7 +37,6 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ServerData;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -531,26 +527,26 @@ public class MultiUtilities {
          && var0.z <= var1.maxZ;
    }
 
-   public static boolean method17716() {
+   public static boolean isHypixel() {
       return !field24954
          && mc.getIntegratedServer() == null
          && mc.getCurrentServerData() != null
          && mc.getCurrentServerData().serverIP.toLowerCase().contains("hypixel.net");
    }
 
-   public static boolean method17717() {
+   public static boolean isMinemen() {
       return mc.getIntegratedServer() == null && mc.getCurrentServerData() != null && mc.getCurrentServerData().serverIP.toLowerCase().contains("minemen.club");
    }
 
-   public static boolean method17718() {
+   public static boolean isCubecraft() {
       return mc.getIntegratedServer() == null && mc.getCurrentServerData() != null && mc.getCurrentServerData().serverIP.toLowerCase().contains("cubecraft.net");
    }
 
-   public static boolean method17719() {
+   public static boolean isMineplex() {
       return mc.getIntegratedServer() == null && mc.getCurrentServerData() != null && mc.getCurrentServerData().serverIP.toLowerCase().contains("mineplex.com");
    }
 
-   public static boolean method17720() {
+   public static boolean isLocalhost() {
       return mc.getCurrentServerData() == null || mc.getCurrentServerData().serverIP.toLowerCase().contains("localhost");
    }
 
@@ -1021,7 +1017,7 @@ public class MultiUtilities {
       for (int var10 = 0; var10 < var9; var10++) {
          double var11 = !var0 ? 0.0 : method17750();
          mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3 + var11, var5 + 0.06248 + method17750(), var7 + var11, false));
-         if (method17716()) {
+         if (isHypixel()) {
             mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(var3 + var11, var5 + 0.05 + method17750(), var7 + var11, false));
          }
 

@@ -46,7 +46,7 @@ public class Class8329 {
    @EventTarget
    @Class5631
    public void method29202(SendPacketEvent var1) {
-      if (!MultiUtilities.method17720() && MultiUtilities.method17718()) {
+      if (!MultiUtilities.isLocalhost() && MultiUtilities.isCubecraft()) {
          IPacket var4 = var1.getPacket();
          if (!(var4 instanceof CClickWindowPacket)) {
             if (var4 instanceof CConfirmTransactionPacket) {
@@ -67,7 +67,7 @@ public class Class8329 {
    @EventTarget
    @Class5631
    public void method29203(ReceivePacketEvent var1) {
-      if (!MultiUtilities.method17720() && MultiUtilities.method17718()) {
+      if (!MultiUtilities.isLocalhost() && MultiUtilities.isCubecraft()) {
          IPacket var4 = var1.getPacket();
          if (!(var4 instanceof SKeepAlivePacket) && var4 instanceof SConfirmTransactionPacket) {
             SConfirmTransactionPacket var5 = (SConfirmTransactionPacket)var4;
