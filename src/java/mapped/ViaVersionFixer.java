@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.Map.Entry;
 
-public class Class8982 {
+public class ViaVersionFixer {
    private final ViaVersionLoader field40988;
    private HashMap<BlockPos, BlockState> field40989 = new HashMap<BlockPos, BlockState>();
    private HashMap<BlockPos, BlockState> field40990 = new HashMap<BlockPos, BlockState>();
@@ -24,7 +24,7 @@ public class Class8982 {
    private Set<Class8189> field40993 = new HashSet<Class8189>();
    private List<Runnable> field40994 = new ArrayList<Runnable>();
 
-   public Class8982(ViaVersionLoader var1) {
+   public ViaVersionFixer(ViaVersionLoader var1) {
       this.field40988 = var1;
       this.method33173();
    }

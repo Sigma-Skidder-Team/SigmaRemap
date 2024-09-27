@@ -27,7 +27,7 @@ public abstract class Class1026 extends Class1028 {
    public static final DataParameter<Boolean> field5712 = EntityDataManager.<Boolean>createKey(Class1026.class, DataSerializers.field33398);
    private static final Predicate<ItemEntity> field5713 = var0 -> !var0.method4135()
          && var0.isAlive()
-         && ItemStack.areItemStacksEqual1(var0.method4124(), Class7699.method25421());
+         && ItemStack.areItemStacksEqual(var0.method4124(), Class7699.method25421());
    public Class7699 field5714;
    private int field5715;
    private boolean field5716;
@@ -121,7 +121,7 @@ public abstract class Class1026 extends Class1028 {
                var7 = (PlayerEntity)var4;
             }
 
-            if (!var6.isEmpty() && ItemStack.areItemStacksEqual1(var6, Class7699.method25421()) && var7 != null) {
+            if (!var6.isEmpty() && ItemStack.areItemStacksEqual(var6, Class7699.method25421()) && var7 != null) {
                EffectInstance var11 = var7.getActivePotionEffect(Effects.BAD_OMEN);
                int var12 = 1;
                if (var11 == null) {
@@ -210,7 +210,7 @@ public abstract class Class1026 extends Class1028 {
    public void method4246(ItemEntity var1) {
       ItemStack var4 = var1.method4124();
       boolean var5 = this.method4552() && this.method4551().method25422(this.method4554()) != null;
-      if (this.method4552() && !var5 && ItemStack.areItemStacksEqual1(var4, Class7699.method25421())) {
+      if (this.method4552() && !var5 && ItemStack.areItemStacksEqual(var4, Class7699.method25421())) {
          EquipmentSlotType var6 = EquipmentSlotType.HEAD;
          ItemStack var7 = this.getItemStackFromSlot(var6);
          double var8 = (double)this.method4269(var6);

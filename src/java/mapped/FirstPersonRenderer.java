@@ -409,11 +409,11 @@ public class FirstPersonRenderer {
       ClientPlayerEntity var3 = this.field45078.player;
       ItemStack var4 = var3.getHeldItemMainhand();
       ItemStack var5 = var3.method3091();
-      if (ItemStack.areItemStacksEqual1(this.field45079, var4)) {
+      if (ItemStack.areItemStacksEqual(this.field45079, var4)) {
          this.field45079 = var4;
       }
 
-      if (ItemStack.areItemStacksEqual1(this.field45080, var5)) {
+      if (ItemStack.areItemStacksEqual(this.field45080, var5)) {
          this.field45080 = var5;
       }
 

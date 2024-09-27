@@ -1235,7 +1235,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       if (this.player.openContainer.windowId == var1.getWindowId() && this.player.openContainer.getCanCraft(this.player)) {
          if (!this.player.isSpectator()) {
             ItemStack var4 = this.player.openContainer.slotClick(var1.getSlotId(), var1.getUsedButton(), var1.getClickType(), this.player);
-            if (!ItemStack.areItemStacksEqual1(var1.getClickedItem(), var4)) {
+            if (!ItemStack.areItemStacksEqual(var1.getClickedItem(), var4)) {
                this.field23233.put(this.player.openContainer.windowId, var1.getActionNumber());
                this.player.field4855.sendPacket(new SConfirmTransactionPacket(var1.getWindowId(), var1.getActionNumber(), false));
                this.player.openContainer.setCanCraft(this.player, false);

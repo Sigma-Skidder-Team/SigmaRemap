@@ -185,7 +185,7 @@ public class Class5837 extends Container {
             var9.add(var10);
          }
 
-         if (!ItemStack.areItemStacksEqual1(var5, this.field25570.getStack())) {
+         if (!ItemStack.areItemStacksEqual(var5, this.field25570.getStack())) {
             this.field25570.putStack(var5);
          }
       }

@@ -82,7 +82,7 @@ public class Class5836 extends Container {
                this.detectAndSendChanges();
             }
 
-            if (!ItemStack.areItemStacksEqual1(var10, var3)) {
+            if (!ItemStack.areItemStacksEqual(var10, var3)) {
                this.field25563.setInventorySlotContents(2, var10);
                this.detectAndSendChanges();
             }

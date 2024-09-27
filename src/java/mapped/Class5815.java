@@ -85,7 +85,7 @@ public class Class5815 extends Container {
             var13 = Math.max(var15.getMaxDamage() - var12, 0);
             var14 = this.method18167(var3, var4);
             if (!var14.method32115()) {
-               if (!ItemStack.areItemStacksEqual1(var3, var4)) {
+               if (!ItemStack.areItemStacksEqual(var3, var4)) {
                   this.field25483.setInventorySlotContents(0, ItemStack.EMPTY);
                   this.detectAndSendChanges();
                   return;

@@ -314,7 +314,7 @@ public class ItemFrameEntity extends Class995 {
          }
 
          ItemStack var6 = this.method4090();
-         if (!var6.isEmpty() && !ItemStack.areItemStacksEqual1(var5, var6)) {
+         if (!var6.isEmpty() && !ItemStack.areItemStacksEqual(var5, var6)) {
             this.method4089(var6);
          }
 

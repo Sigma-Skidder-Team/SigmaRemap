@@ -2241,7 +2241,7 @@ public abstract class LivingEntity extends Entity {
          }
 
          ItemStack var9 = this.getItemStackFromSlot(var7);
-         if (!ItemStack.areItemStacksEqual1(var9, var8)) {
+         if (!ItemStack.areItemStacksEqual(var9, var8)) {
             if (var3 == null) {
                var3 = Maps.newEnumMap(EquipmentSlotType.class);
             }
@@ -2265,8 +2265,8 @@ public abstract class LivingEntity extends Entity {
       ItemStack var5 = (ItemStack)var1.get(EquipmentSlotType.OFFHAND);
       if (var4 != null
          && var5 != null
-         && ItemStack.areItemStacksEqual1(var4, this.getItemInHand(EquipmentSlotType.OFFHAND))
-         && ItemStack.areItemStacksEqual1(var5, this.getItemInHand(EquipmentSlotType.MAINHAND))) {
+         && ItemStack.areItemStacksEqual(var4, this.getItemInHand(EquipmentSlotType.OFFHAND))
+         && ItemStack.areItemStacksEqual(var5, this.getItemInHand(EquipmentSlotType.MAINHAND))) {
          ((ServerWorld)this.world).getChunkProvider().sendToTrackingAndSelf(this, new SEntityStatusPacket(this, (byte)55));
          var1.remove(EquipmentSlotType.MAINHAND);
          var1.remove(EquipmentSlotType.OFFHAND);
