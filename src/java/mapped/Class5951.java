@@ -35,7 +35,7 @@ public class Class5951 extends Class5942<Class934> {
       float var14 = MathHelper.method37807(var12 + 0.75F) * 1.6F - 0.3F;
       float var15 = MathHelper.lerp(var2, var1.field5287, var1.field5286);
       this.field25951.method11177(var9, MathHelper.clamp(var13, 0.0F, 1.0F), MathHelper.clamp(var14, 0.0F, 1.0F), var15);
-      Class5422 var16 = field25950.method26200(var4, RenderType::getEntitySolid);
+      IVertexBuilder var16 = field25950.method26200(var4, RenderType::getEntitySolid);
       this.field25951.method11176(var3, var16, var5, var6, 1.0F, 1.0F, 1.0F, 1.0F);
       var3.pop();
    }

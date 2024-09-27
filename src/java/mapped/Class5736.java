@@ -13,7 +13,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.optifine.Config;
 import net.optifine.shaders.Shaders;
 
-public class Class5736 extends Class5715<ItemFrameEntity> {
+public class Class5736 extends EntityRenderer<ItemFrameEntity> {
    private static final Class1997 field25153 = new Class1997("item_frame", "map=false");
    private static final Class1997 field25154 = new Class1997("item_frame", "map=true");
    private final Minecraft field25155 = Minecraft.getInstance();
@@ -25,11 +25,11 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
       this.field25156 = var2;
    }
 
-   public void method17853(ItemFrameEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      super.method17853(var1, var2, var3, var4, var5, var6);
+   public void render(ItemFrameEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+      super.render(var1, var2, var3, var4, var5, var6);
       var4.push();
       Direction var9 = var1.method3386();
-      Vector3d var10 = this.method17867(var1, var3);
+      Vector3d var10 = this.getRenderOffset(var1, var3);
       var4.translate(-var10.getX(), -var10.getY(), -var10.getZ());
       double var11 = 0.46875;
       var4.translate((double)var9.method539() * 0.46875, (double)var9.method540() * 0.46875, (double)var9.method541() * 0.46875);
@@ -91,7 +91,7 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
       var4.pop();
    }
 
-   public Vector3d method17867(ItemFrameEntity var1, float var2) {
+   public Vector3d getRenderOffset(ItemFrameEntity var1, float var2) {
       return new Vector3d((double)((float)var1.method3386().method539() * 0.3F), -0.25, (double)((float)var1.method3386().method541() * 0.3F));
    }
 

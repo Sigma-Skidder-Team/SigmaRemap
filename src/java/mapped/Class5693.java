@@ -10,7 +10,7 @@ public class Class5693 extends Class5651<WitherEntity, Class2881<WitherEntity>> 
 
    public Class5693(EntityRendererManager var1) {
       super(var1, new Class2881<WitherEntity>(0.0F), 1.0F);
-      this.method17880(new Class224(this));
+      this.addLayer(new Class224(this));
    }
 
    public int method17858(WitherEntity var1, BlockPos var2) {

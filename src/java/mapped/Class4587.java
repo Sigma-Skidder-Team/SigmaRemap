@@ -113,7 +113,7 @@ public abstract class Class4587 {
       }
    }
 
-   public abstract void method14510(Class5422 var1, ActiveRenderInfo var2, float var3);
+   public abstract void method14510(IVertexBuilder var1, ActiveRenderInfo var2, float var3);
 
    public abstract Class6843 method14501();
 

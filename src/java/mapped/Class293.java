@@ -52,8 +52,8 @@ public class Class293 extends Class290 {
          Class9336.method35336(this.getGlTextureId(), var1, var2, var3, this.field1138, this.field1137, this.method1135());
       }
 
-      if (Class8564.method30588()) {
-         Class8564.method30607(this.field1137, this);
+      if (EmissiveTextures.isActive()) {
+         EmissiveTextures.method30607(this.field1137, this);
       }
    }
 

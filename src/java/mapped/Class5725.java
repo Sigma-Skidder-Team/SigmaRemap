@@ -5,7 +5,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Quaternion;
 
-public class Class5725 extends Class5715<BoatEntity> {
+public class Class5725 extends EntityRenderer<BoatEntity> {
    private static final ResourceLocation[] field25131 = new ResourceLocation[]{
       new ResourceLocation("textures/entity/boat/oak.png"),
       new ResourceLocation("textures/entity/boat/spruce.png"),
@@ -18,10 +18,10 @@ public class Class5725 extends Class5715<BoatEntity> {
 
    public Class5725(EntityRendererManager var1) {
       super(var1);
-      this.field25098 = 0.8F;
+      this.shadowSize = 0.8F;
    }
 
-   public void method17853(BoatEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(BoatEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
       var4.translate(0.0, 0.375, 0.0);
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F - var2));
@@ -42,16 +42,16 @@ public class Class5725 extends Class5715<BoatEntity> {
 
       var4.method35292(-1.0F, -1.0F, 1.0F);
       var4.rotate(Vector3f.YP.rotationDegrees(90.0F));
-      this.field25132.method10998(var1, var3, 0.0F, -0.1F, 0.0F, 0.0F);
-      Class5422 var12 = var5.method25597(this.field25132.method11028(this.method17843(var1)));
+      this.field25132.setRotationAngles(var1, var3, 0.0F, -0.1F, 0.0F, 0.0F);
+      IVertexBuilder var12 = var5.method25597(this.field25132.method11028(this.method17843(var1)));
       this.field25132.method11016(var4, var12, var6, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
       if (!var1.canSwim()) {
-         Class5422 var13 = var5.method25597(RenderType.method14328());
-         this.field25132.method11199().method22680(var4, var13, var6, Class213.field798);
+         IVertexBuilder var13 = var5.method25597(RenderType.method14328());
+         this.field25132.method11199().render(var4, var13, var6, Class213.field798);
       }
 
       var4.pop();
-      super.method17853(var1, var2, var3, var4, var5, var6);
+      super.render(var1, var2, var3, var4, var5, var6);
    }
 
    public ResourceLocation method17843(BoatEntity var1) {

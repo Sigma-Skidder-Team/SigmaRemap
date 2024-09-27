@@ -15,10 +15,10 @@ public class Class4100 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2844) {
          Class2844 var5 = (Class2844)var1;
-         return !var2.equals("head") ? null : (Class7219) Reflector.field43102.method20235(var5);
+         return !var2.equals("head") ? null : (ModelRenderer) Reflector.field43102.method20235(var5);
       } else {
          return null;
       }

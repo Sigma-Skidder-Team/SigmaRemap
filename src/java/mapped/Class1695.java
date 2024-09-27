@@ -43,7 +43,7 @@ public class Class1695 implements AutoCloseable {
       boolean var8 = false;
       float var9 = 0.0F;
       Matrix4f var10 = var1.getLast().getMatrix();
-      Class5422 var11 = var2.method25597(this.field9233);
+      IVertexBuilder var11 = var2.method25597(this.field9233);
       var11.pos(var10, 0.0F, 128.0F, -0.01F).color(255, 255, 255, 255).tex(0.0F, 1.0F).method17034(var4).endVertex();
       var11.pos(var10, 128.0F, 128.0F, -0.01F).color(255, 255, 255, 255).tex(1.0F, 1.0F).method17034(var4).endVertex();
       var11.pos(var10, 128.0F, 0.0F, -0.01F).color(255, 255, 255, 255).tex(1.0F, 0.0F).method17034(var4).endVertex();
@@ -64,7 +64,7 @@ public class Class1695 implements AutoCloseable {
             float var19 = (float)(var15 / 16 + 1) / 16.0F;
             Matrix4f var20 = var1.getLast().getMatrix();
             float var21 = -0.001F;
-            Class5422 var22 = var2.method25597(Class194.method599());
+            IVertexBuilder var22 = var2.method25597(Class194.method599());
             var22.pos(var20, -1.0F, 1.0F, (float)var12 * -0.001F)
                .color(255, 255, 255, 255)
                .tex(var16, var17)

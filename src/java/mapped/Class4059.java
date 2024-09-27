@@ -19,7 +19,7 @@ public class Class4059 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2849) {
          Class2849 var5 = (Class2849)var1;
          if (!var2.equals("cube")) {
@@ -44,7 +44,7 @@ public class Class4059 extends Class4057 {
    @Override
    public Class9492 method12825(Class2828 var1, float var2) {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
-      Class5715 var6 = var5.method32232().get(EntityType.field41023);
+      EntityRenderer var6 = var5.method32232().get(EntityType.field41023);
       if (var6 instanceof Class5723) {
          Class5723 var7 = (Class5723)var6;
          if (var7.method17898() == null) {
@@ -54,7 +54,7 @@ public class Class4059 extends Class4057 {
          if (var1 instanceof Class2849) {
             Class2849 var8 = (Class2849)var1;
             var7 = var8.method11175(var7);
-            var7.field25098 = var2;
+            var7.shadowSize = var2;
             return (Class9492)var7;
          } else {
             Config.method26811("Not a EnderCrystalModel model: " + var1);

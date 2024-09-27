@@ -8,33 +8,33 @@ public abstract class Class4117 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
-      if (var1 instanceof Class2797) {
-         Class2797 var5 = (Class2797)var1;
+   public ModelRenderer method12823(Class2828 var1, String var2) {
+      if (var1 instanceof BipedModel) {
+         BipedModel var5 = (BipedModel)var1;
          if (!var2.equals("head")) {
             if (!var2.equals("headwear")) {
                if (!var2.equals("body")) {
                   if (!var2.equals("left_arm")) {
                      if (!var2.equals("right_arm")) {
                         if (!var2.equals("left_leg")) {
-                           return !var2.equals("right_leg") ? null : var5.field17437;
+                           return !var2.equals("right_leg") ? null : var5.bipedRightLeg;
                         } else {
-                           return var5.field17438;
+                           return var5.bipedLeftLeg;
                         }
                      } else {
-                        return var5.field17435;
+                        return var5.bipedRightArm;
                      }
                   } else {
-                     return var5.field17436;
+                     return var5.bipedLeftArm;
                   }
                } else {
-                  return var5.field17434;
+                  return var5.bipedBody;
                }
             } else {
                return var5.field17433;
             }
          } else {
-            return var5.field17432;
+            return var5.bipedHead;
          }
       } else {
          return null;

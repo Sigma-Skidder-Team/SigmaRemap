@@ -15,25 +15,25 @@ public class Class4111 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2809) {
          Class2809 var5 = (Class2809)var1;
          if (!var2.equals("body")) {
             if (!var2.equals("tail")) {
                if (!var2.equals("fin_right")) {
                   if (!var2.equals("fin_left")) {
-                     return !var2.equals("fin_top") ? null : (Class7219) Reflector.field43116.method36565(var5, 4);
+                     return !var2.equals("fin_top") ? null : (ModelRenderer) Reflector.field43116.method36565(var5, 4);
                   } else {
-                     return (Class7219) Reflector.field43116.method36565(var5, 3);
+                     return (ModelRenderer) Reflector.field43116.method36565(var5, 3);
                   }
                } else {
-                  return (Class7219) Reflector.field43116.method36565(var5, 2);
+                  return (ModelRenderer) Reflector.field43116.method36565(var5, 2);
                }
             } else {
-               return (Class7219) Reflector.field43116.method36565(var5, 1);
+               return (ModelRenderer) Reflector.field43116.method36565(var5, 1);
             }
          } else {
-            return (Class7219) Reflector.field43116.method36565(var5, 0);
+            return (ModelRenderer) Reflector.field43116.method36565(var5, 0);
          }
       } else {
          return null;
@@ -50,9 +50,9 @@ public class Class4111 extends Class4057 {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Object var6 = var5.method32232().get(EntityType.field41095);
       if (var6 instanceof Class5655) {
-         if (((Class5715)var6).method17898() == null) {
+         if (((EntityRenderer)var6).method17898() == null) {
             Class5655 var7 = new Class5655(var5);
-            var7.field25098 = var2;
+            var7.shadowSize = var2;
             var6 = var7;
          }
 

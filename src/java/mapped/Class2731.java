@@ -27,7 +27,7 @@ public class Class2731 extends Class2595 {
    public boolean method10803() {
       if (this.field17247 <= 0) {
          this.field17246 = this.field17244.world.method7188(field17243, this.field17244);
-         return this.field17246 == null ? false : this.method10942(this.field17246.getHeldItemMainhand()) || this.method10942(this.field17246.method3091());
+         return this.field17246 == null ? false : this.method10942(this.field17246.getHeldItemMainhand()) || this.method10942(this.field17246.getHeldItemOffhand());
       } else {
          this.field17247--;
          return false;

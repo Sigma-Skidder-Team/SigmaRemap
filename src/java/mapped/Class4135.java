@@ -19,10 +19,10 @@ public class Class4135 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2818) {
          Class2818 var5 = (Class2818)var1;
-         Class7219[] var6 = (Class7219[]) Reflector.field43071.method20235(var5);
+         ModelRenderer[] var6 = (ModelRenderer[]) Reflector.field43071.method20235(var5);
          if (var6 != null) {
             if (var2.equals("bottom")) {
                return var6[0];
@@ -66,7 +66,7 @@ public class Class4135 extends Class4057 {
       Class5732 var6 = new Class5732(var5);
       if (Reflector.field43144.method20238()) {
          Reflector.method35082(var6, Reflector.field43144, var1);
-         var6.field25098 = var2;
+         var6.shadowSize = var2;
          return (Class9492)var6;
       } else {
          Config.method26811("Field not found: RenderMinecart.modelMinecart");

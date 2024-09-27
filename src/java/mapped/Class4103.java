@@ -15,10 +15,10 @@ public class Class4103 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2889) {
          Class2889 var5 = (Class2889)var1;
-         return !var2.equals("knot") ? null : (Class7219) Reflector.field43065.method20235(var5);
+         return !var2.equals("knot") ? null : (ModelRenderer) Reflector.field43065.method20235(var5);
       } else {
          return null;
       }
@@ -35,7 +35,7 @@ public class Class4103 extends Class4057 {
       Class5739 var6 = new Class5739(var5);
       if (Reflector.field43067.method20238()) {
          Reflector.method35082(var6, Reflector.field43067, var1);
-         var6.field25098 = var2;
+         var6.shadowSize = var2;
          return (Class9492)var6;
       } else {
          Config.method26811("Field not found: RenderLeashKnot.leashKnotModel");

@@ -44,7 +44,7 @@ public class Class1125 extends ContainerScreen<Class5827> {
          }
       }
 
-      InventoryScreen.method2635(var7 + 51, var8 + 60, 17, (float)(var7 + 51) - this.field6163, (float)(var8 + 75 - 50) - this.field6164, this.field6162);
+      InventoryScreen.drawEntityOnScreen(var7 + 51, var8 + 60, 17, (float)(var7 + 51) - this.field6163, (float)(var8 + 75 - 50) - this.field6164, this.field6162);
    }
 
    @Override

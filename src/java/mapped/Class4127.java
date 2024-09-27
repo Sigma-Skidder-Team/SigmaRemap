@@ -21,7 +21,7 @@ public class Class4127 extends Class4117 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2895) {
          Class2895 var5 = (Class2895)var1;
          if (var2.equals("left_ear")) {
@@ -49,7 +49,7 @@ public class Class4127 extends Class4117 {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5671 var6 = new Class5671(var5, false);
       var6.field25086 = (Class2895<MobEntity>)var1;
-      var6.field25098 = var2;
+      var6.shadowSize = var2;
       return (Class9492)var6;
    }
 }

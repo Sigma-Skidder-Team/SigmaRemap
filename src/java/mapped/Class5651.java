@@ -8,7 +8,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.optifine.Config;
 import net.optifine.shaders.Shaders;
 
-public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> extends Class5712<T, M> {
+public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> extends LivingRenderer<T, M> {
    public Class5651(EntityRendererManager var1, M var2, float var3) {
       super(var1, (M)var2, var3);
    }
@@ -26,8 +26,8 @@ public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> ext
       }
    }
 
-   public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      super.method17853((T)var1, var2, var3, var4, var5, var6);
+   public void render(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+      super.render((T)var1, var2, var3, var4, var5, var6);
       Entity var9 = var1.method4297();
       if (var9 != null) {
          this.method17847((T)var1, var3, var4, var5, var9);
@@ -50,7 +50,7 @@ public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> ext
          float var23 = (float)(var8.y - var18);
          float var24 = (float)(var8.z - var20);
          float var25 = 0.025F;
-         Class5422 var26 = var4.method25597(RenderType.method14327());
+         IVertexBuilder var26 = var4.method25597(RenderType.method14327());
          Matrix4f var27 = var3.getLast().getMatrix();
          float var28 = MathHelper.method37815(var22 * var22 + var24 * var24) * 0.025F / 2.0F;
          float var29 = var24 * var28;
@@ -58,7 +58,7 @@ public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> ext
          BlockPos var31 = new BlockPos(var1.getEyePosition(var2));
          BlockPos var32 = new BlockPos(var5.getEyePosition(var2));
          int var33 = this.method17858((T)var1, var31);
-         int var34 = this.field25097.<Entity>method32212(var5).method17858(var5, var32);
+         int var34 = this.field25097.<Entity>getRenderer(var5).method17858(var5, var32);
          int var35 = var1.world.method7020(Class1977.field12881, var31);
          int var36 = var1.world.method7020(Class1977.field12881, var32);
          if (Config.isShaders()) {
@@ -76,7 +76,7 @@ public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> ext
    }
 
    public static void method17848(
-      Class5422 var0,
+      IVertexBuilder var0,
       Matrix4f var1,
       float var2,
       float var3,
@@ -103,7 +103,7 @@ public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> ext
    }
 
    public static void method17849(
-      Class5422 var0,
+      IVertexBuilder var0,
       Matrix4f var1,
       int var2,
       float var3,

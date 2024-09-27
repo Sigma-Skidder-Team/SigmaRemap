@@ -6,7 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 
-public class Class5735<T extends Entity & Class889> extends Class5715<T> {
+public class Class5735<T extends Entity & Class889> extends EntityRenderer<T> {
    private static String[] field25149;
    private final ItemRenderer field25150;
    private final float field25151;
@@ -29,15 +29,15 @@ public class Class5735<T extends Entity & Class889> extends Class5715<T> {
    }
 
    @Override
-   public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      if (var1.ticksExisted >= 2 || !(this.field25097.field40017.getRenderViewEntity().getDistanceSq(var1) < 12.25)) {
+   public void render(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+      if (var1.ticksExisted >= 2 || !(this.field25097.info.getRenderViewEntity().getDistanceSq(var1) < 12.25)) {
          var4.push();
          var4.method35292(this.field25151, this.field25151, this.field25151);
          var4.rotate(this.field25097.method32230());
          var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
          this.field25150.method789(((Class889)var1).method3509(), Class2327.field15931, var6, Class213.field798, var4, var5);
          var4.pop();
-         super.method17853((T)var1, var2, var3, var4, var5, var6);
+         super.render((T)var1, var2, var3, var4, var5, var6);
       }
    }
 

@@ -1,10 +1,10 @@
 package mapped;
 
-public class Class5423 implements Class5422 {
-   private final Class5422 field24106;
-   private final Class5422 field24107;
+public class Class5423 implements IVertexBuilder {
+   private final IVertexBuilder field24106;
+   private final IVertexBuilder field24107;
 
-   public Class5423(Class5422 var1, Class5422 var2) {
+   public Class5423(IVertexBuilder var1, IVertexBuilder var2) {
       if (var1 != var2) {
          this.field24106 = var1;
          this.field24107 = var2;
@@ -14,42 +14,42 @@ public class Class5423 implements Class5422 {
    }
 
    @Override
-   public Class5422 pos(double var1, double var3, double var5) {
+   public IVertexBuilder pos(double var1, double var3, double var5) {
       this.field24106.pos(var1, var3, var5);
       this.field24107.pos(var1, var3, var5);
       return this;
    }
 
    @Override
-   public Class5422 color(int var1, int var2, int var3, int var4) {
+   public IVertexBuilder color(int var1, int var2, int var3, int var4) {
       this.field24106.color(var1, var2, var3, var4);
       this.field24107.color(var1, var2, var3, var4);
       return this;
    }
 
    @Override
-   public Class5422 tex(float var1, float var2) {
+   public IVertexBuilder tex(float var1, float var2) {
       this.field24106.tex(var1, var2);
       this.field24107.tex(var1, var2);
       return this;
    }
 
    @Override
-   public Class5422 method17028(int var1, int var2) {
+   public IVertexBuilder method17028(int var1, int var2) {
       this.field24106.method17028(var1, var2);
       this.field24107.method17028(var1, var2);
       return this;
    }
 
    @Override
-   public Class5422 method17029(int var1, int var2) {
+   public IVertexBuilder method17029(int var1, int var2) {
       this.field24106.method17029(var1, var2);
       this.field24107.method17029(var1, var2);
       return this;
    }
 
    @Override
-   public Class5422 method17030(float var1, float var2, float var3) {
+   public IVertexBuilder method17030(float var1, float var2, float var3) {
       this.field24106.method17030(var1, var2, var3);
       this.field24107.method17030(var1, var2, var3);
       return this;

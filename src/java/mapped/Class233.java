@@ -6,10 +6,10 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 
-public class Class233<T extends LivingEntity, M extends Class2894<T>> extends Class231<T, M> {
+public class Class233<T extends LivingEntity, M extends PlayerModel<T>> extends Class231<T, M> {
    private static final ResourceLocation field879 = new ResourceLocation("textures/entity/bee/bee_stinger.png");
 
-   public Class233(Class5712<T, M> var1) {
+   public Class233(LivingRenderer<T, M> var1) {
       super(var1);
    }
 
@@ -34,7 +34,7 @@ public class Class233<T extends LivingEntity, M extends Class2894<T>> extends Cl
       var1.rotate(Vector3f.XP.rotationDegrees(45.0F));
       var1.method35292(0.03125F, 0.03125F, 0.03125F);
       var1.translate(2.5, 0.0, 0.0);
-      Class5422 var19 = var2.method25597(RenderType.getEntityCutoutNoCull(field879));
+      IVertexBuilder var19 = var2.method25597(RenderType.getEntityCutoutNoCull(field879));
 
       for (int var20 = 0; var20 < 4; var20++) {
          var1.rotate(Vector3f.XP.rotationDegrees(90.0F));
@@ -48,7 +48,7 @@ public class Class233<T extends LivingEntity, M extends Class2894<T>> extends Cl
       }
    }
 
-   private static void method837(Class5422 var0, Matrix4f var1, Class8967 var2, float var3, int var4, float var5, float var6, int var7) {
+   private static void method837(IVertexBuilder var0, Matrix4f var1, Class8967 var2, float var3, int var4, float var5, float var6, int var7) {
       var0.pos(var1, var3, (float)var4, 0.0F)
          .color(255, 255, 255, 255)
          .tex(var5, var6)

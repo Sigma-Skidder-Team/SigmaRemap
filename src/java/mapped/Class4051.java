@@ -8,7 +8,7 @@ public abstract class Class4051 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2866) {
          Class2866 var5 = (Class2866)var1;
          if (!var2.equals("head")) {
@@ -16,21 +16,21 @@ public abstract class Class4051 extends Class4057 {
                if (!var2.equals("leg1")) {
                   if (!var2.equals("leg2")) {
                      if (!var2.equals("leg3")) {
-                        return !var2.equals("leg4") ? null : (Class7219) Reflector.field43088.method36565(var5, 5);
+                        return !var2.equals("leg4") ? null : (ModelRenderer) Reflector.field43088.method36565(var5, 5);
                      } else {
-                        return (Class7219) Reflector.field43088.method36565(var5, 4);
+                        return (ModelRenderer) Reflector.field43088.method36565(var5, 4);
                      }
                   } else {
-                     return (Class7219) Reflector.field43088.method36565(var5, 3);
+                     return (ModelRenderer) Reflector.field43088.method36565(var5, 3);
                   }
                } else {
-                  return (Class7219) Reflector.field43088.method36565(var5, 2);
+                  return (ModelRenderer) Reflector.field43088.method36565(var5, 2);
                }
             } else {
-               return (Class7219) Reflector.field43088.method36565(var5, 1);
+               return (ModelRenderer) Reflector.field43088.method36565(var5, 1);
             }
          } else {
-            return (Class7219) Reflector.field43088.method36565(var5, 0);
+            return (ModelRenderer) Reflector.field43088.method36565(var5, 0);
          }
       } else {
          return null;

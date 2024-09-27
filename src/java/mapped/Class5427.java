@@ -4,7 +4,7 @@ import net.minecraft.util.Direction;
 
 public class Class5427 extends Class5424 {
    private static String[] field24143;
-   private final Class5422 field24144;
+   private final IVertexBuilder field24144;
    private final Matrix4f field24145;
    private final Class8967 field24146;
    private float field24147;
@@ -17,7 +17,7 @@ public class Class5427 extends Class5424 {
    private float field24154;
    private float field24155;
 
-   public Class5427(Class5422 var1, Matrix4f var2, Class8967 var3) {
+   public Class5427(IVertexBuilder var1, Matrix4f var2, Class8967 var3) {
       this.field24144 = var1;
       this.field24145 = var2.method35514();
       this.field24145.method35507();
@@ -62,7 +62,7 @@ public class Class5427 extends Class5424 {
    }
 
    @Override
-   public Class5422 pos(double var1, double var3, double var5) {
+   public IVertexBuilder pos(double var1, double var3, double var5) {
       this.field24147 = (float)var1;
       this.field24148 = (float)var3;
       this.field24149 = (float)var5;
@@ -70,30 +70,30 @@ public class Class5427 extends Class5424 {
    }
 
    @Override
-   public Class5422 color(int var1, int var2, int var3, int var4) {
+   public IVertexBuilder color(int var1, int var2, int var3, int var4) {
       return this;
    }
 
    @Override
-   public Class5422 tex(float var1, float var2) {
+   public IVertexBuilder tex(float var1, float var2) {
       return this;
    }
 
    @Override
-   public Class5422 method17028(int var1, int var2) {
+   public IVertexBuilder method17028(int var1, int var2) {
       this.field24150 = var1;
       this.field24151 = var2;
       return this;
    }
 
    @Override
-   public Class5422 method17029(int var1, int var2) {
+   public IVertexBuilder method17029(int var1, int var2) {
       this.field24152 = var1 | var2 << 16;
       return this;
    }
 
    @Override
-   public Class5422 method17030(float var1, float var2, float var3) {
+   public IVertexBuilder method17030(float var1, float var2, float var3) {
       this.field24153 = var1;
       this.field24154 = var2;
       this.field24155 = var3;

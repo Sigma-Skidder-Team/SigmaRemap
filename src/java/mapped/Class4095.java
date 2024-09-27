@@ -15,10 +15,10 @@ public class Class4095 extends Class4094 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2891) {
          Class2891 var5 = (Class2891)var1;
-         return !var2.equals("mole") ? super.method12823(var5, var2) : (Class7219) Reflector.method35072(var5, Reflector.field43127);
+         return !var2.equals("mole") ? super.method12823(var5, var2) : (ModelRenderer) Reflector.method35072(var5, Reflector.field43127);
       } else {
          return null;
       }
@@ -35,7 +35,7 @@ public class Class4095 extends Class4094 {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5708 var6 = new Class5708(var5);
       var6.field25086 = (Class2891<Class1027>)var1;
-      var6.field25098 = var2;
+      var6.shadowSize = var2;
       return (Class9492)var6;
    }
 }

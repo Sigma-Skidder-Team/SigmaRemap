@@ -1038,7 +1038,7 @@ public abstract class Entity implements INameable, ICommandSource {
    }
 
    public boolean method3261() {
-      return this.isSprinting() && !this.isInWater() && !this.isSpectator() && !this.method3336() && !this.isInLava() && this.isAlive();
+      return this.isSprinting() && !this.isInWater() && !this.isSpectator() && !this.isCrouching() && !this.isInLava() && this.isAlive();
    }
 
    public void method3262() {
@@ -1822,7 +1822,7 @@ public abstract class Entity implements INameable, ICommandSource {
       return this.isSneaking();
    }
 
-   public boolean method3336() {
+   public boolean isCrouching() {
       return this.getPose() == Pose.field13624;
    }
 

@@ -75,7 +75,7 @@ public class Class5941 extends Class5942<Class964> {
             float var31 = 1.0F;
             float var32 = 0.9F;
             float var33 = 0.5F;
-            Class5422 var34 = var4.method25597(RenderType.method14345());
+            IVertexBuilder var34 = var4.method25597(RenderType.getLines());
             if (var1.method3950() == Class104.field318 || var1.method3975()) {
                WorldRenderer.method899(var3, var34, var23, var15, var25, var27, var17, var29, 0.9F, 0.9F, 0.9F, 1.0F, 0.5F, 0.5F, 0.5F);
             }
@@ -88,7 +88,7 @@ public class Class5941 extends Class5942<Class964> {
       }
    }
 
-   private void method18459(Class964 var1, Class5422 var2, BlockPos var3, boolean var4, MatrixStack var5) {
+   private void method18459(Class964 var1, IVertexBuilder var2, BlockPos var3, boolean var4, MatrixStack var5) {
       World var8 = var1.method3734();
       BlockPos var9 = var1.getPos();
       BlockPos var10 = var9.method8337(var3);

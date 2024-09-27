@@ -106,8 +106,8 @@ public class BowItem extends Class3262 implements IVanishable {
    }
 
    @Override
-   public Class2103 method11727(ItemStack var1) {
-      return Class2103.field13710;
+   public UseAction method11727(ItemStack var1) {
+      return UseAction.BOW;
    }
 
    @Override

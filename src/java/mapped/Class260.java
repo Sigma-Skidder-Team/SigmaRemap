@@ -15,7 +15,7 @@ public class Class260 extends Class219<Class1021, Class2878<Class1021>> {
    public void method820(MatrixStack var1, Class7733 var2, int var3, Class1021 var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (!var4.isInvisible() && var4.method4531()) {
          var1.push();
-         this.method825().method11197().method22682(var1);
+         this.method825().method11197().translateRotate(var1);
          float var13 = 0.625F;
          var1.translate(0.0, -0.34375, 0.0);
          var1.rotate(Vector3f.YP.rotationDegrees(180.0F));
@@ -23,7 +23,7 @@ public class Class260 extends Class219<Class1021, Class2878<Class1021>> {
          ItemStack var14 = new ItemStack(Blocks.field36589);
          Minecraft.getInstance()
             .getItemRenderer()
-            .method790(var4, var14, Class2327.field15929, false, var1, var2, var4.world, var3, Class5712.method17883(var4, 0.0F));
+            .method790(var4, var14, Class2327.field15929, false, var1, var2, var4.world, var3, LivingRenderer.method17883(var4, 0.0F));
          var1.pop();
       }
    }

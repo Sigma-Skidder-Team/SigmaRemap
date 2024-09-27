@@ -31,20 +31,20 @@ public class Class5947 extends Class5942<Class954> {
          float var11 = -var9.<Direction>method23463(Class3375.field18972).method551();
          var3.rotate(Vector3f.YP.rotationDegrees(var11));
          var3.translate(0.0, -0.3125, -0.4375);
-         this.field25938.field17651.field31039 = false;
+         this.field25938.field17651.showModel = false;
       } else {
          var3.translate(0.5, 0.5, 0.5);
          float var26 = -((float)(var9.<Integer>method23463(Class3374.field18970) * 360) / 16.0F);
          var3.rotate(Vector3f.YP.rotationDegrees(var26));
-         this.field25938.field17651.field31039 = true;
+         this.field25938.field17651.showModel = true;
       }
 
       var3.push();
       var3.method35292(0.6666667F, -0.6666667F, -0.6666667F);
       Class7826 var27 = method18473(var9.getBlock());
-      Class5422 var12 = var27.method26200(var4, this.field25938::method11028);
-      this.field25938.field17650.method22680(var3, var12, var5, var6);
-      this.field25938.field17651.method22680(var3, var12, var5, var6);
+      IVertexBuilder var12 = var27.method26200(var4, this.field25938::method11028);
+      this.field25938.field17650.render(var3, var12, var5, var6);
+      this.field25938.field17651.render(var3, var12, var5, var6);
       var3.pop();
       if (method18474(var1)) {
          FontRenderer var13 = this.field25928.method27967();

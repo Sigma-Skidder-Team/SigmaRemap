@@ -7,17 +7,17 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 
-public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
+public class Class5732<T extends AbstractMinecartEntity> extends EntityRenderer<T> {
    private static final ResourceLocation field25143 = new ResourceLocation("textures/entity/minecart.png");
    public final Class2827<T> field25144 = new Class2818<T>();
 
    public Class5732(EntityRendererManager var1) {
       super(var1);
-      this.field25098 = 0.7F;
+      this.shadowSize = 0.7F;
    }
 
-   public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      super.method17853((T)var1, var2, var3, var4, var5, var6);
+   public void render(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+      super.render((T)var1, var2, var3, var4, var5, var6);
       var4.push();
       long var9 = (long)var1.getEntityId() * 493286711L;
       var9 = var9 * var9 * 4392167121L + var9 * 98761L;
@@ -77,8 +77,8 @@ public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
       }
 
       var4.method35292(-1.0F, -1.0F, 1.0F);
-      this.field25144.method10998((T)var1, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F);
-      Class5422 var34 = var5.method25597(this.field25144.method11028(this.method17843((T)var1)));
+      this.field25144.setRotationAngles((T)var1, 0.0F, 0.0F, -0.1F, 0.0F, 0.0F);
+      IVertexBuilder var34 = var5.method25597(this.field25144.method11028(this.method17843((T)var1)));
       this.field25144.method11016(var4, var34, var6, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
       var4.pop();
    }

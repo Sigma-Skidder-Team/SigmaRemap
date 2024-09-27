@@ -13,7 +13,7 @@ public class Class4078 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2850) {
          Class2850 var5 = (Class2850)var1;
          if (!var2.equals("cover_right")) {
@@ -22,24 +22,24 @@ public class Class4078 extends Class4057 {
                   if (!var2.equals("pages_left")) {
                      if (!var2.equals("flipping_page_right")) {
                         if (!var2.equals("flipping_page_left")) {
-                           return !var2.equals("book_spine") ? null : (Class7219) Reflector.field43031.method36565(var5, 6);
+                           return !var2.equals("book_spine") ? null : (ModelRenderer) Reflector.field43031.method36565(var5, 6);
                         } else {
-                           return (Class7219) Reflector.field43031.method36565(var5, 5);
+                           return (ModelRenderer) Reflector.field43031.method36565(var5, 5);
                         }
                      } else {
-                        return (Class7219) Reflector.field43031.method36565(var5, 4);
+                        return (ModelRenderer) Reflector.field43031.method36565(var5, 4);
                      }
                   } else {
-                     return (Class7219) Reflector.field43031.method36565(var5, 3);
+                     return (ModelRenderer) Reflector.field43031.method36565(var5, 3);
                   }
                } else {
-                  return (Class7219) Reflector.field43031.method36565(var5, 2);
+                  return (ModelRenderer) Reflector.field43031.method36565(var5, 2);
                }
             } else {
-               return (Class7219) Reflector.field43031.method36565(var5, 1);
+               return (ModelRenderer) Reflector.field43031.method36565(var5, 1);
             }
          } else {
-            return (Class7219) Reflector.field43031.method36565(var5, 0);
+            return (ModelRenderer) Reflector.field43031.method36565(var5, 0);
          }
       } else {
          return null;

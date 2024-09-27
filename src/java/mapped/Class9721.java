@@ -212,13 +212,13 @@ public class Class9721 {
                   2,
                   new Class5391[]{new Class5396(Items.field37868, 26, 12, 10), new Class5395(Items.BOW, 2, 1, 5)},
                   3,
-                  new Class5391[]{new Class5396(Items.field37838, 14, 16, 20), new Class5395(Items.field38148, 3, 1, 10)},
+                  new Class5391[]{new Class5396(Items.field37838, 14, 16, 20), new Class5395(Items.CROSSBOW, 3, 1, 10)},
                   4,
                   new Class5391[]{new Class5396(Items.field37839, 24, 16, 30), new Class5392(Items.BOW, 2, 3, 15)},
                   5,
                   new Class5391[]{
                      new Class5396(Items.field37500, 8, 12, 30),
-                     new Class5392(Items.field38148, 3, 3, 15),
+                     new Class5392(Items.CROSSBOW, 3, 3, 15),
                      new Class5400(Items.field37797, 5, Items.field38117, 5, 2, 12, 30)
                   }
                )

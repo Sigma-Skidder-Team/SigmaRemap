@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 
-public class Class5738 extends Class5715<Class904> {
+public class Class5738 extends EntityRenderer<Class904> {
    private static final ResourceLocation field25159 = new ResourceLocation("textures/entity/fishing_hook.png");
    private static final RenderType field25160 = RenderType.getEntityCutout(field25159);
 
@@ -18,7 +18,7 @@ public class Class5738 extends Class5715<Class904> {
       super(var1);
    }
 
-   public void method17853(Class904 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(Class904 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       PlayerEntity var9 = var1.method3544();
       if (var9 != null) {
          var4.push();
@@ -29,13 +29,13 @@ public class Class5738 extends Class5715<Class904> {
          Class8892 var10 = var4.getLast();
          Matrix4f var11 = var10.getMatrix();
          Class8967 var12 = var10.method32362();
-         Class5422 var13 = var5.method25597(field25160);
+         IVertexBuilder var13 = var5.method25597(field25160);
          method17922(var13, var11, var12, var6, 0.0F, 0, 0, 1);
          method17922(var13, var11, var12, var6, 1.0F, 0, 1, 1);
          method17922(var13, var11, var12, var6, 1.0F, 1, 1, 0);
          method17922(var13, var11, var12, var6, 0.0F, 1, 0, 0);
          var4.pop();
-         int var14 = var9.getPrimaryHand() != HandSide.field14418 ? -1 : 1;
+         int var14 = var9.getPrimaryHand() != HandSide.RIGHT ? -1 : 1;
          ItemStack var15 = var9.getHeldItemMainhand();
          if (var15.getItem() != Items.field37906) {
             var14 = -var14;
@@ -52,8 +52,8 @@ public class Class5738 extends Class5715<Class904> {
          double var29;
          double var31;
          float var36;
-         if ((this.field25097.field40020 == null || this.field25097.field40020.getPointOfView().func_243192_a()) && var9 == Minecraft.getInstance().player) {
-            double var33 = this.field25097.field40020.fov;
+         if ((this.field25097.options == null || this.field25097.options.getPointOfView().func_243192_a()) && var9 == Minecraft.getInstance().player) {
+            double var33 = this.field25097.options.fov;
             var33 /= 100.0;
             Vector3d var35 = new Vector3d((double)var14 * -0.36 * var33, -0.045 * var33, 0.4);
             var35 = var35.method11350(-MathHelper.lerp(var3, var9.prevRotationPitch, var9.rotationPitch) * (float) (Math.PI / 180.0));
@@ -68,7 +68,7 @@ public class Class5738 extends Class5715<Class904> {
             var27 = MathHelper.lerp((double)var3, var9.prevPosX, var9.getPosX()) - var21 * var23 - var19 * 0.8;
             var29 = var9.prevPosY + (double)var9.getEyeHeight() + (var9.getPosY() - var9.prevPosY) * (double)var3 - 0.45;
             var31 = MathHelper.lerp((double)var3, var9.prevPosZ, var9.getPosZ()) - var19 * var23 + var21 * 0.8;
-            var36 = !var9.method3336() ? 0.0F : -0.1875F;
+            var36 = !var9.isCrouching() ? 0.0F : -0.1875F;
          }
 
          double var49 = MathHelper.lerp((double)var3, var1.prevPosX, var1.getPosX());
@@ -77,7 +77,7 @@ public class Class5738 extends Class5715<Class904> {
          float var41 = (float)(var27 - var49);
          float var42 = (float)(var29 - var37) + var36;
          float var43 = (float)(var31 - var39);
-         Class5422 var44 = var5.method25597(RenderType.method14345());
+         IVertexBuilder var44 = var5.method25597(RenderType.getLines());
          Matrix4f var45 = var4.getLast().getMatrix();
          byte var46 = 16;
 
@@ -87,7 +87,7 @@ public class Class5738 extends Class5715<Class904> {
          }
 
          var4.pop();
-         super.method17853(var1, var2, var3, var4, var5, var6);
+         super.render(var1, var2, var3, var4, var5, var6);
       }
    }
 
@@ -95,7 +95,7 @@ public class Class5738 extends Class5715<Class904> {
       return (float)var0 / (float)var1;
    }
 
-   private static void method17922(Class5422 var0, Matrix4f var1, Class8967 var2, int var3, float var4, int var5, int var6, int var7) {
+   private static void method17922(IVertexBuilder var0, Matrix4f var1, Class8967 var2, int var3, float var4, int var5, int var6, int var7) {
       var0.pos(var1, var4 - 0.5F, (float)var5 - 0.5F, 0.0F)
          .color(255, 255, 255, 255)
          .tex((float)var6, (float)var7)
@@ -105,7 +105,7 @@ public class Class5738 extends Class5715<Class904> {
          .endVertex();
    }
 
-   private static void method17923(float var0, float var1, float var2, Class5422 var3, Matrix4f var4, float var5) {
+   private static void method17923(float var0, float var1, float var2, IVertexBuilder var3, Matrix4f var4, float var5) {
       var3.pos(var4, var0 * var5, var1 * (var5 * var5 + var5) * 0.5F + 0.25F, var2 * var5).color(0, 0, 0, 255).endVertex();
    }
 

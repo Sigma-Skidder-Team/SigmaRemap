@@ -1436,7 +1436,7 @@ public abstract class PlayerEntity extends LivingEntity {
                         int var11 = Math.round(MathHelper.sqrt(var1 * var1 + var5 * var5) * 100.0F);
                         if (var11 > 0) {
                            if (!this.isSprinting()) {
-                              if (!this.method3336()) {
+                              if (!this.isCrouching()) {
                                  this.addStat(Stats.field40110, var11);
                                  this.method2931(0.0F * (float)var11 * 0.01F);
                               } else {
@@ -1734,7 +1734,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public Iterable<ItemStack> method2946() {
-      return Lists.newArrayList(new ItemStack[]{this.getHeldItemMainhand(), this.method3091()});
+      return Lists.newArrayList(new ItemStack[]{this.getHeldItemMainhand(), this.getHeldItemOffhand()});
    }
 
    @Override
@@ -1937,11 +1937,11 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public HandSide getPrimaryHand() {
-      return this.dataManager.<Byte>method35445(field4898) != 0 ? HandSide.field14418 : HandSide.field14417;
+      return this.dataManager.<Byte>method35445(field4898) != 0 ? HandSide.RIGHT : HandSide.LEFT;
    }
 
    public void method2968(HandSide var1) {
-      this.dataManager.method35446(field4898, (byte)(var1 != HandSide.field14417 ? 1 : 0));
+      this.dataManager.method35446(field4898, (byte)(var1 != HandSide.LEFT ? 1 : 0));
    }
 
    public CompoundNBT method2969() {
@@ -2057,7 +2057,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public Vector3d getLeashPosition(float var1) {
-      double var4 = 0.22 * (this.getPrimaryHand() != HandSide.field14418 ? 1.0 : -1.0);
+      double var4 = 0.22 * (this.getPrimaryHand() != HandSide.RIGHT ? 1.0 : -1.0);
       float var6 = MathHelper.lerp(var1 * 0.5F, this.rotationPitch, this.prevRotationPitch) * (float) (Math.PI / 180.0);
       float var7 = MathHelper.lerp(var1, this.prevRenderYawOffset, this.renderYawOffset) * (float) (Math.PI / 180.0);
       if (this.isElytraFlying() || this.isSpinAttacking()) {
@@ -2077,7 +2077,7 @@ public abstract class PlayerEntity extends LivingEntity {
          return this.method3288(var1).add(new Vector3d(var4, -0.11, 0.85).method11352(-var14).method11350(-var6).method11351(-var7));
       } else if (!this.isActualySwimming()) {
          double var15 = this.getBoundingBox().method19677() - 1.0;
-         double var10 = !this.method3336() ? 0.07 : -0.2;
+         double var10 = !this.isCrouching() ? 0.07 : -0.2;
          return this.method3288(var1).add(new Vector3d(var4, var15, var10).method11351(-var7));
       } else {
          return this.method3288(var1).add(new Vector3d(var4, 0.2, -0.15).method11350(-var6).method11351(-var7));

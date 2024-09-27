@@ -8,7 +8,7 @@ public class Class5681 extends Class5651<Class1110, Class2806<Class1110>> {
 
    public Class5681(EntityRendererManager var1) {
       super(var1, new Class2806<Class1110>(), 0.75F);
-      this.method17880(new Class229<Class1110>(this));
+      this.addLayer(new Class229<Class1110>(this));
    }
 
    public ResourceLocation method17843(Class1110 var1) {

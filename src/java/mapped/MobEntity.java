@@ -531,7 +531,7 @@ public abstract class MobEntity extends LivingEntity {
          if (!(var1.getItem() instanceof SwordItem)) {
             if (var1.getItem() instanceof BowItem && var2.getItem() instanceof BowItem) {
                return this.method4251(var1, var2);
-            } else if (var1.getItem() instanceof Class3261 && var2.getItem() instanceof Class3261) {
+            } else if (var1.getItem() instanceof CrossbowItem && var2.getItem() instanceof CrossbowItem) {
                return this.method4251(var1, var2);
             } else if (!(var1.getItem() instanceof ArmorItem)) {
                if (var1.getItem() instanceof ToolItem) {
@@ -1334,7 +1334,7 @@ public abstract class MobEntity extends LivingEntity {
 
    @Override
    public HandSide getPrimaryHand() {
-      return !this.method4306() ? HandSide.field14418 : HandSide.field14417;
+      return !this.method4306() ? HandSide.RIGHT : HandSide.LEFT;
    }
 
    @Override

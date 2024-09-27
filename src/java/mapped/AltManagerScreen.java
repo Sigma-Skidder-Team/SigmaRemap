@@ -298,7 +298,7 @@ public class AltManagerScreen extends Screen {
 
    @Override
    public void draw(float var1) {
-      this.method13371();
+      this.drawBackground();
       RenderUtil.method11465(
          (int)((float) Minecraft.getInstance().mainWindow.getWidth() * this.field21014),
          114,
@@ -306,9 +306,9 @@ public class AltManagerScreen extends Screen {
          Minecraft.getInstance().mainWindow.getHeight() - 119 - this.field21016,
          ClientColors.LIGHT_GREYISH_BLUE.getColor
       );
-      this.method13365();
+      this.emptyMethod();
       this.method13367();
-      this.method13366();
+      this.drawTitle();
       super.draw(var1);
    }
 
@@ -339,10 +339,13 @@ public class AltManagerScreen extends Screen {
       this.field21021 = (float)this.field21010.method13513();
    }
 
-   private void method13365() {
+   /**
+    * Hell yeah
+    */
+   private void emptyMethod() {
    }
 
-   private void method13366() {
+   private void drawTitle() {
       int var3 = this.xA + this.field21016;
       int var4 = this.yA + this.field21016;
       int var5 = MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.8F);
@@ -419,7 +422,7 @@ public class AltManagerScreen extends Screen {
       return var3;
    }
 
-   private void method13371() {
+   private void drawBackground() {
       int var3 = this.method13309() * -1;
       float var4 = (float)this.method13310() / (float)this.getWidthA() * -114.0F;
       if (this.field21008) {

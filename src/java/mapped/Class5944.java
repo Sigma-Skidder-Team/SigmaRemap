@@ -7,15 +7,15 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class5944 extends Class5942<Class966> {
    public static final Class7826 field25932 = new Class7826(AtlasTexture.LOCATION_BLOCKS_TEXTURE, new ResourceLocation("entity/bell/bell_body"));
-   private final Class7219 field25933 = new Class7219(32, 32, 0, 0);
+   private final ModelRenderer field25933 = new ModelRenderer(32, 32, 0, 0);
 
    public Class5944(TileEntityRendererDispatcher var1) {
       super(var1);
       this.field25933.method22673(-3.0F, -6.0F, -3.0F, 6.0F, 7.0F, 6.0F);
-      this.field25933.method22679(8.0F, 12.0F, 8.0F);
-      Class7219 var4 = new Class7219(32, 32, 0, 13);
+      this.field25933.setRotationPoint(8.0F, 12.0F, 8.0F);
+      ModelRenderer var4 = new ModelRenderer(32, 32, 0, 13);
       var4.method22673(4.0F, 4.0F, 4.0F, 8.0F, 2.0F, 8.0F);
-      var4.method22679(-8.0F, -12.0F, -8.0F);
+      var4.setRotationPoint(-8.0F, -12.0F, -8.0F);
       this.field25933.method22670(var4);
    }
 
@@ -42,9 +42,9 @@ public class Class5944 extends Class5942<Class966> {
          }
       }
 
-      this.field25933.field31035 = var10;
+      this.field25933.rotateAngleX = var10;
       this.field25933.field31037 = var11;
-      Class5422 var13 = field25932.method26200(var4, RenderType::getEntitySolid);
-      this.field25933.method22680(var3, var13, var5, var6);
+      IVertexBuilder var13 = field25932.method26200(var4, RenderType::getEntitySolid);
+      this.field25933.render(var3, var13, var5, var6);
    }
 }

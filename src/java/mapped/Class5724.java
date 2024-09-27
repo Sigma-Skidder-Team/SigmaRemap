@@ -9,7 +9,7 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
 
-public class Class5724 extends Class5715<ItemEntity> {
+public class Class5724 extends EntityRenderer<ItemEntity> {
    private static String[] field25128;
    private final ItemRenderer field25129;
    private final Random field25130 = new Random();
@@ -17,8 +17,8 @@ public class Class5724 extends Class5715<ItemEntity> {
    public Class5724(EntityRendererManager var1, ItemRenderer var2) {
       super(var1);
       this.field25129 = var2;
-      this.field25098 = 0.15F;
-      this.field25099 = 0.75F;
+      this.shadowSize = 0.15F;
+      this.shadowOpaque = 0.75F;
    }
 
    private int method17910(ItemStack var1) {
@@ -42,7 +42,7 @@ public class Class5724 extends Class5715<ItemEntity> {
       return var4;
    }
 
-   public void method17853(ItemEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(ItemEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
       ItemStack var9 = var1.method4124();
       int var10 = !var9.isEmpty() ? Item.method11701(var9.getItem()) + var9.method32117() : 187;
@@ -98,7 +98,7 @@ public class Class5724 extends Class5715<ItemEntity> {
       }
 
       var4.pop();
-      super.method17853(var1, var2, var3, var4, var5, var6);
+      super.render(var1, var2, var3, var4, var5, var6);
    }
 
    public ResourceLocation method17843(ItemEntity var1) {

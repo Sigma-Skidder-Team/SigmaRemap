@@ -15,7 +15,7 @@ public class Class4092 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2875) {
          Class2875 var5 = (Class2875)var1;
          if (!var2.equals("head")) {
@@ -39,63 +39,63 @@ public class Class4092 extends Class4057 {
                                                                if (!var2.equals("back_right_shin")) {
                                                                   return !var2.equals("back_right_foot")
                                                                      ? null
-                                                                     : (Class7219) Reflector.method35075(var5, Reflector.field43039, 19);
+                                                                     : (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 19);
                                                                } else {
-                                                                  return (Class7219) Reflector.method35075(var5, Reflector.field43039, 18);
+                                                                  return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 18);
                                                                }
                                                             } else {
-                                                               return (Class7219) Reflector.method35075(var5, Reflector.field43039, 17);
+                                                               return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 17);
                                                             }
                                                          } else {
-                                                            return (Class7219) Reflector.method35075(var5, Reflector.field43039, 16);
+                                                            return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 16);
                                                          }
                                                       } else {
-                                                         return (Class7219) Reflector.method35075(var5, Reflector.field43039, 15);
+                                                         return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 15);
                                                       }
                                                    } else {
-                                                      return (Class7219) Reflector.method35075(var5, Reflector.field43039, 14);
+                                                      return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 14);
                                                    }
                                                 } else {
-                                                   return (Class7219) Reflector.method35075(var5, Reflector.field43039, 13);
+                                                   return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 13);
                                                 }
                                              } else {
-                                                return (Class7219) Reflector.method35075(var5, Reflector.field43039, 12);
+                                                return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 12);
                                              }
                                           } else {
-                                             return (Class7219) Reflector.method35075(var5, Reflector.field43039, 11);
+                                             return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 11);
                                           }
                                        } else {
-                                          return (Class7219) Reflector.method35075(var5, Reflector.field43039, 10);
+                                          return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 10);
                                        }
                                     } else {
-                                       return (Class7219) Reflector.method35075(var5, Reflector.field43039, 9);
+                                       return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 9);
                                     }
                                  } else {
-                                    return (Class7219) Reflector.method35075(var5, Reflector.field43039, 8);
+                                    return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 8);
                                  }
                               } else {
-                                 return (Class7219) Reflector.method35075(var5, Reflector.field43039, 7);
+                                 return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 7);
                               }
                            } else {
-                              return (Class7219) Reflector.method35075(var5, Reflector.field43039, 6);
+                              return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 6);
                            }
                         } else {
-                           return (Class7219) Reflector.method35075(var5, Reflector.field43039, 5);
+                           return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 5);
                         }
                      } else {
-                        return (Class7219) Reflector.method35075(var5, Reflector.field43039, 4);
+                        return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 4);
                      }
                   } else {
-                     return (Class7219) Reflector.method35075(var5, Reflector.field43039, 3);
+                     return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 3);
                   }
                } else {
-                  return (Class7219) Reflector.method35075(var5, Reflector.field43039, 2);
+                  return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 2);
                }
             } else {
-               return (Class7219) Reflector.method35075(var5, Reflector.field43039, 1);
+               return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 1);
             }
          } else {
-            return (Class7219) Reflector.method35075(var5, Reflector.field43039, 0);
+            return (ModelRenderer) Reflector.method35075(var5, Reflector.field43039, 0);
          }
       } else {
          return null;
@@ -134,7 +134,7 @@ public class Class4092 extends Class4057 {
       Class5718 var6 = new Class5718(var5);
       if (Reflector.field43009.method20238()) {
          Reflector.method35082(var6, Reflector.field43009, var1);
-         var6.field25098 = var2;
+         var6.shadowSize = var2;
          return (Class9492)var6;
       } else {
          Config.method26811("Field not found: EnderDragonRenderer.model");

@@ -33,7 +33,7 @@ public abstract class Class219<T extends Entity, M extends Class2827<T>> {
       if (!var6.isInvisible()) {
          var0.method11027(var1);
          var1.method10997(var6, var7, var8, var12);
-         var1.method10998(var6, var7, var8, var9, var10, var11);
+         var1.setRotationAngles(var6, var7, var8, var9, var10, var11);
          method824(var1, var2, var3, var4, var5, var6, var13, var14, var15);
       }
    }
@@ -41,12 +41,12 @@ public abstract class Class219<T extends Entity, M extends Class2827<T>> {
    public static <T extends LivingEntity> void method824(
            Class2827<T> var0, ResourceLocation var1, MatrixStack var2, Class7733 var3, int var4, T var5, float var6, float var7, float var8
    ) {
-      Class5422 var11 = var3.method25597(RenderType.getEntityCutoutNoCull(var1));
-      var0.method11016(var2, var11, var4, Class5712.method17883(var5, 0.0F), var6, var7, var8, 1.0F);
+      IVertexBuilder var11 = var3.method25597(RenderType.getEntityCutoutNoCull(var1));
+      var0.method11016(var2, var11, var4, LivingRenderer.method17883(var5, 0.0F), var6, var7, var8, 1.0F);
    }
 
    public M method825() {
-      return this.field863.method17881();
+      return this.field863.getEntityModel();
    }
 
    public ResourceLocation method826(T var1) {

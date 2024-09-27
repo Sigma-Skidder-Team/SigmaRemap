@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Set;
 
-public class Class8564 {
+public class EmissiveTextures {
    private static String field38502 = null;
    private static String field38503 = null;
    private static boolean field38504 = false;
@@ -22,7 +22,7 @@ public class Class8564 {
    private static TextureManager field38511;
    private static int field38512 = 0;
 
-   public static boolean method30588() {
+   public static boolean isActive() {
       return field38504;
    }
 
@@ -30,7 +30,7 @@ public class Class8564 {
       return field38502;
    }
 
-   public static void method30590() {
+   public static void beginRender() {
       if (!field38505) {
          field38505 = true;
          field38506 = false;
@@ -103,11 +103,11 @@ public class Class8564 {
       }
    }
 
-   public static boolean method30594() {
+   public static boolean hasEmissive() {
       return field38512 <= 0 ? field38506 : false;
    }
 
-   public static void method30595() {
+   public static void beginRenderEmissive() {
       Class8496.method30084();
       field38507 = true;
    }
@@ -116,12 +116,12 @@ public class Class8564 {
       return field38507;
    }
 
-   public static void method30597() {
+   public static void endRenderEmissive() {
       Class8496.method30084();
       field38507 = false;
    }
 
-   public static void method30598() {
+   public static void endRender() {
       if (field38512 <= 0) {
          field38505 = false;
          field38506 = false;

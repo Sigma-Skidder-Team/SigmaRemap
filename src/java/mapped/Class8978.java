@@ -27,7 +27,7 @@ public class Class8978 {
       this.field40586 = var10;
    }
 
-   public void method32940(boolean var1, float var2, float var3, Matrix4f var4, Class5422 var5, float var6, float var7, float var8, float var9, int var10) {
+   public void method32940(boolean var1, float var2, float var3, Matrix4f var4, IVertexBuilder var5, float var6, float var7, float var8, float var9, int var10) {
       float var14 = var2 + this.field40583;
       float var15 = var2 + this.field40584;
       float var16 = this.field40585 - 3.0F;
@@ -72,7 +72,7 @@ public class Class8978 {
       }
    }
 
-   public void method32941(Class8442 var1, Matrix4f var2, Class5422 var3, int var4) {
+   public void method32941(Class8442 var1, Matrix4f var2, IVertexBuilder var3, int var4) {
       var3.pos(var2, var1.field36164, var1.field36165, var1.field36168)
          .color(var1.field36169, var1.field36170, var1.field36171, var1.field36172)
          .tex(this.field40579, this.field40581)

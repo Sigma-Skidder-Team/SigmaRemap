@@ -187,7 +187,7 @@ public class Class8331 {
          }
       }
 
-      Class7219 var18 = Class9498.method36692(var0, var7, var1, var2);
+      ModelRenderer var18 = Class9498.method36692(var0, var7, var1, var2);
       return new Class9734(var5, var6, var18, var8);
    }
 

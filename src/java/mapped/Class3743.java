@@ -15,7 +15,7 @@ public class Class3743<E extends Class1034> extends Class3676<E> {
    }
 
    public boolean method12508(ServerWorld var1, E var2) {
-      if (var2.method3091().isEmpty()) {
+      if (var2.getHeldItemOffhand().isEmpty()) {
          Optional var5 = var2.getBrain().<ItemEntity>method21410(Class8830.field39847);
          return var5.isPresent() ? !((ItemEntity)var5.get()).isEntityInRange(var2, (double)this.field19878) : true;
       } else {

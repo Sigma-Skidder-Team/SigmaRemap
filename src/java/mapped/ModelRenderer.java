@@ -10,21 +10,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class Class7219 {
+public class ModelRenderer {
    public float field31028 = 64.0F;
    public float field31029 = 32.0F;
    private int field31030;
    private int field31031;
-   public float field31032;
-   public float field31033;
-   public float field31034;
-   public float field31035;
-   public float field31036;
+   public float rotationPointX;
+   public float rotationPointY;
+   public float rotationPointZ;
+   public float rotateAngleX;
+   public float rotateAngleY;
    public float field31037;
    public boolean field31038;
-   public boolean field31039 = true;
+   public boolean showModel = true;
    public final ObjectList<Class9661> field31040 = new ObjectArrayList();
-   public final ObjectList<Class7219> field31041 = new ObjectArrayList();
+   public final ObjectList<ModelRenderer> field31041 = new ObjectArrayList();
    public List field31042 = new ArrayList();
    public boolean field31043 = false;
    public float field31044 = 1.0F;
@@ -35,66 +35,66 @@ public class Class7219 {
    private Class8486 field31049;
    private WorldRenderer field31050 = Config.method26874();
 
-   public Class7219(Class2828 var1) {
+   public ModelRenderer(Class2828 var1) {
       var1.accept(this);
-      this.method22684(var1.field17604, var1.field17605);
+      this.setTextureSize(var1.field17604, var1.field17605);
    }
 
-   public Class7219(Class2828 var1, int var2, int var3) {
+   public ModelRenderer(Class2828 var1, int var2, int var3) {
       this(var1.field17604, var1.field17605, var2, var3);
       var1.accept(this);
    }
 
-   public Class7219(int var1, int var2, int var3, int var4) {
-      this.method22684(var1, var2);
+   public ModelRenderer(int var1, int var2, int var3, int var4) {
+      this.setTextureSize(var1, var2);
       this.method22671(var3, var4);
    }
 
-   private Class7219() {
+   private ModelRenderer() {
    }
 
-   public Class7219 method22668() {
-      Class7219 var3 = new Class7219();
-      var3.method22669(this);
+   public ModelRenderer method22668() {
+      ModelRenderer var3 = new ModelRenderer();
+      var3.copyModelAngles(this);
       return var3;
    }
 
-   public void method22669(Class7219 var1) {
-      this.field31035 = var1.field31035;
-      this.field31036 = var1.field31036;
+   public void copyModelAngles(ModelRenderer var1) {
+      this.rotateAngleX = var1.rotateAngleX;
+      this.rotateAngleY = var1.rotateAngleY;
       this.field31037 = var1.field31037;
-      this.field31032 = var1.field31032;
-      this.field31033 = var1.field31033;
-      this.field31034 = var1.field31034;
+      this.rotationPointX = var1.rotationPointX;
+      this.rotationPointY = var1.rotationPointY;
+      this.rotationPointZ = var1.rotationPointZ;
    }
 
-   public void method22670(Class7219 var1) {
+   public void method22670(ModelRenderer var1) {
       this.field31041.add(var1);
    }
 
-   public Class7219 method22671(int var1, int var2) {
+   public ModelRenderer method22671(int var1, int var2) {
       this.field31030 = var1;
       this.field31031 = var2;
       return this;
    }
 
-   public Class7219 method22672(String var1, float var2, float var3, float var4, int var5, int var6, int var7, float var8, int var9, int var10) {
+   public ModelRenderer method22672(String var1, float var2, float var3, float var4, int var5, int var6, int var7, float var8, int var9, int var10) {
       this.method22671(var9, var10);
       this.method22678(this.field31030, this.field31031, var2, var3, var4, (float)var5, (float)var6, (float)var7, var8, var8, var8, this.field31038, false);
       return this;
    }
 
-   public Class7219 method22673(float var1, float var2, float var3, float var4, float var5, float var6) {
+   public ModelRenderer method22673(float var1, float var2, float var3, float var4, float var5, float var6) {
       this.method22678(this.field31030, this.field31031, var1, var2, var3, var4, var5, var6, 0.0F, 0.0F, 0.0F, this.field31038, false);
       return this;
    }
 
-   public Class7219 method22674(float var1, float var2, float var3, float var4, float var5, float var6, boolean var7) {
+   public ModelRenderer method22674(float var1, float var2, float var3, float var4, float var5, float var6, boolean var7) {
       this.method22678(this.field31030, this.field31031, var1, var2, var3, var4, var5, var6, 0.0F, 0.0F, 0.0F, var7, false);
       return this;
    }
 
-   public void method22675(float var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   public void addBox(float var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       this.method22678(this.field31030, this.field31031, var1, var2, var3, var4, var5, var6, var7, var7, var7, this.field31038, false);
    }
 
@@ -124,18 +124,18 @@ public class Class7219 {
       this.field31040.add(new Class9661(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, this.field31028, this.field31029));
    }
 
-   public void method22679(float var1, float var2, float var3) {
-      this.field31032 = var1;
-      this.field31033 = var2;
-      this.field31034 = var3;
+   public void setRotationPoint(float var1, float var2, float var3) {
+      this.rotationPointX = var1;
+      this.rotationPointY = var2;
+      this.rotationPointZ = var3;
    }
 
-   public void method22680(MatrixStack var1, Class5422 var2, int var3, int var4) {
+   public void render(MatrixStack var1, IVertexBuilder var2, int var3, int var4) {
       this.method22681(var1, var2, var3, var4, 1.0F, 1.0F, 1.0F, 1.0F);
    }
 
-   public void method22681(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
-      if (this.field31039 && (!this.field31040.isEmpty() || !this.field31041.isEmpty() || !this.field31042.isEmpty())) {
+   public void method22681(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+      if (this.showModel && (!this.field31040.isEmpty() || !this.field31041.isEmpty() || !this.field31042.isEmpty())) {
          RenderType var11 = null;
          Class7735 var12 = null;
          if (this.field31047 != null) {
@@ -155,12 +155,12 @@ public class Class7219 {
          }
 
          var1.push();
-         this.method22682(var1);
+         this.translateRotate(var1);
          this.method22683(var1.getLast(), var2, var3, var4, var5, var6, var7, var8);
          int var13 = this.field31041.size();
 
          for (int var14 = 0; var14 < var13; var14++) {
-            Class7219 var15 = (Class7219)this.field31041.get(var14);
+            ModelRenderer var15 = (ModelRenderer)this.field31041.get(var14);
             var15.method22681(var1, var2, var3, var4, var5, var6, var7, var8);
          }
 
@@ -178,22 +178,22 @@ public class Class7219 {
       }
    }
 
-   public void method22682(MatrixStack var1) {
-      var1.translate((double)(this.field31032 / 16.0F), (double)(this.field31033 / 16.0F), (double)(this.field31034 / 16.0F));
+   public void translateRotate(MatrixStack var1) {
+      var1.translate((double)(this.rotationPointX / 16.0F), (double)(this.rotationPointY / 16.0F), (double)(this.rotationPointZ / 16.0F));
       if (this.field31037 != 0.0F) {
          var1.rotate(Vector3f.ZP.method25285(this.field31037));
       }
 
-      if (this.field31036 != 0.0F) {
-         var1.rotate(Vector3f.YP.method25285(this.field31036));
+      if (this.rotateAngleY != 0.0F) {
+         var1.rotate(Vector3f.YP.method25285(this.rotateAngleY));
       }
 
-      if (this.field31035 != 0.0F) {
-         var1.rotate(Vector3f.XP.method25285(this.field31035));
+      if (this.rotateAngleX != 0.0F) {
+         var1.rotate(Vector3f.XP.method25285(this.rotateAngleX));
       }
    }
 
-   private void method22683(Class8892 var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+   private void method22683(Class8892 var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       Matrix4f var11 = var1.getMatrix();
       Class8967 var12 = var1.method32362();
       int var13 = this.field31040.size();
@@ -226,7 +226,7 @@ public class Class7219 {
       }
    }
 
-   public Class7219 method22684(int var1, int var2) {
+   public ModelRenderer setTextureSize(int var1, int var2) {
       this.field31028 = (float)var1;
       this.field31029 = (float)var2;
       return this;
@@ -260,21 +260,21 @@ public class Class7219 {
       this.field31040.add(new Class9661(var1, var2, var3, var4, var5, var6, var7, var8, var8, var8, this.field31038, this.field31028, this.field31029));
    }
 
-   public Class7219 method22692(int var1) {
+   public ModelRenderer method22692(int var1) {
       if (this.field31041 == null) {
          return null;
       } else {
-         return var1 >= 0 && var1 < this.field31041.size() ? (Class7219)this.field31041.get(var1) : null;
+         return var1 >= 0 && var1 < this.field31041.size() ? (ModelRenderer)this.field31041.get(var1) : null;
       }
    }
 
-   public Class7219 method22693(String var1) {
+   public ModelRenderer method22693(String var1) {
       if (var1 == null) {
          return null;
       } else {
          if (this.field31041 != null) {
             for (int var4 = 0; var4 < this.field31041.size(); var4++) {
-               Class7219 var5 = (Class7219)this.field31041.get(var4);
+               ModelRenderer var5 = (ModelRenderer)this.field31041.get(var4);
                if (var1.equals(var5.method22689())) {
                   return var5;
                }
@@ -285,16 +285,16 @@ public class Class7219 {
       }
    }
 
-   public Class7219 method22694(String var1) {
+   public ModelRenderer method22694(String var1) {
       if (var1 != null) {
-         Class7219 var4 = this.method22693(var1);
+         ModelRenderer var4 = this.method22693(var1);
          if (var4 != null) {
             return var4;
          } else {
             if (this.field31041 != null) {
                for (int var5 = 0; var5 < this.field31041.size(); var5++) {
-                  Class7219 var6 = (Class7219)this.field31041.get(var5);
-                  Class7219 var7 = var6.method22694(var1);
+                  ModelRenderer var6 = (ModelRenderer)this.field31041.get(var5);
+                  ModelRenderer var7 = var6.method22694(var1);
                   if (var7 != null) {
                      return var7;
                   }

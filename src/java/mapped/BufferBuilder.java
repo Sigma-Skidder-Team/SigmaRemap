@@ -282,7 +282,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    }
 
    @Override
-   public Class5422 tex(float var1, float var2) {
+   public IVertexBuilder tex(float var1, float var2) {
       if (this.field24131 != null && this.field24129 != null) {
          var1 = this.field24131.method7486(var1);
          var2 = this.field24131.method7487(var2);
@@ -360,7 +360,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    }
 
    @Override
-   public Class5422 color(int var1, int var2, int var3, int var4) {
+   public IVertexBuilder color(int var1, int var2, int var3, int var4) {
       if (!this.field24108) {
          return Class5426.super.color(var1, var2, var3, var4);
       } else {

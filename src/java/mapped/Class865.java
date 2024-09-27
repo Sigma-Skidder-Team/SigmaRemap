@@ -18,7 +18,7 @@ import java.util.List;
 public class Class865 extends ContainerScreen<Class5837> {
    private static final ResourceLocation field4801 = new ResourceLocation("textures/gui/container/loom.png");
    private static final int field4802 = (Class2154.field14124 - Class2154.field14125 - 1 + 4 - 1) / 4;
-   private final Class7219 field4803;
+   private final ModelRenderer field4803;
    private List<Pair<Class2154, Class112>> field4804;
    private ItemStack field4805 = ItemStack.EMPTY;
    private ItemStack field4806 = ItemStack.EMPTY;
@@ -77,8 +77,8 @@ public class Class865 extends ContainerScreen<Class5837> {
          var1.translate(0.5, 0.5, 0.5);
          float var15 = 0.6666667F;
          var1.method35292(0.6666667F, -0.6666667F, -0.6666667F);
-         this.field4803.field31035 = 0.0F;
-         this.field4803.field31033 = -32.0F;
+         this.field4803.rotateAngleX = 0.0F;
+         this.field4803.rotationPointY = -32.0F;
          Class5948.method18478(var1, var14, 15728880, Class213.field798, this.field4803, ModelBakery.field40513, true, this.field4804);
          var1.pop();
          var14.method25602();
@@ -139,8 +139,8 @@ public class Class865 extends ContainerScreen<Class5837> {
       float var10 = 0.6666667F;
       var9.method35292(0.6666667F, -0.6666667F, -0.6666667F);
       Class7735 var11 = this.mc.getRenderTypeBuffers().method26536();
-      this.field4803.field31035 = 0.0F;
-      this.field4803.field31033 = -32.0F;
+      this.field4803.rotateAngleX = 0.0F;
+      this.field4803.rotationPointY = -32.0F;
       List var12 = Class958.method3891(Class112.field393, Class958.method3886(var6));
       Class5948.method18478(var9, var11, 15728880, Class213.field798, this.field4803, ModelBakery.field40513, true, var12);
       var9.pop();

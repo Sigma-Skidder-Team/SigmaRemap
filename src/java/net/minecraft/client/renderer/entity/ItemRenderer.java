@@ -60,7 +60,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       return this.field848;
    }
 
-   public void method780(IBakedModel var1, ItemStack var2, int var3, int var4, MatrixStack var5, Class5422 var6) {
+   public void method780(IBakedModel var1, ItemStack var2, int var3, int var4, MatrixStack var5, IVertexBuilder var6) {
       boolean var9 = Config.method26969().method1114();
       boolean var10 = Config.method26894() && var9;
       if (var10) {
@@ -111,7 +111,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
                Reflector.field42866.call(this, var8, var1, var4, var5, var6, var7, var16);
             } else {
                RenderType var17 = Class8928.method32633(var1, var16);
-               Class5422 var14;
+               IVertexBuilder var14;
                if (var1.getItem() == Items.field37905 && var1.method32159()) {
                   var4.push();
                   Class8892 var15 = var4.getLast();
@@ -141,20 +141,20 @@ public class ItemRenderer implements IResourceManagerReloadListener {
                   Class6391.field27977 = null;
                }
 
-               if (Class8564.method30588()) {
-                  Class8564.method30590();
+               if (EmissiveTextures.isActive()) {
+                  EmissiveTextures.beginRender();
                }
 
                this.method780(var8, var1, var6, var7, var4, var14);
-               if (Class8564.method30588()) {
-                  if (Class8564.method30594()) {
-                     Class8564.method30595();
+               if (EmissiveTextures.isActive()) {
+                  if (EmissiveTextures.hasEmissive()) {
+                     EmissiveTextures.beginRenderEmissive();
                      var14 = method785(var5, var17, true, false);
                      this.method780(var8, var1, Class1699.field9258, var7, var4, var14);
-                     Class8564.method30597();
+                     EmissiveTextures.endRenderEmissive();
                   }
 
-                  Class8564.method30598();
+                  EmissiveTextures.endRender();
                }
             }
          } else if (!Reflector.field42913.exists()) {
@@ -168,12 +168,12 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       }
    }
 
-   public static Class5422 method782(Class7733 var0, RenderType var1, boolean var2, boolean var3) {
+   public static IVertexBuilder method782(Class7733 var0, RenderType var1, boolean var2, boolean var3) {
       if (Shaders.isShadowPass) {
          var3 = false;
       }
 
-      if (Class8564.method30596()) {
+      if (EmissiveTextures.method30596()) {
          var3 = false;
       }
 
@@ -182,20 +182,20 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          : Class7802.method26050(var0.method25597(!var2 ? RenderType.method14332() : RenderType.method14331()), var0.method25597(var1));
    }
 
-   public static Class5422 method783(Class7733 var0, RenderType var1, Class8892 var2) {
+   public static IVertexBuilder method783(Class7733 var0, RenderType var1, Class8892 var2) {
       return Class7802.method26050(new Class5427(var0.method25597(RenderType.method14334()), var2.getMatrix(), var2.method32362()), var0.method25597(var1));
    }
 
-   public static Class5422 method784(Class7733 var0, RenderType var1, Class8892 var2) {
+   public static IVertexBuilder method784(Class7733 var0, RenderType var1, Class8892 var2) {
       return Class7802.method26050(new Class5427(var0.method25597(RenderType.method14335()), var2.getMatrix(), var2.method32362()), var0.method25597(var1));
    }
 
-   public static Class5422 method785(Class7733 var0, RenderType var1, boolean var2, boolean var3) {
+   public static IVertexBuilder method785(Class7733 var0, RenderType var1, boolean var2, boolean var3) {
       if (Shaders.isShadowPass) {
          var3 = false;
       }
 
-      if (Class8564.method30596()) {
+      if (EmissiveTextures.method30596()) {
          var3 = false;
       }
 
@@ -208,12 +208,12 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       }
    }
 
-   public static Class5422 method786(Class7733 var0, RenderType var1, boolean var2, boolean var3) {
+   public static IVertexBuilder method786(Class7733 var0, RenderType var1, boolean var2, boolean var3) {
       if (Shaders.isShadowPass) {
          var3 = false;
       }
 
-      if (Class8564.method30596()) {
+      if (EmissiveTextures.method30596()) {
          var3 = false;
       }
 
@@ -222,16 +222,16 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          : Class7802.method26050(var0.method25597(!var2 ? RenderType.method14337() : RenderType.method14335()), var0.method25597(var1));
    }
 
-   private void method787(MatrixStack var1, Class5422 var2, List<Class8557> var3, ItemStack var4, int var5, int var6) {
+   private void method787(MatrixStack var1, IVertexBuilder var2, List<Class8557> var3, ItemStack var4, int var5, int var6) {
       boolean var9 = !var4.isEmpty();
       Class8892 var10 = var1.getLast();
-      boolean var11 = Class8564.method30588();
+      boolean var11 = EmissiveTextures.isActive();
       int var12 = var3.size();
 
       for (int var13 = 0; var13 < var12; var13++) {
          Class8557 var14 = (Class8557)var3.get(var13);
          if (var11) {
-            var14 = Class8564.method30593(var14);
+            var14 = EmissiveTextures.method30593(var14);
             if (var14 == null) {
                continue;
             }

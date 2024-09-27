@@ -67,7 +67,7 @@ public class GameSettings {
    public boolean field44588;
    public boolean field44589 = true;
    private final Set<Class2318> field44590 = Sets.newHashSet(Class2318.values());
-   public HandSide field44591 = HandSide.field14418;
+   public HandSide field44591 = HandSide.RIGHT;
    public int overrideWidth;
    public int overrideHeight;
    public boolean field44594 = true;
@@ -92,7 +92,7 @@ public class GameSettings {
    public boolean field44613 = true;
    public boolean field44614 = true;
    public boolean vsync = true;
-   public boolean field44616 = true;
+   public boolean entityShadows = true;
    public boolean forceUnicodeFont;
    public boolean field44618;
    public boolean field44619;
@@ -628,7 +628,7 @@ public class GameSettings {
                }
 
                if ("mainHand".equals(var4)) {
-                  this.field44591 = "left".equals(var5) ? HandSide.field14417 : HandSide.field14418;
+                  this.field44591 = "left".equals(var5) ? HandSide.LEFT : HandSide.RIGHT;
                }
 
                if ("narrator".equals(var4)) {
@@ -802,7 +802,7 @@ public class GameSettings {
             var1.println("chatWidth:" + (float)this.field44596);
             var1.println("mipmapLevels:" + this.field44600);
             var1.println("useNativeTransport:" + this.field44602);
-            var1.println("mainHand:" + (this.field44591 == HandSide.field14417 ? "left" : "right"));
+            var1.println("mainHand:" + (this.field44591 == HandSide.LEFT ? "left" : "right"));
             var1.println("attackIndicator:" + this.field44603.method8922());
             var1.println("narrator:" + this.narrator.method8189());
             var1.println("tutorialStep:" + this.field44604.method8916());

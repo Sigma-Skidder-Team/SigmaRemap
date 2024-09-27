@@ -4,18 +4,18 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public enum HandSide {
-   field14417(new TranslationTextComponent("options.mainHand.left")),
-   field14418(new TranslationTextComponent("options.mainHand.right"));
+   LEFT(new TranslationTextComponent("options.mainHand.left")),
+   RIGHT(new TranslationTextComponent("options.mainHand.right"));
 
    private final ITextComponent field14419;
-   private static final HandSide[] field14420 = new HandSide[]{field14417, field14418};
+   private static final HandSide[] field14420 = new HandSide[]{LEFT, RIGHT};
 
    private HandSide(ITextComponent var3) {
       this.field14419 = var3;
    }
 
    public HandSide method8920() {
-      return this != field14417 ? field14417 : field14418;
+      return this != LEFT ? LEFT : RIGHT;
    }
 
    @Override

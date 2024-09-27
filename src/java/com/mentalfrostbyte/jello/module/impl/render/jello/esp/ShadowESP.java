@@ -116,12 +116,12 @@ public class ShadowESP extends Module {
                 double var14 = var11.getY();
                 double var16 = var11.getZ();
                 MatrixStack var18 = new MatrixStack();
-                boolean var19 = mc.gameSettings.field44616;
+                boolean var19 = mc.gameSettings.entityShadows;
                 RenderSystem.disableLighting();
                 RenderSystem.color4f(0.0F, 0.0F, 1.0F, 0.5F);
                 RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
                 RenderSystem.enableBlend();
-                mc.gameSettings.field44616 = false;
+                mc.gameSettings.entityShadows = false;
                 int var20 = var10.getFireTimer();
                 boolean var21 = var10.getFlag(0);
                 var10.setFire(0);
@@ -129,7 +129,7 @@ public class ShadowESP extends Module {
                 this.method16608(var10, var12, var14, var16, mc.timer.renderPartialTicks, var18, this.field23795);
                 var10.setFire(var20);
                 var10.setFlag(0, var21);
-                mc.gameSettings.field44616 = var19;
+                mc.gameSettings.entityShadows = var19;
                 GL11.glPopMatrix();
             }
         }
@@ -138,7 +138,7 @@ public class ShadowESP extends Module {
         this.field23795.finish(RenderType.getEntityCutout(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
         this.field23795.finish(RenderType.getEntityCutoutNoCull(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
         this.field23795.finish(RenderType.getEntitySmoothCutout(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
-        this.field23795.finish(RenderType.method14345());
+        this.field23795.finish(RenderType.getLines());
         this.field23795.method25602();
         if (field23794 == Class2191.field14329) {
             GL11.glPolygonMode(1032, 6914);
@@ -154,7 +154,7 @@ public class ShadowESP extends Module {
         double var15 = MathHelper.lerp(var8, var1.lastTickPosY, var1.getPosY());
         double var17 = MathHelper.lerp(var8, var1.lastTickPosZ, var1.getPosZ());
         float var19 = MathHelper.lerp(var8, var1.prevRotationYaw, var1.rotationYaw);
-        mc.worldRenderer.field941.method32219(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 238);
+        mc.worldRenderer.field941.renderEntityStatic(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 238);
     }
 
     @EventTarget

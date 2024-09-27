@@ -30,7 +30,7 @@ public class Class7078 {
       this.field30470 = var3;
    }
 
-   public void method21991(Class2797 var1, AbstractClientPlayerEntity var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
+   public void method21991(BipedModel var1, AbstractClientPlayerEntity var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
       ResourceLocation var9 = this.field30474;
       if (!this.field30469) {
          if (this.field30471 == null) {
@@ -51,26 +51,26 @@ public class Class7078 {
          Class7954 var11 = this.field30470[var10];
          var3.push();
          RenderType var12 = RenderType.getEntityCutoutNoCull(var9);
-         Class5422 var13 = var4.method25597(var12);
+         IVertexBuilder var13 = var4.method25597(var12);
          var11.method27044(var1, var3, var13, var5, var6);
          var3.pop();
       }
    }
 
-   public static Class7219 method21992(Class2797 var0, int var1) {
+   public static ModelRenderer method21992(BipedModel var0, int var1) {
       switch (var1) {
          case 0:
-            return var0.field17434;
+            return var0.bipedBody;
          case 1:
-            return var0.field17432;
+            return var0.bipedHead;
          case 2:
-            return var0.field17436;
+            return var0.bipedLeftArm;
          case 3:
-            return var0.field17435;
+            return var0.bipedRightArm;
          case 4:
-            return var0.field17438;
+            return var0.bipedLeftLeg;
          case 5:
-            return var0.field17437;
+            return var0.bipedRightLeg;
          default:
             return null;
       }

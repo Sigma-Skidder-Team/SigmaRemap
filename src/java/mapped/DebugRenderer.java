@@ -156,7 +156,7 @@ public class DebugRenderer {
    public static void method27462(String var0, double var1, double var3, double var5, int var7, float var8, boolean var9, float var10, boolean var11) {
       Minecraft var14 = Minecraft.getInstance();
       ActiveRenderInfo var15 = var14.gameRenderer.getActiveRenderInfo();
-      if (var15.method37510() && var14.getRenderManager().field40020 != null) {
+      if (var15.method37510() && var14.getRenderManager().options != null) {
          FontRenderer var16 = var14.fontRenderer;
          double var17 = var15.getPos().x;
          double var19 = var15.getPos().y;

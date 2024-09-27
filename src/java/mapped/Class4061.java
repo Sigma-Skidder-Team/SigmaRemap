@@ -11,7 +11,7 @@ public class Class4061 extends Class4060 {
    @Override
    public Class2828 method12822() {
       Class2823 var3 = new Class2823(0.0F, 0.0F, 64, 64);
-      var3.method11026().field31039 = true;
+      var3.method11026().showModel = true;
       return var3;
    }
 
@@ -20,7 +20,7 @@ public class Class4061 extends Class4060 {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5679 var6 = new Class5679(var5);
       var6.field25086 = (Class2823<Class1033>) var1;
-      var6.field25098 = var2;
+      var6.shadowSize = var2;
       return (Class9492)var6;
    }
 }

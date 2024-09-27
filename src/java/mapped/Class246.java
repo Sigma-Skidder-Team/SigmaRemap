@@ -22,8 +22,8 @@ public class Class246 extends Class219<Class1057, Class2887<Class1057>> {
       var1.translate(0.0, -1.0, 0.0);
       Class112 var14 = var4.method4857();
       ResourceLocation var15 = var14 != null ? Class5683.field25049[var14.method309()] : Class5683.field25048;
-      Class5422 var16 = var2.method25597(RenderType.getEntitySolid(var15));
-      this.method825().method11204().method22680(var1, var16, var3, Class5712.method17883(var4, 0.0F));
+      IVertexBuilder var16 = var2.method25597(RenderType.getEntitySolid(var15));
+      this.method825().method11204().render(var1, var16, var3, LivingRenderer.method17883(var4, 0.0F));
       var1.pop();
    }
 }

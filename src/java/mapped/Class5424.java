@@ -1,6 +1,6 @@
 package mapped;
 
-public abstract class Class5424 implements Class5422 {
+public abstract class Class5424 implements IVertexBuilder {
    public boolean field24108 = false;
    public int field24109 = 255;
    public int field24110 = 255;

@@ -712,7 +712,7 @@ public class Class4447 implements Class4442 {
          .method30252("##")
          .method30253("has_planks", method14076(Class5985.field26071))
          .method30255(var0);
-      Class8528.method30247(Items.field38148)
+      Class8528.method30247(Items.CROSSBOW)
          .method30250('~', Items.field37838)
          .method30250('#', Items.field37835)
          .method30250('&', Items.field37801)

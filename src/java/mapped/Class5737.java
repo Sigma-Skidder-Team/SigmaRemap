@@ -7,31 +7,31 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
-public class Class5737 extends Class5715<PaintingEntity> {
+public class Class5737 extends EntityRenderer<PaintingEntity> {
    private static String[] field25158;
 
    public Class5737(EntityRendererManager var1) {
       super(var1);
    }
 
-   public void method17853(PaintingEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(PaintingEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F - var2));
       Class9078 var9 = var1.field5496;
       float var10 = 0.0625F;
       var4.method35292(0.0625F, 0.0625F, 0.0625F);
-      Class5422 var11 = var5.method25597(RenderType.getEntitySolid(this.method17843(var1)));
+      IVertexBuilder var11 = var5.method25597(RenderType.getEntitySolid(this.method17843(var1)));
       PaintingSpriteUploader var12 = Minecraft.getInstance().getPaintingSpriteUploader();
       this.method17919(var4, var11, var1, var9.method33825(), var9.method33826(), var12.method1020(var9), var12.method1021());
       var4.pop();
-      super.method17853(var1, var2, var3, var4, var5, var6);
+      super.render(var1, var2, var3, var4, var5, var6);
    }
 
    public ResourceLocation method17843(PaintingEntity var1) {
       return Minecraft.getInstance().getPaintingSpriteUploader().method1021().getAtlasTexture().getTextureLocation();
    }
 
-   private void method17919(MatrixStack var1, Class5422 var2, PaintingEntity var3, int var4, int var5, TextureAtlasSprite var6, TextureAtlasSprite var7) {
+   private void method17919(MatrixStack var1, IVertexBuilder var2, PaintingEntity var3, int var4, int var5, TextureAtlasSprite var6, TextureAtlasSprite var7) {
       Class8892 var10 = var1.getLast();
       Matrix4f var11 = var10.getMatrix();
       Class8967 var12 = var10.method32362();
@@ -115,7 +115,7 @@ public class Class5737 extends Class5715<PaintingEntity> {
    }
 
    private void method17920(
-           Matrix4f var1, Class8967 var2, Class5422 var3, float var4, float var5, float var6, float var7, float var8, int var9, int var10, int var11, int var12
+           Matrix4f var1, Class8967 var2, IVertexBuilder var3, float var4, float var5, float var6, float var7, float var8, int var9, int var10, int var11, int var12
    ) {
       var3.pos(var1, var4, var5, var8)
          .color(255, 255, 255, 255)

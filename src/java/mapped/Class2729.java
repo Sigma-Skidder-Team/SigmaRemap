@@ -23,7 +23,7 @@ public class Class2729 extends Class2595 {
             && var3.isAlive()
             && Class1095.method5169().test(var3)
             && this.field17239.getDistanceSq(var3) > 36.0
-            && !this.field17239.method3336()
+            && !this.field17239.isCrouching()
             && !this.field17239.method5145()
             && !this.field17239.isJumping;
       }

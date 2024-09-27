@@ -417,7 +417,7 @@ public abstract class RenderType extends Class4510 {
       );
    }
 
-   public static RenderType method14318(ResourceLocation var0) {
+   public static RenderType getEntityTranslucent(ResourceLocation var0) {
       return method14317(var0, true);
    }
 
@@ -766,7 +766,7 @@ public abstract class RenderType extends Class4510 {
       );
    }
 
-   public static RenderType method14345() {
+   public static RenderType getLines() {
       return field21811;
    }
 
@@ -899,8 +899,8 @@ public abstract class RenderType extends Class4510 {
          var0 = Class9387.method35633(var0);
       }
 
-      if (Class8564.method30588()) {
-         var0 = Class8564.method30591(var0);
+      if (EmissiveTextures.isActive()) {
+         var0 = EmissiveTextures.method30591(var0);
       }
 
       return var0;

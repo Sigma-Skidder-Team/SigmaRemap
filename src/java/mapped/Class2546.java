@@ -75,7 +75,7 @@ public class Class2546 implements Class2545 {
       if (!(var8 instanceof Class8977)) {
          float var18 = !var9 ? 0.0F : var7.method8701();
          float var16 = !this.field16772 ? 0.0F : var7.method8702();
-         Class5422 var17 = this.field16771.method25597(var8.method32942(this.field16779));
+         IVertexBuilder var17 = this.field16771.method25597(var8.method32942(this.field16779));
          FontRenderer.method38832(
             this.field16786,
             var8,
@@ -143,7 +143,7 @@ public class Class2546 implements Class2545 {
 
       if (this.field16783 != null) {
          Class8978 var9 = FontRenderer.method38833(this.field16786, Style.DEFAULT_FONT).method7927();
-         Class5422 var10 = this.field16771.method25597(var9.method32942(this.field16779));
+         IVertexBuilder var10 = this.field16771.method25597(var9.method32942(this.field16779));
 
          for (Class8442 var12 : this.field16783) {
             var9.method32941(var12, this.field16778, var10, this.field16780);

@@ -15,14 +15,14 @@ public class Class4144 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (!(var1 instanceof Class2820)) {
          return null;
       } else {
          Class2820 var5 = (Class2820)var1;
          if (!var2.equals("body")) {
             if (var2.equals("eye")) {
-               return (Class7219) Reflector.method35072(var5, Reflector.field43048);
+               return (ModelRenderer) Reflector.method35072(var5, Reflector.field43048);
             } else {
                String var6 = "spine";
                if (!var2.startsWith(var6)) {
@@ -30,7 +30,7 @@ public class Class4144 extends Class4057 {
                   if (!var2.startsWith(var11)) {
                      return null;
                   } else {
-                     Class7219[] var12 = (Class7219[]) Reflector.method35072(var5, Reflector.field43050);
+                     ModelRenderer[] var12 = (ModelRenderer[]) Reflector.method35072(var5, Reflector.field43050);
                      if (var12 == null) {
                         return null;
                      } else {
@@ -41,7 +41,7 @@ public class Class4144 extends Class4057 {
                      }
                   }
                } else {
-                  Class7219[] var7 = (Class7219[]) Reflector.method35072(var5, Reflector.field43049);
+                  ModelRenderer[] var7 = (ModelRenderer[]) Reflector.method35072(var5, Reflector.field43049);
                   if (var7 == null) {
                      return null;
                   } else {
@@ -53,7 +53,7 @@ public class Class4144 extends Class4057 {
                }
             }
          } else {
-            return (Class7219) Reflector.method35072(var5, Reflector.field43047);
+            return (ModelRenderer) Reflector.method35072(var5, Reflector.field43047);
          }
       }
    }
@@ -86,7 +86,7 @@ public class Class4144 extends Class4057 {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5658 var6 = new Class5658(var5);
       var6.field25086 = (Class2820)var1;
-      var6.field25098 = var2;
+      var6.shadowSize = var2;
       return (Class9492)var6;
    }
 }

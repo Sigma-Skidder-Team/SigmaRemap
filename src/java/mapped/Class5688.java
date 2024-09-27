@@ -19,8 +19,8 @@ public final class Class5688 extends Class5685<Class1074, Class2856<Class1074>> 
 
    public Class5688(EntityRendererManager var1) {
       super(var1, new Class2856<Class1074>(0.0F), 1.1F);
-      this.method17880(new Class248(this));
-      this.method17880(new Class258(this));
+      this.addLayer(new Class248(this));
+      this.addLayer(new Class258(this));
    }
 
    public ResourceLocation method17843(Class1074 var1) {

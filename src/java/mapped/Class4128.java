@@ -13,7 +13,7 @@ public class Class4128 extends Class4127 {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5671 var6 = new Class5671(var5, true);
       var6.field25086 = (Class2895<MobEntity>)var1;
-      var6.field25098 = var2;
+      var6.shadowSize = var2;
       return (Class9492)var6;
    }
 }

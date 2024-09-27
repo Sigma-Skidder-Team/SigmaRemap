@@ -23,10 +23,10 @@ public interface Class1023 extends Class1022 {
    void method4537();
 
    default void method4538(LivingEntity var1, float var2) {
-      Hand var5 = Class9456.method36389(var1, Items.field38148);
+      Hand var5 = Class9456.method36389(var1, Items.CROSSBOW);
       ItemStack var6 = var1.getHeldItem(var5);
-      if (var1.method3092(Items.field38148)) {
-         Class3261.method11763(var1.world, var1, var5, var6, var2, (float)(14 - var1.world.method6997().getId() * 4));
+      if (var1.method3092(Items.CROSSBOW)) {
+         CrossbowItem.method11763(var1.world, var1, var5, var6, var2, (float)(14 - var1.world.method6997().getId() * 4));
       }
 
       this.method4537();

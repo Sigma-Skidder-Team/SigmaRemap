@@ -15,10 +15,10 @@ public class Class5683 extends Class5651<Class1057, Class2887<Class1057>> {
 
    public Class5683(EntityRendererManager var1) {
       super(var1, new Class2887<Class1057>(), 0.0F);
-      this.method17880(new Class246(this));
+      this.addLayer(new Class246(this));
    }
 
-   public Vector3d method17867(Class1057 var1, float var2) {
+   public Vector3d getRenderOffset(Class1057 var1, float var2) {
       int var5 = var1.method4854();
       if (var5 > 0 && var1.method4856()) {
          BlockPos var6 = var1.method4849();
@@ -30,7 +30,7 @@ public class Class5683 extends Class5651<Class1057, Class2887<Class1057>> {
          double var14 = (double)(var6.getZ() - var7.getZ()) * var8;
          return new Vector3d(-var10, -var12, -var14);
       } else {
-         return super.method17867(var1, var2);
+         return super.getRenderOffset(var1, var2);
       }
    }
 

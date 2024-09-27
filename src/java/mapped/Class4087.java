@@ -13,7 +13,7 @@ public class Class4087 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2852) {
          Class2852 var5 = (Class2852)var1;
          if (!var2.equals("slate")) {

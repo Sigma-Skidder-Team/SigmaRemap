@@ -3,10 +3,10 @@ package mapped;
 public class Class1886 implements Class1884 {
    private static String[] field11043;
    private String field11044;
-   private Class7219 field11045;
+   private ModelRenderer field11045;
    private Class2095 field11046;
 
-   public Class1886(String var1, Class7219 var2, Class2095 var3) {
+   public Class1886(String var1, ModelRenderer var2, Class2095 var3) {
       this.field11044 = var1;
       this.field11045 = var2;
       this.field11046 = var3;

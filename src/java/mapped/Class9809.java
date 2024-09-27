@@ -34,19 +34,19 @@ public class Class9809 {
    private final Class2842 field45852 = new Class2842();
 
    public void method38685(ItemStack var1, Class2327 var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
-      if (Class8564.method30588()) {
-         Class8564.method30590();
+      if (EmissiveTextures.isActive()) {
+         EmissiveTextures.beginRender();
       }
 
       this.method38686(var1, var3, var4, var5, var6);
-      if (Class8564.method30588()) {
-         if (Class8564.method30594()) {
-            Class8564.method30595();
+      if (EmissiveTextures.isActive()) {
+         if (EmissiveTextures.hasEmissive()) {
+            EmissiveTextures.beginRenderEmissive();
             this.method38686(var1, var3, var4, Class1699.field9258, var6);
-            Class8564.method30597();
+            EmissiveTextures.endRenderEmissive();
          }
 
-         Class8564.method30598();
+         EmissiveTextures.endRender();
       }
    }
 
@@ -57,7 +57,7 @@ public class Class9809 {
             if (var8 == Items.field38144) {
                var2.push();
                var2.method35292(1.0F, -1.0F, -1.0F);
-               Class5422 var9 = ItemRenderer.method786(var3, this.field45852.method11028(Class2842.field17638), false, var1.method32159());
+               IVertexBuilder var9 = ItemRenderer.method786(var3, this.field45852.method11028(Class2842.field17638), false, var1.method32159());
                this.field45852.method11016(var2, var9, var4, var5, 1.0F, 1.0F, 1.0F, 1.0F);
                var2.pop();
             }
@@ -66,7 +66,7 @@ public class Class9809 {
             var2.push();
             var2.method35292(1.0F, -1.0F, -1.0F);
             Class7826 var11 = !var13 ? ModelBakery.field40515 : ModelBakery.field40514;
-            Class5422 var10 = var11.getSprite()
+            IVertexBuilder var10 = var11.getSprite()
                .method7474(ItemRenderer.method786(var3, this.field45851.method11028(var11.method26196()), true, var1.method32159()));
             this.field45851.method11182().method22681(var2, var10, var4, var5, 1.0F, 1.0F, 1.0F, 1.0F);
             if (!var13) {

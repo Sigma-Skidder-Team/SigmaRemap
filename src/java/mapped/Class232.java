@@ -5,12 +5,12 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
-public class Class232<T extends LivingEntity, M extends Class2894<T>> extends Class231<T, M> {
+public class Class232<T extends LivingEntity, M extends PlayerModel<T>> extends Class231<T, M> {
    private static String[] field876;
    private final EntityRendererManager field877;
    private Class887 field878;
 
-   public Class232(Class5712<T, M> var1) {
+   public Class232(LivingRenderer<T, M> var1) {
       super(var1);
       this.field877 = var1.method17897();
    }
@@ -28,6 +28,6 @@ public class Class232<T extends LivingEntity, M extends Class2894<T>> extends Cl
       this.field878.rotationPitch = (float)(Math.atan2((double)var6, (double)var11) * 180.0F / (float)Math.PI);
       this.field878.prevRotationYaw = this.field878.rotationYaw;
       this.field878.prevRotationPitch = this.field878.rotationPitch;
-      this.field877.method32219(this.field878, 0.0, 0.0, 0.0, 0.0F, var8, var1, var2, var3);
+      this.field877.renderEntityStatic(this.field878, 0.0, 0.0, 0.0, 0.0F, var8, var1, var2, var3);
    }
 }

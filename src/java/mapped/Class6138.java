@@ -8,7 +8,7 @@ public class Class6138<S extends TileEntity> implements Class6139<S, Int2IntFunc
 
    public Int2IntFunction method19043(S var1, S var2) {
       return var2x -> {
-         if (!Class8564.method30596()) {
+         if (! EmissiveTextures.method30596()) {
             int var5 = WorldRenderer.method944(var1.method3734(), var1.getPos());
             int var6 = WorldRenderer.method944(var2.method3734(), var2.getPos());
             int var7 = Class1699.method7322(var5);

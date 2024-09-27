@@ -57,7 +57,7 @@ public class Class4829 {
       return !method14923(var0, var1, var3, var4) && !method14920(var0, var1, var4, var2);
    }
 
-   public boolean method14925(IBlockDisplayReader var1, BlockPos var2, Class5422 var3, FluidState var4) {
+   public boolean method14925(IBlockDisplayReader var1, BlockPos var2, IVertexBuilder var3, FluidState var4) {
       BlockState var7 = var4.getBlockState();
 
       boolean var23;
@@ -355,7 +355,7 @@ public class Class4829 {
       return var23;
    }
 
-   private void method14926(Class5422 var1, double var2, double var4, double var6, float var8, float var9, float var10, float var11, float var12, int var13) {
+   private void method14926(IVertexBuilder var1, double var2, double var4, double var6, float var8, float var9, float var10, float var11, float var12, int var13) {
       var1.pos(var2, var4, var6)
          .color(var8, var9, var10, 1.0F)
          .tex(var11, var12)
@@ -365,7 +365,7 @@ public class Class4829 {
    }
 
    private void method14927(
-      Class5422 var1, double var2, double var4, double var6, float var8, float var9, float var10, float var11, float var12, float var13, int var14
+           IVertexBuilder var1, double var2, double var4, double var6, float var8, float var9, float var10, float var11, float var12, float var13, int var14
    ) {
       var1.pos(var2, var4, var6)
          .color(var8, var9, var10, var11)

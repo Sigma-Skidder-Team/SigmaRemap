@@ -225,7 +225,7 @@ public class Class904 extends ProjectileEntity {
 
    private boolean method3534(PlayerEntity var1) {
       ItemStack var4 = var1.getHeldItemMainhand();
-      ItemStack var5 = var1.method3091();
+      ItemStack var5 = var1.getHeldItemOffhand();
       boolean var6 = var4.getItem() == Items.field37906;
       boolean var7 = var5.getItem() == Items.field37906;
       if (!var1.removed && var1.isAlive() && (var6 || var7) && !(this.getDistanceSq(var1) > 1024.0)) {

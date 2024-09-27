@@ -28,7 +28,7 @@ public class Class5121 implements Class5119 {
          this.field23298 = var13.world.func_234867_d_(var13, var13.getBoundingBox().method19664(6.0), var0 -> true).collect(Collectors.<VoxelShape>toList());
       }
 
-      Class5422 var16 = var2.method25597(RenderType.method14345());
+      IVertexBuilder var16 = var2.method25597(RenderType.getLines());
 
       for (VoxelShape var15 : this.field23298) {
          WorldRenderer.method895(var1, var16, var15, -var3, -var5, -var7, 1.0F, 1.0F, 1.0F, 1.0F);

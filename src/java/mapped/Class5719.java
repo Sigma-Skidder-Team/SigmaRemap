@@ -5,14 +5,14 @@ import net.minecraft.util.ResourceLocation;
 
 import java.util.Random;
 
-public class Class5719 extends Class5715<Class906> {
+public class Class5719 extends EntityRenderer<Class906> {
    private static String[] field25116;
 
    public Class5719(EntityRendererManager var1) {
       super(var1);
    }
 
-   public void method17853(Class906 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(Class906 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       float[] var9 = new float[8];
       float[] var10 = new float[8];
       float var11 = 0.0F;
@@ -26,7 +26,7 @@ public class Class5719 extends Class5715<Class906> {
          var12 += (float)(var13.nextInt(11) - 5);
       }
 
-      Class5422 var32 = var5.method25597(RenderType.method14341());
+      IVertexBuilder var32 = var5.method25597(RenderType.method14341());
       Matrix4f var15 = var4.getLast().getMatrix();
 
       for (int var16 = 0; var16 < 4; var16++) {
@@ -82,7 +82,7 @@ public class Class5719 extends Class5715<Class906> {
 
    private static void method17907(
       Matrix4f var0,
-      Class5422 var1,
+      IVertexBuilder var1,
       float var2,
       float var3,
       int var4,

@@ -18,7 +18,7 @@ public class Class4090 extends Class4089 {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5747 var6 = new Class5747(var5);
       var6.field25086 = (Class2861<Class1098>)var1;
-      var6.field25098 = var2;
+      var6.shadowSize = var2;
       return (Class9492)var6;
    }
 }

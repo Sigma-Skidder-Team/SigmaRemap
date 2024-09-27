@@ -9,7 +9,7 @@ public class Class5665 extends Class5662<Class1037, Class2793<Class1037>> {
 
    public Class5665(EntityRendererManager var1) {
       super(var1, new Class2793<Class1037>(0.0F, 0.0F, 64, 64), new Class2793<Class1037>(0.5F, true), new Class2793<Class1037>(1.0F, true));
-      this.method17880(new Class254<Class1037>(this));
+      this.addLayer(new Class254<Class1037>(this));
    }
 
    @Override

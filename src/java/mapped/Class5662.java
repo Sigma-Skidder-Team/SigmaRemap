@@ -7,7 +7,7 @@ public abstract class Class5662<T extends ZombieEntity, M extends Class2794<T>> 
 
    public Class5662(EntityRendererManager var1, M var2, M var3, M var4) {
       super(var1, var2, 0.5F);
-      this.method17880(new Class255<>(this, var3, var4));
+      this.addLayer(new BipedArmorLayer<>(this, var3, var4));
    }
 
    public ResourceLocation method17843(ZombieEntity var1) {

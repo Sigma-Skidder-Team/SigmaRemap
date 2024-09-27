@@ -7,7 +7,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.HandSide;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2798<T extends MobEntity & Class1022> extends Class2797<T> {
+public class Class2798<T extends MobEntity & Class1022> extends BipedModel<T> {
    private static String[] field17431;
 
    public Class2798() {
@@ -17,62 +17,62 @@ public class Class2798<T extends MobEntity & Class1022> extends Class2797<T> {
    public Class2798(float var1, boolean var2) {
       super(var1);
       if (!var2) {
-         this.field17435 = new Class7219(this, 40, 16);
-         this.field17435.method22675(-1.0F, -2.0F, -1.0F, 2.0F, 12.0F, 2.0F, var1);
-         this.field17435.method22679(-5.0F, 2.0F, 0.0F);
-         this.field17436 = new Class7219(this, 40, 16);
-         this.field17436.field31038 = true;
-         this.field17436.method22675(-1.0F, -2.0F, -1.0F, 2.0F, 12.0F, 2.0F, var1);
-         this.field17436.method22679(5.0F, 2.0F, 0.0F);
-         this.field17437 = new Class7219(this, 0, 16);
-         this.field17437.method22675(-1.0F, 0.0F, -1.0F, 2.0F, 12.0F, 2.0F, var1);
-         this.field17437.method22679(-2.0F, 12.0F, 0.0F);
-         this.field17438 = new Class7219(this, 0, 16);
-         this.field17438.field31038 = true;
-         this.field17438.method22675(-1.0F, 0.0F, -1.0F, 2.0F, 12.0F, 2.0F, var1);
-         this.field17438.method22679(2.0F, 12.0F, 0.0F);
+         this.bipedRightArm = new ModelRenderer(this, 40, 16);
+         this.bipedRightArm.addBox(-1.0F, -2.0F, -1.0F, 2.0F, 12.0F, 2.0F, var1);
+         this.bipedRightArm.setRotationPoint(-5.0F, 2.0F, 0.0F);
+         this.bipedLeftArm = new ModelRenderer(this, 40, 16);
+         this.bipedLeftArm.field31038 = true;
+         this.bipedLeftArm.addBox(-1.0F, -2.0F, -1.0F, 2.0F, 12.0F, 2.0F, var1);
+         this.bipedLeftArm.setRotationPoint(5.0F, 2.0F, 0.0F);
+         this.bipedRightLeg = new ModelRenderer(this, 0, 16);
+         this.bipedRightLeg.addBox(-1.0F, 0.0F, -1.0F, 2.0F, 12.0F, 2.0F, var1);
+         this.bipedRightLeg.setRotationPoint(-2.0F, 12.0F, 0.0F);
+         this.bipedLeftLeg = new ModelRenderer(this, 0, 16);
+         this.bipedLeftLeg.field31038 = true;
+         this.bipedLeftLeg.addBox(-1.0F, 0.0F, -1.0F, 2.0F, 12.0F, 2.0F, var1);
+         this.bipedLeftLeg.setRotationPoint(2.0F, 12.0F, 0.0F);
       }
    }
 
    public void method10997(T var1, float var2, float var3, float var4) {
-      this.field17440 = Class2278.field14836;
-      this.field17439 = Class2278.field14836;
+      this.rightArmPose = ArmPose.EMPTY;
+      this.leftArmPose = ArmPose.EMPTY;
       ItemStack var7 = var1.getHeldItem(Hand.MAIN_HAND);
       if (var7.getItem() == Items.BOW && var1.method4307()) {
-         if (var1.getPrimaryHand() != HandSide.field14418) {
-            this.field17439 = Class2278.field14839;
+         if (var1.getPrimaryHand() != HandSide.RIGHT) {
+            this.leftArmPose = ArmPose.BOW_AND_ARROW;
          } else {
-            this.field17440 = Class2278.field14839;
+            this.rightArmPose = ArmPose.BOW_AND_ARROW;
          }
       }
 
       super.method10997((T)var1, var2, var3, var4);
    }
 
-   public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
-      super.method10998((T)var1, var2, var3, var4, var5, var6);
+   public void setRotationAngles(T var1, float var2, float var3, float var4, float var5, float var6) {
+      super.setRotationAngles((T)var1, var2, var3, var4, var5, var6);
       ItemStack var9 = var1.getHeldItemMainhand();
       if (var1.method4307() && (var9.isEmpty() || var9.getItem() != Items.BOW)) {
          float var10 = MathHelper.sin(this.field17600 * (float) Math.PI);
          float var11 = MathHelper.sin((1.0F - (1.0F - this.field17600) * (1.0F - this.field17600)) * (float) Math.PI);
-         this.field17435.field31037 = 0.0F;
-         this.field17436.field31037 = 0.0F;
-         this.field17435.field31036 = -(0.1F - var10 * 0.6F);
-         this.field17436.field31036 = 0.1F - var10 * 0.6F;
-         this.field17435.field31035 = (float) (-Math.PI / 2);
-         this.field17436.field31035 = (float) (-Math.PI / 2);
-         this.field17435.field31035 -= var10 * 1.2F - var11 * 0.4F;
-         this.field17436.field31035 -= var10 * 1.2F - var11 * 0.4F;
-         Class7972.method27108(this.field17435, this.field17436, var4);
+         this.bipedRightArm.field31037 = 0.0F;
+         this.bipedLeftArm.field31037 = 0.0F;
+         this.bipedRightArm.rotateAngleY = -(0.1F - var10 * 0.6F);
+         this.bipedLeftArm.rotateAngleY = 0.1F - var10 * 0.6F;
+         this.bipedRightArm.rotateAngleX = (float) (-Math.PI / 2);
+         this.bipedLeftArm.rotateAngleX = (float) (-Math.PI / 2);
+         this.bipedRightArm.rotateAngleX -= var10 * 1.2F - var11 * 0.4F;
+         this.bipedLeftArm.rotateAngleX -= var10 * 1.2F - var11 * 0.4F;
+         ModelHelper.method27108(this.bipedRightArm, this.bipedLeftArm, var4);
       }
    }
 
    @Override
-   public void method11010(HandSide var1, MatrixStack var2) {
-      float var5 = var1 != HandSide.field14418 ? -1.0F : 1.0F;
-      Class7219 var6 = this.method11011(var1);
-      var6.field31032 += var5;
-      var6.method22682(var2);
-      var6.field31032 -= var5;
+   public void translateHand(HandSide var1, MatrixStack var2) {
+      float var5 = var1 != HandSide.RIGHT ? -1.0F : 1.0F;
+      ModelRenderer var6 = this.getArmForSide(var1);
+      var6.rotationPointX += var5;
+      var6.translateRotate(var2);
+      var6.rotationPointX -= var5;
    }
 }

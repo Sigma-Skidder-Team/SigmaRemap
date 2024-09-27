@@ -18,7 +18,7 @@ public class Class4094 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2802) {
          Class2802 var5 = (Class2802)var1;
          if (!var2.equals("head")) {
@@ -29,30 +29,30 @@ public class Class4094 extends Class4057 {
                         if (!var2.equals("arms")) {
                            if (!var2.equals("right_leg")) {
                               if (!var2.equals("left_leg")) {
-                                 return !var2.equals("nose") ? null : (Class7219) Reflector.field43125.method36565(var5, 8);
+                                 return !var2.equals("nose") ? null : (ModelRenderer) Reflector.field43125.method36565(var5, 8);
                               } else {
-                                 return (Class7219) Reflector.field43125.method36565(var5, 7);
+                                 return (ModelRenderer) Reflector.field43125.method36565(var5, 7);
                               }
                            } else {
-                              return (Class7219) Reflector.field43125.method36565(var5, 6);
+                              return (ModelRenderer) Reflector.field43125.method36565(var5, 6);
                            }
                         } else {
-                           return (Class7219) Reflector.field43125.method36565(var5, 5);
+                           return (ModelRenderer) Reflector.field43125.method36565(var5, 5);
                         }
                      } else {
-                        return (Class7219) Reflector.field43125.method36565(var5, 4);
+                        return (ModelRenderer) Reflector.field43125.method36565(var5, 4);
                      }
                   } else {
-                     return (Class7219) Reflector.field43125.method36565(var5, 3);
+                     return (ModelRenderer) Reflector.field43125.method36565(var5, 3);
                   }
                } else {
-                  return (Class7219) Reflector.field43125.method36565(var5, 2);
+                  return (ModelRenderer) Reflector.field43125.method36565(var5, 2);
                }
             } else {
-               return (Class7219) Reflector.field43125.method36565(var5, 1);
+               return (ModelRenderer) Reflector.field43125.method36565(var5, 1);
             }
          } else {
-            return (Class7219) Reflector.field43125.method36565(var5, 0);
+            return (ModelRenderer) Reflector.field43125.method36565(var5, 0);
          }
       } else {
          return null;
@@ -70,7 +70,7 @@ public class Class4094 extends Class4057 {
       EntityRendererManager var6 = Minecraft.getInstance().getRenderManager();
       Class5692 var7 = new Class5692(var6, var5);
       var7.field25086 = (Class2802<Class1042>)var1;
-      var7.field25098 = var2;
+      var7.shadowSize = var2;
       return (Class9492)var7;
    }
 }

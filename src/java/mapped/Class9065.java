@@ -49,7 +49,7 @@ public class Class9065 {
    }
 
    static {
-      method33750(new ResourceLocation("lefthanded"), (var0, var1, var2) -> var2 != null && var2.getPrimaryHand() != HandSide.field14418 ? 1.0F : 0.0F);
+      method33750(new ResourceLocation("lefthanded"), (var0, var1, var2) -> var2 != null && var2.getPrimaryHand() != HandSide.RIGHT ? 1.0F : 0.0F);
       method33750(
          new ResourceLocation("cooldown"),
          (var0, var1, var2) -> !(var2 instanceof PlayerEntity) ? 0.0F : ((PlayerEntity)var2).method2976().method19636(var0.getItem(), 0.0F)
@@ -67,29 +67,29 @@ public class Class9065 {
       );
       method33751(Items.field37907, new ResourceLocation("time"), new Class8177());
       method33751(Items.field37905, new ResourceLocation("angle"), new Class8178());
-      method33751(Items.field38148, new ResourceLocation("pull"), (var0, var1, var2) -> {
+      method33751(Items.CROSSBOW, new ResourceLocation("pull"), (var0, var1, var2) -> {
          if (var2 != null) {
-            return !Class3261.method11755(var0) ? (float)(var0.method32137() - var2.getItemInUseCount()) / (float)Class3261.method11767(var0) : 0.0F;
+            return ! CrossbowItem.isCharged(var0) ? (float)(var0.method32137() - var2.getItemInUseCount()) / (float) CrossbowItem.method11767(var0) : 0.0F;
          } else {
             return 0.0F;
          }
       });
       method33751(
-         Items.field38148,
+         Items.CROSSBOW,
          new ResourceLocation("pulling"),
-         (var0, var1, var2) -> var2 != null && var2.isHandActive() && var2.getActiveItemStack() == var0 && !Class3261.method11755(var0) ? 1.0F : 0.0F
+         (var0, var1, var2) -> var2 != null && var2.isHandActive() && var2.getActiveItemStack() == var0 && ! CrossbowItem.isCharged(var0) ? 1.0F : 0.0F
       );
-      method33751(Items.field38148, new ResourceLocation("charged"), (var0, var1, var2) -> var2 != null && Class3261.method11755(var0) ? 1.0F : 0.0F);
+      method33751(Items.CROSSBOW, new ResourceLocation("charged"), (var0, var1, var2) -> var2 != null && CrossbowItem.isCharged(var0) ? 1.0F : 0.0F);
       method33751(
-         Items.field38148,
+         Items.CROSSBOW,
          new ResourceLocation("firework"),
-         (var0, var1, var2) -> var2 != null && Class3261.method11755(var0) && Class3261.method11760(var0, Items.field38068) ? 1.0F : 0.0F
+         (var0, var1, var2) -> var2 != null && CrossbowItem.isCharged(var0) && CrossbowItem.method11760(var0, Items.field38068) ? 1.0F : 0.0F
       );
       method33751(Items.field38120, new ResourceLocation("broken"), (var0, var1, var2) -> !Class3256.method11698(var0) ? 1.0F : 0.0F);
       method33751(Items.field37906, new ResourceLocation("cast"), (var0, var1, var2) -> {
          if (var2 != null) {
             boolean var5 = var2.getHeldItemMainhand() == var0;
-            boolean var6 = var2.method3091() == var0;
+            boolean var6 = var2.getHeldItemOffhand() == var0;
             if (var2.getHeldItemMainhand().getItem() instanceof Class3259) {
                var6 = false;
             }

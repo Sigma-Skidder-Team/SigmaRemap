@@ -15,7 +15,7 @@ public class Class4102 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2812) {
          Class2812 var5 = (Class2812)var1;
          if (!var2.equals("body")) {
@@ -30,42 +30,42 @@ public class Class4102 extends Class4057 {
                                     if (!var2.equals("spikes_middle_bottom")) {
                                        if (!var2.equals("spikes_back_bottom")) {
                                           if (!var2.equals("spikes_back_right")) {
-                                             return !var2.equals("spikes_back_left") ? null : (Class7219) Reflector.field43082.method36565(var5, 12);
+                                             return !var2.equals("spikes_back_left") ? null : (ModelRenderer) Reflector.field43082.method36565(var5, 12);
                                           } else {
-                                             return (Class7219) Reflector.field43082.method36565(var5, 11);
+                                             return (ModelRenderer) Reflector.field43082.method36565(var5, 11);
                                           }
                                        } else {
-                                          return (Class7219) Reflector.field43082.method36565(var5, 10);
+                                          return (ModelRenderer) Reflector.field43082.method36565(var5, 10);
                                        }
                                     } else {
-                                       return (Class7219) Reflector.field43082.method36565(var5, 9);
+                                       return (ModelRenderer) Reflector.field43082.method36565(var5, 9);
                                     }
                                  } else {
-                                    return (Class7219) Reflector.field43082.method36565(var5, 8);
+                                    return (ModelRenderer) Reflector.field43082.method36565(var5, 8);
                                  }
                               } else {
-                                 return (Class7219) Reflector.field43082.method36565(var5, 7);
+                                 return (ModelRenderer) Reflector.field43082.method36565(var5, 7);
                               }
                            } else {
-                              return (Class7219) Reflector.field43082.method36565(var5, 6);
+                              return (ModelRenderer) Reflector.field43082.method36565(var5, 6);
                            }
                         } else {
-                           return (Class7219) Reflector.field43082.method36565(var5, 5);
+                           return (ModelRenderer) Reflector.field43082.method36565(var5, 5);
                         }
                      } else {
-                        return (Class7219) Reflector.field43082.method36565(var5, 4);
+                        return (ModelRenderer) Reflector.field43082.method36565(var5, 4);
                      }
                   } else {
-                     return (Class7219) Reflector.field43082.method36565(var5, 3);
+                     return (ModelRenderer) Reflector.field43082.method36565(var5, 3);
                   }
                } else {
-                  return (Class7219) Reflector.field43082.method36565(var5, 2);
+                  return (ModelRenderer) Reflector.field43082.method36565(var5, 2);
                }
             } else {
-               return (Class7219) Reflector.field43082.method36565(var5, 1);
+               return (ModelRenderer) Reflector.field43082.method36565(var5, 1);
             }
          } else {
-            return (Class7219) Reflector.field43082.method36565(var5, 0);
+            return (ModelRenderer) Reflector.field43082.method36565(var5, 0);
          }
       } else {
          return null;
@@ -96,9 +96,9 @@ public class Class4102 extends Class4057 {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Object var6 = var5.method32232().get(EntityType.field41070);
       if (var6 instanceof Class5748) {
-         if (((Class5715)var6).method17898() == null) {
+         if (((EntityRenderer)var6).method17898() == null) {
             Class5748 var7 = new Class5748(var5);
-            var7.field25098 = var2;
+            var7.shadowSize = var2;
             var6 = var7;
          }
 

@@ -22,10 +22,10 @@ public class Class4053 extends Class4051 {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Object var6 = var5.method32232().get(EntityType.SHEEP);
       if (var6 instanceof Class5749) {
-         if (((Class5715)var6).method17898() == null) {
+         if (((EntityRenderer)var6).method17898() == null) {
             Class5749 var7 = new Class5749(var5);
             var7.field25086 = new Class2869<Class1019>();
-            var7.field25098 = 0.7F;
+            var7.shadowSize = 0.7F;
             var6 = var7;
          }
 
@@ -42,7 +42,7 @@ public class Class4053 extends Class4051 {
 
          Class249 var12 = new Class249(var11);
          var12.field906 = (Class2868<Class1019>)var1;
-         var11.method17880(var12);
+         var11.addLayer(var12);
          return (Class9492)var11;
       } else {
          Config.method26811("Not a RenderSheep: " + var6);

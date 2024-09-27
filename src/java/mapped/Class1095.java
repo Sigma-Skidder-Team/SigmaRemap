@@ -324,7 +324,7 @@ public class Class1095 extends Class1018 {
       var1.putBoolean("Sleeping", this.isSleeping());
       var1.method109("Type", this.method5125().method567());
       var1.putBoolean("Sitting", this.method5129());
-      var1.putBoolean("Crouching", this.method3336());
+      var1.putBoolean("Crouching", this.isCrouching());
    }
 
    @Override
@@ -467,7 +467,7 @@ public class Class1095 extends Class1018 {
       }
 
       this.field6007 = this.field6006;
-      if (!this.method3336()) {
+      if (!this.isCrouching()) {
          this.field6006 = 0.0F;
       } else {
          this.field6006 += 0.2F;
@@ -504,7 +504,7 @@ public class Class1095 extends Class1018 {
    }
 
    @Override
-   public boolean method3336() {
+   public boolean isCrouching() {
       return this.method5137(4);
    }
 

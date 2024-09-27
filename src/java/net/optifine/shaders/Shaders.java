@@ -2699,7 +2699,7 @@ public class Shaders {
                 }
 
                 int var7 = var6 != null ? var6.method11579().getLightValue() : 0;
-                ItemStack var8 = field40591.player != null ? field40591.player.method3091() : null;
+                ItemStack var8 = field40591.player != null ? field40591.player.getHeldItemOffhand() : null;
                 Item var9 = var8 != null ? var8.getItem() : null;
                 int var10 = -1;
                 Block var11 = null;

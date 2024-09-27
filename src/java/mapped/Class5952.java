@@ -59,7 +59,7 @@ public class Class5952 extends Class5942<SkullTileEntity> {
       }
 
       var5.method35292(-1.0F, -1.0F, 1.0F);
-      Class5422 var12 = var6.method25597(method18483(var2, var3));
+      IVertexBuilder var12 = var6.method25597(method18483(var2, var3));
       var10.method11174(var4, var1, 0.0F);
       var10.method11016(var5, var12, var7, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
       var5.pop();
@@ -72,7 +72,7 @@ public class Class5952 extends Class5942<SkullTileEntity> {
          Map var6 = var5.getSkinManager().method38347(var1);
          return !var6.containsKey(Type.SKIN)
             ? RenderType.getEntityCutoutNoCull(Class7209.method22637(PlayerEntity.method2960(var1)))
-            : RenderType.method14318(var5.getSkinManager().method38344((MinecraftProfileTexture)var6.get(Type.SKIN), Type.SKIN));
+            : RenderType.getEntityTranslucent(var5.getSkinManager().method38344((MinecraftProfileTexture)var6.get(Type.SKIN), Type.SKIN));
       } else {
          return RenderType.method14314(var4);
       }

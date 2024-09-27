@@ -15,7 +15,7 @@ public abstract class Class2808<E extends Entity> extends Class2803<E> {
    }
 
    @Override
-   public void method11016(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+   public void method11016(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       super.method11016(var1, var2, var3, var4, this.field17477 * var5, this.field17478 * var6, this.field17479 * var7, var8);
    }
 }

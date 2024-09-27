@@ -455,7 +455,7 @@ public class IngameGui extends AbstractGui {
         if (var5 != null) {
             RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.field6716.getTextureManager().bindTexture(field6712);
-            ItemStack var6 = var5.method3091();
+            ItemStack var6 = var5.getHeldItemOffhand();
             HandSide var7 = var5.getPrimaryHand().method8920();
             int var8 = this.field6741 / 2;
             int var9 = this.method5702();
@@ -465,7 +465,7 @@ public class IngameGui extends AbstractGui {
             this.blit(var2, var8 - 91, this.field6742 - 22, 0, 0, 182, 22);
             this.blit(var2, var8 - 91 - 1 + var5.inventory.currentItem * 20, this.field6742 - 22 - 1, 0, 22, 24, 22);
             if (!var6.isEmpty()) {
-                if (var7 != HandSide.field14417) {
+                if (var7 != HandSide.LEFT) {
                     this.blit(var2, var8 + 91, this.field6742 - 23, 53, 22, 29, 24);
                 } else {
                     this.blit(var2, var8 - 91 - 29, this.field6742 - 23, 24, 22, 29, 24);
@@ -487,7 +487,7 @@ public class IngameGui extends AbstractGui {
             if (!var6.isEmpty()) {
                 Class7992.method27282(true);
                 int var16 = this.field6742 - 16 - 3;
-                if (var7 != HandSide.field14417) {
+                if (var7 != HandSide.LEFT) {
                     this.method5982(var8 + 91 + 10, var16, var1, var5, var6);
                 } else {
                     this.method5982(var8 - 91 - 26, var16, var1, var5, var6);
@@ -501,7 +501,7 @@ public class IngameGui extends AbstractGui {
                 if (var17 < 1.0F) {
                     int var18 = this.field6742 - 20;
                     int var19 = var8 + 91 + 6;
-                    if (var7 == HandSide.field14418) {
+                    if (var7 == HandSide.RIGHT) {
                         var19 = var8 - 91 - 22;
                     }
 

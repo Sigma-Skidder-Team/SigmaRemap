@@ -15,7 +15,7 @@ public class Class4136 extends Class4135 {
       Class5732 var6 = new Class5732(var5);
       if (Reflector.field43144.method20238()) {
          Reflector.method35082(var6, Reflector.field43144, var1);
-         var6.field25098 = var2;
+         var6.shadowSize = var2;
          return (Class9492)var6;
       } else {
          Config.method26811("Field not found: RenderMinecart.modelMinecart");

@@ -21,7 +21,7 @@ import java.util.Set;
 
 public class CustomEntityModels {
    private static boolean field45853 = false;
-   private static Map<EntityType, Class5715> field45854 = null;
+   private static Map<EntityType, EntityRenderer> field45854 = null;
    private static Map<TileEntityType, Class5942> field45855 = null;
    private static Map<Class2137, Class2828> field45856 = null;
 
@@ -47,14 +47,14 @@ public class CustomEntityModels {
                   Class9492 var8 = method38693(var7);
                   if (var8 != null) {
                      Class4862 var9 = var8.method36665();
-                     if (!(var8 instanceof Class5715)) {
+                     if (!(var8 instanceof EntityRenderer)) {
                         if (!(var8 instanceof Class5942)) {
                            Config.method26811("Unknown renderer type: " + var8.getClass().getName());
                         } else {
                            var3.put(var9.method15004().get(), (Class5942)var8);
                         }
                      } else {
-                        var2.put(var9.method15003().get(), (Class5715)var8);
+                        var2.put(var9.method15003().get(), (EntityRenderer)var8);
                      }
 
                      field45853 = true;
@@ -69,12 +69,12 @@ public class CustomEntityModels {
       }
    }
 
-   private static Map<EntityType, Class5715> method38689() {
+   private static Map<EntityType, EntityRenderer> method38689() {
       EntityRendererManager var2 = Minecraft.getInstance().getRenderManager();
       Map var3 = var2.method32232();
       if (var3 != null) {
          if (field45854 == null) {
-            field45854 = new HashMap<EntityType, Class5715>(var3);
+            field45854 = new HashMap<EntityType, EntityRenderer>(var3);
          }
 
          return var3;
@@ -199,7 +199,7 @@ public class CustomEntityModels {
 
    private static boolean method38697(Class4057 var0, Class2828 var1, Class9734 var2, Class6265 var3) {
       String var6 = var2.method38143();
-      Class7219 var7 = var0.method12823(var1, var6);
+      ModelRenderer var7 = var0.method12823(var1, var6);
       if (var7 == null) {
          Config.method26811("Model part not found: " + var6 + ", model: " + var1);
          return false;
@@ -214,14 +214,14 @@ public class CustomEntityModels {
             }
 
             if (var7.field31041 != null) {
-               Class7219[] var8 = var0.method12830(var1);
+               ModelRenderer[] var8 = var0.method12830(var1);
                Set var9 = Collections.newSetFromMap(new IdentityHashMap());
                var9.addAll(Arrays.asList(var8));
                ObjectList var10 = var7.field31041;
                Iterator var11 = var10.iterator();
 
                while (var11.hasNext()) {
-                  Class7219 var12 = (Class7219)var11.next();
+                  ModelRenderer var12 = (ModelRenderer)var11.next();
                   if (!var9.contains(var12)) {
                      var11.remove();
                   }
@@ -251,7 +251,7 @@ public class CustomEntityModels {
       }
    }
 
-   public static boolean method38699() {
+   public static boolean isActive() {
       return field45853;
    }
 }

@@ -733,7 +733,7 @@ public class ArmorStandEntity extends LivingEntity {
 
    @Override
    public HandSide getPrimaryHand() {
-      return HandSide.field14418;
+      return HandSide.RIGHT;
    }
 
    @Override

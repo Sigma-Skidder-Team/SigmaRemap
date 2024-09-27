@@ -29,7 +29,7 @@ public class Class5943 extends Class5942<Class960> {
          var3.translate(0.0, -0.2F, 0.0);
          var3.rotate(Vector3f.XP.rotationDegrees(-30.0F));
          var3.method35292(var11, var11, var11);
-         Minecraft.getInstance().getRenderManager().method32219(var10, 0.0, 0.0, 0.0, 0.0F, var2, var3, var4, var5);
+         Minecraft.getInstance().getRenderManager().renderEntityStatic(var10, 0.0, 0.0, 0.0, 0.0F, var2, var3, var4, var5);
       }
 
       var3.pop();

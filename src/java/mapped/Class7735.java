@@ -13,7 +13,7 @@ public class Class7735 implements Class7733 {
    public final Map<RenderType, BufferBuilder> field33216;
    public RenderType field33217 = null;
    public final Set<BufferBuilder> field33218 = Sets.newHashSet();
-   private final Class5422 field33219 = new Class5430(this);
+   private final IVertexBuilder field33219 = new Class5430(this);
 
    public Class7735(BufferBuilder var1, Map<RenderType, BufferBuilder> var2) {
       this.field33215 = var1;
@@ -26,7 +26,7 @@ public class Class7735 implements Class7733 {
    }
 
    @Override
-   public Class5422 method25597(RenderType var1) {
+   public IVertexBuilder method25597(RenderType var1) {
       BufferBuilder var4 = this.method25601(var1);
       if (!Objects.equals(this.field33217, var1)) {
          if (this.field33217 != null) {
@@ -43,7 +43,7 @@ public class Class7735 implements Class7733 {
          this.field33217 = var1;
       }
 
-      return (Class5422)(var1.method14366() != Class8684.field39210 ? var4 : this.field33219);
+      return (IVertexBuilder)(var1.method14366() != Class8684.field39210 ? var4 : this.field33219);
    }
 
    private BufferBuilder method25601(RenderType var1) {
@@ -53,7 +53,7 @@ public class Class7735 implements Class7733 {
    public void method25602() {
       if (!this.field33218.isEmpty()) {
          if (this.field33217 != null) {
-            Class5422 var3 = this.method25597(this.field33217);
+            IVertexBuilder var3 = this.method25597(this.field33217);
             if (var3 == this.field33215) {
                this.finish(this.field33217);
             }
@@ -76,7 +76,7 @@ public class Class7735 implements Class7733 {
       }
    }
 
-   public Class5422 method25604(ResourceLocation var1, Class5422 var2) {
+   public IVertexBuilder method25604(ResourceLocation var1, IVertexBuilder var2) {
       if (this.field33217 instanceof Class4521) {
          var1 = RenderType.method14363(var1);
          Class4521 var5 = (Class4521)this.field33217;
@@ -100,7 +100,7 @@ public class Class7735 implements Class7733 {
       }
    }
 
-   public Class5422 method25606() {
+   public IVertexBuilder method25606() {
       return this.field33219;
    }
 }

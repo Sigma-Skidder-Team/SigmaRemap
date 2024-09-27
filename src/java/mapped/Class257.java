@@ -23,9 +23,9 @@ public class Class257 extends Class219<Class1095, Class2864<Class1095>> {
       }
 
       var1.translate(
-         (double)(this.method825().field17750.field31032 / 16.0F),
-         (double)(this.method825().field17750.field31033 / 16.0F),
-         (double)(this.method825().field17750.field31034 / 16.0F)
+         (double)(this.method825().field17750.rotationPointX / 16.0F),
+         (double)(this.method825().field17750.rotationPointY / 16.0F),
+         (double)(this.method825().field17750.rotationPointZ / 16.0F)
       );
       float var17 = var4.method5146(var7);
       var1.rotate(Vector3f.ZP.method25285(var17));

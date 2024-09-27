@@ -279,7 +279,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    private ItemStack method4620() {
-      return !((double)this.rand.nextFloat() < 0.5) ? new ItemStack(Items.field37815) : new ItemStack(Items.field38148);
+      return !((double)this.rand.nextFloat() < 0.5) ? new ItemStack(Items.field37815) : new ItemStack(Items.CROSSBOW);
    }
 
    private boolean method4621() {
@@ -299,14 +299,14 @@ public class Class1034 extends Class1035 implements Class1023 {
    @Override
    public Class2172 method4622() {
       if (!this.method4623()) {
-         if (Class4388.method13827(this.method3091().getItem())) {
+         if (Class4388.method13827(this.getHeldItemOffhand().getItem())) {
             return Class2172.field14262;
          } else if (this.method4307() && this.method4636()) {
             return Class2172.field14259;
          } else if (this.method4621()) {
             return Class2172.field14261;
          } else {
-            return this.method4307() && this.method3092(Items.field38148) ? Class2172.field14260 : Class2172.field14264;
+            return this.method4307() && this.method3092(Items.CROSSBOW) ? Class2172.field14260 : Class2172.field14264;
          }
       } else {
          return Class2172.field14263;
@@ -347,7 +347,7 @@ public class Class1034 extends Class1035 implements Class1023 {
 
    @Override
    public boolean method4234(Class3262 var1) {
-      return var1 == Items.field38148;
+      return var1 == Items.CROSSBOW;
    }
 
    public void method4625(ItemStack var1) {
@@ -379,14 +379,14 @@ public class Class1034 extends Class1035 implements Class1023 {
       if (EnchantmentHelper.method26334(var2)) {
          return false;
       } else {
-         boolean var5 = Class4388.method13827(var1.getItem()) || var1.getItem() == Items.field38148;
-         boolean var6 = Class4388.method13827(var2.getItem()) || var2.getItem() == Items.field38148;
+         boolean var5 = Class4388.method13827(var1.getItem()) || var1.getItem() == Items.CROSSBOW;
+         boolean var6 = Class4388.method13827(var2.getItem()) || var2.getItem() == Items.CROSSBOW;
          if (var5 && !var6) {
             return true;
          } else if (!var5 && var6) {
             return false;
          } else {
-            return this.method4635() && var1.getItem() != Items.field38148 && var2.getItem() == Items.field38148
+            return this.method4635() && var1.getItem() != Items.CROSSBOW && var2.getItem() == Items.CROSSBOW
                ? false
                : super.method4250(var1, var2);
          }

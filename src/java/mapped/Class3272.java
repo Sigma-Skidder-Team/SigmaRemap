@@ -38,8 +38,8 @@ public class Class3272 extends Item implements IVanishable {
    }
 
    @Override
-   public Class2103 method11727(ItemStack var1) {
-      return Class2103.field13711;
+   public UseAction method11727(ItemStack var1) {
+      return UseAction.SPEAR;
    }
 
    @Override

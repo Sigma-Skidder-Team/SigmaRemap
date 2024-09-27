@@ -515,7 +515,7 @@ public class ShadersRender {
          Class8892 var9 = var3.getLast();
          Matrix4f var10 = var9.getMatrix();
          Class8967 var11 = var9.method32362();
-         Class5422 var12 = var4.method25597(RenderType.getEntitySolid(field24257));
+         IVertexBuilder var12 = var4.method25597(RenderType.getEntitySolid(field24257));
          float var13 = 0.5F;
          float var14 = var13 * 0.15F;
          float var15 = var13 * 0.3F;

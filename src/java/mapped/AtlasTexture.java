@@ -202,7 +202,7 @@ public class AtlasTexture extends Class290 implements Class288 {
       Class8684.method31271(this);
       var8.addAll(this.field1109.keySet());
       Set var9 = method1124(var8, this.field1109.keySet());
-      Class8564.method30600(this, var9);
+      EmissiveTextures.method30600(this, var9);
       var8.addAll(this.field1109.keySet());
       if (var4 >= 4) {
          var7 = this.method1110(var8, var1);

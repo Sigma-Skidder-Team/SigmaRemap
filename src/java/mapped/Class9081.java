@@ -315,7 +315,7 @@ public class Class9081 {
             return ActionResultType.SUCCESS;
          }
       } else {
-         boolean var10 = !var1.getHeldItemMainhand().isEmpty() || !var1.method3091().isEmpty();
+         boolean var10 = !var1.getHeldItemMainhand().isEmpty() || !var1.getHeldItemOffhand().isEmpty();
          boolean var11 = var1.method2851() && var10;
          ItemStack var12 = var3.copy();
          if (!var11) {

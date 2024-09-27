@@ -15,17 +15,17 @@ public class Class4138 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2804) {
          Class2804 var5 = (Class2804)var1;
          if (!var2.equals("base")) {
             if (!var2.equals("upper_jaw")) {
-               return !var2.equals("lower_jaw") ? null : (Class7219) Reflector.method35075(var5, Reflector.field43045, 2);
+               return !var2.equals("lower_jaw") ? null : (ModelRenderer) Reflector.method35075(var5, Reflector.field43045, 2);
             } else {
-               return (Class7219) Reflector.method35075(var5, Reflector.field43045, 1);
+               return (ModelRenderer) Reflector.method35075(var5, Reflector.field43045, 1);
             }
          } else {
-            return (Class7219) Reflector.method35075(var5, Reflector.field43045, 0);
+            return (ModelRenderer) Reflector.method35075(var5, Reflector.field43045, 0);
          }
       } else {
          return null;
@@ -43,7 +43,7 @@ public class Class4138 extends Class4057 {
       Class5722 var6 = new Class5722(var5);
       if (Reflector.field43138.method20238()) {
          Reflector.method35082(var6, Reflector.field43138, var1);
-         var6.field25098 = var2;
+         var6.shadowSize = var2;
          return (Class9492)var6;
       } else {
          Config.method26811("Field not found: RenderEvokerFangs.model");

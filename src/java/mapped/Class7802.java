@@ -1,7 +1,7 @@
 package mapped;
 
 public class Class7802 {
-   public static Class5422 method26050(Class5422 var0, Class5422 var1) {
+   public static IVertexBuilder method26050(IVertexBuilder var0, IVertexBuilder var1) {
       return new Class5423(var0, var1);
    }
 }

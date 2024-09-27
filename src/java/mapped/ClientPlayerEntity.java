@@ -572,12 +572,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    @Override
-   public boolean method3336() {
+   public boolean isCrouching() {
       return this.field6125;
    }
 
    public boolean method5407() {
-      return this.method3336() || this.method3338();
+      return this.isCrouching() || this.method3338();
    }
 
    @Override
@@ -1018,7 +1018,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       } else {
          float var4 = MathHelper.lerp(var1 * 0.5F, this.rotationYaw, this.prevRotationYaw) * (float) (Math.PI / 180.0);
          float var5 = MathHelper.lerp(var1 * 0.5F, this.rotationPitch, this.prevRotationPitch) * (float) (Math.PI / 180.0);
-         double var6 = this.getPrimaryHand() != HandSide.field14418 ? 1.0 : -1.0;
+         double var6 = this.getPrimaryHand() != HandSide.RIGHT ? 1.0 : -1.0;
          Vector3d var8 = new Vector3d(0.39 * var6, -0.6, 0.3);
          return var8.method11350(-var5).method11351(-var4).add(this.getEyePosition(var1));
       }

@@ -12,12 +12,12 @@ import net.optifine.Config;
 
 import java.util.Map;
 
-public class Class255<T extends LivingEntity, M extends Class2797<T>, A extends Class2797<T>> extends Class219<T, M> {
+public class BipedArmorLayer<T extends LivingEntity, M extends BipedModel<T>, A extends BipedModel<T>> extends Class219<T, M> {
    private static final Map<String, ResourceLocation> field912 = Maps.newHashMap();
    private final A field913;
    private final A field914;
 
-   public Class255(Class5714<T, M> var1, A var2, A var3) {
+   public BipedArmorLayer(Class5714<T, M> var1, A var2, A var3) {
       super(var1);
       this.field913 = (A)var2;
       this.field914 = (A)var3;
@@ -58,25 +58,25 @@ public class Class255<T extends LivingEntity, M extends Class2797<T>, A extends 
    }
 
    public void method844(A var1, EquipmentSlotType var2) {
-      var1.method11009(false);
+      var1.setVisible(false);
       switch (Class8875.field40095[var2.ordinal()]) {
          case 1:
-            var1.field17432.field31039 = true;
-            var1.field17433.field31039 = true;
+            var1.bipedHead.showModel = true;
+            var1.field17433.showModel = true;
             break;
          case 2:
-            var1.field17434.field31039 = true;
-            var1.field17435.field31039 = true;
-            var1.field17436.field31039 = true;
+            var1.bipedBody.showModel = true;
+            var1.bipedRightArm.showModel = true;
+            var1.bipedLeftArm.showModel = true;
             break;
          case 3:
-            var1.field17434.field31039 = true;
-            var1.field17437.field31039 = true;
-            var1.field17438.field31039 = true;
+            var1.bipedBody.showModel = true;
+            var1.bipedRightLeg.showModel = true;
+            var1.bipedLeftLeg.showModel = true;
             break;
          case 4:
-            var1.field17437.field31039 = true;
-            var1.field17438.field31039 = true;
+            var1.bipedRightLeg.showModel = true;
+            var1.bipedLeftLeg.showModel = true;
       }
    }
 
@@ -87,7 +87,7 @@ public class Class255<T extends LivingEntity, M extends Class2797<T>, A extends 
    }
 
    private void method846(MatrixStack var1, Class7733 var2, int var3, boolean var4, A var5, float var6, float var7, float var8, ResourceLocation var9) {
-      Class5422 var12 = ItemRenderer.method782(var2, RenderType.method14308(var9), false, var4);
+      IVertexBuilder var12 = ItemRenderer.method782(var2, RenderType.method14308(var9), false, var4);
       var5.method11016(var1, var12, var3, Class213.field798, var6, var7, var8, 1.0F);
    }
 

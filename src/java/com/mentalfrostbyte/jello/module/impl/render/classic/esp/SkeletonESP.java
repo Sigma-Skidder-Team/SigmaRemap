@@ -37,9 +37,9 @@ public class SkeletonESP extends Module {
                 GL11.glLineWidth(2.0F);
                 GL11.glColor4f((float) (var5.getRed() / 255), (float) (var5.getGreen() / 255), (float) (var5.getBlue() / 255), 1.0F);
                 Vector3d var7 = this.method16090(var1, var2);
-                double var8 = var7.getX() - mc.getRenderManager().field40017.getPos().x;
-                double var10 = var7.getY() - mc.getRenderManager().field40017.getPos().y;
-                double var12 = var7.getZ() - mc.getRenderManager().field40017.getPos().z;
+                double var8 = var7.getX() - mc.getRenderManager().info.getPos().x;
+                double var10 = var7.getY() - mc.getRenderManager().info.getPos().y;
+                double var12 = var7.getZ() - mc.getRenderManager().info.getPos().z;
                 GL11.glTranslated(var8, var10, var12);
                 float var14 = var2.prevRenderYawOffset + (var2.renderYawOffset - var2.prevRenderYawOffset) * mc.getRenderPartialTicks();
                 GL11.glRotatef(-var14, 0.0F, 1.0F, 0.0F);
@@ -180,15 +180,15 @@ public class SkeletonESP extends Module {
         return new Vector3d(var6, var8, var10);
     }
 
-    public static void method16091(PlayerEntity var0, Class2894<PlayerEntity> var1) {
+    public static void method16091(PlayerEntity var0, PlayerModel<PlayerEntity> var1) {
         field23459.put(
                 var0,
                 new float[][]{
-                        {var1.field17432.field31035, var1.field17432.field31036, var1.field17432.field31037},
-                        {var1.field17435.field31035, var1.field17435.field31036, var1.field17435.field31037},
-                        {var1.field17436.field31035, var1.field17436.field31036, var1.field17436.field31037},
-                        {var1.field17437.field31035, var1.field17437.field31036, var1.field17437.field31037},
-                        {var1.field17438.field31035, var1.field17438.field31036, var1.field17438.field31037}
+                        {var1.bipedHead.rotateAngleX, var1.bipedHead.rotateAngleY, var1.bipedHead.field31037},
+                        {var1.bipedRightArm.rotateAngleX, var1.bipedRightArm.rotateAngleY, var1.bipedRightArm.field31037},
+                        {var1.bipedLeftArm.rotateAngleX, var1.bipedLeftArm.rotateAngleY, var1.bipedLeftArm.field31037},
+                        {var1.bipedRightLeg.rotateAngleX, var1.bipedRightLeg.rotateAngleY, var1.bipedRightLeg.field31037},
+                        {var1.bipedLeftLeg.rotateAngleX, var1.bipedLeftLeg.rotateAngleY, var1.bipedLeftLeg.field31037}
                 }
         );
     }

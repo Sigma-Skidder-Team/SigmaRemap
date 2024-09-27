@@ -7,7 +7,7 @@ public class Class5668 extends Class5666 {
 
    public Class5668(EntityRendererManager var1) {
       super(var1);
-      this.method17880(new Class237<Class1082, Class2798<Class1082>>(this));
+      this.addLayer(new Class237<Class1082, Class2798<Class1082>>(this));
    }
 
    @Override

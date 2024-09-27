@@ -56,12 +56,12 @@ public enum Class1889 implements Class1884 {
 
    @Override
    public float method8142() {
-      Class5715 var3 = this.field11069.field40023;
+      EntityRenderer var3 = this.field11069.renderRender;
       if (var3 == null) {
          return 0.0F;
       } else {
-         if (var3 instanceof Class5712) {
-            Class5712 var4 = (Class5712)var3;
+         if (var3 instanceof LivingRenderer) {
+            LivingRenderer var4 = (LivingRenderer)var3;
             switch (Class7313.field31355[this.ordinal()]) {
                case 12:
                   return var4.field25089;

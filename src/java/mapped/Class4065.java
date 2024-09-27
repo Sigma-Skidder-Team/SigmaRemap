@@ -14,7 +14,7 @@ public class Class4065 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2811) {
          Class2811 var5 = (Class2811)var1;
          if (!var2.equals("head")) {
@@ -22,21 +22,21 @@ public class Class4065 extends Class4057 {
                if (!var2.equals("right_wing")) {
                   if (!var2.equals("left_wing")) {
                      if (!var2.equals("outer_right_wing")) {
-                        return !var2.equals("outer_left_wing") ? null : (Class7219) Reflector.method35075(var5, Reflector.field43026, 5);
+                        return !var2.equals("outer_left_wing") ? null : (ModelRenderer) Reflector.method35075(var5, Reflector.field43026, 5);
                      } else {
-                        return (Class7219) Reflector.method35075(var5, Reflector.field43026, 4);
+                        return (ModelRenderer) Reflector.method35075(var5, Reflector.field43026, 4);
                      }
                   } else {
-                     return (Class7219) Reflector.method35075(var5, Reflector.field43026, 3);
+                     return (ModelRenderer) Reflector.method35075(var5, Reflector.field43026, 3);
                   }
                } else {
-                  return (Class7219) Reflector.method35075(var5, Reflector.field43026, 2);
+                  return (ModelRenderer) Reflector.method35075(var5, Reflector.field43026, 2);
                }
             } else {
-               return (Class7219) Reflector.method35075(var5, Reflector.field43026, 1);
+               return (ModelRenderer) Reflector.method35075(var5, Reflector.field43026, 1);
             }
          } else {
-            return (Class7219) Reflector.method35075(var5, Reflector.field43026, 0);
+            return (ModelRenderer) Reflector.method35075(var5, Reflector.field43026, 0);
          }
       } else {
          return null;
@@ -53,7 +53,7 @@ public class Class4065 extends Class4057 {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5653 var6 = new Class5653(var5);
       var6.field25086 = (Class2811)var1;
-      var6.field25098 = var2;
+      var6.shadowSize = var2;
       return (Class9492)var6;
    }
 }

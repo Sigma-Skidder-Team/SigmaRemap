@@ -47,24 +47,24 @@ public abstract class Class4057 {
 
    public abstract Class2828 method12822();
 
-   public abstract Class7219 method12823(Class2828 var1, String var2);
+   public abstract ModelRenderer method12823(Class2828 var1, String var2);
 
    public abstract String[] method12824();
 
    public abstract Class9492 method12825(Class2828 var1, float var2);
 
-   public Class7219[] method12830(Class2828 var1) {
+   public ModelRenderer[] method12830(Class2828 var1) {
       String[] var4 = this.method12824();
-      ArrayList<Class7219> var5 = new ArrayList();
+      ArrayList<ModelRenderer> var5 = new ArrayList();
 
       for (int var6 = 0; var6 < var4.length; var6++) {
          String var7 = var4[var6];
-         Class7219 var8 = this.method12823(var1, var7);
+         ModelRenderer var8 = this.method12823(var1, var7);
          if (var8 != null) {
             var5.add(var8);
          }
       }
 
-      return var5.toArray(new Class7219[var5.size()]);
+      return var5.toArray(new ModelRenderer[var5.size()]);
    }
 }

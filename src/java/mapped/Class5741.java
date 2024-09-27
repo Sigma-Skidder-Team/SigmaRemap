@@ -2,7 +2,7 @@ package mapped;
 
 import net.minecraft.util.ResourceLocation;
 
-public class Class5741 extends Class5715<Class999> {
+public class Class5741 extends EntityRenderer<Class999> {
    private static String[] field25164;
 
    public Class5741(EntityRendererManager var1) {

@@ -1335,7 +1335,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
                         this.field942.method26537().method25597(ModelBakery.field40518.get(var51)), var52.getMatrix(), var52.method32362()
                      );
                      var89 = (Class7733)var2x -> {
-                        Class5422 var3x = irendertypebuffer$impl.method25597(var2x);
+                        IVertexBuilder var3x = irendertypebuffer$impl.method25597(var2x);
                         return var2x.method14355() ? Class7802.method26050(var53, var3x) : var3x;
                      };
                   }
@@ -1437,12 +1437,12 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          }
 
          if (var80) {
-            Class5422 var84 = irendertypebuffer$impl.method25597(RenderType.method14345());
+            IVertexBuilder var84 = irendertypebuffer$impl.method25597(RenderType.getLines());
             this.method894(matrixStackIn, var84, var6.getRenderViewEntity(), var12, var14, var16, var69, var75);
          }
 
          if (var21) {
-            irendertypebuffer$impl.finish(RenderType.method14345());
+            irendertypebuffer$impl.finish(RenderType.getLines());
          }
       } else if (var64 != null && var64.getType() == RayTraceResult.Type.ENTITY) {
          Reflector.field42882.call(this, var6, var64, var2, matrixStackIn, irendertypebuffer$impl);
@@ -1475,7 +1475,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       }
 
       if (this.field966 != null) {
-         irendertypebuffer$impl.finish(RenderType.method14345());
+         irendertypebuffer$impl.finish(RenderType.getLines());
          irendertypebuffer$impl.method25602();
          this.field961.framebufferClear(Minecraft.IS_RUNNING_ON_MAC);
          this.field961.func_237506_a_(this.mc.getFramebuffer());
@@ -1500,7 +1500,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
             Shaders.method33103();
          }
 
-         irendertypebuffer$impl.finish(RenderType.method14345());
+         irendertypebuffer$impl.finish(RenderType.getLines());
          irendertypebuffer$impl.method25602();
          var10.endStartSection("string");
          this.method880(RenderType.method14343(), matrixStackIn, var12, var14, var16);
@@ -1578,7 +1578,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       double var13 = MathHelper.lerp((double)var8, var1.lastTickPosY, var1.getPosY());
       double var15 = MathHelper.lerp((double)var8, var1.lastTickPosZ, var1.getPosZ());
       float var17 = MathHelper.lerp(var8, var1.prevRotationYaw, var1.rotationYaw);
-      this.field941.method32219(var1, var11 - var2, var13 - var4, var15 - var6, var17, var8, var9, var10, this.field941.method32208(var1, var8));
+      this.field941.renderEntityStatic(var1, var11 - var2, var13 - var4, var15 - var6, var17, var8, var9, var10, this.field941.method32208(var1, var8));
    }
 
    public void method880(RenderType var1, MatrixStack var2, double var3, double var5, double var7) {
@@ -1880,12 +1880,12 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       }
    }
 
-   private void method883(Class5422 var1, int var2) {
+   private void method883(IVertexBuilder var1, int var2) {
       var1.pos((double)this.field990[var2].method25701(), (double)this.field990[var2].method25702(), (double)this.field990[var2].method25703())
          .endVertex();
    }
 
-   private void method884(Class5422 var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
+   private void method884(IVertexBuilder var1, int var2, int var3, int var4, int var5, int var6, int var7, int var8) {
       float var9 = 0.25F;
       var1.pos((double)this.field990[var2].method25701(), (double)this.field990[var2].method25702(), (double)this.field990[var2].method25703())
          .color((float)var6, (float)var7, (float)var8, 0.25F)
@@ -2685,7 +2685,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       var1.pos(var8 - var2, (double)var10 - var4, var11 - var6).tex(var13, var14).endVertex();
    }
 
-   private void method894(MatrixStack var1, Class5422 var2, Entity var3, double var4, double var6, double var8, BlockPos var10, BlockState var11) {
+   private void method894(MatrixStack var1, IVertexBuilder var2, Entity var3, double var4, double var6, double var8, BlockPos var10, BlockState var11) {
       method896(
          var1,
          var2,
@@ -2701,7 +2701,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    }
 
    public static void method895(
-           MatrixStack var0, Class5422 var1, VoxelShape var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12
+           MatrixStack var0, IVertexBuilder var1, VoxelShape var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12
    ) {
       List var13 = var2.method19521();
       int var14 = MathHelper.method37774((double)var13.size() / 3.0);
@@ -2718,7 +2718,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
    }
 
    private static void method896(
-           MatrixStack var0, Class5422 var1, VoxelShape var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12
+           MatrixStack var0, IVertexBuilder var1, VoxelShape var2, double var3, double var5, double var7, float var9, float var10, float var11, float var12
    ) {
       Matrix4f var13 = var0.getLast().getMatrix();
       var2.method19519((var12x, var14, var16, var18, var20, var22) -> {
@@ -2727,7 +2727,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
       });
    }
 
-   public static void method897(MatrixStack var0, Class5422 var1, AxisAlignedBB var2, float var3, float var4, float var5, float var6) {
+   public static void method897(MatrixStack var0, IVertexBuilder var1, AxisAlignedBB var2, float var3, float var4, float var5, float var6) {
       method899(
          var0,
          var1,
@@ -2749,7 +2749,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
    public static void method898(
       MatrixStack var0,
-      Class5422 var1,
+      IVertexBuilder var1,
       double var2,
       double var4,
       double var6,
@@ -2766,7 +2766,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
 
    public static void method899(
       MatrixStack var0,
-      Class5422 var1,
+      IVertexBuilder var1,
       double var2,
       double var4,
       double var6,
@@ -2944,7 +2944,7 @@ public class WorldRenderer implements IResourceManagerReloadListener, AutoClosea
          CrashReportCategory var18 = var17.makeCategory("Particle being added");
          var18.addDetail("ID", Registry.PARTICLE_TYPE.getKey(var1.getType()));
          var18.addDetail("Parameters", var1.getParameters());
-         var18.addDetail("Position", () -> CrashReportCategory.method32803(var4, var6, var8));
+         var18.addDetail("Position", () -> CrashReportCategory.getCoordinateInfo(var4, var6, var8));
          throw new ReportedException(var17);
       }
    }

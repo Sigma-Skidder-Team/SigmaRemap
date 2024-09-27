@@ -30,11 +30,11 @@ import java.util.List;
 import java.util.Random;
 import java.util.function.Predicate;
 
-public class Class3261 extends Class3262 implements IVanishable {
+public class CrossbowItem extends Class3262 implements IVanishable {
    private boolean field18746 = false;
    private boolean field18747 = false;
 
-   public Class3261(Properties var1) {
+   public CrossbowItem(Properties var1) {
       super(var1);
    }
 
@@ -51,11 +51,11 @@ public class Class3261 extends Class3262 implements IVanishable {
    @Override
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
       ItemStack var6 = var2.getHeldItem(var3);
-      if (!method11755(var6)) {
+      if (! isCharged(var6)) {
          if (var2.findAmmo(var6).isEmpty()) {
             return Class6794.<ItemStack>method20699(var6);
          } else {
-            if (!method11755(var6)) {
+            if (! isCharged(var6)) {
                this.field18746 = false;
                this.field18747 = false;
                var2.setActiveHand(var3);
@@ -74,7 +74,7 @@ public class Class3261 extends Class3262 implements IVanishable {
    public void method11729(ItemStack var1, World var2, LivingEntity var3, int var4) {
       int var7 = this.method11728(var1) - var4;
       float var8 = method11769(var7, var1);
-      if (var8 >= 1.0F && !method11755(var1) && method11753(var3, var1)) {
+      if (var8 >= 1.0F && ! isCharged(var1) && method11753(var3, var1)) {
          method11756(var1, true);
          Class2266 var9 = !(var3 instanceof PlayerEntity) ? Class2266.field14733 : Class2266.field14735;
          var2.method6743(
@@ -135,7 +135,7 @@ public class Class3261 extends Class3262 implements IVanishable {
       }
    }
 
-   public static boolean method11755(ItemStack var0) {
+   public static boolean isCharged(ItemStack var0) {
       CompoundNBT var3 = var0.method32142();
       return var3 != null && var3.getBoolean("Charged");
    }
@@ -322,8 +322,8 @@ public class Class3261 extends Class3262 implements IVanishable {
    }
 
    @Override
-   public Class2103 method11727(ItemStack var1) {
-      return Class2103.field13712;
+   public UseAction method11727(ItemStack var1) {
+      return UseAction.CROSSBOW;
    }
 
    private SoundEvent method11768(int var1) {
@@ -351,7 +351,7 @@ public class Class3261 extends Class3262 implements IVanishable {
    @Override
    public void method11730(ItemStack var1, World var2, List<ITextComponent> var3, Class2216 var4) {
       List var7 = method11758(var1);
-      if (method11755(var1) && !var7.isEmpty()) {
+      if (isCharged(var1) && !var7.isEmpty()) {
          ItemStack var8 = (ItemStack)var7.get(0);
          var3.add(new TranslationTextComponent("item.minecraft.crossbow.projectile").appendString(" ").append(var8.method32173()));
          if (var4.method8944() && var8.getItem() == Items.field38068) {
@@ -369,7 +369,7 @@ public class Class3261 extends Class3262 implements IVanishable {
    }
 
    private static float method11770(ItemStack var0) {
-      return var0.getItem() == Items.field38148 && method11760(var0, Items.field38068) ? 1.6F : 3.15F;
+      return var0.getItem() == Items.CROSSBOW && method11760(var0, Items.field38068) ? 1.6F : 3.15F;
    }
 
    @Override

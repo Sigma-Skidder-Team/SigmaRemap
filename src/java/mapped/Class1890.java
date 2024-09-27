@@ -50,12 +50,12 @@ public enum Class1890 implements Class1876 {
 
    @Override
    public boolean method8137() {
-      Class5715 var3 = this.field11087.field40023;
+      EntityRenderer var3 = this.field11087.renderRender;
       if (var3 == null) {
          return false;
       } else {
-         if (var3 instanceof Class5712) {
-            Class5712 var4 = (Class5712)var3;
+         if (var3 instanceof LivingRenderer) {
+            LivingRenderer var4 = (LivingRenderer)var3;
             LivingEntity var5 = var4.field25088;
             if (var5 == null) {
                return false;
@@ -85,7 +85,7 @@ public enum Class1890 implements Class1876 {
                case 11:
                   return var5.isPassenger();
                case 12:
-                  return var5.method3336();
+                  return var5.isCrouching();
                case 13:
                   return var5.isSprinting();
                case 14:

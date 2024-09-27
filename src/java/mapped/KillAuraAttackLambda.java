@@ -11,11 +11,14 @@ import net.minecraft.entity.Entity;
 import net.minecraft.network.play.client.CUseEntityPacket;
 import net.minecraft.util.Hand;
 
-public class Class338 implements Runnable {
+/**
+ * Decompiler seems to have fucked up, I guess
+ */
+public class KillAuraAttackLambda implements Runnable {
    public final float field1477;
    public final KillAura killauraModule;
 
-   public Class338(KillAura var1, float var2) {
+   public KillAuraAttackLambda(KillAura var1, float var2) {
       this.killauraModule = var1;
       this.field1477 = var2;
    }

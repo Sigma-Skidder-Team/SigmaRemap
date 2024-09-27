@@ -11,14 +11,14 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
 
-public abstract class Class5715<T extends Entity> {
+public abstract class EntityRenderer<T extends Entity> {
    public final EntityRendererManager field25097;
-   public float field25098;
-   public float field25099 = 1.0F;
+   public float shadowSize;
+   public float shadowOpaque = 1.0F;
    private EntityType field25100 = null;
    private ResourceLocation field25101 = null;
 
-   public Class5715(EntityRendererManager var1) {
+   public EntityRenderer(EntityRendererManager var1) {
       this.field25097 = var1;
    }
 
@@ -59,11 +59,11 @@ public abstract class Class5715<T extends Entity> {
       }
    }
 
-   public Vector3d method17867(T var1, float var2) {
+   public Vector3d getRenderOffset(T var1, float var2) {
       return Vector3d.ZERO;
    }
 
-   public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       if (Reflector.field42994.exists()) {
          Object var9 = Reflector.method35087(Reflector.field42994, var1, var1.getDisplayName(), this, var4, var5, var6, var3);
          Reflector.method35086(var9);

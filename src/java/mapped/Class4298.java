@@ -9,6 +9,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.entity.PlayerRenderer;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.network.play.server.SPlayerListItemPacket;
 import net.minecraft.world.Difficulty;
@@ -82,8 +83,8 @@ public class Class4298 extends Class4278 {
          var11 = (float)Math.sin((double)var11);
          float var12 = (float)(System.currentTimeMillis() % 30000L) / 4774.648F;
          var12 = (float)Math.sin((double)var12);
-         new Class2894(0.0F, false);
-         new Class5713(this.field20824.getRenderManager());
+         new PlayerModel(0.0F, false);
+         new PlayerRenderer(this.field20824.getRenderManager());
          Class7735 var15 = Minecraft.getInstance().getRenderTypeBuffers().method26536();
          new MatrixStack();
          RenderSystem.pushMatrix();
@@ -92,12 +93,12 @@ public class Class4298 extends Class4278 {
          RenderSystem.method27820();
          RenderSystem.enableDepthTest();
          GL11.glLightModelfv(2899, new float[]{0.7F, 0.7F, 0.7F, 1.0F});
-         if (this.field20824.getRenderManager().field40017 == null) {
-            this.field20824.getRenderManager().field40017 = new ActiveRenderInfo();
+         if (this.field20824.getRenderManager().info == null) {
+            this.field20824.getRenderManager().info = new ActiveRenderInfo();
          }
 
          this.field20828.field4960 = var10 * 0.5F;
-         InventoryScreen.method2635(0, 390, 160, 0.0F, 0.0F, this.field20828);
+         InventoryScreen.drawEntityOnScreen(0, 390, 160, 0.0F, 0.0F, this.field20828);
          this.field20824.getRenderManager().method32215(true);
          RenderSystem.popMatrix();
          RenderSystem.popMatrix();

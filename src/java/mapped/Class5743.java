@@ -12,7 +12,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class Class5743<T extends Entity> extends Class5712<AbstractClientPlayerEntity, Class2894<AbstractClientPlayerEntity>> {
+public class Class5743<T extends Entity> extends LivingRenderer<AbstractClientPlayerEntity, PlayerModel<AbstractClientPlayerEntity>> {
    public static HashMap<UUID, ResourceLocation> field25166 = new HashMap<UUID, ResourceLocation>();
 
    public Class5743(EntityRendererManager var1) {
@@ -20,14 +20,14 @@ public class Class5743<T extends Entity> extends Class5712<AbstractClientPlayerE
    }
 
    public Class5743(EntityRendererManager var1, boolean var2) {
-      super(var1, new Class2894<AbstractClientPlayerEntity>(0.0F, var2), 0.5F);
-      this.method17880(new Class235<AbstractClientPlayerEntity, Class2894<AbstractClientPlayerEntity>>(this));
+      super(var1, new PlayerModel<AbstractClientPlayerEntity>(0.0F, var2), 0.5F);
+      this.addLayer(new Class235<AbstractClientPlayerEntity, PlayerModel<AbstractClientPlayerEntity>>(this));
    }
 
    public void method17924(AbstractClientPlayerEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6, float var7, float var8) {
-      Class2797 var11 = this.field25086;
-      var11.method11009(false);
-      var11.field17432.field31039 = true;
+      BipedModel var11 = this.field25086;
+      var11.setVisible(false);
+      var11.bipedHead.showModel = true;
       float var12 = var1.rotationYawHead;
       float var13 = var1.rotationPitch;
       float var14 = MathUtils.lerp(var8, 0.15, 0.84, 0.34, 1.0);
@@ -35,13 +35,13 @@ public class Class5743<T extends Entity> extends Class5712<AbstractClientPlayerE
       var1.rotationYawHead = var15;
       var1.rotationPitch = -10.0F;
       this.field25096 = var7;
-      super.method17853(var1, var2, 1.0F, var4, var5, var6);
+      super.render(var1, var2, 1.0F, var4, var5, var6);
       var1.rotationYawHead = var12;
       var1.rotationPitch = var13;
    }
 
-   public Vector3d method17867(AbstractClientPlayerEntity var1, float var2) {
-      return super.method17867(var1, var2);
+   public Vector3d getRenderOffset(AbstractClientPlayerEntity var1, float var2) {
+      return super.getRenderOffset(var1, var2);
    }
 
    public ResourceLocation method17843(AbstractClientPlayerEntity var1) {

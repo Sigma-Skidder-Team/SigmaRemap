@@ -6,74 +6,74 @@ import net.minecraft.util.math.MathHelper;
 
 public class Class2854<T extends Class1066> extends Class2827<T> {
    private static String[] field17676;
-   private final Class7219 field17677;
-   private final Class7219 field17678;
-   private final Class7219 field17679;
-   private final Class7219 field17680;
-   private final Class7219 field17681;
-   private final Class7219 field17682;
-   private final Class7219 field17683;
-   private final Class7219 field17684;
+   private final ModelRenderer field17677;
+   private final ModelRenderer field17678;
+   private final ModelRenderer field17679;
+   private final ModelRenderer field17680;
+   private final ModelRenderer field17681;
+   private final ModelRenderer field17682;
+   private final ModelRenderer field17683;
+   private final ModelRenderer field17684;
 
    public Class2854(float var1) {
       this.field17604 = 128;
       this.field17605 = 64;
-      this.field17677 = new Class7219(this, 0, 0);
-      this.field17677.method22675(-2.0F, -14.0F, -10.0F, 4.0F, 4.0F, 9.0F, var1);
-      this.field17677.method22679(0.0F, 7.0F, -6.0F);
-      this.field17677.method22671(0, 14).method22675(-4.0F, -16.0F, -6.0F, 8.0F, 18.0F, 6.0F, var1);
-      this.field17677.method22671(17, 0).method22675(-4.0F, -19.0F, -4.0F, 3.0F, 3.0F, 2.0F, var1);
-      this.field17677.method22671(17, 0).method22675(1.0F, -19.0F, -4.0F, 3.0F, 3.0F, 2.0F, var1);
-      this.field17678 = new Class7219(this, 29, 0);
-      this.field17678.method22675(-6.0F, -10.0F, -7.0F, 12.0F, 18.0F, 10.0F, var1);
-      this.field17678.method22679(0.0F, 5.0F, 2.0F);
-      this.field17683 = new Class7219(this, 45, 28);
-      this.field17683.method22675(-3.0F, 0.0F, 0.0F, 8.0F, 8.0F, 3.0F, var1);
-      this.field17683.method22679(-8.5F, 3.0F, 3.0F);
-      this.field17683.field31036 = (float) (Math.PI / 2);
-      this.field17684 = new Class7219(this, 45, 41);
-      this.field17684.method22675(-3.0F, 0.0F, 0.0F, 8.0F, 8.0F, 3.0F, var1);
-      this.field17684.method22679(5.5F, 3.0F, 3.0F);
-      this.field17684.field31036 = (float) (Math.PI / 2);
+      this.field17677 = new ModelRenderer(this, 0, 0);
+      this.field17677.addBox(-2.0F, -14.0F, -10.0F, 4.0F, 4.0F, 9.0F, var1);
+      this.field17677.setRotationPoint(0.0F, 7.0F, -6.0F);
+      this.field17677.method22671(0, 14).addBox(-4.0F, -16.0F, -6.0F, 8.0F, 18.0F, 6.0F, var1);
+      this.field17677.method22671(17, 0).addBox(-4.0F, -19.0F, -4.0F, 3.0F, 3.0F, 2.0F, var1);
+      this.field17677.method22671(17, 0).addBox(1.0F, -19.0F, -4.0F, 3.0F, 3.0F, 2.0F, var1);
+      this.field17678 = new ModelRenderer(this, 29, 0);
+      this.field17678.addBox(-6.0F, -10.0F, -7.0F, 12.0F, 18.0F, 10.0F, var1);
+      this.field17678.setRotationPoint(0.0F, 5.0F, 2.0F);
+      this.field17683 = new ModelRenderer(this, 45, 28);
+      this.field17683.addBox(-3.0F, 0.0F, 0.0F, 8.0F, 8.0F, 3.0F, var1);
+      this.field17683.setRotationPoint(-8.5F, 3.0F, 3.0F);
+      this.field17683.rotateAngleY = (float) (Math.PI / 2);
+      this.field17684 = new ModelRenderer(this, 45, 41);
+      this.field17684.addBox(-3.0F, 0.0F, 0.0F, 8.0F, 8.0F, 3.0F, var1);
+      this.field17684.setRotationPoint(5.5F, 3.0F, 3.0F);
+      this.field17684.rotateAngleY = (float) (Math.PI / 2);
       byte var4 = 4;
       byte var5 = 14;
-      this.field17679 = new Class7219(this, 29, 29);
-      this.field17679.method22675(-2.0F, 0.0F, -2.0F, 4.0F, 14.0F, 4.0F, var1);
-      this.field17679.method22679(-2.5F, 10.0F, 6.0F);
-      this.field17680 = new Class7219(this, 29, 29);
-      this.field17680.method22675(-2.0F, 0.0F, -2.0F, 4.0F, 14.0F, 4.0F, var1);
-      this.field17680.method22679(2.5F, 10.0F, 6.0F);
-      this.field17681 = new Class7219(this, 29, 29);
-      this.field17681.method22675(-2.0F, 0.0F, -2.0F, 4.0F, 14.0F, 4.0F, var1);
-      this.field17681.method22679(-2.5F, 10.0F, -4.0F);
-      this.field17682 = new Class7219(this, 29, 29);
-      this.field17682.method22675(-2.0F, 0.0F, -2.0F, 4.0F, 14.0F, 4.0F, var1);
-      this.field17682.method22679(2.5F, 10.0F, -4.0F);
-      this.field17679.field31032--;
-      this.field17680.field31032++;
-      this.field17679.field31034 += 0.0F;
-      this.field17680.field31034 += 0.0F;
-      this.field17681.field31032--;
-      this.field17682.field31032++;
-      this.field17681.field31034--;
-      this.field17682.field31034--;
+      this.field17679 = new ModelRenderer(this, 29, 29);
+      this.field17679.addBox(-2.0F, 0.0F, -2.0F, 4.0F, 14.0F, 4.0F, var1);
+      this.field17679.setRotationPoint(-2.5F, 10.0F, 6.0F);
+      this.field17680 = new ModelRenderer(this, 29, 29);
+      this.field17680.addBox(-2.0F, 0.0F, -2.0F, 4.0F, 14.0F, 4.0F, var1);
+      this.field17680.setRotationPoint(2.5F, 10.0F, 6.0F);
+      this.field17681 = new ModelRenderer(this, 29, 29);
+      this.field17681.addBox(-2.0F, 0.0F, -2.0F, 4.0F, 14.0F, 4.0F, var1);
+      this.field17681.setRotationPoint(-2.5F, 10.0F, -4.0F);
+      this.field17682 = new ModelRenderer(this, 29, 29);
+      this.field17682.addBox(-2.0F, 0.0F, -2.0F, 4.0F, 14.0F, 4.0F, var1);
+      this.field17682.setRotationPoint(2.5F, 10.0F, -4.0F);
+      this.field17679.rotationPointX--;
+      this.field17680.rotationPointX++;
+      this.field17679.rotationPointZ += 0.0F;
+      this.field17680.rotationPointZ += 0.0F;
+      this.field17681.rotationPointX--;
+      this.field17682.rotationPointX++;
+      this.field17681.rotationPointZ--;
+      this.field17682.rotationPointZ--;
    }
 
-   public void method10998(T var1, float var2, float var3, float var4, float var5, float var6) {
-      this.field17677.field31035 = var6 * (float) (Math.PI / 180.0);
-      this.field17677.field31036 = var5 * (float) (Math.PI / 180.0);
-      this.field17678.field31035 = (float) (Math.PI / 2);
-      this.field17679.field31035 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
-      this.field17680.field31035 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field17681.field31035 = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
-      this.field17682.field31035 = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
+   public void setRotationAngles(T var1, float var2, float var3, float var4, float var5, float var6) {
+      this.field17677.rotateAngleX = var6 * (float) (Math.PI / 180.0);
+      this.field17677.rotateAngleY = var5 * (float) (Math.PI / 180.0);
+      this.field17678.rotateAngleX = (float) (Math.PI / 2);
+      this.field17679.rotateAngleX = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
+      this.field17680.rotateAngleX = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field17681.rotateAngleX = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3;
+      this.field17682.rotateAngleX = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
       boolean var9 = !var1.isChild() && var1.method4927();
-      this.field17683.field31039 = var9;
-      this.field17684.field31039 = var9;
+      this.field17683.showModel = var9;
+      this.field17684.showModel = var9;
    }
 
    @Override
-   public void method11016(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+   public void method11016(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
       if (!this.field17602) {
          ImmutableList.of(
                this.field17677, this.field17678, this.field17679, this.field17680, this.field17681, this.field17682, this.field17683, this.field17684

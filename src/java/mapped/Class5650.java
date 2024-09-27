@@ -12,7 +12,7 @@ public class Class5650 extends Class5651<Class1095, Class2864<Class1095>> {
 
    public Class5650(EntityRendererManager var1) {
       super(var1, new Class2864<Class1095>(), 0.4F);
-      this.method17880(new Class257(this));
+      this.addLayer(new Class257(this));
    }
 
    public void method17842(Class1095 var1, MatrixStack var2, float var3, float var4, float var5) {

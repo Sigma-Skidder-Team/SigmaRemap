@@ -33,7 +33,7 @@ public class Class5132 implements Class5119 {
       double var14 = 0.0025;
       Set var16 = Sets.newHashSet();
       Map<BlockPos, Integer> var17 = Maps.newHashMap();
-      Class5422 var18 = var2.method25597(RenderType.method14345());
+      IVertexBuilder var18 = var2.method25597(RenderType.getLines());
       Iterator<Entry<Long, Map<BlockPos, Integer>>> var19 = this.field23328.entrySet().iterator();
 
       while (var19.hasNext()) {

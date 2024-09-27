@@ -14,17 +14,17 @@ public class Class4085 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2887) {
          Class2887 var5 = (Class2887)var1;
          if (!var2.equals("base")) {
             if (!var2.equals("lid")) {
-               return !var2.equals("head") ? null : (Class7219) Reflector.field43096.method36565(var5, 2);
+               return !var2.equals("head") ? null : (ModelRenderer) Reflector.field43096.method36565(var5, 2);
             } else {
-               return (Class7219) Reflector.field43096.method36565(var5, 1);
+               return (ModelRenderer) Reflector.field43096.method36565(var5, 1);
             }
          } else {
-            return (Class7219) Reflector.field43096.method36565(var5, 0);
+            return (ModelRenderer) Reflector.field43096.method36565(var5, 0);
          }
       } else {
          return null;
@@ -41,7 +41,7 @@ public class Class4085 extends Class4057 {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5683 var6 = new Class5683(var5);
       var6.field25086 = (Class2887<Class1057>)var1;
-      var6.field25098 = var2;
+      var6.shadowSize = var2;
       return (Class9492)var6;
    }
 }

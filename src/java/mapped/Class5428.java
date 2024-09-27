@@ -2,14 +2,14 @@ package mapped;
 
 public class Class5428 extends Class5424 {
    private static String[] field24156;
-   private final Class5422 field24157;
+   private final IVertexBuilder field24157;
    private double field24158;
    private double field24159;
    private double field24160;
    private float field24161;
    private float field24162;
 
-   public Class5428(Class5422 var1, int var2, int var3, int var4, int var5) {
+   public Class5428(IVertexBuilder var1, int var2, int var3, int var4, int var5) {
       this.field24157 = var1;
       super.method17054(var2, var3, var4, var5);
    }
@@ -19,7 +19,7 @@ public class Class5428 extends Class5424 {
    }
 
    @Override
-   public Class5422 pos(double var1, double var3, double var5) {
+   public IVertexBuilder pos(double var1, double var3, double var5) {
       this.field24158 = var1;
       this.field24159 = var3;
       this.field24160 = var5;
@@ -27,29 +27,29 @@ public class Class5428 extends Class5424 {
    }
 
    @Override
-   public Class5422 color(int var1, int var2, int var3, int var4) {
+   public IVertexBuilder color(int var1, int var2, int var3, int var4) {
       return this;
    }
 
    @Override
-   public Class5422 tex(float var1, float var2) {
+   public IVertexBuilder tex(float var1, float var2) {
       this.field24161 = var1;
       this.field24162 = var2;
       return this;
    }
 
    @Override
-   public Class5422 method17028(int var1, int var2) {
+   public IVertexBuilder method17028(int var1, int var2) {
       return this;
    }
 
    @Override
-   public Class5422 method17029(int var1, int var2) {
+   public IVertexBuilder method17029(int var1, int var2) {
       return this;
    }
 
    @Override
-   public Class5422 method17030(float var1, float var2, float var3) {
+   public IVertexBuilder method17030(float var1, float var2, float var3) {
       return this;
    }
 

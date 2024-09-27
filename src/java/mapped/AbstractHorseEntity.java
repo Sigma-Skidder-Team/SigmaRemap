@@ -999,12 +999,12 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    @Override
    public Vector3d method3420(LivingEntity var1) {
       Vector3d var4 = method3419(
-         (double)this.getWidth(), (double)var1.getWidth(), this.rotationYaw + (var1.getPrimaryHand() != HandSide.field14418 ? -90.0F : 90.0F)
+         (double)this.getWidth(), (double)var1.getWidth(), this.rotationYaw + (var1.getPrimaryHand() != HandSide.RIGHT ? -90.0F : 90.0F)
       );
       Vector3d var5 = this.method4974(var4, var1);
       if (var5 == null) {
          Vector3d var6 = method3419(
-            (double)this.getWidth(), (double)var1.getWidth(), this.rotationYaw + (var1.getPrimaryHand() != HandSide.field14417 ? -90.0F : 90.0F)
+            (double)this.getWidth(), (double)var1.getWidth(), this.rotationYaw + (var1.getPrimaryHand() != HandSide.LEFT ? -90.0F : 90.0F)
          );
          Vector3d var7 = this.method4974(var6, var1);
          return var7 == null ? this.getPositionVec() : var7;

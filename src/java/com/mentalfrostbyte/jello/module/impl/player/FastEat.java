@@ -24,7 +24,7 @@ public class FastEat extends Module {
          if (mc.player.isHandActive()) {
             ItemStack var4 = mc.player.getActiveItemStack();
             if (var4 != null
-               && (var4.method32138() == Class2103.field13708 || var4.method32138() == Class2103.field13707)
+               && (var4.getUseAction() == UseAction.field13708 || var4.getUseAction() == UseAction.field13707)
                && (float) mc.player.getItemInUseCount() < this.getNumberValueBySettingName("Speed") * 32.0F) {
                String var5 = this.getStringSettingValueByName("Mode");
                switch (var5) {

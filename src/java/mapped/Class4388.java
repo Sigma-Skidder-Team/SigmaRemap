@@ -297,8 +297,8 @@ public class Class4388 {
    }
 
    public static void method13818(Class1034 var0) {
-      if (method13868(var0) && !var0.method3091().isEmpty()) {
-         var0.method3302(var0.method3091());
+      if (method13868(var0) && !var0.getHeldItemOffhand().isEmpty()) {
+         var0.method3302(var0.getHeldItemOffhand());
          var0.setHeldItem(Hand.OFF_HAND, ItemStack.EMPTY);
       }
    }
@@ -693,7 +693,7 @@ public class Class4388 {
    }
 
    private static boolean method13866(LivingEntity var0) {
-      return var0.method3092(Items.field38148);
+      return var0.method3092(Items.CROSSBOW);
    }
 
    private static void method13867(LivingEntity var0) {
@@ -741,11 +741,11 @@ public class Class4388 {
    }
 
    private static boolean method13878(Class1034 var0) {
-      return !var0.method3091().isEmpty();
+      return !var0.getHeldItemOffhand().isEmpty();
    }
 
    private static boolean method13879(Class1034 var0) {
-      return var0.method3091().isEmpty() || !method13827(var0.method3091().getItem());
+      return var0.getHeldItemOffhand().isEmpty() || !method13827(var0.getHeldItemOffhand().getItem());
    }
 
    public static boolean method13880(EntityType var0) {

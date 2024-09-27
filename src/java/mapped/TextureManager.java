@@ -179,7 +179,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
       while (var9.hasNext()) {
          ResourceLocation var10 = (ResourceLocation)var9.next();
          String var11 = var10.getPath();
-         if (var11.startsWith("optifine/") || Class8564.method30606(var10)) {
+         if (var11.startsWith("optifine/") || EmissiveTextures.method30606(var10)) {
             Class290 var12 = this.field1095.get(var10);
             if (var12 instanceof Class290) {
                var12.method1132();
@@ -189,7 +189,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
          }
       }
 
-      Class8564.method30599();
+      EmissiveTextures.method30599();
       return CompletableFuture.allOf(VanillaMainMenuScreen.method2595(this, var5), this.method1078(Widget.field6474, var5))
          .<Void>thenCompose(var1::method22225)
          .thenAcceptAsync(var3x -> {

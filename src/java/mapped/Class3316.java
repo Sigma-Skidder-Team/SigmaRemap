@@ -315,7 +315,7 @@ public class Class3316 extends Class3314 {
                var8.method24594(var9, var1);
             }
 
-            if (!var8.field32323 && (var5 || var3 instanceof PlayerEntity && ((PlayerEntity)var3).method3091() == var1)) {
+            if (!var8.field32323 && (var5 || var3 instanceof PlayerEntity && ((PlayerEntity)var3).getHeldItemOffhand() == var1)) {
                this.method11865(var2, var3, var8);
             }
          }

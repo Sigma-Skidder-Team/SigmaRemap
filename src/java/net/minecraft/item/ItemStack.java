@@ -375,7 +375,7 @@ public final class ItemStack {
       return this.getItem().method11728(this);
    }
 
-   public Class2103 method32138() {
+   public UseAction getUseAction() {
       return this.getItem().method11727(this);
    }
 

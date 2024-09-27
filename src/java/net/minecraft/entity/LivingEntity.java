@@ -1717,7 +1717,7 @@ public abstract class LivingEntity extends Entity {
       return this.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
    }
 
-   public ItemStack method3091() {
+   public ItemStack getHeldItemOffhand() {
       return this.getItemStackFromSlot(EquipmentSlotType.OFFHAND);
    }
 
@@ -1726,7 +1726,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public boolean method3093(Predicate<Item> var1) {
-      return var1.test(this.getHeldItemMainhand().getItem()) || var1.test(this.method3091().getItem());
+      return var1.test(this.getHeldItemMainhand().getItem()) || var1.test(this.getHeldItemOffhand().getItem());
    }
 
    public ItemStack getHeldItem(Hand var1) {
@@ -2770,11 +2770,11 @@ public abstract class LivingEntity extends Entity {
 
    public void triggerItemUseEffects(ItemStack var1, int var2) {
       if (!var1.isEmpty() && this.isHandActive()) {
-         if (var1.method32138() == Class2103.field13708) {
+         if (var1.getUseAction() == UseAction.field13708) {
             this.playSound(this.getDrinkSound(var1), 0.5F, this.world.rand.nextFloat() * 0.1F + 0.9F);
          }
 
-         if (var1.method32138() == Class2103.field13707) {
+         if (var1.getUseAction() == UseAction.field13707) {
             this.addItemParticles(var1, var2);
             this.playSound(
                this.getEatSound(var1), 0.5F + 0.5F * (float)this.rand.nextInt(2), (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F
@@ -2858,7 +2858,7 @@ public abstract class LivingEntity extends Entity {
    public boolean isActiveItemStackBlocking() {
       if (this.isHandActive() && !this.activeItemStack.isEmpty()) {
          Item var3 = this.activeItemStack.getItem();
-         return var3.method11727(this.activeItemStack) == Class2103.field13709 ? var3.method11728(this.activeItemStack) - this.activeItemStackUseCount >= 5 : false;
+         return var3.method11727(this.activeItemStack) == UseAction.BLOCK ? var3.method11728(this.activeItemStack) - this.activeItemStackUseCount >= 5 : false;
       } else {
          return false;
       }

@@ -14,7 +14,7 @@ public class Class4066 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2880) {
          Class2880 var5 = (Class2880)var1;
          if (!var2.equals("head")) {
@@ -22,21 +22,21 @@ public class Class4066 extends Class4057 {
                if (!var2.equals("right_arm")) {
                   if (!var2.equals("left_arm")) {
                      if (!var2.equals("left_leg")) {
-                        return !var2.equals("right_leg") ? null : (Class7219) Reflector.field43061.method36565(var5, 5);
+                        return !var2.equals("right_leg") ? null : (ModelRenderer) Reflector.field43061.method36565(var5, 5);
                      } else {
-                        return (Class7219) Reflector.field43061.method36565(var5, 4);
+                        return (ModelRenderer) Reflector.field43061.method36565(var5, 4);
                      }
                   } else {
-                     return (Class7219) Reflector.field43061.method36565(var5, 3);
+                     return (ModelRenderer) Reflector.field43061.method36565(var5, 3);
                   }
                } else {
-                  return (Class7219) Reflector.field43061.method36565(var5, 2);
+                  return (ModelRenderer) Reflector.field43061.method36565(var5, 2);
                }
             } else {
-               return (Class7219) Reflector.field43061.method36565(var5, 1);
+               return (ModelRenderer) Reflector.field43061.method36565(var5, 1);
             }
          } else {
-            return (Class7219) Reflector.field43061.method36565(var5, 0);
+            return (ModelRenderer) Reflector.field43061.method36565(var5, 0);
          }
       } else {
          return null;
@@ -53,7 +53,7 @@ public class Class4066 extends Class4057 {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5746 var6 = new Class5746(var5);
       var6.field25086 = (Class2880<Class1058>)var1;
-      var6.field25098 = var2;
+      var6.shadowSize = var2;
       return (Class9492)var6;
    }
 }

@@ -5,16 +5,16 @@ import net.minecraft.client.Minecraft;
 import net.optifine.Config;
 
 public class Class2849 extends Class2828 {
-   public Class7219 field17652;
-   public Class7219 field17653;
-   public Class7219 field17654;
+   public ModelRenderer field17652;
+   public ModelRenderer field17653;
+   public ModelRenderer field17654;
 
    public Class2849() {
       super(RenderType::getEntityCutoutNoCull);
       Class5723 var3 = new Class5723(Minecraft.getInstance().getRenderManager());
-      this.field17652 = (Class7219) Reflector.field43041.method36565(var3, 0);
-      this.field17653 = (Class7219) Reflector.field43041.method36565(var3, 1);
-      this.field17654 = (Class7219) Reflector.field43041.method36565(var3, 2);
+      this.field17652 = (ModelRenderer) Reflector.field43041.method36565(var3, 0);
+      this.field17653 = (ModelRenderer) Reflector.field43041.method36565(var3, 1);
+      this.field17654 = (ModelRenderer) Reflector.field43041.method36565(var3, 2);
    }
 
    public Class5723 method11175(Class5723 var1) {
@@ -30,6 +30,6 @@ public class Class2849 extends Class2828 {
    }
 
    @Override
-   public void method11016(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+   public void method11016(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
    }
 }

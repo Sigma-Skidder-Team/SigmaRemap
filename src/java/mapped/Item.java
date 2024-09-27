@@ -186,8 +186,8 @@ public class Item implements IItemProvider {
       return false;
    }
 
-   public Class2103 method11727(ItemStack var1) {
-      return !var1.getItem().isFood() ? Class2103.field13706 : Class2103.field13707;
+   public UseAction method11727(ItemStack var1) {
+      return !var1.getItem().isFood() ? UseAction.field13706 : UseAction.field13707;
    }
 
    public int method11728(ItemStack var1) {
@@ -277,7 +277,7 @@ public class Item implements IItemProvider {
    }
 
    public boolean method11741(ItemStack var1) {
-      return var1.getItem() == Items.field38148;
+      return var1.getItem() == Items.CROSSBOW;
    }
 
    public ItemStack method11742() {

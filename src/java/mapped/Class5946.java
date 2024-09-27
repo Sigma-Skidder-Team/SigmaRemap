@@ -111,7 +111,7 @@ public class Class5946 extends Class5942<Class950> {
 
    private static void method18470(
       MatrixStack var0,
-      Class5422 var1,
+      IVertexBuilder var1,
       float var2,
       float var3,
       float var4,
@@ -143,7 +143,7 @@ public class Class5946 extends Class5942<Class950> {
    private static void method18471(
       Matrix4f var0,
       Class8967 var1,
-      Class5422 var2,
+      IVertexBuilder var2,
       float var3,
       float var4,
       float var5,
@@ -168,7 +168,7 @@ public class Class5946 extends Class5942<Class950> {
    private static void method18472(
       Matrix4f var0,
       Class8967 var1,
-      Class5422 var2,
+      IVertexBuilder var2,
       float var3,
       float var4,
       float var5,

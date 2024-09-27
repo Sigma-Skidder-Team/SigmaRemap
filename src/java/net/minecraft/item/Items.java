@@ -1444,8 +1444,8 @@ public class Items {
    public static final Item field38147 = method30157(
       "heart_of_the_sea", new Item(new Item.Properties().method17779(ItemGroup.field31675).method17780(Class1978.field12886))
    );
-   public static final Item field38148 = method30157(
-      "crossbow", new Class3261(new Item.Properties().method17775(1).method17779(ItemGroup.field31673).method17777(326))
+   public static final Item CROSSBOW = method30157(
+      "crossbow", new CrossbowItem(new Item.Properties().method17775(1).method17779(ItemGroup.field31673).method17777(326))
    );
    public static final Item field38149 = method30157("suspicious_stew", new Class3284(new Item.Properties().method17775(1).method17774(Class8672.field39094)));
    public static final Item field38150 = method30154(Blocks.field37054, ItemGroup.field31666);

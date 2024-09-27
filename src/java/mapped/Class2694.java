@@ -25,7 +25,7 @@ public class Class2694 extends Class2692 {
          && this.field17133.method4230().method21664()
          && !this.method10911()
          && !this.field17133.method5140()
-         && !this.field17133.method3336();
+         && !this.field17133.isCrouching();
    }
 
    @Override

@@ -131,9 +131,9 @@ public class OldHitting extends Module {
     private void method16022(EventHandAnimation var1) {
         if (this.isEnabled()) {
             float var4 = var1.method13924();
-            if (var1.method13926() && var1.getHand() == HandSide.field14417 && var1.getItemStack().getItem() instanceof Class3334) {
+            if (var1.method13926() && var1.getHand() == HandSide.LEFT && var1.getItemStack().getItem() instanceof Class3334) {
                 var1.method13931(false);
-            } else if (var1.getHand() != HandSide.field14417 || !field23408) {
+            } else if (var1.getHand() != HandSide.LEFT || !field23408) {
                 if (field23408 && var1.method13926()) {
                     var1.setCancelled(true);
                     String var5 = this.getStringSettingValueByName("Animation");

@@ -22,7 +22,7 @@ public class Class5949 extends Class5942<Class948> {
          var3.rotate(Vector3f.ZP.rotationDegrees(67.5F));
          var3.translate(0.0, -0.125, 0.0);
          this.field25945.method11177(0.0F, 0.1F, 0.9F, 1.2F);
-         Class5422 var11 = Class5951.field25950.method26200(var4, RenderType::getEntitySolid);
+         IVertexBuilder var11 = Class5951.field25950.method26200(var4, RenderType::getEntitySolid);
          this.field25945.method11176(var3, var11, var5, var6, 1.0F, 1.0F, 1.0F, 1.0F);
          var3.pop();
       }

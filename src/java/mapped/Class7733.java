@@ -12,7 +12,7 @@ public interface Class7733 {
       return new Class7735(var1, var0);
    }
 
-   Class5422 method25597(RenderType var1);
+   IVertexBuilder method25597(RenderType var1);
 
    default void method25598() {
    }

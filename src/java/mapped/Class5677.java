@@ -7,7 +7,7 @@ public class Class5677<T extends Class1031> extends Class5676<T> {
 
    public Class5677(EntityRendererManager var1) {
       super(var1, new Class2823<T>(0.0F, 0.0F, 64, 64), 0.5F);
-      this.method17880(new Class245(this, this));
+      this.addLayer(new Class245(this, this));
    }
 
    public ResourceLocation method17843(T var1) {

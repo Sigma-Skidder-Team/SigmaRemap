@@ -403,7 +403,7 @@ public class TextureAtlasSprite implements AutoCloseable {
       return this.field9326.method25812() > 1;
    }
 
-   public Class5422 method7474(Class5422 var1) {
+   public IVertexBuilder method7474(IVertexBuilder var1) {
       if (this.method7465() == Class8684.field39209) {
          Class7735 var4 = var1.method17049();
          if (var4 != null) {

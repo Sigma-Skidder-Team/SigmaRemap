@@ -16,7 +16,7 @@ public class Class4116 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2883) {
          Class2883 var5 = (Class2883)var1;
          ImmutableList var6 = var5.method11015();
@@ -67,7 +67,7 @@ public class Class4116 extends Class4057 {
       Class5725 var6 = new Class5725(var5);
       if (Reflector.field43136.method20238()) {
          Reflector.method35082(var6, Reflector.field43136, var1);
-         var6.field25098 = var2;
+         var6.shadowSize = var2;
          return (Class9492)var6;
       } else {
          Config.method26811("Field not found: RenderBoat.modelBoat");

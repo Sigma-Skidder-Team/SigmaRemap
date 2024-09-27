@@ -23,7 +23,7 @@ import org.apache.logging.log4j.Logger;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> extends Class5715<T> implements Class5714<T, M> {
+public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827<T>> extends EntityRenderer<T> implements Class5714<T, M> {
    private static final Logger field25085 = LogManager.getLogger();
    public M field25086;
    public final List<Class219<T, M>> field25087 = Lists.newArrayList();
@@ -37,22 +37,22 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
    public static final boolean field25095 = Boolean.getBoolean("animate.model.living");
    public float field25096 = 1.0F;
 
-   public Class5712(EntityRendererManager var1, M var2, float var3) {
+   public LivingRenderer(EntityRendererManager var1, M var2, float var3) {
       super(var1);
       this.field25086 = (M)var2;
-      this.field25098 = var3;
+      this.shadowSize = var3;
    }
 
-   public final boolean method17880(Class219<T, M> var1) {
+   public final boolean addLayer(Class219<T, M> var1) {
       return this.field25087.add(var1);
    }
 
    @Override
-   public M method17881() {
+   public M getEntityModel() {
       return this.field25086;
    }
 
-   public void method17853(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(T var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       if (!Reflector.field42990.exists() || !Reflector.postForgeBusEvent(Reflector.field42990, var1, this, var3, var4, var5, var6)) {
          if (field25095) {
             var1.field4960 = 1.0F;
@@ -132,8 +132,8 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
          var33.method13942(Class2035.field13213);
          Client.getInstance().getEventManager().call(var33);
          this.field25086.method10997((T)var1, var16, var35, var3);
-         this.field25086.method10998((T)var1, var16, var35, var34, var11, var31);
-         if (CustomEntityModels.method38699()) {
+         this.field25086.setRotationAngles((T)var1, var16, var35, var34, var11, var31);
+         if (CustomEntityModels.isActive()) {
             this.field25088 = var1;
             this.field25089 = var16;
             this.field25090 = var35;
@@ -150,7 +150,7 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
          boolean var21 = var18.isEntityGlowing(var1);
          RenderType var22 = this.method17882((T)var1, var19, var20, var21);
          if (var22 != null) {
-            Class5422 var23 = var5.method25597(var22);
+            IVertexBuilder var23 = var5.method25597(var22);
             float var24 = this.method17879((T)var1, var3);
             if (var17) {
                if (var1.hurtTime > 0 || var1.deathTime > 0) {
@@ -176,14 +176,14 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
             Shaders.method33086(0.0F, 0.0F, 0.0F, 0.0F);
          }
 
-         if (CustomEntityModels.method38699()) {
+         if (CustomEntityModels.isActive()) {
             this.field25088 = null;
          }
 
          var33.method13942(Class2035.field13214);
          Client.getInstance().getEventManager().call(var33);
          var4.pop();
-         super.method17853((T)var1, var2, var3, var4, var5, var6);
+         super.render((T)var1, var2, var3, var4, var5, var6);
          if (Reflector.field42992.exists()) {
             Reflector.postForgeBusEvent(Reflector.field42992, var1, this, var3, var4, var5, var6);
          }

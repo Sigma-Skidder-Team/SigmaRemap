@@ -46,8 +46,8 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
       return new Vector3d(var7, var9, var11);
    }
 
-   public void method17853(Class1105 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
-      super.method17853(var1, var2, var3, var4, var5, var6);
+   public void render(Class1105 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+      super.render(var1, var2, var3, var4, var5, var6);
       LivingEntity var9 = var1.method5306();
       if (var9 != null) {
          float var10 = var1.method5310(var3);
@@ -93,7 +93,7 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
          float var45 = 0.4999F;
          float var46 = -1.0F + var12;
          float var47 = var17 * 2.5F + var46;
-         Class5422 var48 = var5.method25597(field25022);
+         IVertexBuilder var48 = var5.method25597(field25022);
          Class8892 var49 = var4.getLast();
          Matrix4f var50 = var49.getMatrix();
          Class8967 var51 = var49.method32362();
@@ -119,7 +119,7 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
    }
 
    private static void method17862(
-           Class5422 var0, Matrix4f var1, Class8967 var2, float var3, float var4, float var5, int var6, int var7, int var8, float var9, float var10
+           IVertexBuilder var0, Matrix4f var1, Class8967 var2, float var3, float var4, float var5, int var6, int var7, int var8, float var9, float var10
    ) {
       var0.pos(var1, var3, var4, var5)
          .color(var6, var7, var8, 255)

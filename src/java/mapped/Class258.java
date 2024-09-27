@@ -17,7 +17,7 @@ public class Class258 extends Class219<Class1074, Class2856<Class1074>> {
          Class3275 var14 = (Class3275)var13.getItem();
          this.method825().method11027(this.field918);
          this.field918.method10997(var4, var5, var6, var7);
-         this.field918.method10998(var4, var5, var6, var8, var9, var10);
+         this.field918.setRotationAngles(var4, var5, var6, var8, var9, var10);
          float var15;
          float var16;
          float var17;
@@ -32,7 +32,7 @@ public class Class258 extends Class219<Class1074, Class2856<Class1074>> {
             var17 = (float)(var18 & 0xFF) / 255.0F;
          }
 
-         Class5422 var19 = var2.method25597(RenderType.getEntityCutoutNoCull(var14.method11797()));
+         IVertexBuilder var19 = var2.method25597(RenderType.getEntityCutoutNoCull(var14.method11797()));
          this.field918.method11016(var1, var19, var3, Class213.field798, var15, var16, var17, 1.0F);
       }
    }

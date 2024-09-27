@@ -18,13 +18,13 @@ public class Class5671 extends Class5661<MobEntity, Class2895<MobEntity>> {
 
    public Class5671(EntityRendererManager var1, boolean var2) {
       super(var1, method17863(var2), 0.5F, 1.0019531F, 1.0F, 1.0019531F);
-      this.method17880(new Class255(this, new Class2797(0.5F), new Class2797(1.02F)));
+      this.addLayer(new BipedArmorLayer(this, new BipedModel(0.5F), new BipedModel(1.02F)));
    }
 
    private static Class2895<MobEntity> method17863(boolean var0) {
       Class2895 var3 = new Class2895(0.0F, 64, 64);
       if (var0) {
-         var3.field17929.field31039 = false;
+         var3.field17929.showModel = false;
       }
 
       return var3;

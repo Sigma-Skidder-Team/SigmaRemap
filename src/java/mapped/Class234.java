@@ -8,10 +8,10 @@ import net.minecraft.item.Items;
 import net.minecraft.util.math.MathHelper;
 import net.optifine.Config;
 
-public class Class234 extends Class219<AbstractClientPlayerEntity, Class2894<AbstractClientPlayerEntity>> {
+public class Class234 extends Class219<AbstractClientPlayerEntity, PlayerModel<AbstractClientPlayerEntity>> {
    private static String[] field880;
 
-   public Class234(Class5714<AbstractClientPlayerEntity, Class2894<AbstractClientPlayerEntity>> var1) {
+   public Class234(Class5714<AbstractClientPlayerEntity, PlayerModel<AbstractClientPlayerEntity>> var1) {
       super(var1);
    }
 
@@ -50,7 +50,7 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
 
             float var28 = MathHelper.lerp(var7, var4.prevCameraYaw, var4.cameraYaw);
             var25 += MathHelper.sin(MathHelper.lerp(var7, var4.prevDistanceWalkedModified, var4.distanceWalkedModified) * 6.0F) * 32.0F * var28;
-            if (var4.method3336()) {
+            if (var4.isCrouching()) {
                var25 += 25.0F;
             }
 
@@ -62,8 +62,8 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
             var1.rotate(Vector3f.XP.rotationDegrees(var4.field6107));
             var1.rotate(Vector3f.ZP.rotationDegrees(var4.field6109));
             var1.rotate(Vector3f.YP.rotationDegrees(var4.field6108));
-            Class5422 var30 = var2.method25597(RenderType.getEntitySolid(var4.method5372()));
-            this.method825().method11209(var1, var30, var3, Class213.field798);
+            IVertexBuilder var30 = var2.method25597(RenderType.getEntitySolid(var4.method5372()));
+            this.method825().renderCape(var1, var30, var3, Class213.field798);
             var1.pop();
          }
       }

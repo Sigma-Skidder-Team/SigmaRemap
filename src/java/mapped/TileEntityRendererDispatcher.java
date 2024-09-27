@@ -84,19 +84,19 @@ public class TileEntityRendererDispatcher {
          var8 = WorldRenderer.method944(var7, var1.getPos());
       }
 
-      if (Class8564.method30588()) {
-         Class8564.method30590();
+      if (EmissiveTextures.isActive()) {
+         EmissiveTextures.beginRender();
       }
 
       var0.method18462(var1, var2, var3, var4, var8, Class213.field798);
-      if (Class8564.method30588()) {
-         if (Class8564.method30594()) {
-            Class8564.method30595();
+      if (EmissiveTextures.isActive()) {
+         if (EmissiveTextures.hasEmissive()) {
+            EmissiveTextures.beginRenderEmissive();
             var0.method18462(var1, var2, var3, var4, Class1699.field9258, Class213.field798);
-            Class8564.method30597();
+            EmissiveTextures.endRenderEmissive();
          }
 
-         Class8564.method30598();
+         EmissiveTextures.endRender();
       }
    }
 
@@ -105,19 +105,19 @@ public class TileEntityRendererDispatcher {
       if (var8 != null) {
          method27965(var1, () -> {
             this.field34750 = var1;
-            if (Class8564.method30588()) {
-               Class8564.method30590();
+            if (EmissiveTextures.isActive()) {
+               EmissiveTextures.beginRender();
             }
 
             var8.method18462(var1, 0.0F, var2, var3, var4, var5);
-            if (Class8564.method30588()) {
-               if (Class8564.method30594()) {
-                  Class8564.method30595();
+            if (EmissiveTextures.isActive()) {
+               if (EmissiveTextures.hasEmissive()) {
+                  EmissiveTextures.beginRenderEmissive();
                   var8.method18462(var1, 0.0F, var2, var3, Class1699.field9258, var5);
-                  Class8564.method30597();
+                  EmissiveTextures.endRenderEmissive();
                }
 
-               Class8564.method30598();
+               EmissiveTextures.endRender();
             }
 
             this.field34750 = null;

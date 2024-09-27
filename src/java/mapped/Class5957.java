@@ -38,7 +38,7 @@ public class Class5957<T extends Class956> extends Class5942<T> {
       }
    }
 
-   private void method18487(T var1, float var2, float var3, Matrix4f var4, Class5422 var5) {
+   private void method18487(T var1, float var2, float var3, Matrix4f var4, IVertexBuilder var5) {
       float var8 = (field25980.nextFloat() * 0.5F + 0.1F) * var3;
       float var9 = (field25980.nextFloat() * 0.5F + 0.4F) * var3;
       float var10 = (field25980.nextFloat() * 0.5F + 0.5F) * var3;
@@ -53,7 +53,7 @@ public class Class5957<T extends Class956> extends Class5942<T> {
    private void method18488(
       T var1,
       Matrix4f var2,
-      Class5422 var3,
+      IVertexBuilder var3,
       float var4,
       float var5,
       float var6,

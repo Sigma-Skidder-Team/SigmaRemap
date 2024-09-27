@@ -8,7 +8,7 @@ import net.minecraft.util.math.vector.Vector3i;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public interface Class5422 extends Class5421 {
+public interface IVertexBuilder extends Class5421 {
    Logger field24103 = LogManager.getLogger();
    ThreadLocal<Class8391> field24104 = ThreadLocal.<Class8391>withInitial(() -> new Class8391(Blocks.AIR.method11579(), new BlockPos(0, 0, 0)));
    boolean field24105 = Reflector.field42864.method20245();
@@ -27,17 +27,17 @@ public interface Class5422 extends Class5421 {
       return false;
    }
 
-   Class5422 pos(double var1, double var3, double var5);
+   IVertexBuilder pos(double var1, double var3, double var5);
 
-   Class5422 color(int var1, int var2, int var3, int var4);
+   IVertexBuilder color(int var1, int var2, int var3, int var4);
 
-   Class5422 tex(float var1, float var2);
+   IVertexBuilder tex(float var1, float var2);
 
-   Class5422 method17028(int var1, int var2);
+   IVertexBuilder method17028(int var1, int var2);
 
-   Class5422 method17029(int var1, int var2);
+   IVertexBuilder method17029(int var1, int var2);
 
-   Class5422 method17030(float var1, float var2, float var3);
+   IVertexBuilder method17030(float var1, float var2, float var3);
 
    void endVertex();
 
@@ -66,15 +66,15 @@ public interface Class5422 extends Class5421 {
       this.endVertex();
    }
 
-   default Class5422 color(float var1, float var2, float var3, float var4) {
+   default IVertexBuilder color(float var1, float var2, float var3, float var4) {
       return this.color((int)(var1 * 255.0F), (int)(var2 * 255.0F), (int)(var3 * 255.0F), (int)(var4 * 255.0F));
    }
 
-   default Class5422 method17034(int var1) {
+   default IVertexBuilder method17034(int var1) {
       return this.method17029(var1 & 65535, var1 >> 16 & 65535);
    }
 
-   default Class5422 method17035(int var1) {
+   default IVertexBuilder method17035(int var1) {
       return this.method17028(var1 & 65535, var1 >> 16 & 65535);
    }
 
@@ -165,14 +165,14 @@ public interface Class5422 extends Class5421 {
       }
    }
 
-   default Class5422 pos(Matrix4f var1, float var2, float var3, float var4) {
+   default IVertexBuilder pos(Matrix4f var1, float var2, float var3, float var4) {
       float var7 = var1.method35517(var2, var3, var4, 1.0F);
       float var8 = var1.method35518(var2, var3, var4, 1.0F);
       float var9 = var1.method35519(var2, var3, var4, 1.0F);
       return this.pos((double)var7, (double)var8, (double)var9);
    }
 
-   default Class5422 method17041(Class8967 var1, float var2, float var3, float var4) {
+   default IVertexBuilder method17041(Class8967 var1, float var2, float var3, float var4) {
       float var7 = var1.method32832(var2, var3, var4);
       float var8 = var1.method32833(var2, var3, var4);
       float var9 = var1.method32834(var2, var3, var4);

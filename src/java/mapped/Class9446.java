@@ -308,7 +308,7 @@ public class Class9446 {
                            LivingEntity var15 = (LivingEntity)var0;
                            ItemStack var17 = var15.getHeldItemMainhand();
                            int var5 = method36318(var17);
-                           ItemStack var6 = var15.method3091();
+                           ItemStack var6 = var15.getHeldItemOffhand();
                            int var7 = method36318(var6);
                            ItemStack var8 = var15.getItemStackFromSlot(EquipmentSlotType.HEAD);
                            int var9 = method36318(var8);

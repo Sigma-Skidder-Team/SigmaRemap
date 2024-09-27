@@ -7,8 +7,8 @@ public class Class5669 extends Class5661<Class1040, Class2800<Class1040>> {
 
    public Class5669(EntityRendererManager var1, IReloadableResourceManager var2) {
       super(var1, new Class2800<>(0.0F, false), 0.5F);
-      this.method17880(new Class255<>(this, new Class2800<>(0.5F, true), new Class2800<>(1.0F, true)));
-      this.method17880(new Class218<>(this, var2, "zombie_villager"));
+      this.addLayer(new BipedArmorLayer<>(this, new Class2800<>(0.5F, true), new Class2800<>(1.0F, true)));
+      this.addLayer(new Class218<>(this, var2, "zombie_villager"));
    }
 
    public ResourceLocation method17843(Class1040 var1) {

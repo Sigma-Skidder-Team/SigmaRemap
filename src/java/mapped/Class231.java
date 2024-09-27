@@ -7,8 +7,8 @@ import net.minecraft.util.math.MathHelper;
 
 import java.util.Random;
 
-public abstract class Class231<T extends LivingEntity, M extends Class2894<T>> extends Class219<T, M> {
-   public Class231(Class5712<T, M> var1) {
+public abstract class Class231<T extends LivingEntity, M extends PlayerModel<T>> extends Class219<T, M> {
+   public Class231(LivingRenderer<T, M> var1) {
       super(var1);
    }
 
@@ -22,9 +22,9 @@ public abstract class Class231<T extends LivingEntity, M extends Class2894<T>> e
       if (var13 > 0) {
          for (int var15 = 0; var15 < var13; var15++) {
             var1.push();
-            Class7219 var16 = this.method825().method11210(var14);
+            ModelRenderer var16 = this.method825().getRandomModelRenderer(var14);
             Class9661 var17 = var16.method22685(var14);
-            var16.method22682(var1);
+            var16.translateRotate(var1);
             float var18 = var14.nextFloat();
             float var19 = var14.nextFloat();
             float var20 = var14.nextFloat();

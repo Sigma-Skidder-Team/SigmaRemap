@@ -6,21 +6,21 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.optifine.Config;
 
-public class Class5731 extends Class5715<ExperienceOrbEntity> {
+public class Class5731 extends EntityRenderer<ExperienceOrbEntity> {
    private static final ResourceLocation field25141 = new ResourceLocation("textures/entity/experience_orb.png");
    private static final RenderType field25142 = RenderType.method14315(field25141);
 
    public Class5731(EntityRendererManager var1) {
       super(var1);
-      this.field25098 = 0.15F;
-      this.field25099 = 0.75F;
+      this.shadowSize = 0.15F;
+      this.shadowOpaque = 0.75F;
    }
 
    public int method17858(ExperienceOrbEntity var1, BlockPos var2) {
       return MathHelper.method37775(super.method17858(var1, var2) + 7, 0, 15);
    }
 
-   public void method17853(ExperienceOrbEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(ExperienceOrbEntity var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
       int var9 = var1.method4178();
       float var10 = (float)(var9 % 4 * 16 + 0) / 64.0F;
@@ -44,7 +44,7 @@ public class Class5731 extends Class5715<ExperienceOrbEntity> {
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
       float var22 = 0.3F;
       var4.method35292(0.3F, 0.3F, 0.3F);
-      Class5422 var23 = var5.method25597(field25142);
+      IVertexBuilder var23 = var5.method25597(field25142);
       Class8892 var24 = var4.getLast();
       Matrix4f var25 = var24.getMatrix();
       Class8967 var26 = var24.method32362();
@@ -65,11 +65,11 @@ public class Class5731 extends Class5715<ExperienceOrbEntity> {
       method17914(var23, var25, var26, 0.5F, 0.75F, var27, var28, var29, var11, var12, var6);
       method17914(var23, var25, var26, -0.5F, 0.75F, var27, var28, var29, var10, var12, var6);
       var4.pop();
-      super.method17853(var1, var2, var3, var4, var5, var6);
+      super.render(var1, var2, var3, var4, var5, var6);
    }
 
    private static void method17914(
-           Class5422 var0, Matrix4f var1, Class8967 var2, float var3, float var4, int var5, int var6, int var7, float var8, float var9, int var10
+           IVertexBuilder var0, Matrix4f var1, Class8967 var2, float var3, float var4, int var5, int var6, int var7, float var8, float var9, int var10
    ) {
       var0.pos(var1, var3, var4, 0.0F)
          .color(var5, var6, var7, 128)

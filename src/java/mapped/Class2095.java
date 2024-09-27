@@ -27,18 +27,18 @@ public enum Class2095 {
       return this.field13652;
    }
 
-   public float method8757(Class7219 var1) {
+   public float method8757(ModelRenderer var1) {
       switch (Class6877.field29817[this.ordinal()]) {
          case 1:
-            return var1.field31032;
+            return var1.rotationPointX;
          case 2:
-            return var1.field31033;
+            return var1.rotationPointY;
          case 3:
-            return var1.field31034;
+            return var1.rotationPointZ;
          case 4:
-            return var1.field31035;
+            return var1.rotateAngleX;
          case 5:
-            return var1.field31036;
+            return var1.rotateAngleY;
          case 6:
             return var1.field31037;
          case 7:
@@ -53,22 +53,22 @@ public enum Class2095 {
       }
    }
 
-   public void method8758(Class7219 var1, float var2) {
+   public void method8758(ModelRenderer var1, float var2) {
       switch (Class6877.field29817[this.ordinal()]) {
          case 1:
-            var1.field31032 = var2;
+            var1.rotationPointX = var2;
             return;
          case 2:
-            var1.field31033 = var2;
+            var1.rotationPointY = var2;
             return;
          case 3:
-            var1.field31034 = var2;
+            var1.rotationPointZ = var2;
             return;
          case 4:
-            var1.field31035 = var2;
+            var1.rotateAngleX = var2;
             return;
          case 5:
-            var1.field31036 = var2;
+            var1.rotateAngleY = var2;
             return;
          case 6:
             var1.field31037 = var2;

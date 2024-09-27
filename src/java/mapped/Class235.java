@@ -43,7 +43,7 @@ public class Class235<T extends LivingEntity, M extends Class2827<T> & Class2824
             var1.translate(0.0, 1.0, 0.0);
          }
 
-         this.method825().method11012().method22682(var1);
+         this.method825().method11012().translateRotate(var1);
          if (var14 instanceof Class3292 && ((Class3292)var14).method11845() instanceof Class3251) {
             float var21 = 1.1875F;
             var1.method35292(1.1875F, -1.1875F, -1.1875F);

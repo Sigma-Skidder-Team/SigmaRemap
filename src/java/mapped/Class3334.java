@@ -25,8 +25,8 @@ public class Class3334 extends Item {
    }
 
    @Override
-   public Class2103 method11727(ItemStack var1) {
-      return Class2103.field13709;
+   public UseAction method11727(ItemStack var1) {
+      return UseAction.BLOCK;
    }
 
    @Override

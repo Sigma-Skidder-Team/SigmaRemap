@@ -38,7 +38,7 @@ public class Class4593 extends Class4587 {
    }
 
    @Override
-   public void method14510(Class5422 var1, ActiveRenderInfo var2, float var3) {
+   public void method14510(IVertexBuilder var1, ActiveRenderInfo var2, float var3) {
       Class7906 var6 = null;
       if (Config.isShaders()) {
          var6 = Shaders.field40848;
@@ -56,7 +56,7 @@ public class Class4593 extends Class4587 {
       Class7735 var20 = this.field22081.method26536();
       Vector3d var21 = var2.getPos();
       this.field22085
-         .method32219(
+         .renderEntityStatic(
             this.field22082,
             var14 - var21.getX(),
             var16 - var21.getY(),

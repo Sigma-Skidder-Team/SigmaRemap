@@ -8,7 +8,7 @@ import net.optifine.shaders.Shaders;
 
 import java.util.Random;
 
-public class Class5718 extends Class5715<Class1007> {
+public class Class5718 extends EntityRenderer<Class1007> {
    public static final ResourceLocation field25106 = new ResourceLocation("textures/entity/end_crystal/end_crystal_beam.png");
    private static final ResourceLocation field25107 = new ResourceLocation("textures/entity/enderdragon/dragon_exploding.png");
    private static final ResourceLocation field25108 = new ResourceLocation("textures/entity/enderdragon/dragon.png");
@@ -22,10 +22,10 @@ public class Class5718 extends Class5715<Class1007> {
 
    public Class5718(EntityRendererManager var1) {
       super(var1);
-      this.field25098 = 0.5F;
+      this.shadowSize = 0.5F;
    }
 
-   public void method17853(Class1007 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(Class1007 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
       float var9 = (float)var1.method4317(7, var3)[0];
       float var10 = (float)(var1.method4317(5, var3)[1] - var1.method4317(10, var3)[1]);
@@ -37,17 +37,17 @@ public class Class5718 extends Class5715<Class1007> {
       boolean var11 = var1.hurtTime > 0;
       this.field25115.method10997(var1, 0.0F, 0.0F, var3);
       if (var1.field5635 <= 0) {
-         Class5422 var12 = var5.method25597(field25110);
+         IVertexBuilder var12 = var5.method25597(field25110);
          this.field25115.method11016(var4, var12, var6, Class213.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
       } else {
          float var22 = (float)var1.field5635 / 200.0F;
-         Class5422 var13 = var5.method25597(RenderType.method14324(field25107, var22));
+         IVertexBuilder var13 = var5.method25597(RenderType.method14324(field25107, var22));
          this.field25115.method11016(var4, var13, var6, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
-         Class5422 var14 = var5.method25597(field25111);
+         IVertexBuilder var14 = var5.method25597(field25111);
          this.field25115.method11016(var4, var14, var6, Class213.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);
       }
 
-      Class5422 var23 = var5.method25597(field25112);
+      IVertexBuilder var23 = var5.method25597(field25112);
       if (Config.isShaders()) {
          Shaders.method33081();
       }
@@ -63,7 +63,7 @@ public class Class5718 extends Class5715<Class1007> {
          float var24 = ((float)var1.field5635 + var3) / 200.0F;
          float var26 = Math.min(!(var24 > 0.8F) ? 0.0F : (var24 - 0.8F) / 0.2F, 1.0F);
          Random var15 = new Random(432L);
-         Class5422 var16 = var5.method25597(RenderType.method14341());
+         IVertexBuilder var16 = var5.method25597(RenderType.method14341());
          var4.push();
          var4.translate(0.0, -1.0, -2.0);
 
@@ -102,23 +102,23 @@ public class Class5718 extends Class5715<Class1007> {
          var4.pop();
       }
 
-      super.method17853(var1, var2, var3, var4, var5, var6);
+      super.render(var1, var2, var3, var4, var5, var6);
    }
 
-   private static void method17902(Class5422 var0, Matrix4f var1, int var2) {
+   private static void method17902(IVertexBuilder var0, Matrix4f var1, int var2) {
       var0.pos(var1, 0.0F, 0.0F, 0.0F).color(255, 255, 255, var2).endVertex();
       var0.pos(var1, 0.0F, 0.0F, 0.0F).color(255, 255, 255, var2).endVertex();
    }
 
-   private static void method17903(Class5422 var0, Matrix4f var1, float var2, float var3) {
+   private static void method17903(IVertexBuilder var0, Matrix4f var1, float var2, float var3) {
       var0.pos(var1, -field25114 * var3, var2, -0.5F * var3).color(255, 0, 255, 0).endVertex();
    }
 
-   private static void method17904(Class5422 var0, Matrix4f var1, float var2, float var3) {
+   private static void method17904(IVertexBuilder var0, Matrix4f var1, float var2, float var3) {
       var0.pos(var1, field25114 * var3, var2, -0.5F * var3).color(255, 0, 255, 0).endVertex();
    }
 
-   private static void method17905(Class5422 var0, Matrix4f var1, float var2, float var3) {
+   private static void method17905(IVertexBuilder var0, Matrix4f var1, float var2, float var3) {
       var0.pos(var1, 0.0F, var2, 1.0F * var3).color(255, 0, 255, 0).endVertex();
    }
 
@@ -129,7 +129,7 @@ public class Class5718 extends Class5715<Class1007> {
       var5.translate(0.0, 2.0, 0.0);
       var5.rotate(Vector3f.YP.method25285((float)(-Math.atan2((double)var2, (double)var0)) - (float) (Math.PI / 2)));
       var5.rotate(Vector3f.XP.method25285((float)(-Math.atan2((double)var10, (double)var1)) - (float) (Math.PI / 2)));
-      Class5422 var12 = var6.method25597(field25113);
+      IVertexBuilder var12 = var6.method25597(field25113);
       float var13 = 0.0F - ((float)var4 + var3) * 0.01F;
       float var14 = MathHelper.method37765(var0 * var0 + var1 * var1 + var2 * var2) / 32.0F - ((float)var4 + var3) * 0.01F;
       byte var15 = 8;

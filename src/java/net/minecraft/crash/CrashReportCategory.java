@@ -20,7 +20,7 @@ public class CrashReportCategory {
       this.field40490 = var2;
    }
 
-   public static String method32803(double var0, double var2, double var4) {
+   public static String getCoordinateInfo(double var0, double var2, double var4) {
       return String.format(Locale.ROOT, "%.2f,%.2f,%.2f - %s", var0, var2, var4, method32804(new BlockPos(var0, var2, var4)));
    }
 

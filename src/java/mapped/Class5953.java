@@ -12,15 +12,15 @@ import java.util.Calendar;
 
 public class Class5953<T extends TileEntity & Class942> extends Class5942<T> {
    private static String[] field25954;
-   private final Class7219 field25955;
-   private final Class7219 field25956;
-   private final Class7219 field25957;
-   private final Class7219 field25958;
-   private final Class7219 field25959;
-   private final Class7219 field25960;
-   private final Class7219 field25961;
-   private final Class7219 field25962;
-   private final Class7219 field25963;
+   private final ModelRenderer field25955;
+   private final ModelRenderer field25956;
+   private final ModelRenderer field25957;
+   private final ModelRenderer field25958;
+   private final ModelRenderer field25959;
+   private final ModelRenderer field25960;
+   private final ModelRenderer field25961;
+   private final ModelRenderer field25962;
+   private final ModelRenderer field25963;
    private boolean field25964;
 
    public Class5953(TileEntityRendererDispatcher var1) {
@@ -30,33 +30,33 @@ public class Class5953<T extends TileEntity & Class942> extends Class5942<T> {
          this.field25964 = true;
       }
 
-      this.field25956 = new Class7219(64, 64, 0, 19);
-      this.field25956.method22675(1.0F, 0.0F, 1.0F, 14.0F, 10.0F, 14.0F, 0.0F);
-      this.field25955 = new Class7219(64, 64, 0, 0);
-      this.field25955.method22675(1.0F, 0.0F, 0.0F, 14.0F, 5.0F, 14.0F, 0.0F);
-      this.field25955.field31033 = 9.0F;
-      this.field25955.field31034 = 1.0F;
-      this.field25957 = new Class7219(64, 64, 0, 0);
-      this.field25957.method22675(7.0F, -1.0F, 15.0F, 2.0F, 4.0F, 1.0F, 0.0F);
-      this.field25957.field31033 = 8.0F;
-      this.field25959 = new Class7219(64, 64, 0, 19);
-      this.field25959.method22675(1.0F, 0.0F, 1.0F, 15.0F, 10.0F, 14.0F, 0.0F);
-      this.field25958 = new Class7219(64, 64, 0, 0);
-      this.field25958.method22675(1.0F, 0.0F, 0.0F, 15.0F, 5.0F, 14.0F, 0.0F);
-      this.field25958.field31033 = 9.0F;
-      this.field25958.field31034 = 1.0F;
-      this.field25960 = new Class7219(64, 64, 0, 0);
-      this.field25960.method22675(15.0F, -1.0F, 15.0F, 1.0F, 4.0F, 1.0F, 0.0F);
-      this.field25960.field31033 = 8.0F;
-      this.field25962 = new Class7219(64, 64, 0, 19);
-      this.field25962.method22675(0.0F, 0.0F, 1.0F, 15.0F, 10.0F, 14.0F, 0.0F);
-      this.field25961 = new Class7219(64, 64, 0, 0);
-      this.field25961.method22675(0.0F, 0.0F, 0.0F, 15.0F, 5.0F, 14.0F, 0.0F);
-      this.field25961.field31033 = 9.0F;
-      this.field25961.field31034 = 1.0F;
-      this.field25963 = new Class7219(64, 64, 0, 0);
-      this.field25963.method22675(0.0F, -1.0F, 15.0F, 1.0F, 4.0F, 1.0F, 0.0F);
-      this.field25963.field31033 = 8.0F;
+      this.field25956 = new ModelRenderer(64, 64, 0, 19);
+      this.field25956.addBox(1.0F, 0.0F, 1.0F, 14.0F, 10.0F, 14.0F, 0.0F);
+      this.field25955 = new ModelRenderer(64, 64, 0, 0);
+      this.field25955.addBox(1.0F, 0.0F, 0.0F, 14.0F, 5.0F, 14.0F, 0.0F);
+      this.field25955.rotationPointY = 9.0F;
+      this.field25955.rotationPointZ = 1.0F;
+      this.field25957 = new ModelRenderer(64, 64, 0, 0);
+      this.field25957.addBox(7.0F, -1.0F, 15.0F, 2.0F, 4.0F, 1.0F, 0.0F);
+      this.field25957.rotationPointY = 8.0F;
+      this.field25959 = new ModelRenderer(64, 64, 0, 19);
+      this.field25959.addBox(1.0F, 0.0F, 1.0F, 15.0F, 10.0F, 14.0F, 0.0F);
+      this.field25958 = new ModelRenderer(64, 64, 0, 0);
+      this.field25958.addBox(1.0F, 0.0F, 0.0F, 15.0F, 5.0F, 14.0F, 0.0F);
+      this.field25958.rotationPointY = 9.0F;
+      this.field25958.rotationPointZ = 1.0F;
+      this.field25960 = new ModelRenderer(64, 64, 0, 0);
+      this.field25960.addBox(15.0F, -1.0F, 15.0F, 1.0F, 4.0F, 1.0F, 0.0F);
+      this.field25960.rotationPointY = 8.0F;
+      this.field25962 = new ModelRenderer(64, 64, 0, 19);
+      this.field25962.addBox(0.0F, 0.0F, 1.0F, 15.0F, 10.0F, 14.0F, 0.0F);
+      this.field25961 = new ModelRenderer(64, 64, 0, 0);
+      this.field25961.addBox(0.0F, 0.0F, 0.0F, 15.0F, 5.0F, 14.0F, 0.0F);
+      this.field25961.rotationPointY = 9.0F;
+      this.field25961.rotationPointZ = 1.0F;
+      this.field25963 = new ModelRenderer(64, 64, 0, 0);
+      this.field25963.addBox(0.0F, -1.0F, 15.0F, 1.0F, 4.0F, 1.0F, 0.0F);
+      this.field25963.rotationPointY = 8.0F;
    }
 
    @Override
@@ -86,7 +86,7 @@ public class Class5953<T extends TileEntity & Class942> extends Class5942<T> {
          var18 = 1.0F - var18 * var18 * var18;
          int var19 = var17.method27292(new Class6138<>()).applyAsInt(var5);
          Class7826 var20 = Class8624.method30913(var1, var12, this.field25964);
-         Class5422 var21 = var20.method26200(var4, RenderType::getEntityCutout);
+         IVertexBuilder var21 = var20.method26200(var4, RenderType::getEntityCutout);
          if (!var15) {
             this.method18486(var3, var21, this.field25955, this.field25957, this.field25956, var18, var19, var6);
          } else if (var12 != Class111.field380) {
@@ -99,11 +99,11 @@ public class Class5953<T extends TileEntity & Class942> extends Class5942<T> {
       }
    }
 
-   private void method18486(MatrixStack var1, Class5422 var2, Class7219 var3, Class7219 var4, Class7219 var5, float var6, int var7, int var8) {
-      var3.field31035 = -(var6 * (float) (Math.PI / 2));
-      var4.field31035 = var3.field31035;
-      var3.method22680(var1, var2, var7, var8);
-      var4.method22680(var1, var2, var7, var8);
-      var5.method22680(var1, var2, var7, var8);
+   private void method18486(MatrixStack var1, IVertexBuilder var2, ModelRenderer var3, ModelRenderer var4, ModelRenderer var5, float var6, int var7, int var8) {
+      var3.rotateAngleX = -(var6 * (float) (Math.PI / 2));
+      var4.rotateAngleX = var3.rotateAngleX;
+      var3.render(var1, var2, var7, var8);
+      var4.render(var1, var2, var7, var8);
+      var5.render(var1, var2, var7, var8);
    }
 }

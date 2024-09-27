@@ -14,21 +14,21 @@ public class Class4088 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2826) {
          Class2826 var5 = (Class2826)var1;
          if (!var2.equals("body")) {
             if (!var2.equals("left_eye")) {
                if (!var2.equals("right_eye")) {
-                  return !var2.equals("mouth") ? null : (Class7219) Reflector.method35075(var5, Reflector.field43107, 3);
+                  return !var2.equals("mouth") ? null : (ModelRenderer) Reflector.method35075(var5, Reflector.field43107, 3);
                } else {
-                  return (Class7219) Reflector.method35075(var5, Reflector.field43107, 2);
+                  return (ModelRenderer) Reflector.method35075(var5, Reflector.field43107, 2);
                }
             } else {
-               return (Class7219) Reflector.method35075(var5, Reflector.field43107, 1);
+               return (ModelRenderer) Reflector.method35075(var5, Reflector.field43107, 1);
             }
          } else {
-            return (Class7219) Reflector.method35075(var5, Reflector.field43107, 0);
+            return (ModelRenderer) Reflector.method35075(var5, Reflector.field43107, 0);
          }
       } else {
          return null;
@@ -45,7 +45,7 @@ public class Class4088 extends Class4057 {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5675 var6 = new Class5675(var5);
       var6.field25086 = (Class2826<Class1108>)var1;
-      var6.field25098 = var2;
+      var6.shadowSize = var2;
       return (Class9492)var6;
    }
 }

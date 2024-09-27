@@ -13,7 +13,7 @@ public class Class4106 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2851) {
          Class2851 var5 = (Class2851)var1;
          if (!var2.equals("lid_left")) {

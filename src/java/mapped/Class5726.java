@@ -4,7 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.util.ResourceLocation;
 
-public class Class5726 extends Class5715<Class888> {
+public class Class5726 extends EntityRenderer<Class888> {
    private static String[] field25133;
    private final ItemRenderer field25134;
 
@@ -13,7 +13,7 @@ public class Class5726 extends Class5715<Class888> {
       this.field25134 = var2;
    }
 
-   public void method17853(Class888 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(Class888 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       var4.push();
       var4.rotate(this.field25097.method32230());
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
@@ -25,7 +25,7 @@ public class Class5726 extends Class5715<Class888> {
 
       this.field25134.method789(var1.method3509(), Class2327.field15931, var6, Class213.field798, var4, var5);
       var4.pop();
-      super.method17853(var1, var2, var3, var4, var5, var6);
+      super.render(var1, var2, var3, var4, var5, var6);
    }
 
    public ResourceLocation method17843(Class888 var1) {

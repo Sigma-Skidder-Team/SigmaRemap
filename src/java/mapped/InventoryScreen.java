@@ -87,10 +87,10 @@ public class InventoryScreen extends Class860<PlayerContainer> implements Class8
       int var7 = this.field4734;
       int var8 = this.field4735;
       this.blit(var1, var7, var8, 0, 0, this.xSize, this.ySize);
-      method2635(var7 + 51, var8 + 75, 30, (float)(var7 + 51) - this.field4766, (float)(var8 + 75 - 50) - this.field4767, this.mc.player);
+      drawEntityOnScreen(var7 + 51, var8 + 75, 30, (float)(var7 + 51) - this.field4766, (float)(var8 + 75 - 50) - this.field4767, this.mc.player);
    }
 
-   public static void method2635(int var0, int var1, int var2, float var3, float var4, LivingEntity var5) {
+   public static void drawEntityOnScreen(int var0, int var1, int var2, float var3, float var4, LivingEntity var5) {
       float var8 = (float)Math.atan((double)(var3 / 40.0F));
       float var9 = (float)Math.atan((double)(var4 / 40.0F));
       RenderSystem.pushMatrix();
@@ -118,7 +118,7 @@ public class InventoryScreen extends Class860<PlayerContainer> implements Class8
       var18.method32214(var12);
       var18.method32215(false);
       Class7735 var19 = Minecraft.getInstance().getRenderTypeBuffers().method26536();
-      RenderSystem.runAsFancy(() -> var18.method32219(var5, 0.0, 0.0, 0.0, 0.0F, 1.0F, var10, var19, 15728880));
+      RenderSystem.runAsFancy(() -> var18.renderEntityStatic(var5, 0.0, 0.0, 0.0, 0.0F, 1.0F, var10, var19, 15728880));
       var19.method25602();
       var18.method32215(true);
       var5.renderYawOffset = var13;

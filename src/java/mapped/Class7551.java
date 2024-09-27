@@ -32,7 +32,7 @@ public class Class7551 {
       BlockState var2,
       BlockPos var3,
       MatrixStack var4,
-      Class5422 var5,
+      IVertexBuilder var5,
       List<Class8557> var6,
       float[] var7,
       BitSet var8,
@@ -66,7 +66,7 @@ public class Class7551 {
       IBlockDisplayReader var1,
       BlockState var2,
       BlockPos var3,
-      Class5422 var4,
+      IVertexBuilder var4,
       Class8892 var5,
       Class8557 var6,
       float var7,
@@ -97,7 +97,7 @@ public class Class7551 {
    }
 
    private void method24678(
-           IBlockDisplayReader var1, BlockState var2, BlockPos var3, int var4, int var5, boolean var6, MatrixStack var7, Class5422 var8, List<Class8557> var9, BitSet var10
+           IBlockDisplayReader var1, BlockState var2, BlockPos var3, int var4, int var5, boolean var6, MatrixStack var7, IVertexBuilder var8, List<Class8557> var9, BitSet var10
    ) {
       for (Class8557 var14 : var9) {
          if (var6) {
@@ -116,7 +116,7 @@ public class Class7551 {
    }
 
    public boolean method24679(
-           IBlockDisplayReader var1, IBakedModel var2, BlockState var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
+           IBlockDisplayReader var1, IBakedModel var2, BlockState var3, BlockPos var4, MatrixStack var5, IVertexBuilder var6, boolean var7, Random var8, long var9, int var11
    ) {
       return this.method24680(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, Class7181.field30863);
    }
@@ -127,7 +127,7 @@ public class Class7551 {
       BlockState var3,
       BlockPos var4,
       MatrixStack var5,
-      Class5422 var6,
+      IVertexBuilder var6,
       boolean var7,
       Random var8,
       long var9,
@@ -175,7 +175,7 @@ public class Class7551 {
    }
 
    public boolean method24681(
-           IBlockDisplayReader var1, IBakedModel var2, BlockState var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
+           IBlockDisplayReader var1, IBakedModel var2, BlockState var3, BlockPos var4, MatrixStack var5, IVertexBuilder var6, boolean var7, Random var8, long var9, int var11
    ) {
       return this.method24682(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, Class7181.field30863);
    }
@@ -186,7 +186,7 @@ public class Class7551 {
       BlockState var3,
       BlockPos var4,
       MatrixStack var5,
-      Class5422 var6,
+      IVertexBuilder var6,
       boolean var7,
       Random var8,
       long var9,
@@ -219,7 +219,7 @@ public class Class7551 {
    }
 
    public boolean method24683(
-           IBlockDisplayReader var1, IBakedModel var2, BlockState var3, BlockPos var4, MatrixStack var5, Class5422 var6, boolean var7, Random var8, long var9, int var11
+           IBlockDisplayReader var1, IBakedModel var2, BlockState var3, BlockPos var4, MatrixStack var5, IVertexBuilder var6, boolean var7, Random var8, long var9, int var11
    ) {
       return this.method24684(var1, var2, var3, var4, var5, var6, var7, var8, var9, var11, Class7181.field30863);
    }
@@ -230,7 +230,7 @@ public class Class7551 {
       BlockState var3,
       BlockPos var4,
       MatrixStack var5,
-      Class5422 var6,
+      IVertexBuilder var6,
       boolean var7,
       Random var8,
       long var9,
@@ -263,7 +263,7 @@ public class Class7551 {
       return var15;
    }
 
-   private void method24685(IBlockDisplayReader var1, BlockState var2, BlockPos var3, MatrixStack var4, Class5422 var5, List<Class8557> var6, int var7, Class8391 var8) {
+   private void method24685(IBlockDisplayReader var1, BlockState var2, BlockPos var3, MatrixStack var4, IVertexBuilder var5, List<Class8557> var6, int var7, Class8391 var8) {
       float[] var11 = var8.method29414();
       BitSet var12 = var8.method29415();
       Class9529 var13 = var8.method29416();
@@ -302,7 +302,7 @@ public class Class7551 {
       IBlockDisplayReader var1,
       BlockState var2,
       BlockPos var3,
-      Class5422 var4,
+      IVertexBuilder var4,
       Class8892 var5,
       Class8557 var6,
       float var7,
@@ -401,7 +401,7 @@ public class Class7551 {
    }
 
    private void method24688(
-           IBlockDisplayReader var1, BlockState var2, BlockPos var3, int var4, int var5, boolean var6, MatrixStack var7, Class5422 var8, List<Class8557> var9, Class8391 var10
+           IBlockDisplayReader var1, BlockState var2, BlockPos var3, int var4, int var5, boolean var6, MatrixStack var7, IVertexBuilder var8, List<Class8557> var9, Class8391 var10
    ) {
       BitSet var13 = var10.method29415();
       int var14 = var9.size();
@@ -423,12 +423,12 @@ public class Class7551 {
       }
    }
 
-   public void method24689(Class8892 var1, Class5422 var2, BlockState var3, IBakedModel var4, float var5, float var6, float var7, int var8, int var9) {
+   public void method24689(Class8892 var1, IVertexBuilder var2, BlockState var3, IBakedModel var4, float var5, float var6, float var7, int var8, int var9) {
       this.method24690(var1, var2, var3, var4, var5, var6, var7, var8, var9, Class7181.field30863);
    }
 
    public void method24690(
-           Class8892 var1, Class5422 var2, BlockState var3, IBakedModel var4, float var5, float var6, float var7, int var8, int var9, Class7180 var10
+           Class8892 var1, IVertexBuilder var2, BlockState var3, IBakedModel var4, float var5, float var6, float var7, int var8, int var9, Class7180 var10
    ) {
       Random var13 = new Random();
       long var14 = 42L;
@@ -450,12 +450,12 @@ public class Class7551 {
       }
    }
 
-   private static void method24691(Class8892 var0, Class5422 var1, float var2, float var3, float var4, List<Class8557> var5, int var6, int var7) {
-      boolean var10 = Class8564.method30588();
+   private static void method24691(Class8892 var0, IVertexBuilder var1, float var2, float var3, float var4, List<Class8557> var5, int var6, int var7) {
+      boolean var10 = EmissiveTextures.isActive();
 
       for (Class8557 var12 : var5) {
          if (var10) {
-            var12 = Class8564.method30593(var12);
+            var12 = EmissiveTextures.method30593(var12);
             if (var12 == null) {
                continue;
             }
@@ -505,7 +505,7 @@ public class Class7551 {
       BlockState var3,
       BlockPos var4,
       MatrixStack var5,
-      Class5422 var6,
+      IVertexBuilder var6,
       int var7,
       boolean var8,
       Random var9,

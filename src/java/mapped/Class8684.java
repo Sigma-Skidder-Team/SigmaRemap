@@ -249,7 +249,7 @@ public class Class8684 {
          Class9422.method36145(var0);
       }
 
-      Class8564.method30602(var0);
+      EmissiveTextures.method30602(var0);
    }
 
    public static ResourceLocation method31273(ResourceLocation var0, String var1) {

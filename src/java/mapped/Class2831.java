@@ -289,7 +289,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
       Advancement var10 = Class7999.method27304()
          .method27305(var4)
          .method27308(
-            Items.field38148,
+            Items.CROSSBOW,
             new TranslationTextComponent("advancements.adventure.ol_betsy.title"),
             new TranslationTextComponent("advancements.adventure.ol_betsy.description"),
             (ResourceLocation)null,
@@ -298,12 +298,12 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("shot_crossbow", Class4482.method14145(Items.field38148))
+         .method27312("shot_crossbow", Class4482.method14145(Items.CROSSBOW))
          .method27317(var1, "adventure/ol_betsy");
       Class7999.method27304()
          .method27305(var10)
          .method27308(
-            Items.field38148,
+            Items.CROSSBOW,
             new TranslationTextComponent("advancements.adventure.whos_the_pillager_now.title"),
             new TranslationTextComponent("advancements.adventure.whos_the_pillager_now.description"),
             (ResourceLocation)null,
@@ -317,7 +317,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
       Class7999.method27304()
          .method27305(var10)
          .method27308(
-            Items.field38148,
+            Items.CROSSBOW,
             new TranslationTextComponent("advancements.adventure.two_birds_one_arrow.title"),
             new TranslationTextComponent("advancements.adventure.two_birds_one_arrow.description"),
             (ResourceLocation)null,
@@ -335,7 +335,7 @@ public class Class2831 implements Consumer<Consumer<Advancement>> {
       Class7999.method27304()
          .method27305(var10)
          .method27308(
-            Items.field38148,
+            Items.CROSSBOW,
             new TranslationTextComponent("advancements.adventure.arbalistic.title"),
             new TranslationTextComponent("advancements.adventure.arbalistic.description"),
             (ResourceLocation)null,

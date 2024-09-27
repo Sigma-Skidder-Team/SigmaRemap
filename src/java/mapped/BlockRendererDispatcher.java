@@ -34,11 +34,11 @@ public class BlockRendererDispatcher implements IResourceManagerReloadListener {
       return this.field853;
    }
 
-   public void method807(BlockState var1, BlockPos var2, IBlockDisplayReader var3, MatrixStack var4, Class5422 var5) {
+   public void method807(BlockState var1, BlockPos var2, IBlockDisplayReader var3, MatrixStack var4, IVertexBuilder var5) {
       this.method808(var1, var2, var3, var4, var5, Class7181.field30863);
    }
 
-   public void method808(BlockState var1, BlockPos var2, IBlockDisplayReader var3, MatrixStack var4, Class5422 var5, Class7180 var6) {
+   public void method808(BlockState var1, BlockPos var2, IBlockDisplayReader var3, MatrixStack var4, IVertexBuilder var5, Class7180 var6) {
       if (var1.getRenderType() == BlockRenderType.MODEL) {
          IBakedModel var9 = this.field853.method38153(var1);
          long var10 = var1.method23451(var2);
@@ -46,11 +46,11 @@ public class BlockRendererDispatcher implements IResourceManagerReloadListener {
       }
    }
 
-   public boolean method809(BlockState var1, BlockPos var2, IBlockDisplayReader var3, MatrixStack var4, Class5422 var5, boolean var6, Random var7) {
+   public boolean method809(BlockState var1, BlockPos var2, IBlockDisplayReader var3, MatrixStack var4, IVertexBuilder var5, boolean var6, Random var7) {
       return this.method810(var1, var2, var3, var4, var5, var6, var7, Class7181.field30863);
    }
 
-   public boolean method810(BlockState var1, BlockPos var2, IBlockDisplayReader var3, MatrixStack var4, Class5422 var5, boolean var6, Random var7, Class7180 var8) {
+   public boolean method810(BlockState var1, BlockPos var2, IBlockDisplayReader var3, MatrixStack var4, IVertexBuilder var5, boolean var6, Random var7, Class7180 var8) {
       try {
          BlockRenderType var11 = var1.getRenderType();
          return var11 != BlockRenderType.MODEL
@@ -64,7 +64,7 @@ public class BlockRendererDispatcher implements IResourceManagerReloadListener {
       }
    }
 
-   public boolean method811(BlockPos var1, IBlockDisplayReader var2, Class5422 var3, FluidState var4) {
+   public boolean method811(BlockPos var1, IBlockDisplayReader var2, IVertexBuilder var3, FluidState var4) {
       try {
          return this.field855.method14925(var2, var1, var3, var4);
       } catch (Throwable var10) {

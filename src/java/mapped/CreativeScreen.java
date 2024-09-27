@@ -642,7 +642,7 @@ public class CreativeScreen extends Class860<Class5820> {
 
       this.method2653(var1, var7);
       if (var7 == ItemGroup.field31677) {
-         InventoryScreen.method2635(
+         InventoryScreen.drawEntityOnScreen(
             this.field4734 + 88,
             this.field4735 + 45,
             20,

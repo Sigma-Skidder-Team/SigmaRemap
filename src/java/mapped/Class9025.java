@@ -12,5 +12,5 @@ public class Class9025 {
    public static final RenderType field41295 = RenderType.method14334();
    public static final RenderType field41296 = RenderType.method14336();
    public static final RenderType field41297 = RenderType.method14341();
-   public static final RenderType field41298 = RenderType.method14345();
+   public static final RenderType field41298 = RenderType.getLines();
 }

@@ -13,12 +13,12 @@ public class Class4115 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2843) {
          Class2843 var5 = (Class2843)var1;
          if (!var2.equals("head")) {
             if (!var2.equals("foot")) {
-               Class7219[] var6 = var5.field17642;
+               ModelRenderer[] var6 = var5.field17642;
                if (var6 != null) {
                   if (var2.equals("leg1")) {
                      return var6[0];

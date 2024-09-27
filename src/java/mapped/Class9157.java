@@ -27,7 +27,7 @@ public class Class9157 {
    public boolean method34187(Entity var1) {
       if (this.field42037 != null && var1.isBurning() != this.field42037) {
          return false;
-      } else if (this.field42038 != null && var1.method3336() != this.field42038) {
+      } else if (this.field42038 != null && var1.isCrouching() != this.field42038) {
          return false;
       } else if (this.field42039 != null && var1.isSprinting() != this.field42039) {
          return false;

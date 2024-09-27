@@ -9,15 +9,15 @@ import net.minecraft.world.World;
 
 import java.util.Random;
 
-public class Class5721 extends Class5715<Class907> {
+public class Class5721 extends EntityRenderer<Class907> {
    private static String[] field25119;
 
    public Class5721(EntityRendererManager var1) {
       super(var1);
-      this.field25098 = 0.5F;
+      this.shadowSize = 0.5F;
    }
 
-   public void method17853(Class907 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
+   public void render(Class907 var1, float var2, float var3, MatrixStack var4, Class7733 var5, int var6) {
       BlockState var9 = var1.method3556();
       if (var9.getRenderType() == BlockRenderType.MODEL) {
          World var10 = var1.method3554();
@@ -40,7 +40,7 @@ public class Class5721 extends Class5715<Class907> {
                   Class213.field798
                );
             var4.pop();
-            super.method17853(var1, var2, var3, var4, var5, var6);
+            super.render(var1, var2, var3, var4, var5, var6);
          }
       }
    }

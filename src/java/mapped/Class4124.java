@@ -22,7 +22,7 @@ public class Class4124 extends Class4117 {
       EntityRendererManager var5 = Minecraft.getInstance().getRenderManager();
       Class5663 var6 = new Class5663(var5);
       var6.field25086 = (Class2794<ZombieEntity>)var1;
-      var6.field25098 = var2;
+      var6.shadowSize = var2;
       return (Class9492)var6;
    }
 }

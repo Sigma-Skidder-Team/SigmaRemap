@@ -4,21 +4,21 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.optifine.Config;
 
 public class Class2843 extends Class2828 {
-   public Class7219 field17640;
-   public Class7219 field17641;
-   public Class7219[] field17642 = new Class7219[4];
+   public ModelRenderer field17640;
+   public ModelRenderer field17641;
+   public ModelRenderer[] field17642 = new ModelRenderer[4];
 
    public Class2843() {
       super(RenderType::getEntityCutoutNoCull);
       TileEntityRendererDispatcher var3 = TileEntityRendererDispatcher.instance;
       Class5950 var4 = new Class5950(var3);
-      this.field17640 = (Class7219) Reflector.field43155.method20235(var4);
-      this.field17641 = (Class7219) Reflector.field43156.method20235(var4);
-      this.field17642 = (Class7219[]) Reflector.field43157.method20235(var4);
+      this.field17640 = (ModelRenderer) Reflector.field43155.method20235(var4);
+      this.field17641 = (ModelRenderer) Reflector.field43156.method20235(var4);
+      this.field17642 = (ModelRenderer[]) Reflector.field43157.method20235(var4);
    }
 
    @Override
-   public void method11016(MatrixStack var1, Class5422 var2, int var3, int var4, float var5, float var6, float var7, float var8) {
+   public void method11016(MatrixStack var1, IVertexBuilder var2, int var3, int var4, float var5, float var6, float var7, float var8) {
    }
 
    public Class5942 method11173(Class5942 var1) {

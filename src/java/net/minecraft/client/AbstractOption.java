@@ -324,7 +324,7 @@ public abstract class AbstractOption {
          Minecraft.getInstance().getMainWindow().setVsync(var0.vsync);
       }
    });
-   public static final Class5806 field25359 = new Class5806("options.entityShadows", var0 -> var0.field44616, (var0, var1) -> var0.field44616 = var1);
+   public static final Class5806 field25359 = new Class5806("options.entityShadows", var0 -> var0.entityShadows, (var0, var1) -> var0.entityShadows = var1);
    public static final Class5806 field25360 = new Class5806("options.forceUnicodeFont", var0 -> var0.forceUnicodeFont, (var0, var1) -> {
       var0.forceUnicodeFont = var1;
       Minecraft var4 = Minecraft.getInstance();

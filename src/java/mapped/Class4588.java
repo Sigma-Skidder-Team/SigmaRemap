@@ -14,7 +14,7 @@ public class Class4588 extends Class4587 {
    }
 
    @Override
-   public final void method14510(Class5422 var1, ActiveRenderInfo var2, float var3) {
+   public final void method14510(IVertexBuilder var1, ActiveRenderInfo var2, float var3) {
    }
 
    @Override

@@ -17,7 +17,7 @@ public class Class3731<E extends MobEntity & Class1023, T extends LivingEntity> 
 
    public boolean method12508(ServerWorld var1, E var2) {
       LivingEntity var5 = method12658(var2);
-      return var2.method3092(Items.field38148) && Class6983.method21583(var2, var5) && Class6983.method21580(var2, var5, 0);
+      return var2.method3092(Items.CROSSBOW) && Class6983.method21583(var2, var5) && Class6983.method21580(var2, var5, 0);
    }
 
    public boolean method12499(ServerWorld var1, E var2, long var3) {
@@ -35,9 +35,9 @@ public class Class3731<E extends MobEntity & Class1023, T extends LivingEntity> 
          var2.resetActiveHand();
       }
 
-      if (var2.method3092(Items.field38148)) {
+      if (var2.method3092(Items.CROSSBOW)) {
          ((Class1023)var2).method4535(false);
-         Class3261.method11756(var2.getActiveItemStack(), false);
+         CrossbowItem.method11756(var2.getActiveItemStack(), false);
       }
    }
 
@@ -47,8 +47,8 @@ public class Class3731<E extends MobEntity & Class1023, T extends LivingEntity> 
             if (this.field19841 != Class2276.field14828) {
                if (this.field19841 == Class2276.field14829) {
                   ((Class1022)var1).method4530(var2, 1.0F);
-                  ItemStack var5 = var1.getHeldItem(Class9456.method36389(var1, Items.field38148));
-                  Class3261.method11756(var5, false);
+                  ItemStack var5 = var1.getHeldItem(Class9456.method36389(var1, Items.CROSSBOW));
+                  CrossbowItem.method11756(var5, false);
                   this.field19841 = Class2276.field14826;
                }
             } else {
@@ -64,7 +64,7 @@ public class Class3731<E extends MobEntity & Class1023, T extends LivingEntity> 
 
             int var7 = var1.getItemInUseMaxCount();
             ItemStack var6 = var1.getActiveItemStack();
-            if (var7 >= Class3261.method11767(var6)) {
+            if (var7 >= CrossbowItem.method11767(var6)) {
                var1.stopActiveHand();
                this.field19841 = Class2276.field14828;
                this.field19840 = 20 + var1.getRNG().nextInt(20);
@@ -72,7 +72,7 @@ public class Class3731<E extends MobEntity & Class1023, T extends LivingEntity> 
             }
          }
       } else {
-         var1.setActiveHand(Class9456.method36389(var1, Items.field38148));
+         var1.setActiveHand(Class9456.method36389(var1, Items.CROSSBOW));
          this.field19841 = Class2276.field14827;
          ((Class1023)var1).method4535(true);
       }

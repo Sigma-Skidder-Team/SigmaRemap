@@ -10,6 +10,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.client.renderer.entity.PlayerRenderer;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
@@ -34,22 +35,22 @@ import java.util.Map;
 
 public class EntityRendererManager {
    private static final RenderType field40010 = RenderType.method14323(new ResourceLocation("textures/misc/shadow.png"));
-   private final Map<EntityType<?>, Class5715<?>> field40011 = Maps.newHashMap();
-   private final Map<String, Class5713> field40012 = Maps.newHashMap();
-   private final Class5713 field40013;
+   private final Map<EntityType<?>, EntityRenderer<?>> field40011 = Maps.newHashMap();
+   private final Map<String, PlayerRenderer> field40012 = Maps.newHashMap();
+   private final PlayerRenderer field40013;
    private final FontRenderer field40014;
    public final TextureManager field40015;
-   private World field40016;
-   public ActiveRenderInfo field40017;
+   private World world;
+   public ActiveRenderInfo info;
    private Quaternion field40018;
    public Entity field40019;
-   public final GameSettings field40020;
-   private boolean field40021 = true;
-   private boolean field40022;
-   public Class5715 field40023 = null;
+   public final GameSettings options;
+   private boolean renderShadow = true;
+   private boolean debugBoundingBox;
+   public EntityRenderer renderRender = null;
 
    public <E extends Entity> int method32208(E var1, float var2) {
-      int var5 = this.<Entity>method32212(var1).method17894(var1, var2);
+      int var5 = this.<Entity>getRenderer(var1).method17894(var1, var2);
       if (Config.method26970()) {
          var5 = Class9446.method36315(var1, var5);
       }
@@ -57,7 +58,7 @@ public class EntityRendererManager {
       return var5;
    }
 
-   private <T extends Entity> void method32209(EntityType<T> var1, Class5715<? super T> var2) {
+   private <T extends Entity> void method32209(EntityType<T> var1, EntityRenderer<? super T> var2) {
       this.field40011.put(var1, var2);
    }
 
@@ -174,11 +175,11 @@ public class EntityRendererManager {
    public EntityRendererManager(TextureManager var1, ItemRenderer var2, IReloadableResourceManager var3, FontRenderer var4, GameSettings var5) {
       this.field40015 = var1;
       this.field40014 = var4;
-      this.field40020 = var5;
+      this.options = var5;
       this.method32210(var2, var3);
-      this.field40013 = new Class5713(this);
+      this.field40013 = new PlayerRenderer(this);
       this.field40012.put("default", this.field40013);
-      this.field40012.put("slim", new Class5713(this, true));
+      this.field40012.put("slim", new PlayerRenderer(this, true));
       Class222.method830(this.field40012);
    }
 
@@ -190,19 +191,19 @@ public class EntityRendererManager {
       }
    }
 
-   public <T extends Entity> Class5715<? super T> method32212(T var1) {
+   public <T extends Entity> EntityRenderer<? super T> getRenderer(T var1) {
       if (!(var1 instanceof AbstractClientPlayerEntity)) {
-         return (Class5715<? super T>)this.field40011.get(var1.getType());
+         return (EntityRenderer<? super T>)this.field40011.get(var1.getType());
       } else {
          String var4 = ((AbstractClientPlayerEntity)var1).method5377();
-         Class5713 var5 = this.field40012.get(var4);
-         return (Class5715<? super T>) (var5 == null ? this.field40013 : var5);
+         PlayerRenderer var5 = this.field40012.get(var4);
+         return (EntityRenderer<? super T>) (var5 == null ? this.field40013 : var5);
       }
    }
 
    public void method32213(World var1, ActiveRenderInfo var2, Entity var3) {
-      this.field40016 = var1;
-      this.field40017 = var2;
+      this.world = var1;
+      this.info = var2;
       this.field40018 = var2.getRotation();
       this.field40019 = var3;
    }
@@ -212,70 +213,70 @@ public class EntityRendererManager {
    }
 
    public void method32215(boolean var1) {
-      this.field40021 = var1;
+      this.renderShadow = var1;
    }
 
    public void method32216(boolean var1) {
-      this.field40022 = var1;
+      this.debugBoundingBox = var1;
    }
 
    public boolean method32217() {
-      return this.field40022;
+      return this.debugBoundingBox;
    }
 
    public <E extends Entity> boolean method32218(E var1, Class7647 var2, double var3, double var5, double var7) {
-      Class5715 var11 = this.<Entity>method32212(var1);
+      EntityRenderer var11 = this.<Entity>getRenderer(var1);
       return var11.method17854(var1, var2, var3, var5, var7);
    }
 
-   public <E extends Entity> void method32219(
+   public <E extends Entity> void renderEntityStatic(
            E var1, double var2, double var4, double var6, float var8, float var9, MatrixStack var10, Class7733 var11, int var12
    ) {
       if (!FPSBooster.field23568 || !(var1 instanceof ArmorStandEntity) && !(var1 instanceof Class1099) && !(var1 instanceof ItemFrameEntity)) {
-         if (this.field40017 != null) {
-            Class5715 var15 = this.<Entity>method32212(var1);
+         if (this.info != null) {
+            EntityRenderer <? super E > var15 = this.getRenderer(var1);
 
             try {
-               Vector3d var16 = var15.method17867(var1, var9);
+               Vector3d var16 = var15.getRenderOffset(var1, var9);
                double var17 = var2 + var16.getX();
                double var19 = var4 + var16.getY();
                double var21 = var6 + var16.getZ();
                var10.push();
                var10.translate(var17, var19, var21);
-               if (CustomEntityModels.method38699()) {
-                  this.field40023 = var15;
+               if (CustomEntityModels.isActive()) {
+                  this.renderRender = var15;
                }
 
-               if (Class8564.method30588()) {
-                  Class8564.method30590();
+               if (EmissiveTextures.isActive()) {
+                  EmissiveTextures.beginRender();
                }
 
-               var15.method17853(var1, var8, var9, var10, var11, var12);
-               if (Class8564.method30588()) {
-                  if (Class8564.method30594()) {
-                     Class8564.method30595();
-                     var15.method17853(var1, var8, var9, var10, var11, Class1699.field9258);
-                     Class8564.method30597();
+               var15.render(var1, var8, var9, var10, var11, var12);
+               if (EmissiveTextures.isActive()) {
+                  if (EmissiveTextures.hasEmissive()) {
+                     EmissiveTextures.beginRenderEmissive();
+                     var15.render(var1, var8, var9, var10, var11, Class1699.field9258);
+                     EmissiveTextures.endRenderEmissive();
                   }
 
-                  Class8564.method30598();
+                  EmissiveTextures.endRender();
                }
 
                if (var1.canRenderOnFire()) {
-                  this.method32222(var10, var11, var1);
+                  this.renderFire(var10, var11, var1);
                }
 
                var10.translate(-var16.getX(), -var16.getY(), -var16.getZ());
-               if (this.field40020.field44616 && this.field40021 && var15.field25098 > 0.0F && !var1.isInvisible()) {
-                  double var23 = this.method32229(var1.getPosX(), var1.getPosY(), var1.getPosZ());
-                  float var25 = (float)((1.0 - var23 / 256.0) * (double)var15.field25099);
+               if (this.options.entityShadows && this.renderShadow && var15.shadowSize > 0.0F && !var1.isInvisible()) {
+                  double var23 = this.getDistanceToCamera(var1.getPosX(), var1.getPosY(), var1.getPosZ());
+                  float var25 = (float)((1.0 - var23 / 256.0) * (double)var15.shadowOpaque);
                   if (var25 > 0.0F) {
-                     method32224(var10, var11, var1, var25, var9, this.field40016, var15.field25098);
+                     renderShadow(var10, var11, var1, var25, var9, this.world, var15.shadowSize);
                   }
                }
 
-               if (this.field40022 && !var1.isInvisible() && ! Minecraft.getInstance().isReducedDebug()) {
-                  this.method32220(var10, var11.method25597(RenderType.method14345()), var1, var9);
+               if (this.debugBoundingBox && !var1.isInvisible() && ! Minecraft.getInstance().isReducedDebug()) {
+                  this.renderDebugBoundingBox(var10, var11.method25597(RenderType.getLines()), var1, var9);
                }
 
                var10.pop();
@@ -285,7 +286,7 @@ public class EntityRendererManager {
                var1.fillCrashReport(var27);
                CrashReportCategory var28 = var26.makeCategory("Renderer details");
                var28.addDetail("Assigned renderer", var15);
-               var28.addDetail("Location", CrashReportCategory.method32803(var2, var4, var6));
+               var28.addDetail("Location", CrashReportCategory.getCoordinateInfo(var2, var4, var6));
                var28.addDetail("Rotation", var8);
                var28.addDetail("Delta", var9);
                throw new ReportedException(var26);
@@ -294,7 +295,7 @@ public class EntityRendererManager {
       }
    }
 
-   private void method32220(MatrixStack var1, Class5422 var2, Entity var3, float var4) {
+   private void renderDebugBoundingBox(MatrixStack var1, IVertexBuilder var2, Entity var3, float var4) {
       if (! Shaders.isShadowPass) {
          float var7 = var3.getWidth() / 2.0F;
          this.method32221(var1, var2, var3, 1.0F, 1.0F, 1.0F);
@@ -341,12 +342,12 @@ public class EntityRendererManager {
       }
    }
 
-   private void method32221(MatrixStack var1, Class5422 var2, Entity var3, float var4, float var5, float var6) {
+   private void method32221(MatrixStack var1, IVertexBuilder var2, Entity var3, float var4, float var5, float var6) {
       AxisAlignedBB var9 = var3.getBoundingBox().offset(-var3.getPosX(), -var3.getPosY(), -var3.getPosZ());
       WorldRenderer.method897(var1, var2, var9, var4, var5, var6, 1.0F);
    }
 
-   private void method32222(MatrixStack var1, Class7733 var2, Entity var3) {
+   private void renderFire(MatrixStack var1, Class7733 var2, Entity var3) {
       TextureAtlasSprite var6 = ModelBakery.field40508.getSprite();
       TextureAtlasSprite var7 = ModelBakery.LOCATION_FIRE_1.getSprite();
       var1.push();
@@ -356,11 +357,11 @@ public class EntityRendererManager {
       float var10 = 0.0F;
       float var11 = var3.getHeight() / var8;
       float var12 = 0.0F;
-      var1.rotate(Vector3f.YP.rotationDegrees(-this.field40017.getYaw()));
+      var1.rotate(Vector3f.YP.rotationDegrees(-this.info.getYaw()));
       var1.translate(0.0, 0.0, (double)(-0.3F + (float)((int)var11) * 0.02F));
       float var13 = 0.0F;
       int var14 = 0;
-      Class5422 var15 = var2.method25597(Class8624.method30907());
+      IVertexBuilder var15 = var2.method25597(Class8624.method30907());
       boolean var16 = Config.method26894();
       if (var16) {
          var15.method17044(Class9025.field41288);
@@ -397,7 +398,7 @@ public class EntityRendererManager {
       var1.pop();
    }
 
-   private static void method32223(Class8892 var0, Class5422 var1, float var2, float var3, float var4, float var5, float var6) {
+   private static void method32223(Class8892 var0, IVertexBuilder var1, float var2, float var3, float var4, float var5, float var6) {
       var1.pos(var0.getMatrix(), var2, var3, var4)
          .color(255, 255, 255, 255)
          .tex(var5, var6)
@@ -407,7 +408,7 @@ public class EntityRendererManager {
          .endVertex();
    }
 
-   private static void method32224(MatrixStack var0, Class7733 var1, Entity var2, float var3, float var4, IWorldReader var5, float var6) {
+   private static void renderShadow(MatrixStack var0, Class7733 var1, Entity var2, float var3, float var4, IWorldReader var5, float var6) {
       if (!Config.isShaders() || ! Shaders.field40794) {
          float var9 = var6;
          if (var2 instanceof MobEntity) {
@@ -427,7 +428,7 @@ public class EntityRendererManager {
          int var20 = MathHelper.floor(var14 - (double)var9);
          int var21 = MathHelper.floor(var14 + (double)var9);
          Class8892 var22 = var0.getLast();
-         Class5422 var23 = var1.method25597(field40010);
+         IVertexBuilder var23 = var1.method25597(field40010);
 
          for (BlockPos var26 : BlockPos.method8359(new BlockPos(var16, var18, var20), new BlockPos(var17, var19, var21))) {
             method32225(var22, var23, var5, var26, var10, var12, var14, var9, var3);
@@ -436,7 +437,7 @@ public class EntityRendererManager {
    }
 
    private static void method32225(
-           Class8892 var0, Class5422 var1, IWorldReader var2, BlockPos var3, double var4, double var6, double var8, float var10, float var11
+           Class8892 var0, IVertexBuilder var1, IWorldReader var2, BlockPos var3, double var4, double var6, double var8, float var10, float var11
    ) {
       BlockPos var14 = var3.down();
       BlockState var15 = var2.getBlockState(var14);
@@ -473,7 +474,7 @@ public class EntityRendererManager {
       }
    }
 
-   private static void method32226(Class8892 var0, Class5422 var1, float var2, float var3, float var4, float var5, float var6, float var7) {
+   private static void method32226(Class8892 var0, IVertexBuilder var1, float var2, float var3, float var4, float var5, float var6, float var7) {
       var1.pos(var0.getMatrix(), var3, var4, var5)
          .color(1.0F, 1.0F, 1.0F, var2)
          .tex(var6, var7)
@@ -484,18 +485,18 @@ public class EntityRendererManager {
    }
 
    public void method32227(World var1) {
-      this.field40016 = var1;
+      this.world = var1;
       if (var1 == null) {
-         this.field40017 = null;
+         this.info = null;
       }
    }
 
    public double method32228(Entity var1) {
-      return this.field40017.getPos().method11342(var1.getPositionVec());
+      return this.info.getPos().method11342(var1.getPositionVec());
    }
 
-   public double method32229(double var1, double var3, double var5) {
-      return this.field40017.getPos().method11343(var1, var3, var5);
+   public double getDistanceToCamera(double var1, double var3, double var5) {
+      return this.info.getPos().method11343(var1, var3, var5);
    }
 
    public Quaternion method32230() {
@@ -506,11 +507,11 @@ public class EntityRendererManager {
       return this.field40014;
    }
 
-   public Map<EntityType<?>, Class5715<?>> method32232() {
+   public Map<EntityType<?>, EntityRenderer<?>> method32232() {
       return this.field40011;
    }
 
-   public Map<String, Class5713> method32233() {
-      return Collections.<String, Class5713>unmodifiableMap(this.field40012);
+   public Map<String, PlayerRenderer> method32233() {
+      return Collections.<String, PlayerRenderer>unmodifiableMap(this.field40012);
    }
 }

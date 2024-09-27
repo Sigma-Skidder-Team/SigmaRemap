@@ -43,8 +43,8 @@ public class Class236 extends Class219<Class1064, Class2854<Class1064>> {
       }
 
       this.method825().method11027(this.field886);
-      this.field886.method10998(var4, var5, var6, var8, var9, var10);
-      Class5422 var15 = var2.method25597(RenderType.getEntityCutoutNoCull(var14));
+      this.field886.setRotationAngles(var4, var5, var6, var8, var9, var10);
+      IVertexBuilder var15 = var2.method25597(RenderType.getEntityCutoutNoCull(var14));
       this.field886.method11016(var1, var15, var3, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
    }
 }

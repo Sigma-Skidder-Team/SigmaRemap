@@ -123,7 +123,7 @@ public class Class9250 {
 
       for (int var7 = 0; var7 < var11.length; var7++) {
          String var8 = var11[var7];
-         Class7219 var9 = var1.method12823(var10, var8);
+         ModelRenderer var9 = var1.method12823(var10, var8);
          if (var9 == null) {
             Config.method26811("Model renderer not found, model: " + var1.method12827() + ", name: " + var8);
          }

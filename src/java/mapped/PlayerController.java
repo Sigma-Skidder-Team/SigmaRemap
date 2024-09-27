@@ -238,7 +238,7 @@ public class PlayerController {
             this.connection.sendPacket(new CPlayerTryUseItemOnBlockPacket(var3, var4));
             return ActionResultType.SUCCESS;
          } else {
-            boolean var9 = !var1.getHeldItemMainhand().isEmpty() || !var1.method3091().isEmpty();
+            boolean var9 = !var1.getHeldItemMainhand().isEmpty() || !var1.getHeldItemOffhand().isEmpty();
             boolean var10 = var1.method2851() && var9;
             if (!var10) {
                ActionResultType var11 = var2.getBlockState(var7).method23435(var2, var1, var3, var4);

@@ -13,17 +13,17 @@ public class Class4132 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2887) {
          Class2887 var5 = (Class2887)var1;
          if (!var2.equals("base")) {
             if (!var2.equals("lid")) {
-               return !var2.equals("head") ? null : (Class7219) Reflector.field43096.method36565(var5, 2);
+               return !var2.equals("head") ? null : (ModelRenderer) Reflector.field43096.method36565(var5, 2);
             } else {
-               return (Class7219) Reflector.field43096.method36565(var5, 1);
+               return (ModelRenderer) Reflector.field43096.method36565(var5, 1);
             }
          } else {
-            return (Class7219) Reflector.field43096.method36565(var5, 0);
+            return (ModelRenderer) Reflector.field43096.method36565(var5, 0);
          }
       } else {
          return null;

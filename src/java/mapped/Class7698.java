@@ -41,7 +41,7 @@ public class Class7698 {
       this.field32967--;
    }
 
-   public static void method25376(BlockState var0, Class5422 var1) {
+   public static void method25376(BlockState var0, IVertexBuilder var1) {
       if (var1 instanceof BufferBuilder) {
          BufferBuilder var4 = (BufferBuilder)var1;
          int var5 = Class9172.method34259(var0);
@@ -53,7 +53,7 @@ public class Class7698 {
       }
    }
 
-   public static void method25377(Class5422 var0) {
+   public static void method25377(IVertexBuilder var0) {
       if (var0 instanceof BufferBuilder) {
          BufferBuilder var3 = (BufferBuilder)var0;
          var3.field24132.method25375();

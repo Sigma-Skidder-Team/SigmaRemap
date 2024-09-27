@@ -82,7 +82,7 @@ public enum EnchantmentType {
    field14682 {
       @Override
       public boolean method8990(Item var1) {
-         return var1 instanceof Class3261;
+         return var1 instanceof CrossbowItem;
       }
    },
    field14683 {

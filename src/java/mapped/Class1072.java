@@ -65,7 +65,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
          return false;
       } else {
          PlayerEntity var4 = (PlayerEntity)var3;
-         return var4.getHeldItemMainhand().getItem() == Items.field38064 || var4.method3091().getItem() == Items.field38064;
+         return var4.getHeldItemMainhand().getItem() == Items.field38064 || var4.getHeldItemOffhand().getItem() == Items.field38064;
       }
    }
 

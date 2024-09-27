@@ -8,7 +8,7 @@ public class Class5703 extends Class5702<Class1102> {
 
    public Class5703(EntityRendererManager var1) {
       super(var1);
-      this.field25098 *= 0.7F;
+      this.shadowSize *= 0.7F;
    }
 
    public void method17857(Class1102 var1, MatrixStack var2, float var3) {

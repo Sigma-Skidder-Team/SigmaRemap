@@ -68,14 +68,14 @@ public class FillESP extends Module {
                 double var13 = var10.getY();
                 double var15 = var10.getZ();
                 MatrixStack var17 = new MatrixStack();
-                boolean var18 = mc.gameSettings.field44616;
+                boolean var18 = mc.gameSettings.entityShadows;
                 RenderSystem.disableLighting();
                 RenderSystem.color4f(0.0F, 0.0F, 1.0F, 0.5F);
                 RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
                 RenderSystem.enableBlend();
-                mc.gameSettings.field44616 = false;
+                mc.gameSettings.entityShadows = false;
                 this.method16136(var9, var11, var13, var15, mc.timer.renderPartialTicks, var17, this.field23482);
-                mc.gameSettings.field44616 = var18;
+                mc.gameSettings.entityShadows = var18;
                 GL11.glPopMatrix();
             }
         }
@@ -84,7 +84,7 @@ public class FillESP extends Module {
         this.field23482.finish(RenderType.getEntityCutout(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
         this.field23482.finish(RenderType.getEntityCutoutNoCull(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
         this.field23482.finish(RenderType.getEntitySmoothCutout(AtlasTexture.LOCATION_BLOCKS_TEXTURE));
-        this.field23482.finish(RenderType.method14345());
+        this.field23482.finish(RenderType.getLines());
         this.field23482.method25602();
         GL11.glDepthFunc(515);
         GL11.glPolygonMode(1032, 6914);
@@ -104,7 +104,7 @@ public class FillESP extends Module {
         double var15 = MathHelper.lerp(var8, var1.lastTickPosY, var1.getPosY());
         double var17 = MathHelper.lerp(var8, var1.lastTickPosZ, var1.getPosZ());
         float var19 = MathHelper.lerp(var8, var1.prevRotationYaw, var1.rotationYaw);
-        mc.worldRenderer.field941.method32219(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 255);
+        mc.worldRenderer.field941.renderEntityStatic(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 255);
     }
 
     @EventTarget

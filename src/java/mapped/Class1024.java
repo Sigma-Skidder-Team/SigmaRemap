@@ -68,7 +68,7 @@ public class Class1024 extends Class1025 implements Class1023 {
 
    @Override
    public boolean method4234(Class3262 var1) {
-      return var1 == Items.field38148;
+      return var1 == Items.CROSSBOW;
    }
 
    public boolean method4542() {
@@ -103,7 +103,7 @@ public class Class1024 extends Class1025 implements Class1023 {
    @Override
    public Class2117 method4543() {
       if (!this.method4542()) {
-         if (!this.method3092(Items.field38148)) {
+         if (!this.method3092(Items.CROSSBOW)) {
             return !this.method4307() ? Class2117.field13801 : Class2117.field13795;
          } else {
             return Class2117.field13798;
@@ -149,7 +149,7 @@ public class Class1024 extends Class1025 implements Class1023 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field38148));
+      this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.CROSSBOW));
    }
 
    @Override
@@ -157,7 +157,7 @@ public class Class1024 extends Class1025 implements Class1023 {
       super.method4274(var1);
       if (this.rand.nextInt(300) == 0) {
          ItemStack var4 = this.getHeldItemMainhand();
-         if (var4.getItem() == Items.field38148) {
+         if (var4.getItem() == Items.CROSSBOW) {
             Map var5 = EnchantmentHelper.method26312(var4);
             var5.putIfAbsent(Enchantments.PIERCING, 1);
             EnchantmentHelper.method26314(var5, var4);
@@ -245,7 +245,7 @@ public class Class1024 extends Class1025 implements Class1023 {
       Class7699 var5 = this.method4551();
       boolean var6 = this.rand.nextFloat() <= var5.method25436();
       if (var6) {
-         ItemStack var7 = new ItemStack(Items.field38148);
+         ItemStack var7 = new ItemStack(Items.CROSSBOW);
          HashMap var8 = Maps.newHashMap();
          if (var1 <= var5.method25435(Difficulty.field14353)) {
             if (var1 > var5.method25435(Difficulty.field14352)) {

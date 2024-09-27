@@ -295,7 +295,7 @@ public class KillAura extends Module {
                     }
 
                     if (var8) {
-                        Class338 attack = new Class338(this, var4);
+                        KillAuraAttackLambda attack = new KillAuraAttackLambda(this, var4);
                         boolean isPre = this.getStringSettingValueByName("Attack Mode").equals("Pre");
                         if (!isPre) {
                             var1.method13922(attack);

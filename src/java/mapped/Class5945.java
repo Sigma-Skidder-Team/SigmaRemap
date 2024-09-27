@@ -55,7 +55,7 @@ public class Class5945 extends Class5942<Class955> {
 
    private void method18467(BlockPos var1, BlockState var2, MatrixStack var3, Class7733 var4, World var5, boolean var6, int var7) {
       RenderType var10 = Class8928.method32631(var2);
-      Class5422 var11 = var4.method25597(var10);
+      IVertexBuilder var11 = var4.method25597(var10);
       this.field25935.method812().method24679(var5, this.field25935.method813(var2), var2, var1, var3, var11, var6, new Random(), var2.method23451(var1), var7);
    }
 }

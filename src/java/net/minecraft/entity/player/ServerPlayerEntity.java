@@ -1184,7 +1184,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
       this.field4872 = var1.getChatVisibility();
       this.field4873 = var1.isColorsEnabled();
       this.getDataManager().method35446(field4897, (byte)var1.getModelPartFlags());
-      this.getDataManager().method35446(field4898, (byte)(var1.getMainHand() != HandSide.field14417 ? 1 : 0));
+      this.getDataManager().method35446(field4898, (byte)(var1.getMainHand() != HandSide.LEFT ? 1 : 0));
    }
 
    public ChatVisibility getChatVisibility() {

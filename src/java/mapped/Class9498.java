@@ -168,7 +168,7 @@ public class Class9498 {
          Class2847 var7 = new Class2847(RenderType::getEntityCutoutNoCull);
          var7.field17604 = var1.width;
          var7.field17605 = var1.height;
-         Class7219 var8 = method36692(var0, var7, (int[])null, (String)null);
+         ModelRenderer var8 = method36692(var0, var7, (int[])null, (String)null);
          return new Class7954(var6, var8);
       } else {
          Config.method26811("Unknown model type: " + var4);
@@ -176,8 +176,8 @@ public class Class9498 {
       }
    }
 
-   public static Class7219 method36692(JsonObject var0, Class2828 var1, int[] var2, String var3) {
-      Class7219 var6 = new Class7219(var1);
+   public static ModelRenderer method36692(JsonObject var0, Class2828 var1, int[] var2, String var3) {
+      ModelRenderer var6 = new ModelRenderer(var1);
       String var7 = Class9664.method37717(var0, "id");
       var6.method22690(var7);
       float var8 = Class9664.method37715(var0, "scale", 1.0F);
@@ -195,7 +195,7 @@ public class Class9498 {
       }
 
       if (var10 != null) {
-         var6.method22684(var10[0], var10[1]);
+         var6.setTextureSize(var10[0], var10[1]);
       }
 
       String var11 = Class9664.method37718(var0, "invertAxis", "").toLowerCase();
@@ -233,9 +233,9 @@ public class Class9498 {
          var16[2] = -var16[2];
       }
 
-      var6.method22679(var15[0], var15[1], var15[2]);
-      var6.field31035 = var16[0];
-      var6.field31036 = var16[1];
+      var6.setRotationPoint(var15[0], var15[1], var15[2]);
+      var6.rotateAngleX = var16[0];
+      var6.rotateAngleY = var16[1];
       var6.field31037 = var16[2];
       String var28 = Class9664.method37718(var0, "mirrorTexture", "").toLowerCase();
       boolean var18 = var28.contains("u");
@@ -278,7 +278,7 @@ public class Class9498 {
             float var26 = Class9664.method37715(var22, "sizeAdd", 0.0F);
             if (var24 == null) {
                var6.method22671(var23[0], var23[1]);
-               var6.method22675(var25[0], var25[1], var25[2], (float)((int)var25[3]), (float)((int)var25[4]), (float)((int)var25[5]), var26);
+               var6.addBox(var25[0], var25[1], var25[2], (float)((int)var25[3]), (float)((int)var25[4]), (float)((int)var25[5]), var26);
             } else {
                var6.method22691(var24, var25[0], var25[1], var25[2], var25[3], var25[4], var25[5], var26);
             }
@@ -319,7 +319,7 @@ public class Class9498 {
 
       JsonObject var31 = (JsonObject)var0.get("submodel");
       if (var31 != null) {
-         Class7219 var33 = method36692(var31, var1, var10, var3);
+         ModelRenderer var33 = method36692(var31, var1, var10, var3);
          var6.method22670(var33);
       }
 
@@ -327,9 +327,9 @@ public class Class9498 {
       if (var34 != null) {
          for (int var36 = 0; var36 < var34.size(); var36++) {
             JsonObject var38 = (JsonObject)var34.get(var36);
-            Class7219 var40 = method36692(var38, var1, var10, var3);
+            ModelRenderer var40 = method36692(var38, var1, var10, var3);
             if (var40.method22689() != null) {
-               Class7219 var27 = var6.method22693(var40.method22689());
+               ModelRenderer var27 = var6.method22693(var40.method22689());
                if (var27 != null) {
                   Config.method26811("Duplicate model ID: " + var40.method22689());
                }

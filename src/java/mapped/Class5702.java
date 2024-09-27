@@ -7,7 +7,7 @@ public class Class5702<T extends Class1101> extends Class5651<T, Class2813<T>> {
 
    public Class5702(EntityRendererManager var1) {
       super(var1, new Class2813<T>(), 0.8F);
-      this.method17880(new Class227<T, Class2813<T>>(this));
+      this.addLayer(new Class227<T, Class2813<T>>(this));
    }
 
    public float method17865(T var1) {

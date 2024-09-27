@@ -20,8 +20,8 @@ public class Class238<T extends Entity & Class1069, M extends Class2827<T>> exte
       if (((Class1069)var4).method4943()) {
          this.method825().method11027(this.field891);
          this.field891.method10997((T)var4, var5, var6, var7);
-         this.field891.method10998((T)var4, var5, var6, var8, var9, var10);
-         Class5422 var13 = var2.method25597(RenderType.getEntityCutoutNoCull(this.field890));
+         this.field891.setRotationAngles((T)var4, var5, var6, var8, var9, var10);
+         IVertexBuilder var13 = var2.method25597(RenderType.getEntityCutoutNoCull(this.field890));
          this.field891.method11016(var1, var13, var3, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
       }
    }

@@ -31,7 +31,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
    }
 
    private boolean method10907() {
-      return this.field17125.method3092(Items.field38148);
+      return this.field17125.method3092(Items.CROSSBOW);
    }
 
    @Override
@@ -52,7 +52,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
       if (this.field17125.isHandActive()) {
          this.field17125.resetActiveHand();
          this.field17125.method4535(false);
-         Class3261.method11756(this.field17125.getActiveItemStack(), false);
+         CrossbowItem.method11756(this.field17125.getActiveItemStack(), false);
       }
    }
 
@@ -91,8 +91,8 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
                if (this.field17126 != Class2229.field14615) {
                   if (this.field17126 == Class2229.field14616 && var4) {
                      this.field17125.method4530(var3, 1.0F);
-                     ItemStack var9 = this.field17125.getHeldItem(Class9456.method36389(this.field17125, Items.field38148));
-                     Class3261.method11756(var9, false);
+                     ItemStack var9 = this.field17125.getHeldItem(Class9456.method36389(this.field17125, Items.CROSSBOW));
+                     CrossbowItem.method11756(var9, false);
                      this.field17126 = Class2229.field14613;
                   }
                } else {
@@ -108,7 +108,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
 
                int var11 = this.field17125.getItemInUseMaxCount();
                ItemStack var10 = this.field17125.getActiveItemStack();
-               if (var11 >= Class3261.method11767(var10)) {
+               if (var11 >= CrossbowItem.method11767(var10)) {
                   this.field17125.stopActiveHand();
                   this.field17126 = Class2229.field14615;
                   this.field17130 = 20 + this.field17125.getRNG().nextInt(20);
@@ -116,7 +116,7 @@ public class Class2691<T extends Class1009 & Class1022 & Class1023> extends Clas
                }
             }
          } else if (!var8) {
-            this.field17125.setActiveHand(Class9456.method36389(this.field17125, Items.field38148));
+            this.field17125.setActiveHand(Class9456.method36389(this.field17125, Items.CROSSBOW));
             this.field17126 = Class2229.field14614;
             this.field17125.method4535(true);
          }

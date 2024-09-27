@@ -13,13 +13,13 @@ public class Class4084 extends Class4057 {
    }
 
    @Override
-   public Class7219 method12823(Class2828 var1, String var2) {
+   public ModelRenderer method12823(Class2828 var1, String var2) {
       if (var1 instanceof Class2848) {
          Class2848 var5 = (Class2848)var1;
          if (!var2.equals("board")) {
-            return !var2.equals("stick") ? null : (Class7219) Reflector.field43100.method36565(var5, 1);
+            return !var2.equals("stick") ? null : (ModelRenderer) Reflector.field43100.method36565(var5, 1);
          } else {
-            return (Class7219) Reflector.field43100.method36565(var5, 0);
+            return (ModelRenderer) Reflector.field43100.method36565(var5, 0);
          }
       } else {
          return null;

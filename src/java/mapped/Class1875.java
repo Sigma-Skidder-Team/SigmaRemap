@@ -78,7 +78,7 @@ public enum Class1875 implements Class1876 {
             case 11:
                return var4.isPassenger();
             case 12:
-               return var4.method3336();
+               return var4.isCrouching();
             case 13:
                return var4.isSprinting();
             case 14:
