@@ -441,7 +441,7 @@ public class ServerWorld extends World implements ISeedReader {
    public BlockPos method6900(BlockPos var1) {
       BlockPos var4 = this.method7006(Heightmap.Type.field299, var1);
       AxisAlignedBB var5 = new AxisAlignedBB(var4, new BlockPos(var4.getX(), this.method7034(), var4.getZ())).method19664(3.0);
-      List var6 = this.<LivingEntity>method6772(LivingEntity.class, var5, var1x -> var1x != null && var1x.isAlive() && this.method7022(var1x.getPosition()));
+      List var6 = this.<LivingEntity>getEntitiesInAABBexcluding(LivingEntity.class, var5, var1x -> var1x != null && var1x.isAlive() && this.method7022(var1x.getPosition()));
       if (var6.isEmpty()) {
          if (var4.getY() == -1) {
             var4 = var4.method8339(2);

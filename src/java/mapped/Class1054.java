@@ -120,7 +120,7 @@ public class Class1054 extends Class1049 {
    public void livingTick() {
       super.livingTick();
       if (this.isAlive() && this.method4828() > 0) {
-         for (MobEntity var4 : this.world.method6772(MobEntity.class, this.getBoundingBox().method19664(0.3), field5823)) {
+         for (MobEntity var4 : this.world.getEntitiesInAABBexcluding(MobEntity.class, this.getBoundingBox().method19664(0.3), field5823)) {
             if (var4.isAlive()) {
                this.method4830(var4);
             }

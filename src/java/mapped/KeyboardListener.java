@@ -24,6 +24,8 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 public class KeyboardListener {
    private final Minecraft mc;
@@ -111,12 +113,12 @@ public class KeyboardListener {
                   .method18089(
                      this.mc.gameSettings,
                      MathHelper.clamp(
-                        (double)(this.mc.gameSettings.field44574 + (Screen.method2476() ? -1 : 1)),
+                        (double)(this.mc.gameSettings.renderDistanceChunks + (Screen.method2476() ? -1 : 1)),
                         AbstractOption.field25333.method18086(),
                         AbstractOption.field25333.getMaxValue()
                      )
                   );
-               this.method36339("debug.cycle_renderdistance.message", this.mc.gameSettings.field44574);
+               this.method36339("debug.cycle_renderdistance.message", this.mc.gameSettings.renderDistanceChunks);
                return true;
             case 71:
                boolean var5 = this.mc.debugRenderer.method27452();
@@ -134,7 +136,7 @@ public class KeyboardListener {
 
                return true;
             case 76:
-               Minecraft var6 = Class7944.method26860();
+               Minecraft var6 = Config.method26860();
                var6.worldRenderer.field1023 = 1;
                StringTextComponent var7 = new StringTextComponent(I18n.format("of.message.loadingVisibleChunks"));
                var6.ingameGUI.getChatGUI().method5931(var7, 201435902);
@@ -150,9 +152,9 @@ public class KeyboardListener {
 
                return true;
             case 79:
-               if (Class7944.method26921()) {
-                  Class848 var10 = new Class848((Screen)null, Class7944.method26928());
-                  Class7944.method26860().displayGuiScreen(var10);
+               if (Config.isShaders()) {
+                  Class848 var10 = new Class848((Screen)null, Config.method26928());
+                  Config.method26860().displayGuiScreen(var10);
                }
 
                return true;
@@ -180,7 +182,7 @@ public class KeyboardListener {
                var8.sendChatMessage(new TranslationTextComponent("debug.gamemodes.help"));
                return true;
             case 82:
-               if (Class7944.method26921()) {
+               if (Config.isShaders()) {
                   Shaders.method33033();
                   Shaders.method32953();
                }
@@ -449,7 +451,7 @@ public class KeyboardListener {
             }
          }
 
-         Reflector.field42869.method20217(key, scanCode, action, modifiers);
+         Reflector.field42869.call(key, scanCode, action, modifiers);
       }
    }
 

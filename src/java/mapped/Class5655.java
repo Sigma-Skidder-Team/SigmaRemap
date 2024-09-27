@@ -33,7 +33,7 @@ public class Class5655 extends Class5651<Class1052, Class2827<Class1052>> {
       var2.rotate(Vector3f.YP.rotationDegrees(var8));
       if (!var1.isInWater()) {
          var2.translate(0.2F, 0.1F, 0.0);
-         var2.rotate(Vector3f.field32902.rotationDegrees(90.0F));
+         var2.rotate(Vector3f.ZP.rotationDegrees(90.0F));
       }
    }
 }

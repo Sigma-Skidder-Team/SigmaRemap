@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.MathHelper;
+import net.optifine.Config;
 
 import java.util.IdentityHashMap;
 import java.util.Map;
@@ -17,7 +18,7 @@ public class Class8736 {
             if (!var1.equals("F")) {
                if (!var1.equals("4F")) {
                   if (!var1.equals("2F")) {
-                     Class7944.method26811("NaturalTextures: Unknown type: " + var1);
+                     Config.method26811("NaturalTextures: Unknown type: " + var1);
                   } else {
                      this.field39386 = 2;
                      this.field39387 = true;

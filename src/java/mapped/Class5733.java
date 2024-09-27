@@ -4,6 +4,8 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.MathHelper;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 public class Class5733 extends Class5732<Class993> {
    private static String[] field25145;
@@ -34,12 +36,12 @@ public class Class5733 extends Class5732<Class993> {
          var7 = Class213.method730(Class213.method728(1.0F), 10);
       }
 
-      if (Class7944.method26921() && var4) {
+      if (Config.isShaders() && var4) {
          Shaders.method33086(1.0F, 1.0F, 1.0F, 0.5F);
       }
 
       Minecraft.getInstance().getBlockRendererDispatcher().method814(var0, var1, var2, var3, var7);
-      if (Class7944.method26921()) {
+      if (Config.isShaders()) {
          Shaders.method33086(0.0F, 0.0F, 0.0F, 0.0F);
       }
    }

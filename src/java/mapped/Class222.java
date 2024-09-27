@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.entity.Entity;
+import net.optifine.Config;
 
 import java.util.Map;
 import java.util.Set;
@@ -21,7 +22,7 @@ public class Class222 extends Class219 {
    }
 
    public void method829(Entity var1, MatrixStack var2, Class7733 var3, int var4, int var5) {
-      if (Class7944.method26914() && var1 instanceof AbstractClientPlayerEntity) {
+      if (Config.method26914() && var1 instanceof AbstractClientPlayerEntity) {
          AbstractClientPlayerEntity var8 = (AbstractClientPlayerEntity)var1;
          Class2797 var9 = this.field867.method17881();
          Class7749.method25667(var9, var8, var2, var3, var4, var5);
@@ -42,7 +43,7 @@ public class Class222 extends Class219 {
       }
 
       if (!var4) {
-         Class7944.method26811("PlayerItemsLayer not registered");
+         Config.method26811("PlayerItemsLayer not registered");
       }
    }
 }

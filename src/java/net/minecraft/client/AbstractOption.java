@@ -7,12 +7,15 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import mapped.*;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.widget.Widget;
+import net.minecraft.client.settings.NarratorStatus;
+import net.minecraft.client.settings.ParticleStatus;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.optifine.Config;
 
 public abstract class AbstractOption {
    public static final Class5807 field25315 = new Class5807("options.biomeBlendRadius", 0.0, 7.0, 1.0F, var0 -> (double)var0.biomeBlendRadius, (var0, var1) -> {
@@ -83,7 +86,7 @@ public abstract class AbstractOption {
       }
    );
    public static final Class5807 FOV = new Class5807(
-      "options.fov", 30.0, 110.0, 1.0F, var0 -> var0.field44669, (var0, var1) -> var0.field44669 = var1, (var0, var1) -> {
+      "options.fov", 30.0, 110.0, 1.0F, var0 -> var0.fov, (var0, var1) -> var0.fov = var1, (var0, var1) -> {
          double var4 = var1.getValue(var0);
          if (var4 != 70.0) {
             return var4 != var1.getMaxValue() ? var1.method17956((int)var4) : var1.method17955(new TranslationTextComponent("options.fov.max"));
@@ -98,8 +101,8 @@ public abstract class AbstractOption {
       0.0,
       1.0,
       0.0F,
-      var0 -> Math.pow((double)var0.field44671, 2.0),
-      (var0, var1) -> var0.field44671 = MathHelper.sqrt(var1),
+      var0 -> Math.pow((double)var0.fovScaleEffect, 2.0),
+      (var0, var1) -> var0.fovScaleEffect = MathHelper.sqrt(var1),
       (var0, var1) -> {
          var1.method17950(Minecraft.getInstance().fontRenderer.method38828(field25324, 200));
          double var4 = var1.method18083(var1.getValue(var0));
@@ -108,7 +111,7 @@ public abstract class AbstractOption {
    );
    private static final ITextComponent field25326 = new TranslationTextComponent("options.screenEffectScale.tooltip");
    public static final Class5807 field25327 = new Class5807(
-      "options.screenEffectScale", 0.0, 1.0, 0.0F, var0 -> (double)var0.field44670, (var0, var1) -> var0.field44670 = var1.floatValue(), (var0, var1) -> {
+      "options.screenEffectScale", 0.0, 1.0, 0.0F, var0 -> (double)var0.screenEffectScale, (var0, var1) -> var0.screenEffectScale = var1.floatValue(), (var0, var1) -> {
          var1.method17950(Minecraft.getInstance().fontRenderer.method38828(field25326, 200));
          double var4 = var1.method18083(var1.getValue(var0));
          return var4 != 0.0 ? var1.method17953(var4) : var1.method17955(new TranslationTextComponent("options.screenEffectScale.off"));
@@ -176,8 +179,8 @@ public abstract class AbstractOption {
          var4.setRawMouseInput(var1);
       }
    });
-   public static final Class5807 field25333 = new Class5807("options.renderDistance", 2.0, 16.0, 1.0F, var0 -> (double)var0.field44574, (var0, var1) -> {
-      var0.field44574 = (int)var1.doubleValue();
+   public static final Class5807 field25333 = new Class5807("options.renderDistance", 2.0, 16.0, 1.0F, var0 -> (double)var0.renderDistanceChunks, (var0, var1) -> {
+      var0.renderDistanceChunks = (int)var1.doubleValue();
       Minecraft.getInstance().worldRenderer.setDisplayListEntitiesDirty();
    }, (var0, var1) -> {
       double var4 = var1.getValue(var0);
@@ -237,7 +240,7 @@ public abstract class AbstractOption {
          var5.method976();
       } else {
          var0.graphicFanciness = var0.graphicFanciness.method8745();
-         if (var0.graphicFanciness == GraphicsFanciness.FABULOUS && (Class7944.method26921() || !GlStateManager.isFabulous() || var5.method980())) {
+         if (var0.graphicFanciness == GraphicsFanciness.FABULOUS && (Config.isShaders() || !GlStateManager.isFabulous() || var5.method980())) {
             var0.graphicFanciness = GraphicsFanciness.field13603;
          }
 
@@ -273,21 +276,21 @@ public abstract class AbstractOption {
       "options.narrator",
       (var0, var1) -> {
          if (!NarratorChatListener.INSTANCE.method20405()) {
-            var0.field44675 = Class1911.field11267;
+            var0.narrator = NarratorStatus.field11267;
          } else {
-            var0.field44675 = Class1911.method8191(var0.field44675.method8189() + var1);
+            var0.narrator = NarratorStatus.method8191(var0.narrator.method8189() + var1);
          }
 
-         NarratorChatListener.INSTANCE.method20404(var0.field44675);
+         NarratorChatListener.INSTANCE.method20404(var0.narrator);
       },
       (var0, var1) -> !NarratorChatListener.INSTANCE.method20405()
             ? var1.method17955(new TranslationTextComponent("options.narrator.notavailable"))
-            : var1.method17955(var0.field44675.method8190())
+            : var1.method17955(var0.narrator.method8190())
    );
    public static final Class5804 field25347 = new Class5804(
       "options.particles",
-      (var0, var1) -> var0.field44674 = Class2294.method9053(var0.field44674.method9052() + var1),
-      (var0, var1) -> var1.method17955(new TranslationTextComponent(var0.field44674.method9051()))
+      (var0, var1) -> var0.particles = ParticleStatus.method9053(var0.particles.method9052() + var1),
+      (var0, var1) -> var1.method17955(new TranslationTextComponent(var0.particles.method9051()))
    );
    public static final Class5804 field25348 = new Class5804("options.renderClouds", (var0, var1) -> {
       var0.cloudOption = CloudOption.method8175(var0.cloudOption.method8173() + var1);
@@ -358,7 +361,7 @@ public abstract class AbstractOption {
          var0.fullscreen = var4.getMainWindow().isFullscreen();
       }
    });
-   public static final Class5806 field25370 = new Class5806("options.viewBobbing", var0 -> var0.field44627, (var0, var1) -> var0.field44627 = var1);
+   public static final Class5806 field25370 = new Class5806("options.viewBobbing", var0 -> var0.viewBobbing, (var0, var1) -> var0.viewBobbing = var1);
    private final ITextComponent field25371;
    private Optional<List<Class9125>> field25372 = Optional.<List<Class9125>>empty();
    private final String field25373;

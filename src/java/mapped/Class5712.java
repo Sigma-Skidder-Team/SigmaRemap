@@ -14,6 +14,8 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -140,7 +142,7 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
             this.field25094 = var3;
          }
 
-         boolean var17 = Class7944.method26921();
+         boolean var17 = Config.isShaders();
          Minecraft var18 = Minecraft.getInstance();
          boolean var19 = this.method17869((T)var1);
          boolean var20 = !var19 && !var1.isInvisibleToPlayer(var18.player);
@@ -169,7 +171,7 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
             }
          }
 
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Shaders.method33086(0.0F, 0.0F, 0.0F, 0.0F);
          }
 
@@ -196,7 +198,7 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
 
       if (!var3) {
          if (!var2) {
-            if (var1.isGlowing() && !Class7944.method26860().worldRenderer.method861()) {
+            if (var1.isGlowing() && !Config.method26860().worldRenderer.method861()) {
                return this.field25086.method11028(var7);
             } else {
                return !var4 ? null : RenderType.method14329(var7);
@@ -255,18 +257,18 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
                      )
                    {
                      var2.translate(0.0, (double)(var1.getHeight() + 0.1F), 0.0);
-                     var2.rotate(Vector3f.field32902.rotationDegrees(180.0F));
+                     var2.rotate(Vector3f.ZP.rotationDegrees(180.0F));
                   }
                }
             } else {
                Direction var11 = var1.getBedDirection();
                float var10 = var11 == null ? var4 : method17884(var11);
                var2.rotate(Vector3f.YP.rotationDegrees(var10));
-               var2.rotate(Vector3f.field32902.rotationDegrees(this.method17865((T)var1)));
+               var2.rotate(Vector3f.ZP.rotationDegrees(this.method17865((T)var1)));
                var2.rotate(Vector3f.YP.rotationDegrees(270.0F));
             }
          } else {
-            var2.rotate(Vector3f.field32898.rotationDegrees(-90.0F - var1.rotationPitch));
+            var2.rotate(Vector3f.XP.rotationDegrees(-90.0F - var1.rotationPitch));
             var2.rotate(Vector3f.YP.rotationDegrees(((float)var1.ticksExisted + var5) * -75.0F));
          }
       } else {
@@ -276,7 +278,7 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
             var12 = 1.0F;
          }
 
-         var2.rotate(Vector3f.field32902.rotationDegrees(var12 * this.method17865((T)var1)));
+         var2.rotate(Vector3f.ZP.rotationDegrees(var12 * this.method17865((T)var1)));
       }
    }
 

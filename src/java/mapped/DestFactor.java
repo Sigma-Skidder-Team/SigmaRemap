@@ -16,7 +16,7 @@ public enum DestFactor {
    field12935(768),
    field12936(0);
 
-   public final int field12937;
+   public final int param;
    private static final DestFactor[] field12938 = new DestFactor[]{
       field12923,
       field12924,
@@ -35,6 +35,6 @@ public enum DestFactor {
    };
 
    private DestFactor(int var3) {
-      this.field12937 = var3;
+      this.param = var3;
    }
 }

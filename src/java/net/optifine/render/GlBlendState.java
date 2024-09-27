@@ -111,8 +111,8 @@ public class GlBlendState {
 
    public void method27786() {
       if (this.field34645) {
-         GlStateManager.method23715();
-         GlStateManager.method23717(this.field34646, this.field34647, this.field34648, this.field34649);
+         GlStateManager.enableBlend();
+         GlStateManager.blendFuncSeparate(this.field34646, this.field34647, this.field34648, this.field34649);
       } else {
          GlStateManager.disableBlend();
       }

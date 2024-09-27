@@ -4,6 +4,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
+import net.optifine.Config;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,7 +39,7 @@ public class Class9242 {
                var1.getClass();
                var10000[var8] = new Class8066(var1);
                this.field42528[var8].method27712(var5 * 16, var6 * 16, var7 * 16);
-               if (Class7944.method26978() && Class7944.method26977()) {
+               if (Config.method26978() && Config.method26977()) {
                   this.method34762(this.field42528[var8]);
                }
             }

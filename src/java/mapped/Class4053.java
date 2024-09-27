@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.optifine.Config;
 
 import java.util.Iterator;
 import java.util.List;
@@ -44,7 +45,7 @@ public class Class4053 extends Class4051 {
          var11.method17880(var12);
          return (Class9492)var11;
       } else {
-         Class7944.method26811("Not a RenderSheep: " + var6);
+         Config.method26811("Not a RenderSheep: " + var6);
          return null;
       }
    }

@@ -15,6 +15,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.biome.Biome;
+import net.optifine.Config;
 
 public class Class8149 {
    private String field35046 = null;
@@ -83,7 +84,7 @@ public class Class8149 {
          return null;
       } else {
          var0 = var0.toLowerCase();
-         String[] var3 = Class7944.method26903(var0, " ");
+         String[] var3 = Config.method26903(var0, " ");
          Class112[] var4 = new Class112[var3.length];
 
          for (int var5 = 0; var5 < var3.length; var5++) {
@@ -232,7 +233,7 @@ public class Class8149 {
    }
 
    private static void method28260(String var0) {
-      Class7944.method26811("[CustomGuis] " + var0);
+      Config.method26811("[CustomGuis] " + var0);
    }
 
    private boolean method28261(Class2295 var1, BlockPos var2, IWorldReader var3) {
@@ -343,7 +344,7 @@ public class Class8149 {
          Class971 var6 = (Class971)var5;
          if (this.field35059 != null) {
             Class2224 var7 = this.method28270(var6);
-            if (!Class7944.method26943(var7, this.field35059)) {
+            if (!Config.method26943(var7, this.field35059)) {
                return false;
             }
          }
@@ -364,7 +365,7 @@ public class Class8149 {
          Class940 var6 = (Class940)var5;
          if (this.field35060 != null) {
             Class112 var7 = var6.method3756();
-            if (!Class7944.method26943(var7, this.field35060)) {
+            if (!Config.method26943(var7, this.field35060)) {
                return false;
             }
          }
@@ -420,7 +421,7 @@ public class Class8149 {
          AbstractHorseEntity var5 = (AbstractHorseEntity)var1;
          if (this.field35059 != null) {
             Class2224 var6 = this.method28275(var5);
-            if (!Class7944.method26943(var6, this.field35059)) {
+            if (!Config.method26943(var6, this.field35059)) {
                return false;
             }
          }
@@ -428,7 +429,7 @@ public class Class8149 {
          if (this.field35060 != null && var5 instanceof Class1064) {
             Class1064 var8 = (Class1064)var5;
             Class112 var7 = var8.method4906();
-            if (!Class7944.method26943(var7, this.field35060)) {
+            if (!Config.method26943(var7, this.field35060)) {
                return false;
             }
          }

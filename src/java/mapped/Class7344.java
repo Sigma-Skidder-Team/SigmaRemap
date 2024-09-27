@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 import java.io.IOException;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -165,7 +167,7 @@ public class Class7344 {
    }
 
    private static Class1878 method23278(Class7681 var0) throws Class2445 {
-      float var3 = Class7944.method26900(var0.method25290(), Float.NaN);
+      float var3 = Config.method26900(var0.method25290(), Float.NaN);
       if (var3 != Float.NaN) {
          return new Class1888(var3);
       } else {

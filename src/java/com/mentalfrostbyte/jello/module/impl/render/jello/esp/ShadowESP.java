@@ -43,7 +43,7 @@ public class ShadowESP extends Module {
                 this.method16606();
                 this.method16607(Class2191.field14329);
                 RenderSystem.method27819(518, 0.0F);
-                RenderSystem.disableAlphaTest();
+                RenderSystem.enableAlphaTest();
                 GL11.glColor4f(1.0F, 0.0F, 1.0F, 0.1F);
                 GL11.glEnable(3042);
                 GL11.glDisable(2896);
@@ -117,7 +117,7 @@ public class ShadowESP extends Module {
                 double var16 = var11.getZ();
                 MatrixStack var18 = new MatrixStack();
                 boolean var19 = mc.gameSettings.field44616;
-                RenderSystem.method27821();
+                RenderSystem.disableLighting();
                 RenderSystem.color4f(0.0F, 0.0F, 1.0F, 0.5F);
                 RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
                 RenderSystem.enableBlend();
@@ -201,7 +201,7 @@ public class ShadowESP extends Module {
         GL11.glDisable(2903);
         GL11.glDisable(2929);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.gameRenderer.field818.method7316();
+        mc.gameRenderer.lightmapTexture.method7316();
     }
 
     private void method16613() {
@@ -214,7 +214,7 @@ public class ShadowESP extends Module {
         TextureManager var10000 = mc.getTextureManager();
         mc.getTextureManager();
         var10000.bindTexture(TextureManager.field1094);
-        mc.gameRenderer.field818.method7317();
+        mc.gameRenderer.lightmapTexture.method7317();
         GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
         field23794 = Class2191.field14327;
     }

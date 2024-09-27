@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.GameSettings;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
@@ -27,13 +28,13 @@ public class Class8389 {
    public static void method29393() {
       field35971 = null;
       field35972 = 0;
-      IResourcePack[] var2 = Class7944.method26869();
+      IResourcePack[] var2 = Config.method26869();
       field35971 = method29395(var2);
       method29394();
    }
 
    public static void method29394() {
-      if (field35971 != null && Class7944.method26905()) {
+      if (field35971 != null && Config.method26905()) {
          int var2 = 0;
 
          for (int var3 = 0; var3 < field35971.length; var3++) {
@@ -44,7 +45,7 @@ public class Class8389 {
             }
          }
 
-         int var5 = Class7944.method26860().worldRenderer.method935();
+         int var5 = Config.method26860().worldRenderer.method935();
          if (var5 != field35973) {
             field35972 = var2;
             field35973 = var5;
@@ -81,7 +82,7 @@ public class Class8389 {
 
          for (int var5 = 0; var5 < var3.length; var5++) {
             String var6 = var3[var5];
-            Class7944.method26810("Texture animation: " + var6);
+            Config.method26810("Texture animation: " + var6);
 
             try {
                ResourceLocation var7 = new ResourceLocation(var6);
@@ -92,14 +93,14 @@ public class Class8389 {
                Class9200 var10 = method29397(var9, var7);
                if (var10 != null) {
                   ResourceLocation var11 = new ResourceLocation(var10.method34486());
-                  if (!Class7944.method26868(var0, var11)) {
-                     Class7944.method26810("Skipped: " + var6 + ", target texture not loaded from same resource pack");
+                  if (!Config.method26868(var0, var11)) {
+                     Config.method26810("Skipped: " + var6 + ", target texture not loaded from same resource pack");
                   } else {
                      var4.add(var10);
                   }
                }
             } catch (FileNotFoundException var12) {
-               Class7944.method26811("File not found: " + var12.getMessage());
+               Config.method26811("File not found: " + var12.getMessage());
             } catch (IOException var13) {
                var13.printStackTrace();
             }
@@ -112,12 +113,12 @@ public class Class8389 {
    private static Class9200 method29397(Properties var0, ResourceLocation var1) {
       String var4 = var0.getProperty("from");
       String var5 = var0.getProperty("to");
-      int var6 = Class7944.method26899(var0.getProperty("x"), -1);
-      int var7 = Class7944.method26899(var0.getProperty("y"), -1);
-      int var8 = Class7944.method26899(var0.getProperty("w"), -1);
-      int var9 = Class7944.method26899(var0.getProperty("h"), -1);
+      int var6 = Config.method26899(var0.getProperty("x"), -1);
+      int var7 = Config.method26899(var0.getProperty("y"), -1);
+      int var8 = Config.method26899(var0.getProperty("w"), -1);
+      int var9 = Config.method26899(var0.getProperty("h"), -1);
       if (var4 == null || var5 == null) {
-         Class7944.method26811("TextureAnimation: Source or target texture not specified");
+         Config.method26811("TextureAnimation: Source or target texture not specified");
          return null;
       } else if (var6 >= 0 && var7 >= 0 && var8 >= 0 && var9 >= 0) {
          var4 = var4.trim();
@@ -127,14 +128,14 @@ public class Class8389 {
          var5 = Class8684.method31274(var5, var10);
          byte[] var11 = method29398(var4, var8);
          if (var11 == null) {
-            Class7944.method26811("TextureAnimation: Source texture not found: " + var5);
+            Config.method26811("TextureAnimation: Source texture not found: " + var5);
             return null;
          } else {
             int var12 = var11.length / 4;
             int var13 = var12 / (var8 * var9);
             int var14 = var13 * var8 * var9;
             if (var12 != var14) {
-               Class7944.method26811(
+               Config.method26811(
                   "TextureAnimation: Source texture has invalid number of frames: " + var4 + ", frames: " + (float)var12 / (float)(var8 * var9)
                );
                return null;
@@ -142,27 +143,27 @@ public class Class8389 {
                ResourceLocation var15 = new ResourceLocation(var5);
 
                try {
-                  InputStream var16 = Class7944.method26863(var15);
+                  InputStream var16 = Config.method26863(var15);
                   if (var16 == null) {
-                     Class7944.method26811("TextureAnimation: Target texture not found: " + var5);
+                     Config.method26811("TextureAnimation: Target texture not found: " + var5);
                      return null;
                   } else {
                      BufferedImage var17 = method29400(var16);
                      if (var6 + var8 <= var17.getWidth() && var7 + var9 <= var17.getHeight()) {
                         return new Class9200(var4, var11, var5, var15, var6, var7, var8, var9, var0);
                      } else {
-                        Class7944.method26811("TextureAnimation: Animation coordinates are outside the target texture: " + var5);
+                        Config.method26811("TextureAnimation: Animation coordinates are outside the target texture: " + var5);
                         return null;
                      }
                   }
                } catch (IOException var18) {
-                  Class7944.method26811("TextureAnimation: Target texture not found: " + var5);
+                  Config.method26811("TextureAnimation: Target texture not found: " + var5);
                   return null;
                }
             }
          }
       } else {
-         Class7944.method26811("TextureAnimation: Invalid coordinates");
+         Config.method26811("TextureAnimation: Invalid coordinates");
          return null;
       }
    }
@@ -177,11 +178,11 @@ public class Class8389 {
    }
 
    private static byte[] method29399(String var0, int var1) {
-      GameSettings var4 = Class7944.method26928();
+      GameSettings var4 = Config.method26928();
 
       try {
          ResourceLocation var5 = new ResourceLocation(var0);
-         InputStream var6 = Class7944.method26863(var5);
+         InputStream var6 = Config.method26863(var5);
          if (var6 == null) {
             return null;
          } else {

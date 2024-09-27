@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.shaders.Shaders;
+
 public class Class1215 extends Class1210 {
    private Class2160 field6529 = null;
 

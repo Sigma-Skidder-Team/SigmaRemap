@@ -11,6 +11,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
+import net.optifine.Config;
 
 public class Class4829 {
    private static String[] field22601;
@@ -61,7 +62,7 @@ public class Class4829 {
 
       boolean var23;
       try {
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Class7698.method25376(var7, var3);
          }
 
@@ -112,7 +113,7 @@ public class Class4829 {
             double var32 = (double)(var2.getX() & 15);
             double var34 = (double)(var2.getY() & 15);
             double var36 = (double)(var2.getZ() & 15);
-            if (Class7944.method26977()) {
+            if (Config.method26977()) {
                int var38 = var2.getX() >> 4 << 4;
                int var39 = var2.getY() >> 4 << 4;
                int var40 = var2.getZ() >> 4 << 4;
@@ -346,7 +347,7 @@ public class Class4829 {
 
          var23 = false;
       } finally {
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Class7698.method25377(var3);
          }
       }

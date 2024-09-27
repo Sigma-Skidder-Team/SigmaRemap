@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.resources.VanillaPack;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -23,7 +24,7 @@ public class Class9772 {
 
    public static String[] method38437(String[] var0, String[] var1) {
       LinkedHashSet<String> var4 = new LinkedHashSet();
-      IResourcePack[] var5 = Class7944.method26869();
+      IResourcePack[] var5 = Config.method26869();
 
       for (int var6 = 0; var6 < var5.length; var6++) {
          IResourcePack var7 = var5[var6];
@@ -47,7 +48,7 @@ public class Class9772 {
          if (var0 instanceof LegacyResourcePackWrapper) {
             IResourcePack var6 = (IResourcePack) Reflector.method35072(var0, Reflector.field43015);
             if (var6 == null) {
-               Class7944.method26811("LegacyResourcePackWrapper base resource pack not found: " + var0);
+               Config.method26811("LegacyResourcePackWrapper base resource pack not found: " + var0);
                return new String[0];
             }
 
@@ -57,7 +58,7 @@ public class Class9772 {
          if (var0 instanceof LegacyResourcePackWrapperV4) {
             IResourcePack var8 = (IResourcePack) Reflector.method35072(var0, Reflector.field43017);
             if (var8 == null) {
-               Class7944.method26811("LegacyResourcePackWrapperV4 base resource pack not found: " + var0);
+               Config.method26811("LegacyResourcePackWrapperV4 base resource pack not found: " + var0);
                return new String[0];
             }
 
@@ -70,7 +71,7 @@ public class Class9772 {
             if (var7 != null) {
                if (!var7.isDirectory()) {
                   if (!var7.isFile()) {
-                     Class7944.method26811("Unknown resource pack file: " + var7);
+                     Config.method26811("Unknown resource pack file: " + var7);
                      return new String[0];
                   } else {
                      return method38443(var7, var1, var2);
@@ -82,7 +83,7 @@ public class Class9772 {
                return new String[0];
             }
          } else {
-            Class7944.method26811("Unknown resource pack type: " + var0);
+            Config.method26811("Unknown resource pack type: " + var0);
             return new String[0];
          }
       } else {
@@ -102,7 +103,7 @@ public class Class9772 {
                   var4.add(var6);
                }
             } else {
-               Class7944.method26811("Skipping non-lowercase path: " + var6);
+               Config.method26811("Skipping non-lowercase path: " + var6);
             }
          }
 
@@ -139,7 +140,7 @@ public class Class9772 {
                      if (method38444(var11)) {
                         var6.add(var11);
                      } else {
-                        Class7944.method26811("Skipping non-lowercase path: " + var11);
+                        Config.method26811("Skipping non-lowercase path: " + var11);
                      }
                   }
                }
@@ -165,7 +166,7 @@ public class Class9772 {
                var10 = var10.substring(var6.length());
                if (Class9402.method35760(var10, var1) && Class9402.method35761(var10, var2)) {
                   if (!method38444(var10)) {
-                     Class7944.method26811("Skipping non-lowercase path: " + var10);
+                     Config.method26811("Skipping non-lowercase path: " + var10);
                   } else {
                      var5.add(var10);
                   }
@@ -189,20 +190,20 @@ public class Class9772 {
       ResourceLocation var4 = new ResourceLocation(var0);
 
       try {
-         InputStream var5 = Class7944.method26863(var4);
+         InputStream var5 = Config.method26863(var4);
          if (var5 == null) {
             return null;
          } else {
             Class20 var6 = new Class20();
             var6.load(var5);
             var5.close();
-            Class7944.method26810("" + var1 + ": Loading " + var0);
+            Config.method26810("" + var1 + ": Loading " + var0);
             return var6;
          }
       } catch (FileNotFoundException var7) {
          return null;
       } catch (IOException var8) {
-         Class7944.method26811("" + var1 + ": Error reading " + var0);
+         Config.method26811("" + var1 + ": Error reading " + var0);
          return null;
       }
    }

@@ -20,6 +20,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.optifine.Config;
 
 public class Class9741 {
    private static final IFormattableTextComponent field45485 = new TranslationTextComponent("effect.none").mergeStyle(TextFormatting.GRAY);
@@ -90,7 +91,7 @@ public class Class9741 {
          for (EffectInstance var9 : var0) {
             if (var9.method8631()) {
                int var10 = var9.getPotion().getLiquidColor();
-               if (Class7944.method26911()) {
+               if (Config.method26911()) {
                   var10 = Class9680.method37891(var9.getPotion(), var10);
                }
 
@@ -111,7 +112,7 @@ public class Class9741 {
             return 0;
          }
       } else {
-         return !Class7944.method26911() ? 3694022 : Class9680.method37891((Effect)null, var3);
+         return !Config.method26911() ? 3694022 : Class9680.method37891((Effect)null, var3);
       }
    }
 

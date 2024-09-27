@@ -6,6 +6,7 @@ import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.IngameGui;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.optifine.Config;
 import org.lwjgl.opengl.GL11;
 
 public class Class8578 {
@@ -129,7 +130,7 @@ public class Class8578 {
          GlStateManager.method23833();
          GlStateManager.enableTexture();
          float var31 = 1.0F - (float)((double)(System.currentTimeMillis() - Class8777.method31652()) / 1000.0);
-         var31 = Class7944.method26832(var31, 0.0F, 1.0F);
+         var31 = Config.method26832(var31, 0.0F, 1.0F);
          int var13 = (int)(170.0F + var31 * 85.0F);
          int var14 = (int)(100.0F + var31 * 55.0F);
          int var33 = (int)(10.0F + var31 * 10.0F);

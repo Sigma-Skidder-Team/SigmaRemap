@@ -24,6 +24,9 @@ import java.util.Map;
 import java.util.Set;
 
 import mapped.*;
+import net.minecraft.client.settings.NarratorStatus;
+import net.minecraft.client.settings.ParticleStatus;
+import net.minecraft.client.settings.PointOfView;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.nbt.CompoundNBT;
@@ -35,6 +38,8 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.Difficulty;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -45,7 +50,7 @@ public class GameSettings {
    private static final TypeToken<List<String>> field44571 = new Class5798();
    private static final Splitter field44572 = Splitter.on(':').limit(2);
    public double field44573 = 0.5;
-   public int field44574 = -1;
+   public int renderDistanceChunks = -1;
    public float field44575 = 1.0F;
    public int framerateLimit = 120;
    public CloudOption cloudOption = CloudOption.field11186;
@@ -98,7 +103,7 @@ public class GameSettings {
    public boolean field44624 = true;
    public boolean touchscreen;
    public boolean fullscreen;
-   public boolean field44627 = true;
+   public boolean viewBobbing = true;
    public boolean field44628;
    public boolean field44629;
    public boolean field44630;
@@ -179,22 +184,22 @@ public class GameSettings {
    public boolean field44666;
    public String field44667 = "";
    public boolean smoothCamera;
-   public double field44669 = 70.0;
-   public float field44670 = 1.0F;
-   public float field44671 = 1.0F;
+   public double fov = 70.0;
+   public float screenEffectScale = 1.0F;
+   public float fovScaleEffect = 1.0F;
    public double gamma;
    public int guiScale;
-   public Class2294 field44674 = Class2294.field15246;
-   public Class1911 field44675 = Class1911.field11267;
+   public ParticleStatus particles = ParticleStatus.field15246;
+   public NarratorStatus narrator = NarratorStatus.field11267;
    public String language = "en_us";
-   public boolean field44677;
-   public int field44678 = 1;
-   public float field44679 = 0.8F;
-   public int field44680 = 0;
-   public boolean field44681 = false;
-   public boolean field44682 = false;
-   public boolean field44683 = Class7944.method26937();
-   public boolean field44684 = Class7944.method26937();
+   public boolean syncChunkWrites;
+   public int ofFogType = 1;
+   public float ofFogStart = 0.8F;
+   public int ofMipmapType = 0;
+   public boolean ofOcclusionFancy = false;
+   public boolean ofSmoothFps = false;
+   public boolean ofSmoothWorld = Config.isSingleProcessor();
+   public boolean ofLazyChunkLoading = Config.isSingleProcessor();
    public boolean field44685 = false;
    public boolean field44686 = false;
    public double field44687 = 1.0;
@@ -293,16 +298,16 @@ public class GameSettings {
          AbstractOption.field25333.method18088(16.0F);
       }
 
-      this.field44574 = var1.isJava64bit() ? 12 : 8;
-      this.field44677 = Util.getOSType() == OS.WINDOWS;
+      this.renderDistanceChunks = var1.isJava64bit() ? 12 : 8;
+      this.syncChunkWrites = Util.getOSType() == OS.WINDOWS;
       this.field44763 = new File(var2, "optionsof.txt");
       this.framerateLimit = (int) AbstractOption.FRAMERATE_LIMIT.getMaxValue();
       this.field44762 = new KeyBinding("of.key.zoom", 67, "key.categories.misc");
       this.field44658 = (KeyBinding[])ArrayUtils.add(this.field44658, this.field44762);
       Class9831.method38795(this.field44658, new KeyBinding[]{this.field44762});
-      this.field44574 = 8;
+      this.renderDistanceChunks = 8;
       this.method37143();
-      Class7944.method26779(this);
+      Config.method26779(this);
    }
 
    public float method37139(float var1) {
@@ -441,15 +446,15 @@ public class GameSettings {
                }
 
                if ("fov".equals(var4)) {
-                  this.field44669 = (double)(method37145(var5) * 40.0F + 70.0F);
+                  this.fov = (double)(method37145(var5) * 40.0F + 70.0F);
                }
 
                if ("screenEffectScale".equals(var4)) {
-                  this.field44670 = method37145(var5);
+                  this.screenEffectScale = method37145(var5);
                }
 
                if ("fovEffectScale".equals(var4)) {
-                  this.field44671 = method37145(var5);
+                  this.fovScaleEffect = method37145(var5);
                }
 
                if ("gamma".equals(var4)) {
@@ -457,7 +462,7 @@ public class GameSettings {
                }
 
                if ("renderDistance".equals(var4)) {
-                  this.field44574 = Integer.parseInt(var5);
+                  this.renderDistanceChunks = Integer.parseInt(var5);
                }
 
                if ("entityDistanceScaling".equals(var4)) {
@@ -469,7 +474,7 @@ public class GameSettings {
                }
 
                if ("particles".equals(var4)) {
-                  this.field44674 = Class2294.method9053(Integer.parseInt(var5));
+                  this.particles = ParticleStatus.method9053(Integer.parseInt(var5));
                }
 
                if ("maxFps".equals(var4)) {
@@ -627,7 +632,7 @@ public class GameSettings {
                }
 
                if ("narrator".equals(var4)) {
-                  this.field44675 = Class1911.method8191(Integer.parseInt(var5));
+                  this.narrator = NarratorStatus.method8191(Integer.parseInt(var5));
                }
 
                if ("biomeBlendRadius".equals(var4)) {
@@ -659,7 +664,7 @@ public class GameSettings {
                }
 
                if ("syncChunkWrites".equals(var4)) {
-                  this.field44677 = "true".equals(var5);
+                  this.syncChunkWrites = "true".equals(var5);
                }
 
                for (KeyBinding var9 : this.field44658) {
@@ -747,14 +752,14 @@ public class GameSettings {
             var1.println("toggleCrouch:" + this.field44628);
             var1.println("toggleSprint:" + this.field44629);
             var1.println("mouseSensitivity:" + this.field44573);
-            var1.println("fov:" + (this.field44669 - 70.0) / 40.0);
-            var1.println("screenEffectScale:" + this.field44670);
-            var1.println("fovEffectScale:" + this.field44671);
+            var1.println("fov:" + (this.fov - 70.0) / 40.0);
+            var1.println("screenEffectScale:" + this.screenEffectScale);
+            var1.println("fovEffectScale:" + this.fovScaleEffect);
             var1.println("gamma:" + this.gamma);
-            var1.println("renderDistance:" + this.field44574);
+            var1.println("renderDistance:" + this.renderDistanceChunks);
             var1.println("entityDistanceScaling:" + this.field44575);
             var1.println("guiScale:" + this.guiScale);
-            var1.println("particles:" + this.field44674.method9052());
+            var1.println("particles:" + this.particles.method9052());
             var1.println("maxFps:" + this.framerateLimit);
             var1.println("difficulty:" + this.field44661.getId());
             var1.println("graphicsMode:" + this.graphicFanciness.func_238162_a_());
@@ -799,7 +804,7 @@ public class GameSettings {
             var1.println("useNativeTransport:" + this.field44602);
             var1.println("mainHand:" + (this.field44591 == HandSide.field14417 ? "left" : "right"));
             var1.println("attackIndicator:" + this.field44603.method8922());
-            var1.println("narrator:" + this.field44675.method8189());
+            var1.println("narrator:" + this.narrator.method8189());
             var1.println("tutorialStep:" + this.field44604.method8916());
             var1.println("mouseWheelSensitivity:" + this.field44607);
             var1.println("rawMouseInput:" + AbstractOption.field25332.method18080(this));
@@ -807,7 +812,7 @@ public class GameSettings {
             var1.println("skipMultiplayerWarning:" + this.field44630);
             var1.println("hideMatchedNames:" + this.field44631);
             var1.println("joinedFirstServer:" + this.field_244601_E);
-            var1.println("syncChunkWrites:" + this.field44677);
+            var1.println("syncChunkWrites:" + this.syncChunkWrites);
 
             for (KeyBinding var6 : this.field44658) {
                if (Reflector.field42932.exists()) {
@@ -856,7 +861,7 @@ public class GameSettings {
          this.field44659
             .player
             .connection
-            .sendPacket(new CClientSettingsPacket(this.language, this.field44574, this.chatVisibility, this.field44612, var1, this.field44591));
+            .sendPacket(new CClientSettingsPacket(this.language, this.renderDistanceChunks, this.chatVisibility, this.field44612, var1, this.field44591));
       }
    }
 
@@ -885,7 +890,7 @@ public class GameSettings {
    }
 
    public CloudOption method37153() {
-      return this.field44574 >= 4 ? this.cloudOption : CloudOption.OFF;
+      return this.renderDistanceChunks >= 4 ? this.cloudOption : CloudOption.OFF;
    }
 
    public boolean method37154() {
@@ -904,8 +909,8 @@ public class GameSettings {
 
       if (var1 == AbstractOption.field25422) {
          int var4 = (int)var2;
-         if (var4 > 0 && Class7944.method26921()) {
-            Class7944.method26964(Class8043.method27619("of.message.aa.shaders1"), Class8043.method27619("of.message.aa.shaders2"));
+         if (var4 > 0 && Config.isShaders()) {
+            Config.method26964(Class8043.method27619("of.message.aa.shaders1"), Class8043.method27619("of.message.aa.shaders2"));
             return;
          }
 
@@ -918,13 +923,13 @@ public class GameSettings {
             }
          }
 
-         this.field44688 = Class7944.method26830(this.field44688, 0, 16);
+         this.field44688 = Config.method26830(this.field44688, 0, 16);
       }
 
       if (var1 == AbstractOption.field25423) {
          int var7 = (int)var2;
-         if (var7 > 1 && Class7944.method26921()) {
-            Class7944.method26964(Class8043.method27619("of.message.af.shaders1"), Class8043.method27619("of.message.af.shaders2"));
+         if (var7 > 1 && Config.isShaders()) {
+            Config.method26964(Class8043.method27619("of.message.af.shaders1"), Class8043.method27619("of.message.af.shaders2"));
             return;
          }
 
@@ -934,13 +939,13 @@ public class GameSettings {
             this.field44689 *= 2;
          }
 
-         this.field44689 = Class7944.method26830(this.field44689, 1, 16);
+         this.field44689 = Config.method26830(this.field44689, 1, 16);
          this.field44659.scheduleResourcesRefresh();
       }
 
       if (var1 == AbstractOption.field25376) {
          int var8 = (int)var2;
-         this.field44680 = Class7944.method26830(var8, 0, 3);
+         this.ofMipmapType = Config.method26830(var8, 0, 3);
          this.method37165();
       }
    }
@@ -955,7 +960,7 @@ public class GameSettings {
       } else if (var1 == AbstractOption.field25423) {
          return (double)this.field44689;
       } else if (var1 == AbstractOption.field25376) {
-         return (double)this.field44680;
+         return (double)this.ofMipmapType;
       } else if (var1 != AbstractOption.FRAMERATE_LIMIT) {
          return Float.MAX_VALUE;
       } else {
@@ -965,38 +970,38 @@ public class GameSettings {
 
    public void method37157(AbstractOption var1, int var2) {
       if (var1 == AbstractOption.field25374) {
-         switch (this.field44678) {
+         switch (this.ofFogType) {
             case 1:
-               this.field44678 = 2;
-               if (!Class7944.method26785()) {
-                  this.field44678 = 3;
+               this.ofFogType = 2;
+               if (!Config.method26785()) {
+                  this.ofFogType = 3;
                }
                break;
             case 2:
-               this.field44678 = 3;
+               this.ofFogType = 3;
                break;
             case 3:
-               this.field44678 = 1;
+               this.ofFogType = 1;
                break;
             default:
-               this.field44678 = 1;
+               this.ofFogType = 1;
          }
       }
 
       if (var1 == AbstractOption.field25375) {
-         this.field44679 += 0.2F;
-         if (this.field44679 > 0.81F) {
-            this.field44679 = 0.2F;
+         this.ofFogStart += 0.2F;
+         if (this.ofFogStart > 0.81F) {
+            this.ofFogStart = 0.2F;
          }
       }
 
       if (var1 == AbstractOption.field25377) {
-         this.field44682 = !this.field44682;
+         this.ofSmoothFps = !this.ofSmoothFps;
       }
 
       if (var1 == AbstractOption.field25403) {
-         this.field44683 = !this.field44683;
-         Class7944.method26795();
+         this.ofSmoothWorld = !this.ofSmoothWorld;
+         Config.method26795();
       }
 
       if (var1 == AbstractOption.field25378) {
@@ -1269,7 +1274,7 @@ public class GameSettings {
       }
 
       if (var1 == AbstractOption.field25429) {
-         this.field44684 = !this.field44684;
+         this.ofLazyChunkLoading = !this.ofLazyChunkLoading;
       }
 
       if (var1 == AbstractOption.field25441) {
@@ -1385,7 +1390,7 @@ public class GameSettings {
             var5 = 64;
          }
 
-         int var6 = this.field44574 - var5;
+         int var6 = this.renderDistanceChunks - var5;
          String var7 = var13;
          if (var6 > 0) {
             var7 = var13 + "+";
@@ -1393,7 +1398,7 @@ public class GameSettings {
 
          return var2 + var12 + " " + var7 + "";
       } else if (var1 == AbstractOption.field25374) {
-         switch (this.field44678) {
+         switch (this.ofFogType) {
             case 1:
                return var2 + Class8043.method27624();
             case 2:
@@ -1404,9 +1409,9 @@ public class GameSettings {
                return var2 + Class8043.method27623();
          }
       } else if (var1 == AbstractOption.field25375) {
-         return var2 + this.field44679;
+         return var2 + this.ofFogStart;
       } else if (var1 == AbstractOption.field25376) {
-         switch (this.field44680) {
+         switch (this.ofMipmapType) {
             case 0:
                return var2 + Class8043.method27619("of.options.mipmap.nearest");
             case 1:
@@ -1419,9 +1424,9 @@ public class GameSettings {
                return var2 + "of.options.mipmap.nearest";
          }
       } else if (var1 == AbstractOption.field25377) {
-         return this.field44682 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
+         return this.ofSmoothFps ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
       } else if (var1 == AbstractOption.field25403) {
-         return this.field44683 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
+         return this.ofSmoothWorld ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
       } else if (var1 == AbstractOption.field25378) {
          switch (this.field44690) {
             case 1:
@@ -1579,7 +1584,7 @@ public class GameSettings {
          }
       } else if (var1 == AbstractOption.field25422) {
          String var10 = "";
-         if (this.field44688 != Class7944.method26891()) {
+         if (this.field44688 != Config.method26891()) {
             var10 = " (" + Class8043.method27619("of.general.restart") + ")";
          }
 
@@ -1619,7 +1624,7 @@ public class GameSettings {
             return this.field44721 == 2 ? var2 + Class8043.method27625() : var2 + Class8043.method27626();
          }
       } else if (var1 == AbstractOption.field25429) {
-         return this.field44684 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
+         return this.ofLazyChunkLoading ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
       } else if (var1 == AbstractOption.field25441) {
          return this.field44685 ? var2 + Class8043.method27622() : var2 + Class8043.method27623();
       } else if (var1 == AbstractOption.field25443) {
@@ -1685,57 +1690,57 @@ public class GameSettings {
             try {
                String[] var4 = var3.split(":");
                if (var4[0].equals("ofRenderDistanceChunks") && var4.length >= 2) {
-                  this.field44574 = Integer.valueOf(var4[1]);
-                  this.field44574 = Class7944.method26830(this.field44574, 2, 1024);
+                  this.renderDistanceChunks = Integer.valueOf(var4[1]);
+                  this.renderDistanceChunks = Config.method26830(this.renderDistanceChunks, 2, 1024);
                }
 
                if (var4[0].equals("ofFogType") && var4.length >= 2) {
-                  this.field44678 = Integer.valueOf(var4[1]);
-                  this.field44678 = Class7944.method26830(this.field44678, 1, 3);
+                  this.ofFogType = Integer.valueOf(var4[1]);
+                  this.ofFogType = Config.method26830(this.ofFogType, 1, 3);
                }
 
                if (var4[0].equals("ofFogStart") && var4.length >= 2) {
-                  this.field44679 = Float.valueOf(var4[1]);
-                  if (this.field44679 < 0.2F) {
-                     this.field44679 = 0.2F;
+                  this.ofFogStart = Float.valueOf(var4[1]);
+                  if (this.ofFogStart < 0.2F) {
+                     this.ofFogStart = 0.2F;
                   }
 
-                  if (this.field44679 > 0.81F) {
-                     this.field44679 = 0.8F;
+                  if (this.ofFogStart > 0.81F) {
+                     this.ofFogStart = 0.8F;
                   }
                }
 
                if (var4[0].equals("ofMipmapType") && var4.length >= 2) {
-                  this.field44680 = Integer.valueOf(var4[1]);
-                  this.field44680 = Class7944.method26830(this.field44680, 0, 3);
+                  this.ofMipmapType = Integer.valueOf(var4[1]);
+                  this.ofMipmapType = Config.method26830(this.ofMipmapType, 0, 3);
                }
 
                if (var4[0].equals("ofOcclusionFancy") && var4.length >= 2) {
-                  this.field44681 = Boolean.valueOf(var4[1]);
+                  this.ofOcclusionFancy = Boolean.valueOf(var4[1]);
                }
 
                if (var4[0].equals("ofSmoothFps") && var4.length >= 2) {
-                  this.field44682 = Boolean.valueOf(var4[1]);
+                  this.ofSmoothFps = Boolean.valueOf(var4[1]);
                }
 
                if (var4[0].equals("ofSmoothWorld") && var4.length >= 2) {
-                  this.field44683 = Boolean.valueOf(var4[1]);
+                  this.ofSmoothWorld = Boolean.valueOf(var4[1]);
                }
 
                if (var4[0].equals("ofAoLevel") && var4.length >= 2) {
                   this.field44687 = (double)Float.valueOf(var4[1]).floatValue();
-                  this.field44687 = Class7944.method26833(this.field44687, 0.0, 1.0);
+                  this.field44687 = Config.method26833(this.field44687, 0.0, 1.0);
                }
 
                if (var4[0].equals("ofClouds") && var4.length >= 2) {
                   this.field44690 = Integer.valueOf(var4[1]);
-                  this.field44690 = Class7944.method26830(this.field44690, 0, 3);
+                  this.field44690 = Config.method26830(this.field44690, 0, 3);
                   this.method37162();
                }
 
                if (var4[0].equals("ofCloudsHeight") && var4.length >= 2) {
                   this.field44691 = (double)Float.valueOf(var4[1]).floatValue();
-                  this.field44691 = Class7944.method26833(this.field44691, 0.0, 1.0);
+                  this.field44691 = Config.method26833(this.field44691, 0.0, 1.0);
                }
 
                if (var4[0].equals("ofTrees") && var4.length >= 2) {
@@ -1745,22 +1750,22 @@ public class GameSettings {
 
                if (var4[0].equals("ofDroppedItems") && var4.length >= 2) {
                   this.field44694 = Integer.valueOf(var4[1]);
-                  this.field44694 = Class7944.method26830(this.field44694, 0, 2);
+                  this.field44694 = Config.method26830(this.field44694, 0, 2);
                }
 
                if (var4[0].equals("ofRain") && var4.length >= 2) {
                   this.field44693 = Integer.valueOf(var4[1]);
-                  this.field44693 = Class7944.method26830(this.field44693, 0, 3);
+                  this.field44693 = Config.method26830(this.field44693, 0, 3);
                }
 
                if (var4[0].equals("ofAnimatedWater") && var4.length >= 2) {
                   this.field44731 = Integer.valueOf(var4[1]);
-                  this.field44731 = Class7944.method26830(this.field44731, 0, 2);
+                  this.field44731 = Config.method26830(this.field44731, 0, 2);
                }
 
                if (var4[0].equals("ofAnimatedLava") && var4.length >= 2) {
                   this.field44732 = Integer.valueOf(var4[1]);
-                  this.field44732 = Class7944.method26830(this.field44732, 0, 2);
+                  this.field44732 = Config.method26830(this.field44732, 0, 2);
                }
 
                if (var4[0].equals("ofAnimatedFire") && var4.length >= 2) {
@@ -1833,17 +1838,17 @@ public class GameSettings {
 
                if (var4[0].equals("ofAutoSaveTicks") && var4.length >= 2) {
                   this.field44696 = Integer.valueOf(var4[1]);
-                  this.field44696 = Class7944.method26830(this.field44696, 40, 40000);
+                  this.field44696 = Config.method26830(this.field44696, 40, 40000);
                }
 
                if (var4[0].equals("ofBetterGrass") && var4.length >= 2) {
                   this.field44695 = Integer.valueOf(var4[1]);
-                  this.field44695 = Class7944.method26830(this.field44695, 1, 3);
+                  this.field44695 = Config.method26830(this.field44695, 1, 3);
                }
 
                if (var4[0].equals("ofConnectedTextures") && var4.length >= 2) {
                   this.field44715 = Integer.valueOf(var4[1]);
-                  this.field44715 = Class7944.method26830(this.field44715, 1, 3);
+                  this.field44715 = Config.method26830(this.field44715, 1, 3);
                }
 
                if (var4[0].equals("ofWeather") && var4.length >= 2) {
@@ -1864,12 +1869,12 @@ public class GameSettings {
 
                if (var4[0].equals("ofVignette") && var4.length >= 2) {
                   this.field44704 = Integer.valueOf(var4[1]);
-                  this.field44704 = Class7944.method26830(this.field44704, 0, 2);
+                  this.field44704 = Config.method26830(this.field44704, 0, 2);
                }
 
                if (var4[0].equals("ofChunkUpdates") && var4.length >= 2) {
                   this.field44705 = Integer.valueOf(var4[1]);
-                  this.field44705 = Class7944.method26830(this.field44705, 1, 5);
+                  this.field44705 = Config.method26830(this.field44705, 1, 5);
                }
 
                if (var4[0].equals("ofChunkUpdatesDynamic") && var4.length >= 2) {
@@ -1878,17 +1883,17 @@ public class GameSettings {
 
                if (var4[0].equals("ofTime") && var4.length >= 2) {
                   this.field44707 = Integer.valueOf(var4[1]);
-                  this.field44707 = Class7944.method26830(this.field44707, 0, 2);
+                  this.field44707 = Config.method26830(this.field44707, 0, 2);
                }
 
                if (var4[0].equals("ofAaLevel") && var4.length >= 2) {
                   this.field44688 = Integer.valueOf(var4[1]);
-                  this.field44688 = Class7944.method26830(this.field44688, 0, 16);
+                  this.field44688 = Config.method26830(this.field44688, 0, 16);
                }
 
                if (var4[0].equals("ofAfLevel") && var4.length >= 2) {
                   this.field44689 = Integer.valueOf(var4[1]);
-                  this.field44689 = Class7944.method26830(this.field44689, 1, 16);
+                  this.field44689 = Config.method26830(this.field44689, 1, 16);
                }
 
                if (var4[0].equals("ofProfiler") && var4.length >= 2) {
@@ -1936,7 +1941,7 @@ public class GameSettings {
                }
 
                if (var4[0].equals("ofLazyChunkLoading") && var4.length >= 2) {
-                  this.field44684 = Boolean.valueOf(var4[1]);
+                  this.ofLazyChunkLoading = Boolean.valueOf(var4[1]);
                }
 
                if (var4[0].equals("ofRenderRegions") && var4.length >= 2) {
@@ -1962,7 +1967,7 @@ public class GameSettings {
 
                if (var4[0].equals("ofScreenshotSize") && var4.length >= 2) {
                   this.field44728 = Integer.valueOf(var4[1]);
-                  this.field44728 = Class7944.method26830(this.field44728, 1, 4);
+                  this.field44728 = Config.method26830(this.field44728, 1, 4);
                }
 
                if (var4[0].equals("ofCustomEntityModels") && var4.length >= 2) {
@@ -1988,7 +1993,7 @@ public class GameSettings {
 
                if (var4[0].equals("ofTranslucentBlocks") && var4.length >= 2) {
                   this.field44721 = Integer.valueOf(var4[1]);
-                  this.field44721 = Class7944.method26830(this.field44721, 0, 2);
+                  this.field44721 = Config.method26830(this.field44721, 0, 2);
                }
 
                if (var4[0].equals("ofChatBackground") && var4.length >= 2) {
@@ -2003,7 +2008,7 @@ public class GameSettings {
                   this.field44762.bind(InputMappings.method38638(var4[1]));
                }
             } catch (Exception var5) {
-               Class7944.method26810("Skipping bad option: " + var3);
+               Config.method26810("Skipping bad option: " + var3);
                var5.printStackTrace();
             }
          }
@@ -2012,7 +2017,7 @@ public class GameSettings {
          KeyBinding.resetKeyBindingArrayAndHash();
          var2.close();
       } catch (Exception var6) {
-         Class7944.method26811("Failed to load options");
+         Config.method26811("Failed to load options");
          var6.printStackTrace();
       }
    }
@@ -2020,12 +2025,12 @@ public class GameSettings {
    public void method37161() {
       try {
          PrintWriter var1 = new PrintWriter(new OutputStreamWriter(new FileOutputStream(this.field44763), StandardCharsets.UTF_8));
-         var1.println("ofFogType:" + this.field44678);
-         var1.println("ofFogStart:" + this.field44679);
-         var1.println("ofMipmapType:" + this.field44680);
-         var1.println("ofOcclusionFancy:" + this.field44681);
-         var1.println("ofSmoothFps:" + this.field44682);
-         var1.println("ofSmoothWorld:" + this.field44683);
+         var1.println("ofFogType:" + this.ofFogType);
+         var1.println("ofFogStart:" + this.ofFogStart);
+         var1.println("ofMipmapType:" + this.ofMipmapType);
+         var1.println("ofOcclusionFancy:" + this.ofOcclusionFancy);
+         var1.println("ofSmoothFps:" + this.ofSmoothFps);
+         var1.println("ofSmoothWorld:" + this.ofSmoothWorld);
          var1.println("ofAoLevel:" + this.field44687);
          var1.println("ofClouds:" + this.field44690);
          var1.println("ofCloudsHeight:" + this.field44691);
@@ -2075,7 +2080,7 @@ public class GameSettings {
          var1.println("ofShowCapes:" + this.field44714);
          var1.println("ofNaturalTextures:" + this.field44717);
          var1.println("ofEmissiveTextures:" + this.field44718);
-         var1.println("ofLazyChunkLoading:" + this.field44684);
+         var1.println("ofLazyChunkLoading:" + this.ofLazyChunkLoading);
          var1.println("ofRenderRegions:" + this.field44685);
          var1.println("ofSmartAnimations:" + this.field44686);
          var1.println("ofDynamicFov:" + this.field44722);
@@ -2093,7 +2098,7 @@ public class GameSettings {
          var1.println("key_" + this.field44762.getKeyDescription() + ":" + this.field44762.getTranslationKey());
          var1.close();
       } catch (Exception var2) {
-         Class7944.method26811("Failed to save options");
+         Config.method26811("Failed to save options");
          var2.printStackTrace();
       }
    }
@@ -2129,9 +2134,9 @@ public class GameSettings {
    }
 
    public void method37163() {
-      this.field44574 = 8;
+      this.renderDistanceChunks = 8;
       this.field44575 = 1.0F;
-      this.field44627 = true;
+      this.viewBobbing = true;
       this.framerateLimit = (int) AbstractOption.FRAMERATE_LIMIT.getMaxValue();
       this.vsync = false;
       this.method37164();
@@ -2139,21 +2144,21 @@ public class GameSettings {
       this.graphicFanciness = GraphicsFanciness.FANCY;
       this.ambientOcclusionStatus = AmbientOcclusionStatus.field16005;
       this.cloudOption = CloudOption.field11186;
-      this.field44669 = 70.0;
+      this.fov = 70.0;
       this.gamma = 0.0;
       this.guiScale = 0;
-      this.field44674 = Class2294.field15246;
+      this.particles = ParticleStatus.field15246;
       this.field44594 = true;
       this.forceUnicodeFont = false;
-      this.field44678 = 1;
-      this.field44679 = 0.8F;
-      this.field44680 = 0;
-      this.field44681 = false;
+      this.ofFogType = 1;
+      this.ofFogStart = 0.8F;
+      this.ofMipmapType = 0;
+      this.ofOcclusionFancy = false;
       this.field44686 = false;
-      this.field44682 = false;
-      Class7944.method26936();
-      this.field44683 = Class7944.method26937();
-      this.field44684 = false;
+      this.ofSmoothFps = false;
+      Config.method26936();
+      this.ofSmoothWorld = Config.isSingleProcessor();
+      this.ofLazyChunkLoading = false;
       this.field44685 = false;
       this.field44719 = false;
       this.field44720 = false;
@@ -2251,7 +2256,7 @@ public class GameSettings {
       this.field44742 = var1;
       this.field44743 = var1;
       this.field44744 = var1;
-      this.field44674 = var1 ? Class2294.field15246 : Class2294.field15248;
+      this.particles = var1 ? ParticleStatus.field15246 : ParticleStatus.field15248;
       this.field44745 = var1;
       this.field44746 = var1;
       this.field44747 = var1;

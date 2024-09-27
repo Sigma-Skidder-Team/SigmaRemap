@@ -20,9 +20,9 @@ public class Class240<T extends LivingEntity> extends Class239<T, Class2891<T>> 
          this.method825().method11012().method22682(var1);
          this.method825().method11206().method22682(var1);
          var1.translate(0.0625, 0.25, 0.0);
-         var1.rotate(Vector3f.field32902.rotationDegrees(180.0F));
-         var1.rotate(Vector3f.field32898.rotationDegrees(140.0F));
-         var1.rotate(Vector3f.field32902.rotationDegrees(10.0F));
+         var1.rotate(Vector3f.ZP.rotationDegrees(180.0F));
+         var1.rotate(Vector3f.XP.rotationDegrees(140.0F));
+         var1.rotate(Vector3f.ZP.rotationDegrees(10.0F));
          var1.translate(0.0, -0.4F, 0.4F);
       }
 

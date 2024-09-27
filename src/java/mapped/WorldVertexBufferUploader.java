@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.datafixers.util.Pair;
+import net.optifine.Config;
 import org.lwjgl.system.MemoryUtil;
 
 import java.nio.Buffer;
@@ -30,7 +31,7 @@ public class WorldVertexBufferUploader {
       ((Buffer)var0).clear();
       if (var3 > 0) {
          var2.method26218(MemoryUtil.memAddress(var0));
-         if (!Class7944.method26921()) {
+         if (!Config.isShaders()) {
             GlStateManager.method23854(var1, 0, var3);
          } else {
             Class7698.method25387(var1, 0, var3, var2, var0);

@@ -75,9 +75,9 @@ public class Class1271 extends AbstractGui {
       RenderSystem.pushMatrix();
       RenderSystem.enableDepthTest();
       RenderSystem.translatef(0.0F, 0.0F, 950.0F);
-      RenderSystem.method27870(false, false, false, false);
+      RenderSystem.colorMask(false, false, false, false);
       method5686(var1, 4680, 2260, -4680, -2260, -16777216);
-      RenderSystem.method27870(true, true, true, true);
+      RenderSystem.colorMask(true, true, true, true);
       RenderSystem.translatef(0.0F, 0.0F, -950.0F);
       RenderSystem.depthFunc(518);
       method5686(var1, 234, 113, 0, 0, -16777216);
@@ -105,9 +105,9 @@ public class Class1271 extends AbstractGui {
       this.field6756.method5708(var1, var5, var6);
       RenderSystem.depthFunc(518);
       RenderSystem.translatef(0.0F, 0.0F, -950.0F);
-      RenderSystem.method27870(false, false, false, false);
+      RenderSystem.colorMask(false, false, false, false);
       method5686(var1, 4680, 2260, -4680, -2260, -16777216);
-      RenderSystem.method27870(true, true, true, true);
+      RenderSystem.colorMask(true, true, true, true);
       RenderSystem.translatef(0.0F, 0.0F, 950.0F);
       RenderSystem.depthFunc(515);
       RenderSystem.popMatrix();

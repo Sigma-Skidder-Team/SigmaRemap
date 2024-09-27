@@ -16,7 +16,7 @@ public class Class5717 extends Class5715<Class883> {
       var4.push();
       var4.translate(0.0, 0.15F, 0.0);
       var4.rotate(Vector3f.YP.rotationDegrees(MathHelper.lerp(var3, var1.prevRotationYaw, var1.rotationYaw) - 90.0F));
-      var4.rotate(Vector3f.field32902.rotationDegrees(MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch)));
+      var4.rotate(Vector3f.ZP.rotationDegrees(MathHelper.lerp(var3, var1.prevRotationPitch, var1.rotationPitch)));
       this.field25105.method10998(var1, var3, 0.0F, -0.1F, 0.0F, 0.0F);
       Class5422 var9 = var5.method25597(this.field25105.method11028(field25104));
       this.field25105.method11016(var4, var9, var6, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);

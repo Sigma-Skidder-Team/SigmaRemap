@@ -6,6 +6,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.chunk.IChunk;
 import net.minecraft.world.server.ServerWorld;
+import net.optifine.Config;
 
 import java.util.UUID;
 
@@ -13,7 +14,7 @@ public class Class5995 {
    private static String[] field26171;
 
    public static ServerWorld method18604() {
-      Minecraft var2 = Class7944.method26860();
+      Minecraft var2 = Config.method26860();
       ClientWorld var3 = var2.world;
       if (var3 == null) {
          return null;

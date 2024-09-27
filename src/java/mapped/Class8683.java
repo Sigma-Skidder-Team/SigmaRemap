@@ -19,6 +19,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
+import net.optifine.Config;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -39,14 +40,14 @@ public class Class8683 {
    }
 
    private static void method31253(File var0, String var1, int var2, int var3, Framebuffer var4, Consumer<ITextComponent> var5) {
-      Minecraft var8 = Class7944.method26860();
+      Minecraft var8 = Config.method26860();
       MainWindow var9 = var8.getMainWindow();
-      GameSettings var10 = Class7944.method26928();
+      GameSettings var10 = Config.method26928();
       int var11 = var9.getFramebufferWidth();
       int var12 = var9.getFramebufferHeight();
       int var13 = var10.guiScale;
       int var14 = var9.calcGuiScale(var8.gameSettings.guiScale, var8.gameSettings.forceUnicodeFont);
-      int var15 = Class7944.method26975();
+      int var15 = Config.method26975();
       boolean var16 = GLX.method28309() && var15 > 1;
       if (var16) {
          var10.guiScale = var14 * var15;
@@ -62,7 +63,7 @@ public class Class8683 {
       if (var16) {
          var8.getFramebuffer().unbindFramebuffer();
          GlStateManager.method23833();
-         Class7944.method26928().guiScale = var13;
+         Config.method26928().guiScale = var13;
          var9.method8052(var11, var12);
       }
 

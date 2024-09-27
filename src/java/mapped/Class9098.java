@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class9098 {
    private Object[] field41624;
    private int field41625 = 0;
@@ -83,6 +85,6 @@ public class Class9098 {
 
    @Override
    public String toString() {
-      return "[" + Class7944.method26854(this.field41624) + "]";
+      return "[" + Config.method26854(this.field41624) + "]";
    }
 }

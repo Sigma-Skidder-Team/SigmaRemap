@@ -98,23 +98,23 @@ public enum Direction implements IStringSerializable {
    }
 
    public Quaternion method532() {
-      Quaternion var3 = Vector3f.field32898.rotationDegrees(90.0F);
+      Quaternion var3 = Vector3f.XP.rotationDegrees(90.0F);
       switch (Class7747.field33265[this.ordinal()]) {
          case 1:
-            return Vector3f.field32898.rotationDegrees(180.0F);
+            return Vector3f.XP.rotationDegrees(180.0F);
          case 2:
             return Quaternion.field39030.method31189();
          case 3:
-            var3.method31182(Vector3f.field32902.rotationDegrees(180.0F));
+            var3.method31182(Vector3f.ZP.rotationDegrees(180.0F));
             return var3;
          case 4:
             return var3;
          case 5:
-            var3.method31182(Vector3f.field32902.rotationDegrees(90.0F));
+            var3.method31182(Vector3f.ZP.rotationDegrees(90.0F));
             return var3;
          case 6:
          default:
-            var3.method31182(Vector3f.field32902.rotationDegrees(-90.0F));
+            var3.method31182(Vector3f.ZP.rotationDegrees(-90.0F));
             return var3;
       }
    }

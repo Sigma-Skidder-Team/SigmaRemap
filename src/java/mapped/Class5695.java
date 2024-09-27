@@ -21,7 +21,7 @@ public class Class5695 extends Class5651<Class1051, Class2822<Class1051>> {
       var2.rotate(Vector3f.YP.rotationDegrees(var8));
       if (!var1.isInWater()) {
          var2.translate(0.1F, 0.1F, -0.1F);
-         var2.rotate(Vector3f.field32902.rotationDegrees(90.0F));
+         var2.rotate(Vector3f.ZP.rotationDegrees(90.0F));
       }
    }
 }

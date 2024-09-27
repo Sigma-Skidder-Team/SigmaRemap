@@ -24,6 +24,7 @@ import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.optifine.Config;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -122,7 +123,7 @@ public class Class9680 {
       String[] var3 = new String[]{"water.png", "watercolorx.png"};
       field45224 = method37847(var2, var3, 256, 256);
       method37849();
-      if (Class7944.method26911()) {
+      if (Config.method26911()) {
          String[] var4 = new String[]{"pine.png", "pinecolor.png"};
          field45225 = method37847(var2, var4, 256, 256);
          String[] var5 = new String[]{"birch.png", "birchcolor.png"};
@@ -161,7 +162,7 @@ public class Class9680 {
    private static String method37834(String var0, String var1, String[] var2, String var3) {
       try {
          ResourceLocation var6 = new ResourceLocation(var0);
-         InputStream var7 = Class7944.method26863(var6);
+         InputStream var7 = Config.method26863(var6);
          if (var7 == null) {
             return var3;
          } else {
@@ -175,7 +176,7 @@ public class Class9680 {
                List var10 = Arrays.<String>asList(var2);
                if (!var10.contains(var9)) {
                   method37897("Invalid value: " + var1 + "=" + var9);
-                  method37897("Expected values: " + Class7944.method26854(var2));
+                  method37897("Expected values: " + Config.method26854(var2));
                   return var3;
                } else {
                   method37896("" + var1 + "=" + var9);
@@ -200,7 +201,7 @@ public class Class9680 {
       for (int var6 = 0; var6 < var4.length; var6++) {
          String var7 = var4[var6];
          String var8 = Class9402.method35772(var7, var2, var3);
-         int var9 = Class7944.method26899(var8, Integer.MIN_VALUE);
+         int var9 = Config.method26899(var8, Integer.MIN_VALUE);
          if (var9 != Integer.MIN_VALUE) {
             var5.put(var9, var7);
          } else {
@@ -256,7 +257,7 @@ public class Class9680 {
 
    private static int method37836(String var0, int var1) {
       try {
-         InputStream var4 = Class7944.method26863(new ResourceLocation(var0));
+         InputStream var4 = Config.method26863(new ResourceLocation(var0));
          if (var4 == null) {
             return var1;
          } else {
@@ -272,7 +273,7 @@ public class Class9680 {
    private static void method37837(String var0) {
       try {
          ResourceLocation var3 = new ResourceLocation(var0);
-         InputStream var4 = Class7944.method26863(var3);
+         InputStream var4 = Config.method26863(var3);
          if (var4 == null) {
             return;
          }
@@ -306,12 +307,12 @@ public class Class9680 {
          }
 
          field45265 = method37888(var5, var0, "potion.", "Potion");
-         field45243 = Class7944.method26899(var5.getProperty("xporb.time"), -1);
+         field45243 = Config.method26899(var5.getProperty("xporb.time"), -1);
       } catch (FileNotFoundException var7) {
          return;
       } catch (IOException var8) {
-         Class7944.method26811("Error parsing: " + var0);
-         Class7944.method26811(var8.getClass().getName() + ": " + var8.getMessage());
+         Config.method26811("Error parsing: " + var0);
+         Config.method26811(var8.getClass().getName() + ": " + var8.getMessage());
       }
    }
 
@@ -369,7 +370,7 @@ public class Class9680 {
 
          try {
             ResourceLocation var10 = new ResourceLocation("minecraft", var9);
-            InputStream var11 = Class7944.method26863(var10);
+            InputStream var11 = Config.method26863(var10);
             if (var11 == null) {
                method37897("File not found: " + var9);
             } else {
@@ -410,7 +411,7 @@ public class Class9680 {
             }
          }
       } else {
-         method37897("No match blocks: " + Class7944.method26856(var4));
+         method37897("No match blocks: " + Config.method26856(var4));
       }
    }
 
@@ -516,15 +517,15 @@ public class Class9680 {
    public static Class7448 method37848(String var0, int var1, int var2) {
       try {
          ResourceLocation var5 = new ResourceLocation(var0);
-         if (!Class7944.method26866(var5)) {
+         if (!Config.method26866(var5)) {
             return null;
          } else {
             method37896("Colormap " + var0);
             Class20 var6 = new Class20();
             String var7 = Class9402.method35764(var0, ".png", ".properties");
             ResourceLocation var8 = new ResourceLocation(var7);
-            if (Class7944.method26866(var8)) {
-               InputStream var9 = Class7944.method26863(var8);
+            if (Config.method26866(var8)) {
+               InputStream var9 = Config.method26863(var8);
                var6.load(var9);
                var9.close();
                method37896("Colormap properties: " + var7);
@@ -544,7 +545,7 @@ public class Class9680 {
    }
 
    public static void method37849() {
-      field45249 = field45226 == null && field45225 == null && field45228 == null && field45227 == null && Class7944.method26906();
+      field45249 = field45226 == null && field45225 == null && field45228 == null && field45227 == null && Config.method26906();
    }
 
    public static int method37850(Class8557 var0, BlockState var1, IBlockDisplayReader var2, BlockPos var3, Class8391 var4) {
@@ -568,7 +569,7 @@ public class Class9680 {
 
          Class7448 var9 = method37852(var8);
          if (var9 != null) {
-            if (Class7944.method26909() && !var9.method24054()) {
+            if (Config.method26909() && !var9.method24054()) {
                return method37853(var1, var2, var3, var9, var4.method29421());
             }
 
@@ -615,7 +616,7 @@ public class Class9680 {
                   }
                }
 
-               return Class7944.method26909() && !var10.method24054()
+               return Config.method26909() && !var10.method24054()
                   ? method37853(var1, var2, var3, var10, var4.method29421())
                   : var10.method24053(var8, var2, var3);
             }
@@ -629,7 +630,7 @@ public class Class9680 {
 
    public static Biome method37851(IBlockDisplayReader var0, BlockPos var1) {
       Biome var4 = Class8708.method31415(var0, var1);
-      if ((var4 == Class8708.field39312 || var4 == Class8708.field39313) && !Class7944.method26906()) {
+      if ((var4 == Class8708.field39312 || var4 == Class8708.field39313) && !Config.method26906()) {
          var4 = Class8708.field39311;
       }
 
@@ -674,7 +675,7 @@ public class Class9680 {
       int var11 = var2.getY();
       int var12 = var2.getZ();
       Class2001 var13 = var4;
-      int var14 = Class7944.method26910();
+      int var14 = Config.method26910();
       int var15 = var14 * 2 + 1;
       int var16 = var15 * var15;
 
@@ -704,7 +705,7 @@ public class Class9680 {
       if (var7 == null) {
          return method37855().method29465(var1, var0, var2, 0);
       } else {
-         return Class7944.method26909() && !((Class7443)var7).method24054()
+         return Config.method26909() && !((Class7443)var7).method24054()
             ? method37853(var1, var0, var2, (Class7443)var7, var3.method29421())
             : ((Class7443)var7).method24053(var1, var0, var2);
       }
@@ -991,7 +992,7 @@ public class Class9680 {
                   var13 = Class9115.method34000(new ResourceLocation(var12).toString());
                }
             } catch (Class2496 var15) {
-               Class7944.method26811("ResourceLocationException: " + var15.getMessage());
+               Config.method26811("ResourceLocationException: " + var15.getMessage());
             }
 
             if (var13 < 0) {
@@ -1135,7 +1136,7 @@ public class Class9680 {
          String var10 = var0.getProperty(var9);
          if (var9.startsWith(var2)) {
             String var11 = Class9402.method35762(var9, var2);
-            int var12 = Class7944.method26899(var11, -1);
+            int var12 = Config.method26899(var11, -1);
             int var13 = method37845(var10);
             if (var12 >= 0 && var12 < var6.length && var13 >= 0) {
                var6[var12] = var13;
@@ -1429,11 +1430,11 @@ public class Class9680 {
    }
 
    private static void method37896(String var0) {
-      Class7944.method26810("CustomColors: " + var0);
+      Config.method26810("CustomColors: " + var0);
    }
 
    private static void method37897(String var0) {
-      Class7944.method26811("CustomColors: " + var0);
+      Config.method26811("CustomColors: " + var0);
    }
 
    public static int method37898(int var0) {

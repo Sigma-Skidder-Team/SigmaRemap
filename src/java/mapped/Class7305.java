@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.optifine.Config;
 import org.apache.commons.lang3.StringEscapeUtils;
 
 public class Class7305 {
@@ -31,7 +32,7 @@ public class Class7305 {
    private static final Pattern field31320 = Pattern.compile(".*\"text\":\"([^\"]+)\".*");
 
    public Class7305(String var1, String var2) {
-      String[] var5 = Class7944.method26903(var1, ".");
+      String[] var5 = Config.method26903(var1, ".");
       this.field31301 = Arrays.<String>copyOfRange(var5, 0, var5.length - 1);
       this.field31302 = var5[var5.length - 1];
       if (var2.startsWith("!")) {
@@ -134,7 +135,7 @@ public class Class7305 {
          if (var1.equals("count")) {
             return Class36.method95(var4.size());
          } else {
-            int var5 = Class7944.method26899(var1, -1);
+            int var5 = Config.method26899(var1, -1);
             return var5 >= 0 && var5 < var4.size() ? var4.get(var5) : null;
          }
       }

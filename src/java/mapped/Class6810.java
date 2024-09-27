@@ -5,6 +5,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.optifine.Config;
 
 import java.util.Properties;
 
@@ -65,18 +66,18 @@ public class Class6810 {
       } else {
          int var7 = 0;
          if (var5 != null) {
-            var7 = Class7944.method26899(var5, -1);
+            var7 = Config.method26899(var5, -1);
             if (var7 < 0) {
-               Class7944.method26811("Invalid minHeight: " + var5);
+               Config.method26811("Invalid minHeight: " + var5);
                return null;
             }
          }
 
          int var8 = 256;
          if (var6 != null) {
-            var8 = Class7944.method26899(var6, -1);
+            var8 = Config.method26899(var6, -1);
             if (var8 < 0) {
-               Class7944.method26811("Invalid maxHeight: " + var6);
+               Config.method26811("Invalid maxHeight: " + var6);
                return null;
             }
          }
@@ -86,7 +87,7 @@ public class Class6810 {
             var9.method36837(new Class7589(var7, var8));
             return var9;
          } else {
-            Class7944.method26811("Invalid minHeight, maxHeight: " + var5 + ", " + var6);
+            Config.method26811("Invalid minHeight, maxHeight: " + var5 + ", " + var6);
             return null;
          }
       }
@@ -94,7 +95,7 @@ public class Class6810 {
 
    public boolean method20749(String var1) {
       if (this.field29644 == null || this.field29644.length == 0) {
-         Class7944.method26811("Invalid skins for rule: " + this.field29643);
+         Config.method26811("Invalid skins for rule: " + this.field29643);
          return false;
       } else if (this.field29645 != null) {
          return true;
@@ -103,7 +104,7 @@ public class Class6810 {
          boolean var4 = this.field29641.startsWith("optifine/mob/");
          ResourceLocation var5 = Class9387.method35639(this.field29642, var4);
          if (var5 == null) {
-            Class7944.method26811("Invalid path: " + this.field29642.getPath());
+            Config.method26811("Invalid path: " + this.field29642.getPath());
             return false;
          } else {
             for (int var6 = 0; var6 < this.field29645.length; var6++) {
@@ -111,12 +112,12 @@ public class Class6810 {
                if (var7 > 1) {
                   ResourceLocation var8 = Class9387.method35641(var5, var7);
                   if (var8 == null) {
-                     Class7944.method26811("Invalid path: " + this.field29642.getPath());
+                     Config.method26811("Invalid path: " + this.field29642.getPath());
                      return false;
                   }
 
-                  if (!Class7944.method26866(var8)) {
-                     Class7944.method26811("Texture not found: " + var8.getPath());
+                  if (!Config.method26866(var8)) {
+                     Config.method26811("Texture not found: " + var8.getPath());
                      return false;
                   }
 
@@ -128,14 +129,14 @@ public class Class6810 {
 
             if (this.field29646 != null) {
                if (this.field29646.length > this.field29645.length) {
-                  Class7944.method26811("More weights defined than skins, trimming weights: " + var1);
+                  Config.method26811("More weights defined than skins, trimming weights: " + var1);
                   int[] var9 = new int[this.field29645.length];
                   System.arraycopy(this.field29646, 0, var9, 0, var9.length);
                   this.field29646 = var9;
                }
 
                if (this.field29646.length < this.field29645.length) {
-                  Class7944.method26811("Less weights defined than skins, expanding weights: " + var1);
+                  Config.method26811("Less weights defined than skins, expanding weights: " + var1);
                   int[] var10 = new int[this.field29645.length];
                   System.arraycopy(this.field29646, 0, var10, 0, this.field29646.length);
                   int var12 = Class7317.method23167(this.field29646);
@@ -152,7 +153,7 @@ public class Class6810 {
 
                for (int var13 = 0; var13 < this.field29646.length; var13++) {
                   if (this.field29646[var13] < 0) {
-                     Class7944.method26811("Invalid weight: " + this.field29646[var13]);
+                     Config.method26811("Invalid weight: " + this.field29646[var13]);
                      return false;
                   }
 
@@ -162,18 +163,18 @@ public class Class6810 {
 
                this.field29653 = var11;
                if (this.field29653 <= 0) {
-                  Class7944.method26811("Invalid sum of all weights: " + var11);
+                  Config.method26811("Invalid sum of all weights: " + var11);
                   this.field29653 = 1;
                }
             }
 
             if (this.field29654 == Class8896.field40259) {
-               Class7944.method26811("Invalid professions or careers: " + var1);
+               Config.method26811("Invalid professions or careers: " + var1);
                return false;
             } else if (this.field29655 != Class8896.field40260) {
                return true;
             } else {
-               Class7944.method26811("Invalid collar colors: " + var1);
+               Config.method26811("Invalid collar colors: " + var1);
                return false;
             }
          }
@@ -236,7 +237,7 @@ public class Class6810 {
                }
 
                Class112 var27 = var24.method4382();
-               if (!Class7944.method26943(var27, this.field29655)) {
+               if (!Config.method26943(var27, this.field29655)) {
                   return false;
                }
             }
@@ -248,7 +249,7 @@ public class Class6810 {
                }
 
                Class112 var28 = var25.method5256();
-               if (!Class7944.method26943(var28, this.field29655)) {
+               if (!Config.method26943(var28, this.field29655)) {
                   return false;
                }
             }
@@ -266,7 +267,7 @@ public class Class6810 {
          }
 
          if (this.field29657 != null) {
-            ClientWorld var15 = Class7944.method26860().world;
+            ClientWorld var15 = Config.method26860().world;
             if (var15 != null) {
                int var21 = var15.method7002();
                if (!this.field29657.method36838(var21)) {
@@ -276,7 +277,7 @@ public class Class6810 {
          }
 
          if (this.field29658 != null) {
-            ClientWorld var16 = Class7944.method26860().world;
+            ClientWorld var16 = Config.method26860().world;
             if (var16 != null) {
                int var22 = (int)var16.method6784();
                if (!this.field29658.method36838(var22)) {
@@ -286,7 +287,7 @@ public class Class6810 {
          }
 
          if (this.field29659 != null) {
-            ClientWorld var17 = Class7944.method26860().world;
+            ClientWorld var17 = Config.method26860().world;
             if (var17 != null) {
                Class1989 var23 = Class1989.method8276(var17, 0.0F);
                if (!Class8720.method31458(this.field29659, var23)) {

@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.optifine.Config;
+import net.optifine.shaders.ShadersRender;
 
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
@@ -15,11 +17,11 @@ public class Class8836 {
    private int field39909;
    private Class9380<Class8697> field39910 = new Class9380<Class8697>();
    private Class8697 field39911 = null;
-   private IntBuffer field39912 = Class7944.method26984(this.field39907);
-   private IntBuffer field39913 = Class7944.method26984(this.field39907);
+   private IntBuffer field39912 = Config.method26984(this.field39907);
+   private IntBuffer field39913 = Config.method26984(this.field39907);
    private final int field39914 = DefaultVertexFormats.field43334.method26216();
    private int field39915 = 7;
-   private boolean field39916 = Class7944.method26921();
+   private boolean field39916 = Config.isShaders();
 
    public Class8836(RenderType var1) {
       this.field39905 = var1;
@@ -157,7 +159,7 @@ public class Class8836 {
       GlStateManager.method23747(GlStateManager.GL_COPY_READ_BUFFER, this.field39906);
       GlStateManager.method23747(GlStateManager.GL_COPY_WRITE_BUFFER, this.field39906);
       GlStateManager.method23887(GlStateManager.GL_COPY_READ_BUFFER, GlStateManager.GL_COPY_WRITE_BUFFER, var6, var8, var10);
-      Class7944.method26908("Copy VBO range");
+      Config.method26908("Copy VBO range");
       GlStateManager.method23747(GlStateManager.GL_COPY_READ_BUFFER, 0);
       GlStateManager.method23747(GlStateManager.GL_COPY_WRITE_BUFFER, 0);
    }
@@ -174,17 +176,17 @@ public class Class8836 {
       int var9 = GlStateManager.method23746();
       GlStateManager.method23747(GlStateManager.GL_ARRAY_BUFFER, var9);
       GlStateManager.method23885(GlStateManager.GL_ARRAY_BUFFER, var7, GlStateManager.GL_STATIC_DRAW);
-      Class7944.method26908("Expand VBO");
+      Config.method26908("Expand VBO");
       GlStateManager.method23747(GlStateManager.GL_ARRAY_BUFFER, 0);
       GlStateManager.method23747(GlStateManager.GL_COPY_READ_BUFFER, this.field39906);
       GlStateManager.method23747(GlStateManager.GL_COPY_WRITE_BUFFER, var9);
       GlStateManager.method23887(GlStateManager.GL_COPY_READ_BUFFER, GlStateManager.GL_COPY_WRITE_BUFFER, 0L, 0L, var5);
-      Class7944.method26908("Copy VBO: " + var7);
+      Config.method26908("Copy VBO: " + var7);
       GlStateManager.method23747(GlStateManager.GL_COPY_READ_BUFFER, 0);
       GlStateManager.method23747(GlStateManager.GL_COPY_WRITE_BUFFER, 0);
       GlStateManager.method23749(this.field39906);
-      this.field39912 = Class7944.method26984(var4);
-      this.field39913 = Class7944.method26984(var4);
+      this.field39912 = Config.method26984(var4);
+      this.field39913 = Config.method26984(var4);
       this.field39906 = var9;
       this.field39907 = var4;
    }
@@ -210,7 +212,7 @@ public class Class8836 {
       this.method31984();
       DefaultVertexFormats.field43334.method26218(0L);
       if (this.field39916) {
-         Class5463.method17166();
+         ShadersRender.method17166();
       }
 
       ((Buffer)this.field39912).flip();

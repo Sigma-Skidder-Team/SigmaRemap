@@ -207,7 +207,7 @@ public class ShulkerInfo extends Module {
         byte var11 = 1;
         int var12 = (int) Math.ceil((float) var3.size() / 9.0F) * (var10 + var11) + var8 * 2 + var9;
         int var13 = 9 * (var10 + var11) + var8 * 2;
-        RenderSystem.method27821();
+        RenderSystem.disableLighting();
         GL11.glAlphaFunc(519, 0.0F);
         if (!var5) {
             RenderUtil.method11424(
@@ -231,7 +231,7 @@ public class ShulkerInfo extends Module {
             ItemStack var15 = var3.get(var14);
             int var16 = var2 + var9 + var8 + var14 / 9 * (var10 + var11);
             int var17 = var1 + var8 + var14 % 9 * (var10 + var11);
-            RenderSystem.method27821();
+            RenderSystem.disableLighting();
             if (var14 == this.field23841 && var5) {
                 RenderUtil.method11424((float) var17, (float) var16, (float) var10, (float) var10, MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.15F));
             }
@@ -241,7 +241,7 @@ public class ShulkerInfo extends Module {
                 int var18 = var10 - ResourceRegistry.JelloLightFont20.method23942("" + var15.count);
                 int var19 = ResourceRegistry.JelloLightFont20.method23942("" + var15.count);
                 GL11.glAlphaFunc(519, 0.0F);
-                RenderSystem.method27821();
+                RenderSystem.disableLighting();
                 RenderUtil.method11450(
                         (float) (var17 + var18 - 17 - var19 / 4),
                         (float) (var16 + 7),
@@ -263,7 +263,7 @@ public class ShulkerInfo extends Module {
             int var25 = var2 + var9 + var8 + var23 / 9 * (var10 + var11);
             int var27 = var1 + var8 + var23 % 9 * (var10 + var11);
             if (var23 == this.field23841 && var5) {
-                RenderSystem.method27821();
+                RenderSystem.disableLighting();
                 int var29 = mc.fontRenderer.getStringWidth(var24.method32149().getUnformattedComponentText());
                 List var32 = this.method16677(var24);
 

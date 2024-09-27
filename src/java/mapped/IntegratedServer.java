@@ -12,6 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.optifine.Config;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -87,7 +88,7 @@ public class IntegratedServer extends MinecraftServer {
 
       if (!this.field8921) {
          super.method1310(var1);
-         int var6 = Math.max(2, this.field8920.gameSettings.field44574 + -1);
+         int var6 = Math.max(2, this.field8920.gameSettings.renderDistanceChunks + -1);
          if (var6 != this.getPlayerList().method19478()) {
             field1208.info("Changing view distance to {}, from {}", var6, this.getPlayerList().method19478());
             this.getPlayerList().method19487(var6);
@@ -258,7 +259,7 @@ public class IntegratedServer extends MinecraftServer {
 
    @Override
    public boolean method1434() {
-      return this.field8920.gameSettings.field44677;
+      return this.field8920.gameSettings.syncChunkWrites;
    }
 
    private void method6490() {
@@ -268,11 +269,11 @@ public class IntegratedServer extends MinecraftServer {
    }
 
    private void method6491(ServerWorld var1) {
-      if (!Class7944.method26887()) {
+      if (!Config.method26887()) {
          this.method6494(var1);
       }
 
-      if (!Class7944.method26878()) {
+      if (!Config.method26878()) {
          this.method6493(var1);
       }
 
@@ -299,7 +300,7 @@ public class IntegratedServer extends MinecraftServer {
       if (this.method1286() == GameType.field11103) {
          long var4 = var1.method6784();
          long var6 = var4 % 24000L;
-         if (Class7944.method26886()) {
+         if (Config.method26886()) {
             if (var6 <= 1000L) {
                var1.method6896(var4 - var6 + 1001L);
             }
@@ -309,7 +310,7 @@ public class IntegratedServer extends MinecraftServer {
             }
          }
 
-         if (Class7944.method26888()) {
+         if (Config.method26888()) {
             if (var6 <= 14000L) {
                var1.method6896(var4 - var6 + 14001L);
             }

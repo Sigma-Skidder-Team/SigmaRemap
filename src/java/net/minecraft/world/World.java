@@ -688,7 +688,7 @@ public abstract class World implements Class1660, AutoCloseable {
    }
 
    @Override
-   public <T extends Entity> List<T> method6772(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
+   public <T extends Entity> List<T> getEntitiesInAABBexcluding(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       this.getProfiler().func_230035_c_("getEntities");
       int var6 = MathHelper.floor((var2.minX - 2.0) / 16.0);
       int var7 = MathHelper.method37774((var2.maxX + 2.0) / 16.0);

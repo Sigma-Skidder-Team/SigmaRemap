@@ -413,7 +413,7 @@ public class ZombieEntity extends Class1009 {
                      var1.addEntity(var10);
                   }
                } else {
-                  List var14 = var1.<Entity>method6772(Class1089.class, this.getBoundingBox().method19663(5.0, 3.0, 5.0), Class8088.field34759);
+                  List var14 = var1.<Entity>getEntitiesInAABBexcluding(Class1089.class, this.getBoundingBox().method19663(5.0, 3.0, 5.0), Class8088.field34759);
                   if (!var14.isEmpty()) {
                      Class1089 var11 = (Class1089)var14.get(0);
                      var11.method5071(true);

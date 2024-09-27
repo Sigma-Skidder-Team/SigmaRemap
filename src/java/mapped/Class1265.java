@@ -130,7 +130,7 @@ public class Class1265 extends AbstractGui {
          int var27 = var18 + var25 * 9;
          method5686(var1, var26, var27, var26 + var16, var27 + 8, var45);
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-         RenderSystem.disableAlphaTest();
+         RenderSystem.enableAlphaTest();
          RenderSystem.enableBlend();
          RenderSystem.defaultBlendFunc();
          if (var47 < var8.size()) {

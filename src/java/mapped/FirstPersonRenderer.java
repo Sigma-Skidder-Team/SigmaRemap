@@ -13,6 +13,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.HandSide;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 import java.util.Objects;
 
@@ -56,8 +58,8 @@ public class FirstPersonRenderer {
       var1.push();
       float var8 = var4 != HandSide.field14418 ? -1.0F : 1.0F;
       var1.rotate(Vector3f.YP.rotationDegrees(92.0F));
-      var1.rotate(Vector3f.field32898.rotationDegrees(45.0F));
-      var1.rotate(Vector3f.field32902.rotationDegrees(var8 * -41.0F));
+      var1.rotate(Vector3f.XP.rotationDegrees(45.0F));
+      var1.rotate(Vector3f.ZP.rotationDegrees(var8 * -41.0F));
       var1.translate((double)(var8 * 0.3F), -1.1F, 0.45F);
       if (var4 != HandSide.field14418) {
          var7.method17891(var1, var2, var3, this.field45078.player);
@@ -73,7 +75,7 @@ public class FirstPersonRenderer {
       var1.translate((double)(var10 * 0.125F), -0.125, 0.0);
       if (!this.field45078.player.isInvisible()) {
          var1.push();
-         var1.rotate(Vector3f.field32902.rotationDegrees(var10 * 10.0F));
+         var1.rotate(Vector3f.ZP.rotationDegrees(var10 * 10.0F));
          this.method37586(var1, var2, var3, var4, var6, var5);
          var1.pop();
       }
@@ -86,7 +88,7 @@ public class FirstPersonRenderer {
       float var14 = 0.4F * MathHelper.sin(var11 * (float) (Math.PI * 2));
       float var15 = -0.3F * MathHelper.sin(var6 * (float) Math.PI);
       var1.translate((double)(var10 * var13), (double)(var14 - 0.3F * var12), (double)var15);
-      var1.rotate(Vector3f.field32898.rotationDegrees(var12 * -45.0F));
+      var1.rotate(Vector3f.XP.rotationDegrees(var12 * -45.0F));
       var1.rotate(Vector3f.YP.rotationDegrees(var10 * var12 * -30.0F));
       this.method37585(var1, var2, var3, var7);
       var1.pop();
@@ -99,7 +101,7 @@ public class FirstPersonRenderer {
       var1.translate(0.0, (double)(-var10 / 2.0F), (double)var11);
       float var12 = this.method37581(var4);
       var1.translate(0.0, (double)(0.04F + var5 * -1.2F + var12 * -0.5F), -0.72F);
-      var1.rotate(Vector3f.field32898.rotationDegrees(var12 * -85.0F));
+      var1.rotate(Vector3f.XP.rotationDegrees(var12 * -85.0F));
       if (!this.field45078.player.isInvisible()) {
          var1.push();
          var1.rotate(Vector3f.YP.rotationDegrees(90.0F));
@@ -109,14 +111,14 @@ public class FirstPersonRenderer {
       }
 
       float var13 = MathHelper.sin(var9 * (float) Math.PI);
-      var1.rotate(Vector3f.field32898.rotationDegrees(var13 * 20.0F));
+      var1.rotate(Vector3f.XP.rotationDegrees(var13 * 20.0F));
       var1.method35292(2.0F, 2.0F, 2.0F);
       this.method37585(var1, var2, var3, this.field45079);
    }
 
    private void method37585(MatrixStack var1, Class7733 var2, int var3, ItemStack var4) {
       var1.rotate(Vector3f.YP.rotationDegrees(180.0F));
-      var1.rotate(Vector3f.field32902.rotationDegrees(180.0F));
+      var1.rotate(Vector3f.ZP.rotationDegrees(180.0F));
       var1.method35292(0.38F, 0.38F, 0.38F);
       var1.translate(-0.5, -0.5, 0.0);
       var1.method35292(0.0078125F, 0.0078125F, 0.0078125F);
@@ -144,12 +146,12 @@ public class FirstPersonRenderer {
       float var15 = MathHelper.sin(var5 * var5 * (float) Math.PI);
       float var16 = MathHelper.sin(var11 * (float) Math.PI);
       var1.rotate(Vector3f.YP.rotationDegrees(var10 * var16 * 70.0F));
-      var1.rotate(Vector3f.field32902.rotationDegrees(var10 * var15 * -20.0F));
+      var1.rotate(Vector3f.ZP.rotationDegrees(var10 * var15 * -20.0F));
       ClientPlayerEntity var17 = this.field45078.player;
       this.field45078.getTextureManager().bindTexture(var17.method5371());
       var1.translate((double)(var10 * -1.0F), 3.6F, 3.5);
-      var1.rotate(Vector3f.field32902.rotationDegrees(var10 * 120.0F));
-      var1.rotate(Vector3f.field32898.rotationDegrees(200.0F));
+      var1.rotate(Vector3f.ZP.rotationDegrees(var10 * 120.0F));
+      var1.rotate(Vector3f.XP.rotationDegrees(200.0F));
       var1.rotate(Vector3f.YP.rotationDegrees(var10 * -135.0F));
       var1.translate((double)(var10 * 5.6F), 0.0, 0.0);
       Class5713 var18 = (Class5713)this.field45085.<AbstractClientPlayerEntity>method32212(var17);
@@ -172,8 +174,8 @@ public class FirstPersonRenderer {
       int var10 = var3 != HandSide.field14418 ? -1 : 1;
       var1.translate((double)(var11 * 0.6F * (float)var10), (double)(var11 * -0.5F), (double)(var11 * 0.0F));
       var1.rotate(Vector3f.YP.rotationDegrees((float)var10 * var11 * 90.0F));
-      var1.rotate(Vector3f.field32898.rotationDegrees(var11 * 10.0F));
-      var1.rotate(Vector3f.field32902.rotationDegrees((float)var10 * var11 * 30.0F));
+      var1.rotate(Vector3f.XP.rotationDegrees(var11 * 10.0F));
+      var1.rotate(Vector3f.ZP.rotationDegrees((float)var10 * var11 * 30.0F));
    }
 
    private void method37588(MatrixStack var1, HandSide var2, float var3) {
@@ -181,8 +183,8 @@ public class FirstPersonRenderer {
       float var7 = MathHelper.sin(var3 * var3 * (float) Math.PI);
       var1.rotate(Vector3f.YP.rotationDegrees((float)var6 * (45.0F + var7 * -20.0F)));
       float var8 = MathHelper.sin(MathHelper.method37765(var3) * (float) Math.PI);
-      var1.rotate(Vector3f.field32902.rotationDegrees((float)var6 * var8 * -20.0F));
-      var1.rotate(Vector3f.field32898.rotationDegrees(var8 * -80.0F));
+      var1.rotate(Vector3f.ZP.rotationDegrees((float)var6 * var8 * -20.0F));
+      var1.rotate(Vector3f.XP.rotationDegrees(var8 * -80.0F));
       var1.rotate(Vector3f.YP.rotationDegrees((float)var6 * -45.0F));
    }
 
@@ -226,7 +228,7 @@ public class FirstPersonRenderer {
 
       float var18 = MathHelper.lerp(var1, var4.field6138, var4.field6136);
       float var20 = MathHelper.lerp(var1, var4.field6137, var4.field6135);
-      var2.rotate(Vector3f.field32898.rotationDegrees((var4.getPitch(var1) - var18) * 0.1F));
+      var2.rotate(Vector3f.XP.rotationDegrees((var4.getPitch(var1) - var18) * 0.1F));
       var2.rotate(Vector3f.YP.rotationDegrees((var4.getYaw(var1) - var20) * 0.1F));
       if (var11) {
          float var21 = var9 != Hand.MAIN_HAND ? 0.0F : var8;
@@ -252,7 +254,7 @@ public class FirstPersonRenderer {
    private void method37591(
            AbstractClientPlayerEntity var1, float var2, float var3, Hand var4, float var5, ItemStack var6, float var7, MatrixStack var8, Class7733 var9, int var10
    ) {
-      if (!Class7944.method26921() || ! Shaders.method33153(var4)) {
+      if (!Config.isShaders() || ! Shaders.method33153(var4)) {
          boolean var13 = var4 == Hand.MAIN_HAND;
          HandSide var14 = var13 ? var1.getPrimaryHand() : var1.getPrimaryHand().method8920();
          var8.push();
@@ -273,9 +275,9 @@ public class FirstPersonRenderer {
             if (var1.isHandActive() && var1.getItemInUseCount() > 0 && var1.getActiveHand() == var4) {
                this.method37589(var8, var14, var7);
                var8.translate((double)((float)var30 * -0.4785682F), -0.094387F, 0.05731531F);
-               var8.rotate(Vector3f.field32898.rotationDegrees(-11.935F));
+               var8.rotate(Vector3f.XP.rotationDegrees(-11.935F));
                var8.rotate(Vector3f.YP.rotationDegrees((float)var30 * 65.3F));
-               var8.rotate(Vector3f.field32902.rotationDegrees((float)var30 * -9.785F));
+               var8.rotate(Vector3f.ZP.rotationDegrees((float)var30 * -9.785F));
                float var33 = (float)var6.method32137() - ((float)this.field45078.player.getItemInUseCount() - var2 + 1.0F);
                float var37 = var33 / (float)Class3261.method11767(var6);
                if (var37 > 1.0F) {
@@ -327,9 +329,9 @@ public class FirstPersonRenderer {
                   case 5:
                      this.method37589(var8, var14, var7);
                      var8.translate((double)((float)var29 * -0.2785682F), 0.18344387F, 0.15731531F);
-                     var8.rotate(Vector3f.field32898.rotationDegrees(-13.935F));
+                     var8.rotate(Vector3f.XP.rotationDegrees(-13.935F));
                      var8.rotate(Vector3f.YP.rotationDegrees((float)var29 * 35.3F));
-                     var8.rotate(Vector3f.field32902.rotationDegrees((float)var29 * -9.785F));
+                     var8.rotate(Vector3f.ZP.rotationDegrees((float)var29 * -9.785F));
                      float var31 = (float)var6.method32137() - ((float)this.field45078.player.getItemInUseCount() - var2 + 1.0F);
                      float var34 = var31 / 20.0F;
                      var34 = (var34 * var34 + var34 * 2.0F) / 3.0F;
@@ -351,9 +353,9 @@ public class FirstPersonRenderer {
                   case 6:
                      this.method37589(var8, var14, var7);
                      var8.translate((double)((float)var29 * -0.5F), 0.7F, 0.1F);
-                     var8.rotate(Vector3f.field32898.rotationDegrees(-55.0F));
+                     var8.rotate(Vector3f.XP.rotationDegrees(-55.0F));
                      var8.rotate(Vector3f.YP.rotationDegrees((float)var29 * 35.3F));
-                     var8.rotate(Vector3f.field32902.rotationDegrees((float)var29 * -9.785F));
+                     var8.rotate(Vector3f.ZP.rotationDegrees((float)var29 * -9.785F));
                      float var38 = (float)var6.method32137() - ((float)this.field45078.player.getItemInUseCount() - var2 + 1.0F);
                      float var21 = var38 / 10.0F;
                      if (var21 > 1.0F) {
@@ -376,7 +378,7 @@ public class FirstPersonRenderer {
                int var17 = var15 ? 1 : -1;
                var8.translate((double)((float)var17 * -0.4F), 0.8F, 0.3F);
                var8.rotate(Vector3f.YP.rotationDegrees((float)var17 * 65.0F));
-               var8.rotate(Vector3f.field32902.rotationDegrees((float)var17 * -85.0F));
+               var8.rotate(Vector3f.ZP.rotationDegrees((float)var17 * -85.0F));
             } else {
                Client.getInstance().getEventManager().call(var16);
 
@@ -440,14 +442,14 @@ public class FirstPersonRenderer {
 
       if (this.field45081 < 0.1F) {
          this.field45079 = var4;
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Shaders.method33147(this.field45079);
          }
       }
 
       if (this.field45083 < 0.1F) {
          this.field45080 = var5;
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Shaders.method33148(this.field45080);
          }
       }

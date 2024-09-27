@@ -27,7 +27,7 @@ public class Class4592 extends Class4587 {
       float var7 = 0.05F + 0.5F * MathHelper.sin(var6 * (float) Math.PI);
       MatrixStack var8 = new MatrixStack();
       var8.rotate(var2.getRotation());
-      var8.rotate(Vector3f.field32898.rotationDegrees(150.0F * var6 - 60.0F));
+      var8.rotate(Vector3f.XP.rotationDegrees(150.0F * var6 - 60.0F));
       var8.method35292(-1.0F, -1.0F, 1.0F);
       var8.translate(0.0, -1.101F, 1.5);
       Class7735 var9 = Minecraft.getInstance().getRenderTypeBuffers().method26536();

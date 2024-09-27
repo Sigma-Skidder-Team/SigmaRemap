@@ -7,6 +7,7 @@ import java.util.Properties;
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 import org.lwjgl.opengl.GL11;
 
 public class Class9200 {
@@ -38,7 +39,7 @@ public class Class9200 {
       this.field42254 = var8;
       int var12 = var7 * var8 * 4;
       if (var2.length % var12 != 0) {
-         Class7944.method26811("Invalid animated texture length: " + var2.length + ", frameWidth: " + var7 + ", frameHeight: " + var8);
+         Config.method26811("Invalid animated texture length: " + var2.length + ", frameWidth: " + var7 + ", frameHeight: " + var8);
       }
 
       this.field42260 = var2;
@@ -50,20 +51,20 @@ public class Class9200 {
       }
 
       String var22 = (String)var9.get("duration");
-      int var15 = Math.max(Class7944.method26899(var22, 1), 1);
+      int var15 = Math.max(Config.method26899(var22, 1), 1);
       this.field42255 = new Class9642[var13];
 
       for (int var16 = 0; var16 < this.field42255.length; var16++) {
          String var17 = (String)var9.get("tile." + var16);
-         int var18 = Class7944.method26899(var17, var16);
+         int var18 = Config.method26899(var17, var16);
          String var19 = (String)var9.get("duration." + var16);
-         int var20 = Math.max(Class7944.method26899(var19, var15), 1);
+         int var20 = Math.max(Config.method26899(var19, var15), 1);
          Class9642 var21 = new Class9642(var18, var20);
          this.field42255[var16] = var21;
       }
 
-      this.field42257 = Class7944.method26901(var9.getProperty("interpolate"), false);
-      this.field42258 = Class7944.method26899(var9.getProperty("skip"), 0);
+      this.field42257 = Config.method26901(var9.getProperty("interpolate"), false);
+      this.field42258 = Config.method26899(var9.getProperty("skip"), 0);
       if (this.field42257) {
          this.field42259 = GLAllocation.method22266(var12);
       }

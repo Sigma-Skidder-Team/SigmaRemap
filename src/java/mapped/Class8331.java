@@ -6,6 +6,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -83,7 +84,7 @@ public class Class8331 {
          if (var5 != null) {
             method29213(var5, var0);
          } else {
-            Class7944.method26811("BaseID not found: " + var4);
+            Config.method26811("BaseID not found: " + var4);
          }
       }
    }
@@ -96,15 +97,15 @@ public class Class8331 {
          try {
             JsonObject var7 = method29218(var6);
             if (var7 == null) {
-               Class7944.method26811("Model not found: " + var6);
+               Config.method26811("Model not found: " + var6);
                return;
             }
 
             method29213(var7, var0);
          } catch (IOException var8) {
-            Class7944.method26813("" + var8.getClass().getName() + ": " + var8.getMessage());
+            Config.method26813("" + var8.getClass().getName() + ": " + var8.getMessage());
          } catch (JsonParseException var9) {
-            Class7944.method26813("" + var9.getClass().getName() + ": " + var9.getMessage());
+            Config.method26813("" + var9.getClass().getName() + ": " + var9.getMessage());
          } catch (Exception var10) {
             var10.printStackTrace();
          }
@@ -146,10 +147,10 @@ public class Class8331 {
             if (!var1.containsKey(var4)) {
                var1.put(var4, var0);
             } else {
-               Class7944.method26811("Duplicate model ID: " + var4);
+               Config.method26811("Duplicate model ID: " + var4);
             }
          } else {
-            Class7944.method26811("Empty model ID: " + var4);
+            Config.method26811("Empty model ID: " + var4);
          }
       }
    }
@@ -197,9 +198,9 @@ public class Class8331 {
    }
 
    public static JsonObject method29218(ResourceLocation var0) throws IOException, JsonParseException {
-      InputStream var3 = Class7944.method26863(var0);
+      InputStream var3 = Config.method26863(var0);
       if (var3 != null) {
-         String var4 = Class7944.method26926(var3, "ASCII");
+         String var4 = Config.method26926(var3, "ASCII");
          var3.close();
          JsonParser var5 = new JsonParser();
          return (JsonObject)var5.parse(var4);

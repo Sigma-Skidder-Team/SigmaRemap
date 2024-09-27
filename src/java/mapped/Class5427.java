@@ -46,7 +46,7 @@ public class Class5427 extends Class5424 {
       Class7755 var5 = new Class7755(this.field24147, this.field24148, this.field24149, 1.0F);
       var5.method25709(this.field24145);
       var5.method25710(Vector3f.YP.rotationDegrees(180.0F));
-      var5.method25710(Vector3f.field32898.rotationDegrees(-90.0F));
+      var5.method25710(Vector3f.XP.rotationDegrees(-90.0F));
       var5.method25710(var4.method532());
       float var6 = -var5.method25701();
       float var7 = -var5.method25702();

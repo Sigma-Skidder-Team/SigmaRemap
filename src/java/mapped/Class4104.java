@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 import java.util.Map;
 
 public class Class4104 extends Class4057 {
@@ -45,7 +47,7 @@ public class Class4104 extends Class4057 {
             var7.put(Class2136.field13994, var1);
             return (Class9492)var6;
          } else {
-            Class7944.method26811("Field not found: TileEntitySkullRenderer.MODELS");
+            Config.method26811("Field not found: TileEntitySkullRenderer.MODELS");
             return null;
          }
       } else {

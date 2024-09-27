@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class9090 {
    private int field41604;
    private String field41605;
@@ -156,7 +158,7 @@ public class Class9090 {
          String var3 = this.field41606.trim();
          var3 = Class9402.method35762(var3, "vec4");
          var3 = Class9402.method35776(var3, " ()");
-         String[] var4 = Class7944.method26903(var3, ", ");
+         String[] var4 = Config.method26903(var3, ", ");
          if (var4.length != 4) {
             return null;
          } else {
@@ -165,7 +167,7 @@ public class Class9090 {
             for (int var6 = 0; var6 < var4.length; var6++) {
                String var7 = var4[var6];
                var7 = Class9402.method35769(var7, new String[]{"F", "f"});
-               float var8 = Class7944.method26900(var7, Float.MAX_VALUE);
+               float var8 = Config.method26900(var7, Float.MAX_VALUE);
                if (var8 == Float.MAX_VALUE) {
                   return null;
                }

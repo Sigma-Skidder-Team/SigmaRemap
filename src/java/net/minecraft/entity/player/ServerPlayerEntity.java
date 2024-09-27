@@ -703,7 +703,7 @@ public class ServerPlayerEntity extends PlayerEntity implements IContainerListen
                double var8 = 5.0;
                Vector3d var10 = Vector3d.method11330(var1);
                List var11 = this.world
-                  .<Class1009>method6772(
+                  .<Class1009>getEntitiesInAABBexcluding(
                      Class1009.class,
                      new AxisAlignedBB(
                         var10.getX() - 8.0,

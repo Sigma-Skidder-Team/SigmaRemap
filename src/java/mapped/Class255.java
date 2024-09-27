@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.util.Map;
 
@@ -104,7 +105,7 @@ public class Class255<T extends LivingEntity, M extends Class2797<T>, A extends 
    }
 
    public A method850(T var1, ItemStack var2, EquipmentSlotType var3, A var4) {
-      return (A)(!Reflector.field42873.exists() ? var4 : Reflector.field42873.method20217(var1, var2, var3, var4));
+      return (A)(!Reflector.field42873.exists() ? var4 : Reflector.field42873.call(var1, var2, var3, var4));
    }
 
    public ResourceLocation method851(Entity var1, ItemStack var2, EquipmentSlotType var3, String var4) {
@@ -130,7 +131,7 @@ public class Class255<T extends LivingEntity, M extends Class2797<T>, A extends 
          field912.put(var11, var12);
       }
 
-      if (Class7944.method26953()) {
+      if (Config.method26953()) {
          var12 = Class7992.method27269(var2, var3, var4, var12);
       }
 

@@ -53,7 +53,7 @@ public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
 
       var4.translate(0.0, 0.375, 0.0);
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F - var2));
-      var4.rotate(Vector3f.field32902.rotationDegrees(-var23));
+      var4.rotate(Vector3f.ZP.rotationDegrees(-var23));
       float var30 = (float)var1.method3599() - var3;
       float var31 = var1.method3597() - var3;
       if (var31 < 0.0F) {
@@ -61,7 +61,7 @@ public class Class5732<T extends AbstractMinecartEntity> extends Class5715<T> {
       }
 
       if (var30 > 0.0F) {
-         var4.rotate(Vector3f.field32898.rotationDegrees(MathHelper.sin(var30) * var30 * var31 / 10.0F * (float)var1.method3601()));
+         var4.rotate(Vector3f.XP.rotationDegrees(MathHelper.sin(var30) * var30 * var31 / 10.0F * (float)var1.method3601()));
       }
 
       int var33 = var1.method3605();

@@ -10,6 +10,8 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.ITextComponent;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 public class Class5736 extends Class5715<ItemFrameEntity> {
    private static final Class1997 field25153 = new Class1997("item_frame", "map=false");
@@ -31,7 +33,7 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
       var4.translate(-var10.getX(), -var10.getY(), -var10.getZ());
       double var11 = 0.46875;
       var4.translate((double)var9.method539() * 0.46875, (double)var9.method540() * 0.46875, (double)var9.method541() * 0.46875);
-      var4.rotate(Vector3f.field32898.rotationDegrees(var1.rotationPitch));
+      var4.rotate(Vector3f.XP.rotationDegrees(var1.rotationPitch));
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F - var1.rotationYaw));
       boolean var13 = var1.isInvisible();
       if (!var13) {
@@ -65,7 +67,7 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
          }
 
          int var21 = !var20 ? var1.method4093() : var1.method4093() % 4 * 2;
-         var4.rotate(Vector3f.field32902.rotationDegrees((float)var21 * 360.0F / 8.0F));
+         var4.rotate(Vector3f.ZP.rotationDegrees((float)var21 * 360.0F / 8.0F));
          if (!Reflector.postForgeBusEvent(Reflector.field42988, var1, this, var4, var5, var6)) {
             if (!var20) {
                var4.method35292(0.5F, 0.5F, 0.5F);
@@ -73,7 +75,7 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
                   this.field25156.method789(var19, Class2327.field15932, var6, Class213.field798, var4, var5);
                }
             } else {
-               var4.rotate(Vector3f.field32902.rotationDegrees(180.0F));
+               var4.rotate(Vector3f.ZP.rotationDegrees(180.0F));
                float var17 = 0.0078125F;
                var4.method35292(0.0078125F, 0.0078125F, 0.0078125F);
                var4.translate(-64.0, -64.0, 0.0);
@@ -112,8 +114,8 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
    }
 
    private boolean method17917(ItemFrameEntity var1) {
-      if (! Shaders.field40609) {
-         if (!Class7944.field34162) {
+      if (! Shaders.isShadowPass) {
+         if (!Config.field34162) {
             Entity var4 = this.field25155.getRenderViewEntity();
             double var5 = var1.getDistanceNearest(var4.getPosX(), var4.getPosY(), var4.getPosZ());
             if (var5 > field25157) {
@@ -129,7 +131,7 @@ public class Class5736 extends Class5715<ItemFrameEntity> {
 
    public static void method17918() {
       Minecraft var2 = Minecraft.getInstance();
-      double var3 = Class7944.method26833(var2.gameSettings.field44669, 1.0, 120.0);
+      double var3 = Config.method26833(var2.gameSettings.fov, 1.0, 120.0);
       double var5 = Math.max(6.0 * (double)var2.getMainWindow().getHeight() / var3, 16.0);
       field25157 = var5 * var5;
    }

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 import java.util.Map;
 
 public class Class6270 implements Class6267 {
@@ -27,11 +29,11 @@ public class Class6270 implements Class6267 {
             var1 = var5;
          }
 
-         int var6 = Class7944.method26899(var1, Integer.MIN_VALUE);
+         int var6 = Config.method26899(var1, Integer.MIN_VALUE);
          if (var6 != Integer.MIN_VALUE) {
             return new Class1888((float)var6);
          } else {
-            Class7944.method26811("Unknown macro value: " + var1);
+            Config.method26811("Unknown macro value: " + var1);
             return new Class1888(0.0F);
          }
       }

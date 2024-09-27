@@ -7,6 +7,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
+import net.optifine.Config;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -46,7 +47,7 @@ public class Class8896 {
    public Class9727[] method32384(String var1) {
       if (var1 != null) {
          List<Class9727> var4 = new ArrayList();
-         String[] var5 = Class7944.method26903(var1, " ");
+         String[] var5 = Config.method26903(var1, " ");
 
          for (int var6 = 0; var6 < var5.length; var6++) {
             String var7 = var5[var6];
@@ -84,7 +85,7 @@ public class Class8896 {
          if (var1.length() <= 0) {
             return null;
          } else {
-            String[] var4 = Class7944.method26903(var1, ":");
+            String[] var4 = Config.method26903(var1, ":");
             String var5 = "minecraft";
             byte var6 = 0;
             if (var4.length > 1 && this.method32387(var4)) {
@@ -171,7 +172,7 @@ public class Class8896 {
          for (int var8 = 0; var8 < var2.length; var8++) {
             String var9 = var2[var8];
             if (var9.length() > 0) {
-               String[] var10 = Class7944.method26903(var9, "=");
+               String[] var10 = Config.method26903(var9, "=");
                if (var10.length != 2) {
                   this.method32403("Invalid block property: " + var9);
                   return null;
@@ -191,7 +192,7 @@ public class Class8896 {
                   var7.put(var13, var14);
                }
 
-               String[] var15 = Class7944.method26903(var12, ",");
+               String[] var15 = Config.method26903(var12, ",");
 
                for (int var16 = 0; var16 < var15.length; var16++) {
                   String var17 = var15[var16];
@@ -318,7 +319,7 @@ public class Class8896 {
             var1 = var1.substring(1);
          }
 
-         String[] var5 = Class7944.method26903(var1, " ");
+         String[] var5 = Config.method26903(var1, " ");
          List<Class8507> var6 = new ArrayList();
 
          for (int var7 = 0; var7 < var5.length; var7++) {
@@ -375,7 +376,7 @@ public class Class8896 {
    public int method32398(String var1, int var2) {
       if (var1 != null) {
          var1 = var1.trim();
-         int var5 = Class7944.method26899(var1, -1);
+         int var5 = Config.method26899(var1, -1);
          if (var5 >= 0) {
             return var5;
          } else {
@@ -392,22 +393,22 @@ public class Class8896 {
          return null;
       } else {
          ArrayList var4 = new ArrayList();
-         String[] var5 = Class7944.method26903(var1, " ,");
+         String[] var5 = Config.method26903(var1, " ,");
 
          for (int var6 = 0; var6 < var5.length; var6++) {
             String var7 = var5[var6];
             if (!var7.contains("-")) {
-               int var14 = Class7944.method26899(var7, -1);
+               int var14 = Config.method26899(var7, -1);
                if (var14 >= 0) {
                   var4.add(var14);
                } else {
                   this.method32403("Invalid number: " + var7 + ", when parsing: " + var1);
                }
             } else {
-               String[] var8 = Class7944.method26903(var7, "-");
+               String[] var8 = Config.method26903(var7, "-");
                if (var8.length == 2) {
-                  int var9 = Class7944.method26899(var8[0], -1);
-                  int var10 = Class7944.method26899(var8[1], -1);
+                  int var9 = Config.method26899(var8[0], -1);
+                  int var10 = Config.method26899(var8[1], -1);
                   if (var9 >= 0 && var10 >= 0 && var9 <= var10) {
                      for (int var11 = var9; var11 <= var10; var11++) {
                         var4.add(var11);
@@ -436,7 +437,7 @@ public class Class8896 {
          return var2;
       } else {
          EnumSet var5 = EnumSet.<Direction>allOf(Direction.class);
-         String[] var6 = Class7944.method26903(var1, " ,");
+         String[] var6 = Config.method26903(var1, " ,");
 
          for (int var7 = 0; var7 < var6.length; var7++) {
             String var8 = var6[var7];
@@ -480,7 +481,7 @@ public class Class8896 {
       } else if (var1.equals("east")) {
          return Direction.EAST;
       } else if (!var1.equals("west")) {
-         Class7944.method26811("Unknown face: " + var1);
+         Config.method26811("Unknown face: " + var1);
          return null;
       } else {
          return Direction.WEST;
@@ -488,11 +489,11 @@ public class Class8896 {
    }
 
    public void method32402(String var1) {
-      Class7944.method26810("" + this.field40258 + ": " + var1);
+      Config.method26810("" + this.field40258 + ": " + var1);
    }
 
    public void method32403(String var1) {
-      Class7944.method26811("" + this.field40258 + ": " + var1);
+      Config.method26811("" + this.field40258 + ": " + var1);
    }
 
    public Class9532 method32404(String var1) {
@@ -500,7 +501,7 @@ public class Class8896 {
          return null;
       } else {
          Class9532 var4 = new Class9532();
-         String[] var5 = Class7944.method26903(var1, " ,");
+         String[] var5 = Config.method26903(var1, " ,");
 
          for (int var6 = 0; var6 < var5.length; var6++) {
             String var7 = var5[var6];
@@ -519,7 +520,7 @@ public class Class8896 {
    private Class7589 method32405(String var1) {
       if (var1 != null) {
          if (var1.indexOf(45) < 0) {
-            int var7 = Class7944.method26899(var1, -1);
+            int var7 = Config.method26899(var1, -1);
             if (var7 >= 0) {
                return new Class7589(var7, var7);
             } else {
@@ -527,10 +528,10 @@ public class Class8896 {
                return null;
             }
          } else {
-            String[] var4 = Class7944.method26903(var1, "-");
+            String[] var4 = Config.method26903(var1, "-");
             if (var4.length == 2) {
-               int var5 = Class7944.method26899(var4[0], -1);
-               int var6 = Class7944.method26899(var4[1], -1);
+               int var5 = Config.method26899(var4[0], -1);
+               int var6 = Config.method26899(var4[1], -1);
                if (var5 >= 0 && var6 >= 0) {
                   return new Class7589(var5, var6);
                } else {
@@ -653,7 +654,7 @@ public class Class8896 {
          return null;
       } else {
          var1 = var1.toLowerCase().trim();
-         String[] var8 = Class7944.method26903(var1, " ");
+         String[] var8 = Config.method26903(var1, " ");
          Object[] var9 = (Object[])Array.newInstance(var2.getClass().getComponentType(), var8.length);
 
          for (int var10 = 0; var10 < var8.length; var10++) {
@@ -695,7 +696,7 @@ public class Class8896 {
          return null;
       } else {
          List<Class9710> var4 = new ArrayList();
-         String[] var5 = Class7944.method26903(var1, " ");
+         String[] var5 = Config.method26903(var1, " ");
 
          for (int var6 = 0; var6 < var5.length; var6++) {
             String var7 = var5[var6];
@@ -748,7 +749,7 @@ public class Class8896 {
    public int[] method32421(String var1) {
       var1 = var1.trim();
       Set<Integer> var4 = new TreeSet();
-      String[] var5 = Class7944.method26903(var1, " ");
+      String[] var5 = Config.method26903(var1, " ");
 
       for (int var6 = 0; var6 < var5.length; var6++) {
          String var7 = var5[var6];
@@ -767,13 +768,13 @@ public class Class8896 {
       }
 
       Integer[] var12 = var4.toArray(new Integer[var4.size()]);
-      return Class7944.method26976(var12);
+      return Config.method26976(var12);
    }
 
    public int[] method32422(String var1) {
       var1 = var1.trim();
       Set<Integer> var4 = new TreeSet();
-      String[] var5 = Class7944.method26903(var1, " ");
+      String[] var5 = Config.method26903(var1, " ");
 
       for (int var6 = 0; var6 < var5.length; var6++) {
          String var7 = var5[var6];
@@ -792,6 +793,6 @@ public class Class8896 {
       }
 
       Integer[] var12 = var4.toArray(new Integer[var4.size()]);
-      return Class7944.method26976(var12);
+      return Config.method26976(var12);
    }
 }

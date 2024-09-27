@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class8494 {
    private String field37161;
    private String field37162;
@@ -9,7 +11,7 @@ public class Class8494 {
    public boolean method30079(Class6266 var1) {
       this.field37163 = var1.method19232(this.field37161);
       if (this.field37163 == null) {
-         Class7944.method26811("Model variable not found: " + this.field37161);
+         Config.method26811("Model variable not found: " + this.field37161);
          return false;
       } else {
          try {
@@ -17,8 +19,8 @@ public class Class8494 {
             this.field37164 = var4.method23270(this.field37162);
             return true;
          } catch (Class2445 var5) {
-            Class7944.method26811("Error parsing expression: " + this.field37162);
-            Class7944.method26811(var5.getClass().getName() + ": " + var5.getMessage());
+            Config.method26811("Error parsing expression: " + this.field37162);
+            Config.method26811(var5.getClass().getName() + ": " + var5.getMessage());
             return false;
          }
       }

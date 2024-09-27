@@ -685,7 +685,7 @@ public class BoatEntity extends Entity {
 
    @Override
    public Vector3d method3420(LivingEntity var1) {
-      Vector3d var4 = method3419((double)(this.getWidth() * MathHelper.field45205), (double)var1.getWidth(), this.rotationYaw);
+      Vector3d var4 = method3419((double)(this.getWidth() * MathHelper.SQRT_2), (double)var1.getWidth(), this.rotationYaw);
       double var5 = this.getPosX() + var4.x;
       double var7 = this.getPosZ() + var4.z;
       BlockPos var9 = new BlockPos(var5, this.getBoundingBox().maxY, var7);

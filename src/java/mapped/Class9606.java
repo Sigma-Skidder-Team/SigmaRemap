@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.optifine.Config;
 
 import java.lang.reflect.Array;
 import java.util.ArrayDeque;
@@ -37,11 +38,11 @@ public class Class9606 {
       long var9 = method37343(var3, var4);
       long var11 = method37342(var3, var4);
       long var13 = method37344(BlockState.class, var3, var4);
-      Class7944.method26810("New: " + var5);
-      Class7944.method26810("Clone: " + var7);
-      Class7944.method26810("NewObj: " + var9);
-      Class7944.method26810("CloneObj: " + var11);
-      Class7944.method26810("NewObjDyn: " + var13);
+      Config.method26810("New: " + var5);
+      Config.method26810("Clone: " + var7);
+      Config.method26810("NewObj: " + var9);
+      Config.method26810("CloneObj: " + var11);
+      Config.method26810("NewObjDyn: " + var13);
    }
 
    private static long method37340(int var0, int var1) {

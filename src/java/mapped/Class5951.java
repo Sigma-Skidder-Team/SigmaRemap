@@ -29,7 +29,7 @@ public class Class5951 extends Class5942<Class934> {
 
       float var11 = var1.field5289 + var10 * var2;
       var3.rotate(Vector3f.YP.method25285(-var11));
-      var3.rotate(Vector3f.field32902.rotationDegrees(80.0F));
+      var3.rotate(Vector3f.ZP.rotationDegrees(80.0F));
       float var12 = MathHelper.lerp(var2, var1.field5283, var1.field5282);
       float var13 = MathHelper.method37807(var12 + 0.25F) * 1.6F - 0.3F;
       float var14 = MathHelper.method37807(var12 + 0.75F) * 1.6F - 0.3F;

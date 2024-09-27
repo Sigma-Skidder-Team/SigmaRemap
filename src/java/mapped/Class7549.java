@@ -10,6 +10,7 @@ import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.text.ITextProperties;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.Style;
+import net.optifine.Config;
 
 public class Class7549 extends Class7548 {
    @Override
@@ -25,9 +26,9 @@ public class Class7549 extends Class7548 {
 
    private String[] method24672(Class6679 var1, int var2) {
       String var5 = var1.method20385();
-      String var6 = Class7944.method26946(var1.method20368()).trim();
+      String var6 = Config.method26946(var1.method20368()).trim();
       String[] var7 = this.method24673(var6);
-      GameSettings var8 = Class7944.method26928();
+      GameSettings var8 = Config.method26928();
       String var9 = null;
       if (!var5.equals(var1.method20366()) && var8.field44588) {
          var9 = "§8" + Class8043.method27619("of.general.id") + ": " + var1.method20366();
@@ -35,7 +36,7 @@ public class Class7549 extends Class7548 {
 
       String var10 = null;
       if (var1.method20377() != null && var8.field44588) {
-         var10 = "§8" + Class8043.method27619("of.general.from") + ": " + Class7944.method26854(var1.method20377());
+         var10 = "§8" + Class8043.method27619("of.general.from") + ": " + Config.method26854(var1.method20377());
       }
 
       String var11 = null;
@@ -79,7 +80,7 @@ public class Class7549 extends Class7548 {
    }
 
    private String[] method24674(int var1, List<String> var2) {
-      FontRenderer var5 = Class7944.method26860().fontRenderer;
+      FontRenderer var5 = Config.method26860().fontRenderer;
       ArrayList<String> var6 = new ArrayList();
 
       for (int var7 = 0; var7 < var2.size(); var7++) {

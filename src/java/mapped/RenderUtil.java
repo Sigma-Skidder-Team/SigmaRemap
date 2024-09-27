@@ -8,7 +8,6 @@ import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
@@ -260,7 +259,7 @@ public class RenderUtil {
       float var15 = (float)(var5 & 0xFF) / 255.0F;
       RenderSystem.disableTexture();
       RenderSystem.enableBlend();
-      RenderSystem.method27817();
+      RenderSystem.disableAlphaTest();
       RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
       RenderSystem.shadeModel(7425);
       Tessellator var16 = Tessellator.getInstance();
@@ -273,7 +272,7 @@ public class RenderUtil {
       var16.draw();
       RenderSystem.shadeModel(7424);
       RenderSystem.disableBlend();
-      RenderSystem.disableAlphaTest();
+      RenderSystem.enableAlphaTest();
       RenderSystem.enableTexture();
    }
 
@@ -296,7 +295,7 @@ public class RenderUtil {
       float var25 = (float)(var7 & 0xFF) / 255.0F;
       RenderSystem.disableTexture();
       RenderSystem.enableBlend();
-      RenderSystem.method27817();
+      RenderSystem.disableAlphaTest();
       RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
       RenderSystem.shadeModel(7425);
       Tessellator var26 = Tessellator.getInstance();
@@ -309,7 +308,7 @@ public class RenderUtil {
       var26.draw();
       RenderSystem.shadeModel(7424);
       RenderSystem.disableBlend();
-      RenderSystem.disableAlphaTest();
+      RenderSystem.enableAlphaTest();
       RenderSystem.enableTexture();
    }
 
@@ -325,7 +324,7 @@ public class RenderUtil {
       BufferBuilder var13 = var12.getBuffer();
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.method27837(770, 771, 1, 0);
+      RenderSystem.blendFuncSeparate(770, 771, 1, 0);
       RenderSystem.color4f(var9, var10, var11, var8);
       GL11.glEnable(2848);
       var13.begin(1, DefaultVertexFormats.POSITION_COLOR);
@@ -348,7 +347,7 @@ public class RenderUtil {
       BufferBuilder var14 = var13.getBuffer();
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.method27837(770, 771, 1, 0);
+      RenderSystem.blendFuncSeparate(770, 771, 1, 0);
       RenderSystem.color4f(var10, var11, var12, var9);
       GL11.glBegin(6);
       GL11.glVertex2f(var0, var1);
@@ -367,7 +366,7 @@ public class RenderUtil {
       BufferBuilder var8 = var7.getBuffer();
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.method27837(770, 771, 1, 0);
+      RenderSystem.blendFuncSeparate(770, 771, 1, 0);
       GL11.glColor4fv(MultiUtilities.method17709(var3));
       GL11.glEnable(2881);
       GL11.glBegin(4);
@@ -412,7 +411,7 @@ public class RenderUtil {
       Tessellator var10 = Tessellator.getInstance();
       BufferBuilder var11 = var10.getBuffer();
       RenderSystem.disableTexture();
-      RenderSystem.method27837(770, 771, 1, 0);
+      RenderSystem.blendFuncSeparate(770, 771, 1, 0);
       RenderSystem.color4f(var7, var8, var9, var6);
       GL11.glEnable(2832);
       GL11.glEnable(3042);
@@ -570,7 +569,7 @@ public class RenderUtil {
       BufferBuilder var15 = var14.getBuffer();
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.method27837(770, 771, 1, 0);
+      RenderSystem.blendFuncSeparate(770, 771, 1, 0);
       RenderSystem.color4f(var11, var12, var13, var10);
       if (var10 > 0.5F) {
          GL11.glEnable(2848);
@@ -611,7 +610,7 @@ public class RenderUtil {
       BufferBuilder var12 = var11.getBuffer();
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.method27837(770, 771, 1, 0);
+      RenderSystem.blendFuncSeparate(770, 771, 1, 0);
       RenderSystem.color4f(var8, var9, var10, var7);
       GL11.glBegin(6);
 
@@ -659,7 +658,7 @@ public class RenderUtil {
          float var16 = (float)(var5 & 0xFF) / 255.0F;
          RenderSystem.enableBlend();
          RenderSystem.disableTexture();
-         RenderSystem.method27837(770, 771, 1, 0);
+         RenderSystem.blendFuncSeparate(770, 771, 1, 0);
          RenderSystem.color4f(var14, var15, var16, var13);
          GL11.glEnable(3042);
          GL11.glEnable(3553);
@@ -709,7 +708,7 @@ public class RenderUtil {
          float var17 = (float)(var5 & 0xFF) / 255.0F;
          RenderSystem.enableBlend();
          RenderSystem.disableTexture();
-         RenderSystem.method27837(770, 771, 1, 0);
+         RenderSystem.blendFuncSeparate(770, 771, 1, 0);
          RenderSystem.color4f(var15, var16, var17, var14);
          GL11.glEnable(3042);
          GL11.glEnable(3553);
@@ -773,7 +772,7 @@ public class RenderUtil {
       float var14 = (float)(var4 & 0xFF) / 255.0F;
       RenderSystem.enableBlend();
       RenderSystem.disableTexture();
-      RenderSystem.method27837(770, 771, 1, 0);
+      RenderSystem.blendFuncSeparate(770, 771, 1, 0);
       RenderSystem.color4f(var12, var13, var14, var11);
       GL11.glEnable(3042);
       GL11.glEnable(3553);
@@ -1147,27 +1146,26 @@ public class RenderUtil {
       endScissor();
    }
 
-   public static void method11468() {
-      Framebuffer var2 = Minecraft.getInstance().getFramebuffer();
-      if (var2 != null && var2.depthBuffer > -1) {
-         method11469(var2);
-         var2.depthBuffer = -1;
+   public static void resetDepthBuffer() {
+      // Retrieve the current framebuffer instance
+      Framebuffer currentFramebuffer = Minecraft.getInstance().getFramebuffer();
+
+      // Check if the framebuffer exists and has a valid depth buffer
+      if (currentFramebuffer != null && currentFramebuffer.depthBuffer > -1) {
+         // Recreate the depth buffer
+         recreateDepthBuffer(currentFramebuffer);
+         // Set the depth buffer to an invalid state
+         currentFramebuffer.depthBuffer = -1;
       }
    }
 
-   public static void method11469(Framebuffer var0) {
-      EXTFramebufferObject.glDeleteRenderbuffersEXT(var0.depthBuffer);
-      int var3 = EXTFramebufferObject.glGenRenderbuffersEXT();
-      EXTFramebufferObject.glBindRenderbufferEXT(36161, var3);
+   public static void recreateDepthBuffer(Framebuffer frameBuffer) {
+      EXTFramebufferObject.glDeleteRenderbuffersEXT(frameBuffer.depthBuffer);
+      int newDepthBuffer = EXTFramebufferObject.glGenRenderbuffersEXT();
+      EXTFramebufferObject.glBindRenderbufferEXT(36161, newDepthBuffer);
       EXTFramebufferObject.glRenderbufferStorageEXT(36161, 34041, Minecraft.getInstance().mainWindow.getFramebufferWidth(), Minecraft.getInstance().mainWindow.getFramebufferHeight());
-      EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36128, 36161, var3);
-      EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36096, 36161, var3);
-   }
-
-   public static void method11470(float var0, float var1, float var2) {
-      method11476();
-      method11438(var0, var1, var2 * 2.0F, -1);
-      method11477(Class2329.field15940);
+      EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36128, 36161, newDepthBuffer);
+      EXTFramebufferObject.glFramebufferRenderbufferEXT(36160, 36096, 36161, newDepthBuffer);
    }
 
    public static void method11471(float var0, float var1, float var2, float var3, float var4) {
@@ -1183,25 +1181,6 @@ public class RenderUtil {
       method11436(var0 - var4 + var2, var1 - var4 + var3, var4, var5);
       drawRect(var0, var1 + var4, var0 + var2, var1 + var3 - var4, var5);
       drawRect(var0 + var4, var1, var0 + var2 - var4, var1 + var3, var5);
-   }
-
-   public static void method11473(float var0, float var1, float var2, float var3, float var4, int var5) {
-      drawRect(var0, var1 + var4, var0 + var2, var1 + var3 - var4, var5);
-      drawRect(var0 + var4, var1, var0 + var2 - var4, var1 + var4, var5);
-      drawRect(var0 + var4, var1 + var3 - var4, var0 + var2 - var4, var1 + var3, var5);
-      float var8 = var4 * GuiManager.portalScaleFactor;
-      method11418(var0, var1, var0 + var4, var1 + var4);
-      method11436(var0 + var4, var1 + var4, var4, var5);
-      endScissor();
-      method11418(var0 + var2 - var4, var1, var0 + var2, var1 + var4);
-      method11436(var0 - var4 + var2, var1 + var4, var4, var5);
-      endScissor();
-      method11418(var0, var1 + var3 - var4, var0 + var4, var1 + var3);
-      method11436(var0 + var4, var1 - var4 + var3, var4, var5);
-      endScissor();
-      method11418(var0 + var2 - var4, var1 + var3 - var4, var0 + var2, var1 + var3);
-      method11436(var0 - var4 + var2, var1 - var4 + var3, var4, var5);
-      endScissor();
    }
 
    public static void method11474(float var0, float var1, float var2, float var3, float var4, int var5) {
@@ -1236,7 +1215,7 @@ public class RenderUtil {
 
    public static void method11476() {
       GL11.glPushMatrix();
-      method11468();
+      resetDepthBuffer();
       GL11.glEnable(2960);
       GL11.glColorMask(false, false, false, false);
       GL11.glDepthMask(false);
@@ -1263,9 +1242,7 @@ public class RenderUtil {
 
    public static void method11479(ItemStack var0, int var1, int var2, int var3, int var4) {
       if (var0 != null) {
-         TextureManager var10000 = mc.getTextureManager();
-         mc.getTextureManager();
-         var10000.bindTexture(TextureManager.field1094);
+         mc.getTextureManager().bindTexture(TextureManager.field1094);
          GL11.glPushMatrix();
          GL11.glTranslatef((float)var1, (float)var2, 0.0F);
          GL11.glScalef((float)var3 / 16.0F, (float)var4 / 16.0F, 0.0F);
@@ -1274,13 +1251,10 @@ public class RenderUtil {
             var0 = new ItemStack(var0.getItem());
          }
 
-         Item var8 = var0.getItem();
-         Block var9 = Block.method11537(var8);
-         boolean var10 = false;
          Class7516.method24502();
          GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
-         RenderSystem.method27822();
-         RenderSystem.method27821();
+         RenderSystem.enableColorMaterial();
+         RenderSystem.disableLighting();
          RenderSystem.enableBlend();
          GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          GL11.glDepthFunc(519);
@@ -1291,9 +1265,7 @@ public class RenderUtil {
          RenderSystem.method27905(33986, 240.0F, 240.0F);
          RenderSystem.disableDepthTest();
          TextureImpl.method36180();
-         var10000 = mc.getTextureManager();
-         mc.getTextureManager();
-         var10000.bindTexture(TextureManager.field1094);
+         mc.getTextureManager().bindTexture(TextureManager.field1094);
          Class7516.method24503();
       }
    }
@@ -1309,18 +1281,16 @@ public class RenderUtil {
       mc.getItemRenderer().method791(var0, 0, 0);
       mc.getItemRenderer().field847 += 1101.0F;
       TextureImpl.method36180();
-      TextureManager var6 = mc.getTextureManager();
-      mc.getTextureManager();
-      var6.bindTexture(TextureManager.field1094);
+      mc.getTextureManager().bindTexture(TextureManager.field1094);
       GL11.glPopMatrix();
    }
 
-   public static java.awt.Color method11481(int var0, int var1, java.awt.Color var2) {
-      var0 = (int)((float)var0 * GuiManager.portalScaleFactor);
-      var1 = (int)((float)var1 * GuiManager.portalScaleFactor);
+   public static java.awt.Color getColorFromScreen(int mouseX, int mouseY, java.awt.Color var2) {
+      mouseX = (int)((float)mouseX * GuiManager.portalScaleFactor);
+      mouseY = (int)((float)mouseY * GuiManager.portalScaleFactor);
       ByteBuffer var5 = ByteBuffer.allocateDirect(3);
       GL11.glPixelStorei(3317, 1);
-      GL11.glReadPixels(var0, Minecraft.getInstance().mainWindow.getFramebufferHeight() - var1, 1, 1, 6407, 5120, var5);
+      GL11.glReadPixels(mouseX, Minecraft.getInstance().mainWindow.getFramebufferHeight() - mouseY, 1, 1, 6407, 5120, var5);
       return new java.awt.Color(var5.get(0) * 2, var5.get(1) * 2, var5.get(2) * 2, 1);
    }
 

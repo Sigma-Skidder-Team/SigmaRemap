@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.io.File;
 import java.util.regex.Pattern;
@@ -62,7 +63,7 @@ public class Class8156 {
    public static void method28294(AbstractClientPlayerEntity var0) {
       String var3 = var0.method5379();
       ResourceLocation var4 = new ResourceLocation("capeof/" + var3);
-      TextureManager var5 = Class7944.method26861();
+      TextureManager var5 = Config.method26861();
       Class290 var6 = var5.getTexture(var4);
       if (var6 instanceof Class293) {
          Class293 var7 = (Class293)var6;

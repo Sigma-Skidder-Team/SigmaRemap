@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.optifine.Config;
 
 public class Class4102 extends Class4057 {
    public Class4102() {
@@ -106,11 +107,11 @@ public class Class4102 extends Class4057 {
             Reflector.field43142.method20237(var8, var1);
             return (Class9492)var8;
          } else {
-            Class7944.method26811("Model field not found: RenderPufferfish.modelBig");
+            Config.method26811("Model field not found: RenderPufferfish.modelBig");
             return null;
          }
       } else {
-         Class7944.method26811("Not a PufferfishRenderer: " + var6);
+         Config.method26811("Not a PufferfishRenderer: " + var6);
          return null;
       }
    }

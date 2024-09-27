@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockDisplayReader;
+import net.optifine.Config;
 
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class Class8464 {
             return field36283;
          }
 
-         if (!var8.method29417(var0) && Class7944.method26876()) {
+         if (!var8.method29417(var0) && Config.method26876()) {
             var0 = Class9422.method36148(var1, var2, var3, var4, var0);
          }
       }
@@ -65,14 +66,14 @@ public class Class8464 {
          return var7.method29429(var0);
       } else {
          Class8557 var10 = var0;
-         if (Class7944.method26915()) {
+         if (Config.method26915()) {
             Class8557[] var11 = Class9619.method37442(var1, var2, var3, var0, var7);
             if (var11.length != 1 || var11[0] != var0) {
                return var11;
             }
          }
 
-         if (Class7944.method26916()) {
+         if (Config.method26916()) {
             var0 = Class8052.method27655(var3, var0);
             if (var0 != var10) {
                return var7.method29429(var0);

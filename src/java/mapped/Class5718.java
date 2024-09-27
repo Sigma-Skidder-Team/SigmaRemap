@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 import java.util.Random;
 
@@ -28,7 +30,7 @@ public class Class5718 extends Class5715<Class1007> {
       float var9 = (float)var1.method4317(7, var3)[0];
       float var10 = (float)(var1.method4317(5, var3)[1] - var1.method4317(10, var3)[1]);
       var4.rotate(Vector3f.YP.rotationDegrees(-var9));
-      var4.rotate(Vector3f.field32898.rotationDegrees(var10 * 10.0F));
+      var4.rotate(Vector3f.XP.rotationDegrees(var10 * 10.0F));
       var4.translate(0.0, 0.0, 1.0);
       var4.method35292(-1.0F, -1.0F, 1.0F);
       var4.translate(0.0, -1.501F, 0.0);
@@ -46,14 +48,14 @@ public class Class5718 extends Class5715<Class1007> {
       }
 
       Class5422 var23 = var5.method25597(field25112);
-      if (Class7944.method26921()) {
+      if (Config.isShaders()) {
          Shaders.method33081();
       }
 
-      Class7944.method26874().field1020 = true;
+      Config.method26874().field1020 = true;
       this.field25115.method11016(var4, var23, var6, Class213.field798, 1.0F, 1.0F, 1.0F, 1.0F);
-      Class7944.method26874().field1020 = false;
-      if (Class7944.method26921()) {
+      Config.method26874().field1020 = false;
+      if (Config.isShaders()) {
          Shaders.method33082();
       }
 
@@ -66,12 +68,12 @@ public class Class5718 extends Class5715<Class1007> {
          var4.translate(0.0, -1.0, -2.0);
 
          for (int var17 = 0; (float)var17 < (var24 + var24 * var24) / 2.0F * 60.0F; var17++) {
-            var4.rotate(Vector3f.field32898.rotationDegrees(var15.nextFloat() * 360.0F));
+            var4.rotate(Vector3f.XP.rotationDegrees(var15.nextFloat() * 360.0F));
             var4.rotate(Vector3f.YP.rotationDegrees(var15.nextFloat() * 360.0F));
-            var4.rotate(Vector3f.field32902.rotationDegrees(var15.nextFloat() * 360.0F));
-            var4.rotate(Vector3f.field32898.rotationDegrees(var15.nextFloat() * 360.0F));
+            var4.rotate(Vector3f.ZP.rotationDegrees(var15.nextFloat() * 360.0F));
+            var4.rotate(Vector3f.XP.rotationDegrees(var15.nextFloat() * 360.0F));
             var4.rotate(Vector3f.YP.rotationDegrees(var15.nextFloat() * 360.0F));
-            var4.rotate(Vector3f.field32902.rotationDegrees(var15.nextFloat() * 360.0F + var24 * 90.0F));
+            var4.rotate(Vector3f.ZP.rotationDegrees(var15.nextFloat() * 360.0F + var24 * 90.0F));
             float var18 = var15.nextFloat() * 20.0F + 5.0F + var26 * 10.0F;
             float var19 = var15.nextFloat() * 2.0F + 1.0F + var26 * 2.0F;
             Matrix4f var20 = var4.getLast().getMatrix();
@@ -126,7 +128,7 @@ public class Class5718 extends Class5715<Class1007> {
       var5.push();
       var5.translate(0.0, 2.0, 0.0);
       var5.rotate(Vector3f.YP.method25285((float)(-Math.atan2((double)var2, (double)var0)) - (float) (Math.PI / 2)));
-      var5.rotate(Vector3f.field32898.method25285((float)(-Math.atan2((double)var10, (double)var1)) - (float) (Math.PI / 2)));
+      var5.rotate(Vector3f.XP.method25285((float)(-Math.atan2((double)var10, (double)var1)) - (float) (Math.PI / 2)));
       Class5422 var12 = var6.method25597(field25113);
       float var13 = 0.0F - ((float)var4 + var3) * 0.01F;
       float var14 = MathHelper.method37765(var0 * var0 + var1 * var1 + var2 * var2) / 32.0F - ((float)var4 + var3) * 0.01F;

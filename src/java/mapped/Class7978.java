@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.util.ArrayList;
 import java.util.Properties;
@@ -68,7 +69,7 @@ public class Class7978 {
 
    public boolean method27115(String var1) {
       if (this.field34296 == null && this.field34297 == null) {
-         Class7944.method26811("No skins specified: " + var1);
+         Config.method26811("No skins specified: " + var1);
          return false;
       } else {
          if (this.field34297 != null) {
@@ -83,8 +84,8 @@ public class Class7978 {
          if (this.field34296 != null) {
             for (int var6 = 0; var6 < this.field34296.length; var6++) {
                ResourceLocation var7 = this.field34296[var6];
-               if (!Class7944.method26866(var7)) {
-                  Class7944.method26811("Texture not found: " + var7.getPath());
+               if (!Config.method26866(var7)) {
+                  Config.method26811("Texture not found: " + var7.getPath());
                   return false;
                }
             }

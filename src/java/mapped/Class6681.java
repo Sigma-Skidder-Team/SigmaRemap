@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.shaders.Shaders;
+
 public class Class6681 extends Class6679 {
    public Class6681(String var1) {
       super(var1, (String)null, (String)null, new String[0], (String)null, (String)null);

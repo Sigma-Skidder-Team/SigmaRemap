@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.math.vector.Vector3d;
+import net.optifine.Config;
 
 public class Class8816 {
    private static String[] field39661;
@@ -19,7 +20,7 @@ public class Class8816 {
                return this.field39662;
             } else {
                double var13 = (double)var11 * 0.001;
-               var13 = Class7944.method26833(var13, 0.0, 1.0);
+               var13 = Config.method26833(var13, 0.0, 1.0);
                double var15 = var1 - this.field39662.x;
                double var17 = var3 - this.field39662.y;
                double var19 = var5 - this.field39662.z;

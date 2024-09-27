@@ -8,6 +8,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
+import net.optifine.Config;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -31,7 +32,7 @@ public class BlockState extends Class7377 {
       if (this.field31587 < 0) {
          this.field31587 = Class9716.method38067(this);
          if (this.field31587 < 0) {
-            Class7944.method26811("Metadata not found, block: " + this.method23492());
+            Config.method26811("Metadata not found, block: " + this.method23492());
             this.field31587 = 0;
          }
       }

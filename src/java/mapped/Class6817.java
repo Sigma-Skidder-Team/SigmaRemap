@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class6817 {
    private static String[] field29682;
 
@@ -44,7 +46,7 @@ public class Class6817 {
                if (var8 != null) {
                   String var9 = !var2 ? var8.method20370() : var8.method20372();
                   String var10 = var0.method36405(var7);
-                  if (!Class7944.equals(var9, var10)) {
+                  if (!Config.equals(var9, var10)) {
                      return false;
                   }
                }

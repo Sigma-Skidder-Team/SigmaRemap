@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 public class Class249 extends Class219<Class1019, Class2869<Class1019>> {
    private static final ResourceLocation field905 = new ResourceLocation("textures/entity/sheep/sheep_fur.png");
@@ -25,7 +26,7 @@ public class Class249 extends Class219<Class1019, Class2869<Class1019>> {
             float var21 = ((float)(var4.ticksExisted % 25) + var7) / 25.0F;
             float[] var22 = Class1019.method4511(Class112.method315(var19));
             float[] var23 = Class1019.method4511(Class112.method315(var20));
-            if (Class7944.method26911()) {
+            if (Config.method26911()) {
                var22 = Class9680.method37884(Class112.method315(var19), var22);
                var23 = Class9680.method37884(Class112.method315(var20), var23);
             }
@@ -35,7 +36,7 @@ public class Class249 extends Class219<Class1019, Class2869<Class1019>> {
             var16 = var22[2] * (1.0F - var21) + var23[2] * var21;
          } else {
             float[] var13 = Class1019.method4511(var4.method4517());
-            if (Class7944.method26911()) {
+            if (Config.method26911()) {
                var13 = Class9680.method37884(var4.method4517(), var13);
             }
 

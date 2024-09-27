@@ -25,6 +25,8 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 import java.util.Collections;
 import java.util.Map;
@@ -47,7 +49,7 @@ public class EntityRendererManager {
 
    public <E extends Entity> int method32208(E var1, float var2) {
       int var5 = this.<Entity>method32212(var1).method17894(var1, var2);
-      if (Class7944.method26970()) {
+      if (Config.method26970()) {
          var5 = Class9446.method36315(var1, var5);
       }
 
@@ -292,7 +294,7 @@ public class EntityRendererManager {
    }
 
    private void method32220(MatrixStack var1, Class5422 var2, Entity var3, float var4) {
-      if (! Shaders.field40609) {
+      if (! Shaders.isShadowPass) {
          float var7 = var3.getWidth() / 2.0F;
          this.method32221(var1, var2, var3, 1.0F, 1.0F, 1.0F);
          if (var3 instanceof Class1007) {
@@ -358,7 +360,7 @@ public class EntityRendererManager {
       float var13 = 0.0F;
       int var14 = 0;
       Class5422 var15 = var2.method25597(Class8624.method30907());
-      boolean var16 = Class7944.method26894();
+      boolean var16 = Config.method26894();
       if (var16) {
          var15.method17044(Class9025.field41288);
       }
@@ -405,7 +407,7 @@ public class EntityRendererManager {
    }
 
    private static void method32224(MatrixStack var0, Class7733 var1, Entity var2, float var3, float var4, IWorldReader var5, float var6) {
-      if (!Class7944.method26921() || ! Shaders.field40794) {
+      if (!Config.isShaders() || ! Shaders.field40794) {
          float var9 = var6;
          if (var2 instanceof MobEntity) {
             MobEntity var25 = (MobEntity)var2;

@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 public enum Class1910 {
    field11209("biome"),
@@ -209,11 +211,11 @@ public enum Class1910 {
                   }
             }
          } else {
-            Class7944.method26811("Invalid index2, parameter: " + this + ", index: " + var2);
+            Config.method26811("Invalid index2, parameter: " + this + ", index: " + var2);
             return 0.0F;
          }
       } else {
-         Class7944.method26811("Invalid index1, parameter: " + this + ", index: " + var1);
+         Config.method26811("Invalid index1, parameter: " + this + ", index: " + var1);
          return 0.0F;
       }
    }

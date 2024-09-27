@@ -157,7 +157,7 @@ public class Class8037 {
       if (var4 != null && !(var5 >= Math.PI)) {
          double var12 = MathHelper.method37814(var4.z, var4.x) - (float) (Math.PI / 2);
          double var14 = var12 + (double)(2.0F * var0.nextFloat() - 1.0F) * var5;
-         double var16 = Math.sqrt(var0.nextDouble()) * (double) MathHelper.field45205 * (double)var1;
+         double var16 = Math.sqrt(var0.nextDouble()) * (double) MathHelper.SQRT_2 * (double)var1;
          double var18 = -var16 * Math.sin(var14);
          double var20 = var16 * Math.cos(var14);
          if (!(Math.abs(var18) > (double)var1) && !(Math.abs(var20) > (double)var1)) {

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -52,7 +54,7 @@ public class Class9590 {
       }
 
       Integer[] var7 = var3.toArray(new Integer[var3.size()]);
-      return Class7944.method26976(var7);
+      return Config.method26976(var7);
    }
 
    public Class9727[] method37241(int var1) {
@@ -70,6 +72,6 @@ public class Class9590 {
 
    @Override
    public String toString() {
-      return "block." + this.field44863 + ":" + this.field44864 + "=" + Class7944.method26854(this.field44865);
+      return "block." + this.field44863 + ":" + this.field44864 + "=" + Config.method26854(this.field44865);
    }
 }

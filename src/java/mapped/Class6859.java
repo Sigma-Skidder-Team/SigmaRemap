@@ -7,6 +7,7 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -61,7 +62,7 @@ public class Class6859 {
                         var5.method25753(var12);
                      }
                   } else {
-                     Class7944.method26811("Item type is null, player: " + this.field29782);
+                     Config.method26811("Item type is null, player: " + this.field29782);
                   }
                }
             }
@@ -78,7 +79,7 @@ public class Class6859 {
          byte[] var5 = Class7615.method24949(var4, Minecraft.getInstance().getProxy());
          return Class1806.method7879(new ByteArrayInputStream(var5));
       } catch (IOException var6) {
-         Class7944.method26811("Error loading item texture " + var1 + ": " + var6.getClass().getName() + ": " + var6.getMessage());
+         Config.method26811("Error loading item texture " + var1 + ": " + var6.getClass().getName() + ": " + var6.getMessage());
          return null;
       }
    }
@@ -93,7 +94,7 @@ public class Class6859 {
          JsonObject var8 = (JsonObject)var7.parse(var6);
          return Class9498.method36687(var8);
       } catch (Exception var9) {
-         Class7944.method26811("Error loading item model " + var1 + ": " + var9.getClass().getName() + ": " + var9.getMessage());
+         Config.method26811("Error loading item model " + var1 + ": " + var9.getClass().getName() + ": " + var9.getMessage());
          return null;
       }
    }

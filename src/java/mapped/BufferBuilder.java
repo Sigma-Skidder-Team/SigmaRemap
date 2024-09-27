@@ -17,6 +17,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.math.BlockPos;
+import net.optifine.Config;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.opengl.GL11;
@@ -244,11 +245,11 @@ public class BufferBuilder extends Class5424 implements Class5426 {
          this.field24120 = (Class8209)var2.method26217().get(0);
          this.field24121 = 0;
          ((Buffer)this.field24113).clear();
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Class7698.method25379(this);
          }
 
-         if (!Class7944.method26894()) {
+         if (!Config.method26894()) {
             if (this.field24129 != null) {
                this.field24130 = this.field24129;
             }
@@ -334,7 +335,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
       if (this.field24121 == 0) {
          this.field24119++;
          this.method17055();
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Class7698.method25381(this);
          }
       } else {
@@ -431,7 +432,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
       ByteBuffer var4 = this.field24113.slice();
       var4.order(this.field24113.order());
       ((Buffer)this.field24113).clear();
-      if (Class9105.method33954(var3) == 7 && Class7944.method26989()) {
+      if (Class9105.method33954(var3) == 7 && Config.method26989()) {
          if (this.field24136 == null) {
             this.field24136 = GLAllocation.method22266(this.field24113.capacity() * 2);
          }
@@ -511,7 +512,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
 
    public void method17075() {
       if (this.field24129 != null) {
-         int var3 = Class7944.method26969().method1109();
+         int var3 = Config.method26969().method1109();
          if (this.field24128.length <= var3) {
             this.field24128 = new boolean[var3 + 1];
          }
@@ -734,7 +735,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    }
 
    public void method17088(ByteBuffer var1) {
-      if (Class7944.method26921()) {
+      if (Config.isShaders()) {
          Class7698.method25383(this, var1);
       }
 
@@ -743,7 +744,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
       this.field24113.put(var1);
       this.field24119 = this.field24119 + var1.limit() / this.field24123.method26216();
       this.field24117 = this.field24117 + var1.limit();
-      if (Class7944.method26921()) {
+      if (Config.isShaders()) {
          Class7698.method25384(this);
       }
    }

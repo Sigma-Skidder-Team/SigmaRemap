@@ -21,6 +21,7 @@ import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -47,7 +48,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
    }
 
    private void method1072(ResourceLocation var1) {
-      if (Class7944.method26974()) {
+      if (Config.method26974()) {
          var1 = Class7050.method21963(var1);
       }
 
@@ -57,7 +58,7 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
          this.method1073(var1, (Class290)var4);
       }
 
-      if (!Class7944.method26921()) {
+      if (!Config.isShaders()) {
          ((Class290)var4).method1133();
       } else {
          Class9336.method35315((Class290)var4);
@@ -171,8 +172,8 @@ public class TextureManager implements Class268, Class288, AutoCloseable {
 
    @Override
    public CompletableFuture<Void> method777(Class7121 var1, IResourceManager var2, IProfiler var3, IProfiler var4, Executor var5, Executor var6) {
-      Class7944.method26810("*** Reloading textures ***");
-      Class7944.method26815("Resource packs: " + Class7944.method26870());
+      Config.method26810("*** Reloading textures ***");
+      Config.method26815("Resource packs: " + Config.method26870());
       Iterator var9 = this.field1095.keySet().iterator();
 
       while (var9.hasNext()) {

@@ -6,6 +6,7 @@ import it.unimi.dsi.fastutil.objects.ObjectList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -36,18 +37,18 @@ public class Class9810 {
             var2.putAll(field45854);
             var3.putAll(field45855);
             var4.putAll(field45856);
-            if (Class7944.method26973()) {
+            if (Config.method26973()) {
                ResourceLocation[] var5 = method38692();
 
                for (int var6 = 0; var6 < var5.length; var6++) {
                   ResourceLocation var7 = var5[var6];
-                  Class7944.method26810("CustomEntityModel: " + var7.getPath());
+                  Config.method26810("CustomEntityModel: " + var7.getPath());
                   Class9492 var8 = method38693(var7);
                   if (var8 != null) {
                      Class4862 var9 = var8.method36665();
                      if (!(var8 instanceof Class5715)) {
                         if (!(var8 instanceof Class5942)) {
-                           Class7944.method26811("Unknown renderer type: " + var8.getClass().getName());
+                           Config.method26811("Unknown renderer type: " + var8.getClass().getName());
                         } else {
                            var3.put(var9.method15004().get(), (Class5942)var8);
                         }
@@ -60,10 +61,10 @@ public class Class9810 {
                }
             }
          } else {
-            Class7944.method26811("Tile entity render map not found, custom entity models are DISABLED.");
+            Config.method26811("Tile entity render map not found, custom entity models are DISABLED.");
          }
       } else {
-         Class7944.method26811("Entity render map not found, custom entity models are DISABLED.");
+         Config.method26811("Entity render map not found, custom entity models are DISABLED.");
       }
    }
 
@@ -93,7 +94,7 @@ public class Class9810 {
    private static Map<Class2137, Class2828> method38691() {
       Object var2 = (Map) Reflector.field43169.method20234();
       if (var2 == null) {
-         Class7944.method26811("Field not found: TileEntitySkullRenderer.MODELS");
+         Config.method26811("Field not found: TileEntitySkullRenderer.MODELS");
          var2 = new HashMap();
       }
 
@@ -114,7 +115,7 @@ public class Class9810 {
          String var7 = var5[var6];
          String var8 = var2 + var7 + var3;
          ResourceLocation var9 = new ResourceLocation(var8);
-         if (Class7944.method26866(var9)) {
+         if (Config.method26866(var9)) {
             var4.add(var9);
          }
       }
@@ -127,10 +128,10 @@ public class Class9810 {
          JsonObject var3 = Class8331.method29218(var0);
          return method38694(var3, var0.getPath());
       } catch (IOException var4) {
-         Class7944.method26813("" + var4.getClass().getName() + ": " + var4.getMessage());
+         Config.method26813("" + var4.getClass().getName() + ": " + var4.getMessage());
          return null;
       } catch (JsonParseException var5) {
-         Class7944.method26813("" + var5.getClass().getName() + ": " + var5.getMessage());
+         Config.method26813("" + var5.getClass().getName() + ": " + var5.getMessage());
          return null;
       } catch (Exception var6) {
          var6.printStackTrace();
@@ -199,7 +200,7 @@ public class Class9810 {
       String var6 = var2.method38143();
       Class7219 var7 = var0.method12823(var1, var6);
       if (var7 == null) {
-         Class7944.method26811("Model part not found: " + var6 + ", model: " + var1);
+         Config.method26811("Model part not found: " + var6 + ", model: " + var1);
          return false;
       } else {
          if (!var2.method38144()) {

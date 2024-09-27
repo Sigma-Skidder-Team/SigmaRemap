@@ -1,5 +1,8 @@
 package mapped;
 
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
+
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -12,7 +15,7 @@ import java.util.List;
 
 public class Class9711 {
    public static InputStream method38047(InputStream var0, String var1) throws IOException {
-      String var4 = Class7944.method26926(var0, "ASCII");
+      String var4 = Config.method26926(var0, "ASCII");
       String var5 = method38049(var4);
       if (!var5.isEmpty()) {
          var4 = var5 + var4;

@@ -163,8 +163,8 @@ public class DebugRenderer {
          double var21 = var15.getPos().z;
          RenderSystem.pushMatrix();
          RenderSystem.translatef((float)(var1 - var17), (float)(var3 - var19) + 0.07F, (float)(var5 - var21));
-         RenderSystem.method27825(0.0F, 1.0F, 0.0F);
-         RenderSystem.method27888(new Matrix4f(var15.getRotation()));
+         RenderSystem.normal3f(0.0F, 1.0F, 0.0F);
+         RenderSystem.multMatrix(new Matrix4f(var15.getRotation()));
          RenderSystem.scalef(var8, -var8, var8);
          RenderSystem.enableTexture();
          if (!var11) {
@@ -177,7 +177,7 @@ public class DebugRenderer {
          RenderSystem.scalef(-1.0F, 1.0F, 1.0F);
          float var23 = !var9 ? 0.0F : (float)(-var16.getStringWidth(var0)) / 2.0F;
          var23 -= var10 / var8;
-         RenderSystem.disableAlphaTest();
+         RenderSystem.enableAlphaTest();
          Class7735 var24 = Class7733.method25595(Tessellator.getInstance().getBuffer());
          var16.method38810(var0, var23, 0.0F, var7, false, Class6979.method21542().method21548(), var24, var11, 0, 15728880);
          var24.method25602();

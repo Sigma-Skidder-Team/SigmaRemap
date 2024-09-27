@@ -59,7 +59,10 @@ public class Class338 implements Runnable {
 
             boolean noSwing = this.killauraModule.getBooleanValueFromSetttingName("No swing");
             Minecraft mc = KillAura.mc;
-            boolean isOnePointEight = JelloPortal.getCurrentVersion().equals(ViaVerList._1_8_x);
+            boolean isOnePointEight = false;
+            if (JelloPortal.getCurrentVersion() != null) {
+               isOnePointEight = JelloPortal.getCurrentVersion().equals(ViaVerList._1_8_x);
+            }
 
             if (isOnePointEight && !noSwing) {
                mc.player.swingArm(Hand.MAIN_HAND);

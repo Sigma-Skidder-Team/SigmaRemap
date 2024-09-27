@@ -268,7 +268,7 @@ public class VanillaMainMenuScreen extends Screen {
       byte var10 = 30;
       this.mc.getTextureManager().bindTexture(field4705);
       RenderSystem.enableBlend();
-      RenderSystem.method27834(GlStateManager.SourceFactor.field15997, DestFactor.field12932);
+      RenderSystem.blendFunc(GlStateManager.SourceFactor.field15997, DestFactor.field12932);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, !this.field4717 ? 1.0F : (float) MathHelper.ceil(MathHelper.clamp(var7, 0.0F, 1.0F)));
       method5698(var1, 0, 0, this.width, this.height, 0.0F, 0.0F, 16, 128, 16, 128);
       float var11 = !this.field4717 ? 1.0F : MathHelper.clamp(var7 - 1.0F, 0.0F, 1.0F);
@@ -294,7 +294,7 @@ public class VanillaMainMenuScreen extends Screen {
          this.mc.getTextureManager().bindTexture(field4711);
          method5699(var1, var9 + 88, 67, 0.0F, 0.0F, 98, 14, 128, 16);
          if (Reflector.field42893.exists()) {
-            Reflector.method35055(Reflector.field42893, this, var1, this.fontRenderer, this.width, this.height);
+            Reflector.callVoid(Reflector.field42893, this, var1, this.fontRenderer, this.width, this.height);
          }
 
          if (this.field4708 != null) {

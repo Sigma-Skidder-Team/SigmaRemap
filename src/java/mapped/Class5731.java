@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.optifine.Config;
 
 public class Class5731 extends Class5715<ExperienceOrbEntity> {
    private static final ResourceLocation field25141 = new ResourceLocation("textures/entity/experience_orb.png");
@@ -31,7 +32,7 @@ public class Class5731 extends Class5715<ExperienceOrbEntity> {
       float var16 = 0.25F;
       float var17 = 255.0F;
       float var18 = ((float)var1.field5555 + var3) / 2.0F;
-      if (Class7944.method26911()) {
+      if (Config.method26911()) {
          var18 = Class9680.method37861(var18);
       }
 
@@ -50,7 +51,7 @@ public class Class5731 extends Class5715<ExperienceOrbEntity> {
       int var27 = var19;
       int var28 = 255;
       int var29 = var21;
-      if (Class7944.method26911()) {
+      if (Config.method26911()) {
          int var30 = Class9680.method37862(var18);
          if (var30 >= 0) {
             var27 = var30 >> 16 & 0xFF;

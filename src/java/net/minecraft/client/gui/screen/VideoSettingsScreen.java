@@ -9,6 +9,7 @@ import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.text.*;
+import net.optifine.Config;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;
@@ -245,18 +246,18 @@ public class VideoSettingsScreen extends Class838 {
          }
 
          if (var1.field6523 == 231) {
-            if (Class7944.method26892() || Class7944.method26893()) {
-               Class7944.method26964(Class8043.method27619("of.message.shaders.aa1"), Class8043.method27619("of.message.shaders.aa2"));
+            if (Config.method26892() || Config.method26893()) {
+               Config.method26964(Class8043.method27619("of.message.shaders.aa1"), Class8043.method27619("of.message.shaders.aa2"));
                return;
             }
 
-            if (Class7944.method26890()) {
-               Class7944.method26964(Class8043.method27619("of.message.shaders.af1"), Class8043.method27619("of.message.shaders.af2"));
+            if (Config.method26890()) {
+               Config.method26964(Class8043.method27619("of.message.shaders.af1"), Class8043.method27619("of.message.shaders.af2"));
                return;
             }
 
-            if (Class7944.method26819()) {
-               Class7944.method26964(Class8043.method27619("of.message.shaders.gf1"), Class8043.method27619("of.message.shaders.gf2"));
+            if (Config.method26819()) {
+               Config.method26964(Class8043.method27619("of.message.shaders.gf1"), Class8043.method27619("of.message.shaders.gf2"));
                return;
             }
 
@@ -277,7 +278,7 @@ public class VideoSettingsScreen extends Class838 {
    public void render(MatrixStack var1, int var2, int var3, float var4) {
       this.renderBackground(var1);
       drawCenteredString(var1, this.mc.fontRenderer, this.title, this.width / 2, 15, 16777215);
-      String var7 = Class7944.method26777();
+      String var7 = Config.method26777();
       String var8 = "HD_U";
       if (var8.equals("HD")) {
          var7 = "OptiFine HD G5";

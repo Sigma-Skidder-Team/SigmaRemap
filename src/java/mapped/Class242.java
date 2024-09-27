@@ -35,7 +35,7 @@ public class Class242<T extends LivingEntity, M extends Class2827<T> & Class2825
       if (!var2.isEmpty()) {
          var5.push();
          this.method825().method11010(var4, var5);
-         var5.rotate(Vector3f.field32898.rotationDegrees(-90.0F));
+         var5.rotate(Vector3f.XP.rotationDegrees(-90.0F));
          var5.rotate(Vector3f.YP.rotationDegrees(180.0F));
          boolean var10 = var4 == HandSide.field14417;
          var5.translate((double)((float)(!var10 ? 1 : -1) / 16.0F), 0.125, -0.625);

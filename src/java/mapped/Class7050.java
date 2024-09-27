@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
+import net.optifine.Config;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -17,7 +18,7 @@ import java.util.Calendar;
 import java.util.List;
 
 public class Class7050 {
-   private static Minecraft field30438 = Class7944.method26860();
+   private static Minecraft field30438 = Config.method26860();
    private static Class7316 field30439 = null;
    private static Class8149[][] field30440 = (Class8149[][])null;
    public static boolean field30441 = method21972();
@@ -138,9 +139,9 @@ public class Class7050 {
 
    public static void method21966() {
       field30440 = (Class8149[][])null;
-      if (Class7944.method26974()) {
+      if (Config.method26974()) {
          ArrayList var2 = new ArrayList();
-         IResourcePack[] var3 = Class7944.method26869();
+         IResourcePack[] var3 = Config.method26869();
 
          for (int var4 = var3.length - 1; var4 >= 0; var4--) {
             IResourcePack var5 = var3[var4];
@@ -177,13 +178,13 @@ public class Class7050 {
 
       for (int var5 = 0; var5 < var4.length; var5++) {
          String var6 = var4[var5];
-         Class7944.method26810("CustomGuis: " + var6);
+         Config.method26810("CustomGuis: " + var6);
 
          try {
             ResourceLocation var7 = new ResourceLocation(var6);
             InputStream var8 = var0.getResourceStream(ResourcePackType.CLIENT_RESOURCES, var7);
             if (var8 == null) {
-               Class7944.method26811("CustomGuis file not found: " + var6);
+               Config.method26811("CustomGuis file not found: " + var6);
             } else {
                Class20 var9 = new Class20();
                var9.load(var8);
@@ -194,7 +195,7 @@ public class Class7050 {
                }
             }
          } catch (FileNotFoundException var11) {
-            Class7944.method26811("CustomGuis file not found: " + var6);
+            Config.method26811("CustomGuis file not found: " + var6);
          } catch (Exception var12) {
             var12.printStackTrace();
          }
@@ -235,6 +236,6 @@ public class Class7050 {
    }
 
    private static void method21973(String var0) {
-      Class7944.method26811("[CustomGuis] " + var0);
+      Config.method26811("[CustomGuis] " + var0);
    }
 }

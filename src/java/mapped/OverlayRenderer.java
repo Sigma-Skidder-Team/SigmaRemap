@@ -19,7 +19,7 @@ public class OverlayRenderer {
    private static final ResourceLocation TEXTURE_UNDERWATER = new ResourceLocation("textures/misc/underwater.png");
 
    public static void method18789(Minecraft var0, MatrixStack var1) {
-      RenderSystem.method27817();
+      RenderSystem.disableAlphaTest();
       ClientPlayerEntity var4 = var0.player;
       if (!var4.noClip) {
          if (Reflector.field42849.exists() && Reflector.field42822.exists()) {
@@ -51,7 +51,7 @@ public class OverlayRenderer {
          }
       }
 
-      RenderSystem.disableAlphaTest();
+      RenderSystem.enableAlphaTest();
    }
 
    @Nullable

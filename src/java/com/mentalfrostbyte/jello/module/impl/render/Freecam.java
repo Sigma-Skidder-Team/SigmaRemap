@@ -59,9 +59,9 @@ public class Freecam extends Module {
             mc.player.field6123 = mc.player.rotationPitch;
             AxisAlignedBB var4 = mc.player.boundingBox;
             field23814.setPosition((var4.minX + var4.maxX) / 2.0, var4.minY, (var4.minZ + var4.maxZ) / 2.0);
-            double var5 = this.field23818 + (this.field23815 - this.field23818) * (double) var1.field21554;
-            double var7 = this.field23819 + (this.field23816 - this.field23819) * (double) var1.field21554;
-            double var9 = this.field23820 + (this.field23817 - this.field23820) * (double) var1.field21554;
+            double var5 = this.field23818 + (this.field23815 - this.field23818) * (double) var1.partialTicks;
+            double var7 = this.field23819 + (this.field23816 - this.field23819) * (double) var1.partialTicks;
+            double var9 = this.field23820 + (this.field23817 - this.field23820) * (double) var1.partialTicks;
             mc.player.positionVec.x = var5;
             mc.player.lastTickPosX = var5;
             mc.player.field4914 = var5;

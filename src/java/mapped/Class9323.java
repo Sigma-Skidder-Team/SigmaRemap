@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -49,7 +51,7 @@ public class Class9323 {
       }
 
       for (Throwable var9 : var3) {
-         Class7944.method26811("" + var9.getClass().getName() + ": " + var9.getMessage());
+         Config.method26811("" + var9.getClass().getName() + ": " + var9.getMessage());
       }
 
       return null;

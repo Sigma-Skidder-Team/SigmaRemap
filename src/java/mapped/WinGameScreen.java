@@ -189,7 +189,7 @@ public class WinGameScreen extends Screen {
       RenderSystem.translatef(0.0F, var10, 0.0F);
       this.mc.getTextureManager().bindTexture(field7121);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-      RenderSystem.disableAlphaTest();
+      RenderSystem.enableAlphaTest();
       RenderSystem.enableBlend();
       this.method5694(var8, var9, (var2x, var3x) -> {
          this.blit(var1, var2x + 0, var3x, 0, 0, 155, 44);
@@ -198,7 +198,7 @@ public class WinGameScreen extends Screen {
       RenderSystem.disableBlend();
       this.mc.getTextureManager().bindTexture(field7122);
       method5699(var1, var8 + 88, var9 + 37, 0.0F, 0.0F, 98, 14, 128, 16);
-      RenderSystem.method27817();
+      RenderSystem.disableAlphaTest();
       int var11 = var9 + 100;
 
       for (int var12 = 0; var12 < this.field7128.size(); var12++) {
@@ -225,7 +225,7 @@ public class WinGameScreen extends Screen {
       RenderSystem.popMatrix();
       this.mc.getTextureManager().bindTexture(field7123);
       RenderSystem.enableBlend();
-      RenderSystem.method27834(GlStateManager.SourceFactor.field16000, DestFactor.field12933);
+      RenderSystem.blendFunc(GlStateManager.SourceFactor.field16000, DestFactor.field12933);
       int var16 = this.width;
       int var18 = this.height;
       Tessellator var14 = Tessellator.getInstance();

@@ -1,7 +1,9 @@
 package mapped;
 
+import net.optifine.Config;
 import net.optifine.render.GlAlphaState;
 import net.optifine.render.GlBlendState;
+import net.optifine.shaders.Shaders;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
@@ -75,10 +77,10 @@ public class Class8440 {
             if (var10 == null) {
                var2.put(var9, var8);
             } else {
-               if (!Class7944.equals(var10.method20372(), var8.method20372())) {
-                  Class7944.method26811("Ambiguous shader option: " + var8.method20366());
-                  Class7944.method26811(" - in " + Class7944.method26854(var10.method20377()) + ": " + var10.method20372());
-                  Class7944.method26811(" - in " + Class7944.method26854(var8.method20377()) + ": " + var8.method20372());
+               if (!Config.equals(var10.method20372(), var8.method20372())) {
+                  Config.method26811("Ambiguous shader option: " + var8.method20366());
+                  Config.method26811(" - in " + Config.method26854(var10.method20377()) + ": " + var10.method20372());
+                  Config.method26811(" - in " + Config.method26854(var8.method20377()) + ": " + var8.method20372());
                   var10.method20380(false);
                }
 
@@ -111,10 +113,10 @@ public class Class8440 {
             return new String[0];
          } else {
             ByteArrayInputStream var6 = new ByteArrayInputStream(var5.getBytes());
-            return Class7944.method26923(var6);
+            return Config.method26923(var6);
          }
       } catch (IOException var7) {
-         Class7944.method26810(var7.getClass().getName() + ": " + var7.getMessage());
+         Config.method26810(var7.getClass().getName() + ": " + var7.getMessage());
          return new String[0];
       }
    }
@@ -241,7 +243,7 @@ public class Class8440 {
       HashSet var4 = new HashSet();
       String var5 = var0.getProperty("sliders");
       if (var5 != null) {
-         String[] var6 = Class7944.method26903(var5, " ");
+         String[] var6 = Config.method26903(var5, " ");
 
          for (int var7 = 0; var7 < var6.length; var7++) {
             String var8 = var6[var7];
@@ -249,7 +251,7 @@ public class Class8440 {
             if (var9 != null) {
                var4.add(var8);
             } else {
-               Class7944.method26811("Invalid shader option: " + var8);
+               Config.method26811("Invalid shader option: " + var8);
             }
          }
 
@@ -266,12 +268,12 @@ public class Class8440 {
          var2.add(var0);
          Class9458 var8 = new Class9458(var0);
          String var9 = var1.getProperty(var7);
-         String[] var10 = Class7944.method26903(var9, " ");
+         String[] var10 = Config.method26903(var9, " ");
 
          for (int var11 = 0; var11 < var10.length; var11++) {
             String var12 = var10[var11];
             if (!var12.startsWith(var6)) {
-               String[] var13 = Class7944.method26903(var12, ":=");
+               String[] var13 = Config.method26903(var12, ":=");
                if (var13.length != 1) {
                   if (var13.length == 2) {
                      String var14 = var13[0];
@@ -282,13 +284,13 @@ public class Class8440 {
                            var16.method20383(true);
                            var8.method36401(var14, var15);
                         } else {
-                           Class7944.method26811("[Shaders] Invalid value: " + var12);
+                           Config.method26811("[Shaders] Invalid value: " + var12);
                         }
                      } else {
-                        Class7944.method26811("[Shaders] Invalid option: " + var12);
+                        Config.method26811("[Shaders] Invalid option: " + var12);
                      }
                   } else {
-                     Class7944.method26811("[Shaders] Invalid option value: " + var12);
+                     Config.method26811("[Shaders] Invalid option value: " + var12);
                   }
                } else {
                   String var19 = var13[0];
@@ -305,7 +307,7 @@ public class Class8440 {
                         var8.method36401(var19, String.valueOf(var21));
                         var17.method20383(true);
                      } else {
-                        Class7944.method26811("[Shaders] Invalid option: " + var19);
+                        Config.method26811("[Shaders] Invalid option: " + var19);
                      }
                   } else {
                      String var23 = var19.substring(var22.length());
@@ -316,7 +318,7 @@ public class Class8440 {
                            var8.method36407(var23);
                         }
                      } else {
-                        Class7944.method26811("Invalid program: " + var23 + " in profile: " + var8.method36400());
+                        Config.method26811("Invalid program: " + var23 + " in profile: " + var8.method36400());
                      }
                   }
                }
@@ -332,7 +334,7 @@ public class Class8440 {
 
          return var8;
       } else {
-         Class7944.method26811("[Shaders] Profile already parsed: " + var0);
+         Config.method26811("[Shaders] Profile already parsed: " + var0);
          return null;
       }
    }
@@ -350,7 +352,7 @@ public class Class8440 {
       } else {
          ArrayList<Class6679> var8 = new ArrayList();
          HashSet var9 = new HashSet();
-         String[] var10 = Class7944.method26903(var7, " ");
+         String[] var10 = Config.method26903(var7, " ");
 
          for (int var11 = 0; var11 < var10.length; var11++) {
             String var12 = var10[var11];
@@ -366,10 +368,10 @@ public class Class8440 {
                                  Class6681 var14 = new Class6681(var17);
                                  var8.add(var14);
                               } else {
-                                 Class7944.method26811("[Shaders] Invalid screen: " + var12 + ", key: " + var0);
+                                 Config.method26811("[Shaders] Invalid screen: " + var12 + ", key: " + var0);
                               }
                            } else {
-                              Class7944.method26811("[Shaders] Invalid screen: " + var12 + ", key: " + var0);
+                              Config.method26811("[Shaders] Invalid screen: " + var12 + ", key: " + var0);
                            }
                         } else {
                            Class6679 var13 = Class6817.method20782(var12, var4);
@@ -377,7 +379,7 @@ public class Class8440 {
                               var13.method20383(true);
                               var8.add(var13);
                            } else {
-                              Class7944.method26811("[Shaders] Invalid option: " + var12 + ", key: " + var0);
+                              Config.method26811("[Shaders] Invalid option: " + var12 + ", key: " + var0);
                               var8.add((Class6679)null);
                            }
                         }
@@ -389,10 +391,10 @@ public class Class8440 {
                      Class6684 var19 = new Class6684(var3, var4);
                      var8.add(var19);
                   } else {
-                     Class7944.method26811("[Shaders] Option profile can not be used, no profiles defined: " + var12 + ", key: " + var0);
+                     Config.method26811("[Shaders] Option profile can not be used, no profiles defined: " + var12 + ", key: " + var0);
                   }
                } else {
-                  Class7944.method26811("[Shaders] Duplicate option: " + var12 + ", key: " + var0);
+                  Config.method26811("[Shaders] Duplicate option: " + var12 + ", key: " + var0);
                }
             } else {
                var8.add((Class6679)null);
@@ -401,7 +403,7 @@ public class Class8440 {
 
          Class6679[] var15 = var8.toArray(new Class6679[var8.size()]);
          String var16 = var1.getProperty(var0 + ".columns");
-         int var20 = Class7944.method26899(var16, 2);
+         int var20 = Config.method26899(var16, 2);
          Class8504 var21 = new Class8504(var0, var15, var20);
          var2.put(var0, var21);
          return true;
@@ -557,7 +559,7 @@ public class Class8440 {
       ArrayList<Class8943> var8 = new ArrayList();
 
       for (String var10 : (Set<String>)(Set) var0.keySet()) {
-         String[] var11 = Class7944.method26903(var10, ".");
+         String[] var11 = Config.method26903(var10, ".");
          if (var11.length == 3) {
             String var12 = var11[0];
             String var13 = var11[1];
@@ -623,7 +625,7 @@ public class Class8440 {
 
    public static void method29678(Properties var0) {
       for (String var4 : (Set<String>)(Set) var0.keySet()) {
-         String[] var5 = Class7944.method26903(var4, ".");
+         String[] var5 = Config.method26903(var4, ".");
          if (var5.length == 2) {
             String var6 = var5[0];
             String var7 = var5[1];
@@ -647,13 +649,13 @@ public class Class8440 {
       if (var0 == null) {
          return null;
       } else {
-         String[] var3 = Class7944.method26903(var0, " ");
+         String[] var3 = Config.method26903(var0, " ");
          if (var3.length != 1) {
             if (var3.length == 2) {
                String var8 = var3[0];
                String var5 = var3[1];
                Integer var6 = field36160.get(var8);
-               float var7 = Class7944.method26900(var5, -1.0F);
+               float var7 = Config.method26900(var5, -1.0F);
                if (var6 != null && var7 >= 0.0F) {
                   return new GlAlphaState(true, var6, var7);
                }
@@ -672,7 +674,7 @@ public class Class8440 {
 
    public static void method29680(Properties var0) {
       for (String var4 : (Set<String>)(Set) var0.keySet()) {
-         String[] var5 = Class7944.method26903(var4, ".");
+         String[] var5 = Config.method26903(var4, ".");
          if (var5.length == 2) {
             String var6 = var5[0];
             String var7 = var5[1];
@@ -696,7 +698,7 @@ public class Class8440 {
       if (var0 == null) {
          return null;
       } else {
-         String[] var3 = Class7944.method26903(var0, " ");
+         String[] var3 = Config.method26903(var0, " ");
          if (var3.length != 1) {
             if (var3.length == 2 || var3.length == 4) {
                String var12 = var3[0];
@@ -730,7 +732,7 @@ public class Class8440 {
 
    public static void method29682(Properties var0) {
       for (String var4 : (Set<String>)(Set) var0.keySet()) {
-         String[] var5 = Class7944.method26903(var4, ".");
+         String[] var5 = Config.method26903(var4, ".");
          if (var5.length == 2) {
             String var6 = var5[0];
             String var7 = var5[1];
@@ -751,8 +753,8 @@ public class Class8440 {
    }
 
    private static Class7125 method29683(String var0) {
-      String[] var3 = Class7944.method26903(var0, " ");
-      float var4 = Class7944.method26900(var3[0], -1.0F);
+      String[] var3 = Config.method26903(var0, " ");
+      float var4 = Config.method26900(var3[0], -1.0F);
       float var5 = 0.0F;
       float var6 = 0.0F;
       if (var3.length > 1) {
@@ -761,11 +763,11 @@ public class Class8440 {
             return null;
          }
 
-         var5 = Class7944.method26900(var3[1], -1.0F);
-         var6 = Class7944.method26900(var3[2], -1.0F);
+         var5 = Config.method26900(var3[1], -1.0F);
+         var6 = Config.method26900(var3[2], -1.0F);
       }
 
-      if (Class7944.method26896(var4, 0.0F, 1.0F) && Class7944.method26896(var5, 0.0F, 1.0F) && Class7944.method26896(var6, 0.0F, 1.0F)) {
+      if (Config.method26896(var4, 0.0F, 1.0F) && Config.method26896(var5, 0.0F, 1.0F) && Config.method26896(var6, 0.0F, 1.0F)) {
          return new Class7125(var4, var5, var6);
       } else {
          Class7399.method23632("Invalid render scale: " + var0);
@@ -775,7 +777,7 @@ public class Class8440 {
 
    public static void method29684(Properties var0) {
       for (String var4 : (Set<String>)(Set) var0.keySet()) {
-         String[] var5 = Class7944.method26903(var4, ".");
+         String[] var5 = Config.method26903(var4, ".");
          if (var5.length == 3) {
             String var6 = var5[0];
             String var7 = var5[1];
@@ -787,7 +789,7 @@ public class Class8440 {
                   int var11 = Shaders.method33028(var8);
                   if (var11 >= 0 && var11 < var10.length) {
                      String var12 = var0.getProperty(var4).trim();
-                     Boolean var13 = Class7944.method26902(var12, (Boolean)null);
+                     Boolean var13 = Config.method26902(var12, (Boolean)null);
                      if (var13 != null) {
                         var10[var11] = var13;
                      } else {

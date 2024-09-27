@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Properties;
 import java.util.Set;
+
+import net.optifine.Config;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -48,7 +50,7 @@ public class Class8703 {
       for (int var6 = 0; var6 < var4.length; var6++) {
          String var7 = var4[var6];
          String var8 = Class9402.method35772(var7, var2, var3);
-         int var9 = Class7944.method26899(var8, Integer.MIN_VALUE);
+         int var9 = Config.method26899(var8, Integer.MIN_VALUE);
          if (var9 != Integer.MIN_VALUE) {
             var5.put(var9, var7);
          } else {
@@ -80,10 +82,10 @@ public class Class8703 {
    }
 
    public static void method31390(String var0) {
-      Class7944.method26811("CustomLoadingScreen: " + var0);
+      Config.method26811("CustomLoadingScreen: " + var0);
    }
 
    public static void method31391(String var0) {
-      Class7944.method26810("CustomLoadingScreen: " + var0);
+      Config.method26810("CustomLoadingScreen: " + var0);
    }
 }

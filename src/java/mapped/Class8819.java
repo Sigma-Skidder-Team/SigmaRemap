@@ -1,9 +1,9 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.optifine.Config;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -29,7 +29,7 @@ public class Class8819 {
          var3.connect();
          if (var3.getResponseCode() / 100 != 2) {
             if (var3.getErrorStream() != null) {
-               Class7944.method26927(var3.getErrorStream());
+               Config.method26927(var3.getErrorStream());
             }
 
             throw new IOException("HTTP response: " + var3.getResponseCode());

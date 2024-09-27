@@ -9,6 +9,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.GameType;
+import net.optifine.Config;
 
 import javax.annotation.Nullable;
 import java.io.File;
@@ -78,7 +79,7 @@ public abstract class AbstractClientPlayerEntity extends PlayerEntity {
 
    @Nullable
    public ResourceLocation method5372() {
-      if (Class7944.method26914()) {
+      if (Config.method26914()) {
          if (this.field6102 != 0L && System.currentTimeMillis() > this.field6102) {
             Class8156.method28294(this);
             this.field6102 = 0L;

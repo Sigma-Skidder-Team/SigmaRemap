@@ -47,10 +47,10 @@ public class Class5956 extends Class5942<Class959> {
          var3.translate(0.5, 0.5, 0.5);
          if (var13 != 1) {
             if (var13 == 2) {
-               var3.rotate(Vector3f.field32902.rotationDegrees(90.0F));
+               var3.rotate(Vector3f.ZP.rotationDegrees(90.0F));
             }
          } else {
-            var3.rotate(Vector3f.field32898.rotationDegrees(90.0F));
+            var3.rotate(Vector3f.XP.rotationDegrees(90.0F));
          }
 
          Class5422 var14 = (var13 != 1 ? field25970 : field25971).method26200(var4, RenderType::getEntityCutoutNoCull);
@@ -59,8 +59,8 @@ public class Class5956 extends Class5942<Class959> {
          var3.push();
          var3.translate(0.5, 0.5, 0.5);
          var3.method35292(0.875F, 0.875F, 0.875F);
-         var3.rotate(Vector3f.field32898.rotationDegrees(180.0F));
-         var3.rotate(Vector3f.field32902.rotationDegrees(180.0F));
+         var3.rotate(Vector3f.XP.rotationDegrees(180.0F));
+         var3.rotate(Vector3f.ZP.rotationDegrees(180.0F));
          this.field25975.method22680(var3, var14, var5, var6);
          var3.pop();
          ActiveRenderInfo var15 = this.field25928.field34748;
@@ -69,8 +69,8 @@ public class Class5956 extends Class5942<Class959> {
          var3.method35292(0.5F, 0.5F, 0.5F);
          float var16 = -var15.getYaw();
          var3.rotate(Vector3f.YP.rotationDegrees(var16));
-         var3.rotate(Vector3f.field32898.rotationDegrees(var15.getPitch()));
-         var3.rotate(Vector3f.field32902.rotationDegrees(180.0F));
+         var3.rotate(Vector3f.XP.rotationDegrees(var15.getPitch()));
+         var3.rotate(Vector3f.ZP.rotationDegrees(180.0F));
          float var17 = 1.3333334F;
          var3.method35292(1.3333334F, 1.3333334F, 1.3333334F);
          this.field25974.method22680(var3, (!var1.method3904() ? field25973 : field25972).method26200(var4, RenderType::getEntityCutoutNoCull), var5, var6);

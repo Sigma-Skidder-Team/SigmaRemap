@@ -19,10 +19,10 @@ public class Class252 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
             float var17 = MathHelper.lerp(var7, var4.prevRotationPitch, var4.rotationPitch);
             var1.push();
             var1.rotate(Vector3f.YP.rotationDegrees(var16));
-            var1.rotate(Vector3f.field32898.rotationDegrees(var17));
+            var1.rotate(Vector3f.XP.rotationDegrees(var17));
             var1.translate((double)(0.375F * (float)(var15 * 2 - 1)), 0.0, 0.0);
             var1.translate(0.0, -0.375, 0.0);
-            var1.rotate(Vector3f.field32898.rotationDegrees(-var17));
+            var1.rotate(Vector3f.XP.rotationDegrees(-var17));
             var1.rotate(Vector3f.YP.rotationDegrees(-var16));
             float var18 = 1.3333334F;
             var1.method35292(1.3333334F, 1.3333334F, 1.3333334F);

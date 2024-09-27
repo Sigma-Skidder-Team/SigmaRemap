@@ -1,5 +1,8 @@
 package mapped;
 
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
+
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -73,10 +76,10 @@ public class Class6678 extends Class6679 {
          var1 = Class9402.method35763(var1, "]");
          var1 = var1.trim();
          if (var1.length() > 0) {
-            String[] var5 = Class7944.method26903(var1, " ");
+            String[] var5 = Config.method26903(var1, " ");
             if (var5.length > 0) {
                if (!Arrays.<String>asList(var5).contains(var0)) {
-                  var5 = (String[])Class7944.method26949(var5, var0, 0);
+                  var5 = (String[]) Config.method26949(var5, var0, 0);
                }
 
                return var5;

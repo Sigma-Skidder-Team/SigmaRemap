@@ -23,14 +23,14 @@ public class RenderSkyboxCube {
       RenderSystem.matrixMode(5889);
       RenderSystem.pushMatrix();
       RenderSystem.loadIdentity();
-      RenderSystem.method27888(Matrix4f.method35511(85.0, (float)var1.getMainWindow().getFramebufferWidth() / (float)var1.getMainWindow().getFramebufferHeight(), 0.05F, 10.0F));
+      RenderSystem.multMatrix(Matrix4f.method35511(85.0, (float)var1.getMainWindow().getFramebufferWidth() / (float)var1.getMainWindow().getFramebufferHeight(), 0.05F, 10.0F));
       RenderSystem.matrixMode(5888);
       RenderSystem.pushMatrix();
       RenderSystem.loadIdentity();
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.method27883(180.0F, 1.0F, 0.0F, 0.0F);
       RenderSystem.enableBlend();
-      RenderSystem.method27817();
+      RenderSystem.disableAlphaTest();
       RenderSystem.method27850();
       RenderSystem.depthMask(false);
       RenderSystem.defaultBlendFunc();
@@ -95,10 +95,10 @@ public class RenderSkyboxCube {
          }
 
          RenderSystem.popMatrix();
-         RenderSystem.method27870(true, true, true, false);
+         RenderSystem.colorMask(true, true, true, false);
       }
 
-      RenderSystem.method27870(true, true, true, true);
+      RenderSystem.colorMask(true, true, true, true);
       RenderSystem.matrixMode(5889);
       RenderSystem.popMatrix();
       RenderSystem.matrixMode(5888);

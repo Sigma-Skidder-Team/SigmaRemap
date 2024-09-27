@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.optifine.Config;
 
 public class Class4111 extends Class4057 {
    public Class4111() {
@@ -60,11 +61,11 @@ public class Class4111 extends Class4057 {
             Reflector.field43148.method20237(var8, var1);
             return (Class9492)var8;
          } else {
-            Class7944.method26811("Model field not found: RenderTropicalFish.modelA");
+            Config.method26811("Model field not found: RenderTropicalFish.modelA");
             return null;
          }
       } else {
-         Class7944.method26811("Not a TropicalFishRenderer: " + var6);
+         Config.method26811("Not a TropicalFishRenderer: " + var6);
          return null;
       }
    }

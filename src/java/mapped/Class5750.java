@@ -30,7 +30,7 @@ public class Class5750 extends Class5651<SalmonEntity, Class2816<SalmonEntity>> 
       var2.translate(0.0, 0.0, -0.4F);
       if (!var1.isInWater()) {
          var2.translate(0.2F, 0.1F, 0.0);
-         var2.rotate(Vector3f.field32902.rotationDegrees(90.0F));
+         var2.rotate(Vector3f.ZP.rotationDegrees(90.0F));
       }
    }
 }

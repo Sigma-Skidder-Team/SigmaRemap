@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 import java.io.ByteArrayOutputStream;
 import java.io.EOFException;
 import java.io.IOException;
@@ -39,10 +41,10 @@ public class Class360 extends Thread {
 
    private Class8075 method1825(InputStream var1) throws IOException {
       String var4 = this.method1828(var1);
-      String[] var5 = Class7944.method26903(var4, " ");
+      String[] var5 = Config.method26903(var4, " ");
       if (var5.length >= 3) {
          String var6 = var5[0];
-         int var7 = Class7944.method26899(var5[1], 0);
+         int var7 = Config.method26899(var5[1], 0);
          String var8 = var5[2];
          LinkedHashMap var9 = new LinkedHashMap();
 
@@ -53,11 +55,11 @@ public class Class360 extends Thread {
                String var15 = (String)var9.get("Content-Length");
                if (var15 == null) {
                   String var16 = (String)var9.get("Transfer-Encoding");
-                  if (Class7944.equals(var16, "chunked")) {
+                  if (Config.equals(var16, "chunked")) {
                      var14 = this.method1826(var1);
                   }
                } else {
-                  int var17 = Class7944.method26899(var15, -1);
+                  int var17 = Config.method26899(var15, -1);
                   if (var17 > 0) {
                      var14 = new byte[var17];
                      this.method1827(var14, var1);
@@ -85,7 +87,7 @@ public class Class360 extends Thread {
       int var7;
       do {
          String var5 = this.method1828(var1);
-         String[] var6 = Class7944.method26903(var5, "; ");
+         String[] var6 = Config.method26903(var5, "; ");
          var7 = Integer.parseInt(var6[0], 16);
          byte[] var8 = new byte[var7];
          this.method1827(var8, var1);

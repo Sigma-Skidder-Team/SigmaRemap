@@ -4,6 +4,7 @@ import com.google.common.primitives.Floats;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -106,7 +107,7 @@ public class Class7704 {
          var4.append(" -> " + ((Class7781)var1.get(0)).method25780() + " ...");
       }
 
-      Class7944.method26810("ItemOverrideCache: " + var4.toString());
+      Config.method26810("ItemOverrideCache: " + var4.toString());
    }
 
    @Override

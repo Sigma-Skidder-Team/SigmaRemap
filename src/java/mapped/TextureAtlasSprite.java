@@ -7,6 +7,8 @@ import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -638,8 +640,8 @@ public class TextureAtlasSprite implements AutoCloseable {
          this.field9350 = null;
       }
 
-      this.field9358 = Class7944.method26894();
-      this.field9357 = Class7944.method26921();
+      this.field9358 = Config.method26894();
+      this.field9357 = Config.isShaders();
       if (this.field9358 && !this.field9346) {
          this.field9345 = this.method7494();
       }

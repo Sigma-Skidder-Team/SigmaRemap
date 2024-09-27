@@ -28,6 +28,7 @@ import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
+import net.optifine.Config;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -158,39 +159,39 @@ public class Class1262 extends AbstractGui {
    public List<String> method5881() {
       if (this.field6665.debug != this.field6672) {
          StringBuffer var3 = new StringBuffer(this.field6665.debug);
-         int var4 = Class7944.method26956();
+         int var4 = Config.method26956();
          int var5 = this.field6665.debug.indexOf("T: ");
          if (var5 >= 0) {
             var3.insert(var5, "(" + var4 + " chunk updates) ");
          }
 
-         int var6 = Class7944.method26955();
+         int var6 = Config.method26955();
          int var7 = this.field6665.debug.indexOf(" fps ");
          if (var7 >= 0) {
             var3.insert(var7, "/" + var6);
          }
 
-         if (Class7944.method26979()) {
+         if (Config.method26979()) {
             var3.append(" sf");
          }
 
-         if (Class7944.method26919()) {
+         if (Config.method26919()) {
             var3.append(" fr");
          }
 
-         if (Class7944.method26890()) {
+         if (Config.method26890()) {
             var3.append(" af");
          }
 
-         if (Class7944.method26892()) {
+         if (Config.method26892()) {
             var3.append(" aa");
          }
 
-         if (Class7944.method26977()) {
+         if (Config.method26977()) {
             var3.append(" reg");
          }
 
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             var3.append(" sh");
          }
 
@@ -200,7 +201,7 @@ public class Class1262 extends AbstractGui {
 
       List var9 = this.method5882();
       StringBuilder var10 = new StringBuilder();
-      AtlasTexture var11 = Class7944.method26969();
+      AtlasTexture var11 = Config.method26969();
       var10.append(", A: ");
       if (SmartAnimations.isActive()) {
          var10.append(var11.method1118() + Class8389.method29403());

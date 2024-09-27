@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class4133 extends Class4057 {
    public Class4133() {
       super(TileEntityType.field21424, "ender_chest", 0.0F);
@@ -46,7 +48,7 @@ public class Class4133 extends Class4057 {
             Class2830 var7 = (Class2830)var1;
             return (Class9492)var7.method11029((Class5942)var6);
          } else {
-            Class7944.method26811("Not a chest model: " + var1);
+            Config.method26811("Not a chest model: " + var1);
             return null;
          }
       } else {

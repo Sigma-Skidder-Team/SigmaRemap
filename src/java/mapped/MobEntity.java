@@ -26,6 +26,7 @@ import net.minecraft.world.Difficulty;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.optifine.Config;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -151,7 +152,7 @@ public abstract class MobEntity extends LivingEntity {
 
    public void method4233(LivingEntity var1) {
       this.field5602 = var1;
-      Reflector.method35055(Reflector.field42862, this, var1);
+      Reflector.callVoid(Reflector.field42862, this, var1);
    }
 
    @Override
@@ -262,7 +263,7 @@ public abstract class MobEntity extends LivingEntity {
 
    @Override
    public void tick() {
-      if (Class7944.method26938() && this.method4311()) {
+      if (Config.method26938() && this.method4311()) {
          this.method4313();
       } else {
          super.tick();

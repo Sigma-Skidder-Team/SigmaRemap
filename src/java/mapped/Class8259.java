@@ -5,6 +5,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,12 +26,12 @@ public class Class8259 {
 
          try {
             ResourceLocation var7 = new ResourceLocation(var0.getNamespace(), var6);
-            InputStream var8 = Class7944.method26864(Class7944.method26862(), var7);
+            InputStream var8 = Config.method26864(Config.method26862(), var7);
             if (var8 == null) {
                return var4;
             }
 
-            Class7944.method26815("Loading " + var6);
+            Config.method26815("Loading " + var6);
             var4.load(var8);
             var8.close();
          } catch (FileNotFoundException var9) {
@@ -49,10 +50,10 @@ public class Class8259 {
          String var6 = "width.";
          if (var5.startsWith(var6)) {
             String var7 = var5.substring(var6.length());
-            int var8 = Class7944.method26899(var7, -1);
+            int var8 = Config.method26899(var7, -1);
             if (var8 >= 0) {
                String var9 = var0.getProperty(var5);
-               float var10 = Class7944.method26900(var9, -1.0F);
+               float var10 = Config.method26900(var9, -1.0F);
                if (var10 >= 0.0F) {
                   char var11 = (char)var8;
                   var3.put(var11, new Float(var10));
@@ -67,11 +68,11 @@ public class Class8259 {
    public static float method28793(Properties var0, String var1, float var2) {
       String var5 = var0.getProperty(var1);
       if (var5 != null) {
-         float var6 = Class7944.method26900(var5, Float.MIN_VALUE);
+         float var6 = Config.method26900(var5, Float.MIN_VALUE);
          if (var6 != Float.MIN_VALUE) {
             return var6;
          } else {
-            Class7944.method26811("Invalid value for " + var1 + ": " + var5);
+            Config.method26811("Invalid value for " + var1 + ": " + var5);
             return var2;
          }
       } else {
@@ -86,7 +87,7 @@ public class Class8259 {
          if (var6.equals("true") || var6.equals("on")) {
             return true;
          } else if (!var6.equals("false") && !var6.equals("off")) {
-            Class7944.method26811("Invalid value for " + var1 + ": " + var5);
+            Config.method26811("Invalid value for " + var1 + ": " + var5);
             return var2;
          } else {
             return false;
@@ -97,9 +98,9 @@ public class Class8259 {
    }
 
    public static ResourceLocation method28795(ResourceLocation var0) {
-      if (Class7944.method26913()) {
+      if (Config.method26913()) {
          if (var0 != null) {
-            if (Class7944.method26797()) {
+            if (Config.method26797()) {
                String var3 = var0.getPath();
                String var4 = "textures/";
                String var5 = "optifine/";
@@ -107,7 +108,7 @@ public class Class8259 {
                   var3 = var3.substring(var4.length());
                   var3 = var5 + var3;
                   ResourceLocation var6 = new ResourceLocation(var0.getNamespace(), var3);
-                  return !Class7944.method26867(Class7944.method26862(), var6) ? var0 : var6;
+                  return !Config.method26867(Config.method26862(), var6) ? var0 : var6;
                } else {
                   return var0;
                }
@@ -128,7 +129,7 @@ public class Class8259 {
       Minecraft var4 = Minecraft.getInstance();
       FontResourceManager var5 = (FontResourceManager) Reflector.method35072(var4, Reflector.field43020);
       if (var5 != null) {
-         var5.getReloadListener().method777(var2, Class7944.method26862(), EmptyProfiler.INSTANCE, EmptyProfiler.INSTANCE, var3, var4);
+         var5.getReloadListener().method777(var2, Config.method26862(), EmptyProfiler.INSTANCE, EmptyProfiler.INSTANCE, var3, var4);
       }
    }
 }

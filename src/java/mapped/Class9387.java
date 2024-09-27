@@ -7,6 +7,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.optifine.Config;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -61,7 +62,7 @@ public class Class9387 {
    private static void method35631(Class1014 var0, boolean var1) {
       Object var4 = var0.method4400();
       if (var4 == null) {
-         var4 = Class7944.method26860().player;
+         var4 = Config.method26860().player;
       }
 
       if (var4 instanceof AbstractClientPlayerEntity) {
@@ -69,14 +70,14 @@ public class Class9387 {
          UUID var6 = var0.getUniqueID();
          if (!var1) {
             EntityDataManager var7 = var0.getDataManager();
-            if (var5.field6105 != null && Class7944.equals(var5.field6105.getUniqueID(), var6)) {
+            if (var5.field6105 != null && Config.equals(var5.field6105.getUniqueID(), var6)) {
                EntityDataManager var8 = var5.field6105.getDataManager();
                var7.field43438 = var8.field43438;
                var7.field43437 = var8.field43437;
                var5.field6105 = null;
             }
 
-            if (var5.field6106 != null && Class7944.equals(var5.field6106.getUniqueID(), var6)) {
+            if (var5.field6106 != null && Config.equals(var5.field6106.getUniqueID(), var6)) {
                EntityDataManager var10 = var5.field6106.getDataManager();
                var7.field43438 = var10.field43438;
                var7.field43437 = var10.field43437;
@@ -84,12 +85,12 @@ public class Class9387 {
             }
          } else {
             CompoundNBT var9 = var5.method2969();
-            if (var9 != null && var9.contains("UUID") && Class7944.equals(var9.method105("UUID"), var6)) {
+            if (var9 != null && var9.contains("UUID") && Config.equals(var9.method105("UUID"), var6)) {
                var5.field6105 = var0;
             }
 
             CompoundNBT var11 = var5.method2971();
-            if (var11 != null && var11.contains("UUID") && Class7944.equals(var11.method105("UUID"), var6)) {
+            if (var11 != null && var11.contains("UUID") && Config.equals(var11.method105("UUID"), var6)) {
                var5.field6106 = var0;
             }
          }
@@ -196,7 +197,7 @@ public class Class9387 {
       try {
          String var4 = var0.getPath();
          method35646(var1.getPath() + ", properties: " + var4);
-         InputStream var5 = Class7944.method26863(var0);
+         InputStream var5 = Config.method26863(var0);
          if (var5 == null) {
             method35647("Properties not found: " + var4);
             return null;
@@ -224,11 +225,11 @@ public class Class9387 {
          String var7 = Class9402.method35763(var6, ".png");
          String var8 = var7 + ".properties";
          ResourceLocation var9 = new ResourceLocation(var5, var8);
-         if (!Class7944.method26866(var9)) {
+         if (!Config.method26866(var9)) {
             String var10 = method35642(var7);
             if (var10 != null) {
                ResourceLocation var11 = new ResourceLocation(var5, var10 + ".properties");
-               return !Class7944.method26866(var11) ? null : var11;
+               return !Config.method26866(var11) ? null : var11;
             } else {
                return null;
             }
@@ -302,7 +303,7 @@ public class Class9387 {
          for (int var6 = 1; var6 < var4.size() + 10; var6++) {
             int var7 = var6 + 1;
             ResourceLocation var8 = method35641(var5, var7);
-            if (Class7944.method26866(var8)) {
+            if (Config.method26866(var8)) {
                var4.add(var8);
             }
          }
@@ -322,13 +323,13 @@ public class Class9387 {
    public static void method35644() {
       field43550.clear();
       field43551 = false;
-      if (Class7944.method26907()) {
+      if (Config.method26907()) {
          method35645();
       }
    }
 
    private static void method35645() {
-      field43552 = Class7944.method26874();
+      field43552 = Config.method26874();
       field43554 = TileEntityRendererDispatcher.instance;
       String[] var2 = new String[]{"optifine/random/", "optifine/mob/"};
       String[] var3 = new String[]{".png", ".properties"};
@@ -344,7 +345,7 @@ public class Class9387 {
          if (!var5.contains(var8)) {
             var5.add(var8);
             ResourceLocation var9 = new ResourceLocation(var8);
-            if (Class7944.method26866(var9)) {
+            if (Config.method26866(var9)) {
                Class7978 var10 = field43550.get(var8);
                if (var10 == null) {
                   var10 = method35636(var9, false);
@@ -364,10 +365,10 @@ public class Class9387 {
    }
 
    public static void method35646(String var0) {
-      Class7944.method26810("RandomEntities: " + var0);
+      Config.method26810("RandomEntities: " + var0);
    }
 
    public static void method35647(String var0) {
-      Class7944.method26811("RandomEntities: " + var0);
+      Config.method26811("RandomEntities: " + var0);
    }
 }

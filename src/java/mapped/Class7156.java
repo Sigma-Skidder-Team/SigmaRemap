@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.util.Properties;
 
@@ -28,7 +29,7 @@ public class Class7156 {
       int var6 = method22326(method22325("scaleMode", var1, var2));
       int var7 = var6 != 0 ? 1 : 2;
       int var8 = method22327(method22325("scale", var1, var2), var7);
-      boolean var9 = Class7944.method26901(method22325("center", var1, var2), false);
+      boolean var9 = Config.method26901(method22325("center", var1, var2), false);
       return new Class7156(var5, var6, var8, var9);
    }
 
@@ -66,7 +67,7 @@ public class Class7156 {
    private static int method22327(String var0, int var1) {
       if (var0 != null) {
          var0 = var0.trim();
-         int var4 = Class7944.method26899(var0, -1);
+         int var4 = Config.method26899(var0, -1);
          if (var4 >= 1) {
             return var4;
          } else {
@@ -83,7 +84,7 @@ public class Class7156 {
       GlStateManager.method23780();
       Tessellator var5 = Tessellator.getInstance();
       BufferBuilder var6 = var5.getBuffer();
-      Class7944.method26861().bindTexture(this.field30738);
+      Config.method26861().bindTexture(this.field30738);
       GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       float var7 = (float)(16 * this.field30740);
       float var8 = (float)var1 / var7;

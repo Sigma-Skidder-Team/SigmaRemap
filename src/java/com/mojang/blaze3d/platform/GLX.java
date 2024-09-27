@@ -12,6 +12,7 @@ import java.util.function.Supplier;
 import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
+import net.optifine.Config;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.Version;
@@ -100,11 +101,11 @@ public class GLX {
    public static void method28301() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       if (GL.getCapabilities().GL_NV_fog_distance) {
-         if (Class7944.method26804()) {
+         if (Config.isFogFancy()) {
             GlStateManager.method23786(34138, 34139);
          }
 
-         if (Class7944.method26805()) {
+         if (Config.isFogFast()) {
             GlStateManager.method23786(34138, 34140);
          }
       }

@@ -69,7 +69,7 @@ public class FillESP extends Module {
                 double var15 = var10.getZ();
                 MatrixStack var17 = new MatrixStack();
                 boolean var18 = mc.gameSettings.field44616;
-                RenderSystem.method27821();
+                RenderSystem.disableLighting();
                 RenderSystem.color4f(0.0F, 0.0F, 1.0F, 0.5F);
                 RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field15990, DestFactor.field12936);
                 RenderSystem.enableBlend();
@@ -140,7 +140,7 @@ public class FillESP extends Module {
         GL11.glDisable(2903);
         GL11.glDisable(2929);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.gameRenderer.field818.method7316();
+        mc.gameRenderer.lightmapTexture.method7316();
     }
 
     private void method16140() {
@@ -153,7 +153,7 @@ public class FillESP extends Module {
         TextureManager var10000 = mc.getTextureManager();
         mc.getTextureManager();
         var10000.bindTexture(TextureManager.field1094);
-        mc.gameRenderer.field818.method7317();
+        mc.gameRenderer.lightmapTexture.method7317();
         GL11.glLightModelfv(2899, new float[]{0.4F, 0.4F, 0.4F, 1.0F});
     }
 }

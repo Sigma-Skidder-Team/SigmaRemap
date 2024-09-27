@@ -24,6 +24,6 @@ public class Class5681 extends Class5651<Class1110, Class2806<Class1110>> {
 
    public void method17842(Class1110 var1, MatrixStack var2, float var3, float var4, float var5) {
       super.method17842(var1, var2, var3, var4, var5);
-      var2.rotate(Vector3f.field32898.rotationDegrees(var1.rotationPitch));
+      var2.rotate(Vector3f.XP.rotationDegrees(var1.rotationPitch));
    }
 }

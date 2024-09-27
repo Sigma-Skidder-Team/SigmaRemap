@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class4087 extends Class4057 {
    public Class4087() {
       super(TileEntityType.field21439, "banner", 0.0F);
@@ -46,7 +48,7 @@ public class Class4087 extends Class4057 {
             Class2852 var7 = (Class2852)var1;
             return (Class9492)var7.method11180((Class5942)var6);
          } else {
-            Class7944.method26811("Not a banner model: " + var1);
+            Config.method26811("Not a banner model: " + var1);
             return null;
          }
       } else {

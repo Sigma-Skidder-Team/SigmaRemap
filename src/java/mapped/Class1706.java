@@ -45,7 +45,7 @@ public class Class1706 implements AutoCloseable {
       this.field9294.unbindFramebuffer();
       float var4 = (float)this.field9295.framebufferTextureWidth;
       float var5 = (float)this.field9295.framebufferTextureHeight;
-      RenderSystem.method27869(0, 0, (int)var4, (int)var5);
+      RenderSystem.viewport(0, 0, (int)var4, (int)var5);
       this.field9293.method7940("DiffuseSampler", this.field9294::getFramebufferTexture);
 
       for (int var6 = 0; var6 < this.field9296.size(); var6++) {

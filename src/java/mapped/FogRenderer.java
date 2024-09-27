@@ -11,6 +11,8 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 public class FogRenderer {
    private static String[] field40347;
@@ -197,9 +199,9 @@ public class FogRenderer {
       if (Reflector.field42800.exists()) {
          Object var31 = Reflector.method35087(Reflector.field42800, var0, var1, field40348, field40349, field40350);
          Reflector.method35086(var31);
-         field40348 = Reflector.method35067(var31, Reflector.field42801);
-         field40349 = Reflector.method35067(var31, Reflector.field42802);
-         field40350 = Reflector.method35067(var31, Reflector.field42803);
+         field40348 = Reflector.callFloat(var31, Reflector.field42801);
+         field40349 = Reflector.callFloat(var31, Reflector.field42802);
+         field40350 = Reflector.callFloat(var31, Reflector.field42803);
       }
 
       Shaders.method33048(field40348, field40349, field40350, 0.0F);
@@ -242,7 +244,7 @@ public class FogRenderer {
                } else if (!var3) {
                   if (var1 != Class2040.field13337) {
                      field40354 = true;
-                     var10 = var2 * Class7944.method26808();
+                     var10 = var2 * Config.method26808();
                      var11 = var2;
                   } else {
                      field40354 = true;
@@ -267,7 +269,7 @@ public class FogRenderer {
             RenderSystem.method27842(Class2135.field13984);
             RenderSystem.method27904();
             if (Reflector.field42883.exists()) {
-               Reflector.method35055(Reflector.field42883, var1, var0, var4, var11);
+               Reflector.callVoid(Reflector.field42883, var1, var0, var4, var11);
             }
          } else {
             float var14 = 1.0F;
@@ -291,7 +293,7 @@ public class FogRenderer {
 
    public static void method32588() {
       RenderSystem.method27847(2918, field40348, field40349, field40350, 1.0F);
-      if (Class7944.method26921()) {
+      if (Config.isShaders()) {
          Shaders.method33047(field40348, field40349, field40350);
       }
    }

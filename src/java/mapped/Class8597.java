@@ -7,6 +7,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.ChunkSection;
+import net.optifine.Config;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
@@ -28,7 +29,7 @@ public class Class8597 {
       int var5 = MathHelper.floor(var1.getPosX()) >> 4;
       int var6 = MathHelper.floor(var1.getPosY()) >> 4;
       int var7 = MathHelper.floor(var1.getPosZ()) >> 4;
-      var6 = Class7944.method26830(var6, 0, 15);
+      var6 = Config.method26830(var6, 0, 15);
       Chunk var8 = var0.getChunk(var5, var7);
       int var9 = var5 - var2;
       int var10 = var5 + var2;

@@ -236,7 +236,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
          RenderSystem.disableDepthTest();
          RenderSystem.enableBlend();
          RenderSystem.blendFuncSeparate(GlStateManager.SourceFactor.field15997, DestFactor.field12932, GlStateManager.SourceFactor.field16000, DestFactor.field12927);
-         RenderSystem.method27817();
+         RenderSystem.disableAlphaTest();
          RenderSystem.shadeModel(7425);
          RenderSystem.disableTexture();
          byte var15 = 4;
@@ -281,7 +281,7 @@ public abstract class Class1273<E extends Class1154<E>> extends FocusableGui imp
       this.method6040(var1, var2, var3);
       RenderSystem.enableTexture();
       RenderSystem.shadeModel(7424);
-      RenderSystem.disableAlphaTest();
+      RenderSystem.enableAlphaTest();
       RenderSystem.disableBlend();
    }
 

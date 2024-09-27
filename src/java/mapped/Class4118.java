@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.optifine.Config;
 
 public class Class4118 extends Class4117 {
    public Class4118() {
@@ -38,7 +39,7 @@ public class Class4118 extends Class4117 {
    @Override
    public String[] method12824() {
       String[] var3 = super.method12824();
-      return (String[])Class7944.method26950(var3, new String[]{"right", "left", "waist", "base"});
+      return (String[]) Config.method26950(var3, new String[]{"right", "left", "waist", "base"});
    }
 
    @Override

@@ -21,7 +21,7 @@ public class Class5682 extends Class5651<SquidEntity, Class2879<SquidEntity>> {
       float var9 = MathHelper.lerp(var5, var1.prevSquidYaw, var1.squidYaw);
       var2.translate(0.0, 0.5, 0.0);
       var2.rotate(Vector3f.YP.rotationDegrees(180.0F - var4));
-      var2.rotate(Vector3f.field32898.rotationDegrees(var8));
+      var2.rotate(Vector3f.XP.rotationDegrees(var8));
       var2.rotate(Vector3f.YP.rotationDegrees(var9));
       var2.translate(0.0, -1.2F, 0.0);
    }

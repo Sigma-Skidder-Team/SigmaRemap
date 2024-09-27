@@ -2,6 +2,7 @@ package net.minecraft.client.renderer.texture;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
+import net.optifine.Config;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,14 +17,14 @@ public class DynamicTexture extends Class290 {
       if (RenderSystem.isOnRenderThread()) {
          TextureUtil.method30368(this.getGlTextureId(), this.field1133.method7886(), this.field1133.method7887());
          this.method1140();
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Class9336.method35317(this);
          }
       } else {
          RenderSystem.recordRenderCall(() -> {
             TextureUtil.method30368(this.getGlTextureId(), this.field1133.method7886(), this.field1133.method7887());
             this.method1140();
-            if (Class7944.method26921()) {
+            if (Config.isShaders()) {
                Class9336.method35317(this);
             }
          });
@@ -31,10 +32,10 @@ public class DynamicTexture extends Class290 {
    }
 
    public DynamicTexture(int var1, int var2, boolean var3) {
-      RenderSystem.assertThread(RenderSystem::method27807);
+      RenderSystem.assertThread(RenderSystem::isOnGameThreadOrInit);
       this.field1133 = new Class1806(var1, var2, var3);
       TextureUtil.method30368(this.getGlTextureId(), this.field1133.method7886(), this.field1133.method7887());
-      if (Class7944.method26921()) {
+      if (Config.isShaders()) {
          Class9336.method35317(this);
       }
    }

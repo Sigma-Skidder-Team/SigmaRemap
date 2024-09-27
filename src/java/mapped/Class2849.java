@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.optifine.Config;
 
 public class Class2849 extends Class2828 {
    public Class7219 field17652;
@@ -23,7 +24,7 @@ public class Class2849 extends Class2828 {
          Reflector.field43041.method36566(var1, 2, this.field17654);
          return var1;
       } else {
-         Class7944.method26811("Field not found: RenderEnderCrystal.modelEnderCrystal");
+         Config.method26811("Field not found: RenderEnderCrystal.modelEnderCrystal");
          return null;
       }
    }

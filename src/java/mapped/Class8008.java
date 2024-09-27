@@ -1,6 +1,8 @@
 package mapped;
 
 import java.util.Properties;
+
+import net.optifine.Config;
 import org.apache.commons.lang3.ArrayUtils;
 
 public class Class8008 {
@@ -46,7 +48,7 @@ public class Class8008 {
    public void method27381(boolean var1) {
       byte var4 = 0;
       int var5 = this.field34432.length - 1;
-      this.field34435 = Class7944.method26830(this.field34435, var4, var5);
+      this.field34435 = Config.method26830(this.field34435, var4, var5);
       if (!var1) {
          this.field34435--;
          if (this.field34435 < var4) {
@@ -109,6 +111,6 @@ public class Class8008 {
 
    @Override
    public String toString() {
-      return "" + this.field34431 + "=" + this.method27384() + " [" + Class7944.method26854(this.field34432) + "], value: " + this.field34435;
+      return "" + this.field34431 + "=" + this.method27384() + " [" + Config.method26854(this.field34432) + "], value: " + this.field34435;
    }
 }

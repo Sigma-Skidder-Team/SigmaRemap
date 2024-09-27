@@ -4,6 +4,7 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.io.IOException;
 import java.util.concurrent.Executor;
@@ -26,7 +27,7 @@ public abstract class Class290 implements AutoCloseable {
          int var6;
          short var7;
          if (!var1) {
-            int var5 = Class7944.method26801();
+            int var5 = Config.method26801();
             var6 = !var2 ? 9728 : var5;
             var7 = 9728;
          } else {

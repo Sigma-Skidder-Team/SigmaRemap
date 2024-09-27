@@ -4,6 +4,9 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
+import net.optifine.shaders.ShadersRender;
 
 import java.util.*;
 import java.util.function.Supplier;
@@ -797,15 +800,15 @@ public abstract class RenderType extends Class4510 {
 
          var1.finishDrawing();
          this.method14231();
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Class8496.method30082(false);
             Shaders.method33117();
-            Class5463.method17164(this, var1);
+            ShadersRender.method17164(this, var1);
          }
 
          WorldVertexBufferUploader.draw(var1);
-         if (Class7944.method26921()) {
-            Class5463.method17165(this, var1);
+         if (Config.isShaders()) {
+            ShadersRender.method17165(this, var1);
             Shaders.method33118();
             Class8496.method30082(true);
          }
@@ -892,7 +895,7 @@ public abstract class RenderType extends Class4510 {
    }
 
    public static ResourceLocation method14363(ResourceLocation var0) {
-      if (Class7944.method26907()) {
+      if (Config.method26907()) {
          var0 = Class9387.method35633(var0);
       }
 

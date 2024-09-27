@@ -9,6 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.biome.Biome;
+import net.optifine.Config;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -480,10 +481,10 @@ public class Class9619 {
             }
          }
 
-         int var11 = Class7944.method26934(var3, var5) & 2147483647;
+         int var11 = Config.method26934(var3, var5) & 2147483647;
 
          for (int var12 = 0; var12 < var0.field30566; var12++) {
-            var11 = Class7944.method26933(var11);
+            var11 = Config.method26933(var11);
          }
 
          int var13 = 0;
@@ -966,7 +967,7 @@ public class Class9619 {
 
       if (var17 == 0) {
          return var17;
-      } else if (!Class7944.method26918()) {
+      } else if (!Config.method26918()) {
          return var17;
       } else {
          switch (var5) {
@@ -1132,7 +1133,7 @@ public class Class9619 {
       } else {
          if (var0.field30576 != null) {
             TextureAtlasSprite var8 = method37476(var1, var2, var3, var7, var4);
-            if (!Class7944.method26945(var8, var0.field30576)) {
+            if (!Config.method26945(var8, var0.field30576)) {
                return false;
             }
          }
@@ -1218,7 +1219,7 @@ public class Class9619 {
          if (var7 == null) {
             return null;
          } else {
-            if (Class7944.method26876()) {
+            if (Config.method26876()) {
                var7 = Class9422.method36148(var0, var3, var2, var6, var7);
             }
 
@@ -1475,15 +1476,15 @@ public class Class9619 {
       field44963 = (Class7104[][])null;
       field44959 = null;
       field44961 = (Map[][])null;
-      if (Class7944.method26915()) {
-         IResourcePack[] var1 = Class7944.method26869();
+      if (Config.method26915()) {
+         IResourcePack[] var1 = Config.method26869();
 
          for (int var2 = var1.length - 1; var2 >= 0; var2--) {
             IResourcePack var3 = var1[var2];
             method37483(var0, var3);
          }
 
-         method37483(var0, Class7944.method26871());
+         method37483(var0, Config.method26871());
          field44976 = var0.method1119(field44977);
          field44959 = new Map[var0.method1109() + 1];
          field44960 = new Map[var0.method1109() + 1];
@@ -1506,13 +1507,13 @@ public class Class9619 {
 
       for (int var5 = 0; var5 < var2.length; var5++) {
          String var6 = var2[var5];
-         Class7944.method26810("ConnectedTextures: " + var6);
+         Config.method26810("ConnectedTextures: " + var6);
 
          try {
             ResourceLocation var7 = new ResourceLocation(var6);
             InputStream var8 = var1.getResourceStream(ResourcePackType.CLIENT_RESOURCES, var7);
             if (var8 == null) {
-               Class7944.method26811("ConnectedTextures file not found: " + var6);
+               Config.method26811("ConnectedTextures file not found: " + var6);
             } else {
                Class20 var9 = new Class20();
                var9.load(var8);
@@ -1525,7 +1526,7 @@ public class Class9619 {
                }
             }
          } catch (FileNotFoundException var11) {
-            Class7944.method26811("ConnectedTextures file not found: " + var6);
+            Config.method26811("ConnectedTextures file not found: " + var6);
          } catch (Exception var12) {
             var12.printStackTrace();
          }
@@ -1534,7 +1535,7 @@ public class Class9619 {
       field44962 = method37489(var4);
       field44963 = method37489(var3);
       field44964 = method37488();
-      Class7944.method26810("Multipass connected textures: " + field44964);
+      Config.method26810("Multipass connected textures: " + field44964);
    }
 
    public static void method37484(AtlasTexture var0) {
@@ -1546,7 +1547,7 @@ public class Class9619 {
    private static TextureAtlasSprite method37485(AtlasTexture var0, ResourceLocation var1) {
       TextureAtlasSprite var2 = var0.getSprite(var1);
       if (var2 == null || var2 instanceof Class1714) {
-         Class7944.method26811("Missing CTM sprite: " + var1);
+         Config.method26811("Missing CTM sprite: " + var1);
       }
 
       return var2;
@@ -1640,11 +1641,11 @@ public class Class9619 {
          for (int var2 = 0; var2 < var0.field30572.length; var2++) {
             TextureAtlasSprite var3 = var0.field30572[var2];
             if (!(var3 instanceof TextureAtlasSprite)) {
-               Class7944.method26811("TextureAtlasSprite is not TextureAtlasSprite: " + var3 + ", name: " + var3.method7465());
+               Config.method26811("TextureAtlasSprite is not TextureAtlasSprite: " + var3 + ", name: " + var3.method7465());
             } else {
                int var4 = var3.method7475();
                if (var4 < 0) {
-                  Class7944.method26811("Invalid tile ID: " + var4 + ", icon: " + var3.method7465());
+                  Config.method26811("Invalid tile ID: " + var4 + ", icon: " + var3.method7465());
                } else {
                   method37492(var0, var1, var4);
                }
@@ -1658,7 +1659,7 @@ public class Class9619 {
          for (int var2 = 0; var2 < var0.field30551.length; var2++) {
             int var3 = var0.field30551[var2].method38103();
             if (var3 < 0) {
-               Class7944.method26811("Invalid block ID: " + var3);
+               Config.method26811("Invalid block ID: " + var3);
             } else {
                method37492(var0, var1, var3);
             }
@@ -1704,12 +1705,12 @@ public class Class9619 {
    private static void method37494(List var0, String var1, String var2) {
       String var3 = "optifine/ctm/default/";
       ResourceLocation var4 = new ResourceLocation(var1);
-      IResourcePack var5 = Class7944.method26873(var4);
+      IResourcePack var5 = Config.method26873(var4);
       if (var5 != null) {
          if (var5.getName().equals("Programmer Art")) {
             String var6 = var3 + "programmer_art/";
             var0.add(var6 + var2);
-         } else if (var5 == Class7944.method26871()) {
+         } else if (var5 == Config.method26871()) {
             var0.add(var3 + var2);
          }
       }

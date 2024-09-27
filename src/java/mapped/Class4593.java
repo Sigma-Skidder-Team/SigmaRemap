@@ -5,6 +5,8 @@ import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 public class Class4593 extends Class4587 {
    private static String[] field22080;
@@ -38,7 +40,7 @@ public class Class4593 extends Class4587 {
    @Override
    public void method14510(Class5422 var1, ActiveRenderInfo var2, float var3) {
       Class7906 var6 = null;
-      if (Class7944.method26921()) {
+      if (Config.isShaders()) {
          var6 = Shaders.field40848;
          Shaders.method33079(this.field22082);
       }
@@ -66,7 +68,7 @@ public class Class4593 extends Class4587 {
             this.field22085.method32208(this.field22082, var3)
          );
       var20.method25602();
-      if (Class7944.method26921()) {
+      if (Config.isShaders()) {
          Shaders.method33080((Entity)null);
          Shaders.method33021(var6);
       }

@@ -22,6 +22,7 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.util.LWJGLMemoryUntracker;
+import net.optifine.Config;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -159,7 +160,7 @@ public final class Class1806 implements AutoCloseable {
    public static void method7884(boolean var0, boolean var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       if (!var0) {
-         int var4 = Class7944.method26801();
+         int var4 = Config.method26801();
          GlStateManager.texParameter(3553, 10241, !var1 ? 9728 : var4);
          GlStateManager.texParameter(3553, 10240, 9728);
       } else {

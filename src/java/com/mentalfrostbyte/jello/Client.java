@@ -42,7 +42,7 @@ public class Client {
     public static String field28960 = "Jello";
     public static String field28962 = "Sigma Production";
     public static List<Texture> textureList = new ArrayList<Texture>();
-    public static boolean field28993 = false;
+    public static boolean dontRenderHand = false;
     private static Client instance;
     private final File file = new File("sigma5");
     private JSONObject config;
@@ -241,7 +241,7 @@ public class Client {
             this.guiManager.method33464();
             RenderSystem.popMatrix();
             RenderSystem.enableDepthTest();
-            RenderSystem.disableAlphaTest();
+            RenderSystem.enableAlphaTest();
             GL11.glAlphaFunc(518, 0.1F);
             TextureManager var10000 = mc.getTextureManager();
             mc.getTextureManager();
@@ -249,8 +249,8 @@ public class Client {
         }
     }
 
-    public void method19929() {
-        if (mc != null && mc.world != null && mc.player != null && !field28993) {
+    public void hook3DRenderEvent() {
+        if (mc != null && mc.world != null && mc.player != null && !dontRenderHand) {
             GL11.glTranslatef(0.0F, 0.0F, 0.0F);
             RenderSystem.disableDepthTest();
             RenderSystem.depthMask(false);
@@ -258,9 +258,7 @@ public class Client {
             this.eventManager.call(new Render3DEvent());
             RenderSystem.enableDepthTest();
             RenderSystem.depthMask(true);
-            TextureManager var10000 = mc.getTextureManager();
-            mc.getTextureManager();
-            var10000.bindTexture(TextureManager.field1094);
+            mc.getTextureManager().bindTexture(TextureManager.field1094);
         }
     }
 

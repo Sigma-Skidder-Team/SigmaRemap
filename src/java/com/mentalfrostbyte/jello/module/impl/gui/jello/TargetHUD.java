@@ -174,7 +174,7 @@ public class TargetHUD extends PremiumModule {
             MatrixStack var10 = new MatrixStack();
             var10.translate(0.0, 0.0, 1500.0);
             var10.method35292(var6, var6, var6);
-            Quaternion var11 = Vector3f.field32902.rotationDegrees(180.0F);
+            Quaternion var11 = Vector3f.ZP.rotationDegrees(180.0F);
             var10.rotate(var11);
             var4.method32215(false);
             Class7735 var12 = Minecraft.getInstance().getRenderTypeBuffers().method26536();
@@ -192,7 +192,7 @@ public class TargetHUD extends PremiumModule {
     }
 
     private Color method16476(int var1, int var2, Color var3) {
-        Color var6 = RenderUtil.method11481(var1, var2, var3);
+        Color var6 = RenderUtil.getColorFromScreen(var1, var2, var3);
         if (var3 != null) {
             var6 = MultiUtilities.method17681(var6, var3, 0.08F * this.field23686);
         }

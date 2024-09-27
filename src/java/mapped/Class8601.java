@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class8601 {
    private Class7448 field38699 = null;
    private float[][] field38700 = new float[16][3];
@@ -37,10 +39,10 @@ public class Class8601 {
                   var10 = 1.0F;
                }
 
-               var10 = Class7944.method26834(var10);
+               var10 = Config.method26834(var10);
                float var11 = var10 * (float)(var8 - 1);
-               float var12 = Class7944.method26834(var2 + 0.5F) * (float)(var8 - 1);
-               float var13 = Class7944.method26834((float)Class7944.method26928().gamma);
+               float var12 = Config.method26834(var2 + 0.5F) * (float)(var8 - 1);
+               float var13 = Config.method26834((float) Config.method26928().gamma);
                boolean var14 = var13 > 1.0E-4F;
                float[][] var15 = this.field38699.method24068();
                this.method30777(var15, var11, var9, var8, this.field38700);
@@ -50,7 +52,7 @@ public class Class8601 {
                for (int var17 = 0; var17 < 16; var17++) {
                   for (int var18 = 0; var18 < 16; var18++) {
                      for (int var19 = 0; var19 < 3; var19++) {
-                        float var20 = Class7944.method26834(this.field38700[var17][var19] + this.field38701[var18][var19]);
+                        float var20 = Config.method26834(this.field38700[var17][var19] + this.field38701[var18][var19]);
                         if (var14) {
                            float var21 = 1.0F - var20;
                            var21 = 1.0F - var21 * var21 * var21 * var21;
@@ -102,10 +104,10 @@ public class Class8601 {
    }
 
    private static void method30778(String var0) {
-      Class7944.method26810("CustomColors: " + var0);
+      Config.method26810("CustomColors: " + var0);
    }
 
    private static void method30779(String var0) {
-      Class7944.method26811("CustomColors: " + var0);
+      Config.method26811("CustomColors: " + var0);
    }
 }

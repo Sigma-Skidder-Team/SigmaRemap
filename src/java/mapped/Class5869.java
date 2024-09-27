@@ -48,11 +48,11 @@ public class Class5869 {
             RenderSystem.enableBlend();
          }
 
-         RenderSystem.method27838(this.field25651);
+         RenderSystem.blendEquation(this.field25651);
          if (!this.field25652) {
             RenderSystem.method27835(this.field25647, this.field25649);
          } else {
-            RenderSystem.method27837(this.field25647, this.field25649, this.field25648, this.field25650);
+            RenderSystem.blendFuncSeparate(this.field25647, this.field25649, this.field25648, this.field25650);
          }
       }
    }

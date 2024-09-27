@@ -1,5 +1,8 @@
 package mapped;
 
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
+
 import java.util.BitSet;
 
 public class SmartAnimations {
@@ -9,11 +12,11 @@ public class SmartAnimations {
    private static BitSet field21728 = new BitSet();
 
    public static boolean isActive() {
-      return field21726 && ! Shaders.field40609;
+      return field21726 && ! Shaders.isShadowPass;
    }
 
    public static void method14214() {
-      field21726 = Class7944.method26928().field44686;
+      field21726 = Config.method26928().field44686;
    }
 
    public static void spriteRendered(TextureAtlasSprite var0) {

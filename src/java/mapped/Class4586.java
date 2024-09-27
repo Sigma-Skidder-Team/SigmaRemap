@@ -26,7 +26,7 @@ public abstract class Class4586 extends Class4587 {
       if (this.field22062 != 0.0F) {
          var10 = new Quaternion(var2.getRotation());
          float var11 = MathHelper.lerp(var3, this.field22063, this.field22062);
-         var10.method31182(Vector3f.field32902.method25285(var11));
+         var10.method31182(Vector3f.ZP.method25285(var11));
       } else {
          var10 = var2.getRotation();
       }

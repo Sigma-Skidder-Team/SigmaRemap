@@ -7,6 +7,8 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.text.StringTextComponent;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 import java.io.File;
 import java.io.IOException;
@@ -69,7 +71,7 @@ public class Class842 extends Class838 {
    }
 
    public void method2569() {
-      boolean var3 = Class7944.method26921();
+      boolean var3 = Config.isShaders();
 
       for (Widget var5 : this.field4629) {
          if (var5 instanceof Class1210) {
@@ -129,7 +131,7 @@ public class Class842 extends Class838 {
                      }
 
                      if (var14) {
-                        Class7944.method26810("Opening via system class!");
+                        Config.method26810("Opening via system class!");
                         Util.getOSType().method8181("file://" + Shaders.field40892.getAbsolutePath());
                      }
                      break;
@@ -139,8 +141,8 @@ public class Class842 extends Class838 {
                      this.mc.displayGuiScreen(this.field4642);
                      break;
                   case 203:
-                     Class848 var7 = new Class848(this, Class7944.method26928());
-                     Class7944.method26860().displayGuiScreen(var7);
+                     Class848 var7 = new Class848(this, Config.method26928());
+                     Config.method26860().displayGuiScreen(var7);
                   case 204:
                   case 205:
                   case 206:

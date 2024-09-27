@@ -19,6 +19,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
+import net.optifine.Config;
 
 import javax.annotation.Nullable;
 import java.io.IOException;
@@ -233,7 +234,7 @@ public class ParticleManager implements Class268 {
    }
 
    public void method1199(Class4587 var1) {
-      if (var1 != null && (!(var1 instanceof Class4603) || Class7944.method26850())) {
+      if (var1 != null && (!(var1 instanceof Class4603) || Config.method26850())) {
          this.field1174.add(var1);
       }
    }
@@ -318,7 +319,7 @@ public class ParticleManager implements Class268 {
    public void method1204(MatrixStack var1, Class7735 var2, Class1699 var3, ActiveRenderInfo var4, float var5, Class7647 var6) {
       var3.method7317();
       Runnable var9 = () -> {
-         RenderSystem.disableAlphaTest();
+         RenderSystem.enableAlphaTest();
          RenderSystem.method27939();
          RenderSystem.enableDepthTest();
          RenderSystem.method27840();
@@ -331,7 +332,7 @@ public class ParticleManager implements Class268 {
       FluidState var10 = var4.method37512();
       boolean var11 = var10.method23486(FluidTags.field40469);
       RenderSystem.pushMatrix();
-      RenderSystem.method27888(var1.getLast().getMatrix());
+      RenderSystem.multMatrix(var1.getLast().getMatrix());
       Collection<Class6843> var12 = field1167;
       if (Reflector.field42864.method20245()) {
          var12 = this.field1169.keySet();

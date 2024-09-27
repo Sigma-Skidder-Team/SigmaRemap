@@ -12,9 +12,11 @@ import mapped.*;
 import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.client.shader.FramebufferConstants;
 import net.minecraft.client.util.LWJGLMemoryUntracker;
+import net.optifine.Config;
 import net.optifine.render.GlAlphaState;
 import net.optifine.render.GlBlendState;
 import net.optifine.render.GlCullState;
+import net.optifine.shaders.Shaders;
 import net.optifine.util.LockCounter;
 import org.lwjgl.opengl.ARBCopyBuffer;
 import org.lwjgl.opengl.ARBFramebufferObject;
@@ -103,27 +105,27 @@ public class GlStateManager {
    @Deprecated
    public static void disableAlphaTest() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (!alphaLock.method21055()) {
-         ALPHA_TEST.test.method35529();
+      if (!alphaLock.isLocked()) {
+         ALPHA_TEST.test.disable();
       } else {
-         alphaLockState.method25212();
+         alphaLockState.setDisabled();
       }
    }
 
    @Deprecated
-   public static void method23696() {
+   public static void enableAlphaTest() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
-      if (!alphaLock.method21055()) {
-         ALPHA_TEST.test.method35530();
+      if (!alphaLock.isLocked()) {
+         ALPHA_TEST.test.enable();
       } else {
-         alphaLockState.method25211();
+         alphaLockState.setEnabled();
       }
    }
 
    @Deprecated
    public static void method23697(int var0, float var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
-      if (!alphaLock.method21055()) {
+      if (!alphaLock.isLocked()) {
          if (var0 != ALPHA_TEST.field39454 || var1 != ALPHA_TEST.field39455) {
             ALPHA_TEST.field39454 = var0;
             ALPHA_TEST.field39455 = var1;
@@ -137,87 +139,87 @@ public class GlStateManager {
    @Deprecated
    public static void method23698() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      LIGHTING.method35530();
+      LIGHTING.enable();
    }
 
    @Deprecated
    public static void disableLighting() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      LIGHTING.method35529();
+      LIGHTING.disable();
    }
 
    @Deprecated
    public static void method23700(int var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      LIGHT_ENABLE[var0].method35530();
+      LIGHT_ENABLE[var0].enable();
    }
 
    @Deprecated
    public static void enableColorMaterial() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      COLOR_MATERIAL.field41143.method35530();
+      COLOR_MATERIAL.field41143.enable();
    }
 
    @Deprecated
    public static void method23702() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      COLOR_MATERIAL.field41143.method35529();
+      COLOR_MATERIAL.field41143.disable();
    }
 
    @Deprecated
-   public static void method23703(int var0, int var1) {
+   public static void colorMaterial(int var0, int var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (var0 != COLOR_MATERIAL.field41144 || var1 != COLOR_MATERIAL.field41145) {
-         COLOR_MATERIAL.field41144 = var0;
-         COLOR_MATERIAL.field41145 = var1;
+      if (var0 != COLOR_MATERIAL.face || var1 != COLOR_MATERIAL.mode) {
+         COLOR_MATERIAL.face = var0;
+         COLOR_MATERIAL.mode = var1;
          GL11.glColorMaterial(var0, var1);
       }
    }
 
    @Deprecated
-   public static void method23704(int var0, int var1, FloatBuffer var2) {
+   public static void light(int var0, int var1, FloatBuffer var2) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glLightfv(var0, var1, var2);
    }
 
    @Deprecated
-   public static void method23705(int var0, FloatBuffer var1) {
+   public static void lightModel(int var0, FloatBuffer var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glLightModelfv(var0, var1);
    }
 
    @Deprecated
-   public static void method23706(float var0, float var1, float var2) {
+   public static void normal3f(float var0, float var1, float var2) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glNormal3f(var0, var1, var2);
    }
 
-   public static void method23707() {
+   public static void func_244593_j() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
-      field_244591_n.field40056.method35529();
+      field_244591_n.field40056.disable();
    }
 
-   public static void method23708() {
+   public static void func_244594_k() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
-      field_244591_n.field40056.method35530();
+      field_244591_n.field40056.enable();
    }
 
-   public static void method23709(int var0, int var1, int var2, int var3) {
+   public static void func_244592_a(int var0, int var1, int var2, int var3) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       GL20.glScissor(var0, var1, var2, var3);
    }
 
    public static void disableDepthTest() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
-      DEPTH.field32405.method35529();
+      DEPTH.field32405.disable();
    }
 
    public static void enableDepthTest() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
-      DEPTH.field32405.method35530();
+      DEPTH.field32405.enable();
    }
 
-   public static void method23712(int var0) {
+   public static void depthFunc(int var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
       if (var0 != DEPTH.field32407) {
          DEPTH.field32407 = var0;
@@ -235,31 +237,31 @@ public class GlStateManager {
 
    public static void disableBlend() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (!blendLock.method21055()) {
-         BLEND.field40550.method35529();
+      if (!blendLock.isLocked()) {
+         BLEND.field40550.disable();
       } else {
          blendLockState.method27777();
       }
    }
 
-   public static void method23715() {
+   public static void enableBlend() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (!blendLock.method21055()) {
-         BLEND.field40550.method35530();
+      if (!blendLock.isLocked()) {
+         BLEND.field40550.enable();
       } else {
          blendLockState.method27776();
       }
    }
 
-   public static void method23716(int var0, int var1) {
+   public static void blendFunc(int var0, int var1) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (!blendLock.method21055()) {
+      if (!blendLock.isLocked()) {
          if (var0 != BLEND.field40551 || var1 != BLEND.field40552 || var0 != BLEND.field40553 || var1 != BLEND.field40554) {
             BLEND.field40551 = var0;
             BLEND.field40552 = var1;
             BLEND.field40553 = var0;
             BLEND.field40554 = var1;
-            if (Class7944.method26921()) {
+            if (Config.isShaders()) {
                Shaders.field40772.method12249(var0, var1, var0, var1);
             }
 
@@ -270,15 +272,15 @@ public class GlStateManager {
       }
    }
 
-   public static void method23717(int var0, int var1, int var2, int var3) {
+   public static void blendFuncSeparate(int var0, int var1, int var2, int var3) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (!blendLock.method21055()) {
+      if (!blendLock.isLocked()) {
          if (var0 != BLEND.field40551 || var1 != BLEND.field40552 || var2 != BLEND.field40553 || var3 != BLEND.field40554) {
             BLEND.field40551 = var0;
             BLEND.field40552 = var1;
             BLEND.field40553 = var2;
             BLEND.field40554 = var3;
-            if (Class7944.method26921()) {
+            if (Config.isShaders()) {
                Shaders.field40772.method12249(var0, var1, var2, var3);
             }
 
@@ -300,7 +302,7 @@ public class GlStateManager {
 
    public static String method23720(GLCapabilities var0) {
       RenderSystem.assertThread(RenderSystem::isInInitPhase);
-      Class7944.method26780();
+      Config.method26780();
       openGL31 = var0.OpenGL31;
       if (!openGL31) {
          GL_COPY_READ_BUFFER = 36662;
@@ -331,8 +333,8 @@ public class GlStateManager {
             var5.add("OpenGL 1.4");
          }
 
-         String var6 = "VboRegions not supported, missing: " + Class7944.method26852(var5);
-         Class7944.method26810(var6);
+         String var6 = "VboRegions not supported, missing: " + Config.method26852(var5);
+         Config.method26810(var6);
          var5.add(var6);
       }
 
@@ -758,20 +760,20 @@ public class GlStateManager {
       method23700(1);
       Class7755 var5 = new Class7755(var0);
       var5.method25709(var2);
-      method23704(16384, 4611, getBuffer(var5.method25701(), var5.method25702(), var5.method25703(), 0.0F));
+      light(16384, 4611, getBuffer(var5.method25701(), var5.method25702(), var5.method25703(), 0.0F));
       float var6 = 0.6F;
-      method23704(16384, 4609, getBuffer(0.6F, 0.6F, 0.6F, 1.0F));
-      method23704(16384, 4608, getBuffer(0.0F, 0.0F, 0.0F, 1.0F));
-      method23704(16384, 4610, getBuffer(0.0F, 0.0F, 0.0F, 1.0F));
+      light(16384, 4609, getBuffer(0.6F, 0.6F, 0.6F, 1.0F));
+      light(16384, 4608, getBuffer(0.0F, 0.0F, 0.0F, 1.0F));
+      light(16384, 4610, getBuffer(0.0F, 0.0F, 0.0F, 1.0F));
       Class7755 var7 = new Class7755(var1);
       var7.method25709(var2);
-      method23704(16385, 4611, getBuffer(var7.method25701(), var7.method25702(), var7.method25703(), 0.0F));
-      method23704(16385, 4609, getBuffer(0.6F, 0.6F, 0.6F, 1.0F));
-      method23704(16385, 4608, getBuffer(0.0F, 0.0F, 0.0F, 1.0F));
-      method23704(16385, 4610, getBuffer(0.0F, 0.0F, 0.0F, 1.0F));
+      light(16385, 4611, getBuffer(var7.method25701(), var7.method25702(), var7.method25703(), 0.0F));
+      light(16385, 4609, getBuffer(0.6F, 0.6F, 0.6F, 1.0F));
+      light(16385, 4608, getBuffer(0.0F, 0.0F, 0.0F, 1.0F));
+      light(16385, 4610, getBuffer(0.0F, 0.0F, 0.0F, 1.0F));
       shadeModel(7424);
       float var8 = 0.4F;
-      method23705(2899, getBuffer(0.4F, 0.4F, 0.4F, 1.0F));
+      lightModel(2899, getBuffer(0.4F, 0.4F, 0.4F, 1.0F));
       method23833();
    }
 
@@ -781,7 +783,7 @@ public class GlStateManager {
       var4.method35503();
       var4.method35508(Matrix4f.method35515(1.0F, -1.0F, 1.0F));
       var4.method35509(Vector3f.YP.rotationDegrees(-22.5F));
-      var4.method35509(Vector3f.field32898.rotationDegrees(135.0F));
+      var4.method35509(Vector3f.XP.rotationDegrees(135.0F));
       method23772(var0, var1, var4);
    }
 
@@ -790,10 +792,10 @@ public class GlStateManager {
       Matrix4f var4 = new Matrix4f();
       var4.method35503();
       var4.method35509(Vector3f.YP.rotationDegrees(62.0F));
-      var4.method35509(Vector3f.field32898.rotationDegrees(185.5F));
+      var4.method35509(Vector3f.XP.rotationDegrees(185.5F));
       var4.method35508(Matrix4f.method35515(1.0F, -1.0F, 1.0F));
       var4.method35509(Vector3f.YP.rotationDegrees(-22.5F));
-      var4.method35509(Vector3f.field32898.rotationDegrees(135.0F));
+      var4.method35509(Vector3f.XP.rotationDegrees(135.0F));
       method23772(var0, var1, var4);
    }
 
@@ -833,14 +835,14 @@ public class GlStateManager {
    public static void method23779() {
       if (fogAllowed) {
          RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-         FOG.field44792.method35530();
+         FOG.field44792.enable();
       }
    }
 
    @Deprecated
    public static void method23780() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      FOG.field44792.method35529();
+      FOG.field44792.disable();
    }
 
    @Deprecated
@@ -849,7 +851,7 @@ public class GlStateManager {
       if (var0 != FOG.field44793) {
          FOG.field44793 = var0;
          method23786(2917, var0);
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Shaders.method33046(var0);
          }
       }
@@ -865,7 +867,7 @@ public class GlStateManager {
       if (var0 != FOG.field44794) {
          FOG.field44794 = var0;
          GL11.glFogf(2914, var0);
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Shaders.method33124(var0);
          }
       }
@@ -903,8 +905,8 @@ public class GlStateManager {
 
    public static void method23787() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (!cullLock.method21055()) {
-         CULL.field26226.method35530();
+      if (!cullLock.isLocked()) {
+         CULL.field26226.enable();
       } else {
          cullLockState.method38748();
       }
@@ -912,8 +914,8 @@ public class GlStateManager {
 
    public static void method23788() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      if (!cullLock.method21055()) {
-         CULL.field26226.method35529();
+      if (!cullLock.isLocked()) {
+         CULL.field26226.disable();
       } else {
          cullLockState.method38749();
       }
@@ -926,22 +928,22 @@ public class GlStateManager {
 
    public static void method23790() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      POLY_OFFSET.field30682.method35530();
+      POLY_OFFSET.field30682.enable();
    }
 
    public static void method23791() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      POLY_OFFSET.field30682.method35529();
+      POLY_OFFSET.field30682.disable();
    }
 
    public static void method23792() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      POLY_OFFSET.field30683.method35530();
+      POLY_OFFSET.field30683.enable();
    }
 
    public static void method23793() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      POLY_OFFSET.field30683.method35529();
+      POLY_OFFSET.field30683.disable();
    }
 
    public static void method23794(float var0, float var1) {
@@ -955,12 +957,12 @@ public class GlStateManager {
 
    public static void method23795() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      COLOR_LOGIC.field33643.method35530();
+      COLOR_LOGIC.field33643.enable();
    }
 
    public static void method23796() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      COLOR_LOGIC.field33643.method35529();
+      COLOR_LOGIC.field33643.disable();
    }
 
    public static void method23797(int var0) {
@@ -974,13 +976,13 @@ public class GlStateManager {
    @Deprecated
    public static void enableTexGen(TexGen var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      method23802(var0).field45814.method35530();
+      method23802(var0).field45814.enable();
    }
 
    @Deprecated
    public static void disableTexGen(TexGen var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      method23802(var0).field45814.method35529();
+      method23802(var0).field45814.disable();
    }
 
    @Deprecated
@@ -1026,12 +1028,12 @@ public class GlStateManager {
 
    public static void enableTexture() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThreadOrInit);
-      TEXTURES[activeTexture].field40429.method35530();
+      TEXTURES[activeTexture].field40429.enable();
    }
 
    public static void method23805() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      TEXTURES[activeTexture].field40429.method35529();
+      TEXTURES[activeTexture].field40429.disable();
    }
 
    @Deprecated
@@ -1130,13 +1132,13 @@ public class GlStateManager {
    @Deprecated
    public static void enableRescaleNormal() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      RESCALE_NORMAL.method35530();
+      RESCALE_NORMAL.enable();
    }
 
    @Deprecated
    public static void method23820() {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      RESCALE_NORMAL.method35529();
+      RESCALE_NORMAL.disable();
    }
 
    public static void viewport(int var0, int var1, int var2, int var3) {
@@ -1283,9 +1285,9 @@ public class GlStateManager {
    }
 
    @Deprecated
-   public static void method23842(Matrix4f var0) {
+   public static void multMatrix(Matrix4f var0) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
-      var0.method35502(MATRIX_BUFFER);
+      var0.write(MATRIX_BUFFER);
       ((Buffer) MATRIX_BUFFER).rewind();
       multMatrix(MATRIX_BUFFER);
    }
@@ -1369,7 +1371,7 @@ public class GlStateManager {
    public static void method23854(int var0, int var1, int var2) {
       RenderSystem.assertThread(RenderSystem::isOnRenderThread);
       GL11.glDrawArrays(var0, var1, var2);
-      if (Class7944.method26921() && !creatingDisplayList) {
+      if (Config.isShaders() && !creatingDisplayList) {
          int var5 = Shaders.field40848.method26491();
          if (var5 > 1) {
             for (int var6 = 1; var6 < var5; var6++) {
@@ -1434,13 +1436,13 @@ public class GlStateManager {
    }
 
    public static void method23866() {
-      if (Class7944.method26797()) {
+      if (Config.method26797()) {
          int var2 = GL11.glGetInteger(34016);
          int var3 = GL11.glGetInteger(32873);
          int var4 = method23863();
          int var5 = method23865();
          if (var5 > 0 && (var2 != var4 || var3 != var5)) {
-            Class7944.method26810("checkTexture: act: " + var4 + ", glAct: " + var2 + ", tex: " + var5 + ", glTex: " + var3);
+            Config.method26810("checkTexture: act: " + var4 + ", glAct: " + var2 + ", tex: " + var5 + ", glTex: " + var3);
          }
       }
    }
@@ -1465,7 +1467,7 @@ public class GlStateManager {
    }
 
    public static void method23870(GlAlphaState var0) {
-      if (!alphaLock.method21055()) {
+      if (!alphaLock.isLocked()) {
          method23872(alphaLockState);
          method23873(var0);
          alphaLock.method21053();
@@ -1479,7 +1481,7 @@ public class GlStateManager {
    }
 
    public static void method23872(GlAlphaState var0) {
-      if (!alphaLock.method21055()) {
+      if (!alphaLock.isLocked()) {
          var0.method25207(BooleanState.method35532(ALPHA_TEST.test), ALPHA_TEST.field39454, ALPHA_TEST.field39455);
       } else {
          var0.method25208(alphaLockState);
@@ -1487,7 +1489,7 @@ public class GlStateManager {
    }
 
    public static void method23873(GlAlphaState var0) {
-      if (!alphaLock.method21055()) {
+      if (!alphaLock.isLocked()) {
          ALPHA_TEST.test.method35531(var0.method25213());
          method23697(var0.method25214(), var0.method25215());
       } else {
@@ -1496,7 +1498,7 @@ public class GlStateManager {
    }
 
    public static void method23874(GlBlendState var0) {
-      if (!blendLock.method21055()) {
+      if (!blendLock.isLocked()) {
          method23876(blendLockState);
          method23877(var0);
          blendLock.method21053();
@@ -1510,7 +1512,7 @@ public class GlStateManager {
    }
 
    public static void method23876(GlBlendState var0) {
-      if (!blendLock.method21055()) {
+      if (!blendLock.isLocked()) {
          var0.method27773(
             BooleanState.method35532(BLEND.field40550), BLEND.field40551, BLEND.field40552, BLEND.field40553, BLEND.field40554
          );
@@ -1520,12 +1522,12 @@ public class GlStateManager {
    }
 
    public static void method23877(GlBlendState var0) {
-      if (!blendLock.method21055()) {
+      if (!blendLock.isLocked()) {
          BLEND.field40550.method35531(var0.method27780());
          if (var0.method27785()) {
-            method23717(var0.method27781(), var0.method27782(), var0.method27783(), var0.method27784());
+            blendFuncSeparate(var0.method27781(), var0.method27782(), var0.method27783(), var0.method27784());
          } else {
-            method23716(var0.method27781(), var0.method27782());
+            blendFunc(var0.method27781(), var0.method27782());
          }
       } else {
          blendLockState.method27774(var0);
@@ -1533,7 +1535,7 @@ public class GlStateManager {
    }
 
    public static void method23878(GlCullState var0) {
-      if (!cullLock.method21055()) {
+      if (!cullLock.isLocked()) {
          method23880(cullLockState);
          method23881(var0);
          cullLock.method21053();
@@ -1547,7 +1549,7 @@ public class GlStateManager {
    }
 
    public static void method23880(GlCullState var0) {
-      if (!cullLock.method21055()) {
+      if (!cullLock.isLocked()) {
          var0.method38744(BooleanState.method35532(CULL.field26226), CULL.field26227);
       } else {
          var0.method38745(cullLockState);
@@ -1555,7 +1557,7 @@ public class GlStateManager {
    }
 
    public static void method23881(GlCullState var0) {
-      if (!cullLock.method21055()) {
+      if (!cullLock.isLocked()) {
          CULL.field26226.method35531(var0.method38750());
          CULL.field26227 = var0.method38751();
       } else {
@@ -1565,7 +1567,7 @@ public class GlStateManager {
 
    public static void method23882(int var0, IntBuffer var1, IntBuffer var2) {
       GL14.glMultiDrawArrays(var0, var1, var2);
-      if (Class7944.method26921() && !creatingDisplayList) {
+      if (Config.isShaders() && !creatingDisplayList) {
          int var5 = Shaders.field40848.method26491();
          if (var5 > 1) {
             for (int var6 = 1; var6 < var5; var6++) {
@@ -1584,7 +1586,7 @@ public class GlStateManager {
 
    public static void method23884(IntBuffer var0) {
       GL11.glCallLists(var0);
-      if (Class7944.method26921() && !creatingDisplayList) {
+      if (Config.isShaders() && !creatingDisplayList) {
          int var3 = Shaders.field40848.method26491();
          if (var3 > 1) {
             for (int var4 = 1; var4 < var3; var4++) {
@@ -1646,7 +1648,7 @@ public class GlStateManager {
       field15999(768),
       field16000(0);
 
-      public final int field16001;
+      public final int param;
       private static final SourceFactor[] field16002 = new SourceFactor[]{
          field15986,
          field15987,
@@ -1666,7 +1668,7 @@ public class GlStateManager {
       };
 
       private SourceFactor(int var3) {
-         this.field16001 = var3;
+         this.param = var3;
       }
    }
 
@@ -1698,11 +1700,11 @@ public class GlStateManager {
          this.field43488 = var1;
       }
 
-      public void method35529() {
+      public void disable() {
          this.method35531(false);
       }
 
-      public void method35530() {
+      public void enable() {
          this.method35531(true);
       }
 
@@ -1728,8 +1730,8 @@ public class GlStateManager {
    public static class ColorMaterialState {
       private static String[] field41142;
       public final BooleanState field41143 = new BooleanState(2903);
-      public int field41144 = 1032;
-      public int field41145 = 5634;
+      public int face = 1032;
+      public int mode = 5634;
 
       public ColorMaterialState() {
       }

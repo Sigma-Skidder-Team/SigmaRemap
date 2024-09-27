@@ -35,6 +35,8 @@ import net.minecraft.world.GameType;
 import net.minecraft.world.ITickList;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -479,14 +481,14 @@ public class ClientWorld extends World {
    @Override
    public void method6743(PlayerEntity var1, double var2, double var4, double var6, SoundEvent var8, Class2266 var9, float var10, float var11) {
       if (Reflector.field42848.exists()) {
-         Object var14 = Reflector.field42848.method20217(var1, var8, var9, var10, var11);
+         Object var14 = Reflector.field42848.call(var1, var8, var9, var10, var11);
          if (Reflector.method35064(var14, Reflector.field42809) || Reflector.call(var14, Reflector.field42980) == null) {
             return;
          }
 
          var8 = (SoundEvent) Reflector.call(var14, Reflector.field42980);
          var9 = (Class2266) Reflector.call(var14, Reflector.field42981);
-         var10 = Reflector.method35067(var14, Reflector.field42982);
+         var10 = Reflector.callFloat(var14, Reflector.field42982);
       }
 
       if (var1 == this.field9030.player) {
@@ -497,14 +499,14 @@ public class ClientWorld extends World {
    @Override
    public void method6744(PlayerEntity var1, Entity var2, SoundEvent var3, Class2266 var4, float var5, float var6) {
       if (Reflector.field42848.exists()) {
-         Object var9 = Reflector.field42848.method20217(var1, var3, var4, var5, var6);
+         Object var9 = Reflector.field42848.call(var1, var3, var4, var5, var6);
          if (Reflector.method35064(var9, Reflector.field42809) || Reflector.call(var9, Reflector.field42980) == null) {
             return;
          }
 
          var3 = (SoundEvent) Reflector.call(var9, Reflector.field42980);
          var4 = (Class2266) Reflector.call(var9, Reflector.field42981);
-         var5 = Reflector.method35067(var9, Reflector.field42982);
+         var5 = Reflector.callFloat(var9, Reflector.field42982);
       }
 
       if (var1 == this.field9030.player) {
@@ -584,15 +586,15 @@ public class ClientWorld extends World {
 
    public void method6865(Entity var1) {
       Class9387.method35629(var1, this);
-      if (Class7944.method26970()) {
-         Class9446.method36307(var1, Class7944.method26874());
+      if (Config.method26970()) {
+         Class9446.method36307(var1, Config.method26874());
       }
    }
 
    public void onEntityRemoved(Entity var1) {
       Class9387.method35630(var1, this);
-      if (Class7944.method26970()) {
-         Class9446.method36308(var1, Class7944.method26874());
+      if (Config.method26970()) {
+         Class9446.method36308(var1, Config.method26874());
       }
    }
 
@@ -801,7 +803,7 @@ public class ClientWorld extends World {
    @Override
    public float method6877(net.minecraft.util.Direction var1, boolean var2) {
       boolean var5 = this.method6830().method19307();
-      boolean var6 = Class7944.method26921();
+      boolean var6 = Config.isShaders();
       if (!var2) {
          return var5 ? 0.9F : 1.0F;
       } else {
@@ -812,14 +814,14 @@ public class ClientWorld extends World {
                return var5 ? 0.9F : 1.0F;
             case 3:
             case 4:
-               if (Class7944.method26921()) {
+               if (Config.isShaders()) {
                   return Shaders.field40934;
                }
 
                return 0.8F;
             case 5:
             case 6:
-               if (Class7944.method26921()) {
+               if (Config.isShaders()) {
                   return Shaders.field40933;
                }
 

@@ -18,9 +18,9 @@ public class Class5726 extends Class5715<Class888> {
       var4.rotate(this.field25097.method32230());
       var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
       if (var1.method3508()) {
-         var4.rotate(Vector3f.field32902.rotationDegrees(180.0F));
+         var4.rotate(Vector3f.ZP.rotationDegrees(180.0F));
          var4.rotate(Vector3f.YP.rotationDegrees(180.0F));
-         var4.rotate(Vector3f.field32898.rotationDegrees(90.0F));
+         var4.rotate(Vector3f.XP.rotationDegrees(90.0F));
       }
 
       this.field25134.method789(var1.method3509(), Class2327.field15931, var6, Class213.field798, var4, var5);

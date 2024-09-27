@@ -66,7 +66,7 @@ public class Class1698 implements AutoCloseable {
    public void method7306(Matrix4f var1, int var2) {
       RenderSystem.pushMatrix();
       RenderSystem.loadIdentity();
-      RenderSystem.method27888(var1);
+      RenderSystem.multMatrix(var1);
       if (this.field9247 > 0) {
          var2 = this.field9247;
       }

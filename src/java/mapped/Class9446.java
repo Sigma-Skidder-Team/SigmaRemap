@@ -11,6 +11,7 @@ import net.minecraft.item.Items;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.optifine.Config;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -80,18 +81,18 @@ public class Class9446 {
 
          try {
             ResourceLocation var5 = new ResourceLocation(var4, "optifine/dynamic_lights.properties");
-            InputStream var6 = Class7944.method26863(var5);
+            InputStream var6 = Config.method26863(var5);
             method36311(var6, var5.toString(), var4);
          } catch (IOException var7) {
          }
       }
 
       if (field43881.size() > 0) {
-         Class7944.method26810("DynamicLights entities: " + field43881.size());
+         Config.method26810("DynamicLights entities: " + field43881.size());
       }
 
       if (field43882.size() > 0) {
-         Class7944.method26810("DynamicLights items: " + field43882.size());
+         Config.method26810("DynamicLights items: " + field43882.size());
       }
    }
 
@@ -101,23 +102,23 @@ public class Class9446 {
             Class20 var5 = new Class20();
             var5.load(var0);
             var0.close();
-            Class7944.method26810("DynamicLights: Parsing " + var1);
+            Config.method26810("DynamicLights: Parsing " + var1);
             Class8896 var6 = new Class8896("DynamicLights");
             method36312(var5.getProperty("entities"), field43881, new Class6022(), var6, var1, var2);
             method36312(var5.getProperty("items"), field43882, new Class6020(), var6, var1, var2);
          } catch (IOException var7) {
-            Class7944.method26811("DynamicLights: Error reading " + var1);
+            Config.method26811("DynamicLights: Error reading " + var1);
          }
       }
    }
 
    private static <T> void method36312(String var0, Map<T, Integer> var1, Class6021<T> var2, Class8896 var3, String var4, String var5) {
       if (var0 != null) {
-         String[] var8 = Class7944.method26903(var0, " ");
+         String[] var8 = Config.method26903(var0, " ");
 
          for (int var9 = 0; var9 < var8.length; var9++) {
             String var10 = var8[var9];
-            String[] var11 = Class7944.method26903(var10, ":");
+            String[] var11 = Config.method26903(var10, ":");
             if (var11.length == 2) {
                String var12 = var11[0];
                String var13 = var11[1];
@@ -171,7 +172,7 @@ public class Class9446 {
 
    public static int method36315(Entity var0, int var1) {
       double var4 = method36317(var0.getPosition());
-      if (var0 == Class7944.method26860().player) {
+      if (var0 == Config.method26860().player) {
          double var6 = (double)method36319(var0);
          var4 = Math.max(var4, var6);
       }
@@ -221,7 +222,7 @@ public class Class9446 {
          }
       }
 
-      return Class7944.method26833(var3, 0.0, 15.0);
+      return Config.method26833(var3, 0.0, 15.0);
    }
 
    public static int method36318(ItemStack var0) {
@@ -265,7 +266,7 @@ public class Class9446 {
    }
 
    public static int method36319(Entity var0) {
-      if (var0 == Class7944.method26860().getRenderViewEntity() && !Class7944.method26972()) {
+      if (var0 == Config.method26860().getRenderViewEntity() && !Config.method26972()) {
          return 0;
       } else {
          if (var0 instanceof PlayerEntity) {

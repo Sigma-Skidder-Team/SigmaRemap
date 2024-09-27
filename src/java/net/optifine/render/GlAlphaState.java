@@ -42,11 +42,11 @@ public class GlAlphaState {
       this.field32881 = var1;
    }
 
-   public void method25211() {
+   public void setEnabled() {
       this.field32881 = true;
    }
 
-   public void method25212() {
+   public void setDisabled() {
       this.field32881 = false;
    }
 
@@ -64,7 +64,7 @@ public class GlAlphaState {
 
    public void method25216() {
       if (this.field32881) {
-         GlStateManager.method23696();
+         GlStateManager.enableAlphaTest();
          GlStateManager.method23697(this.field32882, this.field32883);
       } else {
          GlStateManager.disableAlphaTest();

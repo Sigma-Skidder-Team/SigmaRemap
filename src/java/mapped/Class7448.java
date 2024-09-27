@@ -8,6 +8,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.biome.Biome;
+import net.optifine.Config;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -135,7 +136,7 @@ public class Class7448 implements Class7443 {
          Matcher var5 = var8.matcher(this.field32022);
          if (var5.matches()) {
             String var6 = var5.group(1);
-            int var7 = Class7944.method26899(var6, -1);
+            int var7 = Config.method26899(var6, -1);
             if (var7 >= 0) {
                return new Class9727[]{new Class9727(var7)};
             }
@@ -159,7 +160,7 @@ public class Class7448 implements Class7443 {
 
          String var3 = this.field32026 + ".png";
          ResourceLocation var4 = new ResourceLocation(var3);
-         InputStream var5 = Class7944.method26863(var4);
+         InputStream var5 = Config.method26863(var4);
          if (var5 == null) {
             return;
          }
@@ -192,11 +193,11 @@ public class Class7448 implements Class7443 {
    }
 
    private static void method24060(String var0) {
-      Class7944.method26810("CustomColors: " + var0);
+      Config.method26810("CustomColors: " + var0);
    }
 
    private static void method24061(String var0) {
-      Class7944.method26811("CustomColors: " + var0);
+      Config.method26811("CustomColors: " + var0);
    }
 
    private static String method24062(String var0, String var1, String var2) {
@@ -260,13 +261,13 @@ public class Class7448 implements Class7443 {
    }
 
    public int method24066(int var1) {
-      var1 = Class7944.method26830(var1, 0, this.field32032.length - 1);
+      var1 = Config.method26830(var1, 0, this.field32032.length - 1);
       return this.field32032[var1] & 16777215;
    }
 
    public int method24067(int var1, int var2) {
-      var1 = Class7944.method26830(var1, 0, this.field32030 - 1);
-      var2 = Class7944.method26830(var2, 0, this.field32031 - 1);
+      var1 = Config.method26830(var1, 0, this.field32030 - 1);
+      var2 = Config.method26830(var2, 0, this.field32031 - 1);
       return this.field32032[var2 * this.field32030 + var1] & 16777215;
    }
 
@@ -346,7 +347,7 @@ public class Class7448 implements Class7443 {
       int var6 = var2.getY() - this.field32029;
       if (this.field32028 > 0) {
          int var7 = var2.getX() << 16 + var2.getZ();
-         int var8 = Class7944.method26933(var7);
+         int var8 = Config.method26933(var7);
          int var9 = this.field32028 * 2 + 1;
          int var10 = (var8 & 0xFF) % var9 - this.field32028;
          var6 += var10;
@@ -389,7 +390,7 @@ public class Class7448 implements Class7443 {
          this.field32025 = new Class9727[0];
       }
 
-      this.field32025 = (Class9727[])Class7944.method26948(this.field32025, var1);
+      this.field32025 = (Class9727[]) Config.method26948(this.field32025, var1);
    }
 
    public void method24079(int var1, int var2) {
@@ -442,6 +443,6 @@ public class Class7448 implements Class7443 {
 
    @Override
    public String toString() {
-      return "" + this.field32023 + "/" + this.field32022 + ", blocks: " + Class7944.method26854(this.field32025) + ", source: " + this.field32026;
+      return "" + this.field32023 + "/" + this.field32022 + ", blocks: " + Config.method26854(this.field32025) + ", source: " + this.field32026;
    }
 }

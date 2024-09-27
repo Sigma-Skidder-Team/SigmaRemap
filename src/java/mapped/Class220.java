@@ -8,6 +8,7 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 public class Class220<T extends LivingEntity, M extends Class2827<T>> extends Class219<T, M> {
    private static final ResourceLocation field864 = new ResourceLocation("textures/entity/elytra.png");
@@ -23,7 +24,7 @@ public class Class220<T extends LivingEntity, M extends Class2827<T>> extends Cl
          ResourceLocation var14;
          if (!(var4 instanceof AbstractClientPlayerEntity)) {
             var14 = this.method828(var13, (T)var4);
-            if (Class7944.method26953()) {
+            if (Config.method26953()) {
                var14 = Class7992.method27271(var13, var14);
             }
          } else {
@@ -34,7 +35,7 @@ public class Class220<T extends LivingEntity, M extends Class2827<T>> extends Cl
                var14 = var15.method5372();
             } else {
                var14 = this.method828(var13, (T)var4);
-               if (Class7944.method26953()) {
+               if (Config.method26953()) {
                   var14 = Class7992.method27271(var13, var14);
                }
             }

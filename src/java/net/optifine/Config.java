@@ -1,4 +1,4 @@
-package mapped;
+package net.optifine;
 
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
@@ -26,6 +26,7 @@ import javax.imageio.ImageIO;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GLX;
 import com.mojang.blaze3d.platform.GlStateManager;
+import mapped.*;
 import net.minecraft.client.GameSettings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GLAllocation;
@@ -37,6 +38,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.StringTextComponent;
+import net.optifine.shaders.Shaders;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.glfw.GLFW;
@@ -45,7 +47,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL30;
 import org.lwjgl.opengl.GLCapabilities;
 
-public class Class7944 {
+public class Config {
    public static final String field34139 = "OptiFine";
    public static final String field34140 = "1.16.4";
    public static final String field34141 = "HD_U";
@@ -84,7 +86,7 @@ public class Class7944 {
    private static long field34174;
    private static long field34175;
 
-   private Class7944() {
+   private Config() {
    }
 
    public static String method26777() {
@@ -185,7 +187,7 @@ public class Class7944 {
 
    public static InputStream method26784(String var0) {
       InputStream var3 = Class9561.method37043(var0);
-      return var3 == null ? Class7944.class.getResourceAsStream(var0) : var3;
+      return var3 == null ? Config.class.getResourceAsStream(var0) : var3;
    }
 
    public static boolean method26785() {
@@ -378,7 +380,7 @@ public class Class7944 {
    public static void method26795() {
       method26936();
       byte var2 = 8;
-      if (!method26937()) {
+      if (!isSingleProcessor()) {
          field34159.setPriority(10);
          method26796("Server thread", 5);
       } else if (!method26938()) {
@@ -430,7 +432,7 @@ public class Class7944 {
    }
 
    public static int method26801() {
-      switch (field34156.field44680) {
+      switch (field34156.ofMipmapType) {
          case 0:
             return 9986;
          case 1:
@@ -461,24 +463,24 @@ public class Class7944 {
       return field34167;
    }
 
-   public static boolean method26804() {
-      return method26785() ? field34156.field44678 == 2 : false;
+   public static boolean isFogFancy() {
+      return method26785() ? field34156.ofFogType == 2 : false;
    }
 
-   public static boolean method26805() {
-      return field34156.field44678 == 1;
+   public static boolean isFogFast() {
+      return field34156.ofFogType == 1;
    }
 
    public static boolean method26806() {
-      return field34156.field44678 == 3;
+      return field34156.ofFogType == 3;
    }
 
    public static boolean method26807() {
-      return field34156.field44678 != 3;
+      return field34156.ofFogType != 3;
    }
 
    public static float method26808() {
-      return field34156.field44679;
+      return field34156.ofFogStart;
    }
 
    public static void method26809(String var0) {
@@ -537,7 +539,7 @@ public class Class7944 {
 
    public static boolean method26822() {
       if (field34156.field44690 == 0) {
-         if (method26921() && ! Shaders.field40900.method27390()) {
+         if (isShaders() && ! Shaders.field40900.method27390()) {
             return Shaders.field40900.method27392();
          } else {
             return field34164 == 0 ? method26818() : field34164 == 2;
@@ -549,7 +551,7 @@ public class Class7944 {
 
    public static boolean method26823() {
       if (field34156.field44690 == 0) {
-         if (method26921() && ! Shaders.field40900.method27390()) {
+         if (isShaders() && ! Shaders.field40900.method27390()) {
             return Shaders.field40900.method27393();
          } else {
             return field34164 == 0 ? false : field34164 == 3;
@@ -720,7 +722,7 @@ public class Class7944 {
    }
 
    public static float method26851() {
-      return method26921() && Shaders.field40935 >= 0.0F ? Shaders.field40935 : (float)field34156.field44687;
+      return isShaders() && Shaders.field40935 >= 0.0F ? Shaders.field40935 : (float)field34156.field44687;
    }
 
    public static String method26852(List var0) {
@@ -949,15 +951,15 @@ public class Class7944 {
    }
 
    public static boolean method26881() {
-      return !method26880() ? false : !method26921() || Shaders.method32998();
+      return !method26880() ? false : !isShaders() || Shaders.method32998();
    }
 
    public static boolean method26882() {
-      return !method26880() ? false : !method26921() || Shaders.method32999();
+      return !method26880() ? false : !isShaders() || Shaders.method32999();
    }
 
    public static boolean method26883() {
-      if (method26921() && ! Shaders.method33000()) {
+      if (isShaders() && ! Shaders.method33000()) {
          return false;
       } else {
          return field34156.field44704 != 0 ? field34156.field44704 == 2 : method26818();
@@ -1169,7 +1171,7 @@ public class Class7944 {
       return field34156.field44721 != 0 ? field34156.field44721 == 2 : method26818();
    }
 
-   public static boolean method26921() {
+   public static boolean isShaders() {
       return Shaders.field40886;
    }
 
@@ -1315,16 +1317,16 @@ public class Class7944 {
       field34161 = Runtime.getRuntime().availableProcessors();
    }
 
-   public static boolean method26937() {
+   public static boolean isSingleProcessor() {
       return method26935() <= 1;
    }
 
    public static boolean method26938() {
-      return field34156.field44683;
+      return field34156.ofSmoothWorld;
    }
 
    public static boolean method26939() {
-      return field34156.field44684;
+      return field34156.ofLazyChunkLoading;
    }
 
    public static boolean method26940() {
@@ -1336,7 +1338,7 @@ public class Class7944 {
    }
 
    public static int method26942() {
-      return field34156 != null ? field34156.field44574 : 10;
+      return field34156 != null ? field34156.renderDistanceChunks : 10;
    }
 
    public static boolean equals(Object var0, Object var1) {
@@ -1606,7 +1608,7 @@ public class Class7944 {
 
    public static boolean method26972() {
       if (method26970()) {
-         return !method26921() ? true : Shaders.method32994();
+         return !isShaders() ? true : Shaders.method32994();
       } else {
          return false;
       }
@@ -1649,7 +1651,7 @@ public class Class7944 {
    }
 
    public static boolean method26979() {
-      return field34156.field44682;
+      return field34156.ofSmoothFps;
    }
 
    public static boolean method26980(URI var0) {
@@ -1737,7 +1739,7 @@ public class Class7944 {
    }
 
    public static boolean method26989() {
-      return method26921() ? ! Shaders.method33167() : false;
+      return isShaders() ? ! Shaders.method33167() : false;
    }
 
    public static void method26990() {

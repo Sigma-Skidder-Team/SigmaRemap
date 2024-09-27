@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class4078 extends Class4057 {
    public Class4078() {
       super(TileEntityType.field21432, "book", 0.0F);
@@ -62,7 +64,7 @@ public class Class4078 extends Class4057 {
             Reflector.method35082(var6, Reflector.field43163, var1);
             return (Class9492)var6;
          } else {
-            Class7944.method26811("Field not found: TileEntityEnchantmentTableRenderer.modelBook");
+            Config.method26811("Field not found: TileEntityEnchantmentTableRenderer.modelBook");
             return null;
          }
       } else {

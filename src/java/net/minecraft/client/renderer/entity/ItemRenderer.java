@@ -21,6 +21,8 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 import java.util.List;
 import java.util.Random;
@@ -59,8 +61,8 @@ public class ItemRenderer implements IResourceManagerReloadListener {
    }
 
    public void method780(IBakedModel var1, ItemStack var2, int var3, int var4, MatrixStack var5, Class5422 var6) {
-      boolean var9 = Class7944.method26969().method1114();
-      boolean var10 = Class7944.method26894() && var9;
+      boolean var9 = Config.method26969().method1114();
+      boolean var10 = Config.method26894() && var9;
       if (var10) {
          var6.method17044(Class9025.field41288);
       }
@@ -92,7 +94,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          if (!Reflector.field42870.exists()) {
             var8.method22625().method34866(var2).method20691(var3, var4);
          } else {
-            var8 = (IBakedModel) Reflector.field42870.method20217(var4, var8, var2, var3);
+            var8 = (IBakedModel) Reflector.field42870.call(var4, var8, var2, var3);
          }
 
          var4.translate(-0.5, -0.5, -0.5);
@@ -106,7 +108,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
             }
 
             if (var8.method22633()) {
-               Reflector.field42866.method20217(this, var8, var1, var4, var5, var6, var7, var16);
+               Reflector.field42866.call(this, var8, var1, var4, var5, var6, var7, var16);
             } else {
                RenderType var17 = Class8928.method32633(var1, var16);
                Class5422 var14;
@@ -134,7 +136,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
                   var14 = method786(var5, var17, true, var1.method32159());
                }
 
-               if (Class7944.method26953()) {
+               if (Config.method26953()) {
                   var8 = Class7992.method27268(var1, var8, Class6391.field27977, false);
                   Class6391.field27977 = null;
                }
@@ -167,7 +169,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
    }
 
    public static Class5422 method782(Class7733 var0, RenderType var1, boolean var2, boolean var3) {
-      if (Shaders.field40609) {
+      if (Shaders.isShadowPass) {
          var3 = false;
       }
 
@@ -189,7 +191,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
    }
 
    public static Class5422 method785(Class7733 var0, RenderType var1, boolean var2, boolean var3) {
-      if (Shaders.field40609) {
+      if (Shaders.isShadowPass) {
          var3 = false;
       }
 
@@ -207,7 +209,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
    }
 
    public static Class5422 method786(Class7733 var0, RenderType var1, boolean var2, boolean var3) {
-      if (Shaders.field40609) {
+      if (Shaders.isShadowPass) {
          var3 = false;
       }
 
@@ -263,7 +265,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       ClientWorld var8 = !(var2 instanceof ClientWorld) ? null : (ClientWorld)var2;
       Class6391.field27977 = null;
       IBakedModel var9 = var7.method22626().method19424(var7, var1, var8, var3);
-      if (Class7944.method26953()) {
+      if (Config.method26953()) {
          var9 = Class7992.method27268(var1, var9, Class6391.field27977, true);
       }
 
@@ -291,10 +293,10 @@ public class ItemRenderer implements IResourceManagerReloadListener {
       this.field849.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
       this.field849.getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1130(false, false);
       RenderSystem.enableRescaleNormal();
-      RenderSystem.disableAlphaTest();
+      RenderSystem.enableAlphaTest();
       RenderSystem.method27939();
       RenderSystem.enableBlend();
-      RenderSystem.method27834(GlStateManager.SourceFactor.field15997, DestFactor.field12932);
+      RenderSystem.blendFunc(GlStateManager.SourceFactor.field15997, DestFactor.field12932);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
       RenderSystem.translatef((float)var2, (float)var3, 100.0F + this.field847);
       RenderSystem.translatef(8.0F, 8.0F, 0.0F);
@@ -314,7 +316,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          Class7516.method24503();
       }
 
-      RenderSystem.method27817();
+      RenderSystem.disableAlphaTest();
       RenderSystem.method27868();
       RenderSystem.popMatrix();
       field852 = false;
@@ -382,7 +384,7 @@ public class ItemRenderer implements IResourceManagerReloadListener {
          if (Class9561.method37046(var2)) {
             RenderSystem.disableDepthTest();
             RenderSystem.disableTexture();
-            RenderSystem.method27817();
+            RenderSystem.disableAlphaTest();
             RenderSystem.disableBlend();
             Tessellator var19 = Tessellator.getInstance();
             BufferBuilder var21 = var19.getBuffer();
@@ -398,14 +400,14 @@ public class ItemRenderer implements IResourceManagerReloadListener {
                var15 = var18;
             }
 
-            if (Class7944.method26911()) {
+            if (Config.method26911()) {
                var15 = Class9680.method37863(var13, var15);
             }
 
             this.method799(var21, var3 + 2, var4 + 13, 13, 2, 0, 0, 0, 255);
             this.method799(var21, var3 + 2, var4 + 13, var14, 1, var15 >> 16 & 0xFF, var15 >> 8 & 0xFF, var15 & 0xFF, 255);
             RenderSystem.enableBlend();
-            RenderSystem.disableAlphaTest();
+            RenderSystem.enableAlphaTest();
             RenderSystem.enableTexture();
             RenderSystem.enableDepthTest();
          }

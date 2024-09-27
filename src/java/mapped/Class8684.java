@@ -17,6 +17,8 @@ import javax.imageio.stream.ImageInputStream;
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 import org.apache.commons.io.IOUtils;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL;
@@ -71,7 +73,7 @@ public class Class8684 {
    public static final String field39208 = "minecraft:item/";
    public static final ResourceLocation field39209 = new ResourceLocation("optifine/ctm/default/empty");
    public static final ResourceLocation field39210 = new ResourceLocation("optifine/ctm/default/empty.png");
-   private static IntBuffer field39211 = Class7944.method26984(256);
+   private static IntBuffer field39211 = Config.method26984(256);
    private static int field39212 = -1;
 
    public static void method31259() {
@@ -107,7 +109,7 @@ public class Class8684 {
    public static TextureAtlasSprite method31260(AtlasTexture var0, String var1) {
       TextureAtlasSprite var4 = var0.method1106(var1);
       if (var4 == null || var4 instanceof Class1714) {
-         Class7944.method26811("Sprite not found: " + var1);
+         Config.method26811("Sprite not found: " + var1);
       }
 
       return var4;
@@ -161,11 +163,11 @@ public class Class8684 {
    }
 
    public static Class290 method31265(ResourceLocation var0) {
-      Class290 var3 = Class7944.method26861().getTexture(var0);
+      Class290 var3 = Config.method26861().getTexture(var0);
       if (var3 == null) {
-         if (Class7944.method26866(var0)) {
+         if (Config.method26866(var0)) {
             Class293 var4 = new Class293(var0);
-            Class7944.method26861().method1073(var0, var4);
+            Config.method26861().method1073(var0, var4);
             return var4;
          } else {
             return null;
@@ -177,7 +179,7 @@ public class Class8684 {
 
    public static void method31266(IResourceManager var0) {
       if (method31267() != null) {
-         Class7944.method26810("*** Reloading custom textures ***");
+         Config.method26810("*** Reloading custom textures ***");
          Class8862.method32260();
          Class8389.method29392();
          method31259();
@@ -192,25 +194,25 @@ public class Class8684 {
          Class9810.method38688();
          Shaders.method33141();
          Class8043.method27615();
-         Class7944.method26824();
+         Config.method26824();
          Class9753.method38323();
          Class6695.method20416();
          Class7050.method21966();
          Class262.method853();
          Class8703.method31388();
          Class7031.method21825();
-         Class7944.method26861().tick();
-         Class7944.method26810("Disable Forge light pipeline");
+         Config.method26861().tick();
+         Config.method26810("Disable Forge light pipeline");
          Class9561.method37054(false);
       }
    }
 
    public static AtlasTexture method31267() {
-      return Class7944.method26969();
+      return Config.method26969();
    }
 
    public static void method31268() {
-      IResourceManager var2 = Class7944.method26862();
+      IResourceManager var2 = Config.method26862();
       if (var2 instanceof IReloadableResourceManager) {
          IReloadableResourceManager var3 = (IReloadableResourceManager)var2;
          Class276 var4 = new Class276();
@@ -223,7 +225,7 @@ public class Class8684 {
    public static void method31269() {
       Class300 var2 = new Class300();
       ResourceLocation var3 = new ResourceLocation("optifine/tickable_textures");
-      Class7944.method26861().method1073(var3, var2);
+      Config.method26861().method1073(var3, var2);
    }
 
    public static void method31270(ModelBakery var0) {
@@ -299,7 +301,7 @@ public class Class8684 {
    public static void method31276() {
       if (GL.getCapabilities().GL_EXT_texture_filter_anisotropic) {
          float var2 = GL11.glGetFloat(34047);
-         float var3 = (float)Class7944.method26889();
+         float var3 = (float) Config.method26889();
          var3 = Math.min(var3, var2);
          GL11.glTexParameterf(3553, 34046, var3);
       }
@@ -415,9 +417,9 @@ public class Class8684 {
       for (int var4 = 0; var4 < var3.length; var4++) {
          Class1806 var5 = var3[var4];
          if (var5 != null) {
-            Class7944.method26810("" + var4 + ": " + var5.method7886() * var5.method7887());
+            Config.method26810("" + var4 + ": " + var5.method7886() * var5.method7887());
          } else {
-            Class7944.method26810("" + var4 + ": " + var5);
+            Config.method26810("" + var4 + ": " + var5);
          }
       }
    }
@@ -452,10 +454,10 @@ public class Class8684 {
 
          try {
             ImageIO.write(var16, "png", var20);
-            Class7944.method26810("Exported: " + var20);
+            Config.method26810("Exported: " + var20);
          } catch (Exception var18) {
-            Class7944.method26811("Error writing: " + var20);
-            Class7944.method26811("" + var18.getClass().getName() + ": " + var18.getMessage());
+            Config.method26811("Error writing: " + var20);
+            Config.method26811("" + var18.getClass().getName() + ": " + var18.getMessage());
          }
       }
    }

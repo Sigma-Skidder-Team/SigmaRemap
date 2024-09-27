@@ -26,7 +26,7 @@ public class OutlineChestESP extends Module {
             RenderUtil.method11477(Class2329.field15941);
             GL11.glLineWidth(3.0F);
             RenderSystem.method27819(518, 0.0F);
-            RenderSystem.disableAlphaTest();
+            RenderSystem.enableAlphaTest();
             GL11.glColor4f(1.0F, 1.0F, 1.0F, 0.1F);
             GL11.glEnable(3042);
             GL11.glDisable(2896);
@@ -88,7 +88,7 @@ public class OutlineChestESP extends Module {
       GL11.glDisable(2903);
       GL11.glDisable(2929);
       GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-      mc.gameRenderer.field818.method7316();
+      mc.gameRenderer.lightmapTexture.method7316();
    }
 
    private void method16966() {
@@ -101,6 +101,6 @@ public class OutlineChestESP extends Module {
       TextureManager var10000 = mc.getTextureManager();
       mc.getTextureManager();
       var10000.bindTexture(TextureManager.field1094);
-      mc.gameRenderer.field818.method7317();
+      mc.gameRenderer.lightmapTexture.method7317();
    }
 }

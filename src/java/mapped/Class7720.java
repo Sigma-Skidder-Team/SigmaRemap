@@ -8,6 +8,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.optifine.Config;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -77,14 +78,14 @@ public class Class7720 {
    private List<String> method25506(String var1) {
       List var4 = Arrays.<String>asList("clear", "rain", "thunder");
       ArrayList var5 = new ArrayList();
-      String[] var6 = Class7944.method26903(var1, " ");
+      String[] var6 = Config.method26903(var1, " ");
 
       for (int var7 = 0; var7 < var6.length; var7++) {
          String var8 = var6[var7];
          if (var4.contains(var8)) {
             var5.add(var8);
          } else {
-            Class7944.method26811("Unknown weather: " + var8);
+            Config.method26811("Unknown weather: " + var8);
          }
       }
 
@@ -93,12 +94,12 @@ public class Class7720 {
 
    private int method25507(String var1) {
       if (var1 != null) {
-         String[] var4 = Class7944.method26903(var1, ":");
+         String[] var4 = Config.method26903(var1, ":");
          if (var4.length == 2) {
             String var5 = var4[0];
             String var6 = var4[1];
-            int var7 = Class7944.method26899(var5, -1);
-            int var8 = Class7944.method26899(var6, -1);
+            int var7 = Config.method26899(var5, -1);
+            int var8 = Config.method26899(var6, -1);
             if (var7 >= 0 && var7 <= 23 && var8 >= 0 && var8 <= 59) {
                var7 -= 6;
                if (var7 < 0) {
@@ -107,11 +108,11 @@ public class Class7720 {
 
                return var7 * 1000 + (int)((double)var8 / 60.0 * 1000.0);
             } else {
-               Class7944.method26811("Invalid time: " + var1);
+               Config.method26811("Invalid time: " + var1);
                return -1;
             }
          } else {
-            Class7944.method26811("Invalid time: " + var1);
+            Config.method26811("Invalid time: " + var1);
             return -1;
          }
       } else {
@@ -123,7 +124,7 @@ public class Class7720 {
       if (var1 != null) {
          if (!var1.toLowerCase().equals("true")) {
             if (!var1.toLowerCase().equals("false")) {
-               Class7944.method26811("Unknown boolean: " + var1);
+               Config.method26811("Unknown boolean: " + var1);
                return var2;
             } else {
                return false;
@@ -138,11 +139,11 @@ public class Class7720 {
 
    private float method25509(String var1, float var2) {
       if (var1 != null) {
-         float var5 = Class7944.method26900(var1, Float.MIN_VALUE);
+         float var5 = Config.method26900(var1, Float.MIN_VALUE);
          if (var5 != Float.MIN_VALUE) {
             return var5;
          } else {
-            Class7944.method26811("Invalid value: " + var1);
+            Config.method26811("Invalid value: " + var1);
             return var2;
          }
       } else {
@@ -154,17 +155,17 @@ public class Class7720 {
       if (var1 == null) {
          return var2;
       } else {
-         String[] var5 = Class7944.method26903(var1, " ");
+         String[] var5 = Config.method26903(var1, " ");
          if (var5.length != 3) {
-            Class7944.method26811("Invalid axis: " + var1);
+            Config.method26811("Invalid axis: " + var1);
             return var2;
          } else {
             float[] var6 = new float[3];
 
             for (int var7 = 0; var7 < var5.length; var7++) {
-               var6[var7] = Class7944.method26900(var5[var7], Float.MIN_VALUE);
+               var6[var7] = Config.method26900(var5[var7], Float.MIN_VALUE);
                if (var6[var7] == Float.MIN_VALUE) {
-                  Class7944.method26811("Invalid axis: " + var1);
+                  Config.method26811("Invalid axis: " + var1);
                   return var2;
                }
             }
@@ -175,7 +176,7 @@ public class Class7720 {
             if (!(var10 * var10 + var8 * var8 + var9 * var9 < 1.0E-5F)) {
                return new float[]{var9, var8, -var10};
             } else {
-               Class7944.method26811("Invalid axis values: " + var1);
+               Config.method26811("Invalid axis values: " + var1);
                return var2;
             }
          }
@@ -199,23 +200,23 @@ public class Class7720 {
             int var7 = this.method25512(this.field33130 - this.field33133);
             int var8 = var4 + var5 + var6 + var7;
             if (var8 != 24000) {
-               Class7944.method26811("Invalid fadeIn/fadeOut times, sum is not 24h: " + var8);
+               Config.method26811("Invalid fadeIn/fadeOut times, sum is not 24h: " + var8);
                return false;
             } else if (this.field33136 < 0.0F) {
-               Class7944.method26811("Invalid speed: " + this.field33136);
+               Config.method26811("Invalid speed: " + this.field33136);
                return false;
             } else if (this.field33139 > 0) {
                return true;
             } else {
-               Class7944.method26811("Invalid daysLoop: " + this.field33139);
+               Config.method26811("Invalid daysLoop: " + this.field33139);
                return false;
             }
          } else {
-            Class7944.method26811("Invalid times, required are: startFadeIn, endFadeIn and endFadeOut.");
+            Config.method26811("Invalid times, required are: startFadeIn, endFadeIn and endFadeOut.");
             return false;
          }
       } else {
-         Class7944.method26811("No source texture: " + var1);
+         Config.method26811("No source texture: " + var1);
          return false;
       }
    }
@@ -237,12 +238,12 @@ public class Class7720 {
       float var10 = this.method25516(var5, var6);
       float var11 = this.method25517(var3);
       float var12 = var9 * var10 * var11;
-      var12 = Class7944.method26832(var12, 0.0F, 1.0F);
+      var12 = Config.method26832(var12, 0.0F, 1.0F);
       if (!(var12 < 1.0E-4F)) {
          GlStateManager.bindTexture(this.field33147);
          Class6988.method21638(this.field33134, var12);
          GlStateManager.method23832();
-         GlStateManager.method23842(var2.getLast().getMatrix());
+         GlStateManager.multMatrix(var2.getLast().getMatrix());
          if (this.field33135) {
             float var13 = 0.0F;
             if (this.field33136 != (float)Math.round(this.field33136)) {

@@ -7,6 +7,7 @@ import java.nio.IntBuffer;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.block.BlockState;
+import net.optifine.shaders.Shaders;
 import org.lwjgl.opengl.GL20;
 
 public class Class7698 {

@@ -1,4 +1,4 @@
-package mapped;
+package net.optifine.shaders;
 
 import java.nio.IntBuffer;
 import java.util.List;
@@ -6,6 +6,7 @@ import java.util.List;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GLX;
 import com.mojang.blaze3d.platform.GlStateManager;
+import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.entity.LivingEntity;
@@ -24,7 +25,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL20;
 import org.lwjgl.opengl.GL30;
 
-public class Class5463 {
+public class ShadersRender {
    private static final ResourceLocation field24257 = new ResourceLocation("textures/entity/end_portal.png");
 
    public static void method17147(Class7624 var0, double var1, double var3, double var5) {
@@ -69,7 +70,7 @@ public class Class5463 {
    }
 
    public static void method17154(GameRenderer var0, MatrixStack var1, ActiveRenderInfo var2, float var3) {
-      if (! Shaders.field40609) {
+      if (! Shaders.isShadowPass) {
          boolean var6 = Shaders.method33149();
          boolean var7 = Shaders.method33150();
          if (!var6 || !var7) {
@@ -85,10 +86,10 @@ public class Class5463 {
       }
    }
 
-   public static void method17155(GameRenderer var0, MatrixStack var1, ActiveRenderInfo var2, float var3) {
-      if (! Shaders.field40609 && ! Shaders.method33151()) {
+   public static void renderHand1(GameRenderer var0, MatrixStack var1, ActiveRenderInfo var2, float var3) {
+      if (! Shaders.isShadowPass && ! Shaders.method33151()) {
          Shaders.method33097();
-         GlStateManager.method23715();
+         GlStateManager.enableBlend();
          Shaders.method33105(var1, true);
          GL30.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
          Shaders.method33155(Shaders.method33157(), Shaders.method33158());
@@ -102,7 +103,7 @@ public class Class5463 {
    public static void method17156(FirstPersonRenderer var0, float var1, MatrixStack var2, Class7735 var3, ClientPlayerEntity var4, int var5, boolean var6) {
       GlStateManager.depthMask(true);
       if (var6) {
-         GlStateManager.method23712(519);
+         GlStateManager.depthFunc(519);
          var2.push();
          IntBuffer var9 = Shaders.field40852;
          Shaders.method33020(Shaders.field40978);
@@ -113,13 +114,13 @@ public class Class5463 {
          var2.pop();
       }
 
-      GlStateManager.method23712(515);
+      GlStateManager.depthFunc(515);
       GL30.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
       var0.method37590(var1, var2, var3, var4, var5);
    }
 
-   public static void method17157(GameRenderer var0, MatrixStack var1, ActiveRenderInfo var2, float var3) {
-      if (! Shaders.field40609) {
+   public static void renderFPOverlay(GameRenderer var0, MatrixStack var1, ActiveRenderInfo var2, float var3) {
+      if (! Shaders.isShadowPass) {
          Shaders.method33107();
          var0.method747(var1, var2, var3, false, true, false);
          Shaders.method33108();
@@ -148,7 +149,7 @@ public class Class5463 {
          Minecraft var8 = Minecraft.getInstance();
          var8.getProfiler().endStartSection("shadow pass");
          WorldRenderer var9 = var8.worldRenderer;
-         Shaders.field40609 = true;
+         Shaders.isShadowPass = true;
          Shaders.field40793 = Shaders.field40783;
          Shaders.method32984("pre shadow");
          GL30.glMatrixMode(5889);
@@ -184,7 +185,7 @@ public class Class5463 {
          var11.method25119(var12.x, var12.y, var12.z);
          GlStateManager.shadeModel(7425);
          GlStateManager.enableDepthTest();
-         GlStateManager.method23712(515);
+         GlStateManager.depthFunc(515);
          GlStateManager.depthMask(true);
          GlStateManager.colorMask(true, true, true, true);
          GlStateManager.method23878(new GlCullState(false));
@@ -204,7 +205,7 @@ public class Class5463 {
          GlStateManager.disableAlphaTest();
          var9.method880(Class9025.field41288, var10, var14, var16, var18);
          Shaders.method32984("shadow terrain solid");
-         GlStateManager.method23696();
+         GlStateManager.enableAlphaTest();
          var9.method880(Class9025.field41289, var10, var14, var16, var18);
          Shaders.method32984("shadow terrain cutoutmipped");
          var8.getTextureManager().getTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE).method1130(false, false);
@@ -220,7 +221,7 @@ public class Class5463 {
          WorldRenderer var20 = var8.worldRenderer;
          EntityRendererManager var21 = var8.getRenderManager();
          Class7735 var22 = var20.method937().method26536();
-         boolean var23 = Shaders.field40609 && !var8.player.isSpectator();
+         boolean var23 = Shaders.isShadowPass && !var8.player.isSpectator();
 
          for (Class7002 var25 : var20.method938()) {
             Class8066 var26 = var25.field30281;
@@ -292,7 +293,7 @@ public class Class5463 {
          GlStateManager.disableBlend();
          GlStateManager.method23879();
          GlStateManager.method23787();
-         GlStateManager.method23717(770, 771, 1, 0);
+         GlStateManager.blendFuncSeparate(770, 771, 1, 0);
          GlStateManager.method23697(516, 0.1F);
          if (Shaders.field40804 >= 2) {
             GlStateManager.method23803(33989);
@@ -323,7 +324,7 @@ public class Class5463 {
          GlStateManager.disableBlend();
          GL30.glFlush();
          Shaders.method32984("shadow flush");
-         Shaders.field40609 = false;
+         Shaders.isShadowPass = false;
          var8.getProfiler().endStartSection("shadow postprocess");
          if (Shaders.field40599) {
             if (Shaders.field40804 >= 1) {
@@ -379,11 +380,11 @@ public class Class5463 {
    }
 
    public static void method17161(ActiveRenderInfo var0, Minecraft var1, float var2) {
-      var0.method37497(
+      var0.update(
          var1.world,
          (Entity)(var1.getRenderViewEntity() != null ? var1.getRenderViewEntity() : var1.player),
          !var1.gameSettings.getPointOfView().func_243192_a(),
-         var1.gameSettings.getPointOfView().method8247(),
+         var1.gameSettings.getPointOfView().func_243193_b(),
          var2
       );
    }
@@ -429,7 +430,7 @@ public class Class5463 {
    }
 
    public static void method17164(RenderType var0, BufferBuilder var1) {
-      if (Shaders.field40605 && ! Shaders.field40609) {
+      if (Shaders.field40605 && ! Shaders.isShadowPass) {
          if (!var0.method14367()) {
             if (!var0.method14234().equals("eyes")) {
                if (!var0.method14234().equals("crumbling")) {
@@ -449,7 +450,7 @@ public class Class5463 {
    }
 
    public static void method17165(RenderType var0, BufferBuilder var1) {
-      if (Shaders.field40605 && ! Shaders.field40609) {
+      if (Shaders.field40605 && ! Shaders.isShadowPass) {
          if (!var0.method14367()) {
             if (!var0.method14234().equals("eyes")) {
                if (!var0.method14234().equals("crumbling")) {
@@ -507,7 +508,7 @@ public class Class5463 {
    }
 
    public static boolean method17174(Class956 var0, float var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {
-      if (! Shaders.field40609 && Shaders.field40848.method26485() == 0) {
+      if (! Shaders.isShadowPass && Shaders.field40848.method26485() == 0) {
          return false;
       } else {
          GlStateManager.disableLighting();

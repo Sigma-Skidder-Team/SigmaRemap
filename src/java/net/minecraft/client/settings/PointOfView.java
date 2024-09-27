@@ -1,4 +1,4 @@
-package mapped;
+package net.minecraft.client.settings;
 
 public enum PointOfView {
    field12822(true, false),
@@ -19,7 +19,7 @@ public enum PointOfView {
       return this.field12826;
    }
 
-   public boolean method8247() {
+   public boolean func_243193_b() {
       return this.field12827;
    }
 

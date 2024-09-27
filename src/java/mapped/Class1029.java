@@ -212,7 +212,7 @@ public class Class1029 extends Class1026 {
 
    private void method4583() {
       if (this.isAlive()) {
-         for (Entity var4 : this.world.<Entity>method6772(LivingEntity.class, this.getBoundingBox().method19664(4.0), field5727)) {
+         for (Entity var4 : this.world.<Entity>getEntitiesInAABBexcluding(LivingEntity.class, this.getBoundingBox().method19664(4.0), field5727)) {
             if (!(var4 instanceof Class1025)) {
                var4.attackEntityFrom(DamageSource.method31115(this), 6.0F);
             }

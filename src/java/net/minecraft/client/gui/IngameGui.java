@@ -33,6 +33,7 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.*;
 import net.minecraft.world.GameType;
+import net.optifine.Config;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
@@ -107,7 +108,7 @@ public class IngameGui extends AbstractGui {
         this.field6742 = this.field6716.getMainWindow().getScaledHeight();
         FontRenderer var5 = this.method5991();
         RenderSystem.enableBlend();
-        if (!Class7944.method26883()) {
+        if (!Config.method26883()) {
             RenderSystem.enableDepthTest();
             RenderSystem.defaultBlendFunc();
         } else {
@@ -120,7 +121,7 @@ public class IngameGui extends AbstractGui {
             this.method5978();
         }
 
-        float var7 = MathHelper.lerp(var2, this.field6716.player.field6142, this.field6716.player.field6141);
+        float var7 = MathHelper.lerp(var2, this.field6716.player.prevTimeInPortal, this.field6716.player.timeInPortal);
         if (var7 > 0.0F && !this.field6716.player.isPotionActive(Effects.NAUSEA)) {
             this.method5981(var7);
         }
@@ -137,9 +138,9 @@ public class IngameGui extends AbstractGui {
             RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             this.field6716.getTextureManager().bindTexture(field6453);
             RenderSystem.enableBlend();
-            RenderSystem.disableAlphaTest();
+            RenderSystem.enableAlphaTest();
             this.method5963(var1);
-            GlStateManager.method23696();
+            GlStateManager.enableAlphaTest();
             RenderSystem.defaultBlendFunc();
             this.field6716.getProfiler().startSection("bossHealth");
             this.field6730.method5953(var1);
@@ -171,7 +172,7 @@ public class IngameGui extends AbstractGui {
         if (this.field6716.player.method2910() > 0) {
             this.field6716.getProfiler().startSection("sleep");
             RenderSystem.disableDepthTest();
-            RenderSystem.method27817();
+            RenderSystem.disableAlphaTest();
             float var14 = (float) this.field6716.player.method2910();
             float var9 = var14 / 100.0F;
             if (var9 > 1.0F) {
@@ -180,7 +181,7 @@ public class IngameGui extends AbstractGui {
 
             int var10 = (int) (220.0F * var9) << 24 | 1052704;
             method5686(var1, 0, 0, this.field6741, this.field6742, var10);
-            RenderSystem.disableAlphaTest();
+            RenderSystem.enableAlphaTest();
             RenderSystem.enableDepthTest();
             this.field6716.getProfiler().endSection();
             RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
@@ -293,7 +294,7 @@ public class IngameGui extends AbstractGui {
 
             RenderSystem.enableBlend();
             RenderSystem.defaultBlendFunc();
-            RenderSystem.method27817();
+            RenderSystem.disableAlphaTest();
             RenderSystem.pushMatrix();
             RenderSystem.translatef(0.0F, (float) (this.field6742 - 48), 0.0F);
             this.field6716.getProfiler().startSection("chat");
@@ -311,7 +312,7 @@ public class IngameGui extends AbstractGui {
         }
 
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-        RenderSystem.disableAlphaTest();
+        RenderSystem.enableAlphaTest();
     }
 
     private void method5962(MatrixStack var1, FontRenderer var2, int var3, int var4, int var5) {
@@ -550,7 +551,7 @@ public class IngameGui extends AbstractGui {
         if (this.field6716.player.field4920 > 0) {
             this.field6716.getProfiler().startSection("expLevel");
             int var10 = 8453920;
-            if (Class7944.method26911()) {
+            if (Config.method26911()) {
                 var10 = Class9680.method37898(var10);
             }
 
@@ -933,7 +934,7 @@ public class IngameGui extends AbstractGui {
         RenderSystem.depthMask(false);
         RenderSystem.defaultBlendFunc();
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-        RenderSystem.method27817();
+        RenderSystem.disableAlphaTest();
         this.field6716.getTextureManager().bindTexture(field6713);
         Tessellator var3 = Tessellator.getInstance();
         BufferBuilder var4 = var3.getBuffer();
@@ -945,7 +946,7 @@ public class IngameGui extends AbstractGui {
         var3.draw();
         RenderSystem.depthMask(true);
         RenderSystem.enableDepthTest();
-        RenderSystem.disableAlphaTest();
+        RenderSystem.enableAlphaTest();
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
@@ -957,7 +958,7 @@ public class IngameGui extends AbstractGui {
     }
 
     private void method5980(Entity var1) {
-        if (Class7944.method26883()) {
+        if (Config.method26883()) {
             WorldBorder var4 = this.field6716.world.getWorldBorder();
             float var5 = (float) var4.method24526(var1);
             double var6 = Math.min(var4.method24550() * (double) var4.method24551() * 1000.0, Math.abs(var4.method24539() - var4.method24537()));
@@ -1003,7 +1004,7 @@ public class IngameGui extends AbstractGui {
             var1 = var1 * 0.8F + 0.2F;
         }
 
-        RenderSystem.method27817();
+        RenderSystem.disableAlphaTest();
         RenderSystem.disableDepthTest();
         RenderSystem.depthMask(false);
         RenderSystem.defaultBlendFunc();
@@ -1024,7 +1025,7 @@ public class IngameGui extends AbstractGui {
         var9.draw();
         RenderSystem.depthMask(true);
         RenderSystem.enableDepthTest();
-        RenderSystem.disableAlphaTest();
+        RenderSystem.enableAlphaTest();
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
@@ -1077,7 +1078,7 @@ public class IngameGui extends AbstractGui {
             if (Reflector.field42924.exists()) {
                 ITextComponent var6 = (ITextComponent) Reflector.call(var4, Reflector.field42924, var4.method32149());
                 ITextComponent var7 = (ITextComponent) Reflector.call(this.field6725, Reflector.field42924, this.field6725.method32149());
-                var5 = Class7944.equals(var6, var7);
+                var5 = Config.equals(var6, var7);
             }
 
             if (!var4.isEmpty()) {

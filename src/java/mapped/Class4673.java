@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.base.Joiner;
+import net.optifine.Config;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -56,7 +58,7 @@ public class Class4673 implements Class4671 {
 
    private String method14642(String var1) {
       ArrayDeque var4 = new ArrayDeque();
-      String[] var5 = Class7944.method26903(var1, "/");
+      String[] var5 = Config.method26903(var1, "/");
 
       for (int var6 = 0; var6 < var5.length; var6++) {
          String var7 = var5[var6];

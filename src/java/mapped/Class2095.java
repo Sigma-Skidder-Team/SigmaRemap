@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public enum Class2095 {
    field13643("tx"),
    field13644("ty"),
@@ -46,7 +48,7 @@ public enum Class2095 {
          case 9:
             return var1.field31046;
          default:
-            Class7944.method26811("GetFloat not supported for: " + this);
+            Config.method26811("GetFloat not supported for: " + this);
             return 0.0F;
       }
    }
@@ -81,7 +83,7 @@ public enum Class2095 {
             var1.field31046 = var2;
             return;
          default:
-            Class7944.method26811("SetFloat not supported for: " + this);
+            Config.method26811("SetFloat not supported for: " + this);
       }
    }
 

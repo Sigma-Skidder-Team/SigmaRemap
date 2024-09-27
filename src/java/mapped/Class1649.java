@@ -667,7 +667,7 @@ public class Class1649 extends Class1648 implements Class1650 {
    public void method6564(ServerPlayerEntity var1, ChunkPos var2, IPacket<?>[] var3, boolean var4, boolean var5) {
       if (var1.world == this.field8956) {
          if (Reflector.field42845.exists()) {
-            Reflector.field42845.method20217(var4, var5, var1, var2, this.field8956);
+            Reflector.field42845.call(var4, var5, var1, var2, this.field8956);
          }
 
          if (var5 && !var4) {

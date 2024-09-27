@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -47,7 +48,7 @@ public class Class6695 {
          String var4 = "optifine/gui/background" + var3;
          String var5 = var4 + "/panorama_0.png";
          ResourceLocation var6 = new ResourceLocation(var5);
-         if (Class7944.method26866(var6)) {
+         if (Config.method26866(var6)) {
             var2.add(var4);
          }
       }
@@ -63,17 +64,17 @@ public class Class6695 {
          if (var4 == 0) {
             var5 = "optifine/gui";
          } else {
-            Class7944.method26810("CustomPanorama: " + var5);
+            Config.method26810("CustomPanorama: " + var5);
          }
 
          ResourceLocation var6 = new ResourceLocation(var5 + "/background.properties");
 
          try {
-            InputStream var7 = Class7944.method26863(var6);
+            InputStream var7 = Config.method26863(var6);
             if (var7 != null) {
                Class20 var8 = new Class20();
                var8.load(var7);
-               Class7944.method26810("CustomPanorama: " + var6.getPath());
+               Config.method26810("CustomPanorama: " + var6.getPath());
                var3[var4] = var8;
                var7.close();
             }
@@ -95,7 +96,7 @@ public class Class6695 {
 
          if (var5 != null) {
             String var6 = var5.getProperty("weight", (String)null);
-            var3[var4] = Class7944.method26899(var6, 1);
+            var3[var4] = Config.method26899(var6, 1);
          } else {
             var3[var4] = 1;
          }

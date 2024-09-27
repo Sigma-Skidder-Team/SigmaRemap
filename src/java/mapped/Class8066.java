@@ -14,6 +14,7 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.optifine.Config;
 
 import java.util.HashSet;
 import java.util.Map;
@@ -65,10 +66,10 @@ public class Class8066 {
             var0[var3] = new BlockPos.Mutable();
          }
       });
-      this.field34620 = Class7944.method26799();
+      this.field34620 = Config.method26799();
       this.field34621 = !Reflector.field42761.method20245();
       this.field34622 = false;
-      this.field34623 = Class7944.method26977();
+      this.field34623 = Config.method26977();
       this.field34629 = new Class8066[6];
       this.field34630 = false;
       this.field34632 = new Class8066[Direction.field685.length];
@@ -83,7 +84,7 @@ public class Class8066 {
 
    public boolean method27709() {
       byte var3 = 24;
-      if (Math.sqrt(this.method27713()) <= (double)(Minecraft.getInstance().gameSettings.field44574 * 16) && Client.getInstance().method19937().method23351()) {
+      if (Math.sqrt(this.method27713()) <= (double)(Minecraft.getInstance().gameSettings.renderDistanceChunks * 16) && Client.getInstance().method19937().method23351()) {
          return true;
       } else {
          return !(this.method27713() > 576.0)

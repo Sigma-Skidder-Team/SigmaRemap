@@ -6,13 +6,14 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
+import net.optifine.Config;
 
 public class Class7880 {
    private static String[] field33822;
    private static IBakedModel field33823 = null;
 
    public static void method26418() {
-      field33823 = Class7944.method26860().getBlockRendererDispatcher().getBlockModelShapes().method38153(Blocks.SNOW.method11579());
+      field33823 = Config.method26860().getBlockRendererDispatcher().getBlockModelShapes().method38153(Blocks.SNOW.method11579());
    }
 
    public static IBakedModel method26419() {

@@ -16,6 +16,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GLAllocation;
 import net.minecraft.client.util.LWJGLMemoryUntracker;
 import net.minecraft.util.text.StringTextComponent;
+import net.optifine.Config;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.opengl.ARBDebugOutput;
@@ -100,7 +101,7 @@ public class Class7582 {
    }
 
    private static void method24818(int var0, int var1, int var2, int var3, int var4, long var5, long var7) {
-      if (!Class7944.method26921() || var0 != 33352) {
+      if (!Config.isShaders() || var0 != 33352) {
          Minecraft var11 = Minecraft.getInstance();
          if ((var11 == null || var11.getMainWindow() == null || !var11.getMainWindow().method8053()) && Class9084.method33877(var2)) {
             String var12 = method24815(var0);
@@ -119,9 +120,9 @@ public class Class7582 {
                field32552.error(var16, var17);
             }
 
-            if (Class7944.method26981() && Class4379.method13743("ShowGlErrorDebug", 10000L)) {
-               String var20 = Class7944.method26985(var2);
-               if (var2 == 0 || Class7944.equals(var20, "Unknown")) {
+            if (Config.method26981() && Class4379.method13743("ShowGlErrorDebug", 10000L)) {
+               String var20 = Config.method26985(var2);
+               if (var2 == 0 || Config.equals(var20, "Unknown")) {
                   var20 = var15;
                }
 

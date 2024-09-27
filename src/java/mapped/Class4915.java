@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.client.util.Util;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 public class Class4915 {
    private static String field22781 = "MC_";
@@ -48,7 +50,7 @@ public class Class4915 {
    }
 
    public static String method15200() {
-      String var2 = Class7944.field34149;
+      String var2 = Config.field34149;
       if (var2 != null) {
          var2 = var2.toLowerCase();
          if (!var2.startsWith("ati")) {
@@ -70,7 +72,7 @@ public class Class4915 {
    }
 
    public static String method15201() {
-      String var2 = Class7944.field34148;
+      String var2 = Config.field34148;
       if (var2 != null) {
          var2 = var2.toLowerCase();
          if (!var2.startsWith("amd")) {
@@ -121,7 +123,7 @@ public class Class4915 {
 
    public static Class8489[] method15203() {
       if (field22809 == null) {
-         String[] var2 = Class7944.method26793();
+         String[] var2 = Config.method26793();
          Class8489[] var3 = new Class8489[var2.length];
 
          for (int var4 = 0; var4 < var2.length; var4++) {
@@ -136,9 +138,9 @@ public class Class4915 {
 
    public static String method15204() {
       StringBuilder var2 = new StringBuilder();
-      method15206(var2, "MC_VERSION", Class7944.method26787());
-      method15208(var2, "MC_GL_VERSION " + Class7944.method26790().method25565());
-      method15208(var2, "MC_GLSL_VERSION " + Class7944.method26791().method25565());
+      method15206(var2, "MC_VERSION", Config.method26787());
+      method15208(var2, "MC_GL_VERSION " + Config.method26790().method25565());
+      method15208(var2, "MC_GLSL_VERSION " + Config.method26791().method25565());
       method15208(var2, method15199());
       method15208(var2, method15200());
       method15208(var2, method15201());

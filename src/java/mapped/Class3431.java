@@ -137,7 +137,7 @@ public class Class3431 extends Class3429 {
    }
 
    public <T extends AbstractMinecartEntity> List<T> method12096(World var1, BlockPos var2, Class<T> var3, Predicate<Entity> var4) {
-      return var1.<T>method6772(var3, this.method12097(var2), var4);
+      return var1.<T>getEntitiesInAABBexcluding(var3, this.method12097(var2), var4);
    }
 
    private AxisAlignedBB method12097(BlockPos var1) {

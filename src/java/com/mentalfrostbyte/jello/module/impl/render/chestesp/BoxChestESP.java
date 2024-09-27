@@ -73,7 +73,7 @@ public class BoxChestESP extends Module {
         GL11.glDisable(2903);
         GL11.glDisable(2929);
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
-        mc.gameRenderer.field818.method7316();
+        mc.gameRenderer.lightmapTexture.method7316();
     }
 
     private void method16300() {
@@ -86,6 +86,6 @@ public class BoxChestESP extends Module {
         TextureManager var10000 = mc.getTextureManager();
         mc.getTextureManager();
         var10000.bindTexture(TextureManager.field1094);
-        mc.gameRenderer.field818.method7317();
+        mc.gameRenderer.lightmapTexture.method7317();
     }
 }

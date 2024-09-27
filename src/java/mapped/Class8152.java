@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
@@ -151,7 +153,7 @@ public class Class8152 {
       } while (var6 && var7 < 100);
 
       if (var7 >= 100) {
-         Class7944.method26811("Too many iterations: " + var7 + ", when resolving: " + var1);
+         Config.method26811("Too many iterations: " + var7 + ", when resolving: " + var1);
          return true;
       } else {
          try {
@@ -169,8 +171,8 @@ public class Class8152 {
                throw new Class2445("Not a boolean or float expression: " + var20.method8139());
             }
          } catch (Class2445 var14) {
-            Class7944.method26811("Invalid macro expression: " + var1);
-            Class7944.method26811("Error: " + var14.getMessage());
+            Config.method26811("Invalid macro expression: " + var1);
+            Config.method26811("Error: " + var14.getMessage());
             return false;
          }
       }

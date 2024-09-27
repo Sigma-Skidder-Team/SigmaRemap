@@ -7,6 +7,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.optifine.Config;
 
 public class Class262<T extends Class1086> extends Class219<T, Class2870<T>> {
    private Class7219 field923;
@@ -91,7 +92,7 @@ public class Class262<T extends Class1086> extends Class219<T, Class2870<T>> {
    }
 
    public static void method853() {
-      field926 = Class7944.method26866(field924);
-      field927 = Class7944.method26866(field925);
+      field926 = Config.method26866(field924);
+      field927 = Config.method26866(field925);
    }
 }

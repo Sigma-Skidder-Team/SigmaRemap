@@ -25,19 +25,19 @@ public class Class233<T extends LivingEntity, M extends Class2894<T>> extends Cl
       float var13 = (float)(Math.atan2((double)var6, (double)var11) * 180.0F / (float)Math.PI);
       var1.translate(0.0, 0.0, 0.0);
       var1.rotate(Vector3f.YP.rotationDegrees(var12 - 90.0F));
-      var1.rotate(Vector3f.field32902.rotationDegrees(var13));
+      var1.rotate(Vector3f.ZP.rotationDegrees(var13));
       float var14 = 0.0F;
       float var15 = 0.125F;
       float var16 = 0.0F;
       float var17 = 0.0625F;
       float var18 = 0.03125F;
-      var1.rotate(Vector3f.field32898.rotationDegrees(45.0F));
+      var1.rotate(Vector3f.XP.rotationDegrees(45.0F));
       var1.method35292(0.03125F, 0.03125F, 0.03125F);
       var1.translate(2.5, 0.0, 0.0);
       Class5422 var19 = var2.method25597(RenderType.getEntityCutoutNoCull(field879));
 
       for (int var20 = 0; var20 < 4; var20++) {
-         var1.rotate(Vector3f.field32898.rotationDegrees(90.0F));
+         var1.rotate(Vector3f.XP.rotationDegrees(90.0F));
          Class8892 var21 = var1.getLast();
          Matrix4f var22 = var21.getMatrix();
          Class8967 var23 = var21.method32362();

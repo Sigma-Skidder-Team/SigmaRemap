@@ -62,7 +62,7 @@ public class CrashReport {
          return String.format("%d total; %s", var2.size(), var2.stream().collect(Collectors.joining(" ")));
       });
       if (Reflector.field42782 != null) {
-         Reflector.field42782.method20217(this, this.field21833);
+         Reflector.field42782.call(this, this.field21833);
       }
    }
 
@@ -148,7 +148,7 @@ public class CrashReport {
       StringBuilder var3 = new StringBuilder();
       var3.append("---- Minecraft Crash Report ----\n");
       if (Reflector.field42783 != null && Reflector.field42783.exists()) {
-         Reflector.field42783.method20217(var3, this);
+         Reflector.field42783.call(var3, this);
       }
 
       var3.append("// ");

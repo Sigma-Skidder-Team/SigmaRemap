@@ -7,6 +7,7 @@ import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.optifine.Config;
 
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class Class844 extends Class838 {
 
    @Override
    public void method2563(Widget var1) {
-      Class7944.method26860().displayGuiScreen(this.field4675);
+      Config.method26860().displayGuiScreen(this.field4675);
    }
 
    @Override

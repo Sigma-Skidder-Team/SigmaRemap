@@ -1,6 +1,8 @@
 package mapped;
 
 import java.util.Arrays;
+
+import net.optifine.shaders.Shaders;
 import org.lwjgl.opengl.ARBShaderObjects;
 
 public abstract class Class3614 {

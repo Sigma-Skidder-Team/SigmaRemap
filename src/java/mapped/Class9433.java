@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 import java.io.BufferedOutputStream;
 import java.io.EOFException;
 import java.io.IOException;
@@ -203,21 +205,21 @@ public class Class9433 {
 
       String var5 = var1.method27945("Keep-Alive");
       if (var5 != null) {
-         String[] var6 = Class7944.method26903(var5, ",;");
+         String[] var6 = Config.method26903(var5, ",;");
 
          for (int var7 = 0; var7 < var6.length; var7++) {
             String var8 = var6[var7];
             String[] var9 = this.method36222(var8, '=');
             if (var9.length >= 2) {
                if (var9[0].equals("timeout")) {
-                  int var10 = Class7944.method26899(var9[1], -1);
+                  int var10 = Config.method26899(var9[1], -1);
                   if (var10 > 0) {
                      this.field43767 = (long)(var10 * 1000);
                   }
                }
 
                if (var9[0].equals("max")) {
-                  int var11 = Class7944.method26899(var9[1], -1);
+                  int var11 = Config.method26899(var9[1], -1);
                   if (var11 > 0) {
                      this.field43768 = var11;
                   }

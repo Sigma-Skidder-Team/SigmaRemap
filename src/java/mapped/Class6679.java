@@ -1,5 +1,8 @@
 package mapped;
 
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -36,7 +39,7 @@ public abstract class Class6679 {
    }
 
    public String method20368() {
-      String var3 = Class7944.method26946(this.field29278);
+      String var3 = Config.method26946(this.field29278);
       var3 = Class9402.method35762(var3, "//");
       return Shaders.method33144("option." + this.method20366() + ".comment", var3);
    }
@@ -104,7 +107,7 @@ public abstract class Class6679 {
       for (int var5 = 0; var5 < var1.length; var5++) {
          String var6 = var1[var5];
          if (!var4.contains(var6)) {
-            this.field29282 = (String[])Class7944.method26948(this.field29282, var6);
+            this.field29282 = (String[]) Config.method26948(this.field29282, var6);
          }
       }
    }
@@ -118,7 +121,7 @@ public abstract class Class6679 {
    }
 
    public boolean method20381() {
-      return !Class7944.equals(this.field29279, this.field29281);
+      return !Config.equals(this.field29279, this.field29281);
    }
 
    public boolean method20382() {
@@ -176,7 +179,7 @@ public abstract class Class6679 {
 
    public void method20390(float var1) {
       if (this.field29280.length > 1) {
-         var1 = Class7944.method26832(var1, 0.0F, 1.0F);
+         var1 = Config.method26832(var1, 0.0F, 1.0F);
          int var4 = Math.round(var1 * (float)(this.field29280.length - 1));
          this.field29279 = this.field29280[var4];
       }
@@ -184,6 +187,6 @@ public abstract class Class6679 {
 
    @Override
    public String toString() {
-      return "" + this.field29277 + ", value: " + this.field29279 + ", valueDefault: " + this.field29281 + ", paths: " + Class7944.method26854(this.field29282);
+      return "" + this.field29277 + ", value: " + this.field29279 + ", valueDefault: " + this.field29281 + ", paths: " + Config.method26854(this.field29282);
    }
 }

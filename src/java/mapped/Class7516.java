@@ -12,12 +12,12 @@ public class Class7516 {
 
    public static void method24498() {
       RenderSystem.method27820();
-      RenderSystem.method27822();
-      RenderSystem.method27824(1032, 5634);
+      RenderSystem.enableColorMaterial();
+      RenderSystem.colorMaterial(1032, 5634);
    }
 
    public static void method24499() {
-      RenderSystem.method27821();
+      RenderSystem.disableLighting();
       RenderSystem.method27823();
    }
 

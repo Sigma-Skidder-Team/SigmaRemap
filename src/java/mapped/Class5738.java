@@ -53,7 +53,7 @@ public class Class5738 extends Class5715<Class904> {
          double var31;
          float var36;
          if ((this.field25097.field40020 == null || this.field25097.field40020.getPointOfView().func_243192_a()) && var9 == Minecraft.getInstance().player) {
-            double var33 = this.field25097.field40020.field44669;
+            double var33 = this.field25097.field40020.fov;
             var33 /= 100.0;
             Vector3d var35 = new Vector3d((double)var14 * -0.36 * var33, -0.045 * var33, 0.4);
             var35 = var35.method11350(-MathHelper.lerp(var3, var9.prevRotationPitch, var9.rotationPitch) * (float) (Math.PI / 180.0));

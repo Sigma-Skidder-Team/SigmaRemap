@@ -15,14 +15,14 @@ public abstract class Class4510 {
    });
    public static final Class4525 field21738 = new Class4525("additive_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.method27834(GlStateManager.SourceFactor.field15990, DestFactor.field12927);
+      RenderSystem.blendFunc(GlStateManager.SourceFactor.field15990, DestFactor.field12927);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();
    });
    public static final Class4525 field21739 = new Class4525("lightning_transparency", () -> {
       RenderSystem.enableBlend();
-      RenderSystem.method27834(GlStateManager.SourceFactor.field15997, DestFactor.field12927);
+      RenderSystem.blendFunc(GlStateManager.SourceFactor.field15997, DestFactor.field12927);
    }, () -> {
       RenderSystem.disableBlend();
       RenderSystem.defaultBlendFunc();

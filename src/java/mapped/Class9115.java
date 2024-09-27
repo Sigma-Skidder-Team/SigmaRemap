@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
+import net.optifine.Config;
 
 import java.util.HashMap;
 import java.util.Locale;
@@ -41,15 +42,15 @@ public class Class9115 {
          String var10 = var9.toString();
          String var11 = var9.getPath();
          if (field41879.containsKey(var7)) {
-            Class7944.method26811("Duplicate entity type: " + var7 + ", id1: " + field41879.get(var7) + ", id2: " + var8);
+            Config.method26811("Duplicate entity type: " + var7 + ", id1: " + field41879.get(var7) + ", id2: " + var8);
          }
 
          if (field41880.containsKey(var10)) {
-            Class7944.method26811("Duplicate entity location: " + var10 + ", id1: " + field41880.get(var10) + ", id2: " + var8);
+            Config.method26811("Duplicate entity location: " + var10 + ", id1: " + field41880.get(var10) + ", id2: " + var8);
          }
 
          if (field41881.containsKey(var10)) {
-            Class7944.method26811("Duplicate entity name: " + var11 + ", id1: " + field41881.get(var11) + ", id2: " + var8);
+            Config.method26811("Duplicate entity name: " + var11 + ", id1: " + field41881.get(var11) + ", id2: " + var8);
          }
 
          field41879.put(var7, var8);

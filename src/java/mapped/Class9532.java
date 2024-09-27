@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class9532 {
    private Class7589[] field44355 = new Class7589[0];
 
@@ -11,7 +13,7 @@ public class Class9532 {
    }
 
    public void method36837(Class7589 var1) {
-      this.field44355 = (Class7589[])Class7944.method26948(this.field44355, var1);
+      this.field44355 = (Class7589[]) Config.method26948(this.field44355, var1);
    }
 
    public boolean method36838(int var1) {

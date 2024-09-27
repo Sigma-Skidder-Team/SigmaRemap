@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
+import net.optifine.Config;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -12,27 +13,27 @@ public class Class8052 {
 
    public static void method27654() {
       field34582 = new Class8736[0];
-      if (Class7944.method26916()) {
+      if (Config.method26916()) {
          String var2 = "optifine/natural.properties";
 
          try {
             ResourceLocation var3 = new ResourceLocation(var2);
-            if (!Class7944.method26866(var3)) {
-               Class7944.method26810("NaturalTextures: configuration \"" + var2 + "\" not found");
+            if (!Config.method26866(var3)) {
+               Config.method26810("NaturalTextures: configuration \"" + var2 + "\" not found");
                return;
             }
 
-            boolean var4 = Class7944.method26872(var3);
-            InputStream var5 = Class7944.method26863(var3);
+            boolean var4 = Config.method26872(var3);
+            InputStream var5 = Config.method26863(var3);
             ArrayList<Class8736> var6 = new ArrayList(256);
-            String var7 = Class7944.method26925(var5);
+            String var7 = Config.method26925(var5);
             var5.close();
-            String[] var8 = Class7944.method26903(var7, "\n\r");
+            String[] var8 = Config.method26903(var7, "\n\r");
             if (var4) {
-               Class7944.method26810("Natural Textures: Parsing default configuration \"" + var2 + "\"");
-               Class7944.method26810("Natural Textures: Valid only for textures from default resource pack");
+               Config.method26810("Natural Textures: Parsing default configuration \"" + var2 + "\"");
+               Config.method26810("Natural Textures: Valid only for textures from default resource pack");
             } else {
-               Class7944.method26810("Natural Textures: Parsing configuration \"" + var2 + "\"");
+               Config.method26810("Natural Textures: Parsing configuration \"" + var2 + "\"");
             }
 
             int var9 = 0;
@@ -41,21 +42,21 @@ public class Class8052 {
             for (int var11 = 0; var11 < var8.length; var11++) {
                String var12 = var8[var11].trim();
                if (!var12.startsWith("#")) {
-                  String[] var13 = Class7944.method26903(var12, "=");
+                  String[] var13 = Config.method26903(var12, "=");
                   if (var13.length != 2) {
-                     Class7944.method26811("Natural Textures: Invalid \"" + var2 + "\" line: " + var12);
+                     Config.method26811("Natural Textures: Invalid \"" + var2 + "\" line: " + var12);
                   } else {
                      String var14 = var13[0].trim();
                      String var15 = var13[1].trim();
                      TextureAtlasSprite var16 = var10.method1106("minecraft:block/" + var14);
                      if (var16 == null) {
-                        Class7944.method26811("Natural Textures: Texture not found: \"" + var2 + "\" line: " + var12);
+                        Config.method26811("Natural Textures: Texture not found: \"" + var2 + "\" line: " + var12);
                      } else {
                         int var17 = var16.method7475();
                         if (var17 < 0) {
-                           Class7944.method26811("Natural Textures: Invalid \"" + var2 + "\" line: " + var12);
+                           Config.method26811("Natural Textures: Invalid \"" + var2 + "\" line: " + var12);
                         } else {
-                           if (var4 && !Class7944.method26872(new ResourceLocation("textures/block/" + var14 + ".png"))) {
+                           if (var4 && !Config.method26872(new ResourceLocation("textures/block/" + var14 + ".png"))) {
                               return;
                            }
 
@@ -76,10 +77,10 @@ public class Class8052 {
 
             field34582 = var6.toArray(new Class8736[var6.size()]);
             if (var9 > 0) {
-               Class7944.method26810("NaturalTextures: " + var9);
+               Config.method26810("NaturalTextures: " + var9);
             }
          } catch (FileNotFoundException var19) {
-            Class7944.method26811("NaturalTextures: configuration \"" + var2 + "\" not found");
+            Config.method26811("NaturalTextures: configuration \"" + var2 + "\" not found");
             return;
          } catch (Exception var20) {
             var20.printStackTrace();
@@ -93,7 +94,7 @@ public class Class8052 {
          Class8736 var5 = method27656(var4);
          if (var5 != null) {
             int var6 = Class9619.method37451(var1.method30514());
-            int var7 = Class7944.method26934(var0, var6);
+            int var7 = Config.method26934(var0, var6);
             int var8 = 0;
             boolean var9 = false;
             if (var5.field39386 > 1) {

@@ -7,6 +7,8 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.StringTextComponent;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 public class Class848 extends Class838 {
    private Screen field4694;
@@ -85,7 +87,7 @@ public class Class848 extends Class838 {
          Class6681 var8 = (Class6681)var0;
          return var4 + "...";
       } else {
-         FontRenderer var5 = Class7944.method26860().fontRenderer;
+         FontRenderer var5 = Config.method26860().fontRenderer;
          int var6 = var5.getStringWidth(": " + Class8043.method27623()) + 5;
 
          while (var5.getStringWidth(var4) + var6 >= var1 && var4.length() > 0) {

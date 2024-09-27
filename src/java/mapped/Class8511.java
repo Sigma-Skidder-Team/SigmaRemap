@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import net.optifine.Config;
 
 public class Class8511 implements Class8512 {
    private String field37210 = null;
@@ -24,7 +25,7 @@ public class Class8511 implements Class8512 {
                Class7749.method25669(this.field37210, var10);
             }
          } catch (Exception var11) {
-            Class7944.method26810("Error parsing configuration: " + var1 + ", " + var11.getClass().getName() + ": " + var11.getMessage());
+            Config.method26810("Error parsing configuration: " + var1 + ", " + var11.getClass().getName() + ": " + var11.getMessage());
          }
       }
    }

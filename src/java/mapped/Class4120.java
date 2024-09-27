@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.optifine.Config;
 
 public class Class4120 extends Class4117 {
    public Class4120() {
@@ -30,7 +31,7 @@ public class Class4120 extends Class4117 {
    @Override
    public String[] method12824() {
       String[] var3 = super.method12824();
-      return (String[])Class7944.method26950(var3, new String[]{"left_wing", "right_wing"});
+      return (String[]) Config.method26950(var3, new String[]{"left_wing", "right_wing"});
    }
 
    @Override

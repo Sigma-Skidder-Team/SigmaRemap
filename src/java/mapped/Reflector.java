@@ -73,9 +73,9 @@ public class Reflector {
    public static Class6636 field42793 = new Class6636("net.minecraftforge.event.entity.EntityLeaveWorldEvent");
    public static Class6634 EntityLeaveWorldEvent_Constructor = new Class6634(field42793, new Class[]{Entity.class, World.class});
    public static Class6636 field42795 = new Class6636("net.minecraftforge.client.event.EntityViewRenderEvent$CameraSetup");
-   public static Class6631 field42796 = new Class6631(field42795, "getYaw");
-   public static Class6631 field42797 = new Class6631(field42795, "getPitch");
-   public static Class6631 field42798 = new Class6631(field42795, "getRoll");
+   public static Class6631 EntityViewRenderEvent_CameraSetup_getYaw = new Class6631(field42795, "getYaw");
+   public static Class6631 EntityViewRenderEvent_CameraSetup_getPitch = new Class6631(field42795, "getPitch");
+   public static Class6631 EntityViewRenderEvent_CameraSetup_getRoll = new Class6631(field42795, "getRoll");
    public static Class6636 field42799 = new Class6636("net.minecraftforge.client.event.EntityViewRenderEvent$FogColors");
    public static Class6634 field42800 = new Class6634(field42799, new Class[]{ActiveRenderInfo.class, float.class, float.class, float.class, float.class});
    public static Class6631 field42801 = new Class6631(field42799, "getRed");
@@ -144,7 +144,7 @@ public class Reflector {
    public static Class6631 field42862 = new Class6631(field42854, "onLivingSetAttackTarget");
    public static Class6631 field42863 = new Class6631(field42854, "onLivingUpdate");
    public static Class6636 field42864 = new Class6636("net.minecraftforge.client.ForgeHooksClient");
-   public static Class6631 field42865 = new Class6631(
+   public static Class6631 ForgeHooksClient_dispatchRenderLast = new Class6631(
       field42864, "dispatchRenderLast", new Class[]{WorldRenderer.class, MatrixStack.class, float.class, Matrix4f.class, long.class}
    );
    public static Class6631 field42866 = new Class6631(field42864, "drawItemLayered");
@@ -162,7 +162,7 @@ public class Reflector {
    public static Class6631 field42878 = new Class6631(field42864, "getOffsetFOV");
    public static Class6631 field42879 = new Class6631(field42864, "isNameplateInRenderDistance");
    public static Class6631 field42880 = new Class6631(field42864, "loadEntityShader");
-   public static Class6631 field42881 = new Class6631(field42864, "onCameraSetup");
+   public static Class6631 ForgeHooksClient_onCameraSetup = new Class6631(field42864, "onCameraSetup");
    public static Class6631 field42882 = new Class6631(field42864, "onDrawBlockHighlight");
    public static Class6631 field42883 = new Class6631(field42864, "onFogRender");
    public static Class6631 field42884 = new Class6631(field42864, "onGuiCharTypedPre");
@@ -462,7 +462,7 @@ public class Reflector {
    public static Class6636 field43168 = new Class6636(Class5952.class);
    public static Class6633 field43169 = new Class6633(field43168, Map.class, 0);
 
-   public static void method35055(Class6631 var0, Object... var1) {
+   public static void callVoid(Class6631 var0, Object... var1) {
       try {
          Method var4 = var0.method20213();
          if (var4 == null) {
@@ -632,7 +632,7 @@ public class Reflector {
       }
    }
 
-   public static float method35067(Object var0, Class6631 var1, Object... var2) {
+   public static float callFloat(Object var0, Class6631 var1, Object... var2) {
       try {
          Method var5 = var1.method20213();
          if (var5 == null) {

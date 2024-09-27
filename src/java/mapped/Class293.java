@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -47,7 +48,7 @@ public class Class293 extends Class290 {
    private void method1145(Class1806 var1, boolean var2, boolean var3) {
       TextureUtil.method30370(this.getGlTextureId(), 0, var1.method7886(), var1.method7887());
       var1.method7895(0, 0, 0, 0, 0, var1.method7886(), var1.method7887(), var2, var3, false, true);
-      if (Class7944.method26921()) {
+      if (Config.isShaders()) {
          Class9336.method35336(this.getGlTextureId(), var1, var2, var3, this.field1138, this.field1137, this.method1135());
       }
 

@@ -5,6 +5,8 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> extends Class5712<T, M> {
    public Class5651(EntityRendererManager var1, M var2, float var3) {
@@ -33,7 +35,7 @@ public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> ext
    }
 
    private <E extends Entity> void method17847(T var1, float var2, MatrixStack var3, Class7733 var4, E var5) {
-      if (!Class7944.method26921() || ! Shaders.field40609) {
+      if (!Config.isShaders() || ! Shaders.isShadowPass) {
          var3.push();
          Vector3d var8 = var5.getLeashPosition(var2);
          double var9 = (double)(MathHelper.lerp(var2, var1.renderYawOffset, var1.prevRenderYawOffset) * (float) (Math.PI / 180.0)) + (Math.PI / 2);
@@ -59,13 +61,13 @@ public abstract class Class5651<T extends MobEntity, M extends Class2827<T>> ext
          int var34 = this.field25097.<Entity>method32212(var5).method17858(var5, var32);
          int var35 = var1.world.method7020(Class1977.field12881, var31);
          int var36 = var1.world.method7020(Class1977.field12881, var32);
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Shaders.method33119();
          }
 
          method17848(var26, var27, var22, var23, var24, var33, var34, var35, var36, 0.025F, 0.025F, var29, var30);
          method17848(var26, var27, var22, var23, var24, var33, var34, var35, var36, 0.025F, 0.0F, var29, var30);
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Shaders.method33120();
          }
 

@@ -67,9 +67,9 @@ public class Class871 extends ContainerScreen<Class5822> {
       RenderSystem.pushMatrix();
       RenderSystem.loadIdentity();
       int var9 = (int)this.mc.getMainWindow().getGuiScaleFactor();
-      RenderSystem.method27869((this.width - 320) / 2 * var9, (this.height - 240) / 2 * var9, 320 * var9, 240 * var9);
+      RenderSystem.viewport((this.width - 320) / 2 * var9, (this.height - 240) / 2 * var9, 320 * var9, 240 * var9);
       RenderSystem.translatef(-0.34F, 0.23F, 0.0F);
-      RenderSystem.method27888(Matrix4f.method35511(90.0, 1.3333334F, 9.0F, 80.0F));
+      RenderSystem.multMatrix(Matrix4f.method35511(90.0, 1.3333334F, 9.0F, 80.0F));
       RenderSystem.matrixMode(5888);
       var1.push();
       Class8892 var10 = var1.getLast();
@@ -78,13 +78,13 @@ public class Class871 extends ContainerScreen<Class5822> {
       var1.translate(0.0, 3.3F, 1984.0);
       float var11 = 5.0F;
       var1.method35292(5.0F, 5.0F, 5.0F);
-      var1.rotate(Vector3f.field32902.rotationDegrees(180.0F));
-      var1.rotate(Vector3f.field32898.rotationDegrees(20.0F));
+      var1.rotate(Vector3f.ZP.rotationDegrees(180.0F));
+      var1.rotate(Vector3f.XP.rotationDegrees(20.0F));
       float var12 = MathHelper.lerp(var2, this.field4839, this.field4838);
       var1.translate((double)((1.0F - var12) * 0.2F), (double)((1.0F - var12) * 0.1F), (double)((1.0F - var12) * 0.25F));
       float var13 = -(1.0F - var12) * 90.0F - 90.0F;
       var1.rotate(Vector3f.YP.rotationDegrees(var13));
-      var1.rotate(Vector3f.field32898.rotationDegrees(180.0F));
+      var1.rotate(Vector3f.XP.rotationDegrees(180.0F));
       float var14 = MathHelper.lerp(var2, this.field4835, this.field4834) + 0.25F;
       float var15 = MathHelper.lerp(var2, this.field4835, this.field4834) + 0.75F;
       var14 = (var14 - (float) MathHelper.method37768((double)var14)) * 1.6F - 0.3F;
@@ -113,7 +113,7 @@ public class Class871 extends ContainerScreen<Class5822> {
       var16.method25602();
       var1.pop();
       RenderSystem.matrixMode(5889);
-      RenderSystem.method27869(0, 0, this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight());
+      RenderSystem.viewport(0, 0, this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight());
       RenderSystem.popMatrix();
       RenderSystem.matrixMode(5888);
       Class7516.method24503();

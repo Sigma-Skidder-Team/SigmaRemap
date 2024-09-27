@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.optifine.Config;
 
 import java.util.Iterator;
 
@@ -26,7 +27,7 @@ public class Class4068 extends Class4057 {
                return null;
             } else {
                String var8 = var2.substring(var7.length());
-               int var9 = Class7944.method26899(var8, -1);
+               int var9 = Config.method26899(var8, -1);
                return Class8542.method30390(var6, var9);
             }
          } else {

@@ -64,7 +64,7 @@ public class Class5658 extends Class5651<Class1105, Class2820> {
          float var18 = (float)Math.acos(var16.y);
          float var19 = (float)Math.atan2(var16.z, var16.x);
          var4.rotate(Vector3f.YP.rotationDegrees(((float) (Math.PI / 2) - var19) * (180.0F / (float)Math.PI)));
-         var4.rotate(Vector3f.field32898.rotationDegrees(var18 * (180.0F / (float)Math.PI)));
+         var4.rotate(Vector3f.XP.rotationDegrees(var18 * (180.0F / (float)Math.PI)));
          boolean var20 = true;
          float var21 = var11 * 0.05F * -1.5F;
          float var22 = var10 * var10;

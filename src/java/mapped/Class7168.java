@@ -12,6 +12,7 @@ import java.util.function.LongSupplier;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
+import net.optifine.Config;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.util.Supplier;
@@ -86,7 +87,7 @@ public class Class7168 implements Class7166 {
          int var4 = var1.hashCode();
          if (var4 == field30838 && var1.equals("scheduledExecutables")) {
             Class8578.field38575.method31034();
-         } else if (var4 == field30839 && var1.equals("tick") && Class7944.method26797()) {
+         } else if (var4 == field30839 && var1.equals("tick") && Config.method26797()) {
             Class8578.field38575.method31035();
             Class8578.field38574.method31034();
          }

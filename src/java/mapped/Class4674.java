@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 import java.io.InputStream;
 
 public class Class4674 implements Class4671 {
@@ -9,7 +11,7 @@ public class Class4674 implements Class4671 {
 
    @Override
    public InputStream method14639(String var1) {
-      return Class7944.method26784(var1);
+      return Config.method26784(var1);
    }
 
    @Override

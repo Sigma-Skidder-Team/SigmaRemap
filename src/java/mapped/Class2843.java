@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.optifine.Config;
 
 public class Class2843 extends Class2828 {
    public Class7219 field17640;
@@ -29,15 +30,15 @@ public class Class2843 extends Class2828 {
                Reflector.method35082(var1, Reflector.field43157, this.field17642);
                return var1;
             } else {
-               Class7944.method26811("Field not found: TileEntityBedRenderer.legModels");
+               Config.method26811("Field not found: TileEntityBedRenderer.legModels");
                return null;
             }
          } else {
-            Class7944.method26811("Field not found: TileEntityBedRenderer.footModel");
+            Config.method26811("Field not found: TileEntityBedRenderer.footModel");
             return null;
          }
       } else {
-         Class7944.method26811("Field not found: TileEntityBedRenderer.head");
+         Config.method26811("Field not found: TileEntityBedRenderer.head");
          return null;
       }
    }

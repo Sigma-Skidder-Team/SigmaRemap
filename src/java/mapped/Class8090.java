@@ -15,6 +15,7 @@ import net.minecraft.item.Items;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
+import net.optifine.Config;
 import org.lwjgl.opengl.GL11;
 
 public class Class8090 {
@@ -131,7 +132,7 @@ public class Class8090 {
             if (!var1.equals("enchantment")) {
                if (!var1.equals("armor")) {
                   if (!var1.equals("elytra")) {
-                     Class7944.method26811("Unknown method: " + var1);
+                     Config.method26811("Unknown method: " + var1);
                      return 0;
                   } else {
                      return 4;
@@ -160,7 +161,7 @@ public class Class8090 {
       } else {
          var1 = var1.trim();
          TreeSet<Integer> var5 = new TreeSet();
-         String[] var6 = Class7944.method26903(var1, " ");
+         String[] var6 = Config.method26903(var1, " ");
 
          for (int var7 = 0; var7 < var6.length; var7++) {
             String var8 = var6[var7];
@@ -170,10 +171,10 @@ public class Class8090 {
                if (var10 >= 0) {
                   var5.add(new Integer(var10));
                } else {
-                  Class7944.method26811("Item ID not found: " + var8);
+                  Config.method26811("Item ID not found: " + var8);
                }
             } else {
-               Class7944.method26811("Item not found: " + var8);
+               Config.method26811("Item not found: " + var8);
             }
          }
 
@@ -341,11 +342,11 @@ public class Class8090 {
    private int method28006(String var1, int var2) {
       if (var1 != null) {
          var1 = var1.trim();
-         int var5 = Class7944.method26899(var1, Integer.MIN_VALUE);
+         int var5 = Config.method26899(var1, Integer.MIN_VALUE);
          if (var5 != Integer.MIN_VALUE) {
             return var5;
          } else {
-            Class7944.method26811("Invalid integer: " + var1);
+            Config.method26811("Invalid integer: " + var1);
             return var2;
          }
       } else {
@@ -356,11 +357,11 @@ public class Class8090 {
    private float method28007(String var1, float var2) {
       if (var1 != null) {
          var1 = var1.trim();
-         float var5 = Class7944.method26900(var1, Float.MIN_VALUE);
+         float var5 = Config.method26900(var1, Float.MIN_VALUE);
          if (var5 != Float.MIN_VALUE) {
             return var5;
          } else {
-            Class7944.method26811("Invalid float: " + var1);
+            Config.method26811("Invalid float: " + var1);
             return var2;
          }
       } else {
@@ -370,7 +371,7 @@ public class Class8090 {
 
    private int[] method28008(String var1, Class8232 var2) {
       if (var1 != null) {
-         String[] var5 = Class7944.method26903(var1, " ");
+         String[] var5 = Config.method26903(var1, " ");
          ArrayList<Integer>  var6 = new ArrayList();
 
          for (int var7 = 0; var7 < var5.length; var7++) {
@@ -379,12 +380,12 @@ public class Class8090 {
             if (var9 != Integer.MIN_VALUE) {
                var6.add(var9);
             } else {
-               Class7944.method26811("Invalid value: " + var8);
+               Config.method26811("Invalid value: " + var8);
             }
          }
 
          Integer[] var10 = var6.toArray(new Integer[var6.size()]);
-         return Class7944.method26976(var10);
+         return Config.method26976(var10);
       } else {
          return null;
       }
@@ -394,14 +395,14 @@ public class Class8090 {
       if (var1 == null) {
          return null;
       } else {
-         String[] var4 = Class7944.method26903(var1, " ");
+         String[] var4 = Config.method26903(var1, " ");
          Class9532 var5 = new Class9532();
 
          for (int var6 = 0; var6 < var4.length; var6++) {
             String var7 = var4[var6];
             Class7589 var8 = this.method28010(var7);
             if (var8 == null) {
-               Class7944.method26811("Invalid range list: " + var1);
+               Config.method26811("Invalid range list: " + var1);
                return null;
             }
 
@@ -419,17 +420,17 @@ public class Class8090 {
          var1 = var1.trim();
          int var4 = var1.length() - var1.replace("-", "").length();
          if (var4 > 1) {
-            Class7944.method26811("Invalid range: " + var1);
+            Config.method26811("Invalid range: " + var1);
             return null;
          } else {
-            String[] var5 = Class7944.method26903(var1, "- ");
+            String[] var5 = Config.method26903(var1, "- ");
             int[] var6 = new int[var5.length];
 
             for (int var7 = 0; var7 < var5.length; var7++) {
                String var8 = var5[var7];
-               int var9 = Class7944.method26899(var8, -1);
+               int var9 = Config.method26899(var8, -1);
                if (var9 < 0) {
-                  Class7944.method26811("Invalid range: " + var1);
+                  Config.method26811("Invalid range: " + var1);
                   return null;
                }
 
@@ -438,7 +439,7 @@ public class Class8090 {
 
             if (var6.length != 1) {
                if (var6.length != 2) {
-                  Class7944.method26811("Invalid range: " + var1);
+                  Config.method26811("Invalid range: " + var1);
                   return null;
                } else {
                   int var12 = Math.min(var6[0], var6[1]);
@@ -495,7 +496,7 @@ public class Class8090 {
          if (!var1.equals("any")) {
             if (!var1.equals("main")) {
                if (!var1.equals("off")) {
-                  Class7944.method26811("Invalid hand: " + var1);
+                  Config.method26811("Invalid hand: " + var1);
                   return 0;
                } else {
                   return 2;
@@ -513,10 +514,10 @@ public class Class8090 {
 
    public boolean method28014(String var1) {
       if (this.field34768 == null || this.field34768.length() <= 0) {
-         Class7944.method26811("No name found: " + var1);
+         Config.method26811("No name found: " + var1);
          return false;
       } else if (this.field34769 == null) {
-         Class7944.method26811("No base path found: " + var1);
+         Config.method26811("No base path found: " + var1);
          return false;
       } else if (this.field34770 != 0) {
          if (this.field34770 == 4 && this.field34771 == null) {
@@ -529,22 +530,22 @@ public class Class8090 {
             }
 
             if (this.field34771 == null) {
-               Class7944.method26811("No items defined: " + var1);
+               Config.method26811("No items defined: " + var1);
                return false;
             }
          }
 
          if (this.field34772 == null && this.field34773 == null && this.field34774 == null && this.field34775 == null) {
-            Class7944.method26811("No texture or model specified: " + var1);
+            Config.method26811("No texture or model specified: " + var1);
             return false;
          } else if (this.field34770 == 2 && this.field34780 == null) {
-            Class7944.method26811("No enchantmentIDs specified: " + var1);
+            Config.method26811("No enchantmentIDs specified: " + var1);
             return false;
          } else {
             return true;
          }
       } else {
-         Class7944.method26811("No type defined: " + var1);
+         Config.method26811("No type defined: " + var1);
          return false;
       }
    }
@@ -597,7 +598,7 @@ public class Class8090 {
                ResourceLocation var7 = var6.method7465();
                TextureAtlasSprite var8 = var1.getSprite(var7);
                if (var8 == null || var8 instanceof Class1714) {
-                  Class7944.method26811("Missing CIT sprite: " + var7 + ", properties: " + this.field34769);
+                  Config.method26811("Missing CIT sprite: " + var7 + ", properties: " + this.field34769);
                }
 
                this.field34793.put(var5, var8);
@@ -617,9 +618,9 @@ public class Class8090 {
 
          String var7 = var6 + ".png";
          ResourceLocation var8 = new ResourceLocation(var5, var7);
-         boolean var9 = Class7944.method26866(var8);
+         boolean var9 = Config.method26866(var8);
          if (!var9) {
-            Class7944.method26811("File not found: " + var7);
+            Config.method26811("File not found: " + var7);
          }
 
          return var8;
@@ -805,7 +806,7 @@ public class Class8090 {
          + ", type: "
          + this.field34770
          + ", items: ["
-         + Class7944.method26856(this.field34771)
+         + Config.method26856(this.field34771)
          + "], textture: "
          + this.field34772;
    }
@@ -887,14 +888,14 @@ public class Class8090 {
    }
 
    public void method28034() {
-      ModelManager var3 = Class7944.method26825();
+      ModelManager var3 = Config.method26825();
       IBakedModel var4 = var3.getMissingModel();
       if (this.field34774 != null) {
          ResourceLocation var5 = method28036(this.field34774);
          Class1997 var6 = new Class1997(var5, "inventory");
          this.field34796 = var3.method1023(var6);
          if (this.field34796 == var4) {
-            Class7944.method26811("Custom Items: Model not found " + var6.getPath());
+            Config.method26811("Custom Items: Model not found " + var6.getPath());
             this.field34796 = null;
          }
       }
@@ -915,7 +916,7 @@ public class Class8090 {
                   String var12 = "item/" + var8;
                   this.field34797.put(var12, var11);
                } else {
-                  Class7944.method26811("Custom Items: Model not found " + var10.getPath());
+                  Config.method26811("Custom Items: Model not found " + var10.getPath());
                }
             }
          }

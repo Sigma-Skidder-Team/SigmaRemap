@@ -57,7 +57,7 @@ public class Class2730<T extends Class1026> extends Class2595 {
          Set<Class1026> var4 = Sets.newHashSet();
          List<Class1026> var5 = this.field17241
             .world
-            .method6772(
+            .getEntitiesInAABBexcluding(
                Class1026.class, this.field17241.getBoundingBox().method19664(16.0), var1x -> !var1x.method4552() && Class7531.method24612(var1x, var1)
             );
          var4.addAll(var5);

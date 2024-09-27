@@ -44,7 +44,7 @@ public class Class1251 extends Widget implements Class1253<Class120> {
 
    @Override
    public void method5655(MatrixStack var1, int var2, int var3, float var4) {
-      RenderSystem.disableAlphaTest();
+      RenderSystem.enableAlphaTest();
       Class1263.method5908(this.field6627).getTextureManager().bindTexture(Class1263.method5907());
       short var7 = 152;
       if (!this.field6625) {
@@ -70,7 +70,7 @@ public class Class1251 extends Widget implements Class1253<Class120> {
          RenderSystem.popMatrix();
       }
 
-      RenderSystem.method27817();
+      RenderSystem.disableAlphaTest();
    }
 
    // $VF: synthetic method

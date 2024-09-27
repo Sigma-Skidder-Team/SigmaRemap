@@ -4,6 +4,8 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import it.unimi.dsi.fastutil.booleans.BooleanConsumer;
 import net.minecraft.client.gui.screen.ConfirmScreen;
 import net.minecraft.util.text.StringTextComponent;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -85,7 +87,7 @@ public class Class1299 extends Class1298 {
             if (var8 != null) {
                var8 = var8.trim();
                String var9 = "G5";
-               int var10 = Class7944.method26931(var9, var8);
+               int var10 = Config.method26931(var9, var8);
                if (var10 < 0) {
                   String var11 = ("HD_U_" + var8).replace('_', ' ');
                   String var12 = I18n.format("of.message.shaders.nv1", var11);

@@ -75,7 +75,7 @@ public abstract class AbstractGui {
    public void method5688(MatrixStack var1, int var2, int var3, int var4, int var5, int var6, int var7) {
       RenderSystem.disableTexture();
       RenderSystem.enableBlend();
-      RenderSystem.method27817();
+      RenderSystem.disableAlphaTest();
       RenderSystem.defaultBlendFunc();
       RenderSystem.shadeModel(7425);
       Tessellator var10 = Tessellator.getInstance();
@@ -85,7 +85,7 @@ public abstract class AbstractGui {
       var10.draw();
       RenderSystem.shadeModel(7424);
       RenderSystem.disableBlend();
-      RenderSystem.disableAlphaTest();
+      RenderSystem.enableAlphaTest();
       RenderSystem.enableTexture();
    }
 
@@ -127,7 +127,7 @@ public abstract class AbstractGui {
       var3.accept(var1 - 1, var2);
       var3.accept(var1, var2 + 1);
       var3.accept(var1, var2 - 1);
-      RenderSystem.method27834(GlStateManager.SourceFactor.field15997, DestFactor.field12932);
+      RenderSystem.blendFunc(GlStateManager.SourceFactor.field15997, DestFactor.field12932);
       var3.accept(var1, var2);
    }
 
@@ -187,7 +187,7 @@ public abstract class AbstractGui {
       var12.pos(var0, (float)var2, (float)var3, (float)var5).tex(var7, var8).endVertex();
       var12.pos(var0, (float)var1, (float)var3, (float)var5).tex(var6, var8).endVertex();
       var12.finishDrawing();
-      RenderSystem.disableAlphaTest();
+      RenderSystem.enableAlphaTest();
       WorldVertexBufferUploader.draw(var12);
    }
 

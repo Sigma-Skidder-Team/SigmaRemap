@@ -95,7 +95,7 @@ public class Class896 extends Class890 implements Class889 {
 
    private void method3517() {
       AxisAlignedBB var3 = this.getBoundingBox().method19663(4.0, 2.0, 4.0);
-      List<LivingEntity> var4 = this.world.method6772(LivingEntity.class, var3, field5131);
+      List<LivingEntity> var4 = this.world.getEntitiesInAABBexcluding(LivingEntity.class, var3, field5131);
       if (!var4.isEmpty()) {
          for (LivingEntity var6 : var4) {
             double var7 = this.getDistanceSq(var6);

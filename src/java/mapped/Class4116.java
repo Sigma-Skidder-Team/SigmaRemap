@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.optifine.Config;
 
 public class Class4116 extends Class4057 {
    public Class4116() {
@@ -69,7 +70,7 @@ public class Class4116 extends Class4057 {
          var6.field25098 = var2;
          return (Class9492)var6;
       } else {
-         Class7944.method26811("Field not found: RenderBoat.modelBoat");
+         Config.method26811("Field not found: RenderBoat.modelBoat");
          return null;
       }
    }

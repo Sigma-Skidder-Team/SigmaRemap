@@ -6,6 +6,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.optifine.Config;
 import net.optifine.render.GlBlendState;
 
 import java.io.InputStream;
@@ -84,7 +85,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
       int var21 = (int)(var19 * 0.5);
       this.field6438.getTextureManager().bindTexture(field6435);
       RenderSystem.enableBlend();
-      RenderSystem.method27838(32774);
+      RenderSystem.blendEquation(32774);
       RenderSystem.method27835(770, 1);
       RenderSystem.method27819(516, 0.0F);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, var14);
@@ -107,7 +108,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
       int var23 = (int)((double)this.field6438.getMainWindow().getScaledHeight() * 0.8325);
       float var24 = this.field6439.method29224();
       this.field6442 = MathHelper.clamp(this.field6442 * 0.95F + var24 * 0.050000012F, 0.0F, 1.0F);
-      Reflector.field42771.method20217();
+      Reflector.field42771.call();
       if (var11 < 1.0F) {
          this.method5678(var1, var7 / 2 - var21, var23 - 5, var7 / 2 + var21, var23 + 5, 1.0F - MathHelper.clamp(var11, 0.0F, 1.0F));
       }
@@ -168,16 +169,16 @@ public class ResourceLoadProgressGui extends LoadingGui {
       this.field6446 = field6437;
       this.field6447 = 16777215;
       this.field6448 = 16777215;
-      if (Class7944.method26911()) {
+      if (Config.method26911()) {
          try {
             String var3 = "optifine/color.properties";
             ResourceLocation var4 = new ResourceLocation(var3);
-            if (!Class7944.method26866(var4)) {
+            if (!Config.method26866(var4)) {
                return;
             }
 
-            InputStream var5 = Class7944.method26863(var4);
-            Class7944.method26810("Loading " + var3);
+            InputStream var5 = Config.method26863(var4);
+            Config.method26810("Loading " + var3);
             Class20 var6 = new Class20();
             var6.load(var5);
             var5.close();
@@ -187,7 +188,7 @@ public class ResourceLoadProgressGui extends LoadingGui {
             this.field6448 = method5680(var6, "screen.loading.progress", this.field6448);
             this.field6449 = Class8440.method29681(var6.getProperty("screen.loading.blend"));
          } catch (Exception var7) {
-            Class7944.method26811("" + var7.getClass().getName() + ": " + var7.getMessage());
+            Config.method26811("" + var7.getClass().getName() + ": " + var7.getMessage());
          }
       }
    }
@@ -198,10 +199,10 @@ public class ResourceLoadProgressGui extends LoadingGui {
          var5 = var5.trim();
          int var6 = method5681(var5, var2);
          if (var6 >= 0) {
-            Class7944.method26810(var1 + " = " + var5);
+            Config.method26810(var1 + " = " + var5);
             return var6;
          } else {
-            Class7944.method26811("Invalid color: " + var1 + " = " + var5);
+            Config.method26811("Invalid color: " + var1 + " = " + var5);
             return var6;
          }
       } else {

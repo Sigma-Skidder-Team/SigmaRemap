@@ -11,6 +11,7 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
+import net.optifine.Config;
 
 import java.util.*;
 import java.util.concurrent.CancellationException;
@@ -116,7 +117,7 @@ public class Class2011 extends Class2009 {
                      RenderType var26 = var24[var25];
                      if (!Class9016.method33348() || Reflector.method35056(Reflector.field42941, var37, var26)) {
                         if (Class9016.method33350()) {
-                           Reflector.method35055(Reflector.field42895, var26);
+                           Reflector.callVoid(Reflector.field42895, var26);
                         }
 
                         BufferBuilder var27 = var5.method26203(var26);
@@ -143,7 +144,7 @@ public class Class2011 extends Class2009 {
                      RenderType var40 = var38[var39];
                      if (!Class9016.method33349() || Reflector.method35056(Reflector.field42940, var20, var40)) {
                         if (Class9016.method33350()) {
-                           Reflector.method35055(Reflector.field42895, var40);
+                           Reflector.callVoid(Reflector.field42895, var40);
                         }
 
                         var40 = Class8066.method27760(this.field13078, var14, var20, var19, var40);
@@ -177,7 +178,7 @@ public class Class2011 extends Class2009 {
                }
 
                if (Class9016.method33350()) {
-                  Reflector.method35055(Reflector.field42895, (Object[])null);
+                  Reflector.callVoid(Reflector.field42895, (Object[])null);
                }
             }
          }
@@ -199,7 +200,7 @@ public class Class2011 extends Class2009 {
          }
 
          for (RenderType var33 : Class7457.method24116(var4)) {
-            if (Class7944.method26921()) {
+            if (Config.isShaders()) {
                Class7698.method25386(var5.method26203(var33));
             }
 

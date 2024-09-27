@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.Direction;
+import net.optifine.Config;
 
 public class Class8557 {
    public int[] field38456;
@@ -82,7 +83,7 @@ public class Class8557 {
    }
 
    public void method30519(Class8462 var1) {
-      Reflector.method35055(Reflector.field42963, var1, this);
+      Reflector.callVoid(Reflector.field42963, var1, this);
    }
 
    public TextureAtlasSprite method30520() {
@@ -108,11 +109,11 @@ public class Class8557 {
 
       float var12 = (var3 + var5) / 2.0F;
       float var13 = (var4 + var6) / 2.0F;
-      return Class7944.method26969().method1116((double)var12, (double)var13);
+      return Config.method26969().method1116((double)var12, (double)var13);
    }
 
    public void method30522() {
-      if (!Class7944.method26921()) {
+      if (!Config.isShaders()) {
          if (this.field38456.length == DefaultVertexFormats.field43339) {
             this.field38456 = method30524(this.field38456);
          }

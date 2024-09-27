@@ -424,7 +424,7 @@ public class TabGUI extends Module {
     }
 
     private Color method16602(int var1, int var2, Color var3) {
-        Color var6 = RenderUtil.method11481(var1, var2, var3);
+        Color var6 = RenderUtil.getColorFromScreen(var1, var2, var3);
         if (var3 != null) {
             var6 = MultiUtilities.method17681(var6, var3, 0.08F * this.field23780);
         }

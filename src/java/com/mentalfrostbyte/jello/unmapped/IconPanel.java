@@ -190,7 +190,7 @@ public class IconPanel implements IGuiEventListener {
     }
 
     public final void method13226(float var1) {
-        GlStateManager.method23696();
+        GlStateManager.enableAlphaTest();
         GL11.glAlphaFunc(519, 0.0F);
         GL11.glTranslatef((float) this.getXA(), (float) this.getYA(), 0.0F);
 

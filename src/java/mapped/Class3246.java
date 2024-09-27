@@ -87,7 +87,7 @@ public class Class3246 extends Class3247 implements Class3245 {
 
    @Nullable
    private ItemFrameEntity method11663(World var1, Direction var2, BlockPos var3) {
-      List var6 = var1.<ItemFrameEntity>method6772(
+      List var6 = var1.<ItemFrameEntity>getEntitiesInAABBexcluding(
          ItemFrameEntity.class,
          new AxisAlignedBB(
             (double)var3.getX(),

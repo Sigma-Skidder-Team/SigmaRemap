@@ -300,7 +300,7 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
          .stream()
          .flatMap(
             var1 -> var0.method3734()
-                  .method6772(
+                  .getEntitiesInAABBexcluding(
                      ItemEntity.class, var1.offset(var0.method3718() - 0.5, var0.method3719() - 0.5, var0.method3720() - 0.5), Class8088.field34757
                   )
                   .stream()

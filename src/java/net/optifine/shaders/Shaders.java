@@ -1,7 +1,8 @@
-package mapped;
+package net.optifine.shaders;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.platform.GlStateManager;
+import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.GameSettings;
@@ -20,6 +21,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.StringTextComponent;
+import net.optifine.Config;
 import net.optifine.render.GlAlphaState;
 import net.optifine.render.GlBlendState;
 import org.apache.commons.io.IOUtils;
@@ -55,7 +57,7 @@ public class Shaders {
     public static boolean field40606 = false;
     public static boolean field40607 = false;
     public static boolean field40608 = false;
-    public static boolean field40609 = false;
+    public static boolean isShadowPass = false;
     public static boolean field40610 = false;
     public static boolean field40611;
     private static boolean field40612;
@@ -593,25 +595,25 @@ public class Shaders {
 
         switch (Class6662.field29231[var0.ordinal()]) {
             case 1:
-                field40878 = Class7944.method26899(var1, 0);
+                field40878 = Config.method26899(var1, 0);
                 break;
             case 2:
-                field40874 = Class7944.method26901(var1, true);
+                field40874 = Config.method26901(var1, true);
                 break;
             case 3:
-                field40875 = Class7944.method26901(var1, true);
+                field40875 = Config.method26901(var1, true);
                 break;
             case 4:
-                field40865 = Class7944.method26900(var1, 1.0F);
+                field40865 = Config.method26900(var1, 1.0F);
                 break;
             case 5:
-                field40866 = Class7944.method26900(var1, 1.0F);
+                field40866 = Config.method26900(var1, 1.0F);
                 break;
             case 6:
-                field40864 = Class7944.method26900(var1, 0.125F);
+                field40864 = Config.method26900(var1, 0.125F);
                 break;
             case 7:
-                field40863 = Class7944.method26901(var1, true);
+                field40863 = Config.method26901(var1, true);
                 break;
             case 8:
                 field40877.method27380(var1);
@@ -623,28 +625,28 @@ public class Shaders {
                 field40887 = var1;
                 break;
             case 11:
-                field40862 = Class7944.method26901(var1, true);
+                field40862 = Config.method26901(var1, true);
                 break;
             case 12:
-                field40873 = Class7944.method26901(var1, true);
+                field40873 = Config.method26901(var1, true);
                 break;
             case 13:
-                field40867 = Class7944.method26899(var1, 0);
+                field40867 = Config.method26899(var1, 0);
                 break;
             case 14:
-                field40868 = Class7944.method26899(var1, 0);
+                field40868 = Config.method26899(var1, 0);
                 break;
             case 15:
-                field40869 = Class7944.method26899(var1, 0);
+                field40869 = Config.method26899(var1, 0);
                 break;
             case 16:
-                field40870 = Class7944.method26899(var1, 0);
+                field40870 = Config.method26899(var1, 0);
                 break;
             case 17:
-                field40870 = Class7944.method26899(var1, 0);
+                field40870 = Config.method26899(var1, 0);
                 break;
             case 18:
-                field40870 = Class7944.method26899(var1, 0);
+                field40870 = Config.method26899(var1, 0);
                 break;
             default:
                 throw new IllegalArgumentException("Unknown option: " + var0);
@@ -751,17 +753,17 @@ public class Shaders {
         }
 
         boolean var2 = false;
-        if (Class7944.method26892()) {
-            Class7399.method23634("Shaders can not be loaded, Antialiasing is enabled: " + Class7944.method26891() + "x");
+        if (Config.method26892()) {
+            Class7399.method23634("Shaders can not be loaded, Antialiasing is enabled: " + Config.method26891() + "x");
             var2 = true;
         }
 
-        if (Class7944.method26890()) {
-            Class7399.method23634("Shaders can not be loaded, Anisotropic Filtering is enabled: " + Class7944.method26889() + "x");
+        if (Config.method26890()) {
+            Class7399.method23634("Shaders can not be loaded, Anisotropic Filtering is enabled: " + Config.method26889() + "x");
             var2 = true;
         }
 
-        if (Class7944.method26819()) {
+        if (Config.method26819()) {
             Class7399.method23634("Shaders can not be loaded, Fabulous Graphics is enabled.");
             var2 = true;
         }
@@ -853,7 +855,7 @@ public class Shaders {
 
         if (field40919.size() > 0) {
             Integer[] var2 = field40919.<Integer>toArray(new Integer[field40919.size()]);
-            Class7944.method26810("[Shaders] Worlds: " + Class7944.method26854(var2));
+            Config.method26810("[Shaders] Worlds: " + Config.method26854(var2));
         }
     }
 
@@ -936,7 +938,7 @@ public class Shaders {
                 Class8440.method29682(var2);
                 Class8440.method29684(var2);
             } catch (IOException var3) {
-                Class7944.method26811("[Shaders] Error reading: " + var4);
+                Config.method26811("[Shaders] Error reading: " + var4);
             }
         }
     }
@@ -1004,7 +1006,7 @@ public class Shaders {
 
     private static Class6627 method32961(int var0, String var1) {
         Class8896 var2 = new Class8896("Shaders");
-        String[] var3 = Class7944.method26903(var1, " ");
+        String[] var3 = Config.method26903(var1, " ");
         ArrayDeque var4 = new ArrayDeque<String>(Arrays.asList(var3));
         String var5 = (String) var4.poll();
         Class2292 var6 = (Class2292) var2.method32413((String) var4.poll(), Class2292.values(), "texture type");
@@ -1077,7 +1079,7 @@ public class Shaders {
                 Class7399.method23633("Raw texture not found: " + var2);
                 return null;
             } else {
-                byte[] var12 = Class7944.method26927(var11);
+                byte[] var12 = Config.method26927(var11);
                 IOUtils.closeQuietly(var11);
                 ByteBuffer var13 = GLAllocation.method22266(var12.length);
                 var13.put(var12);
@@ -1296,7 +1298,7 @@ public class Shaders {
         if (field40897 == null) {
             if (field40896 != null) {
                 Class6684 var9 = new Class6684(field40896, var1);
-                var1 = (Class6679[]) Class7944.method26949(var1, var9, 0);
+                var1 = (Class6679[]) Config.method26949(var1, var9, 0);
             }
 
             return method32974(var1);
@@ -1409,7 +1411,7 @@ public class Shaders {
         try {
             method32977(var1, var2);
         } catch (IOException var5) {
-            Class7944.method26811("[Shaders] Error saving configuration for " + field40885.method14641());
+            Config.method26811("[Shaders] Error saving configuration for " + field40885.method14641());
             var5.printStackTrace();
         }
     }
@@ -1439,14 +1441,14 @@ public class Shaders {
                 if (var5 != null) {
                     var4.method20373();
                     if (!var4.method20371(var5)) {
-                        Class7944.method26811("[Shaders] Invalid value, option: " + var4.method20366() + ", value: " + var5);
+                        Config.method26811("[Shaders] Invalid value, option: " + var4.method20366() + ", value: " + var5);
                     }
                 }
             }
 
             return var1;
         } catch (IOException var6) {
-            Class7944.method26811("[Shaders] Error reading configuration for " + field40885.method14641());
+            Config.method26811("[Shaders] Error reading configuration for " + field40885.method14641());
             var6.printStackTrace();
             return null;
         }
@@ -1542,11 +1544,11 @@ public class Shaders {
     public static int method32984(String var0) {
         int var1 = GlStateManager.method23859();
         if (var1 != 0 && Class9084.method33877(var1)) {
-            String var2 = Class7944.method26985(var1);
+            String var2 = Config.method26985(var1);
             String var3 = method32985(var1, var0);
             String var4 = String.format("OpenGL error: %s (%s)%s, at: %s", var1, var2, var3, var0);
             Class7399.method23632(var4);
-            if (Class7944.method26981() && Class4379.method13743("ShowGlErrorShaders", 10000L)) {
+            if (Config.method26981() && Class4379.method13743("ShowGlErrorShaders", 10000L)) {
                 String var5 = I18n.format("of.message.openglError", var1, var2);
                 method32988(var5);
             }
@@ -2226,7 +2228,7 @@ public class Shaders {
                             Class9090 var9 = Class8445.method29699(var8);
                             if (var9 != null) {
                                 if (var9.method33904("GL_ARB_geometry_shader4")) {
-                                    String var10 = Class7944.method26946(var9.method33887());
+                                    String var10 = Config.method26946(var9.method33887());
                                     if (var10.equals("enable") || var10.equals("require") || var10.equals("warn")) {
                                         field40679 = true;
                                     }
@@ -2384,7 +2386,7 @@ public class Shaders {
                                     field40936 = var9.method33914();
                                     Class7399.method23634("Sun path rotation: " + field40936);
                                 } else if (var9.method33902("ambientOcclusionLevel")) {
-                                    field40935 = Class7944.method26832(var9.method33914(), 0.0F, 1.0F);
+                                    field40935 = Config.method26832(var9.method33914(), 0.0F, 1.0F);
                                     Class7399.method23634("AO Level: " + field40935);
                                 } else if (var9.method33900("superSamplingLevel")) {
                                     int var19 = var9.method33913();
@@ -2495,9 +2497,9 @@ public class Shaders {
         try {
             File var2 = new File(field40892, "debug/" + var0);
             var2.getParentFile().mkdirs();
-            Class7944.method26967(var2, var1);
+            Config.method26967(var2, var1);
         } catch (IOException var3) {
-            Class7944.method26811("Error saving: " + var0);
+            Config.method26811("Error saving: " + var0);
             var3.printStackTrace();
         }
     }
@@ -2573,7 +2575,7 @@ public class Shaders {
 
     public static void method33021(Class7906 var0) {
         method32984("pre-useProgram");
-        if (field40609) {
+        if (isShadowPass) {
             var0 = field40814;
         } else if (field40610) {
             var0 = field40832;
@@ -2738,7 +2740,7 @@ public class Shaders {
                 method33025(field40739, (float) field40603);
                 method33025(field40740, (float) field40604);
                 method33025(field40741, 0.05F);
-                method33025(field40742, (float) (field40591.gameSettings.field44574 * 16));
+                method33025(field40742, (float) (field40591.gameSettings.renderDistanceChunks * 16));
                 method33026(field40743, field40620[0], field40620[1], field40620[2]);
                 method33026(field40744, field40621[0], field40621[1], field40621[2]);
                 method33026(field40745, field40622[0], field40622[1], field40622[2]);
@@ -3172,7 +3174,7 @@ public class Shaders {
         }
     }
 
-    public static void method33041(Minecraft var0, ActiveRenderInfo var1, float var2, long var3) {
+    public static void beginRender(Minecraft var0, ActiveRenderInfo var1, float var2, long var3) {
         method32984("pre beginRender");
         method33043(field40591.world);
         field40591 = var0;
@@ -3182,7 +3184,7 @@ public class Shaders {
             try {
                 method33006();
             } catch (IllegalStateException var14) {
-                if (Class7944.method26946(var14.getMessage()).equals("Function is not supported")) {
+                if (Config.method26946(var14.getMessage()).equals("Function is not supported")) {
                     method32989("[Shaders] Error: " + var14.getMessage());
                     var14.printStackTrace();
                     method32952("OFF");
@@ -3215,7 +3217,7 @@ public class Shaders {
         field40647 = field40647 + field40646;
         field40647 %= 3600.0F;
         GlStateManager.method23832();
-        Class5463.method17161(var1, var0, var2);
+        ShadersRender.method17161(var1, var0, var2);
         GlStateManager.method23833();
         ClientWorld var5 = field40591.world;
         if (var5 != null) {
@@ -3260,7 +3262,7 @@ public class Shaders {
                     field40666 = 0.0F;
                     if (var12.isPotionActive(Effects.BLINDNESS)) {
                         int var18 = var12.getActivePotionEffect(Effects.BLINDNESS).method8628();
-                        field40666 = Class7944.method26832((float) var18 / 20.0F, 0.0F, 1.0F);
+                        field40666 = Config.method26832((float) var18 / 20.0F, 0.0F, 1.0F);
                     }
                 }
 
@@ -3274,7 +3276,7 @@ public class Shaders {
 
         field40605 = true;
         field40607 = false;
-        field40609 = false;
+        isShadowPass = false;
         field40613 = false;
         field40614 = false;
         field40615 = false;
@@ -3294,7 +3296,7 @@ public class Shaders {
         ((Buffer) field40969).position(0);
         ((Buffer) field40962).position(0);
         method32984("beginRender");
-        Class5463.method17160(field40592, var1, 0, var2, var3);
+        ShadersRender.method17160(field40592, var1, 0, var2, var3);
         field40591.getProfiler().endSection();
         EXTFramebufferObject.glBindFramebufferEXT(36160, field40807);
 
@@ -3377,8 +3379,8 @@ public class Shaders {
         }
     }
 
-    public static void method33044(float var0, long var1) {
-        if (!field40609) {
+    public static void beginRenderPass(float var0, long var1) {
+        if (!isShadowPass) {
             EXTFramebufferObject.glBindFramebufferEXT(36160, field40807);
             GL11.glViewport(0, 0, field40603, field40604);
             field40852 = null;
@@ -3390,7 +3392,7 @@ public class Shaders {
 
     public static void method33045(int var0, int var1, int var2, int var3) {
         GlStateManager.colorMask(true, true, true, true);
-        if (field40609) {
+        if (isShadowPass) {
             GL11.glViewport(0, 0, field40785, field40786);
         } else {
             GL11.glViewport(0, 0, field40603, field40604);
@@ -3425,7 +3427,7 @@ public class Shaders {
     }
 
     public static void method33049() {
-        if (field40609) {
+        if (isShadowPass) {
             method32984("shadow clear pre");
             EXTFramebufferObject.glFramebufferTexture2DEXT(36160, 36096, 3553, field40975.get(0), 0);
             GL32.glClearColor(1.0F, 1.0F, 1.0F, 1.0F);
@@ -3558,22 +3560,22 @@ public class Shaders {
         if (field40791) {
             GL32.glOrtho((double) (-field40790), (double) field40790, (double) (-field40790), (double) field40790, 0.05F, 256.0);
         } else {
-            GlStateManager.method23842(Matrix4f.method35511((double) field40789, (float) field40785 / (float) field40786, 0.05F, 256.0F));
+            GlStateManager.multMatrix(Matrix4f.method35511((double) field40789, (float) field40785 / (float) field40786, 0.05F, 256.0F));
         }
 
         var0.translate(0.0, 0.0, -100.0);
-        var0.rotate(Vector3f.field32898.rotationDegrees(90.0F));
+        var0.rotate(Vector3f.XP.rotationDegrees(90.0F));
         field40638 = field40591.world.method7001(var2);
         field40639 = field40638 < 0.75F ? field40638 + 0.25F : field40638 - 0.75F;
         float var11 = field40638 * -360.0F;
         float var12 = field40937 > 0.0F ? var11 % field40937 - field40937 * 0.5F : 0.0F;
         if ((double) field40639 <= 0.5) {
-            var0.rotate(Vector3f.field32902.rotationDegrees(var11 - var12));
-            var0.rotate(Vector3f.field32898.rotationDegrees(field40936));
+            var0.rotate(Vector3f.ZP.rotationDegrees(var11 - var12));
+            var0.rotate(Vector3f.XP.rotationDegrees(field40936));
             field40640 = field40639;
         } else {
-            var0.rotate(Vector3f.field32902.rotationDegrees(var11 + 180.0F - var12));
-            var0.rotate(Vector3f.field32898.rotationDegrees(field40936));
+            var0.rotate(Vector3f.ZP.rotationDegrees(var11 + 180.0F - var12));
+            var0.rotate(Vector3f.XP.rotationDegrees(field40936));
             field40640 = field40639 - 0.5F;
         }
 
@@ -3605,7 +3607,7 @@ public class Shaders {
         ((Buffer) field40964).position(0);
         ((Buffer) field40965).position(0);
         Matrix4f var20 = var0.getLast().getMatrix();
-        var20.method35502((FloatBuffer) ((Buffer) field40966).position(0));
+        var20.write((FloatBuffer) ((Buffer) field40966).position(0));
         Class7759.method25730((FloatBuffer) ((Buffer) field40967).position(0), (FloatBuffer) ((Buffer) field40966).position(0), field40959, field40958);
         ((Buffer) field40966).position(0);
         ((Buffer) field40967).position(0);
@@ -3623,7 +3625,7 @@ public class Shaders {
     }
 
     public static void method33054(MatrixStack var0) {
-        var0.rotate(Vector3f.field32902.rotationDegrees(field40936 * 1.0F));
+        var0.rotate(Vector3f.ZP.rotationDegrees(field40936 * 1.0F));
         method32984("preCelestialRotate");
     }
 
@@ -3712,7 +3714,7 @@ public class Shaders {
     }
 
     public static void method33060() {
-        if (!field40609) {
+        if (!isShadowPass) {
             boolean var0 = method33062(field40837);
             if (field40851) {
                 method32984("pre-render Deferred");
@@ -3739,8 +3741,8 @@ public class Shaders {
         }
     }
 
-    public static void method33061() {
-        if (!field40609) {
+    public static void renderCompositeFinal() {
+        if (!isShadowPass) {
             method33062(field40842);
             method32984("pre-render CompositeFinal");
             method33063(field40843, true);
@@ -3752,7 +3754,7 @@ public class Shaders {
         Boolean[] var2 = var0.method26495();
 
         for (int var3 = 0; var3 < field40801; var3++) {
-            if (Class7944.method26987(var2[var3])) {
+            if (Config.method26987(var2[var3])) {
                 field40980.method38908(var3);
                 var1 = true;
             }
@@ -3762,7 +3764,7 @@ public class Shaders {
     }
 
     private static void method33063(Class7906[] var0, boolean var1) {
-        if (!field40609) {
+        if (!isShadowPass) {
             GL32.glPushMatrix();
             GL32.glLoadIdentity();
             GL32.glMatrixMode(5889);
@@ -3774,7 +3776,7 @@ public class Shaders {
             GlStateManager.disableAlphaTest();
             GlStateManager.disableBlend();
             GlStateManager.enableDepthTest();
-            GlStateManager.method23712(519);
+            GlStateManager.depthFunc(519);
             GlStateManager.depthMask(false);
             GlStateManager.disableLighting();
             if (field40804 >= 1) {
@@ -3862,9 +3864,9 @@ public class Shaders {
 
             GlStateManager.method23698();
             GlStateManager.enableTexture();
-            GlStateManager.method23696();
-            GlStateManager.method23715();
-            GlStateManager.method23712(515);
+            GlStateManager.enableAlphaTest();
+            GlStateManager.enableBlend();
+            GlStateManager.depthFunc(515);
             GlStateManager.depthMask(true);
             GL32.glPopMatrix();
             GL32.glMatrixMode(5888);
@@ -3904,7 +3906,7 @@ public class Shaders {
         GlStateManager.disableAlphaTest();
         GlStateManager.disableBlend();
         GlStateManager.enableDepthTest();
-        GlStateManager.method23712(519);
+        GlStateManager.depthFunc(519);
         GlStateManager.depthMask(false);
         method32984("pre-final");
         method33021(field40845);
@@ -3917,12 +3919,12 @@ public class Shaders {
         method32984("renderCompositeFinal");
     }
 
-    public static void method33067() {
-        if (field40609) {
+    public static void endRender() {
+        if (isShadowPass) {
             method32984("shadow endRender");
         } else {
             if (!field40607) {
-                method33061();
+                renderCompositeFinal();
             }
 
             field40605 = false;
@@ -3950,7 +3952,7 @@ public class Shaders {
 
     public static void method33070(MatrixStack var0) {
         BufferBuilder var1 = Tessellator.getInstance().getBuffer();
-        float var2 = (float) (field40591.gameSettings.field44574 * 16);
+        float var2 = (float) (field40591.gameSettings.renderDistanceChunks * 16);
         double var3 = (double) var2 * 0.9238;
         double var5 = (double) var2 * 0.3826;
         double var7 = -var5;
@@ -3962,7 +3964,7 @@ public class Shaders {
         }
 
         GlStateManager.method23832();
-        GlStateManager.method23842(var0.getLast().getMatrix());
+        GlStateManager.multMatrix(var0.getLast().getMatrix());
         var1.begin(7, DefaultVertexFormats.field43341);
         var1.pos(var7, var13, var9).endVertex();
         var1.pos(var7, var11, var9).endVertex();
@@ -4021,7 +4023,7 @@ public class Shaders {
     public static void method33073() {
         method32984("beginUpdateChunks1");
         method32983("beginUpdateChunks1");
-        if (!field40609) {
+        if (!isShadowPass) {
             method33021(field40823);
         }
 
@@ -4032,7 +4034,7 @@ public class Shaders {
     public static void method33074() {
         method32984("endUpdateChunks1");
         method32983("endUpdateChunks1");
-        if (!field40609) {
+        if (!isShadowPass) {
             method33021(field40823);
         }
 
@@ -4045,7 +4047,7 @@ public class Shaders {
             return true;
         } else {
             method32984("shouldRenderClouds");
-            return field40609 ? field40863 : var0.cloudOption != CloudOption.OFF;
+            return isShadowPass ? field40863 : var0.cloudOption != CloudOption.OFF;
         }
     }
 
@@ -4090,9 +4092,9 @@ public class Shaders {
     public static void method33081() {
         if (field40605 && field40834.method26485() != field40813.method26485()) {
             method33021(field40834);
-            GlStateManager.method23696();
+            GlStateManager.enableAlphaTest();
             GlStateManager.method23697(516, 0.0F);
-            GlStateManager.method23716(770, 771);
+            GlStateManager.blendFunc(770, 771);
         }
     }
 
@@ -4123,7 +4125,7 @@ public class Shaders {
     }
 
     public static void method33086(float var0, float var1, float var2, float var3) {
-        if (field40605 && !field40609) {
+        if (field40605 && !isShadowPass) {
             field40685.method12233(var0, var1, var2, var3);
         }
     }
@@ -4131,14 +4133,14 @@ public class Shaders {
     public static void method33087() {
         if (field40605) {
             Class9336.method35315(field40856);
-            if (!field40609) {
+            if (!isShadowPass) {
                 method33020(field40979);
             }
         }
     }
 
     public static void method33088() {
-        if (field40605 && !field40609) {
+        if (field40605 && !isShadowPass) {
             method33020(field40831.method26488());
         }
     }
@@ -4196,7 +4198,7 @@ public class Shaders {
     }
 
     public static void method33097() {
-        if (!field40609 && field40663) {
+        if (!isShadowPass && field40663) {
             ((Buffer) field40971).clear();
             GL32.glReadPixels(field40603 / 2, field40604 / 2, 1, 1, 6402, 5126, field40971);
             field40660 = field40971.get(0);
@@ -4207,11 +4209,11 @@ public class Shaders {
     }
 
     public static void method33098() {
-        if (!field40609) {
+        if (!isShadowPass) {
             GlStateManager.enableDepthTest();
-            GlStateManager.method23715();
-            GlStateManager.method23716(770, 771);
-            GlStateManager.method23696();
+            GlStateManager.enableBlend();
+            GlStateManager.blendFunc(770, 771);
+            GlStateManager.enableAlphaTest();
             method33021(field40836);
         }
     }
@@ -4222,7 +4224,7 @@ public class Shaders {
     }
 
     public static void method33100() {
-        if (!field40609 && field40802 >= 3) {
+        if (!isShadowPass && field40802 >= 3) {
             GlStateManager.method23803(33996);
             GL32.glCopyTexSubImage2D(3553, 0, 0, 0, 0, 0, field40603, field40604);
             GlStateManager.method23803(33984);
@@ -4243,10 +4245,10 @@ public class Shaders {
 
     public static void method33102() {
         if (field40605) {
-            if (!field40609) {
+            if (!isShadowPass) {
                 method33060();
                 method33021(field40840);
-                GlStateManager.method23715();
+                GlStateManager.enableBlend();
                 GlStateManager.depthMask(true);
             } else {
                 GlStateManager.depthMask(true);
@@ -4256,7 +4258,7 @@ public class Shaders {
 
     public static void method33103() {
         if (field40605) {
-            if (field40609) {
+            if (isShadowPass) {
             }
 
             method33021(field40667 ? field40819 : field40818);
@@ -4294,7 +4296,7 @@ public class Shaders {
         GL32.glPopMatrix();
         GL32.glMatrixMode(5888);
         GL32.glPopMatrix();
-        GlStateManager.method23716(770, 771);
+        GlStateManager.blendFunc(770, 771);
         method32984("endHand");
     }
 
@@ -4497,7 +4499,7 @@ public class Shaders {
         }
 
         field40878 = field40878 / 2 * 2;
-        field40878 = Class7944.method26830(field40878, 0, 4);
+        field40878 = Config.method26830(field40878, 0, 4);
     }
 
     public static void method33140() {
@@ -4528,8 +4530,8 @@ public class Shaders {
             String var3 = ".lang";
             var0.add(var1 + var2 + var3);
             var0.add(var1 + method33143(var2) + var3);
-            if (!Class7944.method26928().language.equals(var2)) {
-                String var4 = Class7944.method26928().language;
+            if (!Config.method26928().language.equals(var2)) {
+                String var4 = Config.method26928().language;
                 var0.add(var1 + var4 + var3);
                 var0.add(var1 + method33143(var4) + var3);
             }
@@ -4700,7 +4702,7 @@ public class Shaders {
         return field40886;
     }
 
-    public static boolean method33170() {
+    public static boolean isEffectsModelView() {
         return field40886;
     }
 

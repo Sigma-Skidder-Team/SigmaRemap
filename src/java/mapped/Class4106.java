@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class4106 extends Class4057 {
    public Class4106() {
       super(TileEntityType.field21423, "trapped_chest_large", 0.0F);
@@ -58,7 +60,7 @@ public class Class4106 extends Class4057 {
             Class2851 var7 = (Class2851)var1;
             return (Class9492)var7.method11179((Class5942)var6);
          } else {
-            Class7944.method26811("Not a large chest model: " + var1);
+            Config.method26811("Not a large chest model: " + var1);
             return null;
          }
       } else {

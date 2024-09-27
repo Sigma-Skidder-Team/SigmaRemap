@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -134,11 +135,11 @@ public class Class8564 {
       field38504 = false;
       field38502 = null;
       field38503 = null;
-      if (Class7944.method26917()) {
+      if (Config.method26917()) {
          try {
             String var2 = "optifine/emissive.properties";
             ResourceLocation var3 = new ResourceLocation(var2);
-            InputStream var4 = Class7944.method26863(var3);
+            InputStream var4 = Config.method26863(var3);
             if (var4 == null) {
                return;
             }
@@ -174,7 +175,7 @@ public class Class8564 {
       if (var4 != null && !var1.getPath().endsWith(var4)) {
          ResourceLocation var5 = new ResourceLocation(var1.getNamespace(), var1.getPath() + var4);
          ResourceLocation var6 = var0.method1096(var5);
-         if (Class7944.method26866(var6)) {
+         if (Config.method26866(var6)) {
             TextureAtlasSprite var7 = var0.method1119(var1);
             TextureAtlasSprite var8 = var0.method1119(var5);
             var8.field9353 = true;
@@ -204,11 +205,11 @@ public class Class8564 {
    }
 
    private static void method30604(String var0) {
-      Class7944.method26810("EmissiveTextures: " + var0);
+      Config.method26810("EmissiveTextures: " + var0);
    }
 
    private static void method30605(String var0) {
-      Class7944.method26811("EmissiveTextures: " + var0);
+      Config.method26811("EmissiveTextures: " + var0);
    }
 
    public static boolean method30606(ResourceLocation var0) {
@@ -225,7 +226,7 @@ public class Class8564 {
                if (!var4.endsWith(field38503)) {
                   String var5 = var4.substring(0, var4.length() - ".png".length()) + field38503;
                   ResourceLocation var6 = new ResourceLocation(var0.getNamespace(), var5);
-                  if (Class7944.method26866(var6)) {
+                  if (Config.method26866(var6)) {
                      var1.field1139 = var6;
                   }
                } else {

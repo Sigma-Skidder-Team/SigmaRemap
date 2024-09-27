@@ -173,7 +173,7 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
                this.field5387 = null;
             }
          } else {
-            List var5 = this.field5324.<LivingEntity>method6772(LivingEntity.class, this.method3900(), var0 -> var0 instanceof Class1008 && var0.method3253());
+            List var5 = this.field5324.<LivingEntity>getEntitiesInAABBexcluding(LivingEntity.class, this.method3900(), var0 -> var0 instanceof Class1008 && var0.method3253());
             if (!var5.isEmpty()) {
                this.field5387 = (LivingEntity)var5.get(this.field5324.rand.nextInt(var5.size()));
             }
@@ -225,7 +225,7 @@ public class Class959 extends TileEntity implements ITickableTileEntity {
 
    @Nullable
    private LivingEntity method3901() {
-      List var3 = this.field5324.<LivingEntity>method6772(LivingEntity.class, this.method3900(), var1 -> var1.getUniqueID().equals(this.field5388));
+      List var3 = this.field5324.<LivingEntity>getEntitiesInAABBexcluding(LivingEntity.class, this.method3900(), var1 -> var1.getUniqueID().equals(this.field5388));
       return var3.size() != 1 ? null : (LivingEntity)var3.get(0);
    }
 

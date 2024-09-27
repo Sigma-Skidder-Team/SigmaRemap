@@ -11,6 +11,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IBlockDisplayReader;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 import java.util.BitSet;
 import java.util.List;
@@ -141,11 +143,11 @@ public class Class7551 {
       var5.translate(var16.x, var16.y, var16.z);
 
       try {
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Class7698.method25376(var3, var6);
          }
 
-         if (!Class7944.method26941()) {
+         if (!Config.method26941()) {
             var9 = 0L;
          }
 
@@ -158,7 +160,7 @@ public class Class7551 {
             this.method24697(var1, var2, var3, var4, var5, var6, var11, var7, var8, var9, var17, var15, var16);
          }
 
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Class7698.method25377(var6);
          }
 
@@ -489,8 +491,8 @@ public class Class7551 {
    }
 
    public static void method24695() {
-      field32371 = 1.0F - Class7944.method26851() * 0.8F;
-      field32372 = Class7944.method26921() && Shaders.method33004();
+      field32371 = 1.0F - Config.method26851() * 0.8F;
+      field32372 = Config.isShaders() && Shaders.method33004();
    }
 
    public static boolean method24696() {
@@ -547,7 +549,7 @@ public class Class7551 {
          }
       }
 
-      if (Class7944.method26898() && !var12.method29419() && Class7880.method26421(var1, var3, var4)) {
+      if (Config.method26898() && !var12.method29419() && Class7880.method26421(var1, var3, var4)) {
          IBakedModel var27 = Class7880.method26419();
          BlockState var28 = Class7880.method26420();
          var5.translate(-var14.x, -var14.y, -var14.z);

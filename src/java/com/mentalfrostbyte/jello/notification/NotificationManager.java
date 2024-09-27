@@ -144,8 +144,8 @@ public class NotificationManager {
                     - var3 * (int) ((float) this.field39924 * this.method31994(var3) + (float) this.field39927 * this.method31994(var3));
 
             for (int var8 = 0; var8 < 3; var8++) {
-                var4.field43608[var8] = RenderUtil.method11481(var6 + this.field39923 / 3 * var8, var7, var4.field43608[var8]);
-                var4.field43609[var8] = RenderUtil.method11481(var6 + this.field39923 / 3 * var8, var7 + this.field39924, var4.field43609[var8]);
+                var4.field43608[var8] = RenderUtil.getColorFromScreen(var6 + this.field39923 / 3 * var8, var7, var4.field43608[var8]);
+                var4.field43609[var8] = RenderUtil.getColorFromScreen(var6 + this.field39923 / 3 * var8, var7 + this.field39924, var4.field43609[var8]);
             }
         }
     }

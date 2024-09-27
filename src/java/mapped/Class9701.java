@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.optifine.Config;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -25,7 +26,7 @@ public class Class9701 {
    }
 
    public void method38008(WorldRenderer var1) {
-      if (Class7944.method26971()) {
+      if (Config.method26971()) {
          long var4 = System.currentTimeMillis();
          if (var4 < this.field45351 + 500L) {
             return;

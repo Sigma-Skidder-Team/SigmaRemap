@@ -16,6 +16,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 import org.lwjgl.BufferUtils;
 import org.lwjgl.opengl.GL11;
 
@@ -376,10 +378,10 @@ public class Class9336 {
 
    public static BufferedImage method35322(ResourceLocation var0) {
       try {
-         if (!Class7944.method26866(var0)) {
+         if (!Config.method26866(var0)) {
             return null;
          } else {
-            InputStream var3 = Class7944.method26863(var0);
+            InputStream var3 = Config.method26863(var0);
             if (var3 == null) {
                return null;
             } else {

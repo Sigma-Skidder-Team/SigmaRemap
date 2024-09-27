@@ -16,7 +16,7 @@ public class Class7886 extends Class7882<LivingEntity> {
    @Override
    public void method26425(ServerWorld var1, LivingEntity var2) {
       AxisAlignedBB var5 = var2.getBoundingBox().method19663(16.0, 16.0, 16.0);
-      List<LivingEntity> var6 = var1.<LivingEntity>method6772(LivingEntity.class, var5, var1x -> var1x != var2 && var1x.isAlive());
+      List<LivingEntity> var6 = var1.<LivingEntity>getEntitiesInAABBexcluding(LivingEntity.class, var5, var1x -> var1x != var2 && var1x.isAlive());
       var6.sort(Comparator.comparingDouble(var2::getDistanceSq));
       Brain var7 = var2.getBrain();
       var7.method21406(Class8830.field39818, var6);

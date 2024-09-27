@@ -96,7 +96,7 @@ public class Class1266 extends AbstractGui {
                               .method38804(var1, (Class9125)var22.method36694(), 0.0F, (float)((int)(var29 + var18)), 16777215 + (var26 << 24));
                         }
 
-                        RenderSystem.method27817();
+                        RenderSystem.disableAlphaTest();
                         RenderSystem.disableBlend();
                         var1.pop();
                      }
@@ -116,7 +116,7 @@ public class Class1266 extends AbstractGui {
                   .fontRenderer
                   .method38803(var1, new TranslationTextComponent("chat.queue", this.field6703.size()), 0.0F, 1.0F, 16777215 + (var33 << 24));
                var1.pop();
-               RenderSystem.method27817();
+               RenderSystem.disableAlphaTest();
                RenderSystem.disableBlend();
             }
 

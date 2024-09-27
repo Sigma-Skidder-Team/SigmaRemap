@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.optifine.Config;
 import org.apache.commons.io.Charsets;
 import org.apache.commons.io.IOUtils;
 
@@ -26,13 +27,13 @@ public class Class8043 {
       String var5 = "en_us";
       String var6 = ".lang";
       var3.add(var4 + var5 + var6);
-      if (!Class7944.method26928().language.equals(var5)) {
-         var3.add(var4 + Class7944.method26928().language + var6);
+      if (!Config.method26928().language.equals(var5)) {
+         var3.add(var4 + Config.method26928().language + var6);
       }
 
       String[] var7 = var3.toArray(new String[var3.size()]);
-      method27616(Class7944.method26871(), var7, var2);
-      IResourcePack[] var8 = Class7944.method26869();
+      method27616(Config.method26871(), var7, var2);
+      IResourcePack[] var8 = Config.method26869();
 
       for (int var9 = 0; var9 < var8.length; var9++) {
          IResourcePack var10 = var8[var9];

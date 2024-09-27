@@ -2,6 +2,7 @@ package net.minecraft.client.renderer.vertex;
 
 import com.google.common.collect.ImmutableList;
 import mapped.*;
+import net.optifine.Config;
 
 public class DefaultVertexFormats {
    private static String[] field43326;
@@ -40,7 +41,7 @@ public class DefaultVertexFormats {
    );
 
    public static void method35343() {
-      if (!Class7944.method26921()) {
+      if (!Config.isShaders()) {
          field43334 = field43336;
       } else {
          field43334 = field43337;

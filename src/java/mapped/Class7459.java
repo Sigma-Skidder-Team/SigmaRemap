@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
+import net.optifine.Config;
 
 public class Class7459 implements Class7458 {
    private static String[] field32079;
@@ -10,7 +11,7 @@ public class Class7459 implements Class7458 {
 
    @Override
    public int method24123() {
-      return Class7944.method26934(this.field32080.getPos(), 0);
+      return Config.method26934(this.field32080.getPos(), 0);
    }
 
    @Override

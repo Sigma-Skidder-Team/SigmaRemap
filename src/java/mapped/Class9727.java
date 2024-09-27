@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.optifine.Config;
 
 public class Class9727 {
    private int field45428 = -1;
@@ -46,7 +47,7 @@ public class Class9727 {
             }
          }
 
-         this.field45429 = Class7944.method26965(this.field45429, var1);
+         this.field45429 = Config.method26965(this.field45429, var1);
       }
    }
 
@@ -59,6 +60,6 @@ public class Class9727 {
 
    @Override
    public String toString() {
-      return "" + this.field45428 + ":" + Class7944.method26856(this.field45429);
+      return "" + this.field45428 + ":" + Config.method26856(this.field45429);
    }
 }

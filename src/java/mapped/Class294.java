@@ -5,6 +5,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -124,7 +125,7 @@ public class Class294 extends Class293 {
                      }
 
                      if (var3.getErrorStream() != null) {
-                        Class7944.method26927(var3.getErrorStream());
+                        Config.method26927(var3.getErrorStream());
                      }
 
                      return;

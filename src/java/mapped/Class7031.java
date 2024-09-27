@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
+import net.optifine.Config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +36,7 @@ public class Class7031 {
          method21826(var3, var4, var2);
       }
 
-      if (Class7944.method26921()) {
+      if (Config.isShaders()) {
          Class20 var5 = Class9172.method34275();
          if (var5 != null) {
             String var6 = "shaders/block.properties";
@@ -50,7 +51,7 @@ public class Class7031 {
    }
 
    private static void method21826(String var0, Properties var1, List<RenderType> var2) {
-      Class7944.method26810("CustomBlockLayers: " + var0);
+      Config.method26810("CustomBlockLayers: " + var0);
       method21827("solid", Class9025.field41288, var1, var2);
       method21827("cutout", Class9025.field41290, var1, var2);
       method21827("cutout_mipped", Class9025.field41289, var1, var2);
@@ -73,7 +74,7 @@ public class Class7031 {
                   }
 
                   if (var3.get(var12) != null) {
-                     Class7944.method26811("CustomBlockLayers: Block layer is already set, block: " + var12 + ", layer: " + var0);
+                     Config.method26811("CustomBlockLayers: Block layer is already set, block: " + var12 + ", layer: " + var0);
                   }
 
                   var3.set(var12, var1);

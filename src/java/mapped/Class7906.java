@@ -2,6 +2,7 @@ package mapped;
 
 import net.optifine.render.GlAlphaState;
 import net.optifine.render.GlBlendState;
+import net.optifine.shaders.Shaders;
 
 import java.nio.IntBuffer;
 import java.util.Arrays;

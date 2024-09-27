@@ -8,13 +8,13 @@ public class Class4511 extends Class4510 {
    public Class4511(float var1) {
       super("alpha", () -> {
          if (!(var1 > 0.0F)) {
-            RenderSystem.method27817();
-         } else {
             RenderSystem.disableAlphaTest();
+         } else {
+            RenderSystem.enableAlphaTest();
             RenderSystem.method27819(516, var1);
          }
       }, () -> {
-         RenderSystem.method27817();
+         RenderSystem.disableAlphaTest();
          RenderSystem.method27939();
       });
       this.field21784 = var1;

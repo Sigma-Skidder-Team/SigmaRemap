@@ -32,7 +32,7 @@ public class Class5725 extends Class5715<BoatEntity> {
       }
 
       if (var9 > 0.0F) {
-         var4.rotate(Vector3f.field32898.rotationDegrees(MathHelper.sin(var9) * var9 * var10 / 10.0F * (float)var1.method4170()));
+         var4.rotate(Vector3f.XP.rotationDegrees(MathHelper.sin(var9) * var9 * var10 / 10.0F * (float)var1.method4170()));
       }
 
       float var11 = var1.method4168(var3);

@@ -28,9 +28,9 @@ public class Class257 extends Class219<Class1095, Class2864<Class1095>> {
          (double)(this.method825().field17750.field31034 / 16.0F)
       );
       float var17 = var4.method5146(var7);
-      var1.rotate(Vector3f.field32902.method25285(var17));
+      var1.rotate(Vector3f.ZP.method25285(var17));
       var1.rotate(Vector3f.YP.rotationDegrees(var9));
-      var1.rotate(Vector3f.field32898.rotationDegrees(var10));
+      var1.rotate(Vector3f.XP.rotationDegrees(var10));
       if (!var4.isChild()) {
          if (!var13) {
             var1.translate(0.06F, 0.27F, -0.5);
@@ -43,9 +43,9 @@ public class Class257 extends Class219<Class1095, Class2864<Class1095>> {
          var1.translate(0.4F, 0.26F, 0.15F);
       }
 
-      var1.rotate(Vector3f.field32898.rotationDegrees(90.0F));
+      var1.rotate(Vector3f.XP.rotationDegrees(90.0F));
       if (var13) {
-         var1.rotate(Vector3f.field32902.rotationDegrees(90.0F));
+         var1.rotate(Vector3f.ZP.rotationDegrees(90.0F));
       }
 
       ItemStack var16 = var4.getItemStackFromSlot(EquipmentSlotType.MAINHAND);

@@ -17,7 +17,7 @@ public class LockCounter {
       }
    }
 
-   public boolean method21055() {
+   public boolean isLocked() {
       return this.field29870 > 0;
    }
 

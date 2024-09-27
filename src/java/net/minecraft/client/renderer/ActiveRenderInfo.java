@@ -32,7 +32,7 @@ public class ActiveRenderInfo {
    private float height;
    private float previousHeight;
 
-   public void method37497(IBlockReader var1, Entity var2, boolean var3, boolean var4, float var5) {
+   public void update(IBlockReader var1, Entity var2, boolean var3, boolean var4, float var5) {
       this.valid = true;
       this.world = var1;
       this.renderViewEntity = var2;
@@ -104,7 +104,7 @@ public class ActiveRenderInfo {
       this.yaw = var1;
       this.rotation.method31185(0.0F, 0.0F, 0.0F, 1.0F);
       this.rotation.method31182(Vector3f.YP.rotationDegrees(-var1));
-      this.rotation.method31182(Vector3f.field32898.rotationDegrees(var2));
+      this.rotation.method31182(Vector3f.XP.rotationDegrees(var2));
       this.look.method25275(0.0F, 0.0F, 1.0F);
       this.look.method25283(this.rotation);
       this.up.method25275(0.0F, 1.0F, 0.0F);
@@ -170,7 +170,7 @@ public class ActiveRenderInfo {
       return this.valid ? this.world.getBlockState(this.blockPos) : Blocks.AIR.method11579();
    }
 
-   public void method37514(float var1, float var2) {
+   public void setAnglesInternal(float var1, float var2) {
       this.yaw = var1;
       this.pitch = var2;
    }

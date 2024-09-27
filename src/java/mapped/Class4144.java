@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.optifine.Config;
 
 public class Class4144 extends Class4057 {
    public Class4144() {
@@ -34,7 +35,7 @@ public class Class4144 extends Class4057 {
                         return null;
                      } else {
                         String var14 = var2.substring(var11.length());
-                        int var10 = Class7944.method26899(var14, -1);
+                        int var10 = Config.method26899(var14, -1);
                         var10--;
                         return var10 >= 0 && var10 < var12.length ? var12[var10] : null;
                      }
@@ -45,7 +46,7 @@ public class Class4144 extends Class4057 {
                      return null;
                   } else {
                      String var8 = var2.substring(var6.length());
-                     int var9 = Class7944.method26899(var8, -1);
+                     int var9 = Config.method26899(var8, -1);
                      var9--;
                      return var9 >= 0 && var9 < var7.length ? var7[var9] : null;
                   }

@@ -4,6 +4,7 @@ import it.unimi.dsi.fastutil.longs.Long2ByteLinkedOpenHashMap;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.optifine.Config;
 
 import java.util.ArrayList;
 import java.util.BitSet;
@@ -167,7 +168,7 @@ public class Class8391 {
 
    public boolean method29427() {
       if (this.field35985 == -1) {
-         if (Class7944.method26827() && this.field35980.getBlock() instanceof Class3465) {
+         if (Config.method26827() && this.field35980.getBlock() instanceof Class3465) {
             this.field35985 = 1;
          } else {
             this.field35985 = 0;

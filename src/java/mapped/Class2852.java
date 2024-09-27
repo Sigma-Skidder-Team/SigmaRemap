@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
+import net.optifine.Config;
 
 public class Class2852 extends Class2828 {
    public Class7219 field17670;
@@ -23,7 +24,7 @@ public class Class2852 extends Class2828 {
          Reflector.field43153.method36566(var1, 2, this.field17672);
          return var1;
       } else {
-         Class7944.method26811("Field not found: TileEntityBannerRenderer.modelRenderers");
+         Config.method26811("Field not found: TileEntityBannerRenderer.modelRenderers");
          return null;
       }
    }

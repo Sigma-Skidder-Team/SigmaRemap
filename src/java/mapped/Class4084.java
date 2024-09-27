@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class4084 extends Class4057 {
    public Class4084() {
       super(TileEntityType.field21428, "sign", 0.0F);
@@ -42,7 +44,7 @@ public class Class4084 extends Class4057 {
             Reflector.method35082(var6, Reflector.field43167, var1);
             return (Class9492)var6;
          } else {
-            Class7944.method26811("Field not found: TileEntitySignRenderer.model");
+            Config.method26811("Field not found: TileEntitySignRenderer.model");
             return null;
          }
       } else {

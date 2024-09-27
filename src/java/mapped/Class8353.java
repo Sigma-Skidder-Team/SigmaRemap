@@ -6,7 +6,7 @@ public class Class8353 {
    private static String[] field35895;
 
    public static void method29272() {
-      RenderUtil.method11468();
+      RenderUtil.resetDepthBuffer();
       GL11.glPushAttrib(1048575);
       GL11.glDisable(3008);
       GL11.glDisable(3553);

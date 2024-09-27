@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,7 @@ public class Class9753 {
    private static final Random field45531 = new Random();
 
    public static IBakedModel method38321(IBakedModel var0, BlockState var1) {
-      if (Class7944.method26827()) {
+      if (Config.method26827()) {
          List var4 = var0.method22619(var1, (Direction)null, field45531);
          if (var4 != field45519) {
             if (var4 != field45520) {
@@ -90,7 +91,7 @@ public class Class9753 {
       field45529 = method38326(field45517);
       field45530 = method38326(field45518);
       if (var2.size() > 0) {
-         Class7944.method26810("Enable face culling: " + Class7944.method26854(var2.toArray()));
+         Config.method26810("Enable face culling: " + Config.method26854(var2.toArray()));
       }
    }
 
@@ -99,14 +100,14 @@ public class Class9753 {
    }
 
    public static IBakedModel method38325(String var0, List var1) {
-      ModelManager var4 = Class7944.method26825();
+      ModelManager var4 = Config.method26825();
       if (var4 == null) {
          return null;
       } else {
          ResourceLocation var5 = new ResourceLocation("blockstates/" + var0 + "_leaves.json");
-         if (Class7944.method26872(var5)) {
+         if (Config.method26872(var5)) {
             ResourceLocation var6 = new ResourceLocation("models/block/" + var0 + "_leaves.json");
-            if (!Class7944.method26872(var6)) {
+            if (!Config.method26872(var6)) {
                return null;
             } else {
                Class1997 var7 = new Class1997(var0 + "_leaves", "normal");
@@ -145,7 +146,7 @@ public class Class9753 {
       if (var0 == null) {
          return null;
       } else if (var0.method22619((BlockState)null, (Direction)null, field45531).size() > 0) {
-         Class7944.method26811(
+         Config.method26811(
             "SmartLeaves: Model is not cube, general quads: " + var0.method22619((BlockState)null, (Direction)null, field45531).size() + ", model: " + var0
          );
          return var0;
@@ -156,7 +157,7 @@ public class Class9753 {
             Direction var5 = var3[var4];
             List var6 = var0.method22619((BlockState)null, var5, field45531);
             if (var6.size() != 1) {
-               Class7944.method26811("SmartLeaves: Model is not cube, side: " + var5 + ", quads: " + var6.size() + ", model: " + var0);
+               Config.method26811("SmartLeaves: Model is not cube, side: " + var5 + ", quads: " + var6.size() + ", model: " + var0);
                return var0;
             }
          }

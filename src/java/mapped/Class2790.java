@@ -28,7 +28,7 @@ public class Class2790 extends Class2595 {
          } else {
             List var3 = this.field17424
                .world
-               .<ItemEntity>method6772(ItemEntity.class, this.field17424.getBoundingBox().method19663(8.0, 8.0, 8.0), Class1095.method5166());
+               .<ItemEntity>getEntitiesInAABBexcluding(ItemEntity.class, this.field17424.getBoundingBox().method19663(8.0, 8.0, 8.0), Class1095.method5166());
             return !var3.isEmpty() && this.field17424.getItemStackFromSlot(EquipmentSlotType.MAINHAND).isEmpty();
          }
       } else {
@@ -40,7 +40,7 @@ public class Class2790 extends Class2595 {
    public void method10805() {
       List var3 = this.field17424
          .world
-         .<ItemEntity>method6772(ItemEntity.class, this.field17424.getBoundingBox().method19663(8.0, 8.0, 8.0), Class1095.method5166());
+         .<ItemEntity>getEntitiesInAABBexcluding(ItemEntity.class, this.field17424.getBoundingBox().method19663(8.0, 8.0, 8.0), Class1095.method5166());
       ItemStack var4 = this.field17424.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
       if (var4.isEmpty() && !var3.isEmpty()) {
          this.field17424.method4230().method21655((Entity)var3.get(0), 1.2F);
@@ -51,7 +51,7 @@ public class Class2790 extends Class2595 {
    public void method10804() {
       List var3 = this.field17424
          .world
-         .<ItemEntity>method6772(ItemEntity.class, this.field17424.getBoundingBox().method19663(8.0, 8.0, 8.0), Class1095.method5166());
+         .<ItemEntity>getEntitiesInAABBexcluding(ItemEntity.class, this.field17424.getBoundingBox().method19663(8.0, 8.0, 8.0), Class1095.method5166());
       if (!var3.isEmpty()) {
          this.field17424.method4230().method21655((Entity)var3.get(0), 1.2F);
       }

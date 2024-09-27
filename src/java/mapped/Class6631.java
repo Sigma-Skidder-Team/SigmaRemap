@@ -82,7 +82,7 @@ public class Class6631 implements Class6632 {
       this.field29171 = null;
    }
 
-   public Object method20217(Object... var1) {
+   public Object call(Object... var1) {
       return Reflector.method35062(this, var1);
    }
 
@@ -131,7 +131,7 @@ public class Class6631 implements Class6632 {
    }
 
    public void method20229(Object... var1) {
-      Reflector.method35055(this, var1);
+      Reflector.callVoid(this, var1);
    }
 
    public static Method method20230(Class var0, String var1, Class[] var2) {

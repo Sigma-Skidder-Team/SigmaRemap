@@ -161,7 +161,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
             super.method17842(var1, var2, var3, var4, var5);
             float var9 = !var1.isInWater() ? -90.0F : -90.0F - var1.rotationPitch;
             float var10 = MathHelper.lerp(var8, 0.0F, var9);
-            var2.rotate(Vector3f.field32898.rotationDegrees(var10));
+            var2.rotate(Vector3f.XP.rotationDegrees(var10));
             if (var1.isActualySwimming()) {
                var2.translate(0.0, -1.0, 0.3F);
             }
@@ -171,7 +171,7 @@ public class Class5713 extends Class5712<AbstractClientPlayerEntity, Class2894<A
          float var21 = (float)var1.getTicksElytraFlying() + var5;
          float var22 = MathHelper.clamp(var21 * var21 / 100.0F, 0.0F, 1.0F);
          if (!var1.isSpinAttacking()) {
-            var2.rotate(Vector3f.field32898.rotationDegrees(var22 * (-90.0F - var1.rotationPitch)));
+            var2.rotate(Vector3f.XP.rotationDegrees(var22 * (-90.0F - var1.rotationPitch)));
          }
 
          Vector3d var11 = var1.getLook(var5);

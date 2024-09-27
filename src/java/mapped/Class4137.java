@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.optifine.Config;
 
 public class Class4137 extends Class4135 {
    public Class4137() {
@@ -17,7 +18,7 @@ public class Class4137 extends Class4135 {
          var6.field25098 = var2;
          return (Class9492)var6;
       } else {
-         Class7944.method26811("Field not found: RenderMinecart.modelMinecart");
+         Config.method26811("Field not found: RenderMinecart.modelMinecart");
          return null;
       }
    }

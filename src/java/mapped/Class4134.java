@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.SquidEntity;
+import net.optifine.Config;
 
 public class Class4134 extends Class4057 {
    public Class4134() {
@@ -30,7 +31,7 @@ public class Class4134 extends Class4057 {
                   return null;
                } else {
                   String var8 = var2.substring(var6.length());
-                  int var9 = Class7944.method26899(var8, -1);
+                  int var9 = Config.method26899(var8, -1);
                   var9--;
                   return var9 >= 0 && var9 < var7.length ? var7[var9] : null;
                }

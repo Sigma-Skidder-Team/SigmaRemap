@@ -135,7 +135,7 @@ public class Class2875 extends Class2827<Class1007> {
       float var12 = (float)(Math.sin((double)(var11 * (float) (Math.PI * 2) - 1.0F)) + 1.0);
       var12 = (var12 * var12 + var12 * 2.0F) * 0.05F;
       var1.translate(0.0, (double)(var12 - 2.0F), -3.0);
-      var1.rotate(Vector3f.field32898.rotationDegrees(var12 * 2.0F));
+      var1.rotate(Vector3f.XP.rotationDegrees(var12 * 2.0F));
       float var13 = 0.0F;
       float var14 = 20.0F;
       float var15 = -12.0F;
@@ -170,7 +170,7 @@ public class Class2875 extends Class2827<Class1007> {
       this.field17797.method22680(var1, var2, var3, var4);
       var1.push();
       var1.translate(0.0, 1.0, 0.0);
-      var1.rotate(Vector3f.field32902.rotationDegrees(-var18 * 1.5F));
+      var1.rotate(Vector3f.ZP.rotationDegrees(-var18 * 1.5F));
       var1.translate(0.0, -1.0, 0.0);
       this.field17800.field31037 = 0.0F;
       this.field17800.method22680(var1, var2, var3, var4);

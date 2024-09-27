@@ -46,20 +46,27 @@ public class RotationHelper {
       double var3 = mc.player.getPosX() + (mc.player.getPosX() - mc.player.lastTickPosX) * (double) mc.getRenderPartialTicks();
       double var5 = mc.player.getPosZ() + (mc.player.getPosZ() - mc.player.lastTickPosZ) * (double) mc.getRenderPartialTicks();
       double var7 = mc.player.getPosY() + (mc.player.getPosY() - mc.player.lastTickPosY) * (double) mc.getRenderPartialTicks();
-      return method34138(var0, var3, var7, var5);
+      return calculateEntityRotations(var0, var3, var7, var5);
    }
 
-   public static float[] method34138(Entity var0, double var1, double var3, double var5) {
-      double var9 = var0.getPosX() + (var0.getPosX() - var0.lastTickPosX) * (double) mc.getRenderPartialTicks();
-      double var11 = var0.getPosZ() + (var0.getPosZ() - var0.lastTickPosZ) * (double) mc.getRenderPartialTicks();
-      double var13 = var0.getPosY() + (var0.getPosY() - var0.lastTickPosY) * (double) mc.getRenderPartialTicks();
-      double var15 = var9 - var1;
-      double var17 = var13 - (double) mc.player.getEyeHeight() - 0.02F + (double)var0.getEyeHeight() - var3;
-      double var19 = var11 - var5;
-      double var21 = (double) MathHelper.sqrt(var15 * var15 + var19 * var19);
-      float var23 = calculate(mc.player.rotationYaw, (float)(Math.atan2(var19, var15) * 180.0 / Math.PI) - 90.0F, 360.0F);
-      float var24 = calculate(mc.player.rotationPitch, (float)(-(Math.atan2(var17, var21) * 180.0 / Math.PI)), 360.0F);
-      return new float[]{var23, var24};
+   public static float[] calculateEntityRotations(Entity entity, double playerX, double playerZ, double playerY) {
+      // Calculate the interpolated position of the entity based on render ticks
+      double interpolatedPosX = entity.getPosX() + (entity.getPosX() - entity.lastTickPosX) * mc.getRenderPartialTicks();
+      double interpolatedPosZ = entity.getPosZ() + (entity.getPosZ() - entity.lastTickPosZ) * mc.getRenderPartialTicks();
+      double interpolatedPosY = entity.getPosY() + (entity.getPosY() - entity.lastTickPosY) * mc.getRenderPartialTicks();
+
+      // Calculate the differences in position
+      double deltaX = interpolatedPosX - playerX;
+      double deltaY = interpolatedPosY - mc.player.getEyeHeight() - 0.02F + entity.getEyeHeight() - playerY;
+      double deltaZ = interpolatedPosZ - playerZ;
+
+      // Calculate horizontal distance and yaw/pitch angles
+      double horizontalDistance = MathHelper.sqrt(deltaX * deltaX + deltaZ * deltaZ);
+      float yaw = calculate(mc.player.rotationYaw, (float)(Math.atan2(deltaZ, deltaX) * 180.0 / Math.PI) - 90.0F, 360.0F);
+      float pitch = calculate(mc.player.rotationPitch, (float)(-(Math.atan2(deltaY, horizontalDistance) * 180.0 / Math.PI)), 360.0F);
+
+      // Return the calculated yaw and pitch
+      return new float[]{yaw, pitch};
    }
 
    public static float[] method34139(LivingEntity var0, double var1, double var3, double var5) {
@@ -171,7 +178,7 @@ public class RotationHelper {
    }
 
    public static Rotations method34147(Entity var0) {
-      float[] var3 = method34138(var0, mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
+      float[] var3 = calculateEntityRotations(var0, mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ());
       return new Rotations(var3[0], var3[1]);
    }
 

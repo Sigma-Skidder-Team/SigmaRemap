@@ -20,7 +20,7 @@ public class Class3328 extends Item {
 
    @Override
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
-      List var6 = var1.<Class999>method6772(
+      List var6 = var1.<Class999>getEntitiesInAABBexcluding(
          Class999.class, var2.getBoundingBox().method19664(2.0), var0 -> var0 != null && var0.isAlive() && var0.method4114() instanceof Class1007
       );
       ItemStack var7 = var2.getHeldItem(var3);

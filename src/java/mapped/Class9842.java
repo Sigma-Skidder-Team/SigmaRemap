@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
+import net.optifine.Config;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +14,7 @@ public class Class9842 {
 
    public static void method38896(IBakedModel var0) {
       if (var0 != null) {
-         Class7944.method26810(
+         Config.method26810(
             "Model: "
                + var0
                + ", ao: "
@@ -45,7 +46,7 @@ public class Class9842 {
    }
 
    public static void method38898(String var0, Class8557 var1, String var2) {
-      Class7944.method26810(
+      Config.method26810(
          var2
             + "Quad: "
             + var1.getClass().getName()
@@ -63,7 +64,7 @@ public class Class9842 {
 
    public static void method38899(int[] var0, String var1) {
       int var4 = var0.length / 4;
-      Class7944.method26810(var1 + "Length: " + var0.length + ", step: " + var4);
+      Config.method26810(var1 + "Length: " + var0.length + ", step: " + var4);
 
       for (int var5 = 0; var5 < 4; var5++) {
          int var6 = var5 * var4;
@@ -73,7 +74,7 @@ public class Class9842 {
          int var10 = var0[var6 + 3];
          float var11 = Float.intBitsToFloat(var0[var6 + 4]);
          float var12 = Float.intBitsToFloat(var0[var6 + 5]);
-         Class7944.method26810(var1 + var5 + " xyz: " + var7 + "," + var8 + "," + var9 + " col: " + var10 + " u,v: " + var11 + "," + var12);
+         Config.method26810(var1 + var5 + " xyz: " + var7 + "," + var8 + "," + var9 + " col: " + var10 + " u,v: " + var11 + "," + var12);
       }
    }
 

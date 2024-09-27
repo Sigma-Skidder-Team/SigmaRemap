@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.MathHelper;
+import net.optifine.Config;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -263,7 +264,7 @@ public enum Class2133 {
             float var14 = var1.length > 3 ? method8826(var1, 3) : var13;
             return Class9717.method38075(var11, var12, var13, var14);
          default:
-            Class7944.method26811("Unknown function type: " + this);
+            Config.method26811("Unknown function type: " + this);
             return 0.0F;
       }
    }
@@ -350,7 +351,7 @@ public enum Class2133 {
 
             return false;
          default:
-            Class7944.method26811("Unknown function type: " + this);
+            Config.method26811("Unknown function type: " + this);
             return false;
       }
    }
@@ -369,7 +370,7 @@ public enum Class2133 {
          case 51:
             return new float[]{method8826(var1, 0), method8826(var1, 1), method8826(var1, 2), method8826(var1, 3)};
          default:
-            Class7944.method26811("Unknown function type: " + this);
+            Config.method26811("Unknown function type: " + this);
             return null;
       }
    }

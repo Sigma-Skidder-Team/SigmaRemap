@@ -103,9 +103,9 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
             RenderSystem.disableDepthTest();
             int var13 = var12.field25580;
             int var14 = var12.field25581;
-            RenderSystem.method27870(true, true, true, false);
+            RenderSystem.colorMask(true, true, true, false);
             this.method5688(var1, var13, var14, var13 + 16, var14 + 16, -2130706433, -2130706433);
-            RenderSystem.method27870(true, true, true, true);
+            RenderSystem.colorMask(true, true, true, true);
             RenderSystem.enableDepthTest();
          }
       }

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class9084 {
    private static boolean field41584 = false;
    private static long field41585 = -1L;
@@ -18,7 +20,7 @@ public class Class9084 {
 
       if (System.currentTimeMillis() > field41585 + 3000L) {
          if (field41587 > 0) {
-            Class7944.method26813("Suppressed " + field41586 + " OpenGL errors");
+            Config.method26813("Suppressed " + field41586 + " OpenGL errors");
          }
 
          field41588 = field41586 > 10;

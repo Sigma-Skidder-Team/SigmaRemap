@@ -5,6 +5,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.util.text.StringTextComponent;
+import net.optifine.Config;
 
 import java.math.BigInteger;
 import java.net.URI;
@@ -66,7 +67,7 @@ public class Class845 extends Class838 {
                   String var13 = var12.toString(16);
                   this.mc.getSessionService().joinServer(this.mc.getSession().getProfile(), var7, var13);
                   String var14 = "https://optifine.net/capeChange?u=" + var6 + "&n=" + var5 + "&s=" + var13;
-                  boolean var15 = Class7944.method26980(new URI(var14));
+                  boolean var15 = Config.method26980(new URI(var14));
                   if (var15) {
                      this.method2590(Class8043.method27619("of.message.capeOF.openEditor"), 10000L);
                   } else {
@@ -74,14 +75,14 @@ public class Class845 extends Class838 {
                      this.method2591(var14);
                   }
                } catch (InvalidCredentialsException var20) {
-                  Class7944.method26964(
+                  Config.method26964(
                      I18n.format("of.message.capeOF.error1"), I18n.format("of.message.capeOF.error2", var20.getMessage())
                   );
-                  Class7944.method26811("Mojang authentication failed");
-                  Class7944.method26811(var20.getClass().getName() + ": " + var20.getMessage());
+                  Config.method26811("Mojang authentication failed");
+                  Config.method26811(var20.getClass().getName() + ": " + var20.getMessage());
                } catch (Exception var21) {
-                  Class7944.method26811("Error opening OptiFine cape link");
-                  Class7944.method26811(var21.getClass().getName() + ": " + var21.getMessage());
+                  Config.method26811("Error opening OptiFine cape link");
+                  Config.method26811(var21.getClass().getName() + ": " + var21.getMessage());
                }
             }
 

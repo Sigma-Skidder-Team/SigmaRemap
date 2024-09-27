@@ -10,7 +10,7 @@ import net.minecraft.util.math.vector.Vector3i;
 import org.apache.commons.lang3.math.NumberUtils;
 
 public class MathHelper {
-   public static final float field45205 = method37765(2.0F);
+   public static final float SQRT_2 = method37765(2.0F);
    private static final int field45206 = 12;
    private static final int field45207 = 4095;
    private static final int field45208 = 4096;

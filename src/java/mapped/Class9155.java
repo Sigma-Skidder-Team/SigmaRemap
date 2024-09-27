@@ -6,6 +6,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Quaternion;
 import net.minecraft.util.math.vector.Vector3i;
+import net.optifine.Config;
 
 public class Class9155 {
    private static final float field42034 = 1.0F / (float)Math.cos((float) (Math.PI / 8)) - 1.0F;
@@ -87,7 +88,7 @@ public class Class9155 {
    }
 
    private int[] method34177(Class9840 var1, TextureAtlasSprite var2, Direction var3, float[] var4, Class6979 var5, Class7360 var6, boolean var7) {
-      int var10 = !Class7944.method26921() ? DefaultVertexFormats.field43338 : DefaultVertexFormats.field43339;
+      int var10 = !Config.isShaders() ? DefaultVertexFormats.field43338 : DefaultVertexFormats.field43339;
       int[] var11 = new int[var10];
 
       for (int var12 = 0; var12 < 4; var12++) {

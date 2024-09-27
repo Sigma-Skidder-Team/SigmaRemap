@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InterruptedIOException;
@@ -108,7 +110,7 @@ public class Class7615 {
       } else {
          URL var4 = new URL(var0);
          InputStream var5 = var4.openStream();
-         return Class7944.method26927(var5);
+         return Config.method26927(var5);
       }
    }
 

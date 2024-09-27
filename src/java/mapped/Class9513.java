@@ -4,6 +4,8 @@ import java.awt.Dimension;
 import java.nio.Buffer;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
+
+import net.optifine.Config;
 import org.lwjgl.opengl.GL11;
 
 public class Class9513 {
@@ -57,7 +59,7 @@ public class Class9513 {
             var7.add(var11);
          }
       } else {
-         Class7944.method26811("Mipmaps not possible (power of 2 dimensions needed), texture: " + var2 + ", dim: " + var0 + "x" + var1);
+         Config.method26811("Mipmaps not possible (power of 2 dimensions needed), texture: " + var2 + ", dim: " + var0 + "x" + var1);
          return new Dimension[0];
       }
    }
@@ -150,7 +152,7 @@ public class Class9513 {
          for (int var5 = 0; var5 < var0.length; var5++) {
             Dimension var6 = var0[var5];
             int var7 = var6.width * var6.height;
-            IntBuffer var8 = Class7944.method26984(var7);
+            IntBuffer var8 = Config.method26984(var7);
             int[] var9 = var1[var5];
             ((Buffer)var8).clear();
             var8.put(var9);

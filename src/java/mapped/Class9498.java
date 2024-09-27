@@ -7,6 +7,7 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonParser;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.optifine.Config;
 
 import java.awt.Dimension;
 import java.util.ArrayList;
@@ -55,7 +56,7 @@ public class Class9498 {
 
    public static Class7078 method36687(JsonObject var0) {
       String var3 = Class9664.method37717(var0, "type");
-      if (!Class7944.equals(var3, "PlayerItem")) {
+      if (!Config.equals(var3, "PlayerItem")) {
          throw new JsonParseException("Unknown model type: " + var3);
       } else {
          int[] var4 = Class9664.method37721(var0.get("textureSize"), 2);
@@ -74,7 +75,7 @@ public class Class9498 {
             if (var12 != null) {
                JsonObject var13 = (JsonObject)var8.get(var12);
                if (var13 == null) {
-                  Class7944.method26811("BaseID not found: " + var12);
+                  Config.method26811("BaseID not found: " + var12);
                   continue;
                }
 
@@ -88,7 +89,7 @@ public class Class9498 {
             String var17 = Class9664.method37717(var11, "id");
             if (var17 != null) {
                if (var8.containsKey(var17)) {
-                  Class7944.method26811("Duplicate model ID: " + var17);
+                  Config.method26811("Duplicate model ID: " + var17);
                } else {
                   var8.put(var17, var11);
                }
@@ -131,7 +132,7 @@ public class Class9498 {
                      if (!var0.equals("leftLeg")) {
                         if (!var0.equals("rightLeg")) {
                            if (!var0.equals("cape")) {
-                              Class7944.method26811("Unknown attachModel: " + var0);
+                              Config.method26811("Unknown attachModel: " + var0);
                               return 0;
                            } else {
                               return 6;
@@ -161,7 +162,7 @@ public class Class9498 {
 
    public static Class7954 method36691(JsonObject var0, Dimension var1) {
       String var4 = Class9664.method37717(var0, "type");
-      if (Class7944.equals(var4, "ModelBox")) {
+      if (Config.equals(var4, "ModelBox")) {
          String var5 = Class9664.method37717(var0, "attachTo");
          int var6 = method36690(var5);
          Class2847 var7 = new Class2847(RenderType::getEntityCutoutNoCull);
@@ -170,7 +171,7 @@ public class Class9498 {
          Class7219 var8 = method36692(var0, var7, (int[])null, (String)null);
          return new Class7954(var6, var8);
       } else {
-         Class7944.method26811("Unknown model type: " + var4);
+         Config.method26811("Unknown model type: " + var4);
          return null;
       }
    }
@@ -330,7 +331,7 @@ public class Class9498 {
             if (var40.method22689() != null) {
                Class7219 var27 = var6.method22693(var40.method22689());
                if (var27 != null) {
-                  Class7944.method26811("Duplicate model ID: " + var40.method22689());
+                  Config.method26811("Duplicate model ID: " + var40.method22689());
                }
             }
 

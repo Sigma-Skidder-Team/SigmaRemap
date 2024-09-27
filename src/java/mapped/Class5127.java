@@ -5,6 +5,8 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.entity.Entity;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 public class Class5127 implements Class5119 {
    private static String[] field23314;
@@ -16,14 +18,14 @@ public class Class5127 implements Class5119 {
 
    @Override
    public void method15813(MatrixStack var1, Class7733 var2, double var3, double var5, double var7) {
-      if (! Shaders.field40609) {
-         if (Class7944.method26921()) {
+      if (! Shaders.isShadowPass) {
+         if (Config.isShaders()) {
             Shaders.method33119();
          }
 
          RenderSystem.enableDepthTest();
          RenderSystem.shadeModel(7425);
-         RenderSystem.disableAlphaTest();
+         RenderSystem.enableAlphaTest();
          RenderSystem.method27939();
          Entity var11 = this.field23315.gameRenderer.getActiveRenderInfo().getRenderViewEntity();
          Tessellator var12 = Tessellator.getInstance();
@@ -108,7 +110,7 @@ public class Class5127 implements Class5119 {
          RenderSystem.enableBlend();
          RenderSystem.enableTexture();
          RenderSystem.shadeModel(7424);
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Shaders.method33120();
          }
       }

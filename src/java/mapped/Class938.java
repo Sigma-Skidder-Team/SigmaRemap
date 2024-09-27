@@ -106,7 +106,7 @@ public class Class938 extends Class919 implements Class937 {
 
    public boolean method3737() {
       if (!Class936.method3705(this)) {
-         List var3 = this.world.<Entity>method6772(ItemEntity.class, this.getBoundingBox().method19663(0.25, 0.0, 0.25), Class8088.field34757);
+         List var3 = this.world.<Entity>getEntitiesInAABBexcluding(ItemEntity.class, this.getBoundingBox().method19663(0.25, 0.0, 0.25), Class8088.field34757);
          if (!var3.isEmpty()) {
             Class936.method3707(this, (ItemEntity)var3.get(0));
          }

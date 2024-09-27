@@ -86,7 +86,7 @@ public class Class1162 extends Class1161 {
             RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
             RenderSystem.enableBlend();
             RealmsMainScreen.method2139(this.field6317).getTextureManager().bindTexture(RealmsMainScreen.method2138());
-            RenderSystem.method27834(GlStateManager.SourceFactor.field15997, DestFactor.field12932);
+            RenderSystem.blendFunc(GlStateManager.SourceFactor.field15997, DestFactor.field12932);
             ITextComponent var23;
             ITextComponent var24;
             if (!var1.field27453) {
@@ -145,7 +145,7 @@ public class Class1162 extends Class1161 {
       } else {
          RealmsMainScreen.method2123(this.field6317).getTextureManager().bindTexture(RealmsMainScreen.method2122());
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
-         RenderSystem.disableAlphaTest();
+         RenderSystem.enableAlphaTest();
          AbstractGui.method5699(var2, var3 + 10, var4 + 6, 0.0F, 0.0F, 40, 20, 40, 20);
          float var21 = 0.5F + (1.0F + MathHelper.sin((float) RealmsMainScreen.method2124(this.field6317) * 0.25F)) * 0.25F;
          int var22 = 0xFF000000 | (int)(127.0F * var21) << 16 | (int)(255.0F * var21) << 8 | (int)(127.0F * var21);

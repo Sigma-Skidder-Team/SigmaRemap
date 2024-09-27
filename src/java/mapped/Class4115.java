@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class4115 extends Class4057 {
    public Class4115() {
       super(TileEntityType.field21444, "bed", 0.0F);
@@ -65,7 +67,7 @@ public class Class4115 extends Class4057 {
             Class2843 var7 = (Class2843)var1;
             return (Class9492)var7.method11173((Class5942)var6);
          } else {
-            Class7944.method26811("Not a BedModel: " + var1);
+            Config.method26811("Not a BedModel: " + var1);
             return null;
          }
       } else {

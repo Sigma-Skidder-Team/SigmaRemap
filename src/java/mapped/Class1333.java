@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.client.gui.screen.VideoSettingsScreen;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 public class Class1333 extends ChatScreen {
    private static final String field7051 = "/reloadShaders";
@@ -30,7 +32,7 @@ public class Class1333 extends ChatScreen {
                return true;
             }
          } else {
-            if (Class7944.method26921()) {
+            if (Config.isShaders()) {
                Shaders.method33033();
                Shaders.method32953();
             }

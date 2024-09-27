@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class6265 implements Class6266 {
    private Class4057 field27742;
    private Class2828 field27743;
@@ -62,7 +64,7 @@ public class Class6265 implements Class6266 {
             }
          }
       } else {
-         String[] var4 = Class7944.method26903(var1, ":");
+         String[] var4 = Config.method26903(var1, ":");
          Class7219 var5 = this.method19231(var4[0]);
 
          for (int var6 = 1; var6 < var4.length; var6++) {
@@ -81,7 +83,7 @@ public class Class6265 implements Class6266 {
 
    @Override
    public Class1886 method19232(String var1) {
-      String[] var4 = Class7944.method26903(var1, ".");
+      String[] var4 = Config.method26903(var1, ".");
       if (var4.length == 2) {
          String var5 = var4[0];
          String var6 = var4[1];

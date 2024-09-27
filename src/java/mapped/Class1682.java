@@ -16,10 +16,10 @@ import java.util.stream.Stream;
 public interface Class1682 {
    List<Entity> getEntitiesInAABBexcluding(Entity var1, AxisAlignedBB var2, Predicate<? super Entity> var3);
 
-   <T extends Entity> List<T> method6772(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3);
+   <T extends Entity> List<T> getEntitiesInAABBexcluding(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3);
 
    default <T extends Entity> List<T> method6773(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
-      return this.<T>method6772(var1, var2, var3);
+      return this.<T>getEntitiesInAABBexcluding(var1, var2, var3);
    }
 
    List<? extends PlayerEntity> method6870();
@@ -46,7 +46,7 @@ public interface Class1682 {
    }
 
    default <T extends Entity> List<T> method7182(Class<? extends T> var1, AxisAlignedBB var2) {
-      return this.<T>method6772(var1, var2, Class8088.field34763);
+      return this.<T>getEntitiesInAABBexcluding(var1, var2, Class8088.field34763);
    }
 
    default <T extends Entity> List<T> method7183(Class<? extends T> var1, AxisAlignedBB var2) {
@@ -133,7 +133,7 @@ public interface Class1682 {
 
    @Nullable
    default <T extends LivingEntity> T method7191(Class<? extends T> var1, Class8522 var2, LivingEntity var3, double var4, double var6, double var8, AxisAlignedBB var10) {
-      return this.<T>method7193(this.method6772(var1, var10, (Predicate<? super T>)null), var2, var3, var4, var6, var8);
+      return this.<T>method7193(this.getEntitiesInAABBexcluding(var1, var10, (Predicate<? super T>)null), var2, var3, var4, var6, var8);
    }
 
    @Nullable
@@ -172,7 +172,7 @@ public interface Class1682 {
    }
 
    default <T extends LivingEntity> List<T> method7195(Class<? extends T> var1, Class8522 var2, LivingEntity var3, AxisAlignedBB var4) {
-      List<LivingEntity> var7 = this.method6772(var1, var4, null);
+      List<LivingEntity> var7 = this.getEntitiesInAABBexcluding(var1, var4, null);
       ArrayList var8 = Lists.newArrayList();
 
       for (LivingEntity var10 : var7) {

@@ -358,7 +358,7 @@ public class Class1691 implements ISeedReader {
    }
 
    @Override
-   public <T extends Entity> List<T> method6772(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
+   public <T extends Entity> List<T> getEntitiesInAABBexcluding(Class<? extends T> var1, AxisAlignedBB var2, Predicate<? super T> var3) {
       return Collections.<T>emptyList();
    }
 

@@ -135,7 +135,7 @@ public class Class7803 {
       AxisAlignedBB var6 = new AxisAlignedBB(
          (double)var5.field45678, (double)var5.field45679, (double)var5.field45680, (double)var5.field45681, (double)var5.field45682, (double)var5.field45683
       );
-      List<Entity> var7 = var2.<Entity>method6772(Entity.class, var6, var0x -> !(var0x instanceof PlayerEntity));
+      List<Entity> var7 = var2.<Entity>getEntitiesInAABBexcluding(Entity.class, var6, var0x -> !(var0x instanceof PlayerEntity));
       var7.forEach(Entity::remove);
    }
 

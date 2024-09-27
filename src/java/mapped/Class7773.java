@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
+import net.optifine.Config;
 
 public class Class7773 {
    private static String[] field33348;
@@ -30,6 +31,6 @@ public class Class7773 {
    }
 
    public void method25753(Class7078 var1) {
-      this.field33349 = (Class7078[])Class7944.method26948(this.field33349, var1);
+      this.field33349 = (Class7078[]) Config.method26948(this.field33349, var1);
    }
 }

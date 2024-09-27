@@ -71,7 +71,7 @@ public class Class957 extends Class956 implements ITickableTileEntity {
       this.field5372++;
       if (!var4) {
          if (!this.field5324.isRemote) {
-            List var5 = this.field5324.<Entity>method6772(Entity.class, new AxisAlignedBB(this.getPos()), Class957::method3871);
+            List var5 = this.field5324.<Entity>getEntitiesInAABBexcluding(Entity.class, new AxisAlignedBB(this.getPos()), Class957::method3871);
             if (!var5.isEmpty()) {
                this.method3877((Entity)var5.get(this.field5324.rand.nextInt(var5.size())));
             }

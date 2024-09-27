@@ -8,7 +8,7 @@ public class Tessellator {
    private static final Tessellator field43408 = new Tessellator();
 
    public static Tessellator getInstance() {
-      RenderSystem.assertThread(RenderSystem::method27807);
+      RenderSystem.assertThread(RenderSystem::isOnGameThreadOrInit);
       return field43408;
    }
 

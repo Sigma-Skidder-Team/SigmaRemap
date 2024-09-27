@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.optifine.Config;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -18,7 +19,7 @@ public class Class8862 {
 
    public static void method32261() {
       method32260();
-      if (Class7944.method26912()) {
+      if (Config.method26912()) {
          field40050 = method32262();
       }
    }
@@ -38,7 +39,7 @@ public class Class8862 {
 
             try {
                ResourceLocation var11 = new ResourceLocation(var9);
-               InputStream var12 = Class7944.method26863(var11);
+               InputStream var12 = Config.method26863(var11);
                if (var12 == null) {
                   if (++var10 > 10) {
                      break;
@@ -48,7 +49,7 @@ public class Class8862 {
                Class20 var13 = new Class20();
                var13.load(var12);
                var12.close();
-               Class7944.method26810("CustomSky properties: " + var9);
+               Config.method26810("CustomSky properties: " + var9);
                String var14 = var8 + ".png";
                Class7720 var15 = new Class7720(var13, var14);
                if (var15.method25511(var9)) {
@@ -56,7 +57,7 @@ public class Class8862 {
                   ResourceLocation var17 = new ResourceLocation(var16);
                   Class290 var18 = Class8684.method31265(var17);
                   if (var18 == null) {
-                     Class7944.method26815("CustomSky: Texture not found: " + var17);
+                     Config.method26815("CustomSky: Texture not found: " + var17);
                   } else {
                      var15.field33147 = var18.getGlTextureId();
                      var7.add(var15);

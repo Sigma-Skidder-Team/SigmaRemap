@@ -11,6 +11,9 @@ import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
+import net.optifine.shaders.ShadersRender;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -52,16 +55,16 @@ public class Class7992 {
       field34350 = (Class8090[][])null;
       field34351 = (Class8090[][])null;
       field34354 = true;
-      if (Class7944.method26953()) {
+      if (Config.method26953()) {
          method27246("optifine/cit.properties");
-         IResourcePack[] var2 = Class7944.method26869();
+         IResourcePack[] var2 = Config.method26869();
 
          for (int var3 = var2.length - 1; var3 >= 0; var3--) {
             IResourcePack var4 = var2[var3];
             method27247(var4);
          }
 
-         method27247(Class7944.method26871());
+         method27247(Config.method26871());
          if (field34350.length <= 0) {
             field34350 = (Class8090[][])null;
          }
@@ -75,16 +78,16 @@ public class Class7992 {
    private static void method27246(String var0) {
       try {
          ResourceLocation var3 = new ResourceLocation(var0);
-         InputStream var4 = Class7944.method26863(var3);
+         InputStream var4 = Config.method26863(var3);
          if (var4 == null) {
             return;
          }
 
-         Class7944.method26810("CustomItems: Loading " + var0);
+         Config.method26810("CustomItems: Loading " + var0);
          Class20 var5 = new Class20();
          var5.load(var4);
          var4.close();
-         field34354 = Class7944.method26901(var5.getProperty("useGlint"), true);
+         field34354 = Config.method26901(var5.getProperty("useGlint"), true);
       } catch (FileNotFoundException var6) {
          return;
       } catch (IOException var7) {
@@ -98,7 +101,7 @@ public class Class7992 {
       if (var4.size() > 0) {
          Set<String> var5 = var4.keySet();
          String[] var6 = var5.toArray(new String[var5.size()]);
-         var3 = (String[])Class7944.method26950(var3, var6);
+         var3 = (String[]) Config.method26950(var3, var6);
       }
 
       Arrays.sort(var3);
@@ -107,7 +110,7 @@ public class Class7992 {
 
       for (int var7 = 0; var7 < var3.length; var7++) {
          String var8 = var3[var7];
-         Class7944.method26810("CustomItems: " + var8);
+         Config.method26810("CustomItems: " + var8);
 
          try {
             Class8090 var9 = null;
@@ -119,7 +122,7 @@ public class Class7992 {
                ResourceLocation var10 = new ResourceLocation(var8);
                InputStream var11 = var0.getResourceStream(ResourcePackType.CLIENT_RESOURCES, var10);
                if (var11 == null) {
-                  Class7944.method26811("CustomItems file not found: " + var8);
+                  Config.method26811("CustomItems file not found: " + var8);
                   continue;
                }
 
@@ -134,7 +137,7 @@ public class Class7992 {
                method27265(var9, var16);
             }
          } catch (FileNotFoundException var13) {
-            Class7944.method26811("CustomItems file not found: " + var8);
+            Config.method26811("CustomItems file not found: " + var8);
          } catch (Exception var14) {
             var14.printStackTrace();
          }
@@ -184,7 +187,7 @@ public class Class7992 {
    public static void method27252() {
       for (Class8090 var3 : method27253()) {
          if (var3.field34770 == 1) {
-            AtlasTexture var4 = Class7944.method26969();
+            AtlasTexture var4 = Config.method26969();
             var3.method28020(var4, field34353);
             var3.method28034();
          }
@@ -255,7 +258,7 @@ public class Class7992 {
       } else {
          int[] var6 = (int[])method27258().get(var0);
          if (var6 == null) {
-            Class7944.method26811("Potion not found for image: " + var3);
+            Config.method26811("Potion not found for image: " + var3);
             return null;
          } else {
             StringBuffer var7 = new StringBuffer();
@@ -399,7 +402,7 @@ public class Class7992 {
             if (var5 > 0) {
                method27267(var0, var1, var5);
             } else {
-               Class7944.method26811("Invalid item ID: " + var5);
+               Config.method26811("Invalid item ID: " + var5);
             }
          }
       }
@@ -410,7 +413,7 @@ public class Class7992 {
          int var4 = method27266() + 1;
 
          for (int var5 = 0; var5 < var4; var5++) {
-            if (Class7944.method26944(var5, var0.field34780)) {
+            if (Config.method26944(var5, var0.field34780)) {
                method27267(var0, var1, var5);
             }
          }
@@ -576,7 +579,7 @@ public class Class7992 {
 
             for (int var8 = 0; var8 < var10.length; var8++) {
                int var9 = var10[var8][0];
-               if (Class7944.method26944(var9, var0.field34780)) {
+               if (Config.method26944(var9, var0.field34780)) {
                   var11 = true;
                   break;
                }
@@ -741,7 +744,7 @@ public class Class7992 {
          } else {
             HashSet var6 = null;
             boolean var7 = false;
-            TextureManager var8 = Class7944.method26861();
+            TextureManager var8 = Config.method26861();
 
             for (int var9 = 0; var9 < var5.length; var9++) {
                int var10 = var5[var9][0];
@@ -760,7 +763,7 @@ public class Class7992 {
                            if (!var7) {
                               var7 = true;
                               GlStateManager.depthMask(false);
-                              GlStateManager.method23712(514);
+                              GlStateManager.depthFunc(514);
                               GlStateManager.disableLighting();
                               GlStateManager.matrixMode(5890);
                            }
@@ -779,13 +782,13 @@ public class Class7992 {
             }
 
             if (var7) {
-               GlStateManager.method23696();
-               GlStateManager.method23715();
-               GlStateManager.method23716(770, 771);
+               GlStateManager.enableAlphaTest();
+               GlStateManager.enableBlend();
+               GlStateManager.blendFunc(770, 771);
                GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
                GlStateManager.matrixMode(5888);
                GlStateManager.method23698();
-               GlStateManager.method23712(515);
+               GlStateManager.depthFunc(515);
                GlStateManager.depthMask(true);
                var8.bindTexture(AtlasTexture.LOCATION_BLOCKS_TEXTURE);
             }
@@ -800,7 +803,7 @@ public class Class7992 {
    ) {
       if (field34351 == null) {
          return false;
-      } else if (Class7944.method26921() && Shaders.field40609) {
+      } else if (Config.isShaders() && Shaders.isShadowPass) {
          return false;
       } else if (var1 == null) {
          return false;
@@ -811,7 +814,7 @@ public class Class7992 {
          } else {
             HashSet var13 = null;
             boolean var14 = false;
-            TextureManager var15 = Class7944.method26861();
+            TextureManager var15 = Config.method26861();
 
             for (int var16 = 0; var16 < var12.length; var16++) {
                int var17 = var12[var16][0];
@@ -829,12 +832,12 @@ public class Class7992 {
                            float var21 = var20.method28030(var15);
                            if (!var14) {
                               var14 = true;
-                              if (Class7944.method26921()) {
-                                 Class5463.method17172();
+                              if (Config.isShaders()) {
+                                 ShadersRender.method17172();
                               }
 
-                              GlStateManager.method23715();
-                              GlStateManager.method23712(514);
+                              GlStateManager.enableBlend();
+                              GlStateManager.depthFunc(514);
                               GlStateManager.depthMask(false);
                            }
 
@@ -855,19 +858,19 @@ public class Class7992 {
             }
 
             if (var14) {
-               GlStateManager.method23696();
-               GlStateManager.method23715();
-               GlStateManager.method23716(770, 771);
+               GlStateManager.enableAlphaTest();
+               GlStateManager.enableBlend();
+               GlStateManager.blendFunc(770, 771);
                GlStateManager.color4f(1.0F, 1.0F, 1.0F, 1.0F);
                GlStateManager.matrixMode(5890);
                GlStateManager.loadIdentity();
                GlStateManager.matrixMode(5888);
                GlStateManager.method23698();
                GlStateManager.depthMask(true);
-               GlStateManager.method23712(515);
+               GlStateManager.depthFunc(515);
                GlStateManager.disableBlend();
-               if (Class7944.method26921()) {
-                  Class5463.method17173();
+               if (Config.isShaders()) {
+                  ShadersRender.method17173();
                }
             }
 

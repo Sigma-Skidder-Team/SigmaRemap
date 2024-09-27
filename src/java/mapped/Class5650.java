@@ -19,7 +19,7 @@ public class Class5650 extends Class5651<Class1095, Class2864<Class1095>> {
       super.method17842(var1, var2, var3, var4, var5);
       if (var1.method5140() || var1.method5131()) {
          float var8 = -MathHelper.lerp(var5, var1.prevRotationPitch, var1.rotationPitch);
-         var2.rotate(Vector3f.field32898.rotationDegrees(var8));
+         var2.rotate(Vector3f.XP.rotationDegrees(var8));
       }
    }
 

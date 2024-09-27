@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 import java.lang.reflect.Method;
 import java.util.function.LongSupplier;
 
@@ -22,7 +24,7 @@ public final class Class9538 implements LongSupplier {
          try {
             return (Long)this.field44407.invoke(this.field44408);
          } catch (Throwable var4) {
-            Class7944.method26811("" + var4.getClass().getName() + ": " + var4.getMessage());
+            Config.method26811("" + var4.getClass().getName() + ": " + var4.getMessage());
             this.field44406 = true;
             return -1L;
          }

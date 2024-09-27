@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 import java.util.Comparator;
 
 public class Class3584 implements Comparator {
@@ -10,7 +12,7 @@ public class Class3584 implements Comparator {
       Class8090 var5 = (Class8090)var1;
       Class8090 var6 = (Class8090)var2;
       if (var5.field34789 == var6.field34789) {
-         return Class7944.equals(var5.field34769, var6.field34769) ? var5.field34768.compareTo(var6.field34768) : var5.field34769.compareTo(var6.field34769);
+         return Config.equals(var5.field34769, var6.field34769) ? var5.field34768.compareTo(var6.field34768) : var5.field34769.compareTo(var6.field34769);
       } else {
          return var6.field34789 - var5.field34789;
       }

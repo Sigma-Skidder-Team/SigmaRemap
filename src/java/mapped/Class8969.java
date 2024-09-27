@@ -114,7 +114,7 @@ public class Class8969 {
    }
 
    private void method32892(World var1, BlockPos var2, BlockPos var3) {
-      List<Entity> var6 = var1.<Entity>method6772(Entity.class, new AxisAlignedBB(var2, var3), var0 -> !(var0 instanceof PlayerEntity));
+      List<Entity> var6 = var1.<Entity>getEntitiesInAABBexcluding(Entity.class, new AxisAlignedBB(var2, var3), var0 -> !(var0 instanceof PlayerEntity));
       this.field40546.clear();
 
       for (Entity var8 : var6) {

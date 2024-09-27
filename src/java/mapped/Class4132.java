@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class4132 extends Class4057 {
    public Class4132() {
       super(TileEntityType.field21443, "shulker_box", 0.0F);
@@ -46,7 +48,7 @@ public class Class4132 extends Class4057 {
             Reflector.method35082(var6, Reflector.field43165, var1);
             return (Class9492)var6;
          } else {
-            Class7944.method26811("Field not found: TileEntityShulkerBoxRenderer.model");
+            Config.method26811("Field not found: TileEntityShulkerBoxRenderer.model");
             return null;
          }
       } else {

@@ -12,6 +12,8 @@ import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -58,10 +60,10 @@ public class AtlasTexture extends Class290 implements Class288 {
       this.field1107 = var1;
       this.field1108 = RenderSystem.method27908();
       this.field1122 = var1.equals(LOCATION_BLOCKS_TEXTURE);
-      this.field1123 = Class7944.method26921();
-      this.field1124 = Class7944.method26894();
+      this.field1123 = Config.isShaders();
+      this.field1124 = Config.method26894();
       if (this.field1122) {
-         Class7944.method26968(this);
+         Config.method26968(this);
       }
    }
 
@@ -102,8 +104,8 @@ public class AtlasTexture extends Class290 implements Class288 {
       }
 
       Class8684.method31272(this);
-      Class7944.method26815("Animated sprites: " + this.field1104.size());
-      if (Class7944.method26894()) {
+      Config.method26815("Animated sprites: " + this.field1104.size());
+      if (Config.method26894()) {
          for (TextureAtlasSprite var13 : var1.field35338) {
             TextureAtlasSprite var6 = var13.field9345;
             if (var6 != null) {
@@ -113,7 +115,7 @@ public class AtlasTexture extends Class290 implements Class288 {
                try {
                   var6.method7469();
                } catch (Exception var9) {
-                  Class7944.method26810("Error uploading sprite single: " + var6 + ", parent: " + var13);
+                  Config.method26810("Error uploading sprite single: " + var6 + ", parent: " + var13);
                   var9.printStackTrace();
                }
             }
@@ -122,7 +124,7 @@ public class AtlasTexture extends Class290 implements Class288 {
          GlStateManager.bindTexture(this.getGlTextureId());
       }
 
-      if (Class7944.method26921()) {
+      if (Config.isShaders()) {
          List<TextureAtlasSprite> var12 = var1.field35338;
          if (Shaders.field40874) {
             GlStateManager.bindTexture(this.method1135().field45440);
@@ -149,10 +151,10 @@ public class AtlasTexture extends Class290 implements Class288 {
          GlStateManager.bindTexture(this.getGlTextureId());
       }
 
-      Reflector.method35055(Reflector.field42892, this);
+      Reflector.callVoid(Reflector.field42892, this);
       this.method1115(var1.field35335, var1.field35336);
-      if (Class7944.equals(System.getProperty("saveTextureMap"), "true")) {
-         Class7944.method26810("Exporting texture map: " + this.field1107);
+      if (Config.equals(System.getProperty("saveTextureMap"), "true")) {
+         Config.method26810("Exporting texture map: " + this.field1107);
          Class8684.method31287(
             "debug/" + this.field1107.getPath().replaceAll("/", "_"), this.getGlTextureId(), var1.field35337, var1.field35335, var1.field35336
          );
@@ -184,8 +186,8 @@ public class AtlasTexture extends Class290 implements Class288 {
 
    public Class8226 method1092(IResourceManager var1, Stream<ResourceLocation> var2, IProfiler var3, int var4) {
       this.field1122 = this.field1107.equals(LOCATION_BLOCKS_TEXTURE);
-      this.field1123 = Class7944.method26921();
-      this.field1124 = Class7944.method26894();
+      this.field1123 = Config.isShaders();
+      this.field1124 = Config.method26894();
       int var7 = var4;
       this.field1109.clear();
       this.field1110.clear();
@@ -196,7 +198,7 @@ public class AtlasTexture extends Class290 implements Class288 {
             throw new IllegalArgumentException("Location cannot be null!");
          }
       }).collect(Collectors.toSet());
-      Class7944.method26810("Multitexture: " + Class7944.method26894());
+      Config.method26810("Multitexture: " + Config.method26894());
       Class8684.method31271(this);
       var8.addAll(this.field1109.keySet());
       Set var9 = method1124(var8, this.field1109.keySet());
@@ -204,7 +206,7 @@ public class AtlasTexture extends Class290 implements Class288 {
       var8.addAll(this.field1109.keySet());
       if (var4 >= 4) {
          var7 = this.method1110(var8, var1);
-         Class7944.method26815("Mipmap levels: " + var7);
+         Config.method26815("Mipmap levels: " + var7);
       }
 
       int var10 = Class8684.method31288();
@@ -214,7 +216,7 @@ public class AtlasTexture extends Class290 implements Class288 {
       this.field1112 = var13;
       int var14 = 1 << var4;
       var3.endStartSection("extracting_frames");
-      Reflector.method35055(Reflector.field42891, this, var8);
+      Reflector.callVoid(Reflector.field42891, this, var8);
 
       for (Class9431 var16 : this.method1093(var1, var8)) {
          int var17 = var16.method36196();
@@ -224,9 +226,9 @@ public class AtlasTexture extends Class290 implements Class288 {
                int var19 = var7 > 0 ? Class8684.method31283(var17, var13) : Class8684.method31284(var17, var13);
                if (var19 != var17) {
                   if (!Class8684.method31278(var17)) {
-                     Class7944.method26815("Scaled non power of 2: " + var16.method36195() + ", " + var17 + " -> " + var19);
+                     Config.method26815("Scaled non power of 2: " + var16.method36195() + ", " + var17 + " -> " + var19);
                   } else {
-                     Class7944.method26815("Scaled too small texture: " + var16.method36195() + ", " + var17 + " -> " + var19);
+                     Config.method26815("Scaled too small texture: " + var16.method36195() + ", " + var17 + " -> " + var19);
                   }
 
                   int var20 = var18 * var19 / var17;
@@ -252,7 +254,7 @@ public class AtlasTexture extends Class290 implements Class288 {
 
             var11.method35560(var16);
          } else {
-            Class7944.method26811("Invalid sprite size: " + var16.method36195());
+            Config.method26811("Invalid sprite size: " + var16.method36195());
          }
       }
 
@@ -406,7 +408,7 @@ public class AtlasTexture extends Class290 implements Class288 {
          }
       }
 
-      if (Class7944.method26894()) {
+      if (Config.method26894()) {
          for (TextureAtlasSprite var13 : this.field1104) {
             if (this.method1108(var13) && var13.method7479()) {
                TextureAtlasSprite var8 = var13.field9345;
@@ -423,7 +425,7 @@ public class AtlasTexture extends Class290 implements Class288 {
          GlStateManager.bindTexture(this.getGlTextureId());
       }
 
-      if (Class7944.method26921()) {
+      if (Config.isShaders()) {
          if (var3) {
             GlStateManager.bindTexture(this.method1135().field45440);
 
@@ -456,7 +458,7 @@ public class AtlasTexture extends Class290 implements Class288 {
       }
 
       if (this.field1122) {
-         int var12 = Class7944.method26860().worldRenderer.method935();
+         int var12 = Config.method26860().worldRenderer.method935();
          if (var12 != this.field1121) {
             this.field1120 = var5;
             this.field1121 = var12;
@@ -536,19 +538,19 @@ public class AtlasTexture extends Class290 implements Class288 {
    private boolean method1108(TextureAtlasSprite var1) {
       if (this.field1122) {
          if (var1 == Class8684.field39192 || var1 == Class8684.field39193) {
-            return Class7944.method26835();
+            return Config.method26835();
          } else if (var1 == Class8684.field39194 || var1 == Class8684.field39195) {
-            return Class7944.method26838();
+            return Config.method26838();
          } else if (var1 == Class8684.field39196 || var1 == Class8684.field39197) {
-            return Class7944.method26840();
+            return Config.method26840();
          } else if (var1 == Class8684.field39198 || var1 == Class8684.field39199) {
-            return Class7944.method26840();
+            return Config.method26840();
          } else if (var1 == Class8684.field39200 || var1 == Class8684.field39201) {
-            return Class7944.method26840();
+            return Config.method26840();
          } else if (var1 != Class8684.field39202 && var1 != Class8684.field39203) {
-            return var1 != Class8684.field39204 ? Class7944.method26904() : Class7944.method26837();
+            return var1 != Class8684.field39204 ? Config.method26904() : Config.method26837();
          } else {
-            return Class7944.method26840();
+            return Config.method26840();
          }
       } else {
          return true;
@@ -567,7 +569,7 @@ public class AtlasTexture extends Class290 implements Class288 {
 
       var5 = MathHelper.method37800(var5);
       if (var5 > 16) {
-         Class7944.method26815("Sprite size: " + var5);
+         Config.method26815("Sprite size: " + var5);
       }
 
       int var6 = MathHelper.method37803(var5);
@@ -690,11 +692,11 @@ public class AtlasTexture extends Class290 implements Class288 {
                         int var25 = var24 * this.field1113 + var23;
                         this.field1111[var25] = var6;
                      } else {
-                        Class7944.method26811("Invalid grid V: " + var24 + ", icon: " + var6.method7465());
+                        Config.method26811("Invalid grid V: " + var24 + ", icon: " + var6.method7465());
                      }
                   }
                } else {
-                  Class7944.method26811("Invalid grid U: " + var23 + ", icon: " + var6.method7465());
+                  Config.method26811("Invalid grid U: " + var23 + ", icon: " + var6.method7465());
                }
             }
          }

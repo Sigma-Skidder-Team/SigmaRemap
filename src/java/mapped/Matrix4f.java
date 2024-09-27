@@ -161,7 +161,7 @@ public final class Matrix4f {
       return var3.toString();
    }
 
-   public void method35502(FloatBuffer var1) {
+   public void write(FloatBuffer var1) {
       var1.put(method35501(0, 0), this.field43471);
       var1.put(method35501(0, 1), this.field43472);
       var1.put(method35501(0, 2), this.field43473);

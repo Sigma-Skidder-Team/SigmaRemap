@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -40,7 +42,7 @@ public class Class6682 extends Class6679 {
          String var6 = var4.group(2);
          String var7 = var4.group(3);
          if (var6 != null && var6.length() > 0) {
-            boolean var8 = Class7944.equals(var5, "//");
+            boolean var8 = Config.equals(var5, "//");
             boolean var9 = !var8;
             var1 = Class9402.method35762(var1, "/shaders/");
             return new Class6682(var6, var7, String.valueOf(var9), var1);

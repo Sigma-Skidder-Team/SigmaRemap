@@ -45,32 +45,32 @@ public class FontRenderer {
    }
 
    public int method38800(MatrixStack var1, String var2, float var3, float var4, int var5, boolean var6) {
-      RenderSystem.disableAlphaTest();
+      RenderSystem.enableAlphaTest();
       return this.method38807(var2, var3, var4, var5, var1.getLast().getMatrix(), true, var6);
    }
 
    public int method38801(MatrixStack var1, String var2, float var3, float var4, int var5) {
-      RenderSystem.disableAlphaTest();
+      RenderSystem.enableAlphaTest();
       return this.method38807(var2, var3, var4, var5, var1.getLast().getMatrix(), false, this.method38829());
    }
 
    public int method38802(MatrixStack var1, Class9125 var2, float var3, float var4, int var5) {
-      RenderSystem.disableAlphaTest();
+      RenderSystem.enableAlphaTest();
       return this.method38809(var2, var3, var4, var5, var1.getLast().getMatrix(), true);
    }
 
    public int method38803(MatrixStack var1, ITextComponent var2, float var3, float var4, int var5) {
-      RenderSystem.disableAlphaTest();
+      RenderSystem.enableAlphaTest();
       return this.method38809(var2.func_241878_f(), var3, var4, var5, var1.getLast().getMatrix(), true);
    }
 
    public int method38804(MatrixStack var1, Class9125 var2, float var3, float var4, int var5) {
-      RenderSystem.disableAlphaTest();
+      RenderSystem.enableAlphaTest();
       return this.method38809(var2, var3, var4, var5, var1.getLast().getMatrix(), false);
    }
 
    public int func_243248_b(MatrixStack var1, ITextComponent var2, float var3, float var4, int var5) {
-      RenderSystem.disableAlphaTest();
+      RenderSystem.enableAlphaTest();
       return this.method38809(var2.func_241878_f(), var3, var4, var5, var1.getLast().getMatrix(), false);
    }
 

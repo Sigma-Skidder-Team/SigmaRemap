@@ -209,7 +209,7 @@ public class Framebuffer {
    }
 
    public void framebufferRenderExt(int var1, int var2, boolean var3) {
-      RenderSystem.assertThread(RenderSystem::method27807);
+      RenderSystem.assertThread(RenderSystem::isOnGameThreadOrInit);
       if (RenderSystem.isInInitPhase()) {
          this.framebufferRenderExtRaw(var1, var2, var3);
       } else {

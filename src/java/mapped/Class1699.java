@@ -5,6 +5,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.texture.DynamicTexture;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 public class Class1699 implements AutoCloseable {
    private final DynamicTexture field9248;
@@ -50,7 +52,7 @@ public class Class1699 implements AutoCloseable {
       RenderSystem.method27860(33986);
       RenderSystem.disableTexture();
       RenderSystem.method27860(33984);
-      if (Class7944.method26921()) {
+      if (Config.isShaders()) {
          Shaders.method33127();
       }
    }
@@ -72,20 +74,20 @@ public class Class1699 implements AutoCloseable {
          RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
          RenderSystem.enableTexture();
          RenderSystem.method27860(33984);
-         if (Class7944.method26921()) {
+         if (Config.isShaders()) {
             Shaders.method33126();
          }
       }
    }
 
-   public void method7318(float var1) {
+   public void updateLightmap(float var1) {
       if (this.field9251) {
          this.field9251 = false;
          this.field9254.getProfiler().startSection("lightTex");
          ClientWorld var4 = this.field9254.world;
          if (var4 != null) {
             this.field9256 = false;
-            if (Class7944.method26911()) {
+            if (Config.method26911()) {
                boolean var5 = this.field9254.player.isPotionActive(Effects.NIGHT_VISION) || this.field9254.player.isPotionActive(Effects.CONDUIT_POWER);
                if (Class9680.method37875(var4, this.field9252, this.field9249, var5, var1)) {
                   this.field9248.method1140();

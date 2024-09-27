@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.util.Arrays;
 
@@ -38,6 +39,6 @@ public class Class9682 {
 
    @Override
    public String toString() {
-      return "location: " + this.field45275 + ", values: [" + Class7944.method26858(this.field45276) + "]";
+      return "location: " + this.field45275 + ", values: [" + Config.method26858(this.field45276) + "]";
    }
 }

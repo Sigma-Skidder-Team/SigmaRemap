@@ -62,8 +62,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    public float field6138;
    private int field6139;
    public float field6140;
-   public float field6141;
-   public float field6142;
+   public float timeInPortal;
+   public float prevTimeInPortal;
    private boolean field6143;
    private Hand field6144;
    private boolean field6145;
@@ -777,20 +777,20 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    }
 
    private void method5409() {
-      this.field6142 = this.field6141;
+      this.prevTimeInPortal = this.timeInPortal;
       if (!this.inPortal) {
          if (this.isPotionActive(Effects.NAUSEA) && this.getActivePotionEffect(Effects.NAUSEA).method8628() > 60) {
-            this.field6141 += 0.006666667F;
-            if (this.field6141 > 1.0F) {
-               this.field6141 = 1.0F;
+            this.timeInPortal += 0.006666667F;
+            if (this.timeInPortal > 1.0F) {
+               this.timeInPortal = 1.0F;
             }
          } else {
-            if (this.field6141 > 0.0F) {
-               this.field6141 -= 0.05F;
+            if (this.timeInPortal > 0.0F) {
+               this.timeInPortal -= 0.05F;
             }
 
-            if (this.field6141 < 0.0F) {
-               this.field6141 = 0.0F;
+            if (this.timeInPortal < 0.0F) {
+               this.timeInPortal = 0.0F;
             }
          }
       } else {
@@ -802,13 +802,13 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
             this.field6132.displayGuiScreen((Screen)null);
          }
 
-         if (this.field6141 == 0.0F) {
+         if (this.timeInPortal == 0.0F) {
             this.field6132.getSoundHandler().method1000(MinecraftSoundManager.method19296(SoundEvents.field26978, this.rand.nextFloat() * 0.4F + 0.8F, 0.25F));
          }
 
-         this.field6141 += 0.0125F;
-         if (this.field6141 >= 1.0F) {
-            this.field6141 = 1.0F;
+         this.timeInPortal += 0.0125F;
+         if (this.timeInPortal >= 1.0F) {
+            this.timeInPortal = 1.0F;
          }
 
          this.inPortal = false;
@@ -836,8 +836,8 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
    @Override
    public EffectInstance removeActivePotionEffect(Effect var1) {
       if (var1 == Effects.NAUSEA) {
-         this.field6142 = 0.0F;
-         this.field6141 = 0.0F;
+         this.prevTimeInPortal = 0.0F;
+         this.timeInPortal = 0.0F;
       }
 
       return super.removeActivePotionEffect(var1);

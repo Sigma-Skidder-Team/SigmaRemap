@@ -1,5 +1,7 @@
 package mapped;
 
+import net.optifine.Config;
+
 public class Class8009 extends Class8008 {
    public static final String[] field34436 = new String[]{"default", "fast", "fancy", "off"};
    public static final String[] field34437 = new String[]{"Default", "Fast", "Fancy", "OFF"};
@@ -26,7 +28,7 @@ public class Class8009 extends Class8008 {
 
    @Override
    public boolean method27380(String var1) {
-      if (Class7944.equals(var1, "none")) {
+      if (Config.equals(var1, "none")) {
          var1 = "off";
       }
 

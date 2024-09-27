@@ -8,6 +8,8 @@ import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
 
 import java.util.List;
 
@@ -50,7 +52,7 @@ public class Class5947 extends Class5942<Class954> {
          var3.translate(0.0, 0.33333334F, 0.046666667F);
          var3.method35292(0.010416667F, -0.010416667F, 0.010416667F);
          int var15 = var1.method3844().method314();
-         if (Class7944.method26911()) {
+         if (Config.method26911()) {
             var15 = Class9680.method37900(var15);
          }
 
@@ -88,8 +90,8 @@ public class Class5947 extends Class5942<Class954> {
    }
 
    private static boolean method18474(Class954 var0) {
-      if (! Shaders.field40609) {
-         if (!Class7944.field34162) {
+      if (! Shaders.isShadowPass) {
+         if (!Config.field34162) {
             BlockPos var3 = var0.getPos();
             Entity var4 = Minecraft.getInstance().getRenderViewEntity();
             double var5 = var4.getDistanceNearest((double)var3.getX(), (double)var3.getY(), (double)var3.getZ());
@@ -106,7 +108,7 @@ public class Class5947 extends Class5942<Class954> {
 
    public static void method18475() {
       Minecraft var2 = Minecraft.getInstance();
-      double var3 = Class7944.method26833(var2.gameSettings.field44669, 1.0, 120.0);
+      double var3 = Config.method26833(var2.gameSettings.fov, 1.0, 120.0);
       double var5 = Math.max(1.5 * (double)var2.getMainWindow().getHeight() / var3, 16.0);
       field25939 = var5 * var5;
    }

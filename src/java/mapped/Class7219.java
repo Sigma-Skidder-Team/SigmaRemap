@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectList;
 import net.minecraft.util.ResourceLocation;
+import net.optifine.Config;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,7 @@ public class Class7219 {
    private ResourceLocation field31047 = null;
    private String field31048 = null;
    private Class8486 field31049;
-   private WorldRenderer field31050 = Class7944.method26874();
+   private WorldRenderer field31050 = Config.method26874();
 
    public Class7219(Class2828 var1) {
       var1.accept(this);
@@ -180,7 +181,7 @@ public class Class7219 {
    public void method22682(MatrixStack var1) {
       var1.translate((double)(this.field31032 / 16.0F), (double)(this.field31033 / 16.0F), (double)(this.field31034 / 16.0F));
       if (this.field31037 != 0.0F) {
-         var1.rotate(Vector3f.field32902.method25285(this.field31037));
+         var1.rotate(Vector3f.ZP.method25285(this.field31037));
       }
 
       if (this.field31036 != 0.0F) {
@@ -188,7 +189,7 @@ public class Class7219 {
       }
 
       if (this.field31035 != 0.0F) {
-         var1.rotate(Vector3f.field32898.method25285(this.field31035));
+         var1.rotate(Vector3f.XP.method25285(this.field31035));
       }
    }
 

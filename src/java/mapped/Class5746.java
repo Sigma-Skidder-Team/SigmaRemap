@@ -22,7 +22,7 @@ public class Class5746 extends Class5651<Class1058, Class2880<Class1058>> {
          float var8 = 13.0F;
          float var9 = var1.field4961 - var1.field4960 * (1.0F - var5) + 6.0F;
          float var10 = (Math.abs(var9 % 13.0F - 6.5F) - 3.25F) / 3.25F;
-         var2.rotate(Vector3f.field32902.rotationDegrees(6.5F * var10));
+         var2.rotate(Vector3f.ZP.rotationDegrees(6.5F * var10));
       }
    }
 }

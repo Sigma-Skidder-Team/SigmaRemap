@@ -37,6 +37,9 @@ import net.minecraft.util.text.event.ClickEvent;
 import net.minecraft.util.text.event.ClickEvent$Action;
 import net.minecraft.world.GameType;
 import net.minecraft.world.World;
+import net.optifine.Config;
+import net.optifine.shaders.Shaders;
+import net.optifine.shaders.ShadersRender;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -53,20 +56,20 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    private final Minecraft mc;
    private final IResourceManager field803;
    private final Random field804 = new Random();
-   private float field805;
+   private float farPlaneDistance;
    public final FirstPersonRenderer itemRenderer;
    private final Class194 field807;
    private final RenderTypeBuffers field808;
-   private int field809;
+   private int rendererUpdateCount;
    private float field810;
    private float field811;
    private float field812;
    private float field813;
-   public boolean field814 = true;
+   public boolean renderHand = true;
    private boolean field815 = true;
    private long field816;
    private long field817 = Util.milliTime();
-   public final Class1699 field818;
+   public final Class1699 lightmapTexture;
    private final Class213 field819 = new Class213();
    private boolean field820;
    private float field821 = 1.0F;
@@ -124,14 +127,14 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       this.field803 = var2;
       this.itemRenderer = var1.getFirstPersonRenderer();
       this.field807 = new Class194(var1.getTextureManager());
-      this.field818 = new Class1699(this, var1);
+      this.lightmapTexture = new Class1699(this, var1);
       this.field808 = var3;
       this.field828 = null;
    }
 
    @Override
    public void close() {
-      this.field818.close();
+      this.lightmapTexture.close();
       this.field807.close();
       this.field819.close();
       this.stopUseShader();
@@ -209,15 +212,15 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       }
    }
 
-   public void tick() {
+   public void renderWorld() {
       this.method742();
-      this.field818.method7315();
+      this.lightmapTexture.method7315();
       if (this.mc.getRenderViewEntity() == null) {
          this.mc.setRenderViewEntity(this.mc.player);
       }
 
       this.activeRender.method37498();
-      this.field809++;
+      this.rendererUpdateCount++;
       this.itemRenderer.method37592();
       this.mc.worldRenderer.method856(this.activeRender);
       this.field813 = this.field812;
@@ -327,8 +330,8 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       if (!this.field820) {
          double var6 = 70.0;
          if (var3) {
-            var6 = this.mc.gameSettings.field44669;
-            if (Class7944.method26940()) {
+            var6 = this.mc.gameSettings.fov;
+            if (Config.method26940()) {
                var6 *= (double) MathHelper.lerp(var2, this.field811, this.field810);
             }
          }
@@ -339,20 +342,20 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          }
 
          if (!var8) {
-            if (Class7944.field34162) {
-               Class7944.field34162 = false;
-               this.mc.gameSettings.smoothCamera = Class7944.field34163;
+            if (Config.field34162) {
+               Config.field34162 = false;
+               this.mc.gameSettings.smoothCamera = Config.field34163;
                this.mc.worldRenderer.setDisplayListEntitiesDirty();
             }
          } else {
-            if (!Class7944.field34162) {
-               Class7944.field34162 = true;
-               Class7944.field34163 = this.mc.gameSettings.smoothCamera;
+            if (!Config.field34162) {
+               Config.field34162 = true;
+               Config.field34163 = this.mc.gameSettings.smoothCamera;
                this.mc.gameSettings.smoothCamera = true;
                this.mc.worldRenderer.setDisplayListEntitiesDirty();
             }
 
-            if (Class7944.field34162) {
+            if (Config.field34162) {
                var6 /= 4.0;
             }
          }
@@ -373,13 +376,13 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       }
    }
 
-   private void method744(MatrixStack var1, float var2) {
+   private void hurtCameraEffect(MatrixStack var1, float var2) {
       if (this.mc.getRenderViewEntity() instanceof LivingEntity) {
          LivingEntity var5 = (LivingEntity)this.mc.getRenderViewEntity();
          float var6 = (float)var5.hurtTime - var2;
          if (var5.getShouldBeDead()) {
             float var7 = Math.min((float)var5.deathTime + var2, 20.0F);
-            var1.rotate(Vector3f.field32902.rotationDegrees(40.0F - 8000.0F / (var7 + 200.0F)));
+            var1.rotate(Vector3f.ZP.rotationDegrees(40.0F - 8000.0F / (var7 + 200.0F)));
          }
 
          if (var6 < 0.0F) {
@@ -390,12 +393,12 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          var6 = MathHelper.sin(var6 * var6 * var6 * var6 * (float) Math.PI);
          float var10 = var5.attackedAtYaw;
          var1.rotate(Vector3f.YP.rotationDegrees(-var10));
-         var1.rotate(Vector3f.field32902.rotationDegrees(-var6 * 14.0F));
+         var1.rotate(Vector3f.ZP.rotationDegrees(-var6 * 14.0F));
          var1.rotate(Vector3f.YP.rotationDegrees(var10));
       }
    }
 
-   private void method745(MatrixStack var1, float var2) {
+   private void applyBobbing(MatrixStack var1, float var2) {
       if (this.mc.getRenderViewEntity() instanceof PlayerEntity) {
          PlayerEntity var5 = (PlayerEntity)this.mc.getRenderViewEntity();
          float var6 = var5.distanceWalkedModified - var5.prevDistanceWalkedModified;
@@ -406,12 +409,12 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
             (double)(-Math.abs(MathHelper.cos(var7 * (float) Math.PI) * var8)),
             0.0
          );
-         var1.rotate(Vector3f.field32902.rotationDegrees(MathHelper.sin(var7 * (float) Math.PI) * var8 * 3.0F));
-         var1.rotate(Vector3f.field32898.rotationDegrees(Math.abs(MathHelper.cos(var7 * (float) Math.PI - 0.2F) * var8) * 5.0F));
+         var1.rotate(Vector3f.ZP.rotationDegrees(MathHelper.sin(var7 * (float) Math.PI) * var8 * 3.0F));
+         var1.rotate(Vector3f.XP.rotationDegrees(Math.abs(MathHelper.cos(var7 * (float) Math.PI - 0.2F) * var8) * 5.0F));
       }
    }
 
-   private void method746(MatrixStack var1, ActiveRenderInfo var2, float var3) {
+   private void renderHand(MatrixStack var1, ActiveRenderInfo var2, float var3) {
       this.method747(var1, var2, var3, true, true, false);
    }
 
@@ -425,9 +428,9 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          boolean var10 = false;
          if (var4) {
             var1.push();
-            this.method744(var1, var3);
-            if (this.mc.gameSettings.field44627) {
-               this.method745(var1, var3);
+            this.hurtCameraEffect(var1, var3);
+            if (this.mc.gameSettings.viewBobbing) {
+               this.applyBobbing(var1, var3);
             }
 
             var10 = this.mc.getRenderViewEntity() instanceof LivingEntity && ((LivingEntity)this.mc.getRenderViewEntity()).isSleeping();
@@ -435,14 +438,14 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
                && !var10
                && !this.mc.gameSettings.hideGUI
                && this.mc.playerController.getCurrentGameType() != GameType.SPECTATOR) {
-               this.field818.method7317();
-               if (!Class7944.method26921()) {
+               this.lightmapTexture.method7317();
+               if (!Config.isShaders()) {
                   this.itemRenderer
                      .method37590(
                         var3, var1, this.field808.method26536(), this.mc.player, this.mc.getRenderManager().method32208(this.mc.player, var3)
                      );
                } else {
-                  Class5463.method17156(
+                  ShadersRender.method17156(
                      this.itemRenderer,
                      var3,
                      var1,
@@ -453,7 +456,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
                   );
                }
 
-               this.field818.method7316();
+               this.lightmapTexture.method7316();
             }
 
             var1.pop();
@@ -464,16 +467,16 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
             return;
          }
 
-         this.field818.method7316();
+         this.lightmapTexture.method7316();
          RenderFireEvent var11 = new RenderFireEvent();
          Client.getInstance().getEventManager().call(var11);
          if (this.mc.gameSettings.getPointOfView().func_243192_a() && !var10 && !var11.isCancelled()) {
             OverlayRenderer.method18789(this.mc, var1);
-            this.method744(var1, var3);
+            this.hurtCameraEffect(var1, var3);
          }
 
-         if (this.mc.gameSettings.field44627) {
-            this.method745(var1, var3);
+         if (this.mc.gameSettings.viewBobbing) {
+            this.applyBobbing(var1, var3);
          }
       }
    }
@@ -481,18 +484,18 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    public void method748(Matrix4f var1) {
       RenderSystem.matrixMode(5889);
       RenderSystem.loadIdentity();
-      RenderSystem.method27888(var1);
+      RenderSystem.multMatrix(var1);
       RenderSystem.matrixMode(5888);
    }
 
    public Matrix4f method749(ActiveRenderInfo var1, float var2, boolean var3) {
       MatrixStack var6 = new MatrixStack();
       var6.getLast().getMatrix().method35503();
-      if (Class7944.method26921() && Shaders.method33161()) {
+      if (Config.isShaders() && Shaders.method33161()) {
          Shaders.method33104(var6);
       }
 
-      this.field836 = this.field805 * 2.0F;
+      this.field836 = this.farPlaneDistance * 2.0F;
       if (this.field836 < 173.0F) {
          this.field836 = 173.0F;
       }
@@ -537,10 +540,10 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          int var8 = (int)(
             this.mc.mouseHelper.method36739() * (double)this.mc.getMainWindow().getScaledHeight() / (double)this.mc.getMainWindow().getHeight()
          );
-         if (var4 && this.mc.world != null && !Class7944.method26988()) {
+         if (var4 && this.mc.world != null && !Config.method26988()) {
             this.mc.getProfiler().startSection("level");
             Client.getInstance().getEventManager().call(new Render2DEvent(var1, var2));
-            this.method754(var1, var2, new MatrixStack());
+            this.renderWorld(var1, var2, new MatrixStack());
             if (this.mc.isSingleplayer() && this.field816 < Util.milliTime() - 1000L) {
                this.field816 = Util.milliTime();
                if (!this.mc.getIntegratedServer().method1305()) {
@@ -552,7 +555,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
             if (this.field828 != null && this.field832) {
                RenderSystem.disableBlend();
                RenderSystem.disableDepthTest();
-               RenderSystem.method27817();
+               RenderSystem.disableAlphaTest();
                RenderSystem.enableTexture();
                RenderSystem.matrixMode(5890);
                RenderSystem.pushMatrix();
@@ -564,7 +567,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
 
             this.mc.getFramebuffer().bindFramebuffer(true);
          } else {
-            RenderSystem.method27869(0, 0, this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight());
+            RenderSystem.viewport(0, 0, this.mc.getMainWindow().getFramebufferWidth(), this.mc.getMainWindow().getFramebufferHeight());
          }
 
          MainWindow var9 = this.mc.getMainWindow();
@@ -577,16 +580,16 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
          Class7516.method24503();
          MatrixStack var10 = new MatrixStack();
-         if (this.field818.method7328()) {
-            this.field818.method7327(false);
+         if (this.lightmapTexture.method7328()) {
+            this.lightmapTexture.method7327(false);
          }
 
          if (var4 && this.mc.world != null) {
             this.mc.getProfiler().endStartSection("gui");
             if (this.mc.player != null) {
-               float var11 = MathHelper.lerp(var1, this.mc.player.field6142, this.mc.player.field6141);
-               if (var11 > 0.0F && this.mc.player.isPotionActive(Effects.NAUSEA) && this.mc.gameSettings.field44670 < 1.0F) {
-                  this.func_243497_c(var11 * (1.0F - this.mc.gameSettings.field44670));
+               float var11 = MathHelper.lerp(var1, this.mc.player.prevTimeInPortal, this.mc.player.timeInPortal);
+               if (var11 > 0.0F && this.mc.player.isPotionActive(Effects.NAUSEA) && this.mc.gameSettings.screenEffectScale < 1.0F) {
+                  this.func_243497_c(var11 * (1.0F - this.mc.gameSettings.screenEffectScale));
                }
             }
 
@@ -596,7 +599,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
                ResourcesDecrypter.gingerbreadIconPNG.bind();
                this.mc.ingameGUI.method5961(var10, var1);
                if (this.mc.gameSettings.field44699 && !this.mc.gameSettings.showDebugInfo) {
-                  Class7944.method26954(var10);
+                  Config.method26954(var10);
                }
 
                if (this.mc.gameSettings.showDebugInfo) {
@@ -636,7 +639,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          } else if (this.mc.currentScreen != null && Client.getInstance().getGuiManager().method33480() == null) {
             try {
                if (Reflector.field42867.exists()) {
-                  Reflector.method35055(Reflector.field42867, this.mc.currentScreen, var10, var7, var8, this.mc.getTickLength());
+                  Reflector.callVoid(Reflector.field42867, this.mc.currentScreen, var10, var7, var8, this.mc.getTickLength());
                } else {
                   this.mc.currentScreen.render(var10, var7, var8, this.mc.getTickLength());
                   Client.getInstance().getEventManager().call(new EventRenderShulker());
@@ -672,7 +675,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
             }
          }
 
-         this.field818.method7327(true);
+         this.lightmapTexture.method7327(true);
       }
 
       this.method759();
@@ -712,7 +715,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       }
    }
 
-   private boolean method753() {
+   private boolean isDrawBlockOutline() {
       if (!this.field815) {
          return false;
       } else {
@@ -738,112 +741,112 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
       }
    }
 
-   public void method754(float var1, long var2, MatrixStack var4) {
-      this.field818.method7318(var1);
+   public void renderWorld(float partialTicks, long finishTimeNano, MatrixStack matrixStackIn) {
+      this.lightmapTexture.updateLightmap(partialTicks);
       if (this.mc.getRenderViewEntity() == null) {
          this.mc.setRenderViewEntity(this.mc.player);
       }
 
-      this.getMouseOver(var1);
-      if (Class7944.method26921()) {
-         Shaders.method33041(this.mc, this.activeRender, var1, var2);
+      this.getMouseOver(partialTicks);
+      if (Config.isShaders()) {
+         Shaders.beginRender(this.mc, this.activeRender, partialTicks, finishTimeNano);
       }
 
       this.mc.getProfiler().startSection("center");
-      boolean var7 = Class7944.method26921();
-      if (var7) {
-         Shaders.method33044(var1, var2);
+      boolean flag = Config.isShaders();
+      if (flag) {
+         Shaders.beginRenderPass(partialTicks, finishTimeNano);
       }
 
-      boolean var8 = this.method753();
+      boolean flag1 = this.isDrawBlockOutline();
       this.mc.getProfiler().endStartSection("camera");
-      ActiveRenderInfo var9 = this.activeRender;
-      this.field805 = (float)(this.mc.gameSettings.field44574 * 16);
-      if (Class7944.method26804()) {
-         this.field805 *= 0.95F;
+      ActiveRenderInfo activerenderinfo = this.activeRender;
+      this.farPlaneDistance = (float)(this.mc.gameSettings.renderDistanceChunks * 16);
+      if (Config.isFogFancy()) {
+         this.farPlaneDistance *= 0.95F;
       }
 
-      if (Class7944.method26805()) {
-         this.field805 *= 0.83F;
+      if (Config.isFogFast()) {
+         this.farPlaneDistance *= 0.83F;
       }
 
-      MatrixStack var10 = new MatrixStack();
-      var10.getLast().getMatrix().method35508(this.method749(var9, var1, true));
-      MatrixStack var11 = var10;
-      if (Shaders.method33170()) {
-         var10 = var4;
+      MatrixStack matrixstack = new MatrixStack();
+      matrixstack.getLast().getMatrix().method35508(this.method749(activerenderinfo, partialTicks, true));
+      MatrixStack matrixstack1 = matrixstack;
+      if (Shaders.isEffectsModelView()) {
+         matrixstack = matrixStackIn;
       }
 
-      this.method744(var10, var1);
-      if (this.mc.gameSettings.field44627) {
-         this.method745(var10, var1);
+      this.hurtCameraEffect(matrixstack, partialTicks);
+      if (this.mc.gameSettings.viewBobbing) {
+         this.applyBobbing(matrixstack, partialTicks);
       }
 
-      float var12 = MathHelper.lerp(var1, this.mc.player.field6142, this.mc.player.field6141)
-         * this.mc.gameSettings.field44670
-         * this.mc.gameSettings.field44670;
-      if (var12 > 0.0F) {
-         int var13 = !this.mc.player.isPotionActive(Effects.NAUSEA) ? 20 : 7;
-         float var14 = 5.0F / (var12 * var12 + 5.0F) - var12 * 0.04F;
-         var14 *= var14;
-         Vector3f var15 = new Vector3f(0.0F, MathHelper.field45205 / 2.0F, MathHelper.field45205 / 2.0F);
-         var10.rotate(var15.rotationDegrees(((float)this.field809 + var1) * (float)var13));
-         var10.method35292(1.0F / var14, 1.0F, 1.0F);
-         float var16 = -((float)this.field809 + var1) * (float)var13;
-         var10.rotate(var15.rotationDegrees(var16));
+      float f = MathHelper.lerp(partialTicks, this.mc.player.prevTimeInPortal, this.mc.player.timeInPortal)
+         * this.mc.gameSettings.screenEffectScale
+         * this.mc.gameSettings.screenEffectScale;
+      if (f > 0.0F) {
+         int i = !this.mc.player.isPotionActive(Effects.NAUSEA) ? 20 : 7;
+         float f1 = 5.0F / (f * f + 5.0F) - f * 0.04F;
+         f1 *= f1;
+         Vector3f vector3f = new Vector3f(0.0F, MathHelper.SQRT_2 / 2.0F, MathHelper.SQRT_2 / 2.0F);
+         matrixstack.rotate(vector3f.rotationDegrees(((float)this.rendererUpdateCount + partialTicks) * (float)i));
+         matrixstack.method35292(1.0F / f1, 1.0F, 1.0F);
+         float f2 = -((float)this.rendererUpdateCount + partialTicks) * (float)i;
+         matrixstack.rotate(vector3f.rotationDegrees(f2));
       }
 
-      if (Shaders.method33170()) {
-         var10 = var11;
+      if (Shaders.isEffectsModelView()) {
+         matrixstack = matrixstack1;
       }
 
-      Matrix4f var18 = var10.getLast().getMatrix();
-      this.method748(var18);
-      var9.method37497(
+      Matrix4f matrix4f = matrixstack.getLast().getMatrix();
+      this.method748(matrix4f);
+      activerenderinfo.update(
          this.mc.world,
          (Entity)(this.mc.getRenderViewEntity() != null ? this.mc.getRenderViewEntity() : this.mc.player),
          !this.mc.gameSettings.getPointOfView().func_243192_a(),
-         this.mc.gameSettings.getPointOfView().method8247(),
-         var1
+         this.mc.gameSettings.getPointOfView().func_243193_b(),
+         partialTicks
       );
-      if (Reflector.field42881.exists()) {
-         Object var20 = Reflector.field42881.method20217(this, var9, var1);
-         float var21 = Reflector.method35067(var20, Reflector.field42796);
-         float var22 = Reflector.method35067(var20, Reflector.field42797);
-         float var17 = Reflector.method35067(var20, Reflector.field42798);
-         var9.method37514(var21, var22);
-         var4.rotate(Vector3f.field32902.rotationDegrees(var17));
+      if (Reflector.ForgeHooksClient_onCameraSetup.exists()) {
+         Object object = Reflector.ForgeHooksClient_onCameraSetup.call(this, activerenderinfo, partialTicks);
+         float f4 = Reflector.callFloat(object, Reflector.EntityViewRenderEvent_CameraSetup_getYaw);
+         float f5 = Reflector.callFloat(object, Reflector.EntityViewRenderEvent_CameraSetup_getPitch);
+         float f3 = Reflector.callFloat(object, Reflector.EntityViewRenderEvent_CameraSetup_getRoll);
+         activerenderinfo.setAnglesInternal(f4, f5);
+         matrixStackIn.rotate(Vector3f.ZP.rotationDegrees(f3));
       }
 
-      var4.rotate(Vector3f.field32898.rotationDegrees(var9.getPitch()));
-      var4.rotate(Vector3f.YP.rotationDegrees(var9.getYaw() + 180.0F));
-      this.mc.worldRenderer.updateCameraAndRender(var4, var1, var2, var8, var9, this, this.field818, var18);
-      if (Reflector.field42865.exists()) {
+      matrixStackIn.rotate(Vector3f.XP.rotationDegrees(activerenderinfo.getPitch()));
+      matrixStackIn.rotate(Vector3f.YP.rotationDegrees(activerenderinfo.getYaw() + 180.0F));
+      this.mc.worldRenderer.updateCameraAndRender(matrixStackIn, partialTicks, finishTimeNano, flag1, activerenderinfo, this, this.lightmapTexture, matrix4f);
+      if (Reflector.ForgeHooksClient_dispatchRenderLast.exists()) {
          this.mc.getProfiler().endStartSection("forge_render_last");
-         Reflector.method35055(Reflector.field42865, this.mc.worldRenderer, var4, var1, var18, var2);
+         Reflector.callVoid(Reflector.ForgeHooksClient_dispatchRenderLast, this.mc.worldRenderer, matrixStackIn, partialTicks, matrix4f, finishTimeNano);
       }
 
       this.mc.getProfiler().endStartSection("hand");
       RenderSystem.pushMatrix();
-      RenderSystem.method27888(var4.getLast().getMatrix());
-      Client.getInstance().method19929();
+      RenderSystem.multMatrix(matrixStackIn.getLast().getMatrix());
+      Client.getInstance().hook3DRenderEvent();
       RenderSystem.popMatrix();
-      if (this.field814 && ! Shaders.field40609) {
-         if (var7) {
-            Class5463.method17155(this, var4, var9, var1);
-            Shaders.method33061();
+      if (this.renderHand && ! Shaders.isShadowPass) {
+         if (flag) {
+            ShadersRender.renderHand1(this, matrixStackIn, activerenderinfo, partialTicks);
+            Shaders.renderCompositeFinal();
          }
 
          RenderSystem.clear(256, Minecraft.IS_RUNNING_ON_MAC);
-         if (!var7) {
-            this.method746(var4, var9, var1);
+         if (!flag) {
+            this.renderHand(matrixStackIn, activerenderinfo, partialTicks);
          } else {
-            Class5463.method17157(this, var4, var9, var1);
+            ShadersRender.renderFPOverlay(this, matrixStackIn, activerenderinfo, partialTicks);
          }
       }
 
-      if (var7) {
-         Shaders.method33067();
+      if (flag) {
+         Shaders.endRender();
       }
 
       this.mc.getProfiler().endSection();
@@ -861,7 +864,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
 
    private void method757() {
       this.field840 = 0;
-      if (!Class7944.method26938() || !Class7944.method26937()) {
+      if (!Config.method26938() || !Config.isSingleProcessor()) {
          this.field837 = 0L;
          this.field838 = 0;
       } else if (this.mc.isIntegratedServerRunning()) {
@@ -871,7 +874,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
             if (!var4 && !(this.mc.currentScreen instanceof Class1312)) {
                if (this.field839 > 0) {
                   Class8578.field38580.method31034();
-                  Class7944.method26885((long)this.field839);
+                  Config.method26885((long)this.field839);
                   Class8578.field38580.method31035();
                   this.field840 = this.field839;
                }
@@ -911,7 +914,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
                }
             } else {
                if (this.mc.currentScreen instanceof Class1312) {
-                  Class7944.method26885(20L);
+                  Config.method26885(20L);
                }
 
                this.field837 = 0L;
@@ -922,12 +925,12 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    }
 
    private void method758() {
-      Class7944.method26990();
+      Config.method26990();
       Class9084.method33876();
       if (!this.field834) {
          Class9787.method38575();
-         if (Class7944.method26959() == 64 && Class7944.method26960() == 32) {
-            Class7944.method26962(true);
+         if (Config.method26959() == 64 && Config.method26960() == 32) {
+            Config.method26962(true);
          }
 
          this.field834 = true;
@@ -935,17 +938,17 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
 
       ClientWorld var3 = this.mc.world;
       if (var3 != null) {
-         if (Class7944.method26929() != null) {
+         if (Config.method26929() != null) {
             String var4 = "HD_U".replace("HD_U", "HD Ultra").replace("L", "Light");
-            String var5 = var4 + " " + Class7944.method26929();
+            String var5 = var4 + " " + Config.method26929();
             StringTextComponent var6 = new StringTextComponent(I18n.format("of.message.newVersion", "§n" + var5 + "§r"));
             var6.setStyle(Style.EMPTY.setClickEvent(new ClickEvent(ClickEvent$Action.OPEN_URL, "https://optifine.net/downloads")));
             this.mc.ingameGUI.getChatGUI().sendChatMessage(var6);
-            Class7944.method26930((String)null);
+            Config.method26930((String)null);
          }
 
-         if (Class7944.method26961()) {
-            Class7944.method26962(false);
+         if (Config.method26961()) {
+            Config.method26962(false);
             StringTextComponent var7 = new StringTextComponent(I18n.format("of.message.java64Bit"));
             this.mc.ingameGUI.getChatGUI().sendChatMessage(var7);
          }
@@ -957,7 +960,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
 
       if (this.field835 != var3) {
          Class9387.method35632(this.field835, var3);
-         Class7944.method26795();
+         Config.method26795();
          this.field837 = 0L;
          this.field838 = 0;
          this.field835 = var3;
@@ -973,10 +976,10 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    }
 
    private void method759() {
-      if (this.mc.world != null && Class7944.method26981() && Class4379.method13743("CheckGlErrorFrameFinish", 10000L)) {
+      if (this.mc.world != null && Config.method26981() && Class4379.method13743("CheckGlErrorFrameFinish", 10000L)) {
          int var3 = GlStateManager.method23859();
          if (var3 != 0 && Class9084.method33877(var3)) {
-            String var4 = Class7944.method26985(var3);
+            String var4 = Config.method26985(var3);
             StringTextComponent var5 = new StringTextComponent(I18n.format("of.message.openglError", var3, var4));
             this.mc.ingameGUI.getChatGUI().sendChatMessage(var5);
          }
@@ -1054,7 +1057,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          float var11 = var10 * (float) Math.PI;
          float var12 = this.field826 * (float)(var1 / 4);
          float var13 = this.field827 * (float)(var2 / 4);
-         RenderSystem.disableAlphaTest();
+         RenderSystem.enableAlphaTest();
          RenderSystem.pushMatrix();
          RenderSystem.method27814();
          RenderSystem.enableDepthTest();
@@ -1069,8 +1072,8 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          float var15 = 50.0F + 175.0F * MathHelper.sin(var11);
          var14.method35292(var15, -var15, var15);
          var14.rotate(Vector3f.YP.rotationDegrees(900.0F * MathHelper.method37771(MathHelper.sin(var11))));
-         var14.rotate(Vector3f.field32898.rotationDegrees(6.0F * MathHelper.cos(var7 * 8.0F)));
-         var14.rotate(Vector3f.field32902.rotationDegrees(6.0F * MathHelper.cos(var7 * 8.0F)));
+         var14.rotate(Vector3f.XP.rotationDegrees(6.0F * MathHelper.cos(var7 * 8.0F)));
+         var14.rotate(Vector3f.ZP.rotationDegrees(6.0F * MathHelper.cos(var7 * 8.0F)));
          Class7735 var16 = this.field808.method26536();
          this.mc.getItemRenderer().method789(this.field824, Class2327.field15932, 15728880, Class213.field798, var14, var16);
          var14.pop();
@@ -1119,7 +1122,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    }
 
    public float method767() {
-      return this.field805;
+      return this.farPlaneDistance;
    }
 
    public ActiveRenderInfo getActiveRenderInfo() {
@@ -1127,7 +1130,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
    }
 
    public Class1699 method769() {
-      return this.field818;
+      return this.lightmapTexture;
    }
 
    public Class213 method770() {

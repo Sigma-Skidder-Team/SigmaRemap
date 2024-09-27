@@ -13,7 +13,7 @@ public class Class4523 extends Class4510 {
          }
 
          if (!var1) {
-            RenderSystem.method27870(var1, var1, var1, var1);
+            RenderSystem.colorMask(var1, var1, var1, var1);
          }
       }, () -> {
          if (!var2) {
@@ -21,7 +21,7 @@ public class Class4523 extends Class4510 {
          }
 
          if (!var1) {
-            RenderSystem.method27870(true, true, true, true);
+            RenderSystem.colorMask(true, true, true, true);
          }
       });
       this.field21828 = var1;

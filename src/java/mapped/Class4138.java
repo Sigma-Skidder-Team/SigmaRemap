@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
+import net.optifine.Config;
 
 public class Class4138 extends Class4057 {
    public Class4138() {
@@ -45,7 +46,7 @@ public class Class4138 extends Class4057 {
          var6.field25098 = var2;
          return (Class9492)var6;
       } else {
-         Class7944.method26811("Field not found: RenderEvokerFangs.model");
+         Config.method26811("Field not found: RenderEvokerFangs.model");
          return null;
       }
    }

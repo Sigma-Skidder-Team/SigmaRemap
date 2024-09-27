@@ -33,6 +33,7 @@ import net.minecraft.client.multiplayer.ServerData;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.resources.DownloadingPackFinder;
+import net.minecraft.client.settings.PointOfView;
 import net.minecraft.client.util.Util;
 import net.minecraft.crash.CrashReport;
 import net.minecraft.crash.CrashReportCategory;
@@ -1309,7 +1310,7 @@ public class Minecraft extends RecursiveEventLoop<Runnable> implements ISnooperI
       if (this.world != null) {
          this.profiler.endStartSection("gameRenderer");
          if (!this.isGamePaused) {
-            this.gameRenderer.tick();
+            this.gameRenderer.renderWorld();
          }
 
          this.profiler.endStartSection("levelRenderer");

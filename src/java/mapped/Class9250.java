@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.optifine.Config;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -124,7 +125,7 @@ public class Class9250 {
          String var8 = var11[var7];
          Class7219 var9 = var1.method12823(var10, var8);
          if (var9 == null) {
-            Class7944.method26811("Model renderer not found, model: " + var1.method12827() + ", name: " + var8);
+            Config.method26811("Model renderer not found, model: " + var1.method12827() + ", name: " + var8);
          }
       }
    }
@@ -141,7 +142,7 @@ public class Class9250 {
             var5 = "" + TileEntityType.method13793((TileEntityType<?>)var6.method15004().get());
          }
 
-         Class7944.method26811("Model adapter already registered for id: " + var2 + ", type: " + var5);
+         Config.method26811("Model adapter already registered for id: " + var2 + ", type: " + var5);
       }
 
       var0.put(var2, var1);

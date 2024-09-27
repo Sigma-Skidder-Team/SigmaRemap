@@ -17,6 +17,7 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mojang.blaze3d.platform.GLX;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.renderer.texture.TextureUtil;
+import net.optifine.Config;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.PointerBuffer;
@@ -82,8 +83,8 @@ public final class MainWindow implements AutoCloseable {
       this.prevWindowHeight = this.height = var3.field45781 <= 0 ? 1 : var3.field45781;
       GLFW.glfwDefaultWindowHints();
       GuiManager.method33475();
-      if (Class7944.method26892()) {
-         GLFW.glfwWindowHint(135181, Class7944.method26891());
+      if (Config.method26892()) {
+         GLFW.glfwWindowHint(135181, Config.method26891());
       }
 
       GLFW.glfwWindowHint(139265, 196609);
