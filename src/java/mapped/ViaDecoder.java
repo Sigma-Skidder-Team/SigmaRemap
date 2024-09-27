@@ -19,7 +19,7 @@ public class ViaDecoder extends MessageToMessageDecoder<ByteBuf> {
 
          boolean var6 = this.field35932.method22448();
          if (this.field35932.method22468()) {
-            int var7 = Class4750.field22544.method14894(var2);
+            int var7 = BruhMotha.field22544.method14894(var2);
             ByteBuf var8 = var1.alloc().buffer();
 
             try {

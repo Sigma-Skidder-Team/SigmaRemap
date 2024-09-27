@@ -34,7 +34,7 @@ public class Class5980 extends Class5979 {
       this.method18545(this.field26050, var2.getAsJsonObject("fluid_tags"));
       this.method18546(field26051, var1.getAsJsonObject("enchantments"));
       this.field26055 = new Class7112(72, var1.getAsJsonObject("enchantments"), var2.getAsJsonObject("enchantments"));
-      if (ViaVersion3.method27612().method21929()) {
+      if (ViaVersion3.method27612().setFixLowSnowCollision()) {
          this.field26043.method22148()[1248] = 3416;
       }
 

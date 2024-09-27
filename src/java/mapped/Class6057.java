@@ -48,9 +48,9 @@ public class Class6057 extends Class6036 {
 
    public void method18745(int var1, Class9738 var2) {
       Class8563 var5 = new Class8563(60, null, this.method18672());
-      var5.method30560(Class4750.field22544, var1);
-      var5.method30560(Class4750.field22544, 1);
-      var5.method30560(Class4750.field22561, var2);
+      var5.method30560(BruhMotha.field22544, var1);
+      var5.method30560(BruhMotha.field22544, 1);
+      var5.method30560(BruhMotha.field22561, var2);
 
       try {
          var5.method30570(Class6363.class);
@@ -119,7 +119,7 @@ public class Class6057 extends Class6036 {
                   }
                }
 
-               if (var7.method31148() == 12 && ViaVersion3.method27612().method21932()) {
+               if (var7.method31148() == 12 && ViaVersion3.method27612().setLeftHandedHandling()) {
                   var2.add(new Class8656(13, Class1950.field12630, (byte)((((byte) var7.method31152()) & 128) != 0 ? 0 : 1)));
                }
             }
@@ -136,11 +136,11 @@ public class Class6057 extends Class6036 {
 
                   try {
                      Class8563 var10 = new Class8563(37, null, this.method18672());
-                     var10.method30560(Class4750.field22544, var1);
-                     var10.method30560(Class4750.field22534, (short)0);
-                     var10.method30560(Class4750.field22534, (short)((int)(128.0 * ViaVersion3.method27612().method21900() * 32.0)));
-                     var10.method30560(Class4750.field22534, (short)0);
-                     var10.method30560(Class4750.field22524, true);
+                     var10.method30560(BruhMotha.field22544, var1);
+                     var10.method30560(BruhMotha.field22534, (short)0);
+                     var10.method30560(BruhMotha.field22534, (short)((int)(128.0 * ViaVersion3.method27612().method21900() * 32.0)));
+                     var10.method30560(BruhMotha.field22534, (short)0);
+                     var10.method30560(BruhMotha.field22524, true);
                      var10.method30568(Class6363.class, true, false);
                   } catch (Exception var12) {
                   }
@@ -193,24 +193,24 @@ public class Class6057 extends Class6036 {
 
    public void method18750(boolean var1, boolean var2) {
       Class8563 var5 = new Class8563(65, null, this.method18672());
-      var5.method30560(Class4750.field22539, "viaversion");
+      var5.method30560(BruhMotha.field22539, "viaversion");
       if (var1) {
          if (!this.field26288) {
-            var5.method30560(Class4750.field22518, (byte)0);
-            var5.method30560(Class4750.field22539, "viaversion");
-            var5.method30560(Class4750.field22539, "§f");
-            var5.method30560(Class4750.field22539, "");
-            var5.method30560(Class4750.field22518, (byte)0);
-            var5.method30560(Class4750.field22539, "");
-            var5.method30560(Class4750.field22539, "never");
-            var5.method30560(Class4750.field22518, (byte)15);
+            var5.method30560(BruhMotha.field22518, (byte)0);
+            var5.method30560(BruhMotha.field22539, "viaversion");
+            var5.method30560(BruhMotha.field22539, "§f");
+            var5.method30560(BruhMotha.field22539, "");
+            var5.method30560(BruhMotha.field22518, (byte)0);
+            var5.method30560(BruhMotha.field22539, "");
+            var5.method30560(BruhMotha.field22539, "never");
+            var5.method30560(BruhMotha.field22518, (byte)15);
          } else {
-            var5.method30560(Class4750.field22518, (byte)3);
+            var5.method30560(BruhMotha.field22518, (byte)3);
          }
 
-         var5.method30560(Class4750.field22540, new String[]{this.method18672().method22465().method18679()});
+         var5.method30560(BruhMotha.field22540, new String[]{this.method18672().method22465().method18679()});
       } else {
-         var5.method30560(Class4750.field22518, (byte)1);
+         var5.method30560(BruhMotha.field22518, (byte)1);
       }
 
       this.field26288 = var1;
@@ -235,7 +235,7 @@ public class Class6057 extends Class6036 {
       List var4 = this.field26279.get(var1);
       if (var4 != null) {
          Class8563 var5 = new Class8563(57, null, this.method18672());
-         var5.method30560(Class4750.field22544, var1);
+         var5.method30560(BruhMotha.field22544, var1);
          var5.method30560(Class7593.field32598, var4);
          this.method18672()
             .method22465()

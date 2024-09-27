@@ -10,6 +10,6 @@ public class Class3011 implements Class3008 {
 
    @Override
    public void method11400(Class8563 var1) throws Exception {
-      var1.method30560(Class4750.field22544, 1);
+      var1.method30560(BruhMotha.field22544, 1);
    }
 }

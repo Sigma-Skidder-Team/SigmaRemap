@@ -5,7 +5,7 @@ import com.google.gson.JsonElement;
 public final class Class3046 extends Class3032<String, JsonElement> {
    private static String[] field18201;
 
-   public Class3046(Class4750 var1) {
+   public Class3046(BruhMotha var1) {
       super(var1);
    }
 

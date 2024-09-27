@@ -37,9 +37,9 @@ public class Class6100 {
 
    private static void method18855(Class9695 var0, short var1, Class72 var2, Class7161 var3) throws Exception {
       Class8563 var6 = new Class8563(9, null, var3);
-      var6.method30560(Class4750.field22551, var0);
-      var6.method30560(Class4750.field22522, var1);
-      var6.method30560(Class4750.field22555, var2);
+      var6.method30560(BruhMotha.field22551, var0);
+      var6.method30560(BruhMotha.field22522, var1);
+      var6.method30560(BruhMotha.field22555, var2);
       var6.method30567(Class6366.class, false);
    }
 

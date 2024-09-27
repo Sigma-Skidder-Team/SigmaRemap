@@ -98,7 +98,7 @@ public class ViaVersion1 {
          ViaVersion3.method27613().scheduleTaskImmediately(new Class697(), 1L);
       }
 
-      if (Class9019.field41258 < ViaVerList._1_13.getVersionNumber() && ViaVersion3.method27612().method21930() > 0) {
+      if (Class9019.field41258 < ViaVerList._1_13.getVersionNumber() && ViaVersion3.method27612().set113TabCompleteDelay() > 0) {
          ViaVersion3.method27613().scheduleTaskImmediately(new Class1579(), 1L);
       }
 

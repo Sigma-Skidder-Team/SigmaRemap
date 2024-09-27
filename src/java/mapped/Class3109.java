@@ -11,9 +11,9 @@ public class Class3109 implements Class2982 {
    @Override
    public void method11398(Class8563 var1) throws Exception {
       Class6047 var4 = var1.method30580().<Class6047>method22438(Class6047.class);
-      int var5 = var1.<Integer>method30555(Class4750.field22526, 1);
+      int var5 = var1.<Integer>method30555(BruhMotha.field22526, 1);
       var4.method18730(var5);
-      int var6 = var1.<Integer>method30555(Class4750.field22526, 0);
+      int var6 = var1.<Integer>method30555(BruhMotha.field22526, 0);
       Class1873 var7 = Class1873.field10755;
       Class6058 var8 = var1.method30580().<Class6058>method22438(Class6058.class);
       var8.method18666(var6, var7);

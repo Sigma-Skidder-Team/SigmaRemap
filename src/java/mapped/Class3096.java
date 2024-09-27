@@ -10,9 +10,9 @@ public class Class3096 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      short var4 = var1.<Short>method30555(Class4750.field22522, 0);
+      short var4 = var1.<Short>method30555(BruhMotha.field22522, 0);
       if (var4 != 255) {
-         Class9695 var5 = var1.<Class9695>method30555(Class4750.field22551, 0);
+         Class9695 var5 = var1.<Class9695>method30555(BruhMotha.field22551, 0);
          int var6 = var5.method37962();
          short var7 = var5.method37963();
          int var8 = var5.method37964();

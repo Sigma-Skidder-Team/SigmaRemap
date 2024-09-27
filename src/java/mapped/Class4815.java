@@ -2,7 +2,7 @@ package mapped;
 
 import io.netty.buffer.ByteBuf;
 
-public class Class4815 extends Class4750<Class8225> {
+public class Class4815 extends BruhMotha<Class8225> {
    private static final int field22596 = 14;
 
    public Class4815() {
@@ -20,15 +20,15 @@ public class Class4815 extends Class4750<Class8225> {
       if (var4 == 14) {
          var6 = new Class8225();
       } else {
-         int var7 = Class4750.field22544.method14907(var1);
+         int var7 = BruhMotha.field22544.method14907(var1);
          var6 = new Class8225(var7);
 
          for (int var8 = 0; var8 < var7; var8++) {
-            var6.method28635(Class4750.field22544.method14907(var1));
+            var6.method28635(BruhMotha.field22544.method14907(var1));
          }
       }
 
-      long[] var10 = new long[Class4750.field22544.method14907(var1)];
+      long[] var10 = new long[BruhMotha.field22544.method14907(var1)];
       if (var10.length > 0) {
          int var11 = (int)Math.ceil((double)(4096 * var4) / 64.0);
          if (var10.length != var11) {
@@ -67,15 +67,15 @@ public class Class4815 extends Class4750<Class8225> {
 
       var1.writeByte(var5);
       if (var5 != 14) {
-         Class4750.field22544.method14908(var1, var2.method28631());
+         BruhMotha.field22544.method14908(var1, var2.method28631());
 
          for (int var6 = 0; var6 < var2.method28631(); var6++) {
-            Class4750.field22544.method14908(var1, var2.method28632(var6));
+            BruhMotha.field22544.method14908(var1, var2.method28632(var6));
          }
       }
 
       long[] var12 = Class8505.method30110(var5, 4096, var5 != 14 ? var2::method28630 : var2::method28627);
-      Class4750.field22544.method14908(var1, var12.length);
+      BruhMotha.field22544.method14908(var1, var12.length);
 
       for (long var10 : var12) {
          var1.writeLong(var10);

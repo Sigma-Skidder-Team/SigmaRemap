@@ -4,7 +4,7 @@ import com.google.common.base.Preconditions;
 import io.netty.buffer.ByteBuf;
 import java.nio.charset.StandardCharsets;
 
-public class Class4790 extends Class4750<String> {
+public class Class4790 extends BruhMotha<String> {
    private static final int field22587 = Character.toString('\uffff').getBytes(StandardCharsets.UTF_8).length;
    private final int field22588;
 
@@ -18,7 +18,7 @@ public class Class4790 extends Class4750<String> {
    }
 
    public String method14894(ByteBuf var1) throws Exception {
-      int var4 = Class4750.field22544.method14907(var1);
+      int var4 = BruhMotha.field22544.method14907(var1);
       Preconditions.checkArgument(
          var4 <= this.field22588 * field22587, "Cannot receive string longer than Short.MAX_VALUE * " + field22587 + " bytes (got %s bytes)", var4
       );
@@ -33,7 +33,7 @@ public class Class4790 extends Class4750<String> {
    public void method14895(ByteBuf var1, String var2) throws Exception {
       Preconditions.checkArgument(var2.length() <= this.field22588, "Cannot send string longer than Short.MAX_VALUE (got %s characters)", var2.length());
       byte[] var5 = var2.getBytes(StandardCharsets.UTF_8);
-      Class4750.field22544.method14908(var1, var5.length);
+      BruhMotha.field22544.method14908(var1, var5.length);
       var1.writeBytes(var5);
    }
 }

@@ -4,7 +4,7 @@ import io.netty.buffer.ByteBuf;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Class4770 extends Class4750<Class8173> {
+public class Class4770 extends BruhMotha<Class8173> {
    private static final Class72[] field22579 = new Class72[0];
 
    public Class4770() {
@@ -15,14 +15,14 @@ public class Class4770 extends Class4750<Class8173> {
       int var4 = var1.readInt();
       int var5 = var1.readInt();
       boolean var6 = var1.readBoolean();
-      int var7 = Class4750.field22544.method14907(var1);
-      Class72 var8 = Class4750.field22555.method14894(var1);
+      int var7 = BruhMotha.field22544.method14907(var1);
+      Class72 var8 = BruhMotha.field22555.method14894(var1);
       int[] var9 = null;
       if (var6) {
-         var9 = Class4750.field22546.method14894(var1);
+         var9 = BruhMotha.field22546.method14894(var1);
       }
 
-      Class4750.field22544.method14907(var1);
+      BruhMotha.field22544.method14907(var1);
       Class8225[] var10 = new Class8225[16];
 
       for (int var11 = 0; var11 < 16; var11++) {
@@ -34,9 +34,9 @@ public class Class4770 extends Class4750<Class8173> {
          }
       }
 
-      ArrayList var14 = new ArrayList<Class72>(Arrays.asList(Class4750.field22556.method14894(var1)));
+      ArrayList var14 = new ArrayList<Class72>(Arrays.asList(BruhMotha.field22556.method14894(var1)));
       if (var1.readableBytes() > 0) {
-         byte[] var15 = Class4750.field22521.method14894(var1);
+         byte[] var15 = BruhMotha.field22521.method14894(var1);
          if (ViaVersion3.getInstance().method34425()) {
             ViaVersion3.method27613().getLogger().warning("Found " + var15.length + " more bytes than expected while reading the chunk: " + var4 + "/" + var5);
          }
@@ -49,10 +49,10 @@ public class Class4770 extends Class4750<Class8173> {
       var1.writeInt(var2.method28440());
       var1.writeInt(var2.method28441());
       var1.writeBoolean(var2.method28442());
-      Class4750.field22544.method14908(var1, var2.method28445());
-      Class4750.field22555.method14895(var1, var2.method28449());
+      BruhMotha.field22544.method14908(var1, var2.method28445());
+      BruhMotha.field22555.method14895(var1, var2.method28449());
       if (var2.method28439()) {
-         Class4750.field22546.method14895(var1, var2.method28447());
+         BruhMotha.field22546.method14895(var1, var2.method28447());
       }
 
       ByteBuf var5 = var1.alloc().buffer();
@@ -67,17 +67,17 @@ public class Class4770 extends Class4750<Class8173> {
          }
 
          var5.readerIndex(0);
-         Class4750.field22544.method14908(var1, var5.readableBytes());
+         BruhMotha.field22544.method14908(var1, var5.readableBytes());
          var1.writeBytes(var5);
       } finally {
          var5.release();
       }
 
-      Class4750.field22556.method14895(var1, var2.method28451().<Class72>toArray(field22579));
+      BruhMotha.field22556.method14895(var1, var2.method28451().<Class72>toArray(field22579));
    }
 
    @Override
-   public Class<? extends Class4750> method14897() {
+   public Class<? extends BruhMotha> method14897() {
       return Class4800.class;
    }
 }

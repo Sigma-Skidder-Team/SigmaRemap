@@ -3,7 +3,7 @@ package mapped;
 import java.util.List;
 import java.util.UUID;
 
-public class Class6912 extends Class6904 {
+public class Class6912 extends BitchNiggerPlane2 {
    public Class6912(Class6363 var1) {
       super(var1, Class6057.class);
    }

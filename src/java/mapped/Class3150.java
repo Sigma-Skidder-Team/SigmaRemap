@@ -12,9 +12,9 @@ public class Class3150 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      int var4 = var1.<Integer>method30555(Class4750.field22544, 0);
+      int var4 = var1.<Integer>method30555(BruhMotha.field22544, 0);
       if (var4 >= 0 && var4 <= 2) {
-         Class2980.method11397(var1.<JsonElement>method30561(Class4750.field22538));
+         Class2980.method11397(var1.<JsonElement>method30561(BruhMotha.field22538));
       }
    }
 }

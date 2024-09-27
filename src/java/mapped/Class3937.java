@@ -10,9 +10,9 @@ public class Class3937 extends Class3758 {
 
    @Override
    public void method12725() {
-      this.map(Class4750.field22526);
-      this.map(Class4750.field22551);
-      this.map(Class4750.field22526);
+      this.map(BruhMotha.field22526);
+      this.map(BruhMotha.field22551);
+      this.map(BruhMotha.field22526);
       this.method12733(new Class3127(this));
    }
 }

@@ -9,17 +9,17 @@ public class Class3071 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      int var4 = var1.<Integer>method30555(Class4750.field22544, 0);
+      int var4 = var1.<Integer>method30555(BruhMotha.field22544, 0);
 
       for (int var5 = 0; var5 < (var4 != 0 ? 1 : 2); var5++) {
-         int[] var6 = var1.<int[]>method30559(Class4750.field22546);
+         int[] var6 = var1.<int[]>method30559(BruhMotha.field22546);
          String[] var7 = new String[var6.length];
 
          for (int var8 = 0; var8 < var6.length; var8++) {
             var7[var8] = "viaversion:legacy/" + var6[var8];
          }
 
-         var1.method30560(Class4750.field22540, var7);
+         var1.method30560(BruhMotha.field22540, var7);
       }
    }
 }

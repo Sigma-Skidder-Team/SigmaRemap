@@ -14,7 +14,7 @@ public class Class4820 extends Class4819 {
          var5.method38162(var4);
          var5.method38164(var1.readByte());
          var5.method38166(var1.readShort());
-         var5.method38168(Class4750.field22555.method14894(var1));
+         var5.method38168(BruhMotha.field22555.method14894(var1));
          return var5;
       } else {
          return null;
@@ -26,7 +26,7 @@ public class Class4820 extends Class4819 {
          var1.writeShort(var2.method38161());
          var1.writeByte(var2.method38163());
          var1.writeShort(var2.method38165());
-         Class4750.field22555.method14895(var1, var2.method38167());
+         BruhMotha.field22555.method14895(var1, var2.method38167());
       } else {
          var1.writeShort(-1);
       }

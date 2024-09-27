@@ -4,7 +4,7 @@ public class Class3037 extends Class3032<Integer, Byte> {
    private static String[] field18188;
    public final Class3853 field18189;
 
-   public Class3037(Class3853 var1, Class4750 var2) {
+   public Class3037(Class3853 var1, BruhMotha var2) {
       super(var2);
       this.field18189 = var1;
    }

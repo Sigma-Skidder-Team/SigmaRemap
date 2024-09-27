@@ -31,8 +31,8 @@ public class Class5413 implements Class5402 {
    public void method17005(Class7161 var1) throws Exception {
       if (this.method17007()) {
          Class8563 var4 = new Class8563(27, null, var1);
-         var4.method30560(Class4750.field22526, var1.<Class6057>method22438(Class6057.class).method18753());
-         var4.method30560(Class4750.field22518, (byte)26);
+         var4.method30560(BruhMotha.field22526, var1.<Class6057>method22438(Class6057.class).method18753());
+         var4.method30560(BruhMotha.field22518, (byte)26);
          var4.method30570(Class6363.class);
          var1.<Class6045>method22438(Class6045.class).method18728(true);
       }

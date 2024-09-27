@@ -3,7 +3,7 @@ package mapped;
 import java.util.List;
 import java.util.Optional;
 
-public class Class6906 extends Class6904 {
+public class Class6906 extends BitchNiggerPlane2 {
    public Class6906(Class6386 var1) {
       super(var1, Class6055.class);
    }
@@ -85,11 +85,11 @@ public class Class6906 extends Class6904 {
 
                      try {
                         Class8563 var13 = new Class8563(37, null, var5);
-                        var13.method30560(Class4750.field22544, var1);
-                        var13.method30560(Class4750.field22534, (short)0);
-                        var13.method30560(Class4750.field22534, (short)((int)(128.0 * -ViaVersion3.method27612().method21900() * 32.0)));
-                        var13.method30560(Class4750.field22534, (short)0);
-                        var13.method30560(Class4750.field22524, true);
+                        var13.method30560(BruhMotha.field22544, var1);
+                        var13.method30560(BruhMotha.field22534, (short)0);
+                        var13.method30560(BruhMotha.field22534, (short)((int)(128.0 * -ViaVersion3.method27612().method21900() * 32.0)));
+                        var13.method30560(BruhMotha.field22534, (short)0);
+                        var13.method30560(BruhMotha.field22524, true);
                         var13.method30570(Class6386.class);
                      } catch (Exception var14) {
                         var14.printStackTrace();

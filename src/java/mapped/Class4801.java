@@ -2,7 +2,7 @@ package mapped;
 
 import io.netty.buffer.ByteBuf;
 
-public class Class4801 extends Class4750<Class8225> {
+public class Class4801 extends BruhMotha<Class8225> {
    private static final int field22589 = 13;
 
    public Class4801() {
@@ -24,18 +24,18 @@ public class Class4801 extends Class4750<Class8225> {
          var4 = 13;
       }
 
-      int var6 = Class4750.field22544.method14907(var1);
+      int var6 = BruhMotha.field22544.method14907(var1);
       Class8225 var7 = var4 == 13 ? new Class8225() : new Class8225(var6);
 
       for (int var8 = 0; var8 < var6; var8++) {
          if (var4 == 13) {
-            Class4750.field22544.method14907(var1);
+            BruhMotha.field22544.method14907(var1);
          } else {
-            var7.method28635(Class4750.field22544.method14907(var1));
+            var7.method28635(BruhMotha.field22544.method14907(var1));
          }
       }
 
-      long[] var11 = new long[Class4750.field22544.method14907(var1)];
+      long[] var11 = new long[BruhMotha.field22544.method14907(var1)];
       if (var11.length > 0) {
          int var9 = (int)Math.ceil((double)(4096 * var4) / 64.0);
          if (var11.length != var9) {
@@ -75,17 +75,17 @@ public class Class4801 extends Class4750<Class8225> {
       long var6 = (1L << var5) - 1L;
       var1.writeByte(var5);
       if (var5 == 13) {
-         Class4750.field22544.method14908(var1, 0);
+         BruhMotha.field22544.method14908(var1, 0);
       } else {
-         Class4750.field22544.method14908(var1, var2.method28631());
+         BruhMotha.field22544.method14908(var1, var2.method28631());
 
          for (int var8 = 0; var8 < var2.method28631(); var8++) {
-            Class4750.field22544.method14908(var1, var2.method28632(var8));
+            BruhMotha.field22544.method14908(var1, var2.method28632(var8));
          }
       }
 
       long[] var14 = Class8505.method30110(var5, 4096, var5 != 13 ? var2::method28630 : var2::method28627);
-      Class4750.field22544.method14908(var1, var14.length);
+      BruhMotha.field22544.method14908(var1, var14.length);
 
       for (long var12 : var14) {
          var1.writeLong(var12);

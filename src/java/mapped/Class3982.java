@@ -14,7 +14,7 @@ public class Class3982 extends Class3758 {
    @Override
    public void method12725() {
       this.method12733(var0 -> {
-         String var3 = var0.<String>method30561(Class4750.field22539);
+         String var3 = var0.<String>method30561(BruhMotha.field22539);
          JsonObject var4 = (JsonObject)Class9610.method37357().fromJson(var3, JsonObject.class);
          JsonObject var5 = var4.getAsJsonObject("players");
          if (var5 != null) {
@@ -41,7 +41,7 @@ public class Class3982 extends Class3758 {
 
                if (var7.size() != var6.size()) {
                   var5.add("sample", var7);
-                  var0.method30558(Class4750.field22539, 0, var4.toString());
+                  var0.method30558(BruhMotha.field22539, 0, var4.toString());
                }
             }
          }

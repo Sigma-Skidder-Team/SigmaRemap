@@ -15,13 +15,13 @@ public final class Class3860 extends Class3758 {
    public void method12725() {
       this.method12733(var1 -> {
          var1.method30578();
-         int var4 = var1.<Integer>method30559(Class4750.field22526);
-         int var5 = var1.<Integer>method30559(Class4750.field22526);
+         int var4 = var1.<Integer>method30559(BruhMotha.field22526);
+         int var5 = var1.<Integer>method30559(BruhMotha.field22526);
          long var6 = 0L;
          var6 |= ((long)var4 & 4194303L) << 42;
          var6 |= ((long)var5 & 4194303L) << 20;
          List[] var8 = new List[16];
-         Class6949[] var9 = var1.<Class6949[]>method30559(Class4750.field22564);
+         Class6949[] var9 = var1.<Class6949[]>method30559(BruhMotha.field22564);
 
          for (Class6949 var13 : var9) {
             int var14 = var13.method21454() >> 4;
@@ -38,9 +38,9 @@ public final class Class3860 extends Class3758 {
             List<Class6949> var20 = var8[var19];
             if (var20 != null) {
                Class8563 var21 = var1.method30573(Class1936.field12551.method8194());
-               var21.method30560(Class4750.field22530, var6 | (long)var19 & 1048575L);
-               var21.method30560(Class4750.field22524, false);
-               var21.method30560(Class4750.field22566, var20.toArray(Class8267.method28835()));
+               var21.method30560(BruhMotha.field22530, var6 | (long)var19 & 1048575L);
+               var21.method30560(BruhMotha.field22524, false);
+               var21.method30560(BruhMotha.field22566, var20.toArray(Class8267.method28835()));
                var21.method30568(Class6357.class, true, true);
             }
          }

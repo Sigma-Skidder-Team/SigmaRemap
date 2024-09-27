@@ -7,8 +7,8 @@ import java.util.Optional;
 public class Class9687 {
    private static final String field45297 = "ViaVersion|" + Class6380.class.getSimpleName();
 
-   public static void method37922(Class6380 var0) {
-      Class8123 var3 = new Class8123(var0, Class9687::method37923, Class9687::method37925);
+   public static void init(Class6380 var0) {
+      BitchNiggerOffPlane var3 = new BitchNiggerOffPlane(var0, Class9687::method37923, Class9687::method37925);
       var0.method19360(Class1914.field11378, new Class3762(var3));
       var0.method19360(Class1914.field11376, new Class3921(var3));
       var0.method19360(Class1914.field11377, new Class3896(var0));

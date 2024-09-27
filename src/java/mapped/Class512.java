@@ -15,7 +15,7 @@ public class Class512 implements Runnable {
    }
 
    public static Integer method1892(String var0) {
-      Map var3 = ((ResourceManager) ViaVersion3.method27612()).method21922();
+      Map var3 = ((ResourceManager) ViaVersion3.method27612()).setVelocityServers();
       Integer var4 = (Integer)var3.get(var0);
       if (var4 != null) {
          return var4;

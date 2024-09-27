@@ -3,9 +3,9 @@ package mapped;
 public class Class9524 {
    private static String[] field44327;
    private final ViaVersion7 field44328;
-   private final Class4750<Class9695> field44329;
+   private final BruhMotha<Class9695> field44329;
 
-   public Class9524(ViaVersion7 var1, Class4750<Class9695> var2) {
+   public Class9524(ViaVersion7 var1, BruhMotha<Class9695> var2) {
       this.field44328 = var1;
       this.field44329 = var2;
    }
@@ -35,7 +35,7 @@ public class Class9524 {
    }
 
    // $VF: synthetic method
-   public static Class4750 method36805(Class9524 var0) {
+   public static BruhMotha method36805(Class9524 var0) {
       return var0.field44329;
    }
 

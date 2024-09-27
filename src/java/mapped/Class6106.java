@@ -17,7 +17,7 @@ public final class Class6106 implements Class6105 {
       }
 
       Class9687.method37923(var5);
-      var1.method30773().add(new Class9231(Class4750.field22568, var5));
+      var1.method30773().add(new Class9231(BruhMotha.field22568, var5));
       return var1;
    }
 }

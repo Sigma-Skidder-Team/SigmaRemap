@@ -9,20 +9,20 @@ public class Class8770 {
    private static final Class7080 field39468 = new Class7084();
 
    public static void method31634(ViaVersion7 var0) {
-      Class8123 var3 = new Class8123(var0, Class8770::method31635, Class8770::method31636);
+      BitchNiggerOffPlane var3 = new BitchNiggerOffPlane(var0, Class8770::method31635, Class8770::method31636);
       var3.method28132(Class1932.field12206);
-      var3.method28134(Class1932.field12263, Class4750.field22569);
+      var3.method28134(Class1932.field12263, BruhMotha.field22569);
       var0.method19361(Class1932.field12202, null, new Class3813());
-      var3.method28126(Class1932.field12203, Class4750.field22571);
-      var3.method28127(Class1932.field12205, Class4750.field22569);
+      var3.method28126(Class1932.field12203, BruhMotha.field22571);
+      var3.method28127(Class1932.field12205, BruhMotha.field22569);
       var0.method19360(Class1932.field12207, new Class3980());
-      var3.method28128(Class1932.field12248, Class4750.field22569);
+      var3.method28128(Class1932.field12248, BruhMotha.field22569);
       Class4661 var4 = new Class4661(var0, Class8770::method31635);
       var0.method19360(Class1932.field12266, new Class3812(var4));
-      var3.method28131(Class1922.field11826, Class4750.field22569);
+      var3.method28131(Class1922.field11826, BruhMotha.field22569);
       var0.method19364(Class1922.field11850, new Class3945());
-      var3.method28130(Class1922.field11855, Class4750.field22569);
-      var3.method28135(Class1932.field12218, Class4750.field22569, Class4750.field22532);
+      var3.method28130(Class1922.field11855, BruhMotha.field22569);
+      var3.method28135(Class1932.field12218, BruhMotha.field22569, BruhMotha.field22532);
    }
 
    public static void method31635(Class9738 var0) {

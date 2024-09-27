@@ -10,6 +10,6 @@ public class Class3027 implements Class3008 {
 
    @Override
    public void method11400(Class8563 var1) {
-      var1.method30560(Class4750.field22524, true);
+      var1.method30560(BruhMotha.field22524, true);
    }
 }

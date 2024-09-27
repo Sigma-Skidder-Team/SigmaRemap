@@ -15,7 +15,7 @@ public class Class3065 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      String var4 = var1.<String>method30555(Class4750.field22539, 0);
+      String var4 = var1.<String>method30555(BruhMotha.field22539, 0);
       if (!var4.equalsIgnoreCase("MC|StopSound")) {
          if (!var4.equalsIgnoreCase("MC|TrList")) {
             var4 = Class9687.method37924(var4);
@@ -29,7 +29,7 @@ public class Class3065 implements Class2982 {
             }
 
             if (var4.equals("minecraft:register") || var4.equals("minecraft:unregister")) {
-               String[] var14 = new String(var1.<byte[]>method30559(Class4750.field22521), StandardCharsets.UTF_8).split("\u0000");
+               String[] var14 = new String(var1.<byte[]>method30559(BruhMotha.field22521), StandardCharsets.UTF_8).split("\u0000");
                ArrayList var16 = new ArrayList();
 
                for (int var18 = 0; var18 < var14.length; var18++) {
@@ -48,41 +48,41 @@ public class Class3065 implements Class2982 {
                   return;
                }
 
-               var1.method30560(Class4750.field22521, Joiner.on('\u0000').join(var16).getBytes(StandardCharsets.UTF_8));
+               var1.method30560(BruhMotha.field22521, Joiner.on('\u0000').join(var16).getBytes(StandardCharsets.UTF_8));
             }
          } else {
             var4 = "minecraft:trader_list";
-            var1.<Integer>method30561(Class4750.field22526);
-            short var13 = var1.<Short>method30561(Class4750.field22522);
+            var1.<Integer>method30561(BruhMotha.field22526);
+            short var13 = var1.<Short>method30561(BruhMotha.field22522);
 
             for (int var15 = 0; var15 < var13; var15++) {
-               Class9738 var17 = var1.<Class9738>method30559(Class4750.field22561);
+               Class9738 var17 = var1.<Class9738>method30559(BruhMotha.field22561);
                Class9687.method37923(var17);
-               var1.method30560(Class4750.field22568, var17);
-               Class9738 var19 = var1.<Class9738>method30559(Class4750.field22561);
+               var1.method30560(BruhMotha.field22568, var17);
+               Class9738 var19 = var1.<Class9738>method30559(BruhMotha.field22561);
                Class9687.method37923(var19);
-               var1.method30560(Class4750.field22568, var19);
-               boolean var20 = var1.<Boolean>method30561(Class4750.field22524);
+               var1.method30560(BruhMotha.field22568, var19);
+               boolean var20 = var1.<Boolean>method30561(BruhMotha.field22524);
                if (var20) {
-                  Class9738 var10 = var1.<Class9738>method30559(Class4750.field22561);
+                  Class9738 var10 = var1.<Class9738>method30559(BruhMotha.field22561);
                   Class9687.method37923(var10);
-                  var1.method30560(Class4750.field22568, var10);
+                  var1.method30560(BruhMotha.field22568, var10);
                }
 
-               var1.<Boolean>method30561(Class4750.field22524);
-               var1.<Integer>method30561(Class4750.field22526);
-               var1.<Integer>method30561(Class4750.field22526);
+               var1.<Boolean>method30561(BruhMotha.field22524);
+               var1.<Integer>method30561(BruhMotha.field22526);
+               var1.<Integer>method30561(BruhMotha.field22526);
             }
          }
 
-         var1.method30558(Class4750.field22539, 0, var4);
+         var1.method30558(BruhMotha.field22539, 0, var4);
       } else {
-         String var5 = var1.<String>method30559(Class4750.field22539);
-         String var6 = var1.<String>method30559(Class4750.field22539);
+         String var5 = var1.<String>method30559(BruhMotha.field22539);
+         String var6 = var1.<String>method30559(BruhMotha.field22539);
          var1.method30565();
          var1.method30587(76);
          byte var7 = 0;
-         var1.method30560(Class4750.field22518, var7);
+         var1.method30560(BruhMotha.field22518, var7);
          if (!var5.isEmpty()) {
             var7 = (byte)(var7 | 1);
             Optional var8 = Class2299.method9064(var5);
@@ -94,15 +94,15 @@ public class Class3065 implements Class2982 {
                var8 = Optional.<Class2299>of(Class2299.field15690);
             }
 
-            var1.method30560(Class4750.field22544, ((Class2299)var8.get()).method9066());
+            var1.method30560(BruhMotha.field22544, ((Class2299)var8.get()).method9066());
          }
 
          if (!var6.isEmpty()) {
             var7 = (byte)(var7 | 2);
-            var1.method30560(Class4750.field22539, var6);
+            var1.method30560(BruhMotha.field22539, var6);
          }
 
-         var1.method30558(Class4750.field22518, 0, var7);
+         var1.method30558(BruhMotha.field22518, 0, var7);
       }
    }
 }

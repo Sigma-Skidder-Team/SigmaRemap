@@ -13,9 +13,9 @@ public class Class9384 {
 
    public static Class9384 method35610(Class8563 var0, boolean var1) throws Exception {
       Class9384 var4 = new Class9384();
-      var4.method35612(var0.<Integer>method30559(Class4750.field22526));
-      var4.method35614(var0.<Integer>method30559(Class4750.field22526));
-      var4.method35616(var0.<Integer>method30559(Class4750.field22536));
+      var4.method35612(var0.<Integer>method30559(BruhMotha.field22526));
+      var4.method35614(var0.<Integer>method30559(BruhMotha.field22526));
+      var4.method35616(var0.<Integer>method30559(BruhMotha.field22536));
       int var5 = Integer.bitCount(var4.method35615());
       var4.method35618(var5 * 10240 + (!var1 ? 0 : var5 * 2048) + 256);
       return var4;

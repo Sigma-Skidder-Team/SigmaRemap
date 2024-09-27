@@ -5,7 +5,7 @@ public class Class8267 {
    private static final Class6949[] field35534 = new Class6949[0];
 
    public static void method28834(ViaVersion7 var0) {
-      Class9524 var3 = new Class9524(var0, Class4750.field22552);
+      Class9524 var3 = new Class9524(var0, BruhMotha.field22552);
       var3.method36799(Class1917.field11638);
       var3.method36800(Class1917.field11639);
       var3.method36803(Class1917.field11635);

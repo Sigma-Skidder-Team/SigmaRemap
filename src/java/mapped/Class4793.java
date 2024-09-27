@@ -3,7 +3,7 @@ package mapped;
 import io.netty.buffer.ByteBuf;
 import java.nio.ByteOrder;
 
-public class Class4793 extends Class4750<Class8225> {
+public class Class4793 extends BruhMotha<Class8225> {
    public Class4793() {
       super("Chunk Section Type", Class8225.class);
    }

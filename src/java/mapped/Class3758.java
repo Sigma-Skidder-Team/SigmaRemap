@@ -11,16 +11,16 @@ public abstract class Class3758 {
       this.method12725();
    }
 
-   public void map(Class4750 var1) {
+   public void map(BruhMotha var1) {
       Class3030 var4 = new Class3030(var1);
       this.method12731(var4, var4);
    }
 
-   public void method12727(Class4750 var1, Class4750 var2) {
+   public void method12727(BruhMotha var1, BruhMotha var2) {
       this.method12731(new Class3030(var1), new Class3030(var2));
    }
 
-   public <T1, T2> void method12728(Class4750<T1> var1, Class4750<T2> var2, Function<T1, T2> var3) {
+   public <T1, T2> void method12728(BruhMotha<T1> var1, BruhMotha<T2> var2, Function<T1, T2> var3) {
       this.method12731(new Class3030<T1>(var1), new Class3041(this, var2, var3));
    }
 
@@ -32,7 +32,7 @@ public abstract class Class3758 {
       }
    }
 
-   public <T1, T2> void method12730(Class4750<T1> var1, Class3032<T1, T2> var2) {
+   public <T1, T2> void method12730(BruhMotha<T1> var1, Class3032<T1, T2> var2) {
       this.method12731(new Class3030<T1>(var1), var2);
    }
 
@@ -41,11 +41,11 @@ public abstract class Class3758 {
    }
 
    public void method12732(Class3008 var1) {
-      this.method12731(new Class3030<Void>(Class4750.field22550), var1);
+      this.method12731(new Class3030<Void>(BruhMotha.field22550), var1);
    }
 
    public void method12733(Class2982 var1) {
-      this.method12731(new Class3030<>(Class4750.field22550), var1);
+      this.method12731(new Class3030<>(BruhMotha.field22550), var1);
    }
 
    public abstract void method12725();

@@ -10,11 +10,11 @@ public class Class3125 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      int var4 = var1.<Integer>method30559(Class4750.field22544);
+      int var4 = var1.<Integer>method30559(BruhMotha.field22544);
       var1.method30564();
       var1.method30587(8);
-      var1.method30560(Class4750.field22551, new Class9695(-1, (short)-1, -1));
-      var1.method30560(Class4750.field22522, (short)255);
+      var1.method30560(BruhMotha.field22551, new Class9695(-1, (short)-1, -1));
+      var1.method30560(BruhMotha.field22522, (short)255);
       Class9738 var5 = Class6363.method19383(var1.method30580());
       if (ViaVersion3.method27612().method21895()) {
          Class6057 var6 = var1.method30580().<Class6057>method22438(Class6057.class);
@@ -32,9 +32,9 @@ public class Class3125 implements Class2982 {
          }
       }
 
-      var1.method30560(Class4750.field22561, var5);
-      var1.method30560(Class4750.field22522, (short)0);
-      var1.method30560(Class4750.field22522, (short)0);
-      var1.method30560(Class4750.field22522, (short)0);
+      var1.method30560(BruhMotha.field22561, var5);
+      var1.method30560(BruhMotha.field22522, (short)0);
+      var1.method30560(BruhMotha.field22522, (short)0);
+      var1.method30560(BruhMotha.field22522, (short)0);
    }
 }

@@ -31,7 +31,7 @@ public class Class6374 extends Class6373 {
    }
 
    public UUID method19387(Class8563 var1) throws Exception {
-      String var4 = var1.<String>method30561(Class4750.field22539);
+      String var4 = var1.<String>method30561(BruhMotha.field22539);
       if (var4.length() == 32) {
          var4 = method19386(var4);
       }

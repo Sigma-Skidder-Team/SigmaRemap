@@ -14,11 +14,11 @@ public class Class3990 extends Class3758 {
 
    @Override
    public void method12725() {
-      this.map(Class4750.field22538);
-      this.map(Class4750.field22518);
+      this.map(BruhMotha.field22538);
+      this.map(BruhMotha.field22518);
       this.method12733(var1 -> {
-         field20295.method21999(var1.<JsonElement>method30555(Class4750.field22538, 0));
-         var1.method30560(Class4750.field22541, Class6356.method19379());
+         field20295.method21999(var1.<JsonElement>method30555(BruhMotha.field22538, 0));
+         var1.method30560(BruhMotha.field22541, Class6356.method19379());
       });
    }
 }

@@ -48,14 +48,14 @@ public class Class7136 {
    }
 
    private void method22255(Class8563 var1, Class7981 var2, List<Class8771> var3) throws Exception {
-      int var6 = var1.<Integer>method30559(Class4750.field22544);
-      var1.method30560(Class4750.field22544, var3 == null ? var6 : var6 + var3.size());
+      int var6 = var1.<Integer>method30559(BruhMotha.field22544);
+      var1.method30560(BruhMotha.field22544, var3 == null ? var6 : var6 + var3.size());
 
       for (int var7 = 0; var7 < var6; var7++) {
-         var1.<String>method30561(Class4750.field22539);
-         int[] var8 = var1.<int[]>method30559(Class4750.field22546);
+         var1.<String>method30561(BruhMotha.field22539);
+         int[] var8 = var1.<int[]>method30559(BruhMotha.field22546);
          if (var2 == null) {
-            var1.method30560(Class4750.field22546, var8);
+            var1.method30560(BruhMotha.field22546, var8);
          } else {
             IntArrayList var9 = new IntArrayList(var8.length);
 
@@ -66,14 +66,14 @@ public class Class7136 {
                }
             }
 
-            var1.method30560(Class4750.field22546, var9.toArray(field30687));
+            var1.method30560(BruhMotha.field22546, var9.toArray(field30687));
          }
       }
 
       if (var3 != null && !var3.isEmpty()) {
          for (Class8771 var16 : var3) {
-            var1.method30560(Class4750.field22539, Class8771.method31639(var16));
-            var1.method30560(Class4750.field22546, Class8771.method31640(var16));
+            var1.method30560(BruhMotha.field22539, Class8771.method31639(var16));
+            var1.method30560(BruhMotha.field22546, Class8771.method31640(var16));
          }
       }
    }

@@ -6,13 +6,13 @@ import java.util.Map;
 import java.util.Set;
 
 public class Class6380 extends ViaVersion7<Class1914, Class1932, Class1924, Class1921> {
-   private static String[] field27946;
-   public static final Class5980 field27947 = new Class5980();
+   private BitchNiggerPlane bitchNiggerPlane;
+    public static final Class5980 field27947 = new Class5980();
    public static final Class2982 field27948 = var0 -> {
-      Class9695 var3 = var0.<Class9695>method30559(Class4750.field22551);
-      var0.method30560(Class4750.field22526, var3.method37962());
-      var0.method30560(Class4750.field22526, Integer.valueOf(var3.method37963()));
-      var0.method30560(Class4750.field22526, var3.method37964());
+      Class9695 var3 = var0.<Class9695>method30559(BruhMotha.field22551);
+      var0.method30560(BruhMotha.field22526, var3.method37962());
+      var0.method30560(BruhMotha.field22526, Integer.valueOf(var3.method37963()));
+      var0.method30560(BruhMotha.field22526, var3.method37964());
    };
    private static final Class2982 field27949 = var0 -> {
       var0.method30574(17, new Class3018()).method30570(Class6380.class);
@@ -29,10 +29,10 @@ public class Class6380 extends ViaVersion7<Class1914, Class1932, Class1924, Clas
 
    @Override
    public void method19341() {
-      new Class6908(this);
-      Class9440.method36290(this);
-      Class7795.method25885(this);
-      Class9687.method37922(this);
+      bitchNiggerPlane = new BitchNiggerPlane(this);
+      Class9440.init(this);
+      Class7795.init(this);
+      Class9687.init(this);
       this.method19356(Class187.field701, 0, 0, new Class4011(this));
       this.method19356(Class187.field700, 0, 0, new Class3902(this));
       this.method19360(Class1914.field11363, new Class3895(this));

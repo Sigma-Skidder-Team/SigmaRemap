@@ -2,7 +2,7 @@ package mapped;
 
 public class Class6354 extends ViaVersion7<Class1935, Class1931, Class1928, Class1929> {
    private static String[] field27908;
-   public static final Class3032<Short, Short> field27909 = new Class3040(Class4750.field22522, Class4750.field22522);
+   public static final Class3032<Short, Short> field27909 = new Class3040(BruhMotha.field22522, BruhMotha.field22522);
 
    public Class6354() {
       super(Class1935.class, Class1931.class, Class1928.class, Class1929.class);

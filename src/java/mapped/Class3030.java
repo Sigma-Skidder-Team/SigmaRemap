@@ -2,9 +2,9 @@ package mapped;
 
 public class Class3030<T> implements Class3031<T>, Class3007<T> {
    private static String[] field18179;
-   private final Class4750<T> field18180;
+   private final BruhMotha<T> field18180;
 
-   public Class3030(Class4750<T> var1) {
+   public Class3030(BruhMotha<T> var1) {
       this.field18180 = var1;
    }
 

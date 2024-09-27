@@ -168,7 +168,7 @@ public class Class7161 {
          ChannelHandlerContext var6 = Class8190.method28488(ViaVersion3.getInstance().method34427().method20576(), this.field30796.pipeline());
 
          try {
-            Class4750.field22544.method14908(var5, 1000);
+            BruhMotha.field22544.method14908(var5, 1000);
          } catch (Exception var14) {
             ViaVersion3.method27613().getLogger().warning("Type.VAR_INT.write thrown an exception: " + var14);
          }
@@ -248,7 +248,7 @@ public class Class7161 {
    }
 
    private void method22462(ByteBuf var1, Class2302 var2, Function<Throwable, Exception> var3) throws Exception {
-      int var6 = Class4750.field22544.method14907(var1);
+      int var6 = BruhMotha.field22544.method14907(var1);
       if (var6 != 1000) {
          Class8563 var7 = new Class8563(var6, var1, this);
 

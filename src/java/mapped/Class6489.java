@@ -20,7 +20,7 @@ public class Class6489 extends Class6490 {
    }
 
    @Override
-   public Set<Class8189> method19687(BlockPos var1, BlockState var2, Class8982 var3) {
+   public Set<Class8189> method19687(BlockPos var1, BlockState var2, ViaVersionFixer var3) {
       HashSet var6 = new HashSet();
       BlockState var7 = Minecraft.getInstance().world.getBlockState(var1);
       if (var7.getBlock() instanceof Class3222) {
@@ -31,7 +31,7 @@ public class Class6489 extends Class6490 {
    }
 
    @Override
-   public Set<Class8189> method19688(BlockPos var1, BlockState var2, Class8982 var3) {
+   public Set<Class8189> method19688(BlockPos var1, BlockState var2, ViaVersionFixer var3) {
       HashSet var6 = new HashSet();
       BlockRayTraceResult var7 = new BlockRayTraceResult(new Vector3d(0.0, 0.0, 0.0), Direction.field673, var1, false);
       Class5909 var8 = new Class5909(this.field28457.world, this.field28457.player, Hand.MAIN_HAND, new ItemStack(var2.getBlock()), var7);

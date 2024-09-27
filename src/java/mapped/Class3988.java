@@ -10,16 +10,16 @@ public final class Class3988 extends Class3758 {
 
    @Override
    public void method12725() {
-      this.map(Class4750.field22526);
-      this.map(Class4750.field22524);
-      this.method12727(Class4750.field22532, Class4750.field22528);
-      this.method12727(Class4750.field22532, Class4750.field22528);
-      this.method12727(Class4750.field22532, Class4750.field22528);
-      this.map(Class4750.field22532);
-      this.map(Class4750.field22532);
-      this.map(Class4750.field22532);
-      this.map(Class4750.field22532);
-      this.map(Class4750.field22526);
+      this.map(BruhMotha.field22526);
+      this.map(BruhMotha.field22524);
+      this.method12727(BruhMotha.field22532, BruhMotha.field22528);
+      this.method12727(BruhMotha.field22532, BruhMotha.field22528);
+      this.method12727(BruhMotha.field22532, BruhMotha.field22528);
+      this.map(BruhMotha.field22532);
+      this.map(BruhMotha.field22532);
+      this.map(BruhMotha.field22532);
+      this.map(BruhMotha.field22532);
+      this.map(BruhMotha.field22526);
       this.method12733(new Class3172(this));
    }
 }

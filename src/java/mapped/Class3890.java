@@ -9,7 +9,7 @@ public class Class3890 extends Class3758 {
 
    @Override
    public void method12725() {
-      this.method12732(var0 -> var0.method30560(Class4750.field22539, "MC|TrSel"));
-      this.method12727(Class4750.field22544, Class4750.field22526);
+      this.method12732(var0 -> var0.method30560(BruhMotha.field22539, "MC|TrSel"));
+      this.method12727(BruhMotha.field22544, BruhMotha.field22526);
    }
 }

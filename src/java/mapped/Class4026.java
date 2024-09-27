@@ -11,9 +11,9 @@ public class Class4026 extends Class3758 {
    @Override
    public void method12725() {
       this.method12733(var0 -> {
-         var0.<Byte>method30561(Class4750.field22518);
-         var0.method30560(Class4750.field22532, 0.05F);
-         var0.method30560(Class4750.field22532, 0.1F);
+         var0.<Byte>method30561(BruhMotha.field22518);
+         var0.method30560(BruhMotha.field22532, 0.05F);
+         var0.method30560(BruhMotha.field22532, 0.1F);
       });
    }
 }

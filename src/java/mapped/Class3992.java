@@ -1,17 +1,18 @@
 package mapped;
 
 public final class Class3992 extends Class3758 {
-   private static String[] field20298;
-   public final Class8123 field20299;
+   public final BitchNiggerOffPlane anothaOne;
 
-   public Class3992(Class8123 var1) {
-      this.field20299 = var1;
+   public Class3992(BitchNiggerOffPlane var1) {
+      this.anothaOne = var1;
    }
 
    @Override
    public void method12725() {
-      this.map(Class4750.field22534);
-      this.method12727(Class4750.field22568, Class4750.field22561);
-      this.method12733(this.field20299.method28138(Class4750.field22561));
+      this.map(BruhMotha.field22534);
+      this.method12727(BruhMotha.field22568, BruhMotha.field22561);
+      if (this.anothaOne != null) {
+         this.method12733(this.anothaOne.method28138(BruhMotha.field22561));
+      }
    }
 }

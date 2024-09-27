@@ -12,15 +12,15 @@ public class Class3171 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      int var4 = var1.<Integer>method30559(Class4750.field22544);
+      int var4 = var1.<Integer>method30559(BruhMotha.field22544);
       List<Class5624> var5 = new ArrayList();
 
       for (int var6 = 0; var6 < var4; var6++) {
-         String var7 = var1.<String>method30559(Class4750.field22539);
+         String var7 = var1.<String>method30559(BruhMotha.field22539);
          String[] var8 = var7.split("\\.");
          byte var9 = 0;
          int var10 = -1;
-         int var11 = var1.<Integer>method30559(Class4750.field22544);
+         int var11 = var1.<Integer>method30559(BruhMotha.field22544);
          if (var8.length == 2) {
             var9 = 8;
             Integer var12 = Class7711.field33103.get(var7);
@@ -63,12 +63,12 @@ public class Class3171 implements Class2982 {
          }
       }
 
-      var1.method30560(Class4750.field22544, var5.size());
+      var1.method30560(BruhMotha.field22544, var5.size());
 
       for (Class5624 var16 : var5) {
-         var1.method30560(Class4750.field22544, var16.method17661());
-         var1.method30560(Class4750.field22544, var16.method17662());
-         var1.method30560(Class4750.field22544, var16.method17663());
+         var1.method30560(BruhMotha.field22544, var16.method17661());
+         var1.method30560(BruhMotha.field22544, var16.method17662());
+         var1.method30560(BruhMotha.field22544, var16.method17663());
       }
    }
 }

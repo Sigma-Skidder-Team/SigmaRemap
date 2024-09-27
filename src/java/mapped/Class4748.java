@@ -19,7 +19,7 @@ public class Class4748 extends Class4747<Class8173, Class6051> {
    }
 
    @Override
-   public Class<? extends Class4750> method14897() {
+   public Class<? extends BruhMotha> method14897() {
       return Class4800.class;
    }
 
@@ -31,7 +31,7 @@ public class Class4748 extends Class4747<Class8173, Class6051> {
       long var9 = method14896(var7, var8);
       boolean var11 = var1.readByte() != 0;
       int var12 = var1.readUnsignedShort();
-      int var13 = Class4750.field22544.method14907(var1);
+      int var13 = BruhMotha.field22544.method14907(var1);
       BitSet var14 = new BitSet(16);
       Class8225[] var15 = new Class8225[16];
       int[] var16 = null;
@@ -108,7 +108,7 @@ public class Class4748 extends Class4747<Class8173, Class6051> {
          var1.writeInt(var6.method28441());
          if (!var6.method28453()) {
             var1.writeByte(var6.method28442() ? 1 : 0);
-            Class4750.field22544.method14908(var1, var6.method28445());
+            BruhMotha.field22544.method14908(var1, var6.method28445());
             ByteBuf var7 = var1.alloc().buffer();
 
             try {
@@ -124,7 +124,7 @@ public class Class4748 extends Class4747<Class8173, Class6051> {
                }
 
                var7.readerIndex(0);
-               Class4750.field22544.method14908(var1, var7.readableBytes() + (var6.method28452() ? 256 : 0));
+               BruhMotha.field22544.method14908(var1, var7.readableBytes() + (var6.method28452() ? 256 : 0));
                var1.writeBytes(var7);
             } finally {
                var7.release();

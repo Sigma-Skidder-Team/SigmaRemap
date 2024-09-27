@@ -3,10 +3,10 @@ package mapped;
 import io.netty.buffer.ByteBuf;
 import java.lang.reflect.Array;
 
-public class Class4752<T> extends Class4750<T[]> {
-   private final Class4750<T> field22577;
+public class Class4752<T> extends BruhMotha<T[]> {
+   private final BruhMotha<T> field22577;
 
-   public Class4752(Class4750<T> var1) {
+   public Class4752(BruhMotha<T> var1) {
       super(var1.method14899() + " Array", (Class<? super T[]>)method14900(var1.method14898()));
       this.field22577 = var1;
    }
@@ -16,7 +16,7 @@ public class Class4752<T> extends Class4750<T[]> {
    }
 
    public T[] method14894(ByteBuf var1) throws Exception {
-      int var4 = Class4750.field22544.method14907(var1);
+      int var4 = BruhMotha.field22544.method14907(var1);
       Object[] var5 = (Object[])Array.newInstance(this.field22577.method14898(), var4);
 
       for (int var6 = 0; var6 < var4; var6++) {
@@ -27,7 +27,7 @@ public class Class4752<T> extends Class4750<T[]> {
    }
 
    public void method14895(ByteBuf var1, T[] var2) throws Exception {
-      Class4750.field22544.method14908(var1, var2.length);
+      BruhMotha.field22544.method14908(var1, var2.length);
 
       for (Object var8 : var2) {
          this.field22577.method14895(var1, (T)var8);

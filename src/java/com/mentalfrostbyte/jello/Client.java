@@ -109,7 +109,7 @@ public class Client {
         this.combatManager = new CombatManager();
         this.combatManager.method29345();
         this.viaversionLoader = new ViaVersionLoader();
-     //   this.field28977.method23341();
+        this.viaversionLoader.init();
         this.playerStateTracker = new PlayerStateTracker();
         this.playerStateTracker.REGISSTER();
         this.slotChangeTracker = new SlotChangeTracker();

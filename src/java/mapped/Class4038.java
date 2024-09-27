@@ -12,12 +12,12 @@ public final class Class4038 extends Class3758 {
    @Override
    public void method12725() {
       this.method12733(var1 -> {
-         var1.<Integer>method30561(Class4750.field22544);
-         int var4 = var1.<Integer>method30561(Class4750.field22526);
+         var1.<Integer>method30561(BruhMotha.field22544);
+         int var4 = var1.<Integer>method30561(BruhMotha.field22526);
          int var5 = var4;
 
          for (int var6 = 0; var6 < var4; var6++) {
-            String var7 = var1.method30559(Class4750.field22539);
+            String var7 = var1.method30559(BruhMotha.field22539);
             String var8 = field20368.method19376().method18555().get(var7);
             if (var8 == null) {
                var8 = "minecraft:" + var7;
@@ -27,31 +27,31 @@ public final class Class4038 extends Class3758 {
                   }
 
                   var5--;
-                  var1.<Double>method30559(Class4750.field22528);
-                  int var11 = var1.<Integer>method30559(Class4750.field22544);
+                  var1.<Double>method30559(BruhMotha.field22528);
+                  int var11 = var1.<Integer>method30559(BruhMotha.field22544);
 
                   for (int var12 = 0; var12 < var11; var12++) {
-                     var1.<UUID>method30559(Class4750.field22541);
-                     var1.<Double>method30559(Class4750.field22528);
-                     var1.<Byte>method30559(Class4750.field22518);
+                     var1.<UUID>method30559(BruhMotha.field22541);
+                     var1.<Double>method30559(BruhMotha.field22528);
+                     var1.<Byte>method30559(BruhMotha.field22518);
                   }
                   continue;
                }
             }
 
-            var1.method30560(Class4750.field22539, var8);
-            var1.<Double>method30561(Class4750.field22528);
-            int var9 = var1.<Integer>method30561(Class4750.field22544);
+            var1.method30560(BruhMotha.field22539, var8);
+            var1.<Double>method30561(BruhMotha.field22528);
+            int var9 = var1.<Integer>method30561(BruhMotha.field22544);
 
             for (int var10 = 0; var10 < var9; var10++) {
-               var1.<UUID>method30561(Class4750.field22541);
-               var1.<Double>method30561(Class4750.field22528);
-               var1.<Byte>method30561(Class4750.field22518);
+               var1.<UUID>method30561(BruhMotha.field22541);
+               var1.<Double>method30561(BruhMotha.field22528);
+               var1.<Byte>method30561(BruhMotha.field22518);
             }
          }
 
          if (var4 != var5) {
-            var1.method30558(Class4750.field22526, 0, var5);
+            var1.method30558(BruhMotha.field22526, 0, var5);
          }
       });
    }

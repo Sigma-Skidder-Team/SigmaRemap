@@ -9,6 +9,6 @@ public class Class4003 extends Class3758 {
 
    @Override
    public void method12725() {
-      this.method12732(var0 -> var0.method30560(Class4750.field22539, "MC|ItemName"));
+      this.method12732(var0 -> var0.method30560(BruhMotha.field22539, "MC|ItemName"));
    }
 }

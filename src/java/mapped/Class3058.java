@@ -16,7 +16,7 @@ public class Class3058 implements Class2982 {
    @Override
    public void method11398(Class8563 var1) throws Exception {
       Class6038 var4 = var1.method30580().method22465();
-      String var5 = var1.<String>method30555(Class4750.field22539, 0);
+      String var5 = var1.<String>method30555(BruhMotha.field22539, 0);
 
       try {
          JsonElement var6 = Class9610.method37357().fromJson(var5, JsonElement.class);
@@ -69,7 +69,7 @@ public class Class3058 implements Class2982 {
             var8.addProperty("protocol", -1);
          }
 
-         var1.method30558(Class4750.field22539, 0, Class9610.method37357().toJson((JsonElement)var6));
+         var1.method30558(BruhMotha.field22539, 0, Class9610.method37357().toJson((JsonElement)var6));
       } catch (JsonParseException var13) {
          var13.printStackTrace();
       }

@@ -2,7 +2,7 @@ package mapped;
 
 public class Class9699 {
    private static final Class2982 field45342 = var0 -> {
-      int var3 = var0.<Integer>method30559(Class4750.field22526);
+      int var3 = var0.<Integer>method30559(BruhMotha.field22526);
       String var4x;
       switch (var3) {
          case -1:
@@ -19,8 +19,8 @@ public class Class9699 {
             var4x = "minecraft:overworld";
       }
 
-      var0.method30560(Class4750.field22539, var4x);
-      var0.method30560(Class4750.field22539, var4x);
+      var0.method30560(BruhMotha.field22539, var4x);
+      var0.method30560(BruhMotha.field22539, var4x);
    };
    public static final Class72 field45343 = new Class72("");
    private static final String[] field45344 = {"minecraft:overworld", "minecraft:the_nether", "minecraft:the_end"};

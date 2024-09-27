@@ -10,10 +10,10 @@ public class Class2997 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      Class9695 var4 = var1.<Class9695>method30555(Class4750.field22551, 0);
-      short var5 = var1.<Short>method30555(Class4750.field22522, 0);
-      short var6 = var1.<Short>method30555(Class4750.field22522, 1);
-      int var7 = var1.<Integer>method30555(Class4750.field22544, 0);
+      Class9695 var4 = var1.<Class9695>method30555(BruhMotha.field22551, 0);
+      short var5 = var1.<Short>method30555(BruhMotha.field22522, 0);
+      short var6 = var1.<Short>method30555(BruhMotha.field22522, 1);
+      int var7 = var1.<Integer>method30555(BruhMotha.field22544, 0);
       if (var7 != 25) {
          if (var7 != 33) {
             if (var7 != 29) {
@@ -56,11 +56,11 @@ public class Class2997 implements Class2982 {
 
       if (var7 == 73) {
          Class8563 var8 = var1.method30573(11);
-         var8.method30560(Class4750.field22551, new Class9695(var4));
-         var8.method30560(Class4750.field22544, 249 + var5 * 24 * 2 + var6 * 2);
+         var8.method30560(BruhMotha.field22551, new Class9695(var4));
+         var8.method30560(BruhMotha.field22544, 249 + var5 * 24 * 2 + var6 * 2);
          var8.method30568(Class6380.class, true, true);
       }
 
-      var1.method30558(Class4750.field22544, 0, var7);
+      var1.method30558(BruhMotha.field22544, 0, var7);
    }
 }

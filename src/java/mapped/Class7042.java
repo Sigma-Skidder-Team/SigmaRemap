@@ -64,52 +64,52 @@ public abstract class Class7042 extends Class7039 implements AbstractResourceMan
    }
 
    public void method21945() {
-      this.field30380 = this.method21884("checkforupdates", true);
-      this.field30381 = this.method21884("prevent-collision", true);
-      this.field30382 = this.method21884("use-new-effect-indicator", true);
-      this.field30383 = this.method21884("use-new-deathmessages", true);
-      this.field30384 = this.method21884("suppress-metadata-errors", false);
-      this.field30385 = this.method21884("shield-blocking", true);
-      this.field30386 = this.method21884("hologram-patch", false);
-      this.field30387 = this.method21884("piston-animation-patch", false);
-      this.field30388 = this.method21884("bossbar-patch", true);
-      this.field30389 = this.method21884("bossbar-anti-flicker", false);
+      this.field30380 = this.setUnsupported("checkforupdates", true);
+      this.field30381 = this.setUnsupported("prevent-collision", true);
+      this.field30382 = this.setUnsupported("use-new-effect-indicator", true);
+      this.field30383 = this.setUnsupported("use-new-deathmessages", true);
+      this.field30384 = this.setUnsupported("suppress-metadata-errors", false);
+      this.field30385 = this.setUnsupported("shield-blocking", true);
+      this.field30386 = this.setUnsupported("hologram-patch", false);
+      this.field30387 = this.setUnsupported("piston-animation-patch", false);
+      this.field30388 = this.setUnsupported("bossbar-patch", true);
+      this.field30389 = this.setUnsupported("bossbar-anti-flicker", false);
       this.field30390 = this.method21887("hologram-y", -0.96);
-      this.field30391 = this.method21886("max-pps", 800);
-      this.field30392 = this.method21885("max-pps-kick-msg", "Sending packets too fast? lag?");
-      this.field30393 = this.method21886("tracking-period", 6);
-      this.field30394 = this.method21886("tracking-warning-pps", 120);
-      this.field30395 = this.method21886("tracking-max-warnings", 3);
-      this.field30396 = this.method21885("tracking-max-kick-msg", "You are sending too many packets, :(");
-      this.field30397 = this.method21884("send-supported-versions", false);
-      this.field30398 = this.method21884("simulate-pt", true);
-      this.field30399 = this.method21884("item-cache", true);
-      this.field30400 = this.method21884("nms-player-ticking", true);
-      this.field30401 = this.method21884("replace-pistons", false);
-      this.field30402 = this.method21886("replacement-piston-id", 0);
-      this.field30403 = this.method21884("auto-team", true);
-      this.field30404 = this.method21884("force-json-transform", false);
-      this.field30405 = this.method21884("chat-nbt-fix", true);
+      this.field30391 = this.setUnsupported("max-pps", 800);
+      this.field30392 = this.setUnsupported("max-pps-kick-msg", "Sending packets too fast? lag?");
+      this.field30393 = this.setUnsupported("tracking-period", 6);
+      this.field30394 = this.setUnsupported("tracking-warning-pps", 120);
+      this.field30395 = this.setUnsupported("tracking-max-warnings", 3);
+      this.field30396 = this.setUnsupported("tracking-max-kick-msg", "You are sending too many packets, :(");
+      this.field30397 = this.setUnsupported("send-supported-versions", false);
+      this.field30398 = this.setUnsupported("simulate-pt", true);
+      this.field30399 = this.setUnsupported("item-cache", true);
+      this.field30400 = this.setUnsupported("nms-player-ticking", true);
+      this.field30401 = this.setUnsupported("replace-pistons", false);
+      this.field30402 = this.setUnsupported("replacement-piston-id", 0);
+      this.field30403 = this.setUnsupported("auto-team", true);
+      this.field30404 = this.setUnsupported("force-json-transform", false);
+      this.field30405 = this.setUnsupported("chat-nbt-fix", true);
       this.field30406 = new IntOpenHashSet(this.method21888("block-protocols"));
-      this.field30407 = this.method21885("block-disconnect-msg", "You are using an unsupported Minecraft version!");
-      this.field30408 = this.method21885("reload-disconnect-msg", "Server reload, please rejoin!");
-      this.field30411 = this.method21884("minimize-cooldown", true);
-      this.field30412 = this.method21884("team-colour-fix", true);
-      this.field30409 = this.method21884("suppress-conversion-warnings", false);
-      this.field30410 = this.method21884("disable-1_13-auto-complete", false);
-      this.field30413 = this.method21884("serverside-blockconnections", true);
-      this.field30414 = this.method21884("reduce-blockstorage-memory", false);
-      this.field30415 = this.method21884("flowerstem-when-block-above", false);
-      this.field30416 = this.method21884("vine-climb-fix", false);
-      this.field30417 = this.method21884("fix-low-snow-collision", false);
-      this.field30418 = this.method21884("fix-infested-block-breaking", true);
-      this.field30419 = this.method21886("1_13-tab-complete-delay", 0);
-      this.field30420 = this.method21884("truncate-1_14-books", false);
-      this.field30421 = this.method21884("left-handed-handling", true);
-      this.field30422 = this.method21884("fix-non-full-blocklight", false);
-      this.field30423 = this.method21884("fix-1_14-health-nan", true);
-      this.field30424 = this.method21884("use-1_15-instant-respawn", false);
-      this.field30425 = this.method21884("ignore-long-1_16-channel-names", true);
+      this.field30407 = this.setUnsupported("block-disconnect-msg", "You are using an unsupported Minecraft version!");
+      this.field30408 = this.setUnsupported("reload-disconnect-msg", "Server reload, please rejoin!");
+      this.field30411 = this.setUnsupported("minimize-cooldown", true);
+      this.field30412 = this.setUnsupported("team-colour-fix", true);
+      this.field30409 = this.setUnsupported("suppress-conversion-warnings", false);
+      this.field30410 = this.setUnsupported("disable-1_13-auto-complete", false);
+      this.field30413 = this.setUnsupported("serverside-blockconnections", true);
+      this.field30414 = this.setUnsupported("reduce-blockstorage-memory", false);
+      this.field30415 = this.setUnsupported("flowerstem-when-block-above", false);
+      this.field30416 = this.setUnsupported("vine-climb-fix", false);
+      this.field30417 = this.setUnsupported("fix-low-snow-collision", false);
+      this.field30418 = this.setUnsupported("fix-infested-block-breaking", true);
+      this.field30419 = this.setUnsupported("1_13-tab-complete-delay", 0);
+      this.field30420 = this.setUnsupported("truncate-1_14-books", false);
+      this.field30421 = this.setUnsupported("left-handed-handling", true);
+      this.field30422 = this.setUnsupported("fix-non-full-blocklight", false);
+      this.field30423 = this.setUnsupported("fix-1_14-health-nan", true);
+      this.field30424 = this.setUnsupported("use-1_15-instant-respawn", false);
+      this.field30425 = this.setUnsupported("ignore-long-1_16-channel-names", true);
    }
 
    @Override
@@ -264,22 +264,22 @@ public abstract class Class7042 extends Class7039 implements AbstractResourceMan
    }
 
    @Override
-   public String method21917() {
+   public String setBlockDisconnectMsg() {
       return this.field30407;
    }
 
    @Override
-   public String method21918() {
+   public String setReloadDisconnectMsg() {
       return this.field30408;
    }
 
    @Override
-   public boolean method21919() {
+   public boolean setMinimizeCooldown() {
       return this.field30411;
    }
 
    @Override
-   public boolean method21923() {
+   public boolean setTeamColourFix() {
       return this.field30412;
    }
 
@@ -289,7 +289,7 @@ public abstract class Class7042 extends Class7039 implements AbstractResourceMan
    }
 
    @Override
-   public boolean method21924() {
+   public boolean setDisable113AutoComplete() {
       return this.field30410;
    }
 
@@ -299,17 +299,17 @@ public abstract class Class7042 extends Class7039 implements AbstractResourceMan
    }
 
    @Override
-   public String method21926() {
+   public String getPacketStringLiteral() {
       return "packet";
    }
 
    @Override
-   public boolean method21927() {
+   public boolean setReduceBlockstorageMemory() {
       return this.field30414;
    }
 
    @Override
-   public boolean method21928() {
+   public boolean setFlowerStemWhenBlockAbove() {
       return this.field30415;
    }
 
@@ -319,7 +319,7 @@ public abstract class Class7042 extends Class7039 implements AbstractResourceMan
    }
 
    @Override
-   public boolean method21929() {
+   public boolean setFixLowSnowCollision() {
       return this.field30417;
    }
 
@@ -329,17 +329,17 @@ public abstract class Class7042 extends Class7039 implements AbstractResourceMan
    }
 
    @Override
-   public int method21930() {
+   public int set113TabCompleteDelay() {
       return this.field30419;
    }
 
    @Override
-   public boolean method21931() {
+   public boolean setTruncate114books() {
       return this.field30420;
    }
 
    @Override
-   public boolean method21932() {
+   public boolean setLeftHandedHandling() {
       return this.field30421;
    }
 

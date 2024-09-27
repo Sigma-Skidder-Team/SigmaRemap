@@ -3,7 +3,7 @@ package mapped;
 import io.netty.buffer.ByteBuf;
 import java.util.UUID;
 
-public class Class4798 extends Class4750<UUID> {
+public class Class4798 extends BruhMotha<UUID> {
    public Class4798() {
       super(UUID.class);
    }

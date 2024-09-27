@@ -4,22 +4,22 @@ import java.util.UUID;
 
 public class Class8121 {
    public static void method28119(Class6356 var0) {
-      Class8123 var3 = new Class8123(var0, Class8121::method28120, Class8121::method28121);
+      BitchNiggerOffPlane var3 = new BitchNiggerOffPlane(var0, Class8121::method28120, Class8121::method28121);
       var0.method19360(Class1916.field11580, new Class3829());
       var0.method19360(Class1916.field11553, new Class3792());
       var0.method19360(Class1916.field11555, new Class3883());
       var3.method28132(Class1916.field11557);
-      var3.method28126(Class1916.field11554, Class4750.field22571);
-      var3.method28133(Class1916.field11573, Class4750.field22569);
-      var3.method28127(Class1916.field11556, Class4750.field22569);
-      var3.method28134(Class1916.field11621, Class4750.field22569);
+      var3.method28126(Class1916.field11554, BruhMotha.field22571);
+      var3.method28133(Class1916.field11573, BruhMotha.field22569);
+      var3.method28127(Class1916.field11556, BruhMotha.field22569);
+      var3.method28134(Class1916.field11621, BruhMotha.field22569);
       var0.method19360(Class1916.field11604, new Class3943());
       new Class4660(var0, Class8121::method28120).method14631(Class1916.field11624);
-      var3.method28131(Class1926.field11963, Class4750.field22569);
-      var3.method28130(Class1926.field11993, Class4750.field22569);
+      var3.method28131(Class1926.field11963, BruhMotha.field22569);
+      var3.method28130(Class1926.field11993, BruhMotha.field22569);
       var0.method19364(Class1926.field11964, new Class3957());
       var0.method19364(Class1926.field11966, new Class3942());
-      var3.method28135(Class1916.field11569, Class4750.field22569, Class4750.field22528);
+      var3.method28135(Class1916.field11569, BruhMotha.field22569, BruhMotha.field22528);
    }
 
    public static void method28120(Class9738 var0) {

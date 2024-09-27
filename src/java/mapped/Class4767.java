@@ -4,7 +4,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonSyntaxException;
 import io.netty.buffer.ByteBuf;
 
-public class Class4767 extends Class4750<JsonElement> {
+public class Class4767 extends BruhMotha<JsonElement> {
    private static final Class4790 field22578 = new Class4790(262144);
 
    public Class4767() {

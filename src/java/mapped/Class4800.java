@@ -1,6 +1,6 @@
 package mapped;
 
-public abstract class Class4800 extends Class4750<Class8173> {
+public abstract class Class4800 extends BruhMotha<Class8173> {
    public Class4800() {
       super(Class8173.class);
    }
@@ -10,7 +10,7 @@ public abstract class Class4800 extends Class4750<Class8173> {
    }
 
    @Override
-   public Class<? extends Class4750> method14897() {
+   public Class<? extends BruhMotha> method14897() {
       return Class4800.class;
    }
 }

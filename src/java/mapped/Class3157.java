@@ -23,7 +23,7 @@ public class Class3157 implements Class2982 {
          }
 
          Class8563 var5 = new Class8563(0, null, var1.method30580());
-         Class6363.field27929.method11399(var5, Class2307.method9078('&', ViaVersion3.method27612().method21917()));
+         Class6363.field27929.method11399(var5, Class2307.method9078('&', ViaVersion3.method27612().setBlockDisconnectMsg()));
          var1.method30578();
          ChannelFuture var6 = var5.method30571(Class6377.class);
          var6.addListener(var1x -> var1.method30580().method22464().close());

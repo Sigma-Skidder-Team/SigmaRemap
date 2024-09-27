@@ -9,7 +9,7 @@ public class Class3023 implements Class3008 {
 
    @Override
    public void method11400(Class8563 var1) throws Exception {
-      var1.method30560(Class4750.field22539, "MC|AdvCmd");
-      var1.method30560(Class4750.field22518, (byte)1);
+      var1.method30560(BruhMotha.field22539, "MC|AdvCmd");
+      var1.method30560(BruhMotha.field22518, (byte)1);
    }
 }

@@ -10,10 +10,10 @@ public class Class3168 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      int var4 = var1.<Integer>method30555(Class4750.field22526, 0);
-      int var5 = var1.<Integer>method30555(Class4750.field22526, 1);
+      int var4 = var1.<Integer>method30555(BruhMotha.field22526, 0);
+      int var5 = var1.<Integer>method30555(BruhMotha.field22526, 1);
       Class7161 var6 = var1.method30580();
-      Class6949[] var7 = var1.<Class6949[]>method30555(Class4750.field22564, 0);
+      Class6949[] var7 = var1.<Class6949[]>method30555(BruhMotha.field22564, 0);
 
       for (Class6949 var11 : var7) {
          int var12 = Class7795.method25886(var11.method21452());

@@ -14,9 +14,9 @@ public class Class6043 extends Class6037 {
    public void method18708() {
       if (this.field26259 != null && this.field26260 <= System.currentTimeMillis()) {
          Class8563 var3 = new Class8563(1, null, this.method18672());
-         var3.method30560(Class4750.field22539, this.field26259);
-         var3.method30560(Class4750.field22524, false);
-         var3.method30560(Class4750.field22559, null);
+         var3.method30560(BruhMotha.field22539, this.field26259);
+         var3.method30560(BruhMotha.field22524, false);
+         var3.method30560(BruhMotha.field22559, null);
 
          try {
             var3.method30585(Class6380.class);

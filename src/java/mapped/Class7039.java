@@ -32,11 +32,11 @@ public abstract class Class7039 implements SmallResourceManager {
       this.field30377 = var1;
    }
 
-   public abstract URL method21874();
+   public abstract URL ViaVersionPlatformImpl();
 
    public synchronized Map<String, Object> method21875(File var1) {
       List<String> var4 = this.method21878();
-      URL var5 = this.method21874();
+      URL var5 = this.ViaVersionPlatformImpl();
 
       try {
          this.field30376.method21691(var5.openStream());
@@ -124,23 +124,23 @@ public abstract class Class7039 implements SmallResourceManager {
    }
 
    @Nullable
-   public <T> T method21883(String var1, Class<T> var2, T var3) {
+   public <T> T setUnsupported(String var1, Class<T> var2, T var3) {
       Object var6 = this.field30378.get(var1);
       return (T)(var6 == null ? var3 : var6);
    }
 
-   public boolean method21884(String var1, boolean var2) {
+   public boolean setUnsupported(String var1, boolean var2) {
       Object var5 = this.field30378.get(var1);
       return var5 == null ? var2 : (Boolean)var5;
    }
 
    @Nullable
-   public String method21885(String var1, String var2) {
+   public String setUnsupported(String var1, String var2) {
       Object var5 = this.field30378.get(var1);
       return var5 == null ? var2 : (String)var5;
    }
 
-   public int method21886(String var1, int var2) {
+   public int setUnsupported(String var1, int var2) {
       Object var5 = this.field30378.get(var1);
       if (var5 == null) {
          return var2;

@@ -88,11 +88,11 @@ public class OldHitting extends Module {
 
                 field23408 = mc.gameSettings.keyBindUseItem.isKeyDown() && var4 && var6 && var6 || var5;
                 if (!field23408) {
-                    if (ViaVersionLoader.field31493.contains(mc.player)) {
-                        ViaVersionLoader.field31493.remove(mc.player);
+                    if (ViaVersionLoader.entites.contains(mc.player)) {
+                        ViaVersionLoader.entites.remove(mc.player);
                     }
-                } else if (!ViaVersionLoader.field31493.contains(mc.player)) {
-                    ViaVersionLoader.field31493.add(mc.player);
+                } else if (!ViaVersionLoader.entites.contains(mc.player)) {
+                    ViaVersionLoader.entites.add(mc.player);
                 }
 
                 if (field23408 && !this.field23409) {

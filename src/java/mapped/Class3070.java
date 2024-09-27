@@ -9,9 +9,9 @@ public class Class3070 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      Class9738 var4 = var1.<Class9738>method30561(Class4750.field22569);
+      Class9738 var4 = var1.<Class9738>method30561(BruhMotha.field22569);
       Class8770.method31636(var4);
-      if (ViaVersion3.method27612().method21931()) {
+      if (ViaVersion3.method27612().setTruncate114books()) {
          if (var4 == null) {
             return;
          }

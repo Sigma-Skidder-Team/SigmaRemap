@@ -9,8 +9,8 @@ public class Class3084 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      Class72 var4 = var1.<Class72>method30555(Class4750.field22555, 0);
-      if (var1.<Short>method30555(Class4750.field22522, 0) == 1) {
+      Class72 var4 = var1.<Class72>method30555(BruhMotha.field22555, 0);
+      if (var1.<Short>method30555(BruhMotha.field22522, 0) == 1) {
          Class7922.method26587(var4);
       }
 

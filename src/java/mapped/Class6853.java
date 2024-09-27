@@ -210,30 +210,30 @@ public abstract class Class6853<T> extends Class6852<T> {
    private Class8563 method20890(Class2198 var1, Class7161 var2) {
       try {
          Class8563 var5 = new Class8563(12, null, var2);
-         var5.method30560(Class4750.field22541, this.field29769);
-         var5.method30560(Class4750.field22544, var1.method8912());
+         var5.method30560(BruhMotha.field22541, this.field29769);
+         var5.method30560(BruhMotha.field22544, var1.method8912());
          switch (Class9656.field45138[var1.ordinal()]) {
             case 1:
                Class6363.field27929.method11399(var5, this.field29772);
-               var5.method30560(Class4750.field22532, this.field29773);
-               var5.method30560(Class4750.field22544, this.field29774.method8736());
-               var5.method30560(Class4750.field22544, this.field29775.method9102());
-               var5.method30560(Class4750.field22518, (byte)this.method20891());
+               var5.method30560(BruhMotha.field22532, this.field29773);
+               var5.method30560(BruhMotha.field22544, this.field29774.method8736());
+               var5.method30560(BruhMotha.field22544, this.field29775.method9102());
+               var5.method30560(BruhMotha.field22518, (byte)this.method20891());
             case 2:
             default:
                break;
             case 3:
-               var5.method30560(Class4750.field22532, this.field29773);
+               var5.method30560(BruhMotha.field22532, this.field29773);
                break;
             case 4:
                Class6363.field27929.method11399(var5, this.field29772);
                break;
             case 5:
-               var5.method30560(Class4750.field22544, this.field29774.method8736());
-               var5.method30560(Class4750.field22544, this.field29775.method9102());
+               var5.method30560(BruhMotha.field22544, this.field29774.method8736());
+               var5.method30560(BruhMotha.field22544, this.field29775.method9102());
                break;
             case 6:
-               var5.method30560(Class4750.field22518, (byte)this.method20891());
+               var5.method30560(BruhMotha.field22518, (byte)this.method20891());
          }
 
          return var5;

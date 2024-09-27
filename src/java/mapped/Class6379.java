@@ -9,7 +9,7 @@ public class Class6379 extends ViaVersion7<Class1932, Class1932, Class1921, Clas
 
    @Override
    public void method19341() {
-      new Class6909(this);
+      new ANullAssBitchNigger(this);
       Class5889.method18323(this);
       Class7960.method27082(this);
       Class8283.method28946(this);

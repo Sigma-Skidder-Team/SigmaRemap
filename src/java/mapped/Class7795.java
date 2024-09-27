@@ -6,7 +6,7 @@ import it.unimi.dsi.fastutil.ints.IntSet;
 public class Class7795 {
    private static final IntSet field33484 = new IntOpenHashSet(70, 1.0F);
 
-   public static void method25885(ViaVersion7 var0) {
+   public static void init(ViaVersion7 var0) {
       var0.method19360(Class1914.field11360, new Class3994());
       var0.method19360(Class1914.field11365, new Class3947());
       var0.method19360(Class1914.field11366, new Class3905());

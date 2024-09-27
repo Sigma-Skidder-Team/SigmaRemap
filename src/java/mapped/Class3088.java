@@ -11,20 +11,20 @@ public class Class3088 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      Short var4 = var1.<Short>method30559(Class4750.field22522);
-      String var5 = var1.<String>method30559(Class4750.field22539);
-      JsonElement var6 = var1.<JsonElement>method30559(Class4750.field22538);
+      Short var4 = var1.<Short>method30559(BruhMotha.field22522);
+      String var5 = var1.<String>method30559(BruhMotha.field22539);
+      JsonElement var6 = var1.<JsonElement>method30559(BruhMotha.field22538);
       Class8770.method31637().method21999(var6);
-      Short var7 = var1.<Short>method30559(Class4750.field22522);
+      Short var7 = var1.<Short>method30559(BruhMotha.field22522);
       if (var5.equals("EntityHorse")) {
          var1.method30587(31);
-         int var8 = var1.<Integer>method30559(Class4750.field22526);
-         var1.method30560(Class4750.field22522, var4);
-         var1.method30560(Class4750.field22544, var7.intValue());
-         var1.method30560(Class4750.field22526, var8);
+         int var8 = var1.<Integer>method30559(BruhMotha.field22526);
+         var1.method30560(BruhMotha.field22522, var4);
+         var1.method30560(BruhMotha.field22544, var7.intValue());
+         var1.method30560(BruhMotha.field22526, var8);
       } else {
          var1.method30587(46);
-         var1.method30560(Class4750.field22544, var4.intValue());
+         var1.method30560(BruhMotha.field22544, var4.intValue());
          int var11 = -1;
          switch (var5) {
             case "minecraft:container":
@@ -70,8 +70,8 @@ public class Class3088 implements Class2982 {
             ViaVersion3.method27613().getLogger().warning("Can't open inventory for 1.14 player! Type: " + var5 + " Size: " + var7);
          }
 
-         var1.method30560(Class4750.field22544, var11);
-         var1.method30560(Class4750.field22538, var6);
+         var1.method30560(BruhMotha.field22544, var11);
+         var1.method30560(BruhMotha.field22538, var6);
       }
    }
 }

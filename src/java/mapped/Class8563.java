@@ -16,8 +16,8 @@ public class Class8563 {
    private final Class7161 field38497;
    private boolean field38498 = true;
    private int field38499 = -1;
-   private final LinkedList<Class9284<Class4750, Object>> field38500 = new LinkedList<Class9284<Class4750, Object>>();
-   private final List<Class9284<Class4750, Object>> field38501 = new ArrayList<Class9284<Class4750, Object>>();
+   private final LinkedList<Class9284<BruhMotha, Object>> field38500 = new LinkedList<Class9284<BruhMotha, Object>>();
+   private final List<Class9284<BruhMotha, Object>> field38501 = new ArrayList<Class9284<BruhMotha, Object>>();
 
    public Class8563(int var1, ByteBuf var2, Class7161 var3) {
       this.field38499 = var1;
@@ -25,7 +25,7 @@ public class Class8563 {
       this.field38497 = var3;
    }
 
-   public <T> T method30555(Class4750<T> var1, int var2) throws Exception {
+   public <T> T method30555(BruhMotha<T> var1, int var2) throws Exception {
       int var5 = 0;
 
       for (Class9284 var7 : this.field38501) {
@@ -46,7 +46,7 @@ public class Class8563 {
          .method10458("Data", this.field38501);
    }
 
-   public boolean method30556(Class4750 var1, int var2) {
+   public boolean method30556(BruhMotha var1, int var2) {
       int var5 = 0;
 
       for (Class9284 var7 : this.field38501) {
@@ -62,11 +62,11 @@ public class Class8563 {
       return false;
    }
 
-   public boolean method30557(Class4750 var1, int var2) {
+   public boolean method30557(BruhMotha var1, int var2) {
       int var5 = 0;
 
       for (Class9284 var7 : this.field38500) {
-         if (((Class4750)var7.method35008()).method14897() == var1.method14897()) {
+         if (((BruhMotha)var7.method35008()).method14897() == var1.method14897()) {
             if (var5 == var2) {
                return true;
             }
@@ -78,7 +78,7 @@ public class Class8563 {
       return false;
    }
 
-   public <T> void method30558(Class4750<T> var1, int var2, T var3) throws Exception {
+   public <T> void method30558(BruhMotha<T> var1, int var2, T var3) throws Exception {
       int var6 = 0;
 
       for (Class9284 var8 : this.field38501) {
@@ -96,8 +96,8 @@ public class Class8563 {
       throw new Class2447(var9).method10458("Type", var1.method14899()).method10458("Index", var2).method10458("Packet ID", this.method30586());
    }
 
-   public <T> T method30559(Class4750<T> var1) throws Exception {
-      if (var1 == Class4750.field22550) {
+   public <T> T method30559(BruhMotha<T> var1) throws Exception {
+      if (var1 == BruhMotha.field22550) {
          return null;
       } else if (this.field38500.isEmpty()) {
          Preconditions.checkNotNull(this.field38496, "This packet does not have an input buffer.");
@@ -109,12 +109,12 @@ public class Class8563 {
          }
       } else {
          Class9284 var4 = this.field38500.poll();
-         Class4750 var5 = (Class4750)var4.method35008();
+         BruhMotha var5 = (BruhMotha)var4.method35008();
          if (!var5.equals(var1) && (!var1.method14897().equals(var5.method14897()) || !var1.method14898().equals(var5.method14898()))) {
-            if (var5 == Class4750.field22550) {
+            if (var5 == BruhMotha.field22550) {
                return this.<T>method30559(var1);
             } else {
-               IOException var6 = new IOException("Unable to read type " + var1.method14899() + ", found " + ((Class4750)var4.method35008()).method14899());
+               IOException var6 = new IOException("Unable to read type " + var1.method14899() + ", found " + ((BruhMotha)var4.method35008()).method14899());
                throw new Class2447(var6)
                   .method10458("Type", var1.method14899())
                   .method10458("Packet ID", this.method30586())
@@ -126,7 +126,7 @@ public class Class8563 {
       }
    }
 
-   public <T> void method30560(Class4750<T> var1, T var2) {
+   public <T> void method30560(BruhMotha<T> var1, T var2) {
       if (var2 != null && !var1.method14898().isAssignableFrom(var2.getClass())) {
          if (!(var1 instanceof Class4755)) {
             ViaVersion3.method27613().getLogger().warning("Possible type mismatch: " + var2.getClass().getName() + " -> " + var1.method14898());
@@ -135,10 +135,10 @@ public class Class8563 {
          }
       }
 
-      this.field38501.add(new Class9284<Class4750, Object>(var1, var2));
+      this.field38501.add(new Class9284<BruhMotha, Object>(var1, var2));
    }
 
-   public <T> T method30561(Class4750<T> var1) throws Exception {
+   public <T> T method30561(BruhMotha<T> var1) throws Exception {
       T var4 = this.method30559(var1);
       this.method30560(var1, var4);
       return var4;
@@ -148,13 +148,13 @@ public class Class8563 {
       this.field38501.addAll(this.field38500);
       this.field38500.clear();
       if (this.field38496.readableBytes() > 0) {
-         this.<byte[]>method30561(Class4750.field22521);
+         this.<byte[]>method30561(BruhMotha.field22521);
       }
    }
 
    public void method30563(ByteBuf var1) throws Exception {
       if (this.field38499 != -1) {
-         Class4750.field22544.method14908(var1, this.field38499);
+         BruhMotha.field22544.method14908(var1, this.field38499);
       }
 
       if (!this.field38500.isEmpty()) {
@@ -167,17 +167,17 @@ public class Class8563 {
       for (Class9284 var6 : this.field38501) {
          try {
             Object var7 = var6.method35009();
-            if (var7 != null && !((Class4750)var6.method35008()).method14898().isAssignableFrom(var7.getClass())) {
+            if (var7 != null && !((BruhMotha)var6.method35008()).method14898().isAssignableFrom(var7.getClass())) {
                if (var6.method35008() instanceof Class4755) {
                   var7 = ((Class4755)var6.method35008()).method14904(var7);
                } else {
                   ViaVersion3.method27613()
                      .getLogger()
-                     .warning("Possible type mismatch: " + var7.getClass().getName() + " -> " + ((Class4750)var6.method35008()).method14898());
+                     .warning("Possible type mismatch: " + var7.getClass().getName() + " -> " + ((BruhMotha)var6.method35008()).method14898());
                }
             }
 
-            ((Class4750)var6.method35008()).method14895(var1, var7);
+            ((BruhMotha)var6.method35008()).method14895(var1, var7);
          } catch (Exception var8) {
             var1.clear();
          }

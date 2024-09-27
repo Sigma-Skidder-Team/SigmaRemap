@@ -7,12 +7,12 @@ import java.util.List;
 import java.util.logging.Logger;
 import org.jetbrains.annotations.Nullable;
 
-public abstract class Class6904 {
+public abstract class BitchNiggerPlane2 {
    private final Class<? extends Class6036> field29901;
    public final ViaVersion7 field29902;
    private Int2IntMap field29903;
 
-   public Class6904(ViaVersion7 var1, Class<? extends Class6036> var2) {
+   public BitchNiggerPlane2(ViaVersion7 var1, Class<? extends Class6036> var2) {
       this.field29902 = var1;
       this.field29901 = var2;
       var1.method19374(this);
@@ -71,11 +71,11 @@ public abstract class Class6904 {
       this.field29902.method19360(var1, new Class4006(this));
    }
 
-   public void method21096(Class1913 var1, Class4750<List<Class8656>> var2, Class4750<List<Class8656>> var3) {
+   public void method21096(Class1913 var1, BruhMotha<List<Class8656>> var2, BruhMotha<List<Class8656>> var3) {
       this.field29902.method19360(var1, new Class3781(this, var2, var3));
    }
 
-   public void method21097(Class1913 var1, Class4750<List<Class8656>> var2) {
+   public void method21097(Class1913 var1, BruhMotha<List<Class8656>> var2) {
       this.method21096(var1, null, var2);
    }
 
@@ -119,13 +119,13 @@ public abstract class Class6904 {
       return this.method21102(null);
    }
 
-   public Class2982 method21102(Class4750<List<Class8656>> var1) {
+   public Class2982 method21102(BruhMotha<List<Class8656>> var1) {
       return var2 -> {
-         int var5 = var2.<Integer>method30555(Class4750.field22544, 0);
-         int var6 = var2.<Integer>method30555(Class4750.field22544, 1);
+         int var5 = var2.<Integer>method30555(BruhMotha.field22544, 0);
+         int var6 = var2.<Integer>method30555(BruhMotha.field22544, 1);
          int var7 = this.method21106(var6);
          if (var7 != var6) {
-            var2.method30558(Class4750.field22544, 1, var7);
+            var2.method30558(BruhMotha.field22544, 1, var7);
          }
 
          Class1867 var8 = this.method21089(var7);
@@ -136,9 +136,9 @@ public abstract class Class6904 {
       };
    }
 
-   public Class2982 method21103(Class4750<List<Class8656>> var1, Class1867 var2) {
+   public Class2982 method21103(BruhMotha<List<Class8656>> var1, Class1867 var2) {
       return var3 -> {
-         int var6 = var3.<Integer>method30555(Class4750.field22544, 0);
+         int var6 = var3.<Integer>method30555(BruhMotha.field22544, 0);
          var3.method30580().method22438(this.field29901).method18666(var6, var2);
          if (var1 != null) {
             this.method21090(var6, var3.<List<Class8656>>method30555(var1, 0), var3.method30580());
@@ -148,8 +148,8 @@ public abstract class Class6904 {
 
    public Class2982 method21104() {
       return var1 -> {
-         int var4 = var1.<Integer>method30555(Class4750.field22544, 0);
-         byte var5 = var1.<Byte>method30555(Class4750.field22518, 0);
+         int var4 = var1.<Integer>method30555(BruhMotha.field22544, 0);
+         byte var5 = var1.<Byte>method30555(BruhMotha.field22518, 0);
          Class1867 var6 = this.method21105(var5);
          var1.method30580().method22438(this.field29901).method18666(var4, var6);
       };
@@ -179,7 +179,7 @@ public abstract class Class6904 {
    }
 
    // $VF: synthetic method
-   public static Class method21111(Class6904 var0) {
+   public static Class method21111(BitchNiggerPlane2 var0) {
       return var0.field29901;
    }
 }

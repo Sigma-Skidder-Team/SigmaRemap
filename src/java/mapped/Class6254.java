@@ -12,7 +12,7 @@ public class Class6254 extends Class6255 {
    @Override
    public String method19221() {
       return "Forces ViaVersion to scan server protocol versions "
-         + (((ResourceManager) ViaVersion3.method27612()).method21920() != -1 ? "(Also happens at an interval)" : "");
+         + (((ResourceManager) ViaVersion3.method27612()).setVelocityPingInterval() != -1 ? "(Also happens at an interval)" : "");
    }
 
    @Override

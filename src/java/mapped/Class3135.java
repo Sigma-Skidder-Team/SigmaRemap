@@ -10,13 +10,13 @@ public class Class3135 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      int var4 = var1.<Integer>method30555(Class4750.field22544, 1);
+      int var4 = var1.<Integer>method30555(BruhMotha.field22544, 1);
       if (var4 == 6 || var4 == 8) {
          var1.method30578();
       }
 
       if (var4 == 7) {
-         var1.method30558(Class4750.field22544, 1, 6);
+         var1.method30558(BruhMotha.field22544, 1, 6);
       }
    }
 }

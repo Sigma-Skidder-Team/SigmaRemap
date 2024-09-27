@@ -11,9 +11,9 @@ public class Class3775 extends Class3758 {
    @Override
    public void method12725() {
       this.method12733(var0 -> {
-         String var3 = var0.<String>method30559(Class4750.field22539);
-         var0.method30560(Class4750.field22544, 0);
-         var0.method30560(Class4750.field22539, var3);
+         String var3 = var0.<String>method30559(BruhMotha.field22539);
+         var0.method30560(BruhMotha.field22544, 0);
+         var0.method30560(BruhMotha.field22539, var3);
       });
    }
 }

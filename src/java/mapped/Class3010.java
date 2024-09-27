@@ -16,8 +16,8 @@ public class Class3010 implements Class3008 {
 
    @Override
    public void method11400(Class8563 var1) throws Exception {
-      var1.method30560(Class4750.field22522, this.field18137);
-      var1.method30560(Class4750.field22534, this.field18138);
-      var1.method30560(Class4750.field22534, this.field18139);
+      var1.method30560(BruhMotha.field22522, this.field18137);
+      var1.method30560(BruhMotha.field22534, this.field18138);
+      var1.method30560(BruhMotha.field22534, this.field18139);
    }
 }

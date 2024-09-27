@@ -10,7 +10,7 @@ public class Class3094 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      Class9738 var4 = var1.<Class9738>method30555(Class4750.field22561, 0);
+      Class9738 var4 = var1.<Class9738>method30555(BruhMotha.field22561, 0);
       Class8768.method31628(var4);
    }
 }

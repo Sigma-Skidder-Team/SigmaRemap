@@ -12,12 +12,12 @@ public class Class3800 extends Class3758 {
 
    @Override
    public void method12725() {
-      this.map(Class4750.field22541);
-      this.map(Class4750.field22544);
+      this.map(BruhMotha.field22541);
+      this.map(BruhMotha.field22544);
       this.method12733(var1 -> {
-         int var4 = var1.<Integer>method30555(Class4750.field22544, 0);
+         int var4 = var1.<Integer>method30555(BruhMotha.field22544, 0);
          if (var4 == 0 || var4 == 3) {
-            this.field19988.method21999(var1.<JsonElement>method30561(Class4750.field22538));
+            this.field19988.method21999(var1.<JsonElement>method30561(BruhMotha.field22538));
          }
       });
    }

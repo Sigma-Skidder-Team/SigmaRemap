@@ -10,9 +10,9 @@ public class Class3113 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      String var4 = var1.<String>method30555(Class4750.field22539, 0);
+      String var4 = var1.<String>method30555(BruhMotha.field22539, 0);
       if (var4.length() > 100) {
-         var1.method30558(Class4750.field22539, 0, var4.substring(0, 100));
+         var1.method30558(BruhMotha.field22539, 0, var4.substring(0, 100));
       }
    }
 }

@@ -7,18 +7,18 @@ public class Class4659 extends Class4660 {
    }
 
    public void method14625(Class8563 var1) throws Exception {
-      Class9738[] var4 = var1.<Class9738[]>method30561(Class4750.field22573);
+      Class9738[] var4 = var1.<Class9738[]>method30561(BruhMotha.field22573);
 
       for (Class9738 var8 : var4) {
          this.field22196.method30683(var8);
       }
 
-      Class9738[] var10 = var1.<Class9738[]>method30561(Class4750.field22573);
+      Class9738[] var10 = var1.<Class9738[]>method30561(BruhMotha.field22573);
 
       for (Class9738 var9 : var10) {
          this.field22196.method30683(var9);
       }
 
-      this.field22196.method30683(var1.<Class9738>method30561(Class4750.field22569));
+      this.field22196.method30683(var1.<Class9738>method30561(BruhMotha.field22569));
    }
 }

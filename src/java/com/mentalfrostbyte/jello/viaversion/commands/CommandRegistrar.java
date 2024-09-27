@@ -13,7 +13,7 @@ public class CommandRegistrar implements Class9213 {
       ViaVersion3.getInstance().method34424().method31083(Class5417.class, new Class5418());
       ViaVersion3.getInstance().method34424().method31083(Class5404.class, new Class5405());
       ViaVersion3.getInstance().method34424().method31083(Class5408.class, new Class5409());
-      int var3 = ((ResourceManager) ViaVersion3.method27613().getResourceManager()).method21920();
+      int var3 = ((ResourceManager) ViaVersion3.method27613().getResourceManager()).setVelocityPingInterval();
       if (var3 > 0) {
          ViaVersion3.method27613().scheduleTaskImmediately(new Class512(), (long)var3 * 20L);
       }

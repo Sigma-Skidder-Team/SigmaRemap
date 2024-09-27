@@ -16,7 +16,7 @@ import net.minecraft.world.chunk.ChunkSection;
 public class Class8920 {
    private static String[] field40380;
 
-   public static void method32597(ReceivePacketEvent var0, Class8982 var1) {
+   public static void method32597(ReceivePacketEvent var0, ViaVersionFixer var1) {
       if (var0.getPacket() instanceof SChangeBlockPacket) {
          SChangeBlockPacket var4 = (SChangeBlockPacket)var0.getPacket();
          var1.method33183(var4.method17632(), var4.method17631());

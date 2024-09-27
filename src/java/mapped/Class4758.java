@@ -2,7 +2,7 @@ package mapped;
 
 import io.netty.buffer.ByteBuf;
 
-public class Class4758 extends Class4750<Boolean> implements Class4755<Boolean> {
+public class Class4758 extends BruhMotha<Boolean> implements Class4755<Boolean> {
    public Class4758() {
       super(Boolean.class);
    }

@@ -5,8 +5,8 @@ public final class Class3887 extends Class3758 {
 
    @Override
    public void method12725() {
-      this.map(Class4750.field22544);
-      this.map(Class4750.field22544);
-      this.method12727(Class4750.field22568, Class4750.field22569);
+      this.map(BruhMotha.field22544);
+      this.map(BruhMotha.field22544);
+      this.method12727(BruhMotha.field22568, BruhMotha.field22569);
    }
 }

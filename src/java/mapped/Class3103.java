@@ -10,7 +10,7 @@ public class Class3103 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      Class9738[] var4 = var1.<Class9738[]>method30555(Class4750.field22562, 0);
+      Class9738[] var4 = var1.<Class9738[]>method30555(BruhMotha.field22562, 0);
 
       for (Class9738 var8 : var4) {
          Class8768.method31628(var8);

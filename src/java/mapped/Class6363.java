@@ -5,7 +5,7 @@ import com.google.gson.JsonObject;
 import java.util.List;
 
 public class Class6363 extends ViaVersion7<Class1933, Class1935, Class1923, Class1928> {
-   public static final Class3032<String, JsonElement> field27929 = new Class3046(Class4750.field22538);
+   public static final Class3032<String, JsonElement> field27929 = new Class3046(BruhMotha.field22538);
 
    public Class6363() {
       super(Class1933.class, Class1935.class, Class1923.class, Class1928.class);

@@ -12,8 +12,8 @@ public class Class3873 extends Class3758 {
 
    @Override
    public void method12725() {
-      this.map(Class4750.field22522);
-      this.map(Class4750.field22539);
-      this.method12733(var0 -> Class2980.method11397(var0.<JsonElement>method30561(Class4750.field22538)));
+      this.map(BruhMotha.field22522);
+      this.map(BruhMotha.field22539);
+      this.method12733(var0 -> Class2980.method11397(var0.<JsonElement>method30561(BruhMotha.field22538)));
    }
 }

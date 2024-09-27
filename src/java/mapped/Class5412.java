@@ -41,8 +41,8 @@ public class Class5412 implements Class5402 {
 
    private void method17000(Class7161 var1, Class9695 var2, int var3) throws Exception {
       Class8563 var6 = new Class8563(11, null, var1);
-      var6.method30560(Class4750.field22551, var2);
-      var6.method30560(Class4750.field22544, var3);
+      var6.method30560(BruhMotha.field22551, var2);
+      var6.method30560(BruhMotha.field22544, var3);
       var6.method30568(Class6380.class, true, true);
    }
 }

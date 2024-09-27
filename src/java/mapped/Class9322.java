@@ -30,8 +30,8 @@ public class Class9322 {
          if (var10 != null) {
             int var11 = var10.method12839(var0, var8, var9);
             Class8563 var12 = new Class8563(11, null, var0);
-            var12.method30560(Class4750.field22551, var8);
-            var12.method30560(Class4750.field22544, var11);
+            var12.method30560(BruhMotha.field22551, var8);
+            var12.method30560(BruhMotha.field22544, var11);
 
             try {
                var12.method30568(Class6380.class, true, true);
@@ -91,9 +91,9 @@ public class Class9322 {
 
                if (!var8.isEmpty()) {
                   Class8563 var18 = new Class8563(15, null, var0);
-                  var18.method30560(Class4750.field22526, var1 + var6);
-                  var18.method30560(Class4750.field22526, var2 + var7);
-                  var18.method30560(Class4750.field22564, var8.toArray(field43272));
+                  var18.method30560(BruhMotha.field22526, var1 + var6);
+                  var18.method30560(BruhMotha.field22526, var2 + var7);
+                  var18.method30560(BruhMotha.field22564, var8.toArray(field43272));
 
                   try {
                      var18.method30568(Class6380.class, true, true);
@@ -188,7 +188,7 @@ public class Class9322 {
          }
 
          field43276 = new Int2ObjectOpenHashMap(3650, 1.0F);
-         if (!ViaVersion3.method27612().method21927()) {
+         if (!ViaVersion3.method27612().setReduceBlockstorageMemory()) {
             field43277 = new Int2ObjectOpenHashMap(1146, 1.0F);
             JsonObject var19 = Class8159.method28358("blockConnections.json");
 
@@ -253,7 +253,7 @@ public class Class9322 {
             }
          }
 
-         if (ViaVersion3.method27612().method21926().equalsIgnoreCase("packet")) {
+         if (ViaVersion3.method27612().getPacketStringLiteral().equalsIgnoreCase("packet")) {
             field43273 = new Class5406();
             ViaVersion3.getInstance().method34424().method31082(Class5404.class, field43273);
          }

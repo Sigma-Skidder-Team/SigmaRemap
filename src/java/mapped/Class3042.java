@@ -3,7 +3,7 @@ package mapped;
 public final class Class3042 extends Class3032<Byte, Short> {
    private static String[] field18196;
 
-   public Class3042(Class4750 var1) {
+   public Class3042(BruhMotha var1) {
       super(var1);
    }
 

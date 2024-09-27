@@ -10,15 +10,15 @@ public class Class3120 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      int var4 = var1.<Integer>method30555(Class4750.field22544, 1);
-      var1.method30558(Class4750.field22544, 1, var4 + 1);
-      int var5 = var1.<Integer>method30555(Class4750.field22544, 3);
+      int var4 = var1.<Integer>method30555(BruhMotha.field22544, 1);
+      var1.method30558(BruhMotha.field22544, 1, var4 + 1);
+      int var5 = var1.<Integer>method30555(BruhMotha.field22544, 3);
 
       for (int var6 = 0; var6 < var5; var6++) {
-         var1.<String>method30561(Class4750.field22539);
-         boolean var7 = var1.<Boolean>method30561(Class4750.field22524);
+         var1.<String>method30561(BruhMotha.field22539);
+         boolean var7 = var1.<Boolean>method30561(BruhMotha.field22524);
          if (var7) {
-            var1.<String>method30561(Class4750.field22539);
+            var1.<String>method30561(BruhMotha.field22539);
          }
       }
    }

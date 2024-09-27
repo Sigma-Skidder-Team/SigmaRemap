@@ -2,10 +2,10 @@ package mapped;
 
 import java.util.List;
 
-public class Class6909 extends Class6904 {
+public class ANullAssBitchNigger extends BitchNiggerPlane2 {
    private static String[] field29907;
 
-   public Class6909(Class6379 var1) {
+   public ANullAssBitchNigger(Class6379 var1) {
       super(var1, Class6054.class);
    }
 

@@ -7,7 +7,7 @@ public class Class3041<T1, T2> extends Class3032<T1, T2> {
    public final Function field18194;
    public final Class3758 field18195;
 
-   public Class3041(Class3758 var1, Class4750 var2, Function var3) {
+   public Class3041(Class3758 var1, BruhMotha var2, Function var3) {
       super(var2);
       this.field18195 = var1;
       this.field18194 = var3;

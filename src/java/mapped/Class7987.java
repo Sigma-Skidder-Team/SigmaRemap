@@ -4,7 +4,7 @@ public class Class7987 {
    private static String[] field34315;
 
    public static void method27143(Class6384 var0) {
-      Class9524 var3 = new Class9524(var0, Class4750.field22552);
+      Class9524 var3 = new Class9524(var0, BruhMotha.field22552);
       var3.method36799(Class1915.field11448);
       var3.method36800(Class1915.field11449);
       var3.method36801(Class1915.field11453);

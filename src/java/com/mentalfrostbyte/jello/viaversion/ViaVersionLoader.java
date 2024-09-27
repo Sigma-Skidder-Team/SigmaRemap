@@ -24,7 +24,6 @@ import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CTabCompletePacket;
 import net.minecraft.network.play.server.*;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
 import java.util.ArrayList;
@@ -34,22 +33,20 @@ import java.util.List;
 import java.util.UUID;
 
 public class ViaVersionLoader {
-   private static String[] field31490;
-   public Minecraft mc = Minecraft.getInstance();
-   public List<BlockPos> field31492 = new ArrayList<BlockPos>();
-   public static List<Entity> field31493 = new ArrayList<Entity>();
+    public Minecraft mc = Minecraft.getInstance();
+   public static List<Entity> entites = new ArrayList<>();
    public static int field31494 = 0;
-   public final Class8982 field31495;
+   public final ViaVersionFixer fixer;
    public CTabCompletePacket cTabCompletePacket;
    private UUID field31497;
    public boolean field31498 = false;
    public boolean field31499;
 
    public ViaVersionLoader() {
-      this.field31495 = new Class8982(this);
+      this.fixer = new ViaVersionFixer(this);
    }
 
-   public void method23341() {
+   public void init() {
       Client.getInstance().getEventManager().register(this);
       new JelloPortal(null);
    }
@@ -82,7 +79,7 @@ public class ViaVersionLoader {
    @HigestPriority
    public void onWorldLoad(WorldLoadEvent event) {
       field31494 = 0;
-      this.field31495.method33176();
+      this.fixer.method33176();
    }
 
    @EventTarget
@@ -121,12 +118,12 @@ public class ViaVersionLoader {
    @HigestPriority
    public void method23347(TickEvent var1) {
       if (this.method23351()) {
-         int var4 = field31493.size();
+         int var4 = entites.size();
 
          for (int var5 = 0; var5 < var4; var5++) {
-            Entity var6 = field31493.get(var5);
+            Entity var6 = entites.get(var5);
             if (!MultiUtilities.getEntitesInWorld().contains(var6)) {
-               field31493.remove(var6);
+               entites.remove(var6);
                var4--;
                var5--;
             } else {
@@ -141,7 +138,7 @@ public class ViaVersionLoader {
                }
 
                if (!var8) {
-                  field31493.remove(var6);
+                  entites.remove(var6);
                   var4--;
                   var5--;
                }
@@ -149,11 +146,11 @@ public class ViaVersionLoader {
          }
 
          try {
-            this.field31495.method33175();
+            this.fixer.method33175();
          } catch (ConcurrentModificationException var10) {
          }
 
-         this.field31495.method33177();
+         this.fixer.method33177();
 
          for (int var11 = -5; var11 < 5; var11++) {
             for (int var12 = -5; var12 < 5; var12++) {
@@ -196,8 +193,8 @@ public class ViaVersionLoader {
    @HigestPriority
    public void method23349(ReceivePacketEvent var1) {
       if (!Client.getInstance().getModuleManager().getModuleByClass(OldHitting.class).isEnabled() && JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber()) {
-         if (!field31493.isEmpty()) {
-            field31493.clear();
+         if (!entites.isEmpty()) {
+            entites.clear();
          }
       } else if (var1.getPacket() instanceof SEntityEquipmentPacket) {
          SEntityEquipmentPacket var4 = (SEntityEquipmentPacket)var1.getPacket();
@@ -211,13 +208,13 @@ public class ViaVersionLoader {
                )) {
                if (!(((ItemStack)var6.getSecond()).getItem() instanceof Class3334)) {
                   Entity var7 = this.mc.world.getEntityByID(var4.getEntityID());
-                  if (field31493.contains(var7)) {
-                     field31493.remove(var7);
+                  if (entites.contains(var7)) {
+                     entites.remove(var7);
                   }
                } else {
                   Entity var14 = this.mc.world.getEntityByID(var4.getEntityID());
-                  if (!field31493.contains(var14) && !MultiUtilities.method17719()) {
-                     field31493.add(var14);
+                  if (!entites.contains(var14) && !MultiUtilities.method17719()) {
+                     entites.add(var14);
                   }
 
                   var1.setCancelled(true);
@@ -227,7 +224,7 @@ public class ViaVersionLoader {
       }
 
       if (this.method23351()) {
-         Class8920.method32597(var1, this.field31495);
+         Class8920.method32597(var1, this.fixer);
          if (!(var1.getPacket() instanceof SHeldItemChangePacket)) {
             if (var1.getPacket() instanceof SUnloadChunkPacket && MultiUtilities.method17717()) {
                var1.setCancelled(true);

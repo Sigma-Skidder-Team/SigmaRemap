@@ -11,17 +11,17 @@ public class Class3052 implements Class2982 {
    @Override
    public void method11398(Class8563 var1) throws Exception {
       Class7161 var4 = var1.method30580();
-      int var5 = (int)Math.floor((double)var1.<Float>method30555(Class4750.field22532, 0).floatValue());
-      int var6 = (int)Math.floor((double)var1.<Float>method30555(Class4750.field22532, 1).floatValue());
-      int var7 = (int)Math.floor((double)var1.<Float>method30555(Class4750.field22532, 2).floatValue());
-      int var8 = var1.<Integer>method30555(Class4750.field22526, 0);
+      int var5 = (int)Math.floor((double)var1.<Float>method30555(BruhMotha.field22532, 0).floatValue());
+      int var6 = (int)Math.floor((double)var1.<Float>method30555(BruhMotha.field22532, 1).floatValue());
+      int var7 = (int)Math.floor((double)var1.<Float>method30555(BruhMotha.field22532, 2).floatValue());
+      int var8 = var1.<Integer>method30555(BruhMotha.field22526, 0);
       Class9695[] var9 = new Class9695[var8];
 
       for (int var10 = 0; var10 < var8; var10++) {
          Class9695 var11 = new Class9695(
-            var5 + var1.<Byte>method30561(Class4750.field22518),
-            (short)(var6 + var1.<Byte>method30561(Class4750.field22518)),
-            var7 + var1.<Byte>method30561(Class4750.field22518)
+            var5 + var1.<Byte>method30561(BruhMotha.field22518),
+            (short)(var6 + var1.<Byte>method30561(BruhMotha.field22518)),
+            var7 + var1.<Byte>method30561(BruhMotha.field22518)
          );
          var9[var10] = var11;
          Class9322.method35225(var4, var11.method37962(), var11.method37963(), var11.method37964(), 0);

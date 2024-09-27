@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.List;
 
-public class Class6911 extends Class6904 {
+public class Class6911 extends BitchNiggerPlane2 {
    private static String[] field29909;
 
    public Class6911(Class6356 var1) {

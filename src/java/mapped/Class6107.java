@@ -8,7 +8,7 @@ public final class Class6107 implements Class6105 {
       int var5 = var2[0];
       int var6 = (var5 & 4095) << 4 | var5 >> 12 & 15;
       int var7 = Class7795.method25886(var6);
-      var1.method30773().add(new Class9231(Class4750.field22544, var7));
+      var1.method30773().add(new Class9231(BruhMotha.field22544, var7));
       return var1;
    }
 }

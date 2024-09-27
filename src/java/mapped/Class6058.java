@@ -68,7 +68,7 @@ public class Class6058 extends Class6036 {
    public void method18669(int var1) {
       super.method18669(var1);
       Class8563 var4 = new Class8563(65, null, this.method18672());
-      var4.method30560(Class4750.field22544, 64);
+      var4.method30560(BruhMotha.field22544, 64);
 
       try {
          var4.method30568(Class6371.class, true, true);

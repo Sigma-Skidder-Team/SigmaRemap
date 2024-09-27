@@ -5,7 +5,7 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.ByteBufInputStream;
 import io.netty.buffer.ByteBufOutputStream;
 
-public class Class4753 extends Class4750<Class72> {
+public class Class4753 extends BruhMotha<Class72> {
    public Class4753() {
       super(Class72.class);
    }

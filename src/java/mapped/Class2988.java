@@ -14,11 +14,11 @@ public class Class2988 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      String var4 = var1.<String>method30555(Class4750.field22539, 0);
+      String var4 = var1.<String>method30555(BruhMotha.field22539, 0);
       var4 = Class9687.method37926(var4);
       if (var4 != null) {
          if (var4.equals("REGISTER") || var4.equals("UNREGISTER")) {
-            String[] var6 = new String(var1.<byte[]>method30559(Class4750.field22521), StandardCharsets.UTF_8).split("\u0000");
+            String[] var6 = new String(var1.<byte[]>method30559(BruhMotha.field22521), StandardCharsets.UTF_8).split("\u0000");
             ArrayList var7 = new ArrayList();
 
             for (int var8 = 0; var8 < var6.length; var8++) {
@@ -32,10 +32,10 @@ public class Class2988 implements Class2982 {
                }
             }
 
-            var1.method30560(Class4750.field22521, Joiner.on('\u0000').join(var7).getBytes(StandardCharsets.UTF_8));
+            var1.method30560(BruhMotha.field22521, Joiner.on('\u0000').join(var7).getBytes(StandardCharsets.UTF_8));
          }
 
-         var1.method30558(Class4750.field22539, 0, var4);
+         var1.method30558(BruhMotha.field22539, 0, var4);
       } else {
          if (!ViaVersion3.method27612().method21941() || ViaVersion3.getInstance().method34425()) {
             ViaVersion3.method27613().getLogger().warning("Ignoring incoming plugin message with channel: " + var4);

@@ -7,6 +7,6 @@ public class Class6375 extends Class6374 {
 
    @Override
    public UUID method19387(Class8563 var1) throws Exception {
-      return var1.<UUID>method30561(Class4750.field22542);
+      return var1.<UUID>method30561(BruhMotha.field22542);
    }
 }

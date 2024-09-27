@@ -13,8 +13,8 @@ public class Class3806 extends Class3758 {
    @Override
    public void method12725() {
       this.method12733(var0 -> {
-         UUID var3 = UUID.fromString(var0.<String>method30559(Class4750.field22539));
-         var0.method30560(Class4750.field22542, var3);
+         UUID var3 = UUID.fromString(var0.<String>method30559(BruhMotha.field22539));
+         var0.method30560(BruhMotha.field22542, var3);
       });
    }
 }

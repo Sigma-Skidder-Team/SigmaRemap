@@ -10,12 +10,12 @@ public class Class3160 implements Class2982 {
    @Override
    public void method11398(Class8563 class85631) throws Exception {
       int i2 = -368356882;
-      float f4 = class85631.method30559(Class4750.field22532);
-      long j5 = class85631.method30559(Class4750.field22548);
-      int i3 = class85631.method30559(Class4750.field22518);
+      float f4 = class85631.method30559(BruhMotha.field22532);
+      long j5 = class85631.method30559(BruhMotha.field22548);
+      int i3 = class85631.method30559(BruhMotha.field22518);
 
-      class85631.method30560(Class4750.field22524, false);
-      class85631.method30560(Class4750.field22532, f4);
-      class85631.method30560(Class4750.field22548, j5);
+      class85631.method30560(BruhMotha.field22524, false);
+      class85631.method30560(BruhMotha.field22532, f4);
+      class85631.method30560(BruhMotha.field22548, j5);
    }
 }

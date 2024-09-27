@@ -34,7 +34,7 @@ public class Class4154 extends Class4147 {
       int var7 = field20405.get(var6);
       if (var7 != 0) {
          int var8 = this.method12840(var1, var2.method37961(Class1983.field12948));
-         if (!ViaVersion3.method27612().method21928()) {
+         if (!ViaVersion3.method27612().setFlowerStemWhenBlockAbove()) {
             if (!field20405.containsKey(var8)) {
                return var7;
             }

@@ -13,8 +13,8 @@ public class Class4824 extends Class4747<Class8173, Class6047> {
       int var5 = var1.readInt();
       int var6 = var1.readInt();
       boolean var7 = var1.readBoolean();
-      int var8 = Class4750.field22544.method14907(var1);
-      Class4750.field22544.method14907(var1);
+      int var8 = BruhMotha.field22544.method14907(var1);
+      BruhMotha.field22544.method14907(var1);
       Class8225[] var9 = new Class8225[16];
 
       for (int var10 = 0; var10 < 16; var10++) {
@@ -35,9 +35,9 @@ public class Class4824 extends Class4747<Class8173, Class6047> {
          }
       }
 
-      ArrayList var15 = new ArrayList<Class72>(Arrays.asList(Class4750.field22556.method14894(var1)));
+      ArrayList var15 = new ArrayList<Class72>(Arrays.asList(BruhMotha.field22556.method14894(var1)));
       if (var1.readableBytes() > 0) {
-         byte[] var12 = Class4750.field22521.method14894(var1);
+         byte[] var12 = BruhMotha.field22521.method14894(var1);
          if (ViaVersion3.getInstance().method34425()) {
             ViaVersion3.method27613().getLogger().warning("Found " + var12.length + " more bytes than expected while reading the chunk: " + var5 + "/" + var6);
          }
@@ -50,7 +50,7 @@ public class Class4824 extends Class4747<Class8173, Class6047> {
       var1.writeInt(var3.method28440());
       var1.writeInt(var3.method28441());
       var1.writeBoolean(var3.method28442());
-      Class4750.field22544.method14908(var1, var3.method28445());
+      BruhMotha.field22544.method14908(var1, var3.method28445());
       ByteBuf var6 = var1.alloc().buffer();
 
       try {
@@ -66,7 +66,7 @@ public class Class4824 extends Class4747<Class8173, Class6047> {
          }
 
          var6.readerIndex(0);
-         Class4750.field22544.method14908(var1, var6.readableBytes() + (var3.method28439() ? 256 : 0));
+         BruhMotha.field22544.method14908(var1, var6.readableBytes() + (var3.method28439() ? 256 : 0));
          var1.writeBytes(var6);
       } finally {
          var6.release();
@@ -78,11 +78,11 @@ public class Class4824 extends Class4747<Class8173, Class6047> {
          }
       }
 
-      Class4750.field22556.method14895(var1, var3.method28451().<Class72>toArray(new Class72[0]));
+      BruhMotha.field22556.method14895(var1, var3.method28451().<Class72>toArray(new Class72[0]));
    }
 
    @Override
-   public Class<? extends Class4750> method14897() {
+   public Class<? extends BruhMotha> method14897() {
       return Class4800.class;
    }
 }

@@ -3,7 +3,7 @@ package mapped;
 public class Class3036 extends Class3032<String, String> {
    public final Class3886 field18187;
 
-   public Class3036(Class3886 var1, Class4750 var2) {
+   public Class3036(Class3886 var1, BruhMotha var2) {
       super(var2);
       this.field18187 = var1;
    }

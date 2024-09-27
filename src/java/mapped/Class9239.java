@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class Class9239 {
    public static void method34749(Class6356 var0) {
-      Class9524 var3 = new Class9524(var0, Class4750.field22552);
+      Class9524 var3 = new Class9524(var0, BruhMotha.field22552);
       var3.method36799(Class1916.field11544);
       var3.method36800(Class1916.field11545);
       var3.method36801(Class1916.field11549);

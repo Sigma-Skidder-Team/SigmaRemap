@@ -12,7 +12,7 @@ public class Class3121 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      String var4 = var1.<String>method30555(Class4750.field22539, 0);
+      String var4 = var1.<String>method30555(BruhMotha.field22539, 0);
 
       try {
          JsonObject var5 = (JsonObject)Class9610.method37357().fromJson(var4, JsonObject.class);
@@ -20,7 +20,7 @@ public class Class3121 implements Class2982 {
             var5.addProperty("favicon", var5.get("favicon").getAsString().replace("\n", ""));
          }
 
-         var1.method30558(Class4750.field22539, 0, Class9610.method37357().toJson(var5));
+         var1.method30558(BruhMotha.field22539, 0, Class9610.method37357().toJson(var5));
       } catch (JsonParseException var6) {
          var6.printStackTrace();
       }

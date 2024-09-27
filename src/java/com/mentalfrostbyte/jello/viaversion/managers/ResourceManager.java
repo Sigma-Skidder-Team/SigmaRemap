@@ -35,7 +35,7 @@ public class ResourceManager extends Class7039 implements AbstractResourceManage
    }
 
    @Override
-   public URL method21874() {
+   public URL ViaVersionPlatformImpl() {
       return this.getClass().getClassLoader().getResource("assets/viaversion/config.yml");
    }
 
@@ -81,22 +81,22 @@ public class ResourceManager extends Class7039 implements AbstractResourceManage
 
    @Override
    public boolean method21890() {
-      return this.method21884("checkforupdates", false);
+      return this.setUnsupported("checkforupdates", false);
    }
 
    @Override
    public boolean method21891() {
-      return this.method21884("prevent-collision", true);
+      return this.setUnsupported("prevent-collision", true);
    }
 
    @Override
    public boolean method21892() {
-      return this.method21884("use-new-effect-indicator", true);
+      return this.setUnsupported("use-new-effect-indicator", true);
    }
 
    @Override
    public boolean method21893() {
-      return this.method21884("use-new-deathmessages", true);
+      return this.setUnsupported("use-new-deathmessages", true);
    }
 
    @Override
@@ -106,7 +106,7 @@ public class ResourceManager extends Class7039 implements AbstractResourceManage
 
    @Override
    public boolean method21895() {
-      return this.method21884("shield-blocking", true);
+      return this.setUnsupported("shield-blocking", true);
    }
 
    @Override
@@ -116,7 +116,7 @@ public class ResourceManager extends Class7039 implements AbstractResourceManage
 
    @Override
    public boolean method21897() {
-      return this.method21884("piston-animation-patch", false);
+      return this.setUnsupported("piston-animation-patch", false);
    }
 
    @Override
@@ -126,7 +126,7 @@ public class ResourceManager extends Class7039 implements AbstractResourceManage
 
    @Override
    public boolean method21899() {
-      return this.method21884("bossbar-anti-flicker", false);
+      return this.setUnsupported("bossbar-anti-flicker", false);
    }
 
    @Override
@@ -136,32 +136,32 @@ public class ResourceManager extends Class7039 implements AbstractResourceManage
 
    @Override
    public int method21901() {
-      return this.method21886("max-pps", 800);
+      return this.setUnsupported("max-pps", 800);
    }
 
    @Override
    public String method21902() {
-      return this.method21885("max-pps-kick-msg", "Sending packets too fast? lag?");
+      return this.setUnsupported("max-pps-kick-msg", "Sending packets too fast? lag?");
    }
 
    @Override
    public int method21903() {
-      return this.method21886("tracking-period", 6);
+      return this.setUnsupported("tracking-period", 6);
    }
 
    @Override
    public int method21904() {
-      return this.method21886("tracking-warning-pps", 120);
+      return this.setUnsupported("tracking-warning-pps", 120);
    }
 
    @Override
    public int method21905() {
-      return this.method21886("tracking-max-warnings", 3);
+      return this.setUnsupported("tracking-max-warnings", 3);
    }
 
    @Override
    public String method21906() {
-      return this.method21885("tracking-max-kick-msg", "You are sending too many packets, :(");
+      return this.setUnsupported("tracking-max-kick-msg", "You are sending too many packets, :(");
    }
 
    @Override
@@ -171,7 +171,7 @@ public class ResourceManager extends Class7039 implements AbstractResourceManage
 
    @Override
    public boolean method21908() {
-      return this.method21884("send-supported-versions", false);
+      return this.setUnsupported("send-supported-versions", false);
    }
 
    @Override
@@ -186,27 +186,27 @@ public class ResourceManager extends Class7039 implements AbstractResourceManage
 
    @Override
    public boolean method21911() {
-      return this.method21884("replace-pistons", false);
+      return this.setUnsupported("replace-pistons", false);
    }
 
    @Override
    public int method21912() {
-      return this.method21886("replacement-piston-id", 0);
+      return this.setUnsupported("replacement-piston-id", 0);
    }
 
    @Override
    public boolean method21913() {
-      return this.method21891() && this.method21884("auto-team", true);
+      return this.method21891() && this.setUnsupported("auto-team", true);
    }
 
    @Override
    public boolean method21914() {
-      return this.method21884("force-json-transform", false);
+      return this.setUnsupported("force-json-transform", false);
    }
 
    @Override
    public boolean method21915() {
-      return this.method21884("chat-nbt-fix", true);
+      return this.setUnsupported("chat-nbt-fix", true);
    }
 
    @Override
@@ -215,40 +215,40 @@ public class ResourceManager extends Class7039 implements AbstractResourceManage
    }
 
    @Override
-   public String method21917() {
-      return this.method21885("block-disconnect-msg", "You are using an unsupported Minecraft version!");
+   public String setBlockDisconnectMsg() {
+      return this.setUnsupported("block-disconnect-msg", "You are using an unsupported Minecraft version!");
    }
 
    @Override
-   public String method21918() {
-      return this.method21885("reload-disconnect-msg", "Server reload, please rejoin!");
+   public String setReloadDisconnectMsg() {
+      return this.setUnsupported("reload-disconnect-msg", "Server reload, please rejoin!");
    }
 
    @Override
-   public boolean method21919() {
-      return this.method21884("minimize-cooldown", true);
+   public boolean setMinimizeCooldown() {
+      return this.setUnsupported("minimize-cooldown", true);
    }
 
-   public int method21920() {
-      return this.method21886("velocity-ping-interval", 60);
+   public int setVelocityPingInterval() {
+      return this.setUnsupported("velocity-ping-interval", 60);
    }
 
-   public boolean method21921() {
-      return this.method21884("velocity-ping-save", true);
+   public boolean setVelocitPingSave() {
+      return this.setUnsupported("velocity-ping-save", true);
    }
 
-   public Map<String, Integer> method21922() {
-      return this.method21883("velocity-servers", Map.class, new HashMap<String, Integer>());
-   }
-
-   @Override
-   public boolean method21923() {
-      return this.method21884("team-colour-fix", true);
+   public Map<String, Integer> setVelocityServers() {
+      return this.setUnsupported("velocity-servers", Map.class, new HashMap<String, Integer>());
    }
 
    @Override
-   public boolean method21924() {
-      return this.method21884("disable-1_13-auto-complete", false);
+   public boolean setTeamColourFix() {
+      return this.setUnsupported("team-colour-fix", true);
+   }
+
+   @Override
+   public boolean setDisable113AutoComplete() {
+      return this.setUnsupported("disable-1_13-auto-complete", false);
    }
 
    @Override
@@ -257,38 +257,38 @@ public class ResourceManager extends Class7039 implements AbstractResourceManage
    }
 
    @Override
-   public String method21926() {
+   public String getPacketStringLiteral() {
       return "packet";
    }
 
    @Override
-   public boolean method21927() {
-      return this.method21884("reduce-blockstorage-memory", false);
+   public boolean setReduceBlockstorageMemory() {
+      return this.setUnsupported("reduce-blockstorage-memory", false);
    }
 
    @Override
-   public boolean method21928() {
-      return this.method21884("flowerstem-when-block-above", false);
+   public boolean setFlowerStemWhenBlockAbove() {
+      return this.setUnsupported("flowerstem-when-block-above", false);
    }
 
    @Override
-   public boolean method21929() {
-      return this.method21884("fix-low-snow-collision", false);
+   public boolean setFixLowSnowCollision() {
+      return this.setUnsupported("fix-low-snow-collision", false);
    }
 
    @Override
-   public int method21930() {
-      return this.method21886("1_13-tab-complete-delay", 0);
+   public int set113TabCompleteDelay() {
+      return this.setUnsupported("1_13-tab-complete-delay", 0);
    }
 
    @Override
-   public boolean method21931() {
-      return this.method21884("truncate-1_14-books", false);
+   public boolean setTruncate114books() {
+      return this.setUnsupported("truncate-1_14-books", false);
    }
 
    @Override
-   public boolean method21932() {
-      return this.method21884("left-handed-handling", true);
+   public boolean setLeftHandedHandling() {
+      return this.setUnsupported("left-handed-handling", true);
    }
 
    @Override

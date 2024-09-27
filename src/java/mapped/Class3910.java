@@ -10,6 +10,6 @@ public class Class3910 extends Class3758 {
 
    @Override
    public void method12725() {
-      this.method12727(Class4750.field22569, Class4750.field22568);
+      this.method12727(BruhMotha.field22569, BruhMotha.field22568);
    }
 }

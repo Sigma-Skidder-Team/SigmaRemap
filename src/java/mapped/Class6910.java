@@ -2,7 +2,7 @@ package mapped;
 
 import java.util.List;
 
-public class Class6910 extends Class6904 {
+public class Class6910 extends BitchNiggerPlane2 {
    private static String[] field29908;
 
    public Class6910(Class6371 var1) {
@@ -122,9 +122,9 @@ public class Class6910 extends Class6904 {
                }
 
                Class8563 var11 = new Class8563(70, null, var5);
-               var11.method30560(Class4750.field22544, var1);
-               var11.method30560(Class4750.field22544, 4);
-               var11.method30560(Class4750.field22569, var10);
+               var11.method30560(BruhMotha.field22544, var1);
+               var11.method30560(BruhMotha.field22544, 4);
+               var11.method30560(BruhMotha.field22569, var10);
                var11.method30570(Class6371.class);
             }
          } else if (var3.method31148() == 10) {

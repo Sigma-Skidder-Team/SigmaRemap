@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Class6362 extends ViaVersion7<Class1931, Class1931, Class1929, Class1929> {
    private static String[] field27926;
-   public static final Class3032<Short, Float> field27927 = new Class3043(Class4750.field22532);
+   public static final Class3032<Short, Float> field27927 = new Class3043(BruhMotha.field22532);
    public static final Class3032<List<Class8656>, List<Class8656>> field27928 = new Class3038(Class7593.field32598);
 
    public Class6362() {

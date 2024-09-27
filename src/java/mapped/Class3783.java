@@ -16,10 +16,10 @@ public class Class3783 extends Class3758 {
    public void method12725() {
       this.method12733(
          var0 -> {
-            String var3 = var0.<String>method30561(Class4750.field22539);
+            String var3 = var0.<String>method30561(BruhMotha.field22539);
             if (var3.length() <= 32) {
                if (var3.equals("minecraft:register") || var3.equals("minecraft:unregister")) {
-                  String[] var4 = new String(var0.<byte[]>method30559(Class4750.field22521), StandardCharsets.UTF_8).split("\u0000");
+                  String[] var4 = new String(var0.<byte[]>method30559(BruhMotha.field22521), StandardCharsets.UTF_8).split("\u0000");
                   ArrayList var5 = new ArrayList(var4.length);
 
                   for (String var9 : var4) {
@@ -37,7 +37,7 @@ public class Class3783 extends Class3758 {
                      return;
                   }
 
-                  var0.method30560(Class4750.field22521, Joiner.on('\u0000').join(var5).getBytes(StandardCharsets.UTF_8));
+                  var0.method30560(BruhMotha.field22521, Joiner.on('\u0000').join(var5).getBytes(StandardCharsets.UTF_8));
                }
             } else {
                if (!ViaVersion3.method27612().method21941()) {

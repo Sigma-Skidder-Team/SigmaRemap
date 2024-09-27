@@ -59,41 +59,41 @@ public interface AbstractResourceManager {
 
    boolean method21915();
 
-   boolean method21923();
+   boolean setTeamColourFix();
 
    boolean method21916();
 
    IntSet method21942();
 
-   String method21917();
+   String setBlockDisconnectMsg();
 
-   String method21918();
+   String setReloadDisconnectMsg();
 
    boolean method21941();
 
-   boolean method21924();
+   boolean setDisable113AutoComplete();
 
-   boolean method21919();
+   boolean setMinimizeCooldown();
 
    boolean method21925();
 
-   String method21926();
+   String getPacketStringLiteral();
 
-   boolean method21927();
+   boolean setReduceBlockstorageMemory();
 
-   boolean method21928();
+   boolean setFlowerStemWhenBlockAbove();
 
    boolean method21939();
 
-   boolean method21929();
+   boolean setFixLowSnowCollision();
 
    boolean method21938();
 
-   int method21930();
+   int set113TabCompleteDelay();
 
-   boolean method21931();
+   boolean setTruncate114books();
 
-   boolean method21932();
+   boolean setLeftHandedHandling();
 
    boolean method21933();
 

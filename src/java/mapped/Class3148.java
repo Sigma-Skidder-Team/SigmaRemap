@@ -10,9 +10,9 @@ public class Class3148 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      int var4 = var1.<Integer>method30559(Class4750.field22544);
-      if (ViaVersion3.method27612().method21932() && var4 == 0) {
-         var1.method30558(Class4750.field22522, 0, (short)(var1.<Short>method30555(Class4750.field22522, 0).intValue() | 128));
+      int var4 = var1.<Integer>method30559(BruhMotha.field22544);
+      if (ViaVersion3.method27612().setLeftHandedHandling() && var4 == 0) {
+         var1.method30558(BruhMotha.field22522, 0, (short)(var1.<Short>method30555(BruhMotha.field22522, 0).intValue() | 128));
       }
 
       var1.method30583(Class6363.class, true, true);

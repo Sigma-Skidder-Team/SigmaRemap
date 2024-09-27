@@ -2,7 +2,7 @@ package mapped;
 
 public class Class8966 {
    private static String[] field40493;
-   public static final Class3032<Byte, Short> field40494 = new Class3042(Class4750.field22534);
+   public static final Class3032<Byte, Short> field40494 = new Class3042(BruhMotha.field22534);
 
    public static void method32816(Class6363 var0) {
       var0.method19360(Class1933.field12297, new Class3907());

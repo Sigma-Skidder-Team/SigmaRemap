@@ -11,7 +11,7 @@ public class Class3886 extends Class3758 {
    @Override
    public void method12725() {
       this.method12733(new Class3122(this));
-      this.method12730(Class4750.field22539, new Class3036(this, Class4750.field22539));
+      this.method12730(BruhMotha.field22539, new Class3036(this, BruhMotha.field22539));
       this.method12732(new Class3013(this));
    }
 }

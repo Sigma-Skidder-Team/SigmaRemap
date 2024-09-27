@@ -18,7 +18,7 @@ public class ViaEncoder extends MessageToMessageEncoder<ByteBuf> {
          var2.retain();
          this.field35936.method22447();
          if (this.field35936.method22468()) {
-            int var6 = Class4750.field22544.method14894(var2);
+            int var6 = BruhMotha.field22544.method14894(var2);
             ByteBuf var7 = var2.alloc().buffer();
 
             try {

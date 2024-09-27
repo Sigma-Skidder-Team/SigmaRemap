@@ -10,7 +10,7 @@ public class Class3184 implements Class2982 {
 
    @Override
    public void method11398(Class8563 var1) throws Exception {
-      int var4 = var1.<Integer>method30559(Class4750.field22544);
+      int var4 = var1.<Integer>method30559(BruhMotha.field22544);
       if (var4 == 1) {
          var1.method30578();
       }

@@ -1,15 +1,15 @@
 package mapped;
 
 public abstract class Class3032<T1, T2> implements Class3007<T1> {
-   private final Class4750<T1> field18181;
-   private final Class4750<T2> field18182;
+   private final BruhMotha<T1> field18181;
+   private final BruhMotha<T2> field18182;
 
-   public Class3032(Class4750<T1> var1, Class4750<T2> var2) {
+   public Class3032(BruhMotha<T1> var1, BruhMotha<T2> var2) {
       this.field18181 = var1;
       this.field18182 = var2;
    }
 
-   public Class3032(Class4750<T2> var1) {
+   public Class3032(BruhMotha<T2> var1) {
       this(null, var1);
    }
 
@@ -26,11 +26,11 @@ public abstract class Class3032<T1, T2> implements Class3007<T1> {
    }
 
 
-   public Class4750<T1> method11403() {
+   public BruhMotha<T1> method11403() {
       return this.field18181;
    }
 
-   public Class4750<T2> method11404() {
+   public BruhMotha<T2> method11404() {
       return this.field18182;
    }
 }

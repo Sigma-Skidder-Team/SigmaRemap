@@ -5,6 +5,6 @@ public final class Class3814 extends Class3758 {
 
    @Override
    public void method12725() {
-      this.method12727(Class4750.field22544, Class4750.field22550);
+      this.method12727(BruhMotha.field22544, BruhMotha.field22550);
    }
 }

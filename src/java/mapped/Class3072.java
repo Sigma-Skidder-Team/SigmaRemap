@@ -17,12 +17,12 @@ public class Class3072 implements Class2982 {
          var1.method30560(var5, var6);
       } else {
          var1.method30587(29);
-         var1.method30560(Class4750.field22526, var6.method28440());
-         var1.method30560(Class4750.field22526, var6.method28441());
+         var1.method30560(BruhMotha.field22526, var6.method28440());
+         var1.method30560(BruhMotha.field22526, var6.method28441());
          Class5413 var7 = ViaVersion3.getInstance().method34424().<Class5413>method31084(Class5413.class);
          var7.method17003(var1.method30580(), var6.method28440(), var6.method28441());
       }
 
-      var1.<byte[]>method30559(Class4750.field22521);
+      var1.<byte[]>method30559(BruhMotha.field22521);
    }
 }

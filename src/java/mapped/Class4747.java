@@ -2,7 +2,7 @@ package mapped;
 
 import io.netty.buffer.ByteBuf;
 
-public abstract class Class4747<T, X> extends Class4750<T> {
+public abstract class Class4747<T, X> extends BruhMotha<T> {
    private final X field22514;
 
    public Class4747(X var1, Class<T> var2) {

@@ -6,7 +6,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class Class3038 extends Class3032<List<Class8656>, List<Class8656>> {
    private static String[] field18190;
 
-   public Class3038(Class4750 var1) {
+   public Class3038(BruhMotha var1) {
       super(var1);
    }
 
