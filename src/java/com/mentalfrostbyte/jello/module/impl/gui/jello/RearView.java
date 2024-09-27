@@ -6,8 +6,8 @@ import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.gui.GuiManager;
+import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
@@ -25,17 +25,14 @@ import org.lwjgl.opengl.GL11;
 
 import java.util.List;
 
-public class RearView extends PremiumModule {
-    private static final String field23664 = "Show in GUI";
-    private static final String field23665 = "Smart Visibility";
-    private static final String field23666 = "Size";
-    public static Framebuffer field23663;
-    public Animation field23662;
-    public int field23667 = 0;
+public class RearView extends Module {
+    public static Framebuffer framebuffer;
+    public Animation animation;
+    public int visibilityTimer = 0;
 
     public RearView() {
-        super("RearView", "See behind you", ModuleCategory.GUI);
-        this.field23662 = new Animation(230, 200, Direction.BACKWARDS);
+        super(ModuleCategory.GUI, "RearView", "See behind you");
+        this.animation = new Animation(230, 200, Direction.BACKWARDS);
         this.registerSetting(new BooleanSetting("Show in GUI", "Makes the Rear View visible in guis", false));
         this.registerSetting(new BooleanSetting("Smart Visibility", "Only pops up when a player is behind you", false));
         this.registerSetting(new NumberSetting<Integer>("Size", "The rear view width", 400.0F, Integer.class, 120.0F, 1000.0F, 1.0F));
@@ -43,179 +40,155 @@ public class RearView extends PremiumModule {
     }
 
     @EventTarget
-    public void method16447(TickEvent var1) {
+    public void onTick(TickEvent event) {
         if (this.isEnabled()) {
-            if (field23663 != null && (field23663.framebufferWidth != mc.mainWindow.getFramebufferWidth() || field23663.framebufferHeight != mc.mainWindow.getFramebufferHeight())) {
+            if (framebuffer != null && (framebuffer.framebufferWidth != mc.mainWindow.getFramebufferWidth() || framebuffer.framebufferHeight != mc.mainWindow.getFramebufferHeight())) {
                 this.onEnable();
             }
 
             if (this.getBooleanValueFromSetttingName("Smart Visibility")) {
-                List var4 = mc.world
-                        .method6772(
+                List<PlayerEntity> entities = mc.world
+                        .getEntitiesInAABBexcluding(
                                 PlayerEntity.class,
                                 mc.player.getBoundingBox().method19664(14.0),
                                 var1x -> var1x.getDistance(mc.player) < 12.0F
-                                        && !this.method16448(var1x)
+                                        && !this.isEntityWithinViewAngle(var1x)
                                         && mc.player != var1x
                                         && !Client.getInstance().getCombatManager().isValidTarget(var1x)
                         );
-                if (var4.isEmpty()) {
-                    if (this.field23667 > 0) {
-                        this.field23667--;
+                if (entities.isEmpty()) {
+                    if (this.visibilityTimer > 0) {
+                        this.visibilityTimer--;
                     }
                 } else {
-                    this.field23667 = 5;
+                    this.visibilityTimer = 5;
                 }
             }
         }
     }
 
-    public boolean method16448(LivingEntity var1) {
-        float var4 = RotationHelper.method34138(var1, mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ())[0];
-        return this.method16449(mc.player.rotationYaw, var4) <= 90.0F;
+    public boolean isEntityWithinViewAngle(LivingEntity targetEntity) {
+        float rotations = RotationHelper.calculateEntityRotations(targetEntity, mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ())[0];
+        return this.calculateAngleDifference(mc.player.rotationYaw, rotations) <= 90.0F;
     }
 
-    public float method16449(float var1, float var2) {
-        float var5 = Math.abs(var2 - var1) % 360.0F;
-        return !(var5 > 180.0F) ? var5 : 360.0F - var5;
+    public float calculateAngleDifference(float angle1, float angle2) {
+        float angleDifference = Math.abs(angle2 - angle1) % 360.0F;
+        return angleDifference <= 180.0F ? angleDifference : 360.0F - angleDifference;
     }
 
     @EventTarget
-    public void method16450(EventRender var1) {
-        if (field23663 != null) {
+    public void onRender(EventRender onRender) {
+        if (framebuffer != null) {
             if (this.isEnabled()) {
                 if (! Minecraft.getInstance().gameSettings.hideGUI) {
                     if (!this.getBooleanValueFromSetttingName("Smart Visibility")) {
-                        this.field23662.changeDirection(mc.currentScreen != null && !this.getBooleanValueFromSetttingName("Show in GUI") ? Direction.BACKWARDS : Direction.FORWARDS);
+                        this.animation.changeDirection(mc.currentScreen != null && !this.getBooleanValueFromSetttingName("Show in GUI") ? Direction.BACKWARDS : Direction.FORWARDS);
                     } else {
-                        this.field23662.changeDirection(this.field23667 <= 0 ? Direction.BACKWARDS : Direction.FORWARDS);
+                        this.animation.changeDirection(this.visibilityTimer <= 0 ? Direction.BACKWARDS : Direction.FORWARDS);
                     }
 
-                    float var4 = (float) mc.mainWindow.getWidth() / (float) mc.mainWindow.getHeight();
-                    int var5 = (int) this.getNumberValueBySettingName("Size");
-                    int var6 = (int) ((float) var5 / var4);
-                    int var7 = 10;
-                    int var8 = -var7 - var6;
-                    if (this.field23662.calcPercent() == 0.0F && this.field23662.calcPercent() == 1.0F) {
-                        if (this.field23662.calcPercent() == 0.0F) {
+                    float aspectRatio = (float) mc.mainWindow.getWidth() / (float) mc.mainWindow.getHeight();
+                    int rearViewWidth    = (int) this.getNumberValueBySettingName("Size");
+                    int rearViewHeight = (int) ((float) rearViewWidth / aspectRatio);
+                    int offset = 10;
+                    int positionY = -offset - rearViewHeight;
+                    if (this.animation.calcPercent() == 0.0F && this.animation.calcPercent() == 1.0F) {
+                        if (this.animation.calcPercent() == 0.0F) {
                             return;
                         }
-                    } else if (this.field23662.getDirection() != Direction.FORWARDS) {
-                        var8 = (int) ((float) var8 * MathUtils.lerp(this.field23662.calcPercent(), 0.49, 0.59, 0.16, 1.04));
+                    } else if (this.animation.getDirection() != Direction.FORWARDS) {
+                        positionY = (int) ((float) positionY * MathUtils.lerp(this.animation.calcPercent(), 0.49, 0.59, 0.16, 1.04));
                     } else {
-                        var8 = (int) ((float) var8 * MathUtils.lerp(this.field23662.calcPercent(), 0.3, 0.88, 0.47, 1.0));
+                        positionY = (int) ((float) positionY * MathUtils.lerp(this.animation.calcPercent(), 0.3, 0.88, 0.47, 1.0));
                     }
 
-                    RenderUtil.drawRoundedRect(
-                            (float) (mc.mainWindow.getWidth() - var7 - var5),
-                            (float) (mc.mainWindow.getHeight() + var8),
-                            (float) var5,
-                            (float) (var6 - 1),
-                            14.0F,
-                            this.field23662.calcPercent()
-                    );
-                    var5 = (int) ((float) var5 * GuiManager.portalScaleFactor);
-                    var6 = (int) ((float) var6 * GuiManager.portalScaleFactor);
-                    var7 = (int) ((float) var7 * GuiManager.portalScaleFactor);
-                    var8 = (int) ((float) var8 * GuiManager.portalScaleFactor);
+                    RenderUtil.drawRoundedRect((float) (mc.mainWindow.getWidth() - offset - rearViewWidth), (float) (mc.mainWindow.getHeight() + positionY), (float) rearViewWidth, (float) (rearViewHeight - 1), 14.0F, this.animation.calcPercent());
+                    rearViewWidth = (int) ((float) rearViewWidth * GuiManager.portalScaleFactor);
+                    rearViewHeight = (int) ((float) rearViewHeight * GuiManager.portalScaleFactor);
+                    offset = (int) ((float) offset * GuiManager.portalScaleFactor);
+                    positionY = (int) ((float) positionY * GuiManager.portalScaleFactor);
                     RenderSystem.pushMatrix();
-                    this.method16451(
-                            field23663, var5, var6, mc.mainWindow.getFramebufferWidth() - var7 - var5, mc.mainWindow.getFramebufferHeight() + var8
-                    );
+                    this.renderFramebuffer(framebuffer, rearViewWidth, rearViewHeight, mc.mainWindow.getFramebufferWidth() - offset - rearViewWidth, mc.mainWindow.getFramebufferHeight() + positionY);
                     RenderSystem.popMatrix();
                     RenderSystem.clear(256, Minecraft.IS_RUNNING_ON_MAC);
                     RenderSystem.matrixMode(5889);
                     RenderSystem.loadIdentity();
-                    RenderSystem.ortho(
-                            0.0,
-                            (double) mc.mainWindow.getFramebufferWidth() / mc.mainWindow.getGuiScaleFactor(),
-                            (double) mc.mainWindow.getFramebufferHeight() / mc.mainWindow.getGuiScaleFactor(),
-                            0.0,
-                            1000.0,
-                            3000.0
-                    );
+                    RenderSystem.ortho(0.0, (double) mc.mainWindow.getFramebufferWidth() / mc.mainWindow.getGuiScaleFactor(), (double) mc.mainWindow.getFramebufferHeight() / mc.mainWindow.getGuiScaleFactor(), 0.0, 1000.0, 3000.0);
                     RenderSystem.matrixMode(5888);
                     RenderSystem.loadIdentity();
                     RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
-                    GL11.glScaled(
-                            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor,
-                            1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor,
-                            1.0
-                    );
-                    field23663.unbindFramebuffer();
+                    GL11.glScaled(1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor, 1.0 / mc.mainWindow.getGuiScaleFactor() * (double) GuiManager.portalScaleFactor, 1.0);
+                    framebuffer.unbindFramebuffer();
                     mc.getFramebuffer().bindFramebuffer(true);
                 }
             }
         }
     }
 
-    public void method16451(Framebuffer var1, int var2, int var3, double var4, double var6) {
-        var6 = var6 - (double) mc.mainWindow.getFramebufferHeight() + (double) var3;
-        RenderSystem.method27870(true, true, true, false);
+    public void renderFramebuffer(Framebuffer var1, int width, int height, double posX, double posY) {
+        posY = posY - (double) mc.mainWindow.getFramebufferHeight() + (double) height;
+        RenderSystem.colorMask(true, true, true, false);
         RenderSystem.disableDepthTest();
         RenderSystem.depthMask(false);
         RenderSystem.matrixMode(5889);
         RenderSystem.loadIdentity();
-        RenderSystem.ortho(0.0, (double) var2 + var4, var3, 0.0, 1000.0, 3000.0);
+        RenderSystem.ortho(0.0, (double) width + posX, height, 0.0, 1000.0, 3000.0);
         RenderSystem.matrixMode(5888);
         RenderSystem.loadIdentity();
         RenderSystem.translatef(0.0F, 0.0F, -2000.0F);
-        RenderSystem.method27869(0, 0, var2 + (int) var4, var3 - (int) var6);
+        RenderSystem.viewport(0, 0, width + (int) posX, height - (int) posY);
         RenderSystem.enableTexture();
-        RenderSystem.method27821();
-        RenderSystem.method27817();
+        RenderSystem.disableLighting();
+        RenderSystem.disableAlphaTest();
         RenderSystem.disableBlend();
-        RenderSystem.method27822();
+        RenderSystem.enableColorMaterial();
         RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
         var1.bindFramebufferTexture();
-        float var10 = (float) var2;
-        float var11 = (float) var3;
+        float var10 = (float) width;
+        float var11 = (float) height;
         float var12 = (float) var1.framebufferWidth / (float) var1.framebufferTextureWidth;
         float var13 = (float) var1.framebufferHeight / (float) var1.framebufferTextureHeight;
-        Tessellator var14 = RenderSystem.renderThreadTesselator();
-        BufferBuilder var15 = var14.getBuffer();
-        var15.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
-        var15.pos(var4, (double) var11 + var6, 0.0).tex(0.0F, 0.0F).color(255, 255, 255, 255).endVertex();
-        var15.pos((double) var10 + var4, (double) var11 + var6, 0.0).tex(var12, 0.0F).color(255, 255, 255, 255).endVertex();
-        var15.pos((double) var10 + var4, var6, 0.0).tex(var12, var13).color(255, 255, 255, 255).endVertex();
-        var15.pos(var4, var6, 0.0).tex(0.0F, var13).color(255, 255, 255, 255).endVertex();
-        var14.draw();
+        Tessellator tezz = RenderSystem.renderThreadTesselator();
+        BufferBuilder buffer = tezz.getBuffer();
+        buffer.begin(7, DefaultVertexFormats.POSITION_TEX_COLOR);
+        buffer.pos(posX, (double) var11 + posY, 0.0).tex(0.0F, 0.0F).color(255, 255, 255, 255).endVertex();
+        buffer.pos((double) var10 + posX, (double) var11 + posY, 0.0).tex(var12, 0.0F).color(255, 255, 255, 255).endVertex();
+        buffer.pos((double) var10 + posX, posY, 0.0).tex(var12, var13).color(255, 255, 255, 255).endVertex();
+        buffer.pos(posX, posY, 0.0).tex(0.0F, var13).color(255, 255, 255, 255).endVertex();
+        tezz.draw();
         var1.unbindFramebufferTexture();
         RenderSystem.depthMask(true);
-        RenderSystem.method27870(true, true, true, true);
+        RenderSystem.colorMask(true, true, true, true);
     }
 
     @EventTarget
-    public void method16452(Render2DEvent var1) {
+    public void on2D(Render2DEvent event) {
         if (this.isEnabled()) {
-            if (field23663 != null) {
-                if (mc.currentScreen == null || this.getBooleanValueFromSetttingName("Show in GUI") || this.field23667 != 0) {
-                    RenderUtil.method11468();
+            if (framebuffer != null) {
+                if (mc.currentScreen == null || this.getBooleanValueFromSetttingName("Show in GUI") || this.visibilityTimer != 0) {
+                    RenderUtil.resetDepthBuffer();
                     RenderSystem.pushMatrix();
                     RenderSystem.clear(16640, false);
-                    field23663.bindFramebuffer(true);
+                    framebuffer.bindFramebuffer(true);
                     RenderSystem.enableTexture();
-                    RenderSystem.method27822();
-                    int var4 = mc.gameSettings.framerateLimit;
-                    int var5 = Math.min(Minecraft.getFps(), var4);
-                    var5 = Math.max(var5, 60);
-                    long var6 = Util.nanoTime() - var1.field21555;
-                    float var8 = mc.player.rotationYaw;
+                    RenderSystem.enableColorMaterial();
+                    float newYaw = mc.player.rotationYaw;
                     mc.player.rotationYaw += 180.0F;
                     RenderSystem.enableDepthTest();
                     GL11.glAlphaFunc(519, 0.0F);
-                    double var9 = mc.gameSettings.field44669;
-                    mc.gameSettings.field44669 = 114.0;
-                    mc.gameRenderer.field814 = false;
-                    Client.field28993 = true;
-                    Framebuffer var11 = mc.worldRenderer.field959;
-                    mc.worldRenderer.field959 = null;
-                    mc.gameRenderer.method754(var1.field21554, Util.nanoTime(), new MatrixStack());
-                    mc.worldRenderer.field959 = var11;
-                    Client.field28993 = false;
-                    mc.gameRenderer.field814 = true;
-                    mc.gameSettings.field44669 = var9;
-                    mc.player.rotationYaw = var8;
+                    double newFov = mc.gameSettings.fov;
+                    mc.gameSettings.fov = 114.0;
+                    mc.gameRenderer.renderHand = false;
+                    Client.dontRenderHand = true;
+                    Framebuffer var11 = mc.worldRenderer.entityOutlineFramebuffer;
+                    mc.worldRenderer.entityOutlineFramebuffer = null;
+                    mc.gameRenderer.renderWorld(event.partialTicks, Util.nanoTime(), new MatrixStack());
+                    mc.worldRenderer.entityOutlineFramebuffer = var11;
+                    Client.dontRenderHand = false;
+                    mc.gameRenderer.renderHand = true;
+                    mc.gameSettings.fov = newFov;
+                    mc.player.rotationYaw = newYaw;
                     RenderSystem.popMatrix();
                     mc.getFramebuffer().bindFramebuffer(true);
                 }
@@ -227,13 +200,12 @@ public class RearView extends PremiumModule {
 
     @Override
     public void onEnable() {
-        //RenderUtil.method11469(mc.getFramebuffer());
-        field23663 = new Framebuffer(mc.mainWindow.getFramebufferWidth(), mc.mainWindow.getFramebufferHeight(), true, Minecraft.IS_RUNNING_ON_MAC);
-        field23663.setFramebufferColor(1.0F, 1.0F, 1.0F, 1.0F);
+        framebuffer = new Framebuffer(mc.mainWindow.getFramebufferWidth(), mc.mainWindow.getFramebufferHeight(), true, Minecraft.IS_RUNNING_ON_MAC);
+        framebuffer.setFramebufferColor(1.0F, 1.0F, 1.0F, 1.0F);
     }
 
     @Override
     public void onDisable() {
-        this.field23662.changeDirection(Direction.BACKWARDS);
+        this.animation.changeDirection(Direction.BACKWARDS);
     }
 }
