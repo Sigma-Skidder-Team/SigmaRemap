@@ -22,8 +22,8 @@ public class Class5867 extends Slot {
 
    @Override
    public ItemStack onTake(PlayerEntity var1, ItemStack var2) {
-      this.field25640.field25468.get(0).decrStackSize(1);
-      this.field25640.field25468.get(1).decrStackSize(1);
+      this.field25640.inventorySlots.get(0).decrStackSize(1);
+      this.field25640.inventorySlots.get(1).decrStackSize(1);
       var2.getItem().method11725(var2, var1.world, var1);
       this.field25639.method31716((var1x, var2x) -> {
          long var5 = var1x.getGameTime();

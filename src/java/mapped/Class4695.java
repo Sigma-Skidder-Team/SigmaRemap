@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IItemProvider;
 
 import java.util.function.Consumer;
 

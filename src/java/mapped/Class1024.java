@@ -2,12 +2,15 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -53,7 +56,7 @@ public class Class1024 extends Class1025 implements Class1023 {
       return Class1009.method4343()
          .method21849(Attributes.MOVEMENT_SPEED, 0.35F)
          .method21849(Attributes.field42105, 24.0)
-         .method21849(Attributes.field42110, 5.0)
+         .method21849(Attributes.ATTACK_DAMAGE, 5.0)
          .method21849(Attributes.field42106, 32.0);
    }
 
@@ -146,7 +149,7 @@ public class Class1024 extends Class1025 implements Class1023 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field38148));
+      this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field38148));
    }
 
    @Override
@@ -156,9 +159,9 @@ public class Class1024 extends Class1025 implements Class1023 {
          ItemStack var4 = this.getHeldItemMainhand();
          if (var4.getItem() == Items.field38148) {
             Map var5 = EnchantmentHelper.method26312(var4);
-            var5.putIfAbsent(Class8122.field34931, 1);
+            var5.putIfAbsent(Enchantments.PIERCING, 1);
             EnchantmentHelper.method26314(var5, var4);
-            this.setItemStackToSlot(EquipmentSlotType.field13731, var4);
+            this.setItemStackToSlot(EquipmentSlotType.MAINHAND, var4);
          }
       }
    }
@@ -208,7 +211,7 @@ public class Class1024 extends Class1025 implements Class1023 {
             this.triggerItemPickupTrigger(var1);
             ItemStack var6 = this.field5711.method3676(var4);
             if (!var6.isEmpty()) {
-               var4.method32180(var6.getCount());
+               var4.setCount(var6.getCount());
             } else {
                var1.remove();
             }
@@ -246,15 +249,15 @@ public class Class1024 extends Class1025 implements Class1023 {
          HashMap var8 = Maps.newHashMap();
          if (var1 <= var5.method25435(Difficulty.field14353)) {
             if (var1 > var5.method25435(Difficulty.field14352)) {
-               var8.put(Class8122.field34930, 1);
+               var8.put(Enchantments.QUICK_CHARGE, 1);
             }
          } else {
-            var8.put(Class8122.field34930, 2);
+            var8.put(Enchantments.QUICK_CHARGE, 2);
          }
 
-         var8.put(Class8122.field34929, 1);
+         var8.put(Enchantments.MULTISHOT, 1);
          EnchantmentHelper.method26314(var8, var7);
-         this.setItemStackToSlot(EquipmentSlotType.field13731, var7);
+         this.setItemStackToSlot(EquipmentSlotType.MAINHAND, var7);
       }
    }
 

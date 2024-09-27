@@ -4,11 +4,14 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.IContainerListener;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.ITextComponent;
 
-public class Class875<T extends Class5823> extends ContainerScreen<T> implements Class876 {
+public class Class875<T extends Class5823> extends ContainerScreen<T> implements IContainerListener {
    private static String[] field4850;
    private ResourceLocation field4851;
 
@@ -59,15 +62,15 @@ public class Class875<T extends Class5823> extends ContainerScreen<T> implements
    }
 
    @Override
-   public void method2718(Container var1, NonNullList<ItemStack> var2) {
-      this.method2720(var1, 0, var1.getSlot(0).getStack());
+   public void sendAllContents(Container var1, NonNullList<ItemStack> var2) {
+      this.sendSlotContents(var1, 0, var1.getSlot(0).getStack());
    }
 
    @Override
-   public void method2719(Container var1, int var2, int var3) {
+   public void sendWindowProperty(Container var1, int var2, int var3) {
    }
 
    @Override
-   public void method2720(Container var1, int var2, ItemStack var3) {
+   public void sendSlotContents(Container var1, int var2, ItemStack var3) {
    }
 }

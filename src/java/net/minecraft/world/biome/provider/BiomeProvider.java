@@ -134,10 +134,10 @@ public abstract class BiomeProvider implements BiomeManager.IBiomeReader {
    }
 
    static {
-      Registry.<Codec<? extends BiomeProvider>>method9194(Registry.field16135, "fixed", Class1688.field9182);
-      Registry.<Codec<? extends BiomeProvider>>method9194(Registry.field16135, "multi_noise", Class1686.field9165);
-      Registry.<Codec<? extends BiomeProvider>>method9194(Registry.field16135, "checkerboard", Class1687.field9178);
-      Registry.<Codec<? extends BiomeProvider>>method9194(Registry.field16135, "vanilla_layered", Class1689.field9184);
-      Registry.<Codec<? extends BiomeProvider>>method9194(Registry.field16135, "the_end", EndBiomeProvider.field9191);
+      Registry.<Codec<? extends BiomeProvider>>register(Registry.field16135, "fixed", Class1688.field9182);
+      Registry.<Codec<? extends BiomeProvider>>register(Registry.field16135, "multi_noise", Class1686.field9165);
+      Registry.<Codec<? extends BiomeProvider>>register(Registry.field16135, "checkerboard", Class1687.field9178);
+      Registry.<Codec<? extends BiomeProvider>>register(Registry.field16135, "vanilla_layered", Class1689.field9184);
+      Registry.<Codec<? extends BiomeProvider>>register(Registry.field16135, "the_end", EndBiomeProvider.field9191);
    }
 }

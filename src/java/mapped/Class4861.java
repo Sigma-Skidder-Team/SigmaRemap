@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
@@ -60,7 +61,7 @@ public class Class4861 extends Class4837 {
             int var6 = Class958.method3889(var5);
             if (var6 > 0 && var6 <= 6) {
                ItemStack var7 = var5.copy();
-               var7.method32180(1);
+               var7.setCount(1);
                return var7;
             }
          }
@@ -78,7 +79,7 @@ public class Class4861 extends Class4837 {
             if (!var6.getItem().method11723()) {
                if (var6.method32141() && Class958.method3889(var6) > 0) {
                   ItemStack var7 = var6.copy();
-                  var7.method32180(1);
+                  var7.setCount(1);
                   var4.set(var5, var7);
                }
             } else {

@@ -4,13 +4,17 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.dispenser.IBlockSource;
+import net.minecraft.dispenser.IDispenseItemBehavior;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IBlockReader;
@@ -24,11 +28,11 @@ public class Class3357 extends Class3241 {
    private static String[] field18898;
    public static final Class8553 field18899 = Class3433.field19198;
    public static final Class8551 field18900 = Class8820.field39708;
-   private static final Map<Item, Class6226> field18901 = Util.make(
+   private static final Map<Item, IDispenseItemBehavior> field18901 = Util.make(
       new Object2ObjectOpenHashMap(), var0 -> var0.defaultReturnValue(new Class6218())
    );
 
-   public static void method11931(IItemProvider var0, Class6226 var1) {
+   public static void method11931(IItemProvider var0, IDispenseItemBehavior var1) {
       field18901.put(var0.method11581(), var1);
    }
 
@@ -62,8 +66,8 @@ public class Class3357 extends Class3241 {
       int var7 = var6.method4022();
       if (var7 >= 0) {
          ItemStack var8 = var6.getStackInSlot(var7);
-         Class6226 var9 = this.method11933(var8);
-         if (var9 != Class6226.field27722) {
+         IDispenseItemBehavior var9 = this.method11933(var8);
+         if (var9 != IDispenseItemBehavior.field27722) {
             var6.setInventorySlotContents(var7, var9.method19196(var5, var8));
          }
       } else {
@@ -71,7 +75,7 @@ public class Class3357 extends Class3241 {
       }
    }
 
-   public Class6226 method11933(ItemStack var1) {
+   public IDispenseItemBehavior method11933(ItemStack var1) {
       return field18901.get(var1.getItem());
    }
 
@@ -125,7 +129,7 @@ public class Class3357 extends Class3241 {
       }
    }
 
-   public static Class2955 method11934(Class2956 var0) {
+   public static Class2955 method11934(IBlockSource var0) {
       Direction var3 = var0.method11324().<Direction>method23463(field18899);
       double var4 = var0.getX() + 0.7 * (double)var3.method539();
       double var6 = var0.getY() + 0.7 * (double)var3.method540();

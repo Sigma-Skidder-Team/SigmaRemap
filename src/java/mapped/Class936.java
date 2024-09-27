@@ -5,10 +5,12 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -68,7 +70,7 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
       this.method3743((PlayerEntity)null);
       this.method3724().set(var1, var2);
       if (var2.getCount() > this.getInventoryStackLimit()) {
-         var2.method32180(this.getInventoryStackLimit());
+         var2.setCount(this.getInventoryStackLimit());
       }
    }
 
@@ -116,7 +118,7 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
 
    private boolean method3700() {
       for (ItemStack var4 : this.field5293) {
-         if (var4.isEmpty() || var4.getCount() != var4.method32113()) {
+         if (var4.isEmpty() || var4.getCount() != var4.getMaxStackSize()) {
             return false;
          }
       }
@@ -158,7 +160,7 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
    private boolean method3703(IInventory var1, Direction var2) {
       return method3702(var1, var2).allMatch(var1x -> {
          ItemStack var4 = var1.getStackInSlot(var1x);
-         return var4.getCount() >= var4.method32113();
+         return var4.getCount() >= var4.getMaxStackSize();
       });
    }
 
@@ -246,10 +248,10 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
          boolean var9 = var1.isEmpty();
          if (!var7.isEmpty()) {
             if (method3717(var7, var2)) {
-               int var10 = var2.method32113() - var7.getCount();
+               int var10 = var2.getMaxStackSize() - var7.getCount();
                int var11 = Math.min(var2.getCount(), var10);
-               var2.method32182(var11);
-               var7.method32181(var11);
+               var2.shrink(var11);
+               var7.grow(var11);
                var8 = var11 > 0;
             }
          } else {
@@ -346,7 +348,7 @@ public class Class936 extends Class939 implements Class937, ITickableTileEntity 
    private static boolean method3717(ItemStack var0, ItemStack var1) {
       if (var0.getItem() == var1.getItem()) {
          if (var0.method32117() == var1.method32117()) {
-            return var0.getCount() <= var0.method32113() ? ItemStack.method32127(var0, var1) : false;
+            return var0.getCount() <= var0.getMaxStackSize() ? ItemStack.method32127(var0, var1) : false;
          } else {
             return false;
          }

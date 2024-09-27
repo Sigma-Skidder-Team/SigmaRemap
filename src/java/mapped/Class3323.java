@@ -9,12 +9,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.Hand;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
 public class Class3323 extends Item {
-   public Class3323(Class5643 var1) {
+   public Class3323(Properties var1) {
       super(var1);
    }
 
@@ -24,7 +25,7 @@ public class Class3323 extends Item {
    }
 
    @Override
-   public ItemStack method11709(ItemStack var1, World var2, LivingEntity var3) {
+   public ItemStack onItemUseFinish(ItemStack var1, World var2, LivingEntity var3) {
       PlayerEntity var6 = !(var3 instanceof PlayerEntity) ? null : (PlayerEntity)var3;
       if (var6 instanceof ServerPlayerEntity) {
          CriteriaTriggers.field44490.method15174((ServerPlayerEntity)var6, var1);
@@ -43,7 +44,7 @@ public class Class3323 extends Item {
       if (var6 != null) {
          var6.addStat(Stats.field40098.method172(this));
          if (!var6.abilities.isCreativeMode) {
-            var1.method32182(1);
+            var1.shrink(1);
          }
       }
 

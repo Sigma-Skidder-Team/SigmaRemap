@@ -5,12 +5,10 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.*;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 
@@ -84,7 +82,7 @@ public abstract class Class919 extends AbstractMinecartEntity implements IInvent
       this.method3624((PlayerEntity)null);
       this.field5236.set(var1, var2);
       if (!var2.isEmpty() && var2.getCount() > this.getInventoryStackLimit()) {
-         var2.method32180(this.getInventoryStackLimit());
+         var2.setCount(this.getInventoryStackLimit());
       }
    }
 

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 
 public class Class3554 implements Class3499<BlockParticleData> {
    private static String[] field19478;

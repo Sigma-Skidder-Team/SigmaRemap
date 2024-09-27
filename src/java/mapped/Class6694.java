@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.enchantment.Enchantment;
+
 public class Class6694 extends Class6691 {
    private static String[] field29315;
    public final Enchantment field29316;

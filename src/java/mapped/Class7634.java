@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.Items;
 import net.minecraft.particles.IParticleData;
@@ -29,7 +30,7 @@ public abstract class Class7634 extends Class7633 {
 
    @Override
    public Item method25050() {
-      return Items.field37883;
+      return Items.WATER_BUCKET;
    }
 
    @Override

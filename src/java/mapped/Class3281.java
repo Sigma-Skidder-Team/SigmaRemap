@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 public class Class3281 extends Item {
    private static String[] field18789;
 
-   public Class3281(Class5643 var1) {
+   public Class3281(Properties var1) {
       super(var1);
    }
 
@@ -33,7 +33,7 @@ public class Class3281 extends Item {
             ItemStack var10 = var1.method18357();
             if (var4 instanceof ServerPlayerEntity) {
                CriteriaTriggers.field44489.method15138((ServerPlayerEntity)var4, var8, var10);
-               var10.method32121(1, var4, var1x -> var1x.sendBreakAnimation(var1.method18359()));
+               var10.damageItem(1, var4, var1x -> var1x.sendBreakAnimation(var1.method18359()));
             }
 
             return ActionResultType.method9002(var5.isRemote());
@@ -42,7 +42,7 @@ public class Class3281 extends Item {
          var5.method6742(var4, var6, SoundEvents.field26587, Class2266.field14732, 1.0F, field18735.nextFloat() * 0.4F + 0.8F);
          var5.setBlockState(var6, var7.method23465(Class8820.field39699, Boolean.valueOf(true)), 11);
          if (var4 != null) {
-            var1.method18357().method32121(1, var4, var1x -> var1x.sendBreakAnimation(var1.method18359()));
+            var1.method18357().damageItem(1, var4, var1x -> var1x.sendBreakAnimation(var1.method18359()));
          }
 
          return ActionResultType.method9002(var5.isRemote());

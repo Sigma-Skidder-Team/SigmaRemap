@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -37,7 +38,7 @@ public class Class138 extends Class128 {
       if (var5 != null) {
          int var6 = EnchantmentHelper.getEnchantmentLevel(this.field465, var5);
          int var7 = this.field466.method10785(var2.method26088(), var1.getCount(), var6);
-         var1.method32180(var7);
+         var1.setCount(var7);
       }
 
       return var1;

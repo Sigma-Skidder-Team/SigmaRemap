@@ -4,6 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
@@ -17,7 +18,7 @@ public class Class220<T extends LivingEntity, M extends Class2827<T>> extends Cl
    }
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.field13735);
+      ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.CHEST);
       if (this.method827(var13, (T)var4)) {
          ResourceLocation var14;
          if (!(var4 instanceof AbstractClientPlayerEntity)) {

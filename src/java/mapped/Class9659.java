@@ -10,13 +10,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.function.Predicate;
+
+import net.minecraft.util.CachedBlockInfo;
 import org.apache.commons.lang3.ArrayUtils;
 import org.apache.commons.lang3.StringUtils;
 
 public class Class9659 {
    private static final Joiner field45141 = Joiner.on(",");
    private final List<String[]> field45142 = Lists.newArrayList();
-   private final Map<Character, Predicate<Class9632>> field45143 = Maps.newHashMap();
+   private final Map<Character, Predicate<CachedBlockInfo>> field45143 = Maps.newHashMap();
    private int field45144;
    private int field45145;
 
@@ -43,7 +45,7 @@ public class Class9659 {
 
                for (char var11 : var7.toCharArray()) {
                   if (!this.field45143.containsKey(var11)) {
-                     this.field45143.put(var11, (Predicate<Class9632>)null);
+                     this.field45143.put(var11, (Predicate<CachedBlockInfo>)null);
                   }
                }
             }
@@ -60,7 +62,7 @@ public class Class9659 {
       return new Class9659();
    }
 
-   public Class9659 method37707(char var1, Predicate<Class9632> var2) {
+   public Class9659 method37707(char var1, Predicate<CachedBlockInfo> var2) {
       this.field45143.put(var1, var2);
       return this;
    }
@@ -69,7 +71,7 @@ public class Class9659 {
       return new Class9803(this.method37709());
    }
 
-   private Predicate<Class9632>[][][] method37709() {
+   private Predicate<CachedBlockInfo>[][][] method37709() {
       this.method37710();
       Predicate[][][] var3 = (Predicate[][][])Array.newInstance(Predicate.class, this.field45142.size(), this.field45144, this.field45145);
 

@@ -186,7 +186,7 @@ public class MineplexSpeed extends Module {
                 }
             }
 
-            InvManagerUtils.fixedClick(mc.player.container.field25471, 42, 0, ClickType.field14695, mc.player, true);
+            InvManagerUtils.fixedClick(mc.player.container.windowId, 42, 0, ClickType.QUICK_MOVE, mc.player, true);
             if (mc.player.container.getSlot(42).getStack().isEmpty()
                     && mc.player.inventory.currentItem != 6
                     && this.field23554 != 6) {

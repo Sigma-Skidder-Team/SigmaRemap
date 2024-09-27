@@ -11,6 +11,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.SwordItem;
 import net.minecraft.network.play.client.CUseEntityPacket;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -66,7 +67,7 @@ public class InteractAutoBlock {
 
    public boolean method36817() {
       return !this.parent.getStringSettingValueByName("Autoblock Mode").equals("None")
-         && this.mc.player.getHeldItemMainhand().getItem() instanceof ItemSword
+         && this.mc.player.getHeldItemMainhand().getItem() instanceof SwordItem
          && !this.isBlocking();
    }
 

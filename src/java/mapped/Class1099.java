@@ -20,7 +20,7 @@ public class Class1099 extends Class1009 {
    }
 
    public static Class7037 method5268() {
-      return Class1009.method4343().method21849(Attributes.field42105, 100.0).method21849(Attributes.MOVEMENT_SPEED, 0.5).method21849(Attributes.field42110, 50.0);
+      return Class1009.method4343().method21849(Attributes.field42105, 100.0).method21849(Attributes.MOVEMENT_SPEED, 0.5).method21849(Attributes.ATTACK_DAMAGE, 50.0);
    }
 
    @Override

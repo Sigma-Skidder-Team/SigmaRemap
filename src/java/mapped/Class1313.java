@@ -6,12 +6,14 @@ import com.google.common.collect.Maps;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.DialogTexts;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.item.Items;
+import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
@@ -298,7 +300,7 @@ public class Class1313 extends Screen {
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.water_world"),
-         Items.field37883,
+         Items.WATER_BUCKET,
          Class9495.field44145,
          Arrays.<Structure<?>>asList(Structure.field18069, Structure.field18065, Structure.field18068),
          false,
@@ -364,7 +366,7 @@ public class Class1313 extends Screen {
       );
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.redstone_ready"),
-         Items.field37887,
+         Items.REDSTONE_DUST,
          Class9495.field44123,
          Collections.<Structure<?>>emptyList(),
          false,

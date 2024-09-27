@@ -25,6 +25,6 @@ public interface Class7525<P extends Class7092> {
    Codec<P> method24567();
 
    static <P extends Class7092> Class7525<P> method24568(String var0, Codec<P> var1) {
-      return Registry.<Class7525<P>>method9194(Registry.field16137, var0, () -> var1);
+      return Registry.<Class7525<P>>register(Registry.field16137, var0, () -> var1);
    }
 }

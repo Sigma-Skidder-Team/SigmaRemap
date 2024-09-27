@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
@@ -11,7 +12,7 @@ public final class Class6234 extends Class6230 {
    private static String[] field27718;
 
    @Override
-   public ItemStack method19192(Class2956 var1, ItemStack var2) {
+   public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
       ServerWorld var5 = var1.method11326();
       this.method19204(true);
       Direction var6 = var1.method11324().<Direction>method23463(Class3357.field18899);
@@ -33,7 +34,7 @@ public final class Class6234 extends Class6230 {
       }
 
       if (this.method19203() && var2.method32120(1, var5.rand, (ServerPlayerEntity)null)) {
-         var2.method32180(0);
+         var2.setCount(0);
       }
 
       return var2;

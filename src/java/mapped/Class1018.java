@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -141,7 +142,7 @@ public abstract class Class1018 extends Class1045 {
 
    public void method4501(PlayerEntity var1, ItemStack var2) {
       if (!var1.abilities.isCreativeMode) {
-         var2.method32182(1);
+         var2.shrink(1);
       }
    }
 

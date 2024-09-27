@@ -66,6 +66,6 @@ public interface Class7792 {
    Class4178 method25881(TemplateManager var1, CompoundNBT var2);
 
    static Class7792 method25882(Class7792 var0, String var1) {
-      return Registry.<Class7792>method9194(Registry.field16116, var1.toLowerCase(Locale.ROOT), var0);
+      return Registry.<Class7792>register(Registry.field16116, var1.toLowerCase(Locale.ROOT), var0);
    }
 }

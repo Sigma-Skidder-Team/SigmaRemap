@@ -10,6 +10,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
@@ -131,7 +132,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
 
    @Override
    public boolean attackEntityAsMob(Entity var1) {
-      boolean var4 = var1.attackEntityFrom(DamageSource.method31114(this), (float)((int)this.getAttributeValue(Attributes.field42110)));
+      boolean var4 = var1.attackEntityFrom(DamageSource.method31114(this), (float)((int)this.getAttributeValue(Attributes.ATTACK_DAMAGE)));
       if (var4) {
          this.applyEnchantments(this, var1);
          if (var1 instanceof LivingEntity) {
@@ -442,7 +443,7 @@ public class Class1017 extends Class1018 implements IAngerable, Class1016 {
          .method21849(Attributes.field42105, 10.0)
          .method21849(Attributes.field42109, 0.6F)
          .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
-         .method21849(Attributes.field42110, 2.0)
+         .method21849(Attributes.ATTACK_DAMAGE, 2.0)
          .method21849(Attributes.field42106, 48.0);
    }
 

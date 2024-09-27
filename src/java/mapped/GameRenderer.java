@@ -16,11 +16,14 @@ import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.renderer.ActiveRenderInfo;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.util.Util;
+import net.minecraft.crash.CrashReport;
+import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.resources.IResourceManagerReloadListener;
+import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -722,7 +725,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
                BlockPos var7 = ((BlockRayTraceResult)var6).getPos();
                BlockState var8 = this.mc.world.getBlockState(var7);
                if (this.mc.playerController.getCurrentGameType() != GameType.SPECTATOR) {
-                  Class9632 var9 = new Class9632(this.mc.world, var7, false);
+                  CachedBlockInfo var9 = new CachedBlockInfo(this.mc.world, var7, false);
                   var4 = !var5.isEmpty()
                      && (var5.method32175(this.mc.world.method6817(), var9) || var5.method32176(this.mc.world.method6817(), var9));
                } else {

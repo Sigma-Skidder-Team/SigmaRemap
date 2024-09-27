@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -52,7 +54,7 @@ public class Class9196 {
          } else {
             return false;
          }
-      } else if (this.field42239 && var3.method23408() == Class2315.field15863) {
+      } else if (this.field42239 && var3.method23408() == PushReaction.field15863) {
          this.field42243.add(this.field42240);
          return true;
       } else {
@@ -139,7 +141,7 @@ public class Class9196 {
                   return false;
                }
 
-               if (var5.method23408() == Class2315.field15863) {
+               if (var5.method23408() == PushReaction.field15863) {
                   this.field42243.add(var10);
                   return true;
                }

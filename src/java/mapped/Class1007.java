@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -12,6 +13,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -433,7 +435,7 @@ public class Class1007 extends MobEntity implements Class1008 {
                BlockPos var15 = new BlockPos(var12, var13, var14);
                BlockState var16 = this.world.getBlockState(var15);
                Block var17 = var16.getBlock();
-               if (!var16.isAir() && var16.getMaterial() != Class8649.field38945) {
+               if (!var16.isAir() && var16.getMaterial() != Material.field38945) {
                   if (this.world.getGameRules().getBoolean(Class5462.field24224) && !BlockTags.field32791.method24917(var17)) {
                      var11 = this.world.removeBlock(var15, false) || var11;
                   } else {

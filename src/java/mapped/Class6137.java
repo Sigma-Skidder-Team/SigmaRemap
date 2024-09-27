@@ -25,10 +25,12 @@ import java.util.function.BinaryOperator;
 import java.util.function.IntFunction;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.server.ServerWorld;
@@ -377,7 +379,7 @@ public class Class6137 {
                                     Class6099.method18840("block", Class7505.method24464()),
                                     var2,
                                     var0x -> Class7505.method24465(var0x, "block")
-                                          .test(new Class9632(((Class6619)var0x.getSource()).method20172(), Class6849.method20827(var0x, "pos"), true))
+                                          .test(new CachedBlockInfo(((Class6619)var0x.getSource()).method20172(), Class6849.method20827(var0x, "pos"), true))
                                  )
                               )
                         )

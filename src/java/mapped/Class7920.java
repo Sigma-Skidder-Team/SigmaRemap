@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.NonNullList;
 
 import java.util.List;
 import java.util.function.Predicate;
@@ -9,7 +10,7 @@ import java.util.function.Predicate;
 public class Class7920 {
    public static ItemStack method26563(List<ItemStack> var0, int var1, int var2) {
       return var1 >= 0 && var1 < var0.size() && !((ItemStack)var0.get(var1)).isEmpty() && var2 > 0
-         ? ((ItemStack)var0.get(var1)).method32106(var2)
+         ? ((ItemStack)var0.get(var1)).split(var2)
          : ItemStack.EMPTY;
    }
 
@@ -74,7 +75,7 @@ public class Class7920 {
          return 0;
       } else if (!var3) {
          int var6 = var2 >= 0 ? Math.min(var2, var0.getCount()) : var0.getCount();
-         var0.method32182(var6);
+         var0.shrink(var6);
          return var6;
       } else {
          return var0.getCount();

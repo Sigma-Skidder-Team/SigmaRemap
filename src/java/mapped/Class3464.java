@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -42,7 +43,7 @@ public class Class3464 extends Class3462 {
                0.05 * (double)var11.method541() + var2.rand.nextDouble() * 0.02
             );
             var2.addEntity(var12);
-            var9.method32121(1, var4, var1x -> var1x.sendBreakAnimation(var5));
+            var9.damageItem(1, var4, var1x -> var1x.sendBreakAnimation(var5));
          }
 
          return ActionResultType.method9002(var2.isRemote);

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 
 public enum Class2210 {
    field14452("red", Blocks.RED_MUSHROOM.method11579()),

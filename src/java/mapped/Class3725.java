@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
@@ -67,7 +68,7 @@ public class Class3725 extends Class3676<Class1042> {
 
    public void method12502(ServerWorld var1, Class1042 var2, long var3) {
       this.method12627(var2);
-      var2.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37934));
+      var2.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37934));
       this.field19815 = var3;
       this.field19817 = 0;
    }
@@ -81,7 +82,7 @@ public class Class3725 extends Class3676<Class1042> {
    }
 
    public void method12506(ServerWorld var1, Class1042 var2, long var3) {
-      var2.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
+      var2.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
       this.field19816 = (long)var2.ticksExisted;
    }
 

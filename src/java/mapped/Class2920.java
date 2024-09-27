@@ -33,7 +33,7 @@ public class Class2920 extends Class2898<Class4703> {
          );
          BlockPos var13 = var11.down();
          BlockState var14 = var1.getBlockState(var13);
-         if ((var1.method7007(var11) || var5.field22314 && var1.getBlockState(var11).getMaterial().method31089())
+         if ((var1.method7007(var11) || var5.field22314 && var1.getBlockState(var11).getMaterial().isReplaceable())
             && var8.method23443(var1, var11)
             && (var5.field22308.isEmpty() || var5.field22308.contains(var14.getBlock()))
             && !var5.field22309.contains(var14)

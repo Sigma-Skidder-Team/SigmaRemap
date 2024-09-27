@@ -9,7 +9,7 @@ import net.minecraft.world.World;
 public class Class3304 extends Item {
    private static String[] field18809;
 
-   public Class3304(Class5643 var1) {
+   public Class3304(Properties var1) {
       super(var1);
    }
 
@@ -40,7 +40,7 @@ public class Class3304 extends Item {
 
       var2.addStat(Stats.field40098.method172(this));
       if (!var2.abilities.isCreativeMode) {
-         var6.method32182(1);
+         var6.shrink(1);
       }
 
       return Class6794.<ItemStack>method20700(var6, var1.isRemote());

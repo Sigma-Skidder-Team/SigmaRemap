@@ -74,7 +74,7 @@ public class Class9346 {
       int var3 = this.field43384.getCount();
       ItemStack var4 = this.field43384.copy();
       int var5 = Math.max(0, MathHelper.method37767((float)(var3 * this.field43391) * this.field43392));
-      var4.method32180(MathHelper.method37775(var3 + var5 + this.field43390, 1, this.field43384.getItem().method11710()));
+      var4.setCount(MathHelper.method37775(var3 + var5 + this.field43390, 1, this.field43384.getItem().getMaxStackSize()));
       return var4;
    }
 
@@ -181,20 +181,20 @@ public class Class9346 {
          return true;
       } else {
          ItemStack var5 = var1.copy();
-         if (var5.getItem().method11712()) {
+         if (var5.getItem().isDamageable()) {
             var5.method32118(var5.method32117());
          }
 
-         return ItemStack.method32130(var5, var2)
+         return ItemStack.areItemStacksEqual(var5, var2)
             && (!var2.method32141() || var5.method32141() && Class8354.method29280(var2.method32142(), var5.method32142(), false));
       }
    }
 
    public boolean method35389(ItemStack var1, ItemStack var2) {
       if (this.method35387(var1, var2)) {
-         var1.method32182(this.method35366().getCount());
+         var1.shrink(this.method35366().getCount());
          if (!this.method35367().isEmpty()) {
-            var2.method32182(this.method35367().getCount());
+            var2.shrink(this.method35367().getCount());
          }
 
          return true;

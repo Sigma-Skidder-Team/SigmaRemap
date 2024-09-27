@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.EnumSet;
@@ -29,7 +30,7 @@ public class Class2664 extends Class2661 {
          && !this.field17022.method4291()
          && Class1017.method4452(this.field17022)
          && !this.method10878(Class1017.method4453(this.field17022))
-         && this.field17022.world.getBlockState(Class1017.method4453(this.field17022)).method23446(BlockTags.field32794);
+         && this.field17022.world.getBlockState(Class1017.method4453(this.field17022)).isIn(BlockTags.field32794);
    }
 
    @Override

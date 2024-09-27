@@ -17,7 +17,7 @@ public class Class3305 extends Item {
    private static final Predicate<Entity> field18811 = Class8088.field34763.and(Entity::canBeCollidedWith);
    private final Class2099 field18812;
 
-   public Class3305(Class2099 var1, Class5643 var2) {
+   public Class3305(Class2099 var1, Properties var2) {
       super(var2);
       this.field18812 = var1;
    }
@@ -53,7 +53,7 @@ public class Class3305 extends Item {
                if (!var1.isRemote) {
                   var1.addEntity(var16);
                   if (!var2.abilities.isCreativeMode) {
-                     var6.method32182(1);
+                     var6.shrink(1);
                   }
                }
 

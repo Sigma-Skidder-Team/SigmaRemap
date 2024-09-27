@@ -13,8 +13,10 @@ import java.util.List;
 import java.util.function.Predicate;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.server.ServerWorld;
@@ -43,7 +45,7 @@ public class Class8031 {
                                                       new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                       Class7971.method27104(var0x, "block"),
                                                       Class2222.field14510,
-                                                      (Predicate<Class9632>)null
+                                                      (Predicate<CachedBlockInfo>)null
                                                    )
                                              ))
                                           .then(
@@ -54,7 +56,7 @@ public class Class8031 {
                                                             new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                             Class7971.method27104(var0x, "block"),
                                                             Class2222.field14510,
-                                                            (Predicate<Class9632>)null
+                                                            (Predicate<CachedBlockInfo>)null
                                                          )
                                                    ))
                                                 .then(
@@ -90,7 +92,7 @@ public class Class8031 {
                                                    new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                    Class7971.method27104(var0x, "block"),
                                                    Class2222.field14511,
-                                                   (Predicate<Class9632>)null
+                                                   (Predicate<CachedBlockInfo>)null
                                                 )
                                           )
                                     ))
@@ -102,7 +104,7 @@ public class Class8031 {
                                                 new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                                 Class7971.method27104(var0x, "block"),
                                                 Class2222.field14512,
-                                                (Predicate<Class9632>)null
+                                                (Predicate<CachedBlockInfo>)null
                                              )
                                        )
                                  ))
@@ -114,7 +116,7 @@ public class Class8031 {
                                              new Class9764(Class6849.method20827(var0x, "from"), Class6849.method20827(var0x, "to")),
                                              Class7971.method27104(var0x, "block"),
                                              Class2222.field14513,
-                                             (Predicate<Class9632>)null
+                                             (Predicate<CachedBlockInfo>)null
                                           )
                                     )
                               )
@@ -124,7 +126,7 @@ public class Class8031 {
       );
    }
 
-   private static int method27541(Class6619 var0, Class9764 var1, Class164 var2, Class2222 var3, Predicate<Class9632> var4) throws CommandSyntaxException {
+   private static int method27541(Class6619 var0, Class9764 var1, Class164 var2, Class2222 var3, Predicate<CachedBlockInfo> var4) throws CommandSyntaxException {
       int var7 = var1.method38398() * var1.method38399() * var1.method38400();
       if (var7 > 32768) {
          throw field34511.create(32768, var7);
@@ -134,7 +136,7 @@ public class Class8031 {
          int var10 = 0;
 
          for (BlockPos var12 : BlockPos.method8364(var1.field45678, var1.field45679, var1.field45680, var1.field45681, var1.field45682, var1.field45683)) {
-            if (var4 == null || var4.test(new Class9632(var9, var12, true))) {
+            if (var4 == null || var4.test(new CachedBlockInfo(var9, var12, true))) {
                Class164 var13 = var3.field14514.method26284(var1, var12, var2, var9);
                if (var13 != null) {
                   TileEntity var14 = var9.getTileEntity(var12);

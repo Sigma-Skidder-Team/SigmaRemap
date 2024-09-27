@@ -1,7 +1,11 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
@@ -21,14 +25,14 @@ public class Class3377 extends Class3231 {
    @Override
    public void method11562(World var1, PlayerEntity var2, BlockPos var3, BlockState var4, TileEntity var5, ItemStack var6) {
       super.method11562(var1, var2, var3, var4, var5, var6);
-      if (EnchantmentHelper.getEnchantmentLevel(Class8122.field34916, var6) == 0) {
+      if (EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, var6) == 0) {
          if (var1.method6812().isUltrawarm()) {
             var1.removeBlock(var3, false);
             return;
          }
 
-         Class8649 var9 = var1.getBlockState(var3.down()).getMaterial();
-         if (var9.method31087() || var9.isLiquid()) {
+         Material var9 = var1.getBlockState(var3.down()).getMaterial();
+         if (var9.blocksMovement() || var9.isLiquid()) {
             var1.setBlockState(var3, Blocks.WATER.method11579());
          }
       }
@@ -51,7 +55,7 @@ public class Class3377 extends Class3231 {
    }
 
    @Override
-   public Class2315 method11689(BlockState var1) {
-      return Class2315.field15862;
+   public PushReaction method11689(BlockState var1) {
+      return PushReaction.field15862;
    }
 }

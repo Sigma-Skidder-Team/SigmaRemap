@@ -29,7 +29,7 @@ public class Class9065 {
 
    @Nullable
    public static Class8176 method33752(Item var0, ResourceLocation var1) {
-      if (var0.method11711() > 0) {
+      if (var0.getMaxDamage() > 0) {
          if (field41485.equals(var1)) {
             return field41487;
          }

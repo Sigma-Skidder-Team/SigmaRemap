@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 import javax.annotation.Nullable;
 
@@ -66,7 +67,7 @@ public class Class988 implements IInventory {
    public void setInventorySlotContents(int var1, ItemStack var2) {
       this.field5468.set(var1, var2);
       if (!var2.isEmpty() && var2.getCount() > this.getInventoryStackLimit()) {
-         var2.method32180(this.getInventoryStackLimit());
+         var2.setCount(this.getInventoryStackLimit());
       }
 
       if (this.method4065(var1)) {

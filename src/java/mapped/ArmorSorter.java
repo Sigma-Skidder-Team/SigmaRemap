@@ -16,8 +16,8 @@ public class ArmorSorter implements Comparator<TimedEntity> {
    public int compare(TimedEntity var1, TimedEntity var2) {
       Entity var5 = var1.getEntity();
       Entity var6 = var2.getEntity();
-      int var7 = !(var5 instanceof PlayerEntity) ? 0 : InvManagerUtils.method25851((PlayerEntity)var5);
-      int var8 = !(var6 instanceof PlayerEntity) ? 0 : InvManagerUtils.method25851((PlayerEntity)var6);
+      int var7 = !(var5 instanceof PlayerEntity) ? 0 : InvManagerUtils.getTotalArmorProtection((PlayerEntity)var5);
+      int var8 = !(var6 instanceof PlayerEntity) ? 0 : InvManagerUtils.getTotalArmorProtection((PlayerEntity)var6);
       if (var7 - var8 >= 0) {
          if (var7 - var8 != 0) {
             return 1;

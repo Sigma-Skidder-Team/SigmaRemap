@@ -9,7 +9,7 @@ import net.minecraft.util.Hand;
 public class Class3330 extends Item {
    private static String[] field18838;
 
-   public Class3330(Class5643 var1) {
+   public Class3330(Properties var1) {
       super(var1);
    }
 
@@ -20,7 +20,7 @@ public class Class3330 extends Item {
          if (!var7.method4943() && var7.method4901()) {
             if (!var2.world.isRemote) {
                var7.method4942(Class2266.field14734);
-               var1.method32182(1);
+               var1.shrink(1);
             }
 
             return ActionResultType.method9002(var2.world.isRemote);

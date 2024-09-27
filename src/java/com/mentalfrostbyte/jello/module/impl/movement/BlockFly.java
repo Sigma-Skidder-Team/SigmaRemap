@@ -19,6 +19,7 @@ import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
 import mapped.*;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CClientStatusPacket;
@@ -120,7 +121,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                 int var4 = var3 - 36;
                 if (mc.player.container.getSlot(var3).getHasStack()
                         && method16733(mc.player.container.getSlot(var3).getStack().getItem())
-                        && mc.player.container.getSlot(var3).getStack().field39976 != 0) {
+                        && mc.player.container.getSlot(var3).getStack().count != 0) {
                     if (mc.player.inventory.currentItem == var4) {
                         return;
                     }
@@ -145,7 +146,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                 ItemStack var5 = mc.player.container.getSlot(var4).getStack();
                 Item var6 = var5.getItem();
                 if (method16733(var6)) {
-                    var3 += var5.field39976;
+                    var3 += var5.count;
                 }
             }
         }
@@ -204,8 +205,8 @@ public class BlockFly extends ModuleWithModuleSettings {
                             Item var12 = mc.player.container.getSlot(var10).getStack().getItem();
                             if (method16733(var12)) {
                                 var4 = var10;
-                                if (mc.player.container.getSlot(var10).getStack().field39976
-                                        == mc.player.container.getSlot(var8).getStack().field39976) {
+                                if (mc.player.container.getSlot(var10).getStack().count
+                                        == mc.player.container.getSlot(var8).getStack().count) {
                                     var4 = -1;
                                 }
                                 break;
@@ -214,7 +215,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                     }
                 }
 
-                if (var4 >= 0 && mc.player.container.getSlot(var4).field25579 != var8) {
+                if (var4 >= 0 && mc.player.container.getSlot(var4).slotNumber != var8) {
                     if (!(mc.currentScreen instanceof InventoryScreen) && var3.equals("FakeInv") && JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
                         mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
                     }
@@ -236,8 +237,8 @@ public class BlockFly extends ModuleWithModuleSettings {
                 if (mc.player.container.getSlot(var5).getHasStack()) {
                     Item var6 = mc.player.container.getSlot(var5).getStack().getItem();
                     ItemStack var7 = mc.player.container.getSlot(var5).getStack();
-                    if (method16733(var6) && var7.field39976 > var4) {
-                        var4 = var7.field39976;
+                    if (method16733(var6) && var7.count > var4) {
+                        var4 = var7.count;
                         var3 = var5;
                     }
                 }
@@ -269,7 +270,7 @@ public class BlockFly extends ModuleWithModuleSettings {
     }
 
     public void method16740(int var1, int var2) {
-        mc.playerController.windowClick(mc.player.container.field25471, var1, var2, ClickType.field14696, mc.player);
+        mc.playerController.windowClick(mc.player.container.windowId, var1, var2, ClickType.SWAP, mc.player);
     }
 
     public void method16741(EventMove var1) {

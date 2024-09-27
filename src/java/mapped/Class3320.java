@@ -12,7 +12,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 public class Class3320 extends Item {
-   public Class3320(Class5643 var1) {
+   public Class3320(Properties var1) {
       super(var1);
    }
 

@@ -1,6 +1,8 @@
 package mapped;
 
+import net.minecraft.enchantment.EnchantmentType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -15,22 +17,22 @@ public abstract class ItemGroup {
    public static final ItemGroup SEARCH = new Class7410(5, "search").method23646("item_search.png");
    public static final ItemGroup field31671 = new Class7407(7, "food");
    public static final ItemGroup field31672 = new Class7412(8, "tools")
-      .method23656(new Class2242[]{Class2242.field14683, Class2242.field14676, Class2242.field14677, Class2242.field14679});
+      .method23656(new EnchantmentType[]{EnchantmentType.field14683, EnchantmentType.DIGGER, EnchantmentType.FISHING_ROD, EnchantmentType.field14679});
    public static final ItemGroup field31673 = new Class7404(9, "combat")
       .method23656(
-         new Class2242[]{
-            Class2242.field14683,
-            Class2242.field14670,
-            Class2242.field14671,
-            Class2242.field14674,
-            Class2242.field14672,
-            Class2242.field14673,
-            Class2242.field14680,
-            Class2242.field14675,
-            Class2242.field14681,
-            Class2242.field14679,
-            Class2242.field14678,
-            Class2242.field14682
+         new EnchantmentType[]{
+            EnchantmentType.field14683,
+            EnchantmentType.field14670,
+            EnchantmentType.field14671,
+            EnchantmentType.field14674,
+            EnchantmentType.field14672,
+            EnchantmentType.field14673,
+            EnchantmentType.field14680,
+            EnchantmentType.WEAPON,
+            EnchantmentType.field14681,
+            EnchantmentType.field14679,
+            EnchantmentType.field14678,
+            EnchantmentType.field14682
          }
       );
    public static final ItemGroup field31674 = new Class7402(10, "brewing");
@@ -44,7 +46,7 @@ public abstract class ItemGroup {
    private String field31682 = "items.png";
    private boolean field31683 = true;
    private boolean field31684 = true;
-   private Class2242[] field31685 = new Class2242[0];
+   private EnchantmentType[] field31685 = new EnchantmentType[0];
    private ItemStack field31686;
 
    public ItemGroup(int var1, String var2) {
@@ -121,18 +123,18 @@ public abstract class ItemGroup {
       return this.method23652() == 5;
    }
 
-   public Class2242[] method23655() {
+   public EnchantmentType[] method23655() {
       return this.field31685;
    }
 
-   public ItemGroup method23656(Class2242... var1) {
+   public ItemGroup method23656(EnchantmentType... var1) {
       this.field31685 = var1;
       return this;
    }
 
-   public boolean method23657(Class2242 var1) {
+   public boolean method23657(EnchantmentType var1) {
       if (var1 != null) {
-         for (Class2242 var7 : this.field31685) {
+         for (EnchantmentType var7 : this.field31685) {
             if (var7 == var1) {
                return true;
             }

@@ -130,7 +130,7 @@ public class Class8037 {
                      var31,
                      var16.nextInt(var10 + 1) + var11,
                      var0.world.method7034(),
-                     var1x -> var0.world.getBlockState(var1x).getMaterial().method31086()
+                     var1x -> var0.world.getBlockState(var1x).getMaterial().isSolid()
                   );
                }
 

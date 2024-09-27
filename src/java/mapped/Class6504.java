@@ -36,6 +36,6 @@ public interface Class6504<T extends IRecipe<?>> {
    void method19698(PacketBuffer var1, T var2);
 
    static <S extends Class6504<T>, T extends IRecipe<?>> S method19702(String var0, S var1) {
-      return Registry.<S>method9194(Registry.field16086, var0, (S)var1);
+      return Registry.<S>register(Registry.field16086, var0, (S)var1);
    }
 }

@@ -18,6 +18,7 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -31,6 +32,7 @@ import net.minecraft.network.play.server.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Team;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -404,7 +406,7 @@ public abstract class Class6395 {
          boolean var15 = var20.isIn(Blocks.field37124);
          Vector3d var16 = (Vector3d)var9.get();
          float var18;
-         if (!var20.method23446(BlockTags.field32770) && !var15) {
+         if (!var20.isIn(BlockTags.field32770) && !var15) {
             var18 = var6;
          } else {
             Vector3d var17 = Vector3d.method11330(var5).method11336(var16).method11333();

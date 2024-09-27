@@ -9,9 +9,9 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
 public class Class3334 extends Item {
-   public Class3334(Class5643 var1) {
+   public Class3334(Properties var1) {
       super(var1);
-      Class3357.method11931(this, ArmorItem.field18780);
+      Class3357.method11931(this, ArmorItem.DISPENSER_BEHAVIOR);
    }
 
    @Override

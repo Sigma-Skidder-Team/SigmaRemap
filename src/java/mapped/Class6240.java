@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -8,7 +9,7 @@ public class Class6240 extends Class6230 {
    private static String[] field27731;
 
    @Override
-   public ItemStack method19192(Class2956 var1, ItemStack var2) {
+   public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
       this.method19204(false);
       Item var5 = var2.getItem();
       if (var5 instanceof Class3292) {

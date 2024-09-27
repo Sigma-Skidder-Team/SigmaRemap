@@ -4,6 +4,7 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
@@ -28,7 +29,7 @@ public class Class235<T extends LivingEntity, M extends Class2827<T> & Class2824
    }
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.field13736);
+      ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.HEAD);
       if (!var13.isEmpty()) {
          Item var14 = var13.getItem();
          var1.push();
@@ -68,7 +69,7 @@ public class Class235<T extends LivingEntity, M extends Class2827<T> & Class2824
 
             var1.translate(-0.5, 0.0, -0.5);
             Class5952.method18482((Direction)null, 180.0F, ((Class3251)((Class3292)var14).method11845()).method11696(), var22, var5, var1, var2, var3);
-         } else if (!(var14 instanceof ArmorItem) || ((ArmorItem)var14).method11805() != EquipmentSlotType.field13736) {
+         } else if (!(var14 instanceof ArmorItem) || ((ArmorItem)var14).getType() != EquipmentSlotType.HEAD) {
             float var20 = 0.625F;
             var1.translate(0.0, -0.25, 0.0);
             var1.rotate(Vector3f.YP.rotationDegrees(180.0F));

@@ -1,11 +1,13 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.IAngerable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -56,7 +58,7 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
    }
 
    public static Class7037 func_234352_eU_() {
-      return ZombieEntity.method4653().method21849(Attributes.field42116, 0.0).method21849(Attributes.MOVEMENT_SPEED, 0.23F).method21849(Attributes.field42110, 5.0);
+      return ZombieEntity.method4653().method21849(Attributes.field42116, 0.0).method21849(Attributes.MOVEMENT_SPEED, 0.23F).method21849(Attributes.ATTACK_DAMAGE, 5.0);
    }
 
    @Override
@@ -202,7 +204,7 @@ public class ZombifiedPiglinEntity extends ZombieEntity implements IAngerable {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37815));
+      this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37815));
    }
 
    @Override

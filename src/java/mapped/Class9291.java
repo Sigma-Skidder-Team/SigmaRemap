@@ -2,6 +2,7 @@ package mapped;
 
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 

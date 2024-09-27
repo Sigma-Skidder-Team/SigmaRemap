@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.container.Container;
 
 public final class Class5835 extends Container {
    private static String[] field25559;

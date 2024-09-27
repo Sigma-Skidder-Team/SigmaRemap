@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.util.IItemProvider;
 
 public class Class4618 extends Class4566 {
    private static String[] field22131;

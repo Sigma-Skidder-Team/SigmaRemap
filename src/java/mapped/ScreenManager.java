@@ -8,6 +8,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.IHasContainer;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.inventory.ChestScreen;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import org.apache.logging.log4j.LogManager;
@@ -23,7 +24,7 @@ public class ScreenManager {
          if (var6 != null) {
             var6.method29747(var3, var0, var1, var2);
          } else {
-            field32353.warn("Failed to create screen for menu type: {}", Registry.field16084.getKey(var0));
+            field32353.warn("Failed to create screen for menu type: {}", Registry.MENU.getKey(var0));
          }
       } else {
          field32353.warn("Trying to open invalid screen with name: {}", var3.getString());
@@ -38,16 +39,16 @@ public class ScreenManager {
    private static <M extends Container, U extends Screen & IHasContainer<M>> void method24655(ContainerType<? extends M> var0, Class8457<M, U> var1) {
       Class8457 var4 = field32354.put(var0, var1);
       if (var4 != null) {
-         throw new IllegalStateException("Duplicate registration for " + Registry.field16084.getKey(var0));
+         throw new IllegalStateException("Duplicate registration for " + Registry.MENU.getKey(var0));
       }
    }
 
    public static boolean isMissingScreen() {
       boolean var2 = false;
 
-      for (ContainerType var4 : Registry.field16084) {
+      for (ContainerType var4 : Registry.MENU) {
          if (!field32354.containsKey(var4)) {
-            field32353.debug("Menu {} has no matching screen", Registry.field16084.getKey(var4));
+            field32353.debug("Menu {} has no matching screen", Registry.MENU.getKey(var4));
             var2 = true;
          }
       }

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.server.ServerWorld;
@@ -135,7 +136,7 @@ public class Class3634 {
       for (int var8 = -1; var8 < 3; var8++) {
          for (int var9 = -1; var9 < 4; var9++) {
             var2.method8378(var1, var3.method539() * var8 + var7.method539() * var4, var9, var3.method541() * var8 + var7.method541() * var4);
-            if (var9 < 0 && !this.field19668.getBlockState(var2).getMaterial().method31086()) {
+            if (var9 < 0 && !this.field19668.getBlockState(var2).getMaterial().isSolid()) {
                return false;
             }
 

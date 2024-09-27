@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -78,8 +79,8 @@ public class Class3437 extends Class3433 {
    }
 
    @Override
-   public Class2315 method11689(BlockState var1) {
-      return Class2315.field15862;
+   public PushReaction method11689(BlockState var1) {
+      return PushReaction.field15862;
    }
 
    @Override

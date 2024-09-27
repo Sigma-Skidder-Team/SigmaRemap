@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
+
 import java.util.Random;
 
 public class Class8348 extends Class8347 {

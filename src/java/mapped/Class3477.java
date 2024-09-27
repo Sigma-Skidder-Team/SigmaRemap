@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.PushReaction;
 
 public class Class3477 extends Class3198 {
    private static String[] field19330;
@@ -21,7 +22,7 @@ public class Class3477 extends Class3198 {
    }
 
    @Override
-   public Class2315 method11689(BlockState var1) {
-      return Class2315.field15866;
+   public PushReaction method11689(BlockState var1) {
+      return PushReaction.field15866;
    }
 }

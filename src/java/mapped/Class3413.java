@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -59,8 +60,8 @@ public class Class3413 extends Block {
       if (!var9.isEmpty()) {
          int var10 = var1.<Integer>method23463(field19100);
          Item var11 = var9.getItem();
-         if (var11 != Items.field37883) {
-            if (var11 != Items.field37882) {
+         if (var11 != Items.WATER_BUCKET) {
+            if (var11 != Items.BUCKET) {
                if (var11 != Items.field37972) {
                   if (var11 == Items.field37971 && Class9741.method38185(var9) == Class8137.field34977) {
                      if (var10 < 3 && !var2.isRemote) {
@@ -92,11 +93,11 @@ public class Class3413 extends Block {
                      if (var10 > 0 && var11 instanceof Class3301) {
                         if (Class958.method3889(var9) > 0 && !var2.isRemote) {
                            ItemStack var16 = var9.copy();
-                           var16.method32180(1);
+                           var16.setCount(1);
                            Class958.method3892(var16);
                            var4.method2911(Stats.field40145);
                            if (!var4.abilities.isCreativeMode) {
-                              var9.method32182(1);
+                              var9.shrink(1);
                               this.method12051(var2, var3, var1, var10 - 1);
                            }
 
@@ -106,7 +107,7 @@ public class Class3413 extends Block {
                                     ((ServerPlayerEntity)var4).method2771(var4.container);
                                  }
                               } else {
-                                 var4.method2882(var16, false);
+                                 var4.dropItem(var16, false);
                               }
                            } else {
                               var4.setHeldItem(var5, var16);
@@ -138,14 +139,14 @@ public class Class3413 extends Block {
                      if (!var4.abilities.isCreativeMode) {
                         ItemStack var12 = Class9741.method38187(new ItemStack(Items.field37971), Class8137.field34977);
                         var4.method2911(Stats.field40143);
-                        var9.method32182(1);
+                        var9.shrink(1);
                         if (!var9.isEmpty()) {
                            if (var4.inventory.method4045(var12)) {
                               if (var4 instanceof ServerPlayerEntity) {
                                  ((ServerPlayerEntity)var4).method2771(var4.container);
                               }
                            } else {
-                              var4.method2882(var12, false);
+                              var4.dropItem(var12, false);
                            }
                         } else {
                            var4.setHeldItem(var5, var12);
@@ -161,13 +162,13 @@ public class Class3413 extends Block {
             } else {
                if (var10 == 3 && !var2.isRemote) {
                   if (!var4.abilities.isCreativeMode) {
-                     var9.method32182(1);
+                     var9.shrink(1);
                      if (!var9.isEmpty()) {
-                        if (!var4.inventory.method4045(new ItemStack(Items.field37883))) {
-                           var4.method2882(new ItemStack(Items.field37883), false);
+                        if (!var4.inventory.method4045(new ItemStack(Items.WATER_BUCKET))) {
+                           var4.dropItem(new ItemStack(Items.WATER_BUCKET), false);
                         }
                      } else {
-                        var4.setHeldItem(var5, new ItemStack(Items.field37883));
+                        var4.setHeldItem(var5, new ItemStack(Items.WATER_BUCKET));
                      }
                   }
 
@@ -181,7 +182,7 @@ public class Class3413 extends Block {
          } else {
             if (var10 < 3 && !var2.isRemote) {
                if (!var4.abilities.isCreativeMode) {
-                  var4.setHeldItem(var5, new ItemStack(Items.field37882));
+                  var4.setHeldItem(var5, new ItemStack(Items.BUCKET));
                }
 
                var4.method2911(Stats.field40142);

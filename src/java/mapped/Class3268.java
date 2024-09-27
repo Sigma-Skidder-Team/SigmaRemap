@@ -3,11 +3,15 @@ package mapped;
 import com.google.common.collect.ImmutableSet;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
+import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolItem;
 
 import java.util.Set;
 
-public class Class3268 extends Class3264 {
+public class Class3268 extends ToolItem {
    private static String[] field18763;
    private static final Set<Block> field18764 = ImmutableSet.of(
       Blocks.field36728,
@@ -98,12 +102,12 @@ public class Class3268 extends Class3264 {
       }
    );
 
-   public Class3268(Class2283 var1, int var2, float var3, Class5643 var4) {
+   public Class3268(IItemTier var1, int var2, float var3, Properties var4) {
       super((float)var2, var3, var1, field18764, var4);
    }
 
    @Override
-   public boolean method11715(BlockState var1) {
+   public boolean canHarvestBlock(BlockState var1) {
       int var4 = this.method11783().method9013();
       if (var1.isIn(Blocks.field36527)
          || var1.isIn(Blocks.field37123)
@@ -123,16 +127,16 @@ public class Class3268 extends Class3264 {
          && !var1.isIn(Blocks.field36419)
          && !var1.isIn(Blocks.field36456)
          && !var1.isIn(Blocks.field36455)) {
-         Class8649 var5 = var1.getMaterial();
-         return var5 == Class8649.field38966 || var5 == Class8649.field38967 || var5 == Class8649.field38969 || var1.isIn(Blocks.field36421);
+         Material var5 = var1.getMaterial();
+         return var5 == Material.field38966 || var5 == Material.field38967 || var5 == Material.ANVIL || var1.isIn(Blocks.field36421);
       } else {
          return var4 >= 1;
       }
    }
 
    @Override
-   public float method11708(ItemStack var1, BlockState var2) {
-      Class8649 var5 = var2.getMaterial();
-      return var5 != Class8649.field38967 && var5 != Class8649.field38969 && var5 != Class8649.field38966 ? super.method11708(var1, var2) : this.field18752;
+   public float getDestroySpeed(ItemStack stack, BlockState state) {
+      Material var5 = state.getMaterial();
+      return var5 != Material.field38967 && var5 != Material.ANVIL && var5 != Material.field38966 ? super.getDestroySpeed(stack, state) : this.efficiency;
    }
 }

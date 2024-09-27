@@ -9,6 +9,7 @@ import java.util.function.Function;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -67,7 +68,7 @@ public abstract class Class7195<C extends Class4729> {
    public final int field30900;
 
    private static <C extends Class4729, F extends Class7195<C>> F method22604(String var0, F var1) {
-      return Registry.<F>method9194(Registry.field16110, var0, (F)var1);
+      return Registry.<F>register(Registry.field16110, var0, (F)var1);
    }
 
    public Class7195(Codec<C> var1, int var2) {

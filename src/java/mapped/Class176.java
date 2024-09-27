@@ -35,8 +35,8 @@ public class Class176 implements Predicate<ItemStack> {
          var5.method32148(this.field564);
       }
 
-      if (var2 && var1 > var5.method32113()) {
-         throw field562.create(Registry.ITEM.getKey(this.field563), var5.method32113());
+      if (var2 && var1 > var5.getMaxStackSize()) {
+         throw field562.create(Registry.ITEM.getKey(this.field563), var5.getMaxStackSize());
       } else {
          return var5;
       }

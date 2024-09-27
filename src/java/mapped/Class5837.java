@@ -1,13 +1,16 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.IntReferenceHolder;
 
 public class Class5837 extends Container {
    private final IWorldPosCallable field25564;
-   private final Class4923 field25565 = Class4923.method15238();
+   private final IntReferenceHolder field25565 = IntReferenceHolder.method15238();
    private Runnable field25566 = () -> {
    };
    private final Slot field25567;
@@ -44,7 +47,7 @@ public class Class5837 extends Container {
    }
 
    public int method18244() {
-      return this.field25565.method15234();
+      return this.field25565.get();
    }
 
    @Override
@@ -72,8 +75,8 @@ public class Class5837 extends Container {
       if (var7.isEmpty()
          || !var4.isEmpty()
             && !var5.isEmpty()
-            && this.field25565.method15234() > 0
-            && (this.field25565.method15234() < Class2154.field14124 - Class2154.field14125 || !var6.isEmpty())) {
+            && this.field25565.get() > 0
+            && (this.field25565.get() < Class2154.field14124 - Class2154.field14125 || !var6.isEmpty())) {
          if (!var6.isEmpty() && var6.getItem() instanceof Class3286) {
             CompoundNBT var8 = var4.method32144("BlockEntityTag");
             boolean var9 = var8.contains("Patterns", 9) && !var4.isEmpty() && var8.method131("Patterns", 10).size() >= 6;
@@ -99,22 +102,22 @@ public class Class5837 extends Container {
    @Override
    public ItemStack transferStackInSlot(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
-      Slot var6 = this.field25468.get(var2);
+      Slot var6 = this.inventorySlots.get(var2);
       if (var6 != null && var6.getHasStack()) {
          ItemStack var7 = var6.getStack();
          var5 = var7.copy();
-         if (var2 != this.field25570.field25579) {
-            if (var2 != this.field25568.field25579 && var2 != this.field25567.field25579 && var2 != this.field25569.field25579) {
+         if (var2 != this.field25570.slotNumber) {
+            if (var2 != this.field25568.slotNumber && var2 != this.field25567.slotNumber && var2 != this.field25569.slotNumber) {
                if (var7.getItem() instanceof Class3301) {
-                  if (!this.mergeItemStack(var7, this.field25567.field25579, this.field25567.field25579 + 1, false)) {
+                  if (!this.mergeItemStack(var7, this.field25567.slotNumber, this.field25567.slotNumber + 1, false)) {
                      return ItemStack.EMPTY;
                   }
                } else if (var7.getItem() instanceof Class3321) {
-                  if (!this.mergeItemStack(var7, this.field25568.field25579, this.field25568.field25579 + 1, false)) {
+                  if (!this.mergeItemStack(var7, this.field25568.slotNumber, this.field25568.slotNumber + 1, false)) {
                      return ItemStack.EMPTY;
                   }
                } else if (var7.getItem() instanceof Class3286) {
-                  if (!this.mergeItemStack(var7, this.field25569.field25579, this.field25569.field25579 + 1, false)) {
+                  if (!this.mergeItemStack(var7, this.field25569.slotNumber, this.field25569.slotNumber + 1, false)) {
                      return ItemStack.EMPTY;
                   }
                } else if (var2 >= 4 && var2 < 31) {
@@ -158,14 +161,14 @@ public class Class5837 extends Container {
    }
 
    private void method18246() {
-      if (this.field25565.method15234() > 0) {
+      if (this.field25565.get() > 0) {
          ItemStack var3 = this.field25567.getStack();
          ItemStack var4 = this.field25568.getStack();
          ItemStack var5 = ItemStack.EMPTY;
          if (!var3.isEmpty() && !var4.isEmpty()) {
             var5 = var3.copy();
-            var5.method32180(1);
-            Class2154 var6 = Class2154.values()[this.field25565.method15234()];
+            var5.setCount(1);
+            Class2154 var6 = Class2154.values()[this.field25565.get()];
             Class112 var7 = ((Class3321)var4.getItem()).method11876();
             CompoundNBT var8 = var5.method32144("BlockEntityTag");
             ListNBT var9;
@@ -182,7 +185,7 @@ public class Class5837 extends Container {
             var9.add(var10);
          }
 
-         if (!ItemStack.method32128(var5, this.field25570.getStack())) {
+         if (!ItemStack.areItemStacksEqual1(var5, this.field25570.getStack())) {
             this.field25570.putStack(var5);
          }
       }
@@ -220,7 +223,7 @@ public class Class5837 extends Container {
    }
 
    // $VF: synthetic method
-   public static Class4923 method18256(Class5837 var0) {
+   public static IntReferenceHolder method18256(Class5837 var0) {
       return var0.field25565;
    }
 

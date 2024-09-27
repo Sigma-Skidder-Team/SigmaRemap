@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -24,10 +25,10 @@ public class Class1174 extends Class1155<Class1174> {
       if (var15 == Items.field37222) {
          if (!var14.isIn(Blocks.WATER)) {
             if (var14.isIn(Blocks.LAVA)) {
-               var15 = Items.field37884;
+               var15 = Items.LAVA_BUCKET;
             }
          } else {
-            var15 = Items.field37883;
+            var15 = Items.WATER_BUCKET;
          }
       }
 

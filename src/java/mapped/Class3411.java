@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -47,7 +48,7 @@ public class Class3411 extends Block {
    @Override
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockState var6 = var2.getBlockState(var3.up());
-      return !var6.getMaterial().method31086() || var6.getBlock() instanceof Class3199;
+      return !var6.getMaterial().isSolid() || var6.getBlock() instanceof Class3199;
    }
 
    @Override

@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.util.IItemProvider;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -198,7 +199,7 @@ public class Class3475 extends Block implements Class3476 {
             BlockState var11 = method12168(var1, var2, var3, var10);
             var2.playEvent(1500, var3, var1 == var11 ? 0 : 1);
             if (!var4.abilities.isCreativeMode) {
-               var10.method32182(1);
+               var10.shrink(1);
             }
          }
 
@@ -215,7 +216,7 @@ public class Class3475 extends Block implements Class3476 {
       int var6 = var0.<Integer>method23463(field19326);
       if (var6 < 7 && field19327.containsKey(var2.getItem())) {
          BlockState var7 = method12168(var0, var1, var3, var2);
-         var2.method32182(1);
+         var2.shrink(1);
          return var7;
       } else {
          return var0;

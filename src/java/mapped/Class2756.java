@@ -42,7 +42,7 @@ public class Class2756 extends Class2754 {
    private boolean method10959(BlockPos var1, int var2, int var3, int var4) {
       BlockPos var7 = var1.method8336(var2 * var4, 0, var3 * var4);
       return this.field17298.world.getFluidState(var7).method23486(FluidTags.field40469)
-         && !this.field17298.world.getBlockState(var7).getMaterial().method31087();
+         && !this.field17298.world.getBlockState(var7).getMaterial().blocksMovement();
    }
 
    private boolean method10960(BlockPos var1, int var2, int var3, int var4) {

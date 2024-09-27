@@ -2,6 +2,7 @@ package net.minecraft.tileentity;
 
 import mapped.*;
 import net.minecraft.block.BlockState;
+import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.util.ResourceLocation;

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
@@ -120,7 +121,7 @@ public class Class1021 extends Class1056 implements Class1020, Class1022 {
       if (var5.getItem() == Items.field37956 && this.method4516()) {
          this.method4515(Class2266.field14735);
          if (!this.world.isRemote) {
-            var5.method32121(1, var1, var1x -> var1x.sendBreakAnimation(var2));
+            var5.damageItem(1, var1, var1x -> var1x.sendBreakAnimation(var2));
          }
 
          return ActionResultType.method9002(this.world.isRemote);

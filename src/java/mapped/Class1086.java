@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -88,7 +89,7 @@ public class Class1086 extends Class1087 implements Class1020 {
       } else if (var5.getItem() == Items.field37956 && this.method4516()) {
          this.method4515(Class2266.field14735);
          if (!this.world.isRemote) {
-            var5.method32121(1, var1, var1x -> var1x.sendBreakAnimation(var2));
+            var5.damageItem(1, var1, var1x -> var1x.sendBreakAnimation(var2));
          }
 
          return ActionResultType.method9002(this.world.isRemote);
@@ -101,7 +102,7 @@ public class Class1086 extends Class1087 implements Class1020 {
 
             Pair var7 = (Pair)var6.get();
             if (!var1.abilities.isCreativeMode) {
-               var5.method32182(1);
+               var5.shrink(1);
             }
 
             for (int var8 = 0; var8 < 4; var8++) {

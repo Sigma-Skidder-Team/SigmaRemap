@@ -125,7 +125,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
          .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
          .method21849(Attributes.field42107, 0.6F)
          .method21849(Attributes.field42111, 1.0)
-         .method21849(Attributes.field42110, 6.0);
+         .method21849(Attributes.ATTACK_DAMAGE, 6.0);
    }
 
    public boolean method5099() {
@@ -213,7 +213,7 @@ public class Class1093 extends Class1009 implements Class1008, Class1092 {
    public void method4308(boolean var1) {
       this.getDataManager().method35446(field5982, var1);
       if (!this.world.isRemote && var1) {
-         this.getAttribute(Attributes.field42110).method38661(0.5);
+         this.getAttribute(Attributes.ATTACK_DAMAGE).method38661(0.5);
       }
    }
 

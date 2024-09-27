@@ -1,6 +1,8 @@
 package mapped;
 
 import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
+import net.minecraft.crash.CrashReport;
+import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.MathHelper;

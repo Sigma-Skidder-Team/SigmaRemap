@@ -1,7 +1,9 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 
@@ -60,12 +62,12 @@ public class Class5836 extends Container {
             ItemStack var10;
             if (var8 == Items.field37899 && !var9.field32323 && var9.field32321 < 4) {
                var10 = var1.copy();
-               var10.method32180(1);
+               var10.setCount(1);
                var10.getOrCreateTag().putInt("map_scale_direction", 1);
                this.detectAndSendChanges();
             } else if (var8 == Items.field37471 && !var9.field32323) {
                var10 = var1.copy();
-               var10.method32180(1);
+               var10.setCount(1);
                var10.getOrCreateTag().putBoolean("map_to_lock", true);
                this.detectAndSendChanges();
             } else {
@@ -76,11 +78,11 @@ public class Class5836 extends Container {
                }
 
                var10 = var1.copy();
-               var10.method32180(2);
+               var10.setCount(2);
                this.detectAndSendChanges();
             }
 
-            if (!ItemStack.method32128(var10, var3)) {
+            if (!ItemStack.areItemStacksEqual1(var10, var3)) {
                this.field25563.setInventorySlotContents(2, var10);
                this.detectAndSendChanges();
             }
@@ -96,7 +98,7 @@ public class Class5836 extends Container {
    @Override
    public ItemStack transferStackInSlot(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
-      Slot var6 = this.field25468.get(var2);
+      Slot var6 = this.inventorySlots.get(var2);
       if (var6 != null && var6.getHasStack()) {
          ItemStack var7 = var6.getStack();
          Item var8 = var7.getItem();

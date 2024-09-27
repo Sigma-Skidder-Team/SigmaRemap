@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -10,7 +11,7 @@ import net.minecraft.world.World;
 public class Class3329 extends Item {
    private static String[] field18837;
 
-   public Class3329(Class5643 var1) {
+   public Class3329(Properties var1) {
       super(var1);
    }
 

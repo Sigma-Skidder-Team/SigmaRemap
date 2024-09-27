@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
@@ -79,7 +80,7 @@ public class Class4857 extends Class4837 {
          if (!var6.getItem().method11723()) {
             if (var6.getItem() instanceof Class3285) {
                ItemStack var7 = var6.copy();
-               var7.method32180(1);
+               var7.setCount(1);
                var4.set(var5, var7);
                break;
             }

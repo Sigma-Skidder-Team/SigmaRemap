@@ -10,6 +10,7 @@ import java.util.TreeSet;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.Minecraft;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Items;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
@@ -708,20 +709,20 @@ public class Class8090 {
             if (var5.getArmorMaterial() == Class2114.field13773) {
                String var6 = "leather";
                String var7 = "helmet";
-               EquipmentSlotType var8 = var5.method11805();
-               if (var8 == EquipmentSlotType.field13736) {
+               EquipmentSlotType var8 = var5.getType();
+               if (var8 == EquipmentSlotType.HEAD) {
                   var7 = "helmet";
                }
 
-               if (var8 == EquipmentSlotType.field13735) {
+               if (var8 == EquipmentSlotType.CHEST) {
                   var7 = "chestplate";
                }
 
-               if (var8 == EquipmentSlotType.field13734) {
+               if (var8 == EquipmentSlotType.LEGS) {
                   var7 = "leggings";
                }
 
-               if (var8 == EquipmentSlotType.field13733) {
+               if (var8 == EquipmentSlotType.FEET) {
                   var7 = "boots";
                }
 

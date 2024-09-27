@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 
 public class Class239<T extends LivingEntity, M extends Class2827<T>> extends Class219<T, M> {
@@ -16,7 +17,7 @@ public class Class239<T extends LivingEntity, M extends Class2827<T>> extends Cl
       var1.push();
       var1.translate(0.0, 0.4F, -0.4F);
       var1.rotate(Vector3f.field32898.rotationDegrees(180.0F));
-      ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.field13731);
+      ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
       Minecraft.getInstance().getFirstPersonRenderer().method37580(var4, var13, Class2327.field15931, false, var1, var2, var3);
       var1.pop();
    }

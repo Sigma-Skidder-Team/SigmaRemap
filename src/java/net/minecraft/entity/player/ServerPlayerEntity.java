@@ -5,11 +5,16 @@ import com.mojang.authlib.GameProfile;
 import com.mojang.datafixers.util.Either;
 import mapped.*;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
+import net.minecraft.crash.CrashReport;
+import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.IAngerable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.inventory.container.Container;
+import net.minecraft.inventory.container.IContainerListener;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
@@ -41,7 +46,7 @@ import org.apache.logging.log4j.Logger;
 import javax.annotation.Nullable;
 import java.util.*;
 
-public class ServerPlayerEntity extends PlayerEntity implements Class876 {
+public class ServerPlayerEntity extends PlayerEntity implements IContainerListener {
    private static final Logger field4854 = LogManager.getLogger();
    public ServerPlayNetHandler field4855;
    public final MinecraftServer field4856;
@@ -831,7 +836,7 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
          this.method2765();
          Container var4 = var1.method3627(this.field4889, this.inventory, this);
          if (var4 != null) {
-            this.field4855.sendPacket(new SOpenWindowPacket(var4.field25471, var4.getType(), var1.method2954()));
+            this.field4855.sendPacket(new SOpenWindowPacket(var4.windowId, var4.getType(), var1.method2954()));
             var4.addListener(this);
             this.openContainer = var4;
             return OptionalInt.of(this.field4889);
@@ -883,42 +888,42 @@ public class ServerPlayerEntity extends PlayerEntity implements Class876 {
    }
 
    @Override
-   public void method2720(Container var1, int var2, ItemStack var3) {
+   public void sendSlotContents(Container var1, int var2, ItemStack var3) {
       if (!(var1.getSlot(var2) instanceof Class5856)) {
          if (var1 == this.container) {
             CriteriaTriggers.field44469.method15086(this, this.inventory, var3);
          }
 
          if (!this.field4890) {
-            this.field4855.sendPacket(new SSetSlotPacket(var1.field25471, var2, var3));
+            this.field4855.sendPacket(new SSetSlotPacket(var1.windowId, var2, var3));
          }
       }
    }
 
    public void method2771(Container var1) {
-      this.method2718(var1, var1.getInventory());
+      this.sendAllContents(var1, var1.getInventory());
    }
 
    @Override
-   public void method2718(Container var1, NonNullList<ItemStack> var2) {
-      this.field4855.sendPacket(new SWindowItemsPacket(var1.field25471, var2));
-      this.field4855.sendPacket(new SSetSlotPacket(-1, -1, this.inventory.method4057()));
+   public void sendAllContents(Container var1, NonNullList<ItemStack> var2) {
+      this.field4855.sendPacket(new SWindowItemsPacket(var1.windowId, var2));
+      this.field4855.sendPacket(new SSetSlotPacket(-1, -1, this.inventory.getItemStack()));
    }
 
    @Override
-   public void method2719(Container var1, int var2, int var3) {
-      this.field4855.sendPacket(new SWindowPropertyPacket(var1.field25471, var2, var3));
+   public void sendWindowProperty(Container var1, int var2, int var3) {
+      this.field4855.sendPacket(new SWindowPropertyPacket(var1.windowId, var2, var3));
    }
 
    @Override
    public void method2772() {
-      this.field4855.sendPacket(new SCloseWindowPacket(this.openContainer.field25471));
+      this.field4855.sendPacket(new SCloseWindowPacket(this.openContainer.windowId));
       this.method2774();
    }
 
    public void method2773() {
       if (!this.field4890) {
-         this.field4855.sendPacket(new SSetSlotPacket(-1, -1, this.inventory.method4057()));
+         this.field4855.sendPacket(new SSetSlotPacket(-1, -1, this.inventory.getItemStack()));
       }
    }
 

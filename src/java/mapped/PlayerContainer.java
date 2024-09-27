@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.RecipeBookCategory;
@@ -15,7 +16,7 @@ public class PlayerContainer extends Class5828<Class926> {
    public static final ResourceLocation field25543 = new ResourceLocation("item/empty_armor_slot_boots");
    public static final ResourceLocation field25544 = new ResourceLocation("item/empty_armor_slot_shield");
    private static final ResourceLocation[] field25545 = new ResourceLocation[]{field25543, field25542, field25541, field25540};
-   private static final EquipmentSlotType[] field25546 = new EquipmentSlotType[]{EquipmentSlotType.field13736, EquipmentSlotType.field13735, EquipmentSlotType.field13734, EquipmentSlotType.field13733};
+   private static final EquipmentSlotType[] field25546 = new EquipmentSlotType[]{EquipmentSlotType.HEAD, EquipmentSlotType.CHEST, EquipmentSlotType.LEGS, EquipmentSlotType.FEET};
    private final Class926 field25547 = new Class926(this, 2, 2);
    private final Class921 field25548 = new Class921();
    public final boolean field25549;
@@ -69,7 +70,7 @@ public class PlayerContainer extends Class5828<Class926> {
 
    @Override
    public void onCraftMatrixChanged(IInventory var1) {
-      Class5829.method18228(this.field25471, this.field25550.world, this.field25550, this.field25547, this.field25548);
+      Class5829.method18228(this.windowId, this.field25550.world, this.field25550, this.field25547, this.field25548);
    }
 
    @Override
@@ -89,7 +90,7 @@ public class PlayerContainer extends Class5828<Class926> {
    @Override
    public ItemStack transferStackInSlot(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
-      Slot var6 = this.field25468.get(var2);
+      Slot var6 = this.inventorySlots.get(var2);
       if (var6 != null && var6.getHasStack()) {
          ItemStack var7 = var6.getStack();
          var5 = var7.copy();
@@ -103,12 +104,12 @@ public class PlayerContainer extends Class5828<Class926> {
                if (!this.mergeItemStack(var7, 9, 45, false)) {
                   return ItemStack.EMPTY;
                }
-            } else if (var8.method8772() == Class1969.field12837 && !this.field25468.get(8 - var8.method8773()).getHasStack()) {
-               int var9 = 8 - var8.method8773();
+            } else if (var8.getSlotType() == EquipmentSlotType.Group.ARMOR && !this.inventorySlots.get(8 - var8.getIndex()).getHasStack()) {
+               int var9 = 8 - var8.getIndex();
                if (!this.mergeItemStack(var7, var9, var9 + 1, false)) {
                   return ItemStack.EMPTY;
                }
-            } else if (var8 == EquipmentSlotType.OFFHAND && !this.field25468.get(45).getHasStack()) {
+            } else if (var8 == EquipmentSlotType.OFFHAND && !this.inventorySlots.get(45).getHasStack()) {
                if (!this.mergeItemStack(var7, 45, 46, false)) {
                   return ItemStack.EMPTY;
                }
@@ -143,7 +144,7 @@ public class PlayerContainer extends Class5828<Class926> {
 
          ItemStack var10 = var6.onTake(var1, var7);
          if (var2 == 0) {
-            var1.method2882(var10, false);
+            var1.dropItem(var10, false);
          }
       }
 

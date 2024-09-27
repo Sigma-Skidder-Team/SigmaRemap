@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.SoundEvent;
 
 public interface Class2115 {

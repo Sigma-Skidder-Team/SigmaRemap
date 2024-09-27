@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.command.CommandException;
 import mapped.Flags;
 import mapped.Class2193;
 import mapped.Class6669;
-import mapped.Class8623;
+import mapped.ChatCommandArguments;
 import net.minecraft.network.play.server.SPlayerPositionLookPacket;
 
 import java.util.Collections;
@@ -17,7 +17,7 @@ public class VClip extends Command {
    }
 
    @Override
-   public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
       if (var2.length != 0) {
          if (var2.length <= 1) {
             if (var2[0].method30895() != Class2193.field14336) {
@@ -35,7 +35,7 @@ public class VClip extends Command {
                         (int)(2.147483647E9 * Math.random())
                      )
                   );
-               var3.method20327("VClip'd to position " + (mc.player.getPosY() + var2[0].method30896()));
+               var3.send("VClip'd to position " + (mc.player.getPosY() + var2[0].method30896()));
             }
          } else {
             throw new CommandException("Too many arguments");

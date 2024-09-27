@@ -63,7 +63,7 @@ public class Class2724 extends Class2595 {
                }
 
                var3.attackEntityFrom(DamageSource.method31124(this.field17217, this.field17217), var4);
-               var3.attackEntityFrom(DamageSource.method31115(this.field17217), (float)this.field17217.getAttributeValue(Attributes.field42110));
+               var3.attackEntityFrom(DamageSource.method31115(this.field17217), (float)this.field17217.getAttributeValue(Attributes.ATTACK_DAMAGE));
                this.field17217.method4233((LivingEntity)null);
             }
          } else {

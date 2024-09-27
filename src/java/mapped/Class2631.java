@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
 

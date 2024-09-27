@@ -4,7 +4,10 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
+import net.minecraft.util.IItemProvider;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -20,7 +23,7 @@ import java.util.stream.Stream;
 
 public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class5888>> {
    private static final Class7519 field17628 = Class159.method480(
-      Class9735.method38146().method38150(new Class8605(Class8122.field34916, Class8840.method32014(1)))
+      Class9735.method38146().method38150(new Class8605(Enchantments.SILK_TOUCH, Class8840.method32014(1)))
    );
    private static final Class7519 field17629 = field17628.method24518();
    private static final Class7519 field17630 = Class159.method480(Class9735.method38146().method38147(Items.field37956));
@@ -236,7 +239,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
    }
 
    private static Class5888 method11078(Block var0, Item var1) {
-      return method11063(var0, (Class5873<?>)method11059(var0, Class4695.method14724(var1).method18296(Class138.method407(Class8122.field34918))));
+      return method11063(var0, (Class5873<?>)method11059(var0, Class4695.method14724(var1).method18296(Class138.method407(Enchantments.FORTUNE))));
    }
 
    private static Class5888 method11079(Block var0, IItemProvider var1) {
@@ -255,7 +258,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       return method11064(
          var0,
          (Class5873<?>)method11059(
-            var0, Class4695.method14724(Items.field37841).method18297(Class151.method456(0.125F)).method18296(Class138.method409(Class8122.field34918, 2))
+            var0, Class4695.method14724(Items.field37841).method18297(Class151.method456(0.125F)).method18296(Class138.method409(Enchantments.FORTUNE, 2))
          )
       );
    }
@@ -324,14 +327,14 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
    }
 
    private static Class5888 method11084(Block var0, Block var1, float... var2) {
-      return method11065(var0, ((Class5872)method11060(var0, Class4695.method14724(var1))).method18297(Class158.method476(Class8122.field34918, var2)))
+      return method11065(var0, ((Class5872)method11060(var0, Class4695.method14724(var1))).method18297(Class158.method476(Enchantments.FORTUNE, var2)))
          .method18320(
             Class8894.method32373()
                .method18289(Class6871.method20919(1))
                .method18297(field17632)
                .method18291(
                   ((Class5872)method11059(var0, Class4695.method14724(Items.field37835).method18296(Class140.method420(Class6872.method20921(1.0F, 2.0F)))))
-                     .method18297(Class158.method476(Class8122.field34918, 0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F))
+                     .method18297(Class158.method476(Enchantments.FORTUNE, 0.02F, 0.022222223F, 0.025F, 0.033333335F, 0.1F))
                )
          );
    }
@@ -344,7 +347,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                .method18297(field17632)
                .method18291(
                   ((Class5872)method11060(var0, Class4695.method14724(Items.field37795)))
-                     .method18297(Class158.method476(Class8122.field34918, 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F))
+                     .method18297(Class158.method476(Enchantments.FORTUNE, 0.005F, 0.0055555557F, 0.00625F, 0.008333334F, 0.025F))
                )
          );
    }
@@ -357,7 +360,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18297(var3)
-                  .method18291(Class4695.method14724(var2).method18296(Class138.method406(Class8122.field34918, 0.5714286F, 3)))
+                  .method18291(Class4695.method14724(var2).method18296(Class138.method406(Enchantments.FORTUNE, 0.5714286F, 3)))
             )
       );
    }
@@ -837,7 +840,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
       this.method11097(Blocks.field36525, var0 -> method11068(var0, Items.field37900, Class6871.method20919(3)));
       this.method11097(Blocks.CLAY, var0 -> method11068(var0, Items.field37897, Class6871.method20919(4)));
       this.method11097(Blocks.ENDER_CHEST, var0 -> method11068(var0, Blocks.field36527, Class6871.method20919(8)));
-      this.method11097(Blocks.SNOW_BLOCK, var0 -> method11068(var0, Items.field37888, Class6871.method20919(4)));
+      this.method11097(Blocks.SNOW_BLOCK, var0 -> method11068(var0, Items.SNOWBALL, Class6871.method20919(4)));
       this.method11098(Blocks.field36878, method11067(Items.field38109, Class6872.method20921(0.0F, 1.0F)));
       this.method11092(Blocks.POTTED_OAK_SAPLING);
       this.method11092(Blocks.POTTED_SPRUCE_SAPLING);
@@ -1094,7 +1097,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                .method18320(
                   Class8894.method32373()
                      .method18297(var6)
-                     .method18291(Class4695.method14724(Items.field38052).method18296(Class138.method406(Class8122.field34918, 0.5714286F, 3)))
+                     .method18291(Class4695.method14724(Items.field38052).method18296(Class138.method406(Enchantments.FORTUNE, 0.5714286F, 3)))
                )
          )
       );
@@ -1108,7 +1111,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                .method18320(
                   Class8894.method32373()
                      .method18297(var7)
-                     .method18291(Class4695.method14724(Items.field38053).method18296(Class138.method406(Class8122.field34918, 0.5714286F, 3)))
+                     .method18291(Class4695.method14724(Items.field38053).method18296(Class138.method406(Enchantments.FORTUNE, 0.5714286F, 3)))
                )
                .method18320(
                   Class8894.method32373().method18297(var7).method18291(Class4695.method14724(Items.field38055).method18297(Class151.method456(0.02F)))
@@ -1125,14 +1128,14 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                         .method18297(Class161.method486(Blocks.field37069).method24519(Class9178.method34325().method34327(Class3484.field19342, 3)))
                         .method18291(Class4695.method14724(Items.field38170))
                         .method18296(Class140.method420(Class6872.method20921(2.0F, 3.0F)))
-                        .method18296(Class138.method408(Class8122.field34918))
+                        .method18296(Class138.method408(Enchantments.FORTUNE))
                   )
                   .method18320(
                      Class8894.method32373()
                         .method18297(Class161.method486(Blocks.field37069).method24519(Class9178.method34325().method34327(Class3484.field19342, 2)))
                         .method18291(Class4695.method14724(Items.field38170))
                         .method18296(Class140.method420(Class6872.method20921(1.0F, 2.0F)))
-                        .method18296(Class138.method408(Class8122.field34918))
+                        .method18296(Class138.method408(Enchantments.FORTUNE))
                   )
             )
       );
@@ -1150,7 +1153,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                   var0,
                   Class4695.method14724(Items.field37969)
                      .method18296(Class140.method420(Class6872.method20921(2.0F, 6.0F)))
-                     .method18296(Class138.method407(Class8122.field34918))
+                     .method18296(Class138.method407(Enchantments.FORTUNE))
                )
             )
       );
@@ -1162,7 +1165,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                   var0,
                   Class4695.method14724(Items.field37917)
                      .method18296(Class140.method420(Class6872.method20921(4.0F, 9.0F)))
-                     .method18296(Class138.method407(Class8122.field34918))
+                     .method18296(Class138.method407(Enchantments.FORTUNE))
                )
             )
       );
@@ -1203,7 +1206,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                   var0,
                   Class4695.method14724(Items.field37908)
                      .method18296(Class140.method420(Class6872.method20921(2.0F, 4.0F)))
-                     .method18296(Class138.method408(Class8122.field34918))
+                     .method18296(Class138.method408(Enchantments.FORTUNE))
                      .method18296(Class135.method396(Class12.method58(1, 4)))
                )
             )
@@ -1216,7 +1219,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                   var0,
                   Class4695.method14724(Items.field37957)
                      .method18296(Class140.method420(Class6872.method20921(3.0F, 7.0F)))
-                     .method18296(Class138.method408(Class8122.field34918))
+                     .method18296(Class138.method408(Enchantments.FORTUNE))
                      .method18296(Class135.method396(Class12.method60(9)))
                )
             )
@@ -1227,9 +1230,9 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                var0,
                (Class5873<?>)method11059(
                   var0,
-                  Class4695.method14724(Items.field37887)
+                  Class4695.method14724(Items.REDSTONE_DUST)
                      .method18296(Class140.method420(Class6872.method20921(4.0F, 5.0F)))
-                     .method18296(Class138.method408(Class8122.field34918))
+                     .method18296(Class138.method408(Enchantments.FORTUNE))
                )
             )
       );
@@ -1241,7 +1244,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                   var0,
                   Class4695.method14724(Items.field38076)
                      .method18296(Class140.method420(Class6872.method20921(2.0F, 3.0F)))
-                     .method18296(Class138.method408(Class8122.field34918))
+                     .method18296(Class138.method408(Enchantments.FORTUNE))
                      .method18296(Class135.method396(Class12.method58(1, 5)))
                )
             )
@@ -1261,7 +1264,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3489.field19354, 3)))
                               )
                               .method18296(
-                                 Class138.method408(Class8122.field34918)
+                                 Class138.method408(Enchantments.FORTUNE)
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3489.field19354, 3)))
                               )
                         )
@@ -1277,27 +1280,27 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                      .method18291(
                         Class4690.method14712(
                            Class4690.method14712(
-                                 Class4695.method14724(Items.field37888)
+                                 Class4695.method14724(Items.SNOWBALL)
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 1))),
-                                 Class4695.method14724(Items.field37888)
+                                 Class4695.method14724(Items.SNOWBALL)
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 2)))
                                     .method18296(Class140.method420(Class6871.method20919(2))),
-                                 Class4695.method14724(Items.field37888)
+                                 Class4695.method14724(Items.SNOWBALL)
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 3)))
                                     .method18296(Class140.method420(Class6871.method20919(3))),
-                                 Class4695.method14724(Items.field37888)
+                                 Class4695.method14724(Items.SNOWBALL)
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 4)))
                                     .method18296(Class140.method420(Class6871.method20919(4))),
-                                 Class4695.method14724(Items.field37888)
+                                 Class4695.method14724(Items.SNOWBALL)
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 5)))
                                     .method18296(Class140.method420(Class6871.method20919(5))),
-                                 Class4695.method14724(Items.field37888)
+                                 Class4695.method14724(Items.SNOWBALL)
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 6)))
                                     .method18296(Class140.method420(Class6871.method20919(6))),
-                                 Class4695.method14724(Items.field37888)
+                                 Class4695.method14724(Items.SNOWBALL)
                                     .method18297(Class161.method486(var0).method24519(Class9178.method34325().method34327(Class3410.field19092, 7)))
                                     .method18296(Class140.method420(Class6871.method20919(7))),
-                                 Class4695.method14724(Items.field37888).method18296(Class140.method420(Class6871.method20919(8)))
+                                 Class4695.method14724(Items.SNOWBALL).method18296(Class140.method420(Class6871.method20919(8)))
                               )
                               .method18297(field17629),
                            Class4690.method14712(
@@ -1334,7 +1337,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                method11060(
                   var0,
                   Class4695.method14724(Items.field37868)
-                     .method18297(Class158.method476(Class8122.field34918, 0.1F, 0.14285715F, 0.25F, 1.0F))
+                     .method18297(Class158.method476(Enchantments.FORTUNE, 0.1F, 0.14285715F, 0.25F, 1.0F))
                      .method18303(Class4695.method14724(var0))
                )
             )
@@ -1353,7 +1356,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
                   var0,
                   Class4695.method14724(Items.field37969)
                      .method18296(Class140.method420(Class6872.method20921(2.0F, 5.0F)))
-                     .method18297(Class158.method476(Class8122.field34918, 0.1F, 0.14285715F, 0.25F, 1.0F))
+                     .method18297(Class158.method476(Enchantments.FORTUNE, 0.1F, 0.14285715F, 0.25F, 1.0F))
                      .method18303(Class4695.method14724(var0))
                )
             )
@@ -1457,7 +1460,7 @@ public class Class2838 implements Consumer<BiConsumer<ResourceLocation, Class588
    }
 
    private void method11090(Block var1, Block var2) {
-      Class5888 var5 = method11065(var1, Class4695.method14724(var1).method18297(Class158.method476(Class8122.field34918, 0.33F, 0.55F, 0.77F, 1.0F)));
+      Class5888 var5 = method11065(var1, Class4695.method14724(var1).method18297(Class158.method476(Enchantments.FORTUNE, 0.33F, 0.55F, 0.77F, 1.0F)));
       this.method11098(var1, var5);
       this.method11098(var2, var5);
    }

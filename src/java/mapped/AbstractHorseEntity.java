@@ -2,10 +2,12 @@ package mapped;
 
 import com.google.common.collect.UnmodifiableIterator;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -371,7 +373,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    public ActionResultType method4953(PlayerEntity var1, ItemStack var2) {
       boolean var5 = this.method4892(var1, var2);
       if (!var1.abilities.isCreativeMode) {
-         var2.method32182(1);
+         var2.shrink(1);
       }
 
       if (!this.world.isRemote) {
@@ -922,7 +924,7 @@ public abstract class AbstractHorseEntity extends Class1018 implements Class1073
    }
 
    public boolean method4899() {
-      return !this.getItemStackFromSlot(EquipmentSlotType.field13735).isEmpty();
+      return !this.getItemStackFromSlot(EquipmentSlotType.CHEST).isEmpty();
    }
 
    public boolean method4900(ItemStack var1) {

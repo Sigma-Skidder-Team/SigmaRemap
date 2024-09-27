@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -14,8 +15,8 @@ public class Class7849 {
       Enchantment var3 = field33659.get(var0);
       if (var3 == null) {
          ResourceLocation var4 = new ResourceLocation(var0);
-         if (Registry.field16073.method9193(var4)) {
-            var3 = Registry.field16073.getOrDefault(var4);
+         if (Registry.ENCHANTMENT.method9193(var4)) {
+            var3 = Registry.ENCHANTMENT.getOrDefault(var4);
          }
 
          field33659.put(var0, var3);
@@ -25,6 +26,6 @@ public class Class7849 {
    }
 
    public static Enchantment method26307(ResourceLocation var0) {
-      return Registry.field16073.method9193(var0) ? Registry.field16073.getOrDefault(var0) : null;
+      return Registry.ENCHANTMENT.method9193(var0) ? Registry.ENCHANTMENT.getOrDefault(var0) : null;
    }
 }

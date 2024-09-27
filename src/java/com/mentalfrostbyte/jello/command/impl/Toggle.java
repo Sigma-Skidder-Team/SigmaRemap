@@ -6,7 +6,7 @@ import com.mentalfrostbyte.jello.command.CommandException;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
 import mapped.Class6669;
-import mapped.Class8623;
+import mapped.ChatCommandArguments;
 
 public class Toggle extends Command {
    public Toggle() {
@@ -15,14 +15,14 @@ public class Toggle extends Command {
    }
 
    @Override
-   public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
       if (var2.length != 1) {
          throw new CommandException();
       } else {
          Module var6 = this.method18336(var2[0].method30899());
          if (var6 != null) {
             var6.setEnabled(!var6.isEnabled());
-            var3.method20327(var6.getName() + " was " + (!var6.isEnabled() ? "disabled" : "enabled"));
+            var3.send(var6.getName() + " was " + (!var6.isEnabled() ? "disabled" : "enabled"));
          } else {
             throw new CommandException("Module \"" + var2[0].method30899() + "\" not found");
          }

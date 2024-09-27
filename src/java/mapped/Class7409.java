@@ -10,6 +10,6 @@ public final class Class7409 extends ItemGroup {
 
    @Override
    public ItemStack method23640() {
-      return new ItemStack(Items.field37884);
+      return new ItemStack(Items.LAVA_BUCKET);
    }
 }

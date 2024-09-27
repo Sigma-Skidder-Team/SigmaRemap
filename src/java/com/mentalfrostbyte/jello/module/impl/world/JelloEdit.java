@@ -10,6 +10,7 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import com.mentalfrostbyte.jello.util.world.schematics.SchematicFile;
 import mapped.*;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import org.lwjgl.opengl.GL11;
 

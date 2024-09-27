@@ -5,6 +5,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.HandSide;
 
 import java.util.List;
@@ -93,7 +94,7 @@ public class Class2894<T extends LivingEntity> extends Class2797<T> {
       this.field17919.method22669(this.field17436);
       this.field17920.method22669(this.field17435);
       this.field17923.method22669(this.field17434);
-      if (!var1.getItemStackFromSlot(EquipmentSlotType.field13735).isEmpty()) {
+      if (!var1.getItemStackFromSlot(EquipmentSlotType.CHEST).isEmpty()) {
          if (!var1.method3336()) {
             this.field17924.field31034 = -1.1F;
             this.field17924.field31033 = -0.85F;

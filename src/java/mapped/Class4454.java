@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -366,7 +368,7 @@ public class Class4454 extends Class4441<Block> {
          .method31560(Blocks.field36970, Blocks.field36971, Blocks.field36972, Blocks.field36973, Blocks.field36974);
       this.method14014(BlockTags.field32779).method31560(Blocks.ICE, Blocks.PACKED_ICE, Blocks.field37006, Blocks.field36889);
       this.method14014(BlockTags.field32780).method31560(Blocks.field36395, Blocks.field36398);
-      this.method14014(BlockTags.field32767)
+      this.method14014(BlockTags.LEAVES)
          .method31560(Blocks.field36449, Blocks.field36446, Blocks.field36447, Blocks.field36451, Blocks.field36450, Blocks.field36448);
       this.method14014(BlockTags.field32781)
          .method31560(

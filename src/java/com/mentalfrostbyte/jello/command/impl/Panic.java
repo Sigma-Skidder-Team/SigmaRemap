@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.Client;
 import mapped.Class6669;
 import mapped.Class6814;
 import mapped.Class7286;
-import mapped.Class8623;
+import mapped.ChatCommandArguments;
 import totalcross.json.JSONObject;
 
 public class Panic extends Command {
@@ -16,7 +16,7 @@ public class Panic extends Command {
    }
 
    @Override
-   public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
       if (var2.length > 0) {
          throw new CommandException("Too many arguments");
       } else {
@@ -37,7 +37,7 @@ public class Panic extends Command {
          Class7286 var10 = new Class7286("Panic", new JSONObject());
          var6.method20763(var10);
          var6.method20771(var10);
-         var3.method20327("All modules disabled.");
+         var3.send("All modules disabled.");
       }
    }
 }

@@ -17,6 +17,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -30,7 +31,7 @@ import org.apache.commons.lang3.mutable.MutableInt;
 public class EnchantmentHelper {
    public static int getEnchantmentLevel(Enchantment var0, ItemStack var1) {
       if (!var1.isEmpty()) {
-         ResourceLocation var4 = Registry.field16073.getKey(var0);
+         ResourceLocation var4 = Registry.ENCHANTMENT.getKey(var0);
          ListNBT var5 = var1.method32147();
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
@@ -57,7 +58,7 @@ public class EnchantmentHelper {
 
       for (int var4 = 0; var4 < var0.size(); var4++) {
          CompoundNBT var5 = var0.method153(var4);
-         Registry.field16073.method9187(ResourceLocation.method8289(var5.getString("id"))).ifPresent(var2 -> {
+         Registry.ENCHANTMENT.method9187(ResourceLocation.method8289(var5.getString("id"))).ifPresent(var2 -> {
             Integer var5x = var3.put(var2, var5.getInt("lvl"));
          });
       }
@@ -73,7 +74,7 @@ public class EnchantmentHelper {
          if (var7 != null) {
             int var8 = (Integer)var6.getValue();
             CompoundNBT var9 = new CompoundNBT();
-            var9.method109("id", String.valueOf(Registry.field16073.getKey(var7)));
+            var9.method109("id", String.valueOf(Registry.ENCHANTMENT.getKey(var7)));
             var9.putShort("lvl", (short)var8);
             var4.add(var9);
             if (var1.getItem() == Items.field38070) {
@@ -98,7 +99,7 @@ public class EnchantmentHelper {
          for (int var5 = 0; var5 < var4.size(); var5++) {
             String var6 = var4.method153(var5).getString("id");
             int var7 = var4.method153(var5).getInt("lvl");
-            Registry.field16073.method9187(ResourceLocation.method8289(var6)).ifPresent(var2 -> var0.method30078(var2, var7));
+            Registry.ENCHANTMENT.method9187(ResourceLocation.method8289(var6)).ifPresent(var2 -> var0.method30078(var2, var7));
          }
       }
    }
@@ -122,8 +123,8 @@ public class EnchantmentHelper {
    }
 
    public static float method26319(LivingEntity var0) {
-      int var3 = method26322(Class8122.field34914, var0);
-      return var3 <= 0 ? 0.0F : Class6079.method18828(var3);
+      int var3 = method26322(Enchantments.SWEEPING, var0);
+      return var3 <= 0 ? 0.0F : SweepingEnchantment.method18828(var3);
    }
 
    public static void applyThornEnchantments(LivingEntity var0, Entity var1) {
@@ -167,67 +168,67 @@ public class EnchantmentHelper {
    }
 
    public static int method26323(LivingEntity var0) {
-      return method26322(Class8122.field34911, var0);
+      return method26322(Enchantments.KNOCKBACK, var0);
    }
 
    public static int method26324(LivingEntity var0) {
-      return method26322(Class8122.field34912, var0);
+      return method26322(Enchantments.FIRE_ASPECT, var0);
    }
 
    public static int method26325(LivingEntity var0) {
-      return method26322(Class8122.field34901, var0);
+      return method26322(Enchantments.RESPIRATION, var0);
    }
 
    public static int method26326(LivingEntity var0) {
-      return method26322(Class8122.field34904, var0);
+      return method26322(Enchantments.DEPTH_STRIDER, var0);
    }
 
    public static int method26327(LivingEntity var0) {
-      return method26322(Class8122.field34915, var0);
+      return method26322(Enchantments.EFFICIENCY, var0);
    }
 
    public static int method26328(ItemStack var0) {
-      return getEnchantmentLevel(Class8122.field34923, var0);
+      return getEnchantmentLevel(Enchantments.LUCK_OF_THE_SEA, var0);
    }
 
    public static int method26329(ItemStack var0) {
-      return getEnchantmentLevel(Class8122.field34924, var0);
+      return getEnchantmentLevel(Enchantments.LURE, var0);
    }
 
    public static int method26330(LivingEntity var0) {
-      return method26322(Class8122.field34913, var0);
+      return method26322(Enchantments.LOOTING, var0);
    }
 
    public static boolean method26331(LivingEntity var0) {
-      return method26322(Class8122.field34902, var0) > 0;
+      return method26322(Enchantments.AQUA_AFFINITY, var0) > 0;
    }
 
    public static boolean method26332(LivingEntity var0) {
-      return method26322(Class8122.field34905, var0) > 0;
+      return method26322(Enchantments.FROST_WALKER, var0) > 0;
    }
 
    public static boolean method26333(LivingEntity var0) {
-      return method26322(Class8122.field34907, var0) > 0;
+      return method26322(Enchantments.SOUL_SPEED, var0) > 0;
    }
 
    public static boolean method26334(ItemStack var0) {
-      return getEnchantmentLevel(Class8122.field34906, var0) > 0;
+      return getEnchantmentLevel(Enchantments.BINDING_CURSE, var0) > 0;
    }
 
    public static boolean method26335(ItemStack var0) {
-      return getEnchantmentLevel(Class8122.field34933, var0) > 0;
+      return getEnchantmentLevel(Enchantments.VANISHING_CURSE, var0) > 0;
    }
 
    public static int method26336(ItemStack var0) {
-      return getEnchantmentLevel(Class8122.field34925, var0);
+      return getEnchantmentLevel(Enchantments.LOYALTY, var0);
    }
 
    public static int method26337(ItemStack var0) {
-      return getEnchantmentLevel(Class8122.field34927, var0);
+      return getEnchantmentLevel(Enchantments.RIPTIDE, var0);
    }
 
    public static boolean method26338(ItemStack var0) {
-      return getEnchantmentLevel(Class8122.field34928, var0) > 0;
+      return getEnchantmentLevel(Enchantments.CHANNELING, var0) > 0;
    }
 
    @Nullable
@@ -345,8 +346,8 @@ public class EnchantmentHelper {
       Item var6 = var1.getItem();
       boolean var7 = var1.getItem() == Items.field37900;
 
-      for (Enchantment var9 : Registry.field16073) {
-         if ((!var9.method18824() || var2) && var9.method18827() && (var9.field27308.method8990(var6) || var7)) {
+      for (Enchantment var9 : Registry.ENCHANTMENT) {
+         if ((!var9.method18824() || var2) && var9.method18827() && (var9.type.method8990(var6) || var7)) {
             for (int var10 = var9.method18809(); var10 > var9.method18813() - 1; var10--) {
                if (var0 >= var9.method18807(var10) && var0 <= var9.method18808(var10)) {
                   var5.add(new Class6694(var9, var10));

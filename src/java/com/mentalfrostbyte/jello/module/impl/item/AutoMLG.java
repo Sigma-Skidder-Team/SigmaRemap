@@ -123,7 +123,7 @@ public class AutoMLG extends PremiumModule {
         for (int var3 = 36; var3 < 45; var3++) {
             if (mc.player.container.getSlot(var3).getHasStack()) {
                 ItemStack var4 = mc.player.container.getSlot(var3).getStack();
-                if (var4.getItem() == Items.field37883) {
+                if (var4.getItem() == Items.WATER_BUCKET) {
                     return var3 - 36;
                 }
             }
@@ -133,7 +133,7 @@ public class AutoMLG extends PremiumModule {
             for (int var5 = 9; var5 < 36; var5++) {
                 if (mc.player.container.getSlot(var5).getHasStack()) {
                     ItemStack var6 = mc.player.container.getSlot(var5).getStack();
-                    if (var6.getItem() == Items.field37883) {
+                    if (var6.getItem() == Items.WATER_BUCKET) {
                         if (JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
                             mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
                         }

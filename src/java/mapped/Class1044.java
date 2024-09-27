@@ -37,7 +37,7 @@ public class Class1044 extends Class1043 {
       this.field5600
          .addGoal(
             0,
-            new Class2596<Class1044>(this, new ItemStack(Items.field37891), SoundEvents.field27222, var1 -> this.world.method6740() && var1.isInvisible())
+            new Class2596<Class1044>(this, new ItemStack(Items.MILK_BUCKET), SoundEvents.field27222, var1 -> this.world.method6740() && var1.isInvisible())
          );
       this.field5600.addGoal(1, new Class2781(this));
       this.field5600.addGoal(1, new Class2770<ZombieEntity>(this, ZombieEntity.class, 8.0F, 0.5, 0.5));
@@ -160,7 +160,7 @@ public class Class1044 extends Class1043 {
    @Override
    public SoundEvent getDrinkSound(ItemStack var1) {
       Item var4 = var1.getItem();
-      return var4 != Items.field37891 ? SoundEvents.field27219 : SoundEvents.field27218;
+      return var4 != Items.MILK_BUCKET ? SoundEvents.field27219 : SoundEvents.field27218;
    }
 
    @Override

@@ -161,7 +161,7 @@ public class Class865 extends ContainerScreen<Class5837> {
             double var15 = var3 - (double)(var9 + var12 / 4 * 14);
             if (var13 >= 0.0 && var15 >= 0.0 && var13 < 14.0 && var15 < 14.0 && this.field4727.enchantItem(this.mc.player, var11)) {
                Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.field27177, 1.0F));
-               this.mc.playerController.sendEnchantPacket(this.field4727.field25471, var11);
+               this.mc.playerController.sendEnchantPacket(this.field4727.windowId, var11);
                return true;
             }
          }
@@ -230,7 +230,7 @@ public class Class865 extends ContainerScreen<Class5837> {
          this.field4804 = null;
       }
 
-      if (!ItemStack.method32128(var4, this.field4805) || !ItemStack.method32128(var5, this.field4806) || !ItemStack.method32128(var6, this.field4807)) {
+      if (!ItemStack.areItemStacksEqual1(var4, this.field4805) || !ItemStack.areItemStacksEqual1(var5, this.field4806) || !ItemStack.areItemStacksEqual1(var6, this.field4807)) {
          this.field4808 = !var4.isEmpty() && !var5.isEmpty() && var6.isEmpty() && !this.field4810;
          this.field4809 = !this.field4810 && !var6.isEmpty() && !var4.isEmpty() && !var5.isEmpty();
       }

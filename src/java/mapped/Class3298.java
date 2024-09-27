@@ -13,7 +13,7 @@ public class Class3298 extends Class3292 {
    private static String[] field18806;
    public final Block field18807;
 
-   public Class3298(Block var1, Block var2, Class5643 var3) {
+   public Class3298(Block var1, Block var2, Properties var3) {
       super(var1, var3);
       this.field18807 = var2;
    }

@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.enchantment.IVanishable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
@@ -13,10 +15,10 @@ import net.minecraft.world.World;
 
 import java.util.function.Predicate;
 
-public class BowItem extends Class3262 implements Class3260 {
+public class BowItem extends Class3262 implements IVanishable {
    private static String[] field18750;
 
-   public BowItem(Class5643 var1) {
+   public BowItem(Properties var1) {
       super(var1);
    }
 
@@ -24,7 +26,7 @@ public class BowItem extends Class3262 implements Class3260 {
    public void method11729(ItemStack var1, World var2, LivingEntity var3, int var4) {
       if (var3 instanceof PlayerEntity) {
          PlayerEntity var7 = (PlayerEntity)var3;
-         boolean var8 = var7.abilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Class8122.field34922, var1) > 0;
+         boolean var8 = var7.abilities.isCreativeMode || EnchantmentHelper.getEnchantmentLevel(Enchantments.INFINITY, var1) > 0;
          ItemStack var9 = var7.findAmmo(var1);
          if (!var9.isEmpty() || var8) {
             if (var9.isEmpty()) {
@@ -43,21 +45,21 @@ public class BowItem extends Class3262 implements Class3260 {
                      var14.method3484(true);
                   }
 
-                  int var15 = EnchantmentHelper.getEnchantmentLevel(Class8122.field34919, var1);
+                  int var15 = EnchantmentHelper.getEnchantmentLevel(Enchantments.POWER, var1);
                   if (var15 > 0) {
                      var14.method3481(var14.method3482() + (double)var15 * 0.5 + 0.5);
                   }
 
-                  int var16 = EnchantmentHelper.getEnchantmentLevel(Class8122.field34920, var1);
+                  int var16 = EnchantmentHelper.getEnchantmentLevel(Enchantments.PUNCH, var1);
                   if (var16 > 0) {
                      var14.method3483(var16);
                   }
 
-                  if (EnchantmentHelper.getEnchantmentLevel(Class8122.field34921, var1) > 0) {
+                  if (EnchantmentHelper.getEnchantmentLevel(Enchantments.FLAME, var1) > 0) {
                      var14.setFire(100);
                   }
 
-                  var1.method32121(1, var7, var1x -> var1x.sendBreakAnimation(var7.getActiveHand()));
+                  var1.damageItem(1, var7, var1x -> var1x.sendBreakAnimation(var7.getActiveHand()));
                   if (var12 || var7.abilities.isCreativeMode && (var9.getItem() == Items.field38116 || var9.getItem() == Items.field38117)) {
                      var14.pickupStatus = AbstractArrowEntityPickupStatus.field14333;
                   }
@@ -76,7 +78,7 @@ public class BowItem extends Class3262 implements Class3260 {
                   1.0F / (field18735.nextFloat() * 0.4F + 1.2F) + var11 * 0.5F
                );
                if (!var12 && !var7.abilities.isCreativeMode) {
-                  var9.method32182(1);
+                  var9.shrink(1);
                   if (var9.isEmpty()) {
                      var7.inventory.method4048(var9);
                   }

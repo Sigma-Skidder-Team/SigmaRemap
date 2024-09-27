@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 public class Class3315 extends Class3314 {
    private static String[] field18824;
 
-   public Class3315(Class5643 var1) {
+   public Class3315(Properties var1) {
       super(var1);
    }
 
@@ -19,14 +19,14 @@ public class Class3315 extends Class3314 {
       ItemStack var6 = Class3316.method11859(var1, MathHelper.floor(var2.getPosX()), MathHelper.floor(var2.getPosZ()), (byte)0, true, false);
       ItemStack var7 = var2.getHeldItem(var3);
       if (!var2.abilities.isCreativeMode) {
-         var7.method32182(1);
+         var7.shrink(1);
       }
 
       var2.addStat(Stats.field40098.method172(this));
       var2.playSound(SoundEvents.field27179, 1.0F, 1.0F);
       if (!var7.isEmpty()) {
          if (!var2.inventory.method4045(var6.copy())) {
-            var2.method2882(var6, false);
+            var2.dropItem(var6, false);
          }
 
          return Class6794.<ItemStack>method20700(var7, var1.isRemote());

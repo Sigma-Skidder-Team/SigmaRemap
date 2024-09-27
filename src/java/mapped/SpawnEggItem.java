@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -29,7 +30,7 @@ public class SpawnEggItem extends Item {
    private final int field18819;
    private final EntityType<?> field18820;
 
-   public SpawnEggItem(EntityType<?> var1, int var2, int var3, Class5643 var4) {
+   public SpawnEggItem(EntityType<?> var1, int var2, int var3, Properties var4) {
       super(var4);
       this.field18820 = var1;
       this.field18818 = var2;
@@ -55,7 +56,7 @@ public class SpawnEggItem extends Item {
                var13.method24790(var11);
                var9.markDirty();
                var4.notifyBlockUpdate(var6, var8, var8, 3);
-               var5.method32182(1);
+               var5.shrink(1);
                return ActionResultType.field14819;
             }
          }
@@ -72,7 +73,7 @@ public class SpawnEggItem extends Item {
                (ServerWorld)var4, var5, var1.method18358(), var12, Class2202.field14403, true, !Objects.equals(var6, var12) && var7 == Direction.field673
             )
             != null) {
-            var5.method32182(1);
+            var5.shrink(1);
          }
 
          return ActionResultType.field14819;
@@ -92,7 +93,7 @@ public class SpawnEggItem extends Item {
                   EntityType var10 = this.method11855(var6.method32142());
                   if (var10.method33200((ServerWorld)var1, var6, var2, var9, Class2202.field14403, false, false) != null) {
                      if (!var2.abilities.isCreativeMode) {
-                        var6.method32182(1);
+                        var6.shrink(1);
                      }
 
                      var2.addStat(Stats.field40098.method172(this));
@@ -161,7 +162,7 @@ public class SpawnEggItem extends Item {
                }
 
                if (!var1.abilities.isCreativeMode) {
-                  var6.method32182(1);
+                  var6.shrink(1);
                }
 
                return Optional.<MobEntity>of((MobEntity)var9);

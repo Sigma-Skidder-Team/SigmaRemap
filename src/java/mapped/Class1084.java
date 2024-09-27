@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.*;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -62,7 +63,7 @@ public class Class1084 extends Class1082 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37810));
+      this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37810));
    }
 
    @Override
@@ -73,7 +74,7 @@ public class Class1084 extends Class1082 {
    @Override
    public Class5093 method4276(Class1659 var1, Class9755 var2, Class2202 var3, Class5093 var4, CompoundNBT var5) {
       Class5093 var8 = super.method4276(var1, var2, var3, var4, var5);
-      this.getAttribute(Attributes.field42110).method38661(4.0);
+      this.getAttribute(Attributes.ATTACK_DAMAGE).method38661(4.0);
       this.method5031();
       return var8;
    }

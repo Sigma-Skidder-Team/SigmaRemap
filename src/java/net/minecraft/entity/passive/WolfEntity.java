@@ -69,7 +69,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    }
 
    public static Class7037 method4373() {
-      return MobEntity.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.field42105, 8.0).method21849(Attributes.field42110, 2.0);
+      return MobEntity.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.field42105, 8.0).method21849(Attributes.ATTACK_DAMAGE, 2.0);
    }
 
    @Override
@@ -269,7 +269,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
 
    @Override
    public boolean attackEntityAsMob(Entity var1) {
-      boolean var4 = var1.attackEntityFrom(DamageSource.method31115(this), (float)((int)this.getAttributeValue(Attributes.field42110)));
+      boolean var4 = var1.attackEntityFrom(DamageSource.method31115(this), (float)((int)this.getAttributeValue(Attributes.ATTACK_DAMAGE)));
       if (var4) {
          this.applyEnchantments(this, var1);
       }
@@ -287,7 +287,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
          this.setHealth(20.0F);
       }
 
-      this.getAttribute(Attributes.field42110).method38661(4.0);
+      this.getAttribute(Attributes.ATTACK_DAMAGE).method38661(4.0);
    }
 
    @Override
@@ -298,7 +298,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
          if (!this.method4393()) {
             if (var6 == Items.field37935 && !this.method4369()) {
                if (!var1.abilities.isCreativeMode) {
-                  var5.method32182(1);
+                  var5.shrink(1);
                }
 
                if (this.rand.nextInt(3) != 0) {
@@ -316,7 +316,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
          } else {
             if (this.method4381(var5) && this.getHealth() < this.method3075()) {
                if (!var1.abilities.isCreativeMode) {
-                  var5.method32182(1);
+                  var5.shrink(1);
                }
 
                this.heal((float)var6.method11745().method36157());
@@ -340,7 +340,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
             if (var8 != this.method4382()) {
                this.method4383(var8);
                if (!var1.abilities.isCreativeMode) {
-                  var5.method32182(1);
+                  var5.shrink(1);
                }
 
                return ActionResultType.SUCCESS;
@@ -380,7 +380,7 @@ public class WolfEntity extends TameableEntity implements IAngerable {
    @Override
    public boolean method4381(ItemStack var1) {
       Item var4 = var1.getItem();
-      return var4.method11744() && var4.method11745().method36159();
+      return var4.isFood() && var4.method11745().method36159();
    }
 
    @Override

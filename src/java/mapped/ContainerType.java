@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ChestContainer;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.util.registry.Registry;
 
 public class ContainerType<T extends Container> {
@@ -32,7 +33,7 @@ public class ContainerType<T extends Container> {
    private final Class8302<T> field35672;
 
    private static <T extends Container> ContainerType<T> method29012(String var0, Class8302<T> var1) {
-      return Registry.<ContainerType<T>>method9194(Registry.field16084, var0, new ContainerType<T>(var1));
+      return Registry.<ContainerType<T>>register(Registry.MENU, var0, new ContainerType<T>(var1));
    }
 
    private ContainerType(Class8302<T> var1) {

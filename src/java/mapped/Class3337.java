@@ -5,7 +5,7 @@ import net.minecraft.item.ItemStack;
 public class Class3337 extends Item {
    private static String[] field18844;
 
-   public Class3337(Class5643 var1) {
+   public Class3337(Properties var1) {
       super(var1);
    }
 

@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
@@ -11,7 +13,7 @@ public final class Class6244 extends Class6218 {
    private final Class6218 field27735 = new Class6218();
 
    @Override
-   public ItemStack method19192(Class2956 var1, ItemStack var2) {
+   public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
       Direction var5 = var1.method11324().<Direction>method23463(Class3357.field18899);
       ServerWorld var6 = var1.method11326();
       double var7 = var1.getX() + (double)var5.method539() * 1.125;
@@ -23,8 +25,8 @@ public final class Class6244 extends Class6218 {
          ? Class96.field247
          : var14.<Class96>method23463(((Class3429)var14.getBlock()).method12093());
       double var16;
-      if (!var14.method23446(BlockTags.field32766)) {
-         if (!var14.isAir() || !var6.getBlockState(var13.down()).method23446(BlockTags.field32766)) {
+      if (!var14.isIn(BlockTags.field32766)) {
+         if (!var14.isAir() || !var6.getBlockState(var13.down()).isIn(BlockTags.field32766)) {
             return this.field27735.method19196(var1, var2);
          }
 
@@ -49,12 +51,12 @@ public final class Class6244 extends Class6218 {
       }
 
       var6.addEntity(var20);
-      var2.method32182(1);
+      var2.shrink(1);
       return var2;
    }
 
    @Override
-   public void method19193(Class2956 var1) {
+   public void method19193(IBlockSource var1) {
       var1.method11326().playEvent(1000, var1.method11323(), 0);
    }
 }

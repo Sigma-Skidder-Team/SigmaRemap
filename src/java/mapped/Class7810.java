@@ -47,7 +47,7 @@ public class Class7810 {
       this.method26074(Items.field37843, Class9756.field45623);
       this.method26074(Items.field37896, Class9756.field45623);
       this.method26074(Items.field37930, Class9756.field45623);
-      this.method26074(Items.field37882, Class9756.field45623);
+      this.method26074(Items.BUCKET, Class9756.field45623);
       this.method26074(Items.field38064, Class9756.field45625);
       this.method26074(Items.field38065, Class9756.field45625);
       this.method26074(Items.field37851, Class9756.field45623);
@@ -155,8 +155,8 @@ public class Class7810 {
       this.method26074(Items.field38123, Class9756.field45623);
       this.method26074(Items.field38129, Class9756.field45623);
       this.method26074(Items.field37917, Class9756.field45623);
-      this.method26074(Items.field37884, Class9756.field45623);
-      this.method26074(Items.field37890, Class9756.field45623);
+      this.method26074(Items.LAVA_BUCKET, Class9756.field45623);
+      this.method26074(Items.LEATHER, Class9756.field45623);
       this.method26074(Items.field38086, Class9756.field45623);
       this.method26074(Items.field37921, Class9756.field45623);
       this.method26074(Items.field37926, Class9756.field45623);
@@ -165,7 +165,7 @@ public class Class7810 {
       this.method26074(Items.field37976, Class9756.field45623);
       this.method26074(Items.field38056, Class9756.field45623);
       this.method26074(Items.field37957, Class9756.field45623);
-      this.method26074(Items.field37891, Class9756.field45623);
+      this.method26074(Items.MILK_BUCKET, Class9756.field45623);
       this.method26074(Items.MINECART, Class9756.field45623);
       this.method26074(Items.field38154, Class9756.field45623);
       this.method26074(Items.field37837, Class9756.field45623);
@@ -198,7 +198,7 @@ public class Class7810 {
       this.method26074(Items.field37830, Class9756.field45624);
       this.method26074(Items.field38071, Class9756.field45623);
       this.method26074(Items.field38066, Class9756.field45623);
-      this.method26074(Items.field37889, Class9756.field45623);
+      this.method26074(Items.OAK_BOAT, Class9756.field45623);
       this.method26074(Items.field37919, Class9756.field45623);
       this.method26074(Items.PAINTING, Class9756.field45623);
       this.method26074(Items.field37899, Class9756.field45623);
@@ -229,7 +229,7 @@ public class Class7810 {
       this.method26074(Items.field38127, Class9756.field45623);
       this.method26074(Items.field38153, Class9756.field45623);
       this.method26074(Items.field37901, Class9756.field45623);
-      this.method26074(Items.field37888, Class9756.field45623);
+      this.method26074(Items.SNOWBALL, Class9756.field45623);
       this.method26074(Items.field38116, Class9756.field45623);
       this.method26074(Items.field37973, Class9756.field45623);
       this.method26074(Items.field38121, Class9756.field45623);
@@ -247,7 +247,7 @@ public class Class7810 {
       this.method26074(Items.field37911, Class9756.field45623);
       this.method26074(Items.field37895, Class9756.field45623);
       this.method26074(Items.field37792, Class9756.field45623);
-      this.method26074(Items.field37883, Class9756.field45623);
+      this.method26074(Items.WATER_BUCKET, Class9756.field45623);
       this.method26074(Items.field37842, Class9756.field45623);
       this.method26074(Items.field37918, Class9756.field45623);
       this.method26074(Items.field37808, Class9756.field45624);

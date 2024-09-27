@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
@@ -81,7 +83,7 @@ public class Class6771 extends Class6768<Class8278> {
          var21.method8372(var25, var37, var26);
          if (var2.getBlockState(var21).isAir() && var37 < (int)var17 && var1.nextDouble() > 0.01) {
             var2.setBlockState(var21, field29539, false);
-         } else if (var2.getBlockState(var21).getMaterial() == Class8649.field38941
+         } else if (var2.getBlockState(var21).getMaterial() == Material.field38941
             && var37 > (int)var19
             && var37 < var11
             && var19 != 0.0

@@ -1,6 +1,8 @@
 package mapped;
 
 import com.google.common.collect.Sets;
+import net.minecraft.enchantment.Enchantment;
+
 import java.util.Set;
 
 public class Class5878 extends Class5876<Class5878> {

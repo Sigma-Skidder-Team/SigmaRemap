@@ -7,6 +7,7 @@ import net.minecraft.entity.Pose;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.network.datasync.DataParameter;
@@ -114,7 +115,7 @@ public class Class1027 extends Class1026 implements Class1022 {
             }
 
             if (var7 != null) {
-               this.setItemStackToSlot(EquipmentSlotType.field13731, Class9741.method38187(new ItemStack(Items.field37971), var7));
+               this.setItemStackToSlot(EquipmentSlotType.MAINHAND, Class9741.method38187(new ItemStack(Items.field37971), var7));
                this.field5721 = this.getHeldItemMainhand().method32137();
                this.method4567(true);
                if (!this.isSilent()) {
@@ -138,7 +139,7 @@ public class Class1027 extends Class1026 implements Class1022 {
          } else if (this.field5721-- <= 0) {
             this.method4567(false);
             ItemStack var3 = this.getHeldItemMainhand();
-            this.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
+            this.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
             if (var3.getItem() == Items.field37971) {
                List<EffectInstance> var4 = Class9741.method38176(var3);
                if (var4 != null) {

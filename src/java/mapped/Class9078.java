@@ -33,7 +33,7 @@ public class Class9078 {
    private final int field41557;
 
    private static Class9078 method33824(String var0, int var1, int var2) {
-      return Registry.<Class9078>method9194(Registry.field16079, var0, new Class9078(var1, var2));
+      return Registry.<Class9078>register(Registry.field16079, var0, new Class9078(var1, var2));
    }
 
    public Class9078(int var1, int var2) {

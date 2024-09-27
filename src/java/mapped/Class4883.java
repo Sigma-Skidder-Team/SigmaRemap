@@ -32,7 +32,7 @@ public class Class4883 extends Class4874<Class4491> {
          ItemStack var10 = var2.getStackInSlot(var9);
          if (!var10.isEmpty()) {
             var8++;
-            if (var10.getCount() >= var10.method32113()) {
+            if (var10.getCount() >= var10.getMaxStackSize()) {
                var6++;
             }
          } else {

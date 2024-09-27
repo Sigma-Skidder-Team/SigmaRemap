@@ -47,13 +47,13 @@ public class Class8909 {
          int var8 = var3;
 
          while (var8 > 0) {
-            int var9 = Math.min(var1.method502().method11710(), var8);
+            int var9 = Math.min(var1.method502().getMaxStackSize(), var8);
             var8 -= var9;
             ItemStack var10 = var1.method503(var9, false);
             boolean var11 = var7.inventory.method4045(var10);
             if (var11 && var10.isEmpty()) {
-               var10.method32180(1);
-               ItemEntity var13 = var7.method2882(var10, false);
+               var10.setCount(1);
+               ItemEntity var13 = var7.dropItem(var10, false);
                if (var13 != null) {
                   var13.method4137();
                }
@@ -71,7 +71,7 @@ public class Class8909 {
                   );
                var7.container.detectAndSendChanges();
             } else {
-               ItemEntity var12 = var7.method2882(var10, false);
+               ItemEntity var12 = var7.dropItem(var10, false);
                if (var12 != null) {
                   var12.method4132();
                   var12.method4127(var7.getUniqueID());

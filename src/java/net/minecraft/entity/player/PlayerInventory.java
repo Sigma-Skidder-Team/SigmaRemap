@@ -3,10 +3,14 @@ package net.minecraft.entity.player;
 import com.google.common.collect.ImmutableList;
 import mapped.*;
 import net.minecraft.block.BlockState;
+import net.minecraft.crash.CrashReport;
+import net.minecraft.crash.CrashReportCategory;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SSetSlotPacket;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
@@ -40,7 +44,7 @@ public class PlayerInventory implements IInventory, INameable {
       return !var1.isEmpty()
          && this.method4031(var1, var2)
          && var1.method32114()
-         && var1.getCount() < var1.method32113()
+         && var1.getCount() < var1.getMaxStackSize()
          && var1.getCount() < this.getInventoryStackLimit();
    }
 
@@ -189,8 +193,8 @@ public class PlayerInventory implements IInventory, INameable {
       }
 
       int var8 = var6;
-      if (var6 > var7.method32113() - var7.getCount()) {
-         var8 = var7.method32113() - var7.getCount();
+      if (var6 > var7.getMaxStackSize() - var7.getCount()) {
+         var8 = var7.getMaxStackSize() - var7.getCount();
       }
 
       if (var8 > this.getInventoryStackLimit() - var7.getCount()) {
@@ -199,7 +203,7 @@ public class PlayerInventory implements IInventory, INameable {
 
       if (var8 != 0) {
          var6 -= var8;
-         var7.method32181(var8);
+         var7.grow(var8);
          var7.method32178(5);
          return var6;
       } else {
@@ -250,10 +254,10 @@ public class PlayerInventory implements IInventory, INameable {
                if (var1 >= 0) {
                   this.field5439.set(var1, var2.copy());
                   this.field5439.get(var1).method32178(5);
-                  var2.method32180(0);
+                  var2.setCount(0);
                   return true;
                } else if (this.field5444.abilities.isCreativeMode) {
-                  var2.method32180(0);
+                  var2.setCount(0);
                   return true;
                } else {
                   return false;
@@ -263,14 +267,14 @@ public class PlayerInventory implements IInventory, INameable {
                do {
                   var5 = var2.getCount();
                   if (var1 == -1) {
-                     var2.method32180(this.method4041(var2));
+                     var2.setCount(this.method4041(var2));
                   } else {
-                     var2.method32180(this.method4042(var1, var2));
+                     var2.setCount(this.method4042(var1, var2));
                   }
                } while (!var2.isEmpty() && var2.getCount() < var5);
 
                if (var2.getCount() == var5 && this.field5444.abilities.isCreativeMode) {
-                  var2.method32180(0);
+                  var2.setCount(0);
                   return true;
                } else {
                   return var2.getCount() < var5;
@@ -296,12 +300,12 @@ public class PlayerInventory implements IInventory, INameable {
             }
 
             if (var5 == -1) {
-               this.field5444.method2882(var2, false);
+               this.field5444.dropItem(var2, false);
                break;
             }
 
-            int var6 = var2.method32113() - this.getStackInSlot(var5).getCount();
-            if (this.method4046(var5, var2.method32106(var6))) {
+            int var6 = var2.getMaxStackSize() - this.getStackInSlot(var5).getCount();
+            if (this.method4046(var5, var2.split(var6))) {
                ((ServerPlayerEntity)this.field5444).field4855.sendPacket(new SSetSlotPacket(-2, var5, this.getStackInSlot(var5)));
             }
          }
@@ -495,7 +499,7 @@ public class PlayerInventory implements IInventory, INameable {
             ItemStack var6 = this.field5440.get(var5);
             if ((!var1.method31141() || !var6.getItem().method11748()) && var6.getItem() instanceof ArmorItem) {
                int var7 = var5;
-               var6.method32121((int)var2, this.field5444, var1x -> var1x.sendBreakAnimation(EquipmentSlotType.method8777(Class1969.field12837, var7)));
+               var6.damageItem((int)var2, this.field5444, var1x -> var1x.sendBreakAnimation(EquipmentSlotType.fromSlotTypeAndIndex(EquipmentSlotType.Group.ARMOR, var7)));
             }
          }
       }
@@ -522,11 +526,11 @@ public class PlayerInventory implements IInventory, INameable {
       return this.field5446;
    }
 
-   public void method4056(ItemStack var1) {
+   public void setItemStack(ItemStack var1) {
       this.field5445 = var1;
    }
 
-   public ItemStack method4057() {
+   public ItemStack getItemStack() {
       return this.field5445;
    }
 

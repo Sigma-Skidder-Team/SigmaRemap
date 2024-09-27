@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
@@ -14,7 +15,7 @@ import net.minecraft.world.World;
 import java.util.List;
 
 public class Class3285 extends Item {
-   public Class3285(Class5643 var1) {
+   public Class3285(Properties var1) {
       super(var1);
    }
 

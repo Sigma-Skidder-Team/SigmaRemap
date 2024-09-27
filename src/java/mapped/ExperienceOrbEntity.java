@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -166,7 +167,7 @@ public class ExperienceOrbEntity extends Entity {
       if (!this.world.isRemote && this.field5557 == 0 && var1.field4910 == 0) {
          var1.field4910 = 2;
          var1.onItemPickup(this, 1);
-         Entry var4 = EnchantmentHelper.method26340(Class8122.field34932, var1, ItemStack::method32116);
+         Entry var4 = EnchantmentHelper.method26340(Enchantments.MENDING, var1, ItemStack::method32116);
          if (var4 != null) {
             ItemStack var5 = (ItemStack)var4.getValue();
             if (!var5.isEmpty() && var5.method32116()) {

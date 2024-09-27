@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
@@ -189,7 +190,7 @@ public class Class1019 extends Class1018 implements Class1020 {
          return super.method4285(var1, var2);
       } else if (!this.world.isRemote && this.method4516()) {
          this.method4515(Class2266.field14735);
-         var5.method32121(1, var1, var1x -> var1x.sendBreakAnimation(var2));
+         var5.damageItem(1, var1, var1x -> var1x.sendBreakAnimation(var2));
          return ActionResultType.SUCCESS;
       } else {
          return ActionResultType.field14819;

@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 public class Class3293 extends Class3292 {
    private static String[] field18802;
 
-   public Class3293(Block var1, Class5643 var2) {
+   public Class3293(Block var1, Properties var2) {
       super(var1, var2);
    }
 

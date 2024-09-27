@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 
 public class Class257 extends Class219<Class1095, Class2864<Class1095>> {
@@ -47,7 +48,7 @@ public class Class257 extends Class219<Class1095, Class2864<Class1095>> {
          var1.rotate(Vector3f.field32902.rotationDegrees(90.0F));
       }
 
-      ItemStack var16 = var4.getItemStackFromSlot(EquipmentSlotType.field13731);
+      ItemStack var16 = var4.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
       Minecraft.getInstance().getFirstPersonRenderer().method37580(var4, var16, Class2327.field15931, false, var1, var2, var3);
       var1.pop();
    }

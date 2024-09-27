@@ -55,7 +55,7 @@ public class Class1110 extends Class1111 implements Class1008 {
 
    private void method5337() {
       this.recalculateSize();
-      this.getAttribute(Attributes.field42110).method38661((double)(6 + this.method5338()));
+      this.getAttribute(Attributes.ATTACK_DAMAGE).method38661((double)(6 + this.method5338()));
    }
 
    public int method5338() {

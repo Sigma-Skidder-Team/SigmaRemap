@@ -12,7 +12,7 @@ public class Class9654<P extends Class6698> {
    private final Codec<P> field45136;
 
    private static <P extends Class6698> Class9654<P> method37703(String var0, Codec<P> var1) {
-      return Registry.<Class9654<P>>method9194(Registry.field16129, var0, new Class9654<P>(var1));
+      return Registry.<Class9654<P>>register(Registry.field16129, var0, new Class9654<P>(var1));
    }
 
    private Class9654(Codec<P> var1) {

@@ -48,7 +48,7 @@ public class Class1261<C extends IInventory> extends Class1260<C> {
       Slot var6 = this.field6661.getSlot(0);
       ItemStack var7 = Class6207.method19127((Integer)var5.next());
       if (!var7.isEmpty()) {
-         int var8 = Math.min(var7.method32113(), var1);
+         int var8 = Math.min(var7.getMaxStackSize(), var1);
          if (this.field6663) {
             var8 -= var6.getStack().getCount();
          }

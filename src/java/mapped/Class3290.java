@@ -2,16 +2,18 @@ package mapped;
 
 import java.util.List;
 
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.World;
 
 public class Class3290 extends Item {
-   public Class3290(Class5643 var1) {
+   public Class3290(Properties var1) {
       super(var1);
    }
 
@@ -39,7 +41,7 @@ public class Class3290 extends Item {
    public static void method11831(ItemStack var0, Class6694 var1) {
       ListNBT var4 = method11830(var0);
       boolean var5 = true;
-      ResourceLocation var6 = Registry.field16073.getKey(var1.field29316);
+      ResourceLocation var6 = Registry.ENCHANTMENT.getKey(var1.field29316);
 
       for (int var7 = 0; var7 < var4.size(); var7++) {
          CompoundNBT var8 = var4.method153(var7);
@@ -74,15 +76,15 @@ public class Class3290 extends Item {
    public void fillItemGroup(ItemGroup var1, NonNullList<ItemStack> var2) {
       if (var1 != ItemGroup.SEARCH) {
          if (var1.method23655().length != 0) {
-            for (Enchantment var6 : Registry.field16073) {
-               if (var1.method23657(var6.field27308)) {
+            for (Enchantment var6 : Registry.ENCHANTMENT) {
+               if (var1.method23657(var6.type)) {
                   var2.add(method11832(new Class6694(var6, var6.method18809())));
                }
             }
          }
       } else {
-         for (Enchantment var9 : Registry.field16073) {
-            if (var9.field27308 != null) {
+         for (Enchantment var9 : Registry.ENCHANTMENT) {
+            if (var9.type != null) {
                for (int var7 = var9.method18813(); var7 <= var9.method18809(); var7++) {
                   var2.add(method11832(new Class6694(var9, var7)));
                }

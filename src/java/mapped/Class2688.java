@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
@@ -24,7 +25,7 @@ public class Class2688 extends Class2595 {
          List var3 = this.field17115
             .world
             .<ItemEntity>method6772(ItemEntity.class, this.field17115.getBoundingBox().method19663(8.0, 8.0, 8.0), Class1048.field5808);
-         return !var3.isEmpty() || !this.field17115.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty();
+         return !var3.isEmpty() || !this.field17115.getItemStackFromSlot(EquipmentSlotType.MAINHAND).isEmpty();
       }
    }
 
@@ -43,10 +44,10 @@ public class Class2688 extends Class2595 {
 
    @Override
    public void method10807() {
-      ItemStack var3 = this.field17115.getItemStackFromSlot(EquipmentSlotType.field13731);
+      ItemStack var3 = this.field17115.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
       if (!var3.isEmpty()) {
          this.method10906(var3);
-         this.field17115.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
+         this.field17115.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
          this.field17114 = this.field17115.ticksExisted + Class1048.method4787(this.field17115).nextInt(100);
       }
    }
@@ -56,14 +57,14 @@ public class Class2688 extends Class2595 {
       List var3 = this.field17115
          .world
          .<ItemEntity>method6772(ItemEntity.class, this.field17115.getBoundingBox().method19663(8.0, 8.0, 8.0), Class1048.field5808);
-      ItemStack var4 = this.field17115.getItemStackFromSlot(EquipmentSlotType.field13731);
+      ItemStack var4 = this.field17115.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
       if (var4.isEmpty()) {
          if (!var3.isEmpty()) {
             this.field17115.method4230().method21655((Entity)var3.get(0), 1.2F);
          }
       } else {
          this.method10906(var4);
-         this.field17115.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
+         this.field17115.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
       }
    }
 

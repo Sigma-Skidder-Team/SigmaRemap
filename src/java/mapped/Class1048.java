@@ -6,6 +6,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.passive.WaterMobEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
@@ -127,7 +128,7 @@ public class Class1048 extends WaterMobEntity {
    }
 
    public static Class7037 method4782() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 1.2F).method21849(Attributes.field42110, 3.0);
+      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 1.2F).method21849(Attributes.ATTACK_DAMAGE, 3.0);
    }
 
    @Override
@@ -137,7 +138,7 @@ public class Class1048 extends WaterMobEntity {
 
    @Override
    public boolean attackEntityAsMob(Entity var1) {
-      boolean var4 = var1.attackEntityFrom(DamageSource.method31115(this), (float)((int)this.getAttributeValue(Attributes.field42110)));
+      boolean var4 = var1.attackEntityFrom(DamageSource.method31115(this), (float)((int)this.getAttributeValue(Attributes.ATTACK_DAMAGE)));
       if (var4) {
          this.applyEnchantments(this, var1);
          this.playSound(SoundEvents.field26500, 1.0F, 1.0F);
@@ -179,17 +180,17 @@ public class Class1048 extends WaterMobEntity {
    @Override
    public boolean canPickUpItem(ItemStack var1) {
       EquipmentSlotType var4 = MobEntity.method4271(var1);
-      return !this.getItemStackFromSlot(var4).isEmpty() ? false : var4 == EquipmentSlotType.field13731 && super.canPickUpItem(var1);
+      return !this.getItemStackFromSlot(var4).isEmpty() ? false : var4 == EquipmentSlotType.MAINHAND && super.canPickUpItem(var1);
    }
 
    @Override
    public void method4246(ItemEntity var1) {
-      if (this.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty()) {
+      if (this.getItemStackFromSlot(EquipmentSlotType.MAINHAND).isEmpty()) {
          ItemStack var4 = var1.method4124();
          if (this.method4252(var4)) {
             this.triggerItemPickupTrigger(var1);
-            this.setItemStackToSlot(EquipmentSlotType.field13731, var4);
-            this.field5605[EquipmentSlotType.field13731.method8773()] = 2.0F;
+            this.setItemStackToSlot(EquipmentSlotType.MAINHAND, var4);
+            this.field5605[EquipmentSlotType.MAINHAND.getIndex()] = 2.0F;
             this.onItemPickup(var1, var4.getCount());
             var1.remove();
          }
@@ -281,7 +282,7 @@ public class Class1048 extends WaterMobEntity {
 
          this.method4779(true);
          if (!var1.abilities.isCreativeMode) {
-            var5.method32182(1);
+            var5.shrink(1);
          }
 
          return ActionResultType.method9002(this.world.isRemote);

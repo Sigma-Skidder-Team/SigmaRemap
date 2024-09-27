@@ -1,10 +1,12 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -72,7 +74,7 @@ public class ZombieEntity extends Class1009 {
       return Class1009.method4343()
          .method21849(Attributes.field42106, 35.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.23F)
-         .method21849(Attributes.field42110, 3.0)
+         .method21849(Attributes.ATTACK_DAMAGE, 3.0)
          .method21849(Attributes.field42113, 2.0)
          .method21848(Attributes.field42116);
    }
@@ -183,13 +185,13 @@ public class ZombieEntity extends Class1009 {
       if (this.isAlive()) {
          boolean var3 = this.method4660() && this.method4310();
          if (var3) {
-            ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.field13736);
+            ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.HEAD);
             if (!var4.isEmpty()) {
                if (var4.method32115()) {
                   var4.method32118(var4.method32117() + this.rand.nextInt(2));
                   if (var4.method32117() >= var4.method32119()) {
-                     this.sendBreakAnimation(EquipmentSlotType.field13736);
-                     this.setItemStackToSlot(EquipmentSlotType.field13736, ItemStack.EMPTY);
+                     this.sendBreakAnimation(EquipmentSlotType.HEAD);
+                     this.setItemStackToSlot(EquipmentSlotType.HEAD, ItemStack.EMPTY);
                   }
                }
 
@@ -328,9 +330,9 @@ public class ZombieEntity extends Class1009 {
       if (this.rand.nextFloat() < (this.world.method6997() != Difficulty.field14354 ? 0.01F : 0.05F)) {
          int var4 = this.rand.nextInt(3);
          if (var4 != 0) {
-            this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37821));
+            this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37821));
          } else {
-            this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37820));
+            this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37820));
          }
       }
    }
@@ -426,13 +428,13 @@ public class ZombieEntity extends Class1009 {
          this.method4273(var2);
       }
 
-      if (this.getItemStackFromSlot(EquipmentSlotType.field13736).isEmpty()) {
+      if (this.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty()) {
          LocalDate var13 = LocalDate.now();
          int var15 = var13.get(ChronoField.DAY_OF_MONTH);
          int var16 = var13.get(ChronoField.MONTH_OF_YEAR);
          if (var16 == 10 && var15 == 31 && this.rand.nextFloat() < 0.25F) {
-            this.setItemStackToSlot(EquipmentSlotType.field13736, new ItemStack(!(this.rand.nextFloat() < 0.1F) ? Blocks.field36589 : Blocks.field36590));
-            this.field5607[EquipmentSlotType.field13736.method8773()] = 0.0F;
+            this.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(!(this.rand.nextFloat() < 0.1F) ? Blocks.field36589 : Blocks.field36590));
+            this.field5607[EquipmentSlotType.HEAD.getIndex()] = 0.0F;
          }
       }
 

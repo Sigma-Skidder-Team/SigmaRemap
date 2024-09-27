@@ -21,19 +21,21 @@ import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.enchantment.UnbreakingEnchantment;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.IFormattableTextComponent;
@@ -54,9 +56,9 @@ import org.apache.logging.log4j.Logger;
 public final class ItemStack {
    public static final Codec<ItemStack> field39971 = RecordCodecBuilder.create(
       var0 -> var0.group(
-               Registry.ITEM.fieldOf("id").forGetter(var0x -> var0x.field39978),
-               Codec.INT.fieldOf("Count").forGetter(var0x -> var0x.field39976),
-               CompoundNBT.field79.optionalFieldOf("tag").forGetter(var0x -> Optional.<CompoundNBT>ofNullable(var0x.field39979))
+               Registry.ITEM.fieldOf("id").forGetter(var0x -> var0x.item),
+               Codec.INT.fieldOf("Count").forGetter(var0x -> var0x.count),
+               CompoundNBT.field79.optionalFieldOf("tag").forGetter(var0x -> Optional.<CompoundNBT>ofNullable(var0x.tag))
             )
             .apply(var0, ItemStack::new)
    );
@@ -65,18 +67,18 @@ public final class ItemStack {
    public static final DecimalFormat field39974 = Util.<DecimalFormat>make(
       new DecimalFormat("#.##"), var0 -> var0.setDecimalFormatSymbols(DecimalFormatSymbols.getInstance(Locale.ROOT))
    );
-   private static final Style field39975 = Style.EMPTY.setFormatting(TextFormatting.DARK_PURPLE).setItalic(true);
-   public int field39976;
-   private int field39977;
-   /** @deprecated */
-   private final Item field39978;
-   private CompoundNBT field39979;
-   private boolean field39980;
-   private Entity field39981;
-   private Class9632 field39982;
-   private boolean field39983;
-   private Class9632 field39984;
-   private boolean field39985;
+   private static final Style LORE_STYLE = Style.EMPTY.setFormatting(TextFormatting.DARK_PURPLE).setItalic(true);
+   public int count;
+   private int animationsToGo;
+   @Deprecated
+   private final Item item;
+   private CompoundNBT tag;
+   private boolean isEmpty;
+   private Entity attachedEntity;
+   private CachedBlockInfo canDestroyCacheBlock;
+   private boolean canDestroyCacheResult;
+   private CachedBlockInfo canPlaceOnCacheBlock;
+   private boolean canPlaceOnCacheResult;
 
    public ItemStack(IItemProvider var1) {
       this(var1, 1);
@@ -88,9 +90,9 @@ public final class ItemStack {
    }
 
    public ItemStack(IItemProvider var1, int var2) {
-      this.field39978 = var1 != null ? var1.method11581() : null;
-      this.field39976 = var2;
-      if (this.field39978 != null && this.field39978.method11712()) {
+      this.item = var1 != null ? var1.method11581() : null;
+      this.count = var2;
+      if (this.item != null && this.item.isDamageable()) {
          this.method32118(this.method32117());
       }
 
@@ -98,19 +100,19 @@ public final class ItemStack {
    }
 
    private void method32103() {
-      this.field39980 = false;
-      this.field39980 = this.isEmpty();
+      this.isEmpty = false;
+      this.isEmpty = this.isEmpty();
    }
 
    private ItemStack(CompoundNBT var1) {
-      this.field39978 = Registry.ITEM.getOrDefault(new ResourceLocation(var1.getString("id")));
-      this.field39976 = var1.getByte("Count");
+      this.item = Registry.ITEM.getOrDefault(new ResourceLocation(var1.getString("id")));
+      this.count = var1.getByte("Count");
       if (var1.contains("tag", 10)) {
-         this.field39979 = var1.getCompound("tag");
+         this.tag = var1.getCompound("tag");
          this.getItem().method11705(var1);
       }
 
-      if (this.getItem().method11712()) {
+      if (this.getItem().isDamageable()) {
          this.method32118(this.method32117());
       }
 
@@ -128,28 +130,28 @@ public final class ItemStack {
 
    public boolean isEmpty() {
       if (this != EMPTY) {
-         return this.getItem() != null && this.getItem() != Items.field37222 ? this.field39976 <= 0 : true;
+         return this.getItem() != null && this.getItem() != Items.field37222 ? this.count <= 0 : true;
       } else {
          return true;
       }
    }
 
-   public ItemStack method32106(int var1) {
-      int var4 = Math.min(var1, this.field39976);
+   public ItemStack split(int var1) {
+      int var4 = Math.min(var1, this.count);
       ItemStack var5 = this.copy();
-      var5.method32180(var4);
-      this.method32182(var4);
+      var5.setCount(var4);
+      this.shrink(var4);
       return var5;
    }
 
    public Item getItem() {
-      return !this.field39980 ? this.field39978 : Items.field37222;
+      return !this.isEmpty ? this.item : Items.field37222;
    }
 
    public ActionResultType onItemUse(ItemUseContext var1) {
       PlayerEntity var4 = var1.method18358();
       BlockPos var5 = var1.method18345();
-      Class9632 var6 = new Class9632(var1.method18360(), var5, false);
+      CachedBlockInfo var6 = new CachedBlockInfo(var1.method18360(), var5, false);
       if (var4 != null && !var4.abilities.allowEdit && !this.method32176(var1.method18360().method6817(), var6)) {
          return ActionResultType.field14820;
       } else {
@@ -164,7 +166,7 @@ public final class ItemStack {
    }
 
    public float method32109(BlockState var1) {
-      return this.getItem().method11708(this, var1);
+      return this.getItem().getDestroySpeed(this, var1);
    }
 
    public Class6794<ItemStack> method32110(World var1, PlayerEntity var2, Hand var3) {
@@ -172,30 +174,30 @@ public final class ItemStack {
    }
 
    public ItemStack method32111(World var1, LivingEntity var2) {
-      return this.getItem().method11709(this, var1, var2);
+      return this.getItem().onItemUseFinish(this, var1, var2);
    }
 
    public CompoundNBT method32112(CompoundNBT var1) {
       ResourceLocation var4 = Registry.ITEM.getKey(this.getItem());
       var1.method109("id", var4 != null ? var4.toString() : "minecraft:air");
-      var1.method100("Count", (byte)this.field39976);
-      if (this.field39979 != null) {
-         var1.put("tag", this.field39979.method79());
+      var1.method100("Count", (byte)this.count);
+      if (this.tag != null) {
+         var1.put("tag", this.tag.method79());
       }
 
       return var1;
    }
 
-   public int method32113() {
-      return this.getItem().method11710();
+   public int getMaxStackSize() {
+      return this.getItem().getMaxStackSize();
    }
 
    public boolean method32114() {
-      return this.method32113() > 1 && (!this.method32115() || !this.method32116());
+      return this.getMaxStackSize() > 1 && (!this.method32115() || !this.method32116());
    }
 
    public boolean method32115() {
-      if (!this.field39980 && this.getItem().method11711() > 0) {
+      if (!this.isEmpty && this.getItem().getMaxDamage() > 0) {
          CompoundNBT var3 = this.method32142();
          return var3 == null || !var3.getBoolean("Unbreakable");
       } else {
@@ -208,7 +210,7 @@ public final class ItemStack {
    }
 
    public int method32117() {
-      return this.field39979 != null ? this.field39979.getInt("Damage") : 0;
+      return this.tag != null ? this.tag.getInt("Damage") : 0;
    }
 
    public void method32118(int var1) {
@@ -216,7 +218,7 @@ public final class ItemStack {
    }
 
    public int method32119() {
-      return this.getItem().method11711();
+      return this.getItem().getMaxDamage();
    }
 
    public boolean method32120(int var1, Random var2, ServerPlayerEntity var3) {
@@ -224,11 +226,11 @@ public final class ItemStack {
          return false;
       } else {
          if (var1 > 0) {
-            int var6 = EnchantmentHelper.getEnchantmentLevel(Class8122.field34917, this);
+            int var6 = EnchantmentHelper.getEnchantmentLevel(Enchantments.UNBREAKING, this);
             int var7 = 0;
 
             for (int var8 = 0; var6 > 0 && var8 < var1; var8++) {
-               if (Class6095.method18833(this, var6, var2)) {
+               if (UnbreakingEnchantment.method18833(this, var6, var2)) {
                   var7++;
                }
             }
@@ -249,14 +251,14 @@ public final class ItemStack {
       }
    }
 
-   public <T extends LivingEntity> void method32121(int var1, T var2, Consumer<T> var3) {
+   public <T extends LivingEntity> void damageItem(int var1, T var2, Consumer<T> var3) {
       if (!var2.world.isRemote
          && (!(var2 instanceof PlayerEntity) || !((PlayerEntity)var2).abilities.isCreativeMode)
          && this.method32115()
          && this.method32120(var1, var2.getRNG(), !(var2 instanceof ServerPlayerEntity) ? null : (ServerPlayerEntity)var2)) {
          var3.accept(var2);
          Item var6 = this.getItem();
-         this.method32182(1);
+         this.shrink(1);
          if (var2 instanceof PlayerEntity) {
             ((PlayerEntity)var2).addStat(Stats.field40099.method172(var6));
          }
@@ -267,20 +269,20 @@ public final class ItemStack {
 
    public void method32122(LivingEntity var1, PlayerEntity var2) {
       Item var5 = this.getItem();
-      if (var5.method11713(this, var1, var2)) {
+      if (var5.hitEntity(this, var1, var2)) {
          var2.addStat(Stats.field40098.method172(var5));
       }
    }
 
    public void method32123(World var1, BlockState var2, BlockPos var3, PlayerEntity var4) {
       Item var7 = this.getItem();
-      if (var7.method11714(this, var1, var2, var3, var4)) {
+      if (var7.onBlockDestroyed(this, var1, var2, var3, var4)) {
          var4.addStat(Stats.field40098.method172(var7));
       }
    }
 
    public boolean method32124(BlockState var1) {
-      return this.getItem().method11715(var1);
+      return this.getItem().canHarvestBlock(var1);
    }
 
    public ActionResultType method32125(PlayerEntity var1, LivingEntity var2, Hand var3) {
@@ -289,10 +291,10 @@ public final class ItemStack {
 
    public ItemStack copy() {
       if (!this.isEmpty()) {
-         ItemStack var3 = new ItemStack(this.getItem(), this.field39976);
+         ItemStack var3 = new ItemStack(this.getItem(), this.count);
          var3.method32178(this.method32177());
-         if (this.field39979 != null) {
-            var3.field39979 = this.field39979.method79();
+         if (this.tag != null) {
+            var3.tag = this.tag.method79();
          }
 
          return var3;
@@ -307,11 +309,11 @@ public final class ItemStack {
       } else if (var0.isEmpty() || var1.isEmpty()) {
          return false;
       } else {
-         return var0.field39979 == null && var1.field39979 != null ? false : var0.field39979 == null || var0.field39979.equals(var1.field39979);
+         return var0.tag == null && var1.tag != null ? false : var0.tag == null || var0.tag.equals(var1.tag);
       }
    }
 
-   public static boolean method32128(ItemStack var0, ItemStack var1) {
+   public static boolean areItemStacksEqual(ItemStack var0, ItemStack var1) {
       if (var0.isEmpty() && var1.isEmpty()) {
          return true;
       } else {
@@ -320,20 +322,12 @@ public final class ItemStack {
    }
 
    private boolean method32129(ItemStack var1) {
-      if (this.field39976 != var1.field39976) {
+      if (this.count != var1.count) {
          return false;
       } else if (this.getItem() == var1.getItem()) {
-         return this.field39979 == null && var1.field39979 != null ? false : this.field39979 == null || this.field39979.equals(var1.field39979);
+         return this.tag == null && var1.tag != null ? false : this.tag == null || this.tag.equals(var1.tag);
       } else {
          return false;
-      }
-   }
-
-   public static boolean method32130(ItemStack var0, ItemStack var1) {
-      if (var0 == var1) {
-         return true;
-      } else {
-         return !var0.isEmpty() && !var1.isEmpty() ? var0.method32132(var1) : false;
       }
    }
 
@@ -359,12 +353,12 @@ public final class ItemStack {
 
    @Override
    public String toString() {
-      return this.field39976 + " " + this.getItem();
+      return this.count + " " + this.getItem();
    }
 
    public void method32135(World var1, Entity var2, int var3, boolean var4) {
-      if (this.field39977 > 0) {
-         this.field39977--;
+      if (this.animationsToGo > 0) {
+         this.animationsToGo--;
       }
 
       if (this.getItem() != null) {
@@ -394,25 +388,25 @@ public final class ItemStack {
    }
 
    public boolean method32141() {
-      return !this.field39980 && this.field39979 != null && !this.field39979.method134();
+      return !this.isEmpty && this.tag != null && !this.tag.method134();
    }
 
    @Nullable
    public CompoundNBT method32142() {
-      return this.field39979;
+      return this.tag;
    }
 
    public CompoundNBT getOrCreateTag() {
-      if (this.field39979 == null) {
+      if (this.tag == null) {
          this.method32148(new CompoundNBT());
       }
 
-      return this.field39979;
+      return this.tag;
    }
 
    public CompoundNBT method32144(String var1) {
-      if (this.field39979 != null && this.field39979.contains(var1, 10)) {
-         return this.field39979.getCompound(var1);
+      if (this.tag != null && this.tag.contains(var1, 10)) {
+         return this.tag.getCompound(var1);
       } else {
          CompoundNBT var4 = new CompoundNBT();
          this.setTagInfo(var1, var4);
@@ -422,25 +416,25 @@ public final class ItemStack {
 
    @Nullable
    public CompoundNBT method32145(String var1) {
-      return this.field39979 != null && this.field39979.contains(var1, 10) ? this.field39979.getCompound(var1) : null;
+      return this.tag != null && this.tag.contains(var1, 10) ? this.tag.getCompound(var1) : null;
    }
 
    public void method32146(String var1) {
-      if (this.field39979 != null && this.field39979.contains(var1)) {
-         this.field39979.method133(var1);
-         if (this.field39979.method134()) {
-            this.field39979 = null;
+      if (this.tag != null && this.tag.contains(var1)) {
+         this.tag.method133(var1);
+         if (this.tag.method134()) {
+            this.tag = null;
          }
       }
    }
 
    public ListNBT method32147() {
-      return this.field39979 == null ? new ListNBT() : this.field39979.method131("Enchantments", 10);
+      return this.tag == null ? new ListNBT() : this.tag.method131("Enchantments", 10);
    }
 
    public void method32148(CompoundNBT var1) {
-      this.field39979 = var1;
-      if (this.getItem().method11712()) {
+      this.tag = var1;
+      if (this.getItem().isDamageable()) {
          this.method32118(this.method32117());
       }
    }
@@ -483,8 +477,8 @@ public final class ItemStack {
          }
       }
 
-      if (this.field39979 != null && this.field39979.method134()) {
-         this.field39979 = null;
+      if (this.tag != null && this.tag.method134()) {
+         this.tag = null;
       }
    }
 
@@ -515,8 +509,8 @@ public final class ItemStack {
             method32157(var5, this.method32147());
          }
 
-         if (this.field39979.contains("display", 10)) {
-            CompoundNBT var8 = this.field39979.getCompound("display");
+         if (this.tag.contains("display", 10)) {
+            CompoundNBT var8 = this.tag.getCompound("display");
             if (method32154(var7, Class2304.field15736) && var8.contains("color", 99)) {
                if (var2.method8944()) {
                   var5.add(new TranslationTextComponent("item.color", String.format("#%06X", var8.getInt("color"))).mergeStyle(TextFormatting.GRAY));
@@ -534,7 +528,7 @@ public final class ItemStack {
                   try {
                      IFormattableTextComponent var12 = ITextComponent$Serializer.func_240643_a_(var11);
                      if (var12 != null) {
-                        var5.add(TextComponentUtils.func_240648_a_(var12, field39975));
+                        var5.add(TextComponentUtils.func_240648_a_(var12, LORE_STYLE));
                      }
                   } catch (JsonParseException var21) {
                      var8.method133("Lore");
@@ -549,18 +543,18 @@ public final class ItemStack {
             Multimap<Attribute, AttributeModifier> var30 = this.method32171(var29);
             if (!var30.isEmpty()) {
                var5.add(StringTextComponent.EMPTY);
-               var5.add(new TranslationTextComponent("item.modifiers." + var29.method8775()).mergeStyle(TextFormatting.GRAY));
+               var5.add(new TranslationTextComponent("item.modifiers." + var29.getName()).mergeStyle(TextFormatting.GRAY));
 
                for (Entry var14 : var30.entries()) {
                   AttributeModifier var15 = (AttributeModifier)var14.getValue();
                   double var16 = var15.getAmount();
                   boolean var18 = false;
                   if (var1 != null) {
-                     if (var15.getID() == Item.field18733) {
-                        var16 += var1.method3087(Attributes.field42110);
+                     if (var15.getID() == Item.ATTACK_DAMAGE_MODIFIER) {
+                        var16 += var1.method3087(Attributes.ATTACK_DAMAGE);
                         var16 += (double) EnchantmentHelper.method26318(this, CreatureAttribute.field33505);
                         var18 = true;
-                     } else if (var15.getID() == Item.field18734) {
+                     } else if (var15.getID() == Item.ATTACK_SPEED_MODIFIER) {
                         var16 += var1.method3087(Attributes.ATTACK_SPEED);
                         var18 = true;
                      }
@@ -613,12 +607,12 @@ public final class ItemStack {
       }
 
       if (this.method32141()) {
-         if (method32154(var7, Class2304.field15732) && this.field39979.getBoolean("Unbreakable")) {
+         if (method32154(var7, Class2304.field15732) && this.tag.getBoolean("Unbreakable")) {
             var5.add(new TranslationTextComponent("item.unbreakable").mergeStyle(TextFormatting.BLUE));
          }
 
-         if (method32154(var7, Class2304.field15733) && this.field39979.contains("CanDestroy", 9)) {
-            ListNBT var23 = this.field39979.method131("CanDestroy", 8);
+         if (method32154(var7, Class2304.field15733) && this.tag.contains("CanDestroy", 9)) {
+            ListNBT var23 = this.tag.method131("CanDestroy", 8);
             if (!var23.isEmpty()) {
                var5.add(StringTextComponent.EMPTY);
                var5.add(new TranslationTextComponent("item.canBreak").mergeStyle(TextFormatting.GRAY));
@@ -629,8 +623,8 @@ public final class ItemStack {
             }
          }
 
-         if (method32154(var7, Class2304.field15734) && this.field39979.contains("CanPlaceOn", 9)) {
-            ListNBT var24 = this.field39979.method131("CanPlaceOn", 8);
+         if (method32154(var7, Class2304.field15734) && this.tag.contains("CanPlaceOn", 9)) {
+            ListNBT var24 = this.tag.method131("CanPlaceOn", 8);
             if (!var24.isEmpty()) {
                var5.add(StringTextComponent.EMPTY);
                var5.add(new TranslationTextComponent("item.canPlace").mergeStyle(TextFormatting.GRAY));
@@ -649,7 +643,7 @@ public final class ItemStack {
 
          var5.add(new StringTextComponent(Registry.ITEM.getKey(this.getItem()).toString()).mergeStyle(TextFormatting.DARK_GRAY));
          if (this.method32141()) {
-            var5.add(new TranslationTextComponent("item.nbt_tags", this.field39979.method97().size()).mergeStyle(TextFormatting.DARK_GRAY));
+            var5.add(new TranslationTextComponent("item.nbt_tags", this.tag.method97().size()).mergeStyle(TextFormatting.DARK_GRAY));
          }
       }
 
@@ -661,7 +655,7 @@ public final class ItemStack {
    }
 
    private int method32155() {
-      return this.method32141() && this.field39979.contains("HideFlags", 99) ? this.field39979.getInt("HideFlags") : 0;
+      return this.method32141() && this.tag.contains("HideFlags", 99) ? this.tag.getInt("HideFlags") : 0;
    }
 
    public void method32156(Class2304 var1) {
@@ -672,7 +666,7 @@ public final class ItemStack {
    public static void method32157(List<ITextComponent> var0, ListNBT var1) {
       for (int var4 = 0; var4 < var1.size(); var4++) {
          CompoundNBT var5 = var1.method153(var4);
-         Registry.field16073.method9187(ResourceLocation.method8289(var5.getString("id"))).ifPresent(var2 -> var0.add(var2.method18820(var5.getInt("lvl"))));
+         Registry.ENCHANTMENT.method9187(ResourceLocation.method8289(var5.getString("id"))).ifPresent(var2 -> var0.add(var2.method18820(var5.getInt("lvl"))));
       }
    }
 
@@ -719,19 +713,19 @@ public final class ItemStack {
 
    public void method32162(Enchantment var1, int var2) {
       this.getOrCreateTag();
-      if (!this.field39979.contains("Enchantments", 9)) {
-         this.field39979.put("Enchantments", new ListNBT());
+      if (!this.tag.contains("Enchantments", 9)) {
+         this.tag.put("Enchantments", new ListNBT());
       }
 
-      ListNBT var5 = this.field39979.method131("Enchantments", 10);
+      ListNBT var5 = this.tag.method131("Enchantments", 10);
       CompoundNBT var6 = new CompoundNBT();
-      var6.method109("id", String.valueOf(Registry.field16073.getKey(var1)));
+      var6.method109("id", String.valueOf(Registry.ENCHANTMENT.getKey(var1)));
       var6.putShort("lvl", (short)((byte)var2));
       var5.add(var6);
    }
 
    public boolean method32163() {
-      return this.field39979 != null && this.field39979.contains("Enchantments", 9) ? !this.field39979.method131("Enchantments", 10).isEmpty() : false;
+      return this.tag != null && this.tag.contains("Enchantments", 9) ? !this.tag.method131("Enchantments", 10).isEmpty() : false;
    }
 
    public void setTagInfo(String var1, INBT var2) {
@@ -739,25 +733,25 @@ public final class ItemStack {
    }
 
    public boolean method32165() {
-      return this.field39981 instanceof ItemFrameEntity;
+      return this.attachedEntity instanceof ItemFrameEntity;
    }
 
    public void method32166(Entity var1) {
-      this.field39981 = var1;
+      this.attachedEntity = var1;
    }
 
    @Nullable
    public ItemFrameEntity method32167() {
-      return !(this.field39981 instanceof ItemFrameEntity) ? null : (ItemFrameEntity)this.method32168();
+      return !(this.attachedEntity instanceof ItemFrameEntity) ? null : (ItemFrameEntity)this.method32168();
    }
 
    @Nullable
    public Entity method32168() {
-      return this.field39980 ? null : this.field39981;
+      return this.isEmpty ? null : this.attachedEntity;
    }
 
    public int method32169() {
-      return this.method32141() && this.field39979.contains("RepairCost", 3) ? this.field39979.getInt("RepairCost") : 0;
+      return this.method32141() && this.tag.contains("RepairCost", 3) ? this.tag.getInt("RepairCost") : 0;
    }
 
    public void method32170(int var1) {
@@ -766,13 +760,13 @@ public final class ItemStack {
 
    public Multimap<Attribute, AttributeModifier> method32171(EquipmentSlotType var1) {
       Multimap<Attribute, AttributeModifier> var4;
-      if (this.method32141() && this.field39979.contains("AttributeModifiers", 9)) {
+      if (this.method32141() && this.tag.contains("AttributeModifiers", 9)) {
          var4 = HashMultimap.create();
-         ListNBT var5 = this.field39979.method131("AttributeModifiers", 10);
+         ListNBT var5 = this.tag.method131("AttributeModifiers", 10);
 
          for (int var6 = 0; var6 < var5.size(); var6++) {
             CompoundNBT var7 = var5.method153(var6);
-            if (!var7.contains("Slot", 8) || var7.getString("Slot").equals(var1.method8775())) {
+            if (!var7.contains("Slot", 8) || var7.getString("Slot").equals(var1.getName())) {
                Optional<Attribute> var8 = Registry.ATTRIBUTE.method9187(ResourceLocation.method8289(var7.getString("AttributeName")));
                if (var8.isPresent()) {
                   AttributeModifier var9 = AttributeModifier.method37935(var7);
@@ -783,7 +777,7 @@ public final class ItemStack {
             }
          }
       } else {
-         var4 = this.getItem().method11740(var1);
+         var4 = this.getItem().getAttributeModifiers(var1);
       }
 
       return var4;
@@ -791,15 +785,15 @@ public final class ItemStack {
 
    public void method32172(Attribute var1, AttributeModifier var2, EquipmentSlotType var3) {
       this.getOrCreateTag();
-      if (!this.field39979.contains("AttributeModifiers", 9)) {
-         this.field39979.put("AttributeModifiers", new ListNBT());
+      if (!this.tag.contains("AttributeModifiers", 9)) {
+         this.tag.put("AttributeModifiers", new ListNBT());
       }
 
-      ListNBT var6 = this.field39979.method131("AttributeModifiers", 10);
+      ListNBT var6 = this.tag.method131("AttributeModifiers", 10);
       CompoundNBT var7 = var2.method37934();
       var7.method109("AttributeName", Registry.ATTRIBUTE.getKey(var1).toString());
       if (var3 != null) {
-         var7.method109("Slot", var3.method8775());
+         var7.method109("Slot", var3.getName());
       }
 
       var6.add(var7);
@@ -812,7 +806,7 @@ public final class ItemStack {
       }
 
       IFormattableTextComponent var4 = TextComponentUtils.wrapWithSquareBrackets(var3);
-      if (!this.field39980) {
+      if (!this.isEmpty) {
          var4.mergeStyle(this.method32160().field12889)
             .modifyStyle(var1 -> var1.setHoverEvent(new HoverEvent(HoverEvent$Action.SHOW_ITEM, new HoverEvent$ItemHover(this))));
       }
@@ -820,7 +814,7 @@ public final class ItemStack {
       return var4;
    }
 
-   private static boolean method32174(Class9632 var0, Class9632 var1) {
+   private static boolean method32174(CachedBlockInfo var0, CachedBlockInfo var1) {
       if (var1 == null || var0.method37548() != var1.method37548()) {
          return false;
       } else if (var0.method37549() == null && var1.method37549() == null) {
@@ -832,13 +826,13 @@ public final class ItemStack {
       }
    }
 
-   public boolean method32175(Class8933 var1, Class9632 var2) {
-      if (method32174(var2, this.field39982)) {
-         return this.field39983;
+   public boolean method32175(Class8933 var1, CachedBlockInfo var2) {
+      if (method32174(var2, this.canDestroyCacheBlock)) {
+         return this.canDestroyCacheResult;
       } else {
-         this.field39982 = var2;
-         if (this.method32141() && this.field39979.contains("CanDestroy", 9)) {
-            ListNBT var5 = this.field39979.method131("CanDestroy", 8);
+         this.canDestroyCacheBlock = var2;
+         if (this.method32141() && this.tag.contains("CanDestroy", 9)) {
+            ListNBT var5 = this.tag.method131("CanDestroy", 8);
 
             for (int var6 = 0; var6 < var5.size(); var6++) {
                String var7 = var5.method160(var6);
@@ -846,7 +840,7 @@ public final class ItemStack {
                try {
                   Predicate var8 = Class7505.method24464().parse(new StringReader(var7)).method29657(var1);
                   if (var8.test(var2)) {
-                     this.field39983 = true;
+                     this.canDestroyCacheResult = true;
                      return true;
                   }
                } catch (CommandSyntaxException var9) {
@@ -854,18 +848,18 @@ public final class ItemStack {
             }
          }
 
-         this.field39983 = false;
+         this.canDestroyCacheResult = false;
          return false;
       }
    }
 
-   public boolean method32176(Class8933 var1, Class9632 var2) {
-      if (method32174(var2, this.field39984)) {
-         return this.field39985;
+   public boolean method32176(Class8933 var1, CachedBlockInfo var2) {
+      if (method32174(var2, this.canPlaceOnCacheBlock)) {
+         return this.canPlaceOnCacheResult;
       } else {
-         this.field39984 = var2;
-         if (this.method32141() && this.field39979.contains("CanPlaceOn", 9)) {
-            ListNBT var5 = this.field39979.method131("CanPlaceOn", 8);
+         this.canPlaceOnCacheBlock = var2;
+         if (this.method32141() && this.tag.contains("CanPlaceOn", 9)) {
+            ListNBT var5 = this.tag.method131("CanPlaceOn", 8);
 
             for (int var6 = 0; var6 < var5.size(); var6++) {
                String var7 = var5.method160(var6);
@@ -873,7 +867,7 @@ public final class ItemStack {
                try {
                   Predicate var8 = Class7505.method24464().parse(new StringReader(var7)).method29657(var1);
                   if (var8.test(var2)) {
-                     this.field39985 = true;
+                     this.canPlaceOnCacheResult = true;
                      return true;
                   }
                } catch (CommandSyntaxException var9) {
@@ -881,34 +875,34 @@ public final class ItemStack {
             }
          }
 
-         this.field39985 = false;
+         this.canPlaceOnCacheResult = false;
          return false;
       }
    }
 
    public int method32177() {
-      return this.field39977;
+      return this.animationsToGo;
    }
 
    public void method32178(int var1) {
-      this.field39977 = var1;
+      this.animationsToGo = var1;
    }
 
    public int getCount() {
-      return !this.field39980 ? this.field39976 : 0;
+      return !this.isEmpty ? this.count : 0;
    }
 
-   public void method32180(int var1) {
-      this.field39976 = var1;
+   public void setCount(int var1) {
+      this.count = var1;
       this.method32103();
    }
 
-   public void method32181(int var1) {
-      this.method32180(this.field39976 + var1);
+   public void grow(int var1) {
+      this.setCount(this.count + var1);
    }
 
-   public void method32182(int var1) {
-      this.method32181(-var1);
+   public void shrink(int var1) {
+      this.grow(-var1);
    }
 
    public void onItemUsed(World var1, LivingEntity var2, int var3) {
@@ -916,7 +910,7 @@ public final class ItemStack {
    }
 
    public boolean method32184() {
-      return this.getItem().method11744();
+      return this.getItem().isFood();
    }
 
    public SoundEvent method32185() {

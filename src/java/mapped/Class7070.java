@@ -27,12 +27,12 @@ public class Class7070 {
 
    public void method21984() {
       this.method21987();
-      boolean var3 = this.field30454 != null && this.field30454.field39976 > 0;
-      boolean var4 = this.field30453 != null && this.field30453.field39976 > 0;
+      boolean var3 = this.field30454 != null && this.field30454.count > 0;
+      boolean var4 = this.field30453 != null && this.field30453.count > 0;
       boolean var5 = this.method21986() != null
          && this.method21986().equals(this.field30455.getItem())
          && this.field30455 != null
-         && this.field30455.field39976 < 64;
+         && this.field30455.count < 64;
       if (this.field30450 < this.field30449 && var4 && var5 && this.field30452 > 0) {
          this.field30450 = this.field30450 + Client.getInstance().getPlayerTracker().getPing();
       }
@@ -43,7 +43,7 @@ public class Class7070 {
 
       if (this.field30452 == 0) {
          if (var3 && var4) {
-            this.field30454.field39976--;
+            this.field30454.count--;
             this.field30452 = this.field30451;
          } else {
             this.field30450 = 0.0F;
@@ -52,17 +52,17 @@ public class Class7070 {
 
       if (this.field30450 >= this.field30449 && this.field30449 != 0.0F) {
          if (var4) {
-            this.field30453.field39976--;
+            this.field30453.count--;
          }
 
          this.field30450 = 0.0F;
          if (this.field30455 != null) {
             ItemStack var6 = this.method21985();
-            this.field30455.field39976 = this.field30455.field39976 + var6.field39976;
+            this.field30455.count = this.field30455.count + var6.count;
          }
       }
 
-      if (this.field30453 != null && this.field30453.field39976 == 0) {
+      if (this.field30453 != null && this.field30453.count == 0) {
          this.field30453 = null;
       }
    }
@@ -119,7 +119,7 @@ public class Class7070 {
          if (this.field30453 != null) {
             ItemStack var3 = this.method21985();
             if (var3 != null) {
-               var3.field39976 = 0;
+               var3.count = 0;
             }
 
             return this.field30455 = var3;

@@ -1,9 +1,12 @@
 package mapped;
 
 import com.google.common.collect.Lists;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IntReferenceHolder;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -11,7 +14,7 @@ import java.util.List;
 public class Class5811 extends Container {
    private static String[] field25455;
    private final IWorldPosCallable field25456;
-   private final Class4923 field25457 = Class4923.method15238();
+   private final IntReferenceHolder field25457 = IntReferenceHolder.method15238();
    private final World field25458;
    private List<Class4845> field25459 = Lists.newArrayList();
    private ItemStack field25460 = ItemStack.EMPTY;
@@ -48,7 +51,7 @@ public class Class5811 extends Container {
    }
 
    public int method18099() {
-      return this.field25457.method15234();
+      return this.field25457.get();
    }
 
    public List<Class4845> method18100() {
@@ -101,8 +104,8 @@ public class Class5811 extends Container {
    }
 
    private void method18108() {
-      if (!this.field25459.isEmpty() && this.method18105(this.field25457.method15234())) {
-         Class4845 var3 = this.field25459.get(this.field25457.method15234());
+      if (!this.field25459.isEmpty() && this.method18105(this.field25457.get())) {
+         Class4845 var3 = this.field25459.get(this.field25457.get());
          this.field25466.method3636(var3);
          this.field25463.putStack(var3.method14962(this.field25465));
       } else {
@@ -129,7 +132,7 @@ public class Class5811 extends Container {
    @Override
    public ItemStack transferStackInSlot(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
-      Slot var6 = this.field25468.get(var2);
+      Slot var6 = this.inventorySlots.get(var2);
       if (var6 != null && var6.getHasStack()) {
          ItemStack var7 = var6.getStack();
          Item var8 = var7.getItem();

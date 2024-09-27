@@ -34,7 +34,7 @@ public class Class1260<C extends IInventory> implements Class1253<Integer> {
             this.field6661.method18220(this.field6659);
             if (!this.field6659.method19123(var2, (IntList)null)) {
                this.method5869();
-               var1.field4855.sendPacket(new SPlaceGhostRecipePacket(var1.openContainer.field25471, var2));
+               var1.field4855.sendPacket(new SPlaceGhostRecipePacket(var1.openContainer.windowId, var2));
             } else {
                this.method5871(var2, var3);
             }
@@ -64,7 +64,7 @@ public class Class1260<C extends IInventory> implements Class1253<Integer> {
             }
 
             ItemStack var6 = var4.copy();
-            var6.method32180(1);
+            var6.setCount(1);
             if (!this.field6660.method4046(var5, var6)) {
                field6658.error("Can't find any space for item in the inventory");
             }
@@ -79,7 +79,7 @@ public class Class1260<C extends IInventory> implements Class1253<Integer> {
          for (int var7 = 0; var7 < this.field6661.method18225() * this.field6661.method18224() + 1; var7++) {
             if (var7 != this.field6661.method18223()) {
                ItemStack var8 = this.field6661.getSlot(var7).getStack();
-               if (!var8.isEmpty() && Math.min(var6, var8.method32113()) < var8.getCount() + 1) {
+               if (!var8.isEmpty() && Math.min(var6, var8.getMaxStackSize()) < var8.getCount() + 1) {
                   return;
                }
             }
@@ -94,7 +94,7 @@ public class Class1260<C extends IInventory> implements Class1253<Integer> {
 
          while (var10.hasNext()) {
             int var11 = (Integer)var10.next();
-            int var12 = Class6207.method19127(var11).method32113();
+            int var12 = Class6207.method19127(var11).getMaxStackSize();
             if (var12 < var9) {
                var9 = var12;
             }
@@ -155,9 +155,9 @@ public class Class1260<C extends IInventory> implements Class1253<Integer> {
                this.field6660.decrStackSize(var5, 1);
             }
 
-            var6.method32180(1);
+            var6.setCount(1);
             if (!var1.getStack().isEmpty()) {
-               var1.getStack().method32181(1);
+               var1.getStack().grow(1);
             } else {
                var1.putStack(var6);
             }
@@ -176,9 +176,9 @@ public class Class1260<C extends IInventory> implements Class1253<Integer> {
                int var7 = this.field6660.method4043(var6);
                if (var7 == -1 && var3.size() <= var4) {
                   for (ItemStack var9 : var3) {
-                     if (var9.method32132(var6) && var9.getCount() != var9.method32113() && var9.getCount() + var6.getCount() <= var9.method32113()) {
-                        var9.method32181(var6.getCount());
-                        var6.method32180(0);
+                     if (var9.method32132(var6) && var9.getCount() != var9.getMaxStackSize() && var9.getCount() + var6.getCount() <= var9.getMaxStackSize()) {
+                        var9.grow(var6.getCount());
+                        var6.setCount(0);
                         break;
                      }
                   }

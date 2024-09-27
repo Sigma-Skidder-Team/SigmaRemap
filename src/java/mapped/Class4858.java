@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -28,7 +29,7 @@ public class Class4858 extends Class4837 {
             var5.add(var7);
             if (var5.size() > 1) {
                ItemStack var8 = (ItemStack)var5.get(0);
-               if (var7.getItem() != var8.getItem() || var8.getCount() != 1 || var7.getCount() != 1 || !var8.getItem().method11712()) {
+               if (var7.getItem() != var8.getItem() || var8.getCount() != 1 || var7.getCount() != 1 || !var8.getItem().isDamageable()) {
                   return false;
                }
             }
@@ -47,7 +48,7 @@ public class Class4858 extends Class4837 {
             var4.add(var6);
             if (var4.size() > 1) {
                ItemStack var7 = (ItemStack)var4.get(0);
-               if (var6.getItem() != var7.getItem() || var7.getCount() != 1 || var6.getCount() != 1 || !var7.getItem().method11712()) {
+               if (var6.getItem() != var7.getItem() || var7.getCount() != 1 || var6.getCount() != 1 || !var7.getItem().isDamageable()) {
                   return ItemStack.EMPTY;
                }
             }
@@ -57,12 +58,12 @@ public class Class4858 extends Class4837 {
       if (var4.size() == 2) {
          ItemStack var16 = (ItemStack)var4.get(0);
          ItemStack var17 = (ItemStack)var4.get(1);
-         if (var16.getItem() == var17.getItem() && var16.getCount() == 1 && var17.getCount() == 1 && var16.getItem().method11712()) {
+         if (var16.getItem() == var17.getItem() && var16.getCount() == 1 && var17.getCount() == 1 && var16.getItem().isDamageable()) {
             Item var18 = var16.getItem();
-            int var8 = var18.method11711() - var16.method32117();
-            int var9 = var18.method11711() - var17.method32117();
-            int var10 = var8 + var9 + var18.method11711() * 5 / 100;
-            int var11 = var18.method11711() - var10;
+            int var8 = var18.getMaxDamage() - var16.method32117();
+            int var9 = var18.getMaxDamage() - var17.method32117();
+            int var10 = var8 + var9 + var18.getMaxDamage() * 5 / 100;
+            int var11 = var18.getMaxDamage() - var10;
             if (var11 < 0) {
                var11 = 0;
             }
@@ -72,7 +73,7 @@ public class Class4858 extends Class4837 {
             HashMap var13 = Maps.newHashMap();
             Map<Enchantment, Integer> var14 = EnchantmentHelper.method26312(var16);
             Map<Enchantment, Integer> var15 = EnchantmentHelper.method26312(var17);
-            Registry.field16073.method9192().filter(Enchantment::method18825).forEach(var3 -> {
+            Registry.ENCHANTMENT.method9192().filter(Enchantment::method18825).forEach(var3 -> {
                int var6x = Math.max(var14.getOrDefault(var3, 0), var15.getOrDefault(var3, 0));
                if (var6x > 0) {
                   var13.put(var3, var6x);

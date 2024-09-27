@@ -23,12 +23,12 @@ public class Class8482 {
          return var0;
       } else {
          if (!var6) {
-            var0.method32182(1);
+            var0.shrink(1);
          }
 
          if (!var0.isEmpty()) {
             if (!var1.inventory.method4045(var2)) {
-               var1.method2882(var2, false);
+               var1.dropItem(var2, false);
             }
 
             return var0;

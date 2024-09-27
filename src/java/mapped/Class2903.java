@@ -5,6 +5,9 @@ import com.google.common.collect.Sets;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3i;
@@ -18,7 +21,7 @@ public class Class2903 extends Class2898<Class4733> {
    }
 
    public static boolean method11226(Class1680 var0, BlockPos var1) {
-      return method11233(var0, var1) || var0.method6815(var1, var0x -> var0x.method23446(BlockTags.field32751));
+      return method11233(var0, var1) || var0.method6815(var1, var0x -> var0x.isIn(BlockTags.field32751));
    }
 
    private static boolean method11227(Class1680 var0, BlockPos var1) {
@@ -30,7 +33,7 @@ public class Class2903 extends Class2898<Class4733> {
    }
 
    public static boolean method11229(Class1680 var0, BlockPos var1) {
-      return var0.method6815(var1, var0x -> var0x.isAir() || var0x.method23446(BlockTags.field32767));
+      return var0.method6815(var1, var0x -> var0x.isAir() || var0x.isIn(BlockTags.LEAVES));
    }
 
    private static boolean method11230(Class1680 var0, BlockPos var1) {
@@ -42,8 +45,8 @@ public class Class2903 extends Class2898<Class4733> {
 
    private static boolean method11231(Class1680 var0, BlockPos var1) {
       return var0.method6815(var1, var0x -> {
-         Class8649 var3 = var0x.getMaterial();
-         return var3 == Class8649.field38938;
+         Material var3 = var0x.getMaterial();
+         return var3 == Material.TALL_PLANTS;
       });
    }
 

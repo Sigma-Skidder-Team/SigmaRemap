@@ -12,6 +12,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
@@ -272,12 +273,12 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
 
    @Override
    public void method2772() {
-      this.connection.sendPacket(new CCloseWindowPacket(this.openContainer.field25471));
+      this.connection.sendPacket(new CCloseWindowPacket(this.openContainer.windowId));
       this.method5390();
    }
 
    public void method5390() {
-      this.inventory.method4056(ItemStack.EMPTY);
+      this.inventory.setItemStack(ItemStack.EMPTY);
       super.method2772();
       this.field6132.displayGuiScreen((Screen)null);
    }
@@ -704,7 +705,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
       }
 
       if (this.movementInput.field43913 && !var11 && !var3 && !this.abilities.isFlying && !this.isPassenger() && !this.isOnLadder()) {
-         ItemStack var12 = this.getItemStackFromSlot(EquipmentSlotType.field13735);
+         ItemStack var12 = this.getItemStackFromSlot(EquipmentSlotType.CHEST);
          if (var12.getItem() == Items.field38120 && Class3256.method11698(var12) && this.tryToStartFallFlying()) {
             this.connection.sendPacket(new CEntityActionPacket(this, CEntityActionPacket.Action.START_FALL_FLYING));
          }

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.inventory.EquipmentSlotType;
+
 // $VF: synthetic class
 public class Class8979 {
    private static String[] field40588;
@@ -8,34 +10,34 @@ public class Class8979 {
 
    static {
       try {
-         field40590[EquipmentSlotType.field13736.ordinal()] = 1;
+         field40590[EquipmentSlotType.HEAD.ordinal()] = 1;
       } catch (NoSuchFieldError var8) {
       }
 
       try {
-         field40590[EquipmentSlotType.field13735.ordinal()] = 2;
+         field40590[EquipmentSlotType.CHEST.ordinal()] = 2;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field40590[EquipmentSlotType.field13734.ordinal()] = 3;
+         field40590[EquipmentSlotType.LEGS.ordinal()] = 3;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field40590[EquipmentSlotType.field13733.ordinal()] = 4;
+         field40590[EquipmentSlotType.FEET.ordinal()] = 4;
       } catch (NoSuchFieldError var5) {
       }
 
-      field40589 = new int[Class1969.values().length];
+      field40589 = new int[EquipmentSlotType.Group.values().length];
 
       try {
-         field40589[Class1969.field12836.ordinal()] = 1;
+         field40589[EquipmentSlotType.Group.HAND.ordinal()] = 1;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field40589[Class1969.field12837.ordinal()] = 2;
+         field40589[EquipmentSlotType.Group.ARMOR.ordinal()] = 2;
       } catch (NoSuchFieldError var3) {
       }
    }

@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.ISeedReader;
@@ -65,7 +66,7 @@ public abstract class Class2898<FC extends Class4698> {
    private final Codec<Class7909<FC, Class2898<FC>>> field17988;
 
    private static <C extends Class4698, F extends Class2898<C>> F method11214(String var0, F var1) {
-      return Registry.<F>method9194(Registry.field16112, var0, (F)var1);
+      return Registry.<F>register(Registry.field16112, var0, (F)var1);
    }
 
    public Class2898(Codec<FC> var1) {

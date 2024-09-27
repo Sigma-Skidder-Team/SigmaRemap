@@ -10,11 +10,13 @@ import java.util.*;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -88,7 +90,7 @@ public class Class7819 {
          .method37705("       ", "       ", "       ", "   #   ", "       ", "       ", "       ")
          .method37705("  ###  ", " #   # ", "#     #", "#  #  #", "#     #", " #   # ", "  ###  ")
          .method37705("       ", "  ###  ", " ##### ", " ##### ", " ##### ", "  ###  ", "       ")
-         .method37707('#', Class9632.method37552(Class118.method331(Blocks.BEDROCK)))
+         .method37707('#', CachedBlockInfo.method37552(Class118.method331(Blocks.BEDROCK)))
          .method37708();
    }
 
@@ -443,7 +445,7 @@ public class Class7819 {
             for (int var5 = 0; var5 < this.field33540.method38654(); var5++) {
                for (int var6 = 0; var6 < this.field33540.method38653(); var6++) {
                   for (int var7 = 0; var7 < this.field33540.method38652(); var7++) {
-                     Class9632 var8 = var4.method33881(var5, var6, var7);
+                     CachedBlockInfo var8 = var4.method33881(var5, var6, var7);
                      if (var8.method37548().isIn(Blocks.BEDROCK) || var8.method37548().isIn(Blocks.field36649)) {
                         this.field33538.setBlockState(var8.method37551(), Blocks.field36651.method11579());
                      }

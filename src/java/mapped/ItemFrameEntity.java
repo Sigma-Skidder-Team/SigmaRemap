@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
@@ -104,7 +105,7 @@ public class ItemFrameEntity extends Class995 {
             return false;
          } else {
             BlockState var3 = this.world.getBlockState(this.field5488.method8349(this.field5489.method536()));
-            return !var3.getMaterial().method31086() && (!this.field5489.getAxis().method324() || !Class3247.method11672(var3))
+            return !var3.getMaterial().isSolid() && (!this.field5489.getAxis().method324() || !Class3247.method11672(var3))
                ? false
                : this.world.getEntitiesInAABBexcluding(this, this.getBoundingBox(), field5486).isEmpty();
          }
@@ -239,7 +240,7 @@ public class ItemFrameEntity extends Class995 {
    public void method4092(ItemStack var1, boolean var2) {
       if (!var1.isEmpty()) {
          var1 = var1.copy();
-         var1.method32180(1);
+         var1.setCount(1);
          var1.method32166(this);
       }
 
@@ -313,7 +314,7 @@ public class ItemFrameEntity extends Class995 {
          }
 
          ItemStack var6 = this.method4090();
-         if (!var6.isEmpty() && !ItemStack.method32128(var5, var6)) {
+         if (!var6.isEmpty() && !ItemStack.areItemStacksEqual1(var5, var6)) {
             this.method4089(var6);
          }
 
@@ -342,7 +343,7 @@ public class ItemFrameEntity extends Class995 {
             } else if (var7 && !this.removed) {
                this.method4091(var5);
                if (!var1.abilities.isCreativeMode) {
-                  var5.method32182(1);
+                  var5.shrink(1);
                }
             }
 

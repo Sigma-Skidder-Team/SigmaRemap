@@ -2,12 +2,15 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.MathHelper;
@@ -106,7 +109,7 @@ public class Class940 extends Class939 implements Class930, ITickableTileEntity 
          if (!var6.isEmpty()) {
             for (int var7 = 0; var7 < var6.size(); var7++) {
                Entity var8 = (Entity)var6.get(var7);
-               if (var8.method3422() != Class2315.field15865) {
+               if (var8.method3422() != PushReaction.field15865) {
                   double var9 = 0.0;
                   double var11 = 0.0;
                   double var13 = 0.0;

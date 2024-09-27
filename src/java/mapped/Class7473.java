@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntitySize;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
@@ -139,7 +141,7 @@ public class Class7473 {
    }
 
    private static boolean method24202(BlockState var0) {
-      return var0.isAir() || var0.method23446(BlockTags.field32798) || var0.isIn(Blocks.field36588);
+      return var0.isAir() || var0.isIn(BlockTags.field32798) || var0.isIn(Blocks.field36588);
    }
 
    public boolean method24203() {

@@ -9,7 +9,10 @@ import it.unimi.dsi.fastutil.shorts.Short2ObjectMap;
 import it.unimi.dsi.fastutil.shorts.Short2ObjectOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -54,7 +57,7 @@ public abstract class Class7633 extends Fluid {
                if (var14 > 0.0F) {
                   var15 = var3.method23476() - var14;
                }
-            } else if (!var1.getBlockState(var10).getMaterial().method31087()) {
+            } else if (!var1.getBlockState(var10).getMaterial().blocksMovement()) {
                BlockPos var16 = var10.down();
                FluidState var17 = var1.getFluidState(var16);
                if (this.method25069(var17)) {
@@ -95,7 +98,7 @@ public abstract class Class7633 extends Fluid {
       FluidState var7 = var1.getFluidState(var2);
       if (!var7.method23472().method25066(this)) {
          if (var3 != Direction.field673) {
-            return var6.getMaterial() != Class8649.field38964 ? var6.method23454(var1, var2, var3) : false;
+            return var6.getMaterial() != Material.field38964 ? var6.method23454(var1, var2, var3) : false;
          } else {
             return true;
          }
@@ -164,7 +167,7 @@ public abstract class Class7633 extends Fluid {
       if (this.method25079() && var7 >= 2) {
          BlockState var13 = var1.getBlockState(var2.down());
          FluidState var15 = var13.method23449();
-         if (var13.getMaterial().method31086() || this.method25086(var15)) {
+         if (var13.getMaterial().isSolid() || this.method25086(var15)) {
             return this.method25078(false);
          }
       }
@@ -375,9 +378,9 @@ public abstract class Class7633 extends Fluid {
             && var7 != Blocks.LADDER
             && var7 != Blocks.SUGAR_CANE
             && var7 != Blocks.field37013) {
-            Class8649 var8 = var3.getMaterial();
-            return var8 != Class8649.field38934 && var8 != Class8649.field38933 && var8 != Class8649.field38937 && var8 != Class8649.field38940
-               ? !var8.method31087()
+            Material var8 = var3.getMaterial();
+            return var8 != Material.field38934 && var8 != Material.field38933 && var8 != Material.field38937 && var8 != Material.field38940
+               ? !var8.blocksMovement()
                : false;
          } else {
             return false;

@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 public class Class3302 extends Class3292 {
    private static String[] field18808;
 
-   public Class3302(Block var1, Class5643 var2) {
+   public Class3302(Block var1, Properties var2) {
       super(var1, var2);
    }
 

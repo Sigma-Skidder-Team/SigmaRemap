@@ -281,7 +281,7 @@ public class Auto32k extends Module {
                 int var7 = var4.method17303();
                 if (this.field23874 == var7 && var5 == 0 && var6.getItem() != Items.field37222 && !this.field23877) {
                     var1.setCancelled(true);
-                    mc.getConnection().sendPacket(new CClickWindowPacket(var7, var5, 1, ClickType.field14695, var6, this.field23875++));
+                    mc.getConnection().sendPacket(new CClickWindowPacket(var7, var5, 1, ClickType.QUICK_MOVE, var6, this.field23875++));
                     int var8 = -1;
 
                     for (int var9 = 44; var9 > 9; var9--) {

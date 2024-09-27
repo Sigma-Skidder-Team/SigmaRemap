@@ -39,7 +39,7 @@ public class Class8588 {
       for (ResourceLocation var9 : this.field38666) {
          for (ItemStack var11 : var1.field4856.method1411().method1058(var9).method23182(var4)) {
             if (!var1.method2945(var11)) {
-               ItemEntity var12 = var1.method2882(var11, false);
+               ItemEntity var12 = var1.dropItem(var11, false);
                if (var12 != null) {
                   var12.method4132();
                   var12.method4127(var1.getUniqueID());

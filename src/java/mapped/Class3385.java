@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
@@ -22,7 +24,7 @@ public class Class3385 extends Block implements Class3196 {
          return false;
       } else {
          for (BlockPos var8 : BlockPos.method8359(var2.method8336(-1, -1, -1), var2.method8336(1, 1, 1))) {
-            if (var1.getBlockState(var8).method23446(BlockTags.field32799)) {
+            if (var1.getBlockState(var8).isIn(BlockTags.field32799)) {
                return true;
             }
          }

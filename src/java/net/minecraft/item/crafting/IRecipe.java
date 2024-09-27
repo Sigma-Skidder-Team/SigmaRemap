@@ -1,7 +1,9 @@
 package net.minecraft.item.crafting;
 
 import mapped.*;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 

@@ -1,16 +1,17 @@
 package mapped;
 
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.IVanishable;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.world.World;
 
-public class Class3259 extends Item implements Class3260 {
+public class Class3259 extends Item implements IVanishable {
    private static String[] field18745;
 
-   public Class3259(Class5643 var1) {
+   public Class3259(Properties var1) {
       super(var1);
    }
 
@@ -38,7 +39,7 @@ public class Class3259 extends Item implements Class3260 {
       } else {
          if (!var1.isRemote) {
             int var9 = var2.field4930.method3542(var6);
-            var6.method32121(var9, var2, var1x -> var1x.sendBreakAnimation(var3));
+            var6.damageItem(var9, var2, var1x -> var1x.sendBreakAnimation(var3));
          }
 
          var1.method6743(

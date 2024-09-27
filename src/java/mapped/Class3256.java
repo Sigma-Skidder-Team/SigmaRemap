@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Hand;
@@ -9,9 +10,9 @@ import net.minecraft.world.World;
 public class Class3256 extends Item implements Class3255 {
    private static String[] field18731;
 
-   public Class3256(Class5643 var1) {
+   public Class3256(Properties var1) {
       super(var1);
-      Class3357.method11931(this, ArmorItem.field18780);
+      Class3357.method11931(this, ArmorItem.DISPENSER_BEHAVIOR);
    }
 
    public static boolean method11698(ItemStack var0) {
@@ -32,7 +33,7 @@ public class Class3256 extends Item implements Class3255 {
          return Class6794.<ItemStack>method20699(var6);
       } else {
          var2.setItemStackToSlot(var7, var6.copy());
-         var6.method32180(0);
+         var6.setCount(0);
          return Class6794.<ItemStack>method20700(var6, var1.isRemote());
       }
    }

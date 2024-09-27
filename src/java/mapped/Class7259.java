@@ -1,18 +1,20 @@
 package mapped;
 
+import net.minecraft.inventory.EquipmentSlotType;
+
 // $VF: synthetic class
 public class Class7259 {
    private static String[] field31146;
-   public static final int[] field31147 = new int[Class1969.values().length];
+   public static final int[] field31147 = new int[EquipmentSlotType.Group.values().length];
 
    static {
       try {
-         field31147[Class1969.field12836.ordinal()] = 1;
+         field31147[EquipmentSlotType.Group.HAND.ordinal()] = 1;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field31147[Class1969.field12837.ordinal()] = 2;
+         field31147[EquipmentSlotType.Group.ARMOR.ordinal()] = 2;
       } catch (NoSuchFieldError var3) {
       }
    }

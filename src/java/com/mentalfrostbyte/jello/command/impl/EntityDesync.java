@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 import mapped.Class2193;
 import mapped.Class6669;
-import mapped.Class8623;
+import mapped.ChatCommandArguments;
 import net.minecraft.entity.Entity;
 
 
@@ -17,7 +17,7 @@ public class EntityDesync extends Command {
    }
 
    @Override
-   public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
       if (var2.length != 0) {
          if (var2.length <= 1) {
             if (var2[0].method30895() != Class2193.field14335) {
@@ -34,7 +34,7 @@ public class EntityDesync extends Command {
 
                   mc.player.method3311(this.field25711);
                   this.field25711.addedToChunk = true;
-                  var3.method20327("Remounted entity " + this.field25711.getType().method33211().getUnformattedComponentText());
+                  var3.send("Remounted entity " + this.field25711.getType().method33211().getUnformattedComponentText());
                   this.field25711 = null;
                } else {
                   Entity var6 = mc.player.getRidingEntity();
@@ -45,7 +45,7 @@ public class EntityDesync extends Command {
                   this.field25711 = mc.player.getRidingEntity();
                   this.field25711.addedToChunk = true;
                   mc.player.stopRiding();
-                  var3.method20327("Dismounted entity " + this.field25711.getType().method33211().getUnformattedComponentText());
+                  var3.send("Dismounted entity " + this.field25711.getType().method33211().getUnformattedComponentText());
                }
             }
          } else {

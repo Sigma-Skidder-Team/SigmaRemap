@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
@@ -216,7 +217,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
       Advancement var12 = Class7999.method27304()
          .method27305(var11)
          .method27308(
-            Items.field37891,
+            Items.MILK_BUCKET,
             new TranslationTextComponent("advancements.nether.all_potions.title"),
             new TranslationTextComponent("advancements.nether.all_potions.description"),
             (ResourceLocation)null,
@@ -249,7 +250,7 @@ public class Class2835 implements Consumer<Consumer<Advancement>> {
       Class7999.method27304()
          .method27305(var12)
          .method27308(
-            Items.field37882,
+            Items.BUCKET,
             new TranslationTextComponent("advancements.nether.all_effects.title"),
             new TranslationTextComponent("advancements.nether.all_effects.description"),
             (ResourceLocation)null,

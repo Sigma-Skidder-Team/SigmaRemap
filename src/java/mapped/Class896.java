@@ -9,6 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -166,7 +167,7 @@ public class Class896 extends Class890 implements Class889 {
 
    private void method3521(BlockPos var1, Direction var2) {
       BlockState var5 = this.world.getBlockState(var1);
-      if (!var5.method23446(BlockTags.field32798)) {
+      if (!var5.isIn(BlockTags.field32798)) {
          if (Class3244.method11655(var5)) {
             this.world.method6869((PlayerEntity)null, 1009, var1, 0);
             Class3244.method11652(this.world, var1, var5);

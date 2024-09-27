@@ -40,7 +40,7 @@ public abstract class Class6272<DC extends Class4716> {
    private final Codec<Class7907<DC>> field27781;
 
    private static <T extends Class4716, G extends Class6272<T>> G method19243(String var0, G var1) {
-      return Registry.<G>method9194(Registry.field16118, var0, (G)var1);
+      return Registry.<G>register(Registry.field16118, var0, (G)var1);
    }
 
    public Class6272(Codec<DC> var1) {

@@ -8,6 +8,7 @@ import java.util.UUID;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;

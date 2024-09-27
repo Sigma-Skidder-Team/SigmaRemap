@@ -19,7 +19,7 @@ public class Class8206 implements Class8202 {
    }
 
    @Override
-   public int method28507() {
+   public int size() {
       return this.field35241.length;
    }
 }

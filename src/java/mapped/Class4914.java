@@ -14,6 +14,7 @@ import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class4914 implements ArgumentType<Integer> {
@@ -47,10 +48,10 @@ public class Class4914 implements ArgumentType<Integer> {
       var0.put("weapon", 98);
       var0.put("weapon.mainhand", 98);
       var0.put("weapon.offhand", 99);
-      var0.put("armor.head", 100 + EquipmentSlotType.field13736.method8773());
-      var0.put("armor.chest", 100 + EquipmentSlotType.field13735.method8773());
-      var0.put("armor.legs", 100 + EquipmentSlotType.field13734.method8773());
-      var0.put("armor.feet", 100 + EquipmentSlotType.field13733.method8773());
+      var0.put("armor.head", 100 + EquipmentSlotType.HEAD.getIndex());
+      var0.put("armor.chest", 100 + EquipmentSlotType.CHEST.getIndex());
+      var0.put("armor.legs", 100 + EquipmentSlotType.LEGS.getIndex());
+      var0.put("armor.feet", 100 + EquipmentSlotType.FEET.getIndex());
       var0.put("horse.saddle", 400);
       var0.put("horse.armor", 401);
       var0.put("horse.chest", 499);

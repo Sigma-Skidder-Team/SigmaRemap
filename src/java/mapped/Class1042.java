@@ -736,7 +736,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          this.onItemPickup(var1, var4.getCount());
          ItemStack var7 = var5.method3676(var4);
          if (!var7.isEmpty()) {
-            var4.method32180(var7.getCount());
+            var4.setCount(var7.getCount());
          } else {
             var1.remove();
          }
@@ -854,7 +854,7 @@ public class Class1042 extends Class1043 implements Class1062, Class1041 {
          BlockState var13 = var10;
          var9 = var9.down();
          var10 = this.world.getBlockState(var9);
-         if ((var13.isAir() || var13.getMaterial().isLiquid()) && var10.getMaterial().method31090()) {
+         if ((var13.isAir() || var13.getMaterial().isLiquid()) && var10.getMaterial().isOpaque()) {
             return var12;
          }
       }

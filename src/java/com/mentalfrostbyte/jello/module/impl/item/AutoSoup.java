@@ -105,9 +105,9 @@ public class AutoSoup extends Module {
             if (var3 > 0) {
                 int var4 = this.method16062(var3);
                 if (var4 > 0) {
-                    InvManagerUtils.fixedClick(mc.player.container.field25471, var4, 0, ClickType.PICKUP, mc.player, true);
-                    InvManagerUtils.fixedClick(mc.player.container.field25471, var4, 0, ClickType.field14700, mc.player, true);
-                    InvManagerUtils.fixedClick(mc.player.container.field25471, var4, 0, ClickType.PICKUP, mc.player, true);
+                    InvManagerUtils.fixedClick(mc.player.container.windowId, var4, 0, ClickType.PICKUP, mc.player, true);
+                    InvManagerUtils.fixedClick(mc.player.container.windowId, var4, 0, ClickType.QUICK_MOVE_ALL, mc.player, true);
+                    InvManagerUtils.fixedClick(mc.player.container.windowId, var4, 0, ClickType.PICKUP, mc.player, true);
                     this.field23431 = -5;
                 }
             }
@@ -123,7 +123,7 @@ public class AutoSoup extends Module {
                 boolean var4 = false;
                 if (InvManagerUtils.method25866(this.field23429).getItem() == Items.field37837
                         && Math.random() * 100.0 > (double) this.getNumberValueBySettingName("Refill accuracy")) {
-                    InvManagerUtils.fixedClick(mc.player.container.field25471, this.field23429, 0, ClickType.field14695, mc.player, true);
+                    InvManagerUtils.fixedClick(mc.player.container.windowId, this.field23429, 0, ClickType.QUICK_MOVE, mc.player, true);
                     this.field23431 = 0;
                     var4 = true;
                 }

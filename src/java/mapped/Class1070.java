@@ -9,12 +9,14 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -262,7 +264,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
 
       BlockState var3 = this.world.getBlockState(this.getPosition());
       BlockState var4 = this.getStateBelow();
-      boolean var5 = var3.method23446(BlockTags.field32808) || var4.method23446(BlockTags.field32808) || this.method3427(FluidTags.field40470) > 0.0;
+      boolean var5 = var3.isIn(BlockTags.field32808) || var4.isIn(BlockTags.field32808) || this.method3427(FluidTags.field40470) > 0.0;
       this.method4977(!var5);
       super.tick();
       this.method4985();
@@ -414,7 +416,7 @@ public class Class1070 extends Class1018 implements Class1071, Class1069 {
          } else {
             MobEntity var10 = EntityType.field41110.create(var1.method6970());
             var8 = this.method4987(var1, var2, var10, new Class5096(ZombieEntity.method4661(this.rand), false));
-            var10.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field38065));
+            var10.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field38065));
             this.method4942((Class2266)null);
          }
 

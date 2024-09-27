@@ -1,6 +1,8 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 
 import javax.annotation.Nullable;
@@ -44,7 +46,7 @@ public class Class5821 extends Container {
       if (!var1.world.isRemote) {
          ItemStack var4 = this.field25501.decrStackSize(this.field25501.getSlotStackLimit());
          if (!var4.isEmpty()) {
-            var1.method2882(var4, false);
+            var1.dropItem(var4, false);
          }
       }
    }
@@ -63,7 +65,7 @@ public class Class5821 extends Container {
    @Override
    public ItemStack transferStackInSlot(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
-      Slot var6 = this.field25468.get(var2);
+      Slot var6 = this.inventorySlots.get(var2);
       if (var6 != null && var6.getHasStack()) {
          ItemStack var7 = var6.getStack();
          var5 = var7.copy();

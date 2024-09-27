@@ -2,6 +2,9 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -101,11 +104,11 @@ public class Class3461 extends Block {
    }
 
    private int method12138() {
-      return this.field19004 != Class8649.field38967 ? 1012 : 1011;
+      return this.field19004 != Material.field38967 ? 1012 : 1011;
    }
 
    private int method12139() {
-      return this.field19004 != Class8649.field38967 ? 1006 : 1005;
+      return this.field19004 != Material.field38967 ? 1006 : 1005;
    }
 
    @Nullable
@@ -172,7 +175,7 @@ public class Class3461 extends Block {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (this.field19004 != Class8649.field38967) {
+      if (this.field19004 != Material.field38967) {
          var1 = var1.method23459(field19294);
          var2.setBlockState(var3, var1, 10);
          var2.method6869(var4, !var1.<Boolean>method23463(field19294) ? this.method12138() : this.method12139(), var3, 0);
@@ -218,8 +221,8 @@ public class Class3461 extends Block {
    }
 
    @Override
-   public Class2315 method11689(BlockState var1) {
-      return Class2315.field15863;
+   public PushReaction method11689(BlockState var1) {
+      return PushReaction.field15863;
    }
 
    @Override
@@ -247,6 +250,6 @@ public class Class3461 extends Block {
    }
 
    public static boolean method12145(BlockState var0) {
-      return var0.getBlock() instanceof Class3461 && (var0.getMaterial() == Class8649.field38956 || var0.getMaterial() == Class8649.field38957);
+      return var0.getBlock() instanceof Class3461 && (var0.getMaterial() == Material.field38956 || var0.getMaterial() == Material.field38957);
    }
 }

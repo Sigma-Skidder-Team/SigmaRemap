@@ -2,11 +2,12 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 
 public class Class3295 extends Class3292 {
    private static String[] field18803;
 
-   public Class3295(Block var1, Class5643 var2) {
+   public Class3295(Block var1, Properties var2) {
       super(var1, var2);
    }
 

@@ -166,6 +166,6 @@ public class Class9561 {
    }
 
    public static boolean method37058(Item var0, ItemStack var1) {
-      return !Reflector.field42915.exists() ? var0.method11712() : Reflector.method35064(var0, Reflector.field42915, var1);
+      return !Reflector.field42915.exists() ? var0.isDamageable() : Reflector.method35064(var0, Reflector.field42915, var1);
    }
 }

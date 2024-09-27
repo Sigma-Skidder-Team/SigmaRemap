@@ -3,12 +3,14 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -137,7 +139,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    public static Class7037 method4614() {
-      return Class1009.method4343().method21849(Attributes.field42105, 16.0).method21849(Attributes.MOVEMENT_SPEED, 0.35F).method21849(Attributes.field42110, 5.0);
+      return Class1009.method4343().method21849(Attributes.field42105, 16.0).method21849(Attributes.MOVEMENT_SPEED, 0.35F).method21849(Attributes.ATTACK_DAMAGE, 5.0);
    }
 
    public static boolean method4615(EntityType<Class1034> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
@@ -150,7 +152,7 @@ public class Class1034 extends Class1035 implements Class1023 {
       if (var3 != Class2202.field14394) {
          if (!(var1.method6814().nextFloat() < 0.2F)) {
             if (this.method4635()) {
-               this.setItemStackToSlot(EquipmentSlotType.field13731, this.method4620());
+               this.setItemStackToSlot(EquipmentSlotType.MAINHAND, this.method4620());
             }
          } else {
             this.method4308(true);
@@ -176,10 +178,10 @@ public class Class1034 extends Class1035 implements Class1023 {
    @Override
    public void method4270(Class9755 var1) {
       if (this.method4635()) {
-         this.method4616(EquipmentSlotType.field13736, new ItemStack(Items.field37860));
-         this.method4616(EquipmentSlotType.field13735, new ItemStack(Items.field37861));
-         this.method4616(EquipmentSlotType.field13734, new ItemStack(Items.field37862));
-         this.method4616(EquipmentSlotType.field13733, new ItemStack(Items.field37863));
+         this.method4616(EquipmentSlotType.HEAD, new ItemStack(Items.field37860));
+         this.method4616(EquipmentSlotType.CHEST, new ItemStack(Items.field37861));
+         this.method4616(EquipmentSlotType.LEGS, new ItemStack(Items.field37862));
+         this.method4616(EquipmentSlotType.FEET, new ItemStack(Items.field37863));
       }
    }
 
@@ -349,7 +351,7 @@ public class Class1034 extends Class1035 implements Class1023 {
    }
 
    public void method4625(ItemStack var1) {
-      this.method4248(EquipmentSlotType.field13731, var1);
+      this.method4248(EquipmentSlotType.MAINHAND, var1);
    }
 
    public void method4626(ItemStack var1) {

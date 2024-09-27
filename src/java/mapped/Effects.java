@@ -27,7 +27,7 @@ public class Effects {
    public static final Effect STRENGTH = register(
       5,
       "strength",
-      new Class7148(EffectType.BENEFICIAL, 9643043, 3.0).addAttributesModifier(Attributes.field42110, "648D7064-6A60-4F59-8ABE-C2C23A6DD7A9", 0.0, AttributeModifier.Operation.ADDITION)
+      new Class7148(EffectType.BENEFICIAL, 9643043, 3.0).addAttributesModifier(Attributes.ATTACK_DAMAGE, "648D7064-6A60-4F59-8ABE-C2C23A6DD7A9", 0.0, AttributeModifier.Operation.ADDITION)
    );
    public static final Effect INSTANT_HEALTH = register(6, "instant_health", new Class7146(EffectType.BENEFICIAL, 16262179));
    public static final Effect INSTANT_DAMAGE = register(7, "instant_damage", new Class7146(EffectType.HARMFUL, 4393481));
@@ -44,7 +44,7 @@ public class Effects {
    public static final Effect WEAKNESS = register(
       18,
       "weakness",
-      new Class7148(EffectType.HARMFUL, 4738376, -4.0).addAttributesModifier(Attributes.field42110, "22653B89-116E-49DC-9B6B-9971489B5BE5", 0.0, AttributeModifier.Operation.ADDITION)
+      new Class7148(EffectType.HARMFUL, 4738376, -4.0).addAttributesModifier(Attributes.ATTACK_DAMAGE, "22653B89-116E-49DC-9B6B-9971489B5BE5", 0.0, AttributeModifier.Operation.ADDITION)
    );
    public static final Effect POISON = register(19, "poison", new Effect(EffectType.HARMFUL, 5149489));
    public static final Effect WITHER = register(20, "wither", new Effect(EffectType.HARMFUL, 3484199));

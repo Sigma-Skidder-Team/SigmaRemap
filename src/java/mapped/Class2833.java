@@ -3,8 +3,11 @@ package mapped;
 import java.util.function.Consumer;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.block.Blocks;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Items;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -247,7 +250,7 @@ public class Class2833 implements Consumer<Consumer<Advancement>> {
             "silk_touch_nest",
             Class4479.method14139(
                Blocks.field37117,
-               Class9735.method38146().method38150(new Class8605(Class8122.field34916, Class8840.method32014(1))),
+               Class9735.method38146().method38150(new Class8605(Enchantments.SILK_TOUCH, Class8840.method32014(1))),
                Class8840.method32013(3)
             )
          )

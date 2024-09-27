@@ -1,6 +1,8 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 public final class Class7406 extends ItemGroup {
    public Class7406(int var1, String var2) {

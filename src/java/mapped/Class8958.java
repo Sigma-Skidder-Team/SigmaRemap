@@ -21,6 +21,7 @@ import joptsimple.OptionParser;
 import joptsimple.OptionSet;
 import joptsimple.OptionSpecBuilder;
 import net.minecraft.client.util.Util;
+import net.minecraft.crash.CrashReport;
 import net.minecraft.resources.ResourcePackList;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.math.MathHelper;

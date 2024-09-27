@@ -5,6 +5,7 @@ import com.mojang.serialization.Codec;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import it.unimi.dsi.fastutil.objects.ObjectListIterator;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.math.BlockPos;
@@ -18,7 +19,7 @@ import java.util.function.Predicate;
 public class Heightmap {
    private static String[] field32307;
    private static final Predicate<BlockState> field32308 = var0 -> !var0.isAir();
-   private static final Predicate<BlockState> field32309 = var0 -> var0.getMaterial().method31087();
+   private static final Predicate<BlockState> field32309 = var0 -> var0.getMaterial().blocksMovement();
    private final Class7776 field32310 = new Class7776(9, 256);
    private final Predicate<BlockState> field32311;
    private final IChunk field32312;
@@ -132,11 +133,11 @@ public class Heightmap {
       field296("WORLD_SURFACE", Class2029.field13172, method24587()),
       field297("OCEAN_FLOOR_WG", Class2029.field13170, method24588()),
       field298("OCEAN_FLOOR", Class2029.field13171, method24588()),
-      field299("MOTION_BLOCKING", Class2029.field13172, var0 -> var0.getMaterial().method31087() || !var0.method23449().method23474()),
+      field299("MOTION_BLOCKING", Class2029.field13172, var0 -> var0.getMaterial().blocksMovement() || !var0.method23449().method23474()),
       field300(
          "MOTION_BLOCKING_NO_LEAVES",
          Class2029.field13171,
-         var0 -> (var0.getMaterial().method31087() || !var0.method23449().method23474()) && !(var0.getBlock() instanceof Class3465)
+         var0 -> (var0.getMaterial().blocksMovement() || !var0.method23449().method23474()) && !(var0.getBlock() instanceof Class3465)
       );
 
       public static final Codec<Type> field301 = IStringSerializable.<Type>method258(Type::values, Type::method286);

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.inventory.EquipmentSlotType;
+
 // $VF: synthetic class
 public class Class8875 {
    private static String[] field40094;
@@ -7,22 +9,22 @@ public class Class8875 {
 
    static {
       try {
-         field40095[EquipmentSlotType.field13736.ordinal()] = 1;
+         field40095[EquipmentSlotType.HEAD.ordinal()] = 1;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field40095[EquipmentSlotType.field13735.ordinal()] = 2;
+         field40095[EquipmentSlotType.CHEST.ordinal()] = 2;
       } catch (NoSuchFieldError var5) {
       }
 
       try {
-         field40095[EquipmentSlotType.field13734.ordinal()] = 3;
+         field40095[EquipmentSlotType.LEGS.ordinal()] = 3;
       } catch (NoSuchFieldError var4) {
       }
 
       try {
-         field40095[EquipmentSlotType.field13733.ordinal()] = 4;
+         field40095[EquipmentSlotType.FEET.ordinal()] = 4;
       } catch (NoSuchFieldError var3) {
       }
    }

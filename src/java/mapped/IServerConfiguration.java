@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Lifecycle;
+import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.world.Difficulty;

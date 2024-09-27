@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 public class Class5856 extends Slot {
    private static String[] field25612;
@@ -68,11 +69,11 @@ public class Class5856 extends Slot {
 
          if (!var8.isEmpty()) {
             if (!var7.isEmpty()) {
-               if (ItemStack.method32130(var7, var8) && ItemStack.method32127(var7, var8)) {
-                  var8.method32181(var7.getCount());
+               if (ItemStack.areItemStacksEqual(var7, var8) && ItemStack.method32127(var7, var8)) {
+                  var8.grow(var7.getCount());
                   this.field25613.setInventorySlotContents(var6, var8);
                } else if (!this.field25614.inventory.method4045(var8)) {
-                  this.field25614.method2882(var8, false);
+                  this.field25614.dropItem(var8, false);
                }
             } else {
                this.field25613.setInventorySlotContents(var6, var8);

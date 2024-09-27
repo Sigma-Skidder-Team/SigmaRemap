@@ -12,7 +12,7 @@ import java.util.List;
 public class Class3286 extends Item {
    private final Class2154 field18796;
 
-   public Class3286(Class2154 var1, Class5643 var2) {
+   public Class3286(Class2154 var1, Properties var2) {
       super(var2);
       this.field18796 = var1;
    }

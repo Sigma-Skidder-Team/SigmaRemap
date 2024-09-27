@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -125,8 +127,8 @@ public abstract class Class3468 extends Block {
    }
 
    @Override
-   public Class2315 method11689(BlockState var1) {
-      return Class2315.field15863;
+   public PushReaction method11689(BlockState var1) {
+      return PushReaction.field15863;
    }
 
    public abstract int method12157(World var1, BlockPos var2);

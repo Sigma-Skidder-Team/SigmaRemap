@@ -2,6 +2,8 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import com.mojang.serialization.Codec;
+import net.minecraft.crash.CrashReport;
+import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
@@ -275,8 +277,8 @@ public abstract class ChunkGenerator {
    }
 
    static {
-      Registry.<Codec<? extends ChunkGenerator>>method9194(Registry.field16136, "noise", NoiseChunkGenerator.field24963);
-      Registry.<Codec<? extends ChunkGenerator>>method9194(Registry.field16136, "flat", Class5648.field24998);
-      Registry.<Codec<? extends ChunkGenerator>>method9194(Registry.field16136, "debug", Class5647.field24991);
+      Registry.<Codec<? extends ChunkGenerator>>register(Registry.field16136, "noise", NoiseChunkGenerator.field24963);
+      Registry.<Codec<? extends ChunkGenerator>>register(Registry.field16136, "flat", Class5648.field24998);
+      Registry.<Codec<? extends ChunkGenerator>>register(Registry.field16136, "debug", Class5647.field24991);
    }
 }

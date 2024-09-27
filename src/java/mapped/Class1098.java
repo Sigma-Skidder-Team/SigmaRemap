@@ -190,7 +190,7 @@ public class Class1098 extends TameableEntity {
    }
 
    public static Class7037 method5259() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.field42110, 3.0);
+      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.ATTACK_DAMAGE, 3.0);
    }
 
    @Override
@@ -208,7 +208,7 @@ public class Class1098 extends TameableEntity {
    }
 
    private float method5260() {
-      return (float)this.getAttributeValue(Attributes.field42110);
+      return (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE);
    }
 
    @Override
@@ -345,7 +345,7 @@ public class Class1098 extends TameableEntity {
             }
          } else if (this.method4401(var1)) {
             if (!(var6 instanceof Class3321)) {
-               if (var6.method11744() && this.method4381(var5) && this.getHealth() < this.method3075()) {
+               if (var6.isFood() && this.method4381(var5) && this.getHealth() < this.method3075()) {
                   this.method4501(var1, var5);
                   this.heal((float)var6.method11745().method36157());
                   return ActionResultType.field14819;
@@ -363,7 +363,7 @@ public class Class1098 extends TameableEntity {
             if (var7 != this.method5256()) {
                this.method5257(var7);
                if (!var1.abilities.isCreativeMode) {
-                  var5.method32182(1);
+                  var5.shrink(1);
                }
 
                this.method4278();

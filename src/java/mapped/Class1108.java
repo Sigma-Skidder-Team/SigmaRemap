@@ -60,7 +60,7 @@ public class Class1108 extends MobEntity implements Class1008 {
       this.recalculateSize();
       this.getAttribute(Attributes.field42105).method38661((double)(var1 * var1));
       this.getAttribute(Attributes.MOVEMENT_SPEED).method38661((double)(0.2F + 0.1F * (float)var1));
-      this.getAttribute(Attributes.field42110).method38661((double)var1);
+      this.getAttribute(Attributes.ATTACK_DAMAGE).method38661((double)var1);
       if (var2) {
          this.setHealth(this.method3075());
       }
@@ -235,7 +235,7 @@ public class Class1108 extends MobEntity implements Class1008 {
    }
 
    public float method5326() {
-      return (float)this.getAttributeValue(Attributes.field42110);
+      return (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE);
    }
 
    @Override

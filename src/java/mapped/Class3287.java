@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.fluid.Fluid;
@@ -19,7 +20,7 @@ public class Class3287 extends Item {
    private static String[] field18797;
    private final Fluid field18798;
 
-   public Class3287(Fluid var1, Class5643 var2) {
+   public Class3287(Fluid var1, Properties var2) {
       super(var2);
       this.field18798 = var1;
    }
@@ -77,7 +78,7 @@ public class Class3287 extends Item {
    }
 
    public ItemStack method11823(ItemStack var1, PlayerEntity var2) {
-      return var2.abilities.isCreativeMode ? var1 : new ItemStack(Items.field37882);
+      return var2.abilities.isCreativeMode ? var1 : new ItemStack(Items.BUCKET);
    }
 
    public void method11824(World var1, ItemStack var2, BlockPos var3) {
@@ -89,7 +90,7 @@ public class Class3287 extends Item {
       } else {
          BlockState var7 = var2.getBlockState(var3);
          Block var8 = var7.getBlock();
-         Class8649 var9 = var7.getMaterial();
+         Material var9 = var7.getMaterial();
          boolean var10 = var7.method23442(this.field18798);
          boolean var11 = var7.isAir() || var10 || var8 instanceof Class3449 && ((Class3449)var8).method11531(var2, var3, var7, this.field18798);
          if (var11) {

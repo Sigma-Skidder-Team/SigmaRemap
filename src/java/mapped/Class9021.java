@@ -20,6 +20,7 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+import net.minecraft.crash.CrashReport;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SDisconnectPacket;
 import net.minecraft.util.text.StringTextComponent;

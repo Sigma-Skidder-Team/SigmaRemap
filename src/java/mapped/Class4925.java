@@ -1,6 +1,8 @@
 package mapped;
 
-public final class Class4925 extends Class4923 {
+import net.minecraft.util.IntReferenceHolder;
+
+public final class Class4925 extends IntReferenceHolder {
    private static String[] field22830;
    public final int[] field22831;
    public final int field22832;
@@ -11,7 +13,7 @@ public final class Class4925 extends Class4923 {
    }
 
    @Override
-   public int method15234() {
+   public int get() {
       return this.field22831[this.field22832];
    }
 

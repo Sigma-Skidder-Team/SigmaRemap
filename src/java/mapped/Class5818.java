@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 
 public class Class5818 extends Container {
@@ -46,7 +47,7 @@ public class Class5818 extends Container {
                ItemStack var7 = this.field25491.removeStackFromSlot(0);
                this.field25491.markDirty();
                if (!var1.inventory.method4045(var7)) {
-                  var1.method2882(var7, false);
+                  var1.dropItem(var7, false);
                }
 
                return true;

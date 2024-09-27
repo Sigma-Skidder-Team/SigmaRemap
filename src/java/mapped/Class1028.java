@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.EntityType;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -66,8 +67,8 @@ public abstract class Class1028 extends Class1009 {
       }
 
       if (this.method4577()) {
-         this.setItemStackToSlot(EquipmentSlotType.field13736, Class7699.method25421());
-         this.method4279(EquipmentSlotType.field13736, 2.0F);
+         this.setItemStackToSlot(EquipmentSlotType.HEAD, Class7699.method25421());
+         this.method4279(EquipmentSlotType.HEAD, 2.0F);
       }
 
       if (var3 == Class2202.field14406) {

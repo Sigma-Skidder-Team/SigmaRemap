@@ -5,6 +5,7 @@ import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Items;
 
 public class Class6597 {
@@ -39,11 +40,11 @@ public class Class6597 {
       if (this != field29027) {
          if (var1 instanceof LivingEntity) {
             LivingEntity var4 = (LivingEntity)var1;
-            if (this.field29029.method31016(var4.getItemStackFromSlot(EquipmentSlotType.field13736))) {
-               if (this.field29030.method31016(var4.getItemStackFromSlot(EquipmentSlotType.field13735))) {
-                  if (this.field29031.method31016(var4.getItemStackFromSlot(EquipmentSlotType.field13734))) {
-                     if (this.field29032.method31016(var4.getItemStackFromSlot(EquipmentSlotType.field13733))) {
-                        return this.field29033.method31016(var4.getItemStackFromSlot(EquipmentSlotType.field13731))
+            if (this.field29029.method31016(var4.getItemStackFromSlot(EquipmentSlotType.HEAD))) {
+               if (this.field29030.method31016(var4.getItemStackFromSlot(EquipmentSlotType.CHEST))) {
+                  if (this.field29031.method31016(var4.getItemStackFromSlot(EquipmentSlotType.LEGS))) {
+                     if (this.field29032.method31016(var4.getItemStackFromSlot(EquipmentSlotType.FEET))) {
+                        return this.field29033.method31016(var4.getItemStackFromSlot(EquipmentSlotType.MAINHAND))
                            ? this.field29034.method31016(var4.getItemStackFromSlot(EquipmentSlotType.OFFHAND))
                            : false;
                      } else {

@@ -1,9 +1,12 @@
 package mapped;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -102,11 +105,11 @@ public class ArmorStandEntity extends LivingEntity {
 
    @Override
    public ItemStack getItemStackFromSlot(EquipmentSlotType var1) {
-      switch (Class7259.field31147[var1.method8772().ordinal()]) {
+      switch (Class7259.field31147[var1.getSlotType().ordinal()]) {
          case 1:
-            return this.field5581.get(var1.method8773());
+            return this.field5581.get(var1.getIndex());
          case 2:
-            return this.field5582.get(var1.method8773());
+            return this.field5582.get(var1.getIndex());
          default:
             return ItemStack.EMPTY;
       }
@@ -114,14 +117,14 @@ public class ArmorStandEntity extends LivingEntity {
 
    @Override
    public void setItemStackToSlot(EquipmentSlotType var1, ItemStack var2) {
-      switch (Class7259.field31147[var1.method8772().ordinal()]) {
+      switch (Class7259.field31147[var1.getSlotType().ordinal()]) {
          case 1:
             this.playEquipSound(var2);
-            this.field5581.set(var1.method8773(), var2);
+            this.field5581.set(var1.getIndex(), var2);
             break;
          case 2:
             this.playEquipSound(var2);
-            this.field5582.set(var1.method8773(), var2);
+            this.field5582.set(var1.getIndex(), var2);
       }
    }
 
@@ -130,31 +133,31 @@ public class ArmorStandEntity extends LivingEntity {
       EquipmentSlotType var5;
       if (var1 != 98) {
          if (var1 != 99) {
-            if (var1 != 100 + EquipmentSlotType.field13736.method8773()) {
-               if (var1 != 100 + EquipmentSlotType.field13735.method8773()) {
-                  if (var1 != 100 + EquipmentSlotType.field13734.method8773()) {
-                     if (var1 != 100 + EquipmentSlotType.field13733.method8773()) {
+            if (var1 != 100 + EquipmentSlotType.HEAD.getIndex()) {
+               if (var1 != 100 + EquipmentSlotType.CHEST.getIndex()) {
+                  if (var1 != 100 + EquipmentSlotType.LEGS.getIndex()) {
+                     if (var1 != 100 + EquipmentSlotType.FEET.getIndex()) {
                         return false;
                      }
 
-                     var5 = EquipmentSlotType.field13733;
+                     var5 = EquipmentSlotType.FEET;
                   } else {
-                     var5 = EquipmentSlotType.field13734;
+                     var5 = EquipmentSlotType.LEGS;
                   }
                } else {
-                  var5 = EquipmentSlotType.field13735;
+                  var5 = EquipmentSlotType.CHEST;
                }
             } else {
-               var5 = EquipmentSlotType.field13736;
+               var5 = EquipmentSlotType.HEAD;
             }
          } else {
             var5 = EquipmentSlotType.OFFHAND;
          }
       } else {
-         var5 = EquipmentSlotType.field13731;
+         var5 = EquipmentSlotType.MAINHAND;
       }
 
-      if (!var2.isEmpty() && !MobEntity.method4301(var5, var2) && var5 != EquipmentSlotType.field13736) {
+      if (!var2.isEmpty() && !MobEntity.method4301(var5, var2) && var5 != EquipmentSlotType.HEAD) {
          return false;
       } else {
          this.setItemStackToSlot(var5, var2);
@@ -316,7 +319,7 @@ public class ArmorStandEntity extends LivingEntity {
                return ActionResultType.FAIL;
             }
 
-            if (var7.method8772() == Class1969.field12836 && !this.method4199()) {
+            if (var7.getSlotType() == EquipmentSlotType.Group.HAND && !this.method4199()) {
                return ActionResultType.FAIL;
             }
 
@@ -338,19 +341,19 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    private EquipmentSlotType method4188(Vector3d var1) {
-      EquipmentSlotType var4 = EquipmentSlotType.field13731;
+      EquipmentSlotType var4 = EquipmentSlotType.MAINHAND;
       boolean var5 = this.method4197();
       double var6 = !var5 ? var1.y : var1.y * 2.0;
-      EquipmentSlotType var8 = EquipmentSlotType.field13733;
+      EquipmentSlotType var8 = EquipmentSlotType.FEET;
       if (var6 >= 0.1 && var6 < 0.1 + (!var5 ? 0.45 : 0.8) && this.hasItemInSlot(var8)) {
-         var4 = EquipmentSlotType.field13733;
-      } else if (var6 >= 0.9 + (!var5 ? 0.0 : 0.3) && var6 < 0.9 + (!var5 ? 0.7 : 1.0) && this.hasItemInSlot(EquipmentSlotType.field13735)) {
-         var4 = EquipmentSlotType.field13735;
-      } else if (var6 >= 0.4 && var6 < 0.4 + (!var5 ? 0.8 : 1.0) && this.hasItemInSlot(EquipmentSlotType.field13734)) {
-         var4 = EquipmentSlotType.field13734;
-      } else if (var6 >= 1.6 && this.hasItemInSlot(EquipmentSlotType.field13736)) {
-         var4 = EquipmentSlotType.field13736;
-      } else if (!this.hasItemInSlot(EquipmentSlotType.field13731) && this.hasItemInSlot(EquipmentSlotType.OFFHAND)) {
+         var4 = EquipmentSlotType.FEET;
+      } else if (var6 >= 0.9 + (!var5 ? 0.0 : 0.3) && var6 < 0.9 + (!var5 ? 0.7 : 1.0) && this.hasItemInSlot(EquipmentSlotType.CHEST)) {
+         var4 = EquipmentSlotType.CHEST;
+      } else if (var6 >= 0.4 && var6 < 0.4 + (!var5 ? 0.8 : 1.0) && this.hasItemInSlot(EquipmentSlotType.LEGS)) {
+         var4 = EquipmentSlotType.LEGS;
+      } else if (var6 >= 1.6 && this.hasItemInSlot(EquipmentSlotType.HEAD)) {
+         var4 = EquipmentSlotType.HEAD;
+      } else if (!this.hasItemInSlot(EquipmentSlotType.MAINHAND) && this.hasItemInSlot(EquipmentSlotType.OFFHAND)) {
          var4 = EquipmentSlotType.OFFHAND;
       }
 
@@ -358,18 +361,18 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    private boolean method4189(EquipmentSlotType var1) {
-      return (this.field5585 & 1 << var1.method8774()) != 0 || var1.method8772() == Class1969.field12836 && !this.method4199();
+      return (this.field5585 & 1 << var1.getSlotIndex()) != 0 || var1.getSlotType() == EquipmentSlotType.Group.HAND && !this.method4199();
    }
 
    private boolean method4190(PlayerEntity var1, EquipmentSlotType var2, ItemStack var3, Hand var4) {
       ItemStack var7 = this.getItemStackFromSlot(var2);
-      if (!var7.isEmpty() && (this.field5585 & 1 << var2.method8774() + 8) != 0) {
+      if (!var7.isEmpty() && (this.field5585 & 1 << var2.getSlotIndex() + 8) != 0) {
          return false;
-      } else if (var7.isEmpty() && (this.field5585 & 1 << var2.method8774() + 16) != 0) {
+      } else if (var7.isEmpty() && (this.field5585 & 1 << var2.getSlotIndex() + 16) != 0) {
          return false;
       } else if (var1.abilities.isCreativeMode && var7.isEmpty() && !var3.isEmpty()) {
          ItemStack var9 = var3.copy();
-         var9.method32180(1);
+         var9.setCount(1);
          this.setItemStackToSlot(var2, var9);
          return true;
       } else if (var3.isEmpty() || var3.getCount() <= 1) {
@@ -378,9 +381,9 @@ public class ArmorStandEntity extends LivingEntity {
          return true;
       } else if (var7.isEmpty()) {
          ItemStack var8 = var3.copy();
-         var8.method32180(1);
+         var8.setCount(1);
          this.setItemStackToSlot(var2, var8);
-         var3.method32182(1);
+         var3.shrink(1);
          return true;
       } else {
          return false;
@@ -618,8 +621,8 @@ public class ArmorStandEntity extends LivingEntity {
    }
 
    @Override
-   public Class2315 method3422() {
-      return !this.method4203() ? super.method3422() : Class2315.field15865;
+   public PushReaction method3422() {
+      return !this.method4203() ? super.method3422() : PushReaction.field15865;
    }
 
    private void method4196(boolean var1) {

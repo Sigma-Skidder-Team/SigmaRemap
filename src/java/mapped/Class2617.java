@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.inventory.EquipmentSlotType;
+
 public class Class2617 extends Class2595 {
    private static String[] field16891;
    private final Class1046 field16892;
@@ -10,7 +12,7 @@ public class Class2617 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      return this.field16892.world.method6740() && this.field16892.getItemStackFromSlot(EquipmentSlotType.field13736).isEmpty() && Class8100.method28053(this.field16892);
+      return this.field16892.world.method6740() && this.field16892.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty() && Class8100.method28053(this.field16892);
    }
 
    @Override

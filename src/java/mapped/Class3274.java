@@ -11,12 +11,12 @@ import net.minecraft.world.World;
 public class Class3274 extends Item {
    private static String[] field18774;
 
-   public Class3274(Class5643 var1) {
+   public Class3274(Properties var1) {
       super(var1);
    }
 
    @Override
-   public ItemStack method11709(ItemStack var1, World var2, LivingEntity var3) {
+   public ItemStack onItemUseFinish(ItemStack var1, World var2, LivingEntity var3) {
       if (var3 instanceof ServerPlayerEntity) {
          ServerPlayerEntity var6 = (ServerPlayerEntity)var3;
          CriteriaTriggers.field44490.method15174(var6, var1);
@@ -24,14 +24,14 @@ public class Class3274 extends Item {
       }
 
       if (var3 instanceof PlayerEntity && !((PlayerEntity)var3).abilities.isCreativeMode) {
-         var1.method32182(1);
+         var1.shrink(1);
       }
 
       if (!var2.isRemote) {
          var3.clearActivePotions();
       }
 
-      return !var1.isEmpty() ? var1 : new ItemStack(Items.field37882);
+      return !var1.isEmpty() ? var1 : new ItemStack(Items.BUCKET);
    }
 
    @Override

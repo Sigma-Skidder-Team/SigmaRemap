@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 
 import java.util.EnumSet;
@@ -17,7 +18,7 @@ public class Class2790 extends Class2595 {
 
    @Override
    public boolean method10803() {
-      if (!this.field17424.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty()) {
+      if (!this.field17424.getItemStackFromSlot(EquipmentSlotType.MAINHAND).isEmpty()) {
          return false;
       } else if (this.field17424.method4232() != null || this.field17424.method3014() != null) {
          return false;
@@ -28,7 +29,7 @@ public class Class2790 extends Class2595 {
             List var3 = this.field17424
                .world
                .<ItemEntity>method6772(ItemEntity.class, this.field17424.getBoundingBox().method19663(8.0, 8.0, 8.0), Class1095.method5166());
-            return !var3.isEmpty() && this.field17424.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty();
+            return !var3.isEmpty() && this.field17424.getItemStackFromSlot(EquipmentSlotType.MAINHAND).isEmpty();
          }
       } else {
          return false;
@@ -40,7 +41,7 @@ public class Class2790 extends Class2595 {
       List var3 = this.field17424
          .world
          .<ItemEntity>method6772(ItemEntity.class, this.field17424.getBoundingBox().method19663(8.0, 8.0, 8.0), Class1095.method5166());
-      ItemStack var4 = this.field17424.getItemStackFromSlot(EquipmentSlotType.field13731);
+      ItemStack var4 = this.field17424.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
       if (var4.isEmpty() && !var3.isEmpty()) {
          this.field17424.method4230().method21655((Entity)var3.get(0), 1.2F);
       }

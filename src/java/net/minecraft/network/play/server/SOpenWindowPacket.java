@@ -21,7 +21,7 @@ public class SOpenWindowPacket implements IPacket<IClientPlayNetHandler> {
 
    public SOpenWindowPacket(int var1, ContainerType<?> var2, ITextComponent var3) {
       this.field24402 = var1;
-      this.field24403 = Registry.field16084.getId(var2);
+      this.field24403 = Registry.MENU.getId(var2);
       this.field24404 = var3;
    }
 
@@ -49,7 +49,7 @@ public class SOpenWindowPacket implements IPacket<IClientPlayNetHandler> {
 
    @Nullable
    public ContainerType<?> method17285() {
-      return Registry.field16084.getByValue(this.field24403);
+      return Registry.MENU.getByValue(this.field24403);
    }
 
    public ITextComponent method17286() {

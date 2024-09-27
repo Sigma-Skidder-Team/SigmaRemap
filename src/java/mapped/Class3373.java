@@ -60,7 +60,7 @@ public abstract class Class3373 extends Class3241 implements Class3207 {
             if (var10) {
                boolean var13 = var12.method3845(((Class3321)var9.getItem()).method11876());
                if (var13 && !var4.isCreative()) {
-                  var9.method32182(1);
+                  var9.shrink(1);
                }
             }
 

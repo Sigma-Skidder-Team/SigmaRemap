@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -117,7 +118,7 @@ public class Class3415 extends Block implements Class3207 {
    private boolean method12055(BlockState var1, boolean var2, Direction var3) {
       Block var6 = var1.getBlock();
       boolean var7 = var6 instanceof Class3199 && Class3199.method11507(var1, var3);
-      return var1.method23446(BlockTags.field32764) || !method11545(var6) && var2 || var6 instanceof Class3237 || var7;
+      return var1.isIn(BlockTags.field32764) || !method11545(var6) && var2 || var6 instanceof Class3237 || var7;
    }
 
    @Override

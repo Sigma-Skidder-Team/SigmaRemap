@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
@@ -60,7 +61,7 @@ public class Class1010 extends Class1009 implements IAngerable {
       return Class1009.method4343()
          .method21849(Attributes.field42105, 40.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
-         .method21849(Attributes.field42110, 7.0)
+         .method21849(Attributes.ATTACK_DAMAGE, 7.0)
          .method21849(Attributes.field42106, 64.0);
    }
 
@@ -245,12 +246,12 @@ public class Class1010 extends Class1009 implements IAngerable {
    private boolean method4355(double var1, double var3, double var5) {
       BlockPos.Mutable var9 = new BlockPos.Mutable(var1, var3, var5);
 
-      while (var9.getY() > 0 && !this.world.getBlockState(var9).getMaterial().method31087()) {
+      while (var9.getY() > 0 && !this.world.getBlockState(var9).getMaterial().blocksMovement()) {
          var9.method8379(net.minecraft.util.Direction.DOWN);
       }
 
       BlockState var10 = this.world.getBlockState(var9);
-      boolean var11 = var10.getMaterial().method31087();
+      boolean var11 = var10.getMaterial().blocksMovement();
       boolean var12 = var10.method23449().method23486(FluidTags.field40469);
       if (var11 && !var12) {
          boolean var13 = this.attemptTeleport(var1, var3, var5, true);

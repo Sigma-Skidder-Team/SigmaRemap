@@ -7,7 +7,7 @@ import com.mentalfrostbyte.jello.event.impl.EventSlowDown;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import mapped.ItemSword;
+import net.minecraft.item.SwordItem;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 
@@ -30,7 +30,7 @@ public class NoSlow extends Module {
     private void method16234(EventUpdate var1) {
         if (this.isEnabled()) {
             boolean var4 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988();
-            boolean var5 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof ItemSword;
+            boolean var5 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
             if (!var1.isPre()) {
                 if (var5 && mc.gameSettings.keyBindUseItem.isKeyDown() && !this.field23540 && !var4 && this.getStringSettingValueByName("Mode").equals("NCP")) {
                     MultiUtilities.block();

@@ -32,7 +32,7 @@ public class Schedule {
    private final Map<Activity, Class7346> field35353 = Maps.newHashMap();
 
    public static Class7537 method28659(String var0) {
-      Schedule var3 = Registry.<Schedule>method9194(Registry.field16094, var0, new Schedule());
+      Schedule var3 = Registry.<Schedule>register(Registry.field16094, var0, new Schedule());
       return new Class7537(var3);
    }
 

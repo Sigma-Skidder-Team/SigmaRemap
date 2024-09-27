@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
@@ -109,7 +111,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
                   }
 
                   var13 = (Entity)var12.next();
-                  if (var13.method3422() != Class2315.field15865) {
+                  if (var13.method3422() != PushReaction.field15865) {
                      if (!var11) {
                         break;
                      }
@@ -183,7 +185,7 @@ public class Class955 extends TileEntity implements ITickableTileEntity {
    }
 
    private static boolean method3858(AxisAlignedBB var0, Entity var1) {
-      return var1.method3422() == Class2315.field15862
+      return var1.method3422() == PushReaction.field15862
          && var1.isOnGround()
          && var1.getPosX() >= var0.minX
          && var1.getPosX() <= var0.maxX

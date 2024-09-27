@@ -14,6 +14,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SwordItem;
 import net.minecraft.network.play.server.SRespawnPacket;
 import net.minecraft.network.play.server.SEntityEquipmentPacket;
 
@@ -39,7 +40,7 @@ public class Murderer extends Module {
 
                 for (Pair var6 : var4.func_241790_c_()) {
                     if (var6.getSecond() != null
-                            && ((ItemStack) var6.getSecond()).getItem() instanceof ItemSword
+                            && ((ItemStack) var6.getSecond()).getItem() instanceof SwordItem
                             && mc.world.getEntityByID(var4.getEntityID()) instanceof PlayerEntity) {
                         Entity var7 = mc.world.getEntityByID(var4.getEntityID());
                         if (!this.field23833.equalsIgnoreCase(var7.getName().getString())) {

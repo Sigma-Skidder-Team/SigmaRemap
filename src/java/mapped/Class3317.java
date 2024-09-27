@@ -13,7 +13,7 @@ public class Class3317<T extends Entity & Class1071> extends Item {
    private final EntityType<T> field18826;
    private final int field18827;
 
-   public Class3317(Class5643 var1, EntityType<T> var2, int var3) {
+   public Class3317(Properties var1, EntityType<T> var2, int var3) {
       super(var1);
       this.field18826 = var2;
       this.field18827 = var3;
@@ -27,7 +27,7 @@ public class Class3317<T extends Entity & Class1071> extends Item {
          if (var2.isPassenger() && var7 instanceof Class1071 && var7.getType() == this.field18826) {
             Class1071 var8 = (Class1071)var7;
             if (var8.method4982()) {
-               var6.method32121(this.field18827, var2, var1x -> var1x.sendBreakAnimation(var3));
+               var6.damageItem(this.field18827, var2, var1x -> var1x.sendBreakAnimation(var3));
                if (!var6.isEmpty()) {
                   return Class6794.<ItemStack>method20696(var6);
                }

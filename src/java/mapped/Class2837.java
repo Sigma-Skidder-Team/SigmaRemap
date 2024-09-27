@@ -66,7 +66,7 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Items.field37887))
+                  .method18291(Class4695.method14724(Items.REDSTONE_DUST))
                   .method18291(Class4695.method14724(Items.field37917))
             )
       );
@@ -178,7 +178,7 @@ public class Class2837 implements Consumer<BiConsumer<ResourceLocation, Class588
       var1.accept(
          Class8793.field39603,
          Class7318.method23188()
-            .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4695.method14724(Items.field37890)))
+            .method18320(Class8894.method32373().method18289(Class6871.method20919(1)).method18291(Class4695.method14724(Items.LEATHER)))
       );
       var1.accept(
          Class8793.field39604,

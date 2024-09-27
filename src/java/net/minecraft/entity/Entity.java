@@ -12,11 +12,17 @@ import mapped.*;
 import mapped.Direction;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.client.Minecraft;
+import net.minecraft.crash.CrashReport;
+import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.ProtectionEnchantment;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
@@ -25,6 +31,7 @@ import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.scoreboard.ScorePlayerTeam;
 import net.minecraft.scoreboard.Team;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -537,7 +544,7 @@ public abstract class Entity implements INameable, ICommandSource {
          this.setMotion(this.getMotion().method11347((double)var20, 1.0, (double)var20));
          if (this.world
                .method7004(this.getBoundingBox().shrink(0.001))
-               .noneMatch(var0 -> var0.method23446(BlockTags.field32798) || var0.isIn(Blocks.LAVA))
+               .noneMatch(var0 -> var0.isIn(BlockTags.field32798) || var0.isIn(Blocks.LAVA))
             && this.fire <= 0) {
             this.forceFireTicks(-this.getFireImmuneTicks());
          }
@@ -2575,8 +2582,8 @@ public abstract class Entity implements INameable, ICommandSource {
       return this.ridingEntity;
    }
 
-   public Class2315 method3422() {
-      return Class2315.field15862;
+   public PushReaction method3422() {
+      return PushReaction.field15862;
    }
 
    public Class2266 method2864() {

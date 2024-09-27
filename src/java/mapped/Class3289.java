@@ -20,7 +20,7 @@ import net.minecraft.world.server.ServerWorld;
 public class Class3289 extends Item {
    private static String[] field18800;
 
-   public Class3289(Class5643 var1) {
+   public Class3289(Properties var1) {
       super(var1);
    }
 
@@ -53,7 +53,7 @@ public class Class3289 extends Item {
                );
             }
 
-            var8.method32182(1);
+            var8.shrink(1);
             return ActionResultType.method9002(var5.isRemote);
          } else {
             return ActionResultType.FAIL;

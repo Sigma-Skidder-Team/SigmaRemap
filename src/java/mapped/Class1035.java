@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.item.TieredItem;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -107,7 +108,7 @@ public abstract class Class1035 extends Class1009 {
    }
 
    public boolean method4636() {
-      return this.getHeldItemMainhand().getItem() instanceof Class3266;
+      return this.getHeldItemMainhand().getItem() instanceof TieredItem;
    }
 
    @Override

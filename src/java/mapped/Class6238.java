@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
+import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
@@ -9,7 +11,7 @@ public final class Class6238 extends Class6230 {
    private static String[] field27718;
 
    @Override
-   public ItemStack method19192(Class2956 var1, ItemStack var2) {
+   public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
       ServerWorld var5 = var1.method11326();
       net.minecraft.util.Direction var6 = var1.method11324().<net.minecraft.util.Direction>method23463(Class3357.field18899);
       BlockPos var7 = var1.method11323().method8349(var6);
@@ -26,10 +28,10 @@ public final class Class6238 extends Class6230 {
             Class3344.method11898(var5, var7, (SkullTileEntity)var8);
          }
 
-         var2.method32182(1);
+         var2.shrink(1);
          this.method19204(true);
       } else {
-         this.method19204(ArmorItem.method11804(var1, var2));
+         this.method19204(ArmorItem.func_226626_a_(var1, var2));
       }
 
       return var2;

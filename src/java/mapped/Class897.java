@@ -38,7 +38,7 @@ public class Class897 extends Entity implements Class889 {
 
    public void method3522(ItemStack var1) {
       if (var1.getItem() != Items.field37979 || var1.method32141()) {
-         this.getDataManager().method35446(field5132, Util.<ItemStack>make(var1.copy(), var0 -> var0.method32180(1)));
+         this.getDataManager().method35446(field5132, Util.<ItemStack>make(var1.copy(), var0 -> var0.setCount(1)));
       }
    }
 

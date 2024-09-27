@@ -161,7 +161,7 @@ public class ChunkStatus {
    }
 
    private static ChunkStatus method34291(String var0, ChunkStatus var1, int var2, EnumSet<Heightmap.Type> var3, Class2076 var4, Class6965 var5, Class9241 var6) {
-      return Registry.<ChunkStatus>method9194(Registry.field16081, var0, new ChunkStatus(var0, var1, var2, var3, var4, var5, var6));
+      return Registry.<ChunkStatus>register(Registry.field16081, var0, new ChunkStatus(var0, var1, var2, var3, var4, var5, var6));
    }
 
    public static List<ChunkStatus> method34292() {

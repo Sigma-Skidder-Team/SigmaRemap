@@ -92,12 +92,12 @@ public class Stats {
 
    private static ResourceLocation method32294(String var0, Class8762 var1) {
       ResourceLocation var4 = new ResourceLocation(var0);
-      Registry.<ResourceLocation>method9194(Registry.field16080, var0, var4);
+      Registry.<ResourceLocation>register(Registry.field16080, var0, var4);
       field40104.method170(var4, var1);
       return var4;
    }
 
    private static <T> Class49<T> method32295(String var0, Registry<T> var1) {
-      return Registry.<Class49<T>>method9194(Registry.field16088, var0, new Class49<T>(var1));
+      return Registry.<Class49<T>>register(Registry.field16088, var0, new Class49<T>(var1));
    }
 }

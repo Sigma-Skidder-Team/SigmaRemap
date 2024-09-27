@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
@@ -11,6 +12,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -101,7 +103,7 @@ public class Class1090 extends Class1018 {
    }
 
    public static Class7037 method5074() {
-      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.field42110, 3.0);
+      return MobEntity.method4220().method21849(Attributes.field42105, 10.0).method21849(Attributes.MOVEMENT_SPEED, 0.3F).method21849(Attributes.ATTACK_DAMAGE, 3.0);
    }
 
    @Override
@@ -131,7 +133,7 @@ public class Class1090 extends Class1018 {
    }
 
    private float method5075() {
-      return (float)this.getAttributeValue(Attributes.field42110);
+      return (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE);
    }
 
    @Override
@@ -226,7 +228,7 @@ public class Class1090 extends Class1018 {
          }
 
          BlockState var5 = var1.getBlockState(var4.down());
-         if (var5.isIn(Blocks.field36395) || var5.method23446(BlockTags.field32767)) {
+         if (var5.isIn(Blocks.field36395) || var5.isIn(BlockTags.LEAVES)) {
             return true;
          }
       }

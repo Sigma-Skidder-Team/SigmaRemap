@@ -14,7 +14,7 @@ import com.mentalfrostbyte.jello.Client;
 import mapped.Class2193;
 import mapped.Class6669;
 import mapped.Class7286;
-import mapped.Class8623;
+import mapped.ChatCommandArguments;
 import org.apache.commons.io.IOUtils;
 import totalcross.json.JSONException2;
 import totalcross.json.JSONObject;
@@ -31,7 +31,7 @@ public class Config extends Command {
    }
 
    @Override
-   public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
       if (var2.length == 0) {
          throw new CommandException();
       } else if (var2.length <= 2) {
@@ -46,23 +46,23 @@ public class Config extends Command {
                         throw new CommandException();
                      }
 
-                     var3.method20327("§l" + Client.getInstance().getModuleManager().method14667().method20772().size() + " " + this.method18342() + " :");
+                     var3.send("§l" + Client.getInstance().getModuleManager().method14667().method20772().size() + " " + this.method18342() + " :");
 
                      for (Class7286 var8 : Client.getInstance().getModuleManager().method14667().method20772()) {
                         boolean var9 = Client.getInstance().getModuleManager().method14667().method20770() == var8;
                         if (Client.getInstance().getClientMode() != ClientMode.CLASSIC || !var9) {
-                           var3.method20327((!var9 ? "" : "§n") + var8.field31263);
+                           var3.send((!var9 ? "" : "§n") + var8.field31263);
                         }
                      }
                   } else if (var2.length != 1) {
                      String var10 = var2[1].method30899().toLowerCase();
                      if (!Client.getInstance().getModuleManager().method14667().method20765(var10)) {
-                        var3.method20327(this.method18342() + " not found!");
+                        var3.send(this.method18342() + " not found!");
                      } else {
-                        var3.method20327("Removed " + this.method18342());
+                        var3.send("Removed " + this.method18342());
                      }
                   } else {
-                     var3.method20327("Usage : .config remove <name>");
+                     var3.send("Usage : .config remove <name>");
                   }
                } else if (var2.length != 1) {
                   String var11 = var2[1].method30899().toLowerCase();
@@ -70,21 +70,21 @@ public class Config extends Command {
                   var13.field31262 = Client.getInstance().getModuleManager().method14657(new JSONObject());
                   Client.getInstance().getModuleManager().method14667().method20765(var11);
                   Client.getInstance().getModuleManager().method14667().method20763(new Class7286(var11, var13.field31262));
-                  var3.method20327("Saved " + this.method18342());
+                  var3.send("Saved " + this.method18342());
                } else {
-                  var3.method20327("Usage : .config save <name>");
+                  var3.send("Usage : .config save <name>");
                }
             } else if (var2.length != 1) {
                String var12 = var2[1].method30899().toLowerCase();
                Class7286 var14 = Client.getInstance().getModuleManager().method14667().method20766(var12);
                if (var14 == null) {
-                  var3.method20327(this.method18342() + " not found!");
+                  var3.send(this.method18342() + " not found!");
                } else {
                   Client.getInstance().getModuleManager().method14667().method20771(var14);
-                  var3.method20327(this.method18342() + " was loaded!");
+                  var3.send(this.method18342() + " was loaded!");
                }
             } else {
-               var3.method20327("Usage : .config load <name>");
+               var3.send("Usage : .config load <name>");
             }
          }
       } else {

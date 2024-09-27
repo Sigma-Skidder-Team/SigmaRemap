@@ -8,7 +8,7 @@ public interface Class1092 {
    int method5082();
 
    static boolean method5091(LivingEntity var0, LivingEntity var1) {
-      float var4 = (float)var0.getAttributeValue(Attributes.field42110);
+      float var4 = (float)var0.getAttributeValue(Attributes.ATTACK_DAMAGE);
       float var5;
       if (!var0.isChild() && (int)var4 > 0) {
          var5 = var4 / 2.0F + (float)var0.world.rand.nextInt((int)var4);

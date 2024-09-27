@@ -4,6 +4,7 @@ import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IItemProvider;
 
 import java.util.Map.Entry;
 import javax.annotation.Nullable;

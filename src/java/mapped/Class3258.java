@@ -16,7 +16,7 @@ import java.util.Optional;
 public class Class3258 extends Item {
    private static final Logger field18744 = LogManager.getLogger();
 
-   public Class3258(Class5643 var1) {
+   public Class3258(Properties var1) {
       super(var1);
    }
 

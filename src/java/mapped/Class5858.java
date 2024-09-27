@@ -23,6 +23,6 @@ public class Class5858 extends Slot {
    }
 
    public static boolean method18278(ItemStack var0) {
-      return var0.getItem() == Items.field37882;
+      return var0.getItem() == Items.BUCKET;
    }
 }

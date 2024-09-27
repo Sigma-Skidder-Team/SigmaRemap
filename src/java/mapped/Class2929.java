@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityType;
 import net.minecraft.tileentity.TileEntity;
@@ -38,8 +40,8 @@ public class Class2929 extends Class2898<Class4712> {
          for (int var19 = -1; var19 <= 4; var19++) {
             for (int var20 = var15; var20 <= var16; var20++) {
                BlockPos var21 = var4.method8336(var18, var19, var20);
-               Class8649 var22 = var1.getBlockState(var21).getMaterial();
-               boolean var23 = var22.method31086();
+               Material var22 = var1.getBlockState(var21).getMaterial();
+               boolean var23 = var22.isSolid();
                if (var19 == -1 && !var23) {
                   return false;
                }
@@ -68,9 +70,9 @@ public class Class2929 extends Class2898<Class4712> {
                      if (!var36.isIn(Blocks.CHEST) && !var36.isIn(Blocks.field36532)) {
                         var1.setBlockState(var34, field18004, 2);
                      }
-                  } else if (var34.getY() >= 0 && !var1.getBlockState(var34.down()).getMaterial().method31086()) {
+                  } else if (var34.getY() >= 0 && !var1.getBlockState(var34.down()).getMaterial().isSolid()) {
                      var1.setBlockState(var34, field18004, 2);
-                  } else if (var36.getMaterial().method31086() && !var36.isIn(Blocks.CHEST)) {
+                  } else if (var36.getMaterial().isSolid() && !var36.isIn(Blocks.CHEST)) {
                      if (var30 == -1 && var3.nextInt(4) != 0) {
                         var1.setBlockState(var34, Blocks.field36526.method11579(), 2);
                      } else {
@@ -91,7 +93,7 @@ public class Class2929 extends Class2898<Class4712> {
                   int var24 = 0;
 
                   for (Direction var26 : Class76.field161) {
-                     if (var1.getBlockState(var38.method8349(var26)).getMaterial().method31086()) {
+                     if (var1.getBlockState(var38.method8349(var26)).getMaterial().isSolid()) {
                         var24++;
                      }
                   }

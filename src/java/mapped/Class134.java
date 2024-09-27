@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.math.MathHelper;
@@ -35,7 +36,7 @@ public class Class134 extends Class128 {
          var6 = this.field455.get(var5.nextInt(this.field455.size()));
       } else {
          boolean var7 = var1.getItem() == Items.field37900;
-         List var8 = Registry.field16073
+         List var8 = Registry.ENCHANTMENT
             .method9192()
             .filter(Enchantment::method18827)
             .filter(var2x -> var7 || var2x.method18821(var1))

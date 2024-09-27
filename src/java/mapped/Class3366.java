@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,6 +12,7 @@ import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -51,7 +53,7 @@ public class Class3366 extends Class3241 {
       super.method11562(var1, var2, var3, var4, var5, var6);
       if (!var1.isRemote && var5 instanceof BeehiveTileEntity) {
          BeehiveTileEntity var9 = (BeehiveTileEntity)var5;
-         if (EnchantmentHelper.getEnchantmentLevel(Class8122.field34916, var6) == 0) {
+         if (EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, var6) == 0) {
             var9.method3915(var2, var4, Class2084.field13573);
             var1.updateComparatorOutputLevel(var3, this);
             this.method11943(var1, var3);
@@ -87,11 +89,11 @@ public class Class3366 extends Class3241 {
       if (var10 >= 5) {
          if (var9.getItem() != Items.field37956) {
             if (var9.getItem() == Items.field37972) {
-               var9.method32182(1);
+               var9.shrink(1);
                var2.method6743(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26418, Class2266.field14734, 1.0F, 1.0F);
                if (!var9.isEmpty()) {
                   if (!var4.inventory.method4045(new ItemStack(Items.field38177))) {
-                     var4.method2882(new ItemStack(Items.field38177), false);
+                     var4.dropItem(new ItemStack(Items.field38177), false);
                   }
                } else {
                   var4.setHeldItem(var5, new ItemStack(Items.field38177));
@@ -102,7 +104,7 @@ public class Class3366 extends Class3241 {
          } else {
             var2.method6743(var4, var4.getPosX(), var4.getPosY(), var4.getPosZ(), SoundEvents.field26398, Class2266.field14734, 1.0F, 1.0F);
             method11944(var2, var3);
-            var9.method32121(1, var4, var1x -> var1x.sendBreakAnimation(var5));
+            var9.damageItem(1, var4, var1x -> var1x.sendBreakAnimation(var5));
             var11 = true;
          }
       }
@@ -160,7 +162,7 @@ public class Class3366 extends Class3241 {
       if (var3.method23449().method23474() && !(var1.rand.nextFloat() < 0.3F)) {
          VoxelShape var6 = var3.method23414(var1, var2);
          double var7 = var6.getEnd(Direction.Y);
-         if (var7 >= 1.0 && !var3.method23446(BlockTags.field32781)) {
+         if (var7 >= 1.0 && !var3.isIn(BlockTags.field32781)) {
             double var9 = var6.getStart(Direction.Y);
             if (!(var9 > 0.0)) {
                BlockPos var11 = var2.down();

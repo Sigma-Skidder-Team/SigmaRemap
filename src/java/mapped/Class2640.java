@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -30,7 +31,7 @@ public class Class2640 extends Class2595 {
          if (this.field16971.method6740()) {
             if (this.field16966.isBurning()) {
                if (this.field16971.method7022(this.field16966.getPosition())) {
-                  return this.field16966.getItemStackFromSlot(EquipmentSlotType.field13736).isEmpty() ? this.method10848() : false;
+                  return this.field16966.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty() ? this.method10848() : false;
                } else {
                   return false;
                }

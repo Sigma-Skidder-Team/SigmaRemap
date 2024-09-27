@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.util.Direction;
@@ -395,7 +396,7 @@ public class Class4829 {
 
          FluidState var10 = var1.getFluidState(var9);
          if (!var10.method23472().method25066(var3)) {
-            if (!var1.getBlockState(var9).getMaterial().method31086()) {
+            if (!var1.getBlockState(var9).getMaterial().isSolid()) {
                var6++;
             }
          } else {

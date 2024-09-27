@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -33,6 +34,6 @@ public class Class3494 extends Class3194 {
    public boolean method11490(BlockState var1, IBlockReader var2, BlockPos var3) {
       FluidState var6 = var2.getFluidState(var3);
       FluidState var7 = var2.getFluidState(var3.up());
-      return (var6.method23472() == Class9479.field44066 || var1.getMaterial() == Class8649.field38964) && var7.method23472() == Class9479.field44064;
+      return (var6.method23472() == Class9479.field44066 || var1.getMaterial() == Material.field38964) && var7.method23472() == Class9479.field44064;
    }
 }

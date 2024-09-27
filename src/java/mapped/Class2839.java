@@ -3,6 +3,7 @@ package mapped;
 import java.util.function.Consumer;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -96,7 +97,7 @@ public class Class2839 implements Consumer<Consumer<Advancement>> {
       Advancement var10 = Class7999.method27304()
          .method27305(var7)
          .method27308(
-            Items.field37884,
+            Items.LAVA_BUCKET,
             new TranslationTextComponent("advancements.story.lava_bucket.title"),
             new TranslationTextComponent("advancements.story.lava_bucket.description"),
             (ResourceLocation)null,
@@ -105,7 +106,7 @@ public class Class2839 implements Consumer<Consumer<Advancement>> {
             true,
             false
          )
-         .method27312("lava_bucket", Class4491.method14164(Items.field37884))
+         .method27312("lava_bucket", Class4491.method14164(Items.LAVA_BUCKET))
          .method27317(var1, "story/lava_bucket");
       Advancement var11 = Class7999.method27304()
          .method27305(var7)

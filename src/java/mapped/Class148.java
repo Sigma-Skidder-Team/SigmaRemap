@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 
 import java.util.List;

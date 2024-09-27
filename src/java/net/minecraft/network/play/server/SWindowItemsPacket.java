@@ -1,7 +1,7 @@
 package net.minecraft.network.play.server;
 
 import net.minecraft.item.ItemStack;
-import mapped.NonNullList;
+import net.minecraft.util.NonNullList;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;
 import net.minecraft.network.IPacket;

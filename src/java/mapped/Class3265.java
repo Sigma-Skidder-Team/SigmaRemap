@@ -4,8 +4,12 @@ import com.google.common.collect.ImmutableMap.Builder;
 import com.google.common.collect.Sets;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.IItemTier;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ToolItem;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -14,10 +18,10 @@ import net.minecraft.world.World;
 import java.util.Map;
 import java.util.Set;
 
-public class Class3265 extends Class3264 {
+public class Class3265 extends ToolItem {
    private static String[] field18755;
-   private static final Set<Class8649> field18756 = Sets.newHashSet(
-      new Class8649[]{Class8649.field38956, Class8649.field38957, Class8649.field38936, Class8649.field38938, Class8649.field38959, Class8649.field38973}
+   private static final Set<Material> field18756 = Sets.newHashSet(
+      new Material[]{Material.field38956, Material.field38957, Material.PLANTS, Material.TALL_PLANTS, Material.field38959, Material.GOURD}
    );
    private static final Set<Block> field18757 = Sets.newHashSet(
       new Block[]{
@@ -52,14 +56,14 @@ public class Class3265 extends Class3264 {
       .put(Blocks.field37081, Blocks.field37082)
       .build();
 
-   public Class3265(Class2283 var1, float var2, float var3, Class5643 var4) {
+   public Class3265(IItemTier var1, float var2, float var3, Properties var4) {
       super(var2, var3, var1, field18757, var4);
    }
 
    @Override
-   public float method11708(ItemStack var1, BlockState var2) {
-      Class8649 var5 = var2.getMaterial();
-      return !field18756.contains(var5) ? super.method11708(var1, var2) : this.field18752;
+   public float getDestroySpeed(ItemStack stack, BlockState state) {
+      Material var5 = state.getMaterial();
+      return !field18756.contains(var5) ? super.getDestroySpeed(stack, state) : this.efficiency;
    }
 
    @Override
@@ -76,7 +80,7 @@ public class Class3265 extends Class3264 {
          if (!var4.isRemote) {
             var4.setBlockState(var5, var7.method11579().method23465(Class3386.field18994, var6.<Direction>method23463(Class3386.field18994)), 11);
             if (var8 != null) {
-               var1.method18357().method32121(1, var8, var1x -> var1x.sendBreakAnimation(var1.method18359()));
+               var1.method18357().damageItem(1, var8, var1x -> var1x.sendBreakAnimation(var1.method18359()));
             }
          }
 

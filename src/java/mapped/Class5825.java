@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
@@ -46,7 +47,7 @@ public class Class5825 extends Class5823 {
 
    private void method18200(int var1) {
       ItemStack var4 = this.field25513.getStackInSlot(var1);
-      var4.method32182(1);
+      var4.shrink(1);
       this.field25513.setInventorySlotContents(var1, var4);
    }
 

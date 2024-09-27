@@ -194,7 +194,7 @@ public class BoatEntity extends Entity {
       switch (Class7986.field34313[this.method4172().ordinal()]) {
          case 1:
          default:
-            return Items.field37889;
+            return Items.OAK_BOAT;
          case 2:
             return Items.field38121;
          case 3:

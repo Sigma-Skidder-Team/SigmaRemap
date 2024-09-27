@@ -12,7 +12,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import org.apache.commons.lang3.StringUtils;
 
 public class SkullItem extends Class3298 {
-   public SkullItem(Block var1, Block var2, Class5643 var3) {
+   public SkullItem(Block var1, Block var2, Properties var3) {
       super(var1, var2, var3);
    }
 

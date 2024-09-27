@@ -2,7 +2,10 @@ package net.minecraft.entity;
 
 import mapped.Direction;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
+import net.minecraft.enchantment.FrostWalkerEnchantment;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
@@ -23,6 +26,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -34,6 +38,7 @@ import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.*;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.scoreboard.ScorePlayerTeam;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -368,12 +373,12 @@ public abstract class LivingEntity extends Entity {
    }
 
    public boolean method2889() {
-      return this.world.getBlockState(this.getPositionUnderneath()).method23446(BlockTags.field32802);
+      return this.world.getBlockState(this.getPositionUnderneath()).isIn(BlockTags.field32802);
    }
 
    @Override
    public float getSpeedFactor() {
-      return this.method2889() && EnchantmentHelper.method26322(Class8122.field34907, this) > 0 ? 1.0F : super.getSpeedFactor();
+      return this.method2889() && EnchantmentHelper.method26322(Enchantments.SOUL_SPEED, this) > 0 ? 1.0F : super.getSpeedFactor();
    }
 
    public boolean method2985(BlockState var1) {
@@ -389,7 +394,7 @@ public abstract class LivingEntity extends Entity {
 
    public void method3004() {
       if (!this.getStateBelow().isAir()) {
-         int var3 = EnchantmentHelper.method26322(Class8122.field34907, this);
+         int var3 = EnchantmentHelper.method26322(Enchantments.SOUL_SPEED, this);
          if (var3 > 0 && this.method2889()) {
             ModifiableAttributeInstance var4 = this.getAttribute(Attributes.MOVEMENT_SPEED);
             if (var4 == null) {
@@ -398,15 +403,15 @@ public abstract class LivingEntity extends Entity {
 
             var4.method38667(new AttributeModifier(SOUL_SPEED_BOOT_ID, "Soul speed boost", (double)(0.03F * (1.0F + (float)var3 * 0.35F)), AttributeModifier.Operation.ADDITION));
             if (this.getRNG().nextFloat() < 0.04F) {
-               ItemStack var5 = this.getItemStackFromSlot(EquipmentSlotType.field13733);
-               var5.method32121(1, this, var0 -> var0.sendBreakAnimation(EquipmentSlotType.field13733));
+               ItemStack var5 = this.getItemStackFromSlot(EquipmentSlotType.FEET);
+               var5.damageItem(1, this, var0 -> var0.sendBreakAnimation(EquipmentSlotType.FEET));
             }
          }
       }
    }
 
    public void frostWalk(BlockPos var1) {
-      int var4 = EnchantmentHelper.method26322(Class8122.field34905, this);
+      int var4 = EnchantmentHelper.method26322(Enchantments.FROST_WALKER, this);
       if (var4 > 0) {
          FrostWalkerEnchantment.method18829(this, this.world, var1, var4);
       }
@@ -702,7 +707,7 @@ public abstract class LivingEntity extends Entity {
       }
 
       if (var1 != null) {
-         ItemStack var9 = this.getItemStackFromSlot(EquipmentSlotType.field13736);
+         ItemStack var9 = this.getItemStackFromSlot(EquipmentSlotType.HEAD);
          Item var7 = var9.getItem();
          EntityType var8 = var1.getType();
          if (var8 == EntityType.field41078 && var7 == Items.field38058
@@ -890,9 +895,9 @@ public abstract class LivingEntity extends Entity {
 
             this.field4973 = 0;
             float var5 = var2;
-            if ((var1 == DamageSource.field39008 || var1 == DamageSource.field39009) && !this.getItemStackFromSlot(EquipmentSlotType.field13736).isEmpty()) {
-               this.getItemStackFromSlot(EquipmentSlotType.field13736)
-                  .method32121((int)(var2 * 4.0F + this.rand.nextFloat() * var2 * 2.0F), this, var0 -> var0.sendBreakAnimation(EquipmentSlotType.field13736));
+            if ((var1 == DamageSource.field39008 || var1 == DamageSource.field39009) && !this.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty()) {
+               this.getItemStackFromSlot(EquipmentSlotType.HEAD)
+                  .damageItem((int)(var2 * 4.0F + this.rand.nextFloat() * var2 * 2.0F), this, var0 -> var0.sendBreakAnimation(EquipmentSlotType.HEAD));
                var2 *= 0.75F;
             }
 
@@ -1056,7 +1061,7 @@ public abstract class LivingEntity extends Entity {
             ItemStack var9 = this.getHeldItem(var8);
             if (var9.getItem() == Items.TOTEM_OF_UNDYING) {
                var4 = var9.copy();
-               var9.method32182(1);
+               var9.shrink(1);
                break;
             }
          }
@@ -1636,22 +1641,22 @@ public abstract class LivingEntity extends Entity {
             }
             break;
          case 47:
-            this.renderBrokenItemStack(this.getItemStackFromSlot(EquipmentSlotType.field13731));
+            this.renderBrokenItemStack(this.getItemStackFromSlot(EquipmentSlotType.MAINHAND));
             break;
          case 48:
             this.renderBrokenItemStack(this.getItemStackFromSlot(EquipmentSlotType.OFFHAND));
             break;
          case 49:
-            this.renderBrokenItemStack(this.getItemStackFromSlot(EquipmentSlotType.field13736));
+            this.renderBrokenItemStack(this.getItemStackFromSlot(EquipmentSlotType.HEAD));
             break;
          case 50:
-            this.renderBrokenItemStack(this.getItemStackFromSlot(EquipmentSlotType.field13735));
+            this.renderBrokenItemStack(this.getItemStackFromSlot(EquipmentSlotType.CHEST));
             break;
          case 51:
-            this.renderBrokenItemStack(this.getItemStackFromSlot(EquipmentSlotType.field13734));
+            this.renderBrokenItemStack(this.getItemStackFromSlot(EquipmentSlotType.LEGS));
             break;
          case 52:
-            this.renderBrokenItemStack(this.getItemStackFromSlot(EquipmentSlotType.field13733));
+            this.renderBrokenItemStack(this.getItemStackFromSlot(EquipmentSlotType.FEET));
             break;
          case 54:
             HoneyBlock.livingSlideParticles(this);
@@ -1663,8 +1668,8 @@ public abstract class LivingEntity extends Entity {
 
    private void swapHands() {
       ItemStack var3 = this.getItemStackFromSlot(EquipmentSlotType.OFFHAND);
-      this.setItemStackToSlot(EquipmentSlotType.OFFHAND, this.getItemStackFromSlot(EquipmentSlotType.field13731));
-      this.setItemStackToSlot(EquipmentSlotType.field13731, var3);
+      this.setItemStackToSlot(EquipmentSlotType.OFFHAND, this.getItemStackFromSlot(EquipmentSlotType.MAINHAND));
+      this.setItemStackToSlot(EquipmentSlotType.MAINHAND, var3);
    }
 
    @Override
@@ -1709,7 +1714,7 @@ public abstract class LivingEntity extends Entity {
    }
 
    public ItemStack getHeldItemMainhand() {
-      return this.getItemStackFromSlot(EquipmentSlotType.field13731);
+      return this.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
    }
 
    public ItemStack method3091() {
@@ -1732,7 +1737,7 @@ public abstract class LivingEntity extends Entity {
             return this.getItemStackFromSlot(EquipmentSlotType.OFFHAND);
          }
       } else {
-         return this.getItemStackFromSlot(EquipmentSlotType.field13731);
+         return this.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
       }
    }
 
@@ -1744,7 +1749,7 @@ public abstract class LivingEntity extends Entity {
 
          this.setItemStackToSlot(EquipmentSlotType.OFFHAND, var2);
       } else {
-         this.setItemStackToSlot(EquipmentSlotType.field13731, var2);
+         this.setItemStackToSlot(EquipmentSlotType.MAINHAND, var2);
       }
    }
 
@@ -2224,7 +2229,7 @@ public abstract class LivingEntity extends Entity {
 
       for (EquipmentSlotType var7 : EquipmentSlotType.values()) {
          ItemStack var8;
-         switch (Class8717.field39333[var7.method8772().ordinal()]) {
+         switch (Class8717.field39333[var7.getSlotType().ordinal()]) {
             case 1:
                var8 = this.getItemInHand(var7);
                break;
@@ -2236,7 +2241,7 @@ public abstract class LivingEntity extends Entity {
          }
 
          ItemStack var9 = this.getItemStackFromSlot(var7);
-         if (!ItemStack.method32128(var9, var8)) {
+         if (!ItemStack.areItemStacksEqual1(var9, var8)) {
             if (var3 == null) {
                var3 = Maps.newEnumMap(EquipmentSlotType.class);
             }
@@ -2256,16 +2261,16 @@ public abstract class LivingEntity extends Entity {
    }
 
    private void method3117(Map<EquipmentSlotType, ItemStack> var1) {
-      ItemStack var4 = (ItemStack)var1.get(EquipmentSlotType.field13731);
+      ItemStack var4 = (ItemStack)var1.get(EquipmentSlotType.MAINHAND);
       ItemStack var5 = (ItemStack)var1.get(EquipmentSlotType.OFFHAND);
       if (var4 != null
          && var5 != null
-         && ItemStack.method32128(var4, this.getItemInHand(EquipmentSlotType.OFFHAND))
-         && ItemStack.method32128(var5, this.getItemInHand(EquipmentSlotType.field13731))) {
+         && ItemStack.areItemStacksEqual1(var4, this.getItemInHand(EquipmentSlotType.OFFHAND))
+         && ItemStack.areItemStacksEqual1(var5, this.getItemInHand(EquipmentSlotType.MAINHAND))) {
          ((ServerWorld)this.world).getChunkProvider().sendToTrackingAndSelf(this, new SEntityStatusPacket(this, (byte)55));
-         var1.remove(EquipmentSlotType.field13731);
+         var1.remove(EquipmentSlotType.MAINHAND);
          var1.remove(EquipmentSlotType.OFFHAND);
-         this.setItemInHand(EquipmentSlotType.field13731, var4.copy());
+         this.setItemInHand(EquipmentSlotType.MAINHAND, var4.copy());
          this.setItemInHand(EquipmentSlotType.OFFHAND, var5.copy());
       }
    }
@@ -2275,7 +2280,7 @@ public abstract class LivingEntity extends Entity {
       var1.forEach((var2, var3) -> {
          ItemStack var6 = var3.copy();
          var4.add(Pair.of(var2, var6));
-         switch (Class8717.field39333[var2.method8772().ordinal()]) {
+         switch (Class8717.field39333[var2.getSlotType().ordinal()]) {
             case 1:
                this.setItemInHand(var2, var6);
                break;
@@ -2287,19 +2292,19 @@ public abstract class LivingEntity extends Entity {
    }
 
    private ItemStack getArmorInSlot(EquipmentSlotType var1) {
-      return this.armorArray.get(var1.method8773());
+      return this.armorArray.get(var1.getIndex());
    }
 
    private void setArmorInSlot(EquipmentSlotType var1, ItemStack var2) {
-      this.armorArray.set(var1.method8773(), var2);
+      this.armorArray.set(var1.getIndex(), var2);
    }
 
    private ItemStack getItemInHand(EquipmentSlotType var1) {
-      return this.handInventory.get(var1.method8773());
+      return this.handInventory.get(var1.getIndex());
    }
 
    private void setItemInHand(EquipmentSlotType var1, ItemStack var2) {
-      this.handInventory.set(var1.method8773(), var2);
+      this.handInventory.set(var1.getIndex(), var2);
    }
 
    public float updateDistance(float var1, float var2) {
@@ -2444,11 +2449,11 @@ public abstract class LivingEntity extends Entity {
    private void updateElytra() {
       boolean var3 = this.getFlag(7);
       if (var3 && !this.onGround && !this.isPassenger() && !this.isPotionActive(Effects.LEVITATION)) {
-         ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.field13735);
+         ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.CHEST);
          if (var4.getItem() == Items.field38120 && Class3256.method11698(var4)) {
             var3 = true;
             if (!this.world.isRemote && (this.field5003 + 1) % 20 == 0) {
-               var4.method32121(1, this, var0 -> var0.sendBreakAnimation(EquipmentSlotType.field13735));
+               var4.damageItem(1, this, var0 -> var0.sendBreakAnimation(EquipmentSlotType.CHEST));
             }
          } else {
             var3 = false;
@@ -2890,7 +2895,7 @@ public abstract class LivingEntity extends Entity {
          while (!var21 && var19.getY() > 0) {
             BlockPos var22 = var19.down();
             BlockState var23 = var20.getBlockState(var22);
-            if (!var23.getMaterial().method31087()) {
+            if (!var23.getMaterial().blocksMovement()) {
                var16--;
                var19 = var22;
             } else {
@@ -3064,7 +3069,7 @@ public abstract class LivingEntity extends Entity {
          );
          this.applyFoodEffects(var2, var1, this);
          if (!(this instanceof PlayerEntity) || !((PlayerEntity)this).abilities.isCreativeMode) {
-            var2.method32182(1);
+            var2.shrink(1);
          }
       }
 
@@ -3073,7 +3078,7 @@ public abstract class LivingEntity extends Entity {
 
    private void applyFoodEffects(ItemStack var1, World var2, LivingEntity var3) {
       Item var6 = var1.getItem();
-      if (var6.method11744()) {
+      if (var6.isFood()) {
          for (Pair var8 : var6.method11745().method36162()) {
             if (!var2.isRemote && var8.getFirst() != null && var2.rand.nextFloat() < (Float)var8.getSecond()) {
                var3.addPotionEffect(new EffectInstance((EffectInstance)var8.getFirst()));
@@ -3106,12 +3111,12 @@ public abstract class LivingEntity extends Entity {
    }
 
    public void sendBreakAnimation(Hand var1) {
-      this.sendBreakAnimation(var1 != Hand.MAIN_HAND ? EquipmentSlotType.OFFHAND : EquipmentSlotType.field13731);
+      this.sendBreakAnimation(var1 != Hand.MAIN_HAND ? EquipmentSlotType.OFFHAND : EquipmentSlotType.MAINHAND);
    }
 
    @Override
    public AxisAlignedBB getRenderBoundingBox() {
-      if (this.getItemStackFromSlot(EquipmentSlotType.field13736).getItem() != Items.field38063) {
+      if (this.getItemStackFromSlot(EquipmentSlotType.HEAD).getItem() != Items.field38063) {
          return super.getRenderBoundingBox();
       } else {
          float var3 = 0.5F;

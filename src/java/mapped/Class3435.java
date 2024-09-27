@@ -4,6 +4,8 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -184,7 +186,7 @@ public class Class3435 extends Class3433 {
                   if (var4 == 1
                      && !var12.isAir()
                      && method12104(var12, var2, var11, var8.method536(), false, var8)
-                     && (var12.method23408() == Class2315.field15862 || var12.isIn(Blocks.PISTON) || var12.isIn(Blocks.STICKY_PISTON))) {
+                     && (var12.method23408() == PushReaction.field15862 || var12.isIn(Blocks.PISTON) || var12.isIn(Blocks.STICKY_PISTON))) {
                      this.method12105(var2, var3, var8, false);
                   } else {
                      var2.removeBlock(var3.method8349(var8), false);
@@ -219,7 +221,7 @@ public class Class3435 extends Class3433 {
          return false;
       } else {
          if (!var0.isIn(Blocks.PISTON) && !var0.isIn(Blocks.STICKY_PISTON)) {
-            if (var0.method23405(var1, var2) == -1.0F) {
+            if (var0.getBlockHardness(var1, var2) == -1.0F) {
                return false;
             }
 

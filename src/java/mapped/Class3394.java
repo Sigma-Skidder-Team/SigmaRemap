@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
@@ -78,7 +79,7 @@ public class Class3394 extends Block {
 
    @Override
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
-      return var2.getBlockState(var3.down()).getMaterial().method31086();
+      return var2.getBlockState(var3.down()).getMaterial().isSolid();
    }
 
    @Override

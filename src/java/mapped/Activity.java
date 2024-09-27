@@ -31,7 +31,7 @@ public class Activity {
    }
 
    private static Activity method32358(String var0) {
-      return Registry.<Activity>method9194(Registry.field16095, var0, new Activity(var0));
+      return Registry.<Activity>register(Registry.field16095, var0, new Activity(var0));
    }
 
    @Override

@@ -31,7 +31,7 @@ public class Class144 extends Class128 {
             }
          }
 
-         var1.method32180(var9);
+         var1.setCount(var9);
       }
 
       return var1;

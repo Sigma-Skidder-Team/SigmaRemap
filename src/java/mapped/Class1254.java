@@ -142,7 +142,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
    }
 
    public void method5841(Slot var1) {
-      if (var1 != null && var1.field25579 < this.field6641.method18226()) {
+      if (var1 != null && var1.slotNumber < this.field6641.method18226()) {
          this.field6637.method34733();
          if (this.method5839()) {
             this.method5845();
@@ -288,7 +288,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
                }
 
                this.field6637.method34733();
-               this.field6642.playerController.sendPlaceRecipePacket(this.field6642.player.openContainer.field25471, var11, Screen.method2476());
+               this.field6642.playerController.sendPlaceRecipePacket(this.field6642.player.openContainer.windowId, var11, Screen.method2476());
                if (!this.method5855()) {
                   this.method5840(false);
                }
@@ -443,7 +443,7 @@ public class Class1254 extends AbstractGui implements Class1190, IGuiEventListen
    public void method5830(Iterator<Class120> var1, int var2, int var3, int var4, int var5) {
       Class120 var8 = (Class120)var1.next();
       if (!var8.method337()) {
-         Slot var9 = this.field6641.field25468.get(var2);
+         Slot var9 = this.field6641.inventorySlots.get(var2);
          this.field6637.method34734(var8, var9.field25580, var9.field25581);
       }
    }

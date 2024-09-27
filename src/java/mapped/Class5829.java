@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -64,7 +65,7 @@ public class Class5829 extends Class5828<Class926> {
 
    @Override
    public void onCraftMatrixChanged(IInventory var1) {
-      this.field25537.method31716((var1x, var2) -> method18228(this.field25471, var1x, this.field25538, this.field25535, this.field25536));
+      this.field25537.method31716((var1x, var2) -> method18228(this.windowId, var1x, this.field25538, this.field25535, this.field25536));
    }
 
    @Override
@@ -97,7 +98,7 @@ public class Class5829 extends Class5828<Class926> {
    @Override
    public ItemStack transferStackInSlot(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
-      Slot var6 = this.field25468.get(var2);
+      Slot var6 = this.inventorySlots.get(var2);
       if (var6 != null && var6.getHasStack()) {
          ItemStack var7 = var6.getStack();
          var5 = var7.copy();
@@ -136,7 +137,7 @@ public class Class5829 extends Class5828<Class926> {
 
          ItemStack var8 = var6.onTake(var1, var7);
          if (var2 == 0) {
-            var1.method2882(var8, false);
+            var1.dropItem(var8, false);
          }
       }
 

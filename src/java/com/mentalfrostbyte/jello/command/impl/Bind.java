@@ -19,7 +19,7 @@ public class Bind extends Command {
    }
 
    @Override
-   public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
       Object var6 = null;
       if (var2.length == 0) {
          CommandManager.method30238(() -> mc.displayGuiScreen(new Class1144(new StringTextComponent("GuiKeybinds"))));
@@ -46,10 +46,10 @@ public class Bind extends Command {
 
                if (var14 != -1) {
                   Client.getInstance().getModuleManager().method14668().method13725(var14, (Module)var6);
-                  var3.method20327("Key " + var2[1].method30899() + " was set for module " + ((Module)var6).getSuffix());
+                  var3.send("Key " + var2[1].method30899() + " was set for module " + ((Module)var6).getSuffix());
                } else {
                   Client.getInstance().getModuleManager().method14668().method13727(var6);
-                  var3.method20327("Keybind was reset for module " + ((Module)var6).getSuffix());
+                  var3.send("Keybind was reset for module " + ((Module)var6).getSuffix());
                }
             }
          } else {
@@ -69,9 +69,9 @@ public class Bind extends Command {
             }
 
             if (var9 != null) {
-               var3.method20327(((Module)var6).getSuffix() + " is bound to : " + var9);
+               var3.send(((Module)var6).getSuffix() + " is bound to : " + var9);
             } else {
-               var3.method20327("§c[Error] " + ((Module)var6).getSuffix() + " is bound to an unknown key");
+               var3.send("§c[Error] " + ((Module)var6).getSuffix() + " is bound to an unknown key");
             }
          }
       }

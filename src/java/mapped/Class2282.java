@@ -1,10 +1,11 @@
 package mapped;
 
+import net.minecraft.item.IItemTier;
 import net.minecraft.item.Items;
 
 import java.util.function.Supplier;
 
-public enum Class2282 implements Class2283 {
+public enum Class2282 implements IItemTier {
    field15104(0, 59, 2.0F, 0.0F, 15, () -> Class120.method342(Class5985.field26071)),
    field15105(1, 131, 4.0F, 1.0F, 5, () -> Class120.method342(Class5985.field26122)),
    field15106(2, 250, 6.0F, 2.0F, 14, () -> Class120.method339(Items.field37801)),
@@ -35,12 +36,12 @@ public enum Class2282 implements Class2283 {
    }
 
    @Override
-   public float method9011() {
+   public float getEfficiency() {
       return this.field15112;
    }
 
    @Override
-   public float method9012() {
+   public float getAttackDamage() {
       return this.field15113;
    }
 

@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.server.ServerWorld;
 
@@ -47,7 +48,7 @@ public class Class3729 extends Class3676<Class1042> {
       LivingEntity var7 = this.method12645(var2);
       this.method12641(var7, var2);
       if (this.field19829.isEmpty()) {
-         var2.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
+         var2.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
          this.field19832 = Math.min(this.field19832, 40);
       } else {
          this.method12646(var2);
@@ -59,14 +60,14 @@ public class Class3729 extends Class3676<Class1042> {
    public void method12506(ServerWorld var1, Class1042 var2, long var3) {
       super.method12506(var1, var2, var3);
       var2.getBrain().method21405(Class8830.field39828);
-      var2.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
+      var2.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
       this.field19828 = null;
    }
 
    private void method12641(LivingEntity var1, Class1042 var2) {
       boolean var5 = false;
       ItemStack var6 = var1.getHeldItemMainhand();
-      if (this.field19828 == null || !ItemStack.method32130(this.field19828, var6)) {
+      if (this.field19828 == null || !ItemStack.areItemStacksEqual(this.field19828, var6)) {
          this.field19828 = var6;
          var5 = true;
          this.field19829.clear();
@@ -82,7 +83,7 @@ public class Class3729 extends Class3676<Class1042> {
    }
 
    private void method12642(Class1042 var1) {
-      var1.setItemStackToSlot(EquipmentSlotType.field13731, this.field19829.get(0));
+      var1.setItemStackToSlot(EquipmentSlotType.MAINHAND, this.field19829.get(0));
    }
 
    private void method12643(Class1042 var1) {
@@ -94,7 +95,7 @@ public class Class3729 extends Class3676<Class1042> {
    }
 
    private boolean method12644(Class9346 var1) {
-      return ItemStack.method32130(this.field19828, var1.method35366()) || ItemStack.method32130(this.field19828, var1.method35367());
+      return ItemStack.areItemStacksEqual(this.field19828, var1.method35366()) || ItemStack.areItemStacksEqual(this.field19828, var1.method35367());
    }
 
    private LivingEntity method12645(Class1042 var1) {
@@ -112,7 +113,7 @@ public class Class3729 extends Class3676<Class1042> {
             this.field19831 = 0;
          }
 
-         var1.setItemStackToSlot(EquipmentSlotType.field13731, this.field19829.get(this.field19831));
+         var1.setItemStackToSlot(EquipmentSlotType.MAINHAND, this.field19829.get(this.field19831));
       }
    }
 }

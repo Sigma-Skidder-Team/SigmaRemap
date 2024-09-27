@@ -12,7 +12,7 @@ public class Class9479 {
    public static final Class7633 field44068 = method36604("lava", new Class7639());
 
    private static <T extends Fluid> T method36604(String var0, T var1) {
-      return Registry.<T>method9194(Registry.field16070, var0, (T)var1);
+      return Registry.<T>register(Registry.field16070, var0, (T)var1);
    }
 
    static {

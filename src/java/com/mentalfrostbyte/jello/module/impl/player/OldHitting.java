@@ -17,7 +17,10 @@ import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import mapped.*;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Items;
+import net.minecraft.item.SwordItem;
 import net.minecraft.network.play.server.SEntityEquipmentPacket;
 import net.minecraft.util.HandSide;
 import net.minecraft.util.math.BlockPos;
@@ -43,7 +46,7 @@ public class OldHitting extends Module {
     private void method16020(EventUpdate var1) {
         if (this.isEnabled() || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x) {
             if (var1.isPre()) {
-                boolean var4 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof ItemSword;
+                boolean var4 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
                 boolean var5 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988();
                 boolean var6 = true;
                 if (!mc.player.isSneaking()

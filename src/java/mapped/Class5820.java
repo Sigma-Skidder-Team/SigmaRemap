@@ -2,7 +2,9 @@ package mapped;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 public class Class5820 extends Container {
    private static String[] field25497;
@@ -55,8 +57,8 @@ public class Class5820 extends Container {
 
    @Override
    public ItemStack transferStackInSlot(PlayerEntity var1, int var2) {
-      if (var2 >= this.field25468.size() - 9 && var2 < this.field25468.size()) {
-         Slot var5 = this.field25468.get(var2);
+      if (var2 >= this.inventorySlots.size() - 9 && var2 < this.inventorySlots.size()) {
+         Slot var5 = this.inventorySlots.get(var2);
          if (var5 != null && var5.getHasStack()) {
             var5.putStack(ItemStack.EMPTY);
          }

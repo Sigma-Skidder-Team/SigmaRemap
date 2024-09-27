@@ -61,7 +61,7 @@ public class Class1029 extends Class1026 {
          .method21849(Attributes.field42105, 100.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.3)
          .method21849(Attributes.field42107, 0.75)
-         .method21849(Attributes.field42110, 12.0)
+         .method21849(Attributes.ATTACK_DAMAGE, 12.0)
          .method21849(Attributes.field42111, 1.5)
          .method21849(Attributes.field42106, 32.0);
    }

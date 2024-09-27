@@ -258,7 +258,7 @@ public class Class4388 {
 
    private static ItemStack method13816(ItemEntity var0) {
       ItemStack var3 = var0.method4124();
-      ItemStack var4 = var3.method32106(1);
+      ItemStack var4 = var3.split(1);
       if (!var3.isEmpty()) {
          var0.method4125(var3);
       } else {
@@ -441,7 +441,7 @@ public class Class4388 {
       if (!method13834(var0, var5)) {
          return ActionResultType.field14820;
       } else {
-         ItemStack var6 = var5.method32106(1);
+         ItemStack var6 = var5.split(1);
          method13815(var0, var6);
          method13867(var0);
          method13844(var0);

@@ -6,6 +6,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
@@ -155,7 +156,7 @@ public class Class945 extends TileEntity implements IClearable, ITickableTileEnt
          if (var6.isEmpty()) {
             this.field5331[var5] = var2;
             this.field5330[var5] = 0;
-            this.field5329.set(var5, var1.method32106(1));
+            this.field5329.set(var5, var1.split(1));
             this.method3799();
             return true;
          }

@@ -12,6 +12,7 @@ import com.mentalfrostbyte.jello.settings.NumberSetting;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CClientStatusPacket;
@@ -87,8 +88,8 @@ public class AutoArmor extends Module {
                 }
 
                 for (EquipmentSlotType var9 : EquipmentSlotType.values()) {
-                    if (mc.player.container.getSlot(8 - var9.method8773()).getHasStack()) {
-                        if (InvManagerUtils.method25847(8 - var9.method8773())) {
+                    if (mc.player.container.getSlot(8 - var9.getIndex()).getHasStack()) {
+                        if (InvManagerUtils.isArmor(8 - var9.getIndex())) {
                             return;
                         }
                     } else if (this.method16618(var9)) {
@@ -106,9 +107,9 @@ public class AutoArmor extends Module {
 
     private void method16616(boolean var1) {
         for (EquipmentSlotType var7 : EquipmentSlotType.values()) {
-            if (mc.player.container.getSlot(8 - var7.method8773()).getHasStack()) {
-                ItemStack var8 = mc.player.container.getSlot(8 - var7.method8773()).getStack();
-                if (InvManagerUtils.method25872(var8) && (!this.field23799 || var7 != EquipmentSlotType.field13735)) {
+            if (mc.player.container.getSlot(8 - var7.getIndex()).getHasStack()) {
+                ItemStack var8 = mc.player.container.getSlot(8 - var7.getIndex()).getStack();
+                if (InvManagerUtils.isBestArmorPiece(var8) && (!this.field23799 || var7 != EquipmentSlotType.CHEST)) {
                     continue;
                 }
             }
@@ -118,19 +119,19 @@ public class AutoArmor extends Module {
                     ItemStack var9 = mc.player.container.getSlot(var12).getStack();
                     if (var9.getItem() instanceof Class3256
                             && this.field23799
-                            && !(mc.player.inventory.getStackInSlot(36 + EquipmentSlotType.field13735.method8773()).getItem() instanceof Class3256)) {
+                            && !(mc.player.inventory.getStackInSlot(36 + EquipmentSlotType.CHEST.getIndex()).getItem() instanceof Class3256)) {
                         Class3256 var13 = (Class3256) var9.getItem();
-                        if (EquipmentSlotType.field13735 == var7
+                        if (EquipmentSlotType.CHEST == var7
                                 && (
                                 !Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getBooleanValueFromSetttingName("Fake Items")
                                         || Client.getInstance().getSlotChangeTracker().method33238(var12) >= 1500L
                         )) {
                             this.method16617(var1);
-                            if (!(mc.player.inventory.getStackInSlot(36 + var7.method8773()).getItem() instanceof Class3280)) {
-                                InvManagerUtils.method25826(8 - var7.method8773(), 0, true);
+                            if (!(mc.player.inventory.getStackInSlot(36 + var7.getIndex()).getItem() instanceof Class3280)) {
+                                InvManagerUtils.click(8 - var7.getIndex(), 0, true);
                             }
 
-                            InvManagerUtils.fixedClick(mc.player.container.field25471, var12, 0, ClickType.field14695, mc.player, true);
+                            InvManagerUtils.fixedClick(mc.player.container.windowId, var12, 0, ClickType.QUICK_MOVE, mc.player, true);
                             this.timer.reset();
                             field23798 = true;
                             if (this.getStringSettingValueByName("Elytra").equals("On Use")) {
@@ -144,24 +145,24 @@ public class AutoArmor extends Module {
                         }
                     } else if (var9.getItem() instanceof ArmorItem && !this.field23799) {
                         ArmorItem var10 = (ArmorItem) var9.getItem();
-                        if (var10.method11805() == var7
-                                && InvManagerUtils.method25872(var9)
-                                && InvManagerUtils.method25850(var9) > 0
+                        if (var10.getType() == var7
+                                && InvManagerUtils.isBestArmorPiece(var9)
+                                && InvManagerUtils.getArmorProtectionValue(var9) > 0
                                 && (
                                 !Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getBooleanValueFromSetttingName("Fake Items")
                                         || Client.getInstance().getSlotChangeTracker().method33238(var12) >= 1500L
                         )) {
                             this.method16617(var1);
-                            Item var11 = mc.player.inventory.getStackInSlot(36 + var10.method11805().method8773()).getItem();
+                            Item var11 = mc.player.inventory.getStackInSlot(36 + var10.getType().getIndex()).getItem();
                             if (!(var11 instanceof Class3256)) {
                                 if (!(var11 instanceof Class3280)) {
-                                    InvManagerUtils.method25871(8 - var10.method11805().method8773());
+                                    InvManagerUtils.method25871(8 - var10.getType().getIndex());
                                 }
                             } else {
-                                InvManagerUtils.method25826(8 - var7.method8773(), 0, true);
+                                InvManagerUtils.click(8 - var7.getIndex(), 0, true);
                             }
 
-                            InvManagerUtils.fixedClick(mc.player.container.field25471, var12, 0, ClickType.field14695, mc.player, true);
+                            InvManagerUtils.fixedClick(mc.player.container.windowId, var12, 0, ClickType.QUICK_MOVE, mc.player, true);
                             this.timer.reset();
                             field23798 = true;
                             if (Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getNumberValueBySettingName("Delay") > 0.0F) {
@@ -188,7 +189,7 @@ public class AutoArmor extends Module {
                 Item var6 = var5.getItem();
                 if (var6 instanceof ArmorItem) {
                     ArmorItem var7 = (ArmorItem) var6;
-                    if (var1 == var7.method11805()) {
+                    if (var1 == var7.getType()) {
                         return true;
                     }
                 }

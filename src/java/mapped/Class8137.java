@@ -55,6 +55,6 @@ public class Class8137 {
    public static final Class8812 field35018 = method28212("long_slow_falling", new Class8812("slow_falling", new EffectInstance(Effects.SLOW_FALLING, 4800)));
 
    private static Class8812 method28212(String var0, Class8812 var1) {
-      return Registry.<Class8812>method9194(Registry.field16076, var0, var1);
+      return Registry.<Class8812>register(Registry.field16076, var0, var1);
    }
 }

@@ -2,12 +2,16 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
@@ -39,7 +43,7 @@ public class Class3344 extends Class3343 {
             if (var8 != null) {
                for (int var9 = 0; var9 < var7.method38654(); var9++) {
                   for (int var10 = 0; var10 < var7.method38653(); var10++) {
-                     Class9632 var11 = var8.method33881(var9, var10, 0);
+                     CachedBlockInfo var11 = var8.method33881(var9, var10, 0);
                      var0.setBlockState(var11.method37551(), Blocks.AIR.method11579(), 2);
                      var0.playEvent(2001, var11.method37551(), Block.getStateId(var11.method37548()));
                   }
@@ -83,9 +87,9 @@ public class Class3344 extends Class3343 {
       if (field18857 == null) {
          field18857 = Class9659.method37706()
             .method37705("^^^", "###", "~#~")
-            .method37707('#', var0 -> var0.method37548().method23446(BlockTags.field32793))
-            .method37707('^', Class9632.method37552(Class166.method497(Blocks.field36703).or(Class166.method497(Blocks.field36704))))
-            .method37707('~', Class9632.method37552(Class116.method330(Class8649.field38932)))
+            .method37707('#', var0 -> var0.method37548().isIn(BlockTags.field32793))
+            .method37707('^', CachedBlockInfo.method37552(Class166.method497(Blocks.field36703).or(Class166.method497(Blocks.field36704))))
+            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.field38932)))
             .method37708();
       }
 
@@ -96,8 +100,8 @@ public class Class3344 extends Class3343 {
       if (field18858 == null) {
          field18858 = Class9659.method37706()
             .method37705("   ", "###", "~#~")
-            .method37707('#', var0 -> var0.method37548().method23446(BlockTags.field32793))
-            .method37707('~', Class9632.method37552(Class116.method330(Class8649.field38932)))
+            .method37707('#', var0 -> var0.method37548().isIn(BlockTags.field32793))
+            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.field38932)))
             .method37708();
       }
 

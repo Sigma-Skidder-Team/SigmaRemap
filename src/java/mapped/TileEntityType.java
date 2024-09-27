@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.datafixers.types.Type;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.JigsawTileEntity;
@@ -191,7 +192,7 @@ public class TileEntityType<T extends TileEntity> {
       }
 
       Type var4 = Util.method38500(TypeReferences.field35386, var0);
-      return Registry.<TileEntityType<T>>method9194(Registry.field16078, var0, var1.method38570(var4));
+      return Registry.<TileEntityType<T>>register(Registry.field16078, var0, var1.method38570(var4));
    }
 
    public TileEntityType(Supplier<? extends T> var1, Set<Block> var2, Type<?> var3) {

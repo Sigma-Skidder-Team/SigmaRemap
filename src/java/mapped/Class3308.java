@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 public class Class3308 extends Item {
    private static String[] field18815;
 
-   public Class3308(Class5643 var1) {
+   public Class3308(Properties var1) {
       super(var1);
    }
 

@@ -17,7 +17,7 @@ public class Attributes {
    public static final Attribute field42109 = method34279(
       "generic.flying_speed", new Class4870("attribute.name.generic.flying_speed", 0.4F, 0.0, 1024.0).method15030(true)
    );
-   public static final Attribute field42110 = method34279("generic.attack_damage", new Class4870("attribute.name.generic.attack_damage", 2.0, 0.0, 2048.0));
+   public static final Attribute ATTACK_DAMAGE = method34279("generic.attack_damage", new Class4870("attribute.name.generic.attack_damage", 2.0, 0.0, 2048.0));
    public static final Attribute field42111 = method34279("generic.attack_knockback", new Class4870("attribute.name.generic.attack_knockback", 0.0, 0.0, 5.0));
    public static final Attribute ATTACK_SPEED = method34279(
       "generic.attack_speed", new Class4870("attribute.name.generic.attack_speed", 4.0, 0.0, 1024.0).method15030(true)
@@ -35,6 +35,6 @@ public class Attributes {
    );
 
    private static Attribute method34279(String var0, Attribute var1) {
-      return Registry.<Attribute>method9194(Registry.ATTRIBUTE, var0, var1);
+      return Registry.<Attribute>register(Registry.ATTRIBUTE, var0, var1);
    }
 }

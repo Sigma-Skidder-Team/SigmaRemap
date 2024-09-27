@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 import mapped.Class2193;
 import mapped.Class6669;
-import mapped.Class8623;
+import mapped.ChatCommandArguments;
 import net.minecraft.network.play.client.CPlayerPacket;
 
 public class Damage extends Command {
@@ -14,7 +14,7 @@ public class Damage extends Command {
    }
 
    @Override
-   public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
       if (var2.length == 0) {
          throw new CommandException();
       } else if (var2.length > 1) {
@@ -35,7 +35,7 @@ public class Damage extends Command {
             .sendPacket(new CPlayerPacket.PositionPacket(mc.player.getPosX(), mc.player.getPosY(), mc.player.getPosZ(), false));
          mc.getConnection()
             .sendPacket(new CPlayerPacket.PositionPacket(mc.player.getPosX(), mc.player.getPosY() + 0.02, mc.player.getPosZ(), false));
-         var3.method20327("Sent damage packets");
+         var3.send("Sent damage packets");
       }
    }
 }

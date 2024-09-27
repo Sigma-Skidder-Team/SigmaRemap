@@ -5,6 +5,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
@@ -22,17 +23,17 @@ public class Class255<T extends LivingEntity, M extends Class2797<T>, A extends 
    }
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, T var4, float var5, float var6, float var7, float var8, float var9, float var10) {
-      this.method843(var1, var2, (T)var4, EquipmentSlotType.field13735, var3, this.method847(EquipmentSlotType.field13735));
-      this.method843(var1, var2, (T)var4, EquipmentSlotType.field13734, var3, this.method847(EquipmentSlotType.field13734));
-      this.method843(var1, var2, (T)var4, EquipmentSlotType.field13733, var3, this.method847(EquipmentSlotType.field13733));
-      this.method843(var1, var2, (T)var4, EquipmentSlotType.field13736, var3, this.method847(EquipmentSlotType.field13736));
+      this.method843(var1, var2, (T)var4, EquipmentSlotType.CHEST, var3, this.method847(EquipmentSlotType.CHEST));
+      this.method843(var1, var2, (T)var4, EquipmentSlotType.LEGS, var3, this.method847(EquipmentSlotType.LEGS));
+      this.method843(var1, var2, (T)var4, EquipmentSlotType.FEET, var3, this.method847(EquipmentSlotType.FEET));
+      this.method843(var1, var2, (T)var4, EquipmentSlotType.HEAD, var3, this.method847(EquipmentSlotType.HEAD));
    }
 
    private void method843(MatrixStack var1, Class7733 var2, T var3, EquipmentSlotType var4, int var5, A var6) {
       ItemStack var9 = var3.getItemStackFromSlot(var4);
       if (var9.getItem() instanceof ArmorItem) {
          ArmorItem var10 = (ArmorItem)var9.getItem();
-         if (var10.method11805() == var4) {
+         if (var10.getType() == var4) {
             if (Reflector.field42864.method20245()) {
                var6 = this.method850((T)var3, var9, var4, (A)var6);
             }
@@ -94,7 +95,7 @@ public class Class255<T extends LivingEntity, M extends Class2797<T>, A extends 
    }
 
    private boolean method848(EquipmentSlotType var1) {
-      return var1 == EquipmentSlotType.field13734;
+      return var1 == EquipmentSlotType.LEGS;
    }
 
    private ResourceLocation method849(ArmorItem var1, boolean var2, String var3) {

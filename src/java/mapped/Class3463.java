@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
+
 public class Class3463 extends Class3462 {
    private static String[] field19302;
 

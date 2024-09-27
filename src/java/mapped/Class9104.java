@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.server.ServerWorld;
@@ -1123,6 +1124,6 @@ public class Class9104 {
    );
 
    private static <FC extends Class4698> Class7909<FC, ?> method33941(String var0, Class7909<FC, ?> var1) {
-      return Registry.<Class7909<FC, ?>>method9194(Class6714.field29426, var0, var1);
+      return Registry.<Class7909<FC, ?>>register(Class6714.field29426, var0, var1);
    }
 }

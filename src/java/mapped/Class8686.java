@@ -8,6 +8,7 @@ import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import java.util.function.Predicate;
 
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.server.ServerWorld;
@@ -28,7 +29,7 @@ public class Class8686 {
                                           Class6849.method20827(var0x, "pos"),
                                           Class7971.method27104(var0x, "block"),
                                           Class2047.field13361,
-                                          (Predicate<Class9632>)null
+                                          (Predicate<CachedBlockInfo>)null
                                        )
                                  ))
                               .then(
@@ -39,7 +40,7 @@ public class Class8686 {
                                              Class6849.method20827(var0x, "pos"),
                                              Class7971.method27104(var0x, "block"),
                                              Class2047.field13362,
-                                             (Predicate<Class9632>)null
+                                             (Predicate<CachedBlockInfo>)null
                                           )
                                     )
                               ))
@@ -63,7 +64,7 @@ public class Class8686 {
                                        Class6849.method20827(var0x, "pos"),
                                        Class7971.method27104(var0x, "block"),
                                        Class2047.field13361,
-                                       (Predicate<Class9632>)null
+                                       (Predicate<CachedBlockInfo>)null
                                     )
                               )
                         )
@@ -72,9 +73,9 @@ public class Class8686 {
       );
    }
 
-   private static int method31295(Class6619 var0, BlockPos var1, Class164 var2, Class2047 var3, Predicate<Class9632> var4) throws CommandSyntaxException {
+   private static int method31295(Class6619 var0, BlockPos var1, Class164 var2, Class2047 var3, Predicate<CachedBlockInfo> var4) throws CommandSyntaxException {
       ServerWorld var7 = var0.method20172();
-      if (var4 != null && !var4.test(new Class9632(var7, var1, true))) {
+      if (var4 != null && !var4.test(new CachedBlockInfo(var7, var1, true))) {
          throw field39214.create();
       } else {
          boolean var9;

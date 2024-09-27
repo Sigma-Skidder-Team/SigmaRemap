@@ -63,7 +63,7 @@ public class Class1058 extends Class1056 implements IAngerable {
          .method21849(Attributes.field42105, 100.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.25)
          .method21849(Attributes.field42107, 1.0)
-         .method21849(Attributes.field42110, 15.0);
+         .method21849(Attributes.ATTACK_DAMAGE, 15.0);
    }
 
    @Override
@@ -164,7 +164,7 @@ public class Class1058 extends Class1056 implements IAngerable {
    }
 
    private float method4864() {
-      return (float)this.getAttributeValue(Attributes.field42110);
+      return (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE);
    }
 
    @Override
@@ -251,7 +251,7 @@ public class Class1058 extends Class1056 implements IAngerable {
             float var8 = 1.0F + (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F;
             this.playSound(SoundEvents.field26704, 1.0F, var8);
             if (!var1.abilities.isCreativeMode) {
-               var5.method32182(1);
+               var5.shrink(1);
             }
 
             return ActionResultType.method9002(this.world.isRemote);

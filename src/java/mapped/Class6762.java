@@ -6,6 +6,9 @@ import it.unimi.dsi.fastutil.objects.Object2BooleanMap;
 import it.unimi.dsi.fastutil.objects.Object2BooleanOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -498,10 +501,10 @@ public class Class6762 extends Class6764 {
    public static Class2163 method20635(IBlockReader var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
       Block var5 = var4.getBlock();
-      Class8649 var6 = var4.getMaterial();
+      Material var6 = var4.getMaterial();
       if (var4.isAir()) {
          return Class2163.field14185;
-      } else if (var4.method23446(BlockTags.field32768) || var4.isIn(Blocks.LILY_PAD)) {
+      } else if (var4.isIn(BlockTags.field32768) || var4.isIn(Blocks.LILY_PAD)) {
          return Class2163.field14188;
       } else if (var4.isIn(Blocks.CACTUS)) {
          return Class2163.field14198;
@@ -521,7 +524,7 @@ public class Class6762 extends Class6764 {
             return Class2163.field14196;
          } else if (Class3461.method12145(var4) && !var4.<Boolean>method23463(Class3461.field19294)) {
             return Class2163.field14202;
-         } else if (var5 instanceof Class3461 && var6 == Class8649.field38967 && !var4.<Boolean>method23463(Class3461.field19294)) {
+         } else if (var5 instanceof Class3461 && var6 == Material.field38967 && !var4.<Boolean>method23463(Class3461.field19294)) {
             return Class2163.field14203;
          } else if (var5 instanceof Class3461 && var4.<Boolean>method23463(Class3461.field19294)) {
             return Class2163.field14201;
@@ -540,7 +543,7 @@ public class Class6762 extends Class6764 {
    }
 
    private static boolean method20636(BlockState var0) {
-      return var0.method23446(BlockTags.field32798)
+      return var0.isIn(BlockTags.field32798)
          || var0.isIn(Blocks.LAVA)
          || var0.isIn(Blocks.field36890)
          || Class3244.method11655(var0);

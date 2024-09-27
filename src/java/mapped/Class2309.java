@@ -13,7 +13,7 @@ import java.util.List;
 
 public enum Class2309 {
    field15814(Items.BOW, 0.0F, 3.0F, 0.0F),
-   field15815(Items.field37888, 0.0F, 1.875F, 0.0F),
+   field15815(Items.SNOWBALL, 0.0F, 1.875F, 0.0F),
    field15816(Items.field37966, 0.0F, 1.875F, 0.0F),
    field15817(Items.field37904, 0.0F, 1.875F, 0.0F),
    field15818(Items.field38115, 0.0F, 0.5F, 0.0F),

@@ -26,7 +26,7 @@ public class Class894 extends Class890 {
 
    @Override
    public Item method3512() {
-      return Items.field37888;
+      return Items.SNOWBALL;
    }
 
    private IParticleData method3516() {

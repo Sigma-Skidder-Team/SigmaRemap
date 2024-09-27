@@ -11,7 +11,10 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.IItemProvider;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
@@ -181,7 +184,7 @@ public class Block extends Class3390 implements IItemProvider {
 
    public static boolean method11548(IWorldReader var0, BlockPos var1, net.minecraft.util.Direction var2) {
       BlockState var5 = var0.getBlockState(var1);
-      return var2 == net.minecraft.util.Direction.DOWN && var5.method23446(BlockTags.field32813) ? false : var5.method23455(var0, var1, var2, Class2156.field14141);
+      return var2 == net.minecraft.util.Direction.DOWN && var5.isIn(BlockTags.field32813) ? false : var5.method23455(var0, var1, var2, Class2156.field14141);
    }
 
    public static boolean method11549(VoxelShape var0, net.minecraft.util.Direction var1) {
@@ -290,7 +293,7 @@ public class Block extends Class3390 implements IItemProvider {
    }
 
    public boolean method11564() {
-      return !this.field19004.method31086() && !this.field19004.isLiquid();
+      return !this.field19004.isSolid() && !this.field19004.isLiquid();
    }
 
    public IFormattableTextComponent method11565() {

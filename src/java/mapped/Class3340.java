@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
@@ -14,7 +15,7 @@ import java.util.List;
 public class Class3340 extends Item {
    private static String[] field18846;
 
-   public Class3340(Class5643 var1) {
+   public Class3340(Properties var1) {
       super(var1);
    }
 
@@ -43,7 +44,7 @@ public class Class3340 extends Item {
                   }
                }
 
-               var1.method18357().method32182(1);
+               var1.method18357().shrink(1);
                return ActionResultType.method9002(var4.isRemote);
             } else {
                return ActionResultType.FAIL;

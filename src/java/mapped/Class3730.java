@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableMap;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
 
@@ -90,7 +91,7 @@ public class Class3730 extends Class3676<MobEntity> {
    }
 
    private boolean method12651(ServerWorld var1, BlockPos var2) {
-      return var1.getBlockState(var2).method23446(BlockTags.field32770);
+      return var1.getBlockState(var2).isIn(BlockTags.field32770);
    }
 
    private Optional<BlockPos> method12652(MobEntity var1) {

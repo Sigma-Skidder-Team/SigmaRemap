@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -55,7 +56,7 @@ public class Class8605 {
       if (this != field38715) {
          JsonObject var3 = new JsonObject();
          if (this.field38717 != null) {
-            var3.addProperty("enchantment", Registry.field16073.getKey(this.field38717).toString());
+            var3.addProperty("enchantment", Registry.ENCHANTMENT.getKey(this.field38717).toString());
          }
 
          var3.add("levels", this.field38718.method32005());
@@ -71,7 +72,7 @@ public class Class8605 {
          Enchantment var4 = null;
          if (var3.has("enchantment")) {
             ResourceLocation var5 = new ResourceLocation(JSONUtils.getString(var3, "enchantment"));
-            var4 = Registry.field16073.method9187(var5).orElseThrow(() -> new JsonSyntaxException("Unknown enchantment '" + var5 + "'"));
+            var4 = Registry.ENCHANTMENT.method9187(var5).orElseThrow(() -> new JsonSyntaxException("Unknown enchantment '" + var5 + "'"));
          }
 
          Class8840 var6 = Class8840.method32016(var3.get("levels"));

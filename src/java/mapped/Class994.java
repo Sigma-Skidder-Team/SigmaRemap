@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -114,7 +115,7 @@ public class Class994 extends AbstractMinecartEntity {
       ItemStack var5 = var1.getHeldItem(var2);
       if (field5485.test(var5) && this.field5482 + 3600 <= 32000) {
          if (!var1.abilities.isCreativeMode) {
-            var5.method32182(1);
+            var5.shrink(1);
          }
 
          this.field5482 += 3600;

@@ -53,7 +53,7 @@ public class AutoTools extends Module {
                 : blockPos;
 
         if (targetBlockPos != null) {
-            int bestToolSlot = InvManagerUtils.findBestToolForBlock(mc.world.getBlockState(targetBlockPos));
+            int bestToolSlot = InvManagerUtils.findBestToolFromHotbarSlotForBlock(mc.world.getBlockState(targetBlockPos));
             if (bestToolSlot != -1) {
                 if (mc.player.inventory.currentItem != bestToolSlot % 9 && this.previousSlot == -1) {
                     this.previousSlot = mc.player.inventory.currentItem;

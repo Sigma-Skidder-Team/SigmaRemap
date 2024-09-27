@@ -5,13 +5,14 @@ import net.minecraft.client.gui.IHasContainer;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.IContainerListener;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 
 public class Class869 extends Class870 implements IHasContainer<Class5818> {
    private final Class5818 field4817;
-   private final Class876 field4818 = new Class1121(this);
+   private final IContainerListener field4818 = new Class1121(this);
 
    public Class869(Class5818 var1, PlayerInventory var2, ITextComponent var3) {
       this.field4817 = var1;
@@ -74,7 +75,7 @@ public class Class869 extends Class870 implements IHasContainer<Class5818> {
    }
 
    private void method2683(int var1) {
-      this.mc.playerController.sendEnchantPacket(this.field4817.field25471, var1);
+      this.mc.playerController.sendEnchantPacket(this.field4817.windowId, var1);
    }
 
    @Override

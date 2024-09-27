@@ -4,6 +4,8 @@ import com.google.common.collect.Maps;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.renderer.ActiveRenderInfo;
+import net.minecraft.crash.CrashReport;
+import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;

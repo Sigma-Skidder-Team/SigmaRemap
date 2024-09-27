@@ -1,9 +1,11 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
@@ -12,8 +14,8 @@ public final class Class6236 extends Class6230 {
    private static String[] field27718;
    private final Class6218 field27730 = new Class6218();
 
-   private ItemStack method19208(Class2956 var1, ItemStack var2, ItemStack var3) {
-      var2.method32182(1);
+   private ItemStack method19208(IBlockSource var1, ItemStack var2, ItemStack var3) {
+      var2.shrink(1);
       if (!var2.isEmpty()) {
          if (var1.<Class971>method11325().method4023(var3.copy()) < 0) {
             this.field27730.method19196(var1, var3.copy());
@@ -26,7 +28,7 @@ public final class Class6236 extends Class6230 {
    }
 
    @Override
-   public ItemStack method19192(Class2956 var1, ItemStack var2) {
+   public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
       this.method19204(false);
       ServerWorld var5 = var1.method11326();
       BlockPos var6 = var1.method11323().method8349(var1.method11324().<Direction>method23463(Class3357.field18899));
@@ -36,7 +38,7 @@ public final class Class6236 extends Class6230 {
          this.method19204(true);
          return this.method19208(var1, var2, new ItemStack(Items.field38177));
       } else if (!var5.getFluidState(var6).method23486(FluidTags.field40469)) {
-         return super.method19192(var1, var2);
+         return super.dispenseStack(var1, var2);
       } else {
          this.method19204(true);
          return this.method19208(var1, var2, Class9741.method38187(new ItemStack(Items.field37971), Class8137.field34977));

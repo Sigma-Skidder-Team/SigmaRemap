@@ -3,11 +3,14 @@ package mapped;
 import java.util.Map;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.util.IntReferenceHolder;
 import net.minecraft.util.text.StringTextComponent;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
@@ -18,7 +21,7 @@ public class Class5824 extends Class5823 {
    private static final Logger field25517 = LogManager.getLogger();
    private int field25518;
    private String field25519;
-   private final Class4923 field25520 = Class4923.method15238();
+   private final IntReferenceHolder field25520 = IntReferenceHolder.method15238();
 
    public Class5824(int var1, PlayerInventory var2) {
       this(var1, var2, IWorldPosCallable.field39521);
@@ -31,18 +34,18 @@ public class Class5824 extends Class5823 {
 
    @Override
    public boolean method18191(BlockState var1) {
-      return var1.method23446(BlockTags.field32765);
+      return var1.isIn(BlockTags.field32765);
    }
 
    @Override
    public boolean method18189(PlayerEntity var1, boolean var2) {
-      return (var1.abilities.isCreativeMode || var1.field4920 >= this.field25520.method15234()) && this.field25520.method15234() > 0;
+      return (var1.abilities.isCreativeMode || var1.field4920 >= this.field25520.get()) && this.field25520.get() > 0;
    }
 
    @Override
    public ItemStack method18190(PlayerEntity var1, ItemStack var2) {
       if (!var1.abilities.isCreativeMode) {
-         var1.method2727(-this.field25520.method15234());
+         var1.method2727(-this.field25520.get());
       }
 
       this.field25513.setInventorySlotContents(0, ItemStack.EMPTY);
@@ -51,7 +54,7 @@ public class Class5824 extends Class5823 {
       } else {
          ItemStack var5 = this.field25513.getStackInSlot(1);
          if (!var5.isEmpty() && var5.getCount() > this.field25518) {
-            var5.method32182(this.field25518);
+            var5.shrink(this.field25518);
             this.field25513.setInventorySlotContents(1, var5);
          } else {
             this.field25513.setInventorySlotContents(1, ItemStack.EMPTY);
@@ -61,7 +64,7 @@ public class Class5824 extends Class5823 {
       this.field25520.method15235(0);
       this.field25514.method31716((var1x, var2x) -> {
          BlockState var5x = var1x.getBlockState(var2x);
-         if (!var1.abilities.isCreativeMode && var5x.method23446(BlockTags.field32765) && var1.getRNG().nextFloat() < 0.12F) {
+         if (!var1.abilities.isCreativeMode && var5x.isIn(BlockTags.field32765) && var1.getRNG().nextFloat() < 0.12F) {
             BlockState var6 = Class3218.method11607(var5x);
             if (var6 != null) {
                var1x.setBlockState(var2x, var6, 2);
@@ -217,11 +220,11 @@ public class Class5824 extends Class5823 {
             var7 = ItemStack.EMPTY;
          }
 
-         if (var6 == var4 && var6 > 0 && this.field25520.method15234() >= 40) {
+         if (var6 == var4 && var6 > 0 && this.field25520.get() >= 40) {
             this.field25520.method15235(39);
          }
 
-         if (this.field25520.method15234() >= 40 && !this.field25515.abilities.isCreativeMode) {
+         if (this.field25520.get() >= 40 && !this.field25515.abilities.isCreativeMode) {
             var7 = ItemStack.EMPTY;
          }
 
@@ -263,6 +266,6 @@ public class Class5824 extends Class5823 {
    }
 
    public int method18198() {
-      return this.field25520.method15234();
+      return this.field25520.get();
    }
 }

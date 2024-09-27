@@ -18,7 +18,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 public class Class3318 extends Item {
-   public Class3318(Class5643 var1) {
+   public Class3318(Properties var1) {
       super(var1);
    }
 
@@ -38,7 +38,7 @@ public class Class3318 extends Item {
             var5
          );
          var4.addEntity(var8);
-         var5.method32182(1);
+         var5.shrink(1);
       }
 
       return ActionResultType.method9002(var4.isRemote);
@@ -53,7 +53,7 @@ public class Class3318 extends Item {
          if (!var1.isRemote) {
             var1.addEntity(new Class888(var1, var6, var2));
             if (!var2.abilities.isCreativeMode) {
-               var6.method32182(1);
+               var6.shrink(1);
             }
          }
 

@@ -6,6 +6,7 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap.Entry;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -13,6 +14,8 @@ import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
+import net.minecraft.util.IItemProvider;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
@@ -44,7 +47,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
 
    public static Map<Item, Integer> method3640() {
       LinkedHashMap var2 = Maps.newLinkedHashMap();
-      method3643(var2, Items.field37884, 20000);
+      method3643(var2, Items.LAVA_BUCKET, 20000);
       method3643(var2, Blocks.field36795, 16000);
       method3643(var2, Items.field37967, 2400);
       method3643(var2, Items.field37798, 1600);
@@ -186,7 +189,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
                   var4 = true;
                   if (!var5.isEmpty()) {
                      Item var7 = var5.getItem();
-                     var5.method32182(1);
+                     var5.shrink(1);
                      if (var5.isEmpty()) {
                         Item var8 = var7.method11722();
                         this.field5247.set(1, var8 != null ? new ItemStack(var8) : ItemStack.EMPTY);
@@ -230,7 +233,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
             if (var5.isEmpty()) {
                return true;
             } else if (var5.method32132(var4)) {
-               return var5.getCount() < this.getInventoryStackLimit() && var5.getCount() < var5.method32113() ? true : var5.getCount() < var4.method32113();
+               return var5.getCount() < this.getInventoryStackLimit() && var5.getCount() < var5.getMaxStackSize() ? true : var5.getCount() < var4.getMaxStackSize();
             } else {
                return false;
             }
@@ -249,7 +252,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
          ItemStack var6 = this.field5247.get(2);
          if (!var6.isEmpty()) {
             if (var6.getItem() == var5.getItem()) {
-               var6.method32181(1);
+               var6.grow(1);
             }
          } else {
             this.field5247.set(2, var5.copy());
@@ -261,11 +264,11 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
 
          if (var4.getItem() == Blocks.field36453.method11581()
             && !this.field5247.get(1).isEmpty()
-            && this.field5247.get(1).getItem() == Items.field37882) {
-            this.field5247.set(1, new ItemStack(Items.field37883));
+            && this.field5247.get(1).getItem() == Items.BUCKET) {
+            this.field5247.set(1, new ItemStack(Items.WATER_BUCKET));
          }
 
-         var4.method32182(1);
+         var4.shrink(1);
       }
    }
 
@@ -304,7 +307,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
    public boolean method3655(int var1, ItemStack var2, Direction var3) {
       if (var3 == Direction.DOWN && var1 == 1) {
          Item var6 = var2.getItem();
-         if (var6 != Items.field37883 && var6 != Items.field37882) {
+         if (var6 != Items.WATER_BUCKET && var6 != Items.BUCKET) {
             return false;
          }
       }
@@ -349,7 +352,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
       boolean var6 = !var2.isEmpty() && var2.method32132(var5) && ItemStack.method32127(var2, var5);
       this.field5247.set(var1, var2);
       if (var2.getCount() > this.getInventoryStackLimit()) {
-         var2.method32180(this.getInventoryStackLimit());
+         var2.setCount(this.getInventoryStackLimit());
       }
 
       if (var1 == 0 && !var6) {
@@ -374,7 +377,7 @@ public abstract class Class924 extends Class932 implements Class930, Class923, C
             return true;
          } else {
             ItemStack var5 = this.field5247.get(1);
-            return method3652(var2) || var2.getItem() == Items.field37882 && var5.getItem() != Items.field37882;
+            return method3652(var2) || var2.getItem() == Items.BUCKET && var5.getItem() != Items.BUCKET;
          }
       } else {
          return false;

@@ -63,7 +63,7 @@ public class Class4840 extends Class4837 {
 
       if (!var5.isEmpty() && var4 >= 1) {
          ItemStack var8 = var5.copy();
-         var8.method32180(var4 + 1);
+         var8.setCount(var4 + 1);
          return var8;
       } else {
          return ItemStack.EMPTY;

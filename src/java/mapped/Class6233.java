@@ -1,10 +1,12 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -15,13 +17,13 @@ public class Class6233 extends Class6230 {
    private static String[] field27728;
 
    @Override
-   public ItemStack method19192(Class2956 var1, ItemStack var2) {
+   public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
       ServerWorld var5 = var1.method11326();
       if (!var5.isRemote()) {
          BlockPos var6 = var1.method11323().method8349(var1.method11324().<Direction>method23463(Class3357.field18899));
          this.method19204(method19206(var5, var6) || method19207(var5, var6));
          if (this.method19203() && var2.method32120(1, var5.method6814(), (ServerPlayerEntity)null)) {
-            var2.method32180(0);
+            var2.setCount(0);
          }
       }
 
@@ -30,7 +32,7 @@ public class Class6233 extends Class6230 {
 
    private static boolean method19206(ServerWorld var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
-      if (var4.method23446(BlockTags.field32794)) {
+      if (var4.isIn(BlockTags.field32794)) {
          int var5 = var4.<Integer>method23463(Class3366.field18936);
          if (var5 >= 5) {
             var0.method6742((PlayerEntity)null, var1, SoundEvents.field26398, Class2266.field14732, 1.0F, 1.0F);

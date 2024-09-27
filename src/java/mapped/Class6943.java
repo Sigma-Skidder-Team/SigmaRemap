@@ -92,7 +92,7 @@ public class Class6943 extends Class6941 {
             } else {
                return !(var0.getRecipeOutput().getItem() instanceof Class3292) ? Class1896.field11124 : Class1896.field11123;
             }
-         } else if (!var0.getRecipeOutput().getItem().method11744()) {
+         } else if (!var0.getRecipeOutput().getItem().isFood()) {
             return !(var0.getRecipeOutput().getItem() instanceof Class3292) ? Class1896.field11121 : Class1896.field11120;
          } else {
             return Class1896.field11119;

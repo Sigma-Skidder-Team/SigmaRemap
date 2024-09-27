@@ -14,8 +14,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.TameableEntity;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.SwordItem;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
@@ -116,7 +119,7 @@ public abstract class PlayerEntity extends LivingEntity {
             return false;
          } else {
             ItemStack var6 = this.getHeldItemMainhand();
-            return var6.isEmpty() || !var6.method32175(var1.method6817(), new Class9632(var1, var2, false));
+            return var6.isEmpty() || !var6.method32175(var1.method6817(), new CachedBlockInfo(var1, var2, false));
          }
       } else {
          return true;
@@ -125,7 +128,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    public static Class7037 method2849() {
       return LivingEntity.method2997()
-         .method21849(Attributes.field42110, 1.0)
+         .method21849(Attributes.ATTACK_DAMAGE, 1.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.1F)
          .method21848(Attributes.ATTACK_SPEED)
          .method21848(Attributes.LUCK);
@@ -203,7 +206,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
       this.ticksSinceLastSwing++;
       ItemStack var8 = this.getHeldItemMainhand();
-      if (!ItemStack.method32128(this.field4928, var8)) {
+      if (!ItemStack.areItemStacksEqual1(this.field4928, var8)) {
          if (!ItemStack.areItemsEqualIgnoreDurability(this.field4928, var8)) {
             this.resetCooldown();
          }
@@ -234,7 +237,7 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    private void method2855() {
-      ItemStack var3 = this.getItemStackFromSlot(EquipmentSlotType.field13736);
+      ItemStack var3 = this.getItemStackFromSlot(EquipmentSlotType.HEAD);
       if (var3.getItem() == Items.field37792 && !this.areEyesInFluid(FluidTags.field40469)) {
          this.addPotionEffect(new EffectInstance(Effects.WATER_BREATHING, 200, 0, false, false, true));
       }
@@ -605,12 +608,17 @@ public abstract class PlayerEntity extends LivingEntity {
    }
 
    @Nullable
-   public ItemEntity method2882(ItemStack var1, boolean var2) {
+   public ItemEntity dropItem(ItemStack var1, boolean var2) {
       return this.method2836(var1, false, var2);
    }
 
    @Nullable
    public ItemEntity method2836(ItemStack var1, boolean var2, boolean var3) {
+      if (var1 == null) {
+         System.out.println("ItemStack + " + var1 + " is null");
+         return null;
+      }
+
       if (!var1.isEmpty()) {
          if (this.world.isRemote && JelloPortal.getCurrentVersion().getVersionNumber() >= ViaVerList._1_16.getVersionNumber()) {
             this.swingArm(Hand.MAIN_HAND);
@@ -837,12 +845,12 @@ public abstract class PlayerEntity extends LivingEntity {
          if (var1 >= 3.0F) {
             int var4 = 1 + MathHelper.method37767(var1);
             Hand var5 = this.getActiveHand();
-            this.activeItemStack.method32121(var4, this, var1x -> var1x.sendBreakAnimation(var5));
+            this.activeItemStack.damageItem(var4, this, var1x -> var1x.sendBreakAnimation(var5));
             if (this.activeItemStack.isEmpty()) {
                if (var5 != Hand.MAIN_HAND) {
                   this.setItemStackToSlot(EquipmentSlotType.OFFHAND, ItemStack.EMPTY);
                } else {
-                  this.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
+                  this.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
                }
 
                this.activeItemStack = ItemStack.EMPTY;
@@ -933,7 +941,7 @@ public abstract class PlayerEntity extends LivingEntity {
             return ActionResultType.field14820;
          } else {
             if (this.abilities.isCreativeMode && var5 == this.getHeldItem(var2) && var5.getCount() < var6.getCount()) {
-               var5.method32180(var6.getCount());
+               var5.setCount(var6.getCount());
             }
 
             return var7;
@@ -1032,7 +1040,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    public void method2817(Entity var1) {
       if (var1.method3360() && !var1.method3361(this)) {
-         float var4 = (float)this.getAttributeValue(Attributes.field42110);
+         float var4 = (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE);
          float var5;
          if (!(var1 instanceof LivingEntity)) {
             var5 = EnchantmentHelper.method26318(this.getHeldItemMainhand(), CreatureAttribute.field33505);
@@ -1074,7 +1082,7 @@ public abstract class PlayerEntity extends LivingEntity {
             double var12 = (double)(this.distanceWalkedModified - this.prevDistanceWalkedModified);
             if (var7 && !var10 && !var8 && this.onGround && var12 < (double)this.getAIMoveSpeed()) {
                ItemStack var14 = this.getHeldItem(Hand.MAIN_HAND);
-               if (var14.getItem() instanceof ItemSword) {
+               if (var14.getItem() instanceof SwordItem) {
                   var11 = true;
                }
             }
@@ -1512,7 +1520,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
    public boolean tryToStartFallFlying() {
       if (!this.onGround && !this.isElytraFlying() && !this.isInWater() && !this.isPotionActive(Effects.LEVITATION)) {
-         ItemStack var3 = this.getItemStackFromSlot(EquipmentSlotType.field13735);
+         ItemStack var3 = this.getItemStackFromSlot(EquipmentSlotType.CHEST);
          if (var3.getItem() == Items.field38120 && Class3256.method11698(var3)) {
             this.method2923();
             return true;
@@ -1642,7 +1650,7 @@ public abstract class PlayerEntity extends LivingEntity {
    public boolean method2936(BlockPos var1, net.minecraft.util.Direction var2, ItemStack var3) {
       if (!this.abilities.allowEdit) {
          BlockPos var6 = var1.method8349(var2.method536());
-         Class9632 var7 = new Class9632(this.world, var6, false);
+         CachedBlockInfo var7 = new CachedBlockInfo(this.world, var6, false);
          return var3.method32176(this.world.method6817(), var7);
       } else {
          return true;
@@ -1691,9 +1699,9 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public ItemStack getItemStackFromSlot(EquipmentSlotType var1) {
-      if (var1 != EquipmentSlotType.field13731) {
+      if (var1 != EquipmentSlotType.MAINHAND) {
          if (var1 != EquipmentSlotType.OFFHAND) {
-            return var1.method8772() != Class1969.field12837 ? ItemStack.EMPTY : this.inventory.field5440.get(var1.method8773());
+            return var1.getSlotType() != EquipmentSlotType.Group.ARMOR ? ItemStack.EMPTY : this.inventory.field5440.get(var1.getIndex());
          } else {
             return this.inventory.field5441.get(0);
          }
@@ -1704,11 +1712,11 @@ public abstract class PlayerEntity extends LivingEntity {
 
    @Override
    public void setItemStackToSlot(EquipmentSlotType var1, ItemStack var2) {
-      if (var1 != EquipmentSlotType.field13731) {
+      if (var1 != EquipmentSlotType.MAINHAND) {
          if (var1 != EquipmentSlotType.OFFHAND) {
-            if (var1.method8772() == Class1969.field12837) {
+            if (var1.getSlotType() == EquipmentSlotType.Group.ARMOR) {
                this.playEquipSound(var2);
-               this.inventory.field5440.set(var1.method8773(), var2);
+               this.inventory.field5440.set(var1.getIndex(), var2);
             }
          } else {
             this.playEquipSound(var2);
@@ -1864,26 +1872,26 @@ public abstract class PlayerEntity extends LivingEntity {
          return true;
       } else {
          EquipmentSlotType var5;
-         if (var1 != 100 + EquipmentSlotType.field13736.method8773()) {
-            if (var1 != 100 + EquipmentSlotType.field13735.method8773()) {
-               if (var1 != 100 + EquipmentSlotType.field13734.method8773()) {
-                  if (var1 != 100 + EquipmentSlotType.field13733.method8773()) {
+         if (var1 != 100 + EquipmentSlotType.HEAD.getIndex()) {
+            if (var1 != 100 + EquipmentSlotType.CHEST.getIndex()) {
+               if (var1 != 100 + EquipmentSlotType.LEGS.getIndex()) {
+                  if (var1 != 100 + EquipmentSlotType.FEET.getIndex()) {
                      var5 = null;
                   } else {
-                     var5 = EquipmentSlotType.field13733;
+                     var5 = EquipmentSlotType.FEET;
                   }
                } else {
-                  var5 = EquipmentSlotType.field13734;
+                  var5 = EquipmentSlotType.LEGS;
                }
             } else {
-               var5 = EquipmentSlotType.field13735;
+               var5 = EquipmentSlotType.CHEST;
             }
          } else {
-            var5 = EquipmentSlotType.field13736;
+            var5 = EquipmentSlotType.HEAD;
          }
 
          if (var1 == 98) {
-            this.setItemStackToSlot(EquipmentSlotType.field13731, var2);
+            this.setItemStackToSlot(EquipmentSlotType.MAINHAND, var2);
             return true;
          } else if (var1 != 99) {
             if (var5 == null) {
@@ -1897,7 +1905,7 @@ public abstract class PlayerEntity extends LivingEntity {
             } else {
                if (!var2.isEmpty()) {
                   if (!(var2.getItem() instanceof ArmorItem) && !(var2.getItem() instanceof Class3256)) {
-                     if (var5 != EquipmentSlotType.field13736) {
+                     if (var5 != EquipmentSlotType.HEAD) {
                         return false;
                      }
                   } else if (MobEntity.method4271(var2) != var5) {
@@ -1905,7 +1913,7 @@ public abstract class PlayerEntity extends LivingEntity {
                   }
                }
 
-               this.inventory.setInventorySlotContents(var5.method8773() + this.inventory.field5439.size(), var2);
+               this.inventory.setInventorySlotContents(var5.getIndex() + this.inventory.field5439.size(), var2);
                return true;
             }
          } else {

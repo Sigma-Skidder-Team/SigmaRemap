@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
@@ -72,7 +73,7 @@ public class Class3206 extends Class3198 implements Class3207 {
 
    @Override
    public ActionResultType method11505(BlockState var1, World var2, BlockPos var3, PlayerEntity var4, Hand var5, BlockRayTraceResult var6) {
-      if (this.field19004 != Class8649.field38967) {
+      if (this.field19004 != Material.field38967) {
          var1 = var1.method23459(field18594);
          var2.setBlockState(var3, var1, 2);
          if (var1.<Boolean>method23463(field18597)) {
@@ -88,10 +89,10 @@ public class Class3206 extends Class3198 implements Class3207 {
 
    public void method11530(PlayerEntity var1, World var2, BlockPos var3, boolean var4) {
       if (!var4) {
-         int var7 = this.field19004 != Class8649.field38967 ? 1013 : 1036;
+         int var7 = this.field19004 != Material.field38967 ? 1013 : 1036;
          var2.method6869(var1, var7, var3, 0);
       } else {
-         int var8 = this.field19004 != Class8649.field38967 ? 1007 : 1037;
+         int var8 = this.field19004 != Material.field38967 ? 1007 : 1037;
          var2.method6869(var1, var8, var3, 0);
       }
    }

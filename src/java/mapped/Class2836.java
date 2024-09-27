@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.client.util.Util;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
@@ -16,8 +17,8 @@ public class Class2836 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Items.field37900).method18299(5).method18296(new Class5878().method18310(Class8122.field34907)))
-                  .method18291(Class4695.method14724(Items.field37855).method18299(8).method18296(new Class5878().method18310(Class8122.field34907)))
+                  .method18291(Class4695.method14724(Items.field37900).method18299(5).method18296(new Class5878().method18310(Enchantments.SOUL_SPEED)))
+                  .method18291(Class4695.method14724(Items.field37855).method18299(8).method18296(new Class5878().method18310(Enchantments.SOUL_SPEED)))
                   .method18291(
                      Class4695.method14724(Items.field37971)
                         .method18299(8)
@@ -44,7 +45,7 @@ public class Class2836 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Items.field37392).method18299(40))
                   .method18291(Class4695.method14724(Items.field38184).method18299(40).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
                   .method18291(Class4695.method14724(Items.field38046).method18299(40))
-                  .method18291(Class4695.method14724(Items.field37890).method18299(40).method18296(Class140.method420(Class6872.method20921(2.0F, 4.0F))))
+                  .method18291(Class4695.method14724(Items.LEATHER).method18299(40).method18296(Class140.method420(Class6872.method20921(2.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37441).method18299(40).method18296(Class140.method420(Class6872.method20921(2.0F, 8.0F))))
                   .method18291(Class4695.method14724(Items.field38071).method18299(40).method18296(Class140.method420(Class6872.method20921(2.0F, 8.0F))))
                   .method18291(Class4695.method14724(Items.field38116).method18299(40).method18296(Class140.method420(Class6872.method20921(6.0F, 12.0F))))

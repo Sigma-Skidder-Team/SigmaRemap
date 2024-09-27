@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
@@ -79,7 +80,7 @@ public class Class4853 extends Class4852 {
       }
 
       var4 = var4.copy();
-      var4.method32180(1);
+      var4.setCount(1);
       var4.getOrCreateTag().putInt("map_scale_direction", 1);
       return var4;
    }

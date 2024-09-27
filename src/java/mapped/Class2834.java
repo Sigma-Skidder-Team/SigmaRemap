@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -52,7 +53,7 @@ public class Class2834 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18291(Class4695.method14724(Blocks.LILY_PAD).method18299(17))
                   .method18291(Class4695.method14724(Items.field37847).method18299(10).method18296(Class145.method443(Class6872.method20921(0.0F, 0.9F))))
-                  .method18291(Class4695.method14724(Items.field37890).method18299(10))
+                  .method18291(Class4695.method14724(Items.LEATHER).method18299(10))
                   .method18291(Class4695.method14724(Items.field37935).method18299(10))
                   .method18291(
                      Class4695.method14724(Items.field37971)

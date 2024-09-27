@@ -5,11 +5,13 @@ import com.google.common.collect.ImmutableMultimap.Builder;
 import com.google.common.collect.Multimap;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.IVanishable;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntityPickupStatus;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundEvent;
@@ -19,14 +21,14 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 
-public class Class3272 extends Item implements Class3260 {
+public class Class3272 extends Item implements IVanishable {
    private final Multimap<Attribute, AttributeModifier> field18772;
 
-   public Class3272(Class5643 var1) {
+   public Class3272(Properties var1) {
       super(var1);
       Builder var4 = ImmutableMultimap.builder();
-      var4.put(Attributes.field42110, new AttributeModifier(field18733, "Tool modifier", 8.0, AttributeModifier.Operation.ADDITION));
-      var4.put(Attributes.ATTACK_SPEED, new AttributeModifier(field18734, "Tool modifier", -2.9F, AttributeModifier.Operation.ADDITION));
+      var4.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Tool modifier", 8.0, AttributeModifier.Operation.ADDITION));
+      var4.put(Attributes.ATTACK_SPEED, new AttributeModifier(ATTACK_SPEED_MODIFIER, "Tool modifier", -2.9F, AttributeModifier.Operation.ADDITION));
       this.field18772 = var4.build();
    }
 
@@ -54,7 +56,7 @@ public class Class3272 extends Item implements Class3260 {
             int var9 = EnchantmentHelper.method26337(var1);
             if (var9 <= 0 || var7.method3253()) {
                if (!var2.isRemote) {
-                  var1.method32121(1, var7, var1x -> var1x.sendBreakAnimation(var3.getActiveHand()));
+                  var1.damageItem(1, var7, var1x -> var1x.sendBreakAnimation(var3.getActiveHand()));
                   if (var9 == 0) {
                      Class886 var10 = new Class886(var2, var7, var1);
                      var10.method3463(var7, var7.rotationPitch, var7.rotationYaw, 0.0F, 2.5F + (float)var9 * 0.5F, 1.0F);
@@ -123,23 +125,23 @@ public class Class3272 extends Item implements Class3260 {
    }
 
    @Override
-   public boolean method11713(ItemStack var1, LivingEntity var2, LivingEntity var3) {
-      var1.method32121(1, var3, var0 -> var0.sendBreakAnimation(EquipmentSlotType.field13731));
+   public boolean hitEntity(ItemStack var1, LivingEntity var2, LivingEntity var3) {
+      var1.damageItem(1, var3, var0 -> var0.sendBreakAnimation(EquipmentSlotType.MAINHAND));
       return true;
    }
 
    @Override
-   public boolean method11714(ItemStack var1, World var2, BlockState var3, BlockPos var4, LivingEntity var5) {
-      if ((double)var3.method23405(var2, var4) != 0.0) {
-         var1.method32121(2, var5, var0 -> var0.sendBreakAnimation(EquipmentSlotType.field13731));
+   public boolean onBlockDestroyed(ItemStack var1, World var2, BlockState var3, BlockPos var4, LivingEntity var5) {
+      if ((double)var3.getBlockHardness(var2, var4) != 0.0) {
+         var1.damageItem(2, var5, var0 -> var0.sendBreakAnimation(EquipmentSlotType.MAINHAND));
       }
 
       return true;
    }
 
    @Override
-   public Multimap<Attribute, AttributeModifier> method11740(EquipmentSlotType var1) {
-      return var1 != EquipmentSlotType.field13731 ? super.method11740(var1) : this.field18772;
+   public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlotType var1) {
+      return var1 != EquipmentSlotType.MAINHAND ? super.getAttributeModifiers(var1) : this.field18772;
    }
 
    @Override

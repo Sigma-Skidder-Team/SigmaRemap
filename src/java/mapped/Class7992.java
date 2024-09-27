@@ -3,7 +3,9 @@ package mapped;
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.util.Util;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -419,7 +421,7 @@ public class Class7992 {
       int var2 = 0;
 
       while (true) {
-         Enchantment var3 = Registry.field16073.getByValue(var2);
+         Enchantment var3 = Registry.ENCHANTMENT.getByValue(var2);
          if (var3 == null) {
             return var2;
          }
@@ -475,7 +477,7 @@ public class Class7992 {
             if (var6 instanceof ArmorItem) {
                ArmorItem var7 = (ArmorItem)var6;
                String var8 = var7.getArmorMaterial().method8790();
-               int var9 = var1 != EquipmentSlotType.field13734 ? 1 : 2;
+               int var9 = var1 != EquipmentSlotType.LEGS ? 1 : 2;
                StringBuffer var10 = new StringBuffer();
                var10.append("texture.");
                var10.append(var8);
@@ -552,7 +554,7 @@ public class Class7992 {
          }
 
          if (var0.field34777) {
-            int var7 = var5.method11711();
+            int var7 = var5.getMaxDamage();
             var6 = (int)((double)(var6 * 100) / (double)var7);
          }
 
@@ -715,7 +717,7 @@ public class Class7992 {
             int var10 = var8.getInt("lvl");
             Enchantment var11 = Class7849.method26306(var9);
             if (var11 != null) {
-               int var12 = Registry.field16073.getId(var11);
+               int var12 = Registry.ENCHANTMENT.getId(var11);
                var6[var7][0] = var12;
                var6[var7][1] = var10;
             }

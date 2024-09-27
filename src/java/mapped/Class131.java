@@ -26,7 +26,7 @@ public class Class131 extends Class128 {
             ItemStack var6 = ((Class4849)var5.get()).getRecipeOutput();
             if (!var6.isEmpty()) {
                ItemStack var7 = var6.copy();
-               var7.method32180(var1.getCount());
+               var7.setCount(var1.getCount());
                return var7;
             }
          }

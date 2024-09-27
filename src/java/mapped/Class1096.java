@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -67,7 +68,7 @@ public class Class1096 extends Class1018 implements IAngerable {
          .method21849(Attributes.field42105, 30.0)
          .method21849(Attributes.field42106, 20.0)
          .method21849(Attributes.MOVEMENT_SPEED, 0.25)
-         .method21849(Attributes.field42110, 6.0);
+         .method21849(Attributes.ATTACK_DAMAGE, 6.0);
    }
 
    public static boolean method5181(EntityType<Class1096> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
@@ -186,7 +187,7 @@ public class Class1096 extends Class1018 implements IAngerable {
 
    @Override
    public boolean attackEntityAsMob(Entity var1) {
-      boolean var4 = var1.attackEntityFrom(DamageSource.method31115(this), (float)((int)this.getAttributeValue(Attributes.field42110)));
+      boolean var4 = var1.attackEntityFrom(DamageSource.method31115(this), (float)((int)this.getAttributeValue(Attributes.ATTACK_DAMAGE)));
       if (var4) {
          this.applyEnchantments(this, var1);
       }

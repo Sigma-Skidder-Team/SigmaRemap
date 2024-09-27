@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.Material;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -45,8 +47,8 @@ public class Class3213 extends Block {
    }
 
    public static boolean method11598(BlockState var0) {
-      Class8649 var3 = var0.getMaterial();
-      return var0.isAir() || var0.method23446(BlockTags.field32798) || var3.isLiquid() || var3.method31089();
+      Material var3 = var0.getMaterial();
+      return var0.isAir() || var0.isIn(BlockTags.field32798) || var3.isLiquid() || var3.isReplaceable();
    }
 
    public void method11599(World var1, BlockPos var2, BlockState var3, BlockState var4, Class907 var5) {

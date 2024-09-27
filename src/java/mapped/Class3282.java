@@ -1,17 +1,19 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.dispenser.IDispenseItemBehavior;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class Class3282 extends Item {
    private static String[] field18790;
-   private static final Class6226 field18791 = new Class6244();
+   private static final IDispenseItemBehavior field18791 = new Class6244();
    private final MinecartType field18792;
 
-   public Class3282(MinecartType var1, Class5643 var2) {
+   public Class3282(MinecartType var1, Properties var2) {
       super(var2);
       this.field18792 = var1;
       Class3357.method11931(this, field18791);
@@ -22,7 +24,7 @@ public class Class3282 extends Item {
       World var4 = var1.method18360();
       BlockPos var5 = var1.method18345();
       BlockState var6 = var4.getBlockState(var5);
-      if (var6.method23446(BlockTags.field32766)) {
+      if (var6.isIn(BlockTags.field32766)) {
          ItemStack var7 = var1.method18357();
          if (!var4.isRemote) {
             Class96 var8 = !(var6.getBlock() instanceof Class3429)
@@ -43,7 +45,7 @@ public class Class3282 extends Item {
             var4.addEntity(var11);
          }
 
-         var7.method32182(1);
+         var7.shrink(1);
          return ActionResultType.method9002(var4.isRemote);
       } else {
          return ActionResultType.FAIL;

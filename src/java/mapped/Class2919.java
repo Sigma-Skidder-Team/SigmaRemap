@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
@@ -43,7 +45,7 @@ public class Class2919 extends Class2898<Class4712> {
                if (var21 >= 1) {
                   BlockPos var22 = var4.method8336(var3.nextInt(var21) - var3.nextInt(var21), var20, var3.nextInt(var21) - var3.nextInt(var21));
                   BlockState var13 = var1.getBlockState(var22);
-                  if (var13.getMaterial() == Class8649.field38932
+                  if (var13.getMaterial() == Material.field38932
                      || var13.isIn(Blocks.WATER)
                      || var13.isIn(Blocks.PACKED_ICE)
                      || var13.isIn(Blocks.ICE)) {

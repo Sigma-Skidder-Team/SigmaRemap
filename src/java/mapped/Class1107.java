@@ -44,7 +44,7 @@ public class Class1107 extends Class1009 {
    }
 
    public static Class7037 method5316() {
-      return Class1009.method4343().method21849(Attributes.field42105, 8.0).method21849(Attributes.MOVEMENT_SPEED, 0.25).method21849(Attributes.field42110, 1.0);
+      return Class1009.method4343().method21849(Attributes.field42105, 8.0).method21849(Attributes.MOVEMENT_SPEED, 0.25).method21849(Attributes.ATTACK_DAMAGE, 1.0);
    }
 
    @Override

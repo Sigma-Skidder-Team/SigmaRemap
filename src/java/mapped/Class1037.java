@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -56,7 +57,7 @@ public class Class1037 extends ZombieEntity implements Class1022 {
       var4 = super.method4276(var1, var2, var3, var4, var5);
       if (this.getItemStackFromSlot(EquipmentSlotType.OFFHAND).isEmpty() && this.rand.nextFloat() < 0.03F) {
          this.setItemStackToSlot(EquipmentSlotType.OFFHAND, new ItemStack(Items.field38146));
-         this.field5605[EquipmentSlotType.OFFHAND.method8773()] = 2.0F;
+         this.field5605[EquipmentSlotType.OFFHAND.getIndex()] = 2.0F;
       }
 
       return var4;
@@ -117,9 +118,9 @@ public class Class1037 extends ZombieEntity implements Class1022 {
       if ((double)this.rand.nextFloat() > 0.9) {
          int var4 = this.rand.nextInt(16);
          if (var4 >= 10) {
-            this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37906));
+            this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37906));
          } else {
-            this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field38144));
+            this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field38144));
          }
       }
    }

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -16,7 +17,7 @@ import net.minecraft.world.server.ServerWorld;
 public class Class3341 extends Item {
    private static String[] field18847;
 
-   public Class3341(Class5643 var1) {
+   public Class3341(Properties var1) {
       super(var1);
    }
 
@@ -34,7 +35,7 @@ public class Class3341 extends Item {
          Block.method11538(var6, var7, var4, var5);
          var4.setBlockState(var5, var7, 2);
          var4.updateComparatorOutputLevel(var5, Blocks.field36650);
-         var1.method18357().method32182(1);
+         var1.method18357().shrink(1);
          var4.playEvent(1503, var5, 0);
          Class9086 var8 = Class3400.method12029().method38656(var4, var5);
          if (var8 != null) {
@@ -84,7 +85,7 @@ public class Class3341 extends Item {
                );
                var1.method6869((PlayerEntity)null, 1003, var2.getPosition(), 0);
                if (!var2.abilities.isCreativeMode) {
-                  var6.method32182(1);
+                  var6.shrink(1);
                }
 
                var2.addStat(Stats.field40098.method172(this));

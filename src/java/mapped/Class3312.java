@@ -14,7 +14,7 @@ public class Class3312 extends Item {
    private static String[] field18821;
    private final EntityType<? extends Class995> field18822;
 
-   public Class3312(EntityType<? extends Class995> var1, Class5643 var2) {
+   public Class3312(EntityType<? extends Class995> var1, Properties var2) {
       super(var2);
       this.field18822 = var1;
    }
@@ -54,7 +54,7 @@ public class Class3312 extends Item {
                var9.addEntity((Entity)var10);
             }
 
-            var8.method32182(1);
+            var8.shrink(1);
             return ActionResultType.method9002(var9.isRemote);
          }
       }

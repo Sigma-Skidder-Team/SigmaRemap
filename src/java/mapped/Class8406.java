@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 
 public final class Class8406 implements Class8405 {

@@ -1270,7 +1270,7 @@ public class RenderUtil {
          GL11.glTranslatef((float)var1, (float)var2, 0.0F);
          GL11.glScalef((float)var3 / 16.0F, (float)var4 / 16.0F, 0.0F);
          ItemRenderer var7 = mc.getItemRenderer();
-         if (var0.field39976 == 0) {
+         if (var0.count == 0) {
             var0 = new ItemStack(var0.getItem());
          }
 

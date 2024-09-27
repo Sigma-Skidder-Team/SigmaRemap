@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
 
@@ -48,6 +49,6 @@ public class Class7884 extends Class7882<Class1091> {
    }
 
    private Optional<BlockPos> method26439(ServerWorld var1, Class1091 var2) {
-      return BlockPos.method8357(var2.getPosition(), 8, 4, var1x -> var1.getBlockState(var1x).method23446(BlockTags.field32806));
+      return BlockPos.method8357(var2.getPosition(), 8, 4, var1x -> var1.getBlockState(var1x).isIn(BlockTags.field32806));
    }
 }

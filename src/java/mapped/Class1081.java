@@ -199,7 +199,7 @@ public class Class1081 extends Class1009 implements Class1080 {
             );
          if (!this.world.isRemote) {
             this.method5025();
-            var5.method32121(1, var1, var1x -> var1x.sendBreakAnimation(var2));
+            var5.damageItem(1, var1, var1x -> var1x.sendBreakAnimation(var2));
          }
 
          return ActionResultType.method9002(this.world.isRemote);

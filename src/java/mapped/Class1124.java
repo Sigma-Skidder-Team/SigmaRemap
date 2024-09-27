@@ -5,6 +5,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.play.client.CRenameItemPacket;
 import net.minecraft.util.ResourceLocation;
@@ -114,7 +115,7 @@ public class Class1124 extends Class875<Class5824> {
    }
 
    @Override
-   public void method2720(Container var1, int var2, ItemStack var3) {
+   public void sendSlotContents(Container var1, int var2, ItemStack var3) {
       if (var2 == 0) {
          this.field6160.method5635(!var3.isEmpty() ? var3.method32149().getString() : "");
          this.field6160.method5666(!var3.isEmpty());

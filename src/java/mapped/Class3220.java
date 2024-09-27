@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
@@ -78,8 +80,8 @@ public class Class3220 extends Block {
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       for (Direction var7 : Class76.field161) {
          BlockState var8 = var2.getBlockState(var3.method8349(var7));
-         Class8649 var9 = var8.getMaterial();
-         if (var9.method31086() || var2.getFluidState(var3.method8349(var7)).method23486(FluidTags.field40470)) {
+         Material var9 = var8.getMaterial();
+         if (var9.isSolid() || var2.getFluidState(var3.method8349(var7)).method23486(FluidTags.field40470)) {
             return false;
          }
       }

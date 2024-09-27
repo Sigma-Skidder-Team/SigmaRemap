@@ -6,6 +6,7 @@ import net.minecraft.client.gui.AbstractGui;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.NonNullList;
 
 import java.util.Iterator;
 import java.util.List;
@@ -26,7 +27,7 @@ public abstract class Class1255 extends Class1254 {
    @Override
    public void method5841(Slot var1) {
       super.method5841(var1);
-      if (var1 != null && var1.field25579 < this.field6641.method18226()) {
+      if (var1 != null && var1.slotNumber < this.field6641.method18226()) {
          this.field6652 = null;
       }
    }

@@ -5,6 +5,7 @@ import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
 import mapped.*;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -556,8 +557,8 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    }
 
    public void method3490(LivingEntity var1, float var2) {
-      int var5 = EnchantmentHelper.method26322(Class8122.field34919, var1);
-      int var6 = EnchantmentHelper.method26322(Class8122.field34920, var1);
+      int var5 = EnchantmentHelper.method26322(Enchantments.POWER, var1);
+      int var6 = EnchantmentHelper.method26322(Enchantments.PUNCH, var1);
       this.method3481((double)(var2 * 2.0F) + this.rand.nextGaussian() * 0.25 + (double)((float)this.world.method6997().getId() * 0.11F));
       if (var5 > 0) {
          this.method3481(this.method3482() + (double)var5 * 0.5 + 0.5);
@@ -567,7 +568,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
          this.method3483(var6);
       }
 
-      if (EnchantmentHelper.method26322(Class8122.field34921, var1) > 0) {
+      if (EnchantmentHelper.method26322(Enchantments.FLAME, var1) > 0) {
          this.setFire(100);
       }
    }

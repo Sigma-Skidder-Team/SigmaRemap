@@ -17,7 +17,9 @@ import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SwordItem;
 import net.minecraft.network.play.client.CClientStatusPacket;
 import net.minecraft.network.play.client.CHeldItemChangePacket;
 import net.minecraft.network.play.client.CTabCompletePacket;
@@ -133,7 +135,7 @@ public class ViaVersionLoader {
 
                while (var7.hasNext()) {
                   ItemStack var9 = (ItemStack)var7.next();
-                  if (var9.getItem() instanceof ItemSword) {
+                  if (var9.getItem() instanceof SwordItem) {
                      var8 = true;
                   }
                }

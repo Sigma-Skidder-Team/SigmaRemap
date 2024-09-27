@@ -130,13 +130,13 @@ public class CommandManager {
                     ArrayList var8 = new ArrayList();
 
                     for (int var9 = 1; var9 < var6.length; var9++) {
-                        var8.add(new Class8623(var6[var9]));
+                        var8.add(new ChatCommandArguments(var6[var9]));
                     }
 
                     MultiUtilities.addChatMessage(" ");
 
                     try {
-                        var7.run(var5, (Class8623[]) var8.<Class8623>toArray(new Class8623[0]), var1x -> MultiUtilities.addChatMessage(this.getPrefix() + " " + var1x));
+                        var7.run(var5, (ChatCommandArguments[]) var8.<ChatCommandArguments>toArray(new ChatCommandArguments[0]), var1x -> MultiUtilities.addChatMessage(this.getPrefix() + " " + var1x));
                     } catch (CommandException var10) {
                         if (var10.field16621.length() > 0) {
                             MultiUtilities.addChatMessage(this.getPrefix() + " Error: " + var10.field16621);

@@ -1,9 +1,11 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -56,7 +58,7 @@ public class Class1097 extends Class1018 {
    @Override
    public boolean canPickUpItem(ItemStack var1) {
       EquipmentSlotType var4 = MobEntity.method4271(var1);
-      return !this.getItemStackFromSlot(var4).isEmpty() ? false : var4 == EquipmentSlotType.field13731 && super.canPickUpItem(var1);
+      return !this.getItemStackFromSlot(var4).isEmpty() ? false : var4 == EquipmentSlotType.MAINHAND && super.canPickUpItem(var1);
    }
 
    public int method5186() {
@@ -222,7 +224,7 @@ public class Class1097 extends Class1018 {
    }
 
    public static Class7037 method5208() {
-      return MobEntity.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.15F).method21849(Attributes.field42110, 6.0);
+      return MobEntity.method4220().method21849(Attributes.MOVEMENT_SPEED, 0.15F).method21849(Attributes.ATTACK_DAMAGE, 6.0);
    }
 
    public Class2293 method5209() {
@@ -330,19 +332,19 @@ public class Class1097 extends Class1018 {
       if (!this.method5193()
          && this.method5189()
          && !this.method5214()
-         && !this.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty()
+         && !this.getItemStackFromSlot(EquipmentSlotType.MAINHAND).isEmpty()
          && this.rand.nextInt(80) == 1) {
          this.method5194(true);
-      } else if (this.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty() || !this.method5189()) {
+      } else if (this.getItemStackFromSlot(EquipmentSlotType.MAINHAND).isEmpty() || !this.method5189()) {
          this.method5194(false);
       }
 
       if (this.method5193()) {
          this.method5216();
          if (!this.world.isRemote && this.method5195() > 80 && this.rand.nextInt(20) == 1) {
-            if (this.method5195() > 100 && this.method5229(this.getItemStackFromSlot(EquipmentSlotType.field13731))) {
+            if (this.method5195() > 100 && this.method5229(this.getItemStackFromSlot(EquipmentSlotType.MAINHAND))) {
                if (!this.world.isRemote) {
-                  this.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
+                  this.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
                }
 
                this.method5190(false);
@@ -374,7 +376,7 @@ public class Class1097 extends Class1018 {
             var7 = var7.add(this.getPosX(), this.getPosYEye() + 1.0, this.getPosZ());
             this.world
                .addParticle(
-                  new Class7438(ParticleTypes.field34082, this.getItemStackFromSlot(EquipmentSlotType.field13731)),
+                  new Class7438(ParticleTypes.field34082, this.getItemStackFromSlot(EquipmentSlotType.MAINHAND)),
                   var7.x,
                   var7.y,
                   var7.z,
@@ -477,11 +479,11 @@ public class Class1097 extends Class1018 {
 
    @Override
    public void method4246(ItemEntity var1) {
-      if (this.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty() && field6035.test(var1)) {
+      if (this.getItemStackFromSlot(EquipmentSlotType.MAINHAND).isEmpty() && field6035.test(var1)) {
          this.triggerItemPickupTrigger(var1);
          ItemStack var4 = var1.method4124();
-         this.setItemStackToSlot(EquipmentSlotType.field13731, var4);
-         this.field5605[EquipmentSlotType.field13731.method8773()] = 2.0F;
+         this.setItemStackToSlot(EquipmentSlotType.MAINHAND, var4);
+         this.field5605[EquipmentSlotType.MAINHAND.getIndex()] = 2.0F;
          this.onItemPickup(var1, var4.getCount());
          var1.remove();
       }
@@ -579,12 +581,12 @@ public class Class1097 extends Class1018 {
 
                   this.method5228();
                   this.method5194(true);
-                  ItemStack var6 = this.getItemStackFromSlot(EquipmentSlotType.field13731);
+                  ItemStack var6 = this.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
                   if (!var6.isEmpty() && !var1.abilities.isCreativeMode) {
                      this.method3302(var6);
                   }
 
-                  this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(var5.getItem(), 1));
+                  this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(var5.getItem(), 1));
                   this.method4501(var1, var5);
                }
             } else {

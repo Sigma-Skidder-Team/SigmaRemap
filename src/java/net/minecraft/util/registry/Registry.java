@@ -5,6 +5,9 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.*;
 import mapped.*;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.fluid.Fluid;
@@ -71,7 +74,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Class2351<Fluid> field16070 = method9176(field16037, "empty", () -> Class9479.field44064);
    public static final Registry<Effect> EFFECTS = method9175(field16038, () -> Effects.LUCK);
    public static final Class2351<Block> BLOCK = method9176(field16039, "air", () -> Blocks.AIR);
-   public static final Registry<Enchantment> field16073 = method9175(field16040, () -> Class8122.field34918);
+   public static final Registry<Enchantment> ENCHANTMENT = method9175(field16040, () -> Enchantments.FORTUNE);
    public static final Class2351<EntityType<?>> ENTITY_TYPE = method9176(field16041, "pig", () -> EntityType.field41064);
    public static final Class2351<Item> ITEM = method9176(field16042, "air", () -> Items.field37222);
    public static final Class2351<Class8812> field16076 = method9176(field16043, "empty", () -> Class8137.field34976);
@@ -82,7 +85,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public static final Class2351<ChunkStatus> field16081 = method9176(field16048, "empty", () -> ChunkStatus.field42133);
    public static final Registry<Class9277<?>> field16082 = method9175(field16049, () -> Class9277.field42660);
    public static final Registry<Class8989<?>> field16083 = method9175(field16050, () -> Class8989.field41001);
-   public static final Registry<ContainerType<?>> field16084 = method9175(field16051, () -> ContainerType.field35655);
+   public static final Registry<ContainerType<?>> MENU = method9175(field16051, () -> ContainerType.field35655);
    public static final Registry<Class7207<?>> field16085 = method9175(field16052, () -> Class7207.field30935);
    public static final Registry<Class6504<?>> field16086 = method9175(field16053, () -> Class6504.field28471);
    public static final Registry<Attribute> ATTRIBUTE = method9175(field16054, () -> Attributes.LUCK);
@@ -275,7 +278,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
 
    public abstract boolean method9193(ResourceLocation var1);
 
-   public static <T> T method9194(Registry<? super T> var0, String var1, T var2) {
+   public static <T> T register(Registry<? super T> var0, String var1, T var2) {
       return register(var0, new ResourceLocation(var1), (T)var2);
    }
 

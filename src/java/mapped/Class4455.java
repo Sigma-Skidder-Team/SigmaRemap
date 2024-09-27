@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Items;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -47,7 +48,7 @@ public class Class4455 extends Class4441<Item> {
       this.method14089(BlockTags.field32762, Class5985.field26096);
       this.method14089(BlockTags.field32765, Class5985.field26099);
       this.method14089(BlockTags.field32766, Class5985.field26100);
-      this.method14089(BlockTags.field32767, Class5985.field26101);
+      this.method14089(BlockTags.LEAVES, Class5985.field26101);
       this.method14089(BlockTags.field32747, Class5985.field26081);
       this.method14089(BlockTags.field32768, Class5985.field26102);
       this.method14089(BlockTags.field32769, Class5985.field26103);
@@ -77,7 +78,7 @@ public class Class4455 extends Class4441<Item> {
             Items.field38107
          );
       this.method14014(Class5985.field26113)
-         .method31560(Items.field37889, Items.field38121, Items.field38122, Items.field38123, Items.field38124, Items.field38125);
+         .method31560(Items.OAK_BOAT, Items.field38121, Items.field38122, Items.field38123, Items.field38124, Items.field38125);
       this.method14014(Class5985.field26114)
          .method31560(Items.field37909, Items.field37913, Items.field37910, Items.field37914, Items.field37912, Items.field37911);
       this.method14089(BlockTags.field32788, Class5985.field26115);

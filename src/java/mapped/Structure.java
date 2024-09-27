@@ -54,7 +54,7 @@ public abstract class Structure<C extends Class4698> {
    private static <F extends Structure<?>> F method11363(String var0, F var1, Class1993 var2) {
       field_236365_a_.put(var0.toLowerCase(Locale.ROOT), var1);
       field18056.put(var1, var2);
-      return Registry.<F>method9194(Registry.field16114, var0.toLowerCase(Locale.ROOT), (F)var1);
+      return Registry.<F>register(Registry.field16114, var0.toLowerCase(Locale.ROOT), (F)var1);
    }
 
    public Structure(Codec<C> var1) {

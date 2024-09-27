@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
@@ -11,8 +12,8 @@ import java.util.function.ToIntFunction;
 
 public class AbstractBlock {
    private static String[] field33963;
-   private Class8649 field33964;
-   private Function<BlockState, Class7210> field33965;
+   private Material field33964;
+   private Function<BlockState, MaterialColor> field33965;
    private boolean field33966 = true;
    private SoundType field33967 = SoundType.field36204;
    private ToIntFunction<BlockState> field33968 = var0 -> 0;
@@ -27,35 +28,35 @@ public class AbstractBlock {
    private boolean field33977 = true;
    private boolean field33978;
    private Class9817<EntityType<?>> field33979 = (var0, var1x, var2x, var3) -> var0.method23454(var1x, var2x, Direction.field673) && var0.getLightValue() < 14;
-   private Class8609 field33980 = (var0, var1x, var2x) -> var0.getMaterial().method31090() && var0.method23456(var1x, var2x);
-   private Class8609 field33981 = (var1x, var2x, var3) -> this.field33964.method31087() && var1x.method23456(var2x, var3);
+   private Class8609 field33980 = (var0, var1x, var2x) -> var0.getMaterial().isOpaque() && var0.method23456(var1x, var2x);
+   private Class8609 field33981 = (var1x, var2x, var3) -> this.field33964.blocksMovement() && var1x.method23456(var2x, var3);
    private Class8609 field33982 = this.field33981;
    private Class8609 field33983 = (var0, var1x, var2x) -> false;
    private Class8609 field33984 = (var0, var1x, var2x) -> false;
    private boolean field33985;
 
-   private AbstractBlock(Class8649 var1, Class7210 var2) {
+   private AbstractBlock(Material var1, MaterialColor var2) {
       this(var1, var1x -> var2);
    }
 
-   private AbstractBlock(Class8649 var1, Function<BlockState, Class7210> var2) {
+   private AbstractBlock(Material var1, Function<BlockState, MaterialColor> var2) {
       this.field33964 = var1;
       this.field33965 = var2;
    }
 
-   public static AbstractBlock method26609(Class8649 var0) {
-      return method26611(var0, var0.method31092());
+   public static AbstractBlock method26609(Material var0) {
+      return method26611(var0, var0.getColor());
    }
 
-   public static AbstractBlock method26610(Class8649 var0, Class112 var1) {
+   public static AbstractBlock method26610(Material var0, Class112 var1) {
       return method26611(var0, var1.method312());
    }
 
-   public static AbstractBlock method26611(Class8649 var0, Class7210 var1) {
+   public static AbstractBlock method26611(Material var0, MaterialColor var1) {
       return new AbstractBlock(var0, var1);
    }
 
-   public static AbstractBlock method26612(Class8649 var0, Function<BlockState, Class7210> var1) {
+   public static AbstractBlock method26612(Material var0, Function<BlockState, MaterialColor> var1) {
       return new AbstractBlock(var0, var1);
    }
 
@@ -190,7 +191,7 @@ public class AbstractBlock {
    }
 
    // $VF: synthetic method
-   public static Class8649 method26643(AbstractBlock var0) {
+   public static Material method26643(AbstractBlock var0) {
       return var0.field33964;
    }
 

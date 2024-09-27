@@ -37,7 +37,7 @@ public interface Class3277 {
       if (var9 instanceof Class3277) {
          var8 = (Class3277)var9;
          var4 = var0.copy();
-         var4.method32180(1);
+         var4.setCount(1);
          if (var8.method11799(var0)) {
             int var10 = var8.method11800(var4);
             float var11 = (float)(var10 >> 16 & 0xFF) / 255.0F;

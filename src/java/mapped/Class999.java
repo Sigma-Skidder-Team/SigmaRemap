@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.*;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
@@ -410,8 +411,8 @@ public class Class999 extends Entity {
    }
 
    @Override
-   public Class2315 method3422() {
-      return Class2315.field15865;
+   public PushReaction method3422() {
+      return PushReaction.field15865;
    }
 
    @Override

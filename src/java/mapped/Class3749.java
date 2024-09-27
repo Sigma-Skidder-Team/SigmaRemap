@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -125,7 +126,7 @@ public class Class3749 extends Class3676<Class1042> {
                         1.0F,
                         1.0F
                      );
-                     var12.method32182(1);
+                     var12.shrink(1);
                      if (var12.isEmpty()) {
                         var10.setInventorySlotContents(var11, ItemStack.EMPTY);
                      }

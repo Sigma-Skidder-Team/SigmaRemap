@@ -43,7 +43,7 @@ public class Class3754 extends Class3676<Class1042> {
          }
 
          if (var7.method4674().method26571() == Class8395.field36016
-            && var2.method4752().count(Items.field37842) > Items.field37842.method11710() / 2) {
+            && var2.method4752().count(Items.field37842) > Items.field37842.getMaxStackSize() / 2) {
             method12722(var2, ImmutableSet.of(Items.field37842), var7);
          }
 
@@ -73,7 +73,7 @@ public class Class3754 extends Class3676<Class1042> {
             Item var9 = var8.getItem();
             if (var1.contains(var9)) {
                int var10;
-               if (var8.getCount() <= var8.method32113() / 2) {
+               if (var8.getCount() <= var8.getMaxStackSize() / 2) {
                   if (var8.getCount() <= 24) {
                      continue;
                   }
@@ -83,7 +83,7 @@ public class Class3754 extends Class3676<Class1042> {
                   var10 = var8.getCount() / 2;
                }
 
-               var8.method32182(var10);
+               var8.shrink(var10);
                var6 = new ItemStack(var9, var10);
                break;
             }

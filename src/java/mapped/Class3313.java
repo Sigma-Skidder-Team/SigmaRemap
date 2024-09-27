@@ -10,7 +10,7 @@ import net.minecraft.world.World;
 public class Class3313 extends Class3312 {
    private static String[] field18823;
 
-   public Class3313(Class5643 var1) {
+   public Class3313(Properties var1) {
       super(EntityType.field41043, var1);
    }
 

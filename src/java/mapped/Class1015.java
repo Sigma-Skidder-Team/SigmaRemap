@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntitySize;
@@ -17,6 +18,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -203,7 +205,7 @@ public class Class1015 extends Class1014 implements Class1016 {
       ItemStack var5 = var1.getHeldItem(var2);
       if (!this.method4393() && field5675.contains(var5.getItem())) {
          if (!var1.abilities.isCreativeMode) {
-            var5.method32182(1);
+            var5.shrink(1);
          }
 
          if (!this.isSilent()) {
@@ -242,7 +244,7 @@ public class Class1015 extends Class1014 implements Class1016 {
          }
       } else {
          if (!var1.abilities.isCreativeMode) {
-            var5.method32182(1);
+            var5.shrink(1);
          }
 
          this.addPotionEffect(new EffectInstance(Effects.POISON, 900));
@@ -262,9 +264,9 @@ public class Class1015 extends Class1014 implements Class1016 {
    public static boolean method4410(EntityType<Class1015> var0, Class1660 var1, Class2202 var2, BlockPos var3, Random var4) {
       BlockState var7 = var1.getBlockState(var3.down());
       return (
-            var7.method23446(BlockTags.field32767)
+            var7.isIn(BlockTags.LEAVES)
                || var7.isIn(Blocks.field36395)
-               || var7.method23446(BlockTags.field32751)
+               || var7.isIn(BlockTags.field32751)
                || var7.isIn(Blocks.AIR)
          )
          && var1.method7021(var3, 0) > 8;

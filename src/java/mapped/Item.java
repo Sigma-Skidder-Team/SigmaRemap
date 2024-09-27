@@ -11,6 +11,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -32,13 +33,13 @@ import java.util.UUID;
 
 public class Item implements IItemProvider {
    public static final Map<Block, Item> field18732 = Maps.newHashMap();
-   public static final UUID field18733 = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
-   public static final UUID field18734 = UUID.fromString("FA233E1C-4180-4865-B01B-BCCE9785ACA3");
+   public static final UUID ATTACK_DAMAGE_MODIFIER = UUID.fromString("CB3F55D3-645C-4F38-A497-9C13A33DB5CF");
+   public static final UUID ATTACK_SPEED_MODIFIER = UUID.fromString("FA233E1C-4180-4865-B01B-BCCE9785ACA3");
    public static final Random field18735 = new Random();
    public final ItemGroup field18736;
    private final Class1978 field18737;
-   private final int field18738;
-   private final int field18739;
+   private final int maxStackSize;
+   private final int maxDamage;
    private final boolean field18740;
    private final Item field18741;
    private String field18742;
@@ -57,14 +58,14 @@ public class Item implements IItemProvider {
       return field18732.getOrDefault(var0, Items.field37222);
    }
 
-   public Item(Class5643 var1) {
-      this.field18736 = Class5643.method17782(var1);
-      this.field18737 = Class5643.method17783(var1);
-      this.field18741 = Class5643.method17784(var1);
-      this.field18739 = Class5643.method17785(var1);
-      this.field18738 = Class5643.method17786(var1);
-      this.field18743 = Class5643.method17787(var1);
-      this.field18740 = Class5643.method17788(var1);
+   public Item(Properties var1) {
+      this.field18736 = Properties.method17782(var1);
+      this.field18737 = Properties.method17783(var1);
+      this.field18741 = Properties.method17784(var1);
+      this.maxDamage = Properties.method17785(var1);
+      this.maxStackSize = Properties.method17786(var1);
+      this.field18743 = Properties.method17787(var1);
+      this.field18740 = Properties.method17788(var1);
    }
 
    public void method11704(World var1, LivingEntity var2, ItemStack var3, int var4) {
@@ -87,12 +88,12 @@ public class Item implements IItemProvider {
       return ActionResultType.field14820;
    }
 
-   public float method11708(ItemStack var1, BlockState var2) {
+   public float getDestroySpeed(ItemStack var1, BlockState var2) {
       return 1.0F;
    }
 
    public Class6794<ItemStack> method11700(World var1, PlayerEntity var2, Hand var3) {
-      if (!this.method11744()) {
+      if (!this.isFood()) {
          return Class6794.<ItemStack>method20698(var2.getHeldItem(var3));
       } else {
          ItemStack var6 = var2.getHeldItem(var3);
@@ -105,31 +106,31 @@ public class Item implements IItemProvider {
       }
    }
 
-   public ItemStack method11709(ItemStack var1, World var2, LivingEntity var3) {
-      return !this.method11744() ? var1 : var3.onFoodEaten(var2, var1);
+   public ItemStack onItemUseFinish(ItemStack var1, World var2, LivingEntity var3) {
+      return !this.isFood() ? var1 : var3.onFoodEaten(var2, var1);
    }
 
-   public final int method11710() {
-      return this.field18738;
+   public final int getMaxStackSize() {
+      return this.maxStackSize;
    }
 
-   public final int method11711() {
-      return this.field18739;
+   public final int getMaxDamage() {
+      return this.maxDamage;
    }
 
-   public boolean method11712() {
-      return this.field18739 > 0;
+   public boolean isDamageable() {
+      return this.maxDamage > 0;
    }
 
-   public boolean method11713(ItemStack var1, LivingEntity var2, LivingEntity var3) {
+   public boolean hitEntity(ItemStack var1, LivingEntity var2, LivingEntity var3) {
       return false;
    }
 
-   public boolean method11714(ItemStack var1, World var2, BlockState var3, BlockPos var4, LivingEntity var5) {
+   public boolean onBlockDestroyed(ItemStack var1, World var2, BlockState var3, BlockPos var4, LivingEntity var5) {
       return false;
    }
 
-   public boolean method11715(BlockState var1) {
+   public boolean canHarvestBlock(BlockState var1) {
       return false;
    }
 
@@ -186,11 +187,11 @@ public class Item implements IItemProvider {
    }
 
    public Class2103 method11727(ItemStack var1) {
-      return !var1.getItem().method11744() ? Class2103.field13706 : Class2103.field13707;
+      return !var1.getItem().isFood() ? Class2103.field13706 : Class2103.field13707;
    }
 
    public int method11728(ItemStack var1) {
-      if (!var1.getItem().method11744()) {
+      if (!var1.getItem().isFood()) {
          return 0;
       } else {
          return !this.method11745().method36161() ? 32 : 16;
@@ -229,7 +230,7 @@ public class Item implements IItemProvider {
    }
 
    public boolean method11734(ItemStack var1) {
-      return this.method11710() == 1 && this.method11712();
+      return this.getMaxStackSize() == 1 && this.isDamageable();
    }
 
    public static BlockRayTraceResult method11735(World var0, PlayerEntity var1, Class1985 var2) {
@@ -271,7 +272,7 @@ public class Item implements IItemProvider {
       return false;
    }
 
-   public Multimap<Attribute, AttributeModifier> method11740(EquipmentSlotType var1) {
+   public Multimap<Attribute, AttributeModifier> getAttributeModifiers(EquipmentSlotType var1) {
       return ImmutableMultimap.of();
    }
 
@@ -287,7 +288,7 @@ public class Item implements IItemProvider {
       return var1.method24917(this);
    }
 
-   public boolean method11744() {
+   public boolean isFood() {
       return this.field18743 != null;
    }
 
@@ -310,5 +311,94 @@ public class Item implements IItemProvider {
 
    public boolean method11749(DamageSource var1) {
       return !this.field18740 || !var1.method31141();
+   }
+
+   public static class Properties {
+      private int field24956 = 64;
+      private int field24957;
+      private Item field24958;
+      private ItemGroup field24959;
+      private Class1978 field24960 = Class1978.field12885;
+      private Class9427 field24961;
+      private boolean field24962;
+
+      public Properties method17774(Class9427 var1) {
+         this.field24961 = var1;
+         return this;
+      }
+
+      public Properties method17775(int var1) {
+         if (this.field24957 <= 0) {
+            this.field24956 = var1;
+            return this;
+         } else {
+            throw new RuntimeException("Unable to have damage AND stack.");
+         }
+      }
+
+      public Properties method17776(int var1) {
+         return this.field24957 != 0 ? this : this.method17777(var1);
+      }
+
+      public Properties method17777(int var1) {
+         this.field24957 = var1;
+         this.field24956 = 1;
+         return this;
+      }
+
+      public Properties method17778(Item var1) {
+         this.field24958 = var1;
+         return this;
+      }
+
+      public Properties method17779(ItemGroup var1) {
+         this.field24959 = var1;
+         return this;
+      }
+
+      public Properties method17780(Class1978 var1) {
+         this.field24960 = var1;
+         return this;
+      }
+
+      public Properties method17781() {
+         this.field24962 = true;
+         return this;
+      }
+
+      // $VF: synthetic method
+      public static ItemGroup method17782(Properties var0) {
+         return var0.field24959;
+      }
+
+      // $VF: synthetic method
+      public static Class1978 method17783(Properties var0) {
+         return var0.field24960;
+      }
+
+      // $VF: synthetic method
+      public static Item method17784(Properties var0) {
+         return var0.field24958;
+      }
+
+      // $VF: synthetic method
+      public static int method17785(Properties var0) {
+         return var0.field24957;
+      }
+
+      // $VF: synthetic method
+      public static int method17786(Properties var0) {
+         return var0.field24956;
+      }
+
+      // $VF: synthetic method
+      public static Class9427 method17787(Properties var0) {
+         return var0.field24961;
+      }
+
+      // $VF: synthetic method
+      public static boolean method17788(Properties var0) {
+         return var0.field24962;
+      }
    }
 }

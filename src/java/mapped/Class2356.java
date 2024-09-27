@@ -4,6 +4,7 @@ import com.google.common.collect.ForwardingList;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.NonNullList;
 
 import java.util.List;
 

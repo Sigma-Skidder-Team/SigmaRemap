@@ -2,7 +2,7 @@ package net.minecraft.network.play.server;
 
 import com.google.common.collect.Lists;
 import com.mojang.datafixers.util.Pair;
-import mapped.EquipmentSlotType;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.client.network.play.IClientPlayNetHandler;

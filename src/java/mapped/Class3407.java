@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -51,7 +53,7 @@ public class Class3407 extends Block {
             BlockPos var14 = var8.method8349(var13);
             BlockState var15 = var1.getBlockState(var14);
             FluidState var16 = var1.getFluidState(var14);
-            Class8649 var17 = var15.getMaterial();
+            Material var17 = var15.getMaterial();
             if (var16.method23486(FluidTags.field40469)) {
                if (var15.getBlock() instanceof Class3405 && ((Class3405)var15.getBlock()).method11533(var1, var14, var15) != Class9479.field44064) {
                   var6++;
@@ -59,7 +61,7 @@ public class Class3407 extends Block {
                      var5.add(new Class6793<BlockPos, Integer>(var14, var9 + 1));
                   }
                } else if (!(var15.getBlock() instanceof Class3404)) {
-                  if (var17 == Class8649.field38937 || var17 == Class8649.field38940) {
+                  if (var17 == Material.field38937 || var17 == Material.field38940) {
                      TileEntity var18 = !var15.getBlock().isTileEntityProvider() ? null : var1.getTileEntity(var14);
                      method11555(var15, var1, var14, var18);
                      var1.setBlockState(var14, Blocks.AIR.method11579(), 3);

@@ -60,7 +60,7 @@ public class Class3389 extends Block {
       } else if (method11984(var9) && method11985(var1)) {
          method11989(var2, var3, var1);
          if (!var4.abilities.isCreativeMode) {
-            var9.method32182(1);
+            var9.shrink(1);
          }
 
          return ActionResultType.method9002(var2.isRemote);

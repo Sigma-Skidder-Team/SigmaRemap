@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
@@ -13,6 +15,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Direction;
@@ -190,7 +193,7 @@ public class Class907 extends Entity {
          int var5 = MathHelper.ceil(var1 - 1.0F);
          if (var5 > 0) {
             List<Entity> var6 = Lists.newArrayList(this.world.method7181(this, this.getBoundingBox()));
-            boolean var7 = this.field5176.method23446(BlockTags.field32765);
+            boolean var7 = this.field5176.isIn(BlockTags.field32765);
             DamageSource var8 = !var7 ? DamageSource.field39009 : DamageSource.field39008;
 
             for (Entity var10 : var6) {
@@ -229,7 +232,7 @@ public class Class907 extends Entity {
       this.field5176 = Class8354.method29285(var1.getCompound("BlockState"));
       this.field5177 = var1.getInt("Time");
       if (!var1.contains("HurtEntities", 99)) {
-         if (this.field5176.method23446(BlockTags.field32765)) {
+         if (this.field5176.isIn(BlockTags.field32765)) {
             this.field5180 = true;
          }
       } else {

@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.command.Command;
 import com.mentalfrostbyte.jello.command.CommandException;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.Class6669;
-import mapped.Class8623;
+import mapped.ChatCommandArguments;
 
 
 public class Insult extends Command {
@@ -339,7 +339,7 @@ public class Insult extends Command {
    }
 
    @Override
-   public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
       if (var2.length <= 0) {
          MultiUtilities.sendChatMessage(method18332());
       } else {

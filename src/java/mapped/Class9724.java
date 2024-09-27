@@ -1,6 +1,7 @@
 package mapped;
 
-import java.util.HashMap;
+import net.minecraft.crash.CrashReport;
+import net.minecraft.crash.CrashReportCategory;
 
 public class Class9724 {
    public static void method38083(CrashReport var0, CrashReportCategory var1) {

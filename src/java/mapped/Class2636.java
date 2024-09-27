@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.SoundEvents;
@@ -56,9 +58,9 @@ public class Class2636 extends Class2628 {
             int var4 = var3.<Integer>method23463(Class3484.field19342);
             var3.method23465(Class3484.field19342, Integer.valueOf(1));
             int var5 = 1 + this.field16957.world.rand.nextInt(2) + (var4 != 3 ? 0 : 1);
-            ItemStack var6 = this.field16957.getItemStackFromSlot(EquipmentSlotType.field13731);
+            ItemStack var6 = this.field16957.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
             if (var6.isEmpty()) {
-               this.field16957.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field38170));
+               this.field16957.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field38170));
                var5--;
             }
 

@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.Material;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -82,8 +83,8 @@ public class Class9169 {
    public boolean method34251(IBlockReader var1, int var2) {
       BlockPos var5 = new BlockPos(this.field42089, (double)(this.method34250(var1, var2) - 1), this.field42090);
       BlockState var6 = var1.getBlockState(var5);
-      Class8649 var7 = var6.getMaterial();
-      return var5.getY() < var2 && !var7.isLiquid() && var7 != Class8649.field38945;
+      Material var7 = var6.getMaterial();
+      return var5.getY() < var2 && !var7.isLiquid() && var7 != Material.field38945;
    }
 
    public void method34252(Random var1, double var2, double var4, double var6, double var8) {

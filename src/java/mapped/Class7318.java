@@ -32,12 +32,12 @@ public class Class7318 {
 
    public static Consumer<ItemStack> method23179(Consumer<ItemStack> var0) {
       return var1 -> {
-         if (var1.getCount() >= var1.method32113()) {
+         if (var1.getCount() >= var1.getMaxStackSize()) {
             int var4 = var1.getCount();
 
             while (var4 > 0) {
                ItemStack var5 = var1.copy();
-               var5.method32180(Math.min(var1.method32113(), var4));
+               var5.setCount(Math.min(var1.getMaxStackSize(), var4));
                var4 -= var5.getCount();
                var0.accept(var5);
             }
@@ -124,7 +124,7 @@ public class Class7318 {
       while (var2 - var1.size() - var6.size() > 0 && !var6.isEmpty()) {
          ItemStack var11 = (ItemStack)var6.remove(MathHelper.method37782(var3, 0, var6.size() - 1));
          int var9 = MathHelper.method37782(var3, 1, var11.getCount() / 2);
-         ItemStack var10 = var11.method32106(var9);
+         ItemStack var10 = var11.split(var9);
          if (var11.getCount() > 1 && var3.nextBoolean()) {
             var6.add(var11);
          } else {

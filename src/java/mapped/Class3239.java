@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
@@ -54,7 +55,7 @@ public class Class3239 extends Class3238 {
    }
 
    private boolean method11645(Block var1) {
-      return var1.isIn(BlockTags.field32771) && var1.isIn(BlockTags.field32743) == this.method11579().method23446(BlockTags.field32743);
+      return var1.isIn(BlockTags.field32771) && var1.isIn(BlockTags.field32743) == this.method11579().isIn(BlockTags.field32743);
    }
 
    @Override

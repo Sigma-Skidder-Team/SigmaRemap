@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.LoadingCache;
+import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3i;
@@ -11,12 +12,12 @@ import java.util.function.Predicate;
 import javax.annotation.Nullable;
 
 public class Class9803 {
-   private final Predicate<Class9632>[][][] field45823;
+   private final Predicate<CachedBlockInfo>[][][] field45823;
    private final int field45824;
    private final int field45825;
    private final int field45826;
 
-   public Class9803(Predicate<Class9632>[][][] var1) {
+   public Class9803(Predicate<CachedBlockInfo>[][][] var1) {
       this.field45823 = var1;
       this.field45824 = var1.length;
       if (this.field45824 <= 0) {
@@ -45,11 +46,11 @@ public class Class9803 {
    }
 
    @Nullable
-   private Class9086 method38655(BlockPos var1, Direction var2, Direction var3, LoadingCache<BlockPos, Class9632> var4) {
+   private Class9086 method38655(BlockPos var1, Direction var2, Direction var3, LoadingCache<BlockPos, CachedBlockInfo> var4) {
       for (int var7 = 0; var7 < this.field45826; var7++) {
          for (int var8 = 0; var8 < this.field45825; var8++) {
             for (int var9 = 0; var9 < this.field45824; var9++) {
-               if (!this.field45823[var9][var8][var7].test((Class9632)var4.getUnchecked(method38658(var1, var2, var3, var7, var8, var9)))) {
+               if (!this.field45823[var9][var8][var7].test((CachedBlockInfo)var4.getUnchecked(method38658(var1, var2, var3, var7, var8, var9)))) {
                   return null;
                }
             }
@@ -80,7 +81,7 @@ public class Class9803 {
       return null;
    }
 
-   public static LoadingCache<BlockPos, Class9632> method38657(IWorldReader var0, boolean var1) {
+   public static LoadingCache<BlockPos, CachedBlockInfo> method38657(IWorldReader var0, boolean var1) {
       return CacheBuilder.newBuilder().build(new Class4564(var0, var1));
    }
 

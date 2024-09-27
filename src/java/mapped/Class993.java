@@ -1,11 +1,13 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -142,14 +144,14 @@ public class Class993 extends AbstractMinecartEntity {
 
    @Override
    public float getExplosionResistance(Explosion var1, IBlockReader var2, BlockPos var3, BlockState var4, FluidState var5, float var6) {
-      return this.method4074() && (var4.method23446(BlockTags.field32766) || var2.getBlockState(var3.up()).method23446(BlockTags.field32766))
+      return this.method4074() && (var4.isIn(BlockTags.field32766) || var2.getBlockState(var3.up()).isIn(BlockTags.field32766))
          ? 0.0F
          : super.getExplosionResistance(var1, var2, var3, var4, var5, var6);
    }
 
    @Override
    public boolean method3369(Explosion var1, IBlockReader var2, BlockPos var3, BlockState var4, float var5) {
-      return this.method4074() && (var4.method23446(BlockTags.field32766) || var2.getBlockState(var3.up()).method23446(BlockTags.field32766))
+      return this.method4074() && (var4.isIn(BlockTags.field32766) || var2.getBlockState(var3.up()).isIn(BlockTags.field32766))
          ? false
          : super.method3369(var1, var2, var3, var4, var5);
    }

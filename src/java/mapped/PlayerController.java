@@ -257,7 +257,7 @@ public class PlayerController {
                } else {
                   int var13 = var8.getCount();
                   var12 = var8.onItemUse(var14);
-                  var8.method32180(var13);
+                  var8.setCount(var13);
                }
 
                return var12;

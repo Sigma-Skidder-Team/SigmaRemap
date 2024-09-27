@@ -2,10 +2,12 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -63,7 +65,7 @@ public class Class1030 extends Class1025 {
          .method21849(Attributes.MOVEMENT_SPEED, 0.35F)
          .method21849(Attributes.field42106, 12.0)
          .method21849(Attributes.field42105, 24.0)
-         .method21849(Attributes.field42110, 5.0);
+         .method21849(Attributes.ATTACK_DAMAGE, 5.0);
    }
 
    @Override
@@ -109,7 +111,7 @@ public class Class1030 extends Class1025 {
    @Override
    public void method4270(Class9755 var1) {
       if (this.method4551() == null) {
-         this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37823));
+         this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37823));
       }
    }
 
@@ -159,11 +161,11 @@ public class Class1030 extends Class1025 {
       boolean var8 = this.rand.nextFloat() <= var6.method25436();
       if (var8) {
          HashMap var9 = Maps.newHashMap();
-         var9.put(Class8122.field34908, Integer.valueOf(var7));
+         var9.put(Enchantments.SHARPNESS, Integer.valueOf(var7));
          EnchantmentHelper.method26314(var9, var5);
       }
 
-      this.setItemStackToSlot(EquipmentSlotType.field13731, var5);
+      this.setItemStackToSlot(EquipmentSlotType.MAINHAND, var5);
    }
 
    // $VF: synthetic method

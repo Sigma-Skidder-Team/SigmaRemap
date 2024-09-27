@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.dispenser.IBlockSource;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -15,7 +16,7 @@ public class Class6225 extends Class6218 {
    }
 
    @Override
-   public ItemStack method19192(Class2956 var1, ItemStack var2) {
+   public ItemStack dispenseStack(IBlockSource var1, ItemStack var2) {
       Direction var5 = var1.method11324().<Direction>method23463(Class3357.field18899);
       ServerWorld var6 = var1.method11326();
       double var7 = var1.getX() + (double)((float)var5.method539() * 1.125F);
@@ -37,12 +38,12 @@ public class Class6225 extends Class6218 {
       var16.method4171(this.field27721);
       var16.rotationYaw = var5.method551();
       var6.addEntity(var16);
-      var2.method32182(1);
+      var2.shrink(1);
       return var2;
    }
 
    @Override
-   public void method19193(Class2956 var1) {
+   public void method19193(IBlockSource var1) {
       var1.method11326().playEvent(1000, var1.method11323(), 0);
    }
 }

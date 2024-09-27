@@ -42,7 +42,7 @@ public class Class8204 implements Class8202 {
    }
 
    @Override
-   public int method28507() {
+   public int size() {
       return 4;
    }
 }

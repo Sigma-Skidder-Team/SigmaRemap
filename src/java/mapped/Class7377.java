@@ -6,6 +6,8 @@ import com.mojang.serialization.MapCodec;
 import com.mentalfrostbyte.jello.Client;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -33,8 +35,8 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
    private final int field31564;
    private final boolean field31565;
    private final boolean field31566;
-   private final Class8649 field31567;
-   private final Class7210 field31568;
+   private final Material field31567;
+   private final MaterialColor field31568;
    private final float field31569;
    private final boolean field31570;
    private final boolean field31571;
@@ -52,7 +54,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       this.field31565 = var1.method11534(this.method23457());
       this.field31566 = AbstractBlock.method26655(var6);
       this.field31567 = AbstractBlock.method26643(var6);
-      this.field31568 = (Class7210) AbstractBlock.method26653(var6).apply(this.method23457());
+      this.field31568 = (MaterialColor) AbstractBlock.method26653(var6).apply(this.method23457());
       this.field31569 = AbstractBlock.method26656(var6);
       this.field31570 = AbstractBlock.method26657(var6);
       this.field31571 = AbstractBlock.method26658(var6);
@@ -73,7 +75,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.field31579;
    }
 
-   public Class8649 getMaterial() {
+   public Material getMaterial() {
       return this.field31567;
    }
 
@@ -117,7 +119,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.field31566;
    }
 
-   public Class7210 method23394(IBlockReader var1, BlockPos var2) {
+   public MaterialColor method23394(IBlockReader var1, BlockPos var2) {
       return this.field31568;
    }
 
@@ -161,7 +163,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11649(this.method23457(), var1, var2);
    }
 
-   public float method23405(IBlockReader var1, BlockPos var2) {
+   public float getBlockHardness(IBlockReader var1, BlockPos var2) {
       return this.field31569;
    }
 
@@ -173,7 +175,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11515(this.method23457(), var1, var2, var3);
    }
 
-   public Class2315 method23408() {
+   public PushReaction method23408() {
       return this.getBlock().method11689(this.method23457());
    }
 
@@ -349,7 +351,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.getBlock().method11528(this.method23457(), var1, var2);
    }
 
-   public boolean method23446(ITag<Block> var1) {
+   public boolean isIn(ITag<Block> var1) {
       return this.getBlock().isIn(var1);
    }
 

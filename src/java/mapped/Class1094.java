@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.util.Util;

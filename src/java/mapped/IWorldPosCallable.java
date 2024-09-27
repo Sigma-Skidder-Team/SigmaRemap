@@ -16,7 +16,7 @@ public interface IWorldPosCallable {
 
    <T> Optional<T> method31713(BiFunction<World, BlockPos, T> var1);
 
-   default <T> T method31715(BiFunction<World, BlockPos, T> var1, T var2) {
+   default <T> T applyOrElse(BiFunction<World, BlockPos, T> var1, T var2) {
       return this.<T>method31713(var1).orElse((T)var2);
    }
 

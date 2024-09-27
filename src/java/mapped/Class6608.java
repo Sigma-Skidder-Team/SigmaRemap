@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.world.GameType;
 
 import java.util.UUID;

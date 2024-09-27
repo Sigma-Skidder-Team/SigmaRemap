@@ -8,10 +8,12 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -250,7 +252,7 @@ public final class Class8170 {
       if (!var2.method23456(var0, var1)) {
          if (!var2.method23401()) {
             if (var3.method23474()) {
-               return !var2.method23446(BlockTags.field32811) ? !var4.method33220(var2) : false;
+               return !var2.isIn(BlockTags.field32811) ? !var4.method33220(var2) : false;
             } else {
                return false;
             }

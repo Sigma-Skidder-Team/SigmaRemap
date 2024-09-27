@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -57,7 +58,7 @@ public class Class6199 implements Class6196 {
 
    @Override
    public void method19103(ClientWorld var1, BlockPos var2, BlockState var3, float var4) {
-      boolean var7 = var3.method23446(BlockTags.field32751);
+      boolean var7 = var3.isIn(BlockTags.field32751);
       if (var7 && var4 > 0.0F) {
          if (this.field27668 != null) {
             this.field27668.method24896(var4);

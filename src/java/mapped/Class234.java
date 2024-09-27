@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.math.MathHelper;
@@ -15,7 +16,7 @@ public class Class234 extends Class219<AbstractClientPlayerEntity, Class2894<Abs
 
    public void method820(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4, float var5, float var6, float var7, float var8, float var9, float var10) {
       if (var4.method5368() && !var4.isInvisible() && var4.method2962(Class2318.field15879) && var4.method5372() != null) {
-         ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.field13735);
+         ItemStack var13 = var4.getItemStackFromSlot(EquipmentSlotType.CHEST);
          if (var13.getItem() != Items.field38120) {
             var1.push();
             var1.translate(0.0, 0.0, 0.125);

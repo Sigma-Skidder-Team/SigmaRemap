@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -52,12 +53,12 @@ public class Class6991 extends Class6990 {
          var1 = var5;
       }
 
-      if (!this.field30244.getBlockState(var1).getMaterial().method31086()) {
+      if (!this.field30244.getBlockState(var1).getMaterial().isSolid()) {
          return super.method21651(var1, var2);
       } else {
          BlockPos var6 = var1.up();
 
-         while (var6.getY() < this.field30244.method7034() && this.field30244.getBlockState(var6).getMaterial().method31086()) {
+         while (var6.getY() < this.field30244.method7034() && this.field30244.getBlockState(var6).getMaterial().isSolid()) {
             var6 = var6.up();
          }
 

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.dispenser.IDispenseItemBehavior;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
@@ -9,14 +10,14 @@ import net.minecraft.world.server.ServerWorld;
 
 public class Class3358 extends Class3357 {
    private static String[] field18902;
-   private static final Class6226 field18903 = new Class6218();
+   private static final IDispenseItemBehavior field18903 = new Class6218();
 
    public Class3358(AbstractBlock var1) {
       super(var1);
    }
 
    @Override
-   public Class6226 method11933(ItemStack var1) {
+   public IDispenseItemBehavior method11933(ItemStack var1) {
       return field18903;
    }
 
@@ -37,12 +38,12 @@ public class Class3358 extends Class3357 {
             IInventory var10 = Class936.method3715(var1, var2.method8349(var9));
             ItemStack var12;
             if (var10 != null) {
-               var12 = Class936.method3708(var6, var10, var8.copy().method32106(1), var9.method536());
+               var12 = Class936.method3708(var6, var10, var8.copy().split(1), var9.method536());
                if (!var12.isEmpty()) {
                   var12 = var8.copy();
                } else {
                   var12 = var8.copy();
-                  var12.method32182(1);
+                  var12.shrink(1);
                }
             } else {
                var12 = field18903.method19196(var5, var8);

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
+import net.minecraft.enchantment.IVanishable;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -15,10 +17,10 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
 
-public class Class3271 extends Item implements Class3260 {
+public class Class3271 extends Item implements IVanishable {
    private static final Logger field18771 = LogManager.getLogger();
 
-   public Class3271(Class5643 var1) {
+   public Class3271(Properties var1) {
       super(var1);
    }
 
@@ -70,12 +72,12 @@ public class Class3271 extends Item implements Class3260 {
             CompoundNBT var10 = !var7.method32141() ? new CompoundNBT() : var7.method32142().method79();
             var9.method32148(var10);
             if (!var6.abilities.isCreativeMode) {
-               var7.method32182(1);
+               var7.shrink(1);
             }
 
             this.method11791(var5.getDimensionKey(), var4, var10);
             if (!var6.inventory.method4045(var9)) {
-               var6.method2882(var9, false);
+               var6.dropItem(var9, false);
             }
          } else {
             this.method11791(var5.getDimensionKey(), var4, var7.getOrCreateTag());

@@ -17,6 +17,7 @@ import net.minecraft.client.gui.screen.inventory.ChestScreen;
 import net.minecraft.inventory.container.ClickType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.SwordItem;
 import net.minecraft.network.play.client.CAnimateHandPacket;
 import net.minecraft.network.play.client.CPlayerTryUseItemOnBlockPacket;
 import net.minecraft.tileentity.TileEntity;
@@ -158,8 +159,8 @@ public class ChestStealer extends Module {
                         } else {
                             boolean var5 = true;
 
-                            for (Slot var7 : var4.field4727.field25468) {
-                                if (var7.getHasStack() && var7.field25579 < var4.field4727.method18165() * 9) {
+                            for (Slot var7 : var4.field4727.inventorySlots) {
+                                if (var7.getHasStack() && var7.slotNumber < var4.field4727.method18165() * 9) {
                                     ItemStack var8 = var7.getStack();
                                     if (!this.method16369(var8)) {
                                         if (!this.field23621) {
@@ -171,9 +172,9 @@ public class ChestStealer extends Module {
                                         }
 
                                         if (!this.getBooleanValueFromSetttingName("Fix ViaVersion")) {
-                                            InvManagerUtils.method25869(var4.field4727.field25471, var7.field25579, 0, ClickType.field14695, mc.player);
+                                            InvManagerUtils.method25869(var4.field4727.windowId, var7.slotNumber, 0, ClickType.QUICK_MOVE, mc.player);
                                         } else {
-                                            InvManagerUtils.fixedClick(var4.field4727.field25471, var7.field25579, 0, ClickType.field14695, mc.player, true);
+                                            InvManagerUtils.fixedClick(var4.field4727.windowId, var7.slotNumber, 0, ClickType.QUICK_MOVE, mc.player, true);
                                         }
 
                                         this.field23623.reset();
@@ -286,18 +287,18 @@ public class ChestStealer extends Module {
         Item var4 = var1.getItem();
         if (!this.getBooleanValueFromSetttingName("Ignore Junk")) {
             return false;
-        } else if (!(var4 instanceof ItemSword)) {
+        } else if (!(var4 instanceof SwordItem)) {
             if (var4 instanceof Class3268) {
                 return !InvManager.method16442(var1);
             } else if (!(var4 instanceof Class3265)) {
-                if (var4 instanceof Class3270) {
-                    return !InvManager.method16443(var1);
+                if (var4 instanceof HoeItem) {
+                    return !InvManager.isHoe(var1);
                 } else if (!(var4 instanceof Class3323)) {
                     if (var4 instanceof Class3292) {
                         return !BlockFly.method16733(var4);
                     } else if (!(var4 instanceof Class3308)
                             && (!(var4 instanceof BowItem) || !Client.getInstance().getModuleManager().getModuleByClass(InvManager.class).getBooleanValueFromSetttingName("Archery"))) {
-                        if (var4 == Items.field37883 && Client.getInstance().getModuleManager().getModuleByClass(AutoMLG.class).isEnabled()) {
+                        if (var4 == Items.WATER_BUCKET && Client.getInstance().getModuleManager().getModuleByClass(AutoMLG.class).isEnabled()) {
                             return false;
                         } else {
                             ArrayList var5 = new ArrayList<Item>(
@@ -309,9 +310,9 @@ public class ChestStealer extends Module {
                                             Items.field37838,
                                             Items.field37835,
                                             Items.field37389,
-                                            Items.field37882,
-                                            Items.field37884,
-                                            Items.field37883,
+                                            Items.BUCKET,
+                                            Items.LAVA_BUCKET,
+                                            Items.WATER_BUCKET,
                                             Items.field37424,
                                             Items.field38070,
                                             Items.field38045,
@@ -322,10 +323,10 @@ public class ChestStealer extends Module {
                                             Items.field37960,
                                             Items.field37959,
                                             Items.field37841,
-                                            Items.field37890,
+                                            Items.LEATHER,
                                             Items.field37972,
                                             Items.field37316,
-                                            Items.field37888,
+                                            Items.SNOWBALL,
                                             Items.field37906
                                     )
                             );

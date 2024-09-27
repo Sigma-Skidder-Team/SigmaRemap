@@ -98,7 +98,7 @@ public abstract class Class1009 extends Class1046 implements Class1008 {
    }
 
    public static Class7037 method4343() {
-      return MobEntity.method4220().method21848(Attributes.field42110);
+      return MobEntity.method4220().method21848(Attributes.ATTACK_DAMAGE);
    }
 
    @Override

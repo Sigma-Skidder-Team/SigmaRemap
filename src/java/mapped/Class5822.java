@@ -1,12 +1,15 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.IntReferenceHolder;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.registry.Registry;
 
@@ -18,7 +21,7 @@ public class Class5822 extends Container {
    private final IInventory field25505 = new Class983(this, 2);
    private final IWorldPosCallable field25506;
    private final Random field25507 = new Random();
-   private final Class4923 field25508 = Class4923.method15238();
+   private final IntReferenceHolder field25508 = IntReferenceHolder.method15238();
    public final int[] field25509 = new int[3];
    public final int[] field25510 = new int[]{-1, -1, -1};
    public final int[] field25511 = new int[]{-1, -1, -1};
@@ -43,16 +46,16 @@ public class Class5822 extends Container {
          this.addSlot(new Slot(var2, var8, 8 + var8 * 18, 142));
       }
 
-      this.trackInt(Class4923.method15237(this.field25509, 0));
-      this.trackInt(Class4923.method15237(this.field25509, 1));
-      this.trackInt(Class4923.method15237(this.field25509, 2));
+      this.trackInt(IntReferenceHolder.method15237(this.field25509, 0));
+      this.trackInt(IntReferenceHolder.method15237(this.field25509, 1));
+      this.trackInt(IntReferenceHolder.method15237(this.field25509, 2));
       this.trackInt(this.field25508).method15235(var2.field5444.method2929());
-      this.trackInt(Class4923.method15237(this.field25510, 0));
-      this.trackInt(Class4923.method15237(this.field25510, 1));
-      this.trackInt(Class4923.method15237(this.field25510, 2));
-      this.trackInt(Class4923.method15237(this.field25511, 0));
-      this.trackInt(Class4923.method15237(this.field25511, 1));
-      this.trackInt(Class4923.method15237(this.field25511, 2));
+      this.trackInt(IntReferenceHolder.method15237(this.field25510, 0));
+      this.trackInt(IntReferenceHolder.method15237(this.field25510, 1));
+      this.trackInt(IntReferenceHolder.method15237(this.field25510, 2));
+      this.trackInt(IntReferenceHolder.method15237(this.field25511, 0));
+      this.trackInt(IntReferenceHolder.method15237(this.field25511, 1));
+      this.trackInt(IntReferenceHolder.method15237(this.field25511, 2));
    }
 
    @Override
@@ -95,7 +98,7 @@ public class Class5822 extends Container {
                   }
                }
 
-               this.field25507.setSeed((long)this.field25508.method15234());
+               this.field25507.setSeed((long)this.field25508.get());
 
                for (int var10 = 0; var10 < 3; var10++) {
                   this.field25509[var10] = EnchantmentHelper.method26341(this.field25507, var10, var6, var4);
@@ -111,7 +114,7 @@ public class Class5822 extends Container {
                      List var12 = this.method18183(var4, var11, this.field25509[var11]);
                      if (var12 != null && !var12.isEmpty()) {
                         Class6694 var9 = (Class6694)var12.get(this.field25507.nextInt(var12.size()));
-                        this.field25510[var11] = Registry.field16073.getId(var9.field29316);
+                        this.field25510[var11] = Registry.ENCHANTMENT.getId(var9.field29316);
                         this.field25511[var11] = var9.field29317;
                      }
                   }
@@ -165,7 +168,7 @@ public class Class5822 extends Container {
                }
 
                if (!var1.abilities.isCreativeMode) {
-                  var6.method32182(var7);
+                  var6.shrink(var7);
                   if (var6.isEmpty()) {
                      this.field25505.setInventorySlotContents(1, ItemStack.EMPTY);
                   }
@@ -189,7 +192,7 @@ public class Class5822 extends Container {
    }
 
    private List<Class6694> method18183(ItemStack var1, int var2, int var3) {
-      this.field25507.setSeed((long)(this.field25508.method15234() + var2));
+      this.field25507.setSeed((long)(this.field25508.get() + var2));
       List var6 = EnchantmentHelper.method26343(this.field25507, var1, var3, false);
       if (var1.getItem() == Items.field37900 && var6.size() > 1) {
          var6.remove(this.field25507.nextInt(var6.size()));
@@ -204,7 +207,7 @@ public class Class5822 extends Container {
    }
 
    public int method18185() {
-      return this.field25508.method15234();
+      return this.field25508.get();
    }
 
    @Override
@@ -221,21 +224,21 @@ public class Class5822 extends Container {
    @Override
    public ItemStack transferStackInSlot(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
-      Slot var6 = this.field25468.get(var2);
+      Slot var6 = this.inventorySlots.get(var2);
       if (var6 != null && var6.getHasStack()) {
          ItemStack var7 = var6.getStack();
          var5 = var7.copy();
          if (var2 != 0) {
             if (var2 != 1) {
                if (var7.getItem() != Items.field37917) {
-                  if (this.field25468.get(0).getHasStack() || !this.field25468.get(0).isItemValid(var7)) {
+                  if (this.inventorySlots.get(0).getHasStack() || !this.inventorySlots.get(0).isItemValid(var7)) {
                      return ItemStack.EMPTY;
                   }
 
                   ItemStack var8 = var7.copy();
-                  var8.method32180(1);
-                  var7.method32182(1);
-                  this.field25468.get(0).putStack(var8);
+                  var8.setCount(1);
+                  var7.shrink(1);
+                  this.inventorySlots.get(0).putStack(var8);
                } else if (!this.mergeItemStack(var7, 1, 2, true)) {
                   return ItemStack.EMPTY;
                }

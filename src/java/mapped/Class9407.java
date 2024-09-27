@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.gson.JsonElement;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 
@@ -1563,7 +1564,7 @@ public class Class9407 {
    }
 
    private void method35889() {
-      this.method35807(Items.field37887);
+      this.method35807(Items.REDSTONE_DUST);
       this.field43642
          .accept(
             Class5147.method15932(Blocks.REDSTONE_WIRE)

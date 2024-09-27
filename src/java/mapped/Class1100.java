@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -63,7 +64,7 @@ public class Class1100 extends Class1009 {
    }
 
    public static Class7037 method5269() {
-      return Class1009.method4343().method21849(Attributes.field42105, 14.0).method21849(Attributes.field42110, 4.0);
+      return Class1009.method4343().method21849(Attributes.field42105, 14.0).method21849(Attributes.ATTACK_DAMAGE, 4.0);
    }
 
    @Override
@@ -174,8 +175,8 @@ public class Class1100 extends Class1009 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37820));
-      this.method4279(EquipmentSlotType.field13731, 0.0F);
+      this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37820));
+      this.method4279(EquipmentSlotType.MAINHAND, 0.0F);
    }
 
    // $VF: synthetic method

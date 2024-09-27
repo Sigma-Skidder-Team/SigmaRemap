@@ -5,6 +5,7 @@ import com.mojang.serialization.Dynamic;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.EntityType;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -51,7 +52,7 @@ public class Class1036 extends Class1035 {
    }
 
    public static Class7037 method4637() {
-      return Class1009.method4343().method21849(Attributes.field42105, 50.0).method21849(Attributes.MOVEMENT_SPEED, 0.35F).method21849(Attributes.field42110, 7.0);
+      return Class1009.method4343().method21849(Attributes.field42105, 50.0).method21849(Attributes.MOVEMENT_SPEED, 0.35F).method21849(Attributes.ATTACK_DAMAGE, 7.0);
    }
 
    @Nullable
@@ -64,7 +65,7 @@ public class Class1036 extends Class1035 {
 
    @Override
    public void method4270(Class9755 var1) {
-      this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37818));
+      this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37818));
    }
 
    @Override

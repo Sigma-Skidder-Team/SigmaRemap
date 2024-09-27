@@ -1,6 +1,8 @@
 package net.minecraft.nbt;
 
 import mapped.*;
+import net.minecraft.crash.CrashReport;
+import net.minecraft.crash.CrashReportCategory;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;

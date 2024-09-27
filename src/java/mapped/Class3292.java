@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -21,7 +22,7 @@ public class Class3292 extends Item {
    /** @deprecated */
    private final Block field18801;
 
-   public Class3292(Block var1, Class5643 var2) {
+   public Class3292(Block var1, Properties var2) {
       super(var2);
       this.field18801 = var1;
    }
@@ -29,7 +30,7 @@ public class Class3292 extends Item {
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
       ActionResultType var4 = this.method11834(new Class5909(var1));
-      return !var4.isSuccessOrConsume() && this.method11744() ? this.method11700(var1.method18360(), var1.method18358(), var1.method18359()).method20694() : var4;
+      return !var4.isSuccessOrConsume() && this.isFood() ? this.method11700(var1.method18360(), var1.method18358(), var1.method18359()).method20694() : var4;
    }
 
    public ActionResultType method11834(Class5909 var1) {
@@ -60,7 +61,7 @@ public class Class3292 extends Item {
                SoundType var12 = var10.getSoundType();
                var7.method6742(var8, var6, this.method11835(var10), Class2266.field14732, (var12.getVolume() + 1.0F) / 2.0F, var12.method29711() * 0.8F);
                if (var8 == null || !var8.abilities.isCreativeMode) {
-                  var9.method32182(1);
+                  var9.shrink(1);
                }
 
                return ActionResultType.method9002(var7.isRemote);

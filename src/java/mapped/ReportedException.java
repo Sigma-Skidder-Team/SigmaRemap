@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.crash.CrashReport;
+
 public class ReportedException extends RuntimeException {
    private static String[] field16613;
    private final CrashReport field16614;

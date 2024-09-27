@@ -1,6 +1,7 @@
 package net.minecraft.entity;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.passive.WolfEntity;
 import com.google.common.collect.ImmutableSet;
 import java.util.Optional;
@@ -17,6 +18,7 @@ import net.minecraft.entity.passive.fish.SalmonEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -384,7 +386,7 @@ public class EntityType<T extends Entity> {
    private final EntitySize field41125;
 
    private static <T extends Entity> EntityType<T> method33197(String var0, Class8878<T> var1) {
-      return Registry.<EntityType<T>>method9194(Registry.ENTITY_TYPE, var0, var1.method32309(var0));
+      return Registry.<EntityType<T>>register(Registry.ENTITY_TYPE, var0, var1.method32309(var0));
    }
 
    public static ResourceLocation method33198(EntityType<?> var0) {
@@ -588,7 +590,7 @@ public class EntityType<T extends Entity> {
          return false;
       } else {
          return this.field41118
-               || !var1.method23446(BlockTags.field32798)
+               || !var1.isIn(BlockTags.field32798)
                   && !var1.isIn(Blocks.field36890)
                   && !Class3244.method11655(var1)
                   && !var1.isIn(Blocks.LAVA)

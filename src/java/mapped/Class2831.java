@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 import net.minecraft.advancements.Advancement;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;

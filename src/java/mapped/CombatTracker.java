@@ -6,10 +6,12 @@ import java.util.Optional;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -38,7 +40,7 @@ public class CombatTracker {
          }
       } else {
          BlockState var4 = this.field34542.world.getBlockState((BlockPos)var3.get());
-         if (var4.isIn(Blocks.LADDER) || var4.method23446(BlockTags.field32768)) {
+         if (var4.isIn(Blocks.LADDER) || var4.isIn(BlockTags.field32768)) {
             this.field34548 = "ladder";
          } else if (!var4.isIn(Blocks.VINE)) {
             if (var4.isIn(Blocks.field37086) || var4.isIn(Blocks.field37087)) {

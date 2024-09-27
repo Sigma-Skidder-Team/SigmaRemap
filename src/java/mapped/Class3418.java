@@ -2,7 +2,10 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.SwordItem;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -73,7 +76,7 @@ public class Class3418 extends Block implements Class3196 {
       FluidState var4 = var1.method18360().getFluidState(var1.method18345());
       if (var4.method23474()) {
          BlockState var5 = var1.method18360().getBlockState(var1.method18345().down());
-         if (!var5.method23446(BlockTags.field32787)) {
+         if (!var5.isIn(BlockTags.field32787)) {
             return null;
          } else if (!var5.isIn(Blocks.field37008)) {
             if (var5.isIn(Blocks.field37009)) {
@@ -120,7 +123,7 @@ public class Class3418 extends Block implements Class3196 {
 
    @Override
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
-      return var2.getBlockState(var3.down()).method23446(BlockTags.field32787);
+      return var2.getBlockState(var3.down()).isIn(BlockTags.field32787);
    }
 
    @Override
@@ -170,7 +173,7 @@ public class Class3418 extends Block implements Class3196 {
 
    @Override
    public float method11997(BlockState var1, PlayerEntity var2, IBlockReader var3, BlockPos var4) {
-      return !(var2.getHeldItemMainhand().getItem() instanceof ItemSword) ? super.method11997(var1, var2, var3, var4) : 1.0F;
+      return !(var2.getHeldItemMainhand().getItem() instanceof SwordItem) ? super.method11997(var1, var2, var3, var4) : 1.0F;
    }
 
    public void method12065(BlockState var1, World var2, BlockPos var3, Random var4, int var5) {

@@ -6,6 +6,8 @@ import java.util.TreeSet;
 import java.util.function.Function;
 
 import net.minecraft.block.Block;
+import net.minecraft.dispenser.IDispenseItemBehavior;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.util.registry.Registry;
@@ -33,7 +35,7 @@ public class Bootstrap {
 
          Class7105.method22140();
          Class9748.method38219();
-         Class6226.method19200();
+         IDispenseItemBehavior.method19200();
          Class8651.method31096();
          Class8384.method29381();
          method25571();
@@ -61,7 +63,7 @@ public class Bootstrap {
       method25567(Registry.ENTITY_TYPE, EntityType::method33210, var2);
       method25567(Registry.EFFECTS, Effect::getName, var2);
       method25567(Registry.ITEM, Item::getTranslationKey, var2);
-      method25567(Registry.field16073, Enchantment::method18819, var2);
+      method25567(Registry.ENCHANTMENT, Enchantment::method18819, var2);
       method25567(Registry.BLOCK, Block::getTranslationKey, var2);
       method25567(Registry.field16080, var0 -> "stat." + var0.toString().replace(':', '.'), var2);
       method25568(var2);

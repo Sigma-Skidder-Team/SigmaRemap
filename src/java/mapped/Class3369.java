@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
@@ -237,8 +239,8 @@ public class Class3369 extends Class3241 {
    }
 
    @Override
-   public Class2315 method11689(BlockState var1) {
-      return Class2315.field15863;
+   public PushReaction method11689(BlockState var1) {
+      return PushReaction.field15863;
    }
 
    @Override

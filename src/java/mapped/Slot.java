@@ -11,7 +11,7 @@ public class Slot {
    private static String[] field25576;
    private final int field25577;
    public final IInventory field25578;
-   public int field25579;
+   public int slotNumber;
    public final int field25580;
    public final int field25581;
 

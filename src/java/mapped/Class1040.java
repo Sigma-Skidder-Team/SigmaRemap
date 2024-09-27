@@ -3,10 +3,12 @@ package mapped;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -115,7 +117,7 @@ public class Class1040 extends ZombieEntity implements Class1041 {
          return ActionResultType.field14819;
       } else {
          if (!var1.abilities.isCreativeMode) {
-            var5.method32182(1);
+            var5.shrink(1);
          }
 
          if (!this.world.isRemote) {
@@ -180,7 +182,7 @@ public class Class1040 extends ZombieEntity implements Class1041 {
                   this.method3302(var9);
                }
             } else {
-               var4.method2963(var8.method8773() + 300, var9);
+               var4.method2963(var8.getIndex() + 300, var9);
             }
          }
       }

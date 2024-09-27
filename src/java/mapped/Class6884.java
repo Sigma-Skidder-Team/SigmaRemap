@@ -9,6 +9,7 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSyntaxException;
 import net.minecraft.entity.ai.attributes.Attribute;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -45,12 +46,12 @@ public class Class6884 {
          JsonArray var5 = new JsonArray();
 
          for (EquipmentSlotType var9 : this.field29837) {
-            var5.add(new JsonPrimitive(var9.method8775()));
+            var5.add(new JsonPrimitive(var9.getName()));
          }
 
          var4.add("slot", var5);
       } else {
-         var4.addProperty("slot", this.field29837[0].method8775());
+         var4.addProperty("slot", this.field29837[0].getName());
       }
 
       return var4;
@@ -68,7 +69,7 @@ public class Class6884 {
          UUID var9 = null;
          EquipmentSlotType[] var10;
          if (JSONUtils.method32755(var0, "slot")) {
-            var10 = new EquipmentSlotType[]{EquipmentSlotType.method8776(JSONUtils.getString(var0, "slot"))};
+            var10 = new EquipmentSlotType[]{EquipmentSlotType.fromString(JSONUtils.getString(var0, "slot"))};
          } else {
             if (!JSONUtils.method32759(var0, "slot")) {
                throw new JsonSyntaxException("Invalid or missing attribute modifier slot; must be either string or array of strings.");
@@ -79,7 +80,7 @@ public class Class6884 {
             int var12 = 0;
 
             for (JsonElement var14 : var11) {
-               var10[var12++] = EquipmentSlotType.method8776(JSONUtils.method32762(var14, "slot"));
+               var10[var12++] = EquipmentSlotType.fromString(JSONUtils.method32762(var14, "slot"));
             }
 
             if (var10.length == 0) {

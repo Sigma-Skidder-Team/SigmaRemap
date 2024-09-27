@@ -2,8 +2,11 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
@@ -43,7 +46,7 @@ public class Class3342 extends Class3198 implements Class3255 {
          if (var5 != null) {
             for (int var6 = 0; var6 < this.method11896().method38654(); var6++) {
                for (int var7 = 0; var7 < this.method11896().method38653(); var7++) {
-                  Class9632 var8 = var5.method33881(var6, var7, 0);
+                  CachedBlockInfo var8 = var5.method33881(var6, var7, 0);
                   var1.setBlockState(var8.method37551(), Blocks.AIR.method11579(), 2);
                   var1.playEvent(2001, var8.method37551(), Block.getStateId(var8.method37548()));
                }
@@ -61,14 +64,14 @@ public class Class3342 extends Class3198 implements Class3255 {
 
             for (int var19 = 0; var19 < this.method11896().method38654(); var19++) {
                for (int var22 = 0; var22 < this.method11896().method38653(); var22++) {
-                  Class9632 var10 = var5.method33881(var19, var22, 0);
+                  CachedBlockInfo var10 = var5.method33881(var19, var22, 0);
                   var1.func_230547_a_(var10.method37551(), Blocks.AIR);
                }
             }
          }
       } else {
          for (int var13 = 0; var13 < this.method11894().method38653(); var13++) {
-            Class9632 var16 = var5.method33881(0, var13, 0);
+            CachedBlockInfo var16 = var5.method33881(0, var13, 0);
             var1.setBlockState(var16.method37551(), Blocks.AIR.method11579(), 2);
             var1.playEvent(2001, var16.method37551(), Block.getStateId(var16.method37548()));
          }
@@ -83,7 +86,7 @@ public class Class3342 extends Class3198 implements Class3255 {
          }
 
          for (int var21 = 0; var21 < this.method11894().method38653(); var21++) {
-            Class9632 var24 = var5.method33881(0, var21, 0);
+            CachedBlockInfo var24 = var5.method33881(0, var21, 0);
             var1.func_230547_a_(var24.method37551(), Blocks.AIR);
          }
       }
@@ -103,7 +106,7 @@ public class Class3342 extends Class3198 implements Class3255 {
       if (this.field18849 == null) {
          this.field18849 = Class9659.method37706()
             .method37705(" ", "#", "#")
-            .method37707('#', Class9632.method37552(Class166.method497(Blocks.SNOW_BLOCK)))
+            .method37707('#', CachedBlockInfo.method37552(Class166.method497(Blocks.SNOW_BLOCK)))
             .method37708();
       }
 
@@ -114,8 +117,8 @@ public class Class3342 extends Class3198 implements Class3255 {
       if (this.field18850 == null) {
          this.field18850 = Class9659.method37706()
             .method37705("^", "#", "#")
-            .method37707('^', Class9632.method37552(field18853))
-            .method37707('#', Class9632.method37552(Class166.method497(Blocks.SNOW_BLOCK)))
+            .method37707('^', CachedBlockInfo.method37552(field18853))
+            .method37707('#', CachedBlockInfo.method37552(Class166.method497(Blocks.SNOW_BLOCK)))
             .method37708();
       }
 
@@ -126,8 +129,8 @@ public class Class3342 extends Class3198 implements Class3255 {
       if (this.field18851 == null) {
          this.field18851 = Class9659.method37706()
             .method37705("~ ~", "###", "~#~")
-            .method37707('#', Class9632.method37552(Class166.method497(Blocks.field36522)))
-            .method37707('~', Class9632.method37552(Class116.method330(Class8649.field38932)))
+            .method37707('#', CachedBlockInfo.method37552(Class166.method497(Blocks.field36522)))
+            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.field38932)))
             .method37708();
       }
 
@@ -138,9 +141,9 @@ public class Class3342 extends Class3198 implements Class3255 {
       if (this.field18852 == null) {
          this.field18852 = Class9659.method37706()
             .method37705("~^~", "###", "~#~")
-            .method37707('^', Class9632.method37552(field18853))
-            .method37707('#', Class9632.method37552(Class166.method497(Blocks.field36522)))
-            .method37707('~', Class9632.method37552(Class116.method330(Class8649.field38932)))
+            .method37707('^', CachedBlockInfo.method37552(field18853))
+            .method37707('#', CachedBlockInfo.method37552(Class166.method497(Blocks.field36522)))
+            .method37707('~', CachedBlockInfo.method37552(Class116.method330(Material.field38932)))
             .method37708();
       }
 

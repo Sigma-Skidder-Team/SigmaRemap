@@ -4,6 +4,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -48,12 +49,12 @@ public class Class1074 extends AbstractHorseEntity {
    }
 
    public ItemStack method4990() {
-      return this.getItemStackFromSlot(EquipmentSlotType.field13735);
+      return this.getItemStackFromSlot(EquipmentSlotType.CHEST);
    }
 
    private void method4991(ItemStack var1) {
-      this.setItemStackToSlot(EquipmentSlotType.field13735, var1);
-      this.method4279(EquipmentSlotType.field13735, 0.0F);
+      this.setItemStackToSlot(EquipmentSlotType.CHEST, var1);
+      this.method4279(EquipmentSlotType.CHEST, 0.0F);
    }
 
    @Override
@@ -95,7 +96,7 @@ public class Class1074 extends AbstractHorseEntity {
       if (!this.world.isRemote) {
          super.method4903();
          this.method4997(this.field5890.getStackInSlot(1));
-         this.method4279(EquipmentSlotType.field13735, 0.0F);
+         this.method4279(EquipmentSlotType.CHEST, 0.0F);
       }
    }
 

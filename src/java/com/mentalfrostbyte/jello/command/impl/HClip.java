@@ -15,7 +15,7 @@ public class HClip extends Command {
    }
 
    @Override
-   public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
+   public void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException {
       if (var2.length != 0) {
          if (var2.length <= 1) {
             if (var2[0].method30895() != Class2193.field14336) {
@@ -36,7 +36,7 @@ public class HClip extends Command {
                         0
                      )
                   );
-               var3.method20327("Successfully HClip'd");
+               var3.send("Successfully HClip'd");
             }
          } else {
             throw new CommandException("Too many arguments");

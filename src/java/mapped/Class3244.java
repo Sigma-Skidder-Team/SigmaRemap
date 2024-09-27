@@ -2,12 +2,14 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
@@ -245,7 +247,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    public static boolean method11655(BlockState var0) {
-      return var0.method23462(field18698) && var0.method23446(BlockTags.field32809) && var0.<Boolean>method23463(field18698);
+      return var0.method23462(field18698) && var0.isIn(BlockTags.field32809) && var0.<Boolean>method23463(field18698);
    }
 
    @Override

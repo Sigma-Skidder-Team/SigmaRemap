@@ -20,6 +20,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.DamageSource;
@@ -82,7 +83,7 @@ public class Class9653 {
                                                       var1x,
                                                       Class8303.method29036(var1x, "loot_table"),
                                                       Class6849.method20827(var1x, "pos"),
-                                                      method37671((Class6619)var1x.getSource(), EquipmentSlotType.field13731),
+                                                      method37671((Class6619)var1x.getSource(), EquipmentSlotType.MAINHAND),
                                                       var1
                                                    )
                                              )
@@ -136,7 +137,7 @@ public class Class9653 {
                                           var1x -> method37672(
                                                 var1x,
                                                 Class6849.method20827(var1x, "pos"),
-                                                method37671((Class6619)var1x.getSource(), EquipmentSlotType.field13731),
+                                                method37671((Class6619)var1x.getSource(), EquipmentSlotType.MAINHAND),
                                                 var1
                                              )
                                        )
@@ -283,10 +284,10 @@ public class Class9653 {
             }
 
             if (method37664(var6, var1)) {
-               int var7 = var1.method32113() - var6.getCount();
+               int var7 = var1.getMaxStackSize() - var6.getCount();
                int var8 = Math.min(var1.getCount(), var7);
-               var1.method32182(var8);
-               var6.method32181(var8);
+               var1.shrink(var8);
+               var6.grow(var8);
                var4 = true;
             }
          }
@@ -320,7 +321,7 @@ public class Class9653 {
    private static boolean method37664(ItemStack var0, ItemStack var1) {
       return var0.getItem() == var1.getItem()
          && var0.method32117() == var1.method32117()
-         && var0.getCount() <= var0.method32113()
+         && var0.getCount() <= var0.getMaxStackSize()
          && Objects.equals(var0.method32142(), var1.method32142());
    }
 

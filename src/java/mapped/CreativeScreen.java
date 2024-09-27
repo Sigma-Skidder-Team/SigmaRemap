@@ -7,10 +7,12 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.widget.TextFieldWidget;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ClickType;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
@@ -65,20 +67,20 @@ public class CreativeScreen extends Class860<Class5820> {
          this.field4779.method5668(0);
       }
 
-      boolean var7 = var4 == ClickType.field14695;
-      var4 = var2 == -999 && var4 == ClickType.PICKUP ? ClickType.field14698 : var4;
-      if (var1 == null && field4776 != ItemGroup.field31677.method23641() && var4 != ClickType.field14699) {
+      boolean var7 = var4 == ClickType.QUICK_MOVE;
+      var4 = var2 == -999 && var4 == ClickType.PICKUP ? ClickType.THROW : var4;
+      if (var1 == null && field4776 != ItemGroup.field31677.method23641() && var4 != ClickType.QUICK_CRAFT) {
          PlayerInventory var16 = this.mc.player.inventory;
-         if (!var16.method4057().isEmpty() && this.field4784) {
+         if (!var16.getItemStack().isEmpty() && this.field4784) {
             if (var3 == 0) {
-               this.mc.player.method2882(var16.method4057(), true);
-               this.mc.playerController.sendPacketDropItem(var16.method4057());
-               var16.method4056(ItemStack.EMPTY);
+               this.mc.player.dropItem(var16.getItemStack(), true);
+               this.mc.playerController.sendPacketDropItem(var16.getItemStack());
+               var16.setItemStack(ItemStack.EMPTY);
             }
 
             if (var3 == 1) {
-               ItemStack var21 = var16.method4057().method32106(1);
-               this.mc.player.method2882(var21, true);
+               ItemStack var21 = var16.getItemStack().split(1);
+               this.mc.player.dropItem(var21, true);
                this.mc.playerController.sendPacketDropItem(var21);
             }
          }
@@ -92,14 +94,14 @@ public class CreativeScreen extends Class860<Class5820> {
                this.mc.playerController.sendSlotPacket(ItemStack.EMPTY, var15);
             }
          } else if (field4776 != ItemGroup.field31677.method23641()) {
-            if (var4 != ClickType.field14699 && var1.field25578 == field4774) {
+            if (var4 != ClickType.QUICK_CRAFT && var1.field25578 == field4774) {
                PlayerInventory var13 = this.mc.player.inventory;
-               ItemStack var18 = var13.method4057();
+               ItemStack var18 = var13.getItemStack();
                ItemStack var22 = var1.getStack();
-               if (var4 == ClickType.field14696) {
+               if (var4 == ClickType.SWAP) {
                   if (!var22.isEmpty()) {
                      ItemStack var25 = var22.copy();
-                     var25.method32180(var25.method32113());
+                     var25.setCount(var25.getMaxStackSize());
                      this.mc.player.inventory.setInventorySlotContents(var3, var25);
                      this.mc.player.container.detectAndSendChanges();
                   }
@@ -107,21 +109,21 @@ public class CreativeScreen extends Class860<Class5820> {
                   return;
                }
 
-               if (var4 == ClickType.field14697) {
-                  if (var13.method4057().isEmpty() && var1.getHasStack()) {
+               if (var4 == ClickType.CLONE) {
+                  if (var13.getItemStack().isEmpty() && var1.getHasStack()) {
                      ItemStack var24 = var1.getStack().copy();
-                     var24.method32180(var24.method32113());
-                     var13.method4056(var24);
+                     var24.setCount(var24.getMaxStackSize());
+                     var13.setItemStack(var24);
                   }
 
                   return;
                }
 
-               if (var4 == ClickType.field14698) {
+               if (var4 == ClickType.THROW) {
                   if (!var22.isEmpty()) {
                      ItemStack var23 = var22.copy();
-                     var23.method32180(var3 != 0 ? var23.method32113() : 1);
-                     this.mc.player.method2882(var23, true);
+                     var23.setCount(var3 != 0 ? var23.getMaxStackSize() : 1);
+                     this.mc.player.dropItem(var23, true);
                      this.mc.playerController.sendPacketDropItem(var23);
                   }
 
@@ -130,42 +132,42 @@ public class CreativeScreen extends Class860<Class5820> {
 
                if (!var18.isEmpty() && !var22.isEmpty() && var18.method32132(var22) && ItemStack.method32127(var18, var22)) {
                   if (var3 != 0) {
-                     var18.method32182(1);
+                     var18.shrink(1);
                   } else if (!var7) {
-                     if (var18.getCount() < var18.method32113()) {
-                        var18.method32181(1);
+                     if (var18.getCount() < var18.getMaxStackSize()) {
+                        var18.grow(1);
                      }
                   } else {
-                     var18.method32180(var18.method32113());
+                     var18.setCount(var18.getMaxStackSize());
                   }
                } else if (!var22.isEmpty() && var18.isEmpty()) {
-                  var13.method4056(var22.copy());
-                  var18 = var13.method4057();
+                  var13.setItemStack(var22.copy());
+                  var18 = var13.getItemStack();
                   if (var7) {
-                     var18.method32180(var18.method32113());
+                     var18.setCount(var18.getMaxStackSize());
                   }
                } else if (var3 != 0) {
-                  var13.method4057().method32182(1);
+                  var13.getItemStack().shrink(1);
                } else {
-                  var13.method4056(ItemStack.EMPTY);
+                  var13.setItemStack(ItemStack.EMPTY);
                }
             } else if (this.field4727 != null) {
-               ItemStack var8 = var1 != null ? this.field4727.getSlot(var1.field25579).getStack() : ItemStack.EMPTY;
-               this.field4727.slotClick(var1 != null ? var1.field25579 : var2, var3, var4, this.mc.player);
+               ItemStack var8 = var1 != null ? this.field4727.getSlot(var1.slotNumber).getStack() : ItemStack.EMPTY;
+               this.field4727.slotClick(var1 != null ? var1.slotNumber : var2, var3, var4, this.mc.player);
                if (Container.getDragEvent(var3) != 2) {
                   if (var1 != null) {
-                     ItemStack var9 = this.field4727.getSlot(var1.field25579).getStack();
-                     this.mc.playerController.sendSlotPacket(var9, var1.field25579 - this.field4727.field25468.size() + 9 + 36);
+                     ItemStack var9 = this.field4727.getSlot(var1.slotNumber).getStack();
+                     this.mc.playerController.sendSlotPacket(var9, var1.slotNumber - this.field4727.inventorySlots.size() + 9 + 36);
                      int var10 = 45 + var3;
-                     if (var4 != ClickType.field14696) {
-                        if (var4 == ClickType.field14698 && !var8.isEmpty()) {
+                     if (var4 != ClickType.SWAP) {
+                        if (var4 == ClickType.THROW && !var8.isEmpty()) {
                            ItemStack var11 = var8.copy();
-                           var11.method32180(var3 != 0 ? var11.method32113() : 1);
-                           this.mc.player.method2882(var11, true);
+                           var11.setCount(var3 != 0 ? var11.getMaxStackSize() : 1);
+                           this.mc.player.dropItem(var11, true);
                            this.mc.playerController.sendPacketDropItem(var11);
                         }
                      } else {
-                        this.mc.playerController.sendSlotPacket(var8, var10 - this.field4727.field25468.size() + 9 + 36);
+                        this.mc.playerController.sendSlotPacket(var8, var10 - this.field4727.inventorySlots.size() + 9 + 36);
                      }
 
                      this.mc.player.container.detectAndSendChanges();
@@ -177,25 +179,25 @@ public class CreativeScreen extends Class860<Class5820> {
                }
             }
          } else if (var1 != this.field4781) {
-            if (var4 == ClickType.field14698 && var1 != null && var1.getHasStack()) {
-               ItemStack var14 = var1.decrStackSize(var3 != 0 ? var1.getStack().method32113() : 1);
+            if (var4 == ClickType.THROW && var1 != null && var1.getHasStack()) {
+               ItemStack var14 = var1.decrStackSize(var3 != 0 ? var1.getStack().getMaxStackSize() : 1);
                ItemStack var20 = var1.getStack();
-               this.mc.player.method2882(var14, true);
+               this.mc.player.dropItem(var14, true);
                this.mc.playerController.sendPacketDropItem(var14);
-               this.mc.playerController.sendSlotPacket(var20, Class5848.method18276((Class5848)var1).field25579);
-            } else if (var4 == ClickType.field14698 && !this.mc.player.inventory.method4057().isEmpty()) {
-               this.mc.player.method2882(this.mc.player.inventory.method4057(), true);
-               this.mc.playerController.sendPacketDropItem(this.mc.player.inventory.method4057());
-               this.mc.player.inventory.method4056(ItemStack.EMPTY);
+               this.mc.playerController.sendSlotPacket(var20, Class5848.method18276((Class5848)var1).slotNumber);
+            } else if (var4 == ClickType.THROW && !this.mc.player.inventory.getItemStack().isEmpty()) {
+               this.mc.player.dropItem(this.mc.player.inventory.getItemStack(), true);
+               this.mc.playerController.sendPacketDropItem(this.mc.player.inventory.getItemStack());
+               this.mc.player.inventory.setItemStack(ItemStack.EMPTY);
             } else {
                this.mc
                   .player
                   .container
-                  .slotClick(var1 != null ? Class5848.method18276((Class5848)var1).field25579 : var2, var3, var4, this.mc.player);
+                  .slotClick(var1 != null ? Class5848.method18276((Class5848)var1).slotNumber : var2, var3, var4, this.mc.player);
                this.mc.player.container.detectAndSendChanges();
             }
          } else {
-            this.mc.player.inventory.method4056(ItemStack.EMPTY);
+            this.mc.player.inventory.setItemStack(ItemStack.EMPTY);
          }
       }
    }
@@ -444,19 +446,19 @@ public class CreativeScreen extends Class860<Class5820> {
 
       if (var1 != ItemGroup.field31677) {
          if (var4 == ItemGroup.field31677.method23641()) {
-            this.field4727.field25468.clear();
-            this.field4727.field25468.addAll(this.field4780);
+            this.field4727.inventorySlots.clear();
+            this.field4727.inventorySlots.addAll(this.field4780);
             this.field4780 = null;
          }
       } else {
          PlayerContainer var12 = this.mc.player.container;
          if (this.field4780 == null) {
-            this.field4780 = ImmutableList.copyOf(this.field4727.field25468);
+            this.field4780 = ImmutableList.copyOf(this.field4727.inventorySlots);
          }
 
-         this.field4727.field25468.clear();
+         this.field4727.inventorySlots.clear();
 
-         for (int var13 = 0; var13 < var12.field25468.size(); var13++) {
+         for (int var13 = 0; var13 < var12.inventorySlots.size(); var13++) {
             int var14;
             int var15;
             if (var13 >= 5 && var13 < 9) {
@@ -483,12 +485,12 @@ public class CreativeScreen extends Class860<Class5820> {
                var15 = 20;
             }
 
-            Class5848 var18 = new Class5848(var12.field25468.get(var13), var13, var14, var15);
-            this.field4727.field25468.add(var18);
+            Class5848 var18 = new Class5848(var12.inventorySlots.get(var13), var13, var14, var15);
+            this.field4727.inventorySlots.add(var18);
          }
 
          this.field4781 = new Slot(field4774, 0, 173, 112);
-         this.field4727.field25468.add(this.field4781);
+         this.field4727.inventorySlots.add(this.field4781);
       }
 
       if (this.field4779 != null) {
@@ -593,7 +595,7 @@ public class CreativeScreen extends Class860<Class5820> {
                Enchantment var12 = (Enchantment)var11.keySet().iterator().next();
 
                for (ItemGroup var16 : ItemGroup.field31664) {
-                  if (var16.method23657(var12.field27308)) {
+                  if (var16.method23657(var12.type)) {
                      var10 = var16;
                      break;
                   }

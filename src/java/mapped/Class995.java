@@ -113,7 +113,7 @@ public abstract class Class995 extends Entity {
                int var11 = (var4 - 1) / -2;
                var7.method8374(var5).method8380(var6, var8 + var10).method8380(net.minecraft.util.Direction.field673, var9 + var11);
                BlockState var12 = this.world.getBlockState(var7);
-               if (!var12.getMaterial().method31086() && !Class3247.method11672(var12)) {
+               if (!var12.getMaterial().isSolid() && !Class3247.method11672(var12)) {
                   return false;
                }
             }

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
+
 public class Class9109 {
    public static final Class9319<Class8278> field41841 = method33963("badlands", Class6768.field29529.method20657(Class6768.field29515));
    public static final Class9319<Class8278> field41842 = method33963("basalt_deltas", Class6768.field29536.method20657(Class6768.field29522));

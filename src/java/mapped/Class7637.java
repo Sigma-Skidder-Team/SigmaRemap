@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.Items;
 import net.minecraft.particles.IParticleData;
@@ -27,7 +28,7 @@ public abstract class Class7637 extends Class7633 {
 
    @Override
    public Item method25050() {
-      return Items.field37884;
+      return Items.LAVA_BUCKET;
    }
 
    @Override
@@ -85,7 +86,7 @@ public abstract class Class7637 extends Class7633 {
 
                BlockState var10 = var1.getBlockState(var11);
                if (!var10.isAir()) {
-                  if (var10.getMaterial().method31087()) {
+                  if (var10.getMaterial().blocksMovement()) {
                      return;
                   }
                } else if (this.method25102(var1, var11)) {
@@ -108,7 +109,7 @@ public abstract class Class7637 extends Class7633 {
    }
 
    private boolean method25103(IWorldReader var1, BlockPos var2) {
-      return var2.getY() >= 0 && var2.getY() < 256 && !var1.method7017(var2) ? false : var1.getBlockState(var2).getMaterial().method31088();
+      return var2.getY() >= 0 && var2.getY() < 256 && !var1.method7017(var2) ? false : var1.getBlockState(var2).getMaterial().isFlammable();
    }
 
    @Nullable

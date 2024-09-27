@@ -2,6 +2,8 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
@@ -23,7 +25,7 @@ public abstract class Class2914 extends Class2898<Class4712> {
    public boolean method11250(Class1660 var1, Random var2, BlockPos var3, BlockState var4) {
       BlockPos var7 = var3.up();
       BlockState var8 = var1.getBlockState(var3);
-      if ((var8.isIn(Blocks.WATER) || var8.method23446(BlockTags.field32786)) && var1.getBlockState(var7).isIn(Blocks.WATER)) {
+      if ((var8.isIn(Blocks.WATER) || var8.isIn(BlockTags.field32786)) && var1.getBlockState(var7).isIn(Blocks.WATER)) {
          var1.setBlockState(var3, var4, 3);
          if (!(var2.nextFloat() < 0.25F)) {
             if (var2.nextFloat() < 0.05F) {

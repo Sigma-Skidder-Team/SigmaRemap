@@ -23,6 +23,8 @@ import com.mentalfrostbyte.jello.event.impl.WorldLoadEvent;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.FileUtil;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -407,19 +409,19 @@ public class WaypointsManager {
          var1 = var1.down();
       }
 
-      Class7210 var5 = this.field36365.world.getBlockState(var1).getMaterial().method31092();
+      MaterialColor var5 = this.field36365.world.getBlockState(var1).getMaterial().getColor();
       int var6 = var5.field31006;
-      Class8649 var7 = this.field36365.world.getBlockState(var1.up()).getMaterial();
-      if (var7 != Class8649.field38944) {
-         if (var7 == Class8649.field38943) {
-            var6 = var7.method31092().field31006;
+      Material var7 = this.field36365.world.getBlockState(var1.up()).getMaterial();
+      if (var7 != Material.field38944) {
+         if (var7 == Material.field38943) {
+            var6 = var7.getColor().field31006;
          }
       } else {
          var6 = -1;
       }
 
       if (this.field36365.world.getBlockState(var1).method23462(Class8820.field39710)) {
-         var6 = Class8649.field38941.method31092().field31006;
+         var6 = Material.field38941.getColor().field31006;
       }
 
       int var8 = (var6 & 0xFF0000) >> 16;
@@ -432,11 +434,11 @@ public class WaypointsManager {
       }
 
       if (var2 || var11) {
-         Class8649 var12 = this.field36365.world.getBlockState(var1.north()).getMaterial();
-         Class8649 var13 = this.field36365.world.getBlockState(var1.south()).getMaterial();
-         if (var12 == Class8649.field38932 || var12 == Class8649.field38944) {
+         Material var12 = this.field36365.world.getBlockState(var1.north()).getMaterial();
+         Material var13 = this.field36365.world.getBlockState(var1.south()).getMaterial();
+         if (var12 == Material.field38932 || var12 == Material.field38944) {
             var6 = MultiUtilities.method17681(new Color(var6, true), Color.BLACK, 0.6F).getRGB();
-         } else if (var13 == Class8649.field38932 || var13 == Class8649.field38944) {
+         } else if (var13 == Material.field38932 || var13 == Material.field38944) {
             var6 = MultiUtilities.method17681(new Color(var6, true), Color.WHITE, 0.6F).getRGB();
          }
       }

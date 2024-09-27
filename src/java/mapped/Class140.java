@@ -18,7 +18,7 @@ public class Class140 extends Class128 {
 
    @Override
    public ItemStack method371(ItemStack var1, LootContext var2) {
-      var1.method32180(this.field470.method20914(var2.method26088()));
+      var1.setCount(this.field470.method20914(var2.method26088()));
       return var1;
    }
 

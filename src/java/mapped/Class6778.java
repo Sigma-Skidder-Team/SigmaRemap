@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 
 public class Class6778 extends Class6777 {
    private static final BlockState field29564 = Blocks.SOUL_SAND.method11579();

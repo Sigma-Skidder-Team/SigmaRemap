@@ -23,6 +23,7 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.item.SwordItem;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.play.client.CPlayerPacket;
 import net.minecraft.network.play.server.SEntityStatusPacket;
@@ -180,7 +181,7 @@ public class KillAura extends Module {
         field23951 = new Rotations(mc.player.rotationYaw, mc.player.rotationPitch);
         this.field23957 = -1.0F;
         this.interactAB
-                .setBlocking(mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof ItemSword && mc.gameSettings.keyBindUseItem.isKeyDown());
+                .setBlocking(mc.player.getHeldItem(Hand.MAIN_HAND).getItem() instanceof SwordItem && mc.gameSettings.keyBindUseItem.isKeyDown());
         this.field23959 = false;
         this.field23946 = -1;
         this.interactAB.field44349.clear();
@@ -229,10 +230,10 @@ public class KillAura extends Module {
     public void method16820(StopUseItemEvent var1) {
         if (this.isEnabled()) {
             if (!this.getStringSettingValueByName("Autoblock Mode").equals("None")
-                    && (mc.player.getHeldItemMainhand().getItem() instanceof ItemSword || this.currentitem != mc.player.inventory.currentItem)
+                    && (mc.player.getHeldItemMainhand().getItem() instanceof SwordItem || this.currentitem != mc.player.inventory.currentItem)
                     && target != null) {
                 var1.setCancelled(true);
-            } else if (mc.player.getHeldItemMainhand().getItem() instanceof ItemSword) {
+            } else if (mc.player.getHeldItemMainhand().getItem() instanceof SwordItem) {
                 this.field23945 = 2;
             }
         }
@@ -256,7 +257,7 @@ public class KillAura extends Module {
                     this.interactAB.method36816();
                 }
 
-                if (this.interactAB.isBlocking() && (!(mc.player.getHeldItemMainhand().getItem() instanceof ItemSword) || target == null)) {
+                if (this.interactAB.isBlocking() && (!(mc.player.getHeldItemMainhand().getItem() instanceof SwordItem) || target == null)) {
                     this.interactAB.setBlocking(false);
                 }
 
@@ -478,7 +479,7 @@ public class KillAura extends Module {
     public boolean method16827() {
         return target != null
                 && mc.player.getHeldItemMainhand() != null
-                && mc.player.getHeldItemMainhand().getItem() instanceof ItemSword
+                && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem
                 && !this.getStringSettingValueByName("Autoblock Mode").equals("None");
     }
 

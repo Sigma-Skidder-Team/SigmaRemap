@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
@@ -35,6 +36,6 @@ public class Class5843 extends Slot {
 
    @Override
    public Pair<ResourceLocation, ResourceLocation> method18271() {
-      return Pair.of(PlayerContainer.field25539, PlayerContainer.method18233()[this.field25588.method8773()]);
+      return Pair.of(PlayerContainer.field25539, PlayerContainer.method18233()[this.field25588.getIndex()]);
    }
 }

@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.ImmutableSet;
+import net.minecraft.block.Blocks;
 
 public final class Class8529 {
    private static String[] field38311;

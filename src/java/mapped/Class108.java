@@ -1,6 +1,9 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -62,7 +65,7 @@ public enum Class108 implements IStringSerializable {
       if (!var0.isIn(Blocks.CLAY)) {
          if (var0.isIn(Blocks.field36521)) {
             return field353;
-         } else if (!var0.method23446(BlockTags.field32734)) {
+         } else if (!var0.isIn(BlockTags.field32734)) {
             if (var0.isIn(Blocks.PACKED_ICE)) {
                return field355;
             } else if (!var0.isIn(Blocks.field36893)) {
@@ -75,14 +78,14 @@ public enum Class108 implements IStringSerializable {
                      if (var0.isIn(Blocks.field36777)) {
                         return field361;
                      } else if (!var0.isIn(Blocks.field36587)) {
-                        Class8649 var3 = var0.getMaterial();
-                        if (var3 == Class8649.field38966) {
+                        Material var3 = var0.getMaterial();
+                        if (var3 == Material.field38966) {
                            return field348;
-                        } else if (var3 != Class8649.field38953) {
-                           if (var3 == Class8649.field38963) {
+                        } else if (var3 != Material.field38953) {
+                           if (var3 == Material.field38963) {
                               return field350;
                            } else {
-                              return var3 != Class8649.field38956 && var3 != Class8649.field38957 ? field347 : field351;
+                              return var3 != Material.field38956 && var3 != Material.field38957 ? field347 : field351;
                            }
                         } else {
                            return field349;

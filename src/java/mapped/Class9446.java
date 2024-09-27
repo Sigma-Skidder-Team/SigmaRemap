@@ -1,9 +1,11 @@
 package mapped;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.network.datasync.DataParameter;
@@ -233,7 +235,7 @@ public class Class9446 {
             }
          }
 
-         if (var3 != Items.field37884) {
+         if (var3 != Items.LAVA_BUCKET) {
             if (var3 == Items.field37967 || var3 == Items.field37975) {
                return 10;
             } else if (var3 == Items.field37908) {
@@ -307,7 +309,7 @@ public class Class9446 {
                            int var5 = method36318(var17);
                            ItemStack var6 = var15.method3091();
                            int var7 = method36318(var6);
-                           ItemStack var8 = var15.getItemStackFromSlot(EquipmentSlotType.field13736);
+                           ItemStack var8 = var15.getItemStackFromSlot(EquipmentSlotType.HEAD);
                            int var9 = method36318(var8);
                            int var10 = Math.max(var5, var7);
                            return Math.max(var10, var9);

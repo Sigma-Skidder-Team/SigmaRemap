@@ -5,6 +5,7 @@ import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import it.unimi.dsi.fastutil.objects.Object2IntOpenHashMap;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -135,7 +136,7 @@ public class Class3399 extends AbstractFireBlock {
          }
 
          BlockState var7 = var2.getBlockState(var3.down());
-         boolean var8 = var7.method23446(var2.method6812().isInfiniBurn());
+         boolean var8 = var7.isIn(var2.method6812().isInfiniBurn());
          int var9 = var1.<Integer>method23463(field19038);
          if (!var8 && var2.method6795() && this.method12017(var2, var3) && var4.nextFloat() < 0.2F + (float)var9 * 0.03F) {
             var2.removeBlock(var3, false);

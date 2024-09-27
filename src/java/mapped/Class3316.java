@@ -7,12 +7,14 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -25,7 +27,7 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class3316 extends Class3314 {
-   public Class3316(Class5643 var1) {
+   public Class3316(Properties var1) {
       super(var1);
    }
 
@@ -118,7 +120,7 @@ public class Class3316 extends Class3314 {
                                     do {
                                        var31.method8372(var25.getX() + var33 + var26, --var37, var25.getZ() + var36 + var27);
                                        var38 = var24.getBlockState(var31);
-                                    } while (var38.method23394(var1, var31) == Class7210.field30947 && var37 > 0);
+                                    } while (var38.method23394(var1, var31) == MaterialColor.AIR && var37 > 0);
 
                                     if (var37 > 0 && !var38.method23449().method23474()) {
                                        int var39 = var37 - 1;
@@ -163,8 +165,8 @@ public class Class3316 extends Class3314 {
                            var44 = 0;
                         }
 
-                        Class7210 var46 = (Class7210)Iterables.getFirst(Multisets.copyHighestCountFirst(var23), Class7210.field30947);
-                        if (var46 == Class7210.field30959) {
+                        MaterialColor var46 = (MaterialColor)Iterables.getFirst(Multisets.copyHighestCountFirst(var23), MaterialColor.AIR);
+                        if (var46 == MaterialColor.field30959) {
                            var34 = (double)var28 * 0.1 + (double)(var14 + var17 & 1) * 0.2;
                            var44 = 1;
                            if (var34 < 0.5) {
@@ -255,10 +257,10 @@ public class Class3316 extends Class3314 {
                   }
 
                   int var13 = 3;
-                  Class7210 var14 = Class7210.field30947;
+                  MaterialColor var14 = MaterialColor.AIR;
                   if (!(var11.method32515() < 0.0F)) {
                      if (var12 > 0) {
-                        var14 = Class7210.field30973;
+                        var14 = MaterialColor.field30973;
                         if (var12 <= 3) {
                            var13 = 3;
                         } else {
@@ -266,7 +268,7 @@ public class Class3316 extends Class3314 {
                         }
                      }
                   } else {
-                     var14 = Class7210.field30962;
+                     var14 = MaterialColor.field30962;
                      if (var12 > 7 && var16 % 2 == 0) {
                         var13 = (var15 + (int)(MathHelper.sin((float)var16 + 0.0F) * 7.0F)) / 8 % 5;
                         if (var13 != 3) {
@@ -289,11 +291,11 @@ public class Class3316 extends Class3314 {
                            var13 = 1;
                         }
                      } else {
-                        var14 = Class7210.field30947;
+                        var14 = MaterialColor.AIR;
                      }
                   }
 
-                  if (var14 != Class7210.field30947) {
+                  if (var14 != MaterialColor.AIR) {
                      var4.field32322[var15 + var16 * 128] = (byte)(var14.field31007 * 4 + var13);
                      var4.method24598(var15, var16);
                   }
@@ -393,7 +395,7 @@ public class Class3316 extends Class3314 {
    @Override
    public ActionResultType method11707(ItemUseContext var1) {
       BlockState var4 = var1.method18360().getBlockState(var1.method18345());
-      if (!var4.method23446(BlockTags.field32760)) {
+      if (!var4.isIn(BlockTags.field32760)) {
          return super.method11707(var1);
       } else {
          if (!var1.method18360().isRemote) {

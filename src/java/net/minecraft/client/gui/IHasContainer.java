@@ -1,6 +1,6 @@
 package net.minecraft.client.gui;
 
-import mapped.Container;
+import net.minecraft.inventory.container.Container;
 
 public interface IHasContainer<T extends Container> {
    T method2628();

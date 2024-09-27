@@ -5,6 +5,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -55,7 +56,7 @@ public class Class4527 {
 
    public static VoxelShape method14426(IBlockReader var0, BlockPos var1) {
       BlockState var4 = var0.getBlockState(var1);
-      return !var4.method23446(BlockTags.field32804) && (!(var4.getBlock() instanceof Class3206) || !var4.<Boolean>method23463(Class3206.field18594))
+      return !var4.isIn(BlockTags.field32804) && (!(var4.getBlock() instanceof Class3206) || !var4.<Boolean>method23463(Class3206.field18594))
          ? var4.method23414(var0, var1)
          : VoxelShapes.method27425();
    }

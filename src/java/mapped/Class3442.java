@@ -4,6 +4,7 @@ import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -41,7 +42,7 @@ public class Class3442 extends Block {
    @Override
    public void method11965(BlockState var1, ServerWorld var2, BlockPos var3, ItemStack var4) {
       super.method11965(var1, var2, var3, var4);
-      if (var2.getGameRules().getBoolean(Class5462.field24228) && EnchantmentHelper.getEnchantmentLevel(Class8122.field34916, var4) == 0) {
+      if (var2.getGameRules().getBoolean(Class5462.field24228) && EnchantmentHelper.getEnchantmentLevel(Enchantments.SILK_TOUCH, var4) == 0) {
          this.method12120(var2, var3);
       }
    }

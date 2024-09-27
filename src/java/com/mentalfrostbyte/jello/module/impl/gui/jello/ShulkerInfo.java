@@ -20,6 +20,7 @@ import net.minecraft.client.gui.screen.inventory.ContainerScreen;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import org.lwjgl.opengl.GL11;
@@ -236,9 +237,9 @@ public class ShulkerInfo extends Module {
             }
 
             RenderUtil.method11479(var15, var17, var16, var10, var10);
-            if (var15.field39976 > 1) {
-                int var18 = var10 - ResourceRegistry.JelloLightFont20.method23942("" + var15.field39976);
-                int var19 = ResourceRegistry.JelloLightFont20.method23942("" + var15.field39976);
+            if (var15.count > 1) {
+                int var18 = var10 - ResourceRegistry.JelloLightFont20.method23942("" + var15.count);
+                int var19 = ResourceRegistry.JelloLightFont20.method23942("" + var15.count);
                 GL11.glAlphaFunc(519, 0.0F);
                 RenderSystem.method27821();
                 RenderUtil.method11450(
@@ -250,7 +251,7 @@ public class ShulkerInfo extends Module {
                         MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.7F),
                         false
                 );
-                RenderUtil.drawString(ResourceRegistry.JelloLightFont20, (float) (var17 + var18), (float) (var16 + 13), "" + var15.field39976, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+                RenderUtil.drawString(ResourceRegistry.JelloLightFont20, (float) (var17 + var18), (float) (var16 + 13), "" + var15.count, ClientColors.LIGHT_GREYISH_BLUE.getColor);
                 RenderSystem.method27820();
             }
 
@@ -333,7 +334,7 @@ public class ShulkerInfo extends Module {
 
                         for (ItemStack var12 : var4) {
                             if (var9.method32132(var12) && ItemStack.method32127(var12, var9)) {
-                                var12.method32180(var9.getCount() + var12.getCount());
+                                var12.setCount(var9.getCount() + var12.getCount());
                                 var10 = false;
                             }
                         }

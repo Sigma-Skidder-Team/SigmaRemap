@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.ints.Int2ObjectMap;
 import it.unimi.dsi.fastutil.ints.Int2ObjectOpenHashMap;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -79,7 +80,7 @@ public class Class9721 {
                         12,
                         30,
                         ImmutableMap.<Class9564, Item>builder()
-                           .put(Class9564.field44542, Items.field37889)
+                           .put(Class9564.field44542, Items.OAK_BOAT)
                            .put(Class9564.field44546, Items.field38121)
                            .put(Class9564.field44544, Items.field38121)
                            .put(Class9564.field44540, Items.field38123)
@@ -283,7 +284,7 @@ public class Class9721 {
             method38080(
                ImmutableMap.of(
                   1,
-                  new Class5391[]{new Class5396(Items.field37965, 32, 16, 2), new Class5395(Items.field37887, 1, 2, 1)},
+                  new Class5391[]{new Class5396(Items.field37965, 32, 16, 2), new Class5395(Items.REDSTONE_DUST, 1, 2, 1)},
                   2,
                   new Class5391[]{new Class5396(Items.field37802, 3, 12, 10), new Class5395(Items.field37917, 1, 1, 5)},
                   3,
@@ -320,7 +321,7 @@ public class Class9721 {
                   },
                   3,
                   new Class5391[]{
-                     new Class5396(Items.field37884, 1, 12, 20),
+                     new Class5396(Items.LAVA_BUCKET, 1, 12, 20),
                      new Class5396(Items.field37800, 1, 12, 20),
                      new Class5395(new ItemStack(Items.field37848), 1, 1, 12, 10, 0.2F),
                      new Class5395(new ItemStack(Items.field37849), 4, 1, 12, 10, 0.2F),
@@ -419,7 +420,7 @@ public class Class9721 {
                ImmutableMap.of(
                   1,
                   new Class5391[]{
-                     new Class5396(Items.field37890, 6, 16, 2), new Class5394(Items.field37846, 3), new Class5394(Items.field37845, 7)
+                     new Class5396(Items.LEATHER, 6, 16, 2), new Class5394(Items.field37846, 3), new Class5394(Items.field37845, 7)
                   },
                   2,
                   new Class5391[]{

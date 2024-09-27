@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -154,7 +155,7 @@ public abstract class Class1066 extends AbstractHorseEntity {
             this.method4928(true);
             this.method4895();
             if (!var1.abilities.isCreativeMode) {
-               var5.method32182(1);
+               var5.shrink(1);
             }
 
             this.method4948();

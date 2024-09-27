@@ -31,7 +31,7 @@ public class Class989 implements IInventory {
       if (var1 != 0) {
          return ItemStack.EMPTY;
       } else {
-         ItemStack var5 = Class948.method3815(this.field5473).method32106(var2);
+         ItemStack var5 = Class948.method3815(this.field5473).split(var2);
          if (Class948.method3815(this.field5473).isEmpty()) {
             Class948.method3816(this.field5473);
          }

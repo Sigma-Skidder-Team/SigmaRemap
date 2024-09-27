@@ -5,7 +5,10 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.IItemTier;
+import net.minecraft.item.ToolItem;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundEvents;
@@ -15,7 +18,7 @@ import net.minecraft.world.World;
 import java.util.Map;
 import java.util.Set;
 
-public class Class3269 extends Class3264 {
+public class Class3269 extends ToolItem {
    private static String[] field18765;
    private static final Set<Block> field18766 = ImmutableSet.of(
       Blocks.field36891,
@@ -48,7 +51,7 @@ public class Class3269 extends Class3264 {
       )
    );
 
-   public Class3269(Class2283 var1, int var2, float var3, Class5643 var4) {
+   public Class3269(IItemTier var1, int var2, float var3, Properties var4) {
       super((float)var2, var3, var1, field18766, var4);
    }
 
@@ -64,7 +67,7 @@ public class Class3269 extends Class3264 {
             if (!var4.isRemote) {
                var4.setBlockState(var5, var6, 11);
                if (var7 != null) {
-                  var1.method18357().method32121(1, var7, var1x -> var1x.sendBreakAnimation(var1.method18359()));
+                  var1.method18357().damageItem(1, var7, var1x -> var1x.sendBreakAnimation(var1.method18359()));
                }
             }
 

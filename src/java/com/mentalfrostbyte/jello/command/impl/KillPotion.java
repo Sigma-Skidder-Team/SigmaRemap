@@ -15,19 +15,19 @@ public class KillPotion extends Command {
    }
 
    @Override
-   public void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException {
-      if (var2.length <= 0) {
+   public void run(String var1, ChatCommandArguments[] args, Class6669 class6669) throws CommandException {
+      if (args.length <= 0) {
          if (!mc.playerController.isNotCreative()) {
-            ItemStack var6 = new ItemStack(Items.field38115);
-            CompoundNBT var7 = new CompoundNBT();
-            var7.putInt("Amplifier", 125);
-            var7.putInt("Duration", 2000);
-            var7.putInt("Id", 6);
-            ListNBT var8 = new ListNBT();
-            var8.add(var7);
-            var6.setTagInfo("CustomPotionEffects", var8);
-            mc.getConnection().sendPacket(new CCreativeInventoryActionPacket(36 + InvManagerUtils.method25846(), var6));
-            var3.method20327("Requested server a killpotion!");
+            ItemStack itemStack = new ItemStack(Items.field38115);
+            CompoundNBT nbt = new CompoundNBT();
+            nbt.putInt("Amplifier", 125);
+            nbt.putInt("Duration", 2000);
+            nbt.putInt("Id", 6);
+            ListNBT listNBT = new ListNBT();
+            listNBT.add(nbt);
+            itemStack.setTagInfo("CustomPotionEffects", listNBT);
+            mc.getConnection().sendPacket(new CCreativeInventoryActionPacket(36 + InvManagerUtils.isHotbarEmpty(), itemStack));
+            class6669.send("Requested server a killpotion!");
          } else {
             throw new CommandException("Creative mode only!");
          }

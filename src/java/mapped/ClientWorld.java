@@ -9,9 +9,12 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.client.util.Util;
+import net.minecraft.crash.CrashReport;
+import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
@@ -20,6 +23,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.IPacket;
 import net.minecraft.particles.IParticleData;
 import net.minecraft.scoreboard.Scoreboard;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -401,7 +405,7 @@ public class ClientWorld extends World {
          VoxelShape var7 = var2.method23414(this, var1);
          double var8 = var7.getEnd(Direction.Y);
          if (!(var8 < 1.0)) {
-            if (!var2.method23446(BlockTags.field32781)) {
+            if (!var2.isIn(BlockTags.field32781)) {
                double var10 = var7.getStart(Direction.Y);
                if (!(var10 > 0.0)) {
                   BlockPos var12 = var1.down();

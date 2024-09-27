@@ -13,13 +13,13 @@ import net.minecraft.world.World;
 public class Class3307 extends Item {
    private static String[] field18814;
 
-   public Class3307(Class5643 var1) {
+   public Class3307(Properties var1) {
       super(var1);
    }
 
    @Override
-   public ItemStack method11709(ItemStack var1, World var2, LivingEntity var3) {
-      super.method11709(var1, var2, var3);
+   public ItemStack onItemUseFinish(ItemStack var1, World var2, LivingEntity var3) {
+      super.onItemUseFinish(var1, var2, var3);
       if (var3 instanceof ServerPlayerEntity) {
          ServerPlayerEntity var6 = (ServerPlayerEntity)var3;
          CriteriaTriggers.field44490.method15174(var6, var1);
@@ -35,7 +35,7 @@ public class Class3307 extends Item {
             ItemStack var8 = new ItemStack(Items.field37972);
             PlayerEntity var7 = (PlayerEntity)var3;
             if (!var7.inventory.method4045(var8)) {
-               var7.method2882(var8, false);
+               var7.dropItem(var8, false);
             }
          }
 

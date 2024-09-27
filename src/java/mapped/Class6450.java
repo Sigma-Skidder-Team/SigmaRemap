@@ -8,8 +8,10 @@ import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.Dynamic2CommandExceptionType;
 import com.mojang.brigadier.exceptions.SimpleCommandExceptionType;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.server.ServerWorld;
@@ -24,7 +26,7 @@ public class Class6450 {
             (var0, var1) -> new TranslationTextComponent("commands.clone.toobig", var0, var1)
     );
     private static final SimpleCommandExceptionType field28362 = new SimpleCommandExceptionType(new TranslationTextComponent("commands.clone.failed"));
-    public static final Predicate<Class9632> field28363 = var0 -> !var0.method37548().isAir();
+    public static final Predicate<CachedBlockInfo> field28363 = var0 -> !var0.method37548().isAir();
 
     public static void method19588(CommandDispatcher<Class6619> var0) {
         var0.register(
@@ -214,7 +216,7 @@ public class Class6450 {
         );
     }
 
-    private static int method19589(Class6619 var0, BlockPos var1, BlockPos var2, BlockPos var3, Predicate<Class9632> var4, Class2109 var5) throws CommandSyntaxException {
+    private static int method19589(Class6619 var0, BlockPos var1, BlockPos var2, BlockPos var3, Predicate<CachedBlockInfo> var4, Class2109 var5) throws CommandSyntaxException {
         Class9764 var8 = new Class9764(var1, var2);
         BlockPos var9 = var3.method8337(var8.method38397());
         Class9764 var10 = new Class9764(var3, var9);
@@ -238,7 +240,7 @@ public class Class6450 {
                             for (int var20 = var8.field45678; var20 <= var8.field45681; var20++) {
                                 BlockPos var21 = new BlockPos(var20, var19, var18);
                                 BlockPos var22 = var21.method8337(var17);
-                                Class9632 var23 = new Class9632(var12, var21, false);
+                                CachedBlockInfo var23 = new CachedBlockInfo(var12, var21, false);
                                 BlockState var24 = var23.method37548();
                                 if (var4.test(var23)) {
                                     TileEntity var25 = var12.getTileEntity(var21);

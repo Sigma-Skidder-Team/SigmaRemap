@@ -10,6 +10,6 @@ public final class Class7405 extends ItemGroup {
 
    @Override
    public ItemStack method23640() {
-      return new ItemStack(Items.field37887);
+      return new ItemStack(Items.REDSTONE_DUST);
    }
 }

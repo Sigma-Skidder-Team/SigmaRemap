@@ -15,6 +15,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.SwordItem;
 import net.minecraft.network.play.client.CInputPacket;
 import net.minecraft.network.play.client.CMoveVehiclePacket;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -257,7 +258,7 @@ public class InfiniteAura extends Module {
     public boolean method16776() {
         return this.field23898
                 && Minecraft.getInstance().player.getHeldItemMainhand() != null
-                && Minecraft.getInstance().player.getHeldItemMainhand().getItem() instanceof ItemSword;
+                && Minecraft.getInstance().player.getHeldItemMainhand().getItem() instanceof SwordItem;
     }
 
     @Override

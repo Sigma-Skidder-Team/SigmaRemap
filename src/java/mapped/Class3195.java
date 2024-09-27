@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -109,7 +111,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
 
    @Override
    public void method11488(ServerWorld var1, Random var2, BlockPos var3, BlockState var4) {
-      if (!method11496(var4) && var1.getBlockState(var3.down()).method23446(BlockTags.field32783)) {
+      if (!method11496(var4) && var1.getBlockState(var3.down()).isIn(BlockTags.field32783)) {
          byte var7 = 5;
          byte var8 = 1;
          byte var9 = 2;
@@ -125,7 +127,7 @@ public class Class3195 extends Class3194 implements Class3196, Class3207 {
                   BlockPos var17 = new BlockPos(var11 + var13, var16, var3.getZ() - var12 + var14);
                   if (var17 != var3 && var2.nextInt(6) == 0 && var1.getBlockState(var17).isIn(Blocks.WATER)) {
                      BlockState var18 = var1.getBlockState(var17.down());
-                     if (var18.method23446(BlockTags.field32783)) {
+                     if (var18.isIn(BlockTags.field32783)) {
                         var1.setBlockState(var17, Blocks.field37005.method11579().method23465(field18472, Integer.valueOf(var2.nextInt(4) + 1)), 3);
                      }
                   }

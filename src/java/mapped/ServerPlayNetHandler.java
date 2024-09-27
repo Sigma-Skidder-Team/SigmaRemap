@@ -22,12 +22,16 @@ import java.util.stream.Stream;
 
 import net.minecraft.advancements.Advancement;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
+import net.minecraft.crash.CrashReport;
+import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ChatVisibility;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
@@ -40,10 +44,8 @@ import net.minecraft.network.play.server.*;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
+import net.minecraft.util.*;
 import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -1230,21 +1232,21 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void processClickWindow(CClickWindowPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.markPlayerActive();
-      if (this.player.openContainer.field25471 == var1.getWindowId() && this.player.openContainer.getCanCraft(this.player)) {
+      if (this.player.openContainer.windowId == var1.getWindowId() && this.player.openContainer.getCanCraft(this.player)) {
          if (!this.player.isSpectator()) {
             ItemStack var4 = this.player.openContainer.slotClick(var1.getSlotId(), var1.getUsedButton(), var1.getClickType(), this.player);
-            if (!ItemStack.method32128(var1.getClickedItem(), var4)) {
-               this.field23233.put(this.player.openContainer.field25471, var1.getActionNumber());
+            if (!ItemStack.areItemStacksEqual1(var1.getClickedItem(), var4)) {
+               this.field23233.put(this.player.openContainer.windowId, var1.getActionNumber());
                this.player.field4855.sendPacket(new SConfirmTransactionPacket(var1.getWindowId(), var1.getActionNumber(), false));
                this.player.openContainer.setCanCraft(this.player, false);
                NonNullList var5 = NonNullList.create();
 
-               for (int var6 = 0; var6 < this.player.openContainer.field25468.size(); var6++) {
-                  ItemStack var7 = this.player.openContainer.field25468.get(var6).getStack();
+               for (int var6 = 0; var6 < this.player.openContainer.inventorySlots.size(); var6++) {
+                  ItemStack var7 = this.player.openContainer.inventorySlots.get(var6).getStack();
                   var5.add(!var7.isEmpty() ? var7 : ItemStack.EMPTY);
                }
 
-               this.player.method2718(this.player.openContainer, var5);
+               this.player.sendAllContents(this.player.openContainer, var5);
             } else {
                this.player.field4855.sendPacket(new SConfirmTransactionPacket(var1.getWindowId(), var1.getActionNumber(), true));
                this.player.field4890 = true;
@@ -1255,11 +1257,11 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
          } else {
             NonNullList var8 = NonNullList.create();
 
-            for (int var9 = 0; var9 < this.player.openContainer.field25468.size(); var9++) {
-               var8.add(this.player.openContainer.field25468.get(var9).getStack());
+            for (int var9 = 0; var9 < this.player.openContainer.inventorySlots.size(); var9++) {
+               var8.add(this.player.openContainer.inventorySlots.get(var9).getStack());
             }
 
-            this.player.method2718(this.player.openContainer, var8);
+            this.player.sendAllContents(this.player.openContainer, var8);
          }
       }
    }
@@ -1269,7 +1271,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.markPlayerActive();
       if (!this.player.isSpectator()
-         && this.player.openContainer.field25471 == var1.getWindowId()
+         && this.player.openContainer.windowId == var1.getWindowId()
          && this.player.openContainer.getCanCraft(this.player)
          && this.player.openContainer instanceof Class5828) {
          this.server
@@ -1283,7 +1285,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    public void processEnchantItem(CEnchantItemPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
       this.player.markPlayerActive();
-      if (this.player.openContainer.field25471 == var1.getWindowId() && this.player.openContainer.getCanCraft(this.player) && !this.player.isSpectator()
+      if (this.player.openContainer.windowId == var1.getWindowId() && this.player.openContainer.getCanCraft(this.player) && !this.player.isSpectator()
          )
        {
          this.player.openContainer.enchantItem(this.player, var1.getButton());
@@ -1323,7 +1325,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
             this.player.container.detectAndSendChanges();
          } else if (var4 && var11 && this.field23232 < 200) {
             this.field23232 += 20;
-            this.player.method2882(var5, true);
+            this.player.dropItem(var5, true);
          }
       }
    }
@@ -1331,7 +1333,7 @@ public class ServerPlayNetHandler implements IServerPlayNetHandler {
    @Override
    public void processConfirmTransaction(CConfirmTransactionPacket var1) {
       PacketThreadUtil.checkThreadAndEnqueue(var1, this, this.player.getServerWorld());
-      int var4 = this.player.openContainer.field25471;
+      int var4 = this.player.openContainer.windowId;
       if (var4 == var1.getWindowId()
          && this.field23233.getOrDefault(var4, (short)(var1.getUid() + 1)) == var1.getUid()
          && !this.player.openContainer.getCanCraft(this.player)

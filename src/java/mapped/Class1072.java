@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -200,7 +201,7 @@ public class Class1072 extends Class1018 implements Class1071, Class1069 {
          super.method3353(var1, var2);
       } else {
          ZombifiedPiglinEntity var5 = EntityType.field41110.create(var1);
-         var5.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.field37815));
+         var5.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.field37815));
          var5.setLocationAndAngles(this.getPosX(), this.getPosY(), this.getPosZ(), this.rotationYaw, this.rotationPitch);
          var5.method4302(this.method4305());
          var5.method4308(this.isChild());

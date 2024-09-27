@@ -12,6 +12,8 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -37,9 +39,9 @@ public class Jesus extends Module {
    @EventTarget
    public void method16945(EventBlockCollision var1) {
       if (this.isEnabled() && mc.world != null && !AutoMLG.method16421()) {
-         if (mc.world.getBlockState(var1.getBlockPos()).getMaterial() == Class8649.field38940
-            || mc.world.getBlockState(var1.getBlockPos()).getMaterial() == Class8649.field38941
-            || mc.world.getBlockState(var1.getBlockPos()).getMaterial() == Class8649.field38943) {
+         if (mc.world.getBlockState(var1.getBlockPos()).getMaterial() == Material.field38940
+            || mc.world.getBlockState(var1.getBlockPos()).getMaterial() == Material.field38941
+            || mc.world.getBlockState(var1.getBlockPos()).getMaterial() == Material.field38943) {
             if (!(
                (double)var1.getBlockPos().getY()
                   >= mc.player.getPosY() - (double)(mc.player.getPosY() % 0.5 != 0.0 ? 0.0F : 0.5F)
@@ -186,10 +188,10 @@ public class Jesus extends Module {
    }
 
    public boolean method16951(AxisAlignedBB var1) {
-      return this.method16952(var1, Class8649.field38941) || this.method16952(var1, Class8649.field38943);
+      return this.method16952(var1, Material.field38941) || this.method16952(var1, Material.field38943);
    }
 
-   public boolean method16952(AxisAlignedBB var1, Class8649 var2) {
+   public boolean method16952(AxisAlignedBB var1, Material var2) {
       int var5 = MathHelper.floor(var1.minX);
       int var6 = MathHelper.method37774(var1.maxX);
       int var7 = MathHelper.floor(var1.minY);

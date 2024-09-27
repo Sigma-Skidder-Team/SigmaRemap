@@ -14,7 +14,7 @@ import java.util.List;
 public class Class3328 extends Item {
    private static String[] field18836;
 
-   public Class3328(Class5643 var1) {
+   public Class3328(Properties var1) {
       super(var1);
    }
 

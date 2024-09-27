@@ -6,6 +6,7 @@ import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.network.play.client.CUseEntityPacket;
@@ -65,7 +66,7 @@ public class Class338 implements Runnable {
             }
 
             mc.getConnection().getNetworkManager().sendNoEventPacket(new CUseEntityPacket(entity, mc.player.isSneaking()));
-            if (EnchantmentHelper.getEnchantmentLevel(Enchantment.method18810(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
+            if (EnchantmentHelper.getEnchantmentLevel(Enchantment.getEnchantmentByID(12), mc.player.getHeldItem(Hand.MAIN_HAND)) > 0) {
                mc.particles.addParticleEmitter(entity, ParticleTypes.field34065);
             }
 

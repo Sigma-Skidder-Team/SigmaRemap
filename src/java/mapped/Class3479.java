@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
@@ -62,7 +64,7 @@ public class Class3479 extends Class3194 implements Class3196 {
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
       BlockPos var6 = var3.down();
       BlockState var7 = var2.getBlockState(var6);
-      return var7.method23446(BlockTags.field32814) ? true : var2.method7021(var3, 0) < 13 && this.method11490(var7, var2, var6);
+      return var7.isIn(BlockTags.field32814) ? true : var2.method7021(var3, 0) < 13 && this.method11490(var7, var2, var6);
    }
 
    public boolean method12174(ServerWorld var1, BlockPos var2, BlockState var3, Random var4) {

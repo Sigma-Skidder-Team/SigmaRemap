@@ -2,7 +2,7 @@ package com.mentalfrostbyte.jello.command;
 
 
 import mapped.Class6669;
-import mapped.Class8623;
+import mapped.ChatCommandArguments;
 import net.minecraft.client.Minecraft;
 
 import java.util.ArrayList;
@@ -48,5 +48,5 @@ public abstract class Command {
         Collections.addAll(this.field25702, var1);
     }
 
-    public abstract void run(String var1, Class8623[] var2, Class6669 var3) throws CommandException;
+    public abstract void run(String var1, ChatCommandArguments[] var2, Class6669 var3) throws CommandException;
 }

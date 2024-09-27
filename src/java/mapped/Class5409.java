@@ -23,7 +23,7 @@ public class Class5409 extends Class5408 {
       Item var6 = var5.getItem();
       if (var6 != null) {
          Class9738 var7 = new Class9738(
-            (short) Item.method11701(var6), (byte)var5.field39976, (short)var5.method32117(), this.method16995(var5.method32142())
+            (short) Item.method11701(var6), (byte)var5.count, (short)var5.method32117(), this.method16995(var5.method32142())
          );
          Class9550.method36998(var7);
          Class8121.method28121(var7);

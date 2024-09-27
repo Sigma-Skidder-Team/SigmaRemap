@@ -4,13 +4,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Set;
 import java.util.function.Predicate;
 
-public class Class164 implements Predicate<Class9632> {
+public class Class164 implements Predicate<CachedBlockInfo> {
    private final BlockState field529;
    private final Set<Class8550<?>> field530;
    private final CompoundNBT field531;
@@ -25,7 +26,7 @@ public class Class164 implements Predicate<Class9632> {
       return this.field529;
    }
 
-   public boolean test(Class9632 var1) {
+   public boolean test(CachedBlockInfo var1) {
       BlockState var4 = var1.method37548();
       if (!var4.isIn(this.field529.getBlock())) {
          return false;

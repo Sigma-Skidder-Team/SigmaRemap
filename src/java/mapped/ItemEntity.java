@@ -176,7 +176,7 @@ public class ItemEntity extends Entity {
 
    private boolean method4118() {
       ItemStack var3 = this.method4124();
-      return this.isAlive() && this.field5516 != 32767 && this.field5515 != -32768 && this.field5515 < 6000 && var3.getCount() < var3.method32113();
+      return this.isAlive() && this.field5516 != 32767 && this.field5515 != -32768 && this.field5515 < 6000 && var3.getCount() < var3.getMaxStackSize();
    }
 
    private void method4119(ItemEntity var1) {
@@ -194,7 +194,7 @@ public class ItemEntity extends Entity {
    public static boolean method4120(ItemStack var0, ItemStack var1) {
       if (var1.getItem() != var0.getItem()) {
          return false;
-      } else if (var1.getCount() + var0.getCount() <= var1.method32113()) {
+      } else if (var1.getCount() + var0.getCount() <= var1.getMaxStackSize()) {
          return var1.method32141() ^ var0.method32141() ? false : !var1.method32141() || var1.method32142().equals(var0.method32142());
       } else {
          return false;
@@ -202,10 +202,10 @@ public class ItemEntity extends Entity {
    }
 
    public static ItemStack method4121(ItemStack var0, ItemStack var1, int var2) {
-      int var5 = Math.min(Math.min(var0.method32113(), var2) - var0.getCount(), var1.getCount());
+      int var5 = Math.min(Math.min(var0.getMaxStackSize(), var2) - var0.getCount(), var1.getCount());
       ItemStack var6 = var0.copy();
-      var6.method32181(var5);
-      var1.method32182(var5);
+      var6.grow(var5);
+      var1.shrink(var5);
       return var6;
    }
 
@@ -300,7 +300,7 @@ public class ItemEntity extends Entity {
             var1.onItemPickup(this, var6);
             if (var4.isEmpty()) {
                this.remove();
-               var4.method32180(var6);
+               var4.setCount(var6);
             }
 
             var1.method2776(Stats.field40100.method172(var5), var6);

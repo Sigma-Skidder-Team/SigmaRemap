@@ -279,7 +279,7 @@ public class Class9081 {
             } else {
                var1.setHeldItem(var4, var10);
                if (this.method33866()) {
-                  var10.method32180(var7);
+                  var10.setCount(var7);
                   if (var10.method32115() && var10.method32117() != var8) {
                      var10.method32118(var8);
                   }
@@ -334,7 +334,7 @@ public class Class9081 {
             } else {
                int var15 = var3.getCount();
                var14 = var3.onItemUse(var17);
-               var3.method32180(var15);
+               var3.setCount(var15);
             }
 
             if (var14.isSuccessOrConsume()) {

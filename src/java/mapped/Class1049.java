@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
@@ -130,9 +131,9 @@ public abstract class Class1049 extends WaterMobEntity {
    @Override
    public ActionResultType method4285(PlayerEntity var1, Hand var2) {
       ItemStack var5 = var1.getHeldItem(var2);
-      if (var5.getItem() == Items.field37883 && this.isAlive()) {
+      if (var5.getItem() == Items.WATER_BUCKET && this.isAlive()) {
          this.playSound(SoundEvents.field26430, 1.0F, 1.0F);
-         var5.method32182(1);
+         var5.shrink(1);
          ItemStack var6 = this.getFishBucket();
          this.method4795(var6);
          if (!this.world.isRemote) {
@@ -141,7 +142,7 @@ public abstract class Class1049 extends WaterMobEntity {
 
          if (!var5.isEmpty()) {
             if (!var1.inventory.method4045(var6)) {
-               var1.method2882(var6, false);
+               var1.dropItem(var6, false);
             }
          } else {
             var1.setHeldItem(var2, var6);

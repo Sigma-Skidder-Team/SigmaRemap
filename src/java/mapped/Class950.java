@@ -4,12 +4,15 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.potion.EffectInstance;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -149,7 +152,7 @@ public class Class950 extends TileEntity implements Class949, ITickableTileEntit
 
          for (int var9 = var1 - var6; var9 <= var1 + var6 && var8; var9++) {
             for (int var10 = var3 - var6; var10 <= var3 + var6; var10++) {
-               if (!this.field5324.getBlockState(new BlockPos(var9, var7, var10)).method23446(BlockTags.field32801)) {
+               if (!this.field5324.getBlockState(new BlockPos(var9, var7, var10)).isIn(BlockTags.field32801)) {
                   var8 = false;
                   break;
                }

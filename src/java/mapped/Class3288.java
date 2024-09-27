@@ -19,7 +19,7 @@ import java.util.List;
 public class Class3288 extends Class3287 {
    private final EntityType<?> field18799;
 
-   public Class3288(EntityType<?> var1, Fluid var2, Class5643 var3) {
+   public Class3288(EntityType<?> var1, Fluid var2, Properties var3) {
       super(var2, var3);
       this.field18799 = var1;
    }

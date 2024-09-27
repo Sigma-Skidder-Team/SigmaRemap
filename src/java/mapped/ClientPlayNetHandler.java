@@ -44,6 +44,8 @@ import net.minecraft.entity.ai.attributes.ModifiableAttributeInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipe;
@@ -721,7 +723,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
          } else {
             ItemEntity var6 = (ItemEntity)var4;
             ItemStack var7 = var6.method4124();
-            var7.method32182(var1.method17188());
+            var7.shrink(var1.method17188());
             if (var7.isEmpty()) {
                this.field23273.removeEntityFromWorld(var1.method17186());
             }
@@ -1014,14 +1016,14 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
                }
 
                var4.container.putStackInSlot(var6, var5);
-            } else if (var1.method17303() == var4.openContainer.field25471 && (var1.method17303() != 0 || !var7)) {
+            } else if (var1.method17303() == var4.openContainer.windowId && (var1.method17303() != 0 || !var7)) {
                var4.openContainer.putStackInSlot(var6, var5);
             }
          } else {
             var4.inventory.setInventorySlotContents(var6, var5);
          }
       } else if (!(this.field23272.currentScreen instanceof CreativeScreen)) {
-         var4.inventory.method4056(var5);
+         var4.inventory.setItemStack(var5);
       }
    }
 
@@ -1031,7 +1033,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       Object var4 = null;
       ClientPlayerEntity var5 = this.field23272.player;
       if (var1.method17421() != 0) {
-         if (var1.method17421() == var5.openContainer.field25471) {
+         if (var1.method17421() == var5.openContainer.windowId) {
             var4 = var5.openContainer;
          }
       } else {
@@ -1048,7 +1050,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       ClientPlayerEntity var4 = this.field23272.player;
       if (var1.method17644() != 0) {
-         if (var1.method17644() == var4.openContainer.field25471) {
+         if (var1.method17644() == var4.openContainer.windowId) {
             var4.openContainer.setAll(var1.method17645());
          }
       } else {
@@ -1100,7 +1102,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handleWindowProperty(SWindowPropertyPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       ClientPlayerEntity var4 = this.field23272.player;
-      if (var4.openContainer != null && var4.openContainer.field25471 == var1.method17239()) {
+      if (var4.openContainer != null && var4.openContainer.windowId == var1.method17239()) {
          var4.openContainer.updateProgressBar(var1.method17240(), var1.method17241());
       }
    }
@@ -2128,11 +2130,11 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handlePlaceGhostRecipe(SPlaceGhostRecipePacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Container var4 = this.field23272.player.openContainer;
-      if (var4.field25471 == var1.method17564() && var4.getCanCraft(this.field23272.player)) {
+      if (var4.windowId == var1.method17564() && var4.getCanCraft(this.field23272.player)) {
          this.field23284.method1035(var1.method17563()).ifPresent(var2 -> {
             if (this.field23272.currentScreen instanceof Class854) {
                Class1254 var5 = ((Class854)this.field23272.currentScreen).method2632();
-               var5.method5858((IRecipe<?>)var2, var4.field25468);
+               var5.method5858((IRecipe<?>)var2, var4.inventorySlots);
             }
          });
       }
@@ -2158,7 +2160,7 @@ public class ClientPlayNetHandler implements IClientPlayNetHandler {
    public void handleMerchantOffers(SMerchantOffersPacket var1) {
       PacketThreadUtil.method31780(var1, this, this.field23272);
       Container var4 = this.field23272.player.openContainer;
-      if (var1.method17309() == var4.field25471 && var4 instanceof Class5826) {
+      if (var1.method17309() == var4.windowId && var4 instanceof Class5826) {
          ((Class5826)var4).method18216(new Class46(var1.method17310().method166()));
          ((Class5826)var4).method18207(var1.method17312());
          ((Class5826)var4).method18209(var1.method17311());

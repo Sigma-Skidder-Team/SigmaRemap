@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.entity.Entity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 
 import java.util.EnumSet;
@@ -26,7 +27,7 @@ public class Class2623 extends Class2595 {
          List var3 = this.field16917
             .world
             .<ItemEntity>method6772(ItemEntity.class, this.field16917.getBoundingBox().method19663(6.0, 6.0, 6.0), Class1097.method5243());
-         return !var3.isEmpty() || !this.field16917.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty();
+         return !var3.isEmpty() || !this.field16917.getItemStackFromSlot(EquipmentSlotType.MAINHAND).isEmpty();
       } else {
          return false;
       }
@@ -41,7 +42,7 @@ public class Class2623 extends Class2595 {
 
    @Override
    public void method10805() {
-      if (!this.field16917.method5189() && !this.field16917.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty()) {
+      if (!this.field16917.method5189() && !this.field16917.getItemStackFromSlot(EquipmentSlotType.MAINHAND).isEmpty()) {
          Class1097.method5246(this.field16917);
       }
    }
@@ -51,9 +52,9 @@ public class Class2623 extends Class2595 {
       List var3 = this.field16917
          .world
          .<ItemEntity>method6772(ItemEntity.class, this.field16917.getBoundingBox().method19663(8.0, 8.0, 8.0), Class1097.method5243());
-      if (!var3.isEmpty() && this.field16917.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty()) {
+      if (!var3.isEmpty() && this.field16917.getItemStackFromSlot(EquipmentSlotType.MAINHAND).isEmpty()) {
          this.field16917.method4230().method21655((Entity)var3.get(0), 1.2F);
-      } else if (!this.field16917.getItemStackFromSlot(EquipmentSlotType.field13731).isEmpty()) {
+      } else if (!this.field16917.getItemStackFromSlot(EquipmentSlotType.MAINHAND).isEmpty()) {
          Class1097.method5246(this.field16917);
       }
 
@@ -62,10 +63,10 @@ public class Class2623 extends Class2595 {
 
    @Override
    public void method10807() {
-      ItemStack var3 = this.field16917.getItemStackFromSlot(EquipmentSlotType.field13731);
+      ItemStack var3 = this.field16917.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
       if (!var3.isEmpty()) {
          this.field16917.method3302(var3);
-         this.field16917.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
+         this.field16917.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
          int var4 = !this.field16917.method5210()
             ? Class1097.method5248(this.field16917).nextInt(150) + 10
             : Class1097.method5247(this.field16917).nextInt(50) + 10;

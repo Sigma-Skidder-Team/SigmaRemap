@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 
@@ -28,7 +30,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18289(Class6872.method20921(2.0F, 4.0F))
                   .method18291(Class4695.method14724(Items.field37801).method18299(10).method18296(Class140.method420(Class6872.method20921(1.0F, 5.0F))))
                   .method18291(Class4695.method14724(Items.field37802).method18299(5).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
-                  .method18291(Class4695.method14724(Items.field37887).method18299(5).method18296(Class140.method420(Class6872.method20921(4.0F, 9.0F))))
+                  .method18291(Class4695.method14724(Items.REDSTONE_DUST).method18299(5).method18296(Class140.method420(Class6872.method20921(4.0F, 9.0F))))
                   .method18291(Class4695.method14724(Items.field37917).method18299(5).method18296(Class140.method420(Class6872.method20921(4.0F, 9.0F))))
                   .method18291(Class4695.method14724(Items.field37800).method18299(3).method18296(Class140.method420(Class6872.method20921(1.0F, 2.0F))))
                   .method18291(Class4695.method14724(Items.field37798).method18299(10).method18296(Class140.method420(Class6872.method20921(3.0F, 8.0F))))
@@ -90,7 +92,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6872.method20921(2.0F, 4.0F))
                   .method18291(Class4695.method14724(Items.field37838).method18296(Class140.method420(Class6872.method20921(1.0F, 6.0F))))
-                  .method18291(Class4695.method14724(Items.field37890).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
+                  .method18291(Class4695.method14724(Items.LEATHER).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
                   .method18291(Class4695.method14724(Items.field37797).method18296(Class140.method420(Class6872.method20921(5.0F, 17.0F))))
                   .method18291(Class4695.method14724(Items.field38128).method18296(Class140.method420(Class6872.method20921(2.0F, 6.0F))))
                   .method18291(Class4695.method14724(Items.field37969).method18296(Class140.method420(Class6872.method20921(2.0F, 6.0F))))
@@ -135,7 +137,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Blocks.SOUL_SAND).method18296(Class140.method420(Class6872.method20921(2.0F, 7.0F))))
                   .method18291(Class4695.method14724(Blocks.field37083).method18296(Class140.method420(Class6872.method20921(2.0F, 7.0F))))
                   .method18291(Class4695.method14724(Items.field37969).method18296(Class140.method420(Class6872.method20921(2.0F, 8.0F))))
-                  .method18291(Class4695.method14724(Items.field37890).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
+                  .method18291(Class4695.method14724(Items.LEATHER).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
                   .method18291(Class4695.method14724(Items.field37797).method18296(Class140.method420(Class6872.method20921(5.0F, 17.0F))))
                   .method18291(Class4695.method14724(Items.field37838).method18296(Class140.method420(Class6872.method20921(3.0F, 8.0F))))
                   .method18291(Class4695.method14724(Items.field37869).method18296(Class140.method420(Class6872.method20921(2.0F, 5.0F))))
@@ -170,7 +172,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Items.field38143).method18299(5).method18296(Class140.method420(Class6871.method20919(1))))
                   .method18291(Class4695.method14724(Items.field38057).method18299(12).method18296(Class140.method420(Class6872.method20921(6.0F, 17.0F))))
                   .method18291(Class4695.method14724(Items.GOLDEN_APPLE).method18299(9).method18296(Class140.method420(Class6871.method20919(1))))
-                  .method18291(Class4695.method14724(Items.field37900).method18299(10).method18296(new Class5878().method18310(Class8122.field34907)))
+                  .method18291(Class4695.method14724(Items.field37900).method18299(10).method18296(new Class5878().method18310(Enchantments.SOUL_SPEED)))
             )
             .method18320(
                Class8894.method32373()
@@ -186,7 +188,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(
                      Class4695.method14724(Items.field37863)
                         .method18296(Class140.method420(Class6871.method20919(1)))
-                        .method18296(new Class5878().method18310(Class8122.field34907))
+                        .method18296(new Class5878().method18310(Enchantments.SOUL_SPEED))
                   )
                   .method18291(
                      Class4695.method14724(Items.field37818).method18296(Class140.method420(Class6871.method20919(1))).method18296(Class134.method392())
@@ -625,8 +627,8 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Items.field37802).method18299(5).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37843).method18299(20))
                   .method18291(Class4695.method14724(Items.field37842).method18299(20).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
-                  .method18291(Class4695.method14724(Items.field37882).method18299(10))
-                  .method18291(Class4695.method14724(Items.field37887).method18299(15).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
+                  .method18291(Class4695.method14724(Items.BUCKET).method18299(10))
+                  .method18291(Class4695.method14724(Items.REDSTONE_DUST).method18299(15).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37798).method18299(15).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37960).method18299(10).method18296(Class140.method420(Class6872.method20921(2.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37959).method18299(10).method18296(Class140.method420(Class6872.method20921(2.0F, 4.0F))))
@@ -686,7 +688,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Items.field37800).method18299(3).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
                   .method18291(Class4695.method14724(Items.field37801).method18299(10).method18296(Class140.method420(Class6872.method20921(1.0F, 5.0F))))
                   .method18291(Class4695.method14724(Items.field37802).method18299(5).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
-                  .method18291(Class4695.method14724(Items.field37887).method18299(5).method18296(Class140.method420(Class6872.method20921(4.0F, 9.0F))))
+                  .method18291(Class4695.method14724(Items.REDSTONE_DUST).method18299(5).method18296(Class140.method420(Class6872.method20921(4.0F, 9.0F))))
                   .method18291(Class4695.method14724(Items.field37843).method18299(15).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
                   .method18291(Class4695.method14724(Items.field37795).method18299(15).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
                   .method18291(Class4695.method14724(Items.field37822).method18299(5))
@@ -711,7 +713,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18289(Class6872.method20921(1.0F, 4.0F))
                   .method18291(Class4695.method14724(Items.field37801).method18299(10).method18296(Class140.method420(Class6872.method20921(1.0F, 5.0F))))
                   .method18291(Class4695.method14724(Items.field37802).method18299(5).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
-                  .method18291(Class4695.method14724(Items.field37887).method18299(5).method18296(Class140.method420(Class6872.method20921(4.0F, 9.0F))))
+                  .method18291(Class4695.method14724(Items.REDSTONE_DUST).method18299(5).method18296(Class140.method420(Class6872.method20921(4.0F, 9.0F))))
                   .method18291(Class4695.method14724(Items.field37798).method18299(10).method18296(Class140.method420(Class6872.method20921(3.0F, 8.0F))))
                   .method18291(Class4695.method14724(Items.field37843).method18299(15).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
                   .method18291(Class4695.method14724(Items.field37795).method18299(15).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
@@ -924,7 +926,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Items.field38049).method18299(1))
                   .method18291(Class4695.method14724(Items.field37909).method18299(2).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
                   .method18291(Class4695.method14724(Items.field37910).method18299(1).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
-                  .method18291(Class4695.method14724(Items.field37883).method18299(1).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
+                  .method18291(Class4695.method14724(Items.WATER_BUCKET).method18299(1).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
                   .method18291(Class4695.method14724(Items.field38158).method18299(1).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
                   .method18291(Class4695.method14724(Items.field37841).method18299(3).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
                   .method18291(Class4695.method14724(Items.field37798).method18299(2).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
@@ -936,7 +938,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6872.method20921(1.0F, 5.0F))
-                  .method18291(Class4695.method14724(Items.field37890).method18299(1).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
+                  .method18291(Class4695.method14724(Items.LEATHER).method18299(1).method18296(Class140.method420(Class6872.method20921(1.0F, 3.0F))))
                   .method18291(Class4695.method14724(Items.field37845).method18299(2))
                   .method18291(Class4695.method14724(Items.field37847).method18299(2))
                   .method18291(Class4695.method14724(Items.field37844).method18299(2))
@@ -952,7 +954,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6872.method20921(3.0F, 8.0F))
-                  .method18291(Class4695.method14724(Items.field37887).method18299(2).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
+                  .method18291(Class4695.method14724(Items.REDSTONE_DUST).method18299(2).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37843).method18299(7).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37965).method18299(7).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37917).method18299(1).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
@@ -1013,7 +1015,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Blocks.ACACIA_SAPLING).method18299(10).method18296(Class140.method420(Class6872.method20921(1.0F, 2.0F))))
                   .method18291(Class4695.method14724(Items.field37886).method18299(1))
                   .method18291(Class4695.method14724(Blocks.TORCH).method18299(1).method18296(Class140.method420(Class6872.method20921(1.0F, 2.0F))))
-                  .method18291(Class4695.method14724(Items.field37882).method18299(1))
+                  .method18291(Class4695.method14724(Items.BUCKET).method18299(1))
             )
       );
       var1.accept(
@@ -1030,7 +1032,7 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Items.field38113).method18299(1))
                   .method18291(Class4695.method14724(Items.field37407).method18299(1))
                   .method18291(Class4695.method14724(Items.field38049).method18299(1).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
-                  .method18291(Class4695.method14724(Items.field37888).method18299(10).method18296(Class140.method420(Class6872.method20921(1.0F, 7.0F))))
+                  .method18291(Class4695.method14724(Items.SNOWBALL).method18299(10).method18296(Class140.method420(Class6872.method20921(1.0F, 7.0F))))
                   .method18291(Class4695.method14724(Items.field37798).method18299(5).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
             )
       );
@@ -1074,8 +1076,8 @@ public class Class2840 implements Consumer<BiConsumer<ResourceLocation, Class588
                   .method18291(Class4695.method14724(Items.field37802).method18299(5).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37843).method18299(20))
                   .method18291(Class4695.method14724(Items.field37842).method18299(20).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
-                  .method18291(Class4695.method14724(Items.field37882).method18299(10))
-                  .method18291(Class4695.method14724(Items.field37887).method18299(15).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
+                  .method18291(Class4695.method14724(Items.BUCKET).method18299(10))
+                  .method18291(Class4695.method14724(Items.REDSTONE_DUST).method18299(15).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37798).method18299(15).method18296(Class140.method420(Class6872.method20921(1.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37960).method18299(10).method18296(Class140.method420(Class6872.method20921(2.0F, 4.0F))))
                   .method18291(Class4695.method14724(Items.field37959).method18299(10).method18296(Class140.method420(Class6872.method20921(2.0F, 4.0F))))

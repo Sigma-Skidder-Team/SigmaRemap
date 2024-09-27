@@ -3,6 +3,7 @@ package mapped;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
@@ -45,7 +46,7 @@ public abstract class Class2930 extends Class2898<Class4727> {
                for (int var12 = -var11; var12 <= var11; var12++) {
                   for (int var13 = -var11; var13 <= var11; var13++) {
                      BlockState var14 = var1.getBlockState(var4.method8378(var2, var12, var10, var13));
-                     if (!var14.isAir() && !var14.method23446(BlockTags.field32767)) {
+                     if (!var14.isAir() && !var14.isIn(BlockTags.LEAVES)) {
                         return false;
                      }
                   }

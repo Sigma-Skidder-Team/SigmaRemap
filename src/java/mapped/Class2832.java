@@ -3,10 +3,12 @@ package mapped;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.IItemProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 
@@ -126,7 +128,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field37890)
+                     Class4695.method14724(Items.LEATHER)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )
@@ -181,7 +183,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field37890)
+                     Class4695.method14724(Items.LEATHER)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )
@@ -338,7 +340,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field37890)
+                     Class4695.method14724(Items.LEATHER)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )
@@ -397,7 +399,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field37890)
+                     Class4695.method14724(Items.LEATHER)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )
@@ -423,7 +425,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field37890)
+                     Class4695.method14724(Items.LEATHER)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )
@@ -436,7 +438,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field37890)
+                     Class4695.method14724(Items.LEATHER)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )
@@ -682,7 +684,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
             .method18320(
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
-                  .method18291(Class4695.method14724(Items.field37888).method18296(Class140.method420(Class6872.method20921(0.0F, 15.0F))))
+                  .method18291(Class4695.method14724(Items.SNOWBALL).method18296(Class140.method420(Class6872.method20921(0.0F, 15.0F))))
             )
       );
       this.method11033(
@@ -774,7 +776,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field37890)
+                     Class4695.method14724(Items.LEATHER)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )
@@ -849,7 +851,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )
                   .method18291(
-                     Class4695.method14724(Items.field37887)
+                     Class4695.method14724(Items.REDSTONE_DUST)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 2.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )
@@ -1001,7 +1003,7 @@ public class Class2832 implements Consumer<BiConsumer<ResourceLocation, Class588
                Class8894.method32373()
                   .method18289(Class6871.method20919(1))
                   .method18291(
-                     Class4695.method14724(Items.field37890)
+                     Class4695.method14724(Items.LEATHER)
                         .method18296(Class140.method420(Class6872.method20921(0.0F, 1.0F)))
                         .method18296(Class130.method379(Class6872.method20921(0.0F, 1.0F)))
                   )

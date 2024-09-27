@@ -1,6 +1,8 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -244,7 +246,7 @@ public class Class6761 extends Class6762 {
                var8 = Class2163.field14185;
             }
 
-            if (var15 == Class2163.field14196 || var14.isIn(Blocks.field36890) || var14.method23446(BlockTags.field32809)) {
+            if (var15 == Class2163.field14196 || var14.isIn(Blocks.field36890) || var14.isIn(BlockTags.field32809)) {
                var8 = Class2163.field14196;
             }
 

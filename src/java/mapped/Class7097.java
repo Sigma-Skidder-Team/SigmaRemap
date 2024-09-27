@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IWorldReader;
@@ -27,9 +29,9 @@ public class Class7097 extends Class7092 {
       BlockState var12 = null;
       if (var10.isIn(Blocks.field36615) || var10.isIn(Blocks.STONE) || var10.isIn(Blocks.field36618)) {
          var12 = this.method22076(var9);
-      } else if (!var10.method23446(BlockTags.field32762)) {
-         if (!var10.method23446(BlockTags.field32763)) {
-            if (!var10.method23446(BlockTags.field32764)) {
+      } else if (!var10.isIn(BlockTags.field32762)) {
+         if (!var10.isIn(BlockTags.field32763)) {
+            if (!var10.isIn(BlockTags.field32764)) {
                if (var10.isIn(Blocks.field36527)) {
                   var12 = this.method22080(var9);
                }

@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.gui.screen.inventory.ContainerScreen;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -46,7 +47,7 @@ public class Class871 extends ContainerScreen<Class5822> {
          double var11 = var1 - (double)(var8 + 60);
          double var13 = var3 - (double)(var9 + 14 + 19 * var10);
          if (var11 >= 0.0 && var13 >= 0.0 && var11 < 108.0 && var13 < 19.0 && this.field4727.enchantItem(this.mc.player, var10)) {
-            this.mc.playerController.sendEnchantPacket(this.field4727.field25471, var10);
+            this.mc.playerController.sendEnchantPacket(this.field4727.windowId, var10);
             return true;
          }
       }
@@ -170,7 +171,7 @@ public class Class871 extends ContainerScreen<Class5822> {
 
       for (int var9 = 0; var9 < 3; var9++) {
          int var10 = this.field4727.field25509[var9];
-         Enchantment var11 = Enchantment.method18810(this.field4727.field25510[var9]);
+         Enchantment var11 = Enchantment.getEnchantmentByID(this.field4727.field25510[var9]);
          int var12 = this.field4727.field25511[var9];
          int var13 = var9 + 1;
          if (this.method2625(60, 14 + 19 * var9, 108, 17, (double)var2, (double)var3) && var10 > 0 && var12 >= 0 && var11 != null) {
@@ -208,7 +209,7 @@ public class Class871 extends ContainerScreen<Class5822> {
 
    public void method2700() {
       ItemStack var3 = this.field4727.getSlot(0).getStack();
-      if (!ItemStack.method32128(var3, this.field4840)) {
+      if (!ItemStack.areItemStacksEqual1(var3, this.field4840)) {
          this.field4840 = var3;
 
          do {

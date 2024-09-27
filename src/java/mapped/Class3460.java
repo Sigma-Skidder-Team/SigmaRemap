@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
@@ -51,7 +52,7 @@ public class Class3460 extends Block {
             ItemStack var14 = new ItemStack(this.field19291);
             if (!var9.isEmpty()) {
                if (!var4.method2945(var14)) {
-                  var4.method2882(var14, false);
+                  var4.dropItem(var14, false);
                }
             } else {
                var4.setHeldItem(var5, var14);
@@ -62,7 +63,7 @@ public class Class3460 extends Block {
             var2.setBlockState(var3, var11.method11579(), 3);
             var4.method2911(Stats.field40154);
             if (!var4.abilities.isCreativeMode) {
-               var9.method32182(1);
+               var9.shrink(1);
             }
          }
 

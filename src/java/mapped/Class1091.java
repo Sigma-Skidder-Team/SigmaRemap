@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
@@ -62,7 +63,7 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
          .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
          .method21849(Attributes.field42107, 0.6F)
          .method21849(Attributes.field42111, 1.0)
-         .method21849(Attributes.field42110, 6.0);
+         .method21849(Attributes.ATTACK_DAMAGE, 6.0);
    }
 
    @Override
@@ -144,10 +145,10 @@ public class Class1091 extends Class1018 implements Class1008, Class1092 {
    public void method4679() {
       if (!this.isChild()) {
          this.field5594 = 5;
-         this.getAttribute(Attributes.field42110).method38661(6.0);
+         this.getAttribute(Attributes.ATTACK_DAMAGE).method38661(6.0);
       } else {
          this.field5594 = 3;
-         this.getAttribute(Attributes.field42110).method38661(0.5);
+         this.getAttribute(Attributes.ATTACK_DAMAGE).method38661(0.5);
       }
    }
 

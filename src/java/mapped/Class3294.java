@@ -16,7 +16,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 public class Class3294 extends Class3292 {
-   public Class3294(Block var1, Class5643 var2) {
+   public Class3294(Block var1, Properties var2) {
       super(var1, var2);
    }
 

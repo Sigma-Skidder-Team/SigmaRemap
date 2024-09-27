@@ -2,6 +2,7 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.chunk.IChunk;
@@ -63,7 +64,7 @@ public abstract class Class6768<C extends Class8277> {
    private final Codec<Class9319<C>> field29538;
 
    private static <C extends Class8277, F extends Class6768<C>> F method20655(String var0, F var1) {
-      return Registry.<F>method9194(Registry.field16108, var0, (F)var1);
+      return Registry.<F>register(Registry.field16108, var0, (F)var1);
    }
 
    public Class6768(Codec<C> var1) {

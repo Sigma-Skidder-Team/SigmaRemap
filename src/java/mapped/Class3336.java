@@ -1,7 +1,9 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -14,7 +16,7 @@ import java.util.Optional;
 public class Class3336 extends Item {
    private static String[] field18843;
 
-   public Class3336(Class5643 var1) {
+   public Class3336(Properties var1) {
       super(var1);
    }
 
@@ -54,7 +56,7 @@ public class Class3336 extends Item {
                   var6.method11488((ServerWorld)var1, var1.rand, var2, var5);
                }
 
-               var0.method32182(1);
+               var0.shrink(1);
             }
 
             return true;
@@ -107,7 +109,7 @@ public class Class3336 extends Item {
                }
             }
 
-            var0.method32182(1);
+            var0.shrink(1);
             return true;
          }
       } else {

@@ -1,4 +1,6 @@
 package mapped;
 
-public interface Class3255 extends Class3260 {
+import net.minecraft.enchantment.IVanishable;
+
+public interface Class3255 extends IVanishable {
 }

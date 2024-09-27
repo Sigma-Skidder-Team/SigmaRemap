@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -25,7 +26,7 @@ public class Class3360 extends Class3359 {
 
    @Override
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
-      return var2.getBlockState(var3.down()).getMaterial().method31086();
+      return var2.getBlockState(var3.down()).getMaterial().isSolid();
    }
 
    @Override

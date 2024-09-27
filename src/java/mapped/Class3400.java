@@ -3,6 +3,8 @@ package mapped;
 import com.google.common.base.Predicates;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.util.CachedBlockInfo;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -65,10 +67,10 @@ public class Class3400 extends Block {
       if (field19058 == null) {
          field19058 = Class9659.method37706()
             .method37705("?vvv?", ">???<", ">???<", ">???<", "?^^^?")
-            .method37707('?', Class9632.method37552(Class166.field534))
+            .method37707('?', CachedBlockInfo.method37552(Class166.field534))
             .method37707(
                '^',
-               Class9632.method37552(
+               CachedBlockInfo.method37552(
                   Class166.method497(Blocks.field36650)
                      .method499(field19054, Predicates.equalTo(true))
                      .method499(field19053, Predicates.equalTo(Direction.SOUTH))
@@ -76,7 +78,7 @@ public class Class3400 extends Block {
             )
             .method37707(
                '>',
-               Class9632.method37552(
+               CachedBlockInfo.method37552(
                   Class166.method497(Blocks.field36650)
                      .method499(field19054, Predicates.equalTo(true))
                      .method499(field19053, Predicates.equalTo(Direction.WEST))
@@ -84,7 +86,7 @@ public class Class3400 extends Block {
             )
             .method37707(
                'v',
-               Class9632.method37552(
+               CachedBlockInfo.method37552(
                   Class166.method497(Blocks.field36650)
                      .method499(field19054, Predicates.equalTo(true))
                      .method499(field19053, Predicates.equalTo(Direction.NORTH))
@@ -92,7 +94,7 @@ public class Class3400 extends Block {
             )
             .method37707(
                '<',
-               Class9632.method37552(
+               CachedBlockInfo.method37552(
                   Class166.method497(Blocks.field36650)
                      .method499(field19054, Predicates.equalTo(true))
                      .method499(field19053, Predicates.equalTo(Direction.EAST))

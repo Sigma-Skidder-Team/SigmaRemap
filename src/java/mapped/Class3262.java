@@ -11,7 +11,7 @@ public abstract class Class3262 extends Item {
    public static final Predicate<ItemStack> field18748 = var0 -> var0.getItem().method11743(Class5985.field26119);
    public static final Predicate<ItemStack> field18749 = field18748.or(var0 -> var0.getItem() == Items.field38068);
 
-   public Class3262(Class5643 var1) {
+   public Class3262(Properties var1) {
       super(var1);
    }
 

@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.NonNullList;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -64,8 +65,8 @@ public class Class927 implements IInventory, Class925 {
          ItemStack var7 = this.getStackInSlot(var6);
          if (var7.getItem().equals(var1)) {
             int var8 = var2 - var5.getCount();
-            ItemStack var9 = var7.method32106(var8);
-            var5.method32181(var9.getCount());
+            ItemStack var9 = var7.split(var8);
+            var5.grow(var9.getCount());
             if (var5.getCount() == var2) {
                break;
             }
@@ -94,7 +95,7 @@ public class Class927 implements IInventory, Class925 {
       boolean var4 = false;
 
       for (ItemStack var6 : this.field5262) {
-         if (var6.isEmpty() || this.method3680(var6, var1) && var6.getCount() < var6.method32113()) {
+         if (var6.isEmpty() || this.method3680(var6, var1) && var6.getCount() < var6.getMaxStackSize()) {
             var4 = true;
             break;
          }
@@ -118,7 +119,7 @@ public class Class927 implements IInventory, Class925 {
    public void setInventorySlotContents(int var1, ItemStack var2) {
       this.field5262.set(var1, var2);
       if (!var2.isEmpty() && var2.getCount() > this.getInventoryStackLimit()) {
-         var2.method32180(this.getInventoryStackLimit());
+         var2.setCount(this.getInventoryStackLimit());
       }
 
       this.markDirty();
@@ -177,7 +178,7 @@ public class Class927 implements IInventory, Class925 {
          ItemStack var5 = this.getStackInSlot(var4);
          if (var5.isEmpty()) {
             this.setInventorySlotContents(var4, var1.copy());
-            var1.method32180(0);
+            var1.setCount(0);
             return;
          }
       }
@@ -200,11 +201,11 @@ public class Class927 implements IInventory, Class925 {
    }
 
    private void method3681(ItemStack var1, ItemStack var2) {
-      int var5 = Math.min(this.getInventoryStackLimit(), var2.method32113());
+      int var5 = Math.min(this.getInventoryStackLimit(), var2.getMaxStackSize());
       int var6 = Math.min(var1.getCount(), var5 - var2.getCount());
       if (var6 > 0) {
-         var2.method32181(var6);
-         var1.method32182(var6);
+         var2.grow(var6);
+         var1.shrink(var6);
          this.markDirty();
       }
    }

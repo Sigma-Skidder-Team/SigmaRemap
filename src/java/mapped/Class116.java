@@ -1,20 +1,21 @@
 package mapped;
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.Material;
 
 import java.util.function.Predicate;
 
 public class Class116 implements Predicate<BlockState> {
    private static String[] field421;
-   private static final Class116 field422 = new Class117(Class8649.field38932);
-   private final Class8649 field423;
+   private static final Class116 field422 = new Class117(Material.field38932);
+   private final Material field423;
 
-   private Class116(Class8649 var1) {
+   private Class116(Material var1) {
       this.field423 = var1;
    }
 
-   public static Class116 method330(Class8649 var0) {
-      return var0 != Class8649.field38932 ? new Class116(var0) : field422;
+   public static Class116 method330(Material var0) {
+      return var0 != Material.field38932 ? new Class116(var0) : field422;
    }
 
    public boolean test(BlockState var1) {
@@ -22,7 +23,7 @@ public class Class116 implements Predicate<BlockState> {
    }
 
    // $VF: synthetic method
-   public Class116(Class8649 var1, Class117 var2) {
+   public Class116(Material var1, Class117 var2) {
       this(var1);
    }
 }

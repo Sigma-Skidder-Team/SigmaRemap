@@ -8,7 +8,7 @@ import net.minecraft.world.World;
 public class Class3324 extends Class3323 {
    private static String[] field18833;
 
-   public Class3324(Class5643 var1) {
+   public Class3324(Properties var1) {
       super(var1);
    }
 
@@ -24,7 +24,7 @@ public class Class3324 extends Class3323 {
 
       var2.addStat(Stats.field40098.method172(this));
       if (!var2.abilities.isCreativeMode) {
-         var6.method32182(1);
+         var6.shrink(1);
       }
 
       return Class6794.<ItemStack>method20700(var6, var1.isRemote());

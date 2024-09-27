@@ -2,9 +2,12 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.SwordItem;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -43,7 +46,7 @@ public class Class3424 extends Block implements Class3196 {
 
    @Override
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
-      return var2.getBlockState(var3.down()).method23446(BlockTags.field32787);
+      return var2.getBlockState(var3.down()).isIn(BlockTags.field32787);
    }
 
    @Override
@@ -81,7 +84,7 @@ public class Class3424 extends Block implements Class3196 {
 
    @Override
    public float method11997(BlockState var1, PlayerEntity var2, IBlockReader var3, BlockPos var4) {
-      return !(var2.getHeldItemMainhand().getItem() instanceof ItemSword) ? super.method11997(var1, var2, var3, var4) : 1.0F;
+      return !(var2.getHeldItemMainhand().getItem() instanceof SwordItem) ? super.method11997(var1, var2, var3, var4) : 1.0F;
    }
 
    public void method12079(World var1, BlockPos var2) {

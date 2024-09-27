@@ -1,8 +1,11 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 
@@ -76,13 +79,13 @@ public class Class5815 extends Container {
             }
 
             Item var15 = var3.getItem();
-            int var10 = var15.method11711() - var3.method32117();
-            int var11 = var15.method11711() - var4.method32117();
-            int var12 = var10 + var11 + var15.method11711() * 5 / 100;
-            var13 = Math.max(var15.method11711() - var12, 0);
+            int var10 = var15.getMaxDamage() - var3.method32117();
+            int var11 = var15.getMaxDamage() - var4.method32117();
+            int var12 = var10 + var11 + var15.getMaxDamage() * 5 / 100;
+            var13 = Math.max(var15.getMaxDamage() - var12, 0);
             var14 = this.method18167(var3, var4);
             if (!var14.method32115()) {
-               if (!ItemStack.method32128(var3, var4)) {
+               if (!ItemStack.areItemStacksEqual1(var3, var4)) {
                   this.field25483.setInventorySlotContents(0, ItemStack.EMPTY);
                   this.detectAndSendChanges();
                   return;
@@ -122,7 +125,7 @@ public class Class5815 extends Container {
          var6.method32118(var2);
       }
 
-      var6.method32180(var3);
+      var6.setCount(var3);
       Map var7 = EnchantmentHelper.method26312(var1)
          .entrySet()
          .stream()
@@ -158,7 +161,7 @@ public class Class5815 extends Container {
    @Override
    public ItemStack transferStackInSlot(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
-      Slot var6 = this.field25468.get(var2);
+      Slot var6 = this.inventorySlots.get(var2);
       if (var6 != null && var6.getHasStack()) {
          ItemStack var7 = var6.getStack();
          var5 = var7.copy();

@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.Material;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -35,7 +36,7 @@ public class Class3469 extends Class3468 {
 
    @Override
    public void method12154(Class1660 var1, BlockPos var2) {
-      if (this.field19004 != Class8649.field38956 && this.field19004 != Class8649.field38957) {
+      if (this.field19004 != Material.field38956 && this.field19004 != Material.field38957) {
          var1.method6742((PlayerEntity)null, var2, SoundEvents.field27136, Class2266.field14732, 0.3F, 0.6F);
       } else {
          var1.method6742((PlayerEntity)null, var2, SoundEvents.field27269, Class2266.field14732, 0.3F, 0.8F);
@@ -44,7 +45,7 @@ public class Class3469 extends Class3468 {
 
    @Override
    public void method12155(Class1660 var1, BlockPos var2) {
-      if (this.field19004 != Class8649.field38956 && this.field19004 != Class8649.field38957) {
+      if (this.field19004 != Material.field38956 && this.field19004 != Material.field38957) {
          var1.method6742((PlayerEntity)null, var2, SoundEvents.field27135, Class2266.field14732, 0.3F, 0.5F);
       } else {
          var1.method6742((PlayerEntity)null, var2, SoundEvents.field27268, Class2266.field14732, 0.3F, 0.7F);

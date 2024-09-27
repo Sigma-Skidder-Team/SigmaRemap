@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -81,9 +82,9 @@ public class Class3458 extends Block {
          var2.setBlockState(var3, Blocks.AIR.method11579(), 11);
          if (!var4.isCreative()) {
             if (var10 != Items.field37794) {
-               var9.method32182(1);
+               var9.shrink(1);
             } else {
-               var9.method32121(1, var4, var1x -> var1x.sendBreakAnimation(var5));
+               var9.damageItem(1, var4, var1x -> var1x.sendBreakAnimation(var5));
             }
          }
 

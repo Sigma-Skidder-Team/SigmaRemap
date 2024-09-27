@@ -15,11 +15,13 @@ import java.util.function.Predicate;
 import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -632,8 +634,8 @@ public class Class7699 {
 
    public void method25426(int var1, Class1026 var2) {
       this.field32973.put(var1, var2);
-      var2.setItemStackToSlot(EquipmentSlotType.field13736, method25421());
-      var2.method4279(EquipmentSlotType.field13736, 2.0F);
+      var2.setItemStackToSlot(EquipmentSlotType.HEAD, method25421());
+      var2.method4279(EquipmentSlotType.HEAD, 2.0F);
    }
 
    public void method25427(int var1) {

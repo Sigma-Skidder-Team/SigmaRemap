@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -39,7 +40,7 @@ public class Class7236 {
       double var20 = Math.floor(var5) + field31089.nextDouble() * var12 + var14;
 
       while (!var7.isEmpty()) {
-         ItemEntity var22 = new ItemEntity(var0, var16, var18, var20, var7.method32106(field31089.nextInt(21) + 10));
+         ItemEntity var22 = new ItemEntity(var0, var16, var18, var20, var7.split(field31089.nextInt(21) + 10));
          float var23 = 0.05F;
          var22.setMotion(field31089.nextGaussian() * 0.05F, field31089.nextGaussian() * 0.05F + 0.2F, field31089.nextGaussian() * 0.05F);
          var0.addEntity(var22);

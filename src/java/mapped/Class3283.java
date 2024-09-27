@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Maps;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
@@ -22,7 +23,7 @@ public class Class3283 extends Item {
    private final int field18794;
    private final SoundEvent field18795;
 
-   public Class3283(int var1, SoundEvent var2, Class5643 var3) {
+   public Class3283(int var1, SoundEvent var2, Properties var3) {
       super(var3);
       this.field18794 = var1;
       this.field18795 = var2;
@@ -39,7 +40,7 @@ public class Class3283 extends Item {
          if (!var4.isRemote) {
             ((Class3364) Blocks.JUKEBOX).method11941(var4, var5, var6, var7);
             var4.method6869((PlayerEntity)null, 1010, var5, Item.method11701(this));
-            var7.method32182(1);
+            var7.shrink(1);
             PlayerEntity var8 = var1.method18358();
             if (var8 != null) {
                var8.method2911(Stats.field40158);

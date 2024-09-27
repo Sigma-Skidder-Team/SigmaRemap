@@ -144,7 +144,7 @@ public class NameTags extends Module {
                     Class856 var6 = (Class856) mc.currentScreen;
                     var5.field30453 = var6.method2628().getSlot(0).getStack();
                     var5.field30454 = new ItemStack(var6.method2628().getSlot(1).getStack().getItem());
-                    var5.field30454.field39976 = var6.method2628().getSlot(1).getStack().field39976;
+                    var5.field30454.count = var6.method2628().getSlot(1).getStack().count;
                     var5.field30455 = var6.method2628().getSlot(2).getStack();
                 }
             }
@@ -172,13 +172,13 @@ public class NameTags extends Module {
 
                 if (var6.method17304() == 0) {
                     var5.field30453 = new ItemStack(var6.method17305().getItem());
-                    var5.field30453.field39976 = var6.method17305().field39976;
+                    var5.field30453.count = var6.method17305().count;
                 } else if (var6.method17304() == 1) {
                     var5.field30454 = new ItemStack(var6.method17305().getItem());
-                    var5.field30454.field39976 = var6.method17305().field39976;
+                    var5.field30454.count = var6.method17305().count;
                 } else if (var6.method17304() == 2) {
                     var5.field30455 = new ItemStack(var6.method17305().getItem());
-                    var5.field30455.field39976 = var6.method17305().field39976;
+                    var5.field30455.count = var6.method17305().count;
                 }
             }
 
@@ -316,7 +316,7 @@ public class NameTags extends Module {
         ClientResource var6 = ResourceRegistry.JelloLightFont25;
         String var7 = "None";
         if (var2.field30453 != null) {
-            var7 = var2.field30453.field39976 + " " + var2.field30453.method32149();
+            var7 = var2.field30453.count + " " + var2.field30453.method32149();
         }
 
         float var8 = (float) ((double) var1.getX() - mc.gameRenderer.getActiveRenderInfo().getPos().getX() + 0.5);
@@ -365,7 +365,7 @@ public class NameTags extends Module {
         if (var20 != null) {
             RenderUtil.method11479(var20, var13, var13 + 27, 45, 45);
             RenderUtil.drawString(ResourceRegistry.JelloLightFont20, (float) (var13 + 51), 40.0F, var20.method32149().getString(), ClientColors.LIGHT_GREYISH_BLUE.getColor);
-            RenderUtil.drawString(ResourceRegistry.JelloLightFont14, (float) (var13 + 51), 62.0F, "Count: " + var20.field39976, ClientColors.LIGHT_GREYISH_BLUE.getColor);
+            RenderUtil.drawString(ResourceRegistry.JelloLightFont14, (float) (var13 + 51), 62.0F, "Count: " + var20.count, ClientColors.LIGHT_GREYISH_BLUE.getColor);
         }
 
         RenderUtil.drawRect(0.0F, (float) var18 - 12.0F, Math.min((float) var17 * var12, (float) var17), (float) var18 - 6.0F, MultiUtilities.applyAlpha(-106750, 0.3F));

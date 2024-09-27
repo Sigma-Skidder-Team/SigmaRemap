@@ -7,6 +7,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -114,7 +115,7 @@ public class Class1095 extends Class1018 {
    public void livingTick() {
       if (!this.world.isRemote && this.isAlive() && this.isServerWorld()) {
          this.field6008++;
-         ItemStack var3 = this.getItemStackFromSlot(EquipmentSlotType.field13731);
+         ItemStack var3 = this.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
          if (this.method5122(var3)) {
             if (this.field6008 <= 600) {
                if (this.field6008 > 560 && this.rand.nextFloat() < 0.1F) {
@@ -124,7 +125,7 @@ public class Class1095 extends Class1018 {
             } else {
                ItemStack var4 = var3.method32111(this.world, this);
                if (!var4.isEmpty()) {
-                  this.setItemStackToSlot(EquipmentSlotType.field13731, var4);
+                  this.setItemStackToSlot(EquipmentSlotType.MAINHAND, var4);
                }
 
                this.field6008 = 0;
@@ -156,7 +157,7 @@ public class Class1095 extends Class1018 {
    }
 
    private boolean method5122(ItemStack var1) {
-      return var1.getItem().method11744() && this.method4232() == null && this.onGround && !this.isSleeping();
+      return var1.getItem().isFood() && this.method4232() == null && this.onGround && !this.isSleeping();
    }
 
    @Override
@@ -171,7 +172,7 @@ public class Class1095 extends Class1018 {
                      if (!(var4 < 0.8F)) {
                         var5 = new ItemStack(Items.field37839);
                      } else {
-                        var5 = new ItemStack(Items.field37890);
+                        var5 = new ItemStack(Items.LEATHER);
                      }
                   } else {
                      var5 = new ItemStack(Items.field37842);
@@ -186,7 +187,7 @@ public class Class1095 extends Class1018 {
             var5 = new ItemStack(Items.field38049);
          }
 
-         this.setItemStackToSlot(EquipmentSlotType.field13731, var5);
+         this.setItemStackToSlot(EquipmentSlotType.MAINHAND, var5);
       }
    }
 
@@ -195,7 +196,7 @@ public class Class1095 extends Class1018 {
       if (var1 != 45) {
          super.handleStatusUpdate(var1);
       } else {
-         ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.field13731);
+         ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
          if (!var4.isEmpty()) {
             for (int var5 = 0; var5 < 8; var5++) {
                Vector3d var6 = new Vector3d(((double)this.rand.nextFloat() - 0.5) * 0.1, Math.random() * 0.1 + 0.1, 0.0)
@@ -221,7 +222,7 @@ public class Class1095 extends Class1018 {
          .method21849(Attributes.MOVEMENT_SPEED, 0.3F)
          .method21849(Attributes.field42105, 10.0)
          .method21849(Attributes.field42106, 32.0)
-         .method21849(Attributes.field42110, 2.0);
+         .method21849(Attributes.ATTACK_DAMAGE, 2.0);
    }
 
    public Class1095 method4389(ServerWorld var1, Class1045 var2) {
@@ -392,14 +393,14 @@ public class Class1095 extends Class1018 {
    @Override
    public boolean canPickUpItem(ItemStack var1) {
       EquipmentSlotType var4 = MobEntity.method4271(var1);
-      return !this.getItemStackFromSlot(var4).isEmpty() ? false : var4 == EquipmentSlotType.field13731 && super.canPickUpItem(var1);
+      return !this.getItemStackFromSlot(var4).isEmpty() ? false : var4 == EquipmentSlotType.MAINHAND && super.canPickUpItem(var1);
    }
 
    @Override
    public boolean method4252(ItemStack var1) {
       Item var4 = var1.getItem();
-      ItemStack var5 = this.getItemStackFromSlot(EquipmentSlotType.field13731);
-      return var5.isEmpty() || this.field6008 > 0 && var4.method11744() && !var5.getItem().method11744();
+      ItemStack var5 = this.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
+      return var5.isEmpty() || this.field6008 > 0 && var4.isFood() && !var5.getItem().isFood();
    }
 
    private void method5138(ItemStack var1) {
@@ -425,13 +426,13 @@ public class Class1095 extends Class1018 {
       if (this.method4252(var4)) {
          int var5 = var4.getCount();
          if (var5 > 1) {
-            this.method5139(var4.method32106(var5 - 1));
+            this.method5139(var4.split(var5 - 1));
          }
 
-         this.method5138(this.getItemStackFromSlot(EquipmentSlotType.field13731));
+         this.method5138(this.getItemStackFromSlot(EquipmentSlotType.MAINHAND));
          this.triggerItemPickupTrigger(var1);
-         this.setItemStackToSlot(EquipmentSlotType.field13731, var4.method32106(1));
-         this.field5605[EquipmentSlotType.field13731.method8773()] = 2.0F;
+         this.setItemStackToSlot(EquipmentSlotType.MAINHAND, var4.split(1));
+         this.field5605[EquipmentSlotType.MAINHAND.getIndex()] = 2.0F;
          this.onItemPickup(var1, var4.getCount());
          var1.remove();
          this.field6008 = 0;
@@ -599,10 +600,10 @@ public class Class1095 extends Class1018 {
 
    @Override
    public void spawnDrops(DamageSource var1) {
-      ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.field13731);
+      ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.MAINHAND);
       if (!var4.isEmpty()) {
          this.method3302(var4);
-         this.setItemStackToSlot(EquipmentSlotType.field13731, ItemStack.EMPTY);
+         this.setItemStackToSlot(EquipmentSlotType.MAINHAND, ItemStack.EMPTY);
       }
 
       super.spawnDrops(var1);
@@ -621,7 +622,7 @@ public class Class1095 extends Class1018 {
             if (!var0.world
                .getBlockState(new BlockPos(var0.getPosX() + var14, var0.getPosY() + (double)var16, var0.getPosZ() + var12))
                .getMaterial()
-               .method31089()) {
+               .isReplaceable()) {
                return false;
             }
          }

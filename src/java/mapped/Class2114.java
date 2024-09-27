@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.Items;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
@@ -7,7 +8,7 @@ import net.minecraft.util.SoundEvents;
 import java.util.function.Supplier;
 
 public enum Class2114 implements Class2115 {
-   field13773("leather", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.field26354, 0.0F, 0.0F, () -> Class120.method339(Items.field37890)),
+   field13773("leather", 5, new int[]{1, 2, 3, 1}, 15, SoundEvents.field26354, 0.0F, 0.0F, () -> Class120.method339(Items.LEATHER)),
    field13774("chainmail", 15, new int[]{1, 4, 5, 2}, 12, SoundEvents.field26348, 0.0F, 0.0F, () -> Class120.method339(Items.field37801)),
    field13775("iron", 15, new int[]{2, 5, 6, 2}, 9, SoundEvents.field26353, 0.0F, 0.0F, () -> Class120.method339(Items.field37801)),
    field13776("gold", 7, new int[]{1, 3, 5, 2}, 25, SoundEvents.field26352, 0.0F, 0.0F, () -> Class120.method339(Items.field37802)),
@@ -39,12 +40,12 @@ public enum Class2114 implements Class2115 {
 
    @Override
    public int method8785(EquipmentSlotType var1) {
-      return field13780[var1.method8773()] * this.field13782;
+      return field13780[var1.getIndex()] * this.field13782;
    }
 
    @Override
    public int method8786(EquipmentSlotType var1) {
-      return this.field13783[var1.method8773()];
+      return this.field13783[var1.getIndex()];
    }
 
    @Override

@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -40,7 +41,7 @@ public class Class3361 extends Class3359 {
 
    @Override
    public boolean method11492(BlockState var1, IWorldReader var2, BlockPos var3) {
-      return var2.getBlockState(var3.method8349(var1.<Direction>method23463(field18910).method536())).getMaterial().method31086();
+      return var2.getBlockState(var3.method8349(var1.<Direction>method23463(field18910).method536())).getMaterial().isSolid();
    }
 
    @Override

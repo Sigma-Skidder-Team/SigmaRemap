@@ -3,6 +3,8 @@ package mapped;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -48,8 +50,8 @@ public class Class2927 extends Class2898<Class4709> {
 
    private static boolean method11257(Class1660 var0, BlockPos var1, boolean var2) {
       return var0.method6815(var1, var1x -> {
-         Class8649 var4 = var1x.getMaterial();
-         return var1x.getMaterial().method31089() || var2 && var4 == Class8649.field38936;
+         Material var4 = var1x.getMaterial();
+         return var1x.getMaterial().isReplaceable() || var2 && var4 == Material.PLANTS;
       });
    }
 

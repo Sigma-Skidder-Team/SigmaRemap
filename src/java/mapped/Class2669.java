@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityType;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -60,21 +61,21 @@ public class Class2669 extends Class2595 {
       var5.setPosition(var2.getPosX(), var2.getPosY(), var2.getPosZ());
       var5.hurtResistantTime = 60;
       var5.method4278();
-      if (var5.getItemStackFromSlot(EquipmentSlotType.field13736).isEmpty()) {
-         var5.setItemStackToSlot(EquipmentSlotType.field13736, new ItemStack(Items.field37852));
+      if (var5.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty()) {
+         var5.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(Items.field37852));
       }
 
       var5.setItemStackToSlot(
-         EquipmentSlotType.field13731,
+         EquipmentSlotType.MAINHAND,
          EnchantmentHelper.method26342(
             var5.getRNG(), this.method10888(var5.getHeldItemMainhand()), (int)(5.0F + var1.method38330() * (float)var5.getRNG().nextInt(18)), false
          )
       );
       var5.setItemStackToSlot(
-         EquipmentSlotType.field13736,
+         EquipmentSlotType.HEAD,
          EnchantmentHelper.method26342(
             var5.getRNG(),
-            this.method10888(var5.getItemStackFromSlot(EquipmentSlotType.field13736)),
+            this.method10888(var5.getItemStackFromSlot(EquipmentSlotType.HEAD)),
             (int)(5.0F + var1.method38330() * (float)var5.getRNG().nextInt(18)),
             false
          )

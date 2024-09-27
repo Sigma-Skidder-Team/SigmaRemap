@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
@@ -8,6 +9,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.Pose;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
@@ -65,13 +67,13 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    public void livingTick() {
       boolean var3 = this.method4310();
       if (var3) {
-         ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.field13736);
+         ItemStack var4 = this.getItemStackFromSlot(EquipmentSlotType.HEAD);
          if (!var4.isEmpty()) {
             if (var4.method32115()) {
                var4.method32118(var4.method32117() + this.rand.nextInt(2));
                if (var4.method32117() >= var4.method32119()) {
-                  this.sendBreakAnimation(EquipmentSlotType.field13736);
-                  this.setItemStackToSlot(EquipmentSlotType.field13736, ItemStack.EMPTY);
+                  this.sendBreakAnimation(EquipmentSlotType.HEAD);
+                  this.setItemStackToSlot(EquipmentSlotType.HEAD, ItemStack.EMPTY);
                }
             }
 
@@ -98,7 +100,7 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
    @Override
    public void method4270(Class9755 var1) {
       super.method4270(var1);
-      this.setItemStackToSlot(EquipmentSlotType.field13731, new ItemStack(Items.BOW));
+      this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Items.BOW));
    }
 
    @Nullable
@@ -109,13 +111,13 @@ public abstract class Class1082 extends Class1009 implements Class1022 {
       this.method4273(var2);
       this.method5031();
       this.method4281(this.rand.nextFloat() < 0.55F * var2.method38330());
-      if (this.getItemStackFromSlot(EquipmentSlotType.field13736).isEmpty()) {
+      if (this.getItemStackFromSlot(EquipmentSlotType.HEAD).isEmpty()) {
          LocalDate var8 = LocalDate.now();
          int var9 = var8.get(ChronoField.DAY_OF_MONTH);
          int var10 = var8.get(ChronoField.MONTH_OF_YEAR);
          if (var10 == 10 && var9 == 31 && this.rand.nextFloat() < 0.25F) {
-            this.setItemStackToSlot(EquipmentSlotType.field13736, new ItemStack(!(this.rand.nextFloat() < 0.1F) ? Blocks.field36589 : Blocks.field36590));
-            this.field5607[EquipmentSlotType.field13736.method8773()] = 0.0F;
+            this.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(!(this.rand.nextFloat() < 0.1F) ? Blocks.field36589 : Blocks.field36590));
+            this.field5607[EquipmentSlotType.HEAD.getIndex()] = 0.0F;
          }
       }
 

@@ -7,6 +7,7 @@ import com.google.common.collect.UnmodifiableIterator;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.*;
 import net.minecraft.entity.player.PlayerEntity;
@@ -18,6 +19,7 @@ import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
 import net.minecraft.network.play.server.SSpawnObjectPacket;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -230,7 +232,7 @@ public abstract class AbstractMinecartEntity extends Entity {
    @Override
    public float getSpeedFactor() {
       BlockState var3 = this.world.getBlockState(this.getPosition());
-      return !var3.method23446(BlockTags.field32766) ? super.getSpeedFactor() : 1.0F;
+      return !var3.isIn(BlockTags.field32766) ? super.getSpeedFactor() : 1.0F;
    }
 
    public void method3586(DamageSource var1) {
@@ -289,7 +291,7 @@ public abstract class AbstractMinecartEntity extends Entity {
          int var3 = MathHelper.floor(this.getPosX());
          int var4 = MathHelper.floor(this.getPosY());
          int var5 = MathHelper.floor(this.getPosZ());
-         if (this.world.getBlockState(new BlockPos(var3, var4 - 1, var5)).method23446(BlockTags.field32766)) {
+         if (this.world.getBlockState(new BlockPos(var3, var4 - 1, var5)).isIn(BlockTags.field32766)) {
             var4--;
          }
 
@@ -567,7 +569,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       int var11 = MathHelper.floor(var1);
       int var12 = MathHelper.floor(var3);
       int var13 = MathHelper.floor(var5);
-      if (this.world.getBlockState(new BlockPos(var11, var12 - 1, var13)).method23446(BlockTags.field32766)) {
+      if (this.world.getBlockState(new BlockPos(var11, var12 - 1, var13)).isIn(BlockTags.field32766)) {
          var12--;
       }
 
@@ -608,7 +610,7 @@ public abstract class AbstractMinecartEntity extends Entity {
       int var9 = MathHelper.floor(var1);
       int var10 = MathHelper.floor(var3);
       int var11 = MathHelper.floor(var5);
-      if (this.world.getBlockState(new BlockPos(var9, var10 - 1, var11)).method23446(BlockTags.field32766)) {
+      if (this.world.getBlockState(new BlockPos(var9, var10 - 1, var11)).isIn(BlockTags.field32766)) {
          var10--;
       }
 

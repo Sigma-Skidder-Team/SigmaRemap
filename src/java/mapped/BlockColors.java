@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Maps;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockDisplayReader;
@@ -69,7 +70,7 @@ public class BlockColors {
    public int method29464(BlockState var1, World var2, BlockPos var3) {
       Class8040 var6 = this.field36032.getByValue(Registry.BLOCK.getId(var1.getBlock()));
       if (var6 == null) {
-         Class7210 var7 = var1.method23394(var2, var3);
+         MaterialColor var7 = var1.method23394(var2, var3);
          return var7 == null ? -1 : var7.field31006;
       } else {
          return var6.method27608(var1, (IBlockDisplayReader)null, (BlockPos)null, 0);

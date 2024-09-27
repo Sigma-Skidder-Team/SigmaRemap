@@ -1,6 +1,7 @@
 package mapped;
 
 import com.google.common.collect.Maps;
+import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -8,8 +9,11 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.fluid.Fluid;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.SwordItem;
+import net.minecraft.item.ToolItem;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
@@ -512,36 +516,36 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    public void method4249(EquipmentSlotType var1) {
-      switch (Class8979.field40589[var1.method8772().ordinal()]) {
+      switch (Class8979.field40589[var1.getSlotType().ordinal()]) {
          case 1:
-            this.field5605[var1.method8773()] = 2.0F;
+            this.field5605[var1.getIndex()] = 2.0F;
             break;
          case 2:
-            this.field5607[var1.method8773()] = 2.0F;
+            this.field5607[var1.getIndex()] = 2.0F;
       }
    }
 
    public boolean method4250(ItemStack var1, ItemStack var2) {
       if (!var2.isEmpty()) {
-         if (!(var1.getItem() instanceof ItemSword)) {
+         if (!(var1.getItem() instanceof SwordItem)) {
             if (var1.getItem() instanceof BowItem && var2.getItem() instanceof BowItem) {
                return this.method4251(var1, var2);
             } else if (var1.getItem() instanceof Class3261 && var2.getItem() instanceof Class3261) {
                return this.method4251(var1, var2);
             } else if (!(var1.getItem() instanceof ArmorItem)) {
-               if (var1.getItem() instanceof Class3264) {
+               if (var1.getItem() instanceof ToolItem) {
                   if (var2.getItem() instanceof Class3292) {
                      return true;
                   }
 
-                  if (var2.getItem() instanceof Class3264) {
-                     Class3264 var8 = (Class3264)var1.getItem();
-                     Class3264 var10 = (Class3264)var2.getItem();
-                     if (var8.method11779() == var10.method11779()) {
+                  if (var2.getItem() instanceof ToolItem) {
+                     ToolItem var8 = (ToolItem)var1.getItem();
+                     ToolItem var10 = (ToolItem)var2.getItem();
+                     if (var8.getAttackDamage() == var10.getAttackDamage()) {
                         return this.method4251(var1, var2);
                      }
 
-                     return var8.method11779() > var10.method11779();
+                     return var8.getAttackDamage() > var10.getAttackDamage();
                   }
                }
 
@@ -561,10 +565,10 @@ public abstract class MobEntity extends LivingEntity {
             } else {
                return false;
             }
-         } else if (var2.getItem() instanceof ItemSword) {
-            ItemSword var5 = (ItemSword)var1.getItem();
-            ItemSword var6 = (ItemSword)var2.getItem();
-            return var5.method11784() == var6.method11784() ? this.method4251(var1, var2) : var5.method11784() > var6.method11784();
+         } else if (var2.getItem() instanceof SwordItem) {
+            SwordItem var5 = (SwordItem)var1.getItem();
+            SwordItem var6 = (SwordItem)var2.getItem();
+            return var5.getAttackDamage() == var6.getAttackDamage() ? this.method4251(var1, var2) : var5.getAttackDamage() > var6.getAttackDamage();
          } else {
             return true;
          }
@@ -772,11 +776,11 @@ public abstract class MobEntity extends LivingEntity {
 
    @Override
    public ItemStack getItemStackFromSlot(EquipmentSlotType var1) {
-      switch (Class8979.field40589[var1.method8772().ordinal()]) {
+      switch (Class8979.field40589[var1.getSlotType().ordinal()]) {
          case 1:
-            return this.field5604.get(var1.method8773());
+            return this.field5604.get(var1.getIndex());
          case 2:
-            return this.field5606.get(var1.method8773());
+            return this.field5606.get(var1.getIndex());
          default:
             return ItemStack.EMPTY;
       }
@@ -784,12 +788,12 @@ public abstract class MobEntity extends LivingEntity {
 
    @Override
    public void setItemStackToSlot(EquipmentSlotType var1, ItemStack var2) {
-      switch (Class8979.field40589[var1.method8772().ordinal()]) {
+      switch (Class8979.field40589[var1.getSlotType().ordinal()]) {
          case 1:
-            this.field5604.set(var1.method8773(), var2);
+            this.field5604.set(var1.getIndex(), var2);
             break;
          case 2:
-            this.field5606.set(var1.method8773(), var2);
+            this.field5606.set(var1.getIndex(), var2);
       }
    }
 
@@ -817,12 +821,12 @@ public abstract class MobEntity extends LivingEntity {
 
    public float method4269(EquipmentSlotType var1) {
       float var4;
-      switch (Class8979.field40589[var1.method8772().ordinal()]) {
+      switch (Class8979.field40589[var1.getSlotType().ordinal()]) {
          case 1:
-            var4 = this.field5605[var1.method8773()];
+            var4 = this.field5605[var1.getIndex()];
             break;
          case 2:
-            var4 = this.field5607[var1.method8773()];
+            var4 = this.field5607[var1.getIndex()];
             break;
          default:
             var4 = 0.0F;
@@ -850,7 +854,7 @@ public abstract class MobEntity extends LivingEntity {
          boolean var6 = true;
 
          for (EquipmentSlotType var10 : EquipmentSlotType.values()) {
-            if (var10.method8772() == Class1969.field12837) {
+            if (var10.getSlotType() == EquipmentSlotType.Group.ARMOR) {
                ItemStack var11 = this.getItemStackFromSlot(var10);
                if (!var6 && this.rand.nextFloat() < var5) {
                   break;
@@ -879,14 +883,14 @@ public abstract class MobEntity extends LivingEntity {
       Item var4 = var0.getItem();
       if (var4 != Blocks.field36589.method11581() && (!(var4 instanceof Class3292) || !(((Class3292)var4).method11845() instanceof Class3251))) {
          if (var4 instanceof ArmorItem) {
-            return ((ArmorItem)var4).method11805();
+            return ((ArmorItem)var4).getType();
          } else if (var4 != Items.field38120) {
-            return !Class9561.method37052(var0, (PlayerEntity)null) ? EquipmentSlotType.field13731 : EquipmentSlotType.OFFHAND;
+            return !Class9561.method37052(var0, (PlayerEntity)null) ? EquipmentSlotType.MAINHAND : EquipmentSlotType.OFFHAND;
          } else {
-            return EquipmentSlotType.field13735;
+            return EquipmentSlotType.CHEST;
          }
       } else {
-         return EquipmentSlotType.field13736;
+         return EquipmentSlotType.HEAD;
       }
    }
 
@@ -951,7 +955,7 @@ public abstract class MobEntity extends LivingEntity {
       this.method4274(var4);
 
       for (EquipmentSlotType var8 : EquipmentSlotType.values()) {
-         if (var8.method8772() == Class1969.field12837) {
+         if (var8.getSlotType() == EquipmentSlotType.Group.ARMOR) {
             this.method4275(var4, var8);
          }
       }
@@ -960,7 +964,7 @@ public abstract class MobEntity extends LivingEntity {
    public void method4274(float var1) {
       if (!this.getHeldItemMainhand().isEmpty() && this.rand.nextFloat() < 0.25F * var1) {
          this.setItemStackToSlot(
-            EquipmentSlotType.field13731, EnchantmentHelper.method26342(this.rand, this.getHeldItemMainhand(), (int)(5.0F + var1 * (float)this.rand.nextInt(18)), false)
+            EquipmentSlotType.MAINHAND, EnchantmentHelper.method26342(this.rand, this.getHeldItemMainhand(), (int)(5.0F + var1 * (float)this.rand.nextInt(18)), false)
          );
       }
    }
@@ -993,12 +997,12 @@ public abstract class MobEntity extends LivingEntity {
    }
 
    public void method4279(EquipmentSlotType var1, float var2) {
-      switch (Class8979.field40589[var1.method8772().ordinal()]) {
+      switch (Class8979.field40589[var1.getSlotType().ordinal()]) {
          case 1:
-            this.field5605[var1.method8773()] = var2;
+            this.field5605[var1.getIndex()] = var2;
             break;
          case 2:
-            this.field5607[var1.method8773()] = var2;
+            this.field5607[var1.getIndex()] = var2;
       }
    }
 
@@ -1044,7 +1048,7 @@ public abstract class MobEntity extends LivingEntity {
       ItemStack var5 = var1.getHeldItem(var2);
       if (var5.getItem() == Items.LEAD && this.method4295(var1)) {
          this.method4298(var1, true);
-         var5.method32182(1);
+         var5.shrink(1);
          return ActionResultType.method9002(this.world.isRemote);
       } else {
          if (var5.getItem() == Items.field38088) {
@@ -1126,7 +1130,7 @@ public abstract class MobEntity extends LivingEntity {
                if (!var10.isEmpty()) {
                   var5.setItemStackToSlot(var9, var10.copy());
                   var5.method4279(var9, this.method4269(var9));
-                  var10.method32180(0);
+                  var10.setCount(0);
                }
             }
          }
@@ -1250,31 +1254,31 @@ public abstract class MobEntity extends LivingEntity {
       EquipmentSlotType var5;
       if (var1 != 98) {
          if (var1 != 99) {
-            if (var1 != 100 + EquipmentSlotType.field13736.method8773()) {
-               if (var1 != 100 + EquipmentSlotType.field13735.method8773()) {
-                  if (var1 != 100 + EquipmentSlotType.field13734.method8773()) {
-                     if (var1 != 100 + EquipmentSlotType.field13733.method8773()) {
+            if (var1 != 100 + EquipmentSlotType.HEAD.getIndex()) {
+               if (var1 != 100 + EquipmentSlotType.CHEST.getIndex()) {
+                  if (var1 != 100 + EquipmentSlotType.LEGS.getIndex()) {
+                     if (var1 != 100 + EquipmentSlotType.FEET.getIndex()) {
                         return false;
                      }
 
-                     var5 = EquipmentSlotType.field13733;
+                     var5 = EquipmentSlotType.FEET;
                   } else {
-                     var5 = EquipmentSlotType.field13734;
+                     var5 = EquipmentSlotType.LEGS;
                   }
                } else {
-                  var5 = EquipmentSlotType.field13735;
+                  var5 = EquipmentSlotType.CHEST;
                }
             } else {
-               var5 = EquipmentSlotType.field13736;
+               var5 = EquipmentSlotType.HEAD;
             }
          } else {
             var5 = EquipmentSlotType.OFFHAND;
          }
       } else {
-         var5 = EquipmentSlotType.field13731;
+         var5 = EquipmentSlotType.MAINHAND;
       }
 
-      if (!var2.isEmpty() && !method4301(var5, var2) && var5 != EquipmentSlotType.field13736) {
+      if (!var2.isEmpty() && !method4301(var5, var2) && var5 != EquipmentSlotType.HEAD) {
          return false;
       } else {
          this.setItemStackToSlot(var5, var2);
@@ -1289,7 +1293,7 @@ public abstract class MobEntity extends LivingEntity {
 
    public static boolean method4301(EquipmentSlotType var0, ItemStack var1) {
       EquipmentSlotType var4 = method4271(var1);
-      return var4 == var0 || var4 == EquipmentSlotType.field13731 && var0 == EquipmentSlotType.OFFHAND || var4 == EquipmentSlotType.OFFHAND && var0 == EquipmentSlotType.field13731;
+      return var4 == var0 || var4 == EquipmentSlotType.MAINHAND && var0 == EquipmentSlotType.OFFHAND || var4 == EquipmentSlotType.OFFHAND && var0 == EquipmentSlotType.MAINHAND;
    }
 
    @Override
@@ -1339,7 +1343,7 @@ public abstract class MobEntity extends LivingEntity {
 
    @Override
    public boolean attackEntityAsMob(Entity var1) {
-      float var4 = (float)this.getAttributeValue(Attributes.field42110);
+      float var4 = (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE);
       float var5 = (float)this.getAttributeValue(Attributes.field42111);
       if (var1 instanceof LivingEntity) {
          var4 += EnchantmentHelper.method26318(this.getHeldItemMainhand(), ((LivingEntity)var1).getCreatureAttribute());

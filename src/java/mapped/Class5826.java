@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 
 public class Class5826 extends Container {
@@ -92,7 +93,7 @@ public class Class5826 extends Container {
    @Override
    public ItemStack transferStackInSlot(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
-      Slot var6 = this.field25468.get(var2);
+      Slot var6 = this.inventorySlots.get(var2);
       if (var6 != null && var6.getHasStack()) {
          ItemStack var7 = var6.getStack();
          var5 = var7.copy();
@@ -150,12 +151,12 @@ public class Class5826 extends Container {
          if (!var1.isAlive() || var1 instanceof ServerPlayerEntity && ((ServerPlayerEntity)var1).method2783()) {
             ItemStack var4 = this.field25527.removeStackFromSlot(0);
             if (!var4.isEmpty()) {
-               var1.method2882(var4, false);
+               var1.dropItem(var4, false);
             }
 
             var4 = this.field25527.removeStackFromSlot(1);
             if (!var4.isEmpty()) {
-               var1.method2882(var4, false);
+               var1.dropItem(var4, false);
             }
          } else {
             var1.inventory.method4047(var1.world, this.field25527.removeStackFromSlot(0));
@@ -196,17 +197,17 @@ public class Class5826 extends Container {
    private void method18214(int var1, ItemStack var2) {
       if (!var2.isEmpty()) {
          for (int var5 = 3; var5 < 39; var5++) {
-            ItemStack var6 = this.field25468.get(var5).getStack();
+            ItemStack var6 = this.inventorySlots.get(var5).getStack();
             if (!var6.isEmpty() && this.method18215(var2, var6)) {
                ItemStack var7 = this.field25527.getStackInSlot(var1);
                int var8 = !var7.isEmpty() ? var7.getCount() : 0;
-               int var9 = Math.min(var2.method32113() - var8, var6.getCount());
+               int var9 = Math.min(var2.getMaxStackSize() - var8, var6.getCount());
                ItemStack var10 = var6.copy();
                int var11 = var8 + var9;
-               var6.method32182(var9);
-               var10.method32180(var11);
+               var6.shrink(var9);
+               var10.setCount(var11);
                this.field25527.setInventorySlotContents(var1, var10);
-               if (var11 >= var2.method32113()) {
+               if (var11 >= var2.getMaxStackSize()) {
                   break;
                }
             }

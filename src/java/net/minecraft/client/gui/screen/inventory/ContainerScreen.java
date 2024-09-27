@@ -11,6 +11,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.util.Util;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.container.ClickType;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
@@ -91,8 +92,8 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
       RenderSystem.method27905(33986, 240.0F, 240.0F);
       RenderSystem.color4f(1.0F, 1.0F, 1.0F, 1.0F);
 
-      for (int var11 = 0; var11 < this.field4727.field25468.size(); var11++) {
-         Slot var12 = this.field4727.field25468.get(var11);
+      for (int var11 = 0; var11 < this.field4727.inventorySlots.size(); var11++) {
+         Slot var12 = this.field4727.inventorySlots.get(var11);
          if (var12.isEnabled()) {
             this.method2619(var1, var12);
          }
@@ -111,17 +112,17 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
 
       this.method2617(var1, var2, var3);
       PlayerInventory var18 = this.mc.player.inventory;
-      ItemStack var19 = !this.field4737.isEmpty() ? this.field4737 : var18.method4057();
+      ItemStack var19 = !this.field4737.isEmpty() ? this.field4737 : var18.getItemStack();
       if (!var19.isEmpty()) {
          byte var20 = 8;
          int var22 = !this.field4737.isEmpty() ? 16 : 8;
          String var15 = null;
          if (!this.field4737.isEmpty() && this.field4736) {
             var19 = var19.copy();
-            var19.method32180(MathHelper.ceil((float)var19.getCount() / 2.0F));
+            var19.setCount(MathHelper.ceil((float)var19.getCount() / 2.0F));
          } else if (this.field4744 && this.field4743.size() > 1) {
             var19 = var19.copy();
-            var19.method32180(this.field4748);
+            var19.setCount(this.field4748);
             if (var19.isEmpty()) {
                var15 = "" + TextFormatting.YELLOW + "0";
             }
@@ -149,7 +150,7 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
    }
 
    public void renderHoveredTooltip(MatrixStack var1, int var2, int var3) {
-      if (this.mc.player.inventory.method4057().isEmpty() && this.field4729 != null && this.field4729.getHasStack()) {
+      if (this.mc.player.inventory.getItemStack().isEmpty() && this.field4729 != null && this.field4729.getHasStack()) {
          this.method2457(var1, this.field4729.getStack(), var2, var3);
       }
    }
@@ -177,11 +178,11 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
       ItemStack var7 = var2.getStack();
       boolean var8 = false;
       boolean var9 = var2 == this.field4730 && !this.field4737.isEmpty() && !this.field4736;
-      ItemStack var10 = this.mc.player.inventory.method4057();
+      ItemStack var10 = this.mc.player.inventory.getItemStack();
       String var11 = null;
       if (var2 == this.field4730 && !this.field4737.isEmpty() && this.field4736 && !var7.isEmpty()) {
          var7 = var7.copy();
-         var7.method32180(var7.getCount() / 2);
+         var7.setCount(var7.getCount() / 2);
       } else if (this.field4744 && this.field4743.contains(var2) && !var10.isEmpty()) {
          if (this.field4743.size() == 1) {
             return;
@@ -191,10 +192,10 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
             var7 = var10.copy();
             var8 = true;
             Container.computeStackSize(this.field4743, this.field4745, var7, !var2.getStack().isEmpty() ? var2.getStack().getCount() : 0);
-            int var12 = Math.min(var7.method32113(), var2.getItemStackLimit(var7));
+            int var12 = Math.min(var7.getMaxStackSize(), var2.getItemStackLimit(var7));
             if (var7.getCount() > var12) {
                var11 = TextFormatting.YELLOW.toString() + var12;
-               var7.method32180(var12);
+               var7.setCount(var12);
             }
          } else {
             this.field4743.remove(var2);
@@ -229,7 +230,7 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
    }
 
    private void method2620() {
-      ItemStack var3 = this.mc.player.inventory.method4057();
+      ItemStack var3 = this.mc.player.inventory.getItemStack();
       if (!var3.isEmpty() && this.field4744) {
          if (this.field4745 != 2) {
             this.field4748 = var3.getCount();
@@ -239,23 +240,23 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
                ItemStack var7 = var5.getStack();
                int var8 = !var7.isEmpty() ? var7.getCount() : 0;
                Container.computeStackSize(this.field4743, this.field4745, var6, var8);
-               int var9 = Math.min(var6.method32113(), var5.getItemStackLimit(var6));
+               int var9 = Math.min(var6.getMaxStackSize(), var5.getItemStackLimit(var6));
                if (var6.getCount() > var9) {
-                  var6.method32180(var9);
+                  var6.setCount(var9);
                }
 
                this.field4748 = this.field4748 - (var6.getCount() - var8);
             }
          } else {
-            this.field4748 = var3.method32113();
+            this.field4748 = var3.getMaxStackSize();
          }
       }
    }
 
    @Nullable
    private Slot method2621(double var1, double var3) {
-      for (int var7 = 0; var7 < this.field4727.field25468.size(); var7++) {
-         Slot var8 = this.field4727.field25468.get(var7);
+      for (int var7 = 0; var7 < this.field4727.inventorySlots.size(); var7++) {
+         Slot var8 = this.field4727.inventorySlots.get(var7);
          if (this.method2624(var8, var1, var3) && var8.isEnabled()) {
             return var8;
          }
@@ -282,14 +283,14 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
             boolean var14 = this.method2623(var1, var3, var12, var13, var5);
             int var15 = -1;
             if (var9 != null) {
-               var15 = var9.field25579;
+               var15 = var9.slotNumber;
             }
 
             if (var14) {
                var15 = -999;
             }
 
-            if (this.mc.gameSettings.touchscreen && var14 && this.mc.player.inventory.method4057().isEmpty()) {
+            if (this.mc.gameSettings.touchscreen && var14 && this.mc.player.inventory.getItemStack().isEmpty()) {
                this.mc.displayGuiScreen((Screen)null);
                return true;
             }
@@ -297,7 +298,7 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
             if (var15 != -1) {
                if (!this.mc.gameSettings.touchscreen) {
                   if (!this.field4744) {
-                     if (!this.mc.player.inventory.method4057().isEmpty()) {
+                     if (!this.mc.player.inventory.getItemStack().isEmpty()) {
                         this.field4744 = true;
                         this.field4746 = var5;
                         this.field4743.clear();
@@ -314,7 +315,7 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
                         }
                      } else {
                         if (this.mc.gameSettings.keyBindPickBlock.matchesMouseKey(var5)) {
-                           this.method2626(var9, var15, var5, ClickType.field14697);
+                           this.method2626(var9, var15, var5, ClickType.CLONE);
                         } else {
                            boolean var16 = var15 != -999
                               && (
@@ -324,11 +325,11 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
                            ClickType var17 = ClickType.PICKUP;
                            if (!var16) {
                               if (var15 == -999) {
-                                 var17 = ClickType.field14698;
+                                 var17 = ClickType.THROW;
                               }
                            } else {
                               this.field4752 = var9 != null && var9.getHasStack() ? var9.getStack().copy() : ItemStack.EMPTY;
-                              var17 = ClickType.field14695;
+                              var17 = ClickType.QUICK_MOVE;
                            }
 
                            this.method2626(var9, var15, var5, var17);
@@ -355,15 +356,15 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
    }
 
    private void method2622(int var1) {
-      if (this.field4729 != null && this.mc.player.inventory.method4057().isEmpty()) {
+      if (this.field4729 != null && this.mc.player.inventory.getItemStack().isEmpty()) {
          if (this.mc.gameSettings.keyBindSwapHands.matchesMouseKey(var1)) {
-            this.method2626(this.field4729, this.field4729.field25579, 40, ClickType.field14696);
+            this.method2626(this.field4729, this.field4729.slotNumber, 40, ClickType.SWAP);
             return;
          }
 
          for (int var4 = 0; var4 < 9; var4++) {
             if (this.mc.gameSettings.keyBindsHotbar[var4].matchesMouseKey(var1)) {
-               this.method2626(this.field4729, this.field4729.field25579, var4, ClickType.field14696);
+               this.method2626(this.field4729, this.field4729.slotNumber, var4, ClickType.SWAP);
             }
          }
       }
@@ -376,7 +377,7 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
    @Override
    public boolean mouseDragged(double var1, double var3, int var5, double var6, double var8) {
       Slot var12 = this.method2621(var1, var3);
-      ItemStack var13 = this.mc.player.inventory.method4057();
+      ItemStack var13 = this.mc.player.inventory.getItemStack();
       if (this.field4730 != null && this.mc.gameSettings.touchscreen) {
          if (var5 == 0 || var5 == 1) {
             if (!this.field4737.isEmpty()) {
@@ -386,11 +387,11 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
                      this.field4732 = var12;
                      this.field4742 = var14;
                   } else if (var14 - this.field4742 > 500L) {
-                     this.method2626(this.field4730, this.field4730.field25579, 0, ClickType.PICKUP);
-                     this.method2626(var12, var12.field25579, 1, ClickType.PICKUP);
-                     this.method2626(this.field4730, this.field4730.field25579, 0, ClickType.PICKUP);
+                     this.method2626(this.field4730, this.field4730.slotNumber, 0, ClickType.PICKUP);
+                     this.method2626(var12, var12.slotNumber, 1, ClickType.PICKUP);
+                     this.method2626(this.field4730, this.field4730.slotNumber, 0, ClickType.PICKUP);
                      this.field4742 = var14 + 750L;
-                     this.field4737.method32182(1);
+                     this.field4737.shrink(1);
                   }
                }
             } else if (var12 != this.field4730 && !this.field4730.getStack().isEmpty()) {
@@ -419,7 +420,7 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
       boolean var11 = this.method2623(var1, var3, var9, var10, var5);
       int var12 = -1;
       if (var8 != null) {
-         var12 = var8.field25579;
+         var12 = var8.slotNumber;
       }
 
       if (var11) {
@@ -428,15 +429,15 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
 
       if (this.field4751 && var8 != null && var5 == 0 && this.field4727.canMergeSlot(ItemStack.EMPTY, var8)) {
          if (!method2476()) {
-            this.method2626(var8, var12, var5, ClickType.field14700);
+            this.method2626(var8, var12, var5, ClickType.QUICK_MOVE_ALL);
          } else if (!this.field4752.isEmpty()) {
-            for (Slot var18 : this.field4727.field25468) {
+            for (Slot var18 : this.field4727.inventorySlots) {
                if (var18 != null
                   && var18.canTakeStack(this.mc.player)
                   && var18.getHasStack()
                   && var18.field25578 == var8.field25578
                   && Container.canAddItemToSlot(var18, this.field4752, true)) {
-                  this.method2626(var18, var18.field25579, var5, ClickType.field14695);
+                  this.method2626(var18, var18.slotNumber, var5, ClickType.QUICK_MOVE);
                }
             }
          }
@@ -464,10 +465,10 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
 
                boolean var16 = Container.canAddItemToSlot(var8, this.field4737, false);
                if (var12 != -1 && !this.field4737.isEmpty() && var16) {
-                  this.method2626(this.field4730, this.field4730.field25579, var5, ClickType.PICKUP);
+                  this.method2626(this.field4730, this.field4730.slotNumber, var5, ClickType.PICKUP);
                   this.method2626(var8, var12, 0, ClickType.PICKUP);
-                  if (!this.mc.player.inventory.method4057().isEmpty()) {
-                     this.method2626(this.field4730, this.field4730.field25579, var5, ClickType.PICKUP);
+                  if (!this.mc.player.inventory.getItemStack().isEmpty()) {
+                     this.method2626(this.field4730, this.field4730.slotNumber, var5, ClickType.PICKUP);
                      this.field4738 = MathHelper.floor(var1 - (double)var9);
                      this.field4739 = MathHelper.floor(var3 - (double)var10);
                      this.field4731 = this.field4730;
@@ -488,14 +489,14 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
                this.field4730 = null;
             }
          } else if (this.field4744 && !this.field4743.isEmpty()) {
-            this.method2626((Slot)null, -999, Container.getQuickcraftMask(0, this.field4745), ClickType.field14699);
+            this.method2626((Slot)null, -999, Container.getQuickcraftMask(0, this.field4745), ClickType.QUICK_CRAFT);
 
             for (Slot var14 : this.field4743) {
-               this.method2626(var14, var14.field25579, Container.getQuickcraftMask(1, this.field4745), ClickType.field14699);
+               this.method2626(var14, var14.slotNumber, Container.getQuickcraftMask(1, this.field4745), ClickType.QUICK_CRAFT);
             }
 
-            this.method2626((Slot)null, -999, Container.getQuickcraftMask(2, this.field4745), ClickType.field14699);
-         } else if (!this.mc.player.inventory.method4057().isEmpty()) {
+            this.method2626((Slot)null, -999, Container.getQuickcraftMask(2, this.field4745), ClickType.QUICK_CRAFT);
+         } else if (!this.mc.player.inventory.getItemStack().isEmpty()) {
             if (!this.mc.gameSettings.keyBindPickBlock.matchesMouseKey(var5)) {
                boolean var13 = var12 != -999
                   && (
@@ -506,14 +507,14 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
                   this.field4752 = var8 != null && var8.getHasStack() ? var8.getStack().copy() : ItemStack.EMPTY;
                }
 
-               this.method2626(var8, var12, var5, !var13 ? ClickType.PICKUP : ClickType.field14695);
+               this.method2626(var8, var12, var5, !var13 ? ClickType.PICKUP : ClickType.QUICK_MOVE);
             } else {
-               this.method2626(var8, var12, var5, ClickType.field14697);
+               this.method2626(var8, var12, var5, ClickType.CLONE);
             }
          }
       }
 
-      if (this.mc.player.inventory.method4057().isEmpty()) {
+      if (this.mc.player.inventory.getItemStack().isEmpty()) {
          this.field4749 = 0L;
       }
 
@@ -535,10 +536,10 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
 
    public void method2626(Slot var1, int var2, int var3, ClickType var4) {
       if (var1 != null) {
-         var2 = var1.field25579;
+         var2 = var1.slotNumber;
       }
 
-      this.mc.playerController.windowClick(this.field4727.field25471, var2, var3, var4, this.mc.player);
+      this.mc.playerController.windowClick(this.field4727.windowId, var2, var3, var4, this.mc.player);
    }
 
    @Override
@@ -549,10 +550,10 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
             if (this.field4729 != null && this.field4729.getHasStack()) {
                if (!this.mc.gameSettings.keyBindPickBlock.matchesKey(var1, var2)) {
                   if (this.mc.gameSettings.keyBindDrop.matchesKey(var1, var2)) {
-                     this.method2626(this.field4729, this.field4729.field25579, ! hasControlDown() ? 0 : 1, ClickType.field14698);
+                     this.method2626(this.field4729, this.field4729.slotNumber, ! hasControlDown() ? 0 : 1, ClickType.THROW);
                   }
                } else {
-                  this.method2626(this.field4729, this.field4729.field25579, 0, ClickType.field14697);
+                  this.method2626(this.field4729, this.field4729.slotNumber, 0, ClickType.CLONE);
                }
             }
 
@@ -567,15 +568,15 @@ public abstract class ContainerScreen<T extends Container> extends Screen implem
    }
 
    public boolean method2627(int var1, int var2) {
-      if (this.mc.player.inventory.method4057().isEmpty() && this.field4729 != null) {
+      if (this.mc.player.inventory.getItemStack().isEmpty() && this.field4729 != null) {
          if (this.mc.gameSettings.keyBindSwapHands.matchesKey(var1, var2)) {
-            this.method2626(this.field4729, this.field4729.field25579, 40, ClickType.field14696);
+            this.method2626(this.field4729, this.field4729.slotNumber, 40, ClickType.SWAP);
             return true;
          }
 
          for (int var5 = 0; var5 < 9; var5++) {
             if (this.mc.gameSettings.keyBindsHotbar[var5].matchesKey(var1, var2)) {
-               this.method2626(this.field4729, this.field4729.field25579, var5, ClickType.field14696);
+               this.method2626(this.field4729, this.field4729.slotNumber, var5, ClickType.SWAP);
                return true;
             }
          }

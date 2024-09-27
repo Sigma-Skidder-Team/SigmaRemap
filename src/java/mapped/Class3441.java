@@ -2,11 +2,13 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
@@ -92,7 +94,7 @@ public class Class3441 extends Block {
    }
 
    public static boolean method12115(IBlockReader var0, BlockPos var1) {
-      return var0.getBlockState(var1).method23446(BlockTags.field32761);
+      return var0.getBlockState(var1).isIn(BlockTags.field32761);
    }
 
    @Override

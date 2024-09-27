@@ -83,10 +83,10 @@ public class ParticleTypes {
    public static final Codec<IParticleData> field34120 = Registry.PARTICLE_TYPE.dispatch("type", IParticleData::getType, ParticleType::method24005);
 
    private static Class7435 method26742(String var0, boolean var1) {
-      return Registry.<Class7435>method9194(Registry.PARTICLE_TYPE, var0, new Class7435(var1));
+      return Registry.<Class7435>register(Registry.PARTICLE_TYPE, var0, new Class7435(var1));
    }
 
    private static <T extends IParticleData> ParticleType<T> method26743(String var0, IParticleData.IDeserializer<T> var1, Function<ParticleType<T>, Codec<T>> var2) {
-      return Registry.<ParticleType<T>>method9194(Registry.PARTICLE_TYPE, var0, new Class7433(false, var1, var2));
+      return Registry.<ParticleType<T>>register(Registry.PARTICLE_TYPE, var0, new Class7433(false, var1, var2));
    }
 }

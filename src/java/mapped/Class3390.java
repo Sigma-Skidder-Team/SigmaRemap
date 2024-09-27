@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.material.PushReaction;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
@@ -29,7 +31,7 @@ public abstract class Class3390 {
    public static final Direction[] field19003 = new Direction[]{
       Direction.WEST, Direction.EAST, Direction.NORTH, Direction.SOUTH, Direction.DOWN, Direction.field673
    };
-   public final Class8649 field19004;
+   public final Material field19004;
    public final boolean field19005;
    public final float field19006;
    public final boolean field19007;
@@ -125,8 +127,8 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public Class2315 method11689(BlockState var1) {
-      return this.field19004.method31091();
+   public PushReaction method11689(BlockState var1) {
+      return this.field19004.getPushReaction();
    }
 
    @Deprecated
@@ -155,12 +157,12 @@ public abstract class Class3390 {
 
    @Deprecated
    public boolean method11497(BlockState var1, Class5909 var2) {
-      return this.field19004.method31089() && (var2.method18357().isEmpty() || var2.method18357().getItem() != this.method11581());
+      return this.field19004.isReplaceable() && (var2.method18357().isEmpty() || var2.method18357().getItem() != this.method11581());
    }
 
    @Deprecated
    public boolean method11650(BlockState var1, Fluid var2) {
-      return this.field19004.method31089() || !this.field19004.method31086();
+      return this.field19004.isReplaceable() || !this.field19004.isSolid();
    }
 
    @Deprecated
@@ -252,7 +254,7 @@ public abstract class Class3390 {
 
    @Deprecated
    public float method11997(BlockState var1, PlayerEntity var2, IBlockReader var3, BlockPos var4) {
-      float var7 = var1.method23405(var3, var4);
+      float var7 = var1.getBlockHardness(var3, var4);
       if (var7 != -1.0F) {
          int var8 = !var2.method2884(var1) ? 100 : 30;
          return var2.method2883(var1) / var7 / (float)var8;
@@ -304,7 +306,7 @@ public abstract class Class3390 {
 
    public abstract Block method11584();
 
-   public Class7210 method12000() {
-      return (Class7210) AbstractBlock.method26653(this.field19013).apply(this.method11584().method11579());
+   public MaterialColor method12000() {
+      return (MaterialColor) AbstractBlock.method26653(this.field19013).apply(this.method11584().method11579());
    }
 }

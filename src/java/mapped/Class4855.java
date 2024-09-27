@@ -51,7 +51,7 @@ public class Class4855 extends Class4837 {
          if (!(var8 instanceof Class3321)) {
             if (field22652.test(var7)) {
                var5 = var7.copy();
-               var5.method32180(1);
+               var5.setCount(1);
             }
          } else {
             var4.add(((Class3321)var8).method11876().method313());

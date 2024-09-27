@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 
 public abstract class Class5823 extends Container {
@@ -55,7 +56,7 @@ public abstract class Class5823 extends Container {
    @Override
    public boolean canInteractWith(PlayerEntity var1) {
       return this.field25514
-         .<Boolean>method31715(
+         .<Boolean>applyOrElse(
             (var2, var3) -> this.method18191(var2.getBlockState(var3))
                   ? var1.getDistanceNearest((double)var3.getX() + 0.5, (double)var3.getY() + 0.5, (double)var3.getZ() + 0.5) <= 64.0
                   : false,
@@ -70,7 +71,7 @@ public abstract class Class5823 extends Container {
    @Override
    public ItemStack transferStackInSlot(PlayerEntity var1, int var2) {
       ItemStack var5 = ItemStack.EMPTY;
-      Slot var6 = this.field25468.get(var2);
+      Slot var6 = this.inventorySlots.get(var2);
       if (var6 != null && var6.getHasStack()) {
          ItemStack var7 = var6.getStack();
          var5 = var7.copy();

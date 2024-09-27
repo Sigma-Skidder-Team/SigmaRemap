@@ -3,10 +3,12 @@ package mapped;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -54,7 +56,7 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
       ItemStack var3 = this.field5273.get(4);
       if (this.field5277 <= 0 && var3.getItem() == Items.field37975) {
          this.field5277 = 20;
-         var3.method32182(1);
+         var3.shrink(1);
          this.markDirty();
       }
 
@@ -142,7 +144,7 @@ public class Class931 extends Class932 implements Class930, ITickableTileEntity 
          this.field5273.set(var4, Class7105.method22139(var3, this.field5273.get(var4)));
       }
 
-      var3.method32182(1);
+      var3.shrink(1);
       BlockPos var6 = this.getPos();
       if (var3.getItem().method11723()) {
          ItemStack var5 = new ItemStack(var3.getItem().method11722());

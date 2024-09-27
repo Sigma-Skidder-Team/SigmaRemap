@@ -34,7 +34,7 @@ public class RecipeList {
 
       for (int var5 = 1; var5 < var3; var5++) {
          ItemStack var6 = ((IRecipe)var0.get(var5)).getRecipeOutput();
-         if (!ItemStack.method32130(var4, var6) || !ItemStack.method32127(var4, var6)) {
+         if (!ItemStack.areItemStacksEqual(var4, var6) || !ItemStack.method32127(var4, var6)) {
             return false;
          }
       }

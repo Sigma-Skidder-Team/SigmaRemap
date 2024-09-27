@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 import org.apache.commons.lang3.Validate;
 
 public class Class3301 extends Class3298 {
-   public Class3301(Block var1, Block var2, Class5643 var3) {
+   public Class3301(Block var1, Block var2, Properties var3) {
       super(var1, var2, var3);
       Validate.isInstanceOf(Class3359.class, var1);
       Validate.isInstanceOf(Class3359.class, var2);

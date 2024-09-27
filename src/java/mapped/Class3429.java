@@ -2,6 +2,8 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.material.PushReaction;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -18,7 +20,7 @@ public abstract class Class3429 extends Block {
    }
 
    public static boolean method12087(BlockState var0) {
-      return var0.method23446(BlockTags.field32766) && var0.getBlock() instanceof Class3429;
+      return var0.isIn(BlockTags.field32766) && var0.getBlock() instanceof Class3429;
    }
 
    public Class3429(boolean var1, AbstractBlock var2) {
@@ -102,8 +104,8 @@ public abstract class Class3429 extends Block {
    }
 
    @Override
-   public Class2315 method11689(BlockState var1) {
-      return Class2315.field15862;
+   public PushReaction method11689(BlockState var1) {
+      return PushReaction.field15862;
    }
 
    @Override
