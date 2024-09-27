@@ -206,7 +206,7 @@ public abstract class PlayerEntity extends LivingEntity {
 
       this.ticksSinceLastSwing++;
       ItemStack var8 = this.getHeldItemMainhand();
-      if (!ItemStack.areItemStacksEqual1(this.field4928, var8)) {
+      if (!ItemStack.areItemStacksEqual(this.field4928, var8)) {
          if (!ItemStack.areItemsEqualIgnoreDurability(this.field4928, var8)) {
             this.resetCooldown();
          }
@@ -620,7 +620,7 @@ public abstract class PlayerEntity extends LivingEntity {
       }
 
       if (!var1.isEmpty()) {
-         if (this.world.isRemote && JelloPortal.getCurrentVersion().getVersionNumber() >= ViaVerList._1_16.getVersionNumber()) {
+         if (this.world.isRemote) {
             this.swingArm(Hand.MAIN_HAND);
          }
 

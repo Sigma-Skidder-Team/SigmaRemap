@@ -230,7 +230,7 @@ public class Class865 extends ContainerScreen<Class5837> {
          this.field4804 = null;
       }
 
-      if (!ItemStack.areItemStacksEqual1(var4, this.field4805) || !ItemStack.areItemStacksEqual1(var5, this.field4806) || !ItemStack.areItemStacksEqual1(var6, this.field4807)) {
+      if (!ItemStack.areItemStacksEqual(var4, this.field4805) || !ItemStack.areItemStacksEqual(var5, this.field4806) || !ItemStack.areItemStacksEqual(var6, this.field4807)) {
          this.field4808 = !var4.isEmpty() && !var5.isEmpty() && var6.isEmpty() && !this.field4810;
          this.field4809 = !this.field4810 && !var6.isEmpty() && !var4.isEmpty() && !var5.isEmpty();
       }

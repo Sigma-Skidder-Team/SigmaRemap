@@ -209,7 +209,7 @@ public class Class871 extends ContainerScreen<Class5822> {
 
    public void method2700() {
       ItemStack var3 = this.field4727.getSlot(0).getStack();
-      if (!ItemStack.areItemStacksEqual1(var3, this.field4840)) {
+      if (!ItemStack.areItemStacksEqual(var3, this.field4840)) {
          this.field4840 = var3;
 
          do {
