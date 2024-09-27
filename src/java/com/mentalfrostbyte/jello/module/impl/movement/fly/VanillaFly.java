@@ -75,7 +75,7 @@ public class VanillaFly extends Module {
     @EventTarget
     public void onUpdate(EventUpdate event) {
         if (this.isEnabled()) {
-            if (!mc.player.onGround && this.getBooleanValueFromSetttingName("Kick bypass")) {
+            if (!mc.player.onGround && this.getBooleanValueFromSettingName("Kick bypass")) {
                 if (this.ticksInAir > 0 && this.ticksInAir % 30 == 0 && !MultiUtilities.isAboveBounds(mc.player, 0.01F)) {
                     if (JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber()) {
                         event.setY(event.getY() - 0.04);

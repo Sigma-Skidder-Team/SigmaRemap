@@ -33,7 +33,7 @@ public class SlowHopSpeed extends Module {
     @EventTarget
     public void method16338(EventMove var1) {
         if (this.isEnabled()) {
-            boolean var4 = this.getBooleanValueFromSetttingName("AutoJump");
+            boolean var4 = this.getBooleanValueFromSettingName("AutoJump");
             double var5 = MovementUtils.getSpeed();
             boolean var7 = MultiUtilities.method17686();
             if (!mc.player.onGround) {

@@ -93,7 +93,7 @@ public class NameTags extends Module {
     @EventTarget
     private void method16926(TickEvent var1) {
         if (this.isEnabled()) {
-            this.field24006 = this.getBooleanValueFromSetttingName("Furnaces");
+            this.field24006 = this.getBooleanValueFromSettingName("Furnaces");
             if (!this.field24006) {
                 this.field24000.clear();
             } else {
@@ -220,7 +220,7 @@ public class NameTags extends Module {
     public void method16930(Render3DEvent var1) {
         if (this.isEnabled()) {
             RenderSystem.method27905(33986, 240.0F, 240.0F);
-            boolean var4 = this.getBooleanValueFromSetttingName("Magnify");
+            boolean var4 = this.getBooleanValueFromSettingName("Magnify");
 
             for (Entity var6 : this.field24005) {
                 float var7 = 1.0F;
@@ -248,7 +248,7 @@ public class NameTags extends Module {
                 this.method16932((BlockPos) var11.getKey(), (Class7070) var11.getValue(), var13);
             }
 
-            if (this.getBooleanValueFromSetttingName("Mob Owners")) {
+            if (this.getBooleanValueFromSettingName("Mob Owners")) {
                 for (Entity var12 : mc.world.getEntities()) {
                     if (var12 == mc.player && (var12 instanceof TameableEntity || var12 instanceof Class1074)) {
                         UUID var14 = !(var12 instanceof TameableEntity) ? ((Class1074) var12).method4933() : ((TameableEntity) var12).method4397();
@@ -271,7 +271,7 @@ public class NameTags extends Module {
 
                             if (this.field24007.get(var14) != null) {
                                 float var8 = 1.0F;
-                                if (this.getBooleanValueFromSetttingName("Magnify")) {
+                                if (this.getBooleanValueFromSettingName("Magnify")) {
                                     var8 = (float) Math.max(1.0, Math.sqrt(Class9647.method37620(var12) / 30.0));
                                 }
 

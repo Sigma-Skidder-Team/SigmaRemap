@@ -97,7 +97,7 @@ public class Waypoints extends Module {
 
     public List<Class8351> method16276(List<Class8351> var1) {
         List<Class8351> var4 = new ArrayList<>(var1);
-        if (this.getBooleanValueFromSetttingName("Unspawn Positions")) {
+        if (this.getBooleanValueFromSettingName("Unspawn Positions")) {
             var4.addAll(this.field23572.values());
         }
 

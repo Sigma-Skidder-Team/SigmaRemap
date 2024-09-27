@@ -57,7 +57,7 @@ public class OldAACSpeed extends Module {
 
                     this.field23535 = MovementUtils.method37092(var1, this.field23534, MovementUtils.method37083()[0], this.field23535, 45.0F);
                 }
-            } else if (this.getBooleanValueFromSetttingName("Auto Jump") && MultiUtilities.method17686()) {
+            } else if (this.getBooleanValueFromSettingName("Auto Jump") && MultiUtilities.method17686()) {
                 this.field23536 = 0;
                 mc.player.jump();
                 var1.setX(mc.player.getMotion().x);

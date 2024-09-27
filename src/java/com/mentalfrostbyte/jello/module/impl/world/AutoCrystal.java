@@ -326,13 +326,13 @@ public class AutoCrystal extends PremiumModule {
                             if (!(mc.player.getDistance(var6) > var1)) {
                                 if (mc.player.canAttack((LivingEntity) var6)) {
                                     if (!(var6 instanceof ArmorStandEntity)) {
-                                        if (!this.getBooleanValueFromSetttingName("Players") && var6 instanceof PlayerEntity) {
+                                        if (!this.getBooleanValueFromSettingName("Players") && var6 instanceof PlayerEntity) {
                                             var5.remove();
                                         } else if (var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(var6)) {
                                             var5.remove();
-                                        } else if (!this.getBooleanValueFromSetttingName("Invisible") && var6.isInvisible()) {
+                                        } else if (!this.getBooleanValueFromSettingName("Invisible") && var6.isInvisible()) {
                                             var5.remove();
-                                        } else if (!this.getBooleanValueFromSetttingName("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
+                                        } else if (!this.getBooleanValueFromSettingName("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
                                             var5.remove();
                                         } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var6)) {
                                             var5.remove();

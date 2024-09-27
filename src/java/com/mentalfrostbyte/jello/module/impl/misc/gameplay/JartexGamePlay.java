@@ -35,7 +35,7 @@ public class JartexGamePlay extends Module {
                 String var6 = var5.getChatComponent().getString();
                 String var7 = mc.player.getName().getString().toLowerCase();
                 String var8 = var5.getChatComponent().getString();
-                if (this.field23527.getBooleanValueFromSetttingName("AutoL")
+                if (this.field23527.getBooleanValueFromSettingName("AutoL")
                         && (
                         var8.toLowerCase().contains("§r§7 has been killed by §r§a§l" + var7)
                                 || var8.toLowerCase().contains("§r§7 was shot by §r§a§l" + var7)
@@ -45,11 +45,11 @@ public class JartexGamePlay extends Module {
                 }
 
                 if (var8.contains("§e§lPlay Again? §r§7Click here!§r")) {
-                    if (this.field23527.getBooleanValueFromSetttingName("AutoGG")) {
+                    if (this.field23527.getBooleanValueFromSettingName("AutoGG")) {
                         this.field23527.method16760();
                     }
 
-                    if (this.field23527.getBooleanValueFromSetttingName("Auto Join")) {
+                    if (this.field23527.getBooleanValueFromSettingName("Auto Join")) {
                         for (ITextComponent var10 : var5.getChatComponent().getSiblings()) {
                             ClickEvent var11 = var10.getStyle().getClickEvent();
                             if (var11 != null && var11.getAction() == ClickEvent$Action.RUN_COMMAND) {

@@ -37,7 +37,7 @@ public class JumpSpider extends Module {
                     var1.setY((double) ((int) mc.player.getPositionVec().y) - mc.player.getPositionVec().y);
                     this.field23832 = true;
                 }
-            } else if (this.getBooleanValueFromSetttingName("AutoJump") || mc.gameSettings.keyBindJump.isKeyDown()) {
+            } else if (this.getBooleanValueFromSettingName("AutoJump") || mc.gameSettings.keyBindJump.isKeyDown()) {
                 mc.player.jump();
                 var1.setY(mc.player.getMotion().y);
             } else if (!mc.gameSettings.keyBindSneak.isKeyDown()) {
@@ -46,7 +46,7 @@ public class JumpSpider extends Module {
             } else {
                 var1.setY(-0.0784);
             }
-        } else if (this.getBooleanValueFromSetttingName("AutoJump")) {
+        } else if (this.getBooleanValueFromSettingName("AutoJump")) {
             mc.player.jump();
             var1.setY(mc.player.getMotion().y);
         }
@@ -59,7 +59,7 @@ public class JumpSpider extends Module {
         if (this.isEnabled() && var1.isPre()) {
             Class9629 var4 = MultiUtilities.method17760(1.0E-4);
             String var5 = this.getStringSettingValueByName("Mode");
-            if (this.getBooleanValueFromSetttingName("Ceiling")
+            if (this.getBooleanValueFromSettingName("Ceiling")
                     && !mc.player.onGround
                     && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, 1.0E-6, 0.0)).count() > 0L) {
                 var1.setY(var1.getY() + 4.9E-7);
@@ -77,7 +77,7 @@ public class JumpSpider extends Module {
                 }
 
                 if (this.field23832) {
-                    if (this.getBooleanValueFromSetttingName("AutoJump") || mc.gameSettings.keyBindJump.isKeyDown()) {
+                    if (this.getBooleanValueFromSettingName("AutoJump") || mc.gameSettings.keyBindJump.isKeyDown()) {
                         this.field23832 = !this.field23832;
                     }
 

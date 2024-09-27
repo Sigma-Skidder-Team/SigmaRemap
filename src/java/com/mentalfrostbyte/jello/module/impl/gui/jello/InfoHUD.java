@@ -33,11 +33,11 @@ public class InfoHUD extends Module {
                     this.field23851 = this.field23851 + var4 / (float) Minecraft.getFps() * 1.5F;
                     boolean var5 = false;
                     int var6 = 14;
-                    if (this.getBooleanValueFromSetttingName("Show Player")) {
+                    if (this.getBooleanValueFromSettingName("Show Player")) {
                         var6 += this.method16696(0, mc.mainWindow.getHeight() - 23, 114);
                     }
 
-                    if (this.getBooleanValueFromSetttingName("Show Armor")) {
+                    if (this.getBooleanValueFromSettingName("Show Armor")) {
                         var6 += this.method16695(var6, mc.mainWindow.getHeight() - 14) + 10;
                     }
 

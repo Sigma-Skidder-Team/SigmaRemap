@@ -1,7 +1,9 @@
 package mapped;
 
+import club.minnced.discord.rpc.DiscordRPC;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.gui.GuiManager;
+import com.mentalfrostbyte.jello.network.NetworkManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Screen;
@@ -302,16 +304,11 @@ public class JelloMainMenuScreen extends Screen {
             var3.add(new MiniAlert(AlertType.BUTTON, "Ok", 55));
             this.method13233(this.field20983 = new AlertPanel(this, "music", true, "Dependencies.", var3.toArray(new MiniAlert[0])));
             this.field20983.method13604(var1 -> new Thread(() -> {
-                  try {
-                     Thread.sleep(114L);
-                     this.method13222(() -> {
-                        this.method13236(this.field20983);
-                        this.field20983 = null;
-                     });
-                  } catch (InterruptedException var4) {
-                     var4.printStackTrace();
-                  }
-               }).start());
+                this.method13222(() -> {
+                   this.method13236(this.field20983);
+                   this.field20983 = null;
+                });
+            }).start());
             this.field20983.method13603(true);
          });
       }
@@ -326,16 +323,15 @@ public class JelloMainMenuScreen extends Screen {
             var3.add(new MiniAlert(AlertType.BUTTON, "Yes", 55));
             this.method13233(this.field20984 = new AlertPanel(this, "music", true, "Dependencies.", var3.toArray(new MiniAlert[0])));
             this.field20984.method13604(var1 -> new Thread(() -> {
-                  try {
-                     Thread.sleep(114L);
-                     this.method13222(() -> {
-                        this.method13236(this.field20984);
-                        this.field20984 = null;
-                     });
-                  } catch (InterruptedException var4) {
-                     var4.printStackTrace();
-                  }
-               }).start());
+                this.method13222(() -> {
+                   this.method13236(this.field20984);
+                   this.field20984 = null;
+                });
+               NetworkManager.premium = false;
+               Client.getInstance().getDRPC().smallImageKey = null;
+               Client.getInstance().getDRPC().smallImageText = null;
+               DiscordRPC.INSTANCE.Discord_UpdatePresence(Client.getInstance().getDRPC());
+            }).start());
             this.field20984.method13603(true);
          });
       }

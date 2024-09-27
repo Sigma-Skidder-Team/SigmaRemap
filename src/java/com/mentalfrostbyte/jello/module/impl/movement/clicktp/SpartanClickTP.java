@@ -40,7 +40,7 @@ public class SpartanClickTP extends Module {
 
     @EventTarget
     private void method16104(ClickEvent var1) {
-        if (this.isEnabled() && (mc.player.isSneaking() || !this.access().getBooleanValueFromSetttingName("Sneak"))) {
+        if (this.isEnabled() && (mc.player.isSneaking() || !this.access().getBooleanValueFromSettingName("Sneak"))) {
             if (var1.getButton() == ClickEvent.Button.RIGHT) {
                 BlockRayTraceResult var4 = BlockUtil.rayTrace(
                         mc.player.rotationYaw, mc.player.rotationPitch, this.access().getNumberValueBySettingName("Maximum range")
@@ -75,7 +75,7 @@ public class SpartanClickTP extends Module {
                         && var4.y == (double) (this.field23465.getY() + 1)
                         && var4.z == (double) this.field23465.getZ() + 0.5) {
                     Client.getInstance().getNotificationManager().send(new Notification("ClickTP", "Successfully teleported"));
-                    if (!this.access().getBooleanValueFromSetttingName("Auto Disable")) {
+                    if (!this.access().getBooleanValueFromSettingName("Auto Disable")) {
                         this.field23464 = -1;
                         this.field23465 = null;
                         MultiUtilities.setPlayerYMotion(-0.08);

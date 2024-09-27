@@ -35,7 +35,7 @@ public class CubecraftGamePlay extends Module {
                 String var6 = var5.getChatComponent().getString();
                 String var7 = var5.getChatComponent().getString();
                 String var8 = mc.player.getName().getString().toLowerCase();
-                if (this.field23580.getBooleanValueFromSetttingName("AutoL")
+                if (this.field23580.getBooleanValueFromSettingName("AutoL")
                         && (
                         var6.toLowerCase().contains("was slain by " + var8)
                                 || var6.toLowerCase().contains("burned to death while fighting " + var8)
@@ -49,7 +49,7 @@ public class CubecraftGamePlay extends Module {
                     this.field23580.method16761(var6);
                 }
 
-                if (var7.contains("§a§lPlay Again §r§8• §r§6§lAuto Mode §r§8• §r§c§lLeave") && this.field23580.getBooleanValueFromSetttingName("Auto Join")) {
+                if (var7.contains("§a§lPlay Again §r§8• §r§6§lAuto Mode §r§8• §r§c§lLeave") && this.field23580.getBooleanValueFromSettingName("Auto Join")) {
                     for (ITextComponent var10 : var5.getChatComponent().getSiblings()) {
                         ClickEvent var11 = var10.getStyle().getClickEvent();
                         if (var11 != null && var11.getAction() == ClickEvent$Action.RUN_COMMAND && var11.getValue().contains("playagain")) {
@@ -64,7 +64,7 @@ public class CubecraftGamePlay extends Module {
                     }
                 }
 
-                if (this.field23580.getBooleanValueFromSetttingName("AutoGG") && var7.equalsIgnoreCase("§e" + mc.player.getName().getString() + "§r§a won the game!§r")) {
+                if (this.field23580.getBooleanValueFromSettingName("AutoGG") && var7.equalsIgnoreCase("§e" + mc.player.getName().getString() + "§r§a won the game!§r")) {
                     this.field23580.method16760();
                 }
             }

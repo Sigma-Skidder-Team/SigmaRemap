@@ -46,7 +46,7 @@ public class TestSpeed extends Module {
             if (mc.player.onGround
                     && mc.player.collidedVertically
                     && (mc.player.moveForward != 0.0F || mc.player.moveStrafing != 0.0F)
-                    && this.getBooleanValueFromSetttingName("AutoJump")) {
+                    && this.getBooleanValueFromSettingName("AutoJump")) {
                 mc.player.jump();
                 var1.setX(mc.player.getMotion().x);
                 var1.setY(mc.player.getMotion().y);

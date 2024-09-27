@@ -33,7 +33,7 @@ public class BasicAntiKB extends Module {
             }
          }
 
-         if (var1.getPacket() instanceof SExplosionPacket && this.getBooleanValueFromSetttingName("Explosions")) {
+         if (var1.getPacket() instanceof SExplosionPacket && this.getBooleanValueFromSettingName("Explosions")) {
             SExplosionPacket var5 = (SExplosionPacket)var1.getPacket();
             var5.motionX = var5.motionX * this.getNumberValueBySettingName("H-Multiplier");
             var5.motionZ = var5.motionZ * this.getNumberValueBySettingName("H-Multiplier");

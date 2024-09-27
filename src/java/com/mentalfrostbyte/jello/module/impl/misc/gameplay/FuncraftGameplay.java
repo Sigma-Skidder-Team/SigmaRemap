@@ -28,7 +28,7 @@ public class FuncraftGameplay extends Module {
                 SChatPacket var5 = (SChatPacket) var4;
                 String var6 = var5.getChatComponent().getString();
                 String var7 = mc.player.getName().getString().toLowerCase();
-                if (this.field23579.getBooleanValueFromSetttingName("AutoL")
+                if (this.field23579.getBooleanValueFromSettingName("AutoL")
                         && (var6.toLowerCase().contains("a été tué par " + var7) || var6.toLowerCase().contains("a été tué par le vide et " + var7))) {
                     this.field23579.method16761(var6);
                 }

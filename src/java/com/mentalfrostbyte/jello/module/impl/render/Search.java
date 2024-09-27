@@ -112,7 +112,7 @@ public class Search extends Module {
                 }
             }
 
-            if (this.getBooleanValueFromSetttingName("Holes")) {
+            if (this.getBooleanValueFromSettingName("Holes")) {
                 label57:
                 for (BlockPos var13 : this.method16166(var1)) {
                     if (mc.world.getBlockState(var13).getBlock() == Blocks.AIR) {

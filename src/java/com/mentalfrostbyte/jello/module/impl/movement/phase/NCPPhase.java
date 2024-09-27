@@ -41,8 +41,8 @@ public class NCPPhase extends PremiumModule {
     }
 
     @EventTarget
-    private void method16426(EventUpdate var1) {
-        if (this.isEnabled() && var1.isPre()) {
+    private void method16426(EventUpdate event) {
+        if (this.isEnabled() && event.isPre()) {
             if (mc.gameSettings.keyBindSneak.isKeyDown()) {
                 double var4 = mc.player.getPosX();
                 double var6 = mc.player.getPosY();
@@ -50,9 +50,9 @@ public class NCPPhase extends PremiumModule {
                 if (!MultiUtilities.method17686()) {
                     if (MultiUtilities.isAboveBounds(mc.player, 0.001F) && !MultiUtilities.method17761()) {
                         mc.player.setPosition(var4, var6 - 1.0, var8);
-                        var1.setY(var6 - 1.0);
-                        var1.method13908(true);
-                        var1.setPitch(var1.getPitch() + 10.0F);
+                        event.setY(var6 - 1.0);
+                        event.method13908(true);
+                        event.setPitch(event.getPitch() + 10.0F);
                         MultiUtilities.setPlayerYMotion(0.0);
                     } else if (mc.player.getPosY() == (double) ((int) mc.player.getPosY())) {
                         mc.player.setPosition(var4, var6 - 0.3, var8);
@@ -64,13 +64,13 @@ public class NCPPhase extends PremiumModule {
                 this.field23653++;
                 float var10 = (float) Math.sin(this.field23653) * 5.0F;
                 float var11 = (float) Math.cos(this.field23653) * 5.0F;
-                var1.setPitch(var1.getPitch() + var10);
-                var1.setYaw(var1.getYaw() + var11);
+                event.setPitch(event.getPitch() + var10);
+                event.setYaw(event.getYaw() + var11);
             } else if (this.field23652 < 0) {
                 return;
             }
 
-            var1.method13908(true);
+            event.method13908(true);
         }
     }
 
@@ -96,7 +96,7 @@ public class NCPPhase extends PremiumModule {
                     }
 
                     if (!this.field23651) {
-                        MovementUtils.setSpeed(var1, !this.getBooleanValueFromSetttingName("Hypixel") ? 0.0031 : 0.03);
+                        MovementUtils.setSpeed(var1, !this.getBooleanValueFromSettingName("Hypixel") ? 0.0031 : 0.03);
                     } else {
                         MovementUtils.setSpeed(var1, 0.617);
                     }

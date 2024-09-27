@@ -99,17 +99,17 @@ public class BlockFlyAACMode extends Module {
     @EventTarget
     public void method16205(EventMove var1) {
         if (this.isEnabled()) {
-            if (this.access().getBooleanValueFromSetttingName("No Sprint")) {
+            if (this.access().getBooleanValueFromSettingName("No Sprint")) {
                 mc.player.setSprinting(false);
             }
 
-            if (!this.getBooleanValueFromSetttingName("Haphe (AACAP)")) {
+            if (!this.getBooleanValueFromSettingName("Haphe (AACAP)")) {
                 mc.gameSettings.keyBindSprint.pressed = false;
                 mc.player.setSprinting(false);
             }
 
             ((BlockFly) this.access()).method16741(var1);
-            if (this.getBooleanValueFromSetttingName("Haphe (AACAP)")) {
+            if (this.getBooleanValueFromSettingName("Haphe (AACAP)")) {
                 if (!mc.player.onGround || mc.player.moveForward == 0.0F && mc.player.moveStrafing == 0.0F) {
                     if (this.field23524 >= 0) {
                         this.field23524++;
@@ -138,7 +138,7 @@ public class BlockFlyAACMode extends Module {
     @EventTarget
     private void method16206(Class4423 var1) {
         if (this.isEnabled() && mc.world != null && mc.player != null) {
-            if (this.getBooleanValueFromSetttingName("Haphe (AACAP)") && MovementUtils.isMoving() && !mc.player.isSprinting()) {
+            if (this.getBooleanValueFromSettingName("Haphe (AACAP)") && MovementUtils.isMoving() && !mc.player.isSprinting()) {
                 var1.field21557 *= 1.14F;
             }
         }
@@ -155,7 +155,7 @@ public class BlockFlyAACMode extends Module {
                 }
             }
 
-            if (this.getBooleanValueFromSetttingName("Haphe (AACAP)") && !mc.player.isJumping && !mc.player.onGround) {
+            if (this.getBooleanValueFromSettingName("Haphe (AACAP)") && !mc.player.isJumping && !mc.player.onGround) {
                 if (var3.getFace() == Direction.field673) {
                     return false;
                 }
@@ -187,7 +187,7 @@ public class BlockFlyAACMode extends Module {
             }
 
             if (var6 == ActionResultType.SUCCESS) {
-                if (!this.access().getBooleanValueFromSetttingName("NoSwing")) {
+                if (!this.access().getBooleanValueFromSettingName("NoSwing")) {
                     mc.player.swingArm(Hand.MAIN_HAND);
                 } else {
                     mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
@@ -211,7 +211,7 @@ public class BlockFlyAACMode extends Module {
     @EventTarget
     public void method16209(Render2DEvent var1) {
         if (this.isEnabled()) {
-            if (!this.getBooleanValueFromSetttingName("Haphe (AACAP)")) {
+            if (!this.getBooleanValueFromSettingName("Haphe (AACAP)")) {
             }
         }
     }
@@ -221,11 +221,11 @@ public class BlockFlyAACMode extends Module {
     private void method16210(EventUpdate var1) {
         if (this.isEnabled()) {
             if (!var1.isPre()) {
-                if (MovementUtils.isMoving() && mc.player.onGround && this.getBooleanValueFromSetttingName("Haphe (AACAP)") && !mc.player.isJumping) {
+                if (MovementUtils.isMoving() && mc.player.onGround && this.getBooleanValueFromSettingName("Haphe (AACAP)") && !mc.player.isJumping) {
                     mc.player.jump();
                 }
 
-                if (!this.getBooleanValueFromSetttingName("Haphe (AACAP)")) {
+                if (!this.getBooleanValueFromSettingName("Haphe (AACAP)")) {
                     if (!this.method16207()) {
                         float var11 = 0.0F;
 
@@ -238,7 +238,7 @@ public class BlockFlyAACMode extends Module {
                 }
             } else {
                 double var4 = mc.player.getPosY();
-                if (!mc.player.isJumping && this.getBooleanValueFromSetttingName("Haphe (AACAP)")) {
+                if (!mc.player.isJumping && this.getBooleanValueFromSettingName("Haphe (AACAP)")) {
                     var4 = this.field23522;
                 }
 
@@ -264,7 +264,7 @@ public class BlockFlyAACMode extends Module {
     public void method16211(JumpEvent var1) {
         if (this.isEnabled()) {
             if (this.access().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-                    && (!MultiUtilities.method17686() || this.access().getBooleanValueFromSetttingName("Tower while moving"))) {
+                    && (!MultiUtilities.method17686() || this.access().getBooleanValueFromSettingName("Tower while moving"))) {
                 var1.setCancelled(true);
             }
         }

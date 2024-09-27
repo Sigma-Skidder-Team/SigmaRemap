@@ -76,9 +76,9 @@ public class CakeEater extends Module {
 
             if (!var1.isPre()) {
                 if (field23588 != null) {
-                    if (this.getBooleanValueFromSetttingName("No Swing") && !this.getBooleanValueFromSetttingName("Mineplex")) {
+                    if (this.getBooleanValueFromSettingName("No Swing") && !this.getBooleanValueFromSettingName("Mineplex")) {
                         mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
-                    } else if (!this.getBooleanValueFromSetttingName("No Swing")) {
+                    } else if (!this.getBooleanValueFromSettingName("No Swing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     }
 
@@ -95,13 +95,13 @@ public class CakeEater extends Module {
                     mc.getConnection().sendPacket(new CPlayerTryUseItemOnBlockPacket(Hand.MAIN_HAND, var7));
                 }
             } else {
-                List var8 = this.method16321(!this.getBooleanValueFromSetttingName("Mineplex") ? mc.playerController.getBlockReachDistance() : 6.0F);
+                List var8 = this.method16321(!this.getBooleanValueFromSettingName("Mineplex") ? mc.playerController.getBlockReachDistance() : 6.0F);
                 if (var8.isEmpty()) {
                     field23588 = null;
                 } else {
                     Collections.sort(var8, new Class3593(this));
                     field23588 = (BlockPos) var8.get(0);
-                    if (!this.getBooleanValueFromSetttingName("Mineplex")) {
+                    if (!this.getBooleanValueFromSettingName("Mineplex")) {
                         float[] var6 = RotationHelper.method34144(
                                 (double) field23588.getX() + 0.5, (double) field23588.getZ() + 0.5, field23588.getY()
                         );

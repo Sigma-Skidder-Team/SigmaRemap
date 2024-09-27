@@ -1,5 +1,7 @@
 package com.mentalfrostbyte.jello.module.impl.gui.jello;
 
+import com.mentalfrostbyte.jello.module.Module;
+import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -12,7 +14,6 @@ import com.mentalfrostbyte.jello.event.impl.EventRender;
 import com.mentalfrostbyte.jello.event.impl.Render2DEvent;
 import com.mentalfrostbyte.jello.event.priority.HigestPriority;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.util.animation.Animation;
 import com.mentalfrostbyte.jello.util.animation.Direction;
@@ -31,7 +32,7 @@ import java.awt.Color;
 import java.util.Iterator;
 import java.util.UUID;
 
-public class TargetHUD extends PremiumModule {
+public class TargetHUD extends Module {
     public int field23682;
     public int field23683;
     public int field23684;
@@ -47,11 +48,12 @@ public class TargetHUD extends PremiumModule {
     private Entity entity;
 
     public TargetHUD() {
-        super("TargetHUD", "Shows target info with killaura", ModuleCategory.RENDER);
+        super(ModuleCategory.RENDER, "TargetHUD", "Shows target info with killaura");
         this.registerSetting(new ModeSetting("Background", "Background", 0, "Blur", "Color", "None"));
         this.registerSetting(new ModeSetting("Position", "HUD Position", 0, "Center", "Bottom"));
         this.registerSetting(new ModeSetting("HealthBar", "Healthbar color", 0, "Health", "White"));
         this.registerSetting(new BooleanSetting("Armor", "Draw target's armor", false));
+        this.registerSetting(new BooleanSetting("Head", "Draw target's head", false));
         this.method16005(false);
         this.field23689 = new Animation(800, 200, Direction.BACKWARDS);
         this.field23691 = new Animation(1500, 200, Direction.BACKWARDS);
@@ -61,15 +63,20 @@ public class TargetHUD extends PremiumModule {
 
     @Override
     public void onEnable() {
+        this.entity = null;
     }
 
     @EventTarget
     @HigestPriority
     private void method16473(Render2DEvent var1) {
+        if (KillAura.target != null && !this.entity.equals(KillAura.target)) {
+            MultiUtilities.addChatMessage("Set target as " + KillAura.target.getName().getUnformattedComponentText());
+            this.entity = KillAura.target;
+        }
         if (this.entity != null) {
-            this.field23684 = (this.getBooleanValueFromSetttingName("Head") ? 100 : 0)
+            this.field23684 = (this.getBooleanValueFromSettingName("Head") ? 100 : 0)
                     + Math.max(95, ResourceRegistry.JelloLightFont20.method23942(this.entity.getName().getString()))
-                    + (this.getBooleanValueFromSetttingName("Armor") ? 80 : 0)
+                    + (this.getBooleanValueFromSettingName("Armor") ? 80 : 0)
                     + 20;
             String var4 = this.getStringSettingValueByName("Position");
             switch (var4) {
@@ -83,6 +90,8 @@ public class TargetHUD extends PremiumModule {
             }
 
             this.field23682 -= 100;
+
+            renderTHUd(40);
             float var6 = ((LivingEntity) this.entity).getHealth();
             if (var6 != this.field23688) {
                 this.field23687 = this.field23688;
@@ -95,9 +104,34 @@ public class TargetHUD extends PremiumModule {
     @EventTarget
     @HigestPriority
     public void method16474(EventRender var1) {
+        if (this.entity != null) {
+            this.field23684 = (this.getBooleanValueFromSettingName("Head") ? 100 : 0)
+                    + Math.max(95, ResourceRegistry.JelloLightFont20.method23942(this.entity.getName().getString()))
+                    + (this.getBooleanValueFromSettingName("Armor") ? 80 : 0)
+                    + 20;
+            String var4 = this.getStringSettingValueByName("Position");
+            switch (var4) {
+                case "Center":
+                    this.field23682 = Minecraft.getInstance().mainWindow.getWidth() / 2 - this.field23684 / 2;
+                    this.field23683 = Minecraft.getInstance().mainWindow.getHeight() / 2 + 40;
+                    break;
+                case "Bottom":
+                    this.field23682 = Minecraft.getInstance().mainWindow.getWidth() / 2 - this.field23684 / 2;
+                    this.field23683 = Minecraft.getInstance().mainWindow.getHeight() - 200;
+            }
+
+            this.field23682 -= 100;
+            renderTHUd(40);
+            float var6 = ((LivingEntity) this.entity).getHealth();
+            if (var6 != this.field23688) {
+                this.field23687 = this.field23688;
+                this.field23688 = var6;
+                this.field23690.method25318(0.0F);
+            }
+        }
     }
 
-    private void method16475(int var1) {
+    private void renderTHUd(int var1) {
         if (mc.currentScreen == null || mc.currentScreen instanceof ChatScreen) {
             GL11.glPushMatrix();
             RenderUtil.method11421(var1 - 20, this.field23683 - 20, var1 + 200, this.field23683 + 120, true);
@@ -183,6 +217,7 @@ public class TargetHUD extends PremiumModule {
                             var9, 100.0F, 0.0F, var10, var12, 15728880, Math.min(1.0F, this.field23689.calcPercent() * 4.0F), this.field23691.calcPercent()
                     )
             );
+
             var12.method25602();
             var4.method32215(true);
             RenderSystem.popMatrix();

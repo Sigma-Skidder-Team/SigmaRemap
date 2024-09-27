@@ -72,7 +72,7 @@ public class MineplexHighJump extends Module {
             if (this.field24023) {
                this.field24023 = !this.field24023;
                MovementUtils.strafe(0.0);
-               if (this.getBooleanValueFromSetttingName("Disable")) {
+               if (this.getBooleanValueFromSettingName("Disable")) {
                   this.access().toggle();
                }
 
@@ -122,7 +122,7 @@ public class MineplexHighJump extends Module {
 
    @EventTarget
    public void method16974(Render2DEvent var1) {
-      if (this.isEnabled() && this.field24023 && !(mc.player.getPosY() < this.field24026) && this.getBooleanValueFromSetttingName("Fake fly")) {
+      if (this.isEnabled() && this.field24023 && !(mc.player.getPosY() < this.field24026) && this.getBooleanValueFromSettingName("Fake fly")) {
          mc.player.positionVec.y = this.field24026;
          mc.player.lastTickPosY = this.field24026;
          mc.player.field4915 = this.field24026;

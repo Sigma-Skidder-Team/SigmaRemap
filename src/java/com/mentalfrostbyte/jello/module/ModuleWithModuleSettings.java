@@ -153,7 +153,7 @@ public class ModuleWithModuleSettings extends Module {
     @Override
     public void onEnable() {
         this.method16724();
-        if (this.module instanceof PremiumModule && !Client.getInstance().getNetworkManager().isPremium()) {
+        if (!Client.getInstance().getNetworkManager().isPremium()) {
             this.method15998(false);
         }
     }

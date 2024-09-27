@@ -27,7 +27,7 @@ public class Derp extends Module {
     @EventTarget
     public void method16065(EventUpdate var1) {
         if (this.isEnabled() && var1.isPre()) {
-            if (this.getBooleanValueFromSetttingName("Sneak")) {
+            if (this.getBooleanValueFromSettingName("Sneak")) {
                 if (this.field23435) {
                     mc.getConnection().sendPacket(new CEntityActionPacket(mc.player, CEntityActionPacket.Action.RELEASE_SHIFT_KEY));
                 } else {
@@ -37,7 +37,7 @@ public class Derp extends Module {
 
             this.field23435 = !this.field23435;
             this.field23436++;
-            if (this.getBooleanValueFromSetttingName("Hit") && this.field23436 > this.field23434.nextInt(5) + 3) {
+            if (this.getBooleanValueFromSettingName("Hit") && this.field23436 > this.field23434.nextInt(5) + 3) {
                 this.field23436 = 0;
                 Hand var4 = Hand.values()[this.field23434.nextInt(1)];
                 mc.player.swingArm(var4);

@@ -22,7 +22,7 @@ public class Regen extends Module {
             && mc.player.getFoodStats().getFoodLevel() > 17
             && mc.player.getHealth() < 20.0F
             && mc.player.getHealth() != 0.0F
-            && (mc.player.onGround || !this.getBooleanValueFromSetttingName("Only OnGround"))) {
+            && (mc.player.onGround || !this.getBooleanValueFromSettingName("Only OnGround"))) {
             for (int var4 = 0; (float)var4 < this.getNumberValueBySettingName("Packet amount"); var4++) {
                mc.getConnection().sendPacket(new CPlayerPacket(mc.player.onGround));
             }

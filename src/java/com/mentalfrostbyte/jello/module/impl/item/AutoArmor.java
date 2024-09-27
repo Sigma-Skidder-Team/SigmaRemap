@@ -123,7 +123,7 @@ public class AutoArmor extends Module {
                         Class3256 var13 = (Class3256) var9.getItem();
                         if (EquipmentSlotType.CHEST == var7
                                 && (
-                                !Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getBooleanValueFromSetttingName("Fake Items")
+                                !Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getBooleanValueFromSettingName("Fake Items")
                                         || Client.getInstance().getSlotChangeTracker().method33238(var12) >= 1500L
                         )) {
                             this.method16617(var1);
@@ -149,7 +149,7 @@ public class AutoArmor extends Module {
                                 && InvManagerUtils.isBestArmorPiece(var9)
                                 && InvManagerUtils.getArmorProtectionValue(var9) > 0
                                 && (
-                                !Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getBooleanValueFromSetttingName("Fake Items")
+                                !Client.getInstance().getModuleManager().getModuleByClass(AutoArmor.class).getBooleanValueFromSettingName("Fake Items")
                                         || Client.getInstance().getSlotChangeTracker().method33238(var12) >= 1500L
                         )) {
                             this.method16617(var1);

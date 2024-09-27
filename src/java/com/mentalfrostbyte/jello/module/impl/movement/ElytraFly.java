@@ -51,7 +51,7 @@ public class ElytraFly extends Module {
         if (this.isEnabled()) {
             double var4 = MovementUtils.getSpeed();
             boolean var6 = MultiUtilities.method17686();
-            if (!this.getBooleanValueFromSetttingName("NCP") && mc.player.isSneaking()) {
+            if (!this.getBooleanValueFromSettingName("NCP") && mc.player.isSneaking()) {
                 var4 *= 2.5;
             }
 
@@ -77,10 +77,10 @@ public class ElytraFly extends Module {
             }
 
             int var7 = GLFW.glfwGetKey(mc.mainWindow.getHandle(), mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode);
-            if (var7 == 1 && this.getBooleanValueFromSetttingName("NCP")) {
+            if (var7 == 1 && this.getBooleanValueFromSettingName("NCP")) {
                 var1.setY(-0.9F);
             } else if (!mc.player.isSneaking()) {
-                if (mc.player.isJumping && !this.getBooleanValueFromSetttingName("NCP")) {
+                if (mc.player.isJumping && !this.getBooleanValueFromSettingName("NCP")) {
                     var1.setY(1.4F);
                 }
             } else {

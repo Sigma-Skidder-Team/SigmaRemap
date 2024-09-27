@@ -46,10 +46,10 @@ public class Class338 implements Runnable {
       }
 
       String mode = this.killauraModule.getStringSettingValueByName("Mode");
-      if (var3 && (var5 != null || !this.killauraModule.getBooleanValueFromSetttingName("Raytrace") || mode.equals("Multi"))) {
+      if (var3 && (var5 != null || !this.killauraModule.getBooleanValueFromSettingName("Raytrace") || mode.equals("Multi"))) {
          for (TimedEntity timedEnt : KillAura.getEntites(this.killauraModule)) {
             Entity entity = timedEnt.getEntity();
-            if (var5 != null && this.killauraModule.getBooleanValueFromSetttingName("Raytrace") && !mode.equals("Multi")) {
+            if (var5 != null && this.killauraModule.getBooleanValueFromSettingName("Raytrace") && !mode.equals("Multi")) {
                entity = var5.getEntity();
             }
 
@@ -57,7 +57,7 @@ public class Class338 implements Runnable {
                return;
             }
 
-            boolean noSwing = this.killauraModule.getBooleanValueFromSetttingName("No swing");
+            boolean noSwing = this.killauraModule.getBooleanValueFromSettingName("No swing");
             Minecraft mc = KillAura.mc;
             boolean isOnePointEight = false;
             if (JelloPortal.getCurrentVersion() != null) {
@@ -96,7 +96,7 @@ public class Class338 implements Runnable {
          if (mode.equals("Multi2")) {
             KillAura.method16847(this.killauraModule, KillAura.method16846(this.killauraModule) + 1);
          }
-      } else if (!this.killauraModule.getBooleanValueFromSetttingName("No swing")) {
+      } else if (!this.killauraModule.getBooleanValueFromSettingName("No swing")) {
          KillAura.mc.player.swingArm(Hand.MAIN_HAND);
       }
 

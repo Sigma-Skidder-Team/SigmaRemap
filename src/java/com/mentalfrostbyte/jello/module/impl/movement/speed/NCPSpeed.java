@@ -76,7 +76,7 @@ public class NCPSpeed extends Module {
                             var1.setY(var1.getY() - 0.01);
                         }
                     }
-                } else if (this.field23608 > 1 && (this.getBooleanValueFromSetttingName("Auto Jump") && MultiUtilities.method17686() || mc.gameSettings.keyBindJump.isKeyDown())) {
+                } else if (this.field23608 > 1 && (this.getBooleanValueFromSettingName("Auto Jump") && MultiUtilities.method17686() || mc.gameSettings.keyBindJump.isKeyDown())) {
                     this.field23607 = 0;
                     mc.player.jump();
                     var1.setX(mc.player.getMotion().x);

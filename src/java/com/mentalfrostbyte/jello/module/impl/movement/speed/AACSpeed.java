@@ -64,7 +64,7 @@ public class AACSpeed extends Module {
                this.field23398 = -1;
             }
 
-            if (MultiUtilities.method17686() && this.getBooleanValueFromSetttingName("Auto Jump")) {
+            if (MultiUtilities.method17686() && this.getBooleanValueFromSettingName("Auto Jump")) {
                mc.player.jump();
                var1.setY(mc.player.getMotion().y);
             }
@@ -114,7 +114,7 @@ public class AACSpeed extends Module {
    @EventTarget
    public void method16010(Render2DEvent var1) {
       if (this.isEnabled()) {
-         if (this.getBooleanValueFromSetttingName("Fluid Fix")) {
+         if (this.getBooleanValueFromSettingName("Fluid Fix")) {
             if (!mc.player.collidedHorizontally && !mc.player.collidedVertically) {
                String var4 = this.getStringSettingValueByName("Mode");
                float var5 = 13.0F;

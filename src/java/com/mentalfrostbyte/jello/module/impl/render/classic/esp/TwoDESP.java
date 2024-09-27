@@ -121,8 +121,8 @@ public class TwoDESP extends Module {
     @EventTarget
     public void method16515(EventRender2D var1) {
         if (this.isEnabled()) {
-            boolean var4 = this.access().getBooleanValueFromSetttingName("Show Invisibles");
-            boolean var5 = this.getBooleanValueFromSetttingName("Show Health");
+            boolean var4 = this.access().getBooleanValueFromSettingName("Show Invisibles");
+            boolean var5 = this.getBooleanValueFromSettingName("Show Health");
             RenderSystem.pushMatrix();
 
             for (Entity var7 : field23728.keySet()) {

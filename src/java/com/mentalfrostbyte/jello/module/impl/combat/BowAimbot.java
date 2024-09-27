@@ -80,7 +80,7 @@ public class BowAimbot extends Module {
                 this.field23754 = this.method16571(this.access().getNumberValueBySettingName("Range"));
             }
 
-            if (!this.field23754.isEmpty() && this.getBooleanValueFromSetttingName("Silent")) {
+            if (!this.field23754.isEmpty() && this.getBooleanValueFromSettingName("Silent")) {
                 float[] var4 = RotationHelper.method34146((LivingEntity) this.field23754.get(0));
                 var1.setPitch(var4[0]);
                 var1.setYaw(var4[1]);
@@ -90,7 +90,7 @@ public class BowAimbot extends Module {
 
     @EventTarget
     private void method16570(EventRender var1) {
-        if (this.isEnabled() && !this.getBooleanValueFromSetttingName("Silent")) {
+        if (this.isEnabled() && !this.getBooleanValueFromSettingName("Silent")) {
             if (!this.field23754.isEmpty()) {
                 float[] var4 = RotationHelper.method34146((LivingEntity) this.field23754.get(0));
                 mc.player.rotationYaw = var4[0];
@@ -119,19 +119,19 @@ public class BowAimbot extends Module {
                 var5.remove();
             } else if (var6 instanceof ArmorStandEntity) {
                 var5.remove();
-            } else if (!this.getBooleanValueFromSetttingName("Players") && var6 instanceof PlayerEntity) {
+            } else if (!this.getBooleanValueFromSettingName("Players") && var6 instanceof PlayerEntity) {
                 var5.remove();
-            } else if (this.getBooleanValueFromSetttingName("Anti-Bot") && var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(var6)) {
+            } else if (this.getBooleanValueFromSettingName("Anti-Bot") && var6 instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(var6)) {
                 var5.remove();
-            } else if (!this.getBooleanValueFromSetttingName("Invisible") && var6.isInvisible()) {
+            } else if (!this.getBooleanValueFromSettingName("Invisible") && var6.isInvisible()) {
                 var5.remove();
-            } else if (!this.getBooleanValueFromSetttingName("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
+            } else if (!this.getBooleanValueFromSettingName("Animals/Monsters") && !(var6 instanceof PlayerEntity)) {
                 var5.remove();
             } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var6)) {
                 var5.remove();
             } else if (var6.method3362()) {
                 var5.remove();
-            } else if (var6 instanceof PlayerEntity && Class8781.method31662((PlayerEntity) var6) && !this.getBooleanValueFromSetttingName("Teams")) {
+            } else if (var6 instanceof PlayerEntity && Class8781.method31662((PlayerEntity) var6) && !this.getBooleanValueFromSettingName("Teams")) {
                 var5.remove();
             }
         }

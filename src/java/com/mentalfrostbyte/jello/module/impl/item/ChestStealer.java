@@ -61,7 +61,7 @@ public class ChestStealer extends Module {
     @EventTarget
     public void method16365(EventUpdate var1) {
         if (this.isEnabled() && var1.isPre()) {
-            if (this.getBooleanValueFromSetttingName("Aura")) {
+            if (this.getBooleanValueFromSettingName("Aura")) {
                 if (this.field23624.getElapsedTime() > 2000L && this.field23621) {
                     this.field23624.reset();
                     this.field23621 = false;
@@ -147,7 +147,7 @@ public class ChestStealer extends Module {
 
                 if (!((float) Client.getInstance().getPlayerTracker().getMode() < this.getNumberValueBySettingName("Delay") * 20.0F)) {
                     if (InvManagerUtils.method25875()) {
-                        if (this.getBooleanValueFromSetttingName("Close")) {
+                        if (this.getBooleanValueFromSettingName("Close")) {
                             mc.player.method2772();
                         }
                     } else {
@@ -171,7 +171,7 @@ public class ChestStealer extends Module {
                                             this.field23621 = !this.field23621;
                                         }
 
-                                        if (!this.getBooleanValueFromSetttingName("Fix ViaVersion")) {
+                                        if (!this.getBooleanValueFromSettingName("Fix ViaVersion")) {
                                             InvManagerUtils.method25869(var4.field4727.windowId, var7.slotNumber, 0, ClickType.QUICK_MOVE, mc.player);
                                         } else {
                                             InvManagerUtils.fixedClick(var4.field4727.windowId, var7.slotNumber, 0, ClickType.QUICK_MOVE, mc.player, true);
@@ -191,7 +191,7 @@ public class ChestStealer extends Module {
                                     this.field23621 = !this.field23621;
                                 }
 
-                                if (this.getBooleanValueFromSetttingName("Close")) {
+                                if (this.getBooleanValueFromSettingName("Close")) {
                                     mc.player.method2772();
                                 }
 
@@ -285,7 +285,7 @@ public class ChestStealer extends Module {
 
     private boolean method16369(ItemStack var1) {
         Item var4 = var1.getItem();
-        if (!this.getBooleanValueFromSetttingName("Ignore Junk")) {
+        if (!this.getBooleanValueFromSettingName("Ignore Junk")) {
             return false;
         } else if (!(var4 instanceof SwordItem)) {
             if (var4 instanceof Class3268) {
@@ -297,7 +297,7 @@ public class ChestStealer extends Module {
                     if (var4 instanceof Class3292) {
                         return !BlockFly.method16733(var4);
                     } else if (!(var4 instanceof Class3308)
-                            && (!(var4 instanceof BowItem) || !Client.getInstance().getModuleManager().getModuleByClass(InvManager.class).getBooleanValueFromSetttingName("Archery"))) {
+                            && (!(var4 instanceof BowItem) || !Client.getInstance().getModuleManager().getModuleByClass(InvManager.class).getBooleanValueFromSettingName("Archery"))) {
                         if (var4 == Items.WATER_BUCKET && Client.getInstance().getModuleManager().getModuleByClass(AutoMLG.class).isEnabled()) {
                             return false;
                         } else {

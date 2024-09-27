@@ -25,7 +25,7 @@ public class ClickTP extends ModuleWithModuleSettings {
 
     @EventTarget
     public void method16752(Render3DEvent var1) {
-        if (this.isEnabled() && (mc.player.isSneaking() || !this.getBooleanValueFromSetttingName("Sneak"))) {
+        if (this.isEnabled() && (mc.player.isSneaking() || !this.getBooleanValueFromSettingName("Sneak"))) {
             BlockRayTraceResult var4 = BlockUtil.rayTrace(mc.player.rotationYaw, mc.player.rotationPitch, this.getNumberValueBySettingName("Maximum range"));
             BlockPos var5 = null;
             if (var4 != null) {

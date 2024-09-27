@@ -76,7 +76,7 @@ public class AntiVoid extends Module {
                 this.field23839--;
             }
 
-            if (this.field23837 > (double) this.getNumberValueBySettingName("Fall Distance") && (this.method16667() || !this.getBooleanValueFromSetttingName("Void"))) {
+            if (this.field23837 > (double) this.getNumberValueBySettingName("Fall Distance") && (this.method16667() || !this.getBooleanValueFromSettingName("Void"))) {
                 this.field23837 = 0.0;
                 this.method16668(this.getStringSettingValueByName("Mode"), var1);
             }

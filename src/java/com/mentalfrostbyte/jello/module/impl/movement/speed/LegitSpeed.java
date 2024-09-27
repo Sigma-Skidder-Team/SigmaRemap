@@ -28,7 +28,7 @@ public class LegitSpeed extends Module {
             if (mc.player.onGround
                     && mc.player.collidedVertically
                     && (mc.player.moveForward != 0.0F || mc.player.moveStrafing != 0.0F)
-                    && this.getBooleanValueFromSetttingName("AutoJump")) {
+                    && this.getBooleanValueFromSettingName("AutoJump")) {
                 mc.player.jump();
                 var1.setY(mc.player.getMotion().y);
             }

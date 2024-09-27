@@ -237,7 +237,7 @@ public class MineplexFly extends PremiumModule {
 
     @EventTarget
     public void method16462(Render2DEvent var1) {
-        if (this.isEnabled() && this.getBooleanValueFromSetttingName("Fake") && !(this.field23673 < 0.0) && !(mc.player.getPosY() < this.field23673)) {
+        if (this.isEnabled() && this.getBooleanValueFromSettingName("Fake") && !(this.field23673 < 0.0) && !(mc.player.getPosY() < this.field23673)) {
             mc.player.positionVec.y = this.field23673;
             mc.player.lastTickPosY = this.field23673;
             mc.player.field4915 = this.field23673;

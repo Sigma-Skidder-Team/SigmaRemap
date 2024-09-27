@@ -32,9 +32,9 @@ public class BoxChestESP extends Module {
         int var5 = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Trapped Color"), 0.14F);
 
         for (TileEntity var7 : mc.world.loadedTileEntityList) {
-            boolean var8 = var7 instanceof Class941 && !(var7 instanceof Class970) && this.access().getBooleanValueFromSetttingName("Show Regular Chests");
-            boolean var9 = var7 instanceof Class943 && this.access().getBooleanValueFromSetttingName("Show Ender Chests");
-            boolean var10 = var7 instanceof Class970 && this.access().getBooleanValueFromSetttingName("Show Trapped Chests");
+            boolean var8 = var7 instanceof Class941 && !(var7 instanceof Class970) && this.access().getBooleanValueFromSettingName("Show Regular Chests");
+            boolean var9 = var7 instanceof Class943 && this.access().getBooleanValueFromSettingName("Show Ender Chests");
+            boolean var10 = var7 instanceof Class970 && this.access().getBooleanValueFromSettingName("Show Trapped Chests");
             if (var8 || var9 || var10) {
                 double var11 = Class9647.method37624(var7.getPos()).field43722;
                 double var13 = Class9647.method37624(var7.getPos()).field43723;

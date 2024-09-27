@@ -54,8 +54,8 @@ public class TPDisabler extends Module {
 
             if ((float) this.field23517 >= this.getNumberValueBySettingName("Delay")) {
                 this.field23517 = 0;
-                boolean var8 = this.getBooleanValueFromSetttingName("OnGround");
-                if (this.getBooleanValueFromSetttingName("More Packets")) {
+                boolean var8 = this.getBooleanValueFromSettingName("OnGround");
+                if (this.getBooleanValueFromSettingName("More Packets")) {
                     mc.getConnection().sendPacket(new CPlayerPacket.PositionPacket(mc.player.getPosX(), var4, mc.player.getPosX(), var8));
                 } else {
                     var1.setY(var4);

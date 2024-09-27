@@ -46,15 +46,15 @@ public class AutoPotion extends Module {
     @LowestPriority
     private void method16629(EventUpdate var1) {
         if (this.isEnabled() && var1.isPre()) {
-            if (this.getBooleanValueFromSetttingName("In fight") || KillAura.field23949 == null && KillAura.target == null) {
+            if (this.getBooleanValueFromSettingName("In fight") || KillAura.field23949 == null && KillAura.target == null) {
                 int var4 = this.method16631();
                 this.field23808++;
                 int[] var5 = new int[]{6, -1, -1};
-                if (this.getBooleanValueFromSetttingName("Regen")) {
+                if (this.getBooleanValueFromSettingName("Regen")) {
                     var5[1] = 10;
                 }
 
-                if (this.getBooleanValueFromSetttingName("Speed")) {
+                if (this.getBooleanValueFromSettingName("Speed")) {
                     var5[2] = 1;
                 }
 
@@ -98,7 +98,7 @@ public class AutoPotion extends Module {
         double var3 = mc.player.getPosX() + mc.player.getMotion().x * 26.0;
         double var5 = mc.player.boundingBox.minY - 3.6;
         double var7 = mc.player.getPosZ() + mc.player.getMotion().z * 26.0;
-        return !this.getBooleanValueFromSetttingName("Predict") ? new float[]{mc.player.rotationYaw, 90.0F} : RotationHelper.method34144(var3, var7, var5);
+        return !this.getBooleanValueFromSettingName("Predict") ? new float[]{mc.player.rotationYaw, 90.0F} : RotationHelper.method34144(var3, var7, var5);
     }
 
     public int method16631() {
@@ -126,7 +126,7 @@ public class AutoPotion extends Module {
                 if (var9.getItem() instanceof Class3323) {
                     List<EffectInstance> var10 = InvManagerUtils.getPotionEffects(var9);
                     int var11 = this.method16633(var10);
-                    if (var10 != null && !var10.isEmpty() && (this.getBooleanValueFromSetttingName("Custom potion") || var11 == 1)) {
+                    if (var10 != null && !var10.isEmpty() && (this.getBooleanValueFromSettingName("Custom potion") || var11 == 1)) {
                         for (EffectInstance var13 : var10) {
                             int var14 = Effect.getId(var13.getPotion());
                             int var15 = var13.method8629();
@@ -185,7 +185,7 @@ public class AutoPotion extends Module {
                 float[] var9 = this.method16630();
                 mc.player.inventory.currentItem = var6 - 36;
                 mc.playerController.syncCurrentPlayItem();
-                if (!this.getBooleanValueFromSetttingName("Instant")) {
+                if (!this.getBooleanValueFromSettingName("Instant")) {
                     this.field23811 = 1;
                     var1.setPitch(var9[0]);
                     var1.setYaw(var9[1]);

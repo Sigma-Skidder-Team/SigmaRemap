@@ -212,7 +212,7 @@ public class HypixelFly extends Module {
             Vector3d var18 = mc.player.getAllowedMovement(var1.getVector().add(0.0, -var1.getVector().getY(), 0.0));
             double var19 = Math.abs(Math.sqrt(var18.lengthSquared()) - this.field23560);
             boolean var21 = var19 < 1.0E-4;
-            if (this.getBooleanValueFromSetttingName("No Collision") && this.field23560 > var10) {
+            if (this.getBooleanValueFromSettingName("No Collision") && this.field23560 > var10) {
                 List<Vector3d> var22 = new ArrayList();
                 float var23 = MathHelper.method37792(MovementUtils.method37086());
                 if (var23 > 0.0F && var23 < 90.0F) {

@@ -281,7 +281,7 @@ public class Test extends Module {
                             if (!(var4 instanceof SDisplayObjectivePacket)) {
                                 if (!(var4 instanceof STeamsPacket)) {
                                     if (!(var4 instanceof SEntityVelocityPacket)) {
-                                        if (var4 instanceof SExplosionPacket && this.getBooleanValueFromSetttingName("Explosions")) {
+                                        if (var4 instanceof SExplosionPacket && this.getBooleanValueFromSettingName("Explosions")) {
                                             SExplosionPacket var5 = (SExplosionPacket) var1.getPacket();
                                         }
                                     } else {

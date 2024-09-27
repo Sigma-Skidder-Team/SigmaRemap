@@ -162,7 +162,6 @@ public class ModuleManager {
                 this.register(new Nametags());
                 this.register(new com.mentalfrostbyte.jello.module.impl.render.classic.ESP());
                 this.register(new com.mentalfrostbyte.jello.module.impl.gui.classic.KeyStrokes());
-                this.register(new TargetHUD());
             }
         } else {
             this.register(new InfoHUD());
@@ -173,6 +172,7 @@ public class ModuleManager {
             this.register(new KeyStrokes());
             this.register(new MiniMap());
             this.register(new com.mentalfrostbyte.jello.module.impl.gui.jello.ActiveMods());
+            this.register(new TargetHUD());
             this.register(new RearView());
             this.register(new NameTags());
             this.register(new Waypoints());

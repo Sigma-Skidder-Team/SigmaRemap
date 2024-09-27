@@ -19,7 +19,7 @@ public class AntiCactus extends Module {
     private void method16182(EventBlockCollision var1) {
         if (this.isEnabled()) {
             if (mc.world.getBlockState(var1.getBlockPos()).getBlock() instanceof Class3220) {
-                var1.setBoxelShape(VoxelShapes.create(0.0, 0.0, 0.0, 1.0, !this.getBooleanValueFromSetttingName("Above") ? 0.9375 : 0.999, 1.0));
+                var1.setBoxelShape(VoxelShapes.create(0.0, 0.0, 0.0, 1.0, !this.getBooleanValueFromSettingName("Above") ? 0.9375 : 0.999, 1.0));
             }
 
             if (mc.world.getBlockState(var1.getBlockPos()).getBlock() instanceof Class3399) {

@@ -43,7 +43,7 @@ public class CubecraftFly extends Module {
             this.field23847 = this.field23848 = false;
         }
 
-        if (!this.getBooleanValueFromSetttingName("Damage")) {
+        if (!this.getBooleanValueFromSettingName("Damage")) {
             this.field23848 = true;
         }
     }

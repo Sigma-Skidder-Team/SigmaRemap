@@ -84,7 +84,7 @@ public class MineplexSpeed extends Module {
                     this.field23552++;
                 }
 
-                if (this.getBooleanValueFromSetttingName("AutoJump") && MultiUtilities.method17686()) {
+                if (this.getBooleanValueFromSettingName("AutoJump") && MultiUtilities.method17686()) {
                     mc.player.jump();
                     var1.setY(mc.player.getMotion().y);
                 }
@@ -94,7 +94,7 @@ public class MineplexSpeed extends Module {
                     return;
                 }
 
-                if (!this.getBooleanValueFromSetttingName("OnGround")) {
+                if (!this.getBooleanValueFromSettingName("OnGround")) {
                     return;
                 }
 

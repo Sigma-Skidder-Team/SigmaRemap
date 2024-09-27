@@ -20,7 +20,7 @@ public class NullDisabler extends Module {
             if (!(var1.getPacket() instanceof SKeepAlivePacket)) {
                 if (var1.getPacket() instanceof SConfirmTransactionPacket) {
                     SConfirmTransactionPacket var4 = (SConfirmTransactionPacket) var1.getPacket();
-                    if (var4.method17422() < 0 || !this.getBooleanValueFromSetttingName("Inv Bypass")) {
+                    if (var4.method17422() < 0 || !this.getBooleanValueFromSettingName("Inv Bypass")) {
                         var1.setCancelled(true);
                     }
                 }

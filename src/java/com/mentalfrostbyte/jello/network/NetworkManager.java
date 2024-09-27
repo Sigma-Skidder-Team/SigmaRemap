@@ -1,10 +1,11 @@
 package com.mentalfrostbyte.jello.network;
 
+import club.minnced.discord.rpc.DiscordRPC;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.unmapped.CombatTracker;
 
 public class NetworkManager {
-    public static boolean premium = true;
+    public static boolean premium = false;
     public Class9507 field38418;
     public Account account;
     public String field38425;
@@ -22,6 +23,9 @@ public class NetworkManager {
     public String method30447(String var1, String var2, Class9507 var3) {
         NetworkManager.premium = true;
         this.account = getNewAccount(var1);
+        Client.getInstance().getDRPC().smallImageKey = "premium";
+        Client.getInstance().getDRPC().smallImageText = "Premium";
+        DiscordRPC.INSTANCE.Discord_UpdatePresence(Client.getInstance().getDRPC());
         return null;
     }
 

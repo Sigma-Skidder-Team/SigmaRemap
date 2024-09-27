@@ -108,8 +108,8 @@ public class NoGroundCriticals extends Module {
                 var1.setY(var1.getY() + var4);
                 var1.setGround(var6);
             } else {
-                this.field23410 = this.getBooleanValueFromSetttingName("Avoid Fall Damage") && !this.field23411 ? 3 : 0;
-                if (this.getBooleanValueFromSetttingName("Avoid Fall Damage") && this.field23411 && !this.field23413 && mc.player.getMotion().y < -0.1) {
+                this.field23410 = this.getBooleanValueFromSettingName("Avoid Fall Damage") && !this.field23411 ? 3 : 0;
+                if (this.getBooleanValueFromSettingName("Avoid Fall Damage") && this.field23411 && !this.field23413 && mc.player.getMotion().y < -0.1) {
                     this.field23413 = !this.field23413;
                     var1.setGround(true);
                 }

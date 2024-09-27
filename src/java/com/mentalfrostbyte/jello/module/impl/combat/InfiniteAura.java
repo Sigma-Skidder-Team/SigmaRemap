@@ -103,7 +103,7 @@ public class InfiniteAura extends Module {
                                 this.field23900.add(var11);
                                 Collections.reverse(var11);
                                 this.method16773(var11, Client.getInstance().getModuleManager().getModuleByClass(Criticals.class).isEnabled());
-                                MultiUtilities.swing(var8, !this.getBooleanValueFromSetttingName("No Swing"));
+                                MultiUtilities.swing(var8, !this.getBooleanValueFromSettingName("No Swing"));
                                 Collections.reverse(var11);
                                 this.method16773(var11, false);
                             }
@@ -209,13 +209,13 @@ public class InfiniteAura extends Module {
                             if (!(mc.player.getDistance(var8) > var1)) {
                                 if (mc.player.canAttack((LivingEntity) var8)) {
                                     if (!(var8 instanceof ArmorStandEntity)) {
-                                        if (!this.getBooleanValueFromSetttingName("Players") && var8 instanceof PlayerEntity) {
+                                        if (!this.getBooleanValueFromSettingName("Players") && var8 instanceof PlayerEntity) {
                                             var7.remove();
                                         } else if (var8 instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(var8)) {
                                             var7.remove();
-                                        } else if (!this.getBooleanValueFromSetttingName("Invisible") && var8.isInvisible()) {
+                                        } else if (!this.getBooleanValueFromSettingName("Invisible") && var8.isInvisible()) {
                                             var7.remove();
-                                        } else if (!this.getBooleanValueFromSetttingName("Animals/Monsters") && !(var8 instanceof PlayerEntity)) {
+                                        } else if (!this.getBooleanValueFromSettingName("Animals/Monsters") && !(var8 instanceof PlayerEntity)) {
                                             var7.remove();
                                         } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var8)) {
                                             var7.remove();

@@ -18,7 +18,7 @@ public class Weather extends Module {
         super(ModuleCategory.WORLD, "Weather", "Removes rain and changes the world's time");
         this.registerSetting(new BooleanSetting("Custom time", "Set the world time", true));
         this.registerSetting(new NumberSetting<Float>("Time", "Time to set the world to", 12000.0F, Float.class, 0.0F, 24000.0F, 1.0F).addObserver(var1 -> {
-            if (this.getBooleanValueFromSetttingName("Custom time") && this.isEnabled()) {
+            if (this.getBooleanValueFromSettingName("Custom time") && this.isEnabled()) {
                 mc.world.method6834(-((long) this.getNumberValueBySettingName("Time")));
             }
         }));
@@ -42,7 +42,7 @@ public class Weather extends Module {
     @EventTarget
     private void method16230(TickEvent var1) {
         if (this.isEnabled()) {
-            if (!this.getBooleanValueFromSetttingName("Disable rain")) {
+            if (!this.getBooleanValueFromSettingName("Disable rain")) {
                 if (this.field23539) {
                     if (!(this.field23538 < 1.0F)) {
                         if (this.field23538 > 1.0F) {
@@ -80,7 +80,7 @@ public class Weather extends Module {
                             this.field23539 = true;
                         }
 
-                        if (!this.getBooleanValueFromSetttingName("Disable rain")) {
+                        if (!this.getBooleanValueFromSettingName("Disable rain")) {
                             this.field23538 = var4.method17398();
                         } else {
                             var1.method13899(new SChangeGameStatePacket(var4.method17397(), 0.0F));
@@ -88,7 +88,7 @@ public class Weather extends Module {
                         }
                     }
                 }
-            } else if (this.getBooleanValueFromSetttingName("Custom time")) {
+            } else if (this.getBooleanValueFromSettingName("Custom time")) {
                 var1.method13899(new SUpdateTimePacket(-((long) this.getNumberValueBySettingName("Time")), -((long) this.getNumberValueBySettingName("Time")), true));
             }
         }

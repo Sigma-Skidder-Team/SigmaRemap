@@ -39,7 +39,7 @@ public class MinemenSpider extends Module {
                 if (!mc.player.onGround) {
                     var1.setY(!mc.gameSettings.keyBindSneak.isKeyDown() ? 0.0 : var1.getY());
                 }
-            } else if (!this.getBooleanValueFromSetttingName("AutoClimb") && !mc.gameSettings.keyBindJump.isKeyDown()) {
+            } else if (!this.getBooleanValueFromSettingName("AutoClimb") && !mc.gameSettings.keyBindJump.isKeyDown()) {
                 var1.setY(!mc.gameSettings.keyBindSneak.isKeyDown() ? 0.0 : var1.getY());
             } else {
                 var1.setY(0.6);
@@ -48,7 +48,7 @@ public class MinemenSpider extends Module {
             MovementUtils.setSpeed(var1, 0.689 + (double) MovementUtils.method37078() * 0.06);
         }
 
-        if (MultiUtilities.isAboveBounds(mc.player, 0.001F) && this.getBooleanValueFromSetttingName("SneakVClip")) {
+        if (MultiUtilities.isAboveBounds(mc.player, 0.001F) && this.getBooleanValueFromSettingName("SneakVClip")) {
             if (mc.gameSettings.keyBindSneak.isKeyDown()
                     && !this.field23813
                     && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, -2.8, 0.0)).count() == 0L) {
@@ -75,7 +75,7 @@ public class MinemenSpider extends Module {
                 var1.setY(1.0E-14);
             }
         } else {
-            if (this.getBooleanValueFromSetttingName("Ceiling")
+            if (this.getBooleanValueFromSettingName("Ceiling")
                     && !mc.gameSettings.keyBindSneak.isKeyDown()
                     && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, 0.01, 0.0)).count() > 0L) {
                 var1.setY(1.0E-14);
@@ -97,7 +97,7 @@ public class MinemenSpider extends Module {
     private void method16637(EventUpdate var1) {
         if (this.isEnabled() && var1.isPre()) {
             Class9629 var4 = MultiUtilities.method17760(1.0E-4);
-            if (this.getBooleanValueFromSetttingName("Ceiling")
+            if (this.getBooleanValueFromSettingName("Ceiling")
                     && !mc.player.onGround
                     && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.offset(0.0, 1.0E-6, 0.0)).count() > 0L) {
                 var1.setY(var1.getY() + 4.9E-7);

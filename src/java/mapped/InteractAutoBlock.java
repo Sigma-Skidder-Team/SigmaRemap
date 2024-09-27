@@ -44,9 +44,9 @@ public class InteractAutoBlock {
    }
 
    public void block(Entity var1, float var2, float var3) {
-      if (this.parent.getBooleanValueFromSetttingName("Interact autoblock")) {
+      if (this.parent.getBooleanValueFromSettingName("Interact autoblock")) {
          EntityRayTraceResult var6 = MultiUtilities.method17714(
-            !this.parent.getBooleanValueFromSetttingName("Raytrace") ? var1 : null, var2, var3, var0 -> true, (double)this.parent.getNumberValueBySettingName("Range")
+            !this.parent.getBooleanValueFromSettingName("Raytrace") ? var1 : null, var2, var3, var0 -> true, (double)this.parent.getNumberValueBySettingName("Range")
          );
          if (var6 != null) {
             this.mc
@@ -98,7 +98,7 @@ public class InteractAutoBlock {
          var4++;
       }
 
-      if (this.mc.player.method2973() > 1.26F && this.parent.getBooleanValueFromSetttingName("Cooldown")) {
+      if (this.mc.player.method2973() > 1.26F && this.parent.getBooleanValueFromSettingName("Cooldown")) {
          int var11 = !var5 ? 1 : 2;
          float var12 = this.mc.player.method2973() - (float)this.mc.player.ticksSinceLastSwing - (float)var11;
          return var12 <= 0.0F && var12 > -1.0F;
@@ -175,15 +175,15 @@ public class InteractAutoBlock {
             entities.remove();
          } else if (ent instanceof ArmorStandEntity) {
             entities.remove();
-         } else if (!this.parent.getBooleanValueFromSetttingName("Players") && ent instanceof PlayerEntity) {
+         } else if (!this.parent.getBooleanValueFromSettingName("Players") && ent instanceof PlayerEntity) {
             entities.remove();
          } else if (ent instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(ent)) {
             entities.remove();
-         } else if (!this.parent.getBooleanValueFromSetttingName("Invisible") && ent.isInvisible()) {
+         } else if (!this.parent.getBooleanValueFromSettingName("Invisible") && ent.isInvisible()) {
             entities.remove();
-         } else if (!this.parent.getBooleanValueFromSetttingName("Animals") && (ent instanceof Class1018 || ent instanceof Class1042)) {
+         } else if (!this.parent.getBooleanValueFromSettingName("Animals") && (ent instanceof Class1018 || ent instanceof Class1042)) {
             entities.remove();
-         } else if (!this.parent.getBooleanValueFromSetttingName("Monsters") && ent instanceof Class1009) {
+         } else if (!this.parent.getBooleanValueFromSettingName("Monsters") && ent instanceof Class1009) {
             entities.remove();
          } else if (this.mc.player.getRidingEntity() != null && this.mc.player.getRidingEntity().equals(ent)) {
             entities.remove();
@@ -219,7 +219,7 @@ public class InteractAutoBlock {
 
             if (!(MultiUtilities.method17754(var10) > 8.0)) {
                boolean var26 = true;
-               if (this.parent.getBooleanValueFromSetttingName("Smart Reach")) {
+               if (this.parent.getBooleanValueFromSettingName("Smart Reach")) {
                   List<Class9629<Vector3d, Long>> var27 = this.field44349.get(ent);
                   if (var27 != null) {
                      for (Class9629<Vector3d, Long> var30 : var27) {
@@ -243,7 +243,7 @@ public class InteractAutoBlock {
 
                if (var26 && MultiUtilities.method17754(var10) > (double)var1) {
                   entities.remove();
-               } else if (!this.parent.getBooleanValueFromSetttingName("Through walls")) {
+               } else if (!this.parent.getBooleanValueFromSettingName("Through walls")) {
                   Rotations rotations = RotationHelper.getRotations(ent, true);
                   if (rotations == null) {
                      entities.remove();

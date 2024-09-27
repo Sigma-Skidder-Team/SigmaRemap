@@ -34,7 +34,7 @@ public class PingSpoofDisabler extends Module {
     public void method16100(WorldLoadEvent var1) {
         if (!this.isEnabled()) {
             ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Disabler.class);
-            if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSetttingName("Ping spoof")) {
+            if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSettingName("Ping spoof")) {
                 return;
             }
         }
@@ -46,7 +46,7 @@ public class PingSpoofDisabler extends Module {
     public void method16101(TickEvent var1) {
         if (!this.isEnabled()) {
             ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Disabler.class);
-            if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSetttingName("Ping spoof")) {
+            if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSettingName("Ping spoof")) {
                 return;
             }
         }
@@ -87,7 +87,7 @@ public class PingSpoofDisabler extends Module {
     public void method16103(ReceivePacketEvent var1) {
         if (!this.isEnabled()) {
             ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Disabler.class);
-            if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSetttingName("Ping spoof")) {
+            if (!var4.isEnabled() || !var4.getStringSettingValueByName("Type").equalsIgnoreCase("TP") || !var4.method16726().getBooleanValueFromSettingName("Ping spoof")) {
                 return;
             }
         }
@@ -107,7 +107,7 @@ public class PingSpoofDisabler extends Module {
                 } else {
                     SConfirmTransactionPacket var8 = (SConfirmTransactionPacket) var7;
                     int var6 = var8.method17422() - this.field23463;
-                    if (var6 > 0 || var6 < -20 || !this.getBooleanValueFromSetttingName("Inv Bypass")) {
+                    if (var6 > 0 || var6 < -20 || !this.getBooleanValueFromSettingName("Inv Bypass")) {
                         this.field23461.add(new Class8772(var8, this, (long) this.getNumberValueBySettingName("Lag")));
                         var1.setCancelled(true);
                     }

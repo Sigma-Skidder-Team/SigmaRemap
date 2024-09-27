@@ -21,7 +21,7 @@ public class Streaming extends Module {
     @EventTarget
     public void method16849(TextReplaceEvent var1) {
         if (this.isEnabled()) {
-            if (this.getBooleanValueFromSetttingName("Hide server name") && this.getStringSettingValueByName("Server name").length() > 1) {
+            if (this.getBooleanValueFromSettingName("Hide server name") && this.getStringSettingValueByName("Server name").length() > 1) {
                 var1.setText(var1.setText().replaceAll(this.getStringSettingValueByName("Server name"), "sigmaclient"));
                 var1.setText(var1.setText().replaceAll(this.getStringSettingValueByName("Server name").toLowerCase(), "sigmaclient"));
                 var1.setText(var1.setText().replaceAll(this.getStringSettingValueByName("Server name").toUpperCase(), "sigmaclient"));
@@ -36,7 +36,7 @@ public class Streaming extends Module {
     @EventTarget
     public void method16851(EventRenderEntity var1) {
         if (this.isEnabled()) {
-            if (this.getBooleanValueFromSetttingName("Hide skins")) {
+            if (this.getBooleanValueFromSettingName("Hide skins")) {
                 var1.method13955(false);
             }
         }

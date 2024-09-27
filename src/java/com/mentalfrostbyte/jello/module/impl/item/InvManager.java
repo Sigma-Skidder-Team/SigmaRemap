@@ -59,13 +59,13 @@ public class InvManager extends Module {
         for (int var5 = 9; var5 < 45; var5++) {
             if (mc.player.container.getSlot(var5).getHasStack()) {
                 ItemStack stack = mc.player.container.getSlot(var5).getStack();
-                if (calculateItemDamageBonus(stack) > var3 && (stack.getItem() instanceof SwordItem || !var4.getBooleanValueFromSetttingName("Sword"))) {
+                if (calculateItemDamageBonus(stack) > var3 && (stack.getItem() instanceof SwordItem || !var4.getBooleanValueFromSettingName("Sword"))) {
                     return false;
                 }
             }
         }
 
-        return var0.getItem() instanceof SwordItem || !var4.getBooleanValueFromSetttingName("Sword");
+        return var0.getItem() instanceof SwordItem || !var4.getBooleanValueFromSettingName("Sword");
     }
 
     public static float calculateItemDamageBonus(ItemStack itemStack) {
@@ -245,11 +245,11 @@ public class InvManager extends Module {
                             this.method16440(field23656, mode.equals("FakeInv"));
                         }
 
-                        if ((long) Client.getInstance().getPlayerTracker().getMode() >= delayValue && this.getBooleanValueFromSetttingName("Auto Shield")) {
+                        if ((long) Client.getInstance().getPlayerTracker().getMode() >= delayValue && this.getBooleanValueFromSettingName("Auto Shield")) {
                             this.fakeInventory(mode.equals("FakeInv"));
                         }
 
-                        if ((long) Client.getInstance().getPlayerTracker().getMode() >= delayValue && this.getBooleanValueFromSetttingName("Cleaner")) {
+                        if ((long) Client.getInstance().getPlayerTracker().getMode() >= delayValue && this.getBooleanValueFromSettingName("Cleaner")) {
                             for (int var8 = 9; var8 < 45; var8++) {
                                 if (mc.player.container.getSlot(var8).getHasStack()) {
                                     ItemStack var9 = mc.player.container.getSlot(var8).getStack();
@@ -279,7 +279,7 @@ public class InvManager extends Module {
         for (int var5 = 9; var5 < 45; var5++) {
             if (mc.player.container.getSlot(var5).getHasStack()) {
                 ItemStack var6 = mc.player.container.getSlot(var5).getStack();
-                if (method16431(var6) && calculateItemDamageBonus(var6) > 0.0F && (var6.getItem() instanceof SwordItem || !this.getBooleanValueFromSetttingName("Sword"))) {
+                if (method16431(var6) && calculateItemDamageBonus(var6) > 0.0F && (var6.getItem() instanceof SwordItem || !this.getBooleanValueFromSettingName("Sword"))) {
                     this.sendOpenInventoryPacket(var2);
                     InvManagerUtils.moveItemToHotbar(var5, hotbarSlot - 36);
                     this.timer.reset();
@@ -299,7 +299,7 @@ public class InvManager extends Module {
             return false;
         } else if (slot == field23654 && method16431(mc.player.container.getSlot(slot).getStack())) {
             return false;
-        } else if (var5 instanceof Class3334 && this.getBooleanValueFromSetttingName("Auto Shield")) {
+        } else if (var5 instanceof Class3334 && this.getBooleanValueFromSettingName("Auto Shield")) {
             return false;
         } else if (this.getStringSettingValueByName("Tools").equals("Throw")
                 || (
@@ -343,14 +343,14 @@ public class InvManager extends Module {
                 return true;
             } else if (var5 == Items.ENCHANTED_GOLDEN_APPLE) {
                 return false;
-            } else if (var5.isFood() && this.getBooleanValueFromSetttingName("Food") && var5.method11745() != Class8672.field39078) {
+            } else if (var5.isFood() && this.getBooleanValueFromSettingName("Food") && var5.method11745() != Class8672.field39078) {
                 return true;
             } else if (var5 instanceof Class3269 || var5 instanceof ToolItem || var5 instanceof SwordItem || var5 instanceof ArmorItem) {
                 return true;
-            } else if ((var5 instanceof BowItem || var5 instanceof Class3308) && this.getBooleanValueFromSetttingName("Archery")) {
+            } else if ((var5 instanceof BowItem || var5 instanceof Class3308) && this.getBooleanValueFromSettingName("Archery")) {
                 return true;
             } else {
-                return var5 instanceof SkullItem && this.getBooleanValueFromSetttingName("Heads") || var5.method11717().getString().toLowerCase().contains("tnt")
+                return var5 instanceof SkullItem && this.getBooleanValueFromSettingName("Heads") || var5.method11717().getString().toLowerCase().contains("tnt")
                         || var5.method11717().getString().toLowerCase().contains("stick")
                         || var5.method11717().getString().toLowerCase().contains("egg")
                         || var5.method11717().getString().toLowerCase().contains("string")

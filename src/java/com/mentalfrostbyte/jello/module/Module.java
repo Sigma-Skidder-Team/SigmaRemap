@@ -48,7 +48,7 @@ public abstract class Module {
         return this.settingMap.get(settingName).getCurrentValue();
     }
 
-    public boolean getBooleanValueFromSetttingName(String var1) {
+    public boolean getBooleanValueFromSettingName(String var1) {
         try {
             return Boolean.parseBoolean(this.getSettingValueBySettingName(var1).toString());
         } catch (Exception var5) {
@@ -263,12 +263,12 @@ public abstract class Module {
                 Client.getInstance().getEventManager().unsubscribe(this);
                 if (!(this instanceof ModuleWithModuleSettings)) {
                     if (Client.getInstance().getClientMode() == ClientMode.JELLO
-                            && Client.getInstance().getModuleManager().getModuleByClass(com.mentalfrostbyte.jello.module.impl.gui.jello.ActiveMods.class).getBooleanValueFromSetttingName("Sound")) {
+                            && Client.getInstance().getModuleManager().getModuleByClass(com.mentalfrostbyte.jello.module.impl.gui.jello.ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
                         Client.getInstance().getSoundManager().play("deactivate");
                     }
 
                     if (Client.getInstance().getClientMode() == ClientMode.CLASSIC
-                            && Client.getInstance().getModuleManager().getModuleByClass(ActiveMods.class).getBooleanValueFromSetttingName("Sound")) {
+                            && Client.getInstance().getModuleManager().getModuleByClass(ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
                         Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.STONE_BUTTON_CLICK_ON, 0.6F));
                     }
                 }
@@ -277,12 +277,12 @@ public abstract class Module {
             } else {
                 Client.getInstance().getEventManager().subscribe(this);
                 if (Client.getInstance().getClientMode() == ClientMode.JELLO
-                        && Client.getInstance().getModuleManager().getModuleByClass(com.mentalfrostbyte.jello.module.impl.gui.jello.ActiveMods.class).getBooleanValueFromSetttingName("Sound")) {
+                        && Client.getInstance().getModuleManager().getModuleByClass(com.mentalfrostbyte.jello.module.impl.gui.jello.ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
                     Client.getInstance().getSoundManager().play("activate");
                 }
 
                 if (Client.getInstance().getClientMode() == ClientMode.CLASSIC
-                        && Client.getInstance().getModuleManager().getModuleByClass(ActiveMods.class).getBooleanValueFromSetttingName("Sound")) {
+                        && Client.getInstance().getModuleManager().getModuleByClass(ActiveMods.class).getBooleanValueFromSettingName("Sound")) {
                     Minecraft.getInstance().getSoundHandler().method1000(MinecraftSoundManager.playSoundWithCustomPitch(SoundEvents.STONE_BUTTON_CLICK_ON, 0.7F));
                 }
 

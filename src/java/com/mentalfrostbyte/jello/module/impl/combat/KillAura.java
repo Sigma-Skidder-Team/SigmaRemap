@@ -204,7 +204,7 @@ public class KillAura extends Module {
 
     @EventTarget
     public void method16818(WorldLoadEvent var1) {
-        if (this.isEnabled() && this.getBooleanValueFromSetttingName("Disable on death")) {
+        if (this.isEnabled() && this.getBooleanValueFromSettingName("Disable on death")) {
             Client.getInstance().getNotificationManager().send(new Notification("Aura", "Aura disabled due to respawn"));
             this.toggle();
         }
@@ -217,7 +217,7 @@ public class KillAura extends Module {
                 this.field23957++;
             }
 
-            if (this.getBooleanValueFromSetttingName("Disable on death")) {
+            if (this.getBooleanValueFromSettingName("Disable on death")) {
                 if (!mc.player.isAlive()) {
                     this.toggle();
                     Client.getInstance().getNotificationManager().send(new Notification("Aura", "Aura disabled due to death"));
@@ -276,7 +276,7 @@ public class KillAura extends Module {
                     float var4 = this.getNumberValueBySettingName("Hit box expand");
                     ModuleWithModuleSettings var5 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(Criticals.class);
                     if (var5.isEnabled() && var5.getStringSettingValueByName("Type").equalsIgnoreCase("Minis")) {
-                        this.method16828(var1, var5.method16726().getStringSettingValueByName("Mode"), var5.method16726().getBooleanValueFromSetttingName("Avoid Fall Damage"));
+                        this.method16828(var1, var5.method16726().getStringSettingValueByName("Mode"), var5.method16726().getBooleanValueFromSettingName("Avoid Fall Damage"));
                     }
 
                     this.method16831();
@@ -288,7 +288,7 @@ public class KillAura extends Module {
                     var1.setPitch(this.rotations.yaw);
                     var1.setYaw(this.rotations.pitch);
                     boolean var6 = this.interactAB.method36821(this.field23939);
-                    float cooldown19 = !((double) mc.player.method2973() < 1.26) && this.getBooleanValueFromSetttingName("Cooldown") ? mc.player.getCooledAttackStrength(0.0F) : 1.0F;
+                    float cooldown19 = !((double) mc.player.method2973() < 1.26) && this.getBooleanValueFromSettingName("Cooldown") ? mc.player.getCooledAttackStrength(0.0F) : 1.0F;
                     boolean var8 = field23954 == 0 && var6 && cooldown19 >= 1.0F;
                     if (var6) {
                         this.interactAB.setupDelay();
@@ -316,7 +316,7 @@ public class KillAura extends Module {
 
     @EventTarget
     public void method16822(EventRender var1) {
-        if (field23949 != null && !this.getBooleanValueFromSetttingName("Silent") && !this.getStringSettingValueByName("Rotation Mode").equals("None")) {
+        if (field23949 != null && !this.getBooleanValueFromSettingName("Silent") && !this.getStringSettingValueByName("Rotation Mode").equals("None")) {
             float var4 = MathHelper.method37792(this.rots.yaw + (this.rotations.yaw - this.rots.yaw) * mc.getRenderPartialTicks());
             float var5 = MathHelper.method37792(this.rots.pitch + (this.rotations.pitch - this.rots.pitch) * mc.getRenderPartialTicks());
             mc.player.rotationYaw = var4;
@@ -659,7 +659,7 @@ public class KillAura extends Module {
 
     private void method16831() {
         Entity var3 = field23949.getEntity();
-        Rotations var4 = RotationHelper.getRotations(var3, !this.getBooleanValueFromSetttingName("Through walls"));
+        Rotations var4 = RotationHelper.getRotations(var3, !this.getBooleanValueFromSettingName("Through walls"));
         float var5 = RotationHelper.method34152(this.rotations.yaw, var4.yaw);
         float var6 = var4.pitch - this.rotations.pitch;
         String var7 = this.getStringSettingValueByName("Rotation Mode");

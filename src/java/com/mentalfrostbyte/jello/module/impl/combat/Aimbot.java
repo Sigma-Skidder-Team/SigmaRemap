@@ -41,13 +41,13 @@ public class Aimbot extends ModuleWithModuleSettings {
                             if (!(mc.player.getDistance(var7) > var1)) {
                                 if (mc.player.canAttack((LivingEntity) var7)) {
                                     if (!(var7 instanceof ArmorStandEntity)) {
-                                        if (!this.getBooleanValueFromSetttingName("Players") && var7 instanceof PlayerEntity) {
+                                        if (!this.getBooleanValueFromSettingName("Players") && var7 instanceof PlayerEntity) {
                                             var6.remove();
                                         } else if (var7 instanceof PlayerEntity && Client.getInstance().getCombatManager().isValidTarget(var7)) {
                                             var6.remove();
-                                        } else if (!this.getBooleanValueFromSetttingName("Invisible") && var7.isInvisible()) {
+                                        } else if (!this.getBooleanValueFromSettingName("Invisible") && var7.isInvisible()) {
                                             var6.remove();
-                                        } else if (!this.getBooleanValueFromSetttingName("Animals/Monsters") && !(var7 instanceof PlayerEntity)) {
+                                        } else if (!this.getBooleanValueFromSettingName("Animals/Monsters") && !(var7 instanceof PlayerEntity)) {
                                             var6.remove();
                                         } else if (mc.player.getRidingEntity() != null && mc.player.getRidingEntity().equals(var7)) {
                                             var6.remove();

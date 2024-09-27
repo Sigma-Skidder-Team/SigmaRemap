@@ -36,7 +36,7 @@ public class InvMove extends Module {
     @EventTarget
     private void method16584(SendPacketEvent var1) {
         if (this.isEnabled()) {
-            if (this.field23757 && var1.getPacket() instanceof CEntityActionPacket && this.getBooleanValueFromSetttingName("AACP")) {
+            if (this.field23757 && var1.getPacket() instanceof CEntityActionPacket && this.getBooleanValueFromSettingName("AACP")) {
                 CEntityActionPacket var4 = (CEntityActionPacket) var1.getPacket();
                 if (var4.getAction() == CEntityActionPacket.Action.START_SPRINTING) {
                     var1.setCancelled(true);
@@ -48,7 +48,7 @@ public class InvMove extends Module {
     @EventTarget
     private void method16585(TickEvent var1) {
         if (this.isEnabled()) {
-            if (this.getBooleanValueFromSetttingName("AACP")) {
+            if (this.getBooleanValueFromSettingName("AACP")) {
                 boolean var4 = !(mc.currentScreen instanceof InventoryScreen) || !(mc.currentScreen instanceof ChestScreen);
                 if (this.field23757 && !var4) {
                     this.field23757 = !this.field23757;

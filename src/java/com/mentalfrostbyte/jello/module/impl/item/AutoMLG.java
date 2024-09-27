@@ -73,7 +73,7 @@ public class AutoMLG extends PremiumModule {
                 var1.setYaw(var4[1]);
             }
 
-            if (field23649 == (!this.getBooleanValueFromSetttingName("Cubecraft") ? 3 : 5)) {
+            if (field23649 == (!this.getBooleanValueFromSettingName("Cubecraft") ? 3 : 5)) {
                 if (mc.player.inventory.currentItem != this.field23647) {
                     this.field23648 = mc.player.inventory.currentItem;
                     mc.player.inventory.currentItem = this.field23647;

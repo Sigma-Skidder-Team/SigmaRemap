@@ -46,7 +46,7 @@ public class RearView extends Module {
                 this.onEnable();
             }
 
-            if (this.getBooleanValueFromSetttingName("Smart Visibility")) {
+            if (this.getBooleanValueFromSettingName("Smart Visibility")) {
                 List<PlayerEntity> entities = mc.world
                         .getEntitiesInAABBexcluding(
                                 PlayerEntity.class,
@@ -82,8 +82,8 @@ public class RearView extends Module {
         if (framebuffer != null) {
             if (this.isEnabled()) {
                 if (! Minecraft.getInstance().gameSettings.hideGUI) {
-                    if (!this.getBooleanValueFromSetttingName("Smart Visibility")) {
-                        this.animation.changeDirection(mc.currentScreen != null && !this.getBooleanValueFromSetttingName("Show in GUI") ? Direction.BACKWARDS : Direction.FORWARDS);
+                    if (!this.getBooleanValueFromSettingName("Smart Visibility")) {
+                        this.animation.changeDirection(mc.currentScreen != null && !this.getBooleanValueFromSettingName("Show in GUI") ? Direction.BACKWARDS : Direction.FORWARDS);
                     } else {
                         this.animation.changeDirection(this.visibilityTimer <= 0 ? Direction.BACKWARDS : Direction.FORWARDS);
                     }
@@ -166,7 +166,7 @@ public class RearView extends Module {
     public void on2D(Render2DEvent event) {
         if (this.isEnabled()) {
             if (framebuffer != null) {
-                if (mc.currentScreen == null || this.getBooleanValueFromSetttingName("Show in GUI") || this.visibilityTimer != 0) {
+                if (mc.currentScreen == null || this.getBooleanValueFromSettingName("Show in GUI") || this.visibilityTimer != 0) {
                     RenderUtil.resetDepthBuffer();
                     RenderSystem.pushMatrix();
                     RenderSystem.clear(16640, false);

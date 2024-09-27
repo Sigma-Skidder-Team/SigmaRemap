@@ -39,14 +39,14 @@ public class RedeskyLongJump extends Module {
         if (mc.player.onGround) {
             if (this.field23981 > 0) {
                 this.field23981 = 0;
-                if (this.access().getBooleanValueFromSetttingName("Auto Disable")) {
+                if (this.access().getBooleanValueFromSettingName("Auto Disable")) {
                     this.access().toggle();
                     return;
                 }
             } else {
                 BlockPos var6 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
-                if (this.access().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var6) && MultiUtilities.method17686()
-                        || this.access().getBooleanValueFromSetttingName("Auto Jump") && MultiUtilities.method17686()
+                if (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.method34578(var6) && MultiUtilities.method17686()
+                        || this.access().getBooleanValueFromSettingName("Auto Jump") && MultiUtilities.method17686()
                         || var1.getY() == MovementUtils.method37080()) {
                     this.field23981 = 1;
                     var1.setY(MovementUtils.method37080());
@@ -96,7 +96,7 @@ public class RedeskyLongJump extends Module {
 
     @EventTarget
     public void method16896(EventUpdate var1) {
-        if (this.getBooleanValueFromSetttingName("NoFall")) {
+        if (this.getBooleanValueFromSettingName("NoFall")) {
             if (this.field23982 > 3.0) {
                 var1.setGround(true);
                 this.field23982 = 0.0;

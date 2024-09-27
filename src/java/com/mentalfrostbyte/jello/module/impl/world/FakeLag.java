@@ -92,15 +92,15 @@ public class FakeLag extends Module {
         }
 
         if (packet instanceof CKeepAlivePacket || packet instanceof CConfirmTransactionPacket) {
-            return this.getBooleanValueFromSetttingName("Ping");
+            return this.getBooleanValueFromSettingName("Ping");
         }
 
         if (packet instanceof CUseEntityPacket || packet instanceof CAnimateHandPacket) {
-            return this.getBooleanValueFromSetttingName("Combat");
+            return this.getBooleanValueFromSettingName("Combat");
         }
 
         if (packet instanceof CPlayerTryUseItemPacket || packet instanceof CPlayerDiggingPacket || packet instanceof CPlayerTryUseItemOnBlockPacket) {
-            return this.getBooleanValueFromSetttingName("Blocks");
+            return this.getBooleanValueFromSettingName("Blocks");
         }
 
         return false;

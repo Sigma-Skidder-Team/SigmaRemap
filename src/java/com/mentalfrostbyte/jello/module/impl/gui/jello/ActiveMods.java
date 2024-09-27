@@ -69,7 +69,7 @@ public class ActiveMods extends Module {
             if (var4.getAdjustedCategoryBasedOnClientMode() != ModuleCategory.GUI) {
                 this.field23612.add(var4);
                 this.field23615.put(var4, new Animation(150, 150, Direction.BACKWARDS));
-                if (this.getBooleanValueFromSetttingName("Animations")) {
+                if (this.getBooleanValueFromSettingName("Animations")) {
                     this.field23615.get(var4).changeDirection(!var4.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
                 }
             }
@@ -122,7 +122,7 @@ public class ActiveMods extends Module {
     private void method16355(EventRender var1) {
         if (this.isEnabled() && mc.player != null) {
             for (Module var5 : this.field23615.keySet()) {
-                if (this.getBooleanValueFromSetttingName("Animations")) {
+                if (this.getBooleanValueFromSettingName("Animations")) {
                     this.field23615.get(var5).changeDirection(!var5.isEnabled() ? Direction.BACKWARDS : Direction.FORWARDS);
                 }
             }
@@ -148,7 +148,7 @@ public class ActiveMods extends Module {
                 for (Module var13 : this.field23612) {
                     float var14 = 1.0F;
                     float var15 = 1.0F;
-                    if (!this.getBooleanValueFromSetttingName("Animations")) {
+                    if (!this.getBooleanValueFromSettingName("Animations")) {
                         if (!var13.isEnabled()) {
                             continue;
                         }

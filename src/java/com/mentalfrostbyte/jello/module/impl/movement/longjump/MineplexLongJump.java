@@ -97,7 +97,7 @@ public class MineplexLongJump extends Module {
 
                 if (this.field23804 > 0) {
                     this.field23804 = -1;
-                    if (this.access().getBooleanValueFromSetttingName("Auto Disable")) {
+                    if (this.access().getBooleanValueFromSettingName("Auto Disable")) {
                         this.access().toggle();
                         return;
                     }
@@ -106,7 +106,7 @@ public class MineplexLongJump extends Module {
                 this.field23807 = MultiUtilities.method17686();
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
                 if (MultiUtilities.method17686()
-                        && (this.access().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var4) || this.access().getBooleanValueFromSetttingName("Auto Jump"))) {
+                        && (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.method34578(var4) || this.access().getBooleanValueFromSettingName("Auto Jump"))) {
                     mc.player.jump();
                     var1.setY(mc.player.getMotion().y);
                     MovementUtils.setSpeed(var1, 0.0);

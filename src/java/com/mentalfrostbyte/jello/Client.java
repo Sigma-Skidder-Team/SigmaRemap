@@ -68,6 +68,7 @@ public class Client {
     private Class8795 field28989;
     private JelloPortal field28990;
     private ClientMode clientMode = ClientMode.PREMIUM;
+    private DiscordRichPresence discordRichPresence;
 
     private Client() {
     }
@@ -141,14 +142,12 @@ public class Client {
         DiscordEventHandlers var6 = new DiscordEventHandlers();
         var6.ready = var0 -> System.out.println("Ready!");
         var3.Discord_Initialize(var4, var6, true, var5);
-        DiscordRichPresence var7 = new DiscordRichPresence();
-        var7.startTimestamp = System.currentTimeMillis() / 1000L;
-        var7.state = "Playing Minecraft";
-        var7.details = "Jello for Sigma";
-        var7.largeImageKey = "jello";
-        var7.smallImageKey = "premium";
-        var7.smallImageText = "Premium";
-        var3.Discord_UpdatePresence(var7);
+        discordRichPresence = new DiscordRichPresence();
+        discordRichPresence.startTimestamp = System.currentTimeMillis() / 1000L;
+        discordRichPresence.state = "Playing Minecraft";
+        discordRichPresence.details = "Jello for Sigma";
+        discordRichPresence.largeImageKey = "jello";
+        var3.Discord_UpdatePresence(discordRichPresence);
     }
 
     public void method19922() {
@@ -348,6 +347,10 @@ public class Client {
 
     public ClientMode getClientMode() {
         return this.clientMode;
+    }
+
+    public DiscordRichPresence getDRPC() {
+        return this.discordRichPresence;
     }
 
     public void setupClient(ClientMode mode) {

@@ -29,7 +29,7 @@ public class AutoSprint extends Module {
         if (this.isEnabled()) {
             ModuleWithModuleSettings var4 = (ModuleWithModuleSettings) Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class);
             Module var5 = var4.module;
-            if (var5 == null || !var5.isEnabled() || !(var5 instanceof BlockFlyAACMode) || var5.getBooleanValueFromSetttingName("Haphe (AACAP)")) {
+            if (var5 == null || !var5.isEnabled() || !(var5 instanceof BlockFlyAACMode) || var5.getBooleanValueFromSettingName("Haphe (AACAP)")) {
                 mc.player.setSprinting(mc.player.moveForward > 0.0F && !((BlockFly) Client.getInstance().getModuleManager().getModuleByClass(BlockFly.class)).method16732());
             }
         }
@@ -52,7 +52,7 @@ public class AutoSprint extends Module {
 
     @EventTarget
     public void method16345(EventRayTraceResult var1) {
-        if (this.isEnabled() && this.getBooleanValueFromSetttingName("Keep Sprint")) {
+        if (this.isEnabled() && this.getBooleanValueFromSettingName("Keep Sprint")) {
             if (!var1.isHovering()) {
                 if (this.field23605.length == 2) {
                     double var4 = this.field23605[0] - mc.player.getMotion().x;

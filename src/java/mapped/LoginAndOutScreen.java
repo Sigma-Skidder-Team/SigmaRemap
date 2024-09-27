@@ -96,12 +96,10 @@ public class LoginAndOutScreen extends Screen {
 
             var5.add(new MiniAlert(AlertType.BUTTON, "Ok", 55));
             this.method13233(this.field21090 = new AlertPanel(this, "modal", true, "", var5.toArray(new MiniAlert[0])));
-            this.field21090.method13604(var1xx -> new Thread(() -> {
-                this.method13222(() -> {
-                   this.method13236(this.field21090);
-                   this.field21090 = null;
-                });
-            }).start());
+            this.field21090.method13604(var1xx -> new Thread(() -> this.method13222(() -> {
+               this.method13236(this.field21090);
+               this.field21090 = null;
+            })).start());
             this.field21090.method13603(true);
          });
       }

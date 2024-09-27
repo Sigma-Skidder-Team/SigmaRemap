@@ -2,7 +2,6 @@ package mapped;
 
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.Module;
-import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.MathUtils;
@@ -93,7 +92,7 @@ public class Class4351 extends Class4278 {
                var5x.method13222(() -> var5x.method13615());
 
                for (Module var7x : Client.getInstance().getModuleManager().getModuleMap().values()) {
-                  if (var7x instanceof PremiumModule && !Client.getInstance().getNetworkManager().isPremium()) {
+                  if (!Client.getInstance().getNetworkManager().isPremium()) {
                      var7x.method15998(false);
                   }
                }

@@ -19,10 +19,10 @@ public class VanillaESP extends Module {
         if (this.isEnabled()) {
             for (Entity var5 : mc.world.getEntities()) {
                 if (!Client.getInstance().getCombatManager().isValidTarget(var5)) {
-                    boolean var6 = MultiUtilities.method17744(var5) == Class2258.field14690 && this.access().getBooleanValueFromSetttingName("Show Players");
-                    boolean var7 = MultiUtilities.method17744(var5) == Class2258.field14689 && this.access().getBooleanValueFromSetttingName("Show Mobs");
-                    boolean var8 = MultiUtilities.method17744(var5) == Class2258.field14691 && this.access().getBooleanValueFromSetttingName("Show Passives");
-                    boolean var9 = !var5.isInvisible() || this.access().getBooleanValueFromSetttingName("Show Invisibles");
+                    boolean var6 = MultiUtilities.method17744(var5) == Class2258.field14690 && this.access().getBooleanValueFromSettingName("Show Players");
+                    boolean var7 = MultiUtilities.method17744(var5) == Class2258.field14689 && this.access().getBooleanValueFromSettingName("Show Mobs");
+                    boolean var8 = MultiUtilities.method17744(var5) == Class2258.field14691 && this.access().getBooleanValueFromSettingName("Show Passives");
+                    boolean var9 = !var5.isInvisible() || this.access().getBooleanValueFromSettingName("Show Invisibles");
                     var5.setGlowing((var7 || var6 || var8) && var9 && var5 != mc.player);
                 }
             }

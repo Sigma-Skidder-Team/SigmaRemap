@@ -51,7 +51,7 @@ public class NCPLongJump extends Module {
             if (mc.player.onGround) {
                 this.field23478 = 0;
                 this.field23477++;
-                if (this.field23479 && var1.getY() != 0.599 && this.access().getBooleanValueFromSetttingName("Auto Disable")) {
+                if (this.field23479 && var1.getY() != 0.599 && this.access().getBooleanValueFromSettingName("Auto Disable")) {
                     this.access().toggle();
                     MovementUtils.setSpeed(var1, MovementUtils.method37076() * 0.8);
                     return;
@@ -59,12 +59,12 @@ public class NCPLongJump extends Module {
 
                 BlockPos var4 = new BlockPos(mc.player.getPosX(), mc.player.getPosY() - 0.4, mc.player.getPosZ());
                 if (Step.field23887 > 1) {
-                    if (this.access().getBooleanValueFromSetttingName("BorderJump") && !BlockUtil.method34578(var4) && this.field23477 > 0 && MultiUtilities.method17686()) {
+                    if (this.access().getBooleanValueFromSettingName("BorderJump") && !BlockUtil.method34578(var4) && this.field23477 > 0 && MultiUtilities.method17686()) {
                         mc.player.jump();
                         var1.setX(mc.player.getMotion().x);
                         var1.setY(mc.player.getMotion().y);
                         var1.setZ(mc.player.getMotion().z);
-                    } else if (this.access().getBooleanValueFromSetttingName("Auto Jump") && this.field23477 > (this.field23479 ? 1 : 0) && MultiUtilities.method17686()) {
+                    } else if (this.access().getBooleanValueFromSettingName("Auto Jump") && this.field23477 > (this.field23479 ? 1 : 0) && MultiUtilities.method17686()) {
                         mc.player.jump();
                         var1.setX(mc.player.getMotion().x);
                         var1.setY(mc.player.getMotion().y);
@@ -129,7 +129,7 @@ public class NCPLongJump extends Module {
                     }
                 }
 
-                if (this.field23477 == 1 && mc.player.getMotion().y < 0.0 && this.access().getBooleanValueFromSetttingName("Auto Jump")) {
+                if (this.field23477 == 1 && mc.player.getMotion().y < 0.0 && this.access().getBooleanValueFromSettingName("Auto Jump")) {
                     MovementUtils.setSpeed(var1, MovementUtils.method37076() * 0.2);
                 }
             }

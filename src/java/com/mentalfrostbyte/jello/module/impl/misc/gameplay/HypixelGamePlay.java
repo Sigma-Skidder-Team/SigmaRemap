@@ -55,7 +55,7 @@ public class HypixelGamePlay extends Module {
                 if (Client.getInstance().getModuleManager().getModuleByClass(NameProtect.class).isEnabled()) {
                 }
 
-                if (this.field23626.getBooleanValueFromSetttingName("AutoL")) {
+                if (this.field23626.getBooleanValueFromSettingName("AutoL")) {
                     String[] var8 = new String[]{"MULTI ", "PENTA ", "QUADRA ", "TRIPLE ", "DOUBLE ", ""};
                     boolean var9 = false;
 
@@ -117,7 +117,7 @@ public class HypixelGamePlay extends Module {
                     }
                 }
 
-                if (this.getBooleanValueFromSetttingName("FriendAccept") && var6.contains("[ACCEPT] - [DENY] - [IGNORE]")) {
+                if (this.getBooleanValueFromSettingName("FriendAccept") && var6.contains("[ACCEPT] - [DENY] - [IGNORE]")) {
                     for (ITextComponent var31 : var5.getChatComponent().getSiblings()) {
                         ClickEvent var35 = var31.getStyle().getClickEvent();
                         if (var35 != null && var35.getAction() == ClickEvent$Action.RUN_COMMAND && var35.getValue().contains("/f accept")) {
@@ -127,7 +127,7 @@ public class HypixelGamePlay extends Module {
                 }
 
                 if (var6.contains("Want to play again? Click here! ") || var6.contains("coins! (Win)")) {
-                    if (this.field23626.getBooleanValueFromSetttingName("Auto Join")) {
+                    if (this.field23626.getBooleanValueFromSettingName("Auto Join")) {
                         for (ITextComponent var32 : var5.getChatComponent().getSiblings()) {
                             ClickEvent var36 = var32.getStyle().getClickEvent();
                             if (var36 != null && var36.getAction() == ClickEvent$Action.RUN_COMMAND) {
@@ -137,11 +137,11 @@ public class HypixelGamePlay extends Module {
                         }
                     }
 
-                    if (this.field23626.getBooleanValueFromSetttingName("AutoGG")) {
+                    if (this.field23626.getBooleanValueFromSettingName("AutoGG")) {
                         this.field23626.method16760();
                     }
                 }
-            } else if (var4 instanceof STeamsPacket && this.getBooleanValueFromSetttingName("Hide infos")) {
+            } else if (var4 instanceof STeamsPacket && this.getBooleanValueFromSettingName("Hide infos")) {
                 STeamsPacket var26 = (STeamsPacket) var4;
                 if (var26.getAction() == 2 && var26.getName().startsWith("team_")) {
                     String var27 = var26.getPrefix().getString() + var26.getSuffix().getString();

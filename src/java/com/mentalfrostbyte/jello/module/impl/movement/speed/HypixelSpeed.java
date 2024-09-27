@@ -93,23 +93,23 @@ public class HypixelSpeed extends Module {
                 }
 
                 if (this.field23414 >= 0 && Step.field23887 >= 2) {
-                    if ((var1.getY() > 0.0 || this.getBooleanValueFromSetttingName("AutoJump") && MultiUtilities.method17686()) && !MultiUtilities.method17684(mc.player)) {
+                    if ((var1.getY() > 0.0 || this.getBooleanValueFromSettingName("AutoJump") && MultiUtilities.method17686()) && !MultiUtilities.method17684(mc.player)) {
                         mc.player.jump();
                         var1.setY(MovementUtils.method37080());
                         MovementUtils.setSpeed(var1, 0.644348756324588 + Math.random() * 1.0E-6 + (double) MovementUtils.method37078() * 0.13);
-                        if (this.getBooleanValueFromSetttingName("Timer") && !Client.getInstance().getModuleManager().getModuleByClass(Timer.class).isEnabled()) {
+                        if (this.getBooleanValueFromSettingName("Timer") && !Client.getInstance().getModuleManager().getModuleByClass(Timer.class).isEnabled()) {
                             mc.timer.timerSpeed = 1.4123F;
                         }
 
                         this.field23414 = 0;
                         this.field23418 = Class2094.field13640;
-                    } else if (MultiUtilities.method17686() && this.getBooleanValueFromSetttingName("GroundSpeed") && !MultiUtilities.method17684(mc.player)) {
+                    } else if (MultiUtilities.method17686() && this.getBooleanValueFromSettingName("GroundSpeed") && !MultiUtilities.method17684(mc.player)) {
                         mc.player.stepHeight = 0.5F;
                         mc.player.jump();
                         var1.setY(0.399 + (double) MovementUtils.method37079() * 0.1 + 1.0E-14);
                         MovementUtils.setSpeed(var1, 0.51 + Math.random() * 1.0E-6 + (double) MovementUtils.method37078() * 0.098);
                         this.field23414 = 0;
-                        if (this.getBooleanValueFromSetttingName("Timer") && !Client.getInstance().getModuleManager().getModuleByClass(Timer.class).isEnabled()) {
+                        if (this.getBooleanValueFromSettingName("Timer") && !Client.getInstance().getModuleManager().getModuleByClass(Timer.class).isEnabled()) {
                             mc.timer.timerSpeed = 1.1123F;
                         }
 
@@ -150,7 +150,7 @@ public class HypixelSpeed extends Module {
                     case 2:
                         if (this.field23414 == 0) {
                             double var6 = 0.399 + (double) MovementUtils.method37079() * 0.1 + 1.0E-5;
-                            if (this.getBooleanValueFromSetttingName("BorderJump")
+                            if (this.getBooleanValueFromSettingName("BorderJump")
                                     && mc.world.getCollisionShapes(mc.player, mc.player.boundingBox.contract(0.0, -var6 - 0.0625, 0.0)).count()
                                     == 0L) {
                                 this.field23415 = 0.4103345672948576 + Math.random() * 1.0E-6 + (double) MovementUtils.method37078() * 0.085;
@@ -181,7 +181,7 @@ public class HypixelSpeed extends Module {
     @LowerPriority
     public void method16039(JumpEvent var1) {
         if (!Jesus.method16953() && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
-            if (this.getBooleanValueFromSetttingName("Auto Jump") || mc.player.isJumping) {
+            if (this.getBooleanValueFromSettingName("Auto Jump") || mc.player.isJumping) {
                 if (this.field23414 < 0) {
                     var1.setCancelled(true);
                 }
@@ -226,7 +226,7 @@ public class HypixelSpeed extends Module {
     @Override
     public boolean method15988() {
         return this.isEnabled()
-                && (!mc.player.onGround || mc.player.isJumping || this.getBooleanValueFromSetttingName("AutoJump") || this.field23418 == Class2094.field13641);
+                && (!mc.player.onGround || mc.player.isJumping || this.getBooleanValueFromSettingName("AutoJump") || this.field23418 == Class2094.field13641);
     }
 
     private void method16043(EventMove var1, int var2) {

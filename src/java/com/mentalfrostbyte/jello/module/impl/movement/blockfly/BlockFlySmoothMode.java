@@ -161,7 +161,7 @@ public class BlockFlySmoothMode extends Module {
                         int var17 = var15.getCount();
                         mc.playerController.func_217292_a(mc.player, mc.world, this.field23975, var13);
                         this.field23971 = null;
-                        if (!this.access().getBooleanValueFromSetttingName("NoSwing")) {
+                        if (!this.access().getBooleanValueFromSettingName("NoSwing")) {
                             mc.player.swingArm(this.field23975);
                         } else {
                             mc.getConnection().sendPacket(new CAnimateHandPacket(this.field23975));
@@ -247,7 +247,7 @@ public class BlockFlySmoothMode extends Module {
                 this.field23979 = mc.player.getPosY();
             }
 
-            if (this.access().getBooleanValueFromSetttingName("No Sprint")) {
+            if (this.access().getBooleanValueFromSettingName("No Sprint")) {
                 mc.player.setSprinting(false);
             }
 
@@ -360,7 +360,7 @@ public class BlockFlySmoothMode extends Module {
     public void method16889(JumpEvent var1) {
         if (this.isEnabled() && this.field23978) {
             if (this.access().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-                    && (!MultiUtilities.method17686() || this.access().getBooleanValueFromSetttingName("Tower while moving"))) {
+                    && (!MultiUtilities.method17686() || this.access().getBooleanValueFromSettingName("Tower while moving"))) {
                 var1.setCancelled(true);
             }
         }

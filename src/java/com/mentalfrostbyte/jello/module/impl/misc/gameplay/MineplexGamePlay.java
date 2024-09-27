@@ -38,7 +38,7 @@ public class MineplexGamePlay extends Module {
                 SChatPacket var5 = (SChatPacket) var4;
                 String var6 = var5.getChatComponent().getString();
                 String var7 = mc.player.getName().getString().toLowerCase();
-                if (this.field23602.getBooleanValueFromSetttingName("AutoL") && var6.toLowerCase().contains("killed by " + var7 + " ")) {
+                if (this.field23602.getBooleanValueFromSettingName("AutoL") && var6.toLowerCase().contains("killed by " + var7 + " ")) {
                     this.field23602.method16761(var6);
                 }
 
@@ -64,7 +64,7 @@ public class MineplexGamePlay extends Module {
     @EventTarget
     private void method16342(TickEvent var1) {
         if (this.isEnabled()) {
-            if (this.getBooleanValueFromSetttingName("AutoGG") && this.field23604.getElapsedTime() > 5000L && this.field23603) {
+            if (this.getBooleanValueFromSettingName("AutoGG") && this.field23604.getElapsedTime() > 5000L && this.field23603) {
                 this.field23603 = false;
                 this.field23604.reset();
                 this.field23602.method16760();

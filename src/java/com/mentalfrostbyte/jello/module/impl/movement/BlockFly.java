@@ -112,7 +112,7 @@ public class BlockFly extends ModuleWithModuleSettings {
     }
 
     public boolean method16732() {
-        return this.getBooleanValueFromSetttingName("No Sprint") && this.isEnabled();
+        return this.getBooleanValueFromSettingName("No Sprint") && this.isEnabled();
     }
 
     public void method16734() {
@@ -158,7 +158,7 @@ public class BlockFly extends ModuleWithModuleSettings {
         String var3 = this.getStringSettingValueByName("Picking mode");
         if ((!var3.equals("OpenInv") || mc.currentScreen instanceof InventoryScreen) && this.method16735() != 0) {
             int var4 = 43;
-            if (!this.getBooleanValueFromSetttingName("Intelligent Block Picker")) {
+            if (!this.getBooleanValueFromSettingName("Intelligent Block Picker")) {
                 if (!this.method16738()) {
                     int var5 = -1;
 
@@ -279,7 +279,7 @@ public class BlockFly extends ModuleWithModuleSettings {
         }
 
         if (this.method16735() != 0 && (!mc.player.collidedVertically || this.getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla"))) {
-            if (!MultiUtilities.method17686() || this.getBooleanValueFromSetttingName("Tower while moving")) {
+            if (!MultiUtilities.method17686() || this.getBooleanValueFromSettingName("Tower while moving")) {
                 String var4 = this.getStringSettingValueByName("Tower Mode");
                 switch (var4) {
                     case "NCP":
@@ -344,7 +344,7 @@ public class BlockFly extends ModuleWithModuleSettings {
                 mc.player.jumpTicks = 20;
                 var1.setY(MovementUtils.method37080());
             }
-        } else if (!MultiUtilities.method17686() || this.getBooleanValueFromSetttingName("Tower while moving")) {
+        } else if (!MultiUtilities.method17686() || this.getBooleanValueFromSettingName("Tower while moving")) {
             mc.player.jumpTicks = 0;
             mc.player.jump();
             MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
@@ -364,7 +364,7 @@ public class BlockFly extends ModuleWithModuleSettings {
     @EventTarget
     public void onTick(TickEvent var1) {
         if (this.isEnabled()) {
-            if (this.getBooleanValueFromSetttingName("Show Block Amount")) {
+            if (this.getBooleanValueFromSettingName("Show Block Amount")) {
                 this.field23886 = this.method16735();
             }
         }
@@ -380,7 +380,7 @@ public class BlockFly extends ModuleWithModuleSettings {
     public void method16743(EventRender var1) {
         this.field23885.changeDirection(Direction.FORWARDS);
         if (this.field23885.calcPercent() != 0.0F) {
-            if (this.getBooleanValueFromSetttingName("Show Block Amount")) {
+            if (this.getBooleanValueFromSettingName("Show Block Amount")) {
                 if (Client.getInstance().getClientMode() != ClientMode.JELLO) {
                     this.method16744(
                             mc.mainWindow.getWidth() / 2,

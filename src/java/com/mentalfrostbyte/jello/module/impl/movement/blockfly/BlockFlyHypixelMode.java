@@ -86,7 +86,7 @@ public class BlockFlyHypixelMode extends Module {
         this.field23469 = mc.player.inventory.currentItem;
         this.field23467 = this.field23466 = 999.0F;
         ((BlockFly) this.access()).field23884 = -1;
-        if (mc.gameSettings.keyBindSneak.isKeyDown() && this.getBooleanValueFromSetttingName("Downwards")) {
+        if (mc.gameSettings.keyBindSneak.isKeyDown() && this.getBooleanValueFromSettingName("Downwards")) {
             mc.gameSettings.keyBindSneak.pressed = false;
             this.field23474 = true;
         }
@@ -139,7 +139,7 @@ public class BlockFlyHypixelMode extends Module {
                 }
             } else if (mc.player.onGround
                     && Client.getInstance().getModuleManager().getModuleByClass(SafeWalk.class).isEnabled()
-                    && (!this.field23474 || !this.getBooleanValueFromSetttingName("Downwards"))) {
+                    && (!this.field23474 || !this.getBooleanValueFromSettingName("Downwards"))) {
                 var1.setSafe(true);
             }
         }
@@ -147,7 +147,7 @@ public class BlockFlyHypixelMode extends Module {
 
     @EventTarget
     private void method16109(EventKeyPress var1) {
-        if (this.isEnabled() && this.getBooleanValueFromSetttingName("Downwards")) {
+        if (this.isEnabled() && this.getBooleanValueFromSettingName("Downwards")) {
             if (var1.getKey() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23474 = true;
@@ -157,7 +157,7 @@ public class BlockFlyHypixelMode extends Module {
 
     @EventTarget
     private void method16110(MouseHoverEvent var1) {
-        if (this.isEnabled() && this.getBooleanValueFromSetttingName("Downwards")) {
+        if (this.isEnabled() && this.getBooleanValueFromSettingName("Downwards")) {
             if (var1.getMouseButton() == mc.gameSettings.keyBindSneak.inputMappingsInput.keyCode) {
                 var1.setCancelled(true);
                 this.field23474 = false;
@@ -183,7 +183,7 @@ public class BlockFlyHypixelMode extends Module {
                         }
 
                         mc.playerController.func_217292_a(mc.player, mc.world, this.field23472, var20);
-                        if (!this.access().getBooleanValueFromSetttingName("NoSwing")) {
+                        if (!this.access().getBooleanValueFromSettingName("NoSwing")) {
                             mc.player.swingArm(this.field23472);
                         } else {
                             mc.getConnection().sendPacket(new CAnimateHandPacket(this.field23472));
@@ -212,7 +212,7 @@ public class BlockFlyHypixelMode extends Module {
                             && mc.player.fallDistance > 1.0F
                             && BlockUtil.rayTrace(0.0F, 90.0F, 3.0F).getType() == RayTraceResult.Type.MISS) {
                         var9 += Math.min(mc.player.getMotion().y * 2.0, 4.0);
-                    } else if (this.field23474 && this.getBooleanValueFromSetttingName("Downwards")) {
+                    } else if (this.field23474 && this.getBooleanValueFromSettingName("Downwards")) {
                         var9--;
                     } else if ((this.getStringSettingValueByName("Speed Mode").equals("Jump") || this.getStringSettingValueByName("Speed Mode").equals("Cubecraft"))
                             && !mc.gameSettings.keyBindJump.isKeyDown()) {
@@ -232,7 +232,7 @@ public class BlockFlyHypixelMode extends Module {
 
                     BlockPos var11 = new BlockPos(var5, var9 - 1.0, var7);
                     if (!BlockUtil.method34578(var11) && this.field23473.method16739(this.field23472)) {
-                        Class7843 var12 = BlockUtil.method34575(var11, !this.field23474 && this.getBooleanValueFromSetttingName("Downwards"));
+                        Class7843 var12 = BlockUtil.method34575(var11, !this.field23474 && this.getBooleanValueFromSettingName("Downwards"));
                         this.field23468 = var12;
                         if (var12 != null) {
                             float[] var13 = BlockUtil.method34542(this.field23468.field33646, this.field23468.field33647);
@@ -254,7 +254,7 @@ public class BlockFlyHypixelMode extends Module {
                             var1.setYaw(this.field23466);
                         }
                     } else {
-                        if (this.getBooleanValueFromSetttingName("KeepRotations") && this.field23466 != 999.0F) {
+                        if (this.getBooleanValueFromSettingName("KeepRotations") && this.field23466 != 999.0F) {
                             var1.setPitch(mc.player.rotationYaw + 1.0F);
                             var1.setYaw(90.0F);
                         }
@@ -278,7 +278,7 @@ public class BlockFlyHypixelMode extends Module {
                 this.field23476 = mc.player.getPosY();
             }
 
-            if (this.access().getBooleanValueFromSetttingName("No Sprint")) {
+            if (this.access().getBooleanValueFromSettingName("No Sprint")) {
                 mc.player.setSprinting(false);
             }
 
@@ -391,7 +391,7 @@ public class BlockFlyHypixelMode extends Module {
     public void method16114(JumpEvent var1) {
         if (this.isEnabled() && this.field23475) {
             if (this.access().getStringSettingValueByName("Tower Mode").equalsIgnoreCase("Vanilla")
-                    && (!MultiUtilities.method17686() || this.access().getBooleanValueFromSetttingName("Tower while moving"))) {
+                    && (!MultiUtilities.method17686() || this.access().getBooleanValueFromSettingName("Tower while moving"))) {
                 var1.setCancelled(true);
             }
         }

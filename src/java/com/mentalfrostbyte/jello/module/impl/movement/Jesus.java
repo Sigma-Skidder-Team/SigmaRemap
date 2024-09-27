@@ -101,7 +101,7 @@ public class Jesus extends Module {
             if (var4 != null && !var4.method23449().method23474()) {
                double var5 = (double)var4.method23449().method23476();
                if (var5 > 0.4) {
-                  if (this.getBooleanValueFromSetttingName("Swim up")) {
+                  if (this.getBooleanValueFromSettingName("Swim up")) {
                      var1.setY(0.13);
                   }
 

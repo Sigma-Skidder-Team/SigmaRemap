@@ -44,7 +44,7 @@ public class Murderer extends Module {
                             && mc.world.getEntityByID(var4.getEntityID()) instanceof PlayerEntity) {
                         Entity var7 = mc.world.getEntityByID(var4.getEntityID());
                         if (!this.field23833.equalsIgnoreCase(var7.getName().getString())) {
-                            if (this.getBooleanValueFromSetttingName("Chat Message")) {
+                            if (this.getBooleanValueFromSettingName("Chat Message")) {
                                 mc.player.method5389("Murderer is " + var7.getName() + ", detected by Jello client");
                             }
 
@@ -68,7 +68,7 @@ public class Murderer extends Module {
     private void method16655(EventRender var1) throws IOException {
         if (this.isEnabled()) {
             if (this.field23836) {
-                if (this.getBooleanValueFromSetttingName("GUI")) {
+                if (this.getBooleanValueFromSettingName("GUI")) {
                     ClientResource var4 = ResourceRegistry.JelloLightFont20;
                     byte var5 = -1;
                     int var6 = Minecraft.getInstance().mainWindow.getWidth();

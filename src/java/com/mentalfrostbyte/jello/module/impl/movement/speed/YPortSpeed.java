@@ -145,7 +145,7 @@ public class YPortSpeed extends Module {
         if (this.isEnabled()
                 && MultiUtilities.isAboveBounds(mc.player, 0.43F)
                 && !((double) mc.player.fallDistance > 0.09)
-                && this.getBooleanValueFromSetttingName("OnGround")
+                && this.getBooleanValueFromSettingName("OnGround")
                 && !mc.gameSettings.keyBindJump.pressed
                 && !Client.getInstance().getModuleManager().getModuleByClass(Fly.class).isEnabled()) {
             if (mc.player.onGround && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {

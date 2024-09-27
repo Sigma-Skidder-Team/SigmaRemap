@@ -40,7 +40,7 @@ public class HypixelDisabler extends Module {
             this.field23984 = true;
             this.field23985.reset();
             this.field23985.start();
-            if (!this.getBooleanValueFromSetttingName("Instant")) {
+            if (!this.getBooleanValueFromSettingName("Instant")) {
                 Client.getInstance().getNotificationManager().send(new Notification("Hypixel disabler", "Wait 5s..."));
             } else {
                 Client.getInstance().getNotificationManager().send(new Notification("Hypixel disabler", "Move where you want"));
@@ -69,7 +69,7 @@ public class HypixelDisabler extends Module {
     public void method16898(EventUpdate var1) {
         if (mc.player != null) {
             if (!this.field23984 && mc.player.onGround) {
-                if (!this.getBooleanValueFromSetttingName("Instant")) {
+                if (!this.getBooleanValueFromSettingName("Instant")) {
                     Client.getInstance().getNotificationManager().send(new Notification("Hypixel disabler", "Wait 5s..."));
                 } else {
                     Client.getInstance().getNotificationManager().send(new Notification("Hypixel disabler", "Move where you want"));
@@ -85,7 +85,7 @@ public class HypixelDisabler extends Module {
     @EventTarget
     public void method16899(EventMove var1) {
         if (mc.player != null) {
-            if (!this.getBooleanValueFromSetttingName("Instant") && this.field23984) {
+            if (!this.getBooleanValueFromSettingName("Instant") && this.field23984) {
                 var1.setX(0.0);
                 var1.setY(0.0);
                 var1.setZ(0.0);
@@ -117,7 +117,7 @@ public class HypixelDisabler extends Module {
                         || var1.getPacket() instanceof CUseEntityPacket
                         || var1.getPacket() instanceof CAnimateHandPacket
                         || var1.getPacket() instanceof CPlayerTryUseItemPacket) {
-                    if (this.getBooleanValueFromSetttingName("Instant")) {
+                    if (this.getBooleanValueFromSettingName("Instant")) {
                         this.field23983.add(var1.getPacket());
                     }
 
@@ -130,10 +130,10 @@ public class HypixelDisabler extends Module {
     @EventTarget
     public void method16901(ReceivePacketEvent var1) {
         if (mc.player != null && this.field23984) {
-            if (this.isEnabled() || this.getBooleanValueFromSetttingName("Instant")) {
+            if (this.isEnabled() || this.getBooleanValueFromSettingName("Instant")) {
                 if (var1.getPacket() instanceof SPlayerPositionLookPacket) {
                     this.access().toggle();
-                    if (!this.getBooleanValueFromSetttingName("Instant")) {
+                    if (!this.getBooleanValueFromSettingName("Instant")) {
                         Client.getInstance().getNotificationManager().send(new Notification("Hypixel disabler", "You can do what you want for 5s"));
                     } else {
                         SPlayerPositionLookPacket var4 = (SPlayerPositionLookPacket) var1.getPacket();

@@ -74,14 +74,14 @@ public class ACRFly extends Module {
             if (this.field23986 != -1) {
                 if (this.field23986 == 0) {
                     if (Math.abs(var1.getY()) < 0.08) {
-                        var1.setY(!this.getBooleanValueFromSetttingName("Offset") ? 0.0 : -0.01);
+                        var1.setY(!this.getBooleanValueFromSettingName("Offset") ? 0.0 : -0.01);
                     }
 
                     MultiUtilities.setPlayerYMotion(var1.getY());
                     MovementUtils.setSpeed(var1, 0.35);
                 }
             } else {
-                double var4 = !this.getBooleanValueFromSetttingName("Offset") ? 0.0 : 0.01;
+                double var4 = !this.getBooleanValueFromSettingName("Offset") ? 0.0 : 0.01;
                 if (this.field23988) {
                     var4 -= this.getNumberValueBySettingName("Speed") / 2.0F;
                 }
@@ -109,7 +109,7 @@ public class ACRFly extends Module {
                 var1.setY(-150.0 - Math.random() * 150.0);
             }
 
-            if (this.getBooleanValueFromSetttingName("NoFall")) {
+            if (this.getBooleanValueFromSettingName("NoFall")) {
                 var1.setGround(true);
             }
 
@@ -140,7 +140,7 @@ public class ACRFly extends Module {
             IPacket var4 = var1.getPacket();
             if (var4 instanceof CPlayerPacket) {
                 CPlayerPacket var5 = (CPlayerPacket) var4;
-                if (this.field23986 == -1 && this.getBooleanValueFromSetttingName("NoFall")) {
+                if (this.field23986 == -1 && this.getBooleanValueFromSettingName("NoFall")) {
                     var5.onGround = true;
                 }
             }

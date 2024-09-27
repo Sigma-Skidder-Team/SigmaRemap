@@ -62,7 +62,7 @@ public class SpartanFly extends Module {
 
     @EventTarget
     public void method16270(EventUpdate var1) {
-        if (this.isEnabled() && var1.isPre() && this.getBooleanValueFromSetttingName("Ground Spoof")) {
+        if (this.isEnabled() && var1.isPre() && this.getBooleanValueFromSettingName("Ground Spoof")) {
             if (this.field23570) {
                 this.field23570 = !this.field23570;
                 var1.setGround(true);
@@ -80,7 +80,7 @@ public class SpartanFly extends Module {
                         if (mc.player.getPositionVec().y + var1.getY() < this.field23569) {
                             this.field23570 = true;
                             int var5 = this.method16272();
-                            boolean var6 = this.getBooleanValueFromSetttingName("Fake Block");
+                            boolean var6 = this.getBooleanValueFromSettingName("Fake Block");
                             if (var5 >= 0 && var6) {
                                 mc.getConnection().sendPacket(new CHeldItemChangePacket(var5));
                             }

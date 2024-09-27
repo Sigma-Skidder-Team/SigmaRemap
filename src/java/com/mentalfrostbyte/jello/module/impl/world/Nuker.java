@@ -73,7 +73,7 @@ public class Nuker extends Module {
                     EventKeyPress var5 = new EventKeyPress(0, false, this.field23566);
                     Client.getInstance().getEventManager().call(var5);
                     mc.playerController.onPlayerDamageBlock(this.field23566, BlockUtil.method34580(this.field23566));
-                    if (!this.getBooleanValueFromSetttingName("NoSwing")) {
+                    if (!this.getBooleanValueFromSettingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     } else {
                         mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
@@ -88,7 +88,7 @@ public class Nuker extends Module {
                     EventKeyPress var8 = new EventKeyPress(0, false, this.field23566);
                     Client.getInstance().getEventManager().call(var8);
                     mc.playerController.onPlayerDamageBlock(this.field23566, BlockUtil.method34580(this.field23566));
-                    if (!this.getBooleanValueFromSetttingName("NoSwing")) {
+                    if (!this.getBooleanValueFromSettingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     } else {
                         mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));
@@ -97,7 +97,7 @@ public class Nuker extends Module {
             } else {
                 for (BlockPos var9 : this.field23567) {
                     mc.getConnection().sendPacket(new CPlayerDiggingPacket(CPlayerDiggingPacket.Action.START_DESTROY_BLOCK, var9, BlockUtil.method34580(var9)));
-                    if (!this.getBooleanValueFromSetttingName("NoSwing")) {
+                    if (!this.getBooleanValueFromSettingName("NoSwing")) {
                         mc.player.swingArm(Hand.MAIN_HAND);
                     } else {
                         mc.getConnection().sendPacket(new CAnimateHandPacket(Hand.MAIN_HAND));

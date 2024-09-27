@@ -44,9 +44,9 @@ public class OutlineChestESP extends Module {
       int var6 = MultiUtilities.applyAlpha(this.access().parseSettingValueToIntBySettingName("Trapped Color"), 0.7F);
 
       for (TileEntity var8 : mc.world.loadedTileEntityList) {
-         boolean var9 = var8 instanceof Class941 && !(var8 instanceof Class970) && this.access().getBooleanValueFromSetttingName("Show Regular Chests");
-         boolean var10 = var8 instanceof Class943 && this.access().getBooleanValueFromSetttingName("Show Ender Chests");
-         boolean var11 = var8 instanceof Class970 && this.access().getBooleanValueFromSetttingName("Show Trapped Chests");
+         boolean var9 = var8 instanceof Class941 && !(var8 instanceof Class970) && this.access().getBooleanValueFromSettingName("Show Regular Chests");
+         boolean var10 = var8 instanceof Class943 && this.access().getBooleanValueFromSettingName("Show Ender Chests");
+         boolean var11 = var8 instanceof Class970 && this.access().getBooleanValueFromSettingName("Show Trapped Chests");
          if (var9 || var10 || var11) {
             double var12 = Class9647.method37624(var8.getPos()).field43722;
             double var14 = Class9647.method37624(var8.getPos()).field43723;

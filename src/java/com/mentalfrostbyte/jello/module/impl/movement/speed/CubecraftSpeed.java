@@ -54,7 +54,7 @@ public class CubecraftSpeed extends Module {
                     this.field23619 = 0.27;
                     mc.timer.timerSpeed = 0.7F;
                     if (MultiUtilities.isAboveBounds(mc.player, 0.01F)) {
-                        if (this.getBooleanValueFromSetttingName("AutoJump")) {
+                        if (this.getBooleanValueFromSettingName("AutoJump")) {
                             mc.player.jump();
                             var1.setY(mc.player.getMotion().y);
                             MovementUtils.setSpeed(var1, this.field23619);
@@ -100,7 +100,7 @@ public class CubecraftSpeed extends Module {
 
                         this.field23619 = Math.max(this.field23619, 0.2);
                         MovementUtils.setSpeed(var1, this.field23619);
-                    } else if (this.getBooleanValueFromSetttingName("AutoJump")) {
+                    } else if (this.getBooleanValueFromSettingName("AutoJump")) {
                         mc.player.jump();
                         var1.setY(mc.player.getMotion().y);
                         MovementUtils.setSpeed(var1, this.field23619);
