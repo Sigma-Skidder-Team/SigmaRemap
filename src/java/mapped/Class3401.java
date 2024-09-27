@@ -10,6 +10,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -114,7 +115,7 @@ public class Class3401 extends Block {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Rotation var2) {
       switch (Class9111.field41873[var2.ordinal()]) {
          case 1:
          case 2:

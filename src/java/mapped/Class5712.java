@@ -15,6 +15,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.TextFormatting;
 import net.optifine.Config;
+import net.optifine.entity.model.CustomEntityModels;
 import net.optifine.shaders.Shaders;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -132,7 +133,7 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
          Client.getInstance().getEventManager().call(var33);
          this.field25086.method10997((T)var1, var16, var35, var3);
          this.field25086.method10998((T)var1, var16, var35, var34, var11, var31);
-         if (Class9810.method38699()) {
+         if (CustomEntityModels.method38699()) {
             this.field25088 = var1;
             this.field25089 = var16;
             this.field25090 = var35;
@@ -175,7 +176,7 @@ public abstract class Class5712<T extends LivingEntity, M extends Class2827<T>> 
             Shaders.method33086(0.0F, 0.0F, 0.0F, 0.0F);
          }
 
-         if (Class9810.method38699()) {
+         if (CustomEntityModels.method38699()) {
             this.field25088 = null;
          }
 

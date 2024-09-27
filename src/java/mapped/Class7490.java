@@ -7,9 +7,11 @@ import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.JigsawTileEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,12 +41,12 @@ public class Class7490 extends Class7487 {
       return var3;
    }
 
-   public BlockPos method24415(TemplateManager var1, Class80 var2) {
+   public BlockPos method24415(TemplateManager var1, Rotation var2) {
       return BlockPos.ZERO;
    }
 
    @Override
-   public List<Class8266> method24374(TemplateManager var1, BlockPos var2, Class80 var3, Random var4) {
+   public List<Class8266> method24374(TemplateManager var1, BlockPos var2, Rotation var3, Random var4) {
       ArrayList var7 = Lists.newArrayList();
       var7.add(
          new Class8266(
@@ -57,7 +59,7 @@ public class Class7490 extends Class7487 {
    }
 
    @Override
-   public Class9764 method24375(TemplateManager var1, BlockPos var2, Class80 var3) {
+   public Class9764 method24375(TemplateManager var1, BlockPos var2, Rotation var3) {
       BlockPos var6 = this.method24415(var1, var3);
       return new Class9764(
          var2.getX(),
@@ -71,7 +73,7 @@ public class Class7490 extends Class7487 {
 
    @Override
    public boolean method24376(
-           TemplateManager var1, ISeedReader var2, Class7480 var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
+           TemplateManager var1, ISeedReader var2, Class7480 var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Rotation var7, Class9764 var8, Random var9, boolean var10
    ) {
       return this.field32191.get().method26521(var2, var4, var9, var5);
    }

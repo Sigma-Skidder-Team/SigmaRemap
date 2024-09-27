@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.Locale;
 

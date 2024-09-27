@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Rotation;
 
 public abstract class Class3198 extends Block {
    public static final Class8553 field18484 = Class8820.field39722;
@@ -12,7 +13,7 @@ public abstract class Class3198 extends Block {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Rotation var2) {
       return var1.method23465(field18484, var2.method252(var1.<Direction>method23463(field18484)));
    }
 

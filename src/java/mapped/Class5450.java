@@ -2,10 +2,12 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.block.Blocks;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.structure.StructureStart;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.LinkedList;
 import java.util.Random;
@@ -18,12 +20,12 @@ public class Class5450 extends StructureStart<Class4712> {
    }
 
    public void method17109(DynamicRegistries var1, ChunkGenerator var2, TemplateManager var3, int var4, int var5, Biome var6, Class4712 var7) {
-      Class80 var10 = Class80.method254(this.field24201);
+      Rotation var10 = Rotation.method254(this.field24201);
       byte var11 = 5;
       byte var12 = 5;
-      if (var10 != Class80.field186) {
-         if (var10 != Class80.field187) {
-            if (var10 == Class80.field188) {
+      if (var10 != Rotation.field186) {
+         if (var10 != Rotation.field187) {
+            if (var10 == Rotation.field188) {
                var12 = -5;
             }
          } else {

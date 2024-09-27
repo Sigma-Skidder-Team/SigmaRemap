@@ -9,10 +9,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.fluid.Fluid;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ActionResultType;
+import net.minecraft.util.*;
 import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
@@ -146,7 +144,7 @@ public abstract class Class3390 {
    }
 
    @Deprecated
-   public BlockState method11500(BlockState var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Rotation var2) {
       return var1;
    }
 

@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Rotation;
+
 import java.util.function.Consumer;
 
 public class Class4871 {
@@ -10,7 +12,7 @@ public class Class4871 {
    private final Consumer<Class8240> field22703 = null;
    private final int field22704 = 0;
    private final long field22705 = 0L;
-   private final Class80 field22706 = null;
+   private final Rotation field22706 = null;
 
    public void method15033(Class8240 var1) {
       this.field22703.accept(var1);
@@ -45,7 +47,7 @@ public class Class4871 {
       return 0L;
    }
 
-   public Class80 method15040() {
+   public Rotation method15040() {
       return this.field22706;
    }
 

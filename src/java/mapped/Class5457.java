@@ -6,6 +6,7 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 public class Class5457 extends Class5455<Class4712> {
    private static String[] field24216;

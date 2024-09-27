@@ -10,7 +10,9 @@ import net.minecraft.world.IWorldReader;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import net.minecraft.world.chunk.IChunk;
+import net.minecraft.world.gen.feature.structure.ShipwreckConfig;
 import net.minecraft.world.gen.feature.structure.StructureStart;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -30,7 +32,7 @@ public abstract class Structure<C extends Class4698> {
    public static final Structure<Class4712> field18062 = method11363("Desert_Pyramid", new Class2975(Class4712.field22349), Class1993.field13002);
    public static final Structure<Class4712> field18063 = method11363("Igloo", new Class2966(Class4712.field22349), Class1993.field13002);
    public static final Structure<Class4726> field18064 = method11363("Ruined_Portal", new Class2978(Class4726.field22392), Class1993.field13002);
-   public static final Structure<Class4737> field18065 = method11363("Shipwreck", new Class2964(Class4737.field22431), Class1993.field13002);
+   public static final Structure<ShipwreckConfig> field18065 = method11363("Shipwreck", new Class2964(ShipwreckConfig.field22431), Class1993.field13002);
    public static final Class2974 field18066 = method11363("Swamp_Hut", new Class2974(Class4712.field22349), Class1993.field13002);
    public static final Structure<Class4712> field18067 = method11363("Stronghold", new Class2962(Class4712.field22349), Class1993.field13003);
    public static final Structure<Class4712> field18068 = method11363("Monument", new Class2971(Class4712.field22349), Class1993.field13002);

@@ -9,7 +9,6 @@ import com.mentalfrostbyte.jello.module.impl.movement.BlockFly;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
 import net.minecraft.block.Blocks;
@@ -500,7 +499,7 @@ public class InvManager extends Module {
     }
 
     private void sendOpenInventoryPacket(boolean var1) {
-        if (var1 && this.field23659 && !(mc.currentScreen instanceof InventoryScreen) && JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
+        if (var1 && this.field23659 && !(mc.currentScreen instanceof InventoryScreen)/* && JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()*/) {
             mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
             this.field23659 = false;
         }

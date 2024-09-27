@@ -3,6 +3,7 @@ package net.minecraft.util.math;
 import com.mojang.serialization.Codec;
 import mapped.*;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.math.vector.Vector3i;
 import org.apache.commons.lang3.Validate;
@@ -182,7 +183,7 @@ public class BlockPos extends Vector3i {
       }
    }
 
-   public BlockPos method8352(Class80 var1) {
+   public BlockPos method8352(Rotation var1) {
       switch (Class4503.field21730[var1.ordinal()]) {
          case 1:
          default:
@@ -323,7 +324,7 @@ public class BlockPos extends Vector3i {
       }
 
       @Override
-      public BlockPos method8352(Class80 var1) {
+      public BlockPos method8352(Rotation var1) {
          return super.method8352(var1).toImmutable();
       }
 

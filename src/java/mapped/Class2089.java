@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Rotation;
+
 public enum Class2089 {
    field13614(Class178.field565),
    field13615(Class178.field592),
@@ -25,9 +27,9 @@ public enum Class2089 {
       }
    }
 
-   public Class80 method8749(net.minecraft.util.Direction var1) {
+   public Rotation method8749(net.minecraft.util.Direction var1) {
       Direction var4 = var1.getAxis();
-      return this == field13615 && var4 == Direction.Z || this == field13616 && var4 == Direction.X ? Class80.field187 : Class80.field185;
+      return this == field13615 && var4 == Direction.Z || this == field13616 && var4 == Direction.X ? Rotation.field187 : Rotation.field185;
    }
 
    public net.minecraft.util.Direction method8750(net.minecraft.util.Direction var1) {

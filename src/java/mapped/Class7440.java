@@ -15,6 +15,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
@@ -31,13 +32,13 @@ public class Class7440 {
       var0.method28817(var1, 2);
    }
 
-   public static Collection<Class8262> method24030(Collection<Class8363> var0, BlockPos var1, Class80 var2, ServerWorld var3, Class7879 var4, int var5) {
+   public static Collection<Class8262> method24030(Collection<Class8363> var0, BlockPos var1, Rotation var2, ServerWorld var3, Class7879 var4, int var5) {
       Class6101 var8 = new Class6101(var0, var1, var2, var3, var4, var5);
       var8.method18857();
       return var8.method18856();
    }
 
-   public static Collection<Class8262> method24031(Collection<Class4871> var0, BlockPos var1, Class80 var2, ServerWorld var3, Class7879 var4, int var5) {
+   public static Collection<Class8262> method24031(Collection<Class4871> var0, BlockPos var1, Rotation var2, ServerWorld var3, Class7879 var4, int var5) {
       return method24030(method24032(var0), var1, var2, var3, var4, var5);
    }
 

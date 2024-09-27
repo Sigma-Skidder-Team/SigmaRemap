@@ -8,10 +8,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ActionResultType;
+import net.minecraft.util.*;
 import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -267,7 +265,7 @@ public class Class3348 extends Class3346<Class941> implements Class3207 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Rotation var2) {
       return var1.method23465(field18865, var2.method252(var1.<Direction>method23463(field18865)));
    }
 

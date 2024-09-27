@@ -2,7 +2,9 @@ package mapped;
 
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.List;
 import java.util.Map;
@@ -19,7 +21,7 @@ public class Class3191 {
       field18453, BlockPos.ZERO, field18454, new BlockPos(2, -3, 4), field18455, new BlockPos(0, -3, -2)
    );
 
-   public static void method11407(TemplateManager var0, BlockPos var1, Class80 var2, List<Class4178> var3, Random var4) {
+   public static void method11407(TemplateManager var0, BlockPos var1, Rotation var2, List<Class4178> var3, Random var4) {
       if (var4.nextDouble() < 0.5) {
          int var7 = var4.nextInt(8) + 4;
          var3.add(new Class4185(var0, field18455, var1, var2, var7 * 3));

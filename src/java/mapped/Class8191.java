@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.util.Rotation;
+
 // $VF: synthetic class
 public class Class8191 {
    private static String[] field35212;
@@ -18,20 +20,20 @@ public class Class8191 {
       } catch (NoSuchFieldError var16) {
       }
 
-      field35214 = new int[Class80.values().length];
+      field35214 = new int[Rotation.values().length];
 
       try {
-         field35214[Class80.field187.ordinal()] = 1;
+         field35214[Rotation.field187.ordinal()] = 1;
       } catch (NoSuchFieldError var15) {
       }
 
       try {
-         field35214[Class80.field188.ordinal()] = 2;
+         field35214[Rotation.field188.ordinal()] = 2;
       } catch (NoSuchFieldError var14) {
       }
 
       try {
-         field35214[Class80.field186.ordinal()] = 3;
+         field35214[Rotation.field186.ordinal()] = 3;
       } catch (NoSuchFieldError var13) {
       }
 

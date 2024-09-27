@@ -10,8 +10,10 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
 
 import javax.annotation.Nullable;
@@ -29,7 +31,7 @@ public class Class964 extends TileEntity {
    private BlockPos field5398 = new BlockPos(0, 1, 0);
    private BlockPos field5399 = BlockPos.ZERO;
    private Class2089 field5400 = Class2089.field13614;
-   private Class80 field5401 = Class80.field185;
+   private Rotation field5401 = Rotation.field185;
    private Class104 field5402 = Class104.field321;
    private boolean field5403 = true;
    private boolean field5404;
@@ -87,9 +89,9 @@ public class Class964 extends TileEntity {
       this.field5399 = new BlockPos(var8, var9, var10);
 
       try {
-         this.field5401 = Class80.valueOf(var2.getString("rotation"));
+         this.field5401 = Rotation.valueOf(var2.getString("rotation"));
       } catch (IllegalArgumentException var14) {
-         this.field5401 = Class80.field185;
+         this.field5401 = Rotation.field185;
       }
 
       try {
@@ -199,11 +201,11 @@ public class Class964 extends TileEntity {
       this.field5400 = var1;
    }
 
-   public Class80 method3946() {
+   public Rotation method3946() {
       return this.field5401;
    }
 
-   public void method3947(Class80 var1) {
+   public void method3947(Rotation var1) {
       this.field5401 = var1;
    }
 

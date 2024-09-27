@@ -84,7 +84,7 @@ public class Class8066 {
 
    public boolean method27709() {
       byte var3 = 24;
-      if (Math.sqrt(this.method27713()) <= (double)(Minecraft.getInstance().gameSettings.renderDistanceChunks * 16) && Client.getInstance().method19937().method23351()) {
+      if (Math.sqrt(this.method27713()) <= (double)(Minecraft.getInstance().gameSettings.renderDistanceChunks * 16)) {
          return true;
       } else {
          return !(this.method27713() > 576.0)

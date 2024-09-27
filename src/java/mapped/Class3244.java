@@ -256,7 +256,7 @@ public class Class3244 extends Class3241 implements Class3207 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Rotation var2) {
       return var1.method23465(field18701, var2.method252(var1.<net.minecraft.util.Direction>method23463(field18701)));
    }
 

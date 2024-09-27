@@ -11,9 +11,11 @@ import java.util.Random;
 
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 import org.apache.commons.lang3.mutable.MutableObject;
 
 public final class Class9777 {
@@ -39,7 +41,7 @@ public final class Class9777 {
    private void method38546(Class4193 var1, MutableObject<VoxelShape> var2, int var3, int var4, boolean var5) {
       Class7487 var8 = var1.method12977();
       BlockPos var9 = var1.method12978();
-      Class80 var10 = var1.method12940();
+      Rotation var10 = var1.method12940();
       Class109 var11 = var8.method24382();
       boolean var12 = var11 == Class109.field367;
       MutableObject<VoxelShape> var13 = new MutableObject();
@@ -87,7 +89,7 @@ public final class Class9777 {
                      break;
                   }
 
-                  for (Class80 var34 : Class80.method255(this.field45739)) {
+                  for (Rotation var34 : Rotation.method255(this.field45739)) {
                      List<Class8266> var35 = var32.method24374(this.field45737, BlockPos.ZERO, var34, this.field45739);
                      Class9764 var36 = var32.method24375(this.field45737, BlockPos.ZERO, var34);
                      int var37;

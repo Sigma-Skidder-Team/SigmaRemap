@@ -1,8 +1,10 @@
 package mapped;
 
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.structure.StructureStart;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 public class Class5460 extends StructureStart<Class4711> {
    private static String[] field24219;
@@ -15,7 +17,7 @@ public class Class5460 extends StructureStart<Class4711> {
       int var10 = var4 * 16;
       int var11 = var5 * 16;
       BlockPos var12 = new BlockPos(var10, 90, var11);
-      Class80 var13 = Class80.method254(this.field24201);
+      Rotation var13 = Rotation.method254(this.field24201);
       Class9830.method38791(var3, var12, var13, this.field24196, this.field24201, var7);
       this.method17113();
    }

@@ -1,24 +1,26 @@
 package mapped;
 
+import net.minecraft.util.Rotation;
+
 // $VF: synthetic class
 public class Class7799 {
    private static String[] field33492;
    public static final int[] field33493;
-   public static final int[] field33494 = new int[Class80.values().length];
+   public static final int[] field33494 = new int[Rotation.values().length];
 
    static {
       try {
-         field33494[Class80.field186.ordinal()] = 1;
+         field33494[Rotation.field186.ordinal()] = 1;
       } catch (NoSuchFieldError var7) {
       }
 
       try {
-         field33494[Class80.field187.ordinal()] = 2;
+         field33494[Rotation.field187.ordinal()] = 2;
       } catch (NoSuchFieldError var6) {
       }
 
       try {
-         field33494[Class80.field188.ordinal()] = 3;
+         field33494[Rotation.field188.ordinal()] = 3;
       } catch (NoSuchFieldError var5) {
       }
 

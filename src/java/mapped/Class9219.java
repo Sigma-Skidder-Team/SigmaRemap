@@ -326,9 +326,7 @@ public class Class9219 {
       this.method34591();
       TextureImpl.bindNone();
       this.field42433.method10392();
-      if (!var5) {
-         Class9247.method34782(var1, var2, var3, var4);
-      } else {
+      if (var5) {
          Class9247.method34783(var1, var2, var3, var4);
       }
 

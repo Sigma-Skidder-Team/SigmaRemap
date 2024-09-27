@@ -8,6 +8,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.network.play.client.CUpdateStructureBlockPacket;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
@@ -29,7 +30,7 @@ public class Class1148 extends Screen {
    private static final ITextComponent field6247 = new TranslationTextComponent("structure_block.show_boundingbox");
    private final Class964 field6248;
    private Class2089 field6249 = Class2089.field13614;
-   private Class80 field6250 = Class80.field185;
+   private Rotation field6250 = Rotation.field185;
    private Class104 field6251 = Class104.field321;
    private boolean field6252;
    private boolean field6253;
@@ -156,19 +157,19 @@ public class Class1148 extends Screen {
          this.method5504();
       }));
       this.field6269 = this.<Button>addButton(new Button(this.width / 2 - 1 - 40 - 1 - 40 - 20, 185, 40, 20, new StringTextComponent("0"), var1 -> {
-         this.field6248.method3947(Class80.field185);
+         this.field6248.method3947(Rotation.field185);
          this.method5506();
       }));
       this.field6270 = this.<Button>addButton(new Button(this.width / 2 - 1 - 40 - 20, 185, 40, 20, new StringTextComponent("90"), var1 -> {
-         this.field6248.method3947(Class80.field186);
+         this.field6248.method3947(Rotation.field186);
          this.method5506();
       }));
       this.field6271 = this.<Button>addButton(new Button(this.width / 2 + 1 + 20, 185, 40, 20, new StringTextComponent("180"), var1 -> {
-         this.field6248.method3947(Class80.field187);
+         this.field6248.method3947(Rotation.field187);
          this.method5506();
       }));
       this.field6272 = this.<Button>addButton(new Button(this.width / 2 + 1 + 40 + 1 + 20, 185, 40, 20, new StringTextComponent("270"), var1 -> {
-         this.field6248.method3947(Class80.field188);
+         this.field6248.method3947(Rotation.field188);
          this.method5506();
       }));
       this.field6255 = new Class1304(

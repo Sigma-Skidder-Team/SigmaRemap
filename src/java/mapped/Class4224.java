@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.ArrayList;
 import java.util.Collections;

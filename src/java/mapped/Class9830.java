@@ -3,8 +3,10 @@ package mapped;
 import com.google.common.collect.Lists;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,7 +86,7 @@ public class Class9830 {
       return Util.<ResourceLocation>method38518(field45921, var0);
    }
 
-   public static void method38791(TemplateManager var0, BlockPos var1, Class80 var2, List<Class4178> var3, Random var4, Class4711 var5) {
+   public static void method38791(TemplateManager var0, BlockPos var1, Rotation var2, List<Class4178> var3, Random var4, Class4711 var5) {
       boolean var8 = var4.nextFloat() <= var5.field22346;
       float var9 = !var8 ? 0.8F : 0.9F;
       method38794(var0, var1, var2, var3, var4, var5, var8, var9);
@@ -93,7 +95,7 @@ public class Class9830 {
       }
    }
 
-   private static void method38792(TemplateManager var0, Random var1, Class80 var2, BlockPos var3, Class4711 var4, List<Class4178> var5) {
+   private static void method38792(TemplateManager var0, Random var1, Rotation var2, BlockPos var3, Class4711 var4, List<Class4178> var5) {
       int var8 = var3.getX();
       int var9 = var3.getZ();
       BlockPos var10 = Class8969.method32905(new BlockPos(15, 0, 15), Class2089.field13614, var2, BlockPos.ZERO).method8336(var8, 0, var9);
@@ -108,7 +110,7 @@ public class Class9830 {
             BlockPos var17 = (BlockPos)var13.remove(var16);
             int var18 = var17.getX();
             int var19 = var17.getZ();
-            Class80 var20 = Class80.method254(var1);
+            Rotation var20 = Rotation.method254(var1);
             BlockPos var21 = Class8969.method32905(new BlockPos(5, 0, 6), Class2089.field13614, var20, BlockPos.ZERO).method8336(var18, 0, var19);
             Class9764 var22 = Class9764.method38389(var18, 0, var19, var21.getX(), 0, var21.getZ());
             if (!var22.method38390(var11)) {
@@ -131,7 +133,7 @@ public class Class9830 {
       return var5;
    }
 
-   private static void method38794(TemplateManager var0, BlockPos var1, Class80 var2, List<Class4178> var3, Random var4, Class4711 var5, boolean var6, float var7) {
+   private static void method38794(TemplateManager var0, BlockPos var1, Rotation var2, List<Class4178> var3, Random var4, Class4711 var5, boolean var6, float var7) {
       if (var5.field22345 != Class110.field373) {
          if (var5.field22345 == Class110.field374) {
             ResourceLocation[] var10 = !var6 ? field45915 : field45918;

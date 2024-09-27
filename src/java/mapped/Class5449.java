@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.structure.StructureStart;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.List;
 

@@ -2,6 +2,7 @@ package mapped;
 
 import com.google.common.collect.Lists;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
@@ -11,7 +12,7 @@ import javax.annotation.Nullable;
 
 public class Class9463 {
    private Class2089 field43962 = Class2089.field13614;
-   private Class80 field43963 = Class80.field185;
+   private Rotation field43963 = Rotation.field185;
    private BlockPos field43964 = BlockPos.ZERO;
    private boolean field43965;
    private ChunkPos field43966;
@@ -45,7 +46,7 @@ public class Class9463 {
       return this;
    }
 
-   public Class9463 method36426(Class80 var1) {
+   public Class9463 method36426(Rotation var1) {
       this.field43963 = var1;
       return this;
    }
@@ -99,7 +100,7 @@ public class Class9463 {
       return this.field43962;
    }
 
-   public Class80 method36437() {
+   public Rotation method36437() {
       return this.field43963;
    }
 

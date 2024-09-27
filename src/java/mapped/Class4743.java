@@ -1,7 +1,5 @@
 package mapped;
 
-
-
 public class Class4743 extends Class4742 {
    private static String[] field22496;
    public static final float[] field22497 = new float[]{

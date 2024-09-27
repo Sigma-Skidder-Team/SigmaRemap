@@ -8,6 +8,7 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
@@ -24,7 +25,7 @@ public abstract class Class4178 {
    public Class9764 field20444;
    private Direction field20445;
    private Class2089 field20446;
-   private Class80 field20447;
+   private Rotation field20447;
    public int field20448;
    private final Class7792 field20449;
    private static final Set<Block> field20450 = ImmutableSet.<Block>builder()
@@ -195,7 +196,7 @@ public abstract class Class4178 {
             var2 = var2.method23396(this.field20446);
          }
 
-         if (this.field20447 != Class80.field185) {
+         if (this.field20447 != Rotation.field185) {
             var2 = var2.method23395(this.field20447);
          }
 
@@ -445,30 +446,30 @@ public abstract class Class4178 {
    public void method12939(Direction var1) {
       this.field20445 = var1;
       if (var1 == null) {
-         this.field20447 = Class80.field185;
+         this.field20447 = Rotation.field185;
          this.field20446 = Class2089.field13614;
       } else {
          switch (Class8727.field39366[var1.ordinal()]) {
             case 2:
                this.field20446 = Class2089.field13615;
-               this.field20447 = Class80.field185;
+               this.field20447 = Rotation.field185;
                break;
             case 3:
                this.field20446 = Class2089.field13615;
-               this.field20447 = Class80.field186;
+               this.field20447 = Rotation.field186;
                break;
             case 4:
                this.field20446 = Class2089.field13614;
-               this.field20447 = Class80.field186;
+               this.field20447 = Rotation.field186;
                break;
             default:
                this.field20446 = Class2089.field13614;
-               this.field20447 = Class80.field185;
+               this.field20447 = Rotation.field185;
          }
       }
    }
 
-   public Class80 method12940() {
+   public Rotation method12940() {
       return this.field20447;
    }
 

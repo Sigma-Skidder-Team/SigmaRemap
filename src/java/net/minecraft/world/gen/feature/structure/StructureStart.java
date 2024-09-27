@@ -8,6 +8,7 @@ import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.ISeedReader;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.Iterator;
 import java.util.List;

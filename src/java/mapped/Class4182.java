@@ -2,16 +2,18 @@ package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.Random;
 
 public class Class4182 extends Class4180 {
    private final ResourceLocation field20458;
-   private final Class80 field20459;
+   private final Rotation field20459;
 
-   public Class4182(TemplateManager var1, ResourceLocation var2, BlockPos var3, Class80 var4) {
+   public Class4182(TemplateManager var1, ResourceLocation var2, BlockPos var3, Rotation var4) {
       super(Class7792.field33479, 0);
       this.field20458 = var2;
       this.field20455 = var3;
@@ -22,7 +24,7 @@ public class Class4182 extends Class4180 {
    public Class4182(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33479, var2);
       this.field20458 = new ResourceLocation(var2.getString("Template"));
-      this.field20459 = Class80.valueOf(var2.getString("Rot"));
+      this.field20459 = Rotation.valueOf(var2.getString("Rot"));
       this.method12946(var1);
    }
 

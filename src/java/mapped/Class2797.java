@@ -1,7 +1,6 @@
 package mapped;
 
 import com.google.common.collect.ImmutableList;
-import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity;
@@ -213,7 +212,7 @@ public class Class2797<T extends LivingEntity> extends Class2855<T> implements C
          this.field17437.field31035 = MathHelper.lerp(this.field17442, this.field17437.field31035, 0.3F * MathHelper.cos(var2 * 0.33333334F));
       }
 
-      if (var1 instanceof Entity && ViaVersionLoader.entites.contains(var1)) {
+      if (var1 instanceof Entity) {
          this.field17435.field31035 = this.field17435.field31035 * 0.5F - (float) (Math.PI * 3.0 / 10.0);
          this.field17435.field31036 = (float) (-Math.PI / 6);
       }

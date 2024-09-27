@@ -1,7 +1,5 @@
 package mapped;
 
-
-
 public class Class9339 implements Class9338 {
    private final int field43354;
    private final float[][] field43355;

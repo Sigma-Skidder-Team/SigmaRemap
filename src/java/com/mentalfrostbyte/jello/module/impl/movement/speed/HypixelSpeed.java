@@ -15,7 +15,6 @@ import com.mentalfrostbyte.jello.module.impl.movement.Step;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.module.impl.world.Timer;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
-import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -233,7 +232,7 @@ public class HypixelSpeed extends Module {
         if (var2 != 0) {
             if (var2 != 1) {
                 if (var2 != 2) {
-                    if (var2 == 3 && Math.abs(var1.getY()) < 0.1 && JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber()) {
+                    if (var2 == 3 && Math.abs(var1.getY()) < 0.1/* && JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber()*/) {
                         var1.setY(0.0300011120129438);
                     }
                 } else {

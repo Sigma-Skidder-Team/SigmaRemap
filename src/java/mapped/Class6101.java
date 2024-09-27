@@ -8,6 +8,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
@@ -27,7 +28,7 @@ public class Class6101 {
    private int field27356 = 0;
    private BlockPos.Mutable field27357;
 
-   public Class6101(Collection<Class8363> var1, BlockPos var2, Class80 var3, ServerWorld var4, Class7879 var5, int var6) {
+   public Class6101(Collection<Class8363> var1, BlockPos var2, Rotation var3, ServerWorld var4, Class7879 var5, int var6) {
       this.field27357 = var2.method8354();
       this.field27348 = var2;
       this.field27349 = var4;

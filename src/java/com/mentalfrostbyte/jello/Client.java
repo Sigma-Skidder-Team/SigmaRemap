@@ -20,7 +20,6 @@ import com.mentalfrostbyte.jello.target.CombatManager;
 import com.mentalfrostbyte.jello.target.FriendManager;
 import com.mentalfrostbyte.jello.unmapped.*;
 import com.mentalfrostbyte.jello.util.FileUtil;
-import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
 import com.mojang.blaze3d.platform.GlStateManager;
 import com.mojang.blaze3d.systems.RenderSystem;
 import mapped.*;
@@ -54,7 +53,6 @@ public class Client {
     private GuiManager guiManager;
     private FriendManager friendManager;
     private CombatManager combatManager;
-    private ViaVersionLoader viaversionLoader;
     private MusicManager musicManager;
     private PlayerStateTracker playerStateTracker;
     private AccountManager accountManager;
@@ -66,7 +64,6 @@ public class Client {
     private SlotChangeTracker slotChangeTracker;
     private WaypointsManager waypointsManager;
     private Class8795 field28989;
-    private JelloPortal field28990;
     private ClientMode clientMode = ClientMode.PREMIUM;
     private DiscordRichPresence discordRichPresence;
 
@@ -109,8 +106,6 @@ public class Client {
         this.friendManager.method26995();
         this.combatManager = new CombatManager();
         this.combatManager.method29345();
-        this.viaversionLoader = new ViaVersionLoader();
-        this.viaversionLoader.init();
         this.playerStateTracker = new PlayerStateTracker();
         this.playerStateTracker.REGISSTER();
         this.slotChangeTracker = new SlotChangeTracker();
@@ -287,10 +282,6 @@ public class Client {
 
     public CombatManager getCombatManager() {
         return this.combatManager;
-    }
-
-    public ViaVersionLoader method19937() {
-        return this.viaversionLoader;
     }
 
     public GuiManager getGuiManager() {

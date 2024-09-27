@@ -32,7 +32,6 @@ public class ActiveMods extends Module {
         this.registerSetting(new BooleanSetting("Sound", "Toggle sound", true));
     }
 
-    // $VF: synthetic method
     public static int method16860(ActiveMods var0, Module var1) {
         return var0.method16857(var1);
     }

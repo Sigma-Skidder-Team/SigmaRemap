@@ -4,6 +4,7 @@ import mapped.*;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.network.play.IServerPlayNetHandler;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
@@ -17,7 +18,7 @@ public class CUpdateStructureBlockPacket implements IPacket<IServerPlayNetHandle
    private BlockPos field_210395_e;
    private BlockPos size;
    private Class2089 mirror;
-   private Class80 rotation;
+   private Rotation rotation;
    private String field_210399_i;
    private boolean field_210400_j;
    private boolean field_210401_k;
@@ -36,7 +37,7 @@ public class CUpdateStructureBlockPacket implements IPacket<IServerPlayNetHandle
       BlockPos var5,
       BlockPos var6,
       Class2089 var7,
-      Class80 var8,
+      Rotation var8,
       String var9,
       boolean var10,
       boolean var11,
@@ -71,7 +72,7 @@ public class CUpdateStructureBlockPacket implements IPacket<IServerPlayNetHandle
       int j = 48;
       this.size = new BlockPos(MathHelper.method37775(buf.readByte(), 0, 48), MathHelper.method37775(buf.readByte(), 0, 48), MathHelper.method37775(buf.readByte(), 0, 48));
       this.mirror = buf.readEnumValue(Class2089.class);
-      this.rotation = buf.readEnumValue(Class80.class);
+      this.rotation = buf.readEnumValue(Rotation.class);
       this.field_210399_i = buf.readString(12);
       this.integrity = MathHelper.clamp(buf.readFloat(), 0.0F, 1.0F);
       this.seed = buf.method35715();
@@ -146,7 +147,7 @@ public class CUpdateStructureBlockPacket implements IPacket<IServerPlayNetHandle
       return this.mirror;
    }
 
-   public Class80 method17616() {
+   public Rotation method17616() {
       return this.rotation;
    }
 

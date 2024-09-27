@@ -7,6 +7,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -226,7 +227,7 @@ public abstract class Class995 extends Entity {
    }
 
    @Override
-   public float getRotatedYaw(Class80 var1) {
+   public float getRotatedYaw(Rotation var1) {
       if (this.field5489.getAxis() != Direction.Y) {
          switch (Class9399.field43617[var1.ordinal()]) {
             case 1:

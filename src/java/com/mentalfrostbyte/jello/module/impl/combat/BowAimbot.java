@@ -36,36 +36,6 @@ public class BowAimbot extends Module {
         this.registerSetting(new BooleanSetting("Invisible", "Target invisible entites", true));
     }
 
-    // $VF: synthetic method
-    public static Minecraft method16572() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16573() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16574() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16575() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16576() {
-        return mc;
-    }
-
-    // $VF: synthetic method
-    public static Minecraft method16577() {
-        return mc;
-    }
-
     @Override
     public void onDisable() {
         this.field23754.clear();

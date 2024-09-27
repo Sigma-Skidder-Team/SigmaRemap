@@ -1,7 +1,5 @@
 package mapped;
 
-
-
 public abstract class Class4742 {
    public static final float[] field22495 = new float[]{
       2.0F,

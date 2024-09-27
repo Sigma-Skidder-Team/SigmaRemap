@@ -6,12 +6,10 @@ import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.Render3DEvent;
 import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
-import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.combat.Teams;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.timer.TimerUtil;
 import mapped.*;
@@ -387,9 +385,11 @@ public class AutoCrystal extends Module {
             if (mc.player.container.getSlot(var5).getHasStack()) {
                 ItemStack var6 = mc.player.container.getSlot(var5).getStack();
                 if (var6.getItem() == Items.END_CRYSTAL) {
+                    /*
                     if (JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
                         mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
                     }
+                     */
 
                     InvManagerUtils.moveItemToHotbar(var5, 8);
                     mc.getConnection().sendPacket(new CCloseWindowPacket(-1));

@@ -1,31 +1,6 @@
 package mapped;
 
 public final class Class9677 {
-   public static final String field45178 = "258EAFA5-E914-47DA-95CA-C5AB0DC85B11";
-   public static final int field45179 = 128;
-   public static final int field45180 = 64;
-   public static final int field45181 = 32;
-   public static final int field45182 = 16;
-   public static final int field45183 = 15;
-   public static final int field45184 = 8;
-   public static final int field45185 = 128;
-   public static final int field45186 = 127;
-   public static final int field45187 = 0;
-   public static final int field45188 = 1;
-   public static final int field45189 = 2;
-   public static final int field45190 = 8;
-   public static final int field45191 = 9;
-   public static final int field45192 = 10;
-   public static final long field45193 = 125L;
-   public static final long field45194 = 123L;
-   public static final int field45195 = 126;
-   public static final long field45196 = 65535L;
-   public static final int field45197 = 127;
-   public static final int field45198 = 1001;
-   public static final int field45199 = 1002;
-   public static final int field45200 = 1005;
-   public static final int field45201 = 1006;
-
    public static void method37751(byte[] var0, long var1, byte[] var3, long var4) {
       int var8 = var3.length;
       int var9 = 0;

@@ -1,9 +1,0 @@
-package mapped;
-
-public class Class6398 {
-   private static String[] field28008;
-
-   public static void method19497(ViaVersion7 var0) {
-      var0.method19360(Class1932.field12218, new Class4019());
-   }
-}

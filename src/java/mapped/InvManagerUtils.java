@@ -1,6 +1,5 @@
 package mapped;
 
-import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.Enchantment;
@@ -325,7 +324,7 @@ public class InvManagerUtils {
       if (var3 == null) {
          return var10;
       }
-      if (var8 == null || JelloPortal.getCurrentVersion().getVersionNumber() > ViaVerList._1_12.getVersionNumber() && !var5 || var3 == ClickType.SWAP) {
+      if (var8 == null || /*JelloPortal.getCurrentVersion().getVersionNumber() > ViaVerList._1_12.getVersionNumber() && */!var5 || var3 == ClickType.SWAP) {
          var8 = var10;
       }
 

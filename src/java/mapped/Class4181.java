@@ -2,17 +2,20 @@ package mapped;
 
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.feature.structure.ShipwreckPieces;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.Random;
 
 public class Class4181 extends Class4180 {
-   private final Class80 field20447;
+   private final Rotation field20447;
    private final ResourceLocation field20456;
    private final boolean field20457;
 
-   public Class4181(TemplateManager var1, ResourceLocation var2, BlockPos var3, Class80 var4, boolean var5) {
+   public Class4181(TemplateManager var1, ResourceLocation var2, BlockPos var3, Rotation var4, boolean var5) {
       super(Class7792.field33478, 0);
       this.field20455 = var3;
       this.field20447 = var4;
@@ -25,7 +28,7 @@ public class Class4181 extends Class4180 {
       super(Class7792.field33478, var2);
       this.field20456 = new ResourceLocation(var2.getString("Template"));
       this.field20457 = var2.getBoolean("isBeached");
-      this.field20447 = Class80.valueOf(var2.getString("Rot"));
+      this.field20447 = Rotation.valueOf(var2.getString("Rot"));
       this.method12945(var1);
    }
 
@@ -42,7 +45,7 @@ public class Class4181 extends Class4180 {
       Class9463 var5 = new Class9463()
          .method36426(this.field20447)
          .method36425(Class2089.field13614)
-         .method36427(Class8628.method30927())
+         .method36427(ShipwreckPieces.method30927())
          .method36434(Class7095.field30528);
       this.method12943(var4, this.field20455, var5);
    }

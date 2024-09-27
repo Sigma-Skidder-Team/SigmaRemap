@@ -9,7 +9,6 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.PremiumModule;
 import com.mentalfrostbyte.jello.module.impl.movement.Fly;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
-import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.world.BlockUtil;
 import mapped.*;
 import net.minecraft.item.ItemStack;
@@ -134,9 +133,11 @@ public class AutoMLG extends PremiumModule {
                 if (mc.player.container.getSlot(var5).getHasStack()) {
                     ItemStack var6 = mc.player.container.getSlot(var5).getStack();
                     if (var6.getItem() == Items.WATER_BUCKET) {
+                        /*
                         if (JelloPortal.getCurrentVersionApplied() <= ViaVerList._1_11_1_or_2.getVersionNumber()) {
                             mc.getConnection().sendPacket(new CClientStatusPacket(CClientStatusPacket.State.OPEN_INVENTORY));
                         }
+                         */
 
                         InvManagerUtils.moveItemToHotbar(var5, 6);
                         mc.getConnection().sendPacket(new CCloseWindowPacket(-1));

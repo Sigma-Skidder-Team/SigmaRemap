@@ -13,8 +13,10 @@ import java.util.function.Supplier;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -77,7 +79,7 @@ public class Class9369 {
       if (this.field43497 == Integer.MIN_VALUE) {
          this.field43497 = this.field43495
             .stream()
-            .mapToInt(var1x -> var1x.method24375(var1, BlockPos.ZERO, Class80.field185).method38399())
+            .mapToInt(var1x -> var1x.method24375(var1, BlockPos.ZERO, Rotation.field185).method38399())
             .max()
             .orElse(0);
       }

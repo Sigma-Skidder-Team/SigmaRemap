@@ -7,6 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IBlockReader;
@@ -231,7 +232,7 @@ public class Class3421 extends Block implements Class3207 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Rotation var2) {
       return var1.method23465(field19131, var2.method252(var1.<net.minecraft.util.Direction>method23463(field19131)));
    }
 
@@ -244,15 +245,15 @@ public class Class3421 extends Block implements Class3207 {
             if (var5.getAxis() == Direction.Z) {
                switch (Class8332.field35834[var6.ordinal()]) {
                   case 1:
-                     return var1.method23395(Class80.field187).method23465(field19133, Class106.field331);
+                     return var1.method23395(Rotation.field187).method23465(field19133, Class106.field331);
                   case 2:
-                     return var1.method23395(Class80.field187).method23465(field19133, Class106.field330);
+                     return var1.method23395(Rotation.field187).method23465(field19133, Class106.field330);
                   case 3:
-                     return var1.method23395(Class80.field187).method23465(field19133, Class106.field333);
+                     return var1.method23395(Rotation.field187).method23465(field19133, Class106.field333);
                   case 4:
-                     return var1.method23395(Class80.field187).method23465(field19133, Class106.field332);
+                     return var1.method23395(Rotation.field187).method23465(field19133, Class106.field332);
                   default:
-                     return var1.method23395(Class80.field187);
+                     return var1.method23395(Rotation.field187);
                }
             }
             break;
@@ -260,15 +261,15 @@ public class Class3421 extends Block implements Class3207 {
             if (var5.getAxis() == Direction.X) {
                switch (Class8332.field35834[var6.ordinal()]) {
                   case 1:
-                     return var1.method23395(Class80.field187).method23465(field19133, Class106.field330);
+                     return var1.method23395(Rotation.field187).method23465(field19133, Class106.field330);
                   case 2:
-                     return var1.method23395(Class80.field187).method23465(field19133, Class106.field331);
+                     return var1.method23395(Rotation.field187).method23465(field19133, Class106.field331);
                   case 3:
-                     return var1.method23395(Class80.field187).method23465(field19133, Class106.field333);
+                     return var1.method23395(Rotation.field187).method23465(field19133, Class106.field333);
                   case 4:
-                     return var1.method23395(Class80.field187).method23465(field19133, Class106.field332);
+                     return var1.method23395(Rotation.field187).method23465(field19133, Class106.field332);
                   case 5:
-                     return var1.method23395(Class80.field187);
+                     return var1.method23395(Rotation.field187);
                }
             }
       }

@@ -3,7 +3,6 @@ package mapped;
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import com.google.common.collect.UnmodifiableIterator;
-import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.datafixers.DataFixUtils;
@@ -237,9 +236,6 @@ public class Class1262 extends AbstractGui {
 
       BlockPos var8 = this.field6665.getRenderViewEntity().getPosition();
       String var9 = SharedConstants.getVersion().getName();
-      if (!this.field6665.isSingleplayer()) {
-         var9 = ViaVerList.getVersionByNumber(JelloPortal.getCurrentVersionApplied()).getVersionName();
-      }
 
       if (this.field6665.isReducedDebug()) {
          return Lists.newArrayList(

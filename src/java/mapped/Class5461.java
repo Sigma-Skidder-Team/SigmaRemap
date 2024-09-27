@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.structure.StructureStart;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 public class Class5461 extends StructureStart<Class4712> {
    private static String[] field24220;

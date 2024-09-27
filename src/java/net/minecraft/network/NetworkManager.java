@@ -5,7 +5,6 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.ReceivePacketEvent;
 import com.mentalfrostbyte.jello.event.impl.SendPacketEvent;
-import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.epoll.Epoll;
@@ -70,9 +69,6 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
 
    private int ticks;
 
-
-   private JelloPortal jelloPortal;
-
    public NetworkManager(PacketDirection packetDirection) {
       this.direction = packetDirection;
    }
@@ -84,11 +80,6 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
 
       try {
          this.setConnectionState(ProtocolType.field9901);
-         /*
-         uncommenting this causes
-          - java.lang.NoClassDefFoundError: Could not initialize class mapped.Class9019
-         this.jelloPortal = new JelloPortal(this.channel);
-          */
       } catch (Throwable var5) {
          System.out.println("LINE 89 NetworkManager");
          LOGGER.fatal(var5);
@@ -285,10 +276,6 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
          this.channel.close().awaitUninterruptibly();
          this.terminationReason = message;
       }
-
-      if (this.jelloPortal != null) {
-         this.jelloPortal.shutdownPortal();
-      }
    }
 
    public boolean isLocalChannel() {
@@ -405,8 +392,6 @@ public class NetworkManager extends SimpleChannelInboundHandler<IPacket<?>> {
             this.channel.pipeline().remove("compress");
          }
       }
-
-     //this.jelloPortal.getPacketManager().method34157(this.channel);
    }
 
    public void handleDisconnection() {

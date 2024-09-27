@@ -1,7 +1,5 @@
 package mapped;
 
-
-
 public class Class4745 extends Class4743 {
    private static String[] field22496;
    public int field22508;

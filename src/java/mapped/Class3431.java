@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
@@ -153,7 +154,7 @@ public class Class3431 extends Class3429 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Rotation var2) {
       switch (Class7090.field30515[var2.ordinal()]) {
          case 1:
             switch (Class7090.field30514[var1.<Class96>method23463(field19193).ordinal()]) {

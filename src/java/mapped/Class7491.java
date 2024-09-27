@@ -2,8 +2,10 @@ package mapped;
 
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.List;
 import java.util.Random;
@@ -26,12 +28,12 @@ public class Class7491 extends Class7487 {
    }
 
    @Override
-   public List<Class8266> method24374(TemplateManager var1, BlockPos var2, Class80 var3, Random var4) {
+   public List<Class8266> method24374(TemplateManager var1, BlockPos var2, Rotation var3, Random var4) {
       return this.field32194.get(0).method24374(var1, var2, var3, var4);
    }
 
    @Override
-   public Class9764 method24375(TemplateManager var1, BlockPos var2, Class80 var3) {
+   public Class9764 method24375(TemplateManager var1, BlockPos var2, Rotation var3) {
       Class9764 var6 = Class9764.method38386();
 
       for (Class7487 var8 : this.field32194) {
@@ -44,7 +46,7 @@ public class Class7491 extends Class7487 {
 
    @Override
    public boolean method24376(
-           TemplateManager var1, ISeedReader var2, Class7480 var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Class80 var7, Class9764 var8, Random var9, boolean var10
+           TemplateManager var1, ISeedReader var2, Class7480 var3, ChunkGenerator var4, BlockPos var5, BlockPos var6, Rotation var7, Class9764 var8, Random var9, boolean var10
    ) {
       for (Class7487 var14 : this.field32194) {
          if (!var14.method24376(var1, var2, var3, var4, var5, var6, var7, var8, var9, var10)) {

@@ -5,6 +5,7 @@ import com.mojang.datafixers.DataFixer;
 import com.mojang.datafixers.DataFixerBuilder;
 import com.mojang.datafixers.schemas.Schema;
 import net.minecraft.client.util.Util;
+import net.minecraft.util.datafix.fixes.*;
 
 import java.util.Map;
 import java.util.Objects;
@@ -54,7 +55,7 @@ public class DataFixesManager {
       Schema var15 = var0.addSchema(135, Class9048::new);
       var0.addFixer(new Class8946(var15, true));
       Schema var16 = var0.addSchema(143, Class5915::new);
-      var0.addFixer(new Class6323(var16, true));
+      var0.addFixer(new TippedArrow(var16, true));
       Schema var17 = var0.addSchema(147, field21708);
       var0.addFixer(new Class6724(var17, true));
       Schema var18 = var0.addSchema(165, field21708);
@@ -175,8 +176,8 @@ public class DataFixesManager {
       Schema var57 = var0.addSchema(1481, Class3646::new);
       var0.addFixer(new Class7335(var57, "Add conduit", TypeReferences.field35386));
       Schema var58 = var0.addSchema(1483, Class3653::new);
-      var0.addFixer(new Class6318(var58, true));
-      var0.addFixer(Class7325.method23221(var58, "Rename pufferfish egg item", method14183(Class6318.field27827)));
+      var0.addFixer(new PufferfishRename(var58, true));
+      var0.addFixer(Class7325.method23221(var58, "Rename pufferfish egg item", method14183(PufferfishRename.field27827)));
       Schema var59 = var0.addSchema(1484, field21709);
       var0.addFixer(
          Class7325.method23221(
@@ -194,8 +195,8 @@ public class DataFixesManager {
       );
       var0.addFixer(new Class8372(var59, false));
       Schema var60 = var0.addSchema(1486, Class3651::new);
-      var0.addFixer(new Class6321(var60, true));
-      var0.addFixer(Class7325.method23221(var60, "Rename cod/salmon egg items", method14183(Class6321.field27831)));
+      var0.addFixer(new EntityCodSalmonFix(var60, true));
+      var0.addFixer(Class7325.method23221(var60, "Rename cod/salmon egg items", method14183(EntityCodSalmonFix.field27831)));
       Schema var61 = var0.addSchema(1487, field21709);
       var0.addFixer(
          Class7325.method23221(
@@ -268,10 +269,10 @@ public class DataFixesManager {
       Schema var70 = var0.addSchema(1506, field21709);
       var0.addFixer(new Class9611(var70, false));
       Schema var71 = var0.addSchema(1510, Class3650::new);
-      var0.addFixer(Class7765.method25738(var71, "Block renamening fix", method14183(Class6324.field27834)));
-      var0.addFixer(Class7325.method23221(var71, "Item renamening fix", method14183(Class6324.field27835)));
+      var0.addFixer(Class7765.method25738(var71, "Block renamening fix", method14183(EntityRenaming1510.BLOCK_RENAME_MAP)));
+      var0.addFixer(Class7325.method23221(var71, "Item renamening fix", method14183(EntityRenaming1510.ITEM_RENAME_MAP)));
       var0.addFixer(new Class8166(var71, false));
-      var0.addFixer(new Class6324(var71, true));
+      var0.addFixer(new EntityRenaming1510(var71, true));
       var0.addFixer(new Class7997(var71, false));
       Schema var72 = var0.addSchema(1514, field21709);
       var0.addFixer(new Class9631(var72, false));
@@ -334,8 +335,8 @@ public class DataFixesManager {
       Schema var87 = var0.addSchema(1925, field21709);
       var0.addFixer(new Class8698(var87, false));
       Schema var88 = var0.addSchema(1928, Class3672::new);
-      var0.addFixer(new Class6322(var88, true));
-      var0.addFixer(Class7325.method23221(var88, "Rename ravager egg item", method14183(Class6322.field27832)));
+      var0.addFixer(new EntityRavagerRenameFix(var88, true));
+      var0.addFixer(Class7325.method23221(var88, "Rename ravager egg item", method14183(EntityRavagerRenameFix.field27832)));
       Schema var89 = var0.addSchema(1929, Class3643::new);
       var0.addFixer(new Class7335(var89, "Add Wandering Trader and Trader Llama", TypeReferences.ENTITY));
       Schema var90 = var0.addSchema(1931, Class3640::new);
@@ -402,8 +403,8 @@ public class DataFixesManager {
          )
       );
       Schema var108 = var0.addSchema(2509, Class3665::new);
-      var0.addFixer(new Class6320(var108));
-      var0.addFixer(Class7325.method23221(var108, "Rename zombie pigman egg item", method14183(Class6320.field27829)));
+      var0.addFixer(new ZombifiedPiglinRename(var108));
+      var0.addFixer(Class7325.method23221(var108, "Rename zombie pigman egg item", method14183(ZombifiedPiglinRename.field27829)));
       Schema var109 = var0.addSchema(2511, field21709);
       var0.addFixer(new Class7910(var109));
       Schema var110 = var0.addSchema(2514, field21709);

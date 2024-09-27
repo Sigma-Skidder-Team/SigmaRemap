@@ -18,6 +18,7 @@ import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.optifine.Config;
+import net.optifine.entity.model.CustomEntityModels;
 import net.optifine.shaders.Shaders;
 import org.apache.commons.io.IOUtils;
 import org.lwjgl.BufferUtils;
@@ -191,7 +192,7 @@ public class Class8684 {
          Class8862.method32261();
          Class9387.method35644();
          Class7992.method27252();
-         Class9810.method38688();
+         CustomEntityModels.method38688();
          Shaders.method33141();
          Class8043.method27615();
          Config.method26824();

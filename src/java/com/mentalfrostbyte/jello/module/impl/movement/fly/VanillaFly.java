@@ -9,7 +9,6 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
 import com.mentalfrostbyte.jello.settings.NumberSetting;
-import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.play.client.CPlayerPacket;
@@ -77,9 +76,12 @@ public class VanillaFly extends Module {
         if (this.isEnabled()) {
             if (!mc.player.onGround && this.getBooleanValueFromSettingName("Kick bypass")) {
                 if (this.ticksInAir > 0 && this.ticksInAir % 30 == 0 && !MultiUtilities.isAboveBounds(mc.player, 0.01F)) {
+                    /*
                     if (JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber()) {
                         event.setY(event.getY() - 0.04);
                     } else {
+
+                     */
                         double collisionHeight = this.getGroundCollisionHeight();
                         if (collisionHeight < 0.0) {
                             return;
@@ -111,7 +113,7 @@ public class VanillaFly extends Module {
                         }
 
                         this.ticksInAir = 0;
-                    }
+                    //}
                 }
             }
         }

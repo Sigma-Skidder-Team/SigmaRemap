@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.structure.StructureStart;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 public final class Class5443 extends StructureStart<Class4735> {
    public Class5443(Structure var1, int var2, int var3, Class9764 var4, int var5, long var6) {

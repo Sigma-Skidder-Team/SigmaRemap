@@ -3,7 +3,6 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.module.impl.combat.Criticals;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
-import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.enchantment.Enchantment;
@@ -60,9 +59,11 @@ public class Class338 implements Runnable {
             boolean noSwing = this.killauraModule.getBooleanValueFromSettingName("No swing");
             Minecraft mc = KillAura.mc;
             boolean isOnePointEight = false;
+            /*
             if (JelloPortal.getCurrentVersion() != null) {
                isOnePointEight = JelloPortal.getCurrentVersion().equals(ViaVerList._1_8_x);
             }
+             */
 
             if (isOnePointEight && !noSwing) {
                mc.player.swingArm(Hand.MAIN_HAND);

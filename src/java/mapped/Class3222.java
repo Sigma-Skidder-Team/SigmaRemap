@@ -12,6 +12,7 @@ import net.minecraft.particles.RedstoneParticleData;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
@@ -451,7 +452,7 @@ public class Class3222 extends Block {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Rotation var2) {
       switch (Class7339.field31443[var2.ordinal()]) {
          case 1:
             return var1.method23465(field18647, var1.<Class98>method23463(field18649))

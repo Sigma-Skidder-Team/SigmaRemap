@@ -12,8 +12,6 @@ import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.module.impl.combat.KillAura;
 import com.mentalfrostbyte.jello.settings.ModeSetting;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
-import com.mentalfrostbyte.jello.viaversion.ViaVersionLoader;
-import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import mapped.*;
 import net.minecraft.block.Block;
@@ -44,7 +42,7 @@ public class OldHitting extends Module {
     @HigherPriority
     @Class5631
     private void method16020(EventUpdate var1) {
-        if (this.isEnabled() || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x) {
+        if (this.isEnabled()) {
             if (var1.isPre()) {
                 boolean var4 = mc.player.getHeldItemMainhand() != null && mc.player.getHeldItemMainhand().getItem() instanceof SwordItem;
                 boolean var5 = Client.getInstance().getModuleManager().getModuleByClass(KillAura.class).method15988();
@@ -87,6 +85,7 @@ public class OldHitting extends Module {
                 }
 
                 field23408 = mc.gameSettings.keyBindUseItem.isKeyDown() && var4 && var6 && var6 || var5;
+                /*
                 if (!field23408) {
                     if (ViaVersionLoader.entites.contains(mc.player)) {
                         ViaVersionLoader.entites.remove(mc.player);
@@ -94,6 +93,7 @@ public class OldHitting extends Module {
                 } else if (!ViaVersionLoader.entites.contains(mc.player)) {
                     ViaVersionLoader.entites.add(mc.player);
                 }
+                 */
 
                 if (field23408 && !this.field23409) {
                     this.field23409 = !this.field23409;
@@ -111,7 +111,7 @@ public class OldHitting extends Module {
     @LowerPriority
     @Class5631
     private void method16021(ReceivePacketEvent var1) {
-        if (this.isEnabled() || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x) {
+        if (this.isEnabled()) {
             if (mc.player != null) {
                 if (var1.getPacket() instanceof SEntityEquipmentPacket) {
                     SEntityEquipmentPacket var4 = (SEntityEquipmentPacket) var1.getPacket();
@@ -129,7 +129,7 @@ public class OldHitting extends Module {
     @LowerPriority
     @Class5631
     private void method16022(EventHandAnimation var1) {
-        if (this.isEnabled() || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x) {
+        if (this.isEnabled()) {
             float var4 = var1.method13924();
             if (var1.method13926() && var1.getHand() == HandSide.field14417 && var1.getItemStack().getItem() instanceof Class3334) {
                 var1.method13931(false);

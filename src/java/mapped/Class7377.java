@@ -17,6 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.MathHelper;
@@ -123,7 +124,7 @@ public abstract class Class7377 extends Class7378<Block, BlockState> {
       return this.field31568;
    }
 
-   public BlockState method23395(Class80 var1) {
+   public BlockState method23395(Rotation var1) {
       return this.getBlock().method11500(this.method23457(), var1);
    }
 

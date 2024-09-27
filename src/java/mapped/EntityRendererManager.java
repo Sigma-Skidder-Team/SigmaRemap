@@ -26,6 +26,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.optifine.Config;
+import net.optifine.entity.model.CustomEntityModels;
 import net.optifine.shaders.Shaders;
 
 import java.util.Collections;
@@ -241,7 +242,7 @@ public class EntityRendererManager {
                double var21 = var6 + var16.getZ();
                var10.push();
                var10.translate(var17, var19, var21);
-               if (Class9810.method38699()) {
+               if (CustomEntityModels.method38699()) {
                   this.field40023 = var15;
                }
 

@@ -41,7 +41,7 @@ public class ClassicMainScreen extends Screen {
         String var11 = "© Sigma Prod";
         StringBuilder var10000 = new StringBuilder().append("Sigma ");
         Client.getInstance();
-        String var12 = var10000.append(Client.VERSION).append(" for Minecraft 1.8 to ").append(JelloPortal.defaultVersion.getVersionName()).toString();
+        String var12 = var10000.append(Client.VERSION).append(" for Minecraft 1.8 to ").append("1.16.4").toString();
         this.addToList(this.field21102 = new ClassicParticleEngine(this, "particles"));
         short var13 = 480;
         short var14 = 480;

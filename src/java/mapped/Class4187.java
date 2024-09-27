@@ -6,20 +6,22 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.Random;
 
 public class Class4187 extends Class4180 {
    private final String field20476;
-   private final Class80 field20477;
+   private final Rotation field20477;
    private final Class2089 field20478;
 
-   public Class4187(TemplateManager var1, String var2, BlockPos var3, Class80 var4) {
+   public Class4187(TemplateManager var1, String var2, BlockPos var3, Rotation var4) {
       this(var1, var2, var3, var4, Class2089.field13614);
    }
 
-   public Class4187(TemplateManager var1, String var2, BlockPos var3, Class80 var4, Class2089 var5) {
+   public Class4187(TemplateManager var1, String var2, BlockPos var3, Rotation var4, Class2089 var5) {
       super(Class7792.field33476, 0);
       this.field20476 = var2;
       this.field20455 = var3;
@@ -31,7 +33,7 @@ public class Class4187 extends Class4180 {
    public Class4187(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33476, var2);
       this.field20476 = var2.getString("Template");
-      this.field20477 = Class80.valueOf(var2.getString("Rot"));
+      this.field20477 = Rotation.valueOf(var2.getString("Rot"));
       this.field20478 = Class2089.valueOf(var2.getString("Mi"));
       this.method12966(var1);
    }
@@ -53,7 +55,7 @@ public class Class4187 extends Class4180 {
    @Override
    public void method12944(String var1, BlockPos var2, Class1659 var3, Random var4, Class9764 var5) {
       if (var1.startsWith("Chest")) {
-         Class80 var8 = this.field20454.method36437();
+         Rotation var8 = this.field20454.method36437();
          BlockState var9 = Blocks.CHEST.method11579();
          if ("ChestWest".equals(var1)) {
             var9 = var9.method23465(Class3348.field18865, var8.method252(Direction.WEST));

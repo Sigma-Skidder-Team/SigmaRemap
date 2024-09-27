@@ -6,6 +6,7 @@ import net.minecraft.crash.CrashReportCategory;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
@@ -158,7 +159,7 @@ public abstract class TileEntity {
       return false;
    }
 
-   public void method3784(Class80 var1) {
+   public void method3784(Rotation var1) {
    }
 
    public void method3785(Class2089 var1) {

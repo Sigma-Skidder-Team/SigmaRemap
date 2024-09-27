@@ -11,6 +11,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -356,7 +357,7 @@ public class Class8969 {
       return var7;
    }
 
-   private void method32902(Class1659 var1, BlockPos var2, Class2089 var3, Class80 var4, BlockPos var5, Class9764 var6, boolean var7) {
+   private void method32902(Class1659 var1, BlockPos var2, Class2089 var3, Rotation var4, BlockPos var5, Class9764 var6, boolean var7) {
       for (Class9559 var11 : this.field40546) {
          BlockPos var12 = method32905(var11.field44528, var3, var4, var5).method8337(var2);
          if (var6 == null || var6.method38396(var12)) {
@@ -391,7 +392,7 @@ public class Class8969 {
       }
    }
 
-   public BlockPos method32904(Class80 var1) {
+   public BlockPos method32904(Rotation var1) {
       switch (Class9051.field41436[var1.ordinal()]) {
          case 1:
          case 2:
@@ -401,7 +402,7 @@ public class Class8969 {
       }
    }
 
-   public static BlockPos method32905(BlockPos var0, Class2089 var1, Class80 var2, BlockPos var3) {
+   public static BlockPos method32905(BlockPos var0, Class2089 var1, Rotation var2, BlockPos var3) {
       int var6 = var0.getX();
       int var7 = var0.getY();
       int var8 = var0.getZ();
@@ -431,7 +432,7 @@ public class Class8969 {
       }
    }
 
-   public static Vector3d method32906(Vector3d var0, Class2089 var1, Class80 var2, BlockPos var3) {
+   public static Vector3d method32906(Vector3d var0, Class2089 var1, Rotation var2, BlockPos var3) {
       double var6 = var0.x;
       double var8 = var0.y;
       double var10 = var0.z;
@@ -461,11 +462,11 @@ public class Class8969 {
       }
    }
 
-   public BlockPos method32907(BlockPos var1, Class2089 var2, Class80 var3) {
+   public BlockPos method32907(BlockPos var1, Class2089 var2, Rotation var3) {
       return method32908(var1, var2, var3, this.method32886().getX(), this.method32886().getZ());
    }
 
-   public static BlockPos method32908(BlockPos var0, Class2089 var1, Class80 var2, int var3, int var4) {
+   public static BlockPos method32908(BlockPos var0, Class2089 var1, Rotation var2, int var3, int var4) {
       var3--;
       var4--;
       int var7 = var1 == Class2089.field13616 ? var3 : 0;
@@ -492,7 +493,7 @@ public class Class8969 {
       return this.method32910(var2, var1.method36437(), var1.method36438(), var1.method36436());
    }
 
-   public Class9764 method32910(BlockPos var1, Class80 var2, BlockPos var3, Class2089 var4) {
+   public Class9764 method32910(BlockPos var1, Rotation var2, BlockPos var3, Class2089 var4) {
       BlockPos var7 = this.method32904(var2);
       int var8 = var3.getX();
       int var9 = var3.getZ();
@@ -527,11 +528,11 @@ public class Class8969 {
       return var13;
    }
 
-   private void method32911(Class80 var1, int var2, int var3, Class9764 var4, Direction var5, Direction var6) {
+   private void method32911(Rotation var1, int var2, int var3, Class9764 var4, Direction var5, Direction var6) {
       BlockPos var9 = BlockPos.ZERO;
-      if (var1 == Class80.field186 || var1 == Class80.field188) {
+      if (var1 == Rotation.field186 || var1 == Rotation.field188) {
          var9 = var9.method8350(var1.method252(var5), var3);
-      } else if (var1 != Class80.field187) {
+      } else if (var1 != Rotation.field187) {
          var9 = var9.method8350(var5, var2);
       } else {
          var9 = var9.method8350(var6, var2);

@@ -25,6 +25,7 @@ import net.minecraft.client.util.Util;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
@@ -219,7 +220,7 @@ public class Class9037 {
          ServerWorld var7 = var0.method20172();
          BlockPos var8 = new BlockPos(var0.method20171());
          BlockPos var9 = new BlockPos(var8.getX(), var0.method20172().method7006(Heightmap.Type.field296, var8).getY(), var8.getZ() + 3);
-         Class7803.method26055(var1.toLowerCase(), var9, new BlockPos(var2, var3, var4), Class80.field185, var7);
+         Class7803.method26055(var1.toLowerCase(), var9, new BlockPos(var2, var3, var4), Rotation.field185, var7);
 
          for (int var10 = 0; var10 < var2; var10++) {
             for (int var11 = 0; var11 < var4; var11++) {
@@ -230,7 +231,7 @@ public class Class9037 {
             }
          }
 
-         Class7803.method26054(var9, new BlockPos(1, 0, -1), Class80.field185, var7);
+         Class7803.method26054(var9, new BlockPos(1, 0, -1), Rotation.field185, var7);
          return 0;
       } else {
          throw new IllegalArgumentException("The structure must be less than 48 blocks big in each axis");
@@ -348,7 +349,7 @@ public class Class9037 {
       BlockPos var8 = new BlockPos(var6.getX(), var7, var6.getZ() + 3);
       Class7440.method24038(var5);
       method33498(var1, var5);
-      Class80 var9 = Class7803.method26051(var2);
+      Rotation var9 = Class7803.method26051(var2);
       Class8262 var10 = new Class8262(var1, var9, var5);
       Class7440.method24029(var10, var8, Class7879.field33820);
       return 1;
@@ -402,7 +403,7 @@ public class Class9037 {
       BlockPos var6 = new BlockPos(var0.method20171());
       BlockPos var7 = new BlockPos(var6.getX(), var0.method20172().method7006(Heightmap.Type.field296, var6).getY(), var6.getZ() + 3);
       ServerWorld var8 = var0.method20172();
-      Class80 var9 = Class7803.method26051(var2);
+      Rotation var9 = Class7803.method26051(var2);
       Collection var10 = Class7440.method24031(var1, var7, var9, var8, Class7879.field33820, var3);
       Class9494 var11 = new Class9494(var10);
       var11.method36670(new Class8408(var8, var11));

@@ -5,16 +5,18 @@ import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.Random;
 
 public class Class4185 extends Class4180 {
    private final ResourceLocation field20471;
-   private final Class80 field20472;
+   private final Rotation field20472;
 
-   public Class4185(TemplateManager var1, ResourceLocation var2, BlockPos var3, Class80 var4, int var5) {
+   public Class4185(TemplateManager var1, ResourceLocation var2, BlockPos var3, Rotation var4, int var5) {
       super(Class7792.field33459, 0);
       this.field20471 = var2;
       BlockPos var8 = (BlockPos)Class3191.method11408().get(var2);
@@ -26,7 +28,7 @@ public class Class4185 extends Class4180 {
    public Class4185(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33459, var2);
       this.field20471 = new ResourceLocation(var2.getString("Template"));
-      this.field20472 = Class80.valueOf(var2.getString("Rot"));
+      this.field20472 = Rotation.valueOf(var2.getString("Rot"));
       this.method12964(var1);
    }
 

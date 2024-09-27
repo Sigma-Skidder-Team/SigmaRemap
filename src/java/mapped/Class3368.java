@@ -282,7 +282,7 @@ public class Class3368 extends Class3241 {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Rotation var2) {
       return var1.method23465(field18939, var2.method252(var1.<Direction>method23463(field18939)));
    }
 

@@ -4,8 +4,10 @@ import com.google.common.collect.Lists;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,11 +19,11 @@ public class Class4193 extends Class4178 {
    public final Class7487 field20489;
    public BlockPos field20490;
    private final int field20491;
-   public final Class80 field20492;
+   public final Rotation field20492;
    private final List<Class3637> field20493 = Lists.newArrayList();
    private final TemplateManager field20494;
 
-   public Class4193(TemplateManager var1, Class7487 var2, BlockPos var3, int var4, Class80 var5, Class9764 var6) {
+   public Class4193(TemplateManager var1, Class7487 var2, BlockPos var3, int var4, Rotation var5, Class9764 var6) {
       super(Class7792.field33480, 0);
       this.field20494 = var1;
       this.field20489 = var2;
@@ -40,7 +42,7 @@ public class Class4193 extends Class4178 {
          .parse(NBTDynamicOps.INSTANCE, var2.getCompound("pool_element"))
          .resultOrPartial(field20488::error)
          .orElse(Class7486.field32182);
-      this.field20492 = Class80.valueOf(var2.getString("rotation"));
+      this.field20492 = Rotation.valueOf(var2.getString("rotation"));
       this.field20444 = this.field20489.method24375(var1, this.field20490, this.field20492);
       ListNBT var5 = var2.method131("junctions", 10);
       this.field20493.clear();
@@ -83,7 +85,7 @@ public class Class4193 extends Class4178 {
    }
 
    @Override
-   public Class80 method12940() {
+   public Rotation method12940() {
       return this.field20492;
    }
 

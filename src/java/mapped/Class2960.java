@@ -1,6 +1,7 @@
 package mapped;
 
 import com.mojang.serialization.Codec;
+import net.minecraft.util.Rotation;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.provider.BiomeProvider;
 
@@ -27,12 +28,12 @@ public class Class2960 extends Structure<Class4712> {
 
    private static int method11360(int var0, int var1, ChunkGenerator var2) {
       Random var5 = new Random((long)(var0 + var1 * 10387313));
-      Class80 var6 = Class80.method254(var5);
+      Rotation var6 = Rotation.method254(var5);
       byte var7 = 5;
       byte var8 = 5;
-      if (var6 != Class80.field186) {
-         if (var6 != Class80.field187) {
-            if (var6 == Class80.field188) {
+      if (var6 != Rotation.field186) {
+         if (var6 != Rotation.field187) {
+            if (var6 == Rotation.field188) {
                var8 = -5;
             }
          } else {

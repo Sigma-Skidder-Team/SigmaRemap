@@ -8,9 +8,11 @@ import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,12 +22,12 @@ import java.util.Random;
 public class Class4184 extends Class4180 {
    private static final Logger field20465 = LogManager.getLogger();
    private final ResourceLocation field20466;
-   private final Class80 field20467;
+   private final Rotation field20467;
    private final Class2089 field20468;
    private final Class2219 field20469;
    private final Class8299 field20470;
 
-   public Class4184(BlockPos var1, Class2219 var2, Class8299 var3, ResourceLocation var4, Class8969 var5, Class80 var6, Class2089 var7, BlockPos var8) {
+   public Class4184(BlockPos var1, Class2219 var2, Class8299 var3, ResourceLocation var4, Class8969 var5, Rotation var6, Class2089 var7, BlockPos var8) {
       super(Class7792.field33460, 0);
       this.field20455 = var1;
       this.field20466 = var4;
@@ -39,7 +41,7 @@ public class Class4184 extends Class4180 {
    public Class4184(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33460, var2);
       this.field20466 = new ResourceLocation(var2.getString("Template"));
-      this.field20467 = Class80.valueOf(var2.getString("Rotation"));
+      this.field20467 = Rotation.valueOf(var2.getString("Rotation"));
       this.field20468 = Class2089.valueOf(var2.getString("Mirror"));
       this.field20469 = Class2219.method8946(var2.getString("VerticalPlacement"));
       this.field20470 = (Class8299)Class8299.field35673

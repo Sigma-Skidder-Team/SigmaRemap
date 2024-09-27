@@ -7,7 +7,6 @@ import com.mentalfrostbyte.jello.module.Module;
 import com.mentalfrostbyte.jello.module.ModuleCategory;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.settings.BooleanSetting;
-import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import mapped.*;
 import net.minecraft.network.IPacket;
@@ -97,6 +96,7 @@ public class CubecraftFly extends Module {
                         MovementUtils.setSpeed(var1, MovementUtils.getSpeed());
                         if (this.field23845 != -4) {
                             if (this.field23845 != -1) {
+                                /*
                                 if (JelloPortal.getCurrentVersionApplied() > ViaVerList._1_8_x.getVersionNumber()) {
                                     if (mc.gameSettings.keyBindJump.isKeyDown() && !this.field23846) {
                                         var1.setY(0.0625);
@@ -108,6 +108,7 @@ public class CubecraftFly extends Module {
                                         this.field23845 = 1;
                                     }
                                 }
+                                 */
                             } else {
                                 if (!this.field23848) {
                                     MultiUtilities.method17749(false);
@@ -120,6 +121,7 @@ public class CubecraftFly extends Module {
                             var1.setY(0.0625);
                         }
                     }
+                    /*
                 } else if (JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber()) {
                     if (!MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                         var1.setY(0.0);
@@ -134,6 +136,7 @@ public class CubecraftFly extends Module {
                     }
 
                     this.field23845 = 1;
+                     */
                 } else if (!MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                     var1.setY(0.0);
                     this.field23845 = -2;
@@ -170,7 +173,7 @@ public class CubecraftFly extends Module {
     public void method16689(EventUpdate var1) {
         if (var1.isPre() && MultiUtilities.isCubecraft()) {
             var1.method13908(true);
-            if (JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber() && this.field23845 == 0 && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
+            if (/*JelloPortal.getCurrentVersionApplied() == ViaVerList._1_8_x.getVersionNumber() && */this.field23845 == 0 && MultiUtilities.isAboveBounds(mc.player, 0.001F)) {
                 var1.setCancelled(true);
             }
 
@@ -193,6 +196,7 @@ public class CubecraftFly extends Module {
                 }
             } else {
                 SPlayerPositionLookPacket var20 = (SPlayerPositionLookPacket) var4;
+                /*
                 if (JelloPortal.getCurrentVersionApplied() != ViaVerList._1_8_x.getVersionNumber()) {
                     float[] var6 = MovementUtils.lenientStrafe();
                     float var7 = var6[1];
@@ -207,6 +211,7 @@ public class CubecraftFly extends Module {
                     var20.x += var16;
                     var20.z += var18;
                 }
+                 */
 
                 this.field23847 = true;
                 this.field23845 = -1;

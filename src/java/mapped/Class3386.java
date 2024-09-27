@@ -2,6 +2,7 @@ package mapped;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.util.Rotation;
 
 public class Class3386 extends Block {
    private static String[] field18993;
@@ -13,7 +14,7 @@ public class Class3386 extends Block {
    }
 
    @Override
-   public BlockState method11500(BlockState var1, Class80 var2) {
+   public BlockState method11500(BlockState var1, Rotation var2) {
       switch (Class9779.field45746[var2.ordinal()]) {
          case 1:
          case 2:

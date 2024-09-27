@@ -7,9 +7,11 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.ISeedReader;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.Random;
 
@@ -17,10 +19,10 @@ public class Class4183 extends Class4180 {
    private final Class110 field20460;
    private final float field20461;
    private final ResourceLocation field20462;
-   private final Class80 field20463;
+   private final Rotation field20463;
    private final boolean field20464;
 
-   public Class4183(TemplateManager var1, ResourceLocation var2, BlockPos var3, Class80 var4, float var5, Class110 var6, boolean var7) {
+   public Class4183(TemplateManager var1, ResourceLocation var2, BlockPos var3, Rotation var4, float var5, Class110 var6, boolean var7) {
       super(Class7792.field33458, 0);
       this.field20462 = var2;
       this.field20455 = var3;
@@ -34,7 +36,7 @@ public class Class4183 extends Class4180 {
    public Class4183(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33458, var2);
       this.field20462 = new ResourceLocation(var2.getString("Template"));
-      this.field20463 = Class80.valueOf(var2.getString("Rot"));
+      this.field20463 = Rotation.valueOf(var2.getString("Rot"));
       this.field20461 = var2.getFloat("Integrity");
       this.field20460 = Class110.valueOf(var2.getString("BiomeType"));
       this.field20464 = var2.getBoolean("IsLarge");

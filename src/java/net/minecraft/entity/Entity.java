@@ -2430,7 +2430,7 @@ public abstract class Entity implements INameable, ICommandSource {
    public void method3401(ServerPlayerEntity var1) {
    }
 
-   public float getRotatedYaw(Class80 var1) {
+   public float getRotatedYaw(Rotation var1) {
       float var4 = MathHelper.method37792(this.rotationYaw);
       switch (Class9228.field42477[var1.ordinal()]) {
          case 1:

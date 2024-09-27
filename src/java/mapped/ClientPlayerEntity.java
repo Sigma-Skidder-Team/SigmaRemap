@@ -4,7 +4,6 @@ import com.google.common.collect.Lists;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.event.impl.EventUpdate;
 import com.mentalfrostbyte.jello.event.impl.EventSlowDown;
-import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
@@ -200,7 +199,7 @@ public class ClientPlayerEntity extends AbstractClientPlayerEntity {
                   this.connection.sendPacket(new CPlayerPacket.PositionRotationPacket(var8, var10, var12, var15, var14, var16));
                } else if (!var27) {
                   if (!var28) {
-                     if (this.field6124 != this.onGround || JelloPortal.getCurrentVersion() == ViaVerList._1_8_x) {
+                     if (this.field6124 != this.onGround) {
                         this.connection.sendPacket(new CPlayerPacket(var16));
                      }
                   } else {

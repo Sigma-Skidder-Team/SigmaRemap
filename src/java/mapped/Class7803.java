@@ -22,27 +22,29 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.CommandBlockTileEntity;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 import net.minecraft.world.server.ServerWorld;
 import org.apache.commons.io.IOUtils;
 
 public class Class7803 {
    public static String field33501 = "gameteststructures";
 
-   public static Class80 method26051(int var0) {
+   public static Rotation method26051(int var0) {
       switch (var0) {
          case 0:
-            return Class80.field185;
+            return Rotation.field185;
          case 1:
-            return Class80.field186;
+            return Rotation.field186;
          case 2:
-            return Class80.field187;
+            return Rotation.field187;
          case 3:
-            return Class80.field188;
+            return Rotation.field188;
          default:
             throw new IllegalArgumentException("rotationSteps must be a value from 0-3. Got value " + var0);
       }
@@ -62,7 +64,7 @@ public class Class7803 {
       return new Class9764(var3, var5);
    }
 
-   public static void method26054(BlockPos var0, BlockPos var1, Class80 var2, ServerWorld var3) {
+   public static void method26054(BlockPos var0, BlockPos var1, Rotation var2, ServerWorld var3) {
       BlockPos var6 = Class8969.method32905(var0.method8337(var1), Class2089.field13614, var2, var0);
       var3.setBlockState(var6, Blocks.COMMAND_BLOCK.method11579());
       CommandBlockTileEntity var7 = (CommandBlockTileEntity)var3.getTileEntity(var6);
@@ -71,7 +73,7 @@ public class Class7803 {
       var3.setBlockState(var8, Blocks.STONE_BUTTON.method11579().method23395(var2));
    }
 
-   public static void method26055(String var0, BlockPos var1, BlockPos var2, Class80 var3, ServerWorld var4) {
+   public static void method26055(String var0, BlockPos var1, BlockPos var2, Rotation var3, ServerWorld var4) {
       Class9764 var7 = method26059(var1, var2, var3);
       method26058(var7, var1.getY(), var4);
       var4.setBlockState(var1, Blocks.field37113.method11579());
@@ -83,14 +85,14 @@ public class Class7803 {
       var8.method3976(true);
    }
 
-   public static Class964 method26056(String var0, BlockPos var1, Class80 var2, int var3, ServerWorld var4, boolean var5) {
+   public static Class964 method26056(String var0, BlockPos var1, Rotation var2, int var3, ServerWorld var4, boolean var5) {
       BlockPos var8 = method26063(var0, var4).method32886();
       Class9764 var9 = method26059(var1, var8, var2);
       BlockPos var10;
-      if (var2 != Class80.field185) {
-         if (var2 != Class80.field186) {
-            if (var2 != Class80.field187) {
-               if (var2 != Class80.field188) {
+      if (var2 != Rotation.field185) {
+         if (var2 != Rotation.field186) {
+            if (var2 != Rotation.field187) {
+               if (var2 != Rotation.field188) {
                   throw new IllegalArgumentException("Invalid rotation: " + var2);
                }
 
@@ -139,7 +141,7 @@ public class Class7803 {
       var7.forEach(Entity::remove);
    }
 
-   public static Class9764 method26059(BlockPos var0, BlockPos var1, Class80 var2) {
+   public static Class9764 method26059(BlockPos var0, BlockPos var1, Rotation var2) {
       BlockPos var5 = var0.method8337(var1).method8336(-1, -1, -1);
       BlockPos var6 = Class8969.method32905(var5, Class2089.field13614, var2, var0);
       Class9764 var7 = Class9764.method38389(var0.getX(), var0.getY(), var0.getZ(), var6.getX(), var6.getY(), var6.getZ());
@@ -199,7 +201,7 @@ public class Class7803 {
       }
    }
 
-   private static Class964 method26064(String var0, BlockPos var1, Class80 var2, ServerWorld var3, boolean var4) {
+   private static Class964 method26064(String var0, BlockPos var1, Rotation var2, ServerWorld var3, boolean var4) {
       var3.setBlockState(var1, Blocks.field37113.method11579());
       Class964 var7 = (Class964)var3.getTileEntity(var1);
       var7.method3951(Class104.field319);

@@ -6,16 +6,19 @@ import net.minecraft.item.Items;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.gen.feature.structure.EndCityPieces;
+import net.minecraft.world.gen.feature.template.TemplateManager;
 
 import java.util.Random;
 
 public class Class4186 extends Class4180 {
    private final String field20473;
-   private final Class80 field20474;
+   private final Rotation field20474;
    private final boolean field20475;
 
-   public Class4186(TemplateManager var1, String var2, BlockPos var3, Class80 var4, boolean var5) {
+   public Class4186(TemplateManager var1, String var2, BlockPos var3, Rotation var4, boolean var5) {
       super(Class7792.field33475, 0);
       this.field20473 = var2;
       this.field20455 = var3;
@@ -27,14 +30,14 @@ public class Class4186 extends Class4180 {
    public Class4186(TemplateManager var1, CompoundNBT var2) {
       super(Class7792.field33475, var2);
       this.field20473 = var2.getString("Template");
-      this.field20474 = Class80.valueOf(var2.getString("Rot"));
+      this.field20474 = Rotation.valueOf(var2.getString("Rot"));
       this.field20475 = var2.getBoolean("OW");
       this.method12965(var1);
    }
 
    private void method12965(TemplateManager var1) {
       Class8969 var4 = var1.method31603(new ResourceLocation("end_city/" + this.field20473));
-      Class9463 var5 = (!this.field20475 ? Class9489.method36653() : Class9489.method36652()).method36424().method36426(this.field20474);
+      Class9463 var5 = (!this.field20475 ? EndCityPieces.method36653() : EndCityPieces.method36652()).method36424().method36426(this.field20474);
       this.method12943(var4, this.field20455, var5);
    }
 

@@ -66,13 +66,11 @@ public class Peek extends Command {
                   CompoundNBT var10 = var7.method153(var9);
                   short var11 = var10.getShort("lvl");
                   short var12 = var10.getShort("id");
-                  if (Class5980.field26051 != null) {
-                     String var13 = (String)Class5980.field26051.get(var12);
-                     CompoundNBT var14 = new CompoundNBT();
-                     var14.putShort("lvl", var11);
-                     var14.method109("id", var13);
-                     var8.add(var14);
-                  }
+                  String var13 = "";
+                  CompoundNBT var14 = new CompoundNBT();
+                  var14.putShort("lvl", var11);
+                  var14.method109("id", var13);
+                  var8.add(var14);
                }
 
                var6.put("Enchantments", var8);

@@ -14,6 +14,6 @@ public class Class3610 implements Comparator<Entity> {
    }
 
    public int compare(Entity var1, Entity var2) {
-      return !(BowAimbot.method16572().player.getDistance(var1) > BowAimbot.method16573().player.getDistance(var2)) ? -1 : 1;
+      return !(BowAimbot.mc.player.getDistance(var1) > BowAimbot.mc.player.getDistance(var2)) ? -1 : 1;
    }
 }

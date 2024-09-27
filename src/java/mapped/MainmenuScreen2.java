@@ -6,7 +6,6 @@ import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.Screen;
-import com.mentalfrostbyte.jello.unmapped.JelloPortal;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import net.minecraft.client.Minecraft;
@@ -44,7 +43,7 @@ public class MainmenuScreen2 extends IconPanel {
       String var20 = "© Sigma Prod";
       StringBuilder var10000 = new StringBuilder().append("Jello for Sigma ");
       Client.getInstance();
-      String var21 = var10000.append(Client.VERSION).append("  -  1.8 to ").append(JelloPortal.defaultVersion.getVersionName()).toString();
+      String var21 = var10000.append(Client.VERSION).append("  -  1.8 to ").append("1.16.4").toString();
       this.addToList(
          this.singleplayerButton = new Class4236(
             this,
@@ -171,7 +170,6 @@ public class MainmenuScreen2 extends IconPanel {
    }
 
    public void method13443() {
-      JelloPortal.currentVersion = JelloPortal.defaultVersion;
       Class810 var3 = new Class810();
       var3.method2209(Minecraft.getInstance().currentScreen);
       this.playClickSound();

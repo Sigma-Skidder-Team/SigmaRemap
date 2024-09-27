@@ -1,5 +1,7 @@
 package mapped;
 
+import net.minecraft.world.gen.feature.structure.ShipwreckConfig;
+
 public class Class9438 {
    public static final Class9300<Class4700, ? extends Structure<Class4700>> field43834 = method36275(
       "pillager_outpost", Structure.field18058.method11368(new Class4700(() -> Class8685.field39213, 7))
@@ -22,11 +24,11 @@ public class Class9438 {
    public static final Class9300<Class4712, ? extends Structure<Class4712>> field43840 = method36275(
       "igloo", Structure.field18063.method11368(Class4712.field22350)
    );
-   public static final Class9300<Class4737, ? extends Structure<Class4737>> field43841 = method36275(
-      "shipwreck", Structure.field18065.method11368(new Class4737(false))
+   public static final Class9300<ShipwreckConfig, ? extends Structure<ShipwreckConfig>> field43841 = method36275(
+      "shipwreck", Structure.field18065.method11368(new ShipwreckConfig(false))
    );
-   public static final Class9300<Class4737, ? extends Structure<Class4737>> field43842 = method36275(
-      "shipwreck_beached", Structure.field18065.method11368(new Class4737(true))
+   public static final Class9300<ShipwreckConfig, ? extends Structure<ShipwreckConfig>> field43842 = method36275(
+      "shipwreck_beached", Structure.field18065.method11368(new ShipwreckConfig(true))
    );
    public static final Class9300<Class4712, ? extends Structure<Class4712>> field43843 = method36275(
       "swamp_hut", Structure.field18066.method11368(Class4712.field22350)

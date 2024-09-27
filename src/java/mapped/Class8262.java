@@ -6,6 +6,7 @@ import it.unimi.dsi.fastutil.objects.Object2LongMap;
 import it.unimi.dsi.fastutil.objects.Object2LongOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectIterator;
 import it.unimi.dsi.fastutil.objects.Object2LongMap.Entry;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.server.ServerWorld;
 
@@ -25,10 +26,10 @@ public class Class8262 {
    private boolean field35518 = false;
    private final Stopwatch field35519 = Stopwatch.createUnstarted();
    private boolean field35520 = false;
-   private final Class80 field35521;
+   private final Rotation field35521;
    private Throwable field35522;
 
-   public Class8262(Class4871 var1, Class80 var2, ServerWorld var3) {
+   public Class8262(Class4871 var1, Rotation var2, ServerWorld var3) {
       this.field35509 = var1;
       this.field35511 = var3;
       this.field35513 = var1.method15036();
@@ -172,7 +173,7 @@ public class Class8262 {
       return this.field35509.method15035();
    }
 
-   public Class80 method28821() {
+   public Rotation method28821() {
       return this.field35521;
    }
 

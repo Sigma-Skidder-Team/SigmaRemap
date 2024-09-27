@@ -6,6 +6,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Rotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.ISeedReader;
 import org.apache.logging.log4j.LogManager;
@@ -92,7 +93,7 @@ public abstract class Class4180 extends Class4178 {
    }
 
    @Override
-   public Class80 method12940() {
+   public Rotation method12940() {
       return this.field20454.method36437();
    }
 }
