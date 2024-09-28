@@ -5,7 +5,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.util.HandSide;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2823<T extends Class1025> extends Class2803<T> implements Class2825, Class2824 {
+public class Class2823<T extends Class1025> extends Class2803<T> implements IHasArm, IHasHead {
    private static String[] field17586;
    private final ModelRenderer field17587;
    private final ModelRenderer field17588;
@@ -36,7 +36,7 @@ public class Class2823<T extends Class1025> extends Class2803<T> implements Clas
       this.field17590.setRotationPoint(0.0F, 0.0F + var2 + 2.0F, 0.0F);
       this.field17590.method22671(44, 22).addBox(-8.0F, -2.0F, -2.0F, 4.0F, 8.0F, 4.0F, var1);
       ModelRenderer var8 = new ModelRenderer(this, 44, 22).setTextureSize(var3, var4);
-      var8.field31038 = true;
+      var8.mirror = true;
       var8.addBox(4.0F, -2.0F, -2.0F, 4.0F, 8.0F, 4.0F, var1);
       this.field17590.method22670(var8);
       this.field17590.method22671(40, 38).addBox(-4.0F, 2.0F, -2.0F, 8.0F, 4.0F, 4.0F, var1);
@@ -44,14 +44,14 @@ public class Class2823<T extends Class1025> extends Class2803<T> implements Clas
       this.field17591.setRotationPoint(-2.0F, 12.0F + var2, 0.0F);
       this.field17591.addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, var1);
       this.field17592 = new ModelRenderer(this, 0, 22).setTextureSize(var3, var4);
-      this.field17592.field31038 = true;
+      this.field17592.mirror = true;
       this.field17592.setRotationPoint(2.0F, 12.0F + var2, 0.0F);
       this.field17592.addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, var1);
       this.field17593 = new ModelRenderer(this, 40, 46).setTextureSize(var3, var4);
       this.field17593.addBox(-3.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, var1);
       this.field17593.setRotationPoint(-5.0F, 2.0F + var2, 0.0F);
       this.field17594 = new ModelRenderer(this, 40, 46).setTextureSize(var3, var4);
-      this.field17594.field31038 = true;
+      this.field17594.mirror = true;
       this.field17594.addBox(-1.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, var1);
       this.field17594.setRotationPoint(5.0F, 2.0F + var2, 0.0F);
    }
@@ -67,32 +67,32 @@ public class Class2823<T extends Class1025> extends Class2803<T> implements Clas
       this.field17590.rotationPointY = 3.0F;
       this.field17590.rotationPointZ = -1.0F;
       this.field17590.rotateAngleX = -0.75F;
-      if (!this.field17601) {
+      if (!this.isSitting) {
          this.field17593.rotateAngleX = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 2.0F * var3 * 0.5F;
          this.field17593.rotateAngleY = 0.0F;
-         this.field17593.field31037 = 0.0F;
+         this.field17593.rotateAngleZ = 0.0F;
          this.field17594.rotateAngleX = MathHelper.cos(var2 * 0.6662F) * 2.0F * var3 * 0.5F;
          this.field17594.rotateAngleY = 0.0F;
-         this.field17594.field31037 = 0.0F;
+         this.field17594.rotateAngleZ = 0.0F;
          this.field17591.rotateAngleX = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3 * 0.5F;
          this.field17591.rotateAngleY = 0.0F;
-         this.field17591.field31037 = 0.0F;
+         this.field17591.rotateAngleZ = 0.0F;
          this.field17592.rotateAngleX = MathHelper.cos(var2 * 0.6662F + (float) Math.PI) * 1.4F * var3 * 0.5F;
          this.field17592.rotateAngleY = 0.0F;
-         this.field17592.field31037 = 0.0F;
+         this.field17592.rotateAngleZ = 0.0F;
       } else {
          this.field17593.rotateAngleX = (float) (-Math.PI / 5);
          this.field17593.rotateAngleY = 0.0F;
-         this.field17593.field31037 = 0.0F;
+         this.field17593.rotateAngleZ = 0.0F;
          this.field17594.rotateAngleX = (float) (-Math.PI / 5);
          this.field17594.rotateAngleY = 0.0F;
-         this.field17594.field31037 = 0.0F;
+         this.field17594.rotateAngleZ = 0.0F;
          this.field17591.rotateAngleX = -1.4137167F;
          this.field17591.rotateAngleY = (float) (Math.PI / 10);
-         this.field17591.field31037 = 0.07853982F;
+         this.field17591.rotateAngleZ = 0.07853982F;
          this.field17592.rotateAngleX = -1.4137167F;
          this.field17592.rotateAngleY = (float) (-Math.PI / 10);
-         this.field17592.field31037 = -0.07853982F;
+         this.field17592.rotateAngleZ = -0.07853982F;
       }
 
       Class2117 var9 = var1.method4543();
@@ -105,12 +105,12 @@ public class Class2823<T extends Class1025> extends Class2803<T> implements Clas
                         this.field17593.rotationPointZ = 0.0F;
                         this.field17593.rotationPointX = -5.0F;
                         this.field17593.rotateAngleX = MathHelper.cos(var4 * 0.6662F) * 0.05F;
-                        this.field17593.field31037 = 2.670354F;
+                        this.field17593.rotateAngleZ = 2.670354F;
                         this.field17593.rotateAngleY = 0.0F;
                         this.field17594.rotationPointZ = 0.0F;
                         this.field17594.rotationPointX = 5.0F;
                         this.field17594.rotateAngleX = MathHelper.cos(var4 * 0.6662F) * 0.05F;
-                        this.field17594.field31037 = (float) (-Math.PI * 3.0 / 4.0);
+                        this.field17594.rotateAngleZ = (float) (-Math.PI * 3.0 / 4.0);
                         this.field17594.rotateAngleY = 0.0F;
                      }
                   } else {
@@ -124,7 +124,7 @@ public class Class2823<T extends Class1025> extends Class2803<T> implements Clas
                this.field17593.rotateAngleX = (float) (-Math.PI / 2) + this.field17587.rotateAngleX;
                this.field17594.rotateAngleX = -0.9424779F + this.field17587.rotateAngleX;
                this.field17594.rotateAngleY = this.field17587.rotateAngleY - 0.4F;
-               this.field17594.field31037 = (float) (Math.PI / 2);
+               this.field17594.rotateAngleZ = (float) (Math.PI / 2);
             }
          } else {
             this.field17593.rotationPointZ = 0.0F;
@@ -133,15 +133,15 @@ public class Class2823<T extends Class1025> extends Class2803<T> implements Clas
             this.field17594.rotationPointX = 5.0F;
             this.field17593.rotateAngleX = MathHelper.cos(var4 * 0.6662F) * 0.25F;
             this.field17594.rotateAngleX = MathHelper.cos(var4 * 0.6662F) * 0.25F;
-            this.field17593.field31037 = (float) (Math.PI * 3.0 / 4.0);
-            this.field17594.field31037 = (float) (-Math.PI * 3.0 / 4.0);
+            this.field17593.rotateAngleZ = (float) (Math.PI * 3.0 / 4.0);
+            this.field17594.rotateAngleZ = (float) (-Math.PI * 3.0 / 4.0);
             this.field17593.rotateAngleY = 0.0F;
             this.field17594.rotateAngleY = 0.0F;
          }
       } else if (!var1.getHeldItemMainhand().isEmpty()) {
-         ModelHelper.method27107(this.field17593, this.field17594, var1, this.field17600, var4);
+         ModelHelper.method27107(this.field17593, this.field17594, var1, this.swingProgress, var4);
       } else {
-         ModelHelper.method27109(this.field17594, this.field17593, true, this.field17600, var4);
+         ModelHelper.method27109(this.field17594, this.field17593, true, this.swingProgress, var4);
       }
 
       boolean var10 = var9 == Class2117.field13794;
@@ -159,7 +159,7 @@ public class Class2823<T extends Class1025> extends Class2803<T> implements Clas
    }
 
    @Override
-   public ModelRenderer method11012() {
+   public ModelRenderer getModelHead() {
       return this.field17587;
    }
 

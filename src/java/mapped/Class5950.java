@@ -30,10 +30,10 @@ public class Class5950 extends Class5942<Class967> {
       this.field25949[1].rotateAngleX = (float) (Math.PI / 2);
       this.field25949[2].rotateAngleX = (float) (Math.PI / 2);
       this.field25949[3].rotateAngleX = (float) (Math.PI / 2);
-      this.field25949[0].field31037 = 0.0F;
-      this.field25949[1].field31037 = (float) (Math.PI / 2);
-      this.field25949[2].field31037 = (float) (Math.PI * 3.0 / 2.0);
-      this.field25949[3].field31037 = (float) Math.PI;
+      this.field25949[0].rotateAngleZ = 0.0F;
+      this.field25949[1].rotateAngleZ = (float) (Math.PI / 2);
+      this.field25949[2].rotateAngleZ = (float) (Math.PI * 3.0 / 2.0);
+      this.field25949[3].rotateAngleZ = (float) Math.PI;
    }
 
    public void method18462(Class967 var1, float var2, MatrixStack var3, Class7733 var4, int var5, int var6) {

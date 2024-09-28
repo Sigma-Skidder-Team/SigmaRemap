@@ -32,8 +32,8 @@ public class ModelHelper {
    public static <T extends MobEntity> void method27107(ModelRenderer var0, ModelRenderer var1, T var2, float var3, float var4) {
       float var7 = MathHelper.sin(var3 * (float) Math.PI);
       float var8 = MathHelper.sin((1.0F - (1.0F - var3) * (1.0F - var3)) * (float) Math.PI);
-      var0.field31037 = 0.0F;
-      var1.field31037 = 0.0F;
+      var0.rotateAngleZ = 0.0F;
+      var1.rotateAngleZ = 0.0F;
       var0.rotateAngleY = (float) (Math.PI / 20);
       var1.rotateAngleY = (float) (-Math.PI / 20);
       if (var2.getPrimaryHand() != HandSide.RIGHT) {
@@ -48,12 +48,12 @@ public class ModelHelper {
          var1.rotateAngleX += var7 * 1.2F - var8 * 0.4F;
       }
 
-      method27108(var0, var1, var4);
+      func_239101_a_(var0, var1, var4);
    }
 
-   public static void method27108(ModelRenderer var0, ModelRenderer var1, float var2) {
-      var0.field31037 = var0.field31037 + MathHelper.cos(var2 * 0.09F) * 0.05F + 0.05F;
-      var1.field31037 = var1.field31037 - (MathHelper.cos(var2 * 0.09F) * 0.05F + 0.05F);
+   public static void func_239101_a_(ModelRenderer var0, ModelRenderer var1, float var2) {
+      var0.rotateAngleZ = var0.rotateAngleZ + MathHelper.cos(var2 * 0.09F) * 0.05F + 0.05F;
+      var1.rotateAngleZ = var1.rotateAngleZ - (MathHelper.cos(var2 * 0.09F) * 0.05F + 0.05F);
       var0.rotateAngleX = var0.rotateAngleX + MathHelper.sin(var2 * 0.067F) * 0.05F;
       var1.rotateAngleX = var1.rotateAngleX - MathHelper.sin(var2 * 0.067F) * 0.05F;
    }
@@ -61,8 +61,8 @@ public class ModelHelper {
    public static void method27109(ModelRenderer var0, ModelRenderer var1, boolean var2, float var3, float var4) {
       float var7 = MathHelper.sin(var3 * (float) Math.PI);
       float var8 = MathHelper.sin((1.0F - (1.0F - var3) * (1.0F - var3)) * (float) Math.PI);
-      var1.field31037 = 0.0F;
-      var0.field31037 = 0.0F;
+      var1.rotateAngleZ = 0.0F;
+      var0.rotateAngleZ = 0.0F;
       var1.rotateAngleY = -(0.1F - var7 * 0.6F);
       var0.rotateAngleY = 0.1F - var7 * 0.6F;
       float var9 = (float) -Math.PI / (!var2 ? 2.25F : 1.5F);
@@ -70,6 +70,6 @@ public class ModelHelper {
       var0.rotateAngleX = var9;
       var1.rotateAngleX += var7 * 1.2F - var8 * 0.4F;
       var0.rotateAngleX += var7 * 1.2F - var8 * 0.4F;
-      method27108(var1, var0, var4);
+      func_239101_a_(var1, var0, var4);
    }
 }

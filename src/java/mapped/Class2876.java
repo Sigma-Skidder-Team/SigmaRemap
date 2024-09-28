@@ -23,69 +23,69 @@ public class Class2876<T extends Class1094> extends Class2827<T> {
    public Class2876() {
       this.field17820.method22673(-1.0F, 5.5F, -3.7F, 2.0F, 1.0F, 7.0F);
       this.field17820.setRotationPoint(3.0F, 17.5F, 3.7F);
-      this.field17820.field31038 = true;
+      this.field17820.mirror = true;
       this.method11193(this.field17820, 0.0F, 0.0F, 0.0F);
       this.field17821 = new ModelRenderer(this, 8, 24);
       this.field17821.method22673(-1.0F, 5.5F, -3.7F, 2.0F, 1.0F, 7.0F);
       this.field17821.setRotationPoint(-3.0F, 17.5F, 3.7F);
-      this.field17821.field31038 = true;
+      this.field17821.mirror = true;
       this.method11193(this.field17821, 0.0F, 0.0F, 0.0F);
       this.field17822 = new ModelRenderer(this, 30, 15);
       this.field17822.method22673(-1.0F, 0.0F, 0.0F, 2.0F, 4.0F, 5.0F);
       this.field17822.setRotationPoint(3.0F, 17.5F, 3.7F);
-      this.field17822.field31038 = true;
+      this.field17822.mirror = true;
       this.method11193(this.field17822, (float) (-Math.PI / 9), 0.0F, 0.0F);
       this.field17823 = new ModelRenderer(this, 16, 15);
       this.field17823.method22673(-1.0F, 0.0F, 0.0F, 2.0F, 4.0F, 5.0F);
       this.field17823.setRotationPoint(-3.0F, 17.5F, 3.7F);
-      this.field17823.field31038 = true;
+      this.field17823.mirror = true;
       this.method11193(this.field17823, (float) (-Math.PI / 9), 0.0F, 0.0F);
       this.field17824 = new ModelRenderer(this, 0, 0);
       this.field17824.method22673(-3.0F, -2.0F, -10.0F, 6.0F, 5.0F, 10.0F);
       this.field17824.setRotationPoint(0.0F, 19.0F, 8.0F);
-      this.field17824.field31038 = true;
+      this.field17824.mirror = true;
       this.method11193(this.field17824, (float) (-Math.PI / 9), 0.0F, 0.0F);
       this.field17825 = new ModelRenderer(this, 8, 15);
       this.field17825.method22673(-1.0F, 0.0F, -1.0F, 2.0F, 7.0F, 2.0F);
       this.field17825.setRotationPoint(3.0F, 17.0F, -1.0F);
-      this.field17825.field31038 = true;
+      this.field17825.mirror = true;
       this.method11193(this.field17825, (float) (-Math.PI / 18), 0.0F, 0.0F);
       this.field17826 = new ModelRenderer(this, 0, 15);
       this.field17826.method22673(-1.0F, 0.0F, -1.0F, 2.0F, 7.0F, 2.0F);
       this.field17826.setRotationPoint(-3.0F, 17.0F, -1.0F);
-      this.field17826.field31038 = true;
+      this.field17826.mirror = true;
       this.method11193(this.field17826, (float) (-Math.PI / 18), 0.0F, 0.0F);
       this.field17827 = new ModelRenderer(this, 32, 0);
       this.field17827.method22673(-2.5F, -4.0F, -5.0F, 5.0F, 4.0F, 5.0F);
       this.field17827.setRotationPoint(0.0F, 16.0F, -1.0F);
-      this.field17827.field31038 = true;
+      this.field17827.mirror = true;
       this.method11193(this.field17827, 0.0F, 0.0F, 0.0F);
       this.field17828 = new ModelRenderer(this, 52, 0);
       this.field17828.method22673(-2.5F, -9.0F, -1.0F, 2.0F, 5.0F, 1.0F);
       this.field17828.setRotationPoint(0.0F, 16.0F, -1.0F);
-      this.field17828.field31038 = true;
+      this.field17828.mirror = true;
       this.method11193(this.field17828, 0.0F, (float) (-Math.PI / 12), 0.0F);
       this.field17829 = new ModelRenderer(this, 58, 0);
       this.field17829.method22673(0.5F, -9.0F, -1.0F, 2.0F, 5.0F, 1.0F);
       this.field17829.setRotationPoint(0.0F, 16.0F, -1.0F);
-      this.field17829.field31038 = true;
+      this.field17829.mirror = true;
       this.method11193(this.field17829, 0.0F, (float) (Math.PI / 12), 0.0F);
       this.field17830 = new ModelRenderer(this, 52, 6);
       this.field17830.method22673(-1.5F, -1.5F, 0.0F, 3.0F, 3.0F, 2.0F);
       this.field17830.setRotationPoint(0.0F, 20.0F, 7.0F);
-      this.field17830.field31038 = true;
+      this.field17830.mirror = true;
       this.method11193(this.field17830, -0.3490659F, 0.0F, 0.0F);
       this.field17831 = new ModelRenderer(this, 32, 9);
       this.field17831.method22673(-0.5F, -2.5F, -5.5F, 1.0F, 1.0F, 1.0F);
       this.field17831.setRotationPoint(0.0F, 16.0F, -1.0F);
-      this.field17831.field31038 = true;
+      this.field17831.mirror = true;
       this.method11193(this.field17831, 0.0F, 0.0F, 0.0F);
    }
 
    private void method11193(ModelRenderer var1, float var2, float var3, float var4) {
       var1.rotateAngleX = var2;
       var1.rotateAngleY = var3;
-      var1.field31037 = var4;
+      var1.rotateAngleZ = var4;
    }
 
    @Override
@@ -149,8 +149,8 @@ public class Class2876<T extends Class1094> extends Class2827<T> {
       this.field17826.rotateAngleX = (this.field17832 * -40.0F - 11.0F) * (float) (Math.PI / 180.0);
    }
 
-   public void method10997(T var1, float var2, float var3, float var4) {
-      super.method10997((T)var1, var2, var3, var4);
+   public void setLivingAnimations(T var1, float var2, float var3, float var4) {
+      super.setLivingAnimations((T)var1, var2, var3, var4);
       this.field17832 = MathHelper.sin(var1.method5103(var4) * (float) Math.PI);
    }
 }

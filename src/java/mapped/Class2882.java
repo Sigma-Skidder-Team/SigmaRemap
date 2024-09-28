@@ -41,7 +41,7 @@ public class Class2882<T extends Class1108> extends Class2803<T> {
    public void setRotationAngles(T var1, float var2, float var3, float var4, float var5, float var6) {
    }
 
-   public void method10997(T var1, float var2, float var3, float var4) {
+   public void setLivingAnimations(T var1, float var2, float var3, float var4) {
       float var7 = MathHelper.lerp(var4, var1.field6084, var1.field6083);
       if (var7 < 0.0F) {
          var7 = 0.0F;

@@ -23,7 +23,7 @@ public class Class2793<T extends ZombieEntity> extends Class2794<T> {
       super(var1, 0.0F, 64, !var2 ? 64 : 32);
    }
 
-   public void method10997(T var1, float var2, float var3, float var4) {
+   public void setLivingAnimations(T var1, float var2, float var3, float var4) {
       this.rightArmPose = ArmPose.EMPTY;
       this.leftArmPose = ArmPose.EMPTY;
       ItemStack var7 = var1.getHeldItem(Hand.MAIN_HAND);
@@ -35,7 +35,7 @@ public class Class2793<T extends ZombieEntity> extends Class2794<T> {
          }
       }
 
-      super.method10997((T)var1, var2, var3, var4);
+      super.setLivingAnimations((T)var1, var2, var3, var4);
    }
 
    public void setRotationAngles(T var1, float var2, float var3, float var4, float var5, float var6) {
@@ -50,15 +50,15 @@ public class Class2793<T extends ZombieEntity> extends Class2794<T> {
          this.bipedRightArm.rotateAngleY = 0.0F;
       }
 
-      if (this.field17442 > 0.0F) {
-         this.bipedRightArm.rotateAngleX = this.method11006(this.field17442, this.bipedRightArm.rotateAngleX, (float) (-Math.PI * 4.0 / 5.0))
-            + this.field17442 * 0.35F * MathHelper.sin(0.1F * var4);
-         this.bipedLeftArm.rotateAngleX = this.method11006(this.field17442, this.bipedLeftArm.rotateAngleX, (float) (-Math.PI * 4.0 / 5.0))
-            - this.field17442 * 0.35F * MathHelper.sin(0.1F * var4);
-         this.bipedRightArm.field31037 = this.method11006(this.field17442, this.bipedRightArm.field31037, -0.15F);
-         this.bipedLeftArm.field31037 = this.method11006(this.field17442, this.bipedLeftArm.field31037, 0.15F);
-         this.bipedLeftLeg.rotateAngleX = this.bipedLeftLeg.rotateAngleX - this.field17442 * 0.55F * MathHelper.sin(0.1F * var4);
-         this.bipedRightLeg.rotateAngleX = this.bipedRightLeg.rotateAngleX + this.field17442 * 0.55F * MathHelper.sin(0.1F * var4);
+      if (this.swimAnimation > 0.0F) {
+         this.bipedRightArm.rotateAngleX = this.rotLerpRad(this.swimAnimation, this.bipedRightArm.rotateAngleX, (float) (-Math.PI * 4.0 / 5.0))
+            + this.swimAnimation * 0.35F * MathHelper.sin(0.1F * var4);
+         this.bipedLeftArm.rotateAngleX = this.rotLerpRad(this.swimAnimation, this.bipedLeftArm.rotateAngleX, (float) (-Math.PI * 4.0 / 5.0))
+            - this.swimAnimation * 0.35F * MathHelper.sin(0.1F * var4);
+         this.bipedRightArm.rotateAngleZ = this.rotLerpRad(this.swimAnimation, this.bipedRightArm.rotateAngleZ, -0.15F);
+         this.bipedLeftArm.rotateAngleZ = this.rotLerpRad(this.swimAnimation, this.bipedLeftArm.rotateAngleZ, 0.15F);
+         this.bipedLeftLeg.rotateAngleX = this.bipedLeftLeg.rotateAngleX - this.swimAnimation * 0.55F * MathHelper.sin(0.1F * var4);
+         this.bipedRightLeg.rotateAngleX = this.bipedRightLeg.rotateAngleX + this.swimAnimation * 0.55F * MathHelper.sin(0.1F * var4);
          this.bipedHead.rotateAngleX = 0.0F;
       }
    }

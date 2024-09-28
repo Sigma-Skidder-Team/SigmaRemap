@@ -166,8 +166,8 @@ public class Class9498 {
          String var5 = Class9664.method37717(var0, "attachTo");
          int var6 = method36690(var5);
          Class2847 var7 = new Class2847(RenderType::getEntityCutoutNoCull);
-         var7.field17604 = var1.width;
-         var7.field17605 = var1.height;
+         var7.textureWidth = var1.width;
+         var7.textureHeight = var1.height;
          ModelRenderer var8 = method36692(var0, var7, (int[])null, (String)null);
          return new Class7954(var6, var8);
       } else {
@@ -236,12 +236,12 @@ public class Class9498 {
       var6.setRotationPoint(var15[0], var15[1], var15[2]);
       var6.rotateAngleX = var16[0];
       var6.rotateAngleY = var16[1];
-      var6.field31037 = var16[2];
+      var6.rotateAngleZ = var16[2];
       String var28 = Class9664.method37718(var0, "mirrorTexture", "").toLowerCase();
       boolean var18 = var28.contains("u");
       boolean var19 = var28.contains("v");
       if (var18) {
-         var6.field31038 = true;
+         var6.mirror = true;
       }
 
       if (var19) {

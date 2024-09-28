@@ -13,8 +13,8 @@ public class Class2816<T extends Entity> extends Class2803<T> {
    private final ModelRenderer field17550;
 
    public Class2816() {
-      this.field17604 = 32;
-      this.field17605 = 32;
+      this.textureWidth = 32;
+      this.textureHeight = 32;
       byte var3 = 20;
       this.field17546 = new ModelRenderer(this, 0, 0);
       this.field17546.method22673(-1.5F, -2.5F, 0.0F, 3.0F, 5.0F, 8.0F);
@@ -40,11 +40,11 @@ public class Class2816<T extends Entity> extends Class2803<T> {
       this.field17549 = new ModelRenderer(this, -4, 0);
       this.field17549.method22673(-2.0F, 0.0F, 0.0F, 2.0F, 0.0F, 2.0F);
       this.field17549.setRotationPoint(-1.5F, 21.5F, 0.0F);
-      this.field17549.field31037 = (float) (-Math.PI / 4);
+      this.field17549.rotateAngleZ = (float) (-Math.PI / 4);
       this.field17550 = new ModelRenderer(this, 0, 0);
       this.field17550.method22673(0.0F, 0.0F, 0.0F, 2.0F, 0.0F, 2.0F);
       this.field17550.setRotationPoint(1.5F, 21.5F, 0.0F);
-      this.field17550.field31037 = (float) (Math.PI / 4);
+      this.field17550.rotateAngleZ = (float) (Math.PI / 4);
    }
 
    @Override

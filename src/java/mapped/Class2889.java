@@ -8,8 +8,8 @@ public class Class2889<T extends Entity> extends Class2803<T> {
    private final ModelRenderer field17902;
 
    public Class2889() {
-      this.field17604 = 32;
-      this.field17605 = 32;
+      this.textureWidth = 32;
+      this.textureHeight = 32;
       this.field17902 = new ModelRenderer(this, 0, 0);
       this.field17902.addBox(-3.0F, -6.0F, -3.0F, 6.0F, 8.0F, 6.0F, 0.0F);
       this.field17902.setRotationPoint(0.0F, 0.0F, 0.0F);

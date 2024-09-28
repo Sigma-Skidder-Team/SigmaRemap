@@ -48,13 +48,13 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
 
       if (!var1.isSpectator()) {
          var4.setVisible(true);
-         var4.field17433.showModel = var1.method2962(Class2318.field15885);
+         var4.bipedHeadwear.showModel = var1.method2962(Class2318.field15885);
          var4.bipedBodyWear.showModel = var1.method2962(Class2318.field15880);
          var4.bipedLeftLegwear.showModel = var1.method2962(Class2318.field15883);
          var4.bipedRightLegwear.showModel = var1.method2962(Class2318.field15884);
          var4.bipedLeftArmwear.showModel = var1.method2962(Class2318.field15881);
          var4.bipedRightArmwear.showModel = var1.method2962(Class2318.field15882);
-         var4.field17441 = var1.isCrouching();
+         var4.isSneak = var1.isCrouching();
          BipedModel.ArmPose var5 = getPlayerArmPose(var1, Hand.MAIN_HAND);
          BipedModel.ArmPose var6 = getPlayerArmPose(var1, Hand.OFF_HAND);
          if (var5.func_241657_a_()) {
@@ -71,7 +71,7 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
       } else {
          var4.setVisible(false);
          var4.bipedHead.showModel = true;
-         var4.field17433.showModel = true;
+         var4.bipedHeadwear.showModel = true;
       }
    }
 
@@ -158,9 +158,9 @@ public class PlayerRenderer extends LivingRenderer<AbstractClientPlayerEntity, P
    private void method17892(MatrixStack var1, Class7733 var2, int var3, AbstractClientPlayerEntity var4, ModelRenderer var5, ModelRenderer var6) {
       PlayerModel var9 = this.getEntityModel();
       this.setModelVisibilities(var4);
-      var9.field17600 = 0.0F;
-      var9.field17441 = false;
-      var9.field17442 = 0.0F;
+      var9.swingProgress = 0.0F;
+      var9.isSneak = false;
+      var9.swimAnimation = 0.0F;
       var9.setRotationAngles(var4, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F);
       var5.rotateAngleX = 0.0F;
       var5.render(var1, var2.method25597(RenderType.getEntitySolid(var4.method5371())), var3, Class213.field798);

@@ -59,17 +59,17 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
          }
 
          var4.push();
-         this.field25086.field17600 = this.method17885((T)var1, var3);
-         this.field25086.field17601 = var1.isPassenger();
+         this.field25086.swingProgress = this.method17885((T)var1, var3);
+         this.field25086.isSitting = var1.isPassenger();
          if (Reflector.field42838.exists()) {
-            this.field25086.field17601 = var1.isPassenger() && var1.getRidingEntity() != null && Reflector.method35064(var1.getRidingEntity(), Reflector.field42838);
+            this.field25086.isSitting = var1.isPassenger() && var1.getRidingEntity() != null && Reflector.method35064(var1.getRidingEntity(), Reflector.field42838);
          }
 
          this.field25086.field17602 = var1.isChild();
          float var9 = MathHelper.method37827(var3, var1.prevRenderYawOffset, var1.renderYawOffset);
          float var10 = MathHelper.method37827(var3, var1.prevRotationYawHead, var1.rotationYawHead);
          float var11 = var10 - var9;
-         if (this.field25086.field17601 && var1.getRidingEntity() instanceof LivingEntity) {
+         if (this.field25086.isSitting && var1.getRidingEntity() instanceof LivingEntity) {
             LivingEntity var12 = (LivingEntity)var1.getRidingEntity();
             var9 = MathHelper.method37827(var3, var12.prevRenderYawOffset, var12.renderYawOffset);
             var11 = var10 - var9;
@@ -131,7 +131,7 @@ public abstract class LivingRenderer<T extends LivingEntity, M extends Class2827
 
          var33.method13942(Class2035.field13213);
          Client.getInstance().getEventManager().call(var33);
-         this.field25086.method10997((T)var1, var16, var35, var3);
+         this.field25086.setLivingAnimations((T)var1, var16, var35, var3);
          this.field25086.setRotationAngles((T)var1, var16, var35, var34, var11, var31);
          if (CustomEntityModels.isActive()) {
             this.field25088 = var1;

@@ -40,7 +40,7 @@ public enum Class2095 {
          case 5:
             return var1.rotateAngleY;
          case 6:
-            return var1.field31037;
+            return var1.rotateAngleZ;
          case 7:
             return var1.field31044;
          case 8:
@@ -71,7 +71,7 @@ public enum Class2095 {
             var1.rotateAngleY = var2;
             return;
          case 6:
-            var1.field31037 = var2;
+            var1.rotateAngleZ = var2;
             return;
          case 7:
             var1.field31044 = var2;

@@ -13,8 +13,8 @@ public class Class2809<T extends Entity> extends Class2808<T> {
    private final ModelRenderer field17485;
 
    public Class2809(float var1) {
-      this.field17604 = 32;
-      this.field17605 = 32;
+      this.textureWidth = 32;
+      this.textureHeight = 32;
       byte var4 = 22;
       this.field17481 = new ModelRenderer(this, 0, 0);
       this.field17481.addBox(-1.0F, -1.5F, -3.0F, 2.0F, 3.0F, 6.0F, var1);

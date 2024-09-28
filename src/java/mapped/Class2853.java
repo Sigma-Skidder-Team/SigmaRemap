@@ -9,8 +9,8 @@ public class Class2853 extends Class2828 {
 
    public Class2853() {
       super(RenderType::getEntitySolid);
-      this.field17604 = 64;
-      this.field17605 = 64;
+      this.textureWidth = 64;
+      this.textureHeight = 64;
       this.field17674 = new ModelRenderer(this, 0, 0);
       this.field17674.addBox(-6.0F, -11.0F, -2.0F, 12.0F, 22.0F, 1.0F, 0.0F);
       this.field17675 = new ModelRenderer(this, 26, 0);

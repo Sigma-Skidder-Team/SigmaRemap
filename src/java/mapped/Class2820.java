@@ -20,8 +20,8 @@ public class Class2820 extends Class2803<Class1105> {
    private final ModelRenderer[] field17575;
 
    public Class2820() {
-      this.field17604 = 64;
-      this.field17605 = 64;
+      this.textureWidth = 64;
+      this.textureHeight = 64;
       this.field17574 = new ModelRenderer[12];
       this.field17572 = new ModelRenderer(this);
       this.field17572.method22671(0, 0).method22673(-6.0F, 10.0F, -8.0F, 12.0F, 12.0F, 16.0F);
@@ -106,7 +106,7 @@ public class Class2820 extends Class2803<Class1105> {
       for (int var5 = 0; var5 < 12; var5++) {
          this.field17574[var5].rotateAngleX = (float) Math.PI * field17566[var5];
          this.field17574[var5].rotateAngleY = (float) Math.PI * field17567[var5];
-         this.field17574[var5].field31037 = (float) Math.PI * field17568[var5];
+         this.field17574[var5].rotateAngleZ = (float) Math.PI * field17568[var5];
          this.field17574[var5].rotationPointX = field17569[var5] * (1.0F + MathHelper.cos(var1 * 1.5F + (float)var5) * 0.01F - var2);
          this.field17574[var5].rotationPointY = 16.0F + field17570[var5] * (1.0F + MathHelper.cos(var1 * 1.5F + (float)var5) * 0.01F - var2);
          this.field17574[var5].rotationPointZ = field17571[var5] * (1.0F + MathHelper.cos(var1 * 1.5F + (float)var5) * 0.01F - var2);

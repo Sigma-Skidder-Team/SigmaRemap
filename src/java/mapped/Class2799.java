@@ -10,9 +10,9 @@ public class Class2799<T extends LivingEntity> extends BipedModel<T> {
    public Class2799(float var1) {
       super(0.0F, -14.0F, 64, 32);
       float var4 = -14.0F;
-      this.field17433 = new ModelRenderer(this, 0, 16);
-      this.field17433.addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, var1 - 0.5F);
-      this.field17433.setRotationPoint(0.0F, -14.0F, 0.0F);
+      this.bipedHeadwear = new ModelRenderer(this, 0, 16);
+      this.bipedHeadwear.addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, var1 - 0.5F);
+      this.bipedHeadwear.setRotationPoint(0.0F, -14.0F, 0.0F);
       this.bipedBody = new ModelRenderer(this, 32, 16);
       this.bipedBody.addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, var1);
       this.bipedBody.setRotationPoint(0.0F, -14.0F, 0.0F);
@@ -20,14 +20,14 @@ public class Class2799<T extends LivingEntity> extends BipedModel<T> {
       this.bipedRightArm.addBox(-1.0F, -2.0F, -1.0F, 2.0F, 30.0F, 2.0F, var1);
       this.bipedRightArm.setRotationPoint(-3.0F, -12.0F, 0.0F);
       this.bipedLeftArm = new ModelRenderer(this, 56, 0);
-      this.bipedLeftArm.field31038 = true;
+      this.bipedLeftArm.mirror = true;
       this.bipedLeftArm.addBox(-1.0F, -2.0F, -1.0F, 2.0F, 30.0F, 2.0F, var1);
       this.bipedLeftArm.setRotationPoint(5.0F, -12.0F, 0.0F);
       this.bipedRightLeg = new ModelRenderer(this, 56, 0);
       this.bipedRightLeg.addBox(-1.0F, 0.0F, -1.0F, 2.0F, 30.0F, 2.0F, var1);
       this.bipedRightLeg.setRotationPoint(-2.0F, -2.0F, 0.0F);
       this.bipedLeftLeg = new ModelRenderer(this, 56, 0);
-      this.bipedLeftLeg.field31038 = true;
+      this.bipedLeftLeg.mirror = true;
       this.bipedLeftLeg.addBox(-1.0F, 0.0F, -1.0F, 2.0F, 30.0F, 2.0F, var1);
       this.bipedLeftLeg.setRotationPoint(2.0F, -2.0F, 0.0F);
    }
@@ -82,8 +82,8 @@ public class Class2799<T extends LivingEntity> extends BipedModel<T> {
       if (this.field17443) {
          this.bipedRightArm.rotateAngleX = -0.5F;
          this.bipedLeftArm.rotateAngleX = -0.5F;
-         this.bipedRightArm.field31037 = 0.05F;
-         this.bipedLeftArm.field31037 = -0.05F;
+         this.bipedRightArm.rotateAngleZ = 0.05F;
+         this.bipedLeftArm.rotateAngleZ = -0.05F;
       }
 
       this.bipedRightArm.rotationPointZ = 0.0F;
@@ -94,12 +94,12 @@ public class Class2799<T extends LivingEntity> extends BipedModel<T> {
       this.bipedLeftLeg.rotationPointY = -5.0F;
       this.bipedHead.rotationPointZ = -0.0F;
       this.bipedHead.rotationPointY = -13.0F;
-      this.field17433.rotationPointX = this.bipedHead.rotationPointX;
-      this.field17433.rotationPointY = this.bipedHead.rotationPointY;
-      this.field17433.rotationPointZ = this.bipedHead.rotationPointZ;
-      this.field17433.rotateAngleX = this.bipedHead.rotateAngleX;
-      this.field17433.rotateAngleY = this.bipedHead.rotateAngleY;
-      this.field17433.field31037 = this.bipedHead.field31037;
+      this.bipedHeadwear.rotationPointX = this.bipedHead.rotationPointX;
+      this.bipedHeadwear.rotationPointY = this.bipedHead.rotationPointY;
+      this.bipedHeadwear.rotationPointZ = this.bipedHead.rotationPointZ;
+      this.bipedHeadwear.rotateAngleX = this.bipedHead.rotateAngleX;
+      this.bipedHeadwear.rotateAngleY = this.bipedHead.rotateAngleY;
+      this.bipedHeadwear.rotateAngleZ = this.bipedHead.rotateAngleZ;
       if (this.field17444) {
          float var11 = 1.0F;
          this.bipedHead.rotationPointY -= 5.0F;

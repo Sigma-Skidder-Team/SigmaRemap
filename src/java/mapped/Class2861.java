@@ -10,26 +10,26 @@ public class Class2861<T extends Class1098> extends Class2860<T> {
       super(var1);
    }
 
-   public void method10997(T var1, float var2, float var3, float var4) {
+   public void setLivingAnimations(T var1, float var2, float var3, float var4) {
       this.field17732 = var1.method5264(var4);
       this.field17733 = var1.method5265(var4);
       this.field17734 = var1.method5266(var4);
       if (this.field17732 <= 0.0F) {
          this.field17728.rotateAngleX = 0.0F;
-         this.field17728.field31037 = 0.0F;
+         this.field17728.rotateAngleZ = 0.0F;
          this.field17724.rotateAngleX = 0.0F;
-         this.field17724.field31037 = 0.0F;
+         this.field17724.rotateAngleZ = 0.0F;
          this.field17725.rotateAngleX = 0.0F;
-         this.field17725.field31037 = 0.0F;
+         this.field17725.rotateAngleZ = 0.0F;
          this.field17725.rotationPointX = -1.2F;
          this.field17722.rotateAngleX = 0.0F;
          this.field17723.rotateAngleX = 0.0F;
-         this.field17723.field31037 = 0.0F;
+         this.field17723.rotateAngleZ = 0.0F;
          this.field17723.rotationPointX = -1.1F;
          this.field17723.rotationPointY = 18.0F;
       }
 
-      super.method10997((T)var1, var2, var3, var4);
+      super.setLivingAnimations((T)var1, var2, var3, var4);
       if (var1.method4395()) {
          this.field17729.rotateAngleX = (float) (Math.PI / 4);
          this.field17729.rotationPointY += -4.0F;
@@ -61,15 +61,15 @@ public class Class2861<T extends Class1098> extends Class2860<T> {
    public void setRotationAngles(T var1, float var2, float var3, float var4, float var5, float var6) {
       super.setRotationAngles((T)var1, var2, var3, var4, var5, var6);
       if (this.field17732 > 0.0F) {
-         this.field17728.field31037 = Class9530.method36832(this.field17728.field31037, -1.2707963F, this.field17732);
+         this.field17728.rotateAngleZ = Class9530.method36832(this.field17728.rotateAngleZ, -1.2707963F, this.field17732);
          this.field17728.rotateAngleY = Class9530.method36832(this.field17728.rotateAngleY, 1.2707963F, this.field17732);
          this.field17724.rotateAngleX = -1.2707963F;
          this.field17725.rotateAngleX = -0.47079635F;
-         this.field17725.field31037 = -0.2F;
+         this.field17725.rotateAngleZ = -0.2F;
          this.field17725.rotationPointX = -0.2F;
          this.field17722.rotateAngleX = -0.4F;
          this.field17723.rotateAngleX = 0.5F;
-         this.field17723.field31037 = -0.5F;
+         this.field17723.rotateAngleZ = -0.5F;
          this.field17723.rotationPointX = -0.3F;
          this.field17723.rotationPointY = 20.0F;
          this.field17726.rotateAngleX = Class9530.method36832(this.field17726.rotateAngleX, 0.8F, this.field17733);

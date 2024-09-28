@@ -33,7 +33,7 @@ public class Class2880<T extends Class1058> extends Class2803<T> {
       this.field17860.setRotationPoint(-4.0F, 11.0F, 0.0F);
       this.field17860.method22671(37, 0).addBox(-3.5F, -3.0F, -3.0F, 6.0F, 16.0F, 5.0F, 0.0F);
       this.field17861 = new ModelRenderer(this, 0, 22).setTextureSize(128, 128);
-      this.field17861.field31038 = true;
+      this.field17861.mirror = true;
       this.field17861.method22671(60, 0).setRotationPoint(5.0F, 11.0F, 0.0F);
       this.field17861.addBox(-3.5F, -3.0F, -3.0F, 6.0F, 16.0F, 5.0F, 0.0F);
    }
@@ -52,7 +52,7 @@ public class Class2880<T extends Class1058> extends Class2803<T> {
       this.field17861.rotateAngleY = 0.0F;
    }
 
-   public void method10997(T var1, float var2, float var3, float var4) {
+   public void setLivingAnimations(T var1, float var2, float var3, float var4) {
       int var7 = var1.method4866();
       if (var7 <= 0) {
          int var8 = var1.method4868();

@@ -11,8 +11,8 @@ public class Class2873<T extends Class1088> extends Class2866<T> {
 
    public Class2873(float var1) {
       super(12, var1, true, 120.0F, 0.0F, 9.0F, 6.0F, 120);
-      this.field17604 = 128;
-      this.field17605 = 64;
+      this.textureWidth = 128;
+      this.textureHeight = 64;
       this.field17772 = new ModelRenderer(this, 3, 0);
       this.field17772.addBox(-3.0F, -1.0F, -3.0F, 6.0F, 5.0F, 6.0F, 0.0F);
       this.field17772.setRotationPoint(0.0F, 19.0F, -10.0F);
@@ -47,8 +47,8 @@ public class Class2873<T extends Class1088> extends Class2866<T> {
       super.setRotationAngles((T)var1, var2, var3, var4, var5, var6);
       this.field17774.rotateAngleX = MathHelper.cos(var2 * 0.6662F * 0.6F) * 0.5F * var3;
       this.field17775.rotateAngleX = MathHelper.cos(var2 * 0.6662F * 0.6F + (float) Math.PI) * 0.5F * var3;
-      this.field17776.field31037 = MathHelper.cos(var2 * 0.6662F * 0.6F + (float) Math.PI) * 0.5F * var3;
-      this.field17777.field31037 = MathHelper.cos(var2 * 0.6662F * 0.6F) * 0.5F * var3;
+      this.field17776.rotateAngleZ = MathHelper.cos(var2 * 0.6662F * 0.6F + (float) Math.PI) * 0.5F * var3;
+      this.field17777.rotateAngleZ = MathHelper.cos(var2 * 0.6662F * 0.6F) * 0.5F * var3;
       this.field17776.rotateAngleX = 0.0F;
       this.field17777.rotateAngleX = 0.0F;
       this.field17776.rotateAngleY = 0.0F;
@@ -61,9 +61,9 @@ public class Class2873<T extends Class1088> extends Class2866<T> {
          float var10 = !var1.method5047() ? 1.0F : 2.0F;
          float var11 = 5.0F;
          this.field17776.rotateAngleY = MathHelper.cos(var9 * var2 * 5.0F + (float) Math.PI) * 8.0F * var3 * var10;
-         this.field17776.field31037 = 0.0F;
+         this.field17776.rotateAngleZ = 0.0F;
          this.field17777.rotateAngleY = MathHelper.cos(var9 * var2 * 5.0F) * 8.0F * var3 * var10;
-         this.field17777.field31037 = 0.0F;
+         this.field17777.rotateAngleZ = 0.0F;
          this.field17774.rotateAngleY = MathHelper.cos(var2 * 5.0F + (float) Math.PI) * 3.0F * var3;
          this.field17774.rotateAngleX = 0.0F;
          this.field17775.rotateAngleY = MathHelper.cos(var2 * 5.0F) * 3.0F * var3;

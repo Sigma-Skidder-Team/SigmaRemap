@@ -35,7 +35,7 @@ public class Class5718 extends EntityRenderer<Class1007> {
       var4.method35292(-1.0F, -1.0F, 1.0F);
       var4.translate(0.0, -1.501F, 0.0);
       boolean var11 = var1.hurtTime > 0;
-      this.field25115.method10997(var1, 0.0F, 0.0F, var3);
+      this.field25115.setLivingAnimations(var1, 0.0F, 0.0F, var3);
       if (var1.field5635 <= 0) {
          IVertexBuilder var12 = var5.method25597(field25110);
          this.field25115.method11016(var4, var12, var6, Class213.method731(0.0F, var11), 1.0F, 1.0F, 1.0F, 1.0F);

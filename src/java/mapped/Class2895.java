@@ -14,8 +14,8 @@ public class Class2895<T extends MobEntity> extends PlayerModel<T> {
 
    public Class2895(float var1, int var2, int var3) {
       super(var1, false);
-      this.field17604 = var2;
-      this.field17605 = var3;
+      this.textureWidth = var2;
+      this.textureHeight = var3;
       this.bipedBody = new ModelRenderer(this, 16, 16);
       this.bipedBody.addBox(-4.0F, 0.0F, -2.0F, 8.0F, 12.0F, 4.0F, var1);
       this.bipedHead = new ModelRenderer(this);
@@ -31,7 +31,7 @@ public class Class2895<T extends MobEntity> extends PlayerModel<T> {
       this.field17929.setRotationPoint(-4.5F, -6.0F, 0.0F);
       this.field17929.method22671(39, 6).addBox(-1.0F, 0.0F, -2.0F, 1.0F, 5.0F, 4.0F, var1);
       this.bipedHead.method22670(this.field17929);
-      this.field17433 = new ModelRenderer(this);
+      this.bipedHeadwear = new ModelRenderer(this);
       this.field17930 = this.bipedBody.method22668();
       this.field17931 = this.bipedHead.method22668();
       this.field17932 = this.bipedLeftArm.method22668();
@@ -47,17 +47,17 @@ public class Class2895<T extends MobEntity> extends PlayerModel<T> {
       float var9 = (float) (Math.PI / 6);
       float var10 = var4 * 0.1F + var2 * 0.5F;
       float var11 = 0.08F + var3 * 0.4F;
-      this.field17928.field31037 = (float) (-Math.PI / 6) - MathHelper.cos(var10 * 1.2F) * var11;
-      this.field17929.field31037 = (float) (Math.PI / 6) + MathHelper.cos(var10) * var11;
+      this.field17928.rotateAngleZ = (float) (-Math.PI / 6) - MathHelper.cos(var10 * 1.2F) * var11;
+      this.field17929.rotateAngleZ = (float) (Math.PI / 6) + MathHelper.cos(var10) * var11;
       if (!(var1 instanceof Class1035)) {
          if (var1.getType() == EntityType.field41110) {
-            ModelHelper.method27109(this.bipedLeftArm, this.bipedRightArm, var1.method4307(), this.field17600, var4);
+            ModelHelper.method27109(this.bipedLeftArm, this.bipedRightArm, var1.method4307(), this.swingProgress, var4);
          }
       } else {
          Class1035 var12 = (Class1035)var1;
          Class2172 var13 = var12.method4622();
          if (var13 != Class2172.field14263) {
-            if (var13 == Class2172.field14259 && this.field17600 == 0.0F) {
+            if (var13 == Class2172.field14259 && this.swingProgress == 0.0F) {
                this.method11211((T)var1);
             } else if (var13 != Class2172.field14260) {
                if (var13 != Class2172.field14261) {
@@ -80,12 +80,12 @@ public class Class2895<T extends MobEntity> extends PlayerModel<T> {
             }
          } else {
             float var14 = var4 / 60.0F;
-            this.field17929.field31037 = (float) (Math.PI / 6) + (float) (Math.PI / 180.0) * MathHelper.sin(var14 * 30.0F) * 10.0F;
-            this.field17928.field31037 = (float) (-Math.PI / 6) - (float) (Math.PI / 180.0) * MathHelper.cos(var14 * 30.0F) * 10.0F;
+            this.field17929.rotateAngleZ = (float) (Math.PI / 6) + (float) (Math.PI / 180.0) * MathHelper.sin(var14 * 30.0F) * 10.0F;
+            this.field17928.rotateAngleZ = (float) (-Math.PI / 6) - (float) (Math.PI / 180.0) * MathHelper.cos(var14 * 30.0F) * 10.0F;
             this.bipedHead.rotationPointX = MathHelper.sin(var14 * 10.0F);
             this.bipedHead.rotationPointY = MathHelper.sin(var14 * 40.0F) + 0.4F;
-            this.bipedRightArm.field31037 = (float) (Math.PI / 180.0) * (70.0F + MathHelper.cos(var14 * 40.0F) * 10.0F);
-            this.bipedLeftArm.field31037 = this.bipedRightArm.field31037 * -1.0F;
+            this.bipedRightArm.rotateAngleZ = (float) (Math.PI / 180.0) * (70.0F + MathHelper.cos(var14 * 40.0F) * 10.0F);
+            this.bipedLeftArm.rotateAngleZ = this.bipedRightArm.rotateAngleZ * -1.0F;
             this.bipedRightArm.rotationPointY = MathHelper.sin(var14 * 40.0F) * 0.5F + 1.5F;
             this.bipedLeftArm.rotationPointY = MathHelper.sin(var14 * 40.0F) * 0.5F + 1.5F;
             this.bipedBody.rotationPointY = MathHelper.sin(var14 * 40.0F) * 0.35F;
@@ -97,14 +97,14 @@ public class Class2895<T extends MobEntity> extends PlayerModel<T> {
       this.bipedLeftArmwear.copyModelAngles(this.bipedLeftArm);
       this.bipedRightArmwear.copyModelAngles(this.bipedRightArm);
       this.bipedBodyWear.copyModelAngles(this.bipedBody);
-      this.field17433.copyModelAngles(this.bipedHead);
+      this.bipedHeadwear.copyModelAngles(this.bipedHead);
    }
 
-   public void method11005(T var1, float var2) {
-      if (this.field17600 > 0.0F && var1 instanceof Class1034 && ((Class1034)var1).method4622() == Class2172.field14259) {
-         ModelHelper.method27107(this.bipedRightArm, this.bipedLeftArm, var1, this.field17600, var2);
+   public void func_230486_a_(T var1, float var2) {
+      if (this.swingProgress > 0.0F && var1 instanceof Class1034 && ((Class1034)var1).method4622() == Class2172.field14259) {
+         ModelHelper.method27107(this.bipedRightArm, this.bipedLeftArm, var1, this.swingProgress, var2);
       } else {
-         super.method11005((T)var1, var2);
+         super.func_230486_a_((T)var1, var2);
       }
    }
 

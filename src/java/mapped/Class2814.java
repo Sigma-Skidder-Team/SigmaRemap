@@ -19,8 +19,8 @@ public class Class2814 extends Class2803<Class1015> {
    private final ModelRenderer field17537;
 
    public Class2814() {
-      this.field17604 = 32;
-      this.field17605 = 32;
+      this.textureWidth = 32;
+      this.textureHeight = 32;
       this.field17527 = new ModelRenderer(this, 2, 8);
       this.field17527.method22673(-1.5F, 0.0F, -1.5F, 3.0F, 6.0F, 3.0F);
       this.field17527.setRotationPoint(0.0F, 16.5F, -3.0F);
@@ -69,7 +69,7 @@ public class Class2814 extends Class2803<Class1015> {
       this.method11020(method11022(var1), var1.ticksExisted, var2, var3, var4, var5, var6);
    }
 
-   public void method10997(Class1015 var1, float var2, float var3, float var4) {
+   public void setLivingAnimations(Class1015 var1, float var2, float var3, float var4) {
       this.method11021(method11022(var1));
    }
 
@@ -82,7 +82,7 @@ public class Class2814 extends Class2803<Class1015> {
    private void method11020(Class2075 var1, int var2, float var3, float var4, float var5, float var6, float var7) {
       this.field17531.rotateAngleX = var7 * (float) (Math.PI / 180.0);
       this.field17531.rotateAngleY = var6 * (float) (Math.PI / 180.0);
-      this.field17531.field31037 = 0.0F;
+      this.field17531.rotateAngleZ = 0.0F;
       this.field17531.rotationPointX = 0.0F;
       this.field17527.rotationPointX = 0.0F;
       this.field17528.rotationPointX = 0.0F;
@@ -98,13 +98,13 @@ public class Class2814 extends Class2803<Class1015> {
             this.field17531.rotationPointY = 15.69F + var11;
             this.field17531.rotateAngleX = 0.0F;
             this.field17531.rotateAngleY = 0.0F;
-            this.field17531.field31037 = MathHelper.sin((float)var2) * 0.4F;
+            this.field17531.rotateAngleZ = MathHelper.sin((float)var2) * 0.4F;
             this.field17527.rotationPointX = var10;
             this.field17527.rotationPointY = 16.5F + var11;
-            this.field17529.field31037 = -0.0873F - var5;
+            this.field17529.rotateAngleZ = -0.0873F - var5;
             this.field17529.rotationPointX = 1.5F + var10;
             this.field17529.rotationPointY = 16.94F + var11;
-            this.field17530.field31037 = 0.0873F + var5;
+            this.field17530.rotateAngleZ = 0.0873F + var5;
             this.field17530.rotationPointX = -1.5F + var10;
             this.field17530.rotationPointY = 16.94F + var11;
             this.field17528.rotationPointX = var10;
@@ -121,9 +121,9 @@ public class Class2814 extends Class2803<Class1015> {
             this.field17528.rotateAngleX = 1.015F + MathHelper.cos(var3 * 0.6662F) * 0.3F * var4;
             this.field17528.rotationPointY = 21.07F + var12;
             this.field17527.rotationPointY = 16.5F + var12;
-            this.field17529.field31037 = -0.0873F - var5;
+            this.field17529.rotateAngleZ = -0.0873F - var5;
             this.field17529.rotationPointY = 16.94F + var12;
-            this.field17530.field31037 = 0.0873F + var5;
+            this.field17530.rotateAngleZ = 0.0873F + var5;
             this.field17530.rotationPointY = 16.94F + var12;
             this.field17536.rotationPointY = 22.0F + var12;
             this.field17537.rotationPointY = 22.0F + var12;
@@ -141,8 +141,8 @@ public class Class2814 extends Class2803<Class1015> {
       this.field17537.rotateAngleX = -0.0299F;
       this.field17536.rotationPointY = 22.0F;
       this.field17537.rotationPointY = 22.0F;
-      this.field17536.field31037 = 0.0F;
-      this.field17537.field31037 = 0.0F;
+      this.field17536.rotateAngleZ = 0.0F;
+      this.field17537.rotateAngleZ = 0.0F;
       switch (Class7738.field33233[var1.ordinal()]) {
          case 1:
             float var4 = 1.9F;
@@ -150,9 +150,9 @@ public class Class2814 extends Class2803<Class1015> {
             this.field17528.rotateAngleX = 1.5388988F;
             this.field17528.rotationPointY = 22.97F;
             this.field17527.rotationPointY = 18.4F;
-            this.field17529.field31037 = -0.0873F;
+            this.field17529.rotateAngleZ = -0.0873F;
             this.field17529.rotationPointY = 18.84F;
-            this.field17530.field31037 = 0.0873F;
+            this.field17530.rotateAngleZ = 0.0873F;
             this.field17530.rotationPointY = 18.84F;
             this.field17536.rotationPointY++;
             this.field17537.rotationPointY++;
@@ -160,8 +160,8 @@ public class Class2814 extends Class2803<Class1015> {
             this.field17537.rotateAngleX++;
             break;
          case 2:
-            this.field17536.field31037 = (float) (-Math.PI / 9);
-            this.field17537.field31037 = (float) (Math.PI / 9);
+            this.field17536.rotateAngleZ = (float) (-Math.PI / 9);
+            this.field17537.rotateAngleZ = (float) (Math.PI / 9);
          case 3:
          case 5:
          default:

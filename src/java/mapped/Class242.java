@@ -6,7 +6,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.HandSide;
 
-public class Class242<T extends LivingEntity, M extends Class2827<T> & Class2825> extends Class219<T, M> {
+public class Class242<T extends LivingEntity, M extends Class2827<T> & IHasArm> extends Class219<T, M> {
    private static String[] field897;
 
    public Class242(Class5714<T, M> var1) {

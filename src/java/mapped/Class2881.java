@@ -13,12 +13,12 @@ public class Class2881<T extends WitherEntity> extends Class2803<T> {
    private final ImmutableList<ModelRenderer> field17865;
 
    public Class2881(float var1) {
-      this.field17604 = 64;
-      this.field17605 = 64;
+      this.textureWidth = 64;
+      this.textureHeight = 64;
       this.field17863 = new ModelRenderer[3];
       this.field17863[0] = new ModelRenderer(this, 0, 16);
       this.field17863[0].addBox(-10.0F, 3.9F, -0.5F, 20.0F, 3.0F, 3.0F, var1);
-      this.field17863[1] = new ModelRenderer(this).setTextureSize(this.field17604, this.field17605);
+      this.field17863[1] = new ModelRenderer(this).setTextureSize(this.textureWidth, this.textureHeight);
       this.field17863[1].setRotationPoint(-2.0F, 6.9F, -0.5F);
       this.field17863[1].method22671(0, 22).addBox(0.0F, 0.0F, 0.0F, 3.0F, 10.0F, 3.0F, var1);
       this.field17863[1].method22671(24, 22).addBox(-4.0F, 1.5F, 0.5F, 11.0F, 2.0F, 2.0F, var1);
@@ -59,7 +59,7 @@ public class Class2881<T extends WitherEntity> extends Class2803<T> {
       this.field17864[0].rotateAngleX = var6 * (float) (Math.PI / 180.0);
    }
 
-   public void method10997(T var1, float var2, float var3, float var4) {
+   public void setLivingAnimations(T var1, float var2, float var3, float var4) {
       for (int var7 = 1; var7 < 3; var7++) {
          this.field17864[var7].rotateAngleY = (var1.method5010(var7 - 1) - var1.renderYawOffset) * (float) (Math.PI / 180.0);
          this.field17864[var7].rotateAngleX = var1.method5011(var7 - 1) * (float) (Math.PI / 180.0);

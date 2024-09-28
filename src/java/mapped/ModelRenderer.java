@@ -20,8 +20,8 @@ public class ModelRenderer {
    public float rotationPointZ;
    public float rotateAngleX;
    public float rotateAngleY;
-   public float field31037;
-   public boolean field31038;
+   public float rotateAngleZ;
+   public boolean mirror;
    public boolean showModel = true;
    public final ObjectList<Class9661> field31040 = new ObjectArrayList();
    public final ObjectList<ModelRenderer> field31041 = new ObjectArrayList();
@@ -37,11 +37,11 @@ public class ModelRenderer {
 
    public ModelRenderer(Class2828 var1) {
       var1.accept(this);
-      this.setTextureSize(var1.field17604, var1.field17605);
+      this.setTextureSize(var1.textureWidth, var1.textureHeight);
    }
 
    public ModelRenderer(Class2828 var1, int var2, int var3) {
-      this(var1.field17604, var1.field17605, var2, var3);
+      this(var1.textureWidth, var1.textureHeight, var2, var3);
       var1.accept(this);
    }
 
@@ -62,7 +62,7 @@ public class ModelRenderer {
    public void copyModelAngles(ModelRenderer var1) {
       this.rotateAngleX = var1.rotateAngleX;
       this.rotateAngleY = var1.rotateAngleY;
-      this.field31037 = var1.field31037;
+      this.rotateAngleZ = var1.rotateAngleZ;
       this.rotationPointX = var1.rotationPointX;
       this.rotationPointY = var1.rotationPointY;
       this.rotationPointZ = var1.rotationPointZ;
@@ -80,12 +80,12 @@ public class ModelRenderer {
 
    public ModelRenderer method22672(String var1, float var2, float var3, float var4, int var5, int var6, int var7, float var8, int var9, int var10) {
       this.method22671(var9, var10);
-      this.method22678(this.field31030, this.field31031, var2, var3, var4, (float)var5, (float)var6, (float)var7, var8, var8, var8, this.field31038, false);
+      this.method22678(this.field31030, this.field31031, var2, var3, var4, (float)var5, (float)var6, (float)var7, var8, var8, var8, this.mirror, false);
       return this;
    }
 
    public ModelRenderer method22673(float var1, float var2, float var3, float var4, float var5, float var6) {
-      this.method22678(this.field31030, this.field31031, var1, var2, var3, var4, var5, var6, 0.0F, 0.0F, 0.0F, this.field31038, false);
+      this.method22678(this.field31030, this.field31031, var1, var2, var3, var4, var5, var6, 0.0F, 0.0F, 0.0F, this.mirror, false);
       return this;
    }
 
@@ -95,11 +95,11 @@ public class ModelRenderer {
    }
 
    public void addBox(float var1, float var2, float var3, float var4, float var5, float var6, float var7) {
-      this.method22678(this.field31030, this.field31031, var1, var2, var3, var4, var5, var6, var7, var7, var7, this.field31038, false);
+      this.method22678(this.field31030, this.field31031, var1, var2, var3, var4, var5, var6, var7, var7, var7, this.mirror, false);
    }
 
    public void method22676(float var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8, float var9) {
-      this.method22678(this.field31030, this.field31031, var1, var2, var3, var4, var5, var6, var7, var8, var9, this.field31038, false);
+      this.method22678(this.field31030, this.field31031, var1, var2, var3, var4, var5, var6, var7, var8, var9, this.mirror, false);
    }
 
    public void method22677(float var1, float var2, float var3, float var4, float var5, float var6, float var7, boolean var8) {
@@ -180,8 +180,8 @@ public class ModelRenderer {
 
    public void translateRotate(MatrixStack var1) {
       var1.translate((double)(this.rotationPointX / 16.0F), (double)(this.rotationPointY / 16.0F), (double)(this.rotationPointZ / 16.0F));
-      if (this.field31037 != 0.0F) {
-         var1.rotate(Vector3f.ZP.method25285(this.field31037));
+      if (this.rotateAngleZ != 0.0F) {
+         var1.rotate(Vector3f.ZP.method25285(this.rotateAngleZ));
       }
 
       if (this.rotateAngleY != 0.0F) {
@@ -257,7 +257,7 @@ public class ModelRenderer {
    }
 
    public void method22691(int[][] var1, float var2, float var3, float var4, float var5, float var6, float var7, float var8) {
-      this.field31040.add(new Class9661(var1, var2, var3, var4, var5, var6, var7, var8, var8, var8, this.field31038, this.field31028, this.field31029));
+      this.field31040.add(new Class9661(var1, var2, var3, var4, var5, var6, var7, var8, var8, var8, this.mirror, this.field31028, this.field31029));
    }
 
    public ModelRenderer method22692(int var1) {

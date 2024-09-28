@@ -44,7 +44,7 @@ public class Class8515 {
       float var13 = this.field38211;
       float var14 = this.field38210;
       float var15 = this.field38212;
-      if (this.field38199.field31038) {
+      if (this.field38199.mirror) {
          var12 = this.field38211;
          var13 = this.field38209;
       }

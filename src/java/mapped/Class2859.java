@@ -54,7 +54,7 @@ public class Class2859<T extends WolfEntity> extends Class2858<T> {
    }
 
    @Override
-   public Iterable<ModelRenderer> method11001() {
+   public Iterable<ModelRenderer> getHeadParts() {
       return ImmutableList.of(this.field17712);
    }
 
@@ -63,7 +63,7 @@ public class Class2859<T extends WolfEntity> extends Class2858<T> {
       return ImmutableList.of(this.field17714, this.field17715, this.field17716, this.field17717, this.field17718, this.field17719, this.field17721);
    }
 
-   public void method10997(T var1, float var2, float var3, float var4) {
+   public void setLivingAnimations(T var1, float var2, float var3, float var4) {
       if (!var1.method4369()) {
          this.field17719.rotateAngleY = MathHelper.cos(var2 * 0.6662F) * 1.4F * var3;
       } else {
@@ -101,10 +101,10 @@ public class Class2859<T extends WolfEntity> extends Class2858<T> {
          this.field17718.setRotationPoint(0.51F, 17.0F, -4.0F);
       }
 
-      this.field17713.field31037 = var1.method4378(var4) + var1.method4377(var4, 0.0F);
-      this.field17721.field31037 = var1.method4377(var4, -0.08F);
-      this.field17714.field31037 = var1.method4377(var4, -0.16F);
-      this.field17720.field31037 = var1.method4377(var4, -0.2F);
+      this.field17713.rotateAngleZ = var1.method4378(var4) + var1.method4377(var4, 0.0F);
+      this.field17721.rotateAngleZ = var1.method4377(var4, -0.08F);
+      this.field17714.rotateAngleZ = var1.method4377(var4, -0.16F);
+      this.field17720.rotateAngleZ = var1.method4377(var4, -0.2F);
    }
 
    public void setRotationAngles(T var1, float var2, float var3, float var4, float var5, float var6) {

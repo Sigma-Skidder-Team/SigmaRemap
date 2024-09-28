@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2862<T extends Class1017> extends Class2855<T> {
+public class Class2862<T extends Class1017> extends AgeableModel<T> {
    private final ModelRenderer field17735;
    private final ModelRenderer field17736;
    private final ModelRenderer field17737;
@@ -18,8 +18,8 @@ public class Class2862<T extends Class1017> extends Class2855<T> {
 
    public Class2862() {
       super(false, 24.0F, 0.0F);
-      this.field17604 = 64;
-      this.field17605 = 64;
+      this.textureWidth = 64;
+      this.textureHeight = 64;
       this.field17735 = new ModelRenderer(this);
       this.field17735.setRotationPoint(0.0F, 19.0F, 0.0F);
       this.field17736 = new ModelRenderer(this, 0, 0);
@@ -41,15 +41,15 @@ public class Class2862<T extends Class1017> extends Class2855<T> {
       this.field17737.setRotationPoint(-1.5F, -4.0F, -3.0F);
       this.field17737.rotateAngleX = 0.0F;
       this.field17737.rotateAngleY = -0.2618F;
-      this.field17737.field31037 = 0.0F;
+      this.field17737.rotateAngleZ = 0.0F;
       this.field17735.method22670(this.field17737);
       this.field17737.addBox(-9.0F, 0.0F, 0.0F, 9.0F, 0.0F, 6.0F, 0.001F);
       this.field17738 = new ModelRenderer(this, 0, 18);
       this.field17738.setRotationPoint(1.5F, -4.0F, -3.0F);
       this.field17738.rotateAngleX = 0.0F;
       this.field17738.rotateAngleY = 0.2618F;
-      this.field17738.field31037 = 0.0F;
-      this.field17738.field31038 = true;
+      this.field17738.rotateAngleZ = 0.0F;
+      this.field17738.mirror = true;
       this.field17735.method22670(this.field17738);
       this.field17738.addBox(0.0F, 0.0F, 0.0F, 9.0F, 0.0F, 6.0F, 0.001F);
       this.field17739 = new ModelRenderer(this);
@@ -66,8 +66,8 @@ public class Class2862<T extends Class1017> extends Class2855<T> {
       this.field17741.method22672("backLegBox", -5.0F, 0.0F, 0.0F, 7, 2, 0, 0.0F, 26, 5);
    }
 
-   public void method10997(T var1, float var2, float var3, float var4) {
-      super.method10997(var1, var2, var3, var4);
+   public void setLivingAnimations(T var1, float var2, float var3, float var4) {
+      super.setLivingAnimations(var1, var2, var3, var4);
       this.field17745 = var1.method4427(var4);
       this.field17742.showModel = !var1.method4440();
    }
@@ -82,22 +82,22 @@ public class Class2862<T extends Class1017> extends Class2855<T> {
       if (!var9) {
          float var10 = var4 * 2.1F;
          this.field17737.rotateAngleY = 0.0F;
-         this.field17737.field31037 = MathHelper.cos(var10) * (float) Math.PI * 0.15F;
+         this.field17737.rotateAngleZ = MathHelper.cos(var10) * (float) Math.PI * 0.15F;
          this.field17738.rotateAngleX = this.field17737.rotateAngleX;
          this.field17738.rotateAngleY = this.field17737.rotateAngleY;
-         this.field17738.field31037 = -this.field17737.field31037;
+         this.field17738.rotateAngleZ = -this.field17737.rotateAngleZ;
          this.field17739.rotateAngleX = (float) (Math.PI / 4);
          this.field17740.rotateAngleX = (float) (Math.PI / 4);
          this.field17741.rotateAngleX = (float) (Math.PI / 4);
          this.field17735.rotateAngleX = 0.0F;
          this.field17735.rotateAngleY = 0.0F;
-         this.field17735.field31037 = 0.0F;
+         this.field17735.rotateAngleZ = 0.0F;
       } else {
          this.field17737.rotateAngleY = -0.2618F;
-         this.field17737.field31037 = 0.0F;
+         this.field17737.rotateAngleZ = 0.0F;
          this.field17738.rotateAngleX = 0.0F;
          this.field17738.rotateAngleY = 0.2618F;
-         this.field17738.field31037 = 0.0F;
+         this.field17738.rotateAngleZ = 0.0F;
          this.field17739.rotateAngleX = 0.0F;
          this.field17740.rotateAngleX = 0.0F;
          this.field17741.rotateAngleX = 0.0F;
@@ -106,7 +106,7 @@ public class Class2862<T extends Class1017> extends Class2855<T> {
       if (!var1.method4369()) {
          this.field17735.rotateAngleX = 0.0F;
          this.field17735.rotateAngleY = 0.0F;
-         this.field17735.field31037 = 0.0F;
+         this.field17735.rotateAngleZ = 0.0F;
          if (!var9) {
             float var11 = MathHelper.cos(var4 * 0.18F);
             this.field17735.rotateAngleX = 0.1F + var11 * (float) Math.PI * 0.025F;
@@ -124,7 +124,7 @@ public class Class2862<T extends Class1017> extends Class2855<T> {
    }
 
    @Override
-   public Iterable<ModelRenderer> method11001() {
+   public Iterable<ModelRenderer> getHeadParts() {
       return ImmutableList.of();
    }
 

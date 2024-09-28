@@ -31,8 +31,8 @@ public abstract class Class219<T extends Entity, M extends Class2827<T>> {
       float var15
    ) {
       if (!var6.isInvisible()) {
-         var0.method11027(var1);
-         var1.method10997(var6, var7, var8, var12);
+         var0.copyModelAttributesTo(var1);
+         var1.setLivingAnimations(var6, var7, var8, var12);
          var1.setRotationAngles(var6, var7, var8, var9, var10, var11);
          method824(var1, var2, var3, var4, var5, var6, var13, var14, var15);
       }

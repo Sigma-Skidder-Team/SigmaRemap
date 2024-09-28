@@ -43,7 +43,7 @@ public class Class5944 extends Class5942<Class966> {
       }
 
       this.field25933.rotateAngleX = var10;
-      this.field25933.field31037 = var11;
+      this.field25933.rotateAngleZ = var11;
       IVertexBuilder var13 = field25932.method26200(var4, RenderType::getEntitySolid);
       this.field25933.render(var3, var13, var5, var6);
    }

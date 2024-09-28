@@ -11,8 +11,8 @@ public class Class2805<T extends Entity> extends Class2803<T> {
    private final ModelRenderer field17463;
 
    public Class2805() {
-      this.field17604 = 64;
-      this.field17605 = 64;
+      this.textureWidth = 64;
+      this.textureHeight = 64;
       float var3 = 18.0F;
       float var4 = -8.0F;
       this.field17461 = new ModelRenderer(this, 22, 0);
@@ -23,17 +23,17 @@ public class Class2805<T extends Entity> extends Class2803<T> {
       var5.rotateAngleX = (float) (Math.PI / 3);
       this.field17461.method22670(var5);
       ModelRenderer var6 = new ModelRenderer(this, 48, 20);
-      var6.field31038 = true;
+      var6.mirror = true;
       var6.method22673(-0.5F, -4.0F, 0.0F, 1.0F, 4.0F, 7.0F);
       var6.setRotationPoint(2.0F, -2.0F, 4.0F);
       var6.rotateAngleX = (float) (Math.PI / 3);
-      var6.field31037 = (float) (Math.PI * 2.0 / 3.0);
+      var6.rotateAngleZ = (float) (Math.PI * 2.0 / 3.0);
       this.field17461.method22670(var6);
       ModelRenderer var7 = new ModelRenderer(this, 48, 20);
       var7.method22673(-0.5F, -4.0F, 0.0F, 1.0F, 4.0F, 7.0F);
       var7.setRotationPoint(-2.0F, -2.0F, 4.0F);
       var7.rotateAngleX = (float) (Math.PI / 3);
-      var7.field31037 = (float) (-Math.PI * 2.0 / 3.0);
+      var7.rotateAngleZ = (float) (-Math.PI * 2.0 / 3.0);
       this.field17461.method22670(var7);
       this.field17462 = new ModelRenderer(this, 0, 19);
       this.field17462.method22673(-2.0F, -2.5F, 0.0F, 4.0F, 5.0F, 11.0F);

@@ -8,8 +8,8 @@ public class Class2821<T extends Entity> extends Class2803<T> {
    private final ModelRenderer field17577;
 
    public Class2821() {
-      this.field17604 = 64;
-      this.field17605 = 32;
+      this.textureWidth = 64;
+      this.textureHeight = 32;
       this.field17577 = new ModelRenderer(this);
       this.field17577.method22671(0, 0).addBox(-4.0F, -4.0F, -1.0F, 8.0F, 8.0F, 2.0F, 0.0F);
       this.field17577.method22671(0, 10).addBox(-1.0F, -4.0F, -4.0F, 2.0F, 8.0F, 8.0F, 0.0F);

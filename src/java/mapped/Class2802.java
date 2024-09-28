@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2802<T extends Entity> extends Class2803<T> implements Class2824, Class2801 {
+public class Class2802<T extends Entity> extends Class2803<T> implements IHasHead, Class2801 {
    private static String[] field17446;
    public ModelRenderer field17447;
    public ModelRenderer field17448;
@@ -54,7 +54,7 @@ public class Class2802<T extends Entity> extends Class2803<T> implements Class28
       this.field17453.setRotationPoint(-2.0F, 12.0F, 0.0F);
       this.field17453.addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, var1);
       this.field17454 = new ModelRenderer(this, 0, 22).setTextureSize(var2, var3);
-      this.field17454.field31038 = true;
+      this.field17454.mirror = true;
       this.field17454.setRotationPoint(2.0F, 12.0F, 0.0F);
       this.field17454.addBox(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, var1);
    }
@@ -74,9 +74,9 @@ public class Class2802<T extends Entity> extends Class2803<T> implements Class28
       this.field17447.rotateAngleY = var5 * (float) (Math.PI / 180.0);
       this.field17447.rotateAngleX = var6 * (float) (Math.PI / 180.0);
       if (!var9) {
-         this.field17447.field31037 = 0.0F;
+         this.field17447.rotateAngleZ = 0.0F;
       } else {
-         this.field17447.field31037 = 0.3F * MathHelper.sin(0.45F * var4);
+         this.field17447.rotateAngleZ = 0.3F * MathHelper.sin(0.45F * var4);
          this.field17447.rotateAngleX = 0.4F;
       }
 
@@ -90,7 +90,7 @@ public class Class2802<T extends Entity> extends Class2803<T> implements Class28
    }
 
    @Override
-   public ModelRenderer method11012() {
+   public ModelRenderer getModelHead() {
       return this.field17447;
    }
 

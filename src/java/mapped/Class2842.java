@@ -20,7 +20,7 @@ public class Class2842 extends Class2828 {
       var5.addBox(-0.5F, -4.0F, -0.5F, 1.0F, 4.0F, 1.0F, 0.0F);
       this.field17639.method22670(var5);
       ModelRenderer var6 = new ModelRenderer(32, 32, 4, 3);
-      var6.field31038 = true;
+      var6.mirror = true;
       var6.method22673(1.5F, -3.0F, -0.5F, 1.0F, 4.0F, 1.0F);
       this.field17639.method22670(var6);
    }

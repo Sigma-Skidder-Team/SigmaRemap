@@ -44,8 +44,8 @@ public class Class2883 extends Class2803<BoatEntity> {
       this.field17871[1] = this.method11200(false);
       this.field17871[1].setRotationPoint(3.0F, -5.0F, -9.0F);
       this.field17871[1].rotateAngleY = (float) Math.PI;
-      this.field17871[0].field31037 = (float) (Math.PI / 16);
-      this.field17871[1].field31037 = (float) (Math.PI / 16);
+      this.field17871[0].rotateAngleZ = (float) (Math.PI / 16);
+      this.field17871[1].rotateAngleZ = (float) (Math.PI / 16);
       this.field17872 = new ModelRenderer(this, 0, 0).setTextureSize(128, 64);
       this.field17872.addBox(-14.0F, -9.0F, -3.0F, 28.0F, 16.0F, 3.0F, 0.0F);
       this.field17872.setRotationPoint(0.0F, -3.0F, 1.0F);

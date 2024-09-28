@@ -31,7 +31,7 @@ public abstract class Class4117 extends Class4057 {
                   return var5.bipedBody;
                }
             } else {
-               return var5.field17433;
+               return var5.bipedHeadwear;
             }
          } else {
             return var5.bipedHead;

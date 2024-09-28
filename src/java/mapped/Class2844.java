@@ -12,8 +12,8 @@ public class Class2844 extends Class2828 {
 
    public Class2844(int var1, int var2, int var3, int var4) {
       super(RenderType::getEntityTranslucent);
-      this.field17604 = var3;
-      this.field17605 = var4;
+      this.textureWidth = var3;
+      this.textureHeight = var4;
       this.field17644 = new ModelRenderer(this, var1, var2);
       this.field17644.addBox(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, 0.0F);
       this.field17644.setRotationPoint(0.0F, 0.0F, 0.0F);

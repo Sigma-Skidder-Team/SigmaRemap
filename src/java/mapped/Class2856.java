@@ -3,7 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
+public class Class2856<T extends AbstractHorseEntity> extends AgeableModel<T> {
    private static String[] field17691;
    public final ModelRenderer field17692;
    public final ModelRenderer field17693;
@@ -21,8 +21,8 @@ public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
 
    public Class2856(float var1) {
       super(true, 16.2F, 1.36F, 2.7272F, 2.0F, 20.0F);
-      this.field17604 = 64;
-      this.field17605 = 64;
+      this.textureWidth = 64;
+      this.textureHeight = 64;
       this.field17692 = new ModelRenderer(this, 0, 32);
       this.field17692.addBox(-5.0F, -8.0F, -17.0F, 10.0F, 10.0F, 22.0F, 0.05F);
       this.field17692.setRotationPoint(0.0F, 11.0F, 5.0F);
@@ -40,14 +40,14 @@ public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
       this.field17693.method22670(var6);
       this.method11189(this.field17693);
       this.field17694 = new ModelRenderer(this, 48, 21);
-      this.field17694.field31038 = true;
+      this.field17694.mirror = true;
       this.field17694.addBox(-3.0F, -1.01F, -1.0F, 4.0F, 11.0F, 4.0F, var1);
       this.field17694.setRotationPoint(4.0F, 14.0F, 7.0F);
       this.field17695 = new ModelRenderer(this, 48, 21);
       this.field17695.addBox(-1.0F, -1.01F, -1.0F, 4.0F, 11.0F, 4.0F, var1);
       this.field17695.setRotationPoint(-4.0F, 14.0F, 7.0F);
       this.field17696 = new ModelRenderer(this, 48, 21);
-      this.field17696.field31038 = true;
+      this.field17696.mirror = true;
       this.field17696.addBox(-3.0F, -1.01F, -1.9F, 4.0F, 11.0F, 4.0F, var1);
       this.field17696.setRotationPoint(4.0F, 6.0F, -12.0F);
       this.field17697 = new ModelRenderer(this, 48, 21);
@@ -55,14 +55,14 @@ public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
       this.field17697.setRotationPoint(-4.0F, 6.0F, -12.0F);
       float var7 = 5.5F;
       this.field17698 = new ModelRenderer(this, 48, 21);
-      this.field17698.field31038 = true;
+      this.field17698.mirror = true;
       this.field17698.method22676(-3.0F, -1.01F, -1.0F, 4.0F, 11.0F, 4.0F, var1, var1 + 5.5F, var1);
       this.field17698.setRotationPoint(4.0F, 14.0F, 7.0F);
       this.field17699 = new ModelRenderer(this, 48, 21);
       this.field17699.method22676(-1.0F, -1.01F, -1.0F, 4.0F, 11.0F, 4.0F, var1, var1 + 5.5F, var1);
       this.field17699.setRotationPoint(-4.0F, 14.0F, 7.0F);
       this.field17700 = new ModelRenderer(this, 48, 21);
-      this.field17700.field31038 = true;
+      this.field17700.mirror = true;
       this.field17700.method22676(-3.0F, -1.01F, -1.9F, 4.0F, 11.0F, 4.0F, var1, var1 + 5.5F, var1);
       this.field17700.setRotationPoint(4.0F, 6.0F, -12.0F);
       this.field17701 = new ModelRenderer(this, 48, 21);
@@ -125,7 +125,7 @@ public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
    }
 
    @Override
-   public Iterable<ModelRenderer> method11001() {
+   public Iterable<ModelRenderer> getHeadParts() {
       return ImmutableList.of(this.field17693);
    }
 
@@ -144,8 +144,8 @@ public class Class2856<T extends AbstractHorseEntity> extends Class2855<T> {
       );
    }
 
-   public void method10997(T var1, float var2, float var3, float var4) {
-      super.method10997(var1, var2, var3, var4);
+   public void setLivingAnimations(T var1, float var2, float var3, float var4) {
+      super.setLivingAnimations(var1, var2, var3, var4);
       float var7 = MathHelper.method37828(var1.prevRenderYawOffset, var1.renderYawOffset, var4);
       float var8 = MathHelper.method37828(var1.prevRotationYawHead, var1.rotationYawHead, var4);
       float var9 = MathHelper.lerp(var4, var1.prevRotationPitch, var1.rotationPitch);

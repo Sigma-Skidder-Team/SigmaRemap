@@ -5,7 +5,7 @@ import net.minecraft.client.entity.player.AbstractClientPlayerEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.math.vector.Vector3d;
 
-public class Class2863<T extends LivingEntity> extends Class2855<T> {
+public class Class2863<T extends LivingEntity> extends AgeableModel<T> {
    private static String[] field17746;
    private final ModelRenderer field17747;
    private final ModelRenderer field17748 = new ModelRenderer(this, 22, 0);
@@ -13,12 +13,12 @@ public class Class2863<T extends LivingEntity> extends Class2855<T> {
    public Class2863() {
       this.field17748.addBox(-10.0F, 0.0F, 0.0F, 10.0F, 20.0F, 2.0F, 1.0F);
       this.field17747 = new ModelRenderer(this, 22, 0);
-      this.field17747.field31038 = true;
+      this.field17747.mirror = true;
       this.field17747.addBox(0.0F, 0.0F, 0.0F, 10.0F, 20.0F, 2.0F, 1.0F);
    }
 
    @Override
-   public Iterable<ModelRenderer> method11001() {
+   public Iterable<ModelRenderer> getHeadParts() {
       return ImmutableList.of();
    }
 
@@ -55,7 +55,7 @@ public class Class2863<T extends LivingEntity> extends Class2855<T> {
       this.field17748.rotationPointY = var11;
       if (!(var1 instanceof AbstractClientPlayerEntity)) {
          this.field17748.rotateAngleX = var9;
-         this.field17748.field31037 = var10;
+         this.field17748.rotateAngleZ = var10;
          this.field17748.rotateAngleY = var12;
       } else {
          AbstractClientPlayerEntity var16 = (AbstractClientPlayerEntity)var1;
@@ -64,13 +64,13 @@ public class Class2863<T extends LivingEntity> extends Class2855<T> {
          var16.field6099 = (float)((double)var16.field6099 + (double)(var10 - var16.field6099) * 0.1);
          this.field17748.rotateAngleX = var16.field6097;
          this.field17748.rotateAngleY = var16.field6098;
-         this.field17748.field31037 = var16.field6099;
+         this.field17748.rotateAngleZ = var16.field6099;
       }
 
       this.field17747.rotationPointX = -this.field17748.rotationPointX;
       this.field17747.rotateAngleY = -this.field17748.rotateAngleY;
       this.field17747.rotationPointY = this.field17748.rotationPointY;
       this.field17747.rotateAngleX = this.field17748.rotateAngleX;
-      this.field17747.field31037 = -this.field17748.field31037;
+      this.field17747.rotateAngleZ = -this.field17748.rotateAngleZ;
    }
 }

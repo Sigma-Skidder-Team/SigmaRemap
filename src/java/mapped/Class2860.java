@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2860<T extends Entity> extends Class2855<T> {
+public class Class2860<T extends Entity> extends AgeableModel<T> {
    public final ModelRenderer field17722;
    public final ModelRenderer field17723;
    public final ModelRenderer field17724;
@@ -48,7 +48,7 @@ public class Class2860<T extends Entity> extends Class2855<T> {
    }
 
    @Override
-   public Iterable<ModelRenderer> method11001() {
+   public Iterable<ModelRenderer> getHeadParts() {
       return ImmutableList.of(this.field17728);
    }
 
@@ -84,7 +84,7 @@ public class Class2860<T extends Entity> extends Class2855<T> {
    }
 
    @Override
-   public void method10997(T var1, float var2, float var3, float var4) {
+   public void setLivingAnimations(T var1, float var2, float var3, float var4) {
       this.field17729.rotationPointY = 12.0F;
       this.field17729.rotationPointZ = -10.0F;
       this.field17728.rotationPointY = 15.0F;

@@ -29,14 +29,14 @@ public class Class2893 extends Class2892 {
       this.bipedRightArm.addBox(-2.0F, -2.0F, -1.0F, 2.0F, 12.0F, 2.0F, var1);
       this.bipedRightArm.setRotationPoint(-5.0F, 2.0F, 0.0F);
       this.bipedLeftArm = new ModelRenderer(this, 32, 16);
-      this.bipedLeftArm.field31038 = true;
+      this.bipedLeftArm.mirror = true;
       this.bipedLeftArm.addBox(0.0F, -2.0F, -1.0F, 2.0F, 12.0F, 2.0F, var1);
       this.bipedLeftArm.setRotationPoint(5.0F, 2.0F, 0.0F);
       this.bipedRightLeg = new ModelRenderer(this, 8, 0);
       this.bipedRightLeg.addBox(-1.0F, 0.0F, -1.0F, 2.0F, 11.0F, 2.0F, var1);
       this.bipedRightLeg.setRotationPoint(-1.9F, 12.0F, 0.0F);
       this.bipedLeftLeg = new ModelRenderer(this, 40, 16);
-      this.bipedLeftLeg.field31038 = true;
+      this.bipedLeftLeg.mirror = true;
       this.bipedLeftLeg.addBox(-1.0F, 0.0F, -1.0F, 2.0F, 11.0F, 2.0F, var1);
       this.bipedLeftLeg.setRotationPoint(1.9F, 12.0F, 0.0F);
       this.field17914 = new ModelRenderer(this, 16, 0);
@@ -52,13 +52,13 @@ public class Class2893 extends Class2892 {
       this.field17917 = new ModelRenderer(this, 0, 32);
       this.field17917.addBox(-6.0F, 11.0F, -6.0F, 12.0F, 1.0F, 12.0F, var1);
       this.field17917.setRotationPoint(0.0F, 12.0F, 0.0F);
-      this.field17433.showModel = false;
+      this.bipedHeadwear.showModel = false;
    }
 
-   public void method10997(ArmorStandEntity var1, float var2, float var3, float var4) {
+   public void setLivingAnimations(ArmorStandEntity var1, float var2, float var3, float var4) {
       this.field17917.rotateAngleX = 0.0F;
       this.field17917.rotateAngleY = (float) (Math.PI / 180.0) * -MathHelper.method37827(var4, var1.prevRotationYaw, var1.rotationYaw);
-      this.field17917.field31037 = 0.0F;
+      this.field17917.rotateAngleZ = 0.0F;
    }
 
    @Override
@@ -71,13 +71,13 @@ public class Class2893 extends Class2892 {
       this.bipedRightLeg.setRotationPoint(-1.9F, 12.0F, 0.0F);
       this.field17914.rotateAngleX = (float) (Math.PI / 180.0) * var1.method4212().method22013();
       this.field17914.rotateAngleY = (float) (Math.PI / 180.0) * var1.method4212().method22014();
-      this.field17914.field31037 = (float) (Math.PI / 180.0) * var1.method4212().method22015();
+      this.field17914.rotateAngleZ = (float) (Math.PI / 180.0) * var1.method4212().method22015();
       this.field17915.rotateAngleX = (float) (Math.PI / 180.0) * var1.method4212().method22013();
       this.field17915.rotateAngleY = (float) (Math.PI / 180.0) * var1.method4212().method22014();
-      this.field17915.field31037 = (float) (Math.PI / 180.0) * var1.method4212().method22015();
+      this.field17915.rotateAngleZ = (float) (Math.PI / 180.0) * var1.method4212().method22015();
       this.field17916.rotateAngleX = (float) (Math.PI / 180.0) * var1.method4212().method22013();
       this.field17916.rotateAngleY = (float) (Math.PI / 180.0) * var1.method4212().method22014();
-      this.field17916.field31037 = (float) (Math.PI / 180.0) * var1.method4212().method22015();
+      this.field17916.rotateAngleZ = (float) (Math.PI / 180.0) * var1.method4212().method22015();
    }
 
    @Override

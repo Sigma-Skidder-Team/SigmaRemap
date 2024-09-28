@@ -10,8 +10,8 @@ public class Class2867<T extends Class1097> extends Class2866<T> {
 
    public Class2867(int var1, float var2) {
       super(var1, var2, true, 23.0F, 4.8F, 2.7F, 3.0F, 49);
-      this.field17604 = 64;
-      this.field17605 = 64;
+      this.textureWidth = 64;
+      this.textureHeight = 64;
       this.field17772 = new ModelRenderer(this, 0, 6);
       this.field17772.method22673(-6.5F, -5.0F, -4.0F, 13.0F, 10.0F, 9.0F);
       this.field17772.setRotationPoint(0.0F, 11.5F, -17.0F);
@@ -37,8 +37,8 @@ public class Class2867<T extends Class1097> extends Class2866<T> {
       this.field17777.setRotationPoint(5.5F, 15.0F, -9.0F);
    }
 
-   public void method10997(T var1, float var2, float var3, float var4) {
-      super.method10997((T)var1, var2, var3, var4);
+   public void setLivingAnimations(T var1, float var2, float var3, float var4) {
+      super.setLivingAnimations((T)var1, var2, var3, var4);
       this.field17779 = var1.method5220(var4);
       this.field17780 = var1.method5221(var4);
       this.field17781 = !var1.isChild() ? var1.method5222(var4) : 0.0F;
@@ -52,10 +52,10 @@ public class Class2867<T extends Class1097> extends Class2866<T> {
       boolean var12 = var1.method5193();
       boolean var13 = var1.method5214();
       if (!var9) {
-         this.field17772.field31037 = 0.0F;
+         this.field17772.rotateAngleZ = 0.0F;
       } else {
          this.field17772.rotateAngleY = 0.35F * MathHelper.sin(0.6F * var4);
-         this.field17772.field31037 = 0.35F * MathHelper.sin(0.6F * var4);
+         this.field17772.rotateAngleZ = 0.35F * MathHelper.sin(0.6F * var4);
          this.field17776.rotateAngleX = -0.75F * MathHelper.sin(0.3F * var4);
          this.field17777.rotateAngleX = 0.75F * MathHelper.sin(0.3F * var4);
       }
@@ -72,17 +72,17 @@ public class Class2867<T extends Class1097> extends Class2866<T> {
       }
 
       if (!(this.field17779 > 0.0F)) {
-         this.field17774.field31037 = 0.0F;
-         this.field17775.field31037 = 0.0F;
-         this.field17776.field31037 = 0.0F;
-         this.field17777.field31037 = 0.0F;
+         this.field17774.rotateAngleZ = 0.0F;
+         this.field17775.rotateAngleZ = 0.0F;
+         this.field17776.rotateAngleZ = 0.0F;
+         this.field17777.rotateAngleZ = 0.0F;
       } else {
          this.field17773.rotateAngleX = Class9530.method36832(this.field17773.rotateAngleX, 1.7407963F, this.field17779);
          this.field17772.rotateAngleX = Class9530.method36832(this.field17772.rotateAngleX, (float) (Math.PI / 2), this.field17779);
-         this.field17776.field31037 = -0.27079642F;
-         this.field17777.field31037 = 0.27079642F;
-         this.field17774.field31037 = 0.5707964F;
-         this.field17775.field31037 = -0.5707964F;
+         this.field17776.rotateAngleZ = -0.27079642F;
+         this.field17777.rotateAngleZ = 0.27079642F;
+         this.field17774.rotateAngleZ = 0.5707964F;
+         this.field17775.rotateAngleZ = -0.5707964F;
          if (var12) {
             this.field17772.rotateAngleX = (float) (Math.PI / 2) + 0.2F * MathHelper.sin(var4 * 0.6F);
             this.field17776.rotateAngleX = -0.4F - 0.2F * MathHelper.sin(var4 * 0.6F);

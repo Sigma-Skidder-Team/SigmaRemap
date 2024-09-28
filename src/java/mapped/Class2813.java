@@ -76,14 +76,14 @@ public class Class2813<T extends Entity> extends Class2803<T> {
       this.field17515.rotateAngleY = var5 * (float) (Math.PI / 180.0);
       this.field17515.rotateAngleX = var6 * (float) (Math.PI / 180.0);
       float var9 = (float) (Math.PI / 4);
-      this.field17518.field31037 = (float) (-Math.PI / 4);
-      this.field17519.field31037 = (float) (Math.PI / 4);
-      this.field17520.field31037 = -0.58119464F;
-      this.field17521.field31037 = 0.58119464F;
-      this.field17522.field31037 = -0.58119464F;
-      this.field17523.field31037 = 0.58119464F;
-      this.field17524.field31037 = (float) (-Math.PI / 4);
-      this.field17525.field31037 = (float) (Math.PI / 4);
+      this.field17518.rotateAngleZ = (float) (-Math.PI / 4);
+      this.field17519.rotateAngleZ = (float) (Math.PI / 4);
+      this.field17520.rotateAngleZ = -0.58119464F;
+      this.field17521.rotateAngleZ = 0.58119464F;
+      this.field17522.rotateAngleZ = -0.58119464F;
+      this.field17523.rotateAngleZ = 0.58119464F;
+      this.field17524.rotateAngleZ = (float) (-Math.PI / 4);
+      this.field17525.rotateAngleZ = (float) (Math.PI / 4);
       float var10 = -0.0F;
       float var11 = (float) (Math.PI / 8);
       this.field17518.rotateAngleY = (float) (Math.PI / 4);
@@ -110,13 +110,13 @@ public class Class2813<T extends Entity> extends Class2803<T> {
       this.field17523.rotateAngleY += -var14;
       this.field17524.rotateAngleY += var15;
       this.field17525.rotateAngleY += -var15;
-      this.field17518.field31037 += var16;
-      this.field17519.field31037 += -var16;
-      this.field17520.field31037 += var17;
-      this.field17521.field31037 += -var17;
-      this.field17522.field31037 += var18;
-      this.field17523.field31037 += -var18;
-      this.field17524.field31037 += var19;
-      this.field17525.field31037 += -var19;
+      this.field17518.rotateAngleZ += var16;
+      this.field17519.rotateAngleZ += -var16;
+      this.field17520.rotateAngleZ += var17;
+      this.field17521.rotateAngleZ += -var17;
+      this.field17522.rotateAngleZ += var18;
+      this.field17523.rotateAngleZ += -var18;
+      this.field17524.rotateAngleZ += var19;
+      this.field17525.rotateAngleZ += -var19;
    }
 }

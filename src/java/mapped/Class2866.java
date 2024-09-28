@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
 
-public class Class2866<T extends Entity> extends Class2855<T> {
+public class Class2866<T extends Entity> extends AgeableModel<T> {
    private static String[] field17771;
    public ModelRenderer field17772 = new ModelRenderer(this, 0, 0);
    public ModelRenderer field17773;
@@ -35,7 +35,7 @@ public class Class2866<T extends Entity> extends Class2855<T> {
    }
 
    @Override
-   public Iterable<ModelRenderer> method11001() {
+   public Iterable<ModelRenderer> getHeadParts() {
       return ImmutableList.of(this.field17772);
    }
 

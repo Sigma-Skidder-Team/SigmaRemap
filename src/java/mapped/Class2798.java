@@ -21,20 +21,20 @@ public class Class2798<T extends MobEntity & Class1022> extends BipedModel<T> {
          this.bipedRightArm.addBox(-1.0F, -2.0F, -1.0F, 2.0F, 12.0F, 2.0F, var1);
          this.bipedRightArm.setRotationPoint(-5.0F, 2.0F, 0.0F);
          this.bipedLeftArm = new ModelRenderer(this, 40, 16);
-         this.bipedLeftArm.field31038 = true;
+         this.bipedLeftArm.mirror = true;
          this.bipedLeftArm.addBox(-1.0F, -2.0F, -1.0F, 2.0F, 12.0F, 2.0F, var1);
          this.bipedLeftArm.setRotationPoint(5.0F, 2.0F, 0.0F);
          this.bipedRightLeg = new ModelRenderer(this, 0, 16);
          this.bipedRightLeg.addBox(-1.0F, 0.0F, -1.0F, 2.0F, 12.0F, 2.0F, var1);
          this.bipedRightLeg.setRotationPoint(-2.0F, 12.0F, 0.0F);
          this.bipedLeftLeg = new ModelRenderer(this, 0, 16);
-         this.bipedLeftLeg.field31038 = true;
+         this.bipedLeftLeg.mirror = true;
          this.bipedLeftLeg.addBox(-1.0F, 0.0F, -1.0F, 2.0F, 12.0F, 2.0F, var1);
          this.bipedLeftLeg.setRotationPoint(2.0F, 12.0F, 0.0F);
       }
    }
 
-   public void method10997(T var1, float var2, float var3, float var4) {
+   public void setLivingAnimations(T var1, float var2, float var3, float var4) {
       this.rightArmPose = ArmPose.EMPTY;
       this.leftArmPose = ArmPose.EMPTY;
       ItemStack var7 = var1.getHeldItem(Hand.MAIN_HAND);
@@ -46,24 +46,24 @@ public class Class2798<T extends MobEntity & Class1022> extends BipedModel<T> {
          }
       }
 
-      super.method10997((T)var1, var2, var3, var4);
+      super.setLivingAnimations((T)var1, var2, var3, var4);
    }
 
    public void setRotationAngles(T var1, float var2, float var3, float var4, float var5, float var6) {
       super.setRotationAngles((T)var1, var2, var3, var4, var5, var6);
       ItemStack var9 = var1.getHeldItemMainhand();
       if (var1.method4307() && (var9.isEmpty() || var9.getItem() != Items.BOW)) {
-         float var10 = MathHelper.sin(this.field17600 * (float) Math.PI);
-         float var11 = MathHelper.sin((1.0F - (1.0F - this.field17600) * (1.0F - this.field17600)) * (float) Math.PI);
-         this.bipedRightArm.field31037 = 0.0F;
-         this.bipedLeftArm.field31037 = 0.0F;
+         float var10 = MathHelper.sin(this.swingProgress * (float) Math.PI);
+         float var11 = MathHelper.sin((1.0F - (1.0F - this.swingProgress) * (1.0F - this.swingProgress)) * (float) Math.PI);
+         this.bipedRightArm.rotateAngleZ = 0.0F;
+         this.bipedLeftArm.rotateAngleZ = 0.0F;
          this.bipedRightArm.rotateAngleY = -(0.1F - var10 * 0.6F);
          this.bipedLeftArm.rotateAngleY = 0.1F - var10 * 0.6F;
          this.bipedRightArm.rotateAngleX = (float) (-Math.PI / 2);
          this.bipedLeftArm.rotateAngleX = (float) (-Math.PI / 2);
          this.bipedRightArm.rotateAngleX -= var10 * 1.2F - var11 * 0.4F;
          this.bipedLeftArm.rotateAngleX -= var10 * 1.2F - var11 * 0.4F;
-         ModelHelper.method27108(this.bipedRightArm, this.bipedLeftArm, var4);
+         ModelHelper.func_239101_a_(this.bipedRightArm, this.bipedLeftArm, var4);
       }
    }
 

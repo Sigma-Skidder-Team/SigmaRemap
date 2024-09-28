@@ -39,7 +39,7 @@ public class BipedArmorLayer<T extends LivingEntity, M extends BipedModel<T>, A 
                var6 = this.method850((T)var3, var9, var4, (A)var6);
             }
 
-            this.method825().method11008(var6);
+            this.method825().setModelAttributes(var6);
             this.method844((A)var6, var4);
             this.method848(var4);
             boolean var11 = var9.method32159();
@@ -62,7 +62,7 @@ public class BipedArmorLayer<T extends LivingEntity, M extends BipedModel<T>, A 
       switch (Class8875.field40095[var2.ordinal()]) {
          case 1:
             var1.bipedHead.showModel = true;
-            var1.field17433.showModel = true;
+            var1.bipedHeadwear.showModel = true;
             break;
          case 2:
             var1.bipedBody.showModel = true;

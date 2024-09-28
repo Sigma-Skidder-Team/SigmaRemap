@@ -15,8 +15,8 @@ public class Class258 extends Class219<Class1074, Class2856<Class1074>> {
       ItemStack var13 = var4.method4990();
       if (var13.getItem() instanceof Class3275) {
          Class3275 var14 = (Class3275)var13.getItem();
-         this.method825().method11027(this.field918);
-         this.field918.method10997(var4, var5, var6, var7);
+         this.method825().copyModelAttributesTo(this.field918);
+         this.field918.setLivingAnimations(var4, var5, var6, var7);
          this.field918.setRotationAngles(var4, var5, var6, var8, var9, var10);
          float var15;
          float var16;

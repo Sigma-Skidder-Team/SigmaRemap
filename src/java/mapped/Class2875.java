@@ -28,16 +28,16 @@ public class Class2875 extends Class2827<Class1007> {
    private float field17818;
 
    public Class2875() {
-      this.field17604 = 256;
-      this.field17605 = 256;
+      this.textureWidth = 256;
+      this.textureHeight = 256;
       float var3 = -16.0F;
       this.field17797 = new ModelRenderer(this);
       this.field17797.method22672("upperlip", -6.0F, -1.0F, -24.0F, 12, 5, 16, 0.0F, 176, 44);
       this.field17797.method22672("upperhead", -8.0F, -8.0F, -10.0F, 16, 16, 16, 0.0F, 112, 30);
-      this.field17797.field31038 = true;
+      this.field17797.mirror = true;
       this.field17797.method22672("scale", -5.0F, -12.0F, -4.0F, 2, 4, 6, 0.0F, 0, 0);
       this.field17797.method22672("nostril", -5.0F, -3.0F, -22.0F, 2, 2, 4, 0.0F, 112, 0);
-      this.field17797.field31038 = false;
+      this.field17797.mirror = false;
       this.field17797.method22672("scale", 3.0F, -12.0F, -4.0F, 2, 4, 6, 0.0F, 0, 0);
       this.field17797.method22672("nostril", 3.0F, -3.0F, -22.0F, 2, 2, 4, 0.0F, 112, 0);
       this.field17799 = new ModelRenderer(this);
@@ -54,12 +54,12 @@ public class Class2875 extends Class2827<Class1007> {
       this.field17800.method22672("scale", -1.0F, -6.0F, 10.0F, 2, 6, 12, 0.0F, 220, 53);
       this.field17800.method22672("scale", -1.0F, -6.0F, 30.0F, 2, 6, 12, 0.0F, 220, 53);
       this.field17801 = new ModelRenderer(this);
-      this.field17801.field31038 = true;
+      this.field17801.mirror = true;
       this.field17801.setRotationPoint(12.0F, 5.0F, 2.0F);
       this.field17801.method22672("bone", 0.0F, -4.0F, -4.0F, 56, 8, 8, 0.0F, 112, 88);
       this.field17801.method22672("skin", 0.0F, 0.0F, 2.0F, 56, 0, 56, 0.0F, -56, 88);
       this.field17802 = new ModelRenderer(this);
-      this.field17802.field31038 = true;
+      this.field17802.mirror = true;
       this.field17802.setRotationPoint(56.0F, 0.0F, 0.0F);
       this.field17802.method22672("bone", 0.0F, -2.0F, -2.0F, 56, 4, 4, 0.0F, 112, 136);
       this.field17802.method22672("skin", 0.0F, 0.0F, 2.0F, 56, 0, 56, 0.0F, -56, 144);
@@ -119,7 +119,7 @@ public class Class2875 extends Class2827<Class1007> {
       this.field17815.method22670(this.field17816);
    }
 
-   public void method10997(Class1007 var1, float var2, float var3, float var4) {
+   public void setLivingAnimations(Class1007 var1, float var2, float var3, float var4) {
       this.field17817 = var1;
       this.field17818 = var4;
    }
@@ -150,7 +150,7 @@ public class Class2875 extends Class2827<Class1007> {
          float var23 = (float)Math.cos((double)((float)var21 * 0.45F + var20)) * 0.15F;
          this.field17798.rotateAngleY = MathHelper.method37829(var22[0] - var17[0]) * (float) (Math.PI / 180.0) * 1.5F;
          this.field17798.rotateAngleX = var23 + this.field17817.method4333(var21, var17, var22) * (float) (Math.PI / 180.0) * 1.5F * 5.0F;
-         this.field17798.field31037 = -MathHelper.method37829(var22[0] - (double)var19) * (float) (Math.PI / 180.0) * 1.5F;
+         this.field17798.rotateAngleZ = -MathHelper.method37829(var22[0] - (double)var19) * (float) (Math.PI / 180.0) * 1.5F;
          this.field17798.rotationPointY = var14;
          this.field17798.rotationPointZ = var15;
          this.field17798.rotationPointX = var13;
@@ -166,23 +166,23 @@ public class Class2875 extends Class2827<Class1007> {
       double[] var31 = this.field17817.method4317(0, this.field17818);
       this.field17797.rotateAngleY = MathHelper.method37829(var31[0] - var17[0]) * (float) (Math.PI / 180.0);
       this.field17797.rotateAngleX = MathHelper.method37829((double)this.field17817.method4333(6, var17, var31)) * (float) (Math.PI / 180.0) * 1.5F * 5.0F;
-      this.field17797.field31037 = -MathHelper.method37829(var31[0] - (double)var19) * (float) (Math.PI / 180.0);
+      this.field17797.rotateAngleZ = -MathHelper.method37829(var31[0] - (double)var19) * (float) (Math.PI / 180.0);
       this.field17797.render(var1, var2, var3, var4);
       var1.push();
       var1.translate(0.0, 1.0, 0.0);
       var1.rotate(Vector3f.ZP.rotationDegrees(-var18 * 1.5F));
       var1.translate(0.0, -1.0, 0.0);
-      this.field17800.field31037 = 0.0F;
+      this.field17800.rotateAngleZ = 0.0F;
       this.field17800.render(var1, var2, var3, var4);
       float var33 = var11 * (float) (Math.PI * 2);
       this.field17801.rotateAngleX = 0.125F - (float)Math.cos((double)var33) * 0.2F;
       this.field17801.rotateAngleY = -0.25F;
-      this.field17801.field31037 = -((float)(Math.sin((double)var33) + 0.125)) * 0.8F;
-      this.field17802.field31037 = (float)(Math.sin((double)(var33 + 2.0F)) + 0.5) * 0.75F;
+      this.field17801.rotateAngleZ = -((float)(Math.sin((double)var33) + 0.125)) * 0.8F;
+      this.field17802.rotateAngleZ = (float)(Math.sin((double)(var33 + 2.0F)) + 0.5) * 0.75F;
       this.field17809.rotateAngleX = this.field17801.rotateAngleX;
       this.field17809.rotateAngleY = -this.field17801.rotateAngleY;
-      this.field17809.field31037 = -this.field17801.field31037;
-      this.field17810.field31037 = -this.field17802.field31037;
+      this.field17809.rotateAngleZ = -this.field17801.rotateAngleZ;
+      this.field17810.rotateAngleZ = -this.field17802.rotateAngleZ;
       this.method11192(
          var1, var2, var3, var4, var12, this.field17801, this.field17803, this.field17804, this.field17805, this.field17806, this.field17807, this.field17808
       );
@@ -202,7 +202,7 @@ public class Class2875 extends Class2827<Class1007> {
          var34 = (float)((double)var34 + Math.sin((double)((float)var24 * 0.45F + var20)) * 0.05F);
          this.field17798.rotateAngleY = (MathHelper.method37829(var31[0] - var17[0]) * 1.5F + 180.0F) * (float) (Math.PI / 180.0);
          this.field17798.rotateAngleX = var34 + (float)(var31[1] - var17[1]) * (float) (Math.PI / 180.0) * 1.5F * 5.0F;
-         this.field17798.field31037 = MathHelper.method37829(var31[0] - (double)var19) * (float) (Math.PI / 180.0) * 1.5F;
+         this.field17798.rotateAngleZ = MathHelper.method37829(var31[0] - (double)var19) * (float) (Math.PI / 180.0) * 1.5F;
          this.field17798.rotationPointY = var14;
          this.field17798.rotationPointZ = var15;
          this.field17798.rotationPointX = var13;

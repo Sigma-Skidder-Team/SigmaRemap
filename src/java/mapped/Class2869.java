@@ -14,8 +14,8 @@ public class Class2869<T extends Class1019> extends Class2866<T> {
       this.field17773.setRotationPoint(0.0F, 5.0F, 2.0F);
    }
 
-   public void method10997(T var1, float var2, float var3, float var4) {
-      super.method10997((T)var1, var2, var3, var4);
+   public void setLivingAnimations(T var1, float var2, float var3, float var4) {
+      super.setLivingAnimations((T)var1, var2, var3, var4);
       this.field17772.rotationPointY = 6.0F + var1.method4513(var4) * 9.0F;
       this.field17784 = var1.method4514(var4);
    }

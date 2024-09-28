@@ -29,8 +29,8 @@ public class Class2804<T extends Entity> extends Class2803<T> {
       }
 
       var9 = 1.0F - var9 * var9 * var9;
-      this.field17458.field31037 = (float) Math.PI - var9 * 0.35F * (float) Math.PI;
-      this.field17459.field31037 = (float) Math.PI + var9 * 0.35F * (float) Math.PI;
+      this.field17458.rotateAngleZ = (float) Math.PI - var9 * 0.35F * (float) Math.PI;
+      this.field17459.rotateAngleZ = (float) Math.PI + var9 * 0.35F * (float) Math.PI;
       this.field17459.rotateAngleY = (float) Math.PI;
       float var10 = (var2 + MathHelper.sin(var2 * 2.7F)) * 0.6F * 12.0F;
       this.field17458.rotationPointY = 24.0F - var10;

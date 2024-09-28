@@ -16,8 +16,8 @@ public class Class2888<T extends Class1070> extends Class2803<T> {
    private final ModelRenderer field17900;
 
    public Class2888() {
-      this.field17604 = 64;
-      this.field17605 = 128;
+      this.textureWidth = 64;
+      this.textureHeight = 128;
       this.field17892 = new ModelRenderer(this, 0, 32);
       this.field17892.setRotationPoint(-4.0F, 8.0F, 0.0F);
       this.field17892.addBox(-2.0F, 0.0F, -2.0F, 4.0F, 16.0F, 4.0F, 0.0F);
@@ -70,42 +70,42 @@ public class Class2888<T extends Class1070> extends Class2803<T> {
       }
 
       float var9 = 1.5F;
-      this.field17894.field31037 = 0.1F * MathHelper.sin(var2 * 1.5F) * 4.0F * var3;
+      this.field17894.rotateAngleZ = 0.1F * MathHelper.sin(var2 * 1.5F) * 4.0F * var3;
       this.field17894.rotationPointY = 2.0F;
       this.field17894.rotationPointY = this.field17894.rotationPointY - 2.0F * MathHelper.cos(var2 * 1.5F) * 2.0F * var3;
       this.field17893.rotateAngleX = MathHelper.sin(var2 * 1.5F * 0.5F) * 2.0F * var3;
       this.field17892.rotateAngleX = MathHelper.sin(var2 * 1.5F * 0.5F + (float) Math.PI) * 2.0F * var3;
-      this.field17893.field31037 = (float) (Math.PI / 18) * MathHelper.cos(var2 * 1.5F * 0.5F) * var3;
-      this.field17892.field31037 = (float) (Math.PI / 18) * MathHelper.cos(var2 * 1.5F * 0.5F + (float) Math.PI) * var3;
+      this.field17893.rotateAngleZ = (float) (Math.PI / 18) * MathHelper.cos(var2 * 1.5F * 0.5F) * var3;
+      this.field17892.rotateAngleZ = (float) (Math.PI / 18) * MathHelper.cos(var2 * 1.5F * 0.5F + (float) Math.PI) * var3;
       this.field17893.rotationPointY = 8.0F + 2.0F * MathHelper.sin(var2 * 1.5F * 0.5F + (float) Math.PI) * 2.0F * var3;
       this.field17892.rotationPointY = 8.0F + 2.0F * MathHelper.sin(var2 * 1.5F * 0.5F) * 2.0F * var3;
-      this.field17895.field31037 = -1.2217305F;
-      this.field17896.field31037 = -1.134464F;
-      this.field17897.field31037 = -0.87266463F;
-      this.field17898.field31037 = 0.87266463F;
-      this.field17899.field31037 = 1.134464F;
-      this.field17900.field31037 = 1.2217305F;
+      this.field17895.rotateAngleZ = -1.2217305F;
+      this.field17896.rotateAngleZ = -1.134464F;
+      this.field17897.rotateAngleZ = -0.87266463F;
+      this.field17898.rotateAngleZ = 0.87266463F;
+      this.field17899.rotateAngleZ = 1.134464F;
+      this.field17900.rotateAngleZ = 1.2217305F;
       float var10 = MathHelper.cos(var2 * 1.5F + (float) Math.PI) * var3;
-      this.field17895.field31037 += var10 * 1.3F;
-      this.field17896.field31037 += var10 * 1.2F;
-      this.field17897.field31037 += var10 * 0.6F;
-      this.field17898.field31037 += var10 * 0.6F;
-      this.field17899.field31037 += var10 * 1.2F;
-      this.field17900.field31037 += var10 * 1.3F;
+      this.field17895.rotateAngleZ += var10 * 1.3F;
+      this.field17896.rotateAngleZ += var10 * 1.2F;
+      this.field17897.rotateAngleZ += var10 * 0.6F;
+      this.field17898.rotateAngleZ += var10 * 0.6F;
+      this.field17899.rotateAngleZ += var10 * 1.2F;
+      this.field17900.rotateAngleZ += var10 * 1.3F;
       float var11 = 1.0F;
       float var12 = 1.0F;
-      this.field17895.field31037 = this.field17895.field31037 + 0.05F * MathHelper.sin(var4 * 1.0F * -0.4F);
-      this.field17896.field31037 = this.field17896.field31037 + 0.1F * MathHelper.sin(var4 * 1.0F * 0.2F);
-      this.field17897.field31037 = this.field17897.field31037 + 0.1F * MathHelper.sin(var4 * 1.0F * 0.4F);
-      this.field17898.field31037 = this.field17898.field31037 + 0.1F * MathHelper.sin(var4 * 1.0F * 0.4F);
-      this.field17899.field31037 = this.field17899.field31037 + 0.1F * MathHelper.sin(var4 * 1.0F * 0.2F);
-      this.field17900.field31037 = this.field17900.field31037 + 0.05F * MathHelper.sin(var4 * 1.0F * -0.4F);
+      this.field17895.rotateAngleZ = this.field17895.rotateAngleZ + 0.05F * MathHelper.sin(var4 * 1.0F * -0.4F);
+      this.field17896.rotateAngleZ = this.field17896.rotateAngleZ + 0.1F * MathHelper.sin(var4 * 1.0F * 0.2F);
+      this.field17897.rotateAngleZ = this.field17897.rotateAngleZ + 0.1F * MathHelper.sin(var4 * 1.0F * 0.4F);
+      this.field17898.rotateAngleZ = this.field17898.rotateAngleZ + 0.1F * MathHelper.sin(var4 * 1.0F * 0.4F);
+      this.field17899.rotateAngleZ = this.field17899.rotateAngleZ + 0.1F * MathHelper.sin(var4 * 1.0F * 0.2F);
+      this.field17900.rotateAngleZ = this.field17900.rotateAngleZ + 0.05F * MathHelper.sin(var4 * 1.0F * -0.4F);
    }
 
    public void method11205(ModelRenderer var1, float var2, float var3, float var4) {
       var1.rotateAngleX = var2;
       var1.rotateAngleY = var3;
-      var1.field31037 = var4;
+      var1.rotateAngleZ = var4;
    }
 
    @Override

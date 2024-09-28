@@ -8,8 +8,8 @@ import java.util.function.Function;
 
 public abstract class Class2828 implements Consumer<ModelRenderer> {
    public final Function<ResourceLocation, RenderType> field17603;
-   public int field17604 = 64;
-   public int field17605 = 32;
+   public int textureWidth = 64;
+   public int textureHeight = 32;
 
    public Class2828(Function<ResourceLocation, RenderType> var1) {
       this.field17603 = var1;

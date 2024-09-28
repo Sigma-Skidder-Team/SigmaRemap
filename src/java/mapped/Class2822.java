@@ -15,8 +15,8 @@ public class Class2822<T extends Entity> extends Class2803<T> {
    private final ModelRenderer field17585;
 
    public Class2822() {
-      this.field17604 = 32;
-      this.field17605 = 32;
+      this.textureWidth = 32;
+      this.textureHeight = 32;
       byte var3 = 22;
       this.field17579 = new ModelRenderer(this, 0, 0);
       this.field17579.method22673(-1.0F, -2.0F, 0.0F, 2.0F, 4.0F, 7.0F);
@@ -30,11 +30,11 @@ public class Class2822<T extends Entity> extends Class2803<T> {
       this.field17583 = new ModelRenderer(this, 22, 1);
       this.field17583.method22673(-2.0F, 0.0F, -1.0F, 2.0F, 0.0F, 2.0F);
       this.field17583.setRotationPoint(-1.0F, 23.0F, 0.0F);
-      this.field17583.field31037 = (float) (-Math.PI / 4);
+      this.field17583.rotateAngleZ = (float) (-Math.PI / 4);
       this.field17584 = new ModelRenderer(this, 22, 4);
       this.field17584.method22673(0.0F, 0.0F, -1.0F, 2.0F, 0.0F, 2.0F);
       this.field17584.setRotationPoint(1.0F, 23.0F, 0.0F);
-      this.field17584.field31037 = (float) (Math.PI / 4);
+      this.field17584.rotateAngleZ = (float) (Math.PI / 4);
       this.field17585 = new ModelRenderer(this, 22, 3);
       this.field17585.method22673(0.0F, -2.0F, 0.0F, 0.0F, 4.0F, 4.0F);
       this.field17585.setRotationPoint(0.0F, 22.0F, 7.0F);

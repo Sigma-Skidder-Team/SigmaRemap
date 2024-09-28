@@ -16,8 +16,8 @@ public class Class2854<T extends Class1066> extends Class2827<T> {
    private final ModelRenderer field17684;
 
    public Class2854(float var1) {
-      this.field17604 = 128;
-      this.field17605 = 64;
+      this.textureWidth = 128;
+      this.textureHeight = 64;
       this.field17677 = new ModelRenderer(this, 0, 0);
       this.field17677.addBox(-2.0F, -14.0F, -10.0F, 4.0F, 4.0F, 9.0F, var1);
       this.field17677.setRotationPoint(0.0F, 7.0F, -6.0F);

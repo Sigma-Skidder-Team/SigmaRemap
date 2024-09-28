@@ -15,8 +15,8 @@ public class Class2819 extends Class2803<Class1029> {
    private final ModelRenderer field17564;
 
    public Class2819() {
-      this.field17604 = 128;
-      this.field17605 = 128;
+      this.textureWidth = 128;
+      this.textureHeight = 128;
 
       this.field17564 = new ModelRenderer(this);
       this.field17564.setRotationPoint(0.0F, -7.0F, -1.5F);
@@ -31,7 +31,7 @@ public class Class2819 extends Class2803<Class1029> {
       var5.rotateAngleX = 1.0995574F;
       this.field17557.method22670(var5);
       ModelRenderer var6 = new ModelRenderer(this);
-      var6.field31038 = true;
+      var6.mirror = true;
       var6.setRotationPoint(8.0F, -14.0F, -8.0F);
       var6.method22671(74, 55).addBox(0.0F, -14.0F, -2.0F, 2.0F, 14.0F, 4.0F, 0.0F);
       var6.rotateAngleX = 1.0995574F;
@@ -49,14 +49,14 @@ public class Class2819 extends Class2803<Class1029> {
       this.field17560.addBox(-4.0F, 0.0F, -4.0F, 8.0F, 37.0F, 8.0F, 0.0F);
       this.field17560.setRotationPoint(-8.0F, -13.0F, 18.0F);
       this.field17561 = new ModelRenderer(this, 96, 0);
-      this.field17561.field31038 = true;
+      this.field17561.mirror = true;
       this.field17561.addBox(-4.0F, 0.0F, -4.0F, 8.0F, 37.0F, 8.0F, 0.0F);
       this.field17561.setRotationPoint(8.0F, -13.0F, 18.0F);
       this.field17562 = new ModelRenderer(this, 64, 0);
       this.field17562.addBox(-4.0F, 0.0F, -4.0F, 8.0F, 37.0F, 8.0F, 0.0F);
       this.field17562.setRotationPoint(-8.0F, -13.0F, -5.0F);
       this.field17563 = new ModelRenderer(this, 64, 0);
-      this.field17563.field31038 = true;
+      this.field17563.mirror = true;
       this.field17563.addBox(-4.0F, 0.0F, -4.0F, 8.0F, 37.0F, 8.0F, 0.0F);
       this.field17563.setRotationPoint(8.0F, -13.0F, -5.0F);
    }
@@ -77,8 +77,8 @@ public class Class2819 extends Class2803<Class1029> {
       this.field17563.rotateAngleX = MathHelper.cos(var2 * 0.6662F) * var9;
    }
 
-   public void method10997(Class1029 var1, float var2, float var3, float var4) {
-      super.method10997(var1, var2, var3, var4);
+   public void setLivingAnimations(Class1029 var1, float var2, float var3, float var4) {
+      super.setLivingAnimations(var1, var2, var3, var4);
       int var7 = var1.method4586();
       int var8 = var1.method4587();
 

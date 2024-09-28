@@ -21,8 +21,8 @@ public class Class2812<T extends Entity> extends Class2803<T> {
    private final ModelRenderer field17513;
 
    public Class2812() {
-      this.field17604 = 32;
-      this.field17605 = 32;
+      this.textureWidth = 32;
+      this.textureHeight = 32;
       byte var3 = 22;
       this.field17501 = new ModelRenderer(this, 0, 0);
       this.field17501.method22673(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F);
@@ -94,7 +94,7 @@ public class Class2812<T extends Entity> extends Class2803<T> {
 
    @Override
    public void setRotationAngles(T var1, float var2, float var3, float var4, float var5, float var6) {
-      this.field17502.field31037 = -0.2F + 0.4F * MathHelper.sin(var4 * 0.2F);
-      this.field17503.field31037 = 0.2F - 0.4F * MathHelper.sin(var4 * 0.2F);
+      this.field17502.rotateAngleZ = -0.2F + 0.4F * MathHelper.sin(var4 * 0.2F);
+      this.field17503.rotateAngleZ = 0.2F - 0.4F * MathHelper.sin(var4 * 0.2F);
    }
 }

@@ -27,9 +27,9 @@ public class Class2857<T extends Class1066> extends Class2856<T> {
       var5.method22673(-1.0F, -7.0F, 0.0F, 2.0F, 7.0F, 1.0F);
       var5.setRotationPoint(-1.25F, -10.0F, 4.0F);
       var4.rotateAngleX = (float) (Math.PI / 12);
-      var4.field31037 = (float) (Math.PI / 12);
+      var4.rotateAngleZ = (float) (Math.PI / 12);
       var5.rotateAngleX = (float) (Math.PI / 12);
-      var5.field31037 = (float) (-Math.PI / 12);
+      var5.rotateAngleZ = (float) (-Math.PI / 12);
       var1.method22670(var4);
       var1.method22670(var5);
    }
