@@ -65,22 +65,22 @@ public class LoginAndOutScreen extends Screen {
             ResourceRegistry.JelloLightFont25
          )
       );
-      this.field21091.method13288(false);
+      this.field21091.setEnabled(false);
       this.field21088.method13036(var1 -> {
          this.field21092 = true;
-         this.field21091.method13288(true);
+         this.field21091.setEnabled(true);
       });
       this.field21091.doThis((var0, var1) -> Minecraft.getInstance().displayGuiScreen(new VanillaMainMenuScreen()));
    }
 
    public void method13422() {
-      this.field21088.method13288(false);
-      this.field21089.method13288(true);
+      this.field21088.setEnabled(false);
+      this.field21089.setEnabled(true);
    }
 
    public void method13423() {
-      this.field21088.method13288(true);
-      this.field21089.method13288(false);
+      this.field21088.setEnabled(true);
+      this.field21089.setEnabled(false);
    }
 
    public void method13424(String var1, String var2) {
@@ -140,7 +140,7 @@ public class LoginAndOutScreen extends Screen {
       }
 
       if (this.field21092 && this.field21093.calcPercent() == 1.0F) {
-         this.field21088.method13288(false);
+         this.field21088.setEnabled(false);
       }
 
       if (this.field21092) {

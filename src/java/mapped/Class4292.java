@@ -69,7 +69,7 @@ public class Class4292 extends Class4278 implements Class4293 {
       float var7 = (float)this.getHeightA();
       float var8 = var6 / var5;
       boolean var9 = var8 < 1.0F && var5 > 0.0F && this.field20794 >= 0.0F;
-      this.method13288(var9);
+      this.setEnabled(var9);
       this.method13296(var9);
    }
 

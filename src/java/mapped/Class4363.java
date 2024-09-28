@@ -55,7 +55,7 @@ public class Class4363 extends Class4247 {
    public void method13643(List<String> var1, int var2) {
       Class4362 var5 = new Class4362(this, "sub" + var2, this.widthA + 10, this.getHeightA() * (var2 + 1), 200, this.getHeightA(), var1, 0);
       this.field21331.put(var2, var5);
-      var5.method13288(false);
+      var5.setEnabled(false);
       var5.method13036(var2x -> {
          this.method13656(var2);
          this.method13658(false);
@@ -183,11 +183,11 @@ public class Class4363 extends Class4247 {
          && this.field21330.calcPercent() == 1.0F
          && var1 - this.method13271() < this.getWidthA()) {
          for (Entry var9 : this.field21331.entrySet()) {
-            ((Class4362)var9.getValue()).method13288((Integer)var9.getKey() == var5);
+            ((Class4362)var9.getValue()).setEnabled((Integer)var9.getKey() == var5);
          }
       } else if (!this.method13114(var1, var2) || this.field21330.getDirection() == Direction.BACKWARDS) {
          for (Entry var7 : this.field21331.entrySet()) {
-            ((Class4362)var7.getValue()).method13288(false);
+            ((Class4362)var7.getValue()).setEnabled(false);
          }
       }
    }

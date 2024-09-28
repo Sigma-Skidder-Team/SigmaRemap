@@ -44,7 +44,7 @@ public class ItemUseContext {
    }
 
    public Vector3d method18355() {
-      return this.field25723.method31419();
+      return this.field25723.getVec();
    }
 
    public boolean method18356() {

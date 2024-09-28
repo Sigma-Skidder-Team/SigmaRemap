@@ -377,9 +377,9 @@ public class BlockUtil {
    public static float[] method34565() {
       BlockRayTraceResult var2 = method34566(MovementUtils.method37086() - 270.0F);
       if (var2.getType() != RayTraceResult.Type.MISS) {
-         double var3 = var2.method31419().x - (double)var2.getPos().getX();
-         double var5 = var2.method31419().z - (double)var2.getPos().getZ();
-         double var7 = var2.method31419().y - (double)var2.getPos().getY();
+         double var3 = var2.getVec().x - (double)var2.getPos().getX();
+         double var5 = var2.getVec().z - (double)var2.getPos().getZ();
+         double var7 = var2.getVec().y - (double)var2.getPos().getY();
          double var9 = (double)var2.getPos().getX() - Minecraft.getInstance().player.getPosX() + var3;
          double var11 = (double)var2.getPos().getY()
             - (Minecraft.getInstance().player.getPosY() + (double) Minecraft.getInstance().player.getEyeHeight())

@@ -9,7 +9,7 @@ import com.mentalfrostbyte.jello.util.animation.Direction;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
-public class Class4376 extends Class4235 implements Class4238 {
+public class Class4376 extends PNGIconButton implements Class4238 {
    private static String[] field21381;
    public boolean field21382 = false;
    public Animation field21383 = new Animation(90, 90, Direction.BACKWARDS);

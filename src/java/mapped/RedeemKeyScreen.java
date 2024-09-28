@@ -37,7 +37,7 @@ public class RedeemKeyScreen extends IconPanel {
       );
       this.addToList(this.field21138 = new UIInput(this, "captcha", 195, 290, 75, 35, UIInput.field20742, "", "Captcha"));
       this.field21138.setFont(ResourceRegistry.JelloLightFont18);
-      this.field21138.method13288(false);
+      this.field21138.setEnabled(false);
       var10.doThis((var2x, var3x) -> new Thread(() -> {
             Class9507 var4x = Client.getInstance().getNetworkManager().method30452();
             if (var4x != null) {
@@ -69,7 +69,7 @@ public class RedeemKeyScreen extends IconPanel {
       this.method13225();
       Class9507 var5 = Client.getInstance().getNetworkManager().method30452();
       if (var5 != null) {
-         this.field21138.method13288(var5.method36702());
+         this.field21138.setEnabled(var5.method36702());
          if (var5.method36701() != null) {
             RenderUtil.startScissor((float)(this.xA + 295), (float)(this.yA + 280), 190.0F, 50.0F);
             RenderUtil.drawImage(

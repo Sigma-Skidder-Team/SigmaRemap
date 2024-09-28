@@ -290,7 +290,7 @@ public class Class4343 extends Class4339 implements Class4342 {
             this.field21224.put(var10, var12);
          }
 
-         var18.method16727((var1, var2, var3x) -> this.field21224.get(var2).method13288(var3x));
+         var18.method16727((var1, var2, var3x) -> this.field21224.get(var2).setEnabled(var3x));
          var18.method16724();
       }
 

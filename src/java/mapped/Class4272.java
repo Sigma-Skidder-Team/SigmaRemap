@@ -48,7 +48,7 @@ public class Class4272 extends Class4247 {
       this.addToList(this.field20705 = new Class4339(this, "defaultProfiles", 0, 40, var5, var6 - 40));
       field20706 = new Class8233(
          var2x -> {
-            this.field20707.method13288(false);
+            this.field20707.setEnabled(false);
             ConfigButtonOnClickGui var5x = (ConfigButtonOnClickGui)this.getIcoPanel();
 
             for (String var7 : var2x) {
@@ -79,8 +79,8 @@ public class Class4272 extends Class4247 {
    }
 
    public void method13118(boolean var1) {
-      this.field20705.method13288(!var1);
-      this.field20707.method13288(var1);
+      this.field20705.setEnabled(!var1);
+      this.field20707.setEnabled(var1);
    }
 
    public void method13119(boolean var1) {

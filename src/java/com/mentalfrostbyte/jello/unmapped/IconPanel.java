@@ -753,7 +753,7 @@ public class IconPanel implements IGuiEventListener {
         return this.field20903;
     }
 
-    public void method13288(boolean var1) {
+    public void setEnabled(boolean var1) {
         this.field20903 = var1;
     }
 

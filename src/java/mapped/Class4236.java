@@ -10,7 +10,7 @@ import com.mentalfrostbyte.jello.util.animation.Direction;
 import net.minecraft.client.Minecraft;
 import org.lwjgl.opengl.GL11;
 
-public class Class4236 extends Class4235 implements Class4238 {
+public class Class4236 extends PNGIconButton implements Class4238 {
    private static String[] field20573;
    public float field20576;
    public boolean field20577 = false;

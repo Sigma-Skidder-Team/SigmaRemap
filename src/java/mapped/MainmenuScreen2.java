@@ -198,7 +198,7 @@ public class MainmenuScreen2 extends IconPanel {
 
    @Override
    public void method13028(int var1, int var2) {
-      this.field21128.method13288(!Client.getInstance().getNetworkManager().isPremium());
+      this.field21128.setEnabled(!Client.getInstance().getNetworkManager().isPremium());
       byte var5 = 30;
       byte var6 = 90;
       this.changelogButton.setXA(var6 + (!Client.getInstance().getNetworkManager().isPremium() ? 202 : 0));

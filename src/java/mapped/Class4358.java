@@ -141,7 +141,7 @@ public class Class4358 extends Class4247 {
       int var15 = var5.size() <= 0 ? 0 : 10;
 
       for (ButtonPanel var20 : var5.values()) {
-         var20.method13288(true);
+         var20.setEnabled(true);
          var20.setYA(var15);
          var15 += var20.getHeightA();
       }
@@ -151,19 +151,19 @@ public class Class4358 extends Class4247 {
       }
 
       for (ButtonPanel var21 : var6.values()) {
-         var21.method13288(true);
+         var21.setEnabled(true);
          var21.setYA(var15);
          var15 += var21.getHeightA();
       }
 
       for (ButtonPanel var22 : var7.values()) {
-         var22.method13288(true);
+         var22.setEnabled(true);
          var22.setYA(var15);
          var15 += var22.getHeightA();
       }
 
       for (ButtonPanel var23 : var8) {
-         var23.method13288(false);
+         var23.setEnabled(false);
       }
 
       super.method13028(var1, var2);

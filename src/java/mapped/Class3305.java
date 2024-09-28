@@ -46,7 +46,7 @@ public class Class3305 extends Item {
          if (var7.getType() != RayTraceResult.Type.BLOCK) {
             return Class6794.<ItemStack>method20698(var6);
          } else {
-            BoatEntity var16 = new BoatEntity(var1, var7.method31419().x, var7.method31419().y, var7.method31419().z);
+            BoatEntity var16 = new BoatEntity(var1, var7.getVec().x, var7.getVec().y, var7.getVec().z);
             var16.method4171(this.field18812);
             var16.rotationYaw = var2.rotationYaw;
             if (var1.hasNoCollisions(var16, var16.getBoundingBox().method19664(-0.1))) {

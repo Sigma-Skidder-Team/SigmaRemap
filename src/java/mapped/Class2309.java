@@ -130,9 +130,9 @@ public enum Class2309 {
             .rayTraceBlocks(new RayTraceContext(var13, var14, Class2271.field14774, Class1985.field12962, Projectiles.method16545().player));
          if (var18 != null && var18.getType() != RayTraceResult.Type.MISS) {
             this.field15831 = var18;
-            this.field15825 = this.field15831.method31419().x;
-            this.field15826 = this.field15831.method31419().y;
-            this.field15827 = this.field15831.method31419().z;
+            this.field15825 = this.field15831.getVec().x;
+            this.field15826 = this.field15831.getVec().y;
+            this.field15827 = this.field15831.getVec().z;
             var3.add(new Class9110(this.field15825, this.field15826, this.field15827));
             break;
          }

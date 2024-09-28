@@ -64,11 +64,11 @@ public class JelloClickGUI extends Screen {
 
       this.addToList(this.musicPlayer = new MusicPlayer(this, "musicPlayer"));
       this.musicPlayer.method13215(true);
-      Class4235 var9;
-      this.addToList(var9 = new Class4235(this, "more", this.getWidthA() - 69, this.getHeightA() - 55, 55, 41, ResourcesDecrypter.optionsPNG1));
+      PNGIconButton var9;
+      this.addToList(var9 = new PNGIconButton(this, "more", this.getWidthA() - 69, this.getHeightA() - 55, 55, 41, ResourcesDecrypter.optionsPNG1));
       var9.method13307().method19406(MultiUtilities.applyAlpha(ClientColors.LIGHT_GREYISH_BLUE.getColor, 0.3F));
       var9.method13300(false);
-      this.musicPlayer.method13288(field20951);
+      this.musicPlayer.setEnabled(field20951);
       var9.doThis((var1, var2) -> this.method13222(() -> {
             if (this.configButton != null && this.method13239(this.configButton)) {
                this.method13234(this.configButton);
@@ -92,7 +92,7 @@ public class JelloClickGUI extends Screen {
             var3.add(new MiniAlert(AlertType.HEADER, "Music", 40));
             var3.add(new MiniAlert(AlertType.FIRSTLINE, "Jello Music requires:", 20));
             if (!Client.getInstance().getMusicManager().method24334()) {
-               var3.add(new MiniAlert(AlertType.FIRSTLINE, "- Python 2.7.17", 30));
+               var3.add(new MiniAlert(AlertType.FIRSTLINE, "- Python 3.12.5", 30));
             }
 
             if (!Client.getInstance().getMusicManager().method24335()) {
@@ -103,11 +103,11 @@ public class JelloClickGUI extends Screen {
             this.method13233(this.field20950 = new AlertPanel(this, "music", true, "Dependencies.", var3.toArray(new MiniAlert[0])));
             this.field20950.method13036(var0 -> {
                if (!Client.getInstance().getMusicManager().method24334()) {
-                  Util.getOSType().method8181("https://www.python.org/ftp/python/2.7.17/python-2.7.17-macosx10.9.pkg");
+                  Util.getOSType().method8181("https://www.python.org/ftp/python/3.12.5/python-3.12.5-macos11.pkg");
                }
 
                if (!Client.getInstance().getMusicManager().method24335()) {
-                  Util.getOSType().method8181("https://www.microsoft.com/en-US/download/details.aspx?id=5555");
+                  Util.getOSType().method8181("https://www.microsoft.com/en-US/Download/confirmation.aspx?id=26999");
                }
             });
             this.field20950.method13604(var1 -> new Thread(() -> {
@@ -132,10 +132,10 @@ public class JelloClickGUI extends Screen {
 
    @Override
    public void method13028(int var1, int var2) {
-      this.musicPlayer.method13288(this.musicPlayer.getWidthA() < this.getWidthA() && this.musicPlayer.getHeightA() < this.getHeightA());
+      this.musicPlayer.setEnabled(this.musicPlayer.getWidthA() < this.getWidthA() && this.musicPlayer.getHeightA() < this.getHeightA());
       super.method13028(var1, var2);
       MultiUtilities.method17740(Math.min(1.0F, field20942.calcPercent() * 4.0F));
-      this.brainFreeze.method13288(Client.getInstance().getModuleManager().getModuleByClass(BrainFreeze.class).isEnabled());
+      this.brainFreeze.setEnabled(Client.getInstance().getModuleManager().getModuleByClass(BrainFreeze.class).isEnabled());
       if (this.configButton != null) {
          int var5 = var1 - this.configButton.method13271();
          int var6 = var2 - this.configButton.method13272();

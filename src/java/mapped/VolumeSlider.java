@@ -6,13 +6,13 @@ import com.mentalfrostbyte.jello.util.MultiUtilities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Class4374 extends Class4247 {
+public class VolumeSlider extends Class4247 {
    private static String[] field21371;
    private float field21372 = 1.0F;
    private boolean field21373 = false;
    private final List<Class6649> field21374 = new ArrayList<Class6649>();
 
-   public Class4374(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
+   public VolumeSlider(IconPanel var1, String var2, int var3, int var4, int var5, int var6) {
       super(var1, var2, var3, var4, var5, var6, false);
    }
 

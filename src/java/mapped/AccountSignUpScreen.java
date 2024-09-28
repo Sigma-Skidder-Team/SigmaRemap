@@ -60,7 +60,7 @@ public class AccountSignUpScreen extends Class4247 {
       this.passwordInputBox.method13155(true);
       this.addToList(this.captchaBox = new UIInput(this, "CaptchaBox", 228, var11 + 53 + 135, 80, var9, var12, "", "Captcha"));
       this.captchaBox.setFont(ResourceRegistry.JelloLightFont20);
-      this.captchaBox.method13288(false);
+      this.captchaBox.setEnabled(false);
       this.registerButton.doThis((var1x, var2x) -> this.method13126());
       this.loginButton.doThis((var1x, var2x) -> {
          LoginAndOutScreen var5x = (LoginAndOutScreen)this.getIcoPanel();
@@ -78,7 +78,7 @@ public class AccountSignUpScreen extends Class4247 {
       short var6 = 316;
       Class9507 var7 = Client.getInstance().getNetworkManager().method30452();
       if (var7 != null) {
-         this.captchaBox.method13288(var7.method36702());
+         this.captchaBox.setEnabled(var7.method36702());
          if (var7.method36702()) {
             RenderUtil.method11424(
                (float)(this.xA + var6), (float)(this.yA + var5), 114.0F, 40.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
@@ -99,7 +99,7 @@ public class AccountSignUpScreen extends Class4247 {
       new Thread(
             () -> {
                this.loadingBox.method13296(true);
-               this.registerButton.method13288(false);
+               this.registerButton.setEnabled(false);
                Class9507 var3 = Client.getInstance().getNetworkManager().method30452();
                if (var3 != null) {
                   var3.method36706(this.captchaBox.method13303());
@@ -113,7 +113,7 @@ public class AccountSignUpScreen extends Class4247 {
                var5.method13423();
 
                this.loadingBox.method13296(false);
-               this.registerButton.method13288(true);
+               this.registerButton.setEnabled(true);
             }
          )
          .start();

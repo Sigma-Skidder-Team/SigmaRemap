@@ -128,7 +128,7 @@ public class Class4366 extends Class4247 {
 
       for (IconPanel var7 : this.method13241()) {
          if (!var7.method13257().equals("dropdownButton")) {
-            var7.method13288(this.field21345);
+            var7.setEnabled(this.field21345);
          }
       }
 

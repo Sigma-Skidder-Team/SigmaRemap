@@ -3,19 +3,19 @@ package mapped;
 import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.music.MusicManager;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.unmapped.Class6972;
+import com.mentalfrostbyte.jello.unmapped.ThumbnailUtil;
 import com.mentalfrostbyte.jello.unmapped.YoutubeTrumbNail;
-import com.mentalfrostbyte.jello.unmapped.Class9133;
+import com.mentalfrostbyte.jello.unmapped.YoutubeThumbnail;
 
 import java.util.ArrayList;
 
-public class Class4301 extends Class4278 {
+public class SearchBoxButton extends Class4278 {
    public Class4339 field20840;
    public UIInput field20841;
-   private ArrayList<Class9133> field20842;
+   private ArrayList<YoutubeThumbnail> field20842;
    private MusicManager field20843 = Client.getInstance().getMusicManager();
 
-   public Class4301(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String var7) {
+   public SearchBoxButton(IconPanel var1, String var2, int var3, int var4, int var5, int var6, String var7) {
       super(var1, var2, var3, var4, var5, var6, ColorHelper.field27961, var7, false);
       this.addToList(this.field20840 = new Class4339(this, "albumView", 0, 0, var5, var6, ColorHelper.field27961, "View"));
       this.addToList(this.field20841 = new UIInput(this, "searchInput", 30, 14, var5 - 60, 70, UIInput.field20742, "", "Search..."));
@@ -33,11 +33,11 @@ public class Class4301 extends Class4278 {
          this.field20841.method13145(false);
          new Thread(
                () -> {
-                  this.field20842 = new ArrayList<Class9133>();
-                  YoutubeTrumbNail[] var3 = Class6972.method21516(this.field20841.method13303());
+                  this.field20842 = new ArrayList<YoutubeThumbnail>();
+                  YoutubeTrumbNail[] var3 = ThumbnailUtil.search(this.field20841.method13303());
 
                   for (YoutubeTrumbNail var7 : var3) {
-                     this.field20842.add(new Class9133(var7.field33683, var7.field33684, var7.field33685));
+                     this.field20842.add(new YoutubeThumbnail(var7.videoID, var7.field33684, var7.fullUrl));
                   }
 
                   this.method13222(
@@ -48,7 +48,7 @@ public class Class4301 extends Class4278 {
                         );
                         if (this.field20842 != null) {
                            for (int var3x = 0; var3x < this.field20842.size(); var3x++) {
-                              Class9133 var4 = this.field20842.get(var3x);
+                              YoutubeThumbnail var4 = this.field20842.get(var3x);
                               byte var5 = 80;
                               byte var6 = 10;
                               Class4286 var7x;

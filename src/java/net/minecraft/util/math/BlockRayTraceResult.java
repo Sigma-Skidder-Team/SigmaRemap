@@ -28,11 +28,11 @@ public class BlockRayTraceResult extends RayTraceResult {
    }
 
    public BlockRayTraceResult method31421(Direction var1) {
-      return new BlockRayTraceResult(this.field39320, this.field39316, var1, this.field39319, this.field39321);
+      return new BlockRayTraceResult(this.field39320, this.vec, var1, this.field39319, this.field39321);
    }
 
    public BlockRayTraceResult method31422(BlockPos var1) {
-      return new BlockRayTraceResult(this.field39320, this.field39316, this.field39318, var1, this.field39321);
+      return new BlockRayTraceResult(this.field39320, this.vec, this.field39318, var1, this.field39321);
    }
 
    public BlockPos getPos() {

@@ -171,7 +171,7 @@ public class Class4345 extends Class4339 {
             this.field21232.put(var11, var13);
          }
 
-         var16.method16727((var1, var2, var3x) -> this.field21232.get(var2).method13288(var3x));
+         var16.method16727((var1, var2, var3x) -> this.field21232.get(var2).setEnabled(var3x));
          var16.method16724();
       }
 

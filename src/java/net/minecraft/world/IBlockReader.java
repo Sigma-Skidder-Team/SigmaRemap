@@ -52,8 +52,8 @@ public interface IBlockReader {
             BlockRayTraceResult var10 = this.rayTraceBlocks(var7, var8, var2, var9, var5);
             VoxelShape var11 = var1x.method20747(var6, this, var2);
             BlockRayTraceResult var12 = var11.method19525(var7, var8, var2);
-            double var13 = var10 != null ? var1x.method20745().method11342(var10.method31419()) : Double.MAX_VALUE;
-            double var15 = var12 != null ? var1x.method20745().method11342(var12.method31419()) : Double.MAX_VALUE;
+            double var13 = var10 != null ? var1x.method20745().method11342(var10.getVec()) : Double.MAX_VALUE;
+            double var15 = var12 != null ? var1x.method20745().method11342(var12.getVec()) : Double.MAX_VALUE;
             return !(var13 <= var15) ? var12 : var10;
          },
          var0 -> {
@@ -70,7 +70,7 @@ public interface IBlockReader {
       BlockRayTraceResult var8 = var4.method19525(var1, var2, var3);
       if (var8 != null) {
          BlockRayTraceResult var9 = var5.method23418(this, var3).method19525(var1, var2, var3);
-         if (var9 != null && var9.method31419().method11336(var1).lengthSquared() < var8.method31419().method11336(var1).lengthSquared()) {
+         if (var9 != null && var9.getVec().method11336(var1).lengthSquared() < var8.getVec().method11336(var1).lengthSquared()) {
             return var8.method31421(var9.getFace());
          }
       }

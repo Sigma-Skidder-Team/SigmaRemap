@@ -25,7 +25,7 @@ public final class Class9456 {
       Vector3d var7 = var6.add(var4);
       Object var8 = var5.rayTraceBlocks(new RayTraceContext(var6, var7, Class2271.field14774, Class1985.field12962, var0));
       if (((RayTraceResult)var8).getType() != RayTraceResult.Type.MISS) {
-         var7 = ((RayTraceResult)var8).method31419();
+         var7 = ((RayTraceResult)var8).getVec();
       }
 
       EntityRayTraceResult var9 = method36387(var5, var0, var6, var7, var0.getBoundingBox().contract(var0.getMotion()).method19664(1.0), var1);

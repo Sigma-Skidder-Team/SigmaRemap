@@ -8,7 +8,7 @@ import com.mentalfrostbyte.jello.event.impl.EventRender2D;
 import com.mentalfrostbyte.jello.event.impl.TickEvent;
 import com.mentalfrostbyte.jello.notification.Notification;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
-import com.mentalfrostbyte.jello.unmapped.Class9133;
+import com.mentalfrostbyte.jello.unmapped.YoutubeThumbnail;
 import com.mentalfrostbyte.jello.unmapped.MusicPlayerTrumnaheil;
 import com.mentalfrostbyte.jello.util.ImageUtil;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -63,7 +63,7 @@ public class MusicManager {
     private int field32157;
     private long field32158 = 0L;
     private int field32159;
-    private Class9133 field32160;
+    private YoutubeThumbnail field32160;
     private boolean field32161 = true;
     private Class189 field32162 = Class189.field717;
     private boolean field32164 = false;
@@ -320,12 +320,12 @@ public class MusicManager {
         }
     }
 
-    public Class9133 method24300() {
+    public YoutubeThumbnail method24300() {
         int var3 = 0;
-        return var3 >= this.field32145.field44778.size() ? null : this.field32145.field44778.get(var3);
+        return var3 >= this.field32145.thumbnailList.size() ? null : this.field32145.thumbnailList.get(var3);
     }
 
-    private void method24301(Class9133 var1) {
+    private void method24301(YoutubeThumbnail var1) {
         if (this.field32160 != null) {
             this.field32163.clear();
             new Thread(() -> this.method24309(this.field32160)).start();
@@ -342,35 +342,30 @@ public class MusicManager {
             this.field32156 = new Thread(
                     () -> {
                         Object var3 = null;
-                        if (this.field32159 < 0 || this.field32159 >= this.field32145.field44778.size()) {
+                        if (this.field32159 < 0 || this.field32159 >= this.field32145.thumbnailList.size()) {
                             this.field32159 = 0;
                         }
 
-                        for (int var4 = this.field32159; var4 < this.field32145.field44778.size(); var4++) {
-                            URL var5 = Class9275.method34960(this.field32145.field44778.get(var4).field41970);
+                        for (int var4 = this.field32159; var4 < this.field32145.thumbnailList.size(); var4++) {
+                            URL var5 = Class9275.method34960(this.field32145.thumbnailList.get(var4).field41970);
                             Client.getClientLogger().dummyMethod(var5.toString());
                             this.field32157 = var4;
-                            this.field32160 = this.field32145.field44778.get(var4);
+                            this.field32160 = this.field32145.thumbnailList.get(var4);
                             this.field32163.clear();
 
                             while (!this.field32144) {
-                                try {
-                                    Thread.sleep(300L);
-                                } catch (InterruptedException var23) {
-                                }
 
-                                double[] var6 = new double[0];
                                 this.field32163.clear();
                                 if (Thread.interrupted()) {
                                     if (this.field32166 != null) {
                                         this.field32166.close();
                                     }
-
                                     return;
                                 }
                             }
 
                             try {
+                                System.out.println(var5);
                                 URL var28 = this.method24323(var5);
                                 Client.getClientLogger().dummyMethod(var28 == null ? "No stream" : var28.toString());
                                 if (var28 != null) {
@@ -405,8 +400,6 @@ public class MusicManager {
 
                                     while (var13.method23323()) {
                                         while (!this.field32144) {
-                                            Thread.sleep(300L);
-                                            double[] var17 = new double[0];
                                             this.field32163.clear();
                                             if (Thread.interrupted()) {
                                                 this.field32166.close();
@@ -417,7 +410,7 @@ public class MusicManager {
                                         Class1994 var18 = var13.method23324();
                                         var15.method19888(var18.method8282(), var16);
                                         var3 = var16.method28523();
-                                        this.field32166.write((byte[]) var3, 0, ((Object[]) var3).length);
+                                        this.field32166.write((byte[]) var3, 0, ((byte[]) var3).length);
                                         float[] var29 = method24305(var16.method28523(), var14);
                                         Class7898 var19 = new Class7898(var29.length);
                                         float[][] var20 = var19.method26462(var29);
@@ -440,7 +433,7 @@ public class MusicManager {
                                         }
 
                                         if (!var13.method23323()
-                                                && (this.field32162 == Class189.field718 || this.field32162 == Class189.field717 && this.field32145.field44778.size() == 1)) {
+                                                && (this.field32162 == Class189.field718 || this.field32162 == Class189.field717 && this.field32145.thumbnailList.size() == 1)) {
                                             var13.method23325(0.0);
                                             this.field32158 = 0L;
                                         }
@@ -470,13 +463,13 @@ public class MusicManager {
 
                             if (this.field32162 == Class189.field718) {
                                 var4--;
-                            } else if (this.field32162 == Class189.field717 && var4 == this.field32145.field44778.size() - 1) {
+                            } else if (this.field32162 == Class189.field717 && var4 == this.field32145.thumbnailList.size() - 1) {
                                 var4 = -1;
                             } else if (this.field32162 == Class189.field716) {
                                 return;
                             }
 
-                            if (var4 < -1 || var4 >= this.field32145.field44778.size()) {
+                            if (var4 < -1 || var4 >= this.field32145.thumbnailList.size()) {
                                 var4 = 0;
                             }
                         }
@@ -495,7 +488,7 @@ public class MusicManager {
         return this.field32162;
     }
 
-    public void method24309(Class9133 var1) {
+    public void method24309(YoutubeThumbnail var1) {
         try {
             this.field32154 = true;
             BufferedImage var4 = ImageIO.read(new URL(var1.field41972));
@@ -563,10 +556,10 @@ public class MusicManager {
         }
     }
 
-    public void method24317(MusicPlayerTrumnaheil var1, Class9133 var2) {
+    public void method24317(MusicPlayerTrumnaheil var1, YoutubeThumbnail var2) {
         if (var1 == null) {
-            var1 = new MusicPlayerTrumnaheil("temp", "temp", Class2125.field13868);
-            var1.field44778.add(var2);
+            var1 = new MusicPlayerTrumnaheil("temp", "temp", YoutubeType.PLAYLIST);
+            var1.thumbnailList.add(var2);
         }
 
         this.field32145 = var1;
@@ -574,8 +567,8 @@ public class MusicManager {
         this.field32158 = 0L;
         this.field32170 = 0.0;
 
-        for (int var5 = 0; var5 < var1.field44778.size(); var5++) {
-            if (var1.field44778.get(var5) == var2) {
+        for (int var5 = 0; var5 < var1.thumbnailList.size(); var5++) {
+            if (var1.thumbnailList.get(var5) == var2) {
                 this.field32159 = var5;
             }
         }
@@ -694,7 +687,7 @@ public class MusicManager {
                 try {
                     File var4 = new File(Client.getInstance().getFile() + "/music/yt-dlp.exe");
                     CloseableHttpClient var5 = HttpClients.createDefault();
-                    CloseableHttpResponse var6 = var5.execute(new HttpGet("https://github.com/yt-dlp/yt-dlp/releases/download/2024.08.06/yt-dlp.exe"));
+                    CloseableHttpResponse var6 = var5.execute(new HttpGet("https://github.com/yt-dlp/yt-dlp/releases/download/2024.09.27/yt-dlp.exe"));
                     Throwable var7 = null;
 
                     try {
@@ -727,7 +720,7 @@ public class MusicManager {
                 try {
                     File var100 = new File(Client.getInstance().getFile() + "/music/yt-dlp");
                     CloseableHttpClient var101 = HttpClients.createDefault();
-                    CloseableHttpResponse var102 = var101.execute(new HttpGet("https://github.com/yt-dlp/yt-dlp/releases/download/2024.08.06/yt-dlp"));
+                    CloseableHttpResponse var102 = var101.execute(new HttpGet("https://github.com/yt-dlp/yt-dlp/releases/download/2024.09.27/yt-dlp"));
                     Throwable var103 = null;
 
                     try {
@@ -792,7 +785,7 @@ public class MusicManager {
                     String var8;
                     try {
                         while ((var8 = var7.readLine()) != null) {
-                            if (var8.contains("2.7.17")) {
+                            if (var8.contains("3.12.5")) {
                                 return true;
                             }
                         }

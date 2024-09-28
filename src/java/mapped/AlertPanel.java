@@ -234,7 +234,7 @@ public class AlertPanel extends Class4247 {
       } else {
          if (this.method13297()) {
             this.method13145(false);
-            this.method13288(false);
+            this.setEnabled(false);
             this.method13243();
          }
       }
@@ -280,7 +280,7 @@ public class AlertPanel extends Class4247 {
 
       this.method13296(var1);
       if (var1) {
-         this.method13288(true);
+         this.setEnabled(true);
       }
 
       this.method13292(var1);

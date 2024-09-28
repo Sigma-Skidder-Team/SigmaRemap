@@ -4,11 +4,10 @@ import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 
-public class Class4249 extends Class4247 {
-   private static String[] field20606;
+public class PNGButtonChanging extends Class4247 {
    public Class189 field20607;
 
-   public Class4249(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Class189 var7) {
+   public PNGButtonChanging(IconPanel var1, String var2, int var3, int var4, int var5, int var6, Class189 var7) {
       super(var1, var2, var3, var4, var5, var6, false);
       this.field20607 = var7;
       this.doThis((var1x, var2x) -> {

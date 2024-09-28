@@ -155,7 +155,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
          Vector3d var34 = var33.add(var4);
          Object var35 = this.world.rayTraceBlocks(new RayTraceContext(var33, var34, Class2271.field14774, Class1985.field12962, this));
          if (((RayTraceResult)var35).getType() != RayTraceResult.Type.MISS) {
-            var34 = ((RayTraceResult)var35).method31419();
+            var34 = ((RayTraceResult)var35).getVec();
          }
 
          while (!this.removed) {
@@ -387,7 +387,7 @@ public abstract class AbstractArrowEntity extends ProjectileEntity {
    public void method3466(BlockRayTraceResult var1) {
       this.field5099 = this.world.getBlockState(var1.getPos());
       super.method3466(var1);
-      Vector3d var4 = var1.method31419().method11337(this.getPosX(), this.getPosY(), this.getPosZ());
+      Vector3d var4 = var1.getVec().method11337(this.getPosX(), this.getPosY(), this.getPosZ());
       this.setMotion(var4);
       Vector3d var5 = var4.method11333().scale(0.05F);
       this.setRawPosition(this.getPosX() - var5.x, this.getPosY() - var5.y, this.getPosZ() - var5.z);

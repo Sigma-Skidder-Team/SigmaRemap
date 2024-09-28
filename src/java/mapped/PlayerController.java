@@ -317,7 +317,7 @@ public class PlayerController {
 
    public ActionResultType interactWithEntity(PlayerEntity var1, Entity var2, EntityRayTraceResult var3, Hand var4) {
       this.syncCurrentPlayItem();
-      Vector3d var7 = var3.method31419().method11337(var2.getPosX(), var2.getPosY(), var2.getPosZ());
+      Vector3d var7 = var3.getVec().method11337(var2.getPosX(), var2.getPosY(), var2.getPosZ());
       this.connection.sendPacket(new CUseEntityPacket(var2, var4, var7, var1.isSneaking()));
       return this.currentGameType != GameType.SPECTATOR ? var2.applyPlayerInteraction(var1, var7, var4) : ActionResultType.field14820;
    }

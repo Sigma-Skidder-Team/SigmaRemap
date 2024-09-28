@@ -280,7 +280,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
 
          var10 *= var10;
          if (this.mc.objectMouseOver != null) {
-            var10 = this.mc.objectMouseOver.method31419().method11342(var7);
+            var10 = this.mc.objectMouseOver.getVec().method11342(var7);
          }
 
          Vector3d var12 = var4.getLook(1.0F);
@@ -290,7 +290,7 @@ public class GameRenderer implements IResourceManagerReloadListener, AutoCloseab
          EntityRayTraceResult var16 = Class9456.method36386(var4, var7, var13, var15, var0 -> !var0.isSpectator() && var0.canBeCollidedWith(), var10);
          if (var16 != null) {
             Entity var17 = var16.getEntity();
-            Vector3d var18 = var16.method31419();
+            Vector3d var18 = var16.getVec();
             double var19 = var7.method11342(var18);
             if (var8 && var19 > 9.0) {
                this.mc.objectMouseOver = BlockRayTraceResult.method31420(

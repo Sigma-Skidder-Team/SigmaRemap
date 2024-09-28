@@ -4,7 +4,7 @@ import com.mentalfrostbyte.jello.Client;
 import com.mentalfrostbyte.jello.music.MusicManager;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.unmapped.Class9133;
+import com.mentalfrostbyte.jello.unmapped.YoutubeThumbnail;
 import com.mentalfrostbyte.jello.unmapped.MusicPlayerTrumnaheil;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
@@ -30,20 +30,20 @@ public class MusicPlayer extends Class4278 {
    public static URL field20850;
    private Class4339 field20851;
    private Class4339 field20852;
-   private IconPanel field20853;
+   private IconPanel pngButtons;
    private MusicManager field20854 = Client.getInstance().getMusicManager();
    public static Map<String, MusicPlayerTrumnaheil> field20855 = new LinkedHashMap<String, MusicPlayerTrumnaheil>();
    public static String field20856;
    public static MusicPlayerTrumnaheil field20857;
-   private ButtonPanel field20858;
-   private ButtonPanel field20859;
-   private ButtonPanel field20860;
-   private ButtonPanel field20861;
-   private Class4374 field20862;
+   private ButtonPanel play;
+   private ButtonPanel pause;
+   private ButtonPanel forwards;
+   private ButtonPanel backwards;
+   private VolumeSlider volumeSlider;
    private int field20863;
    private Texture field20864;
    private IconPanel field20865;
-   public Class4301 field20866;
+   public SearchBoxButton searchBox;
    public Class4359 field20867;
    public static MusicPlayerTrumnaheil[] field20868;
    private static CookieManager field20869 = new CookieManager();
@@ -62,7 +62,7 @@ public class MusicPlayer extends Class4278 {
       this.setYA(Math.abs(this.getYA()));
       this.addToList(this.field20851 = new Class4339(this, "musictabs", 0, this.field20847 + 14, this.field20845, this.getHeightA() - 64 - this.field20848));
       this.addToList(
-         this.field20853 = new Class4339(
+         this.pngButtons = new Class4339(
             this, "musiccontrols", this.field20845, this.getHeightA() - this.field20848, this.getWidthA() - this.field20845, this.field20848
          )
       );
@@ -76,7 +76,7 @@ public class MusicPlayer extends Class4278 {
       });
       this.field20851.method13300(false);
       var5.method13300(false);
-      this.field20853.method13300(false);
+      this.pngButtons.method13300(false);
       this.field20865.method13300(false);
       ColorHelper var6 = new ColorHelper(1250067, -15329770).method19410(ClientColors.LIGHT_GREYISH_BLUE.getColor).method19414(Class2218.field14492);
       ArrayList var7 = new ArrayList();
@@ -85,15 +85,15 @@ public class MusicPlayer extends Class4278 {
 
       for (MusicPlayerTrumnaheil var13 : field20868) {
          var7.add(new Thread(() -> {
-            if (!field20855.containsKey(var13.field44776) && !var13.field44779) {
+            if (!field20855.containsKey(var13.id) && !var13.field44779) {
                var13.field44779 = true;
                var13.method37195();
 
-               for (int var6x = 0; var13.field44778.size() == 0 && var6x < 4; var6x++) {
+               for (int var6x = 0; var13.thumbnailList.isEmpty() && var6x < 4; var6x++) {
                   var13.method37195();
                }
 
-               field20855.put(var13.field44776, var13);
+               field20855.put(var13.id, var13);
             }
 
             this.method13222(new Class511(this, var13, var6, var8));
@@ -103,34 +103,34 @@ public class MusicPlayer extends Class4278 {
       }
 
       int var15 = (this.getWidthA() - this.field20845 - 38) / 2;
-      this.field20853
+      this.pngButtons
          .addToList(
-            this.field20858 = new Class4235(
-               this.field20853, "play", var15, 27, 38, 38, ResourcesDecrypter.playPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
+            this.play = new PNGIconButton(
+               this.pngButtons, "play", var15, 27, 38, 38, ResourcesDecrypter.playPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
-      this.field20853
+      this.pngButtons
          .addToList(
-            this.field20859 = new Class4235(
-               this.field20853, "pause", var15, 27, 38, 38, ResourcesDecrypter.pausePNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
+            this.pause = new PNGIconButton(
+               this.pngButtons, "pause", var15, 27, 38, 38, ResourcesDecrypter.pausePNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
-      this.field20853
+      this.pngButtons
          .addToList(
-            this.field20860 = new Class4235(
-               this.field20853, "forwards", var15 + 114, 23, 46, 46, ResourcesDecrypter.forwardsPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
+            this.forwards = new PNGIconButton(
+               this.pngButtons, "forwards", var15 + 114, 23, 46, 46, ResourcesDecrypter.forwardsPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
-      this.field20853
+      this.pngButtons
          .addToList(
-            this.field20861 = new Class4235(
-               this.field20853, "backwards", var15 - 114, 23, 46, 46, ResourcesDecrypter.backwardsPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
+            this.backwards = new PNGIconButton(
+               this.pngButtons, "backwards", var15 - 114, 23, 46, 46, ResourcesDecrypter.backwardsPNG, new ColorHelper(ClientColors.LIGHT_GREYISH_BLUE.getColor), null
             )
          );
-      this.field20853.addToList(this.field20862 = new Class4374(this.field20853, "volume", this.getWidthA() - this.field20845 - 19, 14, 4, 40));
-      Class4249 var16;
-      this.field20853.addToList(var16 = new Class4249(this.field20853, "repeat", 14, 34, 27, 20, this.field20854.method24304()));
-      var16.method13036(var2x -> this.field20854.method24303(var16.method13038()));
+      this.pngButtons.addToList(this.volumeSlider = new VolumeSlider(this.pngButtons, "volume", this.getWidthA() - this.field20845 - 19, 14, 4, 40));
+      PNGButtonChanging repeat;
+      this.pngButtons.addToList(repeat = new PNGButtonChanging(this.pngButtons, "repeat", 14, 34, 27, 20, this.field20854.method24304()));
+      repeat.method13036(var2x -> this.field20854.method24303(repeat.method13038()));
       this.addToList(this.field20867 = new Class4359(this, "progress", this.field20845, this.getHeightA() - 5, this.getWidthA() - this.field20845, 5));
       this.field20867.method13292(true);
       this.field20867.method13300(false);
@@ -140,46 +140,40 @@ public class MusicPlayer extends Class4278 {
          this.field20871 = (float)this.getXA();
          this.field20872 = (float)this.getYA();
       });
-      this.field20859.method13288(false);
-      this.field20858.method13288(false);
-      this.field20858.doThis((var1x, var2x) -> this.field20854.method24310(true));
-      this.field20859.doThis((var1x, var2x) -> this.field20854.method24310(false));
-      this.field20860.doThis((var1x, var2x) -> this.field20854.method24316());
-      this.field20861.doThis((var1x, var2x) -> this.field20854.method24315());
-      this.field20862.method13709(var1x -> this.field20854.method24311((int)((1.0F - this.field20862.method13707()) * 100.0F)));
-      this.field20862.method13708(1.0F - (float)this.field20854.method24314() / 100.0F);
+      this.pause.setEnabled(false);
+      this.play.setEnabled(false);
+      this.play.doThis((var1x, var2x) -> this.field20854.method24310(true));
+      this.pause.doThis((var1x, var2x) -> this.field20854.method24310(false));
+      this.forwards.doThis((var1x, var2x) -> this.field20854.method24316());
+      this.backwards.doThis((var1x, var2x) -> this.field20854.method24315());
+      this.volumeSlider.method13709(var1x -> this.field20854.method24311((int)((1.0F - this.volumeSlider.method13707()) * 100.0F)));
+      this.volumeSlider.method13708(1.0F - (float)this.field20854.method24314() / 100.0F);
       this.addToList(
-         this.field20866 = new Class4301(
+         this.searchBox = new SearchBoxButton(
             this, "search", this.field20845, 0, this.getWidthA() - this.field20845, this.getHeightA() - this.field20848, "Search..."
          )
       );
-      this.field20866.method13288(true);
-      this.field20866.method13300(false);
+      this.searchBox.setEnabled(true);
+      this.searchBox.method13300(false);
    }
 
    private void method13189(Class4339 var1) {
       if (this.field20852 != null) {
-         this.field20852.method13288(false);
+         this.field20852.setEnabled(false);
       }
 
-      var1.method13288(true);
+      var1.setEnabled(true);
       this.field20849 = var1.method13303();
       this.field20852 = var1;
-      this.field20866.method13288(false);
+      this.searchBox.setEnabled(false);
       this.field20852.field21207 = 65;
    }
 
-   private void method13190(MusicPlayerTrumnaheil var1, Class9133 var2) {
+   private void method13190(MusicPlayerTrumnaheil var1, YoutubeThumbnail var2) {
       if (!((JelloClickGUI)this.getIcoPanel()).method13314()) {
          this.field20854.method24317(var1, var2);
          field20857 = var1;
       }
-   }
-
-   private void method13191(Class9133 var1) {
-      field20856 = var1.field41971;
-      field20856 = field20856.replaceAll("\\(.*\\)", "");
-      field20856 = field20856.replaceAll("\\[.*\\]", "");
    }
 
    @Override
@@ -194,8 +188,7 @@ public class MusicPlayer extends Class4278 {
                this.field20874 = true;
                int var11 = this.icoPanel.getWidthA() - 20 - this.getWidthA();
                int var13 = (this.icoPanel.getHeightA() - this.getHeightA()) / 2;
-               float var10 = this.field20871 - (float)var11;
-               this.field20871 = Math.max(this.field20871 - (this.field20871 - (float)var11) * 0.25F * var7, (float)var11);
+                this.field20871 = Math.max(this.field20871 - (this.field20871 - (float)var11) * 0.25F * var7, (float)var11);
                if (!(this.field20872 - (float)var13 > 0.0F)) {
                   Math.min(this.field20872 = this.field20872 - (this.field20872 - (float)var13) * 0.2F * var7, (float)var13);
                } else {
@@ -271,11 +264,11 @@ public class MusicPlayer extends Class4278 {
          .changeDirection(this.getXA() + this.getWidthA() > this.icoPanel.getWidthA() && !this.field20874 ? Direction.FORWARDS : Direction.BACKWARDS);
       var1 *= 0.5F + (1.0F - this.field20873.calcPercent()) * 0.5F;
       if (this.field20854.method24319()) {
-         this.field20858.method13288(false);
-         this.field20859.method13288(true);
+         this.play.setEnabled(false);
+         this.pause.setEnabled(true);
       } else {
-         this.field20858.method13288(true);
-         this.field20859.method13288(false);
+         this.play.setEnabled(true);
+         this.pause.setEnabled(false);
       }
 
       RenderUtil.drawRect(
@@ -415,7 +408,7 @@ public class MusicPlayer extends Class4278 {
          String[] var4 = this.field20854.method24324().split(" - ");
          byte var5 = 30;
          if (var4.length <= 1) {
-            this.method13195(var1, var4[0].length() != 0 ? var4[0] : "Jello Music", this.field20845 - var5 * 2, 12, 0);
+            this.method13195(var1, !var4[0].isEmpty() ? var4[0] : "Jello Music", this.field20845 - var5 * 2, 12, 0);
          } else {
             this.method13195(var1, var4[1], this.field20845 - var5 * 2, 0, 0);
             this.method13195(var1, var4[0], this.field20845 - var5 * 2, 20, -1000);
@@ -552,21 +545,20 @@ public class MusicPlayer extends Class4278 {
    }
 
    // $VF: synthetic method
-   public static void method13211(MusicPlayer var0, MusicPlayerTrumnaheil var1, Class9133 var2) {
+   public static void method13211(MusicPlayer var0, MusicPlayerTrumnaheil var1, YoutubeThumbnail var2) {
       var0.method13190(var1, var2);
    }
 
    static {
-      MusicPlayerTrumnaheil[] var4 = new MusicPlayerTrumnaheil[]{
-         new MusicPlayerTrumnaheil("Trap Nation", "UUa10nxShhzNrCE1o2ZOPztg", Class2125.field13868),
-         new MusicPlayerTrumnaheil("Chill Nation", "UUM9KEEuzacwVlkt9JfJad7g", Class2125.field13868),
-         new MusicPlayerTrumnaheil("VEVO", "PL9tY0BWXOZFu8MzzbNVtUvHs0cQ_gZ03m", Class2125.field13868),
-         new MusicPlayerTrumnaheil("Rap Nation", "UU8QfB1wbfrNwNFHQxfyNJsw", Class2125.field13868),
-         new MusicPlayerTrumnaheil("MrSuicideSheep", "UU5nc_ZtjKW1htCVZVRxlQAQ", Class2125.field13868),
-         new MusicPlayerTrumnaheil("Trap City", "UU65afEgL62PGFWXY7n6CUbA", Class2125.field13868),
-         new MusicPlayerTrumnaheil("CloudKid", "UUSa8IUd1uEjlREMa21I3ZPQ", Class2125.field13868),
-         new MusicPlayerTrumnaheil("NCS", "UU_aEa8K-EOJ3D6gOs7HcyNg", Class2125.field13868)
+       field20868 = new MusicPlayerTrumnaheil[]{
+         new MusicPlayerTrumnaheil("Trap Nation", "UUa10nxShhzNrCE1o2ZOPztg", YoutubeType.PLAYLIST),
+         new MusicPlayerTrumnaheil("Chill Nation", "UUM9KEEuzacwVlkt9JfJad7g", YoutubeType.PLAYLIST),
+         new MusicPlayerTrumnaheil("VEVO", "PL9tY0BWXOZFu8MzzbNVtUvHs0cQ_gZ03m", YoutubeType.PLAYLIST),
+         new MusicPlayerTrumnaheil("Rap Nation", "UU8QfB1wbfrNwNFHQxfyNJsw", YoutubeType.PLAYLIST),
+         new MusicPlayerTrumnaheil("MrSuicideSheep", "UU5nc_ZtjKW1htCVZVRxlQAQ", YoutubeType.PLAYLIST),
+         new MusicPlayerTrumnaheil("Trap City", "UU65afEgL62PGFWXY7n6CUbA", YoutubeType.PLAYLIST),
+         new MusicPlayerTrumnaheil("CloudKid", "UUSa8IUd1uEjlREMa21I3ZPQ", YoutubeType.PLAYLIST),
+         new MusicPlayerTrumnaheil("NCS", "UU_aEa8K-EOJ3D6gOs7HcyNg", YoutubeType.PLAYLIST)
       };
-      field20868 = var4;
    }
 }

@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.gui.GuiManager;
 import com.mentalfrostbyte.jello.resource.ClientResource;
 import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
-import com.mentalfrostbyte.jello.unmapped.Class9133;
+import com.mentalfrostbyte.jello.unmapped.YoutubeThumbnail;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 import com.mentalfrostbyte.jello.util.MultiUtilities;
 import com.mentalfrostbyte.jello.util.ImageUtil;
@@ -50,7 +50,7 @@ public class Class4286 extends Class4278 {
       }
    }
 
-   public Class4286(IconPanel var1, int var2, int var3, int var4, int var5, Class9133 var6) {
+   public Class4286(IconPanel var1, int var2, int var3, int var4, int var5, YoutubeThumbnail var6) {
       super(var1, var6.field41970, var2, var3, var4, var5, field20771, var6.field41971, false);
       URL var9 = null;
 

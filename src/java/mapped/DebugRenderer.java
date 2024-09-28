@@ -100,7 +100,7 @@ public class DebugRenderer {
          Predicate<Entity> var9 = var0x -> !var0x.isSpectator() && var0x.canBeCollidedWith();
          EntityRayTraceResult var10 = Class9456.method36386(var0, var4, var6, var7, var9, (double)var8);
          if (var10 != null) {
-            return !(var4.method11342(var10.method31419()) > (double)var8) ? Optional.<Entity>of(var10.getEntity()) : Optional.<Entity>empty();
+            return !(var4.method11342(var10.getVec()) > (double)var8) ? Optional.<Entity>of(var10.getEntity()) : Optional.<Entity>empty();
          } else {
             return Optional.<Entity>empty();
          }

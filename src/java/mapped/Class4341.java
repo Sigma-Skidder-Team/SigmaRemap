@@ -103,7 +103,7 @@ public class Class4341 extends Class4339 implements Class4342 {
       this.field21218 = Math.max(0.0F, Math.min(1.0F, this.field21218));
       var5.field21195 = this.method13524(this.field21218, 0.0F, 1.0F, 1.0F);
       if (this.method13525()) {
-         this.method13288(true);
+         this.setEnabled(true);
          if (!(var5.field21195 <= 0.0F)) {
             if (var5.field21195 >= 1.0F) {
                this.field21216 = false;

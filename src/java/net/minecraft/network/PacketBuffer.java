@@ -412,7 +412,7 @@ public class PacketBuffer extends ByteBuf {
       BlockPos var4 = var1.getPos();
       this.writeBlockPos(var4);
       this.writeEnumValue(var1.getFace());
-      Vector3d var5 = var1.method31419();
+      Vector3d var5 = var1.getVec();
       this.writeFloat((float)(var5.x - (double)var4.getX()));
       this.writeFloat((float)(var5.y - (double)var4.getY()));
       this.writeFloat((float)(var5.z - (double)var4.getZ()));

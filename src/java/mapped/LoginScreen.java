@@ -71,7 +71,7 @@ public class LoginScreen extends Class4247 {
       this.inputPassword.method13155(true);
       this.addToList(this.field21355 = new UIInput(this, "CaptchaBox", 228, var11 + 135, 84, var9, var12, "", "Captcha"));
       this.field21355.setFont(ResourceRegistry.JelloLightFont20);
-      this.field21355.method13288(false);
+      this.field21355.setEnabled(false);
       this.loginButton.doThis((var1x, var2x) -> this.method13688());
       this.registerButton.doThis((var1x, var2x) -> {
          LoginAndOutScreen var5x = (LoginAndOutScreen)this.getIcoPanel();
@@ -88,7 +88,7 @@ public class LoginScreen extends Class4247 {
       RenderUtil.method11454((float)(this.xA + var4), (float)(this.yA + var4 + 10), 160.0F, 160.0F, ResourcesDecrypter.sigmaPNG, var1);
       Class9507 var5 = Client.getInstance().getNetworkManager().method30452();
       if (var5 != null) {
-         this.field21355.method13288(var5.method36702());
+         this.field21355.setEnabled(var5.method36702());
          if (var5.method36702()) {
             RenderUtil.method11424(
                (float)(this.xA + 330), (float)(this.yA + 255), 114.0F, 40.0F, MultiUtilities.applyAlpha(ClientColors.DEEP_TEAL.getColor, 0.04F)
@@ -108,7 +108,7 @@ public class LoginScreen extends Class4247 {
    public void method13688() {
       new Thread(() -> {
          this.loadingThingy.method13296(true);
-         this.loginButton.method13288(false);
+         this.loginButton.setEnabled(false);
          Class9507 var3 = Client.getInstance().getNetworkManager().method30452();
          if (var3 != null) {
             var3.method36706(this.field21355.method13303());
@@ -124,7 +124,7 @@ public class LoginScreen extends Class4247 {
          }
 
          this.loadingThingy.method13296(false);
-         this.loginButton.method13288(true);
+         this.loginButton.setEnabled(true);
       }).start();
    }
 }

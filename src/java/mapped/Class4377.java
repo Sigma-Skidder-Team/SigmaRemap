@@ -5,7 +5,7 @@ import com.mentalfrostbyte.jello.resource.ResourceRegistry;
 import com.mentalfrostbyte.jello.unmapped.IconPanel;
 import com.mentalfrostbyte.jello.unmapped.ResourcesDecrypter;
 
-public class Class4377 extends Class4235 {
+public class Class4377 extends PNGIconButton {
    private String[] field21384;
    private int field21385;
 
