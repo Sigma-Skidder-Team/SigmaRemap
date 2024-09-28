@@ -1,17 +1,18 @@
-package mapped;
+package net.minecraft.util.registry;
 
 import com.google.common.collect.Maps;
 import com.mojang.serialization.Lifecycle;
 import java.util.Map;
 import java.util.function.Supplier;
 
+import mapped.*;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Class6714 {
+public class WorldGenRegistries {
    public static final Logger field29420 = LogManager.getLogger();
    private static final Map<ResourceLocation, Supplier<?>> field29421 = Maps.newLinkedHashMap();
    private static final MutableRegistry<MutableRegistry<?>> field29422 = new SimpleRegistry<MutableRegistry<?>>(
@@ -24,7 +25,7 @@ public class Class6714 {
    public static final Registry<Class9300<?, ?>> field29427 = method20493(Registry.field16103, () -> Class9438.field43835);
    public static final Registry<Class3622> field29428 = method20493(Registry.field16104, () -> Class8523.field38251);
    public static final Registry<Class9369> field29429 = method20493(Registry.field16105, Class9837::method38885);
-   public static final Registry<Biome> field29430 = method20493(Registry.BIOME_KEY, () -> Class8900.field40281);
+   public static final Registry<Biome> BIOME = method20493(Registry.BIOME_KEY, () -> BiomeRegistry.PLAINS);
    public static final Registry<DimensionSettings> field29431 = method20493(Registry.NOISE_SETTINGS_KEY, DimensionSettings::method35170);
 
    private static <T> Registry<T> method20493(RegistryKey<? extends Registry<T>> var0, Supplier<T> var1) {

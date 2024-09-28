@@ -6,6 +6,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
 import net.optifine.Config;
+import net.optifine.config.BiomeId;
 
 import java.util.Properties;
 
@@ -16,7 +17,7 @@ public class Class6810 {
    private int[] field29644 = null;
    private ResourceLocation[] field29645 = null;
    private int[] field29646 = null;
-   private Class8507[] field29647 = null;
+   private BiomeId[] field29647 = null;
    private Class9532 field29648 = null;
    private Class9532 field29649 = null;
    private boolean field29650 = false;

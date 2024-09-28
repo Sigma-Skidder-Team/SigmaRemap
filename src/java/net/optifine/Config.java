@@ -95,9 +95,9 @@ public class Config {
 
    public static String method26778() {
       StringBuffer var2 = new StringBuffer(32);
-      if (method26970()) {
+      if (isDynamicLights()) {
          var2.append("DL: ");
-         var2.append(String.valueOf(Class9446.method36322()));
+         var2.append(String.valueOf(DynamicLights.method36322()));
          var2.append(", ");
       }
 
@@ -1598,7 +1598,7 @@ public class Config {
       return field34173;
    }
 
-   public static boolean method26970() {
+   public static boolean isDynamicLights() {
       return field34156.field44724 != 3;
    }
 
@@ -1607,7 +1607,7 @@ public class Config {
    }
 
    public static boolean method26972() {
-      if (method26970()) {
+      if (isDynamicLights()) {
          return !isShaders() ? true : Shaders.method32994();
       } else {
          return false;

@@ -1108,7 +1108,7 @@ public class ServerWorld extends World implements ISeedReader {
    }
 
    @Override
-   public DynamicRegistries method6867() {
+   public DynamicRegistries func_241828_r() {
       return this.field9045.method1437();
    }
 

@@ -1,5 +1,6 @@
 package mapped;
 
+import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.gen.feature.structure.ShipwreckConfig;
 
 public class Class9438 {
@@ -98,6 +99,6 @@ public class Class9438 {
    );
 
    private static <FC extends Class4698, F extends Structure<FC>> Class9300<FC, F> method36275(String var0, Class9300<FC, F> var1) {
-      return Class6714.<Class9300<FC, F>>method20496(Class6714.field29427, var0, var1);
+      return WorldGenRegistries.<Class9300<FC, F>>method20496(WorldGenRegistries.field29427, var0, var1);
    }
 }

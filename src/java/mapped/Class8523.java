@@ -5,6 +5,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.WorldGenRegistries;
 
 public class Class8523 {
    private static final Class7872 field38248 = new Class7872(
@@ -501,6 +502,6 @@ public class Class8523 {
    private static Class3622 method30211(String var0, ImmutableList<Class7092> var1) {
       ResourceLocation var4 = new ResourceLocation(var0);
       Class3622 var5 = new Class3622(var1);
-      return Class6714.<Class3622, Class3622>method20497(Class6714.field29428, var4, var5);
+      return WorldGenRegistries.<Class3622, Class3622>method20497(WorldGenRegistries.field29428, var4, var5);
    }
 }

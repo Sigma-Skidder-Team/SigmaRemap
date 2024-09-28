@@ -26,6 +26,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.optifine.DynamicLights;
 import net.optifine.Config;
 import net.optifine.entity.model.CustomEntityModels;
 import net.optifine.shaders.Shaders;
@@ -51,8 +52,8 @@ public class EntityRendererManager {
 
    public <E extends Entity> int method32208(E var1, float var2) {
       int var5 = this.<Entity>getRenderer(var1).method17894(var1, var2);
-      if (Config.method26970()) {
-         var5 = Class9446.method36315(var1, var5);
+      if (Config.isDynamicLights()) {
+         var5 = DynamicLights.method36315(var1, var5);
       }
 
       return var5;
@@ -484,7 +485,7 @@ public class EntityRendererManager {
          .endVertex();
    }
 
-   public void method32227(World var1) {
+   public void setWorld(World var1) {
       this.world = var1;
       if (var1 == null) {
          this.info = null;

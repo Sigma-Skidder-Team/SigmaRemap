@@ -9,6 +9,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.optifine.Config;
+import net.optifine.config.BiomeId;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,7 +31,7 @@ public class Class7720 {
    private boolean field33140;
    private boolean field33141;
    private boolean field33142;
-   public Class8507[] field33143;
+   public BiomeId[] field33143;
    public Class9532 field33144;
    private float field33145;
    private Class8851 field33146;

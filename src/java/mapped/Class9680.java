@@ -26,6 +26,7 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.optifine.Config;
+import net.optifine.util.BiomeUtils;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 
@@ -630,9 +631,9 @@ public class Class9680 {
    }
 
    public static Biome method37851(IBlockDisplayReader var0, BlockPos var1) {
-      Biome var4 = Class8708.method31415(var0, var1);
-      if ((var4 == Class8708.field39312 || var4 == Class8708.field39313) && !Config.method26906()) {
-         var4 = Class8708.field39311;
+      Biome var4 = BiomeUtils.method31415(var0, var1);
+      if ((var4 == BiomeUtils.SWAMP || var4 == BiomeUtils.SWAMP_HILLS) && !Config.method26906()) {
+         var4 = BiomeUtils.PLAINS;
       }
 
       return var4;
@@ -811,7 +812,7 @@ public class Class9680 {
    public static void method37864(Class4587 var0, IBlockDisplayReader var1, double var2, double var4, double var6, Class8391 var8) {
       if (field45224 != null || field45230 != null || field45250 >= 0) {
          BlockPos var11 = new BlockPos(var2, var4, var6);
-         var8.method29411(field45267, var11);
+         var8.reset(field45267, var11);
          int var12 = method37854(var1, field45267, var11, var8);
          int var13 = var12 >> 16 & 0xFF;
          int var14 = var12 >> 8 & 0xFF;

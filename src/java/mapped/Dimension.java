@@ -50,7 +50,7 @@ public final class Dimension {
       SimpleRegistry<Dimension> var3 = new SimpleRegistry<>(Registry.DIMENSION_KEY, Lifecycle.experimental());
 
       for (RegistryKey<Dimension> var5 : field43955) {
-         Dimension var6 = var0.method9183(var5);
+         Dimension var6 = var0.getValueForKey(var5);
          if (var6 != null) {
             var3.register(var5, var6, var0.method9185(var6));
          }

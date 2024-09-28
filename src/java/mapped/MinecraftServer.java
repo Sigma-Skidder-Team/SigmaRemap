@@ -219,7 +219,7 @@ public abstract class MinecraftServer extends RecursiveEventLoop<Class567> imple
       long var9 = BiomeManager.getHashedSeed(var7);
       ImmutableList var11 = ImmutableList.of(new Class7020(), new Class7018(), new Class7017(), new Class7015(), new Class7019(var4));
       SimpleRegistry<Dimension> var12 = var5.method26264();
-      Dimension var13 = var12.method9183(Dimension.field43952);
+      Dimension var13 = var12.getValueForKey(Dimension.field43952);
       DimensionType var14;
       Object var15;
       if (var13 == null) {

@@ -17,6 +17,7 @@ import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.biome.Biome;
 import net.optifine.Config;
+import net.optifine.config.BiomeId;
 
 public class Class8149 {
    private String field35046 = null;
@@ -24,7 +25,7 @@ public class Class8149 {
    private Class2295 field35048 = null;
    private Map<ResourceLocation, ResourceLocation> field35049 = null;
    private Class7305 field35050 = null;
-   private Class8507[] field35051 = null;
+   private BiomeId[] field35051 = null;
    private Class9532 field35052 = null;
    private Boolean field35053 = null;
    private Boolean field35054 = null;

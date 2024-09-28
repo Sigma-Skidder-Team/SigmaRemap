@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import java.util.Map;
 
-public class Class8597 {
+public class ChunkVisibility {
    private static String[] field38677;
    public static final int field38678 = 63;
    public static final Direction[][] field38679 = method30745(false);
@@ -154,7 +154,7 @@ public class Class8597 {
       return field38680[var3];
    }
 
-   public static void method30747() {
+   public static void reset() {
       field38684 = null;
    }
 }

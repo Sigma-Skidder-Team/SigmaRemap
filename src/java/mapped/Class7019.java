@@ -14,6 +14,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.server.ServerWorld;
 
 public class Class7019 implements Class7016 {
@@ -87,7 +88,7 @@ public class Class7019 implements Class7016 {
             BlockPos var9 = var8.orElse(var5);
             BlockPos var10 = this.method21752(var1, var9, 48);
             if (var10 != null && this.method21753(var1, var10)) {
-               if (var1.method7178(var10).equals(Optional.<RegistryKey<Biome>>of(Class9495.field44172))) {
+               if (var1.method7178(var10).equals(Optional.<RegistryKey<Biome>>of(Biomes.field44172))) {
                   return false;
                }
 

@@ -6,6 +6,7 @@ import com.google.gson.JsonElement;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.JsonOps;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.biome.Biome;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,7 +31,7 @@ public class Class4451 implements Class4442 {
    public void method14013(Class8297 var1) {
       Path var4 = this.field21629.method33776();
 
-      for (Entry var6 : Class6714.field29430.method9191()) {
+      for (Entry var6 : WorldGenRegistries.BIOME.method9191()) {
          Path var7 = method14085(var4, ((RegistryKey)var6.getKey()).getLocation());
          Biome var8 = (Biome)var6.getValue();
          Function<Supplier<Biome>, DataResult<JsonElement>> var9 = JsonOps.INSTANCE.withEncoder(Biome.field40309);

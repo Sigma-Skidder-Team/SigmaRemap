@@ -1,5 +1,6 @@
-package mapped;
+package net.optifine;
 
+import mapped.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
@@ -11,7 +12,6 @@ import net.minecraft.item.Items;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.optifine.Config;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Class9446 {
+public class DynamicLights {
    private static Class8138 field43880 = new Class8138();
    private static Map<String, Integer> field43881 = new HashMap<String, Integer>();
    private static Map<Item, Integer> field43882 = new HashMap<Item, Integer>();
@@ -348,7 +348,7 @@ public class Class9446 {
       }
    }
 
-   public static void method36321() {
+   public static void clear() {
       synchronized (field43880) {
          field43880.method28217();
       }

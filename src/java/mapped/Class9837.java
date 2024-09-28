@@ -3,6 +3,7 @@ package mapped;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.WorldGenRegistries;
 
 public class Class9837 {
    public static final RegistryKey<Class9369> field45937 = RegistryKey.<Class9369>getOrCreateKey(Registry.field16105, new ResourceLocation("empty"));
@@ -11,7 +12,7 @@ public class Class9837 {
    );
 
    public static Class9369 method38884(Class9369 var0) {
-      return Class6714.<Class9369, Class9369>method20497(Class6714.field29429, var0.method35537(), var0);
+      return WorldGenRegistries.<Class9369, Class9369>method20497(WorldGenRegistries.field29429, var0.method35537(), var0);
    }
 
    public static Class9369 method38885() {

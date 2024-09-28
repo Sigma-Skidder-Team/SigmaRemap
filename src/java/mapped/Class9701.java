@@ -4,6 +4,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
+import net.optifine.DynamicLights;
 import net.optifine.Config;
 
 import java.util.HashSet;
@@ -38,7 +39,7 @@ public class Class9701 {
       double var39 = this.field45345.getPosX() - 0.5;
       double var6 = this.field45345.getPosY() - 0.5 + this.field45346;
       double var8 = this.field45345.getPosZ() - 0.5;
-      int var10 = Class9446.method36319(this.field45345);
+      int var10 = DynamicLights.method36319(this.field45345);
       double var11 = var39 - this.field45347;
       double var13 = var6 - this.field45348;
       double var15 = var8 - this.field45349;

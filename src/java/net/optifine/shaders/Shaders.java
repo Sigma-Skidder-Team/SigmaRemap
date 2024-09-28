@@ -3177,7 +3177,7 @@ public class Shaders {
 
     public static void beginRender(Minecraft var0, ActiveRenderInfo var1, float var2, long var3) {
         method32984("pre beginRender");
-        method33043(field40591.world);
+        checkWorldChanged(field40591.world);
         field40591 = var0;
         field40591.getProfiler().startSection("init");
         field40592 = field40591.gameRenderer;
@@ -3361,7 +3361,7 @@ public class Shaders {
         GlStateManager.method23803(33984);
     }
 
-    public static void method33043(ClientWorld var0) {
+    public static void checkWorldChanged(ClientWorld var0) {
         if (field40918 != var0) {
             ClientWorld var1 = field40918;
             field40918 = var0;

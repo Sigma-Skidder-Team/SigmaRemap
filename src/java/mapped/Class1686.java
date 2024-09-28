@@ -8,6 +8,7 @@ import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.BiomeRegistry;
 import net.minecraft.world.biome.provider.BiomeProvider;
 
 import java.util.Comparator;
@@ -119,7 +120,7 @@ public class Class1686 extends BiomeProvider {
          .min(Comparator.comparing(var1x -> ((Class7150)var1x.getFirst()).method22304(var7)))
          .map(Pair::getSecond)
          .<Biome>map(Supplier::get)
-         .orElse(Class8900.field40282);
+         .orElse(BiomeRegistry.field40282);
    }
 
    public boolean method7210(long var1) {

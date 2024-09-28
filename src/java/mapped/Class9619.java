@@ -11,6 +11,7 @@ import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.biome.Biome;
 import net.optifine.Config;
+import net.optifine.util.BiomeUtils;
 
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -362,7 +363,7 @@ public class Class9619 {
             return null;
          } else {
             if (var0.field30558 != null) {
-               Biome var12 = Class8708.method31415(var1, var3);
+               Biome var12 = BiomeUtils.method31415(var1, var3);
                if (!var0.method22130(var12)) {
                   return null;
                }

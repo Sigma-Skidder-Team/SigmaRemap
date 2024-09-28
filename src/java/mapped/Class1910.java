@@ -4,6 +4,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
 import net.optifine.Config;
 import net.optifine.shaders.Shaders;
+import net.optifine.util.BiomeUtils;
 
 public enum Class1910 {
    field11209("biome"),
@@ -174,7 +175,7 @@ public enum Class1910 {
                case 1:
                   BlockPos var5 = Shaders.method33165();
                   Biome var6 = Shaders.method33164().getBiome(var5);
-                  return (float)Class8708.method31407(var6);
+                  return (float) BiomeUtils.getId(var6);
                case 2:
                   BlockPos var7 = Shaders.method33165();
                   Biome var8 = Shaders.method33164().getBiome(var7);

@@ -19,6 +19,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -106,7 +107,7 @@ public class Class1313 extends Screen {
             return Class9733.method38132(var0);
          } else {
             Class9733 var7 = var2.method38122(var6, var2.method38126());
-            RegistryKey<Biome> var8 = Class9495.field44122;
+            RegistryKey<Biome> var8 = Biomes.PLAINS;
             if (var5.hasNext()) {
                try {
                   ResourceLocation var9 = new ResourceLocation((String)var5.next());
@@ -276,7 +277,7 @@ public class Class1313 extends Screen {
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.classic_flat"),
          Blocks.field36395,
-         Class9495.field44122,
+         Biomes.PLAINS,
          Arrays.<Structure<?>>asList(Structure.field18073),
          false,
          false,
@@ -288,7 +289,7 @@ public class Class1313 extends Screen {
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.tunnelers_dream"),
          Blocks.STONE,
-         Class9495.field44124,
+         Biomes.MOUNTAINS,
          Arrays.<Structure<?>>asList(Structure.field18059),
          true,
          true,
@@ -301,7 +302,7 @@ public class Class1313 extends Screen {
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.water_world"),
          Items.WATER_BUCKET,
-         Class9495.field44145,
+         Biomes.DEEP_OCEAN,
          Arrays.<Structure<?>>asList(Structure.field18069, Structure.field18065, Structure.field18068),
          false,
          false,
@@ -315,7 +316,7 @@ public class Class1313 extends Screen {
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.overworld"),
          Blocks.GRASS,
-         Class9495.field44122,
+         Biomes.PLAINS,
          Arrays.<Structure<?>>asList(Structure.field18073, Structure.field18059, Structure.field18058, Structure.field18064),
          true,
          true,
@@ -328,7 +329,7 @@ public class Class1313 extends Screen {
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.snowy_kingdom"),
          Blocks.SNOW,
-         Class9495.field44133,
+         Biomes.SNOWY_TUNDRA,
          Arrays.<Structure<?>>asList(Structure.field18073, Structure.field18063),
          false,
          false,
@@ -342,7 +343,7 @@ public class Class1313 extends Screen {
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.bottomless_pit"),
          Items.field37839,
-         Class9495.field44122,
+         Biomes.PLAINS,
          Arrays.<Structure<?>>asList(Structure.field18073),
          false,
          false,
@@ -354,7 +355,7 @@ public class Class1313 extends Screen {
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.desert"),
          Blocks.SAND,
-         Class9495.field44123,
+         Biomes.DESERT,
          Arrays.<Structure<?>>asList(Structure.field18073, Structure.field18062, Structure.field18059),
          true,
          true,
@@ -367,7 +368,7 @@ public class Class1313 extends Screen {
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.redstone_ready"),
          Items.REDSTONE_DUST,
-         Class9495.field44123,
+         Biomes.DESERT,
          Collections.<Structure<?>>emptyList(),
          false,
          false,
@@ -379,7 +380,7 @@ public class Class1313 extends Screen {
       method6206(
          new TranslationTextComponent("createWorld.customize.preset.the_void"),
          Blocks.field36765,
-         Class9495.field44172,
+         Biomes.field44172,
          Collections.<Structure<?>>emptyList(),
          false,
          true,

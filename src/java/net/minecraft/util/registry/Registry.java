@@ -243,7 +243,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    public abstract int getId(T var1);
 
    @Nullable
-   public abstract T method9183(RegistryKey<T> var1);
+   public abstract T getValueForKey(RegistryKey<T> var1);
 
    @Nullable
    public abstract T getOrDefault(ResourceLocation var1);
@@ -257,11 +257,11 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    }
 
    public Optional<T> method9188(RegistryKey<T> var1) {
-      return Optional.<T>ofNullable(this.method9183(var1));
+      return Optional.<T>ofNullable(this.getValueForKey(var1));
    }
 
    public T getOrThrow(RegistryKey<T> var1) {
-      Object var4 = this.method9183(var1);
+      Object var4 = this.getValueForKey(var1);
       if (var4 != null) {
          return (T)var4;
       } else {
@@ -292,7 +292,7 @@ public abstract class Registry<T> implements Codec<T>, Keyable, Class2347<T> {
    }
 
    static {
-      Class6714.method20499();
+      WorldGenRegistries.method20499();
       field16032.forEach((var0, var1) -> {
          if (var1.get() == null) {
             field16031.error("Unable to bootstrap registry '{}'", var0);

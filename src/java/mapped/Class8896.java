@@ -9,6 +9,8 @@ import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.optifine.Config;
+import net.optifine.config.BiomeId;
+import net.optifine.util.BiomeUtils;
 
 import java.lang.reflect.Array;
 import java.util.*;
@@ -17,7 +19,7 @@ public class Class8896 {
    private String field40258 = null;
    public static final Class9710[] field40259 = new Class9710[0];
    public static final Class112[] field40260 = new Class112[0];
-   private static Map<ResourceLocation, Class8507> field40261 = null;
+   private static Map<ResourceLocation, BiomeId> field40261 = null;
    private static final Class7855<Enum> field40262 = new Class7856();
    private static final Class7855<Class112> field40263 = new Class7857();
 
@@ -309,7 +311,7 @@ public class Class8896 {
       return true;
    }
 
-   public Class8507[] method32396(String var1) {
+   public BiomeId[] method32396(String var1) {
       if (var1 == null) {
          return null;
       } else {
@@ -321,11 +323,11 @@ public class Class8896 {
          }
 
          String[] var5 = Config.method26903(var1, " ");
-         List<Class8507> var6 = new ArrayList();
+         List<BiomeId> var6 = new ArrayList();
 
          for (int var7 = 0; var7 < var5.length; var7++) {
             String var8 = var5[var7];
-            Class8507 var9 = this.method32397(var8);
+            BiomeId var9 = this.method32397(var8);
             if (var9 != null) {
                var6.add(var9);
             } else {
@@ -334,33 +336,33 @@ public class Class8896 {
          }
 
          if (var4) {
-            HashSet var11 = new HashSet<ResourceLocation>(Class8708.method31411());
+            HashSet var11 = new HashSet<ResourceLocation>(BiomeUtils.method31411());
 
-            for (Class8507 var13 : var6) {
+            for (BiomeId var13 : var6) {
                var11.remove(var13.method30137());
             }
 
-            var6 = Class8708.method31414(var11);
+            var6 = BiomeUtils.method31414(var11);
          }
 
-         return var6.toArray(new Class8507[var6.size()]);
+         return var6.toArray(new BiomeId[var6.size()]);
       }
    }
 
-   public Class8507 method32397(String var1) {
+   public BiomeId method32397(String var1) {
       var1 = var1.toLowerCase();
       ResourceLocation var4 = new ResourceLocation(var1);
-      Class8507 var5 = Class8708.method31409(var4);
+      BiomeId var5 = BiomeUtils.getBiomeId(var4);
       if (var5 != null) {
          return var5;
       } else {
          String var6 = var1.replace(" ", "").replace("_", "");
          ResourceLocation var7 = new ResourceLocation(var6);
          if (field40261 == null) {
-            field40261 = new HashMap<ResourceLocation, Class8507>();
+            field40261 = new HashMap<ResourceLocation, BiomeId>();
 
-            for (ResourceLocation var9 : Class8708.method31411()) {
-               Class8507 var10 = Class8708.method31409(var9);
+            for (ResourceLocation var9 : BiomeUtils.method31411()) {
+               BiomeId var10 = BiomeUtils.getBiomeId(var9);
                if (var10 != null) {
                   String var11 = var9.getPath().replace(" ", "").replace("_", "").toLowerCase();
                   ResourceLocation var12 = new ResourceLocation(var9.getNamespace(), var11);

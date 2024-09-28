@@ -12,6 +12,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 
 public abstract class BiomeGeneratorTypeScreens {
    public static final BiomeGeneratorTypeScreens field_239066_a_ = new Class5974("default");
@@ -102,7 +103,7 @@ public abstract class BiomeGeneratorTypeScreens {
          .method7201()
          .stream()
          .findFirst()
-         .orElse(var0.<Biome>getRegistry(Registry.BIOME_KEY).getOrThrow(Class9495.field44122));
+         .orElse(var0.<Biome>getRegistry(Registry.BIOME_KEY).getOrThrow(Biomes.PLAINS));
    }
 
    public static Optional<BiomeGeneratorTypeScreens> method18504(DimensionGeneratorSettings var0) {

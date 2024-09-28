@@ -16,7 +16,7 @@ public interface IVertexBuilder extends Class5421 {
 
    default Class8391 method17022(BlockState var1, BlockPos var2) {
       Class8391 var5 = field24104.get();
-      var5.method29411(var1, var2);
+      var5.reset(var1, var2);
       return var5;
    }
 

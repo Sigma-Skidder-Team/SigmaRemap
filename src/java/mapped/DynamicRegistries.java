@@ -11,6 +11,7 @@ import java.util.Map.Entry;
 
 import net.minecraft.client.util.Util;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.biome.Biome;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -93,8 +94,8 @@ public abstract class DynamicRegistries {
    }
 
    private static <R extends Registry<?>> void method32459(DynamicRegistriesImpl var0, RegistryKey<R> var1) {
-      Registry var4 = Class6714.field29423;
-      Registry var5 = (Registry)var4.method9183(var1);
+      Registry var4 = WorldGenRegistries.field29423;
+      Registry var5 = (Registry)var4.getValueForKey(var1);
       if (var5 != null) {
          method32460(var0, var5);
       } else {

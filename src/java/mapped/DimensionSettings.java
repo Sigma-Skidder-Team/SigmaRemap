@@ -7,6 +7,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.WorldGenRegistries;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -89,11 +90,11 @@ public final class DimensionSettings {
    }
 
    public boolean method35168(RegistryKey<DimensionSettings> var1) {
-      return Objects.equals(this, Class6714.field29431.method9183(var1));
+      return Objects.equals(this, WorldGenRegistries.field29431.getValueForKey(var1));
    }
 
    private static DimensionSettings method35169(RegistryKey<DimensionSettings> var0, DimensionSettings var1) {
-      Class6714.<DimensionSettings, DimensionSettings>method20497(Class6714.field29431, var0.getLocation(), var1);
+      WorldGenRegistries.<DimensionSettings, DimensionSettings>method20497(WorldGenRegistries.field29431, var0.getLocation(), var1);
       return var1;
    }
 

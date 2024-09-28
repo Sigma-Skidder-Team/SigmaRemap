@@ -20,6 +20,7 @@ import net.minecraft.world.ISeedReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -260,7 +261,7 @@ public class Class1108 extends MobEntity implements Class1008 {
 
    public static boolean method5328(EntityType<Class1108> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       if (var1.method6997() != Difficulty.field14351) {
-         if (Objects.equals(var1.method7178(var3), Optional.<RegistryKey<Biome>>of(Class9495.field44127))
+         if (Objects.equals(var1.method7178(var3), Optional.<RegistryKey<Biome>>of(Biomes.SWAMP))
             && var3.getY() > 50
             && var3.getY() < 70
             && var4.nextFloat() < 0.5F

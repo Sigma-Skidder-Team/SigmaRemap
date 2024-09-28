@@ -51,7 +51,7 @@ public class Class9725 {
       }
 
       BiomeContainer var11 = new BiomeContainer(
-         var0.method6867().<Biome>getRegistry(Registry.BIOME_KEY), var3, var8, !var9.contains("Biomes", 11) ? null : var9.getIntArray("Biomes")
+         var0.func_241828_r().<Biome>getRegistry(Registry.BIOME_KEY), var3, var8, !var9.contains("Biomes", 11) ? null : var9.getIntArray("Biomes")
       );
       UpgradeData var12 = !var9.contains("UpgradeData", 10) ? UpgradeData.field40388 : new UpgradeData(var9.getCompound("UpgradeData"));
       Class6806 var13 = new Class6806<Block>(var0x -> var0x == null || var0x.getDefaultState().isAir(), var3, var9.method131("ToBeTicked", 9));

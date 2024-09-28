@@ -104,7 +104,7 @@ public class FillESP extends Module {
         double var15 = MathHelper.lerp(var8, var1.lastTickPosY, var1.getPosY());
         double var17 = MathHelper.lerp(var8, var1.lastTickPosZ, var1.getPosZ());
         float var19 = MathHelper.lerp(var8, var1.prevRotationYaw, var1.rotationYaw);
-        mc.worldRenderer.field941.renderEntityStatic(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 255);
+        mc.worldRenderer.renderManager.renderEntityStatic(var1, var13 - var2, var15 - var4, var17 - var6, var19, var8, var9, var10, 255);
     }
 
     @EventTarget

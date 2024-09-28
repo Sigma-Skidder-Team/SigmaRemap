@@ -383,7 +383,7 @@ public class DebugOverlayGui extends AbstractGui {
                         "Biome: "
                            + this.mc
                               .world
-                              .method6867()
+                              .func_241828_r()
                               .<Biome>getRegistry(Registry.BIOME_KEY)
                               .getKey(this.mc.world.getBiome(var8))
                      );

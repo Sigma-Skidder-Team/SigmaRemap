@@ -20,6 +20,7 @@ import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 
 import javax.annotation.Nullable;
 import java.util.Objects;
@@ -296,8 +297,8 @@ public class Class1048 extends WaterMobEntity {
       if (var3.getY() > 45 && var3.getY() < var1.method6776()) {
          Optional var7 = var1.method7178(var3);
          return (
-               !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44121))
-                  || !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44145))
+               !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.OCEAN))
+                  || !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.DEEP_OCEAN))
             )
             && var1.getFluidState(var3).method23486(FluidTags.field40469);
       } else {

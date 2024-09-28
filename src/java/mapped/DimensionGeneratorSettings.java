@@ -49,7 +49,7 @@ public class DimensionGeneratorSettings {
    private final Optional<String> field33656;
 
    private DataResult<DimensionGeneratorSettings> method26254() {
-      Dimension var3 = this.field33655.method9183(Dimension.field43952);
+      Dimension var3 = this.field33655.getValueForKey(Dimension.field43952);
       if (var3 != null) {
          return !this.method26255() ? DataResult.success(this) : DataResult.success(this, Lifecycle.stable());
       } else {
@@ -63,7 +63,7 @@ public class DimensionGeneratorSettings {
 
    public DimensionGeneratorSettings(long var1, boolean var3, boolean var4, SimpleRegistry<Dimension> var5) {
       this(var1, var3, var4, var5, Optional.<String>empty());
-      Dimension var8 = var5.method9183(Dimension.field43952);
+      Dimension var8 = var5.getValueForKey(Dimension.field43952);
       if (var8 == null) {
          throw new IllegalStateException("Overworld settings missing");
       }
@@ -107,7 +107,7 @@ public class DimensionGeneratorSettings {
    }
 
    public static SimpleRegistry<Dimension> method26262(Registry<DimensionType> var0, SimpleRegistry<Dimension> var1, ChunkGenerator var2) {
-      Dimension var5 = var1.method9183(Dimension.field43952);
+      Dimension var5 = var1.getValueForKey(Dimension.field43952);
       Supplier var6 = () -> var5 != null ? var5.method36412() : var0.getOrThrow(DimensionType.OVERWORLD);
       return method26263(var1, var6, var2);
    }
@@ -132,7 +132,7 @@ public class DimensionGeneratorSettings {
    }
 
    public ChunkGenerator method26265() {
-      Dimension var3 = this.field33655.method9183(Dimension.field43952);
+      Dimension var3 = this.field33655.getValueForKey(Dimension.field43952);
       if (var3 != null) {
          return var3.method36413();
       } else {

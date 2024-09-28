@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.block.Blocks;
+import net.minecraft.util.registry.WorldGenRegistries;
 
 public class Class9109 {
    public static final Class9319<Class8278> field41841 = method33963("badlands", Class6768.field29529.method20657(Class6768.field29515));
@@ -32,6 +33,6 @@ public class Class9109 {
    public static final Class9319<Class8278> field41863 = method33963("wooded_badlands", Class6768.field29530.method20657(Class6768.field29515));
 
    private static <SC extends Class8277> Class9319<SC> method33963(String var0, Class9319<SC> var1) {
-      return Class6714.<Class9319<SC>>method20496(Class6714.field29424, var0, var1);
+      return WorldGenRegistries.<Class9319<SC>>method20496(WorldGenRegistries.field29424, var0, var1);
    }
 }

@@ -37,6 +37,8 @@ import net.minecraft.world.GameType;
 import net.minecraft.world.ITickList;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
+import net.optifine.DynamicLights;
 import net.optifine.Config;
 import net.optifine.shaders.Shaders;
 
@@ -588,15 +590,15 @@ public class ClientWorld extends World {
 
    public void method6865(Entity var1) {
       Class9387.method35629(var1, this);
-      if (Config.method26970()) {
-         Class9446.method36307(var1, Config.method26874());
+      if (Config.isDynamicLights()) {
+         DynamicLights.method36307(var1, Config.method26874());
       }
    }
 
    public void onEntityRemoved(Entity var1) {
       Class9387.method35630(var1, this);
-      if (Config.method26970()) {
-         Class9446.method36308(var1, Config.method26874());
+      if (Config.isDynamicLights()) {
+         DynamicLights.method36308(var1, Config.method26874());
       }
    }
 
@@ -627,7 +629,7 @@ public class ClientWorld extends World {
    }
 
    @Override
-   public DynamicRegistries method6867() {
+   public DynamicRegistries func_241828_r() {
       return this.connection.method15802();
    }
 
@@ -697,7 +699,7 @@ public class ClientWorld extends World {
 
    @Override
    public Biome method6871(int var1, int var2, int var3) {
-      return this.method6867().<Biome>getRegistry(Registry.BIOME_KEY).getOrThrow(Class9495.field44122);
+      return this.func_241828_r().<Biome>getRegistry(Registry.BIOME_KEY).getOrThrow(Biomes.PLAINS);
    }
 
    public float method6872(float var1) {

@@ -1,20 +1,19 @@
-package mapped;
+package net.minecraft.world.biome;
 
+import mapped.*;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.MathHelper;
-import net.minecraft.world.biome.Biome;
 
-public class Class9413 {
-   private static String[] field43675;
+public class BiomeMaker {
 
-   private static int method36061(float var0) {
+   private static int getSkyColorWithTemperatureModifier(float var0) {
       float var3 = var0 / 3.0F;
       var3 = MathHelper.clamp(var3, -1.0F, 1.0F);
       return MathHelper.method37818(0.62222224F - var3 * 0.05F, 0.5F + var3 * 0.1F, 1.0F);
    }
 
-   public static Biome method36062(float var0, float var1, float var2, boolean var3) {
+   public static Biome makeGiantTaigaBiome(float var0, float var1, float var2, boolean var3) {
       Class9328 var6 = new Class9328();
       Class8468.method29838(var6);
       var6.method35249(Class179.field624, new Class6692(EntityType.field41105, 8, 4, 4));
@@ -58,7 +57,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(var2))
+               .method34871(getSkyColorWithTemperatureModifier(var2))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -105,7 +104,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(0.6F))
+               .method34871(getSkyColorWithTemperatureModifier(0.6F))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -216,7 +215,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(0.95F))
+               .method34871(getSkyColorWithTemperatureModifier(0.95F))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -265,7 +264,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(0.2F))
+               .method34871(getSkyColorWithTemperatureModifier(0.2F))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -319,7 +318,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(2.0F))
+               .method34871(getSkyColorWithTemperatureModifier(2.0F))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -328,15 +327,15 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Biome method36076(boolean var0) {
+   public static Biome makePlainsBiome(boolean isSunflowerVariant) {
       Class9328 var3 = new Class9328();
       Class8468.method29843(var3);
-      if (!var0) {
+      if (!isSunflowerVariant) {
          var3.method35252();
       }
 
       Class7935 var4 = new Class7935().method26688(Class9109.field41850);
-      if (!var0) {
+      if (!isSunflowerVariant) {
          var4.method26693(Class9438.field43853).method26693(Class9438.field43834);
       }
 
@@ -346,7 +345,7 @@ public class Class9413 {
       Class8468.method29775(var4);
       Class8468.method29777(var4);
       Class8468.method29820(var4);
-      if (var0) {
+      if (isSunflowerVariant) {
          var4.method26690(Class1993.field13006, Class9104.field41701);
       }
 
@@ -354,12 +353,12 @@ public class Class9413 {
       Class8468.method29779(var4);
       Class8468.method29783(var4);
       Class8468.method29813(var4);
-      if (var0) {
+      if (isSunflowerVariant) {
          var4.method26690(Class1993.field13006, Class9104.field41729);
       }
 
       Class8468.method29821(var4);
-      if (!var0) {
+      if (!isSunflowerVariant) {
          Class8468.method29822(var4);
       } else {
          var4.method26690(Class1993.field13006, Class9104.field41702);
@@ -379,7 +378,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(0.8F))
+               .method34871(getSkyColorWithTemperatureModifier(0.8F))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -464,7 +463,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(0.9F))
+               .method34871(getSkyColorWithTemperatureModifier(0.9F))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -517,7 +516,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(var2))
+               .method34871(getSkyColorWithTemperatureModifier(var2))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -580,7 +579,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(2.0F))
+               .method34871(getSkyColorWithTemperatureModifier(2.0F))
                .method34872(10387789)
                .method34873(9470285)
                .method34877(Class7959.field34224)
@@ -616,7 +615,7 @@ public class Class9413 {
                .method34869(var1)
                .method34870(var2)
                .method34868(12638463)
-               .method34871(method36061(0.5F))
+               .method34871(getSkyColorWithTemperatureModifier(0.5F))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -772,7 +771,7 @@ public class Class9413 {
                .method34869(3750089)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(var4))
+               .method34871(getSkyColorWithTemperatureModifier(var4))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -823,7 +822,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(0.7F))
+               .method34871(getSkyColorWithTemperatureModifier(0.7F))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -905,7 +904,7 @@ public class Class9413 {
                .method34869(!var2 ? 4159204 : 4020182)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(var9))
+               .method34871(getSkyColorWithTemperatureModifier(var9))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -948,7 +947,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(0.7F))
+               .method34871(getSkyColorWithTemperatureModifier(0.7F))
                .method34874(Class88.field231)
                .method34877(Class7959.field34224)
                .method34880()
@@ -958,7 +957,7 @@ public class Class9413 {
          .method37921();
    }
 
-   public static Biome method36106(float var0, float var1, boolean var2) {
+   public static Biome makeGenericSwampBiome(float var0, float var1, boolean var2) {
       Class9328 var5 = new Class9328();
       Class8468.method29838(var5);
       Class8468.method29840(var5);
@@ -1003,7 +1002,7 @@ public class Class9413 {
                .method34869(6388580)
                .method34870(2302743)
                .method34868(12638463)
-               .method34871(method36061(0.8F))
+               .method34871(getSkyColorWithTemperatureModifier(0.8F))
                .method34872(6975545)
                .method34874(Class88.field232)
                .method34877(Class7959.field34224)
@@ -1058,7 +1057,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(0.0F))
+               .method34871(getSkyColorWithTemperatureModifier(0.0F))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -1105,7 +1104,7 @@ public class Class9413 {
                .method34869(var3)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(var2))
+               .method34871(getSkyColorWithTemperatureModifier(var2))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -1155,7 +1154,7 @@ public class Class9413 {
                .method34869(var4)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(var2))
+               .method34871(getSkyColorWithTemperatureModifier(var2))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -1179,7 +1178,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(12638463)
-               .method34871(method36061(0.5F))
+               .method34871(getSkyColorWithTemperatureModifier(0.5F))
                .method34877(Class7959.field34224)
                .method34880()
          )
@@ -1227,7 +1226,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(3344392)
-               .method34871(method36061(2.0F))
+               .method34871(getSkyColorWithTemperatureModifier(2.0F))
                .method34876(SoundEvents.field26321)
                .method34877(new Class7959(SoundEvents.field26322, 6000, 8, 2.0))
                .method34878(new Class8217(SoundEvents.field26320, 0.0111))
@@ -1283,7 +1282,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(1787717)
-               .method34871(method36061(2.0F))
+               .method34871(getSkyColorWithTemperatureModifier(2.0F))
                .method34875(new Class7737(ParticleTypes.field34112, 0.00625F))
                .method34876(SoundEvents.field26324)
                .method34877(new Class7959(SoundEvents.field26325, 6000, 8, 2.0))
@@ -1337,7 +1336,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(4341314)
                .method34868(6840176)
-               .method34871(method36061(2.0F))
+               .method34871(getSkyColorWithTemperatureModifier(2.0F))
                .method34875(new Class7737(ParticleTypes.field34119, 0.118093334F))
                .method34876(SoundEvents.field26315)
                .method34877(new Class7959(SoundEvents.field26316, 6000, 8, 2.0))
@@ -1387,7 +1386,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(3343107)
-               .method34871(method36061(2.0F))
+               .method34871(getSkyColorWithTemperatureModifier(2.0F))
                .method34875(new Class7737(ParticleTypes.field34113, 0.025F))
                .method34876(SoundEvents.field26318)
                .method34877(new Class7959(SoundEvents.field26319, 6000, 8, 2.0))
@@ -1438,7 +1437,7 @@ public class Class9413 {
                .method34869(4159204)
                .method34870(329011)
                .method34868(1705242)
-               .method34871(method36061(2.0F))
+               .method34871(getSkyColorWithTemperatureModifier(2.0F))
                .method34875(new Class7737(ParticleTypes.field34114, 0.01428F))
                .method34876(SoundEvents.field26327)
                .method34877(new Class7959(SoundEvents.field26328, 6000, 8, 2.0))

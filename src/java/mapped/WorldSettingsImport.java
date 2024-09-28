@@ -92,7 +92,7 @@ public class WorldSettingsImport<T> extends Class6712<T> {
       DataResult<Supplier<E>> var9 = (DataResult<Supplier<E>>) Class7269.method22833(var8).get(var7);
       if (var9 == null) {
          com.google.common.base.Supplier<E> var10 = Suppliers.memoize(() -> {
-            E var4x = var2.method9183(var7);
+            E var4x = var2.getValueForKey(var7);
             if (var4x != null) {
                return var4x;
             } else {
@@ -109,10 +109,10 @@ public class WorldSettingsImport<T> extends Class6712<T> {
          }
 
          DataResult<Supplier<E>> var14;
-         if (!var12.isPresent() && var2.method9183(var7) != null) {
-            var14 = DataResult.success(() -> var2.method9183(var7), Lifecycle.stable());
+         if (!var12.isPresent() && var2.getValueForKey(var7) != null) {
+            var14 = DataResult.success(() -> var2.getValueForKey(var7), Lifecycle.stable());
          } else {
-            var14 = var11.map((instanceIndexPair) -> () -> var2.method9183(var7));
+            var14 = var11.map((instanceIndexPair) -> () -> var2.getValueForKey(var7));
          }
 
          Class7269.method22833(var8).put(var7, var14);

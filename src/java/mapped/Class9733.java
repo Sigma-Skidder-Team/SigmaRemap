@@ -17,6 +17,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.client.util.Util;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -80,14 +81,14 @@ public class Class9733 {
          this.field45448 = (Supplier<Biome>)var6.get();
       } else {
          field45442.error("Unknown biome, defaulting to plains");
-         this.field45448 = () -> var1.getOrThrow(Class9495.field44122);
+         this.field45448 = () -> var1.getOrThrow(Biomes.PLAINS);
       }
    }
 
    public Class9733(Class9763 var1, Registry<Biome> var2) {
       this.field45445 = var2;
       this.field45446 = var1;
-      this.field45448 = () -> var2.getOrThrow(Class9495.field44122);
+      this.field45448 = () -> var2.getOrThrow(Biomes.PLAINS);
    }
 
    public Class9733 method38121(Class9763 var1) {
@@ -135,7 +136,7 @@ public class Class9733 {
          var5.method26693(var4.method24279(field45444.get(var7.getKey())));
       }
 
-      boolean var11 = (!this.field45450 || this.field45445.method9182(var3).equals(Optional.<RegistryKey<Biome>>of(Class9495.field44172))) && this.field45451;
+      boolean var11 = (!this.field45450 || this.field45445.method9182(var3).equals(Optional.<RegistryKey<Biome>>of(Biomes.field44172))) && this.field45451;
       if (var11) {
          List<List<Supplier<Class7909<?, ?>>>> var12 = var4.method24281();
 
@@ -218,7 +219,7 @@ public class Class9733 {
          Optional.<Class9245>of(Class9763.field45675), Maps.newHashMap(ImmutableMap.of(Structure.field18073, Class9763.field45674.get(Structure.field18073)))
       );
       Class9733 var4 = new Class9733(var3, var0);
-      var4.field45448 = () -> var0.getOrThrow(Class9495.field44122);
+      var4.field45448 = () -> var0.getOrThrow(Biomes.PLAINS);
       var4.method38129().add(new Class9537(1, Blocks.BEDROCK));
       var4.method38129().add(new Class9537(2, Blocks.field36396));
       var4.method38129().add(new Class9537(1, Blocks.field36395));

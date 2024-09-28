@@ -15,6 +15,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.server.ServerWorld;
 
 import java.util.Objects;
@@ -74,8 +75,8 @@ public class Class1096 extends Class1018 implements IAngerable {
 
    public static boolean method5181(EntityType<Class1096> var0, IWorld var1, Class2202 var2, BlockPos var3, Random var4) {
       Optional var7 = var1.method7178(var3);
-      return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44131))
-            && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44171))
+      return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.FROZEN_OCEAN))
+            && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.field44171))
          ? method4500(var0, var1, var2, var3, var4)
          : var1.method7021(var3, 0) > 8 && var1.getBlockState(var3.down()).isIn(Blocks.ICE);
    }

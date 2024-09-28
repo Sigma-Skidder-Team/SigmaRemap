@@ -45,7 +45,7 @@ public class Class8391 {
       this.field35981 = var2;
    }
 
-   public void method29411(BlockState var1, BlockPos var2) {
+   public void reset(BlockState var1, BlockPos var2) {
       if (this.field35980 != var1 || this.field35981 != var2) {
          this.field35980 = var1;
          this.field35981 = var2;

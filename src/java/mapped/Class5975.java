@@ -3,6 +3,7 @@ package mapped;
 import net.minecraft.client.gui.screen.BiomeGeneratorTypeScreens;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 
 public final class Class5975 extends BiomeGeneratorTypeScreens {
    public Class5975(String var1) {
@@ -24,6 +25,6 @@ public final class Class5975 extends BiomeGeneratorTypeScreens {
 
    @Override
    public ChunkGenerator method18500(Registry<Biome> var1, Registry<DimensionSettings> var2, long var3) {
-      return new NoiseChunkGenerator(new Class1688(var1.getOrThrow(Class9495.field44122)), var3, () -> var2.getOrThrow(DimensionSettings.field43234));
+      return new NoiseChunkGenerator(new Class1688(var1.getOrThrow(Biomes.PLAINS)), var3, () -> var2.getOrThrow(DimensionSettings.field43234));
    }
 }

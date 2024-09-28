@@ -7,6 +7,7 @@ import net.minecraft.state.Property;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.optifine.Config;
+import net.optifine.config.BiomeId;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -23,7 +24,7 @@ public class Class7104 {
    public String[] field30555 = null;
    public int field30556 = 0;
    public int field30557 = 63;
-   public Class8507[] field30558 = null;
+   public BiomeId[] field30558 = null;
    public Class9532 field30559 = null;
    public int field30560 = 0;
    public boolean field30561 = false;

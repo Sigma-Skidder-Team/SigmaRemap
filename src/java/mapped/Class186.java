@@ -1,6 +1,7 @@
 package mapped;
 
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -9,15 +10,15 @@ public enum Class186 {
    field691(
       0,
       "red",
-      Class9495.field44126,
-      Class9495.field44140,
-      Class9495.field44177,
-      Class9495.field44153,
-      Class9495.field44186,
-      Class9495.field44154,
-      Class9495.field44187
+      Biomes.TAIGA,
+      Biomes.TAIGA_HILLS,
+      Biomes.TAIGA_MOUNTAINS,
+      Biomes.GIANT_TREE_TAIGA,
+      Biomes.field44186,
+      Biomes.GIANT_TREE_TAIGA_HILLS,
+      Biomes.field44187
    ),
-   field692(1, "snow", Class9495.field44151, Class9495.field44152, Class9495.field44185);
+   field692(1, "snow", Biomes.SNOWY_TAIGA, Biomes.SNOWY_TAIGA_HILLS, Biomes.field44185);
 
    private static final Class186[] field693 = Arrays.<Class186>stream(values())
       .sorted(Comparator.comparingInt(Class186::method568))

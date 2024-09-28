@@ -20,6 +20,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.biome.Biome;
+import net.optifine.util.BiomeUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -32,7 +33,7 @@ public class EntityDataManager {
    private final ReadWriteLock field43434 = new ReentrantReadWriteLock();
    private boolean field43435 = true;
    private boolean field43436;
-   public Biome field43437 = Class8708.field39311;
+   public Biome field43437 = BiomeUtils.PLAINS;
    public BlockPos field43438 = BlockPos.ZERO;
 
    public EntityDataManager(Entity var1) {

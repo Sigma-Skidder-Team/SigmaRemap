@@ -6,6 +6,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.biome.provider.BiomeProvider;
 
 public class EndBiomeProvider extends BiomeProvider {
@@ -29,11 +30,11 @@ public class EndBiomeProvider extends BiomeProvider {
       this(
          var1,
          var2,
-         var1.getOrThrow(Class9495.field44130),
-         var1.getOrThrow(Class9495.field44163),
-         var1.getOrThrow(Class9495.field44162),
-         var1.getOrThrow(Class9495.field44161),
-         var1.getOrThrow(Class9495.field44164)
+         var1.getOrThrow(Biomes.THE_END),
+         var1.getOrThrow(Biomes.field44163),
+         var1.getOrThrow(Biomes.field44162),
+         var1.getOrThrow(Biomes.field44161),
+         var1.getOrThrow(Biomes.field44164)
       );
    }
 

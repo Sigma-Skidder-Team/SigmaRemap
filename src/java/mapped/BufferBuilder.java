@@ -615,7 +615,7 @@ public class BufferBuilder extends Class5424 implements Class5426 {
    @Override
    public Class8391 method17022(BlockState var1, BlockPos var2) {
       if (this.field24133 != null) {
-         this.field24133.method29411(var1, var2);
+         this.field24133.reset(var1, var2);
          return this.field24133;
       } else {
          this.field24133 = new Class8391(var1, var2);

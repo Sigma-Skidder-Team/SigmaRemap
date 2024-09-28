@@ -38,6 +38,7 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.Difficulty;
+import net.optifine.DynamicLights;
 import net.optifine.Config;
 import net.optifine.shaders.Shaders;
 import org.apache.commons.lang3.ArrayUtils;
@@ -1298,7 +1299,7 @@ public class GameSettings {
 
       if (var1 == AbstractOption.field25435) {
          this.field44724 = method37167(this.field44724, field44760);
-         Class9446.method36320(this.field44659.worldRenderer);
+         DynamicLights.method36320(this.field44659.worldRenderer);
       }
 
       if (var1 == AbstractOption.field25439) {

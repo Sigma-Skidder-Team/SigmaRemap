@@ -18,6 +18,7 @@ import net.minecraft.world.IWorld;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 
 import java.util.Objects;
 import java.util.Optional;
@@ -69,8 +70,8 @@ public class Class1037 extends ZombieEntity implements Class1022 {
       boolean var8 = var1.method6997() != Difficulty.field14351
          && method4340(var1, var3, var4)
          && (var2 == Class2202.field14393 || var1.getFluidState(var3).method23486(FluidTags.field40469));
-      return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44128))
-            && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Class9495.field44132))
+      return !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.RIVER))
+            && !Objects.equals(var7, Optional.<RegistryKey<Biome>>of(Biomes.FROZEN_RIVER))
          ? var4.nextInt(40) == 0 && method4641(var1, var3) && var8
          : var4.nextInt(15) == 0 && var8;
    }

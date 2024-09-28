@@ -13,6 +13,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeContainer;
+import net.minecraft.world.biome.BiomeRegistry;
 
 import javax.annotation.Nullable;
 import java.util.Arrays;
@@ -22,11 +23,11 @@ import java.util.function.Predicate;
 public class Class1675 extends Chunk {
    private static String[] field9134;
    private static final Biome[] field9135 = Util.<Biome[]>make(
-      new Biome[BiomeContainer.field9154], var0 -> Arrays.fill(var0, Class8900.field40281)
+      new Biome[BiomeContainer.field9154], var0 -> Arrays.fill(var0, BiomeRegistry.PLAINS)
    );
 
    public Class1675(World var1, ChunkPos var2) {
-      super(var1, var2, new BiomeContainer(var1.method6867().<Biome>getRegistry(Registry.BIOME_KEY), field9135));
+      super(var1, var2, new BiomeContainer(var1.func_241828_r().<Biome>getRegistry(Registry.BIOME_KEY), field9135));
    }
 
    @Override

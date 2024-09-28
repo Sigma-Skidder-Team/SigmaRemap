@@ -534,7 +534,7 @@ public class Class7551 {
                         var19.method37212(var23.method30532(), var25);
                      }
 
-                     var12.method29411(var25, var4);
+                     var12.reset(var25, var4);
                      if (!var13) {
                         int var26 = WorldRenderer.method945(var1, var25, var4.offset(var23.method30514()));
                         this.method24688(var1, var25, var4, var26, var7, false, var5, var21, var24, var12);

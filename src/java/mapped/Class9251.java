@@ -15,6 +15,7 @@ import net.minecraft.util.datafix.codec.DatapackCodec;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.biome.provider.BiomeProvider;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -49,14 +50,14 @@ public class Class9251 {
       MutableRegistry<Biome> var16 = var11.getRegistry(Registry.BIOME_KEY);
       Object var17;
       if (var13 != null && var13.getDimensionGeneratorSettings().method26268()) {
-         var17 = new Class1688((Biome) var16.getOrThrow(Class9495.field44122));
+         var17 = new Class1688((Biome) var16.getOrThrow(Biomes.PLAINS));
       } else {
          var17 = new Class1689(var14, false, false, var16);
       }
 
       method34800(var11, new File(var7, "region"), var4, (BiomeProvider)var17, 0, var10, var1);
-      method34800(var11, new File(var8, "region"), var5, new Class1688(var16.getOrThrow(Class9495.field44129)), var4.size(), var10, var1);
-      method34800(var11, new File(var9, "region"), var6, new Class1688(var16.getOrThrow(Class9495.field44130)), var4.size() + var5.size(), var10, var1);
+      method34800(var11, new File(var8, "region"), var5, new Class1688(var16.getOrThrow(Biomes.NETHER_WASTES)), var4.size(), var10, var1);
+      method34800(var11, new File(var9, "region"), var6, new Class1688(var16.getOrThrow(Biomes.THE_END)), var4.size() + var5.size(), var10, var1);
       method34799(var0);
       var0.saveLevel(var11, var13);
       return true;

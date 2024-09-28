@@ -7,6 +7,7 @@ import com.mojang.datafixers.util.Pair;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 
 import java.util.Map;
 import java.util.Optional;
@@ -16,11 +17,11 @@ public class NetherBiomeProviderPreset {
    public static final NetherBiomeProviderPreset DEFAULT_NETHER_PROVIDER_PRESET = new NetherBiomeProviderPreset(
       new ResourceLocation("nether"),
       (var0, var1, var2) -> new Class1686(var2, ImmutableList.of(
-               Pair.of(new Class7150(0.0F, 0.0F, 0.0F, 0.0F, 0.0F), () -> var1.getOrThrow(Class9495.field44129)),
-               Pair.of(new Class7150(0.0F, -0.5F, 0.0F, 0.0F, 0.0F), () -> var1.getOrThrow(Class9495.field44196)),
-               Pair.of(new Class7150(0.4F, 0.0F, 0.0F, 0.0F, 0.0F), () -> var1.getOrThrow(Class9495.field44197)),
-               Pair.of(new Class7150(0.0F, 0.5F, 0.0F, 0.0F, 0.375F), () -> var1.getOrThrow(Class9495.field44198)),
-               Pair.of(new Class7150(-0.5F, 0.0F, 0.0F, 0.0F, 0.175F), () -> var1.getOrThrow(Class9495.field44199))
+               Pair.of(new Class7150(0.0F, 0.0F, 0.0F, 0.0F, 0.0F), () -> var1.getOrThrow(Biomes.NETHER_WASTES)),
+               Pair.of(new Class7150(0.0F, -0.5F, 0.0F, 0.0F, 0.0F), () -> var1.getOrThrow(Biomes.field44196)),
+               Pair.of(new Class7150(0.4F, 0.0F, 0.0F, 0.0F, 0.0F), () -> var1.getOrThrow(Biomes.field44197)),
+               Pair.of(new Class7150(0.0F, 0.5F, 0.0F, 0.0F, 0.375F), () -> var1.getOrThrow(Biomes.field44198)),
+               Pair.of(new Class7150(-0.5F, 0.0F, 0.0F, 0.0F, 0.175F), () -> var1.getOrThrow(Biomes.field44199))
             ), Optional.of(Pair.of(var1, var0))
          )
    );

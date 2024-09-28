@@ -58,7 +58,7 @@ public class Class9242 {
       }
    }
 
-   public void method34756() {
+   public void deleteGlResources() {
       for (Class8066 var6 : this.field42528) {
          var6.method27717();
       }

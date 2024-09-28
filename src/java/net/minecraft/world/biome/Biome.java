@@ -24,6 +24,7 @@ import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
+import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.chunk.IChunk;
 import org.apache.logging.log4j.LogManager;
@@ -312,7 +313,7 @@ public final class Biome {
 
    @Override
    public String toString() {
-      ResourceLocation var3 = Class6714.field29430.getKey(this);
+      ResourceLocation var3 = WorldGenRegistries.BIOME.getKey(this);
       return var3 != null ? var3.toString() : super.toString();
    }
 

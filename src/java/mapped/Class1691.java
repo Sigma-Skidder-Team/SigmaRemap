@@ -283,8 +283,8 @@ public class Class1691 implements ISeedReader {
    }
 
    @Override
-   public DynamicRegistries method6867() {
-      return this.field9205.method6867();
+   public DynamicRegistries func_241828_r() {
+      return this.field9205.func_241828_r();
    }
 
    @Override

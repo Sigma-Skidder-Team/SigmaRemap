@@ -36,7 +36,7 @@ public class ChunkStatus {
       "structure_starts", field42133, 0, field42130, Class2076.field13524, (var0, var1, var2, var3, var4, var5, var6, var7) -> {
          if (!var7.getStatus().method34306(var0)) {
             if (var1.getServer().method1436().getDimensionGeneratorSettings().method26260()) {
-               var2.method17825(var1.method6867(), var1.method6893(), var7, var3, var1.method6967());
+               var2.method17825(var1.func_241828_r(), var1.method6893(), var7, var3, var1.method6967());
             }
 
             if (var7 instanceof Class1672) {
@@ -59,7 +59,7 @@ public class ChunkStatus {
       0,
       field42130,
       Class2076.field13524,
-      (var0, var1, var2, var3) -> var1.method17818(var0.method6867().<Biome>getRegistry(Registry.BIOME_KEY), var3)
+      (var0, var1, var2, var3) -> var1.method17818(var0.func_241828_r().<Biome>getRegistry(Registry.BIOME_KEY), var3)
    );
    public static final ChunkStatus field42137 = method34289("noise", field42136, 8, field42130, Class2076.field13524, (var0, var1, var2, var3) -> {
       Class1691 var6 = new Class1691(var0, var2);

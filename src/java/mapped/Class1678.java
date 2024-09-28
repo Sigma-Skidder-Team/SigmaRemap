@@ -27,9 +27,9 @@ public interface Class1678 extends Class1682, IWorldReader, Class1679 {
       return IWorldReader.super.method7006(var1, var2);
    }
 
-   DynamicRegistries method6867();
+   DynamicRegistries func_241828_r();
 
    default Optional<RegistryKey<Biome>> method7178(BlockPos var1) {
-      return this.method6867().<Biome>getRegistry(Registry.BIOME_KEY).method9182(this.getBiome(var1));
+      return this.func_241828_r().<Biome>getRegistry(Registry.BIOME_KEY).method9182(this.getBiome(var1));
    }
 }

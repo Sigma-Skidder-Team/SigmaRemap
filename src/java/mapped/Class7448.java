@@ -9,6 +9,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockDisplayReader;
 import net.minecraft.world.biome.Biome;
 import net.optifine.Config;
+import net.optifine.util.BiomeUtils;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -109,7 +110,7 @@ public class Class7448 implements Class7443 {
             }
 
             if (this.field32024 == 1) {
-               this.field32027 = this.method24073(Class8708.field39311, new BlockPos(0, 64, 0));
+               this.field32027 = this.method24073(BiomeUtils.PLAINS, new BlockPos(0, 64, 0));
             }
          }
       }
@@ -343,7 +344,7 @@ public class Class7448 implements Class7443 {
    }
 
    private int method24073(Biome var1, BlockPos var2) {
-      int var5 = Class8708.method31407(var1);
+      int var5 = BiomeUtils.getId(var1);
       int var6 = var2.getY() - this.field32029;
       if (this.field32028 > 0) {
          int var7 = var2.getX() << 16 + var2.getZ();

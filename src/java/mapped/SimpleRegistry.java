@@ -127,7 +127,7 @@ public class SimpleRegistry<T> extends MutableRegistry<T> {
 
    @Nullable
    @Override
-   public T method9183(RegistryKey<T> var1) {
+   public T getValueForKey(RegistryKey<T> var1) {
       return (T)this.field16145.get(var1);
    }
 
